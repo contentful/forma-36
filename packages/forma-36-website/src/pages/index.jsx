@@ -1,7 +1,7 @@
 import React from 'react';
 
 import tokens from '@contentful/f36-tokens';
-import { DisplayText, Paragraph, Button } from '@contentful/f36-components';
+import { DisplayText, Paragraph, TextLink } from '@contentful/f36-components';
 
 import tokensImg from './tokens.png';
 import uiKitImg from './ui-kit.png';
@@ -55,25 +55,14 @@ function IndexPage() {
 
       <Section isSecondary>
         <DisplayText>Forma 36 is open-source</DisplayText>
-        <Paragraph
-          style={{
-            fontSize: tokens.fontSizeL,
-            maxWidth: '28rem',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-          }}
-        >
-          We appreciate your contributions. For more details about how to
-          contribute to a package, see the README of the corresponding package
-          on GitHub
+        <Paragraph>We appreciate your contributions</Paragraph>
+        <Paragraph>
+          Check our{' '}
+          <TextLink href="/guidelines/contributing/">
+            contribution guide
+          </TextLink>{' '}
+          and learn how to do it
         </Paragraph>
-        <Button
-          href="https://github.com/contentful/forma-36"
-          target="_blank"
-          rel="noopener"
-        >
-          View on GitHub
-        </Button>
       </Section>
     </Layout>
   );

@@ -60,11 +60,7 @@ for (const pkg of packages) {
     'src/index.ts',
     `${pkg} did not match "src/index.ts"`,
   );
-  softAssert.deepEqual(
-    json.files,
-    ['dist', 'src'],
-    `${pkg} did not match "files"`,
-  );
+  softAssert.deepEqual(json.files, ['dist'], `${pkg} did not match "files"`);
   softAssert(
     json.dependencies && json.dependencies['@babel/runtime'],
     `${pkg} is missing a dependency on @babel/runtime`,

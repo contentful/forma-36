@@ -35,7 +35,7 @@ export const AssetCard = ({
   status,
   title,
   type,
-  withDragHandle = true,
+  withDragHandle = false,
   isLoading,
   testId = 'cf-ui-asset-card',
   ...otherProps
@@ -63,7 +63,7 @@ export const AssetCard = ({
     <BaseCard
       {...otherProps}
       badge={badge}
-      className={cx(styles.root({ isSelected, size }), className)}
+      className={cx(styles.root({ size }), className)}
       header={header}
       isSelected={isSelected}
       title={title}

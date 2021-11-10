@@ -7,10 +7,8 @@ import { Flex } from '@contentful/f36-core';
 
 import {
   Checkbox,
-  CheckboxGroup,
   Form,
   FormControl,
-  RadioGroup,
   Radio,
   Select,
   Textarea,
@@ -77,21 +75,21 @@ const MockForm = ({ handleData }) => {
 
           <Field name="radioGroup">
             {({ field }) => (
-              <RadioGroup {...field}>
+              <Radio.Group {...field}>
                 <Radio value="apples">Apples</Radio>
                 <Radio value="pears">Pears</Radio>
                 <Radio value="peaches">Peaches</Radio>
-              </RadioGroup>
+              </Radio.Group>
             )}
           </Field>
 
           <Field name="checkboxGroup">
             {({ field }) => (
-              <CheckboxGroup {...field}>
+              <Checkbox.Group {...field}>
                 <Checkbox value="apples">Apples</Checkbox>
                 <Checkbox value="pears">Pears</Checkbox>
                 <Checkbox value="peaches">Peaches</Checkbox>
-              </CheckboxGroup>
+              </Checkbox.Group>
             )}
           </Field>
 
@@ -166,7 +164,7 @@ describe('Formik integration', function () {
     // Change Radio option
     fireEvent.click(screen.getByRole('radio', { name: /pears/i }));
 
-    // Change CheckboxGroup options
+    // Change Checkbox.Group options
     fireEvent.click(screen.getByRole('checkbox', { name: /apples/i }));
     fireEvent.click(screen.getByRole('checkbox', { name: /pears/i }));
 

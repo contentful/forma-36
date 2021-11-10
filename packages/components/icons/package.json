@@ -17,8 +17,7 @@
     "react": ">=16.8"
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "main": "dist/main.js",
   "module": "dist/module.js",

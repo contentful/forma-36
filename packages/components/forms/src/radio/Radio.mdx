@@ -9,20 +9,20 @@ typescript: ./Radio.tsx,./RadioGroup.tsx
 ---
 
 `Radio` is a form component, that shows a radio input with its label. It is used to allow users to choose single option from the list. If you want to let the user select multiple options, use the `Checkbox` component.  
-`RadioGroup` is a component that makes it easier to handle group of radios.
+`Radio.Group` is a component that makes it easier to handle group of radios.
 
 ## Table of contents
 
 - [How to use Radio](#how-to-use-radio)
   - [Using as a controlled input](#using-as-a-controlled-input)
   - [Using as an uncontrolled input](#using-as-an-uncontrolled-input)
-  - [Using with RadioGroup](#using-with-RadioGroup)
+  - [Using with Group](#using-with-group)
 - [Component variations](#component-variations)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
 - [Props](#props)
   - [Radio](#props-radio)
-  - [RadioGroup](#props-radiogroup)
+  - [Group](#props-group)
 
 ## How to use Radio
 
@@ -84,30 +84,32 @@ You can use the Radio as an uncontrolled input, for that you can:
 </React.Fragment>
 ```
 
-### Using with RadioGroup
+### Using with Group
 
 import { FormControl } from '@contentful/f36-forms';
 
-We also provide the `RadioGroup` component that helps when using multiple radio, you can pass the spacing value and some common properties to be replicated to the radios.
+We also provide the `Radio.Group` component that helps when using multiple radios. You can pass some common properties on the `Radio.Group` level and they will be passed to the radios inside the group.
 
 - `spacing`: This will set how much space should be between the inputs;
-- `name`: This will set all radios with this name;
-- `defaultValue`: This accepts a value that set the `defaultChecked` property for the radio that have the same value.
+- `name`: By setting this property on the `Radio.Group` level, you will set it automatically for all the radios in the group;
+- `defaultValue`: This accepts a value that set the `defaultChecked` property for the radio that have the same value;
 - `value`: Same as `defaultValue` but this one sets the `isChecked` property, making the radio group controlled;
 - `onChange`: Handler that will be executed when any radio inside the group receives the event of change.
 
 ```jsx
-<React.Fragment>
-  <FormControl.Label marginBottom="none">Radio group options</FormControl.Label>
+<FormControl as="fieldset">
+  <FormControl.Label as="legend" marginBottom="none">
+    Radio group options
+  </FormControl.Label>
   <Paragraph>Subtitle with more information if needed</Paragraph>
-  <RadioGroup name="radio-options" defaultValue="option 1">
+  <Radio.Group name="radio-options" defaultValue="option 1">
     <Radio value="option 1" id="option-1" helpText="Help text for option 1">
       Option 1
     </Radio>
     <Radio value="option 2" id="option-2" helpText="Help text for option 2">
       Option 2
     </Radio>
-  </RadioGroup>
+  </Radio.Group>
 </React.Fragment>
 ```
 
@@ -170,6 +172,7 @@ The Radio can be rendered as disabled with the `isDisabled` property.
 ## Accessibility
 
 - To ensure `Radio` meets accessibility standards, provide `name` and `id`
+- When using `Radio.Group` it should be wrapped in a `<FormControl as="fieldset">` and have a `<FormControl.Label as="legend">`
 
 ## Props
 
@@ -179,6 +182,6 @@ import { Props } from '@contentful/f36-docs-utils';
 
 <Props of="Radio" />
 
-### Props RadioGroup
+### Props Group
 
 <Props of="RadioGroup" />

@@ -44,7 +44,6 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
     href,
     icon,
     isDragging = false,
-    isFocused: isFocusedProp,
     isHovered: isHoveredProp,
     isSelected = false,
     onBlur,
@@ -66,7 +65,6 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
   forwardedRef: React.Ref<HTMLElement>,
 ) {
   const styles = getBaseCardStyles();
-  const [isFocused, setIsFocused] = useState(isFocusedProp ?? false);
   const [isHovered, setIsHovered] = useState(isHoveredProp ?? false);
   const isInteractive = Boolean(onClick || href || withDragHandle);
   const hasHeader = Boolean(header);
@@ -83,8 +81,6 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
 
   const handleFocus = useCallback<FocusEventHandler<HTMLElement>>(
     (event) => {
-      setIsFocused(true);
-
       if (onFocus) {
         onFocus(event);
       }
@@ -94,8 +90,6 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
 
   const handleBlur = useCallback<FocusEventHandler<HTMLElement>>(
     (event) => {
-      setIsFocused(false);
-
       if (onBlur) {
         onBlur(event);
       }
@@ -133,21 +127,11 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
 
   const handleKeyDown = useCallback<KeyboardEventHandler<HTMLElement>>(
     (event) => {
-      if (
-        onClick &&
-        (event.nativeEvent.code === 'Enter' ||
-          event.nativeEvent.code === 'Space')
-      ) {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore Disable check because of different event types
-        onClick(event);
-      }
-
       if (onKeyDown) {
         onKeyDown(event);
       }
     },
-    [onClick, onKeyDown],
+    [onKeyDown],
   );
 
   if (isLoading) {
@@ -178,7 +162,6 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
       className={cx(
         styles.root({
           hasHeader,
-          isFocused,
           isHovered,
           isSelected,
         }),

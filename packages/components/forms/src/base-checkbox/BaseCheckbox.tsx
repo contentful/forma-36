@@ -92,6 +92,13 @@ function _BaseCheckbox(
   const ariaChecked =
     typeof isChecked !== undefined ? isChecked : defaultChecked;
 
+  const helpTextId = id ? `${id}-helptext` : undefined;
+  const ariaDescribedBy = isInvalid
+    ? `${formFieldId}-validation`
+    : helpText
+    ? helpTextId
+    : undefined;
+
   return (
     <Flex className={className}>
       <Text
@@ -122,9 +129,7 @@ function _BaseCheckbox(
           required={isRequired}
           aria-required={isRequired ? 'true' : undefined}
           aria-invalid={isInvalid ? 'true' : undefined}
-          aria-describedby={`${formFieldId}-${
-            isInvalid ? `validation` : `helptext`
-          }`}
+          aria-describedby={ariaDescribedBy}
           id={id}
           name={name}
         />
@@ -137,10 +142,7 @@ function _BaseCheckbox(
         {children}
       </Text>
       {helpText && (
-        <HelpText
-          id={id ? `${id}-helptext` : undefined}
-          className={styles.helpText}
-        >
+        <HelpText id={helpTextId} className={styles.helpText}>
           {helpText}
         </HelpText>
       )}

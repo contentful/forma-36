@@ -7,7 +7,7 @@ export const getAssetCardStyles = () => {
     asset: css({
       height: '100%',
     }),
-    root: ({ isSelected, size }) => {
+    root: ({ size }) => {
       const styles: ObjectInterpolation<undefined> = {
         borderRadius: tokens.borderRadiusMedium,
         minWidth: `calc(1rem * (120 / ${tokens.fontBaseDefault}))`,
@@ -25,12 +25,6 @@ export const getAssetCardStyles = () => {
           padding: 0,
         },
       };
-
-      if (isSelected) {
-        styles.backgroundColor = tokens.colorWhite;
-        styles.borderColor = tokens.blue500;
-        styles.boxShadow = `0 0 0 1px ${tokens.gray300}`;
-      }
 
       return css(styles);
     },

@@ -71,6 +71,10 @@ module.exports = {
             link: '/guidelines/accessibility/',
           },
           {
+            name: 'Contributing to Forma 36',
+            link: '/guidelines/contributing/',
+          },
+          {
             name: 'Copy',
             link: '',
             menuLinks: [

@@ -3,65 +3,70 @@
 ## Table of contents
 
 - [Table of contents](#table-of-contents)
-- [How to migrate your packages to v4](#How-to-migrate-your-packages-to-v4)
-- [Changes per Component in v4](#Changes-per-component-in-v4)
-  - [Tag becomes Badge](#Tag-becomes-Badge)
-    - [How to migrate your Tag to Badge](#How-to-migrate-your-Tag-to-Badge)
+- [How to migrate your packages to v4](#how-to-migrate-your-packages-to-v4)
+- [Changes per Component in v4](#changes-per-component-in-v4)
+  - [Tag becomes Badge](#tag-becomes-badge)
+    - [How to migrate your Tag to Badge](#how-to-migrate-your-tag-to-badge)
   - [Button](#button)
-    - [How to migrate your Button components](#How-to-migrate-your-Button-components)
+    - [How to migrate your Button components](#how-to-migrate-your-button-components)
+  - [Icon](#icon)
+    - [How to migrate your Icon components](#how-to-migrate-your-icon-components)
+  - [IconButton](#iconbutton)
+    - [How to migrate your IconButton components](#how-to-migrate-your-iconbutton-components)
   - [Flex](#flex)
-    - [How to migrate your Flex components](#How-to-migrate-your-Flex-components)
+    - [How to migrate your Flex components](#how-to-migrate-your-flex-components)
   - [Grid](#grid)
-    - [How to migrate your Grid components](#How-to-migrate-your-Grid-components)
+    - [How to migrate your Grid components](#how-to-migrate-your-grid-components)
 
 ## How to migrate your packages to v4
 
 Install a package that contains all of the components from Forma 36. Tree-shaking will take care of your build, so it will include only components that you use.
-We separate only icons from the main package. If you need to use our icons, please install them separately. You can do that, by running:
+We separate only icons from the main package. If you need to use our icons, install them separately, by running the following commands:
+:
 
-When using NPM
+For NPM
 
-```
-npm install @contentul/f36-components@next-v4
-npm install @contentful/f36-icons@next-v4
-```
-
-When using YARN
-
-```
-yarn add @contentul/f36-components@next-v4
-yarn add @contentful/f36-icons@next-v4
+```sh
+npm install @contentul/f36-components@beta
+npm install @contentful/f36-icons@beta
 ```
 
-We provide an option to install separate packages. You will be able to use chosen components separately.
-For example, you need only `Button` component in your project, you can add this package like:
+For YARN
 
-When using NPM
-
-```
-npm install @contentul/f36-button@next-v4
+```sh
+yarn add @contentul/f36-components@beta
+yarn add @contentful/f36-icons@beta
 ```
 
-When using YARN
+You can install separate packages and use chosen components separately.
+For example, if you need only the `Button` component in your project, you can add this package by running the following command:
 
+For NPM
+
+```sh
+npm install @contentul/f36-button@beta
 ```
-yarn add @contentul/f36-button@next-v4
+
+For YARN
+
+```sh
+yarn add @contentul/f36-button@beta
 ```
 
 ## Changes per component in v4
 
 ### Tag becomes Badge
 
-Do you remember `<Tag>` component?
-We noticed that this component is used more as a visual indicator in the interface than a tag. That's why in v4 we decided to migrate it to `<Badge>` component. The property `entityStatusType` was migrated to be a separate component `EntityStatusBadge`.
+Remember the `<Tag>` component?
+Since this component was used more as a visual indicator in the interface than a tag, in v4 we migrated it to the `<Badge>` component. The property `entityStatusType` was migrated to be a separate component `EntityStatusBadge`.
 
-Now, instead of doing:
+Now, instead of:
 
 ```tsx static=true
 <Tag entityStatusType="draft">Draft</Tag>
 ```
 
-you can just do:
+you can use:
 
 ```tsx static=true
 <EntityStatusBadge entityStatusType="draft" />
@@ -69,13 +74,11 @@ you can just do:
 
 #### How to migrate your Tag to Badge
 
-To migrate your v3 `Tag` component to v4 `Badge` you can simply run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) that we prepared for this occasion, like:
+To migrate your v3 `Tag` component to v4 `Badge` run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
 
-What codemod will do for you, and what you can do yourself manually if you decide to do so, is:
-
-it transforms:
+When running the codemod the following changes occur:
 
 ```tsx static=true
 import { Tag } from '@contentful/forma-36-react-components';
@@ -93,7 +96,7 @@ import { Tag } from '@contentful/forma-36-react-components';
 <Tag entityStatusType="draft">Draft</Tag>;
 ```
 
-into:
+becomes:
 
 ```tsx static=true
 import { Badge, EntityStatusBadge } from '@contentful/f36-components';
@@ -111,9 +114,11 @@ import { Badge, EntityStatusBadge } from '@contentful/f36-components';
 <EntityStatusBadge entityStatusType="draft" />;
 ```
 
+You can also make these changes manually.
+
 ### Button
 
-Button in version 4 of Forma 36 does not change much visually but we provide some API improvements, that we hope you gonna be happy with. All the changes are based on our codestyleguide, which allows us to create consistent, easy to use API. For example:
+In v4 the Button component has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
 
 ```tsx static=true
 <Button buttonType="primary" loading>
@@ -124,7 +129,7 @@ Button in version 4 of Forma 36 does not change much visually but we provide som
 </Button>;
 ```
 
-will become:
+becomes:
 
 ```tsx static=true
 <Button variant="primary" isLoading>
@@ -137,13 +142,11 @@ will become:
 
 #### How to migrate your Button components
 
-To migrate your v3 `Button` component to the version 4 you can simply run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) that we prepared for this occasion, like:
+To migrate the `Button` component to the v4 run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
 
-What codemod will do for you, and what you can do yourself manually if you decide to do so, is:
-
-it transforms:
+When running the codemod, the following changes occur:
 
 ```tsx static=true
 import { Button } from '@contentful/forma-36-react-components';
@@ -189,7 +192,7 @@ import { Button } from '@contentful/forma-36-react-components';
 <Button isActive>Active button</Button>;
 ```
 
-into:
+becomes:
 
 ```tsx static=true
 import { Button } from '@contentful/f36-components';
@@ -261,27 +264,217 @@ import {
 </Button>;
 ```
 
-### Flex
+You can also make these changes manually.
 
-Flex component is now part of the `@contentful/f36-core` package. The only improvement that was done for Flex component in version 4 was to align properties with our (codestyleguide)[./docs/code-style-guide.md]. This way, we hope, we provided you API that is more aligned and consistent. For example:
+## Icon
+
+In v4, the Icon component has a simplified API. You can a required icon from `@contentful/f36-icons`.
+
+```tsx static=true
+import { ChevronLeftIcon } from '@contentful/f36-icons';
+
+<ChevronLeftIcon size="small" variant="primary" />;
+```
+
+To use an icon from a third-party library, you can pass it as `as` prop:
+
+```tsx static=true
+import { Icon } from '@contentful/f36-icons';
+import { MdAccessAlarm } from 'react-icons/md';
+
+const AccessAlarm = (props) => {
+  return <Icon {...props} as={MdAccessAlarm} variant="secondary" />;
+};
+```
+
+There is an option to render a custom icon as a child with standard HTML tags:
+
+```tsx static=true
+import { Icon } from '@contentful/f36-icon';
+
+const CustomIcon = (props) => {
+  return (
+    <Icon {...props} variant="secondary">
+      <path d="M7 10l5 5 5-5z" />,
+      <path d="M0 0h24v24H0z" fill="none" />
+    </Icon>
+  );
+};
+```
+
+### How to migrate your Icon components
+
+To migrate the Icon component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to do it manually, you must transform your code as follows:
+
+```tsx static=true
+import { Icon } from '@contentful/forma-36-react-components';
+
+<div>
+  <Icon color="primary" icon="Edit" />
+  <Icon color="positive" icon="Asset" size="small" />
+  <Icon color="negative" icon="ChevronUp" className="customClassName" />
+  <Icon color="warning" icon="Close" style={{ marginLeft: 0 }} />
+  <Icon color="secondary" icon="EditTrimmed" />
+  <Icon color="muted" icon="Download" />
+  <Icon color="white" icon="FolderTrimmed" size="large" />
+</div>;
+
+const isCondition = true;
+
+<div>
+  <Icon color="primary" icon={isCondition ? 'Edit' : 'ChevronUp'} />
+</div>;
+```
+
+into this new version:
+
+```tsx static=true
+import { Icon } from '@contentful/f36-components';
+
+import {
+  EditIcon,
+  AssetIcon,
+  ChevronUpIcon,
+  CloseIcon,
+  EditTrimmedIcon,
+  DownloadIcon,
+  FolderTrimmedIcon,
+} from '@contentful/f36-icons';
+
+<div>
+  <EditIcon variant="primary" />
+  <AssetIcon variant="positive" size="small" />
+  <ChevronUpIcon variant="negative" className="customClassName" />
+  <CloseIcon variant="warning" style={{ marginLeft: 0 }} />
+  <EditTrimmedIcon variant="secondary" />
+  <DownloadIcon variant="muted" />
+  <FolderTrimmedIcon variant="white" size="large" />
+</div>;
+
+const isCondition = true;
+
+<div>
+  <Icon variant="primary" as={isCondition ? EditIcon : ChevronUpIcon} />
+</div>;
+```
+
+## IconButton
+
+The API of the IconButton component has changed slightly:
+
+- The icon is defined by icon element, passed to `icon` prop.
+- There is no `iconProps` anymore as - icon props are passed directly to the icon element.
+
+```tsx static=true
+import { IconButton } from '@contentful/f36-button';
+import { PreviewIcon } from '@contentful/f36-icons';
+
+<IconButton
+  variant="transparent"
+  aria-label="Preview"
+  icon={<PreviewIcon variant="secondary" size="medium" />}
+/>;
+```
+
+### How to migrate your IconButton components
+
+To migrate the IconButton component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to do it manually, you must transform your code as follows:
+
+```tsx static=true
+import { IconButton } from '@contentful/forma-36-react-components';
+
+<IconButton
+  label="Some label"
+  buttonType="muted"
+  iconProps={{ icon: 'ChevronDown', className: 'className' }}
+/>;
+
+const isCollapsed = true;
+<IconButton
+  label="Some label"
+  buttonType="muted"
+  iconProps={{
+    icon: isCollapsed ? 'ChevronDown' : 'ChevronUp',
+    className: 'className',
+  }}
+  disabled={isCollapsed}
+/>;
+
+<IconButton
+  buttonType={isCollapsed ? 'muted' : 'primary'}
+  label="Delete"
+  iconProps={{ icon: 'Close' }}
+  onClick={() => {}}
+/>;
+```
+
+into this new version:
+
+```tsx static=true
+import { IconButton } from '@contentful/f36-components';
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  CloseIcon,
+} from '@contentful/f36-icons';
+
+<IconButton
+  variant="transparent"
+  icon={<ChevronDownIcon variant="muted" className="className" />}
+  aria-label="Some label"
+/>;
+
+const isCollapsed = true;
+<IconButton
+  variant="transparent"
+  icon={
+    isCollapsed ? (
+      <ChevronDownIcon variant="muted" className="className" />
+    ) : (
+      <ChevronUpIcon variant="muted" className="className" />
+    )
+  }
+  aria-label="Some label"
+  isDisabled={isCollapsed}
+/>;
+
+<IconButton
+  variant="transparent"
+  icon={<CloseIcon variant={isCollapsed ? 'muted' : 'primary'} />}
+  aria-label="Delete"
+  onClick={() => {}}
+/>;
+```
+
+## Flex
+
+The Flex component is now part of the `@contentful/f36-core` package. The only improvement that was done for the Flex component in version 4 was to align properties with our [code style guide](./docs/code-style-guide.md). This way, we hope, the API is more aligned and consistent. For example:
 
 ```tsx
 <Flex inlineFlex />
 ```
 
-will become:
+becomes:
 
 ```tsx
 <Flex isInline />
 ```
 
-#### How to migrate your Flex components
+### How to migrate your Flex components
 
-Run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) to migrate your v3 `Flex` component to the new version:
+To migrate the Flex component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
 
-If you decide to do it manually, you would need to transform you exising code:
+If you want to do it manually, you must transform your existing code as follows:
 
 ```tsx static=true
 import { Flex } from '@contentful/forma-36-react-components';
@@ -293,7 +486,7 @@ import { Flex } from '@contentful/forma-36-react-components';
 <Flex flexDirection="row" noShrink />;
 ```
 
-into:
+into this new version:
 
 ```tsx static=true
 import { Flex } from '@contentful/f36-components';
@@ -307,15 +500,15 @@ import { Flex } from '@contentful/f36-components';
 
 ### Grid
 
-Grid component is now part of the `@contentful/f36-core` package. The same as for Flex component, the only improvement that was done for Grid in version 4 was the alignment of the properties with our (codestyleguide)[./docs/code-style-guide.md]:
+The Grid component is now part of the `@contentful/f36-core` package. Only improvement that was done for the Grid in version 4 was the alignment of the properties with our [code style guide](./docs/code-style-guide.md):
 
 #### How to migrate your Grid components
 
-Run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) to migrate your v3 `Grid` component to the new version:
+To migrate your Grid component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
 
-If you decide to do it manually, you would need to transform you exising code:
+If you want to do it manually, you must transform your existing code as follows:
 
 ```tsx static=true
 import { Grid, GridItem } from '@contentful/forma-36-react-components';
@@ -330,7 +523,7 @@ import { Grid, GridItem } from '@contentful/forma-36-react-components';
 </Grid>;
 ```
 
-into:
+into this new version:
 
 ```tsx static=true
 import { Grid, GridItem } from '@contentful/f36-components';

@@ -5,7 +5,7 @@ status: 'stable'
 slug: /components/entity-list/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/entity-list'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-entity-list--default'
-typescript: ./src/EntityList.tsx
+typescript: ./src/EntityList.tsx,./src/EntityListItem/EntityListItem.tsx
 ---
 
 # EntityList
@@ -100,8 +100,14 @@ This component should be used in combination with the EntityList.Item component.
 </EntityList>
 ```
 
-## Props of EntityList
+## Props
 
 import { Props } from '@contentful/f36-docs-utils';
+
+### EntityList
+
+<Props of="EntityList" />
+
+### EntityList.Item
 
 <Props of="EntityListItem" />

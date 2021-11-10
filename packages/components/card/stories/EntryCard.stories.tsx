@@ -109,25 +109,6 @@ export const Overview: Story<EntryCardProps> = () => {
 
         <Flex flexDirection="column" gap="spacingM">
           <SectionHeading as="h3" marginBottom="none">
-            Focus
-          </SectionHeading>
-
-          {['default', 'small'].map((size) => (
-            <EntryCard
-              key={size}
-              isFocused
-              status="changed"
-              thumbnailElement={thumbnail}
-              title="Forma 36"
-              contentType="Design system"
-              description={description}
-              size={size as any}
-            />
-          ))}
-        </Flex>
-
-        <Flex flexDirection="column" gap="spacingM">
-          <SectionHeading as="h3" marginBottom="none">
             Selected
           </SectionHeading>
 

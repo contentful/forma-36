@@ -6,10 +6,8 @@ import { Button } from '@contentful/f36-button';
 
 import {
   Checkbox,
-  CheckboxGroup,
   Form,
   FormControl,
-  RadioGroup,
   Radio,
   Select,
   Textarea,
@@ -142,8 +140,8 @@ export const WithRadioGroup = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormControl>
-        <FormControl.Label>Favorite fruit</FormControl.Label>
+      <FormControl as="fieldset">
+        <FormControl.Label as="legend">Favorite fruit</FormControl.Label>
 
         {/**
          * We need to pass an empty string as default value otherwise react will trigger the uncontrolled inputs warning
@@ -179,10 +177,10 @@ export const WithCheckboxGroup = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormControl>
-        <FormControl.Label>Favorite fruits</FormControl.Label>
+      <FormControl as="fieldset">
+        <FormControl.Label as="legend">Favorite fruits</FormControl.Label>
 
-        <CheckboxGroup name="favorite-fruits">
+        <Checkbox.Group name="favorite-fruits">
           <ControlledCheckbox control={control} id="apples" value="apples">
             Apples
           </ControlledCheckbox>
@@ -194,7 +192,7 @@ export const WithCheckboxGroup = () => {
           <ControlledCheckbox control={control} id="peaches" value="peaches">
             Peaches
           </ControlledCheckbox>
-        </CheckboxGroup>
+        </Checkbox.Group>
       </FormControl>
 
       <Button variant="primary" type="submit">
@@ -245,8 +243,8 @@ function ControlledSelect(props) {
 function ControlledRadioGroup(props) {
   const { ref, inputProps } = useReactHookFormController(props);
   return (
-    <RadioGroup {...inputProps} ref={ref}>
+    <Radio.Group {...inputProps} ref={ref}>
       {props.children}
-    </RadioGroup>
+    </Radio.Group>
   );
 }

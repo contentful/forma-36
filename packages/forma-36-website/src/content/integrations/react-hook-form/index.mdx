@@ -16,7 +16,6 @@ import {
   Form,
   FormControl,
   Radio,
-  RadioGroup,
   Select,
   Textarea,
   TextInput,
@@ -78,18 +77,21 @@ export const ReactHookForm = () => {
         </Select>
       </FormControl>
 
-      <FormControl>
-        <FormControl.Label>Martial status</FormControl.Label>
+      <FormControl as="fieldset">
+        <FormControl.Label as="legend">Martial status</FormControl.Label>
 
-        {/* When using RadioGroup, it’s necessary to register each Radio with the same "name" */}
-        <RadioGroup defaultValue="single">
+        {/*
+          When using Radio.Group, it’s necessary to register each Radio with the same "name".
+          This is necessary because of how react-hook-form works.
+        */}
+        <Radio.Group defaultValue="single">
           <Radio value="married" {...register('martial-status')} >
             Married
           </Radio>
           <Radio value="single" {...register('martial-status')}>
             Single
           </Radio>
-        </RadioGroup>
+        </Radio.Group>
       </FormControl>
 
       <FormControl isInvalid={Boolean(errors.checkbox)}>

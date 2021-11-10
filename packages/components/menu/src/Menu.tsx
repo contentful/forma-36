@@ -198,7 +198,7 @@ export function Menu(props: MenuProps) {
             return;
           }
 
-          closeAndFocusTrigger();
+          handleClose();
         },
       }),
       getMenuItemProps: (_props = {}) => ({
