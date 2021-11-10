@@ -673,7 +673,7 @@ In version 3:
 </Modal.Controls>
 ```
 
-In the version 4:
+In version 4:
 
 ```tsx
 <Modal.Controls>
