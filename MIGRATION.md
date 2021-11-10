@@ -559,10 +559,15 @@ import { Grid, GridItem } from '@contentful/f36-components';
 
 ## Form Components
 
-We changed how the Form Components work on the version 4, on the version 3 we had the Field components that would handle the everything related to a Field, like the Label, HelpText and ValidationMessage.  
-For the version 4 we created the `FormControl` which gives more flexibility to the user, when migrating to the version 4, you would need to use it.
+We changed how the Form Components work on version 4. In version 3 we had the Field components, like `TextField` or `SelectField` that would handle elements like Label, HelpText, and ValidationMessage.
+For version 4 we created the `FormControl` which gives more flexibility to the user and controls the given input, its validation, state, etc.
+Within `FormControl` component, you have available all the previous options, so:
+ - `FormControl.Label`
+ - `FormControl.HelpText`
+ - `FormControl.ValidationMessage` 
+ - `FormControl.Counter`
 
-And all our Form Components can be used either as controlled or uncontrolled component, this is defined by using the `defaulValue`/`defaultChecked` prop for uncontrolled components and `value`/`isChecked` with an `onChange` props for the controlled version. For example:
+Any Forma 36 form element can be used either as controlled or uncontrolled components, by using the `defaulValue`/`defaultChecked` prop for uncontrolled and `value`/`isChecked` with an `onChange` props for the controlled version. For example:
 
 ```jsx static=true
 // This would render the TextInput as an uncontrolled component
@@ -574,7 +579,7 @@ And all our Form Components can be used either as controlled or uncontrolled com
 
 ### Field Components
 
-The `CheckboxField`, `RadioButtonField`, `SelectField`, and `TextField` components were removed on the version 4, and need to be replaced by the new `FormControl` component and it's compound components. For example:
+The `CheckboxField`, `RadioButtonField`, `SelectField`, and `TextField` components were removed in version 4, and need to be replaced by the new `FormControl` component and its compound components. For example:
 
 ```tsx static=true
 // Checkbox
@@ -679,7 +684,7 @@ import { Checkbox, TextInput, FormControl } from '@contentful/f36-components';
 
 ### Checkbox
 
-With the removal of the `CheckboxField` component, we updated how this component works on the version 4, on the version 3 it only rendered the checkbox input without anything else, now it also handles the label and help text for the checkbox. For example:
+We removed `CheckboxField` component in version 4. Now instead of doing:
 
 ```jsx static=true
 import { Checkbox } from '@contentful/forma-36-react-components';
@@ -689,7 +694,7 @@ import { Checkbox } from '@contentful/forma-36-react-components';
 
 This example would render only the input and the `labelText` would be set as the `aria-label`.
 
-On the version 4:
+You will do:
 
 ```jsx static=true
 import { Checkbox } from '@contentful/f36-components';
@@ -703,7 +708,7 @@ import { Checkbox } from '@contentful/f36-components';
 </Checkbox>
 ```
 
-We also had some API changes on the checkbox, check the props that were renamed:
+We also introduced API changes for the checkbox. This is an overview of the renamed properties:
 
 - `required` was renamed to `isRequired`;
 - `labelText` should be replaced by `aria-label` when not passing a label to the checkbox;
@@ -713,7 +718,7 @@ We also had some API changes on the checkbox, check the props that were renamed:
 
 #### How to migrate your checkbox components
 
-The migration for the Checkbox needs to be manually as it depends on the context that the component is being used, for example:
+The migration for the version 3 `Checkbox` component needs to be manual as it depends on the context that the component is being used, for example:
 
 ```jsx static=true
 import {
@@ -728,7 +733,7 @@ import {
 </Box>;
 ```
 
-could become:
+becomes:
 
 ```jsx static=true
 import { Checkbox } from '@contentful/f36-components';
@@ -742,7 +747,7 @@ If you only use `CheckboxField` component, please check the [Field components](#
 
 ### RadioButton
 
-We renamed the `RadioButton` component to be only `Radio`, also with the removal of the `RadioButtonField` component, we updated how this component works on the version 4, on the version 3 it only rendered the radio input without anything else, now it also handles the label and help text for it. For example:
+In the version 4 we renamed the `RadioButton` to `Radio`, and we removed `RadioButtonField` component. Now instead of doing:
 
 ```jsx static=true
 import { RadioButton } from '@contentful/forma-36-react-components';
@@ -750,9 +755,9 @@ import { RadioButton } from '@contentful/forma-36-react-components';
 <RadioButton name="someOption" id="radio" labelText="some label" />;
 ```
 
-This example would render only the input and the `labelText` would be set as the `aria-label`.
+_Note: This example would render only the input and the `labelText` would be set as the `aria-label`._
 
-On the version 4:
+You will do the following:
 
 ```jsx static=true
 import { Radio } from '@contentful/f36-components';
@@ -766,7 +771,7 @@ import { Radio } from '@contentful/f36-components';
 </Radio>
 ```
 
-We also had some API changes on the radio props, check the props that were renamed:
+We also introduced API changes for the radio. This is an overview of the renamed properties:
 
 - `required` was renamed to `isRequired`;
 - `labelText` should be replaced by `aria-label` when not passing a label to the input;
@@ -807,7 +812,7 @@ import { Radio } from '@contentful/f36-components';
 
 ### Select
 
-We changed the `Select` component to be easier to use, instead of having to import both `Select` and `Option` components, on the version 4 we have the `Select.Option` compound component. We also had some API changes. For example:
+`Select` component becomes compound component in version 4. You can use `Select` and `Select.Option` , with just importing `Select`. You would need to transform your existing code:
 
 ```tsx static=true
 <Select id="optionSelect" name="optionSelect" width="large">
@@ -816,7 +821,7 @@ We changed the `Select` component to be easier to use, instead of having to impo
 </Select>
 ```
 
-will become:
+into the following:
 
 ```tsx static=true
 <Select id="optionSelect" name="optionSelect">
@@ -825,7 +830,7 @@ will become:
 </Select>
 ```
 
-We also had some API changes on the select, check the props that had changes:
+We also introduced some API changes for the select, check the props that had changes:
 
 - `width` was removed;
 - `required` was renamed to `isRequired`;
@@ -869,7 +874,7 @@ import { Select } from '@contentful/f36-components';
 
 ### Switch
 
-In v4 the Switch component has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
+In v4 the `Switch` component has received API improvements, that are based on our code style guide, which creates consistent, easy-to-use APIs. For example:
 
 ```jsx static=true
 import { Switch } from '@contentful/forma-36-react-components';
@@ -1104,7 +1109,7 @@ The migration should be done manually, using the Layout component that best fits
 
 ### Form
 
-The only thing that has changed on the Form component is that it doesn't have the spacing prop anymore. For example:
+In version 4 we removed `spacing` property for the Form component and that's the only API change for this component. For example:
 
 ```tsx static=true
 import { Form } from '@contentful/forma-36-react-components';
@@ -1154,7 +1159,7 @@ import { Form } from '@contentful/f36-components';
 
 ### FormLabel
 
-The FormLabel component was updated to be a compound component of the new FormControl component and it should be update to be wrapped by the FormControl component. For example:
+The `FormLabel` component was updated to be a compound component of the new `FormControl` component and it should be update to be wrapped by the `FormControl` component. For example:
 
 ```jsx static=true
 <FormLabel htmlFor="inputId" required>Label for the input</FormLabel>
