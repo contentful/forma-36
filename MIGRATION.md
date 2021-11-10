@@ -28,6 +28,8 @@
       - [How to migrate your Select components](#how-to-migrate-your-select-copmonents)
     - [Switch](#switch)
       - [How to migrate your Switch components](#how-to-migrate-your-switch-components)
+    - [TextInput and TextArea](#textinput-and-textarea)
+      - [How to migrate your TextInput and TextArea component](#how-to-migrate-your-textinput-and-textarea-components)
     - [FieldGroup](#fieldgroup)
       - [How to migrate your FieldGroup components](#how-to-migrate-your-fieldgroup-components)
     - [Form](#form)
@@ -914,6 +916,169 @@ const onChange = (event) => setIsChecked(event.target.checked);
   some label
 </Switch>;
 ```
+
+### TextInput and TextArea
+
+In v4 the TextInput and TextArea components have received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
+
+```jsx static=true
+<TextInput
+  id="someInput"
+  name="userEmail"
+  labelText="userEmail"
+  className="my-extra-class"
+  value="some value"
+/>
+
+<Textarea
+  id="someInput"
+  name="userEmail"
+  className="my-extra-class"
+  disabled
+  value="some value"
+/>;
+```
+
+becomes:
+
+```jsx static=true
+<TextInput
+  id="someInput"
+  name="userEmail"
+  aria-label="userEmail"
+  className="my-extra-class"
+  defaultValue="some value" />
+
+<Textarea
+  id="someInput"
+  name="userEmail"
+  className="my-extra-class"
+  isDisabled
+  defaultValue="some value" />;
+```
+
+#### How to migrate your TextInput and TextArea components
+
+To migrate the `TextInput` or `TextArea` components to the v4 run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+When running the codemod, the following changes occur:
+
+```tsx static=true
+import { TextInput, Textarea } from '@contentful/forma-36-react-components';
+
+<TextInput
+  id="someInput"
+  name="userEmail"
+  labelText="userEmail"
+  className="my-extra-class"
+  value="some value"
+/>;
+
+<TextInput
+  id="someInput"
+  name="userEmail"
+  labelText="userEmail"
+  disabled
+  required
+  value="some value"
+  onChange={() => {}}
+/>;
+
+<TextInput
+  id="someInput"
+  name="userEmail"
+  labelText="userEmail"
+  error
+  readOnly
+  width="large"
+  onChange={() => {}}
+/>;
+
+<TextInput
+  id="someInput"
+  name="userEmail"
+  labelText="userEmail"
+  withCopyButton
+  width="small"
+/>;
+
+<Textarea
+  id="someInput"
+  name="userEmail"
+  className="my-extra-class"
+  disabled
+  value="some value"
+/>;
+
+<Textarea
+  id="someInput"
+  name="userEmail"
+  className="my-extra-class"
+  error
+  width="large"
+  value="some value"
+  onChange={() => {}}
+/>;
+```
+
+becomes:
+
+```tsx static=true
+import { CopyButton, TextInput, Textarea } from '@contentful/f36-components';
+
+<TextInput
+  id="someInput"
+  name="userEmail"
+  aria-label="userEmail"
+  className="my-extra-class"
+  defaultValue="some value"
+/>;
+
+<TextInput
+  id="someInput"
+  name="userEmail"
+  aria-label="userEmail"
+  isDisabled
+  isRequired
+  value="some value"
+  onChange={() => {}}
+/>;
+
+<TextInput
+  id="someInput"
+  name="userEmail"
+  aria-label="userEmail"
+  isInvalid
+  isReadOnly
+  onChange={() => {}}
+/>;
+
+<TextInput.Group>
+  <TextInput id="someInput" name="userEmail" aria-label="userEmail" />
+  <CopyButton />
+</TextInput.Group>;
+
+<Textarea
+  id="someInput"
+  name="userEmail"
+  className="my-extra-class"
+  isDisabled
+  defaultValue="some value"
+/>;
+
+<Textarea
+  id="someInput"
+  name="userEmail"
+  className="my-extra-class"
+  isInvalid
+  value="some value"
+  onChange={() => {}}
+/>;
+```
+
+You can also make these changes manually.
 
 ### FieldGroup
 
