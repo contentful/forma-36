@@ -610,7 +610,7 @@ import { Note } from '@contentful/f36-components';
 
 The properties of the Notification component API have been aligned with our code [style guide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md).
 
-### How to migrate your Note components
+### How to migrate your Notification components
 
 Run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) to migrate your v3 `Note` component to the new version:
 
