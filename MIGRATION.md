@@ -562,10 +562,11 @@ import { Grid, GridItem } from '@contentful/f36-components';
 We changed how the Form Components work on version 4. In version 3 we had the Field components, like `TextField` or `SelectField` that would handle elements like Label, HelpText, and ValidationMessage.
 For version 4 we created the `FormControl` which gives more flexibility to the user and controls the given input, its validation, state, etc.
 Within `FormControl` component, you have available all the previous options, so:
- - `FormControl.Label`
- - `FormControl.HelpText`
- - `FormControl.ValidationMessage` 
- - `FormControl.Counter`
+
+- `FormControl.Label`
+- `FormControl.HelpText`
+- `FormControl.ValidationMessage`
+- `FormControl.Counter`
 
 Any Forma 36 form element can be used either as controlled or uncontrolled components, by using the `defaulValue`/`defaultChecked` prop for uncontrolled and `value`/`isChecked` with an `onChange` props for the controlled version. For example:
 
@@ -692,7 +693,7 @@ import { Checkbox } from '@contentful/forma-36-react-components';
 <Checkbox id="checkbox" name="checkbox" labelText="some label" />;
 ```
 
-This example would render only the input and the `labelText` would be set as the `aria-label`.
+_Note: This example would render only the input and the `labelText` would be set as the `aria-label`._
 
 You will do:
 
