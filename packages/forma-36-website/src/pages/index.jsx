@@ -64,6 +64,20 @@ function IndexPage() {
           and learn how to do it
         </Paragraph>
       </Section>
+      <Section>
+        <DisplayText>Give us feedback!</DisplayText>
+        <Paragraph>
+          Use one of the the templates on{' '}
+          <TextLink href="https://github.com/contentful/forma-36/issues/new/choose">
+            GitHub
+          </TextLink>
+        </Paragraph>
+        <Paragraph>
+          or use this anonymous{' '}
+          <TextLink href="https://forms.gle/qC7LLbiy4CcF5HPLA">form</TextLink>{' '}
+          to share your thougts and ideas with us.
+        </Paragraph>
+      </Section>
     </Layout>
   );
 }
