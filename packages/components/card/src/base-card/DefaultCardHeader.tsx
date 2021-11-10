@@ -70,7 +70,7 @@ export function DefaultCardHeader(
           {badge}
         </Flex>
       )}
-      {actions && (
+      {actions && actions.length > 0 && (
         <CardActions buttonProps={actionsButtonProps}>{actions}</CardActions>
       )}
     </Flex>
