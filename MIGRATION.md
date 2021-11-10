@@ -688,7 +688,7 @@ To migrate your `Modal` component to v4, run the following [codemod](https://git
 
 `npx @contentful/f36-codemod`
 
-If you decide to do it manually, you would need to transform you existing code:
+If you want to do it manually, you must transform your existing code as follows:
 
 ```tsx
 import {
