@@ -34,6 +34,8 @@
       - [How to migrate your FieldGroup components](#how-to-migrate-your-fieldgroup-components)
     - [Form](#form)
       - [How to migrate your Form components](#how-to-migrate-your-form-components)
+    - [FormLabel](#formlabel)
+      - [How to migrate your FormLabel components](#how-to-migrate-your-formlabe-components)
 
 ## How to migrate your packages to v4
 
@@ -601,7 +603,7 @@ will become:
 
 ```tsx static=true
 // Checkbox
-<FormControl id="some id">
+<FormControl id="some-id">
   <Checkbox helpText="Some help text">Your label text</Checkbox>
   <FormControl.ValidationMessage>validation message</FormControl.ValidationMessage>
 </FormControl>
@@ -1148,4 +1150,52 @@ import { Form } from '@contentful/f36-components';
 <Form onSubmit={handleSubmit}>
   Form elements goes here and spacing value is removed
 </Form>;
+```
+
+### FormLabel
+
+The FormLabel component was updated to be a compound component of the new FormControl component and it should be update to be wrapped by the FormControl component. For example:
+
+```jsx static=true
+<FormLabel htmlFor="inputId" required>Label for the input</FormLabel>
+<TextInput name="input" id="inputId">
+```
+
+becomes:
+
+```jsx static=true
+<FormControl.FormLabel htmlFor="inputId" isRequired>Label for the input</FormControl.FormLabel>
+<TextInput name="input" id="inputId">
+
+// You can also use the FormControl to wrap it, and it would handle the id and isRequired
+<FormControl isRequired id="inputId">
+  <FormControl.FormLabel>Label for the input</FormControl.FormLabel>
+  <TextInput name="input">
+</FormControl>
+```
+
+#### How to migrate your FormLabel components
+
+The migration for the FormLabel needs to be done manually by updating the usage. For example:
+
+```jsx static=true
+import { TextInput, FormLabel } from '@contentful/forma-36-react-components';
+
+<FormLabel htmlFor="inputId" required requiredText="required field">Label for the input</FormLabel>
+<TextInput name="input" id="inputId">
+```
+
+into this new version:
+
+```jsx static=true
+import { FormControl, TextInput } from '@contentful/f36-components';
+
+<FormControl.FormLabel htmlFor="inputId" isRequired requiredText="required field">Label for the input</FormControl.FormLabel>
+<TextInput name="input" id="inputId">
+
+// You can also use the FormControl to wrap it, and it would handle the id and isRequired
+<FormControl isRequired id="inputId">
+  <FormControl.FormLabel requiredText="required field">Label for the input</FormControl.FormLabel>
+  <TextInput name="input">
+</FormControl>
 ```
