@@ -52,6 +52,8 @@
     - [How to migrate your Dropdown components](#how-to-migrate-your-dropdown-components)
       - [`Dropdown` to `Menu`](#dropdown-to-menu)
       - [`Dropdown` to `Popover`](#dropdown-to-popover)
+  - [Tabs](#tabs)
+    - [How to migrate your Tabs components](#how-to-migrate-your-tabs-components)
 
 ## How to migrate your packages to v4
 
@@ -1393,6 +1395,128 @@ Notification.success(notificationText, {
 });
 
 Notification.setPlacement(placement, { offset: 0 });
+```
+
+### Tabs
+
+The API for Tabs components was changed. First of all, there is no `role` prop anymore, Tabs could be only used with role `"tabs"`. This is how the new API looks now:
+
+```tsx static=true
+import { Tabs } from '@contentful/f36-components';
+
+<Tabs defaultTab="first">
+  <Tabs.List variant="vertical-divider">
+    <Tabs.Tab panelId="first">First</Tabs.Tab>
+    <Tabs.Tab panelId="second">Second</Tabs.Tab>
+    <Tabs.Tab panelId="third">Third</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel id="first">Content for the first tab</Tabs.Panel>
+  <Tabs.Panel id="second">Content for the second tab</Tabs.Panel>
+  <Tabs.Panel id="third">Content for the third tab</Tabs.Panel>
+</Tabs>;
+```
+
+It's also possible to use `Tabs` as a controlled component. Here is the example:
+
+```tsx static=true
+import { Tabs } from '@contentful/f36-components';
+
+() => {
+  const [currentTab, setCurrentTab] = React.useState('first');
+  return (
+    <Tabs currentTab={currentTab} onTabChange={setCurrentTab}>
+      <Tabs.List>
+        <Tabs.Tab panelId="first">First</Tabs.Tab>
+        <Tabs.Tab panelId="second">Second</Tabs.Tab>
+        <Tabs.Tab panelId="third">Third</Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel id="first">content first tab</Tabs.Panel>
+      <Tabs.Panel id="second">content second tab</Tabs.Panel>
+      <Tabs.Panel id="third">content third tab</Tabs.Panel>
+    </Tabs>
+  );
+};
+```
+
+#### How to migrate your Grid components
+
+With the sagnificant changes to Tabs API, we don't have a codemod to migrate this component. This will have to be done manually. From this:
+
+```tsx static=true
+import { Tabs, Tab, TabPanel } from '@contentful/forma-36-react-components';
+
+() => {
+  const [selected, setSelected] = useState('first');
+
+  const onSelect = (id) => {
+    setSelected(id);
+  }
+
+  return (
+    <div>
+      <Tabs>
+        <Tab
+          id="first"
+          selected={selected === 'first'}
+          onSelect={onSelect}
+        >
+          First
+        </Tab>
+        <Tab
+          id="second"
+          selected={selected === 'second'}
+          onSelect={onSelect}
+        >
+          Second
+        </Tab>
+      </Tabs>
+      {selected === 'first' && (
+        <TabPanel id="first">content first tab</TabPanel>
+      )}
+      {selected === 'second' && (
+        <TabPanel id="second">content second tab</TabPanel>
+      )}
+    </div>
+```
+
+to just this:
+
+```tsx static=true
+import { Tabs } from '@contentful/f36-components';
+
+<Tabs defaultTab="first">
+  <Tabs.List>
+    <Tabs.Tab panelId="first">First</Tabs.Tab>
+    <Tabs.Tab panelId="second">Second</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel id="first">content first tab</Tabs.Panel>
+  <Tabs.Panel id="second">content second tab</Tabs.Panel>
+</Tabs>;
+```
+
+or, if you would like to keep the cotrolled version, you can make it this way:
+
+```tsx static=true
+import { Tabs } from '@contentful/f36-components';
+
+() => {
+  const [currentTab, setCurrentTab] = React.useState('first');
+
+  const onSelect = (id) => {
+    setSelected(id);
+  };
+
+  return (
+    <Tabs currentTab={currentTab} onTabChange={onSelect}>
+      <Tabs.List>
+        <Tabs.Tab panelId="first">First</Tabs.Tab>
+        <Tabs.Tab panelId="second">Second</Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel id="first">content first tab</Tabs.Panel>
+      <Tabs.Panel id="second">content second tab</Tabs.Panel>
+    </Tabs>
+  );
+};
 ```
 
 ## Modal
