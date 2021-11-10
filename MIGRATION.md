@@ -17,6 +17,13 @@
     - [How to migrate your Flex components](#how-to-migrate-your-flex-components)
   - [Grid](#grid)
     - [How to migrate your Grid components](#how-to-migrate-your-grid-components)
+  - [Form Components](#form-components)
+    - [Field Components](#field-components)
+      - [How to migrate your Field components](#how-to-migrate-your-field-components)
+    - [FieldGroup](#fieldgroup)
+      - [How to migrate your FieldGroup components](#how-to-migrate-your-fieldgroup-components)
+    - [Form](#form)
+      - [How to migrate your Form components](#how-to-migrate-your-form-components)
 
 ## How to migrate your packages to v4
 
@@ -536,4 +543,184 @@ import { Grid, GridItem } from '@contentful/f36-components';
   <GridItem />
   <GridItem />
 </Grid>;
+```
+
+## Form Components
+
+We changed how the Form Components work on the version 4, on the version 3 we had the Field components that would handle the everything related to a Field, like the Label, HelpText and ValidationMessage.  
+For the version 4 we created the `FormControl` which gives more flexibility to the user, when migrating to the version 4, you would need to use it.
+
+### Field Components
+
+The `CheckboxField`, `RadioButtonField`, `SelectField`, and `TextField` components were removed on the version 4, and need to be replaced by the new `FormControl` component and it's compound components. For example:
+
+```tsx static=true
+// Checkbox
+<CheckboxField
+  labelText="Your label text"
+  id="some-id"
+  type="checkbox"
+  helpText="Some help text"
+  validationMessage="validation message"
+/>
+
+// TextInput
+<TextField
+  id="inputId"
+  name="email"
+  labelText="Counting characters and HelpText"
+  textInputProps={{
+    maxLength: 10,
+  }}
+  helpText="Some help text"
+  validationMessage="Validation Message"
+/>
+```
+
+will become:
+
+```tsx static=true
+// Checkbox
+<FormControl id="some id">
+  <Checkbox helpText="Some help text">Your label text</Checkbox>
+  <FormControl.ValidationMessage>validation message</FormControl.ValidationMessage>
+</FormControl>
+
+// TextInput
+<FormControl id="inputId">
+  <FormControl.Label>Counting characters and HelpText</FormControl.Label>
+  <TextInput name="email" maxLength={10} />
+  <Flex justifyContent="space-between">
+    <FormControl.HelpText>Some help text</FormControl.HelpText>
+    <FormControl.Counter />
+  </Flex>
+  <FormControl.ValidationMessage>Validation Message</FormControl.ValidationMessage>
+</FormControl>
+```
+
+For more detailed information and examples, check our documentation website.
+
+#### How to migrate your Field components
+
+Run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) to migrate your v3 `Field components to the new version:
+
+`npx @contentful/f36-codemod`
+
+The codemods that need to be ran are: `v4-checkbox`, `v4-radio`, `v4-select`, and `v4-text-field`.
+
+If you decide to do it manually, you would need to transform your code:
+
+```tsx static=true
+import { CheckboxField, TextField } from '@contentful/forma-36-react-components';
+
+<CheckboxField
+  labelText="Your label text"
+  id="some-id"
+  type="checkbox"
+  helpText="Some help text"
+  validationMessage="validation message"
+/>
+
+// TextInput
+<TextField
+  id="inputId"
+  name="email"
+  labelText="Counting characters and HelpText"
+  textInputProps={{
+    maxLength: 10,
+  }}
+  helpText="Some help text"
+  validationMessage="Validation Message"
+/>
+```
+
+into this new version:
+
+```tsx static=true
+import { Checkbox, TextInput, FormControl } from '@contentful/f36-components';
+
+<FormControl id="some id">
+  <Checkbox helpText="Some help text">Your label text</Checkbox>
+  <FormControl.ValidationMessage>validation message</FormControl.ValidationMessage>
+</FormControl>
+
+<FormControl id="inputId">
+  <FormControl.Label>Counting characters and HelpText</FormControl.Label>
+  <TextInput name="email" maxLength={10} />
+  <Flex justifyContent="space-between">
+    <FormControl.HelpText>Some help text</FormControl.HelpText>
+    <FormControl.Counter />
+  </Flex>
+  <FormControl.ValidationMessage>Validation Message</FormControl.ValidationMessage>
+</FormControl>
+```
+
+### FieldGroup
+
+The `FieldGroup` component was removed, and should be replaced by one of the Layout components which best fits your need. For example:
+
+```tsx static = true
+<FieldGroup>...</FieldGroup>
+```
+
+for keeping the same spacing as before it should become:
+
+```tsx static = true
+<Flex flexDirection="column" gap="spacingXs">
+  ...
+</Flex>
+```
+
+#### How to migrate your FieldGroup components
+
+The migration should be done manually, using the Layout component that best fits the user needs, the layout components are `Box`, `Flex`, `Stack`, and `Grid`.
+
+### Form
+
+The only thing that has changed on the Form component is that it doesn't have the spacing prop anymore. For example:
+
+```tsx static=true
+import { Form } from '@contentful/forma-36-react-components';
+
+<Form onSubmit={handleSubmit} spacing="condensed">
+  ...
+</Form>;
+```
+
+will become:
+
+```tsx static=true
+import { Form } from '@contentful/f36-components';
+
+<Form onSubmit={handleSubmit} spacing="condensed">
+  ...
+</Form>;
+```
+
+#### How to migrate your form components
+
+To migrate your v3 `Form` component to the version 4 you can simply run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) that we prepared for this occasion, like:
+
+`npx @contentful/f36-codemod`
+
+What codemod will do for you, and what you can do yourself manually if you decide to do so, is:
+
+it transforms:
+
+```tsx static=true
+import { Form } from '@contentful/forma-36-react-components';
+
+<Form onSubmit={handleSubmit} spacing="condensed">
+  Form elements goes here and spacing value is removed
+</Form>;
+```
+
+into this new version:
+
+```tsx static=true
+import { Form } from '@contentful/f36-components';
+
+<Form onSubmit={handleSubmit}>
+  Form elements goes here and spacing value is removed
+</Form>;
 ```
