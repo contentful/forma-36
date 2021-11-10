@@ -546,7 +546,7 @@ import { Grid, GridItem } from '@contentful/f36-components';
 
 ## Note
 
-API of Note component was changed slightly, mostly around properties that are now aligned with our code [styleguide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md).
+The properties of the Note component API have been aligned with our code [style guide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md).
 
 ### How to migrate your Note components
 
