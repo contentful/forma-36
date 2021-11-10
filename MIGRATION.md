@@ -26,6 +26,8 @@
       - [How to migrate your RadioButton components](#how-to-migrate-your-radiobutton-components)
     - [Select](#select)
       - [How to migrate your Select components](#how-to-migrate-your-select-copmonents)
+    - [Switch](#switch)
+      - [How to migrate your Switch components](#how-to-migrate-your-switch-components)
     - [FieldGroup](#fieldgroup)
       - [How to migrate your FieldGroup components](#how-to-migrate-your-fieldgroup-components)
     - [Form](#form)
@@ -556,6 +558,16 @@ import { Grid, GridItem } from '@contentful/f36-components';
 We changed how the Form Components work on the version 4, on the version 3 we had the Field components that would handle the everything related to a Field, like the Label, HelpText and ValidationMessage.  
 For the version 4 we created the `FormControl` which gives more flexibility to the user, when migrating to the version 4, you would need to use it.
 
+And all our Form Components can be used either as controlled or uncontrolled component, this is defined by using the `defaulValue`/`defaultChecked` prop for uncontrolled components and `value`/`isChecked` with an `onChange` props for the controlled version. For example:
+
+```jsx static=true
+// This would render the TextInput as an uncontrolled component
+<TextInput defaultValue="Some initial Value" />
+
+// This would render the TextInput as a controlled component
+<TextInput value="Some initial Value" onChange={onChange} />
+```
+
 ### Field Components
 
 The `CheckboxField`, `RadioButtonField`, `SelectField`, and `TextField` components were removed on the version 4, and need to be replaced by the new `FormControl` component and it's compound components. For example:
@@ -757,7 +769,7 @@ We also had some API changes on the radio props, check the props that were renam
 - `checked` was renamed to `isChecked`;
 - `disabled` was renamed to `isDisabled`.
 
-#### How to migrate your radiobutton components
+#### How to migrate your RadioButton components
 
 Run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) to migrate your v3 `RadioButton` component to the new version:
 
@@ -849,6 +861,58 @@ import { Select } from '@contentful/f36-components';
     Option Three
   </Select.Option>
 </Select>;
+```
+
+### Switch
+
+In v4 the Switch component has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
+
+```jsx static=true
+import { Switch } from '@contentful/forma-36-react-components';
+
+<Switch name="switch" id="switch" onToggle={onToggle} labelText="some label" />;
+```
+
+will become:
+
+```jsx static=true
+import { Switch } from '@contentful/f36-components';
+
+<Switch name="switch" id="switch" onChange={onChange}>
+  some label
+</Switch>;
+```
+
+When changing `onToggle` to `onChange`, before it would expect a function that receives boolean value, now it works as any other `onChange` on any form component, so the handling of on or off should be done by the user.
+
+#### How to migrate your Switch components
+
+The migration for the Switch needs to be done manually by updating the usage of the props, for example:
+
+```jsx static=true
+import { Switch } from '@contentful/forma-36-react-components';
+
+const [isChecked, setIsChecked] = React.useState(false);
+const onToggle = (checked) => setIsChecked(checked);
+<Switch
+  name="switch"
+  id="switch"
+  isChecked={isChecked}
+  onToggle={onToggle}
+  labelText="some label"
+/>;
+```
+
+into this new version:
+
+```jsx static=true
+import { Switch } from '@contentful/f36-components';
+
+const [isChecked, setIsChecked] = React.useState(false);
+const onChange = (event) => setIsChecked(event.target.checked);
+<Switch name="switch" id="switch" isChecked={isChecked} onChange={onChange}>
+  some label
+</Switch>;
 ```
 
 ### FieldGroup
