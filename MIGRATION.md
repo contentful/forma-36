@@ -684,7 +684,7 @@ In version 4:
 
 ### How to migrate your Modal components
 
-Run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) to migrate your v3 `Modal` component to the new version:
+To migrate your `Modal` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
 
