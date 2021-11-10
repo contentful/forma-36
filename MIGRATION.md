@@ -612,7 +612,7 @@ The properties of the Notification component API have been aligned with our code
 
 ### How to migrate your Notification components
 
-Run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) to migrate your v3 `Note` component to the new version:
+To migrate your 'Notification' component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
 
