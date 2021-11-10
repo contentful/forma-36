@@ -22,6 +22,8 @@
       - [How to migrate your Field components](#how-to-migrate-your-field-components)
     - [Checkbox](#checkbox)
       - [How to migrate your Checkbox components](#how-to-migrate-your-checkbox-components)
+    - [RadioButton](#radiobutton)
+      - [How to migrate your RadioButton components](#how-to-migrate-your-radiobutton-components)
     - [FieldGroup](#fieldgroup)
       - [How to migrate your FieldGroup components](#how-to-migrate-your-fieldgroup-components)
     - [Form](#form)
@@ -675,13 +677,21 @@ On the version 4:
 import { Checkbox } from '@contentful/f36-components';
 
 // This would render the exact same as on version 3
-<Checkbox id="checkbox" name="checkbox" ariaLabel="some label" />
+<Checkbox id="checkbox" name="checkbox" aria-label="some label" />
 
 // You can also pass the label and help text to the checkbox
 <Checkbox id="checkbox" name="checkbox" helpText="Some help text">
   This label will be rendered at the side of the checkbox
 </Checkbox>
 ```
+
+We also had some API changes on the checkbox, check the props that were renamed:
+
+- `required` was renamed to isRequired;
+- `labelText` should be replaced by `aria-label` when not passing a label to the checkbox;
+- `checked` was renamed to `isChecked`;
+- `disabled` was renamed to `isDisabled`;
+- `indeterminate` was renamed to `isIndeterminate`.
 
 #### How to migrate your checkbox components
 
@@ -711,6 +721,71 @@ import { Checkbox } from '@contentful/f36-components';
 ```
 
 If you only use `CheckboxField` component, please check the [Field components](#field-components) section.
+
+### RadioButton
+
+We renamed the `RadioButton` component to be only `Radio`, also with the removal of the `RadioButtonField` component, we updated how this component works on the version 4, on the version 3 it only rendered the radio input without anything else, now it also handles the label and help text for it. For example:
+
+```jsx static=true
+import { RadioButton } from '@contentful/forma-36-react-components';
+
+<RadioButton name="someOption" id="radio" labelText="some label" />;
+```
+
+This example would render only the input and the `labelText` would be set as the `aria-label`.
+
+On the version 4:
+
+```jsx static=true
+import { Radio } from '@contentful/f36-components';
+
+// This would render the exact same as on version 3
+<Radio name="someOption" id="radio" aria-label="some label" />
+
+// You can also pass the label and help text to the radio
+<Radio name="someOption" id="radio" helpText="Some help text">
+  This label will be rendered at the side of the input
+</Radio>
+```
+
+We also had some API changes on the radio props, check the props that were renamed:
+
+- `required` was renamed to isRequired;
+- `labelText` should be replaced by `aria-label` when not passing a label to the input;
+- `checked` was renamed to `isChecked`;
+- `disabled` was renamed to `isDisabled`.
+
+#### How to migrate your radiobutton components
+
+Run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) to migrate your v3 `RadioButton` component to the new version:
+
+`npx @contentful/f36-codemod`
+
+If you decide to do it manually, you would need to transform your code:
+
+```jsx static=true
+import { RadioButton } from '@contentful/forma-36-react-components';
+
+<RadioButton
+  id="radio"
+  disabled={false}
+  checked={true}
+  labelText="some label"
+/>;
+```
+
+into this new version:
+
+```jsx static=true
+import { Radio } from '@contentful/f36-components';
+
+<Radio
+  id="radio"
+  isDisabled={false}
+  isChecked={true}
+  aria-label="some label"
+/>;
+```
 
 ### FieldGroup
 
