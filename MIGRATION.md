@@ -20,6 +20,8 @@
   - [Form Components](#form-components)
     - [Field Components](#field-components)
       - [How to migrate your Field components](#how-to-migrate-your-field-components)
+    - [Checkbox](#checkbox)
+      - [How to migrate your Checkbox components](#how-to-migrate-your-checkbox-components)
     - [FieldGroup](#fieldgroup)
       - [How to migrate your FieldGroup components](#how-to-migrate-your-fieldgroup-components)
     - [Form](#form)
@@ -655,17 +657,72 @@ import { Checkbox, TextInput, FormControl } from '@contentful/f36-components';
 </FormControl>
 ```
 
+### Checkbox
+
+With the removal of the `CheckboxField` component, we updated how this component works on the version 4, on the version 3 it only rendered the checkbox input without anything else, now it also handles the label and help text for the checkbox. For example:
+
+```jsx static=true
+import { Checkbox } from '@contentful/forma-36-react-components';
+
+<Checkbox id="checkbox" name="checkbox" labelText="some label" />;
+```
+
+This example would render only the input and the `labelText` would be set as the `aria-label`.
+
+On the version 4:
+
+```jsx static=true
+import { Checkbox } from '@contentful/f36-components';
+
+// This would render the exact same as on version 3
+<Checkbox id="checkbox" name="checkbox" ariaLabel="some label" />
+
+// You can also pass the label and help text to the checkbox
+<Checkbox id="checkbox" name="checkbox" helpText="Some help text">
+  This label will be rendered at the side of the checkbox
+</Checkbox>
+```
+
+#### How to migrate your checkbox components
+
+The migration for the Checkbox needs to be manually as it depends on the context that the component is being used, for example:
+
+```jsx static=true
+import {
+  Checkbox,
+  Box,
+  FormLabel,
+} from '@contentful/forma-36-react-components';
+
+<Box>
+  <Checkbox id="checkbox" name="checkbox" />
+  <FormLabel htmlFor="checkbox">Some label here</FormLabel>
+</Box>;
+```
+
+could become:
+
+```jsx static=true
+import { Checkbox } from '@contentful/f36-components';
+
+<Checkbox id="checkbox" name="checkbox">
+  Some label here
+</Checkbox>;
+```
+
+If you only use `CheckboxField` component, please check the [Field components](#field-components) section.
+
 ### FieldGroup
 
 The `FieldGroup` component was removed, and should be replaced by one of the Layout components which best fits your need. For example:
 
-```tsx static = true
+```tsx static=true
 <FieldGroup>...</FieldGroup>
 ```
 
 for keeping the same spacing as before it should become:
 
-```tsx static = true
+```tsx static=true
 <Flex flexDirection="column" gap="spacingXs">
   ...
 </Flex>
