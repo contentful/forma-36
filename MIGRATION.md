@@ -167,29 +167,6 @@ import { Button } from '@contentful/forma-36-react-components';
 <Button buttonType="warning">Warning</Button>;
 <Button buttonType="negative">Negative</Button>;
 <Button buttonType="naked">Embed entry</Button>;
-<Button
-  buttonType={isLocked ? undefined : 'muted'}
-  icon={isLocked ? 'Lock' : undefined}
-  {...otherProps}
->
-  Conditional
-</Button>;
-<Button buttonType={isLocked ? (!isLocked ? 'naked' : undefined) : 'muted'}>
-  Conditional
-</Button>;
-<Button indicateDropdown>Embed Entry</Button>;
-<Button icon="Lock" indicateDropdown>
-  Embed Entry
-</Button>;
-<Button icon="ChevronUp">Embed entry</Button>;
-<Button isFullWidth>Embed entry</Button>;
-<Button loading onClick={() => {}}>
-  Embed entry
-</Button>;
-<Button href="/" target="_blank" rel="noreferrer noopener">
-  Button link
-</Button>;
-<Button isActive>Active button</Button>;
 ```
 
 becomes:
@@ -201,6 +178,7 @@ import {
   ChevronDownIcon,
   ChevronUpIcon,
 } from '@contentful/f36-icons';
+
 <Button variant="primary" isLoading>
   Embed entry
 </Button>;
@@ -219,6 +197,44 @@ import {
 <Button variant="secondary">Warning</Button>;
 <Button variant="negative">Negative</Button>;
 <Button variant="transparent">Embed entry</Button>;
+```
+
+Buttons with icons:
+
+```tsx static=true
+import { Button } from '@contentful/forma-36-react-components';
+
+<Button
+  buttonType={isLocked ? undefined : 'muted'}
+  icon={isLocked ? 'Lock' : undefined}
+  {...otherProps}
+>
+  Conditional
+</Button>;
+
+<Button indicateDropdown>Embed Entry</Button>;
+
+<Button icon="Lock" indicateDropdown>
+  Embed Entry
+</Button>;
+
+<Button icon="ChevronUp">Embed entry</Button>;
+
+<Button href="/" target="_blank" rel="noreferrer noopener">
+  Button link
+</Button>;
+```
+
+will be transformed into:
+
+```tsx static=true
+import { Button } from '@contentful/f36-components';
+import {
+  LockIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from '@contentful/f36-icons';
+
 <Button
   variant={isLocked ? 'primary' : 'secondary'}
   startIcon={isLocked ? <LockIcon /> : undefined}
@@ -226,14 +242,11 @@ import {
 >
   Conditional
 </Button>;
-<Button
-  variant={isLocked ? (!isLocked ? 'transparent' : 'primary') : 'secondary'}
->
-  Conditional
-</Button>;
+
 <Button endIcon={<ChevronDownIcon />} variant="primary">
   Embed Entry
 </Button>;
+
 <Button
   endIcon={<ChevronDownIcon />}
   variant="primary"
@@ -241,15 +254,11 @@ import {
 >
   Embed Entry
 </Button>;
+
 <Button variant="primary" startIcon={<ChevronUpIcon />}>
   Embed entry
 </Button>;
-<Button variant="primary" isFullWidth>
-  Embed entry
-</Button>;
-<Button variant="primary" isLoading onClick={() => {}}>
-  Embed entry
-</Button>;
+
 <Button
   as="a"
   variant="primary"
@@ -258,9 +267,6 @@ import {
   rel="noreferrer noopener"
 >
   Button link
-</Button>;
-<Button variant="primary" isActive>
-  Active button
 </Button>;
 ```
 
@@ -536,4 +542,120 @@ import { Grid, GridItem } from '@contentful/f36-components';
   <GridItem />
   <GridItem />
 </Grid>;
+```
+
+## Note
+
+The properties of the Note component API have been aligned with our code [style guide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md).
+
+### How to migrate your Note components
+
+To migrate your `Note` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to do it manually, you must transform your existing code as follows:
+
+```tsx
+import { Note } from '@contentful/forma-36-react-components';
+
+<Note noteType="positive">
+  A piece of information that is relevant to the context the user is currently
+  in.
+</Note>;
+
+<Note noteType="negative" hasCloseButton>
+  A piece of information that is relevant to the context the user is currently
+  in.
+</Note>;
+
+<Note
+  title={'Title example'}
+  noteType="primary"
+  hasCloseButton
+  onClose={() => {}}
+>
+  A piece of information that is relevant to the context the user is currently
+  in.
+</Note>;
+```
+
+into:
+
+```tsx
+import { Note } from '@contentful/f36-components';
+
+<Note variant="positive">
+  A piece of information that is relevant to the context the user is currently
+  in.
+</Note>;
+
+<Note variant="negative" withCloseButton>
+  A piece of information that is relevant to the context the user is currently
+  in.
+</Note>;
+
+<Note
+  title={'Title example'}
+  variant="primary"
+  withCloseButton
+  onClose={() => {}}
+>
+  A piece of information that is relevant to the context the user is currently
+  in.
+</Note>;
+```
+
+## Notification
+
+The properties of the Notification component API have been aligned with our code [style guide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md).
+
+### How to migrate your Notification components
+
+To migrate your 'Notification' component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to do it manually, you must transform your existing code as follows:
+
+```tsx
+import { Notification } from '@contentful/forma-36-react-components';
+
+const notificationText = 'Some text';
+const duration = 3000;
+const otherProps = {
+  title: 'Some title',
+};
+const placement = 'bottom';
+
+Notification.success(notificationText, {
+  duration,
+  canClose: true,
+  close: () => {},
+  ...otherProps,
+});
+
+Notification.setPosition(placement, { offset: 0 });
+```
+
+into:
+
+```tsx
+import { Notification } from '@contentful/f36-components';
+
+const notificationText = 'Some text';
+const duration = 3000;
+const otherProps = {
+  title: 'Some title',
+};
+const placement = 'bottom';
+
+Notification.success(notificationText, {
+  duration,
+  withClose: true,
+  onClose: () => {},
+  ...otherProps,
+});
+
+Notification.setPlacement(placement, { offset: 0 });
 ```
