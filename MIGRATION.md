@@ -24,6 +24,8 @@
       - [How to migrate your Checkbox components](#how-to-migrate-your-checkbox-components)
     - [RadioButton](#radiobutton)
       - [How to migrate your RadioButton components](#how-to-migrate-your-radiobutton-components)
+    - [Select](#select)
+      - [How to migrate your Select components](#how-to-migrate-your-select-copmonents)
     - [FieldGroup](#fieldgroup)
       - [How to migrate your FieldGroup components](#how-to-migrate-your-fieldgroup-components)
     - [Form](#form)
@@ -687,7 +689,7 @@ import { Checkbox } from '@contentful/f36-components';
 
 We also had some API changes on the checkbox, check the props that were renamed:
 
-- `required` was renamed to isRequired;
+- `required` was renamed to `isRequired`;
 - `labelText` should be replaced by `aria-label` when not passing a label to the checkbox;
 - `checked` was renamed to `isChecked`;
 - `disabled` was renamed to `isDisabled`;
@@ -750,7 +752,7 @@ import { Radio } from '@contentful/f36-components';
 
 We also had some API changes on the radio props, check the props that were renamed:
 
-- `required` was renamed to isRequired;
+- `required` was renamed to `isRequired`;
 - `labelText` should be replaced by `aria-label` when not passing a label to the input;
 - `checked` was renamed to `isChecked`;
 - `disabled` was renamed to `isDisabled`.
@@ -785,6 +787,68 @@ import { Radio } from '@contentful/f36-components';
   isChecked={true}
   aria-label="some label"
 />;
+```
+
+### Select
+
+We changed the `Select` component to be easier to use, instead of having to import both `Select` and `Option` components, on the version 4 we have the `Select.Option` compound component. We also had some API changes. For example:
+
+```tsx static=true
+<Select id="optionSelect" name="optionSelect" width="large">
+  <Option value="optionOne">Option 1</Option>
+  <Option value="optionTwo">Long Option 2</Option>
+</Select>
+```
+
+will become:
+
+```tsx static=true
+<Select id="optionSelect" name="optionSelect">
+  <Select.Option value="optionOne">Option 1</Select.Option>
+  <Select.Option value="optionTwo">Long Option 2</Select.Option>
+</Select>
+```
+
+We also had some API changes on the select, check the props that had changes:
+
+- `width` was removed;
+- `required` was renamed to `isRequired`;
+- `hasError` was renamed to `isInvalid`;
+- `disabled` was renamed to `isDisabled`;
+- The `Select.Option` component can receive a `isDisabled` prop instead of the `disabled`.
+
+#### How to migrate your Select components
+
+Run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) to migrate your v3 `Select` component to the new version:
+
+`npx @contentful/f36-codemod`
+
+If you decide to do it manually, you would need to transform your code:
+
+```jsx static=true
+import { Select, Option } from '@contentful/forma-36-react-components';
+
+<Select name="optionSelect" id="optionSelect">
+  <Option value="optionOne">Option One</Option>
+  <Option value="optionTwo">Option Two</Option>
+  <Option value="optionThree" disabled>
+    Option Three
+  </Option>
+</Select>;
+```
+
+into this new version:
+
+```jsx static=true
+import { Select } from '@contentful/f36-components';
+
+<Select name="optionSelect" id="optionSelect">
+  <Select.Option value="optionOne">Option One</Select.Option>
+  <Select.Option value="optionTwo">Option Two</Select.Option>
+  <Select.Option value="optionThree" isDisabled>
+    Option Three
+  </Select.Option>
+</Select>;
 ```
 
 ### FieldGroup
