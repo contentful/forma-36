@@ -25,7 +25,7 @@
     - [RadioButton](#radiobutton)
       - [How to migrate your RadioButton components](#how-to-migrate-your-radiobutton-components)
     - [Select](#select)
-      - [How to migrate your Select components](#how-to-migrate-your-select-copmonents)
+      - [How to migrate your Select components](#how-to-migrate-your-select-components)
     - [Switch](#switch)
       - [How to migrate your Switch components](#how-to-migrate-your-switch-components)
     - [TextInput and TextArea](#textinput-and-textarea)
