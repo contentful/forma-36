@@ -1443,7 +1443,7 @@ Into:
 
 ## Dropdown
 
-The Dropdown component is replaced with a couple of new components: [Menu](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/menu/Menu.mdx), [Autocomplete](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/autocomplete/Autocomplete.mdx) and [Popover](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/popover/Popover.mdx). 
+The Dropdown component is replaced with a couple of new components: [Menu](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/menu/Menu.mdx), [Autocomplete](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/autocomplete/Autocomplete.mdx) and [Popover](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/popover/Popover.mdx).
 Creating separate components allowed us to improve accessibility and simplify its API a lot. Each of those new components serves its own purpose.
 
 We renamed prop `position` to `placement` and changed its value type, below you can find a mapping of old values to the new ones:
@@ -1452,21 +1452,22 @@ We renamed prop `position` to `placement` and changed its value type, below you 
 const positionToPlacemantMap = {
   'bottom-left': 'bottom-start',
   'bottom-right': 'bottom-end',
-  'right': 'right-start',
-  'left': 'left-start',
+  right: 'right-start',
+  left: 'left-start',
   'top-left': 'top-start',
   'top-right': 'top-end',
-}
+};
 ```
 
 ### How to migrate your Dropdown components
 
 The migration should be done manually since there are might be different approaches for each specific case.
+
 - If you used the `Dropdown` to offer a list of choices to the user, such as a set of actions or links, you should replace it with `Menu`.
 - If you used the `Dropdown` in combination with input to help user set the value by choosing from the list of options, replace it with `Autocomplete`.
 - Replace it with `Popover` if it was used for some custom case that does not match the cases described above. Most likely you don't need to use `Popover` at all, consider it only for special, custom solutions.
 
-*Note: `Popover` is a low-level component and it is used as a base for `Autocomplete` and `Menu`*
+_Note: `Popover` is a low-level component and it is used as a base for `Autocomplete` and `Menu`_
 
 Below you will find a couple of examples of how to migrate the `Dropdown` component:
 
@@ -1475,6 +1476,7 @@ Below you will find a couple of examples of how to migrate the `Dropdown` compon
 **Simple case:**
 
 Keep in mind:
+
 - By default `Menu` is an uncontrolled component, so you don't have to pass callbacks and state. Nevertheless, you can make it controlled if you need to. [See the controlled Menu example in component docs](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/menu/Menu.mdx#controlled-menu)
 - By default click on the `MenuItem` will close the menu, if you want to disable this behavior, just pass prop `closeOnSelect="false"`
 
@@ -1527,15 +1529,28 @@ import { Menu, IconButton } from '@contentful/f36-components';
     />
   </Menu.Trigger>
   <Menu.List>
-    <Menu.Item onClick={() => {/* do some action */}}>First action</Menu.Item>
-    <Menu.Item onClick={() => {/* do some action */}}>Second action</Menu.Item>
+    <Menu.Item
+      onClick={() => {
+        /* do some action */
+      }}
+    >
+      First action
+    </Menu.Item>
+    <Menu.Item
+      onClick={() => {
+        /* do some action */
+      }}
+    >
+      Second action
+    </Menu.Item>
   </Menu.List>
-</Menu>
+</Menu>;
 ```
 
 **Case with Titles, Dividers, Links and dropdown maxHeight:**
 
 Keep in mind:
+
 - `<DropdownListItem isTitle>Title</DropdownListItem>` got replaced with `<Menu.SectionTitle>Title</Menu.SectionTitle>`
 - To add divider just add `<Menu.Divider />`
 - To add link as a menu item, just pass prop `as="a"` to `Menu.Item`. `Menu.Item` is a polymorphic component.
@@ -1598,11 +1613,13 @@ import { Menu, IconButton } from '@contentful/f36-components';
       About Contentful
     </Menu.Item>
   </Menu.List>
-</Menu>
+</Menu>;
 ```
 
 **Case with Submenu:**
+
 Keep in mind:
+
 - Instead of nesting another `Dropdown` you should use specific component `Menu.Submenu`.
 - Instead of passing `submenuToggleLabel` prop you should use specific component `Menu.SubmenuTrigger`. That will serve as a trigger for a submenu.
 - Submenu will be always shown on the right side of the menu. There is no way to show it on the left side right now.
@@ -1660,7 +1677,13 @@ import { Menu, IconButton } from '@contentful/f36-components';
     />
   </Menu.Trigger>
   <Menu.List>
-    <Menu.Item onClick={() => {/* do some action */}}>First action</Menu.Item>
+    <Menu.Item
+      onClick={() => {
+        /* do some action */
+      }}
+    >
+      First action
+    </Menu.Item>
     <Menu.Submenu>
       <Menu.SubmenuTrigger>Open submenu</Menu.SubmenuTrigger>
       <Menu.List>
@@ -1668,9 +1691,15 @@ import { Menu, IconButton } from '@contentful/f36-components';
         <Menu.Item>Submenu action 2</Menu.Item>
       </Menu.List>
     </Menu.Submenu>
-    <Menu.Item onClick={() => {/* do some action */}}>Second action</Menu.Item>
+    <Menu.Item
+      onClick={() => {
+        /* do some action */
+      }}
+    >
+      Second action
+    </Menu.Item>
   </Menu.List>
-</Menu>
+</Menu>;
 ```
 
 #### `Dropdown` to `Popover`
@@ -1678,6 +1707,7 @@ import { Menu, IconButton } from '@contentful/f36-components';
 **Popover case with checkboxes:**
 
 Keep in mind:
+
 - Unlike `Menu`, `Popover` is a controlled component. So you have to pass callbacks and state in order to make it work like expected.
 - We used `FocusLock` from [react-focus-lock](https://github.com/theKashey/react-focus-lock) to enhance a11y. It traps users' focus in the popover content, user will not be able to leave the popover when using "Tab" navigation.
 
@@ -1743,13 +1773,15 @@ const [isPopoverOpen, setIsPopoverOpen] = React.useState(false);
         margin="none"
         spacing="spacingXs"
         flexDirection="column"
-        alignItems="flex-start">
+        alignItems="flex-start"
+      >
         {props.list.map(({ id, label }) => (
           <li key={id}>
             <Checkbox
               isChecked={selection[id]}
               onChange={() => changeSelection(id)}
-              name={id}>
+              name={id}
+            >
               {label}
             </Checkbox>
           </li>
@@ -1757,5 +1789,5 @@ const [isPopoverOpen, setIsPopoverOpen] = React.useState(false);
       </Stack>
     </FocusLock>
   </Popover.Content>
-</Popover>
+</Popover>;
 ```
