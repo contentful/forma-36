@@ -22,7 +22,7 @@ import {
   SkeletonDisplayText,
 } from '@contentful/f36-skeleton';
 
-import { DefaultCardHeader, stopEventPropagation } from './DefaultCardHeader';
+import { DefaultCardHeader, stopEvents } from './DefaultCardHeader';
 import type { BaseCardInternalProps } from './BaseCard.types';
 
 export const BASE_CARD_DEFAULT_TAG = 'article';
@@ -148,7 +148,7 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
       className={styles.dragHandle}
       isActive={isDragging}
       label="Reorder entry"
-      onClick={stopEventPropagation}
+      onClick={stopEvents}
     />
   );
 

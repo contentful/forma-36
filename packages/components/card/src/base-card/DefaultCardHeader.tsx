@@ -39,7 +39,8 @@ const getHeaderStyles = () => {
   };
 };
 
-export const stopEventPropagation = (e: React.MouseEvent<HTMLElement>) => {
+export const stopEvents = (e: React.MouseEvent<HTMLElement>) => {
+  e.preventDefault();
   e.stopPropagation();
 };
 
@@ -55,7 +56,7 @@ export function DefaultCardHeader(
     <Flex
       className={cx(styles.header, actions && styles.headerWithActions)}
       // don't propagate click event, so onClick handler on the card is not triggered
-      onClick={stopEventPropagation}
+      onClick={stopEvents}
     >
       <Flex flexGrow={1}>
         {type && <Text fontColor="gray600">{type}</Text>}
@@ -70,7 +71,7 @@ export function DefaultCardHeader(
           {badge}
         </Flex>
       )}
-      {actions && (
+      {actions && actions.length > 0 && (
         <CardActions buttonProps={actionsButtonProps}>{actions}</CardActions>
       )}
     </Flex>
