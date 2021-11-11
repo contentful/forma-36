@@ -659,3 +659,80 @@ Notification.success(notificationText, {
 
 Notification.setPlacement(placement, { offset: 0 });
 ```
+
+## Modal
+
+In version 4 the Modal component buttons were moved from the left to the right side of the `<Modal.Controls>` component. We now recommend swapping action buttons, the primary action should be displayed as the first one from the right in the Modal. Have a look how to do it:
+
+In version 3:
+
+```tsx
+<Modal.Controls>
+  <Button variant="primary" />
+  <Button variant="secondary" />
+</Modal.Controls>
+```
+
+In version 4:
+
+```tsx
+<Modal.Controls>
+  <Button variant="secondary" size="small" />
+  <Button variant="primary" size="small" />
+</Modal.Controls>
+```
+
+### How to migrate your Modal components
+
+To migrate your `Modal` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to do it manually, you must transform your existing code as follows:
+
+```tsx
+import {
+  Modal,
+  ModalHeader,
+  ModalConfirm,
+  ModalControls,
+  ModalContent,
+  ModalLauncher,
+} from '@contentful/forma-36-react-components';
+
+<ModalConfirm
+  onSecondary={() => {}}
+  isSecondaryLoading
+  secondaryIntent="primary"
+  secondaryLabel="secondary label"
+  secondaryTestId="secondary id"
+>
+  Confirm content
+</ModalConfirm>;
+<ModalHeader isNotWrapped>Header content</ModalHeader>;
+<ModalContent></ModalContent>;
+<Modal.Controls>
+  <Button buttonType="primary" />
+  <Button buttonType="secondary" />
+</Modal.Controls>;
+```
+
+into:
+
+```tsx
+import {
+  Modal,
+  ModalHeader,
+  ModalControls,
+  ModalContent,
+  ModalConfirm,
+  ModalLauncher,
+} from '@contentful/f36-components';
+
+<ModalConfirm>Confirm content</ModalConfirm>;
+<ModalHeader>Header content</ModalHeader>;
+<Modal.Controls>
+  <Button variant="secondary" size="small" />
+  <Button variant="primary" size="small" />
+</Modal.Controls>;
+```
