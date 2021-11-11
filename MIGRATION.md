@@ -560,8 +560,8 @@ import { Grid, GridItem } from '@contentful/f36-components';
 ## Form Components
 
 We changed how the Form Components work on version 4. In version 3 we had the Field components, like `TextField` or `SelectField` that would handle elements like Label, HelpText, and ValidationMessage.
-For version 4 we created the `FormControl` which gives more flexibility to the user and controls the given input, its validation, state, etc.
-Within `FormControl` component, you have available all the previous options, so:
+In version 4 we created the `FormControl` which gives the user more flexibility and controls the given input, its validation, state, etc.
+All the previous options are still available within the `FormControl` component:
 
 - `FormControl.Label`
 - `FormControl.HelpText`
