@@ -504,7 +504,7 @@ import { DateTime } from '@contentful/f36-datetime';
 
 ### How to migrate your DateTime components
 
-Update the `format` value and import. It changes from this:
+To migrate your DateTime component to v4, you must update the format value and import. It changes from this:
 
 ```tsx static=true
 import { DateTime } from '@contentful/forma-36-react-components';
@@ -526,7 +526,7 @@ The API of the RelativeDateComponent has not changed.
 
 ### How to migrate your RelativeDateTime components
 
-You just need to update import. From this:
+To migrate RelativeDateComponent to v4, you must update the import. From this:
 
 ```tsx static=true
 import { RelativeDate } from '@contentful/forma-36-react-components';
