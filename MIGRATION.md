@@ -894,7 +894,7 @@ import { Switch } from '@contentful/f36-components';
 </Switch>;
 ```
 
-When changing `onToggle` to `onChange`, before it would expect a function that receives boolean value, now it works as any other `onChange` on any form component, so the handling of on or off should be done by the user.
+_Note: in v3 the `onToggle` method had `checked` value (true/false) as parameter, now the `onChange` method has the event as parameter, so `event.target.checked` will have the true/false value_
 
 #### How to migrate your Switch components
 
