@@ -16,7 +16,6 @@ export const getBaseCardStyles = () => {
       display: 'grid',
       gridTemplateRows: '[header] auto [content] minmax(0, 1fr)',
       gridTemplateColumns: 'auto [content] minmax(0, 1fr)',
-      overflow: 'hidden',
     }),
     dragHandle: css({
       borderBottomLeftRadius: tokens.borderRadiusMedium,
