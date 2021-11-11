@@ -8,7 +8,7 @@ import {
 import type { HeadingElement } from './Heading';
 import { Text } from './Text';
 
-const SUBHEADING_DEFAULT_TAG = 'h2';
+const SUBHEADING_DEFAULT_TAG = 'h3';
 
 export interface SubheadingInternalProps extends CommonProps, MarginProps {
   as?: HeadingElement;

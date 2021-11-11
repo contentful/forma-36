@@ -10,7 +10,7 @@ import {
 import type { HeadingElement } from './Heading';
 import { Text } from './Text';
 
-const SECTION_HEADING_DEFAULT_TAG = 'h3';
+const SECTION_HEADING_DEFAULT_TAG = 'h2';
 
 export interface SectionHeadingInternalProps extends CommonProps, MarginProps {
   as?: HeadingElement;
