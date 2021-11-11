@@ -1,8 +1,7 @@
-// import React from 'react';
-// import { Stack } from '@contentful/f36-core';
-// import { Button } from '@contentful/f36-button';
+import React from 'react';
+import { Button, Stack } from '@contentful/f36-components';
 
-function Basic() {
+export function BasicExample() {
   return (
     <Stack>
       <Button variant="primary">Primary</Button>
