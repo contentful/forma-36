@@ -10,8 +10,14 @@ import {
 } from "@contentful/forma-36-react-components";
 
 <Modal></Modal>;
-<ModalConfirm></ModalConfirm>;
-<ModalHeader></ModalHeader>;
+<ModalConfirm
+  onSecondary={() => {}}
+  isSecondaryLoading
+  secondaryIntent="primary"
+  secondaryLabel="secondary label"
+  secondaryTestId="secondary id"
+></ModalConfirm>;
+<ModalHeader isNotWrapped></ModalHeader>;
 <ModalContent></ModalContent>;
 <ModalControls></ModalControls>;
 

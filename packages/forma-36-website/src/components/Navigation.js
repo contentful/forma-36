@@ -70,7 +70,7 @@ const styles = {
   `,
 
   category: css`
-    margin-top: ${tokens.spacingL};
+    margin-top: ${tokens.spacingM};
 
     &:first-of-type {
       margin-top: 0;
@@ -93,12 +93,18 @@ const checkCategory = (name) =>
   name === 'Foundation' ||
   name === 'Guidelines' ||
   name === 'Migration guide' ||
+  name === 'Getting started' ||
   name === 'Components' ||
   name === 'Integrations';
+
+const checkCategoryAsLink = (name) =>
+  name === 'Migration guide' || name === 'Getting started';
 
 const MenuListItem = React.forwardRef(
   ({ item, currentPath, isActive, hierarchyLevel }, ref) => {
     const isCategory = checkCategory(item.name);
+    const isCategoryAsLink = checkCategoryAsLink(item.name);
+
     const [isExpanded, setIsExpanded] = useState(isActive || isCategory);
 
     const handleToggle = (event) => {
@@ -146,6 +152,20 @@ const MenuListItem = React.forwardRef(
               hierarchyLevel={hierarchyLevel + 1}
             />
           </>
+        ) : isCategoryAsLink ? (
+          <Link
+            ref={ref}
+            css={cx([styles.link, itemOffset, isActive && styles.linkActive])}
+            to={item.link}
+            href={item.link}
+          >
+            <SectionHeading
+              marginBottom={0}
+              css={cx([isActive && styles.linkActive])}
+            >
+              {item.name}
+            </SectionHeading>
+          </Link>
         ) : (
           <Link
             ref={ref}

@@ -36,6 +36,12 @@
       - [How to migrate your Form components](#how-to-migrate-your-form-components)
     - [FormLabel](#formlabel)
       - [How to migrate your FormLabel components](#how-to-migrate-your-formlabe-components)
+  - [Note](#note)
+    - [How to migrate your Note components](#how-to-migrate-your-note-components)
+  - [Notification](#notification)
+    - [How to migrate your Notification components](#how-to-migrate-your-notification-components)
+  - [Modal](#modal)
+    - [How to migrate your Modal components](#how-to-migrate-your-modal-components)
 
 ## How to migrate your packages to v4
 
@@ -186,29 +192,6 @@ import { Button } from '@contentful/forma-36-react-components';
 <Button buttonType="warning">Warning</Button>;
 <Button buttonType="negative">Negative</Button>;
 <Button buttonType="naked">Embed entry</Button>;
-<Button
-  buttonType={isLocked ? undefined : 'muted'}
-  icon={isLocked ? 'Lock' : undefined}
-  {...otherProps}
->
-  Conditional
-</Button>;
-<Button buttonType={isLocked ? (!isLocked ? 'naked' : undefined) : 'muted'}>
-  Conditional
-</Button>;
-<Button indicateDropdown>Embed Entry</Button>;
-<Button icon="Lock" indicateDropdown>
-  Embed Entry
-</Button>;
-<Button icon="ChevronUp">Embed entry</Button>;
-<Button isFullWidth>Embed entry</Button>;
-<Button loading onClick={() => {}}>
-  Embed entry
-</Button>;
-<Button href="/" target="_blank" rel="noreferrer noopener">
-  Button link
-</Button>;
-<Button isActive>Active button</Button>;
 ```
 
 becomes:
@@ -220,6 +203,7 @@ import {
   ChevronDownIcon,
   ChevronUpIcon,
 } from '@contentful/f36-icons';
+
 <Button variant="primary" isLoading>
   Embed entry
 </Button>;
@@ -238,6 +222,44 @@ import {
 <Button variant="secondary">Warning</Button>;
 <Button variant="negative">Negative</Button>;
 <Button variant="transparent">Embed entry</Button>;
+```
+
+Buttons with icons:
+
+```tsx static=true
+import { Button } from '@contentful/forma-36-react-components';
+
+<Button
+  buttonType={isLocked ? undefined : 'muted'}
+  icon={isLocked ? 'Lock' : undefined}
+  {...otherProps}
+>
+  Conditional
+</Button>;
+
+<Button indicateDropdown>Embed Entry</Button>;
+
+<Button icon="Lock" indicateDropdown>
+  Embed Entry
+</Button>;
+
+<Button icon="ChevronUp">Embed entry</Button>;
+
+<Button href="/" target="_blank" rel="noreferrer noopener">
+  Button link
+</Button>;
+```
+
+will be transformed into:
+
+```tsx static=true
+import { Button } from '@contentful/f36-components';
+import {
+  LockIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from '@contentful/f36-icons';
+
 <Button
   variant={isLocked ? 'primary' : 'secondary'}
   startIcon={isLocked ? <LockIcon /> : undefined}
@@ -245,14 +267,11 @@ import {
 >
   Conditional
 </Button>;
-<Button
-  variant={isLocked ? (!isLocked ? 'transparent' : 'primary') : 'secondary'}
->
-  Conditional
-</Button>;
+
 <Button endIcon={<ChevronDownIcon />} variant="primary">
   Embed Entry
 </Button>;
+
 <Button
   endIcon={<ChevronDownIcon />}
   variant="primary"
@@ -260,15 +279,11 @@ import {
 >
   Embed Entry
 </Button>;
+
 <Button variant="primary" startIcon={<ChevronUpIcon />}>
   Embed entry
 </Button>;
-<Button variant="primary" isFullWidth>
-  Embed entry
-</Button>;
-<Button variant="primary" isLoading onClick={() => {}}>
-  Embed entry
-</Button>;
+
 <Button
   as="a"
   variant="primary"
@@ -277,9 +292,6 @@ import {
   rel="noreferrer noopener"
 >
   Button link
-</Button>;
-<Button variant="primary" isActive>
-  Active button
 </Button>;
 ```
 
@@ -848,7 +860,7 @@ To migrate your v3 `Select` component, run the following [codemod](https://githu
 
 If you want to do it manually, you must transform your code as follows:
 
-```jsx static=true
+````jsx static=true
 import { Select, Option } from '@contentful/forma-36-react-components';
 
 <Select name="optionSelect" id="optionSelect">
@@ -858,7 +870,6 @@ import { Select, Option } from '@contentful/forma-36-react-components';
     Option Three
   </Option>
 </Select>;
-```
 
 into:
 
@@ -872,7 +883,7 @@ import { Select } from '@contentful/f36-components';
     Option Three
   </Select.Option>
 </Select>;
-```
+````
 
 ### Switch
 
@@ -1163,19 +1174,19 @@ import { Form } from '@contentful/f36-components';
 
 ```jsx static=true
 <FormLabel htmlFor="inputId" required>Label for the input</FormLabel>
-<TextInput name="input" id="inputId">
+<TextInput name="input" id="inputId" />
 ```
 
 becomes:
 
 ```jsx static=true
 <FormControl.FormLabel htmlFor="inputId" isRequired>Label for the input</FormControl.FormLabel>
-<TextInput name="input" id="inputId">
+<TextInput name="input" id="inputId" />
 
 // You can also use the FormControl to wrap it, and it would handle the id and isRequired
 <FormControl isRequired id="inputId">
   <FormControl.FormLabel>Label for the input</FormControl.FormLabel>
-  <TextInput name="input">
+  <TextInput name="input" />
 </FormControl>
 ```
 
@@ -1187,7 +1198,7 @@ You must manually migrate the `FormLabel` component by updating the usage. For e
 import { TextInput, FormLabel } from '@contentful/forma-36-react-components';
 
 <FormLabel htmlFor="inputId" required requiredText="required field">Label for the input</FormLabel>
-<TextInput name="input" id="inputId">
+<TextInput name="input" id="inputId" />
 ```
 
 into this new version:
@@ -1196,11 +1207,204 @@ into this new version:
 import { FormControl, TextInput } from '@contentful/f36-components';
 
 <FormControl.FormLabel htmlFor="inputId" isRequired requiredText="required field">Label for the input</FormControl.FormLabel>
-<TextInput name="input" id="inputId">
+<TextInput name="input" id="inputId" />
 
 // You can also use the FormControl to wrap it, and it would handle the id and isRequired
 <FormControl isRequired id="inputId">
   <FormControl.FormLabel requiredText="required field">Label for the input</FormControl.FormLabel>
   <TextInput name="input">
 </FormControl>
+```
+
+## Note
+
+The properties of the Note component API have been aligned with our code [style guide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md).
+
+### How to migrate your Note components
+
+To migrate your `Note` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to do it manually, you must transform your existing code as follows:
+
+```tsx
+import { Note } from '@contentful/forma-36-react-components';
+
+<Note noteType="positive">
+  A piece of information that is relevant to the context the user is currently
+  in.
+</Note>;
+
+<Note noteType="negative" hasCloseButton>
+  A piece of information that is relevant to the context the user is currently
+  in.
+</Note>;
+
+<Note
+  title={'Title example'}
+  noteType="primary"
+  hasCloseButton
+  onClose={() => {}}
+>
+  A piece of information that is relevant to the context the user is currently
+  in.
+</Note>;
+```
+
+into:
+
+```tsx
+import { Note } from '@contentful/f36-components';
+
+<Note variant="positive">
+  A piece of information that is relevant to the context the user is currently
+  in.
+</Note>;
+
+<Note variant="negative" withCloseButton>
+  A piece of information that is relevant to the context the user is currently
+  in.
+</Note>;
+
+<Note
+  title={'Title example'}
+  variant="primary"
+  withCloseButton
+  onClose={() => {}}
+>
+  A piece of information that is relevant to the context the user is currently
+  in.
+</Note>;
+```
+
+## Notification
+
+The properties of the Notification component API have been aligned with our code [style guide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md).
+
+### How to migrate your Notification components
+
+To migrate your 'Notification' component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to do it manually, you must transform your existing code as follows:
+
+```tsx
+import { Notification } from '@contentful/forma-36-react-components';
+
+const notificationText = 'Some text';
+const duration = 3000;
+const otherProps = {
+  title: 'Some title',
+};
+const placement = 'bottom';
+
+Notification.success(notificationText, {
+  duration,
+  canClose: true,
+  close: () => {},
+  ...otherProps,
+});
+
+Notification.setPosition(placement, { offset: 0 });
+```
+
+into:
+
+```tsx
+import { Notification } from '@contentful/f36-components';
+
+const notificationText = 'Some text';
+const duration = 3000;
+const otherProps = {
+  title: 'Some title',
+};
+const placement = 'bottom';
+
+Notification.success(notificationText, {
+  duration,
+  withClose: true,
+  onClose: () => {},
+  ...otherProps,
+});
+
+Notification.setPlacement(placement, { offset: 0 });
+```
+
+## Modal
+
+In version 4 the Modal component buttons were moved from the left to the right side of the `<Modal.Controls>` component. We now recommend swapping action buttons, the primary action should be displayed as the first one from the right in the Modal. Have a look how to do it:
+
+In version 3:
+
+```tsx
+<Modal.Controls>
+  <Button variant="primary" />
+  <Button variant="secondary" />
+</Modal.Controls>
+```
+
+In version 4:
+
+```tsx
+<Modal.Controls>
+  <Button variant="secondary" size="small" />
+  <Button variant="primary" size="small" />
+</Modal.Controls>
+```
+
+### How to migrate your Modal components
+
+To migrate your `Modal` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to do it manually, you must transform your existing code as follows:
+
+```tsx
+import {
+  Modal,
+  ModalHeader,
+  ModalConfirm,
+  ModalControls,
+  ModalContent,
+  ModalLauncher,
+} from '@contentful/forma-36-react-components';
+
+<ModalConfirm
+  onSecondary={() => {}}
+  isSecondaryLoading
+  secondaryIntent="primary"
+  secondaryLabel="secondary label"
+  secondaryTestId="secondary id"
+>
+  Confirm content
+</ModalConfirm>;
+<ModalHeader isNotWrapped>Header content</ModalHeader>;
+<ModalContent></ModalContent>;
+<Modal.Controls>
+  <Button buttonType="primary" />
+  <Button buttonType="secondary" />
+</Modal.Controls>;
+```
+
+into:
+
+```tsx
+import {
+  Modal,
+  ModalHeader,
+  ModalControls,
+  ModalContent,
+  ModalConfirm,
+  ModalLauncher,
+} from '@contentful/f36-components';
+
+<ModalConfirm>Confirm content</ModalConfirm>;
+<ModalHeader>Header content</ModalHeader>;
+<Modal.Controls>
+  <Button variant="secondary" size="small" />
+  <Button variant="primary" size="small" />
+</Modal.Controls>;
 ```

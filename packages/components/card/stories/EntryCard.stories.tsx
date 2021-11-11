@@ -93,6 +93,9 @@ export const Overview: Story<EntryCardProps> = () => {
           {['default', 'small'].map((size) => (
             <EntryCard
               key={size}
+              as="a"
+              href="https://contentful.com"
+              target="_blank"
               actions={[
                 <MenuItem key="copy">Copy</MenuItem>,
                 <MenuItem key="delete">Delete</MenuItem>,
