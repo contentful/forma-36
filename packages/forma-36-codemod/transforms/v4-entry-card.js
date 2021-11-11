@@ -2,10 +2,10 @@ const {
   getComponentLocalName,
   changeProperties,
   changeImport,
+  addProperty,
   deleteProperty,
   renameProperties,
   hasProperty,
-  addProperty,
   warningMessage,
 } = require('../utils');
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
@@ -16,7 +16,7 @@ module.exports = function (file, api) {
   let source = file.source;
 
   const componentName = getComponentLocalName(j, source, {
-    componentName: 'AssetCard',
+    componentName: 'EntryCard',
     importName: getFormaImport(),
   });
 

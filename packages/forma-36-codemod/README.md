@@ -30,7 +30,7 @@ FORMA_IMPORT=custom-import FORMA_SKIP_UPDATE_IMPORT=true npx @contentful/f36-cod
 
 ### Running locally
 
-To run the codemod directly without publishing it needs some additional steps due to some issues resolving the dependencies when running locally.  
+To run the codemod directly without publishing it needs some additional steps due to some issues resolving the dependencies when running locally.
 You need to first install all dependencies on the codemod directory.
 
 ```sh
@@ -39,7 +39,7 @@ npm install --legacy-peer-deps
 npm link
 ```
 
-After this you can run the codemod in your project.  
+After this you can run the codemod in your project.
 If using `nvm` or similar make sure to be on the same version that you used to link the codemod.
 
 ```sh
@@ -100,3 +100,7 @@ Migrate Notification component from v3 to v4
 #### `v4-asset-card`
 
 Migrate AssetCard components from v3 to v4
+
+#### `v4-entry-card`
+
+Migrate EntryCard components from v3 to v4
