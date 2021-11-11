@@ -17,6 +17,12 @@
     - [How to migrate your Flex components](#how-to-migrate-your-flex-components)
   - [Grid](#grid)
     - [How to migrate your Grid components](#how-to-migrate-your-grid-components)
+  - [Note](#note)
+    - [How to migrate your Note components](#how-to-migrate-your-note-components)
+  - [Notification](#notification)
+    - [How to migrate your Notification components](#how-to-migrate-your-notification-components)
+  - [Modal](#modal)
+    - [How to migrate your Modal components](#how-to-migrate-your-modal-components)
 
 ## How to migrate your packages to v4
 
