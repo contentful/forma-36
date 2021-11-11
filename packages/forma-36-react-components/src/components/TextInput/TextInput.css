@@ -43,10 +43,6 @@
   }
 }
 
-.TextInput__input:focus {
-  z-index: var(--z-index-default);
-}
-
 .TextInput--small {
   width: var(--input-width-small);
 }
