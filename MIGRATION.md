@@ -630,13 +630,14 @@ For more detailed information and examples, check our documentation website.
 
 #### How to migrate your Field components
 
-Run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) to migrate your v3 `Field components to the new version:
+To migrate your `Field` components to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+To migrate your Field components to v4, run the following codemod:
 
 `npx @contentful/f36-codemod`
 
-The codemods that need to be ran are: `v4-checkbox`, `v4-radio`, `v4-select`, and `v4-text-field`.
+The codemods that must be run: `v4-checkbox`, `v4-radio`, `v4-select`, and `v4-text-field`.
 
-If you decide to do it manually, you would need to transform your code:
+If you want to do it manually, you must transform your code as follows:
 
 ```tsx static=true
 import { CheckboxField, TextField } from '@contentful/forma-36-react-components';
@@ -685,7 +686,7 @@ import { Checkbox, TextInput, FormControl } from '@contentful/f36-components';
 
 ### Checkbox
 
-We removed `CheckboxField` component in version 4. Now instead of doing:
+We removed the `CheckboxField` component in version 4. Now, instead of:
 
 ```jsx static=true
 import { Checkbox } from '@contentful/forma-36-react-components';
@@ -695,7 +696,7 @@ import { Checkbox } from '@contentful/forma-36-react-components';
 
 _Note: This example would render only the input and the `labelText` would be set as the `aria-label`._
 
-You will do:
+You can use:
 
 ```jsx static=true
 import { Checkbox } from '@contentful/f36-components';
@@ -719,7 +720,7 @@ We also introduced API changes for the checkbox. This is an overview of the rena
 
 #### How to migrate your checkbox components
 
-The migration for the version 3 `Checkbox` component needs to be manual as it depends on the context that the component is being used, for example:
+You must manually migrate the version 3 `Checkbox` component as it depends on the context the component is being used. For example:
 
 ```jsx static=true
 import {
@@ -748,7 +749,7 @@ If you only use `CheckboxField` component, please check the [Field components](#
 
 ### RadioButton
 
-In the version 4 we renamed the `RadioButton` to `Radio`, and we removed `RadioButtonField` component. Now instead of doing:
+In version 4 we renamed the `RadioButton` to `Radio` and we removed the `RadioButtonField` component. Now instead of:
 
 ```jsx static=true
 import { RadioButton } from '@contentful/forma-36-react-components';
@@ -758,7 +759,7 @@ import { RadioButton } from '@contentful/forma-36-react-components';
 
 _Note: This example would render only the input and the `labelText` would be set as the `aria-label`._
 
-You will do the following:
+You can use:
 
 ```jsx static=true
 import { Radio } from '@contentful/f36-components';
@@ -781,11 +782,11 @@ We also introduced API changes for the radio. This is an overview of the renamed
 
 #### How to migrate your RadioButton components
 
-Run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) to migrate your v3 `RadioButton` component to the new version:
+To migrate your `RadioButton` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
 
-If you decide to do it manually, you would need to transform your code:
+If you want to do it manually, you must transform your code as follows:
 
 ```jsx static=true
 import { RadioButton } from '@contentful/forma-36-react-components';
@@ -813,7 +814,7 @@ import { Radio } from '@contentful/f36-components';
 
 ### Select
 
-`Select` component becomes compound component in version 4. You can use `Select` and `Select.Option` , with just importing `Select`. You would need to transform your existing code:
+The `Select` component becomes a compound component in version 4. You can use `Select` and `Select.Option` by just importing `Select`. You must transform your existing code as follows:
 
 ```tsx static=true
 <Select id="optionSelect" name="optionSelect" width="large">
@@ -822,7 +823,7 @@ import { Radio } from '@contentful/f36-components';
 </Select>
 ```
 
-into the following:
+into:
 
 ```tsx static=true
 <Select id="optionSelect" name="optionSelect">
@@ -831,7 +832,7 @@ into the following:
 </Select>
 ```
 
-We also introduced some API changes for the select, check the props that had changes:
+We also introduced some API changes for the select. This is an overview of the changed props:
 
 - `width` was removed;
 - `required` was renamed to `isRequired`;
@@ -841,11 +842,11 @@ We also introduced some API changes for the select, check the props that had cha
 
 #### How to migrate your Select components
 
-Run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) to migrate your v3 `Select` component to the new version:
+To migrate your v3 `Select` component, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
 
-If you decide to do it manually, you would need to transform your code:
+If you want to do it manually, you must transform your code as follows:
 
 ```jsx static=true
 import { Select, Option } from '@contentful/forma-36-react-components';
@@ -859,7 +860,7 @@ import { Select, Option } from '@contentful/forma-36-react-components';
 </Select>;
 ```
 
-into this new version:
+into:
 
 ```jsx static=true
 import { Select } from '@contentful/f36-components';
@@ -875,7 +876,7 @@ import { Select } from '@contentful/f36-components';
 
 ### Switch
 
-In v4 the `Switch` component has received API improvements, that are based on our code style guide, which creates consistent, easy-to-use APIs. For example:
+In v4 the `Switch` component has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
 
 ```jsx static=true
 import { Switch } from '@contentful/forma-36-react-components';
@@ -883,7 +884,7 @@ import { Switch } from '@contentful/forma-36-react-components';
 <Switch name="switch" id="switch" onToggle={onToggle} labelText="some label" />;
 ```
 
-will become:
+becomes:
 
 ```jsx static=true
 import { Switch } from '@contentful/f36-components';
@@ -897,7 +898,7 @@ When changing `onToggle` to `onChange`, before it would expect a function that r
 
 #### How to migrate your Switch components
 
-The migration for the Switch needs to be done manually by updating the usage of the props, for example:
+You must manually migrate the Switch component by updating the props usage. For example:
 
 ```jsx static=true
 import { Switch } from '@contentful/forma-36-react-components';
@@ -967,7 +968,7 @@ becomes:
 
 #### How to migrate your TextInput and TextArea components
 
-To migrate the `TextInput` or `TextArea` components to the v4 run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+To migrate the `TextInput` or `TextArea` components to v4 run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
 
@@ -1110,7 +1111,7 @@ The migration should be done manually, using the Layout component that best fits
 
 ### Form
 
-In version 4 we removed `spacing` property for the Form component and that's the only API change for this component. For example:
+In version 4, we improved the Form component API by removing the `spacing` property. For example:
 
 ```tsx static=true
 import { Form } from '@contentful/forma-36-react-components';
@@ -1120,7 +1121,7 @@ import { Form } from '@contentful/forma-36-react-components';
 </Form>;
 ```
 
-will become:
+becomes:
 
 ```tsx static=true
 import { Form } from '@contentful/f36-components';
@@ -1130,15 +1131,13 @@ import { Form } from '@contentful/f36-components';
 </Form>;
 ```
 
-#### How to migrate your form components
+#### How to migrate your Form components
 
-To migrate your v3 `Form` component to the version 4 you can simply run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) that we prepared for this occasion, like:
+To migrate your `Form` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
 
-What codemod will do for you, and what you can do yourself manually if you decide to do so, is:
-
-it transforms:
+When running the codemod, the following changes occur:
 
 ```tsx static=true
 import { Form } from '@contentful/forma-36-react-components';
@@ -1148,7 +1147,7 @@ import { Form } from '@contentful/forma-36-react-components';
 </Form>;
 ```
 
-into this new version:
+becomes:
 
 ```tsx static=true
 import { Form } from '@contentful/f36-components';
@@ -1160,7 +1159,7 @@ import { Form } from '@contentful/f36-components';
 
 ### FormLabel
 
-The `FormLabel` component was updated to be a compound component of the new `FormControl` component and it should be update to be wrapped by the `FormControl` component. For example:
+`FormLabel` becomes a compound component of the new `FormControl` component. It must be updated to be wrapped by the `FormControl` component. For example:
 
 ```jsx static=true
 <FormLabel htmlFor="inputId" required>Label for the input</FormLabel>
@@ -1182,7 +1181,7 @@ becomes:
 
 #### How to migrate your FormLabel components
 
-The migration for the FormLabel needs to be done manually by updating the usage. For example:
+You must manually migrate the `FormLabel` component by updating the usage. For example:
 
 ```jsx static=true
 import { TextInput, FormLabel } from '@contentful/forma-36-react-components';
