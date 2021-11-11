@@ -125,6 +125,10 @@ const TRANSFORMS_CHOICES = [
     name: 'v4-asset-card: Migrate AssetCard components from v3 to v4',
     value: 'v4-asset-card',
   },
+  {
+    name: 'v4-entry-card: Migrate Entry components from v3 to v4',
+    value: 'v4-entry-card',
+  },
   // Add extra codemods - do not remove
 ];
 
