@@ -3,10 +3,14 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
+
 import { geltAllMDX } from '../utils/content';
 
-const Home: NextPage<{ components: { slug: string }[] }> = (props) => {
-  console.log(props.components);
+interface HomeProps {
+  componentsList: { slug: string }[];
+}
+
+const Home: NextPage<HomeProps> = (props) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,13 +21,8 @@ const Home: NextPage<{ components: { slug: string }[] }> = (props) => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Forma 36 in Next.js!</a>
+          Welcome to Forma 36 in <a href="https://nextjs.org">Next.js!</a>
         </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
 
         <div className={styles.links}>
           <Link href="/getting-started">
@@ -37,7 +36,7 @@ const Home: NextPage<{ components: { slug: string }[] }> = (props) => {
 
         <h2>Pages generated from MDX files in /packages/components</h2>
         <ul>
-          {props.components.map((component, idx) => {
+          {props.componentsList.map((component, idx) => {
             return (
               <li key={idx}>
                 <Link href={`/components/${component.slug}`}>
@@ -79,7 +78,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      components: sortedComponentsList,
+      componentsList: sortedComponentsList,
     },
   };
 }
