@@ -71,13 +71,18 @@ function IndexPage() {
           <TextLink
             href="https://github.com/contentful/forma-36/issues/new/choose"
             target="_blank"
+            rel="noopener noreferrer"
           >
             GitHub
           </TextLink>
         </Paragraph>
         <Paragraph>
           or use this anonymous{' '}
-          <TextLink href="https://forms.gle/qC7LLbiy4CcF5HPLA" target="_blank">
+          <TextLink
+            href="https://forms.gle/qC7LLbiy4CcF5HPLA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             form
           </TextLink>{' '}
           to share your thougts and ideas with us.
