@@ -17,6 +17,25 @@
     - [How to migrate your Flex components](#how-to-migrate-your-flex-components)
   - [Grid](#grid)
     - [How to migrate your Grid components](#how-to-migrate-your-grid-components)
+  - [Form Components](#form-components)
+    - [Field Components](#field-components)
+      - [How to migrate your Field components](#how-to-migrate-your-field-components)
+    - [Checkbox](#checkbox)
+      - [How to migrate your Checkbox components](#how-to-migrate-your-checkbox-components)
+    - [RadioButton](#radiobutton)
+      - [How to migrate your RadioButton components](#how-to-migrate-your-radiobutton-components)
+    - [Select](#select)
+      - [How to migrate your Select components](#how-to-migrate-your-select-components)
+    - [Switch](#switch)
+      - [How to migrate your Switch components](#how-to-migrate-your-switch-components)
+    - [TextInput and TextArea](#textinput-and-textarea)
+      - [How to migrate your TextInput and TextArea component](#how-to-migrate-your-textinput-and-textarea-components)
+    - [FieldGroup](#fieldgroup)
+      - [How to migrate your FieldGroup components](#how-to-migrate-your-fieldgroup-components)
+    - [Form](#form)
+      - [How to migrate your Form components](#how-to-migrate-your-form-components)
+    - [FormLabel](#formlabel)
+      - [How to migrate your FormLabel components](#how-to-migrate-your-formlabe-components)
   - [Note](#note)
     - [How to migrate your Note components](#how-to-migrate-your-note-components)
   - [Notification](#notification)
@@ -548,6 +567,653 @@ import { Grid, GridItem } from '@contentful/f36-components';
   <GridItem />
   <GridItem />
 </Grid>;
+```
+
+## Form Components
+
+We changed how the Form Components work on version 4. In version 3 we had the Field components, like `TextField` or `SelectField` that would handle elements like Label, HelpText, and ValidationMessage.
+In version 4 we created the `FormControl` which gives the user more flexibility and controls the given input, its validation, state, etc.
+All the previous options are still available within the `FormControl` component:
+
+- `FormControl.Label`
+- `FormControl.HelpText`
+- `FormControl.ValidationMessage`
+- `FormControl.Counter`
+
+Any Forma 36 form element can be used either as controlled or uncontrolled components, by using the `defaulValue`/`defaultChecked` prop for uncontrolled and `value`/`isChecked` with an `onChange` props for the controlled version. For example:
+
+```jsx static=true
+// This would render the TextInput as an uncontrolled component
+<TextInput defaultValue="Some initial Value" />
+
+// This would render the TextInput as a controlled component
+<TextInput value="Some initial Value" onChange={onChange} />
+```
+
+### Field Components
+
+The `CheckboxField`, `RadioButtonField`, `SelectField`, and `TextField` components were removed in version 4, and need to be replaced by the new `FormControl` component and its compound components. For example:
+
+```tsx static=true
+// Checkbox
+<CheckboxField
+  labelText="Your label text"
+  id="some-id"
+  type="checkbox"
+  helpText="Some help text"
+  validationMessage="validation message"
+/>
+
+// TextInput
+<TextField
+  id="inputId"
+  name="email"
+  labelText="Counting characters and HelpText"
+  textInputProps={{
+    maxLength: 10,
+  }}
+  helpText="Some help text"
+  validationMessage="Validation Message"
+/>
+```
+
+will become:
+
+```tsx static=true
+// Checkbox
+<FormControl id="some-id">
+  <Checkbox helpText="Some help text">Your label text</Checkbox>
+  <FormControl.ValidationMessage>validation message</FormControl.ValidationMessage>
+</FormControl>
+
+// TextInput
+<FormControl id="inputId">
+  <FormControl.Label>Counting characters and HelpText</FormControl.Label>
+  <TextInput name="email" maxLength={10} />
+  <Flex justifyContent="space-between">
+    <FormControl.HelpText>Some help text</FormControl.HelpText>
+    <FormControl.Counter />
+  </Flex>
+  <FormControl.ValidationMessage>Validation Message</FormControl.ValidationMessage>
+</FormControl>
+```
+
+For more detailed information and examples, check our [documentation](https://v4-forma-36.netlify.app/components/form-control/).
+
+#### How to migrate your Field components
+
+To migrate your `Field` components to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+To migrate your Field components to v4, run the following codemod:
+
+`npx @contentful/f36-codemod`
+
+The codemods that must be run: `v4-checkbox`, `v4-radio`, `v4-select`, and `v4-text-field`.
+
+If you want to do it manually, you must transform your code as follows:
+
+```tsx static=true
+import { CheckboxField, TextField } from '@contentful/forma-36-react-components';
+
+<CheckboxField
+  labelText="Your label text"
+  id="some-id"
+  type="checkbox"
+  helpText="Some help text"
+  validationMessage="validation message"
+/>
+
+// TextInput
+<TextField
+  id="inputId"
+  name="email"
+  labelText="Counting characters and HelpText"
+  textInputProps={{
+    maxLength: 10,
+  }}
+  helpText="Some help text"
+  validationMessage="Validation Message"
+/>
+```
+
+into this new version:
+
+```tsx static=true
+import { Checkbox, TextInput, FormControl } from '@contentful/f36-components';
+
+<FormControl id="some id">
+  <Checkbox helpText="Some help text">Your label text</Checkbox>
+  <FormControl.ValidationMessage>validation message</FormControl.ValidationMessage>
+</FormControl>
+
+<FormControl id="inputId">
+  <FormControl.Label>Counting characters and HelpText</FormControl.Label>
+  <TextInput name="email" maxLength={10} />
+  <Flex justifyContent="space-between">
+    <FormControl.HelpText>Some help text</FormControl.HelpText>
+    <FormControl.Counter />
+  </Flex>
+  <FormControl.ValidationMessage>Validation Message</FormControl.ValidationMessage>
+</FormControl>
+```
+
+### Checkbox
+
+We removed the `CheckboxField` component in version 4. Now, instead of:
+
+```jsx static=true
+import { Checkbox } from '@contentful/forma-36-react-components';
+
+<Checkbox id="checkbox" name="checkbox" labelText="some label" />;
+```
+
+_Note: This example would render only the input and the `labelText` would be set as the `aria-label`._
+
+You can use:
+
+```jsx static=true
+import { Checkbox } from '@contentful/f36-components';
+
+// This would render the exact same as on version 3
+<Checkbox id="checkbox" name="checkbox" aria-label="some label" />
+
+// You can also pass the label and help text to the checkbox
+<Checkbox id="checkbox" name="checkbox" helpText="Some help text">
+  This label will be rendered at the side of the checkbox
+</Checkbox>
+```
+
+We also introduced API changes for the checkbox. This is an overview of the renamed properties:
+
+- `required` was renamed to `isRequired`;
+- `labelText` should be replaced by `aria-label` when not passing a label to the checkbox;
+- `checked` was renamed to `isChecked`;
+- `disabled` was renamed to `isDisabled`;
+- `indeterminate` was renamed to `isIndeterminate`.
+
+#### How to migrate your checkbox components
+
+You must manually migrate the version 3 `Checkbox` component as it depends on the context the component is being used. For example:
+
+```jsx static=true
+import {
+  Checkbox,
+  Box,
+  FormLabel,
+} from '@contentful/forma-36-react-components';
+
+<Box>
+  <Checkbox id="checkbox" name="checkbox" />
+  <FormLabel htmlFor="checkbox">Some label here</FormLabel>
+</Box>;
+```
+
+becomes:
+
+```jsx static=true
+import { Checkbox } from '@contentful/f36-components';
+
+<Checkbox id="checkbox" name="checkbox">
+  Some label here
+</Checkbox>;
+```
+
+If you only use `CheckboxField` component, please check the [Field components](#field-components) section.
+
+### RadioButton
+
+In version 4 we renamed the `RadioButton` to `Radio` and we removed the `RadioButtonField` component. Now instead of:
+
+```jsx static=true
+import { RadioButton } from '@contentful/forma-36-react-components';
+
+<RadioButton name="someOption" id="radio" labelText="some label" />;
+```
+
+_Note: This example would render only the input and the `labelText` would be set as the `aria-label`._
+
+You can use:
+
+```jsx static=true
+import { Radio } from '@contentful/f36-components';
+
+// This would render the exact same as on version 3
+<Radio name="someOption" id="radio" aria-label="some label" />
+
+// You can also pass the label and help text to the radio
+<Radio name="someOption" id="radio" helpText="Some help text">
+  This label will be rendered at the side of the input
+</Radio>
+```
+
+We also introduced API changes for the radio. This is an overview of the renamed properties:
+
+- `required` was renamed to `isRequired`;
+- `labelText` should be replaced by `aria-label` when not passing a label to the input;
+- `checked` was renamed to `isChecked`;
+- `disabled` was renamed to `isDisabled`.
+
+#### How to migrate your RadioButton components
+
+To migrate your `RadioButton` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to do it manually, you must transform your code as follows:
+
+```jsx static=true
+import { RadioButton } from '@contentful/forma-36-react-components';
+
+<RadioButton
+  id="radio"
+  disabled={false}
+  checked={true}
+  labelText="some label"
+/>;
+```
+
+into this new version:
+
+```jsx static=true
+import { Radio } from '@contentful/f36-components';
+
+<Radio
+  id="radio"
+  isDisabled={false}
+  isChecked={true}
+  aria-label="some label"
+/>;
+```
+
+### Select
+
+The `Select` component becomes a compound component in version 4. You can use `Select` and `Select.Option` by just importing `Select`. You must transform your existing code as follows:
+
+```tsx static=true
+<Select id="optionSelect" name="optionSelect" width="large">
+  <Option value="optionOne">Option 1</Option>
+  <Option value="optionTwo">Long Option 2</Option>
+</Select>
+```
+
+into:
+
+```tsx static=true
+<Select id="optionSelect" name="optionSelect">
+  <Select.Option value="optionOne">Option 1</Select.Option>
+  <Select.Option value="optionTwo">Long Option 2</Select.Option>
+</Select>
+```
+
+We also introduced some API changes for the select. This is an overview of the changed props:
+
+- `width` was removed;
+- `required` was renamed to `isRequired`;
+- `hasError` was renamed to `isInvalid`;
+- `disabled` was renamed to `isDisabled`;
+- The `Select.Option` component can receive a `isDisabled` prop instead of the `disabled`.
+
+#### How to migrate your Select components
+
+To migrate your v3 `Select` component, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to do it manually, you must transform your code as follows:
+
+````jsx static=true
+import { Select, Option } from '@contentful/forma-36-react-components';
+
+<Select name="optionSelect" id="optionSelect">
+  <Option value="optionOne">Option One</Option>
+  <Option value="optionTwo">Option Two</Option>
+  <Option value="optionThree" disabled>
+    Option Three
+  </Option>
+</Select>;
+
+into:
+
+```jsx static=true
+import { Select } from '@contentful/f36-components';
+
+<Select name="optionSelect" id="optionSelect">
+  <Select.Option value="optionOne">Option One</Select.Option>
+  <Select.Option value="optionTwo">Option Two</Select.Option>
+  <Select.Option value="optionThree" isDisabled>
+    Option Three
+  </Select.Option>
+</Select>;
+````
+
+### Switch
+
+In v4 the `Switch` component has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
+
+```jsx static=true
+import { Switch } from '@contentful/forma-36-react-components';
+
+<Switch name="switch" id="switch" onToggle={onToggle} labelText="some label" />;
+```
+
+becomes:
+
+```jsx static=true
+import { Switch } from '@contentful/f36-components';
+
+<Switch name="switch" id="switch" onChange={onChange}>
+  some label
+</Switch>;
+```
+
+_Note: in v3 the `onToggle` method had `checked` value (true/false) as parameter, now the `onChange` method has the event as parameter, so `event.target.checked` will have the true/false value_
+
+#### How to migrate your Switch components
+
+You must manually migrate the Switch component by updating the props usage. For example:
+
+```jsx static=true
+import { Switch } from '@contentful/forma-36-react-components';
+
+const [isChecked, setIsChecked] = React.useState(false);
+const onToggle = (checked) => setIsChecked(checked);
+<Switch
+  name="switch"
+  id="switch"
+  isChecked={isChecked}
+  onToggle={onToggle}
+  labelText="some label"
+/>;
+```
+
+into this new version:
+
+```jsx static=true
+import { Switch } from '@contentful/f36-components';
+
+const [isChecked, setIsChecked] = React.useState(false);
+const onChange = (event) => setIsChecked(event.target.checked);
+<Switch name="switch" id="switch" isChecked={isChecked} onChange={onChange}>
+  some label
+</Switch>;
+```
+
+### TextInput and TextArea
+
+In v4 the TextInput and TextArea components have received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
+
+```jsx static=true
+<TextInput
+  id="someInput"
+  name="userEmail"
+  labelText="userEmail"
+  className="my-extra-class"
+  value="some value"
+/>
+
+<Textarea
+  id="someInput"
+  name="userEmail"
+  className="my-extra-class"
+  disabled
+  value="some value"
+/>;
+```
+
+becomes:
+
+```jsx static=true
+<TextInput
+  id="someInput"
+  name="userEmail"
+  aria-label="userEmail"
+  className="my-extra-class"
+  defaultValue="some value" />
+
+<Textarea
+  id="someInput"
+  name="userEmail"
+  className="my-extra-class"
+  isDisabled
+  defaultValue="some value" />;
+```
+
+#### How to migrate your TextInput and TextArea components
+
+To migrate the `TextInput` or `TextArea` components to v4 run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+When running the codemod, the following changes occur:
+
+```tsx static=true
+import { TextInput, Textarea } from '@contentful/forma-36-react-components';
+
+<TextInput
+  id="someInput"
+  name="userEmail"
+  labelText="userEmail"
+  className="my-extra-class"
+  value="some value"
+/>;
+
+<TextInput
+  id="someInput"
+  name="userEmail"
+  labelText="userEmail"
+  disabled
+  required
+  value="some value"
+  onChange={() => {}}
+/>;
+
+<TextInput
+  id="someInput"
+  name="userEmail"
+  labelText="userEmail"
+  error
+  readOnly
+  width="large"
+  onChange={() => {}}
+/>;
+
+<TextInput
+  id="someInput"
+  name="userEmail"
+  labelText="userEmail"
+  withCopyButton
+  width="small"
+/>;
+
+<Textarea
+  id="someInput"
+  name="userEmail"
+  className="my-extra-class"
+  disabled
+  value="some value"
+/>;
+
+<Textarea
+  id="someInput"
+  name="userEmail"
+  className="my-extra-class"
+  error
+  width="large"
+  value="some value"
+  onChange={() => {}}
+/>;
+```
+
+becomes:
+
+```tsx static=true
+import { CopyButton, TextInput, Textarea } from '@contentful/f36-components';
+
+<TextInput
+  id="someInput"
+  name="userEmail"
+  aria-label="userEmail"
+  className="my-extra-class"
+  defaultValue="some value"
+/>;
+
+<TextInput
+  id="someInput"
+  name="userEmail"
+  aria-label="userEmail"
+  isDisabled
+  isRequired
+  value="some value"
+  onChange={() => {}}
+/>;
+
+<TextInput
+  id="someInput"
+  name="userEmail"
+  aria-label="userEmail"
+  isInvalid
+  isReadOnly
+  onChange={() => {}}
+/>;
+
+<TextInput.Group>
+  <TextInput id="someInput" name="userEmail" aria-label="userEmail" />
+  <CopyButton />
+</TextInput.Group>;
+
+<Textarea
+  id="someInput"
+  name="userEmail"
+  className="my-extra-class"
+  isDisabled
+  defaultValue="some value"
+/>;
+
+<Textarea
+  id="someInput"
+  name="userEmail"
+  className="my-extra-class"
+  isInvalid
+  value="some value"
+  onChange={() => {}}
+/>;
+```
+
+You can also make these changes manually.
+
+### FieldGroup
+
+The `FieldGroup` component was removed, and should be replaced by one of the Layout components which best fits your need. For example:
+
+```tsx static=true
+<FieldGroup>...</FieldGroup>
+```
+
+for keeping the same spacing as before it should become:
+
+```tsx static=true
+<Flex flexDirection="column" gap="spacingXs">
+  ...
+</Flex>
+```
+
+#### How to migrate your FieldGroup components
+
+The migration should be done manually, using the Layout component that best fits the user needs, the layout components are [Box](https://v4-forma-36.netlify.app/components/box/), [Flex](https://v4-forma-36.netlify.app/components/flex/), [Stack](https://v4-forma-36.netlify.app/components/stack/), and [Grid](https://v4-forma-36.netlify.app/components/grid/).
+
+### Form
+
+In version 4, we improved the Form component API by removing the `spacing` property. For example:
+
+```tsx static=true
+import { Form } from '@contentful/forma-36-react-components';
+
+<Form onSubmit={handleSubmit} spacing="condensed">
+  ...
+</Form>;
+```
+
+becomes:
+
+```tsx static=true
+import { Form } from '@contentful/f36-components';
+
+<Form onSubmit={handleSubmit} spacing="condensed">
+  ...
+</Form>;
+```
+
+#### How to migrate your Form components
+
+To migrate your `Form` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+When running the codemod, the following changes occur:
+
+```tsx static=true
+import { Form } from '@contentful/forma-36-react-components';
+
+<Form onSubmit={handleSubmit} spacing="condensed">
+  Form elements goes here and spacing value is removed
+</Form>;
+```
+
+becomes:
+
+```tsx static=true
+import { Form } from '@contentful/f36-components';
+
+<Form onSubmit={handleSubmit}>
+  Form elements goes here and spacing value is removed
+</Form>;
+```
+
+### FormLabel
+
+`FormLabel` becomes a compound component of the new `FormControl` component. It must be updated to be wrapped by the `FormControl` component. For example:
+
+```jsx static=true
+<FormLabel htmlFor="inputId" required>Label for the input</FormLabel>
+<TextInput name="input" id="inputId" />
+```
+
+becomes:
+
+```jsx static=true
+<FormControl.FormLabel htmlFor="inputId" isRequired>Label for the input</FormControl.FormLabel>
+<TextInput name="input" id="inputId" />
+
+// You can also use the FormControl to wrap it, and it would handle the id and isRequired
+<FormControl isRequired id="inputId">
+  <FormControl.FormLabel>Label for the input</FormControl.FormLabel>
+  <TextInput name="input" />
+</FormControl>
+```
+
+#### How to migrate your FormLabel components
+
+You must manually migrate the `FormLabel` component by updating the usage. For example:
+
+```jsx static=true
+import { TextInput, FormLabel } from '@contentful/forma-36-react-components';
+
+<FormLabel htmlFor="inputId" required requiredText="required field">Label for the input</FormLabel>
+<TextInput name="input" id="inputId" />
+```
+
+into this new version:
+
+```jsx static=true
+import { FormControl, TextInput } from '@contentful/f36-components';
+
+<FormControl.FormLabel htmlFor="inputId" isRequired requiredText="required field">Label for the input</FormControl.FormLabel>
+<TextInput name="input" id="inputId" />
+
+// You can also use the FormControl to wrap it, and it would handle the id and isRequired
+<FormControl isRequired id="inputId">
+  <FormControl.FormLabel requiredText="required field">Label for the input</FormControl.FormLabel>
+  <TextInput name="input">
+</FormControl>
 ```
 
 ## Note
