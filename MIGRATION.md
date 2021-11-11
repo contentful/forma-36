@@ -491,7 +491,7 @@ const isCollapsed = true;
 
 ## DateTime
 
-The API of the DateTime component hasn't changed. The only property that has some updates, is `format` property. From `"FULL"`, `"DATE_ONLY"`, `"TIME_ONLY"`, `"WEEKDAY_DATE"` to `"full"`, `"day"`, `"time"`, `"weekday"`.
+The API of the DateTime component hasn't changed. The `format` property is the only one that was updated: from `"FULL"`, `"DATE_ONLY"`, `"TIME_ONLY"`, `"WEEKDAY_DATE"` to `"full"`, `"day"`, `"time"`, `"weekday"`.
 
 ```tsx static=true
 import { DateTime } from '@contentful/f36-datetime';
@@ -504,7 +504,7 @@ import { DateTime } from '@contentful/f36-datetime';
 
 ### How to migrate your DateTime components
 
-Update `format` value and import. It should change form this:
+Update the `format` value and import. It changes from this:
 
 ```tsx static=true
 import { DateTime } from '@contentful/forma-36-react-components';
