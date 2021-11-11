@@ -29,7 +29,6 @@ const getHeaderStyles = () => {
       paddingRight: tokens.spacingXs,
       paddingTop: tokens.spacingXs,
       minHeight: '37px',
-      cursor: 'default',
     }),
     headerWithActions: css({
       paddingBottom: 0,
@@ -53,11 +52,7 @@ export function DefaultCardHeader(
   const { icon, type, actions, actionsButtonProps, badge } = props;
   const styles = getHeaderStyles();
   return (
-    <Flex
-      className={cx(styles.header, actions && styles.headerWithActions)}
-      // don't propagate click event, so onClick handler on the card is not triggered
-      onClick={stopEvents}
-    >
+    <Flex className={cx(styles.header, actions && styles.headerWithActions)}>
       <Flex flexGrow={1}>
         {type && <Text fontColor="gray600">{type}</Text>}
       </Flex>
@@ -72,7 +67,13 @@ export function DefaultCardHeader(
         </Flex>
       )}
       {actions && actions.length > 0 && (
-        <CardActions buttonProps={actionsButtonProps}>{actions}</CardActions>
+        <Flex
+          // don't propagate click event, so onClick handler on the card is not triggered
+          onClick={stopEvents}
+          alignItems="center"
+        >
+          <CardActions buttonProps={actionsButtonProps}>{actions}</CardActions>
+        </Flex>
       )}
     </Flex>
   );
