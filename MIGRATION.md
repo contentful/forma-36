@@ -626,7 +626,7 @@ will become:
 </FormControl>
 ```
 
-For more detailed information and examples, check our documentation website.
+For more detailed information and examples, check our [documentation](https://v4-forma-36.netlify.app/components/form-control/).
 
 #### How to migrate your Field components
 
@@ -1107,7 +1107,7 @@ for keeping the same spacing as before it should become:
 
 #### How to migrate your FieldGroup components
 
-The migration should be done manually, using the Layout component that best fits the user needs, the layout components are `Box`, `Flex`, `Stack`, and `Grid`.
+The migration should be done manually, using the Layout component that best fits the user needs, the layout components are [Box](https://v4-forma-36.netlify.app/components/box/), [Flex](https://v4-forma-36.netlify.app/components/flex/), [Stack](https://v4-forma-36.netlify.app/components/stack/), and [Grid](https://v4-forma-36.netlify.app/components/grid/).
 
 ### Form
 
