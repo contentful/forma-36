@@ -1579,12 +1579,8 @@ import { Tabs } from '@contentful/f36-components';
 () => {
   const [currentTab, setCurrentTab] = React.useState('first');
 
-  const onSelect = (id) => {
-    setSelected(id);
-  };
-
   return (
-    <Tabs currentTab={currentTab} onTabChange={onSelect}>
+    <Tabs currentTab={currentTab} onTabChange={setCurrentTab}>
       <Tabs.List>
         <Tabs.Tab panelId="first">First</Tabs.Tab>
         <Tabs.Tab panelId="second">Second</Tabs.Tab>
