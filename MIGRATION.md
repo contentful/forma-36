@@ -491,7 +491,7 @@ const isCollapsed = true;
 
 ## DateTime
 
-The API of the DateTime component hasn't changed. The `format` property is the only one that was updated: from `"FULL"`, `"DATE_ONLY"`, `"TIME_ONLY"`, `"WEEKDAY_DATE"` to `"full"`, `"day"`, `"time"`, `"weekday"`.
+The API of the DateTime component has not changed. The `format` property is the only one that was updated: from `"FULL"`, `"DATE_ONLY"`, `"TIME_ONLY"`, `"WEEKDAY_DATE"` to `"full"`, `"day"`, `"time"`, `"weekday"`.
 
 ```tsx static=true
 import { DateTime } from '@contentful/f36-datetime';
@@ -522,7 +522,7 @@ import { DateTime } from '@contentful/f36-components';
 
 ## RelativeDateTime
 
-The API of the RelativeDateComponent was not changed.
+The API of the RelativeDateComponent has not changed.
 
 ### How to migrate your RelativeDateTime components
 
