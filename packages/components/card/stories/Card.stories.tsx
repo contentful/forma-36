@@ -4,6 +4,8 @@ import { Flex } from '@contentful/f36-core';
 import { Heading, SectionHeading, Text } from '@contentful/f36-typography';
 import { ClockIcon } from '@contentful/f36-icons';
 import { MenuItem } from '@contentful/f36-menu';
+import { Button } from '@contentful/f36-button';
+import { FormControl, TextInput, Textarea, Form } from '@contentful/f36-forms';
 
 import { Card } from '../src';
 import type { CardProps } from '../src';
@@ -25,7 +27,7 @@ export default {
 
 export const Default: Story<CardProps> = ({ children, ...args }) => {
   return (
-    <Card {...args} as="button">
+    <Card {...args}>
       <Text>{children}</Text>
     </Card>
   );
@@ -33,6 +35,34 @@ export const Default: Story<CardProps> = ({ children, ...args }) => {
 
 Default.args = {
   children: 'This is the Card’s content',
+};
+
+export const WithFocusableChildren = () => {
+  const [submited, setSubmit] = useState(false);
+  const onSubmit = () => setSubmit(true);
+
+  return (
+    <Card>
+      <Form onSubmit={() => onSubmit()}>
+        <FormControl>
+          <FormControl.Label>Name</FormControl.Label>
+          <TextInput />
+          <FormControl.HelpText>
+            Please enter your first name
+          </FormControl.HelpText>
+        </FormControl>
+
+        <FormControl>
+          <FormControl.Label>Description</FormControl.Label>
+          <Textarea />
+          <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
+        </FormControl>
+        <Button variant="primary" type="submit" isDisabled={submited}>
+          {submited ? 'Sumbited' : 'Click me to submit'}
+        </Button>
+      </Form>
+    </Card>
+  );
 };
 
 export const WithOnClick = (args: CardProps) => {
@@ -133,7 +163,7 @@ export const Overview: Story<CardProps> = () => {
           marginRight="spacingM"
         >
           <SectionHeading as="h3" marginBottom="spacingS">
-            Default
+            Idle
           </SectionHeading>
 
           <Card icon={<ClockIcon />} title="Forma 36">
@@ -204,7 +234,7 @@ export const Overview: Story<CardProps> = () => {
           marginRight="spacingM"
         >
           <SectionHeading as="h3" marginBottom="spacingS">
-            Default
+            Idle
           </SectionHeading>
 
           <Card padding="large" title="Forma 36">
@@ -275,7 +305,7 @@ export const Overview: Story<CardProps> = () => {
           marginRight="spacingM"
         >
           <SectionHeading as="h3" marginBottom="spacingS">
-            Default
+            Idle
           </SectionHeading>
 
           <Card padding="none" title="Forma 36">
