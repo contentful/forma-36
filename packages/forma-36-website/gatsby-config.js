@@ -240,18 +240,8 @@ module.exports = {
             link: '/components/list/',
           },
           {
-            name: 'Menu Components',
-            link: '',
-            menuLinks: [
-              {
-                name: 'Menu',
-                link: '/components/menu/',
-              },
-              {
-                name: 'Popover',
-                link: '/components/popover/',
-              },
-            ],
+            name: 'Menu',
+            link: '/components/menu/',
           },
           {
             name: 'Modals',
@@ -282,6 +272,10 @@ module.exports = {
           {
             name: 'Pill',
             link: '/components/pill/',
+          },
+          {
+            name: 'Popover',
+            link: '/components/popover/',
           },
           {
             name: 'ScreenReaderOnly',
