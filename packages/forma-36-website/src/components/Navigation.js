@@ -99,11 +99,9 @@ const checkActive = (item, currentPath) => {
   );
 };
 
-const checkCategory = (name) => categories.includes(name);
-
 const MenuListItem = React.forwardRef(
   ({ item, currentPath, isActive, hierarchyLevel }, ref) => {
-    const isCategory = checkCategory(item.name);
+    const isCategory = categories.includes(item.name);
     const [isExpanded, setIsExpanded] = useState(isActive || isCategory);
 
     const handleToggle = (event) => {
