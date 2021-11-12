@@ -163,14 +163,6 @@ module.exports = {
             ],
           },
           {
-            name: 'Popover',
-            link: '/components/popover/',
-          },
-          {
-            name: 'Menu',
-            link: '/components/menu/',
-          },
-          {
             name: 'EntityList',
             link: '/components/entity-list/',
           },
@@ -246,6 +238,20 @@ module.exports = {
           {
             name: 'List',
             link: '/components/list/',
+          },
+          {
+            name: 'Menu Components',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Menu',
+                link: '/components/menu/',
+              },
+              {
+                name: 'Popover',
+                link: '/components/popover/',
+              },
+            ],
           },
           {
             name: 'Modals',
