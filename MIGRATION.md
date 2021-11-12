@@ -1413,8 +1413,7 @@ import {
 
 ## Tooltip
 
-In version 4, we rename two props of the Tooltip: `containerElement` and `place`.
-They became `as` and `placement` props respectively.
+In version 4, we renamed two Tooltip props: `containerElement` is now `as` and `place` is now `placement`.
 
 ### How to migrate your Tooltip components
 
