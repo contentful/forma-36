@@ -2,40 +2,40 @@
 
 ## Table of contents
 
-- [Table of contents](#table-of-contents)
-- [How to migrate your packages to v4](#how-to-migrate-your-packages-to-v4)
-- [Changes per Component in v4](#changes-per-component-in-v4)
-  - [Tag becomes Badge](#tag-becomes-badge)
-    - [How to migrate your Tag to Badge](#how-to-migrate-your-tag-to-badge)
-  - [Button](#button)
-    - [How to migrate your Button components](#how-to-migrate-your-button-components)
+- [Migration](#migration)
+  - [Table of contents](#table-of-contents)
+  - [How to migrate your packages to v4](#how-to-migrate-your-packages-to-v4)
+  - [Changes per component in v4](#changes-per-component-in-v4)
+    - [Tag becomes Badge](#tag-becomes-badge)
+      - [How to migrate your Tag to Badge](#how-to-migrate-your-tag-to-badge)
+    - [Button](#button)
+      - [How to migrate your Button components](#how-to-migrate-your-button-components)
   - [Icon](#icon)
     - [How to migrate your Icon components](#how-to-migrate-your-icon-components)
   - [IconButton](#iconbutton)
     - [How to migrate your IconButton components](#how-to-migrate-your-iconbutton-components)
   - [Flex](#flex)
     - [How to migrate your Flex components](#how-to-migrate-your-flex-components)
-  - [Grid](#grid)
-    - [How to migrate your Grid components](#how-to-migrate-your-grid-components)
+    - [Grid](#grid)
+      - [How to migrate your Grid components](#how-to-migrate-your-grid-components)
   - [Form Components](#form-components)
     - [Field Components](#field-components)
       - [How to migrate your Field components](#how-to-migrate-your-field-components)
     - [Checkbox](#checkbox)
-      - [How to migrate your Checkbox components](#how-to-migrate-your-checkbox-components)
+      - [How to migrate your checkbox components](#how-to-migrate-your-checkbox-components)
     - [RadioButton](#radiobutton)
       - [How to migrate your RadioButton components](#how-to-migrate-your-radiobutton-components)
     - [Select](#select)
       - [How to migrate your Select components](#how-to-migrate-your-select-components)
-    - [Switch](#switch)
       - [How to migrate your Switch components](#how-to-migrate-your-switch-components)
     - [TextInput and TextArea](#textinput-and-textarea)
-      - [How to migrate your TextInput and TextArea component](#how-to-migrate-your-textinput-and-textarea-components)
+      - [How to migrate your TextInput and TextArea components](#how-to-migrate-your-textinput-and-textarea-components)
     - [FieldGroup](#fieldgroup)
       - [How to migrate your FieldGroup components](#how-to-migrate-your-fieldgroup-components)
     - [Form](#form)
       - [How to migrate your Form components](#how-to-migrate-your-form-components)
     - [FormLabel](#formlabel)
-      - [How to migrate your FormLabel components](#how-to-migrate-your-formlabe-components)
+      - [How to migrate your FormLabel components](#how-to-migrate-your-formlabel-components)
   - [Note](#note)
     - [How to migrate your Note components](#how-to-migrate-your-note-components)
   - [Notification](#notification)
@@ -44,6 +44,10 @@
     - [How to migrate your Modal components](#how-to-migrate-your-modal-components)
   - [Tooltip](#tooltip)
     - [How to migrate your Tooltip components](#how-to-migrate-your-tooltip-components)
+  - [Dropdown](#dropdown)
+    - [How to migrate your Dropdown components](#how-to-migrate-your-dropdown-components)
+      - [`Dropdown` to `Menu`](#dropdown-to-menu)
+      - [`Dropdown` to `Popover`](#dropdown-to-popover)
 
 ## How to migrate your packages to v4
 
@@ -1435,4 +1439,355 @@ Into:
 <Tooltip content="content of the Tooltip" as="div" placement="left">
   <TextLink>Hover me</TextLink>.
 </Tooltip>
+```
+
+## Dropdown
+
+The Dropdown component is replaced with three new components: [Menu](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/menu/Menu.mdx), [Autocomplete](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/autocomplete/Autocomplete.mdx) and [Popover](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/popover/Popover.mdx).
+By creating separate components we improved the accessibility and simplified its API. Each of these new components serves its own purpose.
+
+We renamed prop `position` to `placement` and changed its value type. Below is the mapping of old values to the new ones:
+
+```jsx static=true
+const positionToPlacemantMap = {
+  'bottom-left': 'bottom-start',
+  'bottom-right': 'bottom-end',
+  right: 'right-start',
+  left: 'left-start',
+  'top-left': 'top-start',
+  'top-right': 'top-end',
+};
+```
+
+### How to migrate your Dropdown components
+
+You must migrate the component manually since there might be different approaches for each case.
+
+- If you used the `Dropdown` to offer a list of choices to the user, such as a set of actions or links, you should replace it with `Menu`.
+- If you used the `Dropdown` in combination with input to help the user set the value by choosing from a list of options, replace it with `Autocomplete`.
+- If you used the `Dropdown` for some custom case that does not match the previously described cases, replace it with `Popover`. Most likely, you don't need to use `Popover` at all. Consider it only for special, custom solutions.
+
+_Note: `Popover` is a low-level component and it is used as a base for `Autocomplete` and `Menu`_
+
+Here are a few examples of how to migrate the `Dropdown` component:
+
+#### `Dropdown` to `Menu`
+
+**Simple case:**
+
+Keep in mind:
+
+- By default `Menu` is an uncontrolled component, so you don't have to pass callbacks and state. Nevertheless, you can make it controlled if you need to. [See the controlled Menu example in component docs](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/menu/Menu.mdx#controlled-menu)
+- By default, clicking the `MenuItem` will close the menu. If you want to disable this behaviour, just pass prop `closeOnSelect="false"`.
+
+Forma v3:
+
+```tsx static=true
+import { Dropdown, DropdownList, DropdownListItem, IconButton } from '@contentful/forma-36-react-components';
+
+const [isDropdownOpen, setDropdownOpen] = React.useState(false)
+
+<Dropdown
+  isOpen={isDropdownOpen}
+  onClose={() => setDropdownOpen(false)}
+  toggleElement={
+    <IconButton
+      aria-label="Open Actions"
+      icon={<MoreVerticalIcon size="small" />}
+      onClick={(event) => {
+        setDropdownOpen((isOpen) => !isOpen)
+      }}
+    />
+  }>
+  <DropdownList>
+    <DropdownListItem onClick={() => {
+        /* do some action and close dropdown */
+        setDropdownOpen(false)
+      }}>
+      First action
+    </DropdownListItem>
+    <DropdownListItem onClick={() => {
+        /* do some action and close dropdown */
+        setDropdownOpen(false)
+      }}>
+      Second action
+    </DropdownListItem>
+  </DropdownList>
+</Dropdown>
+```
+
+Forma v4:
+
+```tsx static=true
+import { Menu, IconButton } from '@contentful/f36-components';
+
+<Menu>
+  <Menu.Trigger>
+    <IconButton
+      aria-label="Open Actions"
+      icon={<MoreVerticalIcon size="small" />}
+    />
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.Item
+      onClick={() => {
+        /* do some action */
+      }}
+    >
+      First action
+    </Menu.Item>
+    <Menu.Item
+      onClick={() => {
+        /* do some action */
+      }}
+    >
+      Second action
+    </Menu.Item>
+  </Menu.List>
+</Menu>;
+```
+
+**Case with Titles, Dividers, Links and dropdown maxHeight:**
+
+Keep in mind:
+
+- `<DropdownListItem isTitle>Title</DropdownListItem>` got replaced with `<Menu.SectionTitle>Title</Menu.SectionTitle>`
+- To add a divider just add `<Menu.Divider />`
+- To add a link as a menu item, just pass prop `as="a"` to `Menu.Item`. `Menu.Item` is a polymorphic component.
+- Instead of `maxHeight` prop you can just set the `maxHeight` within your styles. It can be passed in a style object or be set within a classname.
+
+Forma v3:
+
+```tsx static=true
+import { Dropdown, DropdownList, DropdownListItem, IconButton } from '@contentful/forma-36-react-components';
+
+const [isDropdownOpen, setDropdownOpen] = React.useState(false)
+
+<Dropdown
+  isOpen={isDropdownOpen}
+  onClose={() => setDropdownOpen(false)}
+  toggleElement={
+    <IconButton
+      aria-label="Open Actions"
+      icon={<MoreVerticalIcon size="small" />}
+      onClick={(event) => {
+        setDropdownOpen((isOpen) => !isOpen)
+      }}
+    />
+  }>
+  <DropdownList maxHeight={200}>
+    <DropdownListItem isTitle>Actions</DropdownListItem>
+    <DropdownListItem>
+      First action
+    </DropdownListItem>
+    <DropdownListItem>
+      Second action
+    </DropdownListItem>
+    <DropdownList border="top">
+      <DropdownListItem>
+        <TextLink href="https://contentful.com" target="_blank">About Contentful</TextLink>
+      </DropdownListItem>
+    </DropdownList>
+  </DropdownList>
+</Dropdown>
+```
+
+Forma v4:
+
+```tsx static=true
+import { Menu, IconButton } from '@contentful/f36-components';
+
+<Menu>
+  <Menu.Trigger>
+    <IconButton
+      aria-label="Open Actions"
+      icon={<MoreVerticalIcon size="small" />}
+    />
+  </Menu.Trigger>
+  <Menu.List style={{ maxHeight: '200px' }}>
+    <Menu.SectionTitle>Actions</Menu.SectionTitle>
+    <Menu.Item>First action</Menu.Item>
+    <Menu.Item>Second action</Menu.Item>
+    <Menu.Divider />
+    <Menu.Item as="a" href="https://contentful.com" target="_blank">
+      About Contentful
+    </Menu.Item>
+  </Menu.List>
+</Menu>;
+```
+
+**Case with Submenu:**
+
+Keep in mind:
+
+- Instead of nesting another `Dropdown` you should use specific component `Menu.Submenu`.
+- Instead of passing `submenuToggleLabel` prop you should use specific component `Menu.SubmenuTrigger`. That will serve as a trigger for a submenu.
+- The submenu is always displayed on the right side of the menu. There is no way to display it on the left side now.
+
+Forma v3:
+
+```tsx static=true
+import { Dropdown, DropdownList, DropdownListItem, IconButton } from '@contentful/forma-36-react-components';
+
+const [isDropdownOpen, setDropdownOpen] = React.useState(false)
+
+<Dropdown
+  isOpen={isDropdownOpen}
+  onClose={() => setDropdownOpen(false)}
+  toggleElement={
+    <IconButton
+      aria-label="Open Actions"
+      icon={<MoreVerticalIcon size="small" />}
+      onClick={(event) => {
+        setDropdownOpen((isOpen) => !isOpen)
+      }}
+    />
+  }>
+  <DropdownList>
+    <DropdownListItem>
+      First action
+    </DropdownListItem>
+    <Dropdown submenuToggleLabel="Open submenu">
+      <DropdownList>
+        <DropdownListItem>
+          Submenu action 1
+        </DropdownListItem>
+        <DropdownListItem>
+          Submenu action 2
+        </DropdownListItem>
+      </DropdownList>
+    </Dropdown>
+    <DropdownListItem>
+      Second action
+    </DropdownListItem>
+  </DropdownList>
+</Dropdown>
+```
+
+Forma v4:
+
+```tsx static=true
+import { Menu, IconButton } from '@contentful/f36-components';
+
+<Menu>
+  <Menu.Trigger>
+    <IconButton
+      aria-label="Open Actions"
+      icon={<MoreVerticalIcon size="small" />}
+    />
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.Item
+      onClick={() => {
+        /* do some action */
+      }}
+    >
+      First action
+    </Menu.Item>
+    <Menu.Submenu>
+      <Menu.SubmenuTrigger>Open submenu</Menu.SubmenuTrigger>
+      <Menu.List>
+        <Menu.Item>Submenu action 1</Menu.Item>
+        <Menu.Item>Submenu action 2</Menu.Item>
+      </Menu.List>
+    </Menu.Submenu>
+    <Menu.Item
+      onClick={() => {
+        /* do some action */
+      }}
+    >
+      Second action
+    </Menu.Item>
+  </Menu.List>
+</Menu>;
+```
+
+#### `Dropdown` to `Popover`
+
+**Popover case with checkboxes:**
+
+Keep in mind:
+
+- Unlike `Menu`, `Popover` is a controlled component. So you have to pass callbacks and state to make it work as expected.
+- We used `FocusLock` from [react-focus-lock](https://github.com/theKashey/react-focus-lock) to enhance a11y. It traps users' focus in the popover content and they will not be able to leave the popover when using "Tab" navigation.
+
+Forma v3:
+
+```tsx static=true
+import { Dropdown, DropdownList, DropdownListItem, Button, Checkbox } from '@contentful/forma-36-react-components';
+
+const [isDropdownOpen, setDropdownOpen] = React.useState(false)
+
+<Dropdown
+  isOpen={isDropdownOpen}
+  onClose={() => setDropdownOpen(false)}
+  toggleElement={
+    <Button
+      endIcon={<ChevronDownIcon />}
+      onClick={(event) => {
+        setDropdownOpen((isOpen) => !isOpen);
+      }}
+    >
+      Select
+    </Button>
+  }>
+  <DropdownList>
+    {props.list.map(({ id, label }) => (
+      <DropdownListItem key={id}>
+        <Checkbox
+          isChecked={selection[id]}
+          onChange={() => changeSelection(id)}
+          name={id}>
+          {label}
+        </Checkbox>
+      </DropdownListItem>
+    ))}
+  </DropdownList>
+</Dropdown>
+```
+
+Forma v4:
+
+```tsx static=true
+import { Menu, Button, Stack, Checkbox } from '@contentful/f36-components';
+import FocusLock from 'react-focus-lock';
+
+const [isPopoverOpen, setIsPopoverOpen] = React.useState(false);
+
+<Popover isOpen={isPopoverOpen} onClose={() => setIsPopoverOpen(false)}>
+  <Popover.Trigger>
+    <Button
+      endIcon={<ChevronDownIcon />}
+      onClick={(event) => {
+        setIsPopoverOpen((isOpen) => !isOpen);
+      }}
+    >
+      Select
+    </Button>
+  </Popover.Trigger>
+  <Popover.Content>
+    <FocusLock>
+      <Stack
+        as="ul"
+        padding="spacingS"
+        margin="none"
+        spacing="spacingXs"
+        flexDirection="column"
+        alignItems="flex-start"
+      >
+        {props.list.map(({ id, label }) => (
+          <li key={id}>
+            <Checkbox
+              isChecked={selection[id]}
+              onChange={() => changeSelection(id)}
+              name={id}
+            >
+              {label}
+            </Checkbox>
+          </li>
+        ))}
+      </Stack>
+    </FocusLock>
+  </Popover.Content>
+</Popover>;
 ```

@@ -73,9 +73,12 @@ export function Menu(props: MenuProps) {
     closeOnBlur = true,
     closeOnEsc = true,
     children,
+    onOpen,
     ...otherProps
   } = props;
-  const { isOpen, handleOpen, handleClose } = useMenuOpenState(props);
+  const { isOpen, handleOpen, handleClose, isControlled } = useMenuOpenState(
+    props,
+  );
 
   const triggerRef = useRef<HTMLButtonElement>(null);
   const menuListRef = useRef<HTMLDivElement>(null);
@@ -160,11 +163,19 @@ export function Menu(props: MenuProps) {
       focusMenuItem,
       getTriggerProps: (_props = {}, _ref = null) => ({
         onClick: (event) => {
-          if (isOpen) {
-            handleClose();
-          } else {
-            handleOpen();
+          // if the user made component controlled by providing isOpen prop
+          // but onOpen callback is not provided, we won't add toggle logic
+          // to the trigger component. So they can make any toggle logic on their own.
+          const isFullyControlled = isControlled && !onOpen;
+
+          if (!isFullyControlled) {
+            if (isOpen) {
+              handleClose();
+            } else {
+              handleOpen();
+            }
           }
+
           _props.onClick?.(event);
         },
         ref: mergeRefs(triggerRef, _ref),
@@ -230,6 +241,8 @@ export function Menu(props: MenuProps) {
       closeOnBlur,
       closeOnEsc,
       closeAndFocusTrigger,
+      isControlled,
+      onOpen,
     ],
   );
 
