@@ -42,6 +42,8 @@
     - [How to migrate your Notification components](#how-to-migrate-your-notification-components)
   - [Modal](#modal)
     - [How to migrate your Modal components](#how-to-migrate-your-modal-components)
+  - [Tooltip](#tooltip)
+    - [How to migrate your Tooltip components](#how-to-migrate-your-tooltip-components)
 
 ## How to migrate your packages to v4
 
@@ -1407,4 +1409,31 @@ import {
   <Button variant="secondary" size="small" />
   <Button variant="primary" size="small" />
 </Modal.Controls>;
+```
+
+## Tooltip
+
+In version 4, we rename two props of the Tooltip: `containerElement` and `place`.
+They became `as` and `placement` props respectively.
+
+### How to migrate your Tooltip components
+
+To migrate your `Tooltip` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to do it manually, you must transform your existing code as follows:
+
+```tsx
+<Tooltip content="content of the Tooltip" containerElement="div" place="left">
+  <TextLink>Hover me</TextLink>.
+</Tooltip>
+```
+
+Into:
+
+```tsx
+<Tooltip content="content of the Tooltip" as="div" placement="left">
+  <TextLink>Hover me</TextLink>.
+</Tooltip>
 ```
