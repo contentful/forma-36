@@ -1443,10 +1443,10 @@ Into:
 
 ## Dropdown
 
-The Dropdown component is replaced with a couple of new components: [Menu](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/menu/Menu.mdx), [Autocomplete](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/autocomplete/Autocomplete.mdx) and [Popover](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/popover/Popover.mdx).
-Creating separate components allowed us to improve accessibility and simplify its API a lot. Each of those new components serves its own purpose.
+The Dropdown component is replaced with three new components: [Menu](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/menu/Menu.mdx), [Autocomplete](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/autocomplete/Autocomplete.mdx) and [Popover](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/popover/Popover.mdx).
+By creating separate components we improved the accessibility and simplified its API. Each of these new components serves its own purpose.
 
-We renamed prop `position` to `placement` and changed its value type, below you can find a mapping of old values to the new ones:
+We renamed prop `position` to `placement` and changed its value type. Below is the mapping of old values to the new ones:
 
 ```jsx static=true
 const positionToPlacemantMap = {
@@ -1461,15 +1461,15 @@ const positionToPlacemantMap = {
 
 ### How to migrate your Dropdown components
 
-The migration should be done manually since there are might be different approaches for each specific case.
+You must migrate the component manually since there might be different approaches for each case.
 
 - If you used the `Dropdown` to offer a list of choices to the user, such as a set of actions or links, you should replace it with `Menu`.
-- If you used the `Dropdown` in combination with input to help user set the value by choosing from the list of options, replace it with `Autocomplete`.
-- Replace it with `Popover` if it was used for some custom case that does not match the cases described above. Most likely you don't need to use `Popover` at all, consider it only for special, custom solutions.
+- If you used the `Dropdown` in combination with input to help the user set the value by choosing from a list of options, replace it with `Autocomplete`.
+- If you used the `Dropdown` for some custom case that does not match the previously described cases, replace it with `Popover`. Most likely, you don't need to use `Popover` at all. Consider it only for special, custom solutions.
 
 _Note: `Popover` is a low-level component and it is used as a base for `Autocomplete` and `Menu`_
 
-Below you will find a couple of examples of how to migrate the `Dropdown` component:
+Here are a few examples of how to migrate the `Dropdown` component:
 
 #### `Dropdown` to `Menu`
 
@@ -1478,7 +1478,7 @@ Below you will find a couple of examples of how to migrate the `Dropdown` compon
 Keep in mind:
 
 - By default `Menu` is an uncontrolled component, so you don't have to pass callbacks and state. Nevertheless, you can make it controlled if you need to. [See the controlled Menu example in component docs](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/menu/Menu.mdx#controlled-menu)
-- By default click on the `MenuItem` will close the menu, if you want to disable this behavior, just pass prop `closeOnSelect="false"`
+- By default, clicking the `MenuItem` will close the menu. If you want to disable this behaviour, just pass prop `closeOnSelect="false"`.
 
 Forma v3:
 
@@ -1552,9 +1552,9 @@ import { Menu, IconButton } from '@contentful/f36-components';
 Keep in mind:
 
 - `<DropdownListItem isTitle>Title</DropdownListItem>` got replaced with `<Menu.SectionTitle>Title</Menu.SectionTitle>`
-- To add divider just add `<Menu.Divider />`
-- To add link as a menu item, just pass prop `as="a"` to `Menu.Item`. `Menu.Item` is a polymorphic component.
-- Instead of `maxHeight` prop you can just set the `maxHeight` within your styles. It can be passed in a style object or been set within a classname.
+- To add a divider just add `<Menu.Divider />`
+- To add a link as a menu item, just pass prop `as="a"` to `Menu.Item`. `Menu.Item` is a polymorphic component.
+- Instead of `maxHeight` prop you can just set the `maxHeight` within your styles. It can be passed in a style object or be set within a classname.
 
 Forma v3:
 
@@ -1622,7 +1622,7 @@ Keep in mind:
 
 - Instead of nesting another `Dropdown` you should use specific component `Menu.Submenu`.
 - Instead of passing `submenuToggleLabel` prop you should use specific component `Menu.SubmenuTrigger`. That will serve as a trigger for a submenu.
-- Submenu will be always shown on the right side of the menu. There is no way to show it on the left side right now.
+- The submenu is always displayed on the right side of the menu. There is no way to display it on the left side now.
 
 Forma v3:
 
@@ -1708,8 +1708,8 @@ import { Menu, IconButton } from '@contentful/f36-components';
 
 Keep in mind:
 
-- Unlike `Menu`, `Popover` is a controlled component. So you have to pass callbacks and state in order to make it work like expected.
-- We used `FocusLock` from [react-focus-lock](https://github.com/theKashey/react-focus-lock) to enhance a11y. It traps users' focus in the popover content, user will not be able to leave the popover when using "Tab" navigation.
+- Unlike `Menu`, `Popover` is a controlled component. So you have to pass callbacks and state to make it work as expected.
+- We used `FocusLock` from [react-focus-lock](https://github.com/theKashey/react-focus-lock) to enhance a11y. It traps users' focus in the popover content and they will not be able to leave the popover when using "Tab" navigation.
 
 Forma v3:
 
