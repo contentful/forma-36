@@ -78,6 +78,16 @@ const styles = {
   `,
 };
 
+const categories = [
+  'Foundation',
+  'Guidelines',
+  'Contributing to Forma 36',
+  'Migration guide',
+  'Getting started',
+  'Components',
+  'Integrations',
+];
+
 const checkActive = (item, currentPath) => {
   if (item.link === currentPath) {
     return true;
@@ -89,22 +99,9 @@ const checkActive = (item, currentPath) => {
   );
 };
 
-const checkCategory = (name) =>
-  name === 'Foundation' ||
-  name === 'Guidelines' ||
-  name === 'Migration guide' ||
-  name === 'Getting started' ||
-  name === 'Components' ||
-  name === 'Integrations';
-
-const checkCategoryAsLink = (name) =>
-  name === 'Migration guide' || name === 'Getting started';
-
 const MenuListItem = React.forwardRef(
   ({ item, currentPath, isActive, hierarchyLevel }, ref) => {
-    const isCategory = checkCategory(item.name);
-    const isCategoryAsLink = checkCategoryAsLink(item.name);
-
+    const isCategory = categories.includes(item.name);
     const [isExpanded, setIsExpanded] = useState(isActive || isCategory);
 
     const handleToggle = (event) => {
@@ -152,20 +149,6 @@ const MenuListItem = React.forwardRef(
               hierarchyLevel={hierarchyLevel + 1}
             />
           </>
-        ) : isCategoryAsLink ? (
-          <Link
-            ref={ref}
-            css={cx([styles.link, itemOffset, isActive && styles.linkActive])}
-            to={item.link}
-            href={item.link}
-          >
-            <SectionHeading
-              marginBottom={0}
-              css={cx([isActive && styles.linkActive])}
-            >
-              {item.name}
-            </SectionHeading>
-          </Link>
         ) : (
           <Link
             ref={ref}
@@ -173,7 +156,16 @@ const MenuListItem = React.forwardRef(
             to={item.link}
             href={item.link}
           >
-            {item.name}
+            {isCategory ? (
+              <SectionHeading
+                marginBottom={0}
+                css={cx([isActive && styles.linkActive])}
+              >
+                {item.name}
+              </SectionHeading>
+            ) : (
+              item.name
+            )}
           </Link>
         )}
       </li>
