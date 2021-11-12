@@ -23,6 +23,13 @@ export default {
     propTypes: Card['__docgenInfo'],
   },
   title: 'Components/Card',
+  decorators: [
+    (Story) => (
+      <Flex flexDirection="column" style={{ maxWidth: '500px' }}>
+        <Story />
+      </Flex>
+    ),
+  ],
 } as Meta;
 
 export const Default: Story<CardProps> = ({ children, ...args }) => {
