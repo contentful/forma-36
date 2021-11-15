@@ -44,6 +44,8 @@
     - [How to migrate your Notification components](#how-to-migrate-your-notification-components)
   - [Modal](#modal)
     - [How to migrate your Modal components](#how-to-migrate-your-modal-components)
+  - [ToggleButton](#togglebutton)
+    - [How to migrate your ToggleButton components](#how-to-migrate-your-copy-togglebutton-components)
 
 ## How to migrate your packages to v4
 
@@ -1476,4 +1478,46 @@ import {
   <Button variant="secondary" size="small" />
   <Button variant="primary" size="small" />
 </Modal.Controls>;
+```
+
+### ToggleButton
+
+On the v4 the `ToggleButton` had a small change on the API to keep it aligned with the new way we use icons on our components. For examples:
+
+```tsx static=true
+<ToggleButton isActive icon="Calendar">
+  Embed Entry
+</ToggleButton>
+```
+
+becomes:
+
+```tsx static=true
+<ToggleButton isActive icon={<CalendarIcon />}>
+  Embed Entry
+</ToggleButton>
+```
+
+#### How to migrate your ToggleButton components
+
+You must manually migrate the version 3 `ToggleButton` component updating icon prop. For example:
+
+```tsx static=true
+<ToggleButton isActive icon="Calendar">
+  Embed Entry
+</ToggleButton>
+<ToggleButton isActive icon="Plus">
+  Add Entry
+</ToggleButton>
+```
+
+becomes:
+
+```tsx static=true
+<ToggleButton isActive icon={<CalendarIcon />}>
+  Embed Entry
+</ToggleButton>
+<ToggleButton isActive icon={<PlusIcon />}>
+  Add Entry
+</ToggleButton>
 ```
