@@ -1777,9 +1777,19 @@ import { Tooltip } from '@contentful/f36-components';
 
 ## Workbench
 
-The only change in version 4 is the way you import your component. Have a look:
+Workbench in version 4 got moved into separate package, but since we would like to deprecate this component, we don't include it to the main build. In odrer to use this component you need to install it separately:
 
-### How to migrate your Tooltip components
+```bash
+npm install @contentful/f36-workbench
+```
+
+```bash
+yarn add @contentful/f36-workbench
+```
+
+We also removed `labelText` in the version 4 of Workbench.
+
+### How to migrate your Workbench components
 
 ```tsx
 import { Workbench } from '@contentful/forma-36-react-components';
@@ -1791,16 +1801,22 @@ import { Workbench } from '@contentful/forma-36-react-components';
     icon={{}}
     actions={{}}
   />
-  <Workbench.Sidebar position="left"></Workbench.Sidebar>
+  <Workbench.Sidebar
+    position="left"
+    labelText="Exmaple label text"
+  ></Workbench.Sidebar>
   <Workbench.Content type="default"></Workbench.Content>
-  <Workbench.Sidebar position="right"></Workbench.Sidebar>
+  <Workbench.Sidebar
+    position="right"
+    labelText="Exmaple label text"
+  ></Workbench.Sidebar>
 </Workbench>;
 ```
 
 Into:
 
 ```tsx
-import { Workbench } from '@contentful/f36-components';
+import { Workbench } from '@contentful/f36-workbench';
 
 <Workbench>
   <Workbench.Header
