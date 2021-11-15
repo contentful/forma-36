@@ -29,6 +29,10 @@ module.exports = {
         link: '/getting-started',
       },
       {
+        name: 'Contributing to Forma 36',
+        link: '/contributing',
+      },
+      {
         name: 'Migration guide',
         link: '/migration-v3-to-v4',
       },
@@ -69,10 +73,6 @@ module.exports = {
           {
             name: 'Accessibility',
             link: '/guidelines/accessibility/',
-          },
-          {
-            name: 'Contributing to Forma 36',
-            link: '/guidelines/contributing/',
           },
           {
             name: 'Copy',

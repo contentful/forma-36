@@ -10,6 +10,7 @@ export const getBaseCardStyles = () => {
       paddingBottom: tokens.spacingM,
       paddingLeft: tokens.spacingM,
       paddingRight: tokens.spacingM,
+      whiteSpace: 'initial',
     }),
     wrapper: css({
       flex: '1 1 0',
