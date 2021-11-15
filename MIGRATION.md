@@ -1602,7 +1602,7 @@ import { Tabs } from '@contentful/f36-components';
 
 ## Table
 
-In version 4, we Table component becoms compound component. There is also one property that got renamed: `selected` became `isSelected`.
+In version 4, we Table component becomes a compound component. There is also one property that got renamed: `selected` became `isSelected`.
 
 ### How to migrate your Table components
 
@@ -1698,7 +1698,7 @@ import { Tooltip } from '@contentful/f36-components';
 
 ## Workbench
 
-Workbench in version 4 got moved into a separate package, but since we would like to deprecate this component, we don't include it in the main build. In order to use this component you need to install it separately:
+Workbench in version 4 got moved into a separate package, but since we would like to deprecate this component, we don't include it in the main package. In order to use this component, you need to install it from a separate package:
 
 ```bash
 npm install @contentful/f36-workbench
