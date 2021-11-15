@@ -9,6 +9,8 @@
     - [How to migrate your Tag to Badge](#how-to-migrate-your-tag-to-badge)
   - [Button](#button)
     - [How to migrate your Button components](#how-to-migrate-your-button-components)
+  - [CopyButton](#copybutton)
+    - [How to migrate your CopButton components](#how-to-migrate-your-copy-button-components)
   - [Icon](#icon)
     - [How to migrate your Icon components](#how-to-migrate-your-icon-components)
   - [IconButton](#iconbutton)
@@ -296,6 +298,73 @@ import {
 ```
 
 You can also make these changes manually.
+
+### CopyButton
+
+In v4 the Button component has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
+
+```jsx static=true
+<CopyButton
+  onCopy={onCopy}
+  copyValue={'value to be copied'}
+  tooltipCopiedText={<>Copied!</>}
+  tooltipText={
+    <>
+      Copy to <br /> clipboard
+    </>
+  }
+  tooltipPlace="bottom"
+/>
+```
+
+becomes:
+
+```jsx static=true
+<CopyButton
+  onCopy={onCopy}
+  value="value to be copied"
+  tooltipCopiedText="Copied!"
+  tooltipText="Copy to clipboard"
+  tooltipProps={{
+    placement: 'bottom',
+  }}
+/>
+```
+
+For more information on what can be passed on the `tooltipProps` prop, check the Tooltip [documentation](https://v4-forma-36.netlify.app/components/tooltip/), it accpepts all props, except `children` and `content`.  
+We also added the possibility to pass `isDisabled` and `size` props to the CopyButton component.
+
+#### How to migrate your CopButton components
+
+You must manually migrate the version 3 `CopyButton` component updating the props. For example:
+
+```jsx static=true
+<CopyButton
+  onCopy={onCopy}
+  copyValue={'value to be copied'}
+  tooltipCopiedText={<>Copied!</>}
+  tooltipText={
+    <>
+      Copy to <br /> clipboard
+    </>
+  }
+  tooltipPlace="bottom"
+/>
+```
+
+becomes:
+
+```jsx static=true
+<CopyButton
+  onCopy={onCopy}
+  value="value to be copied"
+  tooltipCopiedText="Copied!"
+  tooltipText="Copy to clipboard"
+  tooltipProps={{
+    placement: 'bottom',
+  }}
+/>
+```
 
 ## Icon
 
