@@ -10,6 +10,10 @@
       - [How to migrate your Tag to Badge](#how-to-migrate-your-tag-to-badge)
     - [Button](#button)
       - [How to migrate your Button components](#how-to-migrate-your-button-components)
+  - [Dropdown](#dropdown)
+    - [How to migrate your Dropdown components](#how-to-migrate-your-dropdown-components)
+      - [`Dropdown` to `Menu`](#dropdown-to-menu)
+      - [`Dropdown` to `Popover`](#dropdown-to-popover)
   - [Icon](#icon)
     - [How to migrate your Icon components](#how-to-migrate-your-icon-components)
   - [IconButton](#iconbutton)
@@ -46,7 +50,7 @@
     - [How to migrate your Notification components](#how-to-migrate-your-notification-components)
   - [Modal](#modal)
     - [How to migrate your Modal components](#how-to-migrate-your-modal-components)
-  - [Table](#tooltip)
+  - [Table](#table)
     - [How to migrate your Table components](#how-to-migrate-your-table-components)
   - [Tooltip](#tooltip)
     - [How to migrate your Tooltip components](#how-to-migrate-your-tooltip-components)
@@ -56,6 +60,8 @@
       - [`Dropdown` to `Popover`](#dropdown-to-popover)
   - [Tabs](#tabs)
     - [How to migrate your Tabs components](#how-to-migrate-your-tabs-components)
+  - [Workbench](#workbench)
+    - [How to migrate your Workbench components](#how-to-migrate-your-workbench-components)
 
 ## How to migrate your packages to v4
 
