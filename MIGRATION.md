@@ -1777,7 +1777,7 @@ import { Tooltip } from '@contentful/f36-components';
 
 ## Workbench
 
-Workbench in version 4 got moved into separate package, but since we would like to deprecate this component, we don't include it to the main build. In odrer to use this component you need to install it separately:
+Workbench in version 4 got moved into a separate package, but since we would like to deprecate this component, we don't include it in the main build. In order to use this component you need to install it separately:
 
 ```bash
 npm install @contentful/f36-workbench
