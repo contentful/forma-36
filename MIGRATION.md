@@ -46,6 +46,8 @@
     - [How to migrate your Notification components](#how-to-migrate-your-notification-components)
   - [Modal](#modal)
     - [How to migrate your Modal components](#how-to-migrate-your-modal-components)
+  - [Table](#tooltip)
+    - [How to migrate your Table components](#how-to-migrate-your-table-components)
   - [Tooltip](#tooltip)
     - [How to migrate your Tooltip components](#how-to-migrate-your-tooltip-components)
   - [Dropdown](#dropdown)
@@ -1618,10 +1620,6 @@ In version 4:
 
 To migrate your `Modal` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
-`npx @contentful/f36-codemod`
-
-If you want to do it manually, you must transform your existing code as follows:
-
 ```tsx
 import {
   Modal,
@@ -1667,6 +1665,78 @@ import {
   <Button variant="secondary" size="small" />
   <Button variant="primary" size="small" />
 </Modal.Controls>;
+  Table,
+  TableBody,
+  TableRow,
+  TableCell,
+  TableHead,
+} from '@contentful/forma-36-react-components';
+```
+
+## Table
+
+In version 4, we Table component becoms compound component. There is also one property that got renamed: `selected` became `isSelected`.
+
+### How to migrate your Table components
+
+To migrate your `Table` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to do it manually, you must transform your existing code as follows:
+
+```tsx
+import {
+  Table,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableBody,
+} from '@contentful/forma-36-react-components';
+
+<Table layout="embedded">
+  <TableHead>
+    <TableRow>
+      <TableCell>Name</TableCell>
+      <TableCell>Email</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow selected>
+      <TableCell>Jane Roe</TableCell>
+      <TableCell>jane@roe.com</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>John Doe</TableCell>
+      <TableCell>john@doe.com</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>;
+```
+
+Into:
+
+```tsx
+import { Table } from '@contentful/f36-components';
+
+<Table layout="embedded">
+  <Table.Head>
+    <Table.Row>
+      <Table.Cell>Name</Table.Cell>
+      <Table.Cell>Email</Table.Cell>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row isSelected>
+      <Table.Cell>Jane Roe</Table.Cell>
+      <Table.Cell>jane@roe.com</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>John Doe</Table.Cell>
+      <Table.Cell>john@doe.com</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table>;
 ```
 
 ## Tooltip
@@ -1682,17 +1752,61 @@ To migrate your `Tooltip` component to v4, run the following [codemod](https://g
 If you want to do it manually, you must transform your existing code as follows:
 
 ```tsx
+import { Tooltip } from '@contentful/forma-36-react-components';
+
 <Tooltip content="content of the Tooltip" containerElement="div" place="left">
   <TextLink>Hover me</TextLink>.
-</Tooltip>
+</Tooltip>;
 ```
 
 Into:
 
 ```tsx
+import { Tooltip } from '@contentful/f36-components';
+
 <Tooltip content="content of the Tooltip" as="div" placement="left">
   <TextLink>Hover me</TextLink>.
-</Tooltip>
+</Tooltip>;
+```
+
+## Workbench
+
+The only change in version 4 is the way you import your component. Have a look:
+
+### How to migrate your Tooltip components
+
+```tsx
+import { Workbench } from '@contentful/forma-36-react-components';
+
+<Workbench>
+  <Workbench.Header
+    title="title"
+    description="description"
+    icon={{}}
+    actions={{}}
+  />
+  <Workbench.Sidebar position="left"></Workbench.Sidebar>
+  <Workbench.Content type="default"></Workbench.Content>
+  <Workbench.Sidebar position="right"></Workbench.Sidebar>
+</Workbench>;
+```
+
+Into:
+
+```tsx
+import { Workbench } from '@contentful/f36-components';
+
+<Workbench>
+  <Workbench.Header
+    title="title"
+    description="description"
+    icon={{}}
+    actions={{}}
+  />
+  <Workbench.Sidebar position="left"></Workbench.Sidebar>
+  <Workbench.Content type="default"></Workbench.Content>
+  <Workbench.Sidebar position="right"></Workbench.Sidebar>
+</Workbench>;
 ```
 
 ## Dropdown
