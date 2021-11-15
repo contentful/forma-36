@@ -52,6 +52,8 @@
     - [How to migrate your Dropdown components](#how-to-migrate-your-dropdown-components)
       - [`Dropdown` to `Menu`](#dropdown-to-menu)
       - [`Dropdown` to `Popover`](#dropdown-to-popover)
+  - [Tabs](#tabs)
+    - [How to migrate your Tabs components](#how-to-migrate-your-tabs-components)
 
 ## How to migrate your packages to v4
 
@@ -1393,6 +1395,201 @@ Notification.success(notificationText, {
 });
 
 Notification.setPlacement(placement, { offset: 0 });
+```
+
+## Modal
+
+In version 4 the Modal component buttons were moved from the left to the right side of the `<Modal.Controls>` component. We now recommend swapping action buttons, the primary action should be displayed as the first one from the right in the Modal. Have a look how to do it:
+
+In version 3:
+
+```tsx
+<Modal.Controls>
+  <Button variant="primary" />
+  <Button variant="secondary" />
+</Modal.Controls>
+```
+
+In version 4:
+
+```tsx
+<Modal.Controls>
+  <Button variant="secondary" size="small" />
+  <Button variant="primary" size="small" />
+</Modal.Controls>
+```
+
+### How to migrate your Modal components
+
+To migrate your `Modal` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to do it manually, you must transform your existing code as follows:
+
+```tsx
+import {
+  Modal,
+  ModalHeader,
+  ModalConfirm,
+  ModalControls,
+  ModalContent,
+  ModalLauncher,
+} from '@contentful/forma-36-react-components';
+
+<ModalConfirm
+  onSecondary={() => {}}
+  isSecondaryLoading
+  secondaryIntent="primary"
+  secondaryLabel="secondary label"
+  secondaryTestId="secondary id"
+>
+  Confirm content
+</ModalConfirm>;
+<ModalHeader isNotWrapped>Header content</ModalHeader>;
+<ModalContent></ModalContent>;
+<Modal.Controls>
+  <Button buttonType="primary" />
+  <Button buttonType="secondary" />
+</Modal.Controls>;
+```
+
+into:
+
+```tsx
+import {
+  Modal,
+  ModalHeader,
+  ModalControls,
+  ModalContent,
+  ModalConfirm,
+  ModalLauncher,
+} from '@contentful/f36-components';
+
+<ModalConfirm>Confirm content</ModalConfirm>;
+<ModalHeader>Header content</ModalHeader>;
+<Modal.Controls>
+  <Button variant="secondary" size="small" />
+  <Button variant="primary" size="small" />
+</Modal.Controls>;
+```
+
+### Tabs
+
+The Tabs components API has been improved. The `role` prop was removed. This is the current API structure:
+
+```tsx static=true
+import { Tabs } from '@contentful/f36-components';
+
+<Tabs defaultTab="first">
+  <Tabs.List variant="vertical-divider">
+    <Tabs.Tab panelId="first">First</Tabs.Tab>
+    <Tabs.Tab panelId="second">Second</Tabs.Tab>
+    <Tabs.Tab panelId="third">Third</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel id="first">Content for the first tab</Tabs.Panel>
+  <Tabs.Panel id="second">Content for the second tab</Tabs.Panel>
+  <Tabs.Panel id="third">Content for the third tab</Tabs.Panel>
+</Tabs>;
+```
+
+You can also use `Tabs` as a controlled component. For example:
+
+```tsx static=true
+import { Tabs } from '@contentful/f36-components';
+
+() => {
+  const [currentTab, setCurrentTab] = React.useState('first');
+  return (
+    <Tabs currentTab={currentTab} onTabChange={setCurrentTab}>
+      <Tabs.List>
+        <Tabs.Tab panelId="first">First</Tabs.Tab>
+        <Tabs.Tab panelId="second">Second</Tabs.Tab>
+        <Tabs.Tab panelId="third">Third</Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel id="first">content first tab</Tabs.Panel>
+      <Tabs.Panel id="second">content second tab</Tabs.Panel>
+      <Tabs.Panel id="third">content third tab</Tabs.Panel>
+    </Tabs>
+  );
+};
+```
+
+#### How to migrate your Tabs components
+
+Because of the significant changes done to the Tabs API, you cannot run a codemod to migrate this component. You must manually migrate the Tabs component by replacing:
+
+```tsx static=true
+import { Tabs, Tab, TabPanel } from '@contentful/forma-36-react-components';
+
+() => {
+  const [selected, setSelected] = useState('first');
+
+  const onSelect = (id) => {
+    setSelected(id);
+  }
+
+  return (
+    <div>
+      <Tabs>
+        <Tab
+          id="first"
+          selected={selected === 'first'}
+          onSelect={onSelect}
+        >
+          First
+        </Tab>
+        <Tab
+          id="second"
+          selected={selected === 'second'}
+          onSelect={onSelect}
+        >
+          Second
+        </Tab>
+      </Tabs>
+      {selected === 'first' && (
+        <TabPanel id="first">content first tab</TabPanel>
+      )}
+      {selected === 'second' && (
+        <TabPanel id="second">content second tab</TabPanel>
+      )}
+    </div>
+```
+
+with:
+
+```tsx static=true
+import { Tabs } from '@contentful/f36-components';
+
+<Tabs defaultTab="first">
+  <Tabs.List>
+    <Tabs.Tab panelId="first">First</Tabs.Tab>
+    <Tabs.Tab panelId="second">Second</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel id="first">content first tab</Tabs.Panel>
+  <Tabs.Panel id="second">content second tab</Tabs.Panel>
+</Tabs>;
+```
+
+To keep the controlled version use:
+
+```tsx static=true
+import { Tabs } from '@contentful/f36-components';
+
+() => {
+  const [currentTab, setCurrentTab] = React.useState('first');
+
+  return (
+    <Tabs currentTab={currentTab} onTabChange={setCurrentTab}>
+      <Tabs.List>
+        <Tabs.Tab panelId="first">First</Tabs.Tab>
+        <Tabs.Tab panelId="second">Second</Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel id="first">content first tab</Tabs.Panel>
+      <Tabs.Panel id="second">content second tab</Tabs.Panel>
+    </Tabs>
+  );
+};
 ```
 
 ## Modal
