@@ -10,6 +10,10 @@
       - [How to migrate your Tag to Badge](#how-to-migrate-your-tag-to-badge)
     - [Button](#button)
       - [How to migrate your Button components](#how-to-migrate-your-button-components)
+  - [Dropdown](#dropdown)
+    - [How to migrate your Dropdown components](#how-to-migrate-your-dropdown-components)
+      - [`Dropdown` to `Menu`](#dropdown-to-menu)
+      - [`Dropdown` to `Popover`](#dropdown-to-popover)
   - [Icon](#icon)
     - [How to migrate your Icon components](#how-to-migrate-your-icon-components)
   - [IconButton](#iconbutton)
@@ -46,6 +50,8 @@
     - [How to migrate your Notification components](#how-to-migrate-your-notification-components)
   - [Modal](#modal)
     - [How to migrate your Modal components](#how-to-migrate-your-modal-components)
+  - [Table](#table)
+    - [How to migrate your Table components](#how-to-migrate-your-table-components)
   - [Tooltip](#tooltip)
     - [How to migrate your Tooltip components](#how-to-migrate-your-tooltip-components)
   - [Dropdown](#dropdown)
@@ -54,6 +60,8 @@
       - [`Dropdown` to `Popover`](#dropdown-to-popover)
   - [Tabs](#tabs)
     - [How to migrate your Tabs components](#how-to-migrate-your-tabs-components)
+  - [Workbench](#workbench)
+    - [How to migrate your Workbench components](#how-to-migrate-your-workbench-components)
 
 ## How to migrate your packages to v4
 
@@ -1592,31 +1600,13 @@ import { Tabs } from '@contentful/f36-components';
 };
 ```
 
-## Modal
+## Table
 
-In version 4 the Modal component buttons were moved from the left to the right side of the `<Modal.Controls>` component. We now recommend swapping action buttons, the primary action should be displayed as the first one from the right in the Modal. Have a look how to do it:
+In version 4, we Table component becomes a compound component. There is also one property that got renamed: `selected` became `isSelected`.
 
-In version 3:
+### How to migrate your Table components
 
-```tsx
-<Modal.Controls>
-  <Button variant="primary" />
-  <Button variant="secondary" />
-</Modal.Controls>
-```
-
-In version 4:
-
-```tsx
-<Modal.Controls>
-  <Button variant="secondary" size="small" />
-  <Button variant="primary" size="small" />
-</Modal.Controls>
-```
-
-### How to migrate your Modal components
-
-To migrate your `Modal` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+To migrate your `Table` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
 
@@ -1624,49 +1614,56 @@ If you want to do it manually, you must transform your existing code as follows:
 
 ```tsx
 import {
-  Modal,
-  ModalHeader,
-  ModalConfirm,
-  ModalControls,
-  ModalContent,
-  ModalLauncher,
+  Table,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableBody,
 } from '@contentful/forma-36-react-components';
 
-<ModalConfirm
-  onSecondary={() => {}}
-  isSecondaryLoading
-  secondaryIntent="primary"
-  secondaryLabel="secondary label"
-  secondaryTestId="secondary id"
->
-  Confirm content
-</ModalConfirm>;
-<ModalHeader isNotWrapped>Header content</ModalHeader>;
-<ModalContent></ModalContent>;
-<Modal.Controls>
-  <Button buttonType="primary" />
-  <Button buttonType="secondary" />
-</Modal.Controls>;
+<Table layout="embedded">
+  <TableHead>
+    <TableRow>
+      <TableCell>Name</TableCell>
+      <TableCell>Email</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow selected>
+      <TableCell>Jane Roe</TableCell>
+      <TableCell>jane@roe.com</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>John Doe</TableCell>
+      <TableCell>john@doe.com</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>;
 ```
 
-into:
+Into:
 
 ```tsx
-import {
-  Modal,
-  ModalHeader,
-  ModalControls,
-  ModalContent,
-  ModalConfirm,
-  ModalLauncher,
-} from '@contentful/f36-components';
+import { Table } from '@contentful/f36-components';
 
-<ModalConfirm>Confirm content</ModalConfirm>;
-<ModalHeader>Header content</ModalHeader>;
-<Modal.Controls>
-  <Button variant="secondary" size="small" />
-  <Button variant="primary" size="small" />
-</Modal.Controls>;
+<Table layout="embedded">
+  <Table.Head>
+    <Table.Row>
+      <Table.Cell>Name</Table.Cell>
+      <Table.Cell>Email</Table.Cell>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row isSelected>
+      <Table.Cell>Jane Roe</Table.Cell>
+      <Table.Cell>jane@roe.com</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>John Doe</Table.Cell>
+      <Table.Cell>john@doe.com</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table>;
 ```
 
 ## Tooltip
@@ -1682,17 +1679,77 @@ To migrate your `Tooltip` component to v4, run the following [codemod](https://g
 If you want to do it manually, you must transform your existing code as follows:
 
 ```tsx
+import { Tooltip } from '@contentful/forma-36-react-components';
+
 <Tooltip content="content of the Tooltip" containerElement="div" place="left">
   <TextLink>Hover me</TextLink>.
-</Tooltip>
+</Tooltip>;
 ```
 
 Into:
 
 ```tsx
+import { Tooltip } from '@contentful/f36-components';
+
 <Tooltip content="content of the Tooltip" as="div" placement="left">
   <TextLink>Hover me</TextLink>.
-</Tooltip>
+</Tooltip>;
+```
+
+## Workbench
+
+Workbench in version 4 got moved into a separate package, but since we would like to deprecate this component, we don't include it in the main package. In order to use this component, you need to install it from a separate package:
+
+```bash
+npm install @contentful/f36-workbench
+```
+
+```bash
+yarn add @contentful/f36-workbench
+```
+
+We also removed `labelText` in the version 4 of Workbench.
+
+### How to migrate your Workbench components
+
+```tsx
+import { Workbench } from '@contentful/forma-36-react-components';
+
+<Workbench>
+  <Workbench.Header
+    title="title"
+    description="description"
+    icon={{}}
+    actions={{}}
+  />
+  <Workbench.Sidebar
+    position="left"
+    labelText="Exmaple label text"
+  ></Workbench.Sidebar>
+  <Workbench.Content type="default"></Workbench.Content>
+  <Workbench.Sidebar
+    position="right"
+    labelText="Exmaple label text"
+  ></Workbench.Sidebar>
+</Workbench>;
+```
+
+Into:
+
+```tsx
+import { Workbench } from '@contentful/f36-workbench';
+
+<Workbench>
+  <Workbench.Header
+    title="title"
+    description="description"
+    icon={{}}
+    actions={{}}
+  />
+  <Workbench.Sidebar position="left"></Workbench.Sidebar>
+  <Workbench.Content type="default"></Workbench.Content>
+  <Workbench.Sidebar position="right"></Workbench.Sidebar>
+</Workbench>;
 ```
 
 ## Dropdown
