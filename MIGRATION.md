@@ -14,6 +14,10 @@
     - [How to migrate your Icon components](#how-to-migrate-your-icon-components)
   - [IconButton](#iconbutton)
     - [How to migrate your IconButton components](#how-to-migrate-your-iconbutton-components)
+  - [DateTime](#datetime)
+    - [How to migrate your DateTime components](#how-to-migrate-your-datetime-components)
+  - [RelativeDateTime](#relativedatetime)
+    - [How to migrate your RelativeDateTime components](#how-to-migrate-your-relativedatetime-components)
   - [Flex](#flex)
     - [How to migrate your Flex components](#how-to-migrate-your-flex-components)
     - [Grid](#grid)
@@ -489,6 +493,59 @@ const isCollapsed = true;
   aria-label="Delete"
   onClick={() => {}}
 />;
+```
+
+## DateTime
+
+The API of the DateTime component has not changed. The `format` property is the only one that was updated: from `"FULL"`, `"DATE_ONLY"`, `"TIME_ONLY"`, `"WEEKDAY_DATE"` to `"full"`, `"day"`, `"time"`, `"weekday"`.
+
+```tsx static=true
+import { DateTime } from '@contentful/f36-datetime';
+
+<DateTime date="2020-08-17T15:45:00" />
+<DateTime date="2020-08-17T15:45:00" format="day" />
+<DateTime date="2020-08-17T15:45:00" format="weekday" />
+<DateTime date="2020-08-17T15:45:00" format="time" />
+```
+
+### How to migrate your DateTime components
+
+To migrate your DateTime component to v4, you must update the format value and import. It changes from this:
+
+```tsx static=true
+import { DateTime } from '@contentful/forma-36-react-components';
+
+<DateTime date="2020-08-17T15:45:00" format="WEEKDAY_DATE" />;
+```
+
+to this:
+
+```tsx static=true
+import { DateTime } from '@contentful/f36-components';
+
+<DateTime date="2020-08-17T15:45:00" format="weekday" />;
+```
+
+## RelativeDateTime
+
+The API of the RelativeDateComponent has not changed.
+
+### How to migrate your RelativeDateTime components
+
+To migrate RelativeDateComponent to v4, you must update the import. From this:
+
+```tsx static=true
+import { RelativeDate } from '@contentful/forma-36-react-components';
+
+<RelativeDate date="2020-08-17T15:45:00" baseDate={'2020-07-17T15:45:00'} />;
+```
+
+to this:
+
+```tsx static=true
+import { RelativeDate } from '@contentful/f36-components';
+
+<RelativeDate date="2020-08-17T15:45:00" baseDate={'2020-07-17T15:45:00'} />;
 ```
 
 ## Flex
