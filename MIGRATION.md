@@ -10,7 +10,7 @@
   - [Button](#button)
     - [How to migrate your Button components](#how-to-migrate-your-button-components)
   - [CopyButton](#copybutton)
-    - [How to migrate your CopButton components](#how-to-migrate-your-copy-button-components)
+    - [How to migrate your CopyButton components](#how-to-migrate-your-copybutton-components)
   - [Icon](#icon)
     - [How to migrate your Icon components](#how-to-migrate-your-icon-components)
   - [IconButton](#iconbutton)
@@ -45,7 +45,7 @@
   - [Modal](#modal)
     - [How to migrate your Modal components](#how-to-migrate-your-modal-components)
   - [ToggleButton](#togglebutton)
-    - [How to migrate your ToggleButton components](#how-to-migrate-your-copy-togglebutton-components)
+    - [How to migrate your ToggleButton components](#how-to-migrate-your-togglebutton-components)
 
 ## How to migrate your packages to v4
 
@@ -336,7 +336,7 @@ becomes:
 For more information on what can be passed on the `tooltipProps` prop, check the Tooltip [documentation](https://v4-forma-36.netlify.app/components/tooltip/), it accpepts all props, except `children` and `content`.  
 We also added the possibility to pass `isDisabled` and `size` props to the CopyButton component.
 
-#### How to migrate your CopButton components
+#### How to migrate your CopyButton components
 
 You must manually migrate the version 3 `CopyButton` component updating the props. For example:
 
