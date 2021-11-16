@@ -11,7 +11,7 @@ import { Note } from "@contentful/f36-components";
 </Note>;
 
 <Note
-  title={'Title example'}
+  title="Title example"
   variant="primary"
   withCloseButton
   onClose={() => {}}>

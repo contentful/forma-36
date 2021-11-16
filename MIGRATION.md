@@ -539,7 +539,7 @@ To migrate RelativeDateComponent to v4, you must update the import. From this:
 ```tsx static=true
 import { RelativeDate } from '@contentful/forma-36-react-components';
 
-<RelativeDate date="2020-08-17T15:45:00" baseDate={'2020-07-17T15:45:00'} />;
+<RelativeDate date="2020-08-17T15:45:00" baseDate="2020-07-17T15:45:00" />;
 ```
 
 to this:
@@ -547,7 +547,7 @@ to this:
 ```tsx static=true
 import { RelativeDate } from '@contentful/f36-components';
 
-<RelativeDate date="2020-08-17T15:45:00" baseDate={'2020-07-17T15:45:00'} />;
+<RelativeDate date="2020-08-17T15:45:00" baseDate="2020-07-17T15:45:00" />;
 ```
 
 ## Flex
@@ -1307,7 +1307,7 @@ import { Note } from '@contentful/forma-36-react-components';
 </Note>;
 
 <Note
-  title={'Title example'}
+  title="Title example"
   noteType="primary"
   hasCloseButton
   onClose={() => {}}
@@ -1333,7 +1333,7 @@ import { Note } from '@contentful/f36-components';
 </Note>;
 
 <Note
-  title={'Title example'}
+  title="Title example"
   variant="primary"
   withCloseButton
   onClose={() => {}}

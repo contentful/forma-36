@@ -73,3 +73,17 @@ To expose nested elements events add element name between `on..Click`, e.g. `onC
 | ------------ | --------------------- |
 | handleClick  | Process click events  |
 | handleChange | Process change events |
+
+## Props
+
+### Value of the prop is a string
+
+When the value of the prop is a string, pass it directly with double quotes. There is no need to wrap it with curly braces.
+
+```
+// bad
+<Button variant={'primary'} >Add entry</Button>
+
+// good
+<Button variant="primary" >Add entry</Button>
+```
