@@ -5,10 +5,8 @@ status: 'stable'
 slug: /components/menu/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/menu'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-menu--default'
-typescript: ./src/Menu.tsx
+typescript: ./src/Menu.tsx,./src/MenuItem/MenuItem.tsx,./src/MenuList/MenuList.tsx
 ---
-
-import { Props } from '@contentful/f36-docs-utils';
 
 Menu is a component that offers a list of choices to the user, such as a set of actions or links.
 Menu uses Popover component as a base.
@@ -57,7 +55,7 @@ You can use following components to build a menu:
 </Menu>
 ```
 
-### With Button as a trigger
+### With simple Button as a trigger
 
 ```jsx
 <Menu>
@@ -134,6 +132,34 @@ function ControlledMenu() {
           variant="secondary"
           icon={<MenuIcon />}
           aria-label="toggle menu"
+        />
+      </Menu.Trigger>
+      <Menu.List>
+        <Menu.Item>Create an entry</Menu.Item>
+        <Menu.Item>Remove an entry</Menu.Item>
+        <Menu.Item>Embed existing entry</Menu.Item>
+      </Menu.List>
+    </Menu>
+  );
+}
+```
+
+### Controlled Menu with custom trigger onClick callback
+
+In most cases, you will use the [controlled approach](#controlled-menu).
+But if you have to provide your own toggle menu logic on the trigger component, you can do this by providing `onClick` callback on trigger component and omiting `onOpen` callback on the Menu component.
+
+```jsx
+function ControlledMenuWithCustomTriggerLogic() {
+  const [isOpen, setIsOpen] = React.useState(false);
+  return (
+    <Menu isOpen={isOpen} onClose={() => setIsOpen(false)}>
+      <Menu.Trigger>
+        <IconButton
+          variant="secondary"
+          icon={<MenuIcon />}
+          aria-label="toggle menu"
+          onClick={() => setIsOpen(!isOpen)}
         />
       </Menu.Trigger>
       <Menu.List>
@@ -320,4 +346,16 @@ But you can redefine them on any submenu by passing those props directly to that
 
 ## Props
 
+import { Props } from '@contentful/f36-docs-utils';
+
+### Menu
+
 <Props of="Menu" />
+
+### Menu.Item
+
+<Props of="MenuItem" />
+
+### Menu.List
+
+<Props of="MenuList" />

@@ -57,10 +57,7 @@ function IndexPage() {
         <DisplayText>Forma 36 is open-source</DisplayText>
         <Paragraph>We appreciate your contributions</Paragraph>
         <Paragraph>
-          Check our{' '}
-          <TextLink href="/guidelines/contributing/">
-            contribution guide
-          </TextLink>{' '}
+          Check our <TextLink href="/contributing">contribution guide</TextLink>{' '}
           and learn how to do it
         </Paragraph>
       </Section>

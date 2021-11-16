@@ -10,13 +10,13 @@ export const getBaseCardStyles = () => {
       paddingBottom: tokens.spacingM,
       paddingLeft: tokens.spacingM,
       paddingRight: tokens.spacingM,
+      whiteSpace: 'initial',
     }),
     wrapper: css({
       flex: '1 1 0',
       display: 'grid',
       gridTemplateRows: '[header] auto [content] minmax(0, 1fr)',
       gridTemplateColumns: 'auto [content] minmax(0, 1fr)',
-      overflow: 'hidden',
     }),
     dragHandle: css({
       borderBottomLeftRadius: tokens.borderRadiusMedium,
