@@ -10,58 +10,60 @@
       - [How to migrate your Tag to Badge](#how-to-migrate-your-tag-to-badge)
     - [Button](#button)
       - [How to migrate your Button components](#how-to-migrate-your-button-components)
-  - [Dropdown](#dropdown)
-    - [How to migrate your Dropdown components](#how-to-migrate-your-dropdown-components)
-      - [`Dropdown` to `Menu`](#dropdown-to-menu)
-      - [`Dropdown` to `Popover`](#dropdown-to-popover)
-  - [Icon](#icon)
-    - [How to migrate your Icon components](#how-to-migrate-your-icon-components)
-  - [IconButton](#iconbutton)
-    - [How to migrate your IconButton components](#how-to-migrate-your-iconbutton-components)
-  - [DateTime](#datetime)
-    - [How to migrate your DateTime components](#how-to-migrate-your-datetime-components)
-  - [RelativeDateTime](#relativedatetime)
-    - [How to migrate your RelativeDateTime components](#how-to-migrate-your-relativedatetime-components)
-  - [Flex](#flex)
-    - [How to migrate your Flex components](#how-to-migrate-your-flex-components)
-    - [Grid](#grid)
-      - [How to migrate your Grid components](#how-to-migrate-your-grid-components)
-  - [Form Components](#form-components)
-    - [Field Components](#field-components)
-      - [How to migrate your Field components](#how-to-migrate-your-field-components)
-    - [Checkbox](#checkbox)
-      - [How to migrate your checkbox components](#how-to-migrate-your-checkbox-components)
-    - [RadioButton](#radiobutton)
-      - [How to migrate your RadioButton components](#how-to-migrate-your-radiobutton-components)
-    - [Select](#select)
-      - [How to migrate your Select components](#how-to-migrate-your-select-components)
-      - [How to migrate your Switch components](#how-to-migrate-your-switch-components)
-    - [TextInput and TextArea](#textinput-and-textarea)
-      - [How to migrate your TextInput and TextArea components](#how-to-migrate-your-textinput-and-textarea-components)
-    - [FieldGroup](#fieldgroup)
-      - [How to migrate your FieldGroup components](#how-to-migrate-your-fieldgroup-components)
-    - [Form](#form)
-      - [How to migrate your Form components](#how-to-migrate-your-form-components)
-    - [FormLabel](#formlabel)
-      - [How to migrate your FormLabel components](#how-to-migrate-your-formlabel-components)
-  - [Note](#note)
-    - [How to migrate your Note components](#how-to-migrate-your-note-components)
-  - [Notification](#notification)
-    - [How to migrate your Notification components](#how-to-migrate-your-notification-components)
-  - [Modal](#modal)
-    - [How to migrate your Modal components](#how-to-migrate-your-modal-components)
-  - [Table](#table)
-    - [How to migrate your Table components](#how-to-migrate-your-table-components)
-  - [Tooltip](#tooltip)
-    - [How to migrate your Tooltip components](#how-to-migrate-your-tooltip-components)
-  - [Dropdown](#dropdown)
-    - [How to migrate your Dropdown components](#how-to-migrate-your-dropdown-components)
-      - [`Dropdown` to `Menu`](#dropdown-to-menu)
-      - [`Dropdown` to `Popover`](#dropdown-to-popover)
-  - [Tabs](#tabs)
-    - [How to migrate your Tabs components](#how-to-migrate-your-tabs-components)
-  - [Workbench](#workbench)
-    - [How to migrate your Workbench components](#how-to-migrate-your-workbench-components)
+    - [Card](#card)
+      - [How to migrate your Card components](#how-to-migrate-your-card-components)
+    - [Dropdown](#dropdown)
+      - [How to migrate your Dropdown components](#how-to-migrate-your-dropdown-components)
+        - [`Dropdown` to `Menu`](#dropdown-to-menu)
+        - [`Dropdown` to `Popover`](#dropdown-to-popover)
+    - [Icon](#icon)
+      - [How to migrate your Icon components](#how-to-migrate-your-icon-components)
+    - [IconButton](#iconbutton)
+      - [How to migrate your IconButton components](#how-to-migrate-your-iconbutton-components)
+    - [DateTime](#datetime)
+      - [How to migrate your DateTime components](#how-to-migrate-your-datetime-components)
+    - [RelativeDateTime](#relativedatetime)
+      - [How to migrate your RelativeDateTime components](#how-to-migrate-your-relativedatetime-components)
+    - [Flex](#flex)
+      - [How to migrate your Flex components](#how-to-migrate-your-flex-components)
+      - [Grid](#grid)
+        - [How to migrate your Grid components](#how-to-migrate-your-grid-components)
+    - [Form Components](#form-components)
+      - [Field Components](#field-components)
+        - [How to migrate your Field components](#how-to-migrate-your-field-components)
+      - [Checkbox](#checkbox)
+        - [How to migrate your checkbox components](#how-to-migrate-your-checkbox-components)
+      - [RadioButton](#radiobutton)
+        - [How to migrate your RadioButton components](#how-to-migrate-your-radiobutton-components)
+      - [Select](#select)
+        - [How to migrate your Select components](#how-to-migrate-your-select-components)
+        - [How to migrate your Switch components](#how-to-migrate-your-switch-components)
+      - [TextInput and TextArea](#textinput-and-textarea)
+        - [How to migrate your TextInput and TextArea components](#how-to-migrate-your-textinput-and-textarea-components)
+      - [FieldGroup](#fieldgroup)
+        - [How to migrate your FieldGroup components](#how-to-migrate-your-fieldgroup-components)
+      - [Form](#form)
+        - [How to migrate your Form components](#how-to-migrate-your-form-components)
+      - [FormLabel](#formlabel)
+        - [How to migrate your FormLabel components](#how-to-migrate-your-formlabel-components)
+    - [Note](#note)
+      - [How to migrate your Note components](#how-to-migrate-your-note-components)
+    - [Notification](#notification)
+      - [How to migrate your Notification components](#how-to-migrate-your-notification-components)
+    - [Modal](#modal)
+      - [How to migrate your Modal components](#how-to-migrate-your-modal-components)
+    - [Table](#table)
+      - [How to migrate your Table components](#how-to-migrate-your-table-components)
+    - [Tooltip](#tooltip)
+      - [How to migrate your Tooltip components](#how-to-migrate-your-tooltip-components)
+    - [Dropdown](#dropdown)
+      - [How to migrate your Dropdown components](#how-to-migrate-your-dropdown-components)
+        - [`Dropdown` to `Menu`](#dropdown-to-menu)
+        - [`Dropdown` to `Popover`](#dropdown-to-popover)
+    - [Tabs](#tabs)
+      - [How to migrate your Tabs components](#how-to-migrate-your-tabs-components)
+    - [Workbench](#workbench)
+      - [How to migrate your Workbench components](#how-to-migrate-your-workbench-components)
 
 ## How to migrate your packages to v4
 
@@ -316,6 +318,175 @@ import {
 ```
 
 You can also make these changes manually.
+
+### Card
+
+In v4, the Card components has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
+
+```tsx static=true
+import {
+  Card,
+  AssetCard,
+  EntryCard,
+} from '@contentful/forma-36-react-components';
+
+<Card selected>Selectable card content</Card>;
+
+<Card href="example.com">Selectable card content</Card>;
+
+<AssetCard
+  type="archive"
+  title="Some title"
+  selected={isSelected}
+  href=""
+  status="archived"
+  src=""
+  onClick={() => {}}
+  cardDragHandleComponent={<div />}
+  withDragHandle={true}
+  dropdownListElements={
+    <>
+      <span />
+    </>
+  }
+  size="default"
+/>;
+
+<EntryCard
+  type="archive"
+  title="Some title"
+  selected={isSelected}
+  href=""
+  status="archived"
+  onClick={() => {}}
+  cardDragHandleComponent={<div />}
+  withDragHandle={true}
+  dropdownListElements={
+    <>
+      <span />
+    </>
+  }
+  size="default"
+/>;
+```
+
+becomes:
+
+```tsx static=true
+import { Card, AssetCard, EntryCard Menu } from "@contentful/f36-components";
+
+<Card isSelected>
+  Selectable card content
+</Card>;
+
+<Card as="a" href="example.com">
+  Selectable card content
+</Card>;
+
+<AssetCard
+  as="a"
+  type="archive"
+  title="Some title"
+  isSelected={true}
+  href=""
+  status="archived"
+  src=""
+  onClick={() => {}}
+  withDragHandle={true}
+  actions={[<Menu.Item>action</Menu.Item>]}
+  size="default" />;
+```
+
+This is an overview of the changed props:
+
+- `cardDragHandleCopmonent` was removed
+- `selected` was renamed to `isSelected`
+- `isDragActive` was renamed to `isDragging`
+- `statusIcon` was renamed to `icon`, and now expect an Icon component
+- `cardDragHandleProps` was renamed to `dragHandleProps`
+- `dropdownListElements` was updated to use the new `Menu` component and should receive an array of `Menu.Items`, check the Menu [documentation](https://v4-forma-36.netlify.app/components/menu/) for more info.
+
+#### How to migrate your Card component
+
+To migrate the `Card` component to the v4 run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+We have codemods for `Card`, `AssetCard` and `EntryCard`, when running the codemods, the following changes occur:
+
+```tsx static=true
+import {
+  Card,
+  AssetCard,
+  EntryCard,
+} from '@contentful/forma-36-react-components';
+
+<Card selected>Selectable card content</Card>;
+
+<Card href="example.com">Selectable card content</Card>;
+
+<AssetCard
+  type="archive"
+  title="Some title"
+  selected={isSelected}
+  href=""
+  status="archived"
+  src=""
+  onClick={() => {}}
+  cardDragHandleComponent={<div />}
+  withDragHandle={true}
+  dropdownListElements={
+    <>
+      <span />
+    </>
+  }
+  size="default"
+/>;
+
+<EntryCard
+  type="archive"
+  title="Some title"
+  selected={isSelected}
+  href=""
+  status="archived"
+  onClick={() => {}}
+  cardDragHandleComponent={<div />}
+  withDragHandle={true}
+  dropdownListElements={
+    <>
+      <span />
+    </>
+  }
+  size="default"
+/>;
+```
+
+becomes:
+
+```tsx static=true
+import { Card, AssetCard, EntryCard Menu } from "@contentful/f36-components";
+
+<Card isSelected>
+  Selectable card content
+</Card>;
+
+<Card as="a" href="example.com">
+  Selectable card content
+</Card>;
+
+<AssetCard
+  as="a"
+  type="archive"
+  title="Some title"
+  isSelected={true}
+  href=""
+  status="archived"
+  src=""
+  onClick={() => {}}
+  withDragHandle={true}
+  actions={[<Menu.Item>action</Menu.Item>]}
+  size="default" />;
+```
 
 ## Icon
 
