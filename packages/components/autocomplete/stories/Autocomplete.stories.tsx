@@ -92,7 +92,7 @@ export const Basic = (args: AutocompleteProps<string>) => {
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
-        listWidth={'full'}
+        listWidth="full"
       />
 
       <Paragraph>Selected fruit: {selectedFruit}</Paragraph>
