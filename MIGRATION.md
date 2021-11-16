@@ -2068,7 +2068,7 @@ To migrate your v3 `Pill` components to v4 run the following [codemod](https://g
 
 `npx @contentful/f36-codemod`
 
-If you want to manually migrate your Asset component to v4, you must update the import. It changes from this:
+If you want to manually migrate your Pill component to v4, you must update the import. It changes from this:
 
 ```tsx
 import { InfoCircleIcon } from '@contentful/f36-icons';
