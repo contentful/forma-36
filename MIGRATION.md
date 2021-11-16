@@ -3,6 +3,7 @@
 ## Table of contents
 
 - [Migration](#migration)
+
   - [Table of contents](#table-of-contents)
   - [How to migrate your packages to v4](#how-to-migrate-your-packages-to-v4)
   - [Changes per component in v4](#changes-per-component-in-v4)
@@ -62,6 +63,9 @@
     - [How to migrate your Tabs components](#how-to-migrate-your-tabs-components)
   - [Workbench](#workbench)
     - [How to migrate your Workbench components](#how-to-migrate-your-workbench-components)
+  - [Spinner](#spinner)
+    - [How to migrate your Spinner components](#how-to-migrate-your-spinner-components)
+  - [Skeleton](#skeleton) - [How to migrate your Skeleton components](#how-to-migrate-your-skeleton-components)
 
 ## How to migrate your packages to v4
 
@@ -2101,4 +2105,115 @@ const [isPopoverOpen, setIsPopoverOpen] = React.useState(false);
     </FocusLock>
   </Popover.Content>
 </Popover>;
+```
+
+## Spinner
+
+In v4, only `color` prop became `variant`, to align with our code [style guide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md). The rest stayed the same.
+
+### How to migrate your Spinner components
+
+To migrate your `Spinner` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to do it manually, you must transform your existing code from this:
+
+```tsx
+import { Spinner } from '@contentful/forma-36-react-components';
+
+<Spinner color="default" size="default" />;
+
+<Spinner color="primary" customSize={12} />;
+
+<Spinner size="large" />;
+
+<Spinner size="small" className="test-class-name" />;
+```
+
+to this:
+
+```tsx
+import { Spinner } from '@contentful/f36-components';
+
+<Spinner variant="default" size="medium" />;
+
+<Spinner variant="primary" customSize={12} />;
+
+<Spinner size="large" />;
+
+<Spinner size="small" className="test-class-name" />;
+```
+
+## Skeleton
+
+In v4 SkeletonContainer, we changed prop `animate` to `isAnimated` to align with our code [style guide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md). The rest stayed the same.
+
+### How to migrate your Skeleton components
+
+To migrate your `Skeleton` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to do it manually, you just need to update imports and rename prop `animate` to `isAnimated`:
+
+```tsx
+import {
+  SkeletonContainer,
+  SkeletonDisplayText,
+  SkeletonText,
+  SkeletonBodyText,
+  SkeletonRow,
+  Table,
+  TableBody,
+  SkeletonImage,
+} from '@contentful/forma-36-react-components';
+
+<SkeletonContainer animate={false}>
+  <SkeletonDisplayText numberOfLines={1} />
+  <SkeletonBodyText numberOfLines={3} offsetTop={35} />
+</SkeletonContainer>;
+
+<Table>
+  <TableBody>
+    <SkeletonRow />
+  </TableBody>
+</Table>;
+
+<SkeletonContainer>
+  <SkeletonImage />
+  <SkeletonText />
+</SkeletonContainer>;
+```
+
+The result should be like this:
+
+```tsx
+import React from 'react';
+import { Table, TableBody } from '@contentful/forma-36-react-components';
+
+import {
+  SkeletonContainer,
+  SkeletonRow,
+  SkeletonBodyText,
+  SkeletonDisplayText,
+  SkeletonImage,
+  SkeletonText,
+} from '@contentful/f36-components';
+
+<SkeletonContainer isAnimated={false}>
+  <SkeletonDisplayText numberOfLines={1} />
+  <SkeletonBodyText numberOfLines={3} offsetTop={35} />
+</SkeletonContainer>;
+
+<Table>
+  <TableBody>
+    <SkeletonRow />
+  </TableBody>
+</Table>;
+
+<SkeletonContainer>
+  <SkeletonImage />
+  <SkeletonText />
+</SkeletonContainer>;
 ```
