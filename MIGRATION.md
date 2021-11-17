@@ -291,12 +291,12 @@ becomes:
 />
 ```
 
-For more information on what can be passed on the `tooltipProps` prop, check the Tooltip [documentation](https://v4-forma-36.netlify.app/components/tooltip/), it accpepts all props, except `children` and `content`.  
+For more information on what can be passed on the `tooltipProps` prop, see the Tooltip [documentation](https://v4-forma-36.netlify.app/components/tooltip/). It accepts all props except `children` and `content`.  
 We also added the possibility to pass `isDisabled` and `size` props to the CopyButton component.
 
 #### How to migrate your CopyButton components
 
-You must manually migrate the version 3 `CopyButton` component updating the props. For example:
+You must manually migrate the version 3 `CopyButton` component by updating the props. For example:
 
 ```jsx static=true
 <CopyButton
@@ -710,7 +710,7 @@ const [isPopoverOpen, setIsPopoverOpen] = React.useState(false);
 
 ### Icon
 
-In v4, the Icon component has a simplified API. You can a required icon from `@contentful/f36-icons`.
+In v4, the Icon component has a simplified API. You can import a required icon from `@contentful/f36-icons`.
 
 ```tsx static=true
 import { ChevronLeftIcon } from '@contentful/f36-icons';
@@ -718,7 +718,7 @@ import { ChevronLeftIcon } from '@contentful/f36-icons';
 <ChevronLeftIcon size="small" variant="primary" />;
 ```
 
-To use an icon from a third-party library, you can pass it as `as` prop:
+To use an icon from a third-party library, you can pass it as an `as` prop:
 
 ```tsx static=true
 import { Icon } from '@contentful/f36-icons';
@@ -1101,7 +1101,7 @@ We also introduced API changes for the checkbox. This is an overview of the rena
 - `disabled` was renamed to `isDisabled`;
 - `indeterminate` was renamed to `isIndeterminate`.
 
-##### How to migrate your checkbox components
+##### How to migrate your Checkbox components
 
 You must manually migrate the version 3 `Checkbox` component as it depends on the context the component is being used. For example:
 
@@ -2272,7 +2272,7 @@ import { Tooltip } from '@contentful/f36-components';
 
 ### Workbench
 
-Workbench in version 4 got moved into a separate package, but since we would like to deprecate this component, we don't include it in the main package. In order to use this component, you need to install it from a separate package:
+In version 4, Workbench got moved into a separate package. Because this component will eventually be deprecated, we did not include it in the main package. To use this component you must install it from a separate package:
 
 ```bash
 npm install @contentful/f36-workbench
