@@ -115,61 +115,28 @@ The API of the Asset component has not changed.
 
 #### How to migrate your Asset components
 
-To migrate your v3 `Asset` components to v4 run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
-
-`npx @contentful/f36-codemod`
-
-If you want to manually migrate your Asset component to v4, you must update the import. It changes from this:
+To migrate Asset component to v4, you must update the import. It changes from this:
 
 ```tsx
-import { AssetCard } from '@contentful/forma-36-react-components';
+import { Asset } from '@contentful/forma-36-react-components';
 
-const isSelected = true;
-<AssetCard
+<Asset
+  src="https://via.placeholder.com/200x300"
+  title="An archive asset"
   type="archive"
-  title="Some title"
-  selected={isSelected}
-  href=""
-  status="archived"
-  src=""
-  onClick={() => {}}
-  cardDragHandleComponent={<div />}
-  withDragHandle={true}
-  dropdownListElements={
-    <>
-      <span />
-    </>
-  }
-  size="default"
 />;
-
-<AssetCard size="default" isLoading title="" src="" href="" />;
 ```
 
 to this:
 
 ```tsx
-import { AssetCard } from '@contentful/f36-components';
-const isSelected = true;
-<AssetCard
-  as="a"
-  type="archive"
-  title="Some title"
-  isSelected={isSelected}
-  href=""
-  status="archived"
-  src=""
-  onClick={() => {}}
-  withDragHandle={true}
-  dropdownListElements={
-    <>
-      <span />
-    </>
-  }
-  size="default"
-/>;
+import { Asset } from '@contentful/f36-components';
 
-<AssetCard as="a" size="default" isLoading title="" src="" href="" />;
+<Asset
+  src="https://via.placeholder.com/200x300"
+  title="An archive asset"
+  type="archive"
+/>;
 ```
 
 ### Button
