@@ -9,7 +9,7 @@
     "dist"
   ],
   "devDependencies": {
-    "node-sass": "^5.0.0",
+    "node-sass": "^6.0.1",
     "node-sass-import": "^2.0.1",
     "postcss": "^8.2.2",
     "postcss-calc": "^8.0.0",
