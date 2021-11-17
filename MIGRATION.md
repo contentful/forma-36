@@ -119,24 +119,12 @@ To migrate Asset component to v4, you must update the import. It changes from th
 
 ```tsx
 import { Asset } from '@contentful/forma-36-react-components';
-
-<Asset
-  src="https://via.placeholder.com/200x300"
-  title="An archive asset"
-  type="archive"
-/>;
 ```
 
 to this:
 
 ```tsx
 import { Asset } from '@contentful/f36-components';
-
-<Asset
-  src="https://via.placeholder.com/200x300"
-  title="An archive asset"
-  type="archive"
-/>;
 ```
 
 ### Button
@@ -2038,50 +2026,13 @@ To migrate your v3 `Pill` components to v4 run the following [codemod](https://g
 If you want to manually migrate your Pill component to v4, you must update the import. It changes from this:
 
 ```tsx
-import { InfoCircleIcon } from '@contentful/f36-icons';
 import { Pill } from '@contentful/forma-36-react-components';
-
-<Pill label="test label" variant="active" onClose={() => {}} />;
-
-<Pill label="test label" variant="deleted" onClose={() => {}} />;
-
-<Pill
-  label="example.user@contentful.com"
-  variant="idle"
-  onDrag={() => {}}
-  dragHandleComponent={
-    <InfoCircleIcon
-      aria-label="Drag handler"
-      variant="muted"
-      style={{ padding: '0.375rem 0.625rem' }}
-    />
-  }
-/>;
 ```
 
 to this:
 
 ```tsx
-import { InfoCircleIcon } from '@contentful/f36-icons';
-
 import { Pill } from '@contentful/f36-components';
-
-<Pill label="test label" variant="active" onClose={() => {}} />;
-
-<Pill label="test label" variant="deleted" onClose={() => {}} />;
-
-<Pill
-  label="example.user@contentful.com"
-  variant="idle"
-  onDrag={() => {}}
-  dragHandleComponent={
-    <InfoCircleIcon
-      aria-label="Drag handler"
-      variant="muted"
-      style={{ padding: '0.375rem 0.625rem' }}
-    />
-  }
-/>;
 ```
 
 ### RelativeDateTime
