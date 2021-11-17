@@ -8,7 +8,7 @@
   - [Button](#button)
     - [How to migrate your Button components](#how-to-migrate-your-button-components)
   - [Card](#card)
-      - [How to migrate your Card components](#how-to-migrate-your-card-components)
+    - [How to migrate your Card components](#how-to-migrate-your-card-components)
   - [CopyButton](#copybutton)
     - [How to migrate your CopyButton components](#how-to-migrate-your-copybutton-components)
   - [DateTime](#datetime)
