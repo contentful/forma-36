@@ -130,9 +130,8 @@ const TRANSFORMS_CHOICES = [
     value: 'v4-entry-card',
   },
   {
-    name:
-      'v4-v4-inline-entry-card: Converts InlineEntryCard from Forma v3 to v4',
-    value: 'v4-v4-inline-entry-card',
+    name: 'v4-inline-entry-card: Converts InlineEntryCard from Forma v3 to v4',
+    value: 'v4-inline-entry-card',
   },
   // Add extra codemods - do not remove
 ];
