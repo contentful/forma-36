@@ -41,7 +41,7 @@ export const Overview: Story = () => {
         Built-in icons
       </SectionHeading>
 
-      <Grid columns={'auto 1fr 1fr 1fr 1fr'}>
+      <Grid columns="auto 1fr 1fr 1fr 1fr">
         {Object.keys(icons).map((icon) => {
           const Component = icons[icon];
 
