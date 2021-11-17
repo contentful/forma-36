@@ -39,7 +39,7 @@ When defined as a number, it will split the space into equally sized columns; it
 ```jsx static=true
 <React.Fragment>
   <Grid columns={6}></Grid>
-  <Grid columns={'auto 1fr'}></Grid>
+  <Grid columns="auto 1fr"></Grid>
 </React.Fragment>
 ```
 
@@ -50,7 +50,7 @@ Accepts a number or any of [grid-template-rows](https://developer.mozilla.org/en
 ```jsx static=true
 <React.Fragment>
   <Grid rows={6}></Grid>
-  <Grid rows={'auto 1fr'}></Grid>
+  <Grid rows="auto 1fr"></Grid>
 </React.Fragment>
 ```
 
@@ -111,7 +111,7 @@ The grid layout consists of different components that helps defining your layout
 
 `repeat()` is a css notation that you can use with the `gridColumns` and `girdRows` properties to make your rules more concise and easier to understand when creating a large amount of columns or rows
 
-**Example:** `gridColumns={'1fr 2fr 1fr 2fr 1fr 2fr'}` is same as `gridColumns={'repeat(3, 1fr 2fr)'}` see below.
+**Example:** `gridColumns="1fr 2fr 1fr 2fr 1fr 2fr"` is same as `gridColumns="repeat(3, 1fr 2fr)"` see below.
 
 ```jsx
 <div>
@@ -148,7 +148,7 @@ Fr is a fractional unit and 1fr is for 1 part of the available space. it differs
 If you place a larger item into a track then the way the fr until will work is to allow that track to take up more space and distribute what is left over.
 
 ```jsx
-<Grid columns={'1fr 1fr 1fr'}>
+<Grid columns="1fr 1fr 1fr">
   <p style={{ border: '1px solid #263545' }}>
     WelcomeToTheAwesomeContentfulGridSystem
   </p>
@@ -174,7 +174,7 @@ i.e. instead of specifying `columnStart` and `columnEnd` you can use span to mak
 <Grid columns={6}>
   <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
   <Grid.Item
-    area={'span 4 / span 4'}
+    area="span 4 / span 4"
     style={{ backgroundColor: '#263545', height: '100px' }}
   />
 </Grid>
@@ -187,7 +187,7 @@ i.e. instead of specifying `columnStart` and `columnEnd` you can use span to mak
 Just like flexbox the grid comes with `justifyContent`, `justifyItems`, `alignItems`, `alignContent`, ..etc.
 
 ```jsx
-<Grid columns={'250px 250px'} justifyContent={'space-between'}>
+<Grid columns="250px 250px" justifyContent="space-between">
   <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
   <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
 </Grid>

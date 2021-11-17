@@ -30,21 +30,21 @@ To migrate your project easily, we provided you with a codemod for most of the c
 
 - **Card, AssetCard, and EntryCard** We changed some properties of the Card, AssetCard, and EntryCard components were migrated or changed. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-card-components).
 
-- **Flex**: Some properties of the Flex components were migrated or changed. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-flex-components).
-
-- **Dropdown**: The Dropdown component was removed from v4. Instead, you can use three new components: Menu, Autocomplete, or Popover. What to use depends on the specific case. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-grid-components).
-
-- **Form Components**: We changed how most of the Form components work. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#form-components).
+- **CopyButton** API improvements: Some properties of the CopyButton components were migrated or changed. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-copybutton-components).
 
 - **DateTime**: You only need to update `format` prop value. For more information on how to migrate your DateTime components, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-datetime-components)
 
-- **RelativeDateTime**: No changes, just import new component. For more information on how to migrate your RelativeDateTime components, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-relativedatetime-components)
-
-- **Grid**: Some properties of the Grid components were migrated or changed. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-grid-components).
+- **Dropdown**: The Dropdown component was removed from v4. Instead, you can use three new components: Menu, Autocomplete, or Popover. What to use depends on the specific case. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-grid-components).
 
 - **Icon**: Now you can use any icon from our library directly as a component, or wrap an external icon in our Icon component to use consistent sizing and styling. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-icon-components).
 
 - **IconButton**: Now you can pass any icon as an element to IconButton component. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-iconbutton-components).
+
+- **Flex**: Some properties of the Flex components were migrated or changed. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-flex-components).
+
+- **Form Components**: We changed how most of the Form components work. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#form-components).
+
+- **Grid**: Some properties of the Grid components were migrated or changed. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-grid-components).
 
 - **Modal**: We changed the way you import the Modal component. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-modal-components).
 
@@ -52,15 +52,23 @@ To migrate your project easily, we provided you with a codemod for most of the c
 
 - **Notification**: Some properties of the Notification components were migrated or changed. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-notification-components).
 
-- **Tag** becomes Badge: We migrated the Tag component to Badge. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-tag-to-badge).
+- **RelativeDateTime**: There are no changes, just import the new component. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-relativedatetime-components)
+
+- **Skeleton**: Some properties of the Skeleton component were renamed. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-skeleton-components).
+
+- **Spinner**: Some properties of the Spinner component were renamed. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-spinner-components).
 
 - **Table**: Table becomes compound component in version 4. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-table-components).
 
-- **Tooltip**: Two props got renamed: `containerElement` to `as`; and `place` to `placement`. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-tooltip-components).
-
 - **Tabs**: The Tabs components API has been improved. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-tabs-components).
 
-- **Workbench**: The only change is v4 is where you import Workbench component from. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-table-components).
+- **Tag** becomes Badge: We migrated the Tag component to Badge. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-tag-to-badge).
+
+- **ToggleButton** Some properties of the ToggleButton components were migrated or changed. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-togglebutton-components).
+
+- **Tooltip**: Two props got renamed: `containerElement` to `as`; and `place` to `placement`. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-tooltip-components).
+
+- **Workbench**: The only change in v4 is from where you import the Workbench component. For more information, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-table-components).
 
 ## 🤟 Step 3: Have a great time using Forma 36
 

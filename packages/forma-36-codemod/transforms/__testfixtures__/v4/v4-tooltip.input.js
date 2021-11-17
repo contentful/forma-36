@@ -7,7 +7,7 @@ import { TextLink } from "@contentful/f36-components";
   <TextLink>Hover me</TextLink>.
 </Tooltip>
 
-<Tooltip content={'content'} containerElement="div" place="left">
+<Tooltip content="content" containerElement="div" place="left">
   <TextLink>Hover me</TextLink>.
 </Tooltip>
 </>

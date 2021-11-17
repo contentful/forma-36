@@ -11,7 +11,7 @@ import { Note } from "@contentful/forma-36-react-components";
 </Note>;
 
 <Note
-  title={'Title example'}
+  title="Title example"
   noteType="primary"
   hasCloseButton
   onClose={() => {}}>
