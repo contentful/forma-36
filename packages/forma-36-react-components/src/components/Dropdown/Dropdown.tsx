@@ -86,7 +86,7 @@ export interface DropdownProps {
   /**
    * Child nodes to be rendered in the component
    */
-  children?: React.ReactNode;
+  children: React.ReactNode;
   /**
    * Class names to be appended to the className prop of the Dropdown wrapper
    */
