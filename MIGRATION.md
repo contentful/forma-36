@@ -263,7 +263,7 @@ You can also make these changes manually.
 
 ### Card
 
-In v4, the Card components has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
+In v4, the Card component has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
 
 ```tsx static=true
 import {
@@ -344,17 +344,17 @@ This is an overview of the changed props:
 - `cardDragHandleCopmonent` was removed
 - `selected` was renamed to `isSelected`
 - `isDragActive` was renamed to `isDragging`
-- `statusIcon` was renamed to `icon`, and now expect an Icon component
+- `statusIcon` was renamed to `icon`, and now expects an Icon component
 - `cardDragHandleProps` was renamed to `dragHandleProps`
-- `dropdownListElements` was updated to use the new `Menu` component and should receive an array of `Menu.Items`, check the Menu [documentation](https://v4-forma-36.netlify.app/components/menu/) for more info.
+- `dropdownListElements` was updated to use the new `Menu` component and should receive an array of `Menu.Items`. For more information, see the Menu [documentation](https://v4-forma-36.netlify.app/components/menu/).
 
 #### How to migrate your Card component
 
-To migrate the `Card` component to the v4 run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+To migrate the `Card` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
 
-We have codemods for `Card`, `AssetCard` and `EntryCard`, when running the codemods, the following changes occur:
+There are codemods for `Card`, `AssetCard` and `EntryCard`. When running the codemods, the following changes occur:
 
 ```tsx static=true
 import {
