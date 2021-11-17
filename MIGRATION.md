@@ -7,6 +7,8 @@
 - [Changes per Component in v4](#changes-per-component-in-v4)
   - [Button](#button)
     - [How to migrate your Button components](#how-to-migrate-your-button-components)
+  - [Card](#card)
+    - [How to migrate your Card components](#how-to-migrate-your-card-components)
   - [CopyButton](#copybutton)
     - [How to migrate your CopyButton components](#how-to-migrate-your-copybutton-components)
   - [DateTime](#datetime)
@@ -259,9 +261,178 @@ import {
 
 You can also make these changes manually.
 
+### Card
+
+In v4, the Card component has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
+
+```tsx static=true
+import {
+  Card,
+  AssetCard,
+  EntryCard,
+} from '@contentful/forma-36-react-components';
+
+<Card selected>Selectable card content</Card>;
+
+<Card href="example.com">Selectable card content</Card>;
+
+<AssetCard
+  type="archive"
+  title="Some title"
+  selected={isSelected}
+  href=""
+  status="archived"
+  src=""
+  onClick={() => {}}
+  cardDragHandleComponent={<div />}
+  withDragHandle={true}
+  dropdownListElements={
+    <>
+      <span />
+    </>
+  }
+  size="default"
+/>;
+
+<EntryCard
+  type="archive"
+  title="Some title"
+  selected={isSelected}
+  href=""
+  status="archived"
+  onClick={() => {}}
+  cardDragHandleComponent={<div />}
+  withDragHandle={true}
+  dropdownListElements={
+    <>
+      <span />
+    </>
+  }
+  size="default"
+/>;
+```
+
+becomes:
+
+```tsx static=true
+import { Card, AssetCard, EntryCard Menu } from "@contentful/f36-components";
+
+<Card isSelected>
+  Selectable card content
+</Card>;
+
+<Card as="a" href="example.com">
+  Selectable card content
+</Card>;
+
+<AssetCard
+  as="a"
+  type="archive"
+  title="Some title"
+  isSelected={true}
+  href=""
+  status="archived"
+  src=""
+  onClick={() => {}}
+  withDragHandle={true}
+  actions={[<Menu.Item>action</Menu.Item>]}
+  size="default" />;
+```
+
+This is an overview of the changed props:
+
+- `cardDragHandleCopmonent` was removed
+- `selected` was renamed to `isSelected`
+- `isDragActive` was renamed to `isDragging`
+- `statusIcon` was renamed to `icon`, and now expects an Icon component
+- `cardDragHandleProps` was renamed to `dragHandleProps`
+- `dropdownListElements` was updated to use the new `Menu` component and should receive an array of `Menu.Items`. For more information, see the Menu [documentation](https://v4-forma-36.netlify.app/components/menu/).
+
+#### How to migrate your Card component
+
+To migrate the `Card` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+There are codemods for `Card`, `AssetCard` and `EntryCard`. When running the codemods, the following changes occur:
+
+```tsx static=true
+import {
+  Card,
+  AssetCard,
+  EntryCard,
+} from '@contentful/forma-36-react-components';
+
+<Card selected>Selectable card content</Card>;
+
+<Card href="example.com">Selectable card content</Card>;
+
+<AssetCard
+  type="archive"
+  title="Some title"
+  selected={isSelected}
+  href=""
+  status="archived"
+  src=""
+  onClick={() => {}}
+  cardDragHandleComponent={<div />}
+  withDragHandle={true}
+  dropdownListElements={
+    <>
+      <span />
+    </>
+  }
+  size="default"
+/>;
+
+<EntryCard
+  type="archive"
+  title="Some title"
+  selected={isSelected}
+  href=""
+  status="archived"
+  onClick={() => {}}
+  cardDragHandleComponent={<div />}
+  withDragHandle={true}
+  dropdownListElements={
+    <>
+      <span />
+    </>
+  }
+  size="default"
+/>;
+```
+
+becomes:
+
+```tsx static=true
+import { Card, AssetCard, EntryCard Menu } from "@contentful/f36-components";
+
+<Card isSelected>
+  Selectable card content
+</Card>;
+
+<Card as="a" href="example.com">
+  Selectable card content
+</Card>;
+
+<AssetCard
+  as="a"
+  type="archive"
+  title="Some title"
+  isSelected={true}
+  href=""
+  status="archived"
+  src=""
+  onClick={() => {}}
+  withDragHandle={true}
+  actions={[<Menu.Item>action</Menu.Item>]}
+  size="default" />;
+```
+
 ### CopyButton
 
-In v4 the Button component has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
+In v4 the CopyButton component has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
 
 ```jsx static=true
 <CopyButton
