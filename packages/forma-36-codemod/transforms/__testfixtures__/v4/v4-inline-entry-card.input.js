@@ -8,7 +8,6 @@ const isSelected = true;
   status="archived"
   onClick={() => {}}
   cardDragHandleComponent={<div />}
-  dropdownListElements={<><span /></>}
->
+  dropdownListElements={<><span /></>}>
   Inline card text
 </InlineEntryCard>;
