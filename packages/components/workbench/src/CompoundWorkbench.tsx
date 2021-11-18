@@ -4,9 +4,9 @@ import { WorkbenchContent } from './WorkbenchContent';
 import { WorkbenchSidebar } from './WorkbenchSidebar';
 
 type CompoundWorkbench = typeof OriginalWorkbench & {
-  Header?: typeof WorkbenchHeader;
-  Content?: typeof WorkbenchContent;
-  Sidebar?: typeof WorkbenchSidebar;
+  Header: typeof WorkbenchHeader;
+  Content: typeof WorkbenchContent;
+  Sidebar: typeof WorkbenchSidebar;
 };
 
 export const Workbench = OriginalWorkbench as CompoundWorkbench;
