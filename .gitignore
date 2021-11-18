@@ -5,6 +5,10 @@
 **/dist
 **/dist-storybook
 
+# next.js
+**/.next/
+**/out/
+
 # misc
 **/.DS_Store
 **/.env.local
