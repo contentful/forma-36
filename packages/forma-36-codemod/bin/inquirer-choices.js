@@ -129,6 +129,11 @@ const TRANSFORMS_CHOICES = [
     name: 'v4-entry-card: Migrate Entry components from v3 to v4',
     value: 'v4-entry-card',
   },
+  {
+    name:
+      'v4-helptext: Migrates HelpText components outside form from v3 to v4',
+    value: 'v4-helptext',
+  },
   // Add extra codemods - do not remove
 ];
 

@@ -104,3 +104,7 @@ Migrate AssetCard components from v3 to v4
 #### `v4-entry-card`
 
 Migrate EntryCard components from v3 to v4
+
+#### `v4-helptext`
+
+Migrates HelpText components outside form from v3 to v4

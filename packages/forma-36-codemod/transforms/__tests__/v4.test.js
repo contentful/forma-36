@@ -32,6 +32,7 @@ describe('v4 codemods', () => {
     'v4-notification',
     'v4-asset-card',
     'v4-entry-card',
+    'v4-helptext',
   ];
 
   beforeEach(() => {
