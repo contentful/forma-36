@@ -4,6 +4,12 @@
 
 - [Table of contents](#table-of-contents)
 - [How to migrate your packages to v4](#how-to-migrate-your-packages-to-v4)
+  - [Step 1 - install new packages](#step-1-install-new-packages)
+    - [Install icons package separately](#install-icons-package-separately)
+    - [Install packages separately](#install-packages-separately)
+  - [Step 2 - migrate your components](#step-2-migrate-your-components)
+  - [Step 3 - remove version 3 packages and CSS imports](#step-3-remove-version-3-packages-and-CSS-imports)
+  - [Step 4 - use GlobalStyles component](#step-3-use-globalStyles-component)
 - [Changes per Component in v4](#changes-per-component-in-v4)
   - [Asset](#asset)
     - [How to migrate your Asset components](#how-to-migrate-your-asset-components)
@@ -74,37 +80,113 @@
 
 ## How to migrate your packages to v4
 
-Install a package that contains all of the components from Forma 36. Tree-shaking will take care of your build, so it will include only components that you use.
-We separate only icons from the main package. If you need to use our icons, install them separately, by running the following commands:
-:
+### Step 1 - install new packages
+
+Install a package that contains all of the components from Forma 36 version 4. Tree-shaking will take care of your build, so it will include only components that you use.
 
 For NPM
 
-```sh
-npm install @contentul/f36-components@beta
-npm install @contentful/f36-icons@beta
+```bash
+npm install @contentul/f36-components
+npm install @contentful/f36-tokens
 ```
 
 For YARN
 
-```sh
-yarn add @contentul/f36-components@beta
-yarn add @contentful/f36-icons@beta
+```bash
+yarn add @contentul/f36-components
+yarn add @contentful/f36-tokens
 ```
 
-You can install separate packages and use chosen components separately.
-For example, if you need only the `Button` component in your project, you can add this package by running the following command:
+#### Install icons package separately
 
-For NPM
+Starting from version 4, icons are not included in the main components package. If you need to use our icons or you use them already in version 3, install them separately, by running the following commands:
 
-```sh
-npm install @contentul/f36-button@beta
+```bash
+npm install @contentul/f36-icons
 ```
 
 For YARN
 
-```sh
-yarn add @contentul/f36-button@beta
+```bash
+yarn add @contentul/f36-icons
+```
+
+#### Install packages separately
+
+If for some reason, your project requires installing packages separately it is possible in version 4.
+For example, if you need only the `Button` component in your project, you can add only this package by running the following command:
+
+For NPM
+
+```bash
+npm install @contentul/f36-button
+```
+
+For YARN
+
+```bash
+yarn add @contentul/f36-button
+```
+
+Note: We don't recommend using it this way, it is much easier to [install full package of components](#Step-1-install-new-packages). Tree-shaking will take care of your build
+
+### Step 2 - migrate your components
+
+We created codemods for most of the components to make it easier for you to migrate. All you need to do is run this command and follow the prompt:
+
+`npx @contentful/f36-codemod`
+
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+
+There are still a couple of components that requires manual migration, have a look on [the detailed documentation how to do it](#changes-per-component-in-v4).
+
+### Step 3 - remove version 3 packages and CSS imports
+
+Now that you have your fresh version of Forma 36 installed, you don't need the old packages anymore. Go ahead and remove them by running the following command:
+
+For NPM
+
+```bash
+npm uninstall @contentul/f36-components
+npm uninstall @contentful/f36-tokens
+npm uninstall @contentful/f36-fcss
+```
+
+For YARN
+
+```bash
+yarn remove @contentul/f36-components
+yarn remove @contentful/f36-tokens
+yarn remove @contentful/f36-fcss
+```
+
+Now find the following imports and remove them as well:
+
+```tsx
+import '@contentful/forma-36-react-components/dist/styles.css';
+import '@contentful/forma-36-fcss/dist/styles.css';
+import '@contentful/forma-36-tokens/dist/css/index.css';
+```
+
+### Step 4 - use GlobalStyles component
+
+Control default browser styles with the `GlobalStyles` component. The GlobalStyles component uses the Global component from [Emotion](https://emotion.sh/docs/globals) under the hood. Import GlobalStyles somewhere at the beginning of your project like in the example below:
+
+```jsx static=true
+import ReactDOM from 'react-dom';
+import { GlobalStyles } from '@contentful/f36-components';
+
+import App from './App';
+
+const rootElement = document.getElementById('root');
+ReactDOM.render(
+  <>
+    <GlobalStyles />
+    <App />
+  </>,
+  rootElement,
+);
 ```
 
 ## Changes per component in v4
@@ -156,6 +238,8 @@ becomes:
 To migrate the `Button` component to the v4 run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
+
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
 
 When running the codemod, the following changes occur:
 
@@ -375,6 +459,8 @@ This is an overview of the changed props:
 To migrate the `Card` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
+
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
 
 There are codemods for `Card`, `AssetCard` and `EntryCard`. When running the codemods, the following changes occur:
 
@@ -943,6 +1029,8 @@ To migrate the Icon component to v4, run the following [codemod](https://github.
 
 `npx @contentful/f36-codemod`
 
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+
 If you want to do it manually, you must transform your code as follows:
 
 ```tsx static=true
@@ -1020,6 +1108,8 @@ import { PreviewIcon } from '@contentful/f36-icons';
 To migrate the IconButton component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
+
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
 
 If you want to do it manually, you must transform your code as follows:
 
@@ -1108,6 +1198,8 @@ becomes:
 To migrate the Flex component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
+
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
 
 If you want to do it manually, you must transform your existing code as follows:
 
@@ -1210,6 +1302,8 @@ To migrate your `Field` components to v4, run the following [codemod](https://gi
 To migrate your Field components to v4, run the following codemod:
 
 `npx @contentful/f36-codemod`
+
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
 
 The codemods that must be run: `v4-checkbox`, `v4-radio`, `v4-select`, and `v4-text-field`.
 
@@ -1362,6 +1456,8 @@ To migrate your `RadioButton` component to v4, run the following [codemod](https
 
 `npx @contentful/f36-codemod`
 
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+
 If you want to do it manually, you must transform your code as follows:
 
 ```jsx static=true
@@ -1421,6 +1517,8 @@ We also introduced some API changes for the select. This is an overview of the c
 To migrate your v3 `Select` component, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
+
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
 
 If you want to do it manually, you must transform your code as follows:
 
@@ -1546,6 +1644,8 @@ becomes:
 To migrate the `TextInput` or `TextArea` components to v4 run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
+
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
 
 When running the codemod, the following changes occur:
 
@@ -1712,6 +1812,8 @@ To migrate your `Form` component to v4, run the following [codemod](https://gith
 
 `npx @contentful/f36-codemod`
 
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+
 When running the codemod, the following changes occur:
 
 ```tsx static=true
@@ -1790,6 +1892,8 @@ To migrate your Grid component to v4, run the following [codemod](https://github
 
 `npx @contentful/f36-codemod`
 
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+
 If you want to do it manually, you must transform your existing code as follows:
 
 ```tsx static=true
@@ -1847,6 +1951,8 @@ In version 4:
 To migrate your `Modal` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
+
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
 
 If you want to do it manually, you must transform your existing code as follows:
 
@@ -1906,6 +2012,8 @@ The properties of the Note component API have been aligned with our code [style 
 To migrate your `Note` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
+
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
 
 If you want to do it manually, you must transform your existing code as follows:
 
@@ -1968,6 +2076,8 @@ The properties of the Notification component API have been aligned with our code
 To migrate your 'Notification' component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
+
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
 
 If you want to do it manually, you must transform your existing code as follows:
 
@@ -2067,6 +2177,8 @@ To migrate your `Skeleton` component to v4, run the following [codemod](https://
 
 `npx @contentful/f36-codemod`
 
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+
 If you want to do it manually, you just need to update imports and rename prop `animate` to `isAnimated`:
 
 ```tsx
@@ -2140,6 +2252,8 @@ To migrate your `Spinner` component to v4, run the following [codemod](https://g
 
 `npx @contentful/f36-codemod`
 
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+
 If you want to do it manually, you must transform your existing code from this:
 
 ```tsx
@@ -2177,6 +2291,8 @@ In version 4, we Table component becomes a compound component. There is also one
 To migrate your `Table` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
+
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
 
 If you want to do it manually, you must transform your existing code as follows:
 
@@ -2375,6 +2491,8 @@ To migrate your v3 `Tag` component to v4 `Badge` run the following [codemod](htt
 
 `npx @contentful/f36-codemod`
 
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+
 When running the codemod the following changes occur:
 
 ```tsx static=true
@@ -2464,6 +2582,8 @@ In version 4, we renamed two Tooltip props: `containerElement` is now `as` and `
 To migrate your `Tooltip` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
+
+NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
 
 If you want to do it manually, you must transform your existing code as follows:
 
