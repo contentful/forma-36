@@ -6,4 +6,3 @@ export { WorkbenchSidebar } from './WorkbenchSidebar';
 export type { WorkbenchSidebarProps } from './WorkbenchSidebar';
 export { WorkbenchContent } from './WorkbenchContent';
 export type { WorkbenchContentProps } from './WorkbenchContent';
-
