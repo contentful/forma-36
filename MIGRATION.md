@@ -5,6 +5,8 @@
 - [Table of contents](#table-of-contents)
 - [How to migrate your packages to v4](#how-to-migrate-your-packages-to-v4)
 - [Changes per Component in v4](#changes-per-component-in-v4)
+  - [Asset](#asset)
+    - [How to migrate your Asset components](#how-to-migrate-your-asset-components)
   - [Button](#button)
     - [How to migrate your Button components](#how-to-migrate-your-button-components)
   - [Card](#card)
@@ -49,6 +51,8 @@
     - [How to migrate your Note components](#how-to-migrate-your-note-components)
   - [Notification](#notification)
     - [How to migrate your Notification components](#how-to-migrate-your-notification-components)
+  - [Pill](#pill)
+    - [How to migrate your Pill components](#how-to-migrate-your-pill-components)
   - [RelativeDateTime](#relativedatetime)
     - [How to migrate your RelativeDateTime components](#how-to-migrate-your-relativedatetime-components)
   - [Skeleton](#skeleton)
@@ -104,6 +108,24 @@ yarn add @contentul/f36-button@beta
 ```
 
 ## Changes per component in v4
+
+### Asset
+
+The API of the Asset component has not changed.
+
+#### How to migrate your Asset components
+
+To migrate the Asset component to v4, you must update the import. It changes from this:
+
+```tsx
+import { Asset } from '@contentful/forma-36-react-components';
+```
+
+to this:
+
+```tsx
+import { Asset } from '@contentful/f36-components';
+```
 
 ### Button
 
@@ -1989,6 +2011,28 @@ Notification.success(notificationText, {
 });
 
 Notification.setPlacement(placement, { offset: 0 });
+```
+
+### Pill
+
+The API of the Pill component has not changed.
+
+#### How to migrate your Pill components
+
+To migrate your `Pill` components to v4 run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to manually migrate your Pill component to v4, you must update the import. It changes from this:
+
+```tsx
+import { Pill } from '@contentful/forma-36-react-components';
+```
+
+to this:
+
+```tsx
+import { Pill } from '@contentful/f36-components';
 ```
 
 ### RelativeDateTime
