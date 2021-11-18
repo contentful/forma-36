@@ -9,6 +9,7 @@
     - [Install packages separately](#install-packages-separately)
   - [Step 2 - migrate your components](#step-2-migrate-your-components)
   - [Step 3 - remove version 3 packages and CSS imports](#step-3-remove-version-3-packages-and-CSS-imports)
+  - [Step 4 - use GlobalStyles component](#step-3-use-globalStyles-component)
 - [Changes per Component in v4](#changes-per-component-in-v4)
   - [Button](#button)
     - [How to migrate your Button components](#how-to-migrate-your-button-components)
