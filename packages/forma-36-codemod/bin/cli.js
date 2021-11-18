@@ -28,10 +28,10 @@ function checkGitStatus(force) {
     }
   }
 
-  if (!clean) {
+  if (!clean && !force) {
     console.log(
       chalk.yellow(
-        'Before we continue, please stash or commit your git changes.',
+        'Before we continue, please stash or commit your git changes or use the --force flag to override this check',
       ),
     );
     process.exit(1);
@@ -136,12 +136,21 @@ function run() {
   inquirer
     .prompt([
       {
-        type: 'input',
-        name: 'files',
-        message: 'On which files or directory should the codemods be applied?',
-        when: !cli.input[1],
-        default: '.',
-        filter: (files) => files.trim(),
+        type: 'list',
+        name: 'v4setup',
+        message: 'Which codemod you would like to use?',
+        when: !cli.input[0],
+        pageSize: inquirerChoices.TRANSFORMS_CHOICES.length,
+        choices: inquirerChoices.SETUP_CHOICES,
+      },
+      {
+        type: 'list',
+        name: 'transformer',
+        message: 'Which component would you like to migrate to v4?',
+        when: (answers) =>
+          !cli.input[0] && answers.v4setup !== 'migrate-all-components-to-v4',
+        pageSize: inquirerChoices.TRANSFORMS_CHOICES.length,
+        choices: inquirerChoices.TRANSFORMS_CHOICES,
       },
       {
         type: 'list',
@@ -153,21 +162,19 @@ function run() {
         choices: inquirerChoices.PARSER_CHOICES,
       },
       {
-        type: 'list',
-        name: 'transformer',
-        message: 'Which transform would you like to apply?',
-        when: !cli.input[0],
-        pageSize: inquirerChoices.TRANSFORMS_CHOICES.length,
-        choices: inquirerChoices.TRANSFORMS_CHOICES,
+        type: 'input',
+        name: 'files',
+        message: 'On which files or directory should the codemods be applied?',
+        when: !cli.input[1],
+        default: '.',
+        filter: (files) => files.trim(),
       },
     ])
     .then((answers) => {
-      const { files, transformer, parser } = answers;
+      const { files, transformer, parser, v4setup } = answers;
 
       const filesBeforeExpansion = cli.input[1] || files;
       const filesExpanded = expandFilePathsIfNeeded([filesBeforeExpansion]);
-
-      const selectedTransformer = cli.input[0] || transformer;
       const selectedParser = cli.flags.parser || parser;
 
       if (!filesExpanded.length) {
@@ -177,11 +184,22 @@ function run() {
         return null;
       }
 
+      if (v4setup !== 'migrate-all-components-to-v4') {
+        const selectedTransformer = cli.input[0] || transformer;
+
+        return runTransform({
+          files: filesExpanded,
+          flags: cli.flags,
+          parser: selectedParser,
+          transformer: selectedTransformer,
+        });
+      }
+
       return runTransform({
         files: filesExpanded,
         flags: cli.flags,
         parser: selectedParser,
-        transformer: selectedTransformer,
+        transformer: 'v4-all',
       });
     });
 }
