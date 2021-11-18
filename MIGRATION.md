@@ -164,6 +164,26 @@ import '@contentful/forma-36-fcss/dist/styles.css';
 import '@contentful/forma-36-tokens/dist/css/index.css';
 ```
 
+### Step 4 - use GlobalStyles component
+
+Control default browser styles with the `GlobalStyles` component. The GlobalStyles component uses the Global component from [Emotion](https://emotion.sh/docs/globals) under the hood. Import GlobalStyles somewhere at the beginning of your project like in the example below:
+
+```jsx static=true
+import ReactDOM from 'react-dom';
+import { GlobalStyles } from '@contentful/f36-components';
+
+import App from './App';
+
+const rootElement = document.getElementById('root');
+ReactDOM.render(
+  <>
+    <GlobalStyles />
+    <App />
+  </>,
+  rootElement,
+);
+```
+
 ## Changes per component in v4
 
 ### Button
