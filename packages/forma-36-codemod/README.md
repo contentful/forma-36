@@ -104,3 +104,7 @@ Migrate AssetCard components from v3 to v4
 #### `v4-entry-card`
 
 Migrate EntryCard components from v3 to v4
+
+#### `v4-inline-entry-card`
+
+Converts InlineEntryCard from Forma v3 to v4
