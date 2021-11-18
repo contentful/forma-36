@@ -115,7 +115,7 @@ The API of the Asset component has not changed.
 
 #### How to migrate your Asset components
 
-To migrate Asset component to v4, you must update the import. It changes from this:
+To migrate the Asset component to v4, you must update the import. It changes from this:
 
 ```tsx
 import { Asset } from '@contentful/forma-36-react-components';
@@ -2019,7 +2019,7 @@ The API of the Pill component has not changed.
 
 ### How to migrate your Pill components
 
-To migrate your v3 `Pill` components to v4 run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+To migrate your `Pill` components to v4 run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
 
