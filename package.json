@@ -79,7 +79,7 @@
     "@storybook/addon-storysource": "^6.3.7",
     "@storybook/react": "^6.3.7",
     "@storybook/theming": "^6.3.7",
-    "@testing-library/jest-dom": "5.11.6",
+    "@testing-library/jest-dom": "5.15.0",
     "@testing-library/react": "12.1.2",
     "@testing-library/user-event": "12.2.2",
     "@types/jest": "^24.0.25",
