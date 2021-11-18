@@ -31,7 +31,7 @@ function checkGitStatus(force) {
   if (!clean && !force) {
     console.log(
       chalk.yellow(
-        'Before we continue, please stash or commit your git changes or use the --force flag to override this check',
+        'Before we continue, please stash or commit your changes.\nIf you want to override this check, use the --force flag',
       ),
     );
     process.exit(1);
