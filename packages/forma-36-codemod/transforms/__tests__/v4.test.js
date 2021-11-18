@@ -5,7 +5,7 @@ const defineInlineTest = require('jscodeshift/dist/testUtils').defineInlineTest;
 
 describe('v4 codemods', () => {
   const tests = [
-    'v4-v4-inline-entry-card',
+    'v4-inline-entry-card',
     'v4-badge',
     'v4-button',
     'v4-card',
