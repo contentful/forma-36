@@ -1,7 +1,7 @@
 {
   "name": "@contentful/forma-36-react-datepicker",
   "description": "Forma 36: Test Component",
-  "version": "0.4.0-alpha.95",
+  "version": "0.4.0-alpha.96",
   "license": "MIT",
   "files": [
     "dist",
