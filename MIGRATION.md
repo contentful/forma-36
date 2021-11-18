@@ -2013,11 +2013,11 @@ Notification.success(notificationText, {
 Notification.setPlacement(placement, { offset: 0 });
 ```
 
-## Pill
+### Pill
 
 The API of the Pill component has not changed.
 
-### How to migrate your Pill components
+#### How to migrate your Pill components
 
 To migrate your `Pill` components to v4 run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
