@@ -55,11 +55,11 @@ function getSlugByFilepath(filepath: string) {
   };
 }
 
-async function fetchFiles(targetPath: any) {
+async function fetchFiles(targetPath: string) {
   const files = await fs.promises.readdir(targetPath);
-  const fetchedFiles = [];
+  const fetchedFiles: string[] = [];
 
-  for (let file of files) {
+  for (const file of files) {
     // ignore these directories
     if (['dist', 'node_modules'].includes(file)) {
       continue;

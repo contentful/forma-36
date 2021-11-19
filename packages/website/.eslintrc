@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "../../.eslintrc",
+    "plugin:@next/next/recommended"
+  ],
+  "overrides": [
+    {
+      // In Next.js, pages need to be default exported
+      "files": [
+        "pages/**/*"
+      ],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    }
+  ]
+}
