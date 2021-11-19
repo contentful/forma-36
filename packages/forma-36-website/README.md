@@ -112,7 +112,7 @@ Component documentation makes use of front matter to generate links to the compo
 title: 'Button'
 type: 'component'
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/button'
-storybook: 'https://f36-storybook.contentful.com/?path=/info/components-button'
+storybook: 'https://v4-f36-storybook.netlify.app/?path=/info/components-button'
 ---
 ```
 
