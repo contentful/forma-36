@@ -9,7 +9,7 @@
       "esnext"
     ],
     // allows react jsx in tsx files
-    "jsx": "react",
+    "jsx": "react-jsx",
     // Eventually turn off, one we have no more assumed default exports.
     // Allow default imports from modules with no default export.
     "allowSyntheticDefaultImports": true,
@@ -30,7 +30,7 @@
         "./scripts/*"
       ]
     },
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "typeRoots": [
       "node_modules/@types",
       "./types"
@@ -43,6 +43,5 @@
   "exclude": [
     "**/node_modules",
     "**/dist",
-    "./packages/website"
   ]
 }

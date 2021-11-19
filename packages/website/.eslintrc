@@ -3,6 +3,9 @@
     "../../.eslintrc",
     "plugin:@next/next/recommended"
   ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "overrides": [
     {
       // In Next.js, pages need to be default exported
