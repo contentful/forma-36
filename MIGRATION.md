@@ -452,7 +452,7 @@ This is an overview of the changed props:
 - `isDragActive` was renamed to `isDragging`
 - `statusIcon` was renamed to `icon`, and now expects an Icon component
 - `cardDragHandleProps` was renamed to `dragHandleProps`
-- `dropdownListElements` was updated to use the new `Menu` component and should receive an array of `Menu.Items`. For more information, see the Menu [documentation](https://v4-forma-36.netlify.app/components/menu/).
+- `dropdownListElements` was updated to use the new `Menu` component and should receive an array of `Menu.Items`. For more information, see the Menu [documentation](https://v4.f36.contentful.com/components/menu/).
 
 #### How to migrate your Card component
 
@@ -570,7 +570,7 @@ becomes:
 />
 ```
 
-For more information on what can be passed on the `tooltipProps` prop, see the Tooltip [documentation](https://v4-forma-36.netlify.app/components/tooltip/). It accepts all props except `children` and `content`.  
+For more information on what can be passed on the `tooltipProps` prop, see the Tooltip [documentation](https://v4.f36.contentful.com/components/tooltip/). It accepts all props except `children` and `content`.  
 We also added the possibility to pass `isDisabled` and `size` props to the CopyButton component.
 
 #### How to migrate your CopyButton components
@@ -1294,7 +1294,7 @@ will become:
 </FormControl>
 ```
 
-For more detailed information and examples, check our [documentation](https://v4-forma-36.netlify.app/components/form-control/).
+For more detailed information and examples, check our [documentation](https://v4.f36.contentful.com/components/form-control/).
 
 ##### How to migrate your Field components
 
@@ -1782,7 +1782,7 @@ for keeping the same spacing as before it should become:
 
 ##### How to migrate your FieldGroup components
 
-The migration should be done manually, using the Layout component that best fits the user needs, the layout components are [Box](https://v4-forma-36.netlify.app/components/box/), [Flex](https://v4-forma-36.netlify.app/components/flex/), [Stack](https://v4-forma-36.netlify.app/components/stack/), and [Grid](https://v4-forma-36.netlify.app/components/grid/).
+The migration should be done manually, using the Layout component that best fits the user needs, the layout components are [Box](https://v4.f36.contentful.com/components/box/), [Flex](https://v4.f36.contentful.com/components/flex/), [Stack](https://v4.f36.contentful.com/components/stack/), and [Grid](https://v4.f36.contentful.com/components/grid/).
 
 #### Form
 
