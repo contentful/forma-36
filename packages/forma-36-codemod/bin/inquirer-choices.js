@@ -9,6 +9,18 @@ const PARSER_CHOICES = [
   },
 ];
 
+const SETUP_CHOICES = [
+  {
+    name: 'migrate-all-components-to-v4: Run all exising codemods',
+    value: 'migrate-all-components-to-v4',
+  },
+  {
+    name:
+      'migrate-specific-component-to-v4: Select which v4 codemod you want to apply',
+    value: 'migrate-specific-component-to-v4',
+  },
+];
+
 const TRANSFORMS_CHOICES = [
   {
     name:
@@ -139,4 +151,5 @@ const TRANSFORMS_CHOICES = [
 module.exports = {
   PARSER_CHOICES,
   TRANSFORMS_CHOICES,
+  SETUP_CHOICES,
 };
