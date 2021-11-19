@@ -87,14 +87,14 @@ Install a package that contains all of the components from Forma 36 version 4. T
 For NPM
 
 ```bash
-npm install @contentul/f36-components
+npm install @contentful/f36-components
 npm install @contentful/f36-tokens
 ```
 
 For YARN
 
 ```bash
-yarn add @contentul/f36-components
+yarn add @contentful/f36-components
 yarn add @contentful/f36-tokens
 ```
 
@@ -103,13 +103,13 @@ yarn add @contentful/f36-tokens
 Starting from version 4, icons are not included in the main components package. If you need to use our icons or you use them already in version 3, install them separately, by running the following commands:
 
 ```bash
-npm install @contentul/f36-icons
+npm install @contentful/f36-icons
 ```
 
 For YARN
 
 ```bash
-yarn add @contentul/f36-icons
+yarn add @contentful/f36-icons
 ```
 
 #### Install packages separately
@@ -120,13 +120,13 @@ For example, if you need only the `Button` component in your project, you can ad
 For NPM
 
 ```bash
-npm install @contentul/f36-button
+npm install @contentful/f36-button
 ```
 
 For YARN
 
 ```bash
-yarn add @contentul/f36-button
+yarn add @contentful/f36-button
 ```
 
 Note: We don't recommend using it this way, it is much easier to [install full package of components](#Step-1-install-new-packages). Tree-shaking will take care of your build
@@ -148,7 +148,7 @@ Now that you have your fresh version of Forma 36 installed, you don't need the o
 For NPM
 
 ```bash
-npm uninstall @contentul/f36-components
+npm uninstall @contentful/f36-components
 npm uninstall @contentful/f36-tokens
 npm uninstall @contentful/f36-fcss
 ```
@@ -156,7 +156,7 @@ npm uninstall @contentful/f36-fcss
 For YARN
 
 ```bash
-yarn remove @contentul/f36-components
+yarn remove @contentful/f36-components
 yarn remove @contentful/f36-tokens
 yarn remove @contentful/f36-fcss
 ```
