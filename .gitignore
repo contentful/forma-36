@@ -22,6 +22,7 @@
 **/yarn-error.log*
 **/package-lock.json
 **/lerna-debug.log
+**/tsconfig.tsbuildinfo
 
 **/.cache
 **/.rts2_cache_cjs

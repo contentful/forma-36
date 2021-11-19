@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "target": "es5",
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -13,4 +14,7 @@
     "**/*.ts",
     "**/*.tsx"
   ],
+  "exclude": [
+    ".next"
+  ]
 }
