@@ -6,6 +6,7 @@ const inquirer = require('inquirer');
 const meow = require('meow');
 const globby = require('globby');
 const inquirerChoices = require('./inquirer-choices');
+const updateDependencies = require('./updateDependencies');
 
 const transformerDirectory = path.join(__dirname, '../', 'transforms');
 const jscodeshiftExecutable = require.resolve('.bin/jscodeshift');
@@ -170,12 +171,14 @@ function run() {
         filter: (files) => files.trim(),
       },
     ])
-    .then((answers) => {
+    .then(async (answers) => {
       const { files, transformer, parser, v4setup } = answers;
 
       const filesBeforeExpansion = cli.input[1] || files;
       const filesExpanded = expandFilePathsIfNeeded([filesBeforeExpansion]);
       const selectedParser = cli.flags.parser || parser;
+
+      await updateDependencies(filesBeforeExpansion);
 
       if (!filesExpanded.length) {
         console.log(
