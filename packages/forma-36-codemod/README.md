@@ -112,4 +112,3 @@ Migrates HelpText components outside form from v3 to v4
 #### `v4-inline-entry-card`
 
 Converts InlineEntryCard from Forma v3 to v4
-
