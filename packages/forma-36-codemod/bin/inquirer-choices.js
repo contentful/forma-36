@@ -9,6 +9,18 @@ const PARSER_CHOICES = [
   },
 ];
 
+const SETUP_CHOICES = [
+  {
+    name: 'migrate-all-components-to-v4: Run all exising codemods',
+    value: 'migrate-all-components-to-v4',
+  },
+  {
+    name:
+      'migrate-specific-component-to-v4: Select which v4 codemod you want to apply',
+    value: 'migrate-specific-component-to-v4',
+  },
+];
+
 const TRANSFORMS_CHOICES = [
   {
     name:
@@ -134,10 +146,15 @@ const TRANSFORMS_CHOICES = [
       'v4-helptext: Migrates HelpText components outside form from v3 to v4',
     value: 'v4-helptext',
   },
+  {
+    name: 'v4-inline-entry-card: Converts InlineEntryCard from Forma v3 to v4',
+    value: 'v4-inline-entry-card',
+  },
   // Add extra codemods - do not remove
 ];
 
 module.exports = {
   PARSER_CHOICES,
   TRANSFORMS_CHOICES,
+  SETUP_CHOICES,
 };
