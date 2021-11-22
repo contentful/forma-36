@@ -34,3 +34,4 @@ export function WorkbenchSidebar({
     </aside>
   );
 }
+WorkbenchSidebar.displayName = 'WorkbenchSidebar';
