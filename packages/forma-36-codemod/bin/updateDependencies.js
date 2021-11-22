@@ -108,7 +108,6 @@ async function updateDependencies(targetDir) {
   // Select package manager based on lock file, fallback to npm if no lock file is found
   const pkgManager =
     (fs.existsSync(path.resolve(pkgDirname, 'yarn.lock')) && 'yarn') ||
-    (fs.existsSync(path.resolve(pkgDirname, 'package-lock.json')) && 'npm') ||
     'npm';
 
   // Check if there are packages to be removed or installed
