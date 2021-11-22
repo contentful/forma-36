@@ -9,7 +9,7 @@ Run this command to start an interactive wizard and then run the specified trans
 
 `npx @contentful/f36-codemod <transform> <path> [...options]`
 
-- `transform` - name of transform, see available transforms below.
+- `transform` - name of transform, see available transforms below, separate multiple transforms with a `,`.
 - `path` - files or directory to transform
 - use the `--dry` option for a dry-run and use `--print` to print the output for comparison
 

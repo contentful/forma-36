@@ -125,7 +125,12 @@ function run() {
 
   if (
     cli.input[0] &&
-    !inquirerChoices.TRANSFORMS_CHOICES.find((x) => x.value === cli.input[0])
+    !inquirerChoices.TRANSFORMS_CHOICES.find((x) => x.value === cli.input[0]) &&
+    !cli.input[0]
+      ?.split(',')
+      .every((t) =>
+        inquirerChoices.TRANSFORMS_CHOICES.find((x) => x.value === t),
+      )
   ) {
     console.error('Invalid transform choice, pick one of:');
     console.error(
@@ -145,7 +150,7 @@ function run() {
         choices: inquirerChoices.SETUP_CHOICES,
       },
       {
-        type: 'list',
+        type: 'checkbox',
         name: 'transformer',
         message: 'Which component would you like to migrate to v4?',
         when: (answers) =>
@@ -191,13 +196,15 @@ function run() {
         return null;
       }
 
-      const selectedTransformer = cli.input[0] || transformer;
+      const selectedTransformer = cli.input[0]?.split(',') || transformer;
       if (selectedTransformer) {
-        return runTransform({
-          files: filesExpanded,
-          flags: cli.flags,
-          parser: selectedParser,
-          transformer: selectedTransformer,
+        return selectedTransformer.forEach((t) => {
+          runTransform({
+            files: filesExpanded,
+            flags: cli.flags,
+            parser: selectedParser,
+            transformer: t,
+          });
         });
       }
 

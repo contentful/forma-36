@@ -1,3 +1,5 @@
+const inquirer = require('inquirer');
+
 const PARSER_CHOICES = [
   {
     name: 'JavaScript',
@@ -38,6 +40,7 @@ const TRANSFORMS_CHOICES = [
       'color-tokens-to-new-tokens: Converts deprecated color tokens to the new ones',
     value: 'color-tokens-to-new-tokens',
   },
+  new inquirer.Separator(),
   {
     name: 'v4-text-link: Converts TextLink component from Forma v3 to v4',
     value: 'v4-text-link',
