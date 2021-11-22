@@ -8114,6 +8114,11 @@ ansi-escapes@^4.2.1, ansi-escapes@^4.3.1:
   dependencies:
     type-fest "^0.11.0"
 
+ansi-html-community@0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/ansi-html-community/-/ansi-html-community-0.0.8.tgz#69fbc4d6ccbe383f9736934ae34c3f8290f1bf41"
+  integrity sha512-1APHAyr3+PCamwNw3bXCPp4HFLONZt/yIH0sZp0/469KWNTEy+qN5jQ3GVX6DMZ1UXAi34yVwtTeaG/HpBuuzw==
+
 ansi-html@0.0.7, ansi-html@^0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/ansi-html/-/ansi-html-0.0.7.tgz#813584021962a9e9e6fd039f940d12f56ca7859e"
@@ -14453,6 +14458,11 @@ fill-range@^7.0.1:
   dependencies:
     to-regex-range "^5.0.1"
 
+filter-obj@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/filter-obj/-/filter-obj-1.1.0.tgz#9b311112bc6c6127a16e016c6c5d7f19e0805c5b"
+  integrity sha1-mzERErxsYSehbgFsbF1/GeCAXFs=
+
 finalhandler@1.1.2, finalhandler@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/finalhandler/-/finalhandler-1.1.2.tgz#b7e7d000ffd11938d0fdb053506f6ebabe9f587d"
@@ -14983,7 +14993,7 @@ gatsby-cli@^2.19.3:
     yoga-layout-prebuilt "^1.9.6"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^1.0.28, gatsby-core-utils@^1.10.1, gatsby-core-utils@^1.8.0:
+gatsby-core-utils@^1.10.1, gatsby-core-utils@^1.8.0:
   version "1.10.1"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.10.1.tgz#97bed40df3fa79800e7ce0c0491680f0aadd6ce7"
   integrity sha512-4P3feGCJckg+DRWWl2beFk7N9c63zmCryEGPaU1OHCp+ZT2bO0ihCBuXywDWuuEp6SYP9PZ1fs0YJ/Rt6q6lag==
@@ -15272,20 +15282,20 @@ gatsby-recipes@^0.9.3:
     xstate "^4.9.1"
     yoga-layout-prebuilt "^1.9.6"
 
-gatsby-remark-images@3.1.44:
-  version "3.1.44"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.1.44.tgz#0e56e1576b7bd8415b4e969b81712eb0f3614d9e"
-  integrity sha512-zEUN8mMUJgL1Zsv8AnEdLoPIWO3sL8dp3OuMRBbg42qpOLh0t0NENFXhZ8VJxGwiUPE9Q025ws8GuRDPKeXgCA==
+gatsby-remark-images@3.11.1:
+  version "3.11.1"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.11.1.tgz#41bff97bb412582ce01479d807d79f90a06ff382"
+  integrity sha512-fOcJXoD7X828iDLo7djOqvHeD+RJgN9FPNbayRPpHGlHJBqB5dwpmnYUy0c/dqjMEeciCgBU7xbzGm8P53Nv9g==
   dependencies:
-    "@babel/runtime" "^7.7.6"
-    chalk "^2.4.2"
+    "@babel/runtime" "^7.12.5"
+    chalk "^4.1.0"
     cheerio "^1.0.0-rc.3"
-    gatsby-core-utils "^1.0.28"
+    gatsby-core-utils "^1.10.1"
     is-relative-url "^3.0.0"
-    lodash "^4.17.15"
+    lodash "^4.17.20"
     mdast-util-definitions "^1.2.5"
-    potrace "^2.1.2"
-    query-string "^6.9.0"
+    potrace "^2.1.8"
+    query-string "^6.13.3"
     unist-util-select "^1.5.0"
     unist-util-visit-parents "^2.1.2"
 
@@ -20452,9 +20462,9 @@ logalot@^2.0.0, logalot@^2.1.0:
     squeak "^1.0.0"
 
 loglevel@^1.6.8:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.7.1.tgz#005fde2f5e6e47068f935ff28573e125ef72f197"
-  integrity sha512-Hesni4s5UkWkwCGJMQGAh71PaLUmKFM60dHvq0zi/vDhhrzuk+4GgNbTXJ12YYQJn6ZKBDNIjYcuQGKudvqrIw==
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.8.0.tgz#e7ec73a57e1e7b419cb6c6ac06bf050b67356114"
+  integrity sha512-G6A/nJLRgWOuuwdNuA6koovfEV1YpqqAG4pRUlFaz3jj2QNZ8M4vBqnVA+HBTmU/AMNUtlOsMmSpF6NyOjztbA==
 
 loglevelnext@^1.0.1:
   version "1.0.5"
@@ -24699,7 +24709,7 @@ posthtml@^0.15.1:
     posthtml-parser "^0.7.2"
     posthtml-render "^1.3.1"
 
-potrace@^2.1.2, potrace@^2.1.8:
+potrace@^2.1.8:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/potrace/-/potrace-2.1.8.tgz#50f6fba92e1e39ddef6f979b0a0f841809e0acf2"
   integrity sha512-V9hI7UMJyEhNZjM8CbZaP/804ZRLgzWkCS9OOYnEZkszzj3zKR/erRdj0uFMcN3pp6x4B+AIZebmkQgGRinG/g==
@@ -25173,12 +25183,13 @@ query-string@^5.0.1:
     object-assign "^4.1.0"
     strict-uri-encode "^1.0.0"
 
-query-string@^6.13.1, query-string@^6.8.2, query-string@^6.9.0:
-  version "6.13.8"
-  resolved "https://registry.yarnpkg.com/query-string/-/query-string-6.13.8.tgz#8cf231759c85484da3cf05a851810d8e825c1159"
-  integrity sha512-jxJzQI2edQPE/NPUOusNjO/ZOGqr1o2OBa/3M00fU76FsLXDVbJDv/p7ng5OdQyorKrkRz1oqfwmbe5MAMePQg==
+query-string@^6.13.1, query-string@^6.13.3, query-string@^6.8.2:
+  version "6.14.1"
+  resolved "https://registry.yarnpkg.com/query-string/-/query-string-6.14.1.tgz#7ac2dca46da7f309449ba0f86b1fd28255b0c86a"
+  integrity sha512-XDxAeVmpfu1/6IjyT/gXHOl+S0vQ9owggJ30hhWKdHAsNPOcasn5o9BW0eejZqL2e4vMjhAxoW3jVHcD6mbcYw==
   dependencies:
     decode-uri-component "^0.2.0"
+    filter-obj "^1.1.0"
     split-on-first "^1.0.0"
     strict-uri-encode "^2.0.0"
 
@@ -30272,12 +30283,51 @@ webpack-dev-middleware@^3.7.0, webpack-dev-middleware@^3.7.2, webpack-dev-middle
     range-parser "^1.2.1"
     webpack-log "^2.0.0"
 
-webpack-dev-server@3.11.2, webpack-dev-server@^3.11.2:
+webpack-dev-server@3.11.2:
   version "3.11.2"
   resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.11.2.tgz#695ebced76a4929f0d5de7fd73fafe185fe33708"
   integrity sha512-A80BkuHRQfCiNtGBS1EMf2ChTUs0x+B3wGDFmOeT4rmJOHhHTCH2naNxIHhmkr0/UillP4U3yeIyv1pNp+QDLQ==
   dependencies:
     ansi-html "0.0.7"
+    bonjour "^3.5.0"
+    chokidar "^2.1.8"
+    compression "^1.7.4"
+    connect-history-api-fallback "^1.6.0"
+    debug "^4.1.1"
+    del "^4.1.1"
+    express "^4.17.1"
+    html-entities "^1.3.1"
+    http-proxy-middleware "0.19.1"
+    import-local "^2.0.0"
+    internal-ip "^4.3.0"
+    ip "^1.1.5"
+    is-absolute-url "^3.0.3"
+    killable "^1.0.1"
+    loglevel "^1.6.8"
+    opn "^5.5.0"
+    p-retry "^3.0.1"
+    portfinder "^1.0.26"
+    schema-utils "^1.0.0"
+    selfsigned "^1.10.8"
+    semver "^6.3.0"
+    serve-index "^1.9.1"
+    sockjs "^0.3.21"
+    sockjs-client "^1.5.0"
+    spdy "^4.0.2"
+    strip-ansi "^3.0.1"
+    supports-color "^6.1.0"
+    url "^0.11.0"
+    webpack-dev-middleware "^3.7.2"
+    webpack-log "^2.0.0"
+    ws "^6.2.1"
+    yargs "^13.3.2"
+
+webpack-dev-server@^3.11.2:
+  version "3.11.3"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.11.3.tgz#8c86b9d2812bf135d3c9bce6f07b718e30f7c3d3"
+  integrity sha512-3x31rjbEQWKMNzacUZRE6wXvUFuGpH7vr0lIEbYpMAG9BOxi0928QU1BBswOAP3kg3H1O4hiS+sq4YyAn6ANnA==
+  dependencies:
+    ansi-html-community "0.0.8"
     bonjour "^3.5.0"
     chokidar "^2.1.8"
     compression "^1.7.4"
