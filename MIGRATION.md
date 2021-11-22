@@ -11,6 +11,9 @@
   - [Step 3 - remove version 3 packages and CSS imports](#step-3-remove-version-3-packages-and-CSS-imports)
   - [Step 4 - use GlobalStyles component](#step-3-use-globalStyles-component)
 - [Changes per Component in v4](#changes-per-component-in-v4)
+  - [Accordion](#accordion)
+    - [How to migrate your Accordion components](#how-to-migrate-your-accordion-components)
+    - [How to migrate your Accordion components with compound pattern](#how-to-migrate-your-accordion-components-with-compound-pattern)
   - [Asset](#asset)
     - [How to migrate your Asset components](#how-to-migrate-your-asset-components)
   - [Button](#button)
@@ -23,8 +26,8 @@
     - [How to migrate your DateTime components](#how-to-migrate-your-datetime-components)
   - [Dropdown](#dropdown)
     - [How to migrate your Dropdown components](#how-to-migrate-your-dropdown-components)
-      - [`Dropdown` to `Menu`](#dropdown-to-menu)
-      - [`Dropdown` to `Popover`](#dropdown-to-popover)
+    - [`Dropdown` to `Menu`](#dropdown-to-menu)
+    - [`Dropdown` to `Popover`](#dropdown-to-popover)
   - [Icon](#icon)
     - [How to migrate your Icon components](#how-to-migrate-your-icon-components)
   - [IconButton](#iconbutton)
@@ -35,7 +38,7 @@
     - [Field Components](#field-components)
       - [How to migrate your Field components](#how-to-migrate-your-field-components)
     - [Checkbox](#checkbox)
-      - [How to migrate your checkbox components](#how-to-migrate-your-checkbox-components)
+      - [How to migrate your Checkbox components](#how-to-migrate-your-checkbox-components)
     - [RadioButton](#radiobutton)
       - [How to migrate your RadioButton components](#how-to-migrate-your-radiobutton-components)
     - [Select](#select)
@@ -190,6 +193,60 @@ ReactDOM.render(
 ```
 
 ## Changes per component in v4
+
+### Accordion
+
+The API of the Accordion component has not changed.
+
+#### How to migrate your Accordion components
+
+To migrate the Accordion component to v4, you must update the import. It changes from this:
+
+```tsx
+import {
+  Accordion,
+  AccordionItem,
+} from '@contentful/forma-36-react-components';
+```
+
+to this:
+
+```tsx
+import { Accordion, AccordionItem } from '@contentful/f36-components';
+```
+
+#### How to migrate your Accordion components with compound pattern
+
+To migrate the Accordion component to v4 with compound pattern, do the following changes:
+
+```tsx
+import {
+  Accordion,
+  AccordionItem,
+} from '@contentful/forma-36-react-components';
+
+<Accordion>
+  <AccordionItem title="What payment methods do you accept?">
+    Customers on the Team tier can pay with a credit card (American Express,
+    MasterCard or Visa). Enterprise customers have the choice of paying with a
+    credit card or wire transfer.
+  </AccordionItem>
+</Accordion>;
+```
+
+to this:
+
+```tsx
+import { Accordion } from '@contentful/f36-components';
+
+<Accordion>
+  <Accordion.Item title="What payment methods do you accept?">
+    Customers on the Team tier can pay with a credit card (American Express,
+    MasterCard or Visa). Enterprise customers have the choice of paying with a
+    credit card or wire transfer.
+  </Accordion.Item>
+</Accordion>;
+```
 
 ### Asset
 
@@ -454,7 +511,7 @@ This is an overview of the changed props:
 - `cardDragHandleProps` was renamed to `dragHandleProps`
 - `dropdownListElements` was updated to use the new `Menu` component and should receive an array of `Menu.Items`. For more information, see the Menu [documentation](https://v4.f36.contentful.com/components/menu/).
 
-#### How to migrate your Card component
+#### How to migrate your Card components
 
 To migrate the `Card` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
@@ -1954,7 +2011,9 @@ To migrate your `Modal` component to v4, run the following [codemod](https://git
 
 NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
 
-If you want to do it manually, you must transform your existing code as follows:
+NOTE: If you are using Buttons inside Modal.Controls component, you have to add size="small" to the Buttons and swap buttons' positions manually, so the primary button is the last one.
+
+If you want to migrate your `Modal` manually, you must transform your existing code as follows:
 
 ```tsx
 import {
