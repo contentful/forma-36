@@ -186,7 +186,13 @@ function run() {
       const selectedParser = cli.flags.parser || parser;
 
       if (v4setup === 'update-package-json') {
-        return await updateDependencies(filesBeforeExpansion);
+        await updateDependencies(filesBeforeExpansion);
+        return runTransform({
+          files: filesExpanded,
+          flags: cli.flags,
+          parser: selectedParser,
+          transformer: 'v4-clean-css',
+        });
       }
 
       if (!filesExpanded.length) {

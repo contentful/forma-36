@@ -19,7 +19,7 @@ const SETUP_CHOICES = [
   },
   {
     name:
-      'update-package-json: Updates package.json file with correct packages',
+      'update-package-json: Updates package.json file with correct packages, and remove v3 CSS imports',
     value: 'update-package-json',
   },
   {
