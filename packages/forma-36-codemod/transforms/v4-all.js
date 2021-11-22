@@ -25,25 +25,12 @@ const textInputs = require('./v4-text-inputs');
 const textLink = require('./v4-text-link');
 const tooltip = require('./v4-tooltip');
 const typography = require('./v4-typography');
+const removeCSSImport = require('./v4-clean-css');
 
 const { pipe } = require('./common/pipe');
 
-// This removes the forma 36 v3 css imports
-// function removeCSSImport(file, api) {
-//   const j = api.jscodeshift;
-//   let source = file.source;
-
-//   return j(source)
-//     .find(j.ImportDeclaration)
-//     .forEach((path) => {
-//       if (path.value.source.value.match(/^@contentful\/forma-36.+?\.css$/)) {
-//         j(path).remove();
-//       }
-//     })
-//     .toSource();
-// }
-
 module.exports = pipe([
+  removeCSSImport,
   assetCard,
   badge,
   button,

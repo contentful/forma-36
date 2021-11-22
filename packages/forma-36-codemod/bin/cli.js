@@ -149,7 +149,8 @@ function run() {
         name: 'transformer',
         message: 'Which component would you like to migrate to v4?',
         when: (answers) =>
-          !cli.input[0] && answers.v4setup !== 'migrate-all-components-to-v4',
+          !cli.input[0] &&
+          answers.v4setup === 'migrate-specific-component-to-v4',
         pageSize: inquirerChoices.TRANSFORMS_CHOICES.length,
         choices: inquirerChoices.TRANSFORMS_CHOICES,
       },
@@ -158,7 +159,8 @@ function run() {
         name: 'parser',
         message: 'Which dialect of JavaScript do you use?',
         default: 'babel',
-        when: !cli.flags.parser,
+        when: (answers) =>
+          !cli.flags.parser && answers.v4setup !== 'update-package-json',
         pageSize: inquirerChoices.PARSER_CHOICES.length,
         choices: inquirerChoices.PARSER_CHOICES,
       },
@@ -178,7 +180,9 @@ function run() {
       const filesExpanded = expandFilePathsIfNeeded([filesBeforeExpansion]);
       const selectedParser = cli.flags.parser || parser;
 
-      await updateDependencies(filesBeforeExpansion);
+      if (v4setup === 'update-package-json') {
+        return await updateDependencies(filesBeforeExpansion);
+      }
 
       if (!filesExpanded.length) {
         console.log(
@@ -187,15 +191,18 @@ function run() {
         return null;
       }
 
-      if (v4setup !== 'migrate-all-components-to-v4') {
-        const selectedTransformer = cli.input[0] || transformer;
-
+      const selectedTransformer = cli.input[0] || transformer;
+      if (selectedTransformer) {
         return runTransform({
           files: filesExpanded,
           flags: cli.flags,
           parser: selectedParser,
           transformer: selectedTransformer,
         });
+      }
+
+      if (v4setup === 'update-package-json-all-v4') {
+        await updateDependencies(filesBeforeExpansion);
       }
 
       return runTransform({
