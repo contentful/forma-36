@@ -208,8 +208,14 @@ function run() {
         });
       }
 
-      if (v4setup === 'update-package-json-all-v4') {
+      if (v4setup === 'run-all-v4') {
         await updateDependencies(filesBeforeExpansion);
+        runTransform({
+          files: filesExpanded,
+          flags: cli.flags,
+          parser: selectedParser,
+          transformer: 'v4-clean-css',
+        });
       }
 
       return runTransform({

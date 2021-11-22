@@ -14,17 +14,16 @@ const PARSER_CHOICES = [
 const SETUP_CHOICES = [
   {
     name:
+      'run-all-v4: Update package json with new packages and remove old ones, remove v3 CSS imports and run all possible codemods for components.',
+    value: 'run-all-v4',
+  },
+  {
+    name:
       'update-package-json: Updates package.json file with correct packages',
     value: 'update-package-json',
   },
   {
-    name:
-      'update-package-json-all-v4: Updates package.json file with correct packages and run all existing v4 codemods',
-    value: 'update-package-json-all-v4',
-  },
-  {
-    name:
-      'migrate-all-components-to-v4: Run all exising codemods, and clean css imports',
+    name: 'migrate-all-components-to-v4: Run all exising codemods',
     value: 'migrate-all-components-to-v4',
   },
   {

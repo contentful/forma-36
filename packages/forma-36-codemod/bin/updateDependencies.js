@@ -8,13 +8,19 @@ const packages = require('./packages-list');
 const inquirer = require('inquirer');
 
 const dependencyProperties = [
-  'dependencies',
-  'devDependencies',
   'clientDependencies',
   'isomorphicDependencies',
   'buildDependencies',
+  'devDependencies',
+  'dependencies',
 ];
 
+/**
+ * @param {string} pkgManager - name of package managers. eg. yarn, npm.
+ * @param {'install'|'uninstall'} cmd - what should the command do, install or uninstall package.
+ * @param {string[]} pkgs - list of package names to be installed or removed.
+ * @returns {string} script to be used to install or remove the list of packages.
+ */
 const getCmd = (pkgManager, cmd, pkgs) => {
   const cmds = {
     npm: {
@@ -29,47 +35,68 @@ const getCmd = (pkgManager, cmd, pkgs) => {
   return pkgs.length > 0 ? cmds[pkgManager][cmd] : '';
 };
 
-function getOutput(pkgManager, { newPackages, removePackages }) {
-  if (pkgManager.length === 0) process.exit(0);
+/**
+ * @param {string|string[]} data.pkgManager - name or list of package managers. eg. yarn, npm.
+ * @param {string[]} data.newPackages - List of packages to be installed with the version. eg. '@contentful/f36-components@latest'
+ * @param {string[]} data.removePackages - List of packages to be removed.
+ */
+function getOutput({ newPackages, removePackages, pkgManager = null }) {
   console.log('You can run the following commands to update the packages:\n');
-  pkgManager.forEach((pkgManager) => {
+
+  // Print commands for each package manager, if no specific one set
+  if (pkgManager === null) {
+    ['yarn', 'npm'].forEach((manager) => {
+      const result = [
+        chalk.bold(`For ${manager}:`),
+        `  ${getCmd(manager, 'uninstall', removePackages)}`,
+        `  ${getCmd(manager, 'install', newPackages)}`,
+      ];
+      console.log(result.filter((r) => r.trim()).join('\n'), '\n');
+    });
+  } else {
     const result = [
       chalk.bold(`For ${pkgManager}:`),
       `  ${getCmd(pkgManager, 'uninstall', removePackages)}`,
       `  ${getCmd(pkgManager, 'install', newPackages)}`,
     ];
     console.log(result.filter((r) => r.trim()).join('\n'), '\n');
-  });
+  }
 }
 
 async function updateDependencies(targetDir) {
   const cwd = path.resolve(process.cwd(), targetDir);
   const closestPkgJson = readPkgUp.sync({ cwd });
-  let pkgManager = ['npm', 'yarn'];
   let removePackages = packages.PACKAGES_REMOVE;
   let newPackages = Object.keys(packages.PACKAGES_UPGRADE);
 
+  // If no package.json is found
   if (!closestPkgJson) {
     console.log(
       chalk.yellow(
         "We didn't find your package.json, you may need to remove or install some packages:",
       ),
     );
+
     newPackages = newPackages.map(
       (pkg) => `${pkg}@${packages.PACKAGES_UPGRADE[pkg]}`,
     );
 
-    return getOutput(pkgManager, { newPackages, removePackages });
+    return getOutput({ newPackages, removePackages });
   }
+
   const pkgDirname = path.dirname(closestPkgJson.path);
   const { packageJson } = closestPkgJson;
 
-  // Check if packages need to be upgraded or removed
+  // Merge dependencies property from package.json
   const allDeps = dependencyProperties.reduce(
     (acc, dependency) => Object.assign(acc, packageJson[dependency] || {}),
     {},
   );
+
+  // Filter packages to remove to only have the ones installed
   removePackages = removePackages.filter((pkg) => Boolean(allDeps[pkg]));
+
+  // Check if packages version in package.json satisfies the new version
   newPackages = newPackages
     .filter(
       (pkg) =>
@@ -79,14 +106,14 @@ async function updateDependencies(targetDir) {
     .map((pkg) => `${pkg}@${packages.PACKAGES_UPGRADE[pkg]}`);
 
   // Select package manager based on lock file, fallback to npm if no lock file is found
-  pkgManager = [
+  const pkgManager =
+    (fs.existsSync(path.resolve(pkgDirname, 'yarn.lock')) && 'yarn') ||
     (fs.existsSync(path.resolve(pkgDirname, 'package-lock.json')) && 'npm') ||
-      (fs.existsSync(path.resolve(pkgDirname, 'yarn.lock')) && 'yarn') ||
-      'npm',
-  ];
+    'npm';
 
+  // Check if there are packages to be removed or installed
   if (!removePackages.length && !newPackages.length) {
-    console.log(chalk.green('No package needs to be updated!'));
+    console.log(chalk.green('No package need to be updated!'));
     return;
   }
 
@@ -126,7 +153,7 @@ async function updateDependencies(targetDir) {
         console.log(stdout);
         return;
       }
-      return getOutput(pkgManager, { newPackages, removePackages });
+      return getOutput({ newPackages, removePackages, pkgManager });
     });
 }
 

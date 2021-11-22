@@ -25,12 +25,10 @@ const textInputs = require('./v4-text-inputs');
 const textLink = require('./v4-text-link');
 const tooltip = require('./v4-tooltip');
 const typography = require('./v4-typography');
-const removeCSSImport = require('./v4-clean-css');
 
 const { pipe } = require('./common/pipe');
 
 module.exports = pipe([
-  removeCSSImport,
   assetCard,
   badge,
   button,
