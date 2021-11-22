@@ -20,7 +20,7 @@ function _Workbench(
     children,
     // eslint-disable-next-line
     (child: any) => {
-      if (child.type?.name === 'WorkbenchHeader') {
+      if (child.type?.displayName === 'WorkbenchHeader') {
         header.push(child);
       } else {
         content.push(child);
