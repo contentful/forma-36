@@ -6,6 +6,7 @@ const inquirer = require('inquirer');
 const meow = require('meow');
 const globby = require('globby');
 const inquirerChoices = require('./inquirer-choices');
+const updateDependencies = require('./updateDependencies');
 
 const transformerDirectory = path.join(__dirname, '../', 'transforms');
 const jscodeshiftExecutable = require.resolve('.bin/jscodeshift');
@@ -124,7 +125,12 @@ function run() {
 
   if (
     cli.input[0] &&
-    !inquirerChoices.TRANSFORMS_CHOICES.find((x) => x.value === cli.input[0])
+    !inquirerChoices.TRANSFORMS_CHOICES.find((x) => x.value === cli.input[0]) &&
+    !cli.input[0]
+      ?.split(',')
+      .every((t) =>
+        inquirerChoices.TRANSFORMS_CHOICES.find((x) => x.value === t),
+      )
   ) {
     console.error('Invalid transform choice, pick one of:');
     console.error(
@@ -144,11 +150,12 @@ function run() {
         choices: inquirerChoices.SETUP_CHOICES,
       },
       {
-        type: 'list',
+        type: 'checkbox',
         name: 'transformer',
         message: 'Which component would you like to migrate to v4?',
         when: (answers) =>
-          !cli.input[0] && answers.v4setup !== 'migrate-all-components-to-v4',
+          !cli.input[0] &&
+          answers.v4setup === 'migrate-specific-component-to-v4',
         pageSize: inquirerChoices.TRANSFORMS_CHOICES.length,
         choices: inquirerChoices.TRANSFORMS_CHOICES,
       },
@@ -157,7 +164,8 @@ function run() {
         name: 'parser',
         message: 'Which dialect of JavaScript do you use?',
         default: 'babel',
-        when: !cli.flags.parser,
+        when: (answers) =>
+          !cli.flags.parser && answers.v4setup !== 'update-package-json',
         pageSize: inquirerChoices.PARSER_CHOICES.length,
         choices: inquirerChoices.PARSER_CHOICES,
       },
@@ -170,12 +178,22 @@ function run() {
         filter: (files) => files.trim(),
       },
     ])
-    .then((answers) => {
+    .then(async (answers) => {
       const { files, transformer, parser, v4setup } = answers;
 
       const filesBeforeExpansion = cli.input[1] || files;
       const filesExpanded = expandFilePathsIfNeeded([filesBeforeExpansion]);
       const selectedParser = cli.flags.parser || parser;
+
+      if (v4setup === 'update-package-json') {
+        await updateDependencies(filesBeforeExpansion);
+        return runTransform({
+          files: filesExpanded,
+          flags: cli.flags,
+          parser: selectedParser,
+          transformer: 'v4-clean-css',
+        });
+      }
 
       if (!filesExpanded.length) {
         console.log(
@@ -184,14 +202,25 @@ function run() {
         return null;
       }
 
-      if (v4setup !== 'migrate-all-components-to-v4') {
-        const selectedTransformer = cli.input[0] || transformer;
+      const selectedTransformer = cli.input[0]?.split(',') || transformer;
+      if (selectedTransformer) {
+        return selectedTransformer.forEach((t) => {
+          runTransform({
+            files: filesExpanded,
+            flags: cli.flags,
+            parser: selectedParser,
+            transformer: t,
+          });
+        });
+      }
 
-        return runTransform({
+      if (v4setup === 'run-all-v4') {
+        await updateDependencies(filesBeforeExpansion);
+        runTransform({
           files: filesExpanded,
           flags: cli.flags,
           parser: selectedParser,
-          transformer: selectedTransformer,
+          transformer: 'v4-clean-css',
         });
       }
 

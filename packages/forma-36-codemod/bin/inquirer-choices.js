@@ -1,3 +1,5 @@
+const inquirer = require('inquirer');
+
 const PARSER_CHOICES = [
   {
     name: 'JavaScript',
@@ -10,6 +12,16 @@ const PARSER_CHOICES = [
 ];
 
 const SETUP_CHOICES = [
+  {
+    name:
+      'run-all-v4: Update package json with new packages and remove old ones, remove v3 CSS imports and run all possible codemods for components.',
+    value: 'run-all-v4',
+  },
+  {
+    name:
+      'update-package-json: Updates package.json file with correct packages, and remove v3 CSS imports',
+    value: 'update-package-json',
+  },
   {
     name: 'migrate-all-components-to-v4: Run all exising codemods',
     value: 'migrate-all-components-to-v4',
@@ -27,6 +39,7 @@ const TRANSFORMS_CHOICES = [
       'color-tokens-to-new-tokens: Converts deprecated color tokens to the new ones',
     value: 'color-tokens-to-new-tokens',
   },
+  new inquirer.Separator(),
   {
     name: 'v4-text-link: Converts TextLink component from Forma v3 to v4',
     value: 'v4-text-link',
@@ -149,6 +162,10 @@ const TRANSFORMS_CHOICES = [
   {
     name: 'v4-inline-entry-card: Converts InlineEntryCard from Forma v3 to v4',
     value: 'v4-inline-entry-card',
+  },
+  {
+    name: 'v4-clean-css: Removes the imports for v3 css files',
+    value: 'v4-clean-css',
   },
   // Add extra codemods - do not remove
 ];
