@@ -83,7 +83,7 @@
 
 ## How to migrate your packages to v4
 
-### Step 1 - install new packages
+### Step 1 - Install new packages
 
 Install a package that contains all of the components from Forma 36 version 4. Tree-shaking will take care of your build, so it will include only components that you use.
 
@@ -117,8 +117,8 @@ yarn add @contentful/f36-icons
 
 #### Install packages separately
 
-If for some reason, your project requires installing packages separately it is possible in version 4.
-For example, if you need only the `Button` component in your project, you can add only this package by running the following command:
+You can install packages separately in version 4 if, for some reason, you project requires it.
+For example, if you only need the `Button` component in your project, you can add this package by running the following command:
 
 For NPM
 
@@ -132,21 +132,21 @@ For YARN
 yarn add @contentful/f36-button
 ```
 
-Note: We don't recommend using it this way, it is much easier to [install full package of components](#Step-1-install-new-packages). Tree-shaking will take care of your build
+Note: We don't recommend using it this way, it is much easier to [install the full package of components](#Step-1-install-new-packages). Tree-shaking will take care of your build
 
-### Step 2 - migrate your components
+### Step 2 - Migrate your components
 
 We created codemods for most of the components to make it easier for you to migrate. All you need to do is run this command and follow the prompt:
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
-There are still a couple of components that requires manual migration, have a look on [the detailed documentation how to do it](#changes-per-component-in-v4).
+There are still a couple of components that require manual migration, have a look at [the detailed documentation on how to do it](#changes-per-component-in-v4).
 
-### Step 3 - remove version 3 packages and CSS imports
+### Step 3 - Remove version 3 packages and CSS imports
 
-Now that you have your fresh version of Forma 36 installed, you don't need the old packages anymore. Go ahead and remove them by running the following command:
+Now that you have your fresh version of Forma 36 installed, you don't need the old packages anymore. Remove them by running the following command:
 
 For NPM
 
@@ -172,9 +172,9 @@ import '@contentful/forma-36-fcss/dist/styles.css';
 import '@contentful/forma-36-tokens/dist/css/index.css';
 ```
 
-### Step 4 - use GlobalStyles component
+### Step 4 - Use the GlobalStyles component
 
-Control default browser styles with the `GlobalStyles` component. The GlobalStyles component uses the Global component from [Emotion](https://emotion.sh/docs/globals) under the hood. Import GlobalStyles somewhere at the beginning of your project like in the example below:
+Control default browser styles with the `GlobalStyles` component. The GlobalStyles component uses the Global component from [Emotion](https://emotion.sh/docs/globals) under the hood. Import GlobalStyles somewhere at the root of your project like in the example below:
 
 ```jsx static=true
 import ReactDOM from 'react-dom';
@@ -268,7 +268,7 @@ import { Asset } from '@contentful/f36-components';
 
 ### Button
 
-In v4 the Button component has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
+In v4, the Button component has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
 
 ```tsx static=true
 <Button buttonType="primary" loading>
@@ -292,11 +292,11 @@ becomes:
 
 #### How to migrate your Button components
 
-To migrate the `Button` component to the v4 run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+To migrate the `Button` component to v4 run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 When running the codemod, the following changes occur:
 
@@ -377,7 +377,7 @@ import { Button } from '@contentful/forma-36-react-components';
 </Button>;
 ```
 
-will be transformed into:
+becomes:
 
 ```tsx static=true
 import { Button } from '@contentful/f36-components';
@@ -504,7 +504,7 @@ import { Card, AssetCard, EntryCard Menu } from "@contentful/f36-components";
 
 This is an overview of the changed props:
 
-- `cardDragHandleCopmonent` was removed
+- `cardDragHandleComponent` was removed
 - `selected` was renamed to `isSelected`
 - `isDragActive` was renamed to `isDragging`
 - `statusIcon` was renamed to `icon`, and now expects an Icon component
@@ -517,7 +517,7 @@ To migrate the `Card` component to v4, run the following [codemod](https://githu
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 There are codemods for `Card`, `AssetCard` and `EntryCard`. When running the codemods, the following changes occur:
 
@@ -597,7 +597,7 @@ import { Card, AssetCard, EntryCard Menu } from "@contentful/f36-components";
 
 ### CopyButton
 
-In v4 the CopyButton component has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
+In v4, the CopyButton component has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
 
 ```jsx static=true
 <CopyButton
@@ -698,10 +698,10 @@ import { DateTime } from '@contentful/f36-components';
 The Dropdown component is replaced with three new components: [Menu](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/menu/Menu.mdx), [Autocomplete](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/autocomplete/Autocomplete.mdx) and [Popover](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/popover/Popover.mdx).
 By creating separate components we improved the accessibility and simplified its API. Each of these new components serves its own purpose.
 
-We renamed prop `position` to `placement` and changed its value type. Below is the mapping of old values to the new ones:
+We renamed prop the `position` to `placement` and changed its value type. Below is the mapping of the old values to the new ones:
 
 ```jsx static=true
-const positionToPlacemantMap = {
+const positionToPlacementMap = {
   'bottom-left': 'bottom-start',
   'bottom-right': 'bottom-end',
   right: 'right-start',
@@ -725,12 +725,12 @@ Here are a few examples of how to migrate the `Dropdown` component:
 
 #### `Dropdown` to `Menu`
 
-**Simple case:**
+### Simple case
 
 Keep in mind:
 
 - By default `Menu` is an uncontrolled component, so you don't have to pass callbacks and state. Nevertheless, you can make it controlled if you need to. [See the controlled Menu example in component docs](https://github.com/contentful/forma-36/blob/forma-v4/packages/components/menu/Menu.mdx#controlled-menu)
-- By default, clicking the `MenuItem` will close the menu. If you want to disable this behaviour, just pass prop `closeOnSelect="false"`.
+- By default, clicking the `MenuItem` closes the menu. If you want to disable this behaviour, just pass the `closeOnSelect="false"` prop.
 
 Forma v3:
 
@@ -799,13 +799,13 @@ import { Menu, IconButton } from '@contentful/f36-components';
 </Menu>;
 ```
 
-**Case with Titles, Dividers, Links and dropdown maxHeight:**
+### Case with Titles, Dividers, Links and dropdown maxHeight
 
 Keep in mind:
 
 - `<DropdownListItem isTitle>Title</DropdownListItem>` got replaced with `<Menu.SectionTitle>Title</Menu.SectionTitle>`
 - To add a divider just add `<Menu.Divider />`
-- To add a link as a menu item, just pass prop `as="a"` to `Menu.Item`. `Menu.Item` is a polymorphic component.
+- To add a link as a menu item, just pass prop `as="a"` to `Menu.Item`. Note that `Menu.Item` is a polymorphic component.
 - Instead of `maxHeight` prop you can just set the `maxHeight` within your styles. It can be passed in a style object or be set within a classname.
 
 Forma v3:
@@ -868,12 +868,12 @@ import { Menu, IconButton } from '@contentful/f36-components';
 </Menu>;
 ```
 
-**Case with Submenu:**
+### Case with Submenu
 
 Keep in mind:
 
-- Instead of nesting another `Dropdown` you should use specific component `Menu.Submenu`.
-- Instead of passing `submenuToggleLabel` prop you should use specific component `Menu.SubmenuTrigger`. That will serve as a trigger for a submenu.
+- Instead of nesting another `Dropdown` use a specific component `Menu.Submenu`.
+- Instead of passing the `submenuToggleLabel` prop use a specific component `Menu.SubmenuTrigger`. That will serve as a trigger for a submenu.
 - The submenu is always displayed on the right side of the menu. There is no way to display it on the left side now.
 
 Forma v3:
@@ -956,7 +956,7 @@ import { Menu, IconButton } from '@contentful/f36-components';
 
 #### `Dropdown` to `Popover`
 
-**Popover case with checkboxes:**
+### Popover case with checkboxes
 
 Keep in mind:
 
@@ -1086,7 +1086,7 @@ To migrate the Icon component to v4, run the following [codemod](https://github.
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 If you want to do it manually, you must transform your code as follows:
 
@@ -1146,8 +1146,8 @@ const isCondition = true;
 
 The API of the IconButton component has changed slightly:
 
-- The icon is defined by icon element, passed to `icon` prop.
-- There is no `iconProps` anymore as - icon props are passed directly to the icon element.
+- The icon is defined by the icon element, passed to `icon` prop.
+- The `iconProps` was removed - icon props are passed directly to the icon element.
 
 ```tsx static=true
 import { IconButton } from '@contentful/f36-button';
@@ -1166,7 +1166,7 @@ To migrate the IconButton component to v4, run the following [codemod](https://g
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 If you want to do it manually, you must transform your code as follows:
 
@@ -1256,7 +1256,7 @@ To migrate the Flex component to v4, run the following [codemod](https://github.
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 If you want to do it manually, you must transform your existing code as follows:
 
@@ -1284,7 +1284,7 @@ import { Flex } from '@contentful/f36-components';
 
 ### Form Components
 
-We changed how the Form Components work on version 4. In version 3 we had the Field components, like `TextField` or `SelectField` that would handle elements like Label, HelpText, and ValidationMessage.
+We changed how the Form Components work on version 4. In version 3 we had the Field components, like `TextField` or `SelectField`, that would handle elements like Label, HelpText, and ValidationMessage.
 In version 4 we created the `FormControl` which gives the user more flexibility and controls the given input, its validation, state, etc.
 All the previous options are still available within the `FormControl` component:
 
@@ -1293,7 +1293,7 @@ All the previous options are still available within the `FormControl` component:
 - `FormControl.ValidationMessage`
 - `FormControl.Counter`
 
-Any Forma 36 form element can be used either as controlled or uncontrolled components, by using the `defaulValue`/`defaultChecked` prop for uncontrolled and `value`/`isChecked` with an `onChange` props for the controlled version. For example:
+Any Forma 36 form element can be used either as controlled or uncontrolled components, by using the `defaultValue`/`defaultChecked` prop for uncontrolled and `value`/`isChecked` with an `onChange` props for the controlled version. For example:
 
 ```jsx static=true
 // This would render the TextInput as an uncontrolled component
@@ -1330,7 +1330,7 @@ The `CheckboxField`, `RadioButtonField`, `SelectField`, and `TextField` componen
 />
 ```
 
-will become:
+becomes:
 
 ```tsx static=true
 // Checkbox
@@ -1351,16 +1351,15 @@ will become:
 </FormControl>
 ```
 
-For more detailed information and examples, check our [documentation](https://v4.f36.contentful.com/components/form-control/).
+For more detailed information and examples, see our [documentation](https://v4-forma-36.netlify.app/components/form-control/).
 
 ##### How to migrate your Field components
 
-To migrate your `Field` components to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
-To migrate your Field components to v4, run the following codemod:
+To migrate your Field components to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 The codemods that must be run: `v4-checkbox`, `v4-radio`, `v4-select`, and `v4-text-field`.
 
@@ -1437,12 +1436,12 @@ import { Checkbox } from '@contentful/f36-components';
 </Checkbox>
 ```
 
-We also introduced API changes for the checkbox. This is an overview of the renamed properties:
+We also introduced API changes for the Checkbox. This is an overview of the renamed properties:
 
-- `required` was renamed to `isRequired`;
-- `labelText` should be replaced by `aria-label` when not passing a label to the checkbox;
-- `checked` was renamed to `isChecked`;
-- `disabled` was renamed to `isDisabled`;
+- `required` was renamed to `isRequired`.
+- `labelText` should be replaced by `aria-label` when not passing a label to the checkbox.
+- `checked` was renamed to `isChecked`.
+- `disabled` was renamed to `isDisabled`.
 - `indeterminate` was renamed to `isIndeterminate`.
 
 ##### How to migrate your Checkbox components
@@ -1472,7 +1471,7 @@ import { Checkbox } from '@contentful/f36-components';
 </Checkbox>;
 ```
 
-If you only use `CheckboxField` component, please check the [Field components](#field-components) section.
+If you only use the `CheckboxField` component, please see [Field components](#field-components) section.
 
 #### RadioButton
 
@@ -1502,9 +1501,9 @@ import { Radio } from '@contentful/f36-components';
 
 We also introduced API changes for the radio. This is an overview of the renamed properties:
 
-- `required` was renamed to `isRequired`;
-- `labelText` should be replaced by `aria-label` when not passing a label to the input;
-- `checked` was renamed to `isChecked`;
+- `required` was renamed to `isRequired`.
+- `labelText` should be replaced by `aria-label` when not passing a label to the input.
+- `checked` was renamed to `isChecked`.
 - `disabled` was renamed to `isDisabled`.
 
 ##### How to migrate your RadioButton components
@@ -1513,7 +1512,7 @@ To migrate your `RadioButton` component to v4, run the following [codemod](https
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 If you want to do it manually, you must transform your code as follows:
 
@@ -1561,12 +1560,12 @@ into:
 </Select>
 ```
 
-We also introduced some API changes for the select. This is an overview of the changed props:
+We also introduced some API changes for the Select. This is an overview of the changed props:
 
-- `width` was removed;
-- `required` was renamed to `isRequired`;
-- `hasError` was renamed to `isInvalid`;
-- `disabled` was renamed to `isDisabled`;
+- `width` was removed.
+- `required` was renamed to `isRequired`.
+- `hasError` was renamed to `isInvalid`.
+- `disabled` was renamed to `isDisabled`.
 - The `Select.Option` component can receive a `isDisabled` prop instead of the `disabled`.
 
 ##### How to migrate your Select components
@@ -1575,11 +1574,11 @@ To migrate your v3 `Select` component, run the following [codemod](https://githu
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 If you want to do it manually, you must transform your code as follows:
 
-````jsx static=true
+```jsx static=true
 import { Select, Option } from '@contentful/forma-36-react-components';
 
 <Select name="optionSelect" id="optionSelect">
@@ -1589,6 +1588,7 @@ import { Select, Option } from '@contentful/forma-36-react-components';
     Option Three
   </Option>
 </Select>;
+```
 
 into:
 
@@ -1602,11 +1602,11 @@ import { Select } from '@contentful/f36-components';
     Option Three
   </Select.Option>
 </Select>;
-````
+```
 
 #### Switch
 
-In v4 the `Switch` component has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
+In v4, the `Switch` component has received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
 
 ```jsx static=true
 import { Switch } from '@contentful/forma-36-react-components';
@@ -1624,7 +1624,7 @@ import { Switch } from '@contentful/f36-components';
 </Switch>;
 ```
 
-_Note: in v3 the `onToggle` method had `checked` value (true/false) as parameter, now the `onChange` method has the event as parameter, so `event.target.checked` will have the true/false value_
+_Note: In v3, the `onToggle` method had `checked` value (true/false) as parameter. Now, the `onChange` method has the event as parameter, so `event.target.checked` will have the true/false value_
 
 ##### How to migrate your Switch components
 
@@ -1658,7 +1658,7 @@ const onChange = (event) => setIsChecked(event.target.checked);
 
 #### TextInput and TextArea
 
-In v4 the TextInput and TextArea components have received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
+In v4, the TextInput and TextArea components have received API improvements. The changes are based on our code style guide, which create consistent, easy to use APIs. For example:
 
 ```jsx static=true
 <TextInput
@@ -1702,7 +1702,7 @@ To migrate the `TextInput` or `TextArea` components to v4 run the following [cod
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 When running the codemod, the following changes occur:
 
@@ -1839,7 +1839,7 @@ for keeping the same spacing as before it should become:
 
 ##### How to migrate your FieldGroup components
 
-The migration should be done manually, using the Layout component that best fits the user needs, the layout components are [Box](https://v4.f36.contentful.com/components/box/), [Flex](https://v4.f36.contentful.com/components/flex/), [Stack](https://v4.f36.contentful.com/components/stack/), and [Grid](https://v4.f36.contentful.com/components/grid/).
+The migration must be done manually, using the Layout component that best fits the user needs. The layout components are [Box](https://v4-forma-36.netlify.app/components/box/), [Flex](https://v4-forma-36.netlify.app/components/flex/), [Stack](https://v4-forma-36.netlify.app/components/stack/), and [Grid](https://v4-forma-36.netlify.app/components/grid/).
 
 #### Form
 
@@ -1869,7 +1869,7 @@ To migrate your `Form` component to v4, run the following [codemod](https://gith
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 When running the codemod, the following changes occur:
 
@@ -1941,7 +1941,7 @@ import { FormControl, TextInput } from '@contentful/f36-components';
 
 ### Grid
 
-The Grid component is now part of the `@contentful/f36-core` package. Only improvement that was done for the Grid in version 4 was the alignment of the properties with our [code style guide](./docs/code-style-guide.md):
+The Grid component is now part of the `@contentful/f36-core` package. We improved the Grid component by aligning its properties with our [code style guide](./docs/code-style-guide.md):
 
 #### How to migrate your Grid components
 
@@ -1949,7 +1949,7 @@ To migrate your Grid component to v4, run the following [codemod](https://github
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 If you want to do it manually, you must transform your existing code as follows:
 
@@ -1983,7 +1983,7 @@ import { Grid, GridItem } from '@contentful/f36-components';
 
 ### Modal
 
-In version 4 the Modal component buttons were moved from the left to the right side of the `<Modal.Controls>` component. We now recommend swapping action buttons, the primary action should be displayed as the first one from the right in the Modal. Have a look how to do it:
+In version 4, the Modal component buttons were moved from the left to the right side of the `<Modal.Controls>` component. We now recommend swapping action buttons: the primary action should be displayed as the first one from the right in the Modal. Have a look how to do it:
 
 In version 3:
 
@@ -2009,7 +2009,7 @@ To migrate your `Modal` component to v4, run the following [codemod](https://git
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 NOTE: If you are using Buttons inside Modal.Controls component, you have to add size="small" to the Buttons and swap buttons' positions manually, so the primary button is the last one.
 
@@ -2072,7 +2072,7 @@ To migrate your `Note` component to v4, run the following [codemod](https://gith
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 If you want to do it manually, you must transform your existing code as follows:
 
@@ -2132,11 +2132,11 @@ The properties of the Notification component API have been aligned with our code
 
 #### How to migrate your Notification components
 
-To migrate your 'Notification' component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+To migrate your `Notification` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 If you want to do it manually, you must transform your existing code as follows:
 
@@ -2186,9 +2186,9 @@ Notification.setPlacement(placement, { offset: 0 });
 
 The API of the Pill component has not changed.
 
-#### How to migrate your Pill components
+#### How to migrate your Pill component
 
-To migrate your `Pill` components to v4 run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+To migrate your `Pill` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
 
 `npx @contentful/f36-codemod`
 
@@ -2228,7 +2228,7 @@ import { RelativeDate } from '@contentful/f36-components';
 
 ### Skeleton
 
-In v4 SkeletonContainer, we changed prop `animate` to `isAnimated` to align with our code [style guide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md). The rest stayed the same.
+In v4, SkeletonContainer, we changed the `animate` prop to `isAnimated` to align with our code [style guide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md).
 
 #### How to migrate your Skeleton components
 
@@ -2236,9 +2236,9 @@ To migrate your `Skeleton` component to v4, run the following [codemod](https://
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
-If you want to do it manually, you just need to update imports and rename prop `animate` to `isAnimated`:
+If you want to do it manually, you must update imports and rename the `animate` prop to `isAnimated`:
 
 ```tsx
 import {
@@ -2303,7 +2303,7 @@ import {
 
 ### Spinner
 
-In v4, only `color` prop became `variant`, to align with our code [style guide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md). The rest stayed the same.
+In v4, we changed the `color` prop to `variant` - to align with our code [style guide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md).
 
 #### How to migrate your Spinner components
 
@@ -2311,7 +2311,7 @@ To migrate your `Spinner` component to v4, run the following [codemod](https://g
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 If you want to do it manually, you must transform your existing code from this:
 
@@ -2343,7 +2343,7 @@ import { Spinner } from '@contentful/f36-components';
 
 ### Table
 
-In version 4, we Table component becomes a compound component. There is also one property that got renamed: `selected` became `isSelected`.
+In version 4, the Table component becomes a compound component. There is also one property that got renamed: `selected` became `isSelected`.
 
 #### How to migrate your Table components
 
@@ -2351,7 +2351,7 @@ To migrate your `Table` component to v4, run the following [codemod](https://git
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 If you want to do it manually, you must transform your existing code as follows:
 
@@ -2411,7 +2411,7 @@ import { Table } from '@contentful/f36-components';
 
 ### Tabs
 
-The Tabs components API has been improved. The `role` prop was removed. This is the current API structure:
+The Tabs component API has been improved. The `role` prop was removed. This is the current API structure:
 
 ```tsx static=true
 import { Tabs } from '@contentful/f36-components';
@@ -2550,7 +2550,7 @@ To migrate your v3 `Tag` component to v4 `Badge` run the following [codemod](htt
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 When running the codemod the following changes occur:
 
@@ -2592,7 +2592,7 @@ You can also make these changes manually.
 
 ### ToggleButton
 
-On the v4 the `ToggleButton` had a small change on the API to keep it aligned with the new way we use icons on our components. For examples:
+In v4, we changed the API of the `ToggleButton` to align it with the new way we use icons on our components. For examples:
 
 ```tsx static=true
 <ToggleButton isActive icon="Calendar">
@@ -2610,7 +2610,7 @@ becomes:
 
 #### How to migrate your ToggleButton components
 
-You must manually migrate the version 3 `ToggleButton` component updating icon prop. For example:
+You must manually migrate the version 3 `ToggleButton` component by updating the `icon` prop. For example:
 
 ```tsx static=true
 <ToggleButton isActive icon="Calendar">
@@ -2634,7 +2634,7 @@ becomes:
 
 ### Tooltip
 
-In version 4, we renamed two Tooltip props: `containerElement` is now `as` and `place` is now `placement`.
+In v4, we renamed two Tooltip props: `containerElement` is now `as` and `place` is now `placement`.
 
 #### How to migrate your Tooltip components
 
@@ -2642,7 +2642,7 @@ To migrate your `Tooltip` component to v4, run the following [codemod](https://g
 
 `npx @contentful/f36-codemod`
 
-NOTE: If you run this command for the first time it will install the package in the npm cache so you would need to go ahead and run it again.
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
 If you want to do it manually, you must transform your existing code as follows:
 
@@ -2654,7 +2654,7 @@ import { Tooltip } from '@contentful/forma-36-react-components';
 </Tooltip>;
 ```
 
-Into:
+into:
 
 ```tsx
 import { Tooltip } from '@contentful/f36-components';
@@ -2692,12 +2692,12 @@ import { Workbench } from '@contentful/forma-36-react-components';
   />
   <Workbench.Sidebar
     position="left"
-    labelText="Exmaple label text"
+    labelText="Example label text"
   ></Workbench.Sidebar>
   <Workbench.Content type="default"></Workbench.Content>
   <Workbench.Sidebar
     position="right"
-    labelText="Exmaple label text"
+    labelText="Example label text"
   ></Workbench.Sidebar>
 </Workbench>;
 ```
