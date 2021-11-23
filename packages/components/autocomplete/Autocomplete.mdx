@@ -34,7 +34,7 @@ The Autocomplete requires 3 props to work:
 
 - `items`: It’s an array containing the items that will be shown as selectable options when the user types something in the `TextInput`.
 - `onInputValueChange`: This function will be called every time the user types something in the input.
-  The component will pass the `item` which the filter method is currently interating and `inputValue` of the `Textinput`.
+  The component will pass the `item` which the filter method is currently integrating and `inputValue` of the `TextInput`.
 - `onSelectItem`: This function is called when the user selects one of the options of the list. The component will pass the selected item as an argument to the function.
 
 An `Autocomplete` with a list of fruits will look like this:
@@ -43,7 +43,7 @@ An `Autocomplete` with a list of fruits will look like this:
 function AutocompleteExample() {
   const fruits = [
     'Apple 🍎',
-    'Ananas 🍍',
+    'Pineapple 🍍',
     'Avocado 🥑',
     'Banana 🍌',
     'Coconut 🥥',
@@ -100,7 +100,7 @@ function AutocompleteExample() {
   // This is our new array of fruits, each one is an object with an id and a name
   const fruits = [
     { id: 1, name: 'Apple', emoji: '🍎' },
-    { id: 2, name: 'Ananas', emoji: '🍍' },
+    { id: 2, name: 'Pineapple', emoji: '🍍' },
     { id: 3, name: 'Avocado', emoji: '🥑' },
     { id: 4, name: 'Banana', emoji: '🍌' },
     { id: 5, name: 'Coconut', emoji: '🥥' },
@@ -187,7 +187,7 @@ import { Autocomplete } from '@contentful/f36-autocomplete';
 function AutocompleteExample() {
   const fruits = [
     { id: 1, name: 'Apple' },
-    { id: 2, name: 'Ananas' },
+    { id: 2, name: 'Pineapple' },
     { id: 3, name: 'Avocado' },
     { id: 4, name: 'Banana' },
     { id: 5, name: 'Coconut' },
@@ -249,7 +249,7 @@ function AutocompleteExample() {
       groupTitle: 'Fruits',
       options: [
         { id: 1, name: 'Apple', emoji: '🍎' },
-        { id: 2, name: 'Ananas', emoji: '🍍' },
+        { id: 2, name: 'Pineapple', emoji: '🍍' },
         { id: 3, name: 'Avocado', emoji: '🥑' },
         { id: 4, name: 'Banana', emoji: '🍌' },
         { id: 5, name: 'Coconut', emoji: '🥥' },
@@ -260,7 +260,7 @@ function AutocompleteExample() {
       options: [
         { id: 1, name: 'Cucumber', emoji: '🥒' },
         { id: 2, name: 'Pumpkin', emoji: '🎃' },
-        { id: 3, name: 'Brokkolie', emoji: '🥦' },
+        { id: 3, name: 'Broccoli', emoji: '🥦' },
         { id: 4, name: 'Pepper', emoji: '🫑' },
       ],
     },
@@ -291,7 +291,7 @@ function AutocompleteExample() {
     <Stack flexDirection="column" alignItems="start">
       <Autocomplete
         items={filteredItems}
-        // this is the imporant prop that tells the component to deal with grouped options
+        // this is the important prop that tells the component to deal with grouped options
         isGrouped
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
@@ -316,7 +316,7 @@ function AutocompleteExample() {
 function AutocompleteExample() {
   const fruits = [
     'Apple 🍎',
-    'Ananas 🍍',
+    'Pineapple 🍍',
     'Avocado 🥑',
     'Banana 🍌',
     'Coconut 🥥',
@@ -369,7 +369,7 @@ function AutocompleteExample() {
 function AutocompleteExample() {
   const fruits = [
     'Apple 🍎',
-    'Ananas 🍍',
+    'Pineapple 🍍',
     'Avocado 🥑',
     'Banana 🍌',
     'Coconut 🥥',
