@@ -10,7 +10,7 @@ interface ModalLauncherComponentRendererProps<T = any> {
 
 interface ModalLauncherOpenOptions {
   /**
-   * Unique id to be used as identifier for the modal contianer
+   * Unique id to be used as identifier for the modal container
    */
   modalId?: string;
   /**

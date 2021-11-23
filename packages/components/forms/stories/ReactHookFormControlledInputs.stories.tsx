@@ -44,7 +44,7 @@ export const Basic = () => {
           rules={{ required: true }}
           /**
            * We need to pass an empty string as default value otherwise react will trigger the uncontrolled inputs warning
-           * more infomation can be found in react-hook-form docs https://react-hook-form.com/api/usecontroller
+           * more information can be found in react-hook-form docs https://react-hook-form.com/api/usecontroller
            */
           defaultValue=""
         />
@@ -69,12 +69,12 @@ export const Basic = () => {
           rules={{ maxLength: 20 }}
           /**
            * We need to pass an empty string as default value otherwise react will trigger the uncontrolled inputs warning
-           * more infomation can be found in react-hook-form docs https://react-hook-form.com/api/usecontroller
+           * more information can be found in react-hook-form docs https://react-hook-form.com/api/usecontroller
            */
           defaultValue=""
         />
 
-        <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
+        <FormControl.HelpText>Tell me about yourself</FormControl.HelpText>
 
         {errors.textarea && (
           <FormControl.ValidationMessage>
@@ -145,7 +145,7 @@ export const WithRadioGroup = () => {
 
         {/**
          * We need to pass an empty string as default value otherwise react will trigger the uncontrolled inputs warning
-         * more infomation can be found in react-hook-form docs https://react-hook-form.com/api/usecontroller
+         * more information can be found in react-hook-form docs https://react-hook-form.com/api/usecontroller
          */}
         <ControlledRadioGroup
           control={control}

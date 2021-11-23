@@ -26,7 +26,7 @@ interface GroceryList {
 
 const fruits: Produce[] = [
   { id: 1, name: 'Apple 🍎' },
-  { id: 2, name: 'Ananas 🍍' },
+  { id: 2, name: 'Pineapple 🍍' },
   { id: 3, name: 'Avocado 🥑' },
   { id: 4, name: 'Banana 🍌' },
   { id: 5, name: 'Coconut 🥥' },
@@ -39,10 +39,10 @@ const fruits: Produce[] = [
   { id: 12, name: 'Tomato 🍅' },
 ];
 
-const veggis: Produce[] = [
+const veggies: Produce[] = [
   { id: 1, name: 'Cucumber 🥒' },
   { id: 2, name: 'Pumpkin 🎃' },
-  { id: 3, name: 'Brokkolie 🥦' },
+  { id: 3, name: 'Broccoli 🥦' },
   { id: 4, name: 'Pepper 🫑' },
 ];
 
@@ -53,7 +53,7 @@ const groceryList: GroceryList[] = [
   },
   {
     groupTitle: 'Vegetables',
-    options: veggis,
+    options: veggies,
   },
   /* Empty groups are not rendered  */
   {
