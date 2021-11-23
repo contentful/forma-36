@@ -13,6 +13,7 @@ import {
   Heading,
   List,
   Paragraph,
+  Stack,
   Subheading,
   Table,
   TableBody,
@@ -75,50 +76,13 @@ const styles = {
 
 /* eslint-disable react/display-name */
 const markToComponentMap = {
-  h1: (props) => (
-    <DisplayText marginBottom="spacingL" marginTop="spacingXl" {...props} />
-  ),
-  h2: (props) => (
-    <Heading
-      element="h2"
-      marginBottom="spacingL"
-      marginTop="spacingXl"
-      {...props}
-    />
-  ),
-  h3: (props) => (
-    <Subheading
-      element="h3"
-      marginBottom="spacingM"
-      marginTop="spacingL"
-      {...props}
-    />
-  ),
-  h4: (props) => (
-    <Subheading
-      element="h4"
-      marginBottom="spacingM"
-      marginTop="spacingL"
-      {...props}
-    />
-  ),
-  h5: (props) => (
-    <Subheading
-      element="h5"
-      marginBottom="spacingM"
-      marginTop="spacingL"
-      {...props}
-    />
-  ),
-  h6: (props) => (
-    <Subheading
-      marginBottom="spacingS"
-      marginTop="spacingM"
-      element="h6"
-      {...props}
-    />
-  ),
-  p: (props) => <Paragraph marginBottom="spacingS" {...props} />,
+  h1: (props) => <DisplayText {...props} />,
+  h2: (props) => <Heading as="h2" {...props} />,
+  h3: (props) => <Subheading as="h3" {...props} />,
+  h4: (props) => <Subheading as="h4" {...props} />,
+  h5: (props) => <Subheading as="h5" {...props} />,
+  h6: (props) => <Subheading as="h6" {...props} />,
+  p: (props) => <Paragraph {...props} />,
   a: (props) => <TextLink {...props} />,
   ul: (props) => (
     <Box marginBottom="spacingM">
@@ -145,58 +109,84 @@ const markToComponentMap = {
 };
 /* eslint-enable react/display-name */
 
-export default function MDXPage({ mdxContent, frontmatter, propsMetadata }) {
+export default function MDXPageV4({ mdxContent, frontmatter, propsMetadata }) {
+  console.log(frontmatter);
   return (
     <Box className={styles.pageContent}>
       <PropsProvider metadata={propsMetadata}>
         <MDXProvider components={markToComponentMap}>
-          <header className={styles.header}>
-            {frontmatter?.title && (
-              <DisplayText marginBottom="spacingL">
+          {!frontmatter.v4Doc && (
+            <header className={styles.header}>
+              {frontmatter?.title && (
+                <DisplayText marginBottom="spacingL">
+                  {frontmatter.title}
+                </DisplayText>
+              )}
+
+              <div className={styles.subheaderRow}>
+                <div className={styles.buttonList}>
+                  {frontmatter?.storybook && (
+                    <a
+                      className={styles.imageLink}
+                      href={frontmatter.storybook}
+                      title={`View ${frontmatter?.title} in Storybook`}
+                    >
+                      <img src={storybookIcon} alt="" />
+                      <span>Storybook</span>
+                    </a>
+                  )}
+                  {frontmatter?.github && (
+                    <a
+                      className={styles.imageLink}
+                      href={frontmatter.github}
+                      title={`View ${frontmatter?.title} on GitHub`}
+                    >
+                      <img src={githubIcon} alt="" />
+                      <span>Github</span>
+                    </a>
+                  )}
+                </div>
+
+                {frontmatter?.status && (
+                  <span className={styles.badge}>
+                    <Badge
+                      variant={
+                        frontmatter.status === 'alpha' ? 'warning' : 'positive'
+                      }
+                    >
+                      {frontmatter.status}
+                    </Badge>
+                  </span>
+                )}
+              </div>
+            </header>
+          )}
+
+          <main>
+            {frontmatter.v4Doc && (
+              <DisplayText as="h1" size="large">
                 {frontmatter.title}
               </DisplayText>
             )}
 
-            <div className={styles.subheaderRow}>
-              <div className={styles.buttonList}>
-                {frontmatter?.storybook && (
-                  <a
-                    className={styles.imageLink}
-                    href={frontmatter.storybook}
-                    title={`View ${frontmatter?.title} in Storybook`}
-                  >
-                    <img src={storybookIcon} alt="" />
-                    <span>Storybook</span>
-                  </a>
-                )}
-                {frontmatter?.github && (
-                  <a
-                    className={styles.imageLink}
-                    href={frontmatter.github}
-                    title={`View ${frontmatter?.title} on GitHub`}
-                  >
-                    <img src={githubIcon} alt="" />
-                    <span>Github</span>
-                  </a>
-                )}
-              </div>
-
-              {frontmatter?.status && (
-                <span className={styles.badge}>
-                  <Badge
-                    variant={
-                      frontmatter.status === 'alpha' ? 'warning' : 'positive'
-                    }
-                  >
-                    {frontmatter.status}
-                  </Badge>
-                </span>
-              )}
-            </div>
-          </header>
-
-          <main>
             <MDXRenderer>{mdxContent}</MDXRenderer>
+
+            {frontmatter.v4Doc && (
+              <>
+                <Heading as="h2" id="help-improve-this-page">
+                  Help improve this page
+                </Heading>
+                <Stack>
+                  <TextLink href={frontmatter.githubUrl} target="_blank">
+                    Edit on Github
+                  </TextLink>
+
+                  <TextLink href="/contributing">
+                    Read the contribution guide
+                  </TextLink>
+                </Stack>
+              </>
+            )}
           </main>
         </MDXProvider>
       </PropsProvider>
@@ -204,7 +194,7 @@ export default function MDXPage({ mdxContent, frontmatter, propsMetadata }) {
   );
 }
 
-MDXPage.propTypes = {
+MDXPageV4.propTypes = {
   mdxContent: PropTypes.string.isRequired,
   frontmatter: PropTypes.shape({
     type: PropTypes.string,

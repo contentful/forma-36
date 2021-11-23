@@ -57,6 +57,7 @@ exports.createPages = ({ graphql, actions }) => {
                 github
                 storybook
                 typescript
+                v4Doc
               }
               body
             }
