@@ -45,7 +45,7 @@ Default.args = {
 };
 
 export const WithFocusableChildren = () => {
-  const [submited, setSubmit] = useState(false);
+  const [submitted, setSubmit] = useState(false);
   const onSubmit = () => setSubmit(true);
 
   return (
@@ -64,8 +64,8 @@ export const WithFocusableChildren = () => {
           <Textarea />
           <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
         </FormControl>
-        <Button variant="primary" type="submit" isDisabled={submited}>
-          {submited ? 'Sumbited' : 'Click me to submit'}
+        <Button variant="primary" type="submit" isDisabled={submitted}>
+          {submitted ? 'Submitted' : 'Click me to submit'}
         </Button>
       </Form>
     </Card>
