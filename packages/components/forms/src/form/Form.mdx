@@ -39,7 +39,7 @@ Go ahead and add some fields into your form:
 
 ```jsx
 function FormaExample() {
-  const [submited, setSubmited] = React.useState(false);
+  const [submitted, setSubmited] = React.useState(false);
   return (
     <Form onSubmit={() => setSubmited(true)}>
       <FormControl>
@@ -57,8 +57,8 @@ function FormaExample() {
         </Box>
         <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
       </FormControl>
-      <Button variant="primary" type="submit" isDisabled={submited}>
-        {submited ? 'Sumbitted' : 'Click me to submit'}
+      <Button variant="primary" type="submit" isDisabled={submitted}>
+        {submitted ? 'Submitted' : 'Click me to submit'}
       </Button>
     </Form>
   );
@@ -69,7 +69,7 @@ function FormaExample() {
 
 ```jsx
 function FormaExample() {
-  const [submited, setSubmited] = React.useState(false);
+  const [submitted, setSubmited] = React.useState(false);
   return (
     <Form onSubmit={() => setSubmited(true)}>
       <FormControl>
@@ -87,8 +87,8 @@ function FormaExample() {
           <FormControl.Counter />
         </Flex>
       </FormControl>
-      <Button variant="primary" type="submit" isDisabled={submited}>
-        {submited ? 'Sumbitted' : 'Click me to submit'}
+      <Button variant="primary" type="submit" isDisabled={submitted}>
+        {submitted ? 'Submitted' : 'Click me to submit'}
       </Button>
     </Form>
   );
