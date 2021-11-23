@@ -54,6 +54,8 @@
       - [How to migrate your FormLabel components](#how-to-migrate-your-formlabel-components)
   - [Grid](#grid)
     - [How to migrate your Grid components](#how-to-migrate-your-grid-components)
+  - [List](#list)
+    - [How to migrate your List components](#how-to-migrate-your-list-components)
   - [Modal](#modal)
     - [How to migrate your Modal components](#how-to-migrate-your-modal-components)
   - [Note](#note)
@@ -1979,6 +1981,38 @@ import { Grid, GridItem } from '@contentful/f36-components';
   <GridItem />
   <GridItem />
 </Grid>;
+```
+
+### List
+
+The properties of the List component API have been aligned with our code [style guide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md).
+
+#### How to migrate your List components
+
+To migrate your `List` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to do it manually, you must transform your existing code as follows:
+
+```tsx
+import { List, ListItem } from '@contentful/forma-36-react-components';
+
+<List element="ul" className="className" testId="testId">
+  <ListItem>ListItem1</ListItem>
+  <ListItem>ListItem2</ListItem>
+</List>;
+```
+
+to this:
+
+```tsx
+import { List, ListItem } from '@contentful/f36-components';
+
+<List as="ul" className="className" testId="testId">
+  <ListItem>ListItem1</ListItem>
+  <ListItem>ListItem2</ListItem>
+</List>;
 ```
 
 ### Modal
