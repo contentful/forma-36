@@ -1,7 +1,7 @@
 # Forma 36 React Components
 
 A React component library for [Forma 36](https://f36.contentful.com/) design system created by [Contentful](https://www.contentful.com) and powered by [Storybook](https://storybook.js.org/).
-You can access a Storybook website with the latest changes of the library [here](https://f36-storybook.contentful.com/)
+You can access a Storybook website with the latest changes of the library [here](https://v4-f36-storybook.netlify.app/)
 
 ## Table of contents
 
