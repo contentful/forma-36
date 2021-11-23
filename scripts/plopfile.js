@@ -117,4 +117,73 @@ module.exports = function (plop) {
       return actions;
     },
   });
+
+  plop.setGenerator('add documentation with new format', {
+    description:
+      'add a file with the base to write documentation in the new format',
+    prompts: [
+      {
+        type: 'input',
+        name: 'packageName',
+        message:
+          'name of the package to which you want to add documentation, all lowercase (e.g. textfield)',
+        validate: (answer) => answer.length > 0,
+      },
+      {
+        type: 'input',
+        name: 'componentName',
+        message:
+          'component name, please use appropriate uppercase (e.g. TextField)',
+        validate: (answer) => answer.length > 0,
+      },
+    ],
+    actions: function (data) {
+      let { packageName, componentName } = data;
+      let actions = [];
+
+      actions.push({
+        type: 'add',
+        path: `../packages/components/${packageName}/NEW_${componentName}.mdx`,
+        templateFile: './plop-templates/package/v4ComponentDoc.mdx.hbs',
+        // data: { transform },
+      });
+
+      return actions;
+    },
+  });
+
+  plop.setGenerator('convert documentation to new format', {
+    description:
+      'replaces all the content in the Component.mdx file with the new format template',
+    prompts: [
+      {
+        type: 'input',
+        name: 'packageName',
+        message:
+          'name of the package to which you want to add documentation, all lowercase (e.g. textfield)',
+        validate: (answer) => answer.length > 0,
+      },
+      {
+        type: 'input',
+        name: 'componentName',
+        message:
+          'component name, please use appropriate uppercase (e.g. TextField)',
+        validate: (answer) => answer.length > 0,
+      },
+    ],
+    actions: function (data) {
+      let { packageName, componentName } = data;
+      let actions = [];
+
+      actions.push({
+        type: 'modify',
+        templateFile: './plop-templates/package/v4ComponentDoc.mdx.hbs',
+        path: `../packages/components/${packageName}/${componentName}.mdx`,
+        pattern: /(.|\n)*/,
+        data: { componentName, packageName },
+      });
+
+      return actions;
+    },
+  });
 };

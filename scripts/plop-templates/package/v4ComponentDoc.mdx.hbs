@@ -1,0 +1,71 @@
+---
+title: '{{componentName}}'
+type: 'component'
+status: 'stable'
+slug: /components/{{packageName}}/
+github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/components/{{packageName}}'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-{{packageName}}'
+typescript: ./src/{{componentName}}.tsx
+v4Doc: true
+---
+
+import { Stack, TextLink } from '@contentful/f36-components';
+import { Props } from '@contentful/f36-docs-utils';
+
+Short component description covering when it's used. 
+(Optional: give a most common example)
+
+Optional: Most common misuse and what to use instead.
+
+## Table of contents
+
+- [Import](#import)
+- [Examples](#examples)
+  - [Basic usage](#basic-usage)
+- [Props](#props-api-reference)
+- [Content guidelines](#content-guidelines)
+- [Accessibility](#accessibility)
+- [Help improve this page](#help-improve-this-page)
+
+## Import
+
+```jsx static=true
+import { {{componentName}} } from '@contentful/f36-components'
+```
+
+## Examples
+
+Repeat for every important variant
+
+### Example title (variant name)
+
+Optional: Short "when to use" with considerations towards the end user
+
+```jsx
+<{{componentName}}>This is an example</{{componentName}}>
+```
+
+## Props (API reference)
+
+<Props of="{{componentName}}" />
+
+## Content guidelines
+
+At least one important thing to consider when writing copy for this component
+Optional: Things to avoid
+
+## Accessibility
+
+What makes this component accessible
+
+## Help improve this page
+
+<Stack>
+  <TextLink href="https://github.com/contentful/forma-36/tree/master/packages/components/{{packageName}}" target="_blank">
+    Edit on Github
+  </TextLink>
+
+  <TextLink href="/contributing">
+    Read the contribution guide
+  </TextLink>
+</Stack>
