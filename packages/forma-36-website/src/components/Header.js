@@ -121,8 +121,6 @@ const Header = () => (
             <a
               className={styles.navListLink}
               href="https://v3.f36.contentful.com/"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Forma 36 v3
             </a>
