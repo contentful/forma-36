@@ -32,7 +32,8 @@ import { Accordion } from '@contentful/f36-components';
 
 ## Examples
 
-The accordion has two variations that define the alignment of the chevron icon: left or right.
+The title prop accepts React nodes, but we recommend that only Typography components are used.
+Since the whole header is a button, do not use Buttons or Links in the title prop. The only click event that should exist is the header's event.
 
 ### Basic usage
 
