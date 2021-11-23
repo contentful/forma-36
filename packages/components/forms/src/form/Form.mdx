@@ -15,13 +15,13 @@ storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/form-elements-form
 - [Code examples](#code-examples)
   - [Basic example](#basic-example)
   - [Using character count](#using-character-count)
-  - [Intergrations](#intergrations)
+  - [Integrations](#integrations)
 
 ## How to use Form
 
 - The `Form` component should wrap form elements into `<form />`
 - Provide an `onSubmit` handler for form validation and submission
-- state of the validation of the form should be maniputated from outside
+- state of the validation of the form should be manipulated from outside
 
 Go ahead and add some fields into your form:
 
@@ -39,9 +39,9 @@ Go ahead and add some fields into your form:
 
 ```jsx
 function FormaExample() {
-  const [submitted, setSubmited] = React.useState(false);
+  const [submitted, setSubmitted] = React.useState(false);
   return (
-    <Form onSubmit={() => setSubmited(true)}>
+    <Form onSubmit={() => setSubmitted(true)}>
       <FormControl>
         <FormControl.Label isRequired>Name</FormControl.Label>
         <TextInput />
@@ -55,7 +55,7 @@ function FormaExample() {
         <Box>
           <Textarea />
         </Box>
-        <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
+        <FormControl.HelpText>Tell me about yourself</FormControl.HelpText>
       </FormControl>
       <Button variant="primary" type="submit" isDisabled={submitted}>
         {submitted ? 'Submitted' : 'Click me to submit'}
@@ -69,9 +69,9 @@ function FormaExample() {
 
 ```jsx
 function FormaExample() {
-  const [submitted, setSubmited] = React.useState(false);
+  const [submitted, setSubmitted] = React.useState(false);
   return (
-    <Form onSubmit={() => setSubmited(true)}>
+    <Form onSubmit={() => setSubmitted(true)}>
       <FormControl>
         <FormControl.Label isRequired>user name</FormControl.Label>
         <TextInput />
@@ -95,6 +95,6 @@ function FormaExample() {
 }
 ```
 
-### Intergrations
+### Integrations
 
 It is possible to integrate the form with solutions like [Formik](/integrations/formik/) or [React form hook](/integrations/react-hook-form/)

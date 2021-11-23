@@ -2,7 +2,7 @@
 title: 'React Hook Form'
 ---
 
-It’s possible to build forms using Forma 36’s compoenents and [React Hook Form](https://react-hook-form.com/).
+It’s possible to build forms using Forma 36’s components and [React Hook Form](https://react-hook-form.com/).
 In this page we will show a couple of examples on how to do that.
 
 ## Integrating with `register()`
@@ -42,7 +42,7 @@ export const ReactHookForm = () => {
       <FormControl isInvalid={Boolean(errors.name)}>
         <FormControl.Label isRequired>Name</FormControl.Label>
 
-        {/* Use the register function from reac-hook-form on TextInput */}
+        {/* Use the register function from react-hook-form on TextInput */}
         <TextInput {...register('name', { required: true })} />
 
         {/* Show a ValidationMessage if the input has any errors */}
@@ -166,7 +166,7 @@ export const ReactHookForm = () => {
            * We need to pass an empty string as default value
            * otherwise react will trigger the uncontrolled inputs warning
            *
-           * more infomation in https://react-hook-form.com/api/usecontroller
+           * more information in https://react-hook-form.com/api/usecontroller
            */
           defaultValue=""
         />
