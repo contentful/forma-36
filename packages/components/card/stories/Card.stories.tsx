@@ -65,7 +65,7 @@ export const WithFocusableChildren = () => {
           <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
         </FormControl>
         <Button variant="primary" type="submit" isDisabled={submited}>
-          {submited ? 'Sumbited' : 'Click me to submit'}
+          {submited ? 'Sumbitted' : 'Click me to submit'}
         </Button>
       </Form>
     </Card>
