@@ -52,7 +52,7 @@ export const Basic = () => {
       <FormControl isInvalid={Boolean(errors.description)}>
         <FormControl.Label>Description</FormControl.Label>
         <Textarea {...register('description', { maxLength: 20 })} />
-        <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
+        <FormControl.HelpText>Tell me about yourself</FormControl.HelpText>
 
         {errors.description && (
           <FormControl.ValidationMessage>

@@ -68,7 +68,7 @@ export const Overview: Story<PillInternalProps> = (args) => (
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingL">
       <SectionHeading as="h3" marginBottom="spacingS">
-        Dragable
+        Draggable
       </SectionHeading>
 
       <Flex flexDirection="row" marginBottom="spacingM">
@@ -85,7 +85,7 @@ export const Overview: Story<PillInternalProps> = (args) => (
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingL">
       <SectionHeading as="h3" marginBottom="spacingS">
-        Dragable + close
+        Draggable + close
       </SectionHeading>
 
       <Flex flexDirection="row" marginBottom="spacingM">

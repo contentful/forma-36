@@ -124,11 +124,8 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
           >
             Beef
           </Radio>
-          <Radio
-            value="beyound-meat"
-            helpText="Pea protein, beetroot and magic"
-          >
-            Beyound meat (vegan)
+          <Radio value="beyond-meat" helpText="Pea protein, beetroot and magic">
+            Beyond meat (vegan)
           </Radio>
         </Radio.Group>
         {args.isInvalid && (

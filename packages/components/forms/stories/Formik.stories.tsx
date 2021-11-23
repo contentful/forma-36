@@ -38,7 +38,7 @@ export const Basic = () => {
         name: '',
         description: '',
         cities: 'Mumbai',
-        favoritFruit: 'apples',
+        favoriteFruit: 'apples',
         fruits: ['apples'],
         checkbox: false,
       }}
@@ -70,7 +70,7 @@ export const Basic = () => {
                 <FormControl.Label>Description</FormControl.Label>
                 <Textarea {...field} />
                 <FormControl.HelpText>
-                  Tell me about youself
+                  Tell me about yourself
                 </FormControl.HelpText>
 
                 {meta.touched && meta.error && (
@@ -98,7 +98,7 @@ export const Basic = () => {
             )}
           </Field>
 
-          <Field name="favoritFruit">
+          <Field name="favoriteFruit">
             {({ field }) => (
               <FormControl as="fieldset">
                 <FormControl.Label as="legend">
@@ -221,7 +221,7 @@ export const WithUseFormik = () => {
           id="description"
           value={formik.values.description}
         />
-        <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
+        <FormControl.HelpText>Tell me about yourself</FormControl.HelpText>
 
         {formik.touched.description && formik.errors.description && (
           <FormControl.ValidationMessage>
@@ -231,7 +231,7 @@ export const WithUseFormik = () => {
       </FormControl>
 
       <FormControl as="fieldset">
-        <FormControl.Label as="legend">Favorit fruit</FormControl.Label>
+        <FormControl.Label as="legend">Favorite fruit</FormControl.Label>
 
         <Radio.Group
           name="favoriteFruit"

@@ -64,7 +64,7 @@ export const UsedWithText = () => {
         Brandenburg
       </TextLink>
       , and contiguous with{' '}
-      <TextLink href="https://www.wikiwand.com/en/Potsdam" target="_blanck">
+      <TextLink href="https://www.wikiwand.com/en/Potsdam" target="_blank">
         Potsdam
       </TextLink>
       , Brandenburg’s capital. The two cities are at the center of the
