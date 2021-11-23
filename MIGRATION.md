@@ -78,6 +78,8 @@
     - [How to migrate your ToggleButton components](#how-to-migrate-your-togglebutton-components)
   - [Tooltip](#tooltip)
     - [How to migrate your Tooltip components](#how-to-migrate-your-tooltip-components)
+  - [Typography](#typography)
+    - [How to migrate your Typography components](#how-to-migrate-your-typography-components)
   - [Workbench](#workbench)
     - [How to migrate your Workbench components](#how-to-migrate-your-workbench-components)
 
@@ -2662,6 +2664,132 @@ import { Tooltip } from '@contentful/f36-components';
 <Tooltip content="content of the Tooltip" as="div" placement="left">
   <TextLink>Hover me</TextLink>.
 </Tooltip>;
+```
+
+### Typography
+
+In version 4, `Typography` component has been removed, and there are changes on the API of [Paragraph](https://v4.f36.contentful.com/components/paragraph/), [Heading](https://v4.f36.contentful.com/components/heading/), [SectionHeading](https://v4.f36.contentful.com/components/section-heading/), [Subheading](https://v4.f36.contentful.com/components/subheading/), and [DisplayText](https://v4.f36.contentful.com/components/display-text/) to align with our code [style guide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md).
+
+#### How to migrate your Typography components
+
+To migrate your `Typography` components to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+If you want to do it manually, you must transform your existing code as follows:
+
+```tsx
+import {
+  Heading,
+  Subheading,
+  SectionHeading,
+  Paragraph,
+  DisplayText,
+  Typography,
+} from '@contentful/forma-36-react-components';
+
+<Heading element="h4" className="className"></Heading>;
+
+<Subheading element="h2" className="className"></Subheading>;
+
+<SectionHeading element="h4" className="className"></SectionHeading>;
+
+<Paragraph element="p" className="className"></Paragraph>;
+
+<DisplayText size="huge" element="h4" className="className"></DisplayText>;
+
+<Typography>
+  <Heading element="h4" className="className"></Heading>
+</Typography>;
+
+<Typography>
+  <Subheading element="h2" className="className"></Subheading>
+</Typography>;
+
+<Typography>
+  <SectionHeading element="h4" className="className"></SectionHeading>
+</Typography>;
+
+<Typography>
+  <Paragraph element="p" className="className"></Paragraph>
+</Typography>;
+
+<Typography>
+  <DisplayText size="huge" element="h4" className="className"></DisplayText>
+</Typography>;
+
+<Typography>
+  <div>
+    <div>
+      <div>
+        <Paragraph element="p" className="className"></Paragraph>
+      </div>
+      <Subheading element="h2" className="className"></Subheading>
+    </div>
+  </div>
+</Typography>;
+```
+
+into:
+
+```tsx
+import {
+  Heading,
+  DisplayText,
+  Paragraph,
+  Subheading,
+  SectionHeading,
+} from '@contentful/f36-components';
+
+<Heading marginBottom="none" as="h4" className="className"></Heading>;
+
+<Subheading marginBottom="none" as="h2" className="className"></Subheading>;
+
+<SectionHeading
+  marginBottom="none"
+  as="h4"
+  className="className"
+></SectionHeading>;
+
+<Paragraph marginBottom="none" as="p" className="className"></Paragraph>;
+
+<DisplayText
+  marginBottom="none"
+  size="huge"
+  as="h4"
+  className="className"
+></DisplayText>;
+
+<React.Fragment>
+  <Heading as="h4" className="className"></Heading>
+</React.Fragment>;
+
+<React.Fragment>
+  <Subheading as="h2" className="className"></Subheading>
+</React.Fragment>;
+
+<React.Fragment>
+  <SectionHeading as="h4" className="className"></SectionHeading>
+</React.Fragment>;
+
+<React.Fragment>
+  <Paragraph as="p" className="className"></Paragraph>
+</React.Fragment>;
+
+<React.Fragment>
+  <DisplayText size="huge" as="h4" className="className"></DisplayText>
+</React.Fragment>;
+
+<React.Fragment>
+  <div>
+    <div>
+      <div>
+        <Paragraph as="p" className="className"></Paragraph>
+      </div>
+      <Subheading as="h2" className="className"></Subheading>
+    </div>
+  </div>
+</React.Fragment>;
 ```
 
 ### Workbench
