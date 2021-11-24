@@ -1,0 +1,31 @@
+---
+title: 'Editor Toolbar'
+status: 'deprecated'
+---
+
+# Editor Toolbar
+
+Edito Toolbar component got removed in version 4.
+
+Now instead of using this components:
+
+```tsx static=true
+<EditorToolbar>
+  <EditorToolbarButton
+    icon="FormatBold"
+    tooltip="Bold"
+    label="Bold"
+    isActive={false}
+  />
+</EditorToolbar>
+```
+
+You can have a look on this codesandbox to see how it might be done:
+
+<iframe
+  src="https://codesandbox.io/s/hopeful-worker-ivscb?file=/src/App.js:293-428?autoresize=1&fontsize=14&hidenavigation=1&theme=dark"
+  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+  title="EditorToolbar"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>

@@ -1,0 +1,27 @@
+---
+title: 'Typography'
+status: 'deprecated'
+---
+
+# Typography
+
+Typography component was removed in version 4. The main reason for this component was to mantain the spacing between typography components. In version 4 we gave this possiblity to each, individual typography component.
+Right now istead of wrapping your typography in `Typography` component, you can just set margin value to each insividual typography componennts.
+
+You might have used `Typography` in version 3 like that:
+
+```tsx static=true
+<Typography>
+  <Heading element="h4" className="className">
+    Some text
+  </Heading>
+</Typography>
+```
+
+All you need to do is to use this components directly, without a wrapper:
+
+```tsx static=true
+<Heading as="h4" className="className">
+  Some text
+</Heading>
+```

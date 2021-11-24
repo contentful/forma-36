@@ -185,7 +185,11 @@ export default function MDXPage({ mdxContent, frontmatter, propsMetadata }) {
                 <span className={styles.badge}>
                   <Badge
                     variant={
-                      frontmatter.status === 'alpha' ? 'warning' : 'positive'
+                      frontmatter.status === 'alpha'
+                        ? 'warning'
+                        : frontmatter?.status === 'deprecated'
+                        ? 'negative'
+                        : 'positive'
                     }
                   >
                     {frontmatter.status}

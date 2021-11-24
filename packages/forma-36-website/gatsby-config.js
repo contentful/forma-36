@@ -163,10 +163,22 @@ module.exports = {
             ],
           },
           {
+            name: 'Dropdown',
+            link: '/deprecated-components/dropdown/',
+          },
+          {
+            name: 'EditorToolbar',
+            link: '/deprecated-components/editor-toolbar',
+            status: 'deprecated',
+          },
+          {
+            name: 'EmptyState',
+            link: '/deprecated-components/empty-state',
+          },
+          {
             name: 'EntityList',
             link: '/components/entity-list/',
           },
-
           {
             name: 'Form Components',
             link: '',
@@ -212,6 +224,10 @@ module.exports = {
           {
             name: 'IconButton',
             link: '/components/icon-button/',
+          },
+          {
+            name: 'Illustration',
+            link: '/deprecated-components/illustration/',
           },
           {
             name: 'Layout Components',
@@ -312,6 +328,14 @@ module.exports = {
             link: '/components/spinner/',
           },
           {
+            name: 'TabFocusTrap',
+            link: '/deprecated-components/tab-focus-trap/',
+          },
+          {
+            name: 'Tag - deprecated',
+            link: '/components/badge/',
+          },
+          {
             name: 'Table',
             link: '/components/table/',
           },
@@ -335,6 +359,10 @@ module.exports = {
             name: 'Typography Components',
             link: '',
             menuLinks: [
+              {
+                name: 'Typography',
+                link: '/deprecated-components/typography/',
+              },
               {
                 name: 'Text',
                 link: '/components/text/',
