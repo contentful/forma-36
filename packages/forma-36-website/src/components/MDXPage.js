@@ -77,18 +77,14 @@ const styles = {
 /* eslint-disable react/display-name */
 const markToComponentMap = {
   h1: (props) => <DisplayText {...props} />,
-  h2: (props) => <Heading as="h2" {...props} />,
-  h3: (props) => <Subheading as="h3" {...props} />,
+  h2: (props) => <Heading as="h2" marginTop="spacing2Xl" {...props} />,
+  h3: (props) => <Subheading as="h3" marginTop="spacingL" {...props} />,
   h4: (props) => <Subheading as="h4" {...props} />,
   h5: (props) => <Subheading as="h5" {...props} />,
   h6: (props) => <Subheading as="h6" {...props} />,
   p: (props) => <Paragraph {...props} />,
   a: (props) => <TextLink {...props} />,
-  ul: (props) => (
-    <Box marginBottom="spacingM">
-      <List {...props} />
-    </Box>
-  ),
+  ul: (props) => <List {...props} />,
   li: (props) => <List.Item {...props} />,
   code: (props) => {
     if (props.static) {
@@ -173,7 +169,11 @@ export default function MDXPageV4({ mdxContent, frontmatter, propsMetadata }) {
 
             {frontmatter.v4Doc && (
               <>
-                <Heading as="h2" id="help-improve-this-page">
+                <Heading
+                  as="h2"
+                  id="help-improve-this-page"
+                  marginTop="spacing2Xl"
+                >
                   Help improve this page
                 </Heading>
                 <Stack>
