@@ -28,7 +28,6 @@ function _DisplayText<
     children,
     size = 'default',
     testId = 'cf-ui-display-text',
-    as,
     ...otherProps
   }: DisplayTextProps<E>,
   ref: React.Ref<any>,
