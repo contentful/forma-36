@@ -2685,49 +2685,27 @@ import {
   SectionHeading,
   Paragraph,
   DisplayText,
-  Typography,
 } from '@contentful/forma-36-react-components';
 
-<Heading element="h4" className="className"></Heading>;
+<Heading element="h4" className="className">
+  Some text
+</Heading>;
 
-<Subheading element="h2" className="className"></Subheading>;
+<Subheading element="h2" className="className">
+  Some text
+</Subheading>;
 
-<SectionHeading element="h4" className="className"></SectionHeading>;
+<SectionHeading element="h4" className="className">
+  Some text
+</SectionHeading>;
 
-<Paragraph element="p" className="className"></Paragraph>;
+<Paragraph element="p" className="className">
+  Some text
+</Paragraph>;
 
-<DisplayText size="huge" element="h4" className="className"></DisplayText>;
-
-<Typography>
-  <Heading element="h4" className="className"></Heading>
-</Typography>;
-
-<Typography>
-  <Subheading element="h2" className="className"></Subheading>
-</Typography>;
-
-<Typography>
-  <SectionHeading element="h4" className="className"></SectionHeading>
-</Typography>;
-
-<Typography>
-  <Paragraph element="p" className="className"></Paragraph>
-</Typography>;
-
-<Typography>
-  <DisplayText size="huge" element="h4" className="className"></DisplayText>
-</Typography>;
-
-<Typography>
-  <div>
-    <div>
-      <div>
-        <Paragraph element="p" className="className"></Paragraph>
-      </div>
-      <Subheading element="h2" className="className"></Subheading>
-    </div>
-  </div>
-</Typography>;
+<DisplayText size="huge" element="h4" className="className">
+  Some text
+</DisplayText>;
 ```
 
 into:
@@ -2741,55 +2719,131 @@ import {
   SectionHeading,
 } from '@contentful/f36-components';
 
-<Heading marginBottom="none" as="h4" className="className"></Heading>;
+<Heading marginBottom="none" as="h4" className="className">
+  Some text
+</Heading>;
 
-<Subheading marginBottom="none" as="h2" className="className"></Subheading>;
+<Subheading marginBottom="none" as="h2" className="className">
+  Some text
+</Subheading>;
 
-<SectionHeading
-  marginBottom="none"
-  as="h4"
-  className="className"
-></SectionHeading>;
+<SectionHeading marginBottom="none" as="h4" className="className">
+  Some text
+</SectionHeading>;
 
-<Paragraph marginBottom="none" as="p" className="className"></Paragraph>;
+<Paragraph marginBottom="none" as="p" className="className">
+  Some text
+</Paragraph>;
 
-<DisplayText
-  marginBottom="none"
-  size="huge"
-  as="h4"
-  className="className"
-></DisplayText>;
+<DisplayText marginBottom="none" size="huge" as="h4" className="className">
+  Some text
+</DisplayText>;
+```
 
+For components wrapped with Typography component, change:
+
+```tsx
+<Typography>
+  <Heading element="h4" className="className">
+    Some text
+  </Heading>
+</Typography>;
+
+<Typography>
+  <Subheading element="h2" className="className">
+    Some text
+  </Subheading>
+</Typography>;
+
+<Typography>
+  <SectionHeading element="h4" className="className">
+    Some text
+  </SectionHeading>
+</Typography>;
+
+<Typography>
+  <Paragraph element="p" className="className">
+    Some text
+  </Paragraph>
+</Typography>;
+
+<Typography>
+  <DisplayText size="huge" element="h4" className="className">
+    Some text
+  </DisplayText>
+</Typography>;
+```
+
+into:
+
+```tsx
 <React.Fragment>
-  <Heading as="h4" className="className"></Heading>
+  <Heading as="h4" className="className">
+    Some text
+  </Heading>
 </React.Fragment>;
 
 <React.Fragment>
-  <Subheading as="h2" className="className"></Subheading>
+  <Subheading as="h2" className="className">
+    Some text
+  </Subheading>
 </React.Fragment>;
 
 <React.Fragment>
-  <SectionHeading as="h4" className="className"></SectionHeading>
+  <SectionHeading as="h4" className="className">
+    Some text
+  </SectionHeading>
 </React.Fragment>;
 
 <React.Fragment>
-  <Paragraph as="p" className="className"></Paragraph>
+  <Paragraph as="p" className="className">
+    Some text
+  </Paragraph>
 </React.Fragment>;
 
 <React.Fragment>
-  <DisplayText size="huge" as="h4" className="className"></DisplayText>
+  <DisplayText size="huge" as="h4" className="className">
+    Some text
+  </DisplayText>
 </React.Fragment>;
+```
 
+For deeply nested components, change:
+
+```tsx
+<Typography>
+  <div>
+    <div>
+      <div>
+        <Paragraph element="p" className="className">
+          Some text
+        </Paragraph>
+      </div>
+      <Subheading element="h2" className="className">
+        Some text
+      </Subheading>
+    </div>
+  </div>
+</Typography>
+```
+
+into:
+
+```tsx
 <React.Fragment>
   <div>
     <div>
       <div>
-        <Paragraph as="p" className="className"></Paragraph>
+        <Paragraph as="p" className="className">
+          Some text
+        </Paragraph>
       </div>
-      <Subheading as="h2" className="className"></Subheading>
+      <Subheading as="h2" className="className">
+        Some text
+      </Subheading>
     </div>
   </div>
-</React.Fragment>;
+</React.Fragment>
 ```
 
 ### Workbench
