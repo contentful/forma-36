@@ -1,6 +1,6 @@
 const PACKAGES_UPGRADE = {
-  '@contentful/f36-components': '4.0.1-beta.2527',
-  '@contentful/f36-tokens': '4.0.1-beta.2527',
+  '@contentful/f36-components': 'latest',
+  '@contentful/f36-tokens': 'latest',
 };
 
 const PACKAGES_REMOVE = [
