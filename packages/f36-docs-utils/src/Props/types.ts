@@ -1,7 +1,7 @@
 export interface PropType {
   name: string;
   raw?: string;
-  value?: any;
+  value?: { value: string }[];
 }
 
 export interface PropDefinition {
