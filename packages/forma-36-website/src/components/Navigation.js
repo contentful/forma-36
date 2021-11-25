@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 import { css, cx } from 'emotion';
 
 import tokens from '@contentful/f36-tokens';
-import { SectionHeading } from '@contentful/f36-components';
+import { SectionHeading, Badge } from '@contentful/f36-components';
 import { ChevronDownIcon, ChevronRightIcon } from '@contentful/f36-icons';
 
 import DocSearch from './DocSearch';
@@ -88,6 +88,17 @@ const categories = [
   'Integrations',
 ];
 
+const deprecated = [
+  'EditorToolbar',
+  'Dropdown',
+  'EmptyState',
+  'Illustration',
+  'Typography Component',
+  'Tag',
+  'InViewport',
+  'TabFocusTrap',
+];
+
 const checkActive = (item, currentPath) => {
   if (item.link === currentPath) {
     return true;
@@ -102,6 +113,8 @@ const checkActive = (item, currentPath) => {
 const MenuListItem = React.forwardRef(
   ({ item, currentPath, isActive, hierarchyLevel }, ref) => {
     const isCategory = categories.includes(item.name);
+    const isDeprecated = deprecated.includes(item.name);
+
     const [isExpanded, setIsExpanded] = useState(isActive || isCategory);
 
     const handleToggle = (event) => {
@@ -166,6 +179,8 @@ const MenuListItem = React.forwardRef(
             ) : (
               item.name
             )}
+
+            {isDeprecated && <Badge variant="negative">deprecated</Badge>}
           </Link>
         )}
       </li>
