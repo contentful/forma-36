@@ -176,7 +176,7 @@ export default function MDXPage({ mdxContent, frontmatter, propsMetadata }) {
                   Help improve this page
                 </Heading>
                 <Stack>
-                  <TextLink href={frontmatter.githubUrl} target="_blank">
+                  <TextLink href={frontmatter.github} target="_blank">
                     Edit on Github
                   </TextLink>
 
@@ -198,7 +198,7 @@ MDXPage.propTypes = {
   frontmatter: PropTypes.shape({
     type: PropTypes.string,
     title: PropTypes.string,
-    githubUrl: PropTypes.string,
+    github: PropTypes.string,
     storybookUrl: PropTypes.string,
     status: PropTypes.string,
   }).isRequired,
