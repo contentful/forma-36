@@ -298,10 +298,6 @@ module.exports = {
             link: '/components/popover/',
           },
           {
-            name: 'Portal',
-            link: '/deprecated-components/portal/',
-          },
-          {
             name: 'ScreenReaderOnly',
             link: '/components/screen-reader-only/',
           },

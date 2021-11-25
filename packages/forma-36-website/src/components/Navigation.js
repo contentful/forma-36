@@ -95,7 +95,6 @@ const deprecated = [
   'Illustration',
   'Typography Component',
   'Tag',
-  'Portal',
   'InViewport',
   'TabFocusTrap',
 ];
