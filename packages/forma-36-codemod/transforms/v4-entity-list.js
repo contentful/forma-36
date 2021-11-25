@@ -5,6 +5,8 @@ const {
   removeComponentImport,
   renameProperties,
   changeComponentName,
+  hasProperty,
+  warningMessage,
 } = require('../utils');
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
 const { pipe } = require('./common/pipe');
@@ -49,6 +51,17 @@ function entityListItemCodemod(file, api) {
   source = changeProperties(j, source, {
     componentName,
     fn(attributes) {
+      if (
+        hasProperty(attributes, {
+          propertyName: 'dropdownListElements',
+        })
+      ) {
+        warningMessage(
+          '`dropdownListElements` was renamed to `actions` and updated to use the new `Menu.Item` component. Please manually update this prop value.',
+          { file },
+        );
+      }
+
       return renameProperties(attributes, {
         renameMap: {
           dropdownListElements: 'actions',
