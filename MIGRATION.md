@@ -28,6 +28,8 @@
     - [How to migrate your Dropdown components](#how-to-migrate-your-dropdown-components)
     - [`Dropdown` to `Menu`](#dropdown-to-menu)
     - [`Dropdown` to `Popover`](#dropdown-to-popover)
+  - [EntityList](#entitylist)
+    - [How to migrate your EntityList components](#how-to-migrate-your-entitylist-components)
   - [Icon](#icon)
     - [How to migrate your Icon components](#how-to-migrate-your-icon-components)
   - [IconButton](#iconbutton)
@@ -513,7 +515,7 @@ This is an overview of the changed props:
 - `isDragActive` was renamed to `isDragging`
 - `statusIcon` was renamed to `icon`, and now expects an Icon component
 - `cardDragHandleProps` was renamed to `dragHandleProps`
-- `dropdownListElements` was updated to use the new `Menu` component and should receive an array of `Menu.Items`. For more information, see the Menu [documentation](https://v4.f36.contentful.com/components/menu/).
+- `dropdownListElements` was renamed to `actions` and updated to use the new `Menu` component. It should receive an array of `Menu.Item`. For more information, see the Menu [documentation](https://v4.f36.contentful.com/components/menu/).
 
 #### How to migrate your Card components
 
@@ -1046,6 +1048,80 @@ const [isPopoverOpen, setIsPopoverOpen] = React.useState(false);
     </FocusLock>
   </Popover.Content>
 </Popover>;
+```
+
+### EntityList
+
+In v4, the EntityList component has received API improvements. Here is an overview of the changes:
+
+- `EntityList` became a compound component. Instead of `EntityListItem` you can use `EntityList.Item`
+- `dropdownListElements` prop was renamed to `actions` and updated to use the new `Menu` component. It should receive an array of `Menu.Item`. For more information, see the EntityList [code examples](https://v4-forma-36.netlify.app/components/entity-list/#code-examples) and Menu [documentation](https://v4.f36.contentful.com/components/menu/).
+
+#### How to migrate your EntityList components
+
+To migrate the `EntityList` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod):
+
+`npx @contentful/f36-codemod`
+
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
+
+Note: The `actions` prop value update should be done manually. Codemod will not update it to use the new `Menu.Item` component.
+
+The example of changes:
+
+```tsx static=true
+import {
+  EntityList,
+  EntityListItem,
+} from '@contentful/forma-36-react-components';
+
+<EntityList>
+  <EntityListItem
+    title="Entry 1"
+    description="Description"
+    contentType="My content type"
+    status="published"
+    dropdownListElements={
+      <DropdownList>
+        <DropdownListItem>Edit</DropdownListItem>
+        <DropdownListItem>Download</DropdownListItem>
+        <DropdownListItem>Remove</DropdownListItem>
+      </DropdownList>
+    }
+  />
+  <EntityListItem
+    title="Entry 2"
+    description="Description"
+    contentType="My content type"
+    status="draft"
+  />
+</EntityList>;
+```
+
+becomes:
+
+```tsx static=true
+import { EntityList, MenuItem } from '@contentful/f36-components';
+
+<EntityList>
+  <EntityList.Item
+    title="Entry 1"
+    description="Description"
+    contentType="My content type"
+    status="published"
+    actions={[
+      <MenuItem key="edit">Edit</MenuItem>,
+      <MenuItem key="download">Download</MenuItem>,
+      <MenuItem key="remove">Remove</MenuItem>,
+    ]}
+  />
+  <EntityList.Item
+    title="Entry 2"
+    description="Description"
+    contentType="My content type"
+    status="draft"
+  />
+</EntityList>;
 ```
 
 ### Icon
