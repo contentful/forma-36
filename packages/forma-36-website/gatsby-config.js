@@ -125,7 +125,7 @@ module.exports = {
             link: '/components/autocomplete/',
           },
           {
-            name: 'Badge (old Tag)',
+            name: 'Badge',
             link: '/components/badge/',
           },
           {
@@ -230,6 +230,10 @@ module.exports = {
             link: '/deprecated-components/illustration/',
           },
           {
+            name: 'InViewport',
+            link: '/deprecated-components/in-viewport/',
+          },
+          {
             name: 'Layout Components',
             link: '',
             menuLinks: [
@@ -294,6 +298,10 @@ module.exports = {
             link: '/components/popover/',
           },
           {
+            name: 'Portal',
+            link: '/deprecated-components/portal/',
+          },
+          {
             name: 'ScreenReaderOnly',
             link: '/components/screen-reader-only/',
           },
@@ -332,8 +340,8 @@ module.exports = {
             link: '/deprecated-components/tab-focus-trap/',
           },
           {
-            name: 'Tag - deprecated',
-            link: '/components/badge/',
+            name: 'Tag',
+            link: '/deprecated-components/tag',
           },
           {
             name: 'Table',
@@ -360,7 +368,7 @@ module.exports = {
             link: '',
             menuLinks: [
               {
-                name: 'Typography',
+                name: 'Typography Component',
                 link: '/deprecated-components/typography/',
               },
               {
