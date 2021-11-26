@@ -1,6 +1,669 @@
 const path = require('path');
 
 export const propsMetadata = {
+  Autocomplete: {
+    tags: {},
+    description:
+      'The Autocomplete is a component that will show a `TextInput` where a user can type any word which will be used\nto filter a list of items. That list of filtered items will be shown to the user as possible options for the input.\nOnce one of the options is selected, that option becomes the value of the `TextInput`.',
+    displayName: 'Autocomplete',
+    methods: [],
+    props: {
+      items: {
+        defaultValue: null,
+        description:
+          'It’s an array of data to be used as "options" by the autocomplete component.\ndefined as any, because in this moment we do not know if items is a group',
+        name: 'items',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+          name: 'AutocompleteProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+            name: 'AutocompleteProps',
+          },
+        ],
+        required: true,
+        type: {
+          name: 'enum',
+          raw: 'T[] | GenericGroupType<T>[]',
+          value: [
+            {
+              value: 'T[]',
+            },
+            {
+              value: 'GenericGroupType<T>[]',
+            },
+          ],
+        },
+      },
+      isGrouped: {
+        defaultValue: null,
+        description: 'Tells if the item is a object with groups',
+        name: 'isGrouped',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+          name: 'AutocompleteProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+            name: 'AutocompleteProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'enum',
+          raw: 'boolean',
+          value: [
+            {
+              value: 'false',
+            },
+            {
+              value: 'true',
+            },
+          ],
+        },
+      },
+      onInputValueChange: {
+        defaultValue: null,
+        description: 'Function called whenever the input value changes',
+        name: 'onInputValueChange',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+          name: 'AutocompleteProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+            name: 'AutocompleteProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: '(value: string) => void',
+        },
+      },
+      onSelectItem: {
+        defaultValue: null,
+        description:
+          'This is the function that will be called when the user selects one of the "options" in the list.\nIt receives the selected item as an argument and it needs to return a string that will be set as the value of `TextInput`.',
+        name: 'onSelectItem',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+          name: 'AutocompleteProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+            name: 'AutocompleteProps',
+          },
+        ],
+        required: true,
+        type: {
+          name: '(item: T) => void',
+        },
+      },
+      renderItem: {
+        defaultValue: null,
+        description:
+          'This is the function that will be called for each "item" passed in the `items` prop.\nIt receives the "item" and "inputValue" as arguments and returns a ReactNode.\nThe inputValue is passed in case you want to highlight the match on the render.',
+        name: 'renderItem',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+          name: 'AutocompleteProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+            name: 'AutocompleteProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: '(item: T, inputValue: string) => ReactNode',
+        },
+      },
+      itemToString: {
+        defaultValue: null,
+        description:
+          'When using objects as `items`, we recommend passing a function that tells Downshift how to extract a string\nfrom those objetcs to be used as inputValue',
+        name: 'itemToString',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+          name: 'AutocompleteProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+            name: 'AutocompleteProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: '(item: T) => string',
+        },
+      },
+      clearAfterSelect: {
+        defaultValue: {
+          value: 'false',
+        },
+        description:
+          'If this is set to `true` the text input will be cleared after an item is selected',
+        name: 'clearAfterSelect',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+          name: 'AutocompleteProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+            name: 'AutocompleteProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'enum',
+          raw: 'boolean',
+          value: [
+            {
+              value: 'false',
+            },
+            {
+              value: 'true',
+            },
+          ],
+        },
+      },
+      placeholder: {
+        defaultValue: {
+          value: '"Search"',
+        },
+        description:
+          'This is the value will be passed to the `placeholder` prop of the input.',
+        name: 'placeholder',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+          name: 'AutocompleteProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+            name: 'AutocompleteProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'string',
+        },
+      },
+      noMatchesMessage: {
+        defaultValue: {
+          value: '"No matches"',
+        },
+        description:
+          'A message that will be shown when it is not possible to find any option that matches the input value',
+        name: 'noMatchesMessage',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+          name: 'AutocompleteProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+            name: 'AutocompleteProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'string',
+        },
+      },
+      inputRef: {
+        defaultValue: null,
+        description:
+          'Use this prop to get a ref to the input element of the component',
+        name: 'inputRef',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+          name: 'AutocompleteProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+            name: 'AutocompleteProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'enum',
+          raw: 'Ref<HTMLInputElement>',
+          value: [
+            {
+              value: '(instance: HTMLInputElement) => void',
+            },
+            {
+              value: 'RefObject<HTMLInputElement>',
+            },
+          ],
+        },
+      },
+      toggleRef: {
+        defaultValue: null,
+        description:
+          'Use this prop to get a ref to the toggle button of the component',
+        name: 'toggleRef',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+          name: 'AutocompleteProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+            name: 'AutocompleteProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'enum',
+          raw: 'Ref<HTMLButtonElement>',
+          value: [
+            {
+              value: '(instance: HTMLButtonElement) => void',
+            },
+            {
+              value: 'RefObject<HTMLButtonElement>',
+            },
+          ],
+        },
+      },
+      listRef: {
+        defaultValue: null,
+        description:
+          'Use this prop to get a ref to the list of items of the component',
+        name: 'listRef',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+          name: 'AutocompleteProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+            name: 'AutocompleteProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'enum',
+          raw: 'Ref<HTMLUListElement>',
+          value: [
+            {
+              value: '(instance: HTMLUListElement) => void',
+            },
+            {
+              value: 'RefObject<HTMLUListElement>',
+            },
+          ],
+        },
+      },
+      listWidth: {
+        defaultValue: {
+          value: '"auto"',
+        },
+        description: 'It sets the width of the list',
+        name: 'listWidth',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+          name: 'AutocompleteProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+            name: 'AutocompleteProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'enum',
+          raw: '"auto" | "full"',
+          value: [
+            {
+              value: '"auto"',
+            },
+            {
+              value: '"full"',
+            },
+          ],
+        },
+      },
+      listMaxHeight: {
+        defaultValue: {
+          value: '180',
+        },
+        description:
+          'It sets the max-height, in pixels, of the list\nThe default value is the height of 5 single line items',
+        name: 'listMaxHeight',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+          name: 'AutocompleteProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+            name: 'AutocompleteProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'number',
+        },
+      },
+      isLoading: {
+        defaultValue: {
+          value: 'false',
+        },
+        description: 'Sets the list to show its loading state',
+        name: 'isLoading',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+          name: 'AutocompleteProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+            name: 'AutocompleteProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'enum',
+          raw: 'boolean',
+          value: [
+            {
+              value: 'false',
+            },
+            {
+              value: 'true',
+            },
+          ],
+        },
+      },
+      className: {
+        defaultValue: null,
+        description: 'CSS class to be appended to the root element',
+        name: 'className',
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/core/dist/types.d.ts',
+            name: 'TypeLiteral',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'string',
+        },
+      },
+      testId: {
+        defaultValue: null,
+        description: 'A [data-test-id] attribute used for testing purposes',
+        name: 'testId',
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/core/dist/types.d.ts',
+            name: 'TypeLiteral',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'string',
+        },
+      },
+      style: {
+        defaultValue: null,
+        description:
+          'Accepts a JavaScript object with camelCased properties rather than a CSS string',
+        name: 'style',
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/core/dist/types.d.ts',
+            name: 'TypeLiteral',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'CSSProperties',
+        },
+      },
+      isDisabled: {
+        defaultValue: {
+          value: 'false',
+        },
+        description: 'Applies disabled styles',
+        name: 'isDisabled',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/forms/dist/types.d.ts',
+          name: 'BaseInputInternalProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/forms/dist/types.d.ts',
+            name: 'BaseInputInternalProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'enum',
+          raw: 'boolean',
+          value: [
+            {
+              value: 'false',
+            },
+            {
+              value: 'true',
+            },
+          ],
+        },
+      },
+      isInvalid: {
+        defaultValue: {
+          value: 'false',
+        },
+        description: 'Applies invalid styles',
+        name: 'isInvalid',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/forms/dist/types.d.ts',
+          name: 'BaseInputInternalProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/forms/dist/types.d.ts',
+            name: 'BaseInputInternalProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'enum',
+          raw: 'boolean',
+          value: [
+            {
+              value: 'false',
+            },
+            {
+              value: 'true',
+            },
+          ],
+        },
+      },
+      isReadOnly: {
+        defaultValue: {
+          value: 'false',
+        },
+        description: 'Applies read-only styles',
+        name: 'isReadOnly',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/forms/dist/types.d.ts',
+          name: 'BaseInputInternalProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/forms/dist/types.d.ts',
+            name: 'BaseInputInternalProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'enum',
+          raw: 'boolean',
+          value: [
+            {
+              value: 'false',
+            },
+            {
+              value: 'true',
+            },
+          ],
+        },
+      },
+      isRequired: {
+        defaultValue: {
+          value: 'false',
+        },
+        description: 'Validate the input',
+        name: 'isRequired',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/forms/dist/types.d.ts',
+          name: 'BaseInputInternalProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/forms/dist/types.d.ts',
+            name: 'BaseInputInternalProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'enum',
+          raw: 'boolean',
+          value: [
+            {
+              value: 'false',
+            },
+            {
+              value: 'true',
+            },
+          ],
+        },
+      },
+      id: {
+        defaultValue: null,
+        description: 'Sets the id of the input',
+        name: 'id',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/forms/dist/types.d.ts',
+          name: 'BaseInputInternalProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/forms/dist/types.d.ts',
+            name: 'BaseInputInternalProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'string',
+        },
+      },
+      defaultValue: {
+        defaultValue: null,
+        description: "Set's default value for text input",
+        name: 'defaultValue',
+        parent: {
+          fileName:
+            '/Users/gui.santos/Contentful/forma-36/packages/components/forms/dist/types.d.ts',
+          name: 'TextInputProps',
+        },
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/forms/dist/types.d.ts',
+            name: 'TextInputProps',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'string',
+        },
+      },
+      ref: {
+        defaultValue: null,
+        description: '',
+        name: 'ref',
+        declarations: [
+          {
+            fileName:
+              '/Users/gui.santos/Contentful/forma-36/packages/components/autocomplete/src/Autocomplete.tsx',
+            name: 'TypeLiteral',
+          },
+        ],
+        required: false,
+        type: {
+          name: 'enum',
+          raw: 'Ref<HTMLDivElement>',
+          value: [
+            {
+              value: '(instance: HTMLDivElement) => void',
+            },
+            {
+              value: 'RefObject<HTMLDivElement>',
+            },
+          ],
+        },
+      },
+    },
+  },
   Accordion: {
     tags: {},
     description: '',

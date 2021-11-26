@@ -1,5 +1,5 @@
 import React from 'react';
-import { Props, PropsProvider } from '../src/Props';
+import { Props, PropsContextProvider } from '../src/Props';
 
 export default {
   title: '(used in F36 website)/Props',
@@ -10,16 +10,16 @@ import { propsMetadata } from './mockPropsMetadata';
 
 export const Basic = () => {
   return (
-    <PropsProvider metadata={propsMetadata}>
-      <Props of="Accordion" />
-    </PropsProvider>
+    <PropsContextProvider value={{ ...propsMetadata }}>
+      <Props of="Autocomplete" />
+    </PropsContextProvider>
   );
 };
 
 export const WithDataFromButton = () => {
   return (
-    <PropsProvider metadata={propsMetadata}>
+    <PropsContextProvider value={{ ...propsMetadata }}>
       <Props of="Button" />
-    </PropsProvider>
+    </PropsContextProvider>
   );
 };

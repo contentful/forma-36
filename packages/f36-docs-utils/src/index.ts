@@ -1,1 +1,1 @@
-export { Props, PropsProvider } from './Props';
+export { Props, PropsContextProvider } from './Props';

@@ -1,2 +1,2 @@
 export { Props } from './Props';
-export { PropsProvider, useProps } from './PropsProvider';
+export { PropsContextProvider, usePropsContext } from './PropsContext';

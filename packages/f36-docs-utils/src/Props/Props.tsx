@@ -8,7 +8,8 @@ import {
 } from '@contentful/f36-components';
 
 import { getPropsStyles } from './Props.styles';
-import { useProps } from './PropsProvider';
+
+import { usePropsOf } from './PropsContext';
 import { PropertyValue } from './PropertyValue';
 import { PropertyType } from './PropertyType';
 
@@ -18,15 +19,15 @@ interface PropsProps {
 
 export function Props({ of }: PropsProps) {
   const styles = getPropsStyles();
-  const metadata = useProps({ of });
+  const componentProps = usePropsOf(of);
 
-  if (metadata.main.length === 0) {
+  if (componentProps.length === 0) {
     return null;
   }
 
   return (
     <List className={styles.list}>
-      {[...metadata.main, ...metadata.additional].map((item, idx) => {
+      {componentProps.map((item, idx) => {
         return (
           <List.Item key={idx} className={styles.listItem}>
             <Grid columns="20% 1fr" columnGap="spacingM" rowGap="spacingM">
