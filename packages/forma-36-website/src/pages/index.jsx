@@ -33,10 +33,8 @@ function IndexPage() {
         </Paragraph>
         <Resources>
           <Resource
-            title="Prototype in Figma with Forma 36 components"
-            description="Copy the F36 UI Kit to Figma, publish it as a Team library and start prototyping. You need a Figma account to do this."
-            linkText="Copy F36 UI Kit to Figma"
-            linkHref="https://www.figma.com/file/xkNH4KddWvI5Zrkbi6CYZJ/F36-UI-Kit/duplicate"
+            title="New version of the UIKit is still in progress"
+            description="Fresh UIKit will be released with version 4 of Forma 36"
             imageNode={
               <img src={uiKitImg} alt="Illustration for Forma 36 UI Kit" />
             }
