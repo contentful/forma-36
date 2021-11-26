@@ -30,9 +30,9 @@ export function Props({ of }: PropsProps) {
             key={idx}
             style={{ padding: '1rem 0', borderBottom: '1px solid black' }}
           >
-            <Grid columns="20% 1fr" columnGap="spacingM">
+            <Grid columns="20% 1fr" columnGap="spacingM" rowGap="spacingM">
               <Text>Name</Text>
-              <Subheading>
+              <Subheading marginBottom="none">
                 {item.name}
                 {item.required && '*'}
               </Subheading>
@@ -40,7 +40,7 @@ export function Props({ of }: PropsProps) {
               {item.description && (
                 <>
                   <Text>Description</Text>
-                  <Paragraph>{item.description}</Paragraph>
+                  <Paragraph marginBottom="none">{item.description}</Paragraph>
                 </>
               )}
 

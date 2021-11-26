@@ -1,5 +1,4 @@
 import React from 'react';
-import { TextLink, Tooltip } from '@contentful/f36-components';
 
 import type { PropType } from '../types';
 import { PropertyValue } from '../PropertyValue';
@@ -18,24 +17,6 @@ function EnumPropertyType({ type }: EnumPropertyTypeProps) {
   );
 }
 
-function LookupPropertyType({ type }: { type: PropType }) {
-  const [visible, setVisible] = React.useState(false);
-  if (visible) {
-    return <EnumPropertyType type={type} />;
-  }
-  return (
-    <Tooltip placement="top" content="Click to lookup">
-      <TextLink
-        onClick={() => {
-          setVisible(true);
-        }}
-      >
-        {type.raw}
-      </TextLink>
-    </Tooltip>
-  );
-}
-
 interface PropertyTypeProps {
   type: PropType;
   name: string;
@@ -44,10 +25,7 @@ interface PropertyTypeProps {
 export function PropertyType({ type, name }: PropertyTypeProps) {
   if (name === 'as') {
     return (
-      <>
-        HTML Tag or React Component (e.g. <code>div</code>, <code>span</code>,
-        etc)
-      </>
+      <PropertyValue value="HTML Tag or React Component (e.g. div, span, etc)" />
     );
   }
 
@@ -56,10 +34,7 @@ export function PropertyType({ type, name }: PropertyTypeProps) {
   }
 
   if (type.name === 'enum') {
-    if (type.value.length < 4) {
-      return <EnumPropertyType type={type} />;
-    }
-    return <LookupPropertyType type={type} />;
+    return <EnumPropertyType type={type} />;
   }
 
   return <PropertyValue value={type.name} />;
