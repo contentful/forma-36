@@ -31,15 +31,19 @@ export function Props({ of }: PropsProps) {
         return (
           <List.Item key={idx} className={styles.listItem}>
             <Grid columns="20% 1fr" columnGap="spacingM" rowGap="spacingM">
-              <Text>Name</Text>
+              <Text fontColor="gray500">Name</Text>
               <Subheading marginBottom="none">
                 {item.name}
-                {item.required && '*'}
+                {item.required && (
+                  <Text marginLeft="spacingXs" fontColor="gray500">
+                    (required)
+                  </Text>
+                )}
               </Subheading>
 
               {item.description && (
                 <>
-                  <Text>Description</Text>
+                  <Text fontColor="gray500">Description</Text>
                   <Paragraph marginBottom="none">{item.description}</Paragraph>
                 </>
               )}
@@ -50,7 +54,7 @@ export function Props({ of }: PropsProps) {
 
               {item.defaultValue && (
                 <>
-                  <Text>Default</Text>
+                  <Text fontColor="gray500">Default</Text>
                   <PropertyValue value={item.defaultValue.value} />
                 </>
               )}
