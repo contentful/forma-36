@@ -1,19 +1,18 @@
 import React from 'react';
 import { Box, Text } from '@contentful/f36-components';
 
+import { getPropertyValueStyles } from './PropertyValue.styles';
+
 interface PropertyValueProps {
   value: string;
 }
 
 export function PropertyValue({ value }: PropertyValueProps) {
+  const styles = getPropertyValueStyles();
+
   return (
     <Box
-      style={{
-        display: 'inline-block',
-        justifySelf: 'flex-start',
-        backgroundColor: 'cyan',
-        borderRadius: '4px',
-      }}
+      className={styles.tag}
       paddingLeft="spacingXs"
       paddingRight="spacingXs"
       marginRight="spacingXs"

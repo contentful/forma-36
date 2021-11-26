@@ -7,6 +7,7 @@ import {
   Text,
 } from '@contentful/f36-components';
 
+import { getPropsStyles } from './Props.styles';
 import { useProps } from './PropsProvider';
 import { PropertyValue } from './PropertyValue';
 import { PropertyType } from './PropertyType';
@@ -16,6 +17,7 @@ interface PropsProps {
 }
 
 export function Props({ of }: PropsProps) {
+  const styles = getPropsStyles();
   const metadata = useProps({ of });
 
   if (metadata.main.length === 0) {
@@ -23,13 +25,10 @@ export function Props({ of }: PropsProps) {
   }
 
   return (
-    <List style={{ listStyleType: 'none' }}>
+    <List className={styles.list}>
       {[...metadata.main, ...metadata.additional].map((item, idx) => {
         return (
-          <List.Item
-            key={idx}
-            style={{ padding: '1rem 0', borderBottom: '1px solid black' }}
-          >
+          <List.Item key={idx} className={styles.listItem}>
             <Grid columns="20% 1fr" columnGap="spacingM" rowGap="spacingM">
               <Text>Name</Text>
               <Subheading marginBottom="none">
