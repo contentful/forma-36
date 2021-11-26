@@ -145,7 +145,6 @@ module.exports = function (plop) {
         type: 'add',
         path: `../packages/components/${packageName}/NEW_${componentName}.mdx`,
         templateFile: './plop-templates/package/v4ComponentDoc.mdx.hbs',
-        // data: { transform },
       });
 
       return actions;
