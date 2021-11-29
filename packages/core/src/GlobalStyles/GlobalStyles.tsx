@@ -6,6 +6,9 @@ import tokens from '@contentful/f36-tokens';
 export const GlobalStyles = ({
   withNormalize = true,
 }: {
+  /**
+   * Determines if the browser common style should be normalized
+   */
   withNormalize?: boolean;
 }) => {
   return (
