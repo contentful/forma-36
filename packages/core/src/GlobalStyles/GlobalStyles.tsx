@@ -7,7 +7,9 @@ export const GlobalStyles = ({
   withNormalize = true,
 }: {
   /**
-   * Determines if the browser common style should be normalized
+   * Determines if normalise.css should be added, [more info](https://github.com/necolas/normalize.css)
+   * 
+   * @default true
    */
   withNormalize?: boolean;
 }) => {
