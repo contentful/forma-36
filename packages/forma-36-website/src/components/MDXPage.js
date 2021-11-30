@@ -106,7 +106,6 @@ const markToComponentMap = {
 /* eslint-enable react/display-name */
 
 export default function MDXPage({ mdxContent, frontmatter, propsMetadata }) {
-  console.log(propsMetadata);
   return (
     <Box className={styles.pageContent}>
       <PropsContextProvider value={{ ...propsMetadata }}>
@@ -204,7 +203,7 @@ MDXPage.propTypes = {
     type: PropTypes.string,
     title: PropTypes.string,
     github: PropTypes.string,
-    storybookUrl: PropTypes.string,
+    storybook: PropTypes.string,
     status: PropTypes.string,
   }).isRequired,
   propsMetadata: PropTypes.object.isRequired,
