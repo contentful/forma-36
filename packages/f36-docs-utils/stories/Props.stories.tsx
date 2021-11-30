@@ -16,6 +16,14 @@ export const Basic = () => {
   );
 };
 
+export const WithDataFromAccordion = () => {
+  return (
+    <PropsContextProvider value={{ ...propsMetadata }}>
+      <Props of="Accordion" />
+    </PropsContextProvider>
+  );
+};
+
 export const WithDataFromButton = () => {
   return (
     <PropsContextProvider value={{ ...propsMetadata }}>
