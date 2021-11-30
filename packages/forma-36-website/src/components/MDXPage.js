@@ -5,7 +5,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import tokens from '@contentful/f36-tokens';
-import { PropsProvider } from '@contentful/f36-docs-utils';
+import { PropsContextProvider } from '@contentful/f36-docs-utils';
 import {
   Badge,
   Box,
@@ -106,9 +106,10 @@ const markToComponentMap = {
 /* eslint-enable react/display-name */
 
 export default function MDXPage({ mdxContent, frontmatter, propsMetadata }) {
+  console.log(propsMetadata);
   return (
     <Box className={styles.pageContent}>
-      <PropsProvider metadata={propsMetadata}>
+      <PropsContextProvider value={{ ...propsMetadata }}>
         <MDXProvider components={markToComponentMap}>
           {!frontmatter.v4Doc && (
             <header className={styles.header}>
@@ -192,7 +193,7 @@ export default function MDXPage({ mdxContent, frontmatter, propsMetadata }) {
             )}
           </main>
         </MDXProvider>
-      </PropsProvider>
+      </PropsContextProvider>
     </Box>
   );
 }
