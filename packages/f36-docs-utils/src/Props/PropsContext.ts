@@ -21,6 +21,11 @@ export const usePropsContext = () => {
 
 export function usePropsOf(componentName: string) {
   const propsContext = usePropsContext();
+
+  if (!propsContext[componentName]) {
+    return [];
+  }
+
   const { props } = propsContext[componentName];
   const allProps = Object.values(props).sort((a, b) =>
     a.name.localeCompare(b.name),
