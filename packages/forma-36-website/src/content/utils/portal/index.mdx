@@ -1,0 +1,32 @@
+---
+title: 'Portal'
+---
+
+`Portal` component can be used to render children in to a DOM node outside of the parent component. It can be useful for rendering components, you dont want to be hidden, clipped by parent component. For example, models, popovers, dropdowns.
+
+## Table of contents
+
+- [Import](#import)
+- [Examples](#examples)
+  - [Basic usage](#basic-usage)
+- [Props](#props-api-reference)
+- [Content guidelines](#content-guidelines)
+- [Accessibility](#accessibility)
+- [Help improve this page](#help-improve-this-page)
+
+## Import
+
+```jsx static=true
+import { Portal } from '@contentful/f36-utils';
+```
+
+## Example
+
+### Basic usage
+
+```jsx
+<Box>
+  <Portal>Hi! I'll be rendered at the end of the document!</Portal>
+  Parent component content
+</Box>
+```

@@ -1,0 +1,68 @@
+---
+title: 'getStringMatch'
+---
+
+Function that can be used to find a substring inside another string.
+
+## Table of contents
+
+- [Import](#import)
+- [Examples](#examples)
+  - [Basic usage](#basic-usage)
+- [Props](#props-api-reference)
+- [Content guidelines](#content-guidelines)
+- [Accessibility](#accessibility)
+- [Help improve this page](#help-improve-this-page)
+
+## Import
+
+```jsx static=true
+import { getStringMatch } from '@contentful/f36-utils';
+```
+
+## Examples
+
+### Basic usage
+
+You pass the base string as a first argument, and a string to match it with as a second argument. The function will return an object containing the match, what comes before the match, and what comes after the match in the base string.
+
+```jsx static=true
+import React from 'react';
+import { getStringMatch } from '@contentful/f36-utils';
+import {
+  Flex,
+  Stack,
+  TextField,
+  Button,
+  Heading,
+  Paragraph,
+} from '@contentful/f36-components';
+
+export const basicMatchExample = () => {
+  const [baseString, setBaseString] = React.useState('Seven Green Apples');
+  const [stringToMatch, setStringToMatch] = React.useState('green');
+  const [{ before, match, after }, updateResult] = React.useState(() =>
+    getStringMatch(baseString, stringToMatch),
+  );
+
+  const matchString = () => {
+    const { before, match, after } = getStringMatch(baseString, stringToMatch);
+    updateResult({ before, match, after });
+  };
+
+  return (
+    <Stack>
+      <Flex>
+        <TextField value={baseString} helpText="Base string" />
+        <TextField
+          value={stringToMatch}
+          helpText="A  string to match the base string"
+        />
+      </Flex>
+      <Button onClick={matchString}>Match strings</Button>
+      <Heading as="h4">Results</Heading>
+      <Paragraph element="p">{`{ before: ${before}, match: ${match}, after: ${after} }`}</Paragraph>
+    </Stack>
+  );
+};
+```

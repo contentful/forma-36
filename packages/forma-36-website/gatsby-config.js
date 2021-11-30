@@ -408,6 +408,28 @@ module.exports = {
         ],
       },
       {
+        name: 'Utils',
+        link: '',
+        menuLinks: [
+          {
+            name: 'getStringMatch',
+            link: '/utils/get-string-match/',
+          },
+          {
+            name: 'Portal',
+            link: '/utils/portal/',
+          },
+          {
+            name: 'useArrowKeyNavigation',
+            link: '/utils/use-arrow-key-navigation/',
+          },
+          {
+            name: 'useKeyboard',
+            link: '/utils/use-keyboard/',
+          },
+        ],
+      },
+      {
         name: 'Integrations',
         link: '',
         menuLinks: [
