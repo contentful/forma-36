@@ -218,6 +218,10 @@ module.exports = {
             ],
           },
           {
+            name: 'GlobalStyles',
+            link: '/components/globalstyles',
+          },
+          {
             name: 'Icon',
             link: '/components/icon/',
           },
