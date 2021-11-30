@@ -10,5 +10,8 @@ export const getPropsStyles = () => ({
   listItem: css({
     padding: `${tokens.spacingM} 0`,
     borderBottom: `1px solid ${tokens.gray200}`,
+    '&:last-child': {
+      borderBottom: 'none',
+    },
   }),
 });
