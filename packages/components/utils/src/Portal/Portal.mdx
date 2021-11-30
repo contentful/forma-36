@@ -1,6 +1,13 @@
 ---
 title: 'Portal'
+type: 'component'
+status: 'beta'
+slug: /utils/portal/
+typescript: ./Portal.tsx
 ---
+
+import { Props } from '@contentful/f36-docs-utils';
+import { Portal } from '@contentful/f36-utils';
 
 `Portal` component can be used to render children in to a DOM node outside of the parent component. It can be useful for rendering components, you dont want to be hidden, clipped by parent component. For example, models, popovers, dropdowns.
 
@@ -9,7 +16,7 @@ title: 'Portal'
 - [Import](#import)
 - [Examples](#examples)
   - [Basic usage](#basic-usage)
-- [Props](#props-api-reference)
+- [Props](#props)
 - [Content guidelines](#content-guidelines)
 - [Accessibility](#accessibility)
 - [Help improve this page](#help-improve-this-page)
@@ -24,9 +31,22 @@ import { Portal } from '@contentful/f36-utils';
 
 ### Basic usage
 
-```jsx
+```jsx static=true
 <Box>
-  <Portal>Hi! I'll be rendered at the end of the document!</Portal>
+  <Portal>
+    <Box
+      style={{
+        backgroundColor: 'gray',
+      }}
+    >
+      Hi! I'm first in the document flow, but will be rendered at the end of the
+      document!
+    </Box>
+  </Portal>
   Parent component content
 </Box>
 ```
+
+## Props
+
+<Props of="Portal" />

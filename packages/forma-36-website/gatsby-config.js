@@ -420,10 +420,6 @@ module.exports = {
             link: '/utils/portal/',
           },
           {
-            name: 'useArrowKeyNavigation',
-            link: '/utils/use-arrow-key-navigation/',
-          },
-          {
             name: 'useKeyboard',
             link: '/utils/use-keyboard/',
           },
