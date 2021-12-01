@@ -6,6 +6,8 @@ slug: /utils/get-string-match/
 typescript: ./getStringMatch.ts
 ---
 
+import { Props } from '@contentful/f36-docs-utils';
+
 Function that can be used to find a substring inside another string.
 
 ## Table of contents
@@ -13,9 +15,7 @@ Function that can be used to find a substring inside another string.
 - [Import](#import)
 - [Examples](#examples)
   - [Basic usage](#basic-usage)
-- [Props](#props-api-reference)
-- [Content guidelines](#content-guidelines)
-- [Accessibility](#accessibility)
+- [Props](#props)
 - [Help improve this page](#help-improve-this-page)
 
 ## Import
@@ -82,3 +82,11 @@ import {
   );
 };
 ```
+
+### Example with other components
+
+You can find an example of using `getStringMatch` in [`Autocomplete` component documentation](https://v4.f36.contentful.com/components/autocomplete/#highlighting-an-item-with-getstringmatch)
+
+## Props
+
+<Props of="getStringMatch" />
