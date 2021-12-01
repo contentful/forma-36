@@ -107,10 +107,12 @@ Note: When running this command for the first time it installs the package in th
 
 When you run this command, prompt will ask you:
 
-`run-all-v4: Update package json with new packages and remove old ones, remove v3 CSS imports and run all possible codemods for components.`
-`update-package-json: Updates package.json file with correct packages, and remove v3 CSS imports`
-`migrate-all-components-to-v4: Run all exising codemods`
-`migrate-specific-component-to-v4: Select which v4 codemod you want to apply`
+```bash
+run-all-v4: Update package json with new packages and remove old ones, remove v3 CSS imports and run all possible codemods for components.
+update-package-json: Updates package.json file with correct packages, and remove v3 CSS imports
+migrate-all-components-to-v4: Run all exising codemods
+migrate-specific-component-to-v4: Select which v4 codemod you want to apply
+```
 
 Go ahead and choose first option from the list `run-all-v4`. This codemod will adjust your package.json, install new packages, remove old once, and also remove CSS imports required for version 3.
 
