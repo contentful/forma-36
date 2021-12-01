@@ -103,6 +103,7 @@ function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLDivElement>) {
             })}
             aria-label={`Copy ${value} to clipboard`}
             disabled={isDisabled}
+            aria-live="assertive"
           >
             <CopyIcon
               variant="muted"

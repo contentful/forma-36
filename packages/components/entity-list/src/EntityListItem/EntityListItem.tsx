@@ -205,7 +205,7 @@ export function EntityListItem({
           <div className={styles.content}>
             <Flex>
               <Text
-                as="h1"
+                as="h3"
                 lineHeight="lineHeightM"
                 fontColor="gray900"
                 fontWeight="fontWeightDemiBold"
