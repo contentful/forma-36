@@ -30,7 +30,7 @@ export const FormikForm = () => {
     radioGroup: 'apples',
     checkboxGroup: ['apples'],
     checkbox: false,
-  }
+  };
 
   // Formik requires that we pass our own validation functions
   const validateRequired = (value) => !value;
@@ -48,16 +48,20 @@ export const FormikForm = () => {
           {/* We create a Field passing our input name and the validation function */}
           <Field name="textInput" validate={validateRequired}>
             {/*
-              * field - contains the value, name and handler for the input.
-              * meta - contains touched and error state for the input.
-              */}
+             * field - contains the value, name and handler for the input.
+             * meta - contains touched and error state for the input.
+             */}
             {({ field, meta }) => (
-              {/* To set the FormControl invalid state, check if there is an error related to this input */}
+              // To set the FormControl invalid state, check if there is an error related to this input
               <FormControl isInvalid={Boolean(meta.touched && meta.error)}>
                 <FormControl.Label>Text input</FormControl.Label>
                 <TextInput {...field} />
 
-                {meta.touched && meta.error && <MockRequiredMessage />}
+                {meta.touched && meta.error && (
+                  <FormControl.ValidationMessage>
+                    {meta.error}
+                  </FormControl.ValidationMessage>
+                )}
               </FormControl>
             )}
           </Field>
@@ -69,7 +73,11 @@ export const FormikForm = () => {
                 <FormControl.Label>Textarea</FormControl.Label>
                 <Textarea {...field} />
 
-                {meta.touched && meta.error && <MockRequiredMessage />}
+                {meta.touched && meta.error && (
+                  <FormControl.ValidationMessage>
+                    {meta.error}
+                  </FormControl.ValidationMessage>
+                )}
               </FormControl>
             )}
           </Field>
@@ -94,7 +102,7 @@ export const FormikForm = () => {
           {/* Radio group */}
           <Field name="radioGroup">
             {({ field }) => (
-              {/* For Radio.Group we need to pass the field props into the Radio.Group component */}
+              // For Radio.Group we need to pass the field props into the Radio.Group component
               <Radio.Group {...field}>
                 <Radio value="apples">Apples</Radio>
                 <Radio value="pears">Pears</Radio>
@@ -106,7 +114,7 @@ export const FormikForm = () => {
           {/* Checkbox group */}
           <Field name="checkboxGroup">
             {({ field }) => (
-              {/* For Checkbox.Group we need to pass the field props into the Checkbox.Group component */}
+              // For Checkbox.Group we need to pass the field props into the Checkbox.Group component
               <Checkbox.Group {...field}>
                 <Checkbox value="apples">Apples</Checkbox>
                 <Checkbox value="pears">Pears</Checkbox>
@@ -127,7 +135,11 @@ export const FormikForm = () => {
                   This checkbox is required
                 </Checkbox>
 
-                {meta.touched && meta.error && <MockRequiredMessage />}
+                {meta.touched && meta.error && (
+                  <FormControl.ValidationMessage>
+                    {meta.error}
+                  </FormControl.ValidationMessage>
+                )}
               </FormControl>
             )}
           </Field>

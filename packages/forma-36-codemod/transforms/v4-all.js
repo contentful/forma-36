@@ -25,6 +25,8 @@ const textInputs = require('./v4-text-inputs');
 const textLink = require('./v4-text-link');
 const tooltip = require('./v4-tooltip');
 const typography = require('./v4-typography');
+const helptext = require('./v4-helptext');
+const inlineEntryCard = require('./v4-inline-entry-card');
 
 const { pipe } = require('./common/pipe');
 
@@ -56,4 +58,6 @@ module.exports = pipe([
   textLink,
   tooltip,
   typography,
+  helptext,
+  inlineEntryCard,
 ]);
