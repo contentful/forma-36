@@ -3,7 +3,7 @@ import type { PropComponentDefinition } from './types';
 
 // List of props that we do not need to show
 // because they are, basically, inherited props from HTML elements or React
-const propsToHide = ['ref', 'key', 'style', 'children'];
+const propsToHide = ['ref', 'key', 'style'];
 
 export type PropsContextType = {
   [key: string]: PropComponentDefinition;
