@@ -14,7 +14,7 @@ import { getCardStyles } from './Card.styles';
 
 export type CardInternalProps = Omit<
   BaseCardInternalProps,
-  'header' | 'ref' | 'type'
+  'header' | 'ref' | 'type' | 'withDragHandle'
 > & {
   /**
    * Padding size to apply to the component

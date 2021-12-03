@@ -7,7 +7,8 @@ typescript: ./src/DragHandle.tsx
 v4Doc: true
 ---
 
-import { Stack, TextLink } from '@contentful/f36-components';
+import { Heading, Stack, TextLink } from '@contentful/f36-components';
+import { ExternalLinkIcon } from '@contentful/f36-icons';
 import { Props } from '@contentful/f36-docs-utils';
 
 DragHandle is a new component to make it easier when creating draggable elements. it contains the styling for focus, hover and dragging states.  
@@ -61,12 +62,33 @@ The DragHandle can be styled based on the props you pass to it:
 ### Card example
 
 ```jsx
-<Card title="Title" withDragHandle>
+<AssetCard title="Title" withDragHandle>
   <Text>This is a card example with DragHandle</Text>
-</Card>
+</AssetCard>
 ```
 
-## Props (API reference)
+<Stack
+  justifyContent="space-between"
+  marginTop="spacing2Xl"
+  marginBottom="spacingL"
+>
+  <Heading
+    id="props-api-reference"
+    as="h2"
+    marginTop="none"
+    marginBottom="none"
+  >
+    Props (API reference)
+  </Heading>
+  <TextLink
+    href="https://v4-f36-storybook.netlify.app/?path=/story/components-draghandle"
+    target="_blank"
+    alignIcon="end"
+    icon={<ExternalLinkIcon />}
+  >
+    Open in Storybook
+  </TextLink>
+</Stack>
 
 <Props of="DragHandle" />
 
