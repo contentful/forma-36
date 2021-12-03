@@ -4,19 +4,14 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 # General
 
-This section contains general information about the component library we use at Contentful. The component library is the single source of truth we reference when designing or adding UI.
-
-The component library is split into the following sections:
-
-## Documentation
-
-A place for general documentation about the component library.
+This section contains general information about the component library we use at Contentful.
+The component library is the single source of truth we reference when designing or adding UI.
 
 ## Tokens
 
 Design tokens are the granular values we use when designing and implementing UI. Tokens include things such as font-sizes and colours.
 
-Design tokens can now be found on the [Forma 36 documentation website](https://f36.contentful.com/foundation/color/)
+Design tokens can now be found on the [Forma 36 documentation website](https://v4.f36.contentful.com/foundation/color/)
 
 ## Components
 
@@ -27,23 +22,18 @@ React components available for immediate use.
 Install the package to your project
 
 ```bash
-yarn add @contentful/f36-components
+yarn add @contentful/f36-components @contentful/f36-tokens
 ```
 
 Or for NPM
 
 ```bash
-npm i @contentful/f36-components
+npm i @contentful/f36-components @contentful/f36-tokens
 ```
 
-##### Import desired component into your project
+##### Import desired component and tokens
 
 ```jsx
 import { Input } from '@contentful/f36-components';
-```
-
-##### Import styles
-
-```js
-import '@contentful/f36-components/dist/styles.css';
+import tokens from '@contentful/f36-tokens';
 ```
