@@ -163,6 +163,10 @@ module.exports = {
             ],
           },
           {
+            name: 'DragHandle',
+            link: '/components/drag-handle',
+          },
+          {
             name: 'Dropdown',
             link: '/deprecated-components/dropdown/',
           },
