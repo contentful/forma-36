@@ -38,6 +38,9 @@
     "react-dom": "16.14.0",
     "react-helmet": "^6.1.0",
     "react-live": "^2.2.0",
+    "remark-code-import": "^0.4.0",
+    "unist-builder": "^2.0.2",
+    "unist-util-visit": "^2.0.1",
     "webpack-dev-server": "3.11.2"
   },
   "devDependencies": {},

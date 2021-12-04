@@ -22,7 +22,6 @@ import {
   TextLink,
 } from '@contentful/f36-components';
 
-import ComponentSource from './ComponentSource';
 import { StaticSource } from './StaticSource';
 
 import storybookIcon from '../images/storybook.svg';
@@ -126,12 +125,7 @@ const markToComponentMap = {
     </Box>
   ),
   li: (props) => <List.Item {...props} />,
-  code: (props) => {
-    if (props.static) {
-      return <StaticSource {...props} />;
-    }
-    return <ComponentSource>{props.children}</ComponentSource>;
-  },
+  code: (props) => <StaticSource {...props} />,
   table: (props) => (
     <Box marginBottom="spacingM">
       <Table {...props} />
