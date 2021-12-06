@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { cx } from 'emotion';
-import { CommonProps } from '@contentful/f36-core';
+import { CommonProps, ExpandProps } from '@contentful/f36-core';
 import { Button } from '../Button';
 import getStyles from './ToggleButton.styles';
 
@@ -26,7 +26,7 @@ export interface ToggleButtonProps extends CommonProps {
   children: React.ReactNode;
 }
 
-function _ToggleButton(props: ToggleButtonProps, ref) {
+function _ToggleButton(props: ExpandProps<ToggleButtonProps>, ref) {
   const {
     testId = 'cf-ui-toggle-button',
     children,
