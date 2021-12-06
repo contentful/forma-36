@@ -3,6 +3,9 @@ import { createPortal } from 'react-dom';
 
 export interface PortalProps {
   children: React.ReactElement;
+  /**
+   * Container element for Portal
+   */
   container?: Document | HTMLElement;
 }
 
