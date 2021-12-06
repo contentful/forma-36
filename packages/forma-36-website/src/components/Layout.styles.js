@@ -43,7 +43,6 @@ export const getGlobalStyles = () => css`
 
   pre {
     margin: 0;
-    font-family: ${tokens.fontStackPrimary};
   }
 
   pre.prism-code {
