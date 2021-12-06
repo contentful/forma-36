@@ -71,7 +71,6 @@
     "@testing-library/user-event": "12.2.2",
     "@types/jest": "^27.0.2",
     "@types/jest-axe": "3.5.1",
-    "@types/storybook__react": "5.2.1",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
     "assert": "^2.0.0",
