@@ -1,5 +1,11 @@
 import React from 'react';
 
+export type ExpandProps<T> = T extends object
+  ? T extends infer O
+    ? { [K in keyof O]: O[K] }
+    : never
+  : T;
+
 type Overwrite<T, U> = Omit<T, keyof U> & U;
 
 type PropsWithAs<P, E extends React.ElementType> = P & { as?: E };
