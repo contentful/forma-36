@@ -21,7 +21,7 @@ export default {
 export const Default: Story<PortalProps> = (args) => {
   return (
     <Flex>
-      This is a patent element of Portal
+      This is a parent element of Portal
       <Portal {...args}>
         <Flex
           style={{
