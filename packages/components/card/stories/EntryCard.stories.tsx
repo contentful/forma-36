@@ -65,6 +65,8 @@ tools and guidance for digital teams building and extending
 Contentful products.`;
 
 export const Overview: Story<EntryCardProps> = () => {
+  const sizes: EntryCardProps['size'][] = ['default', 'small'];
+
   return (
     <>
       <Flex flexDirection="column" gap="spacingL">
@@ -73,14 +75,14 @@ export const Overview: Story<EntryCardProps> = () => {
             Default
           </SectionHeading>
 
-          {['default', 'small'].map((size) => (
+          {sizes.map((size) => (
             <EntryCard
               key={size}
               icon={<ClockIcon />}
               thumbnailElement={thumbnail}
               title="Forma 36"
               contentType="Design system"
-              size={size as any}
+              size={size}
             />
           ))}
         </Flex>
@@ -90,7 +92,7 @@ export const Overview: Story<EntryCardProps> = () => {
             Hover
           </SectionHeading>
 
-          {['default', 'small'].map((size) => (
+          {sizes.map((size) => (
             <EntryCard
               key={size}
               as="a"
@@ -105,7 +107,7 @@ export const Overview: Story<EntryCardProps> = () => {
               title="Forma 36"
               description={description}
               contentType="Design system"
-              size={size as any}
+              size={size}
             />
           ))}
         </Flex>
@@ -115,7 +117,7 @@ export const Overview: Story<EntryCardProps> = () => {
             Selected
           </SectionHeading>
 
-          {['default', 'small'].map((size) => (
+          {sizes.map((size) => (
             <EntryCard
               key={size}
               isSelected
@@ -124,7 +126,7 @@ export const Overview: Story<EntryCardProps> = () => {
               description={description}
               contentType="Design system"
               withDragHandle
-              size={size as any}
+              size={size}
             />
           ))}
         </Flex>
