@@ -7,9 +7,6 @@ export const getBaseCardStyles = () => {
     contentBody: css({
       gridColumn: 'content',
       gridRow: 'content',
-      paddingBottom: tokens.spacingM,
-      paddingLeft: tokens.spacingM,
-      paddingRight: tokens.spacingM,
       whiteSpace: 'initial',
     }),
     wrapper: css({

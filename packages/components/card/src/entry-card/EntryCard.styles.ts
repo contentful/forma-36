@@ -19,6 +19,11 @@ export const getEntryCardStyles = () => {
       }),
     root: css({
       padding: 0,
+      '[data-card-part="content"]': {
+        paddingBottom: tokens.spacingM,
+        paddingLeft: tokens.spacingM,
+        paddingRight: tokens.spacingM,
+      },
     }),
     header: css({
       borderBottomWidth: 1,
