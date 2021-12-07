@@ -4,17 +4,6 @@ export interface MatchObj {
   after: string;
 }
 
-export interface getStringMatchProps {
-  /**
-   * The base string, to match `match` string with.
-   */
-  base: string;
-  /**
-   * The string to use in a Regex expression to match to the base string.
-   */
-  match: string;
-}
-
 /**
  * Function that can be used to find a substring inside another string.
  * It needs two strings, the second one will be used in a Regex expression
