@@ -7,6 +7,7 @@
   "dependencies": {
     "@contentful/f36-components": "^4.0.0",
     "@contentful/f36-docs-utils": "^4.0.0",
+    "@contentful/f36-utils": "^4.0.0",
     "@contentful/f36-icons": "^4.0.0",
     "@contentful/f36-tokens": "^4.0.0",
     "@emotion/core": "^10.0.0",

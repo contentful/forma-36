@@ -30,18 +30,7 @@ import { getStringMatch } from '@contentful/f36-utils';
 
 You pass the base string as a first argument, and a string to match it with as a second argument. The function will return an object containing the match, what comes before the match, and what comes after the match in the base string.
 
-```jsx static=true
-import { getStringMatch } from '@contentful/f36-utils';
-import {
-  Flex,
-  Stack,
-  TextInput,
-  FormControl,
-  Button,
-  Heading,
-  Paragraph,
-} from '@contentful/f36-components';
-
+```jsx
 () => {
   const [baseString, setBaseString] = React.useState('Seven Green Apples');
   const [stringToMatch, setStringToMatch] = React.useState('green');
@@ -77,7 +66,7 @@ import {
       </Flex>
       <Button onClick={matchString}>Match strings</Button>
       <Heading as="h4">Results</Heading>
-      <Paragraph element="p">{`{ before: ${before}, match: ${match}, after: ${after} }`}</Paragraph>
+      <Paragraph element="p">{`{ before: "${before}", match: "${match}", after: "${after}" }`}</Paragraph>
     </Stack>
   );
 };

@@ -30,10 +30,7 @@ import { useKeyboard } from '@contentful/f36-utils';
 
 By passing ref of `Stack` element to `useKeyboard` hook, you create event listeners, listed in `keys` prop. When focus is inside the `Stack` element, and one of the listed keyboard actions is triggered, the callback is called. In this example, it's function `handleEvent`.
 
-```jsx static=true
-import { useKeyboard } from '@contentful/f36-utils';
-import { Stack, Button } from '@contentful/f36-components';
-
+```jsx
 () => {
   const ref = React.useRef(null);
   const handleEvent = (eventName, event) => console.log(eventName, event);
