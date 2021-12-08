@@ -97,7 +97,7 @@
 
 ### Migrate all components to v4 with one command
 
-We focused on improving your experience and allowing fast and painless migration to version 4. You can run just one codemod command and migrate the whole project to use version 4.
+We focused on improving your experience and creating a seamless migration to version 4. As such, you can run one codemod command and migrate the whole project to version 4.
 
 ```bash
 npx @contentful/f36-codemod
@@ -105,7 +105,7 @@ npx @contentful/f36-codemod
 
 Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
-When you run this command, prompt will ask you:
+When you run this command, the following prompt is displayed:
 
 ```bash
 run-all-v4: Update package json with new packages and remove old ones, remove v3 CSS imports and run all possible codemods for components.
@@ -114,9 +114,9 @@ migrate-all-components-to-v4: Run all exising codemods
 migrate-specific-component-to-v4: Select which v4 codemod you want to apply
 ```
 
-Go ahead and choose the first option from the list `run-all-v4`. This codemod will adjust your package.json, install new packages, remove old ones, and also remove CSS imports required for version 3.
+Select the first option from the list: `run-all-v4`. This codemod will adjust your `package.json`, install new packages, remove old ones, and also remove the CSS imports required for version 3.
 
-There are a couple of components that do not have a codemod, so you would need to migrate them manually:
+The following components do not have a codemod, so you must migrate them manually:
 
 - [Accordion](#accordion)
 - [Asset](#asset)
