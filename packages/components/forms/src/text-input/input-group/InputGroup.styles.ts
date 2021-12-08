@@ -8,20 +8,20 @@ const getInputGroupStyle = ({ spacing }) => {
   }
 
   return {
-    '& *': {
+    '& button, & input': {
       borderRadius: '0 !important',
     },
     '& > *': {
       marginRight: '-1px !important',
       zIndex: tokens.zIndexDefault,
-      '&:not(: focus)': {
+      '&:not(:focus), & button:not(:focus)': {
         boxShadow: 'none !important',
       },
-      '&:first-child, &:first-child > input': {
+      '&:first-child, &:first-child > input, &:first-child button': {
         borderBottomLeftRadius: `${tokens.borderRadiusMedium} !important`,
         borderTopLeftRadius: `${tokens.borderRadiusMedium} !important`,
       },
-      '&:last-child, &:last-child > input': {
+      '&:last-child, &:last-child > input, &:last-child button': {
         borderBottomRightRadius: `${tokens.borderRadiusMedium} !important`,
         borderTopRightRadius: `${tokens.borderRadiusMedium} !important`,
         marginRight: '0 !important',

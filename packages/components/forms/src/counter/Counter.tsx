@@ -1,14 +1,18 @@
 import React, { forwardRef } from 'react';
+import { cx } from 'emotion';
 import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 import { Text } from '@contentful/f36-typography';
+import { getCounterStyles } from './Counter.styles';
 
 import { useFormControl } from '../form-control/FormControlContext';
 
 export type CounterProps = PropsWithHTMLElement<CommonProps, 'p'>;
 
 export const Counter = forwardRef<HTMLParagraphElement, CounterProps>(
-  ({ testId = 'cf-ui-counter', ...otherProps }, ref) => {
+  ({ testId = 'cf-ui-counter', className, ...otherProps }, ref) => {
     const { maxLength, inputValue } = useFormControl({});
+    const styles = getCounterStyles();
+
     return (
       Boolean(maxLength) && (
         <Text
@@ -18,6 +22,7 @@ export const Counter = forwardRef<HTMLParagraphElement, CounterProps>(
           testId={testId}
           marginTop="spacingXs"
           {...otherProps}
+          className={cx(styles.root, className)}
           ref={ref}
         >
           {inputValue.length} / {maxLength}

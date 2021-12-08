@@ -2,6 +2,7 @@ import React from 'react';
 import { IconButton, Button } from '@contentful/f36-button';
 import { LockIcon } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
+import { Tooltip } from '@contentful/f36-tooltip';
 import { Flex } from '@contentful/f36-core';
 import { TextInput, InputGroupProps } from '../src';
 
@@ -157,6 +158,25 @@ export const Overview = () => {
             icon={<LockIcon />}
             aria-label="Lock"
           />
+        </TextInput.Group>
+      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        With button wrapped in tooltip
+      </SectionHeading>
+      <Flex marginBottom="spacingM" fullWidth>
+        <TextInput.Group>
+          <TextInput
+            aria-label="Text Input"
+            id="TextInput4"
+            defaultValue="Some value"
+          />
+          <Tooltip content="Tooltip text">
+            <IconButton
+              variant="secondary"
+              icon={<LockIcon />}
+              aria-label="Lock"
+            />
+          </Tooltip>
         </TextInput.Group>
       </Flex>
     </Flex>
