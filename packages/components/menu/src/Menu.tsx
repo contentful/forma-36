@@ -6,7 +6,7 @@ import React, {
   useEffect,
 } from 'react';
 import { mergeRefs, useId } from '@contentful/f36-core';
-import { useArrowKeyNavigation } from '@contentful/f36-utils';
+import { useArrowKeyNavigation } from './useArrowKeyNavigation';
 import { Popover, PopoverProps } from '@contentful/f36-popover';
 import { MenuContextProvider, MenuContextType } from './MenuContext';
 

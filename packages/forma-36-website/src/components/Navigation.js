@@ -85,6 +85,7 @@ const categories = [
   'Migration guide',
   'Getting started',
   'Components',
+  'Utils',
   'Integrations',
 ];
 

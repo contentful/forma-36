@@ -1,52 +1,33 @@
 ---
 title: 'Spacing'
+github: 'https://github.com/contentful/forma-36/blob/forma-v4/packages/forma-36-website/src/content/foundation/spacing/index.mdx'
+v4Doc: true
 ---
 
-import tokens from '@contentful/f36-tokens/src/tokens/spacing';
+import { SpacingTokensTable } from '../../../components/SpacingTokensTable';
 
-import {
-  Table,
-  TableHead,
-  TableBody,
-  TableCell,
-  TableRow,
-} from '@contentful/f36-components';
+In Forma 36, we built our components independent of any styling outside of them. This means that
+you will need to manage spacing between elements using our spacing tokens in any CSS solution you chose.
+The only exception to this rule is our layout components:
+[Flex](/components/flex), [Stack](/components/stack), [Grid](/components/grid), [Box](/components/box).
 
-<Table style={{ width: '100%' }}>
-  <TableHead>
-    <TableRow>
-      <TableCell>Token</TableCell>
-      <TableCell>Value (px)</TableCell>
-      <TableCell>Value (rem)</TableCell>
-      <TableCell>Example</TableCell>
-    </TableRow>
-  </TableHead>
-  <TableBody>
-    {Object.keys(tokens).map((token) => {
-      const value = tokens[token];
-      const valuePx = 1 * parseFloat(value) * 16; // 16 = REM Base
-      return (
-        <TableRow key={token}>
-          <TableCell style={{ verticalAlign: 'middle' }}>
-            <strong>{token}</strong>
-          </TableCell>
-          <TableCell style={{ verticalAlign: 'middle' }}>
-            <pre>{valuePx}px</pre>
-          </TableCell>
-          <TableCell style={{ verticalAlign: 'middle' }}>
-            <pre>{value}</pre>
-          </TableCell>
-          <TableCell style={{ verticalAlign: 'middle' }}>
-            <div
-              style={{
-                width: value,
-                height: value,
-                background: '#3c80cf',
-              }}
-            />
-          </TableCell>
-        </TableRow>
-      );
-    })}
-  </TableBody>
-</Table>
+## Tokens
+
+<SpacingTokensTable />
+
+## Tokens with inline styles
+
+```jsx static=true
+import tokens from '@contentful/f36-tokens';
+
+<div style={{ padding: tokens.spacingM }} />;
+```
+
+## Tokens with emotion
+
+```jsx static=true
+import tokens from '@contentful/f36-tokens';
+import { css } from 'emotion';
+
+css({ padding: tokens.spacingM });
+```

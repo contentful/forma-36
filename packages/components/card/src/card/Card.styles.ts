@@ -21,8 +21,5 @@ export const getCardStyles = ({ padding }) => ({
   }),
   root: css({
     padding: getCardPaddingValue(padding),
-    '[data-card-part="content"]': {
-      padding: 0,
-    },
   }),
 });

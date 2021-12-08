@@ -137,8 +137,18 @@ module.exports = {
             link: '/components/button-group',
           },
           {
-            name: 'Card',
-            link: '/components/card/',
+            name: 'Card Components',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Card',
+                link: '/components/card/',
+              },
+              {
+                name: 'EntryCard',
+                link: '/components/entry-card/',
+              },
+            ],
           },
           {
             name: 'CopyButton',
@@ -161,6 +171,10 @@ module.exports = {
                 link: '/components/datetime-functions/',
               },
             ],
+          },
+          {
+            name: 'DragHandle',
+            link: '/components/drag-handle',
           },
           {
             name: 'Dropdown',
@@ -400,6 +414,24 @@ module.exports = {
           {
             name: 'Workbench',
             link: '/components/workbench/',
+          },
+        ],
+      },
+      {
+        name: 'Utils',
+        link: '',
+        menuLinks: [
+          {
+            name: 'getStringMatch',
+            link: '/utils/get-string-match/',
+          },
+          {
+            name: 'Portal',
+            link: '/utils/portal/',
+          },
+          {
+            name: 'useKeyboard',
+            link: '/utils/use-keyboard/',
           },
         ],
       },

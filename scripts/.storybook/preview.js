@@ -28,6 +28,7 @@ export const parameters = {
         'Typography',
         'Form Elements',
         'Components',
+        'Utils',
         'Utilities',
       ],
     },
