@@ -1,11 +1,9 @@
 ---
 title: 'Menu'
-type: 'component'
-status: 'stable'
 slug: /components/menu/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/menu'
-storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-menu--default'
 typescript: ./src/Menu.tsx,./src/MenuItem/MenuItem.tsx,./src/MenuList/MenuList.tsx
+v4Doc: true
 ---
 
 Menu is a component that offers a list of choices to the user, such as a set of actions or links.
@@ -13,12 +11,36 @@ Menu uses Popover component as a base.
 
 ## Table of contents
 
-- [How to use Menu](#how-to-use-menu)
-- [Code examples](#code-examples)
-- [Content recommendations](#content-recommendations)
+- [Import](#import)
+- [Examples](#examples)
+  - [Basic usage](#basic-usage)
+  - [With simple Button as a trigger](#with-simple-button-as-a-trigger)
+  - [With Menu.SectionTitle and Menu.Divider](#with-menu.sectionTitle-and-Menu.Divider)
+  - [Controlled Menu](#controlled-menu)
+  - [Controlled Menu with custom trigger onClick callback](#controlled-menu-with-custom-trigger-onClick-callback)
+  - [With Menu list maximum height](#with-menu-list-maximum-height)
+  - [With disabled items](#with-disabled-items)
+  - [With sticky header and footer](#with-sticky-header-and-footer)
+  - [With React Router links](#with-react-router-links)
+  - [With predefined focused menu item](#with-predefined-focused-menu-item)
+  - [With submenu](#with-submenu)
+- [Props](#props)
+  - [Menu props](#menu-props)
+  - [Menu Item props](#menu-item-props)
+  - [Menu List props](#menu-list-props)
+- [Content guidelines](#content-guidelines)
 - [Accessibility](#accessibility)
+- [Help improve this page](#help-improve-this-page)
 
-## How to use Menu
+## Import
+
+```jsx static=true
+import { Menu } from '@contentful/f36-components';
+// or
+import { Menu } from '@contentful/f36-menu';
+```
+
+## Examples
 
 You can use following components to build a menu:
 
@@ -34,9 +56,7 @@ You can use following components to build a menu:
 1. `<Menu.Submenu>` The wrapper for for submenu components. Structure of the children remains the same like in `<Menu>`, except you should use `<Menu.SubmenuTrigger>` instead of `<Menu.Trigger>`.
 1. `<Menu.SubmenuTrigger>` The wrapper for the submenu list trigger. Must be a direct child of `<Menu.Submenu>`.
 
-## Code examples
-
-### Basic
+### Basic usage
 
 ```jsx
 <Menu>
@@ -90,25 +110,6 @@ You can use following components to build a menu:
     <Menu.Item as="a" href="https://contentful.com" target="_blank">
       About Contentful
     </Menu.Item>
-  </Menu.List>
-</Menu>
-```
-
-### Open by default
-
-```jsx
-<Menu defaultIsOpen>
-  <Menu.Trigger>
-    <IconButton
-      variant="secondary"
-      icon={<MenuIcon />}
-      aria-label="toggle menu"
-    />
-  </Menu.Trigger>
-  <Menu.List>
-    <Menu.Item>Create an entry</Menu.Item>
-    <Menu.Item>Remove an entry</Menu.Item>
-    <Menu.Item>Embed existing entry</Menu.Item>
   </Menu.List>
 </Menu>
 ```
@@ -331,19 +332,6 @@ But you can redefine them on any submenu by passing those props directly to that
 </Menu>
 ```
 
-## Content recommendations
-
-- Use an interactive element such as `button` for `Menu.Trigger`
-
-## Accessibility
-
-- When the menu is opened, focus is moved to the first menu item. If you set `autoFocus`to `false`, it will not move the focus.
-- When the menu is closed, focus returned back to the trigger element.
-- You can use arrow keys (`ArrowUp` and `ArrowDown`) to navigate through menu items.
-- When the menu is open, click on `Esc` key will close the popover. If you set `closeOnEsc` to `false`, it will not close.
-- When the menu is open, click outside menu or blurring out will close the menu. If you set `closeOnBlur` to `false`, it will not close.
-- All the necessary a11y attributes for `Menu.List`, `Menu.Trigger` and `Menu.Item` are provided.
-
 ## Props
 
 import { Props } from '@contentful/f36-docs-utils';
@@ -359,3 +347,16 @@ import { Props } from '@contentful/f36-docs-utils';
 ### Menu.List
 
 <Props of="MenuList" />
+
+## Content recommendations
+
+- Use an interactive element such as `button` for `Menu.Trigger`
+
+## Accessibility
+
+- When the menu is opened, focus is moved to the first menu item. If you set `autoFocus`to `false`, it will not move the focus.
+- When the menu is closed, focus returned back to the trigger element.
+- You can use arrow keys (`ArrowUp` and `ArrowDown`) to navigate through menu items.
+- When the menu is open, click on `Esc` key will close the popover. If you set `closeOnEsc` to `false`, it will not close.
+- When the menu is open, click outside menu or blurring out will close the menu. If you set `closeOnBlur` to `false`, it will not close.
+- All the necessary a11y attributes for `Menu.List`, `Menu.Trigger` and `Menu.Item` are provided.
