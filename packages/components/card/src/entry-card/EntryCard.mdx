@@ -18,6 +18,12 @@ to help you manage the entries of your Contentful implementation.
 - [Import](#import)
 - [Examples](#examples)
   - [Basic usage](#basic-usage)
+  - [Clickable card](#clickable-card)
+  - [Card actions](#card-actions)
+  - [Loading state](#loading-state)
+  - [Different sizes](#different-sizes)
+  - [With a drag handle](#with-a-drag-handle)
+  - [With a thumbnail](#with-a-thumbnail)
 - [Props](#props-api-reference)
 - [Content guidelines](#content-guidelines)
 - [Accessibility](#accessibility)
@@ -49,7 +55,7 @@ you can pass one of "archived", "changed", "deleted", "draft", "new", or "publis
 />
 ```
 
-### Clickble card
+### Clickable card
 
 Like the `Card` component, it’s possible to pass a function to the `onClick` prop
 and it will be called when the user clicks on the card.
@@ -66,7 +72,7 @@ and it will be called when the user clicks on the card.
 
 ### Card actions
 
-To show a `...` button in the card pass an array of `MenuItem` components
+To show a `...` button with a menu in the card, pass an array of `MenuItem` components
 
 ```jsx
 <EntryCard
