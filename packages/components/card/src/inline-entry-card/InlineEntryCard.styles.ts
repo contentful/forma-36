@@ -25,9 +25,6 @@ export const getInlineEntryCardStyles = () => {
         paddingTop: 0,
         paddingLeft: tokens.spacingS,
         paddingRight: tokens.spacing2Xs,
-        '[data-card-part="content"]': {
-          padding: 0,
-        },
         '[data-card-part="wrapper"]': {
           display: 'inline-flex',
           flexDirection: 'row-reverse',

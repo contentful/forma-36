@@ -21,9 +21,6 @@ export const getAssetCardStyles = () => {
             : `calc(1rem * (300 / ${tokens.fontBaseDefault}))`,
         padding: 0,
         textAlign: 'center',
-        '[data-card-part="content"]': {
-          padding: 0,
-        },
       };
 
       return css(styles);
