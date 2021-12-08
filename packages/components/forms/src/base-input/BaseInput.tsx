@@ -10,6 +10,7 @@ import {
   PolymorphicProps,
   PolymorphicComponent,
   Box,
+  ExpandProps,
 } from '@contentful/f36-core';
 import getInputStyles from './BaseInput.styles';
 import { BaseInputInternalProps } from './types';
@@ -147,7 +148,7 @@ function _BaseInput<E extends React.ElementType = typeof INPUT_DEFAULT_TAG>(
 }
 
 export const BaseInput: PolymorphicComponent<
-  BaseInputInternalProps,
+  ExpandProps<BaseInputInternalProps>,
   typeof INPUT_DEFAULT_TAG,
   'disabled'
 > = React.forwardRef(_BaseInput);

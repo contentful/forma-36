@@ -3,6 +3,7 @@ import { MenuTrigger } from '../MenuTrigger/MenuTrigger';
 import { MenuItem, MenuItemProps } from '../MenuItem/MenuItem';
 import { useSubmenuContext } from '../SubmenuContext';
 import { ChevronRightIcon } from '@contentful/f36-icons';
+import { ExpandProps } from '@contentful/f36-core';
 import { cx } from 'emotion';
 import { getSubmenuTriggerStyles } from './SubmenuTrigger.styles';
 
@@ -12,7 +13,7 @@ export type SubmenuTriggerProps = Omit<
 >;
 
 const _SubmenuTrigger = (
-  props: SubmenuTriggerProps,
+  props: ExpandProps<SubmenuTriggerProps>,
   ref: React.Ref<HTMLButtonElement>,
 ) => {
   const { className, children } = props;

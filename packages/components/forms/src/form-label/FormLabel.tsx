@@ -8,6 +8,7 @@ import type {
   MarginProps,
   PolymorphicProps,
   PolymorphicComponent,
+  ExpandProps,
 } from '@contentful/f36-core';
 import { Text } from '@contentful/f36-typography';
 
@@ -91,6 +92,6 @@ function _FormLabel<
 }
 
 export const FormLabel: PolymorphicComponent<
-  FormLabelInternalProps,
+  ExpandProps<FormLabelInternalProps>,
   typeof FORM_LABEL_DEFAULT_TAG
 > = forwardRef(_FormLabel);

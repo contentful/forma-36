@@ -1,5 +1,5 @@
 import React from 'react';
-import { useId } from '@contentful/f36-core';
+import { useId, ExpandProps } from '@contentful/f36-core';
 import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
 import { useFormControl } from '../form-control/FormControlContext';
 import { useBaseCheckboxGroup } from '../base-checkbox/BaseCheckboxGroupContext';
@@ -9,7 +9,10 @@ export type RadioProps = Omit<
   'type' | 'isIndeterminate' | 'size'
 >;
 
-const _Radio = (props: RadioProps, ref: React.Ref<HTMLInputElement>) => {
+const _Radio = (
+  props: ExpandProps<RadioProps>,
+  ref: React.Ref<HTMLInputElement>,
+) => {
   const {
     testId = 'cf-ui-radio-button',
     id,

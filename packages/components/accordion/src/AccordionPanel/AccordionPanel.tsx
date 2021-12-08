@@ -1,6 +1,6 @@
 import React, { FC, useLayoutEffect, useRef } from 'react';
 import tokens from '@contentful/f36-tokens';
-import type { CommonProps } from '@contentful/f36-core';
+import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 import { Box } from '@contentful/f36-core';
 
 import { getAccordionPanelStyles } from './AccordionPanel.styles';
@@ -20,7 +20,7 @@ export interface AccordionPanelProps extends CommonProps {
   ariaId: string;
 }
 
-export const AccordionPanel: FC<AccordionPanelProps> = ({
+export const AccordionPanel: FC<ExpandProps<AccordionPanelProps>> = ({
   children,
   isExpanded = false,
   ariaId,

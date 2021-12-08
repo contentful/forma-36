@@ -1,5 +1,9 @@
 import React from 'react';
-import { PolymorphicProps, PolymorphicComponent } from '@contentful/f36-core';
+import {
+  PolymorphicProps,
+  PolymorphicComponent,
+  ExpandProps,
+} from '@contentful/f36-core';
 import { Button } from '../Button';
 import type { ButtonInternalProps } from '../types';
 
@@ -51,7 +55,7 @@ function _IconButton<
 }
 
 export const IconButton: PolymorphicComponent<
-  IconButtonInternalProps,
+  ExpandProps<IconButtonInternalProps>,
   typeof ICON_BUTTON_DEFAULT_TAG,
   'disabled'
 > = React.forwardRef(_IconButton);

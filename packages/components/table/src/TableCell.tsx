@@ -2,7 +2,11 @@ import { css, cx } from 'emotion';
 import React, { forwardRef } from 'react';
 import tokens from '@contentful/f36-tokens';
 import { Box } from '@contentful/f36-core';
-import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import type {
+  CommonProps,
+  PropsWithHTMLElement,
+  ExpandProps,
+} from '@contentful/f36-core';
 
 import { TableCellContext } from './tableCellContext';
 
@@ -25,7 +29,10 @@ export type TableCellProps = PropsWithHTMLElement<
   'th' | 'td'
 >;
 
-export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
+export const TableCell = forwardRef<
+  HTMLTableCellElement,
+  ExpandProps<TableCellProps>
+>(
   (
     {
       align = 'left',

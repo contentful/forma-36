@@ -6,6 +6,7 @@ import type {
   CommonProps,
   PolymorphicComponent,
   PolymorphicProps,
+  ExpandProps,
 } from '@contentful/f36-core';
 import type {
   ComponentType,
@@ -161,7 +162,7 @@ export function _Icon<E extends React.ElementType = IconComponent>(
 }
 
 export const Icon: PolymorphicComponent<
-  IconInternalProps,
+  ExpandProps<IconInternalProps>,
   typeof ICON_DEFAULT_TAG,
   'width' | 'height'
 > = forwardRef(_Icon);

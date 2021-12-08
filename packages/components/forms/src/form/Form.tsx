@@ -1,11 +1,20 @@
 import React, { forwardRef, useCallback, FormEvent } from 'react';
 
-import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import {
+  CommonProps,
+  PropsWithHTMLElement,
+  ExpandProps,
+} from '@contentful/f36-core';
 
 export type FormProps = PropsWithHTMLElement<CommonProps, 'form'>;
 
 function _Form(
-  { children, onSubmit, testId = 'cf-ui-form-label', ...otherProps }: FormProps,
+  {
+    children,
+    onSubmit,
+    testId = 'cf-ui-form-label',
+    ...otherProps
+  }: ExpandProps<FormProps>,
   ref: React.Ref<HTMLFormElement>,
 ) {
   const handleSubmit = useCallback(

@@ -1,12 +1,15 @@
 import React from 'react';
-import { useId } from '@contentful/f36-core';
+import { useId, ExpandProps } from '@contentful/f36-core';
 import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
 import { useFormControl } from '../form-control/FormControlContext';
 import { useBaseCheckboxGroup } from '../base-checkbox/BaseCheckboxGroupContext';
 
 export type CheckboxProps = Omit<BaseCheckboxProps, 'type' | 'size'>;
 
-const _Checkbox = (props: CheckboxProps, ref: React.Ref<HTMLInputElement>) => {
+const _Checkbox = (
+  props: ExpandProps<CheckboxProps>,
+  ref: React.Ref<HTMLInputElement>,
+) => {
   const {
     testId = 'cf-ui-checkbox',
     id,

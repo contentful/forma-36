@@ -20,7 +20,7 @@ export type { RadioProps } from './radio/Radio';
 export type { RadioGroupProps } from './radio/RadioGroup';
 export { TextInput } from './text-input/CompoundTextInput';
 export type { TextInputProps } from './text-input/types';
-export type { InputGroupProps } from './text-input/input-group/types';
+export type { InputGroupProps } from './text-input/input-group/InputGroup';
 export { Switch } from './switch/Switch';
 export type { SwitchProps } from './switch/Switch';
 export { Textarea } from './textarea/Textarea';

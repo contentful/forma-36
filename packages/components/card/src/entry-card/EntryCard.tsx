@@ -3,6 +3,7 @@ import React, { forwardRef } from 'react';
 import truncate from 'truncate';
 import { cx } from 'emotion';
 import { Flex } from '@contentful/f36-core';
+import type { ExpandProps } from '@contentful/f36-core';
 import type {
   PolymorphicComponent,
   PolymorphicProps,
@@ -111,6 +112,6 @@ function _EntryCard<
 }
 
 export const EntryCard: PolymorphicComponent<
-  EntryCardInternalProps,
+  ExpandProps<EntryCardInternalProps>,
   typeof ENTRY_CARD_DEFAULT_TAG
 > = forwardRef(_EntryCard);

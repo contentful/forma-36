@@ -5,6 +5,7 @@ import {
   Box,
   PolymorphicProps,
   PolymorphicComponent,
+  ExpandProps,
 } from '@contentful/f36-core';
 import { Spinner } from '@contentful/f36-spinner';
 
@@ -112,7 +113,7 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
  * @description: Buttons communicate the action that will occur when the user clicks it
  */
 export const Button: PolymorphicComponent<
-  ButtonInternalProps,
+  ExpandProps<ButtonInternalProps>,
   typeof BUTTON_DEFAULT_TAG,
   'disabled'
 > = React.forwardRef(_Button);

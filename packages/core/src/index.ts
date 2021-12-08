@@ -3,6 +3,7 @@ export type {
   PolymorphicComponent,
   PropsWithHTMLElement,
   PolymorphicProps,
+  ExpandProps,
 } from './Primitive';
 export type {
   CommonProps,

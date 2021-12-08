@@ -3,6 +3,7 @@ import {
   BaseCheckboxGroup,
   BaseCheckboxGroupProps,
 } from '../base-checkbox/BaseCheckboxGroup';
+import type { ExpandProps } from '@contentful/f36-core';
 
 export interface CheckboxGroupProps
   extends Omit<BaseCheckboxGroupProps, 'type'> {
@@ -17,7 +18,7 @@ export interface CheckboxGroupProps
 }
 
 export const _CheckboxGroup = (
-  props: CheckboxGroupProps,
+  props: ExpandProps<CheckboxGroupProps>,
   ref: React.Ref<HTMLDivElement>,
 ) => {
   const { children, testId = 'cf-ui-checkbox-group', ...otherProps } = props;

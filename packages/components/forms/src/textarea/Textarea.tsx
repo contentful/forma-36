@@ -5,6 +5,7 @@ import { BaseInput } from '../base-input';
 import type { BaseInputProps } from '../base-input';
 import { useFormControl } from '../form-control/FormControlContext';
 import { getStyles } from './Textarea.styles';
+import { ExpandProps } from '@contentful/f36-core';
 
 export type TextareaProps = Omit<
   BaseInputProps<'textarea'>,
@@ -24,7 +25,7 @@ const _Textarea = (
     resize = 'vertical',
     maxLength,
     ...otherProps
-  }: TextareaProps,
+  }: ExpandProps<TextareaProps>,
   ref: React.Ref<HTMLTextAreaElement>,
 ) => {
   const styles = getStyles();

@@ -1,5 +1,9 @@
 import React from 'react';
-import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import {
+  CommonProps,
+  PropsWithHTMLElement,
+  ExpandProps,
+} from '@contentful/f36-core';
 import { useMenuContext } from '../MenuContext';
 import { useSubmenuContext } from '../SubmenuContext';
 import { Popover } from '@contentful/f36-popover';
@@ -18,7 +22,10 @@ function assertChild(child: any): child is { type: { displayName: string } } {
 
 export type MenuListProps = PropsWithHTMLElement<MenuListInternalProps, 'div'>;
 
-const _MenuList = (props: MenuListProps, ref: React.Ref<HTMLDivElement>) => {
+const _MenuList = (
+  props: ExpandProps<MenuListProps>,
+  ref: React.Ref<HTMLDivElement>,
+) => {
   const {
     children,
     testId = 'cf-ui-menu-list',

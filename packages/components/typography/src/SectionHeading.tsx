@@ -6,6 +6,7 @@ import {
   MarginProps,
   PolymorphicComponent,
   PolymorphicProps,
+  ExpandProps,
 } from '@contentful/f36-core';
 import type { HeadingElement } from './Heading';
 import { Text } from './Text';
@@ -57,6 +58,6 @@ function _SectionHeading<
 }
 
 export const SectionHeading: PolymorphicComponent<
-  SectionHeadingInternalProps,
+  ExpandProps<SectionHeadingInternalProps>,
   typeof SECTION_HEADING_DEFAULT_TAG
 > = React.forwardRef(_SectionHeading);

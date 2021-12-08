@@ -1,6 +1,10 @@
 import React from 'react';
 import { cx } from 'emotion';
-import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import type {
+  CommonProps,
+  PropsWithHTMLElement,
+  ExpandProps,
+} from '@contentful/f36-core';
 import { DragIcon, CloseIcon } from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
 import { PillVariants } from './types';
@@ -32,7 +36,7 @@ export type PillInternalProps = CommonProps & {
 
 export type PillProps = PropsWithHTMLElement<PillInternalProps, 'div'>;
 
-export const Pill = React.forwardRef<HTMLDivElement, PillProps>(
+export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
   (props, ref) => {
     const {
       label,

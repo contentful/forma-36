@@ -4,6 +4,7 @@ import {
   MarginProps,
   PolymorphicComponent,
   PolymorphicProps,
+  ExpandProps,
 } from '@contentful/f36-core';
 import type { HeadingElement } from './Heading';
 import { Text } from './Text';
@@ -43,6 +44,6 @@ function _Subheading<
 }
 
 export const Subheading: PolymorphicComponent<
-  SubheadingInternalProps,
+  ExpandProps<SubheadingInternalProps>,
   typeof SUBHEADING_DEFAULT_TAG
 > = React.forwardRef(_Subheading);

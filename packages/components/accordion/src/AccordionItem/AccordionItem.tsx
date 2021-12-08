@@ -4,7 +4,7 @@ import { useId, Box } from '@contentful/f36-core';
 
 import { AccordionHeader } from '../AccordionHeader/AccordionHeader';
 import { AccordionPanel } from '../AccordionPanel/AccordionPanel';
-import type { CommonProps } from '@contentful/f36-core';
+import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 
 import { getAccordionItemStyles } from './AccordionItem.styles';
 
@@ -46,7 +46,7 @@ const _AccordionItem = (
     align = 'end',
     className,
     ...otherProps
-  }: AccordionItemProps,
+  }: ExpandProps<AccordionItemProps>,
   ref: React.Ref<HTMLLIElement>,
 ) => {
   const styles = getAccordionItemStyles({ className });

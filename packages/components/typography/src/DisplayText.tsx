@@ -5,6 +5,7 @@ import {
   MarginProps,
   PolymorphicComponent,
   PolymorphicProps,
+  ExpandProps,
 } from '@contentful/f36-core';
 import { Text } from './Text';
 import type { HeadingElement } from './Heading';
@@ -61,6 +62,6 @@ function _DisplayText<
 }
 
 export const DisplayText: PolymorphicComponent<
-  DisplayTextInternalProps,
+  ExpandProps<DisplayTextInternalProps>,
   typeof DISPLAY_TEXT_DEFAULT_TAG
 > = React.forwardRef(_DisplayText);

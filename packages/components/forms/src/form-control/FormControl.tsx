@@ -5,6 +5,7 @@ import type {
   MarginProps,
   PolymorphicProps,
   PolymorphicComponent,
+  ExpandProps,
 } from '@contentful/f36-core';
 import { Box } from '@contentful/f36-core';
 
@@ -77,6 +78,6 @@ function _FormControl<
 }
 
 export const FormControl: PolymorphicComponent<
-  FormControlInternalProps,
+  ExpandProps<FormControlInternalProps>,
   typeof FORM_CONTROL_DEFAULT_TAG
 > = React.forwardRef(_FormControl);

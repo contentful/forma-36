@@ -1,7 +1,11 @@
 import React from 'react';
 import { cx } from 'emotion';
 import { Box } from '@contentful/f36-core';
-import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import type {
+  CommonProps,
+  PropsWithHTMLElement,
+  ExpandProps,
+} from '@contentful/f36-core';
 
 import type { BadgeSize, BadgeVariant } from './types';
 import { getBadgeStyles } from './getBadgeStyles';
@@ -23,7 +27,7 @@ export interface BadgeInternalProps extends CommonProps {
 
 export type BadgeProps = PropsWithHTMLElement<BadgeInternalProps, 'div'>;
 
-export const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
+export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
   (props, ref) => {
     const {
       children,

@@ -4,6 +4,7 @@ import type {
   CommonProps,
   MarginProps,
   PropsWithHTMLElement,
+  ExpandProps,
 } from '@contentful/f36-core';
 import { ErrorCircleOutlineIcon } from '@contentful/f36-icons';
 import { Text } from '@contentful/f36-typography';
@@ -22,7 +23,7 @@ export type ValidationMessageProps = PropsWithHTMLElement<
 
 export const ValidationMessage = forwardRef<
   HTMLDivElement,
-  ValidationMessageProps
+  ExpandProps<ValidationMessageProps>
 >(({ children, testId = 'cf-ui-validation-message', ...otherProps }, ref) => {
   const { id } = useFormControl({});
   return (
