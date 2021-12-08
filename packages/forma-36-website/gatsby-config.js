@@ -137,8 +137,18 @@ module.exports = {
             link: '/components/button-group',
           },
           {
-            name: 'Card',
-            link: '/components/card/',
+            name: 'Card Components',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Card',
+                link: '/components/card/',
+              },
+              {
+                name: 'EntryCard',
+                link: '/components/entry-card/',
+              },
+            ],
           },
           {
             name: 'CopyButton',
