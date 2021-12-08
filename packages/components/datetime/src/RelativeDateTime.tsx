@@ -1,5 +1,9 @@
 import React from 'react';
-import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import {
+  CommonProps,
+  PropsWithHTMLElement,
+  ExpandProps,
+} from '@contentful/f36-core';
 
 import dayjs from 'dayjs';
 import utcPlugin from 'dayjs/plugin/utc';
@@ -47,7 +51,7 @@ const _RelativeDateTime = (
     isRelativeToCurrentWeek = false,
     testId = 'cf-ui-relative-date-time',
     ...otherProps
-  }: RelativeDateTimeProps,
+  }: ExpandProps<RelativeDateTimeProps>,
   ref: React.Ref<HTMLTimeElement>,
 ) => {
   const now = new Date();

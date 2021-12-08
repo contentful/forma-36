@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect, useCallback } from 'react';
-import { useId, mergeRefs } from '@contentful/f36-core';
+import { useId, mergeRefs, ExpandProps } from '@contentful/f36-core';
 import { Placement, Modifier } from '@popperjs/core';
 import { PopoverContextProvider, PopoverContextType } from './PopoverContext';
 import { usePopper } from 'react-popper';
@@ -97,7 +97,7 @@ export interface PopoverProps {
   offset?: [number, number];
 }
 
-export function Popover(props: PopoverProps) {
+export function Popover(props: ExpandProps<PopoverProps>) {
   const {
     children,
     isOpen,

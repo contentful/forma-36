@@ -1,6 +1,6 @@
 import React, { ChangeEventHandler, FocusEventHandler } from 'react';
 import { Stack } from '@contentful/f36-core';
-import type { CommonProps } from '@contentful/f36-core';
+import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 import { BaseCheckboxGroupContext } from './BaseCheckboxGroupContext';
 
 export interface BaseCheckboxGroupProps extends CommonProps {
@@ -35,7 +35,7 @@ export interface BaseCheckboxGroupProps extends CommonProps {
 }
 
 export const _BaseCheckboxGroup = (
-  props: BaseCheckboxGroupProps,
+  props: ExpandProps<BaseCheckboxGroupProps>,
   ref: React.Ref<HTMLDivElement>,
 ) => {
   const {

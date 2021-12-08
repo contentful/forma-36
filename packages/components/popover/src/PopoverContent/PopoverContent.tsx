@@ -1,6 +1,10 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import {
+  CommonProps,
+  PropsWithHTMLElement,
+  ExpandProps,
+} from '@contentful/f36-core';
 import { usePopoverContext } from '../PopoverContext';
 import { Portal } from '@contentful/f36-utils';
 import { getPopoverContentStyles } from './PopoverContent.styles';
@@ -14,7 +18,7 @@ export type PopoverContentProps = PropsWithHTMLElement<
   'div'
 >;
 
-const _PopoverContent = (props: PopoverContentProps, ref) => {
+const _PopoverContent = (props: ExpandProps<PopoverContentProps>, ref) => {
   const {
     children,
     className,

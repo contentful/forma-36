@@ -1,7 +1,11 @@
 import { css, cx } from 'emotion';
 import React, { forwardRef } from 'react';
 import { Box } from '@contentful/f36-core';
-import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import type {
+  CommonProps,
+  PropsWithHTMLElement,
+  ExpandProps,
+} from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
 import { TableCellContext, contextOptions } from './';
@@ -17,7 +21,10 @@ export type TableHeadProps = PropsWithHTMLElement<
   'thead'
 >;
 
-export const TableHead = forwardRef<HTMLTableSectionElement, TableHeadProps>(
+export const TableHead = forwardRef<
+  HTMLTableSectionElement,
+  ExpandProps<TableHeadProps>
+>(
   (
     {
       children,

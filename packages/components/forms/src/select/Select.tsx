@@ -7,7 +7,11 @@ import React, {
 import { cx } from 'emotion';
 import { ChevronDownIcon } from '@contentful/f36-icons';
 
-import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import {
+  CommonProps,
+  PropsWithHTMLElement,
+  ExpandProps,
+} from '@contentful/f36-core';
 import { useFormControl } from '../form-control/FormControlContext';
 import { getSelectStyles } from './Select.styles';
 
@@ -46,7 +50,7 @@ const _Select = (
     value = undefined,
     defaultValue = undefined,
     ...otherProps
-  }: SelectProps,
+  }: ExpandProps<SelectProps>,
   ref: React.Ref<HTMLSelectElement>,
 ) => {
   const formProps = useFormControl({

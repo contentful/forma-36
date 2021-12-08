@@ -6,6 +6,7 @@ import type {
 } from '@contentful/f36-core';
 import { Heading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
+import type { ExpandProps } from '@contentful/f36-core';
 
 import { BaseCard, BASE_CARD_DEFAULT_TAG } from '../base-card/BaseCard';
 import type { BaseCardInternalProps } from '../base-card/BaseCard.types';
@@ -77,6 +78,6 @@ function _Card<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
 }
 
 export const Card: PolymorphicComponent<
-  CardInternalProps,
+  ExpandProps<CardInternalProps>,
   typeof BASE_CARD_DEFAULT_TAG
 > = forwardRef(_Card);

@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { cx } from 'emotion';
 import { useCombobox } from 'downshift';
 
-import { CommonProps, mergeRefs } from '@contentful/f36-core';
+import { CommonProps, ExpandProps, mergeRefs } from '@contentful/f36-core';
 import { IconButton } from '@contentful/f36-button';
 import { TextInput, TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
@@ -355,5 +355,7 @@ function isUsingGroups<ItemType>(
  * Once one of the options is selected, that option becomes the value of the `TextInput`.
  */
 export const Autocomplete = React.forwardRef(_Autocomplete) as <T>(
-  props: AutocompleteProps<T> & { ref?: React.Ref<HTMLDivElement> },
+  props: ExpandProps<AutocompleteProps<T>> & {
+    ref?: React.Ref<HTMLDivElement>;
+  },
 ) => ReturnType<typeof _Autocomplete>;

@@ -5,6 +5,7 @@ import {
   CommonProps,
   PolymorphicProps,
   PolymorphicComponent,
+  ExpandProps,
 } from '@contentful/f36-core';
 import { styles } from './TextLink.styles';
 import { TextLinkVariant } from './types';
@@ -125,7 +126,7 @@ function _TextLink<E extends React.ElementType = typeof TEX_LINK_DEFAULT_TAG>(
 }
 
 export const TextLink: PolymorphicComponent<
-  TextLinkInternalProps,
+  ExpandProps<TextLinkInternalProps>,
   typeof TEX_LINK_DEFAULT_TAG,
   'disabled'
 > = React.forwardRef(_TextLink);

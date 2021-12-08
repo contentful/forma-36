@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { BaseInput } from '../base-input';
 import { TextInputProps } from './types';
 import { useFormControl } from '../form-control/FormControlContext';
+import { ExpandProps } from '@contentful/f36-core';
 
 export const _TextInput = (
   {
@@ -19,7 +20,7 @@ export const _TextInput = (
     size = 'medium',
     maxLength,
     ...otherProps
-  }: TextInputProps,
+  }: ExpandProps<TextInputProps>,
   ref: React.RefObject<HTMLInputElement>,
 ) => {
   const {

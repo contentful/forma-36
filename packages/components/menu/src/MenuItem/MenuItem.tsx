@@ -5,6 +5,7 @@ import {
   mergeRefs,
   PolymorphicComponent,
   PolymorphicProps,
+  ExpandProps,
 } from '@contentful/f36-core';
 import { useMenuContext } from '../MenuContext';
 import { useId } from '@contentful/f36-core';
@@ -63,6 +64,6 @@ function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
 }
 
 export const MenuItem: PolymorphicComponent<
-  MenuItemInternalProps,
+  ExpandProps<MenuItemInternalProps>,
   typeof MENU_ITEM_DEFAULT_TAG
 > = React.forwardRef(_MenuItem);

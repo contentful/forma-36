@@ -5,10 +5,11 @@ import {
   SectionHeading,
   SectionHeadingProps,
 } from '@contentful/f36-typography';
+import { ExpandProps } from '@contentful/f36-core';
 
 export type MenuSectionTitleProps = SectionHeadingProps;
 
-export const MenuSectionTitle = (props: MenuSectionTitleProps) => {
+export const MenuSectionTitle = (props: ExpandProps<MenuSectionTitleProps>) => {
   const {
     children,
     testId = 'cf-ui-menu-section-title',

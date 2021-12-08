@@ -1,8 +1,8 @@
 import React from 'react';
-import type { EntityStatus } from '@contentful/f36-core';
+import type { EntityStatus, ExpandProps } from '@contentful/f36-core';
 
 import { Badge } from './Badge';
-import type { BadgeProps } from './Badge';
+import type { BadgeInternalProps } from './Badge';
 import { BadgeVariant } from './types';
 
 const statusMap: { [key in EntityStatus]: BadgeVariant } = {
@@ -15,14 +15,14 @@ const statusMap: { [key in EntityStatus]: BadgeVariant } = {
 };
 
 export type EntityStatusBadgeProps = Omit<
-  BadgeProps,
+  BadgeInternalProps,
   'variant' | 'children'
 > & {
   entityStatus: EntityStatus;
 };
 
 function EntityStatusBadge(
-  props: EntityStatusBadgeProps,
+  props: ExpandProps<EntityStatusBadgeProps>,
   ref: React.Ref<HTMLDivElement>,
 ) {
   const { entityStatus, ...otherProps } = props;

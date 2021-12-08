@@ -1,7 +1,7 @@
 import { cx, css } from 'emotion';
 import React, { forwardRef } from 'react';
 import { Box, CommonProps } from '@contentful/f36-core';
-import type { PropsWithHTMLElement } from '@contentful/f36-core';
+import type { PropsWithHTMLElement, ExpandProps } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
 const getStyles = () => {
@@ -34,7 +34,7 @@ export type TableInternalProps = CommonProps & {
 
 export type TableProps = PropsWithHTMLElement<TableInternalProps, 'table'>;
 
-export const Table = forwardRef<HTMLTableElement, TableProps>(
+export const Table = forwardRef<HTMLTableElement, ExpandProps<TableProps>>(
   (
     {
       children,

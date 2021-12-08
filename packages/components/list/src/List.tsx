@@ -5,6 +5,7 @@ import {
   CommonProps,
   PolymorphicProps,
   PolymorphicComponent,
+  ExpandProps,
 } from '@contentful/f36-core';
 
 const LIST_DEFAULT_TAG = 'ul';
@@ -52,6 +53,6 @@ function _List<E extends React.ElementType = typeof LIST_DEFAULT_TAG>(
 }
 
 export const List: PolymorphicComponent<
-  ListInternalProps,
+  ExpandProps<ListInternalProps>,
   typeof LIST_DEFAULT_TAG
 > = React.forwardRef(_List);

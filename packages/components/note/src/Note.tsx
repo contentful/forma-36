@@ -1,7 +1,11 @@
 import { cx } from 'emotion';
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
-import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import type {
+  CommonProps,
+  PropsWithHTMLElement,
+  ExpandProps,
+} from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
 import { Heading, Text } from '@contentful/f36-typography';
 import {
@@ -52,59 +56,64 @@ export type NoteProps = PropsWithHTMLElement<NoteInternalProps, 'article'>;
 /**
  * @description: Note provides context and information about a situation or action.
  */
-export const Note = React.forwardRef<HTMLElement, NoteProps>((props, ref) => {
-  const {
-    children,
-    className,
-    withCloseButton = false,
-    variant = 'primary',
-    onClose,
-    testId = 'cf-ui-note',
-    title,
-    ...otherProps
-  } = props;
+export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
+  (props, ref) => {
+    const {
+      children,
+      className,
+      withCloseButton = false,
+      variant = 'primary',
+      onClose,
+      testId = 'cf-ui-note',
+      title,
+      ...otherProps
+    } = props;
 
-  const styles = getNoteStyles();
+    const styles = getNoteStyles();
 
-  return (
-    <Flex
-      {...otherProps}
-      as="article"
-      className={cx(styles.container({ variant, withCloseButton }), className)}
-      testId={testId}
-      ref={ref}
-      padding="spacingM"
-      alignItems="flex-start"
-    >
-      <Flex marginRight="spacingS">
-        <Icon
-          as={icons[variant]}
-          variant={variant}
-          size={title ? 'medium' : 'small'}
-        />
-      </Flex>
-      <div>
-        {title && (
-          <Heading as="h2" className={styles.title}>
-            {title}
-          </Heading>
+    return (
+      <Flex
+        {...otherProps}
+        as="article"
+        className={cx(
+          styles.container({ variant, withCloseButton }),
+          className,
         )}
-        <Text as="p" lineHeight="lineHeightM" className={styles.description}>
-          {children}
-        </Text>
-      </div>
-      {withCloseButton && (
-        <Button
-          variant="transparent"
-          startIcon={<CloseIcon className={styles.closeIcon} />}
-          onClick={onClose}
-          testId={`${testId}-close`}
-          aria-label="Dismiss"
-          className={styles.close}
-        />
-      )}
-    </Flex>
-  );
-});
+        testId={testId}
+        ref={ref}
+        padding="spacingM"
+        alignItems="flex-start"
+      >
+        <Flex marginRight="spacingS">
+          <Icon
+            as={icons[variant]}
+            variant={variant}
+            size={title ? 'medium' : 'small'}
+          />
+        </Flex>
+        <div>
+          {title && (
+            <Heading as="h2" className={styles.title}>
+              {title}
+            </Heading>
+          )}
+          <Text as="p" lineHeight="lineHeightM" className={styles.description}>
+            {children}
+          </Text>
+        </div>
+        {withCloseButton && (
+          <Button
+            variant="transparent"
+            startIcon={<CloseIcon className={styles.closeIcon} />}
+            onClick={onClose}
+            testId={`${testId}-close`}
+            aria-label="Dismiss"
+            className={styles.close}
+          />
+        )}
+      </Flex>
+    );
+  },
+);
 
 Note.displayName = 'Note';

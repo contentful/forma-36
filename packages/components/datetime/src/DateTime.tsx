@@ -1,5 +1,9 @@
 import React from 'react';
-import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import {
+  CommonProps,
+  PropsWithHTMLElement,
+  ExpandProps,
+} from '@contentful/f36-core';
 
 import type { DateType, DateFormat } from '../types';
 import { formatDateAndTime, formatMachineReadableDateTime } from './utils';
@@ -25,7 +29,7 @@ const _DateTime = (
     format = 'full',
     testId = 'cf-ui-date-time',
     ...otherProps
-  }: DateTimeProps,
+  }: ExpandProps<DateTimeProps>,
   ref: React.Ref<HTMLTimeElement>,
 ) => {
   const machineReadableDate = formatMachineReadableDateTime(date);

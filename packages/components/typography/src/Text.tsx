@@ -13,6 +13,7 @@ import {
   MarginProps,
   PolymorphicProps,
   Box,
+  ExpandProps,
 } from '@contentful/f36-core';
 
 export interface TextInternalProps extends CommonProps, MarginProps {
@@ -82,6 +83,6 @@ function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
 }
 
 export const Text: PolymorphicComponent<
-  TextInternalProps,
+  ExpandProps<TextInternalProps>,
   typeof TEXT_DEFAULT_TAG
 > = React.forwardRef(_Text);
