@@ -1,11 +1,11 @@
-interface MatchObj {
+export interface MatchObj {
   before: string;
   match: string;
   after: string;
 }
 
 /**
- * Function that can be used to find a subsstring inside another string.
+ * Function that can be used to find a substring inside another string.
  * It needs two strings, the second one will be used in a Regex expression
  * to be matched to the first one.
  * The function will return an object containing the match, what comes before the match,

@@ -2,20 +2,20 @@ import { useEffect, useCallback, MutableRefObject } from 'react';
 
 export interface UseKeyboardProps {
   /**
-   * @description object of key names and handlers defines which key to look for i.e. `ArrowUp`, `Escape`, `Shift`
+   * Object of key names and handlers defines which key to look for i.e. `ArrowUp`, `Escape`, `Shift`
    * value is a callback function to be called when key matches
    */
   keys: {
     [key: string]: (e: KeyboardEvent) => void;
   };
   /**
-   * @description defines the attached event type
+   * Defines the attached event type
    * @default 'keydown'
    */
   event?: 'keyup' | 'keypress' | 'keydown';
 
   /**
-   * @description React reference to attach the event to its current element
+   * React reference to attach the event to its current element
    */
   ref?: MutableRefObject<HTMLElement>;
 }

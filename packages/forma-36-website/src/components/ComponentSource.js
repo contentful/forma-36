@@ -3,6 +3,7 @@ import { css } from 'emotion';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import tokens from '@contentful/f36-tokens';
 import * as f36Components from '@contentful/f36-components';
+import * as f36utils from '@contentful/f36-utils';
 import { Card, Button } from '@contentful/f36-components';
 import * as f36icons from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
@@ -51,6 +52,7 @@ export default function ComponentSource({ children }) {
         scope={{
           ...f36icons,
           ...f36Components,
+          ...f36utils,
           f36icons,
           tokens,
           Icon,
