@@ -1,8 +1,17 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { Stack, ExpandProps } from '@contentful/f36-core';
+import { Stack, ExpandProps, CommonProps } from '@contentful/f36-core';
 import getStyles from './InputGroup.styles';
-import type { InputGroupProps } from './types';
+import type { InputGroupSpacing } from './types';
+
+export interface InputGroupProps extends CommonProps {
+  /**
+   * Sets the spacing of the elements if variant is separate.
+   * @default spacingS
+   */
+  spacing?: InputGroupSpacing;
+  children: React.ReactNode;
+}
 
 const _InputGroup = (
   props: ExpandProps<InputGroupProps>,

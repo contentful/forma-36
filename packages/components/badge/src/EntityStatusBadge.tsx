@@ -2,8 +2,8 @@ import React from 'react';
 import type { EntityStatus, ExpandProps } from '@contentful/f36-core';
 
 import { Badge } from './Badge';
-import type { BadgeInternalProps } from './Badge';
-import { BadgeVariant } from './types';
+import type { BadgeProps } from './Badge';
+import type { BadgeVariant, BadgeSize } from './types';
 
 const statusMap: { [key in EntityStatus]: BadgeVariant } = {
   published: 'positive',
@@ -14,15 +14,14 @@ const statusMap: { [key in EntityStatus]: BadgeVariant } = {
   new: 'primary-filled',
 };
 
-export type EntityStatusBadgeProps = Omit<
-  BadgeInternalProps,
-  'variant' | 'children'
-> & {
+export interface EntityStatusBadgeProps
+  extends Omit<BadgeProps, 'variant' | 'children'> {
+  size?: BadgeSize;
   entityStatus: EntityStatus;
-};
+}
 
 function EntityStatusBadge(
-  props: ExpandProps<EntityStatusBadgeProps>,
+  props: EntityStatusBadgeProps,
   ref: React.Ref<HTMLDivElement>,
 ) {
   const { entityStatus, ...otherProps } = props;
@@ -34,5 +33,8 @@ function EntityStatusBadge(
   );
 }
 
-const _EntityStatusBadge = React.forwardRef(EntityStatusBadge);
+const _EntityStatusBadge = React.forwardRef<
+  HTMLDivElement,
+  ExpandProps<EntityStatusBadgeProps>
+>(EntityStatusBadge);
 export { _EntityStatusBadge as EntityStatusBadge };
