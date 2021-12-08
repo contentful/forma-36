@@ -141,6 +141,10 @@ module.exports = {
             link: '',
             menuLinks: [
               {
+                name: 'AssetCard',
+                link: '/components/asset-card/',
+              },
+              {
                 name: 'Card',
                 link: '/components/card/',
               },
