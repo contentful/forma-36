@@ -23,7 +23,7 @@ const SETUP_CHOICES = [
     value: 'update-package-json',
   },
   {
-    name: 'migrate-all-components-to-v4: Run all exising codemods',
+    name: 'migrate-all-components-to-v4: Run all existing codemods',
     value: 'migrate-all-components-to-v4',
   },
   {
