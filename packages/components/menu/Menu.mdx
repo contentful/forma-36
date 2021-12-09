@@ -1,10 +1,14 @@
 ---
 title: 'Menu'
 slug: /components/menu/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/components/menu'
+github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/components/menu'
 typescript: ./src/Menu.tsx,./src/MenuItem/MenuItem.tsx,./src/MenuList/MenuList.tsx
 v4Doc: true
 ---
+
+import { Heading, Stack, TextLink } from '@contentful/f36-components';
+import { ExternalLinkIcon } from '@contentful/f36-icons';
+import { Props } from '@contentful/f36-docs-utils';
 
 Menu is a component that offers a list of choices to the user, such as a set of actions or links.
 Menu uses Popover component as a base.
@@ -24,10 +28,7 @@ Menu uses Popover component as a base.
   - [With React Router links](#with-react-router-links)
   - [With predefined focused menu item](#with-predefined-focused-menu-item)
   - [With submenu](#with-submenu)
-- [Props](#props)
-  - [Menu props](#menu-props)
-  - [Menu Item props](#menu-item-props)
-  - [Menu List props](#menu-list-props)
+- [Props](#props-api-reference)
 - [Content guidelines](#content-guidelines)
 - [Accessibility](#accessibility)
 - [Help improve this page](#help-improve-this-page)
@@ -332,7 +333,20 @@ But you can redefine them on any submenu by passing those props directly to that
 </Menu>
 ```
 
-## Props
+<Stack justifyContent="space-between" marginTop="spacing2Xl" marginBottom="spacingL">
+  <Heading id="props-api-reference" as="h2" marginTop="none" marginBottom="none">
+    Props (API reference)
+  </Heading>
+
+  <TextLink
+    href="https://v4-f36-storybook.netlify.app/?path=/story/components-accordion"
+    target="_blank"
+    alignIcon="end"
+    icon={<ExternalLinkIcon />}
+  >
+    Open in Storybook
+  </TextLink>
+</Stack>
 
 import { Props } from '@contentful/f36-docs-utils';
 
