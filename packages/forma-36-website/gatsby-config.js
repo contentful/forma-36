@@ -125,8 +125,18 @@ module.exports = {
             link: '/components/autocomplete/',
           },
           {
-            name: 'Badge',
-            link: '/components/badge/',
+            name: 'Badge Components',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Badge',
+                link: '/components/badge/',
+              },
+              {
+                name: 'EntityStatusBadge',
+                link: '/components/entity-status-badge/',
+              },
+            ],
           },
           {
             name: 'Button',

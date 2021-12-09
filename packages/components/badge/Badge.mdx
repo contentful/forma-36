@@ -10,6 +10,8 @@ typescript: ./src/Badge.tsx
 
 Badge is used to label or highlight items in the interface.
 
+If you need Badge for Contentful entity status, consider using [EntityStatusBadge](https://v4.f36.contentful.com/components/entity-status-badge/) instead.
+
 ## Table of contents
 
 - [Table of contents](#table-of-contents)
@@ -86,43 +88,6 @@ Badge is used to label or highlight items in the interface.
 <Badge variant="primary-filled" size="small">
   new
 </Badge>
-```
-
-### EntityStatusBadge
-
-For easy and quick usage of Badge in Contentful products, in extensions and apps we provide additional component called `EntityStatusBadge`. It's used in the Contentful entity to mark their status.
-
-EntityStatusBadge can have different mark following statuses. Those values are passed as a `entityStatus` property and displayed as a content in the badge:
-
-- published
-- draft
-- archived
-- changed
-- deleted
-- new
-
-```tsx
-<EntityStatusBadge entityStatus="published" />
-```
-
-```tsx
-<EntityStatusBadge entityStatus="draft" />
-```
-
-```tsx
-<EntityStatusBadge entityStatus="archived" />
-```
-
-```tsx
-<EntityStatusBadge entityStatus="changed" />
-```
-
-```tsx
-<EntityStatusBadge entityStatus="deleted" />
-```
-
-```tsx
-<EntityStatusBadge entityStatus="new" />
 ```
 
 ## Content recommendations
