@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "next dev",
-    "build:prod": "gatsby build",
+    "build:prod": "next build",
     "start:prod": "next start"
   },
   "dependencies": {
