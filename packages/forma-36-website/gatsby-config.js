@@ -169,6 +169,10 @@ module.exports = {
             ],
           },
           {
+            name: 'Collapse',
+            link: '/components/collapse/',
+          },
+          {
             name: 'CopyButton',
             link: '/components/copy-button/',
           },
