@@ -20,7 +20,7 @@ const styles = {
     border: 'none',
     cursor: 'pointer',
     outline: 'none',
-    '&:focus-visible': {
+    '&:focus-visible, &[aria-selected="true"]': {
       boxShadow: tokens.glowPrimary,
     },
     '&:before': {
