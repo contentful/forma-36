@@ -14,7 +14,10 @@ const Home: NextPage<HomeProps> = (props) => {
     <div>
       <Head>
         <title>Forma 36 - The Contentful Design System</title>
-        <meta name="description" content="Forma 36 - The Contentful Design System" />
+        <meta
+          name="description"
+          content="Forma 36 - The Contentful Design System"
+        />
         <link rel="icon" href="/favicon.png" />
       </Head>
 
