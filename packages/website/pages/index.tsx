@@ -29,7 +29,7 @@ const Home: NextPage<HomeProps> = (props) => {
           {props.componentsList.map((component, idx) => {
             return (
               <li key={idx}>
-                <Link href={`${component.slug}`}>{component.slug}</Link>
+                <Link href={`/${component.slug}`}>{component.slug}</Link>
               </li>
             );
           })}
