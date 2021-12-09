@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "next dev",
-    "build": "next build",
+    "build:prod": "gatsby build",
     "start:prod": "next start"
   },
   "dependencies": {
@@ -19,7 +19,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-live": "^2.3.0",
-    "remark": "^14.0.1",
+    "remark": "^14.0.2",
     "remark-html": "^15.0.1"
   },
   "devDependencies": {
