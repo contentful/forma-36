@@ -44,34 +44,47 @@ async function fetchFiles(targetPath: string) {
   return fetchedFiles;
 }
 
-async function getAllMdx(path: string) {
-  const allMDX = await fetchFiles(path);
-  const mdxData = allMDX.map((filepath) => getDataByFilepath(filepath));
+async function getAllMdx(paths: string[]) {
+  let allMDX: string[] = [];
+
+  for (const path of paths) {
+    const newFiles = await fetchFiles(path);
+    allMDX = allMDX.concat(newFiles);
+  }
+
+  const mdxData = allMDX
+    .map((filepath) => getDataByFilepath(filepath))
+    .filter((data) => {
+      // return only those mdx files which have 'slug' set in meta section
+      return data.frontMatter.data.slug;
+    });
   return mdxData;
 }
 
-const componentsPath = path.resolve('../../packages/components');
+const allMdxSources = [
+  path.resolve('../../packages/components'),
+  path.resolve('../../packages/forma-36-website/src/content'),
+];
 
-async function getComponentSourceBySlug(slug: string) {
-  const mdxFiles = await getAllMdx(componentsPath);
-  return mdxFiles.find((item) =>
-    item.frontMatter.data.slug.includes(`components/${slug}`),
+async function getMdxSourceBySlug(slug: string[]) {
+  const mdxFiles = await getAllMdx(allMdxSources);
+  const joinedSlug = slug.join('/');
+  return mdxFiles.find(
+    (item) =>
+      item.frontMatter.data.slug === `/${joinedSlug}/` ||
+      item.frontMatter.data.slug === `/${joinedSlug}`,
   );
 }
 
-async function getComponentsPaths() {
-  const pages = await getAllMdx(componentsPath);
+async function getMdxPaths() {
+  const pages = await getAllMdx(allMdxSources);
 
   const paths = pages
     .map((page) => {
       return page.frontMatter.data.slug;
     })
-    .filter((slug) => slug.startsWith('/components/'))
     .map((slug) => {
-      const sanitizedSlug = slug
-        .replace('/components/', '')
-        .split('/')
-        .filter((item) => item);
+      const sanitizedSlug = slug.split('/').filter((item) => item);
 
       return {
         params: {
@@ -83,4 +96,4 @@ async function getComponentsPaths() {
   return paths;
 }
 
-export { getComponentSourceBySlug, getComponentsPaths };
+export { getMdxSourceBySlug, getMdxPaths };

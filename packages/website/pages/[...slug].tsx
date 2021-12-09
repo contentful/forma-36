@@ -9,10 +9,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import Link from 'next/link';
 
-import {
-  getComponentsPaths,
-  getComponentSourceBySlug,
-} from '../../utils/content';
+import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 
 const styles = {
   root: css({
@@ -48,10 +45,12 @@ export default function ComponentPage(props: ComponentPageProps) {
 }
 
 export async function getStaticProps(props: { params: { slug: string[] } }) {
-  const result = await getComponentSourceBySlug(props.params.slug.join('/'));
+  const result = await getMdxSourceBySlug(props.params.slug);
 
   if (!result) {
-    throw new Error('Could not read file by slug');
+    throw new Error(
+      'Could not read file by slug: ' + props.params.slug.join('/'),
+    );
   }
 
   const { frontMatter } = result;
@@ -74,7 +73,7 @@ export async function getStaticProps(props: { params: { slug: string[] } }) {
 }
 
 export async function getStaticPaths() {
-  const paths = await getComponentsPaths();
+  const paths = await getMdxPaths();
   return {
     paths,
     fallback: false,
