@@ -152,6 +152,10 @@ module.exports = {
                 name: 'EntryCard',
                 link: '/components/entry-card/',
               },
+              {
+                name: 'InlineEntryCard',
+                link: '/components/inline-entry-card/',
+              },
             ],
           },
           {
