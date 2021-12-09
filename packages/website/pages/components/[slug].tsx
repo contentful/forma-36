@@ -1,6 +1,7 @@
+import React from 'react';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import { remark } from 'remark';
+import remark from 'remark';
 import html from 'remark-html';
 import { css } from 'emotion';
 

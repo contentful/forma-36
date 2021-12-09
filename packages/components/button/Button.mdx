@@ -8,6 +8,8 @@ storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-button-
 typescript: ./src/Button.tsx
 ---
 
+import { Props } from '@contentful/f36-docs-utils';
+
 Buttons communicate the action that will occur when the user clicks them. They communicate calls to action to the user and allow users to interact with pages in a variety of ways. They contain a text label to describe the action, and an icon if appropriate.
 
 ## Table of contents
@@ -36,19 +38,73 @@ Buttons communicate the action that will occur when the user clicks them. They c
 - **Negative** - For destructive actions - when something can't be undone. For example, deleting entities.
 - **Transparent** - For having an unstylized button.
 
+```jsx
+<Stack>
+  <Button variant="primary">Primary</Button>
+  <Button variant="secondary">Secondary</Button>
+  <Button variant="negative">Negative</Button>
+  <Button variant="positive">Positive</Button>
+  <Button variant="transparent">Transparent</Button>
+</Stack>
+```
+
 Buttons can be used in couple of different variations, like active, disabled or loading.
 
 ### Sizes
 
 Contentful buttons are available in 3 different sizes:
 
+```jsx
+<Stack>
+  <Button size="large">Large</Button>
+  <Button size="medium">Medium</Button>
+  <Button size="small">Small</Button>
+</Stack>
+```
+
+### Rendered as different Elements
+
+Contentful buttons can be rendered as a-tag which allows also use them with a href.
+
+```jsx
+<Button as="a" href="#">
+  As a with href tag
+</Button>
+```
+
 ## Code examples
+
+```jsx
+// import { Button } from '@contentful/f36-button';
+
+<Button variant="primary" testId="create-content-type">
+  Add content type
+</Button>
+```
 
 Usage of the button with dropdown indication
 
-{{"demo": "./examples/Basic.js"}}
+```jsx
+// import { Button } from '@contentful/f36-button';
+// import { DownloadIcon } from '@contentful/f36-icons';
+
+<Button variant="primary" startIcon={<DownloadIcon />}>
+  Primary star
+</Button>
+```
 
 Icon Button
+
+```jsx
+// import { Button } from '@contentful/f36-button';
+// import { DownloadIcon } from '@contentful/f36-icons';
+
+<Button
+  variant="primary"
+  aria-label="Download Asset"
+  startIcon={<DownloadIcon />}
+/>
+```
 
 ## Content recommendations:
 
@@ -66,3 +122,7 @@ Contentful buttons are checked in terms of color contrast and pass all the requi
 Buttons have a focus state when using keyboard navigation.
 
 Icon buttons must always have `aria-label` that describes it's purpose when no text is provided
+
+## Props
+
+<Props of="Button" />
