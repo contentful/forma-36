@@ -5,13 +5,12 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import mdxPrism from 'mdx-prism';
 import { css } from 'emotion';
-import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import Link from 'next/link';
 
 import {
-  getComponentsMDX,
+  getComponentsPaths,
   getComponentSourceBySlug,
 } from '../../utils/content';
 
@@ -48,39 +47,34 @@ export default function ComponentPage(props: ComponentPageProps) {
   );
 }
 
-export async function getStaticProps({ params }: { params: { slug: string } }) {
-  const { source } = getComponentSourceBySlug(params.slug);
+export async function getStaticProps(props: { params: { slug: string[] } }) {
+  const result = await getComponentSourceBySlug(props.params.slug.join('/'));
 
-  const { content, data } = matter(source);
+  if (!result) {
+    throw new Error('Could not read file by slug');
+  }
 
-  const mdxSource = await serialize(content, {
+  const { frontMatter } = result;
+
+  const mdxSource = await serialize(frontMatter.content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [require('remark-code-titles')],
       rehypePlugins: [mdxPrism, rehypeSlug, rehypeAutolinkHeadings],
     },
-    scope: data,
+    scope: frontMatter.data,
   });
 
   return {
     props: {
       source: mdxSource,
-      frontMatter: data,
+      frontMatter: frontMatter.data,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const pages = await getComponentsMDX();
-
-  const paths = pages.map((page) => {
-    return {
-      params: {
-        slug: page.slug,
-      },
-    };
-  });
-
+  const paths = await getComponentsPaths();
   return {
     paths,
     fallback: false,

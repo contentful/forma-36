@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import { getComponentsMDX } from '../utils/content';
+import { getComponentsPaths } from '../utils/content';
 
 interface HomeProps {
   componentsList: { slug: string }[];
@@ -50,16 +50,20 @@ const Home: NextPage<HomeProps> = (props) => {
 };
 
 export async function getStaticProps() {
-  const mdxData = await getComponentsMDX();
-  const sortedComponentsList = mdxData.sort((a, b) => {
-    if (a.slug < b.slug) {
-      return -1;
-    }
-    if (a.slug > b.slug) {
-      return 1;
-    }
-    return 0;
-  });
+  const mdxData = await getComponentsPaths();
+  const sortedComponentsList = mdxData
+    .map((data) => {
+      return { slug: data.params.slug.join('/') };
+    })
+    .sort((a, b) => {
+      if (a.slug < b.slug) {
+        return -1;
+      }
+      if (a.slug > b.slug) {
+        return 1;
+      }
+      return 0;
+    });
 
   return {
     props: {

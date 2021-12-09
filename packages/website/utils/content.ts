@@ -2,32 +2,13 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-function getCacheFileName(cache: string) {
-  return `utils/temp/${cache}.json`;
-}
-
-function getMDXBySlug(cache: string, slug: string) {
-  // read JSON file that maps each slug to a mdx file
-  const rawdata = fs.readFileSync(getCacheFileName(cache));
-  const mdxFilepathBySlug = JSON.parse((rawdata as unknown) as string);
-
-  const fullPath = mdxFilepathBySlug[slug];
-  const source = fs.readFileSync(fullPath, 'utf8');
-
-  return {
-    source,
-  };
-}
-
-function getSlugByFilepath(filepath: string) {
+function getDataByFilepath(filepath: string) {
   const fileContents = fs.readFileSync(filepath, 'utf8');
-  const { data } = matter(fileContents);
-
-  const slugArray = data.slug.split('/');
-  const slug = slugArray[slugArray.length - 2];
+  const frontMatter = matter(fileContents);
 
   return {
-    slug,
+    content: fileContents,
+    frontMatter,
     filepath,
   };
 }
@@ -63,28 +44,43 @@ async function fetchFiles(targetPath: string) {
   return fetchedFiles;
 }
 
-async function getAllMdx(cache: string, path: string) {
+async function getAllMdx(path: string) {
   const allMDX = await fetchFiles(path);
-  const mdxData = allMDX.map((filepath) => getSlugByFilepath(filepath));
-
-  // Saving a map of slugs and the filepath to their mdx in a JSON file
-  const mdxFilepathBySlug = mdxData.reduce((acc, mdx) => {
-    return { ...acc, [mdx.slug]: mdx.filepath };
-  }, {});
-
-  const data = JSON.stringify(mdxFilepathBySlug, null, 2);
-  fs.writeFileSync(getCacheFileName(cache), data);
-
+  const mdxData = allMDX.map((filepath) => getDataByFilepath(filepath));
   return mdxData;
 }
 
 const componentsPath = path.resolve('../../packages/components');
 
-function getComponentSourceBySlug(slug: string) {
-  return getMDXBySlug('components', slug);
-}
-function getComponentsMDX() {
-  return getAllMdx('components', componentsPath);
+async function getComponentSourceBySlug(slug: string) {
+  const mdxFiles = await getAllMdx(componentsPath);
+  return mdxFiles.find((item) =>
+    item.frontMatter.data.slug.includes(`components/${slug}`),
+  );
 }
 
-export { getComponentSourceBySlug, getComponentsMDX };
+async function getComponentsPaths() {
+  const pages = await getAllMdx(componentsPath);
+
+  const paths = pages
+    .map((page) => {
+      return page.frontMatter.data.slug;
+    })
+    .filter((slug) => slug.startsWith('/components/'))
+    .map((slug) => {
+      const sanitizedSlug = slug
+        .replace('/components/', '')
+        .split('/')
+        .filter((item) => item);
+
+      return {
+        params: {
+          slug: sanitizedSlug,
+        },
+      };
+    });
+
+  return paths;
+}
+
+export { getComponentSourceBySlug, getComponentsPaths };
