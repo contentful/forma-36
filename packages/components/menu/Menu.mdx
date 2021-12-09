@@ -24,6 +24,7 @@ Menu uses Popover component as a base.
   - [Controlled Menu with custom trigger onClick callback](#controlled-menu-with-custom-trigger-onClick-callback)
   - [With Menu list maximum height](#with-menu-list-maximum-height)
   - [With disabled items](#with-disabled-items)
+  - [With menu open by default](#with-menu-open-by-default)
   - [With sticky header and footer](#with-sticky-header-and-footer)
   - [With React Router links](#with-react-router-links)
   - [With predefined focused menu item](#with-predefined-focused-menu-item)
@@ -222,6 +223,25 @@ function ControlledMenuWithCustomTriggerLogic() {
     <Menu.Item>Item 6</Menu.Item>
     <Menu.Item disabled>Item 7 (disabled)</Menu.Item>
     <Menu.Item>Item 8</Menu.Item>
+  </Menu.List>
+</Menu>
+```
+
+### With menu open by default
+
+```jsx static=true
+<Menu defaultIsOpen>
+  <Menu.Trigger>
+    <IconButton
+      variant="secondary"
+      icon={<MenuIcon />}
+      aria-label="toggle menu"
+    />
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.Item>Create an entry</Menu.Item>
+    <Menu.Item>Remove an entry</Menu.Item>
+    <Menu.Item>Embed existing entry</Menu.Item>
   </Menu.List>
 </Menu>
 ```
