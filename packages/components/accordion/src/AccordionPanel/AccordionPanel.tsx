@@ -2,6 +2,7 @@ import React, { FC, useLayoutEffect, useRef } from 'react';
 import tokens from '@contentful/f36-tokens';
 import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 import { Box } from '@contentful/f36-core';
+import { Collapse } from '@contentful/f36-collapse';
 
 import { getAccordionPanelStyles } from './AccordionPanel.styles';
 
@@ -28,70 +29,15 @@ export const AccordionPanel: FC<ExpandProps<AccordionPanelProps>> = ({
   ...rest
 }: AccordionPanelProps) => {
   const styles = getAccordionPanelStyles();
-  const panelEl = useRef<HTMLDivElement>(null);
-
-  const getPanelContentHeight = () => {
-    const { current } = panelEl;
-
-    if (!current) {
-      // to keep the function return type as string only and
-      // not overcomplicate things with non-nullable checks
-      return '0px';
-    }
-
-    return `${current.scrollHeight / parseInt(tokens.fontBaseDefault, 10)}rem`; // converting height pixels into rem
-  };
-
-  useLayoutEffect(() => {
-    const { current } = panelEl;
-
-    const handleTransitionEnd = () => {
-      if (current) {
-        current.style.height = 'auto';
-      }
-    };
-
-    if (current) {
-      if (isExpanded) {
-        current.addEventListener('transitionend', handleTransitionEnd);
-
-        requestAnimationFrame(function () {
-          current.style.height = '0px';
-
-          requestAnimationFrame(function () {
-            current.style.height = getPanelContentHeight();
-          });
-        });
-      } else {
-        requestAnimationFrame(function () {
-          current.style.height = getPanelContentHeight();
-
-          requestAnimationFrame(function () {
-            current.style.height = '0px';
-          });
-        });
-      }
-    }
-
-    return () => {
-      if (current) {
-        current.removeEventListener('transitionend', handleTransitionEnd);
-      }
-    };
-  }, [isExpanded]);
 
   return (
-    <Box
-      {...rest}
-      testId={testId}
-      id={`accordion-panel--${ariaId}`}
-      role="region"
+    <Collapse
+      data-test-id={testId}
       aria-labelledby={`accordion--${ariaId}`}
-      aria-hidden={!isExpanded}
-      className={styles.accordionPanel}
-      ref={panelEl}
+      isExpanded={isExpanded}
+      {...rest}
     >
       <div className={styles.accordionPanelContent}>{children}</div>
-    </Box>
+    </Collapse>
   );
 };
