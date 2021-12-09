@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import { geltAllMDX } from '../utils/content';
+import { getComponentsMDX } from '../utils/content';
 
 interface HomeProps {
   componentsList: { slug: string }[];
@@ -50,7 +50,7 @@ const Home: NextPage<HomeProps> = (props) => {
 };
 
 export async function getStaticProps() {
-  const mdxData = await geltAllMDX();
+  const mdxData = await getComponentsMDX();
   const sortedComponentsList = mdxData.sort((a, b) => {
     if (a.slug < b.slug) {
       return -1;

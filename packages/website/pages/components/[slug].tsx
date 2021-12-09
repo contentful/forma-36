@@ -10,7 +10,10 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import Link from 'next/link';
 
-import { geltAllMDX, getPageBySlug } from '../../utils/content';
+import {
+  getComponentsMDX,
+  getComponentSourceBySlug,
+} from '../../utils/content';
 
 const styles = {
   root: css({
@@ -46,7 +49,7 @@ export default function ComponentPage(props: ComponentPageProps) {
 }
 
 export async function getStaticProps({ params }: { params: { slug: string } }) {
-  const { source } = getPageBySlug(params.slug);
+  const { source } = getComponentSourceBySlug(params.slug);
 
   const { content, data } = matter(source);
 
@@ -68,7 +71,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 }
 
 export async function getStaticPaths() {
-  const pages = await geltAllMDX();
+  const pages = await getComponentsMDX();
 
   const paths = pages.map((page) => {
     return {

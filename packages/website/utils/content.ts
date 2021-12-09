@@ -2,11 +2,13 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const componentsPath = path.resolve('../../packages/components');
+function getCacheFileName(cache: string) {
+  return `utils/temp/${cache}.json`;
+}
 
-function getPageBySlug(slug: string) {
+function getMDXBySlug(cache: string, slug: string) {
   // read JSON file that maps each slug to a mdx file
-  const rawdata = fs.readFileSync('utils/mdxFilepathBySlug.json');
+  const rawdata = fs.readFileSync(getCacheFileName(cache));
   const mdxFilepathBySlug = JSON.parse((rawdata as unknown) as string);
 
   const fullPath = mdxFilepathBySlug[slug];
@@ -61,18 +63,28 @@ async function fetchFiles(targetPath: string) {
   return fetchedFiles;
 }
 
-async function geltAllMDX() {
-  const allMDX = await fetchFiles(componentsPath);
+async function getAllMdx(cache: string, path: string) {
+  const allMDX = await fetchFiles(path);
   const mdxData = allMDX.map((filepath) => getSlugByFilepath(filepath));
 
   // Saving a map of slugs and the filepath to their mdx in a JSON file
   const mdxFilepathBySlug = mdxData.reduce((acc, mdx) => {
     return { ...acc, [mdx.slug]: mdx.filepath };
   }, {});
+
   const data = JSON.stringify(mdxFilepathBySlug, null, 2);
-  fs.writeFileSync('utils/mdxFilepathBySlug.json', data);
+  fs.writeFileSync(getCacheFileName(cache), data);
 
   return mdxData;
 }
 
-export { geltAllMDX, getPageBySlug };
+const componentsPath = path.resolve('../../packages/components');
+
+function getComponentSourceBySlug(slug: string) {
+  return getMDXBySlug('components', slug);
+}
+function getComponentsMDX() {
+  return getAllMdx('components', componentsPath);
+}
+
+export { getComponentSourceBySlug, getComponentsMDX };
