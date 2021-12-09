@@ -1,12 +1,14 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import { remark } from 'remark';
-import html from 'remark-html';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
+import mdxPrism from 'mdx-prism';
 import { css } from 'emotion';
-
-import * as f36Components from '@contentful/f36-components';
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import matter from 'gray-matter';
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import Link from 'next/link';
 
 import { geltAllMDX, getPageBySlug } from '../../utils/content';
 
@@ -16,68 +18,51 @@ const styles = {
     padding: '0 0.5rem',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
     alignItems: 'center',
   }),
 };
 
-export default function ComponentPage(props: {
-  data: any;
-  content: string;
-  previews: string[];
-  slug: string;
-}) {
+type ComponentPageProps = {
+  source: MDXRemoteSerializeResult;
+  frontMatter: {
+    title: string;
+  };
+};
+
+export default function ComponentPage(props: ComponentPageProps) {
   const router = useRouter();
-  if (!router.isFallback && !props.slug) {
+  if (router.isFallback) {
     return <ErrorPage statusCode={404} />;
   }
-
   return (
-    <div className={styles.root}>
-      <h1>{props.data.title}</h1>
-
-      {props.previews &&
-        props.previews.map((preview, idx) => (
-          <LiveProvider
-            key={idx}
-            scope={{ ...f36Components }}
-            code={transformCode(preview)}
-            language="tsx"
-          >
-            <f36Components.Box padding="spacingM">
-              <LivePreview />
-            </f36Components.Box>
-            <LiveEditor />
-            <LiveError />
-          </LiveProvider>
-        ))}
-
-      <div dangerouslySetInnerHTML={{ __html: props.content }} />
-    </div>
+    <article className={styles.root}>
+      <Link href="/">Back</Link>
+      <h1>{props.frontMatter.title}</h1>
+      <div>
+        <MDXRemote {...props.source} />
+      </div>
+    </article>
   );
 }
 
-function transformCode(code: string) {
-  const transformedCode = code
-    .replace(/import.+/g, '')
-    .replace(/export\s/g, '')
-    .trim();
-
-  return transformedCode;
-}
-
 export async function getStaticProps({ params }: { params: { slug: string } }) {
-  const page = getPageBySlug(params.slug);
+  const { source } = getPageBySlug(params.slug);
 
-  const result = await remark()
-    .use(html)
-    .process(page.content || '');
-  const content = result.toString();
+  const { content, data } = matter(source);
+
+  const mdxSource = await serialize(content, {
+    // Optionally pass remark/rehype plugins
+    mdxOptions: {
+      remarkPlugins: [require('remark-code-titles')],
+      rehypePlugins: [mdxPrism, rehypeSlug, rehypeAutolinkHeadings],
+    },
+    scope: data,
+  });
 
   return {
     props: {
-      ...page,
-      content,
+      source: mdxSource,
+      frontMatter: data,
     },
   };
 }

@@ -10,35 +10,10 @@ function getPageBySlug(slug: string) {
   const mdxFilepathBySlug = JSON.parse((rawdata as unknown) as string);
 
   const fullPath = mdxFilepathBySlug[slug];
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
-
-  const fileName = fullPath.split('/').pop();
-  const examplePath = path.join(
-    fullPath.replace(fileName as string, ''),
-    'examples',
-  );
-  let examples: string[] = [];
-  let previews: string[] = [];
-
-  if (fs.existsSync(examplePath)) {
-    examples = fs.readdirSync(examplePath);
-    previews = examples.map((example) => {
-      const exampleContents = fs.readFileSync(
-        path.join(examplePath, example),
-        'utf8',
-      );
-
-      return exampleContents;
-    });
-  }
+  const source = fs.readFileSync(fullPath, 'utf8');
 
   return {
-    slug,
-    data,
-    examples,
-    previews,
-    content,
+    source,
   };
 }
 
