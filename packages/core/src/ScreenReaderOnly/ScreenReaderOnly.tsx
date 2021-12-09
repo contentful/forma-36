@@ -1,7 +1,7 @@
 import { cx } from 'emotion';
 import React from 'react';
 import { getStyles } from './ScreenReaderOnly.styles';
-import type { CommonProps } from '@contentful/f36-core';
+import type { CommonProps } from '../types';
 
 export interface ScreenReaderOnlyProps extends CommonProps {
   children?: React.ReactNode;
