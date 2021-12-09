@@ -5,6 +5,10 @@
 **/dist
 **/dist-storybook
 
+# next.js
+**/.next/
+**/out/
+
 # misc
 **/.DS_Store
 **/.env.local
@@ -18,6 +22,7 @@
 **/yarn-error.log*
 **/package-lock.json
 **/lerna-debug.log
+**/tsconfig.tsbuildinfo
 
 **/.cache
 **/.rts2_cache_cjs
@@ -30,3 +35,6 @@
 .vscode/
 .idea/
 *.log
+
+# generated automatically
+**/mdxFilepathBySlug.json

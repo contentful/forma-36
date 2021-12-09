@@ -3,9 +3,13 @@
     // we can explicitly declare `any`, but we don't want to infer `any`
     "noImplicitAny": false,
     "target": "es6",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     // allows react jsx in tsx files
-    "jsx": "react",
+    "jsx": "react-jsx",
     // Eventually turn off, one we have no more assumed default exports.
     // Allow default imports from modules with no default export.
     "allowSyntheticDefaultImports": true,
@@ -22,11 +26,22 @@
     // Import non-ES modules as default imports.
     "esModuleInterop": true,
     "paths": {
-      "@/scripts/*": ["./scripts/*"]
+      "@/scripts/*": [
+        "./scripts/*"
+      ]
     },
-    "skipLibCheck": false,
-    "typeRoots": ["node_modules/@types", "./types"]
+    "skipLibCheck": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "./types"
+    ]
   },
-  "include": ["packages", "types"],
-  "exclude": ["**/node_modules", "**/dist"]
+  "include": [
+    "packages",
+    "types"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/dist",
+  ]
 }

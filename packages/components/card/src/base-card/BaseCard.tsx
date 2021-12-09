@@ -52,8 +52,8 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
     onKeyDown,
     onMouseEnter,
     onMouseLeave,
-    rel = 'noreferrer',
     target,
+    rel,
     testId = 'cf-ui-base-card',
     title,
     type,
@@ -182,7 +182,7 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
           : undefined
       }
       onKeyDown={handleKeyDown}
-      rel={href && rel}
+      rel={href && (rel || 'noreferrer')}
       role={onClick && !href ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}
       target={target}
