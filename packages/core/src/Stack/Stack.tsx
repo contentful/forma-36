@@ -1,14 +1,11 @@
 import * as React from 'react';
 import { PolymorphicProps, PolymorphicComponent } from '../Primitive/Primitive';
 import { useBox } from '../Box';
-import type { MarginProps, PaddingProps, CommonProps, Spacing } from '../types';
+import type { Spacing } from '../types';
 import { Flex, FlexInternalProps } from '../Flex/Flex';
 
 export interface StackInternalProps
-  extends CommonProps,
-    MarginProps,
-    PaddingProps,
-    Pick<FlexInternalProps, 'isInline' | 'alignItems' | 'fullWidth'> {
+  extends Omit<FlexInternalProps, 'flexDirection' | 'gap'> {
   /**
    * Defines how flexbox items are ordered within a flexbox container. */
   flexDirection?: 'row' | 'column';
@@ -16,9 +13,6 @@ export interface StackInternalProps
    * The space between each stack item
    */
   spacing?: Spacing;
-  /**
-   * Child nodes to be rendered in the component */
-  children?: React.ReactNode;
 }
 
 export type StackProps<
