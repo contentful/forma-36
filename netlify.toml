@@ -1,5 +1,5 @@
 [build]
-publish = ".next"
+publish = "packages/website/.next"
 
 [[plugins]]
 package = "@netlify/plugin-nextjs"
