@@ -219,6 +219,7 @@ function _Autocomplete<ItemType>(
         // and the user won't be able to type in the input
         // eslint-disable-next-line jsx-a11y/no-autofocus
         autoFocus={false}
+        id={menuProps.id}
       >
         <Popover.Trigger>
           <div {...comboboxProps} className={styles.combobox}>
@@ -301,7 +302,7 @@ function _Autocomplete<ItemType>(
                   >
                     {group.groupTitle}
                   </SectionHeading>
-                  <AutocompleteItems
+                  <AutocompleteItems<ItemType>
                     items={group.options}
                     highlightedIndex={highlightedIndex}
                     getItemProps={getItemProps}
@@ -318,7 +319,7 @@ function _Autocomplete<ItemType>(
           {!isLoading &&
             !isUsingGroups(isGrouped, items) &&
             items.length > 0 && (
-              <AutocompleteItems
+              <AutocompleteItems<ItemType>
                 items={items}
                 elementStartIndex={elementStartIndex}
                 highlightedIndex={highlightedIndex}
