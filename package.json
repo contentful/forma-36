@@ -42,8 +42,8 @@
     }
   },
   "resolutions": {
-    "@types/react": "17.0.37",
-    "@types/react-dom": "17.0.11"
+    "@types/react": "16.14.2",
+    "@types/react-dom": "16.9.10"
   },
   "browserslist": "extends @contentful/browserslist-config",
   "devDependencies": {
@@ -56,7 +56,6 @@
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^11.0.0",
     "@contentful/browserslist-config": "^2.0.0",
-    "@contentful/experience-consent-manager": "^1.1.0",
     "@parcel/babel-plugin-transform-runtime": "2.0.1",
     "@parcel/babel-preset-env": "2.0.1",
     "@parcel/packager-ts": "2.0.1",
@@ -127,9 +126,9 @@
     "postcss-url": "^10.1.1",
     "prettier": "2.2.1",
     "pretty-quick": "3.1.1",
-    "react": "^17.0.2",
+    "react": "16.14.0",
     "react-docgen-typescript": "^1.21.0",
-    "react-dom": "^17.0.2",
+    "react-dom": "16.14.0",
     "react-focus-lock": "^2.5.2",
     "react-router-dom": "^5.3.0",
     "rimraf": "^3.0.2",
