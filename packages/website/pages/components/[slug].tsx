@@ -1,13 +1,24 @@
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-
 import { remark } from 'remark';
 import html from 'remark-html';
+import { css } from 'emotion';
 
 import * as f36Components from '@contentful/f36-components';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
 import { geltAllMDX, getPageBySlug } from '../../utils/content';
+
+const styles = {
+  root: css({
+    minHeight: '100vh',
+    padding: '0 0.5rem',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  }),
+};
 
 export default function ComponentPage(props: {
   data: any;
@@ -21,7 +32,7 @@ export default function ComponentPage(props: {
   }
 
   return (
-    <div>
+    <div className={styles.root}>
       <h1>{props.data.title}</h1>
 
       {props.previews &&

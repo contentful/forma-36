@@ -6,6 +6,9 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
+  "rules": {
+    "rulesdir/emotion-in-function": "off"
+  },
   "overrides": [
     {
       // In Next.js, pages need to be default exported
@@ -13,7 +16,7 @@
         "pages/**/*"
       ],
       "rules": {
-        "import/no-default-export": "off"
+        "import/no-default-export": "off",
       }
     }
   ]
