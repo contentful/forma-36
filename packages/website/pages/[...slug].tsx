@@ -53,21 +53,23 @@ export async function getStaticProps(props: { params: { slug: string[] } }) {
     );
   }
 
-  const { frontMatter } = result;
+  const {
+    frontMatter: { content, data },
+  } = result;
 
-  const mdxSource = await serialize(frontMatter.content, {
+  const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [require('remark-code-titles')],
       rehypePlugins: [mdxPrism, rehypeSlug, rehypeAutolinkHeadings],
     },
-    scope: frontMatter.data,
+    scope: data,
   });
 
   return {
     props: {
       source: mdxSource,
-      frontMatter: frontMatter.data,
+      frontMatter: data,
     },
   };
 }

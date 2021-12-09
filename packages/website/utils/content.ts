@@ -80,19 +80,15 @@ async function getMdxSourceBySlug(slug: string[]) {
 async function getMdxPaths() {
   const pages = await getAllMdx(allMdxSources);
 
-  const paths = pages
-    .map((page) => {
-      return page.frontMatter.data.slug;
-    })
-    .map((slug) => {
-      const sanitizedSlug = slug.split('/').filter((item) => item);
-
-      return {
-        params: {
-          slug: sanitizedSlug,
-        },
-      };
-    });
+  const paths = pages.map((page) => {
+    const slug = page.frontMatter.data.slug;
+    const sanitizedSlug = slug.split('/').filter((item) => item);
+    return {
+      params: {
+        slug: sanitizedSlug,
+      },
+    };
+  });
 
   return paths;
 }
