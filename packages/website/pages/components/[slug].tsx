@@ -15,8 +15,6 @@ export default function ComponentPage(props: {
   previews: string[];
   slug: string;
 }) {
-  console.log('ComponentPage: ', props);
-
   const router = useRouter();
   if (!router.isFallback && !props.slug) {
     return <ErrorPage statusCode={404} />;
