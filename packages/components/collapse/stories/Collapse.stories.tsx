@@ -6,7 +6,7 @@ import { Button } from '@contentful/f36-button';
 import { Collapse, CollapseProps } from '../src';
 
 export default {
-  title: 'Components/Collapse',
+  title: 'Animation/Collapse',
   component: Collapse,
   parameters: {
     propTypes: [Collapse['__docgenInfo']],
