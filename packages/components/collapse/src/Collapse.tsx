@@ -18,7 +18,6 @@ export interface CollapseProps extends CommonProps {
    * string for additional classNames
    */
   className?: string;
-
   /**
    * testId
    */
