@@ -1,0 +1,1 @@
+export { PropsHeading } from './PropsHeading';
