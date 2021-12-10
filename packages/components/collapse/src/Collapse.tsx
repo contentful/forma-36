@@ -13,7 +13,6 @@ export interface CollapseProps extends CommonProps {
    * A boolean that tells if the accordion should be expanded or collapsed
    */
   isExpanded: boolean;
-
   /**
    * string for additional classNames
    */
