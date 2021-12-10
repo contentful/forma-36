@@ -22,7 +22,6 @@ export interface CollapseProps extends CommonProps {
   /**
    * testId
    */
-
   'data-test-id'?: string;
 }
 
