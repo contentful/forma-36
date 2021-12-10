@@ -103,7 +103,7 @@ function _EntryCard<
           {children}
         </Flex>
 
-        {thumbnailElement && (
+        {thumbnailElement && size !== 'small' && (
           <figure className={styles.thumbnail(size)}>{thumbnailElement}</figure>
         )}
       </Flex>
