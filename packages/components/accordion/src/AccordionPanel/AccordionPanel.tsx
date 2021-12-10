@@ -1,7 +1,5 @@
-import React, { FC, useLayoutEffect, useRef } from 'react';
-import tokens from '@contentful/f36-tokens';
+import React, { FC } from 'react';
 import type { CommonProps, ExpandProps } from '@contentful/f36-core';
-import { Box } from '@contentful/f36-core';
 import { Collapse } from '@contentful/f36-collapse';
 
 import { getAccordionPanelStyles } from './AccordionPanel.styles';
