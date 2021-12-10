@@ -28,7 +28,7 @@ export const Collapse = ({
   className,
   isExpanded = false,
   'data-test-id': testId = 'cf-collapse',
-  ...rest
+  ...otherProps
 }: CollapseProps) => {
   const panelEl = useRef<HTMLDivElement>(null);
   const styles = getCollapseStyles({ className });
@@ -85,7 +85,7 @@ export const Collapse = ({
 
   return (
     <Box
-      {...rest}
+      {...otherProps}
       testId={testId}
       role="region"
       aria-hidden={!isExpanded}

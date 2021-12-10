@@ -24,7 +24,7 @@ export const AccordionPanel: FC<ExpandProps<AccordionPanelProps>> = ({
   isExpanded = false,
   ariaId,
   testId = 'cf-ui-accordion-panel',
-  ...rest
+  ...otherProps
 }: AccordionPanelProps) => {
   const styles = getAccordionPanelStyles();
 
@@ -33,7 +33,7 @@ export const AccordionPanel: FC<ExpandProps<AccordionPanelProps>> = ({
       data-test-id={testId}
       aria-labelledby={`accordion--${ariaId}`}
       isExpanded={isExpanded}
-      {...rest}
+      {...otherProps}
     >
       <div className={styles.accordionPanelContent}>{children}</div>
     </Collapse>
