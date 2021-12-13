@@ -117,6 +117,16 @@ module.exports = {
             link: '/components/accordion/',
           },
           {
+            name: 'Animations',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Collapse',
+                link: '/animations/collapse/',
+              },
+            ],
+          },
+          {
             name: 'Asset',
             link: '/components/asset/',
           },
@@ -432,16 +442,6 @@ module.exports = {
           {
             name: 'Workbench',
             link: '/components/workbench/',
-          },
-        ],
-      },
-      {
-        name: 'Animations',
-        link: '',
-        menuLinks: [
-          {
-            name: 'Collapse',
-            link: '/animations/collapse/',
           },
         ],
       },
