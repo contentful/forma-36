@@ -9,18 +9,27 @@ import mdxPrism from 'mdx-prism';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { css } from 'emotion';
+import { DisplayText } from '@contentful/f36-components';
+
+import { Slider } from '../components/Slider';
+import { SpacingTokensTable } from '../components/SpacingTokensTable';
 
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 
 const styles = {
   root: css({
-    minHeight: '100vh',
-    padding: '0 0.5rem',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
   }),
 };
+
+/* eslint-disable react/display-name */
+const components = {
+  h1: (props) => <DisplayText {...props} />,
+  Slider,
+  SpacingTokensTable,
+};
+/* eslint-enable react/display-name */
 
 type ComponentPageProps = {
   source: MDXRemoteSerializeResult;
@@ -44,9 +53,8 @@ export default function ComponentPage(props: ComponentPageProps) {
       <article className={styles.root}>
         <Link href="/">Back</Link>
         <h1>{props.frontMatter.title}</h1>
-        <div>
-          <MDXRemote {...props.source} />
-        </div>
+
+        <MDXRemote {...props.source} components={components} />
       </article>
     </>
   );
