@@ -1,5 +1,6 @@
 import React from 'react';
 import { css } from 'emotion';
+import Link from 'next/link';
 import { Grid } from '@contentful/f36-components';
 
 const styles = {
@@ -31,7 +32,10 @@ export function Layout({ children }) {
       <Grid.Item area="topbar">[TOPBAR]</Grid.Item>
 
       <Grid.Item area="sidemenu" className={styles.gridItem}>
-        [SideMenu]
+        [Sidemenu]
+        <Link href="/getting-started">Getting started</Link>
+        <Link href="/contributing">Contributing to Forma 36</Link>
+        <Link href="/migration-v3-to-v4">Migration Guide</Link>
       </Grid.Item>
 
       <Grid.Item area="content" as="main" className={styles.gridItem}>
