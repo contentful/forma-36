@@ -1,14 +1,15 @@
 import React from 'react';
+
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
 import Link from 'next/link';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
-import mdxPrism from 'mdx-prism';
 import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { css } from 'emotion';
+import { MdxRenderer } from '../components/MdxRenderer';
 
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 
@@ -45,7 +46,7 @@ export default function ComponentPage(props: ComponentPageProps) {
         <Link href="/">Back</Link>
         <h1>{props.frontMatter.title}</h1>
         <div>
-          <MDXRemote {...props.source} />
+          <MdxRenderer source={props.source} />
         </div>
       </article>
     </>
@@ -69,7 +70,7 @@ export async function getStaticProps(props: { params: { slug: string[] } }) {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [require('remark-code-titles')],
-      rehypePlugins: [mdxPrism, rehypeSlug, rehypeAutolinkHeadings],
+      rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
     },
     scope: data,
   });

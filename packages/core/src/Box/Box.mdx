@@ -102,6 +102,23 @@ If you want to keep all the styling you've applied to a component but just switc
 </Box>
 ```
 
+```js template=react
+import { Box } from '@contentful/f36-components';
+
+export default function App() {
+  return (
+    <Box as="article" padding="spacingXs" margin="spacingS">
+      <Box as="span" display="inline" marginRight="spacingS">
+        item 1
+      </Box>
+      <Box as="span" display="inline" marginRight="spacingS">
+        item 2
+      </Box>
+    </Box>
+  );
+}
+```
+
 ## Props
 
 import { Props } from '@contentful/f36-docs-utils';
