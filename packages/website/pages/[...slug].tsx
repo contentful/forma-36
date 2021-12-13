@@ -1,13 +1,14 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
+import Head from 'next/head';
+import Link from 'next/link';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import mdxPrism from 'mdx-prism';
-import { css } from 'emotion';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import Link from 'next/link';
+import { css } from 'emotion';
 
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 
@@ -33,14 +34,21 @@ export default function ComponentPage(props: ComponentPageProps) {
   if (router.isFallback) {
     return <ErrorPage statusCode={404} />;
   }
+
   return (
-    <article className={styles.root}>
-      <Link href="/">Back</Link>
-      <h1>{props.frontMatter.title}</h1>
-      <div>
-        <MDXRemote {...props.source} />
-      </div>
-    </article>
+    <>
+      <Head>
+        <title>Forma 36 - {props.frontMatter.title}</title>
+      </Head>
+
+      <article className={styles.root}>
+        <Link href="/">Back</Link>
+        <h1>{props.frontMatter.title}</h1>
+        <div>
+          <MDXRemote {...props.source} />
+        </div>
+      </article>
+    </>
   );
 }
 
