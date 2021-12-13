@@ -169,10 +169,6 @@ module.exports = {
             ],
           },
           {
-            name: 'Collapse',
-            link: '/components/collapse/',
-          },
-          {
             name: 'CopyButton',
             link: '/components/copy-button/',
           },
@@ -436,6 +432,16 @@ module.exports = {
           {
             name: 'Workbench',
             link: '/components/workbench/',
+          },
+        ],
+      },
+      {
+        name: 'Animations',
+        link: '',
+        menuLinks: [
+          {
+            name: 'Collapse',
+            link: '/animations/collapse/',
           },
         ],
       },
