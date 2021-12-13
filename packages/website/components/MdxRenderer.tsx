@@ -4,7 +4,7 @@ import { SandpackRenderer } from './SandpackRenderer';
 
 const components = {
   code: function Code(props: { template: string; children }) {
-    if (props.template === 'react') {
+    if (props.template === 'sandpack') {
       return <SandpackRenderer>{props.children}</SandpackRenderer>;
     }
     return <code>{props.children}</code>;
