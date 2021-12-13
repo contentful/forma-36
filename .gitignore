@@ -35,6 +35,3 @@
 .vscode/
 .idea/
 *.log
-
-# generated automatically
-**/mdxFilepathBySlug.json

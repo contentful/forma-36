@@ -2,55 +2,13 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const componentsPath = path.resolve('../../packages/components');
-
-function getPageBySlug(slug: string) {
-  // read JSON file that maps each slug to a mdx file
-  const rawdata = fs.readFileSync('utils/mdxFilepathBySlug.json');
-  const mdxFilepathBySlug = JSON.parse((rawdata as unknown) as string);
-
-  const fullPath = mdxFilepathBySlug[slug];
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
-
-  const fileName = fullPath.split('/').pop();
-  const examplePath = path.join(
-    fullPath.replace(fileName as string, ''),
-    'examples',
-  );
-  let examples: string[] = [];
-  let previews: string[] = [];
-
-  if (fs.existsSync(examplePath)) {
-    examples = fs.readdirSync(examplePath);
-    previews = examples.map((example) => {
-      const exampleContents = fs.readFileSync(
-        path.join(examplePath, example),
-        'utf8',
-      );
-
-      return exampleContents;
-    });
-  }
-
-  return {
-    slug,
-    data,
-    examples,
-    previews,
-    content,
-  };
-}
-
-function getSlugByFilepath(filepath: string) {
+function getDataByFilepath(filepath: string) {
   const fileContents = fs.readFileSync(filepath, 'utf8');
-  const { data } = matter(fileContents);
-
-  const slugArray = data.slug.split('/');
-  const slug = slugArray[slugArray.length - 2];
+  const frontMatter = matter(fileContents);
 
   return {
-    slug,
+    content: fileContents,
+    frontMatter,
     filepath,
   };
 }
@@ -86,18 +44,53 @@ async function fetchFiles(targetPath: string) {
   return fetchedFiles;
 }
 
-async function geltAllMDX() {
-  const allMDX = await fetchFiles(componentsPath);
-  const mdxData = allMDX.map((filepath) => getSlugByFilepath(filepath));
+async function getAllMdx(paths: string[]) {
+  let allMDX: string[] = [];
 
-  // Saving a map of slugs and the filepath to their mdx in a JSON file
-  const mdxFilepathBySlug = mdxData.reduce((acc, mdx) => {
-    return { ...acc, [mdx.slug]: mdx.filepath };
-  }, {});
-  const data = JSON.stringify(mdxFilepathBySlug, null, 2);
-  fs.writeFileSync('utils/mdxFilepathBySlug.json', data);
+  for (const path of paths) {
+    const newFiles = await fetchFiles(path);
+    allMDX = allMDX.concat(newFiles);
+  }
 
+  const mdxData = allMDX
+    .map((filepath) => getDataByFilepath(filepath))
+    .filter((data) => {
+      // return only those mdx files which have 'slug' set in meta section
+      return data.frontMatter.data.slug;
+    });
   return mdxData;
 }
 
-export { geltAllMDX, getPageBySlug };
+const allMdxSources = [
+  path.resolve('../../packages/components'),
+  path.resolve('../../packages/core'),
+  path.resolve('../../packages/forma-36-website/src/content'),
+];
+
+async function getMdxSourceBySlug(slug: string[]) {
+  const mdxFiles = await getAllMdx(allMdxSources);
+  const joinedSlug = slug.join('/');
+  return mdxFiles.find(
+    (item) =>
+      item.frontMatter.data.slug === `/${joinedSlug}/` ||
+      item.frontMatter.data.slug === `/${joinedSlug}`,
+  );
+}
+
+async function getMdxPaths() {
+  const pages = await getAllMdx(allMdxSources);
+
+  const paths = pages.map((page) => {
+    const slug = page.frontMatter.data.slug;
+    const sanitizedSlug = slug.split('/').filter((item) => item);
+    return {
+      params: {
+        slug: sanitizedSlug,
+      },
+    };
+  });
+
+  return paths;
+}
+
+export { getMdxSourceBySlug, getMdxPaths };
