@@ -8,6 +8,8 @@ const styles = {
   grid: css({
     height: '100vh',
     overflow: 'hidden',
+    gridTemplateAreas: `"topbar topbar"
+    "sidemenu content"`,
   }),
   gridItem: css({
     display: 'flex',
@@ -36,16 +38,16 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Grid
         className={styles.grid}
         columns="320px auto"
-        rows="50px auto"
+        rows="auto 1fr"
         columnGap="none"
       >
-        <Grid.Item columnStart={1} columnEnd={3}>
-          [TOPBAR]
+        <Grid.Item area="topbar">[TOPBAR]</Grid.Item>
+
+        <Grid.Item area="sidemenu" className={styles.gridItem}>
+          [SideMenu]
         </Grid.Item>
 
-        <Grid.Item className={styles.gridItem}>[SideMenu]</Grid.Item>
-
-        <Grid.Item className={styles.gridItem}>
+        <Grid.Item area="content" as="main" className={styles.gridItem}>
           <Component {...pageProps} />
 
           <footer className={styles.footer}>[FOOTER]</footer>
