@@ -30719,6 +30719,13 @@ tunnel@0.0.6:
   resolved "https://registry.yarnpkg.com/tunnel/-/tunnel-0.0.6.tgz#72f1314b34a5b192db012324df2cc587ca47f92c"
   integrity sha512-1h/Lnq9yajKY2PEbBadPXj3VxsDDu844OnaAo52UVmIzIvwwtBPIuNvkjuzBlTWpfJyUbG3ez0KSBibQkj4ojg==
 
+turbo@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/turbo/-/turbo-1.0.6.tgz#9e38ffb98000812f7c7c89e68cdc8347554ca34f"
+  integrity sha512-sAbPHCm8usX3a27WHfWmAqt+wHxk/5Z6tqLqqI1MIzFoSEtmLZWyXOTxpi+60fwfwivOdW97cTsrZbkezVhGyw==
+  dependencies:
+    zlib "^1.0.5"
+
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
@@ -32827,6 +32834,11 @@ yurnalist@^2.1.0:
     is-ci "^2.0.0"
     read "^1.0.7"
     strip-ansi "^5.2.0"
+
+zlib@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/zlib/-/zlib-1.0.5.tgz#6e7c972fc371c645a6afb03ab14769def114fcc0"
+  integrity sha1-bnyXL8NxxkWmr7A6sUdp3vEU/MA=
 
 zwitch@^1.0.0:
   version "1.0.5"
