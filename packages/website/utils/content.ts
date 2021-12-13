@@ -64,7 +64,7 @@ async function getAllMdx(paths: string[]) {
 const allMdxSources = [
   path.resolve('../../packages/components'),
   path.resolve('../../packages/core'),
-  path.resolve('../../packages/forma-36-website/src/content'),
+  // path.resolve('../../packages/forma-36-website/src/content'),
 ];
 
 async function getMdxSourceBySlug(slug: string[]) {
