@@ -8,8 +8,10 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { MdxRenderer } from '../components/MdxRenderer';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { css } from 'emotion';
+import { PropsContextProvider } from '@contentful/f36-docs-utils';
 
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
+import { getPropsMetadata } from '../utils/propsMeta';
 
 const styles = {
   root: css({
@@ -26,10 +28,12 @@ type ComponentPageProps = {
   frontMatter: {
     title: string;
   };
+  propsMetadata: ReturnType<typeof getPropsMetadata>;
 };
 
 export default function ComponentPage(props: ComponentPageProps) {
   const router = useRouter();
+
   if (router.isFallback) {
     return <ErrorPage statusCode={404} />;
   }
@@ -42,7 +46,9 @@ export default function ComponentPage(props: ComponentPageProps) {
       <article className={styles.root}>
         <h1>{props.frontMatter.title}</h1>
         <div>
-          <MdxRenderer source={props.source} />
+          <PropsContextProvider value={{ ...props.propsMetadata }}>
+            <MdxRenderer source={props.source} />
+          </PropsContextProvider>
         </div>
       </article>
     </>
@@ -71,10 +77,13 @@ export async function getStaticProps(props: { params: { slug: string[] } }) {
     scope: data,
   });
 
+  const propsMetadata = getPropsMetadata(result.filepath, data.typescript);
+
   return {
     props: {
       source: mdxSource,
       frontMatter: data,
+      propsMetadata,
     },
   };
 }

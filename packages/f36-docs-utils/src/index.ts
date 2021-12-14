@@ -1,2 +1,2 @@
-export { Props, PropsContextProvider } from './Props';
-export { PropsHeading } from './PropsHeading';
+export * from './Props';
+export * from './PropsHeading';

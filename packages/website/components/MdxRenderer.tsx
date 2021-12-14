@@ -14,6 +14,7 @@ import {
   TableRow,
   TextLink,
 } from '@contentful/f36-components';
+import { Props, PropsHeading } from '@contentful/f36-docs-utils';
 
 /* eslint-disable react/display-name */
 const components = {
@@ -41,6 +42,9 @@ const components = {
   tr: (props) => <TableRow {...props} />,
   th: (props) => <TableCell style={{ textAlign: 'left' }} {...props} />,
   td: (props) => <TableCell {...props} />,
+
+  Props,
+  PropsHeading,
 };
 /* eslint-enable react/display-name */
 
