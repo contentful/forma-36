@@ -3,6 +3,123 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.100.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.100.3...@contentful/forma-36-react-components@3.100.4) (2021-11-22)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.100.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.100.2...@contentful/forma-36-react-components@3.100.3) (2021-11-17)
+
+
+### Bug Fixes
+
+* **autocomplete:** fix dropdown props type ([#1528](https://github.com/contentful/forma-36/issues/1528)) ([460ba09](https://github.com/contentful/forma-36/commit/460ba0983b5c594ef2e24dfa9bd5e95f69a43bd5))
+
+
+
+
+
+## [3.100.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.100.1...@contentful/forma-36-react-components@3.100.2) (2021-11-11)
+
+
+### Bug Fixes
+
+* remove z-index of focused input ([#1512](https://github.com/contentful/forma-36/issues/1512)) ([1e27103](https://github.com/contentful/forma-36/commit/1e271031d41af33a4008de8d545848476317159e))
+
+
+
+
+
+## [3.100.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.100.0...@contentful/forma-36-react-components@3.100.1) (2021-11-01)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+# [3.100.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.99.1...@contentful/forma-36-react-components@3.100.0) (2021-10-26)
+
+
+### Features
+
+* **icons:** add Tab icon ([#1448](https://github.com/contentful/forma-36/issues/1448)) ([0b00e4a](https://github.com/contentful/forma-36/commit/0b00e4a02dde10f96ad646e3f3a62677d9c1f88b))
+
+
+
+
+
+## [3.99.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.99.0...@contentful/forma-36-react-components@3.99.1) (2021-10-25)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+# [3.99.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.9...@contentful/forma-36-react-components@3.99.0) (2021-10-25)
+
+
+### Features
+
+* add resize prop [EXT-3236]' ([3f5707e](https://github.com/contentful/forma-36/commit/3f5707e1b6a137d7860c9e0b9662a848be95d850))
+* update test snapshots ([b8b76b4](https://github.com/contentful/forma-36/commit/b8b76b421b5c27626ccd8aae4b71c2fc0a3c067c))
+* update test snapshots ([83dd6ee](https://github.com/contentful/forma-36/commit/83dd6ee07df7b1eb0051635df279e12ad61999f6))
+* use BEM for styling ([0a07f18](https://github.com/contentful/forma-36/commit/0a07f189a3db558c0a423149e793a40df4ff4a10))
+
+
+
+
+
+## [3.98.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.8...@contentful/forma-36-react-components@3.98.9) (2021-10-22)
+
+
+### Bug Fixes
+
+* **workbench:** remove inherited margin on description ([#1436](https://github.com/contentful/forma-36/issues/1436)) ([e3d8c76](https://github.com/contentful/forma-36/commit/e3d8c764f12270c21ac837088da93729a7aa6700))
+
+
+
+
+
+## [3.98.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.7...@contentful/forma-36-react-components@3.98.8) (2021-10-18)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.98.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.6...@contentful/forma-36-react-components@3.98.7) (2021-10-11)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.98.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.5...@contentful/forma-36-react-components@3.98.6) (2021-10-08)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.98.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.4...@contentful/forma-36-react-components@3.98.5) (2021-10-05)
+
+
+### Bug Fixes
+
+* remove button type attribute when href is defined ([#1379](https://github.com/contentful/forma-36/issues/1379)) ([405c44b](https://github.com/contentful/forma-36/commit/405c44bf62cb48672a35ee1f876b8328dbb1e850))
+
+
+
+
+
 ## [3.98.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.3...@contentful/forma-36-react-components@3.98.4) (2021-09-20)
 
 

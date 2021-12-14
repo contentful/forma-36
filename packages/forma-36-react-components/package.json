@@ -64,7 +64,7 @@
     "react-dom": "16.14.0",
     "react-is": "16.13.1",
     "semantic-release": "^17.4.2",
-    "size-limit": "^4.5.5"
+    "size-limit": "^6.0.4"
   },
   "repository": {
     "type": "git",
