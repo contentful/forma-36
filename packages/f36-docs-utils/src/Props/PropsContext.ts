@@ -1,10 +1,6 @@
 import { createContext, useContext } from 'react';
 import type { PropComponentDefinition } from './types';
 
-// List of props that we do not need to show
-// because they are, basically, inherited props from HTML elements or React
-const propsToHide = ['ref', 'key', 'style'];
-
 export type PropsContextType = {
   [key: string]: PropComponentDefinition;
 };
@@ -31,14 +27,9 @@ export function usePropsOf(componentName: string) {
   }
 
   const { props } = propsContext[componentName];
-  const allProps = Object.values(props)
-    .filter(
-      // We filter out the props that come from @types/react definitions and/or are HTML elements
-      (prop) =>
-        !prop.parent?.fileName.includes('@types/react/index.d.ts') &&
-        !propsToHide.includes(prop.name),
-    )
-    .sort((a, b) => a.name.localeCompare(b.name));
+  const allProps = Object.values(props).sort((a, b) =>
+    a.name.localeCompare(b.name),
+  );
 
   const requiredProps = [];
   const optionalProps = [];
