@@ -24,7 +24,8 @@
     "rehype-autolink-headings": "^5.0.1",
     "rehype-slug": "^4.0.1",
     "remark": "^14.0.2",
-    "remark-code-titles": "^0.1.1"
+    "remark-code-titles": "^0.1.1",
+    "react-docgen-typescript": "^2.2.2"
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^10.2.1",
