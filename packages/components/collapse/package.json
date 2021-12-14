@@ -1,7 +1,7 @@
 {
-  "name": "@contentful/f36-accordion",
+  "name": "@contentful/f36-collapse",
   "version": "4.0.0",
-  "description": "Forma 36: Accordion React Component",
+  "description": "Forma 36: Collapse React Component",
   "license": "MIT",
   "files": [
     "dist"
@@ -23,10 +23,7 @@
     "@babel/runtime": "^7.6.2",
     "emotion": "^10.0.17",
     "@contentful/f36-core": "^4.0.0",
-    "@contentful/f36-collapse": "^4.0.0",
-    "@contentful/f36-tokens": "^4.0.0",
-    "@contentful/f36-typography": "^4.0.0",
-    "@contentful/f36-icons": "^4.0.0"
+    "@contentful/f36-tokens": "^4.0.0"
   },
   "peerDependencies": {
     "react": ">=16.8"
