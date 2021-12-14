@@ -1,9 +1,9 @@
 import React from 'react';
 import { css } from 'emotion';
-import Link from 'next/link';
 import { Grid } from '@contentful/f36-components';
 import { Topbar } from './Topbar';
 import { Footer } from './Footer';
+import { Sidebar } from './Sidebar';
 
 const styles = {
   grid: css({
@@ -32,15 +32,11 @@ export function Layout({ children }) {
       </Grid.Item>
 
       <Grid.Item area="sidemenu" className={styles.gridItem}>
-        [Sidemenu]
-        <Link href="/getting-started">Getting started</Link>
-        <Link href="/contributing">Contributing to Forma 36</Link>
-        <Link href="/migration-v3-to-v4">Migration Guide</Link>
+        <Sidebar />
       </Grid.Item>
 
       <Grid.Item area="content" as="main" className={styles.gridItem}>
         {children}
-
         <Footer />
       </Grid.Item>
     </Grid>
