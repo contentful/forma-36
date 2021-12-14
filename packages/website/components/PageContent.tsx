@@ -1,7 +1,13 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
-import { DisplayText, Badge } from '@contentful/f36-components';
+import {
+  DisplayText,
+  Badge,
+  TextLink,
+  Stack,
+  Heading,
+} from '@contentful/f36-components';
 
 import storybookIcon from '../resources/icons/storybook.svg';
 import githubIcon from '../resources/icons/github.svg';
@@ -114,6 +120,29 @@ function PageHeader(props: {
   );
 }
 
+function PageFooter(props: { github?: string }) {
+  return (
+    <>
+      <Heading as="h2" id="help-improve-this-page" marginTop="spacing2Xl">
+        Help improve this page
+      </Heading>
+      <Stack>
+        {props.github && (
+          <TextLink
+            href={props.github}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Edit on Github
+          </TextLink>
+        )}
+
+        <TextLink href="/contributing">Read the contribution guide</TextLink>
+      </Stack>
+    </>
+  );
+}
+
 export function PageContent(props: {
   frontMatter: {
     title: string;
@@ -127,6 +156,7 @@ export function PageContent(props: {
     <div className={styles.root}>
       <PageHeader {...props.frontMatter} />
       <main>{props.children}</main>
+      <PageFooter {...props.frontMatter} />
     </div>
   );
 }

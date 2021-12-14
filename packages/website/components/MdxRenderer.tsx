@@ -15,6 +15,7 @@ import {
   TextLink,
 } from '@contentful/f36-components';
 import { StaticSource } from './LiveEditor/StaticSource';
+import { ComponentSource } from './LiveEditor/ComponentSource';
 import { Props, PropsHeading } from '@contentful/f36-docs-utils';
 
 import { A11yColors } from './A11yColors';
@@ -41,7 +42,7 @@ const components = {
     if (props.static) {
       return <StaticSource {...props} />;
     }
-    return <StaticSource {...props} />;
+    return <ComponentSource {...props} />;
   },
   table: (props) => (
     <Box marginBottom="spacingM">
