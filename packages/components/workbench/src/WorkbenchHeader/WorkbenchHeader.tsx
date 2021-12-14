@@ -79,3 +79,5 @@ export function WorkbenchHeader({
     </header>
   );
 }
+
+WorkbenchHeader.displayName = 'WorkbenchHeader';

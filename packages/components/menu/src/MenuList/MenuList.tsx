@@ -1,6 +1,11 @@
 import React from 'react';
-import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import {
+  CommonProps,
+  PropsWithHTMLElement,
+  ExpandProps,
+} from '@contentful/f36-core';
 import { useMenuContext } from '../MenuContext';
+import { useSubmenuContext } from '../SubmenuContext';
 import { Popover } from '@contentful/f36-popover';
 import { cx } from 'emotion';
 import { getMenuListStyles } from './MenuList.styles';
@@ -17,7 +22,10 @@ function assertChild(child: any): child is { type: { displayName: string } } {
 
 export type MenuListProps = PropsWithHTMLElement<MenuListInternalProps, 'div'>;
 
-const _MenuList = (props: MenuListProps, ref: React.Ref<HTMLDivElement>) => {
+const _MenuList = (
+  props: ExpandProps<MenuListProps>,
+  ref: React.Ref<HTMLDivElement>,
+) => {
   const {
     children,
     testId = 'cf-ui-menu-list',
@@ -26,6 +34,7 @@ const _MenuList = (props: MenuListProps, ref: React.Ref<HTMLDivElement>) => {
   } = props;
 
   const { getMenuListProps } = useMenuContext();
+  const submenuContext = useSubmenuContext();
 
   let header: React.ReactElement | null = null;
   let footer: React.ReactElement | null = null;
@@ -52,12 +61,17 @@ const _MenuList = (props: MenuListProps, ref: React.Ref<HTMLDivElement>) => {
     hasStickyFooter: Boolean(footer),
   });
 
+  const extendedOtherProps = submenuContext
+    ? submenuContext.getSubmenuListProps(otherProps)
+    : otherProps;
+
   return (
     <Popover.Content
-      {...getMenuListProps(otherProps, ref)}
-      data-test-id={testId}
       role="menu"
+      {...extendedOtherProps}
+      {...getMenuListProps(extendedOtherProps, ref)}
       className={cx(styles.container, className)}
+      testId={testId}
     >
       {header}
       {items}

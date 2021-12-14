@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 import { css, cx } from 'emotion';
 
 import tokens from '@contentful/f36-tokens';
-import { SectionHeading } from '@contentful/f36-components';
+import { SectionHeading, Badge } from '@contentful/f36-components';
 import { ChevronDownIcon, ChevronRightIcon } from '@contentful/f36-icons';
 
 import DocSearch from './DocSearch';
@@ -70,13 +70,35 @@ const styles = {
   `,
 
   category: css`
-    margin-top: ${tokens.spacingL};
+    margin-top: ${tokens.spacingM};
 
     &:first-of-type {
       margin-top: 0;
     }
   `,
 };
+
+const categories = [
+  'Foundation',
+  'Guidelines',
+  'Contributing to Forma 36',
+  'Migration guide',
+  'Getting started',
+  'Components',
+  'Utils',
+  'Integrations',
+];
+
+const deprecated = [
+  'EditorToolbar',
+  'Dropdown',
+  'EmptyState',
+  'Illustration',
+  'Typography Component',
+  'Tag',
+  'InViewport',
+  'TabFocusTrap',
+];
 
 const checkActive = (item, currentPath) => {
   if (item.link === currentPath) {
@@ -89,15 +111,11 @@ const checkActive = (item, currentPath) => {
   );
 };
 
-const checkCategory = (name) =>
-  name === 'Foundation' ||
-  name === 'Guidelines' ||
-  name === 'Components' ||
-  name === 'Integrations';
-
 const MenuListItem = React.forwardRef(
   ({ item, currentPath, isActive, hierarchyLevel }, ref) => {
-    const isCategory = checkCategory(item.name);
+    const isCategory = categories.includes(item.name);
+    const isDeprecated = deprecated.includes(item.name);
+
     const [isExpanded, setIsExpanded] = useState(isActive || isCategory);
 
     const handleToggle = (event) => {
@@ -105,14 +123,15 @@ const MenuListItem = React.forwardRef(
       setIsExpanded(!isExpanded);
     };
 
-    const itemOffset = css`
-      padding-left: ${1 + hierarchyLevel}rem;
-    `;
     const handleKeyDown = (event) => {
       if (event.nativeEvent.code === 'Enter') {
         handleToggle(event);
       }
     };
+
+    const itemOffset = css`
+      padding-left: ${1 + hierarchyLevel}rem;
+    `;
 
     return (
       <li css={isCategory && styles.category}>
@@ -151,7 +170,18 @@ const MenuListItem = React.forwardRef(
             to={item.link}
             href={item.link}
           >
-            {item.name}
+            {isCategory ? (
+              <SectionHeading
+                marginBottom={0}
+                css={cx([isActive && styles.linkActive])}
+              >
+                {item.name}
+              </SectionHeading>
+            ) : (
+              item.name
+            )}
+
+            {isDeprecated && <Badge variant="negative">deprecated</Badge>}
           </Link>
         )}
       </li>
@@ -187,7 +217,7 @@ const MenuList = ({
     }
   }, []);
   return (
-    <ul css={[styles.list, isHidden && styles.hidden]}>
+    <ul className={cx([styles.list, isHidden && styles.hidden])}>
       {menuItems.map((item, index) => {
         const active = checkActive(item, currentPath);
         return (

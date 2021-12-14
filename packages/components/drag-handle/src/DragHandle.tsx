@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import { cx } from 'emotion';
 import type { PropsWithHTMLElement } from '@contentful/f36-core';
-import type { CommonProps } from '@contentful/f36-core';
+import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 import { DragIcon } from '@contentful/f36-icons';
 import { getStyles } from './DragHandle.styles';
 
@@ -37,7 +37,10 @@ export type DragHandleProps = PropsWithHTMLElement<
   'button'
 >;
 
-export const DragHandle = forwardRef<HTMLButtonElement, DragHandleProps>(
+export const DragHandle = forwardRef<
+  HTMLButtonElement,
+  ExpandProps<DragHandleProps>
+>(
   (
     {
       className,

@@ -1,6 +1,10 @@
 import { createContext, useContext } from 'react';
 import type { FormControlContextProps } from './types';
 
+const noop = () => {
+  // do nothing
+};
+
 export const FormControlContext = createContext<
   FormControlContextProps | undefined
 >(undefined);
@@ -23,5 +27,9 @@ export const useFormControl = (
     isReadOnly: props.isReadOnly ?? context.isReadOnly,
     isRequired: props.isRequired ?? context.isRequired,
     id: props.id ?? context.id,
+    maxLength: context.maxLength,
+    inputValue: context.inputValue,
+    setMaxLength: context.setMaxLength || noop,
+    setInputValue: context.setInputValue || noop,
   };
 };

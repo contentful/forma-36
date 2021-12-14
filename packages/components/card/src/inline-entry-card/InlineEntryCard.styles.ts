@@ -19,12 +19,16 @@ export const getInlineEntryCardStyles = () => {
         borderBottomLeftRadius: 0,
         borderTopLeftRadius: 0,
         display: 'inline-flex',
-        flexDirection: 'row-reverse',
+        width: 'auto',
+        verticalAlign: 'middle',
         paddingBottom: 0,
         paddingTop: 0,
         paddingLeft: tokens.spacingS,
         paddingRight: tokens.spacing2Xs,
-
+        '[data-card-part="wrapper"]': {
+          display: 'inline-flex',
+          flexDirection: 'row-reverse',
+        },
         '&::before': {
           backgroundColor: statusColors.color,
           bottom: 0,
@@ -37,5 +41,12 @@ export const getInlineEntryCardStyles = () => {
         },
       });
     },
+    skeleton: css({
+      display: 'inline-flex',
+      border: `1px solid ${tokens.gray300}`,
+      borderTopRightRadius: tokens.borderRadiusMedium,
+      borderBottomRightRadius: tokens.borderRadiusMedium,
+      padding: tokens.spacingXs,
+    }),
   };
 };

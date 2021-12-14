@@ -6,6 +6,7 @@ const inquirer = require('inquirer');
 const meow = require('meow');
 const globby = require('globby');
 const inquirerChoices = require('./inquirer-choices');
+const updateDependencies = require('./updateDependencies');
 
 const transformerDirectory = path.join(__dirname, '../', 'transforms');
 const jscodeshiftExecutable = require.resolve('.bin/jscodeshift');
@@ -28,10 +29,10 @@ function checkGitStatus(force) {
     }
   }
 
-  if (!clean) {
+  if (!clean && !force) {
     console.log(
       chalk.yellow(
-        'Before we continue, please stash or commit your git changes.',
+        'Before we continue, please stash or commit your changes.\nIf you want to override this check, use the --force flag',
       ),
     );
     process.exit(1);
@@ -124,7 +125,12 @@ function run() {
 
   if (
     cli.input[0] &&
-    !inquirerChoices.TRANSFORMS_CHOICES.find((x) => x.value === cli.input[0])
+    !inquirerChoices.TRANSFORMS_CHOICES.find((x) => x.value === cli.input[0]) &&
+    !cli.input[0]
+      ?.split(',')
+      .every((t) =>
+        inquirerChoices.TRANSFORMS_CHOICES.find((x) => x.value === t),
+      )
   ) {
     console.error('Invalid transform choice, pick one of:');
     console.error(
@@ -136,6 +142,34 @@ function run() {
   inquirer
     .prompt([
       {
+        type: 'list',
+        name: 'v4setup',
+        message: 'Which codemod you would like to use?',
+        when: !cli.input[0],
+        pageSize: inquirerChoices.TRANSFORMS_CHOICES.length,
+        choices: inquirerChoices.SETUP_CHOICES,
+      },
+      {
+        type: 'checkbox',
+        name: 'transformer',
+        message: 'Which component would you like to migrate to v4?',
+        when: (answers) =>
+          !cli.input[0] &&
+          answers.v4setup === 'migrate-specific-component-to-v4',
+        pageSize: inquirerChoices.TRANSFORMS_CHOICES.length,
+        choices: inquirerChoices.TRANSFORMS_CHOICES,
+      },
+      {
+        type: 'list',
+        name: 'parser',
+        message: 'Which dialect of JavaScript do you use?',
+        default: 'babel',
+        when: (answers) =>
+          !cli.flags.parser && answers.v4setup !== 'update-package-json',
+        pageSize: inquirerChoices.PARSER_CHOICES.length,
+        choices: inquirerChoices.PARSER_CHOICES,
+      },
+      {
         type: 'input',
         name: 'files',
         message: 'On which files or directory should the codemods be applied?',
@@ -143,32 +177,23 @@ function run() {
         default: '.',
         filter: (files) => files.trim(),
       },
-      {
-        type: 'list',
-        name: 'parser',
-        message: 'Which dialect of JavaScript do you use?',
-        default: 'babel',
-        when: !cli.flags.parser,
-        pageSize: inquirerChoices.PARSER_CHOICES.length,
-        choices: inquirerChoices.PARSER_CHOICES,
-      },
-      {
-        type: 'list',
-        name: 'transformer',
-        message: 'Which transform would you like to apply?',
-        when: !cli.input[0],
-        pageSize: inquirerChoices.TRANSFORMS_CHOICES.length,
-        choices: inquirerChoices.TRANSFORMS_CHOICES,
-      },
     ])
-    .then((answers) => {
-      const { files, transformer, parser } = answers;
+    .then(async (answers) => {
+      const { files, transformer, parser, v4setup } = answers;
 
       const filesBeforeExpansion = cli.input[1] || files;
       const filesExpanded = expandFilePathsIfNeeded([filesBeforeExpansion]);
-
-      const selectedTransformer = cli.input[0] || transformer;
       const selectedParser = cli.flags.parser || parser;
+
+      if (v4setup === 'update-package-json') {
+        await updateDependencies(filesBeforeExpansion);
+        return runTransform({
+          files: filesExpanded,
+          flags: cli.flags,
+          parser: selectedParser,
+          transformer: 'v4-clean-css',
+        });
+      }
 
       if (!filesExpanded.length) {
         console.log(
@@ -177,11 +202,33 @@ function run() {
         return null;
       }
 
+      const selectedTransformer = cli.input[0]?.split(',') || transformer;
+      if (selectedTransformer) {
+        return selectedTransformer.forEach((t) => {
+          runTransform({
+            files: filesExpanded,
+            flags: cli.flags,
+            parser: selectedParser,
+            transformer: t,
+          });
+        });
+      }
+
+      if (v4setup === 'run-all-v4') {
+        await updateDependencies(filesBeforeExpansion);
+        runTransform({
+          files: filesExpanded,
+          flags: cli.flags,
+          parser: selectedParser,
+          transformer: 'v4-clean-css',
+        });
+      }
+
       return runTransform({
         files: filesExpanded,
         flags: cli.flags,
         parser: selectedParser,
-        transformer: selectedTransformer,
+        transformer: 'v4-all',
       });
     });
 }

@@ -10,7 +10,8 @@ export function getModalContentStyles() {
       fontFamily: tokens.fontStackPrimary,
       lineHeight: tokens.lineHeightM,
       overflowY: 'auto',
-      overflowX: 'hidden',
+      overflowX: 'auto',
+      boxSizing: 'border-box',
     }),
   };
 }

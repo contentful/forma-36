@@ -6,80 +6,78 @@ import type {
 } from '@contentful/f36-core';
 import { Heading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
-import { Icon } from '@contentful/f36-icon';
+import type { ExpandProps } from '@contentful/f36-core';
 
-import { BaseCard, DEFAULT_TAG } from '../base-card/BaseCard';
-import type { BaseCardInternalProps } from '../base-card/BaseCard';
+import { BaseCard, BASE_CARD_DEFAULT_TAG } from '../base-card/BaseCard';
+import type { BaseCardInternalProps } from '../base-card/BaseCard.types';
 import { CardActions } from '../base-card/CardActions';
 import { getCardStyles } from './Card.styles';
-import { getBaseCardStyles } from '../base-card/BaseCard.styles';
 
 export type CardInternalProps = Omit<
   BaseCardInternalProps,
-  'header' | 'ref' | 'type'
+  'header' | 'ref' | 'type' | 'withDragHandle'
 > & {
   /**
    * Padding size to apply to the component
+   *
+   * @default default
    */
-  padding?: 'default' | 'large';
+  padding?: 'default' | 'large' | 'none';
 };
 
 export type CardProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG
 > = PolymorphicProps<CardInternalProps, E>;
 
-function _Card<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _Card<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
   {
     actions,
     badge,
     icon,
     padding = 'default',
     title,
+    className,
+    testId = 'cf-ui-card',
     ...otherProps
   }: CardProps<E>,
   forwardedRef: React.Ref<HTMLElement>,
 ) {
-  const styles = getCardStyles();
-  const baseStyles = getBaseCardStyles();
-  const hasHeader = title || icon || badge || actions;
-  const header = (
-    <Flex
-      className={cx(
-        styles.header({ padding }),
-        actions && styles.headerWithActions({ padding }),
-      )}
-    >
-      {title && (
-        <Flex as="header" flexGrow={1}>
-          <Heading marginBottom="none">{title}</Heading>
-        </Flex>
-      )}
-
-      {icon && <Icon as={icon} className={baseStyles.headerItem} />}
-      {badge && (
-        <Flex alignItems="center" className={baseStyles.headerItem}>
-          {badge}
-        </Flex>
-      )}
-      {actions && <CardActions>{actions}</CardActions>}
-    </Flex>
-  );
+  const styles = getCardStyles({ padding });
+  const hasHeader = Boolean(title || icon || badge || actions);
 
   return (
     <BaseCard
-      contentBodyProps={
-        padding === 'large' && {
-          className: styles.contentWithLargePadding,
-        }
-      }
+      className={cx(styles.root, className)}
       {...otherProps}
-      header={hasHeader ? header : null}
+      testId={testId}
+      header={
+        hasHeader && (
+          <Flex alignItems="center" className={cx(styles.header)}>
+            {title && (
+              <Flex as="header" flexGrow={1}>
+                <Heading marginBottom="none">{title}</Heading>
+              </Flex>
+            )}
+            {icon && (
+              <Flex alignItems="center" marginLeft="spacingXs">
+                {icon}
+              </Flex>
+            )}
+            {badge && (
+              <Flex alignItems="center" marginLeft="spacingXs">
+                {badge}
+              </Flex>
+            )}
+            {actions && <CardActions>{actions}</CardActions>}
+          </Flex>
+        )
+      }
       ref={forwardedRef}
     />
   );
 }
 
 export const Card: PolymorphicComponent<
-  CardInternalProps,
-  typeof DEFAULT_TAG
+  ExpandProps<CardInternalProps>,
+  typeof BASE_CARD_DEFAULT_TAG
 > = forwardRef(_Card);

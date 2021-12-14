@@ -1,7 +1,7 @@
 import React from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const Audio = generateIcon({
+export const Audio = /*#__PURE__*/ generateIcon({
   name: 'Audio',
   viewBox: '0 0 24 24',
   path: (

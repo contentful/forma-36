@@ -13,6 +13,7 @@ import {
   MarginProps,
   PolymorphicProps,
   Box,
+  ExpandProps,
 } from '@contentful/f36-core';
 
 export interface TextInternalProps extends CommonProps, MarginProps {
@@ -25,7 +26,7 @@ export interface TextInternalProps extends CommonProps, MarginProps {
   isTruncated?: boolean;
 }
 
-const DEFAULT_TAG = 'span';
+const TEXT_DEFAULT_TAG = 'span';
 
 function truncatedStyle() {
   return css({
@@ -36,10 +37,10 @@ function truncatedStyle() {
 }
 
 export type TextProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof TEXT_DEFAULT_TAG
 > = PolymorphicProps<TextInternalProps, E>;
 
-function _Text<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
   {
     fontSize = 'fontSizeM',
     fontStack = 'fontStackPrimary',
@@ -55,7 +56,7 @@ function _Text<E extends React.ElementType = typeof DEFAULT_TAG>(
   }: TextProps<E>,
   ref: React.Ref<any>,
 ) {
-  const Element: React.ElementType = as || DEFAULT_TAG;
+  const Element: React.ElementType = as || TEXT_DEFAULT_TAG;
 
   return (
     <Box
@@ -82,6 +83,6 @@ function _Text<E extends React.ElementType = typeof DEFAULT_TAG>(
 }
 
 export const Text: PolymorphicComponent<
-  TextInternalProps,
-  typeof DEFAULT_TAG
+  ExpandProps<TextInternalProps>,
+  typeof TEXT_DEFAULT_TAG
 > = React.forwardRef(_Text);

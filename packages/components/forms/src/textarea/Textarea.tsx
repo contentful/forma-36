@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { cx } from 'emotion';
 
 import { BaseInput } from '../base-input';
 import type { BaseInputProps } from '../base-input';
 import { useFormControl } from '../form-control/FormControlContext';
 import { getStyles } from './Textarea.styles';
+import { ExpandProps } from '@contentful/f36-core';
 
 export type TextareaProps = Omit<
   BaseInputProps<'textarea'>,
@@ -18,20 +19,43 @@ const _Textarea = (
     isInvalid,
     isRequired,
     isReadOnly,
+    onChange,
     testId = 'cf-ui-textarea',
     id,
+    resize = 'vertical',
+    maxLength,
     ...otherProps
-  }: TextareaProps,
+  }: ExpandProps<TextareaProps>,
   ref: React.Ref<HTMLTextAreaElement>,
 ) => {
-  const formProps = useFormControl({
+  const styles = getStyles();
+
+  const {
+    setMaxLength,
+    maxLength: contextMaxLength,
+    setInputValue,
+    inputValue: contextInputValue,
+    ...formProps
+  } = useFormControl({
     id,
     isInvalid,
     isDisabled,
     isRequired,
     isReadOnly,
   });
-  const styles = getStyles();
+
+  useEffect(() => {
+    if (maxLength !== undefined && typeof setMaxLength === 'function') {
+      setMaxLength(maxLength);
+    }
+  }, [maxLength, setMaxLength]);
+
+  const handleOnChange = (event) => {
+    if (typeof setInputValue === 'function') {
+      setInputValue(event.target.value);
+    }
+    onChange?.(event);
+  };
 
   return (
     <BaseInput
@@ -44,6 +68,9 @@ const _Textarea = (
         [styles.disabled]: isDisabled,
         [styles.error]: isInvalid,
       })}
+      maxLength={maxLength}
+      resize={resize}
+      onChange={maxLength ? handleOnChange : onChange}
     />
   );
 };

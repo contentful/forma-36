@@ -21,6 +21,8 @@ export const getMenuItemStyles = () => {
       cursor: 'pointer',
       hyphens: 'auto',
       minWidth: '150px',
+      textDecoration: 'none',
+      color: tokens.gray800,
 
       '&:focus, &:hover': {
         backgroundColor: tokens.gray100,

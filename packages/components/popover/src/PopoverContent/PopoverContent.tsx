@@ -1,6 +1,10 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import {
+  CommonProps,
+  PropsWithHTMLElement,
+  ExpandProps,
+} from '@contentful/f36-core';
 import { usePopoverContext } from '../PopoverContext';
 import { Portal } from '@contentful/f36-utils';
 import { getPopoverContentStyles } from './PopoverContent.styles';
@@ -14,7 +18,7 @@ export type PopoverContentProps = PropsWithHTMLElement<
   'div'
 >;
 
-const _PopoverContent = (props: PopoverContentProps, ref) => {
+const _PopoverContent = (props: ExpandProps<PopoverContentProps>, ref) => {
   const {
     children,
     className,
@@ -22,13 +26,13 @@ const _PopoverContent = (props: PopoverContentProps, ref) => {
     role = 'dialog',
     ...otherProps
   } = props;
-
-  const styles = getPopoverContentStyles();
-
   const { isOpen, getPopoverProps, usePortal } = usePopoverContext();
+
+  const styles = getPopoverContentStyles(isOpen);
 
   const content = (
     <div
+      {...otherProps}
       {...getPopoverProps(otherProps, ref)}
       className={cx(styles.container, className)}
       data-test-id={testId}
@@ -41,10 +45,6 @@ const _PopoverContent = (props: PopoverContentProps, ref) => {
       {children}
     </div>
   );
-
-  if (!isOpen) {
-    return null;
-  }
 
   return usePortal ? <Portal>{content}</Portal> : content;
 };

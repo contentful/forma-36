@@ -7,9 +7,7 @@ import {
   Textarea,
   Select,
   Checkbox,
-  CheckboxGroup,
   Radio,
-  RadioGroup,
 } from '../src';
 import { Flex, Box } from '@contentful/f36-core';
 import { TextLink } from '@contentful/f36-text-link';
@@ -30,10 +28,14 @@ export const Basic = (args: FormControlInternalProps) => {
     <>
       <FormControl {...args}>
         <FormControl.Label isRequired>Name</FormControl.Label>
-        <TextInput />
-        <FormControl.HelpText>
-          Please enter your first name
-        </FormControl.HelpText>
+        <TextInput maxLength={10} />
+        <Flex justifyContent="space-between">
+          <FormControl.HelpText>
+            Please enter your first name
+          </FormControl.HelpText>
+          <FormControl.Counter />
+        </Flex>
+
         {args.isInvalid && (
           <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
         )}
@@ -42,7 +44,7 @@ export const Basic = (args: FormControlInternalProps) => {
       <FormControl {...args}>
         <FormControl.Label>Description</FormControl.Label>
         <Textarea />
-        <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
+        <FormControl.HelpText>Tell me about yourself</FormControl.HelpText>
         {args.isInvalid && (
           <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
         )}
@@ -82,13 +84,13 @@ export const Invalid = (args: FormControlInternalProps) => {
 export const WithCheckboxGroup = (args: FormControlInternalProps) => {
   return (
     <>
-      <FormControl {...args}>
-        <FormControl.Label marginBottom="none">
+      <FormControl as="fieldset" {...args}>
+        <FormControl.Label as="legend" marginBottom="none">
           Select your ingredients
         </FormControl.Label>
         <Paragraph>No extra costs</Paragraph>
 
-        <CheckboxGroup name="ingredients">
+        <Checkbox.Group name="ingredients">
           <Checkbox
             value="pickled-onions"
             helpText="Red onion sliced paper-thin, pickled in lime and gentle sea salt"
@@ -107,40 +109,72 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
           >
             Double-fried fries
           </Checkbox>
-        </CheckboxGroup>
+        </Checkbox.Group>
         {args.isInvalid && (
           <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
         )}
       </FormControl>
 
       <FormControl as="fieldset" {...args}>
-        <FormControl.Label>Burger patty</FormControl.Label>
-        <RadioGroup name="burger-patty">
+        <FormControl.Label as="legend">Burger patty</FormControl.Label>
+        <Radio.Group name="burger-patty">
           <Radio
             value="beef"
             helpText="Grass-fed cows from Erdhof Hohenzollerdamm"
           >
             Beef
           </Radio>
-          <Radio
-            value="beyound-meat"
-            helpText="Pea protein, beetroot and magic"
-          >
-            Beyound meat (vegan)
+          <Radio value="beyond-meat" helpText="Pea protein, beetroot and magic">
+            Beyond meat (vegan)
           </Radio>
-        </RadioGroup>
+        </Radio.Group>
         {args.isInvalid && (
           <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
         )}
       </FormControl>
 
-      <FormControl {...args}>
-        <FormControl.Label>Condiments</FormControl.Label>
-        <CheckboxGroup name="condiments">
+      <FormControl as="fieldset" {...args}>
+        <FormControl.Label as="legend">Condiments</FormControl.Label>
+        <Checkbox.Group name="condiments">
           <Checkbox value="ketchup">Ketchup</Checkbox>
           <Checkbox value="mustard">Mustard</Checkbox>
           <Checkbox value="mayo">Mayo</Checkbox>
-        </CheckboxGroup>
+        </Checkbox.Group>
+        {args.isInvalid && (
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+        )}
+      </FormControl>
+    </>
+  );
+};
+
+export const WithCharactersCount = (args: FormControlInternalProps) => {
+  return (
+    <>
+      <FormControl {...args}>
+        <FormControl.Label isRequired>Name</FormControl.Label>
+        <TextInput maxLength={10} />
+        <Flex justifyContent="space-between">
+          <FormControl.HelpText>
+            Please enter your first name
+          </FormControl.HelpText>
+          <FormControl.Counter />
+        </Flex>
+
+        {args.isInvalid && (
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+        )}
+      </FormControl>
+      <FormControl {...args}>
+        <FormControl.Label isRequired>Name</FormControl.Label>
+        <Textarea maxLength={10} />
+        <Flex justifyContent="space-between">
+          <FormControl.HelpText>
+            Please enter your first name
+          </FormControl.HelpText>
+          <FormControl.Counter />
+        </Flex>
+
         {args.isInvalid && (
           <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
         )}

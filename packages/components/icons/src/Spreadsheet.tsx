@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const Spreadsheet = generateIcon({
+export const Spreadsheet = /*#__PURE__*/ generateIcon({
   name: 'Spreadsheet',
   viewBox: '0 0 24 24',
   path: (

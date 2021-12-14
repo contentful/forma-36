@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const HorizontalRuleTrimmed = generateIcon({
+export const HorizontalRuleTrimmed = /*#__PURE__*/ generateIcon({
   name: 'HorizontalRuleTrimmed',
   path: (
     <Fragment>

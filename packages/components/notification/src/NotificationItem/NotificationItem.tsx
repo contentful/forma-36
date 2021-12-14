@@ -9,7 +9,7 @@ import {
 
 import { Button } from '@contentful/f36-button';
 import { TextLink } from '@contentful/f36-text-link';
-import { CommonProps, Flex, Box } from '@contentful/f36-core';
+import { CommonProps, Flex, Box, ExpandProps } from '@contentful/f36-core';
 import { Heading, Paragraph } from '@contentful/f36-typography';
 
 import { NotificationVariant, NotificationCta } from '../types';
@@ -44,7 +44,7 @@ export interface NotificationItemProps extends CommonProps {
   cta?: Partial<NotificationCta>;
 }
 
-const _NotificationItem = (props: NotificationItemProps, ref) => {
+const _NotificationItem = (props: ExpandProps<NotificationItemProps>, ref) => {
   const {
     className,
     children,

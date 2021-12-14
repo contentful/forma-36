@@ -4,9 +4,11 @@ import type {
   CommonProps,
   MarginProps,
   PropsWithHTMLElement,
+  ExpandProps,
 } from '@contentful/f36-core';
 import { ErrorCircleOutlineIcon } from '@contentful/f36-icons';
 import { Text } from '@contentful/f36-typography';
+import { useFormControl } from '../form-control/FormControlContext';
 
 export interface ValidationMessageInternalProps
   extends CommonProps,
@@ -21,8 +23,9 @@ export type ValidationMessageProps = PropsWithHTMLElement<
 
 export const ValidationMessage = forwardRef<
   HTMLDivElement,
-  ValidationMessageProps
+  ExpandProps<ValidationMessageProps>
 >(({ children, testId = 'cf-ui-validation-message', ...otherProps }, ref) => {
+  const { id } = useFormControl({});
   return (
     <Flex
       marginTop="spacingXs"
@@ -30,7 +33,8 @@ export const ValidationMessage = forwardRef<
       ref={ref}
       testId={testId}
       alignItems="center"
-      aria-live="polite"
+      id={id ? `${id}-validation` : undefined}
+      aria-live="assertive"
     >
       <Flex marginRight="spacing2Xs">
         <ErrorCircleOutlineIcon

@@ -1,10 +1,13 @@
 import { cx } from 'emotion';
 import React from 'react';
-import { Box } from '@contentful/f36-core';
+import { Box, ExpandProps } from '@contentful/f36-core';
 import getStyles from './ButtonGroup.styles';
 import type { ButtonGroupProps } from './types';
 
-function _ButtonGroup(props: ButtonGroupProps, ref: React.Ref<HTMLDivElement>) {
+function _ButtonGroup(
+  props: ExpandProps<ButtonGroupProps>,
+  ref: React.Ref<HTMLDivElement>,
+) {
   const {
     variant = 'collapsed',
     withDivider,

@@ -6,6 +6,7 @@ import type {
   CommonProps,
   PolymorphicComponent,
   PolymorphicProps,
+  ExpandProps,
 } from '@contentful/f36-core';
 import type {
   ComponentType,
@@ -14,7 +15,7 @@ import type {
   SVGAttributes,
 } from 'react';
 
-const DEFAULT_TAG = 'svg';
+const ICON_DEFAULT_TAG = 'svg';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type IconComponent = ExoticComponent<any> | ComponentType<any>;
@@ -88,7 +89,10 @@ export type IconProps<
 >;
 
 const useAriaHidden = (
-  props: Pick<IconProps<typeof DEFAULT_TAG>, 'aria-label' | 'aria-labelledby'>,
+  props: Pick<
+    IconProps<typeof ICON_DEFAULT_TAG>,
+    'aria-label' | 'aria-labelledby'
+  >,
 ) => {
   const ariaLabel = props['aria-label'];
   const ariaLabelBy = props['aria-labelledby'];
@@ -149,7 +153,7 @@ export function _Icon<E extends React.ElementType = IconComponent>(
       display="inline-block"
       {...ariaHiddenProps}
       {...otherProps}
-      as={DEFAULT_TAG}
+      as={ICON_DEFAULT_TAG}
       {...shared}
     >
       {children}
@@ -158,7 +162,7 @@ export function _Icon<E extends React.ElementType = IconComponent>(
 }
 
 export const Icon: PolymorphicComponent<
-  IconInternalProps,
-  typeof DEFAULT_TAG,
+  ExpandProps<IconInternalProps>,
+  typeof ICON_DEFAULT_TAG,
   'width' | 'height'
 > = forwardRef(_Icon);

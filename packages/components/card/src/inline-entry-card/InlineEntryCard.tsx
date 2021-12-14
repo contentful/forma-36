@@ -1,11 +1,13 @@
 import React from 'react';
-import { css, cx } from 'emotion';
+import { cx } from 'emotion';
 import { Text } from '@contentful/f36-typography';
 
 import { BaseCard } from '../base-card/BaseCard';
-import type { EntryCardInternalProps } from '../entry-card/EntryCard';
+import type { EntryCardInternalProps } from '../entry-card/EntryCard.types';
 import { getInlineEntryCardStyles } from './InlineEntryCard.styles';
 import { CardActions } from '../base-card/CardActions';
+
+import { SkeletonBodyText, SkeletonContainer } from '@contentful/f36-skeleton';
 
 export type InlineEntryCardInternalProps = Omit<
   EntryCardInternalProps,
@@ -19,6 +21,8 @@ export const InlineEntryCard = ({
   className,
   status,
   title,
+  isLoading,
+  testId = 'cf-ui-inline-entry-card',
   ...otherProps
 }: InlineEntryCardInternalProps) => {
   const styles = getInlineEntryCardStyles();
@@ -28,12 +32,24 @@ export const InlineEntryCard = ({
     </CardActions>
   );
 
+  if (isLoading) {
+    return (
+      <SkeletonContainer
+        className={styles.skeleton}
+        svgHeight="1.25rem"
+        svgWidth="6rem"
+      >
+        <SkeletonBodyText numberOfLines={1} />
+      </SkeletonContainer>
+    );
+  }
+
   return (
     <BaseCard
       {...otherProps}
       className={cx(styles.root({ status }), className)}
-      contentBodyProps={{ className: css({ padding: 0 }) }}
       header={header}
+      testId={testId}
     >
       <Text>{title}</Text>
     </BaseCard>

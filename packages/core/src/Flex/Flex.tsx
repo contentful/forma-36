@@ -75,12 +75,12 @@ export interface FlexInternalProps
 }
 
 export type FlexProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof FLEX_DEFAULT_TAG
 > = PolymorphicProps<FlexInternalProps, E>;
 
-const DEFAULT_TAG = 'div';
+const FLEX_DEFAULT_TAG = 'div';
 
-function _Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
   {
     isInline,
     alignItems,
@@ -107,7 +107,7 @@ function _Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
 ) {
   const { boxProps, Element } = useBox<React.ElementType>({
     ...otherProps,
-    as: as || DEFAULT_TAG,
+    as: as || FLEX_DEFAULT_TAG,
   });
   return (
     <Element
@@ -143,5 +143,5 @@ function _Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
 
 export const Flex: PolymorphicComponent<
   FlexInternalProps,
-  typeof DEFAULT_TAG
+  typeof FLEX_DEFAULT_TAG
 > = React.forwardRef(_Flex);

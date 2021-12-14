@@ -3,12 +3,13 @@
   "version": "4.0.0",
   "description": "Forma 36: Note component",
   "scripts": {
-    "build": "parcel build index.ts"
+    "build": "parcel build"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
     "@contentful/f36-button": "^4.0.0",
     "@contentful/f36-core": "^4.0.0",
+    "@contentful/f36-icon": "^4.0.0",
     "@contentful/f36-icons": "^4.0.0",
     "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-typography": "^4.0.0",
@@ -22,8 +23,7 @@
   },
   "license": "MIT",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "main": "dist/main.js",
   "module": "dist/module.js",

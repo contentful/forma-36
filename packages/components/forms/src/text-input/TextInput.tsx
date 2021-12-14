@@ -1,11 +1,8 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { BaseInput } from '../base-input';
-import { Flex, useForwardedRef } from '@contentful/f36-core';
-import { CopyButton } from '@contentful/f36-copybutton';
-import getStyles from './TextInput.styles';
-import { cx } from 'emotion';
 import { TextInputProps } from './types';
 import { useFormControl } from '../form-control/FormControlContext';
+import { ExpandProps } from '@contentful/f36-core';
 
 export const _TextInput = (
   {
@@ -15,18 +12,24 @@ export const _TextInput = (
     value,
     defaultValue,
     onChange,
+    onFocus,
     isInvalid,
     isDisabled,
     isRequired,
     isReadOnly,
-    withCopyButton,
-    onCopy,
     size = 'medium',
+    maxLength,
     ...otherProps
-  }: TextInputProps,
-  ref: React.Ref<HTMLInputElement>,
+  }: ExpandProps<TextInputProps>,
+  ref: React.RefObject<HTMLInputElement>,
 ) => {
-  const formProps = useFormControl({
+  const {
+    setMaxLength,
+    maxLength: contextMaxLength,
+    setInputValue,
+    inputValue: contextInputValue,
+    ...formProps
+  } = useFormControl({
     id,
     isInvalid,
     isDisabled,
@@ -34,61 +37,38 @@ export const _TextInput = (
     isReadOnly,
   });
 
-  const textInputRef = useForwardedRef<HTMLInputElement>(ref);
-  const styles = getStyles();
+  useEffect(() => {
+    if (maxLength !== undefined && typeof setMaxLength === 'function') {
+      setMaxLength(maxLength);
+    }
+  }, [maxLength, setMaxLength]);
 
-  const copyButtonStyles = cx(styles.copyButton, {
-    [styles.disabled]: Boolean(isDisabled),
-    [styles.invalid]: Boolean(isInvalid),
-  });
-
-  const handleCopy = React.useCallback(
-    (e) => {
-      if (onCopy) {
-        onCopy(e);
-      }
-
-      textInputRef.current.select();
-      document.execCommand('copy');
-    },
-    [onCopy, textInputRef],
-  );
-
-  const input = (inputClass?: string) => {
-    return (
-      <BaseInput
-        type="text"
-        {...otherProps}
-        {...formProps}
-        testId={testId}
-        ref={textInputRef}
-        onChange={onChange}
-        as="input"
-        className={inputClass}
-        value={value}
-        defaultValue={defaultValue}
-        size={size}
-      />
-    );
+  const handleOnChange = (event) => {
+    if (typeof setInputValue === 'function') {
+      setInputValue(event.target.value);
+    }
+    onChange?.(event);
   };
 
-  const inputWithCopyButton = (
-    <Flex className={className}>
-      {input(styles.inputWithCopyButton)}
-      <CopyButton
-        value={textInputRef?.current?.value}
-        onCopy={handleCopy}
-        className={copyButtonStyles}
-        isDisabled={isDisabled}
-        size={size}
-      />
-    </Flex>
-  );
+  const inputRef = useRef<HTMLInputElement>(null);
+  const finalRef = ref || inputRef;
 
   return (
-    <Flex flexDirection="column" fullWidth className={className}>
-      {withCopyButton ? inputWithCopyButton : input()}
-    </Flex>
+    <BaseInput
+      type="text"
+      {...otherProps}
+      {...formProps}
+      testId={testId}
+      ref={finalRef}
+      onChange={maxLength ? handleOnChange : onChange}
+      onFocus={onFocus}
+      as="input"
+      className={className}
+      value={value}
+      defaultValue={defaultValue}
+      size={size}
+      maxLength={maxLength}
+    />
   );
 };
 

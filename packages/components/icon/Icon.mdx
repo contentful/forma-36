@@ -1,9 +1,9 @@
 ---
-title: 'Icon'
+title: 'Icons'
 type: 'component'
 slug: /components/icon/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/icon'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-icon--default'
+storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-icon--default'
 typescript: ./src/Icon.tsx,../icons/src/ArrowDown.tsx
 ---
 
@@ -48,22 +48,44 @@ The icon components can be configured in different ways using variations in colo
 ```jsx
 <Stack>
   <Flex alignItems="center">
-    <CalendarIcon variant="primary" /> <Text>Primary</Text>
+    <Flex marginRight="spacingS">
+      <CalendarIcon variant="primary" />
+    </Flex>{' '}
+    <Text>Primary</Text>
   </Flex>
   <Flex alignItems="center">
-    <CalendarIcon variant="positive" /> <Text>Positive</Text>
+    <Flex marginRight="spacingS">
+      <CalendarIcon variant="positive" />
+    </Flex>{' '}
+    <Text>Positive</Text>
   </Flex>
   <Flex alignItems="center">
-    <CalendarIcon variant="negative" /> <Text>Negative</Text>
+    <Flex marginRight="spacingS">
+      <CalendarIcon variant="negative" />
+    </Flex>{' '}
+    <Text>Negative</Text>
   </Flex>
   <Flex alignItems="center">
-    <CalendarIcon variant="warning" /> <Text>Warning</Text>
+    <Flex marginRight="spacingS">
+      <CalendarIcon variant="warning" />
+    </Flex>{' '}
+    <Text>Warning</Text>
   </Flex>
   <Flex alignItems="center">
-    <CalendarIcon variant="secondary" /> <Text>Secondary</Text>
+    <Flex marginRight="spacingS">
+      <CalendarIcon variant="secondary" />
+    </Flex>{' '}
+    <Text>Secondary</Text>
   </Flex>
-  <Flex style={{ backgroundColor: '#8091a5' }} alignItems="center">
-    <CalendarIcon variant="white" /> <Text>White</Text>
+  <Flex
+    style={{ backgroundColor: '#8091a5' }}
+    alignItems="center"
+    padding="spacingS"
+  >
+    <Flex marginRight="spacingS">
+      <CalendarIcon variant="white" />
+    </Flex>{' '}
+    <Text>White</Text>
   </Flex>
 </Stack>
 ```
@@ -92,7 +114,7 @@ The icon components can be configured in different ways using variations in colo
 ```tsx
 // import * as f36icons from "@contentful/f36-icons";
 
-<Grid columns={'repeat(3, 1fr)'}>
+<Grid columns="repeat(3, 1fr)">
   {Object.entries(f36icons).map(([name, icon]) => {
     const Component = icon;
 

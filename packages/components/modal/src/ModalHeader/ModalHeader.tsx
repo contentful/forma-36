@@ -39,15 +39,17 @@ export function ModalHeader({
         {title}
       </Subheading>
       {onClose && (
-        <Button
-          variant="transparent"
-          aria-label="Close"
-          startIcon={<CloseIcon size="small" />}
-          onClick={() => {
-            onClose();
-          }}
-          size="small"
-        />
+        <Flex alignItems="center" className={styles.buttonContainer}>
+          <Button
+            variant="transparent"
+            aria-label="Close"
+            startIcon={<CloseIcon size="small" />}
+            onClick={() => {
+              onClose();
+            }}
+            size="small"
+          />
+        </Flex>
       )}
     </Flex>
   );

@@ -3,25 +3,22 @@
   "version": "4.0.0",
   "description": "Forma 36: DateTime component",
   "scripts": {
-    "build": "parcel build index.ts"
+    "build": "parcel build"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
     "@contentful/f36-core": "^4.0.0",
     "@contentful/f36-tokens": "^4.0.0",
-    "emotion": "^10.0.17",
-    "dayjs": "^1.10.6"
+    "dayjs": "^1.10.6",
+    "emotion": "^10.0.17"
   },
-  "devDependencies": {
-    "mockdate": "^3.0.5"
-  },
+  "devDependencies": {},
   "peerDependencies": {
     "react": ">=16.8"
   },
   "license": "MIT",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "main": "dist/main.js",
   "module": "dist/module.js",

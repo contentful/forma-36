@@ -1,9 +1,0 @@
-@import 'settings/typography';
-@import '@contentful/f36-tokens/dist/css/spacing.css';
-
-:root {
-  /* Input Widths */
-  --input-width-small: 120px;
-  --input-width-medium: 240px;
-  --input-width-large: 420px;
-}

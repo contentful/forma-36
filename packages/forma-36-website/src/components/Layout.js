@@ -1,16 +1,19 @@
 import React, { useEffect } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { css } from '@emotion/core';
-import { useStaticQuery, graphql } from 'gatsby';
-import '@contentful/f36-components/dist/styles.css';
-import { GlobalStyles } from '@contentful/f36-core';
-import './Layout.css';
+
+import { Global } from '@emotion/core';
+import { css, cx } from 'emotion';
+
+import { Flex } from '@contentful/f36-core';
+import { getGlobalStyles } from './Layout.styles';
 
 import Header from './Header';
 import Promo from './Promo';
-import Container from './Container';
+import MDXPage from './MDXPage';
 import Navigation from './Navigation';
+import Footer from './Footer';
 
 const styles = {
   navAndContentWrapper: css`
@@ -20,9 +23,16 @@ const styles = {
   withPromo: css`
     height: calc(100vh - 107px);
   `,
+  content: css`
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+  `,
 };
 
 export default function Layout({ location, pageContext, children }) {
+  const globalStyles = getGlobalStyles();
+
   useEffect(() => {
     // track page visit only when the page is mounted
     if (window.analytics) {
@@ -61,7 +71,8 @@ export default function Layout({ location, pageContext, children }) {
 
   return (
     <>
-      <GlobalStyles />
+      <Global styles={globalStyles} />
+
       <Helmet
         title={siteMetadata.title}
         meta={[
@@ -89,18 +100,34 @@ export default function Layout({ location, pageContext, children }) {
 
       <Header />
 
-      <div css={[styles.navAndContentWrapper, withPromo && styles.withPromo]}>
+      <div
+        className={cx([
+          styles.navAndContentWrapper,
+          withPromo && styles.withPromo,
+        ])}
+      >
         <Navigation
           menuItems={siteMetadata?.menuLinks}
           currentPath={location?.pathname}
         />
-        <Container
-          frontmatter={pageContext && pageContext.frontmatter}
-          dataFromReadme={pageContext && pageContext.body}
-          propsMetadata={pageContext && pageContext.propsMetadata}
-        >
-          {children}
-        </Container>
+
+        <Flex flexDirection="column" className={styles.content}>
+          {/**
+           * if pageContext is NOT undefined it means the page comes from a MDX file so we use the MDXPage component
+           * the pages with no pageContext come from "../pages" and do not have pageContext
+           * */}
+          {pageContext ? (
+            <MDXPage
+              frontmatter={pageContext.frontmatter}
+              mdxContent={pageContext.body}
+              propsMetadata={pageContext.propsMetadata}
+            />
+          ) : (
+            children
+          )}
+
+          <Footer />
+        </Flex>
       </div>
     </>
   );

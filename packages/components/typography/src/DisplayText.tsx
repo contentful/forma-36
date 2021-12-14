@@ -5,11 +5,12 @@ import {
   MarginProps,
   PolymorphicComponent,
   PolymorphicProps,
+  ExpandProps,
 } from '@contentful/f36-core';
 import { Text } from './Text';
 import type { HeadingElement } from './Heading';
 
-const DEFAULT_TAG = 'h1';
+const DISPLAY_TEXT_DEFAULT_TAG = 'h2';
 
 export interface DisplayTextInternalProps extends CommonProps, MarginProps {
   size?: 'default' | 'large' | 'huge';
@@ -18,15 +19,16 @@ export interface DisplayTextInternalProps extends CommonProps, MarginProps {
 }
 
 export type DisplayTextProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof DISPLAY_TEXT_DEFAULT_TAG
 > = PolymorphicProps<DisplayTextInternalProps, E>;
 
-function _DisplayText<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _DisplayText<
+  E extends React.ElementType = typeof DISPLAY_TEXT_DEFAULT_TAG
+>(
   {
     children,
     size = 'default',
     testId = 'cf-ui-display-text',
-    as,
     ...otherProps
   }: DisplayTextProps<E>,
   ref: React.Ref<any>,
@@ -44,7 +46,7 @@ function _DisplayText<E extends React.ElementType = typeof DEFAULT_TAG>(
 
   return (
     <Text
-      as={DEFAULT_TAG}
+      as={DISPLAY_TEXT_DEFAULT_TAG}
       testId={testId}
       marginBottom={size === 'default' ? 'spacingL' : 'spacingXl'}
       fontSize={fontSize}
@@ -60,6 +62,6 @@ function _DisplayText<E extends React.ElementType = typeof DEFAULT_TAG>(
 }
 
 export const DisplayText: PolymorphicComponent<
-  DisplayTextInternalProps,
-  typeof DEFAULT_TAG
+  ExpandProps<DisplayTextInternalProps>,
+  typeof DISPLAY_TEXT_DEFAULT_TAG
 > = React.forwardRef(_DisplayText);

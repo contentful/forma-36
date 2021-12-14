@@ -4,8 +4,7 @@
   "description": "Forma 36: Badge React Component",
   "license": "MIT",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "main": "dist/main.js",
   "module": "dist/module.js",
@@ -18,7 +17,7 @@
     "url": "https://github.com/contentful/forma-36"
   },
   "scripts": {
-    "build": "parcel build index.ts"
+    "build": "parcel build"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",

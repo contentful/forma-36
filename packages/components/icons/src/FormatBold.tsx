@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const FormatBold = generateIcon({
+export const FormatBold = /*#__PURE__*/ generateIcon({
   name: 'FormatBold',
   path: (
     <Fragment>

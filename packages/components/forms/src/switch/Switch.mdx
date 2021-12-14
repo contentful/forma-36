@@ -4,7 +4,7 @@ type: 'component'
 status: 'stable'
 slug: /components/switch/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/switch'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-switch--basic'
+storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/form-elements-switch--basic'
 typescript: ./Switch.tsx
 ---
 
@@ -16,6 +16,7 @@ Switch is a control that is used to quickly switch between two possible states. 
 - [Code examples](#code-examples)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
+- [Props](#props)
 
 ## How to use Switch
 
@@ -53,7 +54,7 @@ const ExampleControlled = () => {
 
 You can use the Switch as an uncontrolled input, for that you can:
 
-- Set the `defaultChecked` property, it will ensure that the checked state can be altered normaly.
+- Set the `defaultChecked` property, it will ensure that the checked state can be altered normally.
 - Don't set the `isChecked` as it will make the input controlled.
 
 ```jsx static=true
@@ -91,3 +92,9 @@ Switch is a two-step action: selection and execution, whereas checkbox is just s
 
 - use clear and concise label for Switch component
 - if needed provide additional information for the user if Switch will cause a change in the context
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Switch" />

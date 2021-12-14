@@ -1,12 +1,18 @@
 import React from 'react';
 import { cx } from 'emotion';
-import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import type {
+  CommonProps,
+  PropsWithHTMLElement,
+  ExpandProps,
+} from '@contentful/f36-core';
 
 import { getMenuFooterStyles } from './MenuList.styles';
 
 export type MenuListFooterProps = PropsWithHTMLElement<CommonProps, 'div'>;
 
-export const MenuListFooter: React.FC<MenuListFooterProps> = (props) => {
+export const MenuListFooter: React.FC<ExpandProps<MenuListFooterProps>> = (
+  props,
+) => {
   const {
     children,
     testId = 'cf-ui-menu-list-footer',

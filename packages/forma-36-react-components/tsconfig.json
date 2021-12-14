@@ -1,16 +1,4 @@
 {
   "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "./src"
-  },
-  "include": ["./", "../../types"],
-  "exclude": [
-    "dist",
-    "dist-storybook",
-    "node_modules",
-    "**/*.stories.tsx",
-    "**/*.test.tsx",
-    "tools"
-  ]
+  "include": ["./src"]
 }

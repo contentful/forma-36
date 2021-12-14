@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { action } from '@storybook/addon-actions';
-import { Checkbox, CheckboxGroup, CheckboxGroupProps } from '../src/checkbox';
+import { Checkbox, CheckboxGroupProps } from '../src';
 
 export default {
   title: 'Form Elements/Checkbox/CheckboxGroup',
-  component: CheckboxGroup,
+  component: Checkbox.Group,
   argTypes: {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
@@ -32,14 +32,14 @@ export const Basic = (args: CheckboxGroupProps) => {
   }, [value]);
 
   return (
-    <CheckboxGroup {...args} value={groupState} onChange={handleOnChange}>
+    <Checkbox.Group {...args} value={groupState} onChange={handleOnChange}>
       <Checkbox value="apples">Apples</Checkbox>
       <Checkbox value="pears">Pears</Checkbox>
       <Checkbox value="peaches">Peaches</Checkbox>
       <Checkbox value="mangos">Mangos</Checkbox>
       <Checkbox value="kiwis">Kiwis</Checkbox>
       <Checkbox value="bananas">Bananas</Checkbox>
-    </CheckboxGroup>
+    </Checkbox.Group>
   );
 };
 
@@ -49,14 +49,14 @@ Basic.args = {
 
 export const Uncontrolled = (args: CheckboxGroupProps) => {
   return (
-    <CheckboxGroup defaultValue={args.defaultValue}>
+    <Checkbox.Group defaultValue={args.defaultValue}>
       <Checkbox value="apples">Apples</Checkbox>
       <Checkbox value="pears">Pears</Checkbox>
       <Checkbox value="peaches">Peaches</Checkbox>
       <Checkbox value="mangos">Mangos</Checkbox>
       <Checkbox value="kiwis">Kiwis</Checkbox>
       <Checkbox value="bananas">Bananas</Checkbox>
-    </CheckboxGroup>
+    </Checkbox.Group>
   );
 };
 

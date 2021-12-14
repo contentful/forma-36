@@ -1,8 +1,9 @@
 ---
 title: 'React Hook Form'
+slug: '/integrations/react-hook-form/'
 ---
 
-It’s possible to build forms using Forma 36’s compoenents and [React Hook Form](https://react-hook-form.com/).
+It’s possible to build forms using Forma 36’s components and [React Hook Form](https://react-hook-form.com/).
 In this page we will show a couple of examples on how to do that.
 
 ## Integrating with `register()`
@@ -16,7 +17,6 @@ import {
   Form,
   FormControl,
   Radio,
-  RadioGroup,
   Select,
   Textarea,
   TextInput,
@@ -43,7 +43,7 @@ export const ReactHookForm = () => {
       <FormControl isInvalid={Boolean(errors.name)}>
         <FormControl.Label isRequired>Name</FormControl.Label>
 
-        {/* Use the register function from reac-hook-form on TextInput */}
+        {/* Use the register function from react-hook-form on TextInput */}
         <TextInput {...register('name', { required: true })} />
 
         {/* Show a ValidationMessage if the input has any errors */}
@@ -78,18 +78,21 @@ export const ReactHookForm = () => {
         </Select>
       </FormControl>
 
-      <FormControl>
-        <FormControl.Label>Martial status</FormControl.Label>
+      <FormControl as="fieldset">
+        <FormControl.Label as="legend">Martial status</FormControl.Label>
 
-        {/* When using RadioGroup, it’s necessary to register each Radio with the same "name" */}
-        <RadioGroup defaultValue="single">
+        {/*
+          When using Radio.Group, it’s necessary to register each Radio with the same "name".
+          This is necessary because of how react-hook-form works.
+        */}
+        <Radio.Group defaultValue="single">
           <Radio value="married" {...register('martial-status')} >
             Married
           </Radio>
           <Radio value="single" {...register('martial-status')}>
             Single
           </Radio>
-        </RadioGroup>
+        </Radio.Group>
       </FormControl>
 
       <FormControl isInvalid={Boolean(errors.checkbox)}>
@@ -164,7 +167,7 @@ export const ReactHookForm = () => {
            * We need to pass an empty string as default value
            * otherwise react will trigger the uncontrolled inputs warning
            *
-           * more infomation in https://react-hook-form.com/api/usecontroller
+           * more information in https://react-hook-form.com/api/usecontroller
            */
           defaultValue=""
         />

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const ChevronUpTrimmed = generateIcon({
+export const ChevronUpTrimmed = /*#__PURE__*/ generateIcon({
   name: 'ChevronUpTrimmed',
   path: (
     <Fragment>

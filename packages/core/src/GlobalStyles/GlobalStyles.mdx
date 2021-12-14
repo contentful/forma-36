@@ -1,0 +1,52 @@
+---
+title: 'GlobalStyles'
+type: 'component'
+slug: /components/globalstyles/
+github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/core/src/GlobalStyles'
+typescript: ./GlobalStyles.tsx
+v4Doc: true
+---
+
+import { Stack, TextLink } from '@contentful/f36-components';
+import { Props } from '@contentful/f36-docs-utils';
+
+GlobalStyles is a component that set the common style, and also normalize the browser styles.
+
+## Table of contents
+
+- [Import](#import)
+- [Examples](#examples)
+- [Props](#props-api-reference)
+- [Help improve this page](#help-improve-this-page)
+
+## Import
+
+```js static=true
+import { GlobalStyles } from '@contentful/f36-components';
+// or
+import { GlobalStyles } from '@contentful/f36-core';
+```
+
+## Examples
+
+To use the GlobalStyles just add it to the render of the app.
+
+```js static=true
+import ReactDOM from 'react-dom';
+import { GlobalStyles } from '@contentful/f36-components';
+
+import App from './App';
+
+const rootElement = document.getElementById('root');
+ReactDOM.render(
+  <>
+    <GlobalStyles />
+    <App />
+  </>,
+  rootElement,
+);
+```
+
+## Props (API reference)
+
+<Props of="GlobalStyles" />

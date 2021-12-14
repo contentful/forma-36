@@ -13,8 +13,7 @@ export const PopoverTrigger = (props: PopoverTriggerProps) => {
   const { getTriggerProps } = usePopoverContext();
 
   return React.cloneElement(child, {
-    ...child.props,
     ...getTriggerProps(child.ref),
-    ['aria-haspopup']: 'dialog',
+    'aria-haspopup': child.props['aria-haspopup'] ?? 'dialog',
   });
 };

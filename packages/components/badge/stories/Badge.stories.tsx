@@ -18,15 +18,15 @@ export default {
   },
 };
 
-export const basic = (args: BadgeInternalProps) => <Badge {...args} />;
+export const Basic = (args: BadgeInternalProps) => <Badge {...args} />;
 
-basic.args = {
+Basic.args = {
   size: 'default',
   variant: 'primary',
   children: 'Published',
 };
 
-export const overview = () => (
+export const Overview = () => (
   <>
     <SectionHeading as="h3" marginBottom="spacingS">
       Badge variants & sizes

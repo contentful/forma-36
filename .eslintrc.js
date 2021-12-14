@@ -1,5 +1,9 @@
+const path = require('path');
 const rulesDirPlugin = require('eslint-plugin-rulesdir');
-rulesDirPlugin.RULES_DIR = './scripts/eslint-rules/custom';
+rulesDirPlugin.RULES_DIR = path.resolve(
+  __dirname,
+  './scripts/eslint-rules/custom',
+);
 
 module.exports = {
   parser: '@typescript-eslint/parser',
@@ -66,8 +70,8 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'import/named': 'error',
     'import/no-default-export': 'error',
-    'rulesdir/emotion-in-function': 'error',
     'react/jsx-handler-names': 'error',
+    'rulesdir/emotion-in-function': 'error',
   },
   overrides: [
     {

@@ -152,64 +152,6 @@ export const Overview = () => (
     </Flex>
 
     <SectionHeading as="h3" marginBottom="spacingS">
-      Text Input with copybutton
-    </SectionHeading>
-
-    <Flex marginBottom="spacingL">
-      <TextInput
-        aria-label="Example label for input"
-        name="Example name 9"
-        id="input-9"
-        placeholder="My great input"
-        withCopyButton
-      />
-    </Flex>
-
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Text Input with copybutton small
-    </SectionHeading>
-
-    <Flex marginBottom="spacingL">
-      <TextInput
-        aria-label="Example label for input"
-        name="Example name 10"
-        id="input-10"
-        placeholder="My great input"
-        withCopyButton
-        size="small"
-      />
-    </Flex>
-
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Text Input with copybutton disabled
-    </SectionHeading>
-
-    <Flex marginBottom="spacingL">
-      <TextInput
-        name="Example name 11"
-        id="input-11"
-        placeholder="My great input"
-        withCopyButton
-        isDisabled
-      />
-    </Flex>
-
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Text Input with copybutton disabled small
-    </SectionHeading>
-
-    <Flex marginBottom="spacingL">
-      <TextInput
-        name="Example name 12"
-        id="input-12"
-        placeholder="My great input"
-        withCopyButton
-        isDisabled
-        size="small"
-      />
-    </Flex>
-
-    <SectionHeading as="h3" marginBottom="spacingS">
       Number input
     </SectionHeading>
 

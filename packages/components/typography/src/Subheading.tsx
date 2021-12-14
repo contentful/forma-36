@@ -4,11 +4,12 @@ import {
   MarginProps,
   PolymorphicComponent,
   PolymorphicProps,
+  ExpandProps,
 } from '@contentful/f36-core';
 import type { HeadingElement } from './Heading';
 import { Text } from './Text';
 
-const DEFAULT_TAG = 'h2';
+const SUBHEADING_DEFAULT_TAG = 'h3';
 
 export interface SubheadingInternalProps extends CommonProps, MarginProps {
   as?: HeadingElement;
@@ -16,16 +17,18 @@ export interface SubheadingInternalProps extends CommonProps, MarginProps {
 }
 
 export type SubheadingProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof SUBHEADING_DEFAULT_TAG
 > = PolymorphicProps<SubheadingInternalProps, E>;
 
-function _Subheading<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _Subheading<
+  E extends React.ElementType = typeof SUBHEADING_DEFAULT_TAG
+>(
   { children, testId = 'cf-ui-subheading', ...otherProps }: SubheadingProps<E>,
   ref: React.Ref<any>,
 ) {
   return (
     <Text
-      as={DEFAULT_TAG}
+      as={SUBHEADING_DEFAULT_TAG}
       testId={testId}
       marginBottom="spacingM"
       fontSize="fontSizeL"
@@ -41,6 +44,6 @@ function _Subheading<E extends React.ElementType = typeof DEFAULT_TAG>(
 }
 
 export const Subheading: PolymorphicComponent<
-  SubheadingInternalProps,
-  typeof DEFAULT_TAG
+  ExpandProps<SubheadingInternalProps>,
+  typeof SUBHEADING_DEFAULT_TAG
 > = React.forwardRef(_Subheading);

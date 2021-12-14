@@ -6,10 +6,8 @@ import { Button } from '@contentful/f36-button';
 
 import {
   Checkbox,
-  CheckboxGroup,
   Form,
   FormControl,
-  RadioGroup,
   Radio,
   Select,
   Textarea,
@@ -46,7 +44,7 @@ export const Basic = () => {
           rules={{ required: true }}
           /**
            * We need to pass an empty string as default value otherwise react will trigger the uncontrolled inputs warning
-           * more infomation can be found in react-hook-form docs https://react-hook-form.com/api/usecontroller
+           * more information can be found in react-hook-form docs https://react-hook-form.com/api/usecontroller
            */
           defaultValue=""
         />
@@ -71,12 +69,12 @@ export const Basic = () => {
           rules={{ maxLength: 20 }}
           /**
            * We need to pass an empty string as default value otherwise react will trigger the uncontrolled inputs warning
-           * more infomation can be found in react-hook-form docs https://react-hook-form.com/api/usecontroller
+           * more information can be found in react-hook-form docs https://react-hook-form.com/api/usecontroller
            */
           defaultValue=""
         />
 
-        <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
+        <FormControl.HelpText>Tell me about yourself</FormControl.HelpText>
 
         {errors.textarea && (
           <FormControl.ValidationMessage>
@@ -142,12 +140,12 @@ export const WithRadioGroup = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormControl>
-        <FormControl.Label>Favorite fruit</FormControl.Label>
+      <FormControl as="fieldset">
+        <FormControl.Label as="legend">Favorite fruit</FormControl.Label>
 
         {/**
          * We need to pass an empty string as default value otherwise react will trigger the uncontrolled inputs warning
-         * more infomation can be found in react-hook-form docs https://react-hook-form.com/api/usecontroller
+         * more information can be found in react-hook-form docs https://react-hook-form.com/api/usecontroller
          */}
         <ControlledRadioGroup
           control={control}
@@ -179,10 +177,10 @@ export const WithCheckboxGroup = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormControl>
-        <FormControl.Label>Favorite fruits</FormControl.Label>
+      <FormControl as="fieldset">
+        <FormControl.Label as="legend">Favorite fruits</FormControl.Label>
 
-        <CheckboxGroup name="favorite-fruits">
+        <Checkbox.Group name="favorite-fruits">
           <ControlledCheckbox control={control} id="apples" value="apples">
             Apples
           </ControlledCheckbox>
@@ -194,7 +192,7 @@ export const WithCheckboxGroup = () => {
           <ControlledCheckbox control={control} id="peaches" value="peaches">
             Peaches
           </ControlledCheckbox>
-        </CheckboxGroup>
+        </Checkbox.Group>
       </FormControl>
 
       <Button variant="primary" type="submit">
@@ -245,8 +243,8 @@ function ControlledSelect(props) {
 function ControlledRadioGroup(props) {
   const { ref, inputProps } = useReactHookFormController(props);
   return (
-    <RadioGroup {...inputProps} ref={ref}>
+    <Radio.Group {...inputProps} ref={ref}>
       {props.children}
-    </RadioGroup>
+    </Radio.Group>
   );
 }

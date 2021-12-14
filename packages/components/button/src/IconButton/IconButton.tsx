@@ -1,5 +1,9 @@
 import React from 'react';
-import { PolymorphicProps, PolymorphicComponent } from '@contentful/f36-core';
+import {
+  PolymorphicProps,
+  PolymorphicComponent,
+  ExpandProps,
+} from '@contentful/f36-core';
 import { Button } from '../Button';
 import type { ButtonInternalProps } from '../types';
 
@@ -15,23 +19,43 @@ interface IconButtonInternalProps
   'aria-label': string;
 }
 
-const DEFAULT_TAG = 'button';
+const ICON_BUTTON_DEFAULT_TAG = 'button';
 
 export type IconButtonProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof ICON_BUTTON_DEFAULT_TAG
 > = PolymorphicProps<IconButtonInternalProps, E, 'disabled'>;
 
-function _IconButton<E extends React.ElementType = typeof DEFAULT_TAG>(
-  props: IconButtonProps<E>,
-  ref: React.Ref<any>,
-) {
-  const { testId = 'cf-ui-icon-button', icon, ...otherProps } = props;
+function _IconButton<
+  E extends React.ElementType = typeof ICON_BUTTON_DEFAULT_TAG
+>(props: IconButtonProps<E>, ref: React.Ref<any>) {
+  const {
+    testId = 'cf-ui-icon-button',
+    variant = 'transparent',
+    icon,
+    ...otherProps
+  } = props;
+  const defaultIconColor: {
+    [Property in ButtonInternalProps['variant']]: string;
+  } = {
+    primary: 'white',
+    secondary: 'secondary',
+    positive: 'white',
+    negative: 'white',
+    transparent: 'secondary',
+  };
 
-  return <Button testId={testId} ref={ref} startIcon={icon} {...otherProps} />;
+  return (
+    <Button testId={testId} ref={ref} variant={variant} {...otherProps}>
+      {React.cloneElement(icon, {
+        variant: defaultIconColor[variant],
+        ...icon.props,
+      })}
+    </Button>
+  );
 }
 
 export const IconButton: PolymorphicComponent<
-  IconButtonInternalProps,
-  typeof DEFAULT_TAG,
+  ExpandProps<IconButtonInternalProps>,
+  typeof ICON_BUTTON_DEFAULT_TAG,
   'disabled'
 > = React.forwardRef(_IconButton);

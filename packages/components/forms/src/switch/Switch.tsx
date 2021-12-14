@@ -1,10 +1,14 @@
 import React from 'react';
 import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
 import { useFormControl } from '../form-control/FormControlContext';
+import { ExpandProps } from '@contentful/f36-core';
 
 export type SwitchProps = Omit<BaseCheckboxProps, 'type' | 'isIndeterminate'>;
 
-const _Switch = (props: SwitchProps, ref: React.Ref<HTMLInputElement>) => {
+const _Switch = (
+  props: ExpandProps<SwitchProps>,
+  ref: React.Ref<HTMLInputElement>,
+) => {
   const {
     testId = 'cf-ui-switch',
     id,
@@ -15,8 +19,15 @@ const _Switch = (props: SwitchProps, ref: React.Ref<HTMLInputElement>) => {
     ...otherProps
   } = props;
 
-  // Removes the isReadOnly property that comes from FormControl context.
-  const { isReadOnly, ...formProps } = useFormControl({
+  // Removes the not needed properties that comes from FormControl context.
+  const {
+    inputValue,
+    setInputValue,
+    maxLength,
+    setMaxLength,
+    isReadOnly,
+    ...formProps
+  } = useFormControl({
     id,
     isDisabled,
     isInvalid,

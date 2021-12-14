@@ -50,6 +50,14 @@ Default.args = {
   title: 'Closer',
 };
 
+export const WithLoadingState: Story<InlineEntryCardProps> = (args) => {
+  return <InlineEntryCard {...args} />;
+};
+
+WithLoadingState.args = {
+  isLoading: true,
+};
+
 export const Overview: Story<InlineEntryCardProps> = () => {
   return (
     <>
@@ -76,25 +84,6 @@ export const Overview: Story<InlineEntryCardProps> = () => {
           </SectionHeading>
 
           <InlineEntryCard isHovered status="archived" title="Forma 36" />
-        </Flex>
-
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Focus
-          </SectionHeading>
-          <InlineEntryCard
-            actions={[
-              <MenuItem key="copy">Copy</MenuItem>,
-              <MenuItem key="delete">Delete</MenuItem>,
-            ]}
-            isFocused
-            status="changed"
-            title="Forma 36"
-          />
         </Flex>
 
         <Flex

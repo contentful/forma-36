@@ -1,10 +1,12 @@
-import React, { useCallback, useEffect } from 'react';
-import { useForwardedRef, PropsWithHTMLElement } from '@contentful/f36-core';
+import React, { useCallback, useEffect, useRef } from 'react';
+import { PropsWithHTMLElement, ExpandProps } from '@contentful/f36-core';
 import type { BaseCheckboxInternalProps } from './types';
 import { GhostCheckbox } from './GhostCheckbox';
 import getStyles from './BaseCheckbox.styles';
 import { Text } from '@contentful/f36-typography';
-import { HelpText } from '../help-text';
+import { Flex } from '@contentful/f36-core';
+import { HelpText } from '../help-text/HelpText';
+import { useFormControl } from '../form-control/FormControlContext';
 
 export type BaseCheckboxProps = PropsWithHTMLElement<
   BaseCheckboxInternalProps & { label?: string },
@@ -13,8 +15,8 @@ export type BaseCheckboxProps = PropsWithHTMLElement<
 >;
 
 function _BaseCheckbox(
-  props: BaseCheckboxProps,
-  ref: React.Ref<HTMLInputElement>,
+  props: ExpandProps<BaseCheckboxProps>,
+  ref: React.RefObject<HTMLInputElement>,
 ) {
   const {
     isChecked = undefined,
@@ -41,11 +43,16 @@ function _BaseCheckbox(
     helpText,
     ...otherProps
   } = props;
-  const inputRef = useForwardedRef<HTMLInputElement>(ref);
+
+  const inputRef = useRef<HTMLInputElement>(null);
+  const finalRef = ref || inputRef;
+  const { id: formFieldId } = useFormControl({});
 
   useEffect(() => {
-    inputRef.current.indeterminate = isIndeterminate;
-  }, [isIndeterminate, inputRef]);
+    if (finalRef.current) {
+      finalRef.current.indeterminate = isIndeterminate;
+    }
+  }, [isIndeterminate, finalRef]);
 
   const styles = getStyles({ isDisabled, type, size });
 
@@ -73,20 +80,27 @@ function _BaseCheckbox(
     (e) => {
       e.persist();
       if (willBlurOnEsc && e.key === 'Escape') {
-        inputRef?.current?.blur();
+        finalRef?.current?.blur();
       }
       if (onKeyDown) {
         onKeyDown(e);
       }
     },
-    [willBlurOnEsc, onKeyDown, inputRef],
+    [willBlurOnEsc, onKeyDown, finalRef],
   );
 
   const ariaChecked =
     typeof isChecked !== undefined ? isChecked : defaultChecked;
 
+  const helpTextId = id ? `${id}-helptext` : undefined;
+  const ariaDescribedBy = isInvalid
+    ? `${formFieldId}-validation`
+    : helpText
+    ? helpTextId
+    : undefined;
+
   return (
-    <div className={className}>
+    <Flex className={className}>
       <Text
         as="label"
         fontColor="gray900"
@@ -111,11 +125,11 @@ function _BaseCheckbox(
           disabled={isDisabled}
           role={type}
           aria-checked={isIndeterminate ? 'mixed' : ariaChecked}
-          ref={inputRef}
+          ref={finalRef}
           required={isRequired}
           aria-required={isRequired ? 'true' : undefined}
           aria-invalid={isInvalid ? 'true' : undefined}
-          aria-describedby={helpText && `${id}-helptext`}
+          aria-describedby={ariaDescribedBy}
           id={id}
           name={name}
         />
@@ -128,11 +142,11 @@ function _BaseCheckbox(
         {children}
       </Text>
       {helpText && (
-        <HelpText id={`${id}-helptext`} className={styles.helpText}>
+        <HelpText id={helpTextId} className={styles.helpText}>
           {helpText}
         </HelpText>
       )}
-    </div>
+    </Flex>
   );
 }
 

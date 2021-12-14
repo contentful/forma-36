@@ -37,3 +37,5 @@ export function WorkbenchContent({
     </main>
   );
 }
+
+WorkbenchContent.displayName = 'WorkbenchContent';

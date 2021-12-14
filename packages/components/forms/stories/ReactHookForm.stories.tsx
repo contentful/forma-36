@@ -6,10 +6,8 @@ import { Button } from '@contentful/f36-button';
 
 import {
   Checkbox,
-  CheckboxGroup,
   Form,
   FormControl,
-  RadioGroup,
   Radio,
   Select,
   Textarea,
@@ -54,7 +52,7 @@ export const Basic = () => {
       <FormControl isInvalid={Boolean(errors.description)}>
         <FormControl.Label>Description</FormControl.Label>
         <Textarea {...register('description', { maxLength: 20 })} />
-        <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
+        <FormControl.HelpText>Tell me about yourself</FormControl.HelpText>
 
         {errors.description && (
           <FormControl.ValidationMessage>
@@ -116,10 +114,10 @@ export const WithRadioGroup = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormControl>
-        <FormControl.Label>Fruits</FormControl.Label>
+      <FormControl as="fieldset">
+        <FormControl.Label as="legend">Fruits</FormControl.Label>
 
-        <RadioGroup defaultValue="apples">
+        <Radio.Group defaultValue="apples">
           <Radio
             id="uncontrolled-apples"
             value="apples"
@@ -141,7 +139,7 @@ export const WithRadioGroup = () => {
           >
             Peaches
           </Radio>
-        </RadioGroup>
+        </Radio.Group>
       </FormControl>
 
       <Button variant="primary" type="submit">
@@ -158,10 +156,10 @@ export const WithCheckboxGroup = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormControl>
-        <FormControl.Label>Fruits</FormControl.Label>
+      <FormControl as="fieldset">
+        <FormControl.Label as="legend">Fruits</FormControl.Label>
 
-        <CheckboxGroup name="uncontrolled-fruits" defaultValue={['apples']}>
+        <Checkbox.Group name="uncontrolled-fruits" defaultValue={['apples']}>
           <Checkbox
             id="apples"
             value="apples"
@@ -183,7 +181,7 @@ export const WithCheckboxGroup = () => {
           >
             Peaches
           </Checkbox>
-        </CheckboxGroup>
+        </Checkbox.Group>
       </FormControl>
 
       <Button variant="primary" type="submit">

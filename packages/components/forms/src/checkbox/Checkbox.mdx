@@ -4,25 +4,25 @@ type: 'component'
 status: 'stable'
 slug: /components/checkbox/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/checkbox'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-checkbox--basic'
+storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/form-elements-checkbox--basic'
 typescript: ./Checkbox.tsx,./CheckboxGroup.tsx
 ---
 
 `Checkbox` is a form component that shows a checkbox with it's label.  
-`CheckboxGroup` is a component that makes it easier to handle group of checkboxes.
+`Checkbox.Group` is a component that makes it easier to handle group of checkboxes.
 
 ## Table of contents
 
 - [How to use Checkbox](#how-to-use-checkbox)
   - [Using as a controlled input](#using-as-a-controlled-input)
   - [Using as an uncontrolled input](#using-as-an-uncontrolled-input)
-  - [Using with CheckboxGroup](#using-with-checkboxgroup)
+  - [Using with Group](#using-with-group)
 - [Component variations](#component-variations)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
 - [Props](#props)
   - [Checkbox](#props-checkbox)
-  - [CheckboxGroup](#props-checkboxgroup)
+  - [Group](#props-group)
 
 ## How to use Checkbox
 
@@ -58,7 +58,7 @@ const ExampleControlled = () => {
 
 You can use the Checkbox as an uncontrolled input, for that you can:
 
-- Set the `defaultChecked` property, it will ensure that the checked state can be altered normaly.
+- Set the `defaultChecked` property, it will ensure that the checked state can be altered normally.
 - Don't set the `isChecked` as it will make the input controlled.
 
 ```jsx static=true
@@ -71,33 +71,33 @@ You can use the Checkbox as an uncontrolled input, for that you can:
 </Checkbox>
 ```
 
-### Using with CheckboxGroup
+### Using with Group
 
 import { FormControl } from '@contentful/f36-forms';
 
-We also provide the `CheckboxGroup` component that helps when using multiple checkboxes, you can pass the spacing value and some common properties to be replicated to the checkboxes.
+We also provide the `Checkbox.Group` component that helps when using multiple checkboxes. You can pass some common properties on the `Checkbox.Group` level and they will be passed to the checkboxes inside the group.
 
 - `spacing`: This will set how much space should be between the inputs;
-- `name`: This will set all checkboxes with this name;
+- `name`: By setting this property on the `Checkbox.Group` level, you will set it automatically for all the checkboxes in the group;
 - `defaultValue`: This accepts an array that set the `defaultChecked` property for checkboxes which the value exists in the array;
 - `value`: Same as `defaultValue` but this one sets the `isChecked` property, making the checkbox group controlled;
 - `onChange`: Handler that will be executed when any checkbox inside the group receives the event of change.
 
 ```jsx
-<React.Fragment>
-  <FormControl.Label marginBottom="none">
+<FormControl as="fieldset">
+  <FormControl.Label as="legend" marginBottom="none">
     Checkbox group options
   </FormControl.Label>
   <Paragraph>Subtitle with more information if needed</Paragraph>
-  <CheckboxGroup name="checkbox-options" defaultValue={['option 1']}>
+  <Checkbox.Group name="checkbox-options" defaultValue={['option 1']}>
     <Checkbox value="option 1" id="option-1" helpText="Some help text">
       Option 1
     </Checkbox>
     <Checkbox value="option 2" id="option-2" helpText="Another help text">
       Option 2
     </Checkbox>
-  </CheckboxGroup>
-</React.Fragment>
+  </Checkbox.Group>
+</FormControl>
 ```
 
 ## Code examples
@@ -163,7 +163,8 @@ The Checkbox can be rendered as disabled with the `isDisabled` property.
 
 ## Accessibility
 
-- To ensure `Checkbox` meets accessibility standards, provide `name` and `id`
+- To ensure `Checkbox` meets accessibility standards, provide `name` and `id`;
+- When using `Checkbox.Group` it should be wrapped in a `<FormControl as="fieldset">` and have a `<FormControl.Label as="legend">`.
 
 ## Props
 
@@ -173,6 +174,6 @@ import { Props } from '@contentful/f36-docs-utils';
 
 <Props of="Checkbox" />
 
-### Props CheckboxGroup
+### Props Group
 
 <Props of="CheckboxGroup" />

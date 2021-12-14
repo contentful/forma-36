@@ -3,20 +3,31 @@ title: 'Select'
 type: 'component'
 status: 'stable'
 slug: /components/select/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Select'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-select--overview'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/form/src/select'
+storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/form-elements-select--overview'
 typescript: ./Select.tsx,./SelectOption.tsx
 ---
 
-Select allows users to make a single selection from an options menu.  
+Select allows users to make a single selection from an options menu.
 Keep in mind that Select should not be used without the label.
 
 ## Table of contents
 
 - [How to use Select](#how-to-use-select)
+  - [Using as a controlled select](#using-as-a-controlled-select)
+  - [Using as an uncontrolled select](#using-as-an-uncontrolled-select)
+  - [Select vs dropdown](#select-vs-dropdown)
 - [Code examples](#code-examples)
+  - [Select with label](#select-with-label)
+  - [Select with validation](#select-with-validation)
+  - [Select state disabled](#select-state-disabled)
+  - [Select with placeholder](#select-with-placeholder)
+  - [Select with error](#select-with-error)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
+- [Props](#props)
+  - [Select](#select)
+  - [Select Option](#select-option)
 
 ## How to use Select
 
@@ -33,19 +44,21 @@ To use the Select as controlled, you need to provide the value of one of the opt
 
 ```tsx static=true
 const ExampleControlled = () => {
-  const [selectValue, setSelectValue] = useState("optionOne");
+  const [selectValue, setSelectValue] = useState('optionOne');
   const handleOnChange = (event) => setSelectedValue(event.target.value);
 
   return (
-<Select
-  id="optionSelect-controlled"
-  name="optionSelect-controlled"
-  value={selectValue}
-  onChange={handleOnChange}
->
-  <Select.Option value="optionOne">Option 1</Select.Option>
-  <Select.Option value="optionTwo">Long Option 2</Select.Option>
-</Select>
+    <Select
+      id="optionSelect-controlled"
+      name="optionSelect-controlled"
+      value={selectValue}
+      onChange={handleOnChange}
+    >
+      <Select.Option value="optionOne">Option 1</Select.Option>
+      <Select.Option value="optionTwo">Long Option 2</Select.Option>
+    </Select>
+  );
+};
 ```
 
 ### Using as an uncontrolled select
@@ -56,7 +69,7 @@ To use the Select as uncontrolled, you shouldn't pass the value prop, if you wan
 <Select
   id="optionSelect-controlled"
   name="optionSelect-controlled"
-  defaultValue={'optionOne'}
+  defaultValue="optionOne"
 >
   <Select.Option value="optionOne">Option 1</Select.Option> // This option would
   be selected by default
@@ -80,7 +93,43 @@ To use the Select as uncontrolled, you shouldn't pass the value prop, if you wan
 </Select>
 ```
 
-### Select state (`isDisabled`)
+### Select with label
+
+In order to provide the best experience for your users consider using label that we provide for you in the [FormControl](/components/form-control/)
+
+```tsx
+// import { Select } from '@contentful/f36-components';
+
+<FormControl>
+  <FormControl.Label>Label for select</FormControl.Label>
+  <Select id="optionSelect" name="optionSelect">
+    <Select.Option value="optionOne">Option 1</Select.Option>
+    <Select.Option value="optionTwo">Long Option 2</Select.Option>
+  </Select>
+</FormControl>
+```
+
+### Select with validation
+
+There might be cases where you would need to include the help text or validation message into your form. Read more about those elements in [FormControl documentation](/components/form-control/)
+
+```tsx
+// import { Select } from '@contentful/f36-components';
+
+<FormControl>
+  <FormControl.Label>Label for select</FormControl.Label>
+  <Select id="optionSelect" name="optionSelect">
+    <Select.Option value="optionOne">Option 1</Select.Option>
+    <Select.Option value="optionTwo">Long Option 2</Select.Option>
+  </Select>
+  <FormControl.HelpText>Help text for your select</FormControl.HelpText>
+  <FormControl.ValidationMessage>
+    Validation message
+  </FormControl.ValidationMessage>
+</FormControl>
+```
+
+### Select state disabled
 
 ```tsx
 // import { Select } from '@contentful/f36-components';
@@ -137,6 +186,6 @@ import { Props } from '@contentful/f36-docs-utils';
 
 <Props of="Select" />
 
-### Select.Option
+### Select Option
 
 <Props of="Option" />

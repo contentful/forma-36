@@ -10,26 +10,27 @@ import {
   PolymorphicProps,
   PolymorphicComponent,
   Box,
+  ExpandProps,
 } from '@contentful/f36-core';
 import getInputStyles from './BaseInput.styles';
 import { BaseInputInternalProps } from './types';
 
-const DEFAULT_TAG = 'input';
+const INPUT_DEFAULT_TAG = 'input';
 
 export type BaseInputProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof INPUT_DEFAULT_TAG
 > = PolymorphicProps<
   BaseInputInternalProps,
   E,
   'disabled' | 'required' | 'readOnly'
 >;
 
-function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _BaseInput<E extends React.ElementType = typeof INPUT_DEFAULT_TAG>(
   props: BaseInputProps<E>,
   ref: React.Ref<HTMLInputElement | HTMLTextAreaElement>,
 ) {
   const {
-    as = DEFAULT_TAG,
+    as = INPUT_DEFAULT_TAG,
     className,
     isDisabled,
     isReadOnly,
@@ -50,9 +51,10 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
     icon,
     defaultValue,
     size = 'medium',
+    resize = 'vertical',
     ...otherProps
   } = props;
-  const styles = getInputStyles({ as, isDisabled, isInvalid, size });
+  const styles = getInputStyles({ as, isDisabled, isInvalid, size, resize });
 
   const handleFocus = useCallback(
     (e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -120,6 +122,9 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
       aria-readonly={isReadOnly ? 'true' : undefined}
       aria-required={isRequired ? 'true' : undefined}
       aria-invalid={isInvalid ? 'true' : undefined}
+      aria-describedby={
+        id ? `${id}-${isInvalid ? `validation` : `helptext`}` : undefined
+      }
       disabled={isDisabled}
       required={isRequired}
       onChange={handleChange}
@@ -143,7 +148,7 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
 }
 
 export const BaseInput: PolymorphicComponent<
-  BaseInputInternalProps,
-  typeof DEFAULT_TAG,
+  ExpandProps<BaseInputInternalProps>,
+  typeof INPUT_DEFAULT_TAG,
   'disabled'
 > = React.forwardRef(_BaseInput);

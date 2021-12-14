@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { ValidationMessage } from '../src/validation-message';
+import { ValidationMessage } from '../src';
 import type { ValidationMessageInternalProps } from '../src/validation-message/ValidationMessage';
 
 export default {

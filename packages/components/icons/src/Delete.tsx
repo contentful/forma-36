@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const Delete = generateIcon({
+export const Delete = /*#__PURE__*/ generateIcon({
   name: 'Delete',
   path: (
     <Fragment>

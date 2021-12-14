@@ -4,16 +4,23 @@ type: 'component'
 status: 'stable'
 slug: /components/text-input/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/text-input'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-textinput--basic'
-typescript: ./TextInput.tsx
+storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/form-elements-textinput--basic'
+typescript: ./TextInput.tsx,./input-group/InputGroup.tsx
 ---
 
 `TextInput` is a form component, that allows users to input text or numbers and should be used in a form context.
 
 ## Table of contents
 
-- [How to use TextInput](#how-to-use-TextInput)
-- [Component variations](#component-variations)
+- [How to use TextInput](#how-to-use-textinput)
+- [Code examples](#code-examples)
+  - [Basic example](#basic-example)
+  - [TextInput with label](#textInput-with-label)
+  - [TextInput with buttons](#textInput-with-buttons)
+- [TextInput variations](#textInput-variations)
+  - [TextInput with placeholder](#textInput-with-placeholder)
+  - [TextInput disabled](#textInput-disabled)
+  - [TextInput invalid](#textInput-invalid)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
 - [Props](#props)
@@ -23,38 +30,116 @@ typescript: ./TextInput.tsx
 The TextInput component can be configured in a number of different ways. Use this guidance to determine the correct variation based on the context.
 
 TextInput is supporting different types of inputs, like `'text' | 'email' | 'file' | 'number' | 'password' | 'search' | 'url'`, where `text` is the default.
-Label property is always required and passed to the `<input />` as `aria-label`.
 
 ## Code examples
 
+### Basic example
+
 ```jsx
-<TextInput type="email" name="email" label="Email address" />
+<TextInput
+  type="email"
+  name="email"
+  label="Email address"
+  aria-label="Email input"
+/>
+```
+
+### TextInput with label
+
+In order to create a correct text input the recommendation is to add a label to any kind of input. In order to do that, we provide you couple of additional components that you can use to compose your inputs with labels, help or validation messages.
+Read more about [`FormControl`](/components/form-control)
+
+```jsx
+<FormControl>
+  <FormControl.Label>Add your email</FormControl.Label>
+  <TextInput
+    type="email"
+    name="email"
+    label="Email address"
+    placeholder="Email"
+  />
+  <FormControl.HelpText>Provide your email</FormControl.HelpText>
+  <FormControl.ValidationMessage>
+    Format of the email is not correct
+  </FormControl.ValidationMessage>
+</FormControl>
+```
+
+### TextInput with buttons
+
+`TextInput.Group` enables the user to set a button at the start or end of an input, with some spacing or collapsed.
+Example of usage:
+
+```jsx
+// import { LockIcon } from '@contentful/f36-icons';
+// import { IconButton } from '@contentful/f36-button';
+// import { TextInput } from '@contentful/f36-forms';
+
+<TextInput.Group>
+  <TextInput
+    aria-label="some-label"
+    id="TextInput1"
+    defaultValue="Some value"
+  />
+  <IconButton variant="secondary" icon={<LockIcon />} aria-label="Lock" />
+</TextInput.Group>
+```
+
+Example of spaced `TextInput.Group`.
+
+```jsx
+// import { LockIcon } from '@contentful/f36-icons';
+// import { IconButton } from '@contentful/f36-button';
+// import { TextInput } from '@contentful/f36-forms';
+
+<TextInput.Group spacing="spacingS">
+  <TextInput
+    aria-label="some-label"
+    id="TextInput2"
+    defaultValue="Some value"
+  />
+  <IconButton variant="secondary" icon={<LockIcon />} aria-label="Lock" />
+</TextInput.Group>
 ```
 
 ## TextInput variations
 
-### Character count (`countCharacters`)
+Keep in mind, that if you need to use an input without a label, you need to pass `aria-label` attribute to create an input that would be accessible to assistive technologies, like screen readers.
 
-The TextInput can be configured to display a character count. This is useful when an input field has a character limit.<br/>
-**Note**: The `maxLength` property must be also provided.
+### TextInput with placeholder
 
 ```jsx
 <TextInput
-  label="name"
-  name="name"
-  id="input-1"
-  placeholder="Type your name"
-  countCharacters
-  maxLength={150}
+  label="Token"
+  name="token"
+  id="input-2"
+  aria-label="token"
+  placeholder="Token"
 />
 ```
 
-### TextInput with copy button (`withCopyButton`)
-
-We provide a variant of the TextInput that is a composed with CopyButton. In order to use it add `withCopyButton` property to your implementation.
+### TextInput disabled
 
 ```jsx
-<TextInput label="Token" name="token" id="input-2" withCopyButton />
+<TextInput
+  label="Token"
+  name="token"
+  id="input-2"
+  aria-label="token"
+  isDisabled
+/>
+```
+
+### TextInput invalid
+
+```jsx
+<TextInput
+  label="Token"
+  name="token"
+  id="input-2"
+  aria-label="token"
+  isInvalid
+/>
 ```
 
 ## Content recommendations
@@ -66,10 +151,17 @@ We provide a variant of the TextInput that is a composed with CopyButton. In ord
 ## Accessibility
 
 - To ensure `TextInput` meets accessibility standards, provide `name` and `id`
-- Keep in mind that to provide that accessibile inputs, you need to use labels.
+- Keep in mind that to provide that accessible inputs, you need to use labels.
+- If you decide, that for some reason you would not use the label, please provide `aria-label` attribute to make it accessible for technologies like screen readers.
 
 ## Props
 
 import { Props } from '@contentful/f36-docs-utils';
 
+### TextInput
+
 <Props of="TextInput" />
+
+### TextInput.Group
+
+<Props of="InputGroup" />

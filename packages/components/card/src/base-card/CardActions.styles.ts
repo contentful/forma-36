@@ -5,7 +5,8 @@ export const getCardActionsStyles = () => {
   return {
     root: css({
       minHeight: 'auto',
-      padding: tokens.spacingXs,
+      padding: tokens.spacing2Xs,
+      marginLeft: tokens.spacingXs,
     }),
   };
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import dayjs from 'dayjs';
-import { set as mockDateSet, reset as mockDateReset } from 'mockdate';
 
 import { RelativeDateTime } from '../src/RelativeDateTime';
 
@@ -9,16 +8,17 @@ import { RelativeDateTime } from '../src/RelativeDateTime';
 import * as TestCases from './__mocks__/dates';
 
 describe('RelativeDateTime', function () {
-  const today = dayjs();
+  // Tests fail if the time is between 7am & 8am
+  const today = dayjs('2021-11-03T08:19:05.729Z');
   const tomorrow = today.add(1, 'day');
   const yesterday = today.subtract(1, 'day');
 
   beforeEach(() => {
-    mockDateSet(new Date(today.format()));
+    jest.useFakeTimers().setSystemTime(new Date(today.format()).getTime());
   });
 
   afterEach(() => {
-    mockDateReset();
+    jest.useRealTimers();
   });
 
   it('renders', () => {

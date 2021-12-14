@@ -19,11 +19,23 @@ const listOfIgnoredFiles = [
 module.exports = {
   siteMetadata: {
     title: 'Forma 36 - The Contentful Design System',
-    promoText: ``,
-    promoLink: '',
-    promoLinkText: '',
+    promoText: 'This is version 4 beta of Forma 36',
+    promoLink: 'https://v3.f36.contentful.com/',
+    promoLinkText: 'Go back to last stable version 3',
     promoTagText: '',
     menuLinks: [
+      {
+        name: 'Getting started',
+        link: '/getting-started',
+      },
+      {
+        name: 'Contributing to Forma 36',
+        link: '/contributing',
+      },
+      {
+        name: 'Migration guide',
+        link: '/migration-v3-to-v4',
+      },
       {
         name: 'Foundation',
         link: '',
@@ -97,78 +109,22 @@ module.exports = {
         ],
       },
       {
-        name: 'Integrations',
-        link: '',
-        menuLinks: [
-          {
-            name: 'React Hook Form',
-            link: '/integrations/react-hook-form/',
-          },
-          {
-            name: 'Formik',
-            link: '/integrations/formik/',
-          },
-        ],
-      },
-      {
         name: 'Components',
         link: '',
         menuLinks: [
           {
-            name: 'Layout Components',
-            link: '',
-            menuLinks: [
-              {
-                name: 'Box',
-                link: '/components/box/',
-              },
-              {
-                name: 'Flex',
-                link: '/components/flex/',
-              },
-              {
-                name: 'Stack',
-                link: '/components/stack/',
-              },
-              {
-                name: 'Grid',
-                link: '/components/grid/',
-              },
-            ],
-          },
-          {
-            name: 'Typography Components',
-            link: '',
-            menuLinks: [
-              {
-                name: 'Text',
-                link: '/components/text/',
-              },
-              {
-                name: 'Paragraph',
-                link: '/components/paragraph/',
-              },
-              {
-                name: 'Heading',
-                link: '/components/heading/',
-              },
-              {
-                name: 'SectionHeading',
-                link: '/components/section-heading/',
-              },
-              {
-                name: 'Subheading',
-                link: '/components/subheading/',
-              },
-              {
-                name: 'DisplayText',
-                link: '/components/display-text/',
-              },
-            ],
-          },
-          {
             name: 'Accordion',
             link: '/components/accordion/',
+          },
+          {
+            name: 'Animations',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Collapse',
+                link: '/animations/collapse/',
+              },
+            ],
           },
           {
             name: 'Asset',
@@ -179,8 +135,18 @@ module.exports = {
             link: '/components/autocomplete/',
           },
           {
-            name: 'Badge',
-            link: '/components/badge/',
+            name: 'Badge Components',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Badge',
+                link: '/components/badge/',
+              },
+              {
+                name: 'EntityStatusBadge',
+                link: '/components/entity-status-badge/',
+              },
+            ],
           },
           {
             name: 'Button',
@@ -191,8 +157,26 @@ module.exports = {
             link: '/components/button-group',
           },
           {
-            name: 'Card',
-            link: '/components/card/',
+            name: 'Card Components',
+            link: '',
+            menuLinks: [
+              {
+                name: 'AssetCard',
+                link: '/components/asset-card/',
+              },
+              {
+                name: 'Card',
+                link: '/components/card/',
+              },
+              {
+                name: 'EntryCard',
+                link: '/components/entry-card/',
+              },
+              {
+                name: 'InlineEntryCard',
+                link: '/components/inline-entry-card/',
+              },
+            ],
           },
           {
             name: 'CopyButton',
@@ -217,20 +201,28 @@ module.exports = {
             ],
           },
           {
-            name: 'Dropdown',
-            link: '/components/dropdown/',
+            name: 'DragHandle',
+            link: '/components/drag-handle',
           },
           {
-            name: 'Popover',
-            link: '/components/popover/',
+            name: 'Dropdown',
+            link: '/deprecated-components/dropdown/',
+          },
+          {
+            name: 'EditorToolbar',
+            link: '/deprecated-components/editor-toolbar',
+            status: 'deprecated',
+          },
+          {
+            name: 'EmptyState',
+            link: '/deprecated-components/empty-state',
           },
           {
             name: 'EntityList',
             link: '/components/entity-list/',
           },
-
           {
-            name: 'Form Elements',
+            name: 'Form Components',
             link: '',
             menuLinks: [
               {
@@ -240,6 +232,10 @@ module.exports = {
               {
                 name: 'Form',
                 link: '/components/form/',
+              },
+              {
+                name: 'FormControl',
+                link: '/components/form-control/',
               },
               {
                 name: 'Radio',
@@ -264,6 +260,10 @@ module.exports = {
             ],
           },
           {
+            name: 'GlobalStyles',
+            link: '/components/globalstyles',
+          },
+          {
             name: 'Icon',
             link: '/components/icon/',
           },
@@ -273,11 +273,41 @@ module.exports = {
           },
           {
             name: 'Illustration',
-            link: '/components/illustration/',
+            link: '/deprecated-components/illustration/',
+          },
+          {
+            name: 'InViewport',
+            link: '/deprecated-components/in-viewport/',
+          },
+          {
+            name: 'Layout Components',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Box',
+                link: '/components/box/',
+              },
+              {
+                name: 'Flex',
+                link: '/components/flex/',
+              },
+              {
+                name: 'Stack',
+                link: '/components/stack/',
+              },
+              {
+                name: 'Grid',
+                link: '/components/grid/',
+              },
+            ],
           },
           {
             name: 'List',
             link: '/components/list/',
+          },
+          {
+            name: 'Menu',
+            link: '/components/menu/',
           },
           {
             name: 'Modals',
@@ -310,6 +340,14 @@ module.exports = {
             link: '/components/pill/',
           },
           {
+            name: 'Popover',
+            link: '/components/popover/',
+          },
+          {
+            name: 'ScreenReaderOnly',
+            link: '/components/screen-reader-only/',
+          },
+          {
             name: 'Skeletons',
             link: '',
             menuLinks: [
@@ -340,6 +378,14 @@ module.exports = {
             link: '/components/spinner/',
           },
           {
+            name: 'TabFocusTrap',
+            link: '/deprecated-components/tab-focus-trap/',
+          },
+          {
+            name: 'Tag',
+            link: '/deprecated-components/tag',
+          },
+          {
             name: 'Table',
             link: '/components/table/',
           },
@@ -360,8 +406,74 @@ module.exports = {
             link: '/components/tooltip/',
           },
           {
+            name: 'Typography Components',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Typography Component',
+                link: '/deprecated-components/typography/',
+              },
+              {
+                name: 'Text',
+                link: '/components/text/',
+              },
+              {
+                name: 'Paragraph',
+                link: '/components/paragraph/',
+              },
+              {
+                name: 'Heading',
+                link: '/components/heading/',
+              },
+              {
+                name: 'SectionHeading',
+                link: '/components/section-heading/',
+              },
+              {
+                name: 'Subheading',
+                link: '/components/subheading/',
+              },
+              {
+                name: 'DisplayText',
+                link: '/components/display-text/',
+              },
+            ],
+          },
+          {
             name: 'Workbench',
             link: '/components/workbench/',
+          },
+        ],
+      },
+      {
+        name: 'Utils',
+        link: '',
+        menuLinks: [
+          {
+            name: 'getStringMatch',
+            link: '/utils/get-string-match/',
+          },
+          {
+            name: 'Portal',
+            link: '/utils/portal/',
+          },
+          {
+            name: 'useKeyboard',
+            link: '/utils/use-keyboard/',
+          },
+        ],
+      },
+      {
+        name: 'Integrations',
+        link: '',
+        menuLinks: [
+          {
+            name: 'React Hook Form',
+            link: '/integrations/react-hook-form/',
+          },
+          {
+            name: 'Formik',
+            link: '/integrations/formik/',
           },
         ],
       },
@@ -375,17 +487,6 @@ module.exports = {
       options: {
         name: 'pages',
         path: `${__dirname}/src/content/`,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'pages',
-        path: path.resolve(
-          __dirname,
-          '../forma-36-react-components/src/components/',
-        ),
-        ignore: listOfIgnoredFiles,
       },
     },
     {
@@ -450,8 +551,8 @@ module.exports = {
       options: {
         // The key is added here only give access to searching the public content of the website https://docsearch.algolia.com/docs/what-is-docsearch
         // You can even check Forma 36's configuration in DocSearch's repo https://github.com/algolia/docsearch-configs/blob/master/configs/contentful_forma-36.json
-        apiKey: 'b7d2cac8e38b0903385db259b042c66c',
-        indexName: 'contentful_forma-36',
+        apiKey: 'b2d52e13b82ba7aec7311691be4961c4',
+        indexName: 'forma-36',
         inputSelector: '#search',
       },
     },

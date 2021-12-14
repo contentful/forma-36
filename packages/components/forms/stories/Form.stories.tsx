@@ -9,7 +9,7 @@ import {
   Form,
 } from '../src';
 import { Button } from '@contentful/f36-button';
-import { Flex } from '../../../forma-36-react-components/src';
+import { Flex } from '@contentful/f36-core';
 
 export default {
   title: 'Form Elements/Form',
@@ -21,7 +21,7 @@ export default {
 };
 
 export const Basic = (args: FormControlInternalProps) => {
-  const [submited, setSubmit] = useState(false);
+  const [submitted, setSubmit] = useState(false);
   const onSubmit = () => setSubmit(true);
 
   return (
@@ -37,10 +37,10 @@ export const Basic = (args: FormControlInternalProps) => {
       <FormControl {...args}>
         <FormControl.Label>Description</FormControl.Label>
         <Textarea />
-        <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
+        <FormControl.HelpText>Tell me about yourself</FormControl.HelpText>
       </FormControl>
-      <Button variant="primary" type="submit" isDisabled={submited}>
-        {submited ? 'Sumbited' : 'Click me to submit'}
+      <Button variant="primary" type="submit" isDisabled={submitted}>
+        {submitted ? 'Submitted' : 'Click me to submit'}
       </Button>
     </Form>
   );

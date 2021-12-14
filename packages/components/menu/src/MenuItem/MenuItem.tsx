@@ -1,51 +1,62 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { cx } from 'emotion';
 import {
   CommonProps,
+  mergeRefs,
   PolymorphicComponent,
   PolymorphicProps,
+  ExpandProps,
 } from '@contentful/f36-core';
 import { useMenuContext } from '../MenuContext';
-import { TextLink } from '@contentful/f36-text-link';
 import { useId } from '@contentful/f36-core';
 import { getMenuItemStyles } from './MenuItem.styles';
 
-const DEFAULT_TAG = 'button';
+const MENU_ITEM_DEFAULT_TAG = 'button';
 
 interface MenuItemInternalProps extends CommonProps {
   children?: React.ReactNode;
   as?: 'a' | 'button';
+
+  /**
+   * Sets focus on item
+   */
+  isInitiallyFocused?: boolean;
 }
 
 export type MenuItemProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG
 > = PolymorphicProps<MenuItemInternalProps, E>;
 
-function _MenuItem<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
   props: MenuItemProps<E>,
   ref: React.Ref<any>,
 ) {
+  const { testId, className, as, isInitiallyFocused, ...otherProps } = props;
+
   const id = useId(null, 'menu-item');
-  const testId = props.testId || `cf-ui-${id}`;
+  const itemTestId = testId || `cf-ui-${id}`;
   const styles = getMenuItemStyles();
 
-  const { getMenuItemProps } = useMenuContext();
+  const { getMenuItemProps, focusMenuItem } = useMenuContext();
 
-  let Element: React.ElementType = props.as ?? DEFAULT_TAG;
+  const itemRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (isInitiallyFocused && itemRef.current) {
+      focusMenuItem(itemRef.current);
+    }
+  }, [isInitiallyFocused, focusMenuItem]);
 
-  if (Element === 'a') {
-    Element = TextLink;
-  }
+  const Element = (as ?? MENU_ITEM_DEFAULT_TAG) as React.ElementType;
 
   return (
     <Element
-      {...getMenuItemProps(props)}
-      className={cx(styles.root, props.className)}
-      data-test-id={testId}
-      ref={ref}
       role="menuitem"
+      {...otherProps}
+      {...getMenuItemProps(otherProps)}
+      className={cx(styles.root, className)}
+      data-test-id={itemTestId}
+      ref={mergeRefs(itemRef, ref)}
       tabIndex={-1}
-      as={undefined}
     >
       {props.children}
     </Element>
@@ -53,6 +64,6 @@ function _MenuItem<E extends React.ElementType = typeof DEFAULT_TAG>(
 }
 
 export const MenuItem: PolymorphicComponent<
-  MenuItemInternalProps,
-  typeof DEFAULT_TAG
+  ExpandProps<MenuItemInternalProps>,
+  typeof MENU_ITEM_DEFAULT_TAG
 > = React.forwardRef(_MenuItem);

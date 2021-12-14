@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useId } from '@contentful/f36-core';
 import type {
   CommonProps,
   MarginProps,
   PolymorphicProps,
   PolymorphicComponent,
+  ExpandProps,
 } from '@contentful/f36-core';
 import { Box } from '@contentful/f36-core';
 
 import { FormControlContext } from './FormControlContext';
 import type { FormControlContextProps } from './types';
 
-const DEFAULT_TAG = 'div';
+const FORM_CONTROL_DEFAULT_TAG = 'div';
 
 export interface FormControlInternalProps
   extends FormControlContextProps,
@@ -22,11 +23,14 @@ export interface FormControlInternalProps
 }
 
 export type FormControlProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof FORM_CONTROL_DEFAULT_TAG
 > = PolymorphicProps<FormControlInternalProps, E>;
 
-function _FormControl<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _FormControl<
+  E extends React.ElementType = typeof FORM_CONTROL_DEFAULT_TAG
+>(
   {
+    as,
     isInvalid,
     isRequired,
     isDisabled,
@@ -40,6 +44,10 @@ function _FormControl<E extends React.ElementType = typeof DEFAULT_TAG>(
   ref: React.Ref<any>,
 ) {
   const generatedId = useId(id, 'field-');
+  const [inputValue, setInputValue] = useState('');
+  const [maxLength, setMaxLength] = useState(0);
+  const roleAttr = as === 'fieldset' ? undefined : 'group';
+  const Element: React.ElementType = as || FORM_CONTROL_DEFAULT_TAG;
 
   const context = {
     id: generatedId,
@@ -47,14 +55,18 @@ function _FormControl<E extends React.ElementType = typeof DEFAULT_TAG>(
     isDisabled,
     isInvalid,
     isReadOnly,
+    inputValue,
+    setInputValue,
+    maxLength,
+    setMaxLength,
   };
 
   return (
     <FormControlContext.Provider value={context}>
       <Box
-        as={DEFAULT_TAG}
+        as={Element}
         ref={ref}
-        role="group"
+        role={roleAttr}
         testId={testId}
         marginBottom={marginBottom}
         {...otherProps}
@@ -66,6 +78,6 @@ function _FormControl<E extends React.ElementType = typeof DEFAULT_TAG>(
 }
 
 export const FormControl: PolymorphicComponent<
-  FormControlInternalProps,
-  typeof DEFAULT_TAG
+  ExpandProps<FormControlInternalProps>,
+  typeof FORM_CONTROL_DEFAULT_TAG
 > = React.forwardRef(_FormControl);

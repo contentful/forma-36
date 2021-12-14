@@ -3,7 +3,7 @@
   "version": "4.0.0",
   "description": "Forma 36: CopyButton component",
   "scripts": {
-    "build": "parcel build index.ts"
+    "build": "parcel build"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
@@ -19,8 +19,7 @@
   },
   "license": "MIT",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "main": "dist/main.js",
   "module": "dist/module.js",

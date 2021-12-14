@@ -1,11 +1,15 @@
 import React from 'react';
-import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import {
+  CommonProps,
+  PropsWithHTMLElement,
+  ExpandProps,
+} from '@contentful/f36-core';
 import { cx } from 'emotion';
 import { getMenuDividerStyles } from './MenuDivider.styles';
 
 export type MenuDividerProps = PropsWithHTMLElement<CommonProps, 'hr'>;
 
-export const MenuDivider = (props: MenuDividerProps) => {
+export const MenuDivider = (props: ExpandProps<MenuDividerProps>) => {
   const {
     children,
     testId = 'cf-ui-menu-divider',

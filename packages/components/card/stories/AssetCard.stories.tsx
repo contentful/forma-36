@@ -4,6 +4,7 @@ import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
 import * as icons from '@contentful/f36-icons';
+import { Icon } from '@contentful/f36-icon';
 
 import { AssetCard } from '../src';
 import type { AssetCardProps } from '../src';
@@ -35,13 +36,13 @@ export default {
 type Args = AssetCardProps & { icon?: string };
 
 export const Default: Story<Args> = (args) => {
-  return <AssetCard icon={icons[args.icon]} {...args} />;
+  return <AssetCard {...args} icon={<Icon as={icons[args.icon]} />} />;
 };
 
 Default.args = {
   status: 'published',
   type: 'image',
-  src: 'https://via.placeholder.com/400x400',
+  src: 'https://via.placeholder.com/200x300',
   title: 'Asset title',
 };
 
@@ -49,6 +50,14 @@ const actions: React.ReactNodeArray = [
   <MenuItem key="copy">Copy</MenuItem>,
   <MenuItem key="delete">Delete</MenuItem>,
 ];
+
+export const WithLoadingState: Story<Args> = (args) => {
+  return <AssetCard {...args} icon={<Icon as={icons[args.icon]} />} />;
+};
+
+WithLoadingState.args = {
+  isLoading: true,
+};
 
 export const Overview: Story<Args> = () => {
   return (
@@ -64,8 +73,8 @@ export const Overview: Story<Args> = () => {
           </SectionHeading>
 
           <AssetCard
-            icon={icons.ClockIcon}
-            src="https://via.placeholder.com/400x400"
+            icon={<Icon as={icons.ClockIcon} />}
+            src="https://via.placeholder.com/200x300"
             title="Asset title"
             type="image"
           />
@@ -79,21 +88,7 @@ export const Overview: Story<Args> = () => {
           <AssetCard
             actions={actions}
             isHovered
-            src="https://via.placeholder.com/400x400"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
-
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Focus
-          </SectionHeading>
-
-          <AssetCard
-            isFocused
-            src="https://via.placeholder.com/400x400"
-            status="published"
+            src="https://via.placeholder.com/200x300"
             title="Asset title"
             type="image"
           />
@@ -106,7 +101,7 @@ export const Overview: Story<Args> = () => {
 
           <AssetCard
             isSelected
-            src="https://via.placeholder.com/400x400"
+            src="https://via.placeholder.com/200x300"
             title="Asset title"
             type="image"
           />
@@ -124,9 +119,9 @@ export const Overview: Story<Args> = () => {
           </SectionHeading>
 
           <AssetCard
-            icon={icons.ClockIcon}
+            icon={<Icon as={icons.ClockIcon} />}
             size="small"
-            src="https://via.placeholder.com/400x400"
+            src="https://via.placeholder.com/200x300"
             title="Asset title"
             type="image"
           />
@@ -141,22 +136,7 @@ export const Overview: Story<Args> = () => {
             actions={actions}
             isHovered
             size="small"
-            src="https://via.placeholder.com/400x400"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
-
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Focus
-          </SectionHeading>
-
-          <AssetCard
-            isFocused
-            size="small"
-            src="https://via.placeholder.com/400x400"
-            status="published"
+            src="https://via.placeholder.com/200x300"
             title="Asset title"
             type="image"
           />
@@ -170,7 +150,7 @@ export const Overview: Story<Args> = () => {
           <AssetCard
             isSelected
             size="small"
-            src="https://via.placeholder.com/400x400"
+            src="https://via.placeholder.com/200x300"
             title="Asset title"
             type="image"
           />

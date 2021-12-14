@@ -17,11 +17,13 @@ const getSizeStyles = ({ size }): CSSObject => {
   };
 };
 
-const getStyles = ({ as, isDisabled, isInvalid, size }) => ({
+const getStyles = ({ as, isDisabled, isInvalid, size, resize }) => ({
   rootComponentWithIcon: css({
     position: 'relative',
     display: 'flex',
     width: '100%',
+    zIndex:
+      isInvalid || isDisabled ? tokens.zIndexDefault + 1 : tokens.zIndexDefault,
   }),
   input: css({
     outline: 'none',
@@ -38,9 +40,11 @@ const getStyles = ({ as, isDisabled, isInvalid, size }) => ({
     margin: 0,
     cursor: isDisabled ? 'not-allowed' : 'auto',
     width: '100%',
+    zIndex:
+      isInvalid || isDisabled ? tokens.zIndexDefault + 1 : tokens.zIndexDefault,
 
-    // if the input is a textarea, the height is resizeble and size should be ignored
-    ...(as === 'textarea' ? { resize: 'vertical' } : getSizeStyles({ size })),
+    // if the input is a textarea, the resize prop is applied and size should be ignored
+    ...(as === 'textarea' ? { resize } : getSizeStyles({ size })),
 
     '&::placeholder': {
       color: tokens.gray500,
@@ -60,7 +64,6 @@ const getStyles = ({ as, isDisabled, isInvalid, size }) => ({
     },
 
     '&:focus': {
-      zIndex: tokens.zIndexDefault,
       borderColor: isInvalid
         ? tokens.red600
         : isDisabled

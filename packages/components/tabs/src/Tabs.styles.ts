@@ -7,23 +7,22 @@ const styles = {
     display: 'flex',
   } as CSSObject,
   tab: {
-    boxSizing: 'border-box',
+    borderRadius: 0,
     whiteSpace: 'nowrap',
-    alignItems: 'center',
     color: tokens.gray500,
     display: 'flex',
     height: '100%',
     minHeight: tokens.spacing2Xl,
     position: 'relative',
-    cursor: 'pointer',
     padding: `0 ${tokens.spacingM}`,
-    fontSize: tokens.fontSizeM,
     fontFamily: tokens.fontStackPrimary,
-    fontWeight: tokens.fontWeightMedium,
-    outline: 'none',
-    textDecoration: 'none',
-    backgroundColor: 'transparent',
+    fontWeight: tokens.fontWeightDemiBold,
     border: 'none',
+    cursor: 'pointer',
+    outline: 'none',
+    '&:focus-visible': {
+      boxShadow: tokens.glowPrimary,
+    },
     '&:before': {
       content: '""',
       position: 'absolute',
@@ -37,11 +36,16 @@ const styles = {
     '&:hover:before, &:hover:focus': {
       opacity: '0.5',
     },
-  } as CSSObject,
-  tabSelected: {
-    color: tokens.colorPrimary,
-    '&:before, &:hover:before, &:hover:focus': {
-      opacity: '1',
+    '&[data-state="active"]': {
+      color: tokens.colorPrimary,
+      '&:before, &:hover:before, &:hover:focus': {
+        opacity: '1',
+      },
+    },
+    '> span': {
+      display: 'flex',
+      alignSelf: 'center',
+      cursor: 'inherit',
     },
   } as CSSObject,
   tabDisabled: {
@@ -58,9 +62,8 @@ const styles = {
   },
 };
 
-export const getTabStyles = ({ className, isSelected, isDisabled }) => ({
+export const getTabStyles = ({ className, isDisabled }) => ({
   tab: cx(css(styles.tab), className, {
-    [css(styles.tabSelected)]: isSelected,
     [css(styles.tabDisabled)]: isDisabled,
   }),
 });
@@ -70,4 +73,16 @@ export const getTabsStyles = ({ className, variant }) => ({
     [css(styles.tabDividerHorizontal)]: variant === 'horizontal-divider',
     [css(styles.tabDividerVertical)]: variant === 'vertical-divider',
   }),
+});
+
+export const getTabPanelStyles = ({ className }: { className: string }) => ({
+  tabPanel: cx(
+    css({
+      outline: 'none',
+      '&:focus-visible': {
+        boxShadow: tokens.glowPrimary,
+      },
+    }),
+    className,
+  ),
 });

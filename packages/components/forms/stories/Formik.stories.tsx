@@ -6,10 +6,8 @@ import { Button } from '@contentful/f36-button';
 
 import {
   Checkbox,
-  CheckboxGroup,
   Form,
   FormControl,
-  RadioGroup,
   Radio,
   Select,
   Textarea,
@@ -40,7 +38,7 @@ export const Basic = () => {
         name: '',
         description: '',
         cities: 'Mumbai',
-        favoritFruit: 'apples',
+        favoriteFruit: 'apples',
         fruits: ['apples'],
         checkbox: false,
       }}
@@ -72,7 +70,7 @@ export const Basic = () => {
                 <FormControl.Label>Description</FormControl.Label>
                 <Textarea {...field} />
                 <FormControl.HelpText>
-                  Tell me about youself
+                  Tell me about yourself
                 </FormControl.HelpText>
 
                 {meta.touched && meta.error && (
@@ -100,12 +98,14 @@ export const Basic = () => {
             )}
           </Field>
 
-          <Field name="favoritFruit">
+          <Field name="favoriteFruit">
             {({ field }) => (
-              <FormControl>
-                <FormControl.Label>Favorite fruit</FormControl.Label>
+              <FormControl as="fieldset">
+                <FormControl.Label as="legend">
+                  Favorite fruit
+                </FormControl.Label>
 
-                <RadioGroup {...field}>
+                <Radio.Group {...field}>
                   <Radio id="apples" value="apples">
                     Apples
                   </Radio>
@@ -115,17 +115,17 @@ export const Basic = () => {
                   <Radio id="peaches" value="peaches">
                     Peaches
                   </Radio>
-                </RadioGroup>
+                </Radio.Group>
               </FormControl>
             )}
           </Field>
 
           <Field name="fruits">
             {({ field }) => (
-              <FormControl>
-                <FormControl.Label>Fruits</FormControl.Label>
+              <FormControl as="fieldset">
+                <FormControl.Label as="legend">Fruits</FormControl.Label>
 
-                <CheckboxGroup {...field}>
+                <Checkbox.Group {...field}>
                   <Checkbox id="apples" value="apples">
                     Apples
                   </Checkbox>
@@ -135,7 +135,7 @@ export const Basic = () => {
                   <Checkbox id="peaches" value="peaches">
                     Peaches
                   </Checkbox>
-                </CheckboxGroup>
+                </Checkbox.Group>
               </FormControl>
             )}
           </Field>
@@ -221,7 +221,7 @@ export const WithUseFormik = () => {
           id="description"
           value={formik.values.description}
         />
-        <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
+        <FormControl.HelpText>Tell me about yourself</FormControl.HelpText>
 
         {formik.touched.description && formik.errors.description && (
           <FormControl.ValidationMessage>
@@ -230,10 +230,10 @@ export const WithUseFormik = () => {
         )}
       </FormControl>
 
-      <FormControl>
-        <FormControl.Label>Favorit fruit</FormControl.Label>
+      <FormControl as="fieldset">
+        <FormControl.Label as="legend">Favorite fruit</FormControl.Label>
 
-        <RadioGroup
+        <Radio.Group
           name="favoriteFruit"
           value={formik.values.favoriteFruit}
           onChange={formik.handleChange}
@@ -247,7 +247,7 @@ export const WithUseFormik = () => {
           <Radio id="peaches" value="peaches">
             Peaches
           </Radio>
-        </RadioGroup>
+        </Radio.Group>
       </FormControl>
 
       <FormControl

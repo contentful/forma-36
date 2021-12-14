@@ -107,6 +107,24 @@ const Header = () => (
               Join the community
             </a>
           </li>
+          <li className={styles.navListItem}>
+            <a
+              className={styles.navListLink}
+              href="https://forms.gle/qC7LLbiy4CcF5HPLA"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Give us feedback
+            </a>
+          </li>
+          <li className={styles.navListItem}>
+            <a
+              className={styles.navListLink}
+              href="https://v3.f36.contentful.com/"
+            >
+              Forma 36 v3
+            </a>
+          </li>
         </ul>
       </nav>
     </div>

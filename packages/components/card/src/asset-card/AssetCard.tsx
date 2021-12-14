@@ -4,12 +4,13 @@ import { Flex } from '@contentful/f36-core';
 import { EntityStatusBadge } from '@contentful/f36-badge';
 import { Asset } from '@contentful/f36-asset';
 import type { AssetStatus, AssetType } from '@contentful/f36-asset';
-import { Icon } from '@contentful/f36-icon';
 
 import { BaseCard } from '../base-card/BaseCard';
-import type { BaseCardInternalProps } from '../base-card/BaseCard';
-import { CardActions } from '../base-card/CardActions';
+import type { BaseCardInternalProps } from '../base-card/BaseCard.types';
 import { getAssetCardStyles } from './AssetCard.styles';
+import { DefaultCardHeader } from '../base-card/DefaultCardHeader';
+
+import { SkeletonContainer, SkeletonImage } from '@contentful/f36-skeleton';
 
 export interface AssetCardInternalProps
   extends Omit<BaseCardInternalProps, 'badge' | 'header' | 'padding' | 'ref'> {
@@ -27,44 +28,47 @@ export type AssetCardProps = AssetCardInternalProps;
 export const AssetCard = ({
   actions,
   className,
-  icon,
+  icon = null,
   isSelected,
   size = 'default',
   src,
   status,
   title,
   type,
-  withDragHandle = true,
+  withDragHandle = false,
+  isLoading,
+  testId = 'cf-ui-asset-card',
   ...otherProps
 }: AssetCardInternalProps) => {
   const styles = getAssetCardStyles();
   const badge = status ? <EntityStatusBadge entityStatus={status} /> : null;
   const header =
-    type || icon || badge || actions ? (
-      <Flex className={cx(styles.header, actions && styles.headerWithActions)}>
-        <Flex as="footer" flexGrow={1}>
-          {type}
-        </Flex>
-        {icon && <Icon as={icon} className={styles.headerItem} />}
-        {badge && (
-          <Flex alignItems="center" className={styles.headerItem}>
-            {badge}
-          </Flex>
-        )}
-        {actions && <CardActions>{actions}</CardActions>}
-      </Flex>
+    icon || badge || actions ? (
+      <DefaultCardHeader icon={icon} badge={badge} actions={actions} />
     ) : null;
+
+  if (isLoading) {
+    return (
+      <SkeletonContainer
+        className={styles.skeleton}
+        svgWidth={size === 'default' ? '18rem' : '11rem'}
+        svgHeight={size === 'default' ? '18.75rem' : '12rem'}
+      >
+        <SkeletonImage width="100%" height="18.75rem" />
+      </SkeletonContainer>
+    );
+  }
 
   return (
     <BaseCard
       {...otherProps}
       badge={badge}
-      className={cx(styles.root({ isSelected, size }), className)}
+      className={cx(styles.root({ size }), className)}
       header={header}
       isSelected={isSelected}
-      contentBodyProps={{ className: styles.contentBody }}
       title={title}
       withDragHandle={withDragHandle}
+      testId={testId}
     >
       <Flex alignItems="center" fullHeight justifyContent="center">
         <Asset

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-default-export */
 declare module '*.mdx' {
   let MDXComponent: (props: any) => JSX.Element;
   export default MDXComponent;
@@ -6,16 +7,6 @@ declare module '*.mdx' {
 declare module '*.md' {
   const value: string;
   export default value;
-}
-
-declare module '*.svg' {
-  import * as React from 'react';
-
-  const ReactComponent: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  export { ReactComponent };
-
-  const url: string;
-  export default url;
 }
 
 declare module 'react-animate-height' {

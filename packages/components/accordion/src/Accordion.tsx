@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@contentful/f36-core';
-import type { CommonProps } from '@contentful/f36-core';
+import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 
 import { getAccordionStyles } from './Accordion.styles';
 
@@ -23,7 +23,7 @@ const _Accordion = (
     className,
     testId = 'cf-ui-accordion',
     ...otherProps
-  }: AccordionProps,
+  }: ExpandProps<AccordionProps>,
   ref: React.Ref<HTMLUListElement>,
 ) => {
   const styles = getAccordionStyles({ className });

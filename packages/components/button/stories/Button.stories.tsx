@@ -350,6 +350,16 @@ export const Overview = ({ startIcon, endIcon }) => {
           </Button>
         </Flex>
       </Flex>
+      <Flex flexDirection="column" marginBottom="spacingL">
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Button as link
+        </SectionHeading>
+        <Flex flexDirection="row" marginBottom="spacingS">
+          <Button as="a" href="#">
+            As a-tag with href property
+          </Button>
+        </Flex>
+      </Flex>
     </>
   );
 };

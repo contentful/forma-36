@@ -22,17 +22,27 @@ export default {
   },
 } as Meta;
 
-export const basic = ({ icon, 'aria-label': ariaLabel, ...props }) => (
+export const basic = ({
+  icon,
+  'aria-label': ariaLabel,
+  iconProps,
+  ...props
+}) => (
   <IconButton
-    icon={icon && <Icon as={icons[icon]} />}
+    icon={icon && <Icon as={icons[icon]} {...iconProps} />}
     aria-label={ariaLabel}
     {...props}
   />
 );
 
 basic.args = {
-  icon: 'PlusIcon',
+  icon: 'StarIcon',
   'aria-label': 'Label',
+  iconProps: {
+    variant: 'primary',
+    size: 'medium',
+  },
+  variant: 'transparent',
 };
 
 export const Overview = () => (
