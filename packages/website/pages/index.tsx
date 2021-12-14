@@ -9,11 +9,7 @@ interface HomeProps {
 
 function Home({ componentsList }: HomeProps) {
   return (
-    <>
-      <h1>
-        Welcome to Forma 36 in <a href="https://nextjs.org">Next.js!</a>
-      </h1>
-
+    <main>
       <ul>
         {componentsList.map((component, idx) => {
           return (
@@ -23,7 +19,7 @@ function Home({ componentsList }: HomeProps) {
           );
         })}
       </ul>
-    </>
+    </main>
   );
 }
 

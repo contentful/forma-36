@@ -33,15 +33,10 @@ export default function ComponentPage(props: ComponentPageProps) {
       <Head>
         <title>Forma 36 - {props.frontMatter.title}</title>
       </Head>
-      <PageContent>
-        <>
-          <h1>{props.frontMatter.title}</h1>
-          <div>
+      <PageContent frontMatter={props.frontMatter}>
           <PropsContextProvider value={{ ...props.propsMetadata }}>
             <MdxRenderer source={props.source} />
           </PropsContextProvider>
-          </div>
-        </>
       </PageContent>
     </>
   );
