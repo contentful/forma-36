@@ -38,7 +38,7 @@ export default function ComponentPage(props: ComponentPageProps) {
       </Head>
       <article className={styles.root}>
         <h1>{props.frontMatter.title}</h1>
-        
+
         <MdxRenderer source={props.source} />
       </article>
     </>
