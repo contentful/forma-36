@@ -6,19 +6,12 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MdxRenderer } from '../components/MdxRenderer';
+import { PageContent } from '../components/PageContent';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { css } from 'emotion';
 import { PropsContextProvider } from '@contentful/f36-docs-utils';
 
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 import { getPropsMetadata } from '../utils/propsMeta';
-
-const styles = {
-  root: css({
-    display: 'flex',
-    flexDirection: 'column',
-  }),
-};
 
 type ComponentPageProps = {
   source: MDXRemoteSerializeResult;
@@ -40,12 +33,16 @@ export default function ComponentPage(props: ComponentPageProps) {
       <Head>
         <title>Forma 36 - {props.frontMatter.title}</title>
       </Head>
-      <article className={styles.root}>
-        <h1>{props.frontMatter.title}</h1>
-        <PropsContextProvider value={{ ...props.propsMetadata }}>
-          <MdxRenderer source={props.source} />
-        </PropsContextProvider>
-      </article>
+      <PageContent>
+        <>
+          <h1>{props.frontMatter.title}</h1>
+          <div>
+          <PropsContextProvider value={{ ...props.propsMetadata }}>
+            <MdxRenderer source={props.source} />
+          </PropsContextProvider>
+          </div>
+        </>
+      </PageContent>
     </>
   );
 }

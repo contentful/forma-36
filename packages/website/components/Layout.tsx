@@ -3,6 +3,7 @@ import { css } from 'emotion';
 import Link from 'next/link';
 import { Grid } from '@contentful/f36-components';
 import { Topbar } from './Topbar';
+import { Footer } from './Footer';
 
 const styles = {
   grid: css({
@@ -15,10 +16,6 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     overflow: 'auto',
-  }),
-  footer: css({
-    position: 'sticky',
-    top: '100vh',
   }),
 };
 
@@ -44,7 +41,7 @@ export function Layout({ children }) {
       <Grid.Item area="content" as="main" className={styles.gridItem}>
         {children}
 
-        <footer className={styles.footer}>[FOOTER]</footer>
+        <Footer />
       </Grid.Item>
     </Grid>
   );
