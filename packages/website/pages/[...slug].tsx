@@ -40,9 +40,7 @@ export default function ComponentPage(props: ComponentPageProps) {
       <Head>
         <title>Forma 36 - {props.frontMatter.title}</title>
       </Head>
-
       <article className={styles.root}>
-        <Link href="/">Back</Link>
         <h1>{props.frontMatter.title}</h1>
         <div>
           <MdxRenderer source={props.source} />
