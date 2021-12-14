@@ -34,9 +34,9 @@ export default function ComponentPage(props: ComponentPageProps) {
         <title>Forma 36 - {props.frontMatter.title}</title>
       </Head>
       <PageContent frontMatter={props.frontMatter}>
-          <PropsContextProvider value={{ ...props.propsMetadata }}>
-            <MdxRenderer source={props.source} />
-          </PropsContextProvider>
+        <PropsContextProvider value={{ ...props.propsMetadata }}>
+          <MdxRenderer source={props.source} />
+        </PropsContextProvider>
       </PageContent>
     </>
   );
