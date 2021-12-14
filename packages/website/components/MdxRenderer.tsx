@@ -14,6 +14,7 @@ import {
   TableRow,
   TextLink,
 } from '@contentful/f36-components';
+import { StaticSource } from './LiveEditor/StaticSource';
 import { Props, PropsHeading } from '@contentful/f36-docs-utils';
 
 import { A11yColors } from './A11yColors';
@@ -37,8 +38,10 @@ const components = {
   ul: (props) => <List {...props} />,
   li: (props) => <List.Item {...props} />,
   code: (props) => {
-    // todo: implement live editor
-    return <code {...props} />;
+    if (props.static) {
+      return <StaticSource {...props} />;
+    }
+    return <StaticSource {...props} />;
   },
   table: (props) => (
     <Box marginBottom="spacingM">
