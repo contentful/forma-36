@@ -1,18 +1,14 @@
 ---
 title: 'DateTime'
-type: 'component'
-status: 'stable'
 slug: /components/datetime/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/components/datetime'
-storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-datetime--basic'
+github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/components/datetime'
 typescript: ./src/DateTime.tsx
+v4Doc: true
 ---
 
-import { Props } from '@contentful/f36-docs-utils';
+import { Props, PropsHeading } from '@contentful/f36-docs-utils';
 
-In `@contentful/f36-datetime`, there are two components (`DateTime` and `RelativeDateTime`) that will return a date following [Forma 36 guidelines](https://f36.contentful.com/guidelines/date-and-time/).
-
-## DateTime
+In `@contentful/f36-datetime`, there are two components (`DateTime` and `RelativeDateTime`) that will return a date following our guidelines.
 
 The DateTime component will format any date to a human friendly format and wrap it in a `<time>` tag.
 It allows four different forms of display that can be controlled by changing the `format` prop:
@@ -24,7 +20,29 @@ It allows four different forms of display that can be controlled by changing the
 | `time`          | 8:00 AM                |
 | `weekday`       | Wed, 12 Aug            |
 
-### Examples
+## Table of contents
+
+- [Import](#import)
+- [Examples](#examples)
+  - [Basic usage](#basic-usage)
+- [Props](#props-api-reference)
+- [Content guidelines](#content-guidelines)
+- [Accessibility](#accessibility)
+- [Help improve this page](#help-improve-this-page)
+
+## Import
+
+```jsx static=true
+import { DateTime } from '@contentful/f36-components';
+// or
+import { DateTime } from '@contentful/f36-datetime';
+```
+
+## Examples
+
+### Basic usage
+
+All the usages below will result in 'Tue, 17 Aug 2021 at 3:45 PM'
 
 ```tsx
 <Stack flexDirection="column">
@@ -37,8 +55,18 @@ It allows four different forms of display that can be controlled by changing the
 </Stack>
 ```
 
-All the usages above will result in 'Tue, 17 Aug 2021 at 3:45 PM'
-
-## Props of DateTime
+<PropsHeading storybookPath="/story/components-datetime" />
 
 <Props of="DateTime" />
+
+## Content guidelines
+
+- `full` should be displayed without commas and as human-readable as possible.
+- `weekday` should be used when it's helpful for users to see weekdays.
+- Dates should be displayed in order of day-month-year, with month abbreviated and without punctuation,
+  to increase scannability and to strike a compromise between different localized date formats.
+- To show a date or time range, use an **en dash** (Unicode: U+2013, html: &ndash;) with spaces around it (e.g. 8:00 am – 2:00 pm, 8 Jul – 13 Aug 2019).
+
+## Accessibility
+
+The component uses the `time` tag that provides a machine readable date.
