@@ -1,6 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 import { Grid } from '@contentful/f36-components';
+import { Topbar } from './Topbar';
 
 const styles = {
   grid: css({
@@ -28,7 +29,9 @@ export function Layout({ children }) {
       rows="auto 1fr"
       columnGap="none"
     >
-      <Grid.Item area="topbar">[TOPBAR]</Grid.Item>
+      <Grid.Item area="topbar">
+        <Topbar />
+      </Grid.Item>
 
       <Grid.Item area="sidemenu" className={styles.gridItem}>
         [SideMenu]
