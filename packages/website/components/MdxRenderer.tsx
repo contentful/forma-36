@@ -16,7 +16,9 @@ import {
 } from '@contentful/f36-components';
 import { Props, PropsHeading } from '@contentful/f36-docs-utils';
 
+import { A11yColors } from './A11yColors';
 import { ColorSwatchGroup } from './ColorSwatchGroup';
+import { CombiningShadesExample } from './CombiningShadesExample';
 import { Slider } from './Slider';
 import { SpacingTokensTable } from './SpacingTokensTable';
 
@@ -46,7 +48,9 @@ const components = {
   tr: (props) => <TableRow {...props} />,
   th: (props) => <TableCell style={{ textAlign: 'left' }} {...props} />,
   td: (props) => <TableCell {...props} />,
+  A11yColors,
   ColorSwatchGroup,
+  CombiningShadesExample,
   Slider,
   SpacingTokensTable,
   Props,
