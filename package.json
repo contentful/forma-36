@@ -6,9 +6,6 @@
     "packages": [
       "packages/*",
       "packages/components/*"
-    ],
-    "nohoist": [
-      "@contentful/forma-36-fcss/node-sass-import"
     ]
   },
   "scripts": {
@@ -17,7 +14,7 @@
     "commit": "git-cz",
     "commitmsg": "validate-commit-msg",
     "generate": "plop --plopfile scripts/plopfile.js",
-    "postinstall": "rm -rf .parcel-cache && lerna run --scope @contentful/f36-tokens build && lerna run --scope @contentful/forma-36-fcss build",
+    "postinstall": "rm -rf .parcel-cache && lerna run --scope @contentful/f36-tokens build",
     "lint": "yarn run lint:js && yarn run lint:packages",
     "lint:js": "eslint packages --ext .js,.jsx,.ts,.tsx",
     "lint:packages": "node scripts/lint-packages.js",
@@ -61,14 +58,14 @@
     "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
     "@babel/plugin-transform-async-to-generator": "^7.0.0",
     "@babel/plugin-transform-runtime": "^7.0.0",
-    "@babel/polyfill": "7.2.5",
+    "@babel/polyfill": "7.12.1",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.0.0",
     "@babel/register": "^7.0.0",
     "@babel/runtime": "^7.6.2",
     "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^11.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
     "@contentful/browserslist-config": "^2.0.0",
     "@contentful/experience-consent-manager": "^1.1.0",
     "@parcel/babel-plugin-transform-runtime": "2.0.0-beta.3.1",
@@ -80,8 +77,8 @@
     "@storybook/addon-storysource": "^6.3.7",
     "@storybook/react": "^6.3.7",
     "@storybook/theming": "^6.3.7",
-    "@testing-library/jest-dom": "5.11.6",
-    "@testing-library/react": "11.2.2",
+    "@testing-library/jest-dom": "5.15.0",
+    "@testing-library/react": "12.1.2",
     "@testing-library/user-event": "12.2.2",
     "@types/jest": "^24.0.25",
     "@types/jest-axe": "3.5.1",
@@ -100,12 +97,12 @@
     "babel-plugin-react-remove-properties": "^0.3.0",
     "babel-plugin-transform-glob-import": "^1.0.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "babel-plugin-typescript-to-proptypes": "0.17.1",
+    "babel-plugin-typescript-to-proptypes": "1.4.2",
     "chalk": "^4.1.0",
     "chromatic": "^5.7.0",
     "commitizen": "^4.2.1",
     "css-loader": "^3.6.0",
-    "cssnano": "5.0.2",
+    "cssnano": "5.0.12",
     "eslint": "^7.32.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint-config-dev": "^2.0.0",
@@ -114,7 +111,7 @@
     "eslint-plugin-jest": "^24.4.0",
     "eslint-plugin-jest-dom": "^3.9.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^4.10.1",
@@ -133,7 +130,7 @@
     "plop": "^2.5.3",
     "postcss": "^8.2.2",
     "postcss-copy-assets": "^0.3.1",
-    "postcss-custom-properties": "^11.0.0",
+    "postcss-custom-properties": "^12.0.0",
     "postcss-import": "^14.0.0",
     "postcss-loader": "^4.1.0",
     "postcss-preset-env": "^6.7.0",
@@ -151,6 +148,6 @@
   },
   "engines": {
     "node": ">=14.5.0",
-    "yarn": ">=1.21.0"
+    "yarn": ">=1.19.0"
   }
 }

@@ -50,7 +50,7 @@ export interface AutocompleteProps<T extends {}> {
   emptyListMessage?: string;
   noMatchesMessage?: string;
   willClearQueryOnClose?: boolean;
-  dropdownProps?: DropdownProps;
+  dropdownProps?: Partial<DropdownProps>;
   renderToggleElement?: (props: RenderToggleElementProps) => React.ReactElement;
   validationMessage?: string;
 }

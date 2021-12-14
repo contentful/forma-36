@@ -37,6 +37,10 @@ const styles = {
     margin-top: 0;
   `,
 
+  hidden: css`
+    display: none;
+  `,
+
   link: css`
     display: flex;
     justify-content: space-between;
@@ -104,6 +108,11 @@ const MenuListItem = React.forwardRef(
     const itemOffset = css`
       padding-left: ${1 + hierarchyLevel}rem;
     `;
+    const handleKeyDown = (event) => {
+      if (event.nativeEvent.code === 'Enter') {
+        handleToggle(event);
+      }
+    };
 
     return (
       <li css={isCategory && styles.category}>
@@ -112,6 +121,9 @@ const MenuListItem = React.forwardRef(
             <div
               css={cx([styles.link, styles.linkGroup, itemOffset])}
               onClick={handleToggle}
+              onKeyDown={handleKeyDown}
+              // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+              tabIndex={0}
             >
               {isCategory ? (
                 <SectionHeading marginBottom={0}>{item.name}</SectionHeading>
@@ -125,13 +137,12 @@ const MenuListItem = React.forwardRef(
                 <ChevronRightIcon variant="secondary" />
               )}
             </div>
-            {isExpanded && (
-              <MenuList
-                menuItems={item.menuLinks}
-                currentPath={currentPath}
-                hierarchyLevel={hierarchyLevel + 1}
-              />
-            )}
+            <MenuList
+              isHidden={!isExpanded}
+              menuItems={item.menuLinks}
+              currentPath={currentPath}
+              hierarchyLevel={hierarchyLevel + 1}
+            />
           </>
         ) : (
           <Link
@@ -163,7 +174,12 @@ MenuListItem.defaultProps = {
   hierarchyLevel: 0,
 };
 
-const MenuList = ({ menuItems, currentPath, hierarchyLevel }) => {
+const MenuList = ({
+  menuItems,
+  currentPath,
+  hierarchyLevel,
+  isHidden = false,
+}) => {
   const activeRef = useRef(null);
   useEffect(() => {
     if (activeRef.current) {
@@ -171,7 +187,7 @@ const MenuList = ({ menuItems, currentPath, hierarchyLevel }) => {
     }
   }, []);
   return (
-    <ul className={styles.list}>
+    <ul css={[styles.list, isHidden && styles.hidden]}>
       {menuItems.map((item, index) => {
         const active = checkActive(item, currentPath);
         return (
