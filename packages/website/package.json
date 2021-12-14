@@ -1,0 +1,34 @@
+{
+  "name": "@contentful/f36-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "next dev",
+    "build:prod": "next build",
+    "start:prod": "next start"
+  },
+  "dependencies": {
+    "@contentful/f36-components": "^4.0.0",
+    "@contentful/f36-core": "^4.0.0",
+    "@mdx-js/loader": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "@next/mdx": "^11.1.2",
+    "emotion": "^10.0.17",
+    "gray-matter": "^4.0.3",
+    "mdx-prism": "^0.3.3",
+    "next": "^12.0.7",
+    "next-mdx-remote": "^3.0.8",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "react-live": "^2.3.0",
+    "rehype-autolink-headings": "^5.0.1",
+    "rehype-slug": "^4.0.1",
+    "remark": "^14.0.2",
+    "remark-code-titles": "^0.1.1"
+  },
+  "devDependencies": {
+    "@emotion/babel-preset-css-prop": "^10.2.1",
+    "@next/eslint-plugin-next": "^12.0.4",
+    "babel-plugin-emotion": "10.0.33"
+  }
+}
