@@ -9,6 +9,8 @@ const docgen = require('react-docgen-typescript');
 // because they are, basically, inherited props from HTML elements or React
 const PROPS_TO_HIDE = ['ref', 'key', 'style'];
 
+type PropsMetadata = { [key: string]: PropComponentDefinition };
+
 const getPreparedComponent = (
   component: PropComponentDefinition,
 ): PropComponentDefinition => {
@@ -51,12 +53,10 @@ function getTypescriptMetaInformation(sourcePath) {
     const components: PropComponentDefinition[] =
       tsConfigParser.parse(sourcePath) || [];
 
-    const result: { [key: string]: PropComponentDefinition } = {};
-    components.map((component) => {
+    return components.reduce<PropsMetadata>((result, component) => {
       result[component.displayName] = getPreparedComponent(component);
-    });
-
-    return result;
+      return result;
+    }, {});
   } catch (e) {
     // eslint-disable-next-line no-console
     console.log('Problem with parsing Typescript props for  ' + sourcePath, e);
@@ -69,7 +69,7 @@ function getPropsMetadata(filePath: string, sourcesPaths?: string) {
     return null;
   }
 
-  const propsMetadata: { [key: string]: PropComponentDefinition } = {};
+  const propsMetadata: PropsMetadata = {};
   const typescriptSources = sourcesPaths.trim().split(',');
 
   typescriptSources.forEach((source) => {
