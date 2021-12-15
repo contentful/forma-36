@@ -15,11 +15,8 @@ import { getPropsMetadata } from '../utils/propsMeta';
 
 const styles = {
   root: css({
-    minHeight: '100vh',
-    padding: '0 0.5rem',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
   }),
 };
 
@@ -45,11 +42,9 @@ export default function ComponentPage(props: ComponentPageProps) {
       </Head>
       <article className={styles.root}>
         <h1>{props.frontMatter.title}</h1>
-        <div>
-          <PropsContextProvider value={{ ...props.propsMetadata }}>
-            <MdxRenderer source={props.source} />
-          </PropsContextProvider>
-        </div>
+        <PropsContextProvider value={{ ...props.propsMetadata }}>
+          <MdxRenderer source={props.source} />
+        </PropsContextProvider>
       </article>
     </>
   );

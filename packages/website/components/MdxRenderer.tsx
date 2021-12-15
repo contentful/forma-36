@@ -16,6 +16,14 @@ import {
 } from '@contentful/f36-components';
 import { Props, PropsHeading } from '@contentful/f36-docs-utils';
 
+import { A11yColors } from './A11yColors';
+import { ColorSwatchGroup } from './ColorSwatchGroup';
+import { CombiningShadesExample } from './CombiningShadesExample';
+import { GlowTokensTable } from './GlowTokensTable';
+import { ShadowTokensTable } from './ShadowTokensTable';
+import { SpacingTokensTable } from './SpacingTokensTable';
+import { TransitionTokensTable } from './TransitionTokensTable';
+
 /* eslint-disable react/display-name */
 const components = {
   h1: (props) => <DisplayText {...props} />,
@@ -42,9 +50,15 @@ const components = {
   tr: (props) => <TableRow {...props} />,
   th: (props) => <TableCell style={{ textAlign: 'left' }} {...props} />,
   td: (props) => <TableCell {...props} />,
-
+  A11yColors,
+  ColorSwatchGroup,
+  CombiningShadesExample,
+  GlowTokensTable,
   Props,
   PropsHeading,
+  ShadowTokensTable,
+  SpacingTokensTable,
+  TransitionTokensTable,
 };
 /* eslint-enable react/display-name */
 

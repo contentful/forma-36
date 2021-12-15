@@ -64,8 +64,7 @@ async function getAllMdx(paths: string[]) {
 const allMdxSources = [
   path.resolve('../../packages/components'),
   path.resolve('../../packages/core'),
-  // we temporary disable picking up content from Gatsby website, because each item will be copied later one by one
-  // path.resolve('../../packages/forma-36-website/src/content'),
+  path.resolve('./content'),
 ];
 
 async function getMdxSourceBySlug(slug: string[]) {
