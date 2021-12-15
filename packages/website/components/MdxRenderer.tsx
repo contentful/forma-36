@@ -1,22 +1,24 @@
 import React from 'react';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import {
-  Box,
+
+import { MdxComponents } from '../mdx-components';
+import * as f36Components from '@contentful/f36-components';
+import { Props, PropsHeading } from '@contentful/f36-docs-utils';
+
+import { ComponentSource } from './LiveEditor/ComponentSource';
+import { StaticSource } from './LiveEditor/StaticSource';
+import { TypographyTokensTable } from './TypographyTokensTable';
+
+const {
   DisplayText,
   Heading,
-  List,
-  Paragraph,
   Subheading,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
+  Paragraph,
   TextLink,
-} from '@contentful/f36-components';
-import { StaticSource } from './LiveEditor/StaticSource';
-import { ComponentSource } from './LiveEditor/ComponentSource';
-import { MdxComponents } from '../mdx-components';
+  List,
+  Box,
+  Table,
+} = f36Components;
 
 /* eslint-disable react/display-name */
 const components = {
@@ -41,12 +43,16 @@ const components = {
       <Table {...props} />
     </Box>
   ),
-  thead: (props) => <TableHead {...props} />,
-  tbody: (props) => <TableBody {...props} />,
-  tr: (props) => <TableRow {...props} />,
-  th: (props) => <TableCell style={{ textAlign: 'left' }} {...props} />,
-  td: (props) => <TableCell {...props} />,
+  thead: (props) => <Table.Head {...props} />,
+  tbody: (props) => <Table.Body {...props} />,
+  tr: (props) => <Table.Row {...props} />,
+  th: (props) => <Table.Cell style={{ textAlign: 'left' }} {...props} />,
+  td: (props) => <Table.Cell {...props} />,
+  ...f36Components,
   ...MdxComponents,
+  Props,
+  PropsHeading,
+  TypographyTokensTable,
 };
 /* eslint-enable react/display-name */
 
