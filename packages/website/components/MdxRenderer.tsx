@@ -16,19 +16,11 @@ import {
 } from '@contentful/f36-components';
 import { StaticSource } from './LiveEditor/StaticSource';
 import { ComponentSource } from './LiveEditor/ComponentSource';
-import { Props, PropsHeading } from '@contentful/f36-docs-utils';
-
-import { A11yColors } from './A11yColors';
-import { ColorSwatchGroup } from './ColorSwatchGroup';
-import { CombiningShadesExample } from './CombiningShadesExample';
-import { GlowTokensTable } from './GlowTokensTable';
-import { ShadowTokensTable } from './ShadowTokensTable';
-import { SpacingTokensTable } from './SpacingTokensTable';
-import { TransitionTokensTable } from './TransitionTokensTable';
+import { MdxComponents } from '../mdx-components';
 
 /* eslint-disable react/display-name */
 const components = {
-  h1: (props) => <DisplayText {...props} />,
+  h1: (props) => <DisplayText as="h1" {...props} />,
   h2: (props) => <Heading as="h2" marginTop="spacing2Xl" {...props} />,
   h3: (props) => <Subheading as="h3" marginTop="spacingL" {...props} />,
   h4: (props) => <Subheading as="h4" {...props} />,
@@ -54,15 +46,7 @@ const components = {
   tr: (props) => <TableRow {...props} />,
   th: (props) => <TableCell style={{ textAlign: 'left' }} {...props} />,
   td: (props) => <TableCell {...props} />,
-  A11yColors,
-  ColorSwatchGroup,
-  CombiningShadesExample,
-  GlowTokensTable,
-  Props,
-  PropsHeading,
-  ShadowTokensTable,
-  SpacingTokensTable,
-  TransitionTokensTable,
+  ...MdxComponents,
 };
 /* eslint-enable react/display-name */
 
