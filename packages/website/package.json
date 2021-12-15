@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "next dev",
     "build:prod": "next build",
+    "start": "next dev",
     "start:prod": "next start"
   },
   "dependencies": {
@@ -15,17 +15,17 @@
     "@next/mdx": "^11.1.2",
     "emotion": "^10.0.17",
     "gray-matter": "^4.0.3",
-    "mdx-prism": "^0.3.3",
     "next": "^12.0.7",
     "next-mdx-remote": "^3.0.8",
+    "prism-react-renderer": "1.2.1",
     "react": "16.14.0",
+    "react-docgen-typescript": "^2.2.2",
     "react-dom": "16.14.0",
-    "react-live": "^2.3.0",
+    "react-live": "2.3.0",
     "rehype-autolink-headings": "^5.0.1",
     "rehype-slug": "^4.0.1",
     "remark": "^14.0.2",
-    "remark-code-titles": "^0.1.1",
-    "react-docgen-typescript": "^2.2.2"
+    "remark-code-titles": "^0.1.1"
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^10.2.1",

@@ -7,7 +7,7 @@ export const getCollapseStyles = ({ className }: { className?: string }) => {
       css({
         boxSizing: 'border-box',
         overflow: 'hidden',
-        height: '0',
+        height: 0,
         transition: `height ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, padding ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       }),
       className,

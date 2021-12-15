@@ -1,3 +1,4 @@
+export * from '@contentful/f36-collapse';
 export * from '@contentful/f36-badge';
 export * from '@contentful/f36-icon';
 export * from '@contentful/f36-card';
