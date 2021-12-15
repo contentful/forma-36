@@ -66,7 +66,11 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
   const commonContent = (
     <>
       {startIcon && iconContent(startIcon)}
-      {children && <Flex as="span">{children}</Flex>}
+      {children && (
+        <Box as="span" display="block" className={styles.buttonContent}>
+          {children}
+        </Box>
+      )}
       {endIcon && iconContent(endIcon)}
       {isLoading && (
         <Box

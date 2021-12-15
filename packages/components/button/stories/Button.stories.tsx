@@ -120,6 +120,14 @@ export const Overview = ({ startIcon, endIcon }) => {
 
           <Button
             variant="primary"
+            size="medium"
+            startIcon={<Icon as={icons.PlusIcon} />}
+          >
+            Medium (default) button with really long content
+          </Button>
+
+          <Button
+            variant="primary"
             size="large"
             startIcon={<Icon as={icons.PlusIcon} />}
           >
