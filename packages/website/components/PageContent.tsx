@@ -69,7 +69,9 @@ function PageHeader(props: {
   return (
     <header className={styles.header}>
       {props.title && (
-        <DisplayText marginBottom="spacingL">{props.title}</DisplayText>
+        <DisplayText as="h1" marginBottom="spacingL">
+          {props.title}
+        </DisplayText>
       )}
       {(props.github || props.status || props.storybook) && (
         <div className={styles.subheaderRow}>
@@ -123,7 +125,7 @@ function PageHeader(props: {
 function PageFooter(props: { github?: string }) {
   return (
     <>
-      <Heading as="h2" id="help-improve-this-page" marginTop="spacing2Xl">
+      <Heading as="h3" id="help-improve-this-page" marginTop="spacing2Xl">
         Help improve this page
       </Heading>
       <Stack>
@@ -153,10 +155,10 @@ export function PageContent(props: {
   children: React.ReactChild;
 }) {
   return (
-    <div className={styles.root}>
+    <article className={styles.root}>
       <PageHeader {...props.frontMatter} />
-      <main>{props.children}</main>
+      {props.children}
       <PageFooter {...props.frontMatter} />
-    </div>
+    </article>
   );
 }
