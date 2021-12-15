@@ -21,8 +21,8 @@ import { ColorSwatchGroup } from './ColorSwatchGroup';
 import { CombiningShadesExample } from './CombiningShadesExample';
 import { GlowTokensTable } from './GlowTokensTable';
 import { ShadowTokensTable } from './ShadowTokensTable';
-import { Slider } from './Slider';
 import { SpacingTokensTable } from './SpacingTokensTable';
+import { TransitionTokensTable } from './TransitionTokensTable';
 
 /* eslint-disable react/display-name */
 const components = {
@@ -54,11 +54,11 @@ const components = {
   ColorSwatchGroup,
   CombiningShadesExample,
   GlowTokensTable,
-  ShadowTokensTable,
-  Slider,
-  SpacingTokensTable,
   Props,
   PropsHeading,
+  ShadowTokensTable,
+  SpacingTokensTable,
+  TransitionTokensTable,
 };
 /* eslint-enable react/display-name */
 
