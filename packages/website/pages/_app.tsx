@@ -17,7 +17,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="description"
           content="Forma 36 is an open-source design system by Contentful created with the intent to reduce the overhead of creating UI by providing tools and guidance for digital teams building and extending Contentful products."
         />
-        <meta name="keywords" content="contentful, design, design-system" />
+        <meta
+          name="keywords"
+          content="contentful, design, design-system, react, component library"
+        />
         <link rel="icon" href="/favicon.png" />
       </Head>
 
