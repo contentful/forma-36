@@ -17,17 +17,13 @@ export interface CollapseProps extends CommonProps {
    * string for additional classNames
    */
   className?: string;
-  /**
-   * testId
-   */
-  'data-test-id'?: string;
 }
 
 export const Collapse = ({
   children,
   className,
   isExpanded = false,
-  'data-test-id': testId = 'cf-collapse',
+  testId = 'cf-collapse',
   ...otherProps
 }: CollapseProps) => {
   const panelEl = useRef<HTMLDivElement>(null);

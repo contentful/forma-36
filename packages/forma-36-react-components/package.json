@@ -28,6 +28,7 @@
     "@contentful/f36-badge": "^4.0.0",
     "@contentful/f36-card": "^4.0.0",
     "@contentful/f36-core": "^4.0.0",
+    "@contentful/f36-collapse": "^4.0.0",
     "@contentful/f36-datetime": "^4.0.0",
     "@contentful/f36-drag-handle": "^4.0.0",
     "@contentful/f36-entity-list": "^4.0.0",
