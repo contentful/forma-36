@@ -47,7 +47,13 @@ function ModalExample() {
   return (
     <React.Fragment>
       <Button onClick={() => setShown(true)}>Show centered modal</Button>
-      <Modal title="Centered modal" isShown={isShown}>
+      <Modal
+        onClose={() => setShown(false)}
+        shouldCloseOnOverlayClick
+        shouldCloseOnEscapePress
+        title="Centered modal"
+        isShown={isShown}
+      >
         {() => (
           <React.Fragment>
             <Modal.Header title="Title" onClose={() => setShown(false)} />
@@ -103,7 +109,14 @@ function ModalExample() {
           Show center modal
         </Button>
       </Form>
-      <Modal title="Centered modal" isShown={isShown} position={position}>
+      <Modal
+        onClose={() => setShown(false)}
+        shouldCloseOnOverlayClick
+        shouldCloseOnEscapePress
+        title="Centered modal"
+        isShown={isShown}
+        position={position}
+      >
         {() => (
           <React.Fragment>
             <Modal.Header title="Title" onClose={() => setShown(false)} />
@@ -157,7 +170,14 @@ function ModalExample() {
           Show modal
         </Button>
       </Form>
-      <Modal title="Centered modal" isShown={isShown} size={size}>
+      <Modal
+        onClose={() => setShown(false)}
+        shouldCloseOnOverlayClick
+        shouldCloseOnEscapePress
+        title="Centered modal"
+        isShown={isShown}
+        size={size}
+      >
         {() => (
           <React.Fragment>
             <Modal.Header title="Title" onClose={() => setShown(false)} />
