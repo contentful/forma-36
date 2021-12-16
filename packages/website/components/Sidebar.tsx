@@ -1,6 +1,5 @@
 import React from 'react';
-import { css, cx } from 'emotion';
-import Link from 'next/link';
+import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import {
   TextInput,
@@ -8,6 +7,8 @@ import {
   List,
   SectionHeading,
 } from '@contentful/f36-components';
+
+import { SidebarLink } from './SidebarLink';
 
 const sidebarLinks = require('../utils/sidebarLinks.json');
 
@@ -32,6 +33,9 @@ const styles = {
   sectionTitle: css({ padding: `${tokens.spacingXs} ${tokens.spacingM}` }),
 };
 
+const isLinkActive = (href, currentPage) =>
+  currentPage.replace(/\/$/, '') === href.replace(/\/$/, '');
+
 interface Props {
   currentPage?: string;
 }
@@ -51,17 +55,21 @@ export function Sidebar({ currentPage = '/' }: Props) {
         <List className={styles.list}>
           <SidebarLink
             isTitle
-            currentPage={currentPage}
+            isActive={isLinkActive('/getting-started', currentPage)}
             href="/getting-started"
           >
             Getting started
           </SidebarLink>
-          <SidebarLink isTitle currentPage={currentPage} href="/contributing">
+          <SidebarLink
+            isTitle
+            isActive={isLinkActive('/contributing', currentPage)}
+            href="/contributing"
+          >
             Contributing to Forma 36
           </SidebarLink>
           <SidebarLink
             isTitle
-            currentPage={currentPage}
+            isActive={isLinkActive('/migration-v3-to-v4', currentPage)}
             href="/migration-v3-to-v4"
           >
             Migration Guide
@@ -74,7 +82,7 @@ export function Sidebar({ currentPage = '/' }: Props) {
             {sidebarLinks.guidelines.map((item) => (
               <SidebarLink
                 key={item.slug}
-                currentPage={currentPage}
+                isActive={isLinkActive(item.slug, currentPage)}
                 href={item.slug}
               >
                 {item.title}
@@ -89,7 +97,7 @@ export function Sidebar({ currentPage = '/' }: Props) {
             {sidebarLinks.tokens.map((item) => (
               <SidebarLink
                 key={item.slug}
-                currentPage={currentPage}
+                isActive={isLinkActive(item.slug, currentPage)}
                 href={item.slug}
               >
                 {item.title}
@@ -97,9 +105,11 @@ export function Sidebar({ currentPage = '/' }: Props) {
             ))}
           </List>
 
-          <SectionHeading className={styles.sectionTitle} marginBottom="none">
-            Components
-          </SectionHeading>
+          <List className={styles.list}>
+            <SectionHeading className={styles.sectionTitle} marginBottom="none">
+              Components
+            </SectionHeading>
+          </List>
 
           <List className={styles.list}>
             <SectionHeading className={styles.sectionTitle} marginBottom="none">
@@ -108,7 +118,7 @@ export function Sidebar({ currentPage = '/' }: Props) {
             {sidebarLinks.integrations.map((item) => (
               <SidebarLink
                 key={item.slug}
-                currentPage={currentPage}
+                isActive={isLinkActive(item.slug, currentPage)}
                 href={item.slug}
               >
                 {item.title}
@@ -123,7 +133,7 @@ export function Sidebar({ currentPage = '/' }: Props) {
             {sidebarLinks.integrations.map((item) => (
               <SidebarLink
                 key={item.slug}
-                currentPage={currentPage}
+                isActive={isLinkActive(item.slug, currentPage)}
                 href={item.slug}
               >
                 {item.title}
@@ -133,59 +143,5 @@ export function Sidebar({ currentPage = '/' }: Props) {
         </List>
       </Flex>
     </Flex>
-  );
-}
-
-const getSectionTitleStyles = (isActive = false, isTitle = false) => {
-  return {
-    sidebarItem: css({
-      padding: `${tokens.spacingXs} ${tokens.spacingM}`,
-      ...(!isTitle && { paddingLeft: tokens.spacingXl }),
-    }),
-    link: css({
-      display: 'block',
-      textDecoration: 'none',
-      color: isActive ? tokens.colorWhite : tokens.gray900,
-      backgroundColor: isActive ? tokens.colorPrimary : 'transparent',
-      transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
-      '&:hover': {
-        backgroundColor: isActive ? tokens.colorPrimary : tokens.gray200,
-      },
-      '& h2': {
-        color: isActive ? tokens.colorWhite : tokens.gray900,
-      },
-    }),
-  };
-};
-
-interface SidebarLinkProps {
-  children: string;
-  href: string;
-  currentPage?: string;
-  isTitle?: boolean;
-}
-
-function SidebarLink({
-  children,
-  href,
-  currentPage = '/',
-  isTitle = false,
-}: SidebarLinkProps) {
-  const isActive = currentPage.replace(/\/$/, '') === href.replace(/\/$/, '');
-  const titleStyles = getSectionTitleStyles(isActive, isTitle);
-
-  return (
-    <List.Item>
-      <Link href={href} passHref>
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a className={cx([titleStyles.link, titleStyles.sidebarItem])}>
-          {isTitle ? (
-            <SectionHeading marginBottom="none">{children}</SectionHeading>
-          ) : (
-            children
-          )}
-        </a>
-      </Link>
-    </List.Item>
   );
 }
