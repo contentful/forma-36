@@ -1,13 +1,12 @@
 import React from 'react';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
-import { MdxComponents } from '../mdx-components';
 import * as f36Components from '@contentful/f36-components';
 import { Props, PropsHeading } from '@contentful/f36-docs-utils';
 
+import { MdxComponents } from '../mdx-components';
 import { ComponentSource } from './LiveEditor/ComponentSource';
 import { StaticSource } from './LiveEditor/StaticSource';
-import { TypographyTokensTable } from './TypographyTokensTable';
 
 const {
   DisplayText,
@@ -52,7 +51,6 @@ const components = {
   ...MdxComponents,
   Props,
   PropsHeading,
-  TypographyTokensTable,
 };
 /* eslint-enable react/display-name */
 
