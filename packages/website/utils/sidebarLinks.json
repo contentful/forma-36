@@ -1,4 +1,32 @@
 {
+  "guidelines": [
+    {
+      "title": "Accessibility",
+      "slug": "/guidelines/accessibility/"
+    },
+    {
+      "title": "Keyboard Shortcuts",
+      "slug": "/guidelines/keyboard-shortcuts/"
+    },
+    {
+      "title": "Grammar and rules",
+      "slug": "/guidelines/copy/grammar-and-rules/"
+    },
+    {
+      "title": "UX Writing Principles",
+      "slug": "/guidelines/copy/ux-writing-principles/"
+    }
+  ],
+  "integrations": [
+    {
+      "title": "Formik",
+      "slug": "/integrations/formik/"
+    },
+    {
+      "title": "React Hook Form",
+      "slug": "/integrations/react-hook-form/"
+    }
+  ],
   "tokens": [
     {
       "title": "Color system",

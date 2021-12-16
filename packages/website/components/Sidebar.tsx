@@ -37,7 +37,6 @@ interface Props {
 }
 
 export function Sidebar({ currentPage = '/' }: Props) {
-  console.log(sidebarLinks);
   return (
     <Flex className={styles.sidebar} flexDirection="column">
       <div className={styles.search}>
@@ -68,21 +67,32 @@ export function Sidebar({ currentPage = '/' }: Props) {
             Migration Guide
           </SidebarLink>
 
-          <SectionHeading className={styles.sectionTitle} marginBottom="none">
-            Guidelines
-          </SectionHeading>
+          <List className={styles.list}>
+            <SectionHeading className={styles.sectionTitle} marginBottom="none">
+              Guidelines
+            </SectionHeading>
+            {sidebarLinks.guidelines.map((item) => (
+              <SidebarLink
+                key={item.slug}
+                currentPage={currentPage}
+                href={item.slug}
+              >
+                {item.title}
+              </SidebarLink>
+            ))}
+          </List>
 
           <List className={styles.list}>
             <SectionHeading className={styles.sectionTitle} marginBottom="none">
               Tokens
             </SectionHeading>
-            {sidebarLinks.tokens.map((token) => (
+            {sidebarLinks.tokens.map((item) => (
               <SidebarLink
-                key={token.slug}
+                key={item.slug}
                 currentPage={currentPage}
-                href={token.slug}
+                href={item.slug}
               >
-                {token.title}
+                {item.title}
               </SidebarLink>
             ))}
           </List>
@@ -95,9 +105,20 @@ export function Sidebar({ currentPage = '/' }: Props) {
             Utils
           </SectionHeading>
 
-          <SectionHeading className={styles.sectionTitle} marginBottom="none">
-            Integrations
-          </SectionHeading>
+          <List className={styles.list}>
+            <SectionHeading className={styles.sectionTitle} marginBottom="none">
+              Integrations
+            </SectionHeading>
+            {sidebarLinks.integrations.map((item) => (
+              <SidebarLink
+                key={item.slug}
+                currentPage={currentPage}
+                href={item.slug}
+              >
+                {item.title}
+              </SidebarLink>
+            ))}
+          </List>
         </List>
       </Flex>
     </Flex>
@@ -125,6 +146,18 @@ const getSectionTitleStyles = (isActive = false, isTitle = false) => {
     }),
   };
 };
+
+// function SidebarItem({ item, isActive }) {
+//   return (
+//     <SidebarLink
+//       key={item.slug}
+//       href={item.slug}
+//       isActive={isActive}
+//     >
+//       {item.title}
+//     </SidebarLink>
+//   )
+// }
 
 interface SidebarLinkProps {
   children: string;
