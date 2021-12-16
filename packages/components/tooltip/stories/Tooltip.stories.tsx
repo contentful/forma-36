@@ -21,7 +21,7 @@ export default {
 export const Basic = (args: { content: string }) => {
   return (
     <Tooltip {...args}>
-      <TextLink>Hover me</TextLink>
+      <TextLink href="/">Hover me</TextLink>
     </Tooltip>
   );
 };
@@ -62,7 +62,7 @@ export const AutoPlacement = (args: { content: string }) => {
         }}
       >
         <Tooltip {...args}>
-          <TextLink>Hover me</TextLink>
+          <TextLink href="/">Hover me</TextLink>
         </Tooltip>
       </div>
     </div>
@@ -100,7 +100,9 @@ export const Overview = () => {
       </SectionHeading>
       <Flex marginBottom="spacingS">
         <Tooltip content="I am a Tooltip 🙌" maxWidth={360} placement="top">
-          <TextLink isDisabled>Hover me</TextLink>
+          <TextLink href="/" isDisabled>
+            Hover me
+          </TextLink>
         </Tooltip>
       </Flex>
 
@@ -115,7 +117,9 @@ export const Overview = () => {
           placement="left"
           isVisible
         >
-          <TextLink isDisabled={false}>Hover me</TextLink>
+          <TextLink href="/" isDisabled={false}>
+            Hover me
+          </TextLink>
         </Tooltip>
       </Flex>
 
@@ -130,7 +134,9 @@ export const Overview = () => {
           placement="right"
           isVisible
         >
-          <TextLink isDisabled={false}>Hover me</TextLink>
+          <TextLink href="/" isDisabled={false}>
+            Hover me
+          </TextLink>
         </Tooltip>
       </Flex>
 
@@ -145,7 +151,9 @@ export const Overview = () => {
           placement="top"
           isVisible
         >
-          <TextLink isDisabled={false}>Hover me</TextLink>
+          <TextLink href="/" isDisabled={false}>
+            Hover me
+          </TextLink>
         </Tooltip>
       </Flex>
 
@@ -160,7 +168,9 @@ export const Overview = () => {
           placement="bottom"
           isVisible
         >
-          <TextLink isDisabled={false}>Hover me</TextLink>
+          <TextLink href="/" isDisabled={false}>
+            Hover me
+          </TextLink>
         </Tooltip>
       </Flex>
     </>

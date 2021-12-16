@@ -159,3 +159,101 @@ export const Overview: Story<Args> = () => {
     </>
   );
 };
+
+export const DifferentImageSizes: Story<Args> = () => {
+  return (
+    <>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Default
+      </SectionHeading>
+
+      <Flex flexWrap="wrap">
+        <Flex flexDirection="column" marginRight="spacingM">
+          <SectionHeading as="h3" marginBottom="spacingS">
+            200x300
+          </SectionHeading>
+
+          <AssetCard
+            icon={<Icon as={icons.ClockIcon} />}
+            src="https://via.placeholder.com/200x300"
+            title="Asset title"
+            type="image"
+          />
+        </Flex>
+
+        <Flex flexDirection="column" marginRight="spacingM">
+          <SectionHeading as="h3" marginBottom="spacingS">
+            200x600
+          </SectionHeading>
+
+          <AssetCard
+            icon={<Icon as={icons.ClockIcon} />}
+            src="https://via.placeholder.com/200x600"
+            title="Asset title"
+            type="image"
+          />
+        </Flex>
+
+        <Flex flexDirection="column" marginRight="spacingM">
+          <SectionHeading as="h3" marginBottom="spacingS">
+            800x200
+          </SectionHeading>
+
+          <AssetCard
+            icon={<Icon as={icons.ClockIcon} />}
+            src="https://via.placeholder.com/800x200"
+            title="Asset title"
+            type="image"
+          />
+        </Flex>
+      </Flex>
+
+      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
+        Small
+      </SectionHeading>
+
+      <Flex flexWrap="wrap">
+        <Flex flexDirection="column" marginRight="spacingM">
+          <SectionHeading as="h3" marginBottom="spacingS">
+            200x300
+          </SectionHeading>
+
+          <AssetCard
+            icon={<Icon as={icons.ClockIcon} />}
+            size="small"
+            src="https://via.placeholder.com/200x300"
+            title="Asset title"
+            type="image"
+          />
+        </Flex>
+
+        <Flex flexDirection="column" marginRight="spacingM">
+          <SectionHeading as="h3" marginBottom="spacingS">
+            200x600
+          </SectionHeading>
+
+          <AssetCard
+            actions={actions}
+            size="small"
+            src="https://via.placeholder.com/200x600"
+            title="Asset title"
+            type="image"
+          />
+        </Flex>
+
+        <Flex flexDirection="column" marginRight="spacingM">
+          <SectionHeading as="h3" marginBottom="spacingS">
+            800x200
+          </SectionHeading>
+
+          <AssetCard
+            size="small"
+            src="https://via.placeholder.com/800x200"
+            title="Asset title"
+            type="image"
+          />
+        </Flex>
+      </Flex>
+    </>
+  );
+};
