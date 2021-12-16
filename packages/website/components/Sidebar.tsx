@@ -27,6 +27,7 @@ const styles = {
     padding: 0,
     listStyle: 'none',
   }),
+  sectionTitle: css({ padding: `${tokens.spacingXs} ${tokens.spacingM}` }),
 };
 
 interface Props {
@@ -46,34 +47,85 @@ export function Sidebar({ currentPage = '/' }: Props) {
         className={styles.nav}
       >
         <List className={styles.list}>
-          <SectionTitle currentPage={currentPage} href="/getting-started">
+          <SidebarLink
+            isTitle
+            currentPage={currentPage}
+            href="/getting-started"
+          >
             Getting started
-          </SectionTitle>
-          <SectionTitle currentPage={currentPage} href="/contributing">
+          </SidebarLink>
+          <SidebarLink isTitle currentPage={currentPage} href="/contributing">
             Contributing to Forma 36
-          </SectionTitle>
-          <SectionTitle currentPage={currentPage} href="/migration-v3-to-v4">
+          </SidebarLink>
+          <SidebarLink
+            isTitle
+            currentPage={currentPage}
+            href="/migration-v3-to-v4"
+          >
             Migration Guide
-          </SectionTitle>
-          <SectionTitle>Guidelines</SectionTitle>
-          <SectionTitle>Tokens</SectionTitle>
-          <SectionTitle>Components</SectionTitle>
-          <SectionTitle>Utils</SectionTitle>
-          <SectionTitle>Integrations</SectionTitle>
+          </SidebarLink>
+
+          <SectionHeading className={styles.sectionTitle} marginBottom="none">
+            Guidelines
+          </SectionHeading>
+
+          <List className={styles.list}>
+            <SectionHeading className={styles.sectionTitle} marginBottom="none">
+              Tokens
+            </SectionHeading>
+            <SidebarLink currentPage={currentPage} href="/tokens/color-system">
+              Color
+            </SidebarLink>
+            <SidebarLink
+              currentPage={currentPage}
+              href="/tokens/shadows-and-glows"
+            >
+              Shadows and Glows
+            </SidebarLink>
+            <SidebarLink currentPage={currentPage} href="/tokens/spacing">
+              Spacing
+            </SidebarLink>
+
+            <SidebarLink currentPage={currentPage} href="/tokens/transitions">
+              Transitions
+            </SidebarLink>
+
+            <SidebarLink currentPage={currentPage} href="/tokens/typography">
+              Typography
+            </SidebarLink>
+
+            <SidebarLink currentPage={currentPage} href="/tokens/z-index">
+              Z-Index
+            </SidebarLink>
+          </List>
+
+          <SectionHeading className={styles.sectionTitle} marginBottom="none">
+            Components
+          </SectionHeading>
+
+          <SectionHeading className={styles.sectionTitle} marginBottom="none">
+            Utils
+          </SectionHeading>
+
+          <SectionHeading className={styles.sectionTitle} marginBottom="none">
+            Integrations
+          </SectionHeading>
         </List>
       </Flex>
     </Flex>
   );
 }
 
-const getSectionTitleStyles = (isActive = false) => {
+const getSectionTitleStyles = (isActive = false, isTitle = false) => {
   return {
     sidebarItem: css({
       padding: `${tokens.spacingXs} ${tokens.spacingM}`,
+      ...(!isTitle && { paddingLeft: tokens.spacingXl }),
     }),
     link: css({
       display: 'block',
       textDecoration: 'none',
+      color: isActive ? tokens.colorWhite : tokens.gray900,
       backgroundColor: isActive ? tokens.colorPrimary : 'transparent',
       transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       '&:hover': {
@@ -86,32 +138,34 @@ const getSectionTitleStyles = (isActive = false) => {
   };
 };
 
-interface SectionLinkProps {
+interface SidebarLinkProps {
   children: string;
-  href?: string;
+  href: string;
   currentPage?: string;
+  isTitle?: boolean;
 }
 
-function SectionTitle({ children, href, currentPage = '/' }: SectionLinkProps) {
+function SidebarLink({
+  children,
+  href,
+  currentPage = '/',
+  isTitle = false,
+}: SidebarLinkProps) {
   const isActive = currentPage.replace(/\/$/, '') === href;
-  const titleStyles = getSectionTitleStyles(isActive);
+  const titleStyles = getSectionTitleStyles(isActive, isTitle);
 
   return (
     <List.Item>
-      {!href && (
-        <SectionHeading marginBottom="none" className={titleStyles.sidebarItem}>
-          {children}
-        </SectionHeading>
-      )}
-
-      {href && (
-        <Link href={href} passHref>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <a className={cx([titleStyles.link, titleStyles.sidebarItem])}>
+      <Link href={href} passHref>
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+        <a className={cx([titleStyles.link, titleStyles.sidebarItem])}>
+          {isTitle ? (
             <SectionHeading marginBottom="none">{children}</SectionHeading>
-          </a>
-        </Link>
-      )}
+          ) : (
+            children
+          )}
+        </a>
+      </Link>
     </List.Item>
   );
 }
