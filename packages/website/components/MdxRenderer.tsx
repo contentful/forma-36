@@ -1,4 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
+import Image from 'next/image';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import * as f36Components from '@contentful/f36-components';
@@ -47,8 +49,11 @@ const components = {
   tr: (props) => <Table.Row {...props} />,
   th: (props) => <Table.Cell style={{ textAlign: 'left' }} {...props} />,
   td: (props) => <Table.Cell {...props} />,
+  // eslint-disable-next-line jsx-a11y/alt-text
+  img: (props) => <img style={{ width: '100%' }} {...props} />,
   ...f36Components,
   ...MdxComponents,
+  Image,
   Props,
   PropsHeading,
 };

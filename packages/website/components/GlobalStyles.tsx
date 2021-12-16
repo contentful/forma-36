@@ -63,10 +63,6 @@ export const GlobalStyles = () => {
           padding: 0;
         }
 
-        img {
-          width: 100%;
-        }
-
         /* OSANO STYLES BEGIN */
 
         .osano-cm-window {
