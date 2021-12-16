@@ -1,4 +1,18 @@
 {
+  "utils": [
+    {
+      "title": "Portal",
+      "slug": "/utils/portal/"
+    },
+    {
+      "title": "getStringMatch",
+      "slug": "/utils/get-string-match/"
+    },
+    {
+      "title": "useKeyboard",
+      "slug": "/utils/use-keyboard/"
+    }
+  ],
   "guidelines": [
     {
       "title": "Accessibility",

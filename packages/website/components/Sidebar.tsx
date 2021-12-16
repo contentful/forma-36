@@ -101,9 +101,20 @@ export function Sidebar({ currentPage = '/' }: Props) {
             Components
           </SectionHeading>
 
-          <SectionHeading className={styles.sectionTitle} marginBottom="none">
-            Utils
-          </SectionHeading>
+          <List className={styles.list}>
+            <SectionHeading className={styles.sectionTitle} marginBottom="none">
+              Utils
+            </SectionHeading>
+            {sidebarLinks.integrations.map((item) => (
+              <SidebarLink
+                key={item.slug}
+                currentPage={currentPage}
+                href={item.slug}
+              >
+                {item.title}
+              </SidebarLink>
+            ))}
+          </List>
 
           <List className={styles.list}>
             <SectionHeading className={styles.sectionTitle} marginBottom="none">
@@ -146,18 +157,6 @@ const getSectionTitleStyles = (isActive = false, isTitle = false) => {
     }),
   };
 };
-
-// function SidebarItem({ item, isActive }) {
-//   return (
-//     <SidebarLink
-//       key={item.slug}
-//       href={item.slug}
-//       isActive={isActive}
-//     >
-//       {item.title}
-//     </SidebarLink>
-//   )
-// }
 
 interface SidebarLinkProps {
   children: string;
