@@ -104,6 +104,13 @@ export interface AutocompleteProps<ItemType>
    * @default false
    */
   isLoading?: boolean;
+  /**
+   * Boolean to control whether or not to render the suggestions box in a React Portal.
+   * Rendering content inside a Portal allows the suggestions box to escape the bounds
+   * of its parent while still being positioned correctly.
+   * Defaults to `false`
+   */
+  usePortal?: boolean;
 }
 
 function _Autocomplete<ItemType>(
@@ -133,6 +140,7 @@ function _Autocomplete<ItemType>(
     listMaxHeight = 180,
     isGrouped = false,
     isLoading = false,
+    usePortal = false,
     testId = 'cf-autocomplete',
   } = props;
 
@@ -212,7 +220,7 @@ function _Autocomplete<ItemType>(
       ref={ref}
     >
       <Popover
-        usePortal={false}
+        usePortal={usePortal}
         isOpen={isOpen}
         isFullWidth={listWidth === 'full'}
         // This is necessary, otherwise the focus will change from the input to the Popover
