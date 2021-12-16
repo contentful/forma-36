@@ -1,14 +1,10 @@
 import React from 'react';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import {
-  TextInput,
-  Flex,
-  List,
-  SectionHeading,
-} from '@contentful/f36-components';
+import { TextInput, Flex, List } from '@contentful/f36-components';
 
 import { SidebarLink } from './SidebarLink';
+import { SidebarSection } from './SidebarSection';
 
 const sidebarLinks = require('../utils/sidebarLinks.json');
 
@@ -30,7 +26,6 @@ const styles = {
     padding: 0,
     listStyle: 'none',
   }),
-  sectionTitle: css({ padding: `${tokens.spacingXs} ${tokens.spacingM}` }),
 };
 
 const isLinkActive = (href, currentPage) =>
@@ -75,71 +70,35 @@ export function Sidebar({ currentPage = '/' }: Props) {
             Migration Guide
           </SidebarLink>
 
-          <List className={styles.list}>
-            <SectionHeading className={styles.sectionTitle} marginBottom="none">
-              Guidelines
-            </SectionHeading>
-            {sidebarLinks.guidelines.map((item) => (
-              <SidebarLink
-                key={item.slug}
-                isActive={isLinkActive(item.slug, currentPage)}
-                href={item.slug}
-              >
-                {item.title}
-              </SidebarLink>
-            ))}
-          </List>
+          <SidebarSection
+            title="Guidelines"
+            links={sidebarLinks.guidelines}
+            currentPage={currentPage}
+          />
 
-          <List className={styles.list}>
-            <SectionHeading className={styles.sectionTitle} marginBottom="none">
-              Tokens
-            </SectionHeading>
-            {sidebarLinks.tokens.map((item) => (
-              <SidebarLink
-                key={item.slug}
-                isActive={isLinkActive(item.slug, currentPage)}
-                href={item.slug}
-              >
-                {item.title}
-              </SidebarLink>
-            ))}
-          </List>
+          <SidebarSection
+            title="Tokens"
+            links={sidebarLinks.tokens}
+            currentPage={currentPage}
+          />
 
-          <List className={styles.list}>
-            <SectionHeading className={styles.sectionTitle} marginBottom="none">
-              Components
-            </SectionHeading>
-          </List>
+          <SidebarSection
+            title="Components"
+            links={[]}
+            currentPage={currentPage}
+          />
 
-          <List className={styles.list}>
-            <SectionHeading className={styles.sectionTitle} marginBottom="none">
-              Utils
-            </SectionHeading>
-            {sidebarLinks.integrations.map((item) => (
-              <SidebarLink
-                key={item.slug}
-                isActive={isLinkActive(item.slug, currentPage)}
-                href={item.slug}
-              >
-                {item.title}
-              </SidebarLink>
-            ))}
-          </List>
+          <SidebarSection
+            title="Utils"
+            links={sidebarLinks.utils}
+            currentPage={currentPage}
+          />
 
-          <List className={styles.list}>
-            <SectionHeading className={styles.sectionTitle} marginBottom="none">
-              Integrations
-            </SectionHeading>
-            {sidebarLinks.integrations.map((item) => (
-              <SidebarLink
-                key={item.slug}
-                isActive={isLinkActive(item.slug, currentPage)}
-                href={item.slug}
-              >
-                {item.title}
-              </SidebarLink>
-            ))}
-          </List>
+          <SidebarSection
+            title="Integrations"
+            links={sidebarLinks.integrations}
+            currentPage={currentPage}
+          />
         </List>
       </Flex>
     </Flex>
