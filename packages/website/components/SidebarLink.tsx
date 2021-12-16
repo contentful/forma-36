@@ -39,7 +39,6 @@ export function SidebarLink({
   isActive = false,
   isTitle = false,
 }: SidebarLinkProps) {
-  // const isActive = currentPage.replace(/\/$/, '') === href.replace(/\/$/, '');
   const titleStyles = getSectionTitleStyles(isActive, isTitle);
 
   return (
