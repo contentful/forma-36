@@ -1,24 +1,25 @@
 import React from 'react';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import {
-  Box,
+
+import * as f36Components from '@contentful/f36-components';
+
+import { MdxComponents } from '../mdx-components';
+import { ComponentSource } from './LiveEditor/ComponentSource';
+import { StaticSource } from './LiveEditor/StaticSource';
+
+const {
   DisplayText,
   Heading,
-  List,
-  Paragraph,
   Subheading,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
+  Paragraph,
   TextLink,
-} from '@contentful/f36-components';
-import { StaticSource } from './LiveEditor/StaticSource';
-import { ComponentSource } from './LiveEditor/ComponentSource';
-import { MdxComponents } from '../mdx-components';
+  List,
+  Box,
+  Table,
+} = f36Components;
 
 /* eslint-disable react/display-name */
+/* eslint-disable @next/next/no-img-element */
 const components = {
   h1: (props) => <DisplayText as="h1" {...props} />,
   h2: (props) => <Heading as="h2" marginTop="spacing2Xl" {...props} />,
@@ -41,13 +42,17 @@ const components = {
       <Table {...props} />
     </Box>
   ),
-  thead: (props) => <TableHead {...props} />,
-  tbody: (props) => <TableBody {...props} />,
-  tr: (props) => <TableRow {...props} />,
-  th: (props) => <TableCell style={{ textAlign: 'left' }} {...props} />,
-  td: (props) => <TableCell {...props} />,
+  thead: (props) => <Table.Head {...props} />,
+  tbody: (props) => <Table.Body {...props} />,
+  tr: (props) => <Table.Row {...props} />,
+  th: (props) => <Table.Cell style={{ textAlign: 'left' }} {...props} />,
+  td: (props) => <Table.Cell {...props} />,
+  // eslint-disable-next-line jsx-a11y/alt-text
+  img: (props) => <img style={{ width: '100%' }} {...props} />,
+  ...f36Components,
   ...MdxComponents,
 };
+/* eslint-enable @next/next/no-img-element */
 /* eslint-enable react/display-name */
 
 export function MdxRenderer(props: {

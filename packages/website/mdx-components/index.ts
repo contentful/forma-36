@@ -7,6 +7,8 @@ import { GlowTokensTable } from './GlowTokensTable';
 import { ShadowTokensTable } from './ShadowTokensTable';
 import { SpacingTokensTable } from './SpacingTokensTable';
 import { TransitionTokensTable } from './TransitionTokensTable';
+import { TypographyTokensTable } from './TypographyTokensTable';
+import { ZIndexTokensTable } from './ZIndexTokensTable';
 
 export const MdxComponents = {
   A11yColors,
@@ -18,4 +20,6 @@ export const MdxComponents = {
   ShadowTokensTable,
   SpacingTokensTable,
   TransitionTokensTable,
+  TypographyTokensTable,
+  ZIndexTokensTable,
 };
