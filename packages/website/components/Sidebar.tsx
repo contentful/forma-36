@@ -9,6 +9,8 @@ import {
   SectionHeading,
 } from '@contentful/f36-components';
 
+const sidebarLinks = require('../utils/sidebarLinks.json');
+
 const styles = {
   sidebar: css({
     height: '100%',
@@ -35,6 +37,7 @@ interface Props {
 }
 
 export function Sidebar({ currentPage = '/' }: Props) {
+  console.log(sidebarLinks);
   return (
     <Flex className={styles.sidebar} flexDirection="column">
       <div className={styles.search}>
@@ -73,30 +76,15 @@ export function Sidebar({ currentPage = '/' }: Props) {
             <SectionHeading className={styles.sectionTitle} marginBottom="none">
               Tokens
             </SectionHeading>
-            <SidebarLink currentPage={currentPage} href="/tokens/color-system">
-              Color
-            </SidebarLink>
-            <SidebarLink
-              currentPage={currentPage}
-              href="/tokens/shadows-and-glows"
-            >
-              Shadows and Glows
-            </SidebarLink>
-            <SidebarLink currentPage={currentPage} href="/tokens/spacing">
-              Spacing
-            </SidebarLink>
-
-            <SidebarLink currentPage={currentPage} href="/tokens/transitions">
-              Transitions
-            </SidebarLink>
-
-            <SidebarLink currentPage={currentPage} href="/tokens/typography">
-              Typography
-            </SidebarLink>
-
-            <SidebarLink currentPage={currentPage} href="/tokens/z-index">
-              Z-Index
-            </SidebarLink>
+            {sidebarLinks.tokens.map((token) => (
+              <SidebarLink
+                key={token.slug}
+                currentPage={currentPage}
+                href={token.slug}
+              >
+                {token.title}
+              </SidebarLink>
+            ))}
           </List>
 
           <SectionHeading className={styles.sectionTitle} marginBottom="none">
@@ -151,7 +139,7 @@ function SidebarLink({
   currentPage = '/',
   isTitle = false,
 }: SidebarLinkProps) {
-  const isActive = currentPage.replace(/\/$/, '') === href;
+  const isActive = currentPage.replace(/\/$/, '') === href.replace(/\/$/, '');
   const titleStyles = getSectionTitleStyles(isActive, isTitle);
 
   return (

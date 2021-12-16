@@ -1,0 +1,28 @@
+{
+  "tokens": [
+    {
+      "title": "Color system",
+      "slug": "/tokens/color-system/"
+    },
+    {
+      "title": "Shadows and Glows",
+      "slug": "/tokens/shadows-and-glows/"
+    },
+    {
+      "title": "Spacing",
+      "slug": "/tokens/spacing/"
+    },
+    {
+      "title": "Transitions",
+      "slug": "/tokens/transitions/"
+    },
+    {
+      "title": "Typography",
+      "slug": "/tokens/typography/"
+    },
+    {
+      "title": "Z-Index",
+      "slug": "/tokens/z-index/"
+    }
+  ]
+}
