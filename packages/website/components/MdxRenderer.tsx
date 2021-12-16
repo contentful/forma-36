@@ -1,10 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 import React from 'react';
-import Image from 'next/image';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import * as f36Components from '@contentful/f36-components';
-import { Props, PropsHeading } from '@contentful/f36-docs-utils';
 
 import { MdxComponents } from '../mdx-components';
 import { ComponentSource } from './LiveEditor/ComponentSource';
@@ -22,6 +19,7 @@ const {
 } = f36Components;
 
 /* eslint-disable react/display-name */
+/* eslint-disable @next/next/no-img-element */
 const components = {
   h1: (props) => <DisplayText as="h1" {...props} />,
   h2: (props) => <Heading as="h2" marginTop="spacing2Xl" {...props} />,
@@ -53,10 +51,8 @@ const components = {
   img: (props) => <img style={{ width: '100%' }} {...props} />,
   ...f36Components,
   ...MdxComponents,
-  Image,
-  Props,
-  PropsHeading,
 };
+/* eslint-enable @next/next/no-img-element */
 /* eslint-enable react/display-name */
 
 export function MdxRenderer(props: {
