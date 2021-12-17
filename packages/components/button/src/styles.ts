@@ -162,6 +162,9 @@ export const getStyles = () => ({
       opacity: isDisabled ? 0.5 : 1,
       display: isFullWidth ? 'flex' : 'inline-flex',
       minWidth: isFullWidth ? '100%' : 'auto',
+      maxWidth: isFullWidth ? '100%' : '240px',
+      overflow: 'hidden',
+      flexShrink: 0,
       justifyContent: 'center',
       alignItems: 'center',
       fontWeight: tokens.fontWeightMedium,
@@ -183,5 +186,10 @@ export const getStyles = () => ({
   dropdownIcon: css({
     marginLeft: tokens.spacingXs,
     fill: 'currentColor',
+  }),
+  buttonContent: css({
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
   }),
 });
