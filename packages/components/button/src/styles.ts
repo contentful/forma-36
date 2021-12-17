@@ -162,7 +162,7 @@ export const getStyles = () => ({
       opacity: isDisabled ? 0.5 : 1,
       display: isFullWidth ? 'flex' : 'inline-flex',
       minWidth: isFullWidth ? '100%' : 'auto',
-      maxWidth: isFullWidth ? '100%' : '240px',
+      maxWidth: isFullWidth ? '100%' : '250px',
       overflow: 'hidden',
       justifyContent: 'center',
       alignItems: 'center',
