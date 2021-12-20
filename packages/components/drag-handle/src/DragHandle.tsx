@@ -6,7 +6,7 @@ import React, {
   MouseEventHandler,
 } from 'react';
 import { cx } from 'emotion';
-import type { PropsWithHTMLDivElement } from '@contentful/f36-core';
+import type { PropsWithHTMLElement } from '@contentful/f36-core';
 import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 import { DragIcon } from '@contentful/f36-icons';
 import { getStyles } from './DragHandle.styles';
@@ -32,7 +32,7 @@ export type DragHandleInternalProps = CommonProps & {
   label: string;
 };
 
-export type DragHandleProps = PropsWithHTMLDivElement<
+export type DragHandleProps = PropsWithHTMLElement<
   DragHandleInternalProps,
   'div'
 >;
@@ -107,6 +107,8 @@ export const DragHandle = forwardRef<
     );
 
     return (
+      // We had to change it to div becouse of the issue in library used by field editors
+      // https://github.com/clauderic/react-sortable-hoc/blob/d94ba3cc67cfc7d6d460b585e7723bdb50015e53/src/SortableContainer/defaultShouldCancelStart.js
       <div
         role="button"
         tabIndex={0}
