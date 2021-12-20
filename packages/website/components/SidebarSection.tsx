@@ -9,6 +9,7 @@ const styles = {
   list: css({
     padding: 0,
     listStyle: 'none',
+    marginBottom: tokens.spacingL,
   }),
   sectionTitle: css({ padding: `${tokens.spacingXs} ${tokens.spacingM}` }),
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { TextInput, Flex, List } from '@contentful/f36-components';
+import { TextInput, Flex, List, Box } from '@contentful/f36-components';
 
 import { SidebarLink } from './SidebarLink';
 import { SidebarSection } from './SidebarSection';
@@ -49,27 +49,24 @@ export function Sidebar({ currentPage = '/' }: Props) {
       >
         <List className={styles.list}>
           <SidebarLink
-            isTitle
             isActive={isLinkActive('/getting-started', currentPage)}
             href="/getting-started"
           >
             Getting started
           </SidebarLink>
           <SidebarLink
-            isTitle
             isActive={isLinkActive('/contributing', currentPage)}
             href="/contributing"
           >
             Contributing to Forma 36
           </SidebarLink>
           <SidebarLink
-            isTitle
             isActive={isLinkActive('/migration-v3-to-v4', currentPage)}
             href="/migration-v3-to-v4"
           >
             Migration Guide
           </SidebarLink>
-
+          <Box marginBottom="spacingL" />
           <SidebarSection
             title="Guidelines"
             links={sidebarLinks.guidelines}
@@ -79,6 +76,24 @@ export function Sidebar({ currentPage = '/' }: Props) {
           <SidebarSection
             title="Tokens"
             links={sidebarLinks.tokens}
+            currentPage={currentPage}
+          />
+
+          <SidebarSection
+            title="Layout Components"
+            links={sidebarLinks.layoutComponents}
+            currentPage={currentPage}
+          />
+
+          <SidebarSection
+            title="Typography Components"
+            links={sidebarLinks.typographyComponents}
+            currentPage={currentPage}
+          />
+
+          <SidebarSection
+            title="Form Components"
+            links={sidebarLinks.formComponents}
             currentPage={currentPage}
           />
 

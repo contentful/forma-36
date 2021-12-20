@@ -2,7 +2,7 @@ import React from 'react';
 import { css, cx } from 'emotion';
 import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
-import { List, SectionHeading } from '@contentful/f36-components';
+import { List } from '@contentful/f36-components';
 
 const getSectionTitleStyles = (isActive = false, isTitle = false) => {
   return {
@@ -46,11 +46,7 @@ export function SidebarLink({
       <Link href={href} passHref>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a className={cx([titleStyles.link, titleStyles.sidebarItem])}>
-          {isTitle ? (
-            <SectionHeading marginBottom="none">{children}</SectionHeading>
-          ) : (
-            children
-          )}
+          {children}
         </a>
       </Link>
     </List.Item>

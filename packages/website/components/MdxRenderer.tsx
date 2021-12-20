@@ -29,7 +29,11 @@ const components = {
   h6: (props) => <Subheading as="h6" {...props} />,
   p: (props) => <Paragraph {...props} />,
   a: (props) => <TextLink {...props} />,
-  ul: (props) => <List {...props} />,
+  ul: (props) => (
+    <Box marginBottom="spacingL">
+      <List {...props} />
+    </Box>
+  ),
   li: (props) => <List.Item {...props} />,
   code: (props) => {
     if (props.static) {
