@@ -9,10 +9,6 @@
       "slug": "/components/asset/"
     },
     {
-      "title": "AssetCard",
-      "slug": "/components/asset-card/"
-    },
-    {
       "title": "Autocomplete",
       "slug": "/components/autocomplete/"
     },
@@ -21,24 +17,8 @@
       "slug": "/components/badge/"
     },
     {
-      "title": "Button",
-      "slug": "/components/button/"
-    },
-    {
-      "title": "ButtonGroup",
-      "slug": "/components/button-group/"
-    },
-    {
-      "title": "Card",
-      "slug": "/components/card/"
-    },
-    {
       "title": "Collapse",
       "slug": "/animations/collapse/"
-    },
-    {
-      "title": "CopyButton",
-      "slug": "/components/copy-button/"
     },
     {
       "title": "DragHandle",
@@ -53,24 +33,12 @@
       "slug": "/components/entity-status-badge/"
     },
     {
-      "title": "EntryCard",
-      "slug": "/components/entry-card/"
-    },
-    {
       "title": "GlobalStyles",
       "slug": "/components/globalstyles/"
     },
     {
-      "title": "IconButton",
-      "slug": "/components/icon-button/"
-    },
-    {
       "title": "Icons",
       "slug": "/components/icon/"
-    },
-    {
-      "title": "InlineEntryCard",
-      "slug": "/components/inline-entry-card/"
     },
     {
       "title": "List",
@@ -79,18 +47,6 @@
     {
       "title": "Menu",
       "slug": "/components/menu/"
-    },
-    {
-      "title": "Modal",
-      "slug": "/components/modal/"
-    },
-    {
-      "title": "ModalConfirm",
-      "slug": "/components/modal-confirm/"
-    },
-    {
-      "title": "ModalLauncher",
-      "slug": "/components/modal-launcher/"
     },
     {
       "title": "Note",
@@ -109,30 +65,6 @@
       "slug": "/components/popover/"
     },
     {
-      "title": "ScreenReaderOnly",
-      "slug": "/components/screen-reader-only/"
-    },
-    {
-      "title": "SkeletonBodyText",
-      "slug": "/components/skeleton/skeleton-body-text/"
-    },
-    {
-      "title": "SkeletonContainer",
-      "slug": "/components/skeleton/skeleton-container/"
-    },
-    {
-      "title": "SkeletonDisplayText",
-      "slug": "/components/skeleton/skeleton-display-text/"
-    },
-    {
-      "title": "SkeletonImage",
-      "slug": "/components/skeleton/skeleton-image/"
-    },
-    {
-      "title": "SkeletonRow",
-      "slug": "/components/skeleton/skeleton-row/"
-    },
-    {
       "title": "Spinner",
       "slug": "/components/spinner/"
     },
@@ -149,16 +81,30 @@
       "slug": "/components/text-link/"
     },
     {
-      "title": "ToggleButton",
-      "slug": "/components/toggle-button/"
-    },
-    {
       "title": "Tooltip",
       "slug": "/components/tooltip/"
+    }
+  ],
+  "buttonComponents": [
+    {
+      "title": "Button",
+      "slug": "/components/button/"
     },
     {
-      "title": "Workbench",
-      "slug": "/components/workbench/"
+      "title": "ButtonGroup",
+      "slug": "/components/button-group/"
+    },
+    {
+      "title": "CopyButton",
+      "slug": "/components/copy-button/"
+    },
+    {
+      "title": "IconButton",
+      "slug": "/components/icon-button/"
+    },
+    {
+      "title": "ToggleButton",
+      "slug": "/components/toggle-button/"
     }
   ],
   "dateComponents": [
@@ -173,6 +119,26 @@
     {
       "title": "RelativeDateTime",
       "slug": "/components/relative-datetime/"
+    }
+  ],
+  "advancedComponents": [
+    {
+      "title": "Workbench",
+      "slug": "/components/workbench/"
+    }
+  ],
+  "modalComponents": [
+    {
+      "title": "Modal",
+      "slug": "/components/modal/"
+    },
+    {
+      "title": "ModalConfirm",
+      "slug": "/components/modal-confirm/"
+    },
+    {
+      "title": "ModalLauncher",
+      "slug": "/components/modal-launcher/"
     }
   ],
   "typographyComponents": [
@@ -199,6 +165,24 @@
     {
       "title": "Text",
       "slug": "/components/text/"
+    }
+  ],
+  "cardComponents": [
+    {
+      "title": "AssetCard",
+      "slug": "/components/asset-card/"
+    },
+    {
+      "title": "Card",
+      "slug": "/components/card/"
+    },
+    {
+      "title": "EntryCard",
+      "slug": "/components/entry-card/"
+    },
+    {
+      "title": "InlineEntryCard",
+      "slug": "/components/inline-entry-card/"
     }
   ],
   "formComponents": [
@@ -235,10 +219,36 @@
       "slug": "/components/textarea/"
     }
   ],
+  "skeletonComponents": [
+    {
+      "title": "SkeletonBodyText",
+      "slug": "/components/skeleton/skeleton-body-text/"
+    },
+    {
+      "title": "SkeletonContainer",
+      "slug": "/components/skeleton/skeleton-container/"
+    },
+    {
+      "title": "SkeletonDisplayText",
+      "slug": "/components/skeleton/skeleton-display-text/"
+    },
+    {
+      "title": "SkeletonImage",
+      "slug": "/components/skeleton/skeleton-image/"
+    },
+    {
+      "title": "SkeletonRow",
+      "slug": "/components/skeleton/skeleton-row/"
+    }
+  ],
   "utils": [
     {
       "title": "Portal",
       "slug": "/utils/portal/"
+    },
+    {
+      "title": "ScreenReaderOnly",
+      "slug": "/components/screen-reader-only/"
     },
     {
       "title": "getStringMatch",
