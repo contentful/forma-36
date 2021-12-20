@@ -19,7 +19,12 @@ const styles = {
   }),
 };
 
-export function Layout({ children }) {
+interface Props {
+  children: React.ReactNode;
+  currentPage: string;
+}
+
+export function Layout({ children, currentPage }: Props) {
   return (
     <Grid
       className={styles.grid}
@@ -32,7 +37,7 @@ export function Layout({ children }) {
       </Grid.Item>
 
       <Grid.Item area="sidemenu" className={styles.gridItem}>
-        <Sidebar />
+        <Sidebar currentPage={currentPage} />
       </Grid.Item>
 
       <Grid.Item area="content" as="main" className={styles.gridItem}>

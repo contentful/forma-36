@@ -6,7 +6,7 @@ import {
   Badge,
   TextLink,
   Stack,
-  Heading,
+  Subheading,
 } from '@contentful/f36-components';
 
 import storybookIcon from '../resources/icons/storybook.svg';
@@ -125,9 +125,9 @@ function PageHeader(props: {
 function PageFooter(props: { github?: string }) {
   return (
     <>
-      <Heading as="h3" id="help-improve-this-page" marginTop="spacing2Xl">
+      <Subheading as="h3" id="help-improve-this-page" marginTop="spacing2Xl">
         Help improve this page
-      </Heading>
+      </Subheading>
       <Stack>
         {props.github && (
           <TextLink

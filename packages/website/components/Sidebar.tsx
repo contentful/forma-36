@@ -1,42 +1,121 @@
 import React from 'react';
 import { css } from 'emotion';
-import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
-import { TextInput } from '@contentful/f36-components';
+import { TextInput, Flex, List, Box } from '@contentful/f36-components';
+
+import { SidebarLink } from './SidebarLink';
+import { SidebarSection } from './SidebarSection';
+
+const sidebarLinks = require('../utils/sidebarLinks.json');
 
 const styles = {
-  sidemenu: css`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-height: calc(100vh - 70px);
-    border-right: 1px solid ${tokens.gray300};
-  `,
-
-  search: css`
-    padding: ${tokens.spacingS};
-  `,
-  navList: css`
-    display: flex;
-    flex-direction: column;
-    border-top: 1px solid ${tokens.gray300};
-    padding: ${tokens.spacingM} 0;
-    overflow-y: auto;
-    color: ${tokens.gray700};
-  `,
+  sidebar: css({
+    height: '100%',
+    borderRight: `1px solid ${tokens.gray300}`,
+  }),
+  search: css({
+    padding: tokens.spacingS,
+  }),
+  nav: css({
+    borderTop: `1px solid ${tokens.gray300}`,
+    padding: `${tokens.spacingM} 0`,
+    overflowY: 'auto',
+    color: tokens.gray700,
+  }),
+  list: css({
+    padding: 0,
+    listStyle: 'none',
+  }),
 };
 
-export const Sidebar = () => {
+const isLinkActive = (href, currentPage) =>
+  currentPage.replace(/\/$/, '') === href.replace(/\/$/, '');
+
+interface Props {
+  currentPage?: string;
+}
+
+export function Sidebar({ currentPage = '/' }: Props) {
   return (
-    <div className={styles.sidemenu}>
+    <Flex className={styles.sidebar} flexDirection="column">
       <div className={styles.search}>
         <TextInput />
       </div>
-      <nav className={styles.navList} aria-label="Main Navigation">
-        <Link href="/getting-started">Getting started</Link>
-        <Link href="/contributing">Contributing to Forma 36</Link>
-        <Link href="/migration-v3-to-v4">Migration Guide</Link>
-      </nav>
-    </div>
+      <Flex
+        as="nav"
+        aria-label="Main Navigation"
+        flexDirection="column"
+        className={styles.nav}
+      >
+        <List className={styles.list}>
+          <SidebarLink
+            isActive={isLinkActive('/getting-started', currentPage)}
+            href="/getting-started"
+          >
+            Getting started
+          </SidebarLink>
+          <SidebarLink
+            isActive={isLinkActive('/contributing', currentPage)}
+            href="/contributing"
+          >
+            Contributing to Forma 36
+          </SidebarLink>
+          <SidebarLink
+            isActive={isLinkActive('/migration-v3-to-v4', currentPage)}
+            href="/migration-v3-to-v4"
+          >
+            Migration Guide
+          </SidebarLink>
+          <Box marginBottom="spacingL" />
+          <SidebarSection
+            title="Guidelines"
+            links={sidebarLinks.guidelines}
+            currentPage={currentPage}
+          />
+
+          <SidebarSection
+            title="Tokens"
+            links={sidebarLinks.tokens}
+            currentPage={currentPage}
+          />
+
+          <SidebarSection
+            title="Layout Components"
+            links={sidebarLinks.layoutComponents}
+            currentPage={currentPage}
+          />
+
+          <SidebarSection
+            title="Typography Components"
+            links={sidebarLinks.typographyComponents}
+            currentPage={currentPage}
+          />
+
+          <SidebarSection
+            title="Form Components"
+            links={sidebarLinks.formComponents}
+            currentPage={currentPage}
+          />
+
+          <SidebarSection
+            title="Components"
+            links={[]}
+            currentPage={currentPage}
+          />
+
+          <SidebarSection
+            title="Utils"
+            links={sidebarLinks.utils}
+            currentPage={currentPage}
+          />
+
+          <SidebarSection
+            title="Integrations"
+            links={sidebarLinks.integrations}
+            currentPage={currentPage}
+          />
+        </List>
+      </Flex>
+    </Flex>
   );
-};
+}

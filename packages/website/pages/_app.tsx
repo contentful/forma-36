@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <Layout>
+      <Layout currentPage={pageProps.frontMatter?.slug}>
         <Component {...pageProps} />
       </Layout>
     </>

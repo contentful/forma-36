@@ -1,0 +1,148 @@
+{
+  "typographyComponents": [
+    {
+      "title": "DisplayText",
+      "slug": "/components/display-text/"
+    },
+    {
+      "title": "Heading",
+      "slug": "/components/heading/"
+    },
+    {
+      "title": "Paragraph",
+      "slug": "/components/paragraph/"
+    },
+    {
+      "title": "SectionHeading",
+      "slug": "/components/section-heading/"
+    },
+    {
+      "title": "Subheading",
+      "slug": "/components/subheading/"
+    },
+    {
+      "title": "Text",
+      "slug": "/components/text/"
+    }
+  ],
+  "formComponents": [
+    {
+      "title": "Checkbox",
+      "slug": "/components/checkbox/"
+    },
+    {
+      "title": "Form",
+      "slug": "/components/form/"
+    },
+    {
+      "title": "FormControl",
+      "slug": "/components/form-control/"
+    },
+    {
+      "title": "Radio",
+      "slug": "/components/radio/"
+    },
+    {
+      "title": "Select",
+      "slug": "/components/select/"
+    },
+    {
+      "title": "Switch",
+      "slug": "/components/switch/"
+    },
+    {
+      "title": "TextInput",
+      "slug": "/components/text-input/"
+    },
+    {
+      "title": "Textarea",
+      "slug": "/components/textarea/"
+    }
+  ],
+  "utils": [
+    {
+      "title": "Portal",
+      "slug": "/utils/portal/"
+    },
+    {
+      "title": "getStringMatch",
+      "slug": "/utils/get-string-match/"
+    },
+    {
+      "title": "useKeyboard",
+      "slug": "/utils/use-keyboard/"
+    }
+  ],
+  "layoutComponents": [
+    {
+      "title": "Box",
+      "slug": "/components/box/"
+    },
+    {
+      "title": "Flex",
+      "slug": "/components/flex/"
+    },
+    {
+      "title": "Grid",
+      "slug": "/components/grid/"
+    },
+    {
+      "title": "Stack",
+      "slug": "/components/stack/"
+    }
+  ],
+  "guidelines": [
+    {
+      "title": "Accessibility",
+      "slug": "/guidelines/accessibility/"
+    },
+    {
+      "title": "Keyboard Shortcuts",
+      "slug": "/guidelines/keyboard-shortcuts/"
+    },
+    {
+      "title": "Grammar and rules",
+      "slug": "/guidelines/copy/grammar-and-rules/"
+    },
+    {
+      "title": "UX Writing Principles",
+      "slug": "/guidelines/copy/ux-writing-principles/"
+    }
+  ],
+  "integrations": [
+    {
+      "title": "Formik",
+      "slug": "/integrations/formik/"
+    },
+    {
+      "title": "React Hook Form",
+      "slug": "/integrations/react-hook-form/"
+    }
+  ],
+  "tokens": [
+    {
+      "title": "Color system",
+      "slug": "/tokens/color-system/"
+    },
+    {
+      "title": "Shadows and Glows",
+      "slug": "/tokens/shadows-and-glows/"
+    },
+    {
+      "title": "Spacing",
+      "slug": "/tokens/spacing/"
+    },
+    {
+      "title": "Transitions",
+      "slug": "/tokens/transitions/"
+    },
+    {
+      "title": "Typography",
+      "slug": "/tokens/typography/"
+    },
+    {
+      "title": "Z-Index",
+      "slug": "/tokens/z-index/"
+    }
+  ]
+}

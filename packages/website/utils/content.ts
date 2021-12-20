@@ -70,6 +70,7 @@ const allMdxSources = [
 async function getMdxSourceBySlug(slug: string[]) {
   const mdxFiles = await getAllMdx(allMdxSources);
   const joinedSlug = slug.join('/');
+
   return mdxFiles.find(
     (item) =>
       item.frontMatter.data.slug === `/${joinedSlug}/` ||
@@ -79,6 +80,21 @@ async function getMdxSourceBySlug(slug: string[]) {
 
 async function getMdxPaths() {
   const pages = await getAllMdx(allMdxSources);
+
+  // creates a json with a list of links grouped into sections
+  const sidebarLinks = pages.reduce((acc, page) => {
+    const { title, slug, section } = page.frontMatter.data;
+    if (!section) return acc;
+
+    if (acc[section]) {
+      return { ...acc, [section]: [...acc[section], { title, slug }] };
+    }
+
+    return { ...acc, [section]: [{ title, slug }] };
+  }, {});
+
+  const data = JSON.stringify(sidebarLinks, null, 2);
+  fs.writeFileSync('utils/sidebarLinks.json', data);
 
   const paths = pages.map((page) => {
     const slug = page.frontMatter.data.slug;

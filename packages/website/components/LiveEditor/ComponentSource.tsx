@@ -44,7 +44,7 @@ export function ComponentSource({ children }: { children: string }) {
   };
 
   return (
-    <Flex flexDirection="column" marginBottom="spacingM">
+    <Flex flexDirection="column" marginTop="spacingS" marginBottom="spacingM">
       <LiveProvider
         code={children.trim()}
         theme={theme}
