@@ -9,7 +9,7 @@
     "@contentful/forma-36-react-components": "^3.75.0",
     "@contentful/forma-36-tokens": "^0.11.0",
     "@emotion/core": "^10.0.16",
-    "@emotion/styled": "^10.0.15",
+    "@emotion/styled": "^11.6.0",
     "@mdx-js/mdx": "^1.6.18",
     "@mdx-js/react": "^1.6.18",
     "@svgr/webpack": "^4.3.2",
