@@ -24,6 +24,15 @@ interface Props {
   currentPage: string;
 }
 
+function Main({ children }: Props) {
+  return (
+    <Grid.Item area="content" as="main" className={styles.gridItem}>
+      {children}
+      <Footer />
+    </Grid.Item>
+  );
+}
+
 export function Layout({ children, currentPage }: Props) {
   return (
     <Grid
@@ -40,10 +49,10 @@ export function Layout({ children, currentPage }: Props) {
         <Sidebar currentPage={currentPage} />
       </Grid.Item>
 
-      <Grid.Item area="content" as="main" className={styles.gridItem}>
+      {/* Unique key for each page, so scroll position is not preserved when opening a new page */}
+      <Main key={currentPage} currentPage={currentPage}>
         {children}
-        <Footer />
-      </Grid.Item>
+      </Main>
     </Grid>
   );
 }

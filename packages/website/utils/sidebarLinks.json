@@ -1,4 +1,146 @@
 {
+  "unassigned": [
+    {
+      "title": "Accordion",
+      "slug": "/components/accordion/"
+    },
+    {
+      "title": "Asset",
+      "slug": "/components/asset/"
+    },
+    {
+      "title": "Autocomplete",
+      "slug": "/components/autocomplete/"
+    },
+    {
+      "title": "Badge",
+      "slug": "/components/badge/"
+    },
+    {
+      "title": "Collapse",
+      "slug": "/animations/collapse/"
+    },
+    {
+      "title": "DragHandle",
+      "slug": "/components/drag-handle/"
+    },
+    {
+      "title": "EntityList",
+      "slug": "/components/entity-list/"
+    },
+    {
+      "title": "EntityStatusBadge",
+      "slug": "/components/entity-status-badge/"
+    },
+    {
+      "title": "GlobalStyles",
+      "slug": "/components/globalstyles/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "List",
+      "slug": "/components/list/"
+    },
+    {
+      "title": "Menu",
+      "slug": "/components/menu/"
+    },
+    {
+      "title": "Note",
+      "slug": "/components/note/"
+    },
+    {
+      "title": "Notification",
+      "slug": "/components/notification/"
+    },
+    {
+      "title": "Pill",
+      "slug": "/components/pill/"
+    },
+    {
+      "title": "Popover",
+      "slug": "/components/popover/"
+    },
+    {
+      "title": "Spinner",
+      "slug": "/components/spinner/"
+    },
+    {
+      "title": "Table",
+      "slug": "/components/table/"
+    },
+    {
+      "title": "Tabs",
+      "slug": "/components/tabs/"
+    },
+    {
+      "title": "TextLink",
+      "slug": "/components/text-link/"
+    },
+    {
+      "title": "Tooltip",
+      "slug": "/components/tooltip/"
+    }
+  ],
+  "buttonComponents": [
+    {
+      "title": "Button",
+      "slug": "/components/button/"
+    },
+    {
+      "title": "ButtonGroup",
+      "slug": "/components/button-group/"
+    },
+    {
+      "title": "CopyButton",
+      "slug": "/components/copy-button/"
+    },
+    {
+      "title": "IconButton",
+      "slug": "/components/icon-button/"
+    },
+    {
+      "title": "ToggleButton",
+      "slug": "/components/toggle-button/"
+    }
+  ],
+  "dateComponents": [
+    {
+      "title": "Date utilities",
+      "slug": "/components/datetime-functions/"
+    },
+    {
+      "title": "DateTime",
+      "slug": "/components/datetime/"
+    },
+    {
+      "title": "RelativeDateTime",
+      "slug": "/components/relative-datetime/"
+    }
+  ],
+  "advancedComponents": [
+    {
+      "title": "Workbench",
+      "slug": "/components/workbench/"
+    }
+  ],
+  "modalComponents": [
+    {
+      "title": "Modal",
+      "slug": "/components/modal/"
+    },
+    {
+      "title": "ModalConfirm",
+      "slug": "/components/modal-confirm/"
+    },
+    {
+      "title": "ModalLauncher",
+      "slug": "/components/modal-launcher/"
+    }
+  ],
   "typographyComponents": [
     {
       "title": "DisplayText",
@@ -23,6 +165,24 @@
     {
       "title": "Text",
       "slug": "/components/text/"
+    }
+  ],
+  "cardComponents": [
+    {
+      "title": "AssetCard",
+      "slug": "/components/asset-card/"
+    },
+    {
+      "title": "Card",
+      "slug": "/components/card/"
+    },
+    {
+      "title": "EntryCard",
+      "slug": "/components/entry-card/"
+    },
+    {
+      "title": "InlineEntryCard",
+      "slug": "/components/inline-entry-card/"
     }
   ],
   "formComponents": [
@@ -59,10 +219,36 @@
       "slug": "/components/textarea/"
     }
   ],
+  "skeletonComponents": [
+    {
+      "title": "SkeletonBodyText",
+      "slug": "/components/skeleton/skeleton-body-text/"
+    },
+    {
+      "title": "SkeletonContainer",
+      "slug": "/components/skeleton/skeleton-container/"
+    },
+    {
+      "title": "SkeletonDisplayText",
+      "slug": "/components/skeleton/skeleton-display-text/"
+    },
+    {
+      "title": "SkeletonImage",
+      "slug": "/components/skeleton/skeleton-image/"
+    },
+    {
+      "title": "SkeletonRow",
+      "slug": "/components/skeleton/skeleton-row/"
+    }
+  ],
   "utils": [
     {
       "title": "Portal",
       "slug": "/utils/portal/"
+    },
+    {
+      "title": "ScreenReaderOnly",
+      "slug": "/components/screen-reader-only/"
     },
     {
       "title": "getStringMatch",
@@ -91,18 +277,32 @@
       "slug": "/components/stack/"
     }
   ],
+  "intro": [
+    {
+      "title": "Contributing to Forma 36",
+      "slug": "/contributing"
+    },
+    {
+      "title": "Getting started",
+      "slug": "/getting-started"
+    },
+    {
+      "title": "Migrating Forma 36 components to version 4",
+      "slug": "/migration-v3-to-v4/"
+    }
+  ],
   "guidelines": [
     {
       "title": "Accessibility",
       "slug": "/guidelines/accessibility/"
     },
     {
-      "title": "Keyboard Shortcuts",
-      "slug": "/guidelines/keyboard-shortcuts/"
-    },
-    {
       "title": "Grammar and rules",
       "slug": "/guidelines/copy/grammar-and-rules/"
+    },
+    {
+      "title": "Keyboard Shortcuts",
+      "slug": "/guidelines/keyboard-shortcuts/"
     },
     {
       "title": "UX Writing Principles",

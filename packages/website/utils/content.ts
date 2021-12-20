@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import sortBy from 'lodash.sortby';
 
 function getDataByFilepath(filepath: string) {
   const fileContents = fs.readFileSync(filepath, 'utf8');
@@ -84,13 +85,31 @@ async function getMdxPaths() {
   // creates a json with a list of links grouped into sections
   const sidebarLinks = pages.reduce((acc, page) => {
     const { title, slug, section } = page.frontMatter.data;
-    if (!section) return acc;
-
-    if (acc[section]) {
-      return { ...acc, [section]: [...acc[section], { title, slug }] };
+    if (!section) {
+      const unassigned = sortBy(
+        [...(acc['unassigned'] || []), { title, slug }],
+        [
+          (o) => {
+            return o.title;
+          },
+        ],
+      );
+      return {
+        ...acc,
+        unassigned,
+      };
     }
 
-    return { ...acc, [section]: [{ title, slug }] };
+    const sectionContent = sortBy(
+      [...(acc[section] || []), { title, slug }],
+      [
+        (o) => {
+          return o.title;
+        },
+      ],
+    );
+
+    return { ...acc, [section]: sectionContent };
   }, {});
 
   const data = JSON.stringify(sidebarLinks, null, 2);

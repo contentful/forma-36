@@ -4,7 +4,11 @@ import tokens from '@contentful/f36-tokens';
 import { TextInput, Flex, List, Box } from '@contentful/f36-components';
 
 import { SidebarLink } from './SidebarLink';
-import { SidebarSection } from './SidebarSection';
+import {
+  SidebarSection,
+  SidebarSectionType,
+  SidebarLinkType,
+} from './SidebarSection';
 
 const sidebarLinks = require('../utils/sidebarLinks.json');
 
@@ -34,6 +38,50 @@ const isLinkActive = (href, currentPage) =>
 interface Props {
   currentPage?: string;
 }
+
+const components: Array<SidebarSectionType | SidebarLinkType> = [
+  {
+    type: 'section',
+    links: sidebarLinks.layoutComponents,
+    title: 'Layout Components',
+  },
+  {
+    type: 'section',
+    links: sidebarLinks.typographyComponents,
+    title: 'Typography Components',
+  },
+  {
+    type: 'section',
+    links: sidebarLinks.buttonComponents,
+    title: 'Button Components',
+  },
+  {
+    type: 'section',
+    links: sidebarLinks.formComponents,
+    title: 'Form Components',
+  },
+  {
+    type: 'section',
+    links: sidebarLinks.dateComponents,
+    title: 'Date Components',
+  },
+  {
+    type: 'section',
+    links: sidebarLinks.modalComponents,
+    title: 'Modal Components',
+  },
+  {
+    type: 'section',
+    links: sidebarLinks.cardComponents,
+    title: 'Card Components',
+  },
+  {
+    type: 'section',
+    links: sidebarLinks.skeletonComponents,
+    title: 'Skeleton Components',
+  },
+  ...sidebarLinks.unassigned,
+];
 
 export function Sidebar({ currentPage = '/' }: Props) {
   return (
@@ -72,43 +120,26 @@ export function Sidebar({ currentPage = '/' }: Props) {
             links={sidebarLinks.guidelines}
             currentPage={currentPage}
           />
-
           <SidebarSection
             title="Tokens"
             links={sidebarLinks.tokens}
             currentPage={currentPage}
           />
-
-          <SidebarSection
-            title="Layout Components"
-            links={sidebarLinks.layoutComponents}
-            currentPage={currentPage}
-          />
-
-          <SidebarSection
-            title="Typography Components"
-            links={sidebarLinks.typographyComponents}
-            currentPage={currentPage}
-          />
-
-          <SidebarSection
-            title="Form Components"
-            links={sidebarLinks.formComponents}
-            currentPage={currentPage}
-          />
-
           <SidebarSection
             title="Components"
-            links={[]}
+            links={components}
             currentPage={currentPage}
           />
-
+          <SidebarSection
+            title="Advanced components"
+            links={sidebarLinks.advancedComponents || []}
+            currentPage={currentPage}
+          />
           <SidebarSection
             title="Utils"
             links={sidebarLinks.utils}
             currentPage={currentPage}
           />
-
           <SidebarSection
             title="Integrations"
             links={sidebarLinks.integrations}
