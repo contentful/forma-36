@@ -30,6 +30,10 @@ export type DragHandleInternalProps = CommonProps & {
    * is for screen readers only
    */
   label: string;
+  /**
+   * Set type button for div element
+   */
+  type?: string;
 };
 
 export type DragHandleProps = PropsWithHTMLElement<
