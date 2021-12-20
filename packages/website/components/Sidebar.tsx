@@ -98,8 +98,14 @@ export function Sidebar({ currentPage = '/' }: Props) {
           />
 
           <SidebarSection
+            title="Date Components"
+            links={sidebarLinks.dateComponents}
+            currentPage={currentPage}
+          />
+
+          <SidebarSection
             title="Components"
-            links={[]}
+            links={sidebarLinks.unassigned || []}
             currentPage={currentPage}
           />
 
