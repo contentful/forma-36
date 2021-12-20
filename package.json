@@ -27,7 +27,7 @@
     "tsc": "tsc --noEmit",
     "tsc:watch": "tsc --noEmit --watch",
     "docs:next": "lerna run --scope @contentful/f36-website start --stream",
-    "docs:next:build":  "lerna run --scope @contentful/f36-website build:prod --stream",
+    "docs:next:build": "lerna run --scope @contentful/f36-website build:prod --stream",
     "docs:gatsby": "lerna run --scope f36-website start --stream",
     "release-v4-beta-as-latest": "yarn build && yarn lerna publish --exact --no-private --canary --no-git-tag-version --no-push --dist-tag latest --preid beta --force-publish --no-changelog"
   },
@@ -68,8 +68,6 @@
     "@storybook/addon-storysource": "^6.3.12",
     "@storybook/react": "^6.3.12",
     "@storybook/theming": "^6.3.12",
-    "@testing-library/jest-dom": "5.11.6",
-    "@testing-library/react": "11.2.2",
     "@testing-library/jest-dom": "5.15.0",
     "@testing-library/react": "12.1.2",
     "@testing-library/user-event": "12.2.2",
@@ -136,6 +134,7 @@
     "react-dom": "16.14.0",
     "react-focus-lock": "^2.5.2",
     "react-router-dom": "^5.3.0",
+    "react-sortable-hoc": "^2.0.0",
     "rimraf": "^3.0.2",
     "style-loader": "^2.0.0",
     "turbo": "^1.0.6",
@@ -154,8 +153,12 @@
   "turbo": {
     "pipeline": {
       "build": {
-        "dependsOn": ["^build"],
-        "outputs": ["dist/**"]
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [
+          "dist/**"
+        ]
       }
     }
   }

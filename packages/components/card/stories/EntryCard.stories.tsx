@@ -7,6 +7,11 @@ import { ClockIcon } from '@contentful/f36-icons';
 
 import { EntryCard } from '../src';
 import type { EntryCardProps } from '../src';
+import {
+  SortableContainer,
+  SortableElement,
+  SortableHandle,
+} from 'react-sortable-hoc';
 
 export default {
   argTypes: {
@@ -22,6 +27,38 @@ export default {
   },
   title: 'Components/Card/EntryCard',
 } as Meta;
+
+const DragHandle = (props: { drag: React.ReactElement }) => {
+  const SortableDragHandle = SortableHandle(() => props.drag);
+  return <SortableDragHandle />;
+};
+
+const SortableLink = SortableElement(
+  (props: { children: React.ReactElement }) => <div>{props.children}</div>,
+);
+
+const SortableWrapper = SortableContainer(({ children }) => {
+  return <ul>{children}</ul>;
+});
+
+export const WithDragging: Story<EntryCardProps> = (args) => {
+  return (
+    <SortableWrapper useDragHandle>
+      <SortableLink index={1}>
+        <EntryCard {...args} withDragHandle dragHandleRender={DragHandle} />
+      </SortableLink>
+      <SortableLink index={2}>
+        <EntryCard {...args} withDragHandle dragHandleRender={DragHandle} />
+      </SortableLink>
+    </SortableWrapper>
+  );
+};
+
+WithDragging.args = {
+  status: 'published',
+  contentType: 'Content type',
+  title: 'Closer',
+};
 
 export const Default: Story<EntryCardProps> = (args) => {
   return (

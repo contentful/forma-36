@@ -30,15 +30,19 @@ export type DragHandleInternalProps = CommonProps & {
    * is for screen readers only
    */
   label: string;
+  /**
+   * Set type button for div element
+   */
+  type?: string;
 };
 
 export type DragHandleProps = PropsWithHTMLElement<
   DragHandleInternalProps,
-  'button'
+  'div'
 >;
 
 export const DragHandle = forwardRef<
-  HTMLButtonElement,
+  HTMLDivElement,
   ExpandProps<DragHandleProps>
 >(
   (
@@ -62,7 +66,7 @@ export const DragHandle = forwardRef<
     const [isFocused, setisFocused] = useState(isFocusedProp);
     const [isHovered, setisHovered] = useState(isHoveredProp);
 
-    const handleFocus = useCallback<FocusEventHandler<HTMLButtonElement>>(
+    const handleFocus = useCallback<FocusEventHandler<HTMLDivElement>>(
       (event) => {
         setisFocused(true);
 
@@ -73,7 +77,7 @@ export const DragHandle = forwardRef<
       [onFocus],
     );
 
-    const handleBlur = useCallback<FocusEventHandler<HTMLButtonElement>>(
+    const handleBlur = useCallback<FocusEventHandler<HTMLDivElement>>(
       (event) => {
         setisFocused(false);
 
@@ -84,7 +88,7 @@ export const DragHandle = forwardRef<
       [onBlur],
     );
 
-    const handleMouseEnter = useCallback<MouseEventHandler<HTMLButtonElement>>(
+    const handleMouseEnter = useCallback<MouseEventHandler<HTMLDivElement>>(
       (event) => {
         setisHovered(true);
 
@@ -95,7 +99,7 @@ export const DragHandle = forwardRef<
       [onMouseEnter],
     );
 
-    const handleMouseLeave = useCallback<MouseEventHandler<HTMLButtonElement>>(
+    const handleMouseLeave = useCallback<MouseEventHandler<HTMLDivElement>>(
       (event) => {
         setisHovered(false);
 
@@ -107,7 +111,11 @@ export const DragHandle = forwardRef<
     );
 
     return (
-      <button
+      // We had to change it to div becouse of the issue in library used by field editors
+      // https://github.com/clauderic/react-sortable-hoc/blob/d94ba3cc67cfc7d6d460b585e7723bdb50015e53/src/SortableContainer/defaultShouldCancelStart.js
+      <div
+        role="button"
+        tabIndex={0}
         type="button"
         {...otherProps}
         className={cx(
@@ -124,7 +132,7 @@ export const DragHandle = forwardRef<
       >
         <DragIcon variant="muted" />
         <span className={styles.label}>{label}</span>
-      </button>
+      </div>
     );
   },
 );
