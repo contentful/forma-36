@@ -72,7 +72,7 @@ export function SidebarLink({
 
   return (
     <List.Item>
-      <Link href={href} passHref>
+      <Link href={href} passHref scroll>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a
           className={cx([

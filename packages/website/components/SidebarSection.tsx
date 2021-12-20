@@ -88,6 +88,7 @@ export function SidebarSection({
         if (link.type === 'section') {
           return (
             <SidebarSubsection
+              key={link.title}
               title={link.title}
               links={link.links}
               currentPage={currentPage}
