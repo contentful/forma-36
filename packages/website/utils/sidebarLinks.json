@@ -291,6 +291,40 @@
       "slug": "/migration-v3-to-v4/"
     }
   ],
+  "deprecatedComponents": [
+    {
+      "title": "Dropdown",
+      "slug": "/deprecated-components/dropdown/"
+    },
+    {
+      "title": "EditorToolbar",
+      "slug": "/deprecated-components/editor-toolbar/"
+    },
+    {
+      "title": "EmptyState",
+      "slug": "/deprecated-components/empty-state/"
+    },
+    {
+      "title": "Illustration",
+      "slug": "/deprecated-components/illustration/"
+    },
+    {
+      "title": "InViewport",
+      "slug": "/deprecated-components/in-viewport/"
+    },
+    {
+      "title": "TabFocusTrap",
+      "slug": "/deprecated-components/tab-focus-trap/"
+    },
+    {
+      "title": "Tag",
+      "slug": "/deprecated-components/tag/"
+    },
+    {
+      "title": "Typography Component",
+      "slug": "/deprecated-components/typography/"
+    }
+  ],
   "guidelines": [
     {
       "title": "Accessibility",
