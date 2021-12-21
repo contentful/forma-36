@@ -14,13 +14,14 @@ import remarkCodeTitles from 'remark-code-titles';
 
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 import { getPropsMetadata, transformToc } from '../utils/propsMeta';
+import { TocType } from '../components/TableOfContent';
 
 type ComponentPageProps = {
   source: MDXRemoteSerializeResult;
   frontMatter: {
     title: string;
   };
-  toc: Record<string, unknown>;
+  toc: TocType;
   propsMetadata: ReturnType<typeof getPropsMetadata>;
 };
 
@@ -73,7 +74,7 @@ export async function getStaticProps(props: { params: { slug: string[] } }) {
             nav: false,
             headings: ['h1', 'h2', 'h3'],
             customizeTOC: (t) => {
-              toc = transformToc(t);
+              toc = transformToc(t) as any;
               return false;
             },
           },

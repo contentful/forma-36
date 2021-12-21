@@ -82,7 +82,28 @@ function getPropsMetadata(filePath: string, sourcesPaths?: string) {
 }
 
 function transformToc(toc: any) {
-  return toc;
+  if (!toc || !toc.children) {
+    return null;
+  }
+  const result: any[] = [];
+  toc.children.forEach((element) => {
+    switch (element.tagName) {
+      case 'a':
+        result.push({
+          type: 'link',
+          href: element.properties.href,
+          text: element.children[0].value,
+        });
+        break;
+      case 'ol':
+        result.push({ type: 'list', children: transformToc(element) });
+        break;
+      default:
+        result.push(transformToc(element));
+        break;
+    }
+  });
+  return result;
 }
 
 export { getPropsMetadata, transformToc };
