@@ -4,11 +4,13 @@ import ErrorPage from 'next/error';
 import Head from 'next/head';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
+import rehypeToc from 'rehype-toc';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MdxRenderer } from '../components/MdxRenderer';
 import { PageContent } from '../components/PageContent';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { PropsContextProvider } from '@contentful/f36-docs-utils';
+import remarkCodeTitles from 'remark-code-titles';
 
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 import { getPropsMetadata } from '../utils/propsMeta';
@@ -18,6 +20,7 @@ type ComponentPageProps = {
   frontMatter: {
     title: string;
   };
+  toc: Record<string, unknown>;
   propsMetadata: ReturnType<typeof getPropsMetadata>;
 };
 
@@ -55,11 +58,27 @@ export async function getStaticProps(props: { params: { slug: string[] } }) {
     frontMatter: { content, data },
   } = result;
 
+  let toc = {};
+
   const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [require('remark-code-titles')],
-      rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+      remarkPlugins: [remarkCodeTitles],
+      rehypePlugins: [
+        rehypeSlug,
+        rehypeAutolinkHeadings,
+        [
+          rehypeToc,
+          {
+            nav: false,
+            headings: ['h1', 'h2', 'h3'],
+            customizeTOC: (t) => {
+              toc = t;
+              return false;
+            },
+          },
+        ],
+      ],
     },
     scope: data,
   });
@@ -69,6 +88,7 @@ export async function getStaticProps(props: { params: { slug: string[] } }) {
   return {
     props: {
       source: mdxSource,
+      toc,
       frontMatter: data,
       propsMetadata,
     },

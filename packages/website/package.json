@@ -25,6 +25,7 @@
     "react-live": "2.3.0",
     "rehype-autolink-headings": "^5.0.1",
     "rehype-slug": "^4.0.1",
+    "rehype-toc": "^3.0.2",
     "remark": "^14.0.2",
     "remark-code-titles": "^0.1.1",
     "lodash.sortby": "^4.7.0"
