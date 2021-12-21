@@ -13,7 +13,7 @@ import { PropsContextProvider } from '@contentful/f36-docs-utils';
 import remarkCodeTitles from 'remark-code-titles';
 
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
-import { getPropsMetadata } from '../utils/propsMeta';
+import { getPropsMetadata, transformToc } from '../utils/propsMeta';
 
 type ComponentPageProps = {
   source: MDXRemoteSerializeResult;
@@ -36,7 +36,7 @@ export default function ComponentPage(props: ComponentPageProps) {
       <Head>
         <title>Forma 36 - {props.frontMatter.title}</title>
       </Head>
-      <PageContent frontMatter={props.frontMatter}>
+      <PageContent frontMatter={props.frontMatter} toc={props.toc}>
         <PropsContextProvider value={{ ...props.propsMetadata }}>
           <MdxRenderer source={props.source} />
         </PropsContextProvider>
@@ -73,7 +73,7 @@ export async function getStaticProps(props: { params: { slug: string[] } }) {
             nav: false,
             headings: ['h1', 'h2', 'h3'],
             customizeTOC: (t) => {
-              toc = t;
+              toc = transformToc(t);
               return false;
             },
           },

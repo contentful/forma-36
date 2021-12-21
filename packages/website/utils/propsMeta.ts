@@ -81,4 +81,8 @@ function getPropsMetadata(filePath: string, sourcesPaths?: string) {
   return propsMetadata;
 }
 
-export { getPropsMetadata };
+function transformToc(toc: any) {
+  return toc;
+}
+
+export { getPropsMetadata, transformToc };
