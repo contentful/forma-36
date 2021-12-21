@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { css, cx } from 'emotion';
-import { PolymorphicProps, PolymorphicComponent } from '../Primitive/Primitive';
+import {
+  PolymorphicProps,
+  PolymorphicComponent,
+  ExpandProps,
+} from '../Primitive/Primitive';
 import { useBox } from '../Box';
 import type { MarginProps, PaddingProps, CommonProps, Spacing } from '../types';
 import type * as CSS from 'csstype';
@@ -142,6 +146,6 @@ function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
 }
 
 export const Flex: PolymorphicComponent<
-  FlexInternalProps,
+  ExpandProps<FlexInternalProps>,
   typeof FLEX_DEFAULT_TAG
 > = React.forwardRef(_Flex);
