@@ -4,20 +4,24 @@ import ErrorPage from 'next/error';
 import Head from 'next/head';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
+import rehypeToc from 'rehype-toc';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MdxRenderer } from '../components/MdxRenderer';
 import { PageContent } from '../components/PageContent';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { PropsContextProvider } from '@contentful/f36-docs-utils';
+import remarkCodeTitles from 'remark-code-titles';
 
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
-import { getPropsMetadata } from '../utils/propsMeta';
+import { getPropsMetadata, transformToc } from '../utils/propsMeta';
+import { TocType } from '../components/TableOfContent';
 
 type ComponentPageProps = {
   source: MDXRemoteSerializeResult;
   frontMatter: {
     title: string;
   };
+  toc: TocType;
   propsMetadata: ReturnType<typeof getPropsMetadata>;
 };
 
@@ -33,7 +37,7 @@ export default function ComponentPage(props: ComponentPageProps) {
       <Head>
         <title>Forma 36 - {props.frontMatter.title}</title>
       </Head>
-      <PageContent frontMatter={props.frontMatter}>
+      <PageContent frontMatter={props.frontMatter} toc={props.toc}>
         <PropsContextProvider value={{ ...props.propsMetadata }}>
           <MdxRenderer source={props.source} />
         </PropsContextProvider>
@@ -55,11 +59,27 @@ export async function getStaticProps(props: { params: { slug: string[] } }) {
     frontMatter: { content, data },
   } = result;
 
+  let toc = {};
+
   const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [require('remark-code-titles')],
-      rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+      remarkPlugins: [remarkCodeTitles],
+      rehypePlugins: [
+        rehypeSlug,
+        rehypeAutolinkHeadings,
+        [
+          rehypeToc,
+          {
+            nav: false,
+            headings: ['h1', 'h2', 'h3'],
+            customizeTOC: (t) => {
+              toc = transformToc(t) as any;
+              return false;
+            },
+          },
+        ],
+      ],
     },
     scope: data,
   });
@@ -69,6 +89,7 @@ export async function getStaticProps(props: { params: { slug: string[] } }) {
   return {
     props: {
       source: mdxSource,
+      toc,
       frontMatter: data,
       propsMetadata,
     },

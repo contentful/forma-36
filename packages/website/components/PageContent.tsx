@@ -8,7 +8,7 @@ import {
   Stack,
   Subheading,
 } from '@contentful/f36-components';
-
+import { TableOfContent, TocType } from './TableOfContent';
 import storybookIcon from '../resources/icons/storybook.svg';
 import githubIcon from '../resources/icons/github.svg';
 
@@ -147,10 +147,12 @@ function PageFooter(props: { github?: string }) {
 }
 
 export function PageContent(props: {
+  toc: TocType;
   frontMatter: {
     title: string;
     storybook?: string;
     github?: string;
+    toc?: false;
     [key: string]: unknown;
   };
   children: React.ReactChild;
@@ -158,6 +160,9 @@ export function PageContent(props: {
   return (
     <article className={styles.root}>
       <PageHeader {...props.frontMatter} />
+      {props.frontMatter.toc === false ? null : (
+        <TableOfContent toc={props.toc} />
+      )}
       {props.children}
       <PageFooter {...props.frontMatter} />
     </article>

@@ -3170,6 +3170,11 @@
     "@babel/runtime" "^7.7.2"
     regenerator-runtime "^0.13.3"
 
+"@jsdevtools/rehype-toc@3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@jsdevtools/rehype-toc/-/rehype-toc-3.0.2.tgz#29c32e6b40cd4b5dafd96cb90d5057ac5dab4a51"
+  integrity sha512-n5JEf16Wr4mdkRMZ8wMP/wN9/sHmTjRPbouXjJH371mZ2LEGDl72t8tEsMRNFerQN/QJtivOxqK1frdGa4QK5Q==
+
 "@lerna/add@3.21.0":
   version "3.21.0"
   resolved "https://registry.yarnpkg.com/@lerna/add/-/add-3.21.0.tgz#27007bde71cc7b0a2969ab3c2f0ae41578b4577b"
@@ -27261,6 +27266,13 @@ rehype-slug@^4.0.1:
     hast-util-heading-rank "^1.0.0"
     hast-util-to-string "^1.0.0"
     unist-util-visit "^2.0.0"
+
+rehype-toc@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/rehype-toc/-/rehype-toc-3.0.2.tgz#0373e2abafddeb0606ee38229ff6714da6d86d68"
+  integrity sha512-DMt376+4i1KJGgHJL7Ezd65qKkJ7Eqp6JSB47BJ90ReBrohI9ufrornArM6f4oJjP2E2DVZZHufWucv/9t7GUQ==
+  dependencies:
+    "@jsdevtools/rehype-toc" "3.0.2"
 
 relateurl@^0.2.7:
   version "0.2.7"
