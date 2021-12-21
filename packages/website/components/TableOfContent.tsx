@@ -50,7 +50,11 @@ function TocItem(props: { tuple: TocTuple }) {
 }
 
 export function TableOfContent(props: { toc: TocType | null }) {
-  if (!props.toc) {
+  if (!props.toc || props.toc.length === 0) {
+    return null;
+  }
+
+  if (props.toc.length === 1 && props.toc[0].length < 2) {
     return null;
   }
 
