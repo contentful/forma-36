@@ -22,6 +22,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="contentful, design, design-system, react, component library"
         />
         <link rel="icon" href="/favicon.png" />
+        <script
+          async
+          src="https://cmp.osano.com/16BcqiRsJId123ATa/fcd81040-24a4-4474-9a22-f295cbec8600/osano.js"
+        ></script>
       </Head>
 
       <Layout currentPage={pageProps.frontMatter?.slug}>
