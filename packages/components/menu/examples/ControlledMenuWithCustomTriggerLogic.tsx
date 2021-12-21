@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Menu, IconButton } from '@contentful/f36-components';
 import { MenuIcon } from '@contentful/f36-icons';
 
 export default function ControlledMenuWithCustomTriggerLogic() {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <Menu isOpen={isOpen} onClose={() => setIsOpen(false)}>
       <Menu.Trigger>
