@@ -81,6 +81,11 @@ const components: Array<SidebarSectionType | SidebarLinkType> = [
     title: 'Skeleton Components',
   },
   ...sidebarLinks.unassigned,
+  {
+    type: 'section',
+    links: sidebarLinks.deprecatedComponents,
+    title: 'Deprecated V3 Components',
+  },
 ];
 
 export function Sidebar({ currentPage = '/' }: Props) {

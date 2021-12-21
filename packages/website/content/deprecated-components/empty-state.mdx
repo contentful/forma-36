@@ -1,0 +1,50 @@
+---
+title: 'EmptyState'
+status: 'deprecated'
+slug: '/deprecated-components/empty-state/'
+section: 'deprecatedComponents'
+---
+
+## Empty State component was removed in version 4
+
+`EmptyState` component got removed in the version 4.
+
+If you are using this component in your project you can refactor to use other existing components.
+
+You must migrate existing code:
+
+```tsx static=true
+<EmptyState
+  headingProps={{ text: 'Heading' }}
+  imageProps={{
+    url: 'https://via.placeholder.com/200x200',
+    width: '340px',
+    height: '250px',
+    description: 'Image descriptionProps',
+  }}
+  descriptionProps={{
+    text:
+      'This is a descriptionProps for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.',
+  }}
+/>
+```
+
+to:
+
+```tsx
+<Flex flexDirection="column" justifyContent="center" alignItems="center">
+  <Flex flexDirection="column" justifyContent="center" alignItems="center">
+    <img src="https://via.placeholder.com/200x200" alt="Illustration" />
+    <Subheading marginTop="spacingM" marginBottom="spacingM">
+      Heading
+    </Subheading>
+    <Paragraph>
+      {' '}
+      This is a descriptionProps for the empty state. Lorem ipsum dolor sit
+      amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor
+      porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus
+      hendrerit sem. Aliquam ultricies viverra tincidunt.{' '}
+    </Paragraph>
+  </Flex>
+</Flex>
+```
