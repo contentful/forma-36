@@ -6,7 +6,11 @@ import { getSpacingStyles } from '../utils/getSpacingStyles';
 
 const BOX_DEFAULT_TAG: React.ElementType = 'div';
 
-import { PolymorphicProps, PolymorphicComponent } from '../Primitive/Primitive';
+import {
+  PolymorphicProps,
+  PolymorphicComponent,
+  ExpandProps,
+} from '../Primitive/Primitive';
 
 export interface BoxInternalProps
   extends CommonProps,
@@ -89,6 +93,6 @@ function _Box<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
 }
 
 export const Box: PolymorphicComponent<
-  BoxInternalProps,
+  ExpandProps<BoxInternalProps>,
   typeof BOX_DEFAULT_TAG
 > = React.forwardRef(_Box);

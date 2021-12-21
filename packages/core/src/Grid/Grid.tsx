@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { css, cx } from 'emotion';
-import { PolymorphicProps, PolymorphicComponent } from '../Primitive/Primitive';
+import {
+  PolymorphicProps,
+  PolymorphicComponent,
+  ExpandProps,
+} from '../Primitive/Primitive';
 import { useBox } from '../Box';
 import type * as CSS from 'csstype';
 import type { MarginProps, PaddingProps, CommonProps, Spacing } from '../types';
@@ -97,6 +101,6 @@ function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
 }
 
 export const Grid: PolymorphicComponent<
-  GridInternalProps,
+  ExpandProps<GridInternalProps>,
   typeof GRID_DEFAULT_TAG
 > = React.forwardRef(_Grid);

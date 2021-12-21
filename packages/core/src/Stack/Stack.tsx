@@ -1,5 +1,9 @@
 import * as React from 'react';
-import { PolymorphicProps, PolymorphicComponent } from '../Primitive/Primitive';
+import {
+  PolymorphicProps,
+  PolymorphicComponent,
+  ExpandProps,
+} from '../Primitive/Primitive';
 import { useBox } from '../Box';
 import type { Spacing } from '../types';
 import { Flex, FlexInternalProps } from '../Flex/Flex';
@@ -54,6 +58,6 @@ function _Stack<E extends React.ElementType = typeof STACK_DEFAULT_TAG>(
 }
 
 export const Stack: PolymorphicComponent<
-  StackInternalProps,
+  ExpandProps<StackInternalProps>,
   typeof STACK_DEFAULT_TAG
 > = React.forwardRef(_Stack);
