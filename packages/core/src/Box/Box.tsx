@@ -1,12 +1,8 @@
 import * as React from 'react';
 import * as CSS from 'csstype';
 import { css, cx } from 'emotion';
-import type {
-  MarginProps,
-  PaddingProps,
-  CommonProps,
-  ExpandProps,
-} from '../types';
+import type { MarginProps, PaddingProps, CommonProps } from '../types';
+import { ExpandProps } from '../Primitive/Primitive';
 import { getSpacingStyles } from '../utils/getSpacingStyles';
 
 const BOX_DEFAULT_TAG: React.ElementType = 'div';
