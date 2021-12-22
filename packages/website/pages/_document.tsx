@@ -3,25 +3,22 @@ import Document, { Head, Html, Main, NextScript } from 'next/document';
 import { extractCritical } from 'emotion-server';
 import * as snippet from '@segment/snippet';
 
-const { SEGMENT_WRITE_KEY, NODE_ENV } = process.env;
+const { SEGMENT_KEY, NODE_ENV } = process.env;
 export default class MyDocument extends Document<{
   ids: string[];
   css: string;
 }> {
   renderSnipet() {
     const opts = {
-      apiKey:
-        NODE_ENV === 'development'
-          ? 'where is this key coming from?'
-          : SEGMENT_WRITE_KEY,
+      apiKey: SEGMENT_KEY,
       page: true,
     };
 
-    if (NODE_ENV === 'development') {
+    if (NODE_ENV === 'production') {
       return snippet.max(opts);
     }
 
-    return snippet.min(opts);
+    return '';
   }
 
   static getInitialProps({ renderPage }) {
