@@ -45,12 +45,16 @@ function _IconButton<
   };
 
   return (
-    <Button testId={testId} ref={ref} variant={variant} {...otherProps}>
-      {React.cloneElement(icon, {
+    <Button
+      testId={testId}
+      ref={ref}
+      variant={variant}
+      {...otherProps}
+      startIcon={React.cloneElement(icon, {
         variant: defaultIconColor[variant],
         ...icon.props,
       })}
-    </Button>
+    />
   );
 }
 
