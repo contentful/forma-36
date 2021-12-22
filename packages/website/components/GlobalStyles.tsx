@@ -126,15 +126,15 @@ export const GlobalStyles = () => {
 
         .osano-cm-dialog .osano-cm-button.osano-cm-accept-all {
           color: ${tokens.colorWhite};
-          border-color: ${tokens.fontStackPrimary};
-          background-color: ${tokens.fontStackPrimary};
+          border-color: ${tokens.colorPrimary};
+          background-color: ${tokens.colorPrimary};
         }
         .osano-cm-dialog .osano-cm-button.osano-cm-accept-all:focus {
           box-shadow: ${tokens.glowPrimary};
         }
         .osano-cm-dialog .osano-cm-button.osano-cm-accept-all:hover {
-          border-color: ${tokens.gray600};
-          background-color: ${tokens.gray600};
+          border-color: ${tokens.blue600};
+          background-color: ${tokens.blue600};
         }
 
         .osano-cm-dialog .osano-cm-dialog__content {
