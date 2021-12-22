@@ -37,7 +37,7 @@ You can use following components to build a menu:
 
 ### Basic usage
 
-```jsx
+```tsx file=examples/BasicMenu.tsx
 <Menu>
   <Menu.Trigger>
     <IconButton
@@ -56,7 +56,7 @@ You can use following components to build a menu:
 
 ### With simple Button as a trigger
 
-```jsx
+```tsx file=examples/MenuWithButtonAsTrigger.tsx
 <Menu>
   <Menu.Trigger>
     <Button>toggle menu</Button>
@@ -71,7 +71,7 @@ You can use following components to build a menu:
 
 ### With Menu.SectionTitle and Menu.Divider
 
-```jsx
+```jsx file=examples/MenuWithTitle.tsx
 <Menu>
   <Menu.Trigger>
     <IconButton
@@ -98,7 +98,7 @@ You can use following components to build a menu:
 By default the Menu component is uncontrolled. So when user clicks on the trigger, the menu opens/closes.
 But you can control it by passing `isOpen` prop and `onClose`, `onOpen` callbacks.
 
-```jsx
+```jsx file=examples/ControlledMenu.tsx
 function ControlledMenu() {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
@@ -129,7 +129,7 @@ function ControlledMenu() {
 In most cases, you will use the [controlled approach](#controlled-menu).
 But if you have to provide your own toggle menu logic on the trigger component, you can do this by providing `onClick` callback on trigger component and omitting `onOpen` callback on the Menu component.
 
-```jsx
+```jsx file=examples/ControlledMenuWithCustomTriggerLogic.tsx
 function ControlledMenuWithCustomTriggerLogic() {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
@@ -154,7 +154,7 @@ function ControlledMenuWithCustomTriggerLogic() {
 
 ### With Menu list maximum height
 
-```jsx
+```jsx file=examples/MenuWithMaxHeight.tsx
 <Menu>
   <Menu.Trigger>
     <IconButton
@@ -182,7 +182,7 @@ function ControlledMenuWithCustomTriggerLogic() {
 
 ### With disabled items
 
-```jsx
+```jsx file=examples/MenuWithDisabledItems.tsx
 <Menu>
   <Menu.Trigger>
     <IconButton
@@ -206,7 +206,7 @@ function ControlledMenuWithCustomTriggerLogic() {
 
 ### With menu open by default
 
-```jsx static=true
+```jsx static=true file=examples/MenuOpenByDefault.tsx
 <Menu defaultIsOpen>
   <Menu.Trigger>
     <IconButton
@@ -225,7 +225,7 @@ function ControlledMenuWithCustomTriggerLogic() {
 
 ### With sticky header and footer
 
-```jsx
+```jsx file=examples/MenuWithStickyHeaderFooter.tsx
 <Menu>
   <Menu.Trigger>
     <IconButton
@@ -257,7 +257,7 @@ function ControlledMenuWithCustomTriggerLogic() {
 
 ### With React Router links
 
-```jsx static=true
+```jsx static=true file=examples/MenuWithReactRouterLinks.tsx
 <Router>
   <Menu>
     <Menu.Trigger>
@@ -284,7 +284,7 @@ function ControlledMenuWithCustomTriggerLogic() {
 
 ### With predefined focused menu item
 
-```jsx
+```jsx file=examples/MenuWithPredefinedFocusedMenuItem.tsx
 <Menu>
   <Menu.Trigger>
     <IconButton
@@ -306,7 +306,7 @@ function ControlledMenuWithCustomTriggerLogic() {
 By default props like `closeOnSelect`, `closeOnBlur`, `closeOnEsc` that you pass to `Menu` will be shared to all submenus
 But you can redefine them on any submenu by passing those props directly to that `Submenu`.
 
-```jsx
+```jsx file=examples/MenuWithSubmenu.tsx
 <Menu>
   <Menu.Trigger>
     <IconButton
