@@ -1,16 +1,13 @@
+import dotenv from 'dotenv';
+import { writeFileSync } from 'fs';
+import prettier from 'prettier';
 import { getMdxPaths } from '../utils/content';
 
-const Sitemap = () => {
-  return null;
-};
+dotenv.config();
 
-export const getServerSideProps = async ({ res }) => {
-  const baseUrl =
-    process.env.VERCEL_URL ??
-    {
-      development: 'http://localhost:3000',
-      production: 'https://v4.f36.contentful.com',
-    }[process.env.NODE_ENV];
+async function generate() {
+  // todo: replace with f36.contentful.com when we release v4
+  const baseUrl = 'https://v4-forma-36.vercel.app';
 
   const staticSlugs = [''];
   const mdxSlugs = (await getMdxPaths())
@@ -38,13 +35,16 @@ export const getServerSideProps = async ({ res }) => {
   </urlset>
 `;
 
-  res.setHeader('Content-Type', 'text/xml');
-  res.write(sitemap);
-  res.end();
+  const formatted = prettier.format(sitemap, {
+    parser: 'html',
+  });
 
-  return {
-    props: {},
-  };
-};
+  // eslint-disable-next-line no-sync
+  writeFileSync('public/sitemap.xml', formatted);
+}
 
-export default Sitemap;
+async function run() {
+  await generate();
+}
+
+run();

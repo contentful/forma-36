@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://v4-forma-36.vercel.app/</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/accordion</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/autocomplete</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/badge</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/entity-status-badge</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/button</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/animations/collapse</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/copy-button</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/datetime</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/datetime-functions</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/relative-datetime</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/drag-handle</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/entity-list</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/icon</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/list</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/menu</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/note</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/notification</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/pill</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/popover</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/spinner</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/table</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/text-link</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/tooltip</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/workbench</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/asset</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/modal</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/tabs</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/display-text</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/heading</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/paragraph</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/section-heading</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/subheading</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/text</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/button-group</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/icon-button</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/toggle-button</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/asset-card</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/card</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/entry-card</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/inline-entry-card</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/checkbox</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/form</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/form-control</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/radio</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/select</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/switch</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/text-input</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/textarea</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/modal-confirm</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/modal-launcher</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc
+      >https://v4-forma-36.vercel.app/components/skeleton/skeleton-body-text</loc
+    >
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc
+      >https://v4-forma-36.vercel.app/components/skeleton/skeleton-container</loc
+    >
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc
+      >https://v4-forma-36.vercel.app/components/skeleton/skeleton-display-text</loc
+    >
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/skeleton/skeleton-image</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/skeleton/skeleton-row</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/utils/portal</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/utils/get-string-match</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/utils/use-keyboard</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/box</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/flex</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/globalstyles</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/grid</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/screen-reader-only</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/components/stack</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/contributing</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/getting-started</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/migration-v3-to-v4</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/deprecated-components/dropdown</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc
+      >https://v4-forma-36.vercel.app/deprecated-components/editor-toolbar</loc
+    >
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/deprecated-components/empty-state</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/deprecated-components/illustration</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/deprecated-components/in-viewport</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc
+      >https://v4-forma-36.vercel.app/deprecated-components/tab-focus-trap</loc
+    >
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/deprecated-components/tag</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/deprecated-components/typography</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/guidelines/accessibility</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/guidelines/keyboard-shortcuts</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/integrations/formik</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/integrations/react-hook-form</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/tokens/color-system</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/tokens/shadows-and-glows</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/tokens/spacing</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/tokens/transitions</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/tokens/typography</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/tokens/z-index</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://v4-forma-36.vercel.app/guidelines/copy/grammar-and-rules</loc>
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc
+      >https://v4-forma-36.vercel.app/guidelines/copy/ux-writing-principles</loc
+    >
+    <lastmod>2021-12-22T14:14:05.618Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

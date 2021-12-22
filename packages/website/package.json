@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build:prod": "next build",
+    "generate-static-files": "ts-node ./scripts/generate-sitemap.ts",
+    "build:prod": "yarn generate-static-files && next build",
     "start": "next dev",
     "start:prod": "next start"
   },
@@ -33,6 +34,8 @@
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^10.2.1",
     "@next/eslint-plugin-next": "^12.0.4",
-    "babel-plugin-emotion": "10.0.33"
+    "babel-plugin-emotion": "10.0.33",
+    "dotenv": "^10.0.0",
+    "ts-node": "^10.4.0"
   }
 }
