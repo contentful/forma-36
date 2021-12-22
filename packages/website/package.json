@@ -11,6 +11,8 @@
   "dependencies": {
     "@contentful/f36-components": "^4.0.0",
     "@contentful/f36-core": "^4.0.0",
+    "@docsearch/js": "3.0.0-alpha.42",
+    "@docsearch/css": "3.0.0-alpha.42",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@next/mdx": "^11.1.2",
