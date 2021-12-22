@@ -15,7 +15,7 @@ export default class MyDocument extends Document<{
     };
 
     if (NODE_ENV === 'production') {
-      return snippet.max(opts);
+      return snippet.min(opts);
     }
 
     return '';
