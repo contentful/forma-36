@@ -38,19 +38,59 @@ You can use following components to build a menu:
 ### Basic usage
 
 ```tsx file=examples/BasicMenu.tsx
-
+<Menu>
+  <Menu.Trigger>
+    <IconButton
+      variant="secondary"
+      icon={<MenuIcon />}
+      aria-label="toggle menu"
+    />
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.Item>Create an entry</Menu.Item>
+    <Menu.Item>Remove an entry</Menu.Item>
+    <Menu.Item>Embed existing entry</Menu.Item>
+  </Menu.List>
+</Menu>
 ```
 
 ### With simple Button as a trigger
 
 ```tsx file=examples/MenuWithButtonAsTrigger.tsx
-
+<Menu>
+  <Menu.Trigger>
+    <Button>toggle menu</Button>
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.Item>Create an entry</Menu.Item>
+    <Menu.Item>Remove an entry</Menu.Item>
+    <Menu.Item>Embed existing entry</Menu.Item>
+  </Menu.List>
+</Menu>
 ```
 
 ### With Menu.SectionTitle and Menu.Divider
 
 ```jsx file=examples/MenuWithTitle.tsx
-
+<Menu>
+  <Menu.Trigger>
+    <IconButton
+      variant="secondary"
+      icon={<MenuIcon />}
+      aria-label="toggle menu"
+    />
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.SectionTitle>Entry</Menu.SectionTitle>
+    <Menu.Item>Create an entry</Menu.Item>
+    <Menu.Item>Remove an entry</Menu.Item>
+    <Menu.Item>Embed existing entry</Menu.Item>
+    <Menu.Divider />
+    <Menu.Item as="a" href="https://contentful.com" target="_blank">
+      About Contentful
+    </Menu.Item>
+  </Menu.List>
+</Menu>
 ```
 
 ### Controlled Menu
@@ -59,7 +99,29 @@ By default the Menu component is uncontrolled. So when user clicks on the trigge
 But you can control it by passing `isOpen` prop and `onClose`, `onOpen` callbacks.
 
 ```jsx file=examples/ControlledMenu.tsx
-
+function ControlledMenu() {
+  const [isOpen, setIsOpen] = React.useState(false);
+  return (
+    <Menu
+      isOpen={isOpen}
+      onOpen={() => setIsOpen(true)}
+      onClose={() => setIsOpen(false)}
+    >
+      <Menu.Trigger>
+        <IconButton
+          variant="secondary"
+          icon={<MenuIcon />}
+          aria-label="toggle menu"
+        />
+      </Menu.Trigger>
+      <Menu.List>
+        <Menu.Item>Create an entry</Menu.Item>
+        <Menu.Item>Remove an entry</Menu.Item>
+        <Menu.Item>Embed existing entry</Menu.Item>
+      </Menu.List>
+    </Menu>
+  );
+}
 ```
 
 ### Controlled Menu with custom trigger onClick callback
@@ -68,43 +130,175 @@ In most cases, you will use the [controlled approach](#controlled-menu).
 But if you have to provide your own toggle menu logic on the trigger component, you can do this by providing `onClick` callback on trigger component and omitting `onOpen` callback on the Menu component.
 
 ```jsx file=examples/ControlledMenuWithCustomTriggerLogic.tsx
-
+function ControlledMenuWithCustomTriggerLogic() {
+  const [isOpen, setIsOpen] = React.useState(false);
+  return (
+    <Menu isOpen={isOpen} onClose={() => setIsOpen(false)}>
+      <Menu.Trigger>
+        <IconButton
+          variant="secondary"
+          icon={<MenuIcon />}
+          aria-label="toggle menu"
+          onClick={() => setIsOpen(!isOpen)}
+        />
+      </Menu.Trigger>
+      <Menu.List>
+        <Menu.Item>Create an entry</Menu.Item>
+        <Menu.Item>Remove an entry</Menu.Item>
+        <Menu.Item>Embed existing entry</Menu.Item>
+      </Menu.List>
+    </Menu>
+  );
+}
 ```
 
 ### With Menu list maximum height
 
 ```jsx file=examples/MenuWithMaxHeight.tsx
-
+<Menu>
+  <Menu.Trigger>
+    <IconButton
+      variant="secondary"
+      icon={<MenuIcon />}
+      aria-label="toggle menu"
+    />
+  </Menu.Trigger>
+  <Menu.List style={{ maxHeight: '200px' }}>
+    <Menu.Item>Item 1</Menu.Item>
+    <Menu.Item>Item 2</Menu.Item>
+    <Menu.Item>Item 3</Menu.Item>
+    <Menu.Item>Item 4</Menu.Item>
+    <Menu.Item>Item 5</Menu.Item>
+    <Menu.Item>Item 6</Menu.Item>
+    <Menu.Item>Item 7</Menu.Item>
+    <Menu.Item>Item 8</Menu.Item>
+    <Menu.Item>Item 9</Menu.Item>
+    <Menu.Item>Item 10</Menu.Item>
+    <Menu.Item>Item 11</Menu.Item>
+    <Menu.Item>Item 12</Menu.Item>
+  </Menu.List>
+</Menu>
 ```
 
 ### With disabled items
 
 ```jsx file=examples/MenuWithDisabledItems.tsx
-
+<Menu>
+  <Menu.Trigger>
+    <IconButton
+      variant="secondary"
+      icon={<MenuIcon />}
+      aria-label="toggle menu"
+    />
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.Item>Item 1</Menu.Item>
+    <Menu.Item>Item 2</Menu.Item>
+    <Menu.Item>Item 3</Menu.Item>
+    <Menu.Item disabled>Item 4 (disabled)</Menu.Item>
+    <Menu.Item>Item 5</Menu.Item>
+    <Menu.Item>Item 6</Menu.Item>
+    <Menu.Item disabled>Item 7 (disabled)</Menu.Item>
+    <Menu.Item>Item 8</Menu.Item>
+  </Menu.List>
+</Menu>
 ```
 
 ### With menu open by default
 
 ```jsx static=true file=examples/MenuOpenByDefault.tsx
-
+<Menu defaultIsOpen>
+  <Menu.Trigger>
+    <IconButton
+      variant="secondary"
+      icon={<MenuIcon />}
+      aria-label="toggle menu"
+    />
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.Item>Create an entry</Menu.Item>
+    <Menu.Item>Remove an entry</Menu.Item>
+    <Menu.Item>Embed existing entry</Menu.Item>
+  </Menu.List>
+</Menu>
 ```
 
 ### With sticky header and footer
 
 ```jsx file=examples/MenuWithStickyHeaderFooter.tsx
-
+<Menu>
+  <Menu.Trigger>
+    <IconButton
+      variant="secondary"
+      icon={<MenuIcon />}
+      aria-label="toggle menu"
+    />
+  </Menu.Trigger>
+  <Menu.List style={{ maxHeight: '300px' }}>
+    <Menu.ListHeader>
+      <Menu.Item>Item header</Menu.Item>
+    </Menu.ListHeader>
+    <Menu.Item>Item 1</Menu.Item>
+    <Menu.Item>Item 2</Menu.Item>
+    <Menu.Item>Item 3</Menu.Item>
+    <Menu.Item>Item 4</Menu.Item>
+    <Menu.Item>Item 5</Menu.Item>
+    <Menu.Item>Item 6</Menu.Item>
+    <Menu.Item>Item 7</Menu.Item>
+    <Menu.Item>Item 8</Menu.Item>
+    <Menu.Item>Item 9</Menu.Item>
+    <Menu.Item>Item 10</Menu.Item>
+    <Menu.ListFooter>
+      <Menu.Item>Item footer</Menu.Item>
+    </Menu.ListFooter>
+  </Menu.List>
+</Menu>
 ```
 
 ### With React Router links
 
 ```jsx static=true file=examples/MenuWithReactRouterLinks.tsx
-
+<Router>
+  <Menu>
+    <Menu.Trigger>
+      <IconButton
+        variant="secondary"
+        icon={<MenuIcon />}
+        aria-label="toggle menu"
+      />
+    </Menu.Trigger>
+    <Menu.List>
+      <Link to="/" component={Menu.Item} as="a">
+        Home
+      </Link>
+      <Link to="/about" component={Menu.Item} as="a">
+        About
+      </Link>
+      <Link to="/other" component={Menu.Item} as="a">
+        Other
+      </Link>
+    </Menu.List>
+  </Menu>
+</Router>
 ```
 
 ### With predefined focused menu item
 
 ```jsx file=examples/MenuWithPredefinedFocusedMenuItem.tsx
-
+<Menu>
+  <Menu.Trigger>
+    <IconButton
+      variant="secondary"
+      icon={<MenuIcon />}
+      aria-label="toggle menu"
+    />
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.Item>Create an entry</Menu.Item>
+    <Menu.Item isInitiallyFocused>Remove an entry</Menu.Item>
+    <Menu.Item>Embed existing entry</Menu.Item>
+  </Menu.List>
+</Menu>
 ```
 
 ### With submenu
@@ -113,7 +307,27 @@ By default props like `closeOnSelect`, `closeOnBlur`, `closeOnEsc` that you pass
 But you can redefine them on any submenu by passing those props directly to that `Submenu`.
 
 ```jsx file=examples/MenuWithSubmenu.tsx
-
+<Menu>
+  <Menu.Trigger>
+    <IconButton
+      variant="secondary"
+      icon={<MenuIcon />}
+      aria-label="toggle menu"
+    />
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.Item>Create an entry</Menu.Item>
+    <Menu.Submenu>
+      <Menu.SubmenuTrigger>Remove an entry</Menu.SubmenuTrigger>
+      <Menu.List>
+        <Menu.Item>Sub item 1</Menu.Item>
+        <Menu.Item>Sub item 2</Menu.Item>
+        <Menu.Item>Sub item 3</Menu.Item>
+      </Menu.List>
+    </Menu.Submenu>
+    <Menu.Item>Embed existing entry</Menu.Item>
+  </Menu.List>
+</Menu>
 ```
 
 <PropsHeading storybookPath="/story/components-menu--basic" />
