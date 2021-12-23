@@ -29,6 +29,7 @@
     "rehype-toc": "^3.0.2",
     "remark": "^14.0.2",
     "remark-code-titles": "^0.1.1",
+    "remark-code-import": "^0.4.0",
     "lodash.sortby": "^4.7.0"
   },
   "devDependencies": {

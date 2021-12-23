@@ -58,7 +58,7 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
         className={styles.buttonIcon({ hasChildren: !!children })}
       >
         {React.cloneElement(icon, {
-          size: `${size === 'large' ? 'medium' : 'small'}`,
+          size: icon.props.size ?? `${size === 'large' ? 'medium' : 'small'}`,
         })}
       </Flex>
     );

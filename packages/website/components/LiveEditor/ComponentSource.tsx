@@ -1,4 +1,11 @@
-import React, { useState } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  useRef,
+  useMemo,
+  useContext,
+} from 'react';
 import { css } from 'emotion';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import tokens from '@contentful/f36-tokens';
@@ -8,6 +15,22 @@ import { Card, Button } from '@contentful/f36-components';
 import * as f36icons from '@contentful/f36-icons';
 import { Flex } from '@contentful/f36-core';
 import theme from 'prism-react-renderer/themes/github';
+import { formatSourceCode } from './utils';
+
+const liveProviderScope = {
+  ...f36icons,
+  ...f36Components,
+  ...f36utils,
+  f36icons,
+  tokens,
+  // most used react hooks
+  useState,
+  useEffect,
+  useCallback,
+  useRef,
+  useMemo,
+  useContext,
+};
 
 const styles = {
   error: css`
@@ -46,16 +69,10 @@ export function ComponentSource({ children }: { children: string }) {
   return (
     <Flex flexDirection="column" marginTop="spacingS" marginBottom="spacingM">
       <LiveProvider
-        code={children.trim()}
+        code={formatSourceCode(children)}
         theme={theme}
         // The order is important here
-        scope={{
-          ...f36icons,
-          ...f36Components,
-          ...f36utils,
-          f36icons,
-          tokens,
-        }}
+        scope={liveProviderScope}
       >
         <Card className={styles.card}>
           <LivePreview />

@@ -11,6 +11,7 @@ import { PageContent } from '../components/PageContent';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { PropsContextProvider } from '@contentful/f36-docs-utils';
 import remarkCodeTitles from 'remark-code-titles';
+import remarkCodeImport from 'remark-code-import';
 
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 import { getPropsMetadata, transformToc } from '../utils/propsMeta';
@@ -64,7 +65,7 @@ export async function getStaticProps(props: { params: { slug: string[] } }) {
   const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [remarkCodeTitles],
+      remarkPlugins: [remarkCodeTitles, remarkCodeImport],
       rehypePlugins: [
         rehypeSlug,
         rehypeAutolinkHeadings,
@@ -80,6 +81,7 @@ export async function getStaticProps(props: { params: { slug: string[] } }) {
           },
         ],
       ],
+      filepath: result.filepath,
     },
     scope: data,
   });
