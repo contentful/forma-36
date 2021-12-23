@@ -49,15 +49,15 @@ async function generateRobots() {
   writeFileSync(
     'public/robots.txt',
     `# *
-  User-agent: *
-  Allow: /
+User-agent: *
+Allow: /
 
-  # Host
-  Host: ${deploymentUrl}
+# Host
+Host: ${deploymentUrl}
 
-  # Sitemaps
-  Sitemap: ${deploymentUrl}/sitemap.xml
-  `,
+# Sitemaps
+Sitemap: ${deploymentUrl}/sitemap.xml
+`,
   );
 }
 
