@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "generate-static-files": "ts-node ./scripts/generate-sitemap.ts",
+    "generate-static-files": "ts-node ./scripts/generate-public-files.ts",
     "build:prod": "yarn generate-static-files && next build",
     "start": "next dev",
     "start:prod": "next start"

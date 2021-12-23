@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://v4-forma-36.vercel.app
-
-# Sitemaps
-Sitemap: https://v4-forma-36.vercel.app/sitemap.xml
