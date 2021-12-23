@@ -6,8 +6,8 @@ import { getMdxPaths } from '../utils/content';
 dotenv.config();
 
 // todo: replace with f36.contentful.com when we release v4
-const deploymentUrl =
-  process.env.VERCEL_URL || 'https://v4-forma-36.vercel.app';
+const deploymentUrl = process.env.VERCEL_URL || 'v4-forma-36.vercel.app';
+const deploymentUrlWithProtocol = `https://${deploymentUrl}`;
 
 async function generateSitemap() {
   const staticSlugs = [''];
@@ -16,7 +16,7 @@ async function generateSitemap() {
     .map((slugs) => slugs.join('/'));
 
   const fullUrls = [...staticSlugs, ...mdxSlugs].map((staticPagePath) => {
-    return `${deploymentUrl}/${staticPagePath}`;
+    return `${deploymentUrlWithProtocol}/${staticPagePath}`;
   });
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -53,10 +53,10 @@ User-agent: *
 Allow: /
 
 # Host
-Host: ${deploymentUrl}
+Host: ${deploymentUrlWithProtocol}
 
 # Sitemaps
-Sitemap: ${deploymentUrl}/sitemap.xml
+Sitemap: ${deploymentUrlWithProtocol}/sitemap.xml
 `,
   );
 }
