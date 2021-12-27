@@ -23,8 +23,19 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.png" />
         <script
-          async
+          defer
+          type="text/javascript"
           src="https://cmp.osano.com/16BcqiRsJId123ATa/fcd81040-24a4-4474-9a22-f295cbec8600/osano.js"
+        ></script>
+        <link
+          key="plugin-docsearch-css"
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"
+        />
+        <script
+          defer
+          type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"
         ></script>
       </Head>
 
