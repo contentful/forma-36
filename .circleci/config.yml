@@ -45,7 +45,6 @@ jobs:
             - packages/f36-docs-utils/dist
             - packages/forma-36-react-components/dist
             - packages/forma-36-tokens/dist
-            - packages/forma-36-website/public
 
   analyze_code:
     docker:
