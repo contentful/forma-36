@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { Flex, Text, Heading, CopyButton } from '@contentful/f36-components';
@@ -18,6 +19,17 @@ const styles = {
   }),
 };
 
+function UrlCopyButton() {
+  const router = useRouter();
+  return (
+    <CopyButton
+      value={window.location.origin + router.asPath}
+      className={css({ button: { border: 'none !important' } })}
+      tooltipText="Copy"
+    />
+  );
+}
+
 export function PlaygroundTopBar() {
   return (
     <>
@@ -35,11 +47,7 @@ export function PlaygroundTopBar() {
         <div className={styles.divider} />
         <Flex alignItems="center" gap="spacingXs">
           <Text fontColor="gray800">Share your playground: </Text>
-          <CopyButton
-            value="// todo: pass a real url value here"
-            className={css({ button: { border: 'none !important' } })}
-            tooltipText="Copy"
-          />
+          <UrlCopyButton />
         </Flex>
         <div className={styles.divider} />
         <Flex alignItems="center" gap="spacingXs">

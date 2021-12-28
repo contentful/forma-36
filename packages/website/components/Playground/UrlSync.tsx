@@ -7,10 +7,14 @@ import * as coder from '../../utils/coder';
 export function UrlSync() {
   const router = useRouter();
   const { code } = useActiveCode();
-  const [debouncedCode] = useDebounce(code, 2000);
+  const [debouncedCode] = useDebounce(code, 1000);
 
   useEffect(() => {
-    const href = `/playground?code=${coder.encode(debouncedCode)}`;
+    const code = coder.encode(debouncedCode);
+    if (code === router.query.code) {
+      return;
+    }
+    const href = `/playground?code=${code}`;
     router.push(href, undefined, { shallow: true });
   }, [debouncedCode]);
 
