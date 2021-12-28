@@ -12,9 +12,16 @@ const styles = {
     gridTemplateAreas: `"topbar topbar"
     "sidemenu content"`,
   }),
-  gridItem: css({
+  sidebarItem: css({
     display: 'flex',
     flexDirection: 'column',
+    overflowY: 'scroll',
+    overflowX: 'auto',
+  }),
+  mainItem: css({
+    display: 'flex',
+    flexDirection: 'column',
+    overflow: 'auto',
   }),
 };
 
@@ -25,7 +32,7 @@ interface Props {
 
 function Main({ children }: Props) {
   return (
-    <Grid.Item area="content" as="main" className={styles.gridItem}>
+    <Grid.Item area="content" as="main" className={styles.mainItem}>
       {children}
       <Footer />
     </Grid.Item>
@@ -44,7 +51,7 @@ export function Layout({ children, currentPage }: Props) {
         <Topbar />
       </Grid.Item>
 
-      <Grid.Item area="sidemenu" className={styles.gridItem}>
+      <Grid.Item area="sidemenu" className={styles.sidebarItem}>
         <Sidebar currentPage={currentPage} />
       </Grid.Item>
 
