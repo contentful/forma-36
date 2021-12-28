@@ -17,7 +17,6 @@ const styles = {
     display: 'flex';
     flex-direction: 'column';
     width: 960px;
-    min-height: 80vh;
     margin: 0 auto;
     padding-top: ${tokens.spacing2Xl};
   `,
