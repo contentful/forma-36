@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { GlobalStyles as FormaGlobalStyles } from '@contentful/f36-components';
 import { GlobalStyles } from '../components/GlobalStyles';
+import '../resources/css/sandpack.css';
 
 import { Layout } from '../components/Layout';
 
