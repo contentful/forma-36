@@ -48,7 +48,7 @@ function Topbar() {
         <CopyButton
           value="// todo: pass a real url value here"
           className={css({ button: { border: 'none !important' } })}
-          tooltipText="Copy URL"
+          tooltipText="Copy"
         />
       </Flex>
       <div className={styles.divider} />
