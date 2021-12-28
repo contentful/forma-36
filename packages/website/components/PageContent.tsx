@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 import {
@@ -8,6 +9,7 @@ import {
   Stack,
   Subheading,
 } from '@contentful/f36-components';
+import { Flex } from '@contentful/f36-core';
 import { TableOfContent, TocType } from './TableOfContent';
 import storybookIcon from '../resources/icons/storybook.svg';
 import githubIcon from '../resources/icons/github.svg';
@@ -16,13 +18,10 @@ const styles = {
   root: css`
     display: 'flex';
     flex-direction: 'column';
-    width: 960px;
     margin: 0 auto;
-    padding-top: ${tokens.spacing2Xl};
+    padding: ${tokens.spacingXl} ${tokens.spacing2Xl} 0 ${tokens.spacing2Xl};
   `,
   header: css`
-    width: 960px;
-    margin: 0 auto;
     padding-bottom: ${tokens.spacingXl};
     margin-bottom: ${tokens.spacingXl};
     border-bottom: 1px solid ${tokens.gray300};
@@ -58,6 +57,14 @@ const styles = {
   buttonList: css`
     display: flex;
   `,
+  secondaryNav: css`
+    display: block;
+    position: sticky;
+    top: ${tokens.spacingM};
+    align-self: start;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  `,
 };
 
 function PageHeader(props: {
@@ -84,7 +91,7 @@ function PageHeader(props: {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img {...storybookIcon} alt="" />
+                <Image {...storybookIcon} alt="" />
                 <span>Storybook</span>
               </a>
             )}
@@ -96,7 +103,7 @@ function PageHeader(props: {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img {...githubIcon} alt="" />
+                <Image {...githubIcon} alt="" />
                 <span>Github</span>
               </a>
             )}
@@ -158,11 +165,18 @@ export function PageContent(props: {
 }) {
   return (
     <article className={styles.root}>
-      <PageHeader {...props.frontMatter} />
-      {props.frontMatter.toc === false ? null : (
-        <TableOfContent toc={props.toc} />
-      )}
-      {props.children}
+      <Flex>
+        <Flex flexDirection="column" fullWidth paddingRight="spacingL">
+          <PageHeader {...props.frontMatter} />
+          {props.children}
+        </Flex>
+        {props.frontMatter.toc === false ? null : (
+          <nav className={styles.secondaryNav}>
+            <TableOfContent toc={props.toc} />
+          </nav>
+        )}
+      </Flex>
+
       <PageFooter {...props.frontMatter} />
     </article>
   );

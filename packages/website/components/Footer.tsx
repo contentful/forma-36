@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { TextLink, Flex } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/core';
@@ -10,9 +11,9 @@ const styles = {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 960px;
-    margin: 0 auto;
-    padding: ${tokens.spacing2Xl} 0;
+    padding: ${tokens.spacingL} ${tokens.spacing2Xl};
+    margin-top: ${tokens.spacing2Xl};
+    background-color: ${tokens.gray100};
   `,
 
   svg: css`
@@ -75,7 +76,7 @@ export const Footer = () => {
         rel="noopener noreferrer"
         css={styles.svg}
       >
-        <img
+        <Image
           alt="Contentful’s logo"
           css={styles.svg}
           src={contentfulLogoSVG.src}
