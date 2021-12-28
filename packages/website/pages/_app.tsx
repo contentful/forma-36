@@ -6,7 +6,21 @@ import { GlobalStyles } from '../components/GlobalStyles';
 
 import { Layout } from '../components/Layout';
 
+function defaultLayout(props: {
+  pageProps?: { frontMatter?: { slug: string } } & Record<string, unknown>;
+  page: JSX.Element;
+}) {
+  return (
+    <Layout currentPage={props.pageProps?.frontMatter?.slug || ''}>
+      {props.page}
+    </Layout>
+  );
+}
+
 function MyApp({ Component, pageProps }: AppProps) {
+  // @ts-expect-error ignore missing getLayout definition
+  const getLayout = Component.getLayout || defaultLayout;
+
   return (
     <>
       <FormaGlobalStyles />
@@ -38,10 +52,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"
         ></script>
       </Head>
-
-      <Layout currentPage={pageProps.frontMatter?.slug}>
-        <Component {...pageProps} />
-      </Layout>
+      {getLayout({ page: <Component {...pageProps} />, pageProps })}
     </>
   );
 }
