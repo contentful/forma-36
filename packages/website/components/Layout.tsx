@@ -15,7 +15,6 @@ const styles = {
   gridItem: css({
     display: 'flex',
     flexDirection: 'column',
-    overflow: 'auto',
   }),
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { TextInput, Flex, List, Box } from '@contentful/f36-components';
+import { Flex, List, Box } from '@contentful/f36-components';
 
 import { SidebarLink } from './SidebarLink';
 import {
@@ -9,6 +9,7 @@ import {
   SidebarSectionType,
   SidebarLinkType,
 } from './SidebarSection';
+import { DocSearch } from './DocSearch';
 
 const sidebarLinks = require('../utils/sidebarLinks.json');
 
@@ -16,9 +17,6 @@ const styles = {
   sidebar: css({
     height: '100%',
     borderRight: `1px solid ${tokens.gray300}`,
-  }),
-  search: css({
-    padding: tokens.spacingS,
   }),
   nav: css({
     borderTop: `1px solid ${tokens.gray300}`,
@@ -91,9 +89,8 @@ const components: Array<SidebarSectionType | SidebarLinkType> = [
 export function Sidebar({ currentPage = '/' }: Props) {
   return (
     <Flex className={styles.sidebar} flexDirection="column">
-      <div className={styles.search}>
-        <TextInput />
-      </div>
+      <DocSearch />
+
       <Flex
         as="nav"
         aria-label="Main Navigation"
