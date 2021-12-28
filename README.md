@@ -11,7 +11,6 @@
 <!-- TOC -->
 
 - [Table of contents](#table-of-contents)
-- [Packages](#packages)
   - [Creating new packages](#creating-new-packages)
 - [Development](#development)
   - [Storybook for forma-36-react-components](#storybook-for-forma-36-react-components)
@@ -25,20 +24,6 @@
 - [Contributors ✨](#contributors-)
 
 <!-- /TOC -->
-
-## Packages
-
-Forma 36 is a monorepo structured into different packages and maintained using [Lerna](https://github.com/lerna/lerna).
-The packages available are:
-
-- [`forma-36-website`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-website)
-  This package includes the design system documentation which offers guidelines, best practices and examples.
-
-- [`forma-36-react-components`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components)
-  A React component library built with Storybook.
-
-- [`forma-36-tokens`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-tokens)
-  This package includes all the visual tokens (e.g. colors, margins, font sizes, etc) that used in the react library
 
 ### Creating new packages
 

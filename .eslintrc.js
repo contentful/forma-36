@@ -99,7 +99,6 @@ module.exports = {
     },
     {
       files: [
-        '**/forma-36-website/**/*',
         '**/forma-36-react-components/tools/**/*',
         '**/forma-36-react-components/**/Icon/svg/*',
         '**/forma-36-react-components/**/ProductIcon/**/*',
@@ -108,12 +107,6 @@ module.exports = {
       ],
       rules: {
         'import/no-default-export': 'off',
-      },
-    },
-    {
-      files: ['**/forma-36-website/**/*'],
-      rules: {
-        'rulesdir/emotion-in-function': 'off',
       },
     },
   ],

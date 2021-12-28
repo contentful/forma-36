@@ -22,19 +22,21 @@ with the exception of UI components that should have their folder and files crea
   /forma-36-tokens
     README.mdx
     package.json
-  /forma-36-website
+  /website
     README.mdx
     package.json
 ```
 
 ## Table of contents
 
-- [Components](#components)
-  - [Test files](#test-files)
-  - [Packages with more than one component](#packages-with-more-than-one-component)
-  - [Packages with utility functions](#packages-with-utility-functions)
-  - [Why do we use MDX?](#why-do-we-use-mdx)
-  - [Why is every `.mdx` file named "README"](#why-is-every-mdx-file-named-readme)
+- [F36 Folder Structure](#f36-folder-structure)
+  - [Table of contents](#table-of-contents)
+  - [Components](#components)
+    - [Test files](#test-files)
+    - [Packages with more than one component](#packages-with-more-than-one-component)
+    - [Packages with utility functions](#packages-with-utility-functions)
+    - [Why do we use MDX?](#why-do-we-use-mdx)
+    - [Why is every `.mdx` file named "README"?](#why-is-every-mdx-file-named-readme)
 
 ## Components
 
