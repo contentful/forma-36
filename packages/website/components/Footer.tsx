@@ -76,7 +76,7 @@ export const Footer = () => {
         rel="noopener noreferrer"
         css={styles.svg}
       >
-        <Image
+        <img
           alt="Contentful’s logo"
           css={styles.svg}
           src={contentfulLogoSVG.src}

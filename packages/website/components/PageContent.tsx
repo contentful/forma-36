@@ -91,7 +91,7 @@ function PageHeader(props: {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image {...storybookIcon} alt="" />
+                <img {...storybookIcon} alt="" />
                 <span>Storybook</span>
               </a>
             )}
@@ -103,7 +103,7 @@ function PageHeader(props: {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image {...githubIcon} alt="" />
+                <img {...githubIcon} alt="" />
                 <span>Github</span>
               </a>
             )}
