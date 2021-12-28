@@ -1,34 +1,23 @@
-const btoa =
-  typeof window === 'undefined'
-    ? (str: string) => Buffer.from(str, 'binary').toString('base64')
-    : window.btoa;
+import lzString from 'lz-string';
 
-const atob =
-  typeof window === 'undefined'
-    ? (str: string) => Buffer.from(str, 'base64').toString('binary')
-    : window.atob;
+const compressParams = (params: { code: string }) => {
+  const { code } = params;
+  const data = JSON.stringify({
+    ...(code ? { code } : {}),
+  });
+
+  return lzString.compressToEncodedURIComponent(data);
+};
 
 export function decode(input: string) {
-  return decodeURIComponent(
-    atob(input)
-      .split('')
-      .map(function (c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-      })
-      .join(''),
+  const result = JSON.parse(
+    lzString.decompressFromEncodedURIComponent(input) ?? '',
   );
+  return result.code ?? '';
 }
 
 export function encode(input: string) {
   if (input.length === 0) return '';
 
-  return btoa(
-    encodeURIComponent(input).replace(
-      /%([0-9A-F]{2})/g,
-      function toSolidBytes(match, p1) {
-        // @ts-expect-error mute
-        return String.fromCharCode('0x' + p1);
-      },
-    ),
-  );
+  return compressParams({ code: input });
 }

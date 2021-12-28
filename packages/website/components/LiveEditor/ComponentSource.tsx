@@ -13,9 +13,12 @@ import * as f36Components from '@contentful/f36-components';
 import * as f36utils from '@contentful/f36-utils';
 import { Card, Button, CopyButton } from '@contentful/f36-components';
 import * as f36icons from '@contentful/f36-icons';
+import { ExternalLinkIcon } from '@contentful/f36-icons';
 import { Flex } from '@contentful/f36-core';
 import theme from 'prism-react-renderer/themes/github';
 import { formatSourceCode } from './utils';
+import { useRouter } from 'next/router';
+import * as coder from '../../utils/coder';
 
 const liveProviderScope = {
   ...f36icons,
@@ -57,13 +60,21 @@ const styles = {
   copyButton: css`
     position: absolute;
     top: ${tokens.spacingS};
+    right: calc(200px + ${tokens.spacingS});
+    z-index: 1000;
+  `,
+  playgroundButton: css`
+    position: absolute;
+    top: ${tokens.spacingS};
     right: ${tokens.spacingS};
     z-index: 1000;
+    font-family: ${tokens.fontStackPrimary};
   `,
 };
 
 export function ComponentSource({ children }: { children: string }) {
   const [showSource, setShowSource] = useState(true);
+  const router = useRouter();
 
   const handleToggle = () => {
     setShowSource((prevState) => !prevState);
@@ -85,6 +96,16 @@ export function ComponentSource({ children }: { children: string }) {
             <LiveError className={styles.error} />
             <div style={{ position: 'relative' }}>
               <CopyButton className={styles.copyButton} value={children} />
+              <Button
+                className={styles.playgroundButton}
+                endIcon={<ExternalLinkIcon />}
+                onClick={() => {
+                  const href = `/playground?code=${coder.encode(children)}`;
+                  router.push(href, href);
+                }}
+              >
+                Open in Playground
+              </Button>
               <LiveEditor className={styles.editor} />
             </div>
           </>
