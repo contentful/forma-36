@@ -31,7 +31,9 @@
     "remark": "^14.0.2",
     "remark-code-titles": "^0.1.1",
     "remark-code-import": "^0.4.0",
-    "lodash.sortby": "^4.7.0"
+    "lodash.sortby": "^4.7.0",
+    "use-debounce": "^7.0.1",
+    "qs": "^6.10.1"
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^10.2.1",

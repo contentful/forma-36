@@ -65,6 +65,7 @@ export function SandpackRenderer(props: {
           showLineNumbers
           showInlineErrors
           wrapContent
+          initMode="immediate"
         />
         <SandpackPreview
           showSandpackErrorOverlay
