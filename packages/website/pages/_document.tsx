@@ -28,6 +28,8 @@ export default class MyDocument extends Document<{
   }
 
   render() {
+    const renderedSnippet = this.renderSnipet();
+
     return (
       <Html lang="en">
         <Head>
@@ -35,8 +37,8 @@ export default class MyDocument extends Document<{
             data-emotion-css={this.props.ids.join(' ')}
             dangerouslySetInnerHTML={{ __html: this.props.css }}
           />
-          {this.renderSnipet() && (
-            <script dangerouslySetInnerHTML={{ __html: this.renderSnipet() }} />
+          {renderedSnippet && (
+            <script dangerouslySetInnerHTML={{ __html: renderedSnippet }} />
           )}
         </Head>
         <body>
