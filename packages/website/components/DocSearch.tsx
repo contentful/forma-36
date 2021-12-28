@@ -6,7 +6,6 @@ import { TextInput } from '@contentful/f36-forms';
 
 const styles = {
   container: css`
-    position: relative;
     display: flex;
     align-items: center;
     width: 100%;
@@ -16,13 +15,6 @@ const styles = {
     & .algolia-autocomplete {
       width: 100%;
     }
-  `,
-  icon: css`
-    position: absolute;
-    right: 0;
-    display: flex;
-    margin-right: ${tokens.spacingL};
-    z-index: 1000;
   `,
 };
 
@@ -59,11 +51,9 @@ export const DocSearch = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.icon}>
-        <SearchIcon variant="muted" />
-      </div>
       <TextInput
         id="search"
+        icon={<SearchIcon variant="muted" />}
         name="search"
         type="text"
         placeholder="Search the docs"
