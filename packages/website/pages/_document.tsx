@@ -35,7 +35,9 @@ export default class MyDocument extends Document<{
             data-emotion-css={this.props.ids.join(' ')}
             dangerouslySetInnerHTML={{ __html: this.props.css }}
           />
-          <script dangerouslySetInnerHTML={{ __html: this.renderSnipet() }} />
+          {this.renderSnipet() && (
+            <script dangerouslySetInnerHTML={{ __html: this.renderSnipet() }} />
+          )}
         </Head>
         <body>
           <Main />
