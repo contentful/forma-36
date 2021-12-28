@@ -1,7 +1,6 @@
 import React from 'react';
 import { css } from 'emotion';
 import { Flex, Box } from '@contentful/f36-components';
-import tokens from '@contentful/f36-tokens';
 import { Topbar, TopbarHeight } from './Topbar';
 import { Footer } from './Footer';
 
@@ -16,9 +15,8 @@ const styles = {
   }),
   main: css({
     width: '100%',
-    height: `calc(100vh - ${TopbarHeight} - 100px)`,
-    background: tokens.gray200,
-    marginBottom: '100px',
+    height: `calc(100vh - ${TopbarHeight} - 176px)`,
+    marginBottom: '176px',
   }),
   footer: css({
     position: 'absolute',

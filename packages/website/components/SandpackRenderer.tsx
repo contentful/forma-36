@@ -1,5 +1,10 @@
 import React from 'react';
-import { Sandpack } from '@codesandbox/sandpack-react';
+import {
+  SandpackProvider,
+  SandpackLayout,
+  SandpackCodeEditor,
+  SandpackPreview,
+} from '@codesandbox/sandpack-react';
 
 const indexFile = `import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
@@ -21,22 +26,26 @@ const stylesFile = `body {
   padding: 16px;
 }`;
 
-export function SandpackRenderer(props: { code: string }) {
+export function SandpackRenderer(props: {
+  code: string;
+  topbar?: JSX.Element;
+  showOpenInCodeSandbox?: boolean;
+}) {
   return (
-    <Sandpack
+    <SandpackProvider
       template="react"
-      files={{
-        '/App.js': props.code,
-        '/styles.css': {
-          code: stylesFile,
-          hidden: true,
-        },
-        '/index.js': {
-          hidden: true,
-          code: indexFile,
-        },
-      }}
       customSetup={{
+        files: {
+          '/App.js': props.code,
+          '/styles.css': {
+            code: stylesFile,
+            hidden: true,
+          },
+          '/index.js': {
+            hidden: true,
+            code: indexFile,
+          },
+        },
         dependencies: {
           react: '^17.0.0',
           'react-dom': '^17.0.0',
@@ -48,6 +57,22 @@ export function SandpackRenderer(props: { code: string }) {
           lodash: '^4.17.21',
         },
       }}
-    />
+    >
+      {props.topbar}
+      <SandpackLayout>
+        <SandpackCodeEditor
+          showTabs={false}
+          showLineNumbers
+          showInlineErrors
+          wrapContent
+        />
+        <SandpackPreview
+          showSandpackErrorOverlay
+          showOpenInCodeSandbox={props.showOpenInCodeSandbox ?? false}
+          showRefreshButton
+          viewportSize="auto"
+        />
+      </SandpackLayout>
+    </SandpackProvider>
   );
 }
