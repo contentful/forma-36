@@ -66,6 +66,10 @@ const styles = {
     min-width: 12rem;
     max-width: 18rem;
   `,
+  mainContent: css`
+    max-width: 44.5rem;
+    letter-spacing: initial;
+  `,
 };
 
 function PageHeader(props: {
@@ -171,7 +175,7 @@ export function PageContent(props: {
           flexDirection="column"
           fullWidth
           paddingRight="spacingL"
-          style={{ maxWidth: '44.5rem', letterSpacing: 'initial' }}
+          className={styles.mainContent}
         >
           <PageHeader {...props.frontMatter} />
           {props.children}
