@@ -101,7 +101,7 @@ export const Topbar = () => (
           <li className={styles.navListItem}>
             <a
               className={styles.navListLink}
-              href="https://contentful.design/"
+              href="https://medium.com/contentful-design"
               target="_blank"
               rel="noopener noreferrer"
             >
