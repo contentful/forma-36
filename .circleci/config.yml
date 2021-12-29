@@ -80,6 +80,30 @@ jobs:
           name: Test
           command: yarn test
 
+  check-links:
+    docker:
+      - image: circleci/node:14.15.0-browsers
+    resource_class: xlarge
+    working_directory: ~/circleci-f36-build
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/circleci-f36-build
+      - yarn_install
+      - run:
+          name: Build Next.js website
+          command: yarn docs:next:build
+      - run:
+          name: Run production version of the website locally
+          command: yarn docs:next:start-prod
+          background: true
+      - run:
+          name: Wait for localhost:3000 to be ready
+          command: yarn wait-on http://localhost:3000
+      - run:
+          name: Run links checker
+          command: yarn blc http://localhost:3000 -ro
+
   deploy_chromatic:
     docker:
       - image: circleci/node:14.15.0-browsers
@@ -129,6 +153,9 @@ workflows:
           requires:
             - build
       - test:
+          requires:
+            - build
+      - check-links:
           requires:
             - build
       - deploy_chromatic:
