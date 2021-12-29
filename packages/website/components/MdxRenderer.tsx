@@ -6,6 +6,8 @@ import * as f36Components from '@contentful/f36-components';
 import { MdxComponents } from '../mdx-components';
 import { ComponentSource } from './LiveEditor/ComponentSource';
 import { StaticSource } from './LiveEditor/StaticSource';
+import { css } from 'emotion';
+import tokens from '@contentful/f36-tokens';
 
 const {
   DisplayText,
@@ -18,23 +20,42 @@ const {
   Table,
 } = f36Components;
 
+const styles = {
+  increesedSizeElement: css({
+    fontFamily: tokens.fontStackPrimary,
+    fontSize: `${tokens.fontSizeL}`,
+    lineHeight: `${tokens.lineHeightL}`,
+  }),
+};
+
 /* eslint-disable react/display-name */
 /* eslint-disable @next/next/no-img-element */
 const components = {
   h1: (props) => <DisplayText as="h1" {...props} />,
-  h2: (props) => <Heading as="h2" marginTop="spacing2Xl" {...props} />,
+  h2: (props) => (
+    <Heading
+      as="h2"
+      marginTop="spacing2Xl"
+      {...props}
+      className={styles.increesedSizeElement}
+    />
+  ),
   h3: (props) => <Subheading as="h3" marginTop="spacingL" {...props} />,
   h4: (props) => <Subheading as="h4" {...props} />,
   h5: (props) => <Subheading as="h5" {...props} />,
   h6: (props) => <Subheading as="h6" {...props} />,
-  p: (props) => <Paragraph {...props} />,
-  a: (props) => <TextLink {...props} />,
+  p: (props) => (
+    <Paragraph {...props} className={styles.increesedSizeElement} />
+  ),
+  a: (props) => <TextLink {...props} className={styles.increesedSizeElement} />,
   ul: (props) => (
     <Box marginBottom="spacingL">
-      <List {...props} />
+      <List {...props} className={styles.increesedSizeElement} />
     </Box>
   ),
-  li: (props) => <List.Item {...props} />,
+  li: (props) => (
+    <List.Item {...props} className={styles.increesedSizeElement} />
+  ),
   code: (props) => {
     if (props.static) {
       return <StaticSource {...props} />;

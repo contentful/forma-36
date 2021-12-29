@@ -48,20 +48,6 @@ export const GlobalStyles = () => {
           margin: 0;
         }
 
-        p,
-        a,
-        li {
-          font-family: ${tokens.fontStackPrimary};
-          font-size: ${tokens.fontSizeL} !important;
-          line-height: ${tokens.lineHeightL} !important;
-        }
-
-        h2 {
-          font-family: ${tokens.fontStackPrimary};
-          font-size: ${tokens.fontSizeL} !important;
-          line-height: ${tokens.lineHeightL} !important;
-        }
-
         pre.prism-code {
           font-family: ${tokens.fontStackMonospace};
           font-size: ${tokens.fontSizeM};

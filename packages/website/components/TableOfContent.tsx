@@ -37,6 +37,8 @@ const styles = {
     backgroundColor: 'transparent',
     transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
     fontWeight: tokens.fontWeightNormal,
+    fontSize: tokens.fontSizeL,
+    lineHeight: tokens.lineHeightL,
     listStyleType: 'none',
     '&:hover': {
       backgroundColor: tokens.gray200,
