@@ -11,6 +11,7 @@
   "dependencies": {
     "@contentful/f36-components": "^4.0.0",
     "@contentful/f36-core": "^4.0.0",
+    "@codesandbox/sandpack-react": "0.10.7",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@next/mdx": "^11.1.2",
@@ -30,7 +31,10 @@
     "remark": "^14.0.2",
     "remark-code-titles": "^0.1.1",
     "remark-code-import": "^0.4.0",
-    "lodash.sortby": "^4.7.0"
+    "lodash.sortby": "^4.7.0",
+    "use-debounce": "^7.0.1",
+    "qs": "^6.10.1",
+    "lz-string": "1.4.4"
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^10.2.1",

@@ -12,7 +12,7 @@ const deploymentUrlWithProtocol = `https://${deploymentUrl}`;
 async function generateSitemap() {
   // a list of static pages
   // for now we only have `index.tsx`, so the url is an empty string
-  const staticSlugs = [''];
+  const staticSlugs = ['', 'playground'];
   const mdxSlugs = (await getMdxPaths())
     .map((item) => item.params.slug)
     .map((slugs) => slugs.join('/'));

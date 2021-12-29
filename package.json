@@ -26,6 +26,7 @@
     "test": "jest",
     "tsc": "tsc --noEmit",
     "tsc:watch": "tsc --noEmit --watch",
+    "docs": "yarn docs:next",
     "docs:next": "lerna run --scope @contentful/f36-website start --stream",
     "docs:next:build": "lerna run --scope @contentful/f36-website build:prod --stream",
     "docs:next:start-prod": "lerna run --scope @contentful/f36-website start:prod --stream",
