@@ -5,7 +5,6 @@ import tokens from '@contentful/f36-tokens';
 export default function FlexExample() {
   const ColorBox = ({ backgroundColor, children }) => (
     <Flex
-      as="div"
       justifyContent="center"
       alignItems="center"
       style={{
