@@ -43,9 +43,6 @@ const styles = {
       textDecoration: 'none',
       color: tokens.gray900,
     },
-    '&:active': {
-      backgroundColor: tokens.blue600,
-    },
   }),
 };
 
