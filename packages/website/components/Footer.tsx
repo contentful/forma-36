@@ -10,9 +10,9 @@ const styles = {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 960px;
-    margin: 0 auto;
-    padding: ${tokens.spacing2Xl} 0;
+    padding: ${tokens.spacingL} ${tokens.spacing2Xl};
+    margin-top: ${tokens.spacing2Xl};
+    background-color: ${tokens.gray100};
   `,
 
   svg: css`

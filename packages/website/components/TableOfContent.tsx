@@ -9,12 +9,8 @@ const styles = {
     display: 'block',
     background: 'white',
     marginBottom: tokens.spacingL,
-    padding: tokens.spacingL,
-    marginTop: `calc(-1 * ${tokens.spacingL})`,
+    padding: `0 ${tokens.spacingL}`,
     '@media (min-width: 1400px)': {
-      width: '350px',
-      marginLeft: '50px',
-      marginRight: '-100px',
       display: 'inline-block',
       background: 'white',
       float: 'right',
