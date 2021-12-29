@@ -28,8 +28,8 @@ export const GlobalStyles = () => {
         body {
           color: ${tokens.gray800};
           font-family: ${tokens.fontStackPrimary};
-          font-size: ${tokens.fontSizeM};
-          line-height: ${tokens.lineHeightM};
+          font-size: ${tokens.fontSizeL};
+          line-height: ${tokens.lineHeightL};
           min-width: 1280px;
         }
 
@@ -46,6 +46,20 @@ export const GlobalStyles = () => {
 
         pre {
           margin: 0;
+        }
+
+        p,
+        a,
+        li {
+          font-family: ${tokens.fontStackPrimary};
+          font-size: ${tokens.fontSizeL} !important;
+          line-height: ${tokens.lineHeightL} !important;
+        }
+
+        h2 {
+          font-family: ${tokens.fontStackPrimary};
+          font-size: ${tokens.fontSizeL} !important;
+          line-height: ${tokens.lineHeightL} !important;
         }
 
         pre.prism-code {

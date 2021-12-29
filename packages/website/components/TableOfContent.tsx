@@ -20,7 +20,32 @@ const styles = {
     width: '100%',
   }),
   rootList: css({
-    paddingLeft: tokens.spacingM,
+    listStyle: 'none',
+    paddingLeft: '0',
+    ul: css({
+      paddingLeft: '20px',
+    }),
+  }),
+  listElement: css({
+    listStyleType: 'none',
+  }),
+  sidebarNavItem: css({
+    padding: `${tokens.spacingXs} ${tokens.spacingM}`,
+    textDecoration: 'none',
+    cursor: 'pointer',
+    color: tokens.gray900,
+    backgroundColor: 'transparent',
+    transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
+    fontWeight: tokens.fontWeightNormal,
+    listStyleType: 'none',
+    '&:hover': {
+      backgroundColor: tokens.gray200,
+      textDecoration: 'none',
+      color: tokens.gray900,
+    },
+    '&:active': {
+      backgroundColor: tokens.blue600,
+    },
   }),
 };
 
@@ -33,9 +58,13 @@ function TocItem(props: { tuple: TocTuple }) {
   const [link, list] = props.tuple;
   return (
     <List.Item>
-      {link && <TextLink href={link.href}>{link.text}</TextLink>}
+      {link && (
+        <TextLink href={link.href} className={styles.sidebarNavItem}>
+          {link.text}
+        </TextLink>
+      )}
       {list && (
-        <List>
+        <List className={styles.rootList}>
           {list.children.map((item, index) => {
             return <TocItem tuple={item} key={index} />;
           })}
@@ -57,7 +86,7 @@ export function TableOfContent(props: { toc: TocType | null }) {
   return (
     <div className={styles.root}>
       <div className={styles.inner}>
-        <Subheading as="h2">Table of contents</Subheading>
+        <Subheading as="h2">On this page</Subheading>
         <List className={styles.rootList}>
           {props.toc.map((item, index) => {
             return <TocItem tuple={item} key={index} />;
