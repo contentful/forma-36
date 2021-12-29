@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex, TextLink, Button } from '@contentful/f36-components';
+import { Box, Flex } from '@contentful/f36-components';
 
 export default function BoxSpacingExample() {
   return (
@@ -14,19 +14,10 @@ export default function BoxSpacingExample() {
         target="_blank"
         marginRight="spacingL"
       >
-        I am native link
+        I am link
       </Box>
-      <Box
-        as={TextLink}
-        display="inline"
-        href="https://contentful.com"
-        target="_blank"
-        marginRight="spacingL"
-      >
-        I am link as TextLink component
-      </Box>
-      <Box as={Button} marginRight="spacingL">
-        I am Button
+      <Box as="code" display="inline" marginRight="spacingL">
+        I am code
       </Box>
     </Flex>
   );
