@@ -5,89 +5,71 @@ section: 'layoutComponents'
 status: 'stable'
 slug: /components/flex/
 github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/core/src/Flex'
-storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/layout-flex--basic'
 typescript: ./Flex.tsx
 ---
 
-Flex components is [Box] with `display: flex` and abilities to apply other flexbox CSS properties via properties of the component.
+`Flex` component is a [Box] with `display: flex` and abilities to apply other flexbox CSS properties via properties of the component.
 
-## How to use Flex
+The `Flex` component is useful because it helps with several common cases:
 
-The Flex component is useful because it helps with several common cases:
-
-- Create a one direction layout (vertical or horizontal) with uses Forma 36 spacing.
+- Create a one direction layout (vertical or horizontal) with uses Forma 36 [spacing system].
 - Compose new component and allow to override element using the `as` property.
 
-### Import
+## Import
 
 ```js static=true
 import { Flex } from '@contentful/f36-components';
-// or
-import { Flex } from '@contentful/f36-core';
 ```
 
-## Code examples
+## Examples
 
 ### Margins & Paddings
 
-Flex components inherits behaviour of [Box] component and allows to pass margins and paddings that are based on our [spacing system].
+`Flex` component inherits behaviour of [Box] component and allows to pass margins and paddings that are based on our [spacing system].
 
 To control the behaviour of the Flex component you can use specific properties that match [all main Flexbox related CSS attributes](https://cssreference.io/flexbox/).
 
-```js
-() => {
-  const ColorBox = ({ backgroundColor, ...rest }) => (
-    <Flex
-      as="div"
-      justifyContent="center"
-      alignItems="center"
-      style={{
-        width: '120px',
-        height: '120px',
-        color: tokens.colorWhite,
-        backgroundColor,
-      }}
-      {...rest}
-    />
-  );
+```jsx file=examples/FlexExample.tsx
 
-  return (
-    <Flex
-      justifyContent="space-between"
-      alignItems="center"
-      marginBottom="spacingM"
-    >
-      <ColorBox backgroundColor={tokens.colorGreenBase}>Example item</ColorBox>
-      <ColorBox backgroundColor={tokens.colorRedBase}>Example item</ColorBox>
-      <ColorBox backgroundColor={tokens.colorBlueBase}>Example item</ColorBox>
-    </Flex>
-  );
-};
+```
+
+### Nesting
+
+This example shows how you can nest flexboxes to create more complicated layouts. It also uses the `flexGrow` prop on one of the children to expand it to fill the repaining space.
+
+```jsx file=examples/FlexNestingExample.tsx
+
+```
+
+### Alignment
+
+The `alignItems` prop can be used to align items along the cross axis. When direction is `column`, this refers to horizontal alignment, and when direction is `row` it refers to vertical alignment.
+
+This example horizontally centers items in a vertical stack.
+
+```jsx file=examples/FlexAlignmentExample.tsx
+
+```
+
+### Justification
+
+The `justifyContent` prop can be used to align items along the main axis. When direction is `column`, this refers to vertical alignment, and when direction is `row` it refers to horizontal alignment.
+
+This example vertically centers the stack of items within the available space defined by a container.
+
+```jsx file=examples/FlexJustificationExample.tsx
+
 ```
 
 ### Real-world example
 
-```jsx
-<Flex alignItems="center" justifyContent="space-between">
-  <Box>
-    <Subheading>User name</Subheading>
-  </Box>
-  <Flex alignItems="center">
-    <Box marginRight="spacingM">
-      <TextLink href="http://google.com">User profile</TextLink>
-    </Box>
-    <Box>
-      <Button>Add user to the team</Button>
-    </Box>
-  </Flex>
-</Flex>
+```jsx file=examples/FlexRealWorldExample.tsx
+
 ```
 
-## Props
+## Props (API reference)
 
-import { Props } from '@contentful/f36-docs-utils';
-
-<Props of="Flex" />
+<Props of="Flex" storybookPath="/story/layout-flex--basic" />
 
 [box]: ../components/box
 [spacing system]: ../tokens/spacing
