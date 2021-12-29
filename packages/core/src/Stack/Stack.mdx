@@ -5,98 +5,47 @@ section: 'layoutComponents'
 status: 'stable'
 slug: /components/stack/
 github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/core/src/Stack'
-storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/layout-stack--basic'
 typescript: ./Stack.tsx
 ---
 
 `Stack` is a layout component that makes it easy to stack elements together and apply a space between them.
 
-## How to use Stack
+Basically, `Stack` wraps [Flex] component and allows you to create vertical and horizontal stacks without specifying `alignItems` and `justifyContent` properties.
 
-The Stack component is useful because it helps with several common cases:
+Also, `Stack` components inherits behaviour of [Box] component and allows to pass margins and paddings that are based on our [spacing system].
 
-- Used to add spacing between elements in the horizontal or vertical direction
-
-### Import
+## Import
 
 ```js static=true
 import { Stack } from '@contentful/f36-components';
-// or
-import { Stack } from '@contentful/f36-core';
 ```
 
-## Code examples
+## Examples
 
-### Margins & Paddings
-
-`Stack` components inherits behaviour of [Box] component and allows to pass margins and paddings that are based on our [spacing system].
-
-To control the behaviour of the Flex component you can use specific properties that match [all main Flexbox related CSS attributes](https://cssreference.io/flexbox/).
-
-```js
-() => {
-  const ColorBox = ({ backgroundColor, ...rest }) => (
-    <Flex
-      as="div"
-      justifyContent="center"
-      alignItems="center"
-      style={{
-        width: '120px',
-        height: '120px',
-        color: tokens.colorWhite,
-        backgroundColor,
-      }}
-      {...rest}
-    />
-  );
-
-  return (
-    <Stack marginTop="spacingM" marginBottom="spacingS">
-      <ColorBox backgroundColor={tokens.colorGreenBase}>Example item</ColorBox>
-      <ColorBox backgroundColor={tokens.colorRedBase}>Example item</ColorBox>
-      <ColorBox backgroundColor={tokens.colorBlueBase}>Example item</ColorBox>
-    </Stack>
-  );
-};
-```
-
-### Spacing and Direction
-
-By default, `spacing` between all `Stack` children equals our `spacingM` token. The default direction is `row`.
 You can change the defaults by using `spacing` and `flexDirection` correspondingly.
 
-```jsx
-() => {
-  const ColorBox = ({ backgroundColor, ...rest }) => (
-    <Flex
-      as="div"
-      justifyContent="center"
-      alignItems="center"
-      style={{
-        width: '120px',
-        height: '120px',
-        color: tokens.colorWhite,
-        backgroundColor,
-      }}
-      {...rest}
-    />
-  );
+### Horizontal Stack
 
-  return (
-    <Stack spacing="spacingS" flexDirection="column">
-      <ColorBox backgroundColor={tokens.colorGreenBase}>Example item</ColorBox>
-      <ColorBox backgroundColor={tokens.colorRedBase}>Example item</ColorBox>
-      <ColorBox backgroundColor={tokens.colorBlueBase}>Example item</ColorBox>
-    </Stack>
-  );
-};
+By default, `spacing` between all `Stack` children equals our `spacingM` token.
+The default direction is `row`, so `Stack` layouts its children horizontally.
+
+```jsx file=examples/HorizontalStackExample.tsx
+
 ```
 
-## Props
+### Vertical Stack
 
-import { Props } from '@contentful/f36-docs-utils';
+By changing `flexDirection` property to `column`, we make `Stack` component to layout its children vertically.
+In this example you can also find an adjusted spacing between children by using `spacing` property.
 
-<Props of="Stack" />
+```jsx file=examples/VerticalStackExample.tsx
+
+```
+
+## Props (API reference)
+
+<Props of="Stack" storybookPath="/story/layout-stack--basic" />
 
 [box]: ../components/box
+[flex]: ../components/flex
 [spacing system]: ../tokens/spacing
