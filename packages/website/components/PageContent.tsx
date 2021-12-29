@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 import {
