@@ -2,7 +2,7 @@
 import React from 'react';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { List, TextLink, Subheading } from '@contentful/f36-components';
+import { List, TextLink, Subheading, Box } from '@contentful/f36-components';
 
 const styles = {
   root: css({
@@ -86,7 +86,9 @@ export function TableOfContent(props: { toc: TocType | null }) {
   return (
     <div className={styles.root}>
       <div className={styles.inner}>
-        <Subheading as="h2">On this page</Subheading>
+        <Box marginLeft="spacingM">
+          <Subheading as="h2">On this page</Subheading>
+        </Box>
         <List className={styles.rootList}>
           {props.toc.map((item, index) => {
             return <TocItem tuple={item} key={index} />;
