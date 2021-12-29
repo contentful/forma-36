@@ -104,6 +104,7 @@ module.exports = {
         '**/forma-36-react-components/**/ProductIcon/**/*',
         '**/forma-36-react-components/**/Illustration/**/*',
         '**/packages/components/**/*',
+        '**/packages/**/examples/**',
       ],
       rules: {
         'import/no-default-export': 'off',
