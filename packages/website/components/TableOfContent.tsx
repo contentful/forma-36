@@ -23,7 +23,7 @@ const styles = {
     listStyle: 'none',
     paddingLeft: '0',
     ul: css({
-      paddingLeft: '20px',
+      paddingLeft: tokens.spacingL,
     }),
   }),
   listElement: css({
