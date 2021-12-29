@@ -15,8 +15,8 @@ import githubIcon from '../resources/icons/github.svg';
 
 const styles = {
   root: css`
-    display: 'flex';
-    flex-direction: 'column';
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
     padding: ${tokens.spacingXl} ${tokens.spacing2Xl} 0 ${tokens.spacing2Xl};
   `,
@@ -63,6 +63,12 @@ const styles = {
     align-self: start;
     overflow-y: auto;
     overscroll-behavior: contain;
+    min-width: 12rem;
+    max-width: 18rem;
+  `,
+  mainContent: css`
+    max-width: 44.5rem;
+    letter-spacing: initial;
   `,
 };
 
@@ -165,7 +171,12 @@ export function PageContent(props: {
   return (
     <article className={styles.root}>
       <Flex>
-        <Flex flexDirection="column" fullWidth paddingRight="spacingL">
+        <Flex
+          flexDirection="column"
+          fullWidth
+          paddingRight="spacingL"
+          className={styles.mainContent}
+        >
           <PageHeader {...props.frontMatter} />
           {props.children}
         </Flex>

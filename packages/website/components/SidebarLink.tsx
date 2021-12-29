@@ -13,6 +13,8 @@ export const getSectionTitleStyles = (isActive = false, indent = 1) => {
     }),
     link: css({
       display: 'block',
+      fontSize: `${tokens.fontSizeL}`,
+      lineHeight: `${tokens.lineHeightL}`,
     }),
     clickable: css({
       textDecoration: 'none',

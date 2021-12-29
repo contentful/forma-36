@@ -28,8 +28,8 @@ export const GlobalStyles = () => {
         body {
           color: ${tokens.gray800};
           font-family: ${tokens.fontStackPrimary};
-          font-size: ${tokens.fontSizeM};
-          line-height: ${tokens.lineHeightM};
+          font-size: ${tokens.fontSizeL};
+          line-height: ${tokens.lineHeightL};
           min-width: 1280px;
         }
 

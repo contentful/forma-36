@@ -47,6 +47,7 @@ const styles = {
     font-family: ${tokens.fontStackMonospace};
     background-color: #222031;
     color: #ffffff;
+    min-height: 100px;
   `,
   // !important was necessary because these styles are being applied after the Card component styles
   card: css`
@@ -59,13 +60,13 @@ const styles = {
   `,
   copyButton: css`
     position: absolute;
-    top: ${tokens.spacingS};
+    bottom: ${tokens.spacingS};
     right: calc(200px + ${tokens.spacingS});
     z-index: 1000;
   `,
   playgroundButton: css`
     position: absolute;
-    top: ${tokens.spacingS};
+    bottom: ${tokens.spacingS};
     right: ${tokens.spacingS};
     z-index: 1000;
     font-family: ${tokens.fontStackPrimary};
@@ -95,7 +96,11 @@ export function ComponentSource({ children }: { children: string }) {
           <>
             <LiveError className={styles.error} />
             <div style={{ position: 'relative' }}>
-              <CopyButton className={styles.copyButton} value={children} />
+              <CopyButton
+                tooltipProps={{ placement: 'left' }}
+                className={styles.copyButton}
+                value={children}
+              />
               <Button
                 className={styles.playgroundButton}
                 endIcon={<ExternalLinkIcon />}
