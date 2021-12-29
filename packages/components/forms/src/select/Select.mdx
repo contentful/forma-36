@@ -4,7 +4,7 @@ type: 'component'
 status: 'stable'
 section: 'formComponents'
 slug: /components/select/
-github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/components/form/src/select'
+github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/components/forms/src/select'
 storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/form-elements-select--overview'
 typescript: ./Select.tsx,./SelectOption.tsx
 ---
@@ -15,11 +15,10 @@ Keep in mind that Select should not be used without the label.
 ## How to use Select
 
 - Use Select to present many different options in one component
-- When you have only a few options try to show them all at once, using [Radio buttons](https://f36.contentful.com/components/radio-button/).
+- When you have only a few options try to show them all at once, using [Radio](../components/radio/).
 - Use Select in Forms
 - Order the list of options in a logical way, so it make sense for the user
-- Don't use Select for a very long list of options, instead for those cases use [Autocomplete](https://f36.contentful.com/components/autocomplete/)
-- if you use Select component add your custom label to it or use our [SelectField](https://f36.contentful.com/components/select-field/) instead
+- Don't use Select for a very long list of options, instead for those cases use [Autocomplete](../components/autocomplete/)
 
 ### Using as a controlled select
 
@@ -158,7 +157,7 @@ There might be cases where you would need to include the help text or validation
 
 ## Accessibility
 
-- Select should contain a label, if needed help message and validation message if needed. We provide [SelectField](https://f36.contentful.com/components/select-field/) component, that contains all of those elements.
+- Select should contain a label, if needed help message and validation message if needed.
 - Select should always a `name` property.
 
 ## Props
