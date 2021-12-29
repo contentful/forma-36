@@ -3,13 +3,15 @@ import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 import Link from 'next/link';
 
+export const TopbarHeight = '70px';
+
 const styles = {
   header: css`
     display: flex;
     background-color: ${tokens.blue700};
     color: #fff;
     padding: 0 ${tokens.spacingXl};
-    height: 70px;
+    height: ${TopbarHeight};
     align-items: center;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   `,
@@ -79,6 +81,13 @@ export const Topbar = () => (
     <div className={styles.searchNavContainer}>
       <nav>
         <ul className={styles.navList}>
+          <li className={styles.navListItem}>
+            <Link href="/playground" passHref>
+              <a className={styles.navListLink} href="/playground">
+                Playground
+              </a>
+            </Link>
+          </li>
           <li className={styles.navListItem}>
             <a
               className={styles.navListLink}
