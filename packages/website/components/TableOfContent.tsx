@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React from 'react';
-import { css } from 'emotion';
+import { css, cx } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { List, TextLink, Subheading, Box } from '@contentful/f36-components';
+import { useScrollSpy } from '../utils/use-scrollspy';
 
 const styles = {
   root: css({
@@ -40,11 +41,15 @@ const styles = {
     fontSize: tokens.fontSizeL,
     lineHeight: tokens.lineHeightL,
     listStyleType: 'none',
+
     '&:hover': {
-      backgroundColor: tokens.gray200,
       textDecoration: 'none',
-      color: tokens.gray900,
+      color: tokens.blue700,
     },
+  }),
+  sidebarNavItemActive: css({
+    color: tokens.blue700,
+    fontWeight: 'bold',
   }),
 };
 
@@ -52,33 +57,27 @@ type TocLink = { type: 'link'; href: string; text: string };
 type TocParent = { type: 'list'; children: TocTuple[] };
 type TocTuple = [TocLink] | [TocLink, TocParent];
 export type TocType = TocTuple[];
-
-function TocItem(props: { tuple: TocTuple }) {
-  const [link, list] = props.tuple;
-  return (
-    <List.Item>
-      {link && (
-        <TextLink href={link.href} className={styles.sidebarNavItem}>
-          {link.text}
-        </TextLink>
-      )}
-      {list && (
-        <List className={styles.rootList}>
-          {list.children.map((item, index) => {
-            return <TocItem tuple={item} key={index} />;
-          })}
-        </List>
-      )}
-    </List.Item>
-  );
+export interface HeadingType {
+  level: 'h2' | 'h3';
+  text: string;
+  id: string;
 }
 
-export function TableOfContent(props: { toc: TocType | null }) {
-  if (!props.toc || props.toc.length === 0) {
+export function TableOfContent(props: { headings: Array<HeadingType> }) {
+  const { headings } = props;
+
+  const activeId = useScrollSpy(
+    headings.map(({ id }) => `[id="${id}"]`),
+    {
+      rootMargin: '0% 0% -60% 0%',
+    },
+  );
+
+  if (!headings || headings.length === 0) {
     return null;
   }
 
-  if (props.toc.length === 1 && props.toc[0].length < 2) {
+  if (headings.length === 1) {
     return null;
   }
 
@@ -89,9 +88,21 @@ export function TableOfContent(props: { toc: TocType | null }) {
           <Subheading as="h2">On this page</Subheading>
         </Box>
         <List className={styles.rootList}>
-          {props.toc.map((item, index) => {
-            return <TocItem tuple={item} key={index} />;
-          })}
+          {headings.map(({ id, text, level }) => (
+            <List.Item key={id} title={text}>
+              <Box marginLeft={level === 'h3' ? 'spacingM' : undefined}>
+                <TextLink
+                  href={`#${id}`}
+                  aria-current={id === activeId ? 'location' : undefined}
+                  className={cx(styles.sidebarNavItem, {
+                    [styles.sidebarNavItemActive]: id === activeId,
+                  })}
+                >
+                  {text}
+                </TextLink>
+              </Box>
+            </List.Item>
+          ))}
         </List>
       </div>
     </div>
