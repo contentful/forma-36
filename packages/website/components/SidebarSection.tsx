@@ -17,7 +17,12 @@ const styles = {
     listStyle: 'none',
     userSelect: 'none',
   }),
-  sectionTitle: css({ padding: `${tokens.spacingXs} ${tokens.spacingM}` }),
+  sectionTitle: css({
+    padding: `${tokens.spacingXs} ${tokens.spacingM}`,
+    fontSize: tokens.fontSizeL,
+    lineHeight: tokens.lineHeightL,
+    letterSpacing: 'initial',
+  }),
 };
 
 const isLinkActive = (href, currentPage) =>
