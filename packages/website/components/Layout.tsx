@@ -4,6 +4,7 @@ import { Grid } from '@contentful/f36-components';
 import { Topbar } from './Topbar';
 import { Footer } from './Footer';
 import { Sidebar } from './Sidebar';
+import tokens from '@contentful/f36-tokens';
 
 const styles = {
   grid: css({
@@ -17,6 +18,8 @@ const styles = {
     flexDirection: 'column',
     overflowY: 'scroll',
     overflowX: 'auto',
+    fontSize: tokens.fontSizeL,
+    lineHeight: tokens.lineHeightL,
   }),
   mainItem: css({
     display: 'flex',
