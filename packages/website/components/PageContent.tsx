@@ -9,7 +9,7 @@ import {
   Subheading,
 } from '@contentful/f36-components';
 import { Flex } from '@contentful/f36-core';
-import { TableOfContent, TocType } from './TableOfContent';
+import { TableOfContent, HeadingType } from './TableOfContent';
 import storybookIcon from '../resources/icons/storybook.svg';
 import githubIcon from '../resources/icons/github.svg';
 
@@ -57,14 +57,14 @@ const styles = {
     display: flex;
   `,
   secondaryNav: css`
-    display: block;
+    display: flex;
     position: sticky;
     top: ${tokens.spacingM};
     align-self: start;
     overflow-y: auto;
     overscroll-behavior: contain;
-    min-width: 12rem;
-    max-width: 18rem;
+    width: 20rem;
+    flex-wrap: wrap;
   `,
   mainContent: css`
     max-width: 44.5rem;
@@ -158,7 +158,7 @@ function PageFooter(props: { github?: string }) {
 }
 
 export function PageContent(props: {
-  toc: TocType;
+  headings: HeadingType[];
   frontMatter: {
     title: string;
     storybook?: string;
@@ -180,9 +180,9 @@ export function PageContent(props: {
           <PageHeader {...props.frontMatter} />
           {props.children}
         </Flex>
-        {props.frontMatter.toc === false ? null : (
+        {props.frontMatter.headings === false ? null : (
           <nav className={styles.secondaryNav}>
-            <TableOfContent toc={props.toc} />
+            <TableOfContent headings={props.headings} />
           </nav>
         )}
       </Flex>

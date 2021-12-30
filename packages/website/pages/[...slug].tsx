@@ -15,7 +15,8 @@ import remarkCodeImport from 'remark-code-import';
 
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 import { getPropsMetadata, transformToc } from '../utils/propsMeta';
-import { TocType } from '../components/TableOfContent';
+import { getTableOfContents } from '../utils/mdx-utils';
+import { TocType, HeadingType } from '../components/TableOfContent';
 
 type ComponentPageProps = {
   source: MDXRemoteSerializeResult;
@@ -23,6 +24,7 @@ type ComponentPageProps = {
     title: string;
   };
   toc: TocType;
+  headings: HeadingType[];
   propsMetadata: ReturnType<typeof getPropsMetadata>;
 };
 
@@ -38,7 +40,7 @@ export default function ComponentPage(props: ComponentPageProps) {
       <Head>
         <title>Forma 36 - {props.frontMatter.title}</title>
       </Head>
-      <PageContent frontMatter={props.frontMatter} toc={props.toc}>
+      <PageContent frontMatter={props.frontMatter} headings={props.headings}>
         <PropsContextProvider value={{ ...props.propsMetadata }}>
           <MdxRenderer source={props.source} />
         </PropsContextProvider>
@@ -92,6 +94,7 @@ export async function getStaticProps(props: { params: { slug: string[] } }) {
     props: {
       source: mdxSource,
       toc,
+      headings: getTableOfContents(result.content),
       frontMatter: data,
       propsMetadata,
     },
