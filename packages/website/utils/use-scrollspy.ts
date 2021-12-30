@@ -13,8 +13,9 @@ export function useScrollSpy(
     observer.current?.disconnect();
     observer.current = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry?.isIntersecting) {
-          setActiveId(entry?.target?.getAttribute('id'));
+        if (entry?.isIntersecting && entry.target) {
+          const entryId = entry.target.getAttribute('id');
+          entryId && setActiveId(entryId);
         }
       });
     }, options);
