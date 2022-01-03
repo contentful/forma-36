@@ -38,7 +38,7 @@
   "dependencies": {
     "@babel/runtime": "^7.6.2",
     "date-fns": "^2.6.0",
-    "emotion": "^10.0.17",
+    "emotion": "^11.0.0",
     "pikaday": "^1.8.0"
   }
 }
