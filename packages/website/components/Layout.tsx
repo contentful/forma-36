@@ -16,10 +16,9 @@ const styles = {
   sidebarItem: css({
     display: 'flex',
     flexDirection: 'column',
-    overflowY: 'scroll',
-    overflowX: 'auto',
-    fontSize: tokens.fontSizeL,
-    lineHeight: tokens.lineHeightL,
+    overflow: 'hidden',
+    height: '100%',
+    borderRight: `1px solid ${tokens.gray300}`,
   }),
   mainItem: css({
     display: 'flex',
