@@ -88,7 +88,7 @@
     "@types/react-dom": "16.9.10",
     "@types/storybook__react": "5.2.1",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
-    "@typescript-eslint/parser": "^4.12.0",
+    "@typescript-eslint/parser": "^5.8.1",
     "assert": "^2.0.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^24.1.0",
