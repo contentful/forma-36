@@ -28,17 +28,13 @@ You need to pass an [Icon component](../components/icon) you want to render to t
 
 ### As toolbar actions
 
-Usually `IconButton` should be used in a toolbars, action bars and in all other space restricted containers where rendering `Button` is not possible.
+In toolbars, action bars, and in all other space restricted containers we suggest using `IconButton` instead of `Button` component.
 
-We suggest to use [Tooltip](../components/tooltip) as a wrapper of `IconButton` to help user with understanding button's purpose.
+For these cases, it would be also beneficial to use [Tooltip](../components/tooltip) as a wrapper of `IconButton` to help users with understanding the button's purpose.
 
 ```jsx file=../../examples/IconButtonToolbarExample.tsx
 
 ```
-
-## Accessibility
-
-We enforce `aria-label` property for `IconButton` component to ensure that these buttons are fully accessible for screen readers.
 
 ## Props (API reference)
 
@@ -46,3 +42,7 @@ We enforce `aria-label` property for `IconButton` component to ensure that these
   of="IconButton"
   storybookPath="/story/components-button-iconbutton--basic"
 />
+
+## Accessibility
+
+We enforce `aria-label` property for `IconButton` component to ensure that these buttons are fully accessible for screen readers.
