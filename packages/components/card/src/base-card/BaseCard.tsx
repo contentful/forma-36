@@ -189,6 +189,7 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
       {...otherProps}
       ref={forwardedRef}
       testId={testId}
+      title={title}
     >
       {withDragHandle
         ? dragHandleRender
