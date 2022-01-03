@@ -2,7 +2,7 @@ import React from 'react';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import * as f36Components from '@contentful/f36-components';
-
+import NextLink from 'next/link';
 import { MdxComponents } from '../mdx-components';
 import { ComponentSource } from './LiveEditor/ComponentSource';
 import { StaticSource } from './LiveEditor/StaticSource';
@@ -47,7 +47,16 @@ const components = {
   p: (props) => (
     <Paragraph {...props} className={styles.increesedSizeElement} />
   ),
-  a: (props) => <TextLink {...props} className={styles.increesedSizeElement} />,
+  a: (props) => {
+    if (props.href && props.href.startsWith('..')) {
+      return (
+        <NextLink href={props.href}>
+          <TextLink {...props} className={styles.increesedSizeElement} />
+        </NextLink>
+      );
+    }
+    return <TextLink {...props} className={styles.increesedSizeElement} />;
+  },
   ul: (props) => (
     <Box marginBottom="spacingL">
       <List {...props} className={styles.increesedSizeElement} />
