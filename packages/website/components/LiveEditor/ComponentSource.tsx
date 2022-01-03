@@ -36,6 +36,12 @@ const liveProviderScope = {
 };
 
 const styles = {
+  root: css`
+    margin-top: ${tokens.spacingS};
+    margin-bottom: ${tokens.spacingM};
+    margin-left: calc(-1 * ${tokens.spacingXl});
+    margin-right: calc(-1 * ${tokens.spacingXl});
+  `,
   error: css`
     font-family: ${tokens.fontStackMonospace};
     font-size: ${tokens.fontSizeS};
@@ -82,7 +88,7 @@ export function ComponentSource({ children }: { children: string }) {
   };
 
   return (
-    <Flex flexDirection="column" marginTop="spacingS" marginBottom="spacingM">
+    <Flex flexDirection="column" className={styles.root}>
       <LiveProvider
         code={formatSourceCode(children)}
         theme={theme}
