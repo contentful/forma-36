@@ -45,6 +45,7 @@
     "dotenv": "^10.0.0",
     "ts-node": "^10.4.0",
     "broken-link-checker": "^0.7.8",
-    "wait-on": "^6.0.0"
+    "wait-on": "^6.0.0",
+    "react-hook-form": "7.22.5"
   }
 }

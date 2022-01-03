@@ -12,7 +12,8 @@
   "devDependencies": {
     "fs-extra": "^10.0.0",
     "globby": "^10.0.1",
-    "lodash": "4.17.21"
+    "lodash": "4.17.21",
+    "react-hook-form": "7.22.5"
   },
   "scripts": {
     "build:clean": "rm -rf dist",

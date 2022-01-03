@@ -65,6 +65,10 @@
       "slug": "/components/popover/"
     },
     {
+      "title": "React Hook Form",
+      "slug": "/integrations/react-hook-form/"
+    },
+    {
       "title": "Spinner",
       "slug": "/components/spinner/"
     },
@@ -347,10 +351,6 @@
     {
       "title": "Formik",
       "slug": "/integrations/formik/"
-    },
-    {
-      "title": "React Hook Form",
-      "slug": "/integrations/react-hook-form/"
     }
   ],
   "tokens": [

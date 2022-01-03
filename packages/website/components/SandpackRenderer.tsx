@@ -50,11 +50,13 @@ export function SandpackRenderer(props: {
           react: '^17.0.0',
           'react-dom': '^17.0.0',
           'react-scripts': '^4.0.0',
+          '@contentful/f36-forms': 'latest',
           '@contentful/f36-components': 'latest',
           '@contentful/f36-tokens': 'latest',
           '@contentful/f36-icons': 'latest',
           emotion: '^10.0.17',
           lodash: '^4.17.21',
+          'react-hook-form': '7.22.5',
         },
       }}
     >
