@@ -14,10 +14,6 @@ import { DocSearch } from './DocSearch';
 const sidebarLinks = require('../utils/sidebarLinks.json');
 
 const styles = {
-  sidebar: css({
-    height: '100%',
-    borderRight: `1px solid ${tokens.gray300}`,
-  }),
   nav: css({
     borderTop: `1px solid ${tokens.gray300}`,
     padding: `${tokens.spacingM} 0`,
@@ -88,7 +84,7 @@ const components: Array<SidebarSectionType | SidebarLinkType> = [
 
 export function Sidebar({ currentPage = '/' }: Props) {
   return (
-    <Flex className={styles.sidebar} flexDirection="column">
+    <>
       <DocSearch />
 
       <Flex
@@ -149,6 +145,6 @@ export function Sidebar({ currentPage = '/' }: Props) {
           />
         </List>
       </Flex>
-    </Flex>
+    </>
   );
 }
