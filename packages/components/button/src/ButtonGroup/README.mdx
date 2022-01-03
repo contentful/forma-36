@@ -5,61 +5,44 @@ status: 'stable'
 section: 'buttonComponents'
 slug: /components/button-group/
 github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/components/button/src/ButtonGroup'
-storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-button-buttongroup--basic'
 typescript: ./ButtonGroup.tsx
 ---
 
-import { Props } from '@contentful/f36-docs-utils';
-import { Button } from '@contentful/f36-button';
-import { ChevronDownIcon, PlusIcon } from '@contentful/f36-icons';
+`ButtonGroup` should be used to group buttons whose actions are related, with an option to collapse them together or split them with an equal amount of free space.
 
-## Code examples
+## Import
 
-Example of usage:
-
-```jsx
-// import { ButtonGroup, Button } from '@contentful/f36-button';
-
-<ButtonGroup testId="group-button">
-  <Button variant="secondary">Button</Button>
-  <Button variant="secondary">Button</Button>
-  <Button
-    variant="positive"
-    aria-label="Open dropdown"
-    startIcon={<ChevronDownIcon />}
-  />
-</ButtonGroup>
+```js static=true
+import { ButtonGroup } from '@contentful/f36-components';
 ```
 
-It's possible to add a divider for buttons that don't have border:
+## Examples
 
-```jsx
-// import { ButtonGroup, Button } from '@contentful/f36-button';
-// import { ChevronDownIcon, PlusIcon } from '@contentful/f36-icons';
+### Collapsed
 
-<ButtonGroup testId="group-button" withDivider>
-  <Button startIcon={<PlusIcon />} variant="positive">
-    Button
-  </Button>
-  <Button variant="positive" startIcon={<ChevronDownIcon />} />
-</ButtonGroup>
+The most common example is to group primary button with a secondary button or with a button that opens a dropdown with secondary actions.
+
+Also, it is possible to add a divider for buttons that don't have border.
+
+```jsx file=../../examples/ButtonGroupCollapsedExample.tsx
+
 ```
 
-Example of Group Button with spaced variant
+### Spaced
 
-```jsx
-// import { ButtonGroup, Button } from '@contentful/f36-button';
+Instead of collapsing buttons all together you can use `variant="spaced"` to make them spaced and control an empty space with `spacing` property.
 
-<ButtonGroup variant="spaced" testId="group-button">
-  <Button variant="primary">Button</Button>
-  <Button variant="negative">Button</Button>
-</ButtonGroup>
+```jsx file=../../examples/ButtonGroupSpacedExample.tsx
+
 ```
 
 ## Accessibility
 
-- If using a button that won't have text be sure to provide an aria-label
+If using a button that won't have text be sure to provide an `aria-label` property.
 
-## Props
+## Props (API reference)
 
-<Props of="ButtonGroup" />
+<Props
+  of="ButtonGroup"
+  storybookPath="/story/components-button-buttongroup--basic"
+/>

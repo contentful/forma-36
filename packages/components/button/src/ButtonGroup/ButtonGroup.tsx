@@ -1,6 +1,6 @@
 import { cx } from 'emotion';
 import React from 'react';
-import { Box, ExpandProps } from '@contentful/f36-core';
+import { Box, Stack, ExpandProps } from '@contentful/f36-core';
 import getStyles from './ButtonGroup.styles';
 import type { ButtonGroupProps } from './types';
 
@@ -16,12 +16,25 @@ function _ButtonGroup(
     className,
     spacing,
   } = props;
-  const styles = getStyles({ variant, withDivider, spacing });
+  const styles = getStyles({ withDivider });
+
+  if (variant === 'spaced') {
+    return (
+      <Stack
+        isInline
+        flexDirection="row"
+        testId={testId}
+        ref={ref}
+        spacing={spacing}
+      >
+        {children}
+      </Stack>
+    );
+  }
 
   return (
     <Box
-      as="div"
-      data-test-id={testId}
+      testId={testId}
       ref={ref}
       className={cx(styles.buttonGroup, className)}
     >

@@ -39,7 +39,5 @@ export type ButtonGroupProps =
   | CollapsedButtonGroupProps;
 
 export type GetStyleArguments = {
-  variant: ButtonGroupVariants;
   withDivider: boolean;
-  spacing: ButtonGroupSpacing;
 };
