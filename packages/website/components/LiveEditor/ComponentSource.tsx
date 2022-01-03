@@ -39,8 +39,6 @@ const styles = {
   root: css`
     margin-top: ${tokens.spacingS};
     margin-bottom: ${tokens.spacingM};
-    margin-left: calc(-1 * ${tokens.spacingXl});
-    margin-right: calc(-1 * ${tokens.spacingXl});
   `,
   error: css`
     font-family: ${tokens.fontStackMonospace};
