@@ -5,191 +5,21 @@ section: 'layoutComponents'
 status: 'stable'
 slug: /components/grid/
 github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/core/src/Grid'
-storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-grid--default'
 typescript: ./Grid.tsx,./GridItem/GridItem.tsx
 ---
 
-[CSS Grid](https://developer.mozilla.org/en-US/docs/Glossary/Grid) based React component, comes with predefined values to ensure design consistency, and ease of use.
+`Grid` is a [CSS Grid](https://developer.mozilla.org/en-US/docs/Glossary/Grid) based React component, comes with predefined values to ensure design consistency, and ease of use.
 
-## How to use Grid
+The `Grid` consists of two components:
 
-The Grid consists of two components:
+- `Grid`: Used as a container for grid items
+- `Grid.Item`: Elements within the Grid
 
-- Grid: Used as a container for GridItems
-- Grid.Item: Elements within the Grid
-
-### Import
+## Import
 
 ```js static=true
 import { Grid } from '@contentful/f36-components';
-// or
-import { Grid } from '@contentful/f36-core';
 ```
-
-## Code examples
-
-### columns
-
-When defined as a number, it will split the space into equally sized columns; it also accepts any of the [grid-template-columns](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns) css properties. e.g.
-
-```jsx static=true
-<React.Fragment>
-  <Grid columns={6}></Grid>
-  <Grid columns="auto 1fr"></Grid>
-</React.Fragment>
-```
-
-### rows
-
-Accepts a number or any of [grid-template-rows](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows) css properties.
-
-```jsx static=true
-<React.Fragment>
-  <Grid rows={6}></Grid>
-  <Grid rows="auto 1fr"></Grid>
-</React.Fragment>
-```
-
-### columnGap & rowGap
-
-`columnGap` represents space between columns, `rowGap` represents the space between rows, both accepts one of [spacing](../tokens/spacing) token names.
-
-`spacing2Xs` | `spacingXs` | `spacingXs` | `spacingS` | `spacingM` | `spacingL` | `spacingXl` | `spacing2Xl` | `spacing3Xl` | `spacing4Xl`
-
-**e.g.**
-
-```jsx static=true
-<Grid columnGap="spacingXs" rowGap="spacingXl"></Grid>
-```
-
-<br />
-
-## Grid Components
-
-The grid layout consists of different components that helps defining your layout in two dimensional aspects, these components are:
-
-**Grid container:** The main element that controls the layout structure, columns, rows, and the gap between them
-
-**Grid item:** The children of the grid container.
-
-**Grid columns:** The vertical container for children elements within the grid layout
-
-**Grid rows:** The horizontal container for elements within the grid layout
-
-**Grid area:** A space consists of columns and rows within the grid, and is controlled by the child element itself
-
-**Column gap:** The space between vertical containers which corresponds to one of our [spacing](../tokens/spacing) values
-
-**Row gap:** The space between horizontal containers which also corresponds to one of our [spacing](../tokens/spacing) values
-
-![Grid of boxes describing how the grid components (Grid Item, Column Gap, Row Gap, Grid Area) works.](/docs-images/grid_layout.png)
-
-<br />
-
-## Basic usage
-
-```jsx
-<Grid columns="1fr 2fr" rowGap="spacingM" columnGap="spacingM">
-  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
-  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
-  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
-  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
-  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
-  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
-  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
-  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
-</Grid>
-```
-
-<br />
-
-## Repeat notation
-
-`repeat()` is a css notation that you can use with the `gridColumns` and `girdRows` properties to make your rules more concise and easier to understand when creating a large amount of columns or rows
-
-**Example:** `gridColumns="1fr 2fr 1fr 2fr 1fr 2fr"` is same as `gridColumns="repeat(3, 1fr 2fr)"` see below.
-
-```jsx
-<div>
-  <Grid columns="1fr 2fr 1fr 2fr 1fr 2fr" columnGap="spacingM">
-    <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
-    <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
-    <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
-    <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
-    <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
-    <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
-  </Grid>
-
-  <Grid
-    columns="repeat(3, 1fr 2fr)"
-    columnGap="spacingM"
-    style={{ marginTop: '24px' }}
-  >
-    <Grid.Item style={{ backgroundColor: '#0C141C', height: '100px' }} />
-    <Grid.Item style={{ backgroundColor: '#0C141C', height: '100px' }} />
-    <Grid.Item style={{ backgroundColor: '#0C141C', height: '100px' }} />
-    <Grid.Item style={{ backgroundColor: '#0C141C', height: '100px' }} />
-    <Grid.Item style={{ backgroundColor: '#0C141C', height: '100px' }} />
-    <Grid.Item style={{ backgroundColor: '#0C141C', height: '100px' }} />
-  </Grid>
-</div>
-```
-
-<br />
-
-## FR unit
-
-Fr is a fractional unit and 1fr is for 1 part of the available space. it differs from percentage unit because it distributes available space.
-
-If you place a larger item into a track then the way the fr until will work is to allow that track to take up more space and distribute what is left over.
-
-```jsx
-<Grid columns="1fr 1fr 1fr">
-  <p style={{ border: '1px solid #263545' }}>
-    WelcomeToTheAwesomeContentfulGridSystem
-  </p>
-  <p style={{ border: '1px solid #263545' }}>Contentful</p>
-  <p style={{ border: '1px solid #263545' }}>Forma 36</p>
-  <p style={{ border: '1px solid #263545' }}>
-    Welcome To The Awesome Contentful Grid System
-  </p>
-  <p style={{ border: '1px solid #263545' }}>Contentful</p>
-  <p style={{ border: '1px solid #263545' }}>Forma 36</p>
-</Grid>
-```
-
-<br />
-
-## Span keyword
-
-Span keyword works on grid items with the `gridArea` property, use `span` to avoid specifying the end lines for a column or a row.
-
-i.e. instead of specifying `columnStart` and `columnEnd` you can use span to make the grid item take 4 columns
-
-```jsx
-<Grid columns={6}>
-  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
-  <Grid.Item
-    area="span 4 / span 4"
-    style={{ backgroundColor: '#263545', height: '100px' }}
-  />
-</Grid>
-```
-
-<br />
-
-## Content alignment
-
-Just like flexbox the grid comes with `justifyContent`, `justifyItems`, `alignItems`, `alignContent`, ..etc.
-
-```jsx
-<Grid columns="250px 250px" justifyContent="space-between">
-  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
-  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
-</Grid>
-```
-
-<br />
 
 ## Grid vs. Flexbox
 
@@ -198,7 +28,51 @@ Grid was designed for two-dimensional layout rows, and columns.
 
 ![One dimensional columns without rows describing the use flexbox, and two dimensional grid describes how the grid works](/docs-images/grid_vs_flexbox.png)
 
-<br />
+## Examples
+
+### Basic usage
+
+```jsx file=examples/BasicGridExample.tsx
+
+```
+
+### Repeat notation
+
+`repeat()` is a css notation that you can use with the `gridColumns` and `girdRows` properties to make your rules more concise and easier to understand when creating a large amount of columns or rows
+
+**Example:** `gridColumns="1fr 2fr 1fr 2fr 1fr 2fr"` is same as `gridColumns="repeat(3, 1fr 2fr)"` see below.
+
+```jsx file=examples/RepeatNotationGridExample.tsx
+
+```
+
+### FR unit
+
+Fr is a fractional unit and `1fr` stands for 1 part of the available space. It differs from percentage unit because it distributes available space.
+
+If you place a larger item into a track then the way the fr until will work is to allow that track to take up more space and distribute what is left over.
+
+```jsx file=examples/FrGridExample.tsx
+
+```
+
+### Span keyword
+
+Span keyword works on grid items with the `gridArea` property, use `span` to avoid specifying the end lines for a column or a row.
+
+i.e. instead of specifying `columnStart` and `columnEnd` you can use span to make the grid item take 4 columns
+
+```jsx file=examples/SpanKeywordGridExample.tsx
+
+```
+
+### Content alignment
+
+Just like [Flex] the `Grid` comes with `justifyContent`, `justifyItems`, `alignItems`, `alignContent`, ..etc.
+
+```jsx file=examples/ContentAlignmentGridExample.tsx
+
+```
 
 ## Accessibility
 
@@ -209,14 +83,15 @@ keyboard navigation and focus order maybe affected.
 
 Set the correct order of the elements with `tabindex` attribute to avoid accessibility issues.
 
-## Props
-
-import { Props } from '@contentful/f36-docs-utils';
+## Props (API reference)
 
 ### Grid
 
-<Props of="Grid" />
+<Props of="Grid" storybookPath="/story/layout-grid--basic" />
 
 ### Grid.Item
 
 <Props of="GridItem" />
+
+[box]: ../components/box
+[flex]: ../components/flex
