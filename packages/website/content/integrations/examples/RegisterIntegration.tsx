@@ -1,3 +1,4 @@
+/* eslint-disable import/no-default-export */
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -12,7 +13,7 @@ import {
 } from '@contentful/f36-forms';
 import { Button } from '@contentful/f36-components';
 
-export function ReactHookForm() {
+export default function ReactHookForm() {
   // Call the useForm hook from react-hook-form
   const {
     register,

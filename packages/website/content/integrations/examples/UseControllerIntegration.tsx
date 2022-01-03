@@ -1,9 +1,10 @@
+/* eslint-disable import/no-default-export */
 import React from 'react';
 import { useForm, useController } from 'react-hook-form';
 import { TextInput, Form, FormControl } from '@contentful/f36-forms';
 import { Button } from '@contentful/f36-components';
 
-export function ReactHookForm() {
+export default function ReactHookForm() {
   const ControlledTextInput = (props) => {
     const {
       field: { ref, ...inputProps },
