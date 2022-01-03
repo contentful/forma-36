@@ -9,7 +9,7 @@ import { ChevronDownIcon, PlusIcon } from '@contentful/f36-icons';
 
 export default function ButtonGroupCollapsedExample() {
   return (
-    <Stack>
+    <Stack flexDirection="column">
       <ButtonGroup>
         <Button variant="secondary" size="small">
           Save
