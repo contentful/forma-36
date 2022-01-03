@@ -5,57 +5,47 @@ status: 'stable'
 section: 'buttonComponents'
 slug: /components/copy-button/
 github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/components/copybutton'
-storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-copybutton--default'
 typescript: ./src/CopyButton.tsx
 ---
 
-import { Props } from '@contentful/f36-docs-utils';
-import { CopyButton } from '@contentful/f36-copybutton';
+The `CopyButton` is a styled button that copies text into the user's clipboard.
 
-The CopyButton is a styled button that copies text into the user's clipboard. This is useful in combination with for example tables or inputs that show values that the user is likely to use elsewhere, such as automatically generated passwords.
+`CopyButton` can be used in combination with text inputs where the input value should be easy to copy. In such cases it is best to position the `CopyButton` at the end of the input.
 
-## How to use CopyButton
+## Import
 
-CopyButton can be used in combination with text inputs where the input value should be easy to copy. In such cases it is best to position the CopyButton at the end of the input.
-
-## Code examples
-
-```jsx
-// import { CopyButton } from '@contentful/f36-copybutton';
-
-<CopyButton value="Lorem Ipsum" />
+```js static=true
+import { CopyButton } from '@contentful/f36-components';
 ```
 
-An example with a custom tooltip:
+## Examples
 
-```jsx
-// import { CopyButton } from '@contentful/f36-copybutton';
+### Basic
 
-<CopyButton
-  value="Lorem Ipsum"
-  tooltipCopiedText="The text has been copied"
-  tooltipText="Copy this text to clipboard"
-/>
+```jsx file=examples/CopyButtonExample.tsx
+
 ```
 
-An example with custom tooltip placement and custom aria-label.
+### Changing the tooltip
 
-```jsx
-// import { CopyButton } from '@contentful/f36-copybutton';
+You can modify tooltip text and its placement by using the following properties: `tooltipCopiedText`, `tooltipText` and `tooltipProps`.
 
-<CopyButton
-  value="Lorem Ipsum"
-  tooltipCopiedText="The text has been copied"
-  tooltipText="Copy this text to clipboard"
-  label="Copy 'Lorem Ipsum'."
-  tooltipProps={{ placement: 'bottom', usePortal: true }}
-/>
+To read more about all possible values of `tooltipProps` object, refer to [Tooltip](../components/tooltip) documentation.
+
+```jsx file=examples/CopyButtonModifiedTooltipsExample.tsx
+
+```
+
+### Using with `TextInput`
+
+```jsx file=examples/CopyButtonWithInputExample.tsx
+
 ```
 
 ## Accessibility
 
 You can pass a custom `aria-label` through the `label` prop.
 
-## Props
+## Props (API reference)
 
-<Props of="CopyButton" />
+<Props of="CopyButton" storybookPath="/story/components-copybutton--default" />
