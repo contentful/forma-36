@@ -13,7 +13,8 @@
     {
       // In Next.js, pages need to be default exported
       "files": [
-        "pages/**/*"
+        "pages/**/*",
+        "content/**/*"
       ],
       "rules": {
         "import/no-default-export": "off",
