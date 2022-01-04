@@ -67,7 +67,7 @@ const styles = {
     flex-wrap: wrap;
   `,
   mainContent: css`
-    max-width: 44.5rem;
+    max-width: 50rem;
     letter-spacing: initial;
   `,
 };

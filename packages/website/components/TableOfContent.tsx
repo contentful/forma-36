@@ -8,12 +8,10 @@ import { useScrollSpy } from '../utils/use-scrollspy';
 const styles = {
   root: css({
     display: 'block',
-    background: 'white',
     marginBottom: tokens.spacingL,
     padding: `0 ${tokens.spacingL}`,
     '@media (min-width: 1400px)': {
       display: 'inline-block',
-      background: 'white',
       float: 'right',
     },
   }),
