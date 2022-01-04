@@ -30,6 +30,22 @@ Forma 36 typography components provide a way to set their own margins. By defaul
 
 ```
 
+### `as` property
+
+For some cases, you might have to use Heading in a different context than the page title. For that we provide you with `as` property, to allow you to set the tag of the component to another tag than `h1`
+
+```jsx file=examples/HeadingTag.tsx
+
+```
+
+### Heading truncated
+
+Sometimes you might have to truncate the text in the `Heading` component, so we provide the pro especially for that. Under the hood, what it does is adds overflow hidden and set text-overflow to ellipsis. Have a look at the example below:
+
+```jsx file=examples/HeadingTruncated.tsx
+
+```
+
 ## Props (API reference)
 
 <Props of="Heading" storybookPath="/story/typography-heading--basic" />
