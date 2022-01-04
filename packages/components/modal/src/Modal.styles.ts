@@ -102,7 +102,7 @@ export function getModalStyles(props: {
           : null,
       ),
       afterOpen: css({
-        opacity: 1,
+        opacity: '1 !important',
       }),
       beforeClose: css({
         opacity: 0,
