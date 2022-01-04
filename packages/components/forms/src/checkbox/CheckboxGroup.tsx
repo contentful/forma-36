@@ -2,7 +2,7 @@ import React from 'react';
 import {
   BaseCheckboxGroup,
   BaseCheckboxGroupProps,
-} from '../base-checkbox/BaseCheckboxGroup';
+} from '../BaseCheckbox/BaseCheckboxGroup';
 import type { ExpandProps } from '@contentful/f36-core';
 
 export interface CheckboxGroupProps

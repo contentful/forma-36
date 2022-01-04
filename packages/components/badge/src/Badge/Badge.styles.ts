@@ -1,6 +1,6 @@
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
-import type { BadgeVariant, BadgeSize } from './types';
+import type { BadgeVariant, BadgeSize } from '../types';
 import type { CSSObject } from '@emotion/serialize';
 
 const variantToStyles = ({ variant }: { variant: BadgeVariant }): CSSObject => {

@@ -1,5 +1,9 @@
 # @contentful/f36-card
 
-This package is part of the pre-release. This means it is unsupported and subject to breaking changes without warning.
+This package contains:
 
-Please use official, supported version of the library [forma-36](https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components), [NPM](https://www.npmjs.com/package/@contentful/forma-36-react-components).
+- [AssetCard](./src/AssetCard)
+- [BaseCard](./src/BaseCard) - this component is used only internally
+- [Card](./src/Card)
+- [EntryCard](./src/EntryCard)
+- [InlineEntryCard](./src/InlineEntryCard)

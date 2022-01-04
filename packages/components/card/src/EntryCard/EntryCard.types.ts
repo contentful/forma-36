@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import type { EntityStatus } from '@contentful/f36-core';
 
-import type { BaseCardInternalProps } from '../base-card/BaseCard.types';
+import type { BaseCardInternalProps } from '../BaseCard/BaseCard.types';
 
 export type EntryCardSize = 'default' | 'small' | 'auto';
 

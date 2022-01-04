@@ -8,7 +8,7 @@ import type {
 } from '@contentful/f36-core';
 import { ErrorCircleOutlineIcon } from '@contentful/f36-icons';
 import { Text } from '@contentful/f36-typography';
-import { useFormControl } from '../form-control/FormControlContext';
+import { useFormControl } from '../FormControl/FormControlContext';
 
 export interface ValidationMessageInternalProps
   extends CommonProps,

@@ -127,32 +127,6 @@
       "slug": "/components/modal-launcher/"
     }
   ],
-  "typographyComponents": [
-    {
-      "title": "DisplayText",
-      "slug": "/components/display-text/"
-    },
-    {
-      "title": "Heading",
-      "slug": "/components/heading/"
-    },
-    {
-      "title": "Paragraph",
-      "slug": "/components/paragraph/"
-    },
-    {
-      "title": "SectionHeading",
-      "slug": "/components/section-heading/"
-    },
-    {
-      "title": "Subheading",
-      "slug": "/components/subheading/"
-    },
-    {
-      "title": "Text",
-      "slug": "/components/text/"
-    }
-  ],
   "cardComponents": [
     {
       "title": "AssetCard",
@@ -239,6 +213,32 @@
     {
       "title": "SkeletonRow",
       "slug": "/components/skeleton/skeleton-row/"
+    }
+  ],
+  "typographyComponents": [
+    {
+      "title": "DisplayText",
+      "slug": "/components/display-text/"
+    },
+    {
+      "title": "Heading",
+      "slug": "/components/heading/"
+    },
+    {
+      "title": "Paragraph",
+      "slug": "/components/paragraph/"
+    },
+    {
+      "title": "SectionHeading",
+      "slug": "/components/section-heading/"
+    },
+    {
+      "title": "Subheading",
+      "slug": "/components/subheading/"
+    },
+    {
+      "title": "Text",
+      "slug": "/components/text/"
     }
   ],
   "utils": [

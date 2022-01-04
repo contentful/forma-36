@@ -2,10 +2,10 @@ import React from 'react';
 import { cx } from 'emotion';
 import { Text } from '@contentful/f36-typography';
 
-import { BaseCard } from '../base-card/BaseCard';
-import type { EntryCardInternalProps } from '../entry-card/EntryCard.types';
+import { BaseCard } from '../BaseCard/BaseCard';
+import type { EntryCardInternalProps } from '../EntryCard/EntryCard.types';
 import { getInlineEntryCardStyles } from './InlineEntryCard.styles';
-import { CardActions } from '../base-card/CardActions';
+import { CardActions } from '../BaseCard/CardActions';
 
 import { SkeletonBodyText, SkeletonContainer } from '@contentful/f36-skeleton';
 

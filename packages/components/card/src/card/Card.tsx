@@ -8,9 +8,9 @@ import { Heading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import type { ExpandProps } from '@contentful/f36-core';
 
-import { BaseCard, BASE_CARD_DEFAULT_TAG } from '../base-card/BaseCard';
-import type { BaseCardInternalProps } from '../base-card/BaseCard.types';
-import { CardActions } from '../base-card/CardActions';
+import { BaseCard, BASE_CARD_DEFAULT_TAG } from '../BaseCard/BaseCard';
+import type { BaseCardInternalProps } from '../BaseCard/BaseCard.types';
+import { CardActions } from '../BaseCard/CardActions';
 import { getCardStyles } from './Card.styles';
 
 export type CardInternalProps = Omit<

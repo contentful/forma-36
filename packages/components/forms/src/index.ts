@@ -1,35 +1,35 @@
-export { HelpText } from './help-text/HelpText';
-export type { HelpTextProps } from './help-text/HelpText';
-export { ValidationMessage } from './validation-message/ValidationMessage';
-export type { ValidationMessageProps } from './validation-message/ValidationMessage';
-export { Checkbox } from './checkbox/CompoundCheckbox';
-export type { CheckboxProps } from './checkbox/Checkbox';
-export type { CheckboxGroupProps } from './checkbox/CheckboxGroup';
-export { FormControl } from './form-control/CompoundFormControl';
+export { HelpText } from './HelpText/HelpText';
+export type { HelpTextProps } from './HelpText/HelpText';
+export { ValidationMessage } from './ValidationMessage/ValidationMessage';
+export type { ValidationMessageProps } from './ValidationMessage/ValidationMessage';
+export { Checkbox } from './Checkbox/CompoundCheckbox';
+export type { CheckboxProps } from './Checkbox/Checkbox';
+export type { CheckboxGroupProps } from './Checkbox/CheckboxGroup';
+export { FormControl } from './FormControl/CompoundFormControl';
 export type {
   FormControlProps,
   FormControlInternalProps,
-} from './form-control/FormControl';
+} from './FormControl/FormControl';
 export { FormLabel } from './form-label/FormLabel';
 export type {
   FormLabelInternalProps,
   FormLabelProps,
 } from './form-label/FormLabel';
-export { Radio } from './radio/CompoundRadio';
-export type { RadioProps } from './radio/Radio';
-export type { RadioGroupProps } from './radio/RadioGroup';
-export { TextInput } from './text-input/CompoundTextInput';
-export type { TextInputProps } from './text-input/types';
-export type { InputGroupProps } from './text-input/input-group/InputGroup';
-export { Switch } from './switch/Switch';
-export type { SwitchProps } from './switch/Switch';
+export { Radio } from './Radio/CompoundRadio';
+export type { RadioProps } from './Radio/Radio';
+export type { RadioGroupProps } from './Radio/RadioGroup';
+export { TextInput } from './TextInput/CompoundTextInput';
+export type { TextInputProps } from './TextInput/types';
+export type { InputGroupProps } from './TextInput/input-group/InputGroup';
+export { Switch } from './Switch/Switch';
+export type { SwitchProps } from './Switch/Switch';
 export { Textarea } from './textarea/Textarea';
 export type { TextareaProps } from './textarea/Textarea';
-export { Option } from './select/SelectOption';
-export type { OptionProps } from './select/SelectOption';
-export { Select } from './select/CompoundSelect';
-export type { SelectInternalProps, SelectProps } from './select/Select';
-export { Form } from './form/Form';
-export type { FormProps } from './form/Form';
-export { Counter } from './counter/Counter';
-export type { CounterProps } from './counter/Counter';
+export { Option } from './Select/SelectOption';
+export type { OptionProps } from './Select/SelectOption';
+export { Select } from './Select/CompoundSelect';
+export type { SelectInternalProps, SelectProps } from './Select/Select';
+export { Form } from './Form/Form';
+export type { FormProps } from './Form/Form';
+export { Counter } from './Counter/Counter';
+export type { CounterProps } from './Counter/Counter';
