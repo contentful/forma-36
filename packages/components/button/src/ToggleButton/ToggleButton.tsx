@@ -3,6 +3,7 @@ import { cx } from 'emotion';
 import { CommonProps, ExpandProps } from '@contentful/f36-core';
 import { Button } from '../Button';
 import getStyles from './ToggleButton.styles';
+import { ButtonSize } from '../types';
 
 export interface ToggleButtonProps extends CommonProps {
   /**
@@ -23,7 +24,19 @@ export interface ToggleButtonProps extends CommonProps {
    * Function triggered when the toggle button is clicked.
    */
   onToggle?: () => void;
-  children: React.ReactNode;
+
+  /**
+   * Determines size variation of Button component
+   * @default medium
+   */
+  size?: ButtonSize;
+
+  /**
+   * Aria label is required when using icon only
+   */
+  'aria-label'?: string;
+
+  children?: React.ReactNode;
 }
 
 function _ToggleButton(props: ExpandProps<ToggleButtonProps>, ref) {
@@ -35,6 +48,7 @@ function _ToggleButton(props: ExpandProps<ToggleButtonProps>, ref) {
     isActive,
     icon,
     onToggle,
+    size,
     ...otherProps
   } = props;
 
@@ -54,6 +68,7 @@ function _ToggleButton(props: ExpandProps<ToggleButtonProps>, ref) {
       testId={testId}
       type="button"
       ref={ref}
+      size={size}
       onClick={handleToggle}
       className={cx(styles.toggleButton, className)}
       startIcon={icon}
