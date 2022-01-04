@@ -126,7 +126,7 @@ The following components do not have a codemod, so you must migrate them manuall
 
 - [Accordion](#accordion)
 - [Asset](#asset)
-- [Autocomplete](https://v4-forma-36.netlify.app/components/autocomplete/)
+- [Autocomplete](v4.f36.contentful.com/components/autocomplete/)
 - [DateTime](#datetime)
 - [ToggleButton](#togglebutton)
 - [Dropdown](#dropdown)
@@ -1108,7 +1108,7 @@ const [isPopoverOpen, setIsPopoverOpen] = React.useState(false);
 In v4, the EntityList component has received API improvements. Here is an overview of the changes:
 
 - `EntityList` became a compound component. Instead of `EntityListItem` you can use `EntityList.Item`
-- `dropdownListElements` prop was renamed to `actions` and updated to use the new `Menu` component. It should receive an array of `Menu.Item`. For more information, see the EntityList [code examples](https://v4-forma-36.netlify.app/components/entity-list/#code-examples) and Menu [documentation](https://v4.f36.contentful.com/components/menu/).
+- `dropdownListElements` prop was renamed to `actions` and updated to use the new `Menu` component. It should receive an array of `Menu.Item`. For more information, see the EntityList [code examples](https://v4.f36.contentful.com/components/entity-list/#code-examples) and Menu [documentation](https://v4.f36.contentful.com/components/menu/).
 
 #### How to migrate your EntityList components
 
@@ -1492,7 +1492,7 @@ becomes:
 </FormControl>
 ```
 
-For more detailed information and examples, see our [documentation](https://v4-forma-36.netlify.app/components/form-control/).
+For more detailed information and examples, see our [documentation](https://v4.f36.contentful.com/components/form-control/).
 
 ##### How to migrate your Field components
 
@@ -1988,7 +1988,7 @@ for keeping the same spacing as before it should become:
 
 ##### How to migrate your FieldGroup components
 
-The migration must be done manually, using the Layout component that best fits the user needs. The layout components are [Box](https://v4-forma-36.netlify.app/components/box/), [Flex](https://v4-forma-36.netlify.app/components/flex/), [Stack](https://v4-forma-36.netlify.app/components/stack/), and [Grid](https://v4-forma-36.netlify.app/components/grid/).
+The migration must be done manually, using the Layout component that best fits the user needs. The layout components are [Box](https://v4.f36.contentful.com/components/box/), [Flex](https://v4.f36.contentful.com/components/flex/), [Stack](https://v4.f36.contentful.com/components/stack/), and [Grid](https://v4.f36.contentful.com/components/grid/).
 
 #### Form
 
