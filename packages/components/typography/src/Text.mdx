@@ -5,7 +5,6 @@ status: 'stable'
 section: 'typographyComponents'
 slug: /components/text/
 github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/components/typography/src'
-storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/typography-text--basic'
 typescript: ./Text.tsx
 ---
 
@@ -13,106 +12,50 @@ typescript: ./Text.tsx
 
 `Text` component is a basic for other typography components. We recommend using it when you need to display `<span>` element and still keep the proper typography styling.
 
-### Import
+## Import
 
 ```js static=true
 import { Text } from '@contentful/f36-components';
-// or
-import { Text } from '@contentful/f36-typography';
 ```
 
-## Code examples
+## Examples
 
-```jsx
-<Text>I love Forma 36 design system.</Text>
+```jsx file=../examples/TextBasicExample.tsx
+
 ```
 
 You can pass all basic font related parameters as properties of the component.
 
 ### Changing the font size
 
-To increase the font size of the text, you can pass the `fontSize` prop.
+To increase the font size of the text, you can pass the `fontSize` property. Notice, that by default `Text` component has no margins.
 
-```jsx
-<Flex flexDirection="column">
-  <Text fontSize="fontSize4Xl" marginBottom="spacingM">
-    (4xl) I love Forma 36 design system.
-  </Text>
-  <Text fontSize="fontSize3Xl" marginBottom="spacingM">
-    (3xl) I love Forma 36 design system.
-  </Text>
-  <Text fontSize="fontSize2Xl" marginBottom="spacingM">
-    (2xl) I love Forma 36 design system.
-  </Text>
-  <Text fontSize="fontSizeXl" marginBottom="spacingM">
-    (xl) I love Forma 36 design system.
-  </Text>
-  <Text fontSize="fontSizeL" marginBottom="spacingM">
-    (l) I love Forma 36 design system.
-  </Text>
-  <Text fontSize="fontSizeM" marginBottom="spacingM">
-    (m) I love Forma 36 design system.
-  </Text>
-  <Text fontSize="fontSizeS" marginBottom="spacingM">
-    (s) I love Forma 36 design system.
-  </Text>
-</Flex>
+```jsx file=../examples/TextFontSizeExample.tsx
+
 ```
 
 ### Changing the font color
 
-To increase the font color of the text, you can pass the `fontColor` prop.
+To increase the font color of the text, you can pass the `fontColor` properties. You can use only colors allowed by [Forma 36 color palette](../tokens/color-system).
 
-```jsx
-<Flex flexDirection="column">
-  <Text fontColor="blue500" marginBottom="spacingM">
-    I love Forma 36 design system.
-  </Text>
-  <Text fontColor="red500" marginBottom="spacingM">
-    I love Forma 36 design system.
-  </Text>
-  <Text fontColor="gray900" marginBottom="spacingM">
-    I love Forma 36 design system.
-  </Text>
-</Flex>
+```jsx file=../examples/TextColorsExample.tsx
+
 ```
 
-### Override the element
+### `as` property
 
-To override the element that gets rendered, pass the as prop.
+To override the element that gets rendered, pass the `as` property.
 
-```jsx
-<Flex flexDirection="column">
-  <Text marginBottom="spacingM" as="i">
-    Italic
-  </Text>
-  <Text marginBottom="spacingM" as="u">
-    Underline
-  </Text>
-  <Text marginBottom="spacingM" as="del">
-    Deleted
-  </Text>
-  <Text marginBottom="spacingM" as="s">
-    Strike Through
-  </Text>
-</Flex>
+```jsx file=../examples/TextPolymorphicExample.tsx
+
 ```
 
-### Truncate text
+### Truncated
 
-```jsx
-<Text isTruncated as="div">
-  Lorem ipsum is placeholder text commonly used in the graphic, print, and
-  publishing industries for previewing layouts and visual mockups.
-</Text>
+```jsx file=../examples/TextTruncateExample.tsx
+
 ```
 
-### Other properties
+## Props (API reference)
 
-The same way you can control the other font related properties. Please refer to the table below to see all possible properties and their values.
-
-## Props
-
-import { Props } from '@contentful/f36-docs-utils';
-
-<Props of="Text" />
+<Props of="Text" storybookPath="/story/typography-text--basic" />
