@@ -9,7 +9,7 @@ function _ButtonGroup(
   ref: React.Ref<HTMLDivElement>,
 ) {
   const {
-    variant = 'collapsed',
+    variant = 'merged',
     withDivider,
     testId = 'cf-ui-button-group',
     children,

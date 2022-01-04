@@ -7,7 +7,7 @@ import {
 } from '@contentful/f36-components';
 import { ChevronDownIcon, PlusIcon } from '@contentful/f36-icons';
 
-export default function ButtonGroupCollapsedExample() {
+export default function ButtonGroupMergedExample() {
   return (
     <Stack flexDirection="column">
       <ButtonGroup>
