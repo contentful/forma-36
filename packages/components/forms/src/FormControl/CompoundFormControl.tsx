@@ -1,5 +1,5 @@
 import { FormControl as OriginalFormControl } from './FormControl';
-import { FormLabel } from '../form-label/FormLabel';
+import { FormLabel } from '../FormLabel/FormLabel';
 import { ValidationMessage } from '../ValidationMessage/ValidationMessage';
 import { HelpText } from '../HelpText/HelpText';
 import { Counter } from '../Counter/Counter';
