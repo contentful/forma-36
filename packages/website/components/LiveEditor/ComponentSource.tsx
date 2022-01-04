@@ -24,6 +24,7 @@ const liveProviderScope = {
   ...f36icons,
   ...f36Components,
   ...f36utils,
+  css,
   f36icons,
   tokens,
   // most used react hooks
