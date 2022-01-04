@@ -2,17 +2,17 @@
 
 This package contains:
 
-- [BaseCheckbox](./src/base-checkbox) - this component is used only internally
-- [BaseInput](./src/base-input) - this component is used only internally
-- [Checkbox](./src/checkbox)
-- [Counter](./src/counter)
-- [Form](./src/form)
-- [FormControl](./src/form-control)
-- [FormLabel](./src/form-label)
-- [HelpText](./src/help-text)
-- [Radio](./src/radio)
-- [Select](./src/select)
-- [Switch](./src/switch)
-- [TextInput](./src/text-input)
-- [Textarea](./src/textarea)
-- [ValidationMessage](./src/validation-message)
+- [BaseCheckbox](./src/BaseCheckbox) - this component is used only internally
+- [BaseInput](./src/BaseInput) - this component is used only internally
+- [Checkbox](./src/Checkbox)
+- [Counter](./src/Counter)
+- [Form](./src/Form)
+- [FormControl](./src/FormControl)
+- [FormLabel](./src/FormLabel)
+- [HelpText](./src/HelpText)
+- [Radio](./src/Radio)
+- [Select](./src/Select)
+- [Switch](./src/Switch)
+- [TextInput](./src/TextInput)
+- [Textarea](./src/Textarea)
+- [ValidationMessage](./src/ValidationMessage)
