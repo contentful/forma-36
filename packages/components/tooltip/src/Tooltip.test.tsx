@@ -3,7 +3,7 @@ import { act, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { Tooltip } from '../src/Tooltip';
+import { Tooltip } from './Tooltip';
 
 jest.mock('@contentful/f36-core', () => ({
   ...jest.requireActual('@contentful/f36-core'),

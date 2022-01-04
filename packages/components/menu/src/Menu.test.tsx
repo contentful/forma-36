@@ -2,7 +2,7 @@ import React from 'react';
 import { render, waitFor, fireEvent, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { Menu } from '../src';
+import { Menu } from '.';
 import { Button } from '@contentful/f36-button';
 
 describe('Menu', function () {

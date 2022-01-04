@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { ArrowDownIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 import { axe } from '@/scripts/test/axeHelper';
-import { TextLink } from '../src/TextLink';
+import { TextLink } from './TextLink';
 
 describe('TextLink', function () {
   it('renders as a button', () => {

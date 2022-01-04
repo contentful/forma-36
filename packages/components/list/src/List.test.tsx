@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { List } from '../src/List';
+import { List } from './List';
 
 describe('List', function () {
   it('renders', () => {

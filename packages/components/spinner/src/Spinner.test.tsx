@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { Spinner } from '../src/';
+import { Spinner } from '.';
 
 describe('Spinner', function () {
   it('renders the component', () => {

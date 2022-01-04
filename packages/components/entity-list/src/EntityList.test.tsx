@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { EntityList } from '../src';
+import { EntityList } from '.';
 
 const TEST_ID = 'entity-list';
 

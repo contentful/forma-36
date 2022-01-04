@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import utcPlugin from 'dayjs/plugin/utc';
 dayjs.extend(utcPlugin);
 
-import type { DateType, DateFormat } from '../../types';
+import type { DateType, DateFormat } from '../types';
 
 /**
  * A funtion that will return a formatted date string. The format will dependend on the option

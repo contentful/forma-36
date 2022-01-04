@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { Table } from '../src';
+import { Table } from '.';
 
 describe('Table', () => {
   it('renders the component', () => {

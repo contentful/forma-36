@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { DragHandle } from '../src/';
+import { DragHandle } from '.';
 
 describe('DragHandle', function () {
   it('renders', () => {

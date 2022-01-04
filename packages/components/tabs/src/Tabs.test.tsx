@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { Tabs } from '../src';
+import { Tabs } from '.';
 
 describe('Tabs', () => {
   it('has no a11y issues', async () => {

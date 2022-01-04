@@ -3,7 +3,7 @@ import { fireEvent, render } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 import tokens from '@contentful/f36-tokens';
 
-import { Pill } from '../src/Pill';
+import { Pill } from './Pill';
 
 describe('Pill', () => {
   it('renders the component', () => {

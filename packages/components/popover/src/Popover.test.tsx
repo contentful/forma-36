@@ -3,7 +3,7 @@ import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { Popover } from '../src/.';
+import { Popover } from '.';
 import { Button } from '@contentful/f36-button';
 
 describe('Popover', function () {

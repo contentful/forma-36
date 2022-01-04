@@ -6,7 +6,7 @@ dayjs.extend(utcPlugin);
 dayjs.extend(relativeTime);
 dayjs.extend(calendarPlugin);
 
-import type { DateType } from '../../types';
+import type { DateType } from '../types';
 
 /**
  * A function that will return a string with how far a given date is in the past or future,

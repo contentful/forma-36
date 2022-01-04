@@ -4,8 +4,8 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex, Grid } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
-import { DateTime } from '../src/DateTime';
-import type { DateTimeProps } from '../src/DateTime';
+import { DateTime } from '../src/DateTime/DateTime';
+import type { DateTimeProps } from '../src/DateTime/DateTime';
 
 export default {
   title: 'Components/DateTime',

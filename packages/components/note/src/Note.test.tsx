@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import { Note } from '../src/Note';
+import { Note } from './Note';
 import { axe } from '@/scripts/test/axeHelper';
 
 describe('Note', function () {

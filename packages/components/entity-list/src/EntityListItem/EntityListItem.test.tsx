@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { EntityListItem } from '../src';
+import { EntityListItem } from '..';
 import { MenuItem, MenuSectionTitle } from '@contentful/f36-menu';
 import { DragHandle } from '@contentful/f36-drag-handle';
 

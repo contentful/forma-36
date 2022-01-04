@@ -2,7 +2,7 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { NotificationItem } from '../src/NotificationItem';
+import { NotificationItem } from './NotificationItem';
 
 describe('Notification', () => {
   it('renders the component', () => {

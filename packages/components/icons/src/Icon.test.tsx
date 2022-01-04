@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { ArrowDownIcon } from '../src/';
+import { ArrowDownIcon } from '.';
 
 describe('Separate icon components', () => {
   it('renders', () => {
