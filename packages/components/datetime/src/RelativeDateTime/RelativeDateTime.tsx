@@ -18,7 +18,7 @@ import {
   formatMachineReadableDateTime,
   formatRelativeDateTime,
   formatRelativeToCurrentWeekDateTime,
-} from './utils';
+} from '../utils';
 
 interface RelativeDateTimeInternalProps extends CommonProps {
   /**

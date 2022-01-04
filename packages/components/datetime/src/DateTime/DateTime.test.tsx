@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { DateTime } from '../src/DateTime';
+import { DateTime } from './DateTime';
 
 describe('DateTime', function () {
   const mockDate = '2021-08-17T15:45';

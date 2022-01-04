@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 import { PreviewIcon } from '@contentful/f36-icons';
 import { axe } from '@/scripts/test/axeHelper';
-import { Button } from '../src/Button';
+import { Button } from './Button';
 
 describe('Button', function () {
   it('renders the component', () => {

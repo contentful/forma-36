@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { getStringMatch } from '@contentful/f36-utils';
-import { Autocomplete, AutocompleteProps } from '../src/Autocomplete';
+import { Autocomplete, AutocompleteProps } from './Autocomplete';
 
 interface Fruit {
   id: number;

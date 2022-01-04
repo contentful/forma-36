@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { Accordion } from '../src';
+import { Accordion } from '.';
 
 jest.mock('@contentful/f36-core', () => ({
   ...jest.requireActual('@contentful/f36-core'),

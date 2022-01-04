@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { PreviewIcon } from '@contentful/f36-icons';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { ToggleButton } from '../src/ToggleButton';
+import { ToggleButton } from '.';
 describe('ToggleButton', function () {
   it('renders the component', () => {
     render(<ToggleButton>Toggle</ToggleButton>);

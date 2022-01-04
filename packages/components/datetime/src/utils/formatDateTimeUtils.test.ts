@@ -2,7 +2,7 @@ import dayjs, { extend } from 'dayjs';
 import utcPlugin from 'dayjs/plugin/utc';
 extend(utcPlugin);
 
-import { formatDateAndTime, formatMachineReadableDateTime } from '../src/utils';
+import { formatDateAndTime, formatMachineReadableDateTime } from '.';
 
 describe('formatDateAndTime', () => {
   const today = dayjs();

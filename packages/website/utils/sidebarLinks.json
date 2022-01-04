@@ -107,20 +107,6 @@
       "slug": "/components/toggle-button/"
     }
   ],
-  "dateComponents": [
-    {
-      "title": "Date utilities",
-      "slug": "/components/datetime-functions/"
-    },
-    {
-      "title": "DateTime",
-      "slug": "/components/datetime/"
-    },
-    {
-      "title": "RelativeDateTime",
-      "slug": "/components/relative-datetime/"
-    }
-  ],
   "advancedComponents": [
     {
       "title": "Workbench",
@@ -183,6 +169,20 @@
     {
       "title": "InlineEntryCard",
       "slug": "/components/inline-entry-card/"
+    }
+  ],
+  "dateComponents": [
+    {
+      "title": "Date utilities",
+      "slug": "/components/datetime-functions/"
+    },
+    {
+      "title": "DateTime",
+      "slug": "/components/datetime/"
+    },
+    {
+      "title": "RelativeDateTime",
+      "slug": "/components/relative-datetime/"
     }
   ],
   "formComponents": [

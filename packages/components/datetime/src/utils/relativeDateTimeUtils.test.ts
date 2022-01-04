@@ -1,12 +1,9 @@
 import dayjs from 'dayjs';
 
-import {
-  formatRelativeDateTime,
-  formatRelativeToCurrentWeekDateTime,
-} from '../src/utils';
+import { formatRelativeDateTime, formatRelativeToCurrentWeekDateTime } from '.';
 
 // eslint-disable-next-line jest/no-mocks-import
-import * as TestCases from './__mocks__/dates';
+import * as TestCases from '../__mocks__/dates';
 
 describe('Relative datetime utility functions', function () {
   // Fix time to avoid non-deterministic behaviour

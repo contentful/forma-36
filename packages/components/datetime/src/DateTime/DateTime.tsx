@@ -6,7 +6,7 @@ import {
 } from '@contentful/f36-core';
 
 import type { DateType, DateFormat } from '../types';
-import { formatDateAndTime, formatMachineReadableDateTime } from './utils';
+import { formatDateAndTime, formatMachineReadableDateTime } from '../utils';
 
 interface DateTimeOwnProps extends CommonProps {
   /**

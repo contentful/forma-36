@@ -2,10 +2,10 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import dayjs from 'dayjs';
 
-import { RelativeDateTime } from '../src/RelativeDateTime';
+import { RelativeDateTime } from './RelativeDateTime';
 
 // eslint-disable-next-line jest/no-mocks-import
-import * as TestCases from './__mocks__/dates';
+import * as TestCases from '../__mocks__/dates';
 
 describe('RelativeDateTime', function () {
   // Tests fail if the time is between 7am & 8am

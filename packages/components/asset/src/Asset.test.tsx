@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { Asset } from '../src/Asset';
+import { Asset } from './Asset';
 
 describe('with type=image', () => {
   it('renders the component as a preview', () => {

@@ -7,8 +7,8 @@ import type {
   ExpandProps,
 } from '@contentful/f36-core';
 
-import type { BadgeSize, BadgeVariant } from './types';
-import { getBadgeStyles } from './getBadgeStyles';
+import type { BadgeSize, BadgeVariant } from '../types';
+import { getBadgeStyles } from '../styles';
 
 export interface BadgeInternalProps extends CommonProps {
   /**

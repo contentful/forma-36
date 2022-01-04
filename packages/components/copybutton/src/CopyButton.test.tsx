@@ -2,7 +2,7 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { CopyButton } from '../src/CopyButton';
+import { CopyButton } from './CopyButton';
 
 /**
  * This silences an error with window.prompt
