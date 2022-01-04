@@ -44,6 +44,7 @@ The basic folder structure of a component looks like this:
 
 ```
 /my-component
+  /examples
   /src
     index.ts
     MyComponent.tsx
@@ -80,6 +81,7 @@ In these cases, the folder structure of the package will look more like this:
 
 ```
 /button
+  /examples
   /src
     /ButtonGroup
       README.mdx
@@ -111,6 +113,7 @@ Another possible case is that the package has a component and some utility funct
 
 ```
 /datetime
+  /examples
   /src
     /RelativeDateTime
       README.mdx
