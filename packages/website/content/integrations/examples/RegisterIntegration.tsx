@@ -13,7 +13,6 @@ import {
 import { Button } from '@contentful/f36-components';
 
 export default function ReactHookForm() {
-  // Call the useForm hook from react-hook-form
   const {
     register,
     handleSubmit,

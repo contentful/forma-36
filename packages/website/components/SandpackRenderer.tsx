@@ -50,7 +50,6 @@ export function SandpackRenderer(props: {
           react: '^17.0.0',
           'react-dom': '^17.0.0',
           'react-scripts': '^4.0.0',
-          '@contentful/f36-forms': 'latest',
           '@contentful/f36-components': 'latest',
           '@contentful/f36-tokens': 'latest',
           '@contentful/f36-icons': 'latest',
