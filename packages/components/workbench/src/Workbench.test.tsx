@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Workbench } from '../src/Workbench';
+import { Workbench } from './Workbench';
 
 describe('Workbench', function () {
   it('renders', () => {

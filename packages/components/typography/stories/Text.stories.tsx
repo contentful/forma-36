@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Text, TextProps } from '../src/Text';
+import { Text, TextProps } from '../src/Text/Text';
 
 export default {
   title: 'Typography/Text',

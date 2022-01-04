@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { SectionHeading, SectionHeadingProps } from '../src/SectionHeading';
+import {
+  SectionHeading,
+  SectionHeadingProps,
+} from '../src/SectionHeading/SectionHeading';
 
 export default {
   title: 'Typography/SectionHeading',
