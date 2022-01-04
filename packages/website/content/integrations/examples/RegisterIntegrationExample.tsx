@@ -12,7 +12,7 @@ import {
 } from '@contentful/f36-forms';
 import { Button } from '@contentful/f36-components';
 
-export default function ReactHookForm() {
+export default function RegisterIntegrationExample() {
   const {
     register,
     handleSubmit,

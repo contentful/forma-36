@@ -3,7 +3,7 @@ import { useForm, useController } from 'react-hook-form';
 import { TextInput, Form, FormControl } from '@contentful/f36-forms';
 import { Button } from '@contentful/f36-components';
 
-export default function ReactHookForm() {
+export default function UseControllerIntegrationExample() {
   const ControlledTextInput = (props) => {
     const {
       field: { ref, ...inputProps },
