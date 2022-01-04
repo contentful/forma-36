@@ -43,12 +43,6 @@ const styles = {
     color: ${tokens.colorWhite};
     padding: ${tokens.spacingXs};
   `,
-  editor: css`
-    font-family: ${tokens.fontStackMonospace};
-    background-color: #222031;
-    color: #ffffff;
-    min-height: 100px;
-  `,
   // !important was necessary because these styles are being applied after the Card component styles
   card: css`
     font-family: ${tokens.fontStackPrimary};
@@ -111,7 +105,9 @@ export function ComponentSource({ children }: { children: string }) {
               >
                 Open in Playground
               </Button>
-              <LiveEditor className={styles.editor} />
+              <LiveEditor
+                style={{ paddingBottom: '45px', minHeight: '100px' }}
+              />
             </div>
           </>
         )}
