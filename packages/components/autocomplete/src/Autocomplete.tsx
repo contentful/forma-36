@@ -32,7 +32,7 @@ export interface AutocompleteProps<ItemType>
     > {
   /**
    * It’s an array of data to be used as "options" by the autocomplete component.
-   * defined as any, because in this moment we do not know if items is a group
+   * This can either be a plain list of items or a list of groups of items.
    */
   items: ItemType[] | GenericGroupType<ItemType>[];
 
