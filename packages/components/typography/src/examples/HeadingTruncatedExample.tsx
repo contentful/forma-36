@@ -1,7 +1,7 @@
 import React from 'react';
 import { Heading, Flex } from '@contentful/f36-components';
 
-export default function HeadingExample() {
+export default function HeadingTruncatedExample() {
   return (
     <Flex style={{ maxWidth: '200px' }}>
       <Heading isTruncated>
