@@ -10,11 +10,11 @@ export type {
   FormControlProps,
   FormControlInternalProps,
 } from './FormControl/FormControl';
-export { FormLabel } from './form-label/FormLabel';
+export { FormLabel } from './FormLabel/FormLabel';
 export type {
   FormLabelInternalProps,
   FormLabelProps,
-} from './form-label/FormLabel';
+} from './FormLabel/FormLabel';
 export { Radio } from './Radio/CompoundRadio';
 export type { RadioProps } from './Radio/Radio';
 export type { RadioGroupProps } from './Radio/RadioGroup';
@@ -23,8 +23,8 @@ export type { TextInputProps } from './TextInput/types';
 export type { InputGroupProps } from './TextInput/input-group/InputGroup';
 export { Switch } from './Switch/Switch';
 export type { SwitchProps } from './Switch/Switch';
-export { Textarea } from './textarea/Textarea';
-export type { TextareaProps } from './textarea/Textarea';
+export { Textarea } from './Textarea/Textarea';
+export type { TextareaProps } from './Textarea/Textarea';
 export { Option } from './Select/SelectOption';
 export type { OptionProps } from './Select/SelectOption';
 export { Select } from './Select/CompoundSelect';
