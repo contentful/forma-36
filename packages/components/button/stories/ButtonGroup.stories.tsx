@@ -76,7 +76,7 @@ export const overview: Story<ButtonGroupProps> = () => {
 
         <Flex flexDirection="column" marginBottom="spacingM">
           <Box marginBottom="spacingS">
-            <ButtonGroup variant="collapsed">
+            <ButtonGroup>
               <Button onClick={onClick} variant="secondary">
                 Button
               </Button>
@@ -95,7 +95,7 @@ export const overview: Story<ButtonGroupProps> = () => {
             </ButtonGroup>
           </Box>
           <Box marginBottom="spacingS">
-            <ButtonGroup variant="collapsed" withDivider>
+            <ButtonGroup withDivider>
               <Button onClick={onClick} variant="positive">
                 Button
               </Button>
@@ -108,7 +108,7 @@ export const overview: Story<ButtonGroupProps> = () => {
             </ButtonGroup>
           </Box>
           <Box marginBottom="spacingS">
-            <ButtonGroup variant="collapsed" withDivider>
+            <ButtonGroup withDivider>
               <Button
                 onClick={onClick}
                 variant="primary"
