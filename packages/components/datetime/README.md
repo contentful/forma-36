@@ -1,5 +1,5 @@
 This package contains:
 
-- [DateTime](<(./src/DateTime)>)
+- [DateTime](./src/DateTime)
 - [RelativeDateTime](./src/RelativeDateTime)
 - [date utils](./src/utils)
