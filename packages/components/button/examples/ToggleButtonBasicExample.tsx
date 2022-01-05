@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ToggleButton } from '@contentful/f36-components';
-import { PreviewIcon } from '@contentful/f36-icons';
+import { ThumbUpTrimmedIcon } from '@contentful/f36-icons';
 
 export default function ToggleButtonBasicExample() {
   const [isActive, setIsActive] = useState(false);
@@ -10,9 +10,9 @@ export default function ToggleButtonBasicExample() {
       onToggle={() => {
         setIsActive(!isActive);
       }}
-      icon={<PreviewIcon />}
+      icon={<ThumbUpTrimmedIcon />}
     >
-      Toggle Button
+      Like
     </ToggleButton>
   );
 }

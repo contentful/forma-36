@@ -5,10 +5,10 @@ export default function ToggleButtonStatesExample() {
   return (
     <Stack>
       <ToggleButton isActive onToggle={() => {}}>
-        Active Toggle Button
+        Active State
       </ToggleButton>
       <ToggleButton isDisabled onToggle={() => {}}>
-        Disabled Toggle Button
+        Disabled State
       </ToggleButton>
     </Stack>
   );
