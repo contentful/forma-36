@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { GlobalStyles as FormaGlobalStyles } from '@contentful/f36-components';
 import { GlobalStyles } from '../components/GlobalStyles';
 import '../resources/css/sandpack.css';
+import '@docsearch/css';
 
 import { Layout } from '../components/Layout';
 
@@ -41,16 +42,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           async
           type="text/javascript"
           src="https://cmp.osano.com/16BcqiRsJId123ATa/fcd81040-24a4-4474-9a22-f295cbec8600/osano.js"
-        ></script>
-        <link
-          key="plugin-docsearch-css"
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/@docsearch/css@3.0.0-alpha.42"
-        />
-        <script
-          defer
-          type="text/javascript"
-          src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.0.0-alpha.42"
         ></script>
       </Head>
       {getLayout({ page: <Component {...pageProps} />, pageProps })}
