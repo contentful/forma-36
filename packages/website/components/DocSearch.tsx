@@ -4,7 +4,8 @@ import tokens from '@contentful/f36-tokens';
 import { SearchIcon } from '@contentful/f36-icons';
 import { TextInput } from '@contentful/f36-forms';
 
-const DOCSEARCH_API_KEY = process.env.DOCSEARCH_API_KEY || 'invalid_token';
+const DOCSEARCH_API_KEY = process.env.DOCSEARCH_API_KEY || '';
+const DOCSEARCH_APP_ID = process.env.DOCSEARCH_APP_ID || '';
 
 const styles = {
   container: css`
@@ -36,9 +37,11 @@ export const DocSearch = () => {
         window.docsearch({
           // The key is added here only give access to searching the public content of the website https://docsearch.algolia.com/docs/what-is-docsearch
           // You can even check Forma 36's configuration in DocSearch's repo https://github.com/algolia/docsearch-configs/blob/master/configs/contentful_forma-36.json
+          appId: DOCSEARCH_APP_ID,
           apiKey: DOCSEARCH_API_KEY,
           indexName: 'forma-36',
           inputSelector: '#search',
+          debug: false,
         });
       } catch (e) {
         setIsFailed(true);

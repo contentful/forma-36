@@ -45,12 +45,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link
           key="plugin-docsearch-css"
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"
+          href="https://cdn.jsdelivr.net/npm/@docsearch/css@3.0.0-alpha.42"
         />
         <script
           defer
           type="text/javascript"
-          src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"
+          src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.0.0-alpha.42"
         ></script>
       </Head>
       {getLayout({ page: <Component {...pageProps} />, pageProps })}
