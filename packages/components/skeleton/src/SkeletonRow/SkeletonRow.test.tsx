@@ -1,16 +1,18 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { Table, TableBody } from '@contentful/f36-table';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { SkeletonImage } from '../src/SkeletonImage/SkeletonImage';
-import { SkeletonContainer } from '../src/SkeletonContainer/SkeletonContainer';
+import { SkeletonRow } from './SkeletonRow';
 
-describe('SkeletonImage', () => {
+describe('SkeletonRow', () => {
   it('has no a11y issues', async () => {
     const { container } = render(
-      <SkeletonContainer>
-        <SkeletonImage />
-      </SkeletonContainer>,
+      <Table>
+        <TableBody>
+          <SkeletonRow />
+        </TableBody>
+      </Table>,
     );
     const results = await axe(container);
 

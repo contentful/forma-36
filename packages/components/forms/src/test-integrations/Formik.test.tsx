@@ -13,7 +13,7 @@ import {
   Select,
   Textarea,
   TextInput,
-} from '../src';
+} from '../../dist/types';
 
 const MockRequiredMessage = () => (
   <FormControl.ValidationMessage>

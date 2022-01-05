@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { Modal } from '../src/Modal';
+import { ModalConfirm } from './ModalConfirm';
 
 jest.mock(
   'react-modal',
@@ -15,13 +15,9 @@ jest.mock(
 
 it('has no a11y issues', async () => {
   const { container } = render(
-    <Modal
-      title="Modal window with no a11y issues :) "
-      isShown
-      onClose={() => {}}
-    >
-      Content
-    </Modal>,
+    <ModalConfirm isShown onConfirm={() => {}} onCancel={() => {}}>
+      ModalConfirm
+    </ModalConfirm>,
   );
   const results = await axe(container);
 
