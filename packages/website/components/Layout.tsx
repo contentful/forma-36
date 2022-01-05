@@ -32,20 +32,11 @@ interface Props {
   currentPage: string;
 }
 
-function Main({ children }: Props) {
-  return (
-    <Grid.Item area="content" as="main" className={styles.mainItem}>
-      {children}
-      <Footer />
-    </Grid.Item>
-  );
-}
-
 export function Layout({ children, currentPage }: Props) {
   return (
     <Grid
       className={styles.grid}
-      columns="320px auto"
+      columns="285px auto"
       rows="auto 1fr"
       columnGap="none"
     >
@@ -58,9 +49,15 @@ export function Layout({ children, currentPage }: Props) {
       </Grid.Item>
 
       {/* Unique key for each page, so scroll position is not preserved when opening a new page */}
-      <Main key={currentPage} currentPage={currentPage}>
+      <Grid.Item
+        key={currentPage}
+        area="content"
+        as="main"
+        className={styles.mainItem}
+      >
         {children}
-      </Main>
+        <Footer />
+      </Grid.Item>
     </Grid>
   );
 }
