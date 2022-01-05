@@ -2,7 +2,7 @@ import React from 'react';
 import {
   BaseCheckboxGroup,
   BaseCheckboxGroupProps,
-} from '../base-checkbox-changed/BaseCheckboxGroup';
+} from '../BaseCheckbox/BaseCheckboxGroup';
 
 export interface RadioGroupProps extends Omit<BaseCheckboxGroupProps, 'type'> {
   /**

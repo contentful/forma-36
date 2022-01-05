@@ -1,8 +1,8 @@
 import { FormControl as OriginalFormControl } from './FormControl';
-import { FormLabel } from '../form-label-changed';
-import { ValidationMessage } from '../validation-message-changed';
-import { HelpText } from '../help-text-changed';
-import { Counter } from '../counter-changed';
+import { FormLabel } from '../FormLabel';
+import { ValidationMessage } from '../ValidationMessage';
+import { HelpText } from '../HelpText';
+import { Counter } from '../Counter';
 
 type CompoundFormControl = typeof OriginalFormControl & {
   Label: typeof FormLabel;
