@@ -5,10 +5,10 @@ import { EntityStatusBadge } from '@contentful/f36-badge';
 import { Asset } from '@contentful/f36-asset';
 import type { AssetStatus, AssetType } from '@contentful/f36-asset';
 
-import { BaseCard } from '../BaseCard-1/BaseCard';
-import type { BaseCardInternalProps } from '../BaseCard-1/BaseCard.types';
+import { BaseCard } from '../BaseCard/BaseCard';
+import type { BaseCardInternalProps } from '../BaseCard/BaseCard.types';
 import { getAssetCardStyles } from './AssetCard.styles';
-import { DefaultCardHeader } from '../BaseCard-1/DefaultCardHeader';
+import { DefaultCardHeader } from '../BaseCard/DefaultCardHeader';
 
 import { SkeletonContainer, SkeletonImage } from '@contentful/f36-skeleton';
 

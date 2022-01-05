@@ -11,7 +11,7 @@ import type {
 import { EntityStatusBadge } from '@contentful/f36-badge';
 import { Subheading, Paragraph } from '@contentful/f36-typography';
 
-import { BaseCard } from '../BaseCard-1/BaseCard';
+import { BaseCard } from '../BaseCard/BaseCard';
 
 import { getEntryCardStyles } from './EntryCard.styles';
 import { EntryCardInternalProps, EntryCardSize } from './EntryCard.types';
