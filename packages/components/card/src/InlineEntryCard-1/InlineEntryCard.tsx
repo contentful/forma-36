@@ -1,0 +1,57 @@
+import React from 'react';
+import { cx } from 'emotion';
+import { Text } from '@contentful/f36-typography';
+
+import { BaseCard } from '../BaseCard-1/BaseCard';
+import type { EntryCardInternalProps } from '../EntryCard-1/EntryCard.types';
+import { getInlineEntryCardStyles } from './InlineEntryCard.styles';
+import { CardActions } from '../BaseCard-1/CardActions';
+
+import { SkeletonBodyText, SkeletonContainer } from '@contentful/f36-skeleton';
+
+export type InlineEntryCardInternalProps = Omit<
+  EntryCardInternalProps,
+  'children' | 'icon' | 'withDragHandle' | 'ref' | 'src' | 'type'
+>;
+
+export type InlineEntryCardProps = InlineEntryCardInternalProps;
+
+export const InlineEntryCard = ({
+  actions,
+  className,
+  status,
+  title,
+  isLoading,
+  testId = 'cf-ui-inline-entry-card',
+  ...otherProps
+}: InlineEntryCardInternalProps) => {
+  const styles = getInlineEntryCardStyles();
+  const header = (
+    <CardActions buttonProps={{ className: styles.actions }}>
+      {actions}
+    </CardActions>
+  );
+
+  if (isLoading) {
+    return (
+      <SkeletonContainer
+        className={styles.skeleton}
+        svgHeight="1.25rem"
+        svgWidth="6rem"
+      >
+        <SkeletonBodyText numberOfLines={1} />
+      </SkeletonContainer>
+    );
+  }
+
+  return (
+    <BaseCard
+      {...otherProps}
+      className={cx(styles.root({ status }), className)}
+      header={header}
+      testId={testId}
+    >
+      <Text>{title}</Text>
+    </BaseCard>
+  );
+};
