@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import type { CSSObject } from '@emotion/serialize';
 import tokens from '@contentful/f36-tokens';
-import { ButtonSize, ButtonVariant, ButtonStylesProps } from './types';
+import { ButtonSize, ButtonVariant, ButtonStylesProps } from '../types';
 
 const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
   switch (variant) {
