@@ -18,6 +18,8 @@ export const DocSearch = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore ignore a complaint about dynamic import
     import('docsearch.js').then((docsearch) => {
       try {
         docsearch.default({
