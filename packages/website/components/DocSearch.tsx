@@ -11,6 +11,9 @@ const styles = {
     width: 100%;
     padding: ${tokens.spacingM} ${tokens.spacingM} 0;
     margin-bottom: ${tokens.spacingM};
+    & .algolia-autocomplete {
+      width: 100%;
+    }
   `,
 };
 
