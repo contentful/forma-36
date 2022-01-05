@@ -2,8 +2,6 @@
 
 This package contains:
 
-- [BaseCheckbox](./src/BaseCheckbox) - this component is used only internally
-- [BaseInput](./src/BaseInput) - this component is used only internally
 - [Checkbox](./src/Checkbox)
 - [Counter](./src/Counter)
 - [Form](./src/Form)
