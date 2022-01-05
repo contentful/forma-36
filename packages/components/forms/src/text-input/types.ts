@@ -1,4 +1,4 @@
-import { BaseInputProps } from '../BaseInput-1';
+import { BaseInputProps } from '../base-input';
 
 export interface TextInputProps
   extends Omit<BaseInputProps, 'as' | 'onCopy' | 'resize'> {

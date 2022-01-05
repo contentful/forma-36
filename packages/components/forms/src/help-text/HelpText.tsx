@@ -6,7 +6,7 @@ import {
   ExpandProps,
 } from '@contentful/f36-core';
 import { Text } from '@contentful/f36-typography';
-import { useFormControl } from '../FormControl-1/FormControlContext';
+import { useFormControl } from '../form-control/FormControlContext';
 
 export interface HelpTextInternalProps extends CommonProps, MarginProps {
   children: React.ReactNode;

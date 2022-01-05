@@ -1,5 +1,5 @@
 import type { ChangeEventHandler, ComponentProps } from 'react';
-import type { BaseInputInternalProps } from '../BaseInput-1/types';
+import type { BaseInputInternalProps } from '../base-input/types';
 
 export type checkboxTypes = 'checkbox' | 'radio' | 'switch';
 

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { cx } from 'emotion';
 
-import { BaseInput } from '../BaseInput-1';
-import type { BaseInputProps } from '../BaseInput-1';
-import { useFormControl } from '../FormControl-1/FormControlContext';
+import { BaseInput } from '../base-input';
+import type { BaseInputProps } from '../base-input';
+import { useFormControl } from '../form-control/FormControlContext';
 import { getStyles } from './Textarea.styles';
 import { ExpandProps } from '@contentful/f36-core';
 

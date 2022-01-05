@@ -1,8 +1,8 @@
 import React from 'react';
 import { useId, ExpandProps } from '@contentful/f36-core';
-import { BaseCheckbox, BaseCheckboxProps } from '../BaseCheckbox-1';
-import { useFormControl } from '../FormControl-1/FormControlContext';
-import { useBaseCheckboxGroup } from '../BaseCheckbox-1/BaseCheckboxGroupContext';
+import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
+import { useFormControl } from '../form-control/FormControlContext';
+import { useBaseCheckboxGroup } from '../base-checkbox/BaseCheckboxGroupContext';
 
 export type CheckboxProps = Omit<BaseCheckboxProps, 'type' | 'size'>;
 

@@ -12,7 +12,7 @@ import {
   PropsWithHTMLElement,
   ExpandProps,
 } from '@contentful/f36-core';
-import { useFormControl } from '../FormControl-1/FormControlContext';
+import { useFormControl } from '../form-control/FormControlContext';
 import { getSelectStyles } from './Select.styles';
 
 export type SelectSize = 'small' | 'medium';

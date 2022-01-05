@@ -2,7 +2,7 @@ import { cx } from 'emotion';
 import React, { forwardRef } from 'react';
 import type { ReactNode } from 'react';
 import { getFormLabelStyles } from './FormLabel.styles';
-import { useFormControl } from '../FormControl-1/FormControlContext';
+import { useFormControl } from '../form-control/FormControlContext';
 import type {
   CommonProps,
   MarginProps,

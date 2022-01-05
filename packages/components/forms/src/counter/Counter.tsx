@@ -8,7 +8,7 @@ import type {
 import { Text } from '@contentful/f36-typography';
 import { getCounterStyles } from './Counter.styles';
 
-import { useFormControl } from '../FormControl-1/FormControlContext';
+import { useFormControl } from '../form-control/FormControlContext';
 
 export type CounterProps = PropsWithHTMLElement<CommonProps, 'p'>;
 

@@ -2,7 +2,7 @@ import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { ValidationMessage } from '../src';
-import type { ValidationMessageInternalProps } from '../src/ValidationMessage-1/ValidationMessage';
+import type { ValidationMessageInternalProps } from '../src/validation-message/ValidationMessage';
 
 export default {
   title: 'Form Elements/ValidationMessage',

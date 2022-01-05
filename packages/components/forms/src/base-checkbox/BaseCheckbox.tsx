@@ -5,8 +5,8 @@ import { GhostCheckbox } from './GhostCheckbox';
 import getStyles from './BaseCheckbox.styles';
 import { Text } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
-import { HelpText } from '../HelpText-1/HelpText';
-import { useFormControl } from '../FormControl-1/FormControlContext';
+import { HelpText } from '../help-text/HelpText';
+import { useFormControl } from '../form-control/FormControlContext';
 
 export type BaseCheckboxProps = PropsWithHTMLElement<
   BaseCheckboxInternalProps & { label?: string },
