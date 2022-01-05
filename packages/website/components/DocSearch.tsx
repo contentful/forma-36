@@ -45,7 +45,7 @@ export const DocSearch = () => {
         });
       } catch (e) {
         setIsFailed(true);
-        console.warn('Failed to initialize Algolia search');
+        console.warn('Failed to initialize Algolia search', e);
       }
     }
   }, []);
