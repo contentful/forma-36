@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
-import { BaseInput } from '../base-input';
+import { BaseInput } from '../base-input-changed';
 import { TextInputProps } from './types';
-import { useFormControl } from '../form-control/FormControlContext';
+import { useFormControl } from '../form-control-changed/FormControlContext';
 import { ExpandProps } from '@contentful/f36-core';
 
 export const _TextInput = (

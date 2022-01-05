@@ -1,21 +1,24 @@
 import React from 'react';
 import { useId, ExpandProps } from '@contentful/f36-core';
-import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
-import { useFormControl } from '../form-control/FormControlContext';
-import { useBaseCheckboxGroup } from '../base-checkbox/BaseCheckboxGroupContext';
+import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox-changed';
+import { useFormControl } from '../form-control-changed/FormControlContext';
+import { useBaseCheckboxGroup } from '../base-checkbox-changed/BaseCheckboxGroupContext';
 
-export type CheckboxProps = Omit<BaseCheckboxProps, 'type' | 'size'>;
+export type RadioProps = Omit<
+  BaseCheckboxProps,
+  'type' | 'isIndeterminate' | 'size'
+>;
 
-const _Checkbox = (
-  props: ExpandProps<CheckboxProps>,
+const _Radio = (
+  props: ExpandProps<RadioProps>,
   ref: React.Ref<HTMLInputElement>,
 ) => {
   const {
-    testId = 'cf-ui-checkbox',
+    testId = 'cf-ui-radio-button',
     id,
     isDisabled,
-    isRequired,
     isInvalid,
+    isRequired,
     children,
     onBlur,
     onChange,
@@ -26,7 +29,7 @@ const _Checkbox = (
     ...otherProps
   } = props;
 
-  const inputId = useId(id, 'checkbox');
+  const inputId = useId(id, 'radio');
 
   const groupProps = useBaseCheckboxGroup({
     onBlur,
@@ -55,9 +58,9 @@ const _Checkbox = (
   return (
     <BaseCheckbox
       {...formProps}
-      {...groupProps}
       {...otherProps}
-      type="checkbox"
+      {...groupProps}
+      type="radio"
       testId={testId}
       ref={ref}
     >
@@ -66,4 +69,4 @@ const _Checkbox = (
   );
 };
 
-export const Checkbox = React.forwardRef(_Checkbox);
+export const Radio = React.forwardRef(_Radio);
