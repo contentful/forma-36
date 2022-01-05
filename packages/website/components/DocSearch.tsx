@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { css } from 'emotion';
 // @ts-expect-error ignore missing type declarations
 import docsearch from '@docsearch/js';
