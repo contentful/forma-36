@@ -9,7 +9,7 @@ import {
 } from '@contentful/f36-core';
 import { Spinner } from '@contentful/f36-spinner';
 
-import type { ButtonInternalProps } from './types';
+import type { ButtonInternalProps } from '../types';
 import { getStyles } from './Button.styles';
 
 const BUTTON_DEFAULT_TAG = 'button';
