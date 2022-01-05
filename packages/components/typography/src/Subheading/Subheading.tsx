@@ -6,8 +6,8 @@ import {
   PolymorphicProps,
   ExpandProps,
 } from '@contentful/f36-core';
-import type { HeadingElement } from './Heading';
-import { Text } from './Text';
+import type { HeadingElement } from '../Heading';
+import { Text } from '../Text';
 
 const SUBHEADING_DEFAULT_TAG = 'h3';
 

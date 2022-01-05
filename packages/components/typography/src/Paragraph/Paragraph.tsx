@@ -5,7 +5,7 @@ import {
   MarginProps,
   ExpandProps,
 } from '@contentful/f36-core';
-import { Text } from './Text';
+import { Text } from '../Text';
 
 export type ParagraphInternalProps = CommonProps &
   MarginProps & {

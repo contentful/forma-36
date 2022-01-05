@@ -7,8 +7,8 @@ import {
   PolymorphicProps,
   ExpandProps,
 } from '@contentful/f36-core';
-import { Text } from '../Text/Text';
-import type { HeadingElement } from '../Heading/Heading';
+import { Text } from '../Text';
+import type { HeadingElement } from '../Heading';
 
 const DISPLAY_TEXT_DEFAULT_TAG = 'h2';
 

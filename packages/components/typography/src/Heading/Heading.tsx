@@ -6,7 +6,7 @@ import {
   PolymorphicProps,
   ExpandProps,
 } from '@contentful/f36-core';
-import { Text } from './Text';
+import { Text } from '../Text';
 
 const HEADING_DEFAULT_TAG = 'h1';
 
