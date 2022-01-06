@@ -285,10 +285,20 @@
     {
       "title": "Getting started",
       "slug": "/getting-started"
+    }
+  ],
+  "forma36Version4": [
+    {
+      "title": "FAQ",
+      "slug": "/v3-faq/"
     },
     {
-      "title": "Migrating Forma 36 components to version 4",
+      "title": "Migration Guide",
       "slug": "/migration-v3-to-v4/"
+    },
+    {
+      "title": "Version 3 maintenance plan",
+      "slug": "/maintenance-plan/"
     }
   ],
   "deprecatedComponents": [

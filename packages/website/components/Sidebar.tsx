@@ -106,13 +106,18 @@ export function Sidebar({ currentPage = '/' }: Props) {
           >
             Contributing to Forma 36
           </SidebarLink>
-          <SidebarLink
+          {/* <SidebarLink
             isActive={isLinkActive('/migration-v3-to-v4', currentPage)}
             href="/migration-v3-to-v4"
           >
             Migration Guide
-          </SidebarLink>
+          </SidebarLink> */}
           <Box marginBottom="spacingL" />
+          <SidebarSection
+            title="Forma 36 version 3"
+            links={sidebarLinks.forma36Version4}
+            currentPage={currentPage}
+          />
           <SidebarSection
             title="Guidelines"
             links={sidebarLinks.guidelines}
