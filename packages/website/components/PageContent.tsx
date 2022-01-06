@@ -17,6 +17,7 @@ const styles = {
   root: css`
     display: flex;
     flex-direction: column;
+    flex: 1;
     margin: 0 auto;
     padding: ${tokens.spacingXl} ${tokens.spacing2Xl} 0 ${tokens.spacing2Xl};
   `,
