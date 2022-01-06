@@ -1,0 +1,55 @@
+---
+title: 'DisplayText'
+type: 'component'
+status: 'stable'
+section: 'typographyComponents'
+slug: /components/display-text/
+github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/components/typography/src'
+typescript: ./DisplayText.tsx
+---
+
+`DisplayText` is used to display text in special scenarios - example usages of `DisplayText` include empty states, promotional/featured items, etc.
+
+`DisplayText` should **not** be used as a replacement for headings/page titles (use the [Heading](../components/heading) component instead).
+
+## Import
+
+```js static=true
+import { DisplayText } from '@contentful/f36-components';
+```
+
+## Examples
+
+### Basic
+
+```jsx file=../../examples/DisplayTextExample.tsx
+
+```
+
+### Margins
+
+Forma 36 typography components provide a way to set their own margins. By default `DisplayText` component has a margin bottom (`spacingL` or `spacingXl` depending on `size` property).
+
+You can override the default margin bottom by specifying it explicitly on the component level by `marginBottom="none"` or any other value from [our spacing options](/tokens/spacing)
+
+```jsx file=../../examples/DisplayTextMarginsExample.tsx
+
+```
+
+### `as` property
+
+We provide you with `as` property, to allow you to set the tag of the `DisplayText` component to another tag than `h2`.
+
+```jsx file=../../examples/DisplayTextTagExample.tsx
+
+```
+
+### Composition
+
+```jsx file=../../examples/DisplayTextCompositionExample.tsx
+
+```
+
+## Props (API reference)
+
+<Props of="DisplayText" storybookPath="/story/typography-displaytext--basic" />

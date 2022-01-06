@@ -8,7 +8,7 @@ import type {
 import { DragIcon, CloseIcon } from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
 import { PillVariants } from './types';
-import { getPillStyles } from './styles';
+import { getPillStyles } from './Pill.styles';
 
 export type PillInternalProps = CommonProps & {
   /**

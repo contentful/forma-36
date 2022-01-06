@@ -1,5 +1,16 @@
 # @contentful/f36-forms
 
-This package is part of the pre-release. This means it is unsupported and subject to breaking changes without warning.
+This package contains:
 
-Please use official, supported version of the library [forma-36](https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components), [NPM](https://www.npmjs.com/package/@contentful/forma-36-react-components).
+- [Checkbox](./src/Checkbox)
+- [Counter](./src/Counter)
+- [Form](./src/Form)
+- [FormControl](./src/FormControl)
+- [FormLabel](./src/FormLabel)
+- [HelpText](./src/HelpText)
+- [Radio](./src/Radio)
+- [Select](./src/Select)
+- [Switch](./src/Switch)
+- [TextInput](./src/TextInput)
+- [Textarea](./src/Textarea)
+- [ValidationMessage](./src/ValidationMessage)

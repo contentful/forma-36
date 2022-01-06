@@ -2,8 +2,8 @@ import React from 'react';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
-import { Badge } from '../src/Badge';
-import { BadgeInternalProps } from '../src/Badge';
+import { Badge } from '../src/Badge/Badge';
+import { BadgeInternalProps } from '../src/Badge/Badge';
 
 export default {
   title: 'Components/Badge',

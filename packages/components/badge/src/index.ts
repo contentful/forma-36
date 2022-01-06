@@ -1,5 +1,5 @@
-export { Badge } from './Badge';
-export type { BadgeProps } from './Badge';
-export { EntityStatusBadge } from './EntityStatusBadge';
-export type { EntityStatusBadgeProps } from './EntityStatusBadge';
+export { Badge } from './Badge/Badge';
+export type { BadgeProps } from './Badge/Badge';
+export { EntityStatusBadge } from './EntityStatusBadge/EntityStatusBadge';
+export type { EntityStatusBadgeProps } from './EntityStatusBadge/EntityStatusBadge';
 export type { BadgeVariant } from './types';

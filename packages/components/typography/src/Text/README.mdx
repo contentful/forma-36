@@ -1,0 +1,61 @@
+---
+title: 'Text'
+type: 'component'
+status: 'stable'
+section: 'typographyComponents'
+slug: /components/text/
+github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/components/typography/src'
+typescript: ./Text.tsx
+---
+
+`Text` is a basic typography component. It will be displayed as a `span` element by default with a default font family, font color, font size and letter spacing.
+
+`Text` component is a basic for other typography components. We recommend using it when you need to display `<span>` element and still keep the proper typography styling.
+
+## Import
+
+```js static=true
+import { Text } from '@contentful/f36-components';
+```
+
+## Examples
+
+```jsx file=../../examples/TextBasicExample.tsx
+
+```
+
+You can pass all basic font related parameters as properties of the component.
+
+### Changing the font size
+
+To increase the font size of the text, you can pass the `fontSize` property. Notice, that by default `Text` component has no margins.
+
+```jsx file=../../examples/TextFontSizeExample.tsx
+
+```
+
+### Changing the font color
+
+To increase the font color of the text, you can pass the `fontColor` properties. You can use only colors allowed by [Forma 36 color palette](../tokens/color-system).
+
+```jsx file=../../examples/TextColorsExample.tsx
+
+```
+
+### `as` property
+
+To override the element that gets rendered, pass the `as` property.
+
+```jsx file=../../examples/TextPolymorphicExample.tsx
+
+```
+
+### Truncated
+
+```jsx file=../../examples/TextTruncateExample.tsx
+
+```
+
+## Props (API reference)
+
+<Props of="Text" storybookPath="/story/typography-text--basic" />
