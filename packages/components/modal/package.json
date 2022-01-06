@@ -7,14 +7,14 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@contentful/f36-core": "^4.0.0",
-    "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-button": "^4.0.0",
+    "@contentful/f36-core": "^4.0.0",
     "@contentful/f36-icons": "^4.0.0",
+    "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-typography": "^4.0.0",
-    "react-modal": "^3.14.3",
     "@types/react-modal": "^3.12.1",
-    "emotion": "^10.0.17"
+    "emotion": "^10.0.17",
+    "react-modal": "^3.14.3"
   },
   "peerDependencies": {
     "react": ">=16.8",
