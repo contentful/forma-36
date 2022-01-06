@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
 import React from 'react';
 import { css, cx } from 'emotion';
 import tokens from '@contentful/f36-tokens';
@@ -80,29 +79,27 @@ export function TableOfContent(props: { headings: Array<HeadingType> }) {
   }
 
   return (
-    <div className={styles.root}>
-      <div className={styles.inner}>
-        <Box marginLeft="spacingM">
-          <Subheading as="h2">On this page</Subheading>
-        </Box>
-        <List className={styles.rootList}>
-          {headings.map(({ id, text, level }) => (
-            <List.Item key={id} title={text}>
-              <Box marginLeft={level === 'h3' ? 'spacingM' : undefined}>
-                <TextLink
-                  href={`#${id}`}
-                  aria-current={id === activeId ? 'location' : undefined}
-                  className={cx(styles.sidebarNavItem, {
-                    [styles.sidebarNavItemActive]: id === activeId,
-                  })}
-                >
-                  {text}
-                </TextLink>
-              </Box>
-            </List.Item>
-          ))}
-        </List>
-      </div>
-    </div>
+    <>
+      <Box marginLeft="spacingM">
+        <Subheading as="h2">On this page</Subheading>
+      </Box>
+      <List className={styles.rootList}>
+        {headings.map(({ id, text, level }) => (
+          <List.Item key={id} title={text}>
+            <Box marginLeft={level === 'h3' ? 'spacingM' : undefined}>
+              <TextLink
+                href={`#${id}`}
+                aria-current={id === activeId ? 'location' : undefined}
+                className={cx(styles.sidebarNavItem, {
+                  [styles.sidebarNavItemActive]: id === activeId,
+                })}
+              >
+                {text}
+              </TextLink>
+            </Box>
+          </List.Item>
+        ))}
+      </List>
+    </>
   );
 }
