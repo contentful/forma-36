@@ -65,13 +65,13 @@ const styles = {
     position: absolute;
     bottom: ${tokens.spacingS};
     right: calc(200px + ${tokens.spacingS});
-    z-index: 1000;
+    z-index: 2;
   `,
   playgroundButton: css`
     position: absolute;
     bottom: ${tokens.spacingS};
     right: ${tokens.spacingS};
-    z-index: 1000;
+    z-index: 2;
     font-family: ${tokens.fontStackPrimary};
   `,
 };
