@@ -176,4 +176,3 @@ workflows:
       #       branches:
       #         only:
       #           - master
-      #           - forma-v4
