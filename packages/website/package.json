@@ -35,7 +35,8 @@
     "lodash.sortby": "^4.7.0",
     "use-debounce": "^7.0.1",
     "qs": "^6.10.1",
-    "lz-string": "1.4.4"
+    "lz-string": "1.4.4",
+    "react-hook-form": "7.22.5"
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^10.2.1",

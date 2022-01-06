@@ -11,6 +11,7 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import tokens from '@contentful/f36-tokens';
 import * as f36Components from '@contentful/f36-components';
 import * as f36utils from '@contentful/f36-utils';
+import { useForm, useController } from 'react-hook-form';
 import { Card, Button, CopyButton } from '@contentful/f36-components';
 import * as f36icons from '@contentful/f36-icons';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
@@ -34,6 +35,9 @@ const liveProviderScope = {
   useRef,
   useMemo,
   useContext,
+  // other
+  useForm,
+  useController,
 };
 
 const styles = {
