@@ -89,11 +89,7 @@ function PageHeader(props: {
 }) {
   return (
     <header className={styles.header}>
-      {props.title && (
-        <DisplayText as="h1" marginBottom="spacingL">
-          {props.title}
-        </DisplayText>
-      )}
+      {props.title && <DisplayText as="h1">{props.title}</DisplayText>}
       {(props.github || props.status || props.storybook) && (
         <div className={styles.subheaderRow}>
           <div className={styles.buttonList}>
@@ -145,13 +141,8 @@ function PageHeader(props: {
 
 function PageFooter(props: { github?: string }) {
   return (
-    <>
-      <Heading
-        as="h2"
-        marginTop="spacing2Xl"
-        id="help-improve-this-page"
-        marginTop="spacing2Xl"
-      >
+    <Flex flexDirection="column" marginTop="spacing2Xl">
+      <Heading as="h2" id="help-improve-this-page">
         Help improve this page
       </Heading>
       <Stack>
@@ -167,7 +158,7 @@ function PageFooter(props: { github?: string }) {
 
         <TextLink href="/contributing">Read the contribution guide</TextLink>
       </Stack>
-    </>
+    </Flex>
   );
 }
 
@@ -178,7 +169,6 @@ export function PageContent(props: {
     storybook?: string;
     github?: string;
     toc?: false;
-    [key: string]: unknown;
   };
   children: React.ReactChild;
 }) {
@@ -187,7 +177,14 @@ export function PageContent(props: {
       <Flex flexDirection="column" className={styles.content}>
         <PageHeader {...props.frontMatter} />
 
-        {props.children}
+        {/**
+         * We need to wrap the text of the page into an element without Grid or Flex
+         * because we want the margins of our headings and paragraphs to collapse
+         * and make it easier to maintain the spacing between the elements
+         * A good article about margin collapse by Josh Comeau:
+         * https://www.joshwcomeau.com/css/rules-of-margin-collapse/#flow-layout-only
+         */}
+        <article>{props.children}</article>
 
         <PageFooter github={props.frontMatter.github} />
       </Flex>

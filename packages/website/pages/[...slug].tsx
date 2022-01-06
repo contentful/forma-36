@@ -17,19 +17,23 @@ import remarkCodeImport from 'remark-code-import';
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 import { getPropsMetadata, transformToc } from '../utils/propsMeta';
 import { getTableOfContents } from '../utils/mdx-utils';
-import { TocType, HeadingType } from '../components/TableOfContent';
+import { HeadingType } from '../components/TableOfContent';
 
 type ComponentPageProps = {
   source: MDXRemoteSerializeResult;
   frontMatter: {
     title: string;
   };
-  toc: TocType;
   headings: HeadingType[];
   propsMetadata: ReturnType<typeof getPropsMetadata>;
 };
 
-export default function ComponentPage(props: ComponentPageProps) {
+export default function ComponentPage({
+  frontMatter,
+  headings,
+  propsMetadata,
+  source,
+}: ComponentPageProps) {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -39,11 +43,12 @@ export default function ComponentPage(props: ComponentPageProps) {
   return (
     <>
       <Head>
-        <title>Forma 36 - {props.frontMatter.title}</title>
+        <title>Forma 36 - {frontMatter.title}</title>
       </Head>
-      <PageContent frontMatter={props.frontMatter} headings={props.headings}>
-        <PropsContextProvider value={{ ...props.propsMetadata }}>
-          <MdxRenderer source={props.source} />
+
+      <PageContent frontMatter={frontMatter} headings={headings}>
+        <PropsContextProvider value={{ ...propsMetadata }}>
+          <MdxRenderer source={source} />
         </PropsContextProvider>
       </PageContent>
     </>

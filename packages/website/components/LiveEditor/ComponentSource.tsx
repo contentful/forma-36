@@ -42,7 +42,6 @@ const liveProviderScope = {
 
 const styles = {
   root: css`
-    margin-top: ${tokens.spacingS};
     margin-bottom: ${tokens.spacingM};
   `,
   error: css`

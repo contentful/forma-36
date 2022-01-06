@@ -48,16 +48,6 @@ export const GlobalStyles = () => {
           margin: 0;
         }
 
-        pre.prism-code {
-          font-family: ${tokens.fontStackMonospace};
-          font-size: ${tokens.fontSizeM};
-          padding: ${tokens.spacingM};
-          border-radius: ${tokens.borderRadiusMedium};
-          margin: ${tokens.spacingM} 0;
-          word-break: break-word;
-          white-space: break-spaces;
-        }
-
         fieldset {
           border: 0;
           margin: 0;
