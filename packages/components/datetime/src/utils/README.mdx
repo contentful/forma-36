@@ -9,6 +9,20 @@ github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/component
 
 The `@contentful/f36-datetime` package provides a couple of functions to format a date.
 
+## Import
+
+```jsx static=true
+import {
+  formatDateAndTime,
+  formatMachineReadableDateTime,
+} from '@contentful/f36-components';
+// or
+import {
+  formatDateAndTime,
+  formatMachineReadableDateTime,
+} from '@contentful/f36-datetime';
+```
+
 ## formatDateAndTime
 
 This function will return a formatted string of any date that is passed as the first argument of the function.
@@ -25,43 +39,14 @@ If no format is passed to the function, it will return a string with the `full` 
 
 ### Examples
 
-```ts static=true
-// passing a Timestamp as an ISOString
-formatDateAndTime('2021-08-17T15:45');
+```jsx file=../../examples/FormatDateAndTimeExample.tsx
 
-// passing a JS Date
-formatDateAndTime(new Date());
-
-// passing a Unix Epoch in milliseconds
-formatDateAndTime(1629240300000);
 ```
 
 ### Different formats
 
-```ts static=true
-// it will return "17 Aug 2021"
-formatDateAndTime('2021-08-17T15:45', 'day');
+```jsx file=../../examples/DifferentFormatsExample.tsx
 
-// it will return "3:45 PM"
-formatDateAndTime('2021-08-17T15:45', 'time');
-
-// it will return "Tue, 17 Aug"
-formatDateAndTime('2021-08-17T15:45', 'weekday');
-```
-
-### Functions based on formatDateAndTime
-
-They are functions that use `formatDateAndTime` under the hood and return one of the formatted options.
-
-```ts static=true
-// it will return "17 Aug 2021"
-formatDate('2021-08-17T15:45');
-
-// it will return "3:45 PM"
-formatTime('2021-08-17T15:45');
-
-// it will return "Tue, 17 Aug"
-formatWeekdayDate('2021-08-17T15:45');
 ```
 
 ## formatMachineReadableDateTime
@@ -80,74 +65,12 @@ If no format is passed to the function, it will return a string with the `full` 
 
 ### Examples
 
-```ts static=true
-// passing a Timestamp as an ISOString
-formatMachineReadableDateTime('2021-08-17T15:45');
+```jsx file=../../examples/FormatMachineReadableDateTimeExample.tsx
 
-// passing a JS Date
-formatMachineReadableDateTime(new Date());
-
-// passing a Unix Epoch in milliseconds
-formatMachineReadableDateTime(1629240300000);
 ```
 
 ### Different formats
 
-```ts static=true
-// it will return "2021-08-17T15:44:00.000Z"
-formatMachineReadableDateTime('2021-08-17T15:45', 'day');
+```jsx file=../../examples/DifferentFormatMachineReadableDateTimeExample.tsx
 
-// it will return "15:44:07.000 "
-formatMachineReadableDateTime('2021-08-17T15:45', 'time');
-
-// it will return "08-17"
-formatMachineReadableDateTime('2021-08-17T15:45', 'weekday');
-```
-
-## formatRelativeDateTime
-
-This function will return a string with how far a given date is in the past or future,
-using a `baseDate` as reference. If the `baseDate` is not passed, the function will use today as a reference.
-
-### Examples
-
-```ts static=true
-// If today is 18.08.2021, it will return "a day ago"
-formatRelativeDateTime('2021-08-17T15:45');
-
-// If today is 18.08.2021, it will return "in a day"
-formatRelativeDateTime('2021-08-19T15:45');
-
-// it will return "in one week"
-formatRelativeDateTime('2021-08-19T15:45', '2021-08-12T15:45');
-
-// it will return "5 hours ago"
-formatRelativeDateTime('2021-08-19T15:45', '2021-08-19T10:45');
-```
-
-## formatRelativeToCurrentWeekDateTime
-
-This function formats a date relative to the current day or to the `baseDate` if passed.
-
-- If the date is not today, it will return a string with "Yesterday ...", "Tomorrow ...", etc
-- If the date is not in the current week, it return a string with "DD MMM YYYY" format
-- If the date is today, it will return a string with "... ago" or "in ..."
-
-### Examples
-
-```ts static=true
-// If today is 18.08.2021, it will return "Yesterday at 3:45 PM"
-formatRelativeToCurrentWeekDateTime('2021-08-17T15:45');
-
-// If today is 18.08.2021, it will return "Tomorrow at 3:45 PM"
-formatRelativeToCurrentWeekDateTime('2021-08-19T15:45');
-
-// If today is 18.08.2021 at 12 PM, it will return "2 hours ago"
-formatRelativeToCurrentWeekDateTime('2021-08-18T10:00');
-
-// If today is 18.08.2021 at 12 PM, it will return "in 2 hours"
-formatRelativeToCurrentWeekDateTime('2021-08-18T14:00');
-
-// it will return "19 Jul 2021"
-formatRelativeDateTime('2021-08-19T15:45', '2021-07-19T15:45');
 ```
