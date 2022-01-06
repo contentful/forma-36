@@ -1,0 +1,51 @@
+---
+title: 'Stack'
+type: 'component'
+section: 'layoutComponents'
+status: 'stable'
+slug: /components/stack/
+github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/core/src/Stack'
+typescript: ./Stack.tsx
+---
+
+`Stack` is a layout component that makes it easy to stack elements together and apply a space between them.
+
+Basically, `Stack` wraps [Flex] component and allows you to create vertical and horizontal stacks without specifying `alignItems` and `justifyContent` properties.
+
+Also, `Stack` components inherits behaviour of [Box] component and allows to pass margins and paddings that are based on our [spacing system].
+
+## Import
+
+```js static=true
+import { Stack } from '@contentful/f36-components';
+```
+
+## Examples
+
+You can change the defaults by using `spacing` and `flexDirection` correspondingly.
+
+### Horizontal Stack
+
+By default, `spacing` between all `Stack` children equals our `spacingM` token.
+The default direction is `row`, so `Stack` layouts its children horizontally.
+
+```jsx file=examples/HorizontalStackExample.tsx
+
+```
+
+### Vertical Stack
+
+By changing `flexDirection` property to `column`, we make `Stack` component to layout its children vertically.
+In this example you can also find an adjusted spacing between children by using `spacing` property.
+
+```jsx file=examples/VerticalStackExample.tsx
+
+```
+
+## Props (API reference)
+
+<Props of="Stack" storybookPath="/story/layout-stack--basic" />
+
+[box]: ../components/box
+[flex]: ../components/flex
+[spacing system]: ../tokens/spacing

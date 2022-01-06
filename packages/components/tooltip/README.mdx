@@ -1,0 +1,52 @@
+---
+title: 'Tooltip'
+type: 'component'
+status: 'stable'
+slug: /components/tooltip/
+github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/components/tooltip'
+storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-tooltip--basic'
+typescript: ./src/Tooltip.tsx
+---
+
+Tooltips are very useful to communicate extra information related to an element on the screen. The information should be contextual, useful, and nonessential.
+
+## How to use Tooltip
+
+- Even though it's possible to pass any ReactNode as a content of the Tooltip,
+  we do not recommend passing very complex components try to use only [Phrasing content](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Phrasing_content)
+
+## Code examples
+
+```jsx
+// import { Tooltip } from '@contentful/f36-components';
+<Tooltip
+  placement="top"
+  id="tip1"
+  targetWrapperClassName="targetWrapperClassName"
+  content="Hi I am a Tooltip"
+>
+  <TextLink>Hover me</TextLink>
+</Tooltip>
+```
+
+## Content recommendations
+
+- Use short and clear messages as the Tooltip’s content
+
+## Accessibility
+
+- Do not put essential information in `Tooltip` component
+- Add unique `id` property to the tooltip, so appropriate a11y attributes could be used.
+
+```jsx
+// import { Tooltip } from '@contentful/f36-components';
+<Tooltip placement="top" id="tooltip" content="Hi I am a Tooltip">
+  <TextLink>Hover me</TextLink>
+</Tooltip>
+```
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Tooltip" />

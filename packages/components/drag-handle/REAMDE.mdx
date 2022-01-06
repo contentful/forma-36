@@ -1,0 +1,87 @@
+---
+title: 'DragHandle'
+type: 'component'
+slug: /components/drag-handle/
+github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/components/drag-handle'
+typescript: ./src/DragHandle.tsx
+---
+
+import { Heading, Stack, TextLink } from '@contentful/f36-components';
+import { ExternalLinkIcon } from '@contentful/f36-icons';
+import { Props } from '@contentful/f36-docs-utils';
+
+DragHandle is a new component to make it easier when creating draggable elements. it contains the styling for focus, hover and dragging states.
+This component only needs to be used if you're creating a custom component with drag, some of our components already have this implemented, for example [Card](/components/card).
+
+## Import
+
+```js static=true
+import { DragHandle } from '@contentful/f36-components';
+// or
+import { DragHandle } from '@contentful/f36-drag-handle';
+```
+
+## Examples
+
+The DragHandle can be styled based on the props you pass to it:
+
+**Base**:
+
+```jsx
+<DragHandle label="Drag handle" />
+```
+
+**Active**:
+
+```jsx
+<DragHandle isActive label="Active drag handle" />
+```
+
+**Focused**:
+
+```jsx
+<DragHandle isFocused label="Focus drag handle" />
+```
+
+**Hovered**:
+
+```jsx
+<DragHandle isHovered label="Hovered drag handle" />
+```
+
+### Card example
+
+```jsx
+<AssetCard title="Title" withDragHandle>
+  <Text>This is a card example with DragHandle</Text>
+</AssetCard>
+```
+
+<Stack
+  justifyContent="space-between"
+  marginTop="spacing2Xl"
+  marginBottom="spacingL"
+>
+  <Heading
+    id="props-api-reference"
+    as="h2"
+    marginTop="none"
+    marginBottom="none"
+  >
+    Props (API reference)
+  </Heading>
+  <TextLink
+    href="https://v4-f36-storybook.netlify.app/?path=/story/components-draghandle"
+    target="_blank"
+    alignIcon="end"
+    icon={<ExternalLinkIcon />}
+  >
+    Open in Storybook
+  </TextLink>
+</Stack>
+
+<Props of="DragHandle" />
+
+## Accessibility
+
+- You should pass a relevant label to DragHandle for screen readers, the label is not rendered.

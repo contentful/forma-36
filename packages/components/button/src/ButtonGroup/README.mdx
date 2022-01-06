@@ -1,0 +1,48 @@
+---
+title: 'ButtonGroup'
+type: 'component'
+status: 'stable'
+section: 'buttonComponents'
+slug: /components/button-group/
+github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/components/button/src/ButtonGroup'
+typescript: ./ButtonGroup.tsx
+---
+
+`ButtonGroup` should be used to group buttons whose actions are related, with an option to merge them together or split them with an equal amount of free space.
+
+## Import
+
+```js static=true
+import { ButtonGroup } from '@contentful/f36-components';
+```
+
+## Examples
+
+### Merged
+
+One of the common use cases is to merge primary button with a secondary button or with a button that opens a dropdown with secondary actions.
+
+Also, it is possible to add a divider for buttons that don't have borders (`primary`, `positive`, and `negative` variants).
+
+```jsx file=../../examples/ButtonGroupMergedExample.tsx
+
+```
+
+### Spaced
+
+Instead of merging buttons all together you can use `variant="spaced"` to make them spaced and control an empty space with `spacing` property.
+
+```jsx file=../../examples/ButtonGroupSpacedExample.tsx
+
+```
+
+## Accessibility
+
+If using a button that won't have text be sure to provide an `aria-label` property.
+
+## Props (API reference)
+
+<Props
+  of="ButtonGroup"
+  storybookPath="/story/components-button-buttongroup--basic"
+/>

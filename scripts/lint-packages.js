@@ -60,11 +60,7 @@ for (const pkg of packages) {
     'src/index.ts',
     `${pkg} did not match "src/index.ts"`,
   );
-  softAssert.deepEqual(
-    json.files,
-    ['dist', 'src'],
-    `${pkg} did not match "files"`,
-  );
+  softAssert.deepEqual(json.files, ['dist'], `${pkg} did not match "files"`);
   softAssert(
     json.dependencies && json.dependencies['@babel/runtime'],
     `${pkg} is missing a dependency on @babel/runtime`,
@@ -79,19 +75,6 @@ for (const pkg of packages) {
     'should have valid browserlist configuration',
   );
 
-  const topIndexExists = fs.existsSync(path.join(pkg, '..', 'index.ts'));
-  if (topIndexExists) {
-    const contents = fs.readFileSync(path.join(pkg, '..', 'index.ts'));
-    softAssert(
-      /export \* from '.\/src';/.test(contents),
-      `contents of ${path.join(
-        pkg,
-        '..',
-        'index.ts',
-      )} are not "export * from './src';"`,
-    );
-  }
-  softAssert(topIndexExists, `${pkg} is missing an index.ts`);
   softAssert(
     fs.existsSync(path.join(pkg, '..', 'src', 'index.ts')),
     `${pkg} is missing a src/index.ts`,
@@ -112,7 +95,7 @@ for (const pkg of packages) {
   if (!fs.existsSync(readme)) {
     fs.writeFileSync(
       readme,
-      `# ${json.name}\n\nThis package is part of [forma-36](https://github.com/contentful/forma-36). See the repo for more details.`,
+      `# ${json.name}\n\nThis package is part of the pre-release. This means it is unsupported and subject to breaking changes without warning.\n\nPlease use official, supported version of the library [forma-36](https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components), [NPM](https://www.npmjs.com/package/@contentful/forma-36-react-components).\n`,
     );
   }
 }

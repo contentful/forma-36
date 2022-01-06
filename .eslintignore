@@ -5,3 +5,7 @@ esm
 *.css.d.ts
 public
 .cache
+
+# next.js
+**/.next/
+**/out/

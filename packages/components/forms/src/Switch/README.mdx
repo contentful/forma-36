@@ -1,0 +1,93 @@
+---
+title: 'Switch'
+type: 'component'
+status: 'stable'
+section: 'formComponents'
+slug: /components/switch/
+github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/components/forms/src/Switch'
+storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/form-elements-switch--basic'
+typescript: ./Switch.tsx
+---
+
+Switch is a control that is used to quickly switch between two possible states. Switch works like a physical switch that allows users to turn things on or off, like a light switch.
+
+## How to use Switch
+
+- use when a setting requires an on/off or show/hide function to display the results
+- use when user needs to perform instantaneous actions that do not need a review or confirmation
+- use when user is toggling independent features or behaviors
+
+### Using as a controlled input
+
+For using the Switch as a controlled input, you need to:
+
+- Pass the `isChecked` property, with this property it will already be a controlled component;
+- Pass a `onChange` handler, so you can use it to update the value of `isChecked`;
+
+Setting the `isChecked` will already define it as a controlled input.
+
+```jsx static=true
+const ExampleControlled = () => {
+  const [switchState, setSwitchState] = useState(false);
+
+  return (
+    <Switch
+      name="allow-cookies-controlled"
+      id="allow-cookies-controlled"
+      isChecked={switchState}
+      onChange={() => setSwitchState((prevState) => !prevState)}
+    >
+      Allow cookies
+    </Switch>
+  );
+};
+```
+
+### Using as an uncontrolled input
+
+You can use the Switch as an uncontrolled input, for that you can:
+
+- Set the `defaultChecked` property, it will ensure that the checked state can be altered normally.
+- Don't set the `isChecked` as it will make the input controlled.
+
+```jsx static=true
+<Switch
+  type="checkbox"
+  name="allow-cookies-uncontrolled"
+  id="allow-cookies-uncontrolled"
+  defaultChecked={true}
+>
+  Allow cookies
+</Switch>
+```
+
+### Switch vs Checkbox
+
+Switch is a two-step action: selection and execution, whereas checkbox is just selection of an option and its execution usually requires another control.
+
+## Code examples
+
+```jsx
+<Switch id="testSwitch1" name="testSwitch1">
+  label for switch
+</Switch>
+```
+
+### Switch disabled
+
+```jsx
+<Switch id="testSwitch2" name="testSwitch2" isDisabled>
+  label for switch
+</Switch>
+```
+
+## Accessibility
+
+- use clear and concise label for Switch component
+- if needed provide additional information for the user if Switch will cause a change in the context
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Switch" />

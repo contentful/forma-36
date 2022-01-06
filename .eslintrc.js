@@ -1,16 +1,22 @@
+const path = require('path');
+const rulesDirPlugin = require('eslint-plugin-rulesdir');
+rulesDirPlugin.RULES_DIR = path.resolve(
+  __dirname,
+  './scripts/eslint-rules/custom',
+);
+
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
     'eslint:recommended',
+    'prettier',
     'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
-    'prettier/react',
     'plugin:jest/recommended',
     'plugin:jest/style',
   ],
-  plugins: ['import', 'react-hooks', 'jest-dom', 'testing-library'],
+  plugins: ['import', 'react-hooks', 'jest-dom', 'testing-library', 'rulesdir'],
   parserOptions: {
     ecmaVersion: 7,
     project: './tsconfig.json',
@@ -46,6 +52,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/ban-types': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/no-children-prop': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
@@ -63,6 +70,8 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'import/named': 'error',
     'import/no-default-export': 'error',
+    'react/jsx-handler-names': 'error',
+    'rulesdir/emotion-in-function': 'error',
   },
   overrides: [
     {
@@ -70,6 +79,7 @@ module.exports = {
       rules: {
         '@typescript-eslint/no-object-literal-type-assertion': 'off',
         'import/no-default-export': 'off',
+        'react/jsx-handler-names': 'off',
       },
     },
     {
@@ -89,12 +99,12 @@ module.exports = {
     },
     {
       files: [
-        '**/forma-36-website/**/*',
         '**/forma-36-react-components/tools/**/*',
         '**/forma-36-react-components/**/Icon/svg/*',
         '**/forma-36-react-components/**/ProductIcon/**/*',
         '**/forma-36-react-components/**/Illustration/**/*',
         '**/packages/components/**/*',
+        '**/packages/**/examples/**',
       ],
       rules: {
         'import/no-default-export': 'off',

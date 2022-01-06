@@ -1,0 +1,69 @@
+---
+title: 'getStringMatch'
+type: 'component'
+slug: /utils/get-string-match/
+section: 'utils'
+typescript: ./getStringMatch.ts
+---
+
+import { Props } from '@contentful/f36-docs-utils';
+
+Function that can be used to find a substring inside another string.
+
+## Import
+
+```jsx static=true
+import { getStringMatch } from '@contentful/f36-utils';
+```
+
+## Examples
+
+### Basic usage
+
+You pass the base string as a first argument, and a string to match it with as a second argument. The function will return an object containing the match, what comes before the match, and what comes after the match in the base string.
+
+```jsx
+() => {
+  const [baseString, setBaseString] = React.useState('Seven Green Apples');
+  const [stringToMatch, setStringToMatch] = React.useState('green');
+  const [{ before, match, after }, updateResult] = React.useState(() =>
+    getStringMatch(baseString, stringToMatch),
+  );
+
+  const matchString = () => {
+    const { before, match, after } = getStringMatch(baseString, stringToMatch);
+    updateResult({ before, match, after });
+  };
+
+  return (
+    <Stack flexDirection="column">
+      <Flex>
+        <FormControl>
+          <FormControl.Label>Base string</FormControl.Label>
+
+          <TextInput
+            value={baseString}
+            onChange={(e) => setBaseString(e.target.value)}
+          />
+        </FormControl>
+        <FormControl>
+          <FormControl.Label>
+            A string to match the base string
+          </FormControl.Label>
+          <TextInput
+            value={stringToMatch}
+            onChange={(e) => setStringToMatch(e.target.value)}
+          />
+        </FormControl>
+      </Flex>
+      <Button onClick={matchString}>Match strings</Button>
+      <Heading as="h4">Results</Heading>
+      <Paragraph element="p">{`{ before: "${before}", match: "${match}", after: "${after}" }`}</Paragraph>
+    </Stack>
+  );
+};
+```
+
+### Example with other components
+
+You can find an example of using `getStringMatch` in [`Autocomplete` component documentation](/components/autocomplete#highlighting-an-item-with-getstringmatch)

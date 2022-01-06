@@ -1,0 +1,57 @@
+---
+title: 'Heading'
+type: 'component'
+status: 'stable'
+section: 'typographyComponents'
+slug: /components/heading/
+github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/components/typography/src'
+typescript: ./Heading.tsx
+---
+
+`Heading` is intended to be used to define the title of the page. They are displayed as `h1` by default. Accessibility requires having just one `h1` tag on the page. Keep that in mind during the implementation.
+
+## Import
+
+```js static=true
+import { Heading } from '@contentful/f36-components';
+```
+
+## Examples
+
+```jsx file=../../examples/HeadingExample.tsx
+
+```
+
+### Margins
+
+Forma 36 typography components provide a way to set their own margins. By default `Heading` component has a margin bottom of `1rem` (`16px`). You can override the default margin bottom by specifying it explicitly on the component level by `marginBottom="none"` or any other value from [our spacing options](/tokens/spacing)
+
+```jsx file=../../examples/HeadingSpacingExample.tsx
+
+```
+
+### `as` property
+
+For some cases, you might have to use `Heading` in a different context than the page title. For that we provide you with `as` property, to allow you to set the tag of the component to another tag than `h1`
+
+```jsx file=../../examples/HeadingTagExample.tsx
+
+```
+
+### Truncated text
+
+Sometimes you might have to truncate the text in the `Heading` component, so we provide the prop especially for that. Under the hood, what it does is add `overflow: hidden` and set `text-overflow` to `ellipsis`. Have a look at the example below:
+
+```jsx file=../../examples/HeadingTruncatedExample.tsx
+
+```
+
+### Composition
+
+```jsx file=../../examples/HeadingCompositionExample.tsx
+
+```
+
+## Props (API reference)
+
+<Props of="Heading" storybookPath="/story/typography-heading--basic" />

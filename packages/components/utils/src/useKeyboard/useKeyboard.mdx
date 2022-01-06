@@ -1,0 +1,55 @@
+---
+title: 'useKeyboard'
+type: 'component'
+slug: /utils/use-keyboard/
+section: 'utils'
+typescript: ./useKeyboard.ts
+---
+
+import { Props } from '@contentful/f36-docs-utils';
+
+`useKeyboard` is a simple hook that accepts a reference to a component and attaches event listener to the component. By default attaches to `document`. Adds/remove the events on mount and unmount, and emits callback functions.
+
+## Import
+
+```jsx static=true
+import { useKeyboard } from '@contentful/f36-utils';
+```
+
+## Examples
+
+### Basic example
+
+By passing ref of `Stack` element to `useKeyboard` hook, you create event listeners, listed in `keys` prop. When focus is inside the `Stack` element, and one of the listed keyboard actions is triggered, the callback is called. In this example, it's function `handleEvent`.
+
+```jsx
+() => {
+  const ref = React.useRef(null);
+  const handleEvent = (eventName, event) => console.log(eventName, event);
+
+  useKeyboard({
+    event: 'keydown',
+    ref: ref,
+    keys: {
+      ArrowUp: (e) => handleEvent('ArrowUp', e),
+      Tab: (e) => handleEvent('Tab', e),
+    },
+  });
+
+  return (
+    <Stack flexDirection="column" ref={ref}>
+      <Button>Button 1</Button>
+      <Button>Button 2</Button>
+      <Button>Button 3</Button>
+    </Stack>
+  );
+};
+```
+
+## Props (API reference)
+
+<Props of="useKeyboard" />
+
+## Accessibility
+
+This hook allows to implement keyboard accessibility according to many different requirements. To see most common interactions, check [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Grid_Role#keyboard_interactions).

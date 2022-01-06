@@ -4,6 +4,9 @@ module.exports = function (plop) {
     let string = options.fn(this);
     return string.replace(match, replacement);
   });
+  plop.setHelper('toCamelCase', function (string) {
+    return string.replace(/^\w/, (match) => match.toLowerCase());
+  });
 
   plop.setHelper('includes', function (array, string) {
     return array.includes(string);
@@ -42,6 +45,141 @@ module.exports = function (plop) {
         type: 'renameMany',
         templateFiles: `packages/components/${packageName}/**`,
         renamer: (name) => `${name.replace('Component', componentName)}`,
+      });
+
+      return actions;
+    },
+  });
+
+  plop.setGenerator('codemod', {
+    description: 'add new codemod',
+    prompts: [
+      {
+        type: 'list',
+        name: 'context',
+        message: 'context of the codemod',
+        choices: ['v4', 'color-tokens'],
+      },
+      {
+        type: 'input',
+        name: 'codemodName',
+        message: 'codemod name without the context',
+        validate: (answer) => Boolean(answer.length),
+      },
+      {
+        type: 'input',
+        name: 'description',
+        message: 'describe what the codemod does',
+        validate: (answer) => Boolean(answer.length),
+      },
+    ],
+    actions: function (data) {
+      const { context, codemodName, description } = data;
+      const transform = `${context}-${codemodName}`;
+      let actions = [];
+      actions.push({
+        type: 'add',
+        path: `../packages/forma-36-codemod/transforms/${transform}.js`,
+        templateFile: './plop-templates/codemod/transforms/transform.js',
+        data: { transform },
+      });
+      actions.push({
+        type: 'addMany',
+        destination: `../packages/forma-36-codemod/transforms/`,
+        base: './plop-templates/codemod/transforms/',
+        templateFiles:
+          './plop-templates/codemod/transforms/__testfixtures__/**',
+        data: { context, transform },
+      });
+      actions.push({
+        type: 'modify',
+        path:
+          '../packages/forma-36-codemod/transforms/__tests__/{{context}}.test.js',
+        pattern: /(const tests = \[\n)/,
+        template: "$1'{{transform}}',\n",
+        data: { context, transform },
+      });
+      actions.push({
+        type: 'modify',
+        path: '../packages/forma-36-codemod/bin/inquirer-choices.js',
+        pattern: /\s+(\/\/ Add extra codemods - do not remove)/,
+        templateFile: './plop-templates/codemod/bin/inquirer-choices.hbs',
+        data: { transform, description },
+      });
+      actions.push({
+        type: 'modify',
+        pattern: /$(?![\r\n])/,
+        path: '../packages/forma-36-codemod/README.md',
+        templateFile: './plop-templates/codemod/README.hbs',
+        data: { transform, description },
+      });
+
+      return actions;
+    },
+  });
+
+  plop.setGenerator('add documentation with new format', {
+    description:
+      'add a file with the base to write documentation in the new format',
+    prompts: [
+      {
+        type: 'input',
+        name: 'packageName',
+        message:
+          'name of the package to which you want to add documentation, all lowercase (e.g. textfield)',
+        validate: (answer) => answer.length > 0,
+      },
+      {
+        type: 'input',
+        name: 'componentName',
+        message:
+          'component name, please use appropriate uppercase (e.g. TextField)',
+        validate: (answer) => answer.length > 0,
+      },
+    ],
+    actions: function (data) {
+      let { packageName, componentName } = data;
+      let actions = [];
+
+      actions.push({
+        type: 'add',
+        path: `../packages/components/${packageName}/NEW_${componentName}.mdx`,
+        templateFile: './plop-templates/package/v4ComponentDoc.mdx.hbs',
+      });
+
+      return actions;
+    },
+  });
+
+  plop.setGenerator('convert documentation to new format', {
+    description:
+      'replaces all the content in the Component.mdx file with the new format template',
+    prompts: [
+      {
+        type: 'input',
+        name: 'packageName',
+        message:
+          'name of the package to which you want to add documentation, all lowercase (e.g. textfield)',
+        validate: (answer) => answer.length > 0,
+      },
+      {
+        type: 'input',
+        name: 'componentName',
+        message:
+          'component name, please use appropriate uppercase (e.g. TextField)',
+        validate: (answer) => answer.length > 0,
+      },
+    ],
+    actions: function (data) {
+      let { packageName, componentName } = data;
+      let actions = [];
+
+      actions.push({
+        type: 'modify',
+        templateFile: './plop-templates/package/v4ComponentDoc.mdx.hbs',
+        path: `../packages/components/${packageName}/${componentName}.mdx`,
+        pattern: /(.|\n)*/,
+        data: { componentName, packageName },
       });
 
       return actions;

@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "../../.eslintrc",
+    "plugin:@next/next/recommended"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "rulesdir/emotion-in-function": "off"
+  },
+  "overrides": [
+    {
+      // In Next.js, pages need to be default exported
+      "files": [
+        "pages/**/*",
+        "content/**/*"
+      ],
+      "rules": {
+        "import/no-default-export": "off",
+      }
+    }
+  ]
+}

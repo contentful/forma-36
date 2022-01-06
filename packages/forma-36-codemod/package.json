@@ -1,21 +1,22 @@
 {
   "name": "@contentful/f36-codemod",
   "description": "Forma 36 Codemod",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "main": "bin/index.js",
   "license": "MIT",
   "files": [
     "package.json",
     "bin",
-    "transforms"
+    "transforms",
+    "utils"
   ],
   "bin": {
     "f36-codemod": "./bin/f36-codemod.js"
   },
   "scripts": {
     "test": "jest",
-    "lint": "eslint .",
-    "prepublish": "npm run lint && npm run test"
+    "test:watch": "jest --watchAll",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "eslint": "^7.30.0",
@@ -31,7 +32,10 @@
     "inquirer": "^8.1.1",
     "is-git-clean": "^1.1.0",
     "jscodeshift": "^0.13.0",
-    "meow": "^10.1.1"
+    "jscodeshift-add-imports": "^1.0.10",
+    "meow": "9.0.0",
+    "read-pkg-up": "7.0.1",
+    "semver": "^7.3.5"
   },
   "jest": {
     "globals": {
@@ -40,6 +44,7 @@
     "testEnvironment": "node",
     "roots": [
       "transforms",
+      "utils",
       "bin"
     ]
   }

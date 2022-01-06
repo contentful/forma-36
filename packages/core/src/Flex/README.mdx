@@ -1,0 +1,75 @@
+---
+title: 'Flex'
+type: 'component'
+section: 'layoutComponents'
+status: 'stable'
+slug: /components/flex/
+github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/core/src/Flex'
+typescript: ./Flex.tsx
+---
+
+`Flex` component is a [Box] with `display: flex` and abilities to apply other flexbox CSS properties via properties of the component.
+
+The `Flex` component is useful because it helps with several common cases:
+
+- Create a one direction layout (vertical or horizontal) with uses Forma 36 [spacing system].
+- Compose new component and allow to override element using the `as` property.
+
+## Import
+
+```js static=true
+import { Flex } from '@contentful/f36-components';
+```
+
+## Examples
+
+### Margins & Paddings
+
+`Flex` component inherits behaviour of [Box] component and allows to pass margins and paddings that are based on our [spacing system].
+
+To control the behaviour of the Flex component you can use specific properties that match [all main Flexbox related CSS attributes](https://cssreference.io/flexbox/).
+
+```jsx file=examples/FlexExample.tsx
+
+```
+
+### Nesting
+
+This example shows how you can nest flexboxes to create more complicated layouts. It also uses the `flexGrow` prop on one of the children to expand it to fill the repaining space.
+
+```jsx file=examples/FlexNestingExample.tsx
+
+```
+
+### Alignment
+
+The `alignItems` prop can be used to align items along the cross axis. When direction is `column`, this refers to horizontal alignment, and when direction is `row` it refers to vertical alignment.
+
+This example horizontally centers items in a vertical stack.
+
+```jsx file=examples/FlexAlignmentExample.tsx
+
+```
+
+### Justification
+
+The `justifyContent` prop can be used to align items along the main axis. When direction is `column`, this refers to vertical alignment, and when direction is `row` it refers to horizontal alignment.
+
+This example vertically centers the stack of items within the available space defined by a container.
+
+```jsx file=examples/FlexJustificationExample.tsx
+
+```
+
+### Using `Flex` to align other Forma components
+
+```jsx file=examples/FlexRealWorldExample.tsx
+
+```
+
+## Props (API reference)
+
+<Props of="Flex" storybookPath="/story/layout-flex--basic" />
+
+[box]: ../components/box
+[spacing system]: ../tokens/spacing

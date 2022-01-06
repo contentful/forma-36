@@ -1,0 +1,45 @@
+---
+title: 'Paragraph'
+type: 'component'
+status: 'stable'
+section: 'typographyComponents'
+slug: /components/paragraph/
+github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/components/typography/src'
+typescript: ./Paragraph.tsx
+---
+
+`Paragraph` component is rendered as `<p>` and with default bottom margin of `spacingM` (`1rem`) applied. It is one of the most commonly used typography components.
+
+## Import
+
+```js static=true
+import { Paragraph } from '@contentful/f36-components';
+```
+
+## Examples
+
+### Basic
+
+```jsx file=../../examples/ParagraphExample.tsx
+
+```
+
+### Margins
+
+By default `Paragraph` component has a margin bottom of `spacingM` (`1rem`). You can override the default margin bottom by specifying it explicitly on the component level by `marginBottom="none"` or any other value from [our spacing options](/tokens/spacing)
+
+```jsx file=../../examples/ParagraphSpacingExample.tsx
+
+```
+
+### Truncated text
+
+Sometimes you might have to truncate the text in the `Paragraph` component, so we provide the prop especially for that. Under the hood, what it does is add `overflow: hidden` and set `text-overflow` to `ellipsis`. Have a look at the example below:
+
+```jsx file=../../examples/ParagraphTruncatedExample.tsx
+
+```
+
+## Props (API reference)
+
+<Props of="Paragraph" storybookPath="/story/typography-paragraph--basic" />

@@ -55,6 +55,11 @@ const buildIndexJS = (srcPath, tokens) => {
   );
 };
 
+function createUnionFromKeys(keys, typename) {
+  const concatanated = keys.map((key) => `'${key}'`).join(' | ');
+  return `export type ${typename} = | ${concatanated};`;
+}
+
 async function createInterfaceDefinition(tokens) {
   const defs = _.mapValues(tokens, (value) => {
     return {
@@ -100,16 +105,72 @@ async function createInterfaceDefinition(tokens) {
     "${tokenName}": ${def.type}`,
   ).join(',');
 
-  return `interface F36Tokens {
+  return `export type F36Tokens = {
     ${[fields, deprecatedDefinition].join(',')}
-  }`;
+  };`;
 }
 
 const buildIndexDTS = async (srcPath, tokens) => {
+  const createUnionThatStarts = (startsWith, name) => {
+    return createUnionFromKeys(
+      Object.keys(tokens).filter((name) => {
+        const options = Array.isArray(startsWith) ? startsWith : [startsWith];
+        return options.reduce((prev, item) => {
+          return prev || name.startsWith(item);
+        }, false);
+      }),
+      name,
+    );
+  };
+
+  const generatePaletteNames = (colors) => {
+    const numbers = [];
+    const result = [];
+    for (let i = 1; i <= 9; i++) {
+      numbers.push((i * 100).toString());
+    }
+    colors.map((color) => {
+      numbers.map((number) => {
+        result.push(color + number);
+      });
+    });
+    return result;
+  };
+
   return fse.outputFile(
     srcPath,
-    `declare module '@contentful/forma-36-tokens' {
+    `declare module '@contentful/f36-tokens' {
       ${await createInterfaceDefinition(tokens)}
+      ${createUnionThatStarts(
+        [
+          'colorPrimary',
+          'colorWarning',
+          'colorNegative',
+          'colorPositive',
+          'colorWhite',
+        ].concat(
+          generatePaletteNames([
+            'gray',
+            'blue',
+            'green',
+            'orange',
+            'purple',
+            'red',
+            'yellow',
+          ]),
+        ),
+        'ColorTokens',
+      )}
+      ${createUnionThatStarts('spacing', 'SpacingTokens')}
+      ${createUnionThatStarts('fontSize', 'FontSizeTokens')}
+      ${createUnionThatStarts('lineHeight', 'LineHeightTokens')}
+      ${createUnionThatStarts('letterSpacing', 'LetterSpacingTokens')}
+      ${createUnionThatStarts('fontWeight', 'FontWeightTokens')}
+      ${createUnionThatStarts('fontStack', 'FontStackTokens')}
+      ${createUnionThatStarts('boxShadow', 'BoxShadowTokens')}
+      ${createUnionThatStarts('borderRadius', 'BorderRadiusTokens')}
+      ${createUnionThatStarts('zIndex', 'ZIndexTokens')}
+      ${createUnionThatStarts('glow', 'GlowTokens')}
       const tokens: F36Tokens;
       export default tokens;
     }`,

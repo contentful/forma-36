@@ -1,0 +1,70 @@
+---
+title: 'EntityStatusBadge'
+slug: /components/entity-status-badge/
+github: 'https://github.com/contentful/forma-36/tree/forma-v4/packages/components/badge'
+typescript: ./src/EntityStatusBadge.tsx
+---
+
+import { Props } from '@contentful/f36-docs-utils';
+
+EntityStatusBadge is used to indicate entity status in Contentful apps. A component is based on our [Badge](../components/badge) component and has a built-in mapping of entity status to a badge variant.
+
+## Import
+
+```jsx static=true
+import { EntityStatusBadge } from '@contentful/f36-components';
+// or
+import { EntityStatusBadge } from '@contentful/f36-badge';
+```
+
+## Examples
+
+EntityStatusBadge can have different mark following statuses. Those values are passed as a `entityStatus` property and displayed as a content in the badge:
+
+- published
+- draft
+- archived
+- changed
+- deleted
+- new
+
+```tsx
+<EntityStatusBadge entityStatus="published" />
+```
+
+```tsx
+<EntityStatusBadge entityStatus="draft" />
+```
+
+```tsx
+<EntityStatusBadge entityStatus="archived" />
+```
+
+```tsx
+<EntityStatusBadge entityStatus="changed" />
+```
+
+```tsx
+<EntityStatusBadge entityStatus="deleted" />
+```
+
+```tsx
+<EntityStatusBadge entityStatus="new" />
+```
+
+## Props (API reference)
+
+<Props
+  of="EntityStatusBadge"
+  storybookPath="/story/components-entitystatusbadge"
+/>
+
+## Content guidelines
+
+- try to use labels with short, scannable text
+- try to use a single word to describe the status of an element
+- try to describe the status in the past tense, like changed or archived
+
+## Accessibility
+
+- text must be clear enough for color-blind users to be able to understand immediately without needing to rely only on the color.

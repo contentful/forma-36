@@ -43,10 +43,8 @@ jobs:
             - packages/components/**/dist
             - packages/core/dist
             - packages/f36-docs-utils/dist
-            - packages/forma-36-fcss/dist
             - packages/forma-36-react-components/dist
             - packages/forma-36-tokens/dist
-            - packages/forma-36-website/public
 
   analyze_code:
     docker:
@@ -82,6 +80,30 @@ jobs:
           name: Test
           command: yarn test
 
+  check-links:
+    docker:
+      - image: circleci/node:14.15.0-browsers
+    resource_class: xlarge
+    working_directory: ~/circleci-f36-build
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/circleci-f36-build
+      - yarn_install
+      - run:
+          name: Build Next.js website
+          command: yarn docs:next:build
+      - run:
+          name: Run production version of the website locally
+          command: yarn docs:next:start-prod
+          background: true
+      - run:
+          name: Wait for localhost:3000 to be ready
+          command: yarn wait-on http://localhost:3000
+      - run:
+          name: Run links checker
+          command: yarn blc http://localhost:3000 -ro
+
   deploy_chromatic:
     docker:
       - image: circleci/node:14.15.0-browsers
@@ -101,26 +123,26 @@ jobs:
           name: Chromatic
           command: yarn chromatic
 
-  release:
-    docker:
-      - image: circleci/node:14.15.0-browsers
-    working_directory: ~/circleci-f36-build
-    steps:
-      - checkout
-      - attach_workspace:
-          at: ~/circleci-f36-build
-      - yarn_install
-      - add_ssh_keys:
-          fingerprints:
-            - '2b:9f:13:79:d8:7b:f5:38:43:8f:3d:a8:7d:53:22:b2'
-      - run: git config --global user.email ${GITHUB_EMAIL}
-      - run: git config --global user.name ${GITHUB_USER}
-      - run:
-          name: Build
-          command: yarn build
-      - run:
-          name: Deploy
-          command: yarn lerna publish --no-private --conventional-commits --conventional-prerelease=@contentful/forma-36-react-datepicker,@contentful/forma-36-react-timepicker --create-release github --yes
+  # release:
+  #   docker:
+  #     - image: circleci/node:14.15.0-browsers
+  #   working_directory: ~/circleci-f36-build
+  #   steps:
+  #     - checkout
+  #     - attach_workspace:
+  #         at: ~/circleci-f36-build
+  #     - yarn_install
+  #     - add_ssh_keys:
+  #         fingerprints:
+  #           - '2b:9f:13:79:d8:7b:f5:38:43:8f:3d:a8:7d:53:22:b2'
+  #     - run: git config --global user.email ${GITHUB_EMAIL}
+  #     - run: git config --global user.name ${GITHUB_USER}
+  #     - run:
+  #         name: Build
+  #         command: yarn build
+  #     - run:
+  #         name: Deploy
+  #         command: yarn lerna publish --no-private --exact --canary --no-git-tag-version --no-push --preid beta --dist-tag beta --force-publish --no-changelog --yes
 
 workflows:
   version: 2
@@ -133,6 +155,9 @@ workflows:
       - test:
           requires:
             - build
+      - check-links:
+          requires:
+            - build
       - deploy_chromatic:
           requires:
             - build
@@ -142,12 +167,12 @@ workflows:
             branches:
               # Forked pull requests have CIRCLE_BRANCH set to pull/XXX
               ignore: /pull\/[0-9]+/
-      - release:
-          requires:
-            - build
-            - analyze_code
-            - test
-          filters:
-            branches:
-              only:
-                - master
+      # - release:
+      #     requires:
+      #       - build
+      #       - analyze_code
+      #       - test
+      #     filters:
+      #       branches:
+      #         only:
+      #           - master

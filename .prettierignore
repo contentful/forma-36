@@ -8,4 +8,6 @@ build
 .parcel-cache
 public
 .cache
+.next
 packages/**/CHANGELOG.md
+**/__testfixtures__/**

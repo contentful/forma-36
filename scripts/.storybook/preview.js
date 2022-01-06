@@ -1,14 +1,15 @@
-import { fontStackPrimary } from '@contentful/forma-36-tokens';
+import React from 'react';
+import { GlobalStyles } from '@contentful/f36-core';
 
 // Setup Decorators
 export const decorators = [
   (Story) => (
     <div
       style={{
-        fontFamily: fontStackPrimary,
         minWidth: '340px',
       }}
     >
+      <GlobalStyles />
       <Story />
     </div>
   ),
@@ -23,24 +24,18 @@ export const parameters = {
       method: 'alphabetical',
       order: [
         'Documentation',
+        'Layout',
         'Typography',
         'Form Elements',
         'Components',
-        '(alpha)',
+        'Utils',
+        'Utilities',
       ],
-    },
-  },
-  // Creating DocPage from our old notes
-  docs: {
-    extractComponentDescription: (component, { notes }) => {
-      if (notes) {
-        return typeof notes === 'string' ? notes : notes.markdown || notes.text;
-      }
-      return null;
     },
   },
   controls: {
     expanded: true,
     hideNoControlsWarning: true,
+    sort: 'requiredFirst',
   },
 };
