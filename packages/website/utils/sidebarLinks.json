@@ -289,16 +289,16 @@
   ],
   "forma36Version3": [
     {
-      "title": "Version 3 maintenance plan",
-      "slug": "/maintenance-plan/"
-    },
-    {
       "title": "FAQ",
       "slug": "/v3-faq/"
     },
     {
       "title": "Migration Guide",
       "slug": "/migration-v3-to-v4/"
+    },
+    {
+      "title": "Version 3 maintenance plan",
+      "slug": "/maintenance-plan/"
     }
   ],
   "deprecatedComponents": [
