@@ -1,15 +1,13 @@
 import React from 'react';
-import Link from 'next/link';
-import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { Text } from '@contentful/f36-components';
+import { css } from 'emotion';
+import Link from 'next/link';
 
 export const TopbarHeight = '70px';
 
 const styles = {
   header: css`
     display: flex;
-    justify-content: space-between;
     background-color: ${tokens.blue700};
     color: #fff;
     padding: 0 ${tokens.spacingXl};
@@ -21,6 +19,18 @@ const styles = {
     display: flex;
     align-items: center;
     text-decoration: none;
+    color: #fff;
+  `,
+  logoText: css`
+    font-weight: ${tokens.fontWeightDemiBold};
+    font-size: ${tokens.fontSizeXl};
+    margin-left: ${tokens.spacingL};
+  `,
+  searchNavContainer: css`
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
   `,
   navList: css`
     list-style: none;
@@ -29,6 +39,7 @@ const styles = {
   `,
   navListItem: css`
     margin-left: ${tokens.spacingM};
+    font-size: ${tokens.fontSizeL};
   `,
   navListLink: css`
     color: #fff;
@@ -63,75 +74,70 @@ export const Topbar = () => (
     <Link href="/" passHref>
       <a className={styles.logoLink} href="/">
         <Logo />
-        <Text
-          marginLeft="spacingL"
-          fontColor="colorWhite"
-          fontSize="fontSizeXl"
-          fontWeight="fontWeightDemiBold"
-        >
-          Forma 36
-        </Text>
+        <div className={styles.logoText}>Forma 36</div>
       </a>
     </Link>
 
-    <nav>
-      <ul className={styles.navList}>
-        <li className={styles.navListItem}>
-          <Link href="/playground" passHref>
-            <a className={styles.navListLink} href="/playground">
-              Playground
+    <div className={styles.searchNavContainer}>
+      <nav>
+        <ul className={styles.navList}>
+          <li className={styles.navListItem}>
+            <Link href="/playground" passHref>
+              <a className={styles.navListLink} href="/playground">
+                Playground
+              </a>
+            </Link>
+          </li>
+          <li className={styles.navListItem}>
+            <a
+              className={styles.navListLink}
+              href="https://github.com/contentful/forma-36"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
             </a>
-          </Link>
-        </li>
-        <li className={styles.navListItem}>
-          <a
-            className={styles.navListLink}
-            href="https://github.com/contentful/forma-36"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-        </li>
-        <li className={styles.navListItem}>
-          <a
-            className={styles.navListLink}
-            href="https://medium.com/contentful-design"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Blog
-          </a>
-        </li>
-        <li className={styles.navListItem}>
-          <a
-            className={styles.navListLink}
-            href="https://www.contentful.com/developers/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Join the community
-          </a>
-        </li>
-        <li className={styles.navListItem}>
-          <a
-            className={styles.navListLink}
-            href="https://forms.gle/qC7LLbiy4CcF5HPLA"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Give us feedback
-          </a>
-        </li>
-        <li className={styles.navListItem}>
-          <a
-            className={styles.navListLink}
-            href="https://v3.f36.contentful.com/"
-          >
-            Forma 36 v3
-          </a>
-        </li>
-      </ul>
-    </nav>
+          </li>
+          <li className={styles.navListItem}>
+            <a
+              className={styles.navListLink}
+              href="https://medium.com/contentful-design"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Blog
+            </a>
+          </li>
+          <li className={styles.navListItem}>
+            <a
+              className={styles.navListLink}
+              href="https://www.contentful.com/developers/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Join the community
+            </a>
+          </li>
+          <li className={styles.navListItem}>
+            <a
+              className={styles.navListLink}
+              href="https://forms.gle/qC7LLbiy4CcF5HPLA"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Give us feedback
+            </a>
+          </li>
+          <li className={styles.navListItem}>
+            <a
+              className={styles.navListLink}
+              href="https://v3.f36.contentful.com/"
+            >
+              Forma 36 v3
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 );
