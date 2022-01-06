@@ -287,13 +287,11 @@
       "slug": "/getting-started"
     }
   ],
-  "forma36Version4": [
+  "forma36Version3": [
     {
       "title": "Version 3 maintenance plan",
       "slug": "/maintenance-plan/"
-    }
-  ],
-  "forma36Version3": [
+    },
     {
       "title": "FAQ",
       "slug": "/v3-faq/"
