@@ -27,7 +27,7 @@ export const Footer = () => {
       <Flex>
         <Flex marginRight="spacingL">
           <TextLink
-            href="https://www.contentful.com/legal/de"
+            href="https://www.contentful.com/legal/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -37,7 +37,7 @@ export const Footer = () => {
 
         <Flex marginRight="spacingL">
           <TextLink
-            href="https://www.contentful.com/legal/de/privacy/"
+            href="https://www.contentful.com/legal/privacy-at-contentful/privacy-notice/"
             target="_blank"
             rel="noopener noreferrer"
           >
