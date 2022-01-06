@@ -6,8 +6,6 @@ export default function HorizontalStackExample() {
   return (
     <Stack>
       <Box
-        justifyContent="center"
-        alignItems="center"
         style={{
           width: '60px',
           height: '60px',
@@ -16,8 +14,6 @@ export default function HorizontalStackExample() {
         }}
       />
       <Box
-        justifyContent="center"
-        alignItems="center"
         style={{
           width: '60px',
           height: '60px',
@@ -26,8 +22,6 @@ export default function HorizontalStackExample() {
         }}
       />
       <Box
-        justifyContent="center"
-        alignItems="center"
         style={{
           width: '60px',
           height: '60px',

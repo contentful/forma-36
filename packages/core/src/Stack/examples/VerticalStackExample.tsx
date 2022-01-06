@@ -6,8 +6,6 @@ export default function VerticalStackExample() {
   return (
     <Stack flexDirection="column" spacing="spacingS">
       <Box
-        justifyContent="center"
-        alignItems="center"
         style={{
           width: '60px',
           height: '60px',
@@ -16,8 +14,6 @@ export default function VerticalStackExample() {
         }}
       />
       <Box
-        justifyContent="center"
-        alignItems="center"
         style={{
           width: '60px',
           height: '60px',
@@ -26,8 +22,6 @@ export default function VerticalStackExample() {
         }}
       />
       <Box
-        justifyContent="center"
-        alignItems="center"
         style={{
           width: '60px',
           height: '60px',
