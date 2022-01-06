@@ -13,7 +13,7 @@ import type { HeadingElement } from '../Heading';
 const DISPLAY_TEXT_DEFAULT_TAG = 'h2';
 
 export interface DisplayTextInternalProps extends CommonProps, MarginProps {
-  size?: 'default' | 'large' | 'huge';
+  size?: 'default' | 'large';
   as?: HeadingElement;
   isTruncated?: boolean;
 }
@@ -36,10 +36,7 @@ function _DisplayText<
   let fontSize: FontSizeTokens = 'fontSize2Xl';
   let lineHeight: LineHeightTokens = 'lineHeight2Xl';
 
-  if (size === 'huge') {
-    fontSize = 'fontSize4Xl';
-    lineHeight = 'lineHeight4Xl';
-  } else if (size === 'large') {
+  if (size === 'large') {
     fontSize = 'fontSize3Xl';
     lineHeight = 'lineHeight3Xl';
   }

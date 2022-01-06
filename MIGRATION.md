@@ -3040,7 +3040,7 @@ import {
   Some text
 </Paragraph>;
 
-<DisplayText size="huge" element="h4" className="className">
+<DisplayText size="large" element="h4" className="className">
   Some text
 </DisplayText>;
 ```
@@ -3072,7 +3072,7 @@ import {
   Some text
 </Paragraph>;
 
-<DisplayText marginBottom="none" size="huge" as="h4" className="className">
+<DisplayText marginBottom="none" size="large" as="h4" className="className">
   Some text
 </DisplayText>;
 ```
@@ -3105,7 +3105,7 @@ For components wrapped with Typography component, change:
 </Typography>;
 
 <Typography>
-  <DisplayText size="huge" element="h4" className="className">
+  <DisplayText size="large" element="h4" className="className">
     Some text
   </DisplayText>
 </Typography>;
@@ -3139,7 +3139,7 @@ into:
 </React.Fragment>;
 
 <React.Fragment>
-  <DisplayText size="huge" as="h4" className="className">
+  <DisplayText size="large" as="h4" className="className">
     Some text
   </DisplayText>
 </React.Fragment>;
