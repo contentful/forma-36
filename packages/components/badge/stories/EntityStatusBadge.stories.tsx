@@ -2,8 +2,8 @@ import React from 'react';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
-import { EntityStatusBadge } from '../src/EntityStatusBadge';
-import { EntityStatusBadgeProps } from '../src/EntityStatusBadge';
+import { EntityStatusBadge } from '../src/EntityStatusBadge/EntityStatusBadge';
+import { EntityStatusBadgeProps } from '../src/EntityStatusBadge/EntityStatusBadge';
 
 export default {
   title: 'Components/EntityStatusBadge',

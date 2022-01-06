@@ -9,6 +9,7 @@
     "start:prod": "next start"
   },
   "dependencies": {
+    "docsearch.js": "2.6.3",
     "@contentful/f36-components": "^4.0.0",
     "@contentful/f36-core": "^4.0.0",
     "@codesandbox/sandpack-react": "0.10.7",
@@ -34,7 +35,8 @@
     "lodash.sortby": "^4.7.0",
     "use-debounce": "^7.0.1",
     "qs": "^6.10.1",
-    "lz-string": "1.4.4"
+    "lz-string": "1.4.4",
+    "react-hook-form": "7.22.5"
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^10.2.1",

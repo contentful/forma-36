@@ -1,7 +1,10 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
-import { DisplayText, DisplayTextInternalProps } from '../src/DisplayText';
-import { Paragraph } from '../src/Paragraph';
+import {
+  DisplayText,
+  DisplayTextInternalProps,
+} from '../src/DisplayText/DisplayText';
+import { Paragraph } from '../src/Paragraph/Paragraph';
 
 export default {
   title: 'Typography/DisplayText',

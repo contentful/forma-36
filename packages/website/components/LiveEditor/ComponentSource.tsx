@@ -11,6 +11,7 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import tokens from '@contentful/f36-tokens';
 import * as f36Components from '@contentful/f36-components';
 import * as f36utils from '@contentful/f36-utils';
+import { useForm, useController } from 'react-hook-form';
 import { Card, Button, CopyButton } from '@contentful/f36-components';
 import * as f36icons from '@contentful/f36-icons';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
@@ -24,6 +25,7 @@ const liveProviderScope = {
   ...f36icons,
   ...f36Components,
   ...f36utils,
+  css,
   f36icons,
   tokens,
   // most used react hooks
@@ -33,21 +35,22 @@ const liveProviderScope = {
   useRef,
   useMemo,
   useContext,
+  // other
+  useForm,
+  useController,
 };
 
 const styles = {
+  root: css`
+    margin-top: ${tokens.spacingS};
+    margin-bottom: ${tokens.spacingM};
+  `,
   error: css`
     font-family: ${tokens.fontStackMonospace};
     font-size: ${tokens.fontSizeS};
     background: ${tokens.colorNegative};
     color: ${tokens.colorWhite};
     padding: ${tokens.spacingXs};
-  `,
-  editor: css`
-    font-family: ${tokens.fontStackMonospace};
-    background-color: #222031;
-    color: #ffffff;
-    min-height: 100px;
   `,
   // !important was necessary because these styles are being applied after the Card component styles
   card: css`
@@ -82,7 +85,7 @@ export function ComponentSource({ children }: { children: string }) {
   };
 
   return (
-    <Flex flexDirection="column" marginTop="spacingS" marginBottom="spacingM">
+    <Flex flexDirection="column" className={styles.root}>
       <LiveProvider
         code={formatSourceCode(children)}
         theme={theme}
@@ -111,7 +114,9 @@ export function ComponentSource({ children }: { children: string }) {
               >
                 Open in Playground
               </Button>
-              <LiveEditor className={styles.editor} />
+              <LiveEditor
+                style={{ paddingBottom: '45px', minHeight: '100px' }}
+              />
             </div>
           </>
         )}

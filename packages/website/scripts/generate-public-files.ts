@@ -5,8 +5,8 @@ import { getMdxPaths } from '../utils/content';
 
 dotenv.config();
 
-// todo: replace with f36.contentful.com when we release v4
-const deploymentUrl = process.env.VERCEL_URL || 'v4-forma-36.vercel.app';
+const deploymentUrl =
+  process.env.PRODUCTION_URL || process.env.VERCEL_URL || 'f36.contentful.com';
 const deploymentUrlWithProtocol = `https://${deploymentUrl}`;
 
 async function generateSitemap() {

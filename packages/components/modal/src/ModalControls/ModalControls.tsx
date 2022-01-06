@@ -29,7 +29,7 @@ export function ModalControls({
       margin="spacingL"
       marginTop="none"
     >
-      <ButtonGroup variant="spaced" spacing="spacingXs">
+      <ButtonGroup variant="spaced" spacing="spacingS">
         {children}
       </ButtonGroup>
     </Flex>

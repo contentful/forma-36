@@ -107,20 +107,6 @@
       "slug": "/components/toggle-button/"
     }
   ],
-  "dateComponents": [
-    {
-      "title": "Date utilities",
-      "slug": "/components/datetime-functions/"
-    },
-    {
-      "title": "DateTime",
-      "slug": "/components/datetime/"
-    },
-    {
-      "title": "RelativeDateTime",
-      "slug": "/components/relative-datetime/"
-    }
-  ],
   "advancedComponents": [
     {
       "title": "Workbench",
@@ -141,32 +127,6 @@
       "slug": "/components/modal-launcher/"
     }
   ],
-  "typographyComponents": [
-    {
-      "title": "DisplayText",
-      "slug": "/components/display-text/"
-    },
-    {
-      "title": "Heading",
-      "slug": "/components/heading/"
-    },
-    {
-      "title": "Paragraph",
-      "slug": "/components/paragraph/"
-    },
-    {
-      "title": "SectionHeading",
-      "slug": "/components/section-heading/"
-    },
-    {
-      "title": "Subheading",
-      "slug": "/components/subheading/"
-    },
-    {
-      "title": "Text",
-      "slug": "/components/text/"
-    }
-  ],
   "cardComponents": [
     {
       "title": "AssetCard",
@@ -183,6 +143,20 @@
     {
       "title": "InlineEntryCard",
       "slug": "/components/inline-entry-card/"
+    }
+  ],
+  "dateComponents": [
+    {
+      "title": "Date utilities",
+      "slug": "/components/datetime-functions/"
+    },
+    {
+      "title": "DateTime",
+      "slug": "/components/datetime/"
+    },
+    {
+      "title": "RelativeDateTime",
+      "slug": "/components/relative-datetime/"
     }
   ],
   "formComponents": [
@@ -239,6 +213,32 @@
     {
       "title": "SkeletonRow",
       "slug": "/components/skeleton/skeleton-row/"
+    }
+  ],
+  "typographyComponents": [
+    {
+      "title": "DisplayText",
+      "slug": "/components/display-text/"
+    },
+    {
+      "title": "Heading",
+      "slug": "/components/heading/"
+    },
+    {
+      "title": "Paragraph",
+      "slug": "/components/paragraph/"
+    },
+    {
+      "title": "SectionHeading",
+      "slug": "/components/section-heading/"
+    },
+    {
+      "title": "Subheading",
+      "slug": "/components/subheading/"
+    },
+    {
+      "title": "Text",
+      "slug": "/components/text/"
     }
   ],
   "utils": [

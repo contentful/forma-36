@@ -3,24 +3,7 @@ import tokens from '@contentful/f36-tokens';
 import type { GetStyleArguments } from './types';
 import type { CSSObject } from '@emotion/serialize';
 
-const getGroupContentStyle = ({
-  variant,
-  withDivider,
-  spacing,
-}: GetStyleArguments) => {
-  if (variant === 'spaced') {
-    return {
-      marginLeft: tokens[spacing],
-      marginRight: tokens[spacing],
-      '&:first-child': {
-        marginLeft: 0,
-      },
-      '&:last-child': {
-        marginRight: 0,
-      },
-    };
-  }
-
+const getGroupContentStyle = ({ withDivider }: GetStyleArguments) => {
   const dividerStyle = getDividerStyle(withDivider);
 
   return {
@@ -53,7 +36,7 @@ const getDividerStyle = (withDivider: boolean): CSSObject => {
       opacity: '20%',
       backgroundColor: tokens.colorWhite,
       height: '60%',
-      left: '-1px',
+      left: '0',
       position: 'absolute',
     },
     '&:first-child, &:focus': {
@@ -63,19 +46,15 @@ const getDividerStyle = (withDivider: boolean): CSSObject => {
     },
     '&:hover, &:hover + &': {
       '&:before': {
-        height: '100%',
+        display: 'none',
       },
     },
   };
 };
 
-export default ({
-  variant,
-  withDivider,
-  spacing = 'spacingS',
-}: GetStyleArguments) => ({
+export default ({ withDivider }: GetStyleArguments) => ({
   buttonGroup: css({
     display: 'inline-flex',
   }),
-  groupContent: css(getGroupContentStyle({ variant, withDivider, spacing })),
+  groupContent: css(getGroupContentStyle({ withDivider })),
 });

@@ -1,8 +1,8 @@
-export { AssetCard } from './asset-card/AssetCard';
-export type { AssetCardProps } from './asset-card/AssetCard';
-export { Card } from './card/Card';
-export type { CardProps } from './card/Card';
-export { EntryCard } from './entry-card/EntryCard';
-export type { EntryCardProps } from './entry-card/EntryCard';
-export { InlineEntryCard } from './inline-entry-card/InlineEntryCard';
-export type { InlineEntryCardProps } from './inline-entry-card/InlineEntryCard';
+export { AssetCard } from './AssetCard';
+export type { AssetCardProps } from './AssetCard';
+export { Card } from './Card';
+export type { CardProps } from './Card';
+export { EntryCard } from './EntryCard';
+export type { EntryCardProps } from './EntryCard';
+export { InlineEntryCard } from './InlineEntryCard';
+export type { InlineEntryCardProps } from './InlineEntryCard';
