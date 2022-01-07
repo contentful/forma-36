@@ -90,7 +90,7 @@ YourComponent
 
 ### Code Style Guide
 
-(Our code style guide)[https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md]
+(Our code style guide)[https://github.com/contentful/forma-36/blob/master/docs/code-style-guide.md]
 
 ### Component principles
 
