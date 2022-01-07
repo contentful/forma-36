@@ -16,7 +16,7 @@ import {
 
 <Paragraph element="p" className="className"></Paragraph>;
 
-<DisplayText size="huge" element="h4" className="className"></DisplayText>;
+<DisplayText size="large" element="h4" className="className"></DisplayText>;
 
 <Typography>
   <Heading element="h4" className="className"></Heading>
@@ -35,7 +35,7 @@ import {
 </Typography>;
 
 <Typography>
-  <DisplayText size="huge" element="h4" className="className"></DisplayText>
+  <DisplayText size="large" element="h4" className="className"></DisplayText>
 </Typography>;
 
 <Typography>

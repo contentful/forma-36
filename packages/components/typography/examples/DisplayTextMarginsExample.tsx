@@ -4,9 +4,6 @@ import { Flex, DisplayText } from '@contentful/f36-components';
 export default function DisplayTextMarginsExample() {
   return (
     <Flex flexDirection="column">
-      <DisplayText size="huge" marginBottom="none">
-        Welcome!
-      </DisplayText>
       <DisplayText size="large" marginBottom="spacing4Xl">
         Pages
       </DisplayText>

@@ -10,7 +10,7 @@ import { Heading, DisplayText, Paragraph, Subheading, SectionHeading } from "@co
 
 <Paragraph marginBottom="none" as="p" className="className"></Paragraph>;
 
-<DisplayText marginBottom="none" size="huge" as="h4" className="className"></DisplayText>;
+<DisplayText marginBottom="none" size="large" as="h4" className="className"></DisplayText>;
 
 <React.Fragment>
   <Heading as="h4" className="className"></Heading>
@@ -29,7 +29,7 @@ import { Heading, DisplayText, Paragraph, Subheading, SectionHeading } from "@co
 </React.Fragment>;
 
 <React.Fragment>
-  <DisplayText size="huge" as="h4" className="className"></DisplayText>
+  <DisplayText size="large" as="h4" className="className"></DisplayText>
 </React.Fragment>;
 
 <React.Fragment>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 import { Grid } from '@contentful/f36-components';
-import { Topbar } from './Topbar';
+import { Topbar, TopbarHeight } from './Topbar';
 import { Footer } from './Footer';
 import { Sidebar } from './Sidebar';
 import tokens from '@contentful/f36-tokens';
@@ -16,14 +16,14 @@ const styles = {
   sidebarItem: css({
     display: 'flex',
     flexDirection: 'column',
-    overflow: 'hidden',
-    height: '100%',
+    height: `calc(100vh - ${TopbarHeight})`,
     borderRight: `1px solid ${tokens.gray300}`,
   }),
   mainItem: css({
     display: 'flex',
     flexDirection: 'column',
     overflow: 'auto',
+    height: `calc(100vh - ${TopbarHeight})`,
   }),
 };
 
