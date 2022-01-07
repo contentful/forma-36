@@ -10,13 +10,13 @@ export const getSectionTitleStyles = (isActive = false, indent = 1) => {
     sidebarItem: css({
       padding: `${tokens.spacingXs} ${tokens.spacingM}`,
       paddingLeft: `calc(${indent} * ${tokens.spacingM})`,
-      fontSize: tokens.fontSizeL,
-      lineHeight: tokens.lineHeightL,
+      fontSize: tokens.fontSizeM,
+      lineHeight: tokens.lineHeightM,
     }),
     link: css({
       display: 'block',
-      fontSize: `${tokens.fontSizeL}`,
-      lineHeight: `${tokens.lineHeightL}`,
+      fontSize: `${tokens.fontSizeM}`,
+      lineHeight: `${tokens.lineHeightM}`,
     }),
     clickable: css({
       textDecoration: 'none',

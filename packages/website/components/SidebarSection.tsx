@@ -19,8 +19,8 @@ const styles = {
   }),
   sectionTitle: css({
     padding: `${tokens.spacingXs} ${tokens.spacingM}`,
-    fontSize: tokens.fontSizeL,
-    lineHeight: tokens.lineHeightL,
+    fontSize: tokens.fontSizeM,
+    lineHeight: tokens.lineHeightM,
     letterSpacing: 'initial',
   }),
 };

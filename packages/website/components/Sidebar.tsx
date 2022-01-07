@@ -9,13 +9,11 @@ import {
   SidebarSectionType,
   SidebarLinkType,
 } from './SidebarSection';
-import { DocSearch } from './DocSearch';
 
 const sidebarLinks = require('../utils/sidebarLinks.json');
 
 const styles = {
   nav: css({
-    borderTop: `1px solid ${tokens.gray300}`,
     padding: `${tokens.spacingM} 0`,
     overflowY: 'auto',
     color: tokens.gray700,
@@ -85,8 +83,6 @@ const components: Array<SidebarSectionType | SidebarLinkType> = [
 export function Sidebar({ currentPage = '/' }: Props) {
   return (
     <>
-      <DocSearch />
-
       <Flex
         as="nav"
         aria-label="Main Navigation"

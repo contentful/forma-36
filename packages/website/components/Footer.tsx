@@ -2,7 +2,7 @@ import React from 'react';
 import { TextLink, Flex } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/core';
-
+import Link from 'next/link';
 import contentfulLogoSVG from '../resources/icons/contentful-logo.svg';
 
 const styles = {
@@ -25,47 +25,106 @@ export const Footer = () => {
   return (
     <footer css={styles.footer}>
       <Flex>
-        <Flex marginRight="spacingL">
-          <TextLink
-            href="https://www.contentful.com/legal/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Imprint / Legal
-          </TextLink>
-        </Flex>
+        <Flex flexDirection="column" marginRight="spacing2Xl">
+          <Flex marginRight="spacingL" marginBottom="spacingM">
+            <Link href="/playground" passHref>
+              <TextLink href="/playground" variant="secondary">
+                Playground
+              </TextLink>
+            </Link>
+          </Flex>
 
-        <Flex marginRight="spacingL">
-          <TextLink
-            href="https://www.contentful.com/legal/privacy-at-contentful/privacy-notice/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Privacy
-          </TextLink>
-        </Flex>
+          <Flex marginRight="spacingL" marginBottom="spacingM">
+            <TextLink
+              variant="secondary"
+              href="https://github.com/contentful/forma-36"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View the repo on GitHub
+            </TextLink>
+          </Flex>
 
-        <Flex marginRight="spacingL">
-          <TextLink
-            href="https://www.contentful.com/security/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Security
-          </TextLink>
-        </Flex>
+          <Flex marginRight="spacingL" marginBottom="spacingM">
+            <TextLink
+              variant="secondary"
+              href="https://medium.com/contentful-design"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contentful desing blog
+            </TextLink>
+          </Flex>
 
-        <Flex>
-          <TextLink
-            onClick={(e) => {
-              e.preventDefault();
-              if ((window as any).Osano) {
-                (window as any).Osano.cm.showDrawer();
-              }
-            }}
-          >
-            Cookie Preferences
-          </TextLink>
+          <Flex marginRight="spacingL" marginBottom="spacingM">
+            <TextLink
+              variant="secondary"
+              href="https://www.contentful.com/developers/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Join the developer comunnity
+            </TextLink>
+          </Flex>
+
+          <Flex>
+            <TextLink
+              href="https://forms.gle/qC7LLbiy4CcF5HPLA"
+              variant="secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Give us feedback
+            </TextLink>
+          </Flex>
+        </Flex>
+        <Flex flexDirection="column">
+          <Flex marginRight="spacingL" marginBottom="spacingM">
+            <TextLink
+              variant="secondary"
+              href="https://www.contentful.com/legal/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Imprint / Legal
+            </TextLink>
+          </Flex>
+
+          <Flex marginRight="spacingL" marginBottom="spacingM">
+            <TextLink
+              variant="secondary"
+              href="https://www.contentful.com/legal/privacy-at-contentful/privacy-notice/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Privacy
+            </TextLink>
+          </Flex>
+
+          <Flex marginRight="spacingL" marginBottom="spacingM">
+            <TextLink
+              variant="secondary"
+              href="https://www.contentful.com/security/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Security
+            </TextLink>
+          </Flex>
+
+          <Flex>
+            <TextLink
+              variant="secondary"
+              onClick={(e) => {
+                e.preventDefault();
+                if ((window as any).Osano) {
+                  (window as any).Osano.cm.showDrawer();
+                }
+              }}
+            >
+              Cookie Preferences
+            </TextLink>
+          </Flex>
         </Flex>
       </Flex>
 

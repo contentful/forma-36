@@ -1,19 +1,23 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
+import { Subheading, Flex } from '@contentful/f36-components';
 import { css } from 'emotion';
 import Link from 'next/link';
+import { DocSearch } from './DocSearch';
 
 export const TopbarHeight = '70px';
 
 const styles = {
   header: css`
-    display: flex;
-    background-color: ${tokens.blue700};
-    color: #fff;
+    display: grid;
+    grid-template-columns: 320px auto 320px;
+    column-gap: 0;
+    row-gap: 0;
+    background-color: ${tokens.colorWhite};
+    color: ${tokens.blue700};
     padding: 0 ${tokens.spacingXl};
     height: ${TopbarHeight};
-    align-items: center;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px -1px 0px #e7ebee;
   `,
   logoLink: css`
     display: flex;
@@ -25,12 +29,11 @@ const styles = {
     font-weight: ${tokens.fontWeightDemiBold};
     font-size: ${tokens.fontSizeXl};
     margin-left: ${tokens.spacingL};
+    color: ${tokens.blue700};
   `,
   searchNavContainer: css`
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    flex-grow: 1;
   `,
   navList: css`
     list-style: none;
@@ -38,15 +41,15 @@ const styles = {
     display: flex;
   `,
   navListItem: css`
-    margin-left: ${tokens.spacingM};
+    margin-left: ${tokens.spacingXl};
     font-size: ${tokens.fontSizeL};
   `,
   navListLink: css`
-    color: #fff;
+    color: ${tokens.gray900};
     text-decoration: none;
 
     &:hover {
-      color: ${tokens.gray200};
+      color: ${tokens.gray700};
     }
   `,
 };
@@ -60,84 +63,59 @@ const Logo = () => (
     viewBox="0 0 90 90"
     enableBackground="new 0 0 90 90"
   >
-    <circle fill="#ffffff" cx="45" cy="10" r="10" />
-    <circle fill="#ffffff" cx="10" cy="10" r="10" />
-    <circle fill="#ffffff" cx="80" cy="10" r="10" />
-    <circle fill="#ffffff" cx="10" cy="45" r="10" />
-    <circle fill="#ffffff" cx="45" cy="45" r="10" />
-    <circle fill="#ffffff" cx="10" cy="80" r="10" />
+    <circle fill={tokens.blue700} cx="45" cy="10" r="10" />
+    <circle fill={tokens.blue700} cx="10" cy="10" r="10" />
+    <circle fill={tokens.blue700} cx="80" cy="10" r="10" />
+    <circle fill={tokens.blue700} cx="10" cy="45" r="10" />
+    <circle fill={tokens.blue700} cx="45" cy="45" r="10" />
+    <circle fill={tokens.blue700} cx="10" cy="80" r="10" />
   </svg>
 );
 
 export const Topbar = () => (
   <header className={styles.header}>
-    <Link href="/" passHref>
-      <a className={styles.logoLink} href="/">
-        <Logo />
-        <div className={styles.logoText}>Forma 36</div>
-      </a>
-    </Link>
+    <Flex flexGrow={1}>
+      <Link href="/" passHref>
+        <a className={styles.logoLink} href="/">
+          <Logo />
+          <div className={styles.logoText}>Forma 36</div>
+        </a>
+      </Link>
+    </Flex>
 
     <div className={styles.searchNavContainer}>
       <nav>
         <ul className={styles.navList}>
           <li className={styles.navListItem}>
-            <Link href="/playground" passHref>
-              <a className={styles.navListLink} href="/playground">
-                Playground
-              </a>
-            </Link>
+            <Subheading className={styles.navListLink} marginBottom="none">
+              Introduction
+            </Subheading>
           </li>
           <li className={styles.navListItem}>
-            <a
-              className={styles.navListLink}
-              href="https://github.com/contentful/forma-36"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
+            <Subheading className={styles.navListLink} marginBottom="none">
+              Guidelines
+            </Subheading>
           </li>
           <li className={styles.navListItem}>
-            <a
-              className={styles.navListLink}
-              href="https://medium.com/contentful-design"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Blog
-            </a>
+            <Subheading className={styles.navListLink} marginBottom="none">
+              Tokens
+            </Subheading>
           </li>
           <li className={styles.navListItem}>
-            <a
-              className={styles.navListLink}
-              href="https://www.contentful.com/developers/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Join the community
-            </a>
-          </li>
-          <li className={styles.navListItem}>
-            <a
-              className={styles.navListLink}
-              href="https://forms.gle/qC7LLbiy4CcF5HPLA"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Give us feedback
-            </a>
-          </li>
-          <li className={styles.navListItem}>
-            <a
-              className={styles.navListLink}
-              href="https://v3.f36.contentful.com/"
-            >
-              Forma 36 v3
-            </a>
+            <Subheading className={styles.navListLink} marginBottom="none">
+              Components
+            </Subheading>
           </li>
         </ul>
       </nav>
     </div>
+    <Flex alignItems="center">
+      <DocSearch />
+      <Flex padding="spacingXs">
+        <a className={styles.navListLink} href="https://v3.f36.contentful.com/">
+          v3
+        </a>
+      </Flex>
+    </Flex>
   </header>
 );
