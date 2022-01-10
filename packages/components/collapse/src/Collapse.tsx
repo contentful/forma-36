@@ -1,10 +1,10 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import tokens from '@contentful/f36-tokens';
-import type { CommonProps } from '@contentful/f36-core';
+import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 import { Box } from '@contentful/f36-core';
 import { getCollapseStyles } from './Collapse.styles';
 
-export interface CollapseProps extends CommonProps {
+interface CollapseInternalProps extends CommonProps {
   /**
    * Child nodes to be rendered in the component
    */
@@ -18,6 +18,11 @@ export interface CollapseProps extends CommonProps {
    */
   className?: string;
 }
+
+export type CollapseProps = PropsWithHTMLElement<
+  CollapseInternalProps,
+  'div'
+>;
 
 export const Collapse = ({
   children,
