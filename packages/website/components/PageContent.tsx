@@ -8,6 +8,7 @@ import {
   Heading,
   Paragraph,
   Text,
+  Note,
 } from '@contentful/f36-components';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
@@ -20,7 +21,6 @@ const styles = {
     display: 'grid',
     gridTemplateColumns: '8fr 2fr',
     flex: 1, // this is necessary to make the footer sticky to the bottom of the page
-    margin: '0 auto',
     padding: `0 ${tokens.spacingL}`,
     '@media screen and (min-width: 1440px)': {
       gridTemplateColumns: '1fr 7fr 2fr',
@@ -53,7 +53,7 @@ const styles = {
     },
   }),
   article: css({
-    // this style makes sure that the first element of the content don't have extra spacing
+    // this style makes sure that the first element of the content doesn't have extra spacing
     '> *:first-child': { marginTop: 0 },
   }),
   tableOfContent: css({
@@ -66,37 +66,6 @@ const styles = {
     overflowY: 'auto',
     overscrollBehavior: 'contain',
   }),
-  subheaderRow: css`
-    display: flex;
-    justify-content: space-between;
-  `,
-  badge: css`
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: ${tokens.spacingM};
-  `,
-  imageLink: css`
-    font-size: ${tokens.fontSizeM};
-    color: ${tokens.gray700};
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    padding: ${tokens.spacingXs};
-    margin-right: ${tokens.spacingM};
-    border-radius: calc(${tokens.fontSizeS} / 5);
-
-    &:hover {
-      background-color: ${tokens.gray200};
-    }
-
-    img {
-      margin-right: ${tokens.spacingXs};
-    }
-  `,
-  buttonList: css`
-    display: flex;
-  `,
 };
 
 interface PageHeaderProps {
@@ -104,9 +73,10 @@ interface PageHeaderProps {
   github?: FrontMatter['github'];
   intro?: FrontMatter['intro'];
   extra?: FrontMatter['extra'];
+  status?: FrontMatter['status'];
 }
 
-function PageHeader({ title, github, intro, extra }: PageHeaderProps) {
+function PageHeader({ title, github, intro, extra, status }: PageHeaderProps) {
   return (
     <header className={styles.header}>
       <Flex alignItems="flex-start" justifyContent="space-between">
@@ -128,6 +98,17 @@ function PageHeader({ title, github, intro, extra }: PageHeaderProps) {
           </TextLink>
         )}
       </Flex>
+
+      {status === 'deprecated' && (
+        <Note
+          variant="negative"
+          title="Deprecated component"
+          className={css({ gridColumnStart: 1, marginTop: tokens.spacingXl })}
+        >
+          {title} was deprecated in February 2022. It will be deleted from the
+          repository in 6 months.
+        </Note>
+      )}
 
       {(intro || extra) && (
         <Flex flexDirection="column" className={css({ gridRowStart: 2 })}>
@@ -177,11 +158,17 @@ export function PageContent({
   frontMatter,
   children,
 }: PageContentProps) {
-  const { title, github, intro, extra } = frontMatter;
+  const { title, github, intro, extra, status } = frontMatter;
 
   return (
     <div className={styles.grid}>
-      <PageHeader title={title} github={github} intro={intro} extra={extra} />
+      <PageHeader
+        title={title}
+        github={github}
+        intro={intro}
+        extra={extra}
+        status={status}
+      />
 
       <Flex flexDirection="column" className={styles.content}>
         {/**

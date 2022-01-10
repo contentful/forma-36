@@ -4,7 +4,7 @@ export interface FrontMatter {
   intro?: string;
   section?: string;
   slug?: string;
-  status?: string;
+  status?: 'stable' | 'deprecated' | 'alpha';
   title: string;
   type?: string;
   typescript?: string;

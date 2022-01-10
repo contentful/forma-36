@@ -46,6 +46,7 @@ export const GlobalStyles = () => {
 
         pre {
           margin: 0;
+          white-space: break-spaces;
         }
 
         fieldset {
