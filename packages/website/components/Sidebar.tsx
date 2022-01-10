@@ -81,52 +81,30 @@ const components: Array<SidebarSectionType | SidebarLinkType> = [
 ];
 
 export function Sidebar({ currentPage = '/' }: Props) {
-  switch (true) {
-    case currentPage.includes('guidelines'):
-      return (
-        <Flex
-          as="nav"
-          aria-label="Main Navigation"
-          flexDirection="column"
-          className={styles.nav}
-        >
-          <List className={styles.list}>
-            <SidebarSection
-              title="Guidelines"
-              links={sidebarLinks.guidelines}
-              currentPage={currentPage}
-            />
-          </List>
-        </Flex>
-      );
-      break;
-    case currentPage.includes('tokens'):
-      return (
-        <Flex
-          as="nav"
-          aria-label="Main Navigation"
-          flexDirection="column"
-          className={styles.nav}
-        >
-          <List className={styles.list}>
-            <SidebarSection
-              title="Tokens"
-              links={sidebarLinks.tokens}
-              currentPage={currentPage}
-            />
-          </List>
-        </Flex>
-      );
-      break;
-    case currentPage.includes('components'):
-      return (
-        <Flex
-          as="nav"
-          aria-label="Main Navigation"
-          flexDirection="column"
-          className={styles.nav}
-        >
-          <List className={styles.list}>
+  return (
+    <Flex
+      as="nav"
+      aria-label="Main Navigation"
+      flexDirection="column"
+      className={styles.nav}
+    >
+      <List className={styles.list}>
+        {currentPage.includes('guidelines') && (
+          <SidebarSection
+            title="Guidelines"
+            links={sidebarLinks.guidelines}
+            currentPage={currentPage}
+          />
+        )}
+        {currentPage.includes('tokens') && (
+          <SidebarSection
+            title="Tokens"
+            links={sidebarLinks.tokens}
+            currentPage={currentPage}
+          />
+        )}
+        {currentPage.includes('components') && (
+          <>
             <SidebarSection
               title="Components"
               links={components}
@@ -142,19 +120,10 @@ export function Sidebar({ currentPage = '/' }: Props) {
               links={sidebarLinks.integrations}
               currentPage={currentPage}
             />
-          </List>
-        </Flex>
-      );
-      break;
-    default:
-      return (
-        <Flex
-          as="nav"
-          aria-label="Main Navigation"
-          flexDirection="column"
-          className={styles.nav}
-        >
-          <List className={styles.list}>
+          </>
+        )}
+        {currentPage.includes('') && (
+          <>
             <SidebarLink
               isActive={isLinkActive('/getting-started', currentPage)}
               href="/getting-started"
@@ -173,9 +142,9 @@ export function Sidebar({ currentPage = '/' }: Props) {
               links={sidebarLinks.forma36Version3}
               currentPage={currentPage}
             />
-          </List>
-        </Flex>
-      );
-      break;
-  }
+          </>
+        )}
+      </List>
+    </Flex>
+  );
 }
