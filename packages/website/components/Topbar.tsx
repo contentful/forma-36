@@ -11,8 +11,6 @@ const styles = {
   header: css`
     display: grid;
     grid-template-columns: 320px auto 320px;
-    column-gap: 0;
-    row-gap: 0;
     background-color: ${tokens.colorWhite};
     color: ${tokens.blue700};
     padding: 0 ${tokens.spacingXl};
