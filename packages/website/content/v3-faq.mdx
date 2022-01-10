@@ -57,7 +57,7 @@ No. There are no major visual changes in version 4, so there is no need to redes
 
 ## Why rename things (components, properties), instead of leaving them as they are?
 
-In order to fix some of the issues we needed to remove or rename components. For example, in the past, you were using Dropdown component. We learned that it was trying to cover many use cases and its API got very complex. On top of that it was not passing A11Y requirements and we learned that its API is many times misused. We decided to split this component into smaller once that would have more specific usage:
+In order to fix some of the issues we needed to remove or rename components. For example, in the past, you were using Dropdown component. We learned that it was trying to cover many use cases and its API got very complex. On top of that it was not passing A11Y requirements and we learned that its API is many times misused. We decided to split this component into smaller ones that would have more specific usage:
 
 - Menu - is a component that offers a list of choices to the user, such as a set of actions or links. Menu uses Popover component as a base. It covers most of the examples where you previously used `Dropdown` component.
 - Popover - is used to display some content on top of another, and should be paired with a clickable trigger element. It is a base component for Menu, but not styled and not handled. If you need to create some specific, custom solution, then this would be the right choice.
