@@ -19,10 +19,7 @@ interface CollapseInternalProps extends CommonProps {
   className?: string;
 }
 
-export type CollapseProps = PropsWithHTMLElement<
-  CollapseInternalProps,
-  'div'
->;
+export type CollapseProps = PropsWithHTMLElement<CollapseInternalProps, 'div'>;
 
 export const Collapse = ({
   children,
@@ -51,30 +48,26 @@ export const Collapse = ({
 
     const handleTransitionEnd = () => {
       if (current) {
-        current.style.height = 'auto';
+        if (isExpanded) {
+          current.style.removeProperty('height');
+        } else {
+          current.style.setProperty('display', 'none');
+        }
       }
     };
 
     if (current) {
-      if (isExpanded) {
-        current.addEventListener('transitionend', handleTransitionEnd);
+      current.addEventListener('transitionend', handleTransitionEnd);
+      const fromHeight = isExpanded ? '0px' : getPanelContentHeight();
+      const toHeight = isExpanded ? getPanelContentHeight() : '0px';
+      requestAnimationFrame(function () {
+        current.style.removeProperty('display');
+        current.style.setProperty('height', fromHeight);
 
         requestAnimationFrame(function () {
-          current.style.height = '0px';
-
-          requestAnimationFrame(function () {
-            current.style.height = getPanelContentHeight();
-          });
+          current.style.setProperty('height', toHeight);
         });
-      } else {
-        requestAnimationFrame(function () {
-          current.style.height = getPanelContentHeight();
-
-          requestAnimationFrame(function () {
-            current.style.height = '0px';
-          });
-        });
-      }
+      });
     }
 
     return () => {
