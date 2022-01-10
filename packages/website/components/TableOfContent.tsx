@@ -6,9 +6,12 @@ import { List, TextLink, Subheading } from '@contentful/f36-components';
 import { useScrollSpy } from '../utils/use-scrollspy';
 
 const styles = {
-  rootList: css({
+  list: css({
     listStyle: 'none',
     paddingLeft: '0',
+  }),
+  listItem: css({
+    marginBottom: tokens.spacingXs,
   }),
   sidebarNavItemActive: css({
     color: tokens.blue700,
@@ -39,11 +42,13 @@ export function TableOfContent({ headings }: TableOfContentProps) {
 
   return (
     <>
-      <Subheading as="h2">On this page</Subheading>
+      <Subheading as="h2" marginBottom="spacingXs">
+        On this page
+      </Subheading>
 
-      <List className={styles.rootList}>
+      <List className={styles.list}>
         {headings.map(({ id, text, level }) => (
-          <List.Item key={id} title={text}>
+          <List.Item key={id} title={text} className={styles.listItem}>
             <TextLink
               href={`#${id}`}
               aria-current={id === activeId ? 'location' : undefined}
@@ -51,6 +56,7 @@ export function TableOfContent({ headings }: TableOfContentProps) {
                 [styles.secondLevelMargin]: level === 'h3',
                 [styles.sidebarNavItemActive]: id === activeId,
               })}
+              variant="secondary"
             >
               {text}
             </TextLink>

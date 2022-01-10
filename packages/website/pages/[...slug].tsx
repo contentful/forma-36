@@ -14,6 +14,7 @@ import { PropsContextProvider } from '@contentful/f36-docs-utils';
 import remarkCodeTitles from 'remark-code-titles';
 import remarkCodeImport from 'remark-code-import';
 
+import type { FrontMatter } from '../types';
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 import { getPropsMetadata, transformToc } from '../utils/propsMeta';
 import { getTableOfContents } from '../utils/mdx-utils';
@@ -21,9 +22,7 @@ import { HeadingType } from '../components/TableOfContent';
 
 type ComponentPageProps = {
   source: MDXRemoteSerializeResult;
-  frontMatter: {
-    title: string;
-  };
+  frontMatter: FrontMatter;
   headings: HeadingType[];
   propsMetadata: ReturnType<typeof getPropsMetadata>;
 };

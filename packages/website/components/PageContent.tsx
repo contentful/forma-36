@@ -2,26 +2,26 @@ import React from 'react';
 import { css } from 'emotion';
 import {
   DisplayText,
-  Badge,
   Flex,
   TextLink,
   Stack,
   Heading,
+  Paragraph,
+  Text,
 } from '@contentful/f36-components';
+import { ExternalLinkIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 
+import type { FrontMatter } from '../types';
 import { TableOfContent, HeadingType } from './TableOfContent';
-
-import storybookIcon from '../resources/icons/storybook.svg';
-import githubIcon from '../resources/icons/github.svg';
 
 const styles = {
   grid: css({
     display: 'grid',
     gridTemplateColumns: '8fr 2fr',
-    columnGap: tokens.spacingM,
     flex: 1, // this is necessary to make the footer sticky to the bottom of the page
     margin: '0 auto',
+    padding: `0 ${tokens.spacingL}`,
     '@media screen and (min-width: 1440px)': {
       gridTemplateColumns: '1fr 7fr 2fr',
     },
@@ -30,28 +30,38 @@ const styles = {
     },
   }),
   header: css({
+    display: 'grid',
+    gridTemplateColumns: '8fr 2fr',
     paddingTop: tokens.spacing2Xl,
     paddingBottom: tokens.spacingM,
     borderBottom: `1px solid ${tokens.gray300}`,
+    marginBottom: tokens.spacing2Xl,
     gridColumnStart: 1,
     gridColumnEnd: 3,
     '@media screen and (min-width: 1440px)': {
+      gridTemplateColumns: '7fr 2fr',
       gridColumnStart: 2,
       gridColumnEnd: 4,
     },
+    '@media screen and (min-width: 1700px)': {
+      gridTemplateColumns: '6fr 2fr',
+    },
   }),
   content: css({
-    paddingTop: tokens.spacing2Xl,
     '@media screen and (min-width: 1440px)': {
       gridColumnStart: 2,
     },
+  }),
+  article: css({
+    // this style makes sure that the first element of the content don't have extra spacing
+    '> *:first-child': { marginTop: 0 },
   }),
   tableOfContent: css({
     display: 'flex',
     flexDirection: 'column',
     position: 'sticky',
     top: tokens.spacing2Xl,
-    paddingTop: tokens.spacing2Xl,
+    paddingLeft: tokens.spacing2Xl,
     alignSelf: 'start',
     overflowY: 'auto',
     overscrollBehavior: 'contain',
@@ -89,65 +99,51 @@ const styles = {
   `,
 };
 
-function PageHeader(props: {
-  title?: string;
-  storybook?: string;
-  github?: string;
-  status?: string;
-}) {
+interface PageHeaderProps {
+  title: FrontMatter['title'];
+  github?: FrontMatter['github'];
+  intro?: FrontMatter['intro'];
+  extra?: FrontMatter['extra'];
+}
+
+function PageHeader({ title, github, intro, extra }: PageHeaderProps) {
   return (
     <header className={styles.header}>
-      {props.title && <DisplayText as="h1">{props.title}</DisplayText>}
-      {(props.github || props.status || props.storybook) && (
-        <div className={styles.subheaderRow}>
-          <div className={styles.buttonList}>
-            {props.storybook && (
-              <a
-                className={styles.imageLink}
-                href={props.storybook}
-                title={`View ${props.title} in Storybook`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img {...storybookIcon} alt="" />
-                <span>Storybook</span>
-              </a>
-            )}
-            {props?.github && (
-              <a
-                className={styles.imageLink}
-                href={props.github}
-                title={`View ${props?.title} on GitHub`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img {...githubIcon} alt="" />
-                <span>Github</span>
-              </a>
-            )}
-          </div>
-          {props?.status && (
-            <span className={styles.badge}>
-              <Badge
-                variant={
-                  props.status === 'alpha'
-                    ? 'warning'
-                    : props?.status === 'deprecated'
-                    ? 'negative'
-                    : 'positive'
-                }
-              >
-                {props.status}
-              </Badge>
-            </span>
+      <Flex alignItems="flex-start" justifyContent="space-between">
+        {title && (
+          <DisplayText as="h1" marginBottom="spacingXs">
+            {title}
+          </DisplayText>
+        )}
+
+        {github && (
+          <TextLink
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            icon={<ExternalLinkIcon />}
+            alignIcon="end"
+          >
+            View on Github
+          </TextLink>
+        )}
+      </Flex>
+
+      {(intro || extra) && (
+        <Flex flexDirection="column" className={css({ gridRowStart: 2 })}>
+          {intro && (
+            <Text as="p" fontSize="fontSizeXl" marginBottom="spacingL">
+              {intro}
+            </Text>
           )}
-        </div>
+          {extra && <Paragraph marginBottom="none">{extra}</Paragraph>}
+        </Flex>
       )}
     </header>
   );
 }
 
-function PageFooter(props: { github?: string }) {
+function PageFooter(props: { github?: FrontMatter['github'] }) {
   return (
     <Flex flexDirection="column" marginTop="spacing2Xl">
       <Heading as="h2" id="help-improve-this-page">
@@ -172,24 +168,22 @@ function PageFooter(props: { github?: string }) {
 
 interface PageContentProps {
   headings: HeadingType[];
-  frontMatter: {
-    title: string;
-    storybook?: string;
-    github?: string;
-    toc?: false;
-    status?: string;
-  };
+  frontMatter: FrontMatter;
   children: React.ReactChild;
 }
 
-export function PageContent(props: PageContentProps) {
-  console.log({ frontMatter: props.frontMatter });
+export function PageContent({
+  headings,
+  frontMatter,
+  children,
+}: PageContentProps) {
+  const { title, github, intro, extra } = frontMatter;
 
   return (
     <div className={styles.grid}>
-      <PageHeader {...props.frontMatter} />
+      <PageHeader title={title} github={github} intro={intro} extra={extra} />
 
-      <Flex as="article" flexDirection="column" className={styles.content}>
+      <Flex flexDirection="column" className={styles.content}>
         {/**
          * We need to wrap the text of the page into an element without Grid or Flex
          * because we want the margins of our headings and paragraphs to collapse
@@ -197,14 +191,14 @@ export function PageContent(props: PageContentProps) {
          * A good article about margin collapse by Josh Comeau:
          * https://www.joshwcomeau.com/css/rules-of-margin-collapse/#flow-layout-only
          */}
-        <article>{props.children}</article>
+        <article className={styles.article}>{children}</article>
 
-        <PageFooter github={props.frontMatter.github} />
+        <PageFooter github={github} />
       </Flex>
 
-      {props.headings.length > 1 && (
+      {headings.length > 1 && (
         <nav className={styles.tableOfContent}>
-          <TableOfContent headings={props.headings} />
+          <TableOfContent headings={headings} />
         </nav>
       )}
     </div>

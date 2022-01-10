@@ -6,6 +6,7 @@ import NextLink from 'next/link';
 import { MdxComponents } from '../mdx-components';
 import { ComponentSource } from './LiveEditor/ComponentSource';
 import { StaticSource } from './LiveEditor/StaticSource';
+import tokens from '@contentful/f36-tokens';
 
 const {
   DisplayText,
@@ -37,7 +38,7 @@ const components = {
     }
     return <TextLink {...props} />;
   },
-  ul: (props) => <List {...props} />,
+  ul: (props) => <List style={{ marginBottom: tokens.spacingM }} {...props} />,
   li: (props) => <List.Item {...props} />,
   code: (props) => {
     if (props.static) {
