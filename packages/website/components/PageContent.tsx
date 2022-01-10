@@ -200,7 +200,7 @@ export function PageContent(props: PageContentProps) {
         <PageFooter github={props.frontMatter.github} />
       </Flex>
 
-      {props.headings.length > 0 && (
+      {props.headings.length > 1 && (
         <nav className={styles.tableOfContent}>
           <TableOfContent headings={props.headings} />
         </nav>
