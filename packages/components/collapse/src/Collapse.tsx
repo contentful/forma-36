@@ -49,8 +49,9 @@ export const Collapse = ({
     const handleTransitionEnd = () => {
       if (current) {
         if (isExpanded) {
-          current.style.removeProperty('height');
+          current.style.setProperty('height', 'auto');
         } else {
+          current.style.removeProperty('pointer-events');
           current.style.setProperty('display', 'none');
         }
       }
@@ -58,10 +59,17 @@ export const Collapse = ({
 
     if (current) {
       current.addEventListener('transitionend', handleTransitionEnd);
-      const fromHeight = isExpanded ? '0px' : getPanelContentHeight();
-      const toHeight = isExpanded ? getPanelContentHeight() : '0px';
       requestAnimationFrame(function () {
-        current.style.removeProperty('display');
+        if (!isExpanded) {
+          // Don't allow interaction while collapsing
+          current.style.setProperty('pointer-events', 'none');
+        } else {
+          // Overwrite none display to see expanding transition
+          current.style.setProperty('display', 'block');
+        }
+        // Calculate panel height after removing none display
+        const fromHeight = isExpanded ? '0px' : getPanelContentHeight();
+        const toHeight = isExpanded ? getPanelContentHeight() : '0px';
         current.style.setProperty('height', fromHeight);
 
         requestAnimationFrame(function () {
