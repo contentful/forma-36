@@ -19,7 +19,7 @@ const styles = {
   grid: css({
     display: 'grid',
     gridTemplateColumns: '8fr 2fr',
-    gridGap: tokens.spacingM,
+    columnGap: tokens.spacingM,
     flex: 1, // this is necessary to make the footer sticky to the bottom of the page
     margin: '0 auto',
     '@media screen and (min-width: 1440px)': {
@@ -30,8 +30,8 @@ const styles = {
     },
   }),
   header: css({
-    paddingBottom: tokens.spacingXl,
-    // marginBottom: tokens.spacingXl,
+    paddingTop: tokens.spacing2Xl,
+    paddingBottom: tokens.spacingM,
     borderBottom: `1px solid ${tokens.gray300}`,
     gridColumnStart: 1,
     gridColumnEnd: 3,
@@ -41,6 +41,7 @@ const styles = {
     },
   }),
   content: css({
+    paddingTop: tokens.spacing2Xl,
     '@media screen and (min-width: 1440px)': {
       gridColumnStart: 2,
     },
@@ -49,7 +50,8 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     position: 'sticky',
-    top: 0,
+    top: tokens.spacing2Xl,
+    paddingTop: tokens.spacing2Xl,
     alignSelf: 'start',
     overflowY: 'auto',
     overscrollBehavior: 'contain',
