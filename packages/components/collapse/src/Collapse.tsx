@@ -1,5 +1,4 @@
 import React, { useLayoutEffect, useRef } from 'react';
-import tokens from '@contentful/f36-tokens';
 import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 import { Box } from '@contentful/f36-core';
 import { getCollapseStyles } from './Collapse.styles';
@@ -40,7 +39,7 @@ export const Collapse = ({
       return '0px';
     }
 
-    return `${current.scrollHeight / parseInt(tokens.fontBaseDefault, 10)}rem`; // converting height pixels into rem
+    return `${current.scrollHeight}px`;
   };
 
   useLayoutEffect(() => {
