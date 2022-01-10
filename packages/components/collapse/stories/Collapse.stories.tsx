@@ -28,8 +28,15 @@ export const Basic: Story<CollapseProps> = () => {
 
   return (
     <Stack flexDirection="column">
-      <Button onClick={() => setIsExpanded(!isExpanded)}>Toggle content</Button>
-      <Collapse isExpanded={isExpanded}>
+      <Button
+        onClick={() => setIsExpanded(!isExpanded)}
+        aria-label={`${isExpanded ? 'Collapse' : 'Expand'} foo content`}
+        aria-controls="collapsible-foo"
+        aria-expanded={isExpanded}
+      >
+        Toggle content
+      </Button>
+      <Collapse id="collapsible-foo" isExpanded={isExpanded}>
         <SectionHeading>Collapsable Element</SectionHeading>
         <Text>{defaultText}</Text>
       </Collapse>
