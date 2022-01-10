@@ -87,24 +87,40 @@ export const Topbar = () => (
       <nav>
         <ul className={styles.navList}>
           <li className={styles.navListItem}>
-            <Subheading className={styles.navListLink} marginBottom="none">
-              Introduction
-            </Subheading>
+            <Link href="/" passHref>
+              <a className={styles.logoLink} href="/">
+                <Subheading className={styles.navListLink} marginBottom="none">
+                  Introduction
+                </Subheading>
+              </a>
+            </Link>
           </li>
           <li className={styles.navListItem}>
-            <Subheading className={styles.navListLink} marginBottom="none">
-              Guidelines
-            </Subheading>
+            <Link href="/guidelines/accessibility" passHref>
+              <a className={styles.logoLink} href="/guidelines/accessibility">
+                <Subheading className={styles.navListLink} marginBottom="none">
+                  Guidelines
+                </Subheading>
+              </a>
+            </Link>
           </li>
           <li className={styles.navListItem}>
-            <Subheading className={styles.navListLink} marginBottom="none">
-              Tokens
-            </Subheading>
+            <Link href="/tokens/color-system" passHref>
+              <a className={styles.logoLink} href="/tokens/color-system">
+                <Subheading className={styles.navListLink} marginBottom="none">
+                  Tokens
+                </Subheading>
+              </a>
+            </Link>
           </li>
           <li className={styles.navListItem}>
-            <Subheading className={styles.navListLink} marginBottom="none">
-              Components
-            </Subheading>
+            <Link href="/components/box" passHref>
+              <a className={styles.logoLink} href="/components/box">
+                <Subheading className={styles.navListLink} marginBottom="none">
+                  Components
+                </Subheading>
+              </a>
+            </Link>
           </li>
         </ul>
       </nav>

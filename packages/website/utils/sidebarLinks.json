@@ -83,6 +83,10 @@
     {
       "title": "Tooltip",
       "slug": "/components/tooltip/"
+    },
+    {
+      "title": "Workbench",
+      "slug": "/components/workbench/"
     }
   ],
   "buttonComponents": [
@@ -105,12 +109,6 @@
     {
       "title": "ToggleButton",
       "slug": "/components/toggle-button/"
-    }
-  ],
-  "advancedComponents": [
-    {
-      "title": "Workbench",
-      "slug": "/components/workbench/"
     }
   ],
   "modalComponents": [

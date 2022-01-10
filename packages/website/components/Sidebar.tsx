@@ -81,65 +81,101 @@ const components: Array<SidebarSectionType | SidebarLinkType> = [
 ];
 
 export function Sidebar({ currentPage = '/' }: Props) {
-  return (
-    <>
-      <Flex
-        as="nav"
-        aria-label="Main Navigation"
-        flexDirection="column"
-        className={styles.nav}
-      >
-        <List className={styles.list}>
-          <SidebarLink
-            isActive={isLinkActive('/getting-started', currentPage)}
-            href="/getting-started"
-          >
-            Getting started
-          </SidebarLink>
-          <SidebarLink
-            isActive={isLinkActive('/contributing', currentPage)}
-            href="/contributing"
-          >
-            Contributing to Forma 36
-          </SidebarLink>
-          <Box marginBottom="spacingL" />
-          <SidebarSection
-            title="Forma 36 version 3"
-            links={sidebarLinks.forma36Version3}
-            currentPage={currentPage}
-          />
-          <SidebarSection
-            title="Guidelines"
-            links={sidebarLinks.guidelines}
-            currentPage={currentPage}
-          />
-          <SidebarSection
-            title="Tokens"
-            links={sidebarLinks.tokens}
-            currentPage={currentPage}
-          />
-          <SidebarSection
-            title="Components"
-            links={components}
-            currentPage={currentPage}
-          />
-          <SidebarSection
-            title="Advanced components"
-            links={sidebarLinks.advancedComponents || []}
-            currentPage={currentPage}
-          />
-          <SidebarSection
-            title="Utils"
-            links={sidebarLinks.utils}
-            currentPage={currentPage}
-          />
-          <SidebarSection
-            title="Integrations"
-            links={sidebarLinks.integrations}
-            currentPage={currentPage}
-          />
-        </List>
-      </Flex>
-    </>
-  );
+  switch (true) {
+    case currentPage.includes('guidelines'):
+      return (
+        <Flex
+          as="nav"
+          aria-label="Main Navigation"
+          flexDirection="column"
+          className={styles.nav}
+        >
+          <List className={styles.list}>
+            <SidebarSection
+              title="Guidelines"
+              links={sidebarLinks.guidelines}
+              currentPage={currentPage}
+            />
+          </List>
+        </Flex>
+      );
+      break;
+    case currentPage.includes('tokens'):
+      return (
+        <Flex
+          as="nav"
+          aria-label="Main Navigation"
+          flexDirection="column"
+          className={styles.nav}
+        >
+          <List className={styles.list}>
+            <SidebarSection
+              title="Tokens"
+              links={sidebarLinks.tokens}
+              currentPage={currentPage}
+            />
+          </List>
+        </Flex>
+      );
+      break;
+    case currentPage.includes('components'):
+      return (
+        <Flex
+          as="nav"
+          aria-label="Main Navigation"
+          flexDirection="column"
+          className={styles.nav}
+        >
+          <List className={styles.list}>
+            <SidebarSection
+              title="Components"
+              links={components}
+              currentPage={currentPage}
+            />
+            <SidebarSection
+              title="Utils"
+              links={sidebarLinks.utils}
+              currentPage={currentPage}
+            />
+            <SidebarSection
+              title="Integrations"
+              links={sidebarLinks.integrations}
+              currentPage={currentPage}
+            />
+          </List>
+        </Flex>
+      );
+      break;
+    default:
+      return (
+        <Flex
+          as="nav"
+          aria-label="Main Navigation"
+          flexDirection="column"
+          className={styles.nav}
+        >
+          <List className={styles.list}>
+            <SidebarLink
+              isActive={isLinkActive('/getting-started', currentPage)}
+              href="/getting-started"
+            >
+              Getting started
+            </SidebarLink>
+            <SidebarLink
+              isActive={isLinkActive('/contributing', currentPage)}
+              href="/contributing"
+            >
+              Contributing to Forma 36
+            </SidebarLink>
+            <Box marginBottom="spacingL" />
+            <SidebarSection
+              title="Forma 36 version 3"
+              links={sidebarLinks.forma36Version3}
+              currentPage={currentPage}
+            />
+          </List>
+        </Flex>
+      );
+      break;
+  }
 }

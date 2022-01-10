@@ -4,6 +4,7 @@ import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/core';
 import Link from 'next/link';
 import contentfulLogoSVG from '../resources/icons/contentful-logo.svg';
+import { ExternalLinkIcon } from '@contentful/f36-icons';
 
 const styles = {
   footer: css`
@@ -28,7 +29,12 @@ export const Footer = () => {
         <Flex flexDirection="column" marginRight="spacing2Xl">
           <Flex marginRight="spacingL" marginBottom="spacingM">
             <Link href="/playground" passHref>
-              <TextLink href="/playground" variant="secondary">
+              <TextLink
+                href="/playground"
+                variant="secondary"
+                icon={<ExternalLinkIcon />}
+                alignIcon="end"
+              >
                 Playground
               </TextLink>
             </Link>
@@ -40,6 +46,8 @@ export const Footer = () => {
               href="https://github.com/contentful/forma-36"
               target="_blank"
               rel="noopener noreferrer"
+              icon={<ExternalLinkIcon />}
+              alignIcon="end"
             >
               View the repo on GitHub
             </TextLink>
@@ -51,6 +59,8 @@ export const Footer = () => {
               href="https://medium.com/contentful-design"
               target="_blank"
               rel="noopener noreferrer"
+              icon={<ExternalLinkIcon />}
+              alignIcon="end"
             >
               Contentful desing blog
             </TextLink>
@@ -62,6 +72,8 @@ export const Footer = () => {
               href="https://www.contentful.com/developers/"
               target="_blank"
               rel="noopener noreferrer"
+              icon={<ExternalLinkIcon />}
+              alignIcon="end"
             >
               Join the developer comunnity
             </TextLink>
@@ -73,6 +85,8 @@ export const Footer = () => {
               variant="secondary"
               target="_blank"
               rel="noopener noreferrer"
+              icon={<ExternalLinkIcon />}
+              alignIcon="end"
             >
               Give us feedback
             </TextLink>
@@ -85,6 +99,8 @@ export const Footer = () => {
               href="https://www.contentful.com/legal/"
               target="_blank"
               rel="noopener noreferrer"
+              icon={<ExternalLinkIcon />}
+              alignIcon="end"
             >
               Imprint / Legal
             </TextLink>
@@ -96,6 +112,8 @@ export const Footer = () => {
               href="https://www.contentful.com/legal/privacy-at-contentful/privacy-notice/"
               target="_blank"
               rel="noopener noreferrer"
+              icon={<ExternalLinkIcon />}
+              alignIcon="end"
             >
               Privacy
             </TextLink>
@@ -107,6 +125,8 @@ export const Footer = () => {
               href="https://www.contentful.com/security/"
               target="_blank"
               rel="noopener noreferrer"
+              icon={<ExternalLinkIcon />}
+              alignIcon="end"
             >
               Security
             </TextLink>
