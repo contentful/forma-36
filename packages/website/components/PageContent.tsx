@@ -29,11 +29,31 @@ const styles = {
       gridTemplateColumns: '1fr 6fr 2fr 1fr',
     },
   }),
-  header: css`
-    padding-bottom: ${tokens.spacingXl};
-    margin-bottom: ${tokens.spacingXl};
-    border-bottom: 1px solid ${tokens.gray300};
-  `,
+  header: css({
+    paddingBottom: tokens.spacingXl,
+    // marginBottom: tokens.spacingXl,
+    borderBottom: `1px solid ${tokens.gray300}`,
+    gridColumnStart: 1,
+    gridColumnEnd: 3,
+    '@media screen and (min-width: 1440px)': {
+      gridColumnStart: 2,
+      gridColumnEnd: 4,
+    },
+  }),
+  content: css({
+    '@media screen and (min-width: 1440px)': {
+      gridColumnStart: 2,
+    },
+  }),
+  tableOfContent: css({
+    display: 'flex',
+    flexDirection: 'column',
+    position: 'sticky',
+    top: 0,
+    alignSelf: 'start',
+    overflowY: 'auto',
+    overscrollBehavior: 'contain',
+  }),
   subheaderRow: css`
     display: flex;
     justify-content: space-between;
@@ -65,20 +85,6 @@ const styles = {
   buttonList: css`
     display: flex;
   `,
-  content: css({
-    '@media screen and (min-width: 1440px)': {
-      gridColumnStart: 2,
-    },
-  }),
-  tableOfContent: css({
-    display: 'flex',
-    flexDirection: 'column',
-    position: 'sticky',
-    top: 0,
-    alignSelf: 'start',
-    overflowY: 'auto',
-    overscrollBehavior: 'contain',
-  }),
 };
 
 function PageHeader(props: {
@@ -162,25 +168,30 @@ function PageFooter(props: { github?: string }) {
   );
 }
 
-export function PageContent(props: {
+interface PageContentProps {
   headings: HeadingType[];
   frontMatter: {
     title: string;
     storybook?: string;
     github?: string;
     toc?: false;
+    status?: string;
   };
   children: React.ReactChild;
-}) {
+}
+
+export function PageContent(props: PageContentProps) {
+  console.log({ frontMatter: props.frontMatter });
+
   return (
     <div className={styles.grid}>
-      <Flex flexDirection="column" className={styles.content}>
-        <PageHeader {...props.frontMatter} />
+      <PageHeader {...props.frontMatter} />
 
+      <Flex as="article" flexDirection="column" className={styles.content}>
         {/**
          * We need to wrap the text of the page into an element without Grid or Flex
          * because we want the margins of our headings and paragraphs to collapse
-         * and make it easier to maintain the spacing between the elements
+         * to make it easier to maintain the spacing between the elements
          * A good article about margin collapse by Josh Comeau:
          * https://www.joshwcomeau.com/css/rules-of-margin-collapse/#flow-layout-only
          */}
