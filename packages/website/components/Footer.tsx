@@ -32,7 +32,6 @@ export const Footer = () => {
               <TextLink
                 href="/playground"
                 variant="secondary"
-                icon={<ExternalLinkIcon />}
                 alignIcon="end"
               >
                 Playground
