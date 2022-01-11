@@ -5,23 +5,24 @@ status: 'stable'
 section: 'modalComponents'
 slug: /components/modal/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/modal/src'
-storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-modal--basic'
 typescript: ./Modal.tsx
 ---
 
-import { Props } from '@contentful/f36-docs-utils';
+`Modal` appears on top of the main content and moves the system into a special mode requiring user interaction. It blocks interaction with the main content until an action is taken.
 
-Modal dialogs interrupt a user by isolating information that needs to be acted upon. They are often triggered by an action a user took, and should be used to inform, confirm or complete a task.
+Modal dialogs are often triggered by an action a user took, and should be used to inform, confirm or complete a task. Content behind a modal dialog is inert, meaning that users cannot interact with it.
 
-## How to use Modal
+Use `Modal`:
 
-- Use modal dialogs to request information critical for a user to continue their current process
-- Use modal dialogs to warn users about a potentially destructive action they are taking
-- Use modal dialogs consistently across use cases
-- Do not use modal dialogs for nonessential information that is not related to the current user flow
-- Avoid modal dialogs that interrupt high-stake processes such as checkout flows
+- to request information critical for a user to continue their current process
+- to warn users about a potentially destructive action they are taking
 
-### Import
+Don't use `Modal`:
+
+- for nonessential information that is not related to the current user flow
+- for interrupting high-stake processes such as checkout flows
+
+## Import
 
 ```js static=true
 import { Modal } from '@contentful/f36-components';
@@ -29,189 +30,98 @@ import { Modal } from '@contentful/f36-components';
 import { Modal } from '@contentful/f36-modal';
 ```
 
-## Code examples
+## Example
 
-The Modal component can be configured in a number of different ways. Use this guidance to determine when to use certain variations:
+### Basic
 
-### Basic example
+```jsx file=../examples/ModalBasicExample.tsx
 
-```jsx
-function ModalExample() {
-  const [isShown, setShown] = React.useState(false);
-  return (
-    <React.Fragment>
-      <Button onClick={() => setShown(true)}>Show centered modal</Button>
-      <Modal
-        onClose={() => setShown(false)}
-        shouldCloseOnOverlayClick
-        shouldCloseOnEscapePress
-        title="Centered modal"
-        isShown={isShown}
-      >
-        {() => (
-          <React.Fragment>
-            <Modal.Header title="Title" onClose={() => setShown(false)} />
-            <Modal.Content>Hello from controlled modal window</Modal.Content>
-            <Modal.Controls>
-              <Button
-                size="small"
-                variant="transparent"
-                onClick={() => setShown(false)}
-              >
-                Close
-              </Button>
-              <Button
-                size="small"
-                variant="positive"
-                onClick={() => setShown(false)}
-              >
-                Confirm
-              </Button>
-            </Modal.Controls>
-          </React.Fragment>
-        )}
-      </Modal>
-    </React.Fragment>
-  );
-}
 ```
 
-### Modal position
+### Changing sizes
 
-```jsx
-function ModalExample() {
-  const [isShown, setShown] = React.useState(false);
-  const [position, setPosition] = React.useState('top');
-  return (
-    <React.Fragment>
-      <Form>
-        <Button
-          variant="positive"
-          onClick={() => {
-            setPosition('top');
-            setShown(true);
-          }}
-        >
-          Show top modal
-        </Button>
-        <Button
-          onClick={() => {
-            setPosition('center');
-            setShown(true);
-          }}
-        >
-          Show center modal
-        </Button>
-      </Form>
-      <Modal
-        onClose={() => setShown(false)}
-        shouldCloseOnOverlayClick
-        shouldCloseOnEscapePress
-        title="Centered modal"
-        isShown={isShown}
-        position={position}
-      >
-        {() => (
-          <React.Fragment>
-            <Modal.Header title="Title" onClose={() => setShown(false)} />
-            <Modal.Content>Hello from controlled modal window</Modal.Content>
-            <Modal.Controls>
-              <Button variant="transparent" onClick={() => setShown(false)}>
-                Close
-              </Button>
-              <Button variant="positive" onClick={() => setShown(false)}>
-                Confirm
-              </Button>
-            </Modal.Controls>
-          </React.Fragment>
-        )}
-      </Modal>
-    </React.Fragment>
-  );
-}
+There are 4 different sizes for modals: `small`, `medium`, `large`, `fullWidth`. Pick a size based on the amount of content you have to present in them.
+
+You can also pass an arbitary width in pixels, but we recommend to choose of the predefined values.
+
+```jsx file=../examples/ModalSizesExample.tsx
+
 ```
 
-### Modal sizes
+#### Choosing a fullWidth modal
 
-```jsx
-function ModalExample() {
-  const [isShown, setShown] = React.useState(false);
-  const [size, setSize] = React.useState('medium');
-  return (
-    <React.Fragment>
-      <Form>
-        <FormControl>
-          <FormControl.Label>Select a width</FormControl.Label>
-          <Select
-            onChange={(e) => {
-              setSize(e.target.value);
-            }}
-          >
-            <Select.Option value="small">small</Select.Option>
-            <Select.Option value="medium">medium</Select.Option>
-            <Select.Option value="large">large</Select.Option>
-            <Select.Option value="fullWidth">full width</Select.Option>
-            <Select.Option value="333px">
-              333px (specific width value)
-            </Select.Option>
-          </Select>
-        </FormControl>
-        <Button
-          onClick={() => {
-            setShown(true);
-          }}
-        >
-          Show modal
-        </Button>
-      </Form>
-      <Modal
-        onClose={() => setShown(false)}
-        shouldCloseOnOverlayClick
-        shouldCloseOnEscapePress
-        title="Centered modal"
-        isShown={isShown}
-        size={size}
-      >
-        {() => (
-          <React.Fragment>
-            <Modal.Header title="Title" onClose={() => setShown(false)} />
-            <Modal.Content>Hello from controlled modal window</Modal.Content>
-            <Modal.Controls>
-              <Button variant="transparent" onClick={() => setShown(false)}>
-                Close
-              </Button>
-              <Button variant="positive" onClick={() => setShown(false)}>
-                Confirm
-              </Button>
-            </Modal.Controls>
-          </React.Fragment>
-        )}
-      </Modal>
-    </React.Fragment>
-  );
-}
+As a rule of thumb, `fullWidth` modals shouldn’t be used frequently. Use them modals specially to present imagery or when you need to present a layout with columns in it. Never use `fullWidth` modals for a single column layout as the length of the line will affect readability.
+
+### Setting initial focus
+
+When the modal opens, focus is automatically set to the close button but you have a possibility to set an initial focus to a specific element of your modal dialog.
+
+```jsx file=../examples/ModalInitialFocusExample.tsx
+
 ```
 
-## Content recommendations
+### Using Modal.Controls
 
-- Practice progressive disclosure. Eliminate extra details to keep copy concise and actionable
-- Focus on the objective of the modal dialog. Start each sentence with the objective when possible
-- To enable users to navigate quickly, write concise sentences that are easy to understand at a glance
-- Limit the number of concepts in each sentence. Write simple sentences for all audiences
-- To keep UX copy actionable use present tense for user interactions
-- Avoid “never,” “always” and other absolutes
-- Use contractions when possible
-- Avoid exclamation marks
+Using `Modal.Controls` is optional and you may have a modal without control buttons. When you have control buttons, follow the following rules:
+
+- always use `Button` component with `size="small"`
+- your primary action button should be aligned to the right
+- there should be only one primary action
+- ideally, 1 secondary button should be enough when paired with a primary one. It’s allowed, however, to add a second one for another action.
+
+### Using ModalLauncher
+
+When you want to open a modal from a function (outside of React component code), use [ModalLauncher.](../components/modal-launcher)
+
+## Props (API reference)
+
+<Props of="Modal" storybookPath="/story/components-modal--basic" />
+
+## Content guidelines
+
+For general guidelines around content and how to better write copy, consult this [UX writing page](/guidelines/copy/ux-writing-principles) . Find below a few suggestions on how to elaborate good content for modals:
+
+#### Titles
+
+Make them brief and easily inteligible, following this structure: **verb + noun**
+
+✅ Do:
+
+- Create content type
+- Delete entry?
+- Add to release
+
+❌ Don't:
+
+- Do you want to add this page to your release?
+- Permanently delete this entry?
+- Are you sure you want to delete this entry?
+
+#### Body
+
+The body is the main content of a modal. Therefore, try not to get chatty and keep it to the information that is necessary for users to accomplish their tasks. For more guidance on how to write good content for a modal, refer to [this UX writing document](/guidelines/copy/ux-writing-principles).
+
+#### Buttons label
+
+A good way to think about buttons labels is to mentalize what users will be thinking when pressing the button. Actions should be clear and have a **verb + noun** structure that describes the action.
+
+Buttons in modals should be short and sweet and shouldn’t require a lot of effort from users to understand what’s going to happen.
+
+As a rule of thumb, users shouldn’t feel unclear of the outcomes of clicking on a specific button.
+
+✅ Do: `Add field`, `Remove page`, `Create content type`, `Add page to release`
+
+❌ Don't: `Discard`, `New page`, `New content type`, `Go`, `Add`
+
+Avoid vague actions such as `Remove` (without saying what’s going to be removed) or `Add`.
+
+Another scenario to avoid is to create lengthy buttons and with more that one action being described.
 
 ## Accessibility
 
 - When the modal opens, focus is trapped within it.
-- When the modal opens, focus is automatically set to the close button, or the element from initialFocusRef.
-- When the modal closes, focus returns to the element that was focused before the modal activated, or the element from finalFocusRef.
-- Clicking on the overlay closes the `Modal`.
-- Pressing Esc closes the `Modal`.
+- When the modal opens, focus is automatically set to the close button, or the element from `initialFocusRef`.
+- When the modal closes, focus returns to the element that was focused before the modal activated.
+- By default, clicking on the overlay closes the modal.
+- By default, pressing `Esc` closes the modal.
 - Scrolling is blocked on the elements behind the modal.
-
-## Props
-
-<Props of="Modal" />

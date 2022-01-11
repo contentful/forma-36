@@ -108,7 +108,7 @@ Make sure that your documentation for the component contains following parts:
 1. A short summary of the component.
 2. Variations/types - try to provide the overview of the components variants.
 3. Example of usage - try to add couple of examples, that includes import
-4. Content recommendations - notes about best practices when it comes to the content used in the component, like message or title
+4. Content guidelines - notes about best practices when it comes to the content used in the component, like message or title
 5. Best practices - try to describe in couple of points when to use the component
 6. Accessibility - If possible, we strongly recommend providing accessibility guidelines.
 

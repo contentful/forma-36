@@ -5,17 +5,14 @@ export function getAssetStyles() {
   return {
     relative: css({
       position: 'relative',
-      width: '100%',
     }),
     height100: css({
       height: '100%',
     }),
     image: css({
       width: 'auto',
-      height: '100%',
       maxWidth: '100%',
       maxHeight: '100%',
-      objectFit: 'contain',
     }),
     titleContainer: css({
       opacity: 0,

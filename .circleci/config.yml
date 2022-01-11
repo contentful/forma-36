@@ -102,7 +102,7 @@ jobs:
           command: yarn wait-on http://localhost:3000
       - run:
           name: Run links checker
-          command: yarn blc http://localhost:3000 -ro
+          command: yarn blc http://localhost:3000 -ro --exclude "https://medium.com/contentful-design"
 
   deploy_chromatic:
     docker:
