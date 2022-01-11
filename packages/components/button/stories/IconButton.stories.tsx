@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { Meta } from '@storybook/react/types-6-0';
-import { SectionHeading } from '@contentful/f36-typography';
-import { Flex, Stack } from '@contentful/f36-core';
+import { SectionHeading, Paragraph } from '@contentful/f36-typography';
+import { Flex, Stack, Box } from '@contentful/f36-core';
 import { Icon } from '@contentful/f36-icon';
 import * as icons from '@contentful/f36-icons';
 
@@ -45,6 +45,31 @@ basic.args = {
   variant: 'transparent',
 };
 
+export const ColoredIconInTransparentIconButton = () => {
+  const [isActive, setIsActive] = useState(false);
+  return (
+    <Flex flexDirection="column" isInline>
+      <SectionHeading>Click on the icon to change its color</SectionHeading>
+      <Paragraph>
+        We allow this functionality only for transparent variant of the
+        IconButton component
+      </Paragraph>
+      <Box>
+        <IconButton
+          onClick={() => setIsActive(!isActive)}
+          variant="transparent"
+          icon={
+            <Icon
+              as={icons.StarIcon}
+              variant={isActive ? 'primary' : 'warning'}
+            />
+          }
+          aria-label="Close"
+        />
+      </Box>
+    </Flex>
+  );
+};
 export const Overview = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingL">
