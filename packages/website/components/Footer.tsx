@@ -28,19 +28,6 @@ export const Footer = () => {
       <Flex>
         <Flex flexDirection="column" marginRight="spacing2Xl">
           <Flex marginRight="spacingL" marginBottom="spacingM">
-            <Link href="/playground" passHref>
-              <TextLink
-                href="/playground"
-                variant="secondary"
-                icon={<ExternalLinkIcon />}
-                alignIcon="end"
-              >
-                Playground
-              </TextLink>
-            </Link>
-          </Flex>
-
-          <Flex marginRight="spacingL" marginBottom="spacingM">
             <TextLink
               variant="secondary"
               href="https://github.com/contentful/forma-36"
