@@ -120,8 +120,8 @@ function PageHeader({ title, github, description, status }: PageHeaderProps) {
       {showNote && (
         <Flex flexDirection="column" marginBottom="spacingXl">
           <Note variant="negative" title="Deprecated component">
-            {title} was deprecated in February 2022. It will be deleted from the
-            repository in 6 months.
+            {title} was deprecated in v4. It will be deleted from the
+            repository on 12th July 2022.
           </Note>
         </Flex>
       )}
