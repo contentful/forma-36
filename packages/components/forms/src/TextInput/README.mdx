@@ -5,132 +5,81 @@ status: 'stable'
 section: 'formComponents'
 slug: /components/text-input/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/TextInput'
-storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/form-elements-textinput--basic'
 typescript: ./TextInput.tsx,./input-group/InputGroup.tsx
 ---
 
 `TextInput` is a form component, that allows users to input text or numbers and should be used in a form context.
 
-## How to use TextInput
+`TextInput` is supporting different types of inputs, like `text`, `email`, `file`, `number`, `password`, `search`, `url`, where `text` is the default.
 
-The TextInput component can be configured in a number of different ways. Use this guidance to determine the correct variation based on the context.
+## Import
 
-TextInput is supporting different types of inputs, like `'text' | 'email' | 'file' | 'number' | 'password' | 'search' | 'url'`, where `text` is the default.
-
-## Code examples
-
-### Basic example
-
-```jsx
-<TextInput
-  type="email"
-  name="email"
-  label="Email address"
-  aria-label="Email input"
-/>
+```js static=true
+import { TextInput } from '@contentful/f36-components';
+// or
+import { TextInput } from '@contentful/f36-forms';
 ```
 
-### TextInput with label
+## Examples
 
-In order to create a correct text input the recommendation is to add a label to any kind of input. In order to do that, we provide you couple of additional components that you can use to compose your inputs with labels, help or validation messages.
-Read more about [`FormControl`](/components/form-control)
+### Using as a controlled input
 
-```jsx
-<FormControl>
-  <FormControl.Label>Add your email</FormControl.Label>
-  <TextInput
-    type="email"
-    name="email"
-    label="Email address"
-    placeholder="Email"
-  />
-  <FormControl.HelpText>Provide your email</FormControl.HelpText>
-  <FormControl.ValidationMessage>
-    Format of the email is not correct
-  </FormControl.ValidationMessage>
-</FormControl>
+Controlled components in React are those in which form data is handled by the component’s state.
+
+For using the `TextInput` as a controlled input, you need to:
+
+- Pass `value` property, with this property it will already be a controlled component;
+- Pass `onChange` handler, so you can use it to update the value of the input;
+
+```jsx file=../../examples/TextInputControlledExample.tsx
+
 ```
 
-### TextInput with buttons
+### Using as an uncontrolled input
+
+Uncontrolled components are those for which the form data is handled by the DOM itself. “Uncontrolled” refers to the fact that these components are not controlled by React state.
+
+You can use the `TextInput` as an uncontrolled input, for that you can:
+
+- Set the `defaultValue` property, it will ensure that the initial value of the input is set.
+- Don't set the `value` as it will make the input controlled.
+
+```jsx file=../../examples/TextInputUncontrolledExample.tsx
+
+```
+
+### Using outside of forms
+
+When `TextInput` is used outside of form (without `FormControl`) and has no `<label>` associated with it, you need to specify `aria-label`.
+
+### With action buttons
 
 `TextInput.Group` enables the user to set a button at the start or end of an input, with some spacing or collapsed.
 Example of usage:
 
-```jsx
-// import { LockIcon } from '@contentful/f36-icons';
-// import { IconButton } from '@contentful/f36-button';
-// import { TextInput } from '@contentful/f36-forms';
+```jsx file=../../examples/TextInputGroupExample.tsx
 
-<TextInput.Group>
-  <TextInput
-    aria-label="some-label"
-    id="TextInput1"
-    defaultValue="Some value"
-  />
-  <IconButton variant="secondary" icon={<LockIcon />} aria-label="Lock" />
-</TextInput.Group>
 ```
 
-Example of spaced `TextInput.Group`.
+### Different states
 
-```jsx
-// import { LockIcon } from '@contentful/f36-icons';
-// import { IconButton } from '@contentful/f36-button';
-// import { TextInput } from '@contentful/f36-forms';
+```jsx file=../../examples/TextInputStatesExample.tsx
 
-<TextInput.Group spacing="spacingS">
-  <TextInput
-    aria-label="some-label"
-    id="TextInput2"
-    defaultValue="Some value"
-  />
-  <IconButton variant="secondary" icon={<LockIcon />} aria-label="Lock" />
-</TextInput.Group>
 ```
 
-## TextInput variations
+## Props (API reference)
 
-Keep in mind, that if you need to use an input without a label, you need to pass `aria-label` attribute to create an input that would be accessible to assistive technologies, like screen readers.
+### TextInput
 
-### TextInput with placeholder
+<Props of="TextInput" storybookPath="/story/form-elements-textinput--basic" />
 
-```jsx
-<TextInput
-  label="Token"
-  name="token"
-  id="input-2"
-  aria-label="token"
-  placeholder="Token"
-/>
-```
+### TextInput.Group
 
-### TextInput disabled
-
-```jsx
-<TextInput
-  label="Token"
-  name="token"
-  id="input-2"
-  aria-label="token"
-  isDisabled
-/>
-```
-
-### TextInput invalid
-
-```jsx
-<TextInput
-  label="Token"
-  name="token"
-  id="input-2"
-  aria-label="token"
-  isInvalid
-/>
-```
+<Props of="InputGroup" storybookPath="/story/form-elements-inputgroup--basic" />
 
 ## Content guidelines
 
-- Use direct and succinct copy that helps the user to successfully complete the form
+- Use direct and succinct copy that helps a user to successfully complete a form
 - Do not preface the instructions with introductory text, such as "please"
 - Use sentence style caps (in which only the first word of a sentence or term is capitalized)
 
@@ -139,15 +88,3 @@ Keep in mind, that if you need to use an input without a label, you need to pass
 - To ensure `TextInput` meets accessibility standards, provide `name` and `id`
 - Keep in mind that to provide that accessible inputs, you need to use labels.
 - If you decide, that for some reason you would not use the label, please provide `aria-label` attribute to make it accessible for technologies like screen readers.
-
-## Props
-
-import { Props } from '@contentful/f36-docs-utils';
-
-### TextInput
-
-<Props of="TextInput" />
-
-### TextInput.Group
-
-<Props of="InputGroup" />
