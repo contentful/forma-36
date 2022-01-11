@@ -121,15 +121,6 @@ export const Topbar = () => (
               </a>
             </Link>
           </li>
-          <li className={styles.navListItem}>
-            <Link href="//playground" passHref>
-              <a className={styles.logoLink} href="//playground">
-                <Subheading className={styles.navListLink} marginBottom="none">
-                  Playground
-                </Subheading>
-              </a>
-            </Link>
-          </li>
         </ul>
       </nav>
     </div>

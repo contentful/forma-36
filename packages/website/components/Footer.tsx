@@ -2,6 +2,7 @@ import React from 'react';
 import { TextLink, Flex } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/core';
+import Link from 'next/link';
 import contentfulLogoSVG from '../resources/icons/contentful-logo.svg';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
 
@@ -26,6 +27,18 @@ export const Footer = () => {
     <footer css={styles.footer}>
       <Flex>
         <Flex flexDirection="column" marginRight="spacing2Xl">
+          <Flex marginRight="spacingL" marginBottom="spacingM">
+            <Link href="/playground" passHref>
+              <TextLink
+                href="/playground"
+                variant="secondary"
+                icon={<ExternalLinkIcon />}
+                alignIcon="end"
+              >
+                Playground
+              </TextLink>
+            </Link>
+          </Flex>
           <Flex marginRight="spacingL" marginBottom="spacingM">
             <TextLink
               variant="secondary"
