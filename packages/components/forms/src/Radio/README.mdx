@@ -26,6 +26,8 @@ import { Radio } from '@contentful/f36-forms';
 
 ### Using as a controlled input
 
+Controlled components in React are those in which form data is handled by the component’s state.
+
 For using the `Radio` as a controlled input, you need to:
 
 - Pass the `isChecked` property, with this property it will already be a controlled component;
@@ -33,123 +35,37 @@ For using the `Radio` as a controlled input, you need to:
 
 Setting the `isChecked` will already define it as a controlled input.
 
-```jsx static=true
-const ExampleControlled = () => {
-  const [value, setValue] = useState(null);
-  return (
-    <React.Fragment>
-      <Radio
-        id="radio1"
-        name="radio-controlled"
-        value="yes"
-        isChecked={value === 'yes'}
-        onChange={(e) => setValue('yes')}
-      >
-        Yes
-      </Radio>
-      <Radio
-        id="radio2"
-        name="radio-controlled"
-        value="no"
-        isChecked={value === 'no'}
-        onChange={(e) => setValue('no')}
-      >
-        No
-      </Radio>
-    </React.Fragment>
-  );
-};
+```jsx file=../../examples/RadioControlledExample.tsx
+
 ```
 
 ### Using as an uncontrolled input
+
+Uncontrolled components are those for which the form data is handled by the DOM itself. “Uncontrolled” refers to the fact that these components are not controlled by React state.
 
 You can use the `Radio` as an uncontrolled input, for that you can:
 
 - Set the `defaultChecked` property, it will ensure that the checked state can be altered normally.
 - Don't set the `isChecked` as it will make the input controlled.
 
-```jsx static=true
-<React.Fragment>
-  <Radio id="radio1" name="radio-controlled" value="yes" defaultChecked={true}>
-    Yes
-  </Radio>
-  <Radio id="radio2" name="radio-controlled" value="no">
-    No
-  </Radio>
-</React.Fragment>
+```jsx file=../../examples/RadioUncontrolledExample.tsx
+
 ```
 
-### Using with Group
+### Using with Radio.Group
 
 We also provide the `Radio.Group` component that helps when using multiple radios. You can pass some common properties on the `Radio.Group` level and they will be passed to the radios inside the group.
 
 - `spacing`: This will set how much space should be between the inputs;
 - `name`: By setting this property on the `Radio.Group` level, you will set it automatically for all the radios in the group;
-- `defaultValue`: This accepts a value that set the `defaultChecked` property for the radio that have the same value;
-- `value`: Same as `defaultValue` but this one sets the `isChecked` property, making the radio group controlled;
+- `defaultValue`: This accepts a value that set the `defaultChecked` property for the radio that have the same value **(uncontrolled)**;
+- `value`: Same as `defaultValue` but this one sets the `isChecked` property, making the radio group controlled **(controlled)**;
 - `onChange`: Handler that will be executed when any radio inside the group receives the event of change.
 
-```jsx
-<FormControl as="fieldset">
-  <FormControl.Label as="legend" marginBottom="none">
-    Radio group options
-  </FormControl.Label>
-  <Paragraph>Subtitle with more information if needed</Paragraph>
-  <Radio.Group name="radio-options" defaultValue="option 1">
-    <Radio value="option 1" id="option-1" helpText="Help text for option 1">
-      Option 1
-    </Radio>
-    <Radio value="option 2" id="option-2" helpText="Help text for option 2">
-      Option 2
-    </Radio>
-  </Radio.Group>
-</FormControl>
-```
+`Radio.Group` is a **recommended** way of using `Radio` when using it within forms.
 
-```jsx static=true
-const ExampleRadio = () => {
-  const [value, setValue] = useState(null);
-  return (
-    <React.Fragment>
-      <Radio
-        id="radio1"
-        name="radio"
-        value="yes"
-        isChecked={value === 'yes'}
-        onChange={(e) => setValue('yes')}
-      >
-        Yes
-      </Radio>
-      <Radio
-        id="radio2"
-        name="radio"
-        value="no"
-        isChecked={value === 'no'}
-        onChange={(e) => setValue('no')}
-      >
-        No
-      </Radio>
-    </React.Fragment>
-  );
-};
-```
+```jsx file=../../examples/RadioGroupExample.tsx
 
-### Checked or Disabled
-
-The `Radio` can be rendered as checked, with the `isChecked` property.
-
-```jsx
-<Radio id="radio3" name="radio3" isChecked onChange={() => {}}>
-  Yes
-</Radio>
-```
-
-The `Radio` can be rendered as disabled with the `isDisabled` property.
-
-```jsx
-<Radio id="radio4" name="radio4" isDisabled>
-  Yes
-</Radio>
 ```
 
 ## Props (API reference)
