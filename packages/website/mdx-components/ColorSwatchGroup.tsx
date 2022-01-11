@@ -22,7 +22,7 @@ export function ColorSwatchGroup({ colorGroup }: Props) {
   const colors = tokens[colorGroup];
 
   return (
-    <Grid columns={5} rowGap="spacingM" marginBottom="spacingL">
+    <Grid columns={4} rowGap="spacingM" marginBottom="spacingL">
       {Object.keys(colors).map((color, idx) => {
         const value = colors[color];
 
