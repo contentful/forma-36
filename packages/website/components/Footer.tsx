@@ -60,7 +60,7 @@ export const Footer = () => {
               icon={<ExternalLinkIcon />}
               alignIcon="end"
             >
-              Contentful desing blog
+              Contentful design blog
             </TextLink>
           </Flex>
 
