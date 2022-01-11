@@ -172,7 +172,7 @@ export const Tooltip = ({
     ...popperStyles.popper,
   };
 
-  if (!content || isDisabled) {
+  if (!content || !isDisabled) {
     return (
       <Box as={HtmlTag} className={targetWrapperClassName}>
         {children}
