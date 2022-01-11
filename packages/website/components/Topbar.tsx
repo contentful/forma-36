@@ -15,7 +15,7 @@ const styles = {
     color: ${tokens.blue700};
     padding: 0 ${tokens.spacingXl};
     height: ${TopbarHeight};
-    box-shadow: inset 0px -1px 0px #e7ebee;
+    border-bottom: 1px solid ${tokens.gray300};
   `,
   logoLink: css`
     display: flex;
@@ -60,13 +60,14 @@ const Logo = () => (
     height="32px"
     viewBox="0 0 90 90"
     enableBackground="new 0 0 90 90"
+    fill={tokens.blue700}
   >
-    <circle fill={tokens.blue700} cx="45" cy="10" r="10" />
-    <circle fill={tokens.blue700} cx="10" cy="10" r="10" />
-    <circle fill={tokens.blue700} cx="80" cy="10" r="10" />
-    <circle fill={tokens.blue700} cx="10" cy="45" r="10" />
-    <circle fill={tokens.blue700} cx="45" cy="45" r="10" />
-    <circle fill={tokens.blue700} cx="10" cy="80" r="10" />
+    <circle cx="45" cy="10" r="10" />
+    <circle cx="10" cy="10" r="10" />
+    <circle cx="80" cy="10" r="10" />
+    <circle cx="10" cy="45" r="10" />
+    <circle cx="45" cy="45" r="10" />
+    <circle cx="10" cy="80" r="10" />
   </svg>
 );
 
