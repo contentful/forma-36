@@ -2,7 +2,6 @@ import React from 'react';
 import { TextLink, Flex } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/core';
-import Link from 'next/link';
 import contentfulLogoSVG from '../resources/icons/contentful-logo.svg';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
 
