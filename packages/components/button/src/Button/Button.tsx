@@ -51,17 +51,33 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
     className,
   );
 
-  const iconContent = (icon) =>
-    !isLoading && (
-      <Flex
-        as="span"
-        className={styles.buttonIcon({ hasChildren: !!children })}
-      >
-        {React.cloneElement(icon, {
-          size: icon.props.size ?? `${size === 'large' ? 'medium' : 'small'}`,
-        })}
-      </Flex>
+  const iconContent = (icon) => {
+    const defaultIconColor: {
+      [Property in ButtonInternalProps['variant']]: string;
+    } = {
+      primary: 'white',
+      secondary: 'secondary',
+      positive: 'white',
+      negative: 'white',
+      transparent: 'secondary',
+    };
+
+    return (
+      !isLoading && (
+        <Flex
+          as="span"
+          className={styles.buttonIcon({ hasChildren: !!children, variant })}
+        >
+          {React.cloneElement(icon, {
+            size: icon.props.size ?? `${size === 'large' ? 'medium' : 'small'}`,
+            // we want to allow variants for icons, only for the transparent IconButton
+            variant:
+              (!children && icon.props.variant) || defaultIconColor[variant],
+          })}
+        </Flex>
+      )
     );
+  };
 
   const commonContent = (
     <>

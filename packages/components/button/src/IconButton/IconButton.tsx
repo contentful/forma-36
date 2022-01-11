@@ -34,15 +34,6 @@ function _IconButton<
     icon,
     ...otherProps
   } = props;
-  const defaultIconColor: {
-    [Property in ButtonInternalProps['variant']]: string;
-  } = {
-    primary: 'white',
-    secondary: 'secondary',
-    positive: 'white',
-    negative: 'white',
-    transparent: 'secondary',
-  };
 
   return (
     <Button
@@ -50,10 +41,7 @@ function _IconButton<
       ref={ref}
       variant={variant}
       {...otherProps}
-      startIcon={React.cloneElement(icon, {
-        variant: defaultIconColor[variant],
-        ...icon.props,
-      })}
+      startIcon={icon}
     />
   );
 }
