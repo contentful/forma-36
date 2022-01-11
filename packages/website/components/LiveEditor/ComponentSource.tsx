@@ -61,28 +61,38 @@ const styles = {
     font-family: ${tokens.fontStackPrimary};
     border-radius: 0 0 ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium};
   `,
-  copyButton: css`
-    position: absolute;
-    bottom: ${tokens.spacingS};
-    right: calc(200px + ${tokens.spacingS});
-    z-index: 1000;
-  `,
-  playgroundButton: css`
+  floatingControls: css`
     position: absolute;
     bottom: ${tokens.spacingS};
     right: ${tokens.spacingS};
-    z-index: 1000;
+    z-index: 2;
+  `,
+  copyButton: css`
+    button {
+      border-radius: ${tokens.borderRadiusMedium};
+    }
+  `,
+  playgroundButton: css`
+    margin-left: ${tokens.spacingS};
     font-family: ${tokens.fontStackPrimary};
   `,
 };
 
-export function ComponentSource({ children }: { children: string }) {
+export function ComponentSource({
+  children,
+  file,
+}: {
+  children: string;
+  file?: string;
+}) {
   const [showSource, setShowSource] = useState(true);
   const router = useRouter();
 
   const handleToggle = () => {
     setShowSource((prevState) => !prevState);
   };
+
+  const isExampleFromFile = Boolean(file);
 
   return (
     <Flex flexDirection="column" className={styles.root}>
@@ -99,21 +109,26 @@ export function ComponentSource({ children }: { children: string }) {
           <>
             <LiveError className={styles.error} />
             <div style={{ position: 'relative' }}>
-              <CopyButton
-                tooltipProps={{ placement: 'left' }}
-                className={styles.copyButton}
-                value={children}
-              />
-              <Button
-                className={styles.playgroundButton}
-                endIcon={<ExternalLinkIcon />}
-                onClick={() => {
-                  const href = `/playground?code=${coder.encode(children)}`;
-                  router.push(href, href);
-                }}
-              >
-                Open in Playground
-              </Button>
+              <Flex className={styles.floatingControls}>
+                <CopyButton
+                  tooltipProps={{ placement: 'left' }}
+                  className={styles.copyButton}
+                  value={children}
+                />
+                {isExampleFromFile && (
+                  <Button
+                    className={styles.playgroundButton}
+                    endIcon={<ExternalLinkIcon />}
+                    onClick={() => {
+                      const href = `/playground?code=${coder.encode(children)}`;
+                      router.push(href, href);
+                    }}
+                  >
+                    Open in Playground
+                  </Button>
+                )}
+              </Flex>
+
               <LiveEditor
                 style={{ paddingBottom: '45px', minHeight: '100px' }}
               />

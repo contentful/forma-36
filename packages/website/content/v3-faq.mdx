@@ -4,28 +4,12 @@ slug: '/v3-faq/'
 section: 'forma36Version3'
 ---
 
-## How do I migrate my existing project to use Forma 36 version 4?
-
-We have built automated tools to migrate projects automatically. In order to migrate your existing project to use version 4 of Forma 36, all you need to do is to run our codemods - [detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#How-to-migrate-your-packages-to-v4).
-
-There are several components that do not have a codemod and must be migrated manually. Below is a list of these components, with links to detailed documentation on how to migrate them.
-
-- [Accordion](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#accordion)
-- [Asset](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#asset)
-- [Autocomplete](https://v4.f36.contentful.com/components/autocomplete)
-- [DateTime](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#datetime)
-- [ToggleButton](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#togglebutton)
-- [Dropdown](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#dropdown)
-- [Workbench](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#workbench)
-- [Tabs](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#tabs)
-- [Switch](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#switch)
-
 ## What does Forma 36 v4 mean for developers?
 
-- **Smaller bundles for faster apps** In v4, we have split components into separate packages. This means that you can now use just only components you need, without adding the full suite of components to your bundle. This change will make your bundle size much smaller and improve the performance of your apps — particularly for apps that only use a few components from the library. For example, you could import only a Button component, and tree shaking will make sure that only this component will end up in your bundle. To illustrate that: when importing just one component, the bundle size for version 4 is around 85% smaller than for [version 3](https://v3.f36.contentful.com/).
-- **We’ve added emotion to our components** This means you don’t have to import separate CSS into your project anymore
-- **A consistent API aligned with our code style guide** This means all the components are following the same structure, name convention, the same for properties.
-- **Compound patterns in our API** This means you don't have to import all the components separately. For example:
+- **Smaller bundles for faster apps** - In v4, components are in separate packages, meaning you can use those you need without adding the full suite to your bundle. This change makes bundle sizes much smaller and improves app performance — particularly for those only using a few components from the library. For example, you can import a Button component and tree shaking will make sure its the only component that ends up in your bundle. By importing just one component, v4 bundle sizes become 85% smaller than those in [v3](https://v3.f36.contentful.com/).
+- **We’ve added [Emotion](https://emotion.sh/docs/introduction) to our components** - With this change, every component encapsulates their own styles, there’s no need to import separate Forma 36 CSS file into your project anymore.
+- **Consistency in code style guide** - In v4, our API and code style guide align. This means all the components follow the same structure and name convention — they’re the same across all properties.
+- **No more importing separate components** - With v4, our APIs have compound patterns, eliminating manual work on your end. Here’s an example of what that looks like:
 
 Instead of:
 
@@ -47,21 +31,14 @@ import { List } from ‘@contentful/f36-components’
 
 ## What does Forma 36 v4 mean for enterprise customers?
 
-- **Accessibility** We have focussed on adding key accessibility improvements to our React components. We believe that the web should be for everyone, so v4 brings Web Content Access Guidelines (WCAG) level AAA compliance in all of our React components. Many components have been updated to fulfill the a11y requirements, issues related to accessibility brought by customers were resolved in this release.
+- **Greater accessibility** - We believe that the web should be accessible to everyone, so v4 brings Web Content Access Guidelines (WCAG) Level AAA compliance to all of our React components. We’ve updated many components to fulfill a11y requirements and have resolved many of the accessibility issues previously voiced by customers.
 
-- **Speed** In v4, we have split components into separate packages. This means that now you can use just the components you need, without adding the full suite of components to your bundle. This change will make your bundle size much smaller and improve the performance of your apps — particularly for apps that only use a few components from the library. To illustrate that: when importing just one component, the bundle size for version 4 is around 85% smaller than for [version 3](https://v3.f36.contentful.com/).
+- **Accelerated speed** - V4 splits components into separate packages, meaning you can use those you need without adding the full suite to your bundle. This change makes bundle sizes much smaller and improves app performance — particularly for those only using a few components from the library. By importing just one component, v4 bundle sizes become 85% smaller than those in [v3](https://v3.f36.contentful.com/).
 
-## Will I need to redesign my app?
+## How do I migrate my existing project to use Forma 36 version 4?
 
-No. There are no major visual changes in version 4, so there is no need to redesign your apps. Use [our migration guide](/migration-v3-to-v4) to bump your apps to the new version.
+We built tools that enable automatic migration, so that the process is fast and straightforward. To migrate your existing project to Forma 36 v4, simply run our codemods. Here’s [detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#How-to-migrate-your-packages-to-v4) on how to do that.
 
-## Why rename things (components, properties), instead of leaving them as they are?
-
-In order to fix some of the issues we needed to remove or rename components. For example, in the past you were using Dropdown component
-
-## How much effort is required to migrate the app from version 3 to version 4?
-
-To make the migration as easy as possible, we have built tools to automate the process. ll.
 To migrate your existing project to use version 4, you need to run:
 
 ```bash static=true
@@ -70,7 +47,56 @@ npx @contentful/f36-codemod
 
 Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
 
-Select the first option from the list: run-all-v4. This codemod will adjust your package.json, install new packages, remove old ones, and also remove the CSS imports required for [version 3](https://v3.f36.contentful.com/).
+Select the first option from the list: run-all-v4. This codemod will adjust your package.json, install new packages, remove old ones, and also remove the CSS imports required for version 3.
+
+Several components don’t have codemods and must be migrated manually. Here’s a list of those components with linked documentation on how to migrate them:
+
+- [Accordion](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#accordion)
+- [Asset](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#asset)
+- [Autocomplete](https://v4.f36.contentful.com/components/autocomplete)
+- [DateTime](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#datetime)
+- [ToggleButton](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#togglebutton)
+- [Dropdown](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#dropdown)
+- [Workbench](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#workbench)
+- [Tabs](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#tabs)
+- [Switch](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#switch)
+
+## When do I need to update my apps to v4?
+
+V3 will be supported until July 12, 2022, six months after the release of v4. Although v3 will be available after this, it won’t be updated further or supported by Contentful. For these reasons, we recommend migrating to v4 within the six-month transition period.
+
+Until July 12, 2022, Contentful will support Forma 36 v3 for the following:
+
+- Minor API changes
+- Bug and issue fixes
+- Support for issues while migrating from v3 to v4
+
+## Will I need to redesign my app?
+
+No. There are no major visual changes in v4, so there is no need to redesign apps. To migrate your apps to the new version, use our [migration guide](/migration-v3-to-v4).
+
+## Why rename things (components, properties), instead of leaving them as they are?
+
+To resolve some issues, we needed to remove or rename components
+
+For example the Dropdown component was being used to cover many use cases and its API got very complex, leading to issues for our users. Additionally, it did not meet the a11y requirements that were key for v4. Therefore, we split this component into smaller ones that are more suitable for specific use cases:
+
+- **Menu** offers a list of choices to the user, such as a set of actions or links. Menu uses the Popover component as a base. It covers most of the examples where you previously used the `Dropdown component.
+- **Popover** is used to display some content on top of another, and should be paired with a clickable trigger element. It is a base component for Menu, but not styled and not handled. If you need to create a specific, custom solution, then this would be the right choice.
+- **Autocomplete** is an input field that provides selectable options as a user types into it. It allows users to quickly search through and select from large collections of options.
+
+## How much effort is it to migrate apps from v3 to v4??
+
+To make the migration as easy as possible, we have built tools to automate the process.
+To migrate your existing project to use version 4, you need to run:
+
+```bash static=true
+npx @contentful/f36-codemod
+```
+
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
+
+Select the first option from the list: run-all-v4. This codemod will adjust your package.json, install new packages, remove old ones, and also remove the CSS imports required for version 3.
 
 The following components do not have a codemod, so you must migrate them manually and we provide detailed docs for them on how to do it:
 
