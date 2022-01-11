@@ -10,6 +10,7 @@ import tokens from '@contentful/f36-tokens';
 const styles = {
   root: css({
     padding: tokens.spacingM,
+    borderRadius: tokens.borderRadiusMedium,
   }),
 };
 
