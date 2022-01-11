@@ -89,40 +89,45 @@ export function Sidebar({ currentPage = '/' }: Props) {
       className={styles.nav}
     >
       <List className={styles.list}>
-        {currentPage.includes('guidelines') && (
-          <SidebarSection
-            title="Guidelines"
-            links={sidebarLinks.guidelines}
-            currentPage={currentPage}
-          />
-        )}
-        {currentPage.includes('tokens') && (
-          <SidebarSection
-            title="Tokens"
-            links={sidebarLinks.tokens}
-            currentPage={currentPage}
-          />
-        )}
-        {currentPage.includes('components') && (
+        {currentPage.includes('guidelines') ||
+        currentPage.includes('tokens') ||
+        currentPage.includes('components') ? (
           <>
-            <SidebarSection
-              title="Components"
-              links={components}
-              currentPage={currentPage}
-            />
-            <SidebarSection
-              title="Utils"
-              links={sidebarLinks.utils}
-              currentPage={currentPage}
-            />
-            <SidebarSection
-              title="Integrations"
-              links={sidebarLinks.integrations}
-              currentPage={currentPage}
-            />
+            {currentPage.includes('guidelines') && (
+              <SidebarSection
+                title="Guidelines"
+                links={sidebarLinks.guidelines}
+                currentPage={currentPage}
+              />
+            )}
+            {currentPage.includes('tokens') && (
+              <SidebarSection
+                title="Tokens"
+                links={sidebarLinks.tokens}
+                currentPage={currentPage}
+              />
+            )}
+            {currentPage.includes('components') && (
+              <>
+                <SidebarSection
+                  title="Components"
+                  links={components}
+                  currentPage={currentPage}
+                />
+                <SidebarSection
+                  title="Utils"
+                  links={sidebarLinks.utils}
+                  currentPage={currentPage}
+                />
+                <SidebarSection
+                  title="Integrations"
+                  links={sidebarLinks.integrations}
+                  currentPage={currentPage}
+                />
+              </>
+            )}
           </>
-        )}
-        {currentPage.includes('') && (
+        ) : (
           <>
             <SidebarLink
               isActive={isLinkActive('/getting-started', currentPage)}
