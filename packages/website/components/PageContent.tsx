@@ -6,7 +6,6 @@ import {
   TextLink,
   Stack,
   Heading,
-  Paragraph,
   Text,
   Note,
 } from '@contentful/f36-components';
@@ -19,44 +18,58 @@ import { TableOfContent, HeadingType } from './TableOfContent';
 const styles = {
   grid: css({
     display: 'grid',
+    gridAutoRows: 'min-content',
     gridTemplateColumns: '8fr 2fr',
+    gridTemplateAreas: `
+      "header header"
+      "content toc"
+    `,
     flex: 1, // this is necessary to make the footer sticky to the bottom of the page
     padding: `0 ${tokens.spacingL}`,
     '@media screen and (min-width: 1440px)': {
       gridTemplateColumns: '1fr 7fr 2fr',
+      gridTemplateAreas: `
+        ". header header"
+        ". content toc"
+      `,
     },
     '@media screen and (min-width: 1700px)': {
       gridTemplateColumns: '1fr 6fr 2fr 1fr',
+      gridTemplateAreas: `
+        ". header header ."
+        ". content toc ."
+      `,
     },
   }),
   header: css({
+    gridArea: 'header',
     display: 'grid',
     gridTemplateColumns: '8fr 2fr',
-    paddingTop: tokens.spacing2Xl,
+    gridAutoRows: 'min-content',
+    paddingTop: tokens.spacing4Xl,
     paddingBottom: tokens.spacingM,
     borderBottom: `1px solid ${tokens.gray300}`,
     marginBottom: tokens.spacing2Xl,
-    gridColumnStart: 1,
-    gridColumnEnd: 3,
     '@media screen and (min-width: 1440px)': {
       gridTemplateColumns: '7fr 2fr',
-      gridColumnStart: 2,
-      gridColumnEnd: 4,
     },
     '@media screen and (min-width: 1700px)': {
       gridTemplateColumns: '6fr 2fr',
     },
+    // this selector will make sure that all children of the header will start at the first column of its grid
+    '> *': {
+      gridColumnStart: 1,
+    },
   }),
   content: css({
-    '@media screen and (min-width: 1440px)': {
-      gridColumnStart: 2,
-    },
+    gridArea: 'content',
   }),
   article: css({
     // this style makes sure that the first element of the content doesn't have extra spacing
     '> *:first-child': { marginTop: 0 },
   }),
   tableOfContent: css({
+    gridArea: 'toc',
     display: 'flex',
     flexDirection: 'column',
     position: 'sticky',
@@ -71,17 +84,22 @@ const styles = {
 interface PageHeaderProps {
   title: FrontMatter['title'];
   github?: FrontMatter['github'];
-  intro?: FrontMatter['intro'];
-  extra?: FrontMatter['extra'];
+  description?: FrontMatter['description'];
   status?: FrontMatter['status'];
 }
 
-function PageHeader({ title, github, intro, extra, status }: PageHeaderProps) {
+function PageHeader({ title, github, description, status }: PageHeaderProps) {
+  const showNote = status === 'deprecated';
+
   return (
     <header className={styles.header}>
-      <Flex alignItems="flex-start" justifyContent="space-between">
+      <Flex
+        alignItems="flex-start"
+        justifyContent="space-between"
+        marginBottom={showNote ? 'spacingXl' : 'spacingXs'}
+      >
         {title && (
-          <DisplayText as="h1" marginBottom="spacingXs">
+          <DisplayText as="h1" marginBottom="none">
             {title}
           </DisplayText>
         )}
@@ -99,44 +117,33 @@ function PageHeader({ title, github, intro, extra, status }: PageHeaderProps) {
         )}
       </Flex>
 
-      {status === 'deprecated' && (
-        <Note
-          variant="negative"
-          title="Deprecated component"
-          className={css({ gridColumnStart: 1, marginTop: tokens.spacingXl })}
-        >
-          {title} was deprecated in February 2022. It will be deleted from the
-          repository in 6 months.
-        </Note>
+      {showNote && (
+        <Flex flexDirection="column" marginBottom="spacingXl">
+          <Note variant="negative" title="Deprecated component">
+            {title} was deprecated in February 2022. It will be deleted from the
+            repository in 6 months.
+          </Note>
+        </Flex>
       )}
 
-      {(intro || extra) && (
-        <Flex flexDirection="column" className={css({ gridRowStart: 2 })}>
-          {intro && (
-            <Text as="p" fontSize="fontSizeXl" marginBottom="spacingL">
-              {intro}
-            </Text>
-          )}
-          {extra && <Paragraph marginBottom="none">{extra}</Paragraph>}
-        </Flex>
+      {description && (
+        <Text as="p" fontSize="fontSizeXl">
+          {description}
+        </Text>
       )}
     </header>
   );
 }
 
-function PageFooter(props: { github?: FrontMatter['github'] }) {
+function PageFooter({ github }: { github?: FrontMatter['github'] }) {
   return (
     <Flex flexDirection="column" marginTop="spacing2Xl">
       <Heading as="h2" id="help-improve-this-page">
         Help improve this page
       </Heading>
       <Stack>
-        {props.github && (
-          <TextLink
-            href={props.github}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        {github && (
+          <TextLink href={github} target="_blank" rel="noopener noreferrer">
             Edit on Github
           </TextLink>
         )}
@@ -158,15 +165,14 @@ export function PageContent({
   frontMatter,
   children,
 }: PageContentProps) {
-  const { title, github, intro, extra, status } = frontMatter;
+  const { title, github, description, status } = frontMatter;
 
   return (
     <div className={styles.grid}>
       <PageHeader
         title={title}
         github={github}
-        intro={intro}
-        extra={extra}
+        description={description}
         status={status}
       />
 
