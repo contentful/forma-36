@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { Meta } from '@storybook/react/types-6-0';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex, Stack } from '@contentful/f36-core';
@@ -45,6 +45,21 @@ basic.args = {
   variant: 'transparent',
 };
 
+export const SetActiveStar = () => {
+  const [isSelected, setIsSelected] = useState(false);
+
+  return (
+    <IconButton
+      variant="transparent"
+      size="small"
+      aria-label="star"
+      onClick={() => setIsSelected(!isSelected)}
+      icon={
+        <Icon as={icons.StarIcon} variant={isSelected ? 'primary' : 'muted'} />
+      }
+    />
+  );
+};
 export const Overview = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingL">

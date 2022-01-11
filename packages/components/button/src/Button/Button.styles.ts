@@ -139,9 +139,6 @@ const getButtonIconStyle = ({ hasChildren }) => {
 
   return css({
     ...margin,
-    '& svg': {
-      fill: 'currentColor',
-    },
   });
 };
 
