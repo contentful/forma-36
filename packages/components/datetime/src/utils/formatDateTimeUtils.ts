@@ -35,7 +35,7 @@ export function formatDateAndTime(
     case 'time':
       template = 'h:mm A'; // 3:45 PM
       break;
-    case 'full-with-seconds':
+    case 'fullWithSeconds':
       template = 'ddd, DD MMM YYYY [at] h:mm:ss A'; // Tue, 17 Aug 2021 at 3:45:67 PM
       break;
     default:

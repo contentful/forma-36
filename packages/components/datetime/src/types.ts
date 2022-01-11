@@ -1,7 +1,7 @@
 export type DateType = Date | string | number;
 
 export type DateFormat =
-  | 'full-with-seconds'
+  | 'fullWithSeconds'
   | 'full'
   | 'time'
   | 'weekday'

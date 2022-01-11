@@ -13,8 +13,8 @@ describe('formatDateAndTime', () => {
     expect(expected).toBe(today.format('ddd, DD MMM YYYY [at] h:mm A'));
   });
 
-  it('returns a string with the "full-with-seconds" format if no format option is passed', () => {
-    const expected = formatDateAndTime(today.format(), 'full-with-seconds');
+  it('returns a string with the "fullWithSeconds" format if no format option is passed', () => {
+    const expected = formatDateAndTime(today.format(), 'fullWithSeconds');
 
     expect(expected).toBe(today.format('ddd, DD MMM YYYY [at] h:mm:ss A'));
   });
