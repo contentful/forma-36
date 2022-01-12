@@ -11,6 +11,7 @@ const styles = {
   root: css({
     padding: tokens.spacingM,
     borderRadius: tokens.borderRadiusMedium,
+    marginBottom: tokens.spacingL,
   }),
 };
 
