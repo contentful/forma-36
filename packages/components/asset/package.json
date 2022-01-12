@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-asset",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Forma 36: Asset component",
   "scripts": {
     "build": "parcel build"
