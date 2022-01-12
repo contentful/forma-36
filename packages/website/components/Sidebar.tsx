@@ -108,11 +108,6 @@ export function Sidebar({ currentPage = '/' }: Props) {
           </SidebarLink>
           <Box marginBottom="spacingL" />
           <SidebarSection
-            title="Forma 36 version 3"
-            links={sidebarLinks.forma36Version3}
-            currentPage={currentPage}
-          />
-          <SidebarSection
             title="Guidelines"
             links={sidebarLinks.guidelines}
             currentPage={currentPage}
@@ -140,6 +135,11 @@ export function Sidebar({ currentPage = '/' }: Props) {
           <SidebarSection
             title="Integrations"
             links={sidebarLinks.integrations}
+            currentPage={currentPage}
+          />
+          <SidebarSection
+            title="Forma 36 version 3"
+            links={sidebarLinks.forma36Version3}
             currentPage={currentPage}
           />
         </List>
