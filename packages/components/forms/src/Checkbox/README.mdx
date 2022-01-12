@@ -11,7 +11,7 @@ typescript: ./Checkbox.tsx,./CheckboxGroup.tsx
 
 `Checkbox` is a form component that shows a checkbox with it's label. `Checkbox.Group` is a component that makes it easier to handle group of checkboxes.
 
-If you want to allow a user to select only one out of multiple optionsIf you want to let a user select multiple options, use the [Radio](/components/radio) component.
+If you want to allow a user to select only one out of multiple options, use the [Radio](/components/radio) component.
 
 ## Import
 
@@ -24,6 +24,8 @@ import { Checkbox } from '@contentful/f36-forms';
 ## Examples
 
 ### Using as a controlled input
+
+Controlled components in React are those in which form data is handled by the component’s state.
 
 For using the Checkbox as a controlled input, you need to:
 
@@ -38,6 +40,8 @@ Setting the `isChecked` will already define it as a controlled input.
 
 ### Using as an uncontrolled input
 
+Uncontrolled components are those for which the form data is handled by the DOM itself. “Uncontrolled” refers to the fact that these components are not controlled by React state.
+
 You can use the Checkbox as an uncontrolled input, for that you can:
 
 - Set the `defaultChecked` property, it will ensure that the checked state can be altered normally.
@@ -49,8 +53,6 @@ You can use the Checkbox as an uncontrolled input, for that you can:
 
 ### Using with Group
 
-import { FormControl } from '@contentful/f36-forms';
-
 We also provide the `Checkbox.Group` component that helps when using multiple checkboxes. You can pass some common properties on the `Checkbox.Group` level and they will be passed to the checkboxes inside the group.
 
 - `spacing`: This will set how much space should be between the inputs;
@@ -58,6 +60,8 @@ We also provide the `Checkbox.Group` component that helps when using multiple ch
 - `defaultValue`: This accepts an array that set the `defaultChecked` property for checkboxes which the value exists in the array;
 - `value`: Same as `defaultValue` but this one sets the `isChecked` property, making the checkbox group controlled;
 - `onChange`: Handler that will be executed when any checkbox inside the group receives the event of change.
+
+`Checkbox.Group` is a **recommended** way of using `Checkbox` when using it within forms.
 
 ```jsx file=../../examples/CheckboxGroupExample.tsx
 
