@@ -2,6 +2,9 @@ import React from 'react';
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 import Link from 'next/link';
+// eslint-disable-next-line
+// @ts-ignore
+import pkg from '../../forma-36-react-components/package.json';
 
 export const TopbarHeight = '70px';
 
@@ -25,6 +28,11 @@ const styles = {
     font-weight: ${tokens.fontWeightDemiBold};
     font-size: ${tokens.fontSizeXl};
     margin-left: ${tokens.spacingL};
+  `,
+  versionText: css`
+    font-weight: ${tokens.fontWeightDemiBold};
+    font-size: ${tokens.fontSizeL};
+    margin-left: ${tokens.spacingM};
   `,
   searchNavContainer: css`
     display: flex;
@@ -77,6 +85,7 @@ export const Topbar = () => (
         <div className={styles.logoText}>Forma 36</div>
       </a>
     </Link>
+    <div className={styles.versionText}>v{pkg.version}</div>
 
     <div className={styles.searchNavContainer}>
       <nav>
