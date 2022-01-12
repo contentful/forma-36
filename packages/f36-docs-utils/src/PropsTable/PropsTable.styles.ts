@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-export const getPropsStyles = () => ({
+export const getPropsTableStyles = () => ({
   list: css({
     listStyleType: 'none',
     padding: 0,
