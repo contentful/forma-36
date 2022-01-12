@@ -8,7 +8,7 @@ import { css } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
 import { Icon, SectionHeading } from '@contentful/forma-36-react-components';
 
-import DocSearch from './DocSearch';
+// import DocSearch from './DocSearch';
 
 const styles = {
   sidemenu: css`
@@ -221,7 +221,7 @@ MenuList.defaultProps = {
 const Navigation = ({ menuItems, currentPath }) => {
   return (
     <div css={styles.sidemenu}>
-      <DocSearch />
+      {/* <DocSearch /> */}
 
       <nav css={styles.navList} aria-label="Main Navigation">
         <MenuList
