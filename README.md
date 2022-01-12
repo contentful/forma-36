@@ -13,7 +13,7 @@
 - [Table of contents](#table-of-contents)
   - [Creating new packages](#creating-new-packages)
 - [Development](#development)
-  - [Storybook for forma-36-react-components](#storybook-for-forma-36-react-components)
+  - [Storybook for f36-components](#storybook-for-f36-components)
 - [Commits & releases](#commits--releases)
 - [Testing with your own project locally](#testing-with-your-own-project-locally)
 - [Get involved](#get-involved)
@@ -50,7 +50,7 @@ You can test changes to a package of this monorepo in your own project locally b
 
 1. Run `yarn build` in the desired package's directory to ensure your latest changes have been built
 2. Run `yarn link` in the desired package's directory
-3. Change to your local project's directory and run `yarn link NAME_OF_PACKAGE` to link to the local version of the package (e.g. `yarn link @contentful/forma-36-react-components`)
+3. Change to your local project's directory and run `yarn link NAME_OF_PACKAGE` to link to the local version of the package (e.g. `yarn link @contentful/f36-components`)
 
 ## Get involved
 
