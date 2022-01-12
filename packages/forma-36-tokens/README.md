@@ -2,20 +2,20 @@
 
 The design tokens for Forma 36, available as JSON, CSS, and SCSS.
 
-These tokens are a key part of our design system and power [`forma-36-react-components`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components).
+These tokens are a key part of our design system and power [`f36-components`](https://github.com/contentful/forma-36/tree/master/packages/components).
 
 ## Library usage
 
 ### Install the package to your project
 
 ```bash
-yarn add @contentful/forma-36-tokens
+yarn add @contentful/f36-tokens
 ```
 
 Or for NPM
 
 ```bash
-npm i @contentful/forma-36-tokens
+npm i @contentful/f36-tokens
 ```
 
 ### Import into your project
@@ -23,25 +23,19 @@ npm i @contentful/forma-36-tokens
 #### JS
 
 ```js
-import F36Tokens from '@contentful/forma-36-tokens';
+import F36Tokens from '@contentful/f36-tokens';
 ```
 
 #### CSS
 
 ```css
-@import '@contentful/forma-36-tokens/dist/css/index.css';
-```
-
-#### SCSS
-
-```scss
-@import '@contentful/forma-36-tokens/dist/scss/index.scss';
+@import '@contentful/f36-tokens/dist/css/index.css';
 ```
 
 #### JSON
 
 ```js
-import tokens from '@contentful/forma-36-tokens/dist/json/transitions/transition-easings';
+import tokens from '@contentful/f36-tokens/dist/json/transitions/transition-easings';
 ```
 
 ## Development
@@ -91,6 +85,6 @@ All tokens are kept in the `src/tokens` directory and organised as so:
 yarn build
 ```
 
-Running the build script will populate the `dist` directory with separately built JSON, CSS, SCSS and JS file with TS typings.
+Running the build script will populate the `dist` directory with separately built JSON, CSS and JS file with TS typings.
 
-This script populates the dist folder with all tokens as JSON, CSS, SCSS and JS. For CSS and SCSS builds, an index file is included for ease of importing.
+This script populates the dist folder with all tokens as JSON, CSS and JS. For CSS builds, an index file is included for ease of importing.

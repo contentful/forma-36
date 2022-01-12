@@ -12,7 +12,9 @@
         "*.md",
         "*.mdx",
         "**/*.spec.*",
+        "**/*.test.*",
         "**/*.stories.*",
+        "**/examples/**",
         "**/__fixtures__/**",
         "**/__tests__/**"
       ]

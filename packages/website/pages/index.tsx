@@ -10,6 +10,7 @@ import { Resource } from '../components/Home/Resource';
 
 import tokensImg from '../resources/images/tokens.png';
 import uiKitImg from '../resources/images/ui-kit.png';
+import componentsImg from '../resources/images/components.png';
 
 function Home() {
   return (
@@ -32,7 +33,7 @@ function Home() {
         <Resources>
           <Resource
             title="New version of the UIKit is still in progress"
-            description="Fresh UIKit will be released with version 4 of Forma 36"
+            description="Fresh UIKit for Forma 36 v4 will be shortly released"
             imageNode={
               <Image {...uiKitImg} alt="Illustration for Forma 36 UI Kit" />
             }
@@ -44,6 +45,19 @@ function Home() {
             linkHref="https://github.com/contentful/forma-36/tree/master/packages/forma-36-tokens"
             imageNode={
               <Image {...tokensImg} alt="Illustration for design tokens" />
+            }
+          />
+          <Resource
+            title="Get started with our React components"
+            description="Build your interface using Forma 36 React component library"
+            linkText="Prototype in the Playground and share your experiments with your colleagues"
+            linkHref="/playground"
+            linkExternal={false}
+            imageNode={
+              <Image
+                {...componentsImg}
+                alt="Illustration for component library"
+              />
             }
           />
         </Resources>

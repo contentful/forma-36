@@ -129,7 +129,7 @@ const sizeToStyles = (size: ButtonSize): CSSObject => {
   }
 };
 
-const getButtonIconStyle = ({ hasChildren }) => {
+const getButtonIconStyle = ({ hasChildren, variant }) => {
   const align = {
     '&:first-child': { marginRight: tokens.spacing2Xs },
     '&:last-child': { marginLeft: tokens.spacing2Xs },
@@ -137,12 +137,16 @@ const getButtonIconStyle = ({ hasChildren }) => {
 
   const margin = hasChildren ? align : {};
 
-  return css({
-    ...margin,
-    '& svg': {
-      fill: 'currentColor',
-    },
-  });
+  return css([
+    margin,
+    // we want to allow variants for icons, but only in the transparent IconButton
+    variant !== 'transparent' &&
+      hasChildren && {
+        '& svg': {
+          fill: 'currentColor',
+        },
+      },
+  ]);
 };
 
 export const getStyles = () => ({
@@ -183,10 +187,6 @@ export const getStyles = () => ({
         : {}),
     }),
   buttonIcon: getButtonIconStyle,
-  dropdownIcon: css({
-    marginLeft: tokens.spacingXs,
-    fill: 'currentColor',
-  }),
   buttonContent: css({
     whiteSpace: 'nowrap',
     overflow: 'hidden',

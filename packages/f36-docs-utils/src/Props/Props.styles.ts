@@ -5,7 +5,6 @@ export const getPropsStyles = () => ({
   list: css({
     listStyleType: 'none',
     padding: 0,
-    paddingBottom: tokens.spacing2Xl,
   }),
   listItem: css({
     padding: `${tokens.spacingM} 0`,

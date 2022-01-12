@@ -29,6 +29,11 @@ const styles = {
     margin-left: ${tokens.spacingL};
     color: ${tokens.blue700};
   `,
+  versionText: css`
+    font-weight: ${tokens.fontWeightDemiBold};
+    font-size: ${tokens.fontSizeL};
+    margin-left: ${tokens.spacingM};
+  `,
   searchNavContainer: css`
     display: flex;
     align-items: center;

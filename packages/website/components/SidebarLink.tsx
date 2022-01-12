@@ -4,6 +4,7 @@ import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
 import { List, Flex } from '@contentful/f36-components';
 import { ChevronDownIcon } from '@contentful/f36-icons';
+import { ExternalLinkIcon } from '@contentful/f36-icons';
 
 export const getSectionTitleStyles = (isActive = false, indent = 1) => {
   return {
@@ -38,6 +39,7 @@ interface SidebarLinkProps {
   children: string;
   href: string;
   isActive?: boolean;
+  isExternal?: boolean;
   indent?: number;
 }
 
@@ -69,10 +71,14 @@ export function SidebarSectionButton(props: {
 export function SidebarLink({
   children,
   href,
+  isExternal = false,
   isActive = false,
   indent = 1,
 }: SidebarLinkProps) {
   const titleStyles = getSectionTitleStyles(isActive, indent);
+  const linksProps = isExternal
+    ? { target: '_blank', rel: 'noopener noreferrer' }
+    : {};
 
   return (
     <List.Item>
@@ -84,8 +90,10 @@ export function SidebarLink({
             titleStyles.clickable,
             titleStyles.sidebarItem,
           ])}
+          {...linksProps}
         >
-          {children}
+          <span>{children}</span>
+          {isExternal ? <ExternalLinkIcon variant="muted" /> : null}
         </a>
       </Link>
     </List.Item>

@@ -5,8 +5,8 @@ import type {
   PickUnion,
   CommonProps,
 } from '@contentful/f36-core';
-import { Box, Flex } from '@contentful/f36-core';
 import { Text } from '@contentful/f36-typography';
+import { Box, Flex } from '@contentful/f36-core';
 
 import { AssetIcon } from './AssetIcon/AssetIcon';
 import { getAssetStyles } from './Asset.styles';

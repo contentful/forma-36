@@ -6,7 +6,6 @@ import NextLink from 'next/link';
 import { MdxComponents } from '../mdx-components';
 import { ComponentSource } from './LiveEditor/ComponentSource';
 import { StaticSource } from './LiveEditor/StaticSource';
-import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
 const {
@@ -16,66 +15,38 @@ const {
   Paragraph,
   TextLink,
   List,
-  Box,
   Table,
 } = f36Components;
-
-const styles = {
-  increesedSizeElement: css({
-    fontFamily: tokens.fontStackPrimary,
-    fontSize: `${tokens.fontSizeL}`,
-    lineHeight: `${tokens.lineHeightL}`,
-  }),
-};
 
 /* eslint-disable react/display-name */
 /* eslint-disable @next/next/no-img-element */
 const components = {
   h1: (props) => <DisplayText as="h1" {...props} />,
-  h2: (props) => (
-    <Heading
-      as="h2"
-      marginTop="spacing2Xl"
-      {...props}
-      className={styles.increesedSizeElement}
-    />
-  ),
-  h3: (props) => <Subheading as="h3" marginTop="spacingL" {...props} />,
+  h2: (props) => <Heading as="h2" marginTop="spacing2Xl" {...props} />,
+  h3: (props) => <Subheading as="h3" marginTop="spacingXl" {...props} />,
   h4: (props) => <Subheading as="h4" {...props} />,
   h5: (props) => <Subheading as="h5" {...props} />,
   h6: (props) => <Subheading as="h6" {...props} />,
-  p: (props) => (
-    <Paragraph {...props} className={styles.increesedSizeElement} />
-  ),
+  p: (props) => <Paragraph {...props} />,
   a: (props) => {
     if (props.href && props.href.startsWith('..')) {
       return (
         <NextLink href={props.href}>
-          <TextLink {...props} className={styles.increesedSizeElement} />
+          <TextLink {...props} />
         </NextLink>
       );
     }
-    return <TextLink {...props} className={styles.increesedSizeElement} />;
+    return <TextLink {...props} />;
   },
-  ul: (props) => (
-    <Box marginBottom="spacingL">
-      <List {...props} className={styles.increesedSizeElement} />
-    </Box>
-  ),
-  li: (props) => (
-    <List.Item {...props} className={styles.increesedSizeElement} />
-  ),
+  ul: (props) => <List style={{ marginBottom: tokens.spacingM }} {...props} />,
+  li: (props) => <List.Item {...props} />,
   code: (props) => {
     if (props.static) {
       return <StaticSource {...props} />;
     }
     return <ComponentSource {...props} />;
   },
-  table: (props) => (
-    <Box marginBottom="spacingM">
-      <Table {...props} />
-    </Box>
-  ),
+  table: (props) => <Table {...props} />,
   thead: (props) => <Table.Head {...props} />,
   tbody: (props) => <Table.Body {...props} />,
   tr: (props) => <Table.Row {...props} />,
