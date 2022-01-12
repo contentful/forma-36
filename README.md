@@ -27,7 +27,7 @@
 
 ### Creating new packages
 
-We use use [Plop](https://plopjs.com/) to create scripts that help you to scaffold new packages. In the root of the repo, you can run `yarn generate`. Then follow the steps in the CLI. Plop will generate the relevant files and add the relevant imports and exports to the main `src/index.ts` file required to make the component available when publishing the library.
+We use use [Plop](https://plopjs.com/) to create scripts that help you to scaffold new packages. In the root of the repo, you can run `yarn generate`. Then follow the steps in the CLI. Plop will generate the relevant files and add the relevant imports and exports to the main `src/index.ts` file required to make the component available when publishing the library. Read more about [contribution to Forma 36](https://v4.f36.contentful.com/contributing).
 
 ## Development
 
@@ -36,7 +36,7 @@ You will find each package’s instructions in their README files, check the [Pa
 
 > In case you are having problems to install the dependencies, try using NVM to get the same node version we use by running `nvm use` in the root of the repo
 
-### Storybook for forma-36-react-components
+### Storybook for f36-components
 
 We use storybook with our react component library to develop components. You can start it from the root of the repo, just run `yarn storybook`
 
