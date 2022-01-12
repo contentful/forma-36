@@ -32,7 +32,7 @@ function Home() {
         <Resources>
           <Resource
             title="New version of the UIKit is still in progress"
-            description="Fresh UIKit will be released with version 4 of Forma 36"
+            description="Fresh UIKit for Forma 36 v4 will be shortly released"
             imageNode={
               <Image {...uiKitImg} alt="Illustration for Forma 36 UI Kit" />
             }
