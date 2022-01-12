@@ -1,5 +1,3 @@
-import { Props } from '@contentful/f36-docs-utils';
-
 import { A11yColors } from './A11yColors';
 import { ColorSwatchGroup } from './ColorSwatchGroup';
 import { CombiningShadesExample } from './CombiningShadesExample';
