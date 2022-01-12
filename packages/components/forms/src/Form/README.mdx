@@ -6,15 +6,10 @@ section: 'formComponents'
 slug: /components/form/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/Form'
 storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/form-elements-form--basic'
+typescript: ./Form.tsx
 ---
 
 `Form` is a wrapper component to apply a `<form />` wrapper and handle form submissions.
-
-## How to use Form
-
-- The `Form` component should wrap form elements into `<form />`
-- Provide an `onSubmit` handler for form validation and submission
-- state of the validation of the form should be manipulated from outside
 
 Go ahead and add some fields into your form:
 
@@ -26,67 +21,33 @@ Go ahead and add some fields into your form:
 - [Select](../components/select)
 - [Switch](../components/switch)
 
+## Import
+
+```js static=true
+import { Form } from '@contentful/f36-components';
+// or
+import { Form } from '@contentful/f36-forms';
+```
+
 ## Code examples
 
 ### Basic example
 
-```jsx
-function FormaExample() {
-  const [submitted, setSubmitted] = React.useState(false);
-  return (
-    <Form onSubmit={() => setSubmitted(true)}>
-      <FormControl>
-        <FormControl.Label isRequired>Name</FormControl.Label>
-        <TextInput />
-        <FormControl.HelpText>
-          Please enter your first name
-        </FormControl.HelpText>
-      </FormControl>
+```jsx file=../../examples/FormExample.tsx
 
-      <FormControl>
-        <FormControl.Label>Description</FormControl.Label>
-        <Box>
-          <Textarea />
-        </Box>
-        <FormControl.HelpText>Tell me about yourself</FormControl.HelpText>
-      </FormControl>
-      <Button variant="primary" type="submit" isDisabled={submitted}>
-        {submitted ? 'Submitted' : 'Click me to submit'}
-      </Button>
-    </Form>
-  );
-}
 ```
 
 ### Using character count
 
-```jsx
-function FormaExample() {
-  const [submitted, setSubmitted] = React.useState(false);
-  return (
-    <Form onSubmit={() => setSubmitted(true)}>
-      <FormControl>
-        <FormControl.Label isRequired>user name</FormControl.Label>
-        <TextInput />
-        <FormControl.HelpText>Please enter your username</FormControl.HelpText>
-      </FormControl>
-      <FormControl>
-        <FormControl.Label isRequired>password</FormControl.Label>
-        <TextInput maxLength={10} />
-        <Flex justifyContent="space-between">
-          <FormControl.HelpText>
-            Password can only have 10 characters
-          </FormControl.HelpText>
-          <FormControl.Counter />
-        </Flex>
-      </FormControl>
-      <Button variant="primary" type="submit" isDisabled={submitted}>
-        {submitted ? 'Submitted' : 'Click me to submit'}
-      </Button>
-    </Form>
-  );
-}
+```jsx file=../../examples/FormCharacterCountExample.tsx
+
 ```
+
+## Content guidelines
+
+- The `Form` component should wrap form elements into `<form />`
+- Provide an `onSubmit` handler for form validation and submission
+- The state of the validation of the form should be manipulated from outside
 
 ### Integrations
 
