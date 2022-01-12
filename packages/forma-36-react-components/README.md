@@ -1,5 +1,7 @@
 # Forma 36 React Components
 
+**This is a version 3 of Forma 36, which is not the current version of the package. From 12th July 2022 it will not be supported anymore. Please install current, supported [version 4](https://www.npmjs.com/package/@contentful/f36-components) of the library**
+
 A React component library for [Forma 36](https://f36.contentful.com/) design system created by [Contentful](https://www.contentful.com) and powered by [Storybook](https://storybook.js.org/).
 You can access a Storybook website with the latest changes of the library [here](https://f36-storybook.contentful.com/)
 
