@@ -106,6 +106,12 @@ export function Sidebar({ currentPage = '/' }: Props) {
           >
             Contributing to Forma 36
           </SidebarLink>
+          <SidebarLink
+            isExternal
+            href="https://www.contentful.com/developers/docs/extensibility/app-framework"
+          >
+            App Framework
+          </SidebarLink>
           <Box marginBottom="spacingL" />
           <SidebarSection
             title="Guidelines"
