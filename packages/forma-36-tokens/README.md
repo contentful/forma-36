@@ -32,12 +32,6 @@ import F36Tokens from '@contentful/f36-tokens';
 @import '@contentful/f36-tokens/dist/css/index.css';
 ```
 
-#### SCSS
-
-```scss
-@import '@contentful/f36-tokens/dist/scss/index.scss';
-```
-
 #### JSON
 
 ```js
@@ -91,6 +85,6 @@ All tokens are kept in the `src/tokens` directory and organised as so:
 yarn build
 ```
 
-Running the build script will populate the `dist` directory with separately built JSON, CSS, SCSS and JS file with TS typings.
+Running the build script will populate the `dist` directory with separately built JSON, CSS and JS file with TS typings.
 
-This script populates the dist folder with all tokens as JSON, CSS, SCSS and JS. For CSS and SCSS builds, an index file is included for ease of importing.
+This script populates the dist folder with all tokens as JSON, CSS and JS. For CSS builds, an index file is included for ease of importing.
