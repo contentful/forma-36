@@ -5,7 +5,7 @@
   "useWorkspaces": true,
   "command": {
     "version": {
-      "allowBranch": "master",
+      "allowBranch": ["master", "v3"],
       "conventionalCommits": true,
       "message": "chore(release): updated release notes and package versions [ci skip]",
       "ignoreChanges": [
