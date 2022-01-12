@@ -1,3 +1,5 @@
+import { PropsTable } from '@contentful/f36-docs-utils';
+
 import { A11yColors } from './A11yColors';
 import { ColorSwatchGroup } from './ColorSwatchGroup';
 import { CombiningShadesExample } from './CombiningShadesExample';
@@ -13,7 +15,7 @@ export const MdxComponents = {
   ColorSwatchGroup,
   CombiningShadesExample,
   GlowTokensTable,
-  Props,
+  PropsTable,
   ShadowTokensTable,
   SpacingTokensTable,
   TransitionTokensTable,
