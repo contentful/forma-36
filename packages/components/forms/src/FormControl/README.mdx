@@ -11,6 +11,14 @@ typescript: ./FormControl.tsx,../form-label/FormLabel.tsx,../help-text/HelpText.
 
 `FormControl` is a wrapper component to enhance layout with input label, help text, counter or validation message.
 
+## Import
+
+```js static=true
+import { FormControl } from '@contentful/f36-components';
+// or
+import { FormControl } from '@contentful/f36-forms';
+```
+
 ## How to use FormControl
 
 - FormControl provides context to form elements: `isRequired`, `isDisabled`, `isInvalid`, `isReadOnly`
@@ -31,87 +39,38 @@ To uphold a consistent look and experience for your application, we recommend fo
 
 ### Basic example
 
-```jsx
-<FormControl isRequired>
-  <FormControl.Label>Name</FormControl.Label>
-  <TextInput />
-  <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
-</FormControl>
+```jsx file=../../examples/FormControlExample.tsx
+
 ```
 
 ### Example with invalid input
 
-```jsx
-<FormControl isInvalid>
-  <FormControl.Label>Name</FormControl.Label>
-  <TextInput />
-  <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
-  <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
-</FormControl>
+```jsx file=../../examples/FormControlInvalidExample.tsx
+
 ```
 
 ### Example of Select component with FormControl
 
-```jsx
-<FormControl>
-  <FormControl.Label>Name</FormControl.Label>
-  <Select defaultValue="optionTwo">
-    <Select.Option value="optionOne">Option 1</Select.Option>
-    <Select.Option value="optionTwo">Option 2</Select.Option>
-  </Select>
-  <FormControl.HelpText>Please select an option</FormControl.HelpText>
-</FormControl>
+```jsx file=../../examples/FormControlSelectExample.tsx
+
 ```
 
 ### Example of Radio Group component with FormControl
 
-```jsx
-<FormControl as="fieldset">
-  <FormControl.Label as="legend">Radio group options</FormControl.Label>
-  <Radio.Group name="radio-options" defaultValue="option 1">
-    <Radio value="option 1" id="option-1" helpText="Help text for option 1">
-      Option 1
-    </Radio>
-    <Radio value="option 2" id="option-2" helpText="Help text for option 2">
-      Option 2
-    </Radio>
-  </Radio.Group>
-  <FormControl.HelpText>Please, select an option</FormControl.HelpText>
-</FormControl>
+```jsx file=../../examples/FormControlRadioGroupExample.tsx
+
 ```
 
 ### Example of Checkbox Group component with FormControl
 
-```jsx
-<FormControl as="fieldset" isRequired>
-  <FormControl.Label as="legend">Checkbox group options</FormControl.Label>
-  <Checkbox.Group name="checkbox-options">
-    <Checkbox value="option 1" id="option-1" helpText="Some help text">
-      Option 1
-    </Checkbox>
-    <Checkbox value="option 2" id="option-2" helpText="Another help text">
-      Option 2
-    </Checkbox>
-  </Checkbox.Group>
-  <FormControl.HelpText>
-    Please, select at least one option
-  </FormControl.HelpText>
-</FormControl>
+```jsx file=../../examples/FormControlCheckboxGroupExample.tsx
+
 ```
 
 ### Example with character count
 
-```jsx
-<FormControl>
-  <FormControl.Label isRequired>Name</FormControl.Label>
-  <TextInput maxLength={8} />
-  <Flex justifyContent="space-between">
-    <FormControl.HelpText>
-      Name should be no longer than 8 characters
-    </FormControl.HelpText>
-    <FormControl.Counter />
-  </Flex>
-</FormControl>
+```jsx file=../../examples/FormControlCharacterCountExample.tsx
+
 ```
 
 ### Props
