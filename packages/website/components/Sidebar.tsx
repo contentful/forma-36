@@ -9,7 +9,7 @@ import {
   SidebarSectionType,
   SidebarLinkType,
 } from './SidebarSection';
-import { DocSearch } from './DocSearch';
+// import { DocSearch } from './DocSearch';
 
 const sidebarLinks = require('../utils/sidebarLinks.json');
 
@@ -85,7 +85,7 @@ const components: Array<SidebarSectionType | SidebarLinkType> = [
 export function Sidebar({ currentPage = '/' }: Props) {
   return (
     <>
-      <DocSearch />
+      {/* <DocSearch /> */}
 
       <Flex
         as="nav"
