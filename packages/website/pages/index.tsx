@@ -49,7 +49,7 @@ function Home() {
           />
           <Resource
             title="Get started with our React components"
-            description="Build your application or extension using the Forma 36 React component library"
+            description="Build your interface using Forma 36 React component library"
             linkText="Prototype in the Playground and share your experiments with your colleagues"
             linkHref="/playground"
             linkExternal={false}
