@@ -36,30 +36,33 @@ export const Resource = ({
   imageNode,
   linkHref,
   linkText,
+  linkExternal = true,
 }: {
   title: string;
   description: string;
   imageNode: React.ReactNode;
   linkHref?: string;
   linkText?: string;
-}) => (
-  <article className={styles.resource}>
-    <div className={styles.image}>{imageNode}</div>
-    <div className={styles.text}>
-      <Subheading>{title}</Subheading>
-      <Paragraph className={styles.paragraph}>{description}</Paragraph>
-      {linkHref && linkText && (
-        <Paragraph className={styles.paragraph}>
-          <TextLink
-            className={styles.link}
-            href={linkHref}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {linkText}
-          </TextLink>
-        </Paragraph>
-      )}
-    </div>
-  </article>
-);
+  linkExternal?: boolean;
+}) => {
+  const linkProps = linkExternal
+    ? { target: '_blank', rel: 'noopener noreferrer' }
+    : {};
+
+  return (
+    <article className={styles.resource}>
+      <div className={styles.image}>{imageNode}</div>
+      <div className={styles.text}>
+        <Subheading>{title}</Subheading>
+        <Paragraph className={styles.paragraph}>{description}</Paragraph>
+        {linkHref && linkText && (
+          <Paragraph className={styles.paragraph}>
+            <TextLink className={styles.link} href={linkHref} {...linkProps}>
+              {linkText}
+            </TextLink>
+          </Paragraph>
+        )}
+      </div>
+    </article>
+  );
+};
