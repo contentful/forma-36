@@ -139,7 +139,7 @@ jobs:
       - run: git config --global user.name ${GITHUB_USER}
       - run:
           name: Build
-          command: yarn build
+          command: yarn build -- --no-cache
       - run:
           name: Deploy
           command: yarn lerna publish --no-private --conventional-commits --create-release github --yes
