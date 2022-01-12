@@ -4,5 +4,5 @@ export type DateFormat =
   | 'fullWithSeconds'
   | 'full'
   | 'time'
-  | 'weekday'
-  | 'day';
+  | 'day'
+  | 'weekday';
