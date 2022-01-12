@@ -58,7 +58,7 @@ We use [Storybook](https://storybook.js.org/) to create a development environmen
 yarn storybook
 ```
 
-When creating new component, before you start, please have a look at our [contribution model for Forma 36](https://v4.f36.contentful.com/contributing).
+When creating new component, before you start, please have a look at our [contribution model for Forma 36](https://f36.contentful.com/contributing).
 
 ### Example component directory structure
 
@@ -93,12 +93,12 @@ We follow a number of principles when creating our components:
 1.  **A component is responsible for only its internal spacing**
 
 Component should only be responsible for its own internal spacing - never external spacing. This means that we're flexible in where our components can be used without having to override margins.
-The only outlier from this rule are [typography components](https://v4.f36.contentful.com/components/display-text) - they can manage their own margins. To handle margins and layout you can use our core components, like:
+The only outlier from this rule are [typography components](https://f36.contentful.com/components/display-text) - they can manage their own margins. To handle margins and layout you can use our core components, like:
 
-- [Box](https://v4.f36.contentful.com/components/box)
-- [Flex](https://v4.f36.contentful.com/components/flex)
-- [Grid](https://v4.f36.contentful.com/components/grid)
-- [Stack](https://v4.f36.contentful.com/components/stack)
+- [Box](https://f36.contentful.com/components/box)
+- [Flex](https://f36.contentful.com/components/flex)
+- [Grid](https://f36.contentful.com/components/grid)
+- [Stack](https://f36.contentful.com/components/stack)
 
 ### Adding documentation for component
 

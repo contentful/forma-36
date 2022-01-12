@@ -27,7 +27,7 @@
 
 ### Creating new packages
 
-We use use [Plop](https://plopjs.com/) to create scripts that help you to scaffold new packages. In the root of the repo, you can run `yarn generate`. Then follow the steps in the CLI. Plop will generate the relevant files and add the relevant imports and exports to the main `src/index.ts` file required to make the component available when publishing the library. Read more about [contribution to Forma 36](https://v4.f36.contentful.com/contributing).
+We use use [Plop](https://plopjs.com/) to create scripts that help you to scaffold new packages. In the root of the repo, you can run `yarn generate`. Then follow the steps in the CLI. Plop will generate the relevant files and add the relevant imports and exports to the main `src/index.ts` file required to make the component available when publishing the library. Read more about [contribution to Forma 36](https://f36.contentful.com/contributing).
 
 ## Development
 

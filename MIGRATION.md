@@ -566,7 +566,7 @@ This is an overview of the changed props:
 - `isDragActive` was renamed to `isDragging`
 - `statusIcon` was renamed to `icon`, and now expects an Icon component
 - `cardDragHandleProps` was renamed to `dragHandleProps`
-- `dropdownListElements` was renamed to `actions` and updated to use the new `Menu` component. It should receive an array of `Menu.Item`. For more information, see the Menu [documentation](https://v4.f36.contentful.com/components/menu/).
+- `dropdownListElements` was renamed to `actions` and updated to use the new `Menu` component. It should receive an array of `Menu.Item`. For more information, see the Menu [documentation](https://f36.contentful.com/components/menu/).
 
 #### How to migrate your Card components
 
@@ -686,7 +686,7 @@ becomes:
 />
 ```
 
-For more information on what can be passed on the `tooltipProps` prop, see the Tooltip [documentation](https://v4.f36.contentful.com/components/tooltip/). It accepts all props except `children` and `content`.
+For more information on what can be passed on the `tooltipProps` prop, see the Tooltip [documentation](https://f36.contentful.com/components/tooltip/). It accepts all props except `children` and `content`.
 We also added the possibility to pass `isDisabled` and `size` props to the CopyButton component.
 
 #### How to migrate your CopyButton components
@@ -1108,7 +1108,7 @@ const [isPopoverOpen, setIsPopoverOpen] = React.useState(false);
 In v4, the EntityList component has received API improvements. Here is an overview of the changes:
 
 - `EntityList` became a compound component. Instead of `EntityListItem` you can use `EntityList.Item`
-- `dropdownListElements` prop was renamed to `actions` and updated to use the new `Menu` component. It should receive an array of `Menu.Item`. For more information, see the EntityList [code examples](https://v4.f36.contentful.com/components/entity-list/#code-examples) and Menu [documentation](https://v4.f36.contentful.com/components/menu/).
+- `dropdownListElements` prop was renamed to `actions` and updated to use the new `Menu` component. It should receive an array of `Menu.Item`. For more information, see the EntityList [code examples](https://f36.contentful.com/components/entity-list/#code-examples) and Menu [documentation](https://f36.contentful.com/components/menu/).
 
 #### How to migrate your EntityList components
 
@@ -1492,7 +1492,7 @@ becomes:
 </FormControl>
 ```
 
-For more detailed information and examples, see our [documentation](https://v4.f36.contentful.com/components/form-control/).
+For more detailed information and examples, see our [documentation](https://f36.contentful.com/components/form-control/).
 
 ##### How to migrate your Field components
 
@@ -1988,7 +1988,7 @@ for keeping the same spacing as before it should become:
 
 ##### How to migrate your FieldGroup components
 
-The migration must be done manually, using the Layout component that best fits the user needs. The layout components are [Box](https://v4.f36.contentful.com/components/box/), [Flex](https://v4.f36.contentful.com/components/flex/), [Stack](https://v4.f36.contentful.com/components/stack/), and [Grid](https://v4.f36.contentful.com/components/grid/).
+The migration must be done manually, using the Layout component that best fits the user needs. The layout components are [Box](https://f36.contentful.com/components/box/), [Flex](https://f36.contentful.com/components/flex/), [Stack](https://f36.contentful.com/components/stack/), and [Grid](https://f36.contentful.com/components/grid/).
 
 #### Form
 
@@ -3003,7 +3003,7 @@ import { Tooltip } from '@contentful/f36-components';
 
 ### Typography
 
-In version 4, `Typography` component has been removed, and there are changes on the API of [Paragraph](https://v4.f36.contentful.com/components/paragraph/), [Heading](https://v4.f36.contentful.com/components/heading/), [SectionHeading](https://v4.f36.contentful.com/components/section-heading/), [Subheading](https://v4.f36.contentful.com/components/subheading/), and [DisplayText](https://v4.f36.contentful.com/components/display-text/) to align with our code [style guide](https://github.com/contentful/forma-36/blob/master/docs/code-style-guide.md).
+In version 4, `Typography` component has been removed, and there are changes on the API of [Paragraph](https://f36.contentful.com/components/paragraph/), [Heading](https://f36.contentful.com/components/heading/), [SectionHeading](https://f36.contentful.com/components/section-heading/), [Subheading](https://f36.contentful.com/components/subheading/), and [DisplayText](https://f36.contentful.com/components/display-text/) to align with our code [style guide](https://github.com/contentful/forma-36/blob/master/docs/code-style-guide.md).
 
 #### How to migrate your Typography components
 
