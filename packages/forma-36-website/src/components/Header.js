@@ -2,6 +2,8 @@ import React from 'react';
 import tokens from '@contentful/forma-36-tokens';
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
+// eslint-disable-next-line
+import pkg from '../../../forma-36-react-components/package.json';
 
 const styles = {
   header: css`
@@ -23,6 +25,11 @@ const styles = {
     font-weight: ${tokens.fontWeightDemiBold};
     font-size: ${tokens.fontSizeXl};
     margin-left: ${tokens.spacingL};
+  `,
+  versionText: css`
+    font-weight: ${tokens.fontWeightDemiBold};
+    font-size: ${tokens.fontSizeL};
+    margin-left: ${tokens.spacingM};
   `,
   searchNavContainer: css`
     display: flex;
@@ -73,6 +80,7 @@ const Header = () => (
       <Logo />
       <div css={styles.logoText}>Forma 36</div>
     </Link>
+    <div className={styles.versionText}>v{pkg.version}</div>
 
     <div css={styles.searchNavContainer}>
       <nav css={styles.nav}>
