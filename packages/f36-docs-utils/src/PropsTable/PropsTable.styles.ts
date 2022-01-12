@@ -2,15 +2,12 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
 export const getPropsTableStyles = () => ({
-  list: css({
-    listStyleType: 'none',
-    padding: 0,
+  headerCell: css({
+    padding: `${tokens.spacingXs} 0`,
+    backgroundColor: 'transparent',
   }),
-  listItem: css({
-    padding: `${tokens.spacingM} 0`,
-    borderBottom: `1px solid ${tokens.gray200}`,
-    '&:last-child': {
-      borderBottom: 'none',
-    },
+  cell: css({
+    padding: `${tokens.spacingL} 0`,
+    paddingRight: tokens.spacingM,
   }),
 });

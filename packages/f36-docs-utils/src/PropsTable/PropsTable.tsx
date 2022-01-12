@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-  Grid,
-  List,
+  Badge,
   Paragraph,
   Subheading,
   Text,
+  Table,
 } from '@contentful/f36-components';
 
 import { getPropsTableStyles } from './PropsTable.styles';
@@ -26,42 +26,52 @@ export function PropsTable({ of }: PropsTableProps) {
   }
 
   return (
-    <List className={styles.list}>
-      {componentProps.map((item, idx) => {
-        return (
-          <List.Item key={idx} className={styles.listItem}>
-            <Grid columns="20% 1fr" columnGap="spacingM" rowGap="spacingM">
-              <Text fontColor="gray500">Name</Text>
-              <Subheading marginBottom="none">
-                {item.name}
+    <Table layout="embedded">
+      <Table.Head>
+        <Table.Row>
+          <Table.Cell className={styles.headerCell}>
+            <Subheading marginBottom="none">Name</Subheading>
+          </Table.Cell>
+          <Table.Cell className={styles.headerCell}>
+            <Subheading marginBottom="none">Type</Subheading>
+          </Table.Cell>
+          <Table.Cell className={styles.headerCell}>
+            <Subheading marginBottom="none">Default</Subheading>
+          </Table.Cell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        {componentProps.map((item, idx) => {
+          return (
+            <Table.Row key={idx}>
+              <Table.Cell className={styles.cell} width="20%">
+                <Text
+                  fontStack="fontStackMonospace"
+                  fontColor="gray900"
+                  fontWeight="fontWeightDemiBold"
+                  marginRight="spacingXs"
+                >
+                  {item.name}
+                </Text>
                 {item.required && (
-                  <Text marginLeft="spacingXs" fontColor="gray500">
-                    (required)
-                  </Text>
+                  <Badge variant="featured" size="small">
+                    required
+                  </Badge>
                 )}
-              </Subheading>
-
-              {item.description && (
-                <>
-                  <Text fontColor="gray500">Description</Text>
-                  <Paragraph marginBottom="none">{item.description}</Paragraph>
-                </>
-              )}
-
-              <Grid.Item columnStart={2}>
+              </Table.Cell>
+              <Table.Cell className={styles.cell}>
                 <PropertyType name={item.name} type={item.type} />
-              </Grid.Item>
-
-              {item.defaultValue && (
-                <>
-                  <Text fontColor="gray500">Default</Text>
+                <Paragraph marginBottom="none">{item.description}</Paragraph>
+              </Table.Cell>
+              <Table.Cell className={styles.cell} width="20%">
+                {item.defaultValue && (
                   <PropertyValue value={item.defaultValue.value} />
-                </>
-              )}
-            </Grid>
-          </List.Item>
-        );
-      })}
-    </List>
+                )}
+              </Table.Cell>
+            </Table.Row>
+          );
+        })}
+      </Table.Body>
+    </Table>
   );
 }
