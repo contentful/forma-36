@@ -1,9 +1,16 @@
 import React from 'react';
-import { Props, PropsContextProvider } from '../src/Props';
+import { PropsTable, PropsContextProvider } from '../src/PropsTable';
 
 export default {
-  title: '(used in F36 website)/Props',
-  component: Props,
+  title: '(used in F36 website)/PropsTable',
+  component: PropsTable,
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: '900px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 import { propsMetadata } from './mockPropsMetadata';
@@ -11,7 +18,7 @@ import { propsMetadata } from './mockPropsMetadata';
 export const Basic = () => {
   return (
     <PropsContextProvider value={{ ...propsMetadata }}>
-      <Props of="Autocomplete" />
+      <PropsTable of="Autocomplete" />
     </PropsContextProvider>
   );
 };
@@ -19,7 +26,7 @@ export const Basic = () => {
 export const WithDataFromAccordion = () => {
   return (
     <PropsContextProvider value={{ ...propsMetadata }}>
-      <Props of="Accordion" />
+      <PropsTable of="Accordion" />
     </PropsContextProvider>
   );
 };
@@ -27,7 +34,7 @@ export const WithDataFromAccordion = () => {
 export const WithDataFromButton = () => {
   return (
     <PropsContextProvider value={{ ...propsMetadata }}>
-      <Props of="Button" />
+      <PropsTable of="Button" />
     </PropsContextProvider>
   );
 };
