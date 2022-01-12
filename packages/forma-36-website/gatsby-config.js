@@ -10,7 +10,7 @@ module.exports = {
     promoText: `Forma 36 v4 is available`,
     promoLink: 'https://f36.contentful.com/',
     promoLinkText: 'Click here to go to the new version',
-    promoTagText: 'Version 4',
+    promoTagText: 'NEW',
     menuLinks: [
       {
         name: 'Foundation',

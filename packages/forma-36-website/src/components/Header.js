@@ -80,7 +80,7 @@ const Header = () => (
       <Logo />
       <div css={styles.logoText}>Forma 36</div>
     </Link>
-    <div className={styles.versionText}>v{pkg.version}</div>
+    <div css={styles.versionText}>v{pkg.version}</div>
 
     <div css={styles.searchNavContainer}>
       <nav css={styles.nav}>
@@ -116,7 +116,7 @@ const Header = () => (
             </a>
           </li>
           <li css={styles.navListItem}>
-            <a css={styles.navListLink} href="https://v4.f36.contentful.com/">
+            <a css={styles.navListLink} href="https://f36.contentful.com/">
               Forma 36 v4
             </a>
           </li>
