@@ -127,6 +127,7 @@ jobs:
     docker:
       - image: circleci/node:14.15.0-browsers
     working_directory: ~/circleci-f36-build
+    resource_class: xlarge
     steps:
       - checkout
       - attach_workspace:
