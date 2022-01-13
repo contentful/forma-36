@@ -20,8 +20,7 @@ If you have any questions feel free to get in touch on the #forma36 channel on o
 <!--
 Please provide us with a brief summary of the bug, a few words will do. Providing screenshots is encouraged
 
-You can also use our Codesandbox template to provide us with a reproducible example
-https://codesandbox.io/s/forma-36-template-v3-x-x-stxbz
+You can also use our Playground template to provide us with a reproducible example: https://f36.contentful.com/playground
 -->
 
 ## Environment
@@ -34,6 +33,9 @@ Which browser/operating system did you encounter this bug in?
 
 <!--
 Please provide us the steps for how to reproduce this bug
+
+Ideally, share with use a Playground link: https://f36.contentful.com/playground
+
 -->
 
 ## Expected results
