@@ -19,7 +19,7 @@ const getGroupContentStyle = ({ withDivider }: GetStyleArguments) => {
       borderTopRightRadius: `${tokens.borderRadiusMedium} !important`,
       marginRight: 0,
     },
-    '&:focus, &:hover': {
+    '&:focus': {
       zIndex: tokens.zIndexDefault + 1,
     },
     ...dividerStyle,
