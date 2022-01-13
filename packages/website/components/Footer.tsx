@@ -29,7 +29,7 @@ export const Footer = () => {
         <Flex flexDirection="column" marginRight="spacing2Xl">
           <Flex marginRight="spacingL" marginBottom="spacingM">
             <Link href="/playground" passHref>
-              <TextLink href="/playground" variant="secondary" alignIcon="end">
+              <TextLink href="/playground" variant="secondary">
                 Playground
               </TextLink>
             </Link>
