@@ -12,7 +12,6 @@ const styles = {
     overflow: 'hidden',
     gridTemplateAreas: `"topbar topbar"
     "sidemenu content"`,
-    gridTemplateColumns: '2fr 10fr',
   }),
   sidebarItem: css({
     display: 'flex',
