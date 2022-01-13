@@ -12,7 +12,6 @@ const styles = {
     overflow: 'hidden',
     gridTemplateAreas: `"topbar topbar"
     "sidemenu content"`,
-    gridTemplateColumns: '2fr 10fr',
   }),
   sidebarItem: css({
     display: 'flex',
@@ -37,7 +36,7 @@ export function Layout({ children, currentPage }: Props) {
   return (
     <Grid
       className={styles.grid}
-      columns="285px auto"
+      columns="2fr 10fr"
       rows="auto 1fr"
       columnGap="none"
     >

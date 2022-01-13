@@ -58,7 +58,7 @@ export function SidebarSectionButton(props: {
         onClick={props.onClick}
       >
         <Subheading marginBottom="none" marginRight="spacingXs">
-          <span>{props.children}</span>
+          {props.children}
         </Subheading>
 
         <ChevronDownIcon
