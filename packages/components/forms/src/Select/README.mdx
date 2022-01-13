@@ -10,157 +10,100 @@ typescript: ./Select.tsx,./SelectOption.tsx
 ---
 
 Select allows users to make a single selection from an options menu.
+
 Keep in mind that Select should not be used without the label.
 
-## How to use Select
+## Import
 
-- Use Select to present many different options in one component
-- When you have only a few options try to show them all at once, using [Radio](../components/radio).
-- Use Select in Forms
-- Order the list of options in a logical way, so it make sense for the user
-- Don't use Select for a very long list of options, instead for those cases use [Autocomplete](../components/autocomplete)
+```js static=true
+import { Select } from '@contentful/f36-components';
+// or
+import { Select } from '@contentful/f36-forms';
+```
+
+## Examples
 
 ### Using as a controlled select
 
-To use the Select as controlled, you need to provide the value of one of the options as the value prop for the Select, and the onChange handler.
+Controlled components in React are those in which form data is handled by the component’s state.
 
-```tsx static=true
-const ExampleControlled = () => {
-  const [selectValue, setSelectValue] = useState('optionOne');
-  const handleOnChange = (event) => setSelectedValue(event.target.value);
+For using the `Select` as a controlled component, you need to:
 
-  return (
-    <Select
-      id="optionSelect-controlled"
-      name="optionSelect-controlled"
-      value={selectValue}
-      onChange={handleOnChange}
-    >
-      <Select.Option value="optionOne">Option 1</Select.Option>
-      <Select.Option value="optionTwo">Long Option 2</Select.Option>
-    </Select>
-  );
-};
+- Pass one of the options as the `value` property, with this property it will already be a controlled component;
+- Pass a `onChange` handler, so you can use it to update the value of `value`;
+
+```tsx file=../../examples/SelectControlledExample.tsx
+
 ```
 
 ### Using as an uncontrolled select
 
-To use the Select as uncontrolled, you shouldn't pass the value prop, if you want to have an option selected by default, you can instead use the defaultValue prop.
+Uncontrolled components are those for which the form data is handled by the DOM itself. “Uncontrolled” refers to the fact that these components are not controlled by React state.
 
-```tsx static=true
-<Select
-  id="optionSelect-controlled"
-  name="optionSelect-controlled"
-  defaultValue="optionOne"
->
-  <Select.Option value="optionOne">Option 1</Select.Option> // This option would
-  be selected by default
-  <Select.Option value="optionTwo">Long Option 2</Select.Option>
-</Select>
-```
+You can use the `Select` as an uncontrolled component, for that you can:
 
-### Select vs dropdown
+- Set the `defaultValue` property, it will ensure that the select value can be altered normally.
+- Don't set the `value` property as it will make the select controlled.
 
-1. Dropdown menus are typically used for navigation or command menus, where an action is initiated based on the selection.
-2. Select is a type of input, where the user is choosing one option from the list, typically used in Forms.
+```tsx file=../../examples/SelectUncontrolledExample.tsx
 
-## Code examples
-
-```tsx
-// import { Select } from '@contentful/f36-components';
-
-<Select id="optionSelect" name="optionSelect">
-  <Select.Option value="optionOne">Option 1</Select.Option>
-  <Select.Option value="optionTwo">Long Option 2</Select.Option>
-</Select>
 ```
 
 ### Select with label
 
 In order to provide the best experience for your users consider using label that we provide for you in the [FormControl](/components/form-control)
 
-```tsx
-// import { Select } from '@contentful/f36-components';
+```tsx file=../../examples/SelectWithLabelExample.tsx
 
-<FormControl>
-  <FormControl.Label>Label for select</FormControl.Label>
-  <Select id="optionSelect" name="optionSelect">
-    <Select.Option value="optionOne">Option 1</Select.Option>
-    <Select.Option value="optionTwo">Long Option 2</Select.Option>
-  </Select>
-</FormControl>
 ```
 
 ### Select with validation
 
 There might be cases where you would need to include the help text or validation message into your form. Read more about those elements in [FormControl documentation](/components/form-control)
 
-```tsx
-// import { Select } from '@contentful/f36-components';
+```tsx file=../../examples/SelectWithValidationExample.tsx
 
-<FormControl>
-  <FormControl.Label>Label for select</FormControl.Label>
-  <Select id="optionSelect" name="optionSelect">
-    <Select.Option value="optionOne">Option 1</Select.Option>
-    <Select.Option value="optionTwo">Long Option 2</Select.Option>
-  </Select>
-  <FormControl.HelpText>Help text for your select</FormControl.HelpText>
-  <FormControl.ValidationMessage>
-    Validation message
-  </FormControl.ValidationMessage>
-</FormControl>
 ```
 
-### Select state disabled
+### Select disabled state
 
-```tsx
-// import { Select } from '@contentful/f36-components';
+```tsx file=../../examples/SelectDisabledExample.tsx
 
-<Select id="optionSelect" name="optionSelect" isDisabled>
-  <Select.Option value="optionOne">Option 1</Select.Option>
-  <Select.Option value="optionTwo">Long Option 2</Select.Option>
-</Select>
 ```
 
 ### Select with placeholder
 
-```tsx
-// import { Select } from '@contentful/f36-components';
+```tsx file=../../examples/SelectPlaceholderExample.tsx
 
-<Select name="optionSelect" id="optionSelect" defaultValue="">
-  <Select.Option value="" isDisabled>
-    Please select an option...
-  </Select.Option>
-  <Select.Option value="optionOne">Option One</Select.Option>
-  <Select.Option value="optionTwo">Option Two</Select.Option>
-  <Select.Option value="optionThree" isDisabled>
-    Option Three
-  </Select.Option>
-</Select>
 ```
 
 ### Select with error
 
-```tsx
-// import { Select } from '@contentful/f36-components';
+```tsx file=../../examples/SelectWithErrorExample.tsx
 
-<Select id="optionSelect" name="optionSelect" isInvalid>
-  <Select.Option value="optionOne">Option 1</Select.Option>
-  <Select.Option value="optionTwo">Long Option 2</Select.Option>
-</Select>
 ```
 
 ## Content guidelines
 
+- Use Select to present many different options in one component
+- When you have only a few options try to show them all at once, using [Radio](../components/radio).
+- Use Select in Forms
+- Order the list of options in a logical way, so it make sense for the user
+- Don't use Select for a very long list of options, instead for those cases use [Autocomplete](../components/autocomplete)
 - Options should be written in sentence case (the first word capitalized, the rest lowercase).
 - Options should be labeled in a clear way, so it's obvious what the option will do
+
+### Select vs dropdown
+
+1. Dropdown menus are typically used for navigation or command menus, where an action is initiated based on the selection.
+2. Select is a type of input, where the user is choosing one option from the list, typically used in Forms.
 
 ## Accessibility
 
 - Select should contain a label, if needed help message and validation message if needed.
 - Select should always a `name` property.
 
-## Props
+## Props (API reference)
 
 import { Props } from '@contentful/f36-docs-utils';
 
