@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Switch, Checkbox } from '@contentful/f36-components';
+import { Switch, Checkbox, Stack } from '@contentful/f36-components';
 
 export default function SwitchUncontrolledExample() {
   const [cookiesState, setCookiesState] = useState(false);
 
   return (
-    <>
+    <Stack flexDirection="column">
       <Switch
         name="switch-cookies-choice"
         id="switch-cookies-choice"
@@ -22,6 +22,6 @@ export default function SwitchUncontrolledExample() {
       >
         Allow cookies
       </Checkbox>
-    </>
+    </Stack>
   );
 }
