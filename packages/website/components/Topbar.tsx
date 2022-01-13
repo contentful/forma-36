@@ -3,14 +3,14 @@ import tokens from '@contentful/f36-tokens';
 import { Subheading, Flex } from '@contentful/f36-components';
 import { css } from 'emotion';
 import Link from 'next/link';
-import { DocSearch } from './DocSearch';
+// import { DocSearch } from './DocSearch';
 
 export const TopbarHeight = '70px';
 
 const styles = {
   header: css`
     display: grid;
-    grid-template-columns: 320px auto 320px;
+    grid-template-columns: 3fr 7fr 2fr;
     background-color: ${tokens.colorWhite};
     color: ${tokens.blue700};
     padding: 0 ${tokens.spacingXl};
@@ -126,16 +126,26 @@ export const Topbar = () => (
               </a>
             </Link>
           </li>
+          <li className={styles.navListItem}>
+            <a
+              className={styles.navListLink}
+              href="https://v3.f36.contentful.com/"
+            >
+              <Subheading className={styles.navListLink} marginBottom="none">
+                v3
+              </Subheading>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
-    <Flex alignItems="center">
+    {/* <Flex alignItems="center">
       <DocSearch />
       <Flex padding="spacingXs">
         <a className={styles.navListLink} href="https://v3.f36.contentful.com/">
           v3
         </a>
       </Flex>
-    </Flex>
+    </Flex> */}
   </header>
 );

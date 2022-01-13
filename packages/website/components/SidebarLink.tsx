@@ -2,7 +2,7 @@ import React from 'react';
 import { css, cx } from 'emotion';
 import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
-import { List, Flex } from '@contentful/f36-components';
+import { List, Flex, Subheading } from '@contentful/f36-components';
 import { ChevronDownIcon } from '@contentful/f36-icons';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
 
@@ -53,12 +53,14 @@ export function SidebarSectionButton(props: {
     <List.Item>
       <Flex
         alignItems="center"
-        justifyContent="space-between"
         className={cx([titleStyles.clickable, titleStyles.sidebarItem])}
         role="button"
         onClick={props.onClick}
       >
-        <span>{props.children}</span>
+        <Subheading marginBottom="none" marginRight="spacingXs">
+          <span>{props.children}</span>
+        </Subheading>
+
         <ChevronDownIcon
           variant="muted"
           className={!props.isOpen ? titleStyles.closedIcon : ''}
