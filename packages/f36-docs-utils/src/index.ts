@@ -1,1 +1,1 @@
-export * from './Props';
+export * from './PropsTable';
