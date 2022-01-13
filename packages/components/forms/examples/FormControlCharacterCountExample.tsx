@@ -1,17 +1,18 @@
 import React from 'react';
-import { FormControl, TextInput, Flex } from '@contentful/f36-components';
+import { FormControl, TextInput, Grid } from '@contentful/f36-components';
 
 export default function FormControlCharacterCountExample() {
+  const limit = 10;
   return (
     <FormControl>
       <FormControl.Label isRequired>Name</FormControl.Label>
-      <TextInput maxLength={8} />
-      <Flex justifyContent="space-between">
+      <TextInput maxLength={limit} />
+      <Grid columns="auto 80px">
         <FormControl.HelpText>
-          Name should be no longer than 8 characters
+          Name should be no longer than {limit} characters
         </FormControl.HelpText>
         <FormControl.Counter />
-      </Flex>
+      </Grid>
     </FormControl>
   );
 }
