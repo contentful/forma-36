@@ -1,16 +1,17 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
-import { Subheading, Flex } from '@contentful/f36-components';
+import { Text, Flex } from '@contentful/f36-components';
 import { css } from 'emotion';
 import Link from 'next/link';
-import { DocSearch } from './DocSearch';
+// DocSearch will be resintroduced as soon as we fix issue with Algolia
+// import { DocSearch } from './DocSearch';
 
 export const TopbarHeight = '70px';
 
 const styles = {
   header: css`
     display: grid;
-    grid-template-columns: 320px auto 320px;
+    grid-template-columns: 3fr 7fr 2fr;
     background-color: ${tokens.colorWhite};
     color: ${tokens.blue700};
     padding: 0 ${tokens.spacingXl};
@@ -44,7 +45,7 @@ const styles = {
     display: flex;
   `,
   navListItem: css`
-    margin-left: ${tokens.spacingXl};
+    margin-right: ${tokens.spacingXl};
     font-size: ${tokens.fontSizeL};
   `,
   navListLink: css`
@@ -93,49 +94,96 @@ export const Topbar = () => (
           <li className={styles.navListItem}>
             <Link href="/" passHref>
               <a className={styles.logoLink} href="/">
-                <Subheading className={styles.navListLink} marginBottom="none">
+                <Text
+                  fontSize="fontSizeL"
+                  lineHeight="lineHeightL"
+                  fontWeight="fontWeightDemiBold"
+                  as="span"
+                  className={styles.navListLink}
+                  marginBottom="none"
+                >
                   Introduction
-                </Subheading>
+                </Text>
               </a>
             </Link>
           </li>
           <li className={styles.navListItem}>
             <Link href="/guidelines/accessibility" passHref>
               <a className={styles.logoLink} href="/guidelines/accessibility">
-                <Subheading className={styles.navListLink} marginBottom="none">
+                <Text
+                  fontSize="fontSizeL"
+                  lineHeight="lineHeightL"
+                  fontWeight="fontWeightDemiBold"
+                  as="span"
+                  className={styles.navListLink}
+                  marginBottom="none"
+                >
                   Guidelines
-                </Subheading>
+                </Text>
               </a>
             </Link>
           </li>
           <li className={styles.navListItem}>
             <Link href="/tokens/color-system" passHref>
               <a className={styles.logoLink} href="/tokens/color-system">
-                <Subheading className={styles.navListLink} marginBottom="none">
+                <Text
+                  fontSize="fontSizeL"
+                  lineHeight="lineHeightL"
+                  fontWeight="fontWeightDemiBold"
+                  as="span"
+                  className={styles.navListLink}
+                  marginBottom="none"
+                >
                   Tokens
-                </Subheading>
+                </Text>
               </a>
             </Link>
           </li>
           <li className={styles.navListItem}>
             <Link href="/components/box" passHref>
               <a className={styles.logoLink} href="/components/box">
-                <Subheading className={styles.navListLink} marginBottom="none">
+                <Text
+                  fontSize="fontSizeL"
+                  lineHeight="lineHeightL"
+                  fontWeight="fontWeightDemiBold"
+                  as="span"
+                  className={styles.navListLink}
+                  marginBottom="none"
+                >
                   Components
-                </Subheading>
+                </Text>
+              </a>
+            </Link>
+          </li>
+          <li className={styles.navListItem}>
+            <Link href="https://v3.f36.contentful.com/" passHref>
+              <a
+                className={styles.navListLink}
+                href="https://v3.f36.contentful.com/"
+              >
+                <Text
+                  fontSize="fontSizeL"
+                  lineHeight="lineHeightL"
+                  fontWeight="fontWeightDemiBold"
+                  as="span"
+                  className={styles.navListLink}
+                  marginBottom="none"
+                >
+                  v3
+                </Text>
               </a>
             </Link>
           </li>
         </ul>
       </nav>
     </div>
-    <Flex alignItems="center">
+    {/* <Flex alignItems="center">
       <DocSearch />
       <Flex padding="spacingXs">
         <a className={styles.navListLink} href="https://v3.f36.contentful.com/">
           v3
         </a>
       </Flex>
-    </Flex>
+    </Flex> */}
   </header>
 );

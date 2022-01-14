@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { List, SectionHeading } from '@contentful/f36-components';
+import { List, Subheading } from '@contentful/f36-components';
 
 import { SidebarLink, SidebarSectionButton } from './SidebarLink';
 
@@ -19,8 +19,6 @@ const styles = {
   }),
   sectionTitle: css({
     padding: `${tokens.spacingXs} ${tokens.spacingM}`,
-    fontSize: tokens.fontSizeM,
-    lineHeight: tokens.lineHeightM,
     letterSpacing: 'initial',
   }),
 };
@@ -30,12 +28,12 @@ const isLinkActive = (href, currentPage) =>
 
 export type SidebarLinkType = { title: string; slug: string; type: 'link' };
 export type SidebarSectionType = {
-  title: string;
+  title?: string;
   links: SidebarLinkType[];
   type: 'section';
 };
 interface SidebarSectionProps {
-  title: string;
+  title?: string;
   links: Array<SidebarLinkType | SidebarSectionType>;
   currentPage: string;
 }
@@ -45,7 +43,7 @@ function SidebarSubsection({
   links = [],
   currentPage,
 }: {
-  title: string;
+  title?: string;
   links: SidebarLinkType[];
   currentPage: string;
 }) {
@@ -53,14 +51,17 @@ function SidebarSubsection({
 
   return (
     <List className={styles.sublist}>
-      <SidebarSectionButton
-        isOpen={isOpen}
-        onClick={() => {
-          setIsOpen((open) => !open);
-        }}
-      >
-        {title}
-      </SidebarSectionButton>
+      {title && (
+        <SidebarSectionButton
+          isOpen={isOpen}
+          onClick={() => {
+            setIsOpen((open) => !open);
+          }}
+        >
+          {title}
+        </SidebarSectionButton>
+      )}
+
       {isOpen
         ? links.map((link) => {
             return (
@@ -86,9 +87,11 @@ export function SidebarSection({
 }: SidebarSectionProps) {
   return (
     <List className={styles.list}>
-      <SectionHeading className={styles.sectionTitle} marginBottom="none">
-        {title}
-      </SectionHeading>
+      {title && (
+        <Subheading className={styles.sectionTitle} marginBottom="none">
+          {title}
+        </Subheading>
+      )}
       {links.map((link) => {
         if (link.type === 'section') {
           return (

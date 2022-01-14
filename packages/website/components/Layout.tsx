@@ -36,7 +36,7 @@ export function Layout({ children, currentPage }: Props) {
   return (
     <Grid
       className={styles.grid}
-      columns="285px auto"
+      columns="2fr 10fr"
       rows="auto 1fr"
       columnGap="none"
     >

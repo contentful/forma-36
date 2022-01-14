@@ -32,6 +32,8 @@ interface Props {
 }
 
 const components: Array<SidebarSectionType | SidebarLinkType> = [
+  ...sidebarLinks.unassigned,
+
   {
     type: 'section',
     links: sidebarLinks.layoutComponents,
@@ -72,7 +74,6 @@ const components: Array<SidebarSectionType | SidebarLinkType> = [
     links: sidebarLinks.skeletonComponents,
     title: 'Skeleton Components',
   },
-  ...sidebarLinks.unassigned,
   {
     type: 'section',
     links: sidebarLinks.deprecatedComponents,
@@ -95,25 +96,19 @@ export function Sidebar({ currentPage = '/' }: Props) {
           <>
             {currentPage.includes('guidelines') && (
               <SidebarSection
-                title="Guidelines"
                 links={sidebarLinks.guidelines}
                 currentPage={currentPage}
               />
             )}
             {currentPage.includes('tokens') && (
               <SidebarSection
-                title="Tokens"
                 links={sidebarLinks.tokens}
                 currentPage={currentPage}
               />
             )}
             {currentPage.includes('components') && (
               <>
-                <SidebarSection
-                  title="Components"
-                  links={components}
-                  currentPage={currentPage}
-                />
+                <SidebarSection links={components} currentPage={currentPage} />
                 <SidebarSection
                   title="Utils"
                   links={sidebarLinks.utils}
