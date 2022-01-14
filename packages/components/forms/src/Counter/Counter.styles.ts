@@ -6,6 +6,7 @@ export function getCounterStyles() {
     root: css({
       flexShrink: 0,
       paddingLeft: tokens.spacingM,
+      textAlign: 'right',
     }),
   };
 }

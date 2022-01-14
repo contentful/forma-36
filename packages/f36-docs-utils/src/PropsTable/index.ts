@@ -1,4 +1,4 @@
-export { Props } from './Props';
+export { PropsTable } from './PropsTable';
 export { PropsContextProvider, usePropsContext } from './PropsContext';
 export type {
   PropType,

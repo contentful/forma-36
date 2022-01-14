@@ -100,7 +100,7 @@ function _BaseCheckbox(
     : undefined;
 
   return (
-    <Flex className={className}>
+    <Flex flexDirection="column" className={className}>
       <Text
         as="label"
         fontColor="gray900"

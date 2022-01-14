@@ -5,95 +5,63 @@ status: 'stable'
 section: 'formComponents'
 slug: /components/textarea/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/Textarea'
-storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/form-elements-textarea--basic'
-typescript: './TextArea.tsx'
+typescript: ./Textarea.tsx
 ---
 
 `Textarea` is a form component that allows the user to enter a sizeable amount of multi-line plain text.
 
-## How to use Textarea
+## Import
 
-Textarea can be imported from `@contentful/f36-components` or `@contentful/f36-forms`.
-This component is renders a form element, therefore it should be used within the context of a `<Form>`.
+```js static=true
+import { Textarea } from '@contentful/f36-components';
+// or
+import { Textarea } from '@contentful/f36-forms';
+```
 
 ## Examples
 
-```tsx
-<Textarea id="textarea" name="description" label="description" />
+### Using as a controlled input
+
+Controlled components in React are those in which form data is handled by the component’s state.
+
+For using the `Textarea` as a controlled input, you need to:
+
+- Pass `value` property, with this property it will already be a controlled component;
+- Pass `onChange` handler, so you can use it to update the value of the input;
+
+```jsx file=../../examples/TextareaControlledExample.tsx
+
 ```
 
-## With label
+### Using as an uncontrolled input
 
-In order to create a correct textarea input the recommendation is to add a label to any kind of input. In order to do that, we provide you couple of additional components that you can use to compose your inputs with labels, help or validation messages.
-Read more about [`FormControl`](/components/form-control)
+Uncontrolled components are those for which the form data is handled by the DOM itself. “Uncontrolled” refers to the fact that these components are not controlled by React state.
 
-```jsx
-<FormControl>
-  <FormControl.Label>Tell me more about yourself</FormControl.Label>
-  <Textarea id="textarea" name="description" label="description" isRequired />
-  <FormControl.HelpText>
-    Some additional information if needed
-  </FormControl.HelpText>
-</FormControl>
+You can use the `Textarea` as an uncontrolled input, for that you can:
+
+- Set the `defaultValue` property, it will ensure that the initial value of the input is set.
+- Don't set the `value` as it will make the input controlled.
+
+```jsx file=../../examples/TextareaUncontrolledExample.tsx
+
 ```
 
-### isRequired
+### Using outside of forms
 
-```tsx
-<Textarea id="textarea" name="description" label="description" isRequired />
+When `Textarea` is used outside of form (without `FormControl`) and has no `<label>` associated with it, you need to specify `aria-label`.
+
+### Different states
+
+```jsx file=../../examples/TextareaStatesExample.tsx
+
 ```
 
-By using the `isRequired` prop, it’s possible to control the required state of the `textarea`.
-This prop will set `disabled` attribute of the HTML tag to `true`.
+## Props (API reference)
 
-### isDisabled
-
-```tsx
-<Textarea id="textarea" name="description" label="description" isDisabled />
-```
-
-By using the `isDisabled` prop, it’s possible to control the disabled state of the `textarea`.
-This prop will handle the disabled styles and set `disabled` attribute of the HTML tag to `true`.
-
-### isInvalid
-
-```tsx
-<Textarea id="textarea" name="description" label="description" isInvalid />
-```
-
-By using the `isInvalid` prop, it’s possible to control the error state of the `textarea`.
-This prop will handle the error styles.
-
-### Using ref
-
-```jsx static=true
-const textareaRef = React.createRef()
-
-<Textarea
-  id="textarea"
-  name="textarea"
-  label="My textarea"
-  placeholder="Placeholder"
-  ref={textareaRef}
-/>
-
-<Button onClick={() => textareaRef.current.focus()}>
-  Focus Textarea with ref
-</Button>
-```
-
-The `Textarea` is exposing the ref of the `textarea` tag as a prop,
-which means that you can pass a ref created with `React.createRef()` or `useRef` hook to it and it will work as expected.
+<PropsTable of="Textarea" />
 
 ## Accessibility
 
 - To ensure accessibility, provide a `name` prop
 - In case the input is required, use `isRequired` prop
 - If you are using this component in a form, provide validation to the input and use `isInvalid` to control the error state of `Textarea`. Also show meaningful error messages with the `ValidationMessage` component.
-- Provide instructions of how to fill the field with `HelpText` component
-
-## Props
-
-import { Props } from '@contentful/f36-docs-utils';
-
-<Props of="Textarea" />
