@@ -1,5 +1,6 @@
 import React from 'react';
 import { css } from 'emotion';
+import sortBy from 'lodash.sortby';
 import tokens from '@contentful/f36-tokens';
 import { Flex, List, Box } from '@contentful/f36-components';
 
@@ -82,6 +83,8 @@ const components: Array<SidebarSectionType | SidebarLinkType> = [
 ];
 
 export function Sidebar({ currentPage = '/' }: Props) {
+  const componentsSorted = sortBy(components, ['title']);
+
   return (
     <Flex
       as="nav"
