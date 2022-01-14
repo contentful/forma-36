@@ -1,21 +1,33 @@
 import React from 'react';
-import { TextLink, Flex } from '@contentful/f36-components';
-import tokens from '@contentful/f36-tokens';
-import { css } from '@emotion/core';
 import Link from 'next/link';
-import contentfulLogoSVG from '../resources/icons/contentful-logo.svg';
+import { css } from 'emotion';
+import { TextLink, Flex, TextLinkProps } from '@contentful/f36-components';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
+import tokens from '@contentful/f36-tokens';
+
+import contentfulLogoSVG from '../resources/icons/contentful-logo.svg';
 
 const styles = {
-  footer: css`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: ${tokens.spacingL} ${tokens.spacing2Xl};
-    margin-top: ${tokens.spacing2Xl};
-    background-color: ${tokens.gray100};
-  `,
-
+  footer: css({
+    display: 'grid',
+    gridAutoRows: 'min-content',
+    gridTemplateColumns: '8fr 2fr',
+    alignItems: 'flex-start',
+    padding: tokens.spacingL,
+    marginTop: tokens.spacing2Xl,
+    backgroundColor: tokens.gray100,
+    '@media screen and (min-width: 1440px)': {
+      gridTemplateColumns: '1fr 7fr 2fr',
+    },
+    '@media screen and (min-width: 1700px)': {
+      gridTemplateColumns: '1fr 6fr 2fr 1fr',
+    },
+  }),
+  footerFirstColumn: css({
+    '@media screen and (min-width: 1440px)': {
+      gridColumnStart: 2,
+    },
+  }),
   svg: css`
     height: 30px;
     width: auto;
@@ -24,121 +36,58 @@ const styles = {
 
 export const Footer = () => {
   return (
-    <footer css={styles.footer}>
-      <Flex>
-        <Flex flexDirection="column" marginRight="spacing2Xl">
-          <Flex marginRight="spacingL" marginBottom="spacingM">
-            <Link href="/playground" passHref>
-              <TextLink href="/playground" variant="secondary">
-                Playground
-              </TextLink>
-            </Link>
-          </Flex>
-          <Flex marginRight="spacingL" marginBottom="spacingM">
-            <TextLink
-              variant="secondary"
-              href="https://github.com/contentful/forma-36"
-              target="_blank"
-              rel="noopener noreferrer"
-              icon={<ExternalLinkIcon />}
-              alignIcon="end"
-            >
-              View the repo on GitHub
-            </TextLink>
-          </Flex>
-
-          <Flex marginRight="spacingL" marginBottom="spacingM">
-            <TextLink
-              variant="secondary"
-              href="https://medium.com/contentful-design"
-              target="_blank"
-              rel="noopener noreferrer"
-              icon={<ExternalLinkIcon />}
-              alignIcon="end"
-            >
-              Contentful design blog
-            </TextLink>
-          </Flex>
-
-          <Flex marginRight="spacingL" marginBottom="spacingM">
-            <TextLink
-              variant="secondary"
-              href="https://www.contentful.com/developers/"
-              target="_blank"
-              rel="noopener noreferrer"
-              icon={<ExternalLinkIcon />}
-              alignIcon="end"
-            >
-              Join the developer comunnity
-            </TextLink>
-          </Flex>
-
-          <Flex>
-            <TextLink
-              href="https://forms.gle/qC7LLbiy4CcF5HPLA"
-              variant="secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-              icon={<ExternalLinkIcon />}
-              alignIcon="end"
-            >
-              Give us feedback
-            </TextLink>
-          </Flex>
+    <footer className={styles.footer}>
+      <Flex className={styles.footerFirstColumn} gap="spacing2Xl">
+        <Flex flexDirection="column" alignItems="flex-start" gap="spacingM">
+          <Link href="/playground" passHref>
+            <FooterLink
+              href="/playground"
+              label="Playground"
+              isExternal={false}
+            />
+          </Link>
+          <FooterLink
+            href="https://github.com/contentful/forma-36"
+            label="View the repo on GitHub"
+          />
+          <FooterLink
+            href="https://medium.com/contentful-design"
+            label="Contentful design blog"
+          />
+          <FooterLink
+            href="https://www.contentful.com/developers/"
+            label="Join the developer comunnity"
+          />
+          <FooterLink
+            href="https://forms.gle/qC7LLbiy4CcF5HPLA"
+            label="Give us feedback"
+          />
         </Flex>
-        <Flex flexDirection="column">
-          <Flex marginRight="spacingL" marginBottom="spacingM">
-            <TextLink
-              variant="secondary"
-              href="https://www.contentful.com/legal/"
-              target="_blank"
-              rel="noopener noreferrer"
-              icon={<ExternalLinkIcon />}
-              alignIcon="end"
-            >
-              Imprint / Legal
-            </TextLink>
-          </Flex>
 
-          <Flex marginRight="spacingL" marginBottom="spacingM">
-            <TextLink
-              variant="secondary"
-              href="https://www.contentful.com/legal/privacy-at-contentful/privacy-notice/"
-              target="_blank"
-              rel="noopener noreferrer"
-              icon={<ExternalLinkIcon />}
-              alignIcon="end"
-            >
-              Privacy
-            </TextLink>
-          </Flex>
-
-          <Flex marginRight="spacingL" marginBottom="spacingM">
-            <TextLink
-              variant="secondary"
-              href="https://www.contentful.com/security/"
-              target="_blank"
-              rel="noopener noreferrer"
-              icon={<ExternalLinkIcon />}
-              alignIcon="end"
-            >
-              Security
-            </TextLink>
-          </Flex>
-
-          <Flex>
-            <TextLink
-              variant="secondary"
-              onClick={(e) => {
-                e.preventDefault();
-                if ((window as any).Osano) {
-                  (window as any).Osano.cm.showDrawer();
-                }
-              }}
-            >
-              Cookie Preferences
-            </TextLink>
-          </Flex>
+        <Flex flexDirection="column" alignItems="flex-start" gap="spacingM">
+          <FooterLink
+            href="https://www.contentful.com/legal/"
+            label="Imprint / Legal"
+          />
+          <FooterLink
+            href="https://www.contentful.com/legal/privacy-at-contentful/privacy-notice/"
+            label="Privacy"
+          />
+          <FooterLink
+            href="https://www.contentful.com/security/"
+            label="Security"
+          />
+          <TextLink
+            variant="secondary"
+            onClick={(e) => {
+              e.preventDefault();
+              if ((window as any).Osano) {
+                (window as any).Osano.cm.showDrawer();
+              }
+            }}
+          >
+            Cookie Preferences
+          </TextLink>
         </Flex>
       </Flex>
 
@@ -146,14 +95,31 @@ export const Footer = () => {
         href="https://www.contentful.com"
         target="_blank"
         rel="noopener noreferrer"
-        css={styles.svg}
+        className={css({ justifySelf: 'flex-end' })}
       >
         <img
           alt="Contentful’s logo"
-          css={styles.svg}
+          className={styles.svg}
           src={contentfulLogoSVG.src}
         />
       </a>
     </footer>
   );
 };
+
+function FooterLink({ href, label, isExternal = true }) {
+  const externalLinkProps = isExternal
+    ? {
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        icon: <ExternalLinkIcon />,
+        alignIcon: 'end' as TextLinkProps['alignIcon'],
+      }
+    : {};
+
+  return (
+    <TextLink variant="secondary" href={href} {...externalLinkProps}>
+      {label}
+    </TextLink>
+  );
+}
