@@ -24,25 +24,15 @@ const styles = {
     text-decoration: none;
     color: #fff;
   `,
-  logoText: css`
-    font-weight: ${tokens.fontWeightDemiBold};
-    font-size: ${tokens.fontSizeXl};
-    margin-left: ${tokens.spacingL};
-    color: ${tokens.blue700};
-  `,
-  searchNavContainer: css`
-    display: flex;
-    align-items: center;
-  `,
-  navList: css`
-    list-style: none;
-    padding: 0;
-    display: flex;
-  `,
-  navListItem: css`
-    margin-right: ${tokens.spacingXl};
-    font-size: ${tokens.fontSizeL};
-  `,
+  navList: css({
+    listStyle: 'none',
+    padding: 0,
+    display: 'flex',
+    '> li': {
+      marginRight: tokens.spacingXl,
+      fontSize: tokens.fontSizeL,
+    },
+  }),
   navListLink: css`
     color: ${tokens.gray900};
     text-decoration: none;
@@ -78,29 +68,34 @@ export const Topbar = () => (
       <Link href="/" passHref>
         <a className={styles.logoLink} href="/">
           <Logo />
-          <div className={styles.logoText}>Forma 36</div>
+          <Text
+            fontSize="fontSizeXl"
+            fontWeight="fontWeightDemiBold"
+            fontColor="blue700"
+            marginLeft="spacingL"
+          >
+            Forma 36
+          </Text>
         </a>
       </Link>
     </Flex>
 
-    <div className={styles.searchNavContainer}>
-      <nav>
-        <ul className={styles.navList}>
-          <li className={styles.navListItem}>
-            <TopbarLink href="/" label="Introduction" />
-          </li>
-          <li className={styles.navListItem}>
-            <TopbarLink href="/guidelines/accessibility" label="Guidelines" />
-          </li>
-          <li className={styles.navListItem}>
-            <TopbarLink href="/tokens/color-system" label="Tokens" />
-          </li>
-          <li className={styles.navListItem}>
-            <TopbarLink href="/components/box" label="Components" />
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <Flex as="nav" alignItems="center">
+      <ul className={styles.navList}>
+        <li>
+          <TopbarLink href="/" label="Introduction" />
+        </li>
+        <li>
+          <TopbarLink href="/guidelines/accessibility" label="Guidelines" />
+        </li>
+        <li>
+          <TopbarLink href="/tokens/color-system" label="Tokens" />
+        </li>
+        <li>
+          <TopbarLink href="/components/box" label="Components" />
+        </li>
+      </ul>
+    </Flex>
 
     <Flex alignItems="center">
       <DocSearch />
