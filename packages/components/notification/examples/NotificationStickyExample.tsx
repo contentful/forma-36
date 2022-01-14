@@ -7,7 +7,7 @@ export default function NotificationStickyExample() {
       variant="secondary"
       onClick={() =>
         Notification.warning(
-          'This message will disappear only by clicking close button!',
+          'This message will be dismissed only after clicking the "Close" button!',
           { duration: 0 },
         )
       }
