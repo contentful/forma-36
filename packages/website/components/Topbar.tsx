@@ -30,11 +30,6 @@ const styles = {
     margin-left: ${tokens.spacingL};
     color: ${tokens.blue700};
   `,
-  versionText: css`
-    font-weight: ${tokens.fontWeightDemiBold};
-    font-size: ${tokens.fontSizeL};
-    margin-left: ${tokens.spacingM};
-  `,
   searchNavContainer: css`
     display: flex;
     align-items: center;
@@ -92,68 +87,16 @@ export const Topbar = () => (
       <nav>
         <ul className={styles.navList}>
           <li className={styles.navListItem}>
-            <Link href="/" passHref>
-              <a className={styles.logoLink} href="/">
-                <Text
-                  fontSize="fontSizeL"
-                  lineHeight="lineHeightL"
-                  fontWeight="fontWeightDemiBold"
-                  as="span"
-                  className={styles.navListLink}
-                  marginBottom="none"
-                >
-                  Introduction
-                </Text>
-              </a>
-            </Link>
+            <TopbarLink href="/" label="Introduction" />
           </li>
           <li className={styles.navListItem}>
-            <Link href="/guidelines/accessibility" passHref>
-              <a className={styles.logoLink} href="/guidelines/accessibility">
-                <Text
-                  fontSize="fontSizeL"
-                  lineHeight="lineHeightL"
-                  fontWeight="fontWeightDemiBold"
-                  as="span"
-                  className={styles.navListLink}
-                  marginBottom="none"
-                >
-                  Guidelines
-                </Text>
-              </a>
-            </Link>
+            <TopbarLink href="/guidelines/accessibility" label="Guidelines" />
           </li>
           <li className={styles.navListItem}>
-            <Link href="/tokens/color-system" passHref>
-              <a className={styles.logoLink} href="/tokens/color-system">
-                <Text
-                  fontSize="fontSizeL"
-                  lineHeight="lineHeightL"
-                  fontWeight="fontWeightDemiBold"
-                  as="span"
-                  className={styles.navListLink}
-                  marginBottom="none"
-                >
-                  Tokens
-                </Text>
-              </a>
-            </Link>
+            <TopbarLink href="/tokens/color-system" label="Tokens" />
           </li>
           <li className={styles.navListItem}>
-            <Link href="/components/box" passHref>
-              <a className={styles.logoLink} href="/components/box">
-                <Text
-                  fontSize="fontSizeL"
-                  lineHeight="lineHeightL"
-                  fontWeight="fontWeightDemiBold"
-                  as="span"
-                  className={styles.navListLink}
-                  marginBottom="none"
-                >
-                  Components
-                </Text>
-              </a>
-            </Link>
+            <TopbarLink href="/components/box" label="Components" />
           </li>
         </ul>
       </nav>
@@ -161,21 +104,24 @@ export const Topbar = () => (
 
     <Flex alignItems="center">
       <DocSearch />
-
-      <Flex padding="spacingXs">
-        <a className={styles.navListLink} href="https://v3.f36.contentful.com/">
-          <Text
-            fontSize="fontSizeL"
-            lineHeight="lineHeightL"
-            fontWeight="fontWeightDemiBold"
-            as="span"
-            className={styles.navListLink}
-            marginBottom="none"
-          >
-            v3
-          </Text>
-        </a>
-      </Flex>
+      <TopbarLink href="https://v3.f36.contentful.com/" label="v3" />
     </Flex>
   </header>
 );
+
+function TopbarLink({ href, label }) {
+  return (
+    <Link href={href} passHref>
+      <Text
+        fontSize="fontSizeL"
+        lineHeight="lineHeightL"
+        fontWeight="fontWeightDemiBold"
+        as="a"
+        className={styles.navListLink}
+        marginBottom="none"
+      >
+        {label}
+      </Text>
+    </Link>
+  );
+}
