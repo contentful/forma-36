@@ -3,8 +3,8 @@ import tokens from '@contentful/f36-tokens';
 import { Text, Flex } from '@contentful/f36-components';
 import { css } from 'emotion';
 import Link from 'next/link';
-// DocSearch will be resintroduced as soon as we fix issue with Algolia
-// import { DocSearch } from './DocSearch';
+
+import { DocSearch } from './DocSearch';
 
 export const TopbarHeight = '70px';
 
@@ -24,30 +24,15 @@ const styles = {
     text-decoration: none;
     color: #fff;
   `,
-  logoText: css`
-    font-weight: ${tokens.fontWeightDemiBold};
-    font-size: ${tokens.fontSizeXl};
-    margin-left: ${tokens.spacingL};
-    color: ${tokens.blue700};
-  `,
-  versionText: css`
-    font-weight: ${tokens.fontWeightDemiBold};
-    font-size: ${tokens.fontSizeL};
-    margin-left: ${tokens.spacingM};
-  `,
-  searchNavContainer: css`
-    display: flex;
-    align-items: center;
-  `,
-  navList: css`
-    list-style: none;
-    padding: 0;
-    display: flex;
-  `,
-  navListItem: css`
-    margin-right: ${tokens.spacingXl};
-    font-size: ${tokens.fontSizeL};
-  `,
+  navList: css({
+    listStyle: 'none',
+    padding: 0,
+    display: 'flex',
+    '> li': {
+      marginRight: tokens.spacingXl,
+      fontSize: tokens.fontSizeL,
+    },
+  }),
   navListLink: css`
     color: ${tokens.gray900};
     text-decoration: none;
@@ -83,107 +68,55 @@ export const Topbar = () => (
       <Link href="/" passHref>
         <a className={styles.logoLink} href="/">
           <Logo />
-          <div className={styles.logoText}>Forma 36</div>
+          <Text
+            fontSize="fontSizeXl"
+            fontWeight="fontWeightDemiBold"
+            fontColor="blue700"
+            marginLeft="spacingL"
+          >
+            Forma 36
+          </Text>
         </a>
       </Link>
     </Flex>
 
-    <div className={styles.searchNavContainer}>
-      <nav>
-        <ul className={styles.navList}>
-          <li className={styles.navListItem}>
-            <Link href="/" passHref>
-              <a className={styles.logoLink} href="/">
-                <Text
-                  fontSize="fontSizeL"
-                  lineHeight="lineHeightL"
-                  fontWeight="fontWeightDemiBold"
-                  as="span"
-                  className={styles.navListLink}
-                  marginBottom="none"
-                >
-                  Introduction
-                </Text>
-              </a>
-            </Link>
-          </li>
-          <li className={styles.navListItem}>
-            <Link href="/guidelines/accessibility" passHref>
-              <a className={styles.logoLink} href="/guidelines/accessibility">
-                <Text
-                  fontSize="fontSizeL"
-                  lineHeight="lineHeightL"
-                  fontWeight="fontWeightDemiBold"
-                  as="span"
-                  className={styles.navListLink}
-                  marginBottom="none"
-                >
-                  Guidelines
-                </Text>
-              </a>
-            </Link>
-          </li>
-          <li className={styles.navListItem}>
-            <Link href="/tokens/color-system" passHref>
-              <a className={styles.logoLink} href="/tokens/color-system">
-                <Text
-                  fontSize="fontSizeL"
-                  lineHeight="lineHeightL"
-                  fontWeight="fontWeightDemiBold"
-                  as="span"
-                  className={styles.navListLink}
-                  marginBottom="none"
-                >
-                  Tokens
-                </Text>
-              </a>
-            </Link>
-          </li>
-          <li className={styles.navListItem}>
-            <Link href="/components/box" passHref>
-              <a className={styles.logoLink} href="/components/box">
-                <Text
-                  fontSize="fontSizeL"
-                  lineHeight="lineHeightL"
-                  fontWeight="fontWeightDemiBold"
-                  as="span"
-                  className={styles.navListLink}
-                  marginBottom="none"
-                >
-                  Components
-                </Text>
-              </a>
-            </Link>
-          </li>
-          <li className={styles.navListItem}>
-            <Link href="https://v3.f36.contentful.com/" passHref>
-              <a
-                className={styles.navListLink}
-                href="https://v3.f36.contentful.com/"
-              >
-                <Text
-                  fontSize="fontSizeL"
-                  lineHeight="lineHeightL"
-                  fontWeight="fontWeightDemiBold"
-                  as="span"
-                  className={styles.navListLink}
-                  marginBottom="none"
-                >
-                  v3
-                </Text>
-              </a>
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    {/* <Flex alignItems="center">
+    <Flex as="nav" alignItems="center">
+      <ul className={styles.navList}>
+        <li>
+          <TopbarLink href="/" label="Introduction" />
+        </li>
+        <li>
+          <TopbarLink href="/guidelines/accessibility" label="Guidelines" />
+        </li>
+        <li>
+          <TopbarLink href="/tokens/color-system" label="Tokens" />
+        </li>
+        <li>
+          <TopbarLink href="/components/box" label="Components" />
+        </li>
+      </ul>
+    </Flex>
+
+    <Flex alignItems="center">
       <DocSearch />
-      <Flex padding="spacingXs">
-        <a className={styles.navListLink} href="https://v3.f36.contentful.com/">
-          v3
-        </a>
-      </Flex>
-    </Flex> */}
+      <TopbarLink href="https://v3.f36.contentful.com/" label="v3" />
+    </Flex>
   </header>
 );
+
+function TopbarLink({ href, label }) {
+  return (
+    <Link href={href} passHref>
+      <Text
+        fontSize="fontSizeL"
+        lineHeight="lineHeightL"
+        fontWeight="fontWeightDemiBold"
+        as="a"
+        className={styles.navListLink}
+        marginBottom="none"
+      >
+        {label}
+      </Text>
+    </Link>
+  );
+}
