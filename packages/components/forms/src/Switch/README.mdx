@@ -9,15 +9,21 @@ storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/form-elements-swit
 typescript: ./Switch.tsx
 ---
 
-Switch is a control that is used to quickly switch between two possible states. Switch works like a physical switch that allows users to turn things on or off, like a light switch.
+Switch is a control that is used to quickly switch between two possible states. Use it when a setting requires an on/off or show/hide function to display the results; user needs to perform instantaneous actions that do not need a review or confirmation; user is toggling independent features or behaviors.
 
-## How to use Switch
+## Import
 
-- use when a setting requires an on/off or show/hide function to display the results
-- use when user needs to perform instantaneous actions that do not need a review or confirmation
-- use when user is toggling independent features or behaviors
+```js static=true
+import { Switch } from '@contentful/f36-components';
+// or
+import { Switch } from '@contentful/f36-forms';
+```
+
+## Examples
 
 ### Using as a controlled input
+
+Controlled components in React are those in which form data is handled by the component’s state.
 
 For using the Switch as a controlled input, you need to:
 
@@ -26,66 +32,42 @@ For using the Switch as a controlled input, you need to:
 
 Setting the `isChecked` will already define it as a controlled input.
 
-```jsx static=true
-const ExampleControlled = () => {
-  const [switchState, setSwitchState] = useState(false);
+```jsx file=../../examples/SwitchControlledExample.tsx
 
-  return (
-    <Switch
-      name="allow-cookies-controlled"
-      id="allow-cookies-controlled"
-      isChecked={switchState}
-      onChange={() => setSwitchState((prevState) => !prevState)}
-    >
-      Allow cookies
-    </Switch>
-  );
-};
 ```
 
 ### Using as an uncontrolled input
+
+Uncontrolled components are those for which the form data is handled by the DOM itself. “Uncontrolled” refers to the fact that these components are not controlled by React state.
 
 You can use the Switch as an uncontrolled input, for that you can:
 
 - Set the `defaultChecked` property, it will ensure that the checked state can be altered normally.
 - Don't set the `isChecked` as it will make the input controlled.
 
-```jsx static=true
-<Switch
-  type="checkbox"
-  name="allow-cookies-uncontrolled"
-  id="allow-cookies-uncontrolled"
-  defaultChecked={true}
->
-  Allow cookies
-</Switch>
+```jsx file=../../examples/SwitchUncontrolledExample.tsx
+
 ```
 
 ### Switch vs Checkbox
 
 Switch is a two-step action: selection and execution, whereas checkbox is just selection of an option and its execution usually requires another control.
 
-## Code examples
+```jsx file=../../examples/SwitchVsCheckboxExample.tsx
 
-```jsx
-<Switch id="testSwitch1" name="testSwitch1">
-  label for switch
-</Switch>
 ```
 
 ### Switch disabled
 
-```jsx
-<Switch id="testSwitch2" name="testSwitch2" isDisabled>
-  label for switch
-</Switch>
+```jsx file=../../examples/SwitchCheckboxDisabled.tsx
+
 ```
-
-## Accessibility
-
-- use clear and concise label for Switch component
-- if needed provide additional information for the user if Switch will cause a change in the context
 
 ## Props (API reference)
 
 <PropsTable of="Switch" />
+
+## Accessibility
+
+- Use clear and concise label for Switch component
+- If needed provide additional information for the user if Switch will cause a change in the context
