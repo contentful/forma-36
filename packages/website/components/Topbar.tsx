@@ -3,8 +3,8 @@ import tokens from '@contentful/f36-tokens';
 import { Text, Flex } from '@contentful/f36-components';
 import { css } from 'emotion';
 import Link from 'next/link';
-// DocSearch will be resintroduced as soon as we fix issue with Algolia
-// import { DocSearch } from './DocSearch';
+
+import { DocSearch } from './DocSearch';
 
 export const TopbarHeight = '70px';
 
@@ -155,35 +155,27 @@ export const Topbar = () => (
               </a>
             </Link>
           </li>
-          <li className={styles.navListItem}>
-            <Link href="https://v3.f36.contentful.com/" passHref>
-              <a
-                className={styles.navListLink}
-                href="https://v3.f36.contentful.com/"
-              >
-                <Text
-                  fontSize="fontSizeL"
-                  lineHeight="lineHeightL"
-                  fontWeight="fontWeightDemiBold"
-                  as="span"
-                  className={styles.navListLink}
-                  marginBottom="none"
-                >
-                  v3
-                </Text>
-              </a>
-            </Link>
-          </li>
         </ul>
       </nav>
     </div>
-    {/* <Flex alignItems="center">
+
+    <Flex alignItems="center">
       <DocSearch />
+
       <Flex padding="spacingXs">
         <a className={styles.navListLink} href="https://v3.f36.contentful.com/">
-          v3
+          <Text
+            fontSize="fontSizeL"
+            lineHeight="lineHeightL"
+            fontWeight="fontWeightDemiBold"
+            as="span"
+            className={styles.navListLink}
+            marginBottom="none"
+          >
+            v3
+          </Text>
         </a>
       </Flex>
-    </Flex> */}
+    </Flex>
   </header>
 );
