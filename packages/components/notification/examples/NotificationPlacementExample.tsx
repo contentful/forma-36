@@ -8,7 +8,7 @@ export default function NotificationPlacementExample() {
         variant="secondary"
         onClick={() => {
           Notification.setPlacement('top');
-          Notification.success('Notification message at top');
+          Notification.success('Notification message at the top');
         }}
       >
         Top notification
