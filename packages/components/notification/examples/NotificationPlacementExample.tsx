@@ -17,7 +17,7 @@ export default function NotificationPlacementExample() {
         variant="secondary"
         onClick={() => {
           Notification.setPlacement('bottom');
-          Notification.success('Notification message at bottom');
+          Notification.success('Notification message at the bottom');
         }}
       >
         Bottom notification
