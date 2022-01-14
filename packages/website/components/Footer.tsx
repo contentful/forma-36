@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { css } from 'emotion';
 import { TextLink, Flex, TextLinkProps } from '@contentful/f36-components';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
@@ -28,10 +29,7 @@ const styles = {
       gridColumnStart: 2,
     },
   }),
-  svg: css`
-    height: 30px;
-    width: auto;
-  `,
+  logo: css({ justifySelf: 'flex-end' }),
 };
 
 export const Footer = () => {
@@ -95,13 +93,9 @@ export const Footer = () => {
         href="https://www.contentful.com"
         target="_blank"
         rel="noopener noreferrer"
-        className={css({ justifySelf: 'flex-end' })}
+        className={styles.logo}
       >
-        <img
-          alt="Contentful’s logo"
-          className={styles.svg}
-          src={contentfulLogoSVG.src}
-        />
+        <Image src={contentfulLogoSVG} alt="Contentful’s logo" />
       </a>
     </footer>
   );
