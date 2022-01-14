@@ -12,6 +12,7 @@ import tokens from '@contentful/f36-tokens';
 import * as f36Components from '@contentful/f36-components';
 import * as f36utils from '@contentful/f36-utils';
 import { useForm, useController } from 'react-hook-form';
+import { MdAccessAlarm } from 'react-icons/md';
 import { Card, Button, CopyButton } from '@contentful/f36-components';
 import * as f36icons from '@contentful/f36-icons';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
@@ -38,6 +39,7 @@ const liveProviderScope = {
   // other
   useForm,
   useController,
+  MdAccessAlarm,
 };
 
 const styles = {
