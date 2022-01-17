@@ -119,7 +119,7 @@ export const Topbar = ({ currentPage }: TopbarProps) => {
           </li>
           <li>
             <TopbarLink
-              href="/components/box"
+              href="/components/accordion"
               label="Components"
               isActive={isComponents}
             />
