@@ -111,7 +111,10 @@ export function Sidebar({ currentPage = '/' }: Props) {
             )}
             {currentPage.includes('components') && (
               <>
-                <SidebarSection links={components} currentPage={currentPage} />
+                <SidebarSection
+                  links={componentsSorted}
+                  currentPage={currentPage}
+                />
                 <SidebarSection
                   title="Utils"
                   links={sidebarLinks.utils}
