@@ -9,14 +9,23 @@ storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/form-elements-chec
 typescript: ./Checkbox.tsx,./CheckboxGroup.tsx
 ---
 
-`Checkbox` is a form component that shows a checkbox with it's label.
-`Checkbox.Group` is a component that makes it easier to handle group of checkboxes.
+`Checkbox` is a form component that shows a checkbox with it's label. `Checkbox.Group` is a component that makes it easier to handle group of checkboxes.
 
-## How to use Checkbox
+If you want to allow a user to select only one out of multiple options, use the [Radio](/components/radio) component.
 
-You can use the Checkbox as a controlled or uncontrolled input.
+## Import
+
+```js static=true
+import { Checkbox } from '@contentful/f36-components';
+// or
+import { Checkbox } from '@contentful/f36-forms';
+```
+
+## Examples
 
 ### Using as a controlled input
+
+Controlled components in React are those in which form data is handled by the component’s state.
 
 For using the Checkbox as a controlled input, you need to:
 
@@ -25,43 +34,24 @@ For using the Checkbox as a controlled input, you need to:
 
 Setting the `isChecked` will already define it as a controlled input.
 
-```jsx static=true
-const ExampleControlled = () => {
-  const [checkboxState, setCheckboxState] = useState(false);
+```jsx file=../../examples/CheckboxControlledExample.tsx
 
-  return (
-    <Checkbox
-      name="newsletter-subscribe-controlled"
-      id="newsletter-subscribe-controlled"
-      isChecked={checkboxState}
-      onChange={() => setCheckboxState(!checkboxState)}
-    >
-      Subscribe to newsletter
-    </Checkbox>
-  );
-};
 ```
 
 ### Using as an uncontrolled input
+
+Uncontrolled components are those for which the form data is handled by the DOM itself. “Uncontrolled” refers to the fact that these components are not controlled by React state.
 
 You can use the Checkbox as an uncontrolled input, for that you can:
 
 - Set the `defaultChecked` property, it will ensure that the checked state can be altered normally.
 - Don't set the `isChecked` as it will make the input controlled.
 
-```jsx static=true
-<Checkbox
-  name="newsletter-subscribe-uncontrolled"
-  id="newsletter-subscribe-uncontrolled"
-  defaultChecked
->
-  Subscribe to newsletter
-</Checkbox>
+```jsx file=../../examples/CheckboxUncontrolledExample.tsx
+
 ```
 
 ### Using with Group
-
-import { FormControl } from '@contentful/f36-forms';
 
 We also provide the `Checkbox.Group` component that helps when using multiple checkboxes. You can pass some common properties on the `Checkbox.Group` level and they will be passed to the checkboxes inside the group.
 
@@ -71,76 +61,27 @@ We also provide the `Checkbox.Group` component that helps when using multiple ch
 - `value`: Same as `defaultValue` but this one sets the `isChecked` property, making the checkbox group controlled;
 - `onChange`: Handler that will be executed when any checkbox inside the group receives the event of change.
 
-```jsx
-<FormControl as="fieldset">
-  <FormControl.Label as="legend" marginBottom="none">
-    Checkbox group options
-  </FormControl.Label>
-  <Paragraph>Subtitle with more information if needed</Paragraph>
-  <Checkbox.Group name="checkbox-options" defaultValue={['option 1']}>
-    <Checkbox value="option 1" id="option-1" helpText="Some help text">
-      Option 1
-    </Checkbox>
-    <Checkbox value="option 2" id="option-2" helpText="Another help text">
-      Option 2
-    </Checkbox>
-  </Checkbox.Group>
-</FormControl>
+`Checkbox.Group` is a **recommended** way of using `Checkbox` when using it within forms.
+
+```jsx file=../../examples/CheckboxGroupExample.tsx
+
 ```
-
-## Code examples
-
-```jsx
-<Checkbox id="checkbox" name="newsletter-subscribe">
-  Subscribe to newsletter
-</Checkbox>
-```
-
-## Component variations
 
 ### Checked or indeterminate
 
 The Checkbox can be rendered as indeterminate or checked, with the `isIndeterminate`, and `isChecked` or `defaultChecked` properties.
 Note that providing the `isChecked` makes it a controlled input, requiring an `onChange` handler.
 
-```jsx
-<Flex flexDirection="column">
-  <Checkbox id="checkbox1" name="newsletter-subscribe1" defaultChecked>
-    Subscribe to newsletter (uncontrolled checked)
-  </Checkbox>
-  <Checkbox
-    id="checkbox1"
-    name="newsletter-subscribe1"
-    isChecked
-    onChange={() => {}}
-  >
-    Subscribe to newsletter (controlled checked)
-  </Checkbox>
-  <Checkbox id="checkbox2" name="newsletter-subscribe2" isIndeterminate>
-    Subscribe to newsletter (indeterminate)
-  </Checkbox>
-</Flex>
+```jsx file=../../examples/CheckboxCheckedOrIndeterminateExample.tsx
+
 ```
+
+### Disabled
 
 The Checkbox can be rendered as disabled with the `isDisabled` property.
 
-```jsx
-<Flex flexDirection="column">
-  <Checkbox id="checkbox3" name="newsletter-subscribe3" isDisabled>
-    Subscribe to newsletter
-  </Checkbox>
-  <Checkbox id="checkbox4" name="newsletter-subscribe4" isChecked isDisabled>
-    Subscribe to newsletter (checked)
-  </Checkbox>
-  <Checkbox
-    id="checkbox5"
-    name="newsletter-subscribe5"
-    isIndeterminate
-    isDisabled
-  >
-    Subscribe to newsletter (indeterminate)
-  </Checkbox>
-</Flex>
+```jsx file=../../examples/CheckboxDisabledExample.tsx
+
 ```
 
 ## Content guidelines
@@ -154,14 +95,12 @@ The Checkbox can be rendered as disabled with the `isDisabled` property.
 - To ensure `Checkbox` meets accessibility standards, provide `name` and `id`;
 - When using `Checkbox.Group` it should be wrapped in a `<FormControl as="fieldset">` and have a `<FormControl.Label as="legend">`.
 
-## Props
-
-import { Props } from '@contentful/f36-docs-utils';
+## Props (API reference)
 
 ### Props Checkbox
 
-<Props of="Checkbox" />
+<PropsTable of="Checkbox" />
 
 ### Props Group
 
-<Props of="CheckboxGroup" />
+<PropsTable of="CheckboxGroup" />

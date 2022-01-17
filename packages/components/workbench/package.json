@@ -1,13 +1,13 @@
 {
   "name": "@contentful/f36-workbench",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Forma 36: Workbench component",
   "scripts": {
     "build": "parcel build"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@contentful/f36-button": "^4.0.1",
+    "@contentful/f36-button": "^4.1.0",
     "@contentful/f36-core": "^4.0.1",
     "@contentful/f36-icon": "^4.0.1",
     "@contentful/f36-icons": "^4.0.1",

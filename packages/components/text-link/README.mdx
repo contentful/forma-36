@@ -4,64 +4,56 @@ type: 'component'
 status: 'stable'
 slug: /components/text-link/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/text-link'
-storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-textlink--basic'
 typescript: ./src/TextLink.tsx
 ---
 
-TextLinks communicate actions and linked resources to users.
+`TextLink` communicates actions and links to URLs.
 
-## How to use TextLinks
+## Import
 
-- TextLinks are used to display actions that have a lower priority compared to actions that are accessible via a button.
-- They should also be used when linking to URLs, and are preferred over using buttons when used for this purpose.
-- Use clear, succinct, and accurate labels
-- Start TextLink labels with verbs, for example "Add field", not "New field"
-- Reduce complexity by using a small number of actions. Too many actions can create confusion when having to decide
+```jsx static=true
+import { TextLink } from '@contentful/f36-components';
+// or
+import { TextLink } from '@contentful/f36-text-link';
+```
 
-## Component variations
+## Examples
 
-There are a number of variations of TextLink styles, here is a guide for when to use them:
+### As `<a>`
 
-- **Primary** - Used for primary actions, or the default for links to URLs.
+By default, `TextLink` renders `<a>` HTML tag and should be used as an usual link attribute.
+
+Note that if you use `TextLink` for linking to third party content and use `target="_blank"` property, [it is recommended](https://web.dev/external-anchors-use-rel-noopener/) to set `rel="noreferrer noopener"`.
+
+```jsx file=examples/TextLinkBasicExample.tsx
+
+```
+
+### As `<button>`
+
+`TextLink` can also be rendered as `button` HTML tag. You can use `TextLink` this way only when the action have lower priority compared to actions that are accessible via a `Button`.
+
+There are a number of variations of `TextLink` styles, here is a guide for when to use them:
+
+- **Primary** - Used for primary actions
 - **Positive** - Used for a positive actions, such as creating or publishing a new entity.
 - **Negative** - Used for destructive actions - when something can't be undone. For example, deleting entities.
 - **Secondary** - For actions that should be emphasized less than the default primary style.
 - **Muted** - For actions that should be emphasized less than the secondary style.
 - **White** - For actions appearing on a dark background.
 
-```jsx
-<Stack flexDirection="column">
-  <TextLink variant="primary">Primary</TextLink>
-  <TextLink variant="positive">Positive</TextLink>
-  <TextLink variant="negative">Negative</TextLink>
-  <TextLink variant="muted">Muted</TextLink>
-  <TextLink variant="secondary">Secondary</TextLink>
-</Stack>
+```jsx file=examples/TextLinkAsButtonExample.tsx
+
 ```
 
-## Code examples
+## Props (API reference)
 
-Text links communicate actions and highlight linked resources to users.
-
-```jsx
-<TextLink variant="primary">Text link</TextLink>
-```
-
-### TextLink with icon (`icon`)
-
-```jsx
-<Stack flexDirection="column">
-  <TextLink icon={<ExternalLinkIcon />}>Primary</TextLink>
-  <TextLink icon={<ExternalLinkIcon />} alignIcon="end">
-    Primary
-  </TextLink>
-</Stack>
-```
+<PropsTable of="TextLink" />
 
 ## Content guidelines
 
 - To make `TextLink` action-oriented, use a verb. For example, "Add field", not "New field"
-- If a `TextLink` is used to navigate to a new page, clearly communicate what the user will see when they click on the link. For example, “View teams documentation” vs “Learn about teams”. Avoid generic descriptions like "click here" or "go to".
+- If a `TextLink` is used to navigate to a new page, clearly communicate what the user will see when they click on the link. For example, “View teams documentation” vs “Learn about teams”. Avoid generic descriptions like "Click here" or "Go to".
 - Don't use the page's URL as the link description unless you have a good reason to do so, such as referencing a site's new address.
 - Use clear and succinct copy. Aim for a few words or a short phrase.
 - If a `TextLink` is used in a regular text and it's at the end of a sentence, don’t add a period inside `TextLink` content. Place it after component.
@@ -70,10 +62,4 @@ Text links communicate actions and highlight linked resources to users.
 ## Accessibility
 
 - Avoid using extra styling that that make link looks just like regular text.
-- If you use `TextLink` for linking to third party content and use `target="_blank"` prop, it is recommended to set `rel="noreferrer noopener"`. [More details about external links security](https://web.dev/external-anchors-use-rel-noopener/)
-
-## Props of TextLink
-
-import { Props } from '@contentful/f36-docs-utils';
-
-<Props of="TextLink" />
+- If you use `TextLink` for linking to third party content and use `target="_blank"` property, it is recommended to set `rel="noreferrer noopener"`. [More details about external links security](https://web.dev/external-anchors-use-rel-noopener/)
