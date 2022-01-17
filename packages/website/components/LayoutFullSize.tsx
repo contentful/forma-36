@@ -37,7 +37,7 @@ function Main({ children }: Props) {
 export function LayoutFullSize({ children, currentPage }: Props) {
   return (
     <Flex className={styles.root} flexDirection="column">
-      <Topbar />
+      <Topbar currentPage={currentPage} />
 
       {/* Unique key for each page, so scroll position is not preserved when opening a new page */}
       <Main key={currentPage} currentPage={currentPage}>
