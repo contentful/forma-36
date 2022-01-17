@@ -26,7 +26,7 @@
     "react-docgen-typescript": "^2.2.2",
     "react-dom": "16.14.0",
     "react-live": "2.3.0",
-    "rehype-autolink-headings": "^5.0.1",
+    "rehype-autolink-headings": "^6.1.1",
     "rehype-slug": "^4.0.1",
     "rehype-toc": "^3.0.2",
     "remark": "^14.0.2",
