@@ -1,63 +1,50 @@
 ---
 title: 'Note'
-type: 'component'
-status: 'stable'
 slug: /components/note/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/note'
 storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-note--default'
 typescript: ./src/Note.tsx
 ---
 
-Notes provide context and information about a situation or action. Notes draw the users attention to a circumstance relevant to an action they're performing or a screen they're accessing. Don't confuse notes with notifications, which appear as feedback after a user has performed an action.
+Notes provide context and information about a situation or action. Notes draw the users attention to a circumstance relevant to an action they're performing or a screen they're accessing.
 
-## How to use Note
+Don't confuse notes with [Notification](/components/notification), which appear as feedback after a user has performed an action.
 
-- Use an adequate note type to communicate the right kind of information
-- Place the note visually closer to the action or real estate it relates to
-- Unlike notifications, notes don't show up as feedback only after a user has performed an action
+## Import
 
-## Code examples
+```js static=true
+import { Note } from '@contentful/f36-components';
+// or
+import { Note } from '@contentful/f36-note';
+```
+
+## Examples
 
 The Note component can be configured in a number of different ways. Learn when to use certain variations with this guide.
 
-### Basic example
+### Basic usage
 
-```jsx
-<Note>
-  Information that is relevant to the context the user is currently in.
-</Note>
+```jsx file=examples/NoteExample.tsx
+
 ```
 
 ### Component variations
 
-```jsx
-<Stack flexDirection="column">
-  <Note>Primary (default)</Note>
-  <Note variant="positive">Positive</Note>
-  <Note variant="warning">Warning</Note>
-  <Note variant="negative">Negative</Note>
-</Stack>
+```jsx file=examples/NoteVariationsExample.tsx
+
 ```
 
 ### Note with title (`title`)
 
-```jsx
-<Stack flexDirection="column">
-  <Note title="Primary title">Primary (default)</Note>
-  <Note title="Positive title" variant="positive">
-    Positive
-  </Note>
-  <Note title="Warning title" variant="warning">
-    Warning
-  </Note>
-  <Note title="Negative title" variant="negative">
-    Negative
-  </Note>
-</Stack>
+```jsx file=examples/WithTitleExample.tsx
+
 ```
 
 ## Content guidelines
 
+- Use an adequate note type to communicate the right kind of information
+- Place the note visually closer to the action or real estate it relates to
+- Unlike notifications, notes don't show up as feedback only after a user has performed an action
 - Use clear and succinct copy
 - Ensure the copy is easily scannable. Focus on the objective and limit the number of concepts in each sentence
 - Use progressive disclosure. Eliminate details that can be revealed as the user interacts and requires more information
