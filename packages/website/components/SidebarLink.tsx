@@ -10,7 +10,7 @@ export const getSectionTitleStyles = (isActive = false, indent = 1) => {
   return {
     sidebarItem: css({
       padding: `${tokens.spacingXs} ${tokens.spacingM}`,
-      paddingLeft: `calc(${indent} * ${tokens.spacingM})`,
+      paddingLeft: indent === 1 ? tokens.spacingXl : tokens.spacing2Xl,
       fontSize: tokens.fontSizeM,
       lineHeight: tokens.lineHeightM,
     }),
