@@ -92,7 +92,7 @@ export const Topbar = () => (
           <TopbarLink href="/tokens/color-system" label="Tokens" />
         </li>
         <li>
-          <TopbarLink href="/components/box" label="Components" />
+          <TopbarLink href="/components/accordion" label="Components" />
         </li>
       </ul>
     </Flex>
