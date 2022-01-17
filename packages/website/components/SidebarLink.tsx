@@ -20,13 +20,16 @@ export const getSectionTitleStyles = (isActive = false, indent = 1) => {
       lineHeight: `${tokens.lineHeightM}`,
     }),
     clickable: css({
-      textDecoration: 'none',
       cursor: 'pointer',
-      color: isActive ? tokens.colorWhite : tokens.gray900,
-      backgroundColor: isActive ? tokens.colorPrimary : 'transparent',
+      color: isActive ? tokens.blue700 : tokens.gray900,
+      fontWeight: isActive
+        ? tokens.fontWeightDemiBold
+        : tokens.fontWeightNormal,
+      textDecoration: isActive ? 'underline' : 'none',
+      backgroundColor: 'transparent',
       transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       '&:hover': {
-        backgroundColor: isActive ? tokens.colorPrimary : tokens.gray200,
+        textDecoration: 'underline',
       },
     }),
     closedIcon: css({

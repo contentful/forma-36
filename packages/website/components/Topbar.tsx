@@ -1,7 +1,7 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
 import { Text, Flex } from '@contentful/f36-components';
-import { css } from 'emotion';
+import { css, cx } from 'emotion';
 import Link from 'next/link';
 
 import { DocSearch } from './DocSearch';
@@ -33,14 +33,18 @@ const styles = {
       fontSize: tokens.fontSizeL,
     },
   }),
-  navListLink: css`
-    color: ${tokens.gray900};
-    text-decoration: none;
+  navListLink: css({
+    color: tokens.gray900,
+    textDecoration: 'none',
 
-    &:hover {
-      color: ${tokens.gray700};
-    }
-  `,
+    '&:hover': {
+      textDecoration: 'underline',
+    },
+  }),
+  active: css({
+    color: tokens.blue700,
+    textDecoration: 'underline',
+  }),
 };
 
 const Logo = () => (
@@ -62,57 +66,84 @@ const Logo = () => (
   </svg>
 );
 
-export const Topbar = () => (
-  <header className={styles.header}>
-    <Flex flexGrow={1}>
-      <Link href="/" passHref>
-        <a className={styles.logoLink} href="/">
-          <Logo />
-          <Text
-            fontSize="fontSizeXl"
-            fontWeight="fontWeightDemiBold"
-            fontColor="blue700"
-            marginLeft="spacingL"
-          >
-            Forma 36
-          </Text>
-        </a>
-      </Link>
-    </Flex>
+interface TopbarProps {
+  currentPage: string;
+}
 
-    <Flex as="nav" alignItems="center">
-      <ul className={styles.navList}>
-        <li>
-          <TopbarLink href="/" label="Introduction" />
-        </li>
-        <li>
-          <TopbarLink href="/guidelines/accessibility" label="Guidelines" />
-        </li>
-        <li>
-          <TopbarLink href="/tokens/color-system" label="Tokens" />
-        </li>
-        <li>
-          <TopbarLink href="/components/accordion" label="Components" />
-        </li>
-      </ul>
-    </Flex>
+export const Topbar = ({ currentPage }: TopbarProps) => {
+  const isGuidelines = currentPage.includes('/guidelines');
+  const isTokens = currentPage.includes('/tokens');
+  const isComponents = currentPage.includes('/components');
+  const isIntroduction = !isGuidelines && !isTokens && !isComponents;
 
-    <Flex alignItems="center">
-      <DocSearch />
-      <TopbarLink href="https://v3.f36.contentful.com/" label="v3" />
-    </Flex>
-  </header>
-);
+  return (
+    <header className={styles.header}>
+      <Flex flexGrow={1}>
+        <Link href="/" passHref>
+          <a className={styles.logoLink} href="/">
+            <Logo />
+            <Text
+              fontSize="fontSizeXl"
+              fontWeight="fontWeightDemiBold"
+              fontColor="blue700"
+              marginLeft="spacingL"
+            >
+              Forma 36
+            </Text>
+          </a>
+        </Link>
+      </Flex>
 
-function TopbarLink({ href, label }) {
+      <Flex as="nav" alignItems="center">
+        <ul className={styles.navList}>
+          <li>
+            <TopbarLink
+              href="/"
+              label="Introduction"
+              isActive={isIntroduction}
+            />
+          </li>
+          <li>
+            <TopbarLink
+              href="/guidelines/accessibility"
+              label="Guidelines"
+              isActive={isGuidelines}
+            />
+          </li>
+          <li>
+            <TopbarLink
+              href="/tokens/color-system"
+              label="Tokens"
+              isActive={isTokens}
+            />
+          </li>
+          <li>
+            <TopbarLink
+              href="/components/accordion"
+              label="Components"
+              isActive={isComponents}
+            />
+          </li>
+        </ul>
+      </Flex>
+
+      <Flex alignItems="center">
+        <DocSearch />
+        <TopbarLink href="https://v3.f36.contentful.com/" label="v3" />
+      </Flex>
+    </header>
+  );
+};
+
+function TopbarLink({ href, label, isActive = false }) {
   return (
     <Link href={href} passHref>
       <Text
+        as="a"
+        className={cx(styles.navListLink, { [styles.active]: isActive })}
         fontSize="fontSizeL"
         lineHeight="lineHeightL"
         fontWeight="fontWeightDemiBold"
-        as="a"
-        className={styles.navListLink}
         marginBottom="none"
       >
         {label}

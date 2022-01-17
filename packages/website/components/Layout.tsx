@@ -41,7 +41,7 @@ export function Layout({ children, currentPage }: Props) {
       columnGap="none"
     >
       <Grid.Item area="topbar">
-        <Topbar />
+        <Topbar currentPage={currentPage} />
       </Grid.Item>
 
       <Grid.Item area="sidemenu" className={styles.sidebarItem}>
