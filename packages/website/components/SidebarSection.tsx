@@ -18,7 +18,7 @@ const styles = {
     userSelect: 'none',
   }),
   sectionTitle: css({
-    padding: `${tokens.spacingXs} ${tokens.spacingM}`,
+    padding: `${tokens.spacingXs} ${tokens.spacingM} ${tokens.spacingXs} ${tokens.spacingXl}`,
     letterSpacing: 'initial',
   }),
 };
