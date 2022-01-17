@@ -6,16 +6,15 @@ import { SearchIcon } from '@contentful/f36-icons';
 import { TextInput } from '@contentful/f36-forms';
 
 const styles = {
-  container: css`
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: ${tokens.spacingM} ${tokens.spacingM} 0;
-    margin-bottom: ${tokens.spacingM};
-    & .algolia-autocomplete {
-      width: 100%;
-    }
-  `,
+  container: css({
+    display: 'flex',
+    alignItems: 'center',
+    width: '100%',
+    marginRight: tokens.spacingM,
+    '& .algolia-autocomplete': {
+      width: '100%',
+    },
+  }),
 };
 
 export const DocSearch = () => {
