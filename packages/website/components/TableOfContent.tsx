@@ -16,6 +16,7 @@ const styles = {
   sidebarNavItemActive: css({
     color: tokens.blue700,
     fontWeight: 'bold',
+    textDecoration: 'underline',
   }),
   secondLevelMargin: css({
     marginLeft: tokens.spacingM,
