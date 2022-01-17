@@ -2,7 +2,7 @@ import React from 'react';
 import { Table } from '@contentful/f36-components';
 import { Badge } from '@contentful/f36-components';
 
-export default function DynamicCreation() {
+export default function TableDynamicCreation() {
   const contentTypes = [
     {
       id: '1',

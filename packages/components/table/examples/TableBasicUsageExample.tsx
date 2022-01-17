@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table } from '@contentful/f36-components';
 
-export default function BasicUsageExample() {
+export default function TableBasicUsageExample() {
   return (
     <Table>
       <Table.Head>
