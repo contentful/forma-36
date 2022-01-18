@@ -30,6 +30,7 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
         '&:hover': {
           backgroundColor: tokens.blue600,
           borderColor: tokens.blue600,
+          color: tokens.colorWhite,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
@@ -44,6 +45,7 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
         borderColor: tokens.gray300,
         '&:hover': {
           backgroundColor: tokens.gray100,
+          color: tokens.gray900,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
@@ -58,6 +60,7 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
         '&:hover': {
           backgroundColor: tokens.green600,
           borderColor: tokens.green600,
+          color: tokens.colorWhite,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
@@ -73,6 +76,7 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
         '&:hover': {
           backgroundColor: tokens.red700,
           borderColor: tokens.red700,
+          color: tokens.colorWhite,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
