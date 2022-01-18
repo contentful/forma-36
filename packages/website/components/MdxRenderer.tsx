@@ -7,10 +7,10 @@ import { MdxComponents } from '../mdx-components';
 import { ComponentSource } from './LiveEditor/ComponentSource';
 import { StaticSource } from './LiveEditor/StaticSource';
 import tokens from '@contentful/f36-tokens';
+import { CustomHeading2 } from './CustomHeading2';
 
 const {
   DisplayText,
-  Heading,
   Subheading,
   Paragraph,
   TextLink,
@@ -22,7 +22,8 @@ const {
 /* eslint-disable @next/next/no-img-element */
 const components = {
   h1: (props) => <DisplayText as="h1" {...props} />,
-  h2: (props) => <Heading as="h2" marginTop="spacing2Xl" {...props} />,
+  // to cover a specific case with "Props (API reference)"
+  h2: CustomHeading2,
   h3: (props) => <Subheading as="h3" marginTop="spacingXl" {...props} />,
   h4: (props) => <Subheading as="h4" {...props} />,
   h5: (props) => <Subheading as="h5" {...props} />,
