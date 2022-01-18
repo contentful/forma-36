@@ -13,7 +13,7 @@ interface CustomHeading2Props {
 export const CustomHeading2 = (props: CustomHeading2Props) => {
   const { storybook } = useFrontMatterContext() ?? {};
 
-  if (props.children.includes(PROPS_TITLE)) {
+  if (props.children.includes(PROPS_TITLE) && storybook) {
     return (
       <Stack
         justifyContent="space-between"
