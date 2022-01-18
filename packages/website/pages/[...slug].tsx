@@ -19,6 +19,7 @@ import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 import { getPropsMetadata, transformToc } from '../utils/propsMeta';
 import { getTableOfContents } from '../utils/mdx-utils';
 import { HeadingType } from '../components/TableOfContent';
+import { FrontMatterContextProvider } from '../utils/frontMatterContext';
 
 type ComponentPageProps = {
   source: MDXRemoteSerializeResult;
@@ -47,7 +48,9 @@ export default function ComponentPage({
 
       <PageContent frontMatter={frontMatter} headings={headings}>
         <PropsContextProvider value={{ ...propsMetadata }}>
-          <MdxRenderer source={source} />
+          <FrontMatterContextProvider value={frontMatter}>
+            <MdxRenderer source={source} />
+          </FrontMatterContextProvider>
         </PropsContextProvider>
       </PageContent>
     </>
