@@ -11,41 +11,32 @@ export default function AutocompleteFetchingAsyncDataExample() {
     'Photo Gallery',
   ];
 
-  const fetchSpaces = (filterBy = '') =>
-    new Promise((resolve) => {
-      let result = spaces;
-      if (filterBy) {
-        result = spaces.filter((item) =>
-          item.toLowerCase().includes(filterBy.toLowerCase()),
-        );
-      }
-
-      setTimeout(() => {
-        resolve(result);
-      }, 800);
-    });
+  const [selectedFruit, setSelectedFruit] = React.useState();
 
   const [isLoading, setIsLoading] = React.useState(false);
-  const [selectedFruit, setSelectedFruit] = React.useState();
+  const [inputValue, setInputValue] = React.useState('');
   const [items, setItems] = React.useState([]);
 
-  // fetching data when component mounted
   React.useEffect(() => {
     setIsLoading(true);
-    fetchSpaces().then((result) => {
-      setItems(result);
+
+    // We will use a timeout to simulate async data
+    // this function will filter our options after 800ms
+    const fetchSpaces = setTimeout(() => {
+      const filteredSpaces = spaces.filter((item) =>
+        item.toLowerCase().includes(inputValue.toLowerCase()),
+      );
+      setItems(filteredSpaces);
       setIsLoading(false);
-    });
-  }, []);
+    }, 800);
+
+    return () => clearTimeout(fetchSpaces);
+  }, [inputValue]);
 
   // fetching data on each input value change
   // NOTE: Consider using throttle/debounce here for better performance
   const handleInputValueChange = (value) => {
-    setIsLoading(true);
-    fetchSpaces(value).then((result) => {
-      setItems(result);
-      setIsLoading(false);
-    });
+    setInputValue(value);
   };
 
   const handleSelectItem = (item) => {
@@ -59,6 +50,7 @@ export default function AutocompleteFetchingAsyncDataExample() {
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
         isLoading={isLoading}
+        defaultValue={inputValue}
       />
 
       <Paragraph>
