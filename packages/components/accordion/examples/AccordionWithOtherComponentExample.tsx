@@ -8,7 +8,7 @@ import {
   List,
 } from '@contentful/f36-components';
 
-export default function IconButtonExample() {
+export default function AccordionWithOtherComponentExample() {
   return (
     <Accordion>
       <Accordion.Item

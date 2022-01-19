@@ -1,7 +1,7 @@
 import React from 'react';
 import { Accordion, Text } from '@contentful/f36-components';
 
-export default function IconButtonExample() {
+export default function AccordionExample() {
   return (
     <Accordion>
       <Accordion.Item title="What payment methods do you accept?">
