@@ -23,11 +23,6 @@ export interface BaseInputInternalProps extends CommonProps {
    */
   name?: string;
   /**
-   * Set the type of the input
-   * @default text
-   */
-  type?: 'text' | 'email' | 'file' | 'number' | 'password' | 'search' | 'url';
-  /**
    * Applies disabled styles
    * @default false
    */
