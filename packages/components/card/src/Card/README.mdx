@@ -11,15 +11,15 @@ typescript: './Card.tsx'
 
 A Card is a component to group information or content of a particular subject in one place.
 
-## Component variations
+## Import
 
-```jsx
-<Card title="Title">
-  <Text>This is the Card’s content</Text>
-</Card>
+```js static=true
+import { Card } from '@contentful/f36-components';
+// or
+import { Card } from '@contentful/f36-card';
 ```
 
-## Code examples
+## Examples
 
 Here you will find the most common ways of using the Card component.
 
@@ -27,23 +27,8 @@ Here you will find the most common ways of using the Card component.
 
 It’s possible to call an action when the user clicks on the Card. To do that, you only need to pass a function to the `onClick` prop.
 
-```jsx
-function CardExample() {
-  const [show, setShow] = React.useState(false);
-  return (
-    <React.Fragment>
-      <Card onClick={() => setShow(!show)}>
-        Click on this card
-        <br />
-        {show && (
-          <span role="img" aria-label="sparkles">
-            ✨✨✨
-          </span>
-        )}
-      </Card>
-    </React.Fragment>
-  );
-}
+```jsx file=../../examples/Card/OnClickCardExample.tsx
+
 ```
 
 ### Selectable cards
@@ -51,35 +36,8 @@ function CardExample() {
 Sometimes you will need to use the Card as an selectable element in the UI. To achieve that behaviour,
 you should use a combination of the `onClick` and `selected` props. The former controlling the latter.
 
-```jsx
-function CardsExample() {
-  const [taco, setTaco] = React.useState(false);
-  const [pizza, setPizza] = React.useState(false);
-  const [broccoli, setBroccoli] = React.useState(false);
+```jsx file=../../examples/Card/SelectableCardsExample.tsx
 
-  return (
-    <div>
-      <Heading>What is your favorite food?</Heading>
-      <div>
-        <Card onClick={() => setTaco(!taco)} selected={taco}>
-          <span role="img" aria-label="taco">
-            🌮
-          </span>
-        </Card>
-        <Card onClick={() => setPizza(!pizza)} selected={pizza}>
-          <span role="img" aria-label="pizza">
-            🍕
-          </span>
-        </Card>
-        <Card onClick={() => setBroccoli(!broccoli)} selected={broccoli}>
-          <span role="img" aria-label="broccoli">
-            🥦
-          </span>
-        </Card>
-      </div>
-    </div>
-  );
-}
 ```
 
 ### With `link` and `target`
@@ -87,14 +45,8 @@ function CardsExample() {
 A Card can be used with the purpose to navigate a user to an external page. To do that a user must pass a value to the `href` prop.
 Optionally, the user can pass a `target` prop to control how the link should be open.
 
-```jsx
-<Card href="https://f36.contentful.com" target="_blank">
-  <Text>
-    Forma 36 is an open-source design system by Contentful created with the
-    intent to reduce the overhead of creating UI by providing tools and guidance
-    for digital teams building and extending Contentful products.
-  </Text>
-</Card>
+```jsx file=../../examples/Card/WithLinkAndTargetExample.tsx
+
 ```
 
 ## Props (API reference)
