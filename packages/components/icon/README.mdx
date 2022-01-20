@@ -7,174 +7,78 @@ storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-icon--d
 typescript: ./src/Icon.tsx,../icons/src/ArrowDown.tsx
 ---
 
-import * as icons from '@contentful/f36-icons';
-
 Icons are used to indicate actions, statuses and navigation. The icon components can be used in `Button`, `TextLink`, `Note` and other components.
 
-## How to use icons
+## Import
 
-- Select an icon that accurately represents the subject
-- Pair icons with text
-- Position buttons consistently in the interface
-- Ensure the behavior of the button is consistent in all use cases
-- Consider how the button fits into the context of the screen and reduce complexity where possible
-
-## Code examples
-
-Forma 36 provides a list of built-in icons that can be used as regular React components:
-
-```jsx static=true
-import { ArrowDownIcon } from '@contentful/f36-icons';
-
-<ArrowDownIcon />;
+```js static=true
+import * as icons from '@contentful/f36-icons';
+// or, for custom icons
+import { Icon } from '@contentful/f36-components';
 ```
 
-## Component variations
+## Examples
 
-The icon components can be configured in different ways using variations in color and size:
+Forma 36 provides a list of built-in icons that can be used as regular React components.
 
 ### Icon variants
 
-```jsx
-<Stack>
-  <Flex alignItems="center">
-    <Flex marginRight="spacingS">
-      <CalendarIcon variant="primary" />
-    </Flex>{' '}
-    <Text>Primary</Text>
-  </Flex>
-  <Flex alignItems="center">
-    <Flex marginRight="spacingS">
-      <CalendarIcon variant="positive" />
-    </Flex>{' '}
-    <Text>Positive</Text>
-  </Flex>
-  <Flex alignItems="center">
-    <Flex marginRight="spacingS">
-      <CalendarIcon variant="negative" />
-    </Flex>{' '}
-    <Text>Negative</Text>
-  </Flex>
-  <Flex alignItems="center">
-    <Flex marginRight="spacingS">
-      <CalendarIcon variant="warning" />
-    </Flex>{' '}
-    <Text>Warning</Text>
-  </Flex>
-  <Flex alignItems="center">
-    <Flex marginRight="spacingS">
-      <CalendarIcon variant="secondary" />
-    </Flex>{' '}
-    <Text>Secondary</Text>
-  </Flex>
-  <Flex
-    style={{ backgroundColor: '#8091a5' }}
-    alignItems="center"
-    padding="spacingS"
-  >
-    <Flex marginRight="spacingS">
-      <CalendarIcon variant="white" />
-    </Flex>{' '}
-    <Text>White</Text>
-  </Flex>
-</Stack>
+The icon components can be configured in different ways using variations in color and size:
+
+```jsx file=./examples/IconVariantsExample.tsx
+
 ```
 
 ### Icon sizes
 
-```jsx
-<Stack>
-  <Flex alignItems="center">
-    <CalendarIcon size="tiny" /> <Text>Tiny</Text>
-  </Flex>
-  <Flex alignItems="center">
-    <CalendarIcon size="small" /> <Text>Small</Text>
-  </Flex>
-  <Flex alignItems="center">
-    <CalendarIcon size="medium" /> <Text>Medium</Text>
-  </Flex>
-  <Flex alignItems="center">
-    <CalendarIcon size="large" /> <Text>Large</Text>
-  </Flex>
-</Stack>
+```jsx file=./examples/IconSizesExample.tsx
+
 ```
 
-### Icons
+### All icons
 
-```tsx
-// import * as f36icons from "@contentful/f36-icons";
+```jsx file=./examples/AllIconsExample.tsx
 
-<Grid columns="repeat(3, 1fr)">
-  {Object.entries(f36icons).map(([name, icon]) => {
-    const Component = icon;
-
-    return (
-      <Flex
-        key={name}
-        padding="spacingS"
-        marginRight="spacingM"
-        alignItems="center"
-        justifyContent="flex-start"
-        flexGrow={0}
-      >
-        <Flex marginRight="spacingS">
-          <Component key={name} size="medium" />
-        </Flex>
-        <Text>{name}</Text>
-      </Flex>
-    );
-  })}
-</Grid>
 ```
 
-## Accessibility
-
-Missing
-
-## Custom icons and third-party libraries
+### Custom icons and third-party libraries
 
 Custom icons can be rendered with Forma 36 to take advantage of the same props and styling as the built-in icons. This means you can use a prop like `variant="primary"` or `size="large"` on your own icons and they will match the built-in icons from Forma 36.
 
-Custom icons can be used in two ways:
+Custom icons can be used in two ways: with `as` prop and with an SVG path.
 
-### `as` prop
+#### `as` prop
 
 Passing a React component with an SVG icon to the `as` prop on `Icon` makes it render that SVG. This works both with your own icons and with icons from third-party icon libraries such as [`react-icons`](https://react-icons.github.io/react-icons):
 
-```jsx static=true
-import { Icon } from '@contentful/f36-icons';
-import { MdAccessAlarm } from 'react-icons/md';
+```jsx file=./examples/IconAsPropExample.tsx
 
-const AccessAlarm = (props) => {
-  return <Icon {...props} as={MdAccessAlarm} variant="secondary" />;
-};
 ```
 
 Using a loader like [SVGR](https://react-svgr.com/) makes it easier to use your own SVG files with the `as` prop as it helps import them as React components.
 
-### SVG paths
+#### SVG paths
 
 Another way to render custom icons is to wrapping SVG paths in the `Icon` component directly:
 
-```jsx static=true
-import { Icon } from '@contentful/f36-icon';
+```jsx file=./examples/IconWithSVGExample.tsx
 
-const CustomIcon = (props) => {
-  return (
-    <Icon {...props} variant="secondary">
-      <path d="M7 10l5 5 5-5z" />,
-      <path d="M0 0h24v24H0z" fill="none" />
-    </Icon>
-  );
-};
 ```
 
 ## Props (API reference)
 
 ### Built-in icons
 
-<PropsTable of="ArrowDownIcon" />
+<PropsTable of="ArrowDown" />
 
 ### Custom icons
 
 <PropsTable of="Icon" />
+
+## Content guidelines
+
+- Select an icon that accurately represents the subject
+- Pair icons with text
+- Position buttons consistently in the interface
+- Ensure the meaning of the icon is consistent in all use cases
+- Consider how the icon fits into the context of the screen and reduce complexity where possible
