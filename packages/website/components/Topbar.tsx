@@ -1,28 +1,18 @@
 import React from 'react';
 import { css, cx } from 'emotion';
 import Link from 'next/link';
-import {
-  Grid,
-  Text,
-  Flex,
-  Box,
-  Menu,
-  Button,
-} from '@contentful/f36-components';
+import { Grid, Text, Flex, Menu, Button } from '@contentful/f36-components';
 import { ChevronDownIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 
+import { getGridStyles } from './Layout/getGridStyles';
 import { DocSearch } from './DocSearch';
-// eslint-disable-next-line
-// @ts-ignore
-import pkg from '../../forma-36-react-components/package.json';
 
 export const TopbarHeight = '70px';
 
 const styles = {
   header: css({
     display: 'grid',
-    gridTemplateColumns: '240px auto',
     backgroundColor: tokens.colorWhite,
     color: tokens.blue700,
     height: TopbarHeight,
@@ -74,8 +64,8 @@ const Logo = () => (
   <svg
     x="0px"
     y="0px"
-    width="32px"
-    height="32px"
+    width="25px"
+    height="25px"
     viewBox="0 0 90 90"
     enableBackground="new 0 0 90 90"
     fill={tokens.blue700}
@@ -94,13 +84,19 @@ interface TopbarProps {
 }
 
 export const Topbar = ({ currentPage }: TopbarProps) => {
+  const gridStyles = getGridStyles();
+
   const isGuidelines = currentPage.includes('/guidelines');
   const isTokens = currentPage.includes('/tokens');
   const isComponents = currentPage.includes('/components');
   const isIntroduction = !isGuidelines && !isTokens && !isComponents;
 
   return (
-    <Grid.Item as="header" area="topbar" className={styles.header}>
+    <Grid.Item
+      as="header"
+      area="topbar"
+      className={cx(styles.header, gridStyles.wrapperColumns)}
+    >
       <Flex paddingLeft="spacingXl">
         <Link href="/" passHref>
           <a className={styles.logoLink} href="/">
@@ -116,23 +112,23 @@ export const Topbar = ({ currentPage }: TopbarProps) => {
           </a>
         </Link>
 
-        <Box marginLeft="spacingM">
+        <Flex alignItems="center" marginLeft="spacingM">
           <Menu usePortal={false}>
             <Menu.Trigger>
               <Button size="small" endIcon={<ChevronDownIcon />}>
-                v{pkg.version}
+                v4
               </Button>
             </Menu.Trigger>
             <Menu.List>
               <Menu.Item as="a" href="https://f36.contentful.com/">
-                v{pkg.version}
+                v4
               </Menu.Item>
               <Menu.Item as="a" href="https://v3.f36.contentful.com/">
                 v3
               </Menu.Item>
             </Menu.List>
           </Menu>
-        </Box>
+        </Flex>
       </Flex>
 
       <Flex

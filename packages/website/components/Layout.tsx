@@ -1,16 +1,20 @@
 import React from 'react';
-import { css } from 'emotion';
+import { css, cx } from 'emotion';
 import { Grid } from '@contentful/f36-components';
+
+import { getGridStyles } from './Layout/getGridStyles';
 import { Topbar, TopbarHeight } from './Topbar';
 import { Footer } from './Footer';
 import { Sidebar } from './Sidebar';
 
 const styles = {
-  grid: css({
+  wrapper: css({
     height: '100vh',
     overflow: 'hidden',
-    gridTemplateAreas: `"topbar topbar"
-    "sidemenu content"`,
+    gridTemplateAreas: `
+      "topbar topbar"
+      "sidemenu content"
+    `,
   }),
   sidebarItem: css({
     display: 'flex',
@@ -31,11 +35,11 @@ interface Props {
 }
 
 export function Layout({ children, currentPage }: Props) {
+  const gridStyles = getGridStyles();
+
   return (
     <Grid
-      className={styles.grid}
-      columns="240px auto"
-      rows="auto 1fr"
+      className={cx(styles.wrapper, gridStyles.wrapperColumns)}
       columnGap="none"
     >
       <Topbar currentPage={currentPage} />
