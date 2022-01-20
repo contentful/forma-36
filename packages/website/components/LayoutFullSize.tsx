@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 import { Flex, Box } from '@contentful/f36-components';
-import { Topbar, TopbarHeight } from './Topbar';
+import { Topbar, TOPBAR_HEIGHT } from './Topbar';
 import { Footer } from './Footer';
 
 interface Props {
@@ -15,7 +15,7 @@ const styles = {
   }),
   main: css({
     width: '100%',
-    height: `calc(100vh - ${TopbarHeight} - 176px)`,
+    height: `calc(100vh - ${TOPBAR_HEIGHT} - 176px)`,
     marginBottom: '176px',
   }),
   footer: css({

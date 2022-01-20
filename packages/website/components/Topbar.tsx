@@ -5,17 +5,15 @@ import { Grid, Text, Flex, Menu, Button } from '@contentful/f36-components';
 import { ChevronDownIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 
-import { getGridStyles } from './Layout/getGridStyles';
+import { getGridStyles, TOPBAR_HEIGHT } from './Layout/getGridStyles';
 import { DocSearch } from './DocSearch';
-
-export const TopbarHeight = '70px';
 
 const styles = {
   header: css({
     display: 'grid',
     backgroundColor: tokens.colorWhite,
     color: tokens.blue700,
-    height: TopbarHeight,
+    height: TOPBAR_HEIGHT,
     borderBottom: `1px solid ${tokens.gray300}`,
   }),
   logoLink: css({
@@ -86,6 +84,7 @@ interface TopbarProps {
 export const Topbar = ({ currentPage }: TopbarProps) => {
   const gridStyles = getGridStyles();
 
+  // TODO: unify this logic with the one in the Sidebar
   const isGuidelines = currentPage.includes('/guidelines');
   const isTokens = currentPage.includes('/tokens');
   const isComponents = currentPage.includes('/components');
