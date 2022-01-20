@@ -1,8 +1,10 @@
 import React from 'react';
 import { css } from 'emotion';
 import { Flex, Box } from '@contentful/f36-components';
-import { Topbar, TOPBAR_HEIGHT } from './Topbar';
+import { Topbar } from './Topbar';
 import { Footer } from './Footer';
+
+import { TOPBAR_HEIGHT } from '../utils/getGridStyles';
 
 interface Props {
   children: React.ReactNode;
