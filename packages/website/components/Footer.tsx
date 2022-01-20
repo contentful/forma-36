@@ -12,20 +12,17 @@ const styles = {
   footer: css({
     display: 'grid',
     gridAutoRows: 'min-content',
-    gridTemplateColumns: '8fr 2fr',
+    gridTemplateColumns: '3fr 1fr',
     alignItems: 'flex-start',
     padding: tokens.spacingL,
     marginTop: tokens.spacing2Xl,
     backgroundColor: tokens.gray100,
-    '@media screen and (min-width: 1440px)': {
-      gridTemplateColumns: '1fr 7fr 2fr',
-    },
-    '@media screen and (min-width: 1700px)': {
-      gridTemplateColumns: '1fr 6fr 2fr 1fr',
+    '@media screen and (min-width: 1600px)': {
+      gridTemplateColumns: '1fr 720px 240px 1fr',
     },
   }),
   footerFirstColumn: css({
-    '@media screen and (min-width: 1440px)': {
+    '@media screen and (min-width: 1600px)': {
       gridColumnStart: 2,
     },
   }),

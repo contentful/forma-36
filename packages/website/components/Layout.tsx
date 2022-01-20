@@ -34,13 +34,11 @@ export function Layout({ children, currentPage }: Props) {
   return (
     <Grid
       className={styles.grid}
-      columns="2fr 10fr"
+      columns="240px auto"
       rows="auto 1fr"
       columnGap="none"
     >
-      <Grid.Item area="topbar">
-        <Topbar currentPage={currentPage} />
-      </Grid.Item>
+      <Topbar currentPage={currentPage} />
 
       <Grid.Item area="sidemenu" className={styles.sidebarItem}>
         <Sidebar currentPage={currentPage} />

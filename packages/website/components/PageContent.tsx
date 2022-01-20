@@ -15,26 +15,21 @@ import tokens from '@contentful/f36-tokens';
 import type { FrontMatter } from '../types';
 import { TableOfContent, HeadingType } from './TableOfContent';
 
+const templateColumns = '3fr 1fr';
+
 const styles = {
   grid: css({
     display: 'grid',
     gridAutoRows: 'min-content',
-    gridTemplateColumns: '8fr 2fr',
+    gridTemplateColumns: templateColumns,
     gridTemplateAreas: `
       "header header"
       "content toc"
     `,
     flex: 1, // this is necessary to make the footer sticky to the bottom of the page
     padding: `0 ${tokens.spacingL}`,
-    '@media screen and (min-width: 1440px)': {
-      gridTemplateColumns: '1fr 7fr 2fr',
-      gridTemplateAreas: `
-        ". header header"
-        ". content toc"
-      `,
-    },
-    '@media screen and (min-width: 1700px)': {
-      gridTemplateColumns: '1fr 6fr 2fr 1fr',
+    '@media screen and (min-width: 1600px)': {
+      gridTemplateColumns: '1fr 720px 240px 1fr',
       gridTemplateAreas: `
         ". header header ."
         ". content toc ."
@@ -44,18 +39,12 @@ const styles = {
   header: css({
     gridArea: 'header',
     display: 'grid',
-    gridTemplateColumns: '8fr 2fr',
+    gridTemplateColumns: templateColumns,
     gridAutoRows: 'min-content',
     paddingTop: tokens.spacing4Xl,
     paddingBottom: tokens.spacingM,
     borderBottom: `1px solid ${tokens.gray300}`,
     marginBottom: tokens.spacing2Xl,
-    '@media screen and (min-width: 1440px)': {
-      gridTemplateColumns: '7fr 2fr',
-    },
-    '@media screen and (min-width: 1700px)': {
-      gridTemplateColumns: '6fr 2fr',
-    },
     // this selector will make sure that all children of the header will start at the first column of its grid
     '> *': {
       gridColumnStart: 1,

@@ -1,9 +1,16 @@
 import React from 'react';
-import tokens from '@contentful/f36-tokens';
-import { Text, Flex, Box, Menu, Button } from '@contentful/f36-components';
-import { ChevronDownIcon } from '@contentful/f36-icons';
 import { css, cx } from 'emotion';
 import Link from 'next/link';
+import {
+  Grid,
+  Text,
+  Flex,
+  Box,
+  Menu,
+  Button,
+} from '@contentful/f36-components';
+import { ChevronDownIcon } from '@contentful/f36-icons';
+import tokens from '@contentful/f36-tokens';
 
 import { DocSearch } from './DocSearch';
 // eslint-disable-next-line
@@ -13,21 +20,33 @@ import pkg from '../../forma-36-react-components/package.json';
 export const TopbarHeight = '70px';
 
 const styles = {
-  header: css`
-    display: grid;
-    grid-template-columns: 3fr 7fr 2fr;
-    background-color: ${tokens.colorWhite};
-    color: ${tokens.blue700};
-    padding: 0 ${tokens.spacingXl};
-    height: ${TopbarHeight};
-    border-bottom: 1px solid ${tokens.gray300};
-  `,
-  logoLink: css`
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #fff;
-  `,
+  header: css({
+    display: 'grid',
+    gridTemplateColumns: '240px auto',
+    backgroundColor: tokens.colorWhite,
+    color: tokens.blue700,
+    height: TopbarHeight,
+    borderBottom: `1px solid ${tokens.gray300}`,
+  }),
+  logoLink: css({
+    display: 'flex',
+    alignItems: 'center',
+    textDecoration: 'none',
+    color: tokens.colorWhite,
+  }),
+  navElements: css({
+    display: 'grid',
+    gridTemplateColumns: '3fr 1fr',
+    '@media screen and (min-width: 1600px)': {
+      gridTemplateColumns: '1fr 720px 240px 1fr',
+    },
+  }),
+  navListContainer: css({
+    '@media screen and (min-width: 1600px)': { gridColumnStart: 2 },
+  }),
+  docSearchContainer: css({
+    '@media screen and (min-width: 1600px)': { gridColumnStart: 4 },
+  }),
   navList: css({
     listStyle: 'none',
     padding: 0,
@@ -81,16 +100,16 @@ export const Topbar = ({ currentPage }: TopbarProps) => {
   const isIntroduction = !isGuidelines && !isTokens && !isComponents;
 
   return (
-    <header className={styles.header}>
-      <Flex flexGrow={1} alignItems="center">
+    <Grid.Item as="header" area="topbar" className={styles.header}>
+      <Flex paddingLeft="spacingXl">
         <Link href="/" passHref>
           <a className={styles.logoLink} href="/">
             <Logo />
             <Text
-              fontSize="fontSizeXl"
+              fontSize="fontSizeL"
               fontWeight="fontWeightDemiBold"
               fontColor="blue700"
-              marginLeft="spacingM"
+              marginLeft="spacingS"
             >
               Forma 36
             </Text>
@@ -116,43 +135,51 @@ export const Topbar = ({ currentPage }: TopbarProps) => {
         </Box>
       </Flex>
 
-      <Flex as="nav" alignItems="center">
-        <ul className={styles.navList}>
-          <li>
-            <TopbarLink
-              href="/"
-              label="Introduction"
-              isActive={isIntroduction}
-            />
-          </li>
-          <li>
-            <TopbarLink
-              href="/guidelines/accessibility"
-              label="Guidelines"
-              isActive={isGuidelines}
-            />
-          </li>
-          <li>
-            <TopbarLink
-              href="/tokens/color-system"
-              label="Tokens"
-              isActive={isTokens}
-            />
-          </li>
-          <li>
-            <TopbarLink
-              href="/components/accordion"
-              label="Components"
-              isActive={isComponents}
-            />
-          </li>
-        </ul>
-      </Flex>
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
+        paddingLeft="spacingL"
+        paddingRight="spacingL"
+        className={styles.navElements}
+      >
+        <Flex as="nav" alignItems="center" className={styles.navListContainer}>
+          <ul className={styles.navList}>
+            <li>
+              <TopbarLink
+                href="/"
+                label="Introduction"
+                isActive={isIntroduction}
+              />
+            </li>
+            <li>
+              <TopbarLink
+                href="/guidelines/accessibility"
+                label="Guidelines"
+                isActive={isGuidelines}
+              />
+            </li>
+            <li>
+              <TopbarLink
+                href="/tokens/color-system"
+                label="Tokens"
+                isActive={isTokens}
+              />
+            </li>
+            <li>
+              <TopbarLink
+                href="/components/accordion"
+                label="Components"
+                isActive={isComponents}
+              />
+            </li>
+          </ul>
+        </Flex>
 
-      <Flex alignItems="center">
-        <DocSearch />
+        <Flex className={styles.docSearchContainer}>
+          <DocSearch />
+        </Flex>
       </Flex>
-    </header>
+    </Grid.Item>
   );
 };
 
