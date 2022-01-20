@@ -2,7 +2,7 @@ import React from 'react';
 import { css, cx } from 'emotion';
 import { Grid } from '@contentful/f36-components';
 
-import { getGridStyles, TOPBAR_HEIGHT } from './Layout/getGridStyles';
+import { getGridStyles, TOPBAR_HEIGHT } from '../utils/getGridStyles';
 import { Topbar } from './Topbar';
 import { Footer } from './Footer';
 import { Sidebar } from './Sidebar';

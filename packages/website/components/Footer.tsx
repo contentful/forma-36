@@ -7,7 +7,7 @@ import { ExternalLinkIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 
 import contentfulLogoSVG from '../resources/icons/contentful-logo.svg';
-import { getGridStyles } from './Layout/getGridStyles';
+import { getGridStyles } from '../utils/getGridStyles';
 
 const styles = {
   footer: css({

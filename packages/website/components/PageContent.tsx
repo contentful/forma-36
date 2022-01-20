@@ -13,7 +13,7 @@ import { ExternalLinkIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 
 import type { FrontMatter } from '../types';
-import { getGridStyles, BIG_SCREEN_BREAKPOINT } from './Layout/getGridStyles';
+import { getGridStyles, BIG_SCREEN_BREAKPOINT } from '../utils/getGridStyles';
 import { TableOfContent, HeadingType } from './TableOfContent';
 
 const styles = {

@@ -7,7 +7,7 @@ import {
   getGridStyles,
   TOPBAR_HEIGHT,
   BIG_SCREEN_BREAKPOINT,
-} from '../Layout/getGridStyles';
+} from '../../utils/getGridStyles';
 import { DocSearch } from '../DocSearch';
 
 import { TopbarLink } from './TopbarLink';
