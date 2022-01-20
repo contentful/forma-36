@@ -43,7 +43,7 @@ you should use a combination of the `onClick` and `selected` props. The former c
 ### With `link` and `target`
 
 A Card can be used with the purpose to navigate a user to an external page. To do that a user must pass a value to the `href` prop.
-Optionally, the user can pass a `target` prop to control how the link should be open.
+Optionally, the user can pass a `target` prop to control how the link should be open. By default `Card` is rendered as `article` html tag, in order to render it as a link, you should pass `as="a"` to `Card` component.
 
 ```jsx file=../../examples/Card/WithLinkAndTargetExample.tsx
 
