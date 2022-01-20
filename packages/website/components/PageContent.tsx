@@ -13,7 +13,7 @@ import { ExternalLinkIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 
 import type { FrontMatter } from '../types';
-import { getGridStyles } from './Layout/getGridStyles';
+import { getGridStyles, BIG_SCREEN_BREAKPOINT } from './Layout/getGridStyles';
 import { TableOfContent, HeadingType } from './TableOfContent';
 
 const styles = {
@@ -24,7 +24,7 @@ const styles = {
       "header header"
       "content toc"
     `,
-    '@media screen and (min-width: 1600px)': {
+    [`@media screen and (min-width: ${BIG_SCREEN_BREAKPOINT})`]: {
       gridTemplateAreas: `
         ". header header ."
         ". content toc ."

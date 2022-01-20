@@ -3,7 +3,11 @@ import { css, cx } from 'emotion';
 import { Grid, Flex, List } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 
-import { getGridStyles, TOPBAR_HEIGHT } from '../Layout/getGridStyles';
+import {
+  getGridStyles,
+  TOPBAR_HEIGHT,
+  BIG_SCREEN_BREAKPOINT,
+} from '../Layout/getGridStyles';
 import { DocSearch } from '../DocSearch';
 
 import { TopbarLink } from './TopbarLink';
@@ -31,7 +35,9 @@ const styles = {
     '& .algolia-autocomplete': {
       width: '100%',
     },
-    '@media screen and (min-width: 1600px)': { gridColumnStart: 4 },
+    [`@media screen and (min-width: ${BIG_SCREEN_BREAKPOINT})`]: {
+      gridColumnStart: 4,
+    },
   }),
 };
 
