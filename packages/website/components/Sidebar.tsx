@@ -137,6 +137,17 @@ export function Sidebar({ currentPage = '/' }: Props) {
                 slug: '/contributing',
                 type: 'link',
               },
+              {
+                title: 'Playground',
+                slug: '/playground',
+                type: 'link',
+              },
+              {
+                title: 'App Framework',
+                slug:
+                  'https://www.contentful.com/developers/docs/extensibility/app-framework/',
+                type: 'link',
+              },
             ]}
             currentPage={currentPage}
           />

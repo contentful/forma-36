@@ -32,9 +32,10 @@ export type SidebarSectionType = {
   links: SidebarLinkType[];
   type: 'section';
 };
-interface SidebarSectionProps {
+
+interface SidebarSubsectionProps {
   title?: string;
-  links: Array<SidebarLinkType | SidebarSectionType>;
+  links: SidebarLinkType[];
   currentPage: string;
 }
 
@@ -42,11 +43,7 @@ function SidebarSubsection({
   title,
   links = [],
   currentPage,
-}: {
-  title?: string;
-  links: SidebarLinkType[];
-  currentPage: string;
-}) {
+}: SidebarSubsectionProps) {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
@@ -69,7 +66,7 @@ function SidebarSubsection({
                 key={link.slug}
                 isActive={isLinkActive(link.slug, currentPage)}
                 href={link.slug}
-                indent={2.5}
+                paddingLeft="spacing2Xl"
               >
                 {link.title}
               </SidebarLink>
@@ -78,6 +75,12 @@ function SidebarSubsection({
         : null}
     </List>
   );
+}
+
+interface SidebarSectionProps {
+  title?: string;
+  links: Array<SidebarLinkType | SidebarSectionType>;
+  currentPage: string;
 }
 
 export function SidebarSection({
@@ -92,6 +95,7 @@ export function SidebarSection({
           {title}
         </Subheading>
       )}
+
       {links.map((link) => {
         if (link.type === 'section') {
           return (
@@ -103,11 +107,13 @@ export function SidebarSection({
             />
           );
         }
+
         return (
           <SidebarLink
             key={link.slug}
             isActive={isLinkActive(link.slug, currentPage)}
             href={link.slug}
+            isExternal={link.slug.includes('https://')}
           >
             {link.title}
           </SidebarLink>
