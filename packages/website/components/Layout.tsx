@@ -4,7 +4,6 @@ import { Grid } from '@contentful/f36-components';
 import { Topbar, TopbarHeight } from './Topbar';
 import { Footer } from './Footer';
 import { Sidebar } from './Sidebar';
-import tokens from '@contentful/f36-tokens';
 
 const styles = {
   grid: css({
@@ -17,7 +16,6 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     height: `calc(100vh - ${TopbarHeight})`,
-    borderRight: `1px solid ${tokens.gray300}`,
   }),
   mainItem: css({
     display: 'flex',

@@ -86,7 +86,7 @@ export const Topbar = ({ currentPage }: TopbarProps) => {
               fontSize="fontSizeXl"
               fontWeight="fontWeightDemiBold"
               fontColor="blue700"
-              marginLeft="spacingL"
+              marginLeft="spacingM"
             >
               Forma 36
             </Text>

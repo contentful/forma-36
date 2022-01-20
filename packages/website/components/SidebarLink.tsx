@@ -2,7 +2,7 @@ import React from 'react';
 import { css, cx } from 'emotion';
 import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
-import { List, Flex, Subheading } from '@contentful/f36-components';
+import { List, Flex, Text } from '@contentful/f36-components';
 import { ChevronDownIcon } from '@contentful/f36-icons';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
 
@@ -60,9 +60,14 @@ export function SidebarSectionButton(props: {
         role="button"
         onClick={props.onClick}
       >
-        <Subheading marginBottom="none" marginRight="spacingXs">
+        <Text
+          as="h3"
+          fontWeight="fontWeightDemiBold"
+          marginBottom="none"
+          marginRight="spacingXs"
+        >
           {props.children}
-        </Subheading>
+        </Text>
 
         <ChevronDownIcon
           variant="muted"
