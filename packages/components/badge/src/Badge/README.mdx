@@ -5,82 +5,103 @@ status: 'stable'
 slug: /components/badge/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/badge'
 storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-badge--basic'
-typescript: ./src/Badge.tsx
+typescript: ./Badge.tsx
 ---
 
 Badge is used to label or highlight items in the interface.
 
 If you need Badge for Contentful entity status, consider using [EntityStatusBadge](../components/entity-status-badge) instead.
 
-## How to use Badge
+## Import
 
-- badges are used to inform users of the status of an element in the interface
-- keep in mind the recommended color coding for each of variant
-
-## Component variants
-
-### Badge types
-
-- **Primary** - used for the entity that has been changed
-
-```jsx
-<Badge variant="primary">changed</Badge>
+```js static=true
+import { Badge } from '@contentful/f36-components';
+// or
+import { Badge } from '@contentful/f36-badge';
 ```
 
-- **Primary filled** - used to highlight a new functionality or to indicate changes in the interface.
+## Examples
 
-```jsx
-<Badge variant="primary-filled">new</Badge>
+### Primary
+
+Used for the entity that has been changed
+
+```jsx file=../../examples/PrimaryBadgeExample.tsx
+
 ```
 
-- **Positive** - used for the entity that has been published
+### Primary filled
 
-```jsx
-<Badge variant="positive">published</Badge>
+Used to highlight a new functionality or to indicate changes in the interface.
+
+```jsx file=../../examples/PrimaryFilledBadgeExample.tsx
+
 ```
 
-- **Negative** - used for the entity that has been deleted.
+### Positive
 
-```jsx
-<Badge variant="negative">deleted</Badge>
+Used for the entity that has been published
+
+```jsx file=../../examples/PositiveBadgeExample.tsx
+
 ```
 
-- **Warning** - used for the entity that has been deleted.
+### Negative
 
-```jsx
-<Badge variant="warning">draft</Badge>
+Used for the entity that has been deleted.
+
+```jsx file=../../examples/NegativeBadgeExample.tsx
+
 ```
 
-- **Secondary** - used for all the secondary elements, for example in the list of versions:
+### Warning
 
-```jsx
-<Badge variant="secondary">current</Badge>
+Used for the entity that has been deleted.
+
+```jsx file=../../examples/WarningBadgeExample.tsx
+
 ```
 
-- **Featured** - used for featured entities that should be highlighted.
+### Secondary
 
-```jsx
-<Badge variant="featured">trial</Badge>
+Used for all the secondary elements, for example in the list of versions:
+
+```jsx file=../../examples/SecondaryBadgeExample.tsx
+
 ```
 
-### Badge sizes
+### Featured
 
-- **default**
+Used for featured entities that should be highlighted.
 
-```jsx
-<Badge variant="positive">published</Badge>
+```jsx file=../../examples/FeaturedBadgeExample.tsx
+
 ```
 
-- **small**
+## Badge sizes
 
-```jsx
-<Badge variant="primary-filled" size="small">
-  new
-</Badge>
+### Default
+
+```jsx file=../../examples/DefaultSizeExample.tsx
+
 ```
+
+### Small
+
+```jsx file=../../examples/SmallSizeExample.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="Badge" />
+
+`Badge` also accepts all HTML attributes (as React properties) that are applicable to the usual `div` tag.
 
 ## Content guidelines
 
+- badges are used to inform users of the status of an element in the interface
+- keep in mind the recommended color coding for each of variant
 - try to use labels with short, scannable text
 - try to use a single word to describe the status of an element
 - try to describe the status in the past tense, like changed or archived
@@ -88,9 +109,3 @@ If you need Badge for Contentful entity status, consider using [EntityStatusBadg
 ## Accessibility
 
 - text must be clear enough for color-blind users to be able to understand immediately without needing to rely only on the color.
-
-## Props (API reference)
-
-<PropsTable of="Badge" />
-
-`Badge` also accepts all HTML attributes (as React properties) that are applicable to the usual `div` tag.
