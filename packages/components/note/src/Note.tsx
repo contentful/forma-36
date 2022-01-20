@@ -36,7 +36,7 @@ export type NoteInternalProps = CommonProps & {
   /**
    * Sets title in the Note
    */
-  title?: string;
+  title?: React.ReactNode;
   /**
    * Children of Note
    */
