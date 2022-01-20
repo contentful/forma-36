@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { List, Subheading } from '@contentful/f36-components';
+import { List, Text } from '@contentful/f36-components';
 
 import { SidebarLink, SidebarSectionButton } from './SidebarLink';
 
@@ -20,6 +20,7 @@ const styles = {
   sectionTitle: css({
     padding: `${tokens.spacingXs} ${tokens.spacingM} ${tokens.spacingXs} ${tokens.spacingXl}`,
     letterSpacing: 'initial',
+    paddingLeft: tokens.spacingXl,
   }),
 };
 
@@ -91,9 +92,14 @@ export function SidebarSection({
   return (
     <List className={styles.list}>
       {title && (
-        <Subheading className={styles.sectionTitle} marginBottom="none">
+        <Text
+          as="h3"
+          className={styles.sectionTitle}
+          marginBottom="none"
+          fontWeight="fontWeightDemiBold"
+        >
           {title}
-        </Subheading>
+        </Text>
       )}
 
       {links.map((link) => {

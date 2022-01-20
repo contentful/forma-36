@@ -1,10 +1,14 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
-import { Text, Flex } from '@contentful/f36-components';
+import { Text, Flex, Box, Menu, Button } from '@contentful/f36-components';
+import { ChevronDownIcon } from '@contentful/f36-icons';
 import { css, cx } from 'emotion';
 import Link from 'next/link';
 
 import { DocSearch } from './DocSearch';
+// eslint-disable-next-line
+// @ts-ignore
+import pkg from '../../forma-36-react-components/package.json';
 
 export const TopbarHeight = '70px';
 
@@ -78,7 +82,7 @@ export const Topbar = ({ currentPage }: TopbarProps) => {
 
   return (
     <header className={styles.header}>
-      <Flex flexGrow={1}>
+      <Flex flexGrow={1} alignItems="center">
         <Link href="/" passHref>
           <a className={styles.logoLink} href="/">
             <Logo />
@@ -86,12 +90,30 @@ export const Topbar = ({ currentPage }: TopbarProps) => {
               fontSize="fontSizeXl"
               fontWeight="fontWeightDemiBold"
               fontColor="blue700"
-              marginLeft="spacingL"
+              marginLeft="spacingM"
             >
               Forma 36
             </Text>
           </a>
         </Link>
+
+        <Box marginLeft="spacingM">
+          <Menu usePortal={false}>
+            <Menu.Trigger>
+              <Button size="small" endIcon={<ChevronDownIcon />}>
+                v{pkg.version}
+              </Button>
+            </Menu.Trigger>
+            <Menu.List>
+              <Menu.Item as="a" href="https://f36.contentful.com/">
+                v{pkg.version}
+              </Menu.Item>
+              <Menu.Item as="a" href="https://v3.f36.contentful.com/">
+                v3
+              </Menu.Item>
+            </Menu.List>
+          </Menu>
+        </Box>
       </Flex>
 
       <Flex as="nav" alignItems="center">
@@ -129,7 +151,6 @@ export const Topbar = ({ currentPage }: TopbarProps) => {
 
       <Flex alignItems="center">
         <DocSearch />
-        <TopbarLink href="https://v3.f36.contentful.com/" label="v3" />
       </Flex>
     </header>
   );
