@@ -18,16 +18,6 @@ const styles = {
     height: TOPBAR_HEIGHT,
     borderBottom: `1px solid ${tokens.gray300}`,
   }),
-  navWrapper: css({
-    display: 'grid',
-    gridTemplateColumns: '3fr 1fr',
-    '@media screen and (min-width: 1600px)': {
-      gridTemplateColumns: '1fr 720px 240px 1fr',
-    },
-  }),
-  navListContainer: css({
-    '@media screen and (min-width: 1600px)': { gridColumnStart: 2 },
-  }),
   navList: css({
     listStyle: 'none',
     padding: 0,
@@ -38,6 +28,9 @@ const styles = {
     },
   }),
   docSearchContainer: css({
+    '& .algolia-autocomplete': {
+      width: '100%',
+    },
     '@media screen and (min-width: 1600px)': { gridColumnStart: 4 },
   }),
 };
@@ -69,11 +62,16 @@ export function Topbar({ currentPage }: TopbarProps) {
       <Flex
         justifyContent="space-between"
         alignItems="center"
-        paddingLeft="spacingL"
-        paddingRight="spacingL"
-        className={styles.navWrapper}
+        className={cx(
+          gridStyles.contentColumns,
+          gridStyles.contentColumnsBigScreens,
+        )}
       >
-        <Flex as="nav" alignItems="center" className={styles.navListContainer}>
+        <Flex
+          as="nav"
+          alignItems="center"
+          className={gridStyles.columnStartTwo}
+        >
           <List className={styles.navList}>
             <List.Item>
               <TopbarLink

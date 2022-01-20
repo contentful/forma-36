@@ -1,9 +1,27 @@
 import { css } from 'emotion';
+import tokens from '@contentful/f36-tokens';
 
 export const TOPBAR_HEIGHT = '70px';
 
 export const getGridStyles = () => ({
   wrapperColumns: css({
     gridTemplateColumns: '240px auto',
+  }),
+  contentColumns: css({
+    display: 'grid',
+    padding: `0 ${tokens.spacingL}`,
+    gridTemplateColumns: '3fr 1fr',
+  }),
+  // this style will make the content centered withou breaking the layout in big screens
+  contentColumnsBigScreens: css({
+    '@media screen and (min-width: 1600px)': {
+      gridTemplateColumns: '1fr 720px 240px 1fr',
+    },
+  }),
+  // this style will "push" the content to the 2nd column in big screens
+  columnStartTwo: css({
+    '@media screen and (min-width: 1600px)': {
+      gridColumnStart: 2,
+    },
   }),
 });

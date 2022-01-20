@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from 'emotion';
+import { css, cx } from 'emotion';
 import {
   DisplayText,
   Flex,
@@ -13,23 +13,18 @@ import { ExternalLinkIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 
 import type { FrontMatter } from '../types';
+import { getGridStyles } from './Layout/getGridStyles';
 import { TableOfContent, HeadingType } from './TableOfContent';
-
-const templateColumns = '3fr 1fr';
 
 const styles = {
   grid: css({
-    display: 'grid',
+    flex: 1, // this is necessary to make the footer sticky to the bottom of the page
     gridAutoRows: 'min-content',
-    gridTemplateColumns: templateColumns,
     gridTemplateAreas: `
       "header header"
       "content toc"
     `,
-    flex: 1, // this is necessary to make the footer sticky to the bottom of the page
-    padding: `0 ${tokens.spacingL}`,
     '@media screen and (min-width: 1600px)': {
-      gridTemplateColumns: '1fr 720px 240px 1fr',
       gridTemplateAreas: `
         ". header header ."
         ". content toc ."
@@ -38,11 +33,8 @@ const styles = {
   }),
   header: css({
     gridArea: 'header',
-    display: 'grid',
-    gridTemplateColumns: templateColumns,
     gridAutoRows: 'min-content',
-    paddingTop: tokens.spacing4Xl,
-    paddingBottom: tokens.spacingM,
+    padding: `${tokens.spacing4Xl} 0 ${tokens.spacingM}`,
     borderBottom: `1px solid ${tokens.gray300}`,
     marginBottom: tokens.spacing2Xl,
     // this selector will make sure that all children of the header will start at the first column of its grid
@@ -78,10 +70,11 @@ interface PageHeaderProps {
 }
 
 function PageHeader({ title, github, description, status }: PageHeaderProps) {
+  const gridStyles = getGridStyles();
   const showNote = status === 'deprecated';
 
   return (
-    <header className={styles.header}>
+    <header className={cx(gridStyles.contentColumns, styles.header)}>
       <Flex
         alignItems="flex-start"
         justifyContent="space-between"
@@ -154,10 +147,17 @@ export function PageContent({
   frontMatter,
   children,
 }: PageContentProps) {
+  const gridStyles = getGridStyles();
   const { title, github, description, status } = frontMatter;
 
   return (
-    <div className={styles.grid}>
+    <div
+      className={cx(
+        styles.grid,
+        gridStyles.contentColumns,
+        gridStyles.contentColumnsBigScreens,
+      )}
+    >
       <PageHeader
         title={title}
         github={github}
