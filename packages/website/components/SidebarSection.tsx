@@ -119,7 +119,6 @@ export function SidebarSection({
             key={link.slug}
             isActive={isLinkActive(link.slug, currentPage)}
             href={link.slug}
-            paddingLeft="spacing2Xl"
             isExternal={link.slug.includes('https://')}
           >
             {link.title}
