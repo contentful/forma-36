@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from 'emotion';
 import sortBy from 'lodash.sortby';
 import tokens from '@contentful/f36-tokens';
-import { Flex } from '@contentful/f36-components';
+import { Grid } from '@contentful/f36-components';
 
 import {
   SidebarSection,
@@ -81,49 +81,20 @@ const components: Array<SidebarSectionType | SidebarLinkType> = [
 export function Sidebar({ currentPage = '/' }: Props) {
   const componentsSorted = sortBy(components, ['title']);
 
+  // TODO: unify this logic with the one in the Topbar
+  const isGuidelines = currentPage.includes('/guidelines');
+  const isTokens = currentPage.includes('/tokens');
+  const isComponents = currentPage.includes('/components');
+  const isIntroduction = !isGuidelines && !isTokens && !isComponents;
+
   return (
-    <Flex
+    <Grid.Item
       as="nav"
+      area="sidebar"
       aria-label="Main Navigation"
-      flexDirection="column"
       className={styles.nav}
     >
-      {currentPage.includes('guidelines') ||
-      currentPage.includes('tokens') ||
-      currentPage.includes('components') ? (
-        <>
-          {currentPage.includes('guidelines') && (
-            <SidebarSection
-              links={sidebarLinks.guidelines}
-              currentPage={currentPage}
-            />
-          )}
-          {currentPage.includes('tokens') && (
-            <SidebarSection
-              links={sidebarLinks.tokens}
-              currentPage={currentPage}
-            />
-          )}
-          {currentPage.includes('components') && (
-            <>
-              <SidebarSection
-                links={componentsSorted}
-                currentPage={currentPage}
-              />
-              <SidebarSection
-                title="Utils"
-                links={sidebarLinks.utils}
-                currentPage={currentPage}
-              />
-              <SidebarSection
-                title="Integrations"
-                links={sidebarLinks.integrations}
-                currentPage={currentPage}
-              />
-            </>
-          )}
-        </>
-      ) : (
+      {isIntroduction && (
         <>
           <SidebarSection
             links={[
@@ -158,6 +129,33 @@ export function Sidebar({ currentPage = '/' }: Props) {
           />
         </>
       )}
-    </Flex>
+
+      {isGuidelines && (
+        <SidebarSection
+          links={sidebarLinks.guidelines}
+          currentPage={currentPage}
+        />
+      )}
+
+      {isTokens && (
+        <SidebarSection links={sidebarLinks.tokens} currentPage={currentPage} />
+      )}
+
+      {isComponents && (
+        <>
+          <SidebarSection links={componentsSorted} currentPage={currentPage} />
+          <SidebarSection
+            title="Utils"
+            links={sidebarLinks.utils}
+            currentPage={currentPage}
+          />
+          <SidebarSection
+            title="Integrations"
+            links={sidebarLinks.integrations}
+            currentPage={currentPage}
+          />
+        </>
+      )}
+    </Grid.Item>
   );
 }

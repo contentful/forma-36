@@ -1,27 +1,26 @@
 import React from 'react';
-import { css } from 'emotion';
+import { css, cx } from 'emotion';
 import { Grid } from '@contentful/f36-components';
-import { Topbar, TopbarHeight } from './Topbar';
+
+import { getGridStyles, TOPBAR_HEIGHT } from '../utils/getGridStyles';
+import { Topbar } from './Topbar';
 import { Footer } from './Footer';
 import { Sidebar } from './Sidebar';
 
 const styles = {
-  grid: css({
+  wrapper: css({
     height: '100vh',
     overflow: 'hidden',
-    gridTemplateAreas: `"topbar topbar"
-    "sidemenu content"`,
-  }),
-  sidebarItem: css({
-    display: 'flex',
-    flexDirection: 'column',
-    height: `calc(100vh - ${TopbarHeight})`,
+    gridTemplateAreas: `
+      "topbar topbar"
+      "sidebar content"
+    `,
   }),
   mainItem: css({
     display: 'flex',
     flexDirection: 'column',
     overflow: 'auto',
-    height: `calc(100vh - ${TopbarHeight})`,
+    height: `calc(100vh - ${TOPBAR_HEIGHT})`,
   }),
 };
 
@@ -31,20 +30,16 @@ interface Props {
 }
 
 export function Layout({ children, currentPage }: Props) {
+  const gridStyles = getGridStyles();
+
   return (
     <Grid
-      className={styles.grid}
-      columns="2fr 10fr"
-      rows="auto 1fr"
+      className={cx(styles.wrapper, gridStyles.wrapperColumns)}
       columnGap="none"
     >
-      <Grid.Item area="topbar">
-        <Topbar currentPage={currentPage} />
-      </Grid.Item>
+      <Topbar currentPage={currentPage} />
 
-      <Grid.Item area="sidemenu" className={styles.sidebarItem}>
-        <Sidebar currentPage={currentPage} />
-      </Grid.Item>
+      <Sidebar currentPage={currentPage} />
 
       {/* Unique key for each page, so scroll position is not preserved when opening a new page */}
       <Grid.Item

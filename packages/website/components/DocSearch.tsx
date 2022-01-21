@@ -1,21 +1,7 @@
 import React, { useEffect } from 'react';
-import { css } from 'emotion';
 
-import tokens from '@contentful/f36-tokens';
 import { SearchIcon } from '@contentful/f36-icons';
 import { TextInput } from '@contentful/f36-forms';
-
-const styles = {
-  container: css({
-    display: 'flex',
-    alignItems: 'center',
-    width: '100%',
-    marginRight: tokens.spacingM,
-    '& .algolia-autocomplete': {
-      width: '100%',
-    },
-  }),
-};
 
 export const DocSearch = () => {
   useEffect(() => {
@@ -46,15 +32,12 @@ export const DocSearch = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <TextInput
-        id="search"
-        icon={<SearchIcon variant="muted" />}
-        name="search"
-        type="text"
-        placeholder="Search the docs"
-        defaultValue=""
-      />
-    </div>
+    <TextInput
+      id="search"
+      icon={<SearchIcon variant="muted" />}
+      name="search"
+      type="text"
+      placeholder="Search the docs"
+    />
   );
 };

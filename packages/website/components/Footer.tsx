@@ -1,41 +1,37 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { css } from 'emotion';
+import { css, cx } from 'emotion';
 import { TextLink, Flex, TextLinkProps } from '@contentful/f36-components';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 
 import contentfulLogoSVG from '../resources/icons/contentful-logo.svg';
+import { getGridStyles } from '../utils/getGridStyles';
 
 const styles = {
   footer: css({
-    display: 'grid',
     gridAutoRows: 'min-content',
-    gridTemplateColumns: '8fr 2fr',
     alignItems: 'flex-start',
-    padding: tokens.spacingL,
     marginTop: tokens.spacing2Xl,
     backgroundColor: tokens.gray100,
-    '@media screen and (min-width: 1440px)': {
-      gridTemplateColumns: '1fr 7fr 2fr',
-    },
-    '@media screen and (min-width: 1700px)': {
-      gridTemplateColumns: '1fr 6fr 2fr 1fr',
-    },
-  }),
-  footerFirstColumn: css({
-    '@media screen and (min-width: 1440px)': {
-      gridColumnStart: 2,
-    },
+    padding: tokens.spacingL,
   }),
   logo: css({ justifySelf: 'flex-end' }),
 };
 
-export const Footer = () => {
+export function Footer() {
+  const gridStyles = getGridStyles();
+
   return (
-    <footer className={styles.footer}>
-      <Flex className={styles.footerFirstColumn} gap="spacing2Xl">
+    <footer
+      className={cx(
+        gridStyles.contentColumns,
+        gridStyles.contentColumnsBigScreens,
+        styles.footer,
+      )}
+    >
+      <Flex className={gridStyles.columnStartTwo} gap="spacing2Xl">
         <Flex flexDirection="column" alignItems="flex-start" gap="spacingM">
           <Link href="/playground" passHref>
             <FooterLink
@@ -99,7 +95,7 @@ export const Footer = () => {
       </a>
     </footer>
   );
-};
+}
 
 function FooterLink({ href, label, isExternal = true }) {
   const externalLinkProps = isExternal

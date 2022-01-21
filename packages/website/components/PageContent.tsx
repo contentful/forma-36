@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from 'emotion';
+import { css, cx } from 'emotion';
 import {
   DisplayText,
   Flex,
@@ -13,28 +13,18 @@ import { ExternalLinkIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 
 import type { FrontMatter } from '../types';
+import { getGridStyles, SCREEN_BREAKPOINT_LARGE } from '../utils/getGridStyles';
 import { TableOfContent, HeadingType } from './TableOfContent';
 
 const styles = {
   grid: css({
-    display: 'grid',
+    flex: 1, // this is necessary to make the footer sticky to the bottom of the page
     gridAutoRows: 'min-content',
-    gridTemplateColumns: '8fr 2fr',
     gridTemplateAreas: `
       "header header"
       "content toc"
     `,
-    flex: 1, // this is necessary to make the footer sticky to the bottom of the page
-    padding: `0 ${tokens.spacingL}`,
-    '@media screen and (min-width: 1440px)': {
-      gridTemplateColumns: '1fr 7fr 2fr',
-      gridTemplateAreas: `
-        ". header header"
-        ". content toc"
-      `,
-    },
-    '@media screen and (min-width: 1700px)': {
-      gridTemplateColumns: '1fr 6fr 2fr 1fr',
+    [`@media screen and (min-width: ${SCREEN_BREAKPOINT_LARGE})`]: {
       gridTemplateAreas: `
         ". header header ."
         ". content toc ."
@@ -43,19 +33,10 @@ const styles = {
   }),
   header: css({
     gridArea: 'header',
-    display: 'grid',
-    gridTemplateColumns: '8fr 2fr',
     gridAutoRows: 'min-content',
-    paddingTop: tokens.spacing4Xl,
-    paddingBottom: tokens.spacingM,
+    padding: `${tokens.spacing4Xl} 0 ${tokens.spacingM}`,
     borderBottom: `1px solid ${tokens.gray300}`,
     marginBottom: tokens.spacing2Xl,
-    '@media screen and (min-width: 1440px)': {
-      gridTemplateColumns: '7fr 2fr',
-    },
-    '@media screen and (min-width: 1700px)': {
-      gridTemplateColumns: '6fr 2fr',
-    },
     // this selector will make sure that all children of the header will start at the first column of its grid
     '> *': {
       gridColumnStart: 1,
@@ -89,10 +70,11 @@ interface PageHeaderProps {
 }
 
 function PageHeader({ title, github, description, status }: PageHeaderProps) {
+  const gridStyles = getGridStyles();
   const showNote = status === 'deprecated';
 
   return (
-    <header className={styles.header}>
+    <header className={cx(gridStyles.contentColumns, styles.header)}>
       <Flex
         alignItems="flex-start"
         justifyContent="space-between"
@@ -165,10 +147,17 @@ export function PageContent({
   frontMatter,
   children,
 }: PageContentProps) {
+  const gridStyles = getGridStyles();
   const { title, github, description, status } = frontMatter;
 
   return (
-    <div className={styles.grid}>
+    <div
+      className={cx(
+        styles.grid,
+        gridStyles.contentColumns,
+        gridStyles.contentColumnsBigScreens,
+      )}
+    >
       <PageHeader
         title={title}
         github={github}
