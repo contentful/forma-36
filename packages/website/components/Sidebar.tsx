@@ -5,6 +5,10 @@ import tokens from '@contentful/f36-tokens';
 import { Grid } from '@contentful/f36-components';
 
 import {
+  useCurrentLocation,
+  WEBSITE_SECTION,
+} from '../hooks/useCurrentLocation';
+import {
   SidebarSection,
   SidebarSectionType,
   SidebarLinkType,
@@ -81,13 +85,7 @@ const components: Array<SidebarSectionType | SidebarLinkType> = [
 export function Sidebar({ currentPage = '/' }: Props) {
   const componentsSorted = sortBy(components, ['title']);
 
-  // TODO: unify this logic with the one in the Topbar
-  const isGuidelines = currentPage.includes('/guidelines');
-  const isTokens = currentPage.includes('/tokens');
-  const isComponents =
-    currentPage.includes('/components') ||
-    currentPage.includes('/deprecated-components');
-  const isIntroduction = !isGuidelines && !isTokens && !isComponents;
+  const { activeSection } = useCurrentLocation(currentPage);
 
   return (
     <Grid.Item
@@ -96,7 +94,7 @@ export function Sidebar({ currentPage = '/' }: Props) {
       aria-label="Main Navigation"
       className={styles.nav}
     >
-      {isIntroduction && (
+      {activeSection === WEBSITE_SECTION.INTRODUCTION && (
         <>
           <SidebarSection
             links={[
@@ -132,18 +130,18 @@ export function Sidebar({ currentPage = '/' }: Props) {
         </>
       )}
 
-      {isGuidelines && (
+      {activeSection === WEBSITE_SECTION.GUIDELINES && (
         <SidebarSection
           links={sidebarLinks.guidelines}
           currentPage={currentPage}
         />
       )}
 
-      {isTokens && (
+      {activeSection === WEBSITE_SECTION.TOKENS && (
         <SidebarSection links={sidebarLinks.tokens} currentPage={currentPage} />
       )}
 
-      {isComponents && (
+      {activeSection === WEBSITE_SECTION.COMPONENTS && (
         <>
           <SidebarSection links={componentsSorted} currentPage={currentPage} />
           <SidebarSection
