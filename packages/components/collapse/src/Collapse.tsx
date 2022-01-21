@@ -65,6 +65,7 @@ export const Collapse = ({
         } else {
           // Overwrite none display to see expanding transition
           current.style.setProperty('display', 'block');
+          current.style.removeProperty('pointer-events');
         }
         // Calculate panel height after removing none display
         const fromHeight = isExpanded ? '0px' : getPanelContentHeight();
