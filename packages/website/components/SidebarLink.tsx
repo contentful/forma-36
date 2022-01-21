@@ -2,34 +2,43 @@ import React from 'react';
 import { css, cx } from 'emotion';
 import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
-import { List, Flex } from '@contentful/f36-components';
+import { List, Flex, Text } from '@contentful/f36-components';
 import { ChevronDownIcon } from '@contentful/f36-icons';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
 
-export const getSectionTitleStyles = (isActive = false, indent = 1) => {
+const styles = {
+  link: css({
+    display: 'flex',
+    gap: tokens.spacing2Xs,
+    fontSize: tokens.fontSizeM,
+    lineHeight: tokens.lineHeightM,
+  }),
+};
+
+const getSectionTitleStyles = (isActive = false, paddingLeft = 'spacingXl') => {
   return {
     sidebarItem: css({
       padding: `${tokens.spacingXs} ${tokens.spacingM}`,
-      paddingLeft: `calc(${indent} * ${tokens.spacingM})`,
-      fontSize: tokens.fontSizeL,
-      lineHeight: tokens.lineHeightL,
-    }),
-    link: css({
-      display: 'flex',
-      fontSize: `${tokens.fontSizeL}`,
-      lineHeight: `${tokens.lineHeightL}`,
-      alignItems: 'center',
-      justifyContent: 'space-between',
+      paddingLeft: tokens[paddingLeft],
+      fontSize: tokens.fontSizeM,
+      lineHeight: tokens.lineHeightM,
     }),
     clickable: css({
-      textDecoration: 'none',
       cursor: 'pointer',
-      color: isActive ? tokens.colorWhite : tokens.gray900,
-      backgroundColor: isActive ? tokens.colorPrimary : 'transparent',
+      color: isActive ? tokens.blue700 : tokens.gray900,
+      fontWeight: isActive
+        ? tokens.fontWeightDemiBold
+        : tokens.fontWeightNormal,
+      textDecoration: isActive ? 'underline' : 'none',
+      backgroundColor: 'transparent',
       transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       '&:hover': {
-        backgroundColor: isActive ? tokens.colorPrimary : tokens.gray200,
+        textDecoration: 'underline',
       },
+    }),
+    chevron: css({
+      transform: 'rotate(0deg)',
+      transition: `transform  ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
     }),
     closedIcon: css({
       transform: 'rotate(-90deg)',
@@ -37,37 +46,53 @@ export const getSectionTitleStyles = (isActive = false, indent = 1) => {
   };
 };
 
+interface SidebarSectionButtonProps {
+  children: string;
+  isOpen: boolean;
+  onClick?: React.MouseEventHandler;
+}
+
+export function SidebarSectionButton({
+  children,
+  onClick,
+  isOpen = true,
+}: SidebarSectionButtonProps) {
+  const titleStyles = getSectionTitleStyles(false);
+
+  return (
+    <List.Item>
+      <Flex
+        alignItems="center"
+        className={cx([titleStyles.clickable, titleStyles.sidebarItem])}
+        role="button"
+        onClick={onClick}
+      >
+        <Text
+          as="h3"
+          fontWeight="fontWeightDemiBold"
+          marginBottom="none"
+          marginRight="spacingXs"
+        >
+          {children}
+        </Text>
+
+        <ChevronDownIcon
+          variant="muted"
+          className={cx(titleStyles.chevron, {
+            [titleStyles.closedIcon]: !isOpen,
+          })}
+        />
+      </Flex>
+    </List.Item>
+  );
+}
+
 interface SidebarLinkProps {
   children: string;
   href: string;
   isActive?: boolean;
   isExternal?: boolean;
-  indent?: number;
-}
-
-export function SidebarSectionButton(props: {
-  children: string;
-  isOpen: boolean;
-  onClick?: React.MouseEventHandler;
-}) {
-  const titleStyles = getSectionTitleStyles(false);
-  return (
-    <List.Item>
-      <Flex
-        alignItems="center"
-        justifyContent="space-between"
-        className={cx([titleStyles.clickable, titleStyles.sidebarItem])}
-        role="button"
-        onClick={props.onClick}
-      >
-        <span>{props.children}</span>
-        <ChevronDownIcon
-          variant="muted"
-          className={!props.isOpen ? titleStyles.closedIcon : ''}
-        />
-      </Flex>
-    </List.Item>
-  );
+  paddingLeft?: 'spacingXl' | 'spacing2Xl';
 }
 
 export function SidebarLink({
@@ -75,26 +100,26 @@ export function SidebarLink({
   href,
   isExternal = false,
   isActive = false,
-  indent = 1,
+  paddingLeft = 'spacingXl',
 }: SidebarLinkProps) {
-  const titleStyles = getSectionTitleStyles(isActive, indent);
+  const titleStyles = getSectionTitleStyles(isActive, paddingLeft);
   const linksProps = isExternal
     ? { target: '_blank', rel: 'noopener noreferrer' }
     : {};
 
   return (
     <List.Item>
-      <Link href={href} passHref scroll>
+      <Link href={href} passHref>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a
           className={cx([
-            titleStyles.link,
+            styles.link,
             titleStyles.clickable,
             titleStyles.sidebarItem,
           ])}
           {...linksProps}
         >
-          <span>{children}</span>
+          {children}
           {isExternal ? <ExternalLinkIcon variant="muted" /> : null}
         </a>
       </Link>

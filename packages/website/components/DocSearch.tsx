@@ -1,21 +1,7 @@
 import React, { useEffect } from 'react';
-import { css } from 'emotion';
-import tokens from '@contentful/f36-tokens';
+
 import { SearchIcon } from '@contentful/f36-icons';
 import { TextInput } from '@contentful/f36-forms';
-
-const styles = {
-  container: css`
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: ${tokens.spacingM} ${tokens.spacingM} 0;
-    margin-bottom: ${tokens.spacingM};
-    & .algolia-autocomplete {
-      width: 100%;
-    }
-  `,
-};
 
 export const DocSearch = () => {
   useEffect(() => {
@@ -30,24 +16,28 @@ export const DocSearch = () => {
           // You can even check Forma 36's configuration in DocSearch's repo https://github.com/algolia/docsearch-configs/blob/master/configs/contentful_forma-36.json
           appId: process.env.NEXT_PUBLIC_DOCSEARCH_APP_ID || '',
           apiKey: process.env.NEXT_PUBLIC_DOCSEARCH_API_KEY || '',
-          indexName: 'forma-36',
+          indexName: process.env.NEXT_PUBLIC_DOCSEARCH_INDEX_NAME || '',
           inputSelector: '#search',
+          handleSelected: (_input, _event, suggestion) => {
+            if (process.env.NODE_ENV !== 'production') {
+              const path = suggestion.url.replace(/.*\.com/, '');
+              window.location.assign(`${window.location.origin}${path}`);
+            }
+          },
         });
       } catch (e) {
         console.error('Failed to initialize Algolia search', e);
       }
     });
   }, []);
+
   return (
-    <div className={styles.container}>
-      <TextInput
-        id="search"
-        icon={<SearchIcon variant="muted" />}
-        name="search"
-        type="text"
-        placeholder="Search the docs"
-        defaultValue=""
-      />
-    </div>
+    <TextInput
+      id="search"
+      icon={<SearchIcon variant="muted" />}
+      name="search"
+      type="text"
+      placeholder="Search the docs"
+    />
   );
 };

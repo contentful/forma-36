@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { List, SectionHeading } from '@contentful/f36-components';
+import { List, Text } from '@contentful/f36-components';
 
 import { SidebarLink, SidebarSectionButton } from './SidebarLink';
 
@@ -18,10 +18,9 @@ const styles = {
     userSelect: 'none',
   }),
   sectionTitle: css({
-    padding: `${tokens.spacingXs} ${tokens.spacingM}`,
-    fontSize: tokens.fontSizeL,
-    lineHeight: tokens.lineHeightL,
+    padding: `${tokens.spacingXs} ${tokens.spacingM} ${tokens.spacingXs} ${tokens.spacingXl}`,
     letterSpacing: 'initial',
+    paddingLeft: tokens.spacingXl,
   }),
 };
 
@@ -30,13 +29,14 @@ const isLinkActive = (href, currentPage) =>
 
 export type SidebarLinkType = { title: string; slug: string; type: 'link' };
 export type SidebarSectionType = {
-  title: string;
+  title?: string;
   links: SidebarLinkType[];
   type: 'section';
 };
-interface SidebarSectionProps {
-  title: string;
-  links: Array<SidebarLinkType | SidebarSectionType>;
+
+interface SidebarSubsectionProps {
+  title?: string;
+  links: SidebarLinkType[];
   currentPage: string;
 }
 
@@ -44,23 +44,22 @@ function SidebarSubsection({
   title,
   links = [],
   currentPage,
-}: {
-  title: string;
-  links: SidebarLinkType[];
-  currentPage: string;
-}) {
+}: SidebarSubsectionProps) {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
     <List className={styles.sublist}>
-      <SidebarSectionButton
-        isOpen={isOpen}
-        onClick={() => {
-          setIsOpen((open) => !open);
-        }}
-      >
-        {title}
-      </SidebarSectionButton>
+      {title && (
+        <SidebarSectionButton
+          isOpen={isOpen}
+          onClick={() => {
+            setIsOpen((open) => !open);
+          }}
+        >
+          {title}
+        </SidebarSectionButton>
+      )}
+
       {isOpen
         ? links.map((link) => {
             return (
@@ -68,7 +67,7 @@ function SidebarSubsection({
                 key={link.slug}
                 isActive={isLinkActive(link.slug, currentPage)}
                 href={link.slug}
-                indent={2.5}
+                paddingLeft="spacing2Xl"
               >
                 {link.title}
               </SidebarLink>
@@ -79,6 +78,12 @@ function SidebarSubsection({
   );
 }
 
+interface SidebarSectionProps {
+  title?: string;
+  links: Array<SidebarLinkType | SidebarSectionType>;
+  currentPage: string;
+}
+
 export function SidebarSection({
   title,
   links = [],
@@ -86,9 +91,17 @@ export function SidebarSection({
 }: SidebarSectionProps) {
   return (
     <List className={styles.list}>
-      <SectionHeading className={styles.sectionTitle} marginBottom="none">
-        {title}
-      </SectionHeading>
+      {title && (
+        <Text
+          as="h3"
+          className={styles.sectionTitle}
+          marginBottom="none"
+          fontWeight="fontWeightDemiBold"
+        >
+          {title}
+        </Text>
+      )}
+
       {links.map((link) => {
         if (link.type === 'section') {
           return (
@@ -100,11 +113,13 @@ export function SidebarSection({
             />
           );
         }
+
         return (
           <SidebarLink
             key={link.slug}
             isActive={isLinkActive(link.slug, currentPage)}
             href={link.slug}
+            isExternal={link.slug.includes('https://')}
           >
             {link.title}
           </SidebarLink>

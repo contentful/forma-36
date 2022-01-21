@@ -1,8 +1,10 @@
 import React from 'react';
 import { css } from 'emotion';
 import { Flex, Box } from '@contentful/f36-components';
-import { Topbar, TopbarHeight } from './Topbar';
+import { Topbar } from './Topbar';
 import { Footer } from './Footer';
+
+import { TOPBAR_HEIGHT } from '../utils/getGridStyles';
 
 interface Props {
   children: React.ReactNode;
@@ -15,7 +17,7 @@ const styles = {
   }),
   main: css({
     width: '100%',
-    height: `calc(100vh - ${TopbarHeight} - 176px)`,
+    height: `calc(100vh - ${TOPBAR_HEIGHT} - 176px)`,
     marginBottom: '176px',
   }),
   footer: css({
@@ -37,7 +39,7 @@ function Main({ children }: Props) {
 export function LayoutFullSize({ children, currentPage }: Props) {
   return (
     <Flex className={styles.root} flexDirection="column">
-      <Topbar />
+      <Topbar currentPage={currentPage} />
 
       {/* Unique key for each page, so scroll position is not preserved when opening a new page */}
       <Main key={currentPage} currentPage={currentPage}>
