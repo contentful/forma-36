@@ -15,20 +15,20 @@ export const useCurrentLocation = (currentPage: string) => {
     currentPage.includes('/integrations');
 
   if (isComponents) {
-    return { activeSection: WEBSITE_SECTION.COMPONENTS, currentPage };
+    return { activeSection: WEBSITE_SECTION.COMPONENTS };
   }
 
   const isGuidelines = currentPage.includes('/guidelines');
 
   if (isGuidelines) {
-    return { activeSection: WEBSITE_SECTION.GUIDELINES, currentPage };
+    return { activeSection: WEBSITE_SECTION.GUIDELINES };
   }
 
   const isTokens = currentPage.includes('/tokens');
 
   if (isTokens) {
-    return { activeSection: WEBSITE_SECTION.TOKENS, currentPage };
+    return { activeSection: WEBSITE_SECTION.TOKENS };
   }
 
-  return { activeSection: WEBSITE_SECTION.INTRODUCTION, currentPage };
+  return { activeSection: WEBSITE_SECTION.INTRODUCTION };
 };
