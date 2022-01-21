@@ -8,91 +8,34 @@ storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-entity-
 typescript: ./src/EntityList.tsx,./src/EntityListItem/EntityListItem.tsx
 ---
 
-# EntityList
+The EntityList is used to represent lists of entities (entries and assets). This component should be used in combination with the EntityList.Item component. Its main purpose is to be used to entries or assets when in a list context, for example, a multiple entry reference field. It differs from existing EntryCard/AssetCard components as its intended use is for lists of entities, not individual ones.
 
-The EntityList is used to represent lists of entities (entries and assets).
+## Import
 
-## How to use EntityList
+```js static=true
+import { EntityList } from '@contentful/f36-components';
+// or
+import { EntityList } from '@contentful/f36-entity-list';
+```
 
-This component should be used in combination with the EntityList.Item component. Its main purpose is to be used to entries or assets when in a list context, for example, a multiple entry reference field. It differs from existing EntryCard/AssetCard components as its intended use is for lists of entities, not individual ones.
+## Examples
 
-## Code examples
+### Basic
 
-```jsx
-<EntityList>
-  <EntityList.Item
-    title="Entry 1"
-    description="Description"
-    contentType="My content type"
-    status="published"
-  />
-  <EntityList.Item
-    title="Entry 2"
-    description="Description"
-    contentType="My content type"
-    status="draft"
-  />
-  <EntityList.Item
-    title="Entry 3"
-    description="Description"
-    contentType="My content type"
-    status="archived"
-  />
-</EntityList>
+```jsx file=examples/BasicEntityListExample.tsx
+
 ```
 
 ### With actions menu
 
-```jsx
-<EntityList>
-  <EntityList.Item
-    title="Entry title"
-    description="Description"
-    contentType="My content type"
-    status="draft"
-    entityType="entry"
-    actions={[
-      <MenuSectionTitle key="title">Actions</MenuSectionTitle>,
-      <MenuItem key="edit">Edit</MenuItem>,
-      <MenuItem key="download">Download</MenuItem>,
-      <MenuItem key="remove">Remove</MenuItem>,
-    ]}
-  />
-  <EntityList.Item
-    title="Other entry title"
-    description="Description"
-    contentType="My content type"
-    status="published"
-    entityType="entry"
-    actions={[
-      <MenuSectionTitle key="title">Actions</MenuSectionTitle>,
-      <MenuItem key="edit">Edit</MenuItem>,
-      <MenuItem key="download">Download</MenuItem>,
-      <MenuItem key="remove">Remove</MenuItem>,
-    ]}
-  />
-</EntityList>
+```jsx file=examples/EntityListWithActionsMenuExample.tsx
+
 ```
 
 ### With drag handle
 
-```jsx
-<EntityList>
-  <EntityList.Item
-    title="Entry 1"
-    description="Description"
-    contentType="My content type"
-    status="published"
-    withDragHandle
-  />
-  <EntityList.Item
-    title="Entry 2"
-    description="Description"
-    contentType="My content type"
-    status="draft"
-    withDragHandle
-  />
-</EntityList>
+```jsx file=examples/EntityListWithDragHandleExample.tsx
+
 ```
 
 ## Props (API reference)
