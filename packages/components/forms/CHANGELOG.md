@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.1](https://github.com/contentful/forma-36/compare/@contentful/f36-forms@4.1.0...@contentful/f36-forms@4.1.1) (2022-01-19)
+
+
+### Bug Fixes
+
+* allows all native HTML values to type prop of an input ([#1793](https://github.com/contentful/forma-36/issues/1793)) ([12c1e60](https://github.com/contentful/forma-36/commit/12c1e607906fe7b0dd294af21c5d5567161192f1))
+
+
+
+
+
 # [4.1.0](https://github.com/contentful/forma-36/compare/@contentful/f36-forms@4.0.2...@contentful/f36-forms@4.1.0) (2022-01-13)
 
 

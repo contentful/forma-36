@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.1](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.1.0...@contentful/f36-button@4.1.1) (2022-01-19)
+
+
+### Bug Fixes
+
+* **button:** set color explicitly for hover state ([#1789](https://github.com/contentful/forma-36/issues/1789)) ([54aa1a1](https://github.com/contentful/forma-36/commit/54aa1a13ff7d4170153e75824b63c114bf076f7c))
+
+
+
+
+
 # [4.1.0](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.0.1...@contentful/f36-button@4.1.0) (2022-01-13)
 
 

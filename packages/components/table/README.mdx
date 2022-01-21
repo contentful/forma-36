@@ -1,61 +1,35 @@
 ---
 title: 'Table'
-type: 'component'
-status: 'stable'
 slug: /components/table/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/table'
 storybook: 'https://v4-f36-storybook.netlify.app/?path=/info/components-table--default'
 typescript: ./src/Table.tsx,./src/TableCell.tsx,./src/TableRow.tsx,./src/TableBody.tsx,./src/TableHead.tsx
 ---
 
-Use tables to present large amounts of data, and data which has multiple properties attached to it.
+## Import
 
-## How to use Table
-
-- Make sure Tables span the full width of the container they're in
-- Make sure a table has a header describing the content of its respective columns
-- Ordered columns by relevance from left to right. Images, if present, have a higher priority, and should be placed in the first column. Checkboxes naturally have the highest priority.
-
-## Code examples
-
-```jsx
-<Table>
-  <Table.Head>
-    <Table.Row>
-      <Table.Cell>Name</Table.Cell>
-      <Table.Cell>Email</Table.Cell>
-      <Table.Cell>Organization role</Table.Cell>
-      <Table.Cell>Last activity</Table.Cell>
-    </Table.Row>
-  </Table.Head>
-  <Table.Body>
-    <Table.Row>
-      <Table.Cell>Claus Mitchell</Table.Cell>
-      <Table.Cell>claus.mitchell@contentful.com</Table.Cell>
-      <Table.Cell>CEO</Table.Cell>
-      <Table.Cell>August 29, 2018</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Cell>Johannes Ramos</Table.Cell>
-      <Table.Cell>johannes.ramos@contentful.com</Table.Cell>
-      <Table.Cell>CTO</Table.Cell>
-      <Table.Cell>July 27, 2019</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Cell>Alex Kalinoski</Table.Cell>
-      <Table.Cell>alex.kalinoski@contentful.com</Table.Cell>
-      <Table.Cell>CDO</Table.Cell>
-      <Table.Cell>June 13, 2019</Table.Cell>
-    </Table.Row>
-  </Table.Body>
-</Table>
+```jsx static=true
+import { Table } from '@contentful/f36-components';
+// or
+import { Table } from '@contentful/f36-table';
 ```
 
-## Content guidelines
+## Examples
 
-- Keep headers short
-- Headers should be informative and descriptive
-- Content in the table should be concise and scannable
+### Basic usage
+
+```jsx file=./examples/TableBasicUsageExample.tsx
+
+```
+
+### Dynamic creation
+
+One very common use case for a table is that you will have a set of data and you would like to show a table row for each item in that set.
+To achieve that result, you can iterate over the data and create `Table.Row` and `Table.Cell` for each item:
+
+```jsx file=./examples/TableDynamicCreation.tsx
+
+```
 
 ## Props (API reference)
 
@@ -78,3 +52,13 @@ Use tables to present large amounts of data, and data which has multiple propert
 ### Table.Cell
 
 <PropsTable of="TableCell" />
+
+## Content guidelines
+
+- Keep headers short
+- Headers should be informative and descriptive
+- Content in the table should be concise and scannable
+
+## Accessibility
+
+- It will render tabular data using the native HTML element `table` which is recommended.

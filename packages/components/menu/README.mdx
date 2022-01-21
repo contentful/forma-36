@@ -3,6 +3,7 @@ title: 'Menu'
 slug: /components/menu/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/menu'
 typescript: ./src/Menu.tsx,./src/MenuItem/MenuItem.tsx,./src/MenuList/MenuList.tsx
+storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-menu--basic'
 ---
 
 Menu is a component that offers a list of choices to the user, such as a set of actions or links.
@@ -19,7 +20,7 @@ import { Menu } from '@contentful/f36-components';
 You can use following components to build a menu:
 
 1. `<Menu>`: The main wrapper that provides nested components with all the context and state.
-1. `<Menu.Trigger>` The wrapper for the menu list trigger. Must be a direct child of `<Menu>`.
+1. `<Menu.Trigger>` The wrapper for the menu list trigger. Must be a direct child of `<Menu>`.  
    NOTE: 🚨 Ensure that the component that you pass accepts `ref`. Consider using `forwardRef` for functional components.
 1. `<Menu.List>`: The wrapper for the menu items. Must be a direct child of `<Menu>`.
 1. `<Menu.Item>` The trigger that handles menu selection. Must be a direct child of `<Menu.List>`.
@@ -54,29 +55,7 @@ By default the Menu component is uncontrolled. So when user clicks on the trigge
 But you can control it by passing `isOpen` prop and `onClose`, `onOpen` callbacks.
 
 ```jsx file=examples/ControlledMenu.tsx
-function ControlledMenu() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  return (
-    <Menu
-      isOpen={isOpen}
-      onOpen={() => setIsOpen(true)}
-      onClose={() => setIsOpen(false)}
-    >
-      <Menu.Trigger>
-        <IconButton
-          variant="secondary"
-          icon={<MenuIcon />}
-          aria-label="toggle menu"
-        />
-      </Menu.Trigger>
-      <Menu.List>
-        <Menu.Item>Create an entry</Menu.Item>
-        <Menu.Item>Remove an entry</Menu.Item>
-        <Menu.Item>Embed existing entry</Menu.Item>
-      </Menu.List>
-    </Menu>
-  );
-}
+
 ```
 
 ### Controlled Menu with custom trigger onClick callback
@@ -127,11 +106,13 @@ But if you have to provide your own toggle menu logic on the trigger component, 
 ### With submenu
 
 By default props like `closeOnSelect`, `closeOnBlur`, `closeOnEsc` that you pass to `Menu` will be shared to all submenus
-But you can redefine them on any submenu by passing those props directly to that `Submenu`.
+but you can redefine them on any submenu by passing those props directly to that `Submenu`.
 
 ```jsx file=examples/MenuWithSubmenu.tsx
 
 ```
+
+## Props (API reference)
 
 ### Menu
 

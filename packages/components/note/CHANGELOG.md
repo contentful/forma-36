@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/contentful/forma-36/compare/@contentful/f36-note@4.1.1...@contentful/f36-note@4.2.0) (2022-01-20)
+
+
+### Features
+
+* allow react nodes in title of note ([030cc99](https://github.com/contentful/forma-36/commit/030cc99d3b145de36b7b97831aa61a2e146b7906))
+
+
+
+
+
+## [4.1.1](https://github.com/contentful/forma-36/compare/@contentful/f36-note@4.1.0...@contentful/f36-note@4.1.1) (2022-01-19)
+
+**Note:** Version bump only for package @contentful/f36-note
+
+
+
+
+
 # [4.1.0](https://github.com/contentful/forma-36/compare/@contentful/f36-note@4.0.1...@contentful/f36-note@4.1.0) (2022-01-13)
 
 

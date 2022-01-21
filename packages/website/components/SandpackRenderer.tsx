@@ -56,6 +56,7 @@ export function SandpackRenderer(props: {
           emotion: '^10.0.17',
           lodash: '^4.17.21',
           'react-hook-form': '7.22.5',
+          'react-icons': '4.3.1',
         },
       }}
     >

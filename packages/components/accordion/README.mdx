@@ -1,13 +1,10 @@
 ---
 title: 'Accordion'
+type: 'component'
 slug: /components/accordion/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/accordion'
-storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-accordion'
 typescript: ./src/Accordion.tsx,./src/AccordionItem/AccordionItem.tsx
 ---
-
-import { Heading, Stack, TextLink } from '@contentful/f36-components';
-import { ExternalLinkIcon } from '@contentful/f36-icons';
 
 Accordions are a good way to deliver a large amount of information. An accordion is a list of headers that after being clicked reveal or hide more content related to them.
 The header gives the user a summary of the content and the user decides if they need to see the extended content or not.
@@ -16,6 +13,8 @@ The header gives the user a summary of the content and the user decides if they 
 
 ```jsx static=true
 import { Accordion } from '@contentful/f36-components';
+// or
+import { Accordion } from '@contentful/f36-accordion';
 ```
 
 ## Examples
@@ -24,43 +23,16 @@ The accordion has two variations that define the alignment of the chevron icon: 
 
 ### Basic usage
 
-```jsx
-<Accordion>
-  <Accordion.Item title="What payment methods do you accept?">
-    <Text>
-      Customers on the Team tier can pay with a credit card (American Express,
-      MasterCard or Visa). Enterprise customers have the choice of paying with a
-      credit card or wire transfer.
-    </Text>
-  </Accordion.Item>
-</Accordion>
+```jsx file=./examples/AccordionExample.tsx
+
 ```
 
 ### Using it with other components
 
 Other typographic components can be passed as the accordion's title and anything can be used as the accordion's content. For example:
 
-```jsx
-<Accordion>
-  <Accordion.Item
-    title={
-      <SectionHeading marginBottom="none">
-        What payment methods do you accept?
-      </SectionHeading>
-    }
-  >
-    <Stack flexDirection="column">
-      <Text marginBottom="spacingS">
-        Customers on the Team tier can pay with a credit card (American Express,
-        MasterCard or Visa). Enterprise customers have the choice of paying with
-        a credit card or wire transfer.
-      </Text>
-      <Button onClick={() => console.log('clicked!')}>
-        Accordion’s button
-      </Button>
-    </Stack>
-  </Accordion.Item>
-</Accordion>
+```jsx file=./examples/AccordionWithOtherComponentExample.tsx
+
 ```
 
 ## Props (API reference)

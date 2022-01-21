@@ -7,4 +7,5 @@ export interface FrontMatter {
   title: string;
   type?: string;
   typescript?: string;
+  storybook?: string;
 }
