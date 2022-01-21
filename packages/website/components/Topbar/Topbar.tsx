@@ -10,6 +10,10 @@ import {
 } from '../../utils/getGridStyles';
 import { DocSearch } from '../DocSearch';
 
+import {
+  useCurrentLocation,
+  WEBSITE_SECTION,
+} from '../../hooks/useCurrentLocation';
 import { TopbarLink } from './TopbarLink';
 import { TopbarLogo } from './TopbarLogo';
 import { VersionSwitch } from './VersionSwitch';
@@ -47,12 +51,7 @@ interface TopbarProps {
 
 export function Topbar({ currentPage }: TopbarProps) {
   const gridStyles = getGridStyles();
-
-  // TODO: unify this logic with the one in the Sidebar
-  const isGuidelines = currentPage.includes('/guidelines');
-  const isTokens = currentPage.includes('/tokens');
-  const isComponents = currentPage.includes('/components');
-  const isIntroduction = !isGuidelines && !isTokens && !isComponents;
+  const { activeSection } = useCurrentLocation(currentPage);
 
   return (
     <Grid.Item
@@ -83,28 +82,28 @@ export function Topbar({ currentPage }: TopbarProps) {
               <TopbarLink
                 href="/"
                 label="Introduction"
-                isActive={isIntroduction}
+                isActive={activeSection === WEBSITE_SECTION.INTRODUCTION}
               />
             </List.Item>
             <List.Item>
               <TopbarLink
                 href="/guidelines/accessibility"
                 label="Guidelines"
-                isActive={isGuidelines}
+                isActive={activeSection === WEBSITE_SECTION.GUIDELINES}
               />
             </List.Item>
             <List.Item>
               <TopbarLink
                 href="/tokens/color-system"
                 label="Tokens"
-                isActive={isTokens}
+                isActive={activeSection === WEBSITE_SECTION.TOKENS}
               />
             </List.Item>
             <List.Item>
               <TopbarLink
                 href="/components/accordion"
                 label="Components"
-                isActive={isComponents}
+                isActive={activeSection === WEBSITE_SECTION.COMPONENTS}
               />
             </List.Item>
           </List>
