@@ -6,7 +6,7 @@ import tokens from '@contentful/f36-tokens';
 import {
   getGridStyles,
   TOPBAR_HEIGHT,
-  BIG_SCREEN_BREAKPOINT,
+  SCREEN_BREAKPOINT_LARGE,
 } from '../../utils/getGridStyles';
 import { DocSearch } from '../DocSearch';
 
@@ -35,7 +35,7 @@ const styles = {
     '& .algolia-autocomplete': {
       width: '100%',
     },
-    [`@media screen and (min-width: ${BIG_SCREEN_BREAKPOINT})`]: {
+    [`@media screen and (min-width: ${SCREEN_BREAKPOINT_LARGE})`]: {
       gridColumnStart: 4,
     },
   }),
