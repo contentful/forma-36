@@ -84,7 +84,9 @@ export function Sidebar({ currentPage = '/' }: Props) {
   // TODO: unify this logic with the one in the Topbar
   const isGuidelines = currentPage.includes('/guidelines');
   const isTokens = currentPage.includes('/tokens');
-  const isComponents = currentPage.includes('/components');
+  const isComponents =
+    currentPage.includes('/components') ||
+    currentPage.includes('/deprecated-components');
   const isIntroduction = !isGuidelines && !isTokens && !isComponents;
 
   return (
