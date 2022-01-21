@@ -16,6 +16,10 @@ interface CollapseInternalProps extends CommonProps {
    * string for additional classNames
    */
   className?: string;
+  /**
+   * A unique id of the collapse component
+   */
+  id?: string;
 }
 
 export type CollapseProps = PropsWithHTMLElement<CollapseInternalProps, 'div'>;
