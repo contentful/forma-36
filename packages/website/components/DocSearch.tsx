@@ -22,6 +22,8 @@ export const DocSearch = () => {
             if (process.env.NODE_ENV !== 'production') {
               const path = suggestion.url.replace(/.*\.com/, '');
               window.location.assign(`${window.location.origin}${path}`);
+            } else {
+              window.location.assign(suggestion.url);
             }
           },
         });
