@@ -4,7 +4,15 @@ import tokens from '@contentful/f36-tokens';
 export const TOPBAR_HEIGHT = '70px';
 export const SCREEN_BREAKPOINT_LARGE = '1600px';
 
-export const getGridStyles = () => ({
+export const getGridStyles = (isFullScreen = false) => ({
+  wrapper: css({
+    height: '100vh',
+    overflow: 'hidden',
+    gridTemplateAreas: `
+      "topbar topbar"
+      "${isFullScreen ? 'content content' : 'sidebar content'}"
+    `,
+  }),
   wrapperColumns: css({
     gridTemplateColumns: '240px auto',
   }),
