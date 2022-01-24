@@ -21,6 +21,7 @@ import theme from 'prism-react-renderer/themes/github';
 import { formatSourceCode } from './utils';
 import { useRouter } from 'next/router';
 import * as coder from '../../utils/coder';
+import FocusLock from 'react-focus-lock';
 
 const liveProviderScope = {
   ...f36icons,
@@ -40,6 +41,7 @@ const liveProviderScope = {
   useForm,
   useController,
   MdAccessAlarm,
+  FocusLock,
 };
 
 const styles = {
