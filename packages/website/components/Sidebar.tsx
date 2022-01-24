@@ -2,8 +2,7 @@ import React from 'react';
 import { css } from 'emotion';
 import sortBy from 'lodash.sortby';
 import tokens from '@contentful/f36-tokens';
-import { Grid, TextLink, Flex } from '@contentful/f36-components';
-import { ExternalLinkIcon } from '@contentful/f36-icons';
+import { Grid, Flex } from '@contentful/f36-components';
 import { SidebarLink } from './SidebarLink';
 
 import {
