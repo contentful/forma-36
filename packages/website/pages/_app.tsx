@@ -8,21 +8,7 @@ import 'docsearch.js/dist/cdn/docsearch.min.css';
 
 import { Layout } from '../components/Layout';
 
-function defaultLayout(props: {
-  pageProps?: { frontMatter?: { slug: string } } & Record<string, unknown>;
-  page: JSX.Element;
-}) {
-  return (
-    <Layout currentPage={props.pageProps?.frontMatter?.slug || ''}>
-      {props.page}
-    </Layout>
-  );
-}
-
 function MyApp({ Component, pageProps }: AppProps) {
-  // @ts-expect-error ignore missing getLayout definition
-  const getLayout = Component.getLayout || defaultLayout;
-
   return (
     <>
       <FormaGlobalStyles />
@@ -44,7 +30,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           src="https://cmp.osano.com/16BcqiRsJId123ATa/fcd81040-24a4-4474-9a22-f295cbec8600/osano.js"
         ></script>
       </Head>
-      {getLayout({ page: <Component {...pageProps} />, pageProps })}
+
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { css, cx } from 'emotion';
 import { Grid } from '@contentful/f36-components';
 
+import { useCurrentLocation } from '../hooks/useCurrentLocation';
 import { getGridStyles, TOPBAR_HEIGHT } from '../utils/getGridStyles';
 import { Topbar } from './Topbar';
 import { Footer } from './Footer';
@@ -26,20 +27,20 @@ const styles = {
 
 interface Props {
   children: React.ReactNode;
-  currentPage: string;
 }
 
-export function Layout({ children, currentPage }: Props) {
+export function Layout({ children }: Props) {
   const gridStyles = getGridStyles();
+  const { activeSection, currentPage } = useCurrentLocation();
 
   return (
     <Grid
       className={cx(styles.wrapper, gridStyles.wrapperColumns)}
       columnGap="none"
     >
-      <Topbar currentPage={currentPage} />
+      <Topbar activeSection={activeSection} />
 
-      <Sidebar currentPage={currentPage} />
+      <Sidebar activeSection={activeSection} currentPage={currentPage} />
 
       {/* Unique key for each page, so scroll position is not preserved when opening a new page */}
       <Grid.Item
