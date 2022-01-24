@@ -55,6 +55,13 @@ export const GlobalStyles = () => {
           padding: 0;
         }
 
+        /* SANDPACK STYLES */
+
+        .sp-layout {
+          border: 0;
+          border-radius: 0;
+        }
+
         /* OSANO STYLES BEGIN */
 
         .osano-cm-window {
