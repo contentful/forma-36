@@ -106,6 +106,13 @@ export function Topbar({ currentPage }: TopbarProps) {
                 isActive={activeSection === WEBSITE_SECTION.COMPONENTS}
               />
             </List.Item>
+            <List.Item>
+              <TopbarLink
+                href="/playground"
+                label="Playground"
+                isActive={activeSection === WEBSITE_SECTION.PLAYGROUND}
+              />
+            </List.Item>
           </List>
         </Flex>
 

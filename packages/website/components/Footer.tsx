@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { css, cx } from 'emotion';
 import { TextLink, Flex, TextLinkProps } from '@contentful/f36-components';
@@ -33,13 +32,6 @@ export function Footer() {
     >
       <Flex className={gridStyles.columnStartTwo} gap="spacing2Xl">
         <Flex flexDirection="column" alignItems="flex-start" gap="spacingM">
-          <Link href="/playground" passHref>
-            <FooterLink
-              href="/playground"
-              label="Playground"
-              isExternal={false}
-            />
-          </Link>
           <FooterLink
             href="https://github.com/contentful/forma-36"
             label="View the repo on GitHub"

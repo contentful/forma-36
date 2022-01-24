@@ -109,11 +109,6 @@ export function Sidebar({ currentPage = '/' }: Props) {
                 type: 'link',
               },
               {
-                title: 'Playground',
-                slug: '/playground',
-                type: 'link',
-              },
-              {
                 title: 'App Framework',
                 slug:
                   'https://www.contentful.com/developers/docs/extensibility/app-framework/',

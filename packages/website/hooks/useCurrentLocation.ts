@@ -3,6 +3,7 @@ export enum WEBSITE_SECTION {
   GUIDELINES = 'GUIDELINES',
   TOKENS = 'TOKENS',
   COMPONENTS = 'COMPONENTS',
+  PLAYGROUND = 'PLAYGROUND',
 }
 
 export const useCurrentLocation = (currentPage: string) => {
@@ -28,6 +29,12 @@ export const useCurrentLocation = (currentPage: string) => {
 
   if (isTokens) {
     return { activeSection: WEBSITE_SECTION.TOKENS };
+  }
+
+  const isPlayground = currentPage.includes('/playground');
+
+  if (isPlayground) {
+    return { activeSection: WEBSITE_SECTION.PLAYGROUND };
   }
 
   return { activeSection: WEBSITE_SECTION.INTRODUCTION };
