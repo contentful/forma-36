@@ -45,10 +45,6 @@ export function Footer() {
             label="View the repo on GitHub"
           />
           <FooterLink
-            href="https://medium.com/contentful-design"
-            label="Contentful design blog"
-          />
-          <FooterLink
             href="https://www.contentful.com/developers/"
             label="Join the developer comunnity"
           />

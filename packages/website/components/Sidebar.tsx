@@ -2,7 +2,8 @@ import React from 'react';
 import { css } from 'emotion';
 import sortBy from 'lodash.sortby';
 import tokens from '@contentful/f36-tokens';
-import { Grid } from '@contentful/f36-components';
+import { Grid, TextLink, Flex } from '@contentful/f36-components';
+import { ExternalLinkIcon } from '@contentful/f36-icons';
 
 import {
   useCurrentLocation,
@@ -143,6 +144,17 @@ export function Sidebar({ currentPage = '/' }: Props) {
 
       {activeSection === WEBSITE_SECTION.COMPONENTS && (
         <>
+          <Flex marginLeft="spacingXl">
+            <TextLink
+              href="https://github.com/contentful/forma-36/discussions/new"
+              target="_blank"
+              rel="noopener noreferrer"
+              icon={<ExternalLinkIcon />}
+              alignIcon="end"
+            >
+              Submit an idea
+            </TextLink>
+          </Flex>
           <SidebarSection links={componentsSorted} currentPage={currentPage} />
           <SidebarSection
             title="Utils"
