@@ -1,15 +1,11 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { css } from 'emotion';
-import tokens from '@contentful/f36-tokens';
-import {
-  Flex,
-  Text,
-  Heading,
-  CopyButton,
-  Tooltip,
-} from '@contentful/f36-components';
+import CopyToClipboard from 'react-copy-to-clipboard';
+import { css, cx } from 'emotion';
 import { OpenInCodeSandboxButton } from '@codesandbox/sandpack-react';
+import tokens from '@contentful/f36-tokens';
+import { Flex, Text, Heading, Tooltip } from '@contentful/f36-components';
+import { LinkAlternateIcon } from '@contentful/f36-icons';
 import { useUrlSync } from './useUrlSync';
 
 const styles = {
@@ -17,64 +13,96 @@ const styles = {
     height: '50px',
     paddingLeft: tokens.spacingXl,
     borderBottom: `1px solid ${tokens.gray300}`,
+    overflow: 'hidden',
   }),
-  codeSandboxButton: css({
-    backgroundColor: tokens.colorWhite,
-    display: 'flex',
+  tooltipWrapper: css({
     height: '100%',
-    alignItems: 'center',
+  }),
+  embeddedButton: css({
+    height: '100%',
+    backgroundColor: tokens.colorWhite,
+    border: 0,
     borderLeft: `1px solid ${tokens.gray300}`,
     transition: `background ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
-    '> a': {
-      height: '100% !important',
-      padding: `${tokens.spacingM} !important`,
-    },
     ':hover': {
       backgroundColor: tokens.gray100,
     },
   }),
+  shareButton: css({
+    padding: `0 ${tokens.spacingM}`,
+    cursor: 'pointer',
+  }),
+  codeSandboxButton: css({
+    display: 'flex',
+    alignItems: 'center',
+    '> a': {
+      height: '100% !important',
+      padding: `0 ${tokens.spacingM} !important`,
+    },
+  }),
 };
-
-function UrlCopyButton() {
-  const router = useRouter();
-  return (
-    <CopyButton
-      value={window.location.origin + router.asPath}
-      className={css({ button: { border: 'none !important' } })}
-      tooltipText="Copy"
-    />
-  );
-}
 
 export function PlaygroundTopBar() {
   useUrlSync();
+  const router = useRouter();
 
   return (
     <Flex
       className={styles.topbar}
       gap="spacingM"
       justifyContent="space-between"
+      alignItems="center"
     >
-      <Flex flexGrow={1} alignItems="center">
-        <Heading as="h1" marginBottom="none">
-          Playground
-        </Heading>
-      </Flex>
+      <Heading as="h1" marginBottom="none">
+        Playground
+      </Heading>
 
-      <Flex alignItems="center" gap="spacingXs">
-        <Text fontColor="gray800">Share your playground: </Text>
-        <UrlCopyButton />
-      </Flex>
+      <Flex alignItems="center" className={css({ height: '100%' })}>
+        <UrlCopyButton url={window.location.origin + router.asPath} />
 
-      <Flex alignItems="center" gap="spacingXs">
         <Tooltip
           placement="bottom"
-          targetWrapperClassName={styles.codeSandboxButton}
+          targetWrapperClassName={cx(
+            styles.embeddedButton,
+            styles.codeSandboxButton,
+          )}
           content="Open in CodeSandbox"
         >
           <OpenInCodeSandboxButton />
         </Tooltip>
       </Flex>
     </Flex>
+  );
+}
+
+function UrlCopyButton({ url }) {
+  const [copied, setCopied] = React.useState(false);
+
+  const handleOnCopy = () => {
+    setCopied(true);
+
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
+  };
+
+  return (
+    <CopyToClipboard text={url} onCopy={handleOnCopy}>
+      <Tooltip
+        placement="bottom"
+        targetWrapperClassName={styles.tooltipWrapper}
+        content={copied ? 'Copied' : 'Copy url'}
+      >
+        <Flex
+          as="button"
+          alignItems="center"
+          gap="spacingXs"
+          className={cx(styles.embeddedButton, styles.shareButton)}
+        >
+          <LinkAlternateIcon variant="muted" />
+          <Text fontColor="gray800">Share code</Text>
+        </Flex>
+      </Tooltip>
+    </CopyToClipboard>
   );
 }

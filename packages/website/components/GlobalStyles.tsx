@@ -62,6 +62,10 @@ export const GlobalStyles = () => {
           border-radius: 0;
         }
 
+        .sp-cm {
+          padding-left: ${tokens.spacingM};
+        }
+
         /* OSANO STYLES BEGIN */
 
         .osano-cm-window {
