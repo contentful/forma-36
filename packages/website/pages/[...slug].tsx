@@ -7,9 +7,8 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import rehypeToc from 'rehype-toc';
 import { serialize } from 'next-mdx-remote/serialize';
-import { MdxRenderer } from '../components/MdxRenderer';
-import { PageContent } from '../components/PageContent';
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { PropsContextProvider } from '@contentful/f36-docs-utils';
 import remarkCodeTitles from 'remark-code-titles';
 import remarkCodeImport from 'remark-code-import';
@@ -17,12 +16,15 @@ import remarkCodeImport from 'remark-code-import';
 import type { FrontMatter } from '../types';
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 import { getPropsMetadata, transformToc } from '../utils/propsMeta';
-import { getTableOfContents } from '../utils/mdx-utils';
-import { HeadingType } from '../components/TableOfContent';
 import { FrontMatterContextProvider } from '../utils/frontMatterContext';
+import { getTableOfContents } from '../utils/mdx-utils';
+import { PageContent, HeadingType } from '../components/PageContent';
 
 type ComponentPageProps = {
-  source: MDXRemoteSerializeResult;
+  source: {
+    shortIntro: MDXRemoteSerializeResult;
+    mainContent: MDXRemoteSerializeResult;
+  };
   frontMatter: FrontMatter;
   headings: HeadingType[];
   propsMetadata: ReturnType<typeof getPropsMetadata>;
@@ -46,13 +48,15 @@ export default function ComponentPage({
         <title>Forma 36 - {frontMatter.title}</title>
       </Head>
 
-      <PageContent frontMatter={frontMatter} headings={headings}>
-        <PropsContextProvider value={{ ...propsMetadata }}>
-          <FrontMatterContextProvider value={frontMatter}>
-            <MdxRenderer source={source} />
-          </FrontMatterContextProvider>
-        </PropsContextProvider>
-      </PageContent>
+      <PropsContextProvider value={{ ...propsMetadata }}>
+        <FrontMatterContextProvider value={frontMatter}>
+          <PageContent
+            frontMatter={frontMatter}
+            headings={headings}
+            source={source}
+          />
+        </FrontMatterContextProvider>
+      </PropsContextProvider>
     </>
   );
 }
@@ -72,7 +76,20 @@ export async function getStaticProps(props: { params: { slug: string[] } }) {
 
   let toc = {};
 
-  const mdxSource = await serialize(content, {
+  let shortIntroText = '';
+  let mainContentText = content;
+
+  // It will match every text that comes before the first "## Import"
+  const shortIntroRegex = new RegExp(/([^#]+)/);
+  const matches = content.match(shortIntroRegex);
+
+  if (matches !== null) {
+    shortIntroText = matches[0];
+    mainContentText = content.replace(matches[0], '');
+  }
+
+  const shortIntro = await serialize(shortIntroText);
+  const mainContent = await serialize(mainContentText, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [remarkCodeTitles, remarkCodeImport],
@@ -100,7 +117,7 @@ export async function getStaticProps(props: { params: { slug: string[] } }) {
 
   return {
     props: {
-      source: mdxSource,
+      source: { shortIntro, mainContent },
       toc,
       headings: getTableOfContents(result.content),
       frontMatter: data,
