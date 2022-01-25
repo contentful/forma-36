@@ -10,10 +10,11 @@ export const getPopoverContentStyles = (isOpen: boolean) => ({
     boxShadow: tokens.boxShadowDefault,
     zIndex: tokens.zIndexDropdown,
     '&:focus': {
+      boxShadow: tokens.glowPrimary,
       outline: 'none',
     },
-    '&:focus-visible': {
-      boxShadow: tokens.glowPrimary,
+    '&:focus:not(:focus-visible)': {
+      boxShadow: tokens.boxShadowDefault,
     },
   }),
 });
