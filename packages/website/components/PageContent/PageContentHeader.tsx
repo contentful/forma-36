@@ -19,6 +19,16 @@ const styles = {
       gridColumnStart: 1,
     },
   }),
+  intro: css({
+    // This will add a bigger fontSize to the first p and to anchors inside of it
+    '> p:first-child, > p:first-child a': {
+      fontSize: tokens.fontSizeXl,
+      lineHeight: tokens.lineHeightXl,
+    },
+    '> p:last-child': {
+      marginBottom: 0,
+    },
+  }),
 };
 
 interface PageContentHeaderProps {
@@ -70,7 +80,9 @@ export function PageContentHeader({
         </Flex>
       )}
 
-      {children}
+      <Flex flexDirection="column" className={styles.intro}>
+        {children}
+      </Flex>
     </header>
   );
 }
