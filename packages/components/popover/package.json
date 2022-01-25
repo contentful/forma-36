@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-popover",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Forma 36: Popover component",
   "scripts": {
     "build": "parcel build"
