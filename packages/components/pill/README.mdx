@@ -8,58 +8,41 @@ storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-pill--b
 typescript: ./src/Pill.tsx
 ---
 
-import { InfoCircleIcon } from '@contentful/f36-icons';
-
 Pills represent a set of one or multiple objects which can be entered or changed by the user. By default, pills can be removed by the user. When necessary, the order of pills can be changed by the user using drag and drop. They are used to represent complex entities in small blocks such as contact details. Contentful Pills are are used to render transition locales and tag elements.
 
-## How to use Pill
+## Import
 
-- use Pill to represent data like contact details or tagging
-- it can be used for web content that needs to be labeled, categorized, or organized using keywords that describe them.
-
-## Code examples
-
-Example of usage with draggable and close option
-
-```jsx
-// import { Pill } from '@contentful/f36-pill';
-
-<Pill
-  testId="pill-item"
-  label="test label"
-  onClose={() => {}}
-  onDrag={() => {}}
-/>
+```js static=true
+import { Pill } from '@contentful/f36-components';
+// or
+import { Pill } from '@contentful/f36-pill';
 ```
 
-Example of the Pill component with dragHandle, in that case Icon.
+## Examples
 
-```jsx
-// import { Pill } from '@contentful/f36-pill';
-// import { InfoCircleIcon } from '@contentful/f36-icons';
+### Using with draggable and close option
 
-<Pill
-  label="example.user@contentful.com"
-  onDrag={() => {}}
-  dragHandleComponent={
-    <InfoCircleIcon
-      aria-label="Drag handler"
-      variant="muted"
-      style={{ padding: '0.375rem 0.625rem' }}
-    />
-  }
-/>
+```jsx file=./examples/DraggableAndClosePillExample.tsx
+
 ```
+
+### Using the Pill component with custom dragHandleComponent
+
+```jsx file=./examples/DragHandleComponentPillExample.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="Pill" />
 
 ## Content guidelines
 
-- Be sure the pill text is clear and concise.
+- Be sure the pill text is clear and concise
+- Use Pill to represent data like contact details or tagging
+- It can be used for web content that needs to be labeled, categorized, or organized using keywords that describe them.
 
 ## Accessibility
 
 - Label value is passed in the component as a title in the span element, like follows `title={label}`.
 - The default drag component has a `aria-label="Drag handler"`, custom drag handle components should also include an `aria-label`, as shown on the example
-
-## Props (API reference)
-
-<PropsTable of="Pill" />
