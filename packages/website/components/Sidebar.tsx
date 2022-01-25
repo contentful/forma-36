@@ -4,10 +4,7 @@ import sortBy from 'lodash.sortby';
 import tokens from '@contentful/f36-tokens';
 import { Grid } from '@contentful/f36-components';
 
-import {
-  useCurrentLocation,
-  WEBSITE_SECTION,
-} from '../hooks/useCurrentLocation';
+import { WEBSITE_SECTION } from '../hooks/useCurrentLocation';
 import {
   SidebarSection,
   SidebarSectionType,
@@ -29,6 +26,7 @@ const styles = {
 };
 
 interface Props {
+  activeSection?: string;
   currentPage?: string;
 }
 
@@ -82,10 +80,11 @@ const components: Array<SidebarSectionType | SidebarLinkType> = [
   },
 ];
 
-export function Sidebar({ currentPage = '/' }: Props) {
+export function Sidebar({
+  activeSection = WEBSITE_SECTION.INTRODUCTION,
+  currentPage = '/',
+}: Props) {
   const componentsSorted = sortBy(components, ['title']);
-
-  const { activeSection } = useCurrentLocation(currentPage);
 
   return (
     <Grid.Item
@@ -106,11 +105,6 @@ export function Sidebar({ currentPage = '/' }: Props) {
               {
                 title: 'Contributing to Forma 36',
                 slug: '/contributing',
-                type: 'link',
-              },
-              {
-                title: 'Playground',
-                slug: '/playground',
                 type: 'link',
               },
               {
