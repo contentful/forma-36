@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.2](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.1.1...@contentful/f36-button@4.1.2) (2022-01-26)
+
+
+### Bug Fixes
+
+* **button-group:** pass className prop to spaced group ([#1821](https://github.com/contentful/forma-36/issues/1821)) ([ceda914](https://github.com/contentful/forma-36/commit/ceda9142b5547f74ac5709ff7ce691e2d04b8f9a))
+
+
+
+
+
 ## [4.1.1](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.1.0...@contentful/f36-button@4.1.1) (2022-01-19)
 
 
