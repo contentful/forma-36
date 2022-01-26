@@ -54,6 +54,12 @@ const getStyles = ({
           boxShadow: tokens.glowPrimary,
         },
       },
+      '&:focus:not(:focus-visible) + span': {
+        boxShadow: 'unset',
+      },
+      '&:focus-visible + span': {
+        boxShadow: tokens.glowPrimary,
+      },
     },
     type === 'switch' && sizeToStyle(size),
   ]),
