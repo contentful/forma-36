@@ -92,7 +92,6 @@ interface SidebarLinkProps {
   href: string;
   isActive?: boolean;
   isExternal?: boolean;
-  isIndependent?: boolean;
   paddingLeft?: 'spacingXl' | 'spacing2Xl';
 }
 
@@ -101,7 +100,6 @@ export function SidebarLink({
   href,
   isExternal = false,
   isActive = false,
-  isIndependent = false,
   paddingLeft = 'spacingXl',
 }: SidebarLinkProps) {
   const titleStyles = getSectionTitleStyles(isActive, paddingLeft);
@@ -109,22 +107,7 @@ export function SidebarLink({
     ? { target: '_blank', rel: 'noopener noreferrer' }
     : {};
 
-  return isIndependent ? (
-    <Link href={href} passHref>
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-      <a
-        className={cx([
-          styles.link,
-          titleStyles.clickable,
-          titleStyles.sidebarItem,
-        ])}
-        {...linksProps}
-      >
-        {children}
-        {isExternal ? <ExternalLinkIcon variant="muted" /> : null}
-      </a>
-    </Link>
-  ) : (
+  return (
     <List.Item>
       <Link href={href} passHref>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

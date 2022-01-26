@@ -144,16 +144,16 @@ export function Sidebar({ currentPage = '/' }: Props) {
 
       {activeSection === WEBSITE_SECTION.COMPONENTS && (
         <>
-          <Flex marginBottom="spacingL">
-            <SidebarLink
-              isExternal
-              isIndependent
-              href="https://github.com/contentful/forma-36/discussions/new"
-            >
-              Submit an idea in GitHub
-            </SidebarLink>
-          </Flex>
-
+          <SidebarSection
+            links={[
+              {
+                title: 'Proposal in GitHub',
+                slug: 'https://github.com/contentful/forma-36/discussions/new',
+                type: 'link',
+              },
+            ]}
+            currentPage={currentPage}
+          />
           <SidebarSection links={componentsSorted} currentPage={currentPage} />
           <SidebarSection
             title="Utils"
