@@ -1,3 +1,4 @@
+import React from 'react';
 import { Flex, TextLink, Stack, Heading } from '@contentful/f36-components';
 
 import type { FrontMatter } from '../../types';

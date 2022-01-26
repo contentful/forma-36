@@ -1,3 +1,4 @@
+import React from 'react';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { css, cx } from 'emotion';
 import { Flex } from '@contentful/f36-components';
