@@ -1,7 +1,5 @@
 ---
 title: 'ScreenReaderOnly'
-type: 'component'
-status: 'stable'
 section: 'utils'
 slug: /components/screen-reader-only/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/core/src/ScreenReaderOnly'
@@ -11,63 +9,33 @@ typescript: ./ScreenReaderOnly.tsx
 
 This is a helper component to add content and components which is only visible for screen readers. For example skip links, structural elements or additional information.
 
-## How to use ScreenReaderOnly
+### How to use ScreenReaderOnly
 
 - The ScreenReaderOnly wrapper will apply style to the element which moves it out of the viewport but not out of your pages context.
 - Make sure child elements don't have overwriting positioning
 
-### Import
+## Import
 
-````js static=true
+```js static=true
 import { ScreenReaderOnly } from '@contentful/f36-components';
 // or
-import { ScreenReaderOnly } from '@contentful/f36-core'
+import { ScreenReaderOnly } from '@contentful/f36-core';
+```
 
-## Code examples
+## Examples
 
-```jsx
-<Stack flexDirection="column" spacing="spacingM">
-  <ScreenReaderOnly>
-    <TextLink href="#main-content">Skip to main content</TextLink>
-  </ScreenReaderOnly>
-  <nav aria-labelledby="main-navigation">
-    <Stack flexDirection="row" spacing="spacingS">
-      <ScreenReaderOnly>
-        <SectionHeading as="h2" id="main-navigation">
-          Main Navigation
-        </SectionHeading>
-      </ScreenReaderOnly>
-      <TextLink href="#">Menu Element</TextLink>
-      <TextLink href="#">Menu Element</TextLink>
-      <TextLink href="#">Menu Element</TextLink>
-      <TextLink href="#">Menu Element</TextLink>
-      <TextLink href="#">Menu Element</TextLink>
-      <TextLink href="#">Menu Element</TextLink>
-    </Stack>
-  </nav>
-  <div id="main-content">
-    <SectionHeading as="h2">Main Content</SectionHeading>
-    <p>
-      When using a screenreader you will get offered a skip to main content
-      link.
-    </p>
-    <p>
-      The navigation has a ScreenReaderOnly wrapped heading which it is labelled
-      by, to help a screenreader user, to identify which kind of navigation they
-      are on.
-    </p>
-  </div>
-</Stack>
-````
+### Basic
+
+```jsx file=examples/ScreenReaderOnlyExample.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="ScreenReaderOnly" />
 
 ## Content guidelines
 
 - For links that help navigating views with many different feature areas e.g. header, footer and sidebars next to the main contnt
 - Additional descriptive content like labelledby headlines for navigations
 - Information dedicated to screen reader users e.g. specific keyboard commands to skip to the next unread blog post
-
-## Props (API reference)
-
-### ScreenReaderOnly
-
-<PropsTable of="ScreenReaderOnly" />

@@ -1,7 +1,5 @@
 ---
 title: 'Popover'
-type: 'component'
-status: 'stable'
 slug: /components/popover/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/popover'
 storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-popover--basic'
@@ -11,84 +9,45 @@ typescript: ./src/Popover.tsx
 Popover is used to display some content on top of another, and should be paired with a clickable trigger element.
 It is a base for other more specific component, like `Menu`, `Autocomplete` and `Multiselect`. Please, consider using these specific componenets to cover your needs.
 
-## How to use Popover
+### How to use Popover
 
 - Only if `Menu`, `Autocomplete` and `Multiselect` components are not covering your use cases, you should use `Popover`.
 - Before using this component, double-check your design requirements. We are providing `Menu`, `Autocomplete`, and `Multiselect` for more specific use-cases and they can address your needs.
 - Keep in mind that you will have to implement everything related to accessibility for the popover content.
 - Component is controllable, so don't forget to pass `onClose` callback prop. Otherwise `closeOnEsc` and `closeOnBlur` will not work properly.
 
-## Code examples
+## Import
+
+```jsx static=true
+import { Popover } from '@contentful/f36-components';
+// or
+import { Popover } from '@contentful/f36-popover';
+```
+
+## Examples
+
+### Basic
 
 - Pass trigger component as a child for `Popover.Trigger`.
   NOTE: 🚨 Ensure that the component that you pass accepts `ref`. Consider using `forwardRef` for functional components.
 - Pass popover content as a child for `Popover.Content`
 
-```tsx
-// import { Popover } from '@contentful/f36-popover';
+```jsx file=examples/PopoverBasicExample.tsx
 
-// import { Button } from '@contentful/f36-button';
-// import { Paragraph } from '@contentful/f36-typography';
-// import { Box } from '@contentful/f36-core';
-
-function PopoverExample() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  return (
-    <Popover isOpen={isOpen} onClose={() => setIsOpen(false)}>
-      <Popover.Trigger>
-        <Button onClick={() => setIsOpen(!isOpen)}>Toggle</Button>
-      </Popover.Trigger>
-      <Popover.Content>
-        <Box padding="spacingM">
-          <Paragraph>This is the content.</Paragraph>
-          <Button>Some action</Button>
-        </Box>
-      </Popover.Content>
-    </Popover>
-  );
-}
 ```
 
-## Trapping focus within Popover
+### Trapping focus within Popover
 
 If the popover contains interactive elements that user can navigate through with `Tab`,
 consider using [react-focus-lock](https://github.com/theKashey/react-focus-lock) to trap the focus within Popover
 
-```tsx static=true
-// import { Popover } from '@contentful/f36-popover';
+```jsx file=examples/PopoverFocusLockExample.tsx
 
-// import { Button } from '@contentful/f36-button';
-// import { Stack } from '@contentful/f36-core';
-// import { Switch } from '@contentful/f36-forms';
-
-// import FocusLock from 'react-focus-lock';
-
-function PopoverExample() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  return (
-    <Popover isOpen={isOpen} onClose={() => setIsOpen(false)}>
-      <Popover.Trigger>
-        <Button onClick={() => setIsOpen(!isOpen)}>Toggle</Button>
-      </Popover.Trigger>
-      <Popover.Content>
-        {/* Just wrap your content with FocusLock component */}
-        <FocusLock>
-          <Stack
-            padding="spacingM"
-            margin="none"
-            spacing="spacingS"
-            flexDirection="column"
-          >
-            <Switch>Option 1</Switch>
-            <Switch>Option 2</Switch>
-            <Switch>Option 3</Switch>
-          </Stack>
-        </FocusLock>
-      </Popover.Content>
-    </Popover>
-  );
-}
 ```
+
+## Props (API reference)
+
+<PropsTable of="Popover" />
 
 ## Content guidelines
 
@@ -101,7 +60,3 @@ function PopoverExample() {
 - When the popover is open and focus is within the `Popover.Content`, click on `Esc` key will close the popover. If you set `closeOnEsc` to `false`, it will not close.
 - When the popover is open and focus is within the `Popover.Content`, click outside popover or blurring out will close the it. If you set `closeOnBlur` to `false`, it will not close.
 - All the necessary a11y attributes for `Popover.Content` and `Popover.Trigger` are provided.
-
-## Props (API reference)
-
-<PropsTable of="Popover" />

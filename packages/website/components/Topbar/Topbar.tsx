@@ -10,10 +10,7 @@ import {
 } from '../../utils/getGridStyles';
 import { DocSearch } from '../DocSearch';
 
-import {
-  useCurrentLocation,
-  WEBSITE_SECTION,
-} from '../../hooks/useCurrentLocation';
+import { WEBSITE_SECTION } from '../../hooks/useCurrentLocation';
 import { TopbarLink } from './TopbarLink';
 import { TopbarLogo } from './TopbarLogo';
 import { VersionSwitch } from './VersionSwitch';
@@ -46,12 +43,11 @@ const styles = {
 };
 
 interface TopbarProps {
-  currentPage: string;
+  activeSection: string;
 }
 
-export function Topbar({ currentPage }: TopbarProps) {
+export function Topbar({ activeSection }: TopbarProps) {
   const gridStyles = getGridStyles();
-  const { activeSection } = useCurrentLocation(currentPage);
 
   return (
     <Grid.Item
@@ -104,6 +100,13 @@ export function Topbar({ currentPage }: TopbarProps) {
                 href="/components/accordion"
                 label="Components"
                 isActive={activeSection === WEBSITE_SECTION.COMPONENTS}
+              />
+            </List.Item>
+            <List.Item>
+              <TopbarLink
+                href="/playground"
+                label="Playground"
+                isActive={activeSection === WEBSITE_SECTION.PLAYGROUND}
               />
             </List.Item>
           </List>

@@ -1,7 +1,5 @@
 ---
 title: 'SkeletonImage'
-type: 'component'
-status: 'stable'
 section: 'skeletonComponents'
 slug: /components/skeleton/skeleton-image/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/skeleton'
@@ -9,55 +7,44 @@ storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-skeleto
 typescript: ./SkeletonImage.tsx
 ---
 
-## How to use SkeletonImage
-
 Use the `SkeletonImage` component to simulate images, illustrations, avatars or icons whenever loading asynchronous data.
 
-### Import
+## Import
 
-```js static=true
+```jsx static=true
 import { SkeletonImage } from '@contentful/f36-components';
 // or
 import { SkeletonImage } from '@contentful/f36-skeleton';
 ```
 
-## Code examples
+## Examples
 
-```jsx
-<SkeletonContainer>
-  <SkeletonImage />
-</SkeletonContainer>
+Each `SkeletonImage` needs to be wrapped by a `SkeletonContainer` component.
+
+### Basic usage
+
+```jsx file=../../examples/SkeletonImageBasicExample.tsx
+
 ```
 
-## Best practices
+### Setting width and height
 
-- Each `SkeletonImage` needs to be wrapped by a `SkeletonContainer` component.
-- Pass some value to the `width` and `height` props to make the skeleton the same size as the simulated image (default values are 70).
-  You can use the same values a normal `<rect>` tag would accept for [width](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/width#rect) and [height](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/height#rect)
+Pass some value to the `width` and `height` props to make the skeleton the same size as the simulated image (default values are 70).
+You can use the same values a normal `<rect>` tag would accept for [width](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/width#rect)
+and [height](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/height#rect)
 
-```jsx
-<>
-  <SkeletonContainer>
-    <SkeletonImage />
-  </SkeletonContainer>
-  <SkeletonContainer>
-    <SkeletonImage width={100} height={35} />
-  </SkeletonContainer>
-</>
+```jsx file=../../examples/SkeletonImageDimensionsExample.tsx
+
 ```
 
-- Pass some value to the `radiusX` and `radiusY` props to control the roundness of skeleton's corners (default values are 0).
-  You can use the same values a normal `<rect>` tag would accept for [rx](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/rx#rect) and [ry](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/ry#rect)
+### Round skeleton
 
-```jsx
-<>
-  <SkeletonContainer>
-    <SkeletonImage />
-  </SkeletonContainer>
-  <SkeletonContainer>
-    <SkeletonImage radiusX={100} radiusY={100} />
-  </SkeletonContainer>
-</>
+Pass some value to the `radiusX` and `radiusY` props to control the roundness of skeleton's corners (default values are 0).
+You can use the same values a normal `<rect>` tag would accept for [rx](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/rx#rect)
+and [ry](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/ry#rect)
+
+```jsx file=../../examples/SkeletonImageRoundExample.tsx
+
 ```
 
 ## Props (API reference)
