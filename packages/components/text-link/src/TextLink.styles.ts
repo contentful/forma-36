@@ -75,13 +75,21 @@ const textLink = ({
     cursor: isDisabled ? 'not-allowed' : 'pointer',
     opacity: isDisabled ? 0.5 : 1,
     ...variantToStyles(variant),
-    '&:focus, &:hover': {
+    outline: 'none',
+    '&:focus, &:focus-visible, &:hover': {
       textDecoration: isDisabled ? 'none' : 'underline',
     },
     '&:focus': {
       boxShadow: isDisabled ? 'none' : tokens.glowPrimary,
-      outline: 'none',
       borderRadius: tokens.borderRadiusSmall,
+    },
+    '&:focus:not(:focus-visible)': {
+      borderRadius: 0,
+      boxShadow: 'none',
+    },
+    '&:focus-visible': {
+      borderRadius: tokens.borderRadiusSmall,
+      boxShadow: isDisabled ? 'none' : tokens.glowPrimary,
     },
   });
 
