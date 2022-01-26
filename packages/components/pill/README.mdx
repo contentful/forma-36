@@ -8,7 +8,7 @@ storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-pill--b
 typescript: ./src/Pill.tsx
 ---
 
-Pills represent a set of one or multiple objects which can be entered or changed by the user. By default, pills can be removed by the user. When necessary, the order of pills can be changed by the user using drag and drop. They are used to represent complex entities in small blocks such as contact details. Contentful Pills are are used to render transition locales and tag elements.
+`Pill` component allows to represent a set of one or multiple objects which can be entered or changed by the user. For example, tags. `Pill` can be integrated with a drag-and-drop solution.
 
 ## Import
 
@@ -29,6 +29,14 @@ import { Pill } from '@contentful/f36-pill';
 ### Using the Pill component with custom dragHandleComponent
 
 ```jsx file=./examples/DragHandleComponentPillExample.tsx
+
+```
+
+### Integration example with `react-sortable-hoc`
+
+This is an example of integrating `Pill` components with a library for drag-and-drop sorting. In this example, `react-sortable-hoc` is used.
+
+```jsx file=./examples/IntegrationPillExample.tsx
 
 ```
 

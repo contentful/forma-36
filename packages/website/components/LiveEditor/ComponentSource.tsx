@@ -22,6 +22,12 @@ import { formatSourceCode } from './utils';
 import { useRouter } from 'next/router';
 import * as coder from '../../utils/coder';
 import FocusLock from 'react-focus-lock';
+import {
+  SortableContainer,
+  SortableElement,
+  SortableHandle,
+} from 'react-sortable-hoc';
+import arrayMove from 'array-move';
 
 const liveProviderScope = {
   ...f36icons,
@@ -42,6 +48,10 @@ const liveProviderScope = {
   useController,
   MdAccessAlarm,
   FocusLock,
+  SortableContainer,
+  SortableElement,
+  SortableHandle,
+  arrayMove,
 };
 
 const styles = {

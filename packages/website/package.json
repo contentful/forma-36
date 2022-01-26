@@ -37,7 +37,9 @@
     "remark": "^14.0.2",
     "remark-code-import": "^0.4.0",
     "remark-code-titles": "^0.1.1",
-    "react-icons": "4.3.1"
+    "react-icons": "4.3.1",
+    "react-sortable-hoc": "^2.0.0",
+    "array-move": "^3.0.0"
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^10.2.1",
