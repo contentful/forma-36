@@ -21,6 +21,7 @@ function _ButtonGroup(
   if (variant === 'spaced') {
     return (
       <Stack
+        className={className}
         isInline
         flexDirection="row"
         testId={testId}
