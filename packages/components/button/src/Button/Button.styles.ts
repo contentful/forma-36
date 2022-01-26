@@ -148,21 +148,21 @@ const sizeToStyles = (size: ButtonSize): CSSObject => {
         fontSize: tokens.fontSizeM,
         lineHeight: tokens.lineHeightCondensed,
         padding: `${tokens.spacing2Xs} ${tokens.spacingS}`,
-        minHeight: `32px`,
+        minHeight: '32px',
       };
     case 'medium':
       return {
         fontSize: tokens.fontSizeM,
         lineHeight: tokens.lineHeightCondensed,
         padding: `${tokens.spacingXs} ${tokens.spacingM}`,
-        minHeight: `40px`,
+        minHeight: '40px',
       };
     case 'large':
       return {
         fontSize: tokens.fontSizeXl,
         lineHeight: tokens.lineHeightXl,
         padding: `${tokens.spacingXs} ${tokens.spacingM}`,
-        minHeight: `48px`,
+        minHeight: '48px',
       };
     default:
       return {};
