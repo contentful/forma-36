@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-modal",
-  "version": "4.1.2",
+  "version": "4.1.3",
   "description": "Forma 36: Modal component",
   "scripts": {
     "build": "parcel build index.ts"
