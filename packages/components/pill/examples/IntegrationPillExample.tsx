@@ -69,7 +69,7 @@ export default function IntegrationPillExample() {
     >
       {items.map((item, index) => (
         <SortablePill
-          key={item + index}
+          key={item}
           index={index}
           label={item}
           onRemove={() => removeItem(index)}
