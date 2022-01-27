@@ -12,7 +12,10 @@ export default function ModalBasicExample() {
           <>
             <Modal.Header title="Modal title" onClose={() => setShown(false)} />
             <Modal.Content>
-              <Paragraph>Modal content is here!</Paragraph>
+              <Heading>First entry published! It can now be fetched via the APIs</Heading>
+               <Paragraph>
+                  To discover more about how to consume content from the APIs, go to Space Home.
+               </Paragraph>
             </Modal.Content>
           </>
         )}
