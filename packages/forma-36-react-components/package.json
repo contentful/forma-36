@@ -1,7 +1,7 @@
 {
   "name": "@contentful/f36-components",
   "description": "Contentful UI Component Library",
-  "version": "4.0.14",
+  "version": "4.0.15",
   "main": "dist/f36-components.umd.js",
   "types": "dist/index.d.ts",
   "module": "./dist/f36-components.module.js",
