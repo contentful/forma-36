@@ -10,24 +10,31 @@ typescript: ./src/Tooltip.tsx
 
 Tooltips are very useful to communicate extra information related to an element on the screen. The information should be contextual, useful, and nonessential.
 
-## How to use Tooltip
+## Import
 
-- Even though it's possible to pass any ReactNode as a content of the Tooltip,
-  we do not recommend passing very complex components try to use only [Phrasing content](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Phrasing_content)
-
-## Code examples
-
-```jsx
-// import { Tooltip } from '@contentful/f36-components';
-<Tooltip
-  placement="top"
-  id="tip1"
-  targetWrapperClassName="targetWrapperClassName"
-  content="Hi I am a Tooltip"
->
-  <TextLink>Hover me</TextLink>
-</Tooltip>
+```js static=true
+import { Tooltip } from '@contentful/f36-components';
+// or
+import { Tooltip } from '@contentful/f36-tooltip';
 ```
+
+## Examples
+
+### Button with tooltip
+
+```jsx file=./examples/ButtonWithTooltipExample.tsx
+
+```
+
+### Tooltips in Text
+
+```jsx file=./examples/TooltipInTextExample.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="Tooltip" />
 
 ## Content guidelines
 
@@ -38,13 +45,8 @@ Tooltips are very useful to communicate extra information related to an element 
 - Do not put essential information in `Tooltip` component
 - Add unique `id` property to the tooltip, so appropriate a11y attributes could be used.
 
-```jsx
-// import { Tooltip } from '@contentful/f36-components';
+```jsx static=true
 <Tooltip placement="top" id="tooltip" content="Hi I am a Tooltip">
   <TextLink>Hover me</TextLink>
 </Tooltip>
 ```
-
-## Props (API reference)
-
-<PropsTable of="Tooltip" />
