@@ -2,11 +2,12 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { css, cx } from 'emotion';
-import { OpenInCodeSandboxButton } from '@codesandbox/sandpack-react';
+import { UnstyledOpenInCodeSandboxButton } from '@codesandbox/sandpack-react';
 import tokens from '@contentful/f36-tokens';
-import { Flex, Text, Heading, Tooltip } from '@contentful/f36-components';
+import { Flex, Text, Heading, Tooltip, Icon } from '@contentful/f36-components';
 import { LinkAlternateIcon } from '@contentful/f36-icons';
 import { useUrlSync } from './useUrlSync';
+import { CodeSandboxLogo } from './codesandbox-logo';
 
 const styles = {
   topbar: css({
@@ -33,12 +34,12 @@ const styles = {
     cursor: 'pointer',
   }),
   codeSandboxButton: css({
-    display: 'flex',
     alignItems: 'center',
-    '> a': {
-      height: '100% !important',
-      padding: `0 ${tokens.spacingM} !important`,
-    },
+    cursor: 'pointer',
+    display: 'flex',
+    gap: tokens.spacingXs,
+    padding: `0 ${tokens.spacingM}`,
+    textDecoration: 'none',
   }),
 };
 
@@ -60,16 +61,12 @@ export function PlaygroundTopBar() {
       <Flex alignItems="center" className={css({ height: '100%' })}>
         <UrlCopyButton url={window.location.origin + router.asPath} />
 
-        <Tooltip
-          placement="bottom"
-          targetWrapperClassName={cx(
-            styles.embeddedButton,
-            styles.codeSandboxButton,
-          )}
-          content="Open in CodeSandbox"
+        <UnstyledOpenInCodeSandboxButton
+          className={cx(styles.embeddedButton, styles.codeSandboxButton)}
         >
-          <OpenInCodeSandboxButton />
-        </Tooltip>
+          <Icon as={CodeSandboxLogo} variant="muted" size="medium" />
+          <Text fontColor="gray800">Open in CodeSandbox</Text>
+        </UnstyledOpenInCodeSandboxButton>
       </Flex>
     </Flex>
   );
@@ -100,7 +97,7 @@ function UrlCopyButton({ url }) {
           className={cx(styles.embeddedButton, styles.shareButton)}
         >
           <LinkAlternateIcon variant="muted" />
-          <Text fontColor="gray800">Share code</Text>
+          <Text fontColor="gray800">Copy Playground URL</Text>
         </Flex>
       </Tooltip>
     </CopyToClipboard>
