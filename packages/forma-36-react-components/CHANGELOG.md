@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.14](https://github.com/contentful/forma-36/compare/@contentful/f36-components@4.0.13...@contentful/f36-components@4.0.14) (2022-01-28)
+
+**Note:** Version bump only for package @contentful/f36-components
+
+
+
+
+
 ## [4.0.13](https://github.com/contentful/forma-36/compare/@contentful/f36-components@4.0.12...@contentful/f36-components@4.0.13) (2022-01-27)
 
 **Note:** Version bump only for package @contentful/f36-components
