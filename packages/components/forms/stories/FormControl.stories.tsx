@@ -153,7 +153,7 @@ export const WithCharactersCount = (args: FormControlInternalProps) => {
     <>
       <FormControl {...args}>
         <FormControl.Label isRequired>Name</FormControl.Label>
-        <TextInput maxLength={10} />
+        <TextInput defaultValue="test" maxLength={10} />
         <Flex justifyContent="space-between">
           <FormControl.HelpText>
             Please enter your first name
@@ -167,7 +167,7 @@ export const WithCharactersCount = (args: FormControlInternalProps) => {
       </FormControl>
       <FormControl {...args}>
         <FormControl.Label isRequired>Name</FormControl.Label>
-        <Textarea maxLength={10} />
+        <Textarea defaultValue="Some text" maxLength={50} />
         <Flex justifyContent="space-between">
           <FormControl.HelpText>
             Please enter your first name
