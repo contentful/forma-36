@@ -58,6 +58,8 @@ export function SandpackRenderer(props: {
           'react-hook-form': '7.22.5',
           'react-icons': '4.3.1',
           'react-focus-lock': '^2.5.2',
+          'react-sortable-hoc': '^2.0.0',
+          'array-move': '^3.0.0',
         },
       }}
     >
