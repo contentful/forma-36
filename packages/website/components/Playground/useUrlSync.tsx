@@ -11,10 +11,12 @@ export function useUrlSync() {
 
   useEffect(() => {
     const code = coder.encode(debouncedCode);
-    if (code === router.query.code) {
-      return;
+
+    if (code !== router.query.code) {
+      const href = `/playground?code=${code}`;
+      router.replace(href, undefined, { shallow: true });
     }
-    const href = `/playground?code=${code}`;
-    router.push(href, undefined, { shallow: true });
   }, [debouncedCode]);
+
+  return { router, codeUrl: window.location.origin + router.asPath };
 }

@@ -44,8 +44,7 @@ const styles = {
 };
 
 export function PlaygroundTopBar() {
-  useUrlSync();
-  const router = useRouter();
+  const { router, codeUrl } = useUrlSync();
 
   return (
     <Flex
@@ -59,7 +58,7 @@ export function PlaygroundTopBar() {
       </Heading>
 
       <Flex alignItems="center" className={css({ height: '100%' })}>
-        <UrlCopyButton url={window.location.origin + router.asPath} />
+        <UrlCopyButton url={codeUrl} />
 
         <UnstyledOpenInCodeSandboxButton
           className={cx(styles.embeddedButton, styles.codeSandboxButton)}
