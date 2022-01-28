@@ -7,10 +7,13 @@ import { useFormControl } from '../FormControl/FormControlContext';
 import { getStyles } from './Textarea.styles';
 import { ExpandProps } from '@contentful/f36-core';
 
-export type TextareaProps = Omit<
-  BaseInputProps<'textarea'>,
-  'as' | 'type' | 'size'
->;
+export interface TextareaProps
+  extends Omit<BaseInputProps<'textarea'>, 'as' | 'type' | 'size'> {
+  /**
+   * Set's default value for textarea
+   */
+  defaultValue?: string;
+}
 
 const _Textarea = (
   {
@@ -24,6 +27,8 @@ const _Textarea = (
     id,
     resize = 'vertical',
     maxLength,
+    value,
+    defaultValue,
     ...otherProps
   }: ExpandProps<TextareaProps>,
   ref: React.Ref<HTMLTextAreaElement>,
@@ -47,8 +52,9 @@ const _Textarea = (
   useEffect(() => {
     if (maxLength !== undefined && typeof setMaxLength === 'function') {
       setMaxLength(maxLength);
+      setInputValue(value ?? defaultValue ?? '');
     }
-  }, [maxLength, setMaxLength]);
+  }, [defaultValue, maxLength, setInputValue, setMaxLength, value]);
 
   const handleOnChange = (event) => {
     if (typeof setInputValue === 'function') {
@@ -61,6 +67,8 @@ const _Textarea = (
     <BaseInput
       {...otherProps}
       {...formProps}
+      defaultValue={defaultValue}
+      value={value}
       testId={testId}
       as="textarea"
       ref={ref}
