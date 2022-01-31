@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.1](https://github.com/contentful/forma-36/compare/@contentful/f36-core@4.1.0...@contentful/f36-core@4.1.1) (2022-01-31)
+
+
+### Bug Fixes
+
+* remove min-height from GlobalStyles ([#1843](https://github.com/contentful/forma-36/issues/1843)) ([dfff19d](https://github.com/contentful/forma-36/commit/dfff19dc1b502bb1c325dd6555c1fe89a41ea748))
+
+
+
+
+
 # [4.1.0](https://github.com/contentful/forma-36/compare/@contentful/f36-core@4.0.1...@contentful/f36-core@4.1.0) (2022-01-31)
 
 
