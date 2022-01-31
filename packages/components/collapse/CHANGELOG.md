@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.1](https://github.com/contentful/forma-36/compare/@contentful/f36-collapse@4.2.0...@contentful/f36-collapse@4.2.1) (2022-01-31)
+
+
+### Bug Fixes
+
+* change collapse url and create animation components section ([#1823](https://github.com/contentful/forma-36/issues/1823)) ([f27fdc2](https://github.com/contentful/forma-36/commit/f27fdc2be47f3780dbda0c9a1615239b277ba9b9))
+
+
+
+
+
 # [4.2.0](https://github.com/contentful/forma-36/compare/@contentful/f36-collapse@4.1.1...@contentful/f36-collapse@4.2.0) (2022-01-24)
 
 
