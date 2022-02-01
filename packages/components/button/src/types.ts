@@ -42,11 +42,11 @@ export interface ButtonInternalProps extends CommonProps {
   /**
    * Expects any of the icon components. Renders the icon aligned to the start
    */
-  startIcon?: React.ReactNode;
+  startIcon?: React.ReactElement;
   /**
    * Expects any of the icon components. Renders the icon aligned to the end
    */
-  endIcon?: React.ReactNode;
+  endIcon?: React.ReactElement;
   /**
    * Adds loading indicator icon and disables interactions
    */

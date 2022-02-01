@@ -12,7 +12,7 @@ interface IconButtonInternalProps
   /**
    * Expects any of the icon components
    */
-  icon: React.ReactNode;
+  icon: React.ReactElement;
   /**
    * Aria label is required when using icon only
    */

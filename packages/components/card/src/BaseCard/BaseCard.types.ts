@@ -1,4 +1,4 @@
-import type { MouseEventHandler, ReactNodeArray, ReactNode } from 'react';
+import type { MouseEventHandler, ReactElement, ReactNode } from 'react';
 import type { ButtonProps } from '@contentful/f36-button';
 import type { CommonProps, MarginProps } from '@contentful/f36-core';
 
@@ -9,7 +9,7 @@ export type BaseCardInternalProps = CommonProps &
     /**
      * An array of Menu elements used to render an actions menu
      */
-    actions?: ReactNodeArray;
+    actions?: React.ReactNodeArray;
     /**
      * Handle tag for Card component
      */
@@ -21,7 +21,7 @@ export type BaseCardInternalProps = CommonProps &
     /**
      * Badge component to show in Card header
      */
-    badge?: ReactNode;
+    badge?: ReactElement;
     /**
      * Passing href into the Card. You need to also add property as="a" to make it rendered as <a />
      */
@@ -33,11 +33,11 @@ export type BaseCardInternalProps = CommonProps &
     /**
      * Custom header element to render
      */
-    header?: ReactNode;
+    header?: ReactElement;
     /**
      * Icon to show in the Card header
      */
-    icon?: ReactNode | null;
+    icon?: React.ReactElement | null;
     /**
      * Props to pass to the action menu button
      */
@@ -75,7 +75,7 @@ export type BaseCardInternalProps = CommonProps &
      */
     dragHandleRender?: (props: {
       isDragging?: boolean;
-      drag: ReactNode;
+      drag: React.ReactElement;
     }) => React.ReactElement;
 
     /**

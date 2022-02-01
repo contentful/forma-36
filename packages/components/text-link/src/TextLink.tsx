@@ -27,7 +27,7 @@ interface TextLinkInternalProps extends CommonProps {
   /**
    * Expects any of the icon components
    */
-  icon?: React.ReactNode;
+  icon?: React.ReactElement;
   /**
    * Determines the icon position regarding the link text
    * @default start

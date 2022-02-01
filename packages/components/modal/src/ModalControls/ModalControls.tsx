@@ -5,7 +5,7 @@ import { Flex } from '@contentful/f36-core';
 import { ButtonGroup } from '@contentful/f36-button';
 
 interface ModalControlsInternalProps extends CommonProps {
-  children: React.ReactNode;
+  children: React.ReactElement[] | React.ReactElement;
 }
 
 export type ModalControlsProps = PropsWithHTMLElement<

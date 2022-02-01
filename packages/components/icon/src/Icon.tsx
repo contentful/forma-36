@@ -11,7 +11,7 @@ import type {
 import type {
   ComponentType,
   ExoticComponent,
-  ReactNode,
+  ReactElement,
   SVGAttributes,
 } from 'react';
 
@@ -61,7 +61,7 @@ const fills: { [key in IconVariant]: string } = {
 };
 
 export type IconInternalProps = CommonProps & {
-  children?: ReactNode;
+  children?: ReactElement | ReactElement[];
   /**
    * Determines the size of the icon
    */
