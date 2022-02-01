@@ -33,6 +33,7 @@ export default {
 export const basic: Story<ButtonGroupProps> = (args) => {
   return (
     <ButtonGroup {...args}>
+      {false && <Button variant="secondary">Button</Button>}
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
