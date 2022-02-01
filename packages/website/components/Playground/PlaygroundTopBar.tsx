@@ -1,5 +1,4 @@
 import React from 'react';
-import { useRouter } from 'next/router';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { css, cx } from 'emotion';
 import { UnstyledOpenInCodeSandboxButton } from '@codesandbox/sandpack-react';
@@ -44,7 +43,7 @@ const styles = {
 };
 
 export function PlaygroundTopBar() {
-  const { router, codeUrl } = useUrlSync();
+  const { codeUrl } = useUrlSync();
 
   return (
     <Flex
