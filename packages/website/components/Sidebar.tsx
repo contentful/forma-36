@@ -35,6 +35,11 @@ const components: Array<SidebarSectionType | SidebarLinkType> = [
 
   {
     type: 'section',
+    links: sidebarLinks.animationComponents,
+    title: 'Animation Components',
+  },
+  {
+    type: 'section',
     links: sidebarLinks.layoutComponents,
     title: 'Layout Components',
   },

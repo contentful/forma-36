@@ -206,17 +206,17 @@ Now that you have your fresh version of Forma 36 installed, you don't need the o
 For NPM
 
 ```bash
-npm uninstall @contentful/f36-components
-npm uninstall @contentful/f36-tokens
-npm uninstall @contentful/f36-fcss
+npm uninstall @contentful/forma-36-react-components
+npm uninstall @contentful/forma-36-tokens
+npm uninstall @contentful/forma-36-fcss
 ```
 
 For YARN
 
 ```bash
-yarn remove @contentful/f36-components
-yarn remove @contentful/f36-tokens
-yarn remove @contentful/f36-fcss
+yarn remove @contentful/forma-36-react-components
+yarn remove @contentful/forma-36-tokens
+yarn remove @contentful/forma-36-fcss
 ```
 
 Now find the following imports and remove them as well:

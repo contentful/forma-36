@@ -22,7 +22,6 @@ export const GlobalStyles = ({
           border: 0;
           box-sizing: border-box;
           margin: 0;
-          min-height: 100%;
           padding: 0;
         }
 

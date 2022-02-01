@@ -45,15 +45,15 @@
     }
   },
   "resolutions": {
-    "@types/react": "16.14.2",
-    "@types/react-dom": "16.9.10"
+    "@types/react": "16.14.22",
+    "@types/react-dom": "16.9.14"
   },
   "browserslist": "extends @contentful/browserslist-config",
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/node": "^7.4.5",
-    "@babel/polyfill": "7.2.5",
+    "@babel/polyfill": "7.12.1",
     "@babel/register": "^7.0.0",
     "@babel/runtime": "^7.6.2",
     "@commitlint/cli": "^12.1.4",
