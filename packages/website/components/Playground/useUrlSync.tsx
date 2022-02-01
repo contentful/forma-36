@@ -20,5 +20,5 @@ export function useUrlSync() {
     }
   }, [debouncedCode]);
 
-  return { router, codeUrl };
+  return { codeUrl };
 }
