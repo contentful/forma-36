@@ -1,4 +1,4 @@
-import type { ReactElement } from 'react';
+import type { ReactNode } from 'react';
 import type { EntityStatus } from '@contentful/f36-core';
 
 import type { BaseCardInternalProps } from '../BaseCard/BaseCard.types';
@@ -28,7 +28,7 @@ export type EntryCardInternalProps = Omit<
   /**
    * The thumbnail of the entry
    */
-  thumbnailElement?: ReactElement;
+  thumbnailElement?: ReactNode;
   /**
    * Changes the height of the component. When small will also ensure thumbnail and description aren't rendered
    */

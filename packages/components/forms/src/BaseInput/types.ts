@@ -3,6 +3,7 @@ import {
   FocusEventHandler,
   ChangeEventHandler,
   KeyboardEventHandler,
+  ReactNode,
 } from 'react';
 
 export interface BaseInputInternalProps extends CommonProps {
@@ -50,7 +51,7 @@ export interface BaseInputInternalProps extends CommonProps {
   /**
    * Expects any of the icon components
    */
-  icon?: React.ReactElement;
+  icon?: ReactNode;
   /**
    * Allows to listen to an input’s change in value
    */

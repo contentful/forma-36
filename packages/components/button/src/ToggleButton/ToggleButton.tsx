@@ -19,7 +19,7 @@ export interface ToggleButtonProps extends CommonProps {
   /**
    * Expects any of the icon components
    */
-  icon?: React.ReactElement;
+  icon?: React.ReactNode;
   /**
    * Function triggered when the toggle button is clicked.
    */
