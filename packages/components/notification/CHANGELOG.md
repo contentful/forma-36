@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.7](https://github.com/contentful/forma-36/compare/@contentful/f36-notification@4.0.6...@contentful/f36-notification@4.0.7) (2022-02-02)
+
+**Note:** Version bump only for package @contentful/f36-notification
+
+
+
+
+
 ## [4.0.6](https://github.com/contentful/forma-36/compare/@contentful/f36-notification@4.0.5...@contentful/f36-notification@4.0.6) (2022-01-31)
 
 **Note:** Version bump only for package @contentful/f36-notification

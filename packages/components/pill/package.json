@@ -1,13 +1,13 @@
 {
   "name": "@contentful/f36-pill",
-  "version": "4.1.4",
+  "version": "4.1.5",
   "description": "Forma 36: Pill component",
   "scripts": {
     "build": "parcel build"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@contentful/f36-button": "^4.1.4",
+    "@contentful/f36-button": "^4.1.5",
     "@contentful/f36-core": "^4.1.1",
     "@contentful/f36-icons": "^4.0.3",
     "@contentful/f36-tokens": "^4.0.0",
