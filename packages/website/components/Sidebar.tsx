@@ -142,6 +142,16 @@ export function Sidebar({
 
       {activeSection === WEBSITE_SECTION.COMPONENTS && (
         <>
+          <SidebarSection
+            links={[
+              {
+                title: 'Proposal in GitHub',
+                slug: 'https://github.com/contentful/forma-36/discussions',
+                type: 'link',
+              },
+            ]}
+            currentPage={currentPage}
+          />
           <SidebarSection links={componentsSorted} currentPage={currentPage} />
           <SidebarSection
             title="Utils"
