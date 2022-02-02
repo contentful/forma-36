@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-card",
-  "version": "4.1.6",
+  "version": "4.1.7",
   "description": "Forma 36: Card components",
   "scripts": {
     "build": "parcel build"

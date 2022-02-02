@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.7](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.6...@contentful/f36-card@4.1.7) (2022-02-02)
+
+
+### Bug Fixes
+
+* **card:** fix type definition of Badge on Card component ([#1849](https://github.com/contentful/forma-36/issues/1849)) ([e3bd1af](https://github.com/contentful/forma-36/commit/e3bd1afd2770d0202a7c7a3028604c55af35d092))
+
+
+
+
+
 ## [4.1.6](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.5...@contentful/f36-card@4.1.6) (2022-02-02)
 
 **Note:** Version bump only for package @contentful/f36-card
