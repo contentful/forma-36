@@ -146,7 +146,7 @@ export function Sidebar({
             links={[
               {
                 title: 'Proposal in GitHub',
-                slug: 'https://github.com/contentful/forma-36/discussions/new',
+                slug: 'https://github.com/contentful/forma-36/discussions',
                 type: 'link',
               },
             ]}
