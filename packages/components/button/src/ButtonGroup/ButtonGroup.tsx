@@ -43,9 +43,12 @@ function _ButtonGroup(
         if (!child) {
           return null;
         }
-        return React.cloneElement(child, {
+        return React.cloneElement(child as React.ReactElement, {
           key,
-          className: cx(styles.groupContent, child.props.className),
+          className: cx(
+            styles.groupContent,
+            (child as React.ReactElement).props.className,
+          ),
         });
       })}
     </Box>
