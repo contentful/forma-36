@@ -5,9 +5,21 @@ import { CommonProps, Stack } from '@contentful/f36-core';
 import { ChevronLeftIcon, ChevronRightIcon } from '@contentful/f36-icons';
 
 export interface PaginationProps extends CommonProps {
+  /**
+   * Sets which page is active on the Pagination
+   */
   activePage: number;
+  /**
+   * Sets how many items are displayed per page
+   */
   itemsPerPage: number;
+  /**
+   * Total amount of items the pagination is applied to.
+   */
   totalItems: number;
+  /**
+   * Handler function called when user navigates to another page on the pagination.
+   */
   onPageChange: (page: number) => void;
 }
 
@@ -37,16 +49,30 @@ export function getPagesRange(
   return baseRange.map((i) => i + page - neighboursCount - 1);
 }
 
-export function Pagination(props: PaginationProps) {
-  const { className, onPageChange } = props;
-  const totalPages = Math.ceil(props.totalItems / props.itemsPerPage);
-  const activePage = Math.max(Math.min(props.activePage, totalPages), 1);
+function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
+  const {
+    className,
+    onPageChange,
+    testId = 'cf-ui-pagination',
+    activePage: propsActivePage,
+    totalItems,
+    itemsPerPage,
+    ...otherProps
+  } = props;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const activePage = Math.max(Math.min(propsActivePage, totalPages), 1);
   const hasOnlyOnePage = totalPages === 1;
   const activePageIsAtPaginationStart = activePage === 1;
   const activePageIsAtPaginationEnd = activePage === totalPages;
 
   return (
-    <Stack className={className} testId="xc-pagination" spacing="spacingS">
+    <Stack
+      className={className}
+      testId={testId}
+      spacing="spacingS"
+      ref={ref}
+      {...otherProps}
+    >
       <Button
         aria-label="To previous page"
         size="small"
@@ -86,3 +112,5 @@ export function Pagination(props: PaginationProps) {
     </Stack>
   );
 }
+
+export const Pagination = React.forwardRef(_Pagination);
