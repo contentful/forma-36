@@ -71,7 +71,9 @@ interface PageHeaderProps {
 
 function PageHeader({ title, github, description, status }: PageHeaderProps) {
   const gridStyles = getGridStyles();
-  const showNote = status === 'deprecated';
+  const showNote = status !== 'stable';
+  const isDeprecated = status === 'deprecated';
+  const isAlpha = status === 'alpha';
 
   return (
     <header className={cx(gridStyles.contentColumns, styles.header)}>
@@ -99,11 +101,19 @@ function PageHeader({ title, github, description, status }: PageHeaderProps) {
         )}
       </Flex>
 
-      {showNote && (
+      {isDeprecated && (
         <Flex flexDirection="column" marginBottom="spacingXl">
           <Note variant="negative" title="Deprecated component">
             {title} was deprecated in v4. It will be deleted from the repository
             on 12th July 2022.
+          </Note>
+        </Flex>
+      )}
+
+      {isAlpha && (
+        <Flex flexDirection="column" marginBottom="spacingXl">
+          <Note variant="positive" title="Alpha component">
+            {title} is not ready to be used in production. Use at your own risk.
           </Note>
         </Flex>
       )}
