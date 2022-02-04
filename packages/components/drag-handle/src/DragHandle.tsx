@@ -111,7 +111,14 @@ export const DragHandle = forwardRef<
     );
 
     return (
-      // We had to change it to div becouse of the issue in library used by field editors
+      // We use div instead of a button because react-sortable-hoc lib cancels sorting if the event target is button.
+      //
+      // The other alternative way to fix it was to pass a custom `shouldCancelStart` callback,
+      // in every place where we use this component with react-sortable-hoc.
+      // (the custom callback with all the logic from default callback, but without button event cancelation).
+      // So we decided that just changing it to the div, as it was in v3, is a better fix.
+      //
+      // default shouldCancelStart callback:
       // https://github.com/clauderic/react-sortable-hoc/blob/d94ba3cc67cfc7d6d460b585e7723bdb50015e53/src/SortableContainer/defaultShouldCancelStart.js
       <div
         role="button"
