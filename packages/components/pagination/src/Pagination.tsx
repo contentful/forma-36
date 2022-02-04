@@ -67,6 +67,9 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
 
   return (
     <Stack
+      as="nav"
+      role="navigation"
+      aria-label="Pagination Navigation"
       className={className}
       testId={testId}
       spacing="spacingS"
@@ -80,6 +83,7 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
         variant="transparent"
         isDisabled={hasOnlyOnePage || activePageIsAtPaginationStart}
         onClick={() => onPageChange(activePage - 1)}
+        testId="cf-ui-pagination-previous"
       >
         Previous
       </Button>
@@ -88,6 +92,8 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
           const page = pageIndex + 1;
           return (
             <Button
+              aria-label={`To Page ${page}`}
+              aria-current={page === activePage ? 'true' : undefined}
               onClick={() => onPageChange(page)}
               size="small"
               variant={page === activePage ? 'secondary' : 'transparent'}
@@ -106,6 +112,7 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
         isDisabled={hasOnlyOnePage || activePageIsAtPaginationEnd}
         onClick={() => onPageChange(activePage + 1)}
         aria-label="To next page"
+        testId="cf-ui-pagination-next"
       >
         Next
       </Button>
