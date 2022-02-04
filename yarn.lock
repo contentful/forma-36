@@ -1781,6 +1781,16 @@
   resolved "https://registry.npmjs.org/@contentful/browserslist-config/-/browserslist-config-2.0.0.tgz"
   integrity sha512-wx/zWaVfhxwiIwET/51+Zg5PzEeyMIfWbOIgyi1zR4IM+1gJhyDgMPzUsChJazakI0EUqn1mcr+UJpwVnZ71MQ==
 
+"@contentful/f36-pagination@^4.0.0":
+  version "4.0.0-beta"
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+    "@contentful/f36-button" "^4.0.0"
+    "@contentful/f36-core" "^4.0.0"
+    "@contentful/f36-icons" "^4.0.0"
+    "@contentful/f36-tokens" "^4.0.0"
+    emotion "^10.0.17"
+
 "@cspotcode/source-map-consumer@0.8.0":
   version "0.8.0"
   resolved "https://registry.npmjs.org/@cspotcode/source-map-consumer/-/source-map-consumer-0.8.0.tgz"
