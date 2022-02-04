@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-drag-handle",
-  "version": "4.1.1",
+  "version": "4.1.2",
   "description": "Forma 36: DragHandle component",
   "scripts": {
     "build": "parcel build"
