@@ -13,9 +13,9 @@ import type { BaseCardInternalProps } from '../BaseCard/BaseCard.types';
 import { CardActions } from '../BaseCard/CardActions';
 import { getCardStyles } from './Card.styles';
 
-export type CardInternalProps = Omit<
+type BaseProps = Omit<
   BaseCardInternalProps,
-  'header' | 'ref' | 'type'
+  'header' | 'withDragHandle' | 'ref' | 'src' | 'type'
 > & {
   /**
    * Padding size to apply to the component
@@ -24,6 +24,11 @@ export type CardInternalProps = Omit<
    */
   padding?: 'default' | 'large' | 'none';
 };
+
+type BasePropsWithDragHandle = BaseProps &
+  Pick<BaseCardInternalProps, 'withDragHandle'> & { padding: 'none' };
+
+export type CardInternalProps = BaseProps | BasePropsWithDragHandle;
 
 export type CardProps<
   E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG
