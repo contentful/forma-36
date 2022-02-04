@@ -18,6 +18,7 @@ export * from '@contentful/f36-skeleton';
 export * from '@contentful/f36-accordion';
 export * from '@contentful/f36-tabs';
 export * from '@contentful/f36-copybutton';
+export * from '@contentful/f36-pagination';
 export * from '@contentful/f36-popover';
 export * from '@contentful/f36-menu';
 export * from '@contentful/f36-modal';
