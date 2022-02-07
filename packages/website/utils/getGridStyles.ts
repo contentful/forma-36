@@ -14,7 +14,7 @@ export const getGridStyles = (isFullScreen = false) => ({
     `,
   }),
   wrapperColumns: css({
-    gridTemplateColumns: '240px auto',
+    gridTemplateColumns: '280px auto',
   }),
   contentColumns: css({
     display: 'grid',
