@@ -127,6 +127,7 @@ export { PlusCircleTrimmed as PlusCircleTrimmedIcon } from './PlusCircleTrimmed'
 export { PlusTrimmed as PlusTrimmedIcon } from './PlusTrimmed';
 export { Presentation as PresentationIcon } from './Presentation';
 export { Preview as PreviewIcon } from './Preview';
+export { PreviewOff as PreviewOffIcon } from './PreviewOff';
 export { Puzzle as PuzzleIcon } from './Puzzle';
 export { Quote as QuoteIcon } from './Quote';
 export { QuoteTrimmed as QuoteTrimmedIcon } from './QuoteTrimmed';
