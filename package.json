@@ -62,7 +62,7 @@
     "@netlify/plugin-nextjs": "^4.0.0-rc.1",
     "@parcel/babel-plugin-transform-runtime": "2.0.1",
     "@parcel/babel-preset-env": "2.0.1",
-    "@parcel/packager-ts": "2.0.1",
+    "@parcel/packager-ts": "2.2.1",
     "@parcel/transformer-typescript-types": "2.0.1",
     "@segment/snippet": "^4.15.3",
     "@storybook/addon-a11y": "^6.3.12",
