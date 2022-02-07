@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.6](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.1.5...@contentful/f36-button@4.1.6) (2022-02-07)
+
+
+### Bug Fixes
+
+* **button:** enforce color properties with !important ([#1856](https://github.com/contentful/forma-36/issues/1856)) ([2f9b6f8](https://github.com/contentful/forma-36/commit/2f9b6f8b2c6cb9d0f7d61449d6160e45b17512aa))
+
+
+
+
+
 ## [4.1.5](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.1.4...@contentful/f36-button@4.1.5) (2022-02-02)
 
 **Note:** Version bump only for package @contentful/f36-button
