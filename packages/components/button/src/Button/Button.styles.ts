@@ -24,6 +24,8 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
   switch (variant) {
     case 'primary':
       return {
+        // !important is a temporary necessity until we get rid of legacy styles
+        // in the web app. See https://github.com/contentful/forma-36/pull/1856
         color: `${tokens.colorWhite} !important`,
         backgroundColor: tokens.blue500,
         borderColor: tokens.blue500,
