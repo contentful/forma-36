@@ -16818,7 +16818,7 @@ min-document@^2.19.0:
   dependencies:
     dom-walk "^0.1.0"
 
-min-indent@^1.0.0:
+min-indent@^1.0.0, min-indent@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/min-indent/-/min-indent-1.0.1.tgz"
   integrity sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==
@@ -21228,13 +21228,14 @@ relateurl@^0.2.7:
   resolved "https://registry.npmjs.org/relateurl/-/relateurl-0.2.7.tgz"
   integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
 
-remark-code-import@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/remark-code-import/-/remark-code-import-0.4.0.tgz"
-  integrity sha512-3UHRIfr7+kRBGOy6Bzp4c1dl8BLCLv+saBTAgW4+lPfs56vV6yBhO038i6MJTEoyXX1zli7l8tMGIHbYANdtZg==
+remark-code-import@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/remark-code-import/-/remark-code-import-1.1.0.tgz#b9b26648fcc1d679b3f919d9e1effb916859536b"
+  integrity sha512-lzIGbdfAvlVyPB9EkO8QqqgozR6/FhKaue4gOHPSh98c2XnKz3KpBlLIuUyyJHbgyRDxKXR9fY47bmJSG6wAig==
   dependencies:
+    strip-indent "^4.0.0"
     to-gatsby-remark-plugin "^0.1.0"
-    unist-util-visit "^2.0.1"
+    unist-util-visit "^4.1.0"
 
 remark-code-titles@^0.1.1:
   version "0.1.2"
@@ -22895,6 +22896,13 @@ strip-indent@^3.0.0:
   dependencies:
     min-indent "^1.0.0"
 
+strip-indent@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/strip-indent/-/strip-indent-4.0.0.tgz#b41379433dd06f5eae805e21d631e07ee670d853"
+  integrity sha512-mnVSV2l+Zv6BLpSD/8V87CW/y9EmmbYzGCIavsnsI6/nwn26DwffM/yztm30Z/I2DY9wdS3vXVCMnHDgZaVNoA==
+  dependencies:
+    min-indent "^1.0.1"
+
 strip-json-comments@3.0.1:
   version "3.0.1"
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.0.1.tgz"
@@ -24152,7 +24160,7 @@ unist-util-visit-parents@^5.0.0:
     "@types/unist" "^2.0.0"
     unist-util-is "^5.0.0"
 
-unist-util-visit@2.0.3, unist-util-visit@^2.0.0, unist-util-visit@^2.0.1:
+unist-util-visit@2.0.3, unist-util-visit@^2.0.0:
   version "2.0.3"
   resolved "https://registry.npmjs.org/unist-util-visit/-/unist-util-visit-2.0.3.tgz"
   integrity sha512-iJ4/RczbJMkD0712mGktuGpm/U4By4FfDonL7N/9tATGIF4imikjOuagyMY53tnZq3NP6BcmlrHhEKAfGWjh7Q==
@@ -24168,7 +24176,7 @@ unist-util-visit@^1.4.0:
   dependencies:
     unist-util-visit-parents "^2.0.0"
 
-unist-util-visit@^4.0.0:
+unist-util-visit@^4.0.0, unist-util-visit@^4.1.0:
   version "4.1.0"
   resolved "https://registry.npmjs.org/unist-util-visit/-/unist-util-visit-4.1.0.tgz"
   integrity sha512-n7lyhFKJfVZ9MnKtqbsqkQEk5P1KShj0+//V7mAcoI6bpbUjh3C/OG8HVD+pBihfh6Ovl01m8dkcv9HNqYajmQ==
