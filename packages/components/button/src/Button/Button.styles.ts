@@ -24,14 +24,13 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
   switch (variant) {
     case 'primary':
       return {
-        // !important is a temporary necessity until we get rid of legacy styles
-        // in the web app. See https://github.com/contentful/forma-36/pull/1856
-        color: `${tokens.colorWhite} !important`,
+        color: tokens.colorWhite,
         backgroundColor: tokens.blue500,
         borderColor: tokens.blue500,
         '&:hover': {
           backgroundColor: tokens.blue600,
           borderColor: tokens.blue600,
+          color: tokens.colorWhite,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
@@ -41,11 +40,12 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
       };
     case 'secondary':
       return {
-        color: `${tokens.gray900} !important`,
+        color: tokens.gray900,
         backgroundColor: tokens.colorWhite,
         borderColor: tokens.gray300,
         '&:hover': {
           backgroundColor: tokens.gray100,
+          color: tokens.gray900,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
@@ -54,12 +54,13 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
       };
     case 'positive':
       return {
-        color: `${tokens.colorWhite} !important`,
+        color: tokens.colorWhite,
         backgroundColor: tokens.colorPositive,
         borderColor: tokens.colorPositive,
         '&:hover': {
           backgroundColor: tokens.green600,
           borderColor: tokens.green600,
+          color: tokens.colorWhite,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
@@ -69,12 +70,13 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
       };
     case 'negative':
       return {
-        color: `${tokens.colorWhite} !important`,
+        color: tokens.colorWhite,
         backgroundColor: tokens.red600,
         borderColor: tokens.red600,
         '&:hover': {
           backgroundColor: tokens.red700,
           borderColor: tokens.red700,
+          color: tokens.colorWhite,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
@@ -84,13 +86,13 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
       };
     case 'transparent':
       return {
-        color: `${tokens.gray800} !important`,
+        color: tokens.gray800,
         background: `none`,
         borderColor: `transparent`,
         boxShadow: `none`,
         '&:hover': {
           backgroundColor: tokens.gray100,
-          color: `${tokens.gray900} !important`,
+          color: tokens.gray900,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
