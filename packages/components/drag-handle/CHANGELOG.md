@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.3](https://github.com/contentful/forma-36/compare/@contentful/f36-drag-handle@4.1.2...@contentful/f36-drag-handle@4.1.3) (2022-02-07)
+
+**Note:** Version bump only for package @contentful/f36-drag-handle
+
+
+
+
+
 ## [4.1.2](https://github.com/contentful/forma-36/compare/@contentful/f36-drag-handle@4.1.1...@contentful/f36-drag-handle@4.1.2) (2022-02-04)
 
 **Note:** Version bump only for package @contentful/f36-drag-handle
