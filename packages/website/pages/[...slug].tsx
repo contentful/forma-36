@@ -3,7 +3,6 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import rehypeToc from 'rehype-toc';
 import { serialize } from 'next-mdx-remote/serialize';
@@ -95,7 +94,6 @@ export async function getStaticProps(props: { params: { slug: string[] } }) {
       remarkPlugins: [remarkCodeTitles, remarkCodeImport],
       rehypePlugins: [
         rehypeSlug,
-        rehypeAutolinkHeadings,
         [
           rehypeToc,
           {

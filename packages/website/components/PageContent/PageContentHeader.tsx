@@ -29,6 +29,9 @@ const styles = {
       marginBottom: 0,
     },
   }),
+  gitHubLink: css({
+    gridColumnStart: 'initial',
+  }),
 };
 
 interface PageContentHeaderProps {
@@ -49,16 +52,12 @@ export function PageContentHeader({
 
   return (
     <header className={cx(gridStyles.contentColumns, styles.header)}>
-      <Flex
-        alignItems="flex-start"
-        justifyContent="space-between"
-        marginBottom={showNote ? 'spacingXl' : 'spacingXs'}
-      >
-        <DisplayText as="h1" marginBottom="none">
-          {title}
-        </DisplayText>
+      <DisplayText as="h1" marginBottom={showNote ? 'spacingXl' : 'spacingXs'}>
+        {title}
+      </DisplayText>
 
-        {github && (
+      {github && (
+        <Flex className={styles.gitHubLink} paddingLeft="spacing2Xl">
           <TextLink
             href={github}
             target="_blank"
@@ -68,8 +67,8 @@ export function PageContentHeader({
           >
             View on Github
           </TextLink>
-        )}
-      </Flex>
+        </Flex>
+      )}
 
       {showNote && (
         <Flex flexDirection="column" marginBottom="spacingXl">
