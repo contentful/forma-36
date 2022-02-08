@@ -290,89 +290,88 @@ describe('Menu', function () {
       );
 
     it('should open submenu if item with submenu clicked', async () => {
-      const { getByTestId } = renderMenuWithSubMenu();
+      const { queryByTestId } = renderMenuWithSubMenu();
 
       await waitFor(() => {
-        expect(getByTestId('menu')).toBeVisible();
-        expect(getByTestId('submenu')).not.toBeVisible();
+        expect(queryByTestId('menu')).toBeInTheDocument();
+        expect(queryByTestId('submenu')).not.toBeInTheDocument();
       });
 
       await act(async () => {
-        userEvent.click(getByTestId('second-item'));
+        userEvent.click(queryByTestId('second-item'));
       });
 
       await waitFor(() => {
-        expect(getByTestId('submenu')).toBeVisible();
+        expect(queryByTestId('submenu')).toBeInTheDocument();
       });
     });
 
     it('should open submenu if item with submenu is hovered and close when its unhovered', async () => {
-      const { getByTestId } = renderMenuWithSubMenu();
+      const { queryByTestId } = renderMenuWithSubMenu();
 
       await waitFor(() => {
-        expect(getByTestId('menu')).toBeVisible();
-        expect(getByTestId('submenu')).not.toBeVisible();
-      });
-
-      await act(async () => {
-        userEvent.hover(getByTestId('second-item'));
-      });
-      await waitFor(() => {
-        expect(getByTestId('submenu')).toBeVisible();
+        expect(queryByTestId('menu')).toBeInTheDocument();
+        expect(queryByTestId('submenu')).not.toBeInTheDocument();
       });
 
       await act(async () => {
-        userEvent.unhover(getByTestId('second-item'));
+        userEvent.hover(queryByTestId('second-item'));
       });
       await waitFor(() => {
-        expect(getByTestId('submenu')).not.toBeVisible();
+        expect(queryByTestId('submenu')).toBeInTheDocument();
+      });
+
+      await act(async () => {
+        userEvent.unhover(queryByTestId('second-item'));
+      });
+      await waitFor(() => {
+        expect(queryByTestId('submenu')).not.toBeInTheDocument();
       });
     });
 
     it('should open submenu if ArrowRight clicked on item with submenu', async () => {
-      const { getByTestId } = renderMenuWithSubMenu();
+      const { queryByTestId } = renderMenuWithSubMenu();
 
       await waitFor(() => {
-        expect(getByTestId('menu')).toBeVisible();
-        expect(getByTestId('submenu')).not.toBeVisible();
+        expect(queryByTestId('menu')).toBeInTheDocument();
+        expect(queryByTestId('submenu')).not.toBeInTheDocument();
       });
 
       await act(async () => {
-        fireEvent.keyDown(getByTestId('second-item'), {
+        fireEvent.keyDown(queryByTestId('second-item'), {
           key: 'ArrowRight',
         });
       });
       await waitFor(() => {
-        expect(getByTestId('submenu')).toBeVisible();
+        expect(queryByTestId('submenu')).toBeInTheDocument();
       });
     });
 
     it('should close submenu if ArrowLeft clicked on any item in submenu', async () => {
-      const { getByTestId } = renderMenuWithSubMenu();
+      const { queryByTestId } = renderMenuWithSubMenu();
 
       await waitFor(() => {
-        expect(getByTestId('menu')).toBeVisible();
-        expect(getByTestId('submenu')).not.toBeVisible();
+        expect(queryByTestId('menu')).toBeInTheDocument();
       });
 
       // open a submenu first
       await act(async () => {
-        fireEvent.keyDown(getByTestId('second-item'), {
+        fireEvent.keyDown(queryByTestId('second-item'), {
           key: 'ArrowRight',
         });
       });
       // verify it's open
       await waitFor(() => {
-        expect(getByTestId('submenu')).toBeVisible();
+        expect(queryByTestId('submenu')).toBeInTheDocument();
       });
 
       await act(async () => {
-        fireEvent.keyDown(getByTestId('submenu-item-2'), {
+        fireEvent.keyDown(queryByTestId('submenu-item-2'), {
           key: 'ArrowLeft',
         });
       });
       await waitFor(() => {
-        expect(getByTestId('submenu')).not.toBeVisible();
+        expect(queryByTestId('submenu')).not.toBeInTheDocument();
       });
     });
   });
