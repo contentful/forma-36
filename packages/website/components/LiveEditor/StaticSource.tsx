@@ -3,7 +3,7 @@ import React from 'react';
 import Highlight, {
   defaultProps as HighlightDefaultProps,
 } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/github';
+import github from 'prism-react-renderer/themes/github';
 import { cx, css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
@@ -19,7 +19,7 @@ export function StaticSource(props: { children: string; className?: string }) {
   return (
     <Highlight
       {...HighlightDefaultProps}
-      theme={theme}
+      theme={github}
       code={props.children.trim()}
       language={
         ((props.className || '').replace('language-', '') as unknown) as any

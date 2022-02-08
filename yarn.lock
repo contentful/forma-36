@@ -1673,6 +1673,17 @@
   resolved "https://registry.npmjs.org/@contentful/browserslist-config/-/browserslist-config-2.0.0.tgz"
   integrity sha512-wx/zWaVfhxwiIwET/51+Zg5PzEeyMIfWbOIgyi1zR4IM+1gJhyDgMPzUsChJazakI0EUqn1mcr+UJpwVnZ71MQ==
 
+"@contentful/f36-icons@^4.0.4":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@contentful/f36-icons/-/f36-icons-4.0.4.tgz#86e8026a27b6c8c3b5e38deb28bf1d1d402b2e16"
+  integrity sha512-gfEsMZJFhJhFIymIcWdeep/yp5vKip0EfyPxiyMfLivYHRWAeIiPo6Yr60SuAczQU+60dMXSsf96UCHdxBCx8Q==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+    "@contentful/f36-core" "^4.1.1"
+    "@contentful/f36-icon" "^4.1.1"
+    "@contentful/f36-tokens" "^4.0.0"
+    emotion "^10.0.17"
+
 "@cspotcode/source-map-consumer@0.8.0":
   version "0.8.0"
   resolved "https://registry.npmjs.org/@cspotcode/source-map-consumer/-/source-map-consumer-0.8.0.tgz"
