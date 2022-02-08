@@ -71,9 +71,9 @@ interface PageHeaderProps {
 
 function PageHeader({ title, github, description, status }: PageHeaderProps) {
   const gridStyles = getGridStyles();
-  const showNote = status !== 'stable';
   const isDeprecated = status === 'deprecated';
   const isAlpha = status === 'alpha';
+  const showNote = isAlpha || isDeprecated;
 
   return (
     <header className={cx(gridStyles.contentColumns, styles.header)}>
