@@ -120,8 +120,8 @@ const styles = {
     border-radius: 0 0 ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium};
   `
 };
-const ChevronRightIcon = f36icons.PreviewIcon;
-const ChevronDownIcon = f36icons.PreviewOffIcon;
+const ComponentPreviewIcon = f36icons.PreviewIcon;
+const ComponentPreviewOffIcon = f36icons.PreviewOffIcon;
 
 export function ComponentSource({
   children,
@@ -157,7 +157,7 @@ export function ComponentSource({
               <Button
                 size="small"
                 variant="secondary"
-                startIcon={showSource ? <ChevronDownIcon /> : <ChevronRightIcon />}
+                startIcon={showSource ? <ComponentPreviewOffIcon /> : <ComponentPreviewIcon />}
                 onClick={handleToggle}
               >
                 {showSource ? 'Hide code' : 'Show code'}
