@@ -27,9 +27,14 @@ const styles = {
 const isLinkActive = (href, currentPage) =>
   currentPage.replace(/\/$/, '') === href.replace(/\/$/, '');
 
-export type SidebarLinkType = { title: string; slug: string; type: 'link' };
+export type SidebarLinkType = {
+  title: string;
+  slug: string;
+  type: 'link';
+  isNew?: boolean;
+};
 export type SidebarSectionType = {
-  title?: string;
+  title: string;
   links: SidebarLinkType[];
   type: 'section';
 };
@@ -120,6 +125,7 @@ export function SidebarSection({
             isActive={isLinkActive(link.slug, currentPage)}
             href={link.slug}
             isExternal={link.slug.includes('https://')}
+            isNew={link.isNew}
           >
             {link.title}
           </SidebarLink>

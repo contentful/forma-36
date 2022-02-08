@@ -53,6 +53,11 @@
       "slug": "/components/notification/"
     },
     {
+      "title": "Pagination",
+      "slug": "/components/pagination/",
+      "isNew": true
+    },
+    {
       "title": "Pill",
       "slug": "/components/pill/"
     },
