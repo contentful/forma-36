@@ -5,6 +5,9 @@ import {
   SandpackCodeEditor,
   SandpackPreview,
 } from '@codesandbox/sandpack-react';
+import tokens from '@contentful/f36-tokens';
+
+import { PlaygroundTopBar } from './PlaygroundTopBar';
 
 const indexFile = `import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
@@ -22,28 +25,34 @@ ReactDOM.render(
   rootElement
 );`;
 
-const stylesFile = `body {
-  padding: 16px;
-}`;
+const stylesFile = `
+  body {
+    padding: ${tokens.spacingM};
+  }
+`;
 
-export function SandpackRenderer(props: {
+interface Props {
   code: string;
-  topbar?: JSX.Element;
   showOpenInCodeSandbox?: boolean;
-}) {
+}
+
+export function SandpackRenderer({
+  code,
+  showOpenInCodeSandbox = false,
+}: Props) {
   return (
     <SandpackProvider
       template="react"
       customSetup={{
         files: {
-          '/App.js': props.code,
+          '/App.js': code,
           '/styles.css': {
             code: stylesFile,
             hidden: true,
           },
           '/index.js': {
-            hidden: true,
             code: indexFile,
+            hidden: true,
           },
         },
         dependencies: {
@@ -64,18 +73,18 @@ export function SandpackRenderer(props: {
         },
       }}
     >
-      {props.topbar}
+      <PlaygroundTopBar />
+
       <SandpackLayout>
         <SandpackCodeEditor
           showTabs={false}
           showLineNumbers
           showInlineErrors
           wrapContent
-          initMode="immediate"
         />
         <SandpackPreview
           showSandpackErrorOverlay
-          showOpenInCodeSandbox={props.showOpenInCodeSandbox ?? false}
+          showOpenInCodeSandbox={showOpenInCodeSandbox}
           showRefreshButton
           viewportSize="auto"
         />

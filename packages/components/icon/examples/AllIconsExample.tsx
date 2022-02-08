@@ -4,7 +4,7 @@ import { Grid, Flex, Text } from '@contentful/f36-components';
 
 export default function AllIconsExample() {
   return (
-    <Grid columns="repeat(3, 1fr)">
+    <Grid columns="repeat(2, 1fr)">
       {Object.entries(f36icons).map(([name, icon]) => {
         const Component = icon;
 

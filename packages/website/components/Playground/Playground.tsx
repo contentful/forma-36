@@ -2,8 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import qs from 'qs';
 
-import { SandpackRenderer } from '../SandpackRenderer';
-import { PlaygroundTopBar } from './PlaygroundTopBar';
+import { SandpackRenderer } from './SandpackRenderer';
 import * as coder from '../../utils/coder';
 
 const defaultCode = `
@@ -39,5 +38,5 @@ export default function Playground() {
     return null;
   }
 
-  return <SandpackRenderer code={code} topbar={<PlaygroundTopBar />} />;
+  return <SandpackRenderer code={code} />;
 }

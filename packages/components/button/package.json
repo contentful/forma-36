@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-button",
-  "version": "4.1.4",
+  "version": "4.2.0",
   "description": "Forma 36: Button component",
   "scripts": {
     "build": "parcel build"
@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@contentful/f36-icon": "^4.1.1",
-    "@contentful/f36-icons": "^4.0.3"
+    "@contentful/f36-icons": "^4.0.4"
   },
   "peerDependencies": {
     "react": ">=16.8"

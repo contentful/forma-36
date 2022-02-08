@@ -67,9 +67,16 @@ const styles = {
   `,
   // !important was necessary because these styles are being applied after the Card component styles
   card: css`
+    padding: 3rem;
     font-family: ${tokens.fontStackPrimary};
     border-radius: ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium} 0 0 !important;
   `,
+  previewWrapper: css({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }),
   toggle: css`
     font-family: ${tokens.fontStackPrimary};
     border-radius: 0 0 ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium};
@@ -116,7 +123,7 @@ export function ComponentSource({
         scope={liveProviderScope}
       >
         <Card className={styles.card}>
-          <LivePreview />
+          <LivePreview className={styles.previewWrapper} />
         </Card>
         {showSource && (
           <>

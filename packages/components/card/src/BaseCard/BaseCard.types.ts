@@ -21,7 +21,12 @@ export type BaseCardInternalProps = CommonProps &
     /**
      * Badge component to show in Card header
      */
-    badge?: ReactElement;
+    badge?:
+      | ReactElement
+      | boolean
+      | null
+      | undefined
+      | (ReactElement | boolean | null | undefined)[];
     /**
      * Passing href into the Card. You need to also add property as="a" to make it rendered as <a />
      */
