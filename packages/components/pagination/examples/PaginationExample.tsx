@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Pagination } from '@contentful/f36-pagination';
 
-export function PaginationExample() {
+export default function PaginationExample() {
   const [page, setPage] = useState(1);
 
   return (
