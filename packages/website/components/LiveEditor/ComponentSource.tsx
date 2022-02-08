@@ -102,7 +102,7 @@ const styles = {
   // !important is needed to overwrite the react live setup.
   editor: css`
     min-height: 120px;
-    padding: ${tokens.spacingL} 0 !important; 
+    padding: ${tokens.spacingL} 0 !important;
     border-radius: 0 0 ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium};
   `,
   editorHidden: css`
@@ -116,9 +116,13 @@ const styles = {
     bottom: 0;
     left: 0;
     top: 0;
-    background: linear-gradient(0, ${tokens.gray300} 0%,rgba(18,28,45,0) 100%);
+    background: linear-gradient(
+      0,
+      ${tokens.gray300} 0%,
+      rgba(18, 28, 45, 0) 100%
+    );
     border-radius: 0 0 ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium};
-  `
+  `,
 };
 const ComponentPreviewIcon = f36icons.PreviewIcon;
 const ComponentPreviewOffIcon = f36icons.PreviewOffIcon;
@@ -150,50 +154,67 @@ export function ComponentSource({
         <Card className={styles.card}>
           <LivePreview className={styles.previewWrapper} />
         </Card>
-        <div style={{position: 'relative'}}>
+        <div style={{ position: 'relative' }}>
           <LiveError className={styles.error} />
           <div style={{ position: 'relative' }}>
-            <Flex className={styles.toggle} justifyContent="space-between" alignItems="center"> 
+            <Flex
+              className={styles.toggle}
+              justifyContent="space-between"
+              alignItems="center"
+            >
               <Button
                 size="small"
                 variant="secondary"
-                startIcon={showSource ? <ComponentPreviewOffIcon /> : <ComponentPreviewIcon />}
+                startIcon={
+                  showSource ? (
+                    <ComponentPreviewOffIcon />
+                  ) : (
+                    <ComponentPreviewIcon />
+                  )
+                }
                 onClick={handleToggle}
               >
                 {showSource ? 'Hide code' : 'Show code'}
               </Button>
             </Flex>
-            
+
             <LiveEditor
-              className={cx(styles.editor, {[styles.editorHidden]: !showSource})}
+              className={cx(styles.editor, {
+                [styles.editorHidden]: !showSource,
+              })}
             />
-            <Flex className={styles.floatingPanel} justifyContent="space-between" alignItems="center">
+            <Flex
+              className={styles.floatingPanel}
+              justifyContent="space-between"
+              alignItems="center"
+            >
               {showSource && (
-                  <Flex>
-                    <CopyButton
-                      tooltipProps={{ placement: 'top' }}
-                      className={styles.copyButton}
-                      value={children}
-                      size="small"
-                    />
-                    {isExampleFromFile && (
-                      <Flex marginLeft="spacing2Xs">
-                        <Button
-                          className={styles.playgroundButton}
-                          endIcon={<ExternalLinkIcon />}
-                          size="small"
-                          onClick={() => {
-                            const href = `/playground?code=${coder.encode(children)}`;
-                            router.push(href, href);
-                          }}
-                        >
-                          Open in Playground
-                        </Button>
-                      </Flex>
-                    )}
-                   
-                  </Flex>
-                )}
+                <Flex>
+                  <CopyButton
+                    tooltipProps={{ placement: 'top' }}
+                    className={styles.copyButton}
+                    value={children}
+                    size="small"
+                  />
+                  {isExampleFromFile && (
+                    <Flex marginLeft="spacing2Xs">
+                      <Button
+                        className={styles.playgroundButton}
+                        endIcon={<ExternalLinkIcon />}
+                        size="small"
+                        onClick={() => {
+                          const href = `/playground?code=${coder.encode(
+                            children,
+                          )}`;
+                          router.push(href, href);
+                        }}
+                      >
+                        Open in Playground
+                      </Button>
+                    </Flex>
+                  )}
+                </Flex>
+              )}
             </Flex>
           </div>
           {!showSource && <div className={styles.editorCover} />}
