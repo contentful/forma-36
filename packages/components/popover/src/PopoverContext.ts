@@ -3,6 +3,7 @@ import React, { HTMLProps } from 'react';
 export type PopoverContextType = {
   isOpen: boolean;
   usePortal: boolean;
+  renderOnlyWhenOpen: boolean;
   getPopoverProps: (
     _props: HTMLProps<HTMLDivElement>,
     _ref: React.Ref<HTMLDivElement>,
