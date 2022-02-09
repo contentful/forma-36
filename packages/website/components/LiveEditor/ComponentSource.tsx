@@ -17,7 +17,7 @@ import { Card, Button, CopyButton } from '@contentful/f36-components';
 import * as f36icons from '@contentful/f36-icons';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
 import { Flex } from '@contentful/f36-core';
-import githubTheme from 'prism-react-renderer/themes/github';
+import { theme } from './theme';
 import { formatSourceCode } from './utils';
 import { useRouter } from 'next/router';
 import * as coder from '../../utils/coder';
@@ -153,7 +153,7 @@ export function ComponentSource({
     <Flex flexDirection="column" className={styles.root}>
       <LiveProvider
         code={formatSourceCode(children)}
-        theme={githubTheme}
+        theme={theme}
         // The order is important here
         scope={liveProviderScope}
       >

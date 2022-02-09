@@ -8,7 +8,7 @@ import {
 import tokens from '@contentful/f36-tokens';
 
 import { PlaygroundTopBar } from './PlaygroundTopBar';
-
+import { palette } from '../LiveEditor/theme';
 const indexFile = `import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { GlobalStyles } from "@contentful/f36-components";
@@ -74,7 +74,41 @@ export function SandpackRenderer({
     >
       <PlaygroundTopBar />
 
-      <SandpackLayout>
+      <SandpackLayout theme={
+        {
+          "palette": {
+            "activeText": palette.activeText,
+            "defaultText": palette.color,
+            "inactiveText": palette.inactiveText,
+            "activeBackground": palette.backgroundColor,
+            "defaultBackground": palette.backgroundColor,
+            "inputBackground": palette.inputBackground,
+            "accent": palette.accent,
+            "errorBackground": palette.errorBackground,
+            "errorForeground": palette.deleted
+          },
+          "syntax": {
+            "plain": palette.color,
+            "comment": {
+              "color": palette.comment,
+              "fontStyle": "italic"
+            },
+            "keyword": palette.tag,
+            "tag": palette.tag,
+            "punctuation": palette.color,
+            "definition": palette.deleted,
+            "property": palette.selector,
+            "static": palette.attrValue,
+            "string": palette.attrValue
+          },
+          "typography": {
+            "bodyFont": "font-family: \"SFMono-Regular\", Consolas, \"Liberation Mono\", Menlo, Courier, monospace;",
+            "monoFont": "font-family: \"SFMono-Regular\", Consolas, \"Liberation Mono\", Menlo, Courier, monospace;",
+            "fontSize": "14px",
+            "lineHeight": "1.4"
+          }
+        }
+      }>
         <SandpackCodeEditor
           showTabs={false}
           showLineNumbers
