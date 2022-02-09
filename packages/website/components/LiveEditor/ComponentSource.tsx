@@ -17,7 +17,7 @@ import { Card, Button, CopyButton } from '@contentful/f36-components';
 import * as f36icons from '@contentful/f36-icons';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
 import { Flex } from '@contentful/f36-core';
-import github from 'prism-react-renderer/themes/github';
+import githubTheme from 'prism-react-renderer/themes/github';
 import { formatSourceCode } from './utils';
 import { useRouter } from 'next/router';
 import * as coder from '../../utils/coder';
@@ -96,13 +96,12 @@ const styles = {
     }
   `,
   playgroundButton: css`
-    margin-left: ${tokens.spacingS};
     font-family: ${tokens.fontStackPrimary};
   `,
   // !important is needed to overwrite the react live setup.
   editor: css`
     min-height: 120px;
-    padding: ${tokens.spacingL} ${tokens.spacingL} ${tokens.spacingXl}  !important;
+    padding: ${tokens.spacingL} ${tokens.spacingL} ${tokens.spacingXl} !important;
     border-radius: 0 0 ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium};
   `,
   editorHidden: css`
@@ -147,7 +146,7 @@ export function ComponentSource({
     <Flex flexDirection="column" className={styles.root}>
       <LiveProvider
         code={formatSourceCode(children)}
-        theme={github}
+        theme={githubTheme}
         // The order is important here
         scope={liveProviderScope}
       >
@@ -189,7 +188,7 @@ export function ComponentSource({
               alignItems="center"
             >
               {showSource && (
-                <Flex>
+                <Flex gap="spacingXs">
                   <CopyButton
                     tooltipProps={{ placement: 'top' }}
                     className={styles.copyButton}
@@ -197,21 +196,19 @@ export function ComponentSource({
                     size="small"
                   />
                   {isExampleFromFile && (
-                    <Flex marginLeft="spacing2Xs">
-                      <Button
-                        className={styles.playgroundButton}
-                        endIcon={<ExternalLinkIcon />}
-                        size="small"
-                        onClick={() => {
-                          const href = `/playground?code=${coder.encode(
-                            children,
-                          )}`;
-                          router.push(href, href);
-                        }}
-                      >
-                        Open in Playground
-                      </Button>
-                    </Flex>
+                    <Button
+                      className={styles.playgroundButton}
+                      endIcon={<ExternalLinkIcon />}
+                      size="small"
+                      onClick={() => {
+                        const href = `/playground?code=${coder.encode(
+                          children,
+                        )}`;
+                        router.push(href, href);
+                      }}
+                    >
+                      Open in Playground
+                    </Button>
                   )}
                 </Flex>
               )}
