@@ -1,12 +1,6 @@
 import React from 'react';
 import { css, cx } from 'emotion';
-import {
-  DisplayText,
-  Flex,
-  TextLink,
-  Note,
-  Box,
-} from '@contentful/f36-components';
+import { DisplayText, Flex, TextLink, Note } from '@contentful/f36-components';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 
@@ -58,27 +52,9 @@ export function PageContentHeader({
 
   return (
     <header className={cx(gridStyles.contentColumns, styles.header)}>
-      <Box>
-        <DisplayText
-          as="h1"
-          marginBottom={showNote ? 'spacingXl' : 'spacingXs'}
-        >
-          {title}
-        </DisplayText>
-
-        {showNote && (
-          <Flex flexDirection="column" marginBottom="spacingXl">
-            <Note variant="negative" title="Deprecated component">
-              {title} was deprecated in v4. It will be deleted from the
-              repository on 12th July 2022.
-            </Note>
-          </Flex>
-        )}
-
-        <Flex flexDirection="column" className={styles.intro}>
-          {children}
-        </Flex>
-      </Box>
+      <DisplayText as="h1" marginBottom={showNote ? 'spacingXl' : 'spacingXs'}>
+        {title}
+      </DisplayText>
 
       {github && (
         <Flex
@@ -89,25 +65,29 @@ export function PageContentHeader({
           alignItems="start"
         >
           <TextLink
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            icon={<ExternalLinkIcon />}
-            alignIcon="end"
-          >
-            View on Github
-          </TextLink>
-          <TextLink
             href="https://github.com/contentful/forma-36/issues/new/choose"
             target="_blank"
             rel="noopener noreferrer"
             icon={<ExternalLinkIcon />}
             alignIcon="end"
           >
-            Create a Github issue
+            Give feedback
           </TextLink>
         </Flex>
       )}
+
+      {showNote && (
+        <Flex flexDirection="column" marginBottom="spacingXl">
+          <Note variant="negative" title="Deprecated component">
+            {title} was deprecated in v4. It will be deleted from the repository
+            on 12th July 2022.
+          </Note>
+        </Flex>
+      )}
+
+      <Flex flexDirection="column" className={styles.intro}>
+        {children}
+      </Flex>
     </header>
   );
 }
