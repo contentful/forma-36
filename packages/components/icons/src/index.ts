@@ -11,6 +11,8 @@ export type {
 export { Archive as ArchiveIcon } from './Archive';
 export { ArrowDown as ArrowDownIcon } from './ArrowDown';
 export { ArrowDownTrimmed as ArrowDownTrimmedIcon } from './ArrowDownTrimmed';
+export { ArrowForward as ArrowForwardIcon } from './ArrowForward';
+export { ArrowForwardTrimmed as ArrowForwardTrimmedIcon } from './ArrowForwardTrimmed';
 export { ArrowUp as ArrowUpIcon } from './ArrowUp';
 export { ArrowUpTrimmed as ArrowUpTrimmedIcon } from './ArrowUpTrimmed';
 export { Asset as AssetIcon } from './Asset';
