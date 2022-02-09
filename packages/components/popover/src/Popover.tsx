@@ -95,6 +95,14 @@ export interface PopoverProps {
    * @default [1, 4]
    */
   offset?: [number, number];
+
+  /**
+   * Defines if popover should be rendered in the DOM only when it's open
+   * or all the time (after the component has been mounted)
+   *
+   * @default true
+   */
+  renderOnlyWhenOpen?: boolean;
 }
 
 export function Popover(props: ExpandProps<PopoverProps>) {
@@ -111,6 +119,7 @@ export function Popover(props: ExpandProps<PopoverProps>) {
     autoFocus = true,
     id,
     offset = [1, 4],
+    renderOnlyWhenOpen = true,
   } = props;
 
   const [triggerElement, setTriggerElement] = useState<HTMLElement | null>(
@@ -178,6 +187,7 @@ export function Popover(props: ExpandProps<PopoverProps>) {
     () => ({
       isOpen,
       usePortal,
+      renderOnlyWhenOpen,
       getTriggerProps: (_ref = null) => ({
         ref: mergeRefs(setTriggerElement, _ref),
         ['aria-expanded']: Boolean(isOpen),
@@ -228,6 +238,7 @@ export function Popover(props: ExpandProps<PopoverProps>) {
     }),
     [
       isOpen,
+      renderOnlyWhenOpen,
       popperAttributes,
       popperStyles,
       usePortal,
