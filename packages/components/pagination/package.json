@@ -2,6 +2,7 @@
   "name": "@contentful/f36-pagination",
   "version": "4.0.0-beta",
   "description": "Forma 36: Pagination component",
+  "private": true,
   "scripts": {
     "build": "parcel build"
   },
