@@ -74,41 +74,43 @@ export function SandpackRenderer({
     >
       <PlaygroundTopBar />
 
-      <SandpackLayout theme={
-        {
-          "palette": {
-            "activeText": palette.activeText,
-            "defaultText": palette.color,
-            "inactiveText": palette.inactiveText,
-            "activeBackground": palette.backgroundColor,
-            "defaultBackground": palette.backgroundColor,
-            "inputBackground": palette.inputBackground,
-            "accent": palette.accent,
-            "errorBackground": palette.errorBackground,
-            "errorForeground": palette.deleted
+      <SandpackLayout
+        theme={{
+          palette: {
+            activeText: palette.activeText,
+            defaultText: palette.color,
+            inactiveText: palette.inactiveText,
+            activeBackground: palette.backgroundColor,
+            defaultBackground: palette.backgroundColor,
+            inputBackground: palette.inputBackground,
+            accent: palette.accent,
+            errorBackground: palette.errorBackground,
+            errorForeground: palette.deleted,
           },
-          "syntax": {
-            "plain": palette.color,
-            "comment": {
-              "color": palette.comment,
-              "fontStyle": "italic"
+          syntax: {
+            plain: palette.color,
+            comment: {
+              color: palette.comment,
+              fontStyle: 'italic',
             },
-            "keyword": palette.tag,
-            "tag": palette.tag,
-            "punctuation": palette.color,
-            "definition": palette.deleted,
-            "property": palette.selector,
-            "static": palette.attrValue,
-            "string": palette.attrValue
+            keyword: palette.tag,
+            tag: palette.tag,
+            punctuation: palette.color,
+            definition: palette.deleted,
+            property: palette.selector,
+            static: palette.attrValue,
+            string: palette.attrValue,
           },
-          "typography": {
-            "bodyFont": "font-family: \"SFMono-Regular\", Consolas, \"Liberation Mono\", Menlo, Courier, monospace;",
-            "monoFont": "font-family: \"SFMono-Regular\", Consolas, \"Liberation Mono\", Menlo, Courier, monospace;",
-            "fontSize": "14px",
-            "lineHeight": "1.4"
-          }
-        }
-      }>
+          typography: {
+            bodyFont:
+              'font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;',
+            monoFont:
+              'font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;',
+            fontSize: '14px',
+            lineHeight: '1.4',
+          },
+        }}
+      >
         <SandpackCodeEditor
           showTabs={false}
           showLineNumbers
