@@ -75,7 +75,7 @@ export function PageContent({
         gridStyles.contentColumnsBigScreens,
       )}
     >
-      <PageContentHeader title={title} github={github} status={status}>
+      <PageContentHeader title={title} status={status}>
         {source.shortIntro && <MdxRenderer source={source.shortIntro} />}
       </PageContentHeader>
 
