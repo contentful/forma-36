@@ -1,16 +1,16 @@
 {
   "name": "@contentful/f36-note",
-  "version": "4.2.7",
+  "version": "4.2.8",
   "description": "Forma 36: Note component",
   "scripts": {
     "build": "parcel build"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@contentful/f36-button": "^4.2.0",
+    "@contentful/f36-button": "^4.2.1",
     "@contentful/f36-core": "^4.1.1",
     "@contentful/f36-icon": "^4.1.1",
-    "@contentful/f36-icons": "^4.0.4",
+    "@contentful/f36-icons": "^4.1.0",
     "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-typography": "^4.1.1",
     "emotion": "^10.0.17"

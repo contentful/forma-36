@@ -1,15 +1,15 @@
 {
   "name": "@contentful/f36-notification",
-  "version": "4.0.10",
+  "version": "4.0.11",
   "description": "Forma 36: Notification component",
   "scripts": {
     "build": "parcel build"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@contentful/f36-button": "^4.2.0",
+    "@contentful/f36-button": "^4.2.1",
     "@contentful/f36-core": "^4.1.1",
-    "@contentful/f36-icons": "^4.0.4",
+    "@contentful/f36-icons": "^4.1.0",
     "@contentful/f36-text-link": "^4.1.1",
     "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-typography": "^4.1.1",
