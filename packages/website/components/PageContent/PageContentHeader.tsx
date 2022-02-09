@@ -41,6 +41,17 @@ interface PageContentHeaderProps {
   children?: React.ReactNode;
 }
 
+const getGithubIssueLink = (title) => {
+  const queryParams = {
+    title: `💬  Feedback - ${title}`,
+    template: 'component-feedback.md',
+  };
+  const queryString = Object.keys(queryParams)
+    .map((key) => `${key}=${queryParams[key]}`)
+    .join('&');
+  return `https://github.com/contentful/forma-36/issues/new?${queryString}`;
+};
+
 export function PageContentHeader({
   title,
   github,
@@ -65,7 +76,7 @@ export function PageContentHeader({
           alignItems="start"
         >
           <TextLink
-            href="https://github.com/contentful/forma-36/issues/new/choose"
+            href={getGithubIssueLink(title)}
             target="_blank"
             rel="noopener noreferrer"
             icon={<ExternalLinkIcon />}
