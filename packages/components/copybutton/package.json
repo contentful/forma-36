@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-copybutton",
-  "version": "4.1.2",
+  "version": "4.1.3",
   "description": "Forma 36: CopyButton component",
   "scripts": {
     "build": "parcel build"
@@ -8,7 +8,7 @@
   "dependencies": {
     "@babel/runtime": "^7.6.2",
     "@contentful/f36-core": "^4.1.1",
-    "@contentful/f36-icons": "^4.0.4",
+    "@contentful/f36-icons": "^4.1.0",
     "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-tooltip": "^4.1.1",
     "emotion": "^10.0.17",
