@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-menu",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "description": "Forma 36: Menu component",
   "scripts": {
     "build": "parcel build"
