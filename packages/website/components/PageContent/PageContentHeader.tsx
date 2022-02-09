@@ -36,7 +36,6 @@ const styles = {
 
 interface PageContentHeaderProps {
   title: FrontMatter['title'];
-  github?: FrontMatter['github'];
   status?: FrontMatter['status'];
   children?: React.ReactNode;
 }
@@ -55,7 +54,6 @@ const getGithubIssueLink = (title) => {
 
 export function PageContentHeader({
   title,
-  github,
   status,
   children,
 }: PageContentHeaderProps) {
@@ -68,25 +66,23 @@ export function PageContentHeader({
         {title}
       </DisplayText>
 
-      {github && (
-        <Flex
-          className={styles.gitHubLink}
-          paddingLeft="spacing2Xl"
-          flexDirection="column"
-          gap={tokens.spacingXs}
-          alignItems="start"
+      <Flex
+        className={styles.gitHubLink}
+        paddingLeft="spacing2Xl"
+        flexDirection="column"
+        gap={tokens.spacingXs}
+        alignItems="start"
+      >
+        <TextLink
+          href={getGithubIssueLink(title)}
+          target="_blank"
+          rel="noopener noreferrer"
+          icon={<ExternalLinkIcon />}
+          alignIcon="end"
         >
-          <TextLink
-            href={getGithubIssueLink(title)}
-            target="_blank"
-            rel="noopener noreferrer"
-            icon={<ExternalLinkIcon />}
-            alignIcon="end"
-          >
-            Give feedback
-          </TextLink>
-        </Flex>
-      )}
+          Give feedback
+        </TextLink>
+      </Flex>
 
       {showNote && (
         <Flex flexDirection="column" marginBottom="spacingXl">
