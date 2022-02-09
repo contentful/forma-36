@@ -194,6 +194,38 @@ describe('Popover', function () {
     });
   });
 
+  it('popover should NOT be rendered in the DOM by default (when renderOnlyWhenOpen=true)', async () => {
+    render(
+      <Popover>
+        <Popover.Trigger>
+          <Button>Toggle</Button>
+        </Popover.Trigger>
+        <Popover.Content>This is the content.</Popover.Content>
+      </Popover>,
+    );
+
+    await waitFor(() => {
+      expect(
+        screen.queryByTestId('cf-ui-popover-content'),
+      ).not.toBeInTheDocument();
+    });
+  });
+
+  it('popover should be rendered in the DOM when renderOnlyWhenOpen=false', async () => {
+    render(
+      <Popover renderOnlyWhenOpen={false}>
+        <Popover.Trigger>
+          <Button>Toggle</Button>
+        </Popover.Trigger>
+        <Popover.Content>This is the content.</Popover.Content>
+      </Popover>,
+    );
+
+    await waitFor(() => {
+      expect(screen.queryByTestId('cf-ui-popover-content')).toBeInTheDocument();
+    });
+  });
+
   it('has no a11y issues', async () => {
     const { container } = render(
       <Popover isOpen={true}>

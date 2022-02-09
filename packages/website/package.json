@@ -12,6 +12,7 @@
     "@codesandbox/sandpack-react": "0.10.7",
     "@contentful/f36-components": "^4.0.0",
     "@contentful/f36-core": "^4.0.0",
+    "@contentful/f36-icons": "^4.0.4",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@next/mdx": "^11.1.2",

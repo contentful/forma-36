@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/contentful/forma-36/compare/@contentful/f36-autocomplete@4.1.11...@contentful/f36-autocomplete@4.2.0) (2022-02-09)
+
+
+### Features
+
+* by default render Popover only when it's open ([#1873](https://github.com/contentful/forma-36/issues/1873)) ([48a511b](https://github.com/contentful/forma-36/commit/48a511bc48c17d3e4bf0cbfb8d16da8c3cbc29b2))
+
+
+
+
+
 ## [4.1.11](https://github.com/contentful/forma-36/compare/@contentful/f36-autocomplete@4.1.10...@contentful/f36-autocomplete@4.1.11) (2022-02-07)
 
 **Note:** Version bump only for package @contentful/f36-autocomplete
