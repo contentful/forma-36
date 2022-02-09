@@ -102,7 +102,7 @@ const styles = {
   // !important is needed to overwrite the react live setup.
   editor: css`
     min-height: 120px;
-    padding: ${tokens.spacingL} 0 !important;
+    padding: ${tokens.spacingL} ${tokens.spacingL} ${tokens.spacingXl}  !important;
     border-radius: 0 0 ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium};
   `,
   editorHidden: css`
