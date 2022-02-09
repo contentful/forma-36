@@ -98,15 +98,19 @@ const styles = {
   playgroundButton: css`
     font-family: ${tokens.fontStackPrimary};
   `,
-  // !important is needed to overwrite the react live setup.
+  // setting up background to match editor theme
+  editorWrapper: css`
+    padding: ${tokens.spacingL} ${tokens.spacingL} ${tokens.spacingXl};
+    background-color: #f5f8fa; 
+    position: relative;
+  `,
   editor: css`
-    min-height: 120px;
-    padding: ${tokens.spacingL} ${tokens.spacingL} ${tokens.spacingXl} !important;
+    min-height: 60px;
     border-radius: 0 0 ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium};
   `,
   editorHidden: css`
     position: relative;
-    height: 200px;
+    height: 60px;
     overflow: hidden;
   `,
   editorCover: css`
@@ -155,7 +159,7 @@ export function ComponentSource({
         </Card>
         <div style={{ position: 'relative' }}>
           <LiveError className={styles.error} />
-          <div style={{ position: 'relative' }}>
+          <Flex flexDirection="column" className={styles.editorWrapper} fullWidth>
             <Flex
               className={styles.toggle}
               justifyContent="space-between"
@@ -213,7 +217,7 @@ export function ComponentSource({
                 </Flex>
               )}
             </Flex>
-          </div>
+          </Flex>
           {!showSource && <div className={styles.editorCover} />}
         </div>
       </LiveProvider>
