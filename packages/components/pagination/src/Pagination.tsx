@@ -23,7 +23,7 @@ export interface PaginationProps extends CommonProps {
   onPageChange: (page: number) => void;
 }
 
-export function getPagesRange(
+function getPagesRange(
   page: number,
   total: number,
   neighboursCount = 2,
