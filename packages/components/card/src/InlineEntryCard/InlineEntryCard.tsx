@@ -11,7 +11,7 @@ import { SkeletonBodyText, SkeletonContainer } from '@contentful/f36-skeleton';
 
 export type InlineEntryCardInternalProps = Omit<
   EntryCardInternalProps,
-  'children' | 'icon' | 'withDragHandle' | 'ref' | 'src' | 'type'
+  'icon' | 'withDragHandle' | 'ref' | 'src' | 'type'
 >;
 
 export type InlineEntryCardProps = InlineEntryCardInternalProps;
@@ -19,6 +19,7 @@ export type InlineEntryCardProps = InlineEntryCardInternalProps;
 export const InlineEntryCard = ({
   actions,
   className,
+  children,
   status,
   title,
   isLoading,
@@ -50,8 +51,9 @@ export const InlineEntryCard = ({
       className={cx(styles.root({ status }), className)}
       header={header}
       testId={testId}
+      title={title}
     >
-      <Text>{title}</Text>
+      {children || <Text>{title}</Text>}
     </BaseCard>
   );
 };
