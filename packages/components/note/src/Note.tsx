@@ -76,7 +76,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
         {...otherProps}
         as="article"
         className={cx(
-          styles.container({ variant, withCloseButton, title }),
+          styles.container({ variant, title }),
           className,
         )}
         testId={testId}
