@@ -46,7 +46,6 @@ export const InlineEntryCard = ({
     );
   }
 
-  console.log({ title, children });
 
   return (
     <Tooltip placement="bottom" content={title}>
