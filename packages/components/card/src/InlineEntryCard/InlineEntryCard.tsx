@@ -1,5 +1,6 @@
 import React from 'react';
 import { cx } from 'emotion';
+import { Tooltip } from '@contentful/f36-tooltip';
 import { Text } from '@contentful/f36-typography';
 
 import { BaseCard } from '../BaseCard/BaseCard';
@@ -11,7 +12,7 @@ import { SkeletonBodyText, SkeletonContainer } from '@contentful/f36-skeleton';
 
 export type InlineEntryCardInternalProps = Omit<
   EntryCardInternalProps,
-  'children' | 'icon' | 'withDragHandle' | 'ref' | 'src' | 'type'
+  'icon' | 'withDragHandle' | 'ref' | 'src' | 'type'
 >;
 
 export type InlineEntryCardProps = InlineEntryCardInternalProps;
@@ -19,6 +20,7 @@ export type InlineEntryCardProps = InlineEntryCardInternalProps;
 export const InlineEntryCard = ({
   actions,
   className,
+  children,
   status,
   title,
   isLoading,
@@ -45,13 +47,15 @@ export const InlineEntryCard = ({
   }
 
   return (
-    <BaseCard
-      {...otherProps}
-      className={cx(styles.root({ status }), className)}
-      header={header}
-      testId={testId}
-    >
-      <Text>{title}</Text>
-    </BaseCard>
+    <Tooltip placement="bottom" content={title}>
+      <BaseCard
+        {...otherProps}
+        className={cx(styles.root({ status }), className)}
+        header={header}
+        testId={testId}
+      >
+        {children || <Text>{title}</Text>}
+      </BaseCard>
+    </Tooltip>
   );
 };
