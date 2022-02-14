@@ -10,7 +10,7 @@ export type EntryCardInternalProps = Omit<
   'badge' | 'header' | 'padding' | 'ref' | 'type' | 'title'
 > & {
   /**
-   * The title of the entry, it will be used as the value for the native HTML attribute "title"
+   * The title of the entry, it will be used as the value for the tooltip
    */
   title?: string;
   /**
