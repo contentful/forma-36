@@ -108,10 +108,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
             onClick={onClose}
             testId={`${testId}-close`}
             aria-label="Dismiss"
-            className={cx(
-              styles.close({ title }),
-              className,
-            )}
+            className={styles.close({ title })}
           />
         )}
       </Flex>
