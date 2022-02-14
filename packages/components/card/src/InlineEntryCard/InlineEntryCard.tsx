@@ -46,7 +46,6 @@ export const InlineEntryCard = ({
     );
   }
 
-
   return (
     <Tooltip placement="bottom" content={title}>
       <BaseCard
