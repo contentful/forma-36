@@ -2,7 +2,7 @@ import React from 'react';
 import { css, cx } from 'emotion';
 import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
-import { List, Flex, Text } from '@contentful/f36-components';
+import { List, Flex, Text, Badge } from '@contentful/f36-components';
 import { ChevronDownIcon } from '@contentful/f36-icons';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
 
@@ -12,6 +12,13 @@ const styles = {
     gap: tokens.spacing2Xs,
     fontSize: tokens.fontSizeM,
     lineHeight: tokens.lineHeightM,
+    textDecoration: 'none',
+    '&:hover span:first-child': {
+      textDecoration: 'underline',
+    },
+  }),
+  badge: css({
+    textDecoration: 'none',
   }),
 };
 
@@ -31,10 +38,8 @@ const getSectionTitleStyles = (isActive = false, paddingLeft = 'spacingXl') => {
         : tokens.fontWeightNormal,
       textDecoration: isActive ? 'underline' : 'none',
       backgroundColor: 'transparent',
+      flexGrow: 1,
       transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
-      '&:hover': {
-        textDecoration: 'underline',
-      },
     }),
     chevron: css({
       transform: 'rotate(0deg)',
@@ -88,11 +93,12 @@ export function SidebarSectionButton({
 }
 
 interface SidebarLinkProps {
-  children: string;
+  children: React.ReactNode;
   href: string;
   isActive?: boolean;
   isExternal?: boolean;
   paddingLeft?: 'spacingXl' | 'spacing2Xl';
+  isNew?: boolean;
 }
 
 export function SidebarLink({
@@ -101,6 +107,7 @@ export function SidebarLink({
   isExternal = false,
   isActive = false,
   paddingLeft = 'spacingXl',
+  isNew = false,
 }: SidebarLinkProps) {
   const titleStyles = getSectionTitleStyles(isActive, paddingLeft);
   const linksProps = isExternal
@@ -112,15 +119,18 @@ export function SidebarLink({
       <Link href={href} passHref>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a
-          className={cx([
-            styles.link,
-            titleStyles.clickable,
-            titleStyles.sidebarItem,
-          ])}
+          className={cx([styles.link, titleStyles.sidebarItem])}
           {...linksProps}
         >
-          {children}
-          {isExternal ? <ExternalLinkIcon variant="muted" /> : null}
+          <span className={cx([titleStyles.clickable])}>
+            {children}
+            {isExternal ? <ExternalLinkIcon variant="muted" /> : null}
+          </span>
+          {isNew && (
+            <Badge className={styles.badge} variant="primary">
+              new
+            </Badge>
+          )}
         </a>
       </Link>
     </List.Item>
