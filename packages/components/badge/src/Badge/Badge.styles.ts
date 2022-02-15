@@ -80,6 +80,8 @@ export const getBadgeStyles = ({
       '0.06rem' /*move to tokens or update wide letter spacing token*/,
     borderRadius: `${tokens.borderRadiusSmall}`,
     whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
     ...variantToStyles({ variant }),
     ...sizeToStyles({ size }),
   });
