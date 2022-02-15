@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-card",
-  "version": "4.1.14",
+  "version": "4.1.15",
   "description": "Forma 36: Card components",
   "scripts": {
     "build": "parcel build"
@@ -17,6 +17,7 @@
     "@contentful/f36-menu": "^4.2.2",
     "@contentful/f36-skeleton": "^4.1.1",
     "@contentful/f36-tokens": "^4.0.0",
+    "@contentful/f36-tooltip": "^4.1.1",
     "@contentful/f36-typography": "^4.1.1",
     "emotion": "^10.0.17",
     "truncate": "^2.0.1"

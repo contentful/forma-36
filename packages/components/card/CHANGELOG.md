@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.15](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.14...@contentful/f36-card@4.1.15) (2022-02-14)
+
+
+### Bug Fixes
+
+* allow children to be passed to InlineEntryCard ([#1884](https://github.com/contentful/forma-36/issues/1884)) ([b886add](https://github.com/contentful/forma-36/commit/b886add1fb7a2a114b3680161cc6c036e9e154dd))
+
+
+
+
+
 ## [4.1.14](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.13...@contentful/f36-card@4.1.14) (2022-02-09)
 
 **Note:** Version bump only for package @contentful/f36-card
