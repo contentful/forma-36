@@ -75,10 +75,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
       <Flex
         {...otherProps}
         as="article"
-        className={cx(
-          styles.container({ variant, withCloseButton }),
-          className,
-        )}
+        className={cx(styles.container({ variant, title }), className)}
         testId={testId}
         ref={ref}
         padding="spacingM"
@@ -108,7 +105,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
             onClick={onClose}
             testId={`${testId}-close`}
             aria-label="Dismiss"
-            className={styles.close}
+            className={styles.close({ title })}
           />
         )}
       </Flex>
