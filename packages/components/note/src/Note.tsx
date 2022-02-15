@@ -75,10 +75,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
       <Flex
         {...otherProps}
         as="article"
-        className={cx(
-          styles.container({ variant, title }),
-          className,
-        )}
+        className={cx(styles.container({ variant, title }), className)}
         testId={testId}
         ref={ref}
         padding="spacingM"

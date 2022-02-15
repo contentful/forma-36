@@ -66,14 +66,14 @@ export const getNoteStyles = () => {
       color: tokens.gray700,
     }),
     close: ({ title }: NoteProps) =>
-     css({
-      padding: tokens.spacingXs,
-      marginTop: title ? `-${tokens.spacingXs}` : '0',
-      marginRight: title ? `-${tokens.spacingXs}` : '0',
-      '&:hover, &:active': {
-        backgroundColor: 'transparent',
-      },
-    }),
+      css({
+        padding: tokens.spacingXs,
+        marginTop: title ? `-${tokens.spacingXs}` : '0',
+        marginRight: title ? `-${tokens.spacingXs}` : '0',
+        '&:hover, &:active': {
+          backgroundColor: 'transparent',
+        },
+      }),
     closeIcon: css({
       color: tokens.gray600,
     }),
