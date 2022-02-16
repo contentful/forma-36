@@ -173,7 +173,7 @@ export const Overview: Story<EntryCardProps> = () => {
             Entry card with very long title and description
           </SectionHeading>
             <EntryCard
-              title="verylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitle"
+              title="verylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitle"
               description='verylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescription'
               contentType="Design system"
               withDragHandle

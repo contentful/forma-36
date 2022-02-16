@@ -22,7 +22,7 @@ export type EntryCardProps<
   E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG
 > = PolymorphicProps<EntryCardInternalProps, E>;
 
-function EntryCardTitle({ title, className }: { title?: string, className?: string }) {
+function EntryCardTitle({ title }: { title?: string, className?: string }) {
   if (!title) {
     return null;
   }
@@ -35,7 +35,7 @@ function EntryCardTitle({ title, className }: { title?: string, className?: stri
       testId="title"
       as="h1"
       marginBottom="none"
-      className={className}
+      isWordBreak
     >
       {truncatedTitle}
     </Subheading>
@@ -103,7 +103,7 @@ function _EntryCard<
         flexDirection="row"
       >
         <Flex flexDirection="column" flexGrow={1} gap="spacingS">
-          <EntryCardTitle title={title} className={styles.wrappedText} />
+          <EntryCardTitle title={title} />
           <EntryCardDescription size={size} description={description} />
           {children}
         </Flex>

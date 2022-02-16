@@ -16,6 +16,7 @@ export interface HeadingInternalProps extends CommonProps, MarginProps {
   as?: HeadingElement;
   children?: React.ReactNode;
   isTruncated?: boolean;
+  isWordBreak?: boolean;
 }
 
 export type HeadingProps<

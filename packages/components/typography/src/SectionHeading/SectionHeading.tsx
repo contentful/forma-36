@@ -16,6 +16,7 @@ const SECTION_HEADING_DEFAULT_TAG = 'h2';
 export interface SectionHeadingInternalProps extends CommonProps, MarginProps {
   as?: HeadingElement;
   isTruncated?: boolean;
+  isWordBreak?: boolean;
 }
 
 export type SectionHeadingProps<
