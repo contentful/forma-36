@@ -7,7 +7,15 @@ typescript: ./src/DateTime.tsx
 storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-datetime--basic'
 ---
 
-In `@contentful/f36-datetime`, there are two components (`DateTime` and `RelativeDateTime`) that will return a date following our guidelines.
+## Import
+
+```jsx static=true
+import { DateTime } from '@contentful/f36-components';
+// or
+import { DateTime } from '@contentful/f36-datetime';
+```
+
+## Formats
 
 The DateTime component will format any date to a human friendly format and wrap it in a `<time>` tag.
 It allows four different forms of display that can be controlled by changing the `format` prop:
@@ -19,14 +27,6 @@ It allows four different forms of display that can be controlled by changing the
 | `day`             | 12 Aug 2020               |
 | `time`            | 8:00 AM                   |
 | `weekday`         | Wed, 12 Aug               |
-
-## Import
-
-```jsx static=true
-import { DateTime } from '@contentful/f36-components';
-// or
-import { DateTime } from '@contentful/f36-datetime';
-```
 
 ## Examples
 

@@ -223,6 +223,7 @@ function _Autocomplete<ItemType>(
         usePortal={usePortal}
         isOpen={isOpen}
         isFullWidth={listWidth === 'full'}
+        renderOnlyWhenOpen={false}
         // This is necessary, otherwise the focus will change from the input to the Popover
         // and the user won't be able to type in the input
         // eslint-disable-next-line jsx-a11y/no-autofocus

@@ -40,8 +40,9 @@ export const _TextInput = (
   useEffect(() => {
     if (maxLength !== undefined && typeof setMaxLength === 'function') {
       setMaxLength(maxLength);
+      setInputValue(value ?? defaultValue ?? '');
     }
-  }, [maxLength, setMaxLength]);
+  }, [maxLength, setMaxLength, setInputValue, defaultValue, value]);
 
   const handleOnChange = (event) => {
     if (typeof setInputValue === 'function') {

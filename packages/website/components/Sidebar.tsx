@@ -1,6 +1,5 @@
 import React from 'react';
 import { css } from 'emotion';
-import sortBy from 'lodash.sortby';
 import tokens from '@contentful/f36-tokens';
 import { Grid } from '@contentful/f36-components';
 
@@ -10,6 +9,7 @@ import {
   SidebarSectionType,
   SidebarLinkType,
 } from './SidebarSection';
+import { sortByTitle } from '../utils/sortByTitle';
 
 const sidebarLinks = require('../utils/sidebarLinks.json');
 
@@ -33,6 +33,11 @@ interface Props {
 const components: Array<SidebarSectionType | SidebarLinkType> = [
   ...sidebarLinks.unassigned,
 
+  {
+    type: 'section',
+    links: sidebarLinks.animationComponents,
+    title: 'Animation Components',
+  },
   {
     type: 'section',
     links: sidebarLinks.layoutComponents,
@@ -84,7 +89,7 @@ export function Sidebar({
   activeSection = WEBSITE_SECTION.INTRODUCTION,
   currentPage = '/',
 }: Props) {
-  const componentsSorted = sortBy(components, ['title']);
+  const componentsSorted = sortByTitle(components);
 
   return (
     <Grid.Item
@@ -137,6 +142,16 @@ export function Sidebar({
 
       {activeSection === WEBSITE_SECTION.COMPONENTS && (
         <>
+          <SidebarSection
+            links={[
+              {
+                title: 'Proposal in GitHub',
+                slug: 'https://github.com/contentful/forma-36/discussions',
+                type: 'link',
+              },
+            ]}
+            currentPage={currentPage}
+          />
           <SidebarSection links={componentsSorted} currentPage={currentPage} />
           <SidebarSection
             title="Utils"

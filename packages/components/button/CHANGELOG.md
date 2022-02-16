@@ -3,6 +3,68 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.1](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.2.0...@contentful/f36-button@4.2.1) (2022-02-09)
+
+**Note:** Version bump only for package @contentful/f36-button
+
+
+
+
+
+# [4.2.0](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.1.7...@contentful/f36-button@4.2.0) (2022-02-07)
+
+
+### Features
+
+* implement short description in page content header ([#1822](https://github.com/contentful/forma-36/issues/1822)) ([c812815](https://github.com/contentful/forma-36/commit/c812815cf6681a021fd5313fc905227def842ee8))
+
+
+
+
+
+## [4.1.7](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.1.6...@contentful/f36-button@4.1.7) (2022-02-07)
+
+**Note:** Version bump only for package @contentful/f36-button
+
+
+
+
+
+## [4.1.6](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.1.5...@contentful/f36-button@4.1.6) (2022-02-07)
+
+
+### Bug Fixes
+
+* **button:** enforce color properties with !important ([#1856](https://github.com/contentful/forma-36/issues/1856)) ([2f9b6f8](https://github.com/contentful/forma-36/commit/2f9b6f8b2c6cb9d0f7d61449d6160e45b17512aa))
+
+
+
+
+
+## [4.1.5](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.1.4...@contentful/f36-button@4.1.5) (2022-02-02)
+
+**Note:** Version bump only for package @contentful/f36-button
+
+
+
+
+
+## [4.1.4](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.1.3...@contentful/f36-button@4.1.4) (2022-01-31)
+
+**Note:** Version bump only for package @contentful/f36-button
+
+
+
+
+
+## [4.1.3](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.1.2...@contentful/f36-button@4.1.3) (2022-01-31)
+
+**Note:** Version bump only for package @contentful/f36-button
+
+
+
+
+
 ## [4.1.2](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.1.1...@contentful/f36-button@4.1.2) (2022-01-26)
 
 

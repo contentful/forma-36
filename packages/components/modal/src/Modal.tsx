@@ -40,30 +40,36 @@ export interface ModalProps extends CommonProps {
 
   /**
    * Boolean indicating if clicking the overlay should close the overlay.
+   * @default true
    */
   shouldCloseOnOverlayClick?: boolean;
   /**
    * Boolean indicating if pressing the esc key should close the overlay.
+   * @default true
    */
   shouldCloseOnEscapePress?: boolean;
   /**
    * Indicating if modal is centered or linked to the top
+   * @default center
    */
   position?: ModalPositionType;
   /**
-      Top offset if position is 'top'
-    */
+   * Top offset if position is 'top'
+   * @default 50px
+   */
   topOffset?: number | string;
   /**
-      Modal title that is used in header
-    */
+   * Modal title that is used in header
+   */
   title?: string;
   /**
-      Size of the modal window
-    */
+   * Size of the modal window
+   * @default medium
+   */
   size?: ModalSizeType;
   /**
    * Are modals higher than viewport allowed
+   * @default false
    */
   allowHeightOverflow?: boolean;
 
@@ -102,13 +108,13 @@ function focusFirstWithinNode(node: HTMLElement) {
 }
 
 export function Modal({
-  allowHeightOverflow,
-  position,
-  shouldCloseOnEscapePress,
-  shouldCloseOnOverlayClick,
-  size,
-  testId,
-  topOffset,
+  allowHeightOverflow = false,
+  position = 'center',
+  shouldCloseOnEscapePress = true,
+  shouldCloseOnOverlayClick = true,
+  size = 'medium',
+  testId = 'cf-ui-modal',
+  topOffset = '50px',
   aria,
   ...otherProps
 }: ModalProps) {
@@ -210,15 +216,3 @@ export function Modal({
     </ReactModal>
   );
 }
-
-// Use defaultProps instead of default values in the function to allow the
-// Storybook to import and use these values
-Modal.defaultProps = {
-  allowHeightOverflow: false,
-  position: 'center',
-  shouldCloseOnEscapePress: true,
-  shouldCloseOnOverlayClick: true,
-  size: 'medium',
-  testId: 'cf-ui-modal',
-  topOffset: '50px',
-};

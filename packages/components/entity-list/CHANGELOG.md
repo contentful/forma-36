@@ -3,6 +3,94 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.14](https://github.com/contentful/forma-36/compare/@contentful/f36-entity-list@4.1.13...@contentful/f36-entity-list@4.1.14) (2022-02-15)
+
+**Note:** Version bump only for package @contentful/f36-entity-list
+
+
+
+
+
+## [4.1.13](https://github.com/contentful/forma-36/compare/@contentful/f36-entity-list@4.1.12...@contentful/f36-entity-list@4.1.13) (2022-02-09)
+
+**Note:** Version bump only for package @contentful/f36-entity-list
+
+
+
+
+
+## [4.1.12](https://github.com/contentful/forma-36/compare/@contentful/f36-entity-list@4.1.11...@contentful/f36-entity-list@4.1.12) (2022-02-09)
+
+**Note:** Version bump only for package @contentful/f36-entity-list
+
+
+
+
+
+## [4.1.11](https://github.com/contentful/forma-36/compare/@contentful/f36-entity-list@4.1.10...@contentful/f36-entity-list@4.1.11) (2022-02-09)
+
+**Note:** Version bump only for package @contentful/f36-entity-list
+
+
+
+
+
+## [4.1.10](https://github.com/contentful/forma-36/compare/@contentful/f36-entity-list@4.1.9...@contentful/f36-entity-list@4.1.10) (2022-02-07)
+
+**Note:** Version bump only for package @contentful/f36-entity-list
+
+
+
+
+
+## [4.1.9](https://github.com/contentful/forma-36/compare/@contentful/f36-entity-list@4.1.8...@contentful/f36-entity-list@4.1.9) (2022-02-07)
+
+**Note:** Version bump only for package @contentful/f36-entity-list
+
+
+
+
+
+## [4.1.8](https://github.com/contentful/forma-36/compare/@contentful/f36-entity-list@4.1.7...@contentful/f36-entity-list@4.1.8) (2022-02-07)
+
+**Note:** Version bump only for package @contentful/f36-entity-list
+
+
+
+
+
+## [4.1.7](https://github.com/contentful/forma-36/compare/@contentful/f36-entity-list@4.1.6...@contentful/f36-entity-list@4.1.7) (2022-02-04)
+
+**Note:** Version bump only for package @contentful/f36-entity-list
+
+
+
+
+
+## [4.1.6](https://github.com/contentful/forma-36/compare/@contentful/f36-entity-list@4.1.5...@contentful/f36-entity-list@4.1.6) (2022-02-02)
+
+**Note:** Version bump only for package @contentful/f36-entity-list
+
+
+
+
+
+## [4.1.5](https://github.com/contentful/forma-36/compare/@contentful/f36-entity-list@4.1.4...@contentful/f36-entity-list@4.1.5) (2022-01-31)
+
+**Note:** Version bump only for package @contentful/f36-entity-list
+
+
+
+
+
+## [4.1.4](https://github.com/contentful/forma-36/compare/@contentful/f36-entity-list@4.1.3...@contentful/f36-entity-list@4.1.4) (2022-01-31)
+
+**Note:** Version bump only for package @contentful/f36-entity-list
+
+
+
+
+
 ## [4.1.3](https://github.com/contentful/forma-36/compare/@contentful/f36-entity-list@4.1.2...@contentful/f36-entity-list@4.1.3) (2022-01-26)
 
 **Note:** Version bump only for package @contentful/f36-entity-list

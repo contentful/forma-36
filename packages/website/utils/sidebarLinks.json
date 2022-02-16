@@ -17,10 +17,6 @@
       "slug": "/components/badge/"
     },
     {
-      "title": "Collapse",
-      "slug": "/animations/collapse/"
-    },
-    {
       "title": "DragHandle",
       "slug": "/components/drag-handle/"
     },
@@ -57,6 +53,11 @@
       "slug": "/components/notification/"
     },
     {
+      "title": "Pagination",
+      "slug": "/components/pagination/",
+      "isNew": true
+    },
+    {
       "title": "Pill",
       "slug": "/components/pill/"
     },
@@ -87,6 +88,12 @@
     {
       "title": "Workbench",
       "slug": "/components/workbench/"
+    }
+  ],
+  "animationComponents": [
+    {
+      "title": "Collapse",
+      "slug": "/components/collapse/"
     }
   ],
   "buttonComponents": [

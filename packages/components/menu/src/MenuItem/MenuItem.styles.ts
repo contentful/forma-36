@@ -24,8 +24,13 @@ export const getMenuItemStyles = () => {
       textDecoration: 'none',
       color: tokens.gray800,
 
-      '&:focus, &:hover': {
+      '&:hover': {
         backgroundColor: tokens.gray100,
+      },
+      '&:focus': {
+        boxShadow: `inset ${tokens.glowPrimary}`,
+        // just to make boxShadow with rounded corners
+        borderRadius: tokens.borderRadiusMedium,
       },
       '&:active': {
         backgroundColor: tokens.gray200,

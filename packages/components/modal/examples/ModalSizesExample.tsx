@@ -39,13 +39,7 @@ export default function ModalSizesExample() {
           Click to open a modal
         </Button>
       </Form>
-      <Modal
-        onClose={() => setShown(false)}
-        shouldCloseOnOverlayClick
-        shouldCloseOnEscapePress
-        isShown={isShown}
-        size={size}
-      >
+      <Modal onClose={() => setShown(false)} isShown={isShown} size={size}>
         {() => (
           <>
             <Modal.Header

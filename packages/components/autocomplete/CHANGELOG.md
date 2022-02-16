@@ -3,6 +3,81 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.1](https://github.com/contentful/forma-36/compare/@contentful/f36-autocomplete@4.2.0...@contentful/f36-autocomplete@4.2.1) (2022-02-09)
+
+**Note:** Version bump only for package @contentful/f36-autocomplete
+
+
+
+
+
+# [4.2.0](https://github.com/contentful/forma-36/compare/@contentful/f36-autocomplete@4.1.11...@contentful/f36-autocomplete@4.2.0) (2022-02-09)
+
+
+### Features
+
+* by default render Popover only when it's open ([#1873](https://github.com/contentful/forma-36/issues/1873)) ([48a511b](https://github.com/contentful/forma-36/commit/48a511bc48c17d3e4bf0cbfb8d16da8c3cbc29b2))
+
+
+
+
+
+## [4.1.11](https://github.com/contentful/forma-36/compare/@contentful/f36-autocomplete@4.1.10...@contentful/f36-autocomplete@4.1.11) (2022-02-07)
+
+**Note:** Version bump only for package @contentful/f36-autocomplete
+
+
+
+
+
+## [4.1.10](https://github.com/contentful/forma-36/compare/@contentful/f36-autocomplete@4.1.9...@contentful/f36-autocomplete@4.1.10) (2022-02-07)
+
+**Note:** Version bump only for package @contentful/f36-autocomplete
+
+
+
+
+
+## [4.1.9](https://github.com/contentful/forma-36/compare/@contentful/f36-autocomplete@4.1.8...@contentful/f36-autocomplete@4.1.9) (2022-02-07)
+
+**Note:** Version bump only for package @contentful/f36-autocomplete
+
+
+
+
+
+## [4.1.8](https://github.com/contentful/forma-36/compare/@contentful/f36-autocomplete@4.1.7...@contentful/f36-autocomplete@4.1.8) (2022-02-02)
+
+**Note:** Version bump only for package @contentful/f36-autocomplete
+
+
+
+
+
+## [4.1.7](https://github.com/contentful/forma-36/compare/@contentful/f36-autocomplete@4.1.6...@contentful/f36-autocomplete@4.1.7) (2022-01-31)
+
+**Note:** Version bump only for package @contentful/f36-autocomplete
+
+
+
+
+
+## [4.1.6](https://github.com/contentful/forma-36/compare/@contentful/f36-autocomplete@4.1.5...@contentful/f36-autocomplete@4.1.6) (2022-01-31)
+
+**Note:** Version bump only for package @contentful/f36-autocomplete
+
+
+
+
+
+## [4.1.5](https://github.com/contentful/forma-36/compare/@contentful/f36-autocomplete@4.1.4...@contentful/f36-autocomplete@4.1.5) (2022-01-28)
+
+**Note:** Version bump only for package @contentful/f36-autocomplete
+
+
+
+
+
 ## [4.1.4](https://github.com/contentful/forma-36/compare/@contentful/f36-autocomplete@4.1.3...@contentful/f36-autocomplete@4.1.4) (2022-01-26)
 
 **Note:** Version bump only for package @contentful/f36-autocomplete

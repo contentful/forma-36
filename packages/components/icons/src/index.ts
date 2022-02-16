@@ -11,6 +11,8 @@ export type {
 export { Archive as ArchiveIcon } from './Archive';
 export { ArrowDown as ArrowDownIcon } from './ArrowDown';
 export { ArrowDownTrimmed as ArrowDownTrimmedIcon } from './ArrowDownTrimmed';
+export { ArrowForward as ArrowForwardIcon } from './ArrowForward';
+export { ArrowForwardTrimmed as ArrowForwardTrimmedIcon } from './ArrowForwardTrimmed';
 export { ArrowUp as ArrowUpIcon } from './ArrowUp';
 export { ArrowUpTrimmed as ArrowUpTrimmedIcon } from './ArrowUpTrimmed';
 export { Asset as AssetIcon } from './Asset';
@@ -127,6 +129,7 @@ export { PlusCircleTrimmed as PlusCircleTrimmedIcon } from './PlusCircleTrimmed'
 export { PlusTrimmed as PlusTrimmedIcon } from './PlusTrimmed';
 export { Presentation as PresentationIcon } from './Presentation';
 export { Preview as PreviewIcon } from './Preview';
+export { PreviewOff as PreviewOffIcon } from './PreviewOff';
 export { Puzzle as PuzzleIcon } from './Puzzle';
 export { Quote as QuoteIcon } from './Quote';
 export { QuoteTrimmed as QuoteTrimmedIcon } from './QuoteTrimmed';
