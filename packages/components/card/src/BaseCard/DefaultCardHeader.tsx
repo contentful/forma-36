@@ -54,7 +54,11 @@ export function DefaultCardHeader(
   return (
     <Flex className={cx(styles.header, actions && styles.headerWithActions)}>
       <Flex flexGrow={1}>
-        {type && <Text fontColor="gray600" isWordBreak>{type}</Text>}
+        {type && (
+          <Text fontColor="gray600" isWordBreak>
+            {type}
+          </Text>
+        )}
       </Flex>
       {icon && (
         <Flex alignItems="center" marginLeft="spacingXs">

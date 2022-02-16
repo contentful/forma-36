@@ -39,7 +39,7 @@ function truncatedStyle() {
 
 function wordBreakStyle() {
   return css({
-    wordBreak: 'break-word'
+    wordBreak: 'break-word',
   });
 }
 

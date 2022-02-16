@@ -172,12 +172,12 @@ export const Overview: Story<EntryCardProps> = () => {
           <SectionHeading as="h3" marginBottom="none">
             Entry card with very long title and description
           </SectionHeading>
-            <EntryCard
-              title="verylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitle"
-              description='verylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescription'
-              contentType="Design system"
-              withDragHandle
-            />
+          <EntryCard
+            title="verylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitle"
+            description="verylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescription"
+            contentType="Design system"
+            withDragHandle
+          />
         </Flex>
       </Flex>
     </>
