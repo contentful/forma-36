@@ -22,7 +22,7 @@ export type EntryCardProps<
   E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG
 > = PolymorphicProps<EntryCardInternalProps, E>;
 
-function EntryCardTitle({ title }: { title?: string, className?: string }) {
+function EntryCardTitle({ title }: { title?: string }) {
   if (!title) {
     return null;
   }
