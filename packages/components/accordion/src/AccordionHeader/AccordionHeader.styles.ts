@@ -23,7 +23,8 @@ const getHeaderStyles = ({ align }: StyleProps) =>
       width: '100%',
       minWidth: '9px',
       cursor: 'pointer',
-      transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
+      transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault},
+        box-shadow ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
       '&:hover': {
         backgroundColor: tokens.gray100,
       },
