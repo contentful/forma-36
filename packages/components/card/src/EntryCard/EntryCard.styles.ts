@@ -25,6 +25,9 @@ export const getEntryCardStyles = () => {
         paddingRight: tokens.spacingM,
       },
     }),
+    wrappedText: css({
+      wordBreak: 'break-word'
+    }),
     header: css({
       borderBottomWidth: 1,
       borderBottomColor: tokens.gray200,
