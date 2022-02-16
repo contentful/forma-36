@@ -28,8 +28,19 @@ const getHeaderStyles = ({ align }: StyleProps) =>
         backgroundColor: tokens.gray100,
       },
       '&:focus': {
-        outline: 'none',
         backgroundColor: tokens.gray100,
+        borderRadius: tokens.borderRadiusMedium,
+        boxShadow: tokens.glowPrimary,
+      },
+      '&:focus:not(:focus-visible)': {
+        backgroundColor: 'transparent',
+        borderRadius: 'unset',
+        boxShadow: 'unset',
+      },
+      '&:focus-visible': {
+        backgroundColor: tokens.gray100,
+        borderRadius: tokens.borderRadiusMedium,
+        boxShadow: tokens.glowPrimary,
       },
     }),
     align === 'end' &&
