@@ -10418,11 +10418,6 @@ emojis-list@^3.0.0:
   resolved "https://registry.npmjs.org/emojis-list/-/emojis-list-3.0.0.tgz"
   integrity sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==
 
-emotion-normalize@^10.1.0:
-  version "10.1.0"
-  resolved "https://registry.npmjs.org/emotion-normalize/-/emotion-normalize-10.1.0.tgz"
-  integrity sha512-Z+rz3Eep8tUgtBKT13/rEpci+ZbCadRovEmILuLB9IEpq4FdNpXjm7MVeJqG4iBRGw4tKmIq06lYgjeC6oEnag==
-
 emotion-server@^10.0.17:
   version "10.0.27"
   resolved "https://registry.npmjs.org/emotion-server/-/emotion-server-10.0.27.tgz"
