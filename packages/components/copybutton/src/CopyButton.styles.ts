@@ -33,6 +33,12 @@ export const getStyles = ({ size }) => {
       '&:focus': {
         boxShadow: tokens.glowMuted,
       },
+      '&:focus:not(:focus-visible)': {
+        boxShadow: 'unset',
+      },
+      '&:focus-visible': {
+        boxShadow: tokens.glowMuted,
+      },
     }),
     copyButtonDisabled: css({
       cursor: 'not-allowed',

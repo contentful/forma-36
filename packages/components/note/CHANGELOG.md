@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.10](https://github.com/contentful/forma-36/compare/@contentful/f36-note@4.2.9...@contentful/f36-note@4.2.10) (2022-02-17)
+
+**Note:** Version bump only for package @contentful/f36-note
+
+
+
+
+
 ## [4.2.9](https://github.com/contentful/forma-36/compare/@contentful/f36-note@4.2.8...@contentful/f36-note@4.2.9) (2022-02-15)
 
 
