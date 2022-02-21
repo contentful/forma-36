@@ -39,6 +39,12 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
+      <Note withCloseButton>
+        A piece of information that is relevant to the context the user is
+        currently in.
+      </Note>
+    </Flex>
+    <Flex marginBottom="spacingM">
       <Note title="Short, yet succinct title" withCloseButton>
         A piece of information that is relevant to the context the user is
         currently in. If you like it then you should put{' '}

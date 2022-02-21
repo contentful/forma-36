@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/contentful/forma-36/compare/@contentful/f36-core@4.1.1...@contentful/f36-core@4.2.0) (2022-02-17)
+
+
+### Features
+
+* implement short description in page content header ([#1822](https://github.com/contentful/forma-36/issues/1822)) ([c812815](https://github.com/contentful/forma-36/commit/c812815cf6681a021fd5313fc905227def842ee8))
+* keyboard-only focus styles ([#1825](https://github.com/contentful/forma-36/issues/1825)) ([d74b5b6](https://github.com/contentful/forma-36/commit/d74b5b6592fd847a9afeb388bad842314496ec5a))
+
+
+
+
+
 ## [4.1.1](https://github.com/contentful/forma-36/compare/@contentful/f36-core@4.1.0...@contentful/f36-core@4.1.1) (2022-01-31)
 
 

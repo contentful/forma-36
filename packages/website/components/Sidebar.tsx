@@ -1,6 +1,5 @@
 import React from 'react';
 import { css } from 'emotion';
-import sortBy from 'lodash.sortby';
 import tokens from '@contentful/f36-tokens';
 import { Grid } from '@contentful/f36-components';
 
@@ -10,6 +9,7 @@ import {
   SidebarSectionType,
   SidebarLinkType,
 } from './SidebarSection';
+import { sortByTitle } from '../utils/sortByTitle';
 
 const sidebarLinks = require('../utils/sidebarLinks.json');
 
@@ -89,7 +89,7 @@ export function Sidebar({
   activeSection = WEBSITE_SECTION.INTRODUCTION,
   currentPage = '/',
 }: Props) {
-  const componentsSorted = sortBy(components, ['title']);
+  const componentsSorted = sortByTitle(components);
 
   return (
     <Grid.Item

@@ -102,5 +102,20 @@ export const Overview = () => (
         </Badge>
       </Flex>
     </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Text Overflow
+    </SectionHeading>
+
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS" style={{ maxWidth: '6rem' }}>
+        <Badge variant="primary">Lorem Ipsum Dolor Sit Amet</Badge>
+      </Flex>
+      <Flex marginRight="spacingS" style={{ maxWidth: '6rem' }}>
+        <Badge variant="primary" size="small">
+          Lorem Ipsum Dolor Sit Amet
+        </Badge>
+      </Flex>
+    </Flex>
   </>
 );

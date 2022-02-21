@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.30](https://github.com/contentful/forma-36/compare/@contentful/f36-components@4.0.29...@contentful/f36-components@4.0.30) (2022-02-17)
+
+**Note:** Version bump only for package @contentful/f36-components
+
+
+
+
+
+## [4.0.29](https://github.com/contentful/forma-36/compare/@contentful/f36-components@4.0.28...@contentful/f36-components@4.0.29) (2022-02-15)
+
+**Note:** Version bump only for package @contentful/f36-components
+
+
+
+
+
+## [4.0.28](https://github.com/contentful/forma-36/compare/@contentful/f36-components@4.0.27...@contentful/f36-components@4.0.28) (2022-02-15)
+
+**Note:** Version bump only for package @contentful/f36-components
+
+
+
+
+
+## [4.0.27](https://github.com/contentful/forma-36/compare/@contentful/f36-components@4.0.26...@contentful/f36-components@4.0.27) (2022-02-14)
+
+**Note:** Version bump only for package @contentful/f36-components
+
+
+
+
+
 ## [4.0.26](https://github.com/contentful/forma-36/compare/@contentful/f36-components@4.0.25...@contentful/f36-components@4.0.26) (2022-02-09)
 
 **Note:** Version bump only for package @contentful/f36-components

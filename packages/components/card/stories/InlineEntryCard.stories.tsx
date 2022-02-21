@@ -23,21 +23,19 @@ export default {
 
 export const Default: Story<InlineEntryCardProps> = (args) => {
   return (
-    <Text>
-      Fusce a odio pharetra, porta justo vel, maximus ex. In pellentesque a orci
-      et pretium. Praesent libero lorem, gravida eu pulvinar id, eleifend a
-      sapien. &nbsp;
-      <InlineEntryCard {...args} />
-      &nbsp; Nulla a ultrices nulla, vel blandit sapien. Etiam eget massa dui.
-      Fusce id nisl quam. Integer nec mi arcu. Nullam lacinia est lectus, a
-      euismod purus eleifend id. Fusce a odio pharetra, porta justo vel, maximus
-      ex. In pellentesque a orci et pretium. Praesent libero lorem, gravida eu
-      pulvinar id, eleifend a sapien. &nbsp;
-      <InlineEntryCard {...args} />
-      &nbsp; Nulla a ultrices nulla, vel blandit sapien. Etiam eget massa dui.
-      Fusce id nisl quam. Integer nec mi arcu. Nullam lacinia est lectus, a
-      euismod purus eleifend id.
-    </Text>
+    <Flex style={{ maxWidth: '600px' }}>
+      <Text>
+        Macbeth (/məkˈbɛθ/, full title The Tragedie of Macbeth) is a tragedy by{' '}
+        <InlineEntryCard {...args} />. It is thought to have been first
+        performed in 1606.[a] It dramatises the damaging physical and
+        psychological effects of political ambition on those who seek power. Of
+        all the plays that Shakespeare wrote during the reign of James I,
+        Macbeth most clearly reflects his relationship with King James, patron
+        of Shakespeare’s acting company.[1] It was first published in the Folio
+        of 1623, possibly from a prompt book, and is Shakespeare’s shortest
+        tragedy
+      </Text>
+    </Flex>
   );
 };
 
@@ -47,7 +45,62 @@ Default.args = {
     <MenuItem key="delete">Delete</MenuItem>,
   ],
   status: 'published',
-  title: 'Closer',
+  title: 'Author: William Shakespeare',
+  children: 'William Shakespeare',
+};
+
+export const WithOnlyTitle: Story<InlineEntryCardProps> = (args) => {
+  return (
+    <Flex style={{ maxWidth: '600px' }}>
+      <Text>
+        Macbeth (/məkˈbɛθ/, full title The Tragedie of Macbeth) is a tragedy by{' '}
+        <InlineEntryCard {...args} />. It is thought to have been first
+        performed in 1606.[a] It dramatises the damaging physical and
+        psychological effects of political ambition on those who seek power. Of
+        all the plays that Shakespeare wrote during the reign of James I,
+        Macbeth most clearly reflects his relationship with King James, patron
+        of Shakespeare’s acting company.[1] It was first published in the Folio
+        of 1623, possibly from a prompt book, and is Shakespeare’s shortest
+        tragedy
+      </Text>
+    </Flex>
+  );
+};
+
+WithOnlyTitle.args = {
+  actions: [
+    <MenuItem key="copy">Copy</MenuItem>,
+    <MenuItem key="delete">Delete</MenuItem>,
+  ],
+  status: 'published',
+  title: 'Author: William Shakespeare',
+};
+
+export const WithNoTitle: Story<InlineEntryCardProps> = (args) => {
+  return (
+    <Flex style={{ maxWidth: '600px' }}>
+      <Text>
+        Macbeth (/məkˈbɛθ/, full title The Tragedie of Macbeth) is a tragedy by{' '}
+        <InlineEntryCard {...args} />. It is thought to have been first
+        performed in 1606.[a] It dramatises the damaging physical and
+        psychological effects of political ambition on those who seek power. Of
+        all the plays that Shakespeare wrote during the reign of James I,
+        Macbeth most clearly reflects his relationship with King James, patron
+        of Shakespeare’s acting company.[1] It was first published in the Folio
+        of 1623, possibly from a prompt book, and is Shakespeare’s shortest
+        tragedy
+      </Text>
+    </Flex>
+  );
+};
+
+WithNoTitle.args = {
+  actions: [
+    <MenuItem key="copy">Copy</MenuItem>,
+    <MenuItem key="delete">Delete</MenuItem>,
+  ],
+  status: 'published',
+  children: 'William Shakespeare',
 };
 
 export const WithLoadingState: Story<InlineEntryCardProps> = (args) => {
@@ -71,7 +124,12 @@ export const Overview: Story<InlineEntryCardProps> = () => {
             Inline
           </SectionHeading>
 
-          <InlineEntryCard status="published" title="Forma 36" />
+          <InlineEntryCard
+            status="published"
+            title="Author: William Shakespeare"
+          >
+            William Shakespeare
+          </InlineEntryCard>
         </Flex>
 
         <Flex
@@ -83,7 +141,13 @@ export const Overview: Story<InlineEntryCardProps> = () => {
             Hover
           </SectionHeading>
 
-          <InlineEntryCard isHovered status="archived" title="Forma 36" />
+          <InlineEntryCard
+            isHovered
+            status="archived"
+            title="Author: William Shakespeare"
+          >
+            William Shakespeare
+          </InlineEntryCard>
         </Flex>
 
         <Flex
@@ -95,7 +159,13 @@ export const Overview: Story<InlineEntryCardProps> = () => {
             Selected
           </SectionHeading>
 
-          <InlineEntryCard isSelected status="deleted" title="Forma 36" />
+          <InlineEntryCard
+            isSelected
+            status="deleted"
+            title="Author: William Shakespeare"
+          >
+            William Shakespeare
+          </InlineEntryCard>
         </Flex>
       </Flex>
     </>
