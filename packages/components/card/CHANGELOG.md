@@ -3,6 +3,76 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.16...@contentful/f36-card@4.2.0) (2022-02-17)
+
+
+### Features
+
+* keyboard-only focus styles ([#1825](https://github.com/contentful/forma-36/issues/1825)) ([d74b5b6](https://github.com/contentful/forma-36/commit/d74b5b6592fd847a9afeb388bad842314496ec5a))
+
+
+
+
+
+## [4.1.16](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.15...@contentful/f36-card@4.1.16) (2022-02-15)
+
+**Note:** Version bump only for package @contentful/f36-card
+
+
+
+
+
+## [4.1.15](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.14...@contentful/f36-card@4.1.15) (2022-02-14)
+
+
+### Bug Fixes
+
+* allow children to be passed to InlineEntryCard ([#1884](https://github.com/contentful/forma-36/issues/1884)) ([b886add](https://github.com/contentful/forma-36/commit/b886add1fb7a2a114b3680161cc6c036e9e154dd))
+
+
+
+
+
+## [4.1.14](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.13...@contentful/f36-card@4.1.14) (2022-02-09)
+
+**Note:** Version bump only for package @contentful/f36-card
+
+
+
+
+
+## [4.1.13](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.12...@contentful/f36-card@4.1.13) (2022-02-09)
+
+**Note:** Version bump only for package @contentful/f36-card
+
+
+
+
+
+## [4.1.12](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.11...@contentful/f36-card@4.1.12) (2022-02-09)
+
+**Note:** Version bump only for package @contentful/f36-card
+
+
+
+
+
+## [4.1.11](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.10...@contentful/f36-card@4.1.11) (2022-02-07)
+
+**Note:** Version bump only for package @contentful/f36-card
+
+
+
+
+
+## [4.1.10](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.9...@contentful/f36-card@4.1.10) (2022-02-07)
+
+**Note:** Version bump only for package @contentful/f36-card
+
+
+
+
+
 ## [4.1.9](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.8...@contentful/f36-card@4.1.9) (2022-02-07)
 
 **Note:** Version bump only for package @contentful/f36-card

@@ -39,9 +39,17 @@ export const getBaseCardStyles = () => {
     box-shadow ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
 
         '&:focus': css({
+          borderColor: isSelected ? tokens.blue100 : tokens.colorPrimary,
+          boxShadow: tokens.glowPrimary,
+          outline: 'none',
+        }),
+        '&:focus:not(:focus-visible)': css({
+          borderColor: isSelected ? tokens.colorPrimary : tokens.gray300,
+          boxShadow: 'unset',
+        }),
+        '&:focus-visible': css({
           borderColor: tokens.colorPrimary,
           boxShadow: tokens.glowPrimary,
-          outline: '0',
         }),
       };
 
@@ -57,7 +65,6 @@ export const getBaseCardStyles = () => {
       if (isSelected) {
         styles.backgroundColor = tokens.blue100;
         styles.borderColor = tokens.colorPrimary;
-        styles.boxShadow = tokens.glowPrimary;
       }
 
       return css(styles);

@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.10](https://github.com/contentful/forma-36/compare/@contentful/f36-note@4.2.9...@contentful/f36-note@4.2.10) (2022-02-17)
+
+**Note:** Version bump only for package @contentful/f36-note
+
+
+
+
+
+## [4.2.9](https://github.com/contentful/forma-36/compare/@contentful/f36-note@4.2.8...@contentful/f36-note@4.2.9) (2022-02-15)
+
+
+### Bug Fixes
+
+* fix Note without title ([#1890](https://github.com/contentful/forma-36/issues/1890)) ([22abdfd](https://github.com/contentful/forma-36/commit/22abdfdbfb8b7b1aa3fe5854566383369c35416b))
+
+
+
+
+
+## [4.2.8](https://github.com/contentful/forma-36/compare/@contentful/f36-note@4.2.7...@contentful/f36-note@4.2.8) (2022-02-09)
+
+**Note:** Version bump only for package @contentful/f36-note
+
+
+
+
+
+## [4.2.7](https://github.com/contentful/forma-36/compare/@contentful/f36-note@4.2.6...@contentful/f36-note@4.2.7) (2022-02-07)
+
+**Note:** Version bump only for package @contentful/f36-note
+
+
+
+
+
+## [4.2.6](https://github.com/contentful/forma-36/compare/@contentful/f36-note@4.2.5...@contentful/f36-note@4.2.6) (2022-02-07)
+
+**Note:** Version bump only for package @contentful/f36-note
+
+
+
+
+
 ## [4.2.5](https://github.com/contentful/forma-36/compare/@contentful/f36-note@4.2.4...@contentful/f36-note@4.2.5) (2022-02-07)
 
 **Note:** Version bump only for package @contentful/f36-note

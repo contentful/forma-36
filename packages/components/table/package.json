@@ -1,13 +1,13 @@
 {
   "name": "@contentful/f36-table",
-  "version": "4.1.1",
+  "version": "4.1.2",
   "description": "Forma 36: Table component",
   "scripts": {
     "build": "parcel build src/index.ts"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@contentful/f36-core": "^4.1.1",
+    "@contentful/f36-core": "^4.2.0",
     "@contentful/f36-tokens": "^4.0.0",
     "emotion": "^10.0.17"
   },

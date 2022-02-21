@@ -14,6 +14,7 @@ const styles = {
     paddingLeft: tokens.spacingXl,
     borderBottom: `1px solid ${tokens.gray300}`,
     overflow: 'hidden',
+    flexShrink: 0,
   }),
   tooltipWrapper: css({
     height: '100%',

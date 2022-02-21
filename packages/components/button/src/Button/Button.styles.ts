@@ -24,77 +24,115 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
   switch (variant) {
     case 'primary':
       return {
-        // !important is a temporary necessity until we get rid of legacy styles
-        // in the web app. See https://github.com/contentful/forma-36/pull/1856
-        color: `${tokens.colorWhite} !important`,
+        color: tokens.colorWhite,
         backgroundColor: tokens.blue500,
         borderColor: tokens.blue500,
         '&:hover': {
           backgroundColor: tokens.blue600,
           borderColor: tokens.blue600,
+          color: tokens.colorWhite,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
+          borderColor: tokens.blue600,
+          boxShadow: tokens.glowPrimary,
+        },
+        '&:focus:not(:focus-visible)': {
+          borderColor: tokens.blue500,
+          boxShadow: 'unset',
+        },
+        '&:focus-visible': {
           borderColor: tokens.blue600,
           boxShadow: tokens.glowPrimary,
         },
       };
     case 'secondary':
       return {
-        color: `${tokens.gray900} !important`,
+        color: tokens.gray900,
         backgroundColor: tokens.colorWhite,
         borderColor: tokens.gray300,
         '&:hover': {
           backgroundColor: tokens.gray100,
+          color: tokens.gray900,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
           boxShadow: tokens.glowPrimary,
         },
+        '&:focus:not(:focus-visible)': {
+          boxShadow: 'unset',
+        },
+        '&:focus-visible': {
+          boxShadow: tokens.glowPrimary,
+        },
       };
     case 'positive':
       return {
-        color: `${tokens.colorWhite} !important`,
+        color: tokens.colorWhite,
         backgroundColor: tokens.colorPositive,
         borderColor: tokens.colorPositive,
         '&:hover': {
           backgroundColor: tokens.green600,
           borderColor: tokens.green600,
+          color: tokens.colorWhite,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
           borderColor: tokens.green600,
           boxShadow: tokens.glowPositive,
         },
+        '&:focus:not(:focus-visible)': {
+          borderColor: tokens.colorPositive,
+          boxShadow: 'unset',
+        },
+        '&:focus-visible': {
+          borderColor: tokens.green600,
+          boxShadow: tokens.glowPositive,
+        },
       };
     case 'negative':
       return {
-        color: `${tokens.colorWhite} !important`,
+        color: tokens.colorWhite,
         backgroundColor: tokens.red600,
         borderColor: tokens.red600,
         '&:hover': {
           backgroundColor: tokens.red700,
           borderColor: tokens.red700,
+          color: tokens.colorWhite,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
           borderColor: tokens.red700,
           boxShadow: tokens.glowNegative,
         },
+        '&:focus:not(:focus-visible)': {
+          borderColor: tokens.red600,
+          boxShadow: 'unset',
+        },
+        '&:focus-visible': {
+          borderColor: tokens.red700,
+          boxShadow: tokens.glowNegative,
+        },
       };
     case 'transparent':
       return {
-        color: `${tokens.gray800} !important`,
-        background: `none`,
-        borderColor: `transparent`,
-        boxShadow: `none`,
+        color: tokens.gray800,
+        background: 'none',
+        borderColor: 'transparent',
+        boxShadow: 'none',
         '&:hover': {
           backgroundColor: tokens.gray100,
-          color: `${tokens.gray900} !important`,
+          color: tokens.gray900,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
           backgroundColor: 'transparent',
+          boxShadow: tokens.glowPrimary,
+        },
+        '&:focus:not(:focus-visible)': {
+          boxShadow: 'unset',
+        },
+        '&:focus-visible': {
           boxShadow: tokens.glowPrimary,
         },
       };
@@ -110,21 +148,21 @@ const sizeToStyles = (size: ButtonSize): CSSObject => {
         fontSize: tokens.fontSizeM,
         lineHeight: tokens.lineHeightCondensed,
         padding: `${tokens.spacing2Xs} ${tokens.spacingS}`,
-        minHeight: `32px`,
+        minHeight: '32px',
       };
     case 'medium':
       return {
         fontSize: tokens.fontSizeM,
         lineHeight: tokens.lineHeightCondensed,
         padding: `${tokens.spacingXs} ${tokens.spacingM}`,
-        minHeight: `40px`,
+        minHeight: '40px',
       };
     case 'large':
       return {
         fontSize: tokens.fontSizeXl,
         lineHeight: tokens.lineHeightXl,
         padding: `${tokens.spacingXs} ${tokens.spacingM}`,
-        minHeight: `48px`,
+        minHeight: '48px',
       };
     default:
       return {};

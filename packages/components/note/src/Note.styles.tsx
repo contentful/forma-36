@@ -49,9 +49,10 @@ const variantToStyles = (variant: NoteVariant): CSSObject => {
 
 export const getNoteStyles = () => {
   return {
-    container: ({ variant }: NoteProps) =>
+    container: ({ variant, title }: NoteProps) =>
       css({
         borderRadius: tokens.borderRadiusMedium,
+        alignItems: !title ? 'center' : null,
         border: '1px solid',
         ...variantToStyles(variant),
       }),
@@ -64,14 +65,15 @@ export const getNoteStyles = () => {
     description: css({
       color: tokens.gray700,
     }),
-    close: css({
-      padding: tokens.spacingXs,
-      marginTop: `-${tokens.spacingXs}`,
-      marginRight: `-${tokens.spacingXs}`,
-      '&:hover, &:active': {
-        backgroundColor: 'transparent',
-      },
-    }),
+    close: ({ title }: NoteProps) =>
+      css({
+        padding: tokens.spacingXs,
+        marginTop: title ? `-${tokens.spacingXs}` : '0',
+        marginRight: title ? `-${tokens.spacingXs}` : '0',
+        '&:hover, &:active': {
+          backgroundColor: 'transparent',
+        },
+      }),
     closeIcon: css({
       color: tokens.gray600,
     }),

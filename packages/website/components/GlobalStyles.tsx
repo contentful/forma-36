@@ -28,9 +28,21 @@ export const GlobalStyles = () => {
         body {
           color: ${tokens.gray800};
           font-family: ${tokens.fontStackPrimary};
-          font-size: ${tokens.fontSizeL};
-          line-height: ${tokens.lineHeightL};
+          font-size: ${tokens.fontSizeM};
+          line-height: ${tokens.lineHeightM};
           min-width: 1280px;
+        }
+
+        body *::-webkit-scrollbar {
+          width: 12px;
+        }
+        body *::-webkit-scrollbar-track {
+          background: ${tokens.colorWhite};
+        }
+        body *::-webkit-scrollbar-thumb {
+          background-color: ${tokens.gray400};
+          border-radius: 6px;
+          border: 3px solid ${tokens.colorWhite};
         }
 
         code {

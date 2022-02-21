@@ -23,13 +23,26 @@ const getHeaderStyles = ({ align }: StyleProps) =>
       width: '100%',
       minWidth: '9px',
       cursor: 'pointer',
-      transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
+      transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault},
+        box-shadow ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
       '&:hover': {
         backgroundColor: tokens.gray100,
       },
       '&:focus': {
-        outline: 'none',
         backgroundColor: tokens.gray100,
+        borderRadius: tokens.borderRadiusMedium,
+        boxShadow: tokens.glowPrimary,
+        outline: 'none',
+      },
+      '&:focus:not(:focus-visible)': {
+        backgroundColor: 'transparent',
+        borderRadius: 'unset',
+        boxShadow: 'unset',
+      },
+      '&:focus-visible': {
+        backgroundColor: tokens.gray100,
+        borderRadius: tokens.borderRadiusMedium,
+        boxShadow: tokens.glowPrimary,
       },
     }),
     align === 'end' &&
