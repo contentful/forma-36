@@ -11,6 +11,7 @@ export type ParagraphInternalProps = CommonProps &
   MarginProps & {
     children: React.ReactNode;
     isTruncated?: boolean;
+    isWordBreak?: boolean;
   };
 
 export type ParagraphProps = PropsWithHTMLElement<ParagraphInternalProps, 'p'>;
