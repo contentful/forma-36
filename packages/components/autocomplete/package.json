@@ -1,13 +1,13 @@
 {
   "name": "@contentful/f36-autocomplete",
-  "version": "4.2.2",
+  "version": "4.2.3",
   "description": "Forma 36: Autocomplete component",
   "scripts": {
     "build": "parcel build"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@contentful/f36-button": "^4.3.0",
+    "@contentful/f36-button": "^4.3.1",
     "@contentful/f36-core": "^4.2.0",
     "@contentful/f36-forms": "^4.3.0",
     "@contentful/f36-icons": "^4.1.1",
