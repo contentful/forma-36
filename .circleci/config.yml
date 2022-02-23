@@ -35,7 +35,7 @@ jobs:
           at: ~/circleci-f36-build
       - yarn_install
       - run:
-          name: Lerna build
+          name: Build packages
           command: yarn build
       - persist_to_workspace:
           root: .
@@ -45,6 +45,7 @@ jobs:
             - packages/f36-docs-utils/dist
             - packages/forma-36-react-components/dist
             - packages/forma-36-tokens/dist
+            - packages/website/.next
 
   analyze_code:
     docker:
@@ -91,9 +92,6 @@ jobs:
           at: ~/circleci-f36-build
       - yarn_install
       - run:
-          name: Build Next.js website
-          command: yarn docs:next:build
-      - run:
           name: Run production version of the website locally
           command: yarn docs:next:start-prod
           background: true
@@ -138,9 +136,6 @@ jobs:
             - '2b:9f:13:79:d8:7b:f5:38:43:8f:3d:a8:7d:53:22:b2'
       - run: git config --global user.email ${GITHUB_EMAIL}
       - run: git config --global user.name ${GITHUB_USER}
-      - run:
-          name: Build
-          command: yarn build --no-cache
       - run:
           name: Deploy
           command: yarn lerna publish --no-private --conventional-commits --create-release github --yes
