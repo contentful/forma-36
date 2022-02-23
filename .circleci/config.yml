@@ -45,7 +45,6 @@ jobs:
             - packages/f36-docs-utils/dist
             - packages/forma-36-react-components/dist
             - packages/forma-36-tokens/dist
-            - packages/website/.next
 
   analyze_code:
     docker:
@@ -92,6 +91,9 @@ jobs:
           at: ~/circleci-f36-build
       - yarn_install
       - run:
+          name: Build Next.js website
+          command: yarn docs:next:build
+      - run:
           name: Run production version of the website locally
           command: yarn docs:next:start-prod
           background: true
@@ -111,8 +113,6 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/circleci-f36-build
-      - check-changed-files-or-halt:
-          pattern: ^(packages)|(.js|jsx|ts|tsx|css|scss)$
       - yarn_install
       - run:
           name: Storybook

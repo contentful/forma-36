@@ -161,14 +161,6 @@
         "outputs": [
           "dist/**"
         ]
-      },
-      "website#build": {
-        "dependsOn": [
-          "^build"
-        ],
-        "outputs": [
-          ".next/**"
-        ]
       }
     }
   }
