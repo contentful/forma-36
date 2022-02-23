@@ -82,6 +82,7 @@ export const getBadgeStyles = ({
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
+    verticalAlign: 'middle',
     ...variantToStyles({ variant }),
     ...sizeToStyles({ size }),
   });
