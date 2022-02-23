@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.18](https://github.com/contentful/forma-36/compare/@contentful/f36-entity-list@4.1.17...@contentful/f36-entity-list@4.1.18) (2022-02-23)
+
+**Note:** Version bump only for package @contentful/f36-entity-list
+
+
+
+
+
 ## [4.1.17](https://github.com/contentful/forma-36/compare/@contentful/f36-entity-list@4.1.16...@contentful/f36-entity-list@4.1.17) (2022-02-22)
 
 **Note:** Version bump only for package @contentful/f36-entity-list
