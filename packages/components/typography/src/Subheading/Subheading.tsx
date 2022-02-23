@@ -14,6 +14,7 @@ const SUBHEADING_DEFAULT_TAG = 'h3';
 export interface SubheadingInternalProps extends CommonProps, MarginProps {
   as?: HeadingElement;
   isTruncated?: boolean;
+  isWordBreak?: boolean;
 }
 
 export type SubheadingProps<

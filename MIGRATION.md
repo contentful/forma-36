@@ -126,7 +126,7 @@ The following components do not have a codemod, so you must migrate them manuall
 
 - [Accordion](#accordion)
 - [Asset](#asset)
-- [Autocomplete](v4.f36.contentful.com/components/autocomplete/)
+- [Autocomplete](https://f36.contentful.com/components/autocomplete/)
 - [DateTime](#datetime)
 - [ToggleButton](#togglebutton)
 - [Dropdown](#dropdown)

@@ -37,6 +37,14 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
           borderColor: tokens.blue600,
           boxShadow: tokens.glowPrimary,
         },
+        '&:focus:not(:focus-visible)': {
+          borderColor: tokens.blue500,
+          boxShadow: 'unset',
+        },
+        '&:focus-visible': {
+          borderColor: tokens.blue600,
+          boxShadow: tokens.glowPrimary,
+        },
       };
     case 'secondary':
       return {
@@ -49,6 +57,12 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
+          boxShadow: tokens.glowPrimary,
+        },
+        '&:focus:not(:focus-visible)': {
+          boxShadow: 'unset',
+        },
+        '&:focus-visible': {
           boxShadow: tokens.glowPrimary,
         },
       };
@@ -64,6 +78,14 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
+          borderColor: tokens.green600,
+          boxShadow: tokens.glowPositive,
+        },
+        '&:focus:not(:focus-visible)': {
+          borderColor: tokens.colorPositive,
+          boxShadow: 'unset',
+        },
+        '&:focus-visible': {
           borderColor: tokens.green600,
           boxShadow: tokens.glowPositive,
         },
@@ -83,13 +105,21 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
           borderColor: tokens.red700,
           boxShadow: tokens.glowNegative,
         },
+        '&:focus:not(:focus-visible)': {
+          borderColor: tokens.red600,
+          boxShadow: 'unset',
+        },
+        '&:focus-visible': {
+          borderColor: tokens.red700,
+          boxShadow: tokens.glowNegative,
+        },
       };
     case 'transparent':
       return {
         color: tokens.gray800,
-        background: `none`,
-        borderColor: `transparent`,
-        boxShadow: `none`,
+        background: 'none',
+        borderColor: 'transparent',
+        boxShadow: 'none',
         '&:hover': {
           backgroundColor: tokens.gray100,
           color: tokens.gray900,
@@ -97,6 +127,12 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
         '&:active': variantActiveStyles(variant),
         '&:focus': {
           backgroundColor: 'transparent',
+          boxShadow: tokens.glowPrimary,
+        },
+        '&:focus:not(:focus-visible)': {
+          boxShadow: 'unset',
+        },
+        '&:focus-visible': {
           boxShadow: tokens.glowPrimary,
         },
       };
@@ -112,21 +148,21 @@ const sizeToStyles = (size: ButtonSize): CSSObject => {
         fontSize: tokens.fontSizeM,
         lineHeight: tokens.lineHeightCondensed,
         padding: `${tokens.spacing2Xs} ${tokens.spacingS}`,
-        minHeight: `32px`,
+        minHeight: '32px',
       };
     case 'medium':
       return {
         fontSize: tokens.fontSizeM,
         lineHeight: tokens.lineHeightCondensed,
         padding: `${tokens.spacingXs} ${tokens.spacingM}`,
-        minHeight: `40px`,
+        minHeight: '40px',
       };
     case 'large':
       return {
         fontSize: tokens.fontSizeXl,
         lineHeight: tokens.lineHeightXl,
         padding: `${tokens.spacingXs} ${tokens.spacingM}`,
-        minHeight: `48px`,
+        minHeight: '48px',
       };
     default:
       return {};

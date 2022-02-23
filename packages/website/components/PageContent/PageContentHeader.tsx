@@ -36,19 +36,31 @@ const styles = {
 
 interface PageContentHeaderProps {
   title: FrontMatter['title'];
-  github?: FrontMatter['github'];
   status?: FrontMatter['status'];
   children?: React.ReactNode;
 }
 
+const getGithubIssueLink = (title) => {
+  const queryParams = {
+    title: `💬  Feedback - ${title}`,
+    assignees: 'm10l,burakukula,mshaaban0,gui-santos,denkristoffer,Lelith',
+    template: 'component-feedback.md',
+  };
+  const queryString = Object.keys(queryParams)
+    .map((key) => `${key}=${queryParams[key]}`)
+    .join('&');
+  return `https://github.com/contentful/forma-36/issues/new?${queryString}`;
+};
+
 export function PageContentHeader({
   title,
-  github,
   status,
   children,
 }: PageContentHeaderProps) {
   const gridStyles = getGridStyles();
-  const showNote = status === 'deprecated';
+  const isDeprecated = status === 'deprecated';
+  const isAlpha = status === 'alpha';
+  const showNote = isAlpha || isDeprecated;
 
   return (
     <header className={cx(gridStyles.contentColumns, styles.header)}>
@@ -56,25 +68,37 @@ export function PageContentHeader({
         {title}
       </DisplayText>
 
-      {github && (
-        <Flex className={styles.gitHubLink} paddingLeft="spacing2Xl">
-          <TextLink
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            icon={<ExternalLinkIcon />}
-            alignIcon="end"
-          >
-            View on Github
-          </TextLink>
-        </Flex>
-      )}
+      <Flex
+        className={styles.gitHubLink}
+        paddingLeft="spacing2Xl"
+        flexDirection="column"
+        gap={tokens.spacingXs}
+        alignItems="start"
+      >
+        <TextLink
+          href={getGithubIssueLink(title)}
+          target="_blank"
+          rel="noopener noreferrer"
+          icon={<ExternalLinkIcon />}
+          alignIcon="end"
+        >
+          Give feedback
+        </TextLink>
+      </Flex>
 
-      {showNote && (
+      {isDeprecated && (
         <Flex flexDirection="column" marginBottom="spacingXl">
           <Note variant="negative" title="Deprecated component">
             {title} was deprecated in v4. It will be deleted from the repository
             on 12th July 2022.
+          </Note>
+        </Flex>
+      )}
+
+      {isAlpha && (
+        <Flex flexDirection="column" marginBottom="spacingXl">
+          <Note variant="positive" title="Alpha component">
+            {title} is not ready to be used in production. Use at your own risk.
           </Note>
         </Flex>
       )}

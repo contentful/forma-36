@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { Meta } from '@storybook/react/types-6-0';
 import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
+
 import { Flex, Stack } from '@contentful/f36-core';
 import { Icon } from '@contentful/f36-icon';
 import * as icons from '@contentful/f36-icons';
-import { ButtonGroup } from '../src';
 
+import { ButtonGroup } from '../src';
 import { ToggleButton } from '../src/ToggleButton';
 
 export default {
@@ -27,39 +28,95 @@ export default {
   },
 } as Meta;
 
-export const basic = ({ icon, children, ...props }) => (
-  <div>
-    <ToggleButton icon={icon && <Icon as={icons[icon]} />} {...props}>
+export const Basic = ({ icon, children, isDisabled }) => {
+  const [isActive, setIsActive] = useState(false);
+
+  return (
+    <ToggleButton
+      isDisabled={isDisabled}
+      isActive={isActive}
+      onToggle={() => {
+        setIsActive(!isActive);
+      }}
+      icon={icon && <Icon as={icons[icon]} />}
+    >
       {children}
     </ToggleButton>
-  </div>
-);
-
-basic.args = {
-  isDisabled: false,
-  isActive: false,
-  icon: undefined,
-  children: 'Single',
-  onToggle: action('toggled'),
+  );
 };
 
-export const grouped = ({ icon }) => (
-  <div>
-    <ButtonGroup>
-      <ToggleButton>Apples</ToggleButton>
-      <ToggleButton isActive>Pears</ToggleButton>
-      <ToggleButton>Peaches</ToggleButton>
-      <ToggleButton>Mangos</ToggleButton>
-      <ToggleButton isActive icon={icon && <Icon as={icons[icon]} />}>
-        Kiwis
-      </ToggleButton>
-      <ToggleButton isDisabled>Bananas</ToggleButton>
-    </ButtonGroup>
-  </div>
-);
+Basic.args = {
+  isDisabled: false,
+  icon: 'ThumbUpTrimmedIcon',
+  children: 'Like',
+};
 
-grouped.args = {
-  icon: 'PreviewIcon',
+export const Grouped = () => {
+  const [isItalic, setIsItalic] = useState(false);
+  const [isBold, setIsBold] = useState(true);
+  const [isUnderline, setIsUnderline] = useState(false);
+
+  return (
+    <ButtonGroup>
+      <ToggleButton
+        isActive={isItalic}
+        icon={<Icon as={icons.FormatItalicIcon} />}
+        aria-label="Italic"
+        size="small"
+        onToggle={() => {
+          setIsItalic(!isItalic);
+        }}
+      />
+      <ToggleButton
+        isActive={isBold}
+        icon={<Icon as={icons.FormatBoldIcon} />}
+        aria-label="Bold"
+        size="small"
+        onToggle={() => {
+          setIsBold(!isBold);
+        }}
+      />
+      <ToggleButton
+        isActive={isUnderline}
+        icon={<Icon as={icons.FormatUnderlinedIcon} />}
+        aria-label="Underline"
+        size="small"
+        onToggle={() => {
+          setIsUnderline(!isUnderline);
+        }}
+      />
+    </ButtonGroup>
+  );
+};
+
+export const GroupedWithOnlyOneActive = () => {
+  const [isActive, setIsActive] = useState('bold');
+
+  return (
+    <ButtonGroup>
+      <ToggleButton
+        isActive={isActive === 'italic'}
+        icon={<Icon as={icons.FormatItalicIcon} />}
+        aria-label="Italic"
+        size="small"
+        onToggle={() => setIsActive('italic')}
+      />
+      <ToggleButton
+        isActive={isActive === 'bold'}
+        icon={<Icon as={icons.FormatBoldIcon} />}
+        aria-label="Bold"
+        size="small"
+        onToggle={() => setIsActive('bold')}
+      />
+      <ToggleButton
+        isActive={isActive === 'underline'}
+        icon={<Icon as={icons.FormatUnderlinedIcon} />}
+        aria-label="Underline"
+        size="small"
+        onToggle={() => setIsActive('underline')}
+      />
+    </ButtonGroup>
+  );
 };
 
 export const Overview = ({ icon, ...props }) => (

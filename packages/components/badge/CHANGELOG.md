@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.4](https://github.com/contentful/forma-36/compare/@contentful/f36-badge@4.1.3...@contentful/f36-badge@4.1.4) (2022-02-22)
+
+**Note:** Version bump only for package @contentful/f36-badge
+
+
+
+
+
+## [4.1.3](https://github.com/contentful/forma-36/compare/@contentful/f36-badge@4.1.2...@contentful/f36-badge@4.1.3) (2022-02-17)
+
+**Note:** Version bump only for package @contentful/f36-badge
+
+
+
+
+
+## [4.1.2](https://github.com/contentful/forma-36/compare/@contentful/f36-badge@4.1.1...@contentful/f36-badge@4.1.2) (2022-02-15)
+
+
+### Bug Fixes
+
+* **Badge:** disable newlines ([64ed624](https://github.com/contentful/forma-36/commit/64ed6242a54ecb6b22f410c5505866a4bb69cc0b))
+* **Badge:** show ellipsis for overflowing text in limited space ([3724a15](https://github.com/contentful/forma-36/commit/3724a150306d5c0009748072cd98e48ce4033d80))
+
+
+
+
+
 ## [4.1.1](https://github.com/contentful/forma-36/compare/@contentful/f36-badge@4.1.0...@contentful/f36-badge@4.1.1) (2022-01-31)
 
 **Note:** Version bump only for package @contentful/f36-badge

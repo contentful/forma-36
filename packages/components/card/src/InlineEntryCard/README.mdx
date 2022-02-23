@@ -3,19 +3,18 @@ title: 'InlineEntryCard'
 slug: /components/inline-entry-card/
 section: 'cardComponents'
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/card/src/InlineEntryCard/'
-typescript: ./InlineEntryCard.tsx
 storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-card-inlineentrycard--default'
+typescript: ./InlineEntryCard.tsx
 ---
 
-import { Heading, Stack, TextLink } from '@contentful/f36-components';
-import { ExternalLinkIcon } from '@contentful/f36-icons';
-
-`InlineEntryCard` should be used to represent links to Entries, similar `EntryCard`. But `InlineEntryCard` is used as an inline-block.
+Display links to entries inline.
 
 ## Import
 
 ```jsx static=true
 import { InlineEntryCard } from '@contentful/f36-components';
+// or
+import { InlineEntryCard } from '@contentful/f36-card';
 ```
 
 ## Examples
@@ -24,141 +23,24 @@ import { InlineEntryCard } from '@contentful/f36-components';
 
 Here are `InlineEntryCard` components used with all possible `status` variants.
 
-```jsx
-<>
-  <InlineEntryCard
-    actions={[
-      <MenuItem key="copy">Copy</MenuItem>,
-      <MenuItem key="delete">Delete</MenuItem>,
-    ]}
-    status="published"
-    title="Published Entry Title"
-  />
-  <InlineEntryCard
-    actions={[
-      <MenuItem key="copy">Copy</MenuItem>,
-      <MenuItem key="delete">Delete</MenuItem>,
-    ]}
-    status="new"
-    title="New Entry Title"
-  />
-  <InlineEntryCard
-    actions={[
-      <MenuItem key="copy">Copy</MenuItem>,
-      <MenuItem key="delete">Delete</MenuItem>,
-    ]}
-    status="draft"
-    title="Draft Entry Title"
-  />
-  <InlineEntryCard
-    actions={[
-      <MenuItem key="copy">Copy</MenuItem>,
-      <MenuItem key="delete">Delete</MenuItem>,
-    ]}
-    status="deleted"
-    title="Deleted Entry Title"
-  />
-  <InlineEntryCard
-    actions={[
-      <MenuItem key="copy">Copy</MenuItem>,
-      <MenuItem key="delete">Delete</MenuItem>,
-    ]}
-    status="changed"
-    title="Changed Entry Title"
-  />
-  <InlineEntryCard
-    actions={[
-      <MenuItem key="copy">Copy</MenuItem>,
-      <MenuItem key="delete">Delete</MenuItem>,
-    ]}
-    status="archived"
-    title="Archived Entry Title"
-  />
-</>
+```jsx file=../../examples/InlineEntryCard/BasicInlineEntryCardExample.tsx
+
 ```
 
 ### Usage with various actions
 
-`actions` prop takes an array of `MenuItem` elements. You can learn more about `MenuItem` component on [`Menu` documentation page](/components/menu).
+The `actions` prop takes an array of `MenuItem` elements. You can learn more about `MenuItem` component on [`Menu` documentation page](/components/menu).
 
-```jsx
-() => {
-  const handleEditAction = () => console.log('handleEditAction');
-  const handleUnpublishAction = () => console.log('handleUnpublishAction');
-  const handleCopyAction = () => console.log('handleCopyAction');
-  const handleDeleteAction = () => console.log('handleDeleteAction');
+```jsx file=../../examples/InlineEntryCard/InlineEntryCardWithActionsExample.tsx
 
-  return (
-    <InlineEntryCard
-      actions={[
-        <MenuItem key="edit" onClick={handleEditAction}>
-          Edit
-        </MenuItem>,
-        <MenuItem key="unpublish" onClick={handleUnpublishAction}>
-          Unpublish
-        </MenuItem>,
-        <MenuItem key="copy" onClick={handleCopyAction}>
-          Copy
-        </MenuItem>,
-        <MenuItem key="delete" onClick={handleDeleteAction}>
-          Delete
-        </MenuItem>,
-      ]}
-      status="published"
-      title="Forma 36 Entry Title"
-    />
-  );
-};
 ```
 
 ### Usage inline in text
 
-`InlineEntryCard` is mainly for using it in text editors, to represent links to other entries.
+```jsx file=../../examples/InlineEntryCard/InlineEntryCardInTextExample.tsx
 
-```jsx
-<Text>
-  Fusce a odio pharetra, porta justo vel, maximus ex. In pellentesque a orci et
-  pretium. Praesent libero lorem, gravida eu pulvinar id, eleifend a sapien.
-  <InlineEntryCard
-    actions={[
-      <MenuItem key="copy">Copy</MenuItem>,
-      <MenuItem key="delete">Delete</MenuItem>,
-    ]}
-    status="published"
-    title="Published Entry Title"
-  />
-  Nulla a ultrices nulla, vel blandit sapien. Etiam eget massa dui. Fusce id
-  nisl quam. Integer nec mi arcu. Nullam lacinia est lectus, a euismod purus
-  eleifend id. Fusce a odio pharetra, porta justo vel, maximus ex. In
-  pellentesque a orci et pretium. Praesent libero lorem, gravida eu pulvinar id,
-  eleifend a sapien.
-  <InlineEntryCard
-    actions={[
-      <MenuItem key="copy">Copy</MenuItem>,
-      <MenuItem key="delete">Delete</MenuItem>,
-    ]}
-    status="new"
-    title="New Entry Title"
-  />
-  Nulla a ultrices nulla, vel blandit sapien. Etiam eget massa dui. Fusce id
-  nisl quam. Integer nec mi arcu. Nullam lacinia est lectus, a euismod purus
-  eleifend id.
-</Text>
 ```
 
-<Stack justifyContent="space-between" marginTop="spacing2Xl" marginBottom="spacingL">
-  <Heading id="props-api-reference" as="h2" marginTop="none" marginBottom="none">
-    Props (API reference)
-  </Heading>
-
-  <TextLink
-    href="https://v4-f36-storybook.netlify.app/?path=/story/components-card-inlineentrycard--default"
-    target="_blank"
-    alignIcon="end"
-    icon={<ExternalLinkIcon />}
-  >
-    Open in Storybook
-  </TextLink>
-</Stack>
+## Props (API reference)
 
 <PropsTable of="InlineEntryCard" />

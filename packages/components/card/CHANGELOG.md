@@ -3,6 +3,63 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.3.0](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.2.1...@contentful/f36-card@4.3.0) (2022-02-22)
+
+
+### Features
+
+* new property to typography components ([#1891](https://github.com/contentful/forma-36/issues/1891)) ([ed309a6](https://github.com/contentful/forma-36/commit/ed309a69ec840b0c0b38150403d2839a2678ad9e))
+
+
+
+
+
+## [4.2.1](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.2.0...@contentful/f36-card@4.2.1) (2022-02-22)
+
+**Note:** Version bump only for package @contentful/f36-card
+
+
+
+
+
+# [4.2.0](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.16...@contentful/f36-card@4.2.0) (2022-02-17)
+
+
+### Features
+
+* keyboard-only focus styles ([#1825](https://github.com/contentful/forma-36/issues/1825)) ([d74b5b6](https://github.com/contentful/forma-36/commit/d74b5b6592fd847a9afeb388bad842314496ec5a))
+
+
+
+
+
+## [4.1.16](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.15...@contentful/f36-card@4.1.16) (2022-02-15)
+
+**Note:** Version bump only for package @contentful/f36-card
+
+
+
+
+
+## [4.1.15](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.14...@contentful/f36-card@4.1.15) (2022-02-14)
+
+
+### Bug Fixes
+
+* allow children to be passed to InlineEntryCard ([#1884](https://github.com/contentful/forma-36/issues/1884)) ([b886add](https://github.com/contentful/forma-36/commit/b886add1fb7a2a114b3680161cc6c036e9e154dd))
+
+
+
+
+
+## [4.1.14](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.13...@contentful/f36-card@4.1.14) (2022-02-09)
+
+**Note:** Version bump only for package @contentful/f36-card
+
+
+
+
+
 ## [4.1.13](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.1.12...@contentful/f36-card@4.1.13) (2022-02-09)
 
 **Note:** Version bump only for package @contentful/f36-card

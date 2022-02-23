@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.2](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.3.1...@contentful/f36-button@4.3.2) (2022-02-22)
+
+**Note:** Version bump only for package @contentful/f36-button
+
+
+
+
+
+## [4.3.1](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.3.0...@contentful/f36-button@4.3.1) (2022-02-22)
+
+
+### Bug Fixes
+
+* remove state from ToggleButton ([#1897](https://github.com/contentful/forma-36/issues/1897)) ([e3058e0](https://github.com/contentful/forma-36/commit/e3058e0b72ba5ffc14f9f781df8447f15a3f16fc))
+
+
+
+
+
+# [4.3.0](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.2.1...@contentful/f36-button@4.3.0) (2022-02-17)
+
+
+### Features
+
+* keyboard-only focus styles ([#1825](https://github.com/contentful/forma-36/issues/1825)) ([d74b5b6](https://github.com/contentful/forma-36/commit/d74b5b6592fd847a9afeb388bad842314496ec5a))
+
+
+
+
+
 ## [4.2.1](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.2.0...@contentful/f36-button@4.2.1) (2022-02-09)
 
 **Note:** Version bump only for package @contentful/f36-button
