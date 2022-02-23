@@ -20,7 +20,29 @@ import { Pagination } from '@contentful/f36-pagination';
 
 ### Basic
 
+When not using the total prop, it's necessary to pass to the component the `isLastPage` and the `pageLength` prop, so the Pagination component can render correctly.
+
 ```jsx file=examples/PaginationExample.tsx
+
+```
+
+### With total number of items
+
+When you know how many items in total there will be paginated on, you should pass that prop and the Pagination component will make all the calculations.
+
+```jsx file=examples/PaginationWithTotalExample.tsx
+
+```
+
+### With view per page selector
+
+```jsx file=examples/PaginationWithViewPerPageSelector.tsx
+
+```
+
+### With total and view per page selector
+
+```jsx file=examples/PaginationWithTotalAndViewPerPageExample.tsx
 
 ```
 
