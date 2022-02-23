@@ -4,8 +4,11 @@ import {
   SandpackLayout,
   SandpackCodeEditor,
   SandpackPreview,
+  SandpackThemeProvider,
 } from '@codesandbox/sandpack-react';
 import tokens from '@contentful/f36-tokens';
+import { Flex } from '@contentful/f36-components';
+import { css } from 'emotion';
 
 import { PlaygroundTopBar } from './PlaygroundTopBar';
 import { palette } from '../LiveEditor/theme';
@@ -25,6 +28,15 @@ ReactDOM.render(
   rootElement
 );`;
 
+const styles = {
+  editorWidthHack: css({
+    background: tokens.gray200,
+    width: '50%',
+    '>div': css({
+      width: '100%',
+    }),
+  }),
+};
 const stylesFile = `
   body {
     padding: ${tokens.spacingM};
@@ -75,55 +87,62 @@ export function SandpackRenderer({
     >
       <PlaygroundTopBar />
 
-      <SandpackLayout
-        theme={{
-          palette: {
-            activeText: palette.activeText,
-            defaultText: palette.color,
-            inactiveText: palette.inactiveText,
-            activeBackground: palette.backgroundColor,
-            defaultBackground: palette.backgroundColor,
-            inputBackground: palette.inputBackground,
-            accent: palette.accent,
-            errorBackground: palette.errorBackground,
-            errorForeground: palette.deleted,
-          },
-          syntax: {
-            plain: palette.color,
-            comment: {
-              color: palette.comment,
-              fontStyle: 'italic',
-            },
-            keyword: palette.tag,
-            tag: palette.tag,
-            punctuation: palette.color,
-            definition: palette.deleted,
-            property: palette.selector,
-            static: palette.attrValue,
-            string: palette.attrValue,
-          },
-          typography: {
-            bodyFont:
-              'font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;',
-            monoFont:
-              'font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;',
-            fontSize: '14px',
-            lineHeight: '1.4',
-          },
-        }}
-      >
-        <SandpackCodeEditor
-          showTabs={false}
-          showLineNumbers
-          showInlineErrors
-          wrapContent
-        />
-        <SandpackPreview
-          showSandpackErrorOverlay
-          showOpenInCodeSandbox={showOpenInCodeSandbox}
-          showRefreshButton
-          viewportSize="auto"
-        />
+      <SandpackLayout>
+        <Flex className={styles.editorWidthHack}>
+          <SandpackThemeProvider
+            theme={{
+              palette: {
+                activeText: palette.activeText,
+                defaultText: palette.color,
+                inactiveText: palette.inactiveText,
+                activeBackground: palette.backgroundColor,
+                defaultBackground: palette.backgroundColor,
+                inputBackground: palette.inputBackground,
+                accent: palette.accent,
+                errorBackground: palette.errorBackground,
+                errorForeground: palette.deleted,
+              },
+              syntax: {
+                plain: palette.color,
+                comment: {
+                  color: palette.comment,
+                  fontStyle: 'italic',
+                },
+                keyword: palette.tag,
+                tag: palette.tag,
+                punctuation: palette.color,
+                definition: palette.deleted,
+                property: palette.selector,
+                static: palette.attrValue,
+                string: palette.attrValue,
+              },
+              typography: {
+                bodyFont:
+                  'font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;',
+                monoFont:
+                  'font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;',
+                fontSize: '14px',
+                lineHeight: '1.4',
+              },
+            }}
+          >
+            <SandpackCodeEditor
+              showTabs={false}
+              showLineNumbers
+              showInlineErrors
+              wrapContent
+            />
+          </SandpackThemeProvider>
+        </Flex>
+
+        <Flex style={{ width: '50%' }}>
+          <SandpackPreview
+            showSandpackErrorOverlay
+            showOpenInCodeSandbox={showOpenInCodeSandbox}
+            showRefreshButton
+            viewportSize="auto"
+          />
+        </Flex>
       </SandpackLayout>
     </SandpackProvider>
   );
