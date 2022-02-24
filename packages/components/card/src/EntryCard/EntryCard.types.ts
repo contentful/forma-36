@@ -14,6 +14,10 @@ export type EntryCardInternalProps = Omit<
    */
   title?: string;
   /**
+   * The tag for the title of the entry.
+   */
+  titleTag?: string;
+  /**
    * The description of the entry
    */
   description?: string;
