@@ -5,6 +5,7 @@ const {
   createComponent,
   addImport,
   renameProperties,
+  getChildren,
 } = require('../utils');
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
 
@@ -70,18 +71,11 @@ module.exports = function checkboxFieldCodemod(file, api) {
         ...commonProps,
       ].filter((prop) => prop);
 
-      const getChildren = (prop) => {
-        if (!prop) return [];
-        return prop.value.type === 'JSXExpressionContainer'
-          ? [prop.value]
-          : [j.jsxText(prop.value.value)];
-      };
-
       const Checkbox = createComponent({
         j,
         componentName: 'Checkbox',
         props: checkboxProps,
-        children: getChildren(labelText),
+        children: getChildren({ prop: labelText, j }),
       });
 
       const ValidationMesage =
@@ -89,7 +83,7 @@ module.exports = function checkboxFieldCodemod(file, api) {
         createComponent({
           j,
           componentName: 'FormControl.ValidationMessage',
-          children: getChildren(validationMessage),
+          children: getChildren({ prop: validationMessage, j }),
         });
 
       const FormControlContent = [Checkbox, ValidationMesage].reduce(
