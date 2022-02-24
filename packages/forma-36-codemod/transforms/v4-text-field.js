@@ -6,6 +6,7 @@ const {
   getProperty,
   removeComponentImport,
   renameProperties,
+  getChildren,
 } = require('../utils');
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
 const { isConditionalExpression } = require('../utils/updateTernaryValues');
@@ -92,14 +93,7 @@ function textFieldCodemod(file, api) {
       const Label = createComponent({
         j,
         componentName: 'FormControl.Label',
-        children: [
-          labelText.value.type === 'StringLiteral' ||
-          labelText.value.type === 'Literal'
-            ? j.jsxText(labelText.value.value)
-            : j.jsxExpressionContainer(
-                j.identifier(labelText.value.expression.name),
-              ),
-        ],
+        children: getChildren({ prop: labelText, j }),
       });
 
       const TextInput = createComponent({
@@ -131,14 +125,7 @@ function textFieldCodemod(file, api) {
         HelpText = createComponent({
           j,
           componentName: 'FormControl.HelpText',
-          children: [
-            helpText.value.type === 'StringLiteral' ||
-            helpText.value.type === 'Literal'
-              ? j.jsxText(helpText.value.value)
-              : j.jsxExpressionContainer(
-                  j.identifier(helpText.value.expression.name),
-                ),
-          ],
+          children: getChildren({ prop: helpText, j }),
         });
       }
 

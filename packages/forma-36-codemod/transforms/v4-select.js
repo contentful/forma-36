@@ -9,6 +9,7 @@ const {
   changeComponentName,
   changeProperties,
   deleteProperty,
+  getChildren,
 } = require('../utils');
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
 const { pipe } = require('./common/pipe');
@@ -108,17 +109,10 @@ function selectFieldCodemod(file, api) {
         ['testId', 'className'].includes(attributes.name?.name),
       );
 
-      const getChildren = (prop) => {
-        if (!prop) return [];
-        return prop.value.type === 'JSXExpressionContainer'
-          ? [prop.value]
-          : [j.jsxText(prop.value.value)];
-      };
-
       const Label = createComponent({
         j,
         componentName: 'FormControl.Label',
-        children: getChildren(labelText),
+        children: getChildren({ prop: labelText, j }),
       });
 
       const HelpText =
@@ -126,7 +120,7 @@ function selectFieldCodemod(file, api) {
         createComponent({
           j,
           componentName: 'FormControl.HelpText',
-          children: getChildren(helpText),
+          children: getChildren({ prop: helpText, j }),
         });
 
       const ValidationMesage =
@@ -134,7 +128,7 @@ function selectFieldCodemod(file, api) {
         createComponent({
           j,
           componentName: 'FormControl.ValidationMessage',
-          children: getChildren(validationMessage),
+          children: getChildren({ prop: validationMessage, j }),
         });
 
       const selectProps = [value, ...handlerProps].filter((prop) => prop);
