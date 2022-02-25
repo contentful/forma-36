@@ -29,3 +29,8 @@ jobs:
         uses: changesets/action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Update changelog
+        if: steps.changesets.outputs.published == 'true'
+        run: |
+          yarn changelog:write

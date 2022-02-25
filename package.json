@@ -30,7 +30,8 @@
     "docs:next": "lerna run --scope @contentful/f36-website start --stream",
     "docs:next:build": "lerna run --scope @contentful/f36-website build:prod --stream",
     "docs:next:start-prod": "lerna run --scope @contentful/f36-website start:prod --stream",
-    "release-v4-beta-as-latest": "yarn build && yarn lerna publish --exact --no-private --canary --no-git-tag-version --no-push --dist-tag latest --preid beta --force-publish --no-changelog"
+    "release-v4-beta-as-latest": "yarn build && yarn lerna publish --exact --no-private --canary --no-git-tag-version --no-push --dist-tag latest --preid beta --force-publish --no-changelog",
+    "changelog:write": "ts-node scripts/changesets/changelog-write.ts"
   },
   "husky": {
     "hooks": {
