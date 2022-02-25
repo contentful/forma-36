@@ -88,7 +88,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
             size={title ? 'medium' : 'small'}
           />
         </Flex>
-        <div>
+        <Flex flexDirection="column" flexGrow={1}>
           {title && (
             <Heading as="h2" className={styles.title}>
               {title}
@@ -97,7 +97,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
           <Text as="p" lineHeight="lineHeightM" className={styles.description}>
             {children}
           </Text>
-        </div>
+        </Flex>
         {withCloseButton && (
           <Button
             variant="transparent"
