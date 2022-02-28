@@ -111,7 +111,7 @@
     "eslint-plugin-testing-library": "^4.10.1",
     "fast-glob": "^3.2.4",
     "file-loader": "^6.2.0",
-    "globby": "^11.0.2",
+    "globby": "^13.1.1",
     "husky": "^4.3.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.3.1",
