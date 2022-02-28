@@ -115,9 +115,11 @@ module.exports = function (file, api) {
 
       modifiedAttributes = deleteProperty(modifiedAttributes, {
         propertyName: 'buttonType',
+        file,
       });
       modifiedAttributes = deleteProperty(modifiedAttributes, {
         propertyName: 'iconProps',
+        file,
       });
 
       return modifiedAttributes;

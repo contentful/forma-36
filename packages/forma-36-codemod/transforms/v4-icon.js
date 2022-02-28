@@ -53,6 +53,7 @@ module.exports = function (file, api) {
 
           modifiedAttributes = deleteProperty(modifiedAttributes, {
             propertyName: 'icon',
+            file,
           });
           element.value.name.name = icon;
         }

@@ -41,6 +41,7 @@ function selectCodemod(file, api) {
 
       modifiedAttributes = deleteProperty(modifiedAttributes, {
         propertyName: 'width',
+        file,
       });
 
       return modifiedAttributes;

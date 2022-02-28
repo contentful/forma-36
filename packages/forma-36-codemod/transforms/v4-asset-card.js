@@ -32,6 +32,7 @@ module.exports = function (file, api) {
       // Remove custom drag handle component
       modifiedAttributes = deleteProperty(modifiedAttributes, {
         propertyName: 'cardDragHandleComponent',
+        file,
       });
 
       // Rename properties
