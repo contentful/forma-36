@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-entity-list",
-  "version": "4.1.18",
+  "version": "4.1.19",
   "description": "Forma 36: EntityList component",
   "scripts": {
     "build": "parcel build"
@@ -13,7 +13,7 @@
     "@contentful/f36-drag-handle": "^4.1.5",
     "@contentful/f36-icon": "^4.1.2",
     "@contentful/f36-icons": "^4.1.1",
-    "@contentful/f36-menu": "^4.2.4",
+    "@contentful/f36-menu": "^4.2.5",
     "@contentful/f36-skeleton": "^4.1.2",
     "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-typography": "^4.2.0",

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.5](https://github.com/contentful/forma-36/compare/@contentful/f36-menu@4.2.4...@contentful/f36-menu@4.2.5) (2022-03-01)
+
+
+### Bug Fixes
+
+* **menu-item:** keyboard-only focus style ([#1916](https://github.com/contentful/forma-36/issues/1916)) ([79ce176](https://github.com/contentful/forma-36/commit/79ce176618fbaae00b9d061edb0b6d7d4b658c65))
+
+
+
+
+
 ## [4.2.4](https://github.com/contentful/forma-36/compare/@contentful/f36-menu@4.2.3...@contentful/f36-menu@4.2.4) (2022-02-22)
 
 **Note:** Version bump only for package @contentful/f36-menu

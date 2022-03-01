@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.5](https://github.com/contentful/forma-36/compare/@contentful/f36-autocomplete@4.2.4...@contentful/f36-autocomplete@4.2.5) (2022-03-01)
+
+
+### Bug Fixes
+
+* autocomplete method documentation ([#1914](https://github.com/contentful/forma-36/issues/1914)) ([0596bd7](https://github.com/contentful/forma-36/commit/0596bd7e86398f4a15cac7e8e5a5943ca6c61fe0))
+
+
+
+
+
 ## [4.2.4](https://github.com/contentful/forma-36/compare/@contentful/f36-autocomplete@4.2.3...@contentful/f36-autocomplete@4.2.4) (2022-02-22)
 
 **Note:** Version bump only for package @contentful/f36-autocomplete
