@@ -36,7 +36,7 @@ type PrismTheme = {
 export const palette = {
   color: tokens.gray900,
   backgroundColor: tokens.gray200,
-  activeBackground: tokens.blue200,
+  activeBackground: tokens.gray300,
   comment: tokens.gray600,
   attrValue: tokens.purple500,
   string: tokens.yellow800,
