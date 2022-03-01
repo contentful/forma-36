@@ -1,5 +1,5 @@
 ---
-"@fake-scope/fake-pkg": patch
+"@contentful/f36-menu": patch
 ---
 
-fix(menu-item): keyboard-only focus style
+Keyboard-only focus style
