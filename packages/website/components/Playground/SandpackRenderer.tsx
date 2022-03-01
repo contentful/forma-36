@@ -7,7 +7,6 @@ import {
 } from '@codesandbox/sandpack-react';
 import tokens from '@contentful/f36-tokens';
 import { Flex } from '@contentful/f36-components';
-import { css } from 'emotion';
 
 import { PlaygroundTopBar } from './PlaygroundTopBar';
 import { palette } from '../LiveEditor/theme';
