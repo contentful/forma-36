@@ -6,7 +6,6 @@ import {
   SandpackPreview,
 } from '@codesandbox/sandpack-react';
 import tokens from '@contentful/f36-tokens';
-import { Flex } from '@contentful/f36-components';
 
 import { PlaygroundTopBar } from './PlaygroundTopBar';
 import { palette } from '../LiveEditor/theme';
@@ -123,14 +122,12 @@ export function SandpackRenderer({
           wrapContent
         />
 
-        <Flex style={{ width: '50%' }}>
-          <SandpackPreview
-            showSandpackErrorOverlay
-            showOpenInCodeSandbox={showOpenInCodeSandbox}
-            showRefreshButton
-            viewportSize="auto"
-          />
-        </Flex>
+        <SandpackPreview
+          showSandpackErrorOverlay
+          showOpenInCodeSandbox={showOpenInCodeSandbox}
+          showRefreshButton
+          viewportSize="auto"
+        />
       </SandpackLayout>
     </SandpackProvider>
   );
