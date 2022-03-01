@@ -36,19 +36,21 @@ type PrismTheme = {
 export const palette = {
   color: tokens.gray900,
   backgroundColor: tokens.gray200,
-  comment: tokens.yellow800,
-  attrValue: tokens.purple600,
+  comment: tokens.gray600,
+  attrValue: tokens.purple500,
+  string: tokens.yellow800,
   operator: tokens.gray800,
-  selector: tokens.blue600,
+  selector: tokens.blue700,
   deleted: tokens.red700,
   functionVariable: tokens.purple600,
-  tag: tokens.blue900,
-  activeText: '#0041ab',
-  inactiveText: '#e6ecf7',
+  tag: tokens.blue700,
+  activeText: tokens.blue700,
+  inactiveText: tokens.gray200,
   inputBackground: tokens.colorWhite,
-  accent: '#0041ab',
-  errorBackground: '#ffe0e0',
-  keyword: '#0041ab',
+  accent: tokens.blue700,
+  errorBackground: tokens.red200,
+  keyword: tokens.red700,
+  definition: tokens.green700,
 };
 
 export const theme: PrismTheme = {
@@ -58,67 +60,74 @@ export const theme: PrismTheme = {
   },
   styles: [
     {
-      types: ['comment', 'prolog', 'doctype', 'cdata'],
-      style: {
-        color: palette.comment,
-        fontStyle: 'italic',
-      },
-    },
-    {
-      types: ['namespace'],
-      style: {
-        opacity: 0.7,
-      },
-    },
-    {
-      types: ['string', 'attr-value'],
-      style: {
-        color: palette.attrValue,
-      },
-    },
-    {
-      types: ['punctuation', 'operator'],
-      style: {
-        color: palette.operator,
-      },
-    },
-    {
-      types: [
-        'entity',
-        'url',
-        'symbol',
-        'number',
-        'boolean',
-        'variable',
-        'constant',
-        'property',
-        'regex',
-        'inserted',
-      ],
-      style: {
-        color: '#36acaa',
-      },
-    },
-    {
-      types: ['atrule', 'keyword', 'attr-name', 'selector'],
+      types: ['prolog'],
       style: {
         color: palette.selector,
       },
     },
     {
-      types: ['function', 'deleted', 'tag'],
+      types: ['comment'],
+      style: {
+        color: palette.comment,
+      },
+    },
+    {
+      types: ['builtin', 'changed', 'keyword', 'interpolation-punctuation'],
+      style: {
+        color: palette.keyword,
+      },
+    },
+    {
+      types: ['number', 'inserted'],
+      style: {
+        color: palette.attrValue,
+      },
+    },
+    {
+      types: ['constant'],
+      style: {
+        color: palette.color,
+      },
+    },
+    {
+      types: ['attr-name', 'variable'],
+      style: {
+        color: palette.tag,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      types: ['string', 'attr-value', 'template-punctuation'],
+      style: {
+        color: palette.string,
+      },
+    },
+    {
+      types: ['deleted'],
       style: {
         color: palette.deleted,
       },
     },
     {
-      types: ['function-variable'],
+      types: ['selector'],
       style: {
-        color: palette.functionVariable,
+        color: palette.selector,
       },
     },
     {
-      types: ['tag', 'selector', 'keyword'],
+      types: ['punctuation', 'operator'],
+      style: {
+        color: palette.color,
+      },
+    },
+    {
+      types: ['function'],
+      style: {
+        color: palette.definition,
+      },
+    },
+    {
+      types: ['class-name'],
       style: {
         color: palette.tag,
       },

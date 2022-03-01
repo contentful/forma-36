@@ -92,35 +92,38 @@ export function SandpackRenderer({
           <SandpackThemeProvider
             theme={{
               palette: {
-                activeText: palette.activeText,
-                defaultText: palette.color,
-                inactiveText: palette.inactiveText,
-                activeBackground: palette.backgroundColor,
-                defaultBackground: palette.backgroundColor,
-                inputBackground: palette.inputBackground,
-                accent: palette.accent,
-                errorBackground: palette.errorBackground,
-                errorForeground: palette.deleted,
+                activeText: palette.activeText, //tokens.blue700
+                defaultText: palette.color, // gray900
+                inactiveText: palette.inactiveText, // gray200
+                activeBackground: palette.backgroundColor, // gray200
+                defaultBackground: palette.backgroundColor, // gray200
+                inputBackground: palette.inputBackground, // colorwhite
+                accent: palette.accent, // tokens.blue700
+                errorBackground: palette.errorBackground, // red200
+                errorForeground: palette.deleted, // red700
               },
               syntax: {
-                plain: palette.color,
+                plain: palette.color, // gray900
                 comment: {
-                  color: palette.comment,
+                  color: palette.comment, //tokens.gray600
                   fontStyle: 'italic',
                 },
-                keyword: palette.tag,
-                tag: palette.tag,
-                punctuation: palette.color,
-                definition: palette.deleted,
-                property: palette.selector,
-                static: palette.attrValue,
-                string: palette.attrValue,
+                keyword: palette.keyword, // red700
+                tag: palette.tag, //tokens.blue700
+                punctuation: palette.color, // gray900
+                definition: palette.definition, // tokens.green700
+                property: {
+                  color: palette.selector, //tokens.blue700
+                  fontStyle: 'italic',
+                },
+                static: palette.attrValue, // tokens.purple500
+                string: palette.string, // tokens.yellow800
               },
               typography: {
                 bodyFont:
-                  'font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;',
+                  '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
                 monoFont:
-                  'font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;',
+                  '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
                 fontSize: '14px',
                 lineHeight: '1.4',
               },
