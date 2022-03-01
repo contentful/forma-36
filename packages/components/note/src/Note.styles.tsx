@@ -49,10 +49,10 @@ const variantToStyles = (variant: NoteVariant): CSSObject => {
 
 export const getNoteStyles = () => {
   return {
-    container: ({ variant, title }: NoteProps) =>
+    container: ({ variant }: Pick<NoteProps, 'variant'>) =>
       css({
+        position: 'relative',
         borderRadius: tokens.borderRadiusMedium,
-        alignItems: !title ? 'center' : null,
         border: '1px solid',
         ...variantToStyles(variant),
       }),
@@ -60,22 +60,21 @@ export const getNoteStyles = () => {
       color: tokens.gray800,
       fontSize: tokens.fontSizeL,
       lineHeight: tokens.lineHeightL,
-      marginBottom: tokens.spacingXs,
     }),
     description: css({
       color: tokens.gray700,
     }),
-    close: ({ title }: NoteProps) =>
-      css({
-        padding: tokens.spacingXs,
-        marginTop: title ? `-${tokens.spacingXs}` : '0',
-        marginRight: title ? `-${tokens.spacingXs}` : '0',
-        '&:hover, &:active': {
-          backgroundColor: 'transparent',
-        },
-      }),
+    close: css({
+      position: 'absolute',
+      top: tokens.spacingXs,
+      right: tokens.spacingXs,
+      padding: tokens.spacingXs,
+      '&:hover, &:active': {
+        backgroundColor: 'transparent',
+      },
+    }),
     closeIcon: css({
-      color: tokens.gray600,
+      fill: tokens.gray600,
     }),
   };
 };

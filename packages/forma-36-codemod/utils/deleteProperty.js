@@ -3,6 +3,6 @@ module.exports.deleteProperty = function deleteProperty(
   { propertyName },
 ) {
   return attributes.filter((attribute) => {
-    return attribute.name.name !== propertyName;
+    return attribute.name?.name !== propertyName;
   });
 };

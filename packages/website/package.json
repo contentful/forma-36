@@ -11,7 +11,7 @@
   "dependencies": {
     "@codesandbox/sandpack-react": "0.10.7",
     "@contentful/f36-components": "^4.0.0",
-    "@contentful/f36-pagination": "^4.0.0-beta",
+    "@contentful/f36-pagination": "^4.1.0-beta",
     "@contentful/f36-core": "^4.0.0",
     "@contentful/f36-icons": "^4.0.4",
     "@mdx-js/loader": "^1.6.22",

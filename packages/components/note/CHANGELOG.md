@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.13](https://github.com/contentful/forma-36/compare/@contentful/f36-note@4.2.12...@contentful/f36-note@4.2.13) (2022-03-01)
+
+
+### Bug Fixes
+
+* close button alignment in Note component ([#1908](https://github.com/contentful/forma-36/issues/1908)) ([3fbb84b](https://github.com/contentful/forma-36/commit/3fbb84b8472e913fae54634a3b9ed00563ed17b8))
+
+
+
+
+
+## [4.2.12](https://github.com/contentful/forma-36/compare/@contentful/f36-note@4.2.11...@contentful/f36-note@4.2.12) (2022-02-22)
+
+**Note:** Version bump only for package @contentful/f36-note
+
+
+
+
+
+## [4.2.11](https://github.com/contentful/forma-36/compare/@contentful/f36-note@4.2.10...@contentful/f36-note@4.2.11) (2022-02-22)
+
+**Note:** Version bump only for package @contentful/f36-note
+
+
+
+
+
 ## [4.2.10](https://github.com/contentful/forma-36/compare/@contentful/f36-note@4.2.9...@contentful/f36-note@4.2.10) (2022-02-17)
 
 **Note:** Version bump only for package @contentful/f36-note

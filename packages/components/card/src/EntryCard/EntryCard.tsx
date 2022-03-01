@@ -35,6 +35,7 @@ function EntryCardTitle({ title }: { title?: string }) {
       testId="title"
       as="h1"
       marginBottom="none"
+      isWordBreak
     >
       {truncatedTitle}
     </Subheading>

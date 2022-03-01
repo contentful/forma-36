@@ -16,6 +16,7 @@ export interface DisplayTextInternalProps extends CommonProps, MarginProps {
   size?: 'default' | 'large';
   as?: HeadingElement;
   isTruncated?: boolean;
+  isWordBreak?: boolean;
 }
 
 export type DisplayTextProps<

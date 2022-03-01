@@ -33,13 +33,7 @@ const SETUP_CHOICES = [
   },
 ];
 
-const TRANSFORMS_CHOICES = [
-  {
-    name:
-      'color-tokens-to-new-tokens: Converts deprecated color tokens to the new ones',
-    value: 'color-tokens-to-new-tokens',
-  },
-  new inquirer.Separator(),
+const V4_CODEMODS = [
   {
     name: 'v4-text-link: Converts TextLink component from Forma v3 to v4',
     value: 'v4-text-link',
@@ -168,6 +162,16 @@ const TRANSFORMS_CHOICES = [
     value: 'v4-clean-css',
   },
   // Add extra codemods - do not remove
+].sort((a, b) => (a.value < b.value ? -1 : 1));
+
+const TRANSFORMS_CHOICES = [
+  {
+    name:
+      'color-tokens-to-new-tokens: Converts deprecated color tokens to the new ones',
+    value: 'color-tokens-to-new-tokens',
+  },
+  new inquirer.Separator(),
+  ...V4_CODEMODS,
 ];
 
 module.exports = {
