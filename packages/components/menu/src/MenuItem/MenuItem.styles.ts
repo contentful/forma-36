@@ -32,6 +32,14 @@ export const getMenuItemStyles = () => {
         // just to make boxShadow with rounded corners
         borderRadius: tokens.borderRadiusMedium,
       },
+      '&:focus:not(:focus-visible)': {
+        boxShadow: 'unset',
+        borderRadius: 'unset',
+      },
+      '&:focus-visible': {
+        boxShadow: `inset ${tokens.glowPrimary}`,
+        borderRadius: tokens.borderRadiusMedium,
+      },
       '&:active': {
         backgroundColor: tokens.gray200,
       },
