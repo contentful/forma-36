@@ -1,52 +1,58 @@
 import React from 'react';
 
 import { Button } from '@contentful/f36-button';
-import { CommonProps, Stack } from '@contentful/f36-core';
+import { Select } from '@contentful/f36-forms';
+import { CommonProps, Stack, Flex } from '@contentful/f36-core';
 import { ChevronLeftIcon, ChevronRightIcon } from '@contentful/f36-icons';
+import { Text } from '@contentful/f36-typography';
+
+import { getRangeText } from './utils';
 
 export interface PaginationProps extends CommonProps {
   /**
    * Sets which page is active on the Pagination
+   * @default 0
    */
-  activePage: number;
+  activePage?: number;
   /**
-   * Sets how many items are displayed per page
+   * Sets if the user is on the last page of navigation
+   * @default false
    */
-  itemsPerPage: number;
+  isLastPage?: boolean;
+  /**
+   * Number of items are actually on the page.
+   * If no value is set it defaults to viewPerPage value
+   * @default 20
+   */
+  pageLength?: number;
   /**
    * Total amount of items the pagination is applied to.
    */
-  totalItems: number;
+  totalItems?: number;
+  /**
+   * Sets if the View per page selector is shown
+   * @default false
+   */
+  showViewPerPage?: boolean;
+  /**
+   * Sets how many items are displayed per page.
+   * Must be one of the values passed on viewPerPageOptions prop.
+   * @default 20
+   */
+  itemsPerPage?: number;
+  /**
+   * Array of options to show on the View select
+   * @default [20, 100]
+   */
+  viewPerPageOptions?: number[];
+  /**
+   * Handler function called when user changes the view per page selector.
+   */
+  onViewPerPageChange?: (items: number) => void;
   /**
    * Handler function called when user navigates to another page on the pagination.
    */
   onPageChange: (page: number) => void;
-}
-
-function getPagesRange(
-  page: number,
-  total: number,
-  neighboursCount = 2,
-): number[] {
-  const PAGINATION_RANGE = neighboursCount * 2;
-
-  if (total <= PAGINATION_RANGE) {
-    // Total amount of pages are less than the possible pagination range
-    return [...Array(total).keys()];
-  }
-
-  const baseRange = [...Array(PAGINATION_RANGE + 1).keys()];
-
-  if (page <= neighboursCount) {
-    // Active page is at the start of the pagination page count
-    return baseRange;
-  }
-  if (page > total - neighboursCount) {
-    // Active page is at the end of the pagination page count
-    return baseRange.map((i) => i + total - PAGINATION_RANGE - 1);
-  }
-  // Active page is in the middle of the pagination count
-  return baseRange.map((i) => i + page - neighboursCount - 1);
 }
 
 function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
@@ -55,68 +61,83 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
     onPageChange,
     testId = 'cf-ui-pagination',
     activePage: propsActivePage,
+    itemsPerPage = 20,
+    pageLength,
+    isLastPage: propsLastPage = false,
+    activePage = 0,
+    viewPerPageOptions = [20, 100],
+    showViewPerPage = false,
     totalItems,
-    itemsPerPage,
+    onViewPerPageChange,
     ...otherProps
   } = props;
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
-  const activePage = Math.max(Math.min(propsActivePage, totalPages), 1);
-  const hasOnlyOnePage = totalPages === 1;
-  const activePageIsAtPaginationStart = activePage === 1;
-  const activePageIsAtPaginationEnd = activePage === totalPages;
+  const isFirstPage = activePage === 0;
+  const isLastPage =
+    propsLastPage ||
+    (totalItems && (activePage + 1) * itemsPerPage >= totalItems);
+  const totalText = getRangeText({
+    totalItems,
+    activePage,
+    itemsPerPage,
+    pageLength,
+    isLastPage,
+  });
 
   return (
-    <Stack
-      as="nav"
-      role="navigation"
-      aria-label="Pagination Navigation"
+    <Flex
+      flexDirection="row"
+      justifyContent="space-between"
+      fullWidth
       className={className}
       testId={testId}
-      spacing="spacingS"
       ref={ref}
       {...otherProps}
     >
-      <Button
-        aria-label="To previous page"
-        size="small"
-        startIcon={<ChevronLeftIcon />}
-        variant="transparent"
-        isDisabled={hasOnlyOnePage || activePageIsAtPaginationStart}
-        onClick={() => onPageChange(activePage - 1)}
-        testId="cf-ui-pagination-previous"
-      >
-        Previous
-      </Button>
-      <Stack spacing="spacing2Xs">
-        {getPagesRange(activePage, totalPages).map((pageIndex) => {
-          const page = pageIndex + 1;
-          return (
+      {showViewPerPage && (
+        <Stack>
+          <Text fontColor="gray500">View</Text>
+          <Select
+            value={`${itemsPerPage}`}
+            onChange={(e) =>
+              onViewPerPageChange && onViewPerPageChange(+e.target.value)
+            }
+          >
+            {viewPerPageOptions.map((option) => (
+              <Select.Option key={option} value={option}>
+                {option}
+              </Select.Option>
+            ))}
+          </Select>
+        </Stack>
+      )}
+      <Stack flexGrow={1} justifyContent="flex-end">
+        <Text fontColor="gray500">{totalText}</Text>
+        <Stack spacing="spacingS">
+          {!isFirstPage && (
             <Button
-              aria-label={`To Page ${page}`}
-              aria-current={page === activePage ? 'true' : undefined}
-              onClick={() => onPageChange(page)}
-              size="small"
-              variant={page === activePage ? 'secondary' : 'transparent'}
-              testId={page === activePage ? 'active' : `inactive-${page}`}
-              key={pageIndex}
+              aria-label="To previous page"
+              startIcon={<ChevronLeftIcon />}
+              variant="secondary"
+              onClick={() => onPageChange(activePage - 1)}
+              testId="cf-ui-pagination-previous"
             >
-              {page}
+              Previous
             </Button>
-          );
-        })}
+          )}
+          {!isLastPage && (
+            <Button
+              aria-label="To next page"
+              variant="secondary"
+              endIcon={<ChevronRightIcon />}
+              onClick={() => onPageChange(activePage + 1)}
+              testId="cf-ui-pagination-next"
+            >
+              Next
+            </Button>
+          )}
+        </Stack>
       </Stack>
-      <Button
-        variant="transparent"
-        size="small"
-        endIcon={<ChevronRightIcon />}
-        isDisabled={hasOnlyOnePage || activePageIsAtPaginationEnd}
-        onClick={() => onPageChange(activePage + 1)}
-        aria-label="To next page"
-        testId="cf-ui-pagination-next"
-      >
-        Next
-      </Button>
-    </Stack>
+    </Flex>
   );
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-note",
-  "version": "4.2.12",
+  "version": "4.2.13",
   "description": "Forma 36: Note component",
   "scripts": {
     "build": "parcel build"

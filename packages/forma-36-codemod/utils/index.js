@@ -14,6 +14,7 @@ const { changeComponentName } = require('./changeComponentName');
 const { updateTernaryValues } = require('./updateTernaryValues');
 const { warningMessage } = require('./warningMessage');
 const { createComponent } = require('./createComponent');
+const { getChildren } = require('./getChildren');
 
 module.exports = {
   getComponentLocalName,
@@ -33,4 +34,5 @@ module.exports = {
   updateTernaryValues,
   warningMessage,
   createComponent,
+  getChildren,
 };

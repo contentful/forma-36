@@ -101,12 +101,13 @@ function run() {
       help: `
     Usage
       $ npx @contentful/f36-codemod <transform> <path> <...options>
-        transform        Currently only color-tokens-to-new-tokens.
+        transform        Check all included transformers on https://github.com/contentful/forma-36/tree/master/packages/forma-36-codemod#included-transforms.
         path             Files or directory to transform. Can be a glob like src/**.test.js
     Options
       --force            Bypass Git repository safety checks and forcibly run codemods
       --dry              Dry run (no changes are made to files)
       --print            Print transformed files to your terminal
+      --parser           Which parser to be used: babel or tsx
       --jscodeshift      (Advanced) Pass options directly to jscodeshift
     `,
     },
@@ -134,7 +135,9 @@ function run() {
   ) {
     console.error('Invalid transform choice, pick one of:');
     console.error(
-      inquirerChoices.TRANSFORMS_CHOICES.map((x) => '- ' + x.value).join('\n'),
+      inquirerChoices.TRANSFORMS_CHOICES.filter((x) => x.value)
+        .map((x) => '- ' + x.value)
+        .join('\n'),
     );
     process.exit(1);
   }
