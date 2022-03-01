@@ -123,14 +123,12 @@ export function SandpackRenderer({
           wrapContent
         />
 
-        <Flex style={{ width: '50%' }}>
-          <SandpackPreview
-            showSandpackErrorOverlay
-            showOpenInCodeSandbox={showOpenInCodeSandbox}
-            showRefreshButton
-            viewportSize="auto"
-          />
-        </Flex>
+        <SandpackPreview
+          showSandpackErrorOverlay
+          showOpenInCodeSandbox={showOpenInCodeSandbox}
+          showRefreshButton
+          viewportSize="auto"
+        />
       </SandpackLayout>
     </SandpackProvider>
   );
