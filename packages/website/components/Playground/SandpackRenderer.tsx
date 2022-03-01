@@ -4,7 +4,6 @@ import {
   SandpackLayout,
   SandpackCodeEditor,
   SandpackPreview,
-  SandpackThemeProvider,
 } from '@codesandbox/sandpack-react';
 import tokens from '@contentful/f36-tokens';
 import { Flex } from '@contentful/f36-components';
@@ -28,15 +27,6 @@ ReactDOM.render(
   rootElement
 );`;
 
-const styles = {
-  editorWidthHack: css({
-    background: tokens.gray200,
-    width: '50%',
-    '>div': css({
-      width: '100%',
-    }),
-  }),
-};
 const stylesFile = `
   body {
     padding: ${tokens.spacingM};
@@ -91,24 +81,24 @@ export function SandpackRenderer({
         theme={{
           palette: {
             activeText: palette.activeText, //tokens.blue700
-            defaultText: palette.color, // gray900
-            inactiveText: tokens.gray300, // gray300
-            activeBackground: palette.activeBackground, // blue200
-            defaultBackground: palette.backgroundColor, // gray200
-            inputBackground: palette.inputBackground, // colorwhite
+            defaultText: palette.color, // tokens.gray900
+            inactiveText: tokens.gray300, // tokens.gray300
+            activeBackground: palette.activeBackground, // tokens.blue200
+            defaultBackground: palette.backgroundColor, // tokens.gray200
+            inputBackground: palette.inputBackground, // tokens.colorWhite
             accent: palette.accent, // tokens.blue700
-            errorBackground: palette.errorBackground, // red200
-            errorForeground: palette.deleted, // red700
+            errorBackground: palette.errorBackground, // tokens.red200
+            errorForeground: palette.deleted, // tokens.red700
           },
           syntax: {
-            plain: palette.color, // gray900
+            plain: palette.color, // tokens.gray900
             comment: {
               color: palette.comment, //tokens.gray600
               fontStyle: 'italic',
             },
-            keyword: palette.keyword, // red700
+            keyword: palette.keyword, // tokens.red700
             tag: palette.tag, //tokens.blue700
-            punctuation: palette.color, // gray900
+            punctuation: palette.color, // tokens.gray900
             definition: palette.definition, // tokens.green700
             property: {
               color: palette.selector, //tokens.blue700
