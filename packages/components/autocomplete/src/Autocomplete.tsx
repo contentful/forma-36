@@ -47,7 +47,7 @@ export interface AutocompleteProps<ItemType>
   onInputValueChange?: (value: string) => void;
   /**
    * This is the function that will be called when the user selects one of the "options" in the list.
-   * It receives the selected item as an argument and it needs to return a string that will be set as the value of `TextInput`.
+   * The component will pass the selected "item" as an argument to the function..
    */
   onSelectItem: (item: ItemType) => void;
   /**
