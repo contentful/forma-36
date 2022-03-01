@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { cx } from 'emotion';
 import { CommonProps, ExpandProps } from '@contentful/f36-core';
 import { Button } from '../Button';
@@ -23,7 +23,7 @@ export interface ToggleButtonProps extends CommonProps {
   /**
    * Function triggered when the toggle button is clicked.
    */
-  onToggle?: () => void;
+  onToggle: () => void;
 
   /**
    * Determines size variation of Button component
@@ -44,21 +44,18 @@ function _ToggleButton(props: ExpandProps<ToggleButtonProps>, ref) {
     testId = 'cf-ui-toggle-button',
     children,
     className,
-    isDisabled,
-    isActive,
+    isDisabled = false,
+    isActive = false,
     icon,
     onToggle,
-    size,
+    size = 'medium',
     ...otherProps
   } = props;
 
-  const [active, setActive] = useState(isActive);
-
-  const styles = getStyles({ isActive: active, isDisabled });
+  const styles = getStyles({ isActive, isDisabled });
 
   const handleToggle = () => {
     if (!isDisabled && onToggle) {
-      setActive(!active);
       onToggle();
     }
   };
@@ -73,8 +70,8 @@ function _ToggleButton(props: ExpandProps<ToggleButtonProps>, ref) {
       className={cx(styles.toggleButton, className)}
       startIcon={icon}
       isDisabled={isDisabled}
-      aria-pressed={active}
-      data-state={active ? 'on' : 'off'}
+      aria-pressed={isActive}
+      data-state={isActive ? 'on' : 'off'}
       {...otherProps}
     >
       {children}

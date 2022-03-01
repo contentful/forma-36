@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.5](https://github.com/contentful/forma-36/compare/@contentful/f36-badge@4.1.4...@contentful/f36-badge@4.1.5) (2022-02-23)
+
+
+### Bug Fixes
+
+* fix badge alignment ([#1902](https://github.com/contentful/forma-36/issues/1902)) ([d25face](https://github.com/contentful/forma-36/commit/d25facea39e644e93b1e5c3f6e1ffc072696dd96))
+
+
+
+
+
+## [4.1.4](https://github.com/contentful/forma-36/compare/@contentful/f36-badge@4.1.3...@contentful/f36-badge@4.1.4) (2022-02-22)
+
+**Note:** Version bump only for package @contentful/f36-badge
+
+
+
+
+
 ## [4.1.3](https://github.com/contentful/forma-36/compare/@contentful/f36-badge@4.1.2...@contentful/f36-badge@4.1.3) (2022-02-17)
 
 **Note:** Version bump only for package @contentful/f36-badge

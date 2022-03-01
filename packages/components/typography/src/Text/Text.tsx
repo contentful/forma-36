@@ -24,6 +24,7 @@ export interface TextInternalProps extends CommonProps, MarginProps {
   fontWeight?: FontWeightTokens;
   fontColor?: ColorTokens;
   isTruncated?: boolean;
+  isWordBreak?: boolean;
 }
 
 const TEXT_DEFAULT_TAG = 'span';
@@ -33,6 +34,12 @@ function truncatedStyle() {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
+  });
+}
+
+function wordBreakStyle() {
+  return css({
+    wordBreak: 'break-word',
   });
 }
 
@@ -49,6 +56,7 @@ function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
     lineHeight = 'lineHeightM',
     children,
     isTruncated,
+    isWordBreak,
     as,
     className,
     margin = 'none',
@@ -72,6 +80,7 @@ function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
           lineHeight: tokens[lineHeight],
         }),
         isTruncated ? truncatedStyle() : null,
+        isWordBreak ? wordBreakStyle() : null,
         className,
       )}
       margin={margin}
