@@ -203,6 +203,7 @@ export const getStyles = () => ({
       boxShadow: '0px 1px 0px rgb(25, 37, 50, 0.08)',
       borderRadius: tokens.borderRadiusMedium,
       cursor: isDisabled ? 'not-allowed' : 'pointer',
+      fontFamily: tokens.fontStackPrimary,
       opacity: isDisabled ? 0.5 : 1,
       display: isFullWidth ? 'flex' : 'inline-flex',
       minWidth: isFullWidth ? '100%' : 'auto',
