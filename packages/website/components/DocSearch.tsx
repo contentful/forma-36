@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { SearchIcon } from '@contentful/f36-icons';
-import { TextInput } from '@contentful/f36-forms';
+import { TextInput } from '@contentful/f36-components';
 
 export const DocSearch = () => {
   useEffect(() => {

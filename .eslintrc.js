@@ -117,8 +117,8 @@ module.exports = {
       files: [
         '**/*.stories.*',
         '**/*.test.*',
-        '**/packages/**/examples/**',
-        '**/forma-36-codemod/**/__testfixtures__/**',
+        '**/examples/**',
+        '**/packages/**/__testfixtures__/**',
       ],
       rules: {
         'import/no-extraneous-dependencies': 'off',
