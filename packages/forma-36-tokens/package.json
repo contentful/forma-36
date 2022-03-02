@@ -11,8 +11,7 @@
   ],
   "devDependencies": {
     "fs-extra": "^10.0.0",
-    "globby": "^10.0.1",
-    "lodash": "4.17.21"
+    "globby": "^10.0.1"
   },
   "scripts": {
     "build:clean": "rm -rf dist",
