@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.3](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.3.2...@contentful/f36-button@4.3.3) (2022-03-02)
+
+
+### Bug Fixes
+
+* **button:** set font-family ([#1919](https://github.com/contentful/forma-36/issues/1919)) ([808e9bc](https://github.com/contentful/forma-36/commit/808e9bce05d6a0169368a2ae6b03a5e1bbed00ab))
+
+
+
+
+
 ## [4.3.2](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.3.1...@contentful/f36-button@4.3.2) (2022-02-22)
 
 **Note:** Version bump only for package @contentful/f36-button

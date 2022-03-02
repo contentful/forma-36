@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-card",
-  "version": "4.3.2",
+  "version": "4.3.3",
   "description": "Forma 36: Card components",
   "scripts": {
     "build": "parcel build"
@@ -9,7 +9,7 @@
     "@babel/runtime": "^7.6.2",
     "@contentful/f36-asset": "^4.1.5",
     "@contentful/f36-badge": "^4.1.5",
-    "@contentful/f36-button": "^4.3.2",
+    "@contentful/f36-button": "^4.3.3",
     "@contentful/f36-core": "^4.2.0",
     "@contentful/f36-drag-handle": "^4.1.5",
     "@contentful/f36-icon": "^4.1.2",
