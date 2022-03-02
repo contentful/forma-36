@@ -56,6 +56,7 @@ function copyButtonCodemod(file, api) {
             needToimportCopyButton = true;
             modifiedAttributes = deleteProperty(modifiedAttributes, {
               propertyName: 'withCopyButton',
+              file,
             });
             j(p).replaceWith(
               j.jsxOpeningElement(name, modifiedAttributes, selfClosing),

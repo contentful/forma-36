@@ -42,6 +42,7 @@ function radioCodemod(file, api) {
 
       modifiedAttributes = deleteProperty(modifiedAttributes, {
         propertyName: 'type',
+        file,
       });
 
       return modifiedAttributes;
