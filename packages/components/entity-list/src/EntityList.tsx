@@ -1,6 +1,6 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { CommonProps, ExpandProps } from '@contentful/f36-core';
+import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 
 import { getEntityListStyles } from './EntityList.styles';
 

@@ -1,6 +1,6 @@
 import React, { forwardRef, useCallback, FormEvent } from 'react';
 
-import {
+import type {
   CommonProps,
   PropsWithHTMLElement,
   ExpandProps,

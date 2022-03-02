@@ -1,7 +1,7 @@
 import React from 'react';
 import { BaseCheckbox, BaseCheckboxProps } from '../BaseCheckbox';
 import { useFormControl } from '../FormControl/FormControlContext';
-import { ExpandProps } from '@contentful/f36-core';
+import type { ExpandProps } from '@contentful/f36-core';
 
 export type SwitchProps = Omit<BaseCheckboxProps, 'type' | 'isIndeterminate'>;
 

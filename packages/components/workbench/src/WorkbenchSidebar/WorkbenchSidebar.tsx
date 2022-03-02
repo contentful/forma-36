@@ -1,6 +1,6 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 
 import { getWorkbenchSidebarStyles } from './WorkbenchSidebar.styles';
 

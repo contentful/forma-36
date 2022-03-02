@@ -4,7 +4,7 @@ import { cx } from 'emotion';
 import { getStringMatch } from '@contentful/f36-utils';
 import { Text } from '@contentful/f36-typography';
 import { getAutocompleteStyles } from './Autocomplete.styles';
-import { UseComboboxGetItemPropsOptions } from 'downshift';
+import type { UseComboboxGetItemPropsOptions } from 'downshift';
 
 interface AutocompleteItemsProps<ItemType> {
   items: ItemType[];

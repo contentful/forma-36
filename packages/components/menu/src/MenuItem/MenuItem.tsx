@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { cx } from 'emotion';
-import {
+import { mergeRefs } from '@contentful/f36-core';
+import type {
   CommonProps,
-  mergeRefs,
   PolymorphicComponent,
   PolymorphicProps,
   ExpandProps,
