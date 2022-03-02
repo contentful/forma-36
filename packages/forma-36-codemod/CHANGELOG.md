@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/contentful/forma-36/compare/@contentful/f36-codemod@4.1.0...@contentful/f36-codemod@4.2.0) (2022-03-02)
+
+
+### Features
+
+* **codemod:** make deleteProperty show a warning if there is a Spread Attribute ([#1912](https://github.com/contentful/forma-36/issues/1912)) ([c5b151e](https://github.com/contentful/forma-36/commit/c5b151e3cf4ee979a65a453dc1c87399b02ad3ba))
+
+
+
+
+
 # [4.1.0](https://github.com/contentful/forma-36/compare/@contentful/f36-codemod@4.0.1...@contentful/f36-codemod@4.1.0) (2022-02-24)
 
 
