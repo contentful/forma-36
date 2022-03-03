@@ -7,7 +7,7 @@ import React, {
   CSSProperties,
 } from 'react';
 import { usePopper } from 'react-popper';
-import { Placement } from '@popperjs/core';
+import type { Placement } from '@popperjs/core';
 import { cx } from 'emotion';
 import type * as CSS from 'csstype';
 

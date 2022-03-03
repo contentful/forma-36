@@ -1,5 +1,5 @@
 import path from 'path';
-import {
+import type {
   PropComponentDefinition,
   PropDefinition,
 } from '@contentful/f36-docs-utils';

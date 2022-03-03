@@ -1,6 +1,7 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { CommonProps, Flex } from '@contentful/f36-core';
+import { Flex } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
 import { getWorkbenchStyles } from './Workbench.styles';
 
 export interface WorkbenchProps extends CommonProps {

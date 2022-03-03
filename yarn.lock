@@ -1709,6 +1709,18 @@
     "@emotion/utils" "0.11.3"
     "@emotion/weak-memoize" "0.2.5"
 
+"@emotion/core@^10.0.17":
+  version "10.3.1"
+  resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.3.1.tgz#4021b6d8b33b3304d48b0bb478485e7d7421c69d"
+  integrity sha512-447aUEjPIm0MnE6QYIaFz9VQOHSXf4Iu6EWOIqq11EAPqinkSZmfymPTmlOE3QjLv846lH4JVZBUOtwGbuQoww==
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    "@emotion/cache" "^10.0.27"
+    "@emotion/css" "^10.0.27"
+    "@emotion/serialize" "^0.11.15"
+    "@emotion/sheet" "0.9.4"
+    "@emotion/utils" "0.11.3"
+
 "@emotion/core@^10.1.1":
   version "10.1.1"
   resolved "https://registry.npmjs.org/@emotion/core/-/core-10.1.1.tgz"
@@ -4273,7 +4285,7 @@
 
 "@segment/snippet@^4.15.3":
   version "4.15.3"
-  resolved "https://registry.npmjs.org/@segment/snippet/-/snippet-4.15.3.tgz"
+  resolved "https://registry.yarnpkg.com/@segment/snippet/-/snippet-4.15.3.tgz#ac829ec4570b249f559756293f4736e434885de7"
   integrity sha512-75kVTYaQGYMkwVjJvCLLOlzxV8jCDxvKG68U88joo/rBx95SIXETcjUmIXF6A7SFRCgz83B+zrZbo+JYsmHkig==
   dependencies:
     "@ndhoule/map" "^2.0.1"
@@ -11460,6 +11472,13 @@ eslint-plugin-testing-library@^4.10.1:
   dependencies:
     "@typescript-eslint/experimental-utils" "^4.24.0"
 
+eslint-plugin-you-dont-need-lodash-underscore@^6.12.0:
+  version "6.12.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-you-dont-need-lodash-underscore/-/eslint-plugin-you-dont-need-lodash-underscore-6.12.0.tgz#7a977c1cf4ba4d26a0484a4c4a2087221cb9bb8a"
+  integrity sha512-WF4mNp+k2532iswT6iUd1BX6qjd3AV4cFy/09VC82GY9SsRtvkxhUIx7JNGSe0/bLyd57oTr4inPFiIaENXhGw==
+  dependencies:
+    kebab-case "^1.0.0"
+
 eslint-scope@^4.0.3:
   version "4.0.3"
   resolved "https://registry.npmjs.org/eslint-scope/-/eslint-scope-4.0.3.tgz"
@@ -12266,6 +12285,13 @@ focus-lock@^0.10.1:
   dependencies:
     tslib "^2.0.3"
 
+focus-lock@^0.10.2:
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/focus-lock/-/focus-lock-0.10.2.tgz#561c62bae8387ecba1dd8e58a6df5ec29835c644"
+  integrity sha512-DSaI/UHZ/02sg1P616aIWgToQcrKKBmcCvomDZ1PZvcJFj350PnWhSJxJ76T3e5/GbtQEARIACtbrdlrF9C5kA==
+  dependencies:
+    tslib "^2.0.3"
+
 follow-redirects@^1.0.0, follow-redirects@^1.10.0:
   version "1.14.7"
   resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.7.tgz"
@@ -12803,9 +12829,9 @@ github-from-package@0.0.0:
   resolved "https://registry.npmjs.org/github-from-package/-/github-from-package-0.0.0.tgz"
   integrity sha1-l/tdlr/eiXMxPyDoKI75oWf6ZM4=
 
-github-slugger@^1.0.0, github-slugger@^1.1.1:
+github-slugger@^1.0.0, github-slugger@^1.1.1, github-slugger@^1.4.0:
   version "1.4.0"
-  resolved "https://registry.npmjs.org/github-slugger/-/github-slugger-1.4.0.tgz"
+  resolved "https://registry.yarnpkg.com/github-slugger/-/github-slugger-1.4.0.tgz#206eb96cdb22ee56fdc53a28d5a302338463444e"
   integrity sha512-w0dzqw/nt51xMVmlaV1+JRzN+oCa1KfcgGEWhxUG16wbdA+Xnt/yoFO8Z8x/V82ZcZ0wy6ln9QDup5avbhiDhQ==
 
 glob-base@^0.3.0:
@@ -15837,6 +15863,11 @@ junk@^3.1.0:
   resolved "https://registry.npmjs.org/junk/-/junk-3.1.0.tgz"
   integrity sha512-pBxcB3LFc8QVgdggvZWyeys+hnrNWg4OcZIU/1X59k5jQdLBlCsYGRQaz234SqoRLTCgMH00fY0xRJH+F9METQ==
 
+kebab-case@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/kebab-case/-/kebab-case-1.0.1.tgz#bf734fc95400a3701869215d99a902bd3fe72f60"
+  integrity sha512-txPHx6nVLhv8PHGXIlAk0nYoh894SpAqGPXNvbg2hh8spvHXIah3+vT87DLoa59nKgC6scD3u3xAuRIgiMqbfQ==
+
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.npmjs.org/kind-of/-/kind-of-3.2.2.tgz"
@@ -16520,7 +16551,7 @@ lodash.without@~4.4.0:
   resolved "https://registry.npmjs.org/lodash.without/-/lodash.without-4.4.0.tgz"
   integrity sha1-PNRXSgC2e643OpS3SHcmQFB7eqw=
 
-lodash@4.17.21, lodash@^4.17.12, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.7.0:
+lodash@^4.17.12, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.7.0:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -20561,6 +20592,11 @@ prettier@2.2.1, prettier@~2.2.1:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.0.tgz#b6a5bf1284026ae640f17f7ff5658a7567fc0d18"
   integrity sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==
 
+prettier@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.1.tgz#fff75fa9d519c54cf0fce328c1017d94546bc56a"
+  integrity sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==
+
 pretty-bytes@^3.0.0:
   version "3.0.1"
   resolved "https://registry.npmjs.org/pretty-bytes/-/pretty-bytes-3.0.1.tgz"
@@ -21003,9 +21039,9 @@ react-colorful@^5.1.2:
   resolved "https://registry.npmjs.org/react-colorful/-/react-colorful-5.3.0.tgz"
   integrity sha512-zWE5E88zmjPXFhv6mGnRZqKin9s5vip1O3IIGynY9EhZxN8MATUxZkT3e/9OwTEm4DjQBXc6PFWP6AetY+Px+A==
 
-react-copy-to-clipboard@^5.0.3:
+react-copy-to-clipboard@^5.0.3, react-copy-to-clipboard@^5.0.4:
   version "5.0.4"
-  resolved "https://registry.npmjs.org/react-copy-to-clipboard/-/react-copy-to-clipboard-5.0.4.tgz"
+  resolved "https://registry.yarnpkg.com/react-copy-to-clipboard/-/react-copy-to-clipboard-5.0.4.tgz#42ec519b03eb9413b118af92d1780c403a5f19bf"
   integrity sha512-IeVAiNVKjSPeGax/Gmkqfa/+PuMTBhutEvFUaMQLwE2tS0EXrAdgOpWDX26bWTXF3HrioorR7lr08NqeYUWQCQ==
   dependencies:
     copy-to-clipboard "^3"
@@ -21121,6 +21157,18 @@ react-focus-lock@^2.5.2:
   dependencies:
     "@babel/runtime" "^7.0.0"
     focus-lock "^0.10.1"
+    prop-types "^15.6.2"
+    react-clientside-effect "^1.2.5"
+    use-callback-ref "^1.2.5"
+    use-sidecar "^1.0.5"
+
+react-focus-lock@^2.8.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-2.8.1.tgz#a28f06a4ef5eab7d4ef0d859512772ec1331d529"
+  integrity sha512-4kb9I7JIiBm0EJ+CsIBQ+T1t5qtmwPRbFGYFQ0t2q2qIpbFbYTHDjnjJVFB7oMBtXityEOQehblJPjqSIf3Amg==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    focus-lock "^0.10.2"
     prop-types "^15.6.2"
     react-clientside-effect "^1.2.5"
     use-callback-ref "^1.2.5"

@@ -1,4 +1,4 @@
-import { TextLinkProps } from '@contentful/f36-text-link';
+import type { TextLinkProps } from '@contentful/f36-text-link';
 
 export interface NotificationCta {
   label: string;

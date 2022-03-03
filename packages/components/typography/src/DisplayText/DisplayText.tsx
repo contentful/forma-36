@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontSizeTokens, LineHeightTokens } from '@contentful/f36-tokens';
-import {
+import type {
   CommonProps,
   MarginProps,
   PolymorphicComponent,

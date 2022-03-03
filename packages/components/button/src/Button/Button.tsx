@@ -1,8 +1,7 @@
 import React from 'react';
 import { cx } from 'emotion';
-import {
-  Flex,
-  Box,
+import { Flex, Box } from '@contentful/f36-core';
+import type {
   PolymorphicProps,
   PolymorphicComponent,
   ExpandProps,
