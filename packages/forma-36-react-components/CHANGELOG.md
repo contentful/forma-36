@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.100.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.100.4...@contentful/forma-36-react-components@3.100.5) (2022-03-03)
+
+
+### Bug Fixes
+
+* fix erroneous use of rgb with 4 arguments (rgba) ([#1920](https://github.com/contentful/forma-36/issues/1920)) ([2a47676](https://github.com/contentful/forma-36/commit/2a476760e8df1ce15a045a576d81b4ac1fd0a663))
+
+
+
+
+
 ## [3.100.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.100.3...@contentful/forma-36-react-components@3.100.4) (2021-11-22)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components

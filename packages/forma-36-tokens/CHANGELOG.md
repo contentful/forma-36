@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.11.1...@contentful/forma-36-tokens@0.11.2) (2022-03-03)
+
+
+### Bug Fixes
+
+* fix erroneous use of rgb with 4 arguments (rgba) ([#1920](https://github.com/contentful/forma-36/issues/1920)) ([2a47676](https://github.com/contentful/forma-36/commit/2a476760e8df1ce15a045a576d81b4ac1fd0a663))
+
+
+
+
+
 ## [0.11.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.11.0...@contentful/forma-36-tokens@0.11.1) (2021-08-06)
 
 **Note:** Version bump only for package @contentful/forma-36-tokens
