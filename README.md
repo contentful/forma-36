@@ -1,7 +1,7 @@
 <h1><img src="./forma-icon.svg" height="24"> Forma 36 - The Contentful Design System</h1>
 
 [![Contentful](https://circleci.com/gh/contentful/forma-36.svg?style=shield)](https://circleci.com/gh/contentful/forma-36)
-[![All Contributors](https://img.shields.io/github/all-contributors/contentful/forma-36/master)](#contributors-)
+[![All Contributors](https://img.shields.io/github/all-contributors/contentful/forma-36/main)](#contributors-)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
 [Forma 36](https://f36.contentful.com/) is an open-source design system by [Contentful](https://www.contentful.com) created with the intent to reduce the overhead of creating UI by providing tools and guidance for digital teams building and extending Contentful products
@@ -42,7 +42,7 @@ We use storybook with our react component library to develop components. You can
 
 ## Commits & releases
 
-Use `yarn commit`. This uses the [Commitzen](https://github.com/commitizen/cz-cli) CLI to create a conventional commit message based on your changes. CI is setup to release all new commits on the master branch.
+Use `yarn commit`. This uses the [Commitzen](https://github.com/commitizen/cz-cli) CLI to create a conventional commit message based on your changes. CI is setup to release all new commits on the main branch.
 
 ## Testing with your own project locally
 
