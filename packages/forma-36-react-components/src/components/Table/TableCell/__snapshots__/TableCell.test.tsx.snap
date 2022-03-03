@@ -5,7 +5,6 @@ exports[`renders the component 1`] = `
   align="left"
   class="TableCell TableCell--head__sorting"
   data-test-id="cf-ui-table-cell"
-  style="top: 0px;"
 >
   Foo
 </td>

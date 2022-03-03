@@ -1,6 +1,6 @@
 {
   "name": "@contentful/forma-36-react-timepicker",
-  "version": "0.5.0-alpha.68",
+  "version": "0.5.0-alpha.98",
   "license": "MIT",
   "files": [
     "dist",
@@ -27,16 +27,16 @@
   },
   "devDependencies": {
     "@contentful/forma-36-react-components": "^3.73.2",
-    "@contentful/forma-36-tokens": "^0.11.0",
-    "@testing-library/jest-dom": "5.11.6",
-    "@testing-library/react": "11.2.2",
+    "@contentful/forma-36-tokens": "^0.11.1",
+    "@testing-library/jest-dom": "5.15.0",
+    "@testing-library/react": "12.1.2",
     "@types/is-hotkey": "^0.1.1",
     "@types/jest": "25.2.3",
     "@types/lodash.orderby": "^4.6.6"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@contentful/forma-36-react-components": "^3.93.5",
+    "@contentful/forma-36-react-components": "^3.100.4",
     "date-fns": "^2.9.0",
     "emotion": "^10.0.17",
     "is-hotkey": "^0.1.6",

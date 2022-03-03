@@ -18,6 +18,26 @@ exports[`renders a large icon 1`] = `
 </svg>
 `;
 
+exports[`renders aria properties 1`] = `
+<svg
+  aria-label="my label"
+  aria-labelledby="another label"
+  class="Icon Icon--small Icon--primary"
+  data-test-id="cf-ui-icon"
+  height="1em"
+  viewBox="0 0 24 24"
+  width="1em"
+>
+  <path
+    d="M7 10l5 5 5-5z"
+  />
+  <path
+    d="M0 0h24v24H0z"
+    fill="none"
+  />
+</svg>
+`;
+
 exports[`renders as a "muted" icon 1`] = `
 <svg
   class="Icon Icon--large Icon--muted"

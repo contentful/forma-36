@@ -70,7 +70,7 @@
       }
 
       & + .RadioButton__ghost::before {
-        background: var(--color-element-darkest);
+        background: var(--color-element-dark);
       }
     }
   }

@@ -1,7 +1,7 @@
 {
   "name": "@contentful/forma-36-react-components",
   "description": "Contentful UI Component Library",
-  "version": "3.93.5",
+  "version": "3.100.4",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "style": "dist/styles.css",
@@ -31,8 +31,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.3.4",
-    "@contentful/forma-36-fcss": "^0.3.3",
-    "@contentful/forma-36-tokens": "^0.11.0",
+    "@contentful/forma-36-fcss": "^0.3.4",
+    "@contentful/forma-36-tokens": "^0.11.1",
     "@popperjs/core": "^2.4.4",
     "classnames": "^2.2.6",
     "csstype": "^3.0.5",
@@ -42,32 +42,32 @@
     "react-modal": "^3.11.2",
     "react-popper": "^2.2.3",
     "react-transition-group": "^4.4.2",
-    "truncate": "^2.0.1"
+    "truncate": "^3.0.0"
   },
   "devDependencies": {
     "@size-limit/preset-big-lib": "^4.5.5",
     "@types/classnames": "2.2.7",
     "@types/react-color": "^3.0.1",
     "@types/react-copy-to-clipboard": "4.2.6",
-    "@types/react-transition-group": "4.4.1",
+    "@types/react-transition-group": "4.4.3",
     "file-loader": "^6.2.0",
     "markdown-it": "^8.4.2",
     "mini-css-extract-plugin": "^0.7.0",
-    "optimize-css-assets-webpack-plugin": "5.0.3",
+    "optimize-css-assets-webpack-plugin": "6.0.1",
     "react": "16.14.0",
-    "react-docgen-typescript-loader": "3.1.0",
+    "react-docgen-typescript-loader": "3.7.2",
     "react-dom": "16.14.0",
     "react-is": "16.13.1",
     "rollup": "^1.8.0",
     "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-commonjs": "^9.3.0",
+    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-local-resolve": "^1.0.7",
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-replace": "^2.1.1",
     "rollup-plugin-terser": "^4.0.4",
     "semantic-release": "^17.4.2",
-    "size-limit": "^4.5.5"
+    "size-limit": "^6.0.4"
   },
   "repository": {
     "type": "git",

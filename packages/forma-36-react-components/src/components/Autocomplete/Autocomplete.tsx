@@ -1,5 +1,5 @@
 import React, { useMemo, useReducer, useRef, ChangeEvent } from 'react';
-import cn from 'classnames';
+import cx from 'classnames';
 
 import { TextInput } from '../TextInput';
 import {
@@ -10,6 +10,7 @@ import {
 } from '../Dropdown';
 import { SkeletonBodyText, SkeletonContainer } from '../Skeleton';
 import { IconButton } from '../IconButton';
+import { ValidationMessage } from '../ValidationMessage';
 import { KEY_CODE } from './utils';
 import styles from './Autocomplete.css';
 
@@ -26,6 +27,7 @@ interface RenderToggleElementProps {
   onToggle: () => void;
   disabled?: boolean;
   placeholder?: string;
+  selectedItem?: string;
   width?: 'small' | 'medium' | 'large' | 'full';
   inputRef: React.RefObject<HTMLInputElement>;
   name?: string;
@@ -38,6 +40,7 @@ export interface AutocompleteProps<T extends {}> {
   onQueryChange: (query: string) => void;
   disabled?: boolean;
   placeholder?: string;
+  selectedItem?: string;
   name?: string;
   width?: 'small' | 'medium' | 'large' | 'full';
   className?: string;
@@ -46,8 +49,9 @@ export interface AutocompleteProps<T extends {}> {
   emptyListMessage?: string;
   noMatchesMessage?: string;
   willClearQueryOnClose?: boolean;
-  dropdownProps?: DropdownProps;
+  dropdownProps?: Partial<DropdownProps>;
   renderToggleElement?: (props: RenderToggleElementProps) => React.ReactElement;
+  validationMessage?: string;
 }
 
 interface State {
@@ -102,6 +106,7 @@ export const Autocomplete = <T extends {}>({
   onChange,
   onQueryChange,
   placeholder = 'Search',
+  selectedItem = '',
   name = 'Search',
   width,
   className,
@@ -112,6 +117,7 @@ export const Autocomplete = <T extends {}>({
   willClearQueryOnClose,
   dropdownProps,
   renderToggleElement,
+  validationMessage,
 }: AutocompleteProps<T>) => {
   const listRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -190,13 +196,16 @@ export const Autocomplete = <T extends {}>({
     [children, items],
   );
 
-  const dropdownClassNames = cn(styles.autocompleteDropdown, className);
+  const dropdownClassNames = cx(styles.autocompleteDropdown, className);
+  const autocompleteClassNames = cx(styles.autocompleteInput, {
+    [styles.autocompleteInputNegative]: validationMessage,
+  });
 
   function renderDefaultToggleElement(toggleProps: RenderToggleElementProps) {
     return (
-      <div className={styles.autocompleteInput}>
+      <div className={autocompleteClassNames}>
         <TextInput
-          value={toggleProps.query}
+          value={toggleProps.selectedItem || toggleProps.query}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             toggleProps.onChange(e.target.value)
           }
@@ -227,6 +236,7 @@ export const Autocomplete = <T extends {}>({
   const toggleProps = {
     name,
     query,
+    selectedItem,
     disabled,
     placeholder,
     width,
@@ -248,49 +258,56 @@ export const Autocomplete = <T extends {}>({
     renderToggleElement || renderDefaultToggleElement;
 
   return (
-    <Dropdown
-      nonClosingRefs={[inputRef, ...nonClosingRefs]}
-      className={dropdownClassNames}
-      onClose={() => {
-        willClearQueryOnClose && updateQuery('');
-        dispatch({ type: TOGGLED_LIST, payload: false });
-      }}
-      toggleElement={renderToggleElementFunction(toggleProps)}
-      focusContainerOnOpen={false}
-      {...dropdownProps}
-      isOpen={isOpen}
-    >
-      <DropdownList testId="autocomplete.dropdown-list" maxHeight={maxHeight}>
-        <div ref={listRef as React.RefObject<HTMLDivElement>}>
-          {!options.length && !isLoading && (
-            <DropdownListItem
-              isDisabled
-              testId="autocomplete.empty-list-message"
-            >
-              {query ? noMatchesMessage : emptyListMessage}
-            </DropdownListItem>
-          )}
-          {isLoading ? (
-            <OptionSkeleton />
-          ) : (
-            options.map(({ child, option }, index) => {
-              const isActive = index === highlightedItemIndex;
-              return (
-                <DropdownListItem
-                  key={index}
-                  isActive={isActive}
-                  data-selected={isActive} // this should be coming from the component library
-                  onClick={() => selectItem(option)}
-                  testId="autocomplete.dropdown-list-item"
-                >
-                  {child}
-                </DropdownListItem>
-              );
-            })
-          )}
-        </div>
-      </DropdownList>
-    </Dropdown>
+    <>
+      <Dropdown
+        nonClosingRefs={[inputRef, ...nonClosingRefs]}
+        className={dropdownClassNames}
+        onClose={() => {
+          willClearQueryOnClose && updateQuery('');
+          dispatch({ type: TOGGLED_LIST, payload: false });
+        }}
+        toggleElement={renderToggleElementFunction(toggleProps)}
+        focusContainerOnOpen={false}
+        {...dropdownProps}
+        isOpen={isOpen}
+      >
+        <DropdownList testId="autocomplete.dropdown-list" maxHeight={maxHeight}>
+          <div ref={listRef as React.RefObject<HTMLDivElement>}>
+            {!options.length && !isLoading && (
+              <DropdownListItem
+                isDisabled
+                testId="autocomplete.empty-list-message"
+              >
+                {query ? noMatchesMessage : emptyListMessage}
+              </DropdownListItem>
+            )}
+            {isLoading ? (
+              <OptionSkeleton />
+            ) : (
+              options.map(({ child, option }, index) => {
+                const isActive = index === highlightedItemIndex;
+                return (
+                  <DropdownListItem
+                    key={index}
+                    isActive={isActive}
+                    data-selected={isActive} // this should be coming from the component library
+                    onClick={() => selectItem(option)}
+                    testId="autocomplete.dropdown-list-item"
+                  >
+                    {child}
+                  </DropdownListItem>
+                );
+              })
+            )}
+          </div>
+        </DropdownList>
+      </Dropdown>
+      {validationMessage && (
+        <ValidationMessage className={styles.validationMessage}>
+          {validationMessage}
+        </ValidationMessage>
+      )}
+    </>
   );
 };
 

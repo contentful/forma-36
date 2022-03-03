@@ -8,7 +8,7 @@ import type {
   ElementType,
 } from 'react';
 import cn from 'classnames';
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransition, TransitionStatus } from 'react-transition-group';
 
 import { Icon, IconType } from '../Icon';
 import { TabFocusTrap } from '../TabFocusTrap';
@@ -68,7 +68,7 @@ export const Button = ({
   onClick,
   size = 'medium',
   testId = 'cf-ui-button',
-  type = 'button',
+  type = href ? undefined : 'button',
   ...otherProps
 }: ButtonProps) => {
   const classNames = cn(
@@ -134,19 +134,24 @@ export const Button = ({
             exitActive: styles['Button--spinner--exit-active'],
           }}
           mountOnEnter
+          unmountOnExit
         >
-          <div className={styles['Button--spinner-wrapper']}>
-            <Spinner
-              customSize={12}
-              color={
-                buttonType === 'muted' ||
-                buttonType === 'warning' ||
-                buttonType === 'naked'
-                  ? 'default'
-                  : 'white'
-              }
-            />
-          </div>
+          {(state: TransitionStatus) =>
+            state === 'unmounted' ? null : (
+              <div className={styles['Button--spinner-wrapper']}>
+                <Spinner
+                  customSize={12}
+                  color={
+                    buttonType === 'muted' ||
+                    buttonType === 'warning' ||
+                    buttonType === 'naked'
+                      ? 'default'
+                      : 'white'
+                  }
+                />
+              </div>
+            )
+          }
         </CSSTransition>
         {indicateDropdown && (
           <Icon

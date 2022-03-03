@@ -130,6 +130,7 @@ export const iconName = {
   SubscriptTrimmed: 'SubscriptTrimmed',
   Superscript: 'Superscript',
   SuperscriptTrimmed: 'SuperscriptTrimmed',
+  Tab: 'Tab',
   Table: 'Table',
   Tags: 'Tags',
   Text: 'Text',

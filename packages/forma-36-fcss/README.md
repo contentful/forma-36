@@ -4,6 +4,18 @@ Forma 36 FCSS - Utility CSS classes for applying spacing, colors, typography, sh
 
 ## Getting started
 
+### Install the package to your project
+
+```bash
+yarn add @contentful/forma-36-fcss
+```
+
+Or for NPM
+
+```bash
+npm i @contentful/forma-36-fcss
+```
+
 Import the styles.css file into your stylesheet.
 
 ```

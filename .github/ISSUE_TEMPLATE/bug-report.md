@@ -3,7 +3,7 @@ name: "\U0001F41B Bug Report"
 about: Spotted a bug? Add a report to help us improve Forma 36
 title: "\U0001F41B Bug - "
 labels: bug, needs triage
-assignees: m10l, burakukula, mshaaban0, gui-santos, denkristoffer
+assignees: m10l, burakukula, mshaaban0, gui-santos, denkristoffer, Lelith
 ---
 
 <!--
@@ -19,6 +19,9 @@ If you have any questions feel free to get in touch on the #forma36 channel on o
 
 <!--
 Please provide us with a brief summary of the bug, a few words will do. Providing screenshots is encouraged
+
+You can also use our Codesandbox template to provide us with a reproducible example
+https://codesandbox.io/s/forma-36-template-v3-x-x-stxbz
 -->
 
 ## Environment

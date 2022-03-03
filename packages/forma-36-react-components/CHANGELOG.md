@@ -3,6 +3,298 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.100.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.100.3...@contentful/forma-36-react-components@3.100.4) (2021-11-22)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.100.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.100.2...@contentful/forma-36-react-components@3.100.3) (2021-11-17)
+
+
+### Bug Fixes
+
+* **autocomplete:** fix dropdown props type ([#1528](https://github.com/contentful/forma-36/issues/1528)) ([460ba09](https://github.com/contentful/forma-36/commit/460ba0983b5c594ef2e24dfa9bd5e95f69a43bd5))
+
+
+
+
+
+## [3.100.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.100.1...@contentful/forma-36-react-components@3.100.2) (2021-11-11)
+
+
+### Bug Fixes
+
+* remove z-index of focused input ([#1512](https://github.com/contentful/forma-36/issues/1512)) ([1e27103](https://github.com/contentful/forma-36/commit/1e271031d41af33a4008de8d545848476317159e))
+
+
+
+
+
+## [3.100.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.100.0...@contentful/forma-36-react-components@3.100.1) (2021-11-01)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+# [3.100.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.99.1...@contentful/forma-36-react-components@3.100.0) (2021-10-26)
+
+
+### Features
+
+* **icons:** add Tab icon ([#1448](https://github.com/contentful/forma-36/issues/1448)) ([0b00e4a](https://github.com/contentful/forma-36/commit/0b00e4a02dde10f96ad646e3f3a62677d9c1f88b))
+
+
+
+
+
+## [3.99.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.99.0...@contentful/forma-36-react-components@3.99.1) (2021-10-25)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+# [3.99.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.9...@contentful/forma-36-react-components@3.99.0) (2021-10-25)
+
+
+### Features
+
+* add resize prop [EXT-3236]' ([3f5707e](https://github.com/contentful/forma-36/commit/3f5707e1b6a137d7860c9e0b9662a848be95d850))
+* update test snapshots ([b8b76b4](https://github.com/contentful/forma-36/commit/b8b76b421b5c27626ccd8aae4b71c2fc0a3c067c))
+* update test snapshots ([83dd6ee](https://github.com/contentful/forma-36/commit/83dd6ee07df7b1eb0051635df279e12ad61999f6))
+* use BEM for styling ([0a07f18](https://github.com/contentful/forma-36/commit/0a07f189a3db558c0a423149e793a40df4ff4a10))
+
+
+
+
+
+## [3.98.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.8...@contentful/forma-36-react-components@3.98.9) (2021-10-22)
+
+
+### Bug Fixes
+
+* **workbench:** remove inherited margin on description ([#1436](https://github.com/contentful/forma-36/issues/1436)) ([e3d8c76](https://github.com/contentful/forma-36/commit/e3d8c764f12270c21ac837088da93729a7aa6700))
+
+
+
+
+
+## [3.98.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.7...@contentful/forma-36-react-components@3.98.8) (2021-10-18)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.98.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.6...@contentful/forma-36-react-components@3.98.7) (2021-10-11)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.98.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.5...@contentful/forma-36-react-components@3.98.6) (2021-10-08)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.98.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.4...@contentful/forma-36-react-components@3.98.5) (2021-10-05)
+
+
+### Bug Fixes
+
+* remove button type attribute when href is defined ([#1379](https://github.com/contentful/forma-36/issues/1379)) ([405c44b](https://github.com/contentful/forma-36/commit/405c44bf62cb48672a35ee1f876b8328dbb1e850))
+
+
+
+
+
+## [3.98.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.3...@contentful/forma-36-react-components@3.98.4) (2021-09-20)
+
+
+### Bug Fixes
+
+* dropdown container focus styles ([#1313](https://github.com/contentful/forma-36/issues/1313)) ([4c0506c](https://github.com/contentful/forma-36/commit/4c0506cecf0a10258c66f4e60e8f2dd4ad463b88))
+
+
+
+
+
+## [3.98.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.2...@contentful/forma-36-react-components@3.98.3) (2021-09-14)
+
+
+### Bug Fixes
+
+* **radiobutton:** wrong style on disabled radiobutton ([#1312](https://github.com/contentful/forma-36/issues/1312)) ([c0fd1c8](https://github.com/contentful/forma-36/commit/c0fd1c83369c8e68c6f86c53e963ed6b12de3d72))
+
+
+
+
+
+## [3.98.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.1...@contentful/forma-36-react-components@3.98.2) (2021-09-09)
+
+
+### Bug Fixes
+
+* **Button:** hide spinner when loading is false ([#1295](https://github.com/contentful/forma-36/issues/1295)) ([cafbd50](https://github.com/contentful/forma-36/commit/cafbd503f34429064b8d661be11f6475faa60c69))
+
+
+
+
+
+## [3.98.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.0...@contentful/forma-36-react-components@3.98.1) (2021-09-06)
+
+
+### Bug Fixes
+
+* **Modal:** story improvement & allow scrolling in ModalCofirm [] ([#1291](https://github.com/contentful/forma-36/issues/1291)) ([7285a0b](https://github.com/contentful/forma-36/commit/7285a0b0ba7abc16d4b81b6576babd2bed09e00a))
+
+
+
+
+
+# [3.98.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.97.1...@contentful/forma-36-react-components@3.98.0) (2021-09-02)
+
+
+### Features
+
+* add default id to watch ([a90902e](https://github.com/contentful/forma-36/commit/a90902e46679be7430de866677028aa7cbe48b4a))
+* add default id to watch fixed test ([fc329c8](https://github.com/contentful/forma-36/commit/fc329c884bb93b53caa01fd384c72cffd00fa34d))
+
+
+
+
+
+## [3.97.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.97.0...@contentful/forma-36-react-components@3.97.1) (2021-08-30)
+
+
+### Bug Fixes
+
+* **Autocomplete:** add error handling possibility ([#1245](https://github.com/contentful/forma-36/issues/1245)) ([10f968d](https://github.com/contentful/forma-36/commit/10f968d734d2cff9ad7d1449aa44bbb392713ea8))
+
+
+
+
+
+# [3.97.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.96.2...@contentful/forma-36-react-components@3.97.0) (2021-08-24)
+
+
+### Features
+
+* **EditorToolbarButton:** custom Tooltip placement ([#1225](https://github.com/contentful/forma-36/issues/1225)) ([b030831](https://github.com/contentful/forma-36/commit/b030831febb195cbbda2496db97c1b3d694b2e74))
+
+
+
+
+
+## [3.96.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.96.1...@contentful/forma-36-react-components@3.96.2) (2021-08-23)
+
+
+### Bug Fixes
+
+* **table-head:** only set offsetTop for th when isSticky is true ([#1223](https://github.com/contentful/forma-36/issues/1223)) ([de7e2af](https://github.com/contentful/forma-36/commit/de7e2af37f884dd65b25fc253d26553249396e73))
+* Autocomplete [1203] ([#1212](https://github.com/contentful/forma-36/issues/1212)) ([77b19da](https://github.com/contentful/forma-36/commit/77b19da14a17528bad89fe88f74b1ef58fb44ea2))
+
+
+
+
+
+## [3.96.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.96.0...@contentful/forma-36-react-components@3.96.1) (2021-08-23)
+
+
+### Bug Fixes
+
+* text link semantics and alignment ([#1213](https://github.com/contentful/forma-36/issues/1213)) ([80db752](https://github.com/contentful/forma-36/commit/80db752c56ada2e047cbb191c2c106c6e6d81d85))
+
+
+
+
+
+# [3.96.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.95.2...@contentful/forma-36-react-components@3.96.0) (2021-08-12)
+
+
+### Features
+
+* **modallauncher:** add closeAll method to ModalLauncher ([#1176](https://github.com/contentful/forma-36/issues/1176)) ([3a669ae](https://github.com/contentful/forma-36/commit/3a669aeb9ba3ba910da42cc08cdbf8a419da0aec))
+
+
+
+
+
+## [3.95.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.95.1...@contentful/forma-36-react-components@3.95.2) (2021-08-06)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.95.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.95.0...@contentful/forma-36-react-components@3.95.1) (2021-08-04)
+
+
+### Bug Fixes
+
+* **Icon:** add types for otherProps ([#1150](https://github.com/contentful/forma-36/issues/1150)) ([eb8ddb5](https://github.com/contentful/forma-36/commit/eb8ddb5d96eb5d59f6fce527eb9c1ce09d9b0fca))
+
+
+
+
+
+# [3.95.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.94.2...@contentful/forma-36-react-components@3.95.0) (2021-08-04)
+
+
+### Features
+
+* **Puzzle:** use web app version of puzzle icon ([#1146](https://github.com/contentful/forma-36/issues/1146)) ([b76cd56](https://github.com/contentful/forma-36/commit/b76cd563e73ef0731d250c6acb2c0b4df357963f))
+
+
+
+
+
+## [3.94.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.94.1...@contentful/forma-36-react-components@3.94.2) (2021-08-04)
+
+
+### Bug Fixes
+
+* workbench sidebar label ([#1148](https://github.com/contentful/forma-36/issues/1148)) ([a2a72bb](https://github.com/contentful/forma-36/commit/a2a72bbcf2ca3c48945284c7838ebbf348f3a182))
+
+
+
+
+
+## [3.94.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.94.0...@contentful/forma-36-react-components@3.94.1) (2021-08-03)
+
+
+### Bug Fixes
+
+* **button:** unmount spinner on exit ([#1140](https://github.com/contentful/forma-36/issues/1140)) ([8071061](https://github.com/contentful/forma-36/commit/8071061ad6e129476b1f3148352177337f4a4807))
+
+
+
+
+
+# [3.94.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.93.5...@contentful/forma-36-react-components@3.94.0) (2021-08-03)
+
+
+### Features
+
+* improve Workbench a11y support ([#1137](https://github.com/contentful/forma-36/issues/1137)) ([645b023](https://github.com/contentful/forma-36/commit/645b023a18a47d33ec59f7a261ef6cd43fca825d))
+
+
+
+
+
 ## [3.93.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.93.4...@contentful/forma-36-react-components@3.93.5) (2021-07-29)
 
 

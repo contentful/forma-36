@@ -1,13 +1,16 @@
 const path = require('path');
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: 'Forma 36 - The Contentful Design System',
-    promoText: `Updated color system with new tokens.`,
-    promoLink:
-      'https://github.com/contentful/forma-36/blob/master/packages/forma-36-tokens/MIGRATION.md',
-    promoLinkText: 'Migration notes',
-    promoTagText: 'New colors',
+    promoText: `Forma 36 v4 is available`,
+    promoLink: 'https://f36.contentful.com/',
+    promoLinkText: 'Click here to go to the new version',
+    promoTagText: 'NEW',
     menuLinks: [
       {
         name: 'Foundation',

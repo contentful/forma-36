@@ -22,14 +22,14 @@ import {
 import ComponentSource from './ComponentSource';
 import DocFormatter from './DocFormatter';
 import Footer from './Footer';
-import { heightOfHeader } from './Navigation';
+import { StaticSource } from './StaticSource';
 
 const styles = {
   container: css`
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: calc(100vh - ${heightOfHeader}px);
+    height: 100%;
     overflow-y: auto;
   `,
 
@@ -62,7 +62,12 @@ const markToComponentMap = {
   li: (props) => (
     <ListItem className="f36-font-size--l f36-color--text-mid" {...props} />
   ),
-  code: (props) => <ComponentSource>{props.children}</ComponentSource>,
+  code: (props) => {
+    if (props.static) {
+      return <StaticSource {...props} />;
+    }
+    return <ComponentSource>{props.children}</ComponentSource>;
+  },
   table: (props) => <Table className="f36-margin-bottom--m" {...props} />,
   thead: (props) => <TableHead {...props} />,
   tbody: (props) => <TableBody {...props} />,

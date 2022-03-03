@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
@@ -8,14 +8,14 @@ import { css } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
 import { Icon, SectionHeading } from '@contentful/forma-36-react-components';
 
-import DocSearch from './DocSearch';
-
-export const heightOfHeader = 56;
-const heightOfDocSearch = 72;
+// import DocSearch from './DocSearch';
 
 const styles = {
   sidemenu: css`
-    flex-basis: 380px;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    max-width: 380px;
     padding-top: ${tokens.spacingM};
     border-right: 1px solid ${tokens.colorElementMid};
   `,
@@ -25,7 +25,6 @@ const styles = {
     flex-direction: column;
     border-top: 1px solid ${tokens.colorElementMid};
     padding: ${tokens.spacingM} 0;
-    height: calc(100vh - ${heightOfHeader + heightOfDocSearch}px);
     overflow-y: auto;
     color: ${tokens.colorTextMid};
   `,
@@ -35,6 +34,10 @@ const styles = {
     list-style: none;
     padding: 0;
     margin-top: 0;
+  `,
+
+  hidden: css`
+    display: none;
   `,
 
   link: css`
@@ -91,63 +94,76 @@ const checkActive = (item, currentPath) => {
 const checkCategory = (name) =>
   name === 'Foundation' || name === 'Guidelines' || name === 'Components';
 
-const MenuListItem = ({ item, currentPath, isActive, hierarchyLevel }) => {
-  const isCategory = checkCategory(item.name);
-  const [isExpanded, setIsExpanded] = useState(isActive || isCategory);
+const MenuListItem = React.forwardRef(
+  ({ item, currentPath, isActive, hierarchyLevel }, ref) => {
+    const isCategory = checkCategory(item.name);
+    const [isExpanded, setIsExpanded] = useState(isActive || isCategory);
 
-  const handleToggle = (event) => {
-    event.preventDefault();
-    setIsExpanded(!isExpanded);
-  };
+    const handleToggle = (event) => {
+      event.preventDefault();
+      setIsExpanded(!isExpanded);
+    };
 
-  const itemOffset = { paddingLeft: `${1 + hierarchyLevel}rem` };
+    const handleKeyDown = (event) => {
+      if (event.nativeEvent.code === 'Enter') {
+        handleToggle(event);
+      }
+    };
 
-  return (
-    <li css={[isCategory && styles.category]}>
-      {item.menuLinks ? (
-        <>
-          <div
-            css={[styles.link, styles.linkGroup, itemOffset]}
-            onClick={handleToggle}
-          >
-            {isCategory ? (
-              <SectionHeading>{item.name}</SectionHeading>
-            ) : (
-              <span>{item.name}</span>
-            )}
+    const itemOffset = { paddingLeft: `${1 + hierarchyLevel}rem` };
 
-            <Icon
-              css={styles.linkIcon}
-              color="secondary"
-              size="medium"
-              icon={isExpanded ? 'ChevronDown' : 'ChevronRight'}
-            />
-          </div>
-          {isExpanded && (
+    return (
+      <li css={[isCategory && styles.category]}>
+        {item.menuLinks ? (
+          <>
+            <div
+              css={[styles.link, styles.linkGroup, itemOffset]}
+              onClick={handleToggle}
+              onKeyDown={handleKeyDown}
+              // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+              tabIndex={0}
+            >
+              {isCategory ? (
+                <SectionHeading>{item.name}</SectionHeading>
+              ) : (
+                <span>{item.name}</span>
+              )}
+
+              <Icon
+                css={styles.linkIcon}
+                color="secondary"
+                size="medium"
+                icon={isExpanded ? 'ChevronDown' : 'ChevronRight'}
+              />
+            </div>
             <MenuList
+              isHidden={!isExpanded}
               menuItems={item.menuLinks}
               currentPath={currentPath}
               hierarchyLevel={hierarchyLevel + 1}
             />
-          )}
-        </>
-      ) : (
-        <Link
-          css={[styles.link, isActive && styles.linkActive, itemOffset]}
-          to={item.link}
-          href={item.link}
-        >
-          {item.name}
-        </Link>
-      )}
-    </li>
-  );
-};
+          </>
+        ) : (
+          <Link
+            ref={ref}
+            css={[styles.link, isActive && styles.linkActive, itemOffset]}
+            to={item.link}
+            href={item.link}
+          >
+            {item.name}
+          </Link>
+        )}
+      </li>
+    );
+  },
+);
+
+MenuListItem.displayName = 'MenuListItem';
 
 MenuListItem.propTypes = {
   item: PropTypes.shape({ link: PropTypes.string, name: PropTypes.string })
     .isRequired,
-  currentPath: PropTypes.string.isRequired,
+  currentPath: PropTypes.string,
   isActive: PropTypes.bool,
   hierarchyLevel: PropTypes.number,
 };
@@ -157,16 +173,29 @@ MenuListItem.defaultProps = {
   hierarchyLevel: 0,
 };
 
-const MenuList = ({ menuItems, currentPath, hierarchyLevel }) => {
+const MenuList = ({
+  menuItems,
+  currentPath,
+  hierarchyLevel,
+  isHidden = false,
+}) => {
+  const activeRef = useRef(null);
+  useEffect(() => {
+    if (activeRef.current) {
+      activeRef.current.scrollIntoView({ block: 'center' });
+    }
+  }, []);
   return (
-    <ul css={styles.list}>
+    <ul css={[styles.list, isHidden && styles.hidden]}>
       {menuItems.map((item, index) => {
+        const active = checkActive(item, currentPath);
         return (
           <MenuListItem
             key={index}
+            ref={active ? activeRef : undefined}
             item={item}
             currentPath={currentPath}
-            isActive={checkActive(item, currentPath)}
+            isActive={active}
             hierarchyLevel={hierarchyLevel}
           />
         );
@@ -176,7 +205,7 @@ const MenuList = ({ menuItems, currentPath, hierarchyLevel }) => {
 };
 
 const MenuListProps = {
-  currentPath: PropTypes.string.isRequired,
+  currentPath: PropTypes.string,
   menuItems: PropTypes.arrayOf(
     PropTypes.shape({ link: PropTypes.string, name: PropTypes.string }),
   ),
@@ -192,7 +221,7 @@ MenuList.defaultProps = {
 const Navigation = ({ menuItems, currentPath }) => {
   return (
     <div css={styles.sidemenu}>
-      <DocSearch />
+      {/* <DocSearch /> */}
 
       <nav css={styles.navList} aria-label="Main Navigation">
         <MenuList
