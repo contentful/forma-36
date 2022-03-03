@@ -42,7 +42,7 @@ function Home() {
             title="Get the tokens"
             description="Design tokens for Forma 36 available as JSON, CSS, and SCSS"
             linkText="Get the tokens"
-            linkHref="https://github.com/contentful/forma-36/tree/master/packages/forma-36-tokens"
+            linkHref="https://github.com/contentful/forma-36/tree/main/packages/forma-36-tokens"
             imageNode={
               <Image {...tokensImg} alt="Illustration for design tokens" />
             }
