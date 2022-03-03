@@ -3,22 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.3.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-fcss@0.3.3...@contentful/forma-36-fcss@0.3.4) (2022-03-02)
+## [0.3.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-fcss@0.3.3...@contentful/forma-36-fcss@0.3.4) (2021-08-06)
 
-**Note:** Version bump only for packages @contentful/forma-36-tokens & @contentful/forma-36-react-components
+**Note:** Version bump only for package @contentful/forma-36-fcss
 
-### Bug Fixes
 
-- **forma-36-tokens:** fix use of rgb with 4 arguments (rgba) ([28977c4](https://github.com/contentful/forma-36/commit/28977c4))
-- **forma-36-react-components:** fix use of rgb with 4 arguments (rgba) ([28977c4](https://github.com/contentful/forma-36/commit/28977c4))
+
+
 
 ## [0.3.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-fcss@0.3.2...@contentful/forma-36-fcss@0.3.3) (2021-07-22)
 
 **Note:** Version bump only for package @contentful/forma-36-fcss
 
+
+
+
+
 ## [0.3.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-fcss@0.3.1...@contentful/forma-36-fcss@0.3.2) (2021-05-07)
 
 **Note:** Version bump only for package @contentful/forma-36-fcss
+
+
+
+
 
 ## [0.3.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-fcss@0.3.0...@contentful/forma-36-fcss@0.3.1) (2021-02-09)
 
