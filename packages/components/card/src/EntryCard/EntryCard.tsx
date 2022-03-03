@@ -56,7 +56,7 @@ function EntryCardDescription({
   const truncatedDescription = truncate(description, 95, {});
 
   return (
-    <Paragraph marginBottom="none" isTruncated>
+    <Paragraph marginBottom="none" isWordBreak>
       {truncatedDescription}
     </Paragraph>
   );
