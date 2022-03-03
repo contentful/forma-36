@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.6](https://github.com/contentful/forma-36/compare/@contentful/f36-badge@4.1.5...@contentful/f36-badge@4.1.6) (2022-03-03)
+
+
+### Bug Fixes
+
+* migrate links from master to main  ([#1923](https://github.com/contentful/forma-36/issues/1923)) ([607301d](https://github.com/contentful/forma-36/commit/607301d57a2e83190d2aa298120ddb8493e8c429))
+
+
+
+
+
 ## [4.1.5](https://github.com/contentful/forma-36/compare/@contentful/f36-badge@4.1.4...@contentful/f36-badge@4.1.5) (2022-02-23)
 
 

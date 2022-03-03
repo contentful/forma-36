@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.14](https://github.com/contentful/forma-36/compare/@contentful/f36-workbench@4.1.13...@contentful/f36-workbench@4.1.14) (2022-03-03)
+
+
+### Bug Fixes
+
+* migrate links from master to main  ([#1923](https://github.com/contentful/forma-36/issues/1923)) ([607301d](https://github.com/contentful/forma-36/commit/607301d57a2e83190d2aa298120ddb8493e8c429))
+
+
+
+
+
 ## [4.1.13](https://github.com/contentful/forma-36/compare/@contentful/f36-workbench@4.1.12...@contentful/f36-workbench@4.1.13) (2022-03-02)
 
 **Note:** Version bump only for package @contentful/f36-workbench
