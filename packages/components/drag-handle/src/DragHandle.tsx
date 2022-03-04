@@ -1,17 +1,31 @@
-import React, {
-  forwardRef,
-  useCallback,
-  useState,
-  FocusEventHandler,
-  MouseEventHandler,
-} from 'react';
+import React, { useCallback, useState } from 'react';
+import type { FocusEventHandler, MouseEventHandler } from 'react';
 import { cx } from 'emotion';
-import type { PropsWithHTMLElement } from '@contentful/f36-core';
+import type {
+  PolymorphicComponent,
+  PolymorphicProps,
+} from '@contentful/f36-core';
 import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 import { DragIcon } from '@contentful/f36-icons';
 import { getStyles } from './DragHandle.styles';
 
-export type DragHandleInternalProps = CommonProps & {
+// We use div instead of a button because react-sortable-hoc lib cancels sorting if the event target is button.
+//
+// The other alternative way to fix it was to pass a custom `shouldCancelStart` callback,
+// in every place where we use this component with react-sortable-hoc.
+// (the custom callback with all the logic from default callback, but without button event cancelation).
+// So we decided that just changing it to the div, as it was in v3, is a better fix.
+//
+// default shouldCancelStart callback:
+// https://github.com/clauderic/react-sortable-hoc/blob/d94ba3cc67cfc7d6d460b585e7723bdb50015e53/src/SortableContainer/defaultShouldCancelStart.js
+const DRAG_HANDLE_DEFAULT_TAG = 'div';
+
+export interface DragHandleInternalProps extends CommonProps {
+  /**
+   * The element used for the root node
+   * @default div
+   */
+  as?: 'button' | 'div';
   /**
    * Applies styling for when the component is actively being dragged by
    * the user
@@ -34,114 +48,107 @@ export type DragHandleInternalProps = CommonProps & {
    * Set type button for div element
    */
   type?: string;
-};
+}
 
-export type DragHandleProps = PropsWithHTMLElement<
-  DragHandleInternalProps,
-  'div'
->;
+export type DragHandleProps<
+  E extends React.ElementType = typeof DRAG_HANDLE_DEFAULT_TAG
+> = PolymorphicProps<DragHandleInternalProps, E>;
 
-export const DragHandle = forwardRef<
-  HTMLDivElement,
-  ExpandProps<DragHandleProps>
+function _DragHandle<
+  E extends React.ElementType = typeof DRAG_HANDLE_DEFAULT_TAG
 >(
-  (
-    {
-      className,
-      isActive,
-      isFocused: isFocusedProp,
-      isHovered: isHoveredProp,
-      label,
-      onBlur,
-      onFocus,
-      onMouseEnter,
-      onMouseLeave,
-      testId = 'cf-ui-drag-handle',
-      style,
-      ...otherProps
+  props: DragHandleProps<E>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  forwardedRef: React.Ref<any>,
+) {
+  const styles = getStyles();
+  const {
+    as = DRAG_HANDLE_DEFAULT_TAG,
+    className,
+    isActive,
+    isFocused: isFocusedProp,
+    isHovered: isHoveredProp,
+    label,
+    onBlur,
+    onFocus,
+    onMouseEnter,
+    onMouseLeave,
+    testId = 'cf-ui-drag-handle',
+    style,
+    ...otherProps
+  } = props;
+  const [isFocused, setisFocused] = useState(isFocusedProp);
+  const [isHovered, setisHovered] = useState(isHoveredProp);
+
+  const handleFocus = useCallback<FocusEventHandler<E>>(
+    (event) => {
+      setisFocused(true);
+
+      if (onFocus) {
+        onFocus(event);
+      }
     },
-    forwardedRef,
-  ) => {
-    const styles = getStyles();
-    const [isFocused, setisFocused] = useState(isFocusedProp);
-    const [isHovered, setisHovered] = useState(isHoveredProp);
+    [onFocus],
+  );
 
-    const handleFocus = useCallback<FocusEventHandler<HTMLDivElement>>(
-      (event) => {
-        setisFocused(true);
+  const handleBlur = useCallback<FocusEventHandler<E>>(
+    (event) => {
+      setisFocused(false);
 
-        if (onFocus) {
-          onFocus(event);
-        }
-      },
-      [onFocus],
-    );
+      if (onBlur) {
+        onBlur(event);
+      }
+    },
+    [onBlur],
+  );
 
-    const handleBlur = useCallback<FocusEventHandler<HTMLDivElement>>(
-      (event) => {
-        setisFocused(false);
+  const handleMouseEnter = useCallback<MouseEventHandler<E>>(
+    (event) => {
+      setisHovered(true);
 
-        if (onBlur) {
-          onBlur(event);
-        }
-      },
-      [onBlur],
-    );
+      if (onMouseEnter) {
+        onMouseEnter(event);
+      }
+    },
+    [onMouseEnter],
+  );
 
-    const handleMouseEnter = useCallback<MouseEventHandler<HTMLDivElement>>(
-      (event) => {
-        setisHovered(true);
+  const handleMouseLeave = useCallback<MouseEventHandler<E>>(
+    (event) => {
+      setisHovered(false);
 
-        if (onMouseEnter) {
-          onMouseEnter(event);
-        }
-      },
-      [onMouseEnter],
-    );
+      if (onMouseLeave) {
+        onMouseLeave(event);
+      }
+    },
+    [onMouseLeave],
+  );
 
-    const handleMouseLeave = useCallback<MouseEventHandler<HTMLDivElement>>(
-      (event) => {
-        setisHovered(false);
+  const Element: React.ElementType = as;
 
-        if (onMouseLeave) {
-          onMouseLeave(event);
-        }
-      },
-      [onMouseLeave],
-    );
+  return (
+    <Element
+      role="button"
+      tabIndex={0}
+      {...otherProps}
+      className={cx(styles.root({ isActive, isFocused, isHovered }), className)}
+      onBlur={handleBlur}
+      onFocus={handleFocus}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      data-test-id={testId}
+      ref={forwardedRef}
+      style={style}
+      type={as === 'button' ? 'button' : undefined}
+    >
+      <DragIcon variant="muted" />
+      <span className={styles.label}>{label}</span>
+    </Element>
+  );
+}
 
-    return (
-      // We use div instead of a button because react-sortable-hoc lib cancels sorting if the event target is button.
-      //
-      // The other alternative way to fix it was to pass a custom `shouldCancelStart` callback,
-      // in every place where we use this component with react-sortable-hoc.
-      // (the custom callback with all the logic from default callback, but without button event cancelation).
-      // So we decided that just changing it to the div, as it was in v3, is a better fix.
-      //
-      // default shouldCancelStart callback:
-      // https://github.com/clauderic/react-sortable-hoc/blob/d94ba3cc67cfc7d6d460b585e7723bdb50015e53/src/SortableContainer/defaultShouldCancelStart.js
-      <div
-        role="button"
-        tabIndex={0}
-        type="button"
-        {...otherProps}
-        className={cx(
-          styles.root({ isActive, isFocused, isHovered }),
-          className,
-        )}
-        onBlur={handleBlur}
-        onFocus={handleFocus}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        data-test-id={testId}
-        ref={forwardedRef}
-        style={style}
-      >
-        <DragIcon variant="muted" />
-        <span className={styles.label}>{label}</span>
-      </div>
-    );
-  },
-);
-
-DragHandle.displayName = 'DragHandle';
+export const DragHandle: PolymorphicComponent<
+  ExpandProps<DragHandleInternalProps>,
+  typeof DRAG_HANDLE_DEFAULT_TAG,
+  'disabled'
+> = React.forwardRef(_DragHandle);
