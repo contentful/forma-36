@@ -170,6 +170,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/SirGavin"><img src="https://avatars.githubusercontent.com/u/11873876?v=4?s=100" width="100px;" alt=""/><br /><sub><b>SirGavin</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3ASirGavin" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/Lelith"><img src="https://avatars.githubusercontent.com/u/1789174?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kathrin Holzmann</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=Lelith" title="Code">💻</a> <a href="#maintenance-Lelith" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://bgutsol.com/"><img src="https://avatars.githubusercontent.com/u/10744462?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bohdan Hutsol</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=bgutsol" title="Code">💻</a> <a href="#maintenance-bgutsol" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/ghepting"><img src="https://avatars.githubusercontent.com/u/492573?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gary Hepting</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3Aghepting" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
