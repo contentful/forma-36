@@ -206,15 +206,12 @@ export function ComponentSource({
                   />
                   {isExampleFromFile && (
                     <Button
+                      as="a"
                       className={styles.playgroundButton}
                       endIcon={<ExternalLinkIcon />}
                       size="small"
-                      onClick={() => {
-                        const href = `/playground?code=${coder.encode(
-                          children,
-                        )}`;
-                        router.push(href, href);
-                      }}
+                      href={`/playground?code=${coder.encode(children)}`}
+                      target="_blank"
                     >
                       Open in Playground
                     </Button>
