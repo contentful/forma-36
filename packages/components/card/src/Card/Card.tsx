@@ -25,7 +25,7 @@ type BaseProps = Omit<
   padding?: 'default' | 'large' | 'none';
 };
 
-type BasePropsWithDragHandle = BaseProps &
+type BasePropsWithDragHandle = Omit<BaseProps, 'padding'> &
   Pick<BaseCardInternalProps, 'withDragHandle'> & { padding: 'none' };
 
 export type CardInternalProps = BaseProps | BasePropsWithDragHandle;
