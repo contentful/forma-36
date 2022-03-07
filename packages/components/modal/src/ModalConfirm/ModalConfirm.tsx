@@ -164,3 +164,5 @@ export function ModalConfirm({
     </Modal>
   );
 }
+
+ModalConfirm.displayName = 'ModalConfirm';

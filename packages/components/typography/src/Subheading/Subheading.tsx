@@ -44,6 +44,8 @@ function _Subheading<
   );
 }
 
+_Subheading.displayName = 'Subheading';
+
 export const Subheading: PolymorphicComponent<
   ExpandProps<SubheadingInternalProps>,
   typeof SUBHEADING_DEFAULT_TAG

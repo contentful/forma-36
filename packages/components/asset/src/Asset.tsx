@@ -103,3 +103,5 @@ export function Asset({
     </Box>
   );
 }
+
+Asset.displayName = 'Asset';

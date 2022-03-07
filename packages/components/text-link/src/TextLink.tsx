@@ -125,6 +125,8 @@ function _TextLink<E extends React.ElementType = typeof TEX_LINK_DEFAULT_TAG>(
   );
 }
 
+_TextLink.displayName = 'TextLink';
+
 export const TextLink: PolymorphicComponent<
   ExpandProps<TextLinkInternalProps>,
   typeof TEX_LINK_DEFAULT_TAG,

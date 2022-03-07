@@ -46,6 +46,8 @@ function _IconButton<
   );
 }
 
+_IconButton.displayName = 'IconButton';
+
 export const IconButton: PolymorphicComponent<
   ExpandProps<IconButtonInternalProps>,
   typeof ICON_BUTTON_DEFAULT_TAG,

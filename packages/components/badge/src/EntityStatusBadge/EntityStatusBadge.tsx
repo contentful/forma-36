@@ -33,6 +33,8 @@ function EntityStatusBadge(
   );
 }
 
+EntityStatusBadge.displayName = 'EntityStatusBadge';
+
 const _EntityStatusBadge = React.forwardRef<
   HTMLDivElement,
   ExpandProps<EntityStatusBadgeProps>

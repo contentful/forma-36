@@ -41,6 +41,8 @@ function _Workbench(
   );
 }
 
+_Workbench.displayName = 'Workbench';
+
 /**
  * The Workbench assembles the outer app shell which defines regions to structure content and interactions
  */

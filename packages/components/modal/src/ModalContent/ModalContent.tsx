@@ -31,3 +31,5 @@ export function ModalContent({
     </Box>
   );
 }
+
+ModalContent.displayName = 'ModalContent';

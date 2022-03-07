@@ -216,3 +216,5 @@ export function Modal({
     </ReactModal>
   );
 }
+
+Modal.displayName = 'Modal';

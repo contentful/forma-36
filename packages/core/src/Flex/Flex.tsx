@@ -145,6 +145,8 @@ function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
   );
 }
 
+_Flex.displayName = 'Flex';
+
 export const Flex: PolymorphicComponent<
   ExpandProps<FlexInternalProps>,
   typeof FLEX_DEFAULT_TAG

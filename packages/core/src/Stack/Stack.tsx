@@ -57,6 +57,8 @@ function _Stack<E extends React.ElementType = typeof STACK_DEFAULT_TAG>(
   );
 }
 
+_Stack.displayName = 'Stack';
+
 export const Stack: PolymorphicComponent<
   ExpandProps<StackInternalProps>,
   typeof STACK_DEFAULT_TAG

@@ -35,3 +35,5 @@ export function SkeletonImage({
     />
   );
 }
+
+SkeletonImage.displayName = 'SkeletonImage';

@@ -105,3 +105,5 @@ export class NotificationItemContainer extends Component<
     );
   }
 }
+
+NotificationItemContainer.displayName = 'NotificationItemContainer';

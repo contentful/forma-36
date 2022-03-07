@@ -150,4 +150,6 @@ function _BaseCheckbox(
   );
 }
 
+_BaseCheckbox.displayName = 'BaseCheckbox';
+
 export const BaseCheckbox = React.forwardRef(_BaseCheckbox);

@@ -142,4 +142,6 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
   );
 }
 
+_Pagination.displayName = 'Pagination';
+
 export const Pagination = React.forwardRef(_Pagination);
