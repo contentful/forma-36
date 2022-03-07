@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.5](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.3.4...@contentful/f36-card@4.3.5) (2022-03-07)
+
+
+### Bug Fixes
+
+* fix entry card description ([#1930](https://github.com/contentful/forma-36/issues/1930)) ([4c99709](https://github.com/contentful/forma-36/commit/4c997090dcc131b36a9004bdf40bc53dc744bc27))
+
+
+
+
+
 ## [4.3.4](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.3.3...@contentful/f36-card@4.3.4) (2022-03-03)
 
 
