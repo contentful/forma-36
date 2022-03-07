@@ -34,3 +34,4 @@ jobs:
         if: steps.changesets.outputs.published == 'true'
         run: |
           yarn changelog:write
+          yarn changelog:commit
