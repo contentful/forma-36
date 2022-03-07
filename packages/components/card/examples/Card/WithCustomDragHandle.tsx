@@ -41,7 +41,7 @@ export default function WithCustomDragHandle() {
   const SortableCard = SortableElement(({ label }) => {
     return (
       <Card
-        dragHandleRender={() => <SortableDragHandle item={label} />}
+        dragHandleRender={() => <SortableDragHandle />}
         padding="none"
         withDragHandle
       >
