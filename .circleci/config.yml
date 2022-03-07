@@ -139,7 +139,7 @@ jobs:
       - run:
           name: Deploy
           command: yarn lerna publish --no-private --conventional-commits --create-release github --yes
-
+// changelog write
 workflows:
   version: 2
   f36-build:

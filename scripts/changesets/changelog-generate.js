@@ -1,18 +1,19 @@
-import prettier from 'prettier';
-import fs from 'fs';
-import assembleReleasePlan from '@changesets/assemble-release-plan';
-import { read } from '@changesets/config';
-import { readPreState } from '@changesets/pre';
-import readChangesets from '@changesets/read';
-import { getPackages } from '@manypkg/get-packages';
-import { padStart } from 'lodash';
+const prettier = require('prettier');
+const fs = require('fs');
+const assembleReleasePlan = require('@changesets/assemble-release-plan')
+  .default;
+const { read } = require('@changesets/config');
+const { readPreState } = require('@changesets/pre');
+const readChangesets = require('@changesets/read').default;
+const { getPackages } = require('@manypkg/get-packages');
+const _ = require('lodash');
 
 const cwd = process.cwd();
 
 function getCurrentDate() {
   const date = new Date();
-  const day = padStart(date.getDate().toString(), 2, '0');
-  const month = padStart((date.getMonth() + 1).toString(), 2, '0');
+  const day = _.padStart(date.getDate().toString(), 2, '0');
+  const month = _.padStart((date.getMonth() + 1).toString(), 2, '0');
   const year = date.getFullYear();
 
   return `## ${day}-${month}-${year}`;
@@ -30,12 +31,12 @@ async function getChangesetEntries() {
     config,
     preState,
   );
-
+  console.log(releasePlan);
   return releasePlan;
 }
 
 async function main() {
-  const releases = await getChangesetEntries();
+  const { releases } = await getChangesetEntries();
 
   const releaseEntries = releases.map((release) =>
     [release.displayName, '\n\n', ...release.changesets].join(''),
