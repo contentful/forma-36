@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { isValidElement } from 'react';
 import type { ReactElement, ReactNode } from 'react';
 import { cx } from 'emotion';
 import { Box } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 import { Heading, Paragraph } from '@contentful/f36-typography';
-import { ChevronLeftIcon } from '@contentful/f36-icons';
+import { ChevronLeftIcon, IconComponent } from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
 
 import { getWorkbenchHeaderStyles } from './WorkbenchHeader.styles';
@@ -13,7 +13,7 @@ export interface WorkbenchHeaderProps extends CommonProps {
   /** This is the title that will be shown inside the Header component */
   title: string | ReactElement;
   /** This is the icon that will be shown on the left side of the title and it's possible to use Forma 36’s icons or external icons */
-  icon?: ReactElement;
+  icon?: IconComponent | ReactElement;
   /** This is the text that will be shown on the right side of the title in the Header component */
   description?: string;
   /** It's possible to pass a ReactNode to be shown at the end of the Header */
@@ -24,7 +24,7 @@ export interface WorkbenchHeaderProps extends CommonProps {
 
 export function WorkbenchHeader({
   actions,
-  icon,
+  icon: Icon,
   title,
   description,
   className,
@@ -33,6 +33,7 @@ export function WorkbenchHeader({
 }: WorkbenchHeaderProps) {
   const hasBackButton = Boolean(onBack);
   const styles = getWorkbenchHeaderStyles(hasBackButton);
+  const iconComponent = isValidElement(Icon) ? Icon : <Icon />;
 
   return (
     <header
@@ -50,7 +51,7 @@ export function WorkbenchHeader({
         </Button>
       )}
 
-      {icon && <Box marginRight="spacingM">{icon}</Box>}
+      {Icon && <Box marginRight="spacingM">{iconComponent}</Box>}
 
       {typeof title === 'string' ? (
         <Heading
