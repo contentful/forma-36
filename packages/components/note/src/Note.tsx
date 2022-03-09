@@ -98,7 +98,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
           )}
           {children && (
             <Text
-              as="p"
+              as="div"
               lineHeight="lineHeightM"
               className={styles.description}
             >
