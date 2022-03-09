@@ -345,8 +345,6 @@ function _Autocomplete<ItemType>(
   );
 }
 
-_Autocomplete.displayName = 'Autocomplete';
-
 const ListItemLoadingState = () => {
   return (
     <SkeletonContainer svgHeight={16}>

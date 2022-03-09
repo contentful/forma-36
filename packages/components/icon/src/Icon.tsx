@@ -161,8 +161,6 @@ export function _Icon<E extends React.ElementType = IconComponent>(
   );
 }
 
-_Icon.displayName = 'Icon';
-
 export const Icon: PolymorphicComponent<
   ExpandProps<IconInternalProps>,
   typeof ICON_DEFAULT_TAG,
