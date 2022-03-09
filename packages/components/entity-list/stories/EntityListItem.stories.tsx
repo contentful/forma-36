@@ -31,7 +31,7 @@ Basic.args = {
   title: 'Entity title',
   description: 'Entity description',
   contentType: 'My content type',
-  thumbnailUrl: 'https://via.placeholder.com/400x400',
+  thumbnailUrl: 'https://placeholder.pics/svg/400x400',
   thumbnailAltText: 'My thumbnail text',
   withThumbnail: true,
   entityType: 'entry',

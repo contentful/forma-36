@@ -8,7 +8,7 @@ describe('with type=image', () => {
   it('renders the component as a preview', () => {
     const { container } = render(
       <Asset
-        src="https://via.placeholder.com/200x300"
+        src="https://placeholder.pics/svg/200x300"
         title="Image of a cat"
         className="extra-class-name"
         type="image"
@@ -22,7 +22,7 @@ describe('with type=image', () => {
   it('renders the component as a standard asset with status=archived', () => {
     const { container } = render(
       <Asset
-        src="https://via.placeholder.com/200x300"
+        src="https://placeholder.pics/svg/200x300"
         title="Image of a cat"
         className="extra-class-name"
         type="image"
@@ -38,7 +38,7 @@ describe('with type=image', () => {
 it('has no a11y issues', async () => {
   const { container } = render(
     <Asset
-      src="https://via.placeholder.com/200x300"
+      src="https://placeholder.pics/svg/200x300"
       title="picture of a cat"
     />,
   );

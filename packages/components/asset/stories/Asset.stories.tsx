@@ -12,7 +12,7 @@ export default {
     className: { control: { disable: true } },
     src: {
       control: 'text',
-      defaultValue: 'https://via.placeholder.com/200x300',
+      defaultValue: 'https://placeholder.pics/svg/200x300',
     },
     status: {
       control: {
@@ -59,19 +59,22 @@ export const Overview: Story<AssetProps> = () => (
       <Flex marginBottom="spacingS">
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">published</Text>
-          <Asset status="published" src="https://via.placeholder.com/200x300" />
+          <Asset
+            status="published"
+            src="https://placeholder.pics/svg/200x300"
+          />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">draft</Text>
-          <Asset status="draft" src="https://via.placeholder.com/200x300" />
+          <Asset status="draft" src="https://placeholder.pics/svg/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">changed</Text>
-          <Asset status="changed" src="https://via.placeholder.com/200x300" />
+          <Asset status="changed" src="https://placeholder.pics/svg/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">archived (should not show image)</Text>
-          <Asset status="archived" src="https://via.placeholder.com/200x300" />
+          <Asset status="archived" src="https://placeholder.pics/svg/200x300" />
         </Flex>
       </Flex>
     </Flex>
@@ -83,46 +86,49 @@ export const Overview: Story<AssetProps> = () => (
       <Flex marginBottom="spacingS">
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">image</Text>
-          <Asset type="image" src="https://via.placeholder.com/200x300" />
+          <Asset type="image" src="https://placeholder.pics/svg/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">archive</Text>
-          <Asset type="archive" src="https://via.placeholder.com/200x300" />
+          <Asset type="archive" src="https://placeholder.pics/svg/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">audio</Text>
-          <Asset type="audio" src="https://via.placeholder.com/200x300" />
+          <Asset type="audio" src="https://placeholder.pics/svg/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">code</Text>
-          <Asset type="code" src="https://via.placeholder.com/200x300" />
+          <Asset type="code" src="https://placeholder.pics/svg/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">markup</Text>
-          <Asset type="markup" src="https://via.placeholder.com/200x300" />
+          <Asset type="markup" src="https://placeholder.pics/svg/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">pdf</Text>
-          <Asset type="pdf" src="https://via.placeholder.com/200x300" />
+          <Asset type="pdf" src="https://placeholder.pics/svg/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">plaintext</Text>
-          <Asset type="plaintext" src="https://via.placeholder.com/200x300" />
+          <Asset type="plaintext" src="https://placeholder.pics/svg/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">presentation</Text>
           <Asset
             type="presentation"
-            src="https://via.placeholder.com/200x300"
+            src="https://placeholder.pics/svg/200x300"
           />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">spreadsheet</Text>
-          <Asset type="spreadsheet" src="https://via.placeholder.com/200x300" />
+          <Asset
+            type="spreadsheet"
+            src="https://placeholder.pics/svg/200x300"
+          />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">video</Text>
-          <Asset type="video" src="https://via.placeholder.com/200x300" />
+          <Asset type="video" src="https://placeholder.pics/svg/200x300" />
         </Flex>
       </Flex>
     </Flex>

@@ -42,7 +42,7 @@ export const Default: Story<Args> = (args) => {
 Default.args = {
   status: 'published',
   type: 'image',
-  src: 'https://via.placeholder.com/200x300',
+  src: 'https://placeholder.pics/svg/200x300',
   title: 'Asset title',
 };
 
@@ -74,7 +74,7 @@ export const Overview: Story<Args> = () => {
 
           <AssetCard
             icon={<Icon as={icons.ClockIcon} />}
-            src="https://via.placeholder.com/200x300"
+            src="https://placeholder.pics/svg/200x300"
             title="Asset title"
             type="image"
           />
@@ -88,7 +88,7 @@ export const Overview: Story<Args> = () => {
           <AssetCard
             actions={actions}
             isHovered
-            src="https://via.placeholder.com/200x300"
+            src="https://placeholder.pics/svg/200x300"
             title="Asset title"
             type="image"
           />
@@ -101,7 +101,7 @@ export const Overview: Story<Args> = () => {
 
           <AssetCard
             isSelected
-            src="https://via.placeholder.com/200x300"
+            src="https://placeholder.pics/svg/200x300"
             title="Asset title"
             type="image"
           />
@@ -121,7 +121,7 @@ export const Overview: Story<Args> = () => {
           <AssetCard
             icon={<Icon as={icons.ClockIcon} />}
             size="small"
-            src="https://via.placeholder.com/200x300"
+            src="https://placeholder.pics/svg/200x300"
             title="Asset title"
             type="image"
           />
@@ -136,7 +136,7 @@ export const Overview: Story<Args> = () => {
             actions={actions}
             isHovered
             size="small"
-            src="https://via.placeholder.com/200x300"
+            src="https://placeholder.pics/svg/200x300"
             title="Asset title"
             type="image"
           />
@@ -150,7 +150,7 @@ export const Overview: Story<Args> = () => {
           <AssetCard
             isSelected
             size="small"
-            src="https://via.placeholder.com/200x300"
+            src="https://placeholder.pics/svg/200x300"
             title="Asset title"
             type="image"
           />
@@ -175,7 +175,7 @@ export const DifferentImageSizes: Story<Args> = () => {
 
           <AssetCard
             icon={<Icon as={icons.ClockIcon} />}
-            src="https://via.placeholder.com/200x300"
+            src="https://placeholder.pics/svg/200x300"
             title="Asset title"
             type="image"
           />
@@ -188,7 +188,7 @@ export const DifferentImageSizes: Story<Args> = () => {
 
           <AssetCard
             icon={<Icon as={icons.ClockIcon} />}
-            src="https://via.placeholder.com/200x600"
+            src="https://placeholder.pics/svg/200x600"
             title="Asset title"
             type="image"
           />
@@ -201,7 +201,7 @@ export const DifferentImageSizes: Story<Args> = () => {
 
           <AssetCard
             icon={<Icon as={icons.ClockIcon} />}
-            src="https://via.placeholder.com/800x200"
+            src="https://placeholder.pics/svg/800x200"
             title="Asset title"
             type="image"
           />
@@ -221,7 +221,7 @@ export const DifferentImageSizes: Story<Args> = () => {
           <AssetCard
             icon={<Icon as={icons.ClockIcon} />}
             size="small"
-            src="https://via.placeholder.com/200x300"
+            src="https://placeholder.pics/svg/200x300"
             title="Asset title"
             type="image"
           />
@@ -235,7 +235,7 @@ export const DifferentImageSizes: Story<Args> = () => {
           <AssetCard
             actions={actions}
             size="small"
-            src="https://via.placeholder.com/200x600"
+            src="https://placeholder.pics/svg/200x600"
             title="Asset title"
             type="image"
           />
@@ -248,7 +248,7 @@ export const DifferentImageSizes: Story<Args> = () => {
 
           <AssetCard
             size="small"
-            src="https://via.placeholder.com/800x200"
+            src="https://placeholder.pics/svg/800x200"
             title="Asset title"
             type="image"
           />
@@ -262,7 +262,7 @@ export const DifferentImageSizes: Story<Args> = () => {
       <Box style={{ width: '500px' }} marginBottom="spacingS">
         <AssetCard
           icon={<Icon as={icons.ClockIcon} />}
-          src="https://via.placeholder.com/800x200"
+          src="https://placeholder.pics/svg/800x200"
           title="Asset title"
           type="image"
         />
@@ -271,7 +271,7 @@ export const DifferentImageSizes: Story<Args> = () => {
       <Box style={{ width: '500px' }}>
         <AssetCard
           icon={<Icon as={icons.ClockIcon} />}
-          src="https://via.placeholder.com/200x300"
+          src="https://placeholder.pics/svg/200x300"
           title="Asset title"
           type="image"
         />
