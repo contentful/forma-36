@@ -81,7 +81,7 @@ export function WorkbenchHeader({
         </Paragraph>
       )}
 
-      {actions && <Box>{actions}</Box>}
+      {actions}
     </header>
   );
 }
