@@ -6,19 +6,59 @@ const { read } = require('@changesets/config');
 const { readPreState } = require('@changesets/pre');
 const readChangesets = require('@changesets/read').default;
 const { getPackages } = require('@manypkg/get-packages');
-const _ = require('lodash');
 
 const cwd = process.cwd();
 
+// Umbrella package
+const componentsPkg = '@contentful/f36-components';
+// Packages we don't want to have on changelog
+const ignorePkgs = ['@contentful/f36-website', '@contentful/f36-docs-utils'];
+
+// Format package names as Start Case
+function startCase(string) {
+  const toStartCase = (s) => s.charAt(0).toUpperCase() + s.substring(1);
+  return string
+    .split(/\W/g)
+    .reduce((str, x) => `${str.trim()} ${toStartCase(x)}`, '');
+}
+function getPackageName(name) {
+  return startCase(name.replace('@contentful/', ''));
+}
+
+// Formats displayName for each release and separate changesets
+function getReleaseSummary(changesets, release) {
+  const formattedChangesets = release.changesets.map((changeset) => {
+    const { summary } = changesets.find((cs) => cs.id === changeset) ?? {};
+    return !summary || summary?.trim().startsWith('-')
+      ? summary
+      : `- ${summary} \n`;
+  });
+
+  const subPackageName = `**${getPackageName(release.name)}** \`v${
+    release.newVersion
+  }\``;
+
+  const rootPackageName = `\`${componentsPkg}@${release.newVersion}\``;
+  const displayName =
+    release.name === componentsPkg ? rootPackageName : subPackageName;
+
+  return {
+    ...release,
+    changesets: formattedChangesets,
+    displayName: displayName.replace(/,\s*$/, ''),
+  };
+}
+
 function getCurrentDate() {
   const date = new Date();
-  const day = _.padStart(date.getDate().toString(), 2, '0');
-  const month = _.padStart((date.getMonth() + 1).toString(), 2, '0');
+  const day = date.getDate().toString().padStart(2, '0');
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
   const year = date.getFullYear();
 
   return `## ${day}-${month}-${year}`;
 }
 
+// Get changes from changesets and returns the releases with displayName and the changes grouped
 async function getChangesetEntries() {
   const packages = await getPackages(cwd);
   const preState = await readPreState(cwd);
@@ -31,12 +71,23 @@ async function getChangesetEntries() {
     config,
     preState,
   );
-  console.log(releasePlan);
-  return releasePlan;
+
+  const releases = releasePlan.releases
+    .filter((release) => release.changesets.length > 0) // Remove releases without changesets
+    .filter((release) => !ignorePkgs.includes(release.name)) // Remove ignored packages
+    .map((release) => getReleaseSummary(releasePlan.changesets, release))
+    .sort((a, b) => {
+      // Sort umbrella package at the top, and others alphabetically
+      if (a.name === componentsPkg) return -1;
+      if (b.name === componentsPkg) return 1;
+      return a.name < b.name ? -1 : 1;
+    });
+
+  return releases;
 }
 
 async function main() {
-  const { releases } = await getChangesetEntries();
+  const releases = await getChangesetEntries();
 
   const releaseEntries = releases.map((release) =>
     [release.displayName, '\n\n', ...release.changesets].join(''),
