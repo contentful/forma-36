@@ -4,7 +4,6 @@ import { cx } from 'emotion';
 import { Box } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 import { Heading, Paragraph } from '@contentful/f36-typography';
-import type { IconComponent } from '@contentful/f36-icon';
 import { ChevronLeftIcon } from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
 
@@ -14,7 +13,7 @@ export interface WorkbenchHeaderProps extends CommonProps {
   /** This is the title that will be shown inside the Header component */
   title: string | ReactElement;
   /** This is the icon that will be shown on the left side of the title and it's possible to use Forma 36’s icons or external icons */
-  icon?: IconComponent;
+  icon?: ReactElement;
   /** This is the text that will be shown on the right side of the title in the Header component */
   description?: string;
   /** It's possible to pass a ReactNode to be shown at the end of the Header */
@@ -35,8 +34,6 @@ export function WorkbenchHeader({
   const hasBackButton = Boolean(onBack);
   const styles = getWorkbenchHeaderStyles(hasBackButton);
 
-  const Icon = icon;
-
   return (
     <header
       className={cx(styles.workbenchHeader, className)}
@@ -53,11 +50,7 @@ export function WorkbenchHeader({
         </Button>
       )}
 
-      {icon && (
-        <Box marginRight="spacingM">
-          <Icon />
-        </Box>
-      )}
+      {icon && <Box marginRight="spacingM">{icon}</Box>}
 
       {typeof title === 'string' ? (
         <Heading
