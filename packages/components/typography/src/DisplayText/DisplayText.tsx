@@ -59,6 +59,8 @@ function _DisplayText<
   );
 }
 
+_DisplayText.displayName = 'DisplayText';
+
 export const DisplayText: PolymorphicComponent<
   ExpandProps<DisplayTextInternalProps>,
   typeof DISPLAY_TEXT_DEFAULT_TAG

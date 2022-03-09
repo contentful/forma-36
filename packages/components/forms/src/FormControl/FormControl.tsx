@@ -77,6 +77,8 @@ function _FormControl<
   );
 }
 
+_FormControl.displayName = 'FormControl';
+
 export const FormControl: PolymorphicComponent<
   ExpandProps<FormControlInternalProps>,
   typeof FORM_CONTROL_DEFAULT_TAG
