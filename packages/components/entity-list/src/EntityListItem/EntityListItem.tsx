@@ -271,3 +271,5 @@ export function EntityListItem({
     </li>
   );
 }
+
+EntityListItem.displayName = 'EntityListItem';

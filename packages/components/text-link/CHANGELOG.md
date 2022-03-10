@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.3](https://github.com/contentful/forma-36/compare/@contentful/f36-text-link@4.2.2...@contentful/f36-text-link@4.2.3) (2022-03-10)
+
+**Note:** Version bump only for package @contentful/f36-text-link
+
+
+
+
+
+## [4.2.2](https://github.com/contentful/forma-36/compare/@contentful/f36-text-link@4.2.1...@contentful/f36-text-link@4.2.2) (2022-03-09)
+
+**Note:** Version bump only for package @contentful/f36-text-link
+
+
+
+
+
+## [4.2.1](https://github.com/contentful/forma-36/compare/@contentful/f36-text-link@4.2.0...@contentful/f36-text-link@4.2.1) (2022-03-03)
+
+
+### Bug Fixes
+
+* migrate links from master to main  ([#1923](https://github.com/contentful/forma-36/issues/1923)) ([607301d](https://github.com/contentful/forma-36/commit/607301d57a2e83190d2aa298120ddb8493e8c429))
+
+
+
+
+
 # [4.2.0](https://github.com/contentful/forma-36/compare/@contentful/f36-text-link@4.1.1...@contentful/f36-text-link@4.2.0) (2022-02-17)
 
 

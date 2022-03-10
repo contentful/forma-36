@@ -26,4 +26,6 @@ function _EntityList(
   );
 }
 
+_EntityList.displayName = 'EntityList';
+
 export const EntityList = React.forwardRef(_EntityList);

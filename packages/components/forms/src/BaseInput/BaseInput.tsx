@@ -147,6 +147,8 @@ function _BaseInput<E extends React.ElementType = typeof INPUT_DEFAULT_TAG>(
   return inputContent();
 }
 
+_BaseInput.displayName = 'BaseInput';
+
 export const BaseInput: PolymorphicComponent<
   ExpandProps<BaseInputInternalProps>,
   typeof INPUT_DEFAULT_TAG,

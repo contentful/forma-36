@@ -52,6 +52,8 @@ function _List<E extends React.ElementType = typeof LIST_DEFAULT_TAG>(
   );
 }
 
+_List.displayName = 'List';
+
 export const List: PolymorphicComponent<
   ExpandProps<ListInternalProps>,
   typeof LIST_DEFAULT_TAG

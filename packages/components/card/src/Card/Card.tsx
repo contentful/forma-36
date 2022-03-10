@@ -77,6 +77,8 @@ function _Card<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
   );
 }
 
+_Card.displayName = 'Card';
+
 export const Card: PolymorphicComponent<
   ExpandProps<CardInternalProps>,
   typeof BASE_CARD_DEFAULT_TAG

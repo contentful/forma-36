@@ -20,7 +20,6 @@ import { ExternalLinkIcon } from '@contentful/f36-icons';
 import { Flex } from '@contentful/f36-core';
 import { theme } from './theme';
 import { formatSourceCode } from './utils';
-import { useRouter } from 'next/router';
 import * as coder from '../../utils/coder';
 import FocusLock from 'react-focus-lock';
 import {
@@ -143,7 +142,6 @@ export function ComponentSource({
   file?: string;
 }) {
   const [showSource, setShowSource] = useState(true);
-  const router = useRouter();
 
   const handleToggle = () => {
     setShowSource((prevState) => !prevState);
@@ -206,15 +204,12 @@ export function ComponentSource({
                   />
                   {isExampleFromFile && (
                     <Button
+                      as="a"
                       className={styles.playgroundButton}
                       endIcon={<ExternalLinkIcon />}
                       size="small"
-                      onClick={() => {
-                        const href = `/playground?code=${coder.encode(
-                          children,
-                        )}`;
-                        router.push(href, href);
-                      }}
+                      href={`/playground?code=${coder.encode(children)}`}
+                      target="_blank"
                     >
                       Open in Playground
                     </Button>

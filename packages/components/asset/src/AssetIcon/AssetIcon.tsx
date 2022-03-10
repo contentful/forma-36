@@ -65,3 +65,5 @@ export function AssetIcon({
       return <ArchiveIcon {...props} />;
   }
 }
+
+AssetIcon.displayName = 'AssetIcon';

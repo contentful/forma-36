@@ -63,6 +63,8 @@ function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
   );
 }
 
+_MenuItem.displayName = 'MenuItem';
+
 export const MenuItem: PolymorphicComponent<
   ExpandProps<MenuItemInternalProps>,
   typeof MENU_ITEM_DEFAULT_TAG

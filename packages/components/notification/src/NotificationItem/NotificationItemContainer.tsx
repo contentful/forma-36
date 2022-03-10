@@ -22,6 +22,7 @@ export class NotificationItemContainer extends Component<
   NotificationItemContainerState
 > {
   static defaultProps = defaultProps;
+  displayName: 'NotificationItemContainer';
 
   timer: number | null = null;
 

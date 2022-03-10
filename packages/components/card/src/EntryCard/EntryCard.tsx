@@ -42,6 +42,8 @@ function EntryCardTitle({ title }: { title?: string }) {
   );
 }
 
+EntryCardTitle.displayName = 'EntryCardTitle';
+
 function EntryCardDescription({
   description,
   size,
@@ -56,11 +58,13 @@ function EntryCardDescription({
   const truncatedDescription = truncate(description, 95, {});
 
   return (
-    <Paragraph marginBottom="none" isTruncated>
+    <Paragraph marginBottom="none" isWordBreak>
       {truncatedDescription}
     </Paragraph>
   );
 }
+
+EntryCardDescription.displayName = 'EntryCardDescription';
 
 function _EntryCard<
   E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG
@@ -115,6 +119,8 @@ function _EntryCard<
     </BaseCard>
   );
 }
+
+_EntryCard.displayName = 'EntryCard';
 
 export const EntryCard: PolymorphicComponent<
   ExpandProps<EntryCardInternalProps>,

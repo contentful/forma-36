@@ -37,3 +37,5 @@ export function ListItem({
     </li>
   );
 }
+
+ListItem.displayName = 'ListItem';

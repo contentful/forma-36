@@ -63,6 +63,8 @@ export function AutocompleteItems<ItemType>(
   );
 }
 
+AutocompleteItems.displayName = 'AutocompleteItems';
+
 function HighlightedItem({
   item,
   inputValue,
@@ -80,3 +82,5 @@ function HighlightedItem({
     </>
   );
 }
+
+HighlightedItem.displayName = 'HighlightedItem';

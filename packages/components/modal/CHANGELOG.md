@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.9](https://github.com/contentful/forma-36/compare/@contentful/f36-modal@4.2.8...@contentful/f36-modal@4.2.9) (2022-03-10)
+
+**Note:** Version bump only for package @contentful/f36-modal
+
+
+
+
+
+## [4.2.8](https://github.com/contentful/forma-36/compare/@contentful/f36-modal@4.2.7...@contentful/f36-modal@4.2.8) (2022-03-09)
+
+
+### Bug Fixes
+
+* flickering in modal close animation ([#1940](https://github.com/contentful/forma-36/issues/1940)) ([1ba910e](https://github.com/contentful/forma-36/commit/1ba910e6206991c7596ca75620c3da00aee3e0d4))
+
+
+
+
+
+## [4.2.7](https://github.com/contentful/forma-36/compare/@contentful/f36-modal@4.2.6...@contentful/f36-modal@4.2.7) (2022-03-09)
+
+**Note:** Version bump only for package @contentful/f36-modal
+
+
+
+
+
+## [4.2.6](https://github.com/contentful/forma-36/compare/@contentful/f36-modal@4.2.5...@contentful/f36-modal@4.2.6) (2022-03-03)
+
+
+### Bug Fixes
+
+* migrate links from master to main  ([#1923](https://github.com/contentful/forma-36/issues/1923)) ([607301d](https://github.com/contentful/forma-36/commit/607301d57a2e83190d2aa298120ddb8493e8c429))
+
+
+
+
+
 ## [4.2.5](https://github.com/contentful/forma-36/compare/@contentful/f36-modal@4.2.4...@contentful/f36-modal@4.2.5) (2022-03-02)
 
 **Note:** Version bump only for package @contentful/f36-modal
