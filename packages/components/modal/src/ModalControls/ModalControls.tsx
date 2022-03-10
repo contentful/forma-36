@@ -35,3 +35,5 @@ export function ModalControls({
     </Flex>
   );
 }
+
+ModalControls.displayName = 'ModalControls';

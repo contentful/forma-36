@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.2](https://github.com/contentful/forma-36/compare/@contentful/f36-core@4.2.1...@contentful/f36-core@4.2.2) (2022-03-09)
+
+
+### Bug Fixes
+
+* grid examples ([#1933](https://github.com/contentful/forma-36/issues/1933)) ([8f16c38](https://github.com/contentful/forma-36/commit/8f16c38f0c4c0f6c12df7e854c9bc4c15fdfd930))
+
+
+
+
+
 ## [4.2.1](https://github.com/contentful/forma-36/compare/@contentful/f36-core@4.2.0...@contentful/f36-core@4.2.1) (2022-03-03)
 
 

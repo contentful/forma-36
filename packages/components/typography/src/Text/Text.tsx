@@ -91,6 +91,8 @@ function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
   );
 }
 
+_Text.displayName = 'Text';
+
 export const Text: PolymorphicComponent<
   ExpandProps<TextInternalProps>,
   typeof TEXT_DEFAULT_TAG

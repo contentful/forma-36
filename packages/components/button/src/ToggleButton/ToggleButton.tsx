@@ -79,4 +79,6 @@ function _ToggleButton(props: ExpandProps<ToggleButtonProps>, ref) {
   );
 }
 
+_ToggleButton.displayName = 'ToggleButton';
+
 export const ToggleButton = React.forwardRef(_ToggleButton);
