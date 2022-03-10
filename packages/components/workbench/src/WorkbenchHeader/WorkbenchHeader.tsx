@@ -4,7 +4,8 @@ import { cx } from 'emotion';
 import { Box } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 import { Heading, Paragraph } from '@contentful/f36-typography';
-import { ChevronLeftIcon, IconComponent } from '@contentful/f36-icons';
+import type { IconComponent } from '@contentful/f36-icon';
+import { ChevronLeftIcon } from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
 
 import { getWorkbenchHeaderStyles } from './WorkbenchHeader.styles';
