@@ -1,7 +1,7 @@
 {
   "name": "@contentful/f36-components",
   "description": "Contentful UI Component Library",
-  "version": "4.0.42",
+  "version": "4.0.43",
   "main": "dist/f36-components.umd.js",
   "types": "dist/index.d.ts",
   "module": "./dist/f36-components.module.js",
@@ -42,7 +42,7 @@
     "@contentful/f36-list": "^4.1.5",
     "@contentful/f36-menu": "^4.2.8",
     "@contentful/f36-modal": "^4.2.9",
-    "@contentful/f36-note": "^4.2.17",
+    "@contentful/f36-note": "^4.2.18",
     "@contentful/f36-notification": "^4.0.18",
     "@contentful/f36-pill": "^4.1.16",
     "@contentful/f36-popover": "^4.2.4",
