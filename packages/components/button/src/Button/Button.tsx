@@ -128,6 +128,8 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
   );
 }
 
+_Button.displayName = 'Button';
+
 /**
  * @description: Buttons communicate the action that will occur when the user clicks it
  */

@@ -56,4 +56,6 @@ function _ButtonGroup(
   );
 }
 
+_ButtonGroup.displayName = 'ButtonGroup';
+
 export const ButtonGroup = React.forwardRef(_ButtonGroup);

@@ -181,22 +181,22 @@ export function Modal({
       shouldFocusAfterRender
       shouldReturnFocusAfterClose
       portalClassName={styles.portal}
-      className={{
-        base: styles.base.root,
-        afterOpen: styles.base.afterOpen,
-        beforeClose: styles.base.beforeClose,
-      }}
       style={{
         content: {
           top: position === 'center' ? 0 : topOffset,
         },
+      }}
+      className={{
+        base: styles.base.root,
+        afterOpen: styles.base.afterOpen,
+        beforeClose: styles.base.beforeClose,
       }}
       overlayClassName={{
         base: styles.modalOverlay.root,
         afterOpen: styles.modalOverlay.afterOpen,
         beforeClose: styles.modalOverlay.beforeClose,
       }}
-      closeTimeoutMS={300}
+      closeTimeoutMS={200}
       contentRef={(ref) => {
         contentRef.current = ref;
       }}
@@ -216,3 +216,5 @@ export function Modal({
     </ReactModal>
   );
 }
+
+Modal.displayName = 'Modal';

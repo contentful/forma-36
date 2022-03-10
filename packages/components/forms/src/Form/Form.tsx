@@ -38,4 +38,6 @@ function _Form(
   );
 }
 
+_Form.displayName = 'Form';
+
 export const Form = forwardRef(_Form);
