@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.16](https://github.com/contentful/forma-36/compare/@contentful/f36-workbench@4.1.15...@contentful/f36-workbench@4.1.16) (2022-03-10)
+
+**Note:** Version bump only for package @contentful/f36-workbench
+
+
+
+
+
 ## [4.1.15](https://github.com/contentful/forma-36/compare/@contentful/f36-workbench@4.1.14...@contentful/f36-workbench@4.1.15) (2022-03-09)
 
 **Note:** Version bump only for package @contentful/f36-workbench
