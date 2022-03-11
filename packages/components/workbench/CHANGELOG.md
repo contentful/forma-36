@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.18](https://github.com/contentful/forma-36/compare/@contentful/f36-workbench@4.1.17...@contentful/f36-workbench@4.1.18) (2022-03-11)
+
+
+### Bug Fixes
+
+* **workbench:** don't render null children ([#1941](https://github.com/contentful/forma-36/issues/1941)) ([3fddce1](https://github.com/contentful/forma-36/commit/3fddce1e9658b7c72b9cf09a817a6ca9fb329fa0))
+
+
+
+
+
 ## [4.1.17](https://github.com/contentful/forma-36/compare/@contentful/f36-workbench@4.1.16...@contentful/f36-workbench@4.1.17) (2022-03-11)
 
 

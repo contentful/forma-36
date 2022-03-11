@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-workbench",
-  "version": "4.1.17",
+  "version": "4.1.18",
   "description": "Forma 36: Workbench component",
   "scripts": {
     "build": "parcel build"
