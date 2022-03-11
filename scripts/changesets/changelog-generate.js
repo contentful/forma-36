@@ -1,4 +1,3 @@
-const prettier = require('prettier');
 const fs = require('fs');
 const assembleReleasePlan = require('@changesets/assemble-release-plan')
   .default;
@@ -49,15 +48,6 @@ function getReleaseSummary(changesets, release) {
   };
 }
 
-function getCurrentDate() {
-  const date = new Date();
-  const day = date.getDate().toString().padStart(2, '0');
-  const month = (date.getMonth() + 1).toString().padStart(2, '0');
-  const year = date.getFullYear();
-
-  return `## ${day}-${month}-${year}`;
-}
-
 // Get changes from changesets and returns the releases with displayName and the changes grouped
 async function getChangesetEntries() {
   const packages = await getPackages(cwd);
@@ -90,21 +80,16 @@ async function main() {
   const releases = await getChangesetEntries();
   if (!releases.length) return;
 
-  const releaseEntries = releases.map((release) =>
-    [release.displayName, '\n\n', ...release.changesets].join(''),
-  );
+  const content =
+    JSON.parse(fs.readFileSync(`${cwd}/.changelogrc`).toString()) || {};
 
-  let content = [getCurrentDate(), ...releaseEntries].join('\n\n');
-
-  content = prettier.format(content, {
-    parser: 'markdown',
-    printWidth: 80,
-    singleQuote: true,
-    trailingComma: 'es5',
+  releases.forEach(({ displayName, changesets }) => {
+    const prevState = content[displayName] || [];
+    content[displayName] = [...new Set([...prevState, ...changesets])];
   });
 
   // write to rc file
-  fs.writeFileSync(`${cwd}/.changelogrc`, content);
+  fs.writeFileSync(`${cwd}/.changelogrc`, JSON.stringify(content));
 }
 
 main();
