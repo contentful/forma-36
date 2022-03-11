@@ -88,6 +88,7 @@ async function getChangesetEntries() {
 
 async function main() {
   const releases = await getChangesetEntries();
+  if (!releases.length) return;
 
   const releaseEntries = releases.map((release) =>
     [release.displayName, '\n\n', ...release.changesets].join(''),
