@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.17](https://github.com/contentful/forma-36/compare/@contentful/f36-workbench@4.1.16...@contentful/f36-workbench@4.1.17) (2022-03-11)
+
+
+### Bug Fixes
+
+* **workbench-header:** allow ReactNode as title ([#1831](https://github.com/contentful/forma-36/issues/1831)) ([1b91606](https://github.com/contentful/forma-36/commit/1b91606e143513de164c9c28edce6475b53afb3b))
+
+
+
+
+
 ## [4.1.16](https://github.com/contentful/forma-36/compare/@contentful/f36-workbench@4.1.15...@contentful/f36-workbench@4.1.16) (2022-03-10)
 
 **Note:** Version bump only for package @contentful/f36-workbench
