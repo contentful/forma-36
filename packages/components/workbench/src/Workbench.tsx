@@ -17,17 +17,16 @@ function _Workbench(
   const header: React.ReactNode[] = [];
   const content: React.ReactNode[] = [];
 
-  React.Children.forEach(
-    children,
-    // eslint-disable-next-line
-    (child: any) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  React.Children.forEach<any>(children, (child) => {
+    if (child) {
       if (child.type?.displayName === 'WorkbenchHeader') {
         header.push(child);
       } else {
         content.push(child);
       }
-    },
-  );
+    }
+  });
 
   return (
     <div
