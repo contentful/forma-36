@@ -91,6 +91,8 @@ function _FormLabel<
   );
 }
 
+_FormLabel.displayName = 'FormLabel';
+
 export const FormLabel: PolymorphicComponent<
   ExpandProps<FormLabelInternalProps>,
   typeof FORM_LABEL_DEFAULT_TAG

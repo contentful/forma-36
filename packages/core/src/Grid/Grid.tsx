@@ -100,6 +100,8 @@ function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
   );
 }
 
+_Grid.displayName = 'Grid';
+
 export const Grid: PolymorphicComponent<
   ExpandProps<GridInternalProps>,
   typeof GRID_DEFAULT_TAG

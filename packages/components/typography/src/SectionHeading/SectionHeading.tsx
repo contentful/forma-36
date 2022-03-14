@@ -58,6 +58,8 @@ function _SectionHeading<
   );
 }
 
+_SectionHeading.displayName = 'SectionHeading';
+
 export const SectionHeading: PolymorphicComponent<
   ExpandProps<SectionHeadingInternalProps>,
   typeof SECTION_HEADING_DEFAULT_TAG

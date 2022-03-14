@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Global, css } from '@emotion/core';
+import { Global, css, SerializedStyles } from '@emotion/core';
 import tokens from '@contentful/f36-tokens';
 
 const cssReset = css`
@@ -30,7 +30,6 @@ const cssReset = css`
 
   /* Set core body defaults */
   body {
-    min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
   }
@@ -73,6 +72,7 @@ const cssReset = css`
 
 export const GlobalStyles = ({
   withNormalize = true,
+  styles,
 }: {
   /**
    * Determines if CSS reset should be used
@@ -80,12 +80,17 @@ export const GlobalStyles = ({
    * @default true
    */
   withNormalize?: boolean;
+  /**
+   * Extend global styles
+   *
+   * @default undefined
+   */
+  styles?: SerializedStyles;
 }) => {
   return (
     <Global
       styles={css`
         ${withNormalize ? cssReset : undefined};
-
         html {
           border: 0;
           box-sizing: border-box;
@@ -117,6 +122,8 @@ export const GlobalStyles = ({
           -webkit-font-smoothing: antialiased;
           box-sizing: inherit;
         }
+
+        ${styles};
       `}
     />
   );

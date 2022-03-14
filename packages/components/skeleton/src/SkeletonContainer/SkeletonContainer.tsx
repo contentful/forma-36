@@ -149,3 +149,5 @@ export function SkeletonContainer({
     </Box>
   );
 }
+
+SkeletonContainer.displayName = 'SkeletonContainer';

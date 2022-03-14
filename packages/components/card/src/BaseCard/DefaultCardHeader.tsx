@@ -82,3 +82,5 @@ export function DefaultCardHeader(
     </Flex>
   );
 }
+
+DefaultCardHeader.displayName = 'DefaultCardHeader';

@@ -7,7 +7,7 @@ import type {
   ExpandProps,
 } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
-import { Heading, Text } from '@contentful/f36-typography';
+import { Heading, Paragraph, Text } from '@contentful/f36-typography';
 import {
   CheckCircleIcon,
   CloseIcon,
@@ -40,7 +40,7 @@ export type NoteInternalProps = CommonProps & {
   /**
    * Children of Note
    */
-  children?: React.ReactNode;
+  children?: React.ReactNode | string;
   /**
    * Defines if the close button should be rendered
    * @default false
@@ -98,11 +98,15 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
           )}
           {children && (
             <Text
-              as="p"
+              as="div"
               lineHeight="lineHeightM"
               className={styles.description}
             >
-              {children}
+              {typeof children === 'string' ? (
+                <Paragraph marginBottom="none">{children}</Paragraph>
+              ) : (
+                children
+              )}
             </Text>
           )}
         </Flex>

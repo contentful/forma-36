@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.9](https://github.com/contentful/forma-36/compare/@contentful/f36-asset@4.1.8...@contentful/f36-asset@4.1.9) (2022-03-14)
+
+**Note:** Version bump only for package @contentful/f36-asset
+
+
+
+
+
+## [4.1.8](https://github.com/contentful/forma-36/compare/@contentful/f36-asset@4.1.7...@contentful/f36-asset@4.1.8) (2022-03-10)
+
+**Note:** Version bump only for package @contentful/f36-asset
+
+
+
+
+
+## [4.1.7](https://github.com/contentful/forma-36/compare/@contentful/f36-asset@4.1.6...@contentful/f36-asset@4.1.7) (2022-03-09)
+
+**Note:** Version bump only for package @contentful/f36-asset
+
+
+
+
+
 ## [4.1.6](https://github.com/contentful/forma-36/compare/@contentful/f36-asset@4.1.5...@contentful/f36-asset@4.1.6) (2022-03-03)
 
 
