@@ -30,57 +30,64 @@ export function Footer() {
         styles.footer,
       )}
     >
-      <Flex className={gridStyles.columnStartTwo} gap="spacing2Xl">
-        <Flex flexDirection="column" alignItems="flex-start" gap="spacingM">
-          <FooterLink
-            href="https://github.com/contentful/forma-36"
-            label="View the repo on GitHub"
-          />
-          <FooterLink
-            href="https://www.contentful.com/developers/"
-            label="Join the developer comunnity"
-          />
-          <FooterLink
-            href="https://forms.gle/qC7LLbiy4CcF5HPLA"
-            label="Give us feedback"
-          />
-        </Flex>
-
-        <Flex flexDirection="column" alignItems="flex-start" gap="spacingM">
-          <FooterLink
-            href="https://www.contentful.com/legal/"
-            label="Imprint / Legal"
-          />
-          <FooterLink
-            href="https://www.contentful.com/legal/privacy-at-contentful/privacy-notice/"
-            label="Privacy"
-          />
-          <FooterLink
-            href="https://www.contentful.com/security/"
-            label="Security"
-          />
-          <TextLink
-            variant="secondary"
-            onClick={(e) => {
-              e.preventDefault();
-              if ((window as any).Osano) {
-                (window as any).Osano.cm.showDrawer();
-              }
-            }}
-          >
-            Cookie Preferences
-          </TextLink>
-        </Flex>
-      </Flex>
-
-      <a
-        href="https://www.contentful.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.logo}
+      <Flex
+        className={gridStyles.columnStartTwo}
+        justifyContent="space-between"
       >
-        <Image src={contentfulLogoSVG} alt="Contentful’s logo" />
-      </a>
+        <Flex gap="spacing2Xl">
+          <Flex flexDirection="column" alignItems="flex-start" gap="spacingM">
+            <FooterLink
+              href="https://github.com/contentful/forma-36"
+              label="View the repo on GitHub"
+            />
+            <FooterLink
+              href="https://www.contentful.com/developers/"
+              label="Join the developer comunnity"
+            />
+            <FooterLink
+              href="https://forms.gle/qC7LLbiy4CcF5HPLA"
+              label="Give us feedback"
+            />
+          </Flex>
+
+          <Flex flexDirection="column" alignItems="flex-start" gap="spacingM">
+            <FooterLink
+              href="https://www.contentful.com/legal/"
+              label="Imprint / Legal"
+            />
+            <FooterLink
+              href="https://www.contentful.com/legal/privacy-at-contentful/privacy-notice/"
+              label="Privacy"
+            />
+            <FooterLink
+              href="https://www.contentful.com/security/"
+              label="Security"
+            />
+            <TextLink
+              variant="secondary"
+              onClick={(e) => {
+                e.preventDefault();
+                /* eslint-disable @typescript-eslint/no-explicit-any */
+                if ((window as any).Osano) {
+                  (window as any).Osano.cm.showDrawer();
+                }
+                /* eslint-enable @typescript-eslint/no-explicit-any */
+              }}
+            >
+              Cookie Preferences
+            </TextLink>
+          </Flex>
+        </Flex>
+
+        <a
+          href="https://www.contentful.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.logo}
+        >
+          <Image src={contentfulLogoSVG} alt="Contentful’s logo" />
+        </a>
+      </Flex>
     </footer>
   );
 }
