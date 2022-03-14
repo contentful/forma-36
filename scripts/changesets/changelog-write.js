@@ -35,6 +35,9 @@ async function main() {
   const releases = JSON.parse(
     fs.readFileSync(`${cwd}/.changelogrc`).toString(),
   );
+
+  if (!Object.entries(releases).length) return;
+
   const content = getContent(releases);
 
   const changelogPath = `${cwd}/CHANGELOG.md`;

@@ -30,7 +30,7 @@
     "docs:next:build": "turbo run build:prod --scope=@contentful/f36-website --parallel",
     "docs:next:start-prod": "turbo run start:prod --scope=@contentful/f36-website --parallel",
     "changelog:gen": "node scripts/changesets/changelog-generate.js",
-    "changelog:write": "node scripts/changesets/changelog-write.js",
+    "changelog:write": "node scripts/changesets/changelog-write.js && yarn prettier",
     "changelog:commit": "git add . && git diff --staged --quiet || git commit -am 'docs: update changelog' && git push"
   },
   "husky": {
