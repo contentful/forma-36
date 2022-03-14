@@ -30,12 +30,13 @@
     "docs:next:build": "turbo run build:prod --scope=@contentful/f36-website --parallel",
     "docs:next:start-prod": "turbo run start:prod --scope=@contentful/f36-website --parallel",
     "changelog:gen": "node scripts/changesets/changelog-generate.js",
-    "changelog:write": "node scripts/changesets/changelog-write.js && yarn prettier --loglevel='silent'",
-    "changelog:commit": "git add . && git diff --staged --quiet || git commit -am 'docs: update changelog' && git push"
+    "changelog:write": "node scripts/changesets/changelog-write.js && yarn run pretty:quick",
+    "changelog:commit": "git add . && git diff --staged --quiet || git commit -am 'docs: update changelog' && git push",
+    "pretty:quick": "yarn pretty-quick --staged --pattern '**/*.*(js|jsx|ts|tsx|md|mdx)'"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn pretty-quick --staged --pattern '**/*.*(js|jsx|ts|tsx|md|mdx)'",
+      "pre-commit": "yarn run pretty:quick",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "postversion": "yarn run prettier"
     }
