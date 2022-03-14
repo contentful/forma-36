@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - "changesets-test-ci"
-    paths:
-      - ".changelogrc"
   workflow_dispatch:
 
 jobs:
@@ -14,6 +12,10 @@ jobs:
     name: Changelog Test
     runs-on: ubuntu-latest
     steps:
+      - name: Get Yarn cache path
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
       - name: Checkout Repo
         uses: actions/checkout@v2
         with:
