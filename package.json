@@ -31,7 +31,7 @@
     "docs:next:start-prod": "turbo run --scope=@contentful/f36-website start:prod --parallel",
     "changelog:gen": "node scripts/changesets/changelog-generate.js",
     "changelog:write": "node scripts/changesets/changelog-write.js",
-    "changelog:commit": "git add CHANGELOG.md packages/website/content/changelog.mdx && git commit -am 'docs: add changelog' && git push"
+    "changelog:commit": "git add CHANGELOG.md packages/website/content/changelog.mdx && git diff --staged --quiet || git commit -am 'docs: update changelog' && git push"
   },
   "husky": {
     "hooks": {

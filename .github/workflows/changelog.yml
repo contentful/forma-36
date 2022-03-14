@@ -1,0 +1,51 @@
+# generate the changelog for the monorepo and website
+
+name: Changelog
+
+on:
+  schedule:
+    # start github action everyday at 1:30 UTC
+    - cron: "30 1 * * *"
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Changelog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Setup Node.js 14.15.0
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.15.0
+
+      - name: Load Yarn cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      # Git user used for commiting the new changelog.md file
+      - name: Setup Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # Update CHANGELOG.md file and website changelog content file
+      - name: Generate the new changelog
+        run: yarn changelog:write
+
+      # Commit changes to main branch to trigger deploy
+      - name: Commit changelog
+        run: yarn changelog:commit
