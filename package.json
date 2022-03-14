@@ -60,7 +60,7 @@
     "@commitlint/config-conventional": "^15.0.0",
     "@contentful/browserslist-config": "^2.0.0",
     "@netlify/plugin-nextjs": "^4.0.0-rc.1",
-    "@parcel/babel-plugin-transform-runtime": "2.0.1",
+    "@parcel/babel-plugin-transform-runtime": "2.3.2",
     "@parcel/babel-preset-env": "2.0.1",
     "@parcel/packager-ts": "2.0.1",
     "@parcel/transformer-typescript-types": "2.0.1",

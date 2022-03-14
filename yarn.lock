@@ -3387,13 +3387,13 @@
     "@parcel/utils" "^2.0.1"
     astring "^1.6.2"
 
-"@parcel/babel-plugin-transform-runtime@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.npmjs.org/@parcel/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-2.0.1.tgz"
-  integrity sha512-HYoxA4rK1fhdiIFinVxCvpNibJ8M5ZhPRkhvaH22HMtH4LR6V92khShzFiMC3jC+2Px785xjAyf9DfWnEKZ35w==
+"@parcel/babel-plugin-transform-runtime@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@parcel/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-2.3.2.tgz#474556bea419b34b4fe637352e8438e2a4ea9a6d"
+  integrity sha512-ofR6UXBTrMyy5RYBit0ri6qnOUWAS0QnKs/0+UUNHHsyFre29rXfN+Tpiqe3G+pUCrXCdn2KZK8uG0+XyP1GKw==
   dependencies:
     "@babel/plugin-transform-runtime" "^7.8.3"
-    semver "^5.4.1"
+    semver "^5.7.1"
 
 "@parcel/babel-preset-env@2.0.1":
   version "2.0.1"
