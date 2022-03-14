@@ -1,107 +1,92 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
-import Image from 'next/image';
-import Link from 'next/link';
-import { DisplayText, Paragraph, TextLink } from '@contentful/f36-components';
-import { Masthead } from '../components/Home/Masthead';
-import { Section } from '../components/Home/Section';
-import { Resources } from '../components/Home/Resources';
-import { Resource } from '../components/Home/Resource';
+import { css } from 'emotion';
+import {
+  DisplayText,
+  Heading,
+  Paragraph,
+  Flex,
+  Card,
+  Button,
+} from '@contentful/f36-components';
+import { ArrowForwardTrimmedIcon } from '@contentful/f36-icons';
 
-import tokensImg from '../resources/images/tokens.png';
-import uiKitImg from '../resources/images/ui-kit.png';
-import componentsImg from '../resources/images/components.png';
+import { SCREEN_BREAKPOINT_LARGE } from '../utils/getGridStyles';
 
-function Home() {
+const styles = {
+  grid: css({
+    flex: 1, // this is necessary to make the footer sticky to the bottom of the page
+    padding: `${tokens.spacing3Xl} ${tokens.spacingL} 0`,
+    [`@media screen and (min-width: ${SCREEN_BREAKPOINT_LARGE})`]: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 960px 1fr',
+      gridTemplateRows: 'min-content',
+    },
+    '> *': {
+      [`@media screen and (min-width: ${SCREEN_BREAKPOINT_LARGE})`]: {
+        gridColumnStart: 2,
+      },
+    },
+  }),
+  cards: css({
+    '> *': {
+      maxWidth: '400px',
+    },
+  }),
+};
+
+export default function Home() {
   return (
-    <>
-      <Masthead
-        title="Tools and guidance for digital teams"
-        description="Forma 36 is an open-source design system by Contentful created with the intent to reduce the overhead of creating UI by providing tools and guidance for digital teams building and extending Contentful products."
-        hasLogo
-      />
-      <Section>
-        <DisplayText>Resources for designers and developers</DisplayText>
-        <Paragraph
-          style={{
-            fontSize: tokens.fontSizeL,
-            marginBottom: tokens.spacing3Xl,
-          }}
-        >
-          Everything you need to get started building for Contentful
-        </Paragraph>
-        <Resources>
-          <Resource
-            title="New version of the UIKit is still in progress"
-            description="Fresh UIKit for Forma 36 v4 will be shortly released"
-            imageNode={
-              <Image {...uiKitImg} alt="Illustration for Forma 36 UI Kit" />
-            }
-          />
-          <Resource
-            title="Get the tokens"
-            description="Design tokens for Forma 36 available as JSON, CSS, and SCSS"
-            linkText="Get the tokens"
-            linkHref="https://github.com/contentful/forma-36/tree/main/packages/forma-36-tokens"
-            imageNode={
-              <Image {...tokensImg} alt="Illustration for design tokens" />
-            }
-          />
-          <Resource
-            title="Get started with our React components"
-            description="Build your interface using Forma 36 React component library"
-            linkText="Prototype in the Playground and share your experiments with your colleagues"
-            linkHref="/playground"
-            linkExternal={false}
-            imageNode={
-              <Image
-                {...componentsImg}
-                alt="Illustration for component library"
-              />
-            }
-          />
-        </Resources>
-      </Section>
+    <article className={styles.grid}>
+      <Flex
+        flexDirection="column"
+        alignItems="flex-start"
+        marginBottom="spacing3Xl"
+      >
+        <DisplayText as="h1" size="large">
+          Build and extend
+          <br />
+          Contentful products.
+        </DisplayText>
 
-      <Section isSecondary>
-        <DisplayText>Forma 36 is open-source</DisplayText>
-        <Paragraph>We appreciate your contributions</Paragraph>
-        <Paragraph>
-          Check our{' '}
-          <Link href="/introduction/contributing" passHref>
-            <TextLink href="/introduction/contributing">
-              contribution guide
-            </TextLink>
-          </Link>{' '}
-          and learn how to do it
-        </Paragraph>
-      </Section>
-      <Section>
-        <DisplayText>Give us feedback!</DisplayText>
-        <Paragraph>
-          Use one of the the templates on{' '}
-          <TextLink
-            href="https://github.com/contentful/forma-36/issues/new/choose"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </TextLink>
-        </Paragraph>
-        <Paragraph>
-          or use this anonymous{' '}
-          <TextLink
-            href="https://forms.gle/qC7LLbiy4CcF5HPLA"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            form
-          </TextLink>{' '}
-          to share your thoughts and ideas with us.
-        </Paragraph>
-      </Section>
-    </>
+        <Button
+          as="a"
+          href="/getting-started"
+          variant="primary"
+          size="large"
+          endIcon={<ArrowForwardTrimmedIcon />}
+        >
+          Get started
+        </Button>
+      </Flex>
+
+      <Flex
+        className={styles.cards}
+        flexWrap="wrap"
+        alignItems="flex-start"
+        alignContent="flex-start"
+        gap="spacingM"
+      >
+        <Card>
+          <Heading>Figma UI Kit</Heading>
+          <Paragraph marginBottom="none">
+            Copy the Forma 36 UI Kit to Figma, publish it as a Team library and
+            start prototyping. You need a Figma account to do this.
+          </Paragraph>
+        </Card>
+
+        <Card as="a" href="/components/accordion">
+          <Heading>Components</Heading>
+          <Paragraph marginBottom="none">
+            Browse the React components and try them out live in the Playground.
+          </Paragraph>
+        </Card>
+
+        <Card>
+          <Heading>What’s new?</Heading>
+          <Paragraph marginBottom="none">A history of our releases.</Paragraph>
+        </Card>
+      </Flex>
+    </article>
   );
 }
-
-export default Home;
