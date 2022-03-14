@@ -37,10 +37,6 @@ async function main() {
   );
   const content = getContent(releases);
 
-  fs.readdirSync(cwd).forEach((file) => {
-    console.log(file);
-  });
-
   const changelogPath = `${cwd}/CHANGELOG.md`;
   const changelogPathWebsite = `${cwd}/packages/website/content/changelog.mdx`;
   const changelog = await fs.promises.readFile(changelogPath, 'utf8');
