@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.3.0](https://github.com/contentful/forma-36/compare/@contentful/f36-core@4.2.3...@contentful/f36-core@4.3.0) (2022-03-14)
+
+
+### Features
+
+* **GlobalStyles:** add `styles` prop to enable extending global styles ([#1942](https://github.com/contentful/forma-36/issues/1942)) ([f3a4e96](https://github.com/contentful/forma-36/commit/f3a4e9668c99ca398efa100217f565608e736c34))
+
+
+
+
+
 ## [4.2.3](https://github.com/contentful/forma-36/compare/@contentful/f36-core@4.2.2...@contentful/f36-core@4.2.3) (2022-03-10)
 
 

@@ -1,14 +1,14 @@
 {
   "name": "@contentful/f36-skeleton",
-  "version": "4.1.5",
+  "version": "4.1.6",
   "description": "Forma 36: Skeleton component",
   "scripts": {
     "build": "parcel build"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@contentful/f36-core": "^4.2.3",
-    "@contentful/f36-table": "^4.1.5",
+    "@contentful/f36-core": "^4.3.0",
+    "@contentful/f36-table": "^4.1.6",
     "@contentful/f36-tokens": "^4.0.1",
     "emotion": "^10.0.17"
   },

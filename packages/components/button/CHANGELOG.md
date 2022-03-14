@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.7](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.3.6...@contentful/f36-button@4.3.7) (2022-03-14)
+
+**Note:** Version bump only for package @contentful/f36-button
+
+
+
+
+
 ## [4.3.6](https://github.com/contentful/forma-36/compare/@contentful/f36-button@4.3.5...@contentful/f36-button@4.3.6) (2022-03-10)
 
 **Note:** Version bump only for package @contentful/f36-button
