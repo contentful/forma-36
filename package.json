@@ -27,8 +27,8 @@
     "tsc:watch": "tsc --noEmit --watch",
     "docs": "yarn docs:next",
     "docs:next": "turbo run start --scope=@contentful/f36-website --parallel --no-cache",
-    "docs:next:build": "turbo run --scope=@contentful/f36-website build:prod --parallel",
-    "docs:next:start-prod": "turbo run --scope=@contentful/f36-website start:prod --parallel",
+    "docs:next:build": "turbo run build:prod --scope=@contentful/f36-website --parallel",
+    "docs:next:start-prod": "turbo run start:prod --scope=@contentful/f36-website --parallel",
     "changelog:gen": "node scripts/changesets/changelog-generate.js",
     "changelog:write": "node scripts/changesets/changelog-write.js",
     "changelog:commit": "git add CHANGELOG.md packages/website/content/changelog.mdx && git diff --staged --quiet || git commit -am 'docs: update changelog' && git push"
@@ -167,9 +167,22 @@
           "^start"
         ]
       },
+      "start:prod": {
+        "dependsOn": [
+          "^start:prod"
+        ]
+      },
       "build": {
         "dependsOn": [
           "^build"
+        ],
+        "outputs": [
+          "dist/**"
+        ]
+      },
+      "build:prod": {
+        "dependsOn": [
+          "^build:prod"
         ],
         "outputs": [
           "dist/**"
