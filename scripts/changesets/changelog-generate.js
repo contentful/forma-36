@@ -18,7 +18,8 @@ function startCase(string) {
   const toStartCase = (s) => s.charAt(0).toUpperCase() + s.substring(1);
   return string
     .split(/\W/g)
-    .reduce((str, x) => `${str.trim()} ${toStartCase(x)}`, '');
+    .reduce((str, x) => `${str.trim()} ${toStartCase(x)}`, '')
+    .trim();
 }
 function getPackageName(name) {
   return startCase(name.replace('@contentful/', ''));
