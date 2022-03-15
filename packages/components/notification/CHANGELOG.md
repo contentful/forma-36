@@ -1,7 +1,5 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 ## [4.0.19](https://github.com/contentful/forma-36/compare/@contentful/f36-notification@4.0.18...@contentful/f36-notification@4.0.19) (2022-03-14)
 
