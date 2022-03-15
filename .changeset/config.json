@@ -1,0 +1,51 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@1.6.4/schema.json",
+  "changelog": [
+    "@changesets/changelog-github",
+    { "repo": "contentful/forma-36" }
+  ],
+  "commit": false,
+  "fixed": [
+    [
+      "@contentful/f36-accordion",
+      "@contentful/f36-asset",
+      "@contentful/f36-autocomplete",
+      "@contentful/f36-badge",
+      "@contentful/f36-button",
+      "@contentful/f36-card",
+      "@contentful/f36-collapse",
+      "@contentful/f36-copybutton",
+      "@contentful/f36-datetime",
+      "@contentful/f36-drag-handle",
+      "@contentful/f36-entity-list",
+      "@contentful/f36-forms",
+      "@contentful/f36-icon",
+      "@contentful/f36-icons",
+      "@contentful/f36-list",
+      "@contentful/f36-menu",
+      "@contentful/f36-modal",
+      "@contentful/f36-note",
+      "@contentful/f36-notification",
+      "@contentful/f36-pagination",
+      "@contentful/f36-pill",
+      "@contentful/f36-popover",
+      "@contentful/f36-skeleton",
+      "@contentful/f36-spinner",
+      "@contentful/f36-table",
+      "@contentful/f36-tabs",
+      "@contentful/f36-text-link",
+      "@contentful/f36-tooltip",
+      "@contentful/f36-typography",
+      "@contentful/f36-utils",
+      "@contentful/f36-workbench",
+      "@contentful/f36-core",
+      "@contentful/f36-components"
+    ]
+  ],
+  "access": "public",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
+    "onlyUpdatePeerDependentsWhenOutOfRange": true
+  }
+}
