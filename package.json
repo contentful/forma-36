@@ -186,7 +186,7 @@
           "^build:prod"
         ],
         "outputs": [
-          "dist/**"
+          ".next/**"
         ]
       }
     }
