@@ -1,18 +1,18 @@
 {
   "name": "@contentful/f36-menu",
-  "version": "4.2.9",
+  "version": "4.3.9",
   "description": "Forma 36: Menu component",
   "scripts": {
     "build": "parcel build"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@contentful/f36-core": "^4.3.0",
-    "@contentful/f36-icons": "^4.1.5",
-    "@contentful/f36-popover": "^4.2.5",
+    "@contentful/f36-core": "^4.3.9",
+    "@contentful/f36-icons": "^4.3.9",
+    "@contentful/f36-popover": "^4.3.9",
     "@contentful/f36-tokens": "^4.0.1",
-    "@contentful/f36-typography": "^4.2.4",
-    "@contentful/f36-utils": "^4.0.0",
+    "@contentful/f36-typography": "^4.3.9",
+    "@contentful/f36-utils": "^4.3.9",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
