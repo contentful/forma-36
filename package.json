@@ -14,27 +14,29 @@
     "commit": "git-cz",
     "commitmsg": "validate-commit-msg",
     "generate": "plop --plopfile scripts/plopfile.js",
-    "postinstall": "rm -rf .parcel-cache && lerna run --scope @contentful/f36-tokens build",
+    "postinstall": "rm -rf .parcel-cache && turbo run build --scope=@contentful/f36-tokens --no-deps",
     "lint": "yarn run lint:js && yarn run lint:packages",
     "lint:js": "eslint packages --ext .js,.jsx,.ts,.tsx",
     "lint:packages": "node scripts/lint-packages.js",
     "prettier": "prettier --write '**/*.{jsx,js,ts,tsx,md,mdx}'",
     "prettier:check": "prettier --check '**/*.{jsx,js,ts,tsx,md,mdx}'",
-    "semantic-release": "lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo",
     "storybook": "start-storybook -p 9001 -c ./scripts/.storybook -s ./scripts/.storybook/public",
     "storybook:build": "yarn build-storybook -c ./scripts/.storybook -s ./scripts/.storybook/public -o dist-storybook",
     "test": "jest",
     "tsc": "tsc --noEmit",
     "tsc:watch": "tsc --noEmit --watch",
     "docs": "yarn docs:next",
-    "docs:next": "lerna run --scope @contentful/f36-website start --stream",
-    "docs:next:build": "lerna run --scope @contentful/f36-website build:prod --stream",
-    "docs:next:start-prod": "lerna run --scope @contentful/f36-website start:prod --stream",
-    "release-v4-beta-as-latest": "yarn build && yarn lerna publish --exact --no-private --canary --no-git-tag-version --no-push --dist-tag latest --preid beta --force-publish --no-changelog"
+    "docs:next": "turbo run start --scope=@contentful/f36-website --parallel --no-cache",
+    "docs:next:build": "turbo run build:prod --scope=@contentful/f36-website --parallel",
+    "docs:next:start-prod": "turbo run start:prod --scope=@contentful/f36-website --parallel",
+    "changelog:gen": "node scripts/changesets/changelog-generate.js",
+    "changelog:write": "node scripts/changesets/changelog-write.js && yarn run pretty:quick",
+    "changelog:commit": "git add . && git diff --staged --quiet || git commit -am 'docs: update changelog' && git push",
+    "pretty:quick": "yarn pretty-quick --staged --pattern '**/*.*(js|jsx|ts|tsx|md|mdx)'"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn pretty-quick --staged --pattern '**/*.*(js|jsx|ts|tsx|md|mdx)'",
+      "pre-commit": "yarn run pretty:quick",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "postversion": "yarn run prettier"
     }
@@ -56,9 +58,16 @@
     "@babel/polyfill": "7.12.1",
     "@babel/register": "^7.0.0",
     "@babel/runtime": "^7.6.2",
+    "@changesets/assemble-release-plan": "^5.1.1",
+    "@changesets/changelog-github": "^0.4.3",
+    "@changesets/cli": "^2.21.1",
+    "@changesets/config": "^1.7.0",
+    "@changesets/pre": "^1.0.10",
+    "@changesets/read": "^0.5.4",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^15.0.0",
     "@contentful/browserslist-config": "^2.0.0",
+    "@manypkg/get-packages": "^1.1.3",
     "@netlify/plugin-nextjs": "^4.0.0-rc.1",
     "@parcel/babel-plugin-transform-runtime": "2.3.2",
     "@parcel/babel-preset-env": "2.0.1",
@@ -119,7 +128,6 @@
     "jest-axe": "4.1.0",
     "jest-emotion": "^10.0.27",
     "jest-watch-typeahead": "0.6.1",
-    "lerna": "^3.22.1",
     "microbundle": "^0.14.1",
     "parcel": "2.0.1",
     "plop": "^2.5.3",
@@ -155,12 +163,30 @@
   },
   "turbo": {
     "pipeline": {
+      "start": {
+        "dependsOn": [
+          "^start"
+        ]
+      },
+      "start:prod": {
+        "dependsOn": [
+          "^start:prod"
+        ]
+      },
       "build": {
         "dependsOn": [
           "^build"
         ],
         "outputs": [
           "dist/**"
+        ]
+      },
+      "build:prod": {
+        "dependsOn": [
+          "^build:prod"
+        ],
+        "outputs": [
+          ".next/**"
         ]
       }
     }
