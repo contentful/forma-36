@@ -33,4 +33,4 @@
 '@contentful/f36-components': patch
 ---
 
-bump pacakges versions to have consisntent versioning
+bump packages versions to have consistent versioning
