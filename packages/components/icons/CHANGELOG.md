@@ -1,7 +1,5 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 ## [4.1.5](https://github.com/contentful/forma-36/compare/@contentful/f36-icons@4.1.4...@contentful/f36-icons@4.1.5) (2022-03-14)
 

@@ -1,7 +1,5 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 ## [4.3.4](https://github.com/contentful/forma-36/compare/@contentful/f36-datetime@4.3.3...@contentful/f36-datetime@4.3.4) (2022-03-14)
 

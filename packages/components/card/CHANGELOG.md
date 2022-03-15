@@ -1,7 +1,5 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 ## [4.3.8](https://github.com/contentful/forma-36/compare/@contentful/f36-card@4.3.7...@contentful/f36-card@4.3.8) (2022-03-14)
 
