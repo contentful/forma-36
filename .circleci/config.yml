@@ -149,7 +149,7 @@ jobs:
           name: Commit changelogrc
           command: |
             git add .
-            git diff --staged --quiet || git commit -m "docs(changelog): $(git rev-parse --short HEAD) [skip ci]" && git push origin ${CIRCLE_BRANCH} --follow-tags
+            git diff --staged --quiet || git commit -m "docs(changelog): add changelogs for $(git rev-parse --short HEAD) [skip ci]" && git push origin ${CIRCLE_BRANCH} --follow-tags
 
 workflows:
   version: 2
