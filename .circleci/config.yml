@@ -151,6 +151,30 @@ jobs:
             git add .
             git diff --staged --quiet || git commit -m "docs(changelog): add changelogs for $(git rev-parse --short HEAD) [skip ci]" && git push origin ${CIRCLE_BRANCH} --follow-tags
 
+  changelog:
+    docker:
+      - image: circleci/node:14.15.0-browsers
+    resource_class: xlarge
+    working_directory: ~/circleci-f36-build
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/circleci-f36-build
+      - yarn_install
+      - add_ssh_keys:
+          fingerprints:
+            - '2b:9f:13:79:d8:7b:f5:38:43:8f:3d:a8:7d:53:22:b2'
+      - run: git config --global user.email ${GITHUB_EMAIL}
+      - run: git config --global user.name ${GITHUB_USER}
+      - run: 
+          name: Generate changelog files
+          command: yarn changelog:write
+      - run:
+          name: Commit changelog files
+          command: |
+            git add .
+            git diff --staged --quiet || git commit -am "docs: update changelog on repository and website" && git push origin ${CIRCLE_BRANCH}
+
 workflows:
   version: 2
   f36-build:
@@ -183,3 +207,13 @@ workflows:
             branches:
               only:
                 - main
+  f36-changelog:
+    triggers:
+      - schedule:
+          cron: "30 1 * * *"
+          filters:
+            branches:
+              only:
+                - main
+    jobs:
+      - changelog
