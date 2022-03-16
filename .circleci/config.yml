@@ -208,9 +208,12 @@ workflows:
               only:
                 - main
   f36-changelog:
+    triggers:
+      - schedule:
+          cron: "30 1 * * *"
+          filters:
+            branches:
+              only:
+                - main
     jobs:
-      - changelog:
-        filters:
-          branches:
-            only:
-              - "ci/move-changelog-to-circle-ci"
+      - changelog
