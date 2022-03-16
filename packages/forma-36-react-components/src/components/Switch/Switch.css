@@ -35,7 +35,7 @@
 
 .Switch--small {
   width: calc(1rem * (28 / var(--font-base-default)));
-  height: calc(1rem * (12 / var(--font-base-default)));
+  height: calc(1rem * (14 / var(--font-base-default)));
 
   & + .Switch__label {
     & .Switch__icon--done {
@@ -45,7 +45,7 @@
 
     & .Switch__icon--close {
       top: 3px;
-      left: 17px;
+      left: 16px;
     }
   }
 }
@@ -60,8 +60,8 @@
 
 .Switch__icon {
   position: absolute;
-  width: 12px;
-  height: 12px;
+  width: 0.85rem;
+  height: 0.85rem;
   cursor: pointer;
   pointer-events: none;
 }
@@ -69,8 +69,8 @@
 .Switch:before {
   content: '';
   display: block;
-  width: 16px;
-  height: 16px;
+  width: 1rem;
+  height: 1rem;
   background-color: var(--color-white);
   transition: transform cubic-bezier(0.65, 0.05, 0.36, 1)
     var(--transition-duration-default);
@@ -79,8 +79,8 @@
 }
 
 .Switch.Switch--small::before {
-  width: 12px;
-  height: 12px;
+  width: 0.85rem;
+  height: 0.85rem;
 }
 
 .Switch--checked {
@@ -114,7 +114,7 @@
 }
 
 .Switch--checked.Switch--small:before {
-  transform: translate3d(133%, 0, 0);
+  transform: translate3d(105%, 0, 0);
 }
 
 .Switch__label--disabled {
@@ -133,5 +133,5 @@
 
 .Switch__icon--close {
   top: 4px;
-  left: 22px;
+  left: 20px;
 }
