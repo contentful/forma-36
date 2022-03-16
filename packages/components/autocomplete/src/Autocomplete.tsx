@@ -2,9 +2,11 @@ import React, { useCallback, useState } from 'react';
 import { cx } from 'emotion';
 import { useCombobox } from 'downshift';
 
-import { CommonProps, ExpandProps, mergeRefs } from '@contentful/f36-core';
+import { mergeRefs } from '@contentful/f36-core';
+import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 import { IconButton } from '@contentful/f36-button';
-import { TextInput, TextInputProps } from '@contentful/f36-forms';
+import { TextInput } from '@contentful/f36-forms';
+import type { TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover } from '@contentful/f36-popover';
@@ -47,7 +49,7 @@ export interface AutocompleteProps<ItemType>
   onInputValueChange?: (value: string) => void;
   /**
    * This is the function that will be called when the user selects one of the "options" in the list.
-   * It receives the selected item as an argument and it needs to return a string that will be set as the value of `TextInput`.
+   * The component will pass the selected "item" as an argument to the function..
    */
   onSelectItem: (item: ItemType) => void;
   /**

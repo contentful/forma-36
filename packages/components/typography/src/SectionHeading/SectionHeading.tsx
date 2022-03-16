@@ -1,7 +1,7 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
 import { css, cx } from 'emotion';
-import {
+import type {
   CommonProps,
   MarginProps,
   PolymorphicComponent,
@@ -57,6 +57,8 @@ function _SectionHeading<
     </Text>
   );
 }
+
+_SectionHeading.displayName = 'SectionHeading';
 
 export const SectionHeading: PolymorphicComponent<
   ExpandProps<SectionHeadingInternalProps>,

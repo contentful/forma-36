@@ -1,6 +1,7 @@
 import React, { useMemo, useState, useEffect, useCallback } from 'react';
-import { useId, mergeRefs, ExpandProps } from '@contentful/f36-core';
-import { Placement, Modifier } from '@popperjs/core';
+import { useId, mergeRefs } from '@contentful/f36-core';
+import type { ExpandProps } from '@contentful/f36-core';
+import type { Placement, Modifier } from '@popperjs/core';
 import { PopoverContextProvider, PopoverContextType } from './PopoverContext';
 import { usePopper } from 'react-popper';
 

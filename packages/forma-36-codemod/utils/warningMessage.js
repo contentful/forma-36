@@ -1,13 +1,17 @@
+const chalk = require('chalk');
+
 module.exports.warningMessage = function warningMessage(
   message,
   { file, value } = {},
 ) {
   const filePath = file?.path || '';
   const lineNumber = value?.loc?.start?.line || '';
-  const messageHeader = [filePath, lineNumber]
+  const messageHeader = chalk.bold(
+    [filePath, lineNumber].filter((x) => x !== '').join(':'),
+  );
+  const warning = [messageHeader, message, '\n']
     .filter((x) => x !== '')
-    .join(':');
-  const warning = [messageHeader, message].filter((x) => x !== '').join('\n\n');
+    .join('\n');
   // eslint-disable-next-line no-console
-  console.warn(warning);
+  console.warn(chalk.yellow(warning));
 };

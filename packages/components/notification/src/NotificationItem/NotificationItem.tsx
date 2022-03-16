@@ -9,7 +9,8 @@ import {
 
 import { Button } from '@contentful/f36-button';
 import { TextLink } from '@contentful/f36-text-link';
-import { CommonProps, Flex, Box, ExpandProps } from '@contentful/f36-core';
+import { Flex, Box } from '@contentful/f36-core';
+import type { ExpandProps, CommonProps } from '@contentful/f36-core';
 import { Heading, Paragraph } from '@contentful/f36-typography';
 
 import { NotificationVariant, NotificationCta } from '../types';

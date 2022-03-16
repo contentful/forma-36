@@ -68,3 +68,5 @@ export function SkeletonText({
     </React.Fragment>
   );
 }
+
+SkeletonText.displayName = 'SkeletonText';

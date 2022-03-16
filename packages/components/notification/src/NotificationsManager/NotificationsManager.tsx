@@ -187,3 +187,5 @@ export function NotificationsManager({
     </div>
   );
 }
+
+NotificationsManager.displayName = 'NotificationsManager';

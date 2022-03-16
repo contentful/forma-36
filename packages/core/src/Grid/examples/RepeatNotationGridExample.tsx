@@ -5,7 +5,11 @@ import tokens from '@contentful/f36-tokens';
 export default function RepeatNotationGridExample() {
   return (
     <>
-      <Grid columns="1fr 2fr 1fr 2fr 1fr 2fr" columnGap="spacingM">
+      <Grid
+        style={{ width: '100%' }}
+        columns="1fr 2fr 1fr 2fr 1fr 2fr"
+        columnGap="spacingM"
+      >
         <Grid.Item
           style={{ backgroundColor: tokens.gray800, height: '100px' }}
         />
@@ -27,6 +31,7 @@ export default function RepeatNotationGridExample() {
       </Grid>
 
       <Grid
+        style={{ width: '100%' }}
         columns="repeat(3, 1fr 2fr)"
         columnGap="spacingM"
         marginTop="spacingM"

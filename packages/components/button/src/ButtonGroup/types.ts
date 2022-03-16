@@ -1,4 +1,4 @@
-import { CommonProps } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
 import type { SpacingTokens } from '@contentful/f36-tokens';
 import { ReactElement } from 'react';
 

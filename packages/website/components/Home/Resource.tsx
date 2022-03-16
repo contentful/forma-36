@@ -1,6 +1,5 @@
 import React from 'react';
-import { Subheading, Paragraph } from '@contentful/f36-components';
-import { TextLink } from '@contentful/f36-text-link';
+import { Subheading, Paragraph, TextLink } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 

@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { BaseInput } from '../BaseInput';
 import { TextInputProps } from './types';
 import { useFormControl } from '../FormControl/FormControlContext';
-import { ExpandProps } from '@contentful/f36-core';
+import type { ExpandProps } from '@contentful/f36-core';
 
 export const _TextInput = (
   {

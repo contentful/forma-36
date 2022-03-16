@@ -1,4 +1,4 @@
-import { CommonProps } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
 

@@ -4,7 +4,7 @@ import { cx } from 'emotion';
 import { getStringMatch } from '@contentful/f36-utils';
 import { Text } from '@contentful/f36-typography';
 import { getAutocompleteStyles } from './Autocomplete.styles';
-import { UseComboboxGetItemPropsOptions } from 'downshift';
+import type { UseComboboxGetItemPropsOptions } from 'downshift';
 
 interface AutocompleteItemsProps<ItemType> {
   items: ItemType[];
@@ -63,6 +63,8 @@ export function AutocompleteItems<ItemType>(
   );
 }
 
+AutocompleteItems.displayName = 'AutocompleteItems';
+
 function HighlightedItem({
   item,
   inputValue,
@@ -80,3 +82,5 @@ function HighlightedItem({
     </>
   );
 }
+
+HighlightedItem.displayName = 'HighlightedItem';

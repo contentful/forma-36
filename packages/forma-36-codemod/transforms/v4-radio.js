@@ -8,6 +8,7 @@ const {
   changeComponentName,
   changeProperties,
   deleteProperty,
+  getChildren,
 } = require('../utils');
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
 const { pipe } = require('./common/pipe');
@@ -41,6 +42,7 @@ function radioCodemod(file, api) {
 
       modifiedAttributes = deleteProperty(modifiedAttributes, {
         propertyName: 'type',
+        file,
       });
 
       return modifiedAttributes;
@@ -114,13 +116,6 @@ function radioButtonFieldCodemod(file, api) {
         ['testId', 'className'].includes(attributes.name?.name),
       );
 
-      const getChildren = (prop) => {
-        if (!prop) return [];
-        return prop.value.type === 'JSXExpressionContainer'
-          ? [prop.value]
-          : [j.jsxText(prop.value.value)];
-      };
-
       const radioProps = [
         !validationMessage ? id : null,
         helpText,
@@ -136,7 +131,7 @@ function radioButtonFieldCodemod(file, api) {
         j,
         componentName: 'Radio',
         props: radioProps,
-        children: getChildren(labelText),
+        children: getChildren({ prop: labelText, j }),
       });
 
       const ValidationMesage =
@@ -144,7 +139,7 @@ function radioButtonFieldCodemod(file, api) {
         createComponent({
           j,
           componentName: 'FormControl.ValidationMessage',
-          children: getChildren(validationMessage),
+          children: getChildren({ prop: validationMessage, j }),
         });
 
       const FormControlContent = [Radio, ValidationMesage].reduce(

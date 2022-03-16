@@ -1,7 +1,7 @@
 import { cx, css } from 'emotion';
 import React from 'react';
 
-import {
+import type {
   CommonProps,
   PolymorphicProps,
   PolymorphicComponent,
@@ -51,6 +51,8 @@ function _List<E extends React.ElementType = typeof LIST_DEFAULT_TAG>(
     </Element>
   );
 }
+
+_List.displayName = 'List';
 
 export const List: PolymorphicComponent<
   ExpandProps<ListInternalProps>,

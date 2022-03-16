@@ -54,3 +54,5 @@ export function ModalHeader({
     </Flex>
   );
 }
+
+ModalHeader.displayName = 'ModalHeader';

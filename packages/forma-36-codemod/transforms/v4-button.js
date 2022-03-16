@@ -88,6 +88,7 @@ module.exports = function (file, api) {
 
         modifiedAttributes = deleteProperty(modifiedAttributes, {
           propertyName: 'indicateDropdown',
+          file,
         });
       }
 

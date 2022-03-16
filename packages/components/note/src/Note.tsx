@@ -1,13 +1,13 @@
 import { cx } from 'emotion';
 import React from 'react';
-import { Flex } from '@contentful/f36-core';
+import { Flex, Grid } from '@contentful/f36-core';
 import type {
   CommonProps,
   PropsWithHTMLElement,
   ExpandProps,
 } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
-import { Heading, Text } from '@contentful/f36-typography';
+import { Heading, Paragraph, Text } from '@contentful/f36-typography';
 import {
   CheckCircleIcon,
   CloseIcon,
@@ -40,7 +40,7 @@ export type NoteInternalProps = CommonProps & {
   /**
    * Children of Note
    */
-  children?: React.ReactNode;
+  children?: React.ReactNode | string;
   /**
    * Defines if the close button should be rendered
    * @default false
@@ -72,32 +72,44 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
     const styles = getNoteStyles();
 
     return (
-      <Flex
+      <Grid
         {...otherProps}
+        columns={withCloseButton ? 'auto 1fr 24px' : 'auto 1fr'} // 24px is the width of the close button
         as="article"
-        className={cx(styles.container({ variant, title }), className)}
+        className={cx(styles.container({ variant }), className)}
         testId={testId}
         ref={ref}
         padding="spacingM"
-        alignItems="flex-start"
       >
-        <Flex marginRight="spacingS">
-          <Icon
-            as={icons[variant]}
-            variant={variant}
-            size={title ? 'medium' : 'small'}
-          />
-        </Flex>
-        <div>
+        <Icon
+          as={icons[variant]}
+          variant={variant}
+          size={title ? 'medium' : 'small'}
+        />
+        <Flex flexDirection="column">
           {title && (
-            <Heading as="h2" className={styles.title}>
+            <Heading
+              as="h2"
+              className={styles.title}
+              marginBottom={!children ? 'none' : 'spacingS'}
+            >
               {title}
             </Heading>
           )}
-          <Text as="p" lineHeight="lineHeightM" className={styles.description}>
-            {children}
-          </Text>
-        </div>
+          {children && (
+            <Text
+              as="div"
+              lineHeight="lineHeightM"
+              className={styles.description}
+            >
+              {typeof children === 'string' ? (
+                <Paragraph marginBottom="none">{children}</Paragraph>
+              ) : (
+                children
+              )}
+            </Text>
+          )}
+        </Flex>
         {withCloseButton && (
           <Button
             variant="transparent"
@@ -105,10 +117,10 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
             onClick={onClose}
             testId={`${testId}-close`}
             aria-label="Dismiss"
-            className={styles.close({ title })}
+            className={styles.close}
           />
         )}
-      </Flex>
+      </Grid>
     );
   },
 );

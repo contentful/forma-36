@@ -8,7 +8,7 @@ import {
 import tokens from '@contentful/f36-tokens';
 
 import { PlaygroundTopBar } from './PlaygroundTopBar';
-
+import { palette } from '../LiveEditor/theme';
 const indexFile = `import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { GlobalStyles } from "@contentful/f36-components";
@@ -75,13 +75,53 @@ export function SandpackRenderer({
     >
       <PlaygroundTopBar />
 
-      <SandpackLayout>
+      <SandpackLayout
+        theme={{
+          palette: {
+            activeText: palette.activeText, //tokens.blue700
+            defaultText: palette.color, // tokens.gray900
+            inactiveText: tokens.gray300, // tokens.gray300
+            activeBackground: palette.activeBackground, // tokens.blue200
+            defaultBackground: palette.backgroundColor, // tokens.gray200
+            inputBackground: palette.inputBackground, // tokens.colorWhite
+            accent: palette.accent, // tokens.blue700
+            errorBackground: palette.errorBackground, // tokens.red200
+            errorForeground: palette.deleted, // tokens.red700
+          },
+          syntax: {
+            plain: palette.color, // tokens.gray900
+            comment: {
+              color: palette.comment, //tokens.gray600
+              fontStyle: 'italic',
+            },
+            keyword: palette.keyword, // tokens.red700
+            tag: palette.tag, //tokens.blue700
+            punctuation: palette.color, // tokens.gray900
+            definition: palette.definition, // tokens.green700
+            property: {
+              color: palette.selector, //tokens.blue700
+              fontStyle: 'italic',
+            },
+            static: palette.attrValue, // tokens.purple500
+            string: palette.string, // tokens.yellow800
+          },
+          typography: {
+            bodyFont:
+              '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+            monoFont:
+              '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
+            fontSize: '14px',
+            lineHeight: '1.4',
+          },
+        }}
+      >
         <SandpackCodeEditor
           showTabs={false}
           showLineNumbers
           showInlineErrors
           wrapContent
         />
+
         <SandpackPreview
           showSandpackErrorOverlay
           showOpenInCodeSandbox={showOpenInCodeSandbox}

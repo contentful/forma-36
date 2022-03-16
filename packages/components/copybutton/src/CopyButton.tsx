@@ -119,4 +119,6 @@ function _CopyButton(
   );
 }
 
+_CopyButton.displayName = 'CopyButton';
+
 export const CopyButton = React.forwardRef(_CopyButton);

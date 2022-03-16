@@ -1,8 +1,7 @@
 <h1><img src="./forma-icon.svg" height="24"> Forma 36 - The Contentful Design System</h1>
 
 [![Contentful](https://circleci.com/gh/contentful/forma-36.svg?style=shield)](https://circleci.com/gh/contentful/forma-36)
-[![All Contributors](https://img.shields.io/github/all-contributors/contentful/forma-36/master)](#contributors-)
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
+[![All Contributors](https://img.shields.io/github/all-contributors/contentful/forma-36/main)](#contributors-)
 
 [Forma 36](https://f36.contentful.com/) is an open-source design system by [Contentful](https://www.contentful.com) created with the intent to reduce the overhead of creating UI by providing tools and guidance for digital teams building and extending Contentful products
 
@@ -31,6 +30,15 @@ We use use [Plop](https://plopjs.com/) to create scripts that help you to scaffo
 
 ## Development
 
+_Note: The default branch has been renamed! `master` is now named `main`. If you have a local clone, you can update it by running the following commands._
+
+```bash
+git branch -m master main
+git fetch origin
+git branch -u origin/main main
+git remote set-head origin -a
+```
+
 For local development, in the root of the repo run `yarn` to install all dependencies and then `yarn build` to build all packages. Now follow the instructions of the specific package you’re working on.
 You will find each package’s instructions in their README files, check the [Packages](#packages) section for a list of all packages.
 
@@ -42,7 +50,7 @@ We use storybook with our react component library to develop components. You can
 
 ## Commits & releases
 
-Use `yarn commit`. This uses the [Commitzen](https://github.com/commitizen/cz-cli) CLI to create a conventional commit message based on your changes. CI is setup to release all new commits on the master branch.
+Use `yarn commit`. This uses the [Commitzen](https://github.com/commitizen/cz-cli) CLI to create a conventional commit message based on your changes. CI is setup to release all new commits on the main branch.
 
 ## Testing with your own project locally
 
@@ -170,6 +178,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/SirGavin"><img src="https://avatars.githubusercontent.com/u/11873876?v=4?s=100" width="100px;" alt=""/><br /><sub><b>SirGavin</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3ASirGavin" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/Lelith"><img src="https://avatars.githubusercontent.com/u/1789174?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kathrin Holzmann</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=Lelith" title="Code">💻</a> <a href="#maintenance-Lelith" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://bgutsol.com/"><img src="https://avatars.githubusercontent.com/u/10744462?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bohdan Hutsol</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=bgutsol" title="Code">💻</a> <a href="#maintenance-bgutsol" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/ghepting"><img src="https://avatars.githubusercontent.com/u/492573?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gary Hepting</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3Aghepting" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 

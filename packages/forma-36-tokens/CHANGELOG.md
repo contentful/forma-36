@@ -1,7 +1,17 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [4.0.1](https://github.com/contentful/forma-36/compare/@contentful/f36-tokens@4.0.0...@contentful/f36-tokens@4.0.1) (2022-03-03)
+
+
+### Bug Fixes
+
+* migrate links from master to main  ([#1923](https://github.com/contentful/forma-36/issues/1923)) ([607301d](https://github.com/contentful/forma-36/commit/607301d57a2e83190d2aa298120ddb8493e8c429))
+* Update README ([#1745](https://github.com/contentful/forma-36/issues/1745)) ([1094eb1](https://github.com/contentful/forma-36/commit/1094eb196d14c008433e1fbdedf6ec11d8570a91))
+
+
+
+
 
 ## [0.11.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.11.0...@contentful/forma-36-tokens@0.11.1) (2021-08-06)
 

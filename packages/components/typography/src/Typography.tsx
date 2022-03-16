@@ -15,3 +15,5 @@ export function Typography(props: TypographyProps) {
   }, []);
   return <>{props.children}</>;
 }
+
+Typography.displayName = 'Typography';

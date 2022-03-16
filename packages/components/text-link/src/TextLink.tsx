@@ -1,7 +1,7 @@
 import React from 'react';
 import { cx } from 'emotion';
-import {
-  Flex,
+import { Flex } from '@contentful/f36-core';
+import type {
   CommonProps,
   PolymorphicProps,
   PolymorphicComponent,
@@ -124,6 +124,8 @@ function _TextLink<E extends React.ElementType = typeof TEX_LINK_DEFAULT_TAG>(
     </a>
   );
 }
+
+_TextLink.displayName = 'TextLink';
 
 export const TextLink: PolymorphicComponent<
   ExpandProps<TextLinkInternalProps>,
