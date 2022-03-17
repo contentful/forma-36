@@ -45,7 +45,7 @@
 
     & .Switch__icon--close {
       top: 3px;
-      left: 16px;
+      left: 1rem;
     }
   }
 }
@@ -133,5 +133,5 @@
 
 .Switch__icon--close {
   top: 4px;
-  left: 20px;
+  left: 1,25rem;
 }
