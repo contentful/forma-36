@@ -137,4 +137,3 @@ The Changelog gives an overview of the changes we've made to Forma 36
 **F36 Workbench** `v4.3.9`
 
 - bump packages versions to have consistent versioning
-
