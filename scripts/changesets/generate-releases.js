@@ -64,7 +64,7 @@ async function main() {
   const csOutput = childProcess.execSync('yarn changeset publish').toString();
   console.log(csOutput);
 
-  const gitPushCommand = `git add .
+  const gitPushCommand = `git add . && yarn run pretty:quick
   git diff --staged --quiet || git commit -m "docs(changelog): add changelogs for $(git rev-parse --short HEAD) [skip ci]" && git push origin ${env.CIRCLE_BRANCH} --follow-tags`;
 
   // Push updated packages to github with tags
