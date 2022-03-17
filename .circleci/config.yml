@@ -172,7 +172,7 @@ jobs:
       - run:
           name: Commit changelog files
           command: |
-            git add .
+            git add . && yarn run pretty:quick
             git diff --staged --quiet || git commit -am "docs: update changelog on repository and website" && git push origin ${CIRCLE_BRANCH}
 
 workflows:
