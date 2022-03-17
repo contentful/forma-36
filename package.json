@@ -30,7 +30,7 @@
     "docs:next:build": "turbo run build:prod --scope=@contentful/f36-website --parallel",
     "docs:next:start-prod": "turbo run start:prod --scope=@contentful/f36-website --parallel",
     "changelog:gen": "node scripts/changesets/changelog-generate.js",
-    "changelog:write": "node scripts/changesets/changelog-write.js && yarn run pretty:quick",
+    "changelog:write": "node scripts/changesets/changelog-write.js",
     "pretty:quick": "yarn pretty-quick --staged --pattern '**/*.*(js|jsx|ts|tsx|md|mdx)'"
   },
   "husky": {

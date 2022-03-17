@@ -148,7 +148,7 @@ jobs:
       - run:
           name: Commit changelogrc
           command: |
-            git add .
+            git add . && yarn run pretty:quick
             git diff --staged --quiet || git commit -m "docs(changelog): add changelogs for $(git rev-parse --short HEAD) [skip ci]" && git push origin ${CIRCLE_BRANCH} --follow-tags
 
   changelog:
