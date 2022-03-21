@@ -12,11 +12,11 @@ const styles = {
   footer: css({
     gridAutoRows: 'min-content',
     alignItems: 'flex-start',
+    justifyItems: 'flex-start',
     marginTop: tokens.spacing2Xl,
     backgroundColor: tokens.gray100,
     padding: tokens.spacingL,
   }),
-  logo: css({ justifySelf: 'flex-end' }),
 };
 
 export function Footer() {
@@ -77,7 +77,6 @@ export function Footer() {
         href="https://www.contentful.com"
         target="_blank"
         rel="noopener noreferrer"
-        className={styles.logo}
       >
         <Image src={contentfulLogoSVG} alt="Contentful’s logo" />
       </a>
