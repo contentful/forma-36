@@ -99,7 +99,7 @@
     "babel-plugin-react-remove-properties": "^0.3.0",
     "babel-plugin-transform-glob-import": "^1.0.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "babel-plugin-typescript-to-proptypes": "1.4.2",
+    "babel-plugin-typescript-to-proptypes": "2.0.0",
     "chalk": "^4.1.0",
     "chromatic": "^5.7.0",
     "commitizen": "^4.2.1",
