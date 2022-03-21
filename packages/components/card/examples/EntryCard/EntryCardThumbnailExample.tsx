@@ -8,7 +8,7 @@ export default function EntryCardThumbnailExample() {
       contentType="Author"
       title="John Doe"
       description="Research and recommendations for modern stack websites."
-      thumbnailElement={<img src="https://picsum.photos/200" />}
+      thumbnailElement={<img alt="random" src="https://picsum.photos/200" />}
     />
   );
 }
