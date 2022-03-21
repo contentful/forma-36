@@ -1,6 +1,6 @@
 ---
-title: Changelog
-slug: '/changelog'
+title: What's new
+slug: '/whats-new'
 section: 'intro'
 ---
 
