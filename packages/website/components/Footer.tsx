@@ -44,6 +44,7 @@ export function Footer() {
             href="https://forms.gle/qC7LLbiy4CcF5HPLA"
             label="Give us feedback"
           />
+          <FooterLink isExternal={false} href="/whats-new" label="What's new" />
         </Flex>
 
         <Flex flexDirection="column" alignItems="flex-start" gap="spacingM">
