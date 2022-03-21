@@ -1,16 +1,20 @@
 import React from 'react';
-import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
+import Image from 'next/image';
+import Link from 'next/link';
+import tokens from '@contentful/f36-tokens';
 import {
   DisplayText,
   Heading,
   Paragraph,
   Flex,
-  Card,
+  TextLink,
   Button,
 } from '@contentful/f36-components';
 import { ArrowForwardTrimmedIcon } from '@contentful/f36-icons';
 
+import figmaSVG from '../resources/icons/figma-icon.svg';
+import reactSVG from '../resources/icons/react-icon.svg';
 import { SCREEN_BREAKPOINT_LARGE } from '../utils/getGridStyles';
 
 const styles = {
@@ -28,9 +32,9 @@ const styles = {
       },
     },
   }),
-  cards: css({
+  sections: css({
     '> *': {
-      maxWidth: '400px',
+      maxWidth: '220px',
     },
   }),
 };
@@ -60,32 +64,31 @@ export default function Home() {
         </Button>
       </Flex>
 
-      <Flex
-        className={styles.cards}
-        flexWrap="wrap"
-        alignItems="flex-start"
-        alignContent="flex-start"
-        gap="spacingM"
-      >
-        <Card>
-          <Heading>Figma UI Kit</Heading>
-          <Paragraph marginBottom="none">
-            Copy the Forma 36 UI Kit to Figma, publish it as a Team library and
-            start prototyping. You need a Figma account to do this.
-          </Paragraph>
-        </Card>
+      <Flex className={styles.sections} gap="spacing2Xl">
+        <Flex flexDirection="column" alignItems="flex-start">
+          <Image src={figmaSVG} alt="Figma’s logo" />
 
-        <Card as="a" href="/components/accordion">
-          <Heading>Components</Heading>
-          <Paragraph marginBottom="none">
-            Browse the React components and try them out live in the Playground.
+          <Heading marginTop="spacingM">Figma UI Kit</Heading>
+          <Paragraph>
+            Copy the UI Kit to Figma, publish it as a Team library and start
+            prototyping.
           </Paragraph>
-        </Card>
+          <TextLink href="https://www.figma.com/" target="_blank">
+            Get the Figma UI Kit
+          </TextLink>
+        </Flex>
 
-        <Card>
-          <Heading>What’s new?</Heading>
-          <Paragraph marginBottom="none">A history of our releases.</Paragraph>
-        </Card>
+        <Flex flexDirection="column" alignItems="flex-start">
+          <Image src={reactSVG} alt="React’s logo" />
+
+          <Heading marginTop="spacingM">React Components</Heading>
+          <Paragraph>
+            Browse the components and try them out live in the Playground.
+          </Paragraph>
+          <Link href="/components/accordion" passHref>
+            <TextLink>View the components</TextLink>
+          </Link>
+        </Flex>
       </Flex>
     </article>
   );
