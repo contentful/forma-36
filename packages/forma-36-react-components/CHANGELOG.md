@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.100.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.100.5...@contentful/forma-36-react-components@3.100.6) (2022-03-22)
+
+
+### Bug Fixes
+
+* fix switch component CSS ([#1956](https://github.com/contentful/forma-36/issues/1956)) ([a38835c](https://github.com/contentful/forma-36/commit/a38835cb0a9aaf08e46a0e365f602192521bc2ae))
+
+
+
+
+
 ## [3.100.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.100.4...@contentful/forma-36-react-components@3.100.5) (2022-03-03)
 
 
