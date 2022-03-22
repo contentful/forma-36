@@ -73,7 +73,7 @@ export default function Home() {
             Copy the UI Kit to Figma, publish it as a Team library and start
             prototyping.
           </Paragraph>
-          <TextLink href="https://www.figma.com/" target="_blank">
+          <TextLink href="https://www.figma.com/@contentful" target="_blank">
             Get the Figma UI Kit
           </TextLink>
         </Flex>
