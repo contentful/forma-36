@@ -15,6 +15,7 @@ import { ArrowForwardTrimmedIcon } from '@contentful/f36-icons';
 
 import figmaSVG from '../resources/icons/figma-icon.svg';
 import reactSVG from '../resources/icons/react-icon.svg';
+import homepageImg from '../public/images/homepage-illustration.svg';
 import { SCREEN_BREAKPOINT_LARGE } from '../utils/getGridStyles';
 
 const styles = {
@@ -37,57 +38,77 @@ const styles = {
       maxWidth: '220px',
     },
   }),
+  imgContainer: css({ flexGrow: 1, '> span': { flexGrow: 1 } }),
 };
 
 export default function Home() {
   return (
     <article className={styles.grid}>
       <Flex
-        flexDirection="column"
+        justifyContent="space-between"
         alignItems="flex-start"
-        marginBottom="spacing3Xl"
+        gap="spacing2Xl"
       >
-        <DisplayText as="h1" size="large">
-          Build and extend
-          <br />
-          Contentful products.
-        </DisplayText>
+        <Flex flexDirection="column">
+          <Flex
+            flexDirection="column"
+            alignItems="flex-start"
+            marginBottom="spacing3Xl"
+          >
+            <DisplayText as="h1" size="large">
+              Build and extend
+              <br />
+              Contentful products.
+            </DisplayText>
 
-        <Button
-          as="a"
-          href="/getting-started"
-          variant="primary"
-          size="large"
-          endIcon={<ArrowForwardTrimmedIcon />}
-        >
-          Get started
-        </Button>
-      </Flex>
+            <Button
+              as="a"
+              href="/getting-started"
+              variant="primary"
+              size="large"
+              endIcon={<ArrowForwardTrimmedIcon />}
+            >
+              Get started
+            </Button>
+          </Flex>
 
-      <Flex className={styles.sections} gap="spacing2Xl">
-        <Flex flexDirection="column" alignItems="flex-start">
-          <Image src={figmaSVG} alt="Figma’s logo" />
+          <Flex className={styles.sections} gap="spacing2Xl">
+            <Flex flexDirection="column" alignItems="flex-start">
+              <Image src={figmaSVG} alt="Figma’s logo" />
 
-          <Heading marginTop="spacingM">Figma UI Kit</Heading>
-          <Paragraph>
-            Copy the UI Kit to Figma, publish it as a Team library and start
-            prototyping.
-          </Paragraph>
-          <TextLink href="https://www.figma.com/@contentful" target="_blank">
-            Get the Figma UI Kit
-          </TextLink>
+              <Heading marginTop="spacingM">Figma UI Kit</Heading>
+              <Paragraph>
+                Copy the UI Kit to Figma, publish it as a Team library and start
+                prototyping.
+              </Paragraph>
+              <TextLink
+                href="https://www.figma.com/@contentful"
+                target="_blank"
+              >
+                Get the Figma UI Kit
+              </TextLink>
+            </Flex>
+
+            <Flex flexDirection="column" alignItems="flex-start">
+              <Image src={reactSVG} alt="React’s logo" />
+
+              <Heading marginTop="spacingM">React Components</Heading>
+              <Paragraph>
+                Browse the components and try them out live in the Playground.
+              </Paragraph>
+              <Link href="/components/accordion" passHref>
+                <TextLink>View the components</TextLink>
+              </Link>
+            </Flex>
+          </Flex>
         </Flex>
 
-        <Flex flexDirection="column" alignItems="flex-start">
-          <Image src={reactSVG} alt="React’s logo" />
-
-          <Heading marginTop="spacingM">React Components</Heading>
-          <Paragraph>
-            Browse the components and try them out live in the Playground.
-          </Paragraph>
-          <Link href="/components/accordion" passHref>
-            <TextLink>View the components</TextLink>
-          </Link>
+        <Flex className={styles.imgContainer}>
+          <Image
+            src={homepageImg}
+            alt="UI components in a browser"
+            layout="responsive"
+          />
         </Flex>
       </Flex>
     </article>
