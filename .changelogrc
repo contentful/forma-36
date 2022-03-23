@@ -1,1 +1,1 @@
-{"**F36 Autocomplete** `v4.3.10`":["- don't put cursor to the end on every change event \n"],"**F36 Forms** `v4.3.10`":["- allow passing HTML attributes to input \n"]}
+{"**F36 Autocomplete** `v4.3.10`":["- don't put cursor to the end on every change event \n"],"**F36 Forms** `v4.3.10`":["- allow passing HTML attributes to input \n"],"**F36 Forms** `v4.3.11`":["- fix(base-checkbox): explicitly allow data-test-id on HTML element \n"]}
