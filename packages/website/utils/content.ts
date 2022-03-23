@@ -47,7 +47,6 @@ async function fetchFiles(targetPath: string) {
 
 async function getAllMdx(paths: string[]) {
   let allMDX: string[] = [];
-
   for (const path of paths) {
     const newFiles = await fetchFiles(path);
     allMDX = allMDX.concat(newFiles);
@@ -114,6 +113,7 @@ async function getMdxPaths() {
     return {
       params: {
         slug: sanitizedSlug,
+        source: 'mdx',
       },
     };
   });

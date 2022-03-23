@@ -18,13 +18,17 @@ import { getPropsMetadata, transformToc } from '../utils/propsMeta';
 import { FrontMatterContextProvider } from '../utils/frontMatterContext';
 import { getTableOfContents } from '../utils/mdx-utils';
 import { PageContent, HeadingType } from '../components/PageContent';
+import { getAllArticles, getSingleArticleBySlug } from '../lib/api';
 
 type ComponentPageProps = {
   source: {
     shortIntro: MDXRemoteSerializeResult;
     mainContent: MDXRemoteSerializeResult;
   };
-  frontMatter: FrontMatter;
+  frontMatter?: FrontMatter;
+  contentfulFrontMatter?: {
+    title: string;
+  };
   headings: HeadingType[];
   propsMetadata: ReturnType<typeof getPropsMetadata>;
 };
@@ -34,6 +38,7 @@ export default function ComponentPage({
   headings,
   propsMetadata,
   source,
+  contentfulFrontMatter,
 }: ComponentPageProps) {
   const router = useRouter();
 
@@ -44,90 +49,129 @@ export default function ComponentPage({
   return (
     <>
       <Head>
-        <title>Forma 36 - {frontMatter.title}</title>
+        <title>
+          Forma 36 - {frontMatter?.title || contentfulFrontMatter?.title}
+        </title>
       </Head>
 
       <PropsContextProvider value={{ ...propsMetadata }}>
         <FrontMatterContextProvider value={frontMatter}>
-          <PageContent
-            frontMatter={frontMatter}
-            headings={headings}
-            source={source}
-          />
+          {frontMatter ? (
+            <PageContent
+              frontMatter={frontMatter}
+              headings={headings}
+              source={source}
+            />
+          ) : (
+            <div>{contentfulFrontMatter?.title} is coming from Contentful</div>
+          )}
         </FrontMatterContextProvider>
       </PropsContextProvider>
     </>
   );
 }
 
-export async function getStaticProps(props: { params: { slug: string[] } }) {
-  const result = await getMdxSourceBySlug(props.params.slug);
-
-  if (!result) {
-    throw new Error(
-      'Could not read file by slug: ' + props.params.slug.join('/'),
-    );
-  }
-
-  const {
-    frontMatter: { content, data },
-  } = result;
-
-  let toc = {};
-
-  let shortIntroText = '';
-  let mainContentText = content;
-
-  // It will match every text that comes before the first "## Import"
-  const shortIntroRegex = new RegExp(/([^#]+)/);
-  const matches = content.match(shortIntroRegex);
-
-  if (matches !== null) {
-    shortIntroText = matches[0];
-    mainContentText = content.replace(matches[0], '');
-  }
-
-  const shortIntro = await serialize(shortIntroText);
-  const mainContent = await serialize(mainContentText, {
-    // Optionally pass remark/rehype plugins
-    mdxOptions: {
-      remarkPlugins: [remarkCodeTitles, remarkCodeImport],
-      rehypePlugins: [
-        rehypeSlug,
-        [
-          rehypeToc,
-          {
-            nav: false,
-            headings: ['h1', 'h2', 'h3'],
-            customizeTOC: (t) => {
-              toc = transformToc(t) as any;
-              return false;
-            },
-          },
-        ],
-      ],
-      filepath: result.filepath,
-    },
-    scope: data,
-  });
-
-  const propsMetadata = getPropsMetadata(result.filepath, data.typescript);
-
-  return {
-    props: {
-      source: { shortIntro, mainContent },
-      toc,
-      headings: getTableOfContents(result.content),
-      frontMatter: data,
-      propsMetadata,
-    },
+interface GetStaticPropsProps {
+  params: {
+    slug: string[];
   };
 }
 
+export async function getStaticProps(
+  props: GetStaticPropsProps,
+  preview = false,
+) {
+  const result = await getMdxSourceBySlug(props.params.slug);
+
+  if (result) {
+    const {
+      frontMatter: { content, data },
+    } = result;
+
+    let toc = {};
+
+    let shortIntroText = '';
+    let mainContentText = content;
+    // It will match every text that comes before the first "## Import"
+    const shortIntroRegex = new RegExp(/([^#]+)/);
+    const matches = content.match(shortIntroRegex);
+
+    if (matches !== null) {
+      shortIntroText = matches[0];
+      mainContentText = content.replace(matches[0], '');
+    }
+    const shortIntro = await serialize(shortIntroText);
+    const mainContent = await serialize(mainContentText, {
+      // Optionally pass remark/rehype plugins
+      mdxOptions: {
+        remarkPlugins: [remarkCodeTitles, remarkCodeImport],
+        rehypePlugins: [
+          rehypeSlug,
+          [
+            rehypeToc,
+            {
+              nav: false,
+              headings: ['h1', 'h2', 'h3'],
+              customizeTOC: (t) => {
+                toc = transformToc(t) as any;
+                return false;
+              },
+            },
+          ],
+        ],
+        filepath: result.filepath,
+      },
+      scope: data,
+    });
+
+    const propsMetadata = getPropsMetadata(result.filepath, data.typescript);
+
+    return {
+      props: {
+        source: { shortIntro, mainContent },
+        toc,
+        headings: getTableOfContents(result.content),
+        frontMatter: data,
+        propsMetadata,
+        preview,
+      },
+    };
+  } else {
+    const entrySlug = props.params.slug[props.params.slug.length - 1];
+    const contentfulResult = await getSingleArticleBySlug(entrySlug);
+
+    if (!contentfulResult) {
+      throw new Error(
+        'Could not find an entry in Contentful or a MDX file for: ' +
+          props.params.slug,
+      );
+    }
+    console.log('contentfulResult', contentfulResult);
+    return {
+      props: {
+        contentfulFrontMatter: {
+          title: contentfulResult.title,
+        },
+      },
+    };
+  }
+}
+
 export async function getStaticPaths() {
-  const paths = await getMdxPaths();
+  const mdxPaths = await getMdxPaths();
+  const allPostsFromContentful = await getAllArticles();
+
+  const contentfulPaths = allPostsFromContentful.map((item) => {
+    const slug = [item.kbAppCategory.slug, item.slug];
+    return {
+      params: {
+        slug,
+      },
+    };
+  });
+  console.log('mdxPaths', contentfulPaths);
   return {
-    paths,
+    paths: [...mdxPaths, ...contentfulPaths],
     fallback: false,
   };
 }
