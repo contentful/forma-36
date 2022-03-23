@@ -1,5 +1,5 @@
 import React from 'react';
-
+// import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
@@ -22,13 +22,11 @@ import { getAllArticles, getSingleArticleBySlug } from '../lib/api';
 
 type ComponentPageProps = {
   source: {
-    shortIntro: MDXRemoteSerializeResult;
-    mainContent: MDXRemoteSerializeResult;
+    shortIntro?: MDXRemoteSerializeResult;
+    mainContent?: MDXRemoteSerializeResult;
+    richTextBody?: any;
   };
-  frontMatter?: FrontMatter;
-  contentfulFrontMatter?: {
-    title: string;
-  };
+  frontMatter: FrontMatter;
   headings: HeadingType[];
   propsMetadata: ReturnType<typeof getPropsMetadata>;
 };
@@ -38,7 +36,6 @@ export default function ComponentPage({
   headings,
   propsMetadata,
   source,
-  contentfulFrontMatter,
 }: ComponentPageProps) {
   const router = useRouter();
 
@@ -49,36 +46,29 @@ export default function ComponentPage({
   return (
     <>
       <Head>
-        <title>
-          Forma 36 - {frontMatter?.title || contentfulFrontMatter?.title}
-        </title>
+        <title>Forma 36 - {frontMatter.title}</title>
       </Head>
 
       <PropsContextProvider value={{ ...propsMetadata }}>
         <FrontMatterContextProvider value={frontMatter}>
-          {frontMatter ? (
-            <PageContent
-              frontMatter={frontMatter}
-              headings={headings}
-              source={source}
-            />
-          ) : (
-            <div>{contentfulFrontMatter?.title} is coming from Contentful</div>
-          )}
+          <PageContent
+            frontMatter={frontMatter}
+            headings={headings}
+            source={source}
+          />
         </FrontMatterContextProvider>
       </PropsContextProvider>
     </>
   );
 }
 
-interface GetStaticPropsProps {
-  params: {
-    slug: string[];
-  };
-}
-
-export async function getStaticProps(props: GetStaticPropsProps) {
-  const mdxSource = await getMdxSourceBySlug(props.params.slug);
+// [WIP]: I started adding stronger types to this function but I could not finish
+// that's why I renamed some stuff here, I was trying to follow this:
+// https://nextjs.org/docs/basic-features/typescript#static-generation-and-server-side-rendering
+export const getStaticProps = async (context: {
+  params: { slug: string[] };
+}) => {
+  const mdxSource = await getMdxSourceBySlug(context.params?.slug ?? []);
 
   if (mdxSource) {
     const {
@@ -134,25 +124,29 @@ export async function getStaticProps(props: GetStaticPropsProps) {
       },
     };
   } else {
-    const entrySlug = props.params.slug[props.params.slug.length - 1];
+    const entrySlug = context.params?.slug[context.params?.slug.length - 1];
     const contentfulResult = await getSingleArticleBySlug(entrySlug);
 
     if (!contentfulResult) {
       throw new Error(
         'Could not find an entry in Contentful or a MDX file for: ' +
-          props.params.slug,
+          context.params?.slug,
       );
     }
 
     return {
       props: {
-        contentfulFrontMatter: {
+        headings: [],
+        frontMatter: {
           title: contentfulResult.title,
+        },
+        source: {
+          richTextBody: contentfulResult.body, // TODO: pass this to Contentful’s RichText renderer in PageContent
         },
       },
     };
   }
-}
+};
 
 export async function getStaticPaths() {
   const mdxPaths = await getMdxPaths();

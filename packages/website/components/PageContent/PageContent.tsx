@@ -52,10 +52,10 @@ const styles = {
 interface PageContentProps {
   headings: HeadingType[];
   frontMatter: FrontMatter;
-  // children: React.ReactChild;
   source: {
-    mainContent: MDXRemoteSerializeResult;
+    mainContent?: MDXRemoteSerializeResult;
     shortIntro?: MDXRemoteSerializeResult;
+    richTextBody?: any; // TODO: pass this to Contentful’s RichText renderer
   };
 }
 
@@ -88,7 +88,7 @@ export function PageContent({
          * https://www.joshwcomeau.com/css/rules-of-margin-collapse/#flow-layout-only
          */}
         <article className={styles.article}>
-          <MdxRenderer source={source.mainContent} />
+          {source.mainContent && <MdxRenderer source={source.mainContent} />}
         </article>
 
         <PageContentFooter github={github} />

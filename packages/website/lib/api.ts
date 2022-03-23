@@ -50,16 +50,16 @@ function extractArticleEntries(fetchResponse) {
   return fetchResponse?.data?.kbAppArticleCollection?.items;
 }
 
-export async function getSingleArticleBySlug(slug) {
+export async function getSingleArticleBySlug(slug, preview = false) {
   const entry = await fetchGraphQL(
     `query {
-      kbAppArticleCollection(where: { slug: "${slug}" }, preview: false, limit: 1) {
+      kbAppArticleCollection(where: { slug: "${slug}" }, preview: ${preview}, limit: 1) {
         items {
           ${ARTICLE_GRAPHQL_FIELDS}
         }
       }
     }`,
-    true,
+    preview,
   );
   return extractArticle(entry);
 }
