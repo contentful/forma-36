@@ -1,8 +1,4 @@
-import type {
-  ChangeEventHandler,
-  ComponentPropsWithoutRef,
-  HTMLAttributes,
-} from 'react';
+import type { ChangeEventHandler, ComponentPropsWithoutRef } from 'react';
 import type { BaseInputInternalProps } from '../BaseInput/types';
 
 export type checkboxTypes = 'checkbox' | 'radio' | 'switch';
