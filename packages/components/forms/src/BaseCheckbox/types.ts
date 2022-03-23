@@ -1,8 +1,4 @@
-import type {
-  ChangeEventHandler,
-  ComponentPropsWithoutRef,
-  HTMLAttributes,
-} from 'react';
+import type { ChangeEventHandler, ComponentPropsWithoutRef } from 'react';
 import type { BaseInputInternalProps } from '../BaseInput/types';
 
 export type checkboxTypes = 'checkbox' | 'radio' | 'switch';
@@ -35,9 +31,9 @@ export interface BaseCheckboxInternalProps
   /**
    * Additional props that are passed to the input element
    */
-  inputProps?: Partial<
-    HTMLAttributes<HTMLInputElement> & ComponentPropsWithoutRef<'input'>
-  >;
+  inputProps?: Partial<ComponentPropsWithoutRef<'input'>> & {
+    'data-test-id'?: string;
+  };
   /**
    * Value to be set as aria-label if not passing a children
    */
