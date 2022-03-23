@@ -18,6 +18,12 @@ kbAppCategory {
 }
 `;
 
+/**
+ *
+ * @param query - the GraphQL query to be used by the API
+ * @param preview - if true, it tells the app to request the content from preview API
+ * @returns
+ */
 async function fetchGraphQL(query, preview = false) {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
@@ -58,7 +64,7 @@ export async function getSingleArticleBySlug(slug) {
   return extractArticle(entry);
 }
 
-export async function getAllArticles(preview) {
+export async function getAllArticles(preview = false) {
   const entries = await fetchGraphQL(
     `query {
       kbAppArticleCollection(where: { slug_exists: true }) {

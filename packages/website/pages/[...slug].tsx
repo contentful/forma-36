@@ -77,16 +77,13 @@ interface GetStaticPropsProps {
   };
 }
 
-export async function getStaticProps(
-  props: GetStaticPropsProps,
-  preview = false,
-) {
-  const result = await getMdxSourceBySlug(props.params.slug);
+export async function getStaticProps(props: GetStaticPropsProps) {
+  const mdxSource = await getMdxSourceBySlug(props.params.slug);
 
-  if (result) {
+  if (mdxSource) {
     const {
       frontMatter: { content, data },
-    } = result;
+    } = mdxSource;
 
     let toc = {};
 
@@ -100,6 +97,7 @@ export async function getStaticProps(
       shortIntroText = matches[0];
       mainContentText = content.replace(matches[0], '');
     }
+
     const shortIntro = await serialize(shortIntroText);
     const mainContent = await serialize(mainContentText, {
       // Optionally pass remark/rehype plugins
@@ -119,21 +117,20 @@ export async function getStaticProps(
             },
           ],
         ],
-        filepath: result.filepath,
+        filepath: mdxSource.filepath,
       },
       scope: data,
     });
 
-    const propsMetadata = getPropsMetadata(result.filepath, data.typescript);
+    const propsMetadata = getPropsMetadata(mdxSource.filepath, data.typescript);
 
     return {
       props: {
         source: { shortIntro, mainContent },
         toc,
-        headings: getTableOfContents(result.content),
+        headings: getTableOfContents(mdxSource.content),
         frontMatter: data,
         propsMetadata,
-        preview,
       },
     };
   } else {
@@ -146,7 +143,7 @@ export async function getStaticProps(
           props.params.slug,
       );
     }
-    console.log('contentfulResult', contentfulResult);
+
     return {
       props: {
         contentfulFrontMatter: {
@@ -159,9 +156,9 @@ export async function getStaticProps(
 
 export async function getStaticPaths() {
   const mdxPaths = await getMdxPaths();
-  const allPostsFromContentful = await getAllArticles();
+  const allArticles = await getAllArticles();
 
-  const contentfulPaths = allPostsFromContentful.map((item) => {
+  const contentfulPaths = allArticles.map((item) => {
     const slug = [item.kbAppCategory.slug, item.slug];
     return {
       params: {
@@ -169,7 +166,7 @@ export async function getStaticPaths() {
       },
     };
   });
-  console.log('mdxPaths', contentfulPaths);
+
   return {
     paths: [...mdxPaths, ...contentfulPaths],
     fallback: false,
