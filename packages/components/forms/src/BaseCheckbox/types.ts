@@ -35,9 +35,9 @@ export interface BaseCheckboxInternalProps
   /**
    * Additional props that are passed to the input element
    */
-  inputProps?: Partial<
-    HTMLAttributes<HTMLInputElement> & ComponentPropsWithoutRef<'input'>
-  >;
+  inputProps?: Partial<ComponentPropsWithoutRef<'input'>> & {
+    'data-test-id'?: string;
+  };
   /**
    * Value to be set as aria-label if not passing a children
    */
