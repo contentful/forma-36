@@ -13,7 +13,7 @@ import type { RenderNode } from '@contentful/rich-text-react-renderer';
 export const defaultRenderNode: RenderNode = {
   [BLOCKS.PARAGRAPH]: (_node, children) => <Paragraph>{children}</Paragraph>,
   [BLOCKS.HEADING_2]: (_node, children) => (
-    <Heading as="h2">{children}</Heading>
+    <Heading as="h2" marginTop="spacing2Xl">{children}</Heading>
   ),
   [BLOCKS.HEADING_3]: (_node, children) => (
     <Subheading as="h3" marginTop="spacingXl">
@@ -29,8 +29,8 @@ export const defaultRenderNode: RenderNode = {
   [BLOCKS.HEADING_6]: (_node, children) => (
     <Subheading as="h6">{children}</Subheading>
   ),
-  [BLOCKS.LIST_ITEM]: (_node, children) => (
-    <List>
+  [BLOCKS.UL_LIST]: (_node, children) => (
+    <List as="ul">
       <List.Item>{children}</List.Item>
     </List>
   ),

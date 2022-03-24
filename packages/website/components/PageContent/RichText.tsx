@@ -21,13 +21,12 @@ interface RichTextProps {
 export function RichText({
   document,
   customRenderNode,
-  testId = 'contentful-rich-text',
 }: RichTextProps) {
   return (
-    <span data-test-id={testId}>
+    <>
       {documentToReactComponents(document.json, {
         renderNode: { ...defaultRenderNode, ...customRenderNode },
       })}
-    </span>
+    </>
   );
 }
