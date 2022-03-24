@@ -131,7 +131,28 @@ export function Sidebar({
 
       {activeSection === WEBSITE_SECTION.GUIDELINES && (
         <SidebarSection
-          links={sidebarLinks.guidelines}
+          links={[
+            {
+              title: 'Accessibility',
+              slug: '/guidelines/accessibility',
+              type: 'link',
+            },
+            {
+              title: 'Keyboard shortcuts',
+              slug: '/guidelines/keyboard-shortcuts',
+              type: 'link',
+            },
+            {
+              title: 'Grammar and rules',
+              slug: '/guidelines/copy/grammar-and-rules',
+              type: 'link',
+            },
+            {
+              title: 'UX writing principles',
+              slug: '/guidelines/copy/ux-writing-principles',
+              type: 'link',
+            },
+          ]}
           currentPage={currentPage}
         />
       )}
