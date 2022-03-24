@@ -7,7 +7,7 @@ Our CI is configured to automatically bump the version and publish the packages 
 ## Adding changesets
 
 We use the `changeset-bot` to comment on PRs when a changeset is found or not.
-In case the change you are making is only on documentation or you don't want to create a new version for the change, you don't need to do anything and can merge the PR once it's approved.
+In case the change you are making is only on documentation or you don't want to publish a new package version for the change, you don't need to do anything and can merge the PR once it's approved.
 
 But in case you want a new version to be published, you will need to add a changeset, for that you can:
 
@@ -15,13 +15,13 @@ But in case you want a new version to be published, you will need to add a chang
 
 - run `yarn changeset` on the root of the repository.
 - it starts a wizard showing packages that had changes from `main` branch, and which kind of bump should be applied (major, minor or patch), and also ask for a description of the change.
-- it creates a file on the `.changeset` folder that needs to be commited to the branch.
-- `changeset-bot` will show that information on it's comment on the PR.
+- it creates a file in the `.changeset` folder that needs to be commited to the branch.
+- `changeset-bot` will show that information in its comment on the PR.
 - when the PR is merged it will trigger the release job on our CI and a new version will be published.
 
 ## Fixed versioning
 
-We have all our components packages, and our umbrella package (`@contentful/f36-components`) using the fixed approach from changeset, it means that all of those packages will share the same version, e.g. `@contentful/f36-components@4.3.10` uses all our separate components on the version `4.3.10` as well.
+We have all our component packages, and our umbrella package (`@contentful/f36-components`) using the fixed approach from changeset, it means that all of those packages will share the same version, e.g. `@contentful/f36-components@4.3.10` uses all our separate components on the version `4.3.10` as well.
 
 You can read more about fixed version on changeset [here](https://github.com/changesets/changesets/blob/main/docs/fixed-packages.md).
 
