@@ -1,5 +1,27 @@
 # Change Log
 
+## 4.3.11
+
+### Patch Changes
+
+- [#1970](https://github.com/contentful/forma-36/pull/1970) [`edd15d01`](https://github.com/contentful/forma-36/commit/edd15d016be65430e4a1ceb6c617a7b8bdb98585) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(base-checkbox): explicitly allow data-test-id on HTML element
+
+- Updated dependencies []:
+  - @contentful/f36-icons@4.3.11
+  - @contentful/f36-typography@4.3.11
+  - @contentful/f36-core@4.3.11
+
+## 4.3.10
+
+### Patch Changes
+
+- [#1969](https://github.com/contentful/forma-36/pull/1969) [`0c5a4b60`](https://github.com/contentful/forma-36/commit/0c5a4b60f8df76e1f75d98b7ea28dd0fd6307fc3) Thanks [@denkristoffer](https://github.com/denkristoffer)! - allow passing HTML attributes to input
+
+- Updated dependencies []:
+  - @contentful/f36-icons@4.3.10
+  - @contentful/f36-typography@4.3.10
+  - @contentful/f36-core@4.3.10
+
 ## 4.3.9
 
 ### Patch Changes

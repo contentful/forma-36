@@ -153,12 +153,21 @@ function _Autocomplete<ItemType>(
   const [inputValue, setInputValue] = useState(defaultValue);
 
   const handleInputValueChange = useCallback(
-    (value) => {
+    (value: string) => {
       setInputValue(value);
 
       onInputValueChange?.(value);
     },
     [onInputValueChange],
+  );
+
+  // Handle manually to avoid a jumping cursor, see https://github.com/downshift-js/downshift/issues/1108#issuecomment-842407759
+  const handleNativeChangeEvent = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const value = event.target.value;
+      handleInputValueChange(value);
+    },
+    [handleInputValueChange],
   );
 
   const flattenItems = isUsingGroups(isGrouped, items)
@@ -185,8 +194,10 @@ function _Autocomplete<ItemType>(
     items: flattenItems,
     inputValue,
     itemToString,
-    onInputValueChange: ({ inputValue }) => {
-      handleInputValueChange(inputValue);
+    onInputValueChange: ({ type, inputValue }) => {
+      if (type !== '__input_change__') {
+        handleInputValueChange(inputValue);
+      }
     },
     onStateChange: ({ type, selectedItem }) => {
       switch (type) {
@@ -249,6 +260,10 @@ function _Autocomplete<ItemType>(
               ref={mergeRefs(inputProps.ref, inputRef)}
               testId="cf-autocomplete-input"
               placeholder={placeholder}
+              onChange={(event) => {
+                inputProps.onChange(event);
+                handleNativeChangeEvent(event);
+              }}
             />
             <IconButton
               {...toggleProps}

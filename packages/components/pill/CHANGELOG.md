@@ -1,5 +1,23 @@
 # Change Log
 
+## 4.3.11
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.3.11
+  - @contentful/f36-icons@4.3.11
+  - @contentful/f36-core@4.3.11
+
+## 4.3.10
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.3.10
+  - @contentful/f36-icons@4.3.10
+  - @contentful/f36-core@4.3.10
+
 ## 4.3.9
 
 ### Patch Changes
