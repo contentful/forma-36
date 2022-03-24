@@ -104,6 +104,51 @@ export const DynamicContent = ({ align, ...args }: AccordionProps) => {
   );
 };
 
+export const Controlled = ({ align, ...args }: AccordionProps) => {
+  const [accordionState, setAccordionState] = useState({
+    1: true,
+    2: false,
+    3: false,
+  });
+
+  const handleExpand = (itemIndex: number) => () => {
+    setAccordionState((state) => ({ ...state, [itemIndex]: true }));
+  };
+
+  const handleCollapse = (itemIndex: number) => () => {
+    setAccordionState((state) => ({ ...state, [itemIndex]: false }));
+  };
+
+  return (
+    <Accordion align={align}>
+      <Accordion.Item
+        title={args['Accordion.Item Title #1']}
+        isExpanded={accordionState[1]}
+        onExpand={handleExpand(1)}
+        onCollapse={handleCollapse(1)}
+      >
+        <Text as="p">{args['Accordion.Item Content #1']}</Text>
+      </Accordion.Item>
+      <Accordion.Item
+        title={args['Accordion.Item Title #2']}
+        isExpanded={accordionState[2]}
+        onExpand={handleExpand(2)}
+        onCollapse={handleCollapse(2)}
+      >
+        <Text as="p">{args['Accordion.Item Content #2']}</Text>
+      </Accordion.Item>
+      <Accordion.Item
+        title={args['Accordion.Item Title #3']}
+        isExpanded={accordionState[3]}
+        onExpand={handleExpand(3)}
+        onCollapse={handleCollapse(3)}
+      >
+        <Text as="p">{args['Accordion.Item Content #3']}</Text>
+      </Accordion.Item>
+    </Accordion>
+  );
+};
+
 basic.args = {
   align: 'end',
   'Accordion.Item Title #1': 'Accordion I',
