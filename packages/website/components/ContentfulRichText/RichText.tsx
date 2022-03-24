@@ -4,9 +4,10 @@ import {
   documentToReactComponents,
   RenderNode,
 } from '@contentful/rich-text-react-renderer';
-import { defaultRenderNode } from '../../utils/defaultRenderNode';
 
-interface RichTextProps {
+import { defaultRenderNode } from './defaultRenderNode';
+
+export interface RichTextProps {
   /** Object returned by the CDA for rich text fields in a content entry */
   document: Document;
   /**
@@ -14,17 +15,12 @@ interface RichTextProps {
    * Each property is a function (node, children) => ReactNode
    * */
   customRenderNode?: RenderNode;
-  /** A string to be used in tests */
-  testId?: string;
 }
 
-export function RichText({
-  document,
-  customRenderNode,
-}: RichTextProps) {
+export function RichText({ document, customRenderNode }: RichTextProps) {
   return (
     <>
-      {documentToReactComponents(document.json, {
+      {documentToReactComponents(document, {
         renderNode: { ...defaultRenderNode, ...customRenderNode },
       })}
     </>

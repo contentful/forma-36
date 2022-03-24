@@ -13,7 +13,9 @@ import { TableOfContent, HeadingType } from './TableOfContent';
 import { MdxRenderer } from '../MdxRenderer';
 import { PageContentHeader } from './PageContentHeader';
 import { PageContentFooter } from './PageContentFooter';
-import { RichText } from './RichText';
+import type { RichTextProps } from '../ContentfulRichText';
+import { RichText } from '../ContentfulRichText';
+
 const styles = {
   grid: css({
     flex: 1, // this is necessary to make the footer sticky to the bottom of the page
@@ -49,13 +51,13 @@ const styles = {
   }),
 };
 
-interface PageContentProps {
+export interface PageContentProps {
   headings: HeadingType[];
   frontMatter: FrontMatter;
   source: {
     mainContent?: MDXRemoteSerializeResult;
     shortIntro?: MDXRemoteSerializeResult;
-    richTextBody?: any; // TODO: pass this to Contentful’s RichText renderer
+    richTextBody?: RichTextProps['document'];
   };
 }
 
@@ -66,6 +68,7 @@ export function PageContent({
 }: PageContentProps) {
   const gridStyles = getGridStyles();
   const { title, github, status } = frontMatter;
+
   return (
     <div
       className={cx(

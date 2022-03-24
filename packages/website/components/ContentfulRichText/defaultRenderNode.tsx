@@ -14,7 +14,9 @@ import type { RenderNode } from '@contentful/rich-text-react-renderer';
 export const defaultRenderNode: RenderNode = {
   [BLOCKS.PARAGRAPH]: (_node, children) => <Paragraph>{children}</Paragraph>,
   [BLOCKS.HEADING_2]: (_node, children) => (
-    <Heading as="h2" marginTop="spacing2Xl">{children}</Heading>
+    <Heading as="h2" marginTop="spacing2Xl">
+      {children}
+    </Heading>
   ),
   [BLOCKS.HEADING_3]: (_node, children) => (
     <Subheading as="h3" marginTop="spacingXl">
@@ -36,9 +38,7 @@ export const defaultRenderNode: RenderNode = {
     </List>
   ),
   [INLINES.HYPERLINK]: (node, children) => {
-   return (
-     <TextLink href={node.data.uri}>{children}</TextLink>
-   )
+    return <TextLink href={node.data.uri}>{children}</TextLink>;
   },
   [BLOCKS.TABLE]: (node) => {
     // The first element in the array is always the table’s header

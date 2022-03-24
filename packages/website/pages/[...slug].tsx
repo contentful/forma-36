@@ -6,30 +6,21 @@ import Head from 'next/head';
 import rehypeSlug from 'rehype-slug';
 import rehypeToc from 'rehype-toc';
 import { serialize } from 'next-mdx-remote/serialize';
-
-import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { PropsContextProvider } from '@contentful/f36-docs-utils';
 import remarkCodeTitles from 'remark-code-titles';
 import remarkCodeImport from 'remark-code-import';
+import { PropsContextProvider } from '@contentful/f36-docs-utils';
 
-import type { FrontMatter } from '../types';
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 import { getPropsMetadata, transformToc } from '../utils/propsMeta';
 import { FrontMatterContextProvider } from '../utils/frontMatterContext';
 import { getTableOfContents } from '../utils/mdx-utils';
-import { PageContent, HeadingType } from '../components/PageContent';
+import type { PageContentProps } from '../components/PageContent';
+import { PageContent } from '../components/PageContent';
 import { getAllArticles, getSingleArticleBySlug } from '../lib/api';
 
-type ComponentPageProps = {
-  source: {
-    shortIntro?: MDXRemoteSerializeResult;
-    mainContent?: MDXRemoteSerializeResult;
-    richTextBody?: any;
-  };
-  frontMatter: FrontMatter;
-  headings: HeadingType[];
+interface ComponentPageProps extends PageContentProps {
   propsMetadata: ReturnType<typeof getPropsMetadata>;
-};
+}
 
 export default function ComponentPage({
   frontMatter,
@@ -141,7 +132,7 @@ export const getStaticProps = async (context: {
           title: contentfulResult.title,
         },
         source: {
-          richTextBody: contentfulResult.body, // TODO: pass this to Contentful’s RichText renderer in PageContent
+          richTextBody: contentfulResult.body.json,
         },
       },
     };
