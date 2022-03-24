@@ -144,12 +144,12 @@ export function Sidebar({
             },
             {
               title: 'Grammar and rules',
-              slug: '/guidelines/copy/grammar-and-rules',
+              slug: '/guidelines/grammar-and-rules',
               type: 'link',
             },
             {
               title: 'UX writing principles',
-              slug: '/guidelines/copy/ux-writing-principles',
+              slug: '/guidelines/ux-writing-principles',
               type: 'link',
             },
           ]}

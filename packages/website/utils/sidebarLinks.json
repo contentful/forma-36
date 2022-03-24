@@ -344,20 +344,6 @@
       "slug": "/deprecated-components/typography/"
     }
   ],
-  "guidelines": [
-    {
-      "title": "Accessibility",
-      "slug": "/guidelines/accessibility/"
-    },
-    {
-      "title": "Grammar and rules",
-      "slug": "/guidelines/copy/grammar-and-rules/"
-    },
-    {
-      "title": "UX Writing Principles",
-      "slug": "/guidelines/copy/ux-writing-principles/"
-    }
-  ],
   "integrations": [
     {
       "title": "Formik",
