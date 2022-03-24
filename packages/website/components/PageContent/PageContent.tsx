@@ -13,7 +13,7 @@ import { TableOfContent, HeadingType } from './TableOfContent';
 import { MdxRenderer } from '../MdxRenderer';
 import { PageContentHeader } from './PageContentHeader';
 import { PageContentFooter } from './PageContentFooter';
-
+import { RichText } from './RichText';
 const styles = {
   grid: css({
     flex: 1, // this is necessary to make the footer sticky to the bottom of the page
@@ -66,7 +66,6 @@ export function PageContent({
 }: PageContentProps) {
   const gridStyles = getGridStyles();
   const { title, github, status } = frontMatter;
-
   return (
     <div
       className={cx(
@@ -89,8 +88,8 @@ export function PageContent({
          */}
         <article className={styles.article}>
           {source.mainContent && <MdxRenderer source={source.mainContent} />}
+          {source.richTextBody && <RichText document={source.richTextBody} />}
         </article>
-
         <PageContentFooter github={github} />
       </Flex>
 
