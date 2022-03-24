@@ -1,11 +1,5 @@
-import React, {
-  useState,
-  useCallback,
-  useMemo,
-  useRef,
-  useEffect,
-} from 'react';
-import { mergeRefs, useId } from '@contentful/f36-core';
+import React, { useCallback, useMemo, useRef, useEffect } from 'react';
+import { mergeRefs, useId, useControllableState } from '@contentful/f36-core';
 import { useArrowKeyNavigation } from './useArrowKeyNavigation';
 import { Popover } from '@contentful/f36-popover';
 import type { PopoverProps } from '@contentful/f36-popover';
@@ -16,8 +10,8 @@ const MENU_ITEMS_SELECTOR = '[role="menuitem"]:not(:disabled)';
 export interface MenuProps
   extends Omit<PopoverProps, 'autoFocus' | 'id' | 'closeOnBlur'> {
   /**
-   * If `true`, the Menu will be opened in controlled mode.
-   * By default the Menu is uncontrolled
+   * By default, the Menu is uncontrolled (manage it's expanded state by itself)
+   * But you can make it controlled by providing boolean (true/false)
    */
   isOpen?: boolean;
 
@@ -77,9 +71,17 @@ export function Menu(props: MenuProps) {
     onOpen,
     ...otherProps
   } = props;
-  const { isOpen, handleOpen, handleClose, isControlled } = useMenuOpenState(
-    props,
-  );
+  const {
+    isOpen,
+    handleOpen,
+    handleClose,
+    isControlled,
+  } = useControllableState({
+    isOpen: props.isOpen,
+    defaultIsOpen: props.defaultIsOpen,
+    onOpen,
+    onClose: props.onClose,
+  });
 
   const triggerRef = useRef<HTMLButtonElement>(null);
   const menuListRef = useRef<HTMLDivElement>(null);
@@ -264,32 +266,3 @@ export function Menu(props: MenuProps) {
     </MenuContextProvider>
   );
 }
-
-type UseMenuOpenStateProps = Pick<
-  MenuProps,
-  'isOpen' | 'defaultIsOpen' | 'onOpen' | 'onClose'
->;
-
-const useMenuOpenState = (props: UseMenuOpenStateProps) => {
-  const { isOpen, defaultIsOpen, onOpen, onClose } = props;
-  const [isOpenState, setIsOpen] = useState(defaultIsOpen || false);
-
-  const isControlled = isOpen !== undefined;
-  const isOpenValue = isControlled ? isOpen : isOpenState;
-
-  const handleClose = useCallback(() => {
-    if (!isControlled) {
-      setIsOpen(false);
-    }
-    onClose?.();
-  }, [isControlled, onClose]);
-
-  const handleOpen = useCallback(() => {
-    if (!isControlled) {
-      setIsOpen(true);
-    }
-    onOpen?.();
-  }, [isControlled, onOpen]);
-
-  return { isOpen: isOpenValue, isControlled, handleClose, handleOpen };
-};
