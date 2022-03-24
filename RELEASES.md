@@ -21,7 +21,11 @@ But in case you want a new version to be published, you will need to add a chang
 
 ## Fixed versioning
 
-We have all our component packages, and our umbrella package (`@contentful/f36-components`) using the fixed approach from changeset, it means that all of those packages will share the same version, e.g. `@contentful/f36-components@4.3.10` uses all our separate components on the version `4.3.10` as well.
+We use the fixed packages approach from changeset on all our component packages, and the umbrella package (`@contentful/f36-components`), the fixed packages as described on changesets documentation:
+
+> Fixed packages allow you to specify a group or groups of packages that should be versioned and published together.
+
+So when any component package receives a patch, minor or major version change, it will also update the version of all the other packages and update their version on the dependencies list, so for example when using `@contentful/f36-components@4.3.10` all components used by it will also be the version `4.3.10`.
 
 You can read more about fixed version on changeset [here](https://github.com/changesets/changesets/blob/main/docs/fixed-packages.md).
 
