@@ -52,6 +52,8 @@ We use storybook with our react component library to develop components. You can
 
 Use `yarn commit`. This uses the [Commitzen](https://github.com/commitizen/cz-cli) CLI to create a conventional commit message based on your changes. CI is setup to release all new commits on the main branch that contains a new [changeset](https://github.com/changesets/changesets).
 
+Read more about changeset [here](RELEASES.md)
+
 ## Testing with your own project locally
 
 You can test changes to a package of this monorepo in your own project locally by taking the following steps:
