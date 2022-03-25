@@ -1,5 +1,7 @@
 import React from 'react';
-// import { GetStaticProps } from 'next';
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import type { RichTextProps } from '../components/ContentfulRichText';
+
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
@@ -17,9 +19,38 @@ import { getTableOfContents } from '../utils/mdx-utils';
 import type { PageContentProps } from '../components/PageContent';
 import { PageContent } from '../components/PageContent';
 import { getAllArticles, getSingleArticleBySlug } from '../lib/api';
+import slugger from 'github-slugger';
+import type { FrontMatter } from '../types';
+import type { HeadingType } from '../components/PageContent/TableOfContent';
 
 interface ComponentPageProps extends PageContentProps {
   propsMetadata: ReturnType<typeof getPropsMetadata>;
+  frontMatter: FrontMatter,
+  headings: HeadingType[],
+  source: {
+    mainContent?: MDXRemoteSerializeResult;
+    shortIntro?: MDXRemoteSerializeResult;
+    richTextBody?: RichTextProps['document'];
+  }
+}
+
+function ToC(content) {
+  let tableOfContents = [];
+  const headings =  content.filter((node) => node.nodeType.includes('heading'));
+  if (headings.length) {
+    tableOfContents = headings.map((heading) => {
+      const headingType = heading.nodeType === 'heading-2' ? 'h2' : 'h3'
+      const headingText = heading.content[0].value;
+      const headingLink = slugger.slug(headingText, false);
+
+      return {
+        text: headingText,
+        id: headingLink,
+        level: headingType,
+      };
+    })
+  }
+  return tableOfContents;
 }
 
 export default function ComponentPage({
@@ -125,9 +156,10 @@ export const getStaticProps = async (context: {
       );
     }
 
+    // console.log('mainContentText', contentfulResult.body.json.content)
     return {
       props: {
-        headings: [],
+        headings: ToC(contentfulResult.body.json.content),
         frontMatter: {
           title: contentfulResult.title,
         },
