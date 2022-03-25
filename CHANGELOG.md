@@ -8,6 +8,20 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 25-03-2022
+
+**F36 Accordion** `v4.4.0`
+
+- Controlled behaviour for Accordion component. Refactored Menu component.
+
+**F36 Core** `v4.4.0`
+
+- Controlled behaviour for Accordion component. Refactored Menu component.
+
+**F36 Menu** `v4.4.0`
+
+- Controlled behaviour for Accordion component. Refactored Menu component.
+
 ## 24-03-2022
 
 **F36 Autocomplete** `v4.3.10`
