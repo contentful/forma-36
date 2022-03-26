@@ -3,6 +3,7 @@ sys {
   id
 }
 title
+subtitle
 slug
 metaDescription
 body {

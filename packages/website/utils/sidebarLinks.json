@@ -284,14 +284,6 @@
   ],
   "intro": [
     {
-      "title": "Contributing to Forma 36",
-      "slug": "/contributing"
-    },
-    {
-      "title": "Getting started",
-      "slug": "/getting-started"
-    },
-    {
       "title": "What's new",
       "slug": "/whats-new"
     }

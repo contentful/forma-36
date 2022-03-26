@@ -8,11 +8,16 @@ import {
   Table,
   TextLink,
 } from '@contentful/f36-components';
-import { BLOCKS, Block, INLINES } from '@contentful/rich-text-types';
+import { BLOCKS, Block, INLINES, MARKS } from '@contentful/rich-text-types';
 import type { RenderNode } from '@contentful/rich-text-react-renderer';
+import { StaticSource } from '../LiveEditor/StaticSource';
 
 export const defaultRenderNode: RenderNode = {
-  [BLOCKS.PARAGRAPH]: (_node, children) => <Paragraph>{children}</Paragraph>,
+  [BLOCKS.PARAGRAPH]: (_node, children) => {
+    return (
+      <Paragraph>{children}</Paragraph>
+    )
+  },
   [BLOCKS.HEADING_2]: (_node, children) => (
     <Heading as="h2" marginTop="spacing2Xl">
       {children}
@@ -40,6 +45,7 @@ export const defaultRenderNode: RenderNode = {
   [INLINES.HYPERLINK]: (node, children) => {
     return <TextLink href={node.data.uri}>{children}</TextLink>;
   },
+  [MARKS.CODE]: () => <div>this is code</div>,
   [BLOCKS.TABLE]: (node) => {
     // The first element in the array is always the table’s header
     const [headerRow, ...bodyRows] = node.content as Block[];
@@ -70,3 +76,8 @@ export const defaultRenderNode: RenderNode = {
     );
   },
 };
+
+// TODO style code to use StaticSource
+export const defaultRenderMarks = {
+  [MARKS.CODE]: (_node, children) => <StaticSource>text</StaticSource>
+}

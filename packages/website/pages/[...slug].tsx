@@ -156,7 +156,6 @@ export const getStaticProps = async (context: {
       );
     }
 
-    // console.log('mainContentText', contentfulResult.body.json.content)
     return {
       props: {
         headings: ToC(contentfulResult.body.json.content),
@@ -164,6 +163,7 @@ export const getStaticProps = async (context: {
           title: contentfulResult.title,
         },
         source: {
+          contentfulShortIntro: contentfulResult.subtitle,
           richTextBody: contentfulResult.body.json,
         },
       },

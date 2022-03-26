@@ -5,7 +5,7 @@ import {
   RenderNode,
 } from '@contentful/rich-text-react-renderer';
 
-import { defaultRenderNode } from './defaultRenderNode';
+import { defaultRenderNode, defaultRenderMarks } from './defaultRenderNode';
 
 export interface RichTextProps {
   /** Object returned by the CDA for rich text fields in a content entry */
@@ -22,6 +22,7 @@ export function RichText({ document, customRenderNode }: RichTextProps) {
     <>
       {documentToReactComponents(document, {
         renderNode: { ...defaultRenderNode, ...customRenderNode },
+        renderMark: { ...defaultRenderMarks }
       })}
     </>
   );

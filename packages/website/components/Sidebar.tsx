@@ -104,12 +104,12 @@ export function Sidebar({
             links={[
               {
                 title: 'Getting started',
-                slug: '/getting-started',
+                slug: '/introduction/getting-started',
                 type: 'link',
               },
               {
                 title: 'Contributing to Forma 36',
-                slug: '/contributing',
+                slug: '/introduction//contributing',
                 type: 'link',
               },
               {
