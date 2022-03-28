@@ -123,7 +123,23 @@ export function Sidebar({
           />
           <SidebarSection
             title="Forma 36 version 3"
-            links={sidebarLinks.forma36Version3}
+            links={[
+              {
+                title: 'FAQ',
+                slug: '/introduction/v3-faq',
+                type: 'link',
+              },
+              {
+                title: 'Migration Guide',
+                slug: '/introduction/migration-v3-to-v4',
+                type: 'link',
+              },
+              {
+                title: 'Version 3 maintenance plan',
+                slug: '/introduction/maintenance-plan',
+                type: 'link',
+              },
+            ]}
             currentPage={currentPage}
           />
         </>
