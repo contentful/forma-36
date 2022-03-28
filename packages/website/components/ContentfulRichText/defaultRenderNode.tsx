@@ -10,7 +10,6 @@ import {
 } from '@contentful/f36-components';
 import { BLOCKS, Block, INLINES, MARKS } from '@contentful/rich-text-types';
 import type { RenderNode } from '@contentful/rich-text-react-renderer';
-import { StaticSource } from '../LiveEditor/StaticSource';
 
 export const defaultRenderNode: RenderNode = {
   [BLOCKS.PARAGRAPH]: (_node, children) => {
@@ -42,6 +41,9 @@ export const defaultRenderNode: RenderNode = {
       <List.Item>{children}</List.Item>
     </List>
   ),
+  [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
+    console.log('this is where we will display code blocks entries', node)
+  },
   [INLINES.HYPERLINK]: (node, children) => {
     return <TextLink href={node.data.uri}>{children}</TextLink>;
   },
@@ -76,13 +78,3 @@ export const defaultRenderNode: RenderNode = {
     );
   },
 };
-
-// TODO style code to use StaticSource
-export const defaultRenderMarks = {
-  [MARKS.CODE]: (node) => {
-    return (
-      
-     <div>this is code</div>
-    )
-  }
-}
