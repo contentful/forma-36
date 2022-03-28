@@ -25,32 +25,13 @@ import type { HeadingType } from '../components/PageContent/TableOfContent';
 
 interface ComponentPageProps extends PageContentProps {
   propsMetadata: ReturnType<typeof getPropsMetadata>;
-  frontMatter: FrontMatter,
-  headings: HeadingType[],
+  frontMatter: FrontMatter;
+  headings: HeadingType[];
   source: {
     mainContent?: MDXRemoteSerializeResult;
     shortIntro?: MDXRemoteSerializeResult;
     richTextBody?: RichTextProps['document'];
-  }
-}
-
-function ToC(content) {
-  let tableOfContents = [];
-  const headings =  content.filter((node) => node.nodeType.includes('heading'));
-  if (headings.length) {
-    tableOfContents = headings.map((heading) => {
-      const headingType = heading.nodeType === 'heading-2' ? 'h2' : 'h3'
-      const headingText = heading.content[0].value;
-      const headingLink = slugger.slug(headingText, false);
-
-      return {
-        text: headingText,
-        id: headingLink,
-        level: headingType,
-      };
-    })
-  }
-  return tableOfContents;
+  };
 }
 
 export default function ComponentPage({
@@ -82,6 +63,25 @@ export default function ComponentPage({
       </PropsContextProvider>
     </>
   );
+}
+
+function getToC(content) {
+  let tableOfContents = [];
+  const headings = content.filter((node) => node.nodeType.includes('heading'));
+  if (headings.length) {
+    tableOfContents = headings.map((heading) => {
+      const headingType = heading.nodeType === 'heading-2' ? 'h2' : 'h3';
+      const headingText = heading.content[0].value;
+      const headingLink = slugger.slug(headingText, false);
+
+      return {
+        text: headingText,
+        id: headingLink,
+        level: headingType,
+      };
+    });
+  }
+  return tableOfContents;
 }
 
 // [WIP]: I started adding stronger types to this function but I could not finish
@@ -158,7 +158,7 @@ export const getStaticProps = async (context: {
 
     return {
       props: {
-        headings: ToC(contentfulResult.body.json.content),
+        headings: getToC(contentfulResult.body.json.content),
         frontMatter: {
           title: contentfulResult.title,
         },
