@@ -79,5 +79,10 @@ export const defaultRenderNode: RenderNode = {
 
 // TODO style code to use StaticSource
 export const defaultRenderMarks = {
-  [MARKS.CODE]: (_node, children) => <StaticSource>text</StaticSource>
+  [MARKS.CODE]: (node) => {
+    return (
+      
+     <div>this is code</div>
+    )
+  }
 }

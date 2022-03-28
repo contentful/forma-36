@@ -15,7 +15,7 @@ const styles = {
   }),
 };
 
-export function StaticSource(props: { children: string; className?: string }) {
+export function StaticSource(props: { children: string; className?: string, language?: string}) {
   return (
     <Highlight
       {...HighlightDefaultProps}
