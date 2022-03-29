@@ -80,7 +80,11 @@ export function PageContent({
     >
       <PageContentHeader title={title} status={status}>
         {source.shortIntro && <MdxRenderer source={source.shortIntro} />}
-        {source.contentfulShortIntro && <Text as="p" fontSize="fontSizeL" lineHeight="lineHeightL">{source.contentfulShortIntro}</Text>}
+        {source.contentfulShortIntro && (
+          <Text as="p" fontSize="fontSizeL" lineHeight="lineHeightL">
+            {source.contentfulShortIntro}
+          </Text>
+        )}
       </PageContentHeader>
 
       <Flex flexDirection="column" className={styles.content}>
@@ -93,7 +97,12 @@ export function PageContent({
          */}
         <article className={styles.article}>
           {source.mainContent && <MdxRenderer source={source.mainContent} />}
-          {source.richTextBody && <RichText document={source.richTextBody} links={source.richTextLinks}/>}
+          {source.richTextBody && (
+            <RichText
+              document={source.richTextBody}
+              links={source.richTextLinks}
+            />
+          )}
         </article>
         <PageContentFooter github={github} />
       </Flex>

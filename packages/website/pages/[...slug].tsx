@@ -156,7 +156,7 @@ export const getStaticProps = async (context: {
           context.params?.slug,
       );
     }
-  
+
     return {
       props: {
         headings: getToC(contentfulResult.body.json.content),

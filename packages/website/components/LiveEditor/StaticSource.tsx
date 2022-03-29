@@ -15,14 +15,18 @@ const styles = {
   }),
 };
 
-export function StaticSource(props: { children: string; className?: string, language?: string}) {
+export function StaticSource(props: {
+  children: string;
+  className?: string;
+  language?: string;
+}) {
   return (
     <Highlight
       {...HighlightDefaultProps}
       theme={theme}
       code={props.children.trim()}
       language={
-        ((props.className || '').replace('language-', '') as unknown) as any
+        (props.className || '').replace('language-', '') as unknown as any
       }
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (

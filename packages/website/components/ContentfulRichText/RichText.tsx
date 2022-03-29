@@ -1,8 +1,6 @@
 import React from 'react';
 import { Document } from '@contentful/rich-text-types';
-import {
-  documentToReactComponents
-} from '@contentful/rich-text-react-renderer';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import { getRenderNode } from './defaultRenderNode';
 
@@ -13,7 +11,6 @@ export interface RichTextProps {
 }
 
 export function RichText({ document, links }: RichTextProps) {
-  
   return (
     <>
       {documentToReactComponents(document, {

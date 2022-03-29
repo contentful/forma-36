@@ -29,7 +29,7 @@ export function getRenderNode(links): RenderNode {
     },
     [BLOCKS.HEADING_2]: (node, children) => {
       const id = getHeadingId(node);
-  
+
       return (
         <Heading id={id} as="h2" marginTop="spacing2Xl">
           {children}
@@ -38,7 +38,7 @@ export function getRenderNode(links): RenderNode {
     },
     [BLOCKS.HEADING_3]: (node, children) => {
       const id = getHeadingId(node);
-  
+
       return (
         <Subheading id={id} as="h3" marginTop="spacingXl">
           {children}
@@ -76,7 +76,7 @@ export function getRenderNode(links): RenderNode {
     ),
     [BLOCKS.EMBEDDED_ENTRY]: (node) => {
       const entry = entryMap.get(node.data.target.sys.id);
-      return <StaticSource children={entry.code} className="language-jsx"/>;
+      return <StaticSource children={entry.code} className="language-jsx" />;
     },
     [INLINES.HYPERLINK]: (node, children) => {
       return <TextLink href={node.data.uri}>{children}</TextLink>;
@@ -84,7 +84,7 @@ export function getRenderNode(links): RenderNode {
     [BLOCKS.TABLE]: (node) => {
       // The first element in the array is always the table’s header
       const [headerRow, ...bodyRows] = node.content as any[];
-  
+
       return (
         <Table>
           <Table.Head>
