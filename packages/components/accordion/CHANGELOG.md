@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.4.0
+
+### Minor Changes
+
+- [#1971](https://github.com/contentful/forma-36/pull/1971) [`a9459709`](https://github.com/contentful/forma-36/commit/a945970959bc7e9478bec822bb775a513c6aa0fe) Thanks [@bgutsol](https://github.com/bgutsol)! - Controlled behaviour for Accordion component. Refactored Menu component.
+
+### Patch Changes
+
+- Updated dependencies [[`a9459709`](https://github.com/contentful/forma-36/commit/a945970959bc7e9478bec822bb775a513c6aa0fe)]:
+  - @contentful/f36-core@4.4.0
+  - @contentful/f36-collapse@4.4.0
+  - @contentful/f36-icons@4.4.0
+  - @contentful/f36-typography@4.4.0
+
 ## 4.3.11
 
 ### Patch Changes
