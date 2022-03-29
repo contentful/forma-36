@@ -58,6 +58,7 @@ export interface PageContentProps {
     mainContent?: MDXRemoteSerializeResult;
     shortIntro?: MDXRemoteSerializeResult;
     richTextBody?: RichTextProps['document'];
+    richTextLinks?: RichTextProps['links'];
     contentfulShortIntro?: string;
   };
 }
@@ -92,7 +93,7 @@ export function PageContent({
          */}
         <article className={styles.article}>
           {source.mainContent && <MdxRenderer source={source.mainContent} />}
-          {source.richTextBody && <RichText document={source.richTextBody} />}
+          {source.richTextBody && <RichText document={source.richTextBody} links={source.richTextLinks}/>}
         </article>
         <PageContentFooter github={github} />
       </Flex>

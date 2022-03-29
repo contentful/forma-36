@@ -31,6 +31,7 @@ interface ComponentPageProps extends PageContentProps {
     mainContent?: MDXRemoteSerializeResult;
     shortIntro?: MDXRemoteSerializeResult;
     richTextBody?: RichTextProps['document'];
+    richTextLinks?: RichTextProps['links'];
   };
 }
 
@@ -155,7 +156,7 @@ export const getStaticProps = async (context: {
           context.params?.slug,
       );
     }
-
+  
     return {
       props: {
         headings: getToC(contentfulResult.body.json.content),
@@ -165,6 +166,7 @@ export const getStaticProps = async (context: {
         source: {
           contentfulShortIntro: contentfulResult.subtitle,
           richTextBody: contentfulResult.body.json,
+          richTextLinks: contentfulResult.body.links,
         },
       },
     };
@@ -174,7 +176,6 @@ export const getStaticProps = async (context: {
 export async function getStaticPaths() {
   const mdxPaths = await getMdxPaths();
   const allArticles = await getAllArticles();
-
   const contentfulPaths = allArticles.map((item) => {
     const slug = [item.kbAppCategory.slug, item.slug];
     return {

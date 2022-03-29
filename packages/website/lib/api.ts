@@ -8,6 +8,20 @@ slug
 metaDescription
 body {
   json
+  links {
+    entries {
+      block {
+        sys {
+          id
+        }
+        __typename
+        ... on CodeBlock {
+          name
+          code
+        }
+      }
+    }
+  }
 }
 kbAppCategory {
   sys {

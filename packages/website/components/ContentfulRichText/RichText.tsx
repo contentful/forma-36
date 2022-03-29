@@ -1,27 +1,23 @@
 import React from 'react';
 import { Document } from '@contentful/rich-text-types';
 import {
-  documentToReactComponents,
-  RenderNode,
+  documentToReactComponents
 } from '@contentful/rich-text-react-renderer';
 
-import { defaultRenderNode } from './defaultRenderNode';
+import { getRenderNode } from './defaultRenderNode';
 
 export interface RichTextProps {
   /** Object returned by the CDA for rich text fields in a content entry */
   document: Document;
-  /**
-   * A map that helps customise the way a rich text will be rendered in react.
-   * Each property is a function (node, children) => ReactNode
-   * */
-  customRenderNode?: RenderNode;
+  links?: any;
 }
 
-export function RichText({ document, customRenderNode }: RichTextProps) {
+export function RichText({ document, links }: RichTextProps) {
+  
   return (
     <>
       {documentToReactComponents(document, {
-        renderNode: { ...defaultRenderNode, ...customRenderNode },
+        renderNode: getRenderNode(links),
       })}
     </>
   );
