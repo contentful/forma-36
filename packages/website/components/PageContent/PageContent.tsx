@@ -9,7 +9,7 @@ import {
   getGridStyles,
   SCREEN_BREAKPOINT_LARGE,
 } from '../../utils/getGridStyles';
-import { TableOfContent, HeadingType } from './TableOfContent';
+import { TableOfContent, TableOfContentProps } from './TableOfContent';
 import { MdxRenderer } from '../MdxRenderer';
 import { PageContentHeader } from './PageContentHeader';
 import { PageContentFooter } from './PageContentFooter';
@@ -52,7 +52,7 @@ const styles = {
 };
 
 export interface PageContentProps {
-  headings: HeadingType[];
+  headings: TableOfContentProps['headings'];
   frontMatter: FrontMatter;
   source: {
     mainContent?: MDXRemoteSerializeResult;
@@ -70,6 +70,7 @@ export function PageContent({
 }: PageContentProps) {
   const gridStyles = getGridStyles();
   const { title, github, status } = frontMatter;
+
   return (
     <div
       className={cx(

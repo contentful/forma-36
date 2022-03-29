@@ -3,6 +3,7 @@ import { css, cx } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { List, TextLink, Subheading } from '@contentful/f36-components';
 
+import type { HeadingType } from '../../utils/mdx-utils';
 import { useScrollSpy } from '../../utils/use-scrollspy';
 
 const styles = {
@@ -23,13 +24,7 @@ const styles = {
   }),
 };
 
-export interface HeadingType {
-  level: 'h2' | 'h3';
-  text: string;
-  id: string;
-}
-
-interface TableOfContentProps {
+export interface TableOfContentProps {
   headings: HeadingType[];
 }
 

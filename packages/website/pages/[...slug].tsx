@@ -1,6 +1,6 @@
 import React from 'react';
-import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import type { RichTextProps } from '../components/ContentfulRichText';
+import type { NextPage } from 'next';
+import slugger from 'github-slugger';
 
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
@@ -14,33 +14,22 @@ import { PropsContextProvider } from '@contentful/f36-docs-utils';
 
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 import { getPropsMetadata, transformToc } from '../utils/propsMeta';
+import { getTableOfContents, HeadingType } from '../utils/mdx-utils';
 import { FrontMatterContextProvider } from '../utils/frontMatterContext';
-import { getTableOfContents } from '../utils/mdx-utils';
 import type { PageContentProps } from '../components/PageContent';
 import { PageContent } from '../components/PageContent';
 import { getAllArticles, getSingleArticleBySlug } from '../lib/api';
-import slugger from 'github-slugger';
-import type { FrontMatter } from '../types';
-import type { HeadingType } from '../components/PageContent/TableOfContent';
 
 interface ComponentPageProps extends PageContentProps {
   propsMetadata: ReturnType<typeof getPropsMetadata>;
-  frontMatter: FrontMatter;
-  headings: HeadingType[];
-  source: {
-    mainContent?: MDXRemoteSerializeResult;
-    shortIntro?: MDXRemoteSerializeResult;
-    richTextBody?: RichTextProps['document'];
-    richTextLinks?: RichTextProps['links'];
-  };
 }
 
-export default function ComponentPage({
+const ComponentPage: NextPage<ComponentPageProps> = ({
   frontMatter,
   headings,
   propsMetadata,
   source,
-}: ComponentPageProps) {
+}: ComponentPageProps) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -64,17 +53,25 @@ export default function ComponentPage({
       </PropsContextProvider>
     </>
   );
+};
+
+// TODO: mrege Heading and getToC to getTableOfContents from 'mdx-utils'
+interface Heading {
+  nodeType: string;
+  content: Array<{ value: string }>;
 }
 
 function getToC(content) {
-  let tableOfContents = [];
-  const headings = content.filter((node) => node.nodeType.includes('heading'));
+  let tableOfContents: HeadingType[] = [];
+  const headings: Heading[] = content.filter((node) =>
+    node.nodeType.includes('heading'),
+  );
+
   if (headings.length) {
     tableOfContents = headings.map((heading) => {
       const headingType = heading.nodeType === 'heading-2' ? 'h2' : 'h3';
       const headingText = heading.content[0].value;
       const headingLink = slugger.slug(headingText, false);
-
       return {
         text: headingText,
         id: headingLink,
@@ -82,6 +79,7 @@ function getToC(content) {
       };
     });
   }
+
   return tableOfContents;
 }
 
@@ -98,7 +96,7 @@ export const getStaticProps = async (context: {
       frontMatter: { content, data },
     } = mdxSource;
 
-    let toc = {};
+    let toc: unknown = {};
 
     let shortIntroText = '';
     let mainContentText = content;
@@ -124,7 +122,7 @@ export const getStaticProps = async (context: {
               nav: false,
               headings: ['h1', 'h2', 'h3'],
               customizeTOC: (t) => {
-                toc = transformToc(t) as any;
+                toc = transformToc(t);
                 return false;
               },
             },
@@ -190,3 +188,5 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+
+export default ComponentPage;

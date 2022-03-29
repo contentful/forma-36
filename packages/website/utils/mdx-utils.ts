@@ -1,15 +1,19 @@
 import slugger from 'github-slugger';
 
+export interface HeadingType {
+  level: 'h2' | 'h3';
+  text: string;
+  id: string;
+}
+
 //see https://github.com/hashicorp/next-mdx-remote/issues/53#issuecomment-725906664
 export function getTableOfContents(mdxContent: string) {
   const regexp = new RegExp(/^(### |## )(.*)\n/, 'gm');
 
   const headings = [...mdxContent.matchAll(regexp)];
-  let tableOfContents = [];
+  let tableOfContents: HeadingType[] = [];
 
   if (headings.length) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
     tableOfContents = headings.map((heading) => {
       const headingText = heading[2].trim();
       const headingType = heading[1].trim() === '##' ? 'h2' : 'h3';
