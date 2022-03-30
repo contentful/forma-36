@@ -48,8 +48,8 @@ async function fetchGraphQL(query, preview = false) {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${
           preview
-            ? process.env.NEXT_CONTENTFUL_PREVIEW_ACCESS_TOKEN
-            : process.env.NEXT_CONTENTFUL_ACCESS_TOKEN
+            ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
+            : process.env.CONTENTFUL_ACCESS_TOKEN
         }`,
       },
       body: JSON.stringify({ query }),
