@@ -174,18 +174,14 @@ export const getStaticProps = async (context: {
 export async function getStaticPaths() {
   const mdxPaths = await getMdxPaths();
   const allArticles = await getAllArticles();
-  let contentfulPaths = [];
-
-  if (allArticles) {
-    contentfulPaths = allArticles.map((item) => {
-      const slug = [item.kbAppCategory.slug, item.slug];
-      return {
-        params: {
-          slug,
-        },
-      };
-    });
-  }
+  const contentfulPaths = allArticles.map((item) => {
+    const slug = [item.kbAppCategory.slug, item.slug];
+    return {
+      params: {
+        slug,
+      },
+    };
+  });
 
   return {
     paths: [...mdxPaths, ...contentfulPaths],
