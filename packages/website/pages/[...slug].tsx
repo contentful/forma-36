@@ -1,7 +1,6 @@
 import React from 'react';
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
-import slugger from 'github-slugger';
 
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
@@ -15,7 +14,7 @@ import { PropsContextProvider } from '@contentful/f36-docs-utils';
 
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 import { getPropsMetadata, transformToc } from '../utils/propsMeta';
-import { getTableOfContents, HeadingType } from '../utils/mdx-utils';
+import { getToCFromMdx, getToCFromContentful } from '../utils/tableOfContents';
 import { FrontMatterContextProvider } from '../utils/frontMatterContext';
 import type { PageContentProps } from '../components/PageContent';
 import { PageContent } from '../components/PageContent';
@@ -55,34 +54,6 @@ const ComponentPage: NextPage<ComponentPageProps> = ({
     </>
   );
 };
-
-// TODO: mrege Heading and getToC to getTableOfContents from 'mdx-utils'
-interface Heading {
-  nodeType: string;
-  content: Array<{ value: string }>;
-}
-
-function getToC(content) {
-  let tableOfContents: HeadingType[] = [];
-  const headings: Heading[] = content.filter((node) =>
-    node.nodeType.includes('heading'),
-  );
-
-  if (headings.length) {
-    tableOfContents = headings.map((heading) => {
-      const headingType = heading.nodeType === 'heading-2' ? 'h2' : 'h3';
-      const headingText = heading.content[0].value;
-      const headingLink = slugger.slug(headingText, false);
-      return {
-        text: headingText,
-        id: headingLink,
-        level: headingType,
-      };
-    });
-  }
-
-  return tableOfContents;
-}
 
 interface Params extends ParsedUrlQuery {
   slug: string[];
@@ -142,7 +113,7 @@ export const getStaticProps: GetStaticProps<
       props: {
         source: { shortIntro, mainContent },
         toc,
-        headings: getTableOfContents(mdxSource.content),
+        headings: getToCFromMdx(mdxSource.content),
         frontMatter: data as ComponentPageProps['frontMatter'],
         propsMetadata,
       },
@@ -160,7 +131,7 @@ export const getStaticProps: GetStaticProps<
 
     return {
       props: {
-        headings: getToC(contentfulResult.body.json.content),
+        headings: getToCFromContentful(contentfulResult.body.json.content),
         frontMatter: {
           title: contentfulResult.title,
         },

@@ -3,7 +3,7 @@ import { css, cx } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { List, TextLink, Subheading } from '@contentful/f36-components';
 
-import type { HeadingType } from '../../utils/mdx-utils';
+import type { HeadingType } from '../../utils/tableOfContents';
 import { useScrollSpy } from '../../utils/use-scrollspy';
 
 const styles = {
