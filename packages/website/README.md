@@ -29,7 +29,7 @@ For example, if you have a page with the slug `/introduction/getting-started`, t
   getting-started.mdx
 ```
 
-if you have a page with the slug `/guidelines/copy/grammar-and-rules`, the structure will looke like:
+if you have a page with the slug `/guidelines/grammar-and-rules`, the structure will looke like:
 
 ```
 /content
