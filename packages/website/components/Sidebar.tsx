@@ -114,7 +114,8 @@ export function Sidebar({
               },
               {
                 title: 'App Framework',
-                slug: 'https://www.contentful.com/developers/docs/extensibility/app-framework/',
+                slug:
+                  'https://www.contentful.com/developers/docs/extensibility/app-framework/',
                 type: 'link',
               },
             ]}
