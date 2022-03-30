@@ -68,8 +68,10 @@ function Home() {
         <Paragraph>We appreciate your contributions</Paragraph>
         <Paragraph>
           Check our{' '}
-          <Link href="/contributing" passHref>
-            <TextLink href="/contributing">contribution guide</TextLink>
+          <Link href="/introduction/contributing" passHref>
+            <TextLink href="/introduction/contributing">
+              contribution guide
+            </TextLink>
           </Link>{' '}
           and learn how to do it
         </Paragraph>
