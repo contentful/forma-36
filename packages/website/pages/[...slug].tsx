@@ -174,6 +174,8 @@ export const getStaticProps = async (context: {
 export async function getStaticPaths() {
   const mdxPaths = await getMdxPaths();
   const allArticles = await getAllArticles();
+
+  // Getting all the paths based on the data from Contentful
   const contentfulPaths = allArticles.map((item) => {
     const slug = [item.kbAppCategory.slug, item.slug];
     return {
