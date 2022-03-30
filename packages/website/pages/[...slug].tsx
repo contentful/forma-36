@@ -1,5 +1,6 @@
 import React from 'react';
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
+import type { ParsedUrlQuery } from 'querystring';
 import slugger from 'github-slugger';
 
 import { useRouter } from 'next/router';
@@ -21,13 +22,13 @@ import { PageContent } from '../components/PageContent';
 import { getAllArticles, getSingleArticleBySlug } from '../lib/api';
 
 interface ComponentPageProps extends PageContentProps {
-  propsMetadata: ReturnType<typeof getPropsMetadata>;
+  propsMetadata?: ReturnType<typeof getPropsMetadata>;
 }
 
 const ComponentPage: NextPage<ComponentPageProps> = ({
   frontMatter,
   headings,
-  propsMetadata,
+  propsMetadata = {},
   source,
 }: ComponentPageProps) => {
   const router = useRouter();
@@ -83,12 +84,14 @@ function getToC(content) {
   return tableOfContents;
 }
 
-// [WIP]: I started adding stronger types to this function but I could not finish
-// that's why I renamed some stuff here, I was trying to follow this:
-// https://nextjs.org/docs/basic-features/typescript#static-generation-and-server-side-rendering
-export const getStaticProps = async (context: {
-  params: { slug: string[] };
-}) => {
+interface Params extends ParsedUrlQuery {
+  slug: string[];
+}
+
+export const getStaticProps: GetStaticProps<
+  ComponentPageProps,
+  Params
+> = async (context) => {
   const mdxSource = await getMdxSourceBySlug(context.params?.slug ?? []);
 
   if (mdxSource) {
@@ -140,7 +143,7 @@ export const getStaticProps = async (context: {
         source: { shortIntro, mainContent },
         toc,
         headings: getTableOfContents(mdxSource.content),
-        frontMatter: data,
+        frontMatter: data as ComponentPageProps['frontMatter'],
         propsMetadata,
       },
     };
@@ -171,7 +174,7 @@ export const getStaticProps = async (context: {
   }
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const mdxPaths = await getMdxPaths();
   const allArticles = await getAllArticles();
 
@@ -189,6 +192,6 @@ export async function getStaticPaths() {
     paths: [...mdxPaths, ...contentfulPaths],
     fallback: false,
   };
-}
+};
 
 export default ComponentPage;
