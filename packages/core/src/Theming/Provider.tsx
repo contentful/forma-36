@@ -11,7 +11,7 @@ export function createTheme(
 ): Theme {
   const themeKeys = Object.keys(baseTheme);
 
-  return themeKeys.reduce((accumulator: any, key: keyof Theme) => {
+  return themeKeys.reduce((acc, key) => {
     const defaultValue = baseTheme[key];
     const value = theme[key];
 
@@ -20,21 +20,25 @@ export function createTheme(
       typeof value === 'string' ||
       Array.isArray(defaultValue)
     ) {
-      accumulator[key] = value == null ? defaultValue : value;
+      return { ...acc, [key]: value ?? defaultValue };
     } else {
-      accumulator[key] = {
-        ...baseTheme[key],
-        ...theme[key],
+      return {
+        ...acc,
+        [key]: {
+          ...baseTheme[key],
+          ...theme[key],
+        },
       };
     }
 
-    return accumulator;
-  }, {});
+    return acc;
+  }, {} as Theme);
 }
 
 export const Default = createTheme(
   {},
   {
+    themeName: 'Default',
     colors: {
       primary: tokens.blue500,
       positive: tokens.green500,
@@ -111,10 +115,15 @@ export const Default = createTheme(
       color: tokens.blue600,
       hoverColor: tokens.blue700,
     },
+    textLinkSecondary: {
+      color: tokens.gray600,
+      hoverColor: tokens.gray700,
+    },
   },
 );
 
-export const Dark = createTheme({
+export const Dark: Theme = createTheme({
+  themeName: 'Dark',
   colors: {
     primary: tokens.blue300,
     positive: tokens.green300,
@@ -187,6 +196,10 @@ export const Dark = createTheme({
   textLinkPrimary: {
     color: tokens.blue400,
     hoverColor: tokens.blue500,
+  },
+  textLinkSecondary: {
+    color: tokens.gray400,
+    hoverColor: tokens.gray500,
   },
 });
 

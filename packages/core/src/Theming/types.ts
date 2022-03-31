@@ -9,6 +9,7 @@ interface buttonType {
 }
 
 export interface Theme {
+  themeName: string;
   colors: {
     primary: string;
     positive: string;
@@ -60,6 +61,10 @@ export interface Theme {
   };
 
   textLinkPrimary: {
+    color: string;
+    hoverColor: string;
+  };
+  textLinkSecondary: {
     color: string;
     hoverColor: string;
   };

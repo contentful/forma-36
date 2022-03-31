@@ -5,7 +5,7 @@ import { List, TextLink, Subheading } from '@contentful/f36-components';
 
 import { useScrollSpy } from '../../utils/use-scrollspy';
 
-const styles = {
+const getToCStyles = (isDarkMode) => ({
   list: css({
     listStyle: 'none',
     paddingLeft: '0',
@@ -14,14 +14,14 @@ const styles = {
     marginBottom: tokens.spacingXs,
   }),
   sidebarNavItemActive: css({
-    color: tokens.blue700,
+    color: isDarkMode ? tokens.blue500 : tokens.blue700,
     fontWeight: tokens.fontWeightDemiBold,
     textDecoration: 'underline',
   }),
   secondLevelMargin: css({
     marginLeft: tokens.spacingM,
   }),
-};
+});
 
 export interface HeadingType {
   level: 'h2' | 'h3';
@@ -31,9 +31,15 @@ export interface HeadingType {
 
 interface TableOfContentProps {
   headings: HeadingType[];
+  isDarkMode?: boolean;
 }
 
-export function TableOfContent({ headings }: TableOfContentProps) {
+export function TableOfContent({
+  headings,
+  isDarkMode = false,
+}: TableOfContentProps) {
+  console.log({ isDarkMode });
+  const tocStyles = getToCStyles(isDarkMode);
   const activeId = useScrollSpy(
     headings.map(({ id }) => `[id="${id}"]`),
     {
@@ -47,15 +53,15 @@ export function TableOfContent({ headings }: TableOfContentProps) {
         On this page
       </Subheading>
 
-      <List className={styles.list}>
+      <List className={tocStyles.list}>
         {headings.map(({ id, text, level }) => (
-          <List.Item key={id} title={text} className={styles.listItem}>
+          <List.Item key={id} title={text} className={tocStyles.listItem}>
             <TextLink
               href={`#${id}`}
               aria-current={id === activeId ? 'location' : undefined}
               className={cx({
-                [styles.secondLevelMargin]: level === 'h3',
-                [styles.sidebarNavItemActive]: id === activeId,
+                [tocStyles.secondLevelMargin]: level === 'h3',
+                [tocStyles.sidebarNavItemActive]: id === activeId,
               })}
               variant="secondary"
             >
