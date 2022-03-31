@@ -2,6 +2,7 @@ import React from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { GlobalStyles as FormaGlobalStyles } from '@contentful/f36-components';
+import { Forma36Provider } from '@contentful/f36-core';
 import { GlobalStyles } from '../components/GlobalStyles';
 import '../resources/css/sandpack.css';
 import 'docsearch.js/dist/cdn/docsearch.min.css';
@@ -10,7 +11,7 @@ import { Layout } from '../components/Layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <Forma36Provider>
       <FormaGlobalStyles />
       <GlobalStyles />
       <Head>
@@ -34,7 +35,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </>
+    </Forma36Provider>
   );
 }
 

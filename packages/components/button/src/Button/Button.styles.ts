@@ -20,13 +20,19 @@ const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
   }
 };
 
-const variantToStyles = (variant: ButtonVariant): CSSObject => {
+const variantToStyles = ({
+  theme,
+  variant,
+}: {
+  theme: any;
+  variant: ButtonVariant;
+}): CSSObject => {
   switch (variant) {
     case 'primary':
       return {
         color: tokens.colorWhite,
-        backgroundColor: tokens.blue500,
-        borderColor: tokens.blue500,
+        backgroundColor: theme.colors.primary,
+        borderColor: theme.colors.primary,
         '&:hover': {
           backgroundColor: tokens.blue600,
           borderColor: tokens.blue600,
@@ -189,7 +195,7 @@ const getButtonIconStyle = ({ hasChildren, variant }) => {
   ]);
 };
 
-export const getStyles = () => ({
+export const getStyles = ({ theme }: { theme: any }) => ({
   button: ({
     variant,
     size,
@@ -218,7 +224,7 @@ export const getStyles = () => ({
       transition: `background ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault},
         opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault},
         border-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
-      ...variantToStyles(variant),
+      ...variantToStyles({ theme, variant }),
       ...sizeToStyles(size),
       ...(isActive
         ? {
