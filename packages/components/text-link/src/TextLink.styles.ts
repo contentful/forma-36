@@ -15,9 +15,9 @@ const variantToStyles = (variant: TextLinkVariant, theme: Theme) => {
       };
     case 'secondary':
       return {
-        color: tokens.gray600,
+        color: theme.textLinkSecondary.color,
         '&:hover, &:focus': {
-          color: tokens.gray700,
+          color: theme.textLinkSecondary.hoverColor,
         },
       };
     case 'positive':
