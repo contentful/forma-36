@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { css } from '@emotion/core';
 
+import { Forma36Context, Dark } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
 import { Global } from '@emotion/core';
 
 export const GlobalStyles = () => {
+  const { theme } = useContext(Forma36Context);
+
   return (
     <Global
       styles={css`
@@ -26,7 +29,7 @@ export const GlobalStyles = () => {
         }
 
         body {
-          color: ${tokens.gray800};
+          /* color: ${tokens.gray800}; */
           font-family: ${tokens.fontStackPrimary};
           font-size: ${tokens.fontSizeM};
           line-height: ${tokens.lineHeightM};
@@ -37,19 +40,21 @@ export const GlobalStyles = () => {
           width: 12px;
         }
         body *::-webkit-scrollbar-track {
-          background: ${tokens.colorWhite};
+          background: ${theme === Dark ? tokens.gray900 : tokens.colorWhite};
         }
         body *::-webkit-scrollbar-thumb {
-          background-color: ${tokens.gray400};
+          background-color: ${theme === Dark ? tokens.gray700 : tokens.gray400};
           border-radius: 6px;
-          border: 3px solid ${tokens.colorWhite};
+          border: 3px solid
+            ${theme === Dark ? tokens.gray900 : tokens.colorWhite};
         }
 
         code {
           font-family: ${tokens.fontStackMonospace};
           white-space: nowrap;
           font-weight: ${tokens.fontWeightMedium};
-          background-color: ${tokens.gray200};
+          color: ${theme === Dark ? tokens.colorWhite : tokens.gray900};
+          background-color: ${theme === Dark ? tokens.gray700 : tokens.gray200};
           font-size: 95%;
           margin: 0;
           padding: 0.2em 0.4em;

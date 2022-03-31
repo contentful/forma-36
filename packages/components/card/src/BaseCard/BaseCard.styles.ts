@@ -1,8 +1,9 @@
 import { css } from 'emotion';
 import type { ObjectInterpolation } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import { Theme } from '@contentful/f36-core';
 
-export const getBaseCardStyles = () => {
+export const getBaseCardStyles = ({ theme }: { theme: Theme }) => {
   return {
     contentBody: css({
       gridColumn: 'content',
@@ -22,7 +23,7 @@ export const getBaseCardStyles = () => {
     }),
     root: ({ hasHeader, isHovered, isSelected }) => {
       const styles: ObjectInterpolation<undefined> = {
-        backgroundColor: tokens.colorWhite,
+        backgroundColor: theme.card.backgroundColor,
         borderColor: tokens.gray300,
         borderRadius: tokens.borderRadiusMedium,
         borderStyle: 'solid',

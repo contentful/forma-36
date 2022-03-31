@@ -11,7 +11,7 @@ export function ThemeSwitch() {
 
   return (
     <Flex alignItems="center" marginLeft="spacingM">
-      <Switch onChange={toggleDarkMode}>
+      <Switch isChecked={theme === Dark} onChange={toggleDarkMode}>
         <span aria-label="Dark mode" role="img">
           Dark mode 🌑
         </span>

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { css, cx } from 'emotion';
 import { Grid, Flex, List } from '@contentful/f36-components';
+import { Forma36Context, Dark } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
 import {
@@ -16,31 +17,33 @@ import { TopbarLogo } from './TopbarLogo';
 import { VersionSwitch } from './VersionSwitch';
 import { ThemeSwitch } from './ThemeSwitch';
 
-const styles = {
-  header: css({
-    display: 'grid',
-    backgroundColor: tokens.colorWhite,
-    color: tokens.blue700,
-    height: TOPBAR_HEIGHT,
-    borderBottom: `1px solid ${tokens.gray300}`,
-  }),
-  navList: css({
-    listStyle: 'none',
-    padding: 0,
-    display: 'flex',
-    '> li': {
-      marginRight: tokens.spacingXl,
-      fontSize: tokens.fontSizeL,
-    },
-  }),
-  docSearchContainer: css({
-    '& .algolia-autocomplete': {
-      width: '100%',
-    },
-    [`@media screen and (min-width: ${SCREEN_BREAKPOINT_LARGE})`]: {
-      gridColumnStart: 4,
-    },
-  }),
+const getTopbarStyles = (isDarkMode) => {
+  return {
+    header: css({
+      display: 'grid',
+      backgroundColor: isDarkMode ? tokens.gray900 : tokens.colorWhite,
+      color: tokens.blue700,
+      height: TOPBAR_HEIGHT,
+      borderBottom: `1px solid ${isDarkMode ? tokens.gray700 : tokens.gray300}`,
+    }),
+    navList: css({
+      listStyle: 'none',
+      padding: 0,
+      display: 'flex',
+      '> li': {
+        marginRight: tokens.spacingXl,
+        fontSize: tokens.fontSizeL,
+      },
+    }),
+    docSearchContainer: css({
+      '& .algolia-autocomplete': {
+        width: '100%',
+      },
+      [`@media screen and (min-width: ${SCREEN_BREAKPOINT_LARGE})`]: {
+        gridColumnStart: 4,
+      },
+    }),
+  };
 };
 
 interface TopbarProps {
@@ -48,16 +51,22 @@ interface TopbarProps {
 }
 
 export function Topbar({ activeSection }: TopbarProps) {
+  const { theme } = useContext(Forma36Context);
+  const isDarkMode = theme === Dark;
+  const topbarStyles = getTopbarStyles(isDarkMode);
   const gridStyles = getGridStyles();
 
   return (
     <Grid.Item
       as="header"
       area="topbar"
-      className={cx(styles.header, css({ gridTemplateColumns: 'auto auto' }))}
+      className={cx(
+        topbarStyles.header,
+        css({ gridTemplateColumns: 'auto auto' }),
+      )}
     >
       <Flex paddingLeft="spacingXl">
-        <TopbarLogo />
+        <TopbarLogo isDarkMode={isDarkMode} />
         <VersionSwitch />
         <ThemeSwitch />
       </Flex>
@@ -75,9 +84,10 @@ export function Topbar({ activeSection }: TopbarProps) {
           alignItems="center"
           className={gridStyles.columnStartTwo}
         >
-          <List className={styles.navList}>
+          <List className={topbarStyles.navList}>
             <List.Item>
               <TopbarLink
+                isDarkMode={isDarkMode}
                 href="/"
                 label="Introduction"
                 isActive={activeSection === WEBSITE_SECTION.INTRODUCTION}
@@ -85,6 +95,7 @@ export function Topbar({ activeSection }: TopbarProps) {
             </List.Item>
             <List.Item>
               <TopbarLink
+                isDarkMode={isDarkMode}
                 href="/guidelines/accessibility"
                 label="Guidelines"
                 isActive={activeSection === WEBSITE_SECTION.GUIDELINES}
@@ -92,6 +103,7 @@ export function Topbar({ activeSection }: TopbarProps) {
             </List.Item>
             <List.Item>
               <TopbarLink
+                isDarkMode={isDarkMode}
                 href="/tokens/color-system"
                 label="Tokens"
                 isActive={activeSection === WEBSITE_SECTION.TOKENS}
@@ -99,6 +111,7 @@ export function Topbar({ activeSection }: TopbarProps) {
             </List.Item>
             <List.Item>
               <TopbarLink
+                isDarkMode={isDarkMode}
                 href="/components/accordion"
                 label="Components"
                 isActive={activeSection === WEBSITE_SECTION.COMPONENTS}
@@ -106,6 +119,7 @@ export function Topbar({ activeSection }: TopbarProps) {
             </List.Item>
             <List.Item>
               <TopbarLink
+                isDarkMode={isDarkMode}
                 href="/playground"
                 label="Playground"
                 isActive={activeSection === WEBSITE_SECTION.PLAYGROUND}
@@ -114,7 +128,7 @@ export function Topbar({ activeSection }: TopbarProps) {
           </List>
         </Flex>
 
-        <Flex className={styles.docSearchContainer}>
+        <Flex className={topbarStyles.docSearchContainer}>
           <DocSearch />
         </Flex>
       </Flex>

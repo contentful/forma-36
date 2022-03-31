@@ -2,26 +2,30 @@ import React, { useState } from 'react';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { List, Text } from '@contentful/f36-components';
+import { useTheme } from '@contentful/f36-core';
+import type { Theme } from '@contentful/f36-core';
 
 import { SidebarLink, SidebarSectionButton } from './SidebarLink';
 
-const styles = {
-  list: css({
-    padding: 0,
-    listStyle: 'none',
-    marginBottom: tokens.spacingL,
-    userSelect: 'none',
-  }),
-  sublist: css({
-    padding: 0,
-    listStyle: 'none',
-    userSelect: 'none',
-  }),
-  sectionTitle: css({
-    padding: `${tokens.spacingXs} ${tokens.spacingM} ${tokens.spacingXs} ${tokens.spacingXl}`,
-    letterSpacing: 'initial',
-    paddingLeft: tokens.spacingXl,
-  }),
+const getStyles = ({ theme }: { theme: Theme }) => {
+  return {
+    list: css({
+      padding: 0,
+      listStyle: 'none',
+      marginBottom: tokens.spacingL,
+      userSelect: 'none',
+    }),
+    sublist: css({
+      padding: 0,
+      listStyle: 'none',
+      userSelect: 'none',
+    }),
+    sectionTitle: css({
+      padding: `${tokens.spacingXs} ${tokens.spacingM} ${tokens.spacingXs} ${tokens.spacingXl}`,
+      letterSpacing: 'initial',
+      paddingLeft: tokens.spacingXl,
+    }),
+  };
 };
 
 const isLinkActive = (href, currentPage) =>
@@ -51,6 +55,8 @@ function SidebarSubsection({
   currentPage,
 }: SidebarSubsectionProps) {
   const [isOpen, setIsOpen] = useState(true);
+  const theme: Theme = useTheme();
+  const styles = getStyles({ theme });
 
   return (
     <List className={styles.sublist}>
@@ -94,6 +100,9 @@ export function SidebarSection({
   links = [],
   currentPage = '/',
 }: SidebarSectionProps) {
+  const theme: Theme = useTheme();
+  const styles = getStyles({ theme });
+
   return (
     <List className={styles.list}>
       {title && (

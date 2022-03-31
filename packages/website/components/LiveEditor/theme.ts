@@ -135,3 +135,114 @@ export const theme: PrismTheme = {
     },
   ],
 };
+
+export const paletteDark = {
+  accent: tokens.blue300,
+  activeBackground: tokens.gray600,
+  activeText: tokens.blue300,
+  attrName: tokens.purple300,
+  attrValue: tokens.purple300,
+  backgroundColor: tokens.gray800,
+  color: tokens.gray300,
+  comment: tokens.gray600,
+  definition: tokens.blue400,
+  deleted: tokens.red700,
+  errorBackground: tokens.red200,
+  functionVariable: tokens.blue200,
+  inactiveText: tokens.gray300,
+  inputBackground: tokens.gray800,
+  keyword: tokens.purple300,
+  operator: tokens.gray800,
+  selector: tokens.blue200,
+  string: tokens.green300,
+  tag: tokens.yellow500,
+};
+
+export const themeDark: PrismTheme = {
+  plain: {
+    color: paletteDark.color,
+    backgroundColor: paletteDark.backgroundColor,
+  },
+  styles: [
+    {
+      types: ['prolog'],
+      style: {
+        color: paletteDark.selector,
+      },
+    },
+    {
+      types: ['comment'],
+      style: {
+        color: paletteDark.comment,
+      },
+    },
+    {
+      types: ['builtin', 'changed', 'keyword', 'interpolation-punctuation'],
+      style: {
+        color: paletteDark.keyword,
+      },
+    },
+    {
+      types: ['number', 'inserted'],
+      style: {
+        color: paletteDark.attrValue,
+      },
+    },
+    {
+      types: ['constant'],
+      style: {
+        color: paletteDark.color,
+      },
+    },
+    {
+      types: ['variable'],
+      style: {
+        color: paletteDark.tag,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      types: ['attr-name'],
+      style: {
+        color: paletteDark.attrName,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      types: ['string', 'attr-value', 'template-punctuation'],
+      style: {
+        color: paletteDark.string,
+      },
+    },
+    {
+      types: ['deleted'],
+      style: {
+        color: paletteDark.deleted,
+      },
+    },
+    {
+      types: ['selector'],
+      style: {
+        color: paletteDark.selector,
+      },
+    },
+    {
+      types: ['punctuation', 'operator'],
+      style: {
+        color: paletteDark.color,
+      },
+    },
+    {
+      types: ['function'],
+      style: {
+        color: paletteDark.definition,
+      },
+    },
+    {
+      types: ['class-name'],
+      style: {
+        color: paletteDark.tag,
+      },
+    },
+  ],
+};

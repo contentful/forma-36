@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Global, css, SerializedStyles } from '@emotion/core';
 import tokens from '@contentful/f36-tokens';
 
+import { useTheme, type Theme } from '../Theming';
+
 const cssReset = css`
   /* Remove default margin */
   body,
@@ -87,6 +89,8 @@ export const GlobalStyles = ({
    */
   styles?: SerializedStyles;
 }) => {
+  const theme: Theme = useTheme();
+
   return (
     <Global
       styles={css`
@@ -99,7 +103,8 @@ export const GlobalStyles = ({
         }
 
         body {
-          color: ${tokens.gray800};
+          background-color: ${theme.globalStyles.body.backgroundColor};
+          color: ${theme.globalStyles.body.color};
           font-family: ${tokens.fontStackPrimary};
           font-size: ${tokens.fontSizeM};
           line-height: ${tokens.lineHeightM};
