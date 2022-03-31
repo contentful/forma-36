@@ -28,3 +28,5 @@ export type { ScreenReaderOnlyProps } from './ScreenReaderOnly';
 export * from './hooks';
 export { mergeRefs } from './utils/mergeRefs';
 export { getEntityStatusStyles } from './utils/getEntityStatusStyles';
+
+export * from './Theming';

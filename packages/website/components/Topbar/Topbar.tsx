@@ -14,6 +14,7 @@ import { WEBSITE_SECTION } from '../../hooks/useCurrentLocation';
 import { TopbarLink } from './TopbarLink';
 import { TopbarLogo } from './TopbarLogo';
 import { VersionSwitch } from './VersionSwitch';
+import { ThemeSwitch } from './ThemeSwitch';
 
 const styles = {
   header: css({
@@ -53,11 +54,12 @@ export function Topbar({ activeSection }: TopbarProps) {
     <Grid.Item
       as="header"
       area="topbar"
-      className={cx(styles.header, gridStyles.wrapperColumns)}
+      className={cx(styles.header, css({ gridTemplateColumns: 'auto auto' }))}
     >
       <Flex paddingLeft="spacingXl">
         <TopbarLogo />
         <VersionSwitch />
+        <ThemeSwitch />
       </Flex>
 
       <Flex

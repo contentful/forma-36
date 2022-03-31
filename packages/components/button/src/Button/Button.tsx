@@ -1,6 +1,6 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { Flex, Box } from '@contentful/f36-core';
+import { Flex, Box, useTheme } from '@contentful/f36-core';
 import type {
   PolymorphicProps,
   PolymorphicComponent,
@@ -21,7 +21,8 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
   props: ButtonProps<E>,
   ref: React.Ref<any>,
 ) {
-  const styles = getStyles();
+  const theme = useTheme();
+  const styles = getStyles({ theme });
   const {
     as = BUTTON_DEFAULT_TAG,
     children,
