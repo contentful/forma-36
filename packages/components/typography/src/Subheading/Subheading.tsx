@@ -1,15 +1,27 @@
 import React from 'react';
-import type {
-  CommonProps,
-  MarginProps,
-  PolymorphicComponent,
-  PolymorphicProps,
-  ExpandProps,
+import {
+  useTheme,
+  type CommonProps,
+  type MarginProps,
+  type PolymorphicComponent,
+  type PolymorphicProps,
+  type ExpandProps,
+  type Theme,
 } from '@contentful/f36-core';
+import { css } from 'emotion';
+
 import type { HeadingElement } from '../Heading';
 import { Text } from '../Text';
 
 const SUBHEADING_DEFAULT_TAG = 'h3';
+
+const getStyles = ({ theme }: { theme: Theme }) => {
+  return {
+    subheading: css({
+      color: theme.subheading.color,
+    }),
+  };
+};
 
 export interface SubheadingInternalProps extends CommonProps, MarginProps {
   as?: HeadingElement;
@@ -18,15 +30,18 @@ export interface SubheadingInternalProps extends CommonProps, MarginProps {
 }
 
 export type SubheadingProps<
-  E extends React.ElementType = typeof SUBHEADING_DEFAULT_TAG
+  E extends React.ElementType = typeof SUBHEADING_DEFAULT_TAG,
 > = PolymorphicProps<SubheadingInternalProps, E>;
 
 function _Subheading<
-  E extends React.ElementType = typeof SUBHEADING_DEFAULT_TAG
+  E extends React.ElementType = typeof SUBHEADING_DEFAULT_TAG,
 >(
   { children, testId = 'cf-ui-subheading', ...otherProps }: SubheadingProps<E>,
   ref: React.Ref<any>,
 ) {
+  const theme: Theme = useTheme();
+  const styles = getStyles({ theme });
+
   return (
     <Text
       as={SUBHEADING_DEFAULT_TAG}
@@ -35,7 +50,7 @@ function _Subheading<
       fontSize="fontSizeL"
       lineHeight="lineHeightL"
       fontWeight="fontWeightDemiBold"
-      fontColor="gray900"
+      className={styles.subheading}
       {...otherProps}
       ref={ref}
     >

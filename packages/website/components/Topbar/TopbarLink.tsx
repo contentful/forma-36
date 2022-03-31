@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { Text } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 
-const styles = {
+const getNavLinkStyles = (isDarkMode) => ({
   navListLink: css({
-    color: tokens.gray900,
+    color: isDarkMode ? tokens.colorWhite : tokens.gray900,
     textDecoration: 'none',
 
     '&:hover': {
@@ -14,17 +14,25 @@ const styles = {
     },
   }),
   active: css({
-    color: tokens.blue700,
+    color: isDarkMode ? tokens.blue400 : tokens.blue700,
     textDecoration: 'underline',
   }),
-};
+});
 
-export function TopbarLink({ href, label, isActive = false }) {
+export function TopbarLink({
+  href,
+  label,
+  isActive = false,
+  isDarkMode = false,
+}) {
+  const navLinkStyles = getNavLinkStyles(isDarkMode);
   return (
     <Link href={href} passHref>
       <Text
         as="a"
-        className={cx(styles.navListLink, { [styles.active]: isActive })}
+        className={cx(navLinkStyles.navListLink, {
+          [navLinkStyles.active]: isActive,
+        })}
         fontSize="fontSizeL"
         lineHeight="lineHeightL"
         fontWeight="fontWeightDemiBold"

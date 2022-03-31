@@ -2,9 +2,12 @@ import React from 'react';
 import { css, cx } from 'emotion';
 import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
+import type { SpacingTokens } from '@contentful/f36-tokens';
 import { List, Flex, Text, Badge } from '@contentful/f36-components';
 import { ChevronDownIcon } from '@contentful/f36-icons';
 import { ExternalLinkTrimmedIcon } from '@contentful/f36-icons';
+import { Dark, useTheme } from '@contentful/f36-core';
+import type { Theme } from '@contentful/f36-core';
 
 const styles = {
   link: css({
@@ -22,7 +25,17 @@ const styles = {
   }),
 };
 
-const getSectionTitleStyles = (isActive = false, paddingLeft = 'spacingXl') => {
+const getSectionTitleStyles = ({
+  isActive = false,
+  paddingLeft = 'spacingXl',
+  theme,
+  activeColor,
+}: {
+  isActive?: boolean;
+  paddingLeft?: SpacingTokens;
+  theme: Theme;
+  activeColor?: string;
+}) => {
   return {
     sidebarItem: css({
       padding: `${tokens.spacingXs} ${tokens.spacingM}`,
@@ -35,7 +48,7 @@ const getSectionTitleStyles = (isActive = false, paddingLeft = 'spacingXl') => {
       alignItems: 'center',
       gap: tokens.spacing2Xs,
       cursor: 'pointer',
-      color: isActive ? tokens.blue700 : tokens.gray900,
+      color: isActive && activeColor ? activeColor : theme.heading.color,
       fontWeight: isActive
         ? tokens.fontWeightDemiBold
         : tokens.fontWeightNormal,
@@ -65,7 +78,14 @@ export function SidebarSectionButton({
   onClick,
   isOpen = true,
 }: SidebarSectionButtonProps) {
-  const titleStyles = getSectionTitleStyles(false);
+  const theme: Theme = useTheme();
+  const activeColor = theme === Dark ? tokens.blue400 : tokens.blue700;
+  console.log(activeColor, theme === Dark, theme, Dark);
+  const titleStyles = getSectionTitleStyles({
+    theme,
+    isActive: false,
+    activeColor,
+  });
 
   return (
     <List.Item>
@@ -112,7 +132,12 @@ export function SidebarLink({
   paddingLeft = 'spacingXl',
   isNew = false,
 }: SidebarLinkProps) {
-  const titleStyles = getSectionTitleStyles(isActive, paddingLeft);
+  const theme: Theme = useTheme();
+  const titleStyles = getSectionTitleStyles({
+    isActive,
+    paddingLeft,
+    theme,
+  });
   const linksProps = isExternal
     ? { target: '_blank', rel: 'noopener noreferrer' }
     : {};

@@ -1,15 +1,16 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import type { Theme } from '@contentful/f36-core';
 import { TextLinkProps } from './TextLink';
 import { TextLinkVariant } from './types';
 
-const variantToStyles = (variant: TextLinkVariant) => {
+const variantToStyles = (variant: TextLinkVariant, theme: Theme) => {
   switch (variant) {
     case 'primary':
       return {
-        color: tokens.blue600,
+        color: theme.textLinkPrimary.color,
         '&:hover, &:focus': {
-          color: tokens.blue700,
+          color: theme.textLinkPrimary.hoverColor,
         },
       };
     case 'secondary':
@@ -53,9 +54,14 @@ const variantToStyles = (variant: TextLinkVariant) => {
 };
 
 const textLink = ({
+  theme,
   variant,
   isDisabled,
-}: Pick<TextLinkProps, 'variant' | 'isDisabled'>) =>
+}: {
+  theme: Theme;
+  variant: TextLinkProps['variant'];
+  isDisabled: TextLinkProps['isDisabled'];
+}) =>
   css({
     display: 'inline-flex',
     justifyContent: 'center',
@@ -74,7 +80,7 @@ const textLink = ({
     textAlign: 'left',
     cursor: isDisabled ? 'not-allowed' : 'pointer',
     opacity: isDisabled ? 0.5 : 1,
-    ...variantToStyles(variant),
+    ...variantToStyles(variant, theme),
     outline: 'none',
     '&:focus, &:focus-visible, &:hover': {
       textDecoration: isDisabled ? 'none' : 'underline',

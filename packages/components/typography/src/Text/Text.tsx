@@ -7,13 +7,15 @@ import tokens, {
   ColorTokens,
 } from '@contentful/f36-tokens';
 import { css, cx } from 'emotion';
-import { Box } from '@contentful/f36-core';
-import type {
-  PolymorphicComponent,
-  CommonProps,
-  MarginProps,
-  PolymorphicProps,
-  ExpandProps,
+import {
+  Box,
+  useTheme,
+  type PolymorphicComponent,
+  type CommonProps,
+  type MarginProps,
+  type PolymorphicProps,
+  type ExpandProps,
+  type Theme,
 } from '@contentful/f36-core';
 
 export interface TextInternalProps extends CommonProps, MarginProps {
@@ -43,16 +45,15 @@ function wordBreakStyle() {
   });
 }
 
-export type TextProps<
-  E extends React.ElementType = typeof TEXT_DEFAULT_TAG
-> = PolymorphicProps<TextInternalProps, E>;
+export type TextProps<E extends React.ElementType = typeof TEXT_DEFAULT_TAG> =
+  PolymorphicProps<TextInternalProps, E>;
 
 function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
   {
     fontSize = 'fontSizeM',
     fontStack = 'fontStackPrimary',
     fontWeight = 'fontWeightNormal',
-    fontColor = 'gray800',
+    fontColor,
     lineHeight = 'lineHeightM',
     children,
     isTruncated,
@@ -64,6 +65,7 @@ function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
   }: TextProps<E>,
   ref: React.Ref<any>,
 ) {
+  const theme: Theme = useTheme();
   const Element: React.ElementType = as || TEXT_DEFAULT_TAG;
 
   return (
@@ -75,7 +77,7 @@ function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
           padding: 0,
           fontFamily: tokens[fontStack],
           fontWeight: tokens[fontWeight],
-          color: tokens[fontColor],
+          color: tokens[fontColor] ?? theme.text.color,
           fontSize: tokens[fontSize],
           lineHeight: tokens[lineHeight],
         }),

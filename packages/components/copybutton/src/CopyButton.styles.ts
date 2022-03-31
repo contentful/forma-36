@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-export const getStyles = ({ size }) => {
+export const getStyles = ({ size, theme }) => {
   const buttonSize = size === 'small' ? '32px' : '40px';
 
   return {
@@ -13,8 +13,8 @@ export const getStyles = ({ size }) => {
     }),
     copyButton: css({
       alignItems: 'center',
-      background: tokens.colorWhite,
-      border: `1px solid ${tokens.gray300}`,
+      background: theme.copyButton.mainColor,
+      border: `1px solid ${theme.copyButton.borderColor}`,
       display: 'inline-flex',
       height: '100%',
       justifyContent: 'center',
@@ -23,39 +23,39 @@ export const getStyles = ({ size }) => {
       transition: `background ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
       width: '100%',
       '&:hover': {
-        backgroundColor: tokens.gray100,
+        backgroundColor: theme.copyButton.mainColorHover,
         cursor: 'pointer',
       },
       '&:active': {
-        backgroundColor: tokens.gray200,
+        backgroundColor: theme.copyButton.mainColorActive,
         cursor: 'pointer',
       },
       '&:focus': {
-        boxShadow: tokens.glowMuted,
+        boxShadow: theme.copyButton.boxShadow,
       },
       '&:focus:not(:focus-visible)': {
         boxShadow: 'unset',
       },
       '&:focus-visible': {
-        boxShadow: tokens.glowMuted,
+        boxShadow: theme.copyButton.boxShadow,
       },
     }),
     copyButtonDisabled: css({
       cursor: 'not-allowed',
-      backgroundColor: tokens.gray100,
+      backgroundColor: theme.copyButton.mainColorHover,
 
       '&:hover': {
         cursor: 'not-allowed',
-        backgroundColor: tokens.gray100,
+        backgroundColor: theme.copyButton.mainColorHover,
       },
 
       '&:focus': {
-        borderColor: tokens.gray300,
+        borderColor: theme.copyButton.mainColorDisableActive,
         boxShadow: 'none',
       },
 
       '&:active, &:active:hover': {
-        borderColor: tokens.gray300,
+        borderColor: theme.copyButton.mainColorDisableActive,
         boxShadow: 'none',
       },
     }),

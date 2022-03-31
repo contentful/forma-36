@@ -1,16 +1,28 @@
 import React from 'react';
-import type {
-  CommonProps,
-  MarginProps,
-  PolymorphicComponent,
-  PolymorphicProps,
-  ExpandProps,
+import {
+  useTheme,
+  type CommonProps,
+  type MarginProps,
+  type PolymorphicComponent,
+  type PolymorphicProps,
+  type ExpandProps,
+  type Theme,
 } from '@contentful/f36-core';
+import { css } from 'emotion';
+
 import { Text } from '../Text';
 
 const HEADING_DEFAULT_TAG = 'h1';
 
 export type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
+const getStyles = ({ theme }: { theme: Theme }) => {
+  return {
+    heading: css({
+      color: theme.heading.color,
+    }),
+  };
+};
 
 export interface HeadingInternalProps extends CommonProps, MarginProps {
   as?: HeadingElement;
@@ -20,20 +32,23 @@ export interface HeadingInternalProps extends CommonProps, MarginProps {
 }
 
 export type HeadingProps<
-  E extends React.ElementType = typeof HEADING_DEFAULT_TAG
+  E extends React.ElementType = typeof HEADING_DEFAULT_TAG,
 > = PolymorphicProps<HeadingInternalProps, E>;
 
 function _Heading<E extends React.ElementType = typeof HEADING_DEFAULT_TAG>(
   { children, testId = 'cf-ui-heading', ...otherProps }: HeadingProps<E>,
   ref: React.Ref<any>,
 ) {
+  const theme: Theme = useTheme();
+  const styles = getStyles({ theme });
+
   return (
     <Text
       as={HEADING_DEFAULT_TAG}
       testId={testId}
       marginBottom="spacingM"
       fontWeight="fontWeightDemiBold"
-      fontColor="gray900"
+      className={styles.heading}
       fontSize="fontSizeXl"
       lineHeight="lineHeightXl"
       {...otherProps}

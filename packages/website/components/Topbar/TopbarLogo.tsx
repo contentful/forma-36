@@ -13,16 +13,16 @@ const styles = {
   }),
 };
 
-export function TopbarLogo() {
+export function TopbarLogo({ isDarkMode = false }) {
   return (
     <Link href="/" passHref>
       <a className={styles.logoLink} href="/">
-        <Logo />
+        <Logo fill={isDarkMode ? tokens.colorWhite : tokens.blue700} />
 
         <Text
           fontSize="fontSizeL"
           fontWeight="fontWeightDemiBold"
-          fontColor="blue700"
+          fontColor={isDarkMode ? 'colorWhite' : 'blue700'}
           marginLeft="spacingS"
         >
           Forma 36
@@ -32,7 +32,7 @@ export function TopbarLogo() {
   );
 }
 
-function Logo() {
+function Logo({ fill }) {
   return (
     <svg
       x="0px"
@@ -41,7 +41,7 @@ function Logo() {
       height="25px"
       viewBox="0 0 90 90"
       enableBackground="new 0 0 90 90"
-      fill={tokens.blue700}
+      fill={fill}
     >
       <circle cx="45" cy="10" r="10" />
       <circle cx="10" cy="10" r="10" />

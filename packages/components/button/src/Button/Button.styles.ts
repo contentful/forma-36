@@ -2,19 +2,38 @@ import { css } from 'emotion';
 import type { CSSObject } from '@emotion/serialize';
 import tokens from '@contentful/f36-tokens';
 import { ButtonSize, ButtonVariant, ButtonStylesProps } from '../types';
+import type { Theme } from '@contentful/f36-core';
 
-const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
+const variantActiveStyles = ({
+  theme,
+  variant,
+}: {
+  theme: Theme;
+  variant: ButtonVariant;
+}): CSSObject => {
   switch (variant) {
     case 'primary':
-      return { backgroundColor: tokens.blue700, borderColor: tokens.blue700 };
+      return {
+        backgroundColor: theme.buttonPrimary.mainColorActive,
+        borderColor: theme.buttonPrimary.mainColorActive,
+      };
     case 'secondary':
-      return { backgroundColor: tokens.gray200 };
+      return { backgroundColor: theme.buttonSecondary.mainColorActive };
     case 'positive':
-      return { backgroundColor: tokens.green700, borderColor: tokens.green700 };
+      return {
+        backgroundColor: theme.buttonPositive.mainColorActive,
+        borderColor: theme.buttonPositive.mainColorActive,
+      };
     case 'negative':
-      return { backgroundColor: tokens.red800, borderColor: tokens.red800 };
+      return {
+        backgroundColor: theme.buttonNegative.mainColorActive,
+        borderColor: theme.buttonNegative.mainColorActive,
+      };
     case 'transparent':
-      return { backgroundColor: tokens.gray100, borderColor: tokens.gray100 };
+      return {
+        backgroundColor: theme.buttonTransparent.mainColorActive,
+        borderColor: theme.buttonTransparent.mainColorActive,
+      };
     default:
       return {};
   }
@@ -24,122 +43,122 @@ const variantToStyles = ({
   theme,
   variant,
 }: {
-  theme: any;
+  theme: Theme;
   variant: ButtonVariant;
 }): CSSObject => {
   switch (variant) {
     case 'primary':
       return {
-        color: tokens.colorWhite,
-        backgroundColor: theme.colors.primary,
-        borderColor: theme.colors.primary,
+        color: theme.buttonPrimary.textColor,
+        backgroundColor: theme.buttonPrimary.mainColor,
+        borderColor: theme.buttonPrimary.mainColor,
         '&:hover': {
-          backgroundColor: tokens.blue600,
-          borderColor: tokens.blue600,
-          color: tokens.colorWhite,
+          backgroundColor: theme.buttonPrimary.mainColorStates,
+          borderColor: theme.buttonPrimary.mainColorStates,
+          color: theme.buttonPrimary.textColor,
         },
-        '&:active': variantActiveStyles(variant),
+        '&:active': variantActiveStyles({ theme, variant }),
         '&:focus': {
-          borderColor: tokens.blue600,
-          boxShadow: tokens.glowPrimary,
+          borderColor: theme.buttonPrimary.mainColorStates,
+          boxShadow: theme.buttonPrimary.boxShadow,
         },
         '&:focus:not(:focus-visible)': {
-          borderColor: tokens.blue500,
+          borderColor: theme.buttonPrimary.mainColor,
           boxShadow: 'unset',
         },
         '&:focus-visible': {
-          borderColor: tokens.blue600,
-          boxShadow: tokens.glowPrimary,
+          borderColor: theme.buttonPrimary.mainColorStates,
+          boxShadow: theme.buttonPrimary.boxShadow,
         },
       };
     case 'secondary':
       return {
-        color: tokens.gray900,
-        backgroundColor: tokens.colorWhite,
-        borderColor: tokens.gray300,
+        color: theme.buttonSecondary.textColor,
+        backgroundColor: theme.buttonSecondary.mainColor,
+        borderColor: theme.buttonSecondary.borderColor,
         '&:hover': {
-          backgroundColor: tokens.gray100,
-          color: tokens.gray900,
+          backgroundColor: theme.buttonSecondary.mainColorStates,
+          color: theme.buttonSecondary.textColor,
         },
-        '&:active': variantActiveStyles(variant),
+        '&:active': variantActiveStyles({ theme, variant }),
         '&:focus': {
-          boxShadow: tokens.glowPrimary,
+          boxShadow: theme.buttonSecondary.boxShadow,
         },
         '&:focus:not(:focus-visible)': {
           boxShadow: 'unset',
         },
         '&:focus-visible': {
-          boxShadow: tokens.glowPrimary,
+          boxShadow: theme.buttonSecondary.boxShadow,
         },
       };
     case 'positive':
       return {
-        color: tokens.colorWhite,
-        backgroundColor: tokens.colorPositive,
-        borderColor: tokens.colorPositive,
+        color: theme.buttonPositive.textColor,
+        backgroundColor: theme.buttonPositive.mainColor,
+        borderColor: theme.buttonPositive.mainColor,
         '&:hover': {
-          backgroundColor: tokens.green600,
-          borderColor: tokens.green600,
-          color: tokens.colorWhite,
+          backgroundColor: theme.buttonPositive.mainColorStates,
+          borderColor: theme.buttonPositive.mainColorStates,
+          color: theme.buttonPositive.textColor,
         },
-        '&:active': variantActiveStyles(variant),
+        '&:active': variantActiveStyles({ theme, variant }),
         '&:focus': {
-          borderColor: tokens.green600,
-          boxShadow: tokens.glowPositive,
+          borderColor: theme.buttonPositive.mainColorStates,
+          boxShadow: theme.buttonPositive.boxShadow,
         },
         '&:focus:not(:focus-visible)': {
-          borderColor: tokens.colorPositive,
+          borderColor: theme.buttonPositive.mainColor,
           boxShadow: 'unset',
         },
         '&:focus-visible': {
-          borderColor: tokens.green600,
-          boxShadow: tokens.glowPositive,
+          borderColor: theme.buttonPositive.mainColorStates,
+          boxShadow: theme.buttonPositive.boxShadow,
         },
       };
     case 'negative':
       return {
-        color: tokens.colorWhite,
-        backgroundColor: tokens.red600,
-        borderColor: tokens.red600,
+        color: theme.buttonNegative.textColor,
+        backgroundColor: theme.buttonNegative.mainColor,
+        borderColor: theme.buttonNegative.mainColor,
         '&:hover': {
-          backgroundColor: tokens.red700,
-          borderColor: tokens.red700,
-          color: tokens.colorWhite,
+          backgroundColor: theme.buttonNegative.mainColorStates,
+          borderColor: theme.buttonNegative.mainColorStates,
+          color: theme.buttonNegative.textColor,
         },
-        '&:active': variantActiveStyles(variant),
+        '&:active': variantActiveStyles({ theme, variant }),
         '&:focus': {
-          borderColor: tokens.red700,
-          boxShadow: tokens.glowNegative,
+          borderColor: theme.buttonNegative.mainColorStates,
+          boxShadow: theme.buttonNegative.boxShadow,
         },
         '&:focus:not(:focus-visible)': {
-          borderColor: tokens.red600,
+          borderColor: theme.buttonNegative.mainColor,
           boxShadow: 'unset',
         },
         '&:focus-visible': {
-          borderColor: tokens.red700,
-          boxShadow: tokens.glowNegative,
+          borderColor: theme.buttonNegative.mainColorStates,
+          boxShadow: theme.buttonNegative.boxShadow,
         },
       };
     case 'transparent':
       return {
-        color: tokens.gray800,
+        color: theme.buttonTransparent.textColor,
         background: 'none',
         borderColor: 'transparent',
         boxShadow: 'none',
         '&:hover': {
-          backgroundColor: tokens.gray100,
-          color: tokens.gray900,
+          backgroundColor: theme.buttonTransparent.mainColorStates,
+          color: theme.buttonTransparent.textColorActive,
         },
-        '&:active': variantActiveStyles(variant),
+        '&:active': variantActiveStyles({ theme, variant }),
         '&:focus': {
           backgroundColor: 'transparent',
-          boxShadow: tokens.glowPrimary,
+          boxShadow: theme.buttonTransparent.boxShadow,
         },
         '&:focus:not(:focus-visible)': {
           boxShadow: 'unset',
         },
         '&:focus-visible': {
-          boxShadow: tokens.glowPrimary,
+          boxShadow: theme.buttonTransparent.boxShadow,
         },
       };
     default:
@@ -229,7 +248,7 @@ export const getStyles = ({ theme }: { theme: any }) => ({
       ...(isActive
         ? {
             transition: 'none',
-            '&, &:hover': variantActiveStyles(variant),
+            '&, &:hover': variantActiveStyles({ theme, variant }),
           }
         : {}),
     }),

@@ -1,17 +1,29 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
 import { css, cx } from 'emotion';
-import type {
-  CommonProps,
-  MarginProps,
-  PolymorphicComponent,
-  PolymorphicProps,
-  ExpandProps,
+import {
+  useTheme,
+  type CommonProps,
+  type MarginProps,
+  type PolymorphicComponent,
+  type PolymorphicProps,
+  type ExpandProps,
+  type Theme,
 } from '@contentful/f36-core';
 import type { HeadingElement } from '../Heading';
 import { Text } from '../Text';
 
 const SECTION_HEADING_DEFAULT_TAG = 'h2';
+
+const getStyles = ({ theme }: { theme: Theme }) => {
+  return {
+    sectionHeading: css({
+      color: theme.heading.color,
+      letterSpacing: tokens.letterSpacingWide,
+      textTransform: 'uppercase',
+    }),
+  };
+};
 
 export interface SectionHeadingInternalProps extends CommonProps, MarginProps {
   as?: HeadingElement;
@@ -20,11 +32,11 @@ export interface SectionHeadingInternalProps extends CommonProps, MarginProps {
 }
 
 export type SectionHeadingProps<
-  E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG
+  E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG,
 > = PolymorphicProps<SectionHeadingInternalProps, E>;
 
 function _SectionHeading<
-  E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG
+  E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG,
 >(
   {
     children,
@@ -34,22 +46,18 @@ function _SectionHeading<
   }: SectionHeadingProps<E>,
   ref: React.Ref<any>,
 ) {
+  const theme: Theme = useTheme();
+  const styles = getStyles({ theme });
+
   return (
     <Text
       as={SECTION_HEADING_DEFAULT_TAG}
       testId={testId}
       marginBottom="spacingL"
       fontWeight="fontWeightDemiBold"
-      fontColor="gray900"
       fontSize="fontSizeS"
       lineHeight="lineHeightS"
-      className={cx(
-        css({
-          letterSpacing: tokens.letterSpacingWide,
-          textTransform: 'uppercase',
-        }),
-        className,
-      )}
+      className={cx(styles.sectionHeading, className)}
       {...otherProps}
       ref={ref}
     >

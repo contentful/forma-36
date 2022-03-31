@@ -17,8 +17,8 @@ import { MdAccessAlarm } from 'react-icons/md';
 import { Card, Button, CopyButton } from '@contentful/f36-components';
 import * as f36icons from '@contentful/f36-icons';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
-import { Flex } from '@contentful/f36-core';
-import { theme } from './theme';
+import { Flex, Forma36Context, Dark } from '@contentful/f36-core';
+import { theme, themeDark } from './theme';
 import { formatSourceCode } from './utils';
 import * as coder from '../../utils/coder';
 import FocusLock from 'react-focus-lock';
@@ -107,6 +107,10 @@ const styles = {
     & > textarea {
       padding: inherit !important;
       border-radius: inherit;
+
+      &:focus {
+        outline: 0;
+      }
     }
     & > pre {
       padding: 0 !important;
@@ -141,6 +145,7 @@ export function ComponentSource({
   children: string;
   file?: string;
 }) {
+  const { theme: pageTheme } = useContext(Forma36Context);
   const [showSource, setShowSource] = useState(true);
 
   const handleToggle = () => {
@@ -153,7 +158,7 @@ export function ComponentSource({
     <Flex flexDirection="column" className={styles.root}>
       <LiveProvider
         code={formatSourceCode(children)}
-        theme={theme}
+        theme={pageTheme === Dark ? themeDark : theme}
         // The order is important here
         scope={liveProviderScope}
       >

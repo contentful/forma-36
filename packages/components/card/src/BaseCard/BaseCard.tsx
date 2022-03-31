@@ -6,10 +6,11 @@ import type {
   MouseEvent,
   MouseEventHandler,
 } from 'react';
-import { Box } from '@contentful/f36-core';
+import { Box, useTheme } from '@contentful/f36-core';
 import type {
   PolymorphicComponent,
   PolymorphicProps,
+  Theme,
 } from '@contentful/f36-core';
 
 import { DragHandle } from '@contentful/f36-drag-handle';
@@ -28,7 +29,7 @@ import type { BaseCardInternalProps } from './BaseCard.types';
 export const BASE_CARD_DEFAULT_TAG = 'article';
 
 export type BaseCardProps<
-  E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG
+  E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG,
 > = PolymorphicProps<BaseCardInternalProps, E>;
 
 function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
@@ -64,7 +65,8 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
   }: BaseCardProps<E>,
   forwardedRef: React.Ref<HTMLElement>,
 ) {
-  const styles = getBaseCardStyles();
+  const theme: Theme = useTheme();
+  const styles = getBaseCardStyles({ theme });
   const [isHovered, setIsHovered] = useState(isHoveredProp ?? false);
   const isInteractive = Boolean(onClick || href || withDragHandle);
   const hasHeader = Boolean(header);

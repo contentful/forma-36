@@ -1,11 +1,12 @@
 import React from 'react';
 import { cx } from 'emotion';
 import { Flex } from '@contentful/f36-core';
-import type {
+import {
   CommonProps,
   PolymorphicProps,
   PolymorphicComponent,
   ExpandProps,
+  useTheme,
 } from '@contentful/f36-core';
 import { styles } from './TextLink.styles';
 import { TextLinkVariant } from './types';
@@ -41,7 +42,7 @@ interface TextLinkInternalProps extends CommonProps {
 }
 
 export type TextLinkProps<
-  E extends React.ElementType = typeof TEX_LINK_DEFAULT_TAG
+  E extends React.ElementType = typeof TEX_LINK_DEFAULT_TAG,
 > = PolymorphicProps<TextLinkInternalProps, E, 'disabled'>;
 
 function _TextLink<E extends React.ElementType = typeof TEX_LINK_DEFAULT_TAG>(
@@ -60,11 +61,13 @@ function _TextLink<E extends React.ElementType = typeof TEX_LINK_DEFAULT_TAG>(
     as = TEX_LINK_DEFAULT_TAG,
     ...otherProps
   } = props;
+  const theme = useTheme();
 
   const commonProps = {
     ref,
     className: cx(
       styles.textLink({
+        theme,
         variant,
         isDisabled,
       }),
