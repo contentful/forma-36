@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Subheading } from '@contentful/f36-typography';
 import type { HeadingElement } from '@contentful/f36-typography';
 import { ChevronDownTrimmedIcon } from '@contentful/f36-icons';
+import { Forma36Context } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 
 import { getAccordionHeaderStyles } from './AccordionHeader.styles';
@@ -43,7 +44,8 @@ export const AccordionHeader = ({
   testId = 'cf-ui-accordion-header',
   ...rest
 }: AccordionHeaderProps) => {
-  const styles = getAccordionHeaderStyles({ align, isExpanded });
+  const { theme, isDarkMode } = useContext(Forma36Context);
+  const styles = getAccordionHeaderStyles({ align, isExpanded, theme });
 
   return (
     <Subheading {...rest} testId={testId} marginBottom="none" as={element}>
@@ -57,7 +59,7 @@ export const AccordionHeader = ({
       >
         <ChevronDownTrimmedIcon
           className={styles.accordionHeaderIcon}
-          variant="secondary"
+          variant={isDarkMode ? 'white' : 'secondary'}
         />
         {children}
       </button>

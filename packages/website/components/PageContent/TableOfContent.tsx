@@ -14,7 +14,7 @@ const getToCStyles = (isDarkMode) => ({
     marginBottom: tokens.spacingXs,
   }),
   sidebarNavItemActive: css({
-    color: isDarkMode ? tokens.blue500 : tokens.blue700,
+    color: isDarkMode ? tokens.blue400 : tokens.blue700,
     fontWeight: tokens.fontWeightDemiBold,
     textDecoration: 'underline',
   }),

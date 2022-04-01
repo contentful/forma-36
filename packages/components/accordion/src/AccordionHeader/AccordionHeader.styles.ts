@@ -1,12 +1,14 @@
 import { css, cx } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import type { Theme } from '@contentful/f36-core';
 
 type StyleProps = {
   align: 'start' | 'end';
   isExpanded: boolean;
+  theme: Theme;
 };
 
-const getHeaderStyles = ({ align }: StyleProps) =>
+const getHeaderStyles = ({ align, theme }: StyleProps) =>
   cx(
     css({
       display: 'flex',
@@ -19,7 +21,7 @@ const getHeaderStyles = ({ align }: StyleProps) =>
       fontSize: tokens.fontSizeL,
       fontWeight: tokens.fontWeightDemiBold,
       lineHeight: tokens.lineHeightL,
-      color: tokens.gray800,
+      color: theme.accordionHeader.color,
       width: '100%',
       minWidth: '9px',
       cursor: 'pointer',
@@ -52,7 +54,7 @@ const getHeaderStyles = ({ align }: StyleProps) =>
       }),
   );
 
-const getIconStyles = ({ align, isExpanded }: StyleProps) =>
+const getIconStyles = ({ align, isExpanded, theme }: StyleProps) =>
   cx(
     css({
       transform: 'rotate(0deg)',
