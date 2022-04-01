@@ -28,7 +28,7 @@ const getHeaderStyles = ({ align, theme }: StyleProps) =>
       transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault},
         box-shadow ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
       '&:hover': {
-        backgroundColor: tokens.gray100,
+        backgroundColor: theme.accordionHeader.hover.backgroundColor,
       },
       '&:focus': {
         backgroundColor: tokens.gray100,

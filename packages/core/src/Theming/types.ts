@@ -41,6 +41,10 @@ export interface Theme {
   };
 
   accordionHeader: {
+    hover: {
+      backgroundColor: string;
+    };
+
     color: string;
   };
 

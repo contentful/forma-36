@@ -97,7 +97,9 @@ export const Default = createTheme(
       },
     },
     accordionHeader: {
-      // backgroundColor: tokens.colorWhite,
+      hover: {
+        backgroundColor: tokens.gray100,
+      },
       color: tokens.gray800,
     },
     baseCheckbox: {
@@ -209,6 +211,9 @@ export const Dark: Theme = createTheme({
     },
   },
   accordionHeader: {
+    hover: {
+      backgroundColor: tokens.gray800,
+    },
     color: tokens.gray100,
   },
   baseCheckbox: {
