@@ -123,6 +123,15 @@ export const Default = createTheme(
     subheading: {
       color: tokens.gray900,
     },
+    tableCell: {
+      color: tokens.gray700,
+      colorSorting: tokens.gray900,
+    },
+    tableRow: {
+      hover: {
+        backgroundColor: tokens.gray100,
+      },
+    },
     text: {
       color: tokens.gray800,
     },
@@ -224,6 +233,15 @@ export const Dark: Theme = createTheme({
   },
   subheading: {
     color: tokens.gray100,
+  },
+  tableCell: {
+    color: tokens.gray300,
+    colorSorting: tokens.gray100,
+  },
+  tableRow: {
+    hover: {
+      backgroundColor: tokens.gray800,
+    },
   },
   text: {
     color: tokens.gray200,

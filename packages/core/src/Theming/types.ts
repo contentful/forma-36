@@ -76,6 +76,17 @@ export interface Theme {
     color: string;
   };
 
+  tableCell: {
+    color: string;
+    colorSorting: string;
+  };
+
+  tableRow: {
+    hover: {
+      backgroundColor: string;
+    };
+  };
+
   text: {
     color: string;
   };
