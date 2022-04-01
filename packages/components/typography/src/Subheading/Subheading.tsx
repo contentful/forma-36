@@ -1,12 +1,12 @@
 import React from 'react';
-import {
-  useTheme,
-  type CommonProps,
-  type MarginProps,
-  type PolymorphicComponent,
-  type PolymorphicProps,
-  type ExpandProps,
-  type Theme,
+import { useTheme } from '@contentful/f36-core';
+import type {
+  CommonProps,
+  MarginProps,
+  PolymorphicComponent,
+  PolymorphicProps,
+  ExpandProps,
+  Theme,
 } from '@contentful/f36-core';
 import { css } from 'emotion';
 

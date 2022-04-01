@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { css, cx } from 'emotion';
 import { Flex } from '@contentful/f36-components';
-import { useTheme, Dark } from '@contentful/f36-core';
+import { Forma36Context } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
 import type { FrontMatter } from '../../types';
@@ -65,8 +65,7 @@ export function PageContent({
   frontMatter,
   source,
 }: PageContentProps) {
-  const theme = useTheme();
-  const isDarkMode = theme.themeName === Dark.themeName;
+  const { isDarkMode, theme } = useContext(Forma36Context);
   const gridStyles = getGridStyles();
   const { title, github, status } = frontMatter;
 

@@ -1,14 +1,14 @@
 import React from 'react';
 import { FontSizeTokens, LineHeightTokens } from '@contentful/f36-tokens';
-import {
+import type {
   CommonProps,
   MarginProps,
   PolymorphicComponent,
   PolymorphicProps,
   ExpandProps,
-  useTheme,
-  type Theme,
+  Theme,
 } from '@contentful/f36-core';
+import { useTheme } from '@contentful/f36-core';
 import { Text } from '../Text';
 import type { HeadingElement } from '../Heading';
 import { css } from 'emotion';
@@ -45,7 +45,7 @@ function _DisplayText<
   }: DisplayTextProps<E>,
   ref: React.Ref<any>,
 ) {
-  const theme = useTheme();
+  const theme: Theme = useTheme();
   const styles = getStyles({ theme });
   let fontSize: FontSizeTokens = 'fontSize2Xl';
   let lineHeight: LineHeightTokens = 'lineHeight2Xl';

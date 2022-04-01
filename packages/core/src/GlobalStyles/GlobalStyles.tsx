@@ -2,7 +2,8 @@ import * as React from 'react';
 import { Global, css, SerializedStyles } from '@emotion/core';
 import tokens from '@contentful/f36-tokens';
 
-import { useTheme, type Theme } from '../Theming';
+import { useTheme } from '../Theming';
+import type { Theme } from '../Theming';
 
 const cssReset = css`
   /* Remove default margin */

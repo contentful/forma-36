@@ -1,14 +1,14 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
 import { css, cx } from 'emotion';
-import {
-  useTheme,
-  type CommonProps,
-  type MarginProps,
-  type PolymorphicComponent,
-  type PolymorphicProps,
-  type ExpandProps,
-  type Theme,
+import { useTheme } from '@contentful/f36-core';
+import type {
+  CommonProps,
+  MarginProps,
+  PolymorphicComponent,
+  PolymorphicProps,
+  ExpandProps,
+  Theme,
 } from '@contentful/f36-core';
 import type { HeadingElement } from '../Heading';
 import { Text } from '../Text';
