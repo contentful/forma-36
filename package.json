@@ -106,7 +106,7 @@
     "css-loader": "^3.6.0",
     "cssnano": "5.1.4",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.12.0",
+    "eslint": "^7.32.0",
     "eslint-config-dev": "^2.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
@@ -139,7 +139,7 @@
     "postcss-loader": "^4.1.0",
     "postcss-preset-env": "^6.7.0",
     "postcss-url": "^10.1.1",
-    "prettier": "2.6.1",
+    "prettier": "2.2.1",
     "pretty-quick": "3.1.1",
     "react": "16.14.0",
     "react-docgen-typescript": "^1.21.0",
@@ -160,7 +160,7 @@
     "yarn": ">=1.19.0"
   },
   "volta": {
-    "node": "14.17.0",
+    "node": "14.15.0",
     "yarn": "1.19.0"
   },
   "turbo": {
