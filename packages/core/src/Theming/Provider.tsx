@@ -242,7 +242,6 @@ export const Forma36Context = createContext<{
 
 export interface Forma36ProviderProps {
   children: React.ReactNode;
-  // themes?: Record<ThemeName, Theme>;
   theme?: Theme;
 }
 

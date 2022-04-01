@@ -1,13 +1,14 @@
 import React from 'react';
 import { cx } from 'emotion';
 import { Flex } from '@contentful/f36-core';
-import {
+import type {
   CommonProps,
   PolymorphicProps,
   PolymorphicComponent,
   ExpandProps,
-  useTheme,
+  Theme,
 } from '@contentful/f36-core';
+import { useTheme } from '@contentful/f36-core';
 import { styles } from './TextLink.styles';
 import { TextLinkVariant } from './types';
 
@@ -61,7 +62,7 @@ function _TextLink<E extends React.ElementType = typeof TEX_LINK_DEFAULT_TAG>(
     as = TEX_LINK_DEFAULT_TAG,
     ...otherProps
   } = props;
-  const theme = useTheme();
+  const theme: Theme = useTheme();
 
   const commonProps = {
     ref,

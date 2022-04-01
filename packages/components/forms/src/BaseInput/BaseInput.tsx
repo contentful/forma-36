@@ -5,7 +5,8 @@ import React, {
   ChangeEvent,
 } from 'react';
 import { cx } from 'emotion';
-import { Box, type Theme, useTheme } from '@contentful/f36-core';
+import { Box, useTheme } from '@contentful/f36-core';
+import type { Theme } from '@contentful/f36-core';
 
 import type {
   PolymorphicProps,
