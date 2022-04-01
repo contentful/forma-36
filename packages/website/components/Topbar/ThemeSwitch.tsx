@@ -14,6 +14,7 @@ export function ThemeSwitch() {
     <Flex alignItems="center" className={css({ marginLeft: '-64px' })}>
       <Switch isChecked={isDarkMode} onChange={toggleDarkMode}>
         Turn to the Dark Side&nbsp;
+        {/* eslint-disable-next-line */}
         <span role="img">🌑</span>
       </Switch>
     </Flex>
