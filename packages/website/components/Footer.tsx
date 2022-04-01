@@ -7,6 +7,7 @@ import tokens from '@contentful/f36-tokens';
 import { Forma36Context } from '@contentful/f36-core';
 
 import contentfulLogoSVG from '../resources/icons/contentful-logo.svg';
+import contentfulLogoSVGWhite from '../resources/icons/contentful-logo-white.svg';
 import { getGridStyles } from '../utils/getGridStyles';
 
 const getStyles = ({ isDarkMode }) => {
@@ -84,7 +85,10 @@ export function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Image src={contentfulLogoSVG} alt="Contentful’s logo" />
+        <Image
+          src={isDarkMode ? contentfulLogoSVGWhite : contentfulLogoSVG}
+          alt="Contentful’s logo"
+        />
       </a>
     </footer>
   );
