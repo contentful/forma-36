@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { css, cx } from 'emotion';
 import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
@@ -6,26 +6,10 @@ import type { SpacingTokens } from '@contentful/f36-tokens';
 import { List, Flex, Text, Badge } from '@contentful/f36-components';
 import { ChevronDownIcon } from '@contentful/f36-icons';
 import { ExternalLinkTrimmedIcon } from '@contentful/f36-icons';
-import { Dark, useTheme } from '@contentful/f36-core';
+import { Forma36Context, useTheme } from '@contentful/f36-core';
 import type { Theme } from '@contentful/f36-core';
 
-const styles = {
-  link: css({
-    display: 'flex',
-    gap: tokens.spacing2Xs,
-    fontSize: tokens.fontSizeM,
-    lineHeight: tokens.lineHeightM,
-    textDecoration: 'none',
-    '&:hover span:first-child': {
-      textDecoration: 'underline',
-    },
-  }),
-  badge: css({
-    textDecoration: 'none',
-  }),
-};
-
-const getSectionTitleStyles = ({
+const getSidebarLinkStyles = ({
   isActive = false,
   paddingLeft = 'spacingXl',
   theme,
@@ -37,6 +21,19 @@ const getSectionTitleStyles = ({
   activeColor?: string;
 }) => {
   return {
+    link: css({
+      display: 'flex',
+      gap: tokens.spacing2Xs,
+      fontSize: tokens.fontSizeM,
+      lineHeight: tokens.lineHeightM,
+      textDecoration: 'none',
+      '&:hover span:first-child': {
+        textDecoration: 'underline',
+      },
+    }),
+    badge: css({
+      textDecoration: 'none',
+    }),
     sidebarItem: css({
       padding: `${tokens.spacingXs} ${tokens.spacingM}`,
       paddingLeft: tokens[paddingLeft],
@@ -79,9 +76,9 @@ export function SidebarSectionButton({
   isOpen = true,
 }: SidebarSectionButtonProps) {
   const theme: Theme = useTheme();
-  const activeColor = theme === Dark ? tokens.blue400 : tokens.blue700;
-  console.log(activeColor, theme === Dark, theme, Dark);
-  const titleStyles = getSectionTitleStyles({
+  const { isDarkMode } = useContext(Forma36Context);
+  const activeColor = isDarkMode ? tokens.blue400 : tokens.blue700;
+  const styles = getSidebarLinkStyles({
     theme,
     isActive: false,
     activeColor,
@@ -91,7 +88,7 @@ export function SidebarSectionButton({
     <List.Item>
       <Flex
         alignItems="center"
-        className={cx([titleStyles.clickable, titleStyles.sidebarItem])}
+        className={cx([styles.clickable, styles.sidebarItem])}
         role="button"
         onClick={onClick}
       >
@@ -106,8 +103,8 @@ export function SidebarSectionButton({
 
         <ChevronDownIcon
           variant="muted"
-          className={cx(titleStyles.chevron, {
-            [titleStyles.closedIcon]: !isOpen,
+          className={cx(styles.chevron, {
+            [styles.closedIcon]: !isOpen,
           })}
         />
       </Flex>
@@ -133,7 +130,10 @@ export function SidebarLink({
   isNew = false,
 }: SidebarLinkProps) {
   const theme: Theme = useTheme();
-  const titleStyles = getSectionTitleStyles({
+  const { isDarkMode } = useContext(Forma36Context);
+  const activeColor = isDarkMode ? tokens.blue400 : tokens.blue700;
+  const styles = getSidebarLinkStyles({
+    activeColor,
     isActive,
     paddingLeft,
     theme,
@@ -146,11 +146,8 @@ export function SidebarLink({
     <List.Item>
       <Link href={href} passHref>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a
-          className={cx([styles.link, titleStyles.sidebarItem])}
-          {...linksProps}
-        >
-          <span className={cx([titleStyles.clickable])}>
+        <a className={cx([styles.link, styles.sidebarItem])} {...linksProps}>
+          <span className={cx([styles.clickable])}>
             {children}
             {isExternal && <ExternalLinkTrimmedIcon variant="muted" />}
           </span>

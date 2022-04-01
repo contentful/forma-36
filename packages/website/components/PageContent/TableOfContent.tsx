@@ -38,7 +38,6 @@ export function TableOfContent({
   headings,
   isDarkMode = false,
 }: TableOfContentProps) {
-  console.log({ isDarkMode });
   const tocStyles = getToCStyles(isDarkMode);
   const activeId = useScrollSpy(
     headings.map(({ id }) => `[id="${id}"]`),

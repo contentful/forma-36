@@ -1,10 +1,14 @@
 import React, { useCallback, useEffect, useRef } from 'react';
-import type { PropsWithHTMLElement, ExpandProps } from '@contentful/f36-core';
+import type {
+  PropsWithHTMLElement,
+  ExpandProps,
+  Theme,
+} from '@contentful/f36-core';
 import type { BaseCheckboxInternalProps } from './types';
 import { GhostCheckbox } from './GhostCheckbox';
 import getStyles from './BaseCheckbox.styles';
 import { Text } from '@contentful/f36-typography';
-import { Flex } from '@contentful/f36-core';
+import { Flex, useTheme } from '@contentful/f36-core';
 import { HelpText } from '../HelpText/HelpText';
 import { useFormControl } from '../FormControl/FormControlContext';
 
@@ -43,7 +47,7 @@ function _BaseCheckbox(
     helpText,
     ...otherProps
   } = props;
-
+  const theme: Theme = useTheme();
   const inputRef = useRef<HTMLInputElement>(null);
   const finalRef = ref || inputRef;
   const { id: formFieldId } = useFormControl({});
@@ -54,7 +58,7 @@ function _BaseCheckbox(
     }
   }, [isIndeterminate, finalRef]);
 
-  const styles = getStyles({ isDisabled, type, size });
+  const styles = getStyles({ isDisabled, theme, type, size });
 
   const handleFocus = useCallback(
     (e) => {
@@ -103,7 +107,6 @@ function _BaseCheckbox(
     <Flex flexDirection="column" className={className}>
       <Text
         as="label"
-        fontColor="gray900"
         fontWeight="fontWeightMedium"
         className={styles.wrapper}
         htmlFor={id}

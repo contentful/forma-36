@@ -1,6 +1,8 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import type { CSSObject } from '@emotion/serialize';
+import type { Theme } from '@contentful/f36-core';
+import type { ElementType } from 'react';
 
 const getSizeStyles = ({ size }): CSSObject => {
   if (size === 'small') {
@@ -17,7 +19,21 @@ const getSizeStyles = ({ size }): CSSObject => {
   };
 };
 
-const getStyles = ({ as, isDisabled, isInvalid, size, resize }) => ({
+const getStyles = ({
+  as,
+  isDisabled,
+  isInvalid,
+  size,
+  resize,
+  theme,
+}: {
+  as: string;
+  isDisabled: boolean;
+  isInvalid: boolean;
+  size: string;
+  resize: any;
+  theme: Theme;
+}) => ({
   rootComponentWithIcon: css({
     position: 'relative',
     display: 'flex',
@@ -25,12 +41,16 @@ const getStyles = ({ as, isDisabled, isInvalid, size, resize }) => ({
   }),
   input: css({
     outline: 'none',
-    boxShadow: tokens.insetBoxShadowDefault,
+    boxShadow: theme.baseInput.boxShadow,
     boxSizing: 'border-box',
-    backgroundColor: isDisabled ? tokens.gray100 : tokens.colorWhite,
-    border: `1px solid ${isInvalid ? tokens.red600 : tokens.gray300}`,
+    backgroundColor: isDisabled
+      ? theme.baseInput.disabled.backgroundColor
+      : theme.baseInput.backgroundColor,
+    border: `1px solid ${
+      isInvalid ? tokens.red600 : theme.baseInput.borderColor
+    }`,
     borderRadius: tokens.borderRadiusMedium,
-    color: tokens.gray700,
+    color: theme.baseInput.color,
     fontFamily: tokens.fontStackPrimary,
     fontSize: tokens.fontSizeM,
     lineHeight: tokens.lineHeightM,
@@ -43,7 +63,7 @@ const getStyles = ({ as, isDisabled, isInvalid, size, resize }) => ({
     ...(as === 'textarea' ? { resize } : getSizeStyles({ size })),
 
     '&::placeholder': {
-      color: tokens.gray500,
+      color: theme.baseInput.placeholder,
     },
 
     '&:active, &:active:hover': {

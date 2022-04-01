@@ -5,8 +5,8 @@ import React, {
   ChangeEvent,
 } from 'react';
 import { cx } from 'emotion';
+import { Box, type Theme, useTheme } from '@contentful/f36-core';
 
-import { Box } from '@contentful/f36-core';
 import type {
   PolymorphicProps,
   PolymorphicComponent,
@@ -18,7 +18,7 @@ import { BaseInputInternalProps } from './types';
 const INPUT_DEFAULT_TAG = 'input';
 
 export type BaseInputProps<
-  E extends React.ElementType = typeof INPUT_DEFAULT_TAG
+  E extends React.ElementType = typeof INPUT_DEFAULT_TAG,
 > = PolymorphicProps<
   BaseInputInternalProps,
   E,
@@ -54,7 +54,15 @@ function _BaseInput<E extends React.ElementType = typeof INPUT_DEFAULT_TAG>(
     resize = 'vertical',
     ...otherProps
   } = props;
-  const styles = getInputStyles({ as, isDisabled, isInvalid, size, resize });
+  const theme: Theme = useTheme();
+  const styles = getInputStyles({
+    as,
+    isDisabled,
+    isInvalid,
+    size,
+    resize,
+    theme,
+  });
 
   const handleFocus = useCallback(
     (e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {

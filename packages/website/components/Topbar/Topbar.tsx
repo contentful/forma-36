@@ -51,8 +51,7 @@ interface TopbarProps {
 }
 
 export function Topbar({ activeSection }: TopbarProps) {
-  const { theme } = useContext(Forma36Context);
-  const isDarkMode = theme === Dark;
+  const { isDarkMode } = useContext(Forma36Context);
   const topbarStyles = getTopbarStyles(isDarkMode);
   const gridStyles = getGridStyles();
 
