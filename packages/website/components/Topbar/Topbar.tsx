@@ -61,13 +61,12 @@ export function Topbar({ activeSection }: TopbarProps) {
       area="topbar"
       className={cx(
         topbarStyles.header,
-        css({ gridTemplateColumns: 'auto auto' }),
+        css({ gridTemplateColumns: '280px auto' }),
       )}
     >
       <Flex paddingLeft="spacingXl">
         <TopbarLogo isDarkMode={isDarkMode} />
         <VersionSwitch />
-        <ThemeSwitch />
       </Flex>
 
       <Flex
@@ -78,6 +77,8 @@ export function Topbar({ activeSection }: TopbarProps) {
           gridStyles.contentColumnsBigScreens,
         )}
       >
+        <ThemeSwitch />
+
         <Flex
           as="nav"
           alignItems="center"
