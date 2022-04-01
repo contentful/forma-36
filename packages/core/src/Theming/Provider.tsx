@@ -70,9 +70,9 @@ export const Default = createTheme(
     buttonNegative: {
       mainColor: tokens.red600,
       textColor: tokens.colorWhite,
-      mainColorStates: tokens.red700,
+      mainColorStates: tokens.red400,
       boxShadow: tokens.glowNegative,
-      mainColorActive: tokens.red800,
+      mainColorActive: tokens.red900,
     },
     buttonTransparent: {
       mainColor: tokens.blue500,
