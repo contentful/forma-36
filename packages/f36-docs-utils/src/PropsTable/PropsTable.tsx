@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Badge,
   Paragraph,
   Subheading,
   Text,
   Table,
+  Forma36Context,
 } from '@contentful/f36-components';
 
 import { getPropsTableStyles } from './PropsTable.styles';
@@ -18,6 +19,7 @@ interface PropsTableProps {
 }
 
 export function PropsTable({ of }: PropsTableProps) {
+  const { isDarkMode } = useContext(Forma36Context);
   const styles = getPropsTableStyles();
   const componentProps = usePropsOf(of);
 
@@ -47,7 +49,7 @@ export function PropsTable({ of }: PropsTableProps) {
               <Table.Cell className={styles.cell} width="20%">
                 <Text
                   fontStack="fontStackMonospace"
-                  fontColor="gray900"
+                  fontColor={isDarkMode ? 'gray100' : 'gray900'}
                   fontWeight="fontWeightDemiBold"
                   marginRight="spacingXs"
                 >

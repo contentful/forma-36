@@ -1,21 +1,22 @@
 import { css, cx } from 'emotion';
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useContext } from 'react';
 import tokens from '@contentful/f36-tokens';
-import { Box } from '@contentful/f36-core';
+import { Box, Forma36Context } from '@contentful/f36-core';
 import type {
   CommonProps,
   PropsWithHTMLElement,
   ExpandProps,
+  Theme,
 } from '@contentful/f36-core';
 
-const getStyles = () => {
+const getStyles = ({ theme }: { theme: Theme }) => {
   return {
     root: css({
       '&:last-child td': {
         borderBottom: 'none',
       },
       '&:hover td': {
-        backgroundColor: tokens.gray100,
+        backgroundColor: theme.tableRow.hover.backgroundColor,
       },
     }),
     selected: css({
@@ -50,7 +51,8 @@ export const TableRow = forwardRef<
     },
     forwardedRef,
   ) => {
-    const styles = getStyles();
+    const { theme } = useContext(Forma36Context);
+    const styles = getStyles({ theme });
     return (
       <Box
         {...otherProps}

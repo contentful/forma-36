@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box, Text } from '@contentful/f36-components';
+import { Forma36Context } from '@contentful/f36-core';
 
 import { getPropertyValueStyles } from './PropertyValue.styles';
 
@@ -8,7 +9,8 @@ interface PropertyValueProps {
 }
 
 export function PropertyValue({ value }: PropertyValueProps) {
-  const styles = getPropertyValueStyles();
+  const { isDarkMode } = useContext(Forma36Context);
+  const styles = getPropertyValueStyles({ isDarkMode });
 
   return (
     <Box
