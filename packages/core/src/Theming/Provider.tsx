@@ -96,6 +96,20 @@ export const Default = createTheme(
         color: tokens.gray800,
       },
     },
+    baseCheckbox: {
+      color: tokens.gray900,
+    },
+    baseInput: {
+      disabled: {
+        backgroundColor: tokens.gray100,
+      },
+
+      backgroundColor: tokens.colorWhite,
+      borderColor: tokens.gray300,
+      boxShadow: tokens.insetBoxShadowDefault,
+      color: tokens.gray700,
+      placeholder: tokens.gray500,
+    },
     displayText: {
       color: tokens.gray900,
     },
@@ -131,29 +145,29 @@ export const Dark: Theme = createTheme({
     warning: tokens.orange200,
   },
   buttonPrimary: {
-    mainColor: tokens.blue300,
-    textColor: tokens.gray800,
+    mainColor: tokens.blue500,
+    textColor: tokens.gray100,
     mainColorStates: tokens.blue400,
     boxShadow: tokens.glowPrimary,
     mainColorActive: tokens.blue500,
   },
   buttonSecondary: {
-    mainColor: tokens.gray500,
+    mainColor: tokens.gray900,
     textColor: tokens.colorWhite,
-    mainColorStates: tokens.gray700,
+    mainColorStates: tokens.gray800,
     boxShadow: tokens.glowPrimary,
-    borderColor: tokens.gray200,
+    borderColor: tokens.gray400,
     mainColorActive: tokens.gray600,
   },
   buttonNegative: {
-    mainColor: tokens.red400,
+    mainColor: tokens.red500,
     textColor: tokens.colorWhite,
     mainColorStates: tokens.red500,
     boxShadow: tokens.glowNegative,
     mainColorActive: tokens.red500,
   },
   buttonPositive: {
-    mainColor: tokens.green300,
+    mainColor: tokens.green500,
     textColor: tokens.colorWhite,
     mainColorStates: tokens.green400,
     boxShadow: tokens.glowPositive,
@@ -168,8 +182,8 @@ export const Dark: Theme = createTheme({
     mainColorActive: tokens.gray100,
   },
   copyButton: {
-    mainColor: tokens.gray500,
-    mainColorHover: tokens.gray500,
+    mainColor: tokens.gray900,
+    mainColorHover: tokens.gray800,
     mainColorActive: tokens.gray500,
     mainColorDisableActive: tokens.gray500,
     borderColor: tokens.gray700,
@@ -181,10 +195,27 @@ export const Dark: Theme = createTheme({
       color: tokens.gray100,
     },
   },
+  baseCheckbox: {
+    color: tokens.gray100,
+  },
+  baseInput: {
+    disabled: {
+      backgroundColor: tokens.gray100,
+    },
+
+    backgroundColor: tokens.gray900,
+    borderColor: tokens.gray700,
+    boxShadow: 'inset 0px 2px 0px rgba(225, 228, 232, 0.01);',
+    color: tokens.gray100,
+    placeholder: tokens.gray300,
+  },
   displayText: {
     color: tokens.gray100,
   },
   heading: {
+    color: tokens.gray100,
+  },
+  subheading: {
     color: tokens.gray100,
   },
   text: {
@@ -204,10 +235,10 @@ export const Dark: Theme = createTheme({
 });
 
 export const Forma36Context = createContext<{
-  isDarkmode: boolean;
+  isDarkMode: boolean;
   setTheme: React.Dispatch<React.SetStateAction<Theme>>;
   theme: Theme;
-}>({ isDarkmode: false, setTheme: () => {}, theme: Default });
+}>({ isDarkMode: false, setTheme: () => {}, theme: Default });
 
 export interface Forma36ProviderProps {
   children: React.ReactNode;
@@ -220,11 +251,10 @@ export function Forma36Provider({
   theme: defaultTheme = Default,
 }: Forma36ProviderProps) {
   const [theme, setTheme] = useState(defaultTheme);
+  const isDarkMode = theme.themeName === Dark.themeName;
 
   return (
-    <Forma36Context.Provider
-      value={{ isDarkmode: theme !== defaultTheme, setTheme, theme }}
-    >
+    <Forma36Context.Provider value={{ isDarkMode, setTheme, theme }}>
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </Forma36Context.Provider>
   );

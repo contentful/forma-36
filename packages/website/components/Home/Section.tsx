@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
+import { Forma36Context } from '@contentful/f36-core';
 
-const styles = {
-  section: css`
-    text-align: center;
-    padding: ${tokens.spacing3Xl} ${tokens.spacingL};
-  `,
-  sectionSecondary: css`
-    background-color: ${tokens.colorElementLightest};
-    text-align: center;
-    padding: ${tokens.spacing3Xl} 0;
-  `,
+const getStyles = ({ isDarkMode, isSecondary }) => {
+  return {
+    section: css`
+      text-align: center;
+      padding: ${tokens.spacing3Xl} ${tokens.spacingL};
+    `,
+    sectionSecondary: css`
+      background-color: ${isDarkMode ? tokens.gray800 : tokens.gray100};
+      text-align: center;
+      padding: ${tokens.spacing3Xl} 0;
+    `,
+  };
 };
 
 export const Section = ({
@@ -20,8 +23,13 @@ export const Section = ({
 }: {
   children: React.ReactNode;
   isSecondary?: boolean;
-}) => (
-  <section className={isSecondary ? styles.sectionSecondary : styles.section}>
-    {children}
-  </section>
-);
+}) => {
+  const { isDarkMode } = useContext(Forma36Context);
+  const styles = getStyles({ isDarkMode, isSecondary });
+
+  return (
+    <section className={isSecondary ? styles.sectionSecondary : styles.section}>
+      {children}
+    </section>
+  );
+};

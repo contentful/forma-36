@@ -1,26 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import { css, cx } from 'emotion';
 import { TextLink, Flex, TextLinkProps } from '@contentful/f36-components';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
+import { Forma36Context } from '@contentful/f36-core';
 
 import contentfulLogoSVG from '../resources/icons/contentful-logo.svg';
 import { getGridStyles } from '../utils/getGridStyles';
 
-const styles = {
-  footer: css({
-    gridAutoRows: 'min-content',
-    alignItems: 'flex-start',
-    justifyItems: 'flex-start',
-    marginTop: tokens.spacing2Xl,
-    backgroundColor: tokens.gray100,
-    padding: tokens.spacingL,
-  }),
+const getStyles = ({ isDarkMode }) => {
+  return {
+    footer: css({
+      gridAutoRows: 'min-content',
+      alignItems: 'flex-start',
+      justifyItems: 'flex-start',
+      marginTop: tokens.spacing2Xl,
+      backgroundColor: isDarkMode ? tokens.gray800 : tokens.gray100,
+      padding: tokens.spacingL,
+    }),
+  };
 };
 
 export function Footer() {
+  const { isDarkMode } = useContext(Forma36Context);
   const gridStyles = getGridStyles();
+  const styles = getStyles({ isDarkMode });
 
   return (
     <footer

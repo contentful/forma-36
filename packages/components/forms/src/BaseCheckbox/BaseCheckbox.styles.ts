@@ -1,5 +1,6 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import type { Theme } from '@contentful/f36-core';
 import type { BaseCheckboxInternalProps } from './types';
 
 const sizeToStyle = (size) => {
@@ -30,11 +31,15 @@ const getHelpTextStyle = ({ size, type }) => {
 
 const getStyles = ({
   isDisabled,
+  theme,
   type,
   size,
-}: Pick<BaseCheckboxInternalProps, 'isDisabled' | 'type' | 'size'>) => ({
+}: Pick<BaseCheckboxInternalProps, 'isDisabled' | 'type' | 'size'> & {
+  theme: Theme;
+}) => ({
   wrapper: css({
     alignItems: 'center',
+    color: theme.baseCheckbox.color,
     display: 'inline-flex',
     position: 'relative',
     margin: '0',

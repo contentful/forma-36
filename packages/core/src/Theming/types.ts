@@ -1,4 +1,4 @@
-export type ThemeName = 'Dark' | 'Light';
+export type ThemeName = 'Dark' | 'Default' | 'Light';
 
 interface buttonType {
   mainColor: string;
@@ -9,7 +9,7 @@ interface buttonType {
 }
 
 export interface Theme {
-  themeName: string;
+  themeName: ThemeName;
   colors: {
     primary: string;
     positive: string;
@@ -38,6 +38,22 @@ export interface Theme {
       backgroundColor: string;
       color: string;
     };
+  };
+
+  baseCheckbox: {
+    color: string;
+  };
+
+  baseInput: {
+    disabled: {
+      backgroundColor: string;
+    };
+
+    backgroundColor: string;
+    borderColor: string;
+    boxShadow: string;
+    color: string;
+    placeholder: string;
   };
 
   card: {

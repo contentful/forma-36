@@ -1,8 +1,8 @@
 import { cx } from 'emotion';
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback, useRef, useContext } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { CopyIcon } from '@contentful/f36-icons';
-import { useTheme, Dark } from '@contentful/f36-core';
+import { Forma36Context } from '@contentful/f36-core';
 import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 import { Tooltip } from '@contentful/f36-tooltip';
 import type { TooltipProps } from '@contentful/f36-tooltip';
@@ -64,7 +64,7 @@ function _CopyButton(
     size = 'medium',
     ...otherProps
   } = props;
-  const theme = useTheme();
+  const { theme, isDarkMode } = useContext(Forma36Context);
   const styles = getStyles({ size, theme });
 
   const [copied, setCopied] = useState(false);
@@ -111,7 +111,7 @@ function _CopyButton(
             aria-live="assertive"
           >
             <CopyIcon
-              variant={theme === Dark ? 'secondary' : 'muted'}
+              variant={isDarkMode ? 'white' : 'muted'}
               size={size === 'small' ? 'tiny' : 'small'}
             />
           </button>
