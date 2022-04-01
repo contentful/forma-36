@@ -96,6 +96,10 @@ export const Default = createTheme(
         color: tokens.gray800,
       },
     },
+    accordionHeader: {
+      // backgroundColor: tokens.colorWhite,
+      color: tokens.gray800,
+    },
     baseCheckbox: {
       color: tokens.gray900,
     },
@@ -194,6 +198,9 @@ export const Dark: Theme = createTheme({
       backgroundColor: tokens.gray900,
       color: tokens.gray100,
     },
+  },
+  accordionHeader: {
+    color: tokens.gray100,
   },
   baseCheckbox: {
     color: tokens.gray100,

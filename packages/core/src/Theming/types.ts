@@ -40,6 +40,10 @@ export interface Theme {
     };
   };
 
+  accordionHeader: {
+    color: string;
+  };
+
   baseCheckbox: {
     color: string;
   };
