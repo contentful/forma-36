@@ -2,7 +2,6 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import type { CSSObject } from '@emotion/serialize';
 import type { Theme } from '@contentful/f36-core';
-import type { ElementType } from 'react';
 
 const getSizeStyles = ({ size }): CSSObject => {
   if (size === 'small') {

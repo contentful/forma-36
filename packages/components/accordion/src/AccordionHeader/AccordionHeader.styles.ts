@@ -54,7 +54,7 @@ const getHeaderStyles = ({ align, theme }: StyleProps) =>
       }),
   );
 
-const getIconStyles = ({ align, isExpanded, theme }: StyleProps) =>
+const getIconStyles = ({ align, isExpanded }: StyleProps) =>
   cx(
     css({
       transform: 'rotate(0deg)',
