@@ -14,7 +14,7 @@ import { getStyles } from './Button.styles';
 const BUTTON_DEFAULT_TAG = 'button';
 
 export type ButtonProps<
-  E extends React.ElementType = typeof BUTTON_DEFAULT_TAG,
+  E extends React.ElementType = typeof BUTTON_DEFAULT_TAG
 > = PolymorphicProps<ButtonInternalProps, E, 'disabled'>;
 
 function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(

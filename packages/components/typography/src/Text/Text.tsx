@@ -44,8 +44,9 @@ function wordBreakStyle() {
   });
 }
 
-export type TextProps<E extends React.ElementType = typeof TEXT_DEFAULT_TAG> =
-  PolymorphicProps<TextInternalProps, E>;
+export type TextProps<
+  E extends React.ElementType = typeof TEXT_DEFAULT_TAG
+> = PolymorphicProps<TextInternalProps, E>;
 
 function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
   {

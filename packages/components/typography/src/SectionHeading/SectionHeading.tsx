@@ -32,11 +32,11 @@ export interface SectionHeadingInternalProps extends CommonProps, MarginProps {
 }
 
 export type SectionHeadingProps<
-  E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG,
+  E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG
 > = PolymorphicProps<SectionHeadingInternalProps, E>;
 
 function _SectionHeading<
-  E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG,
+  E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG
 >(
   {
     children,
