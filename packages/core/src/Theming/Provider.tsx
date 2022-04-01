@@ -191,7 +191,7 @@ export const Dark: Theme = createTheme({
   buttonTransparent: {
     mainColor: tokens.blue500,
     textColor: tokens.colorWhite,
-    mainColorStates: tokens.gray100,
+    mainColorStates: tokens.gray800,
     boxShadow: tokens.glowPrimary,
     textColorActive: tokens.gray800,
     mainColorActive: tokens.gray100,
