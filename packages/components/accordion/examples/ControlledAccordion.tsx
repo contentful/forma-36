@@ -7,11 +7,11 @@ export default function AccordionExample() {
     2: false,
   });
 
-  const handleExpand = (itemIndex: number) => () => {
+  const handleExpand = (itemIndex) => () => {
     setAccordionState((state) => ({ ...state, [itemIndex]: true }));
   };
 
-  const handleCollapse = (itemIndex: number) => () => {
+  const handleCollapse = (itemIndex) => () => {
     setAccordionState((state) => ({ ...state, [itemIndex]: false }));
   };
 
