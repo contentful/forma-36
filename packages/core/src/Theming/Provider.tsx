@@ -171,7 +171,7 @@ export const Dark: Theme = createTheme({
     textColor: tokens.colorWhite,
     mainColorStates: tokens.gray800,
     boxShadow: tokens.glowPrimary,
-    borderColor: tokens.gray400,
+    borderColor: tokens.gray600,
     mainColorActive: tokens.gray700,
   },
   buttonNegative: {
@@ -201,7 +201,7 @@ export const Dark: Theme = createTheme({
     mainColorHover: tokens.gray800,
     mainColorActive: tokens.gray500,
     mainColorDisableActive: tokens.gray500,
-    borderColor: tokens.gray700,
+    borderColor: tokens.gray600,
     boxShadow: tokens.glowMuted,
   },
   globalStyles: {
