@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { css, cx } from 'emotion';
 import { Grid, Flex, List } from '@contentful/f36-components';
-import { Forma36Context, Dark } from '@contentful/f36-core';
+import { Forma36Context } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
 import {

@@ -3,7 +3,7 @@ import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 import { Forma36Context } from '@contentful/f36-core';
 
-const getStyles = ({ isDarkMode, isSecondary }) => {
+const getStyles = ({ isDarkMode }) => {
   return {
     section: css`
       text-align: center;
@@ -25,7 +25,7 @@ export const Section = ({
   isSecondary?: boolean;
 }) => {
   const { isDarkMode } = useContext(Forma36Context);
-  const styles = getStyles({ isDarkMode, isSecondary });
+  const styles = getStyles({ isDarkMode });
 
   return (
     <section className={isSecondary ? styles.sectionSecondary : styles.section}>

@@ -65,7 +65,7 @@ export function PageContent({
   frontMatter,
   source,
 }: PageContentProps) {
-  const { isDarkMode, theme } = useContext(Forma36Context);
+  const { isDarkMode } = useContext(Forma36Context);
   const gridStyles = getGridStyles();
   const { title, github, status } = frontMatter;
 

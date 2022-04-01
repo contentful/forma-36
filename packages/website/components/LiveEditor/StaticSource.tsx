@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Flex, Forma36Context, Dark } from '@contentful/f36-core';
+import { Forma36Context, Dark } from '@contentful/f36-core';
 import Highlight, {
   defaultProps as HighlightDefaultProps,
 } from 'prism-react-renderer';
@@ -25,7 +25,7 @@ export function StaticSource(props: { children: string; className?: string }) {
       theme={pageTheme === Dark ? themeDark : theme}
       code={props.children.trim()}
       language={
-        (props.className || '').replace('language-', '') as unknown as any
+        ((props.className || '').replace('language-', '') as unknown) as any
       }
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
