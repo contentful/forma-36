@@ -9,7 +9,7 @@
     "start:prod": "next start"
   },
   "dependencies": {
-    "@codesandbox/sandpack-react": "0.10.7",
+    "@codesandbox/sandpack-react": "0.18.0",
     "@contentful/f36-components": "^4.0.0",
     "@contentful/f36-core": "^4.0.0",
     "@contentful/f36-docs-utils": "^4.0.0",
