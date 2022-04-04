@@ -289,4 +289,12 @@ export function Forma36Provider({
   );
 }
 
-export const useTheme = useEmotionTheme;
+export function useTheme(): Theme {
+  const { theme } = React.useContext(Forma36Context);
+
+  if (!theme) {
+    return Default;
+  }
+
+  return theme;
+}
