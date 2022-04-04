@@ -1,6 +1,6 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import slugger from 'github-slugger';
+import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
+import type { ParsedUrlQuery } from 'querystring';
 
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
@@ -14,20 +14,20 @@ import { PropsContextProvider } from '@contentful/f36-docs-utils';
 
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 import { getPropsMetadata, transformToc } from '../utils/propsMeta';
-import { getTableOfContents, HeadingType } from '../utils/mdx-utils';
+import { getToCFromMdx, getToCFromContentful } from '../utils/tableOfContents';
 import { FrontMatterContextProvider } from '../utils/frontMatterContext';
 import type { PageContentProps } from '../components/PageContent';
 import { PageContent } from '../components/PageContent';
 import { getAllArticles, getSingleArticleBySlug } from '../lib/api';
 
 interface ComponentPageProps extends PageContentProps {
-  propsMetadata: ReturnType<typeof getPropsMetadata>;
+  propsMetadata?: ReturnType<typeof getPropsMetadata>;
 }
 
 const ComponentPage: NextPage<ComponentPageProps> = ({
   frontMatter,
   headings,
-  propsMetadata,
+  propsMetadata = {},
   source,
 }: ComponentPageProps) => {
   const router = useRouter();
@@ -55,40 +55,14 @@ const ComponentPage: NextPage<ComponentPageProps> = ({
   );
 };
 
-// TODO: mrege Heading and getToC to getTableOfContents from 'mdx-utils'
-interface Heading {
-  nodeType: string;
-  content: Array<{ value: string }>;
+interface Params extends ParsedUrlQuery {
+  slug: string[];
 }
 
-function getToC(content) {
-  let tableOfContents: HeadingType[] = [];
-  const headings: Heading[] = content.filter((node) =>
-    node.nodeType.includes('heading'),
-  );
-
-  if (headings.length) {
-    tableOfContents = headings.map((heading) => {
-      const headingType = heading.nodeType === 'heading-2' ? 'h2' : 'h3';
-      const headingText = heading.content[0].value;
-      const headingLink = slugger.slug(headingText, false);
-      return {
-        text: headingText,
-        id: headingLink,
-        level: headingType,
-      };
-    });
-  }
-
-  return tableOfContents;
-}
-
-// [WIP]: I started adding stronger types to this function but I could not finish
-// that's why I renamed some stuff here, I was trying to follow this:
-// https://nextjs.org/docs/basic-features/typescript#static-generation-and-server-side-rendering
-export const getStaticProps = async (context: {
-  params: { slug: string[] };
-}) => {
+export const getStaticProps: GetStaticProps<
+  ComponentPageProps,
+  Params
+> = async (context) => {
   const mdxSource = await getMdxSourceBySlug(context.params?.slug ?? []);
 
   if (mdxSource) {
@@ -139,8 +113,8 @@ export const getStaticProps = async (context: {
       props: {
         source: { shortIntro, mainContent },
         toc,
-        headings: getTableOfContents(mdxSource.content),
-        frontMatter: data,
+        headings: getToCFromMdx(mdxSource.content),
+        frontMatter: data as ComponentPageProps['frontMatter'],
         propsMetadata,
       },
     };
@@ -157,7 +131,7 @@ export const getStaticProps = async (context: {
 
     return {
       props: {
-        headings: getToC(contentfulResult.body.json.content),
+        headings: getToCFromContentful(contentfulResult.body.json.content),
         frontMatter: {
           title: contentfulResult.title,
         },
@@ -171,7 +145,7 @@ export const getStaticProps = async (context: {
   }
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const mdxPaths = await getMdxPaths();
   const allArticles = await getAllArticles();
 
@@ -189,6 +163,6 @@ export async function getStaticPaths() {
     paths: [...mdxPaths, ...contentfulPaths],
     fallback: false,
   };
-}
+};
 
 export default ComponentPage;
