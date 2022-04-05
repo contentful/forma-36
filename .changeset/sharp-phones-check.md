@@ -3,4 +3,4 @@
 '@contentful/f36-utils': minor
 ---
 
-feat: add React 18 as peer dependencies
+feat: add React 18 as a peer dependency
