@@ -34,7 +34,8 @@ export function WorkbenchHeader({
 }: WorkbenchHeaderProps) {
   const hasBackButton = Boolean(onBack);
   const styles = getWorkbenchHeaderStyles(hasBackButton);
-  const iconComponent = isValidElement(Icon) ? Icon : <Icon />;
+  const iconComponent =
+    Icon === undefined ? null : isValidElement(Icon) ? Icon : <Icon />;
 
   return (
     <header
