@@ -284,30 +284,8 @@
   ],
   "intro": [
     {
-      "title": "Contributing to Forma 36",
-      "slug": "/contributing"
-    },
-    {
-      "title": "Getting started",
-      "slug": "/getting-started"
-    },
-    {
       "title": "What's new",
       "slug": "/whats-new"
-    }
-  ],
-  "forma36Version3": [
-    {
-      "title": "FAQ",
-      "slug": "/v3-faq/"
-    },
-    {
-      "title": "Migration Guide",
-      "slug": "/migration-v3-to-v4/"
-    },
-    {
-      "title": "Version 3 maintenance plan",
-      "slug": "/maintenance-plan/"
     }
   ],
   "deprecatedComponents": [
@@ -342,24 +320,6 @@
     {
       "title": "Typography Component",
       "slug": "/deprecated-components/typography/"
-    }
-  ],
-  "guidelines": [
-    {
-      "title": "Accessibility",
-      "slug": "/guidelines/accessibility/"
-    },
-    {
-      "title": "Grammar and rules",
-      "slug": "/guidelines/copy/grammar-and-rules/"
-    },
-    {
-      "title": "Keyboard Shortcuts",
-      "slug": "/guidelines/keyboard-shortcuts/"
-    },
-    {
-      "title": "UX Writing Principles",
-      "slug": "/guidelines/copy/ux-writing-principles/"
     }
   ],
   "integrations": [

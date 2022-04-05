@@ -20,7 +20,9 @@ export function PageContentFooter({ github }: Props) {
           </TextLink>
         )}
 
-        <TextLink href="/contributing">Read the contribution guide</TextLink>
+        <TextLink href="/introduction/contributing">
+          Read the contribution guide
+        </TextLink>
       </Stack>
     </Flex>
   );

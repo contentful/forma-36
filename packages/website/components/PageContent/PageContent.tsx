@@ -1,7 +1,7 @@
 import React from 'react';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { css, cx } from 'emotion';
-import { Flex } from '@contentful/f36-components';
+import { Flex, Text } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 
 import type { FrontMatter } from '../../types';
@@ -9,10 +9,12 @@ import {
   getGridStyles,
   SCREEN_BREAKPOINT_LARGE,
 } from '../../utils/getGridStyles';
-import { TableOfContent, HeadingType } from './TableOfContent';
+import { TableOfContent, TableOfContentProps } from './TableOfContent';
 import { MdxRenderer } from '../MdxRenderer';
 import { PageContentHeader } from './PageContentHeader';
 import { PageContentFooter } from './PageContentFooter';
+import type { RichTextProps } from '../ContentfulRichText';
+import { RichText } from '../ContentfulRichText';
 
 const styles = {
   grid: css({
@@ -49,13 +51,15 @@ const styles = {
   }),
 };
 
-interface PageContentProps {
-  headings: HeadingType[];
+export interface PageContentProps {
+  headings: TableOfContentProps['headings'];
   frontMatter: FrontMatter;
-  // children: React.ReactChild;
   source: {
-    mainContent: MDXRemoteSerializeResult;
+    mainContent?: MDXRemoteSerializeResult;
     shortIntro?: MDXRemoteSerializeResult;
+    richTextBody?: RichTextProps['document'];
+    richTextLinks?: RichTextProps['links'];
+    contentfulShortIntro?: string;
   };
 }
 
@@ -77,6 +81,11 @@ export function PageContent({
     >
       <PageContentHeader title={title} status={status}>
         {source.shortIntro && <MdxRenderer source={source.shortIntro} />}
+        {source.contentfulShortIntro && (
+          <Text as="p" fontSize="fontSizeL" lineHeight="lineHeightL">
+            {source.contentfulShortIntro}
+          </Text>
+        )}
       </PageContentHeader>
 
       <Flex flexDirection="column" className={styles.content}>
@@ -88,9 +97,14 @@ export function PageContent({
          * https://www.joshwcomeau.com/css/rules-of-margin-collapse/#flow-layout-only
          */}
         <article className={styles.article}>
-          <MdxRenderer source={source.mainContent} />
+          {source.mainContent && <MdxRenderer source={source.mainContent} />}
+          {source.richTextBody && (
+            <RichText
+              document={source.richTextBody}
+              links={source.richTextLinks}
+            />
+          )}
         </article>
-
         <PageContentFooter github={github} />
       </Flex>
 
