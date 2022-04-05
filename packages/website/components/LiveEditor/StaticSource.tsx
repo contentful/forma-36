@@ -2,6 +2,7 @@ import React from 'react';
 
 import Highlight, {
   defaultProps as HighlightDefaultProps,
+  Language,
 } from 'prism-react-renderer';
 import { theme } from './theme';
 import { cx, css } from 'emotion';
@@ -15,15 +16,20 @@ const styles = {
   }),
 };
 
-export function StaticSource(props: { children: string; className?: string }) {
+interface StaticSourceProps {
+  children: string;
+  className?: string;
+}
+
+export function StaticSource(props: StaticSourceProps) {
+  const language = props.className?.replace('language-', '') ?? 'jsx';
+
   return (
     <Highlight
       {...HighlightDefaultProps}
       theme={theme}
       code={props.children.trim()}
-      language={
-        ((props.className || '').replace('language-', '') as unknown) as any
-      }
+      language={language as Language}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={cx(styles.root, className)} style={style}>

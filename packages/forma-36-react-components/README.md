@@ -58,7 +58,7 @@ We use [Storybook](https://storybook.js.org/) to create a development environmen
 yarn storybook
 ```
 
-When creating new component, before you start, please have a look at our [contribution model for Forma 36](https://f36.contentful.com/contributing).
+When creating new component, before you start, please have a look at our [contribution model for Forma 36](https://f36.contentful.com/introduction/contributing).
 
 ### Example component directory structure
 

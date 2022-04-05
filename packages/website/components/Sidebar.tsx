@@ -104,12 +104,12 @@ export function Sidebar({
             links={[
               {
                 title: 'Getting started',
-                slug: '/getting-started',
+                slug: '/introduction/getting-started',
                 type: 'link',
               },
               {
                 title: 'Contributing to Forma 36',
-                slug: '/contributing',
+                slug: '/introduction//contributing',
                 type: 'link',
               },
               {
@@ -123,7 +123,23 @@ export function Sidebar({
           />
           <SidebarSection
             title="Forma 36 version 3"
-            links={sidebarLinks.forma36Version3}
+            links={[
+              {
+                title: 'FAQ',
+                slug: '/introduction/v3-faq',
+                type: 'link',
+              },
+              {
+                title: 'Migration Guide',
+                slug: '/introduction/migration-v3-to-v4',
+                type: 'link',
+              },
+              {
+                title: 'Version 3 maintenance plan',
+                slug: '/introduction/maintenance-plan',
+                type: 'link',
+              },
+            ]}
             currentPage={currentPage}
           />
         </>
@@ -131,7 +147,28 @@ export function Sidebar({
 
       {activeSection === WEBSITE_SECTION.GUIDELINES && (
         <SidebarSection
-          links={sidebarLinks.guidelines}
+          links={[
+            {
+              title: 'Accessibility',
+              slug: '/guidelines/accessibility',
+              type: 'link',
+            },
+            {
+              title: 'Keyboard shortcuts',
+              slug: '/guidelines/keyboard-shortcuts',
+              type: 'link',
+            },
+            {
+              title: 'Grammar and rules',
+              slug: '/guidelines/grammar-and-rules',
+              type: 'link',
+            },
+            {
+              title: 'UX writing principles',
+              slug: '/guidelines/ux-writing-principles',
+              type: 'link',
+            },
+          ]}
           currentPage={currentPage}
         />
       )}

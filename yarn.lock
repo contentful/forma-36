@@ -1876,6 +1876,18 @@
   resolved "https://registry.npmjs.org/@contentful/browserslist-config/-/browserslist-config-2.0.0.tgz"
   integrity sha512-wx/zWaVfhxwiIwET/51+Zg5PzEeyMIfWbOIgyi1zR4IM+1gJhyDgMPzUsChJazakI0EUqn1mcr+UJpwVnZ71MQ==
 
+"@contentful/rich-text-react-renderer@^15.11.1":
+  version "15.11.1"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-15.11.1.tgz#54305dc9561ed5d98bb65e8eb054ba1707d44af0"
+  integrity sha512-u1dSlUDSDR19/RGVbmwkbhEOTwRerIaMbea92vchd2mM6lk6X+qp6BS6HTABROcXGVAwhIHtarZ8fX5Zu7uiYA==
+  dependencies:
+    "@contentful/rich-text-types" "^15.11.1"
+
+"@contentful/rich-text-types@^15.11.1":
+  version "15.11.1"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-15.11.1.tgz#755e3efd5e0ac277d554e6f731ba9fdc1c45f6fe"
+  integrity sha512-seO8Nl9cp894v7an6R8isX+HqYwVUesviGULTh/rIj2DCv2tXUU1GCqzSkt84XN6c6nbFYow9+Wzezkxx/IdIA==
+
 "@cspotcode/source-map-consumer@0.8.0":
   version "0.8.0"
   resolved "https://registry.npmjs.org/@cspotcode/source-map-consumer/-/source-map-consumer-0.8.0.tgz"
