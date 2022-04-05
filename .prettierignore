@@ -11,3 +11,4 @@ public
 .next
 packages/**/CHANGELOG.md
 **/__testfixtures__/**
+.changeset/*.md
