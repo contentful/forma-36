@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.4.1
+
+### Patch Changes
+
+- [#1985](https://github.com/contentful/forma-36/pull/1985) [`b853c5e8`](https://github.com/contentful/forma-36/commit/b853c5e8495d55c5f596fc95083c9346193b1566) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(workbench-header): support undefined icon prop
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.4.1
+  - @contentful/f36-icon@4.4.1
+  - @contentful/f36-icons@4.4.1
+  - @contentful/f36-typography@4.4.1
+  - @contentful/f36-core@4.4.1
+
 ## 4.4.0
 
 ### Patch Changes
