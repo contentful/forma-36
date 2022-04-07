@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import type {
-  ElementRef,
+  /* ElementRef, */
   ElementType,
   FocusEventHandler,
   MouseEventHandler,
