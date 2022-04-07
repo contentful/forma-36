@@ -1,5 +1,11 @@
 import React, { useCallback, useState } from 'react';
-import type { FocusEventHandler, MouseEventHandler } from 'react';
+import type {
+  ElementRef,
+  ElementType,
+  FocusEventHandler,
+  MouseEventHandler,
+  Ref,
+} from 'react';
 import { cx } from 'emotion';
 import type {
   PolymorphicComponent,
@@ -51,15 +57,14 @@ export interface DragHandleInternalProps extends CommonProps {
 }
 
 export type DragHandleProps<
-  E extends React.ElementType = typeof DRAG_HANDLE_DEFAULT_TAG
+  E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG
 > = PolymorphicProps<DragHandleInternalProps, E>;
 
-function _DragHandle<
-  E extends React.ElementType = typeof DRAG_HANDLE_DEFAULT_TAG
->(
+function _DragHandle<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
   props: DragHandleProps<E>,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  forwardedRef: React.Ref<any>,
+  ref: Ref<any>, // Ref<ElementRef<E>>,
+  // forwardedRef: Ref<HTMLButtonElement> | Ref<HTMLDivElement>,
 ) {
   const styles = getStyles();
   const {
@@ -80,7 +85,7 @@ function _DragHandle<
   const [isFocused, setisFocused] = useState(isFocusedProp);
   const [isHovered, setisHovered] = useState(isHoveredProp);
 
-  const handleFocus = useCallback<FocusEventHandler<E>>(
+  const handleFocus = useCallback<FocusEventHandler<HTMLElement>>(
     (event) => {
       setisFocused(true);
 
@@ -91,7 +96,7 @@ function _DragHandle<
     [onFocus],
   );
 
-  const handleBlur = useCallback<FocusEventHandler<E>>(
+  const handleBlur = useCallback<FocusEventHandler<HTMLElement>>(
     (event) => {
       setisFocused(false);
 
@@ -102,7 +107,7 @@ function _DragHandle<
     [onBlur],
   );
 
-  const handleMouseEnter = useCallback<MouseEventHandler<E>>(
+  const handleMouseEnter = useCallback<MouseEventHandler<HTMLElement>>(
     (event) => {
       setisHovered(true);
 
@@ -113,7 +118,7 @@ function _DragHandle<
     [onMouseEnter],
   );
 
-  const handleMouseLeave = useCallback<MouseEventHandler<E>>(
+  const handleMouseLeave = useCallback<MouseEventHandler<HTMLElement>>(
     (event) => {
       setisHovered(false);
 
@@ -124,26 +129,31 @@ function _DragHandle<
     [onMouseLeave],
   );
 
-  const Element: React.ElementType = as;
+  const commonProps = {
+    className: cx(styles.root({ isActive, isFocused, isHovered }), className),
+    'data-test-id': testId,
+    onBlur: handleBlur,
+    onFocus: handleFocus,
+    onMouseEnter: handleMouseEnter,
+    onMouseLeave: handleMouseLeave,
+    ref,
+    style,
+  };
+
+  if (as === 'div') {
+    return (
+      <div {...otherProps} {...commonProps} role="button" tabIndex={0}>
+        <DragIcon variant="muted" />
+        <span className={styles.label}>{label}</span>
+      </div>
+    );
+  }
 
   return (
-    <Element
-      role="button"
-      tabIndex={0}
-      {...otherProps}
-      className={cx(styles.root({ isActive, isFocused, isHovered }), className)}
-      onBlur={handleBlur}
-      onFocus={handleFocus}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      data-test-id={testId}
-      ref={forwardedRef}
-      style={style}
-      type={as === 'button' ? 'button' : undefined}
-    >
+    <button {...otherProps} {...commonProps} type="button">
       <DragIcon variant="muted" />
       <span className={styles.label}>{label}</span>
-    </Element>
+    </button>
   );
 }
 
