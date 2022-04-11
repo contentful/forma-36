@@ -63,7 +63,7 @@ export default function Home() {
 
             <Button
               as="a"
-              href="/getting-started"
+              href="/introduction/getting-started"
               variant="primary"
               size="large"
               endIcon={<ArrowForwardTrimmedIcon />}

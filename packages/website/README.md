@@ -22,21 +22,26 @@ and Next.js will create a page for each of them that has a `slug` parameter in t
 The content that is not related to components like our "Getting started" guide is located in the `/content` folder here in the website package.
 To simplify the maintainability of this content, we ask you to keep the files in the same structure as if they were routes in Next.js style
 where the slug of the page defines its location in the folders.
-For example, if you have a page with the slug `/introduction/getting-started`, the structure will look like:
+if you have a page with the slug `/tokens/colors`, the structure will looke like:
 
 ```
 /content
-  getting-started.mdx
-```
-
-if you have a page with the slug `/guidelines/grammar-and-rules`, the structure will looke like:
-
-```
-/content
-  /guidelines
-    /copy
-      grammar-and-rules.mdx
-  getting-started.mdx
+  /tokens
+    colors.mdx
 ```
 
 Following this structure makes it easy to find the file that needs to be updated or changed in the future.
+
+## Environment variables
+
+To run this website locally, you need to create a `.env.local` with the following variables:
+
+```
+NEXT_PUBLIC_DOCSEARCH_APP_ID={{ You can find the value of this variable at our Algolia account}}
+NEXT_PUBLIC_DOCSEARCH_API_KEY={{ You can find the value of this variable at our Algolia account}}
+NEXT_PUBLIC_DOCSEARCH_INDEX_NAME={{ You can find the value of this variable at our Algolia account}}
+
+CONTENTFUL_SPACE_ID={{ You can find the value of this variable at our Contentful account}}
+CONTENTFUL_ACCESS_TOKEN={{ You can find the value of this variable at our Contentful account}}
+CONTENTFUL_PREVIEW_ACCESS_TOKEN={{ You can find the value of this variable at our Contentful account}}
+```
