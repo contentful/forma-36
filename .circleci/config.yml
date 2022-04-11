@@ -102,7 +102,7 @@ jobs:
           command: yarn wait-on http://localhost:3000
       - run:
           name: Run links checker
-          command: yarn blc http://localhost:3000 -ro --exclude "https://medium.com/contentful-design" --exclude "https://github.com/contentful/forma-36"
+          command: yarn blc http://localhost:3000 -ro --exclude "https://medium.com/contentful-design" --exclude "https://github.com/contentful/forma-36" --exclude "https://www.figma.com/@contentful"
 
   deploy_chromatic:
     docker:
@@ -136,7 +136,7 @@ jobs:
             - '2b:9f:13:79:d8:7b:f5:38:43:8f:3d:a8:7d:53:22:b2'
       - run: git config --global user.email ${GITHUB_EMAIL}
       - run: git config --global user.name ${GITHUB_USER}
-      - run: 
+      - run:
           name: Generate changelogrc
           command: yarn changelog:gen
       - run:
@@ -161,7 +161,7 @@ jobs:
             - '2b:9f:13:79:d8:7b:f5:38:43:8f:3d:a8:7d:53:22:b2'
       - run: git config --global user.email ${GITHUB_EMAIL}
       - run: git config --global user.name ${GITHUB_USER}
-      - run: 
+      - run:
           name: Generate changelog files
           command: yarn changelog:write
       - run:
@@ -205,7 +205,7 @@ workflows:
   f36-changelog:
     triggers:
       - schedule:
-          cron: "30 1 * * *"
+          cron: '30 1 * * *'
           filters:
             branches:
               only:

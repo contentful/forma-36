@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 
 export enum WEBSITE_SECTION {
+  HOMEPAGE = 'HOMEPAGE',
   INTRODUCTION = 'INTRODUCTION',
   GUIDELINES = 'GUIDELINES',
   TOKENS = 'TOKENS',
@@ -39,6 +40,10 @@ export const useCurrentLocation = () => {
 
   if (isPlayground) {
     return { activeSection: WEBSITE_SECTION.PLAYGROUND, currentPage };
+  }
+
+  if (currentPage === '/') {
+    return { activeSection: WEBSITE_SECTION.HOMEPAGE, currentPage };
   }
 
   return { activeSection: WEBSITE_SECTION.INTRODUCTION, currentPage };

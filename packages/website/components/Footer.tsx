@@ -14,7 +14,6 @@ const styles = {
     alignItems: 'flex-start',
     justifyItems: 'flex-start',
     marginTop: tokens.spacing2Xl,
-    backgroundColor: tokens.gray100,
     padding: tokens.spacingL,
   }),
 };
