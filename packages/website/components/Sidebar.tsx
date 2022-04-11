@@ -86,7 +86,7 @@ const components: Array<SidebarSectionType | SidebarLinkType> = [
 ];
 
 export function Sidebar({
-  activeSection = WEBSITE_SECTION.INTRODUCTION,
+  activeSection = WEBSITE_SECTION.HOMEPAGE,
   currentPage = '/',
 }: Props) {
   const componentsSorted = sortByTitle(components);
