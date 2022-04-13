@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.6.0
+
+### Minor Changes
+
+- [`6fd4099e`](https://github.com/contentful/forma-36/commit/6fd4099e3c4f364f6b95cb3720cca995c355e5cc) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(modal): custom classname before modal root styles
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.6.0
+  - @contentful/f36-icons@4.6.0
+  - @contentful/f36-typography@4.6.0
+  - @contentful/f36-core@4.6.0
+
 ## 4.5.0
 
 ### Patch Changes
