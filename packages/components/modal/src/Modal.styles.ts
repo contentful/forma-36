@@ -64,10 +64,10 @@ export function getModalStyles(props: {
           : null,
       ),
       afterOpen: css({
-        transform: 'scale(1)',
+        transform: 'scale(1) !important',
       }),
       beforeClose: css({
-        transform: 'scale(0.85)',
+        transform: 'scale(0.85) !important',
       }),
     },
     modalOverlay: {
