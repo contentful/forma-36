@@ -39,6 +39,7 @@ export function getModalStyles(props: {
   );
 
   return {
+    modal,
     portal: css({
       display: 'block',
     }),
@@ -101,6 +102,5 @@ export function getModalStyles(props: {
         opacity: 0,
       }),
     },
-    modal,
   };
 }
