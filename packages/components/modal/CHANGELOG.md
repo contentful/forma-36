@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.6.1
+
+### Patch Changes
+
+- [#1995](https://github.com/contentful/forma-36/pull/1995) [`f4495eda`](https://github.com/contentful/forma-36/commit/f4495edaf02d87e78acbc454730190161f6a305d) Thanks [@anho](https://github.com/anho)! - force scale for modal
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.6.1
+  - @contentful/f36-icons@4.6.1
+  - @contentful/f36-typography@4.6.1
+  - @contentful/f36-core@4.6.1
+
 ## 4.6.0
 
 ### Minor Changes
