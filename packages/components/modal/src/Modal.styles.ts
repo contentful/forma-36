@@ -1,10 +1,11 @@
 import tokens from '@contentful/f36-tokens';
 import { css, cx } from 'emotion';
-import type { ModalPositionType, ModalSizeType } from './types';
+
+import type { ModalProps } from './Modal';
 
 export function getModalStyles(props: {
-  size: ModalSizeType;
-  position: ModalPositionType;
+  size: ModalProps['size'];
+  position: ModalProps['position'];
   allowHeightOverflow?: boolean;
   className?: string;
 }) {
