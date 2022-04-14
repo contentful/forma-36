@@ -107,7 +107,7 @@ function focusFirstWithinNode(node: HTMLElement) {
   }
 }
 
-export function Modal({
+export const Modal = ({
   allowHeightOverflow = false,
   position = 'center',
   shouldCloseOnEscapePress = true,
@@ -117,7 +117,7 @@ export function Modal({
   topOffset = '50px',
   aria,
   ...otherProps
-}: ModalProps) {
+}: ModalProps) => {
   const contentRef = React.useRef<HTMLDivElement>(null);
 
   const props = {
@@ -215,6 +215,6 @@ export function Modal({
       </Box>
     </ReactModal>
   );
-}
+};
 
 Modal.displayName = 'Modal';
