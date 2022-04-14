@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 14-04-2022
+
+**F36 Modal** `v4.6.0`
+
+- fix(modal): custom classname before modal root styles
+
+**F36 Modal** `v4.6.1`
+
+- force scale for modal
+
 ## 13-04-2022
 
 `@contentful/f36-components@4.5.0`
