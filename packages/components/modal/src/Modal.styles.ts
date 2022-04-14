@@ -12,7 +12,7 @@ export function getModalStyles(props: {
     css({
       margin: tokens.spacing2Xl,
       backgroundColor: tokens.colorWhite,
-      borderRadius: tokens.borderRadiusMedium,
+      borderRadius: props.size === 'zen' ? 0 : tokens.borderRadiusMedium,
       boxShadow: tokens.boxShadowHeavy,
       maxHeight: `calc(100vh - 1rem * (100 / ${tokens.fontBaseDefault}))`,
       maxWidth: `calc(100vw - 1rem * (100 / ${tokens.fontBaseDefault}))`,
@@ -39,7 +39,6 @@ export function getModalStyles(props: {
   );
 
   return {
-    modal,
     portal: css({
       display: 'block',
     }),
@@ -53,7 +52,7 @@ export function getModalStyles(props: {
           margin: '0 auto',
           textAlign: 'left',
           outline: 'none',
-          transform: 'scale(0.85)',
+          transform: props.size === 'zen' ? 'scale(1)' : 'scale(0.85)',
           transition: `transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
         }),
         props.size === 'zen'
@@ -67,7 +66,7 @@ export function getModalStyles(props: {
         transform: 'scale(1) !important',
       }),
       beforeClose: css({
-        transform: 'scale(0.85) !important',
+        transform: props.size === 'zen' ? 'scale(1)' : 'scale(0.85)',
       }),
     },
     modalOverlay: {
@@ -102,5 +101,6 @@ export function getModalStyles(props: {
         opacity: 0,
       }),
     },
+    modal,
   };
 }
