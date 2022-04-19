@@ -37,7 +37,7 @@ export function Footer() {
           />
           <FooterLink
             href="https://www.contentful.com/developers/"
-            label="Join the developer comunnity"
+            label="Join the developer community"
           />
           <FooterLink
             href="https://forms.gle/qC7LLbiy4CcF5HPLA"
