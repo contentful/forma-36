@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.6.2
+
+### Patch Changes
+
+- [#1994](https://github.com/contentful/forma-36/pull/1994) [`0364ffe2`](https://github.com/contentful/forma-36/commit/0364ffe2aa2e5ccfea6263f4173b2d8069e4ec05) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(modal): fix scaling issues for modals with size "zen"
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.6.2
+  - @contentful/f36-icons@4.6.2
+  - @contentful/f36-typography@4.6.2
+  - @contentful/f36-core@4.6.2
+
 ## 4.6.1
 
 ### Patch Changes
