@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { Modal } from '../CompoundModal';
-import { ModalProps } from '../Modal';
-import type { ModalSizeType } from '../types';
+import type { ModalProps } from '../Modal';
 import type { ModalHeaderProps } from '../ModalHeader/ModalHeader';
 import type { ModalContentProps } from '../ModalContent/ModalContent';
 import type { ModalControlsProps } from '../ModalControls/ModalControls';
@@ -38,9 +37,9 @@ export interface ModalConfirmProps {
    */
   intent?: 'primary' | 'positive' | 'negative';
   /**
-      Size of the modal window
-    */
-  size?: ModalSizeType;
+   * Size of the modal window
+   */
+  size?: ModalProps['size'];
   /**
    * Boolean indicating if clicking the overlay should close the overlay.
    */

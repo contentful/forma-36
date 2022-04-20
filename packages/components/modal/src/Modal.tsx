@@ -2,14 +2,14 @@ import * as React from 'react';
 import ReactModal from 'react-modal';
 
 import { Box } from '@contentful/f36-core';
-import type { CommonProps } from '@contentful/f36-core';
+import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 
 import { ModalHeader, ModalHeaderProps } from './ModalHeader/ModalHeader';
 import { ModalContent, ModalContentProps } from './ModalContent/ModalContent';
 import { getModalStyles } from './Modal.styles';
 import type { ModalSizeType, ModalPositionType } from './types';
 
-const ModalSizesMapper = {
+const ModalSizesMapper: { [key in ModalSizeType]: string } = {
   medium: '520px',
   small: '400px',
   large: '700px',
@@ -66,7 +66,7 @@ export interface ModalProps extends CommonProps {
    * Size of the modal window
    * @default medium
    */
-  size?: ModalSizeType;
+  size?: ModalSizeType | string | number;
   /**
    * Are modals higher than viewport allowed
    * @default false
@@ -107,7 +107,7 @@ function focusFirstWithinNode(node: HTMLElement) {
   }
 }
 
-export function Modal({
+export const Modal = ({
   allowHeightOverflow = false,
   position = 'center',
   shouldCloseOnEscapePress = true,
@@ -117,7 +117,7 @@ export function Modal({
   topOffset = '50px',
   aria,
   ...otherProps
-}: ModalProps) {
+}: ExpandProps<ModalProps>) => {
   const contentRef = React.useRef<HTMLDivElement>(null);
 
   const props = {
@@ -154,7 +154,7 @@ export function Modal({
 
   const renderDefault = () => {
     return (
-      <React.Fragment>
+      <>
         {otherProps.title && (
           <ModalHeader
             title={otherProps.title}
@@ -165,7 +165,7 @@ export function Modal({
         <ModalContent {...otherProps.modalContentProps}>
           {otherProps.children}
         </ModalContent>
-      </React.Fragment>
+      </>
     );
   };
 
@@ -215,6 +215,6 @@ export function Modal({
       </Box>
     </ReactModal>
   );
-}
+};
 
 Modal.displayName = 'Modal';
