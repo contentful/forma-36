@@ -5,11 +5,10 @@ export const TriangleOutline = /*#__PURE__*/ generateIcon({
   name: 'TriangleOutline',
   path: (
     <>
-      <path d="M0 0h24v24H0z" fill="none" />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M9 0L18 15.5455H0L9 0ZM2.83819 13.9091L9 3.26596L15.1618 13.9091H2.83819Z"
+        d="m12 4 9 15.546H3L12 4ZM5.838 17.91 12 7.265l6.162 10.643H5.838Z"
       />
     </>
   ),

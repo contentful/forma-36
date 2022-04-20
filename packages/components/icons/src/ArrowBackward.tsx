@@ -5,8 +5,7 @@ export const ArrowBackward = /*#__PURE__*/ generateIcon({
   name: 'ArrowBackward',
   path: (
     <>
-      <path d="M0 0h24v24H0z" fill="none" />
-      <path d="M8 16L9.41 14.59L3.83 9L16 9V7L3.83 7L9.41 1.41L8 0L0 8L8 16Z" />
+      <path d="m12 20 1.41-1.41L7.83 13H20v-2H7.83l5.58-5.59L12 4l-8 8 8 8Z" />
     </>
   ),
 });

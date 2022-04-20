@@ -10,7 +10,6 @@ export type {
 } from '@contentful/f36-icon';
 export { Archive as ArchiveIcon } from './Archive';
 export { ArrowBackward as ArrowBackwardIcon } from './ArrowBackward';
-export { ArrowBackwardTrimmed as ArrowBackwardTrimmedIcon } from './ArrowBackwardTrimmed';
 export { ArrowDown as ArrowDownIcon } from './ArrowDown';
 export { ArrowDownTrimmed as ArrowDownTrimmedIcon } from './ArrowDownTrimmed';
 export { ArrowForward as ArrowForwardIcon } from './ArrowForward';
