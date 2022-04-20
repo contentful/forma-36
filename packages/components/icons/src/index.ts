@@ -9,6 +9,7 @@ export type {
   IconVariant,
 } from '@contentful/f36-icon';
 export { Archive as ArchiveIcon } from './Archive';
+export { ArrowBackward as ArrowBackwardIcon } from './ArrowBackward';
 export { ArrowDown as ArrowDownIcon } from './ArrowDown';
 export { ArrowDownTrimmed as ArrowDownTrimmedIcon } from './ArrowDownTrimmed';
 export { ArrowForward as ArrowForwardIcon } from './ArrowForward';
@@ -161,6 +162,7 @@ export { ThumbDown as ThumbDownIcon } from './ThumbDown';
 export { ThumbDownTrimmed as ThumbDownTrimmedIcon } from './ThumbDownTrimmed';
 export { ThumbUp as ThumbUpIcon } from './ThumbUp';
 export { ThumbUpTrimmed as ThumbUpTrimmedIcon } from './ThumbUpTrimmed';
+export { TriangleOutline as TriangleOutlineIcon } from './TriangleOutline';
 export { Users as UsersIcon } from './Users';
 export { UsersTrimmed as UsersTrimmedIcon } from './UsersTrimmed';
 export { Video as VideoIcon } from './Video';
