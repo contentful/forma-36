@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 21-04-2022
+
+**F36 Modal** `v4.6.2`
+
+- fix(modal): fix scaling issues for modals with size "zen"
+
 ## 14-04-2022
 
 **F36 Modal** `v4.6.0`
