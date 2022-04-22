@@ -1,5 +1,20 @@
 # Change Log
 
+## 4.7.0
+
+### Minor Changes
+
+- [#2002](https://github.com/contentful/forma-36/pull/2002) [`e50b8945`](https://github.com/contentful/forma-36/commit/e50b8945faef7323187e1bd9a2a9cbfcbae2e405) Thanks [@bgutsol](https://github.com/bgutsol)! - Update Parcel to fix f36-core package build
+
+### Patch Changes
+
+- Updated dependencies [[`e50b8945`](https://github.com/contentful/forma-36/commit/e50b8945faef7323187e1bd9a2a9cbfcbae2e405)]:
+  - @contentful/f36-core@4.7.0
+  - @contentful/f36-button@4.7.0
+  - @contentful/f36-icons@4.7.0
+  - @contentful/f36-text-link@4.7.0
+  - @contentful/f36-typography@4.7.0
+
 ## 4.6.2
 
 ### Patch Changes
