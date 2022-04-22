@@ -113,7 +113,6 @@ async function getMdxPaths() {
     return {
       params: {
         slug: sanitizedSlug,
-        source: 'mdx',
       },
     };
   });
