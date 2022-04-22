@@ -1,3 +1,5 @@
+import fs from 'fs';
+
 const ARTICLE_GRAPHQL_FIELDS = `
 sys {
   id
@@ -90,5 +92,29 @@ export async function getAllArticles(preview = false) {
     }`,
     preview,
   );
-  return extractArticleEntries(entries);
+
+  const articleEntries = extractArticleEntries(entries);
+
+  const sidebarLinks = articleEntries
+    .sort((a, b) => (a.title < b.title ? -1 : 1))
+    .reduce((acc, path) => {
+      const category = path.kbAppCategory?.slug ?? 'unassigned';
+
+      const item = {
+        title: path.title,
+        slug: `/${path.kbAppCategory.slug}/${path.slug}`,
+      };
+
+      if (acc[category]) {
+        return { ...acc, [category]: [...acc[category], item] };
+      }
+
+      return { ...acc, [category]: [item] };
+    }, {});
+
+  // create a JSON file with sidebar links for pages that come from Contentful
+  const data = JSON.stringify(sidebarLinks, null, 2);
+  fs.writeFileSync('utils/contentfulSidebarLinks.json', data);
+
+  return articleEntries;
 }
