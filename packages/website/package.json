@@ -15,7 +15,6 @@
     "@contentful/f36-docs-utils": "^4.0.0",
     "@contentful/f36-icon": "^4.0.0",
     "@contentful/f36-icons": "^4.0.4",
-    "@contentful/f36-pagination": "^4.1.0-beta",
     "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-utils": "^4.0.0",
     "@contentful/rich-text-react-renderer": "^15.11.1",
