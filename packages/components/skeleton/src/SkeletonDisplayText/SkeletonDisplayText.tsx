@@ -5,7 +5,7 @@ import { SkeletonText, SkeletonTextProps } from '../SkeletonText/SkeletonText';
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface SkeletonDisplayTextProps extends SkeletonTextProps {}
 
-export function SkeletonDisplayText({
+export const SkeletonDisplayText = ({
   lineHeight = 21,
   marginBottom = 20,
   numberOfLines = 1,
@@ -13,7 +13,7 @@ export function SkeletonDisplayText({
   offsetTop = 0,
   width = 100,
   ...otherProps
-}: SkeletonDisplayTextProps): React.ReactElement {
+}: SkeletonDisplayTextProps): React.ReactElement => {
   return (
     <SkeletonText
       lineHeight={lineHeight}
@@ -25,6 +25,6 @@ export function SkeletonDisplayText({
       {...otherProps}
     />
   );
-}
+};
 
 SkeletonDisplayText.displayName = 'SkeletonDisplayText';
