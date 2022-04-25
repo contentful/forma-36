@@ -17,20 +17,18 @@ Provides a relative date string for resolutions ranging from seconds up through 
 
 ### Examples
 
-If we consider today as of August 18th of 2021 and we pass the following values to the `<RelativeDateTime />` component
+We can pass a date as either an ISO 8601 string, a Date object, or a UNIX Epoch time.
 
 ```tsx
 <Stack flexDirection="column">
-  {/* passing a Timestamp as an ISOString */}
+  {/* passing a timestamp as an ISO string */}
   <RelativeDateTime date="2021-08-17T15:45" />
   {/* passing a JS Date */}
   <RelativeDateTime date={new Date()} />
-  {/* passing a Unix Epoch in milliseconds */}
+  {/* passing a UNIX Epoch */}
   <RelativeDateTime date={1629240300000} />
 </Stack>
 ```
-
-The component will display `a day ago`
 
 ### Passing a `baseDate`
 
@@ -47,18 +45,34 @@ The component will display `in a day`
 
 You can set isRelativeToCurrentWeek to true if you want to indicate that the date is relative only within a week.
 And if the difference is more than one week, just show the date without relativeness.
-It will compare the date to today or baseDate if provided.
+It will compare the date to today or `baseDate`` if provided.
 
 ```tsx
 <Stack flexDirection="column">
   {/* It will display "Yesterday at 3:45 PM" */}
-  <RelativeDateTime date="2021-08-17T15:45" isRelativeToCurrentWeek />
+  <RelativeDateTime
+    baseDate="2021-08-18T15:45"
+    date="2021-08-17T15:45"
+    isRelativeToCurrentWeek
+  />
   {/* It will display "5 hours ago" */}
-  <RelativeDateTime date="2021-08-18T10:45" isRelativeToCurrentWeek />
+  <RelativeDateTime
+    baseDate="2021-08-18T15:45"
+    date="2021-08-18T10:45"
+    isRelativeToCurrentWeek
+  />
   {/* It will display "Tomorrow at 3:45 PM" */}
-  <RelativeDateTime date="2021-08-19T15:45" isRelativeToCurrentWeek />
+  <RelativeDateTime
+    baseDate="2021-08-18T15:45"
+    date="2021-08-19T15:45"
+    isRelativeToCurrentWeek
+  />
   {/* It will display "1 Aug 2021" */}
-  <RelativeDateTime date="2021-08-01T15:45" isRelativeToCurrentWeek />
+  <RelativeDateTime
+    baseDate="2021-08-18T15:45"
+    date="2021-08-01T15:45"
+    isRelativeToCurrentWeek
+  />
 </Stack>
 ```
 
