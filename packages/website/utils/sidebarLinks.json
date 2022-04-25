@@ -1,0 +1,361 @@
+{
+  "unassigned": [
+    {
+      "title": "Accordion",
+      "slug": "/components/accordion/"
+    },
+    {
+      "title": "Asset",
+      "slug": "/components/asset/"
+    },
+    {
+      "title": "Autocomplete",
+      "slug": "/components/autocomplete/"
+    },
+    {
+      "title": "Badge",
+      "slug": "/components/badge/"
+    },
+    {
+      "title": "DragHandle",
+      "slug": "/components/drag-handle/"
+    },
+    {
+      "title": "EntityList",
+      "slug": "/components/entity-list/"
+    },
+    {
+      "title": "EntityStatusBadge",
+      "slug": "/components/entity-status-badge/"
+    },
+    {
+      "title": "GlobalStyles",
+      "slug": "/components/globalstyles/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "List",
+      "slug": "/components/list/"
+    },
+    {
+      "title": "Menu",
+      "slug": "/components/menu/"
+    },
+    {
+      "title": "Note",
+      "slug": "/components/note/"
+    },
+    {
+      "title": "Notification",
+      "slug": "/components/notification/"
+    },
+    {
+      "title": "Pagination",
+      "slug": "/components/pagination/",
+      "isNew": true
+    },
+    {
+      "title": "Pill",
+      "slug": "/components/pill/"
+    },
+    {
+      "title": "Popover",
+      "slug": "/components/popover/"
+    },
+    {
+      "title": "Spinner",
+      "slug": "/components/spinner/"
+    },
+    {
+      "title": "Table",
+      "slug": "/components/table/"
+    },
+    {
+      "title": "Tabs",
+      "slug": "/components/tabs/"
+    },
+    {
+      "title": "TextLink",
+      "slug": "/components/text-link/"
+    },
+    {
+      "title": "Tooltip",
+      "slug": "/components/tooltip/"
+    },
+    {
+      "title": "Workbench",
+      "slug": "/components/workbench/"
+    }
+  ],
+  "animationComponents": [
+    {
+      "title": "Collapse",
+      "slug": "/components/collapse/"
+    }
+  ],
+  "buttonComponents": [
+    {
+      "title": "Button",
+      "slug": "/components/button/"
+    },
+    {
+      "title": "ButtonGroup",
+      "slug": "/components/button-group/"
+    },
+    {
+      "title": "CopyButton",
+      "slug": "/components/copy-button/"
+    },
+    {
+      "title": "IconButton",
+      "slug": "/components/icon-button/"
+    },
+    {
+      "title": "ToggleButton",
+      "slug": "/components/toggle-button/"
+    }
+  ],
+  "modalComponents": [
+    {
+      "title": "Modal",
+      "slug": "/components/modal/"
+    },
+    {
+      "title": "ModalConfirm",
+      "slug": "/components/modal-confirm/"
+    },
+    {
+      "title": "ModalLauncher",
+      "slug": "/components/modal-launcher/"
+    }
+  ],
+  "cardComponents": [
+    {
+      "title": "AssetCard",
+      "slug": "/components/asset-card/"
+    },
+    {
+      "title": "Card",
+      "slug": "/components/card/"
+    },
+    {
+      "title": "EntryCard",
+      "slug": "/components/entry-card/"
+    },
+    {
+      "title": "InlineEntryCard",
+      "slug": "/components/inline-entry-card/"
+    }
+  ],
+  "dateComponents": [
+    {
+      "title": "Date utilities",
+      "slug": "/components/datetime-functions/"
+    },
+    {
+      "title": "DateTime",
+      "slug": "/components/datetime/"
+    },
+    {
+      "title": "RelativeDateTime",
+      "slug": "/components/relative-datetime/"
+    }
+  ],
+  "formComponents": [
+    {
+      "title": "Checkbox",
+      "slug": "/components/checkbox/"
+    },
+    {
+      "title": "Form",
+      "slug": "/components/form/"
+    },
+    {
+      "title": "FormControl",
+      "slug": "/components/form-control/"
+    },
+    {
+      "title": "Radio",
+      "slug": "/components/radio/"
+    },
+    {
+      "title": "Select",
+      "slug": "/components/select/"
+    },
+    {
+      "title": "Switch",
+      "slug": "/components/switch/"
+    },
+    {
+      "title": "TextInput",
+      "slug": "/components/text-input/"
+    },
+    {
+      "title": "Textarea",
+      "slug": "/components/textarea/"
+    }
+  ],
+  "skeletonComponents": [
+    {
+      "title": "SkeletonBodyText",
+      "slug": "/components/skeleton/skeleton-body-text/"
+    },
+    {
+      "title": "SkeletonContainer",
+      "slug": "/components/skeleton/skeleton-container/"
+    },
+    {
+      "title": "SkeletonDisplayText",
+      "slug": "/components/skeleton/skeleton-display-text/"
+    },
+    {
+      "title": "SkeletonImage",
+      "slug": "/components/skeleton/skeleton-image/"
+    },
+    {
+      "title": "SkeletonRow",
+      "slug": "/components/skeleton/skeleton-row/"
+    }
+  ],
+  "typographyComponents": [
+    {
+      "title": "DisplayText",
+      "slug": "/components/display-text/"
+    },
+    {
+      "title": "Heading",
+      "slug": "/components/heading/"
+    },
+    {
+      "title": "Paragraph",
+      "slug": "/components/paragraph/"
+    },
+    {
+      "title": "SectionHeading",
+      "slug": "/components/section-heading/"
+    },
+    {
+      "title": "Subheading",
+      "slug": "/components/subheading/"
+    },
+    {
+      "title": "Text",
+      "slug": "/components/text/"
+    }
+  ],
+  "utils": [
+    {
+      "title": "Portal",
+      "slug": "/utils/portal/"
+    },
+    {
+      "title": "ScreenReaderOnly",
+      "slug": "/components/screen-reader-only/"
+    },
+    {
+      "title": "getStringMatch",
+      "slug": "/utils/get-string-match/"
+    },
+    {
+      "title": "useKeyboard",
+      "slug": "/utils/use-keyboard/"
+    }
+  ],
+  "layoutComponents": [
+    {
+      "title": "Box",
+      "slug": "/components/box/"
+    },
+    {
+      "title": "Flex",
+      "slug": "/components/flex/"
+    },
+    {
+      "title": "Grid",
+      "slug": "/components/grid/"
+    },
+    {
+      "title": "Stack",
+      "slug": "/components/stack/"
+    }
+  ],
+  "introduction": [
+    {
+      "title": "What's new",
+      "slug": "/whats-new"
+    }
+  ],
+  "deprecatedComponents": [
+    {
+      "title": "Dropdown",
+      "slug": "/deprecated-components/dropdown/"
+    },
+    {
+      "title": "EditorToolbar",
+      "slug": "/deprecated-components/editor-toolbar/"
+    },
+    {
+      "title": "EmptyState",
+      "slug": "/deprecated-components/empty-state/"
+    },
+    {
+      "title": "Illustration",
+      "slug": "/deprecated-components/illustration/"
+    },
+    {
+      "title": "InViewport",
+      "slug": "/deprecated-components/in-viewport/"
+    },
+    {
+      "title": "TabFocusTrap",
+      "slug": "/deprecated-components/tab-focus-trap/"
+    },
+    {
+      "title": "Tag",
+      "slug": "/deprecated-components/tag/"
+    },
+    {
+      "title": "Typography Component",
+      "slug": "/deprecated-components/typography/"
+    }
+  ],
+  "integrations": [
+    {
+      "title": "Formik",
+      "slug": "/integrations/formik/"
+    },
+    {
+      "title": "React Hook Form",
+      "slug": "/integrations/react-hook-form/"
+    }
+  ],
+  "tokens": [
+    {
+      "title": "Color system",
+      "slug": "/tokens/color-system/"
+    },
+    {
+      "title": "Shadows and Glows",
+      "slug": "/tokens/shadows-and-glows/"
+    },
+    {
+      "title": "Spacing",
+      "slug": "/tokens/spacing/"
+    },
+    {
+      "title": "Transitions",
+      "slug": "/tokens/transitions/"
+    },
+    {
+      "title": "Typography",
+      "slug": "/tokens/typography/"
+    },
+    {
+      "title": "Z-Index",
+      "slug": "/tokens/z-index/"
+    }
+  ]
+}
