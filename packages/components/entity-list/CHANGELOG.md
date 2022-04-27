@@ -1,5 +1,22 @@
 # Change Log
 
+## 4.8.0
+
+### Patch Changes
+
+- [#2008](https://github.com/contentful/forma-36/pull/2008) [`1a941fd9`](https://github.com/contentful/forma-36/commit/1a941fd99757e49bb30e0e32eab19bc680f66597) Thanks [@massao](https://github.com/massao)! - Fix issue with types being generated wrongly
+
+- Updated dependencies [[`1a941fd9`](https://github.com/contentful/forma-36/commit/1a941fd99757e49bb30e0e32eab19bc680f66597)]:
+  - @contentful/f36-skeleton@4.8.0
+  - @contentful/f36-badge@4.8.0
+  - @contentful/f36-button@4.8.0
+  - @contentful/f36-drag-handle@4.8.0
+  - @contentful/f36-icon@4.8.0
+  - @contentful/f36-icons@4.8.0
+  - @contentful/f36-menu@4.8.0
+  - @contentful/f36-typography@4.8.0
+  - @contentful/f36-core@4.8.0
+
 ## 4.7.0
 
 ### Patch Changes
