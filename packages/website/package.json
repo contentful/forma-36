@@ -12,6 +12,7 @@
     "@codesandbox/sandpack-react": "0.18.1",
     "@contentful/f36-components": "^4.0.0",
     "@contentful/f36-core": "^4.0.0",
+    "@contentful/f36-datepicker": "^4.0.0-beta",
     "@contentful/f36-docs-utils": "^4.0.0",
     "@contentful/f36-icon": "^4.0.0",
     "@contentful/f36-icons": "^4.0.4",
