@@ -114,7 +114,7 @@ export interface EntityListItemProps extends CommonProps {
   isActionsDisabled?: boolean;
 }
 
-export function EntityListItem({
+export const EntityListItem = ({
   className,
   testId = 'cf-ui-entity-list-item',
   title,
@@ -135,7 +135,7 @@ export function EntityListItem({
   cardDragHandleComponent,
   isActionsDisabled = false,
   ...otherProps
-}: EntityListItemProps): React.ReactElement {
+}: EntityListItemProps): React.ReactElement => {
   const styles = getEntityListItemStyles();
 
   const renderCardDragHandle = () => {
@@ -270,6 +270,6 @@ export function EntityListItem({
       )}
     </li>
   );
-}
+};
 
 EntityListItem.displayName = 'EntityListItem';

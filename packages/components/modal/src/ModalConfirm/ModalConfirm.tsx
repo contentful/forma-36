@@ -87,7 +87,7 @@ export interface ModalConfirmProps {
   children: React.ReactNode;
 }
 
-export function ModalConfirm({
+export const ModalConfirm = ({
   allowHeightOverflow = false,
   cancelLabel = 'Cancel',
   cancelTestId = 'cf-ui-modal-confirm-cancel-button',
@@ -109,7 +109,7 @@ export function ModalConfirm({
   testId = 'cf-ui-modal-confirm',
   title = 'Are you sure?',
   initialFocusRef,
-}: ModalConfirmProps) {
+}: ModalConfirmProps) => {
   const cancelRef = React.useRef(null);
 
   const confirmButton = confirmLabel ? (
@@ -162,6 +162,6 @@ export function ModalConfirm({
       }}
     </Modal>
   );
-}
+};
 
 ModalConfirm.displayName = 'ModalConfirm';

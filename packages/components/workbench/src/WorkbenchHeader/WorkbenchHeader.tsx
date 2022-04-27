@@ -23,7 +23,7 @@ export interface WorkbenchHeaderProps extends CommonProps {
   onBack?: () => void;
 }
 
-export function WorkbenchHeader({
+export const WorkbenchHeader = ({
   actions,
   icon: Icon,
   title,
@@ -31,7 +31,7 @@ export function WorkbenchHeader({
   className,
   onBack,
   testId = 'cf-ui-workbench-header',
-}: WorkbenchHeaderProps) {
+}: WorkbenchHeaderProps) => {
   const hasBackButton = Boolean(onBack);
   const styles = getWorkbenchHeaderStyles(hasBackButton);
   const iconComponent =
@@ -80,6 +80,6 @@ export function WorkbenchHeader({
       {actions}
     </header>
   );
-}
+};
 
 WorkbenchHeader.displayName = 'WorkbenchHeader';

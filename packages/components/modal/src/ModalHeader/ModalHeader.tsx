@@ -18,13 +18,13 @@ export type ModalHeaderProps = PropsWithHTMLElement<
   'div'
 >;
 
-export function ModalHeader({
+export const ModalHeader = ({
   onClose,
   title,
   testId = 'cf-ui-modal-header',
   className,
   ...otherProps
-}: ModalHeaderProps): React.ReactElement {
+}: ModalHeaderProps): React.ReactElement => {
   const styles = getModalHeaderStyles();
 
   return (
@@ -53,6 +53,6 @@ export function ModalHeader({
       )}
     </Flex>
   );
-}
+};
 
 ModalHeader.displayName = 'ModalHeader';

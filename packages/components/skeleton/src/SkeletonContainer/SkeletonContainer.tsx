@@ -48,7 +48,7 @@ export interface SkeletonContainerProps extends CommonProps {
   children: React.ReactNode;
 }
 
-export function SkeletonContainer({
+export const SkeletonContainer = ({
   children,
   testId = 'cf-ui-skeleton-form',
   ariaLabel = 'Loading component...',
@@ -67,7 +67,7 @@ export function SkeletonContainer({
   gradientId,
   animateId,
   ...otherProps
-}: SkeletonContainerProps) {
+}: SkeletonContainerProps) => {
   const uniqueClipId = useId(clipId, 'cf-ui-skeleton-clip');
   const uniqueGradientId = useId(gradientId, 'cf-ui-skeleton-clip-gradient');
   const randomAnimateId = useId(undefined, 'animation');
@@ -148,6 +148,6 @@ export function SkeletonContainer({
       </defs>
     </Box>
   );
-}
+};
 
 SkeletonContainer.displayName = 'SkeletonContainer';
