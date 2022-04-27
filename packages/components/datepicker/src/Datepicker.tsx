@@ -4,7 +4,9 @@ import { CommonProps } from '@contentful/f36-core';
 
 import { getStyles } from './Datepicker.styles';
 
-export interface DatepickerProps extends CommonProps {}
+export interface DatepickerProps extends CommonProps {
+  date?: Date;
+}
 
 function _Datepicker(props: DatepickerProps, ref: React.Ref<HTMLDivElement>) {
   const styles = getStyles();
