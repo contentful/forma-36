@@ -44,6 +44,7 @@
     "@contentful/f36-modal": "^4.7.0",
     "@contentful/f36-note": "^4.7.0",
     "@contentful/f36-notification": "^4.7.0",
+    "@contentful/f36-pagination": "^4.7.0",
     "@contentful/f36-pill": "^4.7.0",
     "@contentful/f36-popover": "^4.7.0",
     "@contentful/f36-skeleton": "^4.7.0",
