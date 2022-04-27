@@ -29,14 +29,14 @@ export interface SkeletonTextProps {
   width?: stringOrNumber;
 }
 
-export function SkeletonText({
+export const SkeletonText = ({
   numberOfLines = 1,
   offsetLeft = 0,
   offsetTop = 0,
   lineHeight = 21,
   marginBottom = 20,
   width,
-}: SkeletonTextProps) {
+}: SkeletonTextProps) => {
   const getLineWidth = useCallback(
     (lastLine: boolean) => {
       if (width) {
@@ -67,6 +67,6 @@ export function SkeletonText({
       ))}
     </React.Fragment>
   );
-}
+};
 
 SkeletonText.displayName = 'SkeletonText';
