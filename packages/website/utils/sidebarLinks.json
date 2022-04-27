@@ -17,6 +17,11 @@
       "slug": "/components/badge/"
     },
     {
+      "title": "Datepicker",
+      "slug": "/components/datepicker/",
+      "isNew": true
+    },
+    {
       "title": "DragHandle",
       "slug": "/components/drag-handle/"
     },

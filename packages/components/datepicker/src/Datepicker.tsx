@@ -4,9 +4,7 @@ import { CommonProps } from '@contentful/f36-core';
 
 import { getStyles } from './Datepicker.styles';
 
-export interface DatepickerProps extends CommonProps {
-  children: React.ReactNode;
-}
+export interface DatepickerProps extends CommonProps {}
 
 function _Datepicker(props: DatepickerProps, ref: React.Ref<HTMLDivElement>) {
   const styles = getStyles();
@@ -17,7 +15,7 @@ function _Datepicker(props: DatepickerProps, ref: React.Ref<HTMLDivElement>) {
       ref={ref}
       className={cx(styles.datepicker, props.className)}
     >
-      {props.children}
+      Datepicker
     </div>
   );
 }
