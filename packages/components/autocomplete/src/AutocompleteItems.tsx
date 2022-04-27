@@ -18,9 +18,9 @@ interface AutocompleteItemsProps<ItemType> {
   listMaxHeight?: number;
 }
 
-export function AutocompleteItems<ItemType>(
+export const AutocompleteItems = <ItemType,>(
   props: AutocompleteItemsProps<ItemType>,
-) {
+) => {
   const {
     items,
     elementStartIndex,
@@ -61,7 +61,7 @@ export function AutocompleteItems<ItemType>(
       })}
     </ul>
   );
-}
+};
 
 AutocompleteItems.displayName = 'AutocompleteItems';
 
