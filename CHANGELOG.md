@@ -8,6 +8,48 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 28-04-2022
+
+`@contentful/f36-components@4.8.0`
+
+- feat: add pagination export to f36-components
+
+**F36 Autocomplete** `v4.8.0`
+
+- Fix issue with types being generated wrongly
+
+**F36 Card** `v4.8.0`
+
+- Fix issue with types being generated wrongly
+
+**F36 Entity List** `v4.8.0`
+
+- Fix issue with types being generated wrongly
+
+**F36 List** `v4.8.0`
+
+- Fix issue with types being generated wrongly
+
+**F36 Modal** `v4.8.0`
+
+- Fix issue with types being generated wrongly
+
+**F36 Notification** `v4.8.0`
+
+- Fix issue with types being generated wrongly
+
+**F36 Pagination** `v4.8.0`
+
+- feat: remove beta tag from pagination
+
+**F36 Skeleton** `v4.8.0`
+
+- Fix issue with types being generated wrongly
+
+**F36 Workbench** `v4.8.0`
+
+- Fix issue with types being generated wrongly
+
 ## 23-04-2022
 
 **F36 Core** `v4.7.0`

@@ -11,7 +11,6 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import tokens from '@contentful/f36-tokens';
 import * as f36Components from '@contentful/f36-components';
 import { Datepicker } from '@contentful/f36-datepicker';
-import { Pagination } from '@contentful/f36-pagination';
 import * as f36utils from '@contentful/f36-utils';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
@@ -35,7 +34,6 @@ const liveProviderScope = {
   ...f36Components,
   ...f36utils,
   Datepicker,
-  Pagination,
   css,
   f36icons,
   tokens,
