@@ -191,10 +191,10 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
       testId={testId}
       title={title}
     >
-      {withDragHandle
-        ? dragHandleRender
-          ? dragHandleRender({ drag, isDragging })
-          : drag
+      {dragHandleRender
+        ? dragHandleRender({ drag, isDragging })
+        : withDragHandle
+        ? drag
         : null}
       <div className={styles.wrapper} data-card-part="wrapper">
         {header ?? defaultHeader}
