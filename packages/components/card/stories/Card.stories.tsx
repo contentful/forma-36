@@ -22,7 +22,7 @@ export default {
   parameters: {
     propTypes: Card['__docgenInfo'],
   },
-  title: 'Components/Card',
+  title: 'Components/Card/Card',
   decorators: [
     (Story) => (
       <Flex flexDirection="column" style={{ maxWidth: '500px' }}>

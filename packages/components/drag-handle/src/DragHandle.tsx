@@ -62,9 +62,7 @@ export type DragHandleProps<
 
 function _DragHandle<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
   props: DragHandleProps<E>,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ref: Ref<any>, // Ref<ElementRef<E>>,
-  // forwardedRef: Ref<HTMLButtonElement> | Ref<HTMLDivElement>,
+  ref: Ref<any>,
 ) {
   const styles = getStyles();
   const {
