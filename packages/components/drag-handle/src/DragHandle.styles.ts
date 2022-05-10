@@ -36,8 +36,17 @@ export const getStyles = () => ({
         position: 'relative',
         transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
         width: tokens.spacingL,
-        '&:hover, &:focus': {
-          backgroundColor: tokens.colorElementLight,
+        '&:hover': {
+          backgroundColor: tokens.gray200,
+        },
+        '&:focus': {
+          boxShadow: tokens.glowPrimary,
+        },
+        '&:focus:not(:focus-visible)': {
+          boxShadow: 'unset',
+        },
+        '&:focus-visible': {
+          boxShadow: tokens.glowPrimary,
         },
       }),
       (isActive || isFocused || isHovered) &&
