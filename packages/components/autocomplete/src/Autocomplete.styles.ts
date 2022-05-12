@@ -10,7 +10,7 @@ export const getAutocompleteStyles = (listMaxHeight: number) => ({
     position: 'relative',
   }),
   inputField: css({
-    paddingRight: '32px',
+    paddingRight: tokens.spacingXl,
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
   }),
