@@ -9,12 +9,18 @@ export const getAutocompleteStyles = (listMaxHeight: number) => ({
   combobox: css({
     position: 'relative',
   }),
+  inputField: css({
+    paddingRight: tokens.spacingXl,
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+  }),
   toggleButton: css({
     position: 'absolute',
-    top: '4px',
-    right: '4px',
+    top: '1px',
+    right: '1px',
     zIndex: 1,
     padding: tokens.spacing2Xs,
+    height: '38px',
   }),
   content: css({
     overflow: 'auto',
