@@ -246,6 +246,7 @@ function _Autocomplete<ItemType>(
         <Popover.Trigger>
           <div {...comboboxProps} className={styles.combobox}>
             <TextInput
+              className={styles.inputField}
               {...inputProps}
               onFocus={() => {
                 if (!isOpen) {
