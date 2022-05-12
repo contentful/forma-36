@@ -53,7 +53,11 @@ export const WorkbenchHeader = ({
         </Button>
       )}
 
-      {Icon && <Box marginRight="spacingM">{iconComponent}</Box>}
+      {Icon && (
+        <Box marginRight="spacingM" display="inline-flex">
+          {iconComponent}
+        </Box>
+      )}
 
       {typeof title === 'string' ? (
         <Heading
