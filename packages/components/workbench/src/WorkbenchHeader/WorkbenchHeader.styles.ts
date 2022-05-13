@@ -34,6 +34,9 @@ export const getWorkbenchHeaderStyles = (hasBackButton = false) => ({
     '& svg': {
       fill: tokens.gray400,
     },
+    '&:focus': {
+      boxShadow: `inset ${tokens.glowPrimary}`,
+    },
     // This overwrite is necessary because the transparent button hover and the workbench header have the same bg color
     '&:hover': {
       backgroundColor: tokens.gray200,
