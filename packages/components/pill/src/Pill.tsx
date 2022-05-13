@@ -15,6 +15,12 @@ export type PillInternalProps = CommonProps & {
    * Text that will be shown on the pill
    */
   label: string;
+
+  /**
+   * A boolean that tells if the label should be used as a native tooltip title
+   * @default true
+   */
+  useLabelAsTitle?: boolean;
   /**
    * Function that handles when the close icon is clicked. Close icon visibility depends on if this property is set.
    */
@@ -43,6 +49,7 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
       onClose,
       testId = 'cf-ui-pill',
       onDrag,
+      useLabelAsTitle = true,
       className,
       dragHandleComponent,
       variant = 'idle',
@@ -67,7 +74,7 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
               <DragIcon className={styles.icon} variant="muted" />
             </span>
           ))}
-        <span title={label} className={styles.label}>
+        <span title={useLabelAsTitle ? label : null} className={styles.label}>
           {label}
         </span>
         {onClose && (

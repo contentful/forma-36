@@ -16,6 +16,7 @@ export default {
   argTypes: {
     label: { control: { type: 'text' } },
     className: { control: { disable: true } },
+    useLabelAsTitle: { control: 'boolean' },
     testId: { control: { disable: true } },
     onClose: { control: { disable: true } },
     onDrag: { control: { disable: true } },
@@ -25,7 +26,7 @@ export default {
 } as Meta;
 
 export const basic: Story<PillInternalProps> = (args) => (
-  <Pill label={args.label} />
+  <Pill label={args.label} useLabelAsTitle={args.useLabelAsTitle} />
 );
 
 basic.args = { label: 'example.user@contentful.com' };
@@ -39,13 +40,25 @@ export const Overview: Story<PillInternalProps> = (args) => (
 
       <Flex flexDirection="row" marginBottom="spacingM">
         <Box marginRight="spacingXs">
-          <Pill label="Idle" variant="idle" />
+          <Pill
+            label="Idle"
+            variant="idle"
+            useLabelAsTitle={args.useLabelAsTitle}
+          />
         </Box>
         <Box marginRight="spacingXs">
-          <Pill label="Active" variant="active" />
+          <Pill
+            label="Active"
+            variant="active"
+            useLabelAsTitle={args.useLabelAsTitle}
+          />
         </Box>
         <Box marginRight="spacingXs">
-          <Pill label="Deleted" variant="deleted" />
+          <Pill
+            label="Deleted"
+            variant="deleted"
+            useLabelAsTitle={args.useLabelAsTitle}
+          />
         </Box>
       </Flex>
     </Flex>
@@ -56,13 +69,28 @@ export const Overview: Story<PillInternalProps> = (args) => (
 
       <Flex flexDirection="row" marginBottom="spacingM">
         <Box marginRight="spacingXs">
-          <Pill label="Idle" variant="idle" onClose={args.onClose} />
+          <Pill
+            label="Idle"
+            variant="idle"
+            onClose={args.onClose}
+            useLabelAsTitle={args.useLabelAsTitle}
+          />
         </Box>
         <Box marginRight="spacingXs">
-          <Pill label="Active" variant="active" onClose={args.onClose} />
+          <Pill
+            label="Active"
+            variant="active"
+            onClose={args.onClose}
+            useLabelAsTitle={args.useLabelAsTitle}
+          />
         </Box>
         <Box marginRight="spacingXs">
-          <Pill label="Deleted" variant="deleted" onClose={args.onClose} />
+          <Pill
+            label="Deleted"
+            variant="deleted"
+            onClose={args.onClose}
+            useLabelAsTitle={args.useLabelAsTitle}
+          />
         </Box>
       </Flex>
     </Flex>
@@ -73,13 +101,28 @@ export const Overview: Story<PillInternalProps> = (args) => (
 
       <Flex flexDirection="row" marginBottom="spacingM">
         <Box marginRight="spacingXs">
-          <Pill label="Idle" variant="idle" onDrag={args.onDrag} />
+          <Pill
+            label="Idle"
+            variant="idle"
+            onDrag={args.onDrag}
+            useLabelAsTitle={args.useLabelAsTitle}
+          />
         </Box>
         <Box marginRight="spacingXs">
-          <Pill label="Active" variant="active" onDrag={args.onDrag} />
+          <Pill
+            label="Active"
+            variant="active"
+            onDrag={args.onDrag}
+            useLabelAsTitle={args.useLabelAsTitle}
+          />
         </Box>
         <Box marginRight="spacingXs">
-          <Pill label="Deleted" variant="deleted" onDrag={args.onDrag} />
+          <Pill
+            label="Deleted"
+            variant="deleted"
+            onDrag={args.onDrag}
+            useLabelAsTitle={args.useLabelAsTitle}
+          />
         </Box>
       </Flex>
     </Flex>
@@ -95,6 +138,7 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="idle"
             onDrag={args.onDrag}
             onClose={args.onClose}
+            useLabelAsTitle={args.useLabelAsTitle}
           />
         </Box>
         <Box marginRight="spacingXs">
@@ -103,6 +147,7 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="active"
             onDrag={args.onDrag}
             onClose={args.onClose}
+            useLabelAsTitle={args.useLabelAsTitle}
           />
         </Box>
         <Box marginRight="spacingXs">
@@ -111,6 +156,7 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="deleted"
             onDrag={args.onDrag}
             onClose={args.onClose}
+            useLabelAsTitle={args.useLabelAsTitle}
           />
         </Box>
       </Flex>
@@ -127,6 +173,7 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="idle"
             onDrag={args.onDrag}
             dragHandleComponent={args.dragHandleComponent}
+            useLabelAsTitle={args.useLabelAsTitle}
           />
         </Box>
         <Box marginRight="spacingXs">
@@ -135,6 +182,7 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="active"
             onDrag={args.onDrag}
             dragHandleComponent={args.dragHandleComponent}
+            useLabelAsTitle={args.useLabelAsTitle}
           />
         </Box>
         <Box marginRight="spacingXs">
@@ -143,6 +191,7 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="deleted"
             onDrag={args.onDrag}
             dragHandleComponent={args.dragHandleComponent}
+            useLabelAsTitle={args.useLabelAsTitle}
           />
         </Box>
       </Flex>
@@ -159,6 +208,7 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="idle"
             onDrag={args.onDrag}
             dragHandleComponent={args.dragHandleComponent}
+            useLabelAsTitle={args.useLabelAsTitle}
             onClose={args.onClose}
           />
         </Box>
@@ -168,6 +218,7 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="active"
             onDrag={args.onDrag}
             dragHandleComponent={args.dragHandleComponent}
+            useLabelAsTitle={args.useLabelAsTitle}
             onClose={args.onClose}
           />
         </Box>
@@ -177,6 +228,7 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="deleted"
             onDrag={args.onDrag}
             dragHandleComponent={args.dragHandleComponent}
+            useLabelAsTitle={args.useLabelAsTitle}
             onClose={args.onClose}
           />
         </Box>
