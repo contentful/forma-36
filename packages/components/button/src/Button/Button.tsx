@@ -82,7 +82,7 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
     <>
       {startIcon && iconContent(startIcon)}
       {children && (
-        <Box as="span" display="inline-flex" className={styles.buttonContent}>
+        <Box as="span" display="block" className={styles.buttonContent}>
           {children}
         </Box>
       )}
