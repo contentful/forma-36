@@ -1,21 +1,21 @@
 {
   "name": "@contentful/f36-autocomplete",
-  "version": "4.8.1",
+  "version": "4.8.2",
   "description": "Forma 36: Autocomplete component",
   "scripts": {
     "build": "parcel build"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@contentful/f36-button": "^4.8.1",
-    "@contentful/f36-core": "^4.8.1",
-    "@contentful/f36-forms": "^4.8.1",
-    "@contentful/f36-icons": "^4.8.1",
-    "@contentful/f36-popover": "^4.8.1",
-    "@contentful/f36-skeleton": "^4.8.1",
+    "@contentful/f36-button": "^4.8.2",
+    "@contentful/f36-core": "^4.8.2",
+    "@contentful/f36-forms": "^4.8.2",
+    "@contentful/f36-icons": "^4.8.2",
+    "@contentful/f36-popover": "^4.8.2",
+    "@contentful/f36-skeleton": "^4.8.2",
     "@contentful/f36-tokens": "^4.0.1",
-    "@contentful/f36-typography": "^4.8.1",
-    "@contentful/f36-utils": "^4.8.1",
+    "@contentful/f36-typography": "^4.8.2",
+    "@contentful/f36-utils": "^4.8.2",
     "downshift": "^6.1.7",
     "emotion": "^10.0.17"
   },
