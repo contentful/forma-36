@@ -4,8 +4,27 @@ import type { CommonProps, MarginProps } from '@contentful/f36-core';
 
 export type CardElement = 'a' | 'article' | 'button' | 'div' | 'fieldset';
 
+export type BaseCardDragHandleProps = {
+  /**
+   * Render the component with a drag handle
+   */
+  withDragHandle?: boolean;
+  /**
+   * Applies dragging styles to the card and drag handle
+   */
+  isDragging?: boolean;
+  /**
+   * Custom drag handle renderer. Useful, when integrating cards with drag-n-drop libraries
+   */
+  dragHandleRender?: (props: {
+    isDragging?: boolean;
+    drag: React.ReactElement;
+  }) => React.ReactElement;
+};
+
 export type BaseCardInternalProps = CommonProps &
-  MarginProps & {
+  MarginProps &
+  BaseCardDragHandleProps & {
     /**
      * An array of Menu elements used to render an actions menu
      */
@@ -52,10 +71,6 @@ export type BaseCardInternalProps = CommonProps &
      */
     onClick?: MouseEventHandler<HTMLElement>;
     /**
-     * Applies dragging styles to the card and drag handle
-     */
-    isDragging?: boolean;
-    /**
      * Applies hover styles to the card
      */
     isHovered?: boolean;
@@ -71,18 +86,6 @@ export type BaseCardInternalProps = CommonProps &
      * Type of the entity represented by the card. Shown in the header of the card
      */
     type?: string;
-    /**
-     * Render the component with a drag handle
-     */
-    withDragHandle?: boolean;
-    /**
-     * Custom drag handle renderer. Useful, when integrating cards with drag-n-drop libraries
-     */
-    dragHandleRender?: (props: {
-      isDragging?: boolean;
-      drag: React.ReactElement;
-    }) => React.ReactElement;
-
     /**
      * Loading state for the component - when true will display loading feedback to the user
      */

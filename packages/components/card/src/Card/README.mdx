@@ -49,6 +49,14 @@ Optionally, the user can pass a `target` prop to control how the link should be 
 
 ```
 
+### With a custom drag handle
+
+When using the `withDragHandle` prop on the Card, you can also pass a custom drag handle render function. This is useful for more advanced use cases such as supporting keyboard navigation, where you would want to handle key events on the drag handle component. When using a custom drag handle, you should pass `padding="none"` to the `Card` to make sure the drag handle does not render inside the Card's content.
+
+```jsx file=../../examples/Card/WithCustomDragHandle.tsx
+
+```
+
 ## Props (API reference)
 
 <PropsTable of="Card" />

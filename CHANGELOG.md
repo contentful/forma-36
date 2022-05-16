@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 10-05-2022
+
+**F36 Asset** `v4.8.1`
+
+- Fix issue with types being generated wrongly
+
+**F36 Typography** `v4.8.1`
+
+- Fix issue with types being generated wrongly
+
 ## 28-04-2022
 
 `@contentful/f36-components@4.8.0`
