@@ -5,6 +5,7 @@ import type {
   PropsWithHTMLElement,
   ExpandProps,
 } from '@contentful/f36-core';
+import { Tooltip } from '@contentful/f36-components';
 import { DragIcon, CloseIcon } from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
 import { PillVariants } from './types';
@@ -16,11 +17,6 @@ export type PillInternalProps = CommonProps & {
    */
   label: string;
 
-  /**
-   * A boolean that tells if the label should be used as a native tooltip title
-   * @default true
-   */
-  useLabelAsTitle?: boolean;
   /**
    * Function that handles when the close icon is clicked. Close icon visibility depends on if this property is set.
    */
@@ -49,7 +45,6 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
       onClose,
       testId = 'cf-ui-pill',
       onDrag,
-      useLabelAsTitle = true,
       className,
       dragHandleComponent,
       variant = 'idle',
@@ -57,6 +52,18 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
     } = props;
 
     const styles = getPillStyles(variant);
+    const [textIsEllipsis, setTextIsEllipsis] = React.useState(false);
+
+    const trackRefChange = React.useCallback(
+      (ref: HTMLDivElement | null) => {
+        if (!ref) {
+          return;
+        }
+        const { scrollWidth, offsetWidth } = ref || {};
+        setTextIsEllipsis(scrollWidth > offsetWidth);
+      },
+      [setTextIsEllipsis],
+    );
 
     return (
       <div
@@ -74,9 +81,11 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
               <DragIcon className={styles.icon} variant="muted" />
             </span>
           ))}
-        <span title={useLabelAsTitle ? label : null} className={styles.label}>
-          {label}
-        </span>
+        <Tooltip content={label} maxWidth="none" isDisabled={!textIsEllipsis}>
+          <span ref={trackRefChange} className={styles.label}>
+            {label}
+          </span>
+        </Tooltip>
         {onClose && (
           <Button
             type="button"

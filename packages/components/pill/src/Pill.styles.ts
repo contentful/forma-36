@@ -31,6 +31,7 @@ const getLabelStyle = () => {
     whiteSpace: 'nowrap',
     textOverflow: 'ellipsis',
     overflow: 'hidden',
+    display: 'inherit',
   });
 };
 

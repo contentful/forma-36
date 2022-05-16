@@ -4,8 +4,17 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
 import { Box, Flex } from '@contentful/f36-core';
 import { InfoCircleIcon } from '@contentful/f36-icons';
+import { css } from 'emotion';
 
 import { Pill, PillInternalProps } from '../src/Pill';
+
+const styles = {
+  pill: css({
+    '& span': {
+      maxWidth: 200,
+    },
+  }),
+};
 
 export default {
   title: 'Components/Pill',
@@ -16,7 +25,6 @@ export default {
   argTypes: {
     label: { control: { type: 'text' } },
     className: { control: { disable: true } },
-    useLabelAsTitle: { control: 'boolean' },
     testId: { control: { disable: true } },
     onClose: { control: { disable: true } },
     onDrag: { control: { disable: true } },
@@ -26,7 +34,7 @@ export default {
 } as Meta;
 
 export const basic: Story<PillInternalProps> = (args) => (
-  <Pill label={args.label} useLabelAsTitle={args.useLabelAsTitle} />
+  <Pill label={args.label} />
 );
 
 basic.args = { label: 'example.user@contentful.com' };
@@ -40,25 +48,13 @@ export const Overview: Story<PillInternalProps> = (args) => (
 
       <Flex flexDirection="row" marginBottom="spacingM">
         <Box marginRight="spacingXs">
-          <Pill
-            label="Idle"
-            variant="idle"
-            useLabelAsTitle={args.useLabelAsTitle}
-          />
+          <Pill label="Idle" variant="idle" />
         </Box>
         <Box marginRight="spacingXs">
-          <Pill
-            label="Active"
-            variant="active"
-            useLabelAsTitle={args.useLabelAsTitle}
-          />
+          <Pill label="Active" variant="active" />
         </Box>
         <Box marginRight="spacingXs">
-          <Pill
-            label="Deleted"
-            variant="deleted"
-            useLabelAsTitle={args.useLabelAsTitle}
-          />
+          <Pill label="Deleted" variant="deleted" />
         </Box>
       </Flex>
     </Flex>
@@ -69,28 +65,13 @@ export const Overview: Story<PillInternalProps> = (args) => (
 
       <Flex flexDirection="row" marginBottom="spacingM">
         <Box marginRight="spacingXs">
-          <Pill
-            label="Idle"
-            variant="idle"
-            onClose={args.onClose}
-            useLabelAsTitle={args.useLabelAsTitle}
-          />
+          <Pill label="Idle" variant="idle" onClose={args.onClose} />
         </Box>
         <Box marginRight="spacingXs">
-          <Pill
-            label="Active"
-            variant="active"
-            onClose={args.onClose}
-            useLabelAsTitle={args.useLabelAsTitle}
-          />
+          <Pill label="Active" variant="active" onClose={args.onClose} />
         </Box>
         <Box marginRight="spacingXs">
-          <Pill
-            label="Deleted"
-            variant="deleted"
-            onClose={args.onClose}
-            useLabelAsTitle={args.useLabelAsTitle}
-          />
+          <Pill label="Deleted" variant="deleted" onClose={args.onClose} />
         </Box>
       </Flex>
     </Flex>
@@ -101,28 +82,13 @@ export const Overview: Story<PillInternalProps> = (args) => (
 
       <Flex flexDirection="row" marginBottom="spacingM">
         <Box marginRight="spacingXs">
-          <Pill
-            label="Idle"
-            variant="idle"
-            onDrag={args.onDrag}
-            useLabelAsTitle={args.useLabelAsTitle}
-          />
+          <Pill label="Idle" variant="idle" onDrag={args.onDrag} />
         </Box>
         <Box marginRight="spacingXs">
-          <Pill
-            label="Active"
-            variant="active"
-            onDrag={args.onDrag}
-            useLabelAsTitle={args.useLabelAsTitle}
-          />
+          <Pill label="Active" variant="active" onDrag={args.onDrag} />
         </Box>
         <Box marginRight="spacingXs">
-          <Pill
-            label="Deleted"
-            variant="deleted"
-            onDrag={args.onDrag}
-            useLabelAsTitle={args.useLabelAsTitle}
-          />
+          <Pill label="Deleted" variant="deleted" onDrag={args.onDrag} />
         </Box>
       </Flex>
     </Flex>
@@ -138,7 +104,6 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="idle"
             onDrag={args.onDrag}
             onClose={args.onClose}
-            useLabelAsTitle={args.useLabelAsTitle}
           />
         </Box>
         <Box marginRight="spacingXs">
@@ -147,7 +112,6 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="active"
             onDrag={args.onDrag}
             onClose={args.onClose}
-            useLabelAsTitle={args.useLabelAsTitle}
           />
         </Box>
         <Box marginRight="spacingXs">
@@ -156,7 +120,6 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="deleted"
             onDrag={args.onDrag}
             onClose={args.onClose}
-            useLabelAsTitle={args.useLabelAsTitle}
           />
         </Box>
       </Flex>
@@ -173,7 +136,6 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="idle"
             onDrag={args.onDrag}
             dragHandleComponent={args.dragHandleComponent}
-            useLabelAsTitle={args.useLabelAsTitle}
           />
         </Box>
         <Box marginRight="spacingXs">
@@ -182,7 +144,6 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="active"
             onDrag={args.onDrag}
             dragHandleComponent={args.dragHandleComponent}
-            useLabelAsTitle={args.useLabelAsTitle}
           />
         </Box>
         <Box marginRight="spacingXs">
@@ -191,7 +152,6 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="deleted"
             onDrag={args.onDrag}
             dragHandleComponent={args.dragHandleComponent}
-            useLabelAsTitle={args.useLabelAsTitle}
           />
         </Box>
       </Flex>
@@ -208,7 +168,6 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="idle"
             onDrag={args.onDrag}
             dragHandleComponent={args.dragHandleComponent}
-            useLabelAsTitle={args.useLabelAsTitle}
             onClose={args.onClose}
           />
         </Box>
@@ -218,7 +177,6 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="active"
             onDrag={args.onDrag}
             dragHandleComponent={args.dragHandleComponent}
-            useLabelAsTitle={args.useLabelAsTitle}
             onClose={args.onClose}
           />
         </Box>
@@ -228,7 +186,6 @@ export const Overview: Story<PillInternalProps> = (args) => (
             variant="deleted"
             onDrag={args.onDrag}
             dragHandleComponent={args.dragHandleComponent}
-            useLabelAsTitle={args.useLabelAsTitle}
             onClose={args.onClose}
           />
         </Box>
@@ -248,4 +205,39 @@ Overview.args = {
       style={{ padding: '0.375rem 0.625rem', paddingRight: 0 }}
     />
   ),
+};
+
+export const InSmallContainer: Story<PillInternalProps> = (args) => (
+  <>
+    <Flex flexDirection="column" marginBottom="spacingL">
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Pill with very long text in a small container
+      </SectionHeading>
+      <Flex flexDirection="row" marginBottom="spacingM">
+        <Box marginRight="spacingXs">
+          <Pill
+            draggable
+            label={args.label}
+            className={styles.pill}
+            onDrag={args.onDrag}
+            onClose={args.onClose}
+          />
+        </Box>
+        <Box marginRight="spacingXs">
+          <Pill
+            draggable
+            label={args.label}
+            className={styles.pill}
+            onDrag={args.onDrag}
+            onClose={args.onClose}
+          />
+        </Box>
+      </Flex>
+    </Flex>
+  </>
+);
+
+InSmallContainer.args = {
+  label: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac libero at dui auctor  convallis eget non dolor. Integer sodales, lacus et tempus faucibus, elit elit condimentum metus, a 
+    dignissim velit ipsum vel nisl`,
 };
