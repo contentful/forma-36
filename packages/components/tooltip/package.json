@@ -13,7 +13,7 @@
     "@popperjs/core": "^2.4.4",
     "csstype": "^3.0.5",
     "emotion": "^10.0.17",
-    "react-popper": "^2.2.3"
+    "react-popper": "^2.3.0"
   },
   "peerDependencies": {
     "react": ">=16.8"
