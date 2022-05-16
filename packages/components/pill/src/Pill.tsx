@@ -59,7 +59,7 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
         if (!ref) {
           return;
         }
-        const { scrollWidth, offsetWidth } = ref || {};
+        const { scrollWidth, offsetWidth } = ref;
         setTextIsEllipsis(scrollWidth > offsetWidth);
       },
       [setTextIsEllipsis],
