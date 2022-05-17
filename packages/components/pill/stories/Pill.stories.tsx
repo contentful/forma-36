@@ -12,6 +12,7 @@ const styles = {
   pill: css({
     '& span': {
       maxWidth: 200,
+      display: 'block',
     },
   }),
 };
