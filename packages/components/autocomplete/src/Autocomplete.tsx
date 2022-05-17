@@ -158,8 +158,6 @@ function _Autocomplete<ItemType>(
 
   const styles = getAutocompleteStyles(listMaxHeight);
 
-  // is this one used??
-
   const [inputValue, setInputValue] = useState(defaultValue);
 
   const handleInputValueChange = useCallback(
