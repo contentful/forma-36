@@ -104,7 +104,10 @@ Basic.args = {
 };
 
 export const UsingObjectsAsItems = (args: AutocompleteProps<Produce>) => {
-  const [selectedFruit, setSelectedFruit] = useState<Produce>();
+  const [selectedFruit, setSelectedFruit] = useState<Produce>({
+    id: 9,
+    name: 'Pear 🍐',
+  });
   const [filteredItems, setFilteredItems] = useState(fruits);
 
   const handleInputValueChange = (value: string) => {
@@ -133,6 +136,7 @@ export const UsingObjectsAsItems = (args: AutocompleteProps<Produce>) => {
         onSelectItem={handleSelectItem}
         itemToString={(item) => item.name}
         renderItem={(item) => item.name}
+        selectedItem={selectedFruit}
       />
 
       <Paragraph>Selected fruit: {selectedFruit?.name}</Paragraph>
@@ -172,7 +176,6 @@ export const UsingGroupedItems = (args: AutocompleteProps<GroceryList>) => {
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<Produce>
-        {...args}
         items={filteredItems}
         isGrouped
         renderItem={(item) => item.name}
