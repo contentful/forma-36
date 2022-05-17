@@ -147,7 +147,7 @@ UsingObjectsAsItems.args = {
   placeholder: 'Search your favorite fruit',
 };
 
-export const UsingGroupedItems = (args: AutocompleteProps<GroceryList>) => {
+export const UsingGroupedItems = () => {
   const [selectedItem, setSelectedItem] = useState<Produce>();
   const [filteredItems, setFilteredItems] = useState(groceryList);
 
