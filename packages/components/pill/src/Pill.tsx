@@ -52,7 +52,7 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
     } = props;
 
     const styles = getPillStyles(variant);
-    const [textIsEllipsis, setTextIsEllipsis] = React.useState(false);
+    const [textIsTruncated, setTextIsTruncated] = React.useState(false);
 
     const trackRefChange = React.useCallback(
       (ref: HTMLDivElement | null) => {
@@ -60,9 +60,9 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
           return;
         }
         const { scrollWidth, offsetWidth } = ref;
-        setTextIsEllipsis(scrollWidth > offsetWidth);
+        setTextIsTruncated(scrollWidth > offsetWidth);
       },
-      [setTextIsEllipsis],
+      [setTextIsTruncated],
     );
 
     return (
@@ -81,7 +81,7 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
               <DragIcon className={styles.icon} variant="muted" />
             </span>
           ))}
-        <Tooltip content={label} maxWidth="none" isDisabled={!textIsEllipsis}>
+        <Tooltip content={label} maxWidth="none" isDisabled={!textIsTruncated}>
           <span ref={trackRefChange} className={styles.label}>
             {label}
           </span>
