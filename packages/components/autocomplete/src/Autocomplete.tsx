@@ -57,8 +57,8 @@ export interface AutocompleteProps<ItemType>
    * Applying the selectedItem property turns autocomplete into a controlled component.
    * Can be used to display e.g. previously selected element. If it is an object the itemToString function will apply to it.
    */
-
   selectedItem?: ItemType;
+
   /**
    * This is the function that will be called for each "item" passed in the `items` prop.
    * It receives the "item" and "inputValue" as arguments and returns a ReactNode.
