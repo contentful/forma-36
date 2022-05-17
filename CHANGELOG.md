@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 17-05-2022
+
+**F36 Workbench** `v4.8.2`
+
+- fix: workbench head icon alignments
+
 ## 10-05-2022
 
 **F36 Asset** `v4.8.1`
