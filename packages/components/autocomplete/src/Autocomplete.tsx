@@ -53,9 +53,9 @@ export interface AutocompleteProps<ItemType>
    */
   onSelectItem: (item: ItemType) => void;
 
-  /*
-   * Selected item
-   *
+  /**
+   * Applying the selectedItem property turns autocomplete into a controlled component.
+   * Can be used to display e.g. previously selected element. If it is an object the itemToString function will apply to it.
    */
 
   selectedItem?: ItemType;
