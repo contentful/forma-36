@@ -1,5 +1,23 @@
 # Change Log
 
+## 4.9.0
+
+### Minor Changes
+
+- [#2055](https://github.com/contentful/forma-36/pull/2055) [`910dafc9`](https://github.com/contentful/forma-36/commit/910dafc9ba4a1acc9133d2ee89e7a1fad879e932) Thanks [@Lelith](https://github.com/Lelith)! - Enable Autocomplete as a controlled input by using selectedItem property
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.9.0
+  - @contentful/f36-forms@4.9.0
+  - @contentful/f36-icons@4.9.0
+  - @contentful/f36-popover@4.9.0
+  - @contentful/f36-skeleton@4.9.0
+  - @contentful/f36-typography@4.9.0
+  - @contentful/f36-utils@4.9.0
+  - @contentful/f36-core@4.9.0
+
 ## 4.8.2
 
 ### Patch Changes
