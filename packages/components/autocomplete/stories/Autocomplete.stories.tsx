@@ -4,6 +4,7 @@ import type { Meta } from '@storybook/react/types-6-0';
 import { Stack } from '@contentful/f36-core';
 import { FormControl } from '@contentful/f36-forms';
 import { Paragraph } from '@contentful/f36-typography';
+import { Button } from '@contentful/f36-button';
 import { getStringMatch } from '@contentful/f36-utils';
 
 import { Autocomplete } from '../src/Autocomplete';
@@ -105,8 +106,8 @@ Basic.args = {
 
 export const UsingObjectsAsItems = (args: AutocompleteProps<Produce>) => {
   const [selectedFruit, setSelectedFruit] = useState<Produce>({
-    id: 9,
-    name: 'Pear 🍐',
+    id: undefined,
+    name: '',
   });
   const [filteredItems, setFilteredItems] = useState(fruits);
 
@@ -136,10 +137,55 @@ export const UsingObjectsAsItems = (args: AutocompleteProps<Produce>) => {
         onSelectItem={handleSelectItem}
         itemToString={(item) => item.name}
         renderItem={(item) => item.name}
+      />
+
+      <Paragraph>Selected fruit: {selectedFruit?.name}</Paragraph>
+    </Stack>
+  );
+};
+UsingObjectsAsItems.args = {
+  placeholder: 'Search your favorite fruit',
+};
+
+export const ControlledFromOutside = (args: AutocompleteProps<Produce>) => {
+  const [selectedFruit, setSelectedFruit] = useState<Produce>({
+    id: 9,
+    name: 'Pear 🍐',
+  });
+  const [filteredItems, setFilteredItems] = useState(fruits);
+
+  const handleInputValueChange = (value: string) => {
+    const newFilteredItems = fruits.filter((item) =>
+      item.name.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredItems(newFilteredItems);
+  };
+
+  const handleSelectItem = (item: Produce) => {
+    setSelectedFruit(item);
+  };
+
+  return (
+    <Stack
+      style={{ minWidth: '300px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      <Autocomplete<Produce>
+        {...args}
+        items={filteredItems}
+        onInputValueChange={handleInputValueChange}
+        onSelectItem={handleSelectItem}
+        itemToString={(item) => item.name}
+        renderItem={(item) => item.name}
         selectedItem={selectedFruit}
       />
 
       <Paragraph>Selected fruit: {selectedFruit?.name}</Paragraph>
+      <Button onClick={() => setSelectedFruit({ id: undefined, name: '' })}>
+        clear selection
+      </Button>
     </Stack>
   );
 };
