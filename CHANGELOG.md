@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 19-05-2022
+
+**F36 Autocomplete** `v4.9.0`
+
+- Enable Autocomplete as a controlled input by using selectedItem property
+
 ## 17-05-2022
 
 **F36 Workbench** `v4.8.2`
