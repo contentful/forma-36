@@ -5,6 +5,7 @@ import type {
   PropsWithHTMLElement,
   ExpandProps,
 } from '@contentful/f36-core';
+import { Tooltip } from '@contentful/f36-tooltip';
 import { DragIcon, CloseIcon } from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
 import { PillVariants } from './types';
@@ -50,6 +51,18 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
     } = props;
 
     const styles = getPillStyles(variant);
+    const [textIsTruncated, setTextIsTruncated] = React.useState(false);
+
+    const trackRefChange = React.useCallback(
+      (ref: HTMLDivElement | null) => {
+        if (!ref) {
+          return;
+        }
+        const { scrollWidth, offsetWidth } = ref;
+        setTextIsTruncated(scrollWidth > offsetWidth);
+      },
+      [setTextIsTruncated],
+    );
 
     return (
       <div
@@ -67,9 +80,11 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
               <DragIcon className={styles.icon} variant="muted" />
             </span>
           ))}
-        <span title={label} className={styles.label}>
-          {label}
-        </span>
+        <Tooltip content={label} maxWidth="none" isDisabled={!textIsTruncated}>
+          <span ref={trackRefChange} className={styles.label}>
+            {label}
+          </span>
+        </Tooltip>
         {onClose && (
           <Button
             type="button"
