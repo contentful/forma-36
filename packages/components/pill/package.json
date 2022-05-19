@@ -8,6 +8,7 @@
   "dependencies": {
     "@babel/runtime": "^7.6.2",
     "@contentful/f36-button": "^4.8.1",
+    "@contentful/f36-tooltip": "^4.8.1",
     "@contentful/f36-core": "^4.8.1",
     "@contentful/f36-icons": "^4.8.1",
     "@contentful/f36-tokens": "^4.0.1",

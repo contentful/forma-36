@@ -5,7 +5,7 @@ import type {
   PropsWithHTMLElement,
   ExpandProps,
 } from '@contentful/f36-core';
-import { Tooltip } from '@contentful/f36-components';
+import { Tooltip } from '@contentful/f36-tooltip';
 import { DragIcon, CloseIcon } from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
 import { PillVariants } from './types';
