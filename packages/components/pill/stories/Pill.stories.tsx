@@ -8,15 +8,6 @@ import { css } from 'emotion';
 
 import { Pill, PillInternalProps } from '../src/Pill';
 
-const styles = {
-  pill: css({
-    '& span': {
-      maxWidth: 200,
-      display: 'block',
-    },
-  }),
-};
-
 export default {
   title: 'Components/Pill',
   component: Pill,
@@ -208,35 +199,45 @@ Overview.args = {
   ),
 };
 
-export const InSmallContainer: Story<PillInternalProps> = (args) => (
-  <>
-    <Flex flexDirection="column" marginBottom="spacingL">
-      <SectionHeading as="h3" marginBottom="spacingS">
-        Pill with very long text in a small container
-      </SectionHeading>
-      <Flex flexDirection="row" marginBottom="spacingM">
-        <Box marginRight="spacingXs">
-          <Pill
-            draggable
-            label={args.label}
-            className={styles.pill}
-            onDrag={args.onDrag}
-            onClose={args.onClose}
-          />
-        </Box>
-        <Box marginRight="spacingXs">
-          <Pill
-            draggable
-            label={args.label}
-            className={styles.pill}
-            onDrag={args.onDrag}
-            onClose={args.onClose}
-          />
-        </Box>
+export const InSmallContainer: Story<PillInternalProps> = (args) => {
+  const styles = {
+    pill: css({
+      '& span': {
+        maxWidth: 200,
+        display: 'block',
+      },
+    }),
+  };
+  return (
+    <>
+      <Flex flexDirection="column" marginBottom="spacingL">
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Pill with very long text in a small container
+        </SectionHeading>
+        <Flex flexDirection="row" marginBottom="spacingM">
+          <Box marginRight="spacingXs">
+            <Pill
+              draggable
+              label={args.label}
+              className={styles.pill}
+              onDrag={args.onDrag}
+              onClose={args.onClose}
+            />
+          </Box>
+          <Box marginRight="spacingXs">
+            <Pill
+              draggable
+              label={args.label}
+              className={styles.pill}
+              onDrag={args.onDrag}
+              onClose={args.onClose}
+            />
+          </Box>
+        </Flex>
       </Flex>
-    </Flex>
-  </>
-);
+    </>
+  );
+};
 
 InSmallContainer.args = {
   label: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac libero at dui auctor  convallis eget non dolor. Integer sodales, lacus et tempus faucibus, elit elit condimentum metus, a 
