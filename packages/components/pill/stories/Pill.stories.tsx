@@ -202,10 +202,7 @@ Overview.args = {
 export const InSmallContainer: Story<PillInternalProps> = (args) => {
   const styles = {
     pill: css({
-      '& span': {
-        maxWidth: 200,
-        display: 'block',
-      },
+      maxWidth: 200,
     }),
   };
   return (
@@ -224,7 +221,7 @@ export const InSmallContainer: Story<PillInternalProps> = (args) => {
               onClose={args.onClose}
             />
           </Box>
-          <Box marginRight="spacingXs">
+          <Box>
             <Pill
               draggable
               label={args.label}

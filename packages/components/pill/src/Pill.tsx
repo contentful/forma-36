@@ -58,7 +58,7 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
         if (!ref) {
           return;
         }
-        const { scrollWidth, offsetWidth } = ref;
+        const { scrollWidth, offsetWidth } = ref.parentElement;
         setTextIsTruncated(scrollWidth > offsetWidth);
       },
       [setTextIsTruncated],
@@ -80,7 +80,12 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
               <DragIcon className={styles.icon} variant="muted" />
             </span>
           ))}
-        <Tooltip content={label} maxWidth="none" isDisabled={!textIsTruncated}>
+        <Tooltip
+          content={label}
+          maxWidth="none"
+          targetWrapperClassName={styles.label}
+          isDisabled={!textIsTruncated}
+        >
           <span ref={trackRefChange} className={styles.label}>
             {label}
           </span>
