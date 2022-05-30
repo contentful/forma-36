@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { Modal } from '../CompoundModal';
-import { ModalProps } from '../Modal';
-import type { ModalSizeType } from '../types';
+import type { ModalProps } from '../Modal';
 import type { ModalHeaderProps } from '../ModalHeader/ModalHeader';
 import type { ModalContentProps } from '../ModalContent/ModalContent';
 import type { ModalControlsProps } from '../ModalControls/ModalControls';
@@ -38,9 +37,9 @@ export interface ModalConfirmProps {
    */
   intent?: 'primary' | 'positive' | 'negative';
   /**
-      Size of the modal window
-    */
-  size?: ModalSizeType;
+   * Size of the modal window
+   */
+  size?: ModalProps['size'];
   /**
    * Boolean indicating if clicking the overlay should close the overlay.
    */
@@ -88,7 +87,7 @@ export interface ModalConfirmProps {
   children: React.ReactNode;
 }
 
-export function ModalConfirm({
+export const ModalConfirm = ({
   allowHeightOverflow = false,
   cancelLabel = 'Cancel',
   cancelTestId = 'cf-ui-modal-confirm-cancel-button',
@@ -110,7 +109,7 @@ export function ModalConfirm({
   testId = 'cf-ui-modal-confirm',
   title = 'Are you sure?',
   initialFocusRef,
-}: ModalConfirmProps) {
+}: ModalConfirmProps) => {
   const cancelRef = React.useRef(null);
 
   const confirmButton = confirmLabel ? (
@@ -163,6 +162,6 @@ export function ModalConfirm({
       }}
     </Modal>
   );
-}
+};
 
 ModalConfirm.displayName = 'ModalConfirm';

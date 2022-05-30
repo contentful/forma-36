@@ -14,7 +14,6 @@ const styles = {
     alignItems: 'flex-start',
     justifyItems: 'flex-start',
     marginTop: tokens.spacing2Xl,
-    backgroundColor: tokens.gray100,
     padding: tokens.spacingL,
   }),
 };
@@ -38,7 +37,7 @@ export function Footer() {
           />
           <FooterLink
             href="https://www.contentful.com/developers/"
-            label="Join the developer comunnity"
+            label="Join the developer community"
           />
           <FooterLink
             href="https://forms.gle/qC7LLbiy4CcF5HPLA"

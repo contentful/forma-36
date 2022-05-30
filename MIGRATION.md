@@ -19,6 +19,8 @@
       - [How to migrate your Accordion components with compound pattern](#how-to-migrate-your-accordion-components-with-compound-pattern)
     - [Asset](#asset)
       - [How to migrate your Asset components](#how-to-migrate-your-asset-components)
+    - [Autocomplete](#autocomplete)
+      - [How to migrate your Autocomplete components](#how-to-migrate-your-autocomplete-components)
     - [Button](#button)
       - [How to migrate your Button components](#how-to-migrate-your-button-components)
     - [Card](#card)
@@ -320,6 +322,104 @@ to this:
 ```tsx
 import { Asset } from '@contentful/f36-components';
 ```
+
+### Autocomplete
+
+Autocomplete component in the version 3 was never released as stable. We improved API and now most of the properies are different for this component. We were not able to provide you with a codemod for this component so you need to migrate it manually to v.
+
+#### How to migrate your Autocomplete component
+
+Your implementation in the version 3 might have looked like this:
+
+```tsx
+import { Autocomplete } from '@contentful/forma-36-react-components/dist/alpha';
+
+function AutocompleteExample() {
+  const items = [
+    { value: 1, label: 'Travel Blog' },
+    { value: 2, label: 'Finnance Blog' },
+    { value: 3, label: 'Fitness App' },
+    { value: 4, label: 'News Website' },
+    { value: 5, label: 'eCommerce Catalogue' },
+  ];
+
+  const [filteredItems, setFilteredItems] = React.useState(items);
+  const [selectedItem, setSelectedItem] = React.useState();
+
+  const handleQueryChange = (query) => {
+    setFilteredItems(
+      query ? items.filter((item) => item.label.includes(query)) : items,
+    );
+  };
+
+  const handleOnChange = (item) => {
+    setSelectedItem(item.label);
+  };
+
+  return (
+    <Autocomplete
+      items={filteredItems}
+      onQueryChange={handleQueryChange}
+      placeholder={'search'}
+      emptyListMessage={'no result found'}
+      noMatchesMessage={'no matches'}
+      dropdownProps={{ isFullWidth: true }}
+      onChange={handleOnChange}
+      selectedItem={selectedItem}
+    >
+      {(options) =>
+        options.map((option) => <span key={option.value}>{option.label}</span>)
+      }
+    </Autocomplete>
+  );
+}
+```
+
+Now it is much simpler, you don't need to handle so many properties anymore yourself, component will take care of it for you. It will look like this:
+
+```tsx
+import { Autocomplete } from '@contentful/f36-components';
+
+function AutocompleteExample() {
+  const spaces = [
+    'Travel Blog',
+    'Finnance Blog',
+    'Fitness App',
+    'News Website',
+    'eCommerce Catalogue',
+    'Photo Gallery',
+  ];
+
+  // This `useState` is going to store the selected "space" so we can show it in the UI
+  const [selectedSpace, setSelectedSpace] = React.useState();
+  const [filteredItems, setFilteredItems] = React.useState(spaces);
+
+  // We filter the "spaces" array by the inputValue
+  // we use 'toLowerCase()' to make the search case insensitive
+  const handleInputValueChange = (value) => {
+    const newFilteredItems = spaces.filter((item) =>
+      item.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredItems(newFilteredItems);
+  };
+
+  // This function will be called once the user selects an item in the list of options
+  const handleSelectItem = (item) => {
+    setSelectedSpace(item);
+  };
+
+  return (
+    <Autocomplete
+      // those are only 3 main properties that are required
+      items={filteredItems}
+      onInputValueChange={handleInputValueChange}
+      onSelectItem={handleSelectItem}
+    />
+  );
+}
+```
+
+Need more properties for the Autocomplete component? Check out full documentation of the new API in [here](https://f36.contentful.com/components/autocomplete)
 
 ### Button
 

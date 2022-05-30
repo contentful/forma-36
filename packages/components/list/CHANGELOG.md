@@ -1,5 +1,70 @@
 # Change Log
 
+## 4.9.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.9.0
+
+## 4.8.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.8.2
+
+## 4.8.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.8.1
+
+## 4.8.0
+
+### Patch Changes
+
+- [#2008](https://github.com/contentful/forma-36/pull/2008) [`1a941fd9`](https://github.com/contentful/forma-36/commit/1a941fd99757e49bb30e0e32eab19bc680f66597) Thanks [@massao](https://github.com/massao)! - Fix issue with types being generated wrongly
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.8.0
+
+## 4.7.0
+
+### Patch Changes
+
+- Updated dependencies [[`e50b8945`](https://github.com/contentful/forma-36/commit/e50b8945faef7323187e1bd9a2a9cbfcbae2e405)]:
+  - @contentful/f36-core@4.7.0
+
+## 4.6.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.6.2
+
+## 4.6.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.6.1
+
+## 4.6.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.6.0
+
+## 4.5.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.5.0
+
 ## 4.4.1
 
 ### Patch Changes

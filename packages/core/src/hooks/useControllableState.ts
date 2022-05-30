@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 
-type UseControllableStateProps = {
+export type UseControllableStateProps = {
   isOpen: boolean;
   defaultIsOpen?: boolean;
   onOpen?: () => void;
@@ -10,12 +10,12 @@ type UseControllableStateProps = {
 /**
  * Hook that manages the controlled and un-controlled state
  */
-export const useControllableState = ({
+export function useControllableState({
   isOpen,
   defaultIsOpen,
   onOpen,
   onClose,
-}: UseControllableStateProps) => {
+}: UseControllableStateProps) {
   const [isOpenState, setIsOpen] = useState(defaultIsOpen || false);
 
   const isControlled = isOpen !== undefined;
@@ -36,4 +36,4 @@ export const useControllableState = ({
   }, [isControlled, onOpen]);
 
   return { isOpen: isOpenValue, isControlled, handleClose, handleOpen };
-};
+}

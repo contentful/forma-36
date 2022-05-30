@@ -1,5 +1,77 @@
 # Change Log
 
+## 4.9.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-utils@4.9.0
+  - @contentful/f36-core@4.9.0
+
+## 4.8.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-utils@4.8.2
+  - @contentful/f36-core@4.8.2
+
+## 4.8.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-utils@4.8.1
+  - @contentful/f36-core@4.8.1
+
+## 4.8.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-utils@4.8.0
+  - @contentful/f36-core@4.8.0
+
+## 4.7.0
+
+### Patch Changes
+
+- Updated dependencies [[`e50b8945`](https://github.com/contentful/forma-36/commit/e50b8945faef7323187e1bd9a2a9cbfcbae2e405)]:
+  - @contentful/f36-core@4.7.0
+  - @contentful/f36-utils@4.7.0
+
+## 4.6.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-utils@4.6.2
+  - @contentful/f36-core@4.6.2
+
+## 4.6.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-utils@4.6.1
+  - @contentful/f36-core@4.6.1
+
+## 4.6.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-utils@4.6.0
+  - @contentful/f36-core@4.6.0
+
+## 4.5.0
+
+### Patch Changes
+
+- Updated dependencies [[`d841d7cb`](https://github.com/contentful/forma-36/commit/d841d7cbf74b20192028591197bc42df3d2ebc2e)]:
+  - @contentful/f36-utils@4.5.0
+  - @contentful/f36-core@4.5.0
+
 ## 4.4.1
 
 ### Patch Changes

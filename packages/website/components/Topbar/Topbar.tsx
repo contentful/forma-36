@@ -76,7 +76,7 @@ export function Topbar({ activeSection }: TopbarProps) {
           <List className={styles.navList}>
             <List.Item>
               <TopbarLink
-                href="/"
+                href="/introduction/getting-started"
                 label="Introduction"
                 isActive={activeSection === WEBSITE_SECTION.INTRODUCTION}
               />

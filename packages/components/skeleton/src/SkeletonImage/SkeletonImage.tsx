@@ -12,7 +12,7 @@ export interface SkeletonImageProps {
   testId?: string;
 }
 
-export function SkeletonImage({
+export const SkeletonImage = ({
   testId = 'cf-ui-skeleton-image',
   offsetLeft,
   offsetTop,
@@ -21,7 +21,7 @@ export function SkeletonImage({
   radiusX = 0,
   radiusY = 0,
   ...otherProps
-}: SkeletonImageProps): React.ReactElement {
+}: SkeletonImageProps): React.ReactElement => {
   return (
     <rect
       x={offsetLeft}
@@ -34,6 +34,6 @@ export function SkeletonImage({
       {...otherProps}
     />
   );
-}
+};
 
 SkeletonImage.displayName = 'SkeletonImage';

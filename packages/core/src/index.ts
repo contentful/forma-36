@@ -25,6 +25,7 @@ export type { StackProps } from './Stack';
 export { ScreenReaderOnly } from './ScreenReaderOnly';
 export type { ScreenReaderOnlyProps } from './ScreenReaderOnly';
 
-export * from './hooks';
+export { useControllableState, useId } from './hooks';
+export type { UseControllableStateProps } from './hooks';
 export { mergeRefs } from './utils/mergeRefs';
 export { getEntityStatusStyles } from './utils/getEntityStatusStyles';

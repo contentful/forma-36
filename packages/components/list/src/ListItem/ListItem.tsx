@@ -12,12 +12,12 @@ export type ListItemProps = PropsWithHTMLElement<
   'li'
 >;
 
-export function ListItem({
+export const ListItem = ({
   className,
   children,
   testId = 'cf-ui-list-item',
   ...otherProps
-}: ListItemProps): React.ReactElement {
+}: ListItemProps): React.ReactElement => {
   return (
     <li
       className={cx(
@@ -36,6 +36,6 @@ export function ListItem({
       {children}
     </li>
   );
-}
+};
 
 ListItem.displayName = 'ListItem';
