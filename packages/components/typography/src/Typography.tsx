@@ -7,13 +7,13 @@ export interface TypographyProps {
 /**
  * @deprecated
  */
-export function Typography(props: TypographyProps) {
+export const Typography = (props: TypographyProps) => {
   useEffect(() => {
     console.warn(
       'Forma 36: Typography component is deprecated. You can safely remove it from your components.',
     );
   }, []);
   return <>{props.children}</>;
-}
+};
 
 Typography.displayName = 'Typography';

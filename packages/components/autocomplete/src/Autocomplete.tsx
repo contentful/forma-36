@@ -52,6 +52,13 @@ export interface AutocompleteProps<ItemType>
    * The component will pass the selected "item" as an argument to the function..
    */
   onSelectItem: (item: ItemType) => void;
+
+  /**
+   * Applying the selectedItem property turns autocomplete into a controlled component.
+   * Can be used to display e.g. previously selected element. If it is an object the itemToString function will apply to it.
+   */
+  selectedItem?: ItemType;
+
   /**
    * This is the function that will be called for each "item" passed in the `items` prop.
    * It receives the "item" and "inputValue" as arguments and returns a ReactNode.
@@ -124,6 +131,7 @@ function _Autocomplete<ItemType>(
     className,
     clearAfterSelect = false,
     defaultValue = '',
+    selectedItem,
     items,
     onInputValueChange,
     onSelectItem,
@@ -192,6 +200,7 @@ function _Autocomplete<ItemType>(
     toggleMenu,
   } = useCombobox({
     items: flattenItems,
+    selectedItem,
     inputValue,
     itemToString,
     onInputValueChange: ({ type, inputValue }) => {
@@ -246,6 +255,7 @@ function _Autocomplete<ItemType>(
         <Popover.Trigger>
           <div {...comboboxProps} className={styles.combobox}>
             <TextInput
+              className={styles.inputField}
               {...inputProps}
               onFocus={() => {
                 if (!isOpen) {

@@ -6,7 +6,7 @@ import type { CommonProps } from '@contentful/f36-core';
 import { Heading, Paragraph } from '@contentful/f36-typography';
 import type { IconComponent } from '@contentful/f36-icon';
 import { ChevronLeftIcon } from '@contentful/f36-icons';
-import { Button } from '@contentful/f36-button';
+import { IconButton } from '@contentful/f36-button';
 
 import { getWorkbenchHeaderStyles } from './WorkbenchHeader.styles';
 
@@ -23,7 +23,7 @@ export interface WorkbenchHeaderProps extends CommonProps {
   onBack?: () => void;
 }
 
-export function WorkbenchHeader({
+export const WorkbenchHeader = ({
   actions,
   icon: Icon,
   title,
@@ -31,7 +31,7 @@ export function WorkbenchHeader({
   className,
   onBack,
   testId = 'cf-ui-workbench-header',
-}: WorkbenchHeaderProps) {
+}: WorkbenchHeaderProps) => {
   const hasBackButton = Boolean(onBack);
   const styles = getWorkbenchHeaderStyles(hasBackButton);
   const iconComponent =
@@ -43,17 +43,21 @@ export function WorkbenchHeader({
       data-test-id={testId}
     >
       {hasBackButton && (
-        <Button
-          variant="transparent"
+        <IconButton
+          aria-label="Back"
           testId="workbench-back-btn"
+          variant="transparent"
           className={styles.backButton}
           onClick={() => onBack()}
-        >
-          <ChevronLeftIcon aria-label="Back" size="large" variant="muted" />
-        </Button>
+          icon={<ChevronLeftIcon size="large" variant="muted" />}
+        />
       )}
 
-      {Icon && <Box marginRight="spacingM">{iconComponent}</Box>}
+      {Icon && (
+        <Box marginRight="spacingM" display="inline-flex">
+          {iconComponent}
+        </Box>
+      )}
 
       {typeof title === 'string' ? (
         <Heading
@@ -80,6 +84,6 @@ export function WorkbenchHeader({
       {actions}
     </header>
   );
-}
+};
 
 WorkbenchHeader.displayName = 'WorkbenchHeader';

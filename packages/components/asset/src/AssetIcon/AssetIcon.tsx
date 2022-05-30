@@ -26,12 +26,12 @@ export interface AssetIconProps
 /**
  * Renders only the Illustration that would represent this asset's type
  */
-export function AssetIcon({
+export const AssetIcon = ({
   type = 'archive',
   className,
   testId = 'cf-ui-asset-icon',
   ...otherProps
-}: AssetIconProps) {
+}: AssetIconProps) => {
   const styles = getAssetIconStyles();
   const props = {
     ...otherProps,
@@ -64,6 +64,6 @@ export function AssetIcon({
     default:
       return <ArchiveIcon {...props} />;
   }
-}
+};
 
 AssetIcon.displayName = 'AssetIcon';
