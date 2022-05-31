@@ -3,6 +3,7 @@ import { cx } from 'emotion';
 import { CommonProps } from '@contentful/f36-core';
 
 import { getStyles } from './Datepicker.styles';
+import { Calendar } from './Calendar';
 
 export interface DatepickerProps extends CommonProps {
   date?: Date;
@@ -17,7 +18,7 @@ function _Datepicker(props: DatepickerProps, ref: React.Ref<HTMLDivElement>) {
       ref={ref}
       className={cx(styles.datepicker, props.className)}
     >
-      Datepicker
+      <Calendar />
     </div>
   );
 }
