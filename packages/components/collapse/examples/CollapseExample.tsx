@@ -1,10 +1,10 @@
 import React from 'react';
-import { Button, Collapse, Text } from '@contentful/f36-components';
+import { Button, Collapse, Text, Stack } from '@contentful/f36-components';
 
 export function CollapseExample() {
   const [isExpanded, setIsExpanded] = React.useState(true);
   return (
-    <div>
+    <Stack flexDirection="column">
       <Button onClick={() => setIsExpanded(!isExpanded)}>Toggle</Button>
       <Collapse isExpanded={isExpanded}>
         <Text>
@@ -13,6 +13,6 @@ export function CollapseExample() {
           paying with a credit card or wire transfer.
         </Text>
       </Collapse>
-    </div>
+    </Stack>
   );
 }
