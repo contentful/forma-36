@@ -4,7 +4,7 @@ import { Datepicker } from './Datepicker';
 
 describe('Datepicker', function () {
   it('renders', () => {
-    const tree = render(<Datepicker>hello world</Datepicker>);
+    const tree = render(<Datepicker />);
 
     expect(tree).toBeTruthy();
   });
