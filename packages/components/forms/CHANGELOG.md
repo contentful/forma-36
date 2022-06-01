@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.10.0
+
+### Minor Changes
+
+- [#2065](https://github.com/contentful/forma-36/pull/2065) [`20d73e7c`](https://github.com/contentful/forma-36/commit/20d73e7c8247ee789fdfde58882682808bf761ae) Thanks [@bgutsol](https://github.com/bgutsol)! - Add stacking context for the ButtonGroup and InputGroup components. It should fix the bug when the group elements are stacking not within the Group’s context, but within the context of the parent element (because the ButtonGroup/InputGroup itself didn't create a stacking context)
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-icons@4.10.0
+  - @contentful/f36-typography@4.10.0
+  - @contentful/f36-core@4.10.0
+
 ## 4.9.0
 
 ### Patch Changes
