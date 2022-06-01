@@ -8,6 +8,8 @@ const getInputGroupStyle = ({ spacing }) => {
   }
 
   return {
+    position: 'relative',
+
     '& button, & input': {
       borderRadius: '0 !important',
     },
