@@ -4,10 +4,10 @@ import type { GetStyleArguments } from './types';
 
 const getInputGroupStyle = ({ spacing }) => {
   if (spacing !== 'none') {
-    return {};
+    return;
   }
 
-  return {
+  return css({
     position: 'relative',
 
     '& button, & input': {
@@ -32,9 +32,9 @@ const getInputGroupStyle = ({ spacing }) => {
         zIndex: tokens.zIndexDefault + 1,
       },
     },
-  };
+  });
 };
 
 export default ({ spacing }: GetStyleArguments) => ({
-  inputGroup: css(getInputGroupStyle({ spacing })),
+  inputGroup: getInputGroupStyle({ spacing }),
 });
