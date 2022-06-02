@@ -17,11 +17,6 @@ module.exports = {
   ],
 
   webpackFinal: async (config, { configType }) => {
-    // Need to remove Storybook's CSS loader before adding our own
-    // config.module.rules = config.module.rules.filter(
-    //   (rule) => rule.test.toString() !== '/\\.css$/',
-    // );
-
     // We need to split into chunks to avoid terser running out of memory
     // when trying to minify one huge JS file
     config.optimization = {
