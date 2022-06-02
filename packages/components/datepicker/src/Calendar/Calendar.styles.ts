@@ -2,11 +2,10 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { ClassNames } from 'react-day-picker';
 
+const cellSize = 40;
+
 export const getStyles = (): ClassNames => {
   return {
-    root: css({
-      color: tokens.colorBlack,
-    }),
     vhidden: css({
       boxSizing: 'border-box',
       padding: '0',
@@ -28,32 +27,113 @@ export const getStyles = (): ClassNames => {
       position: 'relative',
       margin: 0,
       padding: 0,
-      cursor: 'default',
       border: 'none',
+      outline: 'none',
+      background: 'none',
     }),
-    day_selected: css({
-      backgroundColor: tokens.blue600,
-      color: tokens.colorWhite,
-      fontWeight: tokens.fontWeightDemiBold,
+    button: css({
+      borderRadius: tokens.borderRadiusMedium,
+      cursor: 'pointer',
+      color: tokens.gray900,
+
+      '&[aria-disabled="true"]': {
+        color: tokens.gray400,
+        pointerEvents: 'none',
+      },
+      '&:focus, &:active': {
+        boxShadow: tokens.glowPrimary,
+      },
+
+      '&:hover': {
+        backgroundColor: tokens.gray200,
+      },
+
+      '&.rdp-day_selected:not([aria-disabled="true"])': {
+        backgroundColor: tokens.blue600,
+        color: tokens.colorWhite,
+        fontWeight: tokens.fontWeightDemiBold,
+      },
     }),
-    day: css({
-      width: '40px',
-      maxWidth: '40px',
-      height: '40px',
+
+    months: css({
+      display: 'flex',
+    }),
+    month: css({
+      margin: '0 1em',
+      '&:first-child': {
+        marginLeft: 0,
+      },
+      '&:last-child': {
+        marginRight: 0,
+      },
+    }),
+    table: css({
+      margin: 0,
+      borderCollapse: 'collapse',
     }),
     caption: css({
+      position: 'relative',
       padding: 0,
       textAlign: 'left',
+
+      '.rdp-multiple_months &': {
+        display: 'block',
+        textAlign: 'center',
+      },
     }),
     caption_dropdowns: css({
       position: 'relative',
       display: 'inline-flex',
     }),
+    caption_label: css({
+      position: 'relative',
+      zIndex: 1,
+      display: 'inline-flex',
+      alignItems: 'center',
+      margin: '0',
+      padding: `0 ${tokens.spacingXs}`,
+      height: '32px',
+      whiteSpace: 'nowrap',
+      fontSize: tokens.fontSizeM,
+      fontWeight: tokens.fontWeightMedium,
+      borderRadius: tokens.borderRadiusMedium,
+
+      '& + &': {
+        marginLeft: '3px',
+      },
+    }),
+    nav: css({
+      whiteSpace: 'nowrap',
+
+      '.rdp-multiple_months .rdp-caption_start &': {
+        position: 'absolute',
+        top: '50%',
+        left: '0',
+        transform: 'translateY(-50%)',
+      },
+
+      '.rdp-multiple_months .rdp-caption_end &': {
+        position: 'absolute',
+        top: '50%',
+        right: '0',
+        transform: 'translateY(-50%)',
+      },
+    }),
+
     nav_button: css({
       width: '32px',
       height: '32px',
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: 'transparent',
+      borderRadius: tokens.borderRadiusMedium,
     }),
-    dropdown_year: css({
+    nav_button_previous: css({
+      marginRight: '3px',
+    }),
+
+    dropdown_month: css({
       position: 'relative',
       display: 'inline-flex',
       alignItems: 'center',
@@ -68,27 +148,73 @@ export const getStyles = (): ClassNames => {
       width: '100%',
       margin: '0',
       padding: '0',
-      cursor: 'inherit',
+      cursor: 'pointer',
       opacity: '0',
       border: 'none',
       backgroundColor: 'transparent',
       fontFamily: 'inherit',
       fontSize: 'inherit',
       lineHeight: 'inherit',
+
+      '&:focus:not([disabled]) + div, &:active:not([disabled]) + div': {
+        boxShadow: tokens.glowPrimary,
+      },
+
+      '&:hover:not([disabled]) + div, &:hover:not([disabled]) + div': {
+        backgroundColor: tokens.gray200,
+      },
     }),
-    caption_label: css({
-      position: 'relative',
-      zIndex: 1,
-      display: 'inline-flex',
-      alignItems: 'center',
-      margin: '0',
-      padding: '0 0.25em',
-      whiteSpace: 'nowrap',
-      color: 'currentColor',
-      border: '2px solid transparent',
-      fontFamily: 'inherit',
-      fontSize: '140%',
-      fontWeight: 'bold',
+
+    dropdown_icon: css({
+      marginLeft: '8px',
+    }),
+
+    head: css({
+      border: 0,
+    }),
+
+    head_row: css({
+      height: '100%',
+    }),
+
+    row: css({
+      height: '100%',
+    }),
+
+    head_cell: css({
+      verticalAlign: 'middle',
+      fontSize: tokens.fontSizeS,
+      fontWeight: tokens.fontWeightDemiBold,
+      textAlign: 'center',
+      height: '32px',
+    }),
+
+    tbody: css({
+      border: 0,
+    }),
+
+    tfoot: css({
+      margin: '0.5em',
+    }),
+
+    cell: css({
+      padding: '2px',
+      textAlign: 'center',
+    }),
+    day: css({
+      width: `${cellSize}px`,
+      height: `${cellSize}px`,
+
+      '&.rdp-day_today:not(.rdp-day_outside)': {
+        fontWeight: tokens.fontWeightDemiBold,
+      },
+      '&.rdp-day_today:not(.rdp-day_outside):not(.rdp-day_selected):not(:hover)': {
+        backgroundColor: tokens.blue100,
+      },
+    }),
+
+    nav_icon: css({
+      width: '10px',
     }),
   };
 };

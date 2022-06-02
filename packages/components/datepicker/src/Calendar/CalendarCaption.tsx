@@ -4,12 +4,18 @@ import {
   CaptionDropdowns,
   CaptionNavigation,
   CaptionProps,
+  useDayPicker,
 } from 'react-day-picker';
 import { Flex } from '@contentful/f36-core';
 import { getStyles } from './Calendar.styles';
 
 export const CalendarCaption = (props: CaptionProps) => {
   const styles = getStyles();
+  const { fromDate, toDate, numberOfMonths } = useDayPicker();
+
+  const isDropdownsVisible = Boolean(
+    fromDate && toDate && numberOfMonths === 1,
+  );
 
   return (
     <Flex
@@ -17,7 +23,7 @@ export const CalendarCaption = (props: CaptionProps) => {
       justifyContent="space-between"
       className={styles.caption}
     >
-      <CaptionDropdowns {...props} />
+      {isDropdownsVisible && <CaptionDropdowns {...props} />}
       <CaptionNavigation {...props} />
     </Flex>
   );
