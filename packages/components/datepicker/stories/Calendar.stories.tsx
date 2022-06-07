@@ -3,7 +3,6 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { Calendar } from '../src';
 import type { CalendarProps } from '../src';
-import { DateRange } from 'react-day-picker';
 
 export default {
   component: Calendar,
@@ -23,7 +22,7 @@ export const Default: Story<CalendarProps> = (args) => {
   );
 };
 
-export const WithFromToDates: Story<CalendarProps> = (args) => {
+export const WithMinMaxDate: Story<CalendarProps> = (args) => {
   const [selectedDay, setSelectedDay] = useState<Date>(new Date());
 
   return (
@@ -49,13 +48,5 @@ export const WithMultipleMonths: Story<CalendarProps> = (args) => {
       selected={selectedDay}
       onSelect={setSelectedDay}
     />
-  );
-};
-
-export const WithRangeSelection: Story<CalendarProps> = (args) => {
-  const [range, setRange] = useState<DateRange | undefined>();
-
-  return (
-    <Calendar {...args} mode="range" selected={range} onSelect={setRange} />
   );
 };

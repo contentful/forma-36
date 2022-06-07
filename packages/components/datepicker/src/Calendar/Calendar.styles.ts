@@ -32,7 +32,7 @@ export const getStyles = (): ClassNames => {
       background: 'none',
     }),
     button: css({
-      borderRadius: tokens.borderRadiusMedium,
+      borderRadius: '50%',
       cursor: 'pointer',
       color: tokens.gray900,
 
@@ -42,6 +42,10 @@ export const getStyles = (): ClassNames => {
       },
       '&:focus, &:active': {
         boxShadow: tokens.glowPrimary,
+      },
+
+      '&:focus:not(:focus-visible)': {
+        boxShadow: 'unset',
       },
 
       '&:hover': {
@@ -92,7 +96,7 @@ export const getStyles = (): ClassNames => {
       alignItems: 'center',
       margin: '0',
       padding: `0 ${tokens.spacingXs}`,
-      height: '32px',
+      height: '2rem',
       whiteSpace: 'nowrap',
       fontSize: tokens.fontSizeM,
       fontWeight: tokens.fontWeightMedium,
@@ -121,13 +125,12 @@ export const getStyles = (): ClassNames => {
     }),
 
     nav_button: css({
-      width: '32px',
-      height: '32px',
+      width: '2rem',
+      height: '2rem',
       display: 'inline-flex',
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: 'transparent',
-      borderRadius: tokens.borderRadiusMedium,
     }),
     nav_button_previous: css({
       marginRight: '3px',
@@ -202,8 +205,13 @@ export const getStyles = (): ClassNames => {
       textAlign: 'center',
     }),
     day: css({
-      width: `${cellSize}px`,
-      height: `${cellSize}px`,
+      display: 'flex',
+      overflow: 'hidden',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: `${cellSize / 16}rem`,
+      height: `${cellSize / 16}rem`,
+      borderRadius: '50%',
 
       '&.rdp-day_today:not(.rdp-day_outside)': {
         fontWeight: tokens.fontWeightDemiBold,
@@ -214,7 +222,7 @@ export const getStyles = (): ClassNames => {
     }),
 
     nav_icon: css({
-      width: '10px',
+      width: '0.625rem',
     }),
   };
 };
