@@ -3011,10 +3011,10 @@
     "@octokit/webhooks-types" "5.5.1"
     aggregate-error "^3.1.0"
 
-"@parcel/babel-plugin-transform-runtime@2.3.2":
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/@parcel/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-2.3.2.tgz#474556bea419b34b4fe637352e8438e2a4ea9a6d"
-  integrity sha512-ofR6UXBTrMyy5RYBit0ri6qnOUWAS0QnKs/0+UUNHHsyFre29rXfN+Tpiqe3G+pUCrXCdn2KZK8uG0+XyP1GKw==
+"@parcel/babel-plugin-transform-runtime@2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@parcel/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-2.6.0.tgz#d8808376ac4d8917ac237d6ee8be5676c2747896"
+  integrity sha512-qTdywk8VEkvSI4D0DceGqQcVjfRTHnb+PJJdxe2+bIFMXr0Av0ie/jVlHXP1ifY+EkukKs2At5xbaMNNipQzbw==
   dependencies:
     "@babel/plugin-transform-runtime" "^7.8.3"
     semver "^5.7.1"
