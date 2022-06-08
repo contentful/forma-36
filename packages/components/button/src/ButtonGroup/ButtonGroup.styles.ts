@@ -55,6 +55,7 @@ const getDividerStyle = (withDivider: boolean): CSSObject => {
 export default ({ withDivider }: GetStyleArguments) => ({
   buttonGroup: css({
     display: 'inline-flex',
+    position: 'relative',
   }),
   groupContent: css(getGroupContentStyle({ withDivider })),
 });
