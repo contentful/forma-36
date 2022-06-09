@@ -9,4 +9,5 @@ export const ArrowUpwardTrimmed = /*#__PURE__*/ generateIcon({
     </Fragment>
   ),
   trimmed: true,
+  viewBox: '7.45 7.45 33.1 33.1',
 });
