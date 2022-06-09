@@ -5,7 +5,7 @@ export const ArrowUpwardTrimmed = /*#__PURE__*/ generateIcon({
   name: 'ArrowUpwardTrimmed',
   path: (
     <Fragment>
-      <path d="M22.5 40V13.7L10.1 26.1L8 24L24 8L40 24L37.9 26.1L25.5 13.7V40Z"></path>
+      <path d="M21.65 40.55V16.45L10.8 27.35L7.45 24L24 7.45L40.55 24L37.25 27.35L26.35 16.45V40.55Z"></path>
     </Fragment>
   ),
   trimmed: true,
