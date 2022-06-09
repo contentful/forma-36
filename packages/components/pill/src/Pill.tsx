@@ -86,9 +86,7 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
           targetWrapperClassName={styles.label}
           isDisabled={!textIsTruncated}
         >
-          <span ref={trackRefChange} className={styles.label}>
-            {label}
-          </span>
+          <span ref={trackRefChange}>{label}</span>
         </Tooltip>
         {onClose && (
           <Button
