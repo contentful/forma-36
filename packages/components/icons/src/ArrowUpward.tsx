@@ -8,4 +8,5 @@ export const ArrowUpward = /*#__PURE__*/ generateIcon({
       <path d="M22.5 40V13.7L10.1 26.1L8 24L24 8L40 24L37.9 26.1L25.5 13.7V40Z" />
     </Fragment>
   ),
+  viewBox: '0 0 48 48',
 });
