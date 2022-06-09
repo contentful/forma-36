@@ -9,5 +9,4 @@ export const ArrowUpwardTrimmed = /*#__PURE__*/ generateIcon({
     </Fragment>
   ),
   trimmed: true,
-  viewBox: '0 0 48 48',
 });
