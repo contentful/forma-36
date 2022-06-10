@@ -1,5 +1,16 @@
 # @contentful/f36-pagination
 
+## 4.10.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.10.1
+  - @contentful/f36-forms@4.10.1
+  - @contentful/f36-icons@4.10.1
+  - @contentful/f36-typography@4.10.1
+  - @contentful/f36-core@4.10.1
+
 ## 4.10.0
 
 ### Patch Changes
