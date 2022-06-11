@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.10.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.10.2
+  - @contentful/f36-icon@4.10.2
+  - @contentful/f36-icons@4.10.2
+  - @contentful/f36-typography@4.10.2
+  - @contentful/f36-core@4.10.2
+
 ## 4.10.1
 
 ### Patch Changes

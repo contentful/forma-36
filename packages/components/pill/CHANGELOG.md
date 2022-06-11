@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.10.2
+
+### Patch Changes
+
+- [#2057](https://github.com/contentful/forma-36/pull/2057) [`20945195`](https://github.com/contentful/forma-36/commit/209451953cb9282497ca5065ca1e6163e8a45589) Thanks [@MohammedAl-Rowad](https://github.com/MohammedAl-Rowad)! - feat: use tooltip component in the pill component
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.10.2
+  - @contentful/f36-icons@4.10.2
+  - @contentful/f36-tooltip@4.10.2
+  - @contentful/f36-core@4.10.2
+
 ## 4.10.1
 
 ### Patch Changes
