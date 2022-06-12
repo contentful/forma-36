@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 12-06-2022
+
+**F36 Pill** `v4.10.2`
+
+- feat: use tooltip component in the pill component
+
 ## 11-06-2022
 
 `@contentful/f36-components@4.10.1`
