@@ -174,7 +174,7 @@ export function Popover(props: ExpandProps<PopoverProps>) {
     }
   }, [isOpen, forceUpdate]);
 
-  const popoverGeneratedId = useId(null, 'popover-content');
+  const popoverGeneratedId = useId(undefined, 'popover-content');
   const popoverId = id || popoverGeneratedId;
 
   const closeAndFocusTrigger = useCallback(() => {
