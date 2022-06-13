@@ -186,7 +186,7 @@ export function Popover(props: ExpandProps<PopoverProps>) {
 
   const contextValue: PopoverContextType = useMemo(
     () => ({
-      isOpen,
+      isOpen: Boolean(isOpen),
       usePortal,
       renderOnlyWhenOpen,
       getTriggerProps: (_ref = null) => ({
