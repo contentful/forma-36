@@ -7,7 +7,7 @@ import React, {
 import { cx } from 'emotion';
 import { CommonProps } from '@contentful/f36-core';
 
-import { format, isValid, parse, startOfDay } from 'date-fns';
+import { format, isValid, parse, startOfDay, endOfDay } from 'date-fns';
 import { getStyles } from './Datepicker.styles';
 import { Calendar } from './Calendar';
 import { Popover } from '@contentful/f36-popover';
@@ -16,7 +16,6 @@ import FocusLock from 'react-focus-lock';
 import { TextInput, TextInputProps } from '@contentful/f36-forms';
 import { IconButton } from '@contentful/f36-button';
 import { CalendarIcon } from '@contentful/f36-icons';
-import { endOfDay } from 'date-fns/esm';
 import { PopoverProps } from '@contentful/f36-popover/src';
 
 const DATE_FORMAT = 'dd/MM/yyyy';
