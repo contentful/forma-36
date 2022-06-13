@@ -93,9 +93,14 @@ export function Datepicker(props: DatepickerProps) {
   );
 
   useEffect(() => {
-    if (selected) {
+    if (
+      selected &&
+      selected.getTime() !== parseInputDate(inputValue).getTime()
+    ) {
       setInputValue(format(selected, DATE_FORMAT));
     }
+    // we want to run this hook only when `selected` prop changes
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
 
   const handleInputChange: ChangeEventHandler<HTMLInputElement> = useCallback(
@@ -103,9 +108,12 @@ export function Datepicker(props: DatepickerProps) {
       setInputValue(e.currentTarget.value);
 
       const date = parseInputDate(e.currentTarget.value);
+      console.log('handleInputChange', { date });
       if (isDateValid(date)) {
+        console.log('isDateValid');
         onSelect(date);
       } else {
+        console.log('NOT isDateValid');
         onSelect(undefined);
       }
     },
