@@ -8,6 +8,40 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 12-06-2022
+
+**F36 Pill** `v4.10.2`
+
+- feat: use tooltip component in the pill component
+
+## 11-06-2022
+
+`@contentful/f36-components@4.10.1`
+
+- fix: remove exports key from package.json
+
+## 02-06-2022
+
+**F36 Button** `v4.10.0`
+
+- Add stacking context for the ButtonGroup and InputGroup components. It should fix the bug when the group elements are stacking not within the Group’s context, but within the context of the parent element (because the ButtonGroup/InputGroup itself didn't create a stacking context)
+
+**F36 Forms** `v4.10.0`
+
+- Add stacking context for the ButtonGroup and InputGroup components. It should fix the bug when the group elements are stacking not within the Group’s context, but within the context of the parent element (because the ButtonGroup/InputGroup itself didn't create a stacking context)
+
+## 19-05-2022
+
+**F36 Autocomplete** `v4.9.0`
+
+- Enable Autocomplete as a controlled input by using selectedItem property
+
+## 17-05-2022
+
+**F36 Workbench** `v4.8.2`
+
+- fix: workbench head icon alignments
+
 ## 10-05-2022
 
 **F36 Asset** `v4.8.1`
