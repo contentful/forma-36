@@ -52,7 +52,7 @@
   },
   "browserslist": "extends @contentful/browserslist-config",
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
+    "@babel/cli": "^7.17.10",
     "@babel/core": "^7.0.0",
     "@babel/node": "^7.4.5",
     "@babel/polyfill": "7.12.1",
