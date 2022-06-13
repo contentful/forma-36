@@ -2,7 +2,11 @@ import React from 'react';
 
 import { getStyles } from './Calendar.styles';
 
-import { DayPicker, DayPickerProps } from 'react-day-picker';
+import {
+  DayPicker,
+  DayPickerDefaultProps,
+  DayPickerSingleProps,
+} from 'react-day-picker';
 import { CalendarCaption } from './CalendarCaption';
 import { CalendarCaptionLabel } from './CalendarCaptionLabel';
 
@@ -13,7 +17,7 @@ import { CalendarCaptionLabel } from './CalendarCaptionLabel';
 // min          fromDate/fromMonth/fromYear
 // max          toDate/toMonth/toYear
 
-export type CalendarProps = DayPickerProps;
+export type CalendarProps = DayPickerDefaultProps | DayPickerSingleProps;
 
 /**
  * Provides functionality for calendar date selection. Used as a part of Datepicker component.

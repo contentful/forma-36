@@ -3,8 +3,8 @@ import tokens from '@contentful/f36-tokens';
 
 export const getStyles = () => {
   return {
-    datepicker: css({
-      color: tokens.colorBlack,
+    calendar: css({
+      padding: tokens.spacingM,
     }),
   };
 };

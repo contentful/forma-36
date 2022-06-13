@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { Datepicker } from '../src/Datepicker';
@@ -10,5 +10,36 @@ export default {
 } as Meta;
 
 export const Default: Story<DatepickerProps> = (args) => {
-  return <Datepicker {...args}>Datepicker</Datepicker>;
+  const [selectedDay, setSelectedDay] = useState<Date>(new Date());
+
+  return (
+    <Datepicker {...args} selected={selectedDay} onSelect={setSelectedDay} />
+  );
+};
+
+export const WithMinMaxDate: Story<DatepickerProps> = (args) => {
+  const [selectedDay, setSelectedDay] = useState<Date>(new Date());
+
+  return (
+    <Datepicker
+      {...args}
+      selected={selectedDay}
+      onSelect={setSelectedDay}
+      fromDate={new Date()}
+      toDate={new Date(new Date().setFullYear(new Date().getFullYear() + 2))}
+    />
+  );
+};
+
+export const WithMultipleMonths: Story<DatepickerProps> = (args) => {
+  const [selectedDay, setSelectedDay] = useState<Date>(new Date());
+
+  return (
+    <Datepicker
+      {...args}
+      selected={selectedDay}
+      onSelect={setSelectedDay}
+      numberOfMonths={2}
+    />
+  );
 };
