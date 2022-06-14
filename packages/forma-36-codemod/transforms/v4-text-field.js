@@ -1,6 +1,6 @@
 const {
   addImport,
-  addProperty,
+  getNewProp,
   createComponent,
   getComponentLocalName,
   getProperty,
@@ -347,23 +347,6 @@ function transformTextInputProps(textInputPropsObj, { j, attributes }) {
   });
 
   return newProps;
-}
-
-/**
- * Function that adds a new prop to attributes and returns it
- *
- * @returns property
- */
-function getNewProp(attributes, { j, propertyName, propertyValue }) {
-  attributes = addProperty(attributes, {
-    j,
-    propertyName,
-    propertyValue,
-  });
-
-  return getProperty(attributes, {
-    propertyName,
-  });
 }
 
 module.exports = textFieldCodemod;
