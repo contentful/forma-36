@@ -10,7 +10,7 @@ export default {
 } as Meta;
 
 export const Default: Story<DatepickerProps> = (args) => {
-  const [selectedDay, setSelectedDay] = useState<Date>(new Date());
+  const [selectedDay, setSelectedDay] = useState<Date>();
 
   return (
     <Datepicker {...args} selected={selectedDay} onSelect={setSelectedDay} />

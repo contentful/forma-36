@@ -20,13 +20,6 @@ import { PopoverProps } from '@contentful/f36-popover/src';
 
 const DATE_FORMAT = 'dd/MM/yyyy';
 
-// Props comparison to our current datepickers:
-// Current      DayPicker
-// value        selected
-// onChange     onSelect
-// min          fromDate
-// max          toDate
-
 export type DatepickerProps = CommonProps & {
   onSelect: (day: Date | undefined) => void;
 } & Omit<
@@ -108,12 +101,9 @@ export function Datepicker(props: DatepickerProps) {
       setInputValue(e.currentTarget.value);
 
       const date = parseInputDate(e.currentTarget.value);
-      console.log('handleInputChange', { date });
       if (isDateValid(date)) {
-        console.log('isDateValid');
         onSelect(date);
       } else {
-        console.log('NOT isDateValid');
         onSelect(undefined);
       }
     },
@@ -129,6 +119,9 @@ export function Datepicker(props: DatepickerProps) {
     },
     [onSelect, isDateValid],
   );
+
+  const isTextInputValueInvalid =
+    inputValue && !isDateValid(parseInputDate(inputValue));
 
   return (
     <Popover
@@ -147,15 +140,15 @@ export function Datepicker(props: DatepickerProps) {
             value={inputValue}
             onChange={handleInputChange}
             id={id}
-            isInvalid={isInvalid || !isDateValid(parseInputDate(inputValue))}
+            isInvalid={isInvalid || isTextInputValueInvalid}
             isDisabled={isDisabled}
             isRequired={isRequired}
             isReadOnly={isReadOnly}
           />
           <IconButton
-            aria-label="Choose Date"
+            aria-label="Choose date"
             variant="secondary"
-            icon={<CalendarIcon aria-label="Choose Date" variant="muted" />}
+            icon={<CalendarIcon aria-label="calendar" variant="muted" />}
             onClick={() => {
               setIsPopoverOpen((prevState) => !prevState);
             }}

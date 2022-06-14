@@ -10,13 +10,6 @@ import {
 import { CalendarCaption } from './CalendarCaption';
 import { CalendarCaptionLabel } from './CalendarCaptionLabel';
 
-// Props comparison to our current datepickers:
-// Current      DayPicker
-// value        selected
-// onChange     onSelect
-// min          fromDate/fromMonth/fromYear
-// max          toDate/toMonth/toYear
-
 export type CalendarProps = DayPickerDefaultProps | DayPickerSingleProps;
 
 /**
