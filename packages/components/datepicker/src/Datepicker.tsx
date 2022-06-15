@@ -18,10 +18,19 @@ import { IconButton } from '@contentful/f36-button';
 import { CalendarIcon } from '@contentful/f36-icons';
 import { PopoverProps } from '@contentful/f36-popover/src';
 
-const DATE_FORMAT = 'dd/MM/yyyy';
-
 export type DatepickerProps = CommonProps & {
+  /**
+   * Callback fired when the day is selected
+   */
   onSelect: (day: Date | undefined) => void;
+
+  /**
+   * Format that is used to display date in the input,
+   * It is based on (Unicode Technical Standart #35)[https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table]
+   *
+   * @default 'dd/MM/yyyy'
+   */
+  dateFormat?: string;
 } & Omit<
     DayPickerSingleProps,
     'mode' | 'onSelect' | 'fromMonth' | 'toMonth' | 'fromYear' | 'toYear'
@@ -38,25 +47,22 @@ export type DatepickerProps = CommonProps & {
 export function Datepicker(props: DatepickerProps) {
   const styles = getStyles();
   const {
-    //common props
     testId = 'cf-datepicker',
     className,
     style,
-    // input props
     id,
     isDisabled,
     isInvalid,
     isReadOnly,
     isRequired,
-    // popover props
     usePortal,
-    // calendar props
     selected,
     onSelect,
     fromDate,
     toDate,
     locale,
-    ...restCalendarProps
+    dateFormat = 'dd/MM/yyyy',
+    ...otherProps
   } = props;
 
   const isDateValid = useCallback(
@@ -76,13 +82,13 @@ export function Datepicker(props: DatepickerProps) {
   );
 
   const parseInputDate = useCallback(
-    (value: string) => parse(value, DATE_FORMAT, new Date(), { locale }),
-    [locale],
+    (value: string) => parse(value, dateFormat, new Date(), { locale }),
+    [locale, dateFormat],
   );
 
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [inputValue, setInputValue] = useState<string>(() =>
-    selected ? format(selected, DATE_FORMAT) : '',
+    selected ? format(selected, dateFormat) : '',
   );
 
   useEffect(() => {
@@ -90,7 +96,7 @@ export function Datepicker(props: DatepickerProps) {
       selected &&
       selected.getTime() !== parseInputDate(inputValue).getTime()
     ) {
-      setInputValue(format(selected, DATE_FORMAT));
+      setInputValue(format(selected, dateFormat));
     }
     // we want to run this hook only when `selected` prop changes
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -136,7 +142,7 @@ export function Datepicker(props: DatepickerProps) {
           testId={testId}
         >
           <TextInput
-            placeholder={format(new Date(), DATE_FORMAT)}
+            placeholder={format(new Date(), dateFormat)}
             value={inputValue}
             onChange={handleInputChange}
             id={id}
@@ -159,7 +165,7 @@ export function Datepicker(props: DatepickerProps) {
       <Popover.Content>
         <FocusLock returnFocus={true}>
           <Calendar
-            {...restCalendarProps}
+            {...otherProps}
             className={styles.calendar}
             mode="single"
             selected={selected}
