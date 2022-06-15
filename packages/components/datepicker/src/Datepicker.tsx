@@ -31,6 +31,11 @@ export type DatepickerProps = CommonProps & {
    * @default 'dd/MM/yyyy'
    */
   dateFormat?: string;
+
+  /**
+   * If `true`, the Datepicker will be initially opened.
+   */
+  defaultIsOpen?: boolean;
 } & Omit<
     DayPickerSingleProps,
     'mode' | 'onSelect' | 'fromMonth' | 'toMonth' | 'fromYear' | 'toYear'
@@ -62,6 +67,7 @@ export function Datepicker(props: DatepickerProps) {
     toDate,
     locale,
     dateFormat = 'dd/MM/yyyy',
+    defaultIsOpen,
     ...otherProps
   } = props;
 
@@ -86,7 +92,7 @@ export function Datepicker(props: DatepickerProps) {
     [locale, dateFormat],
   );
 
-  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+  const [isPopoverOpen, setIsPopoverOpen] = useState(defaultIsOpen);
   const [inputValue, setInputValue] = useState<string>(() =>
     selected ? format(selected, dateFormat) : '',
   );

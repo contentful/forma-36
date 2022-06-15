@@ -13,7 +13,12 @@ export const Default: Story<DatepickerProps> = (args) => {
   const [selectedDay, setSelectedDay] = useState<Date>();
 
   return (
-    <Datepicker {...args} selected={selectedDay} onSelect={setSelectedDay} />
+    <Datepicker
+      {...args}
+      selected={selectedDay}
+      onSelect={setSelectedDay}
+      defaultIsOpen={true}
+    />
   );
 };
 
@@ -27,6 +32,7 @@ export const WithMinMaxDate: Story<DatepickerProps> = (args) => {
       onSelect={setSelectedDay}
       fromDate={new Date()}
       toDate={new Date(new Date().setFullYear(new Date().getFullYear() + 2))}
+      defaultIsOpen={true}
     />
   );
 };
@@ -40,6 +46,7 @@ export const WithMultipleMonths: Story<DatepickerProps> = (args) => {
       selected={selectedDay}
       onSelect={setSelectedDay}
       numberOfMonths={2}
+      defaultIsOpen={true}
     />
   );
 };
