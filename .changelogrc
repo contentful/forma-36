@@ -1,1 +1,1 @@
-{}
+{"**F36 Codemod** `v4.3.0`":["- Add support for binary conditional on TextField validation mesasge\n- Add tranformer to selectProps for SelectField codemod"]}
