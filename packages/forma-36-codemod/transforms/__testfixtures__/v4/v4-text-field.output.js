@@ -112,3 +112,15 @@ const ref = {};
   </Flex>
   <FormControl.ValidationMessage>Some validation message</FormControl.ValidationMessage>
 </FormControl>;
+
+const validationMessageCondition = 0;
+<FormControl id="conditional-validation" isInvalid={validationMessageCondition > 0}>
+  <FormControl.Label>Conditional validation</FormControl.Label>
+  <TextInput name="conditional-validation" onChange={() => {}} />
+  {validationMessageCondition > 0 && <FormControl.ValidationMessage>Some validation message</FormControl.ValidationMessage>}
+</FormControl>;
+<FormControl id="conditional-validation" isInvalid={!(validationMessageCondition > 0)}>
+  <FormControl.Label>Conditional validation</FormControl.Label>
+  <TextInput name="conditional-validation" onChange={() => {}} />
+  {!(validationMessageCondition > 0) && <FormControl.ValidationMessage>Some validation message</FormControl.ValidationMessage>}
+</FormControl>;
