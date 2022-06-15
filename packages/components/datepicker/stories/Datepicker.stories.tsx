@@ -4,13 +4,15 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Datepicker } from '../src/Datepicker';
 import type { DatepickerProps } from '../src/Datepicker';
 
+const testDate = new Date('2022-04-15');
+
 export default {
   component: Datepicker,
   title: 'Components/Datepicker',
 } as Meta;
 
-export const Default: Story<DatepickerProps> = (args) => {
-  const [selectedDay, setSelectedDay] = useState<Date>();
+export const Basic: Story<DatepickerProps> = (args) => {
+  const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
   return (
     <Datepicker
@@ -23,15 +25,17 @@ export const Default: Story<DatepickerProps> = (args) => {
 };
 
 export const WithMinMaxDate: Story<DatepickerProps> = (args) => {
-  const [selectedDay, setSelectedDay] = useState<Date>(new Date());
+  const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
   return (
     <Datepicker
       {...args}
       selected={selectedDay}
       onSelect={setSelectedDay}
-      fromDate={new Date()}
-      toDate={new Date(new Date().setFullYear(new Date().getFullYear() + 2))}
+      fromDate={testDate}
+      toDate={
+        new Date(new Date(testDate).setFullYear(testDate.getFullYear() + 2))
+      }
       defaultIsOpen={true}
     />
   );
@@ -49,4 +53,14 @@ export const WithMultipleMonths: Story<DatepickerProps> = (args) => {
       defaultIsOpen={true}
     />
   );
+};
+
+Basic.parameters = {
+  chromatic: { delay: 300 },
+};
+WithMinMaxDate.parameters = {
+  chromatic: { delay: 300 },
+};
+WithMultipleMonths.parameters = {
+  chromatic: { delay: 300 },
 };

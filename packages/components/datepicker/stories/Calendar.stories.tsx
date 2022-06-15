@@ -4,13 +4,15 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Calendar } from '../src';
 import type { CalendarProps } from '../src';
 
+const testDate = new Date('2022-04-15');
+
 export default {
   component: Calendar,
   title: 'Components/Datepicker/Calendar',
 } as Meta;
 
 export const Default: Story<CalendarProps> = (args) => {
-  const [selectedDay, setSelectedDay] = useState<Date>(new Date());
+  const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
   return (
     <Calendar
@@ -23,7 +25,7 @@ export const Default: Story<CalendarProps> = (args) => {
 };
 
 export const WithMinMaxDate: Story<CalendarProps> = (args) => {
-  const [selectedDay, setSelectedDay] = useState<Date>(new Date());
+  const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
   return (
     <Calendar
@@ -31,14 +33,14 @@ export const WithMinMaxDate: Story<CalendarProps> = (args) => {
       mode="single"
       selected={selectedDay}
       onSelect={setSelectedDay}
-      fromDate={new Date('2022-05-16T16:50:10.249Z')}
+      fromDate={testDate}
       toYear={2025}
     />
   );
 };
 
 export const WithMultipleMonths: Story<CalendarProps> = (args) => {
-  const [selectedDay, setSelectedDay] = useState<Date>(new Date());
+  const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
   return (
     <Calendar
