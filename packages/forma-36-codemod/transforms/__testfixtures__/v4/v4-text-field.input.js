@@ -122,3 +122,19 @@ const ref = {};
   validationMessage="Some validation message"
   required
 />;
+
+const validationMessageCondition = 0;
+<TextField
+  id="conditional-validation"
+  name="conditional-validation"
+  labelText="Conditional validation"
+  onChange={() => {}}
+  validationMessage={validationMessageCondition > 0 ? 'Some validation message' : ''}
+/>;
+<TextField
+  id="conditional-validation"
+  name="conditional-validation"
+  labelText="Conditional validation"
+  onChange={() => {}}
+  validationMessage={validationMessageCondition > 0 ? '' : 'Some validation message'}
+/>;
