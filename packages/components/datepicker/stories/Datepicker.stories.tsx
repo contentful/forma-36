@@ -8,6 +8,9 @@ const testDate = new Date('2022-04-15');
 
 export default {
   component: Datepicker,
+  parameters: {
+    chromatic: { delay: 1000 },
+  },
   title: 'Components/Datepicker',
 } as Meta;
 
@@ -53,14 +56,4 @@ export const WithMultipleMonths: Story<DatepickerProps> = (args) => {
       defaultIsOpen={true}
     />
   );
-};
-
-Basic.parameters = {
-  chromatic: { delay: 300 },
-};
-WithMinMaxDate.parameters = {
-  chromatic: { delay: 300 },
-};
-WithMultipleMonths.parameters = {
-  chromatic: { delay: 300 },
 };
