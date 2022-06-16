@@ -17,11 +17,6 @@
       "slug": "/components/badge/"
     },
     {
-      "title": "Datepicker",
-      "slug": "/components/datepicker/",
-      "isNew": true
-    },
-    {
       "title": "DragHandle",
       "slug": "/components/drag-handle/"
     },
@@ -123,6 +118,30 @@
       "slug": "/components/toggle-button/"
     }
   ],
+  "dateComponents": [
+    {
+      "title": "Calendar",
+      "slug": "/components/calendar/",
+      "isNew": true
+    },
+    {
+      "title": "Date utilities",
+      "slug": "/components/datetime-functions/"
+    },
+    {
+      "title": "DateTime",
+      "slug": "/components/datetime/"
+    },
+    {
+      "title": "Datepicker",
+      "slug": "/components/datepicker/",
+      "isNew": true
+    },
+    {
+      "title": "RelativeDateTime",
+      "slug": "/components/relative-datetime/"
+    }
+  ],
   "modalComponents": [
     {
       "title": "Modal",
@@ -153,20 +172,6 @@
     {
       "title": "InlineEntryCard",
       "slug": "/components/inline-entry-card/"
-    }
-  ],
-  "dateComponents": [
-    {
-      "title": "Date utilities",
-      "slug": "/components/datetime-functions/"
-    },
-    {
-      "title": "DateTime",
-      "slug": "/components/datetime/"
-    },
-    {
-      "title": "RelativeDateTime",
-      "slug": "/components/relative-datetime/"
     }
   ],
   "formComponents": [
@@ -287,7 +292,7 @@
       "slug": "/components/stack/"
     }
   ],
-  "introduction": [
+  "intro": [
     {
       "title": "What's new",
       "slug": "/whats-new"

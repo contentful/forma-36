@@ -1,16 +1,17 @@
 ---
-title: 'Datepicker'
+title: 'Calendar'
 status: 'beta'
 isNew: true
-slug: /components/datepicker/
-github: 'https://github.com/contentful/forma-36/tree/main/packages/components/datepicker'
-storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-datepicker'
-typescript: ./src/Datepicker.tsx
+slug: /components/calendar/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/datepicker/src/Calendar'
+storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-datepicker-calendar--default'
 section: 'dateComponents'
+typescript: ./Calendar.tsx
 ---
 
-Datepicker component enables users to enter date either through text input or inline calendar.
-(Optional: give a most common example)
+Calendar component enables users to select and view dates inline.
+
+At Contentful calendar is used to ask user's input to set, edit, or view schedule actions.
 
 Optional: Most common misuse and what to use instead.
 
@@ -27,7 +28,7 @@ max         toDate
 ## Import
 
 ```jsx static=true
-import { Datepicker } from '@contentful/f36-datepicker';
+import { Calendar } from '@contentful/f36-datepicker';
 ```
 
 ## Examples
@@ -38,7 +39,7 @@ Repeat for every important variant
 
 Optional: Short "when to use" with considerations towards the end user
 
-```jsx file=./examples/Datepicker/DatepickerExample.tsx
+```jsx file=../../examples/Calendar/CalendarExample.tsx
 
 ```
 
