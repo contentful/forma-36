@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.10.3
+
+### Patch Changes
+
+- [#2094](https://github.com/contentful/forma-36/pull/2094) [`1bc834c6`](https://github.com/contentful/forma-36/commit/1bc834c65097e5b253b7bc69a96a16121b4e7cc4) Thanks [@massao](https://github.com/massao)! - bump popper version
+
+- Updated dependencies []:
+  - @contentful/f36-utils@4.10.3
+  - @contentful/f36-core@4.10.3
+
 ## 4.10.2
 
 ### Patch Changes
