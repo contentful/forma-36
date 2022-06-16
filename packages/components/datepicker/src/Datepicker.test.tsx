@@ -4,7 +4,7 @@ import { Datepicker } from './Datepicker';
 
 describe('Datepicker', function () {
   it('renders', () => {
-    const tree = render(<Datepicker />);
+    const tree = render(<Datepicker onSelect={jest.fn()} />);
 
     expect(tree).toBeTruthy();
   });

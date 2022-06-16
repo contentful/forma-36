@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Datepicker } from '@contentful/f36-datepicker';
 
 export default function DatepickerExample() {
-  return <Datepicker />;
+  const [selectedDay, setSelectedDay] = useState(new Date());
+
+  return <Datepicker selected={selectedDay} onSelect={setSelectedDay} />;
 }
