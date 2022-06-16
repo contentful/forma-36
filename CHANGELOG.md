@@ -8,6 +8,13 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 16-06-2022
+
+**F36 Codemod** `v4.3.0`
+
+- Add support for binary conditional on TextField validation mesasge
+- Add tranformer to selectProps for SelectField codemod
+
 ## 12-06-2022
 
 **F36 Pill** `v4.10.2`
