@@ -132,7 +132,7 @@ export function Popover(props: ExpandProps<PopoverProps>) {
 
   const {
     attributes: popperAttributes,
-    forceUpdate,
+    update,
     styles: popperStyles,
   } = usePopper(triggerElement, popoverElement, {
     placement,
@@ -169,10 +169,13 @@ export function Popover(props: ExpandProps<PopoverProps>) {
   }, [isOpen, popoverElement]);
 
   useEffect(() => {
-    if (isOpen && forceUpdate) {
-      forceUpdate();
-    }
-  }, [isOpen, forceUpdate]);
+    const updatePosition = async () => {
+      if (isOpen && update) {
+        await update();
+      }
+    };
+    updatePosition();
+  }, [isOpen, update]);
 
   const popoverGeneratedId = useId(null, 'popover-content');
   const popoverId = id || popoverGeneratedId;
