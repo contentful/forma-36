@@ -215,6 +215,7 @@ export const getStyles = (): ClassNames => {
 
       '&.rdp-day_today:not(.rdp-day_outside)': {
         fontWeight: tokens.fontWeightDemiBold,
+        backgroundColor: tokens.blue100,
       },
       '&.rdp-day_today:not(.rdp-day_outside):not(.rdp-day_selected):not(:hover)': {
         backgroundColor: tokens.blue100,

@@ -9,21 +9,15 @@ section: 'dateComponents'
 typescript: ./Calendar.tsx
 ---
 
+import { Badge } from '@contentful/f36-component';
+
 Calendar component enables users to select and view dates inline.
 
 At Contentful calendar is used to ask user's input to set, edit, or view schedule actions.
 
-Optional: Most common misuse and what to use instead.
+The component is built on top of React Day Picker, see full documentation: https://react-day-picker.js.org/
 
-Props comparison to our current datepickers:
-
-<!--
-Current     DayPicker
-value       selected
-onChange    onSelect
-min         fromDate
-max         toDate
--->
+<Badge variant="featured">Beta</Badge>
 
 ## Import
 
@@ -31,21 +25,45 @@ max         toDate
 import { Calendar } from '@contentful/f36-datepicker';
 ```
 
-## Examples
+### Basic
 
-Repeat for every important variant
+Displays inline calendar to ask for user's action to select a date
 
-### Example title (variant name)
+```jsx file=../../examples/Calendar/Basic.tsx
 
-Optional: Short "when to use" with considerations towards the end user
+```
 
-```jsx file=../../examples/Calendar/CalendarExample.tsx
+### Multiple months
+
+Display multiple months on the calender for a more convenient way for users to view dates
+
+Use `from...` and `to...` props to control time frames
+
+```jsx file=../../examples/Calendar/MultiMonths.tsx
+
+```
+
+### Min and max date
+
+Set mininum and/or maximum dates to limit users to choose from a specific period in time
+
+Use `from...` and `to...` props to control time frames
+
+```jsx file=../../examples/Calendar/MinMax.tsx
+
+```
+
+### Indicators
+
+Use modifiers to modify certain days, for example showing incators for scheduled actions
+
+```jsx file=../../examples/Calendar/Indicator.tsx
 
 ```
 
 ## Props (API reference)
 
-<PropsTable of="Datepicker" />
+<PropsTable of="Calendar" />
 
 ## Content guidelines
 

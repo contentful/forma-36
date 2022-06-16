@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Calendar } from '@contentful/f36-datepicker';
 
-export default function CalendarExample() {
+export default function BasicExample() {
   const [selectedDay, setSelectedDay] = useState(new Date());
 
-  return <Calendar selected={selectedDay} onSelect={setSelectedDay} />;
+  return (
+    <Calendar mode="single" selected={selectedDay} onSelect={setSelectedDay} />
+  );
 }
