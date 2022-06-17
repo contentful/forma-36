@@ -9,20 +9,17 @@ typescript: ./src/Datepicker.tsx
 section: 'dateComponents'
 ---
 
-Datepicker component enables users to enter date either through text input or inline calendar.
-(Optional: give a most common example)
+import { Badge, Flex } from '@contentful/f36-component';
 
-Optional: Most common misuse and what to use instead.
+Datepicker component enables users to enter a date either through text input or selecting a date from the Calendar dropdown.
 
-Props comparison to our current datepickers:
+The Datepicker component combines text input, and calendar in dropdown.
 
-<!--
-Current     DayPicker
-value       selected
-onChange    onSelect
-min         fromDate
-max         toDate
--->
+Use Datepicker to ask user's for date input in forms, modals, or filtering.
+
+<Flex>
+  <Badge variant="featured">Beta</Badge>
+</Flex>
 
 ## Import
 
@@ -32,13 +29,42 @@ import { Datepicker } from '@contentful/f36-datepicker';
 
 ## Examples
 
-Repeat for every important variant
+### Basic
 
-### Example title (variant name)
-
-Optional: Short "when to use" with considerations towards the end user
+Display Datepicker component with text input
 
 ```jsx file=./examples/Datepicker/Basic.tsx
+
+```
+
+### Date Formats
+
+Datepicker supports printing out different formats to users, see https://date-fns.org/v2.16.1/docs/format
+
+At Contentful we use `dd LLL yyyy` format to communicate date to users, example `31 Jan 2021`
+
+```jsx file=./examples/Datepicker/Format.tsx
+
+```
+
+### Visual States
+
+Visual states indicates to users certain messages through UI.
+
+Communicate to the users in text why the Datepicker is in a specific state, example:
+
+Disabled: "You don't have access to edit this field!"
+Invalid: "Please enter a valid date!"
+
+```jsx file=./examples/Datepicker/VisualStates.tsx
+
+```
+
+### Open by default
+
+Open the dropdown and display the Calendar by default without user interaction
+
+```jsx file=./examples/Datepicker/DefaultOpen.tsx
 
 ```
 
@@ -46,11 +72,8 @@ Optional: Short "when to use" with considerations towards the end user
 
 <PropsTable of="Datepicker" />
 
-## Content guidelines
-
-At least one important thing to consider when writing copy for this component
-Optional: Things to avoid
-
 ## Accessibility
 
-What makes this component accessible
+- Keyboard navigation is supported
+- Necessary aria roles are provided by default
+- When providing a label, ensure it's linked to the text input

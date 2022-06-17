@@ -9,7 +9,7 @@ section: 'dateComponents'
 typescript: ./Calendar.tsx
 ---
 
-import { Badge } from '@contentful/f36-component';
+import { Badge, Flex } from '@contentful/f36-component';
 
 Calendar component enables users to select and view dates inline.
 
@@ -17,7 +17,9 @@ At Contentful calendar is used to ask user's input to set, edit, or view schedul
 
 The component is built on top of React Day Picker, see full documentation: https://react-day-picker.js.org/
 
-<Badge variant="featured">Beta</Badge>
+<Flex>
+  <Badge variant="featured">Beta</Badge>
+</Flex>
 
 ## Import
 
@@ -25,21 +27,13 @@ The component is built on top of React Day Picker, see full documentation: https
 import { Calendar } from '@contentful/f36-datepicker';
 ```
 
+## Examples
+
 ### Basic
 
 Displays inline calendar to ask for user's action to select a date
 
 ```jsx file=../../examples/Calendar/Basic.tsx
-
-```
-
-### Multiple months
-
-Display multiple months on the calender for a more convenient way for users to view dates
-
-Use `from...` and `to...` props to control time frames
-
-```jsx file=../../examples/Calendar/MultiMonths.tsx
 
 ```
 
@@ -57,7 +51,19 @@ Use `from...` and `to...` props to control time frames
 
 Use modifiers to modify certain days, for example showing incators for scheduled actions
 
+Read more about modifiers: https://react-day-picker.js.org/basics/modifiers
+
 ```jsx file=../../examples/Calendar/Indicator.tsx
+
+```
+
+### Multiple months
+
+Display multiple months on the calender for a more convenient way for users to view dates
+
+Use `from...` and `to...` props to control time frames
+
+```jsx file=../../examples/Calendar/MultiMonths.tsx
 
 ```
 
@@ -65,11 +71,8 @@ Use modifiers to modify certain days, for example showing incators for scheduled
 
 <PropsTable of="Calendar" />
 
-## Content guidelines
-
-At least one important thing to consider when writing copy for this component
-Optional: Things to avoid
-
 ## Accessibility
 
-What makes this component accessible
+- Keyboard navigation is supported
+- Necessary `aria` roles were added and tested with screen readers
+- When customizing the Calendar HTML elements or providing custom components. keyboard functionality and screen readers must be tested

@@ -4,5 +4,11 @@ import { Datepicker } from '@contentful/f36-datepicker';
 export default function BasicExample() {
   const [selectedDay, setSelectedDay] = useState(new Date());
 
-  return <Datepicker selected={selectedDay} onSelect={setSelectedDay} />;
+  return (
+    <Datepicker
+      defaultIsOpen
+      selected={selectedDay}
+      onSelect={setSelectedDay}
+    />
+  );
 }

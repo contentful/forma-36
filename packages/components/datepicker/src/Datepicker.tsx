@@ -28,7 +28,7 @@ export type DatepickerProps = CommonProps & {
    * Format that is used to display date in the input,
    * It is based on (Unicode Technical Standart #35)[https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table]
    *
-   * @default 'dd/MM/yyyy'
+   * @default 'dd LLL yyyy' e.g. 31 Jan 2022
    */
   dateFormat?: string;
 
@@ -42,7 +42,12 @@ export type DatepickerProps = CommonProps & {
   > &
   Pick<
     TextInputProps,
-    'id' | 'isDisabled' | 'isInvalid' | 'isReadOnly' | 'isRequired'
+    | 'id'
+    | 'isDisabled'
+    | 'isInvalid'
+    | 'isReadOnly'
+    | 'isRequired'
+    | 'aria-label'
   > &
   Pick<PopoverProps, 'usePortal'>;
 
@@ -66,7 +71,7 @@ export function Datepicker(props: DatepickerProps) {
     fromDate,
     toDate,
     locale,
-    dateFormat = 'dd/MM/yyyy',
+    dateFormat = 'dd LLL yyyy',
     defaultIsOpen,
     ...otherProps
   } = props;
@@ -153,12 +158,13 @@ export function Datepicker(props: DatepickerProps) {
             onChange={handleInputChange}
             id={id}
             isInvalid={isInvalid || isTextInputValueInvalid}
+            aria-label="Enter date"
             isDisabled={isDisabled}
             isRequired={isRequired}
             isReadOnly={isReadOnly}
           />
           <IconButton
-            aria-label="Choose date"
+            aria-label="Use calendar"
             variant="secondary"
             icon={<CalendarIcon aria-label="calendar" variant="muted" />}
             onClick={() => {
