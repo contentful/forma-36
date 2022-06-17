@@ -72,6 +72,7 @@ function SidebarSubsection({
                 key={link.slug}
                 isActive={isLinkActive(link.slug, currentPage)}
                 href={link.slug}
+                isNew={link.isNew}
                 paddingLeft="spacing2Xl"
               >
                 {link.title}
