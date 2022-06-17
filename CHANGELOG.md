@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 17-06-2022
+
+**F36 Popover** `v4.10.3`
+
+- bump popper version
+
+**F36 Tooltip** `v4.10.3`
+
+- bump popper version
+
 ## 16-06-2022
 
 **F36 Codemod** `v4.3.0`
