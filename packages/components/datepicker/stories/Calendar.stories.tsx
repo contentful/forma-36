@@ -20,6 +20,7 @@ export const Default: Story<CalendarProps> = (args) => {
       mode="single"
       selected={selectedDay}
       onSelect={setSelectedDay}
+      defaultMonth={selectedDay}
     />
   );
 };
@@ -35,6 +36,7 @@ export const WithMinMaxDate: Story<CalendarProps> = (args) => {
       onSelect={setSelectedDay}
       fromDate={testDate}
       toYear={2025}
+      defaultMonth={selectedDay}
     />
   );
 };
@@ -49,6 +51,7 @@ export const WithMultipleMonths: Story<CalendarProps> = (args) => {
       numberOfMonths={2}
       selected={selectedDay}
       onSelect={setSelectedDay}
+      defaultMonth={selectedDay}
     />
   );
 };
