@@ -77,7 +77,7 @@ export interface AutocompleteProps<ItemType>
   clearAfterSelect?: boolean;
   /**
    * If this is set to `true` the dropdown menu will stay open after the select
-   * @default false
+   * @default true
    */
   closeAfterSelect?: boolean;
   /**
