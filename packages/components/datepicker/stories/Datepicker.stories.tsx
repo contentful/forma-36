@@ -45,7 +45,7 @@ export const WithMinMaxDate: Story<DatepickerProps> = (args) => {
 };
 
 export const WithMultipleMonths: Story<DatepickerProps> = (args) => {
-  const [selectedDay, setSelectedDay] = useState<Date>(new Date());
+  const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
   return (
     <Datepicker
