@@ -27,6 +27,7 @@ export function Calendar(props: CalendarProps) {
       components={{
         Caption: CalendarCaption,
         CaptionLabel: CalendarCaptionLabel,
+        ...props.components,
       }}
     />
   );
