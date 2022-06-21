@@ -112,6 +112,10 @@ export interface EntityListItemProps extends CommonProps {
    * A boolean used to disable the CardActions
    */
   isActionsDisabled?: boolean;
+  /**
+   * Applies selected styles to the element
+   */
+  isSelected?: boolean;
 }
 
 export const EntityListItem = ({
@@ -134,6 +138,7 @@ export const EntityListItem = ({
   cardDragHandleProps,
   cardDragHandleComponent,
   isActionsDisabled = false,
+  isSelected = false,
   ...otherProps
 }: EntityListItemProps): React.ReactElement => {
   const styles = getEntityListItemStyles();
@@ -165,7 +170,7 @@ export const EntityListItem = ({
   return (
     <li
       {...otherProps}
-      className={cx(styles.root({ isDragActive }), className)}
+      className={cx(styles.root({ isDragActive, isSelected }), className)}
       data-test-id={testId}
     >
       {renderCardDragHandle()}

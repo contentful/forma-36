@@ -11,5 +11,13 @@ export const getEntityListStyles = () => ({
     borderBottom: 'none',
     borderRadius: tokens.borderRadiusMedium,
     overflow: 'hidden',
+    '& li:first-child': {
+      borderTopLeftRadius: tokens.borderRadiusMedium,
+      borderTopRightRadius: tokens.borderRadiusMedium,
+    },
+    '& li:last-child': {
+      borderBottomLeftRadius: tokens.borderRadiusMedium,
+      borderBottomRightRadius: tokens.borderRadiusMedium,
+    },
   }),
 });

@@ -3,7 +3,7 @@ import tokens from '@contentful/f36-tokens';
 import { EntityListItemProps } from './EntityListItem';
 
 export const getEntityListItemStyles = () => ({
-  root: (props: Pick<EntityListItemProps, 'isDragActive'>) =>
+  root: (props: Pick<EntityListItemProps, 'isDragActive' | 'isSelected'>) =>
     css({
       display: 'flex',
       boxShadow: `inset 0 -1px 0 ${tokens.gray200}`,
@@ -18,8 +18,16 @@ export const getEntityListItemStyles = () => ({
         : {}),
 
       '&:hover': {
-        backgroundColor: tokens.gray100,
+        backgroundColor: props.isSelected ? tokens.blue100 : tokens.gray100,
       },
+      ...(props.isSelected
+        ? {
+            backgroundColor: tokens.blue100,
+            borderStyle: 'solid',
+            borderColor: tokens.colorPrimary,
+            borderWidth: 1,
+          }
+        : {}),
     }),
   card: css({
     display: 'flex',
