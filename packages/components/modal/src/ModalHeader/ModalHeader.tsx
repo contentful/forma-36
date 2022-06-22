@@ -35,7 +35,7 @@ export const ModalHeader = ({
       alignItems="center"
       justifyContent="space-between"
     >
-      <Subheading as="h1" isTruncated marginBottom="none">
+      <Subheading as="h2" isTruncated marginBottom="none">
         {title}
       </Subheading>
       {onClose && (
