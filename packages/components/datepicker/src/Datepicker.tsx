@@ -57,7 +57,7 @@ export type DatepickerProps = CommonProps & {
 export function Datepicker(props: DatepickerProps) {
   const styles = getStyles();
   const {
-    testId = 'cf-datepicker',
+    testId = 'cf-ui-datepicker',
     className,
     style,
     id,
@@ -162,6 +162,7 @@ export function Datepicker(props: DatepickerProps) {
             isDisabled={isDisabled}
             isRequired={isRequired}
             isReadOnly={isReadOnly}
+            testId="cf-ui-datepicker-input"
           />
           <IconButton
             aria-label="Use calendar"
@@ -171,6 +172,7 @@ export function Datepicker(props: DatepickerProps) {
               setIsPopoverOpen((prevState) => !prevState);
             }}
             isDisabled={isDisabled}
+            testId="cf-ui-datepicker-button"
           />
         </TextInput.Group>
       </Popover.Trigger>
