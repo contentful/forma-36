@@ -15,7 +15,7 @@ export default function IndicatorExample() {
 
   const styles = {
     daysWithSchedule: css({
-      '&:before': {
+      '&::before': {
         content: '""',
         width: tokens.spacingS,
         height: tokens.spacing2Xs,
