@@ -10,6 +10,7 @@ import userEvent from '@testing-library/user-event';
 import { Datepicker } from './Datepicker';
 import { format } from 'date-fns';
 import { act } from 'react-dom/test-utils';
+import { axe } from 'jest-axe';
 
 describe('Datepicker', function () {
   const testDate = new Date('2022-04-15');
@@ -82,20 +83,49 @@ describe('Datepicker', function () {
   it('updates value and trigger onSelect when clicking a day on calendar', async () => {
     const onSelect = jest.fn();
     const newDate = new Date('2022-04-22');
-    const { rerender } = render(
+    render(
       <Datepicker selected={testDate} onSelect={onSelect} defaultIsOpen />,
     );
 
     const popover = screen.getByTestId('cf-ui-popover-content');
     act(() => {
       userEvent.click(within(popover).getByText(newDate.getDay()));
-      rerender(
-        <Datepicker selected={newDate} onSelect={onSelect} defaultIsOpen />,
-      );
     });
-    expect(screen.getByTestId('cf-ui-datepicker-input')).toHaveValue(
-      format(newDate, 'dd LLL yyyy'),
-    );
     expect(onSelect).toHaveBeenCalledTimes(1);
+  });
+
+  it('should not open calendar if datepicker is disabled', async () => {
+    const { queryByTestId } = render(
+      <Datepicker selected={testDate} onSelect={jest.fn()} isDisabled />,
+    );
+
+    expect(screen.getByTestId('cf-ui-datepicker-input')).toBeDisabled();
+
+    act(() => {
+      userEvent.click(screen.getByRole('button'));
+    });
+
+    expect(queryByTestId('cf-ui-popover-content')).toBeNull();
+  });
+
+  it('should set error state if date is invalid', async () => {
+    render(<Datepicker selected={testDate} onSelect={jest.fn()} />);
+    const input = screen.getByTestId('cf-ui-datepicker-input');
+
+    act(() => {
+      userEvent.type(input, 'invalid date');
+    });
+
+    expect(input).toHaveAttribute('aria-invalid', 'true');
+  });
+
+  it('has no a11y issues', async () => {
+    const { container } = render(
+      <Datepicker selected={testDate} onSelect={jest.fn()} defaultIsOpen />,
+    );
+
+    const results = await axe(container);
+
+    expect(results).toHaveNoViolations();
   });
 });
