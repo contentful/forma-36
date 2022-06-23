@@ -39,7 +39,7 @@ describe('Datepicker', function () {
     );
   });
 
-  it('opens calendar when button is clicked with', async () => {
+  it('opens calendar when button is clicked', async () => {
     render(<Datepicker selected={testDate} onSelect={jest.fn()} />);
 
     act(() => {
@@ -79,7 +79,7 @@ describe('Datepicker', function () {
     });
   });
 
-  it('updates value and and trigger onSelect when clicking a day on calendar', async () => {
+  it('updates value and trigger onSelect when clicking a day on calendar', async () => {
     const onSelect = jest.fn();
     const newDate = new Date('2022-04-22');
     const { rerender } = render(
