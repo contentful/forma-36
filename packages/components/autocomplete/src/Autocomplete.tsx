@@ -76,6 +76,11 @@ export interface AutocompleteProps<ItemType>
    */
   clearAfterSelect?: boolean;
   /**
+   * If this is set to `false` the dropdown menu will stay open after selecting an item
+   * @default true
+   */
+  closeAfterSelect?: boolean;
+  /**
    * This is the value will be passed to the `placeholder` prop of the input.
    * @default "Search"
    */
@@ -130,6 +135,7 @@ function _Autocomplete<ItemType>(
     id,
     className,
     clearAfterSelect = false,
+    closeAfterSelect = true,
     defaultValue = '',
     selectedItem,
     items,
@@ -217,6 +223,9 @@ function _Autocomplete<ItemType>(
           }
           if (clearAfterSelect) {
             handleInputValueChange('');
+          }
+          if (!closeAfterSelect) {
+            toggleMenu();
           }
           break;
         default:
