@@ -14,7 +14,7 @@ const styles = {
     height: '100%',
     minHeight: tokens.spacing2Xl,
     position: 'relative',
-    padding: `0 ${tokens.spacingM}`,
+    padding: `10px ${tokens.spacingM}`,
     fontFamily: tokens.fontStackPrimary,
     fontWeight: tokens.fontWeightDemiBold,
     border: 'none',
