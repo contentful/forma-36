@@ -1,5 +1,21 @@
 # Change Log
 
+## 4.10.4
+
+### Patch Changes
+
+- [#2093](https://github.com/contentful/forma-36/pull/2093) [`52cce145`](https://github.com/contentful/forma-36/commit/52cce145fa2d7d2a4d9a7ff9591beca862317799) Thanks [@Lelith](https://github.com/Lelith)! - Enable controlling the dropdown menu open and close state after select with new property "closeAfterSelect"
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.10.4
+  - @contentful/f36-forms@4.10.4
+  - @contentful/f36-icons@4.10.4
+  - @contentful/f36-popover@4.10.4
+  - @contentful/f36-skeleton@4.10.4
+  - @contentful/f36-typography@4.10.4
+  - @contentful/f36-utils@4.10.4
+  - @contentful/f36-core@4.10.4
+
 ## 4.10.3
 
 ### Patch Changes
