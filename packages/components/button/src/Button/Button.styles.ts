@@ -6,7 +6,7 @@ import { ButtonSize, ButtonVariant, ButtonStylesProps } from '../types';
 const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
   switch (variant) {
     case 'primary':
-      return { backgroundColor: tokens.blue700, borderColor: tokens.blue700 };
+      return { backgroundColor: tokens.green700, borderColor: tokens.blue700 };
     case 'secondary':
       return { backgroundColor: tokens.gray200 };
     case 'positive':
