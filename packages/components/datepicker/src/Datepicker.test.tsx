@@ -57,7 +57,7 @@ describe('Datepicker', function () {
     });
   });
 
-  it('renders the calendar initialy open and close when esc key is pressed', async () => {
+  it('renders the calendar initialy open', () => {
     render(
       <Datepicker selected={testDate} onSelect={jest.fn()} defaultIsOpen />,
     );
@@ -67,6 +67,14 @@ describe('Datepicker', function () {
 
     expect(datepicker).toHaveAttribute('aria-expanded', 'true');
     expect(popoverContent).toBeInTheDocument();
+  });
+
+  it('should close the calendar when esc is pressed', async () => {
+    render(
+      <Datepicker selected={testDate} onSelect={jest.fn()} defaultIsOpen />,
+    );
+    const popoverContent = screen.getByTestId('cf-ui-popover-content');
+    const datepicker = screen.getByTestId('cf-ui-datepicker');
 
     act(() => {
       fireEvent.keyDown(document.activeElement, {
