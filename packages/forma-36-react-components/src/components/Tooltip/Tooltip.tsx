@@ -110,7 +110,7 @@ export const Tooltip = ({
   const elementRef = useRef(null);
   const popperRef = useRef(null);
   const [arrowRef, setArrowRef] = useState<HTMLSpanElement | null>(null);
-  const { styles: popperStyles, attributes, forceUpdate } = usePopper(
+  const { styles: popperStyles, attributes, update } = usePopper(
     elementRef.current,
     popperRef.current,
     {
@@ -135,10 +135,13 @@ export const Tooltip = ({
 
   // necessary to update tooltip position in case the content is being updated
   useEffect(() => {
-    if (forceUpdate !== null) {
-      forceUpdate();
-    }
-  }, [content, forceUpdate]);
+    const updatePosition = async () => {
+      if (update !== null) {
+        await update();
+      }
+    };
+    updatePosition();
+  }, [content, update]);
 
   const [isHoveringTarget, setIsHoveringTarget] = useState(false);
   const [isHoveringContent, setIsHoveringContent] = useState(false);

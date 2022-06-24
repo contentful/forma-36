@@ -181,7 +181,7 @@ export function Dropdown({
   const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
   const [isOpen, setIsOpen] = useState(isOpenProp);
   const placement = mapPositionTypeToPlacement(position);
-  const { attributes, forceUpdate, styles: popperStyles } = usePopper(
+  const { attributes, update, styles: popperStyles } = usePopper(
     referenceElement,
     popperElement,
     {
@@ -218,10 +218,13 @@ export function Dropdown({
   }, [isOpenProp]);
 
   useEffect(() => {
-    if (forceUpdate) {
-      forceUpdate();
-    }
-  }, [children, forceUpdate]);
+    const updatePosition = async () => {
+      if (update !== null) {
+        await update();
+      }
+    };
+    updatePosition();
+  }, [children, update]);
 
   const openSubmenu = (isOpen: boolean) => {
     if (submenuToggleLabel) {
