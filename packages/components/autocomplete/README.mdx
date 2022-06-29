@@ -59,6 +59,8 @@ This is possible by using the `renderItem` prop and the `getStringMatch` utility
 
 ### Selecting multiple items
 
+It is also possible to use the Autocomplete as multiselect. To improve the user experience, you can keep the dropdown open after selection by setting the "closeAfterSelect" property to false.
+
 ```jsx file=./examples/AutocompleteMultiSelectionExample.tsx
 
 ```
@@ -71,6 +73,14 @@ and `renderItem` functions.
 Besides the correct shape of the object the Autocomplete component needs to receive the prop `isGrouped`
 
 ```jsx file=./examples/AutocompleteWithGroupedItems.tsx
+
+```
+
+### Fully controlled selection from outside
+
+In order to use proper form validation you need to be able to control the actual input field from the autocomplete, because the search query value is not the actual selection. This is done via the selectedItem property.
+
+```jsx file=./examples/ControlledAutocomplete.tsx
 
 ```
 

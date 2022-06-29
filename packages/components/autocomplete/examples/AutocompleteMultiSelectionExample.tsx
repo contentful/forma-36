@@ -37,6 +37,7 @@ export default function AutocompleteMultiSelectionExample() {
         renderItem={(item) => item.name}
         // When this prop is `true`, it will clean the TextInput after an option is selected
         clearAfterSelect
+        closeAfterSelect={false}
       />
 
       <span>

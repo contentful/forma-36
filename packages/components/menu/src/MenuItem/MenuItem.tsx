@@ -33,7 +33,7 @@ function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
 ) {
   const { testId, className, as, isInitiallyFocused, ...otherProps } = props;
 
-  const id = useId(null, 'menu-item');
+  const id = useId(undefined, 'menu-item');
   const itemTestId = testId || `cf-ui-${id}`;
   const styles = getMenuItemStyles();
 

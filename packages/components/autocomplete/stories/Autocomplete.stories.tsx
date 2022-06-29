@@ -272,6 +272,7 @@ export const MultipleSelection = (args: AutocompleteProps<Produce>) => {
         itemToString={(item) => item.name}
         renderItem={(item) => item.name}
         clearAfterSelect
+        closeAfterSelect={false}
       />
 
       <span>

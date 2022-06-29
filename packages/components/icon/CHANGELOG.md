@@ -1,5 +1,21 @@
 # Change Log
 
+## 4.10.5
+
+### Patch Changes
+
+- [#2005](https://github.com/contentful/forma-36/pull/2005) [`32cac8e8`](https://github.com/contentful/forma-36/commit/32cac8e8bdeedfe29b36bc6025eec11607c93da8) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat: Datepicker component
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.10.5
+
+## 4.10.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.10.4
+
 ## 4.10.3
 
 ### Patch Changes
