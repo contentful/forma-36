@@ -175,7 +175,7 @@ export const EntityListItem = ({
     >
       {renderCardDragHandle()}
       {isLoading ? (
-        <article className={styles.card}>
+        <article className={styles.card({ onClick })}>
           <SkeletonContainer clipId="f36-entity-list-item-skeleton">
             <SkeletonImage height={46} width={46} />
             <SkeletonBodyText
@@ -187,7 +187,7 @@ export const EntityListItem = ({
         </article>
       ) : (
         <Element
-          className={styles.card}
+          className={styles.card({ onClick })}
           onClick={onClick}
           href={href}
           type={Element === 'button' ? 'button' : undefined}

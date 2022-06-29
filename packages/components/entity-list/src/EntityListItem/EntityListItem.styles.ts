@@ -29,16 +29,22 @@ export const getEntityListItemStyles = () => ({
           }
         : {}),
     }),
-  card: css({
-    display: 'flex',
-    textDecoration: 'none',
-    width: '100%',
-    minHeight: tokens.spacing3Xl,
-    padding: tokens.spacingXs,
-    border: 'none',
-    background: 'none',
-    textAlign: 'left',
-  }),
+  card: (props: Pick<EntityListItemProps, 'onClick'>) =>
+    css({
+      display: 'flex',
+      textDecoration: 'none',
+      width: '100%',
+      minHeight: tokens.spacing3Xl,
+      padding: tokens.spacingXs,
+      border: 'none',
+      background: 'none',
+      textAlign: 'left',
+      ...(props.onClick
+        ? {
+            cursor: 'pointer',
+          }
+        : {}),
+    }),
   content: css({
     flexGrow: 1,
     minWidth: 0,
