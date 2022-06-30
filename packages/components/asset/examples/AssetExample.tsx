@@ -5,7 +5,7 @@ export default function AssetExample() {
   return (
     <Asset
       src="https://placeimg.com/200/300/animals"
-      title="An PDF asset"
+      title="A PDF asset"
       type="pdf"
     />
   );
