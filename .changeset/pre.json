@@ -41,7 +41,5 @@
     "@contentful/f36-tokens": "4.0.1",
     "@contentful/f36-website": "0.1.1"
   },
-  "changesets": [
-    "popular-badgers-search"
-  ]
+  "changesets": ["honest-candles-call"]
 }
