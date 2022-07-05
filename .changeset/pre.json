@@ -41,5 +41,7 @@
     "@contentful/f36-tokens": "4.0.1",
     "@contentful/f36-website": "0.1.1"
   },
-  "changesets": ["honest-candles-call"]
+  "changesets": [
+    "honest-candles-call"
+  ]
 }
