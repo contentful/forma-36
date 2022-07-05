@@ -1,5 +1,16 @@
 # @contentful/f36-website
 
+## 1.0.0-beta.0
+
+### Major Changes
+
+- [#2112](https://github.com/contentful/forma-36/pull/2112) [`177b8e27`](https://github.com/contentful/forma-36/commit/177b8e27e644a6696afec6e8f8a4d0ea488fddf3) Thanks [@burakukula](https://github.com/burakukula)! - feat: add new Calendar and Datepicker Components https://f36.contentful.com/components/calendar
+
+### Patch Changes
+
+- Updated dependencies [[`177b8e27`](https://github.com/contentful/forma-36/commit/177b8e27e644a6696afec6e8f8a4d0ea488fddf3)]:
+  - @contentful/f36-datepicker@5.0.0-beta.1
+
 ## 0.1.1
 
 ### Patch Changes
