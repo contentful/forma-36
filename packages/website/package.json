@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-website",
-  "version": "0.1.1",
+  "version": "1.0.0-beta.0",
   "private": true,
   "scripts": {
     "generate-public-files": "ts-node ./scripts/generate-public-files.ts",
@@ -12,7 +12,7 @@
     "@codesandbox/sandpack-react": "0.18.1",
     "@contentful/f36-components": "^4.10.5",
     "@contentful/f36-core": "^4.10.5",
-    "@contentful/f36-datepicker": "^4.1.0-beta.0",
+    "@contentful/f36-datepicker": "^5.0.0-beta.1",
     "@contentful/f36-docs-utils": "^4.0.0",
     "@contentful/f36-icon": "^4.10.5",
     "@contentful/f36-icons": "^4.10.5",
