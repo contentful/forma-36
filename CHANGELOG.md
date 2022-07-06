@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 06-07-2022
+
+**F36 Datepicker** `v5.0.0-beta.1`
+
+- feat: add new Calendar and Datepicker Components https://f36.contentful.com/components/calendar
+
 ## 25-06-2022
 
 **F36 Datepicker** `v4.0.0`
