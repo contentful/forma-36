@@ -59,7 +59,7 @@
     "broken-link-checker": "^0.7.8",
     "dotenv": "^10.0.0",
     "prettier": "^2.5.1",
-    "ts-node": "^10.7.0",
+    "ts-node": "^10.8.2",
     "wait-on": "^6.0.0"
   }
 }
