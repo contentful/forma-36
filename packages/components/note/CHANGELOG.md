@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.11.0-beta.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.11.0-beta.0
+  - @contentful/f36-icon@4.11.0-beta.0
+  - @contentful/f36-icons@4.11.0-beta.0
+  - @contentful/f36-typography@4.11.0-beta.0
+  - @contentful/f36-core@4.11.0-beta.0
+
 ## 4.10.5
 
 ### Patch Changes
