@@ -39,6 +39,11 @@ export interface AutocompleteProps<ItemType>
   items: ItemType[] | GenericGroupType<ItemType>[];
 
   /**
+   * Set a custom icon for the text input
+   */
+  icon?: React.ReactElement;
+
+  /**
    * Tells if the item is a object with groups
    */
   isGrouped?: boolean;
@@ -142,6 +147,7 @@ function _Autocomplete<ItemType>(
     onInputValueChange,
     onSelectItem,
     renderItem,
+    icon = <ChevronDownIcon variant="muted" />,
     itemToString = (item: ItemType) => (item as unknown) as string,
     isInvalid,
     isDisabled,
@@ -287,16 +293,10 @@ function _Autocomplete<ItemType>(
             <IconButton
               {...toggleProps}
               ref={mergeRefs(toggleProps.ref, toggleRef)}
-              aria-label="toggle menu"
+              aria-label={inputValue ? 'Clear' : 'Show list'}
               className={styles.toggleButton}
               variant="transparent"
-              icon={
-                inputValue ? (
-                  <CloseIcon aria-label="Clear" variant="muted" />
-                ) : (
-                  <ChevronDownIcon aria-label="Show list" variant="muted" />
-                )
-              }
+              icon={inputValue ? <CloseIcon variant="muted" /> : icon}
               onClick={() => {
                 if (inputValue) {
                   handleInputValueChange('');
