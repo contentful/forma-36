@@ -42,6 +42,7 @@
     "@contentful/f36-website": "0.1.1"
   },
   "changesets": [
+    "fifty-apples-suffer",
     "honest-candles-call"
   ]
 }
