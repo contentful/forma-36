@@ -30,15 +30,6 @@ We use use [Plop](https://plopjs.com/) to create scripts that help you to scaffo
 
 ## Development
 
-_Note: The default branch has been renamed! `master` is now named `main`. If you have a local clone, you can update it by running the following commands._
-
-```bash
-git branch -m master main
-git fetch origin
-git branch -u origin/main main
-git remote set-head origin -a
-```
-
 For local development, in the root of the repo run `yarn` to install all dependencies and then `yarn build` to build all packages. Now follow the instructions of the specific package you’re working on.
 You will find each package’s instructions in their README files, check the [Packages](#packages) section for a list of all packages.
 
