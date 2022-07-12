@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 12-07-2022
+
+**F36 Autocomplete** `v4.11.0-beta.0`
+
+- feat: allow passing custom icons to autocomplete
+
 ## 06-07-2022
 
 **F36 Datepicker** `v5.0.0-beta.1`

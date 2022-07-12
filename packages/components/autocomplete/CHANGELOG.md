@@ -1,5 +1,23 @@
 # Change Log
 
+## 4.11.0-beta.0
+
+### Minor Changes
+
+- [#2116](https://github.com/contentful/forma-36/pull/2116) [`7efcc111`](https://github.com/contentful/forma-36/commit/7efcc111878fd22085f9717dc4d708b721fc20f3) Thanks [@mshaaban0](https://github.com/mshaaban0)! - feat: allow passing custom icons to autocomplete
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.11.0-beta.0
+  - @contentful/f36-forms@4.11.0-beta.0
+  - @contentful/f36-icons@4.11.0-beta.0
+  - @contentful/f36-popover@4.11.0-beta.0
+  - @contentful/f36-skeleton@4.11.0-beta.0
+  - @contentful/f36-typography@4.11.0-beta.0
+  - @contentful/f36-utils@4.11.0-beta.0
+  - @contentful/f36-core@4.11.0-beta.0
+
 ## 4.10.5
 
 ### Patch Changes
