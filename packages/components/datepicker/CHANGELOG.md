@@ -1,5 +1,11 @@
 # @contentful/f36-datepicker
 
+## 4.1.0-beta.2
+
+### Patch Changes
+
+- [#2120](https://github.com/contentful/forma-36/pull/2120) [`b057ce45`](https://github.com/contentful/forma-36/commit/b057ce45acd3e22b05f79b5bcb121c7e1b3a8c44) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(datepicker): allow passing input props
+
 ## 4.1.0-beta.1
 
 ### Patch Changes
