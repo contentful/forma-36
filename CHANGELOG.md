@@ -8,6 +8,21 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 13-07-2022
+
+**F36 Datepicker** `v4.1.0-beta.2`
+
+- fix(datepicker): allow passing input props
+
+**F36 Autocomplete** `v4.11.0`
+
+- feat: allow passing custom icons to autocomplete
+
+**F36 Datepicker** `v4.1.0`
+
+- add new Calendar and Datepicker Components https://f36.contentful.com/components/calendar
+- fix(datepicker): allow passing input props
+
 ## 12-07-2022
 
 **F36 Autocomplete** `v4.11.0-beta.0`
