@@ -3,6 +3,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { Datepicker } from '../src/Datepicker';
 import type { DatepickerProps } from '../src/Datepicker';
+import { FormControl } from '@contentful/f36-forms';
 
 const testDate = new Date('2022-04-15');
 
@@ -55,5 +56,22 @@ export const WithMultipleMonths: Story<DatepickerProps> = (args) => {
       numberOfMonths={2}
       defaultIsOpen={true}
     />
+  );
+};
+
+export const WithFormControl: Story<DatepickerProps> = (args) => {
+  const [selectedDay, setSelectedDay] = useState<Date>(testDate);
+
+  return (
+    <FormControl id="date" isRequired>
+      <FormControl.Label>Date</FormControl.Label>
+      <Datepicker
+        {...args}
+        selected={selectedDay}
+        onSelect={setSelectedDay}
+        defaultIsOpen={true}
+      />
+      <FormControl.HelpText>Please enter a publish date</FormControl.HelpText>
+    </FormControl>
   );
 };
