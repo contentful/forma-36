@@ -36,6 +36,11 @@ export type DatepickerProps = CommonProps & {
    * If `true`, the Datepicker will be initially opened.
    */
   defaultIsOpen?: boolean;
+
+  /**
+   * Props to pass to the TextInput component
+   */
+  inputProps?: Partial<TextInputProps>;
 } & Omit<
     DayPickerSingleProps,
     'mode' | 'onSelect' | 'fromMonth' | 'toMonth' | 'fromYear' | 'toYear'
@@ -61,6 +66,7 @@ export function Datepicker(props: DatepickerProps) {
     className,
     style,
     id,
+    inputProps,
     isDisabled,
     isInvalid,
     isReadOnly,
@@ -163,6 +169,7 @@ export function Datepicker(props: DatepickerProps) {
             isRequired={isRequired}
             isReadOnly={isReadOnly}
             testId="cf-ui-datepicker-input"
+            {...inputProps}
           />
           <IconButton
             aria-label="Use calendar"

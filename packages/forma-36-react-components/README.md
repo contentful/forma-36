@@ -1,6 +1,6 @@
 # Forma 36 React Components
 
-A React component library for [Forma 36](https://f36.contentful.com/) design system created by [Contentful](https://www.contentful.com) and powered by [Storybook](https://storybook.js.org/) and (Next.js)[https://nextjs.org/].
+A React component library for the [Forma 36](https://f36.contentful.com/) design system created by [Contentful](https://www.contentful.com).
 
 ## Table of contents
 
@@ -132,7 +132,7 @@ yarn test --watch
 
 ## Building
 
-We are using a combination of [Webpack](https://webpack.js.org/) and [Babel](https://babeljs.io/) to create builds of our component library. We use Webpack with the `tools/webpack.production.config.js` config to build a stylesheet including all CSS used for our components using the ExtractTextPlugin. Babel is used for transpiling our React components into CommonJS modules. Babel and Webpack both output the build to the `dist` directory.
+We are using [Parcel](https://parceljs.org/) to build our component library. Each component builds to its own `dist` directory.
 
 ### Create a build of the library
 
