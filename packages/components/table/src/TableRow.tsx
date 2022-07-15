@@ -14,9 +14,6 @@ const getStyles = () => {
       '&:last-child td': {
         borderBottom: 'none',
       },
-      '&:hover td': {
-        backgroundColor: tokens.gray100,
-      },
     }),
     selected: css({
       'td, th': {
