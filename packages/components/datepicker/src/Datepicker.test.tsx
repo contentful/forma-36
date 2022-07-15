@@ -104,7 +104,11 @@ describe('Datepicker', function () {
 
   it('should not open calendar if datepicker is disabled', async () => {
     const { queryByTestId } = render(
-      <Datepicker selected={testDate} onSelect={jest.fn()} isDisabled />,
+      <Datepicker
+        selected={testDate}
+        onSelect={jest.fn()}
+        inputProps={{ isDisabled: true }}
+      />,
     );
 
     expect(screen.getByTestId('cf-ui-datepicker-input')).toBeDisabled();

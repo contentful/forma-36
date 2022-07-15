@@ -8,10 +8,18 @@ export default function VisualStatesExample() {
   return (
     <>
       <SectionHeading>Disabled</SectionHeading>
-      <Datepicker isDisabled selected={selectedDay} onSelect={setSelectedDay} />
+      <Datepicker
+        selected={selectedDay}
+        onSelect={setSelectedDay}
+        inputProps={{ isDisabled: true }}
+      />
       <br />
       <SectionHeading>Invalid</SectionHeading>
-      <Datepicker isInvalid selected={selectedDay} onSelect={setSelectedDay} />
+      <Datepicker
+        selected={selectedDay}
+        onSelect={setSelectedDay}
+        inputProps={{ isInvalid: true }}
+      />
     </>
   );
 }
