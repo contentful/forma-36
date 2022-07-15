@@ -135,8 +135,12 @@ export const getStyles = (): ClassNames => {
     nav_button_previous: css({
       marginRight: '3px',
     }),
-
     dropdown_month: css({
+      position: 'relative',
+      display: 'inline-flex',
+      alignItems: 'center',
+    }),
+    dropdown_year: css({
       position: 'relative',
       display: 'inline-flex',
       alignItems: 'center',
