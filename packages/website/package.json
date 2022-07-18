@@ -39,7 +39,7 @@
     "react-copy-to-clipboard": "^5.0.4",
     "react-docgen-typescript": "^2.2.2",
     "react-dom": "16.14.0",
-    "react-focus-lock": "^2.8.1",
+    "react-focus-lock": "^2.9.1",
     "react-hook-form": "7.25.3",
     "react-icons": "4.3.1",
     "react-live": "2.4.1",
