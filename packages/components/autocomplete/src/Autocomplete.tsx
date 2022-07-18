@@ -220,13 +220,13 @@ function _Autocomplete<ItemType>(
         handleInputValueChange(inputValue);
       }
     },
-    onStateChange: ({ type, selectedItem }) => {
+    onSelectedItemChange: (changes) => {
+      onSelectItem(changes.selectedItem);
+    },
+    onStateChange: ({ type }) => {
       switch (type) {
         case useCombobox.stateChangeTypes.InputKeyDownEnter:
         case useCombobox.stateChangeTypes.ItemClick:
-          if (selectedItem) {
-            onSelectItem(selectedItem);
-          }
           if (clearAfterSelect) {
             handleInputValueChange('');
           }
