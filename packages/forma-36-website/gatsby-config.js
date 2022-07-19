@@ -9,7 +9,7 @@ module.exports = {
     title: 'Forma 36 - The Contentful Design System',
     promoText: `Forma 36 version 3 is not supported anymore`,
     promoLink: 'https://f36.contentful.com/',
-    promoLinkText: 'Click here to go to the version 4',
+    promoLinkText: 'Click here to go to version 4',
     promoTagText: 'deprecated',
     menuLinks: [
       {
