@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Datepicker } from '../src/Datepicker';
+import { Datepicker, Calendar } from '../src';
 import type { DatepickerProps } from '../src/Datepicker';
-import { FormControl } from '@contentful/f36-forms';
+import { FormControl, TextInput } from '@contentful/f36-forms';
+import { format } from 'date-fns';
+import { Popover } from '@contentful/f36-popover';
+import FocusLock from 'react-focus-lock';
+import { css } from 'emotion';
+import tokens from '@contentful/f36-tokens';
 
 const testDate = new Date('2022-04-15');
 
@@ -73,5 +78,74 @@ export const WithFormControl: Story<DatepickerProps> = (args) => {
       />
       <FormControl.HelpText>Please enter a publish date</FormControl.HelpText>
     </FormControl>
+  );
+};
+
+const DATE_FORMAT = 'dd LLL yyyy'; // e.g. 31 Jan 2022
+const getStyles = () => {
+  return {
+    calendar: css({
+      padding: tokens.spacingM,
+    }),
+  };
+};
+
+export const Custom = () => {
+  const styles = getStyles();
+  const [selected, setSelected] = useState<Date>(testDate);
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+  const [inputValue, setInputValue] = useState<string>(() =>
+    selected ? format(selected, DATE_FORMAT) : '',
+  );
+  const popoverWasClosed = useRef(false);
+
+  const closePopover = () => {
+    popoverWasClosed.current = true;
+    setIsPopoverOpen(false);
+  };
+
+  const handleDaySelect = (date: Date) => {
+    if (date) {
+      setSelected(date);
+      setInputValue(format(date, DATE_FORMAT));
+      closePopover();
+    }
+  };
+
+  const handleInputInteraction = () => {
+    // when popover gets closed focus returns to the input,
+    // we want to prevent popover to be opened in this case
+    if (popoverWasClosed.current) {
+      popoverWasClosed.current = false;
+      return;
+    }
+
+    setIsPopoverOpen(true);
+  };
+
+  return (
+    <Popover isOpen={isPopoverOpen} onClose={closePopover}>
+      <Popover.Trigger>
+        <TextInput
+          placeholder={format(new Date(), DATE_FORMAT)}
+          value={inputValue}
+          onFocus={handleInputInteraction}
+          onClick={handleInputInteraction}
+          aria-label="Choose date"
+        />
+      </Popover.Trigger>
+      <Popover.Content>
+        <FocusLock returnFocus={true}>
+          <Calendar
+            className={styles.calendar}
+            mode="single"
+            selected={selected}
+            onSelect={handleDaySelect}
+            initialFocus={false}
+            defaultMonth={selected}
+          />
+        </FocusLock>
+      </Popover.Content>
+    </Popover>
   );
 };
