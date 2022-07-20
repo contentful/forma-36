@@ -48,7 +48,14 @@ export type DatepickerProps = CommonProps & {
   popoverProps?: Partial<PopoverProps>;
 } & Omit<
     DayPickerSingleProps,
-    'mode' | 'onSelect' | 'fromMonth' | 'toMonth' | 'fromYear' | 'toYear'
+    | 'mode'
+    | 'onSelect'
+    | 'fromMonth'
+    | 'toMonth'
+    | 'fromYear'
+    | 'toYear'
+    | 'classNames'
+    | 'className'
   >;
 
 /**
