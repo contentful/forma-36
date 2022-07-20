@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.12.0
+
+### Minor Changes
+
+- [#2130](https://github.com/contentful/forma-36/pull/2130) [`23563f72`](https://github.com/contentful/forma-36/commit/23563f72caa86bdd0e0c11a9c46c6b9fa60141f3) Thanks [@Spring3](https://github.com/Spring3)! - exported formatRelativeDateTime function
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.12.0
+
 ## 4.11.0
 
 ### Patch Changes
