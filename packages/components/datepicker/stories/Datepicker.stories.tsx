@@ -4,7 +4,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Datepicker, Calendar } from '../src';
 import type { DatepickerProps } from '../src/Datepicker';
 import { FormControl, TextInput } from '@contentful/f36-forms';
-import { format } from 'date-fns';
+import { format, parse, isValid } from 'date-fns';
 import { Popover } from '@contentful/f36-popover';
 import FocusLock from 'react-focus-lock';
 import { css } from 'emotion';
@@ -81,7 +81,7 @@ export const WithFormControl: Story<DatepickerProps> = (args) => {
   );
 };
 
-const DATE_FORMAT = 'dd LLL yyyy'; // e.g. 31 Jan 2022
+const DATE_FORMAT = 'yyyy-MM-dd'; // e.g. 2022-01-31
 const getStyles = () => {
   return {
     calendar: css({
@@ -97,6 +97,7 @@ export const Custom = () => {
   const [inputValue, setInputValue] = useState<string>(() =>
     selected ? format(selected, DATE_FORMAT) : '',
   );
+  const [isInputInvalid, setIsInputInvalid] = useState(false);
   const popoverWasClosed = useRef(false);
 
   const closePopover = () => {
@@ -112,7 +113,7 @@ export const Custom = () => {
     }
   };
 
-  const handleInputInteraction = () => {
+  const handleInputFocus = () => {
     // when popover gets closed focus returns to the input,
     // we want to prevent popover to be opened in this case
     if (popoverWasClosed.current) {
@@ -120,7 +121,28 @@ export const Custom = () => {
       return;
     }
 
-    setIsPopoverOpen(true);
+    setIsPopoverOpen((state) => !state);
+  };
+
+  const hendleInputKeyDown = (event) => {
+    if (event.key === 'Enter' && !isInputInvalid) {
+      event.preventDefault();
+      setIsPopoverOpen(true);
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const value = e.currentTarget.value;
+    setInputValue(value);
+
+    const date = parse(value, DATE_FORMAT, new Date());
+    if (isValid(date)) {
+      setIsInputInvalid(false);
+      setSelected(date);
+    } else {
+      setIsInputInvalid(true);
+      setSelected(undefined);
+    }
   };
 
   return (
@@ -129,8 +151,10 @@ export const Custom = () => {
         <TextInput
           placeholder={format(new Date(), DATE_FORMAT)}
           value={inputValue}
-          onFocus={handleInputInteraction}
-          onClick={handleInputInteraction}
+          onChange={handleInputChange}
+          onFocus={handleInputFocus}
+          onKeyDown={hendleInputKeyDown}
+          isInvalid={isInputInvalid}
           aria-label="Choose date"
         />
       </Popover.Trigger>

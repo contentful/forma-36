@@ -1,20 +1,21 @@
 import React, { useState, useRef } from 'react';
 import { Calendar } from '@contentful/f36-datepicker';
 import { TextInput } from '@contentful/f36-forms';
-import { format } from 'date-fns';
+import { format, parse, isValid } from 'date-fns';
 import { Popover } from '@contentful/f36-popover';
 import FocusLock from 'react-focus-lock';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
 export default function CustomExample() {
-  const DATE_FORMAT = 'dd LLL yyyy'; // e.g. 31 Jan 2022
+  const DATE_FORMAT = 'yyyy-MM-dd'; // e.g. 2022-01-31
 
-  const [selected, setSelected] = useState();
+  const [selected, setSelected] = useState(new Date('2022-04-15'));
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [inputValue, setInputValue] = useState(() =>
     selected ? format(selected, DATE_FORMAT) : '',
   );
+  const [isInputInvalid, setIsInputInvalid] = useState(false);
   const popoverWasClosed = useRef(false);
 
   const closePopover = () => {
@@ -30,7 +31,7 @@ export default function CustomExample() {
     }
   };
 
-  const handleInputInteraction = () => {
+  const handleInputFocus = () => {
     // when popover gets closed focus returns to the input,
     // we want to prevent popover to be opened in this case
     if (popoverWasClosed.current) {
@@ -38,7 +39,28 @@ export default function CustomExample() {
       return;
     }
 
-    setIsPopoverOpen(true);
+    setIsPopoverOpen((state) => !state);
+  };
+
+  const hendleInputKeyDown = (event) => {
+    if (event.key === 'Enter' && !isInputInvalid) {
+      event.preventDefault();
+      setIsPopoverOpen(true);
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const value = e.currentTarget.value;
+    setInputValue(value);
+
+    const date = parse(value, DATE_FORMAT, new Date());
+    if (isValid(date)) {
+      setIsInputInvalid(false);
+      setSelected(date);
+    } else {
+      setIsInputInvalid(true);
+      setSelected(undefined);
+    }
   };
 
   return (
@@ -47,8 +69,10 @@ export default function CustomExample() {
         <TextInput
           placeholder={format(new Date(), DATE_FORMAT)}
           value={inputValue}
-          onFocus={handleInputInteraction}
-          onClick={handleInputInteraction}
+          onChange={handleInputChange}
+          onFocus={handleInputFocus}
+          onKeyDown={hendleInputKeyDown}
+          isInvalid={isInputInvalid}
           aria-label="Choose date"
         />
       </Popover.Trigger>

@@ -28,7 +28,7 @@ import {
   SortableHandle,
 } from 'react-sortable-hoc';
 import arrayMove from 'array-move';
-import { format } from 'date-fns';
+import { format, parse, isValid } from 'date-fns';
 
 const liveProviderScope = {
   ...f36icons,
@@ -56,6 +56,8 @@ const liveProviderScope = {
   SortableHandle,
   arrayMove,
   format,
+  parse,
+  isValid,
 };
 
 const styles = {
