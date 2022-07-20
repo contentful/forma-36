@@ -10,7 +10,9 @@ import {
 import { CalendarCaption } from './CalendarCaption';
 import { CalendarCaptionLabel } from './CalendarCaptionLabel';
 
-export type CalendarProps = DayPickerDefaultProps | DayPickerSingleProps;
+export type CalendarProps =
+  | Omit<DayPickerDefaultProps, 'classNames'>
+  | Omit<DayPickerSingleProps, 'classNames'>;
 
 /**
  * Provides functionality for calendar date selection. Used as a part of Datepicker component.
