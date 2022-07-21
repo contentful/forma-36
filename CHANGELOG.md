@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 21-07-2022
+
+**F36 Datetime** `v4.12.0`
+
+- exported formatRelativeDateTime function
+
 ## 13-07-2022
 
 **F36 Datepicker** `v4.1.0-beta.2`
