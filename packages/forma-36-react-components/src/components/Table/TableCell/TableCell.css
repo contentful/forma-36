@@ -23,10 +23,6 @@
   vertical-align: top;
 }
 
-tr:hover td:not(.TableCell--head) {
-  background-color: var(--color-element-lightest);
-}
-
 .TableRow--selected .TableCell {
   background-color: var(--color-blue-lightest);
 }
