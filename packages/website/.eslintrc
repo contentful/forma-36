@@ -7,7 +7,9 @@
     "project": "./tsconfig.json"
   },
   "rules": {
-    "rulesdir/emotion-in-function": "off"
+    "rulesdir/emotion-in-function": "off",
+    // We should be using next/link
+    "jsx-a11y/anchor-is-valid": "off"
   },
   "overrides": [
     {
@@ -17,7 +19,7 @@
         "content/**/*"
       ],
       "rules": {
-        "import/no-default-export": "off",
+        "import/no-default-export": "off"
       }
     }
   ]

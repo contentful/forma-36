@@ -2,14 +2,14 @@ import React from 'react';
 import { css, cx } from 'emotion';
 import { Grid } from '@contentful/f36-components';
 
-import {
-  useCurrentLocation,
-  WEBSITE_SECTION,
-} from '../hooks/useCurrentLocation';
+import { useCurrentLocation } from '../hooks/useCurrentLocation';
 import { getGridStyles, TOPBAR_HEIGHT } from '../utils/getGridStyles';
 import { Topbar } from './Topbar';
+import type { TopbarProps } from './Topbar';
 import { Footer } from './Footer';
 import { Sidebar } from './Sidebar';
+import type { SidebarProps } from './Sidebar';
+import { HARDCODED_WEBSITE_SECTION } from '../types';
 
 const styles = {
   mainItem: css({
@@ -20,13 +20,15 @@ const styles = {
   }),
 };
 
-interface Props {
+interface LayoutProps {
   children: React.ReactNode;
+  sidebarLinks?: SidebarProps['links'];
+  topbarLinks: TopbarProps['links'];
 }
 
-export function Layout({ children }: Props) {
-  const { activeSection, currentPage } = useCurrentLocation();
-  const isPlayground = activeSection === WEBSITE_SECTION.PLAYGROUND;
+export function Layout({ children, sidebarLinks, topbarLinks }: LayoutProps) {
+  const { currentSection, currentPage } = useCurrentLocation();
+  const isPlayground = currentSection === HARDCODED_WEBSITE_SECTION.PLAYGROUND;
   const gridStyles = getGridStyles(isPlayground);
 
   return (
@@ -34,11 +36,9 @@ export function Layout({ children }: Props) {
       className={cx(gridStyles.wrapper, gridStyles.wrapperColumns)}
       columnGap="none"
     >
-      <Topbar activeSection={activeSection} />
+      <Topbar links={topbarLinks} />
 
-      {!isPlayground && (
-        <Sidebar activeSection={activeSection} currentPage={currentPage} />
-      )}
+      {sidebarLinks && <Sidebar links={sidebarLinks} />}
 
       {/* Unique key for each page, so scroll position is not preserved when opening a new page */}
       <Grid.Item

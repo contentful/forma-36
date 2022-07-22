@@ -12,22 +12,92 @@ import remarkCodeTitles from 'remark-code-titles';
 import remarkCodeImport from 'remark-code-import';
 import { PropsContextProvider } from '@contentful/f36-docs-utils';
 
+import { sortByTitle } from '../utils/sortByTitle';
 import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 import { getPropsMetadata, transformToc } from '../utils/propsMeta';
 import { getToCFromMdx, getToCFromContentful } from '../utils/tableOfContents';
 import { FrontMatterContextProvider } from '../utils/frontMatterContext';
 import { PageContent } from '../components/PageContent';
 import type { PageContentProps } from '../components/PageContent';
-import { getAllArticles, getSingleArticleBySlug } from '../lib/api';
+import {
+  getAllArticles,
+  getSidebarLinksBySectionSlug,
+  getSingleArticleBySlug,
+  getTopbarLinks,
+} from '../lib/api';
+import type { SidebarProps } from '../components/Sidebar';
+import type { TopbarProps } from '../components/Topbar/Topbar';
+import { Layout } from '../components/Layout';
+import { HARDCODED_WEBSITE_SECTION } from '../types';
+import type { SidebarSection } from '../types';
+import mdxSidebarLinks from '../utils/sidebarLinks.json';
+
+const componentSidebarLinks: SidebarSection[] = [
+  {
+    links: sortByTitle([
+      ...mdxSidebarLinks.unassigned,
+
+      {
+        type: 'subsection',
+        links: mdxSidebarLinks.animationComponents,
+        title: 'Animation Components',
+      },
+      {
+        type: 'subsection',
+        links: mdxSidebarLinks.layoutComponents,
+        title: 'Layout Components',
+      },
+      {
+        type: 'subsection',
+        links: mdxSidebarLinks.typographyComponents,
+        title: 'Typography Components',
+      },
+      {
+        type: 'subsection',
+        links: mdxSidebarLinks.buttonComponents,
+        title: 'Button Components',
+      },
+      {
+        type: 'subsection',
+        links: mdxSidebarLinks.formComponents,
+        title: 'Form Components',
+      },
+      {
+        type: 'subsection',
+        links: mdxSidebarLinks.dateComponents,
+        title: 'Date Components',
+      },
+      {
+        type: 'subsection',
+        links: mdxSidebarLinks.modalComponents,
+        title: 'Modal Components',
+      },
+      {
+        type: 'subsection',
+        links: mdxSidebarLinks.cardComponents,
+        title: 'Card Components',
+      },
+      {
+        type: 'subsection',
+        links: mdxSidebarLinks.deprecatedComponents,
+        title: 'Deprecated V3 Components',
+      },
+    ]),
+  },
+];
 
 interface ComponentPageProps extends PageContentProps {
   propsMetadata?: ReturnType<typeof getPropsMetadata>;
+  sidebarLinks: SidebarProps['links'];
+  topbarLinks: TopbarProps['links'];
 }
 
 const ComponentPage: NextPage<ComponentPageProps> = ({
   frontMatter,
   headings,
   propsMetadata = {},
+  sidebarLinks,
+  topbarLinks,
   source,
 }: ComponentPageProps) => {
   const router = useRouter();
@@ -44,11 +114,13 @@ const ComponentPage: NextPage<ComponentPageProps> = ({
 
       <PropsContextProvider value={{ ...propsMetadata }}>
         <FrontMatterContextProvider value={frontMatter}>
-          <PageContent
-            frontMatter={frontMatter}
-            headings={headings}
-            source={source}
-          />
+          <Layout sidebarLinks={sidebarLinks} topbarLinks={topbarLinks}>
+            <PageContent
+              frontMatter={frontMatter}
+              headings={headings}
+              source={source}
+            />
+          </Layout>
         </FrontMatterContextProvider>
       </PropsContextProvider>
     </>
@@ -63,6 +135,27 @@ export const getStaticProps: GetStaticProps<
   ComponentPageProps,
   Params
 > = async (context) => {
+  if (!context.params) {
+    throw new Error();
+  }
+
+  const [section] = context.params?.slug;
+  const topbarLinks = await getTopbarLinks();
+  let sidebarLinks = (await getSidebarLinksBySectionSlug(section)) ?? [];
+
+  if (section === HARDCODED_WEBSITE_SECTION.COMPONENTS) {
+    sidebarLinks = [
+      ...sidebarLinks,
+      ...componentSidebarLinks,
+      { title: 'Utils', links: mdxSidebarLinks.utils },
+      { title: 'Integrations', links: mdxSidebarLinks.integrations },
+    ];
+  }
+
+  if (section === HARDCODED_WEBSITE_SECTION.TOKENS) {
+    sidebarLinks = [...sidebarLinks, { links: mdxSidebarLinks.tokens }];
+  }
+
   const mdxSource = await getMdxSourceBySlug(context.params?.slug ?? []);
 
   if (mdxSource) {
@@ -116,6 +209,8 @@ export const getStaticProps: GetStaticProps<
         headings: getToCFromMdx(mdxSource.content),
         frontMatter: data as ComponentPageProps['frontMatter'],
         propsMetadata,
+        sidebarLinks,
+        topbarLinks,
       },
     };
   } else {
@@ -140,18 +235,29 @@ export const getStaticProps: GetStaticProps<
           richTextBody: contentfulResult.body.json,
           richTextLinks: contentfulResult.body.links,
         },
+        sidebarLinks,
+        topbarLinks,
       },
     };
   }
 };
 
-export const getStaticPaths: GetStaticPaths<Params> = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const mdxPaths = await getMdxPaths();
-  const allArticles = await getAllArticles();
+  const allArticles = (await getAllArticles()) ?? [];
 
   // Getting all the paths based on the data from Contentful
   const contentfulPaths = allArticles.map((item) => {
-    const slug = [item.kbAppCategory.slug, item.slug];
+    // Article either has a section parent, or it has a category parent with a section parent
+    let [section] = item.linkedFrom?.sectionCollection?.items;
+
+    if (!section) {
+      section =
+        item.linkedFrom?.kbAppCategoryCollection?.items[0]?.linkedFrom
+          ?.sectionCollection?.items[0];
+    }
+
+    const slug = [section.slug, item.slug];
     return {
       params: {
         slug,

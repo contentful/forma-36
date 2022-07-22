@@ -18,6 +18,7 @@ function tryDecode(encoded?: unknown) {
     try {
       return coder.decode(encoded);
     } catch (err) {
+      // eslint-disable-next-line no-console
       console.error('Could not decode query:', err);
     }
   }
