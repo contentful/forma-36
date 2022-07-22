@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.12.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-icons@4.12.0
+  - @contentful/f36-tooltip@4.12.0
+  - @contentful/f36-core@4.12.0
+
 ## 4.11.0
 
 ### Patch Changes

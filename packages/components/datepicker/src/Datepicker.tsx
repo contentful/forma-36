@@ -16,7 +16,7 @@ import FocusLock from 'react-focus-lock';
 import { TextInput, TextInputProps } from '@contentful/f36-forms';
 import { IconButton } from '@contentful/f36-button';
 import { CalendarIcon } from '@contentful/f36-icons';
-import { PopoverProps } from '@contentful/f36-popover/src';
+import { PopoverProps } from '@contentful/f36-popover';
 
 export type DatepickerProps = CommonProps & {
   /**
@@ -41,20 +41,22 @@ export type DatepickerProps = CommonProps & {
    * Props to pass to the TextInput component
    */
   inputProps?: Partial<TextInputProps>;
+
+  /**
+   * Props to pass to the Popover (Dropdown) component
+   */
+  popoverProps?: Partial<PopoverProps>;
 } & Omit<
     DayPickerSingleProps,
-    'mode' | 'onSelect' | 'fromMonth' | 'toMonth' | 'fromYear' | 'toYear'
-  > &
-  Pick<
-    TextInputProps,
-    | 'id'
-    | 'isDisabled'
-    | 'isInvalid'
-    | 'isReadOnly'
-    | 'isRequired'
-    | 'aria-label'
-  > &
-  Pick<PopoverProps, 'usePortal'>;
+    | 'mode'
+    | 'onSelect'
+    | 'fromMonth'
+    | 'toMonth'
+    | 'fromYear'
+    | 'toYear'
+    | 'classNames'
+    | 'className'
+  >;
 
 /**
  * Provides functionality for date selection.
@@ -65,13 +67,8 @@ export function Datepicker(props: DatepickerProps) {
     testId = 'cf-ui-datepicker',
     className,
     style,
-    id,
     inputProps,
-    isDisabled,
-    isInvalid,
-    isReadOnly,
-    isRequired,
-    usePortal,
+    popoverProps,
     selected,
     onSelect,
     fromDate,
@@ -150,7 +147,7 @@ export function Datepicker(props: DatepickerProps) {
     <Popover
       isOpen={isPopoverOpen}
       onClose={() => setIsPopoverOpen(false)}
-      usePortal={usePortal}
+      {...popoverProps}
     >
       <Popover.Trigger>
         <TextInput.Group
@@ -162,12 +159,8 @@ export function Datepicker(props: DatepickerProps) {
             placeholder={format(new Date(), dateFormat)}
             value={inputValue}
             onChange={handleInputChange}
-            id={id}
-            isInvalid={isInvalid || isTextInputValueInvalid}
+            isInvalid={inputProps?.isInvalid || isTextInputValueInvalid}
             aria-label="Enter date"
-            isDisabled={isDisabled}
-            isRequired={isRequired}
-            isReadOnly={isReadOnly}
             testId="cf-ui-datepicker-input"
             {...inputProps}
           />
@@ -178,7 +171,7 @@ export function Datepicker(props: DatepickerProps) {
             onClick={() => {
               setIsPopoverOpen((prevState) => !prevState);
             }}
-            isDisabled={isDisabled}
+            isDisabled={inputProps?.isDisabled}
             testId="cf-ui-datepicker-button"
           />
         </TextInput.Group>
