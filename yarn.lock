@@ -1236,13 +1236,13 @@
   dependencies:
     "@changesets/types" "^4.1.0"
 
-"@changesets/changelog-github@^0.4.4":
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/@changesets/changelog-github/-/changelog-github-0.4.4.tgz#a3d59b30ccc6bfa3f0b381cda7cd4017c5590a9a"
-  integrity sha512-htSILqCkyYtTB5/LoVKwx7GCJQGxAiBcYbfUKWiz/QoDARuM01owYtMXhV6/iytJZq/Dqqz3PjMZUNB4MphpbQ==
+"@changesets/changelog-github@^0.4.6":
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/@changesets/changelog-github/-/changelog-github-0.4.6.tgz#5880448c578a160c06d8bd804872355ec0745dcb"
+  integrity sha512-ahR/+o3OPodzfG9kucEMU/tEtBgwy6QoJiWi1sDBPme8n3WjT6pBlbhqNYpWAJKilomwfjBGY0MTUTs6r9d1RQ==
   dependencies:
-    "@changesets/get-github-info" "^0.5.0"
-    "@changesets/types" "^5.0.0"
+    "@changesets/get-github-info" "^0.5.1"
+    "@changesets/types" "^5.1.0"
     dotenv "^8.1.0"
 
 "@changesets/cli@^2.21.1":
@@ -1313,10 +1313,10 @@
     fs-extra "^7.0.1"
     semver "^5.4.1"
 
-"@changesets/get-github-info@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@changesets/get-github-info/-/get-github-info-0.5.0.tgz#b91ceb2d82edef78ae1598ea9fc335a012250295"
-  integrity sha512-vm5VgHwrxkMkUjFyn3UVNKLbDp9YMHd3vMf1IyJoa/7B+6VpqmtAaXyDS0zBLfN5bhzVCHrRnj4GcZXXcqrFTw==
+"@changesets/get-github-info@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@changesets/get-github-info/-/get-github-info-0.5.1.tgz#5a20328b26f301b2193717abb32e73651e8811b7"
+  integrity sha512-w2yl3AuG+hFuEEmT6j1zDlg7GQLM/J2UxTmk0uJBMdRqHni4zXGe/vUlPfLom5KfX3cRfHc0hzGvloDPjWFNZw==
   dependencies:
     dataloader "^1.4.0"
     node-fetch "^2.5.0"
@@ -1396,10 +1396,10 @@
   resolved "https://registry.yarnpkg.com/@changesets/types/-/types-4.1.0.tgz#fb8f7ca2324fd54954824e864f9a61a82cb78fe0"
   integrity sha512-LDQvVDv5Kb50ny2s25Fhm3d9QSZimsoUGBsUioj6MC3qbMUCuC8GPIvk/M6IvXx3lYhAs0lwWUQLb+VIEUCECw==
 
-"@changesets/types@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@changesets/types/-/types-5.0.0.tgz#d5eb52d074bc0358ce47d54bca54370b907812a0"
-  integrity sha512-IT1kBLSbAgTS4WtpU6P5ko054hq12vk4tgeIFRVE7Vnm4a/wgbNvBalgiKP0MjEXbCkZbItiGQHkCGxYWR55sA==
+"@changesets/types@^5.0.0", "@changesets/types@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@changesets/types/-/types-5.1.0.tgz#e0733b69ddc3efb68524d374d3c44f53a543c8d5"
+  integrity sha512-uUByGATZCdaPkaO9JkBsgGDjEvHyY2Sb0e/J23+cwxBi5h0fxpLF/HObggO/Fw8T2nxK6zDfJbPsdQt5RwYFJA==
 
 "@changesets/write@^0.1.7":
   version "0.1.7"
@@ -1817,6 +1817,24 @@
   version "2.0.0"
   resolved "https://registry.npmjs.org/@contentful/browserslist-config/-/browserslist-config-2.0.0.tgz"
   integrity sha512-wx/zWaVfhxwiIwET/51+Zg5PzEeyMIfWbOIgyi1zR4IM+1gJhyDgMPzUsChJazakI0EUqn1mcr+UJpwVnZ71MQ==
+
+"@contentful/f36-datepicker@beta":
+  version "4.1.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@contentful/f36-datepicker/-/f36-datepicker-4.1.0-beta.3.tgz#83eb4e7a5711b18d5b50a638fa23dbd14d3be570"
+  integrity sha512-OGam71b3L5dBV0aaUBp4m/n6g9L9c0HpJdYQkZJEhhNbEJOA85NGjnHLD20fZQnni82khOgCt0CrlCgazac/7A==
+  dependencies:
+    "@babel/runtime" "^7.6.2"
+    "@contentful/f36-button" "^4.11.0"
+    "@contentful/f36-core" "^4.11.0"
+    "@contentful/f36-forms" "^4.11.0"
+    "@contentful/f36-icons" "^4.11.0"
+    "@contentful/f36-popover" "^4.11.0"
+    "@contentful/f36-tokens" "^4.0.0"
+    "@contentful/f36-typography" "^4.11.0"
+    date-fns "^2.28.0"
+    emotion "^10.0.17"
+    react-day-picker "^8.0.7"
+    react-focus-lock "^2.5.2"
 
 "@contentful/rich-text-react-renderer@^15.11.1":
   version "15.11.1"
@@ -19163,7 +19181,7 @@ react-fast-compare@^3.0.1, react-fast-compare@^3.2.0:
   resolved "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.0.tgz"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
 
-react-focus-lock@^2.9.1:
+react-focus-lock@^2.5.2, react-focus-lock@^2.9.1:
   version "2.9.1"
   resolved "https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-2.9.1.tgz#094cfc19b4f334122c73bb0bff65d77a0c92dd16"
   integrity sha512-pSWOQrUmiKLkffPO6BpMXN7SNKXMsuOakl652IBuALAu1esk+IcpJyM+ALcYzPTTFz1rD0R54aB9A4HuP5t1Wg==
