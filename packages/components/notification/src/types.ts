@@ -5,4 +5,8 @@ export interface NotificationCta {
   textLinkProps: Partial<TextLinkProps>;
 }
 
-export type NotificationVariant = 'positive' | 'negative' | 'warning';
+export type NotificationVariant =
+  | 'positive'
+  | 'negative'
+  | 'warning'
+  | 'primary';
