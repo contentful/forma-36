@@ -22,6 +22,12 @@ export default function NotificationIntentsExample() {
       >
         Show warning notification
       </Button>
+      <Button
+        variant="primary"
+        onClick={() => Notification.info('This is an info notification')}
+      >
+        Show info notification
+      </Button>
     </Stack>
   );
 }

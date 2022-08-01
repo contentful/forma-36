@@ -7,6 +7,7 @@ const variantColors = {
   positive: tokens.green600,
   negative: tokens.red600,
   warning: tokens.orange400,
+  primary: tokens.blue600,
 };
 
 const getWrapperStyle = ({ variant }) =>
