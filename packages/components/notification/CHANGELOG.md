@@ -1,5 +1,20 @@
 # Change Log
 
+## 4.13.0
+
+### Minor Changes
+
+- [#2146](https://github.com/contentful/forma-36/pull/2146) [`6ccd0357`](https://github.com/contentful/forma-36/commit/6ccd0357ffc74844a03df1919293e05043cdba00) Thanks [@LiamStokingerContentful](https://github.com/LiamStokingerContentful)! - Add 'info' variant to 'Notification' component
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.13.0
+  - @contentful/f36-icons@4.13.0
+  - @contentful/f36-text-link@4.13.0
+  - @contentful/f36-typography@4.13.0
+  - @contentful/f36-core@4.13.0
+
 ## 4.12.0
 
 ### Patch Changes
