@@ -1,4 +1,4 @@
-# This workflow warns and then closes issues and PRs that have had no activity for a specified amount of time.
+# This workflow warns issues and PRs that have had no activity for a specified amount of time.
 #
 # You can adjust the behavior by modifying this file.
 # For more information, see:
@@ -23,7 +23,7 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         days-before-stale: 60
         days-before-close: -1
-        stale-issue-message: 'Stale issue message'
-        stale-pr-message: 'Stale pull request message'
+        stale-issue-message: 'Marking issue as stale since there was no acitivty for 30 days'
+        stale-pr-message: 'Marking pull request as stale since there was no acitivty for 30 days'
         stale-issue-label: 'stale'
         stale-pr-label: 'stale'
