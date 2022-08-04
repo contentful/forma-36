@@ -1,5 +1,20 @@
 # Change Log
 
+## 4.14.0
+
+### Minor Changes
+
+- [#2150](https://github.com/contentful/forma-36/pull/2150) [`3002dd7d`](https://github.com/contentful/forma-36/commit/3002dd7da275821cd6393d6beb1ae56308d8f66f) Thanks [@burakukula](https://github.com/burakukula)! - feat: Introducing acnew "neutral" variant for the Note component.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.14.0
+  - @contentful/f36-icon@4.14.0
+  - @contentful/f36-icons@4.14.0
+  - @contentful/f36-typography@4.14.0
+  - @contentful/f36-core@4.14.0
+
 ## 4.13.0
 
 ### Patch Changes
