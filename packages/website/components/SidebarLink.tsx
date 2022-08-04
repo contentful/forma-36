@@ -102,6 +102,9 @@ interface SidebarLinkProps {
   isExternal?: boolean;
   paddingLeft?: 'spacingXl' | 'spacing2Xl';
   isNew?: boolean;
+  isBeta?: boolean;
+  isAlpha?: boolean;
+  isDeprecated?: boolean;
 }
 
 export function SidebarLink({
@@ -111,6 +114,9 @@ export function SidebarLink({
   isActive = false,
   paddingLeft = 'spacingXl',
   isNew = false,
+  isBeta = false,
+  isAlpha = false,
+  isDeprecated = false,
 }: SidebarLinkProps) {
   const titleStyles = getSectionTitleStyles(isActive, paddingLeft);
   const linksProps = isExternal
@@ -129,9 +135,20 @@ export function SidebarLink({
             {children}
             {isExternal && <ExternalLinkTrimmedIcon variant="muted" />}
           </span>
-          {isNew && (
-            <Badge className={styles.badge} variant="primary">
-              new
+          {(isNew || isDeprecated || isBeta || isAlpha) && (
+            <Badge
+              className={styles.badge}
+              variant={
+                isDeprecated ? 'negative' : isNew ? 'primary' : 'secondary'
+              }
+            >
+              {isDeprecated
+                ? 'deprecated'
+                : isNew
+                ? 'new'
+                : isBeta
+                ? 'beta'
+                : 'alpha'}
             </Badge>
           )}
         </a>
