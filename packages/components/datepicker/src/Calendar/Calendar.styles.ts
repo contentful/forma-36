@@ -63,6 +63,7 @@ export const getStyles = (): ClassNames => {
       display: 'flex',
     }),
     month: css({
+      width: '100%',
       margin: '0 1em',
       '&:first-child': {
         marginLeft: 0,
@@ -72,6 +73,7 @@ export const getStyles = (): ClassNames => {
       },
     }),
     table: css({
+      width: '100%',
       margin: 0,
       borderCollapse: 'collapse',
     }),
@@ -216,6 +218,7 @@ export const getStyles = (): ClassNames => {
       width: `${cellSize / 16}rem`,
       height: `${cellSize / 16}rem`,
       borderRadius: '50%',
+      margin: 'auto',
 
       '&.rdp-day_today:not(.rdp-day_outside)': {
         fontWeight: tokens.fontWeightDemiBold,
