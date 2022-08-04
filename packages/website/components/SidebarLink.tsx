@@ -9,6 +9,7 @@ import { ExternalLinkTrimmedIcon } from '@contentful/f36-icons';
 const styles = {
   link: css({
     display: 'flex',
+    alignItems: 'center',
     gap: tokens.spacing2Xs,
     fontSize: tokens.fontSizeM,
     lineHeight: tokens.lineHeightM,
@@ -138,6 +139,7 @@ export function SidebarLink({
           {(isNew || isDeprecated || isBeta || isAlpha) && (
             <Badge
               className={styles.badge}
+              size="small"
               variant={
                 isDeprecated ? 'negative' : isNew ? 'primary' : 'secondary'
               }
