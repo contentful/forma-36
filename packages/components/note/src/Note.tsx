@@ -24,9 +24,15 @@ const icons = {
   positive: CheckCircleIcon,
   negative: ErrorCircleIcon,
   warning: WarningIcon,
+  neutral: InfoCircleIcon,
 };
 
-export type NoteVariant = 'negative' | 'positive' | 'primary' | 'warning';
+export type NoteVariant =
+  | 'negative'
+  | 'positive'
+  | 'primary'
+  | 'warning'
+  | 'neutral';
 
 export type NoteInternalProps = CommonProps & {
   /**
@@ -83,7 +89,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
       >
         <Icon
           as={icons[variant]}
-          variant={variant}
+          variant={variant === 'neutral' ? 'muted' : variant}
           size={title ? 'medium' : 'small'}
         />
         <Flex flexDirection="column">
