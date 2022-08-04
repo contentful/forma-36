@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-datepicker",
-  "version": "4.1.0-beta.3",
+  "version": "4.1.0-beta.4",
   "description": "Forma 36: Datepicker component",
   "scripts": {
     "build": "parcel build"
