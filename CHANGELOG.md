@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 05-08-2022
+
+**F36 Note** `v4.14.0`
+
+- feat: Introducing acnew "neutral" variant for the Note component.
+
 ## 02-08-2022
 
 **F36 Notification** `v4.13.0`
