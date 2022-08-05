@@ -122,7 +122,7 @@
     {
       "title": "Calendar",
       "slug": "/components/calendar/",
-      "isNew": true
+      "isBeta": true
     },
     {
       "title": "Date utilities",
@@ -135,7 +135,7 @@
     {
       "title": "Datepicker",
       "slug": "/components/datepicker/",
-      "isNew": true
+      "isBeta": true
     },
     {
       "title": "RelativeDateTime",
@@ -301,35 +301,43 @@
   "deprecatedComponents": [
     {
       "title": "Dropdown",
-      "slug": "/deprecated-components/dropdown/"
+      "slug": "/deprecated-components/dropdown/",
+      "isDeprecated": true
     },
     {
       "title": "EditorToolbar",
-      "slug": "/deprecated-components/editor-toolbar/"
+      "slug": "/deprecated-components/editor-toolbar/",
+      "isDeprecated": true
     },
     {
       "title": "EmptyState",
-      "slug": "/deprecated-components/empty-state/"
+      "slug": "/deprecated-components/empty-state/",
+      "isDeprecated": true
     },
     {
       "title": "Illustration",
-      "slug": "/deprecated-components/illustration/"
+      "slug": "/deprecated-components/illustration/",
+      "isDeprecated": true
     },
     {
       "title": "InViewport",
-      "slug": "/deprecated-components/in-viewport/"
+      "slug": "/deprecated-components/in-viewport/",
+      "isDeprecated": true
     },
     {
       "title": "TabFocusTrap",
-      "slug": "/deprecated-components/tab-focus-trap/"
+      "slug": "/deprecated-components/tab-focus-trap/",
+      "isDeprecated": true
     },
     {
       "title": "Tag",
-      "slug": "/deprecated-components/tag/"
+      "slug": "/deprecated-components/tag/",
+      "isDeprecated": true
     },
     {
       "title": "Typography Component",
-      "slug": "/deprecated-components/typography/"
+      "slug": "/deprecated-components/typography/",
+      "isDeprecated": true
     }
   ],
   "integrations": [
