@@ -43,7 +43,7 @@ interface PageContentHeaderProps {
 const getGithubIssueLink = (title) => {
   const queryParams = {
     title: `💬  Feedback - ${title}`,
-    assignees: 'm10l,burakukula,mshaaban0,gui-santos,denkristoffer,Lelith',
+    assignees: 'burakukula,mshaaban0,denkristoffer,Lelith',
     template: 'component-feedback.md',
   };
   const queryString = Object.keys(queryParams)
@@ -98,7 +98,10 @@ export function PageContentHeader({
 
       {(isAlpha || isBeta) && (
         <Flex flexDirection="column" marginBottom="spacingXl">
-          <Note variant="neutral" title="Alpha component">
+          <Note
+            variant="neutral"
+            title={`${isAlpha ? 'Alpha' : 'Beta'} component`}
+          >
             {isAlpha
               ? `${title} component is ready to use but may have some bugs. Use in
               production software with caution.`
