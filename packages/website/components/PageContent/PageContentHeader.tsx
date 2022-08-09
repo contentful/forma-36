@@ -43,7 +43,7 @@ interface PageContentHeaderProps {
 const getGithubIssueLink = (title) => {
   const queryParams = {
     title: `💬  Feedback - ${title}`,
-    assignees: 'm10l,burakukula,mshaaban0,gui-santos,denkristoffer,Lelith',
+    assignees: 'burakukula,mshaaban0,denkristoffer,Lelith',
     template: 'component-feedback.md',
   };
   const queryString = Object.keys(queryParams)
