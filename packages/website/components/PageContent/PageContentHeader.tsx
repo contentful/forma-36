@@ -98,7 +98,10 @@ export function PageContentHeader({
 
       {(isAlpha || isBeta) && (
         <Flex flexDirection="column" marginBottom="spacingXl">
-          <Note variant="neutral" title="Alpha component">
+          <Note
+            variant="neutral"
+            title={`${isAlpha ? 'Alpha' : 'Beta'} component`}
+          >
             {isAlpha
               ? `${title} component is ready to use but may have some bugs. Use in
               production software with caution.`
