@@ -24,7 +24,7 @@ jobs:
         days-before-stale: 30
         days-before-close: -1
         operations-per-run: 300
-        stale-issue-message: 'Marking issue as stale since there was no acitivty for 30 days'
-        stale-pr-message: 'Marking pull request as stale since there was no acitivty for 30 days'
+        stale-issue-message: 'Marking issue as stale since there was no activity for 30 days'
+        stale-pr-message: 'Marking pull request as stale since there was no activity for 30 days'
         stale-issue-label: 'stale'
         stale-pr-label: 'stale'
