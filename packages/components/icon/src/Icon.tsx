@@ -20,7 +20,7 @@ const ICON_DEFAULT_TAG = 'svg';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type IconComponent = ExoticComponent<any> | ComponentType<any>;
 
-export type IconSize = 'large' | 'medium' | 'small' | 'tiny';
+export type IconSize = 'xlarge' | 'large' | 'medium' | 'small' | 'tiny';
 
 export type IconVariant =
   | 'negative'
@@ -32,6 +32,10 @@ export type IconVariant =
   | 'white';
 
 const sizes: { [key in IconSize]: { [key in 'height' | 'width']: string } } = {
+  xlarge: {
+    height: '48px',
+    width: '48px',
+  },
   large: {
     height: '32px',
     width: '32px',
