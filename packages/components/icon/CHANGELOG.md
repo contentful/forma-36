@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.15.0
+
+### Minor Changes
+
+- [#2163](https://github.com/contentful/forma-36/pull/2163) [`647c849e`](https://github.com/contentful/forma-36/commit/647c849e30891f65be401e95d2ae45b5a715da36) Thanks [@burakukula](https://github.com/burakukula)! - feat: adding xlarge icon size
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.15.0
+
 ## 4.14.0
 
 ### Patch Changes
