@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 17-08-2022
+
+**F36 Icon** `v4.15.0`
+
+- feat: adding xlarge icon size
+
 ## 05-08-2022
 
 **F36 Note** `v4.14.0`
