@@ -37,7 +37,7 @@ Also as we moved towards `turborepo`, we also decided to remove lerna entirely a
 
 # Release process
 
-Our releases are managed automatically though the CI. It only generates new release if a new changeset was present in the PR that was merged into the main branch.
+Our releases are managed automatically through the CI. It only generates new release if a new changeset is present in the PR that was merged into the main branch.
 
 The CI will use the changeset publish method to update the versions on the packages and publish to NPM, and then based on which packages were published, it will generate the tags and releases and add them to Github.
 
