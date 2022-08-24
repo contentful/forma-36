@@ -83,11 +83,19 @@ async function getMdxPaths() {
 
   // creates a json with a list of links grouped into sections
   const sidebarLinks = pages.reduce((acc, page) => {
-    const { title, slug, section, isNew = undefined } = page.frontMatter.data;
+    const {
+      title,
+      slug,
+      section,
+      isNew = undefined,
+      isBeta = undefined,
+      isAlpha = undefined,
+      isDeprecated = undefined,
+    } = page.frontMatter.data;
     if (!section) {
       const unassigned = sortByTitle([
         ...(acc['unassigned'] || []),
-        { title, slug, isNew },
+        { title, slug, isNew, isBeta, isAlpha, isDeprecated },
       ]);
 
       return {
@@ -98,7 +106,7 @@ async function getMdxPaths() {
 
     const sectionContent = sortByTitle([
       ...(acc[section] || []),
-      { title, slug, isNew },
+      { title, slug, isNew, isBeta, isAlpha, isDeprecated },
     ]);
 
     return { ...acc, [section]: sectionContent };

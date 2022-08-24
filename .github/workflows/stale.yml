@@ -23,7 +23,8 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         days-before-stale: 30
         days-before-close: -1
-        stale-issue-message: 'Marking issue as stale since there was no acitivty for 30 days'
-        stale-pr-message: 'Marking pull request as stale since there was no acitivty for 30 days'
+        operations-per-run: 300
+        stale-issue-message: 'Marking issue as stale since there was no activity for 30 days'
+        stale-pr-message: 'Marking pull request as stale since there was no activity for 30 days'
         stale-issue-label: 'stale'
         stale-pr-label: 'stale'
