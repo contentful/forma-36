@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.15.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-icons@4.15.1
+  - @contentful/f36-popover@4.15.1
+  - @contentful/f36-typography@4.15.1
+  - @contentful/f36-utils@4.15.1
+  - @contentful/f36-core@4.15.1
+
 ## 4.15.0
 
 ### Patch Changes
