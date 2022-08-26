@@ -1,6 +1,7 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { CommonProps, Flex } from '@contentful/f36-core';
+import { Flex } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
 import { getWorkbenchStyles } from './Workbench.styles';
 
 export interface WorkbenchProps extends CommonProps {
@@ -16,17 +17,16 @@ function _Workbench(
   const header: React.ReactNode[] = [];
   const content: React.ReactNode[] = [];
 
-  React.Children.forEach(
-    children,
-    // eslint-disable-next-line
-    (child: any) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  React.Children.forEach<any>(children, (child) => {
+    if (child) {
       if (child.type?.displayName === 'WorkbenchHeader') {
         header.push(child);
       } else {
         content.push(child);
       }
-    },
-  );
+    }
+  });
 
   return (
     <div
@@ -39,6 +39,8 @@ function _Workbench(
     </div>
   );
 }
+
+_Workbench.displayName = 'Workbench';
 
 /**
  * The Workbench assembles the outer app shell which defines regions to structure content and interactions

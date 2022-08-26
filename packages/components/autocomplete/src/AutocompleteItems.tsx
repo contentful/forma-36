@@ -4,7 +4,7 @@ import { cx } from 'emotion';
 import { getStringMatch } from '@contentful/f36-utils';
 import { Text } from '@contentful/f36-typography';
 import { getAutocompleteStyles } from './Autocomplete.styles';
-import { UseComboboxGetItemPropsOptions } from 'downshift';
+import type { UseComboboxGetItemPropsOptions } from 'downshift';
 
 interface AutocompleteItemsProps<ItemType> {
   items: ItemType[];
@@ -18,9 +18,9 @@ interface AutocompleteItemsProps<ItemType> {
   listMaxHeight?: number;
 }
 
-export function AutocompleteItems<ItemType>(
+export const AutocompleteItems = <ItemType,>(
   props: AutocompleteItemsProps<ItemType>,
-) {
+) => {
   const {
     items,
     elementStartIndex,
@@ -61,7 +61,9 @@ export function AutocompleteItems<ItemType>(
       })}
     </ul>
   );
-}
+};
+
+AutocompleteItems.displayName = 'AutocompleteItems';
 
 function HighlightedItem({
   item,
@@ -80,3 +82,5 @@ function HighlightedItem({
     </>
   );
 }
+
+HighlightedItem.displayName = 'HighlightedItem';

@@ -1,5 +1,6 @@
 import type { ReactElement } from 'react';
 import type { EntityStatus } from '@contentful/f36-core';
+import type { HeadingElement } from '@contentful/f36-typography';
 
 import type { BaseCardInternalProps } from '../BaseCard/BaseCard.types';
 
@@ -13,6 +14,10 @@ export type EntryCardInternalProps = Omit<
    * The title of the entry, it will be used as the value for the tooltip
    */
   title?: string;
+  /**
+   * The tag for the title of the entry.
+   */
+  titleTag?: HeadingElement;
   /**
    * The description of the entry
    */

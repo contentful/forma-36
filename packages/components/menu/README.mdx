@@ -1,7 +1,7 @@
 ---
 title: 'Menu'
 slug: /components/menu/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/components/menu'
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/menu'
 typescript: ./src/Menu.tsx,./src/MenuItem/MenuItem.tsx,./src/MenuList/MenuList.tsx
 storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-menu--basic'
 ---
@@ -132,7 +132,7 @@ but you can redefine them on any submenu by passing those props directly to that
 
 ## Accessibility
 
-- When the menu is opened, focus is moved to the first menu item. If you set `autoFocus`to `false`, it will not move the focus.
+- When the menu is opened, focus is moved to the first menu item. Or to the one that has `isInitiallyFocused` prop set to `true`.
 - When the menu is closed, focus returned back to the trigger element.
 - You can use arrow keys (`ArrowUp` and `ArrowDown`) to navigate through menu items.
 - When the menu is open, click on `Esc` key will close the popover. If you set `closeOnEsc` to `false`, it will not close.

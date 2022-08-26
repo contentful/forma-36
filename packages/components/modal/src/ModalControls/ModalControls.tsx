@@ -13,12 +13,12 @@ export type ModalControlsProps = PropsWithHTMLElement<
   'div'
 >;
 
-export function ModalControls({
+export const ModalControls = ({
   testId = 'cf-ui-modal-controls',
   className,
   children,
   ...otherProps
-}: ModalControlsProps): React.ReactElement {
+}: ModalControlsProps): React.ReactElement => {
   return (
     <Flex
       {...otherProps}
@@ -34,4 +34,6 @@ export function ModalControls({
       </ButtonGroup>
     </Flex>
   );
-}
+};
+
+ModalControls.displayName = 'ModalControls';

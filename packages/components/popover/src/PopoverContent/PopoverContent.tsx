@@ -1,6 +1,6 @@
 import React from 'react';
 import { cx } from 'emotion';
-import {
+import type {
   CommonProps,
   PropsWithHTMLElement,
   ExpandProps,

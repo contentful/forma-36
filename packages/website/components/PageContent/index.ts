@@ -1,2 +1,2 @@
 export { PageContent } from './PageContent';
-export type { HeadingType } from './TableOfContent';
+export type { PageContentProps } from './PageContent';

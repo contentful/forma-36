@@ -10,6 +10,7 @@ import type {
 } from '@contentful/f36-core';
 import { EntityStatusBadge } from '@contentful/f36-badge';
 import { Subheading, Paragraph } from '@contentful/f36-typography';
+import type { HeadingElement } from '@contentful/f36-typography';
 
 import { BaseCard } from '../BaseCard/BaseCard';
 
@@ -22,7 +23,13 @@ export type EntryCardProps<
   E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG
 > = PolymorphicProps<EntryCardInternalProps, E>;
 
-function EntryCardTitle({ title }: { title?: string }) {
+function EntryCardTitle({
+  title,
+  titleTag,
+}: {
+  title?: string;
+  titleTag: HeadingElement;
+}) {
   if (!title) {
     return null;
   }
@@ -33,7 +40,7 @@ function EntryCardTitle({ title }: { title?: string }) {
     <Subheading
       title={title.length > 255 ? title : ''}
       testId="title"
-      as="h1"
+      as={titleTag}
       marginBottom="none"
       isWordBreak
     >
@@ -41,6 +48,8 @@ function EntryCardTitle({ title }: { title?: string }) {
     </Subheading>
   );
 }
+
+EntryCardTitle.displayName = 'EntryCardTitle';
 
 function EntryCardDescription({
   description,
@@ -56,11 +65,13 @@ function EntryCardDescription({
   const truncatedDescription = truncate(description, 95, {});
 
   return (
-    <Paragraph marginBottom="none" isTruncated>
+    <Paragraph marginBottom="none" isWordBreak>
       {truncatedDescription}
     </Paragraph>
   );
 }
+
+EntryCardDescription.displayName = 'EntryCardDescription';
 
 function _EntryCard<
   E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG
@@ -75,6 +86,7 @@ function _EntryCard<
     description,
     withDragHandle = false,
     title,
+    titleTag = 'h2',
     size,
     testId = 'cf-ui-entry-card',
     contentType,
@@ -103,7 +115,7 @@ function _EntryCard<
         flexDirection="row"
       >
         <Flex flexDirection="column" flexGrow={1} gap="spacingS">
-          <EntryCardTitle title={title} />
+          <EntryCardTitle title={title} titleTag={titleTag} />
           <EntryCardDescription size={size} description={description} />
           {children}
         </Flex>
@@ -115,6 +127,8 @@ function _EntryCard<
     </BaseCard>
   );
 }
+
+_EntryCard.displayName = 'EntryCard';
 
 export const EntryCard: PolymorphicComponent<
   ExpandProps<EntryCardInternalProps>,

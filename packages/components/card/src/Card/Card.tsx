@@ -13,9 +13,9 @@ import type { BaseCardInternalProps } from '../BaseCard/BaseCard.types';
 import { CardActions } from '../BaseCard/CardActions';
 import { getCardStyles } from './Card.styles';
 
-export type CardInternalProps = Omit<
+type BaseProps = Omit<
   BaseCardInternalProps,
-  'header' | 'ref' | 'type' | 'withDragHandle'
+  'header' | 'withDragHandle' | 'ref' | 'src' | 'type'
 > & {
   /**
    * Padding size to apply to the component
@@ -24,6 +24,11 @@ export type CardInternalProps = Omit<
    */
   padding?: 'default' | 'large' | 'none';
 };
+
+type BasePropsWithDragHandle = Omit<BaseProps, 'padding'> &
+  Pick<BaseCardInternalProps, 'withDragHandle'> & { padding: 'none' };
+
+export type CardInternalProps = BaseProps | BasePropsWithDragHandle;
 
 export type CardProps<
   E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG
@@ -76,6 +81,8 @@ function _Card<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
     />
   );
 }
+
+_Card.displayName = 'Card';
 
 export const Card: PolymorphicComponent<
   ExpandProps<CardInternalProps>,

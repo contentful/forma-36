@@ -4,11 +4,12 @@ import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
 import { List, Flex, Text, Badge } from '@contentful/f36-components';
 import { ChevronDownIcon } from '@contentful/f36-icons';
-import { ExternalLinkIcon } from '@contentful/f36-icons';
+import { ExternalLinkTrimmedIcon } from '@contentful/f36-icons';
 
 const styles = {
   link: css({
     display: 'flex',
+    alignItems: 'center',
     gap: tokens.spacing2Xs,
     fontSize: tokens.fontSizeM,
     lineHeight: tokens.lineHeightM,
@@ -31,6 +32,9 @@ const getSectionTitleStyles = (isActive = false, paddingLeft = 'spacingXl') => {
       lineHeight: tokens.lineHeightM,
     }),
     clickable: css({
+      display: 'flex',
+      alignItems: 'center',
+      gap: tokens.spacing2Xs,
       cursor: 'pointer',
       color: isActive ? tokens.blue700 : tokens.gray900,
       fontWeight: isActive
@@ -99,6 +103,9 @@ interface SidebarLinkProps {
   isExternal?: boolean;
   paddingLeft?: 'spacingXl' | 'spacing2Xl';
   isNew?: boolean;
+  isBeta?: boolean;
+  isAlpha?: boolean;
+  isDeprecated?: boolean;
 }
 
 export function SidebarLink({
@@ -108,6 +115,9 @@ export function SidebarLink({
   isActive = false,
   paddingLeft = 'spacingXl',
   isNew = false,
+  isBeta = false,
+  isAlpha = false,
+  isDeprecated = false,
 }: SidebarLinkProps) {
   const titleStyles = getSectionTitleStyles(isActive, paddingLeft);
   const linksProps = isExternal
@@ -124,11 +134,23 @@ export function SidebarLink({
         >
           <span className={cx([titleStyles.clickable])}>
             {children}
-            {isExternal ? <ExternalLinkIcon variant="muted" /> : null}
+            {isExternal && <ExternalLinkTrimmedIcon variant="muted" />}
           </span>
-          {isNew && (
-            <Badge className={styles.badge} variant="primary">
-              new
+          {(isNew || isDeprecated || isBeta || isAlpha) && (
+            <Badge
+              className={styles.badge}
+              size="small"
+              variant={
+                isDeprecated ? 'negative' : isNew ? 'primary' : 'secondary'
+              }
+            >
+              {isDeprecated
+                ? 'deprecated'
+                : isNew
+                ? 'new'
+                : isBeta
+                ? 'beta'
+                : 'alpha'}
             </Badge>
           )}
         </a>

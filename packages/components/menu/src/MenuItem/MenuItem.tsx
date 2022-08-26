@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { cx } from 'emotion';
-import {
+import { mergeRefs } from '@contentful/f36-core';
+import type {
   CommonProps,
-  mergeRefs,
   PolymorphicComponent,
   PolymorphicProps,
   ExpandProps,
@@ -33,7 +33,7 @@ function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
 ) {
   const { testId, className, as, isInitiallyFocused, ...otherProps } = props;
 
-  const id = useId(null, 'menu-item');
+  const id = useId(undefined, 'menu-item');
   const itemTestId = testId || `cf-ui-${id}`;
   const styles = getMenuItemStyles();
 
@@ -62,6 +62,8 @@ function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
     </Element>
   );
 }
+
+_MenuItem.displayName = 'MenuItem';
 
 export const MenuItem: PolymorphicComponent<
   ExpandProps<MenuItemInternalProps>,

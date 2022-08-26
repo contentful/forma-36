@@ -1,5 +1,5 @@
 import * as React from 'react';
-import f36icons from '@contentful/f36-icons';
+import * as f36icons from '@contentful/f36-icons';
 import { Grid, Flex, Text } from '@contentful/f36-components';
 
 export default function AllIconsExample() {

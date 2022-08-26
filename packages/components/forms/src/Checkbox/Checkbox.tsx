@@ -1,5 +1,6 @@
 import React from 'react';
-import { useId, ExpandProps } from '@contentful/f36-core';
+import { useId } from '@contentful/f36-core';
+import type { ExpandProps } from '@contentful/f36-core';
 import { BaseCheckbox, BaseCheckboxProps } from '../BaseCheckbox';
 import { useFormControl } from '../FormControl/FormControlContext';
 import { useBaseCheckboxGroup } from '../BaseCheckbox/BaseCheckboxGroupContext';

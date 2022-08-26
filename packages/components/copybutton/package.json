@@ -1,18 +1,18 @@
 {
   "name": "@contentful/f36-copybutton",
-  "version": "4.2.0",
+  "version": "4.15.0",
   "description": "Forma 36: CopyButton component",
   "scripts": {
     "build": "parcel build"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@contentful/f36-core": "^4.2.0",
-    "@contentful/f36-icons": "^4.1.1",
-    "@contentful/f36-tokens": "^4.0.0",
-    "@contentful/f36-tooltip": "^4.1.2",
+    "@contentful/f36-core": "^4.15.0",
+    "@contentful/f36-icons": "^4.15.0",
+    "@contentful/f36-tokens": "^4.0.1",
+    "@contentful/f36-tooltip": "^4.15.0",
     "emotion": "^10.0.17",
-    "react-copy-to-clipboard": "^5.0.3"
+    "react-copy-to-clipboard": "^5.1.0"
   },
   "peerDependencies": {
     "react": ">=16.8"

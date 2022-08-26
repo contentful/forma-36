@@ -1,105 +1,116 @@
 import React from 'react';
-import tokens from '@contentful/f36-tokens';
+import { css } from 'emotion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { DisplayText, Paragraph, TextLink } from '@contentful/f36-components';
-import { Masthead } from '../components/Home/Masthead';
-import { Section } from '../components/Home/Section';
-import { Resources } from '../components/Home/Resources';
-import { Resource } from '../components/Home/Resource';
+import tokens from '@contentful/f36-tokens';
+import {
+  DisplayText,
+  Heading,
+  Paragraph,
+  Flex,
+  TextLink,
+  Button,
+} from '@contentful/f36-components';
+import { ArrowForwardTrimmedIcon } from '@contentful/f36-icons';
 
-import tokensImg from '../resources/images/tokens.png';
-import uiKitImg from '../resources/images/ui-kit.png';
-import componentsImg from '../resources/images/components.png';
+import figmaSVG from '../resources/icons/figma-icon.svg';
+import reactSVG from '../resources/icons/react-icon.svg';
+import homepageImg from '../public/images/homepage-illustration.svg';
+import { SCREEN_BREAKPOINT_LARGE } from '../utils/getGridStyles';
 
-function Home() {
+const styles = {
+  grid: css({
+    flex: 1, // this is necessary to make the footer sticky to the bottom of the page
+    padding: `${tokens.spacing3Xl} ${tokens.spacingL} 0`,
+    [`@media screen and (min-width: ${SCREEN_BREAKPOINT_LARGE})`]: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 960px 1fr',
+      gridTemplateRows: 'min-content',
+    },
+    '> *': {
+      [`@media screen and (min-width: ${SCREEN_BREAKPOINT_LARGE})`]: {
+        gridColumnStart: 2,
+      },
+    },
+  }),
+  sections: css({
+    '> *': {
+      maxWidth: '220px',
+    },
+  }),
+  imgContainer: css({ flexGrow: 1, '> span': { flexGrow: 1 } }),
+};
+
+export default function Home() {
   return (
-    <>
-      <Masthead
-        title="Tools and guidance for digital teams"
-        description="Forma 36 is an open-source design system by Contentful created with the intent to reduce the overhead of creating UI by providing tools and guidance for digital teams building and extending Contentful products."
-        hasLogo
-      />
-      <Section>
-        <DisplayText>Resources for designers and developers</DisplayText>
-        <Paragraph
-          style={{
-            fontSize: tokens.fontSizeL,
-            marginBottom: tokens.spacing3Xl,
-          }}
-        >
-          Everything you need to get started building for Contentful
-        </Paragraph>
-        <Resources>
-          <Resource
-            title="New version of the UIKit is still in progress"
-            description="Fresh UIKit for Forma 36 v4 will be shortly released"
-            imageNode={
-              <Image {...uiKitImg} alt="Illustration for Forma 36 UI Kit" />
-            }
-          />
-          <Resource
-            title="Get the tokens"
-            description="Design tokens for Forma 36 available as JSON, CSS, and SCSS"
-            linkText="Get the tokens"
-            linkHref="https://github.com/contentful/forma-36/tree/master/packages/forma-36-tokens"
-            imageNode={
-              <Image {...tokensImg} alt="Illustration for design tokens" />
-            }
-          />
-          <Resource
-            title="Get started with our React components"
-            description="Build your interface using Forma 36 React component library"
-            linkText="Prototype in the Playground and share your experiments with your colleagues"
-            linkHref="/playground"
-            linkExternal={false}
-            imageNode={
-              <Image
-                {...componentsImg}
-                alt="Illustration for component library"
-              />
-            }
-          />
-        </Resources>
-      </Section>
+    <article className={styles.grid}>
+      <Flex
+        justifyContent="space-between"
+        alignItems="flex-start"
+        gap="spacing2Xl"
+      >
+        <Flex flexDirection="column">
+          <Flex
+            flexDirection="column"
+            alignItems="flex-start"
+            marginBottom="spacing3Xl"
+          >
+            <DisplayText as="h1" size="large">
+              Build and extend
+              <br />
+              Contentful products.
+            </DisplayText>
 
-      <Section isSecondary>
-        <DisplayText>Forma 36 is open-source</DisplayText>
-        <Paragraph>We appreciate your contributions</Paragraph>
-        <Paragraph>
-          Check our{' '}
-          <Link href="/contributing" passHref>
-            <TextLink href="/contributing">contribution guide</TextLink>
-          </Link>{' '}
-          and learn how to do it
-        </Paragraph>
-      </Section>
-      <Section>
-        <DisplayText>Give us feedback!</DisplayText>
-        <Paragraph>
-          Use one of the the templates on{' '}
-          <TextLink
-            href="https://github.com/contentful/forma-36/issues/new/choose"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </TextLink>
-        </Paragraph>
-        <Paragraph>
-          or use this anonymous{' '}
-          <TextLink
-            href="https://forms.gle/qC7LLbiy4CcF5HPLA"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            form
-          </TextLink>{' '}
-          to share your thoughts and ideas with us.
-        </Paragraph>
-      </Section>
-    </>
+            <Button
+              as="a"
+              href="/introduction/getting-started"
+              variant="primary"
+              size="large"
+              endIcon={<ArrowForwardTrimmedIcon />}
+            >
+              Get started
+            </Button>
+          </Flex>
+
+          <Flex className={styles.sections} gap="spacing2Xl">
+            <Flex flexDirection="column" alignItems="flex-start">
+              <Image src={figmaSVG} alt="Figma’s logo" />
+
+              <Heading marginTop="spacingM">Figma UI Kit</Heading>
+              <Paragraph>
+                Copy the UI Kit to Figma, publish it as a Team library and start
+                prototyping.
+              </Paragraph>
+              <TextLink
+                href="https://www.figma.com/@contentful"
+                target="_blank"
+              >
+                Get the Figma UI Kit
+              </TextLink>
+            </Flex>
+
+            <Flex flexDirection="column" alignItems="flex-start">
+              <Image src={reactSVG} alt="React’s logo" />
+
+              <Heading marginTop="spacingM">React Components</Heading>
+              <Paragraph>
+                Browse the components and try them out live in the Playground.
+              </Paragraph>
+              <Link href="/components/accordion" passHref>
+                <TextLink>View the components</TextLink>
+              </Link>
+            </Flex>
+          </Flex>
+        </Flex>
+
+        <Flex className={styles.imgContainer}>
+          <Image
+            src={homepageImg}
+            alt="UI components in a browser"
+            layout="responsive"
+          />
+        </Flex>
+      </Flex>
+    </article>
   );
 }
-
-export default Home;

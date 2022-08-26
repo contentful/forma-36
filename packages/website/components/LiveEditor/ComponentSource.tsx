@@ -10,17 +10,15 @@ import { css, cx } from 'emotion';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import tokens from '@contentful/f36-tokens';
 import * as f36Components from '@contentful/f36-components';
-import { Pagination } from '@contentful/f36-pagination';
+import * as datepickerComponents from '@contentful/f36-datepicker';
 import * as f36utils from '@contentful/f36-utils';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
-import { Card, Button, CopyButton } from '@contentful/f36-components';
+import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
 import * as f36icons from '@contentful/f36-icons';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
-import { Flex } from '@contentful/f36-core';
 import { theme } from './theme';
 import { formatSourceCode } from './utils';
-import { useRouter } from 'next/router';
 import * as coder from '../../utils/coder';
 import FocusLock from 'react-focus-lock';
 import {
@@ -29,12 +27,13 @@ import {
   SortableHandle,
 } from 'react-sortable-hoc';
 import arrayMove from 'array-move';
+import { format, parse, isValid } from 'date-fns';
 
 const liveProviderScope = {
   ...f36icons,
   ...f36Components,
   ...f36utils,
-  Pagination,
+  ...datepickerComponents,
   css,
   f36icons,
   tokens,
@@ -54,6 +53,9 @@ const liveProviderScope = {
   SortableElement,
   SortableHandle,
   arrayMove,
+  format,
+  parse,
+  isValid,
 };
 
 const styles = {
@@ -143,7 +145,6 @@ export function ComponentSource({
   file?: string;
 }) {
   const [showSource, setShowSource] = useState(true);
-  const router = useRouter();
 
   const handleToggle = () => {
     setShowSource((prevState) => !prevState);
@@ -206,15 +207,12 @@ export function ComponentSource({
                   />
                   {isExampleFromFile && (
                     <Button
+                      as="a"
                       className={styles.playgroundButton}
                       endIcon={<ExternalLinkIcon />}
                       size="small"
-                      onClick={() => {
-                        const href = `/playground?code=${coder.encode(
-                          children,
-                        )}`;
-                        router.push(href, href);
-                      }}
+                      href={`/playground?code=${coder.encode(children)}`}
+                      target="_blank"
                     >
                       Open in Playground
                     </Button>

@@ -75,6 +75,16 @@ export const WithButtons = ({ notificationText, duration, ...args }) => {
             show warning
           </Button>
           <Button
+            variant="primary"
+            onClick={() =>
+              Notification.info(`${notificationText} ${getUniqueNumber()}`, {
+                duration,
+              })
+            }
+          >
+            show info
+          </Button>
+          <Button
             variant="secondary"
             onClick={() =>
               Notification.warning('Notification that should not be repeated', {

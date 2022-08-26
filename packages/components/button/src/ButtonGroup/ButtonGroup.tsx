@@ -1,6 +1,7 @@
 import { cx } from 'emotion';
 import React from 'react';
-import { Box, Stack, ExpandProps } from '@contentful/f36-core';
+import { Box, Stack } from '@contentful/f36-core';
+import type { ExpandProps } from '@contentful/f36-core';
 import getStyles from './ButtonGroup.styles';
 import type { ButtonGroupProps } from './types';
 
@@ -54,5 +55,7 @@ function _ButtonGroup(
     </Box>
   );
 }
+
+_ButtonGroup.displayName = 'ButtonGroup';
 
 export const ButtonGroup = React.forwardRef(_ButtonGroup);

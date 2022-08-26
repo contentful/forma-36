@@ -1,0 +1,82 @@
+---
+title: 'Calendar'
+status: 'beta'
+isBeta: true
+slug: /components/calendar/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/datepicker/src/Calendar'
+storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-datepicker-calendar--default'
+section: 'dateComponents'
+typescript: ./Calendar.tsx
+---
+
+Calendar component enables users to select and view dates inline.
+
+At Contentful calendar is used to ask user's input to set, edit, or view schedule actions.
+
+The component is built on top of React Day Picker, see full documentation: https://react-day-picker.js.org/
+
+## Import
+
+```jsx static=true
+import { Calendar } from '@contentful/f36-datepicker';
+```
+
+## Examples
+
+### Basic
+
+Displays inline calendar to ask for user's action to select a date
+
+```jsx file=../../examples/Calendar/Basic.tsx
+
+```
+
+### Min and max date
+
+Set mininum and/or maximum dates to limit users to choose from a specific period in time
+
+Use `from...` and `to...` props to control time frames
+
+```jsx file=../../examples/Calendar/MinMax.tsx
+
+```
+
+### Indicators
+
+Use modifiers to modify certain days, for example showing incators for scheduled actions
+
+Read more about modifiers: https://react-day-picker.js.org/basics/modifiers
+
+```jsx file=../../examples/Calendar/Indicator.tsx
+
+```
+
+### Custom Day content
+
+Use components to modify certain parts of the calendar, for example modifying day content
+
+Read more about custom components: https://react-day-picker.js.org/guides/custom-components
+
+```jsx file=../../examples/Calendar/CustomDayContent.tsx
+
+```
+
+### Multiple months
+
+Display multiple months on the calender for a more convenient way for users to view dates
+
+Use `from...` and `to...` props to control time frames
+
+```jsx file=../../examples/Calendar/MultiMonths.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="Calendar" />
+
+## Accessibility
+
+- Keyboard navigation is supported
+- Necessary `aria` roles were added and tested with screen readers
+- When customizing the Calendar HTML elements or providing custom components. keyboard functionality and screen readers must be tested

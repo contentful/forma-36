@@ -1,7 +1,35 @@
 const globby = require('globby');
 const path = require('path');
 const fse = require('fs-extra');
-const _ = require('lodash');
+
+// No real replacement for the _.camelCase, only handles this specific case.
+function toCamelCase(word) {
+  return word
+    .split('-')
+    .map((key, index) =>
+      index === 0 ? key : key.replace(/[A-Z]/i, (match) => match.toUpperCase()),
+    )
+    .join('');
+}
+
+// Maps over object and applies fn in every entry
+function mapObject(obj, fn) {
+  return Object.fromEntries(Object.entries(obj).map(fn));
+}
+
+// Apply toCamelCase on keys of an Object
+function camelCaseKeys(obj) {
+  return mapObject(obj, ([key, value]) => [toCamelCase(key), value]);
+}
+
+function pickBy(obj, predicate) {
+  return Object.fromEntries(Object.entries(obj).filter(predicate));
+}
+
+function findKey(obj, predicate) {
+  const [key] = Object.entries(obj).find((entry) => predicate(entry[1]));
+  return key || undefined;
+}
 
 // Build JSON Tokens
 const buildJson = async (srcPath, tokens) => {
@@ -61,12 +89,10 @@ function createUnionFromKeys(keys, typename) {
 }
 
 async function createInterfaceDefinition(tokens) {
-  const defs = _.mapValues(tokens, (value) => {
-    return {
-      value: value,
-      type: typeof value,
-    };
-  });
+  const defs = mapObject(tokens, ([key, value]) => [
+    key,
+    { value, type: typeof value },
+  ]);
 
   let deprecatedTokens = {};
   const deprecatedPaths = (await globby('./src/tokens')).filter((path) =>
@@ -74,18 +100,16 @@ async function createInterfaceDefinition(tokens) {
   );
   deprecatedPaths.forEach((srcPath) => {
     const tokens = require(path.resolve(srcPath));
-    const camelCasedTokens = _.mapKeys(tokens, (value, key) =>
-      _.camelCase(key),
-    );
-    _.assign(deprecatedTokens, camelCasedTokens);
+    const camelCasedTokens = camelCaseKeys(tokens);
+    Object.assign(deprecatedTokens, camelCasedTokens);
   });
 
-  const filteredDefs = _.pickBy(defs, (_, key) => !deprecatedTokens[key]);
+  const filteredDefs = pickBy(defs, ([key]) => !deprecatedTokens[key]);
 
-  const deprecatedDefinition = _.map(
-    deprecatedTokens,
-    (value, deprecatedName) => {
-      const newTokenName = _.findKey(filteredDefs, (d) => d.value === value);
+  const deprecatedDefinition = Object.keys(deprecatedTokens)
+    .map((deprecatedName) => {
+      const value = deprecatedTokens[deprecatedName];
+      const newTokenName = findKey(filteredDefs, (d) => d.value === value);
       const def = filteredDefs[newTokenName];
       return `
       /**
@@ -93,17 +117,18 @@ async function createInterfaceDefinition(tokens) {
        * @deprecated use tokens.${newTokenName} instead
        */
       "${deprecatedName}": ${def.type}`;
-    },
-  ).join(',');
+    })
+    .join(',');
 
-  const fields = _.map(
-    filteredDefs,
-    (def, tokenName) => `
+  const fields = Object.entries(filteredDefs)
+    .map(
+      ([tokenName, def]) => `
     /**
      * @description ${def.value}
      */
     "${tokenName}": ${def.type}`,
-  ).join(',');
+    )
+    .join(',');
 
   return `export type F36Tokens = {
     ${[fields, deprecatedDefinition].join(',')}
@@ -213,12 +238,10 @@ const generateIndex = (paths, extension) => {
     buildCssTokens(srcPath, tokens);
     buildScssTokens(srcPath, tokens);
 
-    _.assign(allTokens, tokens);
+    Object.assign(allTokens, tokens);
   });
 
-  allTokens = _.mapKeys(allTokens, (value, key) => {
-    return _.camelCase(key);
-  });
+  allTokens = camelCaseKeys(allTokens);
 
   await buildIndexJS('dist/index.js', allTokens);
   await buildIndexDTS('dist/index.d.ts', allTokens);

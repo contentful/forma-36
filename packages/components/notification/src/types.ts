@@ -1,8 +1,12 @@
-import { TextLinkProps } from '@contentful/f36-text-link';
+import type { TextLinkProps } from '@contentful/f36-text-link';
 
 export interface NotificationCta {
   label: string;
   textLinkProps: Partial<TextLinkProps>;
 }
 
-export type NotificationVariant = 'positive' | 'negative' | 'warning';
+export type NotificationVariant =
+  | 'positive'
+  | 'negative'
+  | 'warning'
+  | 'primary';

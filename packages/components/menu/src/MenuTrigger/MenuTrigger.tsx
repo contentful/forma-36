@@ -1,7 +1,7 @@
 import React from 'react';
 import { Popover } from '@contentful/f36-popover';
 import { useMenuContext } from '../MenuContext';
-import { ExpandProps } from '@contentful/f36-core';
+import type { ExpandProps } from '@contentful/f36-core';
 
 export interface MenuTriggerProps {
   children: React.ReactNode;

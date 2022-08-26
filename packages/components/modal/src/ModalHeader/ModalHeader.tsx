@@ -18,13 +18,13 @@ export type ModalHeaderProps = PropsWithHTMLElement<
   'div'
 >;
 
-export function ModalHeader({
+export const ModalHeader = ({
   onClose,
   title,
   testId = 'cf-ui-modal-header',
   className,
   ...otherProps
-}: ModalHeaderProps): React.ReactElement {
+}: ModalHeaderProps): React.ReactElement => {
   const styles = getModalHeaderStyles();
 
   return (
@@ -35,7 +35,7 @@ export function ModalHeader({
       alignItems="center"
       justifyContent="space-between"
     >
-      <Subheading as="h1" isTruncated marginBottom="none">
+      <Subheading as="h2" isTruncated marginBottom="none">
         {title}
       </Subheading>
       {onClose && (
@@ -53,4 +53,6 @@ export function ModalHeader({
       )}
     </Flex>
   );
-}
+};
+
+ModalHeader.displayName = 'ModalHeader';

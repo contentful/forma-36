@@ -118,6 +118,30 @@
       "slug": "/components/toggle-button/"
     }
   ],
+  "dateComponents": [
+    {
+      "title": "Calendar",
+      "slug": "/components/calendar/",
+      "isBeta": true
+    },
+    {
+      "title": "Date utilities",
+      "slug": "/components/datetime-functions/"
+    },
+    {
+      "title": "DateTime",
+      "slug": "/components/datetime/"
+    },
+    {
+      "title": "Datepicker",
+      "slug": "/components/datepicker/",
+      "isBeta": true
+    },
+    {
+      "title": "RelativeDateTime",
+      "slug": "/components/relative-datetime/"
+    }
+  ],
   "modalComponents": [
     {
       "title": "Modal",
@@ -148,20 +172,6 @@
     {
       "title": "InlineEntryCard",
       "slug": "/components/inline-entry-card/"
-    }
-  ],
-  "dateComponents": [
-    {
-      "title": "Date utilities",
-      "slug": "/components/datetime-functions/"
-    },
-    {
-      "title": "DateTime",
-      "slug": "/components/datetime/"
-    },
-    {
-      "title": "RelativeDateTime",
-      "slug": "/components/relative-datetime/"
     }
   ],
   "formComponents": [
@@ -284,78 +294,50 @@
   ],
   "intro": [
     {
-      "title": "Contributing to Forma 36",
-      "slug": "/contributing"
-    },
-    {
-      "title": "Getting started",
-      "slug": "/getting-started"
-    }
-  ],
-  "forma36Version3": [
-    {
-      "title": "FAQ",
-      "slug": "/v3-faq/"
-    },
-    {
-      "title": "Migration Guide",
-      "slug": "/migration-v3-to-v4/"
-    },
-    {
-      "title": "Version 3 maintenance plan",
-      "slug": "/maintenance-plan/"
+      "title": "What's new",
+      "slug": "/whats-new"
     }
   ],
   "deprecatedComponents": [
     {
       "title": "Dropdown",
-      "slug": "/deprecated-components/dropdown/"
+      "slug": "/deprecated-components/dropdown/",
+      "isDeprecated": true
     },
     {
       "title": "EditorToolbar",
-      "slug": "/deprecated-components/editor-toolbar/"
+      "slug": "/deprecated-components/editor-toolbar/",
+      "isDeprecated": true
     },
     {
       "title": "EmptyState",
-      "slug": "/deprecated-components/empty-state/"
+      "slug": "/deprecated-components/empty-state/",
+      "isDeprecated": true
     },
     {
       "title": "Illustration",
-      "slug": "/deprecated-components/illustration/"
+      "slug": "/deprecated-components/illustration/",
+      "isDeprecated": true
     },
     {
       "title": "InViewport",
-      "slug": "/deprecated-components/in-viewport/"
+      "slug": "/deprecated-components/in-viewport/",
+      "isDeprecated": true
     },
     {
       "title": "TabFocusTrap",
-      "slug": "/deprecated-components/tab-focus-trap/"
+      "slug": "/deprecated-components/tab-focus-trap/",
+      "isDeprecated": true
     },
     {
       "title": "Tag",
-      "slug": "/deprecated-components/tag/"
+      "slug": "/deprecated-components/tag/",
+      "isDeprecated": true
     },
     {
       "title": "Typography Component",
-      "slug": "/deprecated-components/typography/"
-    }
-  ],
-  "guidelines": [
-    {
-      "title": "Accessibility",
-      "slug": "/guidelines/accessibility/"
-    },
-    {
-      "title": "Grammar and rules",
-      "slug": "/guidelines/copy/grammar-and-rules/"
-    },
-    {
-      "title": "Keyboard Shortcuts",
-      "slug": "/guidelines/keyboard-shortcuts/"
-    },
-    {
-      "title": "UX Writing Principles",
-      "slug": "/guidelines/copy/ux-writing-principles/"
+      "slug": "/deprecated-components/typography/",
+      "isDeprecated": true
     }
   ],
   "integrations": [

@@ -1,6 +1,6 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 
 import { getWorkbenchContentStyles } from './WorkbenchContent.styles';
 
@@ -18,13 +18,13 @@ export type WorkbenchContentProps = PropsWithHTMLElement<
   'main'
 >;
 
-export function WorkbenchContent({
+export const WorkbenchContent = ({
   children,
   className,
   type = 'default',
   testId = 'cf-ui-workbench-content',
   ...otherProps
-}: WorkbenchContentProps) {
+}: WorkbenchContentProps) => {
   const styles = getWorkbenchContentStyles(type);
 
   return (
@@ -36,6 +36,6 @@ export function WorkbenchContent({
       <div className={styles.innerContent}>{children}</div>
     </main>
   );
-}
+};
 
 WorkbenchContent.displayName = 'WorkbenchContent';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 
 import { getWorkbenchSidebarStyles } from './WorkbenchSidebar.styles';
 
@@ -15,13 +15,13 @@ export type WorkbenchSidebarProps = PropsWithHTMLElement<
   'aside'
 >;
 
-export function WorkbenchSidebar({
+export const WorkbenchSidebar = ({
   children,
   className,
   position = 'left',
   testId = 'cf-ui-workbench-sidebar',
   ...otherProps
-}: WorkbenchSidebarProps) {
+}: WorkbenchSidebarProps) => {
   const styles = getWorkbenchSidebarStyles(position);
 
   return (
@@ -33,5 +33,5 @@ export function WorkbenchSidebar({
       {children}
     </aside>
   );
-}
+};
 WorkbenchSidebar.displayName = 'WorkbenchSidebar';

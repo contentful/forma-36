@@ -26,5 +26,6 @@ export * from '@contentful/f36-asset';
 export * from '@contentful/f36-autocomplete';
 export * from '@contentful/f36-datetime';
 export * from '@contentful/f36-entity-list';
+export * from '@contentful/f36-pagination';
 
 // -- Add imports above this line (required by plopfile.js) --

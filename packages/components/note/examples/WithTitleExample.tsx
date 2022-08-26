@@ -4,7 +4,10 @@ import { Stack, Note } from '@contentful/f36-components';
 export default function NoteWithTitleExample() {
   return (
     <Stack flexDirection="column">
-      <Note title="Primary title">Primary (default)</Note>
+      <Note title="Neutral title" variant="neutral">
+        Neutral, use as default
+      </Note>
+      <Note title="Primary title">Primary</Note>
       <Note title="Positive title" variant="positive">
         Positive
       </Note>

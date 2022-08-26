@@ -7,12 +7,12 @@ import tokens, {
   ColorTokens,
 } from '@contentful/f36-tokens';
 import { css, cx } from 'emotion';
-import {
+import { Box } from '@contentful/f36-core';
+import type {
   PolymorphicComponent,
   CommonProps,
   MarginProps,
   PolymorphicProps,
-  Box,
   ExpandProps,
 } from '@contentful/f36-core';
 
@@ -90,6 +90,8 @@ function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
     </Box>
   );
 }
+
+_Text.displayName = 'Text';
 
 export const Text: PolymorphicComponent<
   ExpandProps<TextInternalProps>,

@@ -1,6 +1,7 @@
 import { cx, css } from 'emotion';
 import React, { forwardRef } from 'react';
-import { Box, CommonProps } from '@contentful/f36-core';
+import { Box } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
 import type { PropsWithHTMLElement, ExpandProps } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 

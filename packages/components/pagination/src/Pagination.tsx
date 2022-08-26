@@ -2,7 +2,8 @@ import React from 'react';
 
 import { Button } from '@contentful/f36-button';
 import { Select } from '@contentful/f36-forms';
-import { CommonProps, Stack, Flex } from '@contentful/f36-core';
+import { Stack, Flex } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
 import { ChevronLeftIcon, ChevronRightIcon } from '@contentful/f36-icons';
 import { Text } from '@contentful/f36-typography';
 
@@ -140,5 +141,7 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
     </Flex>
   );
 }
+
+_Pagination.displayName = 'Pagination';
 
 export const Pagination = React.forwardRef(_Pagination);

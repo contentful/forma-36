@@ -1,5 +1,5 @@
 import React from 'react';
-import {
+import type {
   CommonProps,
   MarginProps,
   PolymorphicComponent,
@@ -43,6 +43,8 @@ function _Subheading<
     </Text>
   );
 }
+
+_Subheading.displayName = 'Subheading';
 
 export const Subheading: PolymorphicComponent<
   ExpandProps<SubheadingInternalProps>,

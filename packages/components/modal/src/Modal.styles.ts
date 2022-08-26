@@ -1,21 +1,19 @@
 import tokens from '@contentful/f36-tokens';
 import { css, cx } from 'emotion';
-import type { ModalPositionType, ModalSizeType } from './types';
+
+import type { ModalProps } from './Modal';
 
 export function getModalStyles(props: {
-  size: ModalSizeType;
-  position: ModalPositionType;
+  size: ModalProps['size'];
+  position: ModalProps['position'];
   allowHeightOverflow?: boolean;
   className?: string;
 }) {
   const modal = cx(
     css({
-      transition: `opacity ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}, transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingCubicBezier}`,
-      opacity: '0.5',
       margin: tokens.spacing2Xl,
-      transform: 'scale(0.85)',
       backgroundColor: tokens.colorWhite,
-      borderRadius: tokens.borderRadiusMedium,
+      borderRadius: props.size === 'zen' ? 0 : tokens.borderRadiusMedium,
       boxShadow: tokens.boxShadowHeavy,
       maxHeight: `calc(100vh - 1rem * (100 / ${tokens.fontBaseDefault}))`,
       maxWidth: `calc(100vw - 1rem * (100 / ${tokens.fontBaseDefault}))`,
@@ -55,6 +53,8 @@ export function getModalStyles(props: {
           margin: '0 auto',
           textAlign: 'left',
           outline: 'none',
+          transform: props.size === 'zen' ? 'scale(1)' : 'scale(0.85)',
+          transition: `transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
         }),
         props.size === 'zen'
           ? css({
@@ -64,16 +64,10 @@ export function getModalStyles(props: {
           : null,
       ),
       afterOpen: css({
-        '[data-modal-root]': {
-          transform: 'scale(1)',
-          opacity: '1',
-        },
+        transform: 'scale(1) !important',
       }),
       beforeClose: css({
-        '[data-modal-root]': {
-          opacity: '0.5',
-          transform: 'scale(0.85)',
-        },
+        transform: props.size === 'zen' ? 'scale(1)' : 'scale(0.85)',
       }),
     },
     modalOverlay: {
@@ -102,7 +96,7 @@ export function getModalStyles(props: {
           : null,
       ),
       afterOpen: css({
-        opacity: '1 !important',
+        opacity: 1,
       }),
       beforeClose: css({
         opacity: 0,

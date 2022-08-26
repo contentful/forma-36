@@ -43,12 +43,12 @@ export const stopEvents = (e: React.MouseEvent<HTMLElement>) => {
   e.stopPropagation();
 };
 
-export function DefaultCardHeader(
+export const DefaultCardHeader = (
   props: Pick<
     BaseCardInternalProps,
     'type' | 'icon' | 'badge' | 'actions' | 'actionsButtonProps'
   >,
-) {
+) => {
   const { icon, type, actions, actionsButtonProps, badge } = props;
   const styles = getHeaderStyles();
   return (
@@ -81,4 +81,6 @@ export function DefaultCardHeader(
       )}
     </Flex>
   );
-}
+};
+
+DefaultCardHeader.displayName = 'DefaultCardHeader';

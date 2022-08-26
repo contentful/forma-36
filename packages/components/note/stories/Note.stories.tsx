@@ -1,8 +1,9 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
-import { SectionHeading } from '@contentful/f36-typography';
+import { Paragraph, SectionHeading } from '@contentful/f36-typography';
 import { Note } from '../src/Note';
+import { TextLink } from '@contentful/f36-text-link';
 
 export default {
   title: 'Components/Note',
@@ -46,9 +47,11 @@ export const overview = () => (
     </Flex>
     <Flex marginBottom="spacingM">
       <Note title="Short, yet succinct title" withCloseButton>
-        A piece of information that is relevant to the context the user is
-        currently in. If you like it then you should put{' '}
-        <a href="https://contentful.com">a link</a> in it.
+        <Paragraph>
+          A piece of information that is relevant to the context the user is
+          currently in. If you like it then you should put{' '}
+          <TextLink> a link</TextLink> in it.
+        </Paragraph>
       </Note>
     </Flex>
 
@@ -62,13 +65,18 @@ export const overview = () => (
         currently in.
       </Note>
     </Flex>
+
     <Flex marginBottom="spacingM">
       <Note
-        variant="negative"
         title="Short, yet succinct title"
+        variant="negative"
         withCloseButton
       >
-        Something went wrong, apparently. Please try again.{' '}
+        <Paragraph>
+          A piece of information that is relevant to the context the user is
+          currently in. If you like it then you should put{' '}
+          <TextLink> a link</TextLink> in it.
+        </Paragraph>
       </Note>
     </Flex>
 
@@ -84,8 +92,11 @@ export const overview = () => (
     </Flex>
     <Flex marginBottom="spacingM">
       <Note variant="warning" title="Short, yet succinct title" withCloseButton>
-        A piece of information that is relevant to the context the user is
-        currently in.
+        <Paragraph>
+          A piece of information that is relevant to the context the user is
+          currently in. If you like it then you should put{' '}
+          <TextLink> a link</TextLink> in it.
+        </Paragraph>
       </Note>
     </Flex>
 
@@ -105,8 +116,31 @@ export const overview = () => (
         title="Short, yet succinct title"
         withCloseButton
       >
-        Make sure to immediately copy your new signing secret. You will not be
-        able to see it again.
+        <Paragraph>
+          A piece of information that is relevant to the context the user is
+          currently in. If you like it then you should put{' '}
+          <TextLink> a link</TextLink> in it.
+        </Paragraph>
+      </Note>
+    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Note neutral
+    </SectionHeading>
+
+    <Flex marginBottom="spacingM">
+      <Note variant="neutral">
+        A piece of information that is relevant to the context the user is
+        currently in.
+      </Note>
+    </Flex>
+    <Flex marginBottom="spacingM">
+      <Note variant="neutral" title="Short, yet succinct title" withCloseButton>
+        <Paragraph>
+          A piece of information that is relevant to the context the user is
+          currently in. If you like it then you should put{' '}
+          <TextLink> a link</TextLink> in it.
+        </Paragraph>
       </Note>
     </Flex>
   </Flex>

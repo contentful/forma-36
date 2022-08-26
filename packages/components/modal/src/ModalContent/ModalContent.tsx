@@ -13,12 +13,12 @@ export type ModalContentProps = PropsWithHTMLElement<
   'div'
 >;
 
-export function ModalContent({
+export const ModalContent = ({
   testId = 'cf-ui-modal-content',
   className,
   children,
   ...otherProps
-}: ModalContentProps) {
+}: ModalContentProps) => {
   const styles = getModalContentStyles();
   return (
     <Box
@@ -30,4 +30,6 @@ export function ModalContent({
       {children}
     </Box>
   );
-}
+};
+
+ModalContent.displayName = 'ModalContent';

@@ -1,5 +1,5 @@
 import React from 'react';
-import {
+import type {
   PolymorphicProps,
   PolymorphicComponent,
   ExpandProps,
@@ -45,6 +45,8 @@ function _IconButton<
     />
   );
 }
+
+_IconButton.displayName = 'IconButton';
 
 export const IconButton: PolymorphicComponent<
   ExpandProps<IconButtonInternalProps>,

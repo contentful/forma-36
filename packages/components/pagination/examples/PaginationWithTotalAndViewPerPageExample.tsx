@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Pagination } from '@contentful/f36-pagination';
+import { Pagination } from '@contentful/f36-components';
 
 export default function PaginationWithTotalAndViewPerPageExample() {
   const [page, setPage] = useState(0);
