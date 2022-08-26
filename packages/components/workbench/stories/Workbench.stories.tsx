@@ -4,12 +4,13 @@ import { action } from '@storybook/addon-actions';
 import tokens from '@contentful/f36-tokens';
 import { Flex, Grid } from '@contentful/f36-core';
 import {
+  Heading,
   Subheading,
   Paragraph,
   SectionHeading,
 } from '@contentful/f36-typography';
 import { Button } from '@contentful/f36-button';
-import { StarIcon } from '@contentful/f36-icons';
+import { HelpCircleIcon, StarIcon } from '@contentful/f36-icons';
 
 import { Workbench } from '../src/CompoundWorkbench';
 import type { WorkbenchContentProps } from '../src/WorkbenchContent';
@@ -289,6 +290,32 @@ export const HeaderOverview = () => {
                 Action
               </Button>
             }
+          />
+        </span>
+
+        <span>
+          <SectionHeading as="h3" marginBottom="spacingS">
+            Header with custom title element
+          </SectionHeading>
+
+          <Workbench.Header
+            title={
+              <Flex alignItems="center" gap="spacingXs">
+                <Heading marginBottom="none">Page title</Heading>{' '}
+                <HelpCircleIcon />
+              </Flex>
+            }
+          />
+        </span>
+
+        <span>
+          <SectionHeading as="h3" marginBottom="spacingS">
+            Header with custom icon element
+          </SectionHeading>
+
+          <Workbench.Header
+            icon={<StarIcon size="large" variant="positive" />}
+            title="Page title"
           />
         </span>
       </Grid>

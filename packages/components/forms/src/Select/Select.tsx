@@ -7,7 +7,7 @@ import React, {
 import { cx } from 'emotion';
 import { ChevronDownIcon } from '@contentful/f36-icons';
 
-import {
+import type {
   CommonProps,
   PropsWithHTMLElement,
   ExpandProps,

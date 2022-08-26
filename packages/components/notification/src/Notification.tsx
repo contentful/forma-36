@@ -87,6 +87,7 @@ export const Notification: {
   success: ExternalShowAction<Promise<NotificationProps>>;
   error: ExternalShowAction<Promise<NotificationProps>>;
   warning: ExternalShowAction<Promise<NotificationProps>>;
+  info: ExternalShowAction<Promise<NotificationProps>>;
   close: CloseAction<Promise<void>>;
   closeAll: CloseAllAction<Promise<void>>;
   setPlacement: SetPlacementAction<Promise<void>>;
@@ -95,6 +96,7 @@ export const Notification: {
   success: afterInit<NotificationProps>(show('positive')),
   error: afterInit<NotificationProps>(show('negative')),
   warning: afterInit<NotificationProps>(show('warning')),
+  info: afterInit<NotificationProps>(show('primary')),
   close: afterInit<void>((id: string | number) => {
     if (internalAPI.close) {
       return internalAPI.close(id);

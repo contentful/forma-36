@@ -15,6 +15,7 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'plugin:jest/recommended',
     'plugin:jest/style',
+    'plugin:you-dont-need-lodash-underscore/compatible',
   ],
   plugins: ['import', 'react-hooks', 'jest-dom', 'testing-library', 'rulesdir'],
   parserOptions: {
@@ -70,6 +71,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'import/named': 'error',
     'import/no-default-export': 'error',
+    'import/no-extraneous-dependencies': 'error',
     'react/jsx-handler-names': 'error',
     'rulesdir/emotion-in-function': 'error',
   },
@@ -108,6 +110,19 @@ module.exports = {
       ],
       rules: {
         'import/no-default-export': 'off',
+      },
+    },
+    {
+      // Overides estraneous-dependencies for places where it's expected.
+      // e.g. Example files, test files, and codemod fixtures
+      files: [
+        '**/*.stories.*',
+        '**/*.test.*',
+        '**/examples/**',
+        '**/packages/**/__testfixtures__/**',
+      ],
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
       },
     },
   ],

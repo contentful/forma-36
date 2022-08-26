@@ -5,7 +5,7 @@ import { BaseInput } from '../BaseInput';
 import type { BaseInputProps } from '../BaseInput';
 import { useFormControl } from '../FormControl/FormControlContext';
 import { getStyles } from './Textarea.styles';
-import { ExpandProps } from '@contentful/f36-core';
+import type { ExpandProps } from '@contentful/f36-core';
 
 export interface TextareaProps
   extends Omit<BaseInputProps<'textarea'>, 'as' | 'type' | 'size'> {

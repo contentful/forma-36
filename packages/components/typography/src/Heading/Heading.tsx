@@ -1,5 +1,5 @@
 import React from 'react';
-import {
+import type {
   CommonProps,
   MarginProps,
   PolymorphicComponent,
@@ -43,6 +43,8 @@ function _Heading<E extends React.ElementType = typeof HEADING_DEFAULT_TAG>(
     </Text>
   );
 }
+
+_Heading.displayName = 'Heading';
 
 export const Heading: PolymorphicComponent<
   ExpandProps<HeadingInternalProps>,

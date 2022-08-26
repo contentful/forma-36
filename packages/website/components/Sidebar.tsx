@@ -11,7 +11,8 @@ import {
 } from './SidebarSection';
 import { sortByTitle } from '../utils/sortByTitle';
 
-const sidebarLinks = require('../utils/sidebarLinks.json');
+const mdxSidebarLinks = require('../utils/sidebarLinks.json');
+const contentfulSidebarLinks = require('../utils/contentfulSidebarLinks.json');
 
 const styles = {
   nav: css({
@@ -31,62 +32,62 @@ interface Props {
 }
 
 const components: Array<SidebarSectionType | SidebarLinkType> = [
-  ...sidebarLinks.unassigned,
+  ...mdxSidebarLinks.unassigned,
 
   {
     type: 'section',
-    links: sidebarLinks.animationComponents,
+    links: mdxSidebarLinks.animationComponents,
     title: 'Animation Components',
   },
   {
     type: 'section',
-    links: sidebarLinks.layoutComponents,
+    links: mdxSidebarLinks.layoutComponents,
     title: 'Layout Components',
   },
   {
     type: 'section',
-    links: sidebarLinks.typographyComponents,
+    links: mdxSidebarLinks.typographyComponents,
     title: 'Typography Components',
   },
   {
     type: 'section',
-    links: sidebarLinks.buttonComponents,
+    links: mdxSidebarLinks.buttonComponents,
     title: 'Button Components',
   },
   {
     type: 'section',
-    links: sidebarLinks.formComponents,
+    links: mdxSidebarLinks.formComponents,
     title: 'Form Components',
   },
   {
     type: 'section',
-    links: sidebarLinks.dateComponents,
+    links: mdxSidebarLinks.dateComponents,
     title: 'Date Components',
   },
   {
     type: 'section',
-    links: sidebarLinks.modalComponents,
+    links: mdxSidebarLinks.modalComponents,
     title: 'Modal Components',
   },
   {
     type: 'section',
-    links: sidebarLinks.cardComponents,
+    links: mdxSidebarLinks.cardComponents,
     title: 'Card Components',
   },
   {
     type: 'section',
-    links: sidebarLinks.skeletonComponents,
+    links: mdxSidebarLinks.skeletonComponents,
     title: 'Skeleton Components',
   },
   {
     type: 'section',
-    links: sidebarLinks.deprecatedComponents,
+    links: mdxSidebarLinks.deprecatedComponents,
     title: 'Deprecated V3 Components',
   },
 ];
 
 export function Sidebar({
-  activeSection = WEBSITE_SECTION.INTRODUCTION,
+  activeSection = WEBSITE_SECTION.HOMEPAGE,
   currentPage = '/',
 }: Props) {
   const componentsSorted = sortByTitle(components);
@@ -104,12 +105,12 @@ export function Sidebar({
             links={[
               {
                 title: 'Getting started',
-                slug: '/getting-started',
+                slug: '/introduction/getting-started',
                 type: 'link',
               },
               {
                 title: 'Contributing to Forma 36',
-                slug: '/contributing',
+                slug: '/introduction//contributing',
                 type: 'link',
               },
               {
@@ -118,12 +119,33 @@ export function Sidebar({
                   'https://www.contentful.com/developers/docs/extensibility/app-framework/',
                 type: 'link',
               },
+              {
+                title: 'What’s new',
+                slug: '/whats-new',
+                type: 'link',
+              },
             ]}
             currentPage={currentPage}
           />
           <SidebarSection
             title="Forma 36 version 3"
-            links={sidebarLinks.forma36Version3}
+            links={[
+              {
+                title: 'FAQ',
+                slug: '/introduction/v3-faq',
+                type: 'link',
+              },
+              {
+                title: 'Migration Guide',
+                slug: '/introduction/migration-v3-to-v4',
+                type: 'link',
+              },
+              {
+                title: 'Version 3 maintenance plan',
+                slug: '/introduction/maintenance-plan',
+                type: 'link',
+              },
+            ]}
             currentPage={currentPage}
           />
         </>
@@ -131,13 +153,16 @@ export function Sidebar({
 
       {activeSection === WEBSITE_SECTION.GUIDELINES && (
         <SidebarSection
-          links={sidebarLinks.guidelines}
+          links={contentfulSidebarLinks.guidelines}
           currentPage={currentPage}
         />
       )}
 
       {activeSection === WEBSITE_SECTION.TOKENS && (
-        <SidebarSection links={sidebarLinks.tokens} currentPage={currentPage} />
+        <SidebarSection
+          links={mdxSidebarLinks.tokens}
+          currentPage={currentPage}
+        />
       )}
 
       {activeSection === WEBSITE_SECTION.COMPONENTS && (
@@ -155,12 +180,12 @@ export function Sidebar({
           <SidebarSection links={componentsSorted} currentPage={currentPage} />
           <SidebarSection
             title="Utils"
-            links={sidebarLinks.utils}
+            links={mdxSidebarLinks.utils}
             currentPage={currentPage}
           />
           <SidebarSection
             title="Integrations"
-            links={sidebarLinks.integrations}
+            links={mdxSidebarLinks.integrations}
             currentPage={currentPage}
           />
         </>

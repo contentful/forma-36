@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontSizeTokens, LineHeightTokens } from '@contentful/f36-tokens';
-import {
+import type {
   CommonProps,
   MarginProps,
   PolymorphicComponent,
@@ -58,6 +58,8 @@ function _DisplayText<
     </Text>
   );
 }
+
+_DisplayText.displayName = 'DisplayText';
 
 export const DisplayText: PolymorphicComponent<
   ExpandProps<DisplayTextInternalProps>,

@@ -55,7 +55,7 @@ const CustomIcon = (props: IconInternalProps) => (
 );
 
 export const Overview: Story = () => {
-  const sizes = ['large', 'medium', 'small', 'tiny'];
+  const sizes = ['xlarge', 'large', 'medium', 'small', 'tiny'];
 
   return (
     <Fragment>

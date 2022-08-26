@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef } from 'react';
-import { PropsWithHTMLElement, ExpandProps } from '@contentful/f36-core';
+import type { PropsWithHTMLElement, ExpandProps } from '@contentful/f36-core';
 import type { BaseCheckboxInternalProps } from './types';
 import { GhostCheckbox } from './GhostCheckbox';
 import getStyles from './BaseCheckbox.styles';
@@ -149,5 +149,7 @@ function _BaseCheckbox(
     </Flex>
   );
 }
+
+_BaseCheckbox.displayName = 'BaseCheckbox';
 
 export const BaseCheckbox = React.forwardRef(_BaseCheckbox);

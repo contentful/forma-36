@@ -2,9 +2,11 @@ import React, { useCallback, useState } from 'react';
 import { cx } from 'emotion';
 import { useCombobox } from 'downshift';
 
-import { CommonProps, ExpandProps, mergeRefs } from '@contentful/f36-core';
+import { mergeRefs } from '@contentful/f36-core';
+import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 import { IconButton } from '@contentful/f36-button';
-import { TextInput, TextInputProps } from '@contentful/f36-forms';
+import { TextInput } from '@contentful/f36-forms';
+import type { TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover } from '@contentful/f36-popover';
@@ -37,6 +39,11 @@ export interface AutocompleteProps<ItemType>
   items: ItemType[] | GenericGroupType<ItemType>[];
 
   /**
+   * Set a custom icon for the text input
+   */
+  icon?: React.ReactElement;
+
+  /**
    * Tells if the item is a object with groups
    */
   isGrouped?: boolean;
@@ -50,6 +57,13 @@ export interface AutocompleteProps<ItemType>
    * The component will pass the selected "item" as an argument to the function..
    */
   onSelectItem: (item: ItemType) => void;
+
+  /**
+   * Applying the selectedItem property turns autocomplete into a controlled component.
+   * Can be used to display e.g. previously selected element. If it is an object the itemToString function will apply to it.
+   */
+  selectedItem?: ItemType;
+
   /**
    * This is the function that will be called for each "item" passed in the `items` prop.
    * It receives the "item" and "inputValue" as arguments and returns a ReactNode.
@@ -66,6 +80,11 @@ export interface AutocompleteProps<ItemType>
    * @default false
    */
   clearAfterSelect?: boolean;
+  /**
+   * If this is set to `false` the dropdown menu will stay open after selecting an item
+   * @default true
+   */
+  closeAfterSelect?: boolean;
   /**
    * This is the value will be passed to the `placeholder` prop of the input.
    * @default "Search"
@@ -121,11 +140,14 @@ function _Autocomplete<ItemType>(
     id,
     className,
     clearAfterSelect = false,
+    closeAfterSelect = true,
     defaultValue = '',
+    selectedItem,
     items,
     onInputValueChange,
     onSelectItem,
     renderItem,
+    icon = <ChevronDownIcon variant="muted" />,
     itemToString = (item: ItemType) => (item as unknown) as string,
     isInvalid,
     isDisabled,
@@ -151,12 +173,21 @@ function _Autocomplete<ItemType>(
   const [inputValue, setInputValue] = useState(defaultValue);
 
   const handleInputValueChange = useCallback(
-    (value) => {
+    (value: string) => {
       setInputValue(value);
 
       onInputValueChange?.(value);
     },
     [onInputValueChange],
+  );
+
+  // Handle manually to avoid a jumping cursor, see https://github.com/downshift-js/downshift/issues/1108#issuecomment-842407759
+  const handleNativeChangeEvent = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const value = event.target.value;
+      handleInputValueChange(value);
+    },
+    [handleInputValueChange],
   );
 
   const flattenItems = isUsingGroups(isGrouped, items)
@@ -181,10 +212,13 @@ function _Autocomplete<ItemType>(
     toggleMenu,
   } = useCombobox({
     items: flattenItems,
+    selectedItem,
     inputValue,
     itemToString,
-    onInputValueChange: ({ inputValue }) => {
-      handleInputValueChange(inputValue);
+    onInputValueChange: ({ type, inputValue }) => {
+      if (type !== '__input_change__') {
+        handleInputValueChange(inputValue);
+      }
     },
     onStateChange: ({ type, selectedItem }) => {
       switch (type) {
@@ -195,6 +229,9 @@ function _Autocomplete<ItemType>(
           }
           if (clearAfterSelect) {
             handleInputValueChange('');
+          }
+          if (!closeAfterSelect) {
+            toggleMenu();
           }
           break;
         default:
@@ -233,6 +270,7 @@ function _Autocomplete<ItemType>(
         <Popover.Trigger>
           <div {...comboboxProps} className={styles.combobox}>
             <TextInput
+              className={styles.inputField}
               {...inputProps}
               onFocus={() => {
                 if (!isOpen) {
@@ -247,20 +285,18 @@ function _Autocomplete<ItemType>(
               ref={mergeRefs(inputProps.ref, inputRef)}
               testId="cf-autocomplete-input"
               placeholder={placeholder}
+              onChange={(event) => {
+                inputProps.onChange(event);
+                handleNativeChangeEvent(event);
+              }}
             />
             <IconButton
               {...toggleProps}
               ref={mergeRefs(toggleProps.ref, toggleRef)}
-              aria-label="toggle menu"
+              aria-label={inputValue ? 'Clear' : 'Show list'}
               className={styles.toggleButton}
               variant="transparent"
-              icon={
-                inputValue ? (
-                  <CloseIcon aria-label="Clear" variant="muted" />
-                ) : (
-                  <ChevronDownIcon aria-label="Show list" variant="muted" />
-                )
-              }
+              icon={inputValue ? <CloseIcon variant="muted" /> : icon}
               onClick={() => {
                 if (inputValue) {
                   handleInputValueChange('');

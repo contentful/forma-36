@@ -1,4 +1,5 @@
 const {
+  getNewProp,
   getComponentLocalName,
   changeImport,
   getProperty,
@@ -12,6 +13,7 @@ const {
   getChildren,
 } = require('../utils');
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
+const { isConditionalExpression } = require('../utils/updateTernaryValues');
 const { pipe } = require('./common/pipe');
 
 function selectCodemod(file, api) {
@@ -133,6 +135,35 @@ function selectFieldCodemod(file, api) {
         });
 
       const selectProps = [value, ...handlerProps].filter((prop) => prop);
+      const formControlProps = [id, name, required, ...commonProps].filter(
+        (p) => p,
+      );
+
+      // from selectProps
+      const selectPropsObj = getProperty(attributes, {
+        propertyName: 'selectProps',
+      });
+
+      if (selectPropsObj) {
+        const {
+          isDisabled,
+          spreadedPropsNames,
+          ...otherProps
+        } = transformSelectProps(selectPropsObj, {
+          j,
+          attributes,
+        });
+
+        if (isDisabled) {
+          formControlProps.push(isDisabled);
+        }
+        selectProps.push(...Object.values(otherProps));
+        // this will add `{...spreadedPropsName}` to the Select Component
+        spreadedPropsNames.forEach((name) =>
+          selectProps.push(j.jsxSpreadAttribute(j.identifier(name))),
+        );
+      }
+
       const Select = createComponent({
         j,
         componentName: 'Select',
@@ -147,9 +178,6 @@ function selectFieldCodemod(file, api) {
         [j.jsxText('\n')],
       );
 
-      const formControlProps = [id, name, required, ...commonProps].filter(
-        (p) => p,
-      );
       const FormControl = createComponent({
         j,
         componentName: 'FormControl',
@@ -185,6 +213,77 @@ function selectFieldCodemod(file, api) {
   }
 
   return source;
+}
+
+/**
+ * Function that will convert all the properties in the "selectProps" object
+ * to the correct type that we need when passing them to FormControl and Select components.
+ * It will return an object where each key is the name of the prop and the value is the value of the prop
+ *
+ * @param selectPropsObj
+ * @param options
+ * @returns {Object} newProps
+ */
+function transformSelectProps(selectPropsObj, { j, attributes }) {
+  const { properties } = selectPropsObj.value.expression;
+
+  const newProps = { spreadedPropsNames: [] };
+  const propertiesMap = properties.reduce((acc, prop) => {
+    let key;
+
+    // A spreaded prop (e.g.: "...selectProps", "...otherProps") does not have a key
+    // we don't include it in the propertiesMap and we put its name directly into newProps obj
+    // and later we use that name to create `{...spreadedProps}` in Select
+    if (!prop.key && prop.type === 'SpreadElement') {
+      newProps.spreadedPropsNames.push(prop.argument.name);
+      return acc;
+    }
+
+    // rename props if necessary
+    switch (prop.key.name) {
+      case 'disabled':
+        key = 'isDisabled';
+        break;
+      case 'inputRef':
+        key = 'ref';
+        break;
+      default:
+        key = prop.key.name;
+    }
+
+    return { ...acc, [key]: prop };
+  }, {});
+
+  Object.keys(propertiesMap).forEach((key) => {
+    let propertyValue;
+
+    if (isConditionalExpression(propertiesMap[key], j)) {
+      const { value } = propertiesMap[key];
+
+      propertyValue = j.jsxExpressionContainer(
+        j.conditionalExpression(value.test, value.consequent, value.alternate),
+      );
+    } else if (propertiesMap[key].value.type === 'Identifier') {
+      const { name } = propertiesMap[key].value;
+
+      propertyValue = j.jsxExpressionContainer(j.jsxIdentifier(name));
+    } else {
+      const { value } = propertiesMap[key].value;
+
+      propertyValue =
+        typeof value === 'number'
+          ? j.jsxExpressionContainer(j.numericLiteral(value))
+          : j.literal(value);
+    }
+
+    newProps[key] = getNewProp(attributes, {
+      j,
+      propertyName: key,
+      propertyValue,
+    });
+  });
+
+  return newProps;
 }
 
 module.exports = pipe([selectCodemod, selectFieldCodemod]);

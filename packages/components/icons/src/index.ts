@@ -9,12 +9,14 @@ export type {
   IconVariant,
 } from '@contentful/f36-icon';
 export { Archive as ArchiveIcon } from './Archive';
+export { ArrowBackward as ArrowBackwardIcon } from './ArrowBackward';
 export { ArrowDown as ArrowDownIcon } from './ArrowDown';
 export { ArrowDownTrimmed as ArrowDownTrimmedIcon } from './ArrowDownTrimmed';
 export { ArrowForward as ArrowForwardIcon } from './ArrowForward';
 export { ArrowForwardTrimmed as ArrowForwardTrimmedIcon } from './ArrowForwardTrimmed';
 export { ArrowUp as ArrowUpIcon } from './ArrowUp';
 export { ArrowUpTrimmed as ArrowUpTrimmedIcon } from './ArrowUpTrimmed';
+export { ArrowUpward as ArrowUpwardIcon } from './ArrowUpward';
 export { Asset as AssetIcon } from './Asset';
 export { AssetTrimmed as AssetTrimmedIcon } from './AssetTrimmed';
 export { Audio as AudioIcon } from './Audio';
@@ -161,6 +163,7 @@ export { ThumbDown as ThumbDownIcon } from './ThumbDown';
 export { ThumbDownTrimmed as ThumbDownTrimmedIcon } from './ThumbDownTrimmed';
 export { ThumbUp as ThumbUpIcon } from './ThumbUp';
 export { ThumbUpTrimmed as ThumbUpTrimmedIcon } from './ThumbUpTrimmed';
+export { TriangleOutline as TriangleOutlineIcon } from './TriangleOutline';
 export { Users as UsersIcon } from './Users';
 export { UsersTrimmed as UsersTrimmedIcon } from './UsersTrimmed';
 export { Video as VideoIcon } from './Video';

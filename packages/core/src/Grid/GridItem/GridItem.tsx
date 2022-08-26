@@ -82,6 +82,8 @@ function _GridItem<E extends React.ElementType = typeof GRID_ITEM_DEFAULT_TAG>(
   );
 }
 
+_GridItem.displayName = 'GridItem';
+
 export const GridItem: PolymorphicComponent<
   GridItemInternalProps,
   typeof GRID_ITEM_DEFAULT_TAG

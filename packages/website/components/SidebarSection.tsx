@@ -32,6 +32,9 @@ export type SidebarLinkType = {
   slug: string;
   type: 'link';
   isNew?: boolean;
+  isBeta?: boolean;
+  isAlpha?: boolean;
+  isDeprecated?: boolean;
 };
 export type SidebarSectionType = {
   title: string;
@@ -72,6 +75,10 @@ function SidebarSubsection({
                 key={link.slug}
                 isActive={isLinkActive(link.slug, currentPage)}
                 href={link.slug}
+                isNew={link.isNew}
+                isBeta={link.isBeta}
+                isAlpha={link.isAlpha}
+                isDeprecated={link.isDeprecated}
                 paddingLeft="spacing2Xl"
               >
                 {link.title}
@@ -126,6 +133,9 @@ export function SidebarSection({
             href={link.slug}
             isExternal={link.slug.includes('https://')}
             isNew={link.isNew}
+            isBeta={link.isBeta}
+            isAlpha={link.isAlpha}
+            isDeprecated={link.isDeprecated}
           >
             {link.title}
           </SidebarLink>

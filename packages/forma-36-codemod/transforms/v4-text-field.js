@@ -1,6 +1,6 @@
 const {
   addImport,
-  addProperty,
+  getNewProp,
   createComponent,
   getComponentLocalName,
   getProperty,
@@ -167,13 +167,24 @@ function textFieldCodemod(file, api) {
             expression: { test, consequent, alternate },
           } = value;
 
-          // if "consequent" is Falsy, it means that the validation message should show when the condition in "test" is false
-          const condition =
-            !consequent.value && consequent.type !== 'Identifier'
-              ? j.unaryExpression('!', j.identifier(test.name))
-              : j.jsxIdentifier(test.name);
+          const isBinaryExpression = test.type === 'BinaryExpression';
 
-          // The message could be in both sides of the contional, so we do this to get the Truthy value
+          let condition;
+
+          // if "consequent" is Falsy, it means that the validation message should show when the condition in "test" is false
+          if (isBinaryExpression) {
+            condition =
+              !consequent.value && consequent.type !== 'Identifier'
+                ? j.unaryExpression('!', j.parenthesizedExpression(test))
+                : test;
+          } else {
+            condition =
+              !consequent.value && consequent.type !== 'Identifier'
+                ? j.unaryExpression('!', j.identifier(test.name))
+                : j.jsxIdentifier(test.name);
+          }
+
+          // The message could be in either sides of the contional, so we do this to get the Truthy value
           const message = [consequent.type, alternate.type].includes(
             'Identifier',
           )
@@ -336,23 +347,6 @@ function transformTextInputProps(textInputPropsObj, { j, attributes }) {
   });
 
   return newProps;
-}
-
-/**
- * Function that adds a new prop to attributes and returns it
- *
- * @returns property
- */
-function getNewProp(attributes, { j, propertyName, propertyValue }) {
-  attributes = addProperty(attributes, {
-    j,
-    propertyName,
-    propertyValue,
-  });
-
-  return getProperty(attributes, {
-    propertyName,
-  });
 }
 
 module.exports = textFieldCodemod;

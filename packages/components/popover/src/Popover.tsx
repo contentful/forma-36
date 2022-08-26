@@ -1,6 +1,7 @@
 import React, { useMemo, useState, useEffect, useCallback } from 'react';
-import { useId, mergeRefs, ExpandProps } from '@contentful/f36-core';
-import { Placement, Modifier } from '@popperjs/core';
+import { useId, mergeRefs } from '@contentful/f36-core';
+import type { ExpandProps } from '@contentful/f36-core';
+import type { Placement, Modifier } from '@popperjs/core';
 import { PopoverContextProvider, PopoverContextType } from './PopoverContext';
 import { usePopper } from 'react-popper';
 
@@ -131,7 +132,7 @@ export function Popover(props: ExpandProps<PopoverProps>) {
 
   const {
     attributes: popperAttributes,
-    forceUpdate,
+    update,
     styles: popperStyles,
   } = usePopper(triggerElement, popoverElement, {
     placement,
@@ -168,12 +169,15 @@ export function Popover(props: ExpandProps<PopoverProps>) {
   }, [isOpen, popoverElement]);
 
   useEffect(() => {
-    if (isOpen && forceUpdate) {
-      forceUpdate();
-    }
-  }, [isOpen, forceUpdate]);
+    const updatePosition = async () => {
+      if (isOpen && update) {
+        await update();
+      }
+    };
+    updatePosition();
+  }, [isOpen, update]);
 
-  const popoverGeneratedId = useId(null, 'popover-content');
+  const popoverGeneratedId = useId(undefined, 'popover-content');
   const popoverId = id || popoverGeneratedId;
 
   const closeAndFocusTrigger = useCallback(() => {
@@ -185,7 +189,7 @@ export function Popover(props: ExpandProps<PopoverProps>) {
 
   const contextValue: PopoverContextType = useMemo(
     () => ({
-      isOpen,
+      isOpen: Boolean(isOpen),
       usePortal,
       renderOnlyWhenOpen,
       getTriggerProps: (_ref = null) => ({

@@ -4,6 +4,7 @@ import { Tooltip } from '@contentful/f36-tooltip';
 import { Text } from '@contentful/f36-typography';
 
 import { BaseCard } from '../BaseCard/BaseCard';
+import type { BaseCardDragHandleProps } from '../BaseCard/BaseCard.types';
 import type { EntryCardInternalProps } from '../EntryCard/EntryCard.types';
 import { getInlineEntryCardStyles } from './InlineEntryCard.styles';
 import { CardActions } from '../BaseCard/CardActions';
@@ -12,7 +13,7 @@ import { SkeletonBodyText, SkeletonContainer } from '@contentful/f36-skeleton';
 
 export type InlineEntryCardInternalProps = Omit<
   EntryCardInternalProps,
-  'icon' | 'withDragHandle' | 'ref' | 'src' | 'type'
+  'icon' | 'ref' | 'src' | 'type' | keyof BaseCardDragHandleProps
 >;
 
 export type InlineEntryCardProps = InlineEntryCardInternalProps;

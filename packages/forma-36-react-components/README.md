@@ -1,6 +1,6 @@
 # Forma 36 React Components
 
-A React component library for [Forma 36](https://f36.contentful.com/) design system created by [Contentful](https://www.contentful.com) and powered by [Storybook](https://storybook.js.org/) and (Next.js)[https://nextjs.org/].
+A React component library for the [Forma 36](https://f36.contentful.com/) design system created by [Contentful](https://www.contentful.com).
 
 ## Table of contents
 
@@ -58,7 +58,7 @@ We use [Storybook](https://storybook.js.org/) to create a development environmen
 yarn storybook
 ```
 
-When creating new component, before you start, please have a look at our [contribution model for Forma 36](https://f36.contentful.com/contributing).
+When creating new component, before you start, please have a look at our [contribution model for Forma 36](https://f36.contentful.com/introduction/contributing).
 
 ### Example component directory structure
 
@@ -78,13 +78,13 @@ A component's directory should resemble the following:
   package.json
 ```
 
-For more detailes you can have a look in document that describes [folder structure in details](https://github.com/contentful/forma-36/blob/master/docs/folder-structure.md).
+For more detailes you can have a look in document that describes [folder structure in details](https://github.com/contentful/forma-36/blob/main/docs/folder-structure.md).
 
 > If you use `yarn generate` in the root of the repo, this structure will be created automatically for you
 
 ### Code Style Guide
 
-[Our code style guide](https://github.com/contentful/forma-36/blob/master/docs/code-style-guide.md)
+[Our code style guide](https://github.com/contentful/forma-36/blob/main/docs/code-style-guide.md)
 
 ### Component principles
 
@@ -132,7 +132,7 @@ yarn test --watch
 
 ## Building
 
-We are using a combination of [Webpack](https://webpack.js.org/) and [Babel](https://babeljs.io/) to create builds of our component library. We use Webpack with the `tools/webpack.production.config.js` config to build a stylesheet including all CSS used for our components using the ExtractTextPlugin. Babel is used for transpiling our React components into CommonJS modules. Babel and Webpack both output the build to the `dist` directory.
+We are using [Parcel](https://parceljs.org/) to build our component library. Each component builds to its own `dist` directory.
 
 ### Create a build of the library
 

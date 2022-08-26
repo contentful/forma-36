@@ -606,7 +606,7 @@
       "name": "Kathrin Holzmann",
       "avatar_url": "https://avatars.githubusercontent.com/u/1789174?v=4",
       "profile": "https://github.com/Lelith",
-       "contributions": [
+      "contributions": [
         "code",
         "maintenance"
       ]
@@ -619,6 +619,25 @@
       "contributions": [
         "code",
         "maintenance"
+      ]
+    },
+    {
+      "login": "ghepting",
+      "name": "Gary Hepting",
+      "avatar_url": "https://avatars.githubusercontent.com/u/492573?v=4",
+      "profile": "https://github.com/ghepting",
+      "contributions": [
+        "bug",
+        "code"
+      ]
+    },
+    {
+      "login": "MohammedAl-Rowad",
+      "name": "Rowadz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38977667?v=4",
+      "profile": "https://rowadz.com/",
+      "contributions": [
+        "code"
       ]
     }
   ],

@@ -6,10 +6,10 @@ import React, {
 } from 'react';
 import { cx } from 'emotion';
 
-import {
+import { Box } from '@contentful/f36-core';
+import type {
   PolymorphicProps,
   PolymorphicComponent,
-  Box,
   ExpandProps,
 } from '@contentful/f36-core';
 import getInputStyles from './BaseInput.styles';
@@ -146,6 +146,8 @@ function _BaseInput<E extends React.ElementType = typeof INPUT_DEFAULT_TAG>(
 
   return inputContent();
 }
+
+_BaseInput.displayName = 'BaseInput';
 
 export const BaseInput: PolymorphicComponent<
   ExpandProps<BaseInputInternalProps>,

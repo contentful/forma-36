@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import type { HeadingElement } from '@contentful/f36-typography';
-import { useId, Box } from '@contentful/f36-core';
+import { useId, Box, useControllableState } from '@contentful/f36-core';
 
 import { AccordionHeader } from '../AccordionHeader/AccordionHeader';
 import { AccordionPanel } from '../AccordionPanel/AccordionPanel';
@@ -24,15 +24,21 @@ export interface AccordionItemProps extends CommonProps {
   /**
    * A function to be called when the accordion item is opened
    */
-  onExpand?: Function;
+  onExpand?: () => void;
   /**
    * A function to be called when the accordion item is closed
    */
-  onCollapse?: Function;
+  onCollapse?: () => void;
   /**
    * Specify the alignment of the chevron inside the accordion header
    */
   align?: 'start' | 'end';
+
+  /**
+   * By default, the AccordionItem is uncontrolled (manage it's expanded state by itself)
+   * But you can make it controlled by providing boolean
+   */
+  isExpanded?: boolean;
 }
 
 const _AccordionItem = (
@@ -45,23 +51,25 @@ const _AccordionItem = (
     children,
     align = 'end',
     className,
+    isExpanded,
     ...otherProps
   }: ExpandProps<AccordionItemProps>,
   ref: React.Ref<HTMLLIElement>,
 ) => {
   const styles = getAccordionItemStyles({ className });
   const id = useId();
-  const [isExpanded, setIsExpanded] = useState(false);
+  const { isOpen, handleOpen, handleClose } = useControllableState({
+    isOpen: isExpanded,
+    onOpen: onExpand,
+    onClose: onCollapse,
+  });
 
   const handleOnClick = () => {
-    if (!isExpanded && onExpand) {
-      onExpand();
+    if (isOpen) {
+      handleClose();
+    } else {
+      handleOpen();
     }
-    if (isExpanded && onCollapse) {
-      onCollapse();
-    }
-
-    setIsExpanded(!isExpanded);
   };
 
   return (
@@ -74,7 +82,7 @@ const _AccordionItem = (
     >
       <AccordionHeader
         onClick={handleOnClick}
-        isExpanded={isExpanded}
+        isExpanded={isOpen}
         element={titleElement}
         ariaId={id}
         align={align}
@@ -82,7 +90,7 @@ const _AccordionItem = (
         {title}
       </AccordionHeader>
 
-      <AccordionPanel ariaId={id} isExpanded={isExpanded}>
+      <AccordionPanel ariaId={id} isExpanded={isOpen}>
         {children}
       </AccordionPanel>
     </Box>

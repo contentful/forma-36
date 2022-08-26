@@ -35,6 +35,12 @@ export default function IconVariantsExample() {
         </Flex>{' '}
         <Text>Secondary</Text>
       </Flex>
+      <Flex alignItems="center">
+        <Flex marginRight="spacingS">
+          <CalendarIcon variant="muted" />
+        </Flex>{' '}
+        <Text>Muted</Text>
+      </Flex>
       <Flex
         style={{ backgroundColor: '#8091a5' }}
         alignItems="center"

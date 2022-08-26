@@ -206,6 +206,8 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
   );
 }
 
+_BaseCard.displayName = 'BaseCard';
+
 export const BaseCard: PolymorphicComponent<
   BaseCardInternalProps,
   typeof BASE_CARD_DEFAULT_TAG

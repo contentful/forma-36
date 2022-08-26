@@ -6,15 +6,14 @@ const {
 } = require('../utils');
 const { getFormaImport } = require('../utils/config');
 const { pipe } = require('./common/pipe');
-const _ = require('lodash');
 
 const applyMarginIfNotWrapped = (attributes, { element, j }) => {
   let parent = element.parentPath;
   let isWrappedInTypography = false;
   while (parent) {
     if (
-      _.get(parent, 'value.type') === 'JSXElement' &&
-      _.get(parent, 'value.openingElement.name.name') === 'Typography'
+      parent.value?.type === 'JSXElement' &&
+      parent.value?.openingElement?.name?.name === 'Typography'
     ) {
       isWrappedInTypography = true;
     }

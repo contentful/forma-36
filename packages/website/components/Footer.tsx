@@ -12,11 +12,10 @@ const styles = {
   footer: css({
     gridAutoRows: 'min-content',
     alignItems: 'flex-start',
+    justifyItems: 'flex-start',
     marginTop: tokens.spacing2Xl,
-    backgroundColor: tokens.gray100,
     padding: tokens.spacingL,
   }),
-  logo: css({ justifySelf: 'flex-end' }),
 };
 
 export function Footer() {
@@ -38,12 +37,13 @@ export function Footer() {
           />
           <FooterLink
             href="https://www.contentful.com/developers/"
-            label="Join the developer comunnity"
+            label="Join the developer community"
           />
           <FooterLink
             href="https://forms.gle/qC7LLbiy4CcF5HPLA"
             label="Give us feedback"
           />
+          <FooterLink isExternal={false} href="/whats-new" label="What's new" />
         </Flex>
 
         <Flex flexDirection="column" alignItems="flex-start" gap="spacingM">
@@ -77,7 +77,6 @@ export function Footer() {
         href="https://www.contentful.com"
         target="_blank"
         rel="noopener noreferrer"
-        className={styles.logo}
       >
         <Image src={contentfulLogoSVG} alt="Contentful’s logo" />
       </a>

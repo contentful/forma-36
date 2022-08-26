@@ -1,6 +1,6 @@
 import React, { forwardRef, useCallback, FormEvent } from 'react';
 
-import {
+import type {
   CommonProps,
   PropsWithHTMLElement,
   ExpandProps,
@@ -37,5 +37,7 @@ function _Form(
     </form>
   );
 }
+
+_Form.displayName = 'Form';
 
 export const Form = forwardRef(_Form);

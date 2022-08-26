@@ -36,15 +36,18 @@ export interface AssetProps extends CommonProps {
   type?: AssetType;
 }
 
-export function Asset({
-  className,
-  src,
-  status,
-  testId = 'cf-ui-asset',
-  title,
-  type = 'image',
-  ...otherProps
-}: AssetProps) {
+function _Asset(
+  {
+    className,
+    src,
+    status,
+    testId = 'cf-ui-asset',
+    title,
+    type = 'image',
+    ...otherProps
+  }: AssetProps,
+  ref: React.Ref<any>,
+) {
   const styles = getAssetStyles();
   const isImage = src && src !== '' && type === 'image';
 
@@ -55,6 +58,7 @@ export function Asset({
     <Box
       className={cx(styles.relative, className)}
       testId={testId}
+      ref={ref}
       {...otherProps}
     >
       {showPreview ? (
@@ -103,3 +107,7 @@ export function Asset({
     </Box>
   );
 }
+
+_Asset.displayName = 'Asset';
+
+export const Asset = React.forwardRef(_Asset);

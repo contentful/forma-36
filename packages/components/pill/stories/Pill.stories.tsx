@@ -4,6 +4,7 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
 import { Box, Flex } from '@contentful/f36-core';
 import { InfoCircleIcon } from '@contentful/f36-icons';
+import { css } from 'emotion';
 
 import { Pill, PillInternalProps } from '../src/Pill';
 
@@ -196,4 +197,46 @@ Overview.args = {
       style={{ padding: '0.375rem 0.625rem', paddingRight: 0 }}
     />
   ),
+};
+
+export const InSmallContainer: Story<PillInternalProps> = (args) => {
+  const styles = {
+    pill: css({
+      maxWidth: 200,
+    }),
+  };
+  return (
+    <>
+      <Flex flexDirection="column" marginBottom="spacingL">
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Pill with very long text in a small container
+        </SectionHeading>
+        <Flex flexDirection="row" marginBottom="spacingM">
+          <Box marginRight="spacingXs">
+            <Pill
+              draggable
+              label={args.label}
+              className={styles.pill}
+              onDrag={args.onDrag}
+              onClose={args.onClose}
+            />
+          </Box>
+          <Box>
+            <Pill
+              draggable
+              label={args.label}
+              className={styles.pill}
+              onDrag={args.onDrag}
+              onClose={args.onClose}
+            />
+          </Box>
+        </Flex>
+      </Flex>
+    </>
+  );
+};
+
+InSmallContainer.args = {
+  label: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac libero at dui auctor  convallis eget non dolor. Integer sodales, lacus et tempus faucibus, elit elit condimentum metus, a 
+    dignissim velit ipsum vel nisl`,
 };

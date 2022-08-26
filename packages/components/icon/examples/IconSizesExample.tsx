@@ -17,6 +17,9 @@ export default function IconSizesExample() {
       <Flex alignItems="center">
         <CalendarIcon size="large" /> <Text>Large</Text>
       </Flex>
+      <Flex alignItems="center">
+        <CalendarIcon size="xlarge" /> <Text>Extra large</Text>
+      </Flex>
     </Stack>
   );
 }

@@ -54,9 +54,9 @@ const getUniqueId = (): number => {
   return uniqueId;
 };
 
-export function NotificationsManager({
+export const NotificationsManager = ({
   register,
-}: NotificationsManagerProps): React.ReactElement {
+}: NotificationsManagerProps): React.ReactElement => {
   const [items, setItems] = useAsyncState<NotificationProps[]>([]);
   const [placement, setPlacementState] = useState('bottom');
   const [placementOffset, setPlacementOffset] = useState(20);
@@ -186,4 +186,6 @@ export function NotificationsManager({
       </div>
     </div>
   );
-}
+};
+
+NotificationsManager.displayName = 'NotificationsManager';
