@@ -146,14 +146,15 @@ describe('Autocomplete', () => {
       renderComponent({ noMatchesMessage, items: [] });
 
       const input = screen.getByTestId('cf-autocomplete-input');
-      const list = screen.getByTestId('cf-autocomplete-container');
 
       // type anything to open the list
       fireEvent.input(input, {
         target: {
-          value: 'a',
+          value: 'tesst',
         },
       });
+
+      const list = screen.getByTestId('cf-autocomplete-container');
 
       // checks if the list is visible and it only shows the "No matches" message
       await waitFor(() => {
