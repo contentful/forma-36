@@ -93,8 +93,7 @@ module.exports = function (plop) {
       });
       actions.push({
         type: 'modify',
-        path:
-          '../packages/forma-36-codemod/transforms/__tests__/{{context}}.test.js',
+        path: '../packages/forma-36-codemod/transforms/__tests__/{{context}}.test.js',
         pattern: /(const tests = \[\n)/,
         template: "$1'{{transform}}',\n",
         data: { context, transform },

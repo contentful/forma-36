@@ -19,9 +19,8 @@ export interface StackInternalProps
   spacing?: Spacing;
 }
 
-export type StackProps<
-  E extends React.ElementType = typeof STACK_DEFAULT_TAG
-> = PolymorphicProps<StackInternalProps, E>;
+export type StackProps<E extends React.ElementType = typeof STACK_DEFAULT_TAG> =
+  PolymorphicProps<StackInternalProps, E>;
 
 const STACK_DEFAULT_TAG = 'div';
 

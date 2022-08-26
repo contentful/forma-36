@@ -31,7 +31,7 @@ type BasePropsWithDragHandle = Omit<BaseProps, 'padding'> &
 export type CardInternalProps = BaseProps | BasePropsWithDragHandle;
 
 export type CardProps<
-  E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG
+  E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG,
 > = PolymorphicProps<CardInternalProps, E>;
 
 function _Card<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(

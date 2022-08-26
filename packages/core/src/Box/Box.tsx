@@ -24,9 +24,8 @@ export interface BoxInternalProps
   as?: React.ElementType<any>;
 }
 
-export type BoxProps<
-  E extends React.ElementType = typeof BOX_DEFAULT_TAG
-> = PolymorphicProps<BoxInternalProps, E>;
+export type BoxProps<E extends React.ElementType = typeof BOX_DEFAULT_TAG> =
+  PolymorphicProps<BoxInternalProps, E>;
 
 export function useBox<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
   props: BoxProps<E>,

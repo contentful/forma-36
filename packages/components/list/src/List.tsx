@@ -15,9 +15,8 @@ export interface ListInternalProps extends CommonProps {
   children?: React.ReactNode;
 }
 
-export type ListProps<
-  E extends React.ElementType = typeof LIST_DEFAULT_TAG
-> = PolymorphicProps<ListInternalProps, E>;
+export type ListProps<E extends React.ElementType = typeof LIST_DEFAULT_TAG> =
+  PolymorphicProps<ListInternalProps, E>;
 
 /**
  * List is component that helps with vertical indexing of content.

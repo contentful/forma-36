@@ -122,28 +122,28 @@ export const Tooltip = ({
   const elementRef = useRef(null);
   const popperRef = useRef(null);
   const [arrowRef, setArrowRef] = useState<HTMLSpanElement | null>(null);
-  const { styles: popperStyles, attributes, update } = usePopper(
-    elementRef.current,
-    popperRef.current,
-    {
-      placement: placement,
-      modifiers: [
-        {
-          name: 'arrow',
-          options: {
-            element: arrowRef,
-            padding: parseFloat(tokens.borderRadiusSmall),
-          },
+  const {
+    styles: popperStyles,
+    attributes,
+    update,
+  } = usePopper(elementRef.current, popperRef.current, {
+    placement: placement,
+    modifiers: [
+      {
+        name: 'arrow',
+        options: {
+          element: arrowRef,
+          padding: parseFloat(tokens.borderRadiusSmall),
         },
-        {
-          name: 'offset',
-          options: {
-            offset: [0, 10],
-          },
+      },
+      {
+        name: 'offset',
+        options: {
+          offset: [0, 10],
         },
-      ],
-    },
-  );
+      },
+    ],
+  });
 
   // necessary to update tooltip position in case the content is being updated
   useEffect(() => {

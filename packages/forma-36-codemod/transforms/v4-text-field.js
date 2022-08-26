@@ -72,14 +72,11 @@ function textFieldCodemod(file, api) {
       });
 
       if (textInputPropsObj) {
-        const {
-          isDisabled,
-          spreadedPropsNames,
-          ...otherProps
-        } = transformTextInputProps(textInputPropsObj, {
-          j,
-          attributes,
-        });
+        const { isDisabled, spreadedPropsNames, ...otherProps } =
+          transformTextInputProps(textInputPropsObj, {
+            j,
+            attributes,
+          });
 
         formControlProps.push(isDisabled);
         textInputProps.push(...Object.values(otherProps));
