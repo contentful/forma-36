@@ -1,24 +1,21 @@
 import React from 'react';
 
-import {
-  SkeletonImage,
-  SkeletonImageProps,
-} from '../src/SkeletonImage/SkeletonImage';
-import { SkeletonContainer } from '../src/SkeletonContainer/SkeletonContainer';
+import { Skeleton } from '../src/index';
+import type { SkeletonImageProps } from '../src/SkeletonImage/SkeletonImage';
 
 export default {
   title: 'Components/Skeleton/SkeletonImage',
-  component: SkeletonImage,
+  component: Skeleton.Image,
   parameters: {
-    propTypes: [SkeletonImage['__docgenInfo']],
+    propTypes: [Skeleton.Image['__docgenInfo']],
   },
   argTypes: {},
 };
 
 export const Basic = (args: SkeletonImageProps) => (
-  <SkeletonContainer>
-    <SkeletonImage {...args} />
-  </SkeletonContainer>
+  <Skeleton.Container>
+    <Skeleton.Image {...args} />
+  </Skeleton.Container>
 );
 
 Basic.args = {
