@@ -36,7 +36,7 @@
     "prism-react-renderer": "1.2.1",
     "qs": "^6.10.1",
     "react": "16.14.0",
-    "react-copy-to-clipboard": "^5.0.4",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-docgen-typescript": "^2.2.2",
     "react-dom": "16.14.0",
     "react-focus-lock": "^2.9.1",
@@ -54,7 +54,7 @@
   "devDependencies": {
     "@contentful/rich-text-types": "^15.11.1",
     "@emotion/babel-preset-css-prop": "^10.2.1",
-    "@next/eslint-plugin-next": "^12.2.2",
+    "@next/eslint-plugin-next": "^12.2.5",
     "babel-plugin-emotion": "10.0.33",
     "broken-link-checker": "^0.7.8",
     "dotenv": "^10.0.0",
