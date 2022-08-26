@@ -24,7 +24,7 @@ interface MenuItemInternalProps extends CommonProps {
 }
 
 export type MenuItemProps<
-  E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG
+  E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG,
 > = PolymorphicProps<MenuItemInternalProps, E>;
 
 function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(

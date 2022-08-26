@@ -145,14 +145,11 @@ function selectFieldCodemod(file, api) {
       });
 
       if (selectPropsObj) {
-        const {
-          isDisabled,
-          spreadedPropsNames,
-          ...otherProps
-        } = transformSelectProps(selectPropsObj, {
-          j,
-          attributes,
-        });
+        const { isDisabled, spreadedPropsNames, ...otherProps } =
+          transformSelectProps(selectPropsObj, {
+            j,
+            attributes,
+          });
 
         if (isDisabled) {
           formControlProps.push(isDisabled);

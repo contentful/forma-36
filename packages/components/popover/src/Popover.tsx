@@ -274,8 +274,10 @@ const sameWidth: Modifier<'sameWidth', any> = {
   fn: ({ state }) => {
     state.styles.popper.width = `${state.rects.reference.width}px`;
   },
-  effect: ({ state }) => () => {
-    const reference = state.elements.reference as HTMLElement;
-    state.elements.popper.style.width = `${reference.offsetWidth}px`;
-  },
+  effect:
+    ({ state }) =>
+    () => {
+      const reference = state.elements.reference as HTMLElement;
+      state.elements.popper.style.width = `${reference.offsetWidth}px`;
+    },
 };

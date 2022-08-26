@@ -45,9 +45,8 @@ export interface GridInternalProps
 
 const GRID_DEFAULT_TAG = 'div';
 
-export type GridProps<
-  E extends React.ElementType = typeof GRID_DEFAULT_TAG
-> = PolymorphicProps<GridInternalProps, E>;
+export type GridProps<E extends React.ElementType = typeof GRID_DEFAULT_TAG> =
+  PolymorphicProps<GridInternalProps, E>;
 
 function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
   {

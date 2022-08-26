@@ -23,11 +23,11 @@ export interface FormControlInternalProps
 }
 
 export type FormControlProps<
-  E extends React.ElementType = typeof FORM_CONTROL_DEFAULT_TAG
+  E extends React.ElementType = typeof FORM_CONTROL_DEFAULT_TAG,
 > = PolymorphicProps<FormControlInternalProps, E>;
 
 function _FormControl<
-  E extends React.ElementType = typeof FORM_CONTROL_DEFAULT_TAG
+  E extends React.ElementType = typeof FORM_CONTROL_DEFAULT_TAG,
 >(
   {
     as,

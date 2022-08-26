@@ -84,13 +84,12 @@ export type IconInternalProps = CommonProps & {
   viewBox?: SVGAttributes<SVGSVGElement>['viewBox'];
 };
 
-export type IconProps<
-  E extends React.ElementType = IconComponent
-> = PolymorphicProps<
-  IconInternalProps,
-  E,
-  'as' | 'children' | 'width' | 'height'
->;
+export type IconProps<E extends React.ElementType = IconComponent> =
+  PolymorphicProps<
+    IconInternalProps,
+    E,
+    'as' | 'children' | 'width' | 'height'
+  >;
 
 const useAriaHidden = (
   props: Pick<

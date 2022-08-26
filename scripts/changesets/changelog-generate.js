@@ -1,6 +1,6 @@
 const fs = require('fs');
-const assembleReleasePlan = require('@changesets/assemble-release-plan')
-  .default;
+const assembleReleasePlan =
+  require('@changesets/assemble-release-plan').default;
 const { read } = require('@changesets/config');
 const { readPreState } = require('@changesets/pre');
 const readChangesets = require('@changesets/read').default;

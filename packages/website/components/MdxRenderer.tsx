@@ -9,14 +9,8 @@ import { StaticSource } from './LiveEditor/StaticSource';
 import tokens from '@contentful/f36-tokens';
 import { CustomHeading2 } from './CustomHeading2';
 
-const {
-  DisplayText,
-  Subheading,
-  Paragraph,
-  TextLink,
-  List,
-  Table,
-} = f36Components;
+const { DisplayText, Subheading, Paragraph, TextLink, List, Table } =
+  f36Components;
 
 /* eslint-disable react/display-name */
 /* eslint-disable @next/next/no-img-element */

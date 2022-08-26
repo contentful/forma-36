@@ -19,7 +19,7 @@ import { EntryCardInternalProps, EntryCardSize } from './EntryCard.types';
 const ENTRY_CARD_DEFAULT_TAG = 'article';
 
 export type EntryCardProps<
-  E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG
+  E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG,
 > = PolymorphicProps<EntryCardInternalProps, E>;
 
 function EntryCardTitle({
@@ -73,7 +73,7 @@ function EntryCardDescription({
 EntryCardDescription.displayName = 'EntryCardDescription';
 
 function _EntryCard<
-  E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG
+  E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG,
 >(
   {
     actions,

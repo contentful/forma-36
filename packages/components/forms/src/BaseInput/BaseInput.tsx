@@ -18,7 +18,7 @@ import { BaseInputInternalProps } from './types';
 const INPUT_DEFAULT_TAG = 'input';
 
 export type BaseInputProps<
-  E extends React.ElementType = typeof INPUT_DEFAULT_TAG
+  E extends React.ElementType = typeof INPUT_DEFAULT_TAG,
 > = PolymorphicProps<
   BaseInputInternalProps,
   E,
