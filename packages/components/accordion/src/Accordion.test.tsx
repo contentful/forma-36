@@ -5,12 +5,16 @@ import { axe } from '@/scripts/test/axeHelper';
 
 import { Accordion } from '.';
 
-jest.mock('@contentful/f36-core', () => ({
-  ...jest.requireActual('@contentful/f36-core'),
-  useId: () => {
-    return 'id';
-  },
-}));
+jest.mock('@contentful/f36-core', () => {
+  const actual = jest.requireActual('@contentful/f36-core');
+
+  return {
+    ...actual,
+    useId: () => {
+      return 'id';
+    },
+  };
+});
 
 describe('Accordion', () => {
   it('opens the accordion panel when the header is clicked', () => {
