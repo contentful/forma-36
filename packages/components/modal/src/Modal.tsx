@@ -1,8 +1,7 @@
 import * as React from 'react';
 import ReactModal from 'react-modal';
 
-import { Box } from '@contentful/f36-core';
-import type { CommonProps, ExpandProps } from '@contentful/f36-core';
+import { Box, type CommonProps, type ExpandProps } from '@contentful/f36-core';
 
 import { ModalHeader, ModalHeaderProps } from './ModalHeader/ModalHeader';
 import { ModalContent, ModalContentProps } from './ModalContent/ModalContent';

@@ -2,11 +2,13 @@ import React, { useCallback, useState } from 'react';
 import { cx } from 'emotion';
 import { useCombobox } from 'downshift';
 
-import { mergeRefs } from '@contentful/f36-core';
-import type { CommonProps, ExpandProps } from '@contentful/f36-core';
+import {
+  mergeRefs,
+  type CommonProps,
+  type ExpandProps,
+} from '@contentful/f36-core';
 import { IconButton } from '@contentful/f36-button';
-import { TextInput } from '@contentful/f36-forms';
-import type { TextInputProps } from '@contentful/f36-forms';
+import { TextInput, type TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover } from '@contentful/f36-popover';

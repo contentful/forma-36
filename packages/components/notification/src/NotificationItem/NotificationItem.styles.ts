@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import type { CSSObject } from '@emotion/serialize';
 import tokens from '@contentful/f36-tokens';
-import { NotificationVariant } from '../types';
+import type { NotificationVariant } from '../types';
 
 const variantColors = {
   positive: tokens.green600,

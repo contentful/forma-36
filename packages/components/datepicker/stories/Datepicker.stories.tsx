@@ -1,14 +1,13 @@
 import React, { useRef, useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-
-import { Datepicker, Calendar } from '../src';
-import type { DatepickerProps } from '../src/Datepicker';
 import { FormControl, TextInput } from '@contentful/f36-forms';
 import { format, parse, isValid } from 'date-fns';
 import { Popover } from '@contentful/f36-popover';
 import FocusLock from 'react-focus-lock';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+
+import { Datepicker, Calendar, type DatepickerProps } from '../src/index';
 
 const testDate = new Date('2022-04-15');
 

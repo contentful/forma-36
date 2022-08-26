@@ -4,14 +4,13 @@ import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
 import { ClockIcon } from '@contentful/f36-icons';
-
-import { EntryCard } from '../src';
-import type { EntryCardProps } from '../src';
 import {
   SortableContainer,
   SortableElement,
   SortableHandle,
 } from 'react-sortable-hoc';
+
+import { EntryCard, type EntryCardProps } from '../src';
 
 export default {
   argTypes: {

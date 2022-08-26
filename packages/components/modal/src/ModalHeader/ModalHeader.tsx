@@ -1,8 +1,11 @@
 import React from 'react';
 import { cx } from 'emotion';
 import { CloseIcon } from '@contentful/f36-icons';
-import { Flex } from '@contentful/f36-core';
-import type { PropsWithHTMLElement, CommonProps } from '@contentful/f36-core';
+import {
+  Flex,
+  type PropsWithHTMLElement,
+  type CommonProps,
+} from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
 import { Subheading } from '@contentful/f36-typography';
 

@@ -1,8 +1,8 @@
 import type { CommonProps } from '@contentful/f36-core';
 import {
-  FocusEventHandler,
-  ChangeEventHandler,
-  KeyboardEventHandler,
+  type FocusEventHandler,
+  type ChangeEventHandler,
+  type KeyboardEventHandler,
 } from 'react';
 
 export interface BaseInputInternalProps extends CommonProps {

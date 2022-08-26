@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { type MouseEventHandler } from 'react';
 import { cx } from 'emotion';
-import type { MouseEventHandler } from 'react';
-
 import { EntityStatusBadge } from '@contentful/f36-badge';
-import type {
-  CommonProps,
-  EntityStatus,
-  PickUnion,
+import {
+  Flex,
+  Box,
+  type CommonProps,
+  type EntityStatus,
+  type PickUnion,
 } from '@contentful/f36-core';
 import {
   AssetIcon,
@@ -16,19 +16,16 @@ import {
 } from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
 import { Text } from '@contentful/f36-typography';
-import { DragHandle } from '@contentful/f36-drag-handle';
-import type { DragHandleProps } from '@contentful/f36-drag-handle';
+import { DragHandle, type DragHandleProps } from '@contentful/f36-drag-handle';
 import { Button } from '@contentful/f36-button';
 import { Menu } from '@contentful/f36-menu';
-
-import { getEntityListItemStyles } from './EntityListItem.styles';
-
 import {
   SkeletonBodyText,
   SkeletonContainer,
   SkeletonImage,
 } from '@contentful/f36-skeleton';
-import { Flex, Box } from '@contentful/f36-core';
+
+import { getEntityListItemStyles } from './EntityListItem.styles';
 
 type EntityListItemStatus = PickUnion<
   EntityStatus,

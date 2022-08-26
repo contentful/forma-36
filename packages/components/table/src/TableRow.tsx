@@ -1,11 +1,11 @@
 import { css, cx } from 'emotion';
 import React, { forwardRef } from 'react';
 import tokens from '@contentful/f36-tokens';
-import { Box } from '@contentful/f36-core';
-import type {
-  CommonProps,
-  PropsWithHTMLElement,
-  ExpandProps,
+import {
+  Box,
+  type CommonProps,
+  type PropsWithHTMLElement,
+  type ExpandProps,
 } from '@contentful/f36-core';
 
 const getStyles = () => {

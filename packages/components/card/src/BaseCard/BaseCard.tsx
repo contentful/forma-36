@@ -1,27 +1,26 @@
 import { cx } from 'emotion';
-import React, { forwardRef, useCallback, useState } from 'react';
-import type {
-  FocusEventHandler,
-  KeyboardEventHandler,
-  MouseEvent,
-  MouseEventHandler,
+import React, {
+  forwardRef,
+  useCallback,
+  useState,
+  type FocusEventHandler,
+  type KeyboardEventHandler,
+  type MouseEvent,
+  type MouseEventHandler,
 } from 'react';
-import { Box } from '@contentful/f36-core';
-import type {
-  PolymorphicComponent,
-  PolymorphicProps,
+import {
+  Box,
+  type PolymorphicComponent,
+  type PolymorphicProps,
 } from '@contentful/f36-core';
-
 import { DragHandle } from '@contentful/f36-drag-handle';
-
-import { getBaseCardStyles } from './BaseCard.styles';
-
 import {
   SkeletonBodyText,
   SkeletonContainer,
   SkeletonDisplayText,
 } from '@contentful/f36-skeleton';
 
+import { getBaseCardStyles } from './BaseCard.styles';
 import { DefaultCardHeader, stopEvents } from './DefaultCardHeader';
 import type { BaseCardInternalProps } from './BaseCard.types';
 

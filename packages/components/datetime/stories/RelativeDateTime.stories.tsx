@@ -1,11 +1,12 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-
 import { Flex, Grid } from '@contentful/f36-core';
 import { SectionHeading, Paragraph } from '@contentful/f36-typography';
 
-import { RelativeDateTime } from '../src/RelativeDateTime/RelativeDateTime';
-import type { RelativeDateTimeProps } from '../src/RelativeDateTime/RelativeDateTime';
+import {
+  RelativeDateTime,
+  type RelativeDateTimeProps,
+} from '../src/RelativeDateTime/RelativeDateTime';
 
 export default {
   title: 'Components/DateTime/RelativeDateTime',

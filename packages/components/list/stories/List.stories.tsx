@@ -3,7 +3,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
-import { List, ListProps } from '../src';
+import { List, type ListProps } from '../src';
 
 export default {
   title: 'Components/List',

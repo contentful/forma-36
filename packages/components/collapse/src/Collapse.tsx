@@ -1,6 +1,10 @@
 import React, { useLayoutEffect, useRef } from 'react';
-import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
-import { Box } from '@contentful/f36-core';
+import {
+  Box,
+  type CommonProps,
+  type PropsWithHTMLElement,
+} from '@contentful/f36-core';
+
 import { getCollapseStyles } from './Collapse.styles';
 
 interface CollapseInternalProps extends CommonProps {

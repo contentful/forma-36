@@ -1,7 +1,10 @@
 import React from 'react';
 
-import type { PropsWithHTMLElement, CommonProps } from '@contentful/f36-core';
-import { Flex } from '@contentful/f36-core';
+import {
+  Flex,
+  type PropsWithHTMLElement,
+  type CommonProps,
+} from '@contentful/f36-core';
 import { ButtonGroup } from '@contentful/f36-button';
 
 interface ModalControlsInternalProps extends CommonProps {

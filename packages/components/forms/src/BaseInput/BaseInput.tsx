@@ -1,17 +1,17 @@
 import React, {
   useCallback,
-  FocusEvent,
-  KeyboardEvent,
-  ChangeEvent,
+  type FocusEvent,
+  type KeyboardEvent,
+  type ChangeEvent,
 } from 'react';
 import { cx } from 'emotion';
-
-import { Box } from '@contentful/f36-core';
-import type {
-  PolymorphicProps,
-  PolymorphicComponent,
-  ExpandProps,
+import {
+  Box,
+  type PolymorphicProps,
+  type PolymorphicComponent,
+  type ExpandProps,
 } from '@contentful/f36-core';
+
 import getInputStyles from './BaseInput.styles';
 import { BaseInputInternalProps } from './types';
 

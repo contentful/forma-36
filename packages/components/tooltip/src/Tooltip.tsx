@@ -2,22 +2,19 @@ import React, {
   useEffect,
   useState,
   useRef,
-  MouseEvent,
-  FocusEvent,
-  CSSProperties,
+  type MouseEvent,
+  type FocusEvent,
+  type CSSProperties,
 } from 'react';
 import { usePopper } from 'react-popper';
 import type { Placement } from '@popperjs/core';
 import { cx } from 'emotion';
 import type * as CSS from 'csstype';
+import tokens from '@contentful/f36-tokens';
+import { Portal } from '@contentful/f36-utils';
+import { Box, useId, type CommonProps } from '@contentful/f36-core';
 
 import { getStyles } from './Tooltip.styles';
-
-import tokens from '@contentful/f36-tokens';
-
-import { Portal } from '@contentful/f36-utils';
-import type { CommonProps } from '@contentful/f36-core';
-import { Box, useId } from '@contentful/f36-core';
 
 export type TooltipPlacement = Placement;
 
