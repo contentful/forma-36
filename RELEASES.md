@@ -34,3 +34,21 @@ You can read more about fixed version on changeset [here](https://github.com/cha
 We decided to use changesets to have a fixed version across our components packages and our umbrella package, and so we can have a changelog with the changes on all packages to display on our repository and also on our documentation [website](https://f36.contentful.com/whats-new).
 
 Also as we moved towards `turborepo`, we also decided to remove lerna entirely and changesets is also the recommended tool for versioning on `turborepo` [website](https://turborepo.org/docs/guides/migrate-from-lerna#package-publishing-versioning-and-changelog-generation)
+
+# Release process
+
+Our releases are managed automatically through the CI. It only generates new release if a new changeset is present in the PR that was merged into the main branch.
+
+The CI will use the changeset publish method to update the versions on the packages and publish to NPM, and then based on which packages were published, it will generate the tags and releases and add them to Github.
+
+It also updates the [What's new](https://f36.contentful.com/whats-new) page that we show in our [website](https://f36.contentful.com/whats-new). In order to update the website daily we had to create a custom flow where we group all changes by package.
+
+## Generating What's new page
+
+What we are doing in this custom flow, is that we store all changesets in a single file from where we later extract the changes to add to the page, that is handled by the CI, on the release job, and uses the [changelog-generate.js](https://github.com/contentful/forma-36/blob/fe934ff657852993ef321348651cbce0a68dc349/scripts/changesets/changelog-generate.js) script file.
+
+This file reads and parse the `.changelogrc` file, and adds the news changesets to it, so it contains all changes on the last merges, it groups the changes by packages.
+
+After updating the `.changelogrc` file it uses the changeset version to update the packages `CHANGELOG` files, and then calls [generate-releases.js](https://github.com/contentful/forma-36/blob/fe934ff657852993ef321348651cbce0a68dc349/scripts/changesets/generate-releases.js) script file, that handles publishing to NPM and generating the releases on Github.
+
+Every day there is a task running on the CI that calls the [changelog-write.js](https://github.com/contentful/forma-36/blob/fe934ff657852993ef321348651cbce0a68dc349/scripts/changesets/changelog-write.js). This file checks for contents on the `.changelogrc` file and generates the [What's new](https://f36.contentful.com/whats-new) page based on those. Then it empty the files to not have duplicated contents when it needs to generate the page again.
