@@ -10,9 +10,7 @@ jest.mock('@contentful/f36-core', () => {
 
   return {
     ...actual,
-    useId: () => {
-      return 'id';
-    },
+    useId: (id) => id,
   };
 });
 
