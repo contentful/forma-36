@@ -310,70 +310,72 @@ function _Autocomplete<ItemType>(
           </div>
         </Popover.Trigger>
 
-        <Popover.Content
-          {...menuProps}
-          ref={mergeRefs(menuProps.ref, listRef)}
-          className={styles.content}
-          testId="cf-autocomplete-container"
-        >
-          {isLoading &&
-            [...Array(3)].map((_, index) => (
-              <div key={index} className={cx(styles.item, styles.disabled)}>
-                <ListItemLoadingState />
-              </div>
-            ))}
-
-          {!isLoading && isShowingNoMatches && (
-            <div className={styles.item}>
-              <Subheading className={styles.noMatchesTitle}>
-                {noMatchesMessage}
-              </Subheading>
-            </div>
-          )}
-
-          {!isLoading &&
-            isUsingGroups(isGrouped, items) &&
-            items.map((group: GroupType, index: number) => {
-              if (group.options.length < 1) {
-                return;
-              }
-              const render = (
-                <div key={index}>
-                  <SectionHeading
-                    key={index}
-                    data-test-id="cf-autocomplete-grouptitle"
-                    marginBottom="none"
-                    className={styles.groupTitle}
-                  >
-                    {group.groupTitle}
-                  </SectionHeading>
-                  <AutocompleteItems<ItemType>
-                    items={group.options}
-                    highlightedIndex={highlightedIndex}
-                    getItemProps={getItemProps}
-                    renderItem={renderItem}
-                    inputValue={inputValue}
-                    elementStartIndex={elementStartIndex}
-                  />
+        {(items.length > 0 || inputValue.length > 0) && (
+          <Popover.Content
+            {...menuProps}
+            ref={mergeRefs(menuProps.ref, listRef)}
+            className={styles.content}
+            testId="cf-autocomplete-container"
+          >
+            {isLoading &&
+              [...Array(3)].map((_, index) => (
+                <div key={index} className={cx(styles.item, styles.disabled)}>
+                  <ListItemLoadingState />
                 </div>
-              );
-              elementStartIndex += group.options.length;
-              return render;
-            })}
+              ))}
 
-          {!isLoading &&
-            !isUsingGroups(isGrouped, items) &&
-            items.length > 0 && (
-              <AutocompleteItems<ItemType>
-                items={items}
-                elementStartIndex={elementStartIndex}
-                highlightedIndex={highlightedIndex}
-                getItemProps={getItemProps}
-                renderItem={renderItem}
-                inputValue={inputValue}
-              />
+            {!isLoading && isShowingNoMatches && (
+              <div className={styles.item}>
+                <Subheading className={styles.noMatchesTitle}>
+                  {noMatchesMessage}
+                </Subheading>
+              </div>
             )}
-        </Popover.Content>
+
+            {!isLoading &&
+              isUsingGroups(isGrouped, items) &&
+              items.map((group: GroupType, index: number) => {
+                if (group.options.length < 1) {
+                  return;
+                }
+                const render = (
+                  <div key={index}>
+                    <SectionHeading
+                      key={index}
+                      data-test-id="cf-autocomplete-grouptitle"
+                      marginBottom="none"
+                      className={styles.groupTitle}
+                    >
+                      {group.groupTitle}
+                    </SectionHeading>
+                    <AutocompleteItems<ItemType>
+                      items={group.options}
+                      highlightedIndex={highlightedIndex}
+                      getItemProps={getItemProps}
+                      renderItem={renderItem}
+                      inputValue={inputValue}
+                      elementStartIndex={elementStartIndex}
+                    />
+                  </div>
+                );
+                elementStartIndex += group.options.length;
+                return render;
+              })}
+
+            {!isLoading &&
+              !isUsingGroups(isGrouped, items) &&
+              items.length > 0 && (
+                <AutocompleteItems<ItemType>
+                  items={items}
+                  elementStartIndex={elementStartIndex}
+                  highlightedIndex={highlightedIndex}
+                  getItemProps={getItemProps}
+                  renderItem={renderItem}
+                  inputValue={inputValue}
+                />
+              )}
+          </Popover.Content>
+        )}
       </Popover>
     </div>
   );
