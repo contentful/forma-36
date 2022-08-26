@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-
-import { Calendar, DayContent, DayContentProps } from '../src';
-import type { CalendarProps } from '../src';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+
+import {
+  Calendar,
+  DayContent,
+  DayContentProps,
+  type CalendarProps,
+} from '../src';
 
 const testDate = new Date('2022-04-15');
 

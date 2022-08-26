@@ -1,7 +1,10 @@
 import React from 'react';
 import { cx } from 'emotion';
-import type { PropsWithHTMLElement, CommonProps } from '@contentful/f36-core';
-import { Box } from '@contentful/f36-core';
+import {
+  Box,
+  type PropsWithHTMLElement,
+  type CommonProps,
+} from '@contentful/f36-core';
 import { getModalContentStyles } from './ModalContent.styles';
 
 interface ModalContentInternalProps extends CommonProps {

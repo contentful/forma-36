@@ -1,9 +1,12 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { getMenuSectionTitleStyles } from './MenuSectionTitle.styles';
-import { SectionHeading } from '@contentful/f36-typography';
-import type { SectionHeadingProps } from '@contentful/f36-typography';
+import {
+  SectionHeading,
+  type SectionHeadingProps,
+} from '@contentful/f36-typography';
 import type { ExpandProps } from '@contentful/f36-core';
+
+import { getMenuSectionTitleStyles } from './MenuSectionTitle.styles';
 
 export type MenuSectionTitleProps = SectionHeadingProps;
 

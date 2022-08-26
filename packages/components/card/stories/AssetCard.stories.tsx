@@ -6,8 +6,7 @@ import { MenuItem } from '@contentful/f36-menu';
 import * as icons from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
 
-import { AssetCard } from '../src';
-import type { AssetCardProps } from '../src';
+import { AssetCard, type AssetCardProps } from '../src';
 
 export default {
   argTypes: {

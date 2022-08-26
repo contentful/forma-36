@@ -4,8 +4,7 @@ import { Flex } from '@contentful/f36-core';
 import { SectionHeading, Text } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
 
-import { InlineEntryCard } from '../src';
-import type { InlineEntryCardProps } from '../src';
+import { InlineEntryCard, type InlineEntryCardProps } from '../src';
 
 export default {
   argTypes: {

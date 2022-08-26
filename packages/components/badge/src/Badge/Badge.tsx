@@ -1,10 +1,10 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { Box } from '@contentful/f36-core';
-import type {
-  CommonProps,
-  PropsWithHTMLElement,
-  ExpandProps,
+import {
+  Box,
+  type CommonProps,
+  type PropsWithHTMLElement,
+  type ExpandProps,
 } from '@contentful/f36-core';
 
 import type { BadgeSize, BadgeVariant } from '../types';

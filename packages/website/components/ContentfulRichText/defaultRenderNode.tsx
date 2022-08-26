@@ -1,6 +1,5 @@
 import React from 'react';
 import slugger from 'github-slugger';
-
 import {
   Heading,
   Paragraph,
@@ -12,6 +11,7 @@ import {
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import type { Block, Inline, Text } from '@contentful/rich-text-types';
 import type { RenderNode } from '@contentful/rich-text-react-renderer';
+
 import { StaticSource } from '../LiveEditor/StaticSource';
 
 const getHeadingId = (node: Block | Inline) =>

@@ -1,10 +1,10 @@
 import React, { HTMLAttributes } from 'react';
 import { cx } from 'emotion';
-
 import { getStringMatch } from '@contentful/f36-utils';
-import { Text } from '@contentful/f36-typography';
-import { getAutocompleteStyles } from './Autocomplete.styles';
 import type { UseComboboxGetItemPropsOptions } from 'downshift';
+import { Text } from '@contentful/f36-typography';
+
+import { getAutocompleteStyles } from './Autocomplete.styles';
 
 interface AutocompleteItemsProps<ItemType> {
   items: ItemType[];

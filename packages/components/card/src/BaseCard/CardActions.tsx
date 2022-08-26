@@ -1,6 +1,5 @@
 import React from 'react';
-import { IconButton } from '@contentful/f36-button';
-import type { ButtonProps } from '@contentful/f36-button';
+import { IconButton, type ButtonProps } from '@contentful/f36-button';
 import { MoreHorizontalIcon } from '@contentful/f36-icons';
 import { Menu } from '@contentful/f36-menu';
 import { cx } from 'emotion';
