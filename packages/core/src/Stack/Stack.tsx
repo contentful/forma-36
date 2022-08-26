@@ -1,12 +1,13 @@
 import * as React from 'react';
+
 import {
-  PolymorphicProps,
-  PolymorphicComponent,
-  ExpandProps,
+  type PolymorphicProps,
+  type PolymorphicComponent,
+  type ExpandProps,
 } from '../Primitive/Primitive';
 import { useBox } from '../Box';
 import type { Spacing } from '../types';
-import { Flex, FlexInternalProps } from '../Flex/Flex';
+import { Flex, type FlexInternalProps } from '../Flex/Flex';
 
 export interface StackInternalProps
   extends Omit<FlexInternalProps, 'flexDirection' | 'gap'> {

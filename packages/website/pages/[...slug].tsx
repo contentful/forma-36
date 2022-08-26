@@ -16,8 +16,7 @@ import { getMdxPaths, getMdxSourceBySlug } from '../utils/content';
 import { getPropsMetadata, transformToc } from '../utils/propsMeta';
 import { getToCFromMdx, getToCFromContentful } from '../utils/tableOfContents';
 import { FrontMatterContextProvider } from '../utils/frontMatterContext';
-import type { PageContentProps } from '../components/PageContent';
-import { PageContent } from '../components/PageContent';
+import { PageContent, type PageContentProps } from '../components/PageContent';
 import { getAllArticles, getSingleArticleBySlug } from '../lib/api';
 
 interface ComponentPageProps extends PageContentProps {

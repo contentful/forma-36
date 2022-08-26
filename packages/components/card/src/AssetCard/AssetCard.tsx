@@ -2,8 +2,7 @@ import React from 'react';
 import { cx } from 'emotion';
 import { Flex } from '@contentful/f36-core';
 import { EntityStatusBadge } from '@contentful/f36-badge';
-import { Asset } from '@contentful/f36-asset';
-import type { AssetStatus, AssetType } from '@contentful/f36-asset';
+import { Asset, type AssetStatus, type AssetType } from '@contentful/f36-asset';
 
 import { BaseCard } from '../BaseCard/BaseCard';
 import type { BaseCardInternalProps } from '../BaseCard/BaseCard.types';

@@ -1,9 +1,8 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-
-import { CopyButton } from '../src/CopyButton';
-import type { CopyButtonProps } from '../src/CopyButton';
 import { action } from '@storybook/addon-actions';
+
+import { CopyButton, type CopyButtonProps } from '../src/CopyButton';
 
 export default {
   component: CopyButton,

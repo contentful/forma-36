@@ -1,7 +1,10 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { Stack } from '@contentful/f36-core';
-import type { ExpandProps, CommonProps } from '@contentful/f36-core';
+import {
+  Stack,
+  type ExpandProps,
+  type CommonProps,
+} from '@contentful/f36-core';
 import getStyles from './InputGroup.styles';
 import type { InputGroupSpacing } from './types';
 

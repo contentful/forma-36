@@ -1,7 +1,6 @@
 import { cx } from 'emotion';
 import React from 'react';
-import { Box, Stack } from '@contentful/f36-core';
-import type { ExpandProps } from '@contentful/f36-core';
+import { Box, Stack, type ExpandProps } from '@contentful/f36-core';
 import getStyles from './ButtonGroup.styles';
 import type { ButtonGroupProps } from './types';
 

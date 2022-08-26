@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { Paragraph, Text } from '@contentful/f36-typography';
 import {
   ModalConfirm,
-  ModalConfirmProps,
+  type ModalConfirmProps,
 } from '../src/ModalConfirm/ModalConfirm';
 import { Button } from '@contentful/f36-button';
 import { TextInput } from '@contentful/f36-forms';

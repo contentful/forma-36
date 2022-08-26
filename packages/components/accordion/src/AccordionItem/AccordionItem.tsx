@@ -1,11 +1,15 @@
 import React from 'react';
 import type { HeadingElement } from '@contentful/f36-typography';
-import { useId, Box, useControllableState } from '@contentful/f36-core';
+import {
+  useId,
+  Box,
+  useControllableState,
+  type CommonProps,
+  type ExpandProps,
+} from '@contentful/f36-core';
 
 import { AccordionHeader } from '../AccordionHeader/AccordionHeader';
 import { AccordionPanel } from '../AccordionPanel/AccordionPanel';
-import type { CommonProps, ExpandProps } from '@contentful/f36-core';
-
 import { getAccordionItemStyles } from './AccordionItem.styles';
 
 export interface AccordionItemProps extends CommonProps {

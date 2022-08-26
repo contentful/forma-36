@@ -6,7 +6,7 @@ import { Box, Flex } from '@contentful/f36-core';
 import { InfoCircleIcon } from '@contentful/f36-icons';
 import { css } from 'emotion';
 
-import { Pill, PillInternalProps } from '../src/Pill';
+import { Pill, type PillInternalProps } from '../src/Pill';
 
 export default {
   title: 'Components/Pill',

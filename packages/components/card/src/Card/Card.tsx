@@ -1,12 +1,12 @@
 import React, { forwardRef } from 'react';
 import { cx } from 'emotion';
-import type {
-  PolymorphicComponent,
-  PolymorphicProps,
+import {
+  Flex,
+  type PolymorphicComponent,
+  type PolymorphicProps,
+  type ExpandProps,
 } from '@contentful/f36-core';
 import { Heading } from '@contentful/f36-typography';
-import { Flex } from '@contentful/f36-core';
-import type { ExpandProps } from '@contentful/f36-core';
 
 import { BaseCard, BASE_CARD_DEFAULT_TAG } from '../BaseCard/BaseCard';
 import type { BaseCardInternalProps } from '../BaseCard/BaseCard.types';

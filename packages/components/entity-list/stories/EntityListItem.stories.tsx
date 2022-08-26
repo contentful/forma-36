@@ -1,10 +1,9 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-
-import { EntityList } from '../src';
-import type { EntityListItemProps } from '../src';
 import { DragHandle } from '@contentful/f36-drag-handle';
 import { MenuItem, MenuSectionTitle } from '@contentful/f36-menu';
+
+import { EntityList, type EntityListItemProps } from '../src';
 
 export default {
   title: 'Components/EntityList/EntityListItem',

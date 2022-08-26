@@ -1,8 +1,8 @@
 import React, { useCallback, useMemo, useRef, useEffect } from 'react';
 import { mergeRefs, useId, useControllableState } from '@contentful/f36-core';
+import { Popover, type PopoverProps } from '@contentful/f36-popover';
+
 import { useArrowKeyNavigation } from './useArrowKeyNavigation';
-import { Popover } from '@contentful/f36-popover';
-import type { PopoverProps } from '@contentful/f36-popover';
 import { MenuContextProvider, MenuContextType } from './MenuContext';
 
 const MENU_ITEMS_SELECTOR = '[role="menuitem"]:not(:disabled)';

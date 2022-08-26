@@ -7,13 +7,13 @@ import tokens, {
   ColorTokens,
 } from '@contentful/f36-tokens';
 import { css, cx } from 'emotion';
-import { Box } from '@contentful/f36-core';
-import type {
-  PolymorphicComponent,
-  CommonProps,
-  MarginProps,
-  PolymorphicProps,
-  ExpandProps,
+import {
+  Box,
+  type PolymorphicComponent,
+  type CommonProps,
+  type MarginProps,
+  type PolymorphicProps,
+  type ExpandProps,
 } from '@contentful/f36-core';
 
 export interface TextInternalProps extends CommonProps, MarginProps {

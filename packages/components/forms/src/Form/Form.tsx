@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback, FormEvent } from 'react';
+import React, { forwardRef, useCallback, type FormEvent } from 'react';
 
 import type {
   CommonProps,

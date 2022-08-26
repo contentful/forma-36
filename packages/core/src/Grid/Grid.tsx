@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { css, cx } from 'emotion';
-import {
-  PolymorphicProps,
-  PolymorphicComponent,
-  ExpandProps,
-} from '../Primitive/Primitive';
-import { useBox } from '../Box';
 import type * as CSS from 'csstype';
+
+import {
+  type PolymorphicProps,
+  type PolymorphicComponent,
+  type ExpandProps,
+} from '../Primitive/Primitive';
 import type { MarginProps, PaddingProps, CommonProps, Spacing } from '../types';
+import { useBox } from '../Box';
 import { convertSpacingToToken } from '../utils/getSpacingStyles';
 
 export interface GridInternalProps

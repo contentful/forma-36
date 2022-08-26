@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { css, cx } from 'emotion';
+import type * as CSS from 'csstype';
+import tokens from '@contentful/f36-tokens';
+
 import {
-  PolymorphicProps,
-  PolymorphicComponent,
-  ExpandProps,
+  type PolymorphicProps,
+  type PolymorphicComponent,
+  type ExpandProps,
 } from '../Primitive/Primitive';
 import { useBox } from '../Box';
 import type { MarginProps, PaddingProps, CommonProps, Spacing } from '../types';
-import type * as CSS from 'csstype';
-import tokens from '@contentful/f36-tokens';
 
 export interface FlexInternalProps
   extends CommonProps,
@@ -106,6 +107,7 @@ function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
     as,
     ...otherProps
   }: FlexProps<E>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- We want to support all element types
   ref: React.Ref<any>,
 ) {
   const { boxProps, Element } = useBox<React.ElementType>({

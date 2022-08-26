@@ -1,12 +1,13 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { Flex } from '@contentful/f36-core';
-import type {
-  CommonProps,
-  PolymorphicProps,
-  PolymorphicComponent,
-  ExpandProps,
+import {
+  Flex,
+  type CommonProps,
+  type PolymorphicProps,
+  type PolymorphicComponent,
+  type ExpandProps,
 } from '@contentful/f36-core';
+
 import { styles } from './TextLink.styles';
 import { TextLinkVariant } from './types';
 

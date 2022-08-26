@@ -1,8 +1,10 @@
-import React, { isValidElement } from 'react';
-import type { ReactElement, ReactNode } from 'react';
+import React, {
+  isValidElement,
+  type ReactElement,
+  type ReactNode,
+} from 'react';
 import { cx } from 'emotion';
-import { Box } from '@contentful/f36-core';
-import type { CommonProps } from '@contentful/f36-core';
+import { Box, type CommonProps } from '@contentful/f36-core';
 import { Heading, Paragraph } from '@contentful/f36-typography';
 import type { IconComponent } from '@contentful/f36-icon';
 import { ChevronLeftIcon } from '@contentful/f36-icons';

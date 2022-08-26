@@ -1,9 +1,9 @@
 import React, { useState, MouseEventHandler, useRef } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-
-import { ModalProps } from '../src/Modal';
-import { Modal } from '../src';
 import { Button } from '@contentful/f36-button';
+
+import { type ModalProps } from '../src/Modal';
+import { Modal } from '../src';
 
 function fillArray(value: string, len: number) {
   if (len === 0) return [];

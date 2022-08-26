@@ -1,6 +1,5 @@
 import React from 'react';
-import { Subheading } from '@contentful/f36-typography';
-import type { HeadingElement } from '@contentful/f36-typography';
+import { Subheading, type HeadingElement } from '@contentful/f36-typography';
 import { ChevronDownTrimmedIcon } from '@contentful/f36-icons';
 import type { CommonProps } from '@contentful/f36-core';
 

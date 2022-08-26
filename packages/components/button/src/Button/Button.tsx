@@ -1,10 +1,11 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { Flex, Box } from '@contentful/f36-core';
-import type {
-  PolymorphicProps,
-  PolymorphicComponent,
-  ExpandProps,
+import {
+  Flex,
+  Box,
+  type PolymorphicProps,
+  type PolymorphicComponent,
+  type ExpandProps,
 } from '@contentful/f36-core';
 import { Spinner } from '@contentful/f36-spinner';
 

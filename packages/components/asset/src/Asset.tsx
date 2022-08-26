@@ -1,12 +1,13 @@
 import React from 'react';
 import { cx } from 'emotion';
-import type {
-  EntityStatus,
-  PickUnion,
-  CommonProps,
+import {
+  Box,
+  Flex,
+  type EntityStatus,
+  type PickUnion,
+  type CommonProps,
 } from '@contentful/f36-core';
 import { Text } from '@contentful/f36-typography';
-import { Box, Flex } from '@contentful/f36-core';
 
 import { AssetIcon } from './AssetIcon/AssetIcon';
 import { getAssetStyles } from './Asset.styles';
