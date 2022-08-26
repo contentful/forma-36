@@ -146,20 +146,41 @@ describe('Autocomplete', () => {
       renderComponent({ noMatchesMessage, items: [] });
 
       const input = screen.getByTestId('cf-autocomplete-input');
-      const list = screen.getByTestId('cf-autocomplete-container');
 
       // type anything to open the list
       fireEvent.input(input, {
         target: {
-          value: 'a',
+          value: 'tesst',
         },
       });
+
+      const list = screen.getByTestId('cf-autocomplete-container');
 
       // checks if the list is visible and it only shows the "No matches" message
       await waitFor(() => {
         expect(list).toBeVisible();
         expect(screen.getByText(noMatchesMessage)).toBeVisible();
       });
+    });
+
+    it('is not showing the container when the list has 0 items and there is no input value', async () => {
+      renderComponent({ items: [] });
+
+      const input = screen.getByTestId('cf-autocomplete-input');
+
+      fireEvent.click(input);
+
+      // type anything to open the list
+      fireEvent.input(input, {
+        target: {
+          value: '',
+        },
+      });
+
+      const list = screen.queryByTestId('cf-autocomplete-list');
+
+      // checks if the list is not visible
+      expect(list).toBeNull();
     });
 
     it('shows loading state when "isLoading" is true', async () => {
