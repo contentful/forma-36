@@ -78,9 +78,8 @@ export interface FlexInternalProps
   order?: CSS.Property.Order;
 }
 
-export type FlexProps<
-  E extends React.ElementType = typeof FLEX_DEFAULT_TAG
-> = PolymorphicProps<FlexInternalProps, E>;
+export type FlexProps<E extends React.ElementType = typeof FLEX_DEFAULT_TAG> =
+  PolymorphicProps<FlexInternalProps, E>;
 
 const FLEX_DEFAULT_TAG = 'div';
 

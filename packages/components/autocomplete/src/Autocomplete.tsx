@@ -148,7 +148,7 @@ function _Autocomplete<ItemType>(
     onSelectItem,
     renderItem,
     icon = <ChevronDownIcon variant="muted" />,
-    itemToString = (item: ItemType) => (item as unknown) as string,
+    itemToString = (item: ItemType) => item as unknown as string,
     isInvalid,
     isDisabled,
     isRequired,

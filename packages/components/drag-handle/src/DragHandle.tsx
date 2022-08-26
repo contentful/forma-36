@@ -57,7 +57,7 @@ export interface DragHandleInternalProps extends CommonProps {
 }
 
 export type DragHandleProps<
-  E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG
+  E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG,
 > = PolymorphicProps<DragHandleInternalProps, E>;
 
 function _DragHandle<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(

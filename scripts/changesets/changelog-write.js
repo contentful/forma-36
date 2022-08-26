@@ -13,10 +13,9 @@ function getCurrentDate() {
 }
 
 function getContent(releases) {
-  const releaseEntries = Object.entries(
-    releases,
-  ).map(([displayName, changesets]) =>
-    [displayName, '\n\n', ...changesets].join(''),
+  const releaseEntries = Object.entries(releases).map(
+    ([displayName, changesets]) =>
+      [displayName, '\n\n', ...changesets].join(''),
   );
 
   let content = [getCurrentDate(), ...releaseEntries].join('\n\n');

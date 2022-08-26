@@ -38,7 +38,7 @@ export interface GridItemInternalProps
 }
 
 export type GridItemProps<
-  E extends React.ElementType = typeof GRID_ITEM_DEFAULT_TAG
+  E extends React.ElementType = typeof GRID_ITEM_DEFAULT_TAG,
 > = PolymorphicProps<GridItemInternalProps, E>;
 
 function _GridItem<E extends React.ElementType = typeof GRID_ITEM_DEFAULT_TAG>(

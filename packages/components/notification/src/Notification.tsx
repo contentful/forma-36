@@ -54,23 +54,25 @@ function afterInit<PromiseValueType>(fn: Function) {
   };
 }
 
-const show = (variant: NotificationVariant) => (
-  text: string,
-  settings?: {
-    duration?: number;
-    withClose?: boolean;
-    id?: string;
-    title?: string;
-    cta?: Partial<NotificationCta>;
-  },
-) => {
-  if (internalAPI.show) {
-    return internalAPI.show(text, {
-      ...(settings || {}),
-      variant,
-    });
-  }
-};
+const show =
+  (variant: NotificationVariant) =>
+  (
+    text: string,
+    settings?: {
+      duration?: number;
+      withClose?: boolean;
+      id?: string;
+      title?: string;
+      cta?: Partial<NotificationCta>;
+    },
+  ) => {
+    if (internalAPI.show) {
+      return internalAPI.show(text, {
+        ...(settings || {}),
+        variant,
+      });
+    }
+  };
 
 type ExternalShowAction<T> = (
   text: string,

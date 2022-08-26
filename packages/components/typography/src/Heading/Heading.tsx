@@ -20,7 +20,7 @@ export interface HeadingInternalProps extends CommonProps, MarginProps {
 }
 
 export type HeadingProps<
-  E extends React.ElementType = typeof HEADING_DEFAULT_TAG
+  E extends React.ElementType = typeof HEADING_DEFAULT_TAG,
 > = PolymorphicProps<HeadingInternalProps, E>;
 
 function _Heading<E extends React.ElementType = typeof HEADING_DEFAULT_TAG>(

@@ -28,7 +28,7 @@ import type { BaseCardInternalProps } from './BaseCard.types';
 export const BASE_CARD_DEFAULT_TAG = 'article';
 
 export type BaseCardProps<
-  E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG
+  E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG,
 > = PolymorphicProps<BaseCardInternalProps, E>;
 
 function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(

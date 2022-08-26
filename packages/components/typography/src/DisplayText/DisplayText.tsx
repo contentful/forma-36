@@ -20,11 +20,11 @@ export interface DisplayTextInternalProps extends CommonProps, MarginProps {
 }
 
 export type DisplayTextProps<
-  E extends React.ElementType = typeof DISPLAY_TEXT_DEFAULT_TAG
+  E extends React.ElementType = typeof DISPLAY_TEXT_DEFAULT_TAG,
 > = PolymorphicProps<DisplayTextInternalProps, E>;
 
 function _DisplayText<
-  E extends React.ElementType = typeof DISPLAY_TEXT_DEFAULT_TAG
+  E extends React.ElementType = typeof DISPLAY_TEXT_DEFAULT_TAG,
 >(
   {
     children,
