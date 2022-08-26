@@ -1,5 +1,21 @@
 # Change Log
 
+## 4.15.1
+
+### Patch Changes
+
+- [#2165](https://github.com/contentful/forma-36/pull/2165) [`5582f33c`](https://github.com/contentful/forma-36/commit/5582f33c0674850a30cc2a1792aad72fa219f7de) Thanks [@loweisz](https://github.com/loweisz)! - fix(autocomplete): hide list component when when items and search value are empty
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.15.1
+  - @contentful/f36-forms@4.15.1
+  - @contentful/f36-icons@4.15.1
+  - @contentful/f36-popover@4.15.1
+  - @contentful/f36-skeleton@4.15.1
+  - @contentful/f36-typography@4.15.1
+  - @contentful/f36-utils@4.15.1
+  - @contentful/f36-core@4.15.1
+
 ## 4.15.0
 
 ### Patch Changes
