@@ -79,7 +79,8 @@ export interface ModalConfirmProps {
   /**
    * Optional property to set initial focus
    */
-  initialFocusRef?: React.RefObject<HTMLElement>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- we don't know the type of element to give initial focus
+  initialFocusRef?: React.RefObject<any>;
 
   testId?: string;
   confirmTestId?: string;
