@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 27-08-2022
+
+**F36 Autocomplete** `v4.15.1`
+
+- fix(autocomplete): hide list component when when items and search value are empty
+
 ## 17-08-2022
 
 **F36 Icon** `v4.15.0`
