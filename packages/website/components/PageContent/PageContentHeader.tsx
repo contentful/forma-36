@@ -103,11 +103,11 @@ export function PageContentHeader({
             title={`${isAlpha ? 'Alpha' : 'Beta'} component`}
           >
             {isAlpha
-              ? `${title} component is ready to use but may have some bugs. Use in
-              production software with caution.`
-              : `${title} component is subject to major changes and is for
+              ? `${title} component is subject to major changes and is for
               experimentation purposes only. Not recommended for use in production
-              software.`}
+              software.`
+              : `${title} component is ready to use but may have some bugs. Use in
+              production software with caution.`}
           </Note>
         </Flex>
       )}
