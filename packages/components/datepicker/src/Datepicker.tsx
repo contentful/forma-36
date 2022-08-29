@@ -106,10 +106,12 @@ export function Datepicker(props: DatepickerProps) {
   );
 
   useEffect(() => {
-    if (
-      selected &&
-      selected.getTime() !== parseInputDate(inputValue).getTime()
-    ) {
+    if (!selected) {
+      setInputValue('');
+      return;
+    }
+
+    if (selected.getTime() !== parseInputDate(inputValue).getTime()) {
       setInputValue(format(selected, dateFormat));
     }
     // we want to run this hook only when `selected` prop changes
