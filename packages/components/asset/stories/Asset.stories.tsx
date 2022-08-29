@@ -12,7 +12,8 @@ export default {
     className: { control: { disable: true } },
     src: {
       control: 'text',
-      defaultValue: 'https://via.placeholder.com/200x300',
+      defaultValue:
+        'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300',
     },
     status: {
       control: {
@@ -21,7 +22,7 @@ export default {
       },
     },
     testId: { control: { disable: true } },
-    title: { control: 'text', defaultValue: 'Image of a cat' },
+    title: { control: 'text', defaultValue: 'Everyone is welcome here' },
     type: {
       control: {
         type: 'select',
@@ -59,19 +60,31 @@ export const Overview: Story<AssetProps> = () => (
       <Flex marginBottom="spacingS">
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">published</Text>
-          <Asset status="published" src="https://via.placeholder.com/200x300" />
+          <Asset
+            status="published"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+          />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">draft</Text>
-          <Asset status="draft" src="https://via.placeholder.com/200x300" />
+          <Asset
+            status="draft"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+          />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">changed</Text>
-          <Asset status="changed" src="https://via.placeholder.com/200x300" />
+          <Asset
+            status="changed"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+          />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">archived (should not show image)</Text>
-          <Asset status="archived" src="https://via.placeholder.com/200x300" />
+          <Asset
+            status="archived"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+          />
         </Flex>
       </Flex>
     </Flex>
@@ -83,46 +96,73 @@ export const Overview: Story<AssetProps> = () => (
       <Flex marginBottom="spacingS">
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">image</Text>
-          <Asset type="image" src="https://via.placeholder.com/200x300" />
+          <Asset
+            type="image"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+          />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">archive</Text>
-          <Asset type="archive" src="https://via.placeholder.com/200x300" />
+          <Asset
+            type="archive"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+          />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">audio</Text>
-          <Asset type="audio" src="https://via.placeholder.com/200x300" />
+          <Asset
+            type="audio"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+          />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">code</Text>
-          <Asset type="code" src="https://via.placeholder.com/200x300" />
+          <Asset
+            type="code"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+          />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">markup</Text>
-          <Asset type="markup" src="https://via.placeholder.com/200x300" />
+          <Asset
+            type="markup"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+          />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">pdf</Text>
-          <Asset type="pdf" src="https://via.placeholder.com/200x300" />
+          <Asset
+            type="pdf"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+          />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">plaintext</Text>
-          <Asset type="plaintext" src="https://via.placeholder.com/200x300" />
+          <Asset
+            type="plaintext"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+          />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">presentation</Text>
           <Asset
             type="presentation"
-            src="https://via.placeholder.com/200x300"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
           />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">spreadsheet</Text>
-          <Asset type="spreadsheet" src="https://via.placeholder.com/200x300" />
+          <Asset
+            type="spreadsheet"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+          />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Text as="p">video</Text>
-          <Asset type="video" src="https://via.placeholder.com/200x300" />
+          <Asset
+            type="video"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+          />
         </Flex>
       </Flex>
     </Flex>
