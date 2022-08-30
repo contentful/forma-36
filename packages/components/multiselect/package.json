@@ -1,0 +1,42 @@
+{
+  "name": "@contentful/f36-multiselect",
+  "version": "4.15.1",
+  "description": "Forma 36: Multiselect component",
+  "scripts": {
+    "build": "parcel build"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.6.2",
+    "@contentful/f36-button": "^4.15.1",
+    "@contentful/f36-core": "^4.15.1",
+    "@contentful/f36-forms": "^4.15.1",
+    "@contentful/f36-icons": "^4.15.1",
+    "@contentful/f36-popover": "^4.15.1",
+    "@contentful/f36-skeleton": "^4.15.1",
+    "@contentful/f36-tokens": "^4.0.1",
+    "@contentful/f36-typography": "^4.15.1",
+    "@contentful/f36-utils": "^4.15.1",
+    "downshift": "^6.1.7",
+    "emotion": "^10.0.17"
+  },
+  "peerDependencies": {
+    "react": ">=16.8"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
+  "source": "src/index.ts",
+  "sideEffects": false,
+  "browserslist": "extends @contentful/browserslist-config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/contentful/forma-36"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

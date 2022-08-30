@@ -1,0 +1,118 @@
+---
+title: 'Multiselect'
+slug: /components/multiselect/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/multiselect'
+storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-multiselect--basic'
+typescript: ./src/Multiselect.tsx
+---
+
+Search through a long list of options.
+
+## Import
+
+```jsx static=true
+import { Multiselect } from '@contentful/f36-components';
+// or
+import { Multiselect } from '@contentful/f36-multiselect';
+```
+
+## Examples
+
+### Basic usage
+
+The Multiselect requires 3 props to work:
+
+- `items`: It’s an array containing the items that will be shown as selectable options when the user types something in the `TextInput`.
+- `onInputValueChange`: This function will be called every time the user types something in the input.
+  The component will pass the `item`, which the filter method is currently iterating over, and the `inputValue` prop of the `TextInput` component.
+- `onSelectItem`: This function is called when the user selects one of the options of the list. The component will pass the selected item as an argument to the function.
+
+An `Multiselect` with a list of spaces will look like this:
+
+```jsx file=./examples/MultiselectBasicUsageExample.tsx
+
+```
+
+### Using objects as `items`
+
+We showed how to create an Multiselect with an array of string but it’s also possible to use other types of data as `items`.
+A very common way of using the Multiselect is with objects and for that, with a few changes to the previous example this can be done:
+
+```jsx file=./examples/MultiselectWithObjectsExample.tsx
+
+```
+
+Both `itemToString` and `renderItem` are necessary when passing objects as items and they both will receive an "item" as an argument.
+
+If you are using Typescript, you can tell the Multiselect what is the type of your items to make these functions strongly typed.
+You can do that by writing the component like this `<Multiselect<ItemType> {...props}/>`
+
+### Highlighting an item with `getStringMatch`
+
+A common use case for Multiselect components is to highlight in each suggestion what is typed in the input.
+Using the previous example, if a user types "fi" we want to show a list of suggestions where only "fi" is **bold**.
+This is possible by using the `renderItem` prop and the `getStringMatch` utility function:
+
+```jsx file=./examples/MultiselectHighlightingExample.tsx
+
+```
+
+### Selecting multiple items
+
+It is also possible to use the Multiselect as multiselect. To improve the user experience, you can keep the dropdown open after selection by setting the "closeAfterSelect" property to false.
+
+```jsx file=./examples/MultiselectMultiSelectionExample.tsx
+
+```
+
+### Using grouped objects as `items`
+
+As an extension of ["Use objects as items" section](#use-objects-as-items), you are also able to use a nested object to group your entries.
+The most important part of making this work is the shape of the grouped object. The options themselves work exactly as in the object example and require the `itemToString`
+and `renderItem` functions.
+Besides the correct shape of the object the Multiselect component needs to receive the prop `isGrouped`
+
+```jsx file=./examples/MultiselectWithGroupedItems.tsx
+
+```
+
+### Fully controlled selection from outside
+
+In order to use proper form validation you need to be able to control the actual input field from the multiselect, because the search query value is not the actual selection. This is done via the selectedItem property.
+
+```jsx file=./examples/ControlledMultiselect.tsx
+
+```
+
+### Error validation with FormControl
+
+```jsx file=./examples/MultiselectWithErrorValidationExample.tsx
+
+```
+
+### Fetching async data
+
+```jsx file=./examples/MultiselectFetchingAsyncDataExample.tsx
+
+```
+
+### Custom icon
+
+Pass a custom icon to the text input, example: to indicate a search input
+
+```jsx file=./examples/CustomIcon.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="Multiselect" />
+
+## Content guidelines
+
+- Multiselect label should be short, contain 1 to 3 words
+- Label should be written in a sentence case (the first word capitalized, the rest lowercase)
+
+## Accessibility
+
+- dismisses the dropdown when selecting with the enter key
