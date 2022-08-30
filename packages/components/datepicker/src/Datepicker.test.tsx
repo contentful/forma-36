@@ -48,7 +48,7 @@ describe('Datepicker', function () {
     });
 
     await waitFor(() => {
-      expect(screen.getByTestId('cf-ui-datepicker')).toHaveAttribute(
+      expect(screen.getByTestId('cf-ui-datepicker-button')).toHaveAttribute(
         'aria-expanded',
         'true',
       );
@@ -63,9 +63,9 @@ describe('Datepicker', function () {
     );
 
     const popoverContent = screen.getByTestId('cf-ui-popover-content');
-    const datepicker = screen.getByTestId('cf-ui-datepicker');
+    const datepickerTrigger = screen.getByTestId('cf-ui-datepicker-button');
 
-    expect(datepicker).toHaveAttribute('aria-expanded', 'true');
+    expect(datepickerTrigger).toHaveAttribute('aria-expanded', 'true');
     expect(popoverContent).toBeInTheDocument();
   });
 
@@ -74,7 +74,7 @@ describe('Datepicker', function () {
       <Datepicker selected={testDate} onSelect={jest.fn()} defaultIsOpen />,
     );
     const popoverContent = screen.getByTestId('cf-ui-popover-content');
-    const datepicker = screen.getByTestId('cf-ui-datepicker');
+    const datepickerTrigger = screen.getByTestId('cf-ui-datepicker-button');
 
     act(() => {
       fireEvent.keyDown(document.activeElement, {
@@ -83,7 +83,7 @@ describe('Datepicker', function () {
     });
 
     await waitFor(() => {
-      expect(datepicker).toHaveAttribute('aria-expanded', 'false');
+      expect(datepickerTrigger).toHaveAttribute('aria-expanded', 'false');
       expect(popoverContent).not.toBeInTheDocument();
     });
   });
