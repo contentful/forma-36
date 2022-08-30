@@ -73,6 +73,11 @@ export interface ModalProps extends CommonProps {
   allowHeightOverflow?: boolean;
 
   /**
+   * Optional props to override overlay behaviour
+   */
+  overlayProps?: Pick<CommonProps, 'className' | 'style'>;
+
+  /**
    * Optional props to override ModalHeader behaviour
    */
   modalHeaderProps?: Partial<ModalHeaderProps>;
@@ -135,6 +140,7 @@ export const Modal = ({
     size,
     allowHeightOverflow,
     className: otherProps.className,
+    overlayClassName: otherProps.overlayProps?.className,
   });
 
   React.useEffect(() => {
@@ -184,6 +190,7 @@ export const Modal = ({
         content: {
           top: position === 'center' ? 0 : topOffset,
         },
+        overlay: otherProps.overlayProps?.style,
       }}
       className={{
         base: styles.base.root,
