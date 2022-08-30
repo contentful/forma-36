@@ -4,7 +4,6 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import { cx } from 'emotion';
 import { CommonProps } from '@contentful/f36-core';
 
 import { format, isValid, parse, startOfDay, endOfDay } from 'date-fns';
@@ -152,10 +151,15 @@ export function Datepicker(props: DatepickerProps) {
       {...popoverProps}
     >
       <Popover.Trigger>
-        <TextInput.Group
-          className={cx(className)}
+        {/* we need this additional component to pass <Popover.Trigger> props to the correct trigger button */}
+        <DatepickerTrigger
+          className={className}
           style={style}
           testId={testId}
+          isDisabled={inputProps?.isDisabled}
+          onTriggerClick={() => {
+            setIsPopoverOpen((prevState) => !prevState);
+          }}
         >
           <TextInput
             placeholder={format(new Date(), dateFormat)}
@@ -166,17 +170,7 @@ export function Datepicker(props: DatepickerProps) {
             testId="cf-ui-datepicker-input"
             {...inputProps}
           />
-          <IconButton
-            aria-label="Use calendar"
-            variant="secondary"
-            icon={<CalendarIcon aria-label="calendar" variant="muted" />}
-            onClick={() => {
-              setIsPopoverOpen((prevState) => !prevState);
-            }}
-            isDisabled={inputProps?.isDisabled}
-            testId="cf-ui-datepicker-button"
-          />
-        </TextInput.Group>
+        </DatepickerTrigger>
       </Popover.Trigger>
       <Popover.Content>
         <FocusLock returnFocus={true}>
@@ -197,3 +191,46 @@ export function Datepicker(props: DatepickerProps) {
     </Popover>
   );
 }
+
+type DatepickerTriggerProps = {
+  children: React.ReactNode;
+  isDisabled: boolean;
+  onTriggerClick: () => void;
+} & Pick<DatepickerProps, 'className' | 'style' | 'testId'>;
+
+// eslint-disable-next-line react/display-name
+const DatepickerTrigger = React.forwardRef<
+  HTMLDivElement,
+  DatepickerTriggerProps
+>((props, ref) => {
+  const {
+    children,
+    testId,
+    style,
+    className,
+    onTriggerClick,
+    isDisabled,
+    // props will be passed from <Popover.Trigger> wrapper
+    ...popoverTriggerProps
+  } = props;
+
+  return (
+    <TextInput.Group
+      ref={ref}
+      className={className}
+      style={style}
+      testId={testId}
+    >
+      {children}
+      <IconButton
+        aria-label="Use calendar"
+        variant="secondary"
+        icon={<CalendarIcon aria-label="calendar" variant="muted" />}
+        onClick={onTriggerClick}
+        isDisabled={isDisabled}
+        testId="cf-ui-datepicker-button"
+        {...popoverTriggerProps}
+      />
+    </TextInput.Group>
+  );
+});
