@@ -25,7 +25,6 @@ export const MultiselectItems = <ItemType,>(
     listMaxHeight = 180,
     onSelectItem,
   } = props;
-
   const styles = getMultiselectStyles(listMaxHeight);
 
   return (

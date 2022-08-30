@@ -1,8 +1,12 @@
 import React, { useCallback, useState } from 'react';
 import { cx } from 'emotion';
 
-import { type CommonProps, type ExpandProps } from '@contentful/f36-core';
-import { IconButton } from '@contentful/f36-button';
+import {
+  mergeRefs,
+  type CommonProps,
+  type ExpandProps,
+} from '@contentful/f36-core';
+import { Button, IconButton } from '@contentful/f36-button';
 import { TextInput, type TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
@@ -84,7 +88,7 @@ export interface MultiselectProps<ItemType>
   /**
    * Function called whenever the search input value changes
    */
-  onSearchValueChange?: (event: React.ChangeEvent) => void;
+  onSearchValueChange?: (value: string) => void;
 
   /**
    * This is the value will be passed to the `placeholder` prop of the input.
@@ -158,8 +162,8 @@ function _Multiselect<ItemType>(
     isDisabled,
     isRequired,
     isReadOnly,
-    noMatchesMessage = 'No matches found',
     inputRef,
+    noMatchesMessage = 'No matches found',
     toggleRef,
     listRef,
     listWidth = 'auto',
@@ -175,23 +179,20 @@ function _Multiselect<ItemType>(
   const styles = getMultiselectStyles(listMaxHeight);
 
   const [searchValue, setSearchValue] = useState(defaultValue);
-  const [selectedItems] = useState(defaultSelectedItems);
+  //const [selectedItems] = useState(defaultSelectedItems);
   const [isOpen, setIsOpen] = useState(false);
 
-  // Handle manually to avoid a jumping cursor, see https://github.com/downshift-js/downshift/issues/1108#issuecomment-842407759
-  const handleNativeChangeEvent = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      onSearchValueChange(event);
-    },
-    [onSearchValueChange],
-  );
+  const handleSearchChange = (value: string) => {
+    setSearchValue(value);
+    onSearchValueChange(value);
+  };
 
-  const flattenItems = isUsingGroups(isGrouped, items)
-    ? items.reduce(
-        (acc: ItemType[], group: GroupType) => [...acc, ...group.options],
-        [],
-      )
-    : items;
+  // const flattenItems = isUsingGroups(isGrouped, items)
+  //   ? items.reduce(
+  //       (acc: ItemType[], group: GroupType) => [...acc, ...group.options],
+  //       [],
+  //     )
+  //   : items;
 
   const isShowingNoMatches = isUsingGroups(isGrouped, items)
     ? items.every((group: GroupType) => group.options.length === 0)
@@ -217,9 +218,7 @@ function _Multiselect<ItemType>(
       >
         <Popover.Trigger>
           <>
-            {startIcon}
-            <div className={styles.combobox}>Multiselect</div>
-            <IconButton
+            <Button
               aria-label="open Select"
               ref={toggleRef}
               onClick={() => setIsOpen(!isOpen)}
@@ -228,107 +227,111 @@ function _Multiselect<ItemType>(
                   setIsOpen(!isOpen);
                 }
               }}
-              icon={<ChevronDownIcon />}
-            />
+              startIcon={startIcon}
+              endIcon={<ChevronDownIcon />}
+            >
+              Multiselect
+            </Button>
           </>
         </Popover.Trigger>
 
-        {items.length > 0 && (
-          <Popover.Content
-            ref={listRef}
-            className={styles.content}
-            testId="cf-multiselect-container"
-          >
-            <>
-              {hasSearch && (
-                <>
-                  <TextInput
-                    className={styles.inputField}
-                    id={id}
-                    isInvalid={isInvalid}
-                    isDisabled={isDisabled}
-                    isRequired={isRequired}
-                    isReadOnly={isReadOnly}
-                    ref={inputRef}
-                    testId="cf-multiselect-search"
-                    placeholder={searchPlaceholder}
-                    onChange={(event) => {
-                      onSearchValueChange(event);
-                      handleNativeChangeEvent(event);
-                    }}
-                  />
-                  <IconButton
-                    aria-label="Clear"
-                    className={styles.toggleButton}
-                    variant="transparent"
-                    icon={<CloseIcon variant="muted" />}
-                    onClick={() => {
-                      if (searchValue) {
-                        setSearchValue('');
-                      }
-                    }}
-                    isDisabled={!searchValue}
-                    size="small"
-                  />
-                </>
-              )}
+        <Popover.Content
+          ref={listRef}
+          className={styles.content}
+          testId="cf-multiselect-container"
+        >
+          <>
+            {hasSearch && (
+              <>
+                <TextInput
+                  type="text"
+                  value={searchValue}
+                  className={styles.inputField}
+                  id={id}
+                  data-test-id="cf-multiselect-search"
+                  placeholder={searchPlaceholder}
+                  onChange={(event) => {
+                    handleSearchChange(event.target.value);
+                  }}
+                />
+                <IconButton
+                  aria-label="Clear"
+                  className={styles.toggleButton}
+                  variant="transparent"
+                  icon={<CloseIcon variant="muted" />}
+                  onClick={() => {
+                    if (searchValue) {
+                      handleSearchChange('');
+                    }
+                  }}
+                  isDisabled={searchValue === ''}
+                  size="small"
+                />
+              </>
+            )}
 
-              {isLoading &&
-                [...Array(3)].map((_, index) => (
-                  <div key={index} className={cx(styles.item, styles.disabled)}>
-                    <ListItemLoadingState />
-                  </div>
-                ))}
-
-              {!isLoading && isShowingNoMatches && (
-                <div className={styles.item}>
-                  <Subheading className={styles.noMatchesTitle}>
-                    {noMatchesMessage}
-                  </Subheading>
-                </div>
-              )}
-
-              {!isLoading &&
-                isUsingGroups(isGrouped, items) &&
-                items.map((group: GroupType, index: number) => {
-                  if (group.options.length < 1) {
-                    return;
-                  }
-                  const render = (
-                    <div key={index}>
-                      <SectionHeading
-                        key={index}
-                        data-test-id="cf-multiselect-grouptitle"
-                        marginBottom="none"
-                        className={styles.groupTitle}
-                      >
-                        {group.groupTitle}
-                      </SectionHeading>
-                      <MultiselectItems<ItemType>
-                        items={group.options}
-                        renderItem={renderItem}
-                        elementStartIndex={elementStartIndex}
-                        onSelectItem={onSelectItem}
-                      />
+            {items.length > 0 && (
+              <>
+                {isLoading &&
+                  [...Array(3)].map((_, index) => (
+                    <div
+                      key={index}
+                      className={cx(styles.item, styles.disabled)}
+                    >
+                      <ListItemLoadingState />
                     </div>
-                  );
-                  elementStartIndex += group.options.length;
-                  return render;
-                })}
+                  ))}
 
-              {!isLoading &&
-                !isUsingGroups(isGrouped, items) &&
-                items.length > 0 && (
-                  <MultiselectItems<ItemType>
-                    items={items}
-                    elementStartIndex={elementStartIndex}
-                    renderItem={renderItem}
-                    onSelectItem={onSelectItem}
-                  />
+                {!isLoading && isShowingNoMatches && (
+                  <div className={styles.item}>
+                    <Subheading className={styles.noMatchesTitle}>
+                      {noMatchesMessage}
+                    </Subheading>
+                  </div>
                 )}
-            </>
-          </Popover.Content>
-        )}
+
+                {!isLoading &&
+                  isUsingGroups(isGrouped, items) &&
+                  items.map((group: GroupType, index: number) => {
+                    if (group.options.length < 1) {
+                      return;
+                    }
+                    const render = (
+                      <div key={index}>
+                        <SectionHeading
+                          key={index}
+                          data-test-id="cf-multiselect-grouptitle"
+                          marginBottom="none"
+                          className={styles.groupTitle}
+                        >
+                          {group.groupTitle}
+                        </SectionHeading>
+                        <MultiselectItems<ItemType>
+                          items={group.options}
+                          renderItem={renderItem}
+                          elementStartIndex={elementStartIndex}
+                          onSelectItem={onSelectItem}
+                        />
+                      </div>
+                    );
+                    elementStartIndex += group.options.length;
+                    return render;
+                  })}
+
+                {!isLoading &&
+                  !isUsingGroups(isGrouped, items) &&
+                  items.length > 0 && (
+                    <MultiselectItems<ItemType>
+                      items={items}
+                      elementStartIndex={elementStartIndex}
+                      renderItem={renderItem}
+                      onSelectItem={onSelectItem}
+                    />
+                  )}
+              </>
+            )}
+          </>
+        </Popover.Content>
       </Popover>
     </div>
   );

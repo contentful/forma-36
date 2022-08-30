@@ -38,10 +38,7 @@ export const Basic = (args: MultiselectProps<string>) => {
   const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
   const [filteredItems, setFilteredItems] = useState(fruitStrings);
 
-  const handleInputValueChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { value } = event.target;
+  const handleInputValueChange = (value: string) => {
     const newFilteredItems = fruitStrings.filter((item) =>
       item.toLowerCase().includes(value.toLowerCase()),
     );
