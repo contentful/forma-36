@@ -91,13 +91,13 @@ for (const pkg of packages) {
     `${pkg} has incorrect or missing repository url`,
   );
 
-  const readme = path.join(path.dirname(pkg), 'README.md');
-  if (!fs.existsSync(readme)) {
-    fs.writeFileSync(
-      readme,
-      `# ${json.name}\n\nThis package is part of the pre-release. This means it is unsupported and subject to breaking changes without warning.\n\nPlease use official, supported version of the library [forma-36](https://github.com/contentful/forma-36/tree/main/packages/forma-36-react-components), [NPM](https://www.npmjs.com/package/@contentful/forma-36-react-components).\n`,
-    );
-  }
+  const mdxReadme = path.join(path.dirname(pkg), 'README.mdx');
+  const mdReadme = path.join(path.dirname(pkg), 'README.md');
+
+  softAssert(
+    fs.existsSync(mdxReadme) || fs.existsSync(mdReadme),
+    `${pkg} is missing README file`,
+  );
 }
 
 if (errors) {
