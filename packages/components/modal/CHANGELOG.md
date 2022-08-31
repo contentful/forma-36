@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.16.0
+
+### Minor Changes
+
+- [#2175](https://github.com/contentful/forma-36/pull/2175) [`438ccb1d`](https://github.com/contentful/forma-36/commit/438ccb1d28e7e7d309b050d1d5510fc15dd1ffa6) Thanks [@maxcheremisin](https://github.com/maxcheremisin)! - Add 'overlayProps' to Modal component
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.16.0
+  - @contentful/f36-icons@4.16.0
+  - @contentful/f36-typography@4.16.0
+  - @contentful/f36-core@4.16.0
+
 ## 4.15.1
 
 ### Patch Changes
