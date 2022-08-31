@@ -38,7 +38,8 @@ export const Basic = (args: MultiselectProps<string>) => {
   const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
   const [filteredItems, setFilteredItems] = useState(fruitStrings);
 
-  const handleInputValueChange = (value: string) => {
+  const handleSearchValueChange = (event) => {
+    const value = event.target.value;
     const newFilteredItems = fruitStrings.filter((item) =>
       item.toLowerCase().includes(value.toLowerCase()),
     );
@@ -61,7 +62,7 @@ export const Basic = (args: MultiselectProps<string>) => {
         {...args}
         items={filteredItems}
         hasSearch
-        onSearchValueChange={handleInputValueChange}
+        onSearchValueChange={handleSearchValueChange}
         onSelectItem={handleSelectItem}
         listWidth="full"
         defaultSelectedItems={selectedFruits}

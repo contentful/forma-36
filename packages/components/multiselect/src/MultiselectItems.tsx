@@ -21,7 +21,7 @@ export const MultiselectItems = <ItemType,>(
     items,
     elementStartIndex,
     renderItem,
-    inputValue,
+    inputValue = '',
     listMaxHeight = 180,
     onSelectItem,
   } = props;
@@ -63,7 +63,6 @@ function HighlightedItem({
   inputValue: string;
 }) {
   const { before, match, after } = getStringMatch(item, inputValue);
-
   return (
     <>
       {before}

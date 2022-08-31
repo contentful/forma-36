@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { cx } from 'emotion';
 
 import {
@@ -88,7 +88,7 @@ export interface MultiselectProps<ItemType>
   /**
    * Function called whenever the search input value changes
    */
-  onSearchValueChange?: (value: string) => void;
+  onSearchValueChange?: (event: React.ChangeEvent) => void;
 
   /**
    * This is the value will be passed to the `placeholder` prop of the input.
@@ -182,9 +182,24 @@ function _Multiselect<ItemType>(
   //const [selectedItems] = useState(defaultSelectedItems);
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleSearchChange = (value: string) => {
-    setSearchValue(value);
-    onSearchValueChange(value);
+  const searchInputRef = useRef(null);
+
+  const handleSearchChange = (event) => {
+    setSearchValue(event.target.value);
+    onSearchValueChange(event);
+  };
+
+  const resetSearch = () => {
+    // this looks a bit hacky, but is the official way of externally triggering the onChange handler for an input
+    // https://stackoverflow.com/questions/23892547/what-is-the-best-way-to-trigger-onchange-event-in-react-js/46012210#46012210
+
+    const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+      window.HTMLInputElement.prototype,
+      'value',
+    ).set;
+    nativeInputValueSetter.call(searchInputRef.current, '');
+    const forcedEvent = new Event('change', { bubbles: true });
+    searchInputRef.current.dispatchEvent(forcedEvent);
   };
 
   // const flattenItems = isUsingGroups(isGrouped, items)
@@ -251,8 +266,9 @@ function _Multiselect<ItemType>(
                   data-test-id="cf-multiselect-search"
                   placeholder={searchPlaceholder}
                   onChange={(event) => {
-                    handleSearchChange(event.target.value);
+                    handleSearchChange(event);
                   }}
+                  ref={mergeRefs(searchInputRef, inputRef)}
                 />
                 <IconButton
                   aria-label="Clear"
@@ -261,7 +277,7 @@ function _Multiselect<ItemType>(
                   icon={<CloseIcon variant="muted" />}
                   onClick={() => {
                     if (searchValue) {
-                      handleSearchChange('');
+                      resetSearch();
                     }
                   }}
                   isDisabled={searchValue === ''}
