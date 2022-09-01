@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 01-09-2022
+
+**F36 Modal** `v4.16.0`
+
+- Add 'overlayProps' to Modal component
+
 ## 27-08-2022
 
 **F36 Autocomplete** `v4.15.1`
