@@ -1,13 +1,14 @@
 import React from 'react';
 import { Table } from '@contentful/f36-table';
 
-import { SkeletonRow, SkeletonRowProps } from '../src/SkeletonRow/SkeletonRow';
+import { Skeleton } from '../src/index';
+import type { SkeletonRowProps } from '../src/SkeletonRow/SkeletonRow';
 
 export default {
   title: 'Components/Skeleton/SkeletonRow',
-  component: SkeletonRow,
+  component: Skeleton.Row,
   parameters: {
-    propTypes: [SkeletonRow['__docgenInfo']],
+    propTypes: [Skeleton.Row['__docgenInfo']],
   },
   argTypes: {},
 };
@@ -24,7 +25,7 @@ export const Basic = (args: SkeletonRowProps) => (
       </Table.Row>
     </Table.Head>
     <Table.Body>
-      <SkeletonRow {...args} />
+      <Skeleton.Row {...args} />
     </Table.Body>
   </Table>
 );

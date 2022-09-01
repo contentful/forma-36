@@ -2,14 +2,13 @@ import React from 'react';
 import { cx } from 'emotion';
 import { Tooltip } from '@contentful/f36-tooltip';
 import { Text } from '@contentful/f36-typography';
+import { Skeleton } from '@contentful/f36-skeleton';
 
 import { BaseCard } from '../BaseCard/BaseCard';
 import type { BaseCardDragHandleProps } from '../BaseCard/BaseCard.types';
 import type { EntryCardInternalProps } from '../EntryCard/EntryCard.types';
 import { getInlineEntryCardStyles } from './InlineEntryCard.styles';
 import { CardActions } from '../BaseCard/CardActions';
-
-import { SkeletonBodyText, SkeletonContainer } from '@contentful/f36-skeleton';
 
 export type InlineEntryCardInternalProps = Omit<
   EntryCardInternalProps,
@@ -37,13 +36,13 @@ export const InlineEntryCard = ({
 
   if (isLoading) {
     return (
-      <SkeletonContainer
+      <Skeleton.Container
         className={styles.skeleton}
         svgHeight="1.25rem"
         svgWidth="6rem"
       >
-        <SkeletonBodyText numberOfLines={1} />
-      </SkeletonContainer>
+        <Skeleton.BodyText numberOfLines={1} />
+      </Skeleton.Container>
     );
   }
 

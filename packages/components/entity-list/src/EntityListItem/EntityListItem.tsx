@@ -19,11 +19,7 @@ import { Text } from '@contentful/f36-typography';
 import { DragHandle, type DragHandleProps } from '@contentful/f36-drag-handle';
 import { Button } from '@contentful/f36-button';
 import { Menu } from '@contentful/f36-menu';
-import {
-  SkeletonBodyText,
-  SkeletonContainer,
-  SkeletonImage,
-} from '@contentful/f36-skeleton';
+import { Skeleton } from '@contentful/f36-skeleton';
 
 import { getEntityListItemStyles } from './EntityListItem.styles';
 
@@ -168,14 +164,14 @@ export const EntityListItem = ({
       {renderCardDragHandle()}
       {isLoading ? (
         <article className={styles.card}>
-          <SkeletonContainer clipId="f36-entity-list-item-skeleton">
-            <SkeletonImage height={46} width={46} />
-            <SkeletonBodyText
+          <Skeleton.Container clipId="f36-entity-list-item-skeleton">
+            <Skeleton.Image height={46} width={46} />
+            <Skeleton.BodyText
               numberOfLines={2}
               lineHeight={18}
               offsetLeft={54}
             />
-          </SkeletonContainer>
+          </Skeleton.Container>
         </article>
       ) : (
         <Element

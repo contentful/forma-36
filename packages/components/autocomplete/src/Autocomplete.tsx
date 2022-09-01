@@ -10,7 +10,7 @@ import {
 import { IconButton } from '@contentful/f36-button';
 import { TextInput, type TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
-import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
+import { Skeleton } from '@contentful/f36-skeleton';
 import { Popover } from '@contentful/f36-popover';
 import { Subheading, SectionHeading } from '@contentful/f36-typography';
 
@@ -385,9 +385,9 @@ function _Autocomplete<ItemType>(
 
 const ListItemLoadingState = () => {
   return (
-    <SkeletonContainer svgHeight={16}>
-      <SkeletonBodyText numberOfLines={1} />
-    </SkeletonContainer>
+    <Skeleton.Container svgHeight={16}>
+      <Skeleton.BodyText numberOfLines={1} />
+    </Skeleton.Container>
   );
 };
 

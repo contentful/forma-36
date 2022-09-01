@@ -76,11 +76,6 @@ const components: Array<SidebarSectionType | SidebarLinkType> = [
   },
   {
     type: 'section',
-    links: mdxSidebarLinks.skeletonComponents,
-    title: 'Skeleton Components',
-  },
-  {
-    type: 'section',
     links: mdxSidebarLinks.deprecatedComponents,
     title: 'Deprecated V3 Components',
   },
