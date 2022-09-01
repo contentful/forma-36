@@ -13,8 +13,7 @@
   "browserslist": "extends @contentful/browserslist-config",
   "scripts": {
     "build:clean": "rm -rf dist",
-    "build": "yarn build:clean && microbundle src/index.ts && yarn size",
-    "size": "size-limit",
+    "build": "yarn build:clean && microbundle src/index.ts",
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
@@ -59,11 +58,9 @@
     "@types/react-dom": "16.9.14"
   },
   "devDependencies": {
-    "@size-limit/preset-big-lib": "^4.5.5",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "semantic-release": "^17.4.2",
-    "size-limit": "^7.0.8"
+    "semantic-release": "^17.4.2"
   },
   "repository": {
     "type": "git",
