@@ -160,35 +160,5 @@
   "volta": {
     "node": "14.17.0",
     "yarn": "1.19.0"
-  },
-  "turbo": {
-    "pipeline": {
-      "start": {
-        "dependsOn": [
-          "^start"
-        ]
-      },
-      "start:prod": {
-        "dependsOn": [
-          "^start:prod"
-        ]
-      },
-      "build": {
-        "dependsOn": [
-          "^build"
-        ],
-        "outputs": [
-          "dist/**"
-        ]
-      },
-      "build:prod": {
-        "dependsOn": [
-          "^build:prod"
-        ],
-        "outputs": [
-          ".next/**"
-        ]
-      }
-    }
   }
 }
