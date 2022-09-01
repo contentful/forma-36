@@ -45,23 +45,25 @@ export const getMultiselectStyles = () => ({
     color: tokens.gray500,
     margin: `${tokens.spacingM} 0 ${tokens.spacingM} 0`,
   }),
-  item: css({
-    padding: `${tokens.spacingXs} ${tokens.spacingM}`,
-    wordBreak: 'break-word',
-    whiteSpace: 'break-spaces',
-    cursor: 'pointer',
-    hyphens: 'auto',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
+  item: (isDisabled?: boolean) =>
+    css({
+      padding: `${tokens.spacingXs} ${tokens.spacingM}`,
+      wordBreak: 'break-word',
+      whiteSpace: 'break-spaces',
+      cursor: isDisabled ? 'not-allowed' : 'pointer',
+      hyphens: 'auto',
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      opacity: isDisabled ? 0.5 : 1,
 
-    '&:focus, &:hover': {
-      backgroundColor: tokens.gray100,
-    },
-    '&:active': {
-      backgroundColor: tokens.gray200,
-    },
-  }),
+      '&:focus, &:hover': {
+        backgroundColor: tokens.gray100,
+      },
+      '&:active': {
+        backgroundColor: tokens.gray200,
+      },
+    }),
   disabled: css({
     opacity: 0.5,
     pointerEvents: 'none',

@@ -3,6 +3,7 @@ import { Checkbox } from '@contentful/f36-forms';
 import { Text } from '@contentful/f36-typography';
 import { getMultiselectStyles } from './Multiselect.styles';
 import { getStringMatch } from '@contentful/f36-utils';
+import { isDisabled } from '@testing-library/user-event/dist/utils';
 
 export interface MulitselectOptionProps {
   label: string;
@@ -12,7 +13,6 @@ export interface MulitselectOptionProps {
   onSelectItem: (event: React.ChangeEvent) => void;
   isChecked?: boolean;
   isDisabled?: boolean;
-  isReadOnly?: boolean;
 }
 
 export const MultiselectOption = ({
@@ -22,18 +22,20 @@ export const MultiselectOption = ({
   onSelectItem,
   searchValue = '',
   isChecked = false,
+  isDisabled = false,
   ...rest
 }: MulitselectOptionProps) => {
   const styles = getMultiselectStyles();
 
   return (
     <li {...rest}>
-      <label htmlFor={itemIdentifier} className={styles.item}>
+      <label htmlFor={itemIdentifier} className={styles.item(isDisabled)}>
         <Checkbox
           id={itemIdentifier}
           value={value}
           onChange={(event) => onSelectItem(event)}
           isChecked={isChecked}
+          isDisabled={isDisabled}
         />
         <Text data-test-id={`cf-multiselect-list-item-${itemIdentifier}`}>
           <HighlightedItem item={label} inputValue={searchValue} />

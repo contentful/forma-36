@@ -81,6 +81,7 @@ export const Basic = (args: MultiselectProps) => {
                 key={`${item}-${index}`}
                 itemIdentifier={`${item}-${index}`}
                 isChecked={selectedFruits.includes(item)}
+                isDisabled={index === 2}
               />
             );
           })}
