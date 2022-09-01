@@ -2,15 +2,14 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { SkeletonContainer } from './SkeletonContainer';
-import { SkeletonBodyText } from '../SkeletonBodyText/SkeletonBodyText';
+import { Skeleton } from '../index';
 
 describe('SkeletonContainer', () => {
   it('has no a11y issues', async () => {
     const { container } = render(
-      <SkeletonContainer>
-        <SkeletonBodyText />
-      </SkeletonContainer>,
+      <Skeleton.Container>
+        <Skeleton.BodyText />
+      </Skeleton.Container>,
     );
     const results = await axe(container);
 

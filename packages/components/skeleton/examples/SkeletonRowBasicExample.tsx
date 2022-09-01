@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, SkeletonRow } from '@contentful/f36-components';
+import { Table, Skeleton } from '@contentful/f36-components';
 
 export default function SkeletonRowBasicExample() {
   return (
@@ -14,7 +14,7 @@ export default function SkeletonRowBasicExample() {
         </Table.Row>
       </Table.Head>
       <Table.Body>
-        <SkeletonRow rowCount={5} columnCount={5} />
+        <Skeleton.Row rowCount={5} columnCount={5} />
       </Table.Body>
     </Table>
   );

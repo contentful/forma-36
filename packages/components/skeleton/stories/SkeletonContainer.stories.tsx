@@ -1,17 +1,13 @@
 import React from 'react';
 
-import { SkeletonBodyText } from '../src/SkeletonBodyText/SkeletonBodyText';
-import { SkeletonDisplayText } from '../src/SkeletonDisplayText/SkeletonDisplayText';
-import {
-  SkeletonContainer,
-  SkeletonContainerProps,
-} from '../src/SkeletonContainer/SkeletonContainer';
+import { Skeleton } from '../src/index';
+import type { SkeletonContainerProps } from '../src/SkeletonContainer/SkeletonContainer';
 
 export default {
   title: 'Components/Skeleton/SkeletonContainer',
-  component: SkeletonContainer,
+  component: Skeleton.Container,
   parameters: {
-    propTypes: [SkeletonContainer['__docgenInfo']],
+    propTypes: [Skeleton.Container['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },
@@ -19,10 +15,10 @@ export default {
 };
 
 export const Basic = (args: SkeletonContainerProps) => (
-  <SkeletonContainer {...args}>
-    <SkeletonDisplayText numberOfLines={1} />
-    <SkeletonBodyText numberOfLines={3} offsetTop={35} />
-  </SkeletonContainer>
+  <Skeleton.Container {...args}>
+    <Skeleton.DisplayText numberOfLines={1} />
+    <Skeleton.BodyText numberOfLines={3} offsetTop={35} />
+  </Skeleton.Container>
 );
 
 Basic.args = {

@@ -14,13 +14,10 @@ import {
   type PolymorphicProps,
 } from '@contentful/f36-core';
 import { DragHandle } from '@contentful/f36-drag-handle';
-import {
-  SkeletonBodyText,
-  SkeletonContainer,
-  SkeletonDisplayText,
-} from '@contentful/f36-skeleton';
+import { Skeleton } from '@contentful/f36-skeleton';
 
 import { getBaseCardStyles } from './BaseCard.styles';
+
 import { DefaultCardHeader, stopEvents } from './DefaultCardHeader';
 import type { BaseCardInternalProps } from './BaseCard.types';
 
@@ -135,10 +132,10 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
 
   if (isLoading) {
     return (
-      <SkeletonContainer className={styles.skeleton} svgHeight="5.6rem">
-        <SkeletonDisplayText numberOfLines={1} />
-        <SkeletonBodyText numberOfLines={1} offsetTop={35} />
-      </SkeletonContainer>
+      <Skeleton.Container className={styles.skeleton} svgHeight="5.6rem">
+        <Skeleton.DisplayText numberOfLines={1} />
+        <Skeleton.BodyText numberOfLines={1} offsetTop={35} />
+      </Skeleton.Container>
     );
   }
 

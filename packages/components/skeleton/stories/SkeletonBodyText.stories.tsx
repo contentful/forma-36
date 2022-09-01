@@ -1,24 +1,20 @@
 import React from 'react';
 
-import {
-  SkeletonBodyText,
-  SkeletonBodyTextProps,
-} from '../src/SkeletonBodyText/SkeletonBodyText';
-import { SkeletonText } from '../src/SkeletonText/SkeletonText';
-import { SkeletonContainer } from '../src/SkeletonContainer/SkeletonContainer';
+import { Skeleton } from '../src/index';
+import type { SkeletonBodyTextProps } from '../src/SkeletonBodyText/SkeletonBodyText';
 
 export default {
   title: 'Components/Skeleton/SkeletonBodyText',
-  component: SkeletonText,
+  component: Skeleton.Text,
   parameters: {
-    propTypes: [SkeletonText['__docgenInfo']],
+    propTypes: [Skeleton.Text['__docgenInfo']],
   },
 };
 
 export const Basic = (args: SkeletonBodyTextProps) => (
-  <SkeletonContainer>
-    <SkeletonBodyText {...args} />
-  </SkeletonContainer>
+  <Skeleton.Container>
+    <Skeleton.BodyText {...args} />
+  </Skeleton.Container>
 );
 
 Basic.args = {
