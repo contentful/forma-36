@@ -13,7 +13,7 @@
     "emotion": "^10.0.17"
   },
   "devDependencies": {
-    "react-icons": "^4.2.0"
+    "react-icons": "^4.4.0"
   },
   "peerDependencies": {
     "react": ">=16.8"
