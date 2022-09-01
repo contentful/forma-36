@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.17.0
+
+### Minor Changes
+
+- [#2169](https://github.com/contentful/forma-36/pull/2169) [`71baf762`](https://github.com/contentful/forma-36/commit/71baf762bc3635730f496dab4113975984878736) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(skeleton): enable compound component pattern
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-table@4.17.0
+  - @contentful/f36-core@4.17.0
+
 ## 4.16.0
 
 ### Patch Changes
