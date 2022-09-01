@@ -10,6 +10,8 @@ export interface MulitselectOptionProps {
   itemIdentifier: string;
   searchValue?: string;
   onSelectItem: (event: React.ChangeEvent) => void;
+  isDisabled?: boolean;
+  isReadOnly?: boolean;
 }
 
 export const MultiselectOption = ({

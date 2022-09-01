@@ -6,6 +6,14 @@ export const getMultiselectStyles = () => ({
     position: 'relative',
     width: '100%',
   }),
+  currentSelection: css({
+    width: '50%',
+    whiteSpace: 'nowrap',
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
+    verticalAlign: 'bottom',
+    marginRight: tokens.spacing2Xs,
+  }),
   inputField: css({
     paddingRight: tokens.spacingXl,
     textOverflow: 'ellipsis',

@@ -31,7 +31,7 @@ const fruits: Produce[] = [
 
 const fruitStrings = fruits.reduce((acc, fruit) => [...acc, fruit.name], []);
 
-export const Basic = (args: MultiselectProps<string>) => {
+export const Basic = (args: MultiselectProps) => {
   const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
   const [filteredItems, setFilteredItems] = useState(fruitStrings);
 
@@ -44,8 +44,15 @@ export const Basic = (args: MultiselectProps<string>) => {
   };
 
   const handleSelectItem = (event) => {
-    console.info(event.target.checked);
-    //setSelectedFruits((prevState) => [...prevState, event.target.value]);
+    const { checked, value } = event.target;
+    if (checked) {
+      setSelectedFruits((prevState) => [...prevState, value]);
+    } else {
+      const newSelectedFruits = selectedFruits.filter(
+        (fruit) => fruit !== value,
+      );
+      setSelectedFruits(newSelectedFruits);
+    }
   };
 
   return (
@@ -61,6 +68,8 @@ export const Basic = (args: MultiselectProps<string>) => {
         onSearchValueChange={handleSearchValueChange}
         listWidth="full"
         hasSearch
+        hasNoMatches={filteredItems.length < 1}
+        currentSelection={selectedFruits}
       >
         <>
           {filteredItems.map((item, index) => {

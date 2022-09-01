@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { cx } from 'emotion';
 
 import { mergeRefs, type CommonProps } from '@contentful/f36-core';
@@ -27,6 +27,14 @@ export interface MultiselectProps
    */
   startIcon?: React.ReactElement;
 
+  children?: React.ReactNode;
+  /**
+   * Placeholder shown before selecting any elements. Defaults to 'Select one or more items'
+   */
+  placeholder?: string;
+
+  currentSelection?: Array<string>;
+
   /**
    * If this is set to `true` the text input will be cleared after an item is selected
    * @default false
@@ -49,6 +57,8 @@ export interface MultiselectProps
    * @default "Search"
    */
   searchPlaceholder?: string;
+
+  hasNoMatches?: boolean;
 
   /**
    * A message that will be shown when it is not possible to find any option that matches the input value
@@ -93,8 +103,6 @@ export interface MultiselectProps
    * Defaults to `false`
    */
   usePortal?: boolean;
-
-  children: React.ReactNode;
 }
 
 function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
@@ -102,14 +110,13 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     id,
     className,
     startIcon,
+    placeholder = 'Select one or more Items',
+    currentSelection = [],
     hasSearch = false,
     defaultValue = '',
     onSearchValueChange,
+    hasNoMatches = false,
     searchPlaceholder = 'Search',
-    isInvalid,
-    isDisabled,
-    isRequired,
-    isReadOnly,
     inputRef,
     noMatchesMessage = 'No matches found',
     toggleRef,
@@ -125,7 +132,6 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
   const styles = getMultiselectStyles();
 
   const [searchValue, setSearchValue] = useState(defaultValue);
-  //const [selectedItems] = useState(defaultSelectedItems);
   const [isOpen, setIsOpen] = useState(false);
 
   const searchInputRef = useRef(null);
@@ -147,6 +153,24 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     const forcedEvent = new Event('change', { bubbles: true });
     searchInputRef.current.dispatchEvent(forcedEvent);
   };
+
+  const renderMultiselectLabel = React.useCallback(() => {
+    if (currentSelection.length === 0) {
+      return <>{placeholder}</>;
+    }
+    const leftoverCount = currentSelection.length - 1;
+    if (leftoverCount === 0) {
+      return (
+        <span className={styles.currentSelection}>{currentSelection[0]}</span>
+      );
+    }
+    return (
+      <div>
+        <span className={styles.currentSelection}>{currentSelection[0]}</span>{' '}
+        and {leftoverCount} more
+      </div>
+    );
+  }, [currentSelection]);
 
   return (
     <div
@@ -177,10 +201,9 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
             startIcon={startIcon}
             endIcon={<ChevronDownIcon />}
           >
-            Multiselect
+            {renderMultiselectLabel()}
           </Button>
         </Popover.Trigger>
-
         <Popover.Content
           ref={listRef}
           className={styles.content(listMaxHeight)}
@@ -222,13 +245,15 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                 />
               </>
             )}
-            {isLoading ? (
-              <ListItemLoadingState />
-            ) : (
+            {isLoading && <ListItemLoadingState />}
+
+            {!isLoading && children && (
               <ul className={styles.list} data-test-id="cf-multiselect-items">
                 {children}
               </ul>
             )}
+
+            {!isLoading && hasNoMatches && <div>{noMatchesMessage}</div>}
           </>
         </Popover.Content>
       </Popover>
