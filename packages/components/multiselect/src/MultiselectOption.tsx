@@ -10,6 +10,7 @@ export interface MulitselectOptionProps {
   itemIdentifier: string;
   searchValue?: string;
   onSelectItem: (event: React.ChangeEvent) => void;
+  isChecked?: boolean;
   isDisabled?: boolean;
   isReadOnly?: boolean;
 }
@@ -20,6 +21,7 @@ export const MultiselectOption = ({
   itemIdentifier,
   onSelectItem,
   searchValue = '',
+  isChecked = false,
   ...rest
 }: MulitselectOptionProps) => {
   const styles = getMultiselectStyles();
@@ -31,6 +33,7 @@ export const MultiselectOption = ({
           id={itemIdentifier}
           value={value}
           onChange={(event) => onSelectItem(event)}
+          isChecked={isChecked}
         />
         <Text data-test-id={`cf-multiselect-list-item-${itemIdentifier}`}>
           <HighlightedItem item={label} inputValue={searchValue} />

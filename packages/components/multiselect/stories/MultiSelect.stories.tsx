@@ -80,6 +80,7 @@ export const Basic = (args: MultiselectProps) => {
                 onSelectItem={handleSelectItem}
                 key={`${item}-${index}`}
                 itemIdentifier={`${item}-${index}`}
+                isChecked={selectedFruits.includes(item)}
               />
             );
           })}
