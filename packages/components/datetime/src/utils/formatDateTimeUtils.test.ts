@@ -4,6 +4,8 @@ extend(utcPlugin);
 
 import { formatDateAndTime, formatMachineReadableDateTime } from '.';
 
+jest.setSystemTime(new Date('2022-01-01'));
+
 describe('formatDateAndTime', () => {
   const today = dayjs();
 
