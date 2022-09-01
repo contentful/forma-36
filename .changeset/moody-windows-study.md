@@ -1,5 +1,5 @@
 ---
-"@contentful/f36-skeleton": patch
+"@contentful/f36-skeleton": minor
 ---
 
 feat(skeleton): enable compound component pattern
