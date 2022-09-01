@@ -1,21 +1,20 @@
 import React from 'react';
 import { cx } from 'emotion';
 import { CommonProps } from '@contentful/f36-core';
-import { styles } from './{{componentName}}.styles'
+import { getStyles } from './{{componentName}}.styles';
 
 export interface {{componentName}}Props extends CommonProps {
   children: React.ReactNode;
-};
+}
 
 function _{{componentName}}(props: {{componentName}}Props, ref: React.Ref<HTMLDivElement>) {
+  const styles = getStyles();
+
   return (
     <div
       data-test-id={props.testId}
       ref={ref}
-      className={cx(
-        styles.{{toCamelCase componentName}},
-        props.className,
-      )}
+      className={cx(styles.{{toCamelCase componentName}}, props.className)}
     >
       {props.children}
     </div>
