@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import type { Meta } from '@storybook/react/types-6-0';
 
 import { Stack } from '@contentful/f36-core';
-import { Paragraph } from '@contentful/f36-typography';
-
-import { Multiselect } from '../src/Multiselect';
-import type { MultiselectProps } from '../src/Multiselect';
+import { Multiselect, MultiselectProps } from '../src';
 
 export default {
   title: 'Components/Multiselect',
@@ -46,8 +43,9 @@ export const Basic = (args: MultiselectProps<string>) => {
     setFilteredItems(newFilteredItems);
   };
 
-  const handleSelectItem = (item: string) => {
-    setSelectedFruits((prevState) => [...prevState, item]);
+  const handleSelectItem = (event) => {
+    console.info(event.target.checked);
+    //setSelectedFruits((prevState) => [...prevState, event.target.value]);
   };
 
   return (
@@ -58,15 +56,26 @@ export const Basic = (args: MultiselectProps<string>) => {
       alignItems="start"
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
-      <Multiselect<string>
+      <Multiselect
         {...args}
-        items={filteredItems}
-        hasSearch
         onSearchValueChange={handleSearchValueChange}
-        onSelectItem={handleSelectItem}
         listWidth="full"
-        defaultSelectedItems={selectedFruits}
-      />
+        hasSearch
+      >
+        <>
+          {filteredItems.map((item, index) => {
+            return (
+              <Multiselect.Option
+                value={item}
+                label={item}
+                onSelectItem={handleSelectItem}
+                key={`${item}-${index}`}
+                itemIdentifier={`${item}-${index}`}
+              />
+            );
+          })}
+        </>
+      </Multiselect>
     </Stack>
   );
 };

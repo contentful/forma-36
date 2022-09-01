@@ -1,13 +1,10 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-export const getMultiselectStyles = (listMaxHeight: number) => ({
-  autocomplete: css({
+export const getMultiselectStyles = () => ({
+  multiselect: css({
     position: 'relative',
     width: '100%',
-  }),
-  combobox: css({
-    position: 'relative',
   }),
   inputField: css({
     paddingRight: tokens.spacingXl,
@@ -22,10 +19,11 @@ export const getMultiselectStyles = (listMaxHeight: number) => ({
     padding: tokens.spacing2Xs,
     height: '38px',
   }),
-  content: css({
-    overflow: 'auto',
-    maxHeight: `${listMaxHeight}px`,
-  }),
+  content: (listMaxHeight: number) =>
+    css({
+      overflow: 'auto',
+      maxHeight: `${listMaxHeight}px`,
+    }),
   list: css({
     listStyle: 'none',
     padding: `${tokens.spacingXs} 0`,
@@ -40,12 +38,14 @@ export const getMultiselectStyles = (listMaxHeight: number) => ({
     margin: `${tokens.spacingM} 0 ${tokens.spacingM} 0`,
   }),
   item: css({
-    display: 'block',
     padding: `${tokens.spacingXs} ${tokens.spacingM}`,
     wordBreak: 'break-word',
     whiteSpace: 'break-spaces',
     cursor: 'pointer',
     hyphens: 'auto',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
 
     '&:focus, &:hover': {
       backgroundColor: tokens.gray100,
