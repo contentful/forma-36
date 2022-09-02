@@ -102,9 +102,6 @@ module.exports = {
     {
       files: [
         '**/forma-36-react-components/tools/**/*',
-        '**/forma-36-react-components/**/Icon/svg/*',
-        '**/forma-36-react-components/**/ProductIcon/**/*',
-        '**/forma-36-react-components/**/Illustration/**/*',
         '**/packages/components/**/*',
         '**/packages/**/examples/**',
       ],
@@ -123,6 +120,13 @@ module.exports = {
       ],
       rules: {
         'import/no-extraneous-dependencies': 'off',
+      },
+    },
+    {
+      // Example files and codemods are allowed to log to console
+      files: ['**/examples/**', '**/packages/forma-36-codemod/**/*'],
+      rules: {
+        'no-console': 'off',
       },
     },
   ],

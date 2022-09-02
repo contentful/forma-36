@@ -4,10 +4,16 @@ extend(utcPlugin);
 
 import { formatDateAndTime, formatMachineReadableDateTime } from '.';
 
-jest.setSystemTime(new Date('2022-01-01'));
-
 describe('formatDateAndTime', () => {
   const today = dayjs();
+
+  beforeEach(() => {
+    jest.useFakeTimers().setSystemTime(new Date(today.format()).getTime());
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+  });
 
   it('returns a string with the "full" format if no format option is passed', () => {
     const expected = formatDateAndTime(today.format());
