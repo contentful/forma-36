@@ -152,6 +152,11 @@ export const getStaticProps: GetStaticProps<
     ];
   }
 
+  // We want to show the changelog page as if it was part of the introduction section
+  if (section === HARDCODED_WEBSITE_SECTION.WHATS_NEW) {
+    sidebarLinks = (await getSidebarLinksBySectionSlug('introduction')) ?? [];
+  }
+
   if (section === HARDCODED_WEBSITE_SECTION.TOKENS) {
     sidebarLinks = [...sidebarLinks, { links: mdxSidebarLinks.tokens }];
   }

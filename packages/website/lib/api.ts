@@ -1,4 +1,4 @@
-import { SidebarSection } from '../types';
+import { HARDCODED_WEBSITE_SECTION, SidebarSection } from '../types';
 
 const ARTICLE_GRAPHQL_FIELDS = `
 sys {
@@ -191,6 +191,11 @@ export async function getSidebarLinksBySectionSlug(
   if (data) {
     let sidebarLinks: SidebarSection[] = [];
     const links = data.linksCollection?.items.map((link) => {
+      // Changelog link is a special case because we don't want to prepend the section slug
+      if (link.slug === HARDCODED_WEBSITE_SECTION.WHATS_NEW) {
+        return { ...link, slug: `/${link.slug}` };
+      }
+
       return {
         ...link,
         slug: link.slug.startsWith('http')
