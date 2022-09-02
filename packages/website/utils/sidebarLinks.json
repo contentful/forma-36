@@ -66,6 +66,10 @@
       "slug": "/components/popover/"
     },
     {
+      "title": "Skeleton",
+      "slug": "/components/skeleton/"
+    },
+    {
       "title": "Spinner",
       "slug": "/components/spinner/"
     },
@@ -129,13 +133,13 @@
       "slug": "/components/datetime-functions/"
     },
     {
-      "title": "DateTime",
-      "slug": "/components/datetime/"
-    },
-    {
       "title": "Datepicker",
       "slug": "/components/datepicker/",
       "isBeta": true
+    },
+    {
+      "title": "DateTime",
+      "slug": "/components/datetime/"
     },
     {
       "title": "RelativeDateTime",
@@ -200,34 +204,12 @@
       "slug": "/components/switch/"
     },
     {
-      "title": "TextInput",
-      "slug": "/components/text-input/"
-    },
-    {
       "title": "Textarea",
       "slug": "/components/textarea/"
-    }
-  ],
-  "skeletonComponents": [
-    {
-      "title": "SkeletonBodyText",
-      "slug": "/components/skeleton/skeleton-body-text/"
     },
     {
-      "title": "SkeletonContainer",
-      "slug": "/components/skeleton/skeleton-container/"
-    },
-    {
-      "title": "SkeletonDisplayText",
-      "slug": "/components/skeleton/skeleton-display-text/"
-    },
-    {
-      "title": "SkeletonImage",
-      "slug": "/components/skeleton/skeleton-image/"
-    },
-    {
-      "title": "SkeletonRow",
-      "slug": "/components/skeleton/skeleton-row/"
+      "title": "TextInput",
+      "slug": "/components/text-input/"
     }
   ],
   "typographyComponents": [
@@ -258,16 +240,16 @@
   ],
   "utils": [
     {
+      "title": "getStringMatch",
+      "slug": "/utils/get-string-match/"
+    },
+    {
       "title": "Portal",
       "slug": "/utils/portal/"
     },
     {
       "title": "ScreenReaderOnly",
       "slug": "/components/screen-reader-only/"
-    },
-    {
-      "title": "getStringMatch",
-      "slug": "/utils/get-string-match/"
     },
     {
       "title": "useKeyboard",
@@ -301,42 +283,42 @@
   "deprecatedComponents": [
     {
       "title": "Dropdown",
-      "slug": "/deprecated-components/dropdown/",
+      "slug": "/components/dropdown/",
       "isDeprecated": true
     },
     {
       "title": "EditorToolbar",
-      "slug": "/deprecated-components/editor-toolbar/",
+      "slug": "/components/editor-toolbar/",
       "isDeprecated": true
     },
     {
       "title": "EmptyState",
-      "slug": "/deprecated-components/empty-state/",
+      "slug": "/components/empty-state/",
       "isDeprecated": true
     },
     {
       "title": "Illustration",
-      "slug": "/deprecated-components/illustration/",
+      "slug": "/components/illustration/",
       "isDeprecated": true
     },
     {
       "title": "InViewport",
-      "slug": "/deprecated-components/in-viewport/",
+      "slug": "/components/in-viewport/",
       "isDeprecated": true
     },
     {
       "title": "TabFocusTrap",
-      "slug": "/deprecated-components/tab-focus-trap/",
+      "slug": "/components/tab-focus-trap/",
       "isDeprecated": true
     },
     {
       "title": "Tag",
-      "slug": "/deprecated-components/tag/",
+      "slug": "/components/tag/",
       "isDeprecated": true
     },
     {
       "title": "Typography Component",
-      "slug": "/deprecated-components/typography/",
+      "slug": "/components/typography/",
       "isDeprecated": true
     }
   ],
