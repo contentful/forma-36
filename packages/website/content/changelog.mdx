@@ -1,7 +1,7 @@
 ---
 title: What's new
 slug: '/whats-new'
-section: 'intro'
+section: 'introduction'
 ---
 
 The Changelog gives an overview of the changes we've made to Forma 36
