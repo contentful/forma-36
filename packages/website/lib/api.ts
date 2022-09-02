@@ -215,11 +215,6 @@ export async function getSidebarLinksBySectionSlug(
           title: item.name,
         };
 
-        // Do we actually use this?
-        // if (item.previewDescription) {
-        //   category.description = item.previewDescription;
-        // }
-
         category.links = item.linksCollection?.items.map((article) => {
           return {
             ...article,
