@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 02-09-2022
+
+**F36 Skeleton** `v4.17.0`
+
+- feat(skeleton): enable compound component pattern
+
 ## 01-09-2022
 
 **F36 Modal** `v4.16.0`
