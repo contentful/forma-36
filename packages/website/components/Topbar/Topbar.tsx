@@ -9,8 +9,7 @@ import {
   SCREEN_BREAKPOINT_LARGE,
 } from '../../utils/getGridStyles';
 import { DocSearch } from '../DocSearch';
-
-import { WEBSITE_SECTION } from '../../hooks/useCurrentLocation';
+import { useCurrentLocation } from '../../hooks/useCurrentLocation';
 import { TopbarLink } from './TopbarLink';
 import { TopbarLogo } from './TopbarLogo';
 import { VersionSwitch } from './VersionSwitch';
@@ -42,12 +41,15 @@ const styles = {
   }),
 };
 
-interface TopbarProps {
-  activeSection: string;
+type TopbarLink = Record<'initialLink' | 'slug' | 'title', string>;
+
+export interface TopbarProps {
+  links: TopbarLink[];
 }
 
-export function Topbar({ activeSection }: TopbarProps) {
+export function Topbar({ links }: TopbarProps) {
   const gridStyles = getGridStyles();
+  const { currentSection } = useCurrentLocation();
 
   return (
     <Grid.Item
@@ -74,41 +76,24 @@ export function Topbar({ activeSection }: TopbarProps) {
           className={gridStyles.columnStartTwo}
         >
           <List className={styles.navList}>
-            <List.Item>
-              <TopbarLink
-                href="/introduction/getting-started"
-                label="Introduction"
-                isActive={activeSection === WEBSITE_SECTION.INTRODUCTION}
-              />
-            </List.Item>
-            <List.Item>
-              <TopbarLink
-                href="/guidelines/accessibility"
-                label="Guidelines"
-                isActive={activeSection === WEBSITE_SECTION.GUIDELINES}
-              />
-            </List.Item>
-            <List.Item>
-              <TopbarLink
-                href="/tokens/color-system"
-                label="Tokens"
-                isActive={activeSection === WEBSITE_SECTION.TOKENS}
-              />
-            </List.Item>
-            <List.Item>
-              <TopbarLink
-                href="/components/accordion"
-                label="Components"
-                isActive={activeSection === WEBSITE_SECTION.COMPONENTS}
-              />
-            </List.Item>
-            <List.Item>
-              <TopbarLink
-                href="/playground"
-                label="Playground"
-                isActive={activeSection === WEBSITE_SECTION.PLAYGROUND}
-              />
-            </List.Item>
+            {links.map((section) => {
+              const isActive =
+                currentSection !== '' && section.slug.includes(currentSection);
+
+              return (
+                <List.Item key={section.slug}>
+                  <TopbarLink
+                    href={`/${section.slug}${
+                      section.initialLink && section.initialLink !== '/'
+                        ? `/${section.initialLink}`
+                        : ''
+                    }`}
+                    label={section.title}
+                    isActive={isActive}
+                  />
+                </List.Item>
+              );
+            })}
           </List>
         </Flex>
 

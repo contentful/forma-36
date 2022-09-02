@@ -1,7 +1,11 @@
-import {
-  SidebarLinkType,
-  SidebarSectionType,
-} from '../components/SidebarSection';
+import type { SidebarLink, SidebarSubsection } from '../types';
 
-export const sortByTitle = (arr: Array<SidebarSectionType | SidebarLinkType>) =>
-  [...arr].sort((a, b) => (a.title < b.title ? -1 : 1));
+export const sortByTitle = (arr: (SidebarSubsection | SidebarLink)[]) => {
+  return [...arr].sort((a, b) => {
+    if (!a.title || !b.title) {
+      throw new Error('Cannot sort elements without a title');
+    }
+
+    return a.title.localeCompare(b.title);
+  });
+};

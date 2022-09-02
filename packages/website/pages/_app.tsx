@@ -6,8 +6,6 @@ import { GlobalStyles } from '../components/GlobalStyles';
 import '../resources/css/sandpack.css';
 import 'docsearch.js/dist/cdn/docsearch.min.css';
 
-import { Layout } from '../components/Layout';
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -31,9 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         ></script>
       </Head>
 
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Component {...pageProps} />
     </>
   );
 }

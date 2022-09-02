@@ -17,7 +17,8 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "utils/sidebarLinks.json"
   ],
   "exclude": [
     ".next"
