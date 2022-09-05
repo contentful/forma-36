@@ -33,6 +33,51 @@ const fruitStrings = fruits.reduce((acc, fruit) => [...acc, fruit.name], []);
 
 export const Basic = (args: MultiselectProps) => {
   const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
+
+  const handleSelectItem = (event) => {
+    const { checked, value } = event.target;
+    if (checked) {
+      setSelectedFruits((prevState) => [...prevState, value]);
+    } else {
+      const newSelectedFruits = selectedFruits.filter(
+        (fruit) => fruit !== value,
+      );
+      setSelectedFruits(newSelectedFruits);
+    }
+  };
+
+  return (
+    <Stack
+      style={{ width: '150px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      <Multiselect {...args} listWidth="full" currentSelection={selectedFruits}>
+        {fruitStrings.map((item, index) => {
+          return (
+            <Multiselect.Option
+              value={item}
+              label={item}
+              onSelectItem={handleSelectItem}
+              key={`${item}-${index}`}
+              itemIdentifier={`${item}-${index}`}
+              isChecked={selectedFruits.includes(item)}
+              isDisabled={item === 'Avocado 🥑'}
+            />
+          );
+        })}
+      </Multiselect>
+    </Stack>
+  );
+};
+
+Basic.args = {
+  placeholder: 'Select fruits',
+};
+
+export const WithSearch = (args: MultiselectProps) => {
+  const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
   const [filteredItems, setFilteredItems] = useState(fruitStrings);
 
   const handleSearchValueChange = (event) => {
@@ -64,10 +109,9 @@ export const Basic = (args: MultiselectProps) => {
     >
       <Multiselect
         {...args}
+        hasSearch={true}
         onSearchValueChange={handleSearchValueChange}
         listWidth="full"
-        hasSearch
-        hasNoMatches={filteredItems.length < 1}
         currentSelection={selectedFruits}
       >
         {filteredItems.map((item, index) => {
@@ -88,6 +132,6 @@ export const Basic = (args: MultiselectProps) => {
   );
 };
 
-Basic.args = {
+WithSearch.args = {
   placeholder: 'Search your favorite fruit',
 };
