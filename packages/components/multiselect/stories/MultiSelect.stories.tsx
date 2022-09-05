@@ -62,7 +62,6 @@ export const Basic = (args: MultiselectProps) => {
       spacing="spacingM"
       alignItems="start"
     >
-      {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Multiselect
         {...args}
         onSearchValueChange={handleSearchValueChange}
@@ -71,21 +70,19 @@ export const Basic = (args: MultiselectProps) => {
         hasNoMatches={filteredItems.length < 1}
         currentSelection={selectedFruits}
       >
-        <>
-          {filteredItems.map((item, index) => {
-            return (
-              <Multiselect.Option
-                value={item}
-                label={item}
-                onSelectItem={handleSelectItem}
-                key={`${item}-${index}`}
-                itemIdentifier={`${item}-${index}`}
-                isChecked={selectedFruits.includes(item)}
-                isDisabled={index === 2}
-              />
-            );
-          })}
-        </>
+        {filteredItems.map((item, index) => {
+          return (
+            <Multiselect.Option
+              value={item}
+              label={item}
+              onSelectItem={handleSelectItem}
+              key={`${item}-${index}`}
+              itemIdentifier={`${item}-${index}`}
+              isChecked={selectedFruits.includes(item)}
+              isDisabled={item === 'Avocado 🥑'}
+            />
+          );
+        })}
       </Multiselect>
     </Stack>
   );

@@ -3,7 +3,6 @@ import { Checkbox } from '@contentful/f36-forms';
 import { Text } from '@contentful/f36-typography';
 import { getMultiselectStyles } from './Multiselect.styles';
 import { getStringMatch } from '@contentful/f36-utils';
-import { isDisabled } from '@testing-library/user-event/dist/utils';
 
 export interface MulitselectOptionProps {
   label: string;
@@ -20,12 +19,13 @@ export const MultiselectOption = ({
   value,
   itemIdentifier,
   onSelectItem,
-  searchValue = '',
+  searchValue,
   isChecked = false,
   isDisabled = false,
   ...rest
 }: MulitselectOptionProps) => {
   const styles = getMultiselectStyles();
+  console.info(searchValue);
 
   return (
     <li {...rest}>
@@ -47,10 +47,10 @@ export const MultiselectOption = ({
 
 function HighlightedItem({
   item,
-  inputValue,
+  inputValue = '',
 }: {
   item: string;
-  inputValue: string;
+  inputValue?: string;
 }) {
   const { before, match, after } = getStringMatch(item, inputValue);
   return (

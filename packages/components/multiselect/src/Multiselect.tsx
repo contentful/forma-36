@@ -7,6 +7,7 @@ import { TextInput, type TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon, SearchIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover } from '@contentful/f36-popover';
+import { MultiselectOption, MulitselectOptionProps } from './MultiselectOption';
 
 import { getMultiselectStyles } from './Multiselect.styles';
 
@@ -170,7 +171,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         and {leftoverCount} more
       </div>
     );
-  }, [currentSelection]);
+  }, [currentSelection, placeholder, styles.currentSelection]);
 
   return (
     <div
@@ -249,7 +250,14 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
 
             {!isLoading && children && (
               <ul className={styles.list} data-test-id="cf-multiselect-items">
-                {children}
+                {React.Children.map(children, (child) => {
+                  if (React.isValidElement(child)) {
+                    return React.cloneElement(child, {
+                      searchValue,
+                    });
+                  }
+                  return child;
+                })}
               </ul>
             )}
 
