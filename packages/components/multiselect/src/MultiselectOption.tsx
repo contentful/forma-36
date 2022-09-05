@@ -7,7 +7,7 @@ import { getStringMatch } from '@contentful/f36-utils';
 export interface MulitselectOptionProps {
   label: string;
   value: string;
-  itemIdentifier: string;
+  itemId: string;
   searchValue?: string;
   onSelectItem: (event: React.ChangeEvent) => void;
   isChecked?: boolean;
@@ -17,7 +17,7 @@ export interface MulitselectOptionProps {
 export const MultiselectOption = ({
   label,
   value,
-  itemIdentifier,
+  itemId,
   onSelectItem,
   searchValue,
   isChecked = false,
@@ -28,15 +28,15 @@ export const MultiselectOption = ({
 
   return (
     <li {...rest}>
-      <label htmlFor={itemIdentifier} className={styles.item(isDisabled)}>
+      <label htmlFor={itemId} className={styles.item(isDisabled)}>
         <Checkbox
-          id={itemIdentifier}
+          id={itemId}
           value={value}
           onChange={(event) => onSelectItem(event)}
           isChecked={isChecked}
           isDisabled={isDisabled}
         />
-        <Text data-test-id={`cf-multiselect-list-item-${itemIdentifier}`}>
+        <Text data-test-id={`cf-multiselect-list-item-${itemId}`}>
           <HighlightedItem item={label} inputValue={searchValue} />
         </Text>
       </label>

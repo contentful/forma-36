@@ -61,7 +61,7 @@ export const Basic = (args: MultiselectProps) => {
               label={item}
               onSelectItem={handleSelectItem}
               key={`${item}-${index}`}
-              itemIdentifier={`${item}-${index}`}
+              itemId={`${item}-${index}`}
               isChecked={selectedFruits.includes(item)}
               isDisabled={item === 'Avocado 🥑'}
             />
@@ -121,7 +121,7 @@ export const WithSearch = (args: MultiselectProps) => {
               label={item}
               onSelectItem={handleSelectItem}
               key={`${item}-${index}`}
-              itemIdentifier={`${item}-${index}`}
+              itemId={`${item}-${index}`}
               isChecked={selectedFruits.includes(item)}
               isDisabled={item === 'Avocado 🥑'}
             />
