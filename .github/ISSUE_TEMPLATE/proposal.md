@@ -3,7 +3,6 @@ name: "\U0001F4A1 Proposal"
 about: Want to extend an existing component or contribute an entirely new one? Send us a proposal
 title: "\U0001F4A1 Proposal - "
 labels: needs review, needs triage, proposal
-assignees: domarku, m10l, burakukula, mshaaban0, gui-santos, denkristoffer, Lelith
 ---
 
 <!--

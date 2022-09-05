@@ -3,7 +3,6 @@ name: "\U0001F4AC Give feedback on a component"
 about: Give us a feedback to help us improve Forma 36
 title: "\U0001F4AC Feedback - "
 labels: needs triage
-assignees: m10l, burakukula, mshaaban0, gui-santos, denkristoffer, Lelith
 ---
 
 <!--
