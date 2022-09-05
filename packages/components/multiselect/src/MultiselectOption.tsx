@@ -25,7 +25,6 @@ export const MultiselectOption = ({
   ...rest
 }: MulitselectOptionProps) => {
   const styles = getMultiselectStyles();
-  console.info(searchValue);
 
   return (
     <li {...rest}>

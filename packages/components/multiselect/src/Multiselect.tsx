@@ -7,7 +7,7 @@ import { TextInput, type TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon, SearchIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover } from '@contentful/f36-popover';
-import { MultiselectOption, MulitselectOptionProps } from './MultiselectOption';
+import { Subheading } from '@contentful/f36-typography';
 
 import { getMultiselectStyles } from './Multiselect.styles';
 
@@ -23,24 +23,23 @@ export interface MultiselectProps
       | 'id'
       | 'defaultValue'
     > {
+  /** Select Options */
+  children?: React.ReactNode;
+
   /**
    * Set a custom icon for the text input
    */
   startIcon?: React.ReactElement;
 
-  children?: React.ReactNode;
   /**
    * Placeholder shown before selecting any elements. Defaults to 'Select one or more items'
    */
   placeholder?: string;
 
-  currentSelection?: Array<string>;
-
   /**
-   * If this is set to `true` the text input will be cleared after an item is selected
-   * @default false
+   * current Selected items, to be shown on the trigger button
    */
-  clearAfterSelect?: boolean;
+  currentSelection?: Array<string>;
 
   /**
    * If this is set to `true` there will be a search input inside the drawer
@@ -58,8 +57,6 @@ export interface MultiselectProps
    * @default "Search"
    */
   searchPlaceholder?: string;
-
-  hasNoMatches?: boolean;
 
   /**
    * A message that will be shown when it is not possible to find any option that matches the input value
@@ -116,7 +113,6 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     hasSearch = false,
     defaultValue = '',
     onSearchValueChange,
-    hasNoMatches = false,
     searchPlaceholder = 'Search',
     inputRef,
     noMatchesMessage = 'No matches found',
@@ -173,6 +169,8 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     );
   }, [currentSelection, placeholder, styles.currentSelection]);
 
+  const childrenLength = React.Children.count(children);
+
   return (
     <div
       data-test-id={testId}
@@ -182,23 +180,15 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
       <Popover
         usePortal={usePortal}
         isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
         isFullWidth={listWidth === 'full'}
         renderOnlyWhenOpen={false}
-        // This is necessary, otherwise the focus will change from the input to the Popover
-        // and the user won't be able to type in the input
-        // eslint-disable-next-line jsx-a11y/no-autofocus
-        autoFocus={false}
       >
         <Popover.Trigger>
           <Button
             aria-label="open Select"
             ref={toggleRef}
             onClick={() => setIsOpen(!isOpen)}
-            onFocus={() => {
-              if (!isOpen) {
-                setIsOpen(!isOpen);
-              }
-            }}
             startIcon={startIcon}
             endIcon={<ChevronDownIcon />}
           >
@@ -248,7 +238,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
             )}
             {isLoading && <ListItemLoadingState />}
 
-            {!isLoading && children && (
+            {!isLoading && childrenLength > 0 && (
               <ul className={styles.list} data-test-id="cf-multiselect-items">
                 {React.Children.map(children, (child) => {
                   if (React.isValidElement(child)) {
@@ -261,7 +251,11 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
               </ul>
             )}
 
-            {!isLoading && hasNoMatches && <div>{noMatchesMessage}</div>}
+            {!isLoading && childrenLength === 0 && (
+              <Subheading className={styles.noMatchesTitle}>
+                {noMatchesMessage}
+              </Subheading>
+            )}
           </>
         </Popover.Content>
       </Popover>

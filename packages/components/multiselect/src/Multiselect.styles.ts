@@ -43,7 +43,7 @@ export const getMultiselectStyles = () => ({
   }),
   noMatchesTitle: css({
     color: tokens.gray500,
-    margin: `${tokens.spacingM} 0 ${tokens.spacingM} 0`,
+    margin: tokens.spacingM,
   }),
   item: (isDisabled?: boolean) =>
     css({
