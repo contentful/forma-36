@@ -1,0 +1,82 @@
+---
+title: 'Multiselect'
+type: 'component
+status: 'alpha'
+section: 'formComponents'
+slug: /components/multiselect/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/forms/src/Multiselect'
+storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/form-elements-multiselect--basic'
+typescript: ./Multiselect.tsx,./MultiselectOption
+---
+
+Multiselect allows users to make a multi selection from a list of options.
+It has multiple optional features like a search.
+
+## Import
+
+```jsx static=true
+import { Multiselect } from '@contentful/f36-components';
+// or
+import { Select } from '@contentful/f36-forms';
+```
+
+## Examples
+
+### Basic usage
+
+The Multiselect is a fully controlled from element and expects the selectable items as children via the compund component <Multiselect.Option>.
+
+Properties are:
+
+for the multiselect itself:
+
+- currentSelection (optional but recommendet): an array of the labels of selected options. This will give the user a hint that there are selected items. This is optional
+- placeholder (optional): Label of the trigger button without selected elements
+- startIcon (optional): Icon on the start of the trigger button
+- listWidth (optional): auto or full
+- listMaxHeight (optional): sets the maximum height of the list drawer, overflow will be scrolled
+- isLoading: enables showing a loading animation while searching or loading results
+
+It also accepts refs for the toggle button, the searchInput and the list.
+
+For the option:
+
+- itemId: identifier for the element, used to link the label with the checkbox
+- value: the actual value of the select option
+- label: displayed label
+- onSelectItem: This function is called when the user selects a option, it needs to be passed to the MultiselectOption
+- isChecked (optional): controlls if a element is initially selected
+- isDisabled (optional): controlls if a element is changeable
+
+```jsx file=../../examples/MultiselectBasicUsageExample.tsx
+
+```
+
+### Searchable options
+
+One of optional feature of the Multiselect component is to allow filtering the list via a search field.
+To make it work, the property hasSearch needs to be set to true and a onSearchValueChange callback function needs to be provided.
+
+To enable searching the following properties have to be set.
+
+- hasSearch: enables filtering of the list
+- onSearchValueChange: required callback function when hasSearch is true. This function needs to provide the search /filter algorithm
+- searchPlaceholder (optional): placeholder for the search field
+- noMatchesMessage (optional): message shown when search result is empty
+
+```jsx file=../../examples/MultiselectBasicUsageExample.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="Multiselect" />
+
+## Content guidelines
+
+- Multiselect label should be short, contain 1 to 3 words
+- Label should be written in a sentence case (the first word capitalized, the rest lowercase)
+
+## Accessibility
+
+- dismisses the dropdown when selecting with the enter key
