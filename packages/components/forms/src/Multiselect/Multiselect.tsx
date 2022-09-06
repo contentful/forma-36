@@ -3,7 +3,7 @@ import { cx } from 'emotion';
 
 import { mergeRefs, type CommonProps } from '@contentful/f36-core';
 import { Button, IconButton } from '@contentful/f36-button';
-import { TextInput, type TextInputProps } from '@contentful/f36-forms';
+import { TextInput, type TextInputProps } from '../TextInput';
 import { CloseIcon, ChevronDownIcon, SearchIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover } from '@contentful/f36-popover';
@@ -67,7 +67,7 @@ export interface MultiselectProps
   /**
    * Use this prop to get a ref to the input element of the component
    */
-  inputRef?: React.Ref<HTMLInputElement>;
+  searchInputRef?: React.Ref<HTMLInputElement>;
   /**
    * Use this prop to get a ref to the toggle button of the component
    */
@@ -114,7 +114,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     defaultValue = '',
     onSearchValueChange,
     searchPlaceholder = 'Search',
-    inputRef,
+    searchInputRef,
     noMatchesMessage = 'No matches found',
     toggleRef,
     listRef,
@@ -131,7 +131,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
   const [searchValue, setSearchValue] = useState(defaultValue);
   const [isOpen, setIsOpen] = useState(false);
 
-  const searchInputRef = useRef(null);
+  const internalSearchInputRef = useRef(null);
 
   const handleSearchChange = (event) => {
     setSearchValue(event.target.value);
@@ -146,9 +146,9 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
       window.HTMLInputElement.prototype,
       'value',
     ).set;
-    nativeInputValueSetter.call(searchInputRef.current, '');
+    nativeInputValueSetter.call(internalSearchInputRef.current, '');
     const forcedEvent = new Event('change', { bubbles: true });
-    searchInputRef.current.dispatchEvent(forcedEvent);
+    internalSearchInputRef.current.dispatchEvent(forcedEvent);
   };
 
   const renderMultiselectLabel = React.useCallback(() => {
@@ -213,7 +213,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                   onChange={(event) => {
                     handleSearchChange(event);
                   }}
-                  ref={mergeRefs(searchInputRef, inputRef)}
+                  ref={mergeRefs(searchInputRef, internalSearchInputRef)}
                 />
                 <IconButton
                   aria-label="Clear"

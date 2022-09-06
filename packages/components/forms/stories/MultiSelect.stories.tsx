@@ -5,7 +5,7 @@ import { Stack } from '@contentful/f36-core';
 import { Multiselect, MultiselectProps } from '../src';
 
 export default {
-  title: 'Components/Multiselect',
+  title: 'Form Elements/Multiselect',
   component: Multiselect,
 } as Meta;
 

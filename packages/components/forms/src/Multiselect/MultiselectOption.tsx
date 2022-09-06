@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox } from '@contentful/f36-forms';
+import { Checkbox } from '../Checkbox';
 import { Text } from '@contentful/f36-typography';
 import { getMultiselectStyles } from './Multiselect.styles';
 import { getStringMatch } from '@contentful/f36-utils';
