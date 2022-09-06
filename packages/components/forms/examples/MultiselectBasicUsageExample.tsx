@@ -37,6 +37,7 @@ export default function MultiselectBasicUsageExample() {
               onSelectItem={handleSelectItem}
               itemId={`space-${val}-${index}`}
               key={`space-${val}-${index}`}
+              isChecked={selectedSpace.includes(space)}
             />
           );
         })}
