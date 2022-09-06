@@ -1,7 +1,7 @@
 import React from 'react';
 import { Multiselect, Stack } from '@contentful/f36-components';
 
-export default function AutocompleteWithGroupedItems() {
+export default function MultiselectSearchExample() {
   const spaces = [
     'Travel Blog',
     'Finnance Blog',

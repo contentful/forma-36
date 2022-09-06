@@ -1,7 +1,7 @@
 import React from 'react';
 import { Multiselect, Stack } from '@contentful/f36-components';
 
-export default function AutocompleteBasicUsageExample() {
+export default function MultiselectBasicUsageExample() {
   const spaces = [
     'Travel Blog',
     'Finnance Blog',
