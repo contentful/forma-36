@@ -6,9 +6,9 @@
   "files": [
     "dist"
   ],
-  "main": "dist/main.js",
-  "module": "dist/module.js",
-  "types": "dist/types.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "source": "src/index.ts",
   "sideEffects": false,
   "browserslist": "extends @contentful/browserslist-config",
@@ -17,7 +17,7 @@
     "url": "https://github.com/contentful/forma-36"
   },
   "scripts": {
-    "build": "parcel build"
+    "build": "tsup"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",

@@ -3,7 +3,7 @@
   "version": "4.17.0",
   "description": "Forma 36: Autocomplete component",
   "scripts": {
-    "build": "parcel build"
+    "build": "tsup"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
@@ -26,9 +26,9 @@
   "files": [
     "dist"
   ],
-  "main": "dist/main.js",
-  "module": "dist/module.js",
-  "types": "dist/types.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "source": "src/index.ts",
   "sideEffects": false,
   "browserslist": "extends @contentful/browserslist-config",
