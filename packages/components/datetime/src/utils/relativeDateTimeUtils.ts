@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
-import utcPlugin from 'dayjs/plugin/utc';
-import relativeTime from 'dayjs/plugin/relativeTime';
-import calendarPlugin from 'dayjs/plugin/calendar';
+import utcPlugin from 'dayjs/plugin/utc.js';
+import relativeTime from 'dayjs/plugin/relativeTime.js';
+import calendarPlugin from 'dayjs/plugin/calendar.js';
 dayjs.extend(utcPlugin);
 dayjs.extend(relativeTime);
 dayjs.extend(calendarPlugin);
