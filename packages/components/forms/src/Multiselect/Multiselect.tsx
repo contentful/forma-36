@@ -158,14 +158,21 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     const leftoverCount = currentSelection.length - 1;
     if (leftoverCount === 0) {
       return (
-        <span className={styles.currentSelection}>{currentSelection[0]}</span>
+        <span
+          data-test-id="cf-multiselect-current-selection"
+          className={styles.currentSelection}
+        >
+          {currentSelection[0]}
+        </span>
       );
     }
     return (
-      <div>
-        <span className={styles.currentSelection}>{currentSelection[0]}</span>{' '}
-        and {leftoverCount} more
-      </div>
+      <span
+        data-test-id="cf-multiselect-current-selection"
+        className={styles.currentSelection}
+      >
+        {currentSelection[0]} and {leftoverCount} more{' '}
+      </span>
     );
   }, [currentSelection, placeholder, styles.currentSelection]);
 
@@ -186,7 +193,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
       >
         <Popover.Trigger>
           <Button
-            aria-label="open Select"
+            aria-label="Toggle Multiselect"
             ref={toggleRef}
             onClick={() => setIsOpen(!isOpen)}
             startIcon={startIcon}
@@ -204,6 +211,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
             {hasSearch && (
               <>
                 <TextInput
+                  aria-label="Search"
                   type="text"
                   value={searchValue}
                   className={styles.inputField}

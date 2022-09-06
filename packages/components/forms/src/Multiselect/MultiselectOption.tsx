@@ -55,7 +55,7 @@ function HighlightedItem({
   return (
     <>
       {before}
-      <b>{match}</b>
+      <b data-test-id="cf-multiselect-item-match">{match}</b>
       {after}
     </>
   );
