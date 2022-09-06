@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, within, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from '@/scripts/test/axeHelper';
-import { Multiselect } from './CompundMultiselect';
+import { Multiselect } from './CompoundMultiselect';
 import { MultiselectProps } from './Multiselect';
 
 interface Fruit {

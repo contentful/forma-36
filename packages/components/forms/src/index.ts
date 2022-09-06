@@ -23,7 +23,7 @@ export { Option } from './Select/SelectOption';
 export type { OptionProps } from './Select/SelectOption';
 export { Select } from './Select/CompoundSelect';
 export type { SelectInternalProps, SelectProps } from './Select';
-export { Multiselect } from './Multiselect/CompundMultiselect';
+export { Multiselect } from './Multiselect/CompoundMultiselect';
 export { MultiselectOption } from './Multiselect/MultiselectOption';
 export type { MultiselectProps } from './Multiselect';
 export { Form } from './Form';
