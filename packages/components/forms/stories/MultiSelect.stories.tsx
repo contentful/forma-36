@@ -73,7 +73,7 @@ export const Basic = (args: MultiselectProps) => {
 };
 
 Basic.args = {
-  placeholder: 'Select fruits',
+  placeholder: 'Select many fruits',
 };
 
 export const WithSearch = (args: MultiselectProps) => {
