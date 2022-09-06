@@ -16,7 +16,8 @@
   "scripts": {
     "build:clean": "rm -rf dist",
     "build:tokens": "node tools/build.js",
-    "build": "yarn build:clean && yarn build:tokens"
+    "build": "yarn build:clean && yarn build:tokens",
+    "build:types": "tsc src/**/*.js --declaration --emitDeclarationOnly --declarationDir dist --jsx preserve"
   },
   "publishConfig": {
     "access": "public"

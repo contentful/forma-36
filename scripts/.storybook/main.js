@@ -35,6 +35,18 @@ module.exports = {
       },
     };
 
+    // Allow importing JS files without fully specified file endings from .mjs
+    // files. This is to avoid dealing with file endings just yet
+    config.module.rules = [
+      ...config.module.rules,
+      {
+        test: /\.m?js$/,
+        resolve: {
+          fullySpecified: false,
+        },
+      },
+    ];
+
     return config;
   },
 };
