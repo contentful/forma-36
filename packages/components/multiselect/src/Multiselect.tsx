@@ -140,7 +140,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
 
   const resetSearch = () => {
     // this looks a bit hacky, but is the official way of externally triggering the onChange handler for an input
-    // https://stackoverflow.com/questions/23892547/what-is-the-best-way-to-trigger-onchange-event-in-react-js/46012210#46012210
+    // https://stackoverflow.com/a/46012210/17269164
 
     const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
       window.HTMLInputElement.prototype,
