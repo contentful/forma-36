@@ -1,5 +1,47 @@
 # Change Log
 
+## 4.18.0
+
+### Minor Changes
+
+- [#2204](https://github.com/contentful/forma-36/pull/2204) [`bcc6f681`](https://github.com/contentful/forma-36/commit/bcc6f68140c50b4eb687e3f35953d548f33076bc) Thanks [@bgutsol](https://github.com/bgutsol)! - Release Datepicker stable version, include Datepicker to the umbrella @contentful/f36-components pkg
+
+### Patch Changes
+
+- Updated dependencies [[`bcc6f681`](https://github.com/contentful/forma-36/commit/bcc6f68140c50b4eb687e3f35953d548f33076bc)]:
+  - @contentful/f36-datepicker@4.2.0
+  - @contentful/f36-accordion@4.18.0
+  - @contentful/f36-asset@4.18.0
+  - @contentful/f36-autocomplete@4.18.0
+  - @contentful/f36-badge@4.18.0
+  - @contentful/f36-button@4.18.0
+  - @contentful/f36-card@4.18.0
+  - @contentful/f36-collapse@4.18.0
+  - @contentful/f36-copybutton@4.18.0
+  - @contentful/f36-datetime@4.18.0
+  - @contentful/f36-drag-handle@4.18.0
+  - @contentful/f36-entity-list@4.18.0
+  - @contentful/f36-forms@4.18.0
+  - @contentful/f36-icon@4.18.0
+  - @contentful/f36-icons@4.18.0
+  - @contentful/f36-list@4.18.0
+  - @contentful/f36-menu@4.18.0
+  - @contentful/f36-modal@4.18.0
+  - @contentful/f36-note@4.18.0
+  - @contentful/f36-notification@4.18.0
+  - @contentful/f36-pagination@4.18.0
+  - @contentful/f36-pill@4.18.0
+  - @contentful/f36-popover@4.18.0
+  - @contentful/f36-skeleton@4.18.0
+  - @contentful/f36-spinner@4.18.0
+  - @contentful/f36-table@4.18.0
+  - @contentful/f36-tabs@4.18.0
+  - @contentful/f36-text-link@4.18.0
+  - @contentful/f36-tooltip@4.18.0
+  - @contentful/f36-typography@4.18.0
+  - @contentful/f36-utils@4.18.0
+  - @contentful/f36-core@4.18.0
+
 ## 4.17.0
 
 ### Patch Changes
