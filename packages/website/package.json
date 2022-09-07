@@ -11,7 +11,6 @@
   "dependencies": {
     "@codesandbox/sandpack-react": "0.18.1",
     "@contentful/f36-components": "^4.14.0",
-    "@contentful/f36-datepicker": "^4.1.0-beta.6",
     "@contentful/f36-docs-utils": "^4.0.1",
     "@contentful/f36-icon": "^4.11.0",
     "@contentful/f36-icons": "^4.11.0",

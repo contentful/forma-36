@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, DayContent } from '@contentful/f36-datepicker';
+import { Calendar, DayContent } from '@contentful/f36-components';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 

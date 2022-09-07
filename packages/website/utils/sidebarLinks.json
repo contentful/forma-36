@@ -126,7 +126,7 @@
     {
       "title": "Calendar",
       "slug": "/components/calendar/",
-      "isBeta": true
+      "isNew": true
     },
     {
       "title": "Date utilities",
@@ -135,7 +135,7 @@
     {
       "title": "Datepicker",
       "slug": "/components/datepicker/",
-      "isBeta": true
+      "isNew": true
     },
     {
       "title": "DateTime",
