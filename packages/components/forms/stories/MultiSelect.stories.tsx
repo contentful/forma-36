@@ -53,7 +53,7 @@ export const Basic = (args: MultiselectProps) => {
       spacing="spacingM"
       alignItems="start"
     >
-      <Multiselect {...args} listWidth="full" currentSelection={selectedFruits}>
+      <Multiselect {...args} currentSelection={selectedFruits}>
         {fruitStrings.map((item, index) => {
           return (
             <Multiselect.Option
@@ -111,7 +111,7 @@ export const WithSearch = (args: MultiselectProps) => {
         {...args}
         hasSearch={true}
         onSearchValueChange={handleSearchValueChange}
-        listWidth="full"
+        isFullWidth
         currentSelection={selectedFruits}
       >
         {filteredItems.map((item, index) => {

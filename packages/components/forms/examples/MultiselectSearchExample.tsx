@@ -38,7 +38,7 @@ export default function MultiselectSearchExample() {
         searchPlaceholder="Search spaces"
         hasSearch={true}
         onSearchValueChange={handleSearchValueChange}
-        listWidth="full"
+        isFullWidth={true}
         currentSelection={selectedItems}
       >
         {filteredItems.map((item, index) => {

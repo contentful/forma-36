@@ -23,9 +23,9 @@ export const getMultiselectStyles = () => ({
     position: 'absolute',
     top: '1px',
     right: '1px',
-    zIndex: 1,
+    zIndex: tokens.zIndexDefault,
     padding: tokens.spacing2Xs,
-    height: '38px',
+    height: tokens.spacingXl,
   }),
   content: (listMaxHeight: number) =>
     css({
@@ -45,30 +45,23 @@ export const getMultiselectStyles = () => ({
     color: tokens.gray500,
     margin: tokens.spacingM,
   }),
-  item: (isDisabled?: boolean) =>
-    css({
-      padding: `${tokens.spacingXs} ${tokens.spacingM}`,
-      wordBreak: 'break-word',
-      whiteSpace: 'break-spaces',
-      cursor: isDisabled ? 'not-allowed' : 'pointer',
-      hyphens: 'auto',
-      display: 'flex',
-      flexDirection: 'row',
-      alignItems: 'center',
-      opacity: isDisabled ? 0.5 : 1,
-
-      '&:focus, &:hover': {
-        backgroundColor: tokens.gray100,
-      },
-      '&:active': {
-        backgroundColor: tokens.gray200,
-      },
-    }),
+  item: css({
+    padding: `${tokens.spacingXs} ${tokens.spacingM}`,
+    wordBreak: 'break-word',
+    whiteSpace: 'break-spaces',
+    hyphens: 'auto',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    '&:focus, &:hover': {
+      backgroundColor: tokens.gray100,
+    },
+    '&:active': {
+      backgroundColor: tokens.gray200,
+    },
+  }),
   disabled: css({
     opacity: 0.5,
-    pointerEvents: 'none',
-  }),
-  highlighted: css({
-    backgroundColor: tokens.gray100,
+    cursor: 'not-allowed',
   }),
 });

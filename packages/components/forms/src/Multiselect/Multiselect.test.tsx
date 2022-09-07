@@ -168,4 +168,29 @@ describe('Multiselect with search', () => {
       within(listFirstItem).getByTestId('cf-multiselect-item-match'),
     ).toHaveTextContent('A');
   });
+
+  it('clears the search value and triggers the callback function', () => {
+    renderComponent({
+      hasSearch: true,
+      onSearchValueChange: mockOnSearchValueChange,
+    });
+    userEvent.click(screen.getByRole('button', { name: 'Toggle Multiselect' }));
+    expect(screen.getByRole('button', { name: 'Search' })).toBeDisabled();
+    fireEvent.input(screen.getByRole('textbox', { name: 'Search' }), {
+      target: {
+        value: 'a',
+      },
+    });
+    expect(
+      screen.getByRole('button', { name: 'Clear search' }),
+    ).not.toBeDisabled();
+    userEvent.click(screen.getByRole('button', { name: 'Clear search' }));
+    expect(mockOnSearchValueChange).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        target: expect.objectContaining({
+          value: '',
+        }),
+      }),
+    );
+  });
 });

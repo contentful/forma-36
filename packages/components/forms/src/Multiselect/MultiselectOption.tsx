@@ -3,6 +3,7 @@ import { Checkbox } from '../Checkbox';
 import { Text } from '@contentful/f36-typography';
 import { getMultiselectStyles } from './Multiselect.styles';
 import { getStringMatch } from '@contentful/f36-utils';
+import { cx } from 'emotion';
 
 export interface MulitselectOptionProps {
   label: string;
@@ -28,7 +29,10 @@ export const MultiselectOption = ({
 
   return (
     <li {...rest}>
-      <label htmlFor={itemId} className={styles.item(isDisabled)}>
+      <label
+        htmlFor={itemId}
+        className={cx(styles.item, isDisabled && styles.disabled)}
+      >
         <Checkbox
           id={itemId}
           value={value}

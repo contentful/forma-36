@@ -11,7 +11,6 @@ import { Subheading } from '@contentful/f36-typography';
 
 import { getMultiselectStyles } from './Multiselect.styles';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface MultiselectProps
   extends CommonProps,
     Pick<
@@ -79,9 +78,9 @@ export interface MultiselectProps
 
   /**
    * It sets the width of the list
-   * @default "auto"
+   * @default false
    */
-  listWidth?: 'auto' | 'full';
+  isFullWidth?: boolean;
 
   /**
    * It sets the max-height, in pixels, of the list
@@ -118,7 +117,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     noMatchesMessage = 'No matches found',
     toggleRef,
     listRef,
-    listWidth = 'auto',
+    isFullWidth = false,
     listMaxHeight = 180,
     isLoading = false,
     usePortal = false,
@@ -188,7 +187,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         usePortal={usePortal}
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
-        isFullWidth={listWidth === 'full'}
+        isFullWidth={isFullWidth === 'full'}
         renderOnlyWhenOpen={false}
       >
         <Popover.Trigger>
@@ -224,7 +223,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                   ref={mergeRefs(searchInputRef, internalSearchInputRef)}
                 />
                 <IconButton
-                  aria-label="Clear"
+                  aria-label={searchValue ? 'Clear search' : 'Search'}
                   className={styles.toggleButton}
                   variant="transparent"
                   icon={
@@ -239,7 +238,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                       resetSearch();
                     }
                   }}
-                  isDisabled={searchValue === ''}
+                  isDisabled={!searchValue}
                   size="small"
                 />
               </>
