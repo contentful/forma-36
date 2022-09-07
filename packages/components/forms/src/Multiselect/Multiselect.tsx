@@ -216,7 +216,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                   value={searchValue}
                   className={styles.inputField}
                   id={id}
-                  data-test-id="cf-multiselect-search"
+                  testId="cf-multiselect-search"
                   placeholder={searchPlaceholder}
                   onChange={(event) => {
                     handleSearchChange(event);
