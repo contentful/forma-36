@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar } from '@contentful/f36-datepicker';
+import { Calendar } from '@contentful/f36-components';
 
 export default function MultiMonthsExample() {
   const [selectedDay, setSelectedDay] = useState(new Date());

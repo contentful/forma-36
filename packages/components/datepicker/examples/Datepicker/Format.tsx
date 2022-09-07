@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Flex, Box } from '@contentful/f36-components';
-import { Datepicker } from '@contentful/f36-datepicker';
+import { Datepicker } from '@contentful/f36-components';
 
 export default function FormatExample() {
   const [selectedDay, setSelectedDay] = useState(new Date());

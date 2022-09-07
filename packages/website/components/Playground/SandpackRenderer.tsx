@@ -60,7 +60,6 @@ export function SandpackRenderer({
           'react-dom': '^17.0.0',
           'react-scripts': '^4.0.0',
           '@contentful/f36-components': '^4.0.0',
-          '@contentful/f36-datepicker': 'beta', //TODO: Remove when not in beta
           '@contentful/f36-tokens': '^4.0.0',
           '@contentful/f36-icons': '^4.0.0',
           emotion: '^10.0.17',
