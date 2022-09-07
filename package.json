@@ -32,6 +32,7 @@
     "changelog:gen": "node scripts/changesets/changelog-generate.js",
     "changelog:write": "node scripts/changesets/changelog-write.js",
     "changeset:publish": "node scripts/changesets/generate-releases.js",
+    "prerelease": "node scripts/prerelease.mjs",
     "pretty:quick": "yarn pretty-quick --staged --pattern '**/*.*(js|jsx|ts|tsx|md|mdx)'"
   },
   "husky": {
@@ -121,6 +122,7 @@
     "globby": "^11.0.2",
     "husky": "^4.3.0",
     "identity-obj-proxy": "^3.0.0",
+    "inquirer": "^9.1.1",
     "jest": "^27.3.1",
     "jest-axe": "6.0.0",
     "jest-emotion": "^10.0.27",
