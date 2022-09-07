@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Datepicker } from '@contentful/f36-datepicker';
+import { Datepicker } from '@contentful/f36-components';
 import { FormControl } from '@contentful/f36-forms';
 
 export default function BasicExample() {

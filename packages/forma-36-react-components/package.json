@@ -31,6 +31,7 @@
     "@contentful/f36-copybutton": "^4.17.0",
     "@contentful/f36-core": "^4.17.0",
     "@contentful/f36-datetime": "^4.17.0",
+    "@contentful/f36-datepicker": "^4.1.0",
     "@contentful/f36-drag-handle": "^4.17.0",
     "@contentful/f36-entity-list": "^4.17.0",
     "@contentful/f36-forms": "^4.17.0",

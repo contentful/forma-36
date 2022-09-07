@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Calendar } from '@contentful/f36-datepicker';
+import { Calendar } from '@contentful/f36-components';
 import { TextInput } from '@contentful/f36-forms';
 import { format, parse, isValid } from 'date-fns';
 import { Popover } from '@contentful/f36-popover';
