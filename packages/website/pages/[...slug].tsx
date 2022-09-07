@@ -140,6 +140,7 @@ export const getStaticProps: GetStaticProps<
   }
 
   const [section] = context.params?.slug;
+  const isPreview = context.preview;
   const topbarLinks = await getTopbarLinks();
   let sidebarLinks = (await getSidebarLinksBySectionSlug(section)) ?? [];
 
@@ -220,7 +221,7 @@ export const getStaticProps: GetStaticProps<
     };
   } else {
     const entrySlug = context.params?.slug[context.params?.slug.length - 1];
-    const contentfulResult = await getSingleArticleBySlug(entrySlug);
+    const contentfulResult = await getSingleArticleBySlug(entrySlug, isPreview);
 
     if (!contentfulResult) {
       throw new Error(
