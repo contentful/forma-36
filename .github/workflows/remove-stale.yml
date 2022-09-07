@@ -19,5 +19,5 @@ jobs:
         run: gh issue edit $ISSUE --remove-label $LABEL
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE: ${{ github.event.issue.html_url }}
+          ISSUE: ${{ github.event.issue.number }}
           LABEL: 'stale'
