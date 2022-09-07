@@ -10,6 +10,7 @@ import { Footer } from './Footer';
 import { Sidebar } from './Sidebar';
 import type { SidebarProps } from './Sidebar';
 import { HARDCODED_WEBSITE_SECTION } from '../types';
+import { PreviewAlert } from './PreviewAlert';
 
 const styles = {
   mainItem: css({
@@ -24,32 +25,41 @@ interface LayoutProps {
   children: React.ReactNode;
   sidebarLinks?: SidebarProps['links'];
   topbarLinks: TopbarProps['links'];
+  isPreview?: boolean;
 }
 
-export function Layout({ children, sidebarLinks, topbarLinks }: LayoutProps) {
+export function Layout({
+  children,
+  sidebarLinks,
+  topbarLinks,
+  isPreview,
+}: LayoutProps) {
   const { currentSection, currentPage } = useCurrentLocation();
   const isPlayground = currentSection === HARDCODED_WEBSITE_SECTION.PLAYGROUND;
   const gridStyles = getGridStyles(isPlayground);
 
   return (
-    <Grid
-      className={cx(gridStyles.wrapper, gridStyles.wrapperColumns)}
-      columnGap="none"
-    >
-      <Topbar links={topbarLinks} />
-
-      {sidebarLinks && <Sidebar links={sidebarLinks} />}
-
-      {/* Unique key for each page, so scroll position is not preserved when opening a new page */}
-      <Grid.Item
-        key={currentPage}
-        area="content"
-        as="main"
-        className={styles.mainItem}
+    <>
+      {isPreview && <PreviewAlert />}
+      <Grid
+        className={cx(gridStyles.wrapper, gridStyles.wrapperColumns)}
+        columnGap="none"
       >
-        {children}
-        {!isPlayground && <Footer />}
-      </Grid.Item>
-    </Grid>
+        <Topbar links={topbarLinks} />
+
+        {sidebarLinks && <Sidebar links={sidebarLinks} />}
+
+        {/* Unique key for each page, so scroll position is not preserved when opening a new page */}
+        <Grid.Item
+          key={currentPage}
+          area="content"
+          as="main"
+          className={styles.mainItem}
+        >
+          {children}
+          {!isPlayground && <Footer />}
+        </Grid.Item>
+      </Grid>
+    </>
   );
 }

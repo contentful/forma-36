@@ -90,6 +90,7 @@ interface ComponentPageProps extends PageContentProps {
   propsMetadata?: ReturnType<typeof getPropsMetadata>;
   sidebarLinks: SidebarProps['links'];
   topbarLinks: TopbarProps['links'];
+  isPreview?: boolean;
 }
 
 const ComponentPage: NextPage<ComponentPageProps> = ({
@@ -99,6 +100,7 @@ const ComponentPage: NextPage<ComponentPageProps> = ({
   sidebarLinks,
   topbarLinks,
   source,
+  isPreview,
 }: ComponentPageProps) => {
   const router = useRouter();
 
@@ -114,7 +116,11 @@ const ComponentPage: NextPage<ComponentPageProps> = ({
 
       <PropsContextProvider value={{ ...propsMetadata }}>
         <FrontMatterContextProvider value={frontMatter}>
-          <Layout sidebarLinks={sidebarLinks} topbarLinks={topbarLinks}>
+          <Layout
+            sidebarLinks={sidebarLinks}
+            topbarLinks={topbarLinks}
+            isPreview={isPreview}
+          >
             <PageContent
               frontMatter={frontMatter}
               headings={headings}
@@ -140,6 +146,7 @@ export const getStaticProps: GetStaticProps<
   }
 
   const [section] = context.params?.slug;
+  const isPreview = context.preview ?? false;
   const topbarLinks = await getTopbarLinks();
   let sidebarLinks = (await getSidebarLinksBySectionSlug(section)) ?? [];
 
@@ -220,7 +227,7 @@ export const getStaticProps: GetStaticProps<
     };
   } else {
     const entrySlug = context.params?.slug[context.params?.slug.length - 1];
-    const contentfulResult = await getSingleArticleBySlug(entrySlug);
+    const contentfulResult = await getSingleArticleBySlug(entrySlug, isPreview);
 
     if (!contentfulResult) {
       throw new Error(
@@ -242,6 +249,7 @@ export const getStaticProps: GetStaticProps<
         },
         sidebarLinks,
         topbarLinks,
+        isPreview,
       },
     };
   }
