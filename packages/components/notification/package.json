@@ -15,7 +15,7 @@
     "@contentful/f36-typography": "^4.18.0",
     "@swc/helpers": "^0.4.2",
     "emotion": "^10.0.17",
-    "react-animate-height": "^2.0.23"
+    "react-animate-height": "^3.0.4"
   },
   "peerDependencies": {
     "react": ">=16.8",
