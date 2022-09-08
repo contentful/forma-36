@@ -1,5 +1,6 @@
 import React from 'react';
-import { Multiselect, Stack } from '@contentful/f36-components';
+import { Stack } from '@contentful/f36-components';
+import { Multiselect } from '@contentful/f36-multiselect';
 
 export default function MultiselectSearchExample() {
   const spaces = [
