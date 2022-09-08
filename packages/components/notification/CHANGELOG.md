@@ -1,5 +1,20 @@
 # Change Log
 
+## 4.19.0
+
+### Minor Changes
+
+- [#2207](https://github.com/contentful/forma-36/pull/2207) [`0ea9260b`](https://github.com/contentful/forma-36/commit/0ea9260b5eb5a4cbe2c5d587a79f066a2b86e227) Thanks [@bgutsol](https://github.com/bgutsol)! - Upgrade react-animate-height to fix f36-notification
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.19.0
+  - @contentful/f36-icons@4.19.0
+  - @contentful/f36-text-link@4.19.0
+  - @contentful/f36-typography@4.19.0
+  - @contentful/f36-core@4.19.0
+
 ## 4.18.0
 
 ### Patch Changes
