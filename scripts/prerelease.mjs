@@ -13,6 +13,18 @@ async function updatePackageJson(pkgJsonPath, version) {
   await fs.writeFile(pkgJsonPath, stringified)
 }
 
+async function ignorePackage(pkgName) {
+  const changesetConfigPath = path.resolve(cwd, '.changeset/config.json')
+  const rawConfig = await fs.readFile(changesetConfigPath, { encoding: 'utf-8' })
+  const jsonConfig = JSON.parse(rawConfig)
+  const ignorePkgs = jsonConfig.ignore || []
+  if(!ignorePkgs.includes(pkgName)) {
+    jsonConfig.ignore = [pkgName, ...ignorePkgs]
+    const stringified = JSON.stringify(jsonConfig, null, 2)
+    await fs.writeFile(changesetConfigPath, stringified, { encoding: 'utf-8' })
+  }
+}
+
 async function main() {
   const { packages } = await getPackages(cwd)
   const choices = packages.map(({ packageJson }) => ({
@@ -48,19 +60,26 @@ async function main() {
     type: 'confirm'
   }])
 
-  const newVersion = semver.inc(version, 'prerelease', tag)
+  const increase = prereleaseTag === tag ? 'prerelease' : 'preminor'
+  const newVersion = semver.inc(version, increase, tag)
   await updatePackageJson(path.resolve(dir, 'package.json'), newVersion)
 
+  // Avoid chageset publishing it, by adding the package to the ignore list
+  await ignorePackage(name)
+
   if(publish) {
-    // TODO: remove dry-run
-    await exec(`npm publish ${dir} --tag ${tag} --dry-run`, (error, stdout) => {
+    // TODO: remove dry-run, kept here for testing
+    await exec(`npm publish ${dir} --tag ${tag} --dry-run`, (error, stdout, stderr) => {
       if(!error) {
         console.log(stdout)
-        console.log(`${name}@${newVersion} published: https://www.npmjs.com/package/${name}\n`)
+        console.log(`${name}@${newVersion} published: \nhttps://www.npmjs.com/package/${name}\n`)
+      } else {
+        console.error(error)
+        console.error(stderr)
       }
     })
   } else {
-    console.log(`Version for ${name} updated on package.json`)
+    console.log(`Version for ${name} updated on package.json.`)
   }
 }
 

@@ -2,7 +2,12 @@
   "$schema": "https://unpkg.com/@changesets/config@1.6.4/schema.json",
   "changelog": [
     "@changesets/changelog-github",
-    { "repo": "contentful/forma-36" }
+    {
+      "repo": "contentful/forma-36"
+    }
+  ],
+  "ignore": [
+    "@contentful/f36-website"
   ],
   "commit": false,
   "fixed": [
