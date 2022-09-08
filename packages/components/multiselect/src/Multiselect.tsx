@@ -3,7 +3,7 @@ import { cx } from 'emotion';
 
 import { mergeRefs, type CommonProps } from '@contentful/f36-core';
 import { Button, IconButton } from '@contentful/f36-button';
-import { TextInput, type TextInputProps } from '../TextInput';
+import { TextInput, type TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon, SearchIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover, type PopoverProps } from '@contentful/f36-popover';
