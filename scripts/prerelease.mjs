@@ -68,7 +68,7 @@ async function main() {
   await ignorePackage(name)
 
   if(publish) {
-    // TODO: remove dry-run, kept here for testing
+    // TODO: remove dry-run, kept here for testing before merging
     await exec(`npm publish ${dir} --tag ${tag} --dry-run`, (error, stdout, stderr) => {
       if(!error) {
         console.log(stdout)
