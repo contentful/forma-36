@@ -128,7 +128,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
 
   const handleSearchChange = (event) => {
     setSearchValue(event.target.value);
-    onSearchValueChange(event);
+    onSearchValueChange?.(event);
   };
 
   const resetSearch = () => {
