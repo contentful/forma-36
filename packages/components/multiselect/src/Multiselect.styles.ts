@@ -59,6 +59,15 @@ export const getMultiselectStyles = () => ({
     '&:active': {
       backgroundColor: tokens.gray200,
     },
+    '&:focus': {
+      boxShadow: tokens.glowPrimary,
+    },
+    '&:focus:not(:focus-visible)': {
+      boxShadow: 'unset',
+    },
+    '&:focus-visible': {
+      boxShadow: tokens.glowPrimary,
+    },
   }),
   disabled: css({
     opacity: 0.5,
