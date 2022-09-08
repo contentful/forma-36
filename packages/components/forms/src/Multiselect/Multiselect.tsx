@@ -6,7 +6,7 @@ import { Button, IconButton } from '@contentful/f36-button';
 import { TextInput, type TextInputProps } from '../TextInput';
 import { CloseIcon, ChevronDownIcon, SearchIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
-import { Popover } from '@contentful/f36-popover';
+import { Popover, type PopoverProps } from '@contentful/f36-popover';
 import { Subheading } from '@contentful/f36-typography';
 
 import { getMultiselectStyles } from './Multiselect.styles';
@@ -67,39 +67,34 @@ export interface MultiselectProps
    * Use this prop to get a ref to the input element of the component
    */
   searchInputRef?: React.Ref<HTMLInputElement>;
-  /**
-   * Use this prop to get a ref to the toggle button of the component
-   */
-  toggleRef?: React.Ref<HTMLButtonElement>;
-  /**
-   * Use this prop to get a ref to the list of items of the component
-   */
-  listRef?: React.Ref<HTMLUListElement>;
 
-  /**
-   * It sets the width of the list
-   * @default false
-   */
-  isFullWidth?: boolean;
-
-  /**
-   * It sets the max-height, in pixels, of the list
-   * The default value is the height of 5 single line items
-   * @default 180
-   */
-  listMaxHeight?: number;
   /**
    * Sets the list to show its loading state
    * @default false
    */
   isLoading?: boolean;
+
   /**
-   * Boolean to control whether or not to render the suggestions box in a React Portal.
-   * Rendering content inside a Portal allows the suggestions box to escape the bounds
-   * of its parent while still being positioned correctly.
-   * Defaults to `false`
+   * Use this prop to get a ref to the toggle button of the component
    */
-  usePortal?: boolean;
+  toggleRef?: React.Ref<HTMLButtonElement>;
+
+  /**
+   * Props to pass to the Popover (Dropdown) component
+   */
+  popoverProps?: Partial<PopoverProps> & {
+    /**
+     * It sets the max-height, in pixels, of the list
+     * The default value is the height of 5 single line items
+     * @default 180
+     */
+    listMaxHeight?: number;
+
+    /**
+     * Use this prop to get a ref to the list of items of the component
+     */
+    listRef?: React.Ref<HTMLUListElement>;
+  };
 }
 
 function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
@@ -116,14 +111,13 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     searchInputRef,
     noMatchesMessage = 'No matches found',
     toggleRef,
-    listRef,
-    isFullWidth = false,
-    listMaxHeight = 180,
     isLoading = false,
-    usePortal = false,
     testId = 'cf-multiselect',
+    popoverProps = {},
     children,
   } = props;
+
+  const { listMaxHeight = 180, listRef } = popoverProps;
 
   const styles = getMultiselectStyles();
 
@@ -184,11 +178,10 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
       ref={ref}
     >
       <Popover
-        usePortal={usePortal}
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
-        isFullWidth={isFullWidth === 'full'}
         renderOnlyWhenOpen={false}
+        {...popoverProps}
       >
         <Popover.Trigger>
           <Button

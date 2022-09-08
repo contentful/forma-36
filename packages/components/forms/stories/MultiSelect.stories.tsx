@@ -111,7 +111,7 @@ export const WithSearch = (args: MultiselectProps) => {
         {...args}
         hasSearch={true}
         onSearchValueChange={handleSearchValueChange}
-        isFullWidth
+        popoverProps={{ isFullWidth: true, listMaxHeight: 250 }}
         currentSelection={selectedFruits}
       >
         {filteredItems.map((item, index) => {

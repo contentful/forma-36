@@ -27,16 +27,19 @@ export default function MultiselectBasicUsageExample() {
 
   return (
     <Stack flexDirection="column" alignItems="start">
-      <Multiselect currentSelection={selectedSpace}>
+      <Multiselect
+        currentSelection={selectedSpace}
+        popoverProps={{ isFullWidth: true }}
+      >
         {spaces.map((space, index) => {
           const val = space.toLowerCase().replace(/\s/g, '-');
           return (
             <Multiselect.Option
+              key={`space-${val}-${index}`}
+              itemId={`space-${val}-${index}`}
               value={val}
               label={space}
               onSelectItem={handleSelectItem}
-              itemId={`space-${val}-${index}`}
-              key={`space-${val}-${index}`}
               isChecked={selectedSpace.includes(space)}
             />
           );
