@@ -37,7 +37,6 @@ export default function MultiselectSearchExample() {
     <Stack flexDirection="column" alignItems="start">
       <Multiselect
         searchPlaceholder="Search spaces"
-        hasSearch={true}
         onSearchValueChange={handleSearchValueChange}
         popoverProps={{ isFullWidth: true }}
         currentSelection={selectedItems}

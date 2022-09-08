@@ -133,7 +133,6 @@ describe('Multiselect basic usage', () => {
 describe('Multiselect with search', () => {
   it('renders a search field with placeholder', () => {
     renderComponent({
-      hasSearch: true,
       onSearchValueChange: mockOnSearchValueChange,
       searchPlaceholder: 'My Search Placeholder',
     });
@@ -145,7 +144,6 @@ describe('Multiselect with search', () => {
 
   it('calls the callback on search value change and highlights the search phrase', () => {
     renderComponent({
-      hasSearch: true,
       onSearchValueChange: mockOnSearchValueChange,
     });
     userEvent.click(screen.getByRole('button', { name: 'Toggle Multiselect' }));
@@ -171,7 +169,6 @@ describe('Multiselect with search', () => {
 
   it('clears the search value and triggers the callback function', () => {
     renderComponent({
-      hasSearch: true,
       onSearchValueChange: mockOnSearchValueChange,
     });
     userEvent.click(screen.getByRole('button', { name: 'Toggle Multiselect' }));

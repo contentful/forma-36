@@ -41,12 +41,6 @@ export interface MultiselectProps
   currentSelection?: Array<string>;
 
   /**
-   * If this is set to `true` there will be a search input inside the drawer
-   * @default false
-   */
-  hasSearch?: boolean;
-
-  /**
    * Function called whenever the search input value changes
    */
   onSearchValueChange?: (event: React.ChangeEvent) => void;
@@ -104,7 +98,6 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     startIcon,
     placeholder = 'Select one or more Items',
     currentSelection = [],
-    hasSearch = false,
     defaultValue = '',
     onSearchValueChange,
     searchPlaceholder = 'Search',
@@ -125,6 +118,8 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
   const [isOpen, setIsOpen] = useState(false);
 
   const internalSearchInputRef = useRef(null);
+
+  const hasSearch = typeof onSearchValueChange === 'function';
 
   const handleSearchChange = (event) => {
     setSearchValue(event.target.value);
