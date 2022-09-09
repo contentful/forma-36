@@ -87,7 +87,7 @@ export class NotificationItemContainer extends Component<
         height={this.state.isShown ? 'auto' : 0}
         easing="ease-in-out"
         animateOpacity
-        onAnimationEnd={() => {
+        onHeightAnimationEnd={() => {
           if (this.state.isShown === false) {
             if (this.props.onClose) {
               this.props.onClose();
