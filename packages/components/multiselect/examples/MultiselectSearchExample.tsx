@@ -12,7 +12,7 @@ export default function MultiselectSearchExample() {
     'Photo Gallery',
   ];
 
-  const [selectedItems, setSelectedItems] = React.useState<Array<string>>([]);
+  const [selectedItems, setSelectedItems] = React.useState([]);
   const [filteredItems, setFilteredItems] = React.useState(spaces);
 
   const handleSearchValueChange = (event) => {

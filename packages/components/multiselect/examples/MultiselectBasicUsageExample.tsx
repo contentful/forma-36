@@ -13,7 +13,7 @@ export default function MultiselectBasicUsageExample() {
   ];
 
   // This `useState` is going to store the selected "space" so we can show it in the UI
-  const [selectedSpaces, setSelectedSpaces] = React.useState<Array<string>>([]);
+  const [selectedSpaces, setSelectedSpaces] = React.useState([]);
 
   // This function will be called once the user selects an item in the list of options
   const handleSelectItem = (event) => {
