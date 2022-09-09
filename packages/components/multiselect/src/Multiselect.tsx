@@ -1,9 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useCallback } from 'react';
 import { cx } from 'emotion';
 
 import { mergeRefs, type CommonProps } from '@contentful/f36-core';
 import { Button, IconButton } from '@contentful/f36-button';
-import { TextInput, type TextInputProps } from '@contentful/f36-forms';
+import { TextInput } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon, SearchIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover, type PopoverProps } from '@contentful/f36-popover';
@@ -11,17 +11,7 @@ import { Subheading } from '@contentful/f36-typography';
 
 import { getMultiselectStyles } from './Multiselect.styles';
 
-export interface MultiselectProps
-  extends CommonProps,
-    Pick<
-      TextInputProps,
-      | 'isDisabled'
-      | 'isInvalid'
-      | 'isReadOnly'
-      | 'isRequired'
-      | 'id'
-      | 'defaultValue'
-    > {
+export interface MultiselectProps extends CommonProps {
   /** Select Options */
   children?: React.ReactNode;
 
@@ -43,7 +33,7 @@ export interface MultiselectProps
   /**
    * Function called whenever the search input value changes
    */
-  onSearchValueChange?: (event: React.ChangeEvent) => void;
+  onSearchValueChange?: (event: React.ChangeEvent) => void | undefined;
 
   /**
    * This is the value will be passed to the `placeholder` prop of the input.
@@ -93,12 +83,10 @@ export interface MultiselectProps
 
 function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
   const {
-    id,
     className,
     startIcon,
     placeholder = 'Select one or more Items',
     currentSelection = [],
-    defaultValue = '',
     onSearchValueChange,
     searchPlaceholder = 'Search',
     searchInputRef,
@@ -114,17 +102,20 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
 
   const styles = getMultiselectStyles();
 
-  const [searchValue, setSearchValue] = useState(defaultValue);
+  const [searchValue, setSearchValue] = useState('');
   const [isOpen, setIsOpen] = useState(false);
 
   const internalSearchInputRef = useRef(null);
 
   const hasSearch = typeof onSearchValueChange === 'function';
 
-  const handleSearchChange = (event) => {
-    setSearchValue(event.target.value);
-    onSearchValueChange?.(event);
-  };
+  const handleSearchChange = useCallback(
+    (event) => {
+      setSearchValue(event.target.value);
+      onSearchValueChange?.(event);
+    },
+    [onSearchValueChange, setSearchValue],
+  );
 
   const resetSearch = () => {
     // this looks a bit hacky, but is the official way of externally triggering the onChange handler for an input
@@ -202,7 +193,6 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                   type="text"
                   value={searchValue}
                   className={styles.inputField}
-                  id={id}
                   testId="cf-multiselect-search"
                   placeholder={searchPlaceholder}
                   onChange={(event) => {
