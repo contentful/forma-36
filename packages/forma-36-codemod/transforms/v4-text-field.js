@@ -7,6 +7,7 @@ const {
   removeComponentImport,
   renameProperties,
   getChildren,
+  hasProperty,
 } = require('../utils');
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
 const { isConditionalExpression } = require('../utils/updateTernaryValues');
@@ -14,7 +15,7 @@ const { isConditionalExpression } = require('../utils/updateTernaryValues');
 function textFieldCodemod(file, api) {
   const j = api.jscodeshift;
   let source = file.source;
-  let componentsToImport = ['FormControl', 'TextInput'];
+  let componentsToImport = ['FormControl'];
 
   const componentName = getComponentLocalName(j, source, {
     componentName: 'TextField',
@@ -45,6 +46,15 @@ function textFieldCodemod(file, api) {
         ['testId', 'className'].includes(attribute.name?.name),
       );
       const formControlProps = [...commonProps, id, isRequired];
+
+      // Check if is textarea
+      const isTextarea = hasProperty(attributes, { propertyName: 'textarea' });
+      if (isTextarea && !componentsToImport.includes('TextArea')) {
+        componentsToImport.push('TextArea');
+      }
+      if (!isTextarea && !componentsToImport.includes('TextInput')) {
+        componentsToImport.push('TextInput');
+      }
 
       // FormLabel
       const labelText = getProperty(attributes, { propertyName: 'labelText' });
@@ -95,7 +105,7 @@ function textFieldCodemod(file, api) {
 
       const TextInput = createComponent({
         j,
-        componentName: 'TextInput',
+        componentName: isTextarea ? 'TextArea' : 'TextInput',
         props: textInputProps.filter(Boolean),
         isSelfClosing: true,
       });
