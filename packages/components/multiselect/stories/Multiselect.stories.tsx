@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import type { Meta } from '@storybook/react/types-6-0';
 
 import { Stack } from '@contentful/f36-core';
-import { Multiselect, MultiselectProps } from '../src';
+import { Multiselect } from '../src';
 
 export default {
   title: 'Components/Multiselect',

@@ -30,12 +30,15 @@ Properties are:
 
 For the multiselect itself:
 
-- currentSelection (optional but recommendet): an array of the labels of selected options. This will give the user a hint that there are selected items. This is optional
+- currentSelection (optional but recommended): an array of the labels of selected options. This will give the user a hint that there are selected items. This is optional
 - placeholder (optional): Label of the trigger button without selected elements
 - startIcon (optional): Icon on the start of the trigger button
+- isLoading: enables showing a loading animation while searching or loading results
+
+Inherited propertys from Popover Component.
+
 - listWidth (optional): auto or full
 - listMaxHeight (optional): sets the maximum height of the list drawer, overflow will be scrolled
-- isLoading: enables showing a loading animation while searching or loading results
 
 It also accepts refs for the toggle button, the searchInput and the list.
 
@@ -73,9 +76,12 @@ To enable searching the following properties have to be set.
 
 ## Content guidelines
 
-- Multiselect label should be short, contain 1 to 3 words
-- Label should be written in a sentence case (the first word capitalized, the rest lowercase)
+- Multiselect placeholder should be short but descriptive.
+- Multiselect options can come from a simple array of strings or more complex objects.
+- Do not use the index position of the items in the filtered array for keys or ids, as they are going to change while filtering.
+- Use any algorithm you like in order to search and filter. Depending on your implementation you can also generate a new request to your dataset based on the users input.
 
 ## Accessibility
 
-- Dismisses the dropdown when selecting with the enter key
+- When focussing the toggle button, the enter key opens it. The dropdown content automatically will be focussed
+- Pressing the space bar toggles the checked state of an option and will trigger the onSelectItem callback function
