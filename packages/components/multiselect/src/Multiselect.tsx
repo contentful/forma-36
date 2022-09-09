@@ -1,4 +1,4 @@
-import React, { useRef, useState, useCallback } from 'react';
+import React, { useRef, useState, useCallback, useMemo } from 'react';
 import { cx } from 'emotion';
 
 import { mergeRefs, type CommonProps } from '@contentful/f36-core';
@@ -130,7 +130,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     internalSearchInputRef.current.dispatchEvent(forcedEvent);
   };
 
-  const renderMultiselectLabel = React.useCallback(() => {
+  const renderMultiselectLabel = useCallback(() => {
     if (currentSelection.length === 0) {
       return <>{placeholder}</>;
     }
@@ -155,7 +155,10 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     );
   }, [currentSelection, placeholder, styles.currentSelection]);
 
-  const childrenLength = React.Children.count(children);
+  const childrenLength = useMemo(
+    () => React.Children.count(children),
+    [children],
+  );
 
   return (
     <div
@@ -195,9 +198,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                   className={styles.inputField}
                   testId="cf-multiselect-search"
                   placeholder={searchPlaceholder}
-                  onChange={(event) => {
-                    handleSearchChange(event);
-                  }}
+                  onChange={handleSearchChange}
                   ref={mergeRefs(searchInputRef, internalSearchInputRef)}
                 />
                 <IconButton
