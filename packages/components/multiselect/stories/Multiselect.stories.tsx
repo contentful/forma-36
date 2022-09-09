@@ -9,92 +9,98 @@ export default {
   component: Multiselect,
 } as Meta;
 
-interface Produce {
+interface Fruit {
   id: number;
   name: string;
+  value: string;
+  isDisabled: boolean;
 }
 
-const fruits: Produce[] = [
-  { id: 1, name: 'Apple 🍎' },
-  { id: 2, name: 'Pineapple 🍍' },
-  { id: 3, name: 'Avocado 🥑' },
-  { id: 4, name: 'Banana 🍌' },
-  { id: 5, name: 'Coconut 🥥' },
-  { id: 6, name: 'Lemon 🍋' },
-  { id: 7, name: 'Orange 🍊' },
-  { id: 8, name: 'Peach 🍑' },
-  { id: 9, name: 'Pear 🍐' },
-  { id: 10, name: 'Strawberry 🍓' },
-  { id: 11, name: 'Tangerine 🍊' },
-  { id: 12, name: 'Tomato 🍅' },
+const fruits: Fruit[] = [
+  {
+    id: 1,
+    value: 'apple',
+    name: 'Apple 🍎',
+    isDisabled: false,
+  },
+  {
+    id: 2,
+    value: 'ananas',
+    name: 'Ananas 🍍',
+
+    isDisabled: false,
+  },
+  {
+    id: 3,
+    value: 'avocado',
+    name: 'Avocado 🥑',
+
+    isDisabled: false,
+  },
+  {
+    id: 4,
+    value: 'banana',
+    name: 'Banana 🍌',
+    isDisabled: false,
+  },
+  {
+    id: 5,
+    value: 'coconut',
+    name: 'Coconut 🥥',
+
+    isDisabled: false,
+  },
+  {
+    id: 6,
+    value: 'lemon',
+    name: 'Lemon 🍋',
+    isDisabled: true,
+  },
+  {
+    id: 7,
+    value: 'orange',
+    name: 'Orange 🍊',
+    isDisabled: false,
+  },
+  {
+    id: 8,
+    value: 'peach',
+    name: 'Peach 🍑',
+    isDisabled: false,
+  },
+  {
+    id: 9,
+    value: 'pear',
+    name: 'Pear 🍐',
+    isDisabled: false,
+  },
+  {
+    id: 10,
+    value: '',
+    name: 'Strawberry 🍓',
+    isDisabled: false,
+  },
+  {
+    id: 11,
+    value: '',
+    name: 'Tangerine 🍊',
+    isDisabled: false,
+  },
+  { id: 12, value: 'tomato', name: 'Tomato 🍅', isDisabled: false },
 ];
 
-const fruitStrings = fruits.reduce((acc, fruit) => [...acc, fruit.name], []);
-
-export const Basic = (args: MultiselectProps) => {
+export const Basic = () => {
   const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
 
   const handleSelectItem = (event) => {
     const { checked, value } = event.target;
+
+    const currentFruit = fruits.find((fruit) => fruit.value === value);
     if (checked) {
-      setSelectedFruits((prevState) => [...prevState, value]);
+      setSelectedFruits((prevState) => [...prevState, currentFruit.name]);
     } else {
       const newSelectedFruits = selectedFruits.filter(
-        (fruit) => fruit !== value,
-      );
-      setSelectedFruits(newSelectedFruits);
-    }
-  };
-
-  return (
-    <Stack
-      style={{ width: '150px' }}
-      flexDirection="column"
-      spacing="spacingM"
-      alignItems="start"
-    >
-      <Multiselect {...args} currentSelection={selectedFruits}>
-        {fruitStrings.map((item, index) => {
-          return (
-            <Multiselect.Option
-              value={item}
-              label={item}
-              onSelectItem={handleSelectItem}
-              key={`${item}-${index}`}
-              itemId={`${item}-${index}`}
-              isChecked={selectedFruits.includes(item)}
-              isDisabled={item === 'Avocado 🥑'}
-            />
-          );
-        })}
-      </Multiselect>
-    </Stack>
-  );
-};
-
-Basic.args = {
-  placeholder: 'Select many fruits',
-};
-
-export const WithSearch = (args: MultiselectProps) => {
-  const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
-  const [filteredItems, setFilteredItems] = useState(fruitStrings);
-
-  const handleSearchValueChange = (event) => {
-    const value = event.target.value;
-    const newFilteredItems = fruitStrings.filter((item) =>
-      item.toLowerCase().includes(value.toLowerCase()),
-    );
-    setFilteredItems(newFilteredItems);
-  };
-
-  const handleSelectItem = (event) => {
-    const { checked, value } = event.target;
-    if (checked) {
-      setSelectedFruits((prevState) => [...prevState, value]);
-    } else {
-      const newSelectedFruits = selectedFruits.filter(
-        (fruit) => fruit !== value,
+        (fruit) => fruit !== currentFruit.name,
       );
       setSelectedFruits(newSelectedFruits);
     }
@@ -108,22 +114,19 @@ export const WithSearch = (args: MultiselectProps) => {
       alignItems="start"
     >
       <Multiselect
-        {...args}
-        hasSearch={true}
-        onSearchValueChange={handleSearchValueChange}
-        popoverProps={{ isFullWidth: true, listMaxHeight: 250 }}
+        placeholder="Select many fruits"
         currentSelection={selectedFruits}
       >
-        {filteredItems.map((item, index) => {
+        {fruits.map((item) => {
           return (
             <Multiselect.Option
-              value={item}
-              label={item}
+              value={item.value}
+              label={item.name}
               onSelectItem={handleSelectItem}
-              key={`${item}-${index}`}
-              itemId={`${item}-${index}`}
-              isChecked={selectedFruits.includes(item)}
-              isDisabled={item === 'Avocado 🥑'}
+              key={`key-${item.id}`}
+              itemId={`id-${item.id}}`}
+              isChecked={selectedFruits.includes(item.name)}
+              isDisabled={item.isDisabled}
             />
           );
         })}
@@ -132,6 +135,59 @@ export const WithSearch = (args: MultiselectProps) => {
   );
 };
 
-WithSearch.args = {
-  placeholder: 'Search your favorite fruit',
+export const WithSearch = () => {
+  const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
+  const [filteredItems, setFilteredItems] = useState(fruits);
+
+  const handleSearchValueChange = (event) => {
+    const value = event.target.value;
+    const newFilteredItems = fruits.filter((item) =>
+      item.value.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredItems(newFilteredItems);
+  };
+
+  const handleSelectItem = (event) => {
+    const { checked, value } = event.target;
+
+    const currentFruit = fruits.find((fruit) => fruit.value === value);
+    if (checked) {
+      setSelectedFruits((prevState) => [...prevState, currentFruit.name]);
+    } else {
+      const newSelectedFruits = selectedFruits.filter(
+        (fruit) => fruit !== currentFruit.name,
+      );
+      setSelectedFruits(newSelectedFruits);
+    }
+  };
+
+  return (
+    <Stack
+      style={{ width: '150px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      <Multiselect
+        placeholder="Search your favorite fruit"
+        onSearchValueChange={handleSearchValueChange}
+        popoverProps={{ isFullWidth: true, listMaxHeight: 250 }}
+        currentSelection={selectedFruits}
+      >
+        {filteredItems.map((item) => {
+          return (
+            <Multiselect.Option
+              value={item.value}
+              label={item.name}
+              onSelectItem={handleSelectItem}
+              key={`key-${item.id}}`}
+              itemId={`id-${item.id}`}
+              isChecked={selectedFruits.includes(item.name)}
+              isDisabled={item.isDisabled}
+            />
+          );
+        })}
+      </Multiselect>
+    </Stack>
+  );
 };
