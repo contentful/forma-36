@@ -1,4 +1,4 @@
-import { FormControl, TextInput, Flex } from "@contentful/f36-components";
+import { FormControl, TextInput, Flex, TextArea } from "@contentful/f36-components";
 const {
   id,
   name,
@@ -124,3 +124,8 @@ const validationMessageCondition = 0;
   <TextInput name="conditional-validation" onChange={() => {}} />
   {!(validationMessageCondition > 0) && <FormControl.ValidationMessage>Some validation message</FormControl.ValidationMessage>}
 </FormControl>;
+
+<FormControl id="textarea">
+  <FormControl.Label>Text area</FormControl.Label>
+  <TextArea name="textarea" value="some value" rows={5} />
+</FormControl>

@@ -138,3 +138,14 @@ const validationMessageCondition = 0;
   onChange={() => {}}
   validationMessage={validationMessageCondition > 0 ? '' : 'Some validation message'}
 />;
+
+<TextField
+  textarea
+  id="textarea"
+  name="textarea"
+  labelText="Text area"
+  textInputProps={{
+    rows: 5,
+  }}
+  value="some value"
+/>
