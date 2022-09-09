@@ -49,8 +49,8 @@ function textFieldCodemod(file, api) {
 
       // Check if is textarea
       const isTextarea = hasProperty(attributes, { propertyName: 'textarea' });
-      if (isTextarea && !componentsToImport.includes('TextArea')) {
-        componentsToImport.push('TextArea');
+      if (isTextarea && !componentsToImport.includes('Textarea')) {
+        componentsToImport.push('Textarea');
       }
       if (!isTextarea && !componentsToImport.includes('TextInput')) {
         componentsToImport.push('TextInput');
@@ -105,7 +105,7 @@ function textFieldCodemod(file, api) {
 
       const TextInput = createComponent({
         j,
-        componentName: isTextarea ? 'TextArea' : 'TextInput',
+        componentName: isTextarea ? 'Textarea' : 'TextInput',
         props: textInputProps.filter(Boolean),
         isSelfClosing: true,
       });

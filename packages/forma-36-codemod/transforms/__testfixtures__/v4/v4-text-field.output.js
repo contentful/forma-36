@@ -1,4 +1,4 @@
-import { FormControl, TextInput, Flex, TextArea } from "@contentful/f36-components";
+import { FormControl, TextInput, Flex, Textarea } from "@contentful/f36-components";
 const {
   id,
   name,
@@ -127,5 +127,5 @@ const validationMessageCondition = 0;
 
 <FormControl id="textarea">
   <FormControl.Label>Text area</FormControl.Label>
-  <TextArea name="textarea" value="some value" rows={5} />
+  <Textarea name="textarea" value="some value" rows={5} />
 </FormControl>
