@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 09-09-2022
+
+**F36 Notification** `v4.19.0`
+
+- Upgrade react-animate-height to fix f36-notification
+
 ## 08-09-2022
 
 `@contentful/f36-components@4.18.0`
