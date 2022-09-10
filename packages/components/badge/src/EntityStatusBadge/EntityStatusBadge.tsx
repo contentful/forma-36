@@ -2,7 +2,7 @@ import React from 'react';
 import type { EntityStatus, ExpandProps } from '@contentful/f36-core';
 
 import { Badge, type BadgeProps } from '../Badge/Badge';
-import type { BadgeVariant, BadgeSize } from '../types';
+import type { BadgeVariant } from '../types';
 
 const statusMap: { [key in EntityStatus]: BadgeVariant } = {
   published: 'positive',
@@ -14,8 +14,7 @@ const statusMap: { [key in EntityStatus]: BadgeVariant } = {
 };
 
 export interface EntityStatusBadgeProps
-  extends Omit<BadgeProps, 'variant' | 'children'> {
-  size?: BadgeSize;
+  extends Omit<BadgeProps, 'variant' | 'children' | 'endIcon' | 'startIcon'> {
   entityStatus: EntityStatus;
 }
 
