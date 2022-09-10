@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Icon } from '@contentful/f36-icon';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
