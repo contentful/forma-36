@@ -1,6 +1,6 @@
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
-import type { BadgeVariant, BadgeSize } from '../types';
+import type { BadgeVariant, BadgeSize, BadgeStylesProps } from '../types';
 import type { CSSObject } from '@emotion/serialize';
 
 const variantToStyles = ({ variant }: { variant: BadgeVariant }): CSSObject => {
@@ -64,26 +64,52 @@ const sizeToStyles = ({ size }: { size: BadgeSize }): CSSObject => {
   }
 };
 
-export const getBadgeStyles = ({
-  variant,
-  size,
-}: {
-  variant: BadgeVariant;
-  size: BadgeSize;
-}) => {
-  return css({
-    fontFamily: tokens.fontStackPrimary,
-    fontWeight: tokens.fontWeightDemiBold,
+const getBadgeIconStyle = ({ hasChildren, variant, size }) => {
+  const align = {
+    '&:first-child': { marginRight: tokens.spacing2Xs },
+    '&:last-child': { marginLeft: tokens.spacing2Xs },
+  };
 
-    textTransform: 'uppercase',
-    letterSpacing:
-      '0.06rem' /*move to tokens or update wide letter spacing token*/,
-    borderRadius: `${tokens.borderRadiusSmall}`,
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    verticalAlign: 'middle',
-    ...variantToStyles({ variant }),
-    ...sizeToStyles({ size }),
-  });
+  const margin = hasChildren ? align : {};
+
+  const padding =
+    size === 'small'
+      ? {
+          position: 'relative',
+          top: -3,
+          padding: `0 ${tokens.spacing2Xs}`,
+        }
+      : {
+          padding: `1px ${tokens.spacing2Xs}`,
+        };
+
+  return css([
+    margin,
+    padding,
+    variant !== 'transparent' &&
+      hasChildren && {
+        '& svg': {
+          fill: 'currentColor',
+        },
+      },
+  ]);
 };
+
+export const getBadgeStyles = () => ({
+  badge: ({ variant, size }: BadgeStylesProps) =>
+    css({
+      fontFamily: tokens.fontStackPrimary,
+      fontWeight: tokens.fontWeightDemiBold,
+      textTransform: 'uppercase',
+      letterSpacing:
+        '0.06rem' /*move to tokens or update wide letter spacing token*/,
+      borderRadius: `${tokens.borderRadiusSmall}`,
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      verticalAlign: 'middle',
+      ...variantToStyles({ variant }),
+      ...sizeToStyles({ size }),
+    }),
+  badgeIcon: getBadgeIconStyle,
+});
