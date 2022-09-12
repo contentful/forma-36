@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.19.1
+
+### Patch Changes
+
+- [#2209](https://github.com/contentful/forma-36/pull/2209) [`42f0c321`](https://github.com/contentful/forma-36/commit/42f0c3218965137191842f492fe5dbf4bd10784c) Thanks [@denkristoffer](https://github.com/denkristoffer)! - build: build ESM to JS file - legacy output
+  fix(notification): use type imports
+- Updated dependencies [[`42f0c321`](https://github.com/contentful/forma-36/commit/42f0c3218965137191842f492fe5dbf4bd10784c)]:
+  - @contentful/f36-icons@4.19.1
+  - @contentful/f36-tooltip@4.19.1
+  - @contentful/f36-core@4.19.1
+
 ## 4.19.0
 
 ### Patch Changes
