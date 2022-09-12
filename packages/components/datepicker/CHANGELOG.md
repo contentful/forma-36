@@ -1,5 +1,19 @@
 # @contentful/f36-datepicker
 
+## 4.2.2
+
+### Patch Changes
+
+- [#2218](https://github.com/contentful/forma-36/pull/2218) [`9647d295`](https://github.com/contentful/forma-36/commit/9647d295763c6518fe6d381d79a53524ac104d92) Thanks [@denkristoffer](https://github.com/denkristoffer)! - - fix(text): truncated styles
+  - fix(datepicker): update react-day-picker
+- Updated dependencies [[`9647d295`](https://github.com/contentful/forma-36/commit/9647d295763c6518fe6d381d79a53524ac104d92)]:
+  - @contentful/f36-typography@4.19.2
+  - @contentful/f36-button@4.19.2
+  - @contentful/f36-forms@4.19.2
+  - @contentful/f36-icons@4.19.2
+  - @contentful/f36-popover@4.19.2
+  - @contentful/f36-core@4.19.2
+
 ## 4.2.1
 
 ### Patch Changes

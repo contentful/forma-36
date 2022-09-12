@@ -1,15 +1,15 @@
 {
   "name": "@contentful/f36-popover",
-  "version": "4.19.1",
+  "version": "4.19.2",
   "description": "Forma 36: Popover component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@contentful/f36-core": "^4.19.1",
+    "@contentful/f36-core": "^4.19.2",
     "@contentful/f36-tokens": "^4.0.1",
-    "@contentful/f36-utils": "^4.19.1",
+    "@contentful/f36-utils": "^4.19.2",
     "@popperjs/core": "^2.11.5",
     "emotion": "^10.0.17",
     "react-popper": "^2.3.0"
