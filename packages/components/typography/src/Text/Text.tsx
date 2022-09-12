@@ -34,6 +34,7 @@ function truncatedStyle() {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
+    maxWidth: '100%',
   });
 }
 
