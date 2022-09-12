@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.19.2
+
+### Patch Changes
+
+- Updated dependencies [[`9647d295`](https://github.com/contentful/forma-36/commit/9647d295763c6518fe6d381d79a53524ac104d92)]:
+  - @contentful/f36-typography@4.19.2
+  - @contentful/f36-button@4.19.2
+  - @contentful/f36-icons@4.19.2
+  - @contentful/f36-text-link@4.19.2
+  - @contentful/f36-core@4.19.2
+
 ## 4.19.1
 
 ### Patch Changes
