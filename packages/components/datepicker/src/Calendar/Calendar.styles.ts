@@ -196,6 +196,7 @@ export const getStyles = (): ClassNames => {
       fontWeight: tokens.fontWeightDemiBold,
       textAlign: 'center',
       height: '32px',
+      color: tokens.gray600,
     }),
 
     tbody: css({
