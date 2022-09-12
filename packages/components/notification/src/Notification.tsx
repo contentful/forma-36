@@ -12,7 +12,7 @@ import {
   NotificationProps,
   Placement,
 } from './NotificationsManager';
-import { NotificationVariant, NotificationCta } from './types';
+import type { NotificationVariant, NotificationCta } from './types';
 
 export interface NotificationsAPI {
   success: ShowAction<Notification>;

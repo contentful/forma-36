@@ -7,7 +7,7 @@
     "dist"
   ],
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "browserslist": "extends @contentful/browserslist-config",

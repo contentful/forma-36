@@ -4,7 +4,7 @@
   "version": "4.19.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "module": "dist/index.mjs",
+  "module": "dist/index.module.js",
   "license": "MIT",
   "files": [
     "dist"
