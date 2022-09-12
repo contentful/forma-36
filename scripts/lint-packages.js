@@ -51,8 +51,8 @@ for (const pkg of packages) {
   );
   softAssert(json.module, `${pkg} did not have "module"`);
   softAssert(
-    json.module.endsWith('.mjs'),
-    `${pkg}#module should be a .mjs file but got "${json.module}"`,
+    json.module.endsWith('esm/index.js'),
+    `${pkg}#module should be a separate .js file but got "${json.module}"`,
   );
   softAssert(json.source, `${pkg} did not have "source"`);
   softAssert.equal(

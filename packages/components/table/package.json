@@ -19,7 +19,7 @@
     "dist"
   ],
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "source": "src/index.ts",
   "sideEffects": false,
