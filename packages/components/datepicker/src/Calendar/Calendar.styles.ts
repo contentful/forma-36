@@ -36,7 +36,7 @@ export const getStyles = (): ClassNames => {
       cursor: 'pointer',
       color: tokens.gray900,
 
-      '&[aria-disabled="true"]': {
+      '&.rdp-day_disabled': {
         color: tokens.gray400,
         pointerEvents: 'none',
       },
@@ -52,7 +52,7 @@ export const getStyles = (): ClassNames => {
         backgroundColor: tokens.gray200,
       },
 
-      '&.rdp-day_selected:not([aria-disabled="true"])': {
+      '&.rdp-day_selected:not(.rdp-day_disabled)': {
         backgroundColor: tokens.blue600,
         color: tokens.colorWhite,
         fontWeight: tokens.fontWeightDemiBold,
@@ -196,6 +196,7 @@ export const getStyles = (): ClassNames => {
       fontWeight: tokens.fontWeightDemiBold,
       textAlign: 'center',
       height: '32px',
+      color: tokens.gray600,
     }),
 
     tbody: css({
