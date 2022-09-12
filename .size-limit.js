@@ -10,6 +10,6 @@ module.exports = [
     import: '*',
     limit: '3.2 s',
     name: 'Module',
-    path: './packages/forma-36-react-components/dist/esm/index.js',
+    path: './packages/forma-36-react-components/dist/index.esm.js',
   },
 ];
