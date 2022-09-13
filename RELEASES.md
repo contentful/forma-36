@@ -55,6 +55,10 @@ Every day there is a task running on the CI that calls the [changelog-write.js](
 
 ## Prereleases
 
+> Prereleases are only used for new components, once a package is stable we avoid adding prerelease code into it.
+>
+> For changes in stable components we follow the semver versioning
+
 We work with the concept of the prereleases being `alpha` and `beta`.
 
 Since we want to show the documentation of the components that are still on prereleases on our website, we need to have them merged on `main` branch, but we don't want to have them published or handled by changeset.
