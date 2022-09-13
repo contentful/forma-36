@@ -90,7 +90,7 @@ function textFieldCodemod(file, api) {
 
       if (textInputPropsObj) {
         const { isDisabled, spreadedPropsNames, ...otherProps } =
-          transformTextInputProps(textInputPropsObj, {
+          transformObjectToProps(textInputPropsObj, {
             j,
             attributes,
           });
@@ -139,7 +139,7 @@ function textFieldCodemod(file, api) {
         }
         if (textLinkPropsObj.value.expression.type === 'ObjectExpression') {
           const { text, spreadedPropsNames, ...otherProps } =
-            transformTextInputProps(textLinkPropsObj, { j, attributes });
+            transformObjectToProps(textLinkPropsObj, { j, attributes });
           let textLinkProps = [];
           spreadedPropsNames.forEach((name) =>
             textLinkProps.push(j.jsxSpreadAttribute(j.identifier(name))),
@@ -360,16 +360,16 @@ function textFieldCodemod(file, api) {
 }
 
 /**
- * Function that will convert all the properties in the "textInputProps" object
- * to the correct type that we need when passing them to FormControl and TextInput components.
+ * Function that will convert all the properties in the a prop object
+ * to the correct type that we need when passing them to the new components.
  * It will return an object where each key is the name of the prop and the value is the value of the prop
  *
- * @param textInputPropsObj
+ * @param propObj
  * @param options
  * @returns {Object} newProps
  */
-function transformTextInputProps(textInputPropsObj, { j, attributes }) {
-  const { properties } = textInputPropsObj.value.expression;
+function transformObjectToProps(propObj, { j, attributes }) {
+  const { properties } = propObj.value.expression;
 
   const newProps = { spreadedPropsNames: [] };
   const propertiesMap = properties.reduce((acc, prop) => {
