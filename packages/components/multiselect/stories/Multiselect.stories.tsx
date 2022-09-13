@@ -173,21 +173,23 @@ export const WithTitle = () => {
         currentSelection={selectedFruits}
         onSearchValueChange={handleSearchValueChange}
       >
-        <SectionHeading> Fruits </SectionHeading>
+        <>
+          <SectionHeading> Fruits </SectionHeading>
 
-        {filteredItems.map((item) => {
-          return (
-            <Multiselect.Option
-              value={item.value}
-              label={item.name}
-              onSelectItem={handleSelectItem}
-              key={`key-${item.id}`}
-              itemId={`id-${item.id}}`}
-              isChecked={selectedFruits.includes(item.name)}
-              isDisabled={item.isDisabled}
-            />
-          );
-        })}
+          {filteredItems.map((item) => {
+            return (
+              <Multiselect.Option
+                value={item.value}
+                label={item.name}
+                onSelectItem={handleSelectItem}
+                key={`key-${item.id}`}
+                itemId={`id-${item.id}}`}
+                isChecked={selectedFruits.includes(item.name)}
+                isDisabled={item.isDisabled}
+              />
+            );
+          })}
+        </>
       </Multiselect>
     </Stack>
   );
