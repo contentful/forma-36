@@ -10,6 +10,6 @@ export default defineConfig({
   minify: true,
   platform: 'browser',
   sourcemap: true,
-  target: 'es2020',
+  target: 'es6',
   treeshake: true,
 });
