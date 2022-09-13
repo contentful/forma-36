@@ -1,4 +1,7 @@
-import { FormControl, TextInput, Flex, Textarea } from "@contentful/f36-components";
+import { PreviewIcon } from "@contentful/f36-icons";
+
+import { FormControl, TextInput, Flex, Textarea, TextLink } from "@contentful/f36-components";
+
 const {
   id,
   name,
@@ -128,4 +131,25 @@ const validationMessageCondition = 0;
 <FormControl id="textarea">
   <FormControl.Label>Text area</FormControl.Label>
   <Textarea name="textarea" value="some value" rows={5} />
-</FormControl>
+</FormControl>;
+
+const textLinkProps = {
+  text: 'TextLink',
+  icon: 'Preview',
+  href: '#'
+};
+<FormControl id="with-text-link">
+  <Flex justifyContent="space-between" alignItems="center">
+    <FormControl.Label>With text link</FormControl.Label>
+    <TextLink {...textLinkProps}>{textLinkProps.text}</TextLink>
+  </Flex>
+  <TextInput name="with-text-link" value="some value" />
+</FormControl>;
+
+<FormControl id="with-text-link">
+  <Flex justifyContent="space-between" alignItems="center">
+    <FormControl.Label>With text link</FormControl.Label>
+    <TextLink icon={<PreviewIcon />} href="#">TextLink</TextLink>
+  </Flex>
+  <TextInput name="with-text-link" value="some value" />
+</FormControl>;
