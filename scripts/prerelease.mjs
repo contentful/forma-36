@@ -69,7 +69,7 @@ async function main() {
 
   if(publish) {
     // TODO: remove dry-run, kept here for testing before merging
-    await exec(`npm publish ${dir} --tag ${tag} --dry-run`, (error, stdout, stderr) => {
+    await exec(`npm publish ${dir} --tag ${tag}`, (error, stdout, stderr) => {
       if(!error) {
         console.log(stdout)
         console.log(`${name}@${newVersion} published: \nhttps://www.npmjs.com/package/${name}\n`)
