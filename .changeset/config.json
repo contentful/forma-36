@@ -15,6 +15,7 @@
       "@contentful/f36-card",
       "@contentful/f36-collapse",
       "@contentful/f36-copybutton",
+      "@contentful/f36-datepicker",
       "@contentful/f36-datetime",
       "@contentful/f36-drag-handle",
       "@contentful/f36-entity-list",
