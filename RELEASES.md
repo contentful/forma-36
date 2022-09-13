@@ -52,3 +52,22 @@ This file reads and parse the `.changelogrc` file, and adds the news changesets 
 After updating the `.changelogrc` file it uses the changeset version to update the packages `CHANGELOG` files, and then calls [generate-releases.js](https://github.com/contentful/forma-36/blob/fe934ff657852993ef321348651cbce0a68dc349/scripts/changesets/generate-releases.js) script file, that handles publishing to NPM and generating the releases on Github.
 
 Every day there is a task running on the CI that calls the [changelog-write.js](https://github.com/contentful/forma-36/blob/fe934ff657852993ef321348651cbce0a68dc349/scripts/changesets/changelog-write.js). This file checks for contents on the `.changelogrc` file and generates the [What's new](https://f36.contentful.com/whats-new) page based on those. Then it empty the files to not have duplicated contents when it needs to generate the page again.
+
+## Prereleases
+
+> Prereleases are only used for new components, once a package is stable we avoid adding prerelease code into it.
+>
+> For changes in stable components we follow the semver versioning
+
+We work with the concept of the prereleases being `alpha` and `beta`.
+
+Since we want to show the documentation of the components that are still on prereleases on our website, we need to have them merged on `main` branch, but we don't want to have them published or handled by changeset.
+
+For that we need to take some precautions:
+
+- The package that is in prerelease (alpha, beta) needs to be added to the ignore field on the [.changeset/config.json](https://github.com/contentful/forma-36/blob/main/.changeset/config.json), so if a changeset is created for that package it will be ignored and not change the version or publish that specific package.
+- And we don't have prerelease packages being part of the umbrela package (`f36-components`), which means that when it becomes stable we add it there and replace where it was being used before, e.g. on the website and/or playground.
+
+Trying to make prereleases easier to handle we created a script that you can use on your branch before merging into master, that will bump the package you select, and you can choose if you it's an alpha or beta release, before publishing it to NPM.
+
+You can check the script [here](https://github.com/contentful/forma-36/blob/c6b10071959a085b21e49f5411a5ebff2f8a70d6/scripts/prerelease.mjs)
