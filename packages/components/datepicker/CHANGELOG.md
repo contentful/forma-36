@@ -1,5 +1,19 @@
 # @contentful/f36-datepicker
 
+## 4.20.1
+
+### Patch Changes
+
+- [#2223](https://github.com/contentful/forma-36/pull/2223) [`0dd9f38f`](https://github.com/contentful/forma-36/commit/0dd9f38fedee14b9dc9998501a6706f865aca708) Thanks [@denkristoffer](https://github.com/denkristoffer)! - build: add datepicker package to changeset
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.1
+  - @contentful/f36-forms@4.20.1
+  - @contentful/f36-icons@4.20.1
+  - @contentful/f36-popover@4.20.1
+  - @contentful/f36-typography@4.20.1
+  - @contentful/f36-core@4.20.1
+
 ## 4.2.2
 
 ### Patch Changes
