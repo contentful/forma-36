@@ -1,5 +1,20 @@
 # Change Log
 
+## 4.20.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.20.1
+  - @contentful/f36-button@4.20.1
+  - @contentful/f36-drag-handle@4.20.1
+  - @contentful/f36-icon@4.20.1
+  - @contentful/f36-icons@4.20.1
+  - @contentful/f36-menu@4.20.1
+  - @contentful/f36-skeleton@4.20.1
+  - @contentful/f36-typography@4.20.1
+  - @contentful/f36-core@4.20.1
+
 ## 4.20.0
 
 ### Patch Changes
