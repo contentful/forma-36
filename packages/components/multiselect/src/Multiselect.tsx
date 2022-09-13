@@ -10,6 +10,7 @@ import { Popover, type PopoverProps } from '@contentful/f36-popover';
 import { Subheading } from '@contentful/f36-typography';
 
 import { getMultiselectStyles } from './Multiselect.styles';
+import { MultiselectOption, MultiselectOptionProps } from './MultiselectOption';
 
 export interface MultiselectProps extends CommonProps {
   /** Select Options */
@@ -227,7 +228,10 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
             {!isLoading && childrenLength > 0 && (
               <ul className={styles.list} data-test-id="cf-multiselect-items">
                 {React.Children.map(children, (child) => {
-                  if (React.isValidElement(child)) {
+                  if (
+                    React.isValidElement(child) &&
+                    child.type === MultiselectOption
+                  ) {
                     return React.cloneElement(child, {
                       searchValue,
                     });

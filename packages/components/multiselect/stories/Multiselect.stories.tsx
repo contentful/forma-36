@@ -3,6 +3,7 @@ import type { Meta } from '@storybook/react/types-6-0';
 
 import { Stack } from '@contentful/f36-core';
 import { Multiselect } from '../src';
+import { SectionHeading } from '@contentful/f36-typography';
 
 export default {
   title: 'Components/Multiselect',
@@ -118,6 +119,63 @@ export const Basic = () => {
         currentSelection={selectedFruits}
       >
         {fruits.map((item) => {
+          return (
+            <Multiselect.Option
+              value={item.value}
+              label={item.name}
+              onSelectItem={handleSelectItem}
+              key={`key-${item.id}`}
+              itemId={`id-${item.id}}`}
+              isChecked={selectedFruits.includes(item.name)}
+              isDisabled={item.isDisabled}
+            />
+          );
+        })}
+      </Multiselect>
+    </Stack>
+  );
+};
+export const WithTitle = () => {
+  const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
+  const [filteredItems, setFilteredItems] = useState(fruits);
+
+  const handleSelectItem = (event) => {
+    const { checked, value } = event.target;
+
+    const currentFruit = fruits.find((fruit) => fruit.value === value);
+    if (checked) {
+      setSelectedFruits((prevState) => [...prevState, currentFruit.name]);
+    } else {
+      const newSelectedFruits = selectedFruits.filter(
+        (fruit) => fruit !== currentFruit.name,
+      );
+      setSelectedFruits(newSelectedFruits);
+    }
+  };
+
+  const handleSearchValueChange = (event) => {
+    const value = event.target.value;
+    const newFilteredItems = fruits.filter((item) =>
+      item.value.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredItems(newFilteredItems);
+  };
+
+  return (
+    <Stack
+      style={{ width: '150px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      <Multiselect
+        placeholder="Select many fruits"
+        currentSelection={selectedFruits}
+        onSearchValueChange={handleSearchValueChange}
+      >
+        <SectionHeading> Fruits </SectionHeading>
+
+        {filteredItems.map((item) => {
           return (
             <Multiselect.Option
               value={item.value}
