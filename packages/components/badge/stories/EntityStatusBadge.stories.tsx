@@ -1,9 +1,12 @@
 import React from 'react';
+
+import { Icon } from '@contentful/f36-icon';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
+import * as icons from '@contentful/f36-icons';
 
-import { EntityStatusBadge } from '../src/EntityStatusBadge/EntityStatusBadge';
-import { EntityStatusBadgeProps } from '../src/EntityStatusBadge/EntityStatusBadge';
+import { EntityStatusBadge } from '../src/EntityStatusBadge';
+import { EntityStatusBadgeProps } from '../src/EntityStatusBadge';
 
 export default {
   title: 'Components/EntityStatusBadge',
@@ -15,11 +18,27 @@ export default {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
     style: { control: { disable: true } },
+    startIcon: {
+      control: {
+        options: ['', ...Object.keys(icons)],
+        type: 'select',
+      },
+    },
+    endIcon: {
+      control: {
+        options: ['', ...Object.keys(icons)],
+        type: 'select',
+      },
+    },
   },
 };
 
-export const Basic = (args: EntityStatusBadgeProps) => (
-  <EntityStatusBadge {...args} />
+export const Basic = ({ startIcon, endIcon, args }) => (
+  <EntityStatusBadge
+    {...args}
+    startIcon={startIcon && <Icon as={icons[startIcon]} />}
+    endIcon={endIcon && <Icon as={icons[endIcon]} />}
+  />
 );
 
 Basic.args = {
@@ -27,7 +46,7 @@ Basic.args = {
   entityStatus: 'published',
 };
 
-export const Overview = () => (
+export const Overview = ({ startIcon, endIcon }) => (
   <>
     <SectionHeading as="h3" marginBottom="spacingS">
       EntityStatusBadge variants & sizes
@@ -35,50 +54,104 @@ export const Overview = () => (
 
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <EntityStatusBadge entityStatus="published" />
+        <EntityStatusBadge
+          entityStatus="published"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+        />
       </Flex>
       <Flex marginRight="spacingS">
-        <EntityStatusBadge entityStatus="published" size="small" />
-      </Flex>
-    </Flex>
-    <Flex marginBottom="spacingM" alignItems="center">
-      <Flex marginRight="spacingS">
-        <EntityStatusBadge entityStatus="new" />
-      </Flex>
-      <Flex marginRight="spacingS">
-        <EntityStatusBadge entityStatus="new" size="small" />
-      </Flex>
-    </Flex>
-    <Flex marginBottom="spacingM" alignItems="center">
-      <Flex marginRight="spacingS">
-        <EntityStatusBadge entityStatus="changed" />
-      </Flex>
-      <Flex marginRight="spacingS">
-        <EntityStatusBadge entityStatus="changed" size="small" />
+        <EntityStatusBadge
+          entityStatus="published"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          size="small"
+        />
       </Flex>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <EntityStatusBadge entityStatus="deleted" />
+        <EntityStatusBadge
+          entityStatus="new"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+        />
       </Flex>
       <Flex marginRight="spacingS">
-        <EntityStatusBadge entityStatus="deleted" size="small" />
+        <EntityStatusBadge
+          entityStatus="new"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          size="small"
+        />
       </Flex>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <EntityStatusBadge entityStatus="draft" />
+        <EntityStatusBadge
+          entityStatus="changed"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+        />
       </Flex>
       <Flex marginRight="spacingS">
-        <EntityStatusBadge entityStatus="draft" size="small" />
+        <EntityStatusBadge
+          entityStatus="changed"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          size="small"
+        />
       </Flex>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <EntityStatusBadge entityStatus="archived" />
+        <EntityStatusBadge
+          entityStatus="deleted"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+        />
       </Flex>
       <Flex marginRight="spacingS">
-        <EntityStatusBadge entityStatus="archived" size="small" />
+        <EntityStatusBadge
+          entityStatus="deleted"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          size="small"
+        />
+      </Flex>
+    </Flex>
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS">
+        <EntityStatusBadge
+          entityStatus="draft"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+        />
+      </Flex>
+      <Flex marginRight="spacingS">
+        <EntityStatusBadge
+          entityStatus="draft"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          size="small"
+        />
+      </Flex>
+    </Flex>
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS">
+        <EntityStatusBadge
+          entityStatus="archived"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+        />
+      </Flex>
+      <Flex marginRight="spacingS">
+        <EntityStatusBadge
+          entityStatus="archived"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          size="small"
+        />
       </Flex>
     </Flex>
   </>

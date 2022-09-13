@@ -1,7 +1,7 @@
 import React from 'react';
 import type { EntityStatus, ExpandProps } from '@contentful/f36-core';
 
-import { Badge, type BadgeProps } from '../Badge/Badge';
+import { Badge, type BadgeProps } from '../Badge';
 import type { BadgeVariant, BadgeSize } from '../types';
 
 const statusMap: { [key in EntityStatus]: BadgeVariant } = {
