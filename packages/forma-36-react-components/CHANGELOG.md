@@ -1,5 +1,46 @@
 # Change Log
 
+## 4.20.0
+
+### Minor Changes
+
+- [#2221](https://github.com/contentful/forma-36/pull/2221) [`865804ec`](https://github.com/contentful/forma-36/commit/865804ec8893de037de9ab8684e2ff49800f2c71) Thanks [@denkristoffer](https://github.com/denkristoffer)! - - Build to ES6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-accordion@4.20.0
+  - @contentful/f36-asset@4.20.0
+  - @contentful/f36-autocomplete@4.20.0
+  - @contentful/f36-badge@4.20.0
+  - @contentful/f36-button@4.20.0
+  - @contentful/f36-card@4.20.0
+  - @contentful/f36-collapse@4.20.0
+  - @contentful/f36-copybutton@4.20.0
+  - @contentful/f36-datetime@4.20.0
+  - @contentful/f36-drag-handle@4.20.0
+  - @contentful/f36-entity-list@4.20.0
+  - @contentful/f36-forms@4.20.0
+  - @contentful/f36-icon@4.20.0
+  - @contentful/f36-icons@4.20.0
+  - @contentful/f36-list@4.20.0
+  - @contentful/f36-menu@4.20.0
+  - @contentful/f36-modal@4.20.0
+  - @contentful/f36-note@4.20.0
+  - @contentful/f36-notification@4.20.0
+  - @contentful/f36-pagination@4.20.0
+  - @contentful/f36-pill@4.20.0
+  - @contentful/f36-popover@4.20.0
+  - @contentful/f36-skeleton@4.20.0
+  - @contentful/f36-spinner@4.20.0
+  - @contentful/f36-table@4.20.0
+  - @contentful/f36-tabs@4.20.0
+  - @contentful/f36-text-link@4.20.0
+  - @contentful/f36-tooltip@4.20.0
+  - @contentful/f36-typography@4.20.0
+  - @contentful/f36-utils@4.20.0
+  - @contentful/f36-core@4.20.0
+
 ## 4.19.2
 
 ### Patch Changes
