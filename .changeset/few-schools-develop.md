@@ -2,4 +2,4 @@
 @contentful/f36-components: minor
 ---
 
-Update tsup.config.ts
+- Build to ES6
