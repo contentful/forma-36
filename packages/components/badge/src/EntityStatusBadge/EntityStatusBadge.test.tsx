@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import { PreviewIcon } from '@contentful/f36-icons';
 import { axe } from '@/scripts/test/axeHelper';
 import { EntityStatusBadge } from './EntityStatusBadge';
 
@@ -8,6 +9,27 @@ describe('EntityStatusBadge', function () {
     render(<EntityStatusBadge entityStatus={'archived'} />);
 
     expect(screen.getByTestId('cf-ui-badge')).toBeTruthy();
+  });
+
+  it('renders the component with a start icon', () => {
+    render(
+      <EntityStatusBadge
+        entityStatus={'archived'}
+        startIcon={<PreviewIcon />}
+      />,
+    );
+
+    const entityStatusBadge = screen.getByTestId('cf-ui-badge');
+    expect(entityStatusBadge.getElementsByTagName('svg')).toHaveLength(1);
+  });
+
+  it('renders the component with an end icon', () => {
+    render(
+      <EntityStatusBadge entityStatus={'archived'} endIcon={<PreviewIcon />} />,
+    );
+
+    const entityStatusBadge = screen.getByTestId('cf-ui-badge');
+    expect(entityStatusBadge.getElementsByTagName('svg')).toHaveLength(1);
   });
 
   it('has no a11y issues', async () => {
