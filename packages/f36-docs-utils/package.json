@@ -19,7 +19,6 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@babel/runtime": "^7.6.2",
     "@contentful/f36-components": "^4.11.0",
     "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-icons": "^4.11.0",
