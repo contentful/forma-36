@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 
 // @todo: change any to unknown
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-interface ModalLauncherComponentRendererProps<T = any> {
+export interface ModalLauncherComponentRendererProps<T = any> {
   isShown: boolean;
   onClose: (result?: T) => void;
 }
 
-interface ModalLauncherOpenOptions {
+export interface ModalLauncherOpenOptions {
   /**
    * Unique id to be used as identifier for the modal contianer
    */
