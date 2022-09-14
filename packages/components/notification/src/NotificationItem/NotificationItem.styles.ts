@@ -53,6 +53,8 @@ const titleStyle: CSSObject = {
 
 const contentStyle: CSSObject = {
   color: tokens.gray700,
+  wordBreak: 'break-word',
+  hyphens: 'auto',
   '&:last-child': {
     marginBottom: 0,
   },
