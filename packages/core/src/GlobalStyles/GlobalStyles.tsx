@@ -4,6 +4,7 @@ import tokens from '@contentful/f36-tokens';
 
 const cssReset = css`
   /* Remove default margin */
+  /* Button has default margin in some browsers, like safari */
   body,
   h1,
   h2,
@@ -13,7 +14,8 @@ const cssReset = css`
   figure,
   blockquote,
   dl,
-  dd {
+  dd,
+  button {
     margin: 0;
   }
 
