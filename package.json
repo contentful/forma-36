@@ -85,7 +85,6 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "^29.0.3",
     "babel-plugin-emotion": "10.0.33",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-plugin-typescript-to-proptypes": "2.0.0",
     "chalk": "^4.1.0",
     "chromatic": "^5.7.0",
