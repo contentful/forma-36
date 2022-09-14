@@ -16,6 +16,7 @@ const { warningMessage } = require('./warningMessage');
 const { createComponent } = require('./createComponent');
 const { getChildren } = require('./getChildren');
 const { getNewProp } = require('./getNewProp');
+const { updateComponentsToImport } = require('./updateComponentsToImport');
 
 module.exports = {
   getComponentLocalName,
@@ -37,4 +38,5 @@ module.exports = {
   createComponent,
   getChildren,
   getNewProp,
+  updateComponentsToImport,
 };
