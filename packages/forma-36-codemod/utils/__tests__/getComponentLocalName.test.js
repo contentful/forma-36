@@ -11,24 +11,24 @@ describe('utils/getComponentLocalName', () => {
       return getComponentLocalName(j, source, { importName, componentName });
     };
 
-    expect(testFn('')).toEqual('');
+    expect(testFn('')).toBe('');
 
     expect(
       testFn(`
       import {} from '${importName}';
     `),
-    ).toEqual('');
+    ).toBe('');
 
     expect(
       testFn(`
       import { TextLink } from '${importName}';
     `),
-    ).toEqual('TextLink');
+    ).toBe('TextLink');
 
     expect(
       testFn(`
       import { TextLink as RenamedTextLink } from '${importName}';
     `),
-    ).toEqual('RenamedTextLink');
+    ).toBe('RenamedTextLink');
   });
 });
