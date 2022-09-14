@@ -18416,11 +18416,6 @@ react-devtools-inline@4.4.0:
   dependencies:
     es6-symbol "^3"
 
-react-docgen-typescript@^1.21.0:
-  version "1.22.0"
-  resolved "https://registry.npmjs.org/react-docgen-typescript/-/react-docgen-typescript-1.22.0.tgz"
-  integrity sha512-MPLbF8vzRwAG3GcjdL+OHQlhgtWsLTXs+7uJiHfEeT3Ur7IsZaNYqRTLQ9sj2nB6M6jylcPCeCmH7qbszJmecg==
-
 react-docgen-typescript@^2.1.1, react-docgen-typescript@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/react-docgen-typescript/-/react-docgen-typescript-2.2.2.tgz#4611055e569edc071204aadb20e1c93e1ab1659c"
