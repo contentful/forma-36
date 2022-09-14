@@ -18,7 +18,7 @@ describe('TextLink', function () {
 
     const anchor = getByRole('link');
     expect(anchor).toBeTruthy();
-    expect(anchor.getAttribute('href')).toEqual('#');
+    expect(anchor.getAttribute('href')).toBe('#');
   });
 
   it('renders as a "primary" link type', () => {

@@ -35,7 +35,7 @@ describe('Tooltip', () => {
     await act(async () => {
       userEvent.hover(getByText('Hover me'));
     });
-    expect(getByRole('tooltip').textContent).toEqual('Tooltip content');
+    expect(getByRole('tooltip').textContent).toBe('Tooltip content');
   });
 
   it('renders the component with an additional class name', async () => {
@@ -66,7 +66,7 @@ describe('Tooltip', () => {
     });
     expect(
       container.querySelector('.target-wrapper-class-name').textContent,
-    ).toEqual('Hover me');
+    ).toBe('Hover me');
   });
 
   it('renders the component with a placement attribute', async () => {
@@ -79,7 +79,7 @@ describe('Tooltip', () => {
     await act(async () => {
       userEvent.hover(getByText('Hover me'));
     });
-    expect(getByRole('tooltip').getAttribute('data-popper-placement')).toEqual(
+    expect(getByRole('tooltip').getAttribute('data-popper-placement')).toBe(
       'left',
     );
   });
@@ -94,7 +94,7 @@ describe('Tooltip', () => {
     await act(async () => {
       userEvent.hover(getByText('Hover me'));
     });
-    expect(getByRole('tooltip').getAttribute('id')).toEqual('Tooltip');
+    expect(getByRole('tooltip').getAttribute('id')).toBe('Tooltip');
   });
 
   it('renders the component as span with a id attribute', async () => {
@@ -108,7 +108,7 @@ describe('Tooltip', () => {
       userEvent.hover(getByText('Hover me'));
     });
     const tooltip = getByRole('tooltip');
-    expect(tooltip.getAttribute('id')).toEqual('Tooltip');
+    expect(tooltip.getAttribute('id')).toBe('Tooltip');
     expect(tooltip.nodeName).toMatch(/span/i);
   });
 
