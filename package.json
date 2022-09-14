@@ -55,7 +55,6 @@
   "browserslist": "extends @contentful/browserslist-config",
   "devDependencies": {
     "@babel/core": "^7.0.0",
-    "@babel/helper-string-parser": "^7.18.10",
     "@babel/polyfill": "7.12.1",
     "@babel/register": "^7.18.6",
     "@babel/runtime": "^7.6.2",
