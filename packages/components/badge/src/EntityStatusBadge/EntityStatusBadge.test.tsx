@@ -1,7 +1,5 @@
 import React from 'react';
-import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
-import { PreviewIcon } from '@contentful/f36-icons';
 import { axe } from '@/scripts/test/axeHelper';
 import { EntityStatusBadge } from './EntityStatusBadge';
 
