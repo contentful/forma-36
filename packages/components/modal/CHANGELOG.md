@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.20.2
+
+### Patch Changes
+
+- [#2229](https://github.com/contentful/forma-36/pull/2229) [`6cc0c625`](https://github.com/contentful/forma-36/commit/6cc0c625e70a08d1f7f3e6bd3b0c4d0e32809af6) Thanks [@bgutsol](https://github.com/bgutsol)! - Expose some ModalLauncher types
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.2
+  - @contentful/f36-icons@4.20.2
+  - @contentful/f36-typography@4.20.2
+  - @contentful/f36-core@4.20.2
+
 ## 4.20.1
 
 ### Patch Changes
