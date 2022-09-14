@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 14-09-2022
+
+`@contentful/f36-components@4.20.0`
+
+- Build to ES6
+
+**F36 Datepicker** `v4.20.1`
+
+- build: add datepicker package to changeset
+
 ## 13-09-2022
 
 **F36 Accordion** `v4.19.1`
