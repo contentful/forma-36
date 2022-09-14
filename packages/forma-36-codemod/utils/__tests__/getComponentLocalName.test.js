@@ -11,7 +11,7 @@ describe('utils/getComponentLocalName', () => {
       return getComponentLocalName(j, source, { importName, componentName });
     };
 
-    expect(testFn('')).tobe('');
+    expect(testFn('')).toBe('');
 
     expect(
       testFn(`
