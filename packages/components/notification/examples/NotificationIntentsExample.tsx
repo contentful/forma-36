@@ -3,7 +3,7 @@ import { Button, Notification, Stack } from '@contentful/f36-components';
 
 export default function NotificationIntentsExample() {
   return (
-    <Stack>
+    <Stack justifyContent="center" flexWrap="wrap">
       <Button
         variant="positive"
         onClick={() => Notification.success('This is a success notification')}
