@@ -148,4 +148,29 @@ const validationMessageCondition = 0;
     rows: 5,
   }}
   value="some value"
-/>
+/>;
+
+const textLinkProps = {
+  text: 'TextLink',
+  icon: 'Preview',
+  href: '#'
+};
+<TextField
+  id="with-text-link"
+  name="with-text-link"
+  labelText="With text link"
+  textLinkProps={textLinkProps}
+  value="some value"
+/>;
+
+<TextField
+  id="with-text-link"
+  name="with-text-link"
+  labelText="With text link"
+  textLinkProps={{
+    text: 'TextLink',
+    icon: 'Preview',
+    href: '#'
+  }}
+  value="some value"
+/>;
