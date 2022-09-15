@@ -161,6 +161,25 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     [children],
   );
 
+  // clones and enriches the multiselect options
+  const enrichOptions = React.useCallback(
+    (children: React.ReactNode): React.ReactNode => {
+      return React.Children.map(children, (child) => {
+        if (React.isValidElement(child)) {
+          if (child.type === React.Fragment) {
+            return enrichOptions(child.props.children);
+          }
+          if (child.type === MultiselectOption) {
+            return React.cloneElement(child, { searchValue });
+          }
+          return child;
+        }
+        return child;
+      });
+    },
+    [searchValue],
+  );
+
   return (
     <div
       data-test-id={testId}
@@ -227,17 +246,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
 
             {!isLoading && childrenLength > 0 && (
               <ul className={styles.list} data-test-id="cf-multiselect-items">
-                {React.Children.map(children, (child) => {
-                  if (
-                    React.isValidElement(child) &&
-                    child.type === MultiselectOption
-                  ) {
-                    return React.cloneElement(child, {
-                      searchValue,
-                    });
-                  }
-                  return child;
-                })}
+                {hasSearch ? enrichOptions(children) : children}
               </ul>
             )}
 
