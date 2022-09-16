@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.20.5
+
+### Patch Changes
+
+- [#2238](https://github.com/contentful/forma-36/pull/2238) [`b94b2b58`](https://github.com/contentful/forma-36/commit/b94b2b58554f626037e6fafe605efb2bc238a4e9) Thanks [@mshaaban0](https://github.com/mshaaban0)! - fix: break long words in new lines
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.5
+  - @contentful/f36-icons@4.20.5
+  - @contentful/f36-text-link@4.20.5
+  - @contentful/f36-typography@4.20.5
+  - @contentful/f36-core@4.20.5
+
 ## 4.20.4
 
 ### Patch Changes
