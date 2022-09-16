@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.20.6
+
+### Patch Changes
+
+- [#2233](https://github.com/contentful/forma-36/pull/2233) [`05bdd10f`](https://github.com/contentful/forma-36/commit/05bdd10f5ea6fae41cacb0f4fd3db0bdd65422e9) Thanks [@crissto](https://github.com/crissto)! - Add ToggleIcon
+
+- Updated dependencies []:
+  - @contentful/f36-icon@4.20.6
+  - @contentful/f36-core@4.20.6
+
 ## 4.20.5
 
 ### Patch Changes
