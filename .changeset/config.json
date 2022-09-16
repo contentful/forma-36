@@ -6,9 +6,7 @@
       "repo": "contentful/forma-36"
     }
   ],
-  "ignore": [
-    "@contentful/f36-website"
-  ],
+  "ignore": ["@contentful/f36-website"],
   "commit": false,
   "fixed": [
     [
@@ -43,7 +41,6 @@
       "@contentful/f36-tooltip",
       "@contentful/f36-typography",
       "@contentful/f36-utils",
-      "@contentful/f36-workbench",
       "@contentful/f36-core",
       "@contentful/f36-components"
     ]
