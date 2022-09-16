@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.20.4
+
+### Patch Changes
+
+- [#2236](https://github.com/contentful/forma-36/pull/2236) [`b0677fe7`](https://github.com/contentful/forma-36/commit/b0677fe7e3ac0062d93065bcfba1b1ba66b8b10a) Thanks [@bgutsol](https://github.com/bgutsol)! - Fix Workbench styles to prevent additional scroll on a page
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.4
+  - @contentful/f36-icon@4.20.4
+  - @contentful/f36-icons@4.20.4
+  - @contentful/f36-typography@4.20.4
+  - @contentful/f36-core@4.20.4
+
 ## 4.20.3
 
 ### Patch Changes
