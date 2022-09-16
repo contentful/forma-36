@@ -163,6 +163,7 @@ export { ThumbDown as ThumbDownIcon } from './ThumbDown';
 export { ThumbDownTrimmed as ThumbDownTrimmedIcon } from './ThumbDownTrimmed';
 export { ThumbUp as ThumbUpIcon } from './ThumbUp';
 export { ThumbUpTrimmed as ThumbUpTrimmedIcon } from './ThumbUpTrimmed';
+export { Toggle as ToggleIcon } from './Toggle';
 export { TriangleOutline as TriangleOutlineIcon } from './TriangleOutline';
 export { Users as UsersIcon } from './Users';
 export { UsersTrimmed as UsersTrimmedIcon } from './UsersTrimmed';
