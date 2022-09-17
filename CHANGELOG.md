@@ -8,6 +8,20 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 17-09-2022
+
+**F36 Workbench** `v4.20.4`
+
+- Fix Workbench styles to prevent additional scroll on a page
+
+**F36 Notification** `v4.20.5`
+
+- fix: break long words in new lines
+
+**F36 Icons** `v4.20.6`
+
+- Add ToggleIcon
+
 ## 15-09-2022
 
 **F36 Modal** `v4.20.2`
