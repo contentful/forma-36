@@ -28,8 +28,8 @@ const getInputGroupStyle = ({ spacing }) => {
         borderTopRightRadius: `${tokens.borderRadiusMedium} !important`,
         marginRight: '0 !important',
       },
-      '&:focus, &:focus-within': {
-        zIndex: tokens.zIndexDefault + 1,
+      '&:focus, &:focus-within, &:hover': {
+        zIndex: tokens.zIndexTooltip + 1,
       },
     },
   });
