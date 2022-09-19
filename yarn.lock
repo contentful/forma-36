@@ -449,14 +449,14 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/node@^7.18.9":
-  version "7.18.9"
-  resolved "https://registry.yarnpkg.com/@babel/node/-/node-7.18.9.tgz#6a40aea1c7058d3dbda940b6fc7f2ea6ad9dbb09"
-  integrity sha512-fB7KOLz3l2r8g5xxyNf+F5yYhSnsKKjsOwNGwIJYWwDPYabBIamDZfTiPj9rwvmbatv5VEjiJqRgRDoBRrF3Sw==
+"@babel/node@^7.19.1":
+  version "7.19.1"
+  resolved "https://registry.yarnpkg.com/@babel/node/-/node-7.19.1.tgz#10237a480dfd9f84dee9b68ba5cb991de4b2e0fb"
+  integrity sha512-gfxJNrawPso6kx7SwKfAdX1rEzVc09speJLFKrdxuZXGlve92pjbB3nJVmuwrxNN4+jvytj2zvliNXuW6uaSOw==
   dependencies:
     "@babel/register" "^7.18.9"
     commander "^4.0.1"
-    core-js "^3.22.1"
+    core-js "^3.25.1"
     node-environment-flags "^1.0.5"
     regenerator-runtime "^0.13.4"
     v8flags "^3.1.1"
@@ -8260,10 +8260,10 @@ core-js@^2.4.0, core-js@^2.6.5:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
 
-core-js@^3.0.4, core-js@^3.14.0, core-js@^3.22.1, core-js@^3.6.5, core-js@^3.8.2:
-  version "3.23.5"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.23.5.tgz#1f82b0de5eece800827a2f59d597509c67650475"
-  integrity sha512-7Vh11tujtAZy82da4duVreQysIoO2EvVrur7y6IzZkH1IHPSekuDi8Vuw1+YKjkbfWLRD7Nc9ICQ/sIUDutcyg==
+core-js@^3.0.4, core-js@^3.14.0, core-js@^3.25.1, core-js@^3.6.5, core-js@^3.8.2:
+  version "3.25.2"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.25.2.tgz#2d3670c1455432b53fa780300a6fc1bd8304932c"
+  integrity sha512-YB4IAT1bjEfxTJ1XYy11hJAKskO+qmhuDBM8/guIfMz4JvdsAQAqvyb97zXX7JgSrfPLG5mRGFWJwJD39ruq2A==
 
 core-util-is@1.0.2:
   version "1.0.2"
