@@ -20,7 +20,6 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@babel/runtime": "^7.6.2",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {

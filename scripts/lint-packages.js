@@ -62,10 +62,6 @@ for (const pkg of packages) {
   );
   softAssert.deepEqual(json.files, ['dist'], `${pkg} did not match "files"`);
   softAssert(
-    json.dependencies && json.dependencies['@babel/runtime'],
-    `${pkg} is missing a dependency on @babel/runtime`,
-  );
-  softAssert(
     !json.dependencies || !json.dependencies['react'],
     `${pkg} has react as a dependency, but it should be a peerDependency`,
   );
