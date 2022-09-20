@@ -134,10 +134,8 @@ function selectFieldCodemod(file, api) {
           children: getChildren({ prop: validationMessage, j }),
         });
 
-      const selectProps = [value, ...handlerProps].filter((prop) => prop);
-      const formControlProps = [id, name, required, ...commonProps].filter(
-        (p) => p,
-      );
+      const selectProps = [name, value, ...handlerProps].filter((prop) => prop);
+      const formControlProps = [id, required, ...commonProps].filter((p) => p);
 
       // from selectProps
       const selectPropsObj = getProperty(attributes, {
