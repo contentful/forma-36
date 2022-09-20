@@ -15,7 +15,6 @@ const getInputGroupStyle = ({ spacing }) => {
     },
     '& > *': {
       marginRight: '-1px !important',
-      zIndex: tokens.zIndexDefault,
       '&:not(:focus), & button:not(:focus)': {
         boxShadow: 'none !important',
       },
@@ -28,8 +27,8 @@ const getInputGroupStyle = ({ spacing }) => {
         borderTopRightRadius: `${tokens.borderRadiusMedium} !important`,
         marginRight: '0 !important',
       },
-      '&:focus, &:focus-within, &:hover': {
-        zIndex: tokens.zIndexTooltip + 1,
+      '&:focus, &:focus-within': {
+        zIndex: tokens.zIndexDefault + 1,
       },
     },
   });
