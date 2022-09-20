@@ -20,7 +20,6 @@
     "react-dom": ">=16.8"
   },
   "dependencies": {
-    "@babel/runtime": "^7.3.4",
     "@contentful/f36-accordion": "^4.20.6",
     "@contentful/f36-asset": "^4.20.6",
     "@contentful/f36-autocomplete": "^4.20.6",
