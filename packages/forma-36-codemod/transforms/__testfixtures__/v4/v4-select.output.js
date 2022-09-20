@@ -1,8 +1,8 @@
 import { Select, FormControl } from "@contentful/f36-components";
 
-<FormControl id="select-field" name="select-field" isRequired>
+<FormControl id="select-field" isRequired>
   <FormControl.Label>Select label</FormControl.Label>
-  <Select onChange={() => {}} testId="cf-ui-select-field">
+  <Select name="select-field" onChange={() => {}} testId="cf-ui-select-field">
     <Select.Option value='1'>Option 1</Select.Option>
     <Select.Option value='2'>Option 2</Select.Option>
     <Select.Option value='3'>Option 3</Select.Option>
