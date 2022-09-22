@@ -49,7 +49,7 @@ describe('ToggleButton', function () {
     expect(button.getElementsByTagName('svg')).toHaveLength(1);
   });
 
-  it('should not dispatch onClick if disabled', () => {
+  it('should not dispatch onClick if disabled', async () => {
     render(
       <ToggleButton onToggle={mockOnToggle} icon={<PreviewIcon />} isDisabled>
         Toggle
@@ -57,7 +57,7 @@ describe('ToggleButton', function () {
     );
 
     const button = screen.getByRole('button');
-    userEvent.click(button);
+    await userEvent.click(button);
     expect(mockOnToggle).not.toHaveBeenCalled();
   });
 
