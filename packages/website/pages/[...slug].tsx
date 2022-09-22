@@ -150,7 +150,12 @@ export const getStaticProps: GetStaticProps<
   const topbarLinks = await getTopbarLinks();
   let sidebarLinks = (await getSidebarLinksBySectionSlug(section)) ?? [];
 
-  if (section === HARDCODED_WEBSITE_SECTION.COMPONENTS) {
+  const sectionsWithComponentsSidebar: string[] = [
+    HARDCODED_WEBSITE_SECTION.COMPONENTS,
+    HARDCODED_WEBSITE_SECTION.INTEGRATIONS,
+    HARDCODED_WEBSITE_SECTION.UTILS,
+  ];
+  if (sectionsWithComponentsSidebar.includes(section)) {
     sidebarLinks = [
       ...sidebarLinks,
       ...componentSidebarLinks,
