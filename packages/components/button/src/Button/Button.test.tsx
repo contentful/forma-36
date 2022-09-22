@@ -13,13 +13,13 @@ describe('Button', function () {
   });
 
   it('renders the component as an a tag', () => {
-    const { container } = render(
+    render(
       <Button as="a" href="https://contentful.com">
         Button
       </Button>,
     );
 
-    expect(container.firstChild).toHaveAttribute('href');
+    expect(screen.getByRole('link')).toHaveAttribute('href');
   });
 
   it('renders the component with icon', () => {
@@ -29,7 +29,7 @@ describe('Button', function () {
     expect(button.getElementsByTagName('svg')).toHaveLength(1);
   });
 
-  it('should not dispatch onClick if disabled', () => {
+  it('should not dispatch onClick if disabled', async () => {
     const mockOnClick = jest.fn();
 
     render(
@@ -39,7 +39,7 @@ describe('Button', function () {
     );
 
     const button = screen.getByRole('button');
-    userEvent.click(button);
+    await userEvent.click(button);
     expect(mockOnClick).not.toHaveBeenCalled();
   });
 

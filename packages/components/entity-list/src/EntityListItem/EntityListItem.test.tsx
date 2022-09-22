@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from '@/scripts/test/axeHelper';
 
@@ -11,15 +11,13 @@ const ITEM_TEST_ID = 'list-item';
 
 describe('EntityList', function () {
   it('renders with title', () => {
-    const { getByTestId } = render(
-      <EntityListItem testId={ITEM_TEST_ID} title="Title" />,
-    );
+    render(<EntityListItem testId={ITEM_TEST_ID} title="Title" />);
 
-    expect(getByTestId(ITEM_TEST_ID)).toHaveTextContent('Title');
+    expect(screen.getByTestId(ITEM_TEST_ID)).toHaveTextContent('Title');
   });
 
   it('renders the component with a description', () => {
-    const { getByTestId } = render(
+    render(
       <EntityListItem
         title="Title"
         testId={ITEM_TEST_ID}
@@ -27,19 +25,19 @@ describe('EntityList', function () {
       />,
     );
 
-    expect(getByTestId(ITEM_TEST_ID)).toHaveTextContent('Description');
+    expect(screen.getByTestId(ITEM_TEST_ID)).toHaveTextContent('Description');
   });
 
   it('renders the component with a status', () => {
-    const { getByTestId } = render(
+    render(
       <EntityListItem testId={ITEM_TEST_ID} title="Title" status="published" />,
     );
 
-    expect(getByTestId(ITEM_TEST_ID)).toHaveTextContent('published');
+    expect(screen.getByTestId(ITEM_TEST_ID)).toHaveTextContent('published');
   });
 
-  it('renders the component with Menu', () => {
-    const { getByRole, getAllByRole, getByLabelText } = render(
+  it('renders the component with Menu', async () => {
+    render(
       <EntityListItem
         title="Title"
         actions={[
@@ -51,14 +49,14 @@ describe('EntityList', function () {
       />,
     );
 
-    userEvent.click(getByLabelText('Actions'));
+    await userEvent.click(screen.getByLabelText('Actions'));
 
-    expect(getByRole('menu')).toBeInTheDocument();
-    expect(getAllByRole('menuitem')).toHaveLength(3);
+    expect(screen.getByRole('menu')).toBeInTheDocument();
+    expect(screen.getAllByRole('menuitem')).toHaveLength(3);
   });
 
   it('renders the component with custom drag handle', () => {
-    const { getByText } = render(
+    render(
       <EntityListItem
         title="Title"
         description="Description"
@@ -70,19 +68,17 @@ describe('EntityList', function () {
       />,
     );
 
-    expect(getByText('Reorder card')).toBeInTheDocument();
+    expect(screen.getByText('Reorder card')).toBeInTheDocument();
   });
 
   it('renders the component with a drag handle', () => {
-    const { getByText } = render(
-      <EntityListItem title="Title" withDragHandle />,
-    );
+    render(<EntityListItem title="Title" withDragHandle />);
 
-    expect(getByText('Reorder entry')).toBeInTheDocument();
+    expect(screen.getByText('Reorder entry')).toBeInTheDocument();
   });
 
   it('renders the component as an asset thumbnail preview', () => {
-    const { getByRole } = render(
+    render(
       <EntityListItem
         title="Title"
         thumbnailUrl="https://path/to/thumbnail.jpg"
@@ -90,14 +86,14 @@ describe('EntityList', function () {
       />,
     );
 
-    const img = getByRole('img');
+    const img = screen.getByRole('img');
 
     expect(img).toHaveAttribute('src', 'https://path/to/thumbnail.jpg');
     expect(img).toHaveAttribute('alt', 'thumbnail alt text');
   });
 
   it('renders the component without thumbnai if status is archived', () => {
-    const { queryByAltText } = render(
+    render(
       <EntityListItem
         title="Title"
         status="archived"
@@ -106,42 +102,38 @@ describe('EntityList', function () {
       />,
     );
 
-    expect(queryByAltText('thumbnail alt text')).toBeFalsy();
+    expect(screen.queryByAltText('thumbnail alt text')).toBeFalsy();
   });
 
   it('renders the component as isLoading', () => {
-    const { getByLabelText } = render(
-      <EntityListItem title="Title" isLoading />,
-    );
+    render(<EntityListItem title="Title" isLoading />);
 
-    expect(getByLabelText('Loading component...')).toBeInTheDocument();
+    expect(screen.getByLabelText('Loading component...')).toBeInTheDocument();
   });
 
   it('renders the component as an `a` element if passed a href prop', () => {
-    const { container, debug } = render(
+    const { container } = render(
       <EntityListItem
         title="Title"
         description="Description"
         href="#test-href"
       />,
     );
-    debug();
+
     expect(container.querySelector('a')).toHaveAttribute('href', '#test-href');
   });
 
-  it('can call an onClick callback', () => {
+  it('can call an onClick callback', async () => {
     const mockOnClick = jest.fn();
 
-    const { getByText } = render(
-      <EntityListItem title="Title" onClick={mockOnClick} />,
-    );
+    render(<EntityListItem title="Title" onClick={mockOnClick} />);
 
-    userEvent.click(getByText('Title'));
+    await userEvent.click(screen.getByText('Title'));
     expect(mockOnClick).toHaveBeenCalled();
   });
 
   it('renders the component with an additional class name', () => {
-    const { getByTestId } = render(
+    render(
       <EntityListItem
         title="Title"
         className="my-extra-class"
@@ -149,11 +141,11 @@ describe('EntityList', function () {
       />,
     );
 
-    expect(getByTestId(ITEM_TEST_ID)).toHaveClass('my-extra-class');
+    expect(screen.getByTestId(ITEM_TEST_ID)).toHaveClass('my-extra-class');
   });
 
   it('renders the component with disabled actions', () => {
-    const { getByLabelText } = render(
+    render(
       <EntityListItem
         title="Title"
         actions={[
@@ -165,7 +157,7 @@ describe('EntityList', function () {
       />,
     );
 
-    expect(getByLabelText('Actions')).toBeDisabled();
+    expect(screen.getByLabelText('Actions')).toBeDisabled();
   });
 
   it('has no a11y issues', async () => {
