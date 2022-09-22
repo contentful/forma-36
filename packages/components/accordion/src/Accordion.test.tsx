@@ -17,7 +17,7 @@ jest.mock('@contentful/f36-core', () => {
 });
 
 describe('Accordion', () => {
-  it('opens the accordion panel when the header is clicked', () => {
+  it('opens the accordion panel when the header is clicked', async () => {
     render(
       <Accordion>
         <Accordion.Item title="Accordion Title">
@@ -30,11 +30,11 @@ describe('Accordion', () => {
 
     expect(panel.getAttribute('aria-hidden')).toBe('true');
 
-    userEvent.click(screen.getByText('Accordion Title'));
+    await userEvent.click(screen.getByText('Accordion Title'));
     expect(panel.getAttribute('aria-hidden')).toBe('false');
   });
 
-  it('calls onExpand && onCollapse when an accordion item is expanded and collapsed', () => {
+  it('calls onExpand && onCollapse when an accordion item is expanded and collapsed', async () => {
     const onExpand = jest.fn();
     const onCollapse = jest.fn();
     render(
@@ -49,11 +49,11 @@ describe('Accordion', () => {
       </Accordion>,
     );
 
-    userEvent.click(screen.getByText('Accordion Title'));
+    await userEvent.click(screen.getByText('Accordion Title'));
     expect(onExpand).toHaveBeenCalledTimes(1);
     expect(onCollapse).toHaveBeenCalledTimes(0);
 
-    userEvent.click(screen.getByText('Accordion Title'));
+    await userEvent.click(screen.getByText('Accordion Title'));
     expect(onExpand).toHaveBeenCalledTimes(1);
     expect(onCollapse).toHaveBeenCalledTimes(1);
   });
