@@ -32,15 +32,9 @@
     "changelog:gen": "node scripts/changesets/changelog-generate.js",
     "changelog:write": "node scripts/changesets/changelog-write.js",
     "changeset:publish": "node scripts/changesets/generate-releases.js",
+    "postversion": "yarn run prettier",
     "prerelease": "node scripts/prerelease.mjs",
     "pretty:quick": "yarn pretty-quick --staged --pattern '**/*.*(js|jsx|ts|tsx|md|mdx)'"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn run pretty:quick",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "postversion": "yarn run prettier"
-    }
   },
   "config": {
     "commitizen": {
@@ -105,7 +99,6 @@
     "estimo": "^2.3.6",
     "fast-glob": "^3.2.4",
     "globby": "^11.0.2",
-    "husky": "^4.3.0",
     "inquirer": "^9.1.1",
     "jest": "^29.0.3",
     "jest-axe": "6.0.0",
@@ -121,6 +114,7 @@
     "react-router-dom": "^5.3.0",
     "react-sortable-hoc": "^2.0.0",
     "semver": "^7.3.5",
+    "simple-git-hooks": "^2.8.0",
     "size-limit": "^8.1.0",
     "tsup": "^6.2.3",
     "turbo": "^1.0.6",
@@ -134,5 +128,9 @@
   "volta": {
     "node": "14.17.0",
     "yarn": "1.18.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "yarn run pretty:quick",
+    "commit-msg": "yarn commitlint -e \"$@\""
   }
 }
