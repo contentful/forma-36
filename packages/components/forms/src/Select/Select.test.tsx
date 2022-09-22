@@ -5,7 +5,7 @@ import { axe } from '@/scripts/test/axeHelper';
 
 import { Select } from './CompoundSelect';
 
-it('should not dispatch onChange if disabled', () => {
+it('should not dispatch onChange if disabled', async () => {
   const mockOnChange = jest.fn();
   render(
     <Select
@@ -18,11 +18,13 @@ it('should not dispatch onChange if disabled', () => {
     </Select>,
   );
 
-  userEvent.selectOptions(screen.getByTestId('cf-ui-select'), ['optionOne']);
+  await userEvent.selectOptions(screen.getByTestId('cf-ui-select'), [
+    'optionOne',
+  ]);
   expect(mockOnChange).not.toHaveBeenCalled();
 });
 
-it('should dispatch onChange', () => {
+it('should dispatch onChange', async () => {
   const mockOnChange = jest.fn();
   render(
     <Select name="optionSelect" id="optionSelect" onChange={mockOnChange}>
@@ -30,7 +32,9 @@ it('should dispatch onChange', () => {
     </Select>,
   );
 
-  userEvent.selectOptions(screen.getByTestId('cf-ui-select'), ['optionOne']);
+  await userEvent.selectOptions(screen.getByTestId('cf-ui-select'), [
+    'optionOne',
+  ]);
   expect(mockOnChange).toHaveBeenCalled();
 });
 
