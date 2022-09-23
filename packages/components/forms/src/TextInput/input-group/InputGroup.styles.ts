@@ -15,7 +15,6 @@ const getInputGroupStyle = ({ spacing }) => {
     },
     '& > *': {
       marginRight: '-1px !important',
-      zIndex: tokens.zIndexDefault,
       '&:not(:focus), & button:not(:focus)': {
         boxShadow: 'none !important',
       },
