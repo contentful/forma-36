@@ -5,6 +5,7 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { Tooltip } from '@contentful/f36-tooltip';
 import { Flex } from '@contentful/f36-core';
 import { TextInput, InputGroupProps } from '../src';
+import { CopyButton } from '@contentful/f36-copybutton';
 
 export default {
   title: 'Form Elements/InputGroup',
@@ -163,7 +164,7 @@ export const Overview = () => {
       <SectionHeading as="h3" marginBottom="spacingS">
         With button wrapped in tooltip
       </SectionHeading>
-      <Flex marginBottom="spacingM" fullWidth>
+      <Flex marginBottom="spacingL" fullWidth>
         <TextInput.Group>
           <TextInput
             aria-label="Text Input"
@@ -177,6 +178,33 @@ export const Overview = () => {
               aria-label="Lock"
             />
           </Tooltip>
+        </TextInput.Group>
+      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        With copy button
+      </SectionHeading>
+      <Flex marginBottom="spacingM" fullWidth>
+        <TextInput.Group>
+          <TextInput value="Some value" />
+          <CopyButton value="Some value" />
+        </TextInput.Group>
+      </Flex>
+      <Flex marginBottom="spacingM" fullWidth>
+        <TextInput.Group>
+          <TextInput isInvalid value="Some value" />
+          <CopyButton value="Some value" />
+        </TextInput.Group>
+      </Flex>
+      <Flex marginBottom="spacingM" fullWidth>
+        <TextInput.Group>
+          <TextInput isDisabled value="Some value" />
+          <CopyButton value="Some value" />
+        </TextInput.Group>
+      </Flex>
+      <Flex marginBottom="spacingM" fullWidth>
+        <TextInput.Group>
+          <TextInput isDisabled isInvalid value="Some value" />
+          <CopyButton value="Some value" />
         </TextInput.Group>
       </Flex>
     </Flex>
