@@ -17,6 +17,8 @@ export enum HARDCODED_WEBSITE_SECTION {
   PLAYGROUND = 'playground',
   TOKENS = 'tokens',
   WHATS_NEW = 'whats-new',
+  UTILS = 'utils',
+  INTEGRATIONS = 'integrations',
 }
 
 /**
