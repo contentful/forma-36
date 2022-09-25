@@ -2,7 +2,6 @@ import React from 'react';
 import { cx } from 'emotion';
 import {
   Box,
-  Flex,
   type PropsWithHTMLElement,
   type ExpandProps,
 } from '@contentful/f36-core';
@@ -26,36 +25,11 @@ export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
       ...otherProps
     } = props;
 
-    const iconContent = (icon) => {
-      const defaultIconColor: {
-        [Property in BadgeInternalProps['variant']]: string;
-      } = {
-        primary: 'white',
-        secondary: 'secondary',
-        positive: 'white',
-        negative: 'white',
-        warning: 'white',
-        'primary-filled': 'white',
-        featured: 'white',
-      };
-
-      return (
-        <Flex
-          as="span"
-          className={styles.badgeIcon({
-            hasChildren: !!children,
-            variant,
-            size,
-          })}
-        >
-          {React.cloneElement(icon, {
-            size: `${size === 'small' ? 'tiny' : 'small'}`,
-            variant:
-              (!children && icon.props.variant) || defaultIconColor[variant],
-          })}
-        </Flex>
-      );
-    };
+    const iconContent = (icon) =>
+      React.cloneElement(icon, {
+        size: 'tiny',
+        variant: variant === 'primary-filled' ? 'white' : variant,
+      });
 
     return (
       <Box
@@ -66,9 +40,9 @@ export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
         {...otherProps}
         ref={ref}
       >
-        {startIcon && iconContent(startIcon)}
-        {children}
-        {endIcon && iconContent(endIcon)}
+        {startIcon && size === 'default' && iconContent(startIcon)}
+        <span>{children}</span>
+        {endIcon && size === 'default' && iconContent(endIcon)}
       </Box>
     );
   },

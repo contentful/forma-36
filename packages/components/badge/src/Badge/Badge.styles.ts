@@ -64,40 +64,11 @@ const sizeToStyles = ({ size }: { size: BadgeSize }): CSSObject => {
   }
 };
 
-const getBadgeIconStyle = ({ hasChildren, variant, size }) => {
-  const align = {
-    '&:first-child': { marginRight: tokens.spacing2Xs },
-    '&:last-child': { marginLeft: tokens.spacing2Xs },
-  };
-
-  const margin = hasChildren ? align : {};
-
-  const padding =
-    size === 'small'
-      ? {
-          position: 'relative',
-          top: -3,
-          padding: `0 ${tokens.spacing2Xs}`,
-        }
-      : {
-          padding: `1px ${tokens.spacing2Xs}`,
-        };
-
-  return css([
-    margin,
-    padding,
-    variant !== 'transparent' &&
-      hasChildren && {
-        '& svg': {
-          fill: 'currentColor',
-        },
-      },
-  ]);
-};
-
 export const getBadgeStyles = () => ({
   badge: ({ variant, size }: BadgeStylesProps) =>
     css({
+      columnGap: tokens.spacing2Xs,
+      alignItems: 'center',
       fontFamily: tokens.fontStackPrimary,
       fontWeight: tokens.fontWeightDemiBold,
       textTransform: 'uppercase',
@@ -111,5 +82,4 @@ export const getBadgeStyles = () => ({
       ...variantToStyles({ variant }),
       ...sizeToStyles({ size }),
     }),
-  badgeIcon: getBadgeIconStyle,
 });
