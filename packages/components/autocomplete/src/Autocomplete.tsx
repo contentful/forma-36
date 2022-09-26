@@ -384,6 +384,8 @@ function _Autocomplete<ItemType>(
               )}
           </Popover.Content>
         ) : (
+          // We need to render an empty hidden div, so we can pass the menuProps or downshift will show a warning about it
+          // https://github.com/downshift-js/downshift/issues/1167#issuecomment-1088022842
           <div {...menuProps} className={cx(styles.hidden)} />
         )}
       </Popover>
