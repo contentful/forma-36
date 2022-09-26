@@ -163,6 +163,24 @@ describe('Autocomplete', () => {
       });
     });
 
+    it('should show the empty list if showEmptyList is true', async () => {
+      const noMatchesMessage = 'No matches found';
+
+      renderComponent({ items: [], showEmptyList: true, noMatchesMessage });
+      const input = screen.getByTestId('cf-autocomplete-input');
+      // Container should exist but not visible
+      expect(screen.getByTestId('cf-autocomplete-container')).not.toBeVisible();
+
+      // focus on input to open the list
+      fireEvent.focus(input);
+
+      // Should be visible after clicking on the input
+      await waitFor(() => {
+        expect(screen.getByTestId('cf-autocomplete-container')).toBeVisible();
+        expect(screen.getByText(noMatchesMessage)).toBeVisible();
+      });
+    });
+
     it('is not showing the container when the list has 0 items and there is no input value', async () => {
       renderComponent({ items: [] });
 
