@@ -6,6 +6,7 @@ import { axe } from '@/scripts/test/axeHelper';
 import { Select } from './CompoundSelect';
 
 it('should not dispatch onChange if disabled', async () => {
+  const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
   const mockOnChange = jest.fn();
   render(
     <Select
@@ -18,13 +19,12 @@ it('should not dispatch onChange if disabled', async () => {
     </Select>,
   );
 
-  await userEvent.selectOptions(screen.getByTestId('cf-ui-select'), [
-    'optionOne',
-  ]);
+  await user.selectOptions(screen.getByTestId('cf-ui-select'), ['optionOne']);
   expect(mockOnChange).not.toHaveBeenCalled();
 });
 
 it('should dispatch onChange', async () => {
+  const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
   const mockOnChange = jest.fn();
   render(
     <Select name="optionSelect" id="optionSelect" onChange={mockOnChange}>
@@ -32,13 +32,14 @@ it('should dispatch onChange', async () => {
     </Select>,
   );
 
-  await userEvent.selectOptions(screen.getByTestId('cf-ui-select'), [
-    'optionOne',
-  ]);
+  await user.selectOptions(screen.getByTestId('cf-ui-select'), ['optionOne']);
   expect(mockOnChange).toHaveBeenCalled();
 });
 
 it('has no a11y issues', async () => {
+  // Workaround for https://github.com/dequelabs/axe-core/issues/3055
+  jest.useRealTimers();
+
   const { container } = render(
     <Select
       id="optionSelect"

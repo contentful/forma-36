@@ -82,6 +82,7 @@ describe('TextLink', function () {
   });
 
   it('calls an onClick function', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const onClickFunc = jest.fn();
     render(
       <TextLink onClick={onClickFunc} as="button">
@@ -89,12 +90,13 @@ describe('TextLink', function () {
       </TextLink>,
     );
 
-    await userEvent.click(screen.getByText('Text Link'));
+    await user.click(screen.getByText('Text Link'));
 
     expect(onClickFunc).toHaveBeenCalled();
   });
 
   it('prevents onClick function from being called when disabled', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const onClickFunc = jest.fn();
     render(
       <TextLink isDisabled onClick={onClickFunc} as="button">
@@ -102,7 +104,7 @@ describe('TextLink', function () {
       </TextLink>,
     );
 
-    await userEvent.click(screen.getByText('Text Link'));
+    await user.click(screen.getByText('Text Link'));
     expect(onClickFunc).not.toHaveBeenCalled();
   });
 
@@ -129,6 +131,9 @@ describe('TextLink', function () {
   });
 
   it('has no a11y issues', async () => {
+    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
+    jest.useRealTimers();
+
     const { container } = render(<TextLink>Text Link</TextLink>);
     const results = await axe(container);
 
@@ -136,6 +141,9 @@ describe('TextLink', function () {
   });
 
   it('has no a11y issues when rendered as a link', async () => {
+    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
+    jest.useRealTimers();
+
     const { container } = render(<TextLink href="#">Text Link</TextLink>);
     const results = await axe(container);
 

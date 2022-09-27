@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, waitFor, fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { Button } from '@contentful/f36-components';
 
 import { Menu } from '.';
-import { Button } from '@contentful/f36-button';
 
 describe('Menu', function () {
   it('renders the component', async () => {
@@ -42,9 +42,7 @@ describe('Menu', function () {
       </Menu>,
     );
 
-    await waitFor(() => {
-      expect(screen.getByRole('menu')).toBeInTheDocument();
-    });
+    expect(await screen.findByRole('menu')).toBeInTheDocument();
     expect(screen.getByTestId('trigger')).toHaveAttribute(
       'aria-expanded',
       'true',
@@ -69,9 +67,7 @@ describe('Menu', function () {
       </Menu>,
     );
 
-    await waitFor(() => {
-      expect(screen.getByTestId('menu')).toBeInTheDocument();
-    });
+    expect(await screen.findByTestId('menu')).toBeInTheDocument();
 
     const trigger = screen.getByTestId('trigger');
     expect(trigger).toHaveClass('trigger');
@@ -84,6 +80,7 @@ describe('Menu', function () {
   });
 
   it('do call onClose when selecting list item', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const handleClose = jest.fn();
 
     render(
@@ -103,11 +100,12 @@ describe('Menu', function () {
       expect(screen.getByRole('menu')).toBeInTheDocument();
     });
 
-    await userEvent.click(screen.getByTestId('itemToClick'));
+    await user.click(screen.getByTestId('itemToClick'));
     expect(handleClose).toHaveBeenCalled();
   });
 
   it('do NOT call onClose when selecting list item and closeOnSelect prop is false', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const handleClose = jest.fn();
 
     render(
@@ -123,11 +121,9 @@ describe('Menu', function () {
       </Menu>,
     );
 
-    await waitFor(() => {
-      expect(screen.getByRole('menu')).toBeInTheDocument();
-    });
+    expect(await screen.findByRole('menu')).toBeInTheDocument();
 
-    await userEvent.click(screen.getByTestId('itemToClick'));
+    await user.click(screen.getByTestId('itemToClick'));
     expect(handleClose).not.toHaveBeenCalled();
   });
 
@@ -138,7 +134,7 @@ describe('Menu', function () {
           <Button>Toggle</Button>
         </Menu.Trigger>
         <Menu.List>
-          <Menu.Item testId="first-item">Create an entry</Menu.Item>
+          <Menu.Item>Create an entry</Menu.Item>
           <Menu.Item>Remove an entry</Menu.Item>
           <Menu.Item>Embed existing entry</Menu.Item>
         </Menu.List>
@@ -147,9 +143,10 @@ describe('Menu', function () {
 
     await waitFor(() => {
       expect(screen.getByRole('menu')).toBeInTheDocument();
+      expect(document.activeElement).toEqual(
+        screen.getByText('Create an entry'),
+      );
     });
-
-    expect(document.activeElement).toBe(screen.getByTestId('first-item'));
   });
 
   it('should focus NEXT/PREVIOUS item when ArrowDown/ArrowUp clicked accordingly', async () => {
@@ -293,6 +290,7 @@ describe('Menu', function () {
       );
 
     it('should open submenu if item with submenu clicked', async () => {
+      const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
       renderMenuWithSubMenu();
 
       await waitFor(() => {
@@ -300,12 +298,13 @@ describe('Menu', function () {
         expect(screen.queryByTestId('submenu')).not.toBeInTheDocument();
       });
 
-      await userEvent.hover(screen.queryByTestId('second-item'));
+      await user.hover(screen.queryByTestId('second-item'));
 
       expect(await screen.findByTestId('submenu')).toBeInTheDocument();
     });
 
     it('should open submenu if item with submenu is hovered and close when its unhovered', async () => {
+      const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
       renderMenuWithSubMenu();
 
       await waitFor(() => {
@@ -313,13 +312,13 @@ describe('Menu', function () {
         expect(screen.queryByTestId('submenu')).not.toBeInTheDocument();
       });
 
-      await userEvent.hover(screen.queryByTestId('second-item'));
+      await user.hover(screen.queryByTestId('second-item'));
 
       await waitFor(() => {
         expect(screen.queryByTestId('submenu')).toBeInTheDocument();
       });
 
-      await userEvent.unhover(screen.queryByTestId('second-item'));
+      await user.unhover(screen.queryByTestId('second-item'));
 
       await waitFor(() => {
         expect(screen.queryByTestId('submenu')).not.toBeInTheDocument();

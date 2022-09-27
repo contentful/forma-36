@@ -26,30 +26,33 @@ describe('Tooltip', () => {
   });
 
   it('renders the component', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     render(
       <Tooltip content="Tooltip content">
         <span>Hover me</span>
       </Tooltip>,
     );
 
-    await userEvent.hover(screen.getByText('Hover me'));
+    await user.hover(screen.getByText('Hover me'));
 
     expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content');
   });
 
   it('renders the component with an additional class name', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     render(
       <Tooltip content="Tooltip content" className="extra-class-name">
         <span>Hover me</span>
       </Tooltip>,
     );
 
-    await userEvent.hover(screen.getByText('Hover me'));
+    await user.hover(screen.getByText('Hover me'));
 
     expect(screen.getByRole('tooltip')).toHaveClass('extra-class-name');
   });
 
   it('renders the component with a target wrapper classname', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const { container } = render(
       <Tooltip
         content="Tooltip content"
@@ -59,7 +62,7 @@ describe('Tooltip', () => {
       </Tooltip>,
     );
 
-    await userEvent.hover(screen.getByText('Hover me'));
+    await user.hover(screen.getByText('Hover me'));
 
     expect(
       container.querySelector('.target-wrapper-class-name').textContent,
@@ -67,13 +70,14 @@ describe('Tooltip', () => {
   });
 
   it('renders the component with a placement attribute', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     render(
       <Tooltip content="Tooltip content" placement="left">
         <span>Hover me</span>
       </Tooltip>,
     );
 
-    await userEvent.hover(screen.getByText('Hover me'));
+    await user.hover(screen.getByText('Hover me'));
 
     expect(
       screen.getByRole('tooltip').getAttribute('data-popper-placement'),
@@ -81,25 +85,27 @@ describe('Tooltip', () => {
   });
 
   it('renders the component with a id attribute', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     render(
       <Tooltip id="Tooltip" content="Tooltip content">
         <span>Hover me</span>
       </Tooltip>,
     );
 
-    await userEvent.hover(screen.getByText('Hover me'));
+    await user.hover(screen.getByText('Hover me'));
 
     expect(screen.getByRole('tooltip').getAttribute('id')).toBe('Tooltip');
   });
 
   it('renders the component as span with a id attribute', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     render(
       <Tooltip as="span" id="Tooltip" content="Tooltip content">
         <span>Hover me</span>
       </Tooltip>,
     );
 
-    await userEvent.hover(screen.getByText('Hover me'));
+    await user.hover(screen.getByText('Hover me'));
 
     const tooltip = screen.getByRole('tooltip');
     expect(tooltip.getAttribute('id')).toBe('Tooltip');
@@ -107,12 +113,16 @@ describe('Tooltip', () => {
   });
 
   it('has no a11y issues', async () => {
+    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
+    jest.useRealTimers();
+    const user = userEvent.setup();
+
     const { container } = render(
       <Tooltip id="Tooltip" content="Tooltip content">
         <span>Hover me</span>
       </Tooltip>,
     );
-    await userEvent.hover(screen.getByText('Hover me'));
+    await user.hover(screen.getByText('Hover me'));
 
     const results = await axe(container);
 
