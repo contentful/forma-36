@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.20.7
+
+### Patch Changes
+
+- [#2243](https://github.com/contentful/forma-36/pull/2243) [`b7fff9c22`](https://github.com/contentful/forma-36/commit/b7fff9c22430713e6971d9c66e29b95226d7aa7a) Thanks [@massao](https://github.com/massao)! - fix zIndex handling on TextInput.Group
+
+- Updated dependencies []:
+  - @contentful/f36-icons@4.20.7
+  - @contentful/f36-typography@4.20.7
+  - @contentful/f36-core@4.20.7
+
 ## 4.20.6
 
 ### Patch Changes

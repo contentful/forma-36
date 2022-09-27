@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.20.7
+
+### Patch Changes
+
+- Updated dependencies [[`b7fff9c22`](https://github.com/contentful/forma-36/commit/b7fff9c22430713e6971d9c66e29b95226d7aa7a)]:
+  - @contentful/f36-forms@4.20.7
+  - @contentful/f36-button@4.20.7
+  - @contentful/f36-icons@4.20.7
+  - @contentful/f36-popover@4.20.7
+  - @contentful/f36-skeleton@4.20.7
+  - @contentful/f36-typography@4.20.7
+  - @contentful/f36-utils@4.20.7
+  - @contentful/f36-core@4.20.7
+
 ## 4.20.6
 
 ### Patch Changes
