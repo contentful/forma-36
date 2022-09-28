@@ -13,7 +13,7 @@ But in case you want a new version to be published, you will need to add a chang
 
 ### Through CLI
 
-- run `yarn changeset` on the root of the repository.
+- run `npm run-script changeset` on the root of the repository.
 - it starts a wizard showing packages that had changes from `main` branch, and which kind of bump should be applied (major, minor or patch), and also ask for a description of the change.
 - it creates a file in the `.changeset` folder that needs to be commited to the branch.
 - `changeset-bot` will show that information in its comment on the PR.

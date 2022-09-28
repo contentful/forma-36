@@ -61,10 +61,10 @@ async function main() {
   });
 
   // Run changesets publish and get stdout
-  const csOutput = childProcess.execSync('yarn changeset publish').toString();
+  const csOutput = childProcess.execSync('npx changeset publish').toString();
   console.log(csOutput);
 
-  const gitPushCommand = `git add . && yarn run pretty:quick
+  const gitPushCommand = `git add . && npm run-script pretty:quick
   git diff --staged --quiet || git commit -m "docs(changelog): add changelogs for $(git rev-parse --short HEAD) [skip ci]" && git push origin ${env.CIRCLE_BRANCH} --follow-tags`;
 
   // Push updated packages to github with tags

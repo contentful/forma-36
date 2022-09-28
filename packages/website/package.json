@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "generate-public-files": "ts-node ./scripts/generate-public-files.ts",
-    "build:prod": "yarn generate-public-files && next build",
+    "build:prod": "npm run-script generate-public-files && next build",
     "start": "next dev",
     "start:prod": "next start"
   },
