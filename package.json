@@ -56,7 +56,7 @@
     "@changesets/config": "^1.7.0",
     "@changesets/pre": "^1.0.10",
     "@changesets/read": "^0.5.4",
-    "@commitlint/cli": "^16.2.3",
+    "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^15.0.0",
     "@contentful/browserslist-config": "^3.0.0",
     "@manypkg/get-packages": "^1.1.3",
