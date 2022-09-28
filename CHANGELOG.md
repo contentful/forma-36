@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 28-09-2022
+
+**F36 Forms** `v4.20.7`
+
+- fix zIndex handling on TextInput.Group
+
 ## 17-09-2022
 
 **F36 Workbench** `v4.20.4`
