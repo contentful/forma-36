@@ -10,7 +10,7 @@ export interface MulitselectOptionProps {
   value: string;
   itemId: string;
   searchValue?: string;
-  onSelectItem: (event: React.ChangeEvent) => void;
+  onSelectItem: (event: React.ChangeEvent<HTMLInputElement>) => void;
   isChecked?: boolean;
   isDisabled?: boolean;
 }
@@ -29,21 +29,18 @@ export const MultiselectOption = ({
 
   return (
     <li {...rest}>
-      <label
-        htmlFor={itemId}
+      <Checkbox
+        id={itemId}
+        value={value}
+        onChange={(event) => onSelectItem(event)}
+        isChecked={isChecked}
+        isDisabled={isDisabled}
         className={cx(styles.item, isDisabled && styles.disabled)}
       >
-        <Checkbox
-          id={itemId}
-          value={value}
-          onChange={(event) => onSelectItem(event)}
-          isChecked={isChecked}
-          isDisabled={isDisabled}
-        />
         <Text data-test-id={`cf-multiselect-list-item-${itemId}`}>
           <HighlightedItem item={label} inputValue={searchValue} />
         </Text>
-      </label>
+      </Checkbox>
     </li>
   );
 };

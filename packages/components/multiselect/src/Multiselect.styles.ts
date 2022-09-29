@@ -53,6 +53,7 @@ export const getMultiselectStyles = () => ({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    cursor: 'pointer',
     '&:focus, &:hover': {
       backgroundColor: tokens.gray100,
     },

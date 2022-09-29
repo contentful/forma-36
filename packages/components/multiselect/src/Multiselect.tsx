@@ -54,6 +54,11 @@ export interface MultiselectProps extends CommonProps {
   searchInputRef?: React.Ref<HTMLInputElement>;
 
   /**
+   * Pass a form name to the search text input
+   */
+  searchInputName?: string;
+
+  /**
    * Sets the list to show its loading state
    * @default false
    */
@@ -190,6 +195,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         renderOnlyWhenOpen={false}
+        // FIXME: closeOnBlur and closeOnEsc both don't work - maybe because it's controlled?
         {...popoverProps}
       >
         <Popover.Trigger>
@@ -220,6 +226,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                   placeholder={searchPlaceholder}
                   onChange={handleSearchChange}
                   ref={mergeRefs(searchInputRef, internalSearchInputRef)}
+                  name={searchInputName}
                 />
                 <IconButton
                   aria-label={searchValue ? 'Clear search' : 'Search'}
