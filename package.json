@@ -9,7 +9,7 @@
     ]
   },
   "scripts": {
-    "build": "turbo run build",
+    "build": "turbo run build --force",
     "chromatic": "chromatic --project-token=vn1cd01txe --exit-zero-on-changes --storybook-build-dir ./dist-storybook",
     "commit": "git-cz",
     "commitmsg": "validate-commit-msg",
