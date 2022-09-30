@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.20.8
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-icons@4.20.8
+  - @contentful/f36-popover@4.20.8
+  - @contentful/f36-typography@4.20.8
+  - @contentful/f36-utils@4.20.8
+  - @contentful/f36-core@4.20.8
+
 ## 4.20.7
 
 ### Patch Changes
