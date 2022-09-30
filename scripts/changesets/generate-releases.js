@@ -54,20 +54,11 @@ const getReleasedPackages = async (csOutput, pkgs) => {
   }, []);
 };
 
-function setNpmToken() {
-  const env = process.env;
-  const registry = '//registry.npmjs.org/';
-  childProcess.execSync(
-    `npm config set ${registry}:_authToken=${env.NPM_TOKEN}`,
-  );
-}
-
 async function main() {
   const env = process.env;
   const octokit = new Octokit({
     auth: `token ${env.GITHUB_TOKEN}`,
   });
-  setNpmToken();
 
   // Run changesets publish and get stdout
   const csOutput = childProcess.execSync('yarn changeset publish').toString();

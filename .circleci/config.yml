@@ -131,7 +131,9 @@ jobs:
           command: yarn changeset version
       - run:
           name: Publish packages and create releases
-          command: yarn run changeset:publish
+          command: |
+            npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            yarn run changeset:publish
 
   changelog:
     docker:
