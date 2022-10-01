@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 01-10-2022
+
+`@contentful/f36-components@4.20.8`
+
+- Version bump to force publishing new version
+
 ## 28-09-2022
 
 **F36 Forms** `v4.20.7`
