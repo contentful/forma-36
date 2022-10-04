@@ -120,8 +120,8 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
   const [searchValue, setSearchValue] = useState('');
   const [isOpen, setIsOpen] = useState(false);
 
-  const internalSearchInputRef = useRef(null);
-  const internalListRef = useRef(null);
+  const internalSearchInputRef = useRef<HTMLInputElement>(null);
+  const internalListRef = useRef<HTMLUListElement>(null);
 
   const hasSearch = typeof onSearchValueChange === 'function';
 
