@@ -93,7 +93,7 @@ const fruits: Fruit[] = [
 export const Basic = () => {
   const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
 
-  const handleSelectItem = (event) => {
+  const handleSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { checked, value } = event.target;
 
     const currentFruit = fruits.find((fruit) => fruit.value === value);
@@ -139,10 +139,11 @@ export const WithTitle = () => {
   const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
   const [filteredItems, setFilteredItems] = useState(fruits);
 
-  const handleSelectItem = (event) => {
+  const handleSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { checked, value } = event.target;
 
     const currentFruit = fruits.find((fruit) => fruit.value === value);
+    if (!currentFruit) return;
     if (checked) {
       setSelectedFruits((prevState) => [...prevState, currentFruit.name]);
     } else {
@@ -153,7 +154,9 @@ export const WithTitle = () => {
     }
   };
 
-  const handleSearchValueChange = (event) => {
+  const handleSearchValueChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     const value = event.target.value;
     const newFilteredItems = fruits.filter((item) =>
       item.value.toLowerCase().includes(value.toLowerCase()),
@@ -199,7 +202,9 @@ export const WithSearch = () => {
   const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
   const [filteredItems, setFilteredItems] = useState(fruits);
 
-  const handleSearchValueChange = (event) => {
+  const handleSearchValueChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     const value = event.target.value;
     const newFilteredItems = fruits.filter((item) =>
       item.value.toLowerCase().includes(value.toLowerCase()),
@@ -207,10 +212,11 @@ export const WithSearch = () => {
     setFilteredItems(newFilteredItems);
   };
 
-  const handleSelectItem = (event) => {
+  const handleSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { checked, value } = event.target;
 
     const currentFruit = fruits.find((fruit) => fruit.value === value);
+    if (!currentFruit) return;
     if (checked) {
       setSelectedFruits((prevState) => [...prevState, currentFruit.name]);
     } else {

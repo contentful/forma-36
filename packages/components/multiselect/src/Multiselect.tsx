@@ -34,7 +34,9 @@ export interface MultiselectProps extends CommonProps {
   /**
    * Function called whenever the search input value changes
    */
-  onSearchValueChange?: (event: React.ChangeEvent) => void | undefined;
+  onSearchValueChange?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => void | undefined;
 
   /**
    * This is the value will be passed to the `placeholder` prop of the input.
@@ -85,6 +87,11 @@ export interface MultiselectProps extends CommonProps {
      */
     listRef?: React.Ref<HTMLUListElement>;
   };
+
+  /**
+   * Function called when the popover loses its focus.
+   */
+  onBlur?: () => void;
 }
 
 function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
@@ -96,12 +103,14 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     onSearchValueChange,
     searchPlaceholder = 'Search',
     searchInputRef,
+    searchInputName,
     noMatchesMessage = 'No matches found',
     toggleRef,
     isLoading = false,
     testId = 'cf-multiselect',
     popoverProps = {},
     children,
+    onBlur,
   } = props;
 
   const { listMaxHeight = 180, listRef } = popoverProps;
@@ -112,6 +121,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
   const [isOpen, setIsOpen] = useState(false);
 
   const internalSearchInputRef = useRef(null);
+  const internalListRef = useRef(null);
 
   const hasSearch = typeof onSearchValueChange === 'function';
 
@@ -175,7 +185,19 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
             return enrichOptions(child.props.children);
           }
           if (child.type === MultiselectOption) {
-            return React.cloneElement(child, { searchValue });
+            const onSelectItem = (
+              even: React.ChangeEvent<HTMLInputElement>,
+            ) => {
+              // Selecting an item triggers a rerendering and thereby losing the
+              // focus on the clicked element. To avoid having the focus on the document body
+              // (which breaks `closeOnBlur`), we force it back to the list in the popup.
+              internalListRef.current?.focus();
+              child.props?.onSelectItem(even);
+            };
+            return React.cloneElement(child, {
+              searchValue,
+              onSelectItem,
+            } as Partial<MultiselectOptionProps>);
           }
           return child;
         }
@@ -192,11 +214,11 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
       ref={ref}
     >
       <Popover
+        renderOnlyWhenOpen={false}
+        {...popoverProps}
+        // popoverProps should never overwrite the internal opening logic
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
-        renderOnlyWhenOpen={false}
-        // FIXME: closeOnBlur and closeOnEsc both don't work - maybe because it's controlled?
-        {...popoverProps}
       >
         <Popover.Trigger>
           <Button
@@ -210,9 +232,10 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
           </Button>
         </Popover.Trigger>
         <Popover.Content
-          ref={listRef}
+          ref={mergeRefs(listRef, internalListRef)}
           className={styles.content(listMaxHeight)}
           testId="cf-multiselect-container"
+          onBlur={() => onBlur?.()}
         >
           <>
             {hasSearch && (

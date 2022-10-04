@@ -5,7 +5,7 @@ import { getMultiselectStyles } from './Multiselect.styles';
 import { getStringMatch } from '@contentful/f36-utils';
 import { cx } from 'emotion';
 
-export interface MulitselectOptionProps {
+export interface MultiselectOptionProps {
   label: string;
   value: string;
   itemId: string;
@@ -24,7 +24,7 @@ export const MultiselectOption = ({
   isChecked = false,
   isDisabled = false,
   ...rest
-}: MulitselectOptionProps) => {
+}: MultiselectOptionProps) => {
   const styles = getMultiselectStyles();
 
   return (
