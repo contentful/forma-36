@@ -18,6 +18,9 @@ export const getMultiselectStyles = () => ({
     paddingRight: tokens.spacingXl,
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
+    border: 'none',
+    borderRadius: '0px',
+    borderBottom: `1px solid ${tokens.gray200}`,
   }),
   toggleButton: css({
     position: 'absolute',
