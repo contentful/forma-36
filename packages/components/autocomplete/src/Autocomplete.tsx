@@ -93,6 +93,11 @@ export interface AutocompleteProps<ItemType>
    */
   placeholder?: string;
   /**
+   * Defines if the list should be shown even if empty, when input is focused
+   * @default false
+   */
+  showEmptyList?: boolean;
+  /**
    * A message that will be shown when it is not possible to find any option that matches the input value
    * @default "No matches"
    */
@@ -155,6 +160,7 @@ function _Autocomplete<ItemType>(
     isDisabled,
     isRequired,
     isReadOnly,
+    showEmptyList,
     noMatchesMessage = 'No matches found',
     placeholder = 'Search',
     inputRef,
@@ -312,7 +318,7 @@ function _Autocomplete<ItemType>(
           </div>
         </Popover.Trigger>
 
-        {(items.length > 0 || inputValue.length > 0) && (
+        {items.length > 0 || inputValue.length > 0 || showEmptyList ? (
           <Popover.Content
             {...menuProps}
             ref={mergeRefs(menuProps.ref, listRef)}
@@ -377,6 +383,10 @@ function _Autocomplete<ItemType>(
                 />
               )}
           </Popover.Content>
+        ) : (
+          // We need to render an empty hidden div, so we can pass the menuProps or downshift will show a warning about it
+          // https://github.com/downshift-js/downshift/issues/1167#issuecomment-1088022842
+          <div {...menuProps} className={cx(styles.hidden)} />
         )}
       </Popover>
     </div>

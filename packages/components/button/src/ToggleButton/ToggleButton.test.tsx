@@ -49,7 +49,8 @@ describe('ToggleButton', function () {
     expect(button.getElementsByTagName('svg')).toHaveLength(1);
   });
 
-  it('should not dispatch onClick if disabled', () => {
+  it('should not dispatch onClick if disabled', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     render(
       <ToggleButton onToggle={mockOnToggle} icon={<PreviewIcon />} isDisabled>
         Toggle
@@ -57,11 +58,14 @@ describe('ToggleButton', function () {
     );
 
     const button = screen.getByRole('button');
-    userEvent.click(button);
+    await user.click(button);
     expect(mockOnToggle).not.toHaveBeenCalled();
   });
 
   it('has no a11y issues', async () => {
+    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
+    jest.useRealTimers();
+
     const { container } = render(
       <ToggleButton onToggle={mockOnToggle}>Toggle</ToggleButton>,
     );

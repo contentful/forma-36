@@ -1,5 +1,84 @@
 # Change Log
 
+## 4.20.4
+
+### Patch Changes
+
+- [#2236](https://github.com/contentful/forma-36/pull/2236) [`b0677fe7`](https://github.com/contentful/forma-36/commit/b0677fe7e3ac0062d93065bcfba1b1ba66b8b10a) Thanks [@bgutsol](https://github.com/bgutsol)! - Fix Workbench styles to prevent additional scroll on a page
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.4
+  - @contentful/f36-icon@4.20.4
+  - @contentful/f36-icons@4.20.4
+  - @contentful/f36-typography@4.20.4
+  - @contentful/f36-core@4.20.4
+
+## 4.20.3
+
+### Patch Changes
+
+- Updated dependencies [[`d3c27ab8`](https://github.com/contentful/forma-36/commit/d3c27ab830ec9c2cc096e8be33da496c2dc284ea)]:
+  - @contentful/f36-core@4.20.3
+  - @contentful/f36-button@4.20.3
+  - @contentful/f36-icon@4.20.3
+  - @contentful/f36-icons@4.20.3
+  - @contentful/f36-typography@4.20.3
+
+## 4.20.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.2
+  - @contentful/f36-icon@4.20.2
+  - @contentful/f36-icons@4.20.2
+  - @contentful/f36-typography@4.20.2
+  - @contentful/f36-core@4.20.2
+
+## 4.20.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.1
+  - @contentful/f36-icon@4.20.1
+  - @contentful/f36-icons@4.20.1
+  - @contentful/f36-typography@4.20.1
+  - @contentful/f36-core@4.20.1
+
+## 4.20.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.0
+  - @contentful/f36-icon@4.20.0
+  - @contentful/f36-icons@4.20.0
+  - @contentful/f36-typography@4.20.0
+  - @contentful/f36-core@4.20.0
+
+## 4.19.2
+
+### Patch Changes
+
+- Updated dependencies [[`9647d295`](https://github.com/contentful/forma-36/commit/9647d295763c6518fe6d381d79a53524ac104d92)]:
+  - @contentful/f36-typography@4.19.2
+  - @contentful/f36-button@4.19.2
+  - @contentful/f36-icon@4.19.2
+  - @contentful/f36-icons@4.19.2
+  - @contentful/f36-core@4.19.2
+
+## 4.19.1
+
+### Patch Changes
+
+- Updated dependencies [[`42f0c321`](https://github.com/contentful/forma-36/commit/42f0c3218965137191842f492fe5dbf4bd10784c)]:
+  - @contentful/f36-button@4.19.1
+  - @contentful/f36-icon@4.19.1
+  - @contentful/f36-icons@4.19.1
+  - @contentful/f36-typography@4.19.1
+  - @contentful/f36-core@4.19.1
+
 ## 4.19.0
 
 ### Patch Changes

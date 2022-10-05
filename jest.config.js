@@ -71,7 +71,6 @@ module.exports = {
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/scripts/test/__mocks__/fileMock.js',
-    '\\.css': 'identity-obj-proxy',
     '@/scripts/(.*)': '<rootDir>/scripts/$1',
   },
 
@@ -120,9 +119,6 @@ module.exports = {
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
   setupFilesAfterEnv: ['<rootDir>/scripts/test/setupTests.js'],
 
-  // A list of paths to snapshot serializer modules Jest should use for snapshot testing
-  snapshotSerializers: ['jest-emotion'],
-
   // The test environment that will be used for testing
   testEnvironment: 'jsdom',
 
@@ -147,11 +143,14 @@ module.exports = {
   // This option allows use of a custom test runner
   // testRunner: "jasmine2",
 
-  // This option sets the URL for the jsdom environment. It is reflected in properties such as location.href
-  testURL: 'http://localhost',
+  testEnvironmentOptions: {
+    // This option sets the URL for the jsdom environment. It is reflected in properties such as location.href
+    url: 'http://localhost',
+  },
 
-  // Setting this value to "fake" allows the use of fake timers for functions such as "setTimeout"
-  // timers: "real",
+  fakeTimers: {
+    enableGlobally: true,
+  },
 
   // A map from regular expressions to paths to transformers
   transform: {

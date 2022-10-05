@@ -51,8 +51,8 @@ for (const pkg of packages) {
   );
   softAssert(json.module, `${pkg} did not have "module"`);
   softAssert(
-    json.module.endsWith('.mjs'),
-    `${pkg}#module should be a .mjs file but got "${json.module}"`,
+    json.module.endsWith('esm/index.js'),
+    `${pkg}#module should be a separate .js file but got "${json.module}"`,
   );
   softAssert(json.source, `${pkg} did not have "source"`);
   softAssert.equal(
@@ -61,10 +61,6 @@ for (const pkg of packages) {
     `${pkg} did not match "src/index.ts"`,
   );
   softAssert.deepEqual(json.files, ['dist'], `${pkg} did not match "files"`);
-  softAssert(
-    json.dependencies && json.dependencies['@babel/runtime'],
-    `${pkg} is missing a dependency on @babel/runtime`,
-  );
   softAssert(
     !json.dependencies || !json.dependencies['react'],
     `${pkg} has react as a dependency, but it should be a peerDependency`,

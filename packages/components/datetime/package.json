@@ -1,15 +1,14 @@
 {
   "name": "@contentful/f36-datetime",
-  "version": "4.19.0",
+  "version": "4.20.8",
   "description": "Forma 36: DateTime component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@babel/runtime": "^7.6.2",
-    "@contentful/f36-core": "^4.19.0",
+    "@contentful/f36-core": "^4.20.8",
     "@contentful/f36-tokens": "^4.0.1",
-    "dayjs": "^1.10.6",
+    "dayjs": "^1.11.5",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
@@ -20,7 +19,7 @@
     "dist"
   ],
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "source": "src/index.ts",
   "sideEffects": false,

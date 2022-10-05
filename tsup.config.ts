@@ -6,9 +6,10 @@ export default defineConfig({
   entryPoints: ['src/index.ts'],
   external: ['react', 'react-dom', '@contentful/f36-*'],
   format: ['cjs', 'esm'],
+  legacyOutput: true,
   minify: true,
   platform: 'browser',
   sourcemap: true,
-  target: 'es2020',
+  target: 'es6',
   treeshake: true,
 });

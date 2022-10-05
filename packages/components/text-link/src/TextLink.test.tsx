@@ -8,17 +8,17 @@ import { TextLink } from './TextLink';
 
 describe('TextLink', function () {
   it('renders as a button', () => {
-    const { getByRole } = render(<TextLink as="button">Text Link</TextLink>);
+    render(<TextLink as="button">Text Link</TextLink>);
 
-    expect(getByRole('button')).toBeTruthy();
+    expect(screen.getByRole('button')).toBeTruthy();
   });
 
   it('renders as a link', () => {
-    const { getByRole } = render(<TextLink href="#">Text Link</TextLink>);
+    render(<TextLink href="#">Text Link</TextLink>);
 
-    const anchor = getByRole('link');
+    const anchor = screen.getByRole('link');
     expect(anchor).toBeTruthy();
-    expect(anchor.getAttribute('href')).toEqual('#');
+    expect(anchor.getAttribute('href')).toBe('#');
   });
 
   it('renders as a "primary" link type', () => {
@@ -81,7 +81,8 @@ describe('TextLink', function () {
     });
   });
 
-  it('calls an onClick function', () => {
+  it('calls an onClick function', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const onClickFunc = jest.fn();
     render(
       <TextLink onClick={onClickFunc} as="button">
@@ -89,12 +90,13 @@ describe('TextLink', function () {
       </TextLink>,
     );
 
-    userEvent.click(screen.getByText('Text Link'));
+    await user.click(screen.getByText('Text Link'));
 
     expect(onClickFunc).toHaveBeenCalled();
   });
 
-  it('prevents onClick function from being called when disabled', () => {
+  it('prevents onClick function from being called when disabled', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const onClickFunc = jest.fn();
     render(
       <TextLink isDisabled onClick={onClickFunc} as="button">
@@ -102,7 +104,7 @@ describe('TextLink', function () {
       </TextLink>,
     );
 
-    userEvent.click(screen.getByText('Text Link'));
+    await user.click(screen.getByText('Text Link'));
     expect(onClickFunc).not.toHaveBeenCalled();
   });
 
@@ -123,14 +125,15 @@ describe('TextLink', function () {
   });
 
   it('allows passing a test id', () => {
-    const { getByTestId } = render(
-      <TextLink testId="test-id">Text Link</TextLink>,
-    );
+    render(<TextLink testId="test-id">Text Link</TextLink>);
 
-    expect(getByTestId('test-id')).toBeTruthy();
+    expect(screen.getByTestId('test-id')).toBeTruthy();
   });
 
   it('has no a11y issues', async () => {
+    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
+    jest.useRealTimers();
+
     const { container } = render(<TextLink>Text Link</TextLink>);
     const results = await axe(container);
 
@@ -138,6 +141,9 @@ describe('TextLink', function () {
   });
 
   it('has no a11y issues when rendered as a link', async () => {
+    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
+    jest.useRealTimers();
+
     const { container } = render(<TextLink href="#">Text Link</TextLink>);
     const results = await axe(container);
 
@@ -145,27 +151,27 @@ describe('TextLink', function () {
   });
 
   it('renders with an icon', () => {
-    const { container, getByTestId, getByText } = render(
+    const { container } = render(
       <TextLink icon={<ArrowDownIcon data-test-id="icon" />}>
         Text Link
       </TextLink>,
     );
 
-    expect(container.firstChild).toContainElement(getByTestId('icon'));
-    expect(getByTestId('icon').parentElement.nextSibling).toEqual(
-      getByText('Text Link'),
+    expect(container.firstChild).toContainElement(screen.getByTestId('icon'));
+    expect(screen.getByTestId('icon').parentElement.nextSibling).toEqual(
+      screen.getByText('Text Link'),
     );
   });
 
   it('renders with an icon aligned right to the text', () => {
-    const { getByTestId, getByText } = render(
+    render(
       <TextLink alignIcon="end" icon={<ArrowDownIcon data-test-id="icon" />}>
         Text Link
       </TextLink>,
     );
 
-    expect(getByTestId('icon').parentElement.previousSibling).toEqual(
-      getByText('Text Link'),
+    expect(screen.getByTestId('icon').parentElement.previousSibling).toEqual(
+      screen.getByText('Text Link'),
     );
   });
 });

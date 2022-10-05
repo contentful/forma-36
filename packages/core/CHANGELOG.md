@@ -1,5 +1,31 @@
 # Change Log
 
+## 4.20.8
+
+## 4.20.7
+
+## 4.20.6
+
+## 4.20.5
+
+## 4.20.4
+
+## 4.20.3
+
+### Patch Changes
+
+- [#2227](https://github.com/contentful/forma-36/pull/2227) [`d3c27ab8`](https://github.com/contentful/forma-36/commit/d3c27ab830ec9c2cc096e8be33da496c2dc284ea) Thanks [@massao](https://github.com/massao)! - fix: add button margin reset on GlobalStyles
+
+## 4.20.2
+
+## 4.20.1
+
+## 4.20.0
+
+## 4.19.2
+
+## 4.19.1
+
 ## 4.19.0
 
 ## 4.18.0

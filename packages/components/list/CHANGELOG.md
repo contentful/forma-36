@@ -1,5 +1,84 @@
 # Change Log
 
+## 4.20.8
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.20.8
+
+## 4.20.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.20.7
+
+## 4.20.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.20.6
+
+## 4.20.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.20.5
+
+## 4.20.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.20.4
+
+## 4.20.3
+
+### Patch Changes
+
+- Updated dependencies [[`d3c27ab8`](https://github.com/contentful/forma-36/commit/d3c27ab830ec9c2cc096e8be33da496c2dc284ea)]:
+  - @contentful/f36-core@4.20.3
+
+## 4.20.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.20.2
+
+## 4.20.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.20.1
+
+## 4.20.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.20.0
+
+## 4.19.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.19.2
+
+## 4.19.1
+
+### Patch Changes
+
+- [#2209](https://github.com/contentful/forma-36/pull/2209) [`42f0c321`](https://github.com/contentful/forma-36/commit/42f0c3218965137191842f492fe5dbf4bd10784c) Thanks [@denkristoffer](https://github.com/denkristoffer)! - build: build ESM to JS file - legacy output
+  fix(notification): use type imports
+- Updated dependencies []:
+  - @contentful/f36-core@4.19.1
+
 ## 4.19.0
 
 ### Patch Changes

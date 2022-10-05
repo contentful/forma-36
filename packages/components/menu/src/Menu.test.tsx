@@ -1,13 +1,13 @@
 import React from 'react';
-import { render, waitFor, fireEvent, act } from '@testing-library/react';
+import { render, waitFor, fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { Button } from '@contentful/f36-components';
 
 import { Menu } from '.';
-import { Button } from '@contentful/f36-button';
 
 describe('Menu', function () {
   it('renders the component', async () => {
-    const { getByRole } = render(
+    render(
       <Menu>
         <Menu.Trigger>
           <Button testId="trigger">Toggle</Button>
@@ -20,7 +20,7 @@ describe('Menu', function () {
       </Menu>,
     );
 
-    const trigger = getByRole('button');
+    const trigger = screen.getByRole('button');
 
     await waitFor(() => {
       expect(trigger).toHaveAttribute('aria-expanded', 'false');
@@ -29,7 +29,7 @@ describe('Menu', function () {
   });
 
   it('renders open by default', async () => {
-    const { getByRole, getByTestId } = render(
+    render(
       <Menu defaultIsOpen>
         <Menu.Trigger>
           <Button testId="trigger">Toggle</Button>
@@ -42,14 +42,15 @@ describe('Menu', function () {
       </Menu>,
     );
 
-    await waitFor(() => {
-      expect(getByRole('menu')).toBeInTheDocument();
-    });
-    expect(getByTestId('trigger')).toHaveAttribute('aria-expanded', 'true');
+    expect(await screen.findByRole('menu')).toBeInTheDocument();
+    expect(screen.getByTestId('trigger')).toHaveAttribute(
+      'aria-expanded',
+      'true',
+    );
   });
 
   it('renders the components with an additional class names', async () => {
-    const { getByTestId } = render(
+    render(
       <Menu isOpen={true}>
         <Menu.Trigger>
           <Button testId="trigger" className="trigger">
@@ -66,24 +67,23 @@ describe('Menu', function () {
       </Menu>,
     );
 
-    await waitFor(() => {
-      expect(getByTestId('menu')).toBeInTheDocument();
-    });
+    expect(await screen.findByTestId('menu')).toBeInTheDocument();
 
-    const trigger = getByTestId('trigger');
+    const trigger = screen.getByTestId('trigger');
     expect(trigger).toHaveClass('trigger');
 
-    const menu = getByTestId('menu');
+    const menu = screen.getByTestId('menu');
     expect(menu).toHaveClass('menu');
 
-    const menuItem = getByTestId('menu-item');
+    const menuItem = screen.getByTestId('menu-item');
     expect(menuItem).toHaveClass('menu-item');
   });
 
   it('do call onClose when selecting list item', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const handleClose = jest.fn();
 
-    const { getByRole, getByTestId } = render(
+    render(
       <Menu isOpen={true} onClose={handleClose}>
         <Menu.Trigger>
           <Button>Toggle</Button>
@@ -97,17 +97,18 @@ describe('Menu', function () {
     );
 
     await waitFor(() => {
-      expect(getByRole('menu')).toBeInTheDocument();
+      expect(screen.getByRole('menu')).toBeInTheDocument();
     });
 
-    userEvent.click(getByTestId('itemToClick'));
+    await user.click(screen.getByTestId('itemToClick'));
     expect(handleClose).toHaveBeenCalled();
   });
 
   it('do NOT call onClose when selecting list item and closeOnSelect prop is false', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const handleClose = jest.fn();
 
-    const { getByTestId, getByRole } = render(
+    render(
       <Menu isOpen={true} onClose={handleClose} closeOnSelect={false}>
         <Menu.Trigger>
           <Button>Toggle</Button>
@@ -120,22 +121,20 @@ describe('Menu', function () {
       </Menu>,
     );
 
-    await waitFor(() => {
-      expect(getByRole('menu')).toBeInTheDocument();
-    });
+    expect(await screen.findByRole('menu')).toBeInTheDocument();
 
-    userEvent.click(getByTestId('itemToClick'));
+    await user.click(screen.getByTestId('itemToClick'));
     expect(handleClose).not.toHaveBeenCalled();
   });
 
   it('should focus FIRST item when menu is open', async () => {
-    const { getByTestId, getByRole } = render(
+    render(
       <Menu isOpen={true}>
         <Menu.Trigger>
           <Button>Toggle</Button>
         </Menu.Trigger>
         <Menu.List>
-          <Menu.Item testId="first-item">Create an entry</Menu.Item>
+          <Menu.Item>Create an entry</Menu.Item>
           <Menu.Item>Remove an entry</Menu.Item>
           <Menu.Item>Embed existing entry</Menu.Item>
         </Menu.List>
@@ -143,14 +142,15 @@ describe('Menu', function () {
     );
 
     await waitFor(() => {
-      expect(getByRole('menu')).toBeInTheDocument();
+      expect(screen.getByRole('menu')).toBeInTheDocument();
+      expect(document.activeElement).toEqual(
+        screen.getByText('Create an entry'),
+      );
     });
-
-    expect(document.activeElement).toBe(getByTestId('first-item'));
   });
 
   it('should focus NEXT/PREVIOUS item when ArrowDown/ArrowUp clicked accordingly', async () => {
-    const { getByTestId } = render(
+    render(
       <Menu isOpen={true}>
         <Menu.Trigger>
           <Button>Toggle</Button>
@@ -164,26 +164,26 @@ describe('Menu', function () {
     );
 
     await waitFor(() => {
-      expect(document.activeElement).toBe(getByTestId('first-item'));
+      expect(document.activeElement).toBe(screen.getByTestId('first-item'));
     });
 
     fireEvent.keyDown(document.activeElement, {
       key: 'ArrowDown',
     });
     await waitFor(() => {
-      expect(document.activeElement).toBe(getByTestId('second-item'));
+      expect(document.activeElement).toBe(screen.getByTestId('second-item'));
     });
 
     fireEvent.keyDown(document.activeElement, {
       key: 'ArrowUp',
     });
     await waitFor(() => {
-      expect(document.activeElement).toBe(getByTestId('first-item'));
+      expect(document.activeElement).toBe(screen.getByTestId('first-item'));
     });
   });
 
   it('should focus FIRST item when ArrowDown clicked and focus was on the last item', async () => {
-    const { getByTestId } = render(
+    render(
       <Menu isOpen={true}>
         <Menu.Trigger>
           <Button>Toggle</Button>
@@ -197,7 +197,7 @@ describe('Menu', function () {
     );
 
     await waitFor(() => {
-      expect(document.activeElement).toBe(getByTestId('first-item'));
+      expect(document.activeElement).toBe(screen.getByTestId('first-item'));
     });
 
     fireEvent.keyDown(document.activeElement, {
@@ -207,19 +207,19 @@ describe('Menu', function () {
       key: 'ArrowDown',
     });
     await waitFor(() => {
-      expect(document.activeElement).toBe(getByTestId('third-item'));
+      expect(document.activeElement).toBe(screen.getByTestId('third-item'));
     });
 
     fireEvent.keyDown(document.activeElement, {
       key: 'ArrowDown',
     });
     await waitFor(() => {
-      expect(document.activeElement).toBe(getByTestId('first-item'));
+      expect(document.activeElement).toBe(screen.getByTestId('first-item'));
     });
   });
 
   it('should focus LAST item when ArrowUp clicked and focus was on the first item', async () => {
-    const { getByTestId } = render(
+    render(
       <Menu isOpen={true}>
         <Menu.Trigger>
           <Button>Toggle</Button>
@@ -233,19 +233,19 @@ describe('Menu', function () {
     );
 
     await waitFor(() => {
-      expect(document.activeElement).toBe(getByTestId('first-item'));
+      expect(document.activeElement).toBe(screen.getByTestId('first-item'));
     });
 
     fireEvent.keyDown(document.activeElement, {
       key: 'ArrowUp',
     });
     await waitFor(() => {
-      expect(document.activeElement).toBe(getByTestId('third-item'));
+      expect(document.activeElement).toBe(screen.getByTestId('third-item'));
     });
   });
 
   it('should focus item if isInitiallyFocused prop passed', async () => {
-    const { getByTestId } = render(
+    render(
       <Menu isOpen={true}>
         <Menu.Trigger>
           <Button>Toggle</Button>
@@ -261,7 +261,7 @@ describe('Menu', function () {
     );
 
     await waitFor(() => {
-      expect(document.activeElement).toBe(getByTestId('second-item'));
+      expect(document.activeElement).toBe(screen.getByTestId('second-item'));
     });
   });
 
@@ -290,88 +290,82 @@ describe('Menu', function () {
       );
 
     it('should open submenu if item with submenu clicked', async () => {
-      const { queryByTestId } = renderMenuWithSubMenu();
+      const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+      renderMenuWithSubMenu();
 
       await waitFor(() => {
-        expect(queryByTestId('menu')).toBeInTheDocument();
-        expect(queryByTestId('submenu')).not.toBeInTheDocument();
+        expect(screen.queryByTestId('menu')).toBeInTheDocument();
+        expect(screen.queryByTestId('submenu')).not.toBeInTheDocument();
       });
 
-      await act(async () => {
-        userEvent.click(queryByTestId('second-item'));
-      });
+      await user.hover(screen.queryByTestId('second-item'));
 
-      await waitFor(() => {
-        expect(queryByTestId('submenu')).toBeInTheDocument();
-      });
+      expect(await screen.findByTestId('submenu')).toBeInTheDocument();
     });
 
     it('should open submenu if item with submenu is hovered and close when its unhovered', async () => {
-      const { queryByTestId } = renderMenuWithSubMenu();
+      const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+      renderMenuWithSubMenu();
 
       await waitFor(() => {
-        expect(queryByTestId('menu')).toBeInTheDocument();
-        expect(queryByTestId('submenu')).not.toBeInTheDocument();
+        expect(screen.queryByTestId('menu')).toBeInTheDocument();
+        expect(screen.queryByTestId('submenu')).not.toBeInTheDocument();
       });
 
-      await act(async () => {
-        userEvent.hover(queryByTestId('second-item'));
-      });
+      await user.hover(screen.queryByTestId('second-item'));
+
       await waitFor(() => {
-        expect(queryByTestId('submenu')).toBeInTheDocument();
+        expect(screen.queryByTestId('submenu')).toBeInTheDocument();
       });
 
-      await act(async () => {
-        userEvent.unhover(queryByTestId('second-item'));
-      });
+      await user.unhover(screen.queryByTestId('second-item'));
+
       await waitFor(() => {
-        expect(queryByTestId('submenu')).not.toBeInTheDocument();
+        expect(screen.queryByTestId('submenu')).not.toBeInTheDocument();
       });
     });
 
     it('should open submenu if ArrowRight clicked on item with submenu', async () => {
-      const { queryByTestId } = renderMenuWithSubMenu();
+      renderMenuWithSubMenu();
 
       await waitFor(() => {
-        expect(queryByTestId('menu')).toBeInTheDocument();
-        expect(queryByTestId('submenu')).not.toBeInTheDocument();
+        expect(screen.queryByTestId('menu')).toBeInTheDocument();
+        expect(screen.queryByTestId('submenu')).not.toBeInTheDocument();
       });
 
-      await act(async () => {
-        fireEvent.keyDown(queryByTestId('second-item'), {
-          key: 'ArrowRight',
-        });
+      await fireEvent.keyDown(screen.queryByTestId('second-item'), {
+        key: 'ArrowRight',
       });
+
       await waitFor(() => {
-        expect(queryByTestId('submenu')).toBeInTheDocument();
+        expect(screen.queryByTestId('submenu')).toBeInTheDocument();
       });
     });
 
     it('should close submenu if ArrowLeft clicked on any item in submenu', async () => {
-      const { queryByTestId } = renderMenuWithSubMenu();
+      renderMenuWithSubMenu();
 
       await waitFor(() => {
-        expect(queryByTestId('menu')).toBeInTheDocument();
+        expect(screen.queryByTestId('menu')).toBeInTheDocument();
       });
 
       // open a submenu first
-      await act(async () => {
-        fireEvent.keyDown(queryByTestId('second-item'), {
-          key: 'ArrowRight',
-        });
-      });
-      // verify it's open
-      await waitFor(() => {
-        expect(queryByTestId('submenu')).toBeInTheDocument();
+
+      fireEvent.keyDown(screen.queryByTestId('second-item'), {
+        key: 'ArrowRight',
       });
 
-      await act(async () => {
-        fireEvent.keyDown(queryByTestId('submenu-item-2'), {
-          key: 'ArrowLeft',
-        });
-      });
+      // verify it's open
       await waitFor(() => {
-        expect(queryByTestId('submenu')).not.toBeInTheDocument();
+        expect(screen.queryByTestId('submenu')).toBeInTheDocument();
+      });
+
+      fireEvent.keyDown(screen.queryByTestId('submenu-item-2'), {
+        key: 'ArrowLeft',
+      });
+
+      await waitFor(() => {
+        expect(screen.queryByTestId('submenu')).not.toBeInTheDocument();
       });
     });
   });

@@ -1,5 +1,119 @@
 # Change Log
 
+## 4.20.8
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.8
+  - @contentful/f36-icons@4.20.8
+  - @contentful/f36-typography@4.20.8
+  - @contentful/f36-core@4.20.8
+
+## 4.20.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.7
+  - @contentful/f36-icons@4.20.7
+  - @contentful/f36-typography@4.20.7
+  - @contentful/f36-core@4.20.7
+
+## 4.20.6
+
+### Patch Changes
+
+- Updated dependencies [[`05bdd10f`](https://github.com/contentful/forma-36/commit/05bdd10f5ea6fae41cacb0f4fd3db0bdd65422e9)]:
+  - @contentful/f36-icons@4.20.6
+  - @contentful/f36-button@4.20.6
+  - @contentful/f36-typography@4.20.6
+  - @contentful/f36-core@4.20.6
+
+## 4.20.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.5
+  - @contentful/f36-icons@4.20.5
+  - @contentful/f36-typography@4.20.5
+  - @contentful/f36-core@4.20.5
+
+## 4.20.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.4
+  - @contentful/f36-icons@4.20.4
+  - @contentful/f36-typography@4.20.4
+  - @contentful/f36-core@4.20.4
+
+## 4.20.3
+
+### Patch Changes
+
+- Updated dependencies [[`d3c27ab8`](https://github.com/contentful/forma-36/commit/d3c27ab830ec9c2cc096e8be33da496c2dc284ea)]:
+  - @contentful/f36-core@4.20.3
+  - @contentful/f36-button@4.20.3
+  - @contentful/f36-icons@4.20.3
+  - @contentful/f36-typography@4.20.3
+
+## 4.20.2
+
+### Patch Changes
+
+- [#2229](https://github.com/contentful/forma-36/pull/2229) [`6cc0c625`](https://github.com/contentful/forma-36/commit/6cc0c625e70a08d1f7f3e6bd3b0c4d0e32809af6) Thanks [@bgutsol](https://github.com/bgutsol)! - Expose some ModalLauncher types
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.2
+  - @contentful/f36-icons@4.20.2
+  - @contentful/f36-typography@4.20.2
+  - @contentful/f36-core@4.20.2
+
+## 4.20.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.1
+  - @contentful/f36-icons@4.20.1
+  - @contentful/f36-typography@4.20.1
+  - @contentful/f36-core@4.20.1
+
+## 4.20.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.0
+  - @contentful/f36-icons@4.20.0
+  - @contentful/f36-typography@4.20.0
+  - @contentful/f36-core@4.20.0
+
+## 4.19.2
+
+### Patch Changes
+
+- Updated dependencies [[`9647d295`](https://github.com/contentful/forma-36/commit/9647d295763c6518fe6d381d79a53524ac104d92)]:
+  - @contentful/f36-typography@4.19.2
+  - @contentful/f36-button@4.19.2
+  - @contentful/f36-icons@4.19.2
+  - @contentful/f36-core@4.19.2
+
+## 4.19.1
+
+### Patch Changes
+
+- [#2209](https://github.com/contentful/forma-36/pull/2209) [`42f0c321`](https://github.com/contentful/forma-36/commit/42f0c3218965137191842f492fe5dbf4bd10784c) Thanks [@denkristoffer](https://github.com/denkristoffer)! - build: build ESM to JS file - legacy output
+  fix(notification): use type imports
+- Updated dependencies [[`42f0c321`](https://github.com/contentful/forma-36/commit/42f0c3218965137191842f492fe5dbf4bd10784c)]:
+  - @contentful/f36-button@4.19.1
+  - @contentful/f36-icons@4.19.1
+  - @contentful/f36-typography@4.19.1
+  - @contentful/f36-core@4.19.1
+
 ## 4.19.0
 
 ### Patch Changes

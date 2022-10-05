@@ -2,8 +2,11 @@
   "$schema": "https://unpkg.com/@changesets/config@1.6.4/schema.json",
   "changelog": [
     "@changesets/changelog-github",
-    { "repo": "contentful/forma-36" }
+    {
+      "repo": "contentful/forma-36"
+    }
   ],
+  "ignore": ["@contentful/f36-website"],
   "commit": false,
   "fixed": [
     [
@@ -15,6 +18,7 @@
       "@contentful/f36-card",
       "@contentful/f36-collapse",
       "@contentful/f36-copybutton",
+      "@contentful/f36-datepicker",
       "@contentful/f36-datetime",
       "@contentful/f36-drag-handle",
       "@contentful/f36-entity-list",
@@ -37,7 +41,6 @@
       "@contentful/f36-tooltip",
       "@contentful/f36-typography",
       "@contentful/f36-utils",
-      "@contentful/f36-workbench",
       "@contentful/f36-core",
       "@contentful/f36-components"
     ]

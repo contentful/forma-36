@@ -9,3 +9,7 @@ export type { ModalControlsProps } from './ModalControls/ModalControls';
 export { ModalHeader } from './ModalHeader/ModalHeader';
 export type { ModalHeaderProps } from './ModalHeader/ModalHeader';
 export { ModalLauncher } from './ModalLauncher/ModalLauncher';
+export type {
+  ModalLauncherComponentRendererProps,
+  ModalLauncherOpenOptions,
+} from './ModalLauncher/ModalLauncher';

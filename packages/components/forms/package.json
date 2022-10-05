@@ -1,11 +1,12 @@
 {
   "name": "@contentful/f36-forms",
-  "version": "4.19.0",
+  "version": "4.20.8",
   "description": "Forma 36: Form React Components",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@babel/runtime": "^7.6.2",
     "@contentful/f36-button": "^4.19.0",
     "@contentful/f36-core": "^4.19.0",
@@ -15,6 +16,12 @@
     "@contentful/f36-typography": "^4.19.0",
     "@contentful/f36-popover": "^4.19.0",
     "@contentful/f36-utils": "^4.19.0",
+=======
+    "@contentful/f36-core": "^4.20.8",
+    "@contentful/f36-icons": "^4.20.8",
+    "@contentful/f36-tokens": "^4.0.1",
+    "@contentful/f36-typography": "^4.20.8",
+>>>>>>> main
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
@@ -25,7 +32,7 @@
     "dist"
   ],
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "source": "src/index.ts",
   "sideEffects": false,

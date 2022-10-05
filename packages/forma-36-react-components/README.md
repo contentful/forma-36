@@ -11,7 +11,6 @@ A React component library for the [Forma 36](https://f36.contentful.com/) design
   - [Installing package](#installing-package)
   - [Usage](#usage)
     - [Import desired component into your project](#import-desired-component-into-your-project)
-    - [Import styles](#import-styles)
   - [Development](#development)
     - [Storybook](#storybook)
     - [Example component directory structure](#example-component-directory-structure)

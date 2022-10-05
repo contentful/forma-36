@@ -61,4 +61,7 @@ export const getAutocompleteStyles = (listMaxHeight: number) => ({
   highlighted: css({
     backgroundColor: tokens.gray100,
   }),
+  hidden: css({
+    display: 'none',
+  }),
 });

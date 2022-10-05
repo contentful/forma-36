@@ -138,3 +138,39 @@ const validationMessageCondition = 0;
   onChange={() => {}}
   validationMessage={validationMessageCondition > 0 ? '' : 'Some validation message'}
 />;
+
+<TextField
+  textarea
+  id="textarea"
+  name="textarea"
+  labelText="Text area"
+  textInputProps={{
+    rows: 5,
+  }}
+  value="some value"
+/>;
+
+const textLinkProps = {
+  text: 'TextLink',
+  icon: 'Preview',
+  href: '#'
+};
+<TextField
+  id="with-text-link"
+  name="with-text-link"
+  labelText="With text link"
+  textLinkProps={textLinkProps}
+  value="some value"
+/>;
+
+<TextField
+  id="with-text-link"
+  name="with-text-link"
+  labelText="With text link"
+  textLinkProps={{
+    text: 'TextLink',
+    icon: 'Preview',
+    href: '#'
+  }}
+  value="some value"
+/>;

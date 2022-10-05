@@ -21,8 +21,8 @@ describe('Icon', () => {
 
       const icon = getByTestId('cf-ui-icon');
 
-      expect(icon.getAttribute('aria-hidden')).toEqual('true');
-      expect(icon.getAttribute('viewBox')).toEqual('0 0 30 30');
+      expect(icon.getAttribute('aria-hidden')).toBe('true');
+      expect(icon.getAttribute('viewBox')).toBe('0 0 30 30');
     });
 
     it('removes aria-hidden=true if aria-label is passed', () => {
@@ -35,7 +35,7 @@ describe('Icon', () => {
       const icon = getByTestId('cf-ui-icon');
 
       expect(icon.getAttribute('aria-hidden')).toBeNull();
-      expect(icon.getAttribute('aria-label')).toEqual('internal icon');
+      expect(icon.getAttribute('aria-label')).toBe('internal icon');
     });
   });
 
@@ -45,7 +45,7 @@ describe('Icon', () => {
 
       const icon = getByTestId('cf-ui-icon');
 
-      expect(icon.getAttribute('aria-hidden')).toEqual('true');
+      expect(icon.getAttribute('aria-hidden')).toBe('true');
     });
 
     it('removes aria-hidden=true if aria-label is passed', () => {
@@ -56,7 +56,7 @@ describe('Icon', () => {
       const icon = getByTestId('cf-ui-icon');
 
       expect(icon.getAttribute('aria-hidden')).toBeNull();
-      expect(icon.getAttribute('aria-label')).toEqual('external icon');
+      expect(icon.getAttribute('aria-label')).toBe('external icon');
     });
   });
 
