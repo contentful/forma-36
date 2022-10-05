@@ -10,6 +10,7 @@ export interface MultiselectOptionProps {
   value: string;
   itemId: string;
   searchValue?: string;
+  className?: string;
   onSelectItem: (event: React.ChangeEvent<HTMLInputElement>) => void;
   isChecked?: boolean;
   isDisabled?: boolean;
@@ -23,12 +24,13 @@ export const MultiselectOption = ({
   searchValue,
   isChecked = false,
   isDisabled = false,
+  className,
   ...rest
 }: MultiselectOptionProps) => {
   const styles = getMultiselectStyles();
 
   return (
-    <li {...rest}>
+    <li className={className} {...rest}>
       <Checkbox
         id={itemId}
         value={value}
