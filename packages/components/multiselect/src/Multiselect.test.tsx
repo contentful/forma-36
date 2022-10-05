@@ -1,5 +1,12 @@
 import React from 'react';
-import { render, screen, within, fireEvent } from '@testing-library/react';
+import {
+  render,
+  screen,
+  within,
+  fireEvent,
+  waitFor,
+  cleanup,
+} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from '@/scripts/test/axeHelper';
 import { Multiselect } from './CompoundMultiselect';
@@ -30,10 +37,11 @@ const fruits: Fruit[] = [
 const mockOnSearchValueChange = jest.fn();
 const mockOnSelectItem = jest.fn();
 
-function renderComponent(customProps: Partial<MultiselectProps>) {
+const renderComponent = (customProps?: Partial<MultiselectProps>) => {
   const props = {
     ...customProps,
   };
+  const user = userEvent.setup();
   render(
     <Multiselect {...props}>
       {fruits.map((fruit, index) => {
@@ -51,20 +59,26 @@ function renderComponent(customProps: Partial<MultiselectProps>) {
       })}
     </Multiselect>,
   );
-}
-
+  return [{ user }] as [{ user: typeof user }];
+};
 describe('Multiselect basic usage', () => {
-  it('opens and closes the drawer', () => {
-    renderComponent({});
-    userEvent.click(screen.getByRole('button', { name: 'Toggle Multiselect' }));
-    expect(screen.getByRole('list')).toBeInTheDocument();
-    userEvent.click(screen.getByRole('button', { name: 'Toggle Multiselect' }));
+  it('opens and closes the drawer', async () => {
+    const [{ user }] = renderComponent();
+
+    const toggleButton = screen.getByRole('button', {
+      name: 'Toggle Multiselect',
+    });
+    await waitFor(() => user.click(toggleButton));
+    expect(screen.queryByRole('list')).toBeInTheDocument();
+    await waitFor(() => user.click(toggleButton));
     expect(screen.queryByRole('list')).not.toBeInTheDocument();
   });
 
   it('has no a11y issues', async () => {
-    renderComponent({});
-    const results = await axe(screen.getByTestId('cf-multiselect'));
+    renderComponent();
+    const results = await waitFor(() =>
+      axe(screen.getByTestId('cf-multiselect')),
+    );
     expect(results).toHaveNoViolations();
   });
 
@@ -91,69 +105,74 @@ describe('Multiselect basic usage', () => {
     });
     expect(screen.getByText('Tomato 🍅 and 3 more')).toBeInTheDocument();
   });
+});
 
-  describe('Options', () => {
-    it('renders all available options', () => {
-      renderComponent({});
-      userEvent.click(
-        screen.getByRole('button', { name: 'Toggle Multiselect' }),
-      );
-      expect(screen.getByRole('list')).toBeInTheDocument();
-      expect(screen.getAllByRole('listitem')).toHaveLength(12);
-    });
+describe('Options', () => {
+  afterEach(cleanup);
+  it('renders all available options', async () => {
+    const [{ user }] = renderComponent();
+    await waitFor(() =>
+      user.click(screen.getByRole('button', { name: 'Toggle Multiselect' })),
+    );
+    expect(screen.getByRole('list')).toBeInTheDocument();
+    expect(screen.getAllByRole('listitem')).toHaveLength(12);
+  });
 
-    it('calls the callbackfunction on option selection', async () => {
-      renderComponent({});
-      userEvent.click(
-        screen.getByRole('button', { name: 'Toggle Multiselect' }),
-      );
-      userEvent.click(screen.getByRole('checkbox', { name: 'Coconut 🥥' }));
-      expect(mockOnSelectItem).toHaveBeenCalled();
-    });
+  it('calls the callbackfunction on option selection', async () => {
+    const [{ user }] = renderComponent();
+    await waitFor(() =>
+      user.click(screen.getByRole('button', { name: 'Toggle Multiselect' })),
+    );
+    await waitFor(() =>
+      user.click(screen.getByRole('checkbox', { name: 'Coconut 🥥' })),
+    );
+    expect(mockOnSelectItem).toHaveBeenCalled();
+  });
 
-    it('can disable the option selection', () => {
-      renderComponent({});
-      userEvent.click(
-        screen.getByRole('button', { name: 'Toggle Multiselect' }),
-      );
-      userEvent.click(screen.getByText('Lemon 🍋'));
-      expect(mockOnSelectItem).not.toHaveBeenCalled();
-    });
+  it('can disable the option selection', async () => {
+    const [{ user }] = renderComponent();
+    await waitFor(() =>
+      user.click(screen.getByRole('button', { name: 'Toggle Multiselect' })),
+    );
+    fireEvent.click(screen.getByText('Lemon 🍋'));
+    expect(mockOnSelectItem).not.toHaveBeenCalled();
+  });
 
-    it('renders a default selected option', () => {
-      renderComponent({});
-      userEvent.click(
-        screen.getByRole('button', { name: 'Toggle Multiselect' }),
-      );
-      expect(screen.getByRole('checkbox', { name: 'Banana 🍌' })).toBeChecked();
-    });
+  it('renders a default selected option', async () => {
+    const [{ user }] = renderComponent();
+    await waitFor(() =>
+      user.click(screen.getByRole('button', { name: 'Toggle Multiselect' })),
+    );
+    expect(screen.getByRole('checkbox', { name: 'Banana 🍌' })).toBeChecked();
   });
 });
 
 describe('Multiselect with search', () => {
-  it('renders a search field with placeholder', () => {
-    renderComponent({
+  it('renders a search field with placeholder', async () => {
+    const [{ user }] = renderComponent({
       onSearchValueChange: mockOnSearchValueChange,
       searchPlaceholder: 'My Search Placeholder',
     });
-    userEvent.click(screen.getByRole('button', { name: 'Toggle Multiselect' }));
+    await waitFor(() =>
+      user.click(screen.getByRole('button', { name: 'Toggle Multiselect' })),
+    );
     expect(
       screen.getByPlaceholderText('My Search Placeholder'),
     ).toBeInTheDocument();
   });
 
-  it('calls the callback on search value change and highlights the search phrase', () => {
-    renderComponent({
+  it('calls the callback on search value change and highlights the search phrase', async () => {
+    const [{ user }] = renderComponent({
       onSearchValueChange: mockOnSearchValueChange,
     });
-    userEvent.click(screen.getByRole('button', { name: 'Toggle Multiselect' }));
+    await waitFor(() =>
+      user.click(screen.getByRole('button', { name: 'Toggle Multiselect' })),
+    );
     const listFirstItem = screen.getByTestId('cf-multiselect-list-item-1');
 
-    fireEvent.input(screen.getByRole('textbox', { name: 'Search' }), {
-      target: {
-        value: 'a',
-      },
-    });
+    await waitFor(() =>
+      user.type(screen.getByRole('textbox', { name: 'Search' }), 'a'),
+    );
 
     expect(mockOnSearchValueChange).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -167,21 +186,23 @@ describe('Multiselect with search', () => {
     ).toHaveTextContent('A');
   });
 
-  it('clears the search value and triggers the callback function', () => {
-    renderComponent({
+  it('clears the search value and triggers the callback function', async () => {
+    const [{ user }] = renderComponent({
       onSearchValueChange: mockOnSearchValueChange,
     });
-    userEvent.click(screen.getByRole('button', { name: 'Toggle Multiselect' }));
+    await waitFor(() =>
+      user.click(screen.getByRole('button', { name: 'Toggle Multiselect' })),
+    );
     expect(screen.getByRole('button', { name: 'Search' })).toBeDisabled();
-    fireEvent.input(screen.getByRole('textbox', { name: 'Search' }), {
-      target: {
-        value: 'a',
-      },
-    });
+    await waitFor(() =>
+      user.type(screen.getByRole('textbox', { name: 'Search' }), 'a'),
+    );
     expect(
       screen.getByRole('button', { name: 'Clear search' }),
     ).not.toBeDisabled();
-    userEvent.click(screen.getByRole('button', { name: 'Clear search' }));
+    await waitFor(() =>
+      user.click(screen.getByRole('button', { name: 'Clear search' })),
+    );
     expect(mockOnSearchValueChange).toHaveBeenLastCalledWith(
       expect.objectContaining({
         target: expect.objectContaining({
