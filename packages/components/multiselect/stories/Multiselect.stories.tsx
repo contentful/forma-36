@@ -178,20 +178,31 @@ export const WithTitle = () => {
       >
         <>
           <SectionHeading> Fruits </SectionHeading>
-
-          {filteredItems.map((item) => {
-            return (
-              <Multiselect.Option
-                value={item.value}
-                label={item.name}
-                onSelectItem={handleSelectItem}
-                key={`key-${item.id}`}
-                itemId={`id-${item.id}}`}
-                isChecked={selectedFruits.includes(item.name)}
-                isDisabled={item.isDisabled}
-              />
-            );
-          })}
+          <div>
+            <Multiselect.Option
+              value=""
+              label="do not select me"
+              onSelectItem={handleSelectItem}
+              key={`key-00`}
+              itemId={`id-00`}
+              isDisabled={true}
+            />
+          </div>
+          <ul>
+            {filteredItems.map((item) => {
+              return (
+                <Multiselect.Option
+                  value={item.value}
+                  label={item.name}
+                  onSelectItem={handleSelectItem}
+                  key={`key-${item.id}`}
+                  itemId={`id-${item.id}}`}
+                  isChecked={selectedFruits.includes(item.name)}
+                  isDisabled={item.isDisabled}
+                />
+              );
+            })}
+          </ul>
         </>
       </Multiselect>
     </Stack>

@@ -181,7 +181,11 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     (children: React.ReactNode): React.ReactNode => {
       return React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
-          if (child.type === React.Fragment) {
+          if (
+            child.type === React.Fragment ||
+            child.type === 'div' ||
+            child.type === 'ul'
+          ) {
             return enrichOptions(child.props.children);
           }
           if (child.type === MultiselectOption) {
