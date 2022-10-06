@@ -86,7 +86,7 @@ export interface MultiselectProps extends CommonProps {
      * Use this prop to get a ref to the list of items of the component
      */
     listRef?: React.Ref<HTMLUListElement>;
-  };
+  } & Pick<CommonProps, 'className'>;
 
   /**
    * Function called when the popover loses its focus.
@@ -237,7 +237,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         </Popover.Trigger>
         <Popover.Content
           ref={mergeRefs(listRef, internalListRef)}
-          className={styles.content(listMaxHeight)}
+          className={cx(styles.content(listMaxHeight), popoverProps.className)}
           testId="cf-multiselect-container"
           onBlur={() => onBlur?.()}
         >
