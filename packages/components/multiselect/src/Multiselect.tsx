@@ -94,6 +94,39 @@ export interface MultiselectProps extends CommonProps {
   onBlur?: () => void;
 }
 
+// Scan through the whole hierachy until `filter` returns true and apply `transform`
+const iterateOverChildren = (
+  children: React.ReactNode,
+  filter: (child: React.ReactElement) => boolean,
+  transform: (child: React.ReactElement) => React.ReactElement,
+): React.ReactNode => {
+  return React.Children.map(children, (child) => {
+    // equal to (if (child == null || typeof child == 'string'))
+    if (!React.isValidElement(child)) return child;
+    if (!filter(child))
+      return iterateOverChildren(child.props.children, filter, transform);
+    return transform(child);
+  });
+};
+
+// Scan through the whole hierachy to count the number of children where `filter` returns true
+const countMatchingChildren = (
+  children: React.ReactNode,
+  filter: (child: React.ReactElement) => boolean,
+): number => {
+  let counter = 0;
+  React.Children.forEach(children, (child) => {
+    // equal to (if (child == null || typeof child == 'string'))
+    if (!React.isValidElement(child)) return;
+    if (!filter(child)) {
+      counter += countMatchingChildren(child.props.children, filter);
+    } else {
+      counter += 1;
+    }
+  });
+  return counter;
+};
+
 function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
   const {
     className,
@@ -172,41 +205,34 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
   }, [currentSelection, placeholder, styles.currentSelection]);
 
   const childrenLength = useMemo(
-    () => React.Children.count(children),
+    () =>
+      countMatchingChildren(
+        children,
+        (child) => child.type === MultiselectOption,
+      ),
     [children],
   );
 
   // clones and enriches the multiselect options
   const enrichOptions = React.useCallback(
     (children: React.ReactNode): React.ReactNode => {
-      return React.Children.map(children, (child) => {
-        if (React.isValidElement(child)) {
-          if (
-            child.type === React.Fragment ||
-            child.type === 'div' ||
-            child.type === 'ul'
-          ) {
-            return enrichOptions(child.props.children);
-          }
-          if (child.type === MultiselectOption) {
-            const onSelectItem = (
-              even: React.ChangeEvent<HTMLInputElement>,
-            ) => {
-              // Selecting an item triggers a rerendering and thereby losing the
-              // focus on the clicked element. To avoid having the focus on the document body
-              // (which breaks `closeOnBlur`), we force it back to the list in the popup.
-              internalListRef.current?.focus();
-              child.props?.onSelectItem(even);
-            };
-            return React.cloneElement(child, {
-              searchValue,
-              onSelectItem,
-            } as Partial<MultiselectOptionProps>);
-          }
-          return child;
-        }
-        return child;
-      });
+      return iterateOverChildren(
+        children,
+        (child) => child.type === MultiselectOption,
+        (child) => {
+          const onSelectItem = (even: React.ChangeEvent<HTMLInputElement>) => {
+            // Selecting an item triggers a rerendering and thereby losing the
+            // focus on the clicked element. To avoid having the focus on the document body
+            // (which breaks `closeOnBlur`), we force it back to the list in the popup.
+            internalListRef.current?.focus();
+            child.props?.onSelectItem(even);
+          };
+          return React.cloneElement(child, {
+            searchValue,
+            onSelectItem,
+          } as Partial<MultiselectOptionProps>);
+        },
+      );
     },
     [searchValue],
   );
