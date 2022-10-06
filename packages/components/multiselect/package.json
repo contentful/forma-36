@@ -40,6 +40,6 @@
   },
   "devDependencies": {
     "formik": "^2.2.9",
-    "react-hook-form": "^7.15.0"
+    "react-hook-form": "^7.36.1"
   }
 }
