@@ -44,7 +44,7 @@ export interface TooltipProps extends CommonProps {
    */
   maxWidth?: number | CSS.Property.MaxWidth;
   /**
-   * It sets a delay period for the tooltip
+   * Set a delay period in milliseconds before hiding the tooltip
    */
   hideDelay?: number;
   /**
@@ -72,6 +72,10 @@ export interface TooltipProps extends CommonProps {
    * It sets the "preferred" position of the tooltip
    */
   placement?: TooltipPlacement;
+  /**
+   * Set a delay period in milliseconds before showing the tooltip
+   */
+  showDelay?: number;
   /**
    * Class names to be appended to the className prop of the tooltip’s target
    */
@@ -105,6 +109,7 @@ export const Tooltip = ({
   onMouseLeave,
   onMouseOver,
   onKeyDown,
+  showDelay = 0,
   targetWrapperClassName,
   maxWidth = 360,
   testId = 'cf-ui-tooltip',
@@ -217,7 +222,7 @@ export const Tooltip = ({
         ref={elementRef}
         className={cx(styles.tooltipContainer, targetWrapperClassName)}
         onMouseEnter={(evt: MouseEvent) => {
-          setIsHoveringTarget(true);
+          setTimeout(() => setIsHoveringTarget(true), showDelay);
           if (onMouseOver) onMouseOver(evt);
         }}
         onMouseLeave={(evt: MouseEvent) => {
@@ -225,7 +230,7 @@ export const Tooltip = ({
           if (onMouseLeave) onMouseLeave(evt);
         }}
         onFocus={(evt: FocusEvent) => {
-          setIsHoveringTarget(true);
+          setTimeout(() => setIsHoveringTarget(true), showDelay);
           if (onFocus) onFocus(evt);
         }}
         onBlur={(evt: FocusEvent) => {
