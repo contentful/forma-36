@@ -95,6 +95,7 @@ export interface MultiselectProps extends CommonProps {
 }
 
 // Scan through the whole hierachy until `filter` returns true and apply `transform`
+// Inspired from https://stackoverflow.com/a/70676868/17269164
 const iterateOverChildren = (
   children: React.ReactNode,
   filter: (child: React.ReactElement) => boolean,
@@ -158,6 +159,14 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
 
   const hasSearch = typeof onSearchValueChange === 'function';
 
+  const focusList = useCallback(() => {
+    // Clearing the search input or selecting an item triggers a rerendering and
+    // thereby the client loses the focus on the clicked element. To avoid having
+    // the focus on the document body (which breaks `closeOnBlur`), we force it
+    // back to the list in the popup.
+    internalListRef.current?.focus();
+  }, []);
+
   const handleSearchChange = useCallback(
     (event) => {
       setSearchValue(event.target.value);
@@ -166,10 +175,11 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     [onSearchValueChange, setSearchValue],
   );
 
-  const resetSearch = () => {
+  const resetSearchInput = useCallback(() => {
+    if (!searchValue) return;
+    focusList();
     // this looks a bit hacky, but is the official way of externally triggering the onChange handler for an input
     // https://stackoverflow.com/a/46012210/17269164
-
     const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
       window.HTMLInputElement.prototype,
       'value',
@@ -177,7 +187,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     nativeInputValueSetter.call(internalSearchInputRef.current, '');
     const forcedEvent = new Event('change', { bubbles: true });
     internalSearchInputRef.current.dispatchEvent(forcedEvent);
-  };
+  }, [searchValue, focusList]);
 
   const renderMultiselectLabel = useCallback(() => {
     if (currentSelection.length === 0) {
@@ -221,10 +231,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         (child) => child.type === MultiselectOption,
         (child) => {
           const onSelectItem = (even: React.ChangeEvent<HTMLInputElement>) => {
-            // Selecting an item triggers a rerendering and thereby losing the
-            // focus on the clicked element. To avoid having the focus on the document body
-            // (which breaks `closeOnBlur`), we force it back to the list in the popup.
-            internalListRef.current?.focus();
+            focusList();
             child.props?.onSelectItem(even);
           };
           return React.cloneElement(child, {
@@ -234,7 +241,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         },
       );
     },
-    [searchValue],
+    [searchValue, focusList],
   );
 
   return (
@@ -292,11 +299,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                       <SearchIcon variant="muted" />
                     )
                   }
-                  onClick={() => {
-                    if (searchValue) {
-                      resetSearch();
-                    }
-                  }}
+                  onClick={resetSearchInput}
                   isDisabled={!searchValue}
                   size="small"
                 />
