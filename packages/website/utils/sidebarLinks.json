@@ -146,6 +146,44 @@
       "slug": "/components/relative-datetime/"
     }
   ],
+  "formComponents": [
+    {
+      "title": "Checkbox",
+      "slug": "/components/checkbox/"
+    },
+    {
+      "title": "Form",
+      "slug": "/components/form/"
+    },
+    {
+      "title": "FormControl",
+      "slug": "/components/form-control/"
+    },
+    {
+      "title": "Multiselect",
+      "slug": "/components/multiselect/"
+    },
+    {
+      "title": "Radio",
+      "slug": "/components/radio/"
+    },
+    {
+      "title": "Select",
+      "slug": "/components/select/"
+    },
+    {
+      "title": "Switch",
+      "slug": "/components/switch/"
+    },
+    {
+      "title": "Textarea",
+      "slug": "/components/textarea/"
+    },
+    {
+      "title": "TextInput",
+      "slug": "/components/text-input/"
+    }
+  ],
   "modalComponents": [
     {
       "title": "Modal",
@@ -176,40 +214,6 @@
     {
       "title": "InlineEntryCard",
       "slug": "/components/inline-entry-card/"
-    }
-  ],
-  "formComponents": [
-    {
-      "title": "Checkbox",
-      "slug": "/components/checkbox/"
-    },
-    {
-      "title": "Form",
-      "slug": "/components/form/"
-    },
-    {
-      "title": "FormControl",
-      "slug": "/components/form-control/"
-    },
-    {
-      "title": "Radio",
-      "slug": "/components/radio/"
-    },
-    {
-      "title": "Select",
-      "slug": "/components/select/"
-    },
-    {
-      "title": "Switch",
-      "slug": "/components/switch/"
-    },
-    {
-      "title": "Textarea",
-      "slug": "/components/textarea/"
-    },
-    {
-      "title": "TextInput",
-      "slug": "/components/text-input/"
     }
   ],
   "typographyComponents": [
