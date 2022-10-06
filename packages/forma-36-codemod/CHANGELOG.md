@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.3.1
+
+### Patch Changes
+
+- [#2269](https://github.com/contentful/forma-36/pull/2269) [`902d0bd9`](https://github.com/contentful/forma-36/commit/902d0bd91b533269dd30e2dcef536ba580832c25) Thanks [@massao](https://github.com/massao)! - fix issues on text-field and select codemods
+
 ## 4.3.0
 
 ### Minor Changes
