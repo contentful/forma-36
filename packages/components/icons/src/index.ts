@@ -122,6 +122,8 @@ export { MoreHorizontal as MoreHorizontalIcon } from './MoreHorizontal';
 export { MoreHorizontalTrimmed as MoreHorizontalTrimmedIcon } from './MoreHorizontalTrimmed';
 export { MoreVertical as MoreVerticalIcon } from './MoreVertical';
 export { MoreVerticalTrimmed as MoreVerticalTrimmedIcon } from './MoreVerticalTrimmed';
+export { Page as PageIcon } from './Page';
+export { PageTrimmed as PageTrimmedIcon } from './PageTrimmed';
 export { Pdf as PdfIcon } from './Pdf';
 export { Person as PersonIcon } from './Person';
 export { Plaintext as PlaintextIcon } from './Plaintext';
