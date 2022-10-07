@@ -220,7 +220,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     );
   }, [currentSelection, placeholder, styles.currentSelection]);
 
-  const childrenLength = useMemo(
+  const optionsLength = useMemo(
     () =>
       countMatchingChildren(
         children,
@@ -313,13 +313,13 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
             )}
             {isLoading && <ListItemLoadingState />}
 
-            {!isLoading && childrenLength > 0 && (
+            {!isLoading && optionsLength > 0 && (
               <ul className={styles.list} data-test-id="cf-multiselect-items">
                 {hasSearch ? enrichOptions(children) : children}
               </ul>
             )}
 
-            {!isLoading && childrenLength === 0 && (
+            {!isLoading && optionsLength === 0 && (
               <Subheading className={styles.noMatchesTitle}>
                 {noMatchesMessage}
               </Subheading>
