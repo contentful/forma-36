@@ -230,9 +230,9 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         children,
         (child) => child.type === MultiselectOption,
         (child) => {
-          const onSelectItem = (even: React.ChangeEvent<HTMLInputElement>) => {
+          const onSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
             focusList();
-            child.props?.onSelectItem(even);
+            child.props?.onSelectItem(event);
           };
           return React.cloneElement(child, {
             searchValue,
