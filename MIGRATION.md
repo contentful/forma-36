@@ -1711,7 +1711,7 @@ import { Checkbox } from '@contentful/f36-components';
 We also introduced API changes for the Checkbox. This is an overview of the renamed properties:
 
 - `required` was renamed to `isRequired`.
-- `labelText` shoxuld be replaced by `aria-label` when not passing a label to the checkbox.
+- `labelText` should be replaced by `aria-label` when not passing a label to the checkbox.
 - `checked` was renamed to `isChecked`.
 - `disabled` was renamed to `isDisabled`.
 - `indeterminate` was renamed to `isIndeterminate`.
