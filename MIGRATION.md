@@ -2183,12 +2183,12 @@ import { Form } from '@contentful/f36-components';
 becomes:
 
 ```jsx static=true
-<FormControl.FormLabel htmlFor="inputId" isRequired>Label for the input</FormControl.FormLabel>
+<FormControl.Label htmlFor="inputId" isRequired>Label for the input</FormControl.Label>
 <TextInput name="input" id="inputId" />
 
 // You can also use the FormControl to wrap it, and it would handle the id and isRequired
 <FormControl isRequired id="inputId">
-  <FormControl.FormLabel>Label for the input</FormControl.FormLabel>
+  <FormControl.Label>Label for the input</FormControl.Label>
   <TextInput name="input" />
 </FormControl>
 ```
@@ -2209,12 +2209,12 @@ into this new version:
 ```jsx static=true
 import { FormControl, TextInput } from '@contentful/f36-components';
 
-<FormControl.FormLabel htmlFor="inputId" isRequired requiredText="required field">Label for the input</FormControl.FormLabel>
+<FormControl.Label htmlFor="inputId" isRequired requiredText="required field">Label for the input</FormControl.Label>
 <TextInput name="input" id="inputId" />
 
 // You can also use the FormControl to wrap it, and it would handle the id and isRequired
 <FormControl isRequired id="inputId">
-  <FormControl.FormLabel requiredText="required field">Label for the input</FormControl.FormLabel>
+  <FormControl.Label requiredText="required field">Label for the input</FormControl.Label>
   <TextInput name="input">
 </FormControl>
 ```
