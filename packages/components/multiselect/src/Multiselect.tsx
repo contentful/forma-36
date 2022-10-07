@@ -104,9 +104,15 @@ const iterateOverChildren = (
   return React.Children.map(children, (child) => {
     // equal to (if (child == null || typeof child == 'string'))
     if (!React.isValidElement(child)) return child;
-    if (!filter(child))
-      return iterateOverChildren(child.props.children, filter, transform);
-    return transform(child);
+    if (filter(child)) {
+      return transform(child);
+    }
+    const childChildren = iterateOverChildren(
+      child.props.children,
+      filter,
+      transform,
+    );
+    return React.cloneElement(child, { children: childChildren } as unknown);
   });
 };
 
