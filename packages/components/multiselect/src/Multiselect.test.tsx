@@ -37,30 +37,37 @@ const fruits: Fruit[] = [
 const mockOnSearchValueChange = jest.fn();
 const mockOnSelectItem = jest.fn();
 
-const renderComponent = (customProps?: Partial<MultiselectProps>) => {
+const renderComponent = (
+  customProps?: Partial<MultiselectProps>,
+  elements = fruits,
+) => {
   const props = {
     ...customProps,
   };
   const user = userEvent.setup();
   render(
     <Multiselect {...props}>
-      {fruits.map((fruit, index) => {
-        return (
-          <Multiselect.Option
-            key={`key-${fruit.id}-${index}`}
-            itemId={`${index}`}
-            value={`${fruit.id}`}
-            label={fruit.name}
-            onSelectItem={mockOnSelectItem}
-            isDisabled={fruit.isDisabled}
-            isChecked={fruit.isChecked}
-          />
-        );
-      })}
+      <h2>Fruits</h2>
+      <div data-test-id="wrapper-component">
+        {elements.map((fruit, index) => {
+          return (
+            <Multiselect.Option
+              key={`key-${fruit.id}-${index}`}
+              itemId={`${index}`}
+              value={`${fruit.id}`}
+              label={fruit.name}
+              onSelectItem={mockOnSelectItem}
+              isDisabled={fruit.isDisabled}
+              isChecked={fruit.isChecked}
+            />
+          );
+        })}
+      </div>
     </Multiselect>,
   );
   return [{ user }] as [{ user: typeof user }];
 };
+
 // Workaround for https://github.com/dequelabs/axe-core/issues/3055
 jest.useRealTimers();
 
@@ -89,6 +96,20 @@ describe('Multiselect basic usage', () => {
     renderComponent({ placeholder: 'My Placeholder Text' });
     expect(screen.getByText('My Placeholder Text')).toBeInTheDocument();
   });
+
+  it('renders all child elements in the correct hierarchy', async () => {
+    const [{ user }] = renderComponent();
+    await user.click(
+      screen.getByRole('button', { name: 'Toggle Multiselect' }),
+    );
+    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent(
+      'Fruits',
+    );
+    const wrapperDiv = screen.getByTestId('wrapper-component');
+    expect(wrapperDiv).toBeInTheDocument();
+    expect(within(wrapperDiv).getAllByRole('listitem')).toHaveLength(12);
+  });
+
   it('renders the first selected item instead of placeholder text', () => {
     renderComponent({
       placeholder: 'My Placeholder Text',
@@ -171,20 +192,35 @@ describe('Multiselect with search', () => {
     await user.click(
       screen.getByRole('button', { name: 'Toggle Multiselect' }),
     );
-    const listFirstItem = screen.getByTestId('cf-multiselect-list-item-1');
+    const listFirstItem = screen.getByTestId('cf-multiselect-list-item-0');
 
-    await user.type(screen.getByRole('textbox', { name: 'Search' }), 'a');
+    await user.type(screen.getByRole('textbox', { name: 'Search' }), 'pp');
 
     expect(mockOnSearchValueChange).toHaveBeenCalledWith(
       expect.objectContaining({
         target: expect.objectContaining({
-          value: 'a',
+          value: 'pp',
         }),
       }),
     );
+    expect(listFirstItem).toHaveTextContent('Apple');
     expect(
       within(listFirstItem).getByTestId('cf-multiselect-item-match'),
-    ).toHaveTextContent('A');
+    ).toHaveTextContent('pp');
+    expect(screen.queryByText('No matches found')).not.toBeInTheDocument();
+  });
+
+  it('shows the no matches found message when there are no elements', async () => {
+    const [{ user }] = renderComponent(
+      {
+        onSearchValueChange: mockOnSearchValueChange,
+      },
+      [],
+    );
+    await user.click(
+      screen.getByRole('button', { name: 'Toggle Multiselect' }),
+    );
+    expect(screen.queryByText('No matches found')).toBeInTheDocument();
   });
 
   it('clears the search value and triggers the callback function', async () => {
