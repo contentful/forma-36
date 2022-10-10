@@ -11,5 +11,5 @@ export const EntryTrimmed = /*#__PURE__*/ generateIcon({
     </Fragment>
   ),
   trimmed: true,
-  viewBox: '0 0 16 24',
+  viewBox: '0 0 18 18',
 });
