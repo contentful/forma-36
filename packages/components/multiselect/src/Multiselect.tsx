@@ -86,13 +86,53 @@ export interface MultiselectProps extends CommonProps {
      * Use this prop to get a ref to the list of items of the component
      */
     listRef?: React.Ref<HTMLUListElement>;
-  };
+  } & Pick<CommonProps, 'className'>;
 
   /**
    * Function called when the popover loses its focus.
    */
   onBlur?: () => void;
 }
+
+// Scan through the whole hierachy until `filter` returns true and apply `transform`
+// Inspired from https://stackoverflow.com/a/70676868/17269164
+const iterateOverChildren = (
+  children: React.ReactNode,
+  filter: (child: React.ReactElement) => boolean,
+  transform: (child: React.ReactElement) => React.ReactElement,
+): React.ReactNode => {
+  return React.Children.map(children, (child) => {
+    // equal to (if (child == null || typeof child == 'string'))
+    if (!React.isValidElement(child)) return child;
+    if (filter(child)) {
+      return transform(child);
+    }
+    const childChildren = iterateOverChildren(
+      child.props.children,
+      filter,
+      transform,
+    );
+    return React.cloneElement(child, { children: childChildren } as unknown);
+  });
+};
+
+// Scan through the whole hierachy to count the number of children where `filter` returns true
+const countMatchingChildren = (
+  children: React.ReactNode,
+  filter: (child: React.ReactElement) => boolean,
+): number => {
+  let counter = 0;
+  React.Children.forEach(children, (child) => {
+    // equal to (if (child == null || typeof child == 'string'))
+    if (!React.isValidElement(child)) return;
+    if (!filter(child)) {
+      counter += countMatchingChildren(child.props.children, filter);
+    } else {
+      counter += 1;
+    }
+  });
+  return counter;
+};
 
 function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
   const {
@@ -125,6 +165,14 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
 
   const hasSearch = typeof onSearchValueChange === 'function';
 
+  const focusList = useCallback(() => {
+    // Clearing the search input or selecting an item triggers a rerendering and
+    // thereby the client loses the focus on the clicked element. To avoid having
+    // the focus on the document body (which breaks `closeOnBlur`), we force it
+    // back to the list in the popup.
+    internalListRef.current?.focus();
+  }, []);
+
   const handleSearchChange = useCallback(
     (event) => {
       setSearchValue(event.target.value);
@@ -133,10 +181,11 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     [onSearchValueChange, setSearchValue],
   );
 
-  const resetSearch = () => {
+  const resetSearchInput = useCallback(() => {
+    if (!searchValue) return;
+    focusList();
     // this looks a bit hacky, but is the official way of externally triggering the onChange handler for an input
     // https://stackoverflow.com/a/46012210/17269164
-
     const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
       window.HTMLInputElement.prototype,
       'value',
@@ -144,7 +193,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     nativeInputValueSetter.call(internalSearchInputRef.current, '');
     const forcedEvent = new Event('change', { bubbles: true });
     internalSearchInputRef.current.dispatchEvent(forcedEvent);
-  };
+  }, [searchValue, focusList]);
 
   const renderMultiselectLabel = useCallback(() => {
     if (currentSelection.length === 0) {
@@ -171,44 +220,34 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     );
   }, [currentSelection, placeholder, styles.currentSelection]);
 
-  const childrenLength = useMemo(
-    () => React.Children.count(children),
+  const optionsLength = useMemo(
+    () =>
+      countMatchingChildren(
+        children,
+        (child) => child.type === MultiselectOption,
+      ),
     [children],
   );
 
   // clones and enriches the multiselect options
   const enrichOptions = React.useCallback(
     (children: React.ReactNode): React.ReactNode => {
-      return React.Children.map(children, (child) => {
-        if (React.isValidElement(child)) {
-          if (
-            child.type === React.Fragment ||
-            child.type === 'div' ||
-            child.type === 'ul'
-          ) {
-            return enrichOptions(child.props.children);
-          }
-          if (child.type === MultiselectOption) {
-            const onSelectItem = (
-              even: React.ChangeEvent<HTMLInputElement>,
-            ) => {
-              // Selecting an item triggers a rerendering and thereby losing the
-              // focus on the clicked element. To avoid having the focus on the document body
-              // (which breaks `closeOnBlur`), we force it back to the list in the popup.
-              internalListRef.current?.focus();
-              child.props?.onSelectItem(even);
-            };
-            return React.cloneElement(child, {
-              searchValue,
-              onSelectItem,
-            } as Partial<MultiselectOptionProps>);
-          }
-          return child;
-        }
-        return child;
-      });
+      return iterateOverChildren(
+        children,
+        (child) => child.type === MultiselectOption,
+        (child) => {
+          const onSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
+            focusList();
+            child.props?.onSelectItem(event);
+          };
+          return React.cloneElement(child, {
+            searchValue,
+            onSelectItem,
+          } as Partial<MultiselectOptionProps>);
+        },
+      );
     },
-    [searchValue],
+    [searchValue, focusList],
   );
 
   return (
@@ -237,7 +276,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         </Popover.Trigger>
         <Popover.Content
           ref={mergeRefs(listRef, internalListRef)}
-          className={styles.content(listMaxHeight)}
+          className={cx(styles.content(listMaxHeight), popoverProps.className)}
           testId="cf-multiselect-container"
           onBlur={() => onBlur?.()}
         >
@@ -266,11 +305,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                       <SearchIcon variant="muted" />
                     )
                   }
-                  onClick={() => {
-                    if (searchValue) {
-                      resetSearch();
-                    }
-                  }}
+                  onClick={resetSearchInput}
                   isDisabled={!searchValue}
                   size="small"
                 />
@@ -278,13 +313,13 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
             )}
             {isLoading && <ListItemLoadingState />}
 
-            {!isLoading && childrenLength > 0 && (
+            {!isLoading && optionsLength > 0 && (
               <ul className={styles.list} data-test-id="cf-multiselect-items">
                 {hasSearch ? enrichOptions(children) : children}
               </ul>
             )}
 
-            {!isLoading && childrenLength === 0 && (
+            {!isLoading && optionsLength === 0 && (
               <Subheading className={styles.noMatchesTitle}>
                 {noMatchesMessage}
               </Subheading>
