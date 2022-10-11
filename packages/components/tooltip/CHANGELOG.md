@@ -1,5 +1,23 @@
 # Change Log
 
+## 4.21.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-utils@4.21.0
+  - @contentful/f36-core@4.21.0
+
+## 4.20.9
+
+### Patch Changes
+
+- [#2267](https://github.com/contentful/forma-36/pull/2267) [`897830a2`](https://github.com/contentful/forma-36/commit/897830a2994060c87ef4317aafccbdf8979bec3a) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(tooltip): add showDelay
+
+- Updated dependencies []:
+  - @contentful/f36-utils@4.20.9
+  - @contentful/f36-core@4.20.9
+
 ## 4.20.8
 
 ### Patch Changes

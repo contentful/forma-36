@@ -265,10 +265,17 @@ function transformSelectProps(selectPropsObj, { j, attributes }) {
     } else {
       const { value } = propertiesMap[key].value;
 
-      propertyValue =
-        typeof value === 'number'
-          ? j.jsxExpressionContainer(j.numericLiteral(value))
-          : j.literal(value);
+      switch (typeof value) {
+        case 'number':
+          propertyValue = j.jsxExpressionContainer(j.numericLiteral(value));
+          break;
+        case 'boolean':
+          propertyValue = j.jsxExpressionContainer(j.booleanLiteral(value));
+          break;
+        default:
+          propertyValue = j.literal(value);
+          break;
+      }
     }
 
     newProps[key] = getNewProp(attributes, {
