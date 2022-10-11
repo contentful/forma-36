@@ -5,7 +5,6 @@ import {
   Subheading,
   Text,
   Table,
-  TextLink,
 } from '@contentful/f36-components';
 
 import { getPropsTableStyles } from './PropsTable.styles';
@@ -27,64 +26,52 @@ export function PropsTable({ of }: PropsTableProps) {
   }
 
   return (
-    <>
-      <Paragraph>
-        This component also accepts{' '}
-        <TextLink
-          href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
-          target="_blank"
-        >
-          relevant HTML attributes
-        </TextLink>{' '}
-        as props. [These include rows, autoFocus and autoComplete].
-      </Paragraph>
-      <Table layout="embedded">
-        <Table.Head>
-          <Table.Row>
-            <Table.Cell className={styles.headerCell}>
-              <Subheading marginBottom="none">Name</Subheading>
-            </Table.Cell>
-            <Table.Cell className={styles.headerCell}>
-              <Subheading marginBottom="none">Type</Subheading>
-            </Table.Cell>
-            <Table.Cell className={styles.headerCell}>
-              <Subheading marginBottom="none">Default</Subheading>
-            </Table.Cell>
-          </Table.Row>
-        </Table.Head>
-        <Table.Body>
-          {componentProps.map((item, idx) => {
-            return (
-              <Table.Row key={idx}>
-                <Table.Cell className={styles.cell} width="20%">
-                  <Text
-                    fontStack="fontStackMonospace"
-                    fontColor="gray900"
-                    fontWeight="fontWeightDemiBold"
-                    marginRight="spacingXs"
-                  >
-                    {item.name}
-                  </Text>
-                  {item.required && (
-                    <Badge variant="featured" size="small">
-                      required
-                    </Badge>
-                  )}
-                </Table.Cell>
-                <Table.Cell className={styles.cell}>
-                  <PropertyType name={item.name} type={item.type} />
-                  <Paragraph marginBottom="none">{item.description}</Paragraph>
-                </Table.Cell>
-                <Table.Cell className={styles.cell} width="20%">
-                  {item.defaultValue && (
-                    <PropertyValue value={item.defaultValue.value} />
-                  )}
-                </Table.Cell>
-              </Table.Row>
-            );
-          })}
-        </Table.Body>
-      </Table>
-    </>
+    <Table layout="embedded">
+      <Table.Head>
+        <Table.Row>
+          <Table.Cell className={styles.headerCell}>
+            <Subheading marginBottom="none">Name</Subheading>
+          </Table.Cell>
+          <Table.Cell className={styles.headerCell}>
+            <Subheading marginBottom="none">Type</Subheading>
+          </Table.Cell>
+          <Table.Cell className={styles.headerCell}>
+            <Subheading marginBottom="none">Default</Subheading>
+          </Table.Cell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        {componentProps.map((item, idx) => {
+          return (
+            <Table.Row key={idx}>
+              <Table.Cell className={styles.cell} width="20%">
+                <Text
+                  fontStack="fontStackMonospace"
+                  fontColor="gray900"
+                  fontWeight="fontWeightDemiBold"
+                  marginRight="spacingXs"
+                >
+                  {item.name}
+                </Text>
+                {item.required && (
+                  <Badge variant="featured" size="small">
+                    required
+                  </Badge>
+                )}
+              </Table.Cell>
+              <Table.Cell className={styles.cell}>
+                <PropertyType name={item.name} type={item.type} />
+                <Paragraph marginBottom="none">{item.description}</Paragraph>
+              </Table.Cell>
+              <Table.Cell className={styles.cell} width="20%">
+                {item.defaultValue && (
+                  <PropertyValue value={item.defaultValue.value} />
+                )}
+              </Table.Cell>
+            </Table.Row>
+          );
+        })}
+      </Table.Body>
+    </Table>
   );
 }
