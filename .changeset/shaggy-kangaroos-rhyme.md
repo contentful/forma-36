@@ -1,5 +1,5 @@
 ---
-'@contentful/f36-icons': major
+'@contentful/f36-icons': minor
 ---
 
 New Entry and Page Icons
