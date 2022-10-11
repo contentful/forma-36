@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.21.0
+
+### Patch Changes
+
+- Updated dependencies [[`499f1a84`](https://github.com/contentful/forma-36/commit/499f1a844d890cd8c7f81373aba466b6de01558b)]:
+  - @contentful/f36-icons@4.21.0
+  - @contentful/f36-button@4.21.0
+  - @contentful/f36-tooltip@4.21.0
+  - @contentful/f36-core@4.21.0
+
 ## 4.20.9
 
 ### Patch Changes
