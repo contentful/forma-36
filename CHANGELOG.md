@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 12-10-2022
+
+**F36 Icons** `v4.21.0`
+
+- New Entry and Page Icons
+
 ## 07-10-2022
 
 **F36 Multiselect** `v4.20.9`
