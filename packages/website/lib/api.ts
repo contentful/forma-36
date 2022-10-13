@@ -8,7 +8,7 @@ title
 subtitle
 slug
 metaDescription
-passwordProtected
+authProtected
 body {
   json
   links {
@@ -75,7 +75,7 @@ const LINKS_COLLECTION_GRAPHQL_FIELDS = `
   }
   title
   slug
-  passwordProtected
+  authProtected
   type: __typename
 }
 `;
@@ -190,7 +190,7 @@ export async function getSidebarLinksBySectionSlug(
 
   const data = entries?.data?.sectionCollection?.items[0];
 
-  const prepareLink = (link: { slug: string; passwordProtected?: boolean }) => {
+  const prepareLink = (link: { slug: string; authProtected?: boolean }) => {
     // Changelog link is a special case because we don't want to prepend the section slug
     if (link.slug === HARDCODED_WEBSITE_SECTION.WHATS_NEW) {
       return { ...link, slug: `/${link.slug}` };
@@ -200,7 +200,7 @@ export async function getSidebarLinksBySectionSlug(
       ? link.slug
       : `/${sectionSlug}/${link.slug}`;
 
-    if (link.passwordProtected) {
+    if (link.authProtected) {
       slug = `/${sectionSlug}/protected/${link.slug}`;
     }
 

@@ -110,7 +110,7 @@ interface SidebarLinkProps {
   isBeta?: boolean;
   isAlpha?: boolean;
   isDeprecated?: boolean;
-  isPasswordProtected?: boolean;
+  isAuthProtected?: boolean;
 }
 
 export function SidebarLink({
@@ -123,12 +123,12 @@ export function SidebarLink({
   isBeta = false,
   isAlpha = false,
   isDeprecated = false,
-  isPasswordProtected = false,
+  isAuthProtected = false,
 }: SidebarLinkProps) {
   const { data: session } = useSession();
 
-  // don't list password protected pages in the sidebar if the user is not logged in.
-  if (isPasswordProtected && !session) {
+  // don't list auth protected pages in the sidebar if the user is not logged in.
+  if (isAuthProtected && !session) {
     return null;
   }
 
@@ -148,7 +148,7 @@ export function SidebarLink({
           <span className={cx([titleStyles.clickable])}>
             {children}
             {isExternal && <ExternalLinkTrimmedIcon variant="muted" />}
-            {isPasswordProtected && <LockTrimmedIcon variant="muted" />}
+            {isAuthProtected && <LockTrimmedIcon variant="muted" />}
           </span>
           {(isNew || isDeprecated || isBeta || isAlpha) && (
             <Badge

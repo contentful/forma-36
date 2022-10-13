@@ -36,7 +36,7 @@ export type SidebarLink = {
   isBeta?: boolean;
   isAlpha?: boolean;
   isDeprecated?: boolean;
-  passwordProtected?: boolean;
+  authProtected?: boolean;
 };
 
 export type SidebarSubsection = {

@@ -74,7 +74,7 @@ function SidebarSubsection({ title, links = [] }: SidebarSubsectionProps) {
               isBeta={link.isBeta}
               isAlpha={link.isAlpha}
               isDeprecated={link.isDeprecated}
-              isPasswordProtected={link.passwordProtected}
+              isAuthProtected={link.authProtected}
               paddingLeft="spacing2Xl"
             >
               {link.title}
@@ -127,7 +127,7 @@ export function SidebarSection({ title, links = [] }: SidebarSectionProps) {
             isBeta={link.isBeta}
             isAlpha={link.isAlpha}
             isDeprecated={link.isDeprecated}
-            isPasswordProtected={link.passwordProtected}
+            isAuthProtected={link.authProtected}
           >
             {link.title}
           </SidebarLink>

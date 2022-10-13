@@ -286,7 +286,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
           ?.sectionCollection?.items[0];
     }
 
-    const slug = item.passwordProtected
+    const slug = item.authProtected
       ? [section.slug, 'protected', item.slug]
       : [section.slug, item.slug];
     return {
