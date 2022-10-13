@@ -4,7 +4,11 @@ import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
 import { List, Flex, Text, Badge } from '@contentful/f36-components';
 import { ChevronDownIcon } from '@contentful/f36-icons';
-import { ExternalLinkTrimmedIcon } from '@contentful/f36-icons';
+import {
+  ExternalLinkTrimmedIcon,
+  LockTrimmedIcon,
+} from '@contentful/f36-icons';
+import { useSession } from 'next-auth/react';
 
 const styles = {
   link: css({
@@ -106,6 +110,7 @@ interface SidebarLinkProps {
   isBeta?: boolean;
   isAlpha?: boolean;
   isDeprecated?: boolean;
+  isPasswordProtected?: boolean;
 }
 
 export function SidebarLink({
@@ -118,7 +123,15 @@ export function SidebarLink({
   isBeta = false,
   isAlpha = false,
   isDeprecated = false,
+  isPasswordProtected = false,
 }: SidebarLinkProps) {
+  const { data: session } = useSession();
+
+  // don't list password protected pages in the sidebar if the user is not logged in.
+  if (isPasswordProtected && !session) {
+    return null;
+  }
+
   const titleStyles = getSectionTitleStyles(isActive, paddingLeft);
   const linksProps = isExternal
     ? { target: '_blank', rel: 'noopener noreferrer' }
@@ -135,6 +148,7 @@ export function SidebarLink({
           <span className={cx([titleStyles.clickable])}>
             {children}
             {isExternal && <ExternalLinkTrimmedIcon variant="muted" />}
+            {isPasswordProtected && <LockTrimmedIcon variant="muted" />}
           </span>
           {(isNew || isDeprecated || isBeta || isAlpha) && (
             <Badge

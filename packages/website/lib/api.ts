@@ -8,6 +8,7 @@ title
 subtitle
 slug
 metaDescription
+passwordProtected
 body {
   json
   links {
@@ -74,6 +75,7 @@ const LINKS_COLLECTION_GRAPHQL_FIELDS = `
   }
   title
   slug
+  passwordProtected
   type: __typename
 }
 `;
@@ -188,21 +190,29 @@ export async function getSidebarLinksBySectionSlug(
 
   const data = entries?.data?.sectionCollection?.items[0];
 
+  const prepareLink = (link: { slug: string; passwordProtected?: boolean }) => {
+    // Changelog link is a special case because we don't want to prepend the section slug
+    if (link.slug === HARDCODED_WEBSITE_SECTION.WHATS_NEW) {
+      return { ...link, slug: `/${link.slug}` };
+    }
+
+    let slug = link.slug.startsWith('http')
+      ? link.slug
+      : `/${sectionSlug}/${link.slug}`;
+
+    if (link.passwordProtected) {
+      slug = `/${sectionSlug}/protected/${link.slug}`;
+    }
+
+    return {
+      ...link,
+      slug,
+    };
+  };
+
   if (data) {
     let sidebarLinks: SidebarSection[] = [];
-    const links = data.linksCollection?.items.map((link) => {
-      // Changelog link is a special case because we don't want to prepend the section slug
-      if (link.slug === HARDCODED_WEBSITE_SECTION.WHATS_NEW) {
-        return { ...link, slug: `/${link.slug}` };
-      }
-
-      return {
-        ...link,
-        slug: link.slug.startsWith('http')
-          ? link.slug
-          : `/${sectionSlug}/${link.slug}`,
-      };
-    });
+    const links = data.linksCollection?.items.map(prepareLink);
 
     if (links.length) {
       sidebarLinks = [
@@ -220,12 +230,7 @@ export async function getSidebarLinksBySectionSlug(
           title: item.name,
         };
 
-        category.links = item.linksCollection?.items.map((article) => {
-          return {
-            ...article,
-            slug: `/${sectionSlug}/${article.slug}`,
-          };
-        });
+        category.links = item.linksCollection?.items.map(prepareLink);
 
         categories.push(category);
 

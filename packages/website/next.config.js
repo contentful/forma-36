@@ -5,4 +5,18 @@ const withMDX = require('@next/mdx')({
 
 module.exports = withMDX({
   pageExtensions: ['ts', 'tsx', 'mdx'],
+  async redirects() {
+    return [
+      {
+        source: '/login',
+        destination: '/api/auth/signin',
+        permanent: true,
+      },
+      {
+        source: '/signin',
+        destination: '/api/auth/signin',
+        permanent: true,
+      },
+    ];
+  },
 });

@@ -3,6 +3,8 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { GlobalStyles as FormaGlobalStyles } from '@contentful/f36-components';
 import { GlobalStyles } from '../components/GlobalStyles';
+import { SessionProvider } from 'next-auth/react';
+
 import '../resources/css/sandpack.css';
 import 'docsearch.js/dist/cdn/docsearch.min.css';
 
@@ -29,7 +31,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         ></script>
       </Head>
 
-      <Component {...pageProps} />
+      <SessionProvider session={pageProps.session}>
+        <Component {...pageProps} />
+      </SessionProvider>
     </>
   );
 }
