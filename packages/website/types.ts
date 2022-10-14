@@ -43,7 +43,7 @@ export type SidebarSubsection = {
   title: string;
   links: SidebarLink[];
   type: 'subsection';
-  authProtected: never;
+  authProtected?: never;
 };
 
 export type SidebarSection =
