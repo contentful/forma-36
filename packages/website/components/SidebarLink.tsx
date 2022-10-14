@@ -56,6 +56,9 @@ const getSectionTitleStyles = (isActive = false, paddingLeft = 'spacingXl') => {
     closedIcon: css({
       transform: 'rotate(-90deg)',
     }),
+    linkIcon: css({
+      flexShrink: 0,
+    }),
   };
 };
 
@@ -147,8 +150,18 @@ export function SidebarLink({
         >
           <span className={cx([titleStyles.clickable])}>
             {children}
-            {isExternal && <ExternalLinkTrimmedIcon variant="muted" />}
-            {isAuthProtected && <LockTrimmedIcon variant="muted" />}
+            {isExternal && (
+              <ExternalLinkTrimmedIcon
+                variant="muted"
+                className={titleStyles.linkIcon}
+              />
+            )}
+            {isAuthProtected && (
+              <LockTrimmedIcon
+                variant="muted"
+                className={titleStyles.linkIcon}
+              />
+            )}
           </span>
           {(isNew || isDeprecated || isBeta || isAlpha) && (
             <Badge

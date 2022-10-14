@@ -225,14 +225,21 @@ export async function getSidebarLinksBySectionSlug(
     const categories = data.categoriesCollection?.items.reduce(
       (categories, item) => {
         const category = {
-          links: item.links,
+          links: [],
           slug: `/${sectionSlug}`,
           title: item.name,
+          authProtected: false,
         };
 
         category.links = item.linksCollection?.items.map(prepareLink);
 
-        categories.push(category);
+        category.authProtected = category.links.every(
+          (link: { authProtected?: boolean }) => link.authProtected,
+        );
+
+        if (category.links.length > 0) {
+          categories.push(category);
+        }
 
         return categories;
       },
