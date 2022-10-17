@@ -8,6 +8,26 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 12-10-2022
+
+**F36 Icons** `v4.21.0`
+
+- New Entry and Page Icons
+
+## 07-10-2022
+
+**F36 Multiselect** `v4.20.9`
+
+- Update Multiselect Version
+
+**F36 Tooltip** `v4.20.9`
+
+- feat(tooltip): add showDelay
+
+**F36 Codemod** `v4.3.1`
+
+- fix issues on text-field and select codemods
+
 ## 01-10-2022
 
 `@contentful/f36-components@4.20.8`

@@ -14,11 +14,10 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/circleci-f36-build
-      - node/install-packages:
-          pkg-manager: yarn
+      - node/install-packages
       - run:
           name: Build packages
-          command: yarn build
+          command: npm run-script build
       - persist_to_workspace:
           root: .
           paths:
@@ -37,17 +36,16 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/circleci-f36-build
-      - node/install-packages:
-          pkg-manager: yarn
+      - node/install-packages
       - run:
           name: Prettier
-          command: yarn prettier:check
+          command: npm run-script prettier:check
       - run:
           name: Lint
-          command: yarn lint
+          command: npm run-script lint
       - run:
           name: Check types
-          command: yarn tsc
+          command: npm run-script tsc
 
   test:
     docker:
@@ -58,11 +56,10 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/circleci-f36-build
-      - node/install-packages:
-          pkg-manager: yarn
+      - node/install-packages
       - run:
           name: Test
-          command: yarn test
+          command: npm run-script test
 
   check-links:
     docker:
@@ -73,21 +70,20 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/circleci-f36-build
-      - node/install-packages:
-          pkg-manager: yarn
+      - node/install-packages
       - run:
           name: Build Next.js website
-          command: yarn docs:next:build
+          command: npm run-script docs:next:build
       - run:
           name: Run production version of the website locally
-          command: yarn docs:next:start-prod
+          command: npm run-script docs:next:start-prod
           background: true
       - run:
           name: Wait for localhost:3000 to be ready
-          command: yarn wait-on http://localhost:3000
+          command: npx wait-on http://localhost:3000
       - run:
           name: Run links checker
-          command: yarn blc http://localhost:3000 -ro --exclude "https://medium.com/contentful-design" --exclude "https://github.com/contentful/forma-36" --exclude "https://www.figma.com/@contentful"
+          command: npx blc http://localhost:3000 -ro --exclude "https://medium.com/contentful-design" --exclude "https://github.com/contentful/forma-36" --exclude "https://www.figma.com/@contentful"
 
   deploy_chromatic:
     docker:
@@ -98,14 +94,13 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/circleci-f36-build
-      - node/install-packages:
-          pkg-manager: yarn
+      - node/install-packages
       - run:
           name: Storybook
-          command: yarn storybook:build
+          command: npm run-script storybook:build
       - run:
           name: Chromatic
-          command: yarn chromatic
+          command: npm run-script chromatic
 
   release:
     docker:
@@ -116,8 +111,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/circleci-f36-build
-      - node/install-packages:
-          pkg-manager: yarn
+      - node/install-packages
       - add_ssh_keys:
           fingerprints:
             - '2b:9f:13:79:d8:7b:f5:38:43:8f:3d:a8:7d:53:22:b2'
@@ -125,15 +119,15 @@ jobs:
       - run: git config --global user.name ${GITHUB_USER}
       - run:
           name: Generate changelogrc
-          command: yarn changelog:gen
+          command: npm run-script changelog:gen
       - run:
           name: Generate packages changelogs
-          command: yarn changeset version
+          command: npx changeset version
       - run:
           name: Publish packages and create releases
           command: |
             npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-            yarn run changeset:publish
+            npm run-script changeset:publish
 
   changelog:
     docker:
@@ -144,8 +138,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/circleci-f36-build
-      - node/install-packages:
-          pkg-manager: yarn
+      - node/install-packages
       - add_ssh_keys:
           fingerprints:
             - '2b:9f:13:79:d8:7b:f5:38:43:8f:3d:a8:7d:53:22:b2'
@@ -153,11 +146,11 @@ jobs:
       - run: git config --global user.name ${GITHUB_USER}
       - run:
           name: Generate changelog files
-          command: yarn changelog:write
+          command: npm run-script changelog:write
       - run:
           name: Commit changelog files
           command: |
-            git add . && yarn run pretty:quick
+            git add . && npm run-script pretty:quick
             git diff --staged --quiet || git commit -am "docs: update changelog on repository and website" && git push origin ${CIRCLE_BRANCH}
 
 workflows:

@@ -1,5 +1,25 @@
 # Change Log
 
+## 4.21.0
+
+### Minor Changes
+
+- [#2272](https://github.com/contentful/forma-36/pull/2272) [`499f1a84`](https://github.com/contentful/forma-36/commit/499f1a844d890cd8c7f81373aba466b6de01558b) Thanks [@ChidinmaOrajiaku](https://github.com/ChidinmaOrajiaku)! - New Entry and Page Icons
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-icon@4.21.0
+  - @contentful/f36-core@4.21.0
+
+## 4.20.9
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-icon@4.20.9
+  - @contentful/f36-core@4.20.9
+
 ## 4.20.8
 
 ### Patch Changes

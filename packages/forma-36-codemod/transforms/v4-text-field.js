@@ -293,24 +293,24 @@ function textFieldCodemod(file, api) {
 
           formControlProps.push(isInvalid);
         } else if (value.type === 'JSXExpressionContainer') {
-          const variableName = j.identifier(value.expression.name);
+          const expression = value.expression;
 
           const Component = createComponent({
             j,
             componentName: 'FormControl.ValidationMessage',
-            children: [j.jsxExpressionContainer(variableName)],
+            children: [j.jsxExpressionContainer(expression)],
           });
 
           // Creates logical AND expression that will render FormControl.ValidationMessage if the variable is not Falsy
           ValidationMessage = j.jsxExpressionContainer(
-            j.logicalExpression('&&', variableName, Component),
+            j.logicalExpression('&&', expression, Component),
           );
 
           // set the value of isInvalid prop in FormControl
           const isInvalid = getNewProp(attributes, {
             j,
             propertyName: 'isInvalid',
-            propertyValue: j.jsxExpressionContainer(variableName),
+            propertyValue: j.jsxExpressionContainer(expression),
           });
 
           formControlProps.push(isInvalid);
@@ -414,10 +414,17 @@ function transformObjectToProps(propObj, { j, attributes }) {
     } else {
       const { value } = propertiesMap[key].value;
 
-      propertyValue =
-        typeof value === 'number'
-          ? j.jsxExpressionContainer(j.numericLiteral(value))
-          : j.literal(value);
+      switch (typeof value) {
+        case 'number':
+          propertyValue = j.jsxExpressionContainer(j.numericLiteral(value));
+          break;
+        case 'boolean':
+          propertyValue = j.jsxExpressionContainer(j.booleanLiteral(value));
+          break;
+        default:
+          propertyValue = j.literal(value);
+          break;
+      }
     }
 
     newProps[key] = getNewProp(attributes, {

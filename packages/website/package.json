@@ -4,18 +4,18 @@
   "private": true,
   "scripts": {
     "generate-public-files": "ts-node ./scripts/generate-public-files.ts",
-    "build:prod": "yarn generate-public-files && next build",
+    "build:prod": "npm run-script generate-public-files && next build",
     "start": "next dev",
     "start:prod": "next start"
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "0.18.1",
-    "@contentful/f36-components": "^4.20.8",
+    "@contentful/f36-components": "^4.21.0",
     "@contentful/f36-docs-utils": "^4.0.1",
-    "@contentful/f36-icon": "^4.20.8",
-    "@contentful/f36-icons": "^4.20.8",
+    "@contentful/f36-icon": "^4.21.0",
+    "@contentful/f36-icons": "^4.21.0",
     "@contentful/f36-tokens": "^4.0.0",
-    "@contentful/f36-utils": "^4.20.8",
+    "@contentful/f36-utils": "^4.21.0",
     "@contentful/rich-text-react-renderer": "^15.11.1",
     "@emotion/core": "^10.0.17",
     "@mdx-js/loader": "^1.6.22",

@@ -56,7 +56,7 @@ The basic folder structure of a component looks like this:
   package.json
 ```
 
-If you run `yarn generate component`, this structure will be generated for you automatically.
+If you run `npm run-script generate component`, this structure will be generated for you automatically.
 
 ### Test files
 
