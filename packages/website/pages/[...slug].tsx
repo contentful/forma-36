@@ -5,10 +5,6 @@ import type { ParsedUrlQuery } from 'querystring';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
-import rehypeSlug from 'rehype-slug';
-import rehypeToc from 'rehype-toc';
-import { serialize } from 'next-mdx-remote/serialize';
-import remarkCodeTitles from 'remark-code-titles';
 import { PropsContextProvider } from '@contentful/f36-docs-utils';
 
 import { sortByTitle } from '../utils/sortByTitle';
@@ -144,8 +140,12 @@ export const getStaticProps: GetStaticProps<
     throw new Error();
   }
 
+  const remarkCodeTitles = await import('remark-code-titles');
   const { codeImport } = await import('remark-code-import');
+  const { default: rehypeSlug } = await import('rehype-slug');
+  const { default: rehypeToc } = await import('rehype-toc');
   const path = await import('node:path');
+  const { serialize } = await import('next-mdx-remote/serialize');
 
   const [section] = context.params?.slug;
   const isPreview = context.preview ?? false;
