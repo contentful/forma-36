@@ -40,7 +40,7 @@ import tokens from '@contentful/f36-tokens/dist/json/transitions/transition-easi
 
 ## Development
 
-For local development run `yarn` from the root of this repo to install all dependencies and run `yarn build` from the root of this repo to build all packages.
+For local development run `npm i` from the root of this repo to install all dependencies and run `npm run-script build` from the root of this repo to build all packages.
 
 All tokens are kept in the `src/tokens` directory and organised as so:
 
@@ -82,7 +82,7 @@ All tokens are kept in the `src/tokens` directory and organised as so:
 ### Creating a build
 
 ```bash
-yarn build
+npm run-script build
 ```
 
 Running the build script will populate the `dist` directory with separately built JSON, CSS and JS file with TS typings.

@@ -2,12 +2,10 @@
   "name": "forma-36-monorepo",
   "private": true,
   "license": "MIT",
-  "workspaces": {
-    "packages": [
-      "packages/*",
-      "packages/components/*"
-    ]
-  },
+  "workspaces": [
+    "packages/*",
+    "packages/components/*"
+  ],
   "scripts": {
     "build": "turbo run build --force",
     "chromatic": "chromatic --project-token=vn1cd01txe --exit-zero-on-changes --storybook-build-dir ./dist-storybook",
@@ -15,37 +13,37 @@
     "commitmsg": "validate-commit-msg",
     "generate": "plop --plopfile scripts/plopfile.js",
     "postinstall": "turbo run build --scope=@contentful/f36-tokens --no-deps",
-    "lint": "yarn run lint:js && yarn run lint:packages",
+    "lint": "npm run-script lint:js && npm run-script lint:packages",
     "lint:js": "eslint packages --ext .js,.jsx,.ts,.tsx",
     "lint:packages": "node scripts/lint-packages.js",
     "prettier": "prettier --write '**/*.{jsx,js,ts,tsx,md,mdx}'",
     "prettier:check": "prettier --check '**/*.{jsx,js,ts,tsx,md,mdx}'",
     "storybook": "start-storybook -p 9001 -c ./scripts/.storybook",
-    "storybook:build": "yarn build-storybook -c ./scripts/.storybook -o dist-storybook",
+    "storybook:build": "build-storybook -c ./scripts/.storybook -o dist-storybook",
     "test": "jest",
     "tsc": "tsc --noEmit",
     "tsc:watch": "tsc --noEmit --watch",
-    "docs": "yarn docs:next",
+    "docs": "npm run-script docs:next",
     "docs:next": "turbo run start --scope=@contentful/f36-website --parallel --no-cache",
     "docs:next:build": "turbo run build:prod --scope=@contentful/f36-website --parallel",
     "docs:next:start-prod": "turbo run start:prod --scope=@contentful/f36-website --parallel",
     "changelog:gen": "node scripts/changesets/changelog-generate.js",
     "changelog:write": "node scripts/changesets/changelog-write.js",
     "changeset:publish": "node scripts/changesets/generate-releases.js",
-    "postversion": "yarn run prettier",
+    "postversion": "npx prettier",
     "prerelease": "node scripts/prerelease.mjs",
-    "pretty:quick": "yarn pretty-quick --staged --pattern '**/*.*(js|jsx|ts|tsx|md|mdx)'"
+    "pretty:quick": "npx pretty-quick --staged --pattern '**/*.*(js|jsx|ts|tsx|md|mdx)'"
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
   },
-  "resolutions": {
-    "@storybook/react/webpack": "^5",
+  "overrides": {
     "@types/react": "16.14.22",
     "@types/react-dom": "16.9.14",
-    "csstype": "3.1.1"
+    "csstype": "3.1.1",
+    "webpack": "5"
   },
   "browserslist": "extends @contentful/browserslist-config",
   "devDependencies": {
@@ -118,20 +116,20 @@
     "simple-git-hooks": "^2.8.0",
     "size-limit": "^8.1.0",
     "tsup": "^6.2.3",
-    "turbo": "^1.0.6",
+    "turbo": "^1.4.7",
     "typescript": "4.7.3",
     "webpack": "5"
   },
+  "simple-git-hooks": {
+    "pre-commit": "npm run-script pretty:quick",
+    "commit-msg": "npx commitlint -e \"$@\""
+  },
   "engines": {
     "node": ">=14.17.0",
-    "yarn": ">=1.18.0"
+    "npm": ">=8.3.0",
+    "yarn": "Please use npm"
   },
   "volta": {
-    "node": "14.17.0",
-    "yarn": "1.18.0"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "yarn run pretty:quick",
-    "commit-msg": "yarn commitlint -e \"$@\""
+    "node": "14.17.0"
   }
 }
