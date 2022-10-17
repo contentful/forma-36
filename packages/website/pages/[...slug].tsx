@@ -9,7 +9,6 @@ import rehypeSlug from 'rehype-slug';
 import rehypeToc from 'rehype-toc';
 import { serialize } from 'next-mdx-remote/serialize';
 import remarkCodeTitles from 'remark-code-titles';
-import remarkCodeImport from 'remark-code-import';
 import { PropsContextProvider } from '@contentful/f36-docs-utils';
 
 import { sortByTitle } from '../utils/sortByTitle';
@@ -145,6 +144,9 @@ export const getStaticProps: GetStaticProps<
     throw new Error();
   }
 
+  const { codeImport } = await import('remark-code-import');
+  const path = await import('node:path');
+
   const [section] = context.params?.slug;
   const isPreview = context.preview ?? false;
   const topbarLinks = await getTopbarLinks();
@@ -197,7 +199,16 @@ export const getStaticProps: GetStaticProps<
     const mainContent = await serialize(mainContentText, {
       // Optionally pass remark/rehype plugins
       mdxOptions: {
-        remarkPlugins: [remarkCodeTitles, remarkCodeImport],
+        remarkPlugins: [
+          remarkCodeTitles,
+          [
+            codeImport,
+            {
+              // Going up the tree from website build dir `.next`
+              rootDir: path.join(__dirname, '../../../../../'),
+            },
+          ],
+        ],
         rehypePlugins: [
           rehypeSlug,
           [
