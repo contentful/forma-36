@@ -12,6 +12,7 @@ import { Text } from '../Text';
 const SUBHEADING_DEFAULT_TAG = 'h3';
 
 export interface SubheadingInternalProps extends CommonProps, MarginProps {
+  children?: React.ReactNode;
   as?: HeadingElement;
   isTruncated?: boolean;
   isWordBreak?: boolean;
