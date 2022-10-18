@@ -32,7 +32,7 @@ const styles = {
 };
 
 const isLinkActive = (href, currentPage) => {
-  const linkedPage = href.split('/')[2];
+  const linkedPage = href.split('/').pop();
   return linkedPage === currentPage;
 };
 

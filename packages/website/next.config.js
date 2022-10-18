@@ -12,11 +12,6 @@ module.exports = withMDX({
         destination: '/api/auth/signin',
         permanent: true,
       },
-      {
-        source: '/signin',
-        destination: '/api/auth/signin',
-        permanent: true,
-      },
     ];
   },
 });
