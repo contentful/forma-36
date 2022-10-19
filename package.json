@@ -108,8 +108,8 @@
     "plop": "^2.5.3",
     "prettier": "2.7.1",
     "pretty-quick": "3.1.1",
-    "react": "16.14.0",
-    "react-dom": "16.14.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "react-focus-lock": "^2.9.1",
     "react-router-dom": "^5.3.0",
     "react-sortable-hoc": "^2.0.0",
@@ -126,11 +126,12 @@
     "commit-msg": "npx commitlint -e \"$@\""
   },
   "engines": {
-    "node": ">=14.17.0",
-    "npm": ">=8.3.0",
+    "node": ">=14.18.0",
+    "npm": ">=8.11.0",
     "yarn": "Please use npm"
   },
   "volta": {
-    "node": "14.17.0"
+    "node": "14.18.0",
+    "npm": "8.11.0"
   }
 }
