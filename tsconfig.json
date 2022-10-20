@@ -15,6 +15,7 @@
     "allowSyntheticDefaultImports": true,
     // allows importing of json files, needed for locales as of right now
     "resolveJsonModule": true,
+    "module": "esnext",
     // Search under node_modules for non-relative imports.
     "moduleResolution": "node",
     // Process & infer types from .js files.
