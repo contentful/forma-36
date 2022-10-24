@@ -36,12 +36,14 @@ export type SidebarLink = {
   isBeta?: boolean;
   isAlpha?: boolean;
   isDeprecated?: boolean;
+  authProtected?: boolean;
 };
 
 export type SidebarSubsection = {
   title: string;
   links: SidebarLink[];
   type: 'subsection';
+  authProtected?: never;
 };
 
 export type SidebarSection =
@@ -50,4 +52,5 @@ export type SidebarSection =
       title?: string;
       links: (SidebarLink | SidebarSubsection)[];
       type?: never;
+      authProtected?: boolean;
     };
