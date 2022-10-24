@@ -36,6 +36,7 @@ export function Sidebar({ links }: SidebarProps) {
             key={category.title ?? index}
             links={category.links}
             title={category.title}
+            isAuthProtected={category.authProtected}
           />
         );
       })}

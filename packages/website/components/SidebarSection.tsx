@@ -10,6 +10,7 @@ import type {
   SidebarSection as SidebarSectionType,
   SidebarSubsection as SidebarSubsectionType,
 } from '../types';
+import { useSession } from 'next-auth/react';
 
 const styles = {
   list: css({
@@ -31,7 +32,7 @@ const styles = {
 };
 
 const isLinkActive = (href, currentPage) => {
-  const linkedPage = href.split('/')[2];
+  const linkedPage = href.split('/').pop();
   return linkedPage === currentPage;
 };
 
@@ -74,6 +75,7 @@ function SidebarSubsection({ title, links = [] }: SidebarSubsectionProps) {
               isBeta={link.isBeta}
               isAlpha={link.isAlpha}
               isDeprecated={link.isDeprecated}
+              isAuthProtected={link.authProtected}
               paddingLeft="spacing2Xl"
             >
               {link.title}
@@ -87,10 +89,21 @@ function SidebarSubsection({ title, links = [] }: SidebarSubsectionProps) {
 interface SidebarSectionProps {
   title?: string;
   links: (SidebarLinkType | SidebarSubsectionType)[];
+  isAuthProtected?: boolean;
 }
 
-export function SidebarSection({ title, links = [] }: SidebarSectionProps) {
+export function SidebarSection({
+  title,
+  links = [],
+  isAuthProtected = false,
+}: SidebarSectionProps) {
   const { currentPage } = useCurrentLocation();
+  const { data: session } = useSession();
+
+  // don't list auth protected sections in the sidebar if the user is not logged in.
+  if (isAuthProtected && !session) {
+    return null;
+  }
 
   return (
     <List className={styles.list}>
@@ -126,6 +139,7 @@ export function SidebarSection({ title, links = [] }: SidebarSectionProps) {
             isBeta={link.isBeta}
             isAlpha={link.isAlpha}
             isDeprecated={link.isDeprecated}
+            isAuthProtected={link.authProtected}
           >
             {link.title}
           </SidebarLink>

@@ -69,11 +69,8 @@ export function getRenderNode(links): RenderNode {
         </Subheading>
       );
     },
-    [BLOCKS.UL_LIST]: (_node, children) => (
-      <List as="ul">
-        <List.Item>{children}</List.Item>
-      </List>
-    ),
+    [BLOCKS.UL_LIST]: (_node, children) => <List as="ul">{children}</List>,
+    [BLOCKS.LIST_ITEM]: (_node, children) => <List.Item>{children}</List.Item>,
     [BLOCKS.EMBEDDED_ENTRY]: (node) => {
       const entry = entryMap.get(node.data.target.sys.id);
       return <StaticSource children={entry.code} className="language-jsx" />;

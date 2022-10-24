@@ -4,7 +4,11 @@ import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
 import { List, Flex, Text, Badge } from '@contentful/f36-components';
 import { ChevronDownIcon } from '@contentful/f36-icons';
-import { ExternalLinkTrimmedIcon } from '@contentful/f36-icons';
+import {
+  ExternalLinkTrimmedIcon,
+  LockTrimmedIcon,
+} from '@contentful/f36-icons';
+import { useSession } from 'next-auth/react';
 
 const styles = {
   link: css({
@@ -51,6 +55,9 @@ const getSectionTitleStyles = (isActive = false, paddingLeft = 'spacingXl') => {
     }),
     closedIcon: css({
       transform: 'rotate(-90deg)',
+    }),
+    linkIcon: css({
+      flexShrink: 0,
     }),
   };
 };
@@ -106,6 +113,7 @@ interface SidebarLinkProps {
   isBeta?: boolean;
   isAlpha?: boolean;
   isDeprecated?: boolean;
+  isAuthProtected?: boolean;
 }
 
 export function SidebarLink({
@@ -118,7 +126,15 @@ export function SidebarLink({
   isBeta = false,
   isAlpha = false,
   isDeprecated = false,
+  isAuthProtected = false,
 }: SidebarLinkProps) {
+  const { data: session } = useSession();
+
+  // don't list auth protected pages in the sidebar if the user is not logged in.
+  if (isAuthProtected && !session) {
+    return null;
+  }
+
   const titleStyles = getSectionTitleStyles(isActive, paddingLeft);
   const linksProps = isExternal
     ? { target: '_blank', rel: 'noopener noreferrer' }
@@ -134,7 +150,18 @@ export function SidebarLink({
         >
           <span className={cx([titleStyles.clickable])}>
             {children}
-            {isExternal && <ExternalLinkTrimmedIcon variant="muted" />}
+            {isExternal && (
+              <ExternalLinkTrimmedIcon
+                variant="muted"
+                className={titleStyles.linkIcon}
+              />
+            )}
+            {isAuthProtected && (
+              <LockTrimmedIcon
+                variant="muted"
+                className={titleStyles.linkIcon}
+              />
+            )}
           </span>
           {(isNew || isDeprecated || isBeta || isAlpha) && (
             <Badge
