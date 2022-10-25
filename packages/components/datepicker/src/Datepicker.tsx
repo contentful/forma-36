@@ -225,7 +225,7 @@ const DatepickerTrigger = React.forwardRef<
       <IconButton
         aria-label="Use calendar"
         variant="secondary"
-        icon={<CalendarIcon aria-label="calendar" variant="muted" />}
+        icon={<CalendarIcon aria-label="calendar" />}
         onClick={onTriggerClick}
         isDisabled={isDisabled}
         testId="cf-ui-datepicker-button"
