@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.21.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-utils@4.21.1
+  - @contentful/f36-core@4.21.1
+
 ## 4.21.0
 
 ### Patch Changes
