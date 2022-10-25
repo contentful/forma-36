@@ -70,9 +70,10 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
         >
           {React.cloneElement(icon, {
             size: icon.props.size ?? `${size === 'large' ? 'medium' : 'small'}`,
-            // we want to allow variants for icons, only for the transparent IconButton
+            // we want to allow variants for icons for transparent buttons
             variant:
-              (!children && icon.props.variant) || defaultIconColor[variant],
+              (variant === 'transparent' && icon.props.variant) ||
+              defaultIconColor[variant],
           })}
         </Flex>
       )
