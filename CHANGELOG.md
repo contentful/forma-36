@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 26-10-2022
+
+**F36 Text Link** `v4.21.1`
+
+- Fix vertical alignment when icon is aligned at start
+
 ## 12-10-2022
 
 **F36 Icons** `v4.21.0`

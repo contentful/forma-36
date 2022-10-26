@@ -1,5 +1,27 @@
 # Change Log
 
+## 4.21.2
+
+### Patch Changes
+
+- Updated dependencies [[`d573092b`](https://github.com/contentful/forma-36/commit/d573092b0d26a3cc3fa8f59a5ac1334c4c1c75f7)]:
+  - @contentful/f36-button@4.21.2
+  - @contentful/f36-icons@4.21.2
+  - @contentful/f36-text-link@4.21.2
+  - @contentful/f36-typography@4.21.2
+  - @contentful/f36-core@4.21.2
+
+## 4.21.1
+
+### Patch Changes
+
+- Updated dependencies [[`4af847fa`](https://github.com/contentful/forma-36/commit/4af847fab090020fe9fa6f6c745c4825c19aef9c)]:
+  - @contentful/f36-text-link@4.21.1
+  - @contentful/f36-button@4.21.1
+  - @contentful/f36-icons@4.21.1
+  - @contentful/f36-typography@4.21.1
+  - @contentful/f36-core@4.21.1
+
 ## 4.21.0
 
 ### Patch Changes

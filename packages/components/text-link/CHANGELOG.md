@@ -1,5 +1,21 @@
 # Change Log
 
+## 4.21.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.21.2
+
+## 4.21.1
+
+### Patch Changes
+
+- [#2295](https://github.com/contentful/forma-36/pull/2295) [`4af847fa`](https://github.com/contentful/forma-36/commit/4af847fab090020fe9fa6f6c745c4825c19aef9c) Thanks [@massao](https://github.com/massao)! - Fix vertical alignment when icon is aligned at start
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.21.1
+
 ## 4.21.0
 
 ### Patch Changes
