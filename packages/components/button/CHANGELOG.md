@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.21.2
+
+### Patch Changes
+
+- [#2302](https://github.com/contentful/forma-36/pull/2302) [`d573092b`](https://github.com/contentful/forma-36/commit/d573092b0d26a3cc3fa8f59a5ac1334c4c1c75f7) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(button): allow icon variant for transparent buttons
+  fix(datepicker): change calendar button icon variant
+- Updated dependencies []:
+  - @contentful/f36-spinner@4.21.2
+  - @contentful/f36-core@4.21.2
+
 ## 4.21.1
 
 ### Patch Changes
