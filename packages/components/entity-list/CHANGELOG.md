@@ -1,5 +1,22 @@
 # Change Log
 
+## 4.21.3
+
+### Patch Changes
+
+- [#2304](https://github.com/contentful/forma-36/pull/2304) [`d605d64f`](https://github.com/contentful/forma-36/commit/d605d64fcdc897d43fb6252829d86c8f3a2147f4) Thanks [@bgutsol](https://github.com/bgutsol)! - fix: remove default margin in safari for buttons
+
+- Updated dependencies [[`d605d64f`](https://github.com/contentful/forma-36/commit/d605d64fcdc897d43fb6252829d86c8f3a2147f4)]:
+  - @contentful/f36-button@4.21.3
+  - @contentful/f36-drag-handle@4.21.3
+  - @contentful/f36-badge@4.21.3
+  - @contentful/f36-icon@4.21.3
+  - @contentful/f36-icons@4.21.3
+  - @contentful/f36-menu@4.21.3
+  - @contentful/f36-skeleton@4.21.3
+  - @contentful/f36-typography@4.21.3
+  - @contentful/f36-core@4.21.3
+
 ## 4.21.2
 
 ### Patch Changes
