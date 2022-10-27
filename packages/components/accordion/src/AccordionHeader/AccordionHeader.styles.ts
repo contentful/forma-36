@@ -13,6 +13,7 @@ const getHeaderStyles = ({ align }: StyleProps) =>
       flexDirection: 'row',
       alignItems: 'center',
       border: '0',
+      margin: 0, // remove the default button margin in Safari.
       padding: tokens.spacingM,
       backgroundColor: 'transparent',
       fontFamily: tokens.fontStackPrimary,
