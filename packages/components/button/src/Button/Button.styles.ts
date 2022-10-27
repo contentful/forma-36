@@ -215,6 +215,7 @@ export const getStyles = () => ({
       fontWeight: tokens.fontWeightMedium,
       outline: 'none',
       textDecoration: 'none',
+      margin: 0, // remove the default margin in Safari.
       transition: `background ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault},
         opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault},
         border-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,

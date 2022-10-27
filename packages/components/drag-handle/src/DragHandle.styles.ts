@@ -33,6 +33,7 @@ export const getStyles = () => ({
         display: 'flex',
         justifyContent: 'center',
         padding: 0,
+        margin: 0, // remove the default button margin in Safari.
         position: 'relative',
         transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
         width: tokens.spacingL,
