@@ -55,7 +55,7 @@ export const Collapse = ({
           current.style.setProperty('height', 'auto');
         } else {
           current.style.removeProperty('pointer-events');
-          current.style.setProperty('display', 'none');
+          current.style.setProperty('visibility', 'hidden');
         }
       }
     };
@@ -68,7 +68,7 @@ export const Collapse = ({
           current.style.setProperty('pointer-events', 'none');
         } else {
           // Overwrite none display to see expanding transition
-          current.style.setProperty('display', 'block');
+          current.style.setProperty('visibility', 'visible');
           current.style.removeProperty('pointer-events');
         }
         // Calculate panel height after removing none display
