@@ -9,6 +9,7 @@ export const getCollapseStyles = ({ className }: { className?: string }) => {
         overflow: 'hidden',
         height: 0,
         visibility: 'hidden',
+        display: 'block',
         transition: `height ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, padding ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       }),
       className,
