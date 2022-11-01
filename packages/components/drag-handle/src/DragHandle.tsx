@@ -1,18 +1,20 @@
-import React, { useCallback, useState } from 'react';
-import type {
-  /* ElementRef, */
-  ElementType,
-  FocusEventHandler,
-  MouseEventHandler,
-  Ref,
+import React, {
+  useCallback,
+  useState,
+  type ElementType,
+  type FocusEventHandler,
+  type MouseEventHandler,
+  type Ref,
 } from 'react';
 import { cx } from 'emotion';
 import type {
   PolymorphicComponent,
   PolymorphicProps,
+  CommonProps,
+  ExpandProps,
 } from '@contentful/f36-core';
-import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 import { DragIcon } from '@contentful/f36-icons';
+
 import { getStyles } from './DragHandle.styles';
 
 // We use div instead of a button because react-sortable-hoc lib cancels sorting if the event target is button.
@@ -57,7 +59,7 @@ export interface DragHandleInternalProps extends CommonProps {
 }
 
 export type DragHandleProps<
-  E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG
+  E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG,
 > = PolymorphicProps<DragHandleInternalProps, E>;
 
 function _DragHandle<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(

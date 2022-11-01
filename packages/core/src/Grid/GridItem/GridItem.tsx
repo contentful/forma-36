@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { css, cx } from 'emotion';
+import type * as CSS from 'csstype';
+
 import {
-  PolymorphicProps,
-  PolymorphicComponent,
+  type PolymorphicProps,
+  type PolymorphicComponent,
 } from '../../Primitive/Primitive';
 import { useBox } from '../../Box';
 import type { MarginProps, PaddingProps, CommonProps } from '../../types';
-import type * as CSS from 'csstype';
 
 const GRID_ITEM_DEFAULT_TAG = 'div';
 
@@ -38,7 +39,7 @@ export interface GridItemInternalProps
 }
 
 export type GridItemProps<
-  E extends React.ElementType = typeof GRID_ITEM_DEFAULT_TAG
+  E extends React.ElementType = typeof GRID_ITEM_DEFAULT_TAG,
 > = PolymorphicProps<GridItemInternalProps, E>;
 
 function _GridItem<E extends React.ElementType = typeof GRID_ITEM_DEFAULT_TAG>(

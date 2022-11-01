@@ -1,14 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 import { cx } from 'emotion';
-import { mergeRefs } from '@contentful/f36-core';
-import type {
-  CommonProps,
-  PolymorphicComponent,
-  PolymorphicProps,
-  ExpandProps,
+import {
+  mergeRefs,
+  useId,
+  type CommonProps,
+  type PolymorphicComponent,
+  type PolymorphicProps,
+  type ExpandProps,
 } from '@contentful/f36-core';
+
 import { useMenuContext } from '../MenuContext';
-import { useId } from '@contentful/f36-core';
 import { getMenuItemStyles } from './MenuItem.styles';
 
 const MENU_ITEM_DEFAULT_TAG = 'button';
@@ -24,7 +25,7 @@ interface MenuItemInternalProps extends CommonProps {
 }
 
 export type MenuItemProps<
-  E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG
+  E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG,
 > = PolymorphicProps<MenuItemInternalProps, E>;
 
 function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(

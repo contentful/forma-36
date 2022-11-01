@@ -134,10 +134,8 @@ function selectFieldCodemod(file, api) {
           children: getChildren({ prop: validationMessage, j }),
         });
 
-      const selectProps = [value, ...handlerProps].filter((prop) => prop);
-      const formControlProps = [id, name, required, ...commonProps].filter(
-        (p) => p,
-      );
+      const selectProps = [name, value, ...handlerProps].filter((prop) => prop);
+      const formControlProps = [id, required, ...commonProps].filter((p) => p);
 
       // from selectProps
       const selectPropsObj = getProperty(attributes, {
@@ -145,14 +143,11 @@ function selectFieldCodemod(file, api) {
       });
 
       if (selectPropsObj) {
-        const {
-          isDisabled,
-          spreadedPropsNames,
-          ...otherProps
-        } = transformSelectProps(selectPropsObj, {
-          j,
-          attributes,
-        });
+        const { isDisabled, spreadedPropsNames, ...otherProps } =
+          transformSelectProps(selectPropsObj, {
+            j,
+            attributes,
+          });
 
         if (isDisabled) {
           formControlProps.push(isDisabled);
@@ -270,10 +265,17 @@ function transformSelectProps(selectPropsObj, { j, attributes }) {
     } else {
       const { value } = propertiesMap[key].value;
 
-      propertyValue =
-        typeof value === 'number'
-          ? j.jsxExpressionContainer(j.numericLiteral(value))
-          : j.literal(value);
+      switch (typeof value) {
+        case 'number':
+          propertyValue = j.jsxExpressionContainer(j.numericLiteral(value));
+          break;
+        case 'boolean':
+          propertyValue = j.jsxExpressionContainer(j.booleanLiteral(value));
+          break;
+        default:
+          propertyValue = j.literal(value);
+          break;
+      }
     }
 
     newProps[key] = getNewProp(attributes, {

@@ -9,12 +9,6 @@ declare module '*.md' {
   export default value;
 }
 
-declare module 'react-animate-height' {
-  // eslint-disable-next-line
-  const value: any;
-  export default value;
-}
-
 declare module '@storybook/addon-actions' {
   export const action: any;
 }

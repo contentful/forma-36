@@ -1,12 +1,10 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-
-import { Menu } from '../src';
-import type { MenuProps } from '../src';
 import { IconButton } from '@contentful/f36-button';
 import { MenuIcon } from '@contentful/f36-icons';
-
 import { Link, BrowserRouter as Router } from 'react-router-dom';
+
+import { Menu, type MenuProps } from '../src';
 
 export default {
   component: Menu,

@@ -17,5 +17,6 @@ export const getWorkbenchStyles = () => ({
     height: '100%',
     width: '100%',
     overflow: 'hidden',
+    position: 'relative',
   }),
 });

@@ -2,7 +2,7 @@
   "compilerOptions": {
     // we can explicitly declare `any`, but we don't want to infer `any`
     "noImplicitAny": false,
-    "target": "es6",
+    "target": "ES2020",
     "lib": [
       "dom",
       "dom.iterable",
@@ -15,6 +15,7 @@
     "allowSyntheticDefaultImports": true,
     // allows importing of json files, needed for locales as of right now
     "resolveJsonModule": true,
+    "module": "esnext",
     // Search under node_modules for non-relative imports.
     "moduleResolution": "node",
     // Process & infer types from .js files.
@@ -43,5 +44,6 @@
   "exclude": [
     "**/node_modules",
     "**/dist",
+    "tsup.config.ts"
   ]
 }

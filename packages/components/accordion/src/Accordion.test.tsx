@@ -5,15 +5,20 @@ import { axe } from '@/scripts/test/axeHelper';
 
 import { Accordion } from '.';
 
-jest.mock('@contentful/f36-core', () => ({
-  ...jest.requireActual('@contentful/f36-core'),
-  useId: () => {
-    return 'id';
-  },
-}));
+jest.mock('@contentful/f36-core', () => {
+  const actual = jest.requireActual('@contentful/f36-core');
+
+  return {
+    ...actual,
+    useId: () => {
+      return 'id';
+    },
+  };
+});
 
 describe('Accordion', () => {
-  it('opens the accordion panel when the header is clicked', () => {
+  it('opens the accordion panel when the header is clicked', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     render(
       <Accordion>
         <Accordion.Item title="Accordion Title">
@@ -26,11 +31,12 @@ describe('Accordion', () => {
 
     expect(panel.getAttribute('aria-hidden')).toBe('true');
 
-    userEvent.click(screen.getByText('Accordion Title'));
+    await user.click(screen.getByText('Accordion Title'));
     expect(panel.getAttribute('aria-hidden')).toBe('false');
   });
 
-  it('calls onExpand && onCollapse when an accordion item is expanded and collapsed', () => {
+  it('calls onExpand && onCollapse when an accordion item is expanded and collapsed', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const onExpand = jest.fn();
     const onCollapse = jest.fn();
     render(
@@ -45,16 +51,19 @@ describe('Accordion', () => {
       </Accordion>,
     );
 
-    userEvent.click(screen.getByText('Accordion Title'));
+    await user.click(screen.getByText('Accordion Title'));
     expect(onExpand).toHaveBeenCalledTimes(1);
     expect(onCollapse).toHaveBeenCalledTimes(0);
 
-    userEvent.click(screen.getByText('Accordion Title'));
+    await user.click(screen.getByText('Accordion Title'));
     expect(onExpand).toHaveBeenCalledTimes(1);
     expect(onCollapse).toHaveBeenCalledTimes(1);
   });
 
   it('has no a11y issues', async () => {
+    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
+    jest.useRealTimers();
+
     const { container } = render(
       <Accordion>
         <Accordion.Item title="Accordion Title">

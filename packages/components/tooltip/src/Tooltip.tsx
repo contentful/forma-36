@@ -2,22 +2,19 @@ import React, {
   useEffect,
   useState,
   useRef,
-  MouseEvent,
-  FocusEvent,
-  CSSProperties,
+  type MouseEvent,
+  type FocusEvent,
+  type CSSProperties,
 } from 'react';
 import { usePopper } from 'react-popper';
 import type { Placement } from '@popperjs/core';
 import { cx } from 'emotion';
 import type * as CSS from 'csstype';
+import tokens from '@contentful/f36-tokens';
+import { Portal } from '@contentful/f36-utils';
+import { Box, useId, type CommonProps } from '@contentful/f36-core';
 
 import { getStyles } from './Tooltip.styles';
-
-import tokens from '@contentful/f36-tokens';
-
-import { Portal } from '@contentful/f36-utils';
-import type { CommonProps } from '@contentful/f36-core';
-import { Box, useId } from '@contentful/f36-core';
 
 export type TooltipPlacement = Placement;
 
@@ -47,7 +44,7 @@ export interface TooltipProps extends CommonProps {
    */
   maxWidth?: number | CSS.Property.MaxWidth;
   /**
-   * It sets a delay period for the tooltip
+   * Set a delay period in milliseconds before hiding the tooltip
    */
   hideDelay?: number;
   /**
@@ -75,6 +72,10 @@ export interface TooltipProps extends CommonProps {
    * It sets the "preferred" position of the tooltip
    */
   placement?: TooltipPlacement;
+  /**
+   * Set a delay period in milliseconds before showing the tooltip
+   */
+  showDelay?: number;
   /**
    * Class names to be appended to the className prop of the tooltip’s target
    */
@@ -108,6 +109,7 @@ export const Tooltip = ({
   onMouseLeave,
   onMouseOver,
   onKeyDown,
+  showDelay = 0,
   targetWrapperClassName,
   maxWidth = 360,
   testId = 'cf-ui-tooltip',
@@ -122,28 +124,28 @@ export const Tooltip = ({
   const elementRef = useRef(null);
   const popperRef = useRef(null);
   const [arrowRef, setArrowRef] = useState<HTMLSpanElement | null>(null);
-  const { styles: popperStyles, attributes, update } = usePopper(
-    elementRef.current,
-    popperRef.current,
-    {
-      placement: placement,
-      modifiers: [
-        {
-          name: 'arrow',
-          options: {
-            element: arrowRef,
-            padding: parseFloat(tokens.borderRadiusSmall),
-          },
+  const {
+    styles: popperStyles,
+    attributes,
+    update,
+  } = usePopper(elementRef.current, popperRef.current, {
+    placement: placement,
+    modifiers: [
+      {
+        name: 'arrow',
+        options: {
+          element: arrowRef,
+          padding: parseFloat(tokens.borderRadiusSmall),
         },
-        {
-          name: 'offset',
-          options: {
-            offset: [0, 10],
-          },
+      },
+      {
+        name: 'offset',
+        options: {
+          offset: [0, 10],
         },
-      ],
-    },
-  );
+      },
+    ],
+  });
 
   // necessary to update tooltip position in case the content is being updated
   useEffect(() => {
@@ -220,7 +222,7 @@ export const Tooltip = ({
         ref={elementRef}
         className={cx(styles.tooltipContainer, targetWrapperClassName)}
         onMouseEnter={(evt: MouseEvent) => {
-          setIsHoveringTarget(true);
+          setTimeout(() => setIsHoveringTarget(true), showDelay);
           if (onMouseOver) onMouseOver(evt);
         }}
         onMouseLeave={(evt: MouseEvent) => {
@@ -228,7 +230,7 @@ export const Tooltip = ({
           if (onMouseLeave) onMouseLeave(evt);
         }}
         onFocus={(evt: FocusEvent) => {
-          setIsHoveringTarget(true);
+          setTimeout(() => setIsHoveringTarget(true), showDelay);
           if (onFocus) onFocus(evt);
         }}
         onBlur={(evt: FocusEvent) => {

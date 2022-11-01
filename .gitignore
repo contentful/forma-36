@@ -20,7 +20,7 @@
 **/npm-debug.log*
 **/yarn-debug.log*
 **/yarn-error.log*
-**/package-lock.json
+**/yarn.lock
 **/tsconfig.tsbuildinfo
 
 **/.cache
@@ -28,7 +28,6 @@
 **/.rts2_cache_esm
 **/.rts2_cache_umd
 **/.rts2_cache_system
-**/.parcel-cache
 
 # editors
 .vscode/

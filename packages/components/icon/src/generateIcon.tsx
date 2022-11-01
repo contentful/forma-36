@@ -1,8 +1,6 @@
-import React from 'react';
-import type { ReactElement } from 'react';
+import React, { type ReactElement } from 'react';
 
-import { Icon } from './Icon';
-import type { IconProps } from './Icon';
+import { Icon, type IconProps } from './Icon';
 
 export type GeneratedIconProps = Omit<
   IconProps,

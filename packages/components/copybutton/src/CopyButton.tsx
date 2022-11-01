@@ -3,8 +3,7 @@ import React, { useState, useCallback, useRef } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { CopyIcon } from '@contentful/f36-icons';
 import type { CommonProps, ExpandProps } from '@contentful/f36-core';
-import { Tooltip } from '@contentful/f36-tooltip';
-import type { TooltipProps } from '@contentful/f36-tooltip';
+import { Tooltip, type TooltipProps } from '@contentful/f36-tooltip';
 import { getStyles } from './CopyButton.styles';
 
 export interface CopyButtonProps extends CommonProps {

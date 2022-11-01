@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { SkeletonText, SkeletonTextProps } from '../SkeletonText/SkeletonText';
+import { Skeleton } from '../index';
+import type { SkeletonTextProps } from '../SkeletonText/SkeletonText';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface SkeletonBodyTextProps extends SkeletonTextProps {}
@@ -14,7 +15,7 @@ export const SkeletonBodyText = ({
   ...otherProps
 }: SkeletonBodyTextProps) => {
   return (
-    <SkeletonText
+    <Skeleton.Text
       lineHeight={lineHeight}
       marginBottom={marginBottom}
       numberOfLines={

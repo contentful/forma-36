@@ -1,6 +1,6 @@
 # Forma 36 React Components
 
-A React component library for [Forma 36](https://f36.contentful.com/) design system created by [Contentful](https://www.contentful.com) and powered by [Storybook](https://storybook.js.org/) and (Next.js)[https://nextjs.org/].
+A React component library for the [Forma 36](https://f36.contentful.com/) design system created by [Contentful](https://www.contentful.com).
 
 ## Table of contents
 
@@ -11,7 +11,6 @@ A React component library for [Forma 36](https://f36.contentful.com/) design sys
   - [Installing package](#installing-package)
   - [Usage](#usage)
     - [Import desired component into your project](#import-desired-component-into-your-project)
-    - [Import styles](#import-styles)
   - [Development](#development)
     - [Storybook](#storybook)
     - [Example component directory structure](#example-component-directory-structure)
@@ -47,7 +46,7 @@ import { Button } from '@contentful/f36-components';
 
 ## Development
 
-For local development, in the root of the repo run `yarn` to install all dependencies and then `yarn build` to build all packages.
+For local development, in the root of the repo run `npm i` to install all dependencies and then `npm run-script build` to build all packages.
 This package depends on several other Forma 36 packages so you will need to build all of them.
 
 ### Storybook
@@ -55,7 +54,7 @@ This package depends on several other Forma 36 packages so you will need to buil
 We use [Storybook](https://storybook.js.org/) to create a development environment for our component library. To start it locally run:
 
 ```bash
-yarn storybook
+npm run-script storybook
 ```
 
 When creating new component, before you start, please have a look at our [contribution model for Forma 36](https://f36.contentful.com/introduction/contributing).
@@ -80,7 +79,7 @@ A component's directory should resemble the following:
 
 For more detailes you can have a look in document that describes [folder structure in details](https://github.com/contentful/forma-36/blob/main/docs/folder-structure.md).
 
-> If you use `yarn generate` in the root of the repo, this structure will be created automatically for you
+> If you use `npm run-script generate` in the root of the repo, this structure will be created automatically for you
 
 ### Code Style Guide
 
@@ -121,23 +120,23 @@ Tests are kept next to their components and use the `.test.js` file extension.
 ### Run tests
 
 ```bash
-yarn test
+npm run-script test
 ```
 
 It is recommended to run tests in development with the optional `--watch` flag.
 
 ```bash
-yarn test --watch
+npm run-script test --watch
 ```
 
 ## Building
 
-We are using a combination of [Webpack](https://webpack.js.org/) and [Babel](https://babeljs.io/) to create builds of our component library. We use Webpack with the `tools/webpack.production.config.js` config to build a stylesheet including all CSS used for our components using the ExtractTextPlugin. Babel is used for transpiling our React components into CommonJS modules. Babel and Webpack both output the build to the `dist` directory.
+We are using [Parcel](https://parceljs.org/) to build our component library. Each component builds to its own `dist` directory.
 
 ### Create a build of the library
 
 ```bash
-yarn build
+npm run-script build
 ```
 
 ## Commits
@@ -147,5 +146,5 @@ This project uses the [Angular JS Commit Message Conventions](https://docs.googl
 You can commit the changes by running
 
 ```bash
-yarn commit
+npm run-script commit
 ```

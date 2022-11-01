@@ -1,15 +1,14 @@
 {
   "name": "@contentful/f36-core",
-  "version": "4.10.5",
+  "version": "4.21.3",
   "description": "Forma 36 core",
   "license": "MIT",
   "files": [
     "dist"
   ],
-  "main": "dist/main.js",
-  "module": "dist/module.js",
-  "types": "dist/types.d.ts",
-  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
   "sideEffects": false,
   "browserslist": "extends @contentful/browserslist-config",
   "repository": {
@@ -17,13 +16,13 @@
     "url": "https://github.com/contentful/forma-36"
   },
   "scripts": {
-    "build": "parcel build src/index.ts"
+    "build": "tsup"
   },
   "dependencies": {
-    "@babel/runtime": "^7.6.2",
     "@contentful/f36-tokens": "^4.0.1",
     "@emotion/core": "^10.1.1",
-    "@emotion/is-prop-valid": "^1.1.0",
+    "@emotion/is-prop-valid": "^1.2.0",
+    "csstype": "^3.1.1",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {

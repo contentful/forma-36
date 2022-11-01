@@ -1,10 +1,10 @@
 ---
 title: 'Calendar'
-status: 'alpha'
+status: 'stable'
 isNew: true
 slug: /components/calendar/
 github: 'https://github.com/contentful/forma-36/tree/main/packages/components/datepicker/src/Calendar'
-storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-datepicker-calendar--default'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-datepicker-calendar--default'
 section: 'dateComponents'
 typescript: ./Calendar.tsx
 ---
@@ -18,6 +18,8 @@ The component is built on top of React Day Picker, see full documentation: https
 ## Import
 
 ```jsx static=true
+import { Calendar } from '@contentful/f36-components';
+// or
 import { Calendar } from '@contentful/f36-datepicker';
 ```
 
@@ -48,6 +50,16 @@ Use modifiers to modify certain days, for example showing incators for scheduled
 Read more about modifiers: https://react-day-picker.js.org/basics/modifiers
 
 ```jsx file=../../examples/Calendar/Indicator.tsx
+
+```
+
+### Custom Day content
+
+Use components to modify certain parts of the calendar, for example modifying day content
+
+Read more about custom components: https://react-day-picker.js.org/guides/custom-components
+
+```jsx file=../../examples/Calendar/CustomDayContent.tsx
 
 ```
 

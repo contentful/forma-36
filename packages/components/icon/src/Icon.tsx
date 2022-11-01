@@ -1,26 +1,26 @@
 import { css, cx } from 'emotion';
-import React, { forwardRef } from 'react';
-import tokens from '@contentful/f36-tokens';
-import { Box } from '@contentful/f36-core';
-import type {
-  CommonProps,
-  PolymorphicComponent,
-  PolymorphicProps,
-  ExpandProps,
-} from '@contentful/f36-core';
-import type {
-  ComponentType,
-  ExoticComponent,
-  ReactElement,
-  SVGAttributes,
+import React, {
+  forwardRef,
+  type ComponentType,
+  type ExoticComponent,
+  type ReactElement,
+  type SVGAttributes,
 } from 'react';
+import tokens from '@contentful/f36-tokens';
+import {
+  Box,
+  type CommonProps,
+  type PolymorphicComponent,
+  type PolymorphicProps,
+  type ExpandProps,
+} from '@contentful/f36-core';
 
 const ICON_DEFAULT_TAG = 'svg';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type IconComponent = ExoticComponent<any> | ComponentType<any>;
 
-export type IconSize = 'large' | 'medium' | 'small' | 'tiny';
+export type IconSize = 'xlarge' | 'large' | 'medium' | 'small' | 'tiny';
 
 export type IconVariant =
   | 'negative'
@@ -32,6 +32,10 @@ export type IconVariant =
   | 'white';
 
 const sizes: { [key in IconSize]: { [key in 'height' | 'width']: string } } = {
+  xlarge: {
+    height: '48px',
+    width: '48px',
+  },
   large: {
     height: '32px',
     width: '32px',
@@ -80,13 +84,12 @@ export type IconInternalProps = CommonProps & {
   viewBox?: SVGAttributes<SVGSVGElement>['viewBox'];
 };
 
-export type IconProps<
-  E extends React.ElementType = IconComponent
-> = PolymorphicProps<
-  IconInternalProps,
-  E,
-  'as' | 'children' | 'width' | 'height'
->;
+export type IconProps<E extends React.ElementType = IconComponent> =
+  PolymorphicProps<
+    IconInternalProps,
+    E,
+    'as' | 'children' | 'width' | 'height'
+  >;
 
 const useAriaHidden = (
   props: Pick<

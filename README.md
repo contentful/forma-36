@@ -26,31 +26,22 @@
 
 ### Creating new packages
 
-We use use [Plop](https://plopjs.com/) to create scripts that help you to scaffold new packages. In the root of the repo, you can run `yarn generate`. Then follow the steps in the CLI. Plop will generate the relevant files and add the relevant imports and exports to the main `src/index.ts` file required to make the component available when publishing the library. Read more about [contribution to Forma 36](https://f36.contentful.com/introduction/contributing).
+We use use [Plop](https://plopjs.com/) to create scripts that help you to scaffold new packages. In the root of the repo, you can run `npm run-script generate`. Then follow the steps in the CLI. Plop will generate the relevant files and add the relevant imports and exports to the main `src/index.ts` file required to make the component available when publishing the library. Read more about [contribution to Forma 36](https://f36.contentful.com/introduction/contributing).
 
 ## Development
 
-_Note: The default branch has been renamed! `master` is now named `main`. If you have a local clone, you can update it by running the following commands._
-
-```bash
-git branch -m master main
-git fetch origin
-git branch -u origin/main main
-git remote set-head origin -a
-```
-
-For local development, in the root of the repo run `yarn` to install all dependencies and then `yarn build` to build all packages. Now follow the instructions of the specific package you’re working on.
+For local development, in the root of the repo run `npm i` to install all dependencies and then `npm run-script build` to build all packages. Now follow the instructions of the specific package you’re working on.
 You will find each package’s instructions in their README files, check the [Packages](#packages) section for a list of all packages.
 
 > In case you are having problems to install the dependencies, try using NVM to get the same node version we use by running `nvm use` in the root of the repo
 
 ### Storybook for f36-components
 
-We use storybook with our react component library to develop components. You can start it from the root of the repo, just run `yarn storybook`
+We use storybook with our react component library to develop components. You can start it from the root of the repo, just run `npm run-script storybook`
 
 ## Commits & releases
 
-Use `yarn commit`. This uses the [Commitzen](https://github.com/commitizen/cz-cli) CLI to create a conventional commit message based on your changes. CI is setup to release all new commits on the main branch that contains a new [changeset](https://github.com/changesets/changesets).
+Use `npm run-script commit`. This uses the [Commitzen](https://github.com/commitizen/cz-cli) CLI to create a conventional commit message based on your changes. CI is setup to release all new commits on the main branch that contains a new [changeset](https://github.com/changesets/changesets).
 
 Read more about changeset [here](RELEASES.md)
 
@@ -58,9 +49,9 @@ Read more about changeset [here](RELEASES.md)
 
 You can test changes to a package of this monorepo in your own project locally by taking the following steps:
 
-1. Run `yarn build` in the desired package's directory to ensure your latest changes have been built
-2. Run `yarn link` in the desired package's directory
-3. Change to your local project's directory and run `yarn link NAME_OF_PACKAGE` to link to the local version of the package (e.g. `yarn link @contentful/f36-components`)
+1. Run `npm run-script build` in the desired package's directory to ensure your latest changes have been built
+2. Run `npm link` in the desired package's directory
+3. Change to your local project's directory and run `npm link NAME_OF_PACKAGE` to link to the local version of the package (e.g. `npm link @contentful/f36-components`)
 
 ## Get involved
 
@@ -182,6 +173,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://bgutsol.com/"><img src="https://avatars.githubusercontent.com/u/10744462?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bohdan Hutsol</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=bgutsol" title="Code">💻</a> <a href="#maintenance-bgutsol" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://github.com/ghepting"><img src="https://avatars.githubusercontent.com/u/492573?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gary Hepting</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3Aghepting" title="Bug reports">🐛</a> <a href="https://github.com/contentful/forma-36/commits?author=ghepting" title="Code">💻</a></td>
     <td align="center"><a href="https://rowadz.com/"><img src="https://avatars.githubusercontent.com/u/38977667?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rowadz</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=MohammedAl-Rowad" title="Code">💻</a></td>
+    <td align="center"><a href="http://t.me/maxcheremisin"><img src="https://avatars.githubusercontent.com/u/22265863?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Maxim Cheremisin</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=maxcheremisin" title="Code">💻</a></td>
   </tr>
 </table>
 

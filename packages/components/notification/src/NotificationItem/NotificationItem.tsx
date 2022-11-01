@@ -5,15 +5,19 @@ import {
   ErrorCircleIcon,
   WarningIcon,
   CloseIcon,
+  InfoCircleIcon,
 } from '@contentful/f36-icons';
-
 import { Button } from '@contentful/f36-button';
 import { TextLink } from '@contentful/f36-text-link';
-import { Flex, Box } from '@contentful/f36-core';
-import type { ExpandProps, CommonProps } from '@contentful/f36-core';
+import {
+  Flex,
+  Box,
+  type ExpandProps,
+  type CommonProps,
+} from '@contentful/f36-core';
 import { Heading, Paragraph } from '@contentful/f36-typography';
 
-import { NotificationVariant, NotificationCta } from '../types';
+import type { NotificationVariant, NotificationCta } from '../types';
 import { getStyles } from './NotificationItem.styles';
 
 export interface NotificationItemProps extends CommonProps {
@@ -65,12 +69,14 @@ const _NotificationItem = (props: ExpandProps<NotificationItemProps>, ref) => {
     positive: <CheckCircleIcon variant={variant} size={iconSize} />,
     warning: <WarningIcon variant={variant} size={iconSize} />,
     negative: <ErrorCircleIcon variant={variant} size={iconSize} />,
+    primary: <InfoCircleIcon variant={variant} size={iconSize} />,
   };
 
   const intents = {
     positive: 'success',
     warning: 'warning',
     negative: 'error',
+    primary: 'info',
   };
 
   return (

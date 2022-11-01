@@ -1,13 +1,13 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-
-import { TextLink } from '../src/TextLink';
 import * as icons from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
 import { Paragraph, Text } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
-import { TextLinkVariant } from '../src/types';
+
+import { TextLink } from '../src/TextLink';
+import type { TextLinkVariant } from '../src/types';
 
 export default {
   component: TextLink,
@@ -64,7 +64,12 @@ export const UsedWithText = () => {
         Brandenburg
       </TextLink>
       , and contiguous with{' '}
-      <TextLink href="https://www.wikiwand.com/en/Potsdam" target="_blank">
+      <TextLink
+        href="https://www.wikiwand.com/en/Potsdam"
+        icon={<Icon as={icons.ExternalLinkIcon} />}
+        alignIcon="start"
+        target="_blank"
+      >
         Potsdam
       </TextLink>
       , Brandenburg’s capital. The two cities are at the center of the

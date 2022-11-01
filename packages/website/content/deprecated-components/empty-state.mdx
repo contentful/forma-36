@@ -1,8 +1,9 @@
 ---
 title: 'EmptyState'
 status: 'deprecated'
-slug: '/deprecated-components/empty-state/'
+slug: '/components/empty-state/'
 section: 'deprecatedComponents'
+isDeprecated: true
 ---
 
 ## Empty State component was removed in version 4
@@ -17,14 +18,13 @@ You must migrate existing code:
 <EmptyState
   headingProps={{ text: 'Heading' }}
   imageProps={{
-    url: 'https://via.placeholder.com/200x200',
+    url: 'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=200',
     width: '340px',
     height: '250px',
     description: 'Image descriptionProps',
   }}
   descriptionProps={{
-    text:
-      'This is a descriptionProps for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.',
+    text: 'This is a descriptionProps for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.',
   }}
 />
 ```
@@ -34,16 +34,19 @@ to:
 ```tsx
 <Flex flexDirection="column" justifyContent="center" alignItems="center">
   <Flex flexDirection="column" justifyContent="center" alignItems="center">
-    <img src="https://via.placeholder.com/200x200" alt="Illustration" />
+    <img
+      src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=200"
+      alt="Illustration"
+    />
     <Subheading marginTop="spacingM" marginBottom="spacingM">
       Heading
     </Subheading>
     <Paragraph>
       {' '}
-      This is a descriptionProps for the empty state. Lorem ipsum dolor sit
-      amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor
-      porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus
-      hendrerit sem. Aliquam ultricies viverra tincidunt.{' '}
+      This is a descriptionProps for the empty state. Lorem ipsum dolor sit amet,
+      consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit
+      nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam
+      ultricies viverra tincidunt.{' '}
     </Paragraph>
   </Flex>
 </Flex>

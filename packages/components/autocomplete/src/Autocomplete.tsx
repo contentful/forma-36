@@ -2,13 +2,15 @@ import React, { useCallback, useState } from 'react';
 import { cx } from 'emotion';
 import { useCombobox } from 'downshift';
 
-import { mergeRefs } from '@contentful/f36-core';
-import type { CommonProps, ExpandProps } from '@contentful/f36-core';
+import {
+  mergeRefs,
+  type CommonProps,
+  type ExpandProps,
+} from '@contentful/f36-core';
 import { IconButton } from '@contentful/f36-button';
-import { TextInput } from '@contentful/f36-forms';
-import type { TextInputProps } from '@contentful/f36-forms';
+import { TextInput, type TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
-import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
+import { Skeleton } from '@contentful/f36-skeleton';
 import { Popover } from '@contentful/f36-popover';
 import { Subheading, SectionHeading } from '@contentful/f36-typography';
 
@@ -37,6 +39,11 @@ export interface AutocompleteProps<ItemType>
    * This can either be a plain list of items or a list of groups of items.
    */
   items: ItemType[] | GenericGroupType<ItemType>[];
+
+  /**
+   * Set a custom icon for the text input
+   */
+  icon?: React.ReactElement;
 
   /**
    * Tells if the item is a object with groups
@@ -85,6 +92,11 @@ export interface AutocompleteProps<ItemType>
    * @default "Search"
    */
   placeholder?: string;
+  /**
+   * Defines if the list should be shown even if empty, when input is focused
+   * @default false
+   */
+  showEmptyList?: boolean;
   /**
    * A message that will be shown when it is not possible to find any option that matches the input value
    * @default "No matches"
@@ -142,11 +154,13 @@ function _Autocomplete<ItemType>(
     onInputValueChange,
     onSelectItem,
     renderItem,
-    itemToString = (item: ItemType) => (item as unknown) as string,
+    icon = <ChevronDownIcon variant="muted" />,
+    itemToString = (item: ItemType) => item as unknown as string,
     isInvalid,
     isDisabled,
     isRequired,
     isReadOnly,
+    showEmptyList,
     noMatchesMessage = 'No matches found',
     placeholder = 'Search',
     inputRef,
@@ -287,16 +301,10 @@ function _Autocomplete<ItemType>(
             <IconButton
               {...toggleProps}
               ref={mergeRefs(toggleProps.ref, toggleRef)}
-              aria-label="toggle menu"
+              aria-label={inputValue ? 'Clear' : 'Show list'}
               className={styles.toggleButton}
               variant="transparent"
-              icon={
-                inputValue ? (
-                  <CloseIcon aria-label="Clear" variant="muted" />
-                ) : (
-                  <ChevronDownIcon aria-label="Show list" variant="muted" />
-                )
-              }
+              icon={inputValue ? <CloseIcon variant="muted" /> : icon}
               onClick={() => {
                 if (inputValue) {
                   handleInputValueChange('');
@@ -310,70 +318,76 @@ function _Autocomplete<ItemType>(
           </div>
         </Popover.Trigger>
 
-        <Popover.Content
-          {...menuProps}
-          ref={mergeRefs(menuProps.ref, listRef)}
-          className={styles.content}
-          testId="cf-autocomplete-container"
-        >
-          {isLoading &&
-            [...Array(3)].map((_, index) => (
-              <div key={index} className={cx(styles.item, styles.disabled)}>
-                <ListItemLoadingState />
-              </div>
-            ))}
-
-          {!isLoading && isShowingNoMatches && (
-            <div className={styles.item}>
-              <Subheading className={styles.noMatchesTitle}>
-                {noMatchesMessage}
-              </Subheading>
-            </div>
-          )}
-
-          {!isLoading &&
-            isUsingGroups(isGrouped, items) &&
-            items.map((group: GroupType, index: number) => {
-              if (group.options.length < 1) {
-                return;
-              }
-              const render = (
-                <div key={index}>
-                  <SectionHeading
-                    key={index}
-                    data-test-id="cf-autocomplete-grouptitle"
-                    marginBottom="none"
-                    className={styles.groupTitle}
-                  >
-                    {group.groupTitle}
-                  </SectionHeading>
-                  <AutocompleteItems<ItemType>
-                    items={group.options}
-                    highlightedIndex={highlightedIndex}
-                    getItemProps={getItemProps}
-                    renderItem={renderItem}
-                    inputValue={inputValue}
-                    elementStartIndex={elementStartIndex}
-                  />
+        {items.length > 0 || inputValue.length > 0 || showEmptyList ? (
+          <Popover.Content
+            {...menuProps}
+            ref={mergeRefs(menuProps.ref, listRef)}
+            className={styles.content}
+            testId="cf-autocomplete-container"
+          >
+            {isLoading &&
+              [...Array(3)].map((_, index) => (
+                <div key={index} className={cx(styles.item, styles.disabled)}>
+                  <ListItemLoadingState />
                 </div>
-              );
-              elementStartIndex += group.options.length;
-              return render;
-            })}
+              ))}
 
-          {!isLoading &&
-            !isUsingGroups(isGrouped, items) &&
-            items.length > 0 && (
-              <AutocompleteItems<ItemType>
-                items={items}
-                elementStartIndex={elementStartIndex}
-                highlightedIndex={highlightedIndex}
-                getItemProps={getItemProps}
-                renderItem={renderItem}
-                inputValue={inputValue}
-              />
+            {!isLoading && isShowingNoMatches && (
+              <div className={styles.item}>
+                <Subheading className={styles.noMatchesTitle}>
+                  {noMatchesMessage}
+                </Subheading>
+              </div>
             )}
-        </Popover.Content>
+
+            {!isLoading &&
+              isUsingGroups(isGrouped, items) &&
+              items.map((group: GroupType, index: number) => {
+                if (group.options.length < 1) {
+                  return;
+                }
+                const render = (
+                  <div key={index}>
+                    <SectionHeading
+                      key={index}
+                      data-test-id="cf-autocomplete-grouptitle"
+                      marginBottom="none"
+                      className={styles.groupTitle}
+                    >
+                      {group.groupTitle}
+                    </SectionHeading>
+                    <AutocompleteItems<ItemType>
+                      items={group.options}
+                      highlightedIndex={highlightedIndex}
+                      getItemProps={getItemProps}
+                      renderItem={renderItem}
+                      inputValue={inputValue}
+                      elementStartIndex={elementStartIndex}
+                    />
+                  </div>
+                );
+                elementStartIndex += group.options.length;
+                return render;
+              })}
+
+            {!isLoading &&
+              !isUsingGroups(isGrouped, items) &&
+              items.length > 0 && (
+                <AutocompleteItems<ItemType>
+                  items={items}
+                  elementStartIndex={elementStartIndex}
+                  highlightedIndex={highlightedIndex}
+                  getItemProps={getItemProps}
+                  renderItem={renderItem}
+                  inputValue={inputValue}
+                />
+              )}
+          </Popover.Content>
+        ) : (
+          // We need to render an empty hidden div, so we can pass the menuProps or downshift will show a warning about it
+          // https://github.com/downshift-js/downshift/issues/1167#issuecomment-1088022842
+          <div {...menuProps} className={cx(styles.hidden)} />
+        )}
       </Popover>
     </div>
   );
@@ -381,9 +395,9 @@ function _Autocomplete<ItemType>(
 
 const ListItemLoadingState = () => {
   return (
-    <SkeletonContainer svgHeight={16}>
-      <SkeletonBodyText numberOfLines={1} />
-    </SkeletonContainer>
+    <Skeleton.Container svgHeight={16}>
+      <Skeleton.BodyText numberOfLines={1} />
+    </Skeleton.Container>
   );
 };
 

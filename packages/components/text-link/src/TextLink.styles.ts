@@ -63,6 +63,7 @@ const textLink = ({
     boxSizing: 'border-box',
     border: 0,
     padding: 0,
+    margin: 0, // remove the default button margin in Safari.
     fontFamily: tokens.fontStackPrimary,
     fontSize: tokens.fontSizeM,
     fontWeight: tokens.fontWeightMedium,
@@ -76,6 +77,7 @@ const textLink = ({
     opacity: isDisabled ? 0.5 : 1,
     ...variantToStyles(variant),
     outline: 'none',
+    verticalAlign: 'bottom',
     '&:focus, &:focus-visible, &:hover': {
       textDecoration: isDisabled ? 'none' : 'underline',
     },

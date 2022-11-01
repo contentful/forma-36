@@ -1,5 +1,205 @@
 # Change Log
 
+## 4.20.4
+
+### Patch Changes
+
+- [#2236](https://github.com/contentful/forma-36/pull/2236) [`b0677fe7`](https://github.com/contentful/forma-36/commit/b0677fe7e3ac0062d93065bcfba1b1ba66b8b10a) Thanks [@bgutsol](https://github.com/bgutsol)! - Fix Workbench styles to prevent additional scroll on a page
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.4
+  - @contentful/f36-icon@4.20.4
+  - @contentful/f36-icons@4.20.4
+  - @contentful/f36-typography@4.20.4
+  - @contentful/f36-core@4.20.4
+
+## 4.20.3
+
+### Patch Changes
+
+- Updated dependencies [[`d3c27ab8`](https://github.com/contentful/forma-36/commit/d3c27ab830ec9c2cc096e8be33da496c2dc284ea)]:
+  - @contentful/f36-core@4.20.3
+  - @contentful/f36-button@4.20.3
+  - @contentful/f36-icon@4.20.3
+  - @contentful/f36-icons@4.20.3
+  - @contentful/f36-typography@4.20.3
+
+## 4.20.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.2
+  - @contentful/f36-icon@4.20.2
+  - @contentful/f36-icons@4.20.2
+  - @contentful/f36-typography@4.20.2
+  - @contentful/f36-core@4.20.2
+
+## 4.20.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.1
+  - @contentful/f36-icon@4.20.1
+  - @contentful/f36-icons@4.20.1
+  - @contentful/f36-typography@4.20.1
+  - @contentful/f36-core@4.20.1
+
+## 4.20.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.20.0
+  - @contentful/f36-icon@4.20.0
+  - @contentful/f36-icons@4.20.0
+  - @contentful/f36-typography@4.20.0
+  - @contentful/f36-core@4.20.0
+
+## 4.19.2
+
+### Patch Changes
+
+- Updated dependencies [[`9647d295`](https://github.com/contentful/forma-36/commit/9647d295763c6518fe6d381d79a53524ac104d92)]:
+  - @contentful/f36-typography@4.19.2
+  - @contentful/f36-button@4.19.2
+  - @contentful/f36-icon@4.19.2
+  - @contentful/f36-icons@4.19.2
+  - @contentful/f36-core@4.19.2
+
+## 4.19.1
+
+### Patch Changes
+
+- Updated dependencies [[`42f0c321`](https://github.com/contentful/forma-36/commit/42f0c3218965137191842f492fe5dbf4bd10784c)]:
+  - @contentful/f36-button@4.19.1
+  - @contentful/f36-icon@4.19.1
+  - @contentful/f36-icons@4.19.1
+  - @contentful/f36-typography@4.19.1
+  - @contentful/f36-core@4.19.1
+
+## 4.19.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.19.0
+  - @contentful/f36-icon@4.19.0
+  - @contentful/f36-icons@4.19.0
+  - @contentful/f36-typography@4.19.0
+  - @contentful/f36-core@4.19.0
+
+## 4.18.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.18.0
+  - @contentful/f36-icon@4.18.0
+  - @contentful/f36-icons@4.18.0
+  - @contentful/f36-typography@4.18.0
+  - @contentful/f36-core@4.18.0
+
+## 4.17.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.17.0
+  - @contentful/f36-icon@4.17.0
+  - @contentful/f36-icons@4.17.0
+  - @contentful/f36-typography@4.17.0
+  - @contentful/f36-core@4.17.0
+
+## 4.16.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.16.0
+  - @contentful/f36-icon@4.16.0
+  - @contentful/f36-icons@4.16.0
+  - @contentful/f36-typography@4.16.0
+  - @contentful/f36-core@4.16.0
+
+## 4.15.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.15.1
+  - @contentful/f36-icon@4.15.1
+  - @contentful/f36-icons@4.15.1
+  - @contentful/f36-typography@4.15.1
+  - @contentful/f36-core@4.15.1
+
+## 4.15.0
+
+### Patch Changes
+
+- Updated dependencies [[`647c849e`](https://github.com/contentful/forma-36/commit/647c849e30891f65be401e95d2ae45b5a715da36)]:
+  - @contentful/f36-icon@4.15.0
+  - @contentful/f36-button@4.15.0
+  - @contentful/f36-icons@4.15.0
+  - @contentful/f36-typography@4.15.0
+  - @contentful/f36-core@4.15.0
+
+## 4.14.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.14.0
+  - @contentful/f36-icon@4.14.0
+  - @contentful/f36-icons@4.14.0
+  - @contentful/f36-typography@4.14.0
+  - @contentful/f36-core@4.14.0
+
+## 4.13.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.13.0
+  - @contentful/f36-icon@4.13.0
+  - @contentful/f36-icons@4.13.0
+  - @contentful/f36-typography@4.13.0
+  - @contentful/f36-core@4.13.0
+
+## 4.12.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.12.0
+  - @contentful/f36-icon@4.12.0
+  - @contentful/f36-icons@4.12.0
+  - @contentful/f36-typography@4.12.0
+  - @contentful/f36-core@4.12.0
+
+## 4.11.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.11.0
+  - @contentful/f36-icon@4.11.0
+  - @contentful/f36-icons@4.11.0
+  - @contentful/f36-typography@4.11.0
+  - @contentful/f36-core@4.11.0
+
+## 4.11.0-beta.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.11.0-beta.0
+  - @contentful/f36-icon@4.11.0-beta.0
+  - @contentful/f36-icons@4.11.0-beta.0
+  - @contentful/f36-typography@4.11.0-beta.0
+  - @contentful/f36-core@4.11.0-beta.0
+
 ## 4.10.5
 
 ### Patch Changes

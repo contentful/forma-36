@@ -1,7 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  stories: ['./docs/**/*.stories.mdx', '../../packages/**/*.stories.@(ts|md)x'],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
@@ -15,6 +14,14 @@ module.exports = {
       },
     },
   ],
+
+  core: {
+    builder: 'webpack5',
+  },
+
+  staticDirs: ['./public'],
+
+  stories: ['./docs/**/*.stories.mdx', '../../packages/**/*.stories.@(ts|md)x'],
 
   webpackFinal: async (config, { configType }) => {
     // We need to split into chunks to avoid terser running out of memory

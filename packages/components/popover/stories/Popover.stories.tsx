@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-
-import { Popover } from '../src/.';
-import type { PopoverProps } from '../src/.';
 import { Button } from '@contentful/f36-button';
 import { Paragraph } from '@contentful/f36-typography';
-import { Box } from '@contentful/f36-core';
-import { Stack } from '@contentful/f36-core';
+import { Box, Stack } from '@contentful/f36-core';
 import { Switch } from '@contentful/f36-forms';
 import FocusLock from 'react-focus-lock';
+
+import { Popover, type PopoverProps } from '../src/.';
 
 export default {
   component: Popover,

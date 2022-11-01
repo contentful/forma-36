@@ -98,6 +98,7 @@ const getSwitchStyles = ({ isDisabled, size }) => {
     borderRadius: tokens.borderRadiusSmall,
     justifyContent: 'space-around',
     position: 'relative',
+    flexShrink: 0,
     '&:before': {
       background: tokens.colorWhite,
       borderRadius: `calc(${tokens.borderRadiusSmall}/2)`,

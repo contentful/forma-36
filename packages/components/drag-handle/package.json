@@ -1,14 +1,13 @@
 {
   "name": "@contentful/f36-drag-handle",
-  "version": "4.10.5",
+  "version": "4.21.3",
   "description": "Forma 36: DragHandle component",
   "scripts": {
-    "build": "parcel build"
+    "build": "tsup"
   },
   "dependencies": {
-    "@babel/runtime": "^7.6.2",
-    "@contentful/f36-core": "^4.10.5",
-    "@contentful/f36-icons": "^4.10.5",
+    "@contentful/f36-core": "^4.21.3",
+    "@contentful/f36-icons": "^4.21.3",
     "@contentful/f36-tokens": "^4.0.1",
     "emotion": "^10.0.17"
   },
@@ -19,9 +18,9 @@
   "files": [
     "dist"
   ],
-  "main": "dist/main.js",
-  "module": "dist/module.js",
-  "types": "dist/types.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
   "source": "src/index.ts",
   "sideEffects": false,
   "browserslist": "extends @contentful/browserslist-config",

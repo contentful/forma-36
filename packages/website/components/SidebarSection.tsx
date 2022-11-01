@@ -4,6 +4,13 @@ import tokens from '@contentful/f36-tokens';
 import { List, Text } from '@contentful/f36-components';
 
 import { SidebarLink, SidebarSectionButton } from './SidebarLink';
+import { useCurrentLocation } from '../hooks/useCurrentLocation';
+import type {
+  SidebarLink as SidebarLinkType,
+  SidebarSection as SidebarSectionType,
+  SidebarSubsection as SidebarSubsectionType,
+} from '../types';
+import { useSession } from 'next-auth/react';
 
 const styles = {
   list: css({
@@ -24,33 +31,25 @@ const styles = {
   }),
 };
 
-const isLinkActive = (href, currentPage) =>
-  currentPage.replace(/\/$/, '') === href.replace(/\/$/, '');
+const isLinkActive = (href, currentPage) => {
+  const linkedPage = href.split('/').pop();
+  return linkedPage === currentPage;
+};
 
-export type SidebarLinkType = {
-  title: string;
-  slug: string;
-  type: 'link';
-  isNew?: boolean;
-};
-export type SidebarSectionType = {
-  title: string;
-  links: SidebarLinkType[];
-  type: 'section';
-};
+function linkIsSubsection(
+  link: SidebarLinkType | SidebarSectionType,
+): link is SidebarSectionType {
+  return link.type === 'subsection';
+}
 
 interface SidebarSubsectionProps {
   title?: string;
   links: SidebarLinkType[];
-  currentPage: string;
 }
 
-function SidebarSubsection({
-  title,
-  links = [],
-  currentPage,
-}: SidebarSubsectionProps) {
+function SidebarSubsection({ title, links = [] }: SidebarSubsectionProps) {
   const [isOpen, setIsOpen] = useState(true);
+  const { currentPage } = useCurrentLocation();
 
   return (
     <List className={styles.sublist}>
@@ -65,36 +64,47 @@ function SidebarSubsection({
         </SidebarSectionButton>
       )}
 
-      {isOpen
-        ? links.map((link) => {
-            return (
-              <SidebarLink
-                key={link.slug}
-                isActive={isLinkActive(link.slug, currentPage)}
-                href={link.slug}
-                isNew={link.isNew}
-                paddingLeft="spacing2Xl"
-              >
-                {link.title}
-              </SidebarLink>
-            );
-          })
-        : null}
+      {isOpen &&
+        links.map((link) => {
+          return (
+            <SidebarLink
+              key={link.slug}
+              isActive={isLinkActive(link.slug, currentPage)}
+              href={link.slug}
+              isNew={link.isNew}
+              isBeta={link.isBeta}
+              isAlpha={link.isAlpha}
+              isDeprecated={link.isDeprecated}
+              isAuthProtected={link.authProtected}
+              paddingLeft="spacing2Xl"
+            >
+              {link.title}
+            </SidebarLink>
+          );
+        })}
     </List>
   );
 }
 
 interface SidebarSectionProps {
   title?: string;
-  links: Array<SidebarLinkType | SidebarSectionType>;
-  currentPage: string;
+  links: (SidebarLinkType | SidebarSubsectionType)[];
+  isAuthProtected?: boolean;
 }
 
 export function SidebarSection({
   title,
   links = [],
-  currentPage = '/',
+  isAuthProtected = false,
 }: SidebarSectionProps) {
+  const { currentPage } = useCurrentLocation();
+  const { data: session } = useSession();
+
+  // don't list auth protected sections in the sidebar if the user is not logged in.
+  if (isAuthProtected && !session) {
+    return null;
+  }
+
   return (
     <List className={styles.list}>
       {title && (
@@ -109,13 +119,12 @@ export function SidebarSection({
       )}
 
       {links.map((link) => {
-        if (link.type === 'section') {
+        if (linkIsSubsection(link)) {
           return (
             <SidebarSubsection
               key={link.title}
               title={link.title}
               links={link.links}
-              currentPage={currentPage}
             />
           );
         }
@@ -127,6 +136,10 @@ export function SidebarSection({
             href={link.slug}
             isExternal={link.slug.includes('https://')}
             isNew={link.isNew}
+            isBeta={link.isBeta}
+            isAlpha={link.isAlpha}
+            isDeprecated={link.isDeprecated}
+            isAuthProtected={link.authProtected}
           >
             {link.title}
           </SidebarLink>

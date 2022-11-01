@@ -7,8 +7,7 @@ import { MenuItem } from '@contentful/f36-menu';
 import { Button } from '@contentful/f36-button';
 import { FormControl, TextInput, Textarea, Form } from '@contentful/f36-forms';
 
-import { Card } from '../src';
-import type { CardProps } from '../src';
+import { Card, type CardProps } from '../src';
 
 export default {
   argTypes: {

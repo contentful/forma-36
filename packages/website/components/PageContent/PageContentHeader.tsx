@@ -43,7 +43,7 @@ interface PageContentHeaderProps {
 const getGithubIssueLink = (title) => {
   const queryParams = {
     title: `💬  Feedback - ${title}`,
-    assignees: 'm10l,burakukula,mshaaban0,gui-santos,denkristoffer,Lelith',
+    assignees: 'burakukula,mshaaban0,denkristoffer,Lelith',
     template: 'component-feedback.md',
   };
   const queryString = Object.keys(queryParams)
@@ -60,6 +60,7 @@ export function PageContentHeader({
   const gridStyles = getGridStyles();
   const isDeprecated = status === 'deprecated';
   const isAlpha = status === 'alpha';
+  const isBeta = status === 'beta';
   const showNote = isAlpha || isDeprecated;
 
   return (
@@ -89,16 +90,24 @@ export function PageContentHeader({
       {isDeprecated && (
         <Flex flexDirection="column" marginBottom="spacingXl">
           <Note variant="negative" title="Deprecated component">
-            {title} was deprecated in v4. It will be deleted from the repository
-            on 12th July 2022.
+            {title} component has been deprecated and is not supported or
+            recommended for use.
           </Note>
         </Flex>
       )}
 
-      {isAlpha && (
+      {(isAlpha || isBeta) && (
         <Flex flexDirection="column" marginBottom="spacingXl">
-          <Note variant="positive" title="Alpha component">
-            {title} is not ready to be used in production. Use at your own risk.
+          <Note
+            variant="neutral"
+            title={`${isAlpha ? 'Alpha' : 'Beta'} component`}
+          >
+            {isAlpha
+              ? `${title} component is subject to major changes and is for
+              experimentation purposes only. Not recommended for use in production
+              software.`
+              : `${title} component is ready to use but may have some bugs. Use in
+              production software with caution.`}
           </Note>
         </Flex>
       )}

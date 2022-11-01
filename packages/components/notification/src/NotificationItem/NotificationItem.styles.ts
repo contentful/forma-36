@@ -1,12 +1,13 @@
 import { css } from 'emotion';
 import type { CSSObject } from '@emotion/serialize';
 import tokens from '@contentful/f36-tokens';
-import { NotificationVariant } from '../types';
+import type { NotificationVariant } from '../types';
 
 const variantColors = {
   positive: tokens.green600,
   negative: tokens.red600,
   warning: tokens.orange400,
+  primary: tokens.blue600,
 };
 
 const getWrapperStyle = ({ variant }) =>
@@ -52,6 +53,8 @@ const titleStyle: CSSObject = {
 
 const contentStyle: CSSObject = {
   color: tokens.gray700,
+  wordBreak: 'break-word',
+  hyphens: 'auto',
   '&:last-child': {
     marginBottom: 0,
   },

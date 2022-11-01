@@ -1,6 +1,5 @@
 import { cx } from 'emotion';
-import React, { forwardRef } from 'react';
-import type { ReactNode } from 'react';
+import React, { forwardRef, type ReactNode } from 'react';
 import { getFormLabelStyles } from './FormLabel.styles';
 import { useFormControl } from '../FormControl/FormControlContext';
 import type {
@@ -40,11 +39,11 @@ export interface FormLabelInternalProps extends CommonProps, MarginProps {
 const FORM_LABEL_DEFAULT_TAG = 'label';
 
 export type FormLabelProps<
-  E extends React.ElementType = typeof FORM_LABEL_DEFAULT_TAG
+  E extends React.ElementType = typeof FORM_LABEL_DEFAULT_TAG,
 > = PolymorphicProps<FormLabelInternalProps, E>;
 
 function _FormLabel<
-  E extends React.ElementType = typeof FORM_LABEL_DEFAULT_TAG
+  E extends React.ElementType = typeof FORM_LABEL_DEFAULT_TAG,
 >(
   {
     as,

@@ -10,14 +10,12 @@ import { css, cx } from 'emotion';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import tokens from '@contentful/f36-tokens';
 import * as f36Components from '@contentful/f36-components';
-import { Datepicker, Calendar } from '@contentful/f36-datepicker';
 import * as f36utils from '@contentful/f36-utils';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
-import { Card, Button, CopyButton } from '@contentful/f36-components';
+import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
 import * as f36icons from '@contentful/f36-icons';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
-import { Flex } from '@contentful/f36-core';
 import { theme } from './theme';
 import { formatSourceCode } from './utils';
 import * as coder from '../../utils/coder';
@@ -28,13 +26,12 @@ import {
   SortableHandle,
 } from 'react-sortable-hoc';
 import arrayMove from 'array-move';
+import { format, parse, isValid } from 'date-fns';
 
 const liveProviderScope = {
   ...f36icons,
   ...f36Components,
   ...f36utils,
-  Datepicker,
-  Calendar,
   css,
   f36icons,
   tokens,
@@ -54,6 +51,9 @@ const liveProviderScope = {
   SortableElement,
   SortableHandle,
   arrayMove,
+  format,
+  parse,
+  isValid,
 };
 
 const styles = {

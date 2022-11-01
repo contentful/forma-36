@@ -14,17 +14,18 @@ import { Text } from '../Text';
 const SECTION_HEADING_DEFAULT_TAG = 'h2';
 
 export interface SectionHeadingInternalProps extends CommonProps, MarginProps {
+  children?: React.ReactNode;
   as?: HeadingElement;
   isTruncated?: boolean;
   isWordBreak?: boolean;
 }
 
 export type SectionHeadingProps<
-  E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG
+  E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG,
 > = PolymorphicProps<SectionHeadingInternalProps, E>;
 
 function _SectionHeading<
-  E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG
+  E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG,
 >(
   {
     children,

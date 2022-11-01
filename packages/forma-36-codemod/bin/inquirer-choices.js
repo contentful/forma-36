@@ -13,13 +13,11 @@ const PARSER_CHOICES = [
 
 const SETUP_CHOICES = [
   {
-    name:
-      'run-all-v4: Update package json with new packages and remove old ones, remove v3 CSS imports and run all possible codemods for components.',
+    name: 'run-all-v4: Update package json with new packages and remove old ones, remove v3 CSS imports and run all possible codemods for components.',
     value: 'run-all-v4',
   },
   {
-    name:
-      'update-package-json: Updates package.json file with correct packages, and remove v3 CSS imports',
+    name: 'update-package-json: Updates package.json file with correct packages, and remove v3 CSS imports',
     value: 'update-package-json',
   },
   {
@@ -27,8 +25,7 @@ const SETUP_CHOICES = [
     value: 'migrate-all-components-to-v4',
   },
   {
-    name:
-      'migrate-specific-component-to-v4: Select which v4 codemod you want to apply',
+    name: 'migrate-specific-component-to-v4: Select which v4 codemod you want to apply',
     value: 'migrate-specific-component-to-v4',
   },
 ];
@@ -47,8 +44,7 @@ const V4_CODEMODS = [
     value: 'v4-icon-button',
   },
   {
-    name:
-      'v4-badge: Converts Tag component from Forma v3 to Badge component from v4',
+    name: 'v4-badge: Converts Tag component from Forma v3 to Badge component from v4',
     value: 'v4-badge',
   },
   {
@@ -76,8 +72,7 @@ const V4_CODEMODS = [
     value: 'v4-spinner',
   },
   {
-    name:
-      'v4-modal: Converts Modal, ModalConfirm and ModalLauncher components from Forma v3 to v4',
+    name: 'v4-modal: Converts Modal, ModalConfirm and ModalLauncher components from Forma v3 to v4',
     value: 'v4-modal',
   },
   {
@@ -85,8 +80,7 @@ const V4_CODEMODS = [
     value: 'v4-select',
   },
   {
-    name:
-      'v4-typography: Converts all typography components from Forma v3 to v4',
+    name: 'v4-typography: Converts all typography components from Forma v3 to v4',
     value: 'v4-typography',
   },
   {
@@ -110,13 +104,11 @@ const V4_CODEMODS = [
     value: 'v4-icon',
   },
   {
-    name:
-      'v4-text-inputs: Converts TextInput and Textarea components from Forma v3 to v4',
+    name: 'v4-text-inputs: Converts TextInput and Textarea components from Forma v3 to v4',
     value: 'v4-text-inputs',
   },
   {
-    name:
-      'v4-checkbox: Converts CheckboxField component from Forma v3 to v4 Checkbox',
+    name: 'v4-checkbox: Converts CheckboxField component from Forma v3 to v4 Checkbox',
     value: 'v4-checkbox',
   },
   {
@@ -124,8 +116,7 @@ const V4_CODEMODS = [
     value: 'v4-form',
   },
   {
-    name:
-      'v4-radio: Converts RadioButton and RadioButtonField components from Forma v3 to v4',
+    name: 'v4-radio: Converts RadioButton and RadioButtonField components from Forma v3 to v4',
     value: 'v4-radio',
   },
   {
@@ -149,8 +140,7 @@ const V4_CODEMODS = [
     value: 'v4-entry-card',
   },
   {
-    name:
-      'v4-helptext: Migrates HelpText components outside form from v3 to v4',
+    name: 'v4-helptext: Migrates HelpText components outside form from v3 to v4',
     value: 'v4-helptext',
   },
   {
@@ -166,8 +156,7 @@ const V4_CODEMODS = [
 
 const TRANSFORMS_CHOICES = [
   {
-    name:
-      'color-tokens-to-new-tokens: Converts deprecated color tokens to the new ones',
+    name: 'color-tokens-to-new-tokens: Converts deprecated color tokens to the new ones',
     value: 'color-tokens-to-new-tokens',
   },
   new inquirer.Separator(),

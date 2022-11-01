@@ -35,6 +35,7 @@ export const getBaseCardStyles = () => {
         fontWeight: tokens.fontWeightNormal,
         position: 'relative',
         textDecoration: 'none',
+        margin: 0, // remove the default button margin in Safari.
         transition: `border-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault},
     box-shadow ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
 

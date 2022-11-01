@@ -21,7 +21,7 @@ module.exports = (api) => {
             },
           },
         ],
-        '@parcel/babel-preset-env',
+        '@babel/preset-env',
         ['@babel/preset-typescript', { allExtensions: true, isTSX: true }],
       ],
       plugins: [emotionPlugin],

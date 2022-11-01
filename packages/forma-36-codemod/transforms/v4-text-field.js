@@ -7,6 +7,10 @@ const {
   removeComponentImport,
   renameProperties,
   getChildren,
+  hasProperty,
+  updateIcons,
+  addIconImports,
+  updateComponentsToImport,
 } = require('../utils');
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
 const { isConditionalExpression } = require('../utils/updateTernaryValues');
@@ -14,7 +18,7 @@ const { isConditionalExpression } = require('../utils/updateTernaryValues');
 function textFieldCodemod(file, api) {
   const j = api.jscodeshift;
   let source = file.source;
-  let componentsToImport = ['FormControl', 'TextInput'];
+  let componentsToImport = ['FormControl'];
 
   const componentName = getComponentLocalName(j, source, {
     componentName: 'TextField',
@@ -24,6 +28,7 @@ function textFieldCodemod(file, api) {
   if (!componentName) {
     return source;
   }
+  const usedIcons = [];
 
   source = j(source)
     .find(j.JSXElement, { openingElement: { name: { name: componentName } } })
@@ -45,6 +50,18 @@ function textFieldCodemod(file, api) {
         ['testId', 'className'].includes(attribute.name?.name),
       );
       const formControlProps = [...commonProps, id, isRequired];
+
+      // Check if is textarea
+      const isTextarea = hasProperty(attributes, { propertyName: 'textarea' });
+      if (isTextarea) {
+        componentsToImport = updateComponentsToImport(componentsToImport, [
+          'Textarea',
+        ]);
+      } else {
+        componentsToImport = updateComponentsToImport(componentsToImport, [
+          'TextInput',
+        ]);
+      }
 
       // FormLabel
       const labelText = getProperty(attributes, { propertyName: 'labelText' });
@@ -72,14 +89,11 @@ function textFieldCodemod(file, api) {
       });
 
       if (textInputPropsObj) {
-        const {
-          isDisabled,
-          spreadedPropsNames,
-          ...otherProps
-        } = transformTextInputProps(textInputPropsObj, {
-          j,
-          attributes,
-        });
+        const { isDisabled, spreadedPropsNames, ...otherProps } =
+          transformObjectToProps(textInputPropsObj, {
+            j,
+            attributes,
+          });
 
         formControlProps.push(isDisabled);
         textInputProps.push(...Object.values(otherProps));
@@ -98,12 +112,78 @@ function textFieldCodemod(file, api) {
 
       const TextInput = createComponent({
         j,
-        componentName: 'TextInput',
+        componentName: isTextarea ? 'Textarea' : 'TextInput',
         props: textInputProps.filter(Boolean),
         isSelfClosing: true,
       });
 
-      const childrenComponents = [Label, TextInput];
+      let childrenComponents;
+
+      // TextLink Props
+      const textLinkPropsObj = getProperty(attributes, {
+        propertyName: 'textLinkProps',
+      });
+      if (textLinkPropsObj) {
+        let TextLink;
+
+        if (textLinkPropsObj.value.expression.type === 'Identifier') {
+          const objName = textLinkPropsObj.value.expression.name;
+          TextLink = createComponent({
+            j,
+            componentName: 'TextLink',
+            children: [
+              j.jsxExpressionContainer(j.identifier(`${objName}.text`)),
+            ],
+            props: [j.jsxSpreadAttribute(j.identifier(objName))],
+          });
+        }
+        if (textLinkPropsObj.value.expression.type === 'ObjectExpression') {
+          const { text, spreadedPropsNames, ...otherProps } =
+            transformObjectToProps(textLinkPropsObj, { j, attributes });
+          let textLinkProps = [];
+          spreadedPropsNames.forEach((name) =>
+            textLinkProps.push(j.jsxSpreadAttribute(j.identifier(name))),
+          );
+          textLinkProps.push(...Object.values(otherProps));
+
+          textLinkProps = updateIcons(textLinkProps, { j, icons: usedIcons });
+
+          TextLink = createComponent({
+            j,
+            componentName: 'TextLink',
+            children: [j.jsxText(text.value.value)],
+            props: textLinkProps,
+          });
+        }
+
+        const LabelContainer = createComponent({
+          j,
+          componentName: 'Flex',
+          children: [
+            j.jsxText('\n'),
+            Label,
+            j.jsxText('\n'),
+            TextLink,
+            j.jsxText('\n'),
+          ],
+          props: [
+            j.jsxAttribute(
+              j.jsxIdentifier('justifyContent'),
+              j.literal('space-between'),
+            ),
+            j.jsxAttribute(j.jsxIdentifier('alignItems'), j.literal('center')),
+          ],
+        });
+
+        componentsToImport = updateComponentsToImport(componentsToImport, [
+          'Flex',
+          'TextLink',
+        ]);
+
+        childrenComponents = [LabelContainer, TextInput];
+      } else {
+        childrenComponents = [Label, TextInput];
+      }
 
       // If the maxLength prop exists, we need to create a Flex component
       // and add to it the FormControl.Counter and FormControl.HelpText
@@ -148,9 +228,9 @@ function textFieldCodemod(file, api) {
           ),
         });
 
-        if (!componentsToImport.includes('Flex')) {
-          componentsToImport.push('Flex');
-        }
+        componentsToImport = updateComponentsToImport(componentsToImport, [
+          'Flex',
+        ]);
 
         childrenComponents.push(Flex);
       } else if (HelpText && !Counter) {
@@ -213,24 +293,24 @@ function textFieldCodemod(file, api) {
 
           formControlProps.push(isInvalid);
         } else if (value.type === 'JSXExpressionContainer') {
-          const variableName = j.identifier(value.expression.name);
+          const expression = value.expression;
 
           const Component = createComponent({
             j,
             componentName: 'FormControl.ValidationMessage',
-            children: [j.jsxExpressionContainer(variableName)],
+            children: [j.jsxExpressionContainer(expression)],
           });
 
           // Creates logical AND expression that will render FormControl.ValidationMessage if the variable is not Falsy
           ValidationMessage = j.jsxExpressionContainer(
-            j.logicalExpression('&&', variableName, Component),
+            j.logicalExpression('&&', expression, Component),
           );
 
           // set the value of isInvalid prop in FormControl
           const isInvalid = getNewProp(attributes, {
             j,
             propertyName: 'isInvalid',
-            propertyValue: j.jsxExpressionContainer(variableName),
+            propertyValue: j.jsxExpressionContainer(expression),
           });
 
           formControlProps.push(isInvalid);
@@ -262,6 +342,7 @@ function textFieldCodemod(file, api) {
     .toSource();
 
   if (!shouldSkipUpdateImport()) {
+    source = addIconImports({ j, icons: usedIcons, source });
     source = removeComponentImport(j, source, {
       componentName: 'TextField',
       importName: getFormaImport(),
@@ -279,16 +360,16 @@ function textFieldCodemod(file, api) {
 }
 
 /**
- * Function that will convert all the properties in the "textInputProps" object
- * to the correct type that we need when passing them to FormControl and TextInput components.
+ * Function that will convert all the properties in the a prop object
+ * to the correct type that we need when passing them to the new components.
  * It will return an object where each key is the name of the prop and the value is the value of the prop
  *
- * @param textInputPropsObj
+ * @param propObj
  * @param options
  * @returns {Object} newProps
  */
-function transformTextInputProps(textInputPropsObj, { j, attributes }) {
-  const { properties } = textInputPropsObj.value.expression;
+function transformObjectToProps(propObj, { j, attributes }) {
+  const { properties } = propObj.value.expression;
 
   const newProps = { spreadedPropsNames: [] };
   const propertiesMap = properties.reduce((acc, prop) => {
@@ -333,10 +414,17 @@ function transformTextInputProps(textInputPropsObj, { j, attributes }) {
     } else {
       const { value } = propertiesMap[key].value;
 
-      propertyValue =
-        typeof value === 'number'
-          ? j.jsxExpressionContainer(j.numericLiteral(value))
-          : j.literal(value);
+      switch (typeof value) {
+        case 'number':
+          propertyValue = j.jsxExpressionContainer(j.numericLiteral(value));
+          break;
+        case 'boolean':
+          propertyValue = j.jsxExpressionContainer(j.booleanLiteral(value));
+          break;
+        default:
+          propertyValue = j.literal(value);
+          break;
+      }
     }
 
     newProps[key] = getNewProp(attributes, {

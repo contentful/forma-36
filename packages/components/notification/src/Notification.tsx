@@ -12,7 +12,7 @@ import {
   NotificationProps,
   Placement,
 } from './NotificationsManager';
-import { NotificationVariant, NotificationCta } from './types';
+import type { NotificationVariant, NotificationCta } from './types';
 
 export interface NotificationsAPI {
   success: ShowAction<Notification>;
@@ -54,23 +54,25 @@ function afterInit<PromiseValueType>(fn: Function) {
   };
 }
 
-const show = (variant: NotificationVariant) => (
-  text: string,
-  settings?: {
-    duration?: number;
-    withClose?: boolean;
-    id?: string;
-    title?: string;
-    cta?: Partial<NotificationCta>;
-  },
-) => {
-  if (internalAPI.show) {
-    return internalAPI.show(text, {
-      ...(settings || {}),
-      variant,
-    });
-  }
-};
+const show =
+  (variant: NotificationVariant) =>
+  (
+    text: string,
+    settings?: {
+      duration?: number;
+      withClose?: boolean;
+      id?: string;
+      title?: string;
+      cta?: Partial<NotificationCta>;
+    },
+  ) => {
+    if (internalAPI.show) {
+      return internalAPI.show(text, {
+        ...(settings || {}),
+        variant,
+      });
+    }
+  };
 
 type ExternalShowAction<T> = (
   text: string,
@@ -87,6 +89,7 @@ export const Notification: {
   success: ExternalShowAction<Promise<NotificationProps>>;
   error: ExternalShowAction<Promise<NotificationProps>>;
   warning: ExternalShowAction<Promise<NotificationProps>>;
+  info: ExternalShowAction<Promise<NotificationProps>>;
   close: CloseAction<Promise<void>>;
   closeAll: CloseAllAction<Promise<void>>;
   setPlacement: SetPlacementAction<Promise<void>>;
@@ -95,6 +98,7 @@ export const Notification: {
   success: afterInit<NotificationProps>(show('positive')),
   error: afterInit<NotificationProps>(show('negative')),
   warning: afterInit<NotificationProps>(show('warning')),
+  info: afterInit<NotificationProps>(show('primary')),
   close: afterInit<void>((id: string | number) => {
     if (internalAPI.close) {
       return internalAPI.close(id);

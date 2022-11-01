@@ -13,6 +13,7 @@ import type { HeadingElement } from '../Heading';
 const DISPLAY_TEXT_DEFAULT_TAG = 'h2';
 
 export interface DisplayTextInternalProps extends CommonProps, MarginProps {
+  children?: React.ReactNode;
   size?: 'default' | 'large';
   as?: HeadingElement;
   isTruncated?: boolean;
@@ -20,11 +21,11 @@ export interface DisplayTextInternalProps extends CommonProps, MarginProps {
 }
 
 export type DisplayTextProps<
-  E extends React.ElementType = typeof DISPLAY_TEXT_DEFAULT_TAG
+  E extends React.ElementType = typeof DISPLAY_TEXT_DEFAULT_TAG,
 > = PolymorphicProps<DisplayTextInternalProps, E>;
 
 function _DisplayText<
-  E extends React.ElementType = typeof DISPLAY_TEXT_DEFAULT_TAG
+  E extends React.ElementType = typeof DISPLAY_TEXT_DEFAULT_TAG,
 >(
   {
     children,

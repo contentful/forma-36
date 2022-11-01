@@ -21,7 +21,7 @@ const variantToStyles = (variant: NoteVariant): CSSObject => {
         borderColor: tokens.green300,
 
         a: {
-          color: tokens.green700,
+          color: tokens.blue700,
         },
       };
     case 'negative':
@@ -30,7 +30,7 @@ const variantToStyles = (variant: NoteVariant): CSSObject => {
         borderColor: tokens.red300,
 
         a: {
-          color: tokens.red700,
+          color: tokens.blue700,
         },
       };
     case 'warning':
@@ -39,7 +39,16 @@ const variantToStyles = (variant: NoteVariant): CSSObject => {
         borderColor: tokens.orange300,
 
         a: {
-          color: tokens.orange700,
+          color: tokens.blue700,
+        },
+      };
+    case 'neutral':
+      return {
+        backgroundColor: tokens.gray100,
+        borderColor: tokens.gray300,
+
+        a: {
+          color: tokens.blue700,
         },
       };
     default:

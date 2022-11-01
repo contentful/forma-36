@@ -6,7 +6,7 @@ section: 'buttonComponents'
 slug: /components/button/
 github: 'https://github.com/contentful/forma-36/tree/main/packages/components/button'
 typescript: ./Button.tsx
-storybook: 'https://v4-f36-storybook.netlify.app/?path=/story/components-button--basic'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-button--basic'
 ---
 
 Start actions, such as “Add”, “Cancel” or “Save”.
@@ -71,6 +71,8 @@ You can add an icon by providing the following props:
 
 - `startIcon` - adds icon to the left side of the button
 - `endIcon` - adds icon to the right side of the button
+
+The `variant` prop of the icon is automatically adjusted based on the `variant` of the button. If you are using a button with `variant="transparent"` you can also set the icon variant manually.
 
 ```jsx file=../../examples/ButtonWithIconExample.tsx
 

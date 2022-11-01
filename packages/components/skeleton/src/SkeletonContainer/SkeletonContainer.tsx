@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, useId } from '@contentful/f36-core';
-import type { CommonProps } from '@contentful/f36-core';
+import { Box, useId, type CommonProps } from '@contentful/f36-core';
 
 export interface SkeletonContainerProps extends CommonProps {
   /**

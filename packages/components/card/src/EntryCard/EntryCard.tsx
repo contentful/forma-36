@@ -1,26 +1,27 @@
 import React, { forwardRef } from 'react';
-
 import truncate from 'truncate';
 import { cx } from 'emotion';
-import { Flex } from '@contentful/f36-core';
-import type { ExpandProps } from '@contentful/f36-core';
-import type {
-  PolymorphicComponent,
-  PolymorphicProps,
+import {
+  Flex,
+  type ExpandProps,
+  type PolymorphicComponent,
+  type PolymorphicProps,
 } from '@contentful/f36-core';
 import { EntityStatusBadge } from '@contentful/f36-badge';
-import { Subheading, Paragraph } from '@contentful/f36-typography';
-import type { HeadingElement } from '@contentful/f36-typography';
+import {
+  Subheading,
+  Paragraph,
+  type HeadingElement,
+} from '@contentful/f36-typography';
 
 import { BaseCard } from '../BaseCard/BaseCard';
-
 import { getEntryCardStyles } from './EntryCard.styles';
 import { EntryCardInternalProps, EntryCardSize } from './EntryCard.types';
 
 const ENTRY_CARD_DEFAULT_TAG = 'article';
 
 export type EntryCardProps<
-  E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG
+  E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG,
 > = PolymorphicProps<EntryCardInternalProps, E>;
 
 function EntryCardTitle({
@@ -74,7 +75,7 @@ function EntryCardDescription({
 EntryCardDescription.displayName = 'EntryCardDescription';
 
 function _EntryCard<
-  E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG
+  E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG,
 >(
   {
     actions,

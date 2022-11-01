@@ -1,10 +1,11 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { Flex, Box } from '@contentful/f36-core';
-import type {
-  PolymorphicProps,
-  PolymorphicComponent,
-  ExpandProps,
+import {
+  Flex,
+  Box,
+  type PolymorphicProps,
+  type PolymorphicComponent,
+  type ExpandProps,
 } from '@contentful/f36-core';
 import { Spinner } from '@contentful/f36-spinner';
 
@@ -14,7 +15,7 @@ import { getStyles } from './Button.styles';
 const BUTTON_DEFAULT_TAG = 'button';
 
 export type ButtonProps<
-  E extends React.ElementType = typeof BUTTON_DEFAULT_TAG
+  E extends React.ElementType = typeof BUTTON_DEFAULT_TAG,
 > = PolymorphicProps<ButtonInternalProps, E, 'disabled'>;
 
 function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
@@ -69,9 +70,10 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
         >
           {React.cloneElement(icon, {
             size: icon.props.size ?? `${size === 'large' ? 'medium' : 'small'}`,
-            // we want to allow variants for icons, only for the transparent IconButton
+            // we want to allow variants for icons for transparent buttons
             variant:
-              (!children && icon.props.variant) || defaultIconColor[variant],
+              (variant === 'transparent' && icon.props.variant) ||
+              defaultIconColor[variant],
           })}
         </Flex>
       )

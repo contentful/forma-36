@@ -7,13 +7,13 @@ import tokens, {
   ColorTokens,
 } from '@contentful/f36-tokens';
 import { css, cx } from 'emotion';
-import { Box } from '@contentful/f36-core';
-import type {
-  PolymorphicComponent,
-  CommonProps,
-  MarginProps,
-  PolymorphicProps,
-  ExpandProps,
+import {
+  Box,
+  type PolymorphicComponent,
+  type CommonProps,
+  type MarginProps,
+  type PolymorphicProps,
+  type ExpandProps,
 } from '@contentful/f36-core';
 
 export interface TextInternalProps extends CommonProps, MarginProps {
@@ -34,6 +34,7 @@ function truncatedStyle() {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
+    maxWidth: '100%',
   });
 }
 
@@ -43,9 +44,8 @@ function wordBreakStyle() {
   });
 }
 
-export type TextProps<
-  E extends React.ElementType = typeof TEXT_DEFAULT_TAG
-> = PolymorphicProps<TextInternalProps, E>;
+export type TextProps<E extends React.ElementType = typeof TEXT_DEFAULT_TAG> =
+  PolymorphicProps<TextInternalProps, E>;
 
 function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
   {

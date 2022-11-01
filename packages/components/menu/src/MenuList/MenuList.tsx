@@ -44,15 +44,15 @@ const _MenuList = (
     let appendChild = true;
     if (assertChild(child)) {
       if (child.type.displayName === MenuListHeader.displayName) {
-        header = (child as unknown) as React.ReactElement;
+        header = child as unknown as React.ReactElement;
         appendChild = false;
       } else if (child.type.displayName === MenuListFooter.displayName) {
-        footer = (child as unknown) as React.ReactElement;
+        footer = child as unknown as React.ReactElement;
         appendChild = false;
       }
     }
     if (appendChild) {
-      items.push((child as unknown) as React.ReactElement);
+      items.push(child as unknown as React.ReactElement);
     }
   });
 

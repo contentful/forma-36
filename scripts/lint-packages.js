@@ -51,8 +51,8 @@ for (const pkg of packages) {
   );
   softAssert(json.module, `${pkg} did not have "module"`);
   softAssert(
-    json.module.endsWith('.js'),
-    `${pkg}#module should be a .js file but got "${json.module}"`,
+    json.module.endsWith('esm/index.js'),
+    `${pkg}#module should be a separate .js file but got "${json.module}"`,
   );
   softAssert(json.source, `${pkg} did not have "source"`);
   softAssert.equal(
@@ -61,10 +61,6 @@ for (const pkg of packages) {
     `${pkg} did not match "src/index.ts"`,
   );
   softAssert.deepEqual(json.files, ['dist'], `${pkg} did not match "files"`);
-  softAssert(
-    json.dependencies && json.dependencies['@babel/runtime'],
-    `${pkg} is missing a dependency on @babel/runtime`,
-  );
   softAssert(
     !json.dependencies || !json.dependencies['react'],
     `${pkg} has react as a dependency, but it should be a peerDependency`,
@@ -91,13 +87,13 @@ for (const pkg of packages) {
     `${pkg} has incorrect or missing repository url`,
   );
 
-  const readme = path.join(path.dirname(pkg), 'README.md');
-  if (!fs.existsSync(readme)) {
-    fs.writeFileSync(
-      readme,
-      `# ${json.name}\n\nThis package is part of the pre-release. This means it is unsupported and subject to breaking changes without warning.\n\nPlease use official, supported version of the library [forma-36](https://github.com/contentful/forma-36/tree/main/packages/forma-36-react-components), [NPM](https://www.npmjs.com/package/@contentful/forma-36-react-components).\n`,
-    );
-  }
+  const mdxReadme = path.join(path.dirname(pkg), 'README.mdx');
+  const mdReadme = path.join(path.dirname(pkg), 'README.md');
+
+  softAssert(
+    fs.existsSync(mdxReadme) || fs.existsSync(mdReadme),
+    `${pkg} is missing README file`,
+  );
 }
 
 if (errors) {

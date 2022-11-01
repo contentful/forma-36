@@ -1,8 +1,8 @@
 {
   "name": "@contentful/f36-codemod",
   "description": "Forma 36 Codemod",
-  "version": "4.3.0",
-  "main": "bin/index.js",
+  "version": "4.3.1",
+  "main": "bin/f36-codemod.js",
   "license": "MIT",
   "files": [
     "package.json",

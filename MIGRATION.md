@@ -1592,6 +1592,35 @@ becomes:
 </FormControl>
 ```
 
+If you are using the `textLinkProps` prop on the `TextField` we recommend updating it so:
+
+```tsx static=true
+<TextField
+  id="with-text-link"
+  name="with-text-link"
+  labelText="With text link"
+  textLinkProps={{
+    text: 'Text Link',
+    icon: 'Preview',
+    href: '#',
+  }}
+/>
+```
+
+becomes:
+
+```tsx static=true
+<FormControl id="with-text-link">
+  <Flex justifyContent="space-between" alignItems="center">
+    <FormControl.Label>With text link</FormControl.Label>
+    <TextLink icon={<PreviewIcon />} href="#">
+      Text Link
+    </TextLink>
+  </Flex>
+  <TextInput name="with-text-link" />
+</FormControl>
+```
+
 For more detailed information and examples, see our [documentation](https://f36.contentful.com/components/form-control/).
 
 ##### How to migrate your Field components
@@ -2154,12 +2183,12 @@ import { Form } from '@contentful/f36-components';
 becomes:
 
 ```jsx static=true
-<FormControl.FormLabel htmlFor="inputId" isRequired>Label for the input</FormControl.FormLabel>
+<FormControl.Label htmlFor="inputId" isRequired>Label for the input</FormControl.Label>
 <TextInput name="input" id="inputId" />
 
 // You can also use the FormControl to wrap it, and it would handle the id and isRequired
 <FormControl isRequired id="inputId">
-  <FormControl.FormLabel>Label for the input</FormControl.FormLabel>
+  <FormControl.Label>Label for the input</FormControl.Label>
   <TextInput name="input" />
 </FormControl>
 ```
@@ -2180,12 +2209,12 @@ into this new version:
 ```jsx static=true
 import { FormControl, TextInput } from '@contentful/f36-components';
 
-<FormControl.FormLabel htmlFor="inputId" isRequired requiredText="required field">Label for the input</FormControl.FormLabel>
+<FormControl.Label htmlFor="inputId" isRequired requiredText="required field">Label for the input</FormControl.Label>
 <TextInput name="input" id="inputId" />
 
 // You can also use the FormControl to wrap it, and it would handle the id and isRequired
 <FormControl isRequired id="inputId">
-  <FormControl.FormLabel requiredText="required field">Label for the input</FormControl.FormLabel>
+  <FormControl.Label requiredText="required field">Label for the input</FormControl.Label>
   <TextInput name="input">
 </FormControl>
 ```

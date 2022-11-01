@@ -8,6 +8,7 @@ export function getModalStyles(props: {
   position: ModalProps['position'];
   allowHeightOverflow?: boolean;
   className?: string;
+  overlayClassName?: string;
 }) {
   const modal = cx(
     css({
@@ -94,6 +95,7 @@ export function getModalStyles(props: {
               justifyContent: 'center',
             })
           : null,
+        props.overlayClassName,
       ),
       afterOpen: css({
         opacity: 1,

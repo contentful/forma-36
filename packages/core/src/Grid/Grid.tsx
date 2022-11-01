@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { css, cx } from 'emotion';
-import {
-  PolymorphicProps,
-  PolymorphicComponent,
-  ExpandProps,
-} from '../Primitive/Primitive';
-import { useBox } from '../Box';
 import type * as CSS from 'csstype';
+
+import {
+  type PolymorphicProps,
+  type PolymorphicComponent,
+  type ExpandProps,
+} from '../Primitive/Primitive';
 import type { MarginProps, PaddingProps, CommonProps, Spacing } from '../types';
+import { useBox } from '../Box';
 import { convertSpacingToToken } from '../utils/getSpacingStyles';
 
 export interface GridInternalProps
@@ -45,9 +46,8 @@ export interface GridInternalProps
 
 const GRID_DEFAULT_TAG = 'div';
 
-export type GridProps<
-  E extends React.ElementType = typeof GRID_DEFAULT_TAG
-> = PolymorphicProps<GridInternalProps, E>;
+export type GridProps<E extends React.ElementType = typeof GRID_DEFAULT_TAG> =
+  PolymorphicProps<GridInternalProps, E>;
 
 function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
   {

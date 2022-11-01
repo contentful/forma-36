@@ -4,8 +4,7 @@ import { ChevronDownIcon, PlusIcon } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
 import { Box, Flex } from '@contentful/f36-core';
-import { ButtonGroup, Button, IconButton } from '../src';
-import type { ButtonGroupProps } from '../src';
+import { ButtonGroup, Button, IconButton, type ButtonGroupProps } from '../src';
 import tokens from '@contentful/f36-tokens';
 
 export default {

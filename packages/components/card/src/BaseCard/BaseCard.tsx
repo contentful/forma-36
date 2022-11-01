@@ -1,26 +1,22 @@
 import { cx } from 'emotion';
-import React, { forwardRef, useCallback, useState } from 'react';
-import type {
-  FocusEventHandler,
-  KeyboardEventHandler,
-  MouseEvent,
-  MouseEventHandler,
+import React, {
+  forwardRef,
+  useCallback,
+  useState,
+  type FocusEventHandler,
+  type KeyboardEventHandler,
+  type MouseEvent,
+  type MouseEventHandler,
 } from 'react';
-import { Box } from '@contentful/f36-core';
-import type {
-  PolymorphicComponent,
-  PolymorphicProps,
+import {
+  Box,
+  type PolymorphicComponent,
+  type PolymorphicProps,
 } from '@contentful/f36-core';
-
 import { DragHandle } from '@contentful/f36-drag-handle';
+import { Skeleton } from '@contentful/f36-skeleton';
 
 import { getBaseCardStyles } from './BaseCard.styles';
-
-import {
-  SkeletonBodyText,
-  SkeletonContainer,
-  SkeletonDisplayText,
-} from '@contentful/f36-skeleton';
 
 import { DefaultCardHeader, stopEvents } from './DefaultCardHeader';
 import type { BaseCardInternalProps } from './BaseCard.types';
@@ -28,7 +24,7 @@ import type { BaseCardInternalProps } from './BaseCard.types';
 export const BASE_CARD_DEFAULT_TAG = 'article';
 
 export type BaseCardProps<
-  E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG
+  E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG,
 > = PolymorphicProps<BaseCardInternalProps, E>;
 
 function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
@@ -136,10 +132,10 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
 
   if (isLoading) {
     return (
-      <SkeletonContainer className={styles.skeleton} svgHeight="5.6rem">
-        <SkeletonDisplayText numberOfLines={1} />
-        <SkeletonBodyText numberOfLines={1} offsetTop={35} />
-      </SkeletonContainer>
+      <Skeleton.Container className={styles.skeleton} svgHeight="5.6rem">
+        <Skeleton.DisplayText numberOfLines={1} />
+        <Skeleton.BodyText numberOfLines={1} offsetTop={35} />
+      </Skeleton.Container>
     );
   }
 

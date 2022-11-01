@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box } from '@contentful/f36-core';
-import type { CommonProps, ExpandProps } from '@contentful/f36-core';
+import { Box, type CommonProps, type ExpandProps } from '@contentful/f36-core';
 
 import { getAccordionStyles } from './Accordion.styles';
 

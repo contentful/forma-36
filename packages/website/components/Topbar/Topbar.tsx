@@ -1,6 +1,6 @@
 import React from 'react';
 import { css, cx } from 'emotion';
-import { Grid, Flex, List } from '@contentful/f36-components';
+import { Grid, Flex, List, Button } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 
 import {
@@ -9,11 +9,11 @@ import {
   SCREEN_BREAKPOINT_LARGE,
 } from '../../utils/getGridStyles';
 import { DocSearch } from '../DocSearch';
-
-import { WEBSITE_SECTION } from '../../hooks/useCurrentLocation';
+import { useCurrentLocation } from '../../hooks/useCurrentLocation';
 import { TopbarLink } from './TopbarLink';
 import { TopbarLogo } from './TopbarLogo';
 import { VersionSwitch } from './VersionSwitch';
+import { signOut, useSession } from 'next-auth/react';
 
 const styles = {
   header: css({
@@ -40,14 +40,22 @@ const styles = {
       gridColumnStart: 4,
     },
   }),
+  signOut: css({
+    marginLeft: tokens.spacing2Xs,
+  }),
 };
 
-interface TopbarProps {
-  activeSection: string;
+type TopbarLink = Record<'initialLink' | 'slug' | 'title', string>;
+
+export interface TopbarProps {
+  links: TopbarLink[];
 }
 
-export function Topbar({ activeSection }: TopbarProps) {
+export function Topbar({ links }: TopbarProps) {
   const gridStyles = getGridStyles();
+  const { currentSection } = useCurrentLocation();
+
+  const { data: session } = useSession();
 
   return (
     <Grid.Item
@@ -74,46 +82,37 @@ export function Topbar({ activeSection }: TopbarProps) {
           className={gridStyles.columnStartTwo}
         >
           <List className={styles.navList}>
-            <List.Item>
-              <TopbarLink
-                href="/introduction/getting-started"
-                label="Introduction"
-                isActive={activeSection === WEBSITE_SECTION.INTRODUCTION}
-              />
-            </List.Item>
-            <List.Item>
-              <TopbarLink
-                href="/guidelines/accessibility"
-                label="Guidelines"
-                isActive={activeSection === WEBSITE_SECTION.GUIDELINES}
-              />
-            </List.Item>
-            <List.Item>
-              <TopbarLink
-                href="/tokens/color-system"
-                label="Tokens"
-                isActive={activeSection === WEBSITE_SECTION.TOKENS}
-              />
-            </List.Item>
-            <List.Item>
-              <TopbarLink
-                href="/components/accordion"
-                label="Components"
-                isActive={activeSection === WEBSITE_SECTION.COMPONENTS}
-              />
-            </List.Item>
-            <List.Item>
-              <TopbarLink
-                href="/playground"
-                label="Playground"
-                isActive={activeSection === WEBSITE_SECTION.PLAYGROUND}
-              />
-            </List.Item>
+            {links.map((section) => {
+              const isActive =
+                currentSection !== '' && section.slug.includes(currentSection);
+
+              return (
+                <List.Item key={section.slug}>
+                  <TopbarLink
+                    href={`/${section.slug}${
+                      section.initialLink && section.initialLink !== '/'
+                        ? `/${section.initialLink}`
+                        : ''
+                    }`}
+                    label={section.title}
+                    isActive={isActive}
+                  />
+                </List.Item>
+              );
+            })}
           </List>
         </Flex>
 
         <Flex className={styles.docSearchContainer}>
           <DocSearch />
+          {session ? (
+            <Button
+              className={styles.signOut}
+              onClick={() => signOut({ callbackUrl: '/' })}
+            >
+              Log out
+            </Button>
+          ) : null}
         </Flex>
       </Flex>
     </Grid.Item>

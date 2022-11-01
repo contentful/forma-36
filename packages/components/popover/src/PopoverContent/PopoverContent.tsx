@@ -26,12 +26,8 @@ const _PopoverContent = (props: ExpandProps<PopoverContentProps>, ref) => {
     role = 'dialog',
     ...otherProps
   } = props;
-  const {
-    isOpen,
-    renderOnlyWhenOpen,
-    getPopoverProps,
-    usePortal,
-  } = usePopoverContext();
+  const { isOpen, renderOnlyWhenOpen, getPopoverProps, usePortal } =
+    usePopoverContext();
 
   const styles = getPopoverContentStyles(isOpen);
 

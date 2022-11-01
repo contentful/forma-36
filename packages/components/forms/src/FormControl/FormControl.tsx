@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useId } from '@contentful/f36-core';
-import type {
-  CommonProps,
-  MarginProps,
-  PolymorphicProps,
-  PolymorphicComponent,
-  ExpandProps,
+import {
+  useId,
+  type CommonProps,
+  type MarginProps,
+  type PolymorphicProps,
+  type PolymorphicComponent,
+  type ExpandProps,
 } from '@contentful/f36-core';
 import { Box } from '@contentful/f36-core';
 
@@ -23,11 +23,11 @@ export interface FormControlInternalProps
 }
 
 export type FormControlProps<
-  E extends React.ElementType = typeof FORM_CONTROL_DEFAULT_TAG
+  E extends React.ElementType = typeof FORM_CONTROL_DEFAULT_TAG,
 > = PolymorphicProps<FormControlInternalProps, E>;
 
 function _FormControl<
-  E extends React.ElementType = typeof FORM_CONTROL_DEFAULT_TAG
+  E extends React.ElementType = typeof FORM_CONTROL_DEFAULT_TAG,
 >(
   {
     as,

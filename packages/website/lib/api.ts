@@ -1,4 +1,4 @@
-import fs from 'fs';
+import { HARDCODED_WEBSITE_SECTION, SidebarSection } from '../types';
 
 const ARTICLE_GRAPHQL_FIELDS = `
 sys {
@@ -8,6 +8,7 @@ title
 subtitle
 slug
 metaDescription
+authProtected
 body {
   json
   links {
@@ -25,13 +26,57 @@ body {
     }
   }
 }
-kbAppCategory {
+linkedFrom {
+  sectionCollection(limit: 1) {
+    items {
+      sys {
+        id
+      }
+      slug
+    }
+  }
+  kbAppCategoryCollection(limit: 1) {
+    items {
+      linkedFrom {
+        sectionCollection(limit: 1) {
+          items {
+            sys {
+              id
+            }
+            slug
+          }
+        }
+      }
+    }
+  }
+}
+`;
+// kbAppCategory {
+//   sys {
+//     id
+//   }
+//   name
+//   slug
+//   previewDescription
+// }
+
+const LINKS_COLLECTION_GRAPHQL_FIELDS = `
+... on KbAppLink {
   sys {
     id
   }
-  name
+  slug: url
+  title: text
+  type: __typename
+}
+... on KbAppArticle {
+  sys {
+    id
+  }
+  title
   slug
-  previewDescription
+  authProtected
+  type: __typename
 }
 `;
 
@@ -43,7 +88,9 @@ kbAppCategory {
  */
 async function fetchGraphQL(query, preview = false) {
   return fetch(
-    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+    `https://graphql.contentful.com/content/v1/spaces/${
+      process.env.CONTENTFUL_SPACE_ID
+    }/environments/${process.env.CONTENTFUL_SPACE_ENVIRONMENT || 'master'}`,
     {
       method: 'POST',
       headers: {
@@ -95,26 +142,141 @@ export async function getAllArticles(preview = false) {
 
   const articleEntries = extractArticleEntries(entries);
 
-  const sidebarLinks = articleEntries
-    .sort((a, b) => (a.title < b.title ? -1 : 1))
-    .reduce((acc, path) => {
-      const category = path.kbAppCategory?.slug ?? 'unassigned';
-
-      const item = {
-        title: path.title,
-        slug: `/${path.kbAppCategory.slug}/${path.slug}`,
-      };
-
-      if (acc[category]) {
-        return { ...acc, [category]: [...acc[category], item] };
-      }
-
-      return { ...acc, [category]: [item] };
-    }, {});
-
-  // create a JSON file with sidebar links for pages that come from Contentful
-  const data = JSON.stringify(sidebarLinks, null, 2);
-  fs.writeFileSync('utils/contentfulSidebarLinks.json', data);
-
   return articleEntries;
+}
+
+export async function getSidebarLinksBySectionSlug(
+  sectionSlug: string,
+  preview = false,
+) {
+  const entries = await fetchGraphQL(
+    `query {
+      sectionCollection(
+        where: { slug_exists: true, slug: "${sectionSlug}" }
+        limit: 1
+      ) {
+        items {
+          slug
+          title
+          sys {
+            id
+          }
+          linksCollection {
+            items {
+              ${LINKS_COLLECTION_GRAPHQL_FIELDS}
+            }
+          }
+          categoriesCollection {
+            items {
+              sys {
+                id
+              }
+              slug
+              name
+              type: __typename
+              linksCollection {
+                items {
+                  ${LINKS_COLLECTION_GRAPHQL_FIELDS}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    `,
+    preview,
+  );
+
+  const data = entries?.data?.sectionCollection?.items[0];
+
+  const prepareLink = (link: { slug: string; authProtected?: boolean }) => {
+    // Changelog link is a special case because we don't want to prepend the section slug
+    if (link.slug === HARDCODED_WEBSITE_SECTION.WHATS_NEW) {
+      return { ...link, slug: `/${link.slug}` };
+    }
+
+    let slug = link.slug.startsWith('http')
+      ? link.slug
+      : `/${sectionSlug}/${link.slug}`;
+
+    if (link.authProtected) {
+      slug = `/${sectionSlug}/protected/${link.slug}`;
+    }
+
+    return {
+      ...link,
+      slug,
+    };
+  };
+
+  if (data) {
+    let sidebarLinks: SidebarSection[] = [];
+    const links = data.linksCollection?.items.map(prepareLink);
+
+    if (links.length) {
+      sidebarLinks = [
+        {
+          links,
+        },
+      ];
+    }
+
+    const categories = data.categoriesCollection?.items.reduce(
+      (categories, item) => {
+        const category = {
+          links: [],
+          slug: `/${sectionSlug}`,
+          title: item.name,
+          authProtected: false,
+        };
+
+        category.links = item.linksCollection?.items.map(prepareLink);
+
+        category.authProtected = category.links.every(
+          (link: { authProtected?: boolean }) => link.authProtected,
+        );
+
+        if (category.links.length > 0) {
+          categories.push(category);
+        }
+
+        return categories;
+      },
+      [],
+    );
+    sidebarLinks = [...sidebarLinks, ...categories];
+
+    return sidebarLinks;
+  }
+}
+
+export async function getTopbarLinks(preview = false) {
+  const entries = await fetchGraphQL(
+    `query {
+        navigationCollection(limit:1) {
+          items {
+            sys {
+              id
+            }
+            sectionsCollection {
+              items {
+                sys {
+                  id
+                }
+                title
+                slug
+                initialLink
+              }
+            }
+          }
+        }
+      }`,
+    preview,
+  );
+
+  const topbarLinks =
+    entries?.data?.navigationCollection?.items[0].sectionsCollection?.items;
+
+  return topbarLinks;
 }

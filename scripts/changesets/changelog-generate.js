@@ -1,6 +1,6 @@
 const fs = require('fs');
-const assembleReleasePlan = require('@changesets/assemble-release-plan')
-  .default;
+const assembleReleasePlan =
+  require('@changesets/assemble-release-plan').default;
 const { read } = require('@changesets/config');
 const { readPreState } = require('@changesets/pre');
 const readChangesets = require('@changesets/read').default;
@@ -86,6 +86,7 @@ async function main() {
 
   releases.forEach(({ displayName, changesets }) => {
     const prevState = content[displayName] || [];
+    // eslint-disable-next-line no-undef -- @todo: fix this
     content[displayName] = [...new Set([...prevState, ...changesets])];
   });
 

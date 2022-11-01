@@ -1,8 +1,7 @@
 import * as React from 'react';
 import ReactModal from 'react-modal';
 
-import { Box } from '@contentful/f36-core';
-import type { CommonProps, ExpandProps } from '@contentful/f36-core';
+import { Box, type CommonProps, type ExpandProps } from '@contentful/f36-core';
 
 import { ModalHeader, ModalHeaderProps } from './ModalHeader/ModalHeader';
 import { ModalContent, ModalContentProps } from './ModalContent/ModalContent';
@@ -74,6 +73,11 @@ export interface ModalProps extends CommonProps {
   allowHeightOverflow?: boolean;
 
   /**
+   * Optional props to override overlay behaviour
+   */
+  overlayProps?: Pick<CommonProps, 'className' | 'style'>;
+
+  /**
    * Optional props to override ModalHeader behaviour
    */
   modalHeaderProps?: Partial<ModalHeaderProps>;
@@ -136,6 +140,7 @@ export const Modal = ({
     size,
     allowHeightOverflow,
     className: otherProps.className,
+    overlayClassName: otherProps.overlayProps?.className,
   });
 
   React.useEffect(() => {
@@ -185,6 +190,7 @@ export const Modal = ({
         content: {
           top: position === 'center' ? 0 : topOffset,
         },
+        overlay: otherProps.overlayProps?.style,
       }}
       className={{
         base: styles.base.root,

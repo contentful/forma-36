@@ -2,15 +2,13 @@ import React from 'react';
 import { cx } from 'emotion';
 import { Flex } from '@contentful/f36-core';
 import { EntityStatusBadge } from '@contentful/f36-badge';
-import { Asset } from '@contentful/f36-asset';
-import type { AssetStatus, AssetType } from '@contentful/f36-asset';
+import { Asset, type AssetStatus, type AssetType } from '@contentful/f36-asset';
+import { Skeleton } from '@contentful/f36-skeleton';
 
 import { BaseCard } from '../BaseCard/BaseCard';
 import type { BaseCardInternalProps } from '../BaseCard/BaseCard.types';
 import { getAssetCardStyles } from './AssetCard.styles';
 import { DefaultCardHeader } from '../BaseCard/DefaultCardHeader';
-
-import { SkeletonContainer, SkeletonImage } from '@contentful/f36-skeleton';
 
 export interface AssetCardInternalProps
   extends Omit<BaseCardInternalProps, 'badge' | 'header' | 'padding' | 'ref'> {
@@ -49,13 +47,13 @@ export const AssetCard = ({
 
   if (isLoading) {
     return (
-      <SkeletonContainer
+      <Skeleton.Container
         className={styles.skeleton}
         svgWidth={size === 'default' ? '18rem' : '11rem'}
         svgHeight={size === 'default' ? '18.75rem' : '12rem'}
       >
-        <SkeletonImage width="100%" height="18.75rem" />
-      </SkeletonContainer>
+        <Skeleton.Image width="100%" height="18.75rem" />
+      </Skeleton.Container>
     );
   }
 

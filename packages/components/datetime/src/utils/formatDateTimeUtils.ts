@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import utcPlugin from 'dayjs/plugin/utc';
+import utcPlugin from 'dayjs/plugin/utc.js';
 dayjs.extend(utcPlugin);
 
 import type { DateType, DateFormat } from '../types';

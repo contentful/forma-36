@@ -36,7 +36,7 @@ export const getStyles = (): ClassNames => {
       cursor: 'pointer',
       color: tokens.gray900,
 
-      '&[aria-disabled="true"]': {
+      '&.rdp-day_disabled': {
         color: tokens.gray400,
         pointerEvents: 'none',
       },
@@ -52,7 +52,7 @@ export const getStyles = (): ClassNames => {
         backgroundColor: tokens.gray200,
       },
 
-      '&.rdp-day_selected:not([aria-disabled="true"])': {
+      '&.rdp-day_selected:not(.rdp-day_disabled)': {
         backgroundColor: tokens.blue600,
         color: tokens.colorWhite,
         fontWeight: tokens.fontWeightDemiBold,
@@ -63,6 +63,7 @@ export const getStyles = (): ClassNames => {
       display: 'flex',
     }),
     month: css({
+      width: '100%',
       margin: '0 1em',
       '&:first-child': {
         marginLeft: 0,
@@ -72,6 +73,7 @@ export const getStyles = (): ClassNames => {
       },
     }),
     table: css({
+      width: '100%',
       margin: 0,
       borderCollapse: 'collapse',
     }),
@@ -135,8 +137,12 @@ export const getStyles = (): ClassNames => {
     nav_button_previous: css({
       marginRight: '3px',
     }),
-
     dropdown_month: css({
+      position: 'relative',
+      display: 'inline-flex',
+      alignItems: 'center',
+    }),
+    dropdown_year: css({
       position: 'relative',
       display: 'inline-flex',
       alignItems: 'center',
@@ -190,6 +196,7 @@ export const getStyles = (): ClassNames => {
       fontWeight: tokens.fontWeightDemiBold,
       textAlign: 'center',
       height: '32px',
+      color: tokens.gray600,
     }),
 
     tbody: css({
@@ -212,13 +219,15 @@ export const getStyles = (): ClassNames => {
       width: `${cellSize / 16}rem`,
       height: `${cellSize / 16}rem`,
       borderRadius: '50%',
+      margin: 'auto',
 
       '&.rdp-day_today:not(.rdp-day_outside)': {
         fontWeight: tokens.fontWeightDemiBold,
       },
-      '&.rdp-day_today:not(.rdp-day_outside):not(.rdp-day_selected):not(:hover)': {
-        backgroundColor: tokens.blue100,
-      },
+      '&.rdp-day_today:not(.rdp-day_outside):not(.rdp-day_selected):not(:hover)':
+        {
+          backgroundColor: tokens.blue100,
+        },
     }),
 
     nav_icon: css({

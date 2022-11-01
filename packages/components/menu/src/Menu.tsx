@@ -1,8 +1,8 @@
 import React, { useCallback, useMemo, useRef, useEffect } from 'react';
 import { mergeRefs, useId, useControllableState } from '@contentful/f36-core';
+import { Popover, type PopoverProps } from '@contentful/f36-popover';
+
 import { useArrowKeyNavigation } from './useArrowKeyNavigation';
-import { Popover } from '@contentful/f36-popover';
-import type { PopoverProps } from '@contentful/f36-popover';
 import { MenuContextProvider, MenuContextType } from './MenuContext';
 
 const MENU_ITEMS_SELECTOR = '[role="menuitem"]:not(:disabled)';
@@ -71,37 +71,29 @@ export function Menu(props: MenuProps) {
     onOpen,
     ...otherProps
   } = props;
-  const {
-    isOpen,
-    handleOpen,
-    handleClose,
-    isControlled,
-  } = useControllableState({
-    isOpen: props.isOpen,
-    defaultIsOpen: props.defaultIsOpen,
-    onOpen,
-    onClose: props.onClose,
-  });
+  const { isOpen, handleOpen, handleClose, isControlled } =
+    useControllableState({
+      isOpen: props.isOpen,
+      defaultIsOpen: props.defaultIsOpen,
+      onOpen,
+      onClose: props.onClose,
+    });
 
   const triggerRef = useRef<HTMLButtonElement>(null);
   const menuListRef = useRef<HTMLDivElement>(null);
 
   const menuId = useId(null, 'menu');
 
-  const {
-    focusedIndex,
-    handleArrowsKeyDown,
-    setFocusedIndex,
-  } = useArrowKeyNavigation({
-    itemsContainerRef: menuListRef,
-    itemsSelector: MENU_ITEMS_SELECTOR,
-  });
+  const { focusedIndex, handleArrowsKeyDown, setFocusedIndex } =
+    useArrowKeyNavigation({
+      itemsContainerRef: menuListRef,
+      itemsSelector: MENU_ITEMS_SELECTOR,
+    });
 
   useEffect(() => {
     if (isOpen && menuListRef.current) {
-      const menuItems = menuListRef.current.querySelectorAll(
-        MENU_ITEMS_SELECTOR,
-      );
+      const menuItems =
+        menuListRef.current.querySelectorAll(MENU_ITEMS_SELECTOR);
 
       if (menuItems.length > 0 && focusedIndex < menuItems.length) {
         // timeout trick to prevent scroll from jumping
@@ -117,9 +109,8 @@ export function Menu(props: MenuProps) {
 
   const focusMenuItem = useCallback(
     (item: HTMLElement) => {
-      const menuItems = menuListRef.current.querySelectorAll(
-        MENU_ITEMS_SELECTOR,
-      );
+      const menuItems =
+        menuListRef.current.querySelectorAll(MENU_ITEMS_SELECTOR);
 
       const itemIndex = [...menuItems].findIndex(
         (menuItem) => item === menuItem,

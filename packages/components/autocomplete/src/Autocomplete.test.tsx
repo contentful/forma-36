@@ -146,20 +146,59 @@ describe('Autocomplete', () => {
       renderComponent({ noMatchesMessage, items: [] });
 
       const input = screen.getByTestId('cf-autocomplete-input');
-      const list = screen.getByTestId('cf-autocomplete-container');
 
       // type anything to open the list
       fireEvent.input(input, {
         target: {
-          value: 'a',
+          value: 'tesst',
         },
       });
+
+      const list = screen.getByTestId('cf-autocomplete-container');
 
       // checks if the list is visible and it only shows the "No matches" message
       await waitFor(() => {
         expect(list).toBeVisible();
         expect(screen.getByText(noMatchesMessage)).toBeVisible();
       });
+    });
+
+    it('should show the empty list if showEmptyList is true', async () => {
+      const noMatchesMessage = 'No matches found';
+
+      renderComponent({ items: [], showEmptyList: true, noMatchesMessage });
+      const input = screen.getByTestId('cf-autocomplete-input');
+      // Container should exist but not visible
+      expect(screen.getByTestId('cf-autocomplete-container')).not.toBeVisible();
+
+      // focus on input to open the list
+      fireEvent.focus(input);
+
+      // Should be visible after clicking on the input
+      await waitFor(() => {
+        expect(screen.getByTestId('cf-autocomplete-container')).toBeVisible();
+        expect(screen.getByText(noMatchesMessage)).toBeVisible();
+      });
+    });
+
+    it('is not showing the container when the list has 0 items and there is no input value', async () => {
+      renderComponent({ items: [] });
+
+      const input = screen.getByTestId('cf-autocomplete-input');
+
+      fireEvent.click(input);
+
+      // type anything to open the list
+      fireEvent.input(input, {
+        target: {
+          value: '',
+        },
+      });
+
+      const list = screen.queryByTestId('cf-autocomplete-list');
+
+      // checks if the list is not visible
+      expect(list).toBeNull();
     });
 
     it('shows loading state when "isLoading" is true', async () => {

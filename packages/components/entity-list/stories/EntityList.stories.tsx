@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { EntityList } from '../src';
-import type { EntityListProps } from '../src';
+import { EntityList, type EntityListProps } from '../src';
 
 export default {
   title: 'Components/EntityList/EntityList',

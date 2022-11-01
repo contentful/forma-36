@@ -1,0 +1,103 @@
+---
+title: 'Skeleton'
+slug: /components/skeleton/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/skeleton'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-skeleton--basic'
+typescript: ./src/SkeletonBodyText/SkeletonBodyText.tsx,./src/SkeletonContainer/SkeletonContainer.tsx,./src/SkeletonDisplayText/SkeletonDisplayText.tsx,./src/SkeletonImage/SkeletonImage.tsx,./src/SkeletonRow/SkeletonRow.tsx
+---
+
+Skeleton is used to display a loading state in components.
+
+## Import
+
+```jsx static=true
+import { Skeleton } from '@contentful/f36-components';
+// or
+import { Skeleton } from '@contentful/f36-skeleton';
+```
+
+## How to use Skeleton
+
+- Compound components of Skeleton are: `Container`, `BodyText`, `DisplayText`, `Image`, `Row`.
+- Use the `Skeleton.Container` to control color, background color, animation, opacity of the skeleton elements that are used inside.
+- Use the `Skeleton.BodyText` component to simulate bodies of text with multiple lines.
+- Use the `Skeleton.DisplayText` component to simulate headings, subheadings or titles.
+- Use the `Skeleton.Image` component to simulate images, illustrations, avatars or icons.
+- Use the `Skeleton.Row` component to simulate table rows. Only use this component as a child of the TableBody component. The `Skeleton.Row` component renders `<tr>` tags, and this HTML tag should always be a child of a `<tbody>` tag.
+  - Pass a value to the `columnCount` prop equal to the number of columns in your table (default value is 5).
+  - Pass a value to the `rowCount` prop equal to the number of rows you need.
+  - We think that for a better experience this value should match the number of rows that this table usually has when it's first loaded.
+
+## Examples
+
+### Basic usage
+
+```jsx file=examples/SkeletonContainerBasicExample.tsx
+
+```
+
+### Different speed and color
+
+```jsx file=examples/SkeletonContainerDifferentSpeedExample.tsx
+
+```
+
+### Composition with different skeleton components
+
+```jsx file=examples/SkeletonDisplayTextCompositionExample.tsx
+
+```
+
+### Setting image width and height
+
+Pass some value to the `width` and `height` props to make the skeleton the same size as the simulated image (default values are 70).
+You can use the same values a normal `<rect>` tag would accept for [width](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/width#rect)
+and [height](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/height#rect)
+
+```jsx file=examples/SkeletonImageDimensionsExample.tsx
+
+```
+
+### Round image skeleton
+
+Pass some value to the `radiusX` and `radiusY` props to control the roundness of skeleton's corners (default values are 0).
+You can use the same values a normal `<rect>` tag would accept for [rx](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/rx#rect)
+and [ry](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/ry#rect)
+
+```jsx file=examples/SkeletonImageRoundExample.tsx
+
+```
+
+### Table rows
+
+```jsx file=examples/SkeletonRowBasicExample.tsx
+
+```
+
+### Usage without compound components
+
+```jsx file=examples/SkeletonNonCompoundExample.tsx
+
+```
+
+## Props (API reference)
+
+### Skeleton.Container
+
+<PropsTable of="SkeletonContainer" />
+
+### Skeleton.BodyText
+
+<PropsTable of="SkeletonBodyText" />
+
+### Skeleton.DisplayText
+
+<PropsTable of="SkeletonDisplayText" />
+
+### Skeleton.Image
+
+<PropsTable of="SkeletonImage" />
+
+### Skeleton.Row
+
+<PropsTable of="SkeletonRow" />

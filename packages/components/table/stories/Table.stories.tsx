@@ -3,7 +3,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
-import { SkeletonRow } from '@contentful/f36-components';
+import { Skeleton } from '@contentful/f36-components';
 
 import { Table } from '../src';
 
@@ -78,7 +78,7 @@ export const WithLoadingState: Story = () => {
         </Table.Head>
         <Table.Body>
           {isLoading ? (
-            <SkeletonRow rowCount={4} columnCount={4} />
+            <Skeleton.Row rowCount={4} columnCount={4} />
           ) : (
             <>
               <Table.Row>

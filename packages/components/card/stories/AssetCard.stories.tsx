@@ -6,8 +6,7 @@ import { MenuItem } from '@contentful/f36-menu';
 import * as icons from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
 
-import { AssetCard } from '../src';
-import type { AssetCardProps } from '../src';
+import { AssetCard, type AssetCardProps } from '../src';
 
 export default {
   argTypes: {
@@ -42,7 +41,7 @@ export const Default: Story<Args> = (args) => {
 Default.args = {
   status: 'published',
   type: 'image',
-  src: 'https://via.placeholder.com/200x300',
+  src: 'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300',
   title: 'Asset title',
 };
 
@@ -74,7 +73,7 @@ export const Overview: Story<Args> = () => {
 
           <AssetCard
             icon={<Icon as={icons.ClockIcon} />}
-            src="https://via.placeholder.com/200x300"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
             title="Asset title"
             type="image"
           />
@@ -88,7 +87,7 @@ export const Overview: Story<Args> = () => {
           <AssetCard
             actions={actions}
             isHovered
-            src="https://via.placeholder.com/200x300"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
             title="Asset title"
             type="image"
           />
@@ -101,7 +100,7 @@ export const Overview: Story<Args> = () => {
 
           <AssetCard
             isSelected
-            src="https://via.placeholder.com/200x300"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
             title="Asset title"
             type="image"
           />
@@ -121,7 +120,7 @@ export const Overview: Story<Args> = () => {
           <AssetCard
             icon={<Icon as={icons.ClockIcon} />}
             size="small"
-            src="https://via.placeholder.com/200x300"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
             title="Asset title"
             type="image"
           />
@@ -136,7 +135,7 @@ export const Overview: Story<Args> = () => {
             actions={actions}
             isHovered
             size="small"
-            src="https://via.placeholder.com/200x300"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
             title="Asset title"
             type="image"
           />
@@ -150,7 +149,7 @@ export const Overview: Story<Args> = () => {
           <AssetCard
             isSelected
             size="small"
-            src="https://via.placeholder.com/200x300"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
             title="Asset title"
             type="image"
           />
@@ -175,7 +174,7 @@ export const DifferentImageSizes: Story<Args> = () => {
 
           <AssetCard
             icon={<Icon as={icons.ClockIcon} />}
-            src="https://via.placeholder.com/200x300"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
             title="Asset title"
             type="image"
           />
@@ -188,7 +187,7 @@ export const DifferentImageSizes: Story<Args> = () => {
 
           <AssetCard
             icon={<Icon as={icons.ClockIcon} />}
-            src="https://via.placeholder.com/200x600"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=600"
             title="Asset title"
             type="image"
           />
@@ -201,7 +200,7 @@ export const DifferentImageSizes: Story<Args> = () => {
 
           <AssetCard
             icon={<Icon as={icons.ClockIcon} />}
-            src="https://via.placeholder.com/800x200"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=800&h=200"
             title="Asset title"
             type="image"
           />
@@ -221,7 +220,7 @@ export const DifferentImageSizes: Story<Args> = () => {
           <AssetCard
             icon={<Icon as={icons.ClockIcon} />}
             size="small"
-            src="https://via.placeholder.com/200x300"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
             title="Asset title"
             type="image"
           />
@@ -235,7 +234,7 @@ export const DifferentImageSizes: Story<Args> = () => {
           <AssetCard
             actions={actions}
             size="small"
-            src="https://via.placeholder.com/200x600"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=600"
             title="Asset title"
             type="image"
           />
@@ -248,7 +247,7 @@ export const DifferentImageSizes: Story<Args> = () => {
 
           <AssetCard
             size="small"
-            src="https://via.placeholder.com/800x200"
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=800&h=200"
             title="Asset title"
             type="image"
           />
@@ -262,7 +261,7 @@ export const DifferentImageSizes: Story<Args> = () => {
       <Box style={{ width: '500px' }} marginBottom="spacingS">
         <AssetCard
           icon={<Icon as={icons.ClockIcon} />}
-          src="https://via.placeholder.com/800x200"
+          src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=800&h=200"
           title="Asset title"
           type="image"
         />
@@ -271,7 +270,7 @@ export const DifferentImageSizes: Story<Args> = () => {
       <Box style={{ width: '500px' }}>
         <AssetCard
           icon={<Icon as={icons.ClockIcon} />}
-          src="https://via.placeholder.com/200x300"
+          src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
           title="Asset title"
           type="image"
         />

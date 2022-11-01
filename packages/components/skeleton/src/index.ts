@@ -1,3 +1,4 @@
+export { Skeleton } from './CompoundSkeleton';
 export { SkeletonBodyText } from './SkeletonBodyText/SkeletonBodyText';
 export type { SkeletonBodyTextProps } from './SkeletonBodyText/SkeletonBodyText';
 export { SkeletonContainer } from './SkeletonContainer/SkeletonContainer';

@@ -1,0 +1,23 @@
+# This workflow removes the stale label from PRs and issues when a new comment is created
+#
+name: Remove stale label
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  remove_stale:
+    if: contains(github.event.issue.labels.*.name, 'stale')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: Remove stale label
+        run: gh issue edit $ISSUE --remove-label $LABEL
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.number }}
+          LABEL: 'stale'

@@ -1,10 +1,9 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-
-import { EntityList } from '../src';
-import type { EntityListItemProps } from '../src';
 import { DragHandle } from '@contentful/f36-drag-handle';
 import { MenuItem, MenuSectionTitle } from '@contentful/f36-menu';
+
+import { EntityList, type EntityListItemProps } from '../src';
 
 export default {
   title: 'Components/EntityList/EntityListItem',
@@ -31,7 +30,8 @@ Basic.args = {
   title: 'Entity title',
   description: 'Entity description',
   contentType: 'My content type',
-  thumbnailUrl: 'https://via.placeholder.com/400x400',
+  thumbnailUrl:
+    'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=400&h=400',
   thumbnailAltText: 'My thumbnail text',
   withThumbnail: true,
   entityType: 'entry',

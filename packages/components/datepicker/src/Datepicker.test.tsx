@@ -9,7 +9,6 @@ import {
 import userEvent from '@testing-library/user-event';
 import { Datepicker } from './Datepicker';
 import { format } from 'date-fns';
-import { act } from 'react-dom/test-utils';
 import { axe } from 'jest-axe';
 
 describe('Datepicker', function () {
@@ -41,20 +40,17 @@ describe('Datepicker', function () {
   });
 
   it('opens calendar when button is clicked', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     render(<Datepicker selected={testDate} onSelect={jest.fn()} />);
 
-    act(() => {
-      userEvent.click(screen.getByRole('button'));
-    });
+    await user.click(screen.getByRole('button'));
 
-    await waitFor(() => {
-      expect(screen.getByTestId('cf-ui-datepicker')).toHaveAttribute(
-        'aria-expanded',
-        'true',
-      );
-      expect(screen.getByTestId('cf-ui-popover-content')).toBeInTheDocument();
-      expect(screen.getByText(format(testDate, 'LLLL yyyy'))).toBeTruthy();
-    });
+    expect(screen.getByTestId('cf-ui-datepicker-button')).toHaveAttribute(
+      'aria-expanded',
+      'true',
+    );
+    expect(screen.getByTestId('cf-ui-popover-content')).toBeInTheDocument();
+    expect(screen.getByText(format(testDate, 'LLLL yyyy'))).toBeTruthy();
   });
 
   it('renders the calendar initialy open', () => {
@@ -63,9 +59,9 @@ describe('Datepicker', function () {
     );
 
     const popoverContent = screen.getByTestId('cf-ui-popover-content');
-    const datepicker = screen.getByTestId('cf-ui-datepicker');
+    const datepickerTrigger = screen.getByTestId('cf-ui-datepicker-button');
 
-    expect(datepicker).toHaveAttribute('aria-expanded', 'true');
+    expect(datepickerTrigger).toHaveAttribute('aria-expanded', 'true');
     expect(popoverContent).toBeInTheDocument();
   });
 
@@ -74,60 +70,65 @@ describe('Datepicker', function () {
       <Datepicker selected={testDate} onSelect={jest.fn()} defaultIsOpen />,
     );
     const popoverContent = screen.getByTestId('cf-ui-popover-content');
-    const datepicker = screen.getByTestId('cf-ui-datepicker');
+    const datepickerTrigger = screen.getByTestId('cf-ui-datepicker-button');
 
-    act(() => {
-      fireEvent.keyDown(document.activeElement, {
-        key: 'Escape',
-      });
+    fireEvent.keyDown(document.activeElement, {
+      key: 'Escape',
     });
 
     await waitFor(() => {
-      expect(datepicker).toHaveAttribute('aria-expanded', 'false');
+      expect(datepickerTrigger).toHaveAttribute('aria-expanded', 'false');
       expect(popoverContent).not.toBeInTheDocument();
     });
   });
 
   it('updates value and trigger onSelect when clicking a day on calendar', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const onSelect = jest.fn();
     const newDate = new Date('2022-04-22');
     render(
       <Datepicker selected={testDate} onSelect={onSelect} defaultIsOpen />,
     );
 
-    const popover = screen.getByTestId('cf-ui-popover-content');
-    act(() => {
-      userEvent.click(within(popover).getByText(newDate.getDay()));
-    });
+    const popover = await screen.findByTestId('cf-ui-popover-content');
+    const element = await within(popover).findByText(newDate.getDay());
+
+    await user.click(element);
+
     expect(onSelect).toHaveBeenCalledTimes(1);
   });
 
   it('should not open calendar if datepicker is disabled', async () => {
-    const { queryByTestId } = render(
-      <Datepicker selected={testDate} onSelect={jest.fn()} isDisabled />,
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    render(
+      <Datepicker
+        selected={testDate}
+        onSelect={jest.fn()}
+        inputProps={{ isDisabled: true }}
+      />,
     );
 
     expect(screen.getByTestId('cf-ui-datepicker-input')).toBeDisabled();
 
-    act(() => {
-      userEvent.click(screen.getByRole('button'));
-    });
+    await user.click(screen.getByRole('button'));
 
-    expect(queryByTestId('cf-ui-popover-content')).toBeNull();
+    expect(screen.queryByTestId('cf-ui-popover-content')).toBeNull();
   });
 
   it('should set error state if date is invalid', async () => {
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     render(<Datepicker selected={testDate} onSelect={jest.fn()} />);
     const input = screen.getByTestId('cf-ui-datepicker-input');
 
-    act(() => {
-      userEvent.type(input, 'invalid date');
-    });
+    await user.type(input, 'invalid date');
 
     expect(input).toHaveAttribute('aria-invalid', 'true');
   });
 
   it('has no a11y issues', async () => {
+    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
+    jest.useRealTimers();
+
     const { container } = render(
       <Datepicker selected={testDate} onSelect={jest.fn()} defaultIsOpen />,
     );

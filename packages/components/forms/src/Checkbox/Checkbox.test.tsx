@@ -12,10 +12,13 @@ describe('Checkbox', function () {
 
     const checkbox = getByLabelText('label text');
     expect(checkbox).toBeInTheDocument();
-    expect(checkbox.id).toEqual('checkbox');
+    expect(checkbox.id).toBe('checkbox');
   });
 
   it('has no a11y issues', async () => {
+    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
+    jest.useRealTimers();
+
     const { container } = render(<Checkbox id="checkbox">label text</Checkbox>);
     const results = await axe(container);
 

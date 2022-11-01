@@ -1,10 +1,11 @@
 import { cx } from 'emotion';
 import React from 'react';
-import { Flex, Grid } from '@contentful/f36-core';
-import type {
-  CommonProps,
-  PropsWithHTMLElement,
-  ExpandProps,
+import {
+  Flex,
+  Grid,
+  type CommonProps,
+  type PropsWithHTMLElement,
+  type ExpandProps,
 } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
 import { Heading, Paragraph, Text } from '@contentful/f36-typography';
@@ -24,9 +25,15 @@ const icons = {
   positive: CheckCircleIcon,
   negative: ErrorCircleIcon,
   warning: WarningIcon,
+  neutral: InfoCircleIcon,
 };
 
-export type NoteVariant = 'negative' | 'positive' | 'primary' | 'warning';
+export type NoteVariant =
+  | 'negative'
+  | 'positive'
+  | 'primary'
+  | 'warning'
+  | 'neutral';
 
 export type NoteInternalProps = CommonProps & {
   /**
@@ -83,7 +90,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
       >
         <Icon
           as={icons[variant]}
-          variant={variant}
+          variant={variant === 'neutral' ? 'muted' : variant}
           size={title ? 'medium' : 'small'}
         />
         <Flex flexDirection="column">

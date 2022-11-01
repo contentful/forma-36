@@ -1,5 +1,198 @@
 # Change Log
 
+## 4.21.3
+
+### Patch Changes
+
+- [#2304](https://github.com/contentful/forma-36/pull/2304) [`d605d64f`](https://github.com/contentful/forma-36/commit/d605d64fcdc897d43fb6252829d86c8f3a2147f4) Thanks [@bgutsol](https://github.com/bgutsol)! - fix: remove default margin in safari for buttons
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.21.3
+
+## 4.21.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.21.2
+
+## 4.21.1
+
+### Patch Changes
+
+- [#2295](https://github.com/contentful/forma-36/pull/2295) [`4af847fa`](https://github.com/contentful/forma-36/commit/4af847fab090020fe9fa6f6c745c4825c19aef9c) Thanks [@massao](https://github.com/massao)! - Fix vertical alignment when icon is aligned at start
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.21.1
+
+## 4.21.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.21.0
+
+## 4.20.9
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.20.9
+
+## 4.20.8
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.20.8
+
+## 4.20.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.20.7
+
+## 4.20.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.20.6
+
+## 4.20.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.20.5
+
+## 4.20.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.20.4
+
+## 4.20.3
+
+### Patch Changes
+
+- Updated dependencies [[`d3c27ab8`](https://github.com/contentful/forma-36/commit/d3c27ab830ec9c2cc096e8be33da496c2dc284ea)]:
+  - @contentful/f36-core@4.20.3
+
+## 4.20.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.20.2
+
+## 4.20.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.20.1
+
+## 4.20.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.20.0
+
+## 4.19.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.19.2
+
+## 4.19.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.19.1
+
+## 4.19.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.19.0
+
+## 4.18.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.18.0
+
+## 4.17.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.17.0
+
+## 4.16.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.16.0
+
+## 4.15.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.15.1
+
+## 4.15.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.15.0
+
+## 4.14.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.14.0
+
+## 4.13.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.13.0
+
+## 4.12.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.12.0
+
+## 4.11.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.11.0
+
+## 4.11.0-beta.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.11.0-beta.0
+
 ## 4.10.5
 
 ### Patch Changes
