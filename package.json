@@ -25,7 +25,7 @@
     "tsc:watch": "tsc --noEmit --watch",
     "docs": "npm run-script docs:next",
     "docs:next": "turbo run start --scope=@contentful/f36-website --parallel --no-cache",
-    "docs:next:build": "turbo run build:prod --scope=@contentful/f36-website --parallel",
+    "docs:next:build": "turbo run build:prod --scope=@contentful/f36-website --parallel --force",
     "docs:next:start-prod": "turbo run start:prod --scope=@contentful/f36-website --parallel",
     "changelog:gen": "node scripts/changesets/changelog-generate.js",
     "changelog:write": "node scripts/changesets/changelog-write.js",
