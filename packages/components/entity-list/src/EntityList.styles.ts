@@ -39,11 +39,11 @@ export const getEntityListStyles = () => ({
       left: -1,
       backgroundColor: tokens.colorPrimary,
     },
-    '& li:first-child': {
+    '&>li:first-child': {
       borderTopLeftRadius: tokens.borderRadiusMedium,
       borderTopRightRadius: tokens.borderRadiusMedium,
     },
-    '& li:last-child': {
+    '&>li:last-child': {
       borderBottomLeftRadius: tokens.borderRadiusMedium,
       borderBottomRightRadius: tokens.borderRadiusMedium,
     },
