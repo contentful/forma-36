@@ -45,7 +45,11 @@ consider using [react-focus-lock](https://github.com/theKashey/react-focus-lock)
 
 ```
 
-For a non-interactive element, that element need to be focusable by adding `tabindex="0"`.
+<Note variant="neutral">
+  We strongly recommend using an interactive element such as `button` for
+  `Popover.Trigger`, but if you need to use a non-interactive element, like
+  `div`, you should make that element focusable by providing `tabindex="0"`.
+</Note>
 
 ## Props (API reference)
 
