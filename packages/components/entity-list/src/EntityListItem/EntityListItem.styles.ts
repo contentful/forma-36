@@ -22,10 +22,8 @@ export const getEntityListItemStyles = () => ({
       },
       ...(props.isSelected
         ? {
-            backgroundColor: tokens.blue100,
-            borderStyle: 'solid',
-            borderColor: tokens.colorPrimary,
-            borderWidth: 1,
+            boxShadow: `inset 0 -1px 0 ${tokens.colorPrimary}`,
+            background: tokens.blue100,
           }
         : {}),
     }),

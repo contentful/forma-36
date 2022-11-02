@@ -39,6 +39,7 @@ export const SelectableEntryListItems: Story<EntityListProps> = () => {
   const [firstEntry, setFirstEntry] = useState(false);
   const [secondEntry, setSecondEntry] = useState(false);
   const [thirdEntry, setThirdEntry] = useState(false);
+  const [fourthEntry, setFourthEntry] = useState(false);
 
   return (
     <EntityList>
@@ -65,6 +66,14 @@ export const SelectableEntryListItems: Story<EntityListProps> = () => {
         status="archived"
         isSelected={thirdEntry}
         onClick={() => setThirdEntry(!thirdEntry)}
+      />
+      <EntityList.Item
+        title="Entry 4"
+        description="Description"
+        contentType="My content type"
+        status="archived"
+        isSelected={fourthEntry}
+        onClick={() => setFourthEntry(!fourthEntry)}
       />
     </EntityList>
   );
