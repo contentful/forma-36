@@ -72,9 +72,7 @@ function SidebarSubsection({ title, links = [] }: SidebarSubsectionProps) {
               isActive={isLinkActive(link.slug, currentPage)}
               href={link.slug}
               isNew={link.isNew}
-              isBeta={link.isBeta}
-              isAlpha={link.isAlpha}
-              isDeprecated={link.isDeprecated}
+              status={link.status}
               isAuthProtected={link.authProtected}
               paddingLeft="spacing2Xl"
             >
@@ -136,9 +134,7 @@ export function SidebarSection({
             href={link.slug}
             isExternal={link.slug.includes('https://')}
             isNew={link.isNew}
-            isBeta={link.isBeta}
-            isAlpha={link.isAlpha}
-            isDeprecated={link.isDeprecated}
+            status={link.status}
             isAuthProtected={link.authProtected}
           >
             {link.title}

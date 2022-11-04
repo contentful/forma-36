@@ -54,14 +54,14 @@ const getGithubIssueLink = (title) => {
 
 export function PageContentHeader({
   title,
-  status,
+  status = 'stable',
   children,
 }: PageContentHeaderProps) {
   const gridStyles = getGridStyles();
   const isDeprecated = status === 'deprecated';
   const isAlpha = status === 'alpha';
   const isBeta = status === 'beta';
-  const showNote = isAlpha || isDeprecated;
+  const showNote = status !== 'stable';
 
   return (
     <header className={cx(gridStyles.contentColumns, styles.header)}>

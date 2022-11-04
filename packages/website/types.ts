@@ -28,14 +28,14 @@ export enum HARDCODED_WEBSITE_SECTION {
 const sidebarLinkObjectTypes = ['link', 'KbAppLink', 'KbAppArticle'] as const;
 type SidebarLinkObjectType = typeof sidebarLinkObjectTypes[number];
 
+export type ComponentStatus = 'stable' | 'beta' | 'alpha' | 'deprecated';
+
 export type SidebarLink = {
   title: string;
   slug: string;
   type?: SidebarLinkObjectType;
   isNew?: boolean;
-  isBeta?: boolean;
-  isAlpha?: boolean;
-  isDeprecated?: boolean;
+  status?: ComponentStatus;
   authProtected?: boolean;
 };
 
