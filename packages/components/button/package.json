@@ -16,7 +16,8 @@
     "@contentful/f36-icons": "^4.21.3"
   },
   "peerDependencies": {
-    "react": ">=16.8"
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   },
   "license": "MIT",
   "files": [
