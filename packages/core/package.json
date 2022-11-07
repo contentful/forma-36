@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-core",
-  "version": "4.21.3",
+  "version": "4.21.4",
   "description": "Forma 36 core",
   "license": "MIT",
   "files": [
@@ -26,7 +26,8 @@
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
-    "react": ">=16.8"
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   },
   "publishConfig": {
     "access": "public"

@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-docs-utils",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "private": true,
   "license": "MIT",
   "files": [
@@ -19,13 +19,14 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-components": "^4.11.0",
+    "@contentful/f36-components": "^4.21.4",
     "@contentful/f36-tokens": "^4.0.0",
-    "@contentful/f36-icons": "^4.11.0",
+    "@contentful/f36-icons": "^4.21.4",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
-    "react": ">=16.8"
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   },
   "publishConfig": {
     "access": "public"
