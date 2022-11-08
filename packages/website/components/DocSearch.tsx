@@ -28,6 +28,7 @@ export const DocSearch = () => {
           },
         });
       } catch (e) {
+        // eslint-disable-next-line no-console -- Allow this error
         console.error('Failed to initialize Algolia search', e);
       }
     });
