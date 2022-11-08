@@ -9,6 +9,7 @@ import {
   LockTrimmedIcon,
 } from '@contentful/f36-icons';
 import { useSession } from 'next-auth/react';
+import { ComponentStatus } from '../types';
 
 const styles = {
   link: css({
@@ -103,6 +104,26 @@ export function SidebarSectionButton({
   );
 }
 
+const renderSidebarBadge = ({
+  isNew,
+  status = 'stable',
+}: Pick<SidebarLinkProps, 'isNew' | 'status'>) => {
+  if (!isNew && status === 'stable') {
+    return null;
+  }
+  const variants = {
+    deprecated: 'negative',
+    alpha: 'secondary',
+    beta: 'secondary',
+  };
+  const variant = isNew ? 'primary' : variants[status];
+  return (
+    <Badge className={styles.badge} size="small" variant={variant}>
+      {isNew ? 'new' : status}
+    </Badge>
+  );
+};
+
 interface SidebarLinkProps {
   children: React.ReactNode;
   href: string;
@@ -110,9 +131,7 @@ interface SidebarLinkProps {
   isExternal?: boolean;
   paddingLeft?: 'spacingXl' | 'spacing2Xl';
   isNew?: boolean;
-  isBeta?: boolean;
-  isAlpha?: boolean;
-  isDeprecated?: boolean;
+  status?: ComponentStatus;
   isAuthProtected?: boolean;
 }
 
@@ -123,9 +142,7 @@ export function SidebarLink({
   isActive = false,
   paddingLeft = 'spacingXl',
   isNew = false,
-  isBeta = false,
-  isAlpha = false,
-  isDeprecated = false,
+  status = 'stable',
   isAuthProtected = false,
 }: SidebarLinkProps) {
   const { data: session } = useSession();
@@ -163,23 +180,7 @@ export function SidebarLink({
               />
             )}
           </span>
-          {(isNew || isDeprecated || isBeta || isAlpha) && (
-            <Badge
-              className={styles.badge}
-              size="small"
-              variant={
-                isDeprecated ? 'negative' : isNew ? 'primary' : 'secondary'
-              }
-            >
-              {isDeprecated
-                ? 'deprecated'
-                : isNew
-                ? 'new'
-                : isBeta
-                ? 'beta'
-                : 'alpha'}
-            </Badge>
-          )}
+          {renderSidebarBadge({ isNew, status })}
         </a>
       </Link>
     </List.Item>
