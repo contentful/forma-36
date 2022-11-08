@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.21.5
+
+### Patch Changes
+
+- [#2315](https://github.com/contentful/forma-36/pull/2315) [`bd4e35fb`](https://github.com/contentful/forma-36/commit/bd4e35fbfe04311c17cf151c7bf639c370c4994d) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix: update tabs library for React 18 compatibility
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.21.5
+
 ## 4.21.4
 
 ### Patch Changes
