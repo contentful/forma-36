@@ -22,7 +22,7 @@
     "@mdx-js/react": "^2.1.1",
     "@next/mdx": "^11.1.2",
     "@segment/snippet": "^4.15.3",
-    "array-move": "^3.0.0",
+    "array-move": "^4.0.0",
     "date-fns": "^2.28.0",
     "docsearch.js": "2.6.3",
     "emotion": "^10.0.17",
