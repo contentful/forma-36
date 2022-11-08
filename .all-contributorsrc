@@ -648,6 +648,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "benomatis",
+      "name": "benomatis",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5822748?v=4",
+      "profile": "https://benomatis.com",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -655,5 +664,6 @@
   "projectOwner": "contentful",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "angular"
 }
