@@ -1,8 +1,10 @@
+export type ComponentStatus = 'stable' | 'beta' | 'alpha' | 'deprecated';
+
 export interface FrontMatter {
   github?: string;
   section?: string;
   slug?: string;
-  status?: 'stable' | 'deprecated' | 'alpha' | 'beta';
+  status?: ComponentStatus;
   title: string;
   type?: string;
   typescript?: string;
@@ -27,8 +29,6 @@ export enum HARDCODED_WEBSITE_SECTION {
  */
 const sidebarLinkObjectTypes = ['link', 'KbAppLink', 'KbAppArticle'] as const;
 type SidebarLinkObjectType = typeof sidebarLinkObjectTypes[number];
-
-export type ComponentStatus = 'stable' | 'beta' | 'alpha' | 'deprecated';
 
 export type SidebarLink = {
   title: string;
