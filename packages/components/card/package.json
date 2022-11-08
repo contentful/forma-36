@@ -41,5 +41,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "array-move": "^4.0.0"
   }
 }

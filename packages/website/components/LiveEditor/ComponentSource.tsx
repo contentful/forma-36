@@ -25,7 +25,7 @@ import {
   SortableElement,
   SortableHandle,
 } from 'react-sortable-hoc';
-import arrayMove from 'array-move';
+import { arrayMoveImmutable } from 'array-move';
 import { format, parse, isValid } from 'date-fns';
 
 const liveProviderScope = {
@@ -50,7 +50,7 @@ const liveProviderScope = {
   SortableContainer,
   SortableElement,
   SortableHandle,
-  arrayMove,
+  arrayMoveImmutable,
   format,
   parse,
   isValid,
