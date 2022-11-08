@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.21.4
+
+### Patch Changes
+
+- Updated dependencies [[`66973fd9`](https://github.com/contentful/forma-36/commit/66973fd9f4612f648795b494f312d21d8baa3e56)]:
+  - @contentful/f36-core@4.21.4
+  - @contentful/f36-utils@4.21.4
+
 ## 4.21.3
 
 ### Patch Changes

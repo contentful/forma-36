@@ -1,21 +1,22 @@
 {
   "name": "@contentful/f36-workbench",
-  "version": "4.20.4",
+  "version": "4.20.5",
   "description": "Forma 36: Workbench component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-button": "^4.20.4",
-    "@contentful/f36-core": "^4.20.4",
-    "@contentful/f36-icon": "^4.20.4",
-    "@contentful/f36-icons": "^4.20.4",
+    "@contentful/f36-button": "^4.21.4",
+    "@contentful/f36-core": "^4.21.4",
+    "@contentful/f36-icon": "^4.21.4",
+    "@contentful/f36-icons": "^4.21.4",
     "@contentful/f36-tokens": "^4.0.1",
-    "@contentful/f36-typography": "^4.20.4",
+    "@contentful/f36-typography": "^4.21.4",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
-    "react": ">=16.8"
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   },
   "license": "MIT",
   "files": [

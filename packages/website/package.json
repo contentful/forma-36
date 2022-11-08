@@ -10,12 +10,12 @@
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "0.18.1",
-    "@contentful/f36-components": "^4.21.3",
-    "@contentful/f36-docs-utils": "^4.0.1",
-    "@contentful/f36-icon": "^4.21.3",
-    "@contentful/f36-icons": "^4.21.3",
+    "@contentful/f36-components": "^4.21.4",
+    "@contentful/f36-docs-utils": "^4.0.2",
+    "@contentful/f36-icon": "^4.21.4",
+    "@contentful/f36-icons": "^4.21.4",
     "@contentful/f36-tokens": "^4.0.0",
-    "@contentful/f36-utils": "^4.21.3",
+    "@contentful/f36-utils": "^4.21.4",
     "@contentful/rich-text-react-renderer": "^15.11.1",
     "@emotion/core": "^10.0.17",
     "@mdx-js/loader": "^1.6.22",
@@ -59,7 +59,7 @@
     "broken-link-checker": "^0.7.8",
     "dotenv": "^10.0.0",
     "prettier": "^2.7.1",
-    "ts-node": "^10.8.2",
+    "ts-node": "^10.9.1",
     "wait-on": "^6.0.0"
   }
 }
