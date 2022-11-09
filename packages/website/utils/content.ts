@@ -87,15 +87,13 @@ async function getMdxPaths() {
       title,
       slug,
       section,
+      status,
       isNew = undefined,
-      isBeta = undefined,
-      isAlpha = undefined,
-      isDeprecated = undefined,
     } = page.frontMatter.data;
     if (!section) {
       const unassigned = sortByTitle([
         ...(acc['unassigned'] || []),
-        { title, slug, isNew, isBeta, isAlpha, isDeprecated },
+        { title, slug, isNew, status },
       ]);
 
       return {
@@ -106,7 +104,7 @@ async function getMdxPaths() {
 
     const sectionContent = sortByTitle([
       ...(acc[section] || []),
-      { title, slug, isNew, isBeta, isAlpha, isDeprecated },
+      { title, slug, isNew, status },
     ]);
 
     return { ...acc, [section]: sectionContent };

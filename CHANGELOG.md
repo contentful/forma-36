@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 09-11-2022
+
+**F36 Tabs** `v4.21.5`
+
+- fix: update tabs library for React 18 compatibility
+
 ## 08-11-2022
 
 **F36 Accordion** `v4.21.4`
