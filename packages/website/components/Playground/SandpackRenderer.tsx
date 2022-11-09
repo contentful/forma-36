@@ -10,19 +10,19 @@ import tokens from '@contentful/f36-tokens';
 import { PlaygroundTopBar } from './PlaygroundTopBar';
 import { palette } from '../LiveEditor/theme';
 const indexFile = `import React, { StrictMode } from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { GlobalStyles } from "@contentful/f36-components";
 import "./styles.css";
 
 import App from "./App";
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container)
+root.render(
   <StrictMode>
     <GlobalStyles />
     <App />
-  </StrictMode>,
-  rootElement
+  </StrictMode>
 );`;
 
 const stylesFile = `
