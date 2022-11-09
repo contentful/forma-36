@@ -2,7 +2,7 @@
 
 ## Note to outside contributors
 
-We did not expect outside contributors to run the forma documentation website locally, as this content is coming from the ui-team's contentful space, and is intended for internal use. For sandboxing and playing around locally we recommend to start the storybook package locally (see [the 'Storybook for f36-components' section on the main page](https://github.com/contentful/forma-36#storybook-for-f36-components)).
+The forma documentation site does not currently support being run locally by contributors outside of Contentful internal UI systems team as it has a dependency on the team's private Contentful space. Community contributors can run storybook to build and develop components locally (see [the 'Storybook for f36-components' section on the main page](https://github.com/contentful/forma-36#storybook-for-f36-components)).
 
 ## Getting Started
 
