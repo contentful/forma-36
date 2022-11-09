@@ -69,7 +69,7 @@ export function SandpackRenderer({
           'react-icons': '4.3.1',
           'react-focus-lock': '^2.5.2',
           'react-sortable-hoc': '^2.0.0',
-          'array-move': '^3.0.0',
+          'array-move': '^4.0.0',
         },
       }}
     >
