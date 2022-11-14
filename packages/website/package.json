@@ -32,7 +32,7 @@
     "gray-matter": "^4.0.3",
     "lz-string": "1.4.4",
     "next": "^12.3.1",
-    "next-auth": "^4.10.3",
+    "next-auth": "^4.16.4",
     "next-mdx-remote": "^3.0.8",
     "prism-react-renderer": "1.2.1",
     "qs": "^6.10.1",
