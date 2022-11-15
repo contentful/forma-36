@@ -102,7 +102,7 @@ export const Tooltip = ({
   as: HtmlTag = 'span',
   content,
   id,
-  isVisible,
+  isVisible = false,
   hideDelay = 0,
   onBlur,
   onFocus,
@@ -119,7 +119,7 @@ export const Tooltip = ({
   ...otherProps
 }: TooltipProps) => {
   const styles = getStyles();
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(isVisible);
   const tooltipId = useId(id, 'tooltip');
   const elementRef = useRef(null);
   const popperRef = useRef(null);
@@ -157,16 +157,22 @@ export const Tooltip = ({
     updatePosition();
   }, [content, update]);
 
-  const [isHoveringTarget, setIsHoveringTarget] = useState(false);
-  const [isHoveringContent, setIsHoveringContent] = useState(false);
-  useEffect(() => {
-    setShow(isHoveringContent || isHoveringTarget);
-  }, [isHoveringTarget, isHoveringContent]);
+  const showTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const hideTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const clearTimeouts = () => {
+    clearTimeout(showTimeoutRef.current);
+    clearTimeout(hideTimeoutRef.current);
+  };
+  useEffect(() => clearTimeouts);
 
-  useEffect(() => {
-    if (isVisible) setShow(true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const showPopover = () => {
+    clearTimeouts();
+    showTimeoutRef.current = setTimeout(() => setShow(true), showDelay);
+  };
+  const hidePopover = () => {
+    clearTimeouts();
+    hideTimeoutRef.current = setTimeout(() => setShow(false), hideDelay);
+  };
 
   const contentMaxWidth =
     typeof maxWidth === 'string' ? maxWidth : `${maxWidth}px`;
@@ -195,10 +201,12 @@ export const Tooltip = ({
       className={cx(styles.tooltip, className)}
       testId={testId}
       onMouseEnter={() => {
-        setIsHoveringContent(true);
+        clearTimeouts();
+        setShow(true);
       }}
       onMouseLeave={() => {
-        setIsHoveringContent(false);
+        clearTimeouts();
+        setShow(false);
       }}
       {...attributes.popper}
     >
@@ -222,24 +230,24 @@ export const Tooltip = ({
         ref={elementRef}
         className={cx(styles.tooltipContainer, targetWrapperClassName)}
         onMouseEnter={(evt: MouseEvent) => {
-          setTimeout(() => setIsHoveringTarget(true), showDelay);
+          showPopover();
           if (onMouseOver) onMouseOver(evt);
         }}
         onMouseLeave={(evt: MouseEvent) => {
-          setTimeout(() => setIsHoveringTarget(false), hideDelay);
+          hidePopover();
           if (onMouseLeave) onMouseLeave(evt);
         }}
         onFocus={(evt: FocusEvent) => {
-          setTimeout(() => setIsHoveringTarget(true), showDelay);
+          showPopover();
           if (onFocus) onFocus(evt);
         }}
         onBlur={(evt: FocusEvent) => {
-          setTimeout(() => setIsHoveringTarget(false), hideDelay);
+          hidePopover();
           if (onBlur) onBlur(evt);
         }}
         onKeyDown={(evt: KeyboardEvent) => {
           if (evt.key === 'Escape') {
-            setTimeout(() => setIsHoveringTarget(false), hideDelay);
+            hidePopover();
           }
           if (onKeyDown) onKeyDown(evt);
         }}
