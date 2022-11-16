@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.21.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.21.7
+  - @contentful/f36-icons@4.21.7
+  - @contentful/f36-tooltip@4.21.7
+  - @contentful/f36-core@4.21.7
+
 ## 4.21.6
 
 ### Patch Changes

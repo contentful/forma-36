@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.21.7
+
+### Patch Changes
+
+- [#2328](https://github.com/contentful/forma-36/pull/2328) [`33dfdc41`](https://github.com/contentful/forma-36/commit/33dfdc417d407aea54386bdaec155c452aaf1638) Thanks [@mshaaban0](https://github.com/mshaaban0)! - feat(Skeleton): add and expose raduis properties
+
+- Updated dependencies []:
+  - @contentful/f36-table@4.21.7
+  - @contentful/f36-core@4.21.7
+
 ## 4.21.6
 
 ### Patch Changes
