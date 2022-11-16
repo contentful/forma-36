@@ -1,5 +1,17 @@
 # @contentful/f36-datepicker
 
+## 4.21.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.21.6
+  - @contentful/f36-forms@4.21.6
+  - @contentful/f36-icons@4.21.6
+  - @contentful/f36-popover@4.21.6
+  - @contentful/f36-typography@4.21.6
+  - @contentful/f36-core@4.21.6
+
 ## 4.21.5
 
 ### Patch Changes

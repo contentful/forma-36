@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.21.6
+
+### Patch Changes
+
+- [#2329](https://github.com/contentful/forma-36/pull/2329) [`f601431f`](https://github.com/contentful/forma-36/commit/f601431fdef4e500ecc5f5bacc26ebef949aabfe) Thanks [@bgutsol](https://github.com/bgutsol)! - Fix tooltip show/hide logic with delays
+
+- Updated dependencies []:
+  - @contentful/f36-utils@4.21.6
+  - @contentful/f36-core@4.21.6
+
 ## 4.21.5
 
 ### Patch Changes
