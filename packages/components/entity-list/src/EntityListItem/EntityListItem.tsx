@@ -224,7 +224,6 @@ export const EntityListItem = ({
             <Flex marginTop="spacing2Xs">
               {entityType && (
                 <Text
-                  as="span"
                   lineHeight="lineHeightM"
                   fontColor="gray600"
                   className={styles.entityType}
@@ -232,9 +231,6 @@ export const EntityListItem = ({
                   {entityType}
                 </Text>
               )}
-              <Text as="span" lineHeight="lineHeightM" fontColor="gray400">
-                |
-              </Text>
               {description && (
                 <Text
                   as="p"

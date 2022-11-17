@@ -35,6 +35,7 @@ export const getEntityListItemStyles = () => ({
   content: css({
     flexGrow: 1,
     minWidth: 0,
+    position: 'relative',
   }),
   media: css({
     display: 'flex',
@@ -57,11 +58,19 @@ export const getEntityListItemStyles = () => ({
     marginLeft: tokens.spacingXs,
   }),
   entityType: css({
-    marginRight: tokens.spacing2Xs,
     textTransform: 'capitalize',
+
+    '&::after': {
+      content: '" "',
+      position: 'absolute',
+      borderRight: `1px solid ${tokens.gray400}`,
+      height: '25%',
+      marginTop: tokens.spacing2Xs,
+      width: tokens.spacingXs,
+    },
   }),
   description: css({
-    marginLeft: tokens.spacing2Xs,
+    marginLeft: tokens.spacingM,
   }),
   meta: css({
     marginLeft: 'auto',
