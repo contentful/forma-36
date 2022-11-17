@@ -228,7 +228,6 @@ export const EntityListItem = ({
                   lineHeight="lineHeightM"
                   fontColor="gray600"
                   className={styles.entityType}
-                  isTruncated
                 >
                   {entityType}
                 </Text>
