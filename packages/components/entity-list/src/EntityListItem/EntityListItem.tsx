@@ -13,6 +13,7 @@ import {
   EntryIcon,
   ReleaseIcon,
   MoreHorizontalIcon,
+  PageIcon,
 } from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
 import { Text } from '@contentful/f36-typography';
@@ -32,6 +33,7 @@ const ICON_MAP = {
   asset: AssetIcon,
   entry: EntryIcon,
   release: ReleaseIcon,
+  page: PageIcon,
 };
 
 export interface EntityListItemProps extends CommonProps {
@@ -88,7 +90,7 @@ export interface EntityListItemProps extends CommonProps {
    *
    * Note: 'entry' and 'asset' are @deprecated but supported in v1.x for backwards compatibility
    */
-  entityType?: 'Entry' | 'Asset' | 'entry' | 'asset' | 'Release';
+  entityType?: 'Entry' | 'Asset' | 'entry' | 'asset' | 'Release' | 'Page';
   /**
    * Loading state for the component - when true will display loading feedback to the user
    */
@@ -219,17 +221,28 @@ export const EntityListItem = ({
                 </Text>
               )}
             </Flex>
-            {description && (
-              <Text
-                as="p"
-                lineHeight="lineHeightM"
-                fontColor="gray900"
-                isTruncated
-                className={styles.description}
-              >
-                {description}
-              </Text>
-            )}
+            <Flex marginTop="spacing2Xs">
+              {entityType && (
+                <Text
+                  lineHeight="lineHeightM"
+                  fontColor="gray600"
+                  className={styles.entityType}
+                >
+                  {entityType}
+                </Text>
+              )}
+              {description && (
+                <Text
+                  as="p"
+                  lineHeight="lineHeightM"
+                  fontColor="gray900"
+                  isTruncated
+                  className={styles.description}
+                >
+                  {description}
+                </Text>
+              )}
+            </Flex>
           </div>
 
           <Flex
