@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 18-11-2022
+
+**F36 Forms** `v4.21.8`
+
+- Remove unused prop from types
+
 ## 17-11-2022
 
 **F36 Tooltip** `v4.21.6`
