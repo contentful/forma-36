@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.21.8
+
+### Patch Changes
+
+- [#2332](https://github.com/contentful/forma-36/pull/2332) [`fd9fbd7b`](https://github.com/contentful/forma-36/commit/fd9fbd7b32ae7adf1981b68a29082e4d537f1237) Thanks [@massao](https://github.com/massao)! - Remove unused prop from types
+
+- Updated dependencies []:
+  - @contentful/f36-icons@4.21.8
+  - @contentful/f36-typography@4.21.8
+  - @contentful/f36-core@4.21.8
+
 ## 4.21.7
 
 ### Patch Changes
