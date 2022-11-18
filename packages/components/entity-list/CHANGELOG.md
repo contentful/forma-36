@@ -1,5 +1,24 @@
 # Change Log
 
+## 4.22.0
+
+### Minor Changes
+
+- [#2331](https://github.com/contentful/forma-36/pull/2331) [`51e274b8`](https://github.com/contentful/forma-36/commit/51e274b844a3b5802ec86db0693c68a204dc5be9) Thanks [@ChidinmaOrajiaku](https://github.com/ChidinmaOrajiaku)! - Update entity list item to include entity type on card
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.22.0
+  - @contentful/f36-button@4.22.0
+  - @contentful/f36-drag-handle@4.22.0
+  - @contentful/f36-icon@4.22.0
+  - @contentful/f36-icons@4.22.0
+  - @contentful/f36-menu@4.22.0
+  - @contentful/f36-skeleton@4.22.0
+  - @contentful/f36-typography@4.22.0
+  - @contentful/f36-core@4.22.0
+
 ## 4.21.8
 
 ### Patch Changes

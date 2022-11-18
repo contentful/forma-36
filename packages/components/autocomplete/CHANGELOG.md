@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.22.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.22.0
+  - @contentful/f36-forms@4.22.0
+  - @contentful/f36-icons@4.22.0
+  - @contentful/f36-popover@4.22.0
+  - @contentful/f36-skeleton@4.22.0
+  - @contentful/f36-typography@4.22.0
+  - @contentful/f36-utils@4.22.0
+  - @contentful/f36-core@4.22.0
+
 ## 4.21.8
 
 ### Patch Changes
