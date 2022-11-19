@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 19-11-2022
+
+**F36 Entity List** `v4.22.0`
+
+- Update entity list item to include entity type on card
+
 ## 18-11-2022
 
 **F36 Forms** `v4.21.8`
