@@ -59,18 +59,16 @@ export const getEntityListItemStyles = () => ({
   }),
   entityType: css({
     textTransform: 'capitalize',
-
-    '&::after': {
-      content: '" "',
-      position: 'absolute',
-      borderRight: `1px solid ${tokens.gray400}`,
-      height: '25%',
-      marginTop: tokens.spacing2Xs,
-      width: tokens.spacingXs,
-    },
   }),
   description: css({
-    marginLeft: tokens.spacingM,
+    '&::before': {
+      content: '"|"',
+      color: tokens.gray400,
+      height: '25%',
+      marginTop: tokens.spacing2Xs,
+      marginLeft: tokens.spacing2Xs,
+      marginRight: tokens.spacing2Xs,
+    },
   }),
   meta: css({
     marginLeft: 'auto',
