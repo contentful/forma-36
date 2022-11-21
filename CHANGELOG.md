@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 21-11-2022
+
+**F36 Workbench** `v4.20.6`
+
+- Bump package to fix the latest release
+
 ## 19-11-2022
 
 **F36 Entity List** `v4.22.0`
