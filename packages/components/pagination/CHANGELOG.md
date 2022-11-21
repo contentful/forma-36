@@ -1,5 +1,49 @@
 # @contentful/f36-pagination
 
+## 4.22.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.22.0
+  - @contentful/f36-forms@4.22.0
+  - @contentful/f36-icons@4.22.0
+  - @contentful/f36-typography@4.22.0
+  - @contentful/f36-core@4.22.0
+
+## 4.21.8
+
+### Patch Changes
+
+- Updated dependencies [[`fd9fbd7b`](https://github.com/contentful/forma-36/commit/fd9fbd7b32ae7adf1981b68a29082e4d537f1237)]:
+  - @contentful/f36-forms@4.21.8
+  - @contentful/f36-button@4.21.8
+  - @contentful/f36-icons@4.21.8
+  - @contentful/f36-typography@4.21.8
+  - @contentful/f36-core@4.21.8
+
+## 4.21.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.21.7
+  - @contentful/f36-forms@4.21.7
+  - @contentful/f36-icons@4.21.7
+  - @contentful/f36-typography@4.21.7
+  - @contentful/f36-core@4.21.7
+
+## 4.21.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.21.6
+  - @contentful/f36-forms@4.21.6
+  - @contentful/f36-icons@4.21.6
+  - @contentful/f36-typography@4.21.6
+  - @contentful/f36-core@4.21.6
+
 ## 4.21.5
 
 ### Patch Changes

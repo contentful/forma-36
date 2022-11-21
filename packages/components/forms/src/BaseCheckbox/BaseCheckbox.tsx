@@ -9,7 +9,7 @@ import { HelpText } from '../HelpText/HelpText';
 import { useFormControl } from '../FormControl/FormControlContext';
 
 export type BaseCheckboxProps = PropsWithHTMLElement<
-  BaseCheckboxInternalProps & { label?: string },
+  BaseCheckboxInternalProps,
   'label',
   'htmlFor'
 >;
