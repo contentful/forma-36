@@ -163,7 +163,7 @@ export const Tooltip = ({
     clearTimeout(showTimeoutRef.current);
     clearTimeout(hideTimeoutRef.current);
   };
-  useEffect(() => clearTimeouts);
+  useEffect(() => clearTimeouts, []);
 
   const showPopover = () => {
     clearTimeouts();
