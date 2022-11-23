@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.23.1
+
+### Patch Changes
+
+- [#2337](https://github.com/contentful/forma-36/pull/2337) [`8b29f998`](https://github.com/contentful/forma-36/commit/8b29f99876a370723a0e544bbd9c49ec10ab075c) Thanks [@bgutsol](https://github.com/bgutsol)! - Fix tooltip sticky behavior issue
+
+- Updated dependencies []:
+  - @contentful/f36-utils@4.23.1
+  - @contentful/f36-core@4.23.1
+
 ## 4.23.0
 
 ### Patch Changes

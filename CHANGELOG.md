@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 23-11-2022
+
+**F36 Entity List** `v4.23.0`
+
+- Show divider for when entity card has a description
+
+**F36 Tooltip** `v4.23.1`
+
+- Fix tooltip sticky behavior issue
+
 ## 21-11-2022
 
 **F36 Workbench** `v4.20.6`
