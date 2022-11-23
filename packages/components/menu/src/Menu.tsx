@@ -168,6 +168,7 @@ export function Menu(props: MenuProps) {
         onMouseUp: (event) => {
           event.preventDefault();
           // handle odd case for Safari
+          // remove focus from trigger after closing the menu
           if (document.activeElement === triggerRef.current) {
             triggerRef.current.blur();
           }
