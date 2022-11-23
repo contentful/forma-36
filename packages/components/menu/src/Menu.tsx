@@ -156,6 +156,23 @@ export function Menu(props: MenuProps) {
       menuId,
       focusMenuItem,
       getTriggerProps: (_props = {}, _ref = null) => ({
+        onMouseDown: (event) => {
+          event.preventDefault();
+          // handle odd case for Safari which
+          // don't give the button the focus properly.
+          if (document.activeElement !== document.body) {
+            triggerRef.current.focus({ preventScroll: true });
+          }
+          _props.onMouseDown?.(event);
+        },
+        onMouseUp: (event) => {
+          event.preventDefault();
+          // handle odd case for Safari
+          if (document.activeElement === triggerRef.current) {
+            triggerRef.current.blur();
+          }
+          _props.onMouseUp?.(event);
+        },
         onClick: (event) => {
           // if the user made component controlled by providing isOpen prop
           // but onOpen callback is not provided, we won't add toggle logic
