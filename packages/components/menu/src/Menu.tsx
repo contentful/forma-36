@@ -150,6 +150,8 @@ export function Menu(props: MenuProps) {
     [closeAndFocusTrigger, handleArrowsKeyDown],
   );
 
+  const isMouseDown = useRef<Boolean>(false);
+
   const contextValue: MenuContextType = useMemo(
     () => ({
       isOpen,
@@ -157,21 +159,15 @@ export function Menu(props: MenuProps) {
       focusMenuItem,
       getTriggerProps: (_props = {}, _ref = null) => ({
         onMouseDown: (event) => {
-          event.preventDefault();
           // handle odd case for Safari which
-          // don't give the button the focus properly.
-          if (document.activeElement !== document.body) {
-            triggerRef.current.focus({ preventScroll: true });
-          }
+          // prevent triggering blur when MouseDown
+          isMouseDown.current = true;
           _props.onMouseDown?.(event);
         },
         onMouseUp: (event) => {
-          event.preventDefault();
           // handle odd case for Safari
-          // remove focus from trigger after closing the menu
-          if (document.activeElement === triggerRef.current) {
-            triggerRef.current.blur();
-          }
+          // set isMouseDown as false to enable blur
+          isMouseDown.current = false;
           _props.onMouseUp?.(event);
         },
         onClick: (event) => {
@@ -212,7 +208,8 @@ export function Menu(props: MenuProps) {
             menuListRef.current?.contains(relatedTarget);
           const targetIsTrigger =
             triggerRef.current === relatedTarget ||
-            triggerRef.current?.contains(relatedTarget);
+            triggerRef.current?.contains(relatedTarget) ||
+            isMouseDown.current;
           const targetIsSubmenu =
             relatedTarget?.parentElement?.dataset.parentMenu === menuId;
 
