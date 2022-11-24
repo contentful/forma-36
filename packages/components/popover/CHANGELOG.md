@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.23.2
+
+### Patch Changes
+
+- [#2338](https://github.com/contentful/forma-36/pull/2338) [`549215af`](https://github.com/contentful/forma-36/commit/549215af6cde9fd41dc527e2cb18f0b6560d93a3) Thanks [@massao](https://github.com/massao)! - fix(menu): Safari issue on closing menu clicking on trigger
+
+- Updated dependencies []:
+  - @contentful/f36-utils@4.23.2
+  - @contentful/f36-core@4.23.2
+
 ## 4.23.1
 
 ### Patch Changes
