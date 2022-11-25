@@ -35,9 +35,9 @@ const variantToStyles = (variant: TextLinkVariant) => {
       };
     case 'muted':
       return {
-        color: tokens.gray400,
+        color: tokens.gray500,
         '&:hover, &:focus': {
-          color: tokens.gray500,
+          color: tokens.gray600,
         },
       };
     case 'white':
