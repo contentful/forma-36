@@ -25,12 +25,14 @@ export const Basic: Story<EntityListProps> = () => (
       description="Description"
       contentType="My content type"
       status="draft"
+      entityType="Page"
     />
     <EntityList.Item
       title="Entry 3"
       description="Description"
       contentType="My content type"
       status="archived"
+      entityType="Release"
     />
   </EntityList>
 );
