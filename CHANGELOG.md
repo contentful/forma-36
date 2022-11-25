@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 25-11-2022
+
+**F36 Menu** `v4.23.2`
+
+- fix(menu): Safari issue on closing menu clicking on trigger
+
+**F36 Popover** `v4.23.2`
+
+- fix(menu): Safari issue on closing menu clicking on trigger
+
 ## 23-11-2022
 
 **F36 Entity List** `v4.23.0`
