@@ -21,6 +21,7 @@ export const getWorkbenchHeaderStyles = (hasBackButton = false) => ({
     flexGrow: 1,
   }),
   description: css({
+    color: tokens.gray700,
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     overflow: 'hidden',

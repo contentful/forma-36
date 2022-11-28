@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 import tokens from '@contentful/f36-tokens';
@@ -42,7 +42,7 @@ export default {
 
 interface Args {
   ['Header Title']: string;
-  ['Header Description']: string;
+  ['Header Description']: string | ReactElement;
   ['Content Type']: WorkbenchContentProps['type'];
 }
 
@@ -305,6 +305,17 @@ export const HeaderOverview = () => {
                 <HelpCircleIcon />
               </Flex>
             }
+          />
+        </span>
+
+        <span>
+          <SectionHeading as="h3" marginBottom="spacingS">
+            Header with custom description element
+          </SectionHeading>
+
+          <Workbench.Header
+            title="Page title"
+            description={<HelpCircleIcon variant="muted" />}
           />
         </span>
 

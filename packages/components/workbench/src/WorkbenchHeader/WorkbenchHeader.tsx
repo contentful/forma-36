@@ -18,7 +18,7 @@ export interface WorkbenchHeaderProps extends CommonProps {
   /** This is the icon that will be shown on the left side of the title and it's possible to use Forma 36’s icons or external icons */
   icon?: IconComponent | ReactElement;
   /** This is the text that will be shown on the right side of the title in the Header component */
-  description?: string;
+  description?: string | ReactElement;
   /** It's possible to pass a ReactNode to be shown at the end of the Header */
   actions?: ReactNode;
   /** If a function is passed to the onBack prop the Header will show a back button that will call this function when clicked */
@@ -38,6 +38,23 @@ export const WorkbenchHeader = ({
   const styles = getWorkbenchHeaderStyles(hasBackButton);
   const iconComponent =
     Icon === undefined ? null : isValidElement(Icon) ? Icon : <Icon />;
+
+  const renderDescription = (
+    description: WorkbenchHeaderProps['description'],
+  ) => {
+    if (typeof description === 'string') {
+      return (
+        <Paragraph
+          className={styles.description}
+          marginBottom="none"
+          marginRight="spacingM"
+        >
+          {description}
+        </Paragraph>
+      );
+    }
+    return description;
+  };
 
   return (
     <header
@@ -73,15 +90,7 @@ export const WorkbenchHeader = ({
         title
       )}
 
-      {description && (
-        <Paragraph
-          className={styles.description}
-          marginBottom="none"
-          marginRight="spacingM"
-        >
-          {description}
-        </Paragraph>
-      )}
+      {renderDescription && renderDescription(description)}
 
       {actions}
     </header>
