@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactNode } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 import tokens from '@contentful/f36-tokens';
@@ -42,7 +42,7 @@ export default {
 
 interface Args {
   ['Header Title']: string;
-  ['Header Description']: string | ReactElement;
+  ['Header Description']: ReactNode;
   ['Content Type']: WorkbenchContentProps['type'];
 }
 
