@@ -90,7 +90,7 @@ export const WorkbenchHeader = ({
         title
       )}
 
-      {renderDescription && renderDescription(description)}
+      {description && renderDescription(description)}
 
       {actions}
     </header>
