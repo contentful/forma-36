@@ -8,6 +8,32 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 30-11-2022
+
+**F36 Workbench** `v4.21.0`
+
+- Make WorkbenchHeader description prop accept ReactElement
+
+## 25-11-2022
+
+**F36 Menu** `v4.23.2`
+
+- fix(menu): Safari issue on closing menu clicking on trigger
+
+**F36 Popover** `v4.23.2`
+
+- fix(menu): Safari issue on closing menu clicking on trigger
+
+## 23-11-2022
+
+**F36 Entity List** `v4.23.0`
+
+- Show divider for when entity card has a description
+
+**F36 Tooltip** `v4.23.1`
+
+- Fix tooltip sticky behavior issue
+
 ## 21-11-2022
 
 **F36 Workbench** `v4.20.6`

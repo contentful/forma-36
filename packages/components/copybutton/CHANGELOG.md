@@ -1,5 +1,32 @@
 # Change Log
 
+## 4.23.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-icons@4.23.2
+  - @contentful/f36-tooltip@4.23.2
+  - @contentful/f36-core@4.23.2
+
+## 4.23.1
+
+### Patch Changes
+
+- Updated dependencies [[`8b29f998`](https://github.com/contentful/forma-36/commit/8b29f99876a370723a0e544bbd9c49ec10ab075c)]:
+  - @contentful/f36-tooltip@4.23.1
+  - @contentful/f36-icons@4.23.1
+  - @contentful/f36-core@4.23.1
+
+## 4.23.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-icons@4.23.0
+  - @contentful/f36-tooltip@4.23.0
+  - @contentful/f36-core@4.23.0
+
 ## 4.22.0
 
 ### Patch Changes
