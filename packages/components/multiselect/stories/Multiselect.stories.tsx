@@ -77,13 +77,13 @@ const fruits: Fruit[] = [
   },
   {
     id: 10,
-    value: '',
+    value: 'strawberry',
     name: 'Strawberry 🍓',
     isDisabled: false,
   },
   {
     id: 11,
-    value: '',
+    value: 'tangerine',
     name: 'Tangerine 🍊',
     isDisabled: false,
   },
@@ -95,15 +95,14 @@ export const Basic = () => {
 
   const handleSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { checked, value } = event.target;
-
     const currentFruit = fruits.find((fruit) => fruit.value === value);
     if (checked) {
       setSelectedFruits((prevState) => [...prevState, currentFruit.name]);
     } else {
-      const newSelectedFruits = selectedFruits.filter(
-        (fruit) => fruit !== currentFruit.name,
-      );
-      setSelectedFruits(newSelectedFruits);
+      //its important to use prevState to avoid race conditions when using the state variable as reference.
+      setSelectedFruits((prevState) => {
+        return prevState.filter((fruit) => fruit !== currentFruit.name);
+      });
     }
   };
 
@@ -135,6 +134,7 @@ export const Basic = () => {
     </Stack>
   );
 };
+
 export const WithTitle = () => {
   const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
   const [filteredItems, setFilteredItems] = useState(fruits);
@@ -147,10 +147,9 @@ export const WithTitle = () => {
     if (checked) {
       setSelectedFruits((prevState) => [...prevState, currentFruit.name]);
     } else {
-      const newSelectedFruits = selectedFruits.filter(
-        (fruit) => fruit !== currentFruit.name,
-      );
-      setSelectedFruits(newSelectedFruits);
+      setSelectedFruits((prevState) => {
+        return prevState.filter((fruit) => fruit !== currentFruit.name);
+      });
     }
   };
 
@@ -231,10 +230,9 @@ export const WithSearch = () => {
     if (checked) {
       setSelectedFruits((prevState) => [...prevState, currentFruit.name]);
     } else {
-      const newSelectedFruits = selectedFruits.filter(
-        (fruit) => fruit !== currentFruit.name,
-      );
-      setSelectedFruits(newSelectedFruits);
+      setSelectedFruits((prevState) => {
+        return prevState.filter((fruit) => fruit !== currentFruit.name);
+      });
     }
   };
 
@@ -259,6 +257,52 @@ export const WithSearch = () => {
               onSelectItem={handleSelectItem}
               key={`key-${item.id}}`}
               itemId={`id-${item.id}`}
+              isChecked={selectedFruits.includes(item.name)}
+              isDisabled={item.isDisabled}
+            />
+          );
+        })}
+      </Multiselect>
+    </Stack>
+  );
+};
+
+export const WithSelectAll = () => {
+  const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
+
+  const handleSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked, value } = event.target;
+    const currentFruit = fruits.find((fruit) => fruit.value === value);
+    if (checked) {
+      setSelectedFruits((prevState) => [...prevState, currentFruit.name]);
+    } else {
+      //its important to use prevState to avoid race conditions when using the state variable as reference.
+      setSelectedFruits((prevState) => {
+        return prevState.filter((fruit) => fruit !== currentFruit.name);
+      });
+    }
+  };
+
+  return (
+    <Stack
+      style={{ width: '150px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      <Multiselect
+        placeholder="Select many fruits"
+        currentSelection={selectedFruits}
+        hasCheckAll
+      >
+        {fruits.map((item) => {
+          return (
+            <Multiselect.Option
+              value={item.value}
+              label={item.name}
+              onSelectItem={handleSelectItem}
+              key={`key-${item.id}`}
+              itemId={`id-${item.id}}`}
               isChecked={selectedFruits.includes(item.name)}
               isDisabled={item.isDisabled}
             />

@@ -61,6 +61,12 @@ export interface MultiselectProps extends CommonProps {
   searchInputName?: string;
 
   /**
+   * Enables a select All shortcut checkbox
+   * @default false
+   */
+  hasCheckAll?: boolean;
+
+  /**
    * Sets the list to show its loading state
    * @default false
    */
@@ -99,18 +105,18 @@ export interface MultiselectProps extends CommonProps {
 const iterateOverChildren = (
   children: React.ReactNode,
   filter: (child: React.ReactElement) => boolean,
-  transform: (child: React.ReactElement) => React.ReactElement,
+  callback: (child: React.ReactElement) => React.ReactElement | void,
 ): React.ReactNode => {
   return React.Children.map(children, (child) => {
     // equal to (if (child == null || typeof child == 'string'))
     if (!React.isValidElement(child)) return child;
     if (filter(child)) {
-      return transform(child);
+      return callback(child);
     }
     const childChildren = iterateOverChildren(
       child.props.children,
       filter,
-      transform,
+      callback,
     );
     return React.cloneElement(child, { children: childChildren } as unknown);
   });
@@ -145,6 +151,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     searchInputRef,
     searchInputName,
     noMatchesMessage = 'No matches found',
+    hasCheckAll = false,
     toggleRef,
     isLoading = false,
     testId = 'cf-multiselect',
@@ -250,6 +257,33 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     [searchValue, focusList],
   );
 
+  const [allSelected, setAllSelected] = React.useState(false);
+
+  const selectAll = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    children: React.ReactNode,
+  ) => {
+    const newChecked = !allSelected;
+    setAllSelected(newChecked);
+    return iterateOverChildren(
+      children,
+      (child) => child.type === MultiselectOption,
+      (child) => callChildEventHandler(child, event, newChecked),
+    );
+  };
+
+  const callChildEventHandler = (
+    child: React.ReactElement,
+    event: React.ChangeEvent<HTMLInputElement>,
+    checked: boolean,
+  ) => {
+    if (child.props?.isChecked !== checked && !child.props?.isDisabled) {
+      event.target.value = child.props?.value;
+      event.target.checked = checked;
+      child.props?.onSelectItem(event);
+    }
+  };
+
   return (
     <div
       data-test-id={testId}
@@ -315,6 +349,16 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
 
             {!isLoading && optionsLength > 0 && (
               <ul className={styles.list} data-test-id="cf-multiselect-items">
+                {hasCheckAll && (
+                  <MultiselectOption
+                    value="all"
+                    label={allSelected ? 'Deselect all' : 'Select all'}
+                    itemId="SelectAll"
+                    onSelectItem={(event) => selectAll(event, children)}
+                    isChecked={allSelected}
+                    className={styles.selectAll}
+                  />
+                )}
                 {hasSearch ? enrichOptions(children) : children}
               </ul>
             )}

@@ -249,3 +249,36 @@ describe('Multiselect with search', () => {
     );
   });
 });
+
+describe('Multiselect with checkAll option', () => {
+  it('sets all unchecked not-disabled options to checked', async () => {
+    const [{ user }] = renderComponent({
+      hasCheckAll: true,
+    });
+    await user.click(
+      screen.getByRole('button', { name: 'Toggle Multiselect' }),
+    );
+    expect(
+      screen.getByRole('checkbox', { name: 'Select all' }),
+    ).toBeInTheDocument();
+
+    await user.click(screen.getByRole('checkbox', { name: 'Select all' }));
+    expect(mockOnSelectItem).toHaveBeenCalledTimes(10);
+  });
+
+  it('sets all options to unchecked', async () => {
+    const [{ user }] = renderComponent({
+      hasCheckAll: true,
+    });
+    await user.click(
+      screen.getByRole('button', { name: 'Toggle Multiselect' }),
+    );
+    await user.click(screen.getByRole('checkbox', { name: 'Select all' }));
+    expect(mockOnSelectItem).toHaveBeenCalledTimes(10);
+    expect(
+      screen.getByRole('checkbox', { name: 'Deselect all' }),
+    ).toBeInTheDocument();
+    await user.click(screen.getByRole('checkbox', { name: 'Deselect all' }));
+    expect(mockOnSelectItem).toHaveBeenCalledTimes(11);
+  });
+});

@@ -48,6 +48,11 @@ export const getMultiselectStyles = () => ({
     color: tokens.gray500,
     margin: tokens.spacingM,
   }),
+  selectAll: css({
+    'label > *': {
+      fontWeight: 'bold',
+    },
+  }),
   item: css({
     padding: `${tokens.spacingXs} ${tokens.spacingM}`,
     wordBreak: 'break-word',
