@@ -1,3 +1,4 @@
+import tokens from '@contentful/f36-tokens';
 import React from 'react';
 
 type stringOrNumber = string | number;
@@ -18,8 +19,8 @@ export const SkeletonImage = ({
   offsetTop,
   width = 70,
   height = 70,
-  radiusX = 0,
-  radiusY = 0,
+  radiusX = tokens.borderRadiusSmall,
+  radiusY = tokens.borderRadiusSmall,
   ...otherProps
 }: SkeletonImageProps): React.ReactElement => {
   return (

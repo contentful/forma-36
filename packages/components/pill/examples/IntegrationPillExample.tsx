@@ -6,7 +6,7 @@ import {
   SortableElement,
   SortableHandle,
 } from 'react-sortable-hoc';
-import arrayMove from 'array-move';
+import { arrayMoveImmutable } from 'array-move';
 
 export default function IntegrationPillExample() {
   const [items, updateItems] = React.useState([
@@ -26,8 +26,8 @@ export default function IntegrationPillExample() {
 
   const swapItems = React.useCallback(
     ({ oldIndex, newIndex }) => {
-      //  `arrayMove` is imported from 'array-move'
-      const newItems = arrayMove(items, oldIndex, newIndex);
+      //  `arrayMoveImmutable` is imported from 'array-move'
+      const newItems = arrayMoveImmutable(items, oldIndex, newIndex);
       updateItems(newItems);
     },
     [items],

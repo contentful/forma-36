@@ -53,6 +53,12 @@ consider using [react-focus-lock](https://github.com/theKashey/react-focus-lock)
 
 - Use an interactive element such as `button` for `Popover.Trigger`
 
+<Note variant="neutral">
+  We strongly recommend using an interactive element such as "button" for
+  "Popover.Trigger", but if you need to use a non-interactive element, like
+  "div", you should make that element focusable by providing "tabindex='0'".
+</Note>
+
 ## Accessibility
 
 - If the popover contains interactive elements that user can navigate through with `Tab`, consider using [react-focus-lock](https://github.com/theKashey/react-focus-lock) to trap the focus within Popover

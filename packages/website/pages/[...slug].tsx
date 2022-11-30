@@ -23,14 +23,14 @@ import {
 import type { SidebarProps } from '../components/Sidebar';
 import type { TopbarProps } from '../components/Topbar/Topbar';
 import { Layout } from '../components/Layout';
-import { HARDCODED_WEBSITE_SECTION } from '../types';
+import { HARDCODED_WEBSITE_SECTION, SidebarLink } from '../types';
 import type { SidebarSection } from '../types';
 import mdxSidebarLinks from '../utils/sidebarLinks.json';
 
 const componentSidebarLinks: SidebarSection[] = [
   {
     links: sortByTitle([
-      ...mdxSidebarLinks.unassigned,
+      ...(mdxSidebarLinks.unassigned as SidebarLink[]),
 
       {
         type: 'subsection',

@@ -8,7 +8,10 @@ export type PopoverContextType = {
     _props: HTMLProps<HTMLDivElement>,
     _ref: React.Ref<HTMLDivElement>,
   ) => HTMLProps<HTMLDivElement>;
-  getTriggerProps: (_ref: React.Ref<HTMLElement>) => HTMLProps<HTMLElement>;
+  getTriggerProps: (
+    _props: HTMLProps<HTMLElement>,
+    _ref: React.Ref<HTMLElement>,
+  ) => HTMLProps<HTMLElement>;
 };
 
 const PopoverContext = React.createContext<PopoverContextType | undefined>(
