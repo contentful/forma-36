@@ -11,6 +11,7 @@ import { Subheading } from '@contentful/f36-typography';
 
 import { getMultiselectStyles } from './Multiselect.styles';
 import { MultiselectOption, MultiselectOptionProps } from './MultiselectOption';
+import { SelectAllOption } from './SelectAllOption';
 
 export interface MultiselectProps extends CommonProps {
   /** Select Options */
@@ -257,33 +258,6 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     [searchValue, focusList],
   );
 
-  const [allSelected, setAllSelected] = React.useState(false);
-
-  const selectAll = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    children: React.ReactNode,
-  ) => {
-    const newChecked = !allSelected;
-    setAllSelected(newChecked);
-    return iterateOverChildren(
-      children,
-      (child) => child.type === MultiselectOption,
-      (child) => callChildEventHandler(child, event, newChecked),
-    );
-  };
-
-  const callChildEventHandler = (
-    child: React.ReactElement,
-    event: React.ChangeEvent<HTMLInputElement>,
-    checked: boolean,
-  ) => {
-    if (child.props?.isChecked !== checked && !child.props?.isDisabled) {
-      event.target.value = child.props?.value;
-      event.target.checked = checked;
-      child.props?.onSelectItem(event);
-    }
-  };
-
   return (
     <div
       data-test-id={testId}
@@ -350,13 +324,9 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
             {!isLoading && optionsLength > 0 && (
               <ul className={styles.list} data-test-id="cf-multiselect-items">
                 {hasCheckAll && (
-                  <MultiselectOption
-                    value="all"
-                    label={allSelected ? 'Deselect all' : 'Select all'}
-                    itemId="SelectAll"
-                    onSelectItem={(event) => selectAll(event, children)}
-                    isChecked={allSelected}
-                    className={styles.selectAll}
+                  <SelectAllOption
+                    childNodes={children}
+                    iterateOverChildren={iterateOverChildren}
                   />
                 )}
                 {hasSearch ? enrichOptions(children) : children}

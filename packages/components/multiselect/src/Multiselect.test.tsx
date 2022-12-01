@@ -276,9 +276,29 @@ describe('Multiselect with checkAll option', () => {
     await user.click(screen.getByRole('checkbox', { name: 'Select all' }));
     expect(mockOnSelectItem).toHaveBeenCalledTimes(10);
     expect(
-      screen.getByRole('checkbox', { name: 'Deselect all' }),
+      screen.queryByRole('checkbox', { name: 'Deselect all' }),
     ).toBeInTheDocument();
     await user.click(screen.getByRole('checkbox', { name: 'Deselect all' }));
     expect(mockOnSelectItem).toHaveBeenCalledTimes(11);
+  });
+
+  it('detects when all options are already selected', async () => {
+    const produce: Fruit[] = [
+      { id: 1, name: 'Apple 🍎', isChecked: true, isDisabled: false },
+      { id: 2, name: 'Ananas 🍍', isChecked: true, isDisabled: false },
+      { id: 3, name: 'Avocado 🥑', isChecked: true, isDisabled: false },
+    ];
+    const [{ user }] = renderComponent(
+      {
+        hasCheckAll: true,
+      },
+      produce,
+    );
+    await user.click(
+      screen.getByRole('button', { name: 'Toggle Multiselect' }),
+    );
+    expect(
+      screen.queryByRole('checkbox', { name: 'Deselect all' }),
+    ).toBeInTheDocument();
   });
 });

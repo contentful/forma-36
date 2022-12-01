@@ -32,6 +32,7 @@ export default function MultiselectBasicUsageExample() {
       <Multiselect
         currentSelection={selectedSpaces}
         popoverProps={{ isFullWidth: true }}
+        hasCheckAll={true}
       >
         {spaces.map((space) => {
           const val = space.toLowerCase().replace(/\s/g, '-');
@@ -43,7 +44,6 @@ export default function MultiselectBasicUsageExample() {
               label={space}
               onSelectItem={handleSelectItem}
               isChecked={selectedSpaces.includes(space)}
-              hasCheckAll={true}
             />
           );
         })}

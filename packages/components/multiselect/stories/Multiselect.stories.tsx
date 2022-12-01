@@ -267,12 +267,35 @@ export const WithSearch = () => {
   );
 };
 
+const produce: Fruit[] = [
+  {
+    id: 1,
+    value: 'apple',
+    name: 'Apple 🍎',
+    isDisabled: false,
+  },
+  {
+    id: 2,
+    value: 'ananas',
+    name: 'Ananas 🍍',
+
+    isDisabled: false,
+  },
+  {
+    id: 3,
+    value: 'avocado',
+    name: 'Avocado 🥑',
+
+    isDisabled: false,
+  },
+];
+
 export const WithSelectAll = () => {
   const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
 
   const handleSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { checked, value } = event.target;
-    const currentFruit = fruits.find((fruit) => fruit.value === value);
+    const currentFruit = produce.find((fruit) => fruit.value === value);
     if (checked) {
       setSelectedFruits((prevState) => [...prevState, currentFruit.name]);
     } else {
@@ -295,19 +318,22 @@ export const WithSelectAll = () => {
         currentSelection={selectedFruits}
         hasCheckAll
       >
-        {fruits.map((item) => {
-          return (
-            <Multiselect.Option
-              value={item.value}
-              label={item.name}
-              onSelectItem={handleSelectItem}
-              key={`key-${item.id}`}
-              itemId={`id-${item.id}}`}
-              isChecked={selectedFruits.includes(item.name)}
-              isDisabled={item.isDisabled}
-            />
-          );
-        })}
+        <div>
+          <h2>Shopping List</h2>
+          {produce.map((item) => {
+            return (
+              <Multiselect.Option
+                value={item.value}
+                label={item.name}
+                onSelectItem={handleSelectItem}
+                key={`key-${item.id}`}
+                itemId={`id-${item.id}}`}
+                isChecked={selectedFruits.includes(item.name)}
+                isDisabled={item.isDisabled}
+              />
+            );
+          })}
+        </div>
       </Multiselect>
     </Stack>
   );
