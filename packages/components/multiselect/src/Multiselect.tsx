@@ -223,7 +223,10 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         data-test-id="cf-multiselect-current-selection"
         className={styles.currentSelection}
       >
-        {currentSelection[0]} and {leftoverCount} more{' '}
+        {currentSelection[0]}{' '}
+        <span className={styles.currentSelectionAddition}>
+          and {leftoverCount} more
+        </span>
       </span>
     );
   }, [currentSelection, placeholder, styles.currentSelection]);

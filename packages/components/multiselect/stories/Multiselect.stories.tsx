@@ -176,7 +176,7 @@ export const WithTitle = () => {
         onSearchValueChange={handleSearchValueChange}
       >
         <>
-          <SectionHeading> Fruits </SectionHeading>
+          <SectionHeading marginBottom="none"> Fruits </SectionHeading>
           <div>
             <Multiselect.Option
               value=""
