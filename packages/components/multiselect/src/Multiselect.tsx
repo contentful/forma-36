@@ -269,6 +269,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     >
       <Popover
         renderOnlyWhenOpen={false}
+        isFullWidth
         {...popoverProps}
         // popoverProps should never overwrite the internal opening logic
         isOpen={isOpen}
@@ -304,6 +305,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                   onChange={handleSearchChange}
                   ref={mergeRefs(searchInputRef, internalSearchInputRef)}
                   name={searchInputName}
+                  size="small"
                 />
                 <IconButton
                   aria-label={searchValue ? 'Clear search' : 'Search'}
