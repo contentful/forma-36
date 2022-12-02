@@ -6,6 +6,9 @@ export const getMultiselectStyles = () => ({
     position: 'relative',
     width: '100%',
   }),
+  triggerButton: css({
+    justifyContent: 'space-between',
+  }),
   currentSelection: css({
     width: '50%',
     whiteSpace: 'nowrap',

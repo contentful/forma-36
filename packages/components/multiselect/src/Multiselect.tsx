@@ -143,7 +143,7 @@ const countMatchingChildren = (
 
 function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
   const {
-    className,
+    className = '',
     startIcon,
     placeholder = 'Select one or more Items',
     currentSelection = [],
@@ -229,7 +229,12 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         </span>
       </span>
     );
-  }, [currentSelection, placeholder, styles.currentSelection]);
+  }, [
+    currentSelection,
+    placeholder,
+    styles.currentSelection,
+    styles.currentSelectionAddition,
+  ]);
 
   const optionsLength = useMemo(
     () =>
@@ -282,6 +287,8 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
             onClick={() => setIsOpen(!isOpen)}
             startIcon={startIcon}
             endIcon={<ChevronDownIcon />}
+            isFullWidth
+            className={styles.triggerButton}
           >
             {renderMultiselectLabel()}
           </Button>

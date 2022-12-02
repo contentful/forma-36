@@ -108,7 +108,7 @@ export const Basic = () => {
 
   return (
     <Stack
-      style={{ width: '150px' }}
+      style={{ width: '180px' }}
       flexDirection="column"
       spacing="spacingM"
       alignItems="start"
@@ -165,7 +165,7 @@ export const WithTitle = () => {
 
   return (
     <Stack
-      style={{ width: '150px' }}
+      style={{ width: '200px' }}
       flexDirection="column"
       spacing="spacingM"
       alignItems="start"
@@ -238,7 +238,7 @@ export const WithSearch = () => {
 
   return (
     <Stack
-      style={{ width: '150px' }}
+      style={{ width: '250px' }}
       flexDirection="column"
       spacing="spacingM"
       alignItems="start"
@@ -305,13 +305,12 @@ export const WithSelectAll = () => {
       });
     }
   };
-
   return (
     <Stack
-      style={{ width: '150px' }}
       flexDirection="column"
       spacing="spacingM"
       alignItems="start"
+      style={{ width: '180px' }}
     >
       <Multiselect
         placeholder="Select many fruits"
