@@ -62,7 +62,7 @@ export interface MultiselectProps extends CommonProps {
   searchInputName?: string;
 
   /**
-   * Enables a select All shortcut checkbox
+   * Enables a shortcut checkbox to select or delect all items
    * @default false
    */
   hasCheckAll?: boolean;
