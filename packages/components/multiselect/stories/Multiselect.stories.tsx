@@ -318,7 +318,13 @@ export const WithSelectAll = () => {
         hasCheckAll
       >
         <div>
-          <SectionHeading marginBottom="none">Shopping List</SectionHeading>
+          <SectionHeading
+            marginLeft="spacingM"
+            marginBottom="spacingXs"
+            marginTop="spacingS"
+          >
+            Shopping List
+          </SectionHeading>
           {produce.map((item) => {
             return (
               <Multiselect.Option
