@@ -127,7 +127,9 @@ describe('Multiselect basic usage', () => {
       placeholder: 'My Placeholder Text',
       currentSelection: ['Tomato 🍅', 'Orange 🍊', 'Avocado 🥑', 'Banana 🍌'],
     });
-    expect(screen.getByText('Tomato 🍅 and 3 more')).toBeInTheDocument();
+    expect(
+      screen.getByTestId('cf-multiselect-current-selection'),
+    ).toHaveTextContent('Tomato 🍅 and 3 more');
   });
 });
 
