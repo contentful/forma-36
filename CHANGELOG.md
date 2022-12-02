@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 30-11-2022
+
+**F36 Workbench** `v4.21.0`
+
+- Make WorkbenchHeader description prop accept ReactElement
+
 ## 25-11-2022
 
 **F36 Menu** `v4.23.2`
