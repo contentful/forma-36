@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 03-12-2022
+
+**F36 Forms** `v4.23.3`
+
+- fix(base-check-box): align items to flex-start
+
 ## 30-11-2022
 
 **F36 Workbench** `v4.21.0`
