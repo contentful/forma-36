@@ -23,7 +23,7 @@ const callChildEventHandler = (
   }
 };
 
-const areChildrenAllSelected = (
+const areAllChildrenSelected = (
   children: React.ReactNode,
   filter: (child: React.ReactElement) => boolean,
 ): boolean => {
@@ -32,7 +32,7 @@ const areChildrenAllSelected = (
     // equal to (if (child == null || typeof child == 'string'))
     if (!React.isValidElement(child)) return;
     if (!filter(child)) {
-      allSelected = areChildrenAllSelected(child.props.children, filter);
+      allSelected = areAllChildrenSelected(child.props.children, filter);
     } else {
       if (child.props.isChecked) {
         return;
@@ -49,20 +49,16 @@ export const SelectAllOption = ({
 }: SelectAllOptionProps) => {
   const styles = getMultiselectStyles();
 
-  const [allSelected, setAllSelected] = React.useState(
-    areChildrenAllSelected(
-      childNodes,
-      (child) => child.type === MultiselectOption,
-    ),
-  );
+  const [allSelected, setAllSelected] = React.useState(false);
 
   // checks if all children are true
   React.useEffect(() => {
-    const allTrue = areChildrenAllSelected(
-      childNodes,
-      (child) => child.type === MultiselectOption,
+    setAllSelected(
+      areAllChildrenSelected(
+        childNodes,
+        (child) => child.type === MultiselectOption,
+      ),
     );
-    setAllSelected(allTrue);
   }, [childNodes]);
 
   const selectAll = (
