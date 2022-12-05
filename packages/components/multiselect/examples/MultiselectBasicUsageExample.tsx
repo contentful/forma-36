@@ -21,7 +21,9 @@ export default function MultiselectBasicUsageExample() {
     if (checked) {
       setSelectedSpaces((prevState) => [...prevState, value]);
     } else {
-      const newSelectedSpaces = spaces.filter((space) => space !== value);
+      const newSelectedSpaces = selectedSpaces.filter(
+        (space) => space !== value,
+      );
       setSelectedSpaces(newSelectedSpaces);
     }
   };
