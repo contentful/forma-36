@@ -28,7 +28,9 @@ export default function MultiselectSearchExample() {
     if (checked) {
       setSelectedItems((prevState) => [...prevState, value]);
     } else {
-      const newSelectedFruits = spaces.filter((fruit) => fruit !== value);
+      const newSelectedFruits = selectedItems.filter(
+        (fruit) => fruit !== value,
+      );
       setSelectedItems(newSelectedFruits);
     }
   };
