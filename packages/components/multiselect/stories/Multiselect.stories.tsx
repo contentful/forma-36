@@ -305,6 +305,21 @@ export const WithSelectAll = () => {
       });
     }
   };
+
+  const toggleAll = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked } = event.target;
+    if (checked) {
+      const newSelection = produce.map((fruit) => fruit.name);
+      setSelectedFruits(newSelection);
+    } else {
+      setSelectedFruits([]);
+    }
+  };
+
+  const areAllSelected = React.useMemo(() => {
+    return produce.every((element) => selectedFruits.includes(element.name));
+  }, [selectedFruits]);
+
   return (
     <Stack
       flexDirection="column"
@@ -315,7 +330,6 @@ export const WithSelectAll = () => {
       <Multiselect
         placeholder="Select many fruits"
         currentSelection={selectedFruits}
-        hasCheckAll
       >
         <div>
           <SectionHeading
@@ -325,6 +339,10 @@ export const WithSelectAll = () => {
           >
             Shopping List
           </SectionHeading>
+          <Multiselect.SelectAll
+            onSelectItem={toggleAll}
+            isChecked={areAllSelected}
+          />
           {produce.map((item) => {
             return (
               <Multiselect.Option

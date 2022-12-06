@@ -36,10 +36,12 @@ const fruits: Fruit[] = [
 
 const mockOnSearchValueChange = jest.fn();
 const mockOnSelectItem = jest.fn();
+const mockOnSelectAll = jest.fn();
 
 const renderComponent = (
   customProps?: Partial<MultiselectProps>,
   elements = fruits,
+  renderSelectAll = false,
 ) => {
   const props = {
     ...customProps,
@@ -48,6 +50,9 @@ const renderComponent = (
   render(
     <Multiselect {...props}>
       <h2>Fruits</h2>
+      {renderSelectAll && (
+        <Multiselect.SelectAll isChecked onSelectItem={mockOnSelectAll} />
+      )}
       <div data-test-id="wrapper-component">
         {elements.map((fruit, index) => {
           return (
@@ -252,55 +257,21 @@ describe('Multiselect with search', () => {
   });
 });
 
-describe('Multiselect with checkAll option', () => {
-  it('sets all unchecked not-disabled options to checked', async () => {
-    const [{ user }] = renderComponent({
-      hasCheckAll: true,
-    });
-    await user.click(
-      screen.getByRole('button', { name: 'Toggle Multiselect' }),
-    );
-    expect(
-      screen.getByRole('checkbox', { name: 'Select all' }),
-    ).toBeInTheDocument();
-
-    await user.click(screen.getByRole('checkbox', { name: 'Select all' }));
-    expect(mockOnSelectItem).toHaveBeenCalledTimes(10);
-  });
-
-  it('sets all options to unchecked', async () => {
-    const [{ user }] = renderComponent({
-      hasCheckAll: true,
-    });
-    await user.click(
-      screen.getByRole('button', { name: 'Toggle Multiselect' }),
-    );
-    await user.click(screen.getByRole('checkbox', { name: 'Select all' }));
-    expect(mockOnSelectItem).toHaveBeenCalledTimes(10);
-    expect(
-      screen.queryByRole('checkbox', { name: 'Deselect all' }),
-    ).toBeInTheDocument();
-    await user.click(screen.getByRole('checkbox', { name: 'Deselect all' }));
-    expect(mockOnSelectItem).toHaveBeenCalledTimes(11);
-  });
-
-  it('detects when all options are already selected', async () => {
+describe('Multiselect with select all', () => {
+  it('renders a select all checkbox', async () => {
     const produce: Fruit[] = [
       { id: 1, name: 'Apple 🍎', isChecked: true, isDisabled: false },
       { id: 2, name: 'Ananas 🍍', isChecked: true, isDisabled: false },
       { id: 3, name: 'Avocado 🥑', isChecked: true, isDisabled: false },
     ];
-    const [{ user }] = renderComponent(
-      {
-        hasCheckAll: true,
-      },
-      produce,
-    );
+    const [{ user }] = renderComponent({}, produce, true);
     await user.click(
       screen.getByRole('button', { name: 'Toggle Multiselect' }),
     );
     expect(
       screen.queryByRole('checkbox', { name: 'Deselect all' }),
     ).toBeInTheDocument();
+    await user.click(screen.queryByRole('checkbox', { name: 'Deselect all' }));
+    expect(mockOnSelectAll).toHaveBeenCalled();
   });
 });

@@ -11,7 +11,6 @@ import { Subheading } from '@contentful/f36-typography';
 
 import { getMultiselectStyles } from './Multiselect.styles';
 import { MultiselectOption, MultiselectOptionProps } from './MultiselectOption';
-import { SelectAllOption } from './SelectAllOption';
 
 export interface MultiselectProps extends CommonProps {
   /** Select Options */
@@ -152,7 +151,6 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     searchInputRef,
     searchInputName,
     noMatchesMessage = 'No matches found',
-    hasCheckAll = false,
     toggleRef,
     isLoading = false,
     testId = 'cf-multiselect',
@@ -335,12 +333,6 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
 
             {!isLoading && optionsLength > 0 && (
               <ul className={styles.list} data-test-id="cf-multiselect-items">
-                {hasCheckAll && (
-                  <SelectAllOption
-                    childNodes={children}
-                    iterateOverChildren={iterateOverChildren}
-                  />
-                )}
                 {hasSearch ? enrichOptions(children) : children}
               </ul>
             )}

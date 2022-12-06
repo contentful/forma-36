@@ -2,7 +2,7 @@ import React from 'react';
 import { Stack } from '@contentful/f36-components';
 import { Multiselect } from '@contentful/f36-multiselect';
 
-export default function MultiselectBasicUsageExample() {
+export default function MultiselectSelectAllExample() {
   const spaces = [
     'Travel Blog',
     'Finnance Blog',
@@ -27,13 +27,29 @@ export default function MultiselectBasicUsageExample() {
     }
   };
 
+  const toggleAll = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked } = event.target;
+    if (checked) {
+      setSelectedSpaces(spaces);
+    } else {
+      setSelectedSpaces([]);
+    }
+  };
+
+  const areAllSelected = React.useMemo(() => {
+    return spaces.every((element) => selectedSpaces.includes(element));
+  }, [selectedSpaces, spaces]);
+
   return (
     <Stack flexDirection="column" alignItems="start">
       <Multiselect
         currentSelection={selectedSpaces}
         popoverProps={{ isFullWidth: true }}
-        hasCheckAll={true}
       >
+        <Multiselect.SelectAll
+          onSelectItem={toggleAll}
+          isChecked={areAllSelected}
+        />
         {spaces.map((space) => {
           const val = space.toLowerCase().replace(/\s/g, '-');
           return (
