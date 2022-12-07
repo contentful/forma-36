@@ -15,7 +15,7 @@
     "emotion": "^10.0.17"
   },
   "devDependencies": {
-    "@emotion/serialize": "^0.11.15"
+    "@emotion/serialize": "^1.1.1"
   },
   "peerDependencies": {
     "react": ">=16.8",
