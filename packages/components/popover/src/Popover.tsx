@@ -1,4 +1,10 @@
-import React, { useMemo, useState, useEffect, useCallback } from 'react';
+import React, {
+  useMemo,
+  useState,
+  useEffect,
+  useCallback,
+  useRef,
+} from 'react';
 import { useId, mergeRefs, type ExpandProps } from '@contentful/f36-core';
 import type { Placement, Modifier } from '@popperjs/core';
 import { PopoverContextProvider, PopoverContextType } from './PopoverContext';
@@ -186,12 +192,25 @@ export function Popover(props: ExpandProps<PopoverProps>) {
     setTimeout(() => triggerElement?.focus({ preventScroll: true }), 0);
   }, [onClose, triggerElement]);
 
+  // Safari has an issue with the relatedTarget that we use on the onBlur for getPopoverProps,
+  // which was causing the popover to close and reopen when clicking on the trigger.
+  // We will use the isMouseDown to prevent triggering blur in the cases where the user clicks on the trigger.
+  const isMouseDown = useRef<Boolean>(false);
+
   const contextValue: PopoverContextType = useMemo(
     () => ({
       isOpen: Boolean(isOpen),
       usePortal,
       renderOnlyWhenOpen,
-      getTriggerProps: (_ref = null) => ({
+      getTriggerProps: (_props = {}, _ref = null) => ({
+        onMouseDown: (event) => {
+          isMouseDown.current = true;
+          _props.onMouseDown?.(event);
+        },
+        onMouseUp: (event) => {
+          isMouseDown.current = false;
+          _props.onMouseUp?.(event);
+        },
         ref: mergeRefs(setTriggerElement, _ref),
         ['aria-expanded']: Boolean(isOpen),
         ['aria-controls']: popoverId,
@@ -220,7 +239,8 @@ export function Popover(props: ExpandProps<PopoverProps>) {
             popoverElement?.contains(relatedTarget);
           const targetIsTrigger =
             triggerElement === relatedTarget ||
-            triggerElement?.contains(relatedTarget);
+            triggerElement?.contains(relatedTarget) ||
+            isMouseDown.current;
 
           if (targetIsPopover || targetIsTrigger) {
             return;

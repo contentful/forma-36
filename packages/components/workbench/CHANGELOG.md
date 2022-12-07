@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.21.0
+
+### Minor Changes
+
+- [#2342](https://github.com/contentful/forma-36/pull/2342) [`5dcb6340`](https://github.com/contentful/forma-36/commit/5dcb634033d5adbe54638d232a89fcb92c0daa24) Thanks [@massao](https://github.com/massao)! - Make WorkbenchHeader description prop accept ReactElement
+
 ## 4.20.5
 
 ### Patch Changes
