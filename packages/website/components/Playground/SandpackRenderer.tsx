@@ -9,6 +9,7 @@ import tokens from '@contentful/f36-tokens';
 
 import { PlaygroundTopBar } from './PlaygroundTopBar';
 import { palette } from '../LiveEditor/theme';
+import { InterpolationWithTheme } from '@emotion/core';
 const indexFile = `import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { GlobalStyles } from "@contentful/f36-components";
@@ -40,8 +41,52 @@ export function SandpackRenderer({
   code,
   showOpenInCodeSandbox = false,
 }: Props) {
+  // Overides to keep the style as we want it
+  const sandpackStyles: { [key: string]: InterpolationWithTheme<any> } = {
+    wrapper: {
+      display: 'flex',
+      flexDirection: 'column',
+      height: '100%',
+    },
+    layout: {
+      border: 0,
+      borderRadius: 0,
+      height: '100%',
+      '& > .sp-stack': {
+        height: '100% !important',
+      },
+      '& .sp-cm': {
+        paddingLeft: tokens.spacingM,
+      },
+      '& .cm-scroller': {
+        padding: 0,
+        '& .cm-gutters': {
+          padding: 0,
+        },
+        '& .cm-gutter': {
+          padding: `0 ${tokens.spacing2Xs}`,
+        },
+        '& .cm-gutterElement': {
+          fontSize: tokens.fontSizeM,
+          padding: 0,
+        },
+      },
+      '& .cm-content': {
+        padding: 0,
+        '& .cm-line': {
+          padding: `0 ${tokens.spacingS}`,
+        },
+        '& .cm-activeLine': {
+          backgroundColor: 'rgba(207, 217, 224, 0.5)',
+          borderRadius: 0,
+        },
+      },
+    },
+  };
+
   return (
     <SandpackProvider
+      css={sandpackStyles.wrapper}
       customSetup={{
         dependencies: {
           react: '^17.0.0',
@@ -110,7 +155,7 @@ export function SandpackRenderer({
     >
       <PlaygroundTopBar />
 
-      <SandpackLayout>
+      <SandpackLayout css={sandpackStyles.layout}>
         <SandpackCodeEditor
           showTabs={false}
           showLineNumbers
