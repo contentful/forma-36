@@ -32,7 +32,7 @@ type BadgeSizeWithIconProps =
        * Sets the size of the component
        * @default default
        */
-      size: PickUnion<BadgeSize, 'small'>;
+      size?: PickUnion<BadgeSize, 'small'>;
       startIcon?: never;
       endIcon?: never;
     };
