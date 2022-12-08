@@ -14,6 +14,7 @@ import { Text } from '../Text';
 const SECTION_HEADING_DEFAULT_TAG = 'h2';
 
 export interface SectionHeadingInternalProps extends CommonProps, MarginProps {
+  children?: React.ReactNode;
   as?: HeadingElement;
   isTruncated?: boolean;
   isWordBreak?: boolean;

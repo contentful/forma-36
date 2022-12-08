@@ -4,7 +4,12 @@ import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
 import { List, Flex, Text, Badge } from '@contentful/f36-components';
 import { ChevronDownIcon } from '@contentful/f36-icons';
-import { ExternalLinkTrimmedIcon } from '@contentful/f36-icons';
+import {
+  ExternalLinkTrimmedIcon,
+  LockTrimmedIcon,
+} from '@contentful/f36-icons';
+import { useSession } from 'next-auth/react';
+import { ComponentStatus } from '../types';
 
 const styles = {
   link: css({
@@ -52,6 +57,9 @@ const getSectionTitleStyles = (isActive = false, paddingLeft = 'spacingXl') => {
     closedIcon: css({
       transform: 'rotate(-90deg)',
     }),
+    linkIcon: css({
+      flexShrink: 0,
+    }),
   };
 };
 
@@ -96,6 +104,26 @@ export function SidebarSectionButton({
   );
 }
 
+const renderSidebarBadge = ({
+  isNew,
+  status = 'stable',
+}: Pick<SidebarLinkProps, 'isNew' | 'status'>) => {
+  if (!isNew && status === 'stable') {
+    return null;
+  }
+  const variants = {
+    deprecated: 'negative',
+    alpha: 'secondary',
+    beta: 'secondary',
+  };
+  const variant = isNew ? 'primary' : variants[status];
+  return (
+    <Badge className={styles.badge} size="small" variant={variant}>
+      {isNew ? 'new' : status}
+    </Badge>
+  );
+};
+
 interface SidebarLinkProps {
   children: React.ReactNode;
   href: string;
@@ -103,9 +131,8 @@ interface SidebarLinkProps {
   isExternal?: boolean;
   paddingLeft?: 'spacingXl' | 'spacing2Xl';
   isNew?: boolean;
-  isBeta?: boolean;
-  isAlpha?: boolean;
-  isDeprecated?: boolean;
+  status?: ComponentStatus;
+  isAuthProtected?: boolean;
 }
 
 export function SidebarLink({
@@ -115,10 +142,16 @@ export function SidebarLink({
   isActive = false,
   paddingLeft = 'spacingXl',
   isNew = false,
-  isBeta = false,
-  isAlpha = false,
-  isDeprecated = false,
+  status = 'stable',
+  isAuthProtected = false,
 }: SidebarLinkProps) {
+  const { data: session } = useSession();
+
+  // don't list auth protected pages in the sidebar if the user is not logged in.
+  if (isAuthProtected && !session) {
+    return null;
+  }
+
   const titleStyles = getSectionTitleStyles(isActive, paddingLeft);
   const linksProps = isExternal
     ? { target: '_blank', rel: 'noopener noreferrer' }
@@ -134,25 +167,20 @@ export function SidebarLink({
         >
           <span className={cx([titleStyles.clickable])}>
             {children}
-            {isExternal && <ExternalLinkTrimmedIcon variant="muted" />}
+            {isExternal && (
+              <ExternalLinkTrimmedIcon
+                variant="muted"
+                className={titleStyles.linkIcon}
+              />
+            )}
+            {isAuthProtected && (
+              <LockTrimmedIcon
+                variant="muted"
+                className={titleStyles.linkIcon}
+              />
+            )}
           </span>
-          {(isNew || isDeprecated || isBeta || isAlpha) && (
-            <Badge
-              className={styles.badge}
-              size="small"
-              variant={
-                isDeprecated ? 'negative' : isNew ? 'primary' : 'secondary'
-              }
-            >
-              {isDeprecated
-                ? 'deprecated'
-                : isNew
-                ? 'new'
-                : isBeta
-                ? 'beta'
-                : 'alpha'}
-            </Badge>
-          )}
+          {renderSidebarBadge({ isNew, status })}
         </a>
       </Link>
     </List.Item>

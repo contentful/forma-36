@@ -1,3 +1,4 @@
+import tokens from '@contentful/f36-tokens';
 import React, { useCallback } from 'react';
 
 type stringOrNumber = string | number;
@@ -24,6 +25,14 @@ export interface SkeletonTextProps {
    */
   marginBottom?: stringOrNumber;
   /**
+   * X-axis border radius (in number)
+   */
+  radiusX?: stringOrNumber;
+  /**
+   * Y-axis border radius (in number)
+   */
+  radiusY?: stringOrNumber;
+  /**
    * A width of a line
    */
   width?: stringOrNumber;
@@ -35,6 +44,8 @@ export const SkeletonText = ({
   offsetTop = 0,
   lineHeight = 21,
   marginBottom = 20,
+  radiusX = tokens.borderRadiusSmall,
+  radiusY = tokens.borderRadiusSmall,
   width,
 }: SkeletonTextProps) => {
   const getLineWidth = useCallback(
@@ -57,8 +68,8 @@ export const SkeletonText = ({
           y={
             index * (+lineHeight! + +marginBottom!) + +offsetTop! // eslint-disable-line @typescript-eslint/no-non-null-assertion
           }
-          rx="0"
-          ry="0"
+          rx={radiusX}
+          ry={radiusY}
           width={getLineWidth(
             numberOfLines! > 1 && numberOfLines! - index === 1, // eslint-disable-line @typescript-eslint/no-non-null-assertion
           )}

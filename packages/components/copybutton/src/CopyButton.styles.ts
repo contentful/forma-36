@@ -20,6 +20,7 @@ export const getStyles = ({ size }) => {
       justifyContent: 'center',
       outline: 'none',
       padding: 0,
+      margin: 0, // remove the default button margin in Safari.
       transition: `background ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
       width: '100%',
       '&:hover': {

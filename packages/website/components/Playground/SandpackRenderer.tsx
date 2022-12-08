@@ -60,6 +60,7 @@ export function SandpackRenderer({
           'react-dom': '^17.0.0',
           'react-scripts': '^4.0.0',
           '@contentful/f36-components': '^4.0.0',
+          '@contentful/f36-multiselect': '^4.0.0', // Remove when added to f36-components
           '@contentful/f36-tokens': '^4.0.0',
           '@contentful/f36-icons': '^4.0.0',
           emotion: '^10.0.17',
@@ -68,7 +69,7 @@ export function SandpackRenderer({
           'react-icons': '4.3.1',
           'react-focus-lock': '^2.5.2',
           'react-sortable-hoc': '^2.0.0',
-          'array-move': '^3.0.0',
+          'array-move': '^4.0.0',
         },
       }}
     >

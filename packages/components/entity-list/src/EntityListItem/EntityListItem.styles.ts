@@ -27,6 +27,7 @@ export const getEntityListItemStyles = () => ({
     width: '100%',
     minHeight: tokens.spacing3Xl,
     padding: tokens.spacingXs,
+    margin: 0, // remove the default button margin in Safari.
     border: 'none',
     background: 'none',
     textAlign: 'left',
@@ -34,6 +35,7 @@ export const getEntityListItemStyles = () => ({
   content: css({
     flexGrow: 1,
     minWidth: 0,
+    position: 'relative',
   }),
   media: css({
     display: 'flex',
@@ -55,8 +57,18 @@ export const getEntityListItemStyles = () => ({
   contentType: css({
     marginLeft: tokens.spacingXs,
   }),
+  entityType: css({
+    textTransform: 'capitalize',
+  }),
   description: css({
-    marginTop: tokens.spacing2Xs,
+    '&::before': {
+      content: '"|"',
+      color: tokens.gray400,
+      height: '25%',
+      marginTop: tokens.spacing2Xs,
+      marginLeft: tokens.spacing2Xs,
+      marginRight: tokens.spacing2Xs,
+    },
   }),
   meta: css({
     marginLeft: 'auto',

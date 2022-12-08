@@ -1,6 +1,6 @@
 import React from 'react';
 import { css, cx } from 'emotion';
-import { Grid, Flex, List } from '@contentful/f36-components';
+import { Grid, Flex, List, Button } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 
 import {
@@ -13,6 +13,7 @@ import { useCurrentLocation } from '../../hooks/useCurrentLocation';
 import { TopbarLink } from './TopbarLink';
 import { TopbarLogo } from './TopbarLogo';
 import { VersionSwitch } from './VersionSwitch';
+import { signOut, useSession } from 'next-auth/react';
 
 const styles = {
   header: css({
@@ -39,6 +40,9 @@ const styles = {
       gridColumnStart: 4,
     },
   }),
+  signOut: css({
+    marginLeft: tokens.spacing2Xs,
+  }),
 };
 
 type TopbarLink = Record<'initialLink' | 'slug' | 'title', string>;
@@ -50,6 +54,8 @@ export interface TopbarProps {
 export function Topbar({ links }: TopbarProps) {
   const gridStyles = getGridStyles();
   const { currentSection } = useCurrentLocation();
+
+  const { data: session } = useSession();
 
   return (
     <Grid.Item
@@ -99,6 +105,14 @@ export function Topbar({ links }: TopbarProps) {
 
         <Flex className={styles.docSearchContainer}>
           <DocSearch />
+          {session ? (
+            <Button
+              className={styles.signOut}
+              onClick={() => signOut({ callbackUrl: '/' })}
+            >
+              Log out
+            </Button>
+          ) : null}
         </Flex>
       </Flex>
     </Grid.Item>

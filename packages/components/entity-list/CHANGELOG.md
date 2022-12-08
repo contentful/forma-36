@@ -1,5 +1,211 @@
 # Change Log
 
+## 4.23.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.23.3
+  - @contentful/f36-button@4.23.3
+  - @contentful/f36-core@4.23.3
+  - @contentful/f36-drag-handle@4.23.3
+  - @contentful/f36-icon@4.23.3
+  - @contentful/f36-menu@4.23.3
+  - @contentful/f36-skeleton@4.23.3
+  - @contentful/f36-typography@4.23.3
+
+## 4.23.2
+
+### Patch Changes
+
+- Updated dependencies [[`549215af`](https://github.com/contentful/forma-36/commit/549215af6cde9fd41dc527e2cb18f0b6560d93a3)]:
+  - @contentful/f36-menu@4.23.2
+  - @contentful/f36-badge@4.23.2
+  - @contentful/f36-button@4.23.2
+  - @contentful/f36-drag-handle@4.23.2
+  - @contentful/f36-icon@4.23.2
+  - @contentful/f36-icons@4.23.2
+  - @contentful/f36-skeleton@4.23.2
+  - @contentful/f36-typography@4.23.2
+  - @contentful/f36-core@4.23.2
+
+## 4.23.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.23.1
+  - @contentful/f36-button@4.23.1
+  - @contentful/f36-drag-handle@4.23.1
+  - @contentful/f36-icon@4.23.1
+  - @contentful/f36-icons@4.23.1
+  - @contentful/f36-menu@4.23.1
+  - @contentful/f36-skeleton@4.23.1
+  - @contentful/f36-typography@4.23.1
+  - @contentful/f36-core@4.23.1
+
+## 4.23.0
+
+### Minor Changes
+
+- [#2336](https://github.com/contentful/forma-36/pull/2336) [`28f2933d`](https://github.com/contentful/forma-36/commit/28f2933dbb7d6ee7fbf2b9e1d03e1c55c9359e3c) Thanks [@ChidinmaOrajiaku](https://github.com/ChidinmaOrajiaku)! - Show divider for when entity card has a description
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.23.0
+  - @contentful/f36-button@4.23.0
+  - @contentful/f36-drag-handle@4.23.0
+  - @contentful/f36-icon@4.23.0
+  - @contentful/f36-icons@4.23.0
+  - @contentful/f36-menu@4.23.0
+  - @contentful/f36-skeleton@4.23.0
+  - @contentful/f36-typography@4.23.0
+  - @contentful/f36-core@4.23.0
+
+## 4.22.0
+
+### Minor Changes
+
+- [#2331](https://github.com/contentful/forma-36/pull/2331) [`51e274b8`](https://github.com/contentful/forma-36/commit/51e274b844a3b5802ec86db0693c68a204dc5be9) Thanks [@ChidinmaOrajiaku](https://github.com/ChidinmaOrajiaku)! - Update entity list item to include entity type on card
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.22.0
+  - @contentful/f36-button@4.22.0
+  - @contentful/f36-drag-handle@4.22.0
+  - @contentful/f36-icon@4.22.0
+  - @contentful/f36-icons@4.22.0
+  - @contentful/f36-menu@4.22.0
+  - @contentful/f36-skeleton@4.22.0
+  - @contentful/f36-typography@4.22.0
+  - @contentful/f36-core@4.22.0
+
+## 4.21.8
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.21.8
+  - @contentful/f36-button@4.21.8
+  - @contentful/f36-drag-handle@4.21.8
+  - @contentful/f36-icon@4.21.8
+  - @contentful/f36-icons@4.21.8
+  - @contentful/f36-menu@4.21.8
+  - @contentful/f36-skeleton@4.21.8
+  - @contentful/f36-typography@4.21.8
+  - @contentful/f36-core@4.21.8
+
+## 4.21.7
+
+### Patch Changes
+
+- Updated dependencies [[`33dfdc41`](https://github.com/contentful/forma-36/commit/33dfdc417d407aea54386bdaec155c452aaf1638)]:
+  - @contentful/f36-skeleton@4.21.7
+  - @contentful/f36-badge@4.21.7
+  - @contentful/f36-button@4.21.7
+  - @contentful/f36-drag-handle@4.21.7
+  - @contentful/f36-icon@4.21.7
+  - @contentful/f36-icons@4.21.7
+  - @contentful/f36-menu@4.21.7
+  - @contentful/f36-typography@4.21.7
+  - @contentful/f36-core@4.21.7
+
+## 4.21.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.21.6
+  - @contentful/f36-button@4.21.6
+  - @contentful/f36-drag-handle@4.21.6
+  - @contentful/f36-icon@4.21.6
+  - @contentful/f36-icons@4.21.6
+  - @contentful/f36-menu@4.21.6
+  - @contentful/f36-skeleton@4.21.6
+  - @contentful/f36-typography@4.21.6
+  - @contentful/f36-core@4.21.6
+
+## 4.21.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.21.5
+  - @contentful/f36-button@4.21.5
+  - @contentful/f36-drag-handle@4.21.5
+  - @contentful/f36-icon@4.21.5
+  - @contentful/f36-icons@4.21.5
+  - @contentful/f36-menu@4.21.5
+  - @contentful/f36-skeleton@4.21.5
+  - @contentful/f36-typography@4.21.5
+  - @contentful/f36-core@4.21.5
+
+## 4.21.4
+
+### Patch Changes
+
+- [#2314](https://github.com/contentful/forma-36/pull/2314) [`66973fd9`](https://github.com/contentful/forma-36/commit/66973fd9f4612f648795b494f312d21d8baa3e56) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix: specify react-dom as peer dependency
+
+- Updated dependencies [[`66973fd9`](https://github.com/contentful/forma-36/commit/66973fd9f4612f648795b494f312d21d8baa3e56)]:
+  - @contentful/f36-core@4.21.4
+  - @contentful/f36-badge@4.21.4
+  - @contentful/f36-button@4.21.4
+  - @contentful/f36-drag-handle@4.21.4
+  - @contentful/f36-icon@4.21.4
+  - @contentful/f36-icons@4.21.4
+  - @contentful/f36-menu@4.21.4
+  - @contentful/f36-skeleton@4.21.4
+  - @contentful/f36-typography@4.21.4
+
+## 4.21.3
+
+### Patch Changes
+
+- [#2304](https://github.com/contentful/forma-36/pull/2304) [`d605d64f`](https://github.com/contentful/forma-36/commit/d605d64fcdc897d43fb6252829d86c8f3a2147f4) Thanks [@bgutsol](https://github.com/bgutsol)! - fix: remove default margin in safari for buttons
+
+- Updated dependencies [[`d605d64f`](https://github.com/contentful/forma-36/commit/d605d64fcdc897d43fb6252829d86c8f3a2147f4)]:
+  - @contentful/f36-button@4.21.3
+  - @contentful/f36-drag-handle@4.21.3
+  - @contentful/f36-badge@4.21.3
+  - @contentful/f36-icon@4.21.3
+  - @contentful/f36-icons@4.21.3
+  - @contentful/f36-menu@4.21.3
+  - @contentful/f36-skeleton@4.21.3
+  - @contentful/f36-typography@4.21.3
+  - @contentful/f36-core@4.21.3
+
+## 4.21.2
+
+### Patch Changes
+
+- Updated dependencies [[`d573092b`](https://github.com/contentful/forma-36/commit/d573092b0d26a3cc3fa8f59a5ac1334c4c1c75f7)]:
+  - @contentful/f36-button@4.21.2
+  - @contentful/f36-badge@4.21.2
+  - @contentful/f36-drag-handle@4.21.2
+  - @contentful/f36-icon@4.21.2
+  - @contentful/f36-icons@4.21.2
+  - @contentful/f36-menu@4.21.2
+  - @contentful/f36-skeleton@4.21.2
+  - @contentful/f36-typography@4.21.2
+  - @contentful/f36-core@4.21.2
+
+## 4.21.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.21.1
+  - @contentful/f36-button@4.21.1
+  - @contentful/f36-drag-handle@4.21.1
+  - @contentful/f36-icon@4.21.1
+  - @contentful/f36-icons@4.21.1
+  - @contentful/f36-menu@4.21.1
+  - @contentful/f36-skeleton@4.21.1
+  - @contentful/f36-typography@4.21.1
+  - @contentful/f36-core@4.21.1
+
 ## 4.21.0
 
 ### Patch Changes

@@ -10,6 +10,7 @@ import { css, cx } from 'emotion';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import tokens from '@contentful/f36-tokens';
 import * as f36Components from '@contentful/f36-components';
+import { Multiselect } from '@contentful/f36-multiselect';
 import * as f36utils from '@contentful/f36-utils';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
@@ -25,13 +26,14 @@ import {
   SortableElement,
   SortableHandle,
 } from 'react-sortable-hoc';
-import arrayMove from 'array-move';
+import { arrayMoveImmutable } from 'array-move';
 import { format, parse, isValid } from 'date-fns';
 
 const liveProviderScope = {
   ...f36icons,
   ...f36Components,
   ...f36utils,
+  Multiselect, // Remove when added to f36-components
   css,
   f36icons,
   tokens,
@@ -50,7 +52,7 @@ const liveProviderScope = {
   SortableContainer,
   SortableElement,
   SortableHandle,
-  arrayMove,
+  arrayMoveImmutable,
   format,
   parse,
   isValid,

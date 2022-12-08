@@ -1,19 +1,20 @@
 {
   "name": "@contentful/f36-icons",
-  "version": "4.21.0",
+  "version": "4.23.2",
   "description": "Forma 36: Icon components",
   "license": "MIT",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.21.0",
-    "@contentful/f36-icon": "^4.21.0",
+    "@contentful/f36-core": "^4.23.2",
+    "@contentful/f36-icon": "^4.23.2",
     "@contentful/f36-tokens": "^4.0.1",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
-    "react": ">=16.8"
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   },
   "files": [
     "dist"

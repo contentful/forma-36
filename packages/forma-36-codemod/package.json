@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "eslint": "^7.30.0",
-    "jest": "^27.0.6"
+    "jest": "^29.3.1"
   },
   "publishConfig": {
     "access": "public"

@@ -1,8 +1,10 @@
+export type ComponentStatus = 'stable' | 'beta' | 'alpha' | 'deprecated';
+
 export interface FrontMatter {
   github?: string;
   section?: string;
   slug?: string;
-  status?: 'stable' | 'deprecated' | 'alpha' | 'beta';
+  status?: ComponentStatus;
   title: string;
   type?: string;
   typescript?: string;
@@ -33,15 +35,15 @@ export type SidebarLink = {
   slug: string;
   type?: SidebarLinkObjectType;
   isNew?: boolean;
-  isBeta?: boolean;
-  isAlpha?: boolean;
-  isDeprecated?: boolean;
+  status?: ComponentStatus;
+  authProtected?: boolean;
 };
 
 export type SidebarSubsection = {
   title: string;
   links: SidebarLink[];
   type: 'subsection';
+  authProtected?: never;
 };
 
 export type SidebarSection =
@@ -50,4 +52,5 @@ export type SidebarSection =
       title?: string;
       links: (SidebarLink | SidebarSubsection)[];
       type?: never;
+      authProtected?: boolean;
     };

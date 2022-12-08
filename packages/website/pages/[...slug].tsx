@@ -5,11 +5,6 @@ import type { ParsedUrlQuery } from 'querystring';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
-import rehypeSlug from 'rehype-slug';
-import rehypeToc from 'rehype-toc';
-import { serialize } from 'next-mdx-remote/serialize';
-import remarkCodeTitles from 'remark-code-titles';
-import remarkCodeImport from 'remark-code-import';
 import { PropsContextProvider } from '@contentful/f36-docs-utils';
 
 import { sortByTitle } from '../utils/sortByTitle';
@@ -28,14 +23,14 @@ import {
 import type { SidebarProps } from '../components/Sidebar';
 import type { TopbarProps } from '../components/Topbar/Topbar';
 import { Layout } from '../components/Layout';
-import { HARDCODED_WEBSITE_SECTION } from '../types';
+import { HARDCODED_WEBSITE_SECTION, SidebarLink } from '../types';
 import type { SidebarSection } from '../types';
 import mdxSidebarLinks from '../utils/sidebarLinks.json';
 
 const componentSidebarLinks: SidebarSection[] = [
   {
     links: sortByTitle([
-      ...mdxSidebarLinks.unassigned,
+      ...(mdxSidebarLinks.unassigned as SidebarLink[]),
 
       {
         type: 'subsection',
@@ -145,6 +140,13 @@ export const getStaticProps: GetStaticProps<
     throw new Error();
   }
 
+  const remarkCodeTitles = await import('remark-code-titles');
+  const { codeImport } = await import('remark-code-import');
+  const { default: rehypeSlug } = await import('rehype-slug');
+  const { default: rehypeToc } = await import('rehype-toc');
+  const path = await import('node:path');
+  const { serialize } = await import('next-mdx-remote/serialize');
+
   const [section] = context.params?.slug;
   const isPreview = context.preview ?? false;
   const topbarLinks = await getTopbarLinks();
@@ -197,7 +199,16 @@ export const getStaticProps: GetStaticProps<
     const mainContent = await serialize(mainContentText, {
       // Optionally pass remark/rehype plugins
       mdxOptions: {
-        remarkPlugins: [remarkCodeTitles, remarkCodeImport],
+        remarkPlugins: [
+          remarkCodeTitles,
+          [
+            codeImport,
+            {
+              // Going up the tree from website build dir `.next`
+              rootDir: path.join(__dirname, '../../../../../'),
+            },
+          ],
+        ],
         rehypePlugins: [
           rehypeSlug,
           [
@@ -275,7 +286,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
           ?.sectionCollection?.items[0];
     }
 
-    const slug = [section.slug, item.slug];
+    const slug = item.authProtected
+      ? [section.slug, 'protected', item.slug]
+      : [section.slug, item.slug];
     return {
       params: {
         slug,

@@ -1,5 +1,24 @@
 # Change Log
 
+## 4.21.0
+
+### Minor Changes
+
+- [#2342](https://github.com/contentful/forma-36/pull/2342) [`5dcb6340`](https://github.com/contentful/forma-36/commit/5dcb634033d5adbe54638d232a89fcb92c0daa24) Thanks [@massao](https://github.com/massao)! - Make WorkbenchHeader description prop accept ReactElement
+
+## 4.20.5
+
+### Patch Changes
+
+- [#2314](https://github.com/contentful/forma-36/pull/2314) [`66973fd9`](https://github.com/contentful/forma-36/commit/66973fd9f4612f648795b494f312d21d8baa3e56) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix: specify react-dom as peer dependency
+
+- Updated dependencies [[`66973fd9`](https://github.com/contentful/forma-36/commit/66973fd9f4612f648795b494f312d21d8baa3e56)]:
+  - @contentful/f36-core@4.21.4
+  - @contentful/f36-button@4.21.4
+  - @contentful/f36-icon@4.21.4
+  - @contentful/f36-icons@4.21.4
+  - @contentful/f36-typography@4.21.4
+
 ## 4.20.4
 
 ### Patch Changes

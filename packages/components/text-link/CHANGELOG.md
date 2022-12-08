@@ -1,5 +1,100 @@
 # Change Log
 
+## 4.23.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.23.3
+
+## 4.23.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.23.2
+
+## 4.23.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.23.1
+
+## 4.23.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.23.0
+
+## 4.22.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.22.0
+
+## 4.21.8
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.21.8
+
+## 4.21.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.21.7
+
+## 4.21.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.21.6
+
+## 4.21.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.21.5
+
+## 4.21.4
+
+### Patch Changes
+
+- Updated dependencies [[`66973fd9`](https://github.com/contentful/forma-36/commit/66973fd9f4612f648795b494f312d21d8baa3e56)]:
+  - @contentful/f36-core@4.21.4
+
+## 4.21.3
+
+### Patch Changes
+
+- [#2304](https://github.com/contentful/forma-36/pull/2304) [`d605d64f`](https://github.com/contentful/forma-36/commit/d605d64fcdc897d43fb6252829d86c8f3a2147f4) Thanks [@bgutsol](https://github.com/bgutsol)! - fix: remove default margin in safari for buttons
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.21.3
+
+## 4.21.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.21.2
+
+## 4.21.1
+
+### Patch Changes
+
+- [#2295](https://github.com/contentful/forma-36/pull/2295) [`4af847fa`](https://github.com/contentful/forma-36/commit/4af847fab090020fe9fa6f6c745c4825c19aef9c) Thanks [@massao](https://github.com/massao)! - Fix vertical alignment when icon is aligned at start
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.21.1
+
 ## 4.21.0
 
 ### Patch Changes

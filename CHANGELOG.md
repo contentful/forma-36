@@ -8,6 +8,218 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 03-12-2022
+
+**F36 Forms** `v4.23.3`
+
+- fix(base-check-box): align items to flex-start
+
+## 30-11-2022
+
+**F36 Workbench** `v4.21.0`
+
+- Make WorkbenchHeader description prop accept ReactElement
+
+## 25-11-2022
+
+**F36 Menu** `v4.23.2`
+
+- fix(menu): Safari issue on closing menu clicking on trigger
+
+**F36 Popover** `v4.23.2`
+
+- fix(menu): Safari issue on closing menu clicking on trigger
+
+## 23-11-2022
+
+**F36 Entity List** `v4.23.0`
+
+- Show divider for when entity card has a description
+
+**F36 Tooltip** `v4.23.1`
+
+- Fix tooltip sticky behavior issue
+
+## 21-11-2022
+
+**F36 Workbench** `v4.20.6`
+
+- Bump package to fix the latest release
+
+## 19-11-2022
+
+**F36 Entity List** `v4.22.0`
+
+- Update entity list item to include entity type on card
+
+## 18-11-2022
+
+**F36 Forms** `v4.21.8`
+
+- Remove unused prop from types
+
+## 17-11-2022
+
+**F36 Tooltip** `v4.21.6`
+
+- Fix tooltip show/hide logic with delays
+
+**F36 Skeleton** `v4.21.7`
+
+- feat(Skeleton): add and expose raduis properties
+
+## 09-11-2022
+
+**F36 Tabs** `v4.21.5`
+
+- fix: update tabs library for React 18 compatibility
+
+## 08-11-2022
+
+**F36 Accordion** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Asset** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Autocomplete** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Badge** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Button** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Card** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Collapse** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Copybutton** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Core** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Datepicker** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Datetime** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Drag Handle** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Entity List** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Forms** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Icon** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Icons** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Menu** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Note** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Pill** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Skeleton** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Table** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Tabs** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Tooltip** `v4.21.4`
+
+- fix: specify react-dom as peer dependency
+
+**F36 Workbench** `v4.20.5`
+
+- fix: specify react-dom as peer dependency
+
+## 28-10-2022
+
+**F36 Accordion** `v4.21.3`
+
+- fix: remove default margin in safari for buttons
+
+**F36 Button** `v4.21.3`
+
+- fix: remove default margin in safari for buttons
+
+**F36 Card** `v4.21.3`
+
+- fix: remove default margin in safari for buttons
+
+**F36 Copybutton** `v4.21.3`
+
+- fix: remove default margin in safari for buttons
+
+**F36 Drag Handle** `v4.21.3`
+
+- fix: remove default margin in safari for buttons
+
+**F36 Entity List** `v4.21.3`
+
+- fix: remove default margin in safari for buttons
+
+**F36 Text Link** `v4.21.3`
+
+- fix: remove default margin in safari for buttons
+
+## 27-10-2022
+
+**F36 Button** `v4.21.2`
+
+- feat(button): allow icon variant for transparent buttons
+  fix(datepicker): change calendar button icon variant
+
+**F36 Datepicker** `v4.21.2`
+
+- feat(button): allow icon variant for transparent buttons
+  fix(datepicker): change calendar button icon variant
+
+## 26-10-2022
+
+**F36 Text Link** `v4.21.1`
+
+- Fix vertical alignment when icon is aligned at start
+
 ## 12-10-2022
 
 **F36 Icons** `v4.21.0`

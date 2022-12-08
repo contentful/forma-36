@@ -176,3 +176,39 @@ export const Overview = () => {
     </>
   );
 };
+
+export const WithDelays = () => {
+  return (
+    <>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Show Delay
+      </SectionHeading>
+
+      <Flex marginBottom="spacingS">
+        <Tooltip content="I am a Tooltip 🙌" maxWidth={360} showDelay={400}>
+          <TextLink href="/">Hover me</TextLink>
+        </Tooltip>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Tooltip content="I am a Tooltip 🙌" maxWidth={360} showDelay={400}>
+          <TextLink href="/">Hover me</TextLink>
+        </Tooltip>
+      </Flex>
+
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Hide Delay
+      </SectionHeading>
+
+      <Flex marginBottom="spacingS">
+        <Tooltip content="I am a Tooltip 🙌" maxWidth={360} hideDelay={400}>
+          <TextLink href="/">Hover me</TextLink>
+        </Tooltip>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Tooltip content="I am a Tooltip 🙌" maxWidth={360} hideDelay={400}>
+          <TextLink href="/">Hover me</TextLink>
+        </Tooltip>
+      </Flex>
+    </>
+  );
+};
