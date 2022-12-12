@@ -61,12 +61,6 @@ export interface MultiselectProps extends CommonProps {
   searchInputName?: string;
 
   /**
-   * Enables a shortcut checkbox to select or delect all items
-   * @default false
-   */
-  hasCheckAll?: boolean;
-
-  /**
    * Sets the list to show its loading state
    * @default false
    */
@@ -142,7 +136,7 @@ const countMatchingChildren = (
 
 function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
   const {
-    className = '',
+    className,
     startIcon,
     placeholder = 'Select one or more Items',
     currentSelection = [],

@@ -22,7 +22,7 @@ export const SelectAllOption = ({
       value="all"
       label={displayLabel}
       itemId="SelectAll"
-      onSelectItem={(event) => onSelectItem(event)}
+      onSelectItem={onSelectItem}
       isChecked={isChecked}
       className={cx(styles.selectAll, className)}
       {...otherProps}

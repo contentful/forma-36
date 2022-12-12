@@ -22,12 +22,13 @@ export default function MultiselectSelectAllExample() {
       setSelectedSpaces((prevState) => [...prevState, value]);
     } else {
       setSelectedSpaces((prevState) =>
+        //its important to use prevState to avoid race conditions when using the state variable as reference.
         prevState.filter((space) => space !== value),
       );
     }
   };
 
-  const toggleAll = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const toggleAll = (event) => {
     const { checked } = event.target;
     if (checked) {
       setSelectedSpaces(spaces);
@@ -37,6 +38,7 @@ export default function MultiselectSelectAllExample() {
   };
 
   const areAllSelected = React.useMemo(() => {
+    // this can affect the app performance with a larger amount of data, consider changing it in your implementation
     return spaces.every((element) => selectedSpaces.includes(element));
   }, [selectedSpaces, spaces]);
 

@@ -269,9 +269,9 @@ describe('Multiselect with select all', () => {
       screen.getByRole('button', { name: 'Toggle Multiselect' }),
     );
     expect(
-      screen.queryByRole('checkbox', { name: 'Deselect all' }),
+      screen.getByRole('checkbox', { name: 'Deselect all' }),
     ).toBeInTheDocument();
-    await user.click(screen.queryByRole('checkbox', { name: 'Deselect all' }));
+    await user.click(screen.getByRole('checkbox', { name: 'Deselect all' }));
     expect(mockOnSelectAll).toHaveBeenCalled();
   });
 });
