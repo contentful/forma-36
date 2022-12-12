@@ -36,10 +36,12 @@ const fruits: Fruit[] = [
 
 const mockOnSearchValueChange = jest.fn();
 const mockOnSelectItem = jest.fn();
+const mockOnSelectAll = jest.fn();
 
 const renderComponent = (
   customProps?: Partial<MultiselectProps>,
   elements = fruits,
+  renderSelectAll = false,
 ) => {
   const props = {
     ...customProps,
@@ -48,6 +50,9 @@ const renderComponent = (
   render(
     <Multiselect {...props}>
       <h2>Fruits</h2>
+      {renderSelectAll && (
+        <Multiselect.SelectAll isChecked onSelectItem={mockOnSelectAll} />
+      )}
       <div data-test-id="wrapper-component">
         {elements.map((fruit, index) => {
           return (
@@ -127,7 +132,9 @@ describe('Multiselect basic usage', () => {
       placeholder: 'My Placeholder Text',
       currentSelection: ['Tomato 🍅', 'Orange 🍊', 'Avocado 🥑', 'Banana 🍌'],
     });
-    expect(screen.getByText('Tomato 🍅 and 3 more')).toBeInTheDocument();
+    expect(
+      screen.getByTestId('cf-multiselect-current-selection'),
+    ).toHaveTextContent('Tomato 🍅 and 3 more');
   });
 });
 
@@ -247,5 +254,24 @@ describe('Multiselect with search', () => {
         }),
       }),
     );
+  });
+});
+
+describe('Multiselect with select all', () => {
+  it('renders a select all checkbox', async () => {
+    const produce: Fruit[] = [
+      { id: 1, name: 'Apple 🍎', isChecked: true, isDisabled: false },
+      { id: 2, name: 'Ananas 🍍', isChecked: true, isDisabled: false },
+      { id: 3, name: 'Avocado 🥑', isChecked: true, isDisabled: false },
+    ];
+    const [{ user }] = renderComponent({}, produce, true);
+    await user.click(
+      screen.getByRole('button', { name: 'Toggle Multiselect' }),
+    );
+    expect(
+      screen.getByRole('checkbox', { name: 'Deselect all' }),
+    ).toBeInTheDocument();
+    await user.click(screen.getByRole('checkbox', { name: 'Deselect all' }));
+    expect(mockOnSelectAll).toHaveBeenCalled();
   });
 });
