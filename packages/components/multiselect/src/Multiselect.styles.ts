@@ -6,6 +6,9 @@ export const getMultiselectStyles = () => ({
     position: 'relative',
     width: '100%',
   }),
+  triggerButton: css({
+    justifyContent: 'space-between',
+  }),
   currentSelection: css({
     width: '50%',
     whiteSpace: 'nowrap',
@@ -13,6 +16,9 @@ export const getMultiselectStyles = () => ({
     overflow: 'hidden',
     verticalAlign: 'bottom',
     marginRight: tokens.spacing2Xs,
+  }),
+  currentSelectionAddition: css({
+    color: tokens.gray600,
   }),
   inputField: css({
     paddingRight: tokens.spacingXl,
@@ -48,29 +54,36 @@ export const getMultiselectStyles = () => ({
     color: tokens.gray500,
     margin: tokens.spacingM,
   }),
+  selectAll: css({
+    'label > *': {
+      fontWeight: 'bold',
+    },
+  }),
   item: css({
-    padding: `${tokens.spacingXs} ${tokens.spacingM}`,
-    wordBreak: 'break-word',
-    whiteSpace: 'break-spaces',
-    hyphens: 'auto',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    cursor: 'pointer',
-    '&:focus, &:hover': {
-      backgroundColor: tokens.gray100,
-    },
-    '&:active': {
-      backgroundColor: tokens.gray200,
-    },
-    '&:focus': {
-      boxShadow: tokens.glowPrimary,
-    },
-    '&:focus:not(:focus-visible)': {
-      boxShadow: 'unset',
-    },
-    '&:focus-visible': {
-      boxShadow: tokens.glowPrimary,
+    label: {
+      padding: `${tokens.spacingXs} ${tokens.spacingM}`,
+      wordBreak: 'break-word',
+      whiteSpace: 'break-spaces',
+      hyphens: 'auto',
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      cursor: 'pointer',
+      '&:focus, &:hover': {
+        backgroundColor: tokens.gray100,
+      },
+      '&:active': {
+        backgroundColor: tokens.gray200,
+      },
+      '&:focus': {
+        boxShadow: tokens.glowPrimary,
+      },
+      '&:focus:not(:focus-visible)': {
+        boxShadow: 'unset',
+      },
+      '&:focus-visible': {
+        boxShadow: tokens.glowPrimary,
+      },
     },
   }),
   disabled: css({
