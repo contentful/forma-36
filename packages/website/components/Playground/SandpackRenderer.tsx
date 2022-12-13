@@ -9,6 +9,7 @@ import tokens from '@contentful/f36-tokens';
 
 import { PlaygroundTopBar } from './PlaygroundTopBar';
 import { palette } from '../LiveEditor/theme';
+import { InterpolationWithTheme } from '@emotion/core';
 const indexFile = `import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { GlobalStyles } from "@contentful/f36-components";
@@ -40,21 +41,53 @@ export function SandpackRenderer({
   code,
   showOpenInCodeSandbox = false,
 }: Props) {
+  // Overides to keep the style as we want it
+  const sandpackStyles: { [key: string]: InterpolationWithTheme<any> } = {
+    wrapper: {
+      display: 'flex',
+      flexDirection: 'column',
+      height: '100%',
+    },
+    layout: {
+      border: 0,
+      borderRadius: 0,
+      height: '100%',
+      '& > .sp-stack': {
+        height: '100% !important',
+      },
+      '& .sp-cm': {
+        paddingLeft: tokens.spacingM,
+      },
+      '& .cm-scroller': {
+        padding: 0,
+        '& .cm-gutters': {
+          padding: 0,
+        },
+        '& .cm-gutter': {
+          padding: `0 ${tokens.spacing2Xs}`,
+        },
+        '& .cm-gutterElement': {
+          fontSize: tokens.fontSizeM,
+          padding: 0,
+        },
+      },
+      '& .cm-content': {
+        padding: 0,
+        '& .cm-line': {
+          padding: `0 ${tokens.spacingS}`,
+        },
+        '& .cm-activeLine': {
+          backgroundColor: 'rgba(207, 217, 224, 0.5)',
+          borderRadius: 0,
+        },
+      },
+    },
+  };
+
   return (
     <SandpackProvider
-      template="react"
+      css={sandpackStyles.wrapper}
       customSetup={{
-        files: {
-          '/App.js': code,
-          '/styles.css': {
-            code: stylesFile,
-            hidden: true,
-          },
-          '/index.js': {
-            code: indexFile,
-            hidden: true,
-          },
-        },
         dependencies: {
           react: '^17.0.0',
           'react-dom': '^17.0.0',
@@ -72,49 +105,57 @@ export function SandpackRenderer({
           'array-move': '^4.0.0',
         },
       }}
+      files={{
+        '/App.js': code,
+        '/styles.css': {
+          code: stylesFile,
+          hidden: true,
+        },
+        '/index.js': {
+          code: indexFile,
+          hidden: true,
+        },
+      }}
+      theme={{
+        colors: {
+          accent: palette.accent, // tokens.blue700
+          disabled: palette.color, // tokens.gray900
+          error: palette.deleted, // tokens.red700
+          errorSurface: palette.errorBackground, // tokens.red200
+          hover: palette.activeText, //tokens.blue700
+          surface1: palette.backgroundColor,
+          surface2: tokens.gray300, // tokens.gray300
+          surface3: palette.activeBackground, // tokens.blue200
+        },
+        font: {
+          body: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+          mono: '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
+          lineHeight: '1.4',
+          size: tokens.fontSizeM,
+        },
+        syntax: {
+          plain: palette.color, // tokens.gray900
+          comment: {
+            color: palette.comment, //tokens.gray600
+            fontStyle: 'italic',
+          },
+          keyword: palette.keyword, // tokens.red700
+          tag: palette.tag, //tokens.blue700
+          punctuation: palette.color, // tokens.gray900
+          definition: palette.definition, // tokens.green700
+          property: {
+            color: palette.selector, //tokens.blue700
+            fontStyle: 'italic',
+          },
+          static: palette.attrValue, // tokens.purple500
+          string: palette.string, // tokens.yellow800
+        },
+      }}
+      template="react"
     >
       <PlaygroundTopBar />
 
-      <SandpackLayout
-        theme={{
-          palette: {
-            activeText: palette.activeText, //tokens.blue700
-            defaultText: palette.color, // tokens.gray900
-            inactiveText: tokens.gray300, // tokens.gray300
-            activeBackground: palette.activeBackground, // tokens.blue200
-            defaultBackground: palette.backgroundColor, // tokens.gray200
-            inputBackground: palette.inputBackground, // tokens.colorWhite
-            accent: palette.accent, // tokens.blue700
-            errorBackground: palette.errorBackground, // tokens.red200
-            errorForeground: palette.deleted, // tokens.red700
-          },
-          syntax: {
-            plain: palette.color, // tokens.gray900
-            comment: {
-              color: palette.comment, //tokens.gray600
-              fontStyle: 'italic',
-            },
-            keyword: palette.keyword, // tokens.red700
-            tag: palette.tag, //tokens.blue700
-            punctuation: palette.color, // tokens.gray900
-            definition: palette.definition, // tokens.green700
-            property: {
-              color: palette.selector, //tokens.blue700
-              fontStyle: 'italic',
-            },
-            static: palette.attrValue, // tokens.purple500
-            string: palette.string, // tokens.yellow800
-          },
-          typography: {
-            bodyFont:
-              '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-            monoFont:
-              '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
-            fontSize: '14px',
-            lineHeight: '1.4',
-          },
-        }}
-      >
+      <SandpackLayout css={sandpackStyles.layout}>
         <SandpackCodeEditor
           showTabs={false}
           showLineNumbers
@@ -126,7 +167,6 @@ export function SandpackRenderer({
           showSandpackErrorOverlay
           showOpenInCodeSandbox={showOpenInCodeSandbox}
           showRefreshButton
-          viewportSize="auto"
         />
       </SandpackLayout>
     </SandpackProvider>
