@@ -50,42 +50,41 @@ export type BadgeInternalProps = CommonProps &
 
 export type BadgeProps = PropsWithHTMLElement<BadgeInternalProps, 'div'>;
 
-export const Badge = React.forwardRef<
-  HTMLDivElement,
-  ExpandProps<BadgeInternalProps>
->((props, ref) => {
-  const styles = getBadgeStyles();
-  const {
-    children,
-    variant = 'primary',
-    size = 'default',
-    testId = 'cf-ui-badge',
-    startIcon,
-    endIcon,
-    className,
-    ...otherProps
-  } = props;
+export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
+  (props, ref) => {
+    const styles = getBadgeStyles();
+    const {
+      children,
+      variant = 'primary',
+      size = 'default',
+      testId = 'cf-ui-badge',
+      startIcon,
+      endIcon,
+      className,
+      ...otherProps
+    } = props;
 
-  const iconContent = (icon) =>
-    React.cloneElement(icon, {
-      size: 'tiny',
-      variant: variant === 'primary-filled' ? 'white' : variant,
-    });
+    const iconContent = (icon) =>
+      React.cloneElement(icon, {
+        size: 'tiny',
+        variant: variant === 'primary-filled' ? 'white' : variant,
+      });
 
-  return (
-    <Box
-      as="div"
-      testId={testId}
-      display="inline-flex"
-      className={cx(styles.badge({ variant, size }), className)}
-      {...otherProps}
-      ref={ref}
-    >
-      {startIcon && size === 'default' && iconContent(startIcon)}
-      <span>{children}</span>
-      {endIcon && size === 'default' && iconContent(endIcon)}
-    </Box>
-  );
-});
+    return (
+      <Box
+        as="div"
+        testId={testId}
+        display="inline-flex"
+        className={cx(styles.badge({ variant, size }), className)}
+        {...otherProps}
+        ref={ref}
+      >
+        {startIcon && size === 'default' && iconContent(startIcon)}
+        <span>{children}</span>
+        {endIcon && size === 'default' && iconContent(endIcon)}
+      </Box>
+    );
+  },
+);
 
 Badge.displayName = 'Badge';
