@@ -126,12 +126,7 @@ export const Overview = ({ startIcon, endIcon }) => (
         </Badge>
       </Flex>
       <Flex marginRight="spacingS">
-        <Badge
-          variant="warning"
-          size="small"
-          startIcon={startIcon && <Icon as={icons[startIcon]} />}
-          endIcon={endIcon && <Icon as={icons[endIcon]} />}
-        >
+        <Badge variant="warning" size="small">
           warning
         </Badge>
       </Flex>

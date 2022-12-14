@@ -22,10 +22,10 @@ function EntityStatusBadge(
   props: EntityStatusBadgeProps,
   ref: React.Ref<HTMLDivElement>,
 ) {
-  const { entityStatus, ...otherProps } = props;
+  const { entityStatus, size = 'default', ...otherProps } = props;
   const variant = statusMap[entityStatus];
   return (
-    <Badge {...otherProps} variant={variant} ref={ref}>
+    <Badge {...otherProps} size={size} variant={variant} ref={ref}>
       {entityStatus}
     </Badge>
   );
