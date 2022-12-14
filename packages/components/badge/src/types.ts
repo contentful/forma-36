@@ -8,3 +8,8 @@ export type BadgeVariant =
   | 'warning'
   | 'primary-filled'
   | 'featured';
+
+export type BadgeStylesProps = {
+  variant: BadgeVariant;
+  size: BadgeSize;
+};
