@@ -99,18 +99,18 @@ export interface MultiselectProps extends CommonProps {
 const iterateOverChildren = (
   children: React.ReactNode,
   filter: (child: React.ReactElement) => boolean,
-  transform: (child: React.ReactElement) => React.ReactElement,
+  callback: (child: React.ReactElement) => React.ReactElement | void,
 ): React.ReactNode => {
   return React.Children.map(children, (child) => {
     // equal to (if (child == null || typeof child == 'string'))
     if (!React.isValidElement(child)) return child;
     if (filter(child)) {
-      return transform(child);
+      return callback(child);
     }
     const childChildren = iterateOverChildren(
       child.props.children,
       filter,
-      transform,
+      callback,
     );
     return React.cloneElement(child, { children: childChildren } as unknown);
   });
@@ -215,10 +215,18 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         data-test-id="cf-multiselect-current-selection"
         className={styles.currentSelection}
       >
-        {currentSelection[0]} and {leftoverCount} more{' '}
+        {currentSelection[0]}{' '}
+        <span className={styles.currentSelectionAddition}>
+          and {leftoverCount} more
+        </span>
       </span>
     );
-  }, [currentSelection, placeholder, styles.currentSelection]);
+  }, [
+    currentSelection,
+    placeholder,
+    styles.currentSelection,
+    styles.currentSelectionAddition,
+  ]);
 
   const optionsLength = useMemo(
     () =>
@@ -258,6 +266,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     >
       <Popover
         renderOnlyWhenOpen={false}
+        isFullWidth
         {...popoverProps}
         // popoverProps should never overwrite the internal opening logic
         isOpen={isOpen}
@@ -270,6 +279,8 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
             onClick={() => setIsOpen(!isOpen)}
             startIcon={startIcon}
             endIcon={<ChevronDownIcon />}
+            isFullWidth
+            className={styles.triggerButton}
           >
             {renderMultiselectLabel()}
           </Button>
@@ -293,6 +304,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                   onChange={handleSearchChange}
                   ref={mergeRefs(searchInputRef, internalSearchInputRef)}
                   name={searchInputName}
+                  size="small"
                 />
                 <IconButton
                   aria-label={searchValue ? 'Clear search' : 'Search'}
