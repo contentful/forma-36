@@ -17,7 +17,7 @@ type BadgeSizeWithIconProps =
        * Sets the size of the component
        * @default default
        */
-      size?: PickUnion<BadgeSize, Exclude<BadgeSize, 'small'>>;
+      size?: Exclude<BadgeSize, 'small'>;
       /**
        * Expects any of the icon components. Renders the icon aligned to the start
        */
