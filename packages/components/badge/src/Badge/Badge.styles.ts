@@ -75,11 +75,17 @@ export const getBadgeStyles = () => ({
       letterSpacing:
         '0.06rem' /*move to tokens or update wide letter spacing token*/,
       borderRadius: `${tokens.borderRadiusSmall}`,
-      whiteSpace: 'nowrap',
       overflow: 'hidden',
-      textOverflow: 'ellipsis',
       verticalAlign: 'middle',
       ...variantToStyles({ variant }),
       ...sizeToStyles({ size }),
     }),
+  badgeIcon: css({
+    flexShrink: 0,
+  }),
+  badgeText: css({
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  }),
 });

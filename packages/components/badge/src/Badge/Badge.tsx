@@ -33,6 +33,7 @@ type BadgeSizeWithIconProps =
        * @default default
        */
       size: PickUnion<BadgeSize, 'small'>;
+      // We use discriminative union typing, so in case the size is set as small we don't allow startIcon or endIcon
       startIcon?: never;
       endIcon?: never;
     };
@@ -67,6 +68,7 @@ export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
     const iconContent = (icon) =>
       React.cloneElement(icon, {
         size: 'tiny',
+        className: cx(styles.badgeIcon, icon.props.className),
         variant: variant === 'primary-filled' ? 'white' : variant,
       });
 
@@ -80,7 +82,7 @@ export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
         ref={ref}
       >
         {startIcon && size === 'default' && iconContent(startIcon)}
-        <span>{children}</span>
+        <span className={styles.badgeText}>{children}</span>
         {endIcon && size === 'default' && iconContent(endIcon)}
       </Box>
     );

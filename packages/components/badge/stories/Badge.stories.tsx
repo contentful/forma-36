@@ -31,12 +31,14 @@ export default {
   },
 };
 
-export const Basic = ({ startIcon, endIcon, args }) => (
+export const Basic = ({ startIcon, endIcon, children, ...args }) => (
   <Badge
-    {...args}
     startIcon={startIcon && <Icon as={icons[startIcon]} />}
     endIcon={endIcon && <Icon as={icons[endIcon]} />}
-  />
+    {...args}
+  >
+    {children}
+  </Badge>
 );
 
 Basic.args = {
