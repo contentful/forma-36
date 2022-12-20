@@ -56,8 +56,8 @@ export default function MultiselectSelectAllExample() {
           const val = space.toLowerCase().replace(/\s/g, '-');
           return (
             <Multiselect.Option
-              key={`key-${val}}`}
-              itemId={`space-${val}}`}
+              key={`key-${val}`}
+              itemId={`space-${val}`}
               value={space}
               label={space}
               onSelectItem={handleSelectItem}
