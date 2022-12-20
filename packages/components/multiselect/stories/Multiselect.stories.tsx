@@ -124,7 +124,7 @@ export const Basic = () => {
               label={item.name}
               onSelectItem={handleSelectItem}
               key={`key-${item.id}`}
-              itemId={`id-${item.id}}`}
+              itemId={`id-${item.id}`}
               isChecked={selectedFruits.includes(item.name)}
               isDisabled={item.isDisabled}
             />
@@ -195,7 +195,7 @@ export const WithTitle = () => {
                   label={item.name}
                   onSelectItem={handleSelectItem}
                   key={`key-${item.id}`}
-                  itemId={`id-${item.id}}`}
+                  itemId={`id-${item.id}`}
                   isChecked={selectedFruits.includes(item.name)}
                   isDisabled={item.isDisabled}
                 />
@@ -255,7 +255,7 @@ export const WithSearch = () => {
               value={item.value}
               label={item.name}
               onSelectItem={handleSelectItem}
-              key={`key-${item.id}}`}
+              key={`key-${item.id}`}
               itemId={`id-${item.id}`}
               isChecked={selectedFruits.includes(item.name)}
               isDisabled={item.isDisabled}
@@ -350,7 +350,7 @@ export const WithSelectAll = () => {
                 label={item.name}
                 onSelectItem={handleSelectItem}
                 key={`key-${item.id}`}
-                itemId={`id-${item.id}}`}
+                itemId={`id-${item.id}`}
                 isChecked={selectedFruits.includes(item.name)}
                 isDisabled={item.isDisabled}
               />
