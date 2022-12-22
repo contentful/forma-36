@@ -14,7 +14,7 @@
     "@contentful/f36-docs-utils": "^4.0.2",
     "@contentful/f36-icon": "^4.23.3",
     "@contentful/f36-icons": "^4.23.2",
-    "@contentful/f36-multiselect": "^4.0.0",
+    "@contentful/f36-multiselect": "^4.20.11",
     "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-utils": "^4.23.2",
     "@contentful/rich-text-react-renderer": "^15.11.1",
