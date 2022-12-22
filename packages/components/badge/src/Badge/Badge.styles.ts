@@ -1,6 +1,6 @@
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
-import type { BadgeVariant, BadgeSize } from '../types';
+import type { BadgeVariant, BadgeSize, BadgeStylesProps } from '../types';
 import type { CSSObject } from '@emotion/serialize';
 
 const variantToStyles = ({ variant }: { variant: BadgeVariant }): CSSObject => {
@@ -64,26 +64,28 @@ const sizeToStyles = ({ size }: { size: BadgeSize }): CSSObject => {
   }
 };
 
-export const getBadgeStyles = ({
-  variant,
-  size,
-}: {
-  variant: BadgeVariant;
-  size: BadgeSize;
-}) => {
-  return css({
-    fontFamily: tokens.fontStackPrimary,
-    fontWeight: tokens.fontWeightDemiBold,
-
-    textTransform: 'uppercase',
-    letterSpacing:
-      '0.06rem' /*move to tokens or update wide letter spacing token*/,
-    borderRadius: `${tokens.borderRadiusSmall}`,
+export const getBadgeStyles = () => ({
+  badge: ({ variant, size }: BadgeStylesProps) =>
+    css({
+      columnGap: tokens.spacing2Xs,
+      alignItems: 'center',
+      fontFamily: tokens.fontStackPrimary,
+      fontWeight: tokens.fontWeightDemiBold,
+      textTransform: 'uppercase',
+      letterSpacing:
+        '0.06rem' /*move to tokens or update wide letter spacing token*/,
+      borderRadius: `${tokens.borderRadiusSmall}`,
+      overflow: 'hidden',
+      verticalAlign: 'middle',
+      ...variantToStyles({ variant }),
+      ...sizeToStyles({ size }),
+    }),
+  badgeIcon: css({
+    flexShrink: 0,
+  }),
+  badgeText: css({
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    verticalAlign: 'middle',
-    ...variantToStyles({ variant }),
-    ...sizeToStyles({ size }),
-  });
-};
+  }),
+});

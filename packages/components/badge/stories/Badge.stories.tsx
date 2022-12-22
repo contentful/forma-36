@@ -1,9 +1,10 @@
 import React from 'react';
+import { Icon } from '@contentful/f36-icon';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
+import * as icons from '@contentful/f36-icons';
 
 import { Badge } from '../src/Badge/Badge';
-import { BadgeInternalProps } from '../src/Badge/Badge';
 
 export default {
   title: 'Components/Badge',
@@ -15,10 +16,30 @@ export default {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
     style: { control: { disable: true } },
+    startIcon: {
+      control: {
+        options: ['', ...Object.keys(icons)],
+        type: 'select',
+      },
+    },
+    endIcon: {
+      control: {
+        options: ['', ...Object.keys(icons)],
+        type: 'select',
+      },
+    },
   },
 };
 
-export const Basic = (args: BadgeInternalProps) => <Badge {...args} />;
+export const Basic = ({ startIcon, endIcon, children, ...args }) => (
+  <Badge
+    startIcon={startIcon && <Icon as={icons[startIcon]} />}
+    endIcon={endIcon && <Icon as={icons[endIcon]} />}
+    {...args}
+  >
+    {children}
+  </Badge>
+);
 
 Basic.args = {
   size: 'default',
@@ -26,7 +47,7 @@ Basic.args = {
   children: 'Published',
 };
 
-export const Overview = () => (
+export const Overview = ({ startIcon, endIcon }) => (
   <>
     <SectionHeading as="h3" marginBottom="spacingS">
       Badge variants & sizes
@@ -34,7 +55,13 @@ export const Overview = () => (
 
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Badge variant="primary">primary</Badge>
+        <Badge
+          variant="primary"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+        >
+          primary
+        </Badge>
       </Flex>
       <Flex marginRight="spacingS">
         <Badge variant="primary" size="small">
@@ -44,7 +71,13 @@ export const Overview = () => (
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Badge variant="primary-filled">primary filled</Badge>
+        <Badge
+          variant="primary-filled"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+        >
+          primary filled
+        </Badge>
       </Flex>
       <Flex marginRight="spacingS">
         <Badge variant="primary-filled" size="small">
@@ -54,7 +87,13 @@ export const Overview = () => (
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Badge variant="positive">positive</Badge>
+        <Badge
+          variant="positive"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+        >
+          positive
+        </Badge>
       </Flex>
       <Flex marginRight="spacingS">
         <Badge variant="positive" size="small">
@@ -64,7 +103,13 @@ export const Overview = () => (
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Badge variant="negative">negative</Badge>
+        <Badge
+          variant="negative"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+        >
+          negative
+        </Badge>
       </Flex>
       <Flex marginRight="spacingS">
         <Badge variant="negative" size="small">
@@ -74,7 +119,13 @@ export const Overview = () => (
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Badge variant="warning">warning</Badge>
+        <Badge
+          variant="warning"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+        >
+          warning
+        </Badge>
       </Flex>
       <Flex marginRight="spacingS">
         <Badge variant="warning" size="small">
@@ -84,7 +135,13 @@ export const Overview = () => (
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Badge variant="secondary">secondary</Badge>
+        <Badge
+          variant="secondary"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+        >
+          secondary
+        </Badge>
       </Flex>
       <Flex marginRight="spacingS">
         <Badge variant="secondary" size="small">
@@ -94,7 +151,13 @@ export const Overview = () => (
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Badge variant="featured">featured</Badge>
+        <Badge
+          variant="featured"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+        >
+          featured
+        </Badge>
       </Flex>
       <Flex marginRight="spacingS">
         <Badge variant="featured" size="small">
@@ -109,7 +172,13 @@ export const Overview = () => (
 
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS" style={{ maxWidth: '6rem' }}>
-        <Badge variant="primary">Lorem Ipsum Dolor Sit Amet</Badge>
+        <Badge
+          variant="primary"
+          startIcon={startIcon && <Icon as={icons[startIcon]} />}
+          endIcon={endIcon && <Icon as={icons[endIcon]} />}
+        >
+          Lorem Ipsum Dolor Sit Amet
+        </Badge>
       </Flex>
       <Flex marginRight="spacingS" style={{ maxWidth: '6rem' }}>
         <Badge variant="primary" size="small">
