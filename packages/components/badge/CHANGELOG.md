@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.24.0
+
+### Minor Changes
+
+- [#2265](https://github.com/contentful/forma-36/pull/2265) [`a20de5ee`](https://github.com/contentful/forma-36/commit/a20de5ee03d0dad1cb317d54f0fd824f659d1026) Thanks [@denkristoffer](https://github.com/denkristoffer)! - enable adding icons to badges
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.24.0
+
 ## 4.23.3
 
 ### Patch Changes
