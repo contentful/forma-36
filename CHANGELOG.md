@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 23-12-2022
+
+**F36 Badge** `v4.24.0`
+
+- enable adding icons to badges
+
 ## 21-12-2022
 
 **F36 Multiselect** `v4.20.10`
