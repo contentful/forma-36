@@ -177,6 +177,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center"><a href="http://t.me/maxcheremisin"><img src="https://avatars.githubusercontent.com/u/22265863?v=4?s=100" width="100px;" alt="Maxim Cheremisin"/><br /><sub><b>Maxim Cheremisin</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=maxcheremisin" title="Code">💻</a></td>
       <td align="center"><a href="https://benomatis.com"><img src="https://avatars.githubusercontent.com/u/5822748?v=4?s=100" width="100px;" alt="benomatis"/><br /><sub><b>benomatis</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=benomatis" title="Documentation">📖</a></td>
     </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/Wake1st"><img src="https://avatars.githubusercontent.com/u/36935801?v=4?s=100" width="100px;" alt="Wake1st"/><br /><sub><b>Wake1st</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=Wake1st" title="Code">💻</a></td>
+    </tr>
   </tbody>
 </table>
 
