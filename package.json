@@ -77,7 +77,7 @@
     "assert": "^2.0.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^29.0.3",
-    "babel-plugin-emotion": "10.0.33",
+    "babel-plugin-emotion": "10.2.2",
     "chalk": "^4.1.0",
     "chromatic": "^6.11.4",
     "commitizen": "^4.2.5",
