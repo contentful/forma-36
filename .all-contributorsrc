@@ -657,6 +657,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "Wake1st",
+      "name": "Wake1st",
+      "avatar_url": "https://avatars.githubusercontent.com/u/36935801?v=4",
+      "profile": "https://github.com/Wake1st",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
