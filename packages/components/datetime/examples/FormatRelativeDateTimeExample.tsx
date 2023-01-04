@@ -8,7 +8,7 @@ import {
 export default function FormatRelativeDateTimeExample() {
   return (
     <Stack flexDirection="column">
-      {/* passing a JS Date */}
+      {/* passing a Date */}
       <Text>{formatRelativeDateTime('2021-08-17')}</Text>
       {/* passing a base date to compare to */}
       <Text>{formatRelativeDateTime('2021-08-17', '2021-08-18')}</Text>
