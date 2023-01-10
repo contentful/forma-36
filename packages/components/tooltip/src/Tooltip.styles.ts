@@ -23,6 +23,8 @@ export function getStyles() {
       padding: `${tokens.spacingXs} calc(1rem * (10 / ${tokens.fontBaseDefault}))`,
       borderRadius: tokens.borderRadiusMedium,
       whiteSpace: 'normal',
+      textTransform: 'initial',
+      letterSpacing: 'initial',
     }),
     tooltipHidden: css({
       visibility: 'hidden',
