@@ -4,7 +4,7 @@ import { Radio, RadioProps } from '../src';
 import { Flex, Box } from '@contentful/f36-core';
 
 export default {
-  title: 'Form Elements/Radio',
+  title: 'Inputs/Radio',
   component: Radio,
   argTypes: {
     className: { control: { disable: true } },

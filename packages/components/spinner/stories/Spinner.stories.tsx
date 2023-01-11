@@ -15,7 +15,7 @@ export default {
   parameters: {
     propTypes: Spinner['__docgenInfo'],
   },
-  title: 'Components/Spinner',
+  title: 'Indicators/Spinner',
 } as Meta;
 
 export const Default: Story<SpinnerInternalProps> = (args) => {

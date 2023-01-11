@@ -4,7 +4,7 @@ import { Skeleton } from '../src/index';
 import type { SkeletonContainerProps } from '../src/SkeletonContainer/SkeletonContainer';
 
 export default {
-  title: 'Components/Skeleton/SkeletonContainer',
+  title: 'Indicators/Skeleton/SkeletonContainer',
   component: Skeleton.Container,
   parameters: {
     propTypes: [Skeleton.Container['__docgenInfo']],

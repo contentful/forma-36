@@ -6,7 +6,7 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { Textarea, TextareaProps } from '../src';
 
 export default {
-  title: 'Form Elements/Textarea',
+  title: 'Inputs/Textarea',
   component: Textarea,
 };
 

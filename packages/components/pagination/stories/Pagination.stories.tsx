@@ -5,7 +5,7 @@ import { Pagination, type PaginationProps } from '../src/Pagination';
 
 export default {
   component: Pagination,
-  title: 'Components/Pagination',
+  title: 'Navigation/Pagination',
 } as Meta;
 
 export const Default = (args: PaginationProps) => {

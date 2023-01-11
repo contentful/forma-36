@@ -6,7 +6,7 @@ import { Flex } from '@contentful/f36-core';
 import { SearchIcon } from '@contentful/f36-icons';
 
 export default {
-  title: 'Form Elements/TextInput',
+  title: 'Inputs/TextInput',
   component: TextInput,
   args: {
     onBlur: undefined,

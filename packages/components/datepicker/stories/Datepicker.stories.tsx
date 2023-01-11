@@ -16,7 +16,7 @@ export default {
   parameters: {
     chromatic: { delay: 1000 },
   },
-  title: 'Components/Datepicker',
+  title: 'Inputs/Datepicker',
 } as Meta;
 
 export const Basic: Story<DatepickerProps> = (args) => {

@@ -10,7 +10,7 @@ export default {
   parameters: {
     propTypes: ButtonGroup['__docgenInfo'],
   },
-  title: 'Components/Button/ButtonGroup',
+  title: 'Buttons/ButtonGroup',
   argTypes: {
     variant: {
       control: {

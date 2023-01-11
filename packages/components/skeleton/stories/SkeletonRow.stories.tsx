@@ -5,7 +5,7 @@ import { Skeleton } from '../src/index';
 import type { SkeletonRowProps } from '../src/SkeletonRow/SkeletonRow';
 
 export default {
-  title: 'Components/Skeleton/SkeletonRow',
+  title: 'Indicators/Skeleton/SkeletonRow',
   component: Skeleton.Row,
   parameters: {
     propTypes: [Skeleton.Row['__docgenInfo']],

@@ -4,7 +4,7 @@ import { Skeleton } from '../src/index';
 import type { SkeletonImageProps } from '../src/SkeletonImage/SkeletonImage';
 
 export default {
-  title: 'Components/Skeleton/SkeletonImage',
+  title: 'Indicators/Skeleton/SkeletonImage',
   component: Skeleton.Image,
   parameters: {
     propTypes: [Skeleton.Image['__docgenInfo']],

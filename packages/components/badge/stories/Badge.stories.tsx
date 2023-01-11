@@ -7,7 +7,7 @@ import * as icons from '@contentful/f36-icons';
 import { Badge } from '../src/Badge/Badge';
 
 export default {
-  title: 'Components/Badge',
+  title: 'Indicators/Badge',
   component: Badge,
   parameters: {
     propTypes: [Badge['__docgenInfo']],

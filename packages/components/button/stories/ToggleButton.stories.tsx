@@ -8,7 +8,7 @@ import { ToggleButton, type ToggleButtonProps } from '../src/ToggleButton';
 import { ButtonGroup } from '../src';
 
 export default {
-  title: 'Components/Button/ToggleButton',
+  title: 'Buttons/ToggleButton',
   component: ToggleButton,
   parameters: {
     propTypes: [ToggleButton['__docgenInfo']],

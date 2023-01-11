@@ -10,7 +10,7 @@ import { Button } from '@contentful/f36-button';
 import { TextInput } from '@contentful/f36-forms';
 
 export default {
-  title: 'Components/Modal/ModalConfirm',
+  title: 'Overlay/Modal/Confirm',
   component: ModalConfirm,
   parameters: {
     propTypes: [ModalConfirm['__docgenInfo']],

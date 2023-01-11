@@ -11,7 +11,7 @@ export default {
   parameters: {
     propTypes: DragHandle['__docgenInfo'],
   },
-  title: 'Components/DragHandle',
+  title: 'Indicators/DragHandle',
 } as Meta;
 
 export const Default: Story<DragHandleInternalProps> = (args) => {

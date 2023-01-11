@@ -28,7 +28,7 @@ export default {
     TableCell: Table.Cell,
     TableRow: Table.Row,
   },
-  title: 'Components/Table',
+  title: 'Containers/Table',
 } as Meta;
 
 export const Default: Story = (args) => {

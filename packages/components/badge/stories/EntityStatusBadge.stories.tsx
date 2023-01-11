@@ -6,7 +6,7 @@ import { EntityStatusBadge } from '../src/EntityStatusBadge/EntityStatusBadge';
 import { EntityStatusBadgeProps } from '../src/EntityStatusBadge/EntityStatusBadge';
 
 export default {
-  title: 'Components/EntityStatusBadge',
+  title: 'Indicators/EntityStatusBadge',
   component: EntityStatusBadge,
   parameters: {
     propTypes: [EntityStatusBadge['__docgenInfo']],

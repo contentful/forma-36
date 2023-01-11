@@ -4,7 +4,7 @@ import { Switch, SwitchProps } from '../src';
 import { Flex, Box } from '@contentful/f36-core';
 
 export default {
-  title: 'Form Elements/Switch',
+  title: 'Inputs/Switch',
   component: Switch,
   argTypes: {
     className: { control: { disable: true } },

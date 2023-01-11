@@ -1,10 +1,9 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-import { Flex, Box } from '@contentful/f36-core';
+import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
 import * as icons from '@contentful/f36-icons';
-import { Icon } from '@contentful/f36-icon';
 
 import { AssetCard, type AssetCardProps } from '../src';
 
@@ -28,253 +27,259 @@ export default {
   parameters: {
     propTypes: AssetCard['__docgenInfo'],
   },
-  title: 'Components/Card/AssetCard',
+  title: 'Containers/AssetCard',
 } as Meta;
 
-// Cast the icon value to string, maybe there's a Storybook way to do this
-type Args = AssetCardProps & { icon?: string };
+export const basic: Story<AssetCardProps> = (args) => {
+  return (
+    <Flex flexDirection="column" marginBottom="spacingL">
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Default
+      </SectionHeading>
+      <AssetCard {...args} size="default" />
 
-export const Default: Story<Args> = (args) => {
-  return <AssetCard {...args} icon={<Icon as={icons[args.icon]} />} />;
+      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+        Small
+      </SectionHeading>
+      <AssetCard {...args} size="small" />
+    </Flex>
+  );
 };
 
-Default.args = {
+basic.args = {
+  actions: [
+    <MenuItem key="copy">Copy</MenuItem>,
+    <MenuItem key="delete">Delete</MenuItem>,
+  ],
+  icon: <icons.ClockIcon />,
   status: 'published',
   type: 'image',
   src: 'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300',
   title: 'Asset title',
 };
 
-const actions: React.ReactNodeArray = [
-  <MenuItem key="copy">Copy</MenuItem>,
-  <MenuItem key="delete">Delete</MenuItem>,
-];
+// const actions: React.ReactNodeArray = [
+//   <MenuItem key="copy">Copy</MenuItem>,
+//   <MenuItem key="delete">Delete</MenuItem>,
+// ];
 
-export const WithLoadingState: Story<Args> = (args) => {
-  return <AssetCard {...args} icon={<Icon as={icons[args.icon]} />} />;
-};
+// export const Overview: Story<Args> = () => {
+//   return (
+//     <>
+//       <SectionHeading as="h3" marginBottom="spacingS">
+//         Default
+//       </SectionHeading>
 
-WithLoadingState.args = {
-  isLoading: true,
-};
+//       <Flex flexWrap="wrap">
+//         <Flex flexDirection="column" marginRight="spacingM">
+//           <SectionHeading as="h3" marginBottom="spacingS">
+//             Default
+//           </SectionHeading>
 
-export const Overview: Story<Args> = () => {
-  return (
-    <>
-      <SectionHeading as="h3" marginBottom="spacingS">
-        Default
-      </SectionHeading>
+//           <AssetCard
+//             icon={<Icon as={icons.ClockIcon} />}
+//             src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+//             title="Asset title"
+//             type="image"
+//           />
+//         </Flex>
 
-      <Flex flexWrap="wrap">
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Default
-          </SectionHeading>
+//         <Flex flexDirection="column" marginRight="spacingM">
+//           <SectionHeading as="h3" marginBottom="spacingS">
+//             Hover
+//           </SectionHeading>
 
-          <AssetCard
-            icon={<Icon as={icons.ClockIcon} />}
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
+//           <AssetCard
+//             actions={actions}
+//             isHovered
+//             src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+//             title="Asset title"
+//             type="image"
+//           />
+//         </Flex>
 
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Hover
-          </SectionHeading>
+//         <Flex flexDirection="column" marginRight="spacingM">
+//           <SectionHeading as="h3" marginBottom="spacingS">
+//             Selected
+//           </SectionHeading>
 
-          <AssetCard
-            actions={actions}
-            isHovered
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
+//           <AssetCard
+//             isSelected
+//             src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+//             title="Asset title"
+//             type="image"
+//           />
+//         </Flex>
+//       </Flex>
 
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Selected
-          </SectionHeading>
+//       <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
+//         Small
+//       </SectionHeading>
 
-          <AssetCard
-            isSelected
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
-      </Flex>
+//       <Flex flexWrap="wrap">
+//         <Flex flexDirection="column" marginRight="spacingM">
+//           <SectionHeading as="h3" marginBottom="spacingS">
+//             Default
+//           </SectionHeading>
 
-      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
-        Small
-      </SectionHeading>
+//           <AssetCard
+//             icon={<Icon as={icons.ClockIcon} />}
+//             size="small"
+//             src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+//             title="Asset title"
+//             type="image"
+//           />
+//         </Flex>
 
-      <Flex flexWrap="wrap">
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Default
-          </SectionHeading>
+//         <Flex flexDirection="column" marginRight="spacingM">
+//           <SectionHeading as="h3" marginBottom="spacingS">
+//             Hover
+//           </SectionHeading>
 
-          <AssetCard
-            icon={<Icon as={icons.ClockIcon} />}
-            size="small"
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
+//           <AssetCard
+//             actions={actions}
+//             isHovered
+//             size="small"
+//             src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+//             title="Asset title"
+//             type="image"
+//           />
+//         </Flex>
 
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Hover
-          </SectionHeading>
+//         <Flex flexDirection="column" marginRight="spacingM">
+//           <SectionHeading as="h3" marginBottom="spacingS">
+//             Selected
+//           </SectionHeading>
 
-          <AssetCard
-            actions={actions}
-            isHovered
-            size="small"
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
+//           <AssetCard
+//             isSelected
+//             size="small"
+//             src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+//             title="Asset title"
+//             type="image"
+//           />
+//         </Flex>
+//       </Flex>
+//     </>
+//   );
+// };
 
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Selected
-          </SectionHeading>
+// export const DifferentImageSizes: Story<Args> = () => {
+//   return (
+//     <>
+//       <SectionHeading as="h3" marginBottom="spacingS">
+//         Default
+//       </SectionHeading>
 
-          <AssetCard
-            isSelected
-            size="small"
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
-      </Flex>
-    </>
-  );
-};
+//       <Flex flexWrap="wrap">
+//         <Flex flexDirection="column" marginRight="spacingM">
+//           <SectionHeading as="h3" marginBottom="spacingS">
+//             200x300
+//           </SectionHeading>
 
-export const DifferentImageSizes: Story<Args> = () => {
-  return (
-    <>
-      <SectionHeading as="h3" marginBottom="spacingS">
-        Default
-      </SectionHeading>
+//           <AssetCard
+//             icon={<Icon as={icons.ClockIcon} />}
+//             src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+//             title="Asset title"
+//             type="image"
+//           />
+//         </Flex>
 
-      <Flex flexWrap="wrap">
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            200x300
-          </SectionHeading>
+//         <Flex flexDirection="column" marginRight="spacingM">
+//           <SectionHeading as="h3" marginBottom="spacingS">
+//             200x600
+//           </SectionHeading>
 
-          <AssetCard
-            icon={<Icon as={icons.ClockIcon} />}
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
+//           <AssetCard
+//             icon={<Icon as={icons.ClockIcon} />}
+//             src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=600"
+//             title="Asset title"
+//             type="image"
+//           />
+//         </Flex>
 
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            200x600
-          </SectionHeading>
+//         <Flex flexDirection="column" marginRight="spacingM">
+//           <SectionHeading as="h3" marginBottom="spacingS">
+//             800x200
+//           </SectionHeading>
 
-          <AssetCard
-            icon={<Icon as={icons.ClockIcon} />}
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=600"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
+//           <AssetCard
+//             icon={<Icon as={icons.ClockIcon} />}
+//             src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=800&h=200"
+//             title="Asset title"
+//             type="image"
+//           />
+//         </Flex>
+//       </Flex>
 
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            800x200
-          </SectionHeading>
+//       <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
+//         Small
+//       </SectionHeading>
 
-          <AssetCard
-            icon={<Icon as={icons.ClockIcon} />}
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=800&h=200"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
-      </Flex>
+//       <Flex flexWrap="wrap">
+//         <Flex flexDirection="column" marginRight="spacingM">
+//           <SectionHeading as="h3" marginBottom="spacingS">
+//             200x300
+//           </SectionHeading>
 
-      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
-        Small
-      </SectionHeading>
+//           <AssetCard
+//             icon={<Icon as={icons.ClockIcon} />}
+//             size="small"
+//             src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+//             title="Asset title"
+//             type="image"
+//           />
+//         </Flex>
 
-      <Flex flexWrap="wrap">
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            200x300
-          </SectionHeading>
+//         <Flex flexDirection="column" marginRight="spacingM">
+//           <SectionHeading as="h3" marginBottom="spacingS">
+//             200x600
+//           </SectionHeading>
 
-          <AssetCard
-            icon={<Icon as={icons.ClockIcon} />}
-            size="small"
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
+//           <AssetCard
+//             actions={actions}
+//             size="small"
+//             src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=600"
+//             title="Asset title"
+//             type="image"
+//           />
+//         </Flex>
 
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            200x600
-          </SectionHeading>
+//         <Flex flexDirection="column" marginRight="spacingM">
+//           <SectionHeading as="h3" marginBottom="spacingS">
+//             800x200
+//           </SectionHeading>
 
-          <AssetCard
-            actions={actions}
-            size="small"
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=600"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
+//           <AssetCard
+//             size="small"
+//             src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=800&h=200"
+//             title="Asset title"
+//             type="image"
+//           />
+//         </Flex>
+//       </Flex>
 
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            800x200
-          </SectionHeading>
+//       <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
+//         Wrapped in container
+//       </SectionHeading>
 
-          <AssetCard
-            size="small"
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=800&h=200"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
-      </Flex>
+//       <Box style={{ width: '500px' }} marginBottom="spacingS">
+//         <AssetCard
+//           icon={<Icon as={icons.ClockIcon} />}
+//           src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=800&h=200"
+//           title="Asset title"
+//           type="image"
+//         />
+//       </Box>
 
-      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
-        Wrapped in container
-      </SectionHeading>
-
-      <Box style={{ width: '500px' }} marginBottom="spacingS">
-        <AssetCard
-          icon={<Icon as={icons.ClockIcon} />}
-          src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=800&h=200"
-          title="Asset title"
-          type="image"
-        />
-      </Box>
-
-      <Box style={{ width: '500px' }}>
-        <AssetCard
-          icon={<Icon as={icons.ClockIcon} />}
-          src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
-          title="Asset title"
-          type="image"
-        />
-      </Box>
-    </>
-  );
-};
+//       <Box style={{ width: '500px' }}>
+//         <AssetCard
+//           icon={<Icon as={icons.ClockIcon} />}
+//           src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+//           title="Asset title"
+//           type="image"
+//         />
+//       </Box>
+//     </>
+//   );
+// };

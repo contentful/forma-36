@@ -9,7 +9,7 @@ import { css } from 'emotion';
 import { Pill, type PillInternalProps } from '../src/Pill';
 
 export default {
-  title: 'Components/Pill',
+  title: 'Containers/Pill',
   component: Pill,
   parameters: {
     propTypes: Pill['__docgenInfo'],

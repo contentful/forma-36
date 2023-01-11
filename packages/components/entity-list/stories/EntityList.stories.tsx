@@ -4,7 +4,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { EntityList, type EntityListProps } from '../src';
 
 export default {
-  title: 'Components/EntityList/EntityList',
+  title: 'Containers/EntityList',
   component: EntityList,
   argTypes: {
     className: { control: { disable: true } },

@@ -6,7 +6,7 @@ import { Note } from '../src/Note';
 import { TextLink } from '@contentful/f36-text-link';
 
 export default {
-  title: 'Components/Note',
+  title: 'Indicators/Note',
   component: Note,
   parameters: {
     propTypes: [Note['__docgenInfo']],

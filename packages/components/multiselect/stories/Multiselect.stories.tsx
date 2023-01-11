@@ -6,7 +6,7 @@ import { Multiselect } from '../src';
 import { SectionHeading } from '@contentful/f36-typography';
 
 export default {
-  title: 'Components/Multiselect',
+  title: 'Inputs/Multiselect',
   component: Multiselect,
 } as Meta;
 

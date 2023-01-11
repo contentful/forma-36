@@ -16,7 +16,7 @@ import { Workbench } from '../src/CompoundWorkbench';
 import type { WorkbenchContentProps } from '../src/WorkbenchContent';
 
 export default {
-  title: 'Components/Workbench',
+  title: 'Navigation/Workbench',
   component: Workbench,
   subcomponents: {
     WorkbenchHeader: Workbench.Header,

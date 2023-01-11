@@ -12,7 +12,7 @@ import { Button } from '@contentful/f36-button';
 import { Flex } from '@contentful/f36-core';
 
 export default {
-  title: 'Form Elements/Form',
+  title: 'Inputs/Form',
   component: FormControl,
   argTypes: {
     className: { control: { disable: true } },

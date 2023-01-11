@@ -21,7 +21,7 @@ module.exports = {
 
   staticDirs: ['./public'],
 
-  stories: ['./docs/**/*.stories.mdx', '../../packages/**/*.stories.@(ts|md)x'],
+  stories: ['../../packages/**/*.stories.@(ts|md)x'],
 
   webpackFinal: async (config, { configType }) => {
     // We need to split into chunks to avoid terser running out of memory

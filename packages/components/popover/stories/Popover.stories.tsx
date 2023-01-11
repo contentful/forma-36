@@ -10,7 +10,7 @@ import { Popover, type PopoverProps } from '../src/.';
 
 export default {
   component: Popover,
-  title: 'Components/Popover',
+  title: 'Overlay/Popover',
   argTypes: {
     isOpen: { control: { disable: true } },
   },

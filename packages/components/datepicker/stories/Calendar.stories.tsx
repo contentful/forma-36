@@ -14,7 +14,7 @@ const testDate = new Date('2022-04-15');
 
 export default {
   component: Calendar,
-  title: 'Components/Datepicker/Calendar',
+  title: 'Inputs/Calendar',
 } as Meta;
 
 export const Default: Story<CalendarProps> = (args) => {

@@ -6,7 +6,7 @@ import { MenuItem, MenuSectionTitle } from '@contentful/f36-menu';
 import { EntityList, type EntityListItemProps } from '../src';
 
 export default {
-  title: 'Components/EntityList/EntityListItem',
+  title: 'Containers/EntityList/EntityListItem',
   component: EntityList.Item,
   argTypes: {
     className: { control: { disable: true } },
@@ -14,7 +14,7 @@ export default {
   },
 } as Meta;
 
-export const Basic: Story<EntityListItemProps> = (args) => (
+export const EntityListItem: Story<EntityListItemProps> = (args) => (
   <EntityList.Item
     {...args}
     actions={[
@@ -26,7 +26,7 @@ export const Basic: Story<EntityListItemProps> = (args) => (
   />
 );
 
-Basic.args = {
+EntityListItem.args = {
   title: 'Entity title',
   description: 'Entity description',
   contentType: 'My content type',
@@ -52,7 +52,7 @@ export const withDragHandle: Story<EntityListItemProps> = (args) => (
 );
 
 withDragHandle.args = {
-  ...Basic.args,
+  ...EntityListItem.args,
 };
 
 export const withCustomDragHandle: Story<EntityListItemProps> = (args) => (
@@ -69,5 +69,5 @@ export const withCustomDragHandle: Story<EntityListItemProps> = (args) => (
 );
 
 withCustomDragHandle.args = {
-  ...Basic.args,
+  ...EntityListItem.args,
 };

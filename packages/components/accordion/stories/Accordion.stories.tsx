@@ -5,7 +5,7 @@ import { Button } from '@contentful/f36-button';
 import { Accordion, AccordionProps } from '../src';
 
 export default {
-  title: 'Components/Accordion',
+  title: 'Containers/Accordion',
   component: Accordion,
   subcomponents: { AccordionItem: Accordion.Item },
   parameters: {

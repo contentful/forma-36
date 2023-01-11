@@ -8,7 +8,7 @@ import { Menu, type MenuProps } from '../src';
 
 export default {
   component: Menu,
-  title: 'Components/Menu',
+  title: 'Overlay/Menu',
 } as Meta;
 
 export const Basic: Story<MenuProps> = (args) => {

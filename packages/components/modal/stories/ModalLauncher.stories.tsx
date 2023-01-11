@@ -8,7 +8,7 @@ import { Modal } from '../src';
 
 // @ts-expect-error don't complain about ModalLauncher being not a React component
 export default {
-  title: 'Utilities/ModalLauncher',
+  title: 'Overlay/Modal/Launcher',
   component: ModalLauncher,
 } as Meta;
 

@@ -6,7 +6,7 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
 
 export default {
-  title: 'Form Elements/Select',
+  title: 'Inputs/Select',
   component: Select,
 };
 

@@ -18,7 +18,7 @@ export default {
       Tabs.Panel['__docgenInfo'],
     ],
   },
-  title: 'Components/Tabs',
+  title: 'Navigation/Tabs',
 } as Meta;
 
 export const Basic: Story = (args) => {

@@ -15,7 +15,7 @@ const getUniqueNumber = () => {
 
 export default {
   component: NotificationItem,
-  title: 'Components/Notification',
+  title: 'Indicators/Notification',
 };
 
 export const basic = (args) => {

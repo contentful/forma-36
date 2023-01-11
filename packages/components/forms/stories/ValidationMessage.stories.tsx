@@ -5,7 +5,7 @@ import { ValidationMessage } from '../src';
 import type { ValidationMessageInternalProps } from '../src/ValidationMessage/ValidationMessage';
 
 export default {
-  title: 'Form Elements/ValidationMessage',
+  title: 'Indicators/ValidationMessage',
   component: ValidationMessage,
   parameters: {
     propTypes: [ValidationMessage['__docgenInfo']],

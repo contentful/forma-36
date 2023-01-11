@@ -14,7 +14,7 @@ export default {
   parameters: {
     propTypes: TextLink['__docgenInfo'],
   },
-  title: 'Components/TextLink',
+  title: 'Navigation/TextLink',
   argTypes: {
     classNames: { control: { disable: true } },
     testId: { control: { disable: true } },

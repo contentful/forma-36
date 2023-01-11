@@ -17,7 +17,7 @@ export default {
   parameters: {
     propTypes: InlineEntryCard['__docgenInfo'],
   },
-  title: 'Components/Card/InlineEntryCard',
+  title: 'Containers/InlineEntryCard',
 } as Meta;
 
 export const Default: Story<InlineEntryCardProps> = (args) => {

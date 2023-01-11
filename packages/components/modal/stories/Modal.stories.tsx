@@ -14,7 +14,7 @@ function fillArray(value: string, len: number) {
 }
 
 export default {
-  title: 'Components/Modal',
+  title: 'Overlay/Modal',
   component: Modal,
   parameters: {
     propTypes: [Modal['__docgenInfo']],

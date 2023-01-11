@@ -11,7 +11,7 @@ import { Autocomplete } from '../src/Autocomplete';
 import type { AutocompleteProps } from '../src/Autocomplete';
 
 export default {
-  title: 'Components/Autocomplete',
+  title: 'Inputs/Autocomplete',
   component: Autocomplete,
 } as Meta;
 

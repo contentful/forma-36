@@ -4,7 +4,7 @@ import { Flex } from '@contentful/f36-core';
 import { Checkbox, CheckboxProps } from '../src';
 
 export default {
-  title: 'Form Elements/Checkbox',
+  title: 'Inputs/Checkbox',
   component: Checkbox,
   argTypes: {
     className: { control: { disable: true } },

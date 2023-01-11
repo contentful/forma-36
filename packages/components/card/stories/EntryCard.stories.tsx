@@ -1,16 +1,9 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-import { Flex } from '@contentful/f36-core';
-import { SectionHeading } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
-import { ClockIcon } from '@contentful/f36-icons';
-import {
-  SortableContainer,
-  SortableElement,
-  SortableHandle,
-} from 'react-sortable-hoc';
 
 import { EntryCard, type EntryCardProps } from '../src';
+import { ClockIcon } from '@contentful/f36-icons';
 
 export default {
   argTypes: {
@@ -24,42 +17,10 @@ export default {
   parameters: {
     propTypes: EntryCard['__docgenInfo'],
   },
-  title: 'Components/Card/EntryCard',
+  title: 'Containers/EntryCard',
 } as Meta;
 
-const DragHandle = (props: { drag: React.ReactElement }) => {
-  const SortableDragHandle = SortableHandle(() => props.drag);
-  return <SortableDragHandle />;
-};
-
-const SortableLink = SortableElement(
-  (props: { children: React.ReactElement }) => <div>{props.children}</div>,
-);
-
-const SortableWrapper = SortableContainer(({ children }) => {
-  return <ul>{children}</ul>;
-});
-
-export const WithDragging: Story<EntryCardProps> = (args) => {
-  return (
-    <SortableWrapper useDragHandle>
-      <SortableLink index={1}>
-        <EntryCard {...args} withDragHandle dragHandleRender={DragHandle} />
-      </SortableLink>
-      <SortableLink index={2}>
-        <EntryCard {...args} withDragHandle dragHandleRender={DragHandle} />
-      </SortableLink>
-    </SortableWrapper>
-  );
-};
-
-WithDragging.args = {
-  status: 'published',
-  contentType: 'Content type',
-  title: 'Closer',
-};
-
-export const Default: Story<EntryCardProps> = (args) => {
+export const basic: Story<EntryCardProps> = (args) => {
   return (
     <EntryCard
       {...args}
@@ -74,20 +35,6 @@ export const Default: Story<EntryCardProps> = (args) => {
   );
 };
 
-Default.args = {
-  status: 'published',
-  contentType: 'Content type',
-  title: 'Closer',
-};
-
-export const WithLoadingState: Story<EntryCardProps> = (args) => {
-  return <EntryCard {...args} />;
-};
-
-WithLoadingState.args = {
-  isLoading: true,
-};
-
 const thumbnail = (
   <img
     alt="Contentful logo"
@@ -95,90 +42,12 @@ const thumbnail = (
   />
 );
 
-const description = `Forma 36 is an open-source design system by Contentful created
-with the intent to reduce the overhead of creating UI by providing
-tools and guidance for digital teams building and extending
-Contentful products.`;
-
-export const Overview: Story<EntryCardProps> = () => {
-  const sizes: EntryCardProps['size'][] = ['default', 'small'];
-
-  return (
-    <>
-      <Flex flexDirection="column" gap="spacingL">
-        <Flex flexDirection="column" gap="spacingM">
-          <SectionHeading as="h3" marginBottom="none">
-            Default
-          </SectionHeading>
-
-          {sizes.map((size) => (
-            <EntryCard
-              key={size}
-              icon={<ClockIcon />}
-              thumbnailElement={thumbnail}
-              title="Forma 36"
-              contentType="Design system"
-              size={size}
-            />
-          ))}
-        </Flex>
-
-        <Flex flexDirection="column" gap="spacingM">
-          <SectionHeading as="h3" marginBottom="none">
-            Hover
-          </SectionHeading>
-
-          {sizes.map((size) => (
-            <EntryCard
-              key={size}
-              as="a"
-              href="https://contentful.com"
-              target="_blank"
-              actions={[
-                <MenuItem key="copy">Copy</MenuItem>,
-                <MenuItem key="delete">Delete</MenuItem>,
-              ]}
-              isHovered
-              thumbnailElement={thumbnail}
-              title="Forma 36"
-              description={description}
-              contentType="Design system"
-              size={size}
-            />
-          ))}
-        </Flex>
-
-        <Flex flexDirection="column" gap="spacingM">
-          <SectionHeading as="h3" marginBottom="none">
-            Selected
-          </SectionHeading>
-
-          {sizes.map((size) => (
-            <EntryCard
-              key={size}
-              isSelected
-              thumbnailElement={thumbnail}
-              title="Forma 36"
-              description={description}
-              contentType="Design system"
-              withDragHandle
-              size={size}
-            />
-          ))}
-        </Flex>
-
-        <Flex flexDirection="column" gap="spacingM">
-          <SectionHeading as="h3" marginBottom="none">
-            Entry card with very long title and description
-          </SectionHeading>
-          <EntryCard
-            title="verylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitle"
-            description="verylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescription"
-            contentType="Design system"
-            withDragHandle
-          />
-        </Flex>
-      </Flex>
-    </>
-  );
+basic.args = {
+  description:
+    'Forma 36 is an open-source design system by Contentful created with the intent to reduce the overhead of creating UI by providing tools and guidance for digital teams building and extending Contentful products.',
+  status: 'published',
+  icon: <ClockIcon />,
+  thumbnailElement: thumbnail,
+  title: 'Forma 36',
+  contentType: 'Design system',
 };

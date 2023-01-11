@@ -5,7 +5,7 @@ import { TextLink } from '@contentful/f36-text-link';
 import { Flex } from '@contentful/f36-core';
 
 export default {
-  title: 'Components/Tooltip',
+  title: 'Overlay/Tooltip',
   component: Tooltip,
   parameters: {
     propTypes: Tooltip['__docgenInfo'],

@@ -4,7 +4,7 @@ import { Skeleton } from '../src/index';
 import type { SkeletonBodyTextProps } from '../src/SkeletonBodyText/SkeletonBodyText';
 
 export default {
-  title: 'Components/Skeleton/SkeletonBodyText',
+  title: 'Indicators/Skeleton/SkeletonBodyText',
   component: Skeleton.Text,
   parameters: {
     propTypes: [Skeleton.Text['__docgenInfo']],
