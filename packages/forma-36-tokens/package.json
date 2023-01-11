@@ -10,7 +10,7 @@
     "dist"
   ],
   "devDependencies": {
-    "fs-extra": "^10.1.0",
+    "fs-extra": "^11.1.0",
     "globby": "^10.0.1"
   },
   "scripts": {
