@@ -1,10 +1,8 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-import { ChevronDownIcon, PlusIcon } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
-import { action } from '@storybook/addon-actions';
-import { Box, Flex } from '@contentful/f36-core';
-import { ButtonGroup, Button, IconButton, type ButtonGroupProps } from '../src';
+import { Flex, Stack } from '@contentful/f36-core';
+import { ButtonGroup, Button, type ButtonGroupProps } from '../src';
 import tokens from '@contentful/f36-tokens';
 
 export default {
@@ -29,120 +27,223 @@ export default {
   },
 } as Meta;
 
+const ButtonGroupOverview = (args: ButtonGroupProps) => (
+  <Flex flexDirection="column" marginBottom="spacingL">
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Primary
+    </SectionHeading>
+    <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXl">
+      <ButtonGroup {...args}>
+        <Button size="small" variant="primary">
+          Small
+        </Button>
+        <Button size="small" variant="primary">
+          Small
+        </Button>
+        <Button size="small" variant="primary">
+          Small
+        </Button>
+      </ButtonGroup>
+
+      <ButtonGroup {...args}>
+        <Button size="medium" variant="primary">
+          Medium
+        </Button>
+        <Button size="medium" variant="primary">
+          Medium
+        </Button>
+        <Button size="medium" variant="primary">
+          Medium
+        </Button>
+      </ButtonGroup>
+
+      <ButtonGroup {...args}>
+        <Button size="large" variant="primary">
+          Large
+        </Button>
+        <Button size="large" variant="primary">
+          Large
+        </Button>
+        <Button size="large" variant="primary">
+          Large
+        </Button>
+      </ButtonGroup>
+    </Stack>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Secondary
+    </SectionHeading>
+    <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXl">
+      <ButtonGroup {...args}>
+        <Button size="small" variant="secondary">
+          Small
+        </Button>
+        <Button size="small" variant="secondary">
+          Small
+        </Button>
+        <Button size="small" variant="secondary">
+          Small
+        </Button>
+      </ButtonGroup>
+
+      <ButtonGroup {...args}>
+        <Button size="medium" variant="secondary">
+          Medium
+        </Button>
+        <Button size="medium" variant="secondary">
+          Medium
+        </Button>
+        <Button size="medium" variant="secondary">
+          Medium
+        </Button>
+      </ButtonGroup>
+
+      <ButtonGroup {...args}>
+        <Button size="large" variant="secondary">
+          Large
+        </Button>
+        <Button size="large" variant="secondary">
+          Large
+        </Button>
+        <Button size="large" variant="secondary">
+          Large
+        </Button>
+      </ButtonGroup>
+    </Stack>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Positive
+    </SectionHeading>
+    <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXl">
+      <ButtonGroup {...args}>
+        <Button size="small" variant="positive">
+          Small
+        </Button>
+        <Button size="small" variant="positive">
+          Small
+        </Button>
+        <Button size="small" variant="positive">
+          Small
+        </Button>
+      </ButtonGroup>
+
+      <ButtonGroup {...args}>
+        <Button size="medium" variant="positive">
+          Medium
+        </Button>
+        <Button size="medium" variant="positive">
+          Medium
+        </Button>
+        <Button size="medium" variant="positive">
+          Medium
+        </Button>
+      </ButtonGroup>
+
+      <ButtonGroup {...args}>
+        <Button size="large" variant="positive">
+          Large
+        </Button>
+        <Button size="large" variant="positive">
+          Large
+        </Button>
+        <Button size="large" variant="positive">
+          Large
+        </Button>
+      </ButtonGroup>
+    </Stack>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Negative
+    </SectionHeading>
+    <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXl">
+      <ButtonGroup {...args}>
+        <Button size="small" variant="negative">
+          Small
+        </Button>
+        <Button size="small" variant="negative">
+          Small
+        </Button>
+        <Button size="small" variant="negative">
+          Small
+        </Button>
+      </ButtonGroup>
+
+      <ButtonGroup {...args}>
+        <Button size="medium" variant="negative">
+          Medium
+        </Button>
+        <Button size="medium" variant="negative">
+          Medium
+        </Button>
+        <Button size="medium" variant="negative">
+          Medium
+        </Button>
+      </ButtonGroup>
+
+      <ButtonGroup {...args}>
+        <Button size="large" variant="negative">
+          Large
+        </Button>
+        <Button size="large" variant="negative">
+          Large
+        </Button>
+        <Button size="large" variant="negative">
+          Large
+        </Button>
+      </ButtonGroup>
+    </Stack>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Transparent
+    </SectionHeading>
+    <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXl">
+      <ButtonGroup {...args}>
+        <Button size="small" variant="transparent">
+          Small
+        </Button>
+        <Button size="small" variant="transparent">
+          Small
+        </Button>
+        <Button size="small" variant="transparent">
+          Small
+        </Button>
+      </ButtonGroup>
+
+      <ButtonGroup {...args}>
+        <Button size="medium" variant="transparent">
+          Medium
+        </Button>
+        <Button size="medium" variant="transparent">
+          Medium
+        </Button>
+        <Button size="medium" variant="transparent">
+          Medium
+        </Button>
+      </ButtonGroup>
+
+      <ButtonGroup {...args}>
+        <Button size="large" variant="transparent">
+          Large
+        </Button>
+        <Button size="large" variant="transparent">
+          Large
+        </Button>
+        <Button size="large" variant="transparent">
+          Large
+        </Button>
+      </ButtonGroup>
+    </Stack>
+  </Flex>
+);
+
 export const basic: Story<ButtonGroupProps> = (args) => {
-  return (
-    <ButtonGroup {...args}>
-      {false && <Button variant="secondary">Button</Button>}
-      <Button variant="secondary">Button</Button>
-      <Button variant="secondary">Button</Button>
-      <Button variant="secondary">Button</Button>
-      <IconButton
-        variant="secondary"
-        icon={<ChevronDownIcon variant="secondary" />}
-        aria-label="Open dropdown"
-      />
-    </ButtonGroup>
-  );
+  return <ButtonGroupOverview {...args} />;
 };
 
 export const spaced: Story<ButtonGroupProps> = (args) => {
-  return (
-    <ButtonGroup {...args}>
-      <Button variant="secondary">Button</Button>
-      <Button variant="secondary">Button</Button>
-      <Button variant="secondary">Button</Button>
-      <IconButton
-        variant="secondary"
-        icon={<ChevronDownIcon variant="secondary" />}
-        aria-label="Open dropdown"
-      />
-    </ButtonGroup>
-  );
+  return <ButtonGroupOverview {...args} />;
 };
 
 spaced.args = {
   variant: 'spaced',
-};
-
-export const overview: Story<ButtonGroupProps> = () => {
-  const onClick = action('click');
-
-  return (
-    <>
-      <Flex flexDirection="column" marginBottom="spacingL">
-        <SectionHeading as="h3" marginBottom="spacingS">
-          Button Group Collapse
-        </SectionHeading>
-
-        <Flex flexDirection="column" marginBottom="spacingM">
-          <Box marginBottom="spacingS">
-            <ButtonGroup>
-              <Button onClick={onClick} variant="secondary">
-                Button
-              </Button>
-              <Button onClick={onClick} variant="secondary">
-                Button
-              </Button>
-              <Button onClick={onClick} variant="secondary">
-                Button
-              </Button>
-              <IconButton
-                onClick={onClick}
-                variant="secondary"
-                icon={<ChevronDownIcon variant="secondary" />}
-                aria-label="Open dropdown"
-              />
-            </ButtonGroup>
-          </Box>
-          <Box marginBottom="spacingS">
-            <ButtonGroup withDivider>
-              <Button onClick={onClick} variant="positive">
-                Button
-              </Button>
-              <IconButton
-                onClick={onClick}
-                variant="positive"
-                icon={<ChevronDownIcon variant="white" />}
-                aria-label="Open dropdown"
-              />
-            </ButtonGroup>
-          </Box>
-          <Box marginBottom="spacingS">
-            <ButtonGroup withDivider>
-              <Button
-                onClick={onClick}
-                variant="primary"
-                startIcon={<PlusIcon />}
-              >
-                Button
-              </Button>
-              <IconButton
-                onClick={onClick}
-                variant="primary"
-                icon={<ChevronDownIcon variant="white" />}
-                aria-label="Open dropdown"
-              />
-            </ButtonGroup>
-          </Box>
-        </Flex>
-
-        <SectionHeading as="h3" marginBottom="spacingS">
-          Button Group Spaced
-        </SectionHeading>
-
-        <Flex flexDirection="column" marginBottom="spacingM">
-          <Box marginBottom="spacingS">
-            <ButtonGroup variant="spaced">
-              <Button onClick={onClick} variant="primary">
-                Button
-              </Button>
-              <Button onClick={onClick} variant="secondary">
-                Button
-              </Button>
-            </ButtonGroup>
-          </Box>
-        </Flex>
-      </Flex>
-    </>
-  );
 };

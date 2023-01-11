@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import type { Meta } from '@storybook/react/types-6-0';
-import { SectionHeading, Paragraph } from '@contentful/f36-typography';
-import { Flex, Stack, Box } from '@contentful/f36-core';
-import { Icon } from '@contentful/f36-icon';
+import React from 'react';
+import type { Meta, Story } from '@storybook/react/types-6-0';
+import { SectionHeading } from '@contentful/f36-typography';
+import { Flex, Stack } from '@contentful/f36-core';
 import * as icons from '@contentful/f36-icons';
 
-import { IconButton } from '../src/IconButton';
+import { IconButton, type IconButtonProps } from '../src/IconButton';
 
 export default {
   title: 'Components/Button/IconButton',
@@ -22,127 +21,65 @@ export default {
   },
 } as Meta;
 
-export const basic = ({
-  icon,
-  'aria-label': ariaLabel,
-  iconProps,
-  ...props
-}) => (
-  <IconButton
-    icon={icon && <Icon as={icons[icon]} {...iconProps} />}
-    aria-label={ariaLabel}
-    {...props}
-  />
+export const basic: Story<IconButtonProps> = (args) => (
+  <Flex flexDirection="column" marginBottom="spacingL">
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Primary
+    </SectionHeading>
+    <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXs">
+      <IconButton size="small" variant="primary" {...args} />
+
+      <IconButton size="medium" variant="primary" {...args} />
+
+      <IconButton size="large" variant="primary" {...args} />
+    </Stack>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Secondary
+    </SectionHeading>
+    <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXs">
+      <IconButton size="small" variant="secondary" {...args} />
+
+      <IconButton size="medium" variant="secondary" {...args} />
+
+      <IconButton size="large" variant="secondary" {...args} />
+    </Stack>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Positive
+    </SectionHeading>
+    <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXs">
+      <IconButton size="small" variant="positive" {...args} />
+
+      <IconButton size="medium" variant="positive" {...args} />
+
+      <IconButton size="large" variant="positive" {...args} />
+    </Stack>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Negative
+    </SectionHeading>
+    <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXs">
+      <IconButton size="small" variant="negative" {...args} />
+
+      <IconButton size="medium" variant="negative" {...args} />
+
+      <IconButton size="large" variant="negative" {...args} />
+    </Stack>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Transparent
+    </SectionHeading>
+    <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXs">
+      <IconButton size="small" variant="transparent" {...args} />
+
+      <IconButton size="medium" variant="transparent" {...args} />
+
+      <IconButton size="large" variant="transparent" {...args} />
+    </Stack>
+  </Flex>
 );
 
 basic.args = {
-  icon: 'StarIcon',
-  'aria-label': 'Label',
-  iconProps: {
-    variant: 'primary',
-    size: 'medium',
-  },
-  variant: 'transparent',
+  icon: <icons.ClockIcon />,
 };
-
-export const ColoredIconInTransparentIconButton = () => {
-  const [isActive, setIsActive] = useState(false);
-  return (
-    <Flex flexDirection="column" isInline>
-      <SectionHeading>Click on the icon to change its color</SectionHeading>
-      <Paragraph>
-        We allow this functionality only for transparent variant of the
-        IconButton component
-      </Paragraph>
-      <Box>
-        <IconButton
-          onClick={() => setIsActive(!isActive)}
-          variant="transparent"
-          icon={
-            <Icon
-              as={icons.StarIcon}
-              variant={isActive ? 'primary' : 'warning'}
-            />
-          }
-          aria-label="Close"
-        />
-      </Box>
-    </Flex>
-  );
-};
-export const Overview = () => (
-  <>
-    <Flex flexDirection="column" marginBottom="spacingL">
-      <SectionHeading as="h3" marginBottom="spacingS">
-        Variants
-      </SectionHeading>
-
-      <Stack spacing="spacingXs" marginBottom="spacingM">
-        <IconButton
-          variant="transparent"
-          icon={<Icon as={icons.CloseIcon} />}
-          aria-label="Close"
-        />
-
-        <IconButton
-          variant="transparent"
-          icon={<Icon as={icons.MoreHorizontalIcon} />}
-          aria-label="More"
-        />
-
-        <IconButton
-          variant="secondary"
-          icon={<Icon as={icons.DownloadIcon} />}
-          aria-label="Download"
-        />
-
-        <IconButton
-          variant="secondary"
-          icon={<Icon as={icons.DownloadIcon} />}
-          aria-label="Loading"
-          isLoading
-        />
-
-        <IconButton
-          variant="positive"
-          icon={<Icon as={icons.DragIcon} />}
-          aria-label="Resize"
-        />
-
-        <IconButton
-          variant="negative"
-          icon={<Icon as={icons.DeleteIcon} />}
-          aria-label="Delete"
-        />
-
-        <IconButton
-          variant="primary"
-          icon={<Icon as={icons.PlusIcon} />}
-          aria-label="Add"
-        />
-      </Stack>
-      <Stack spacing="spacingXs" marginBottom="spacingM">
-        <IconButton
-          variant="primary"
-          icon={<Icon as={icons.PlusIcon} />}
-          aria-label="Plus"
-          size="small"
-        />
-
-        <IconButton
-          variant="primary"
-          icon={<Icon as={icons.PlusIcon} />}
-          aria-label="Plus"
-          size="medium"
-        />
-
-        <IconButton
-          variant="primary"
-          icon={<Icon as={icons.PlusIcon} />}
-          aria-label="Plus"
-          size="large"
-        />
-      </Stack>
-    </Flex>
-  </>
-);

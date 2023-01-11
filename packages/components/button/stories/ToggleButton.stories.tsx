@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
-import type { Meta } from '@storybook/react/types-6-0';
-import { SectionHeading } from '@contentful/f36-typography';
-import { action } from '@storybook/addon-actions';
+import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { Flex, Stack } from '@contentful/f36-core';
-import { Icon } from '@contentful/f36-icon';
 import * as icons from '@contentful/f36-icons';
 
+import { ToggleButton, type ToggleButtonProps } from '../src/ToggleButton';
 import { ButtonGroup } from '../src';
-import { ToggleButton } from '../src/ToggleButton';
 
 export default {
   title: 'Components/Button/ToggleButton',
@@ -28,150 +25,100 @@ export default {
   },
 } as Meta;
 
-export const Basic = ({ icon, children, isDisabled }) => {
-  const [isActive, setIsActive] = useState(false);
+const Overview = (args: ToggleButtonProps) => {
+  const [active, setActive] = useState('');
+
+  const handleClick = (size: string) => {
+    setActive(active === size ? '' : size);
+  };
 
   return (
-    <ToggleButton
-      isDisabled={isDisabled}
-      isActive={isActive}
-      onToggle={() => {
-        setIsActive(!isActive);
-      }}
-      icon={icon && <Icon as={icons[icon]} />}
-    >
-      {children}
-    </ToggleButton>
-  );
-};
-
-Basic.args = {
-  isDisabled: false,
-  icon: 'ThumbUpTrimmedIcon',
-  children: 'Like',
-};
-
-export const Grouped = () => {
-  const [isItalic, setIsItalic] = useState(false);
-  const [isBold, setIsBold] = useState(true);
-  const [isUnderline, setIsUnderline] = useState(false);
-
-  return (
-    <ButtonGroup>
-      <ToggleButton
-        isActive={isItalic}
-        icon={<Icon as={icons.FormatItalicIcon} />}
-        aria-label="Italic"
-        size="small"
-        onToggle={() => {
-          setIsItalic(!isItalic);
-        }}
-      />
-      <ToggleButton
-        isActive={isBold}
-        icon={<Icon as={icons.FormatBoldIcon} />}
-        aria-label="Bold"
-        size="small"
-        onToggle={() => {
-          setIsBold(!isBold);
-        }}
-      />
-      <ToggleButton
-        isActive={isUnderline}
-        icon={<Icon as={icons.FormatUnderlinedIcon} />}
-        aria-label="Underline"
-        size="small"
-        onToggle={() => {
-          setIsUnderline(!isUnderline);
-        }}
-      />
-    </ButtonGroup>
-  );
-};
-
-export const GroupedWithOnlyOneActive = () => {
-  const [isActive, setIsActive] = useState('bold');
-
-  return (
-    <ButtonGroup>
-      <ToggleButton
-        isActive={isActive === 'italic'}
-        icon={<Icon as={icons.FormatItalicIcon} />}
-        aria-label="Italic"
-        size="small"
-        onToggle={() => setIsActive('italic')}
-      />
-      <ToggleButton
-        isActive={isActive === 'bold'}
-        icon={<Icon as={icons.FormatBoldIcon} />}
-        aria-label="Bold"
-        size="small"
-        onToggle={() => setIsActive('bold')}
-      />
-      <ToggleButton
-        isActive={isActive === 'underline'}
-        icon={<Icon as={icons.FormatUnderlinedIcon} />}
-        aria-label="Underline"
-        size="small"
-        onToggle={() => setIsActive('underline')}
-      />
-    </ButtonGroup>
-  );
-};
-
-export const Overview = ({ icon, ...props }) => (
-  <>
     <Flex flexDirection="column" marginBottom="spacingL">
-      <SectionHeading as="h3" marginBottom="spacingS">
-        Toggle variants
-      </SectionHeading>
-
-      <Stack marginBottom="spacingM" spacing="spacingXs">
-        <ToggleButton onToggle={props.onToggle}>Default</ToggleButton>
-
-        <ToggleButton isActive onToggle={props.onToggle}>
-          Active
+      <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXs">
+        <ToggleButton
+          isActive={active === 'small'}
+          onToggle={() => handleClick('small')}
+          size="small"
+          {...args}
+        >
+          Like
         </ToggleButton>
 
-        <ToggleButton isDisabled onToggle={props.onToggle}>
-          Disabled
+        <ToggleButton
+          isActive={active === 'medium'}
+          onToggle={() => handleClick('medium')}
+          size="medium"
+          {...args}
+        >
+          Like
+        </ToggleButton>
+
+        <ToggleButton
+          isActive={active === 'large'}
+          onToggle={() => handleClick('large')}
+          size="large"
+          {...args}
+        >
+          Like
         </ToggleButton>
       </Stack>
     </Flex>
+  );
+};
+
+export const basic: Story<ToggleButtonProps> = (args) => {
+  return <Overview {...args} />;
+};
+
+basic.args = {
+  icon: <icons.ThumbUpTrimmedIcon />,
+};
+
+export const Grouped: Story<ToggleButtonProps> = (args) => {
+  const [active, setActive] = useState('');
+
+  const handleClick = (size: string) => {
+    setActive(active === size ? '' : size);
+  };
+
+  return (
     <Flex flexDirection="column" marginBottom="spacingL">
-      <SectionHeading as="h3" marginBottom="spacingS">
-        Toggle Button with icon
-      </SectionHeading>
+      <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXs">
+        <ButtonGroup>
+          <ToggleButton
+            isActive={active === '1'}
+            onToggle={() => {
+              handleClick('1');
+            }}
+            size="small"
+            {...args}
+          >
+            Like
+          </ToggleButton>
 
-      <Stack marginBottom="spacingM" spacing="spacingXs">
-        <ToggleButton
-          onToggle={props.onToggle}
-          icon={icon && <Icon as={icons[icon]} />}
-        >
-          Default
-        </ToggleButton>
+          <ToggleButton
+            isActive={active === '2'}
+            onToggle={() => handleClick('2')}
+            size="small"
+            {...args}
+          >
+            Like
+          </ToggleButton>
 
-        <ToggleButton
-          onToggle={props.onToggle}
-          isActive
-          icon={icon && <Icon as={icons[icon]} />}
-        >
-          Active
-        </ToggleButton>
-
-        <ToggleButton
-          onToggle={props.onToggle}
-          isDisabled
-          icon={icon && <Icon as={icons[icon]} />}
-        >
-          Disabled
-        </ToggleButton>
+          <ToggleButton
+            isActive={active === '3'}
+            onToggle={() => handleClick('3')}
+            size="small"
+            {...args}
+          >
+            Like
+          </ToggleButton>
+        </ButtonGroup>
       </Stack>
     </Flex>
-  </>
-);
+  );
+};
 
-Overview.args = {
-  onToggle: action('toggled'),
-  icon: 'PreviewIcon',
+Grouped.args = {
+  icon: <icons.ThumbUpTrimmedIcon />,
 };
