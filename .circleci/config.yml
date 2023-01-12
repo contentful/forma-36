@@ -115,6 +115,9 @@ jobs:
       - run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > ~/.npmrc
       - attach_workspace:
           at: ~/circleci-f36-build
+      - add_ssh_keys:
+          fingerprints:
+            - 62:c1:53:b7:19:b8:35:4a:67:8c:58:c3:60:e0:68:11
       - node/install-packages
       - run: git config --global user.email ${GIT_AUTHOR_EMAIL}
       - run: git config --global user.name ${GIT_AUTHOR_NAME}
@@ -140,6 +143,9 @@ jobs:
           template-preset: semantic-release
       - attach_workspace:
           at: ~/circleci-f36-build
+      - add_ssh_keys:
+          fingerprints:
+            - 62:c1:53:b7:19:b8:35:4a:67:8c:58:c3:60:e0:68:11
       - node/install-packages
       - run: git config --global user.email ${GIT_AUTHOR_EMAIL}
       - run: git config --global user.name ${GIT_AUTHOR_NAME}
