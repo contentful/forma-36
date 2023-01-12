@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.24.1
+
+### Patch Changes
+
+- [#2373](https://github.com/contentful/forma-36/pull/2373) [`789f46a0`](https://github.com/contentful/forma-36/commit/789f46a0115f98416641dcfec7e0cd72ada2bffd) Thanks [@massao](https://github.com/massao)! - Normalise text transform and letter spacing
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.24.1
+
 ## 4.24.0
 
 ### Patch Changes
