@@ -113,11 +113,11 @@ jobs:
       - vault/get-secrets:
           template-preset: semantic-release
       - run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > ~/.npmrc
-      - run: git config --global user.email ${GITHUB_EMAIL}
-      - run: git config --global user.name ${GITHUB_USER}
       - attach_workspace:
           at: ~/circleci-f36-build
       - node/install-packages
+      - run: git config --global user.email ${GIT_AUTHOR_EMAIL}
+      - run: git config --global user.name ${GIT_AUTHOR_NAME}
       - run:
           name: Generate changelogrc
           command: npm run-script changelog:gen
@@ -136,11 +136,13 @@ jobs:
     working_directory: ~/circleci-f36-build
     steps:
       - checkout
+      - vault/get-secrets:
+          template-preset: semantic-release
       - attach_workspace:
           at: ~/circleci-f36-build
       - node/install-packages
-      - run: git config --global user.email ${GITHUB_EMAIL}
-      - run: git config --global user.name ${GITHUB_USER}
+      - run: git config --global user.email ${GIT_AUTHOR_EMAIL}
+      - run: git config --global user.name ${GIT_AUTHOR_NAME}
       - run:
           name: Generate changelog files
           command: npm run-script changelog:write
