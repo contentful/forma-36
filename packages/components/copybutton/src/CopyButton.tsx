@@ -1,12 +1,45 @@
-import { cx } from 'emotion';
-import React, { useState, useCallback, useRef } from 'react';
-import CopyToClipboard from 'react-copy-to-clipboard';
+import React, {
+  useState,
+  useCallback,
+  useRef,
+  type MouseEventHandler,
+  useEffect,
+} from 'react';
 import { CopyIcon } from '@contentful/f36-icons';
 import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 import { Tooltip, type TooltipProps } from '@contentful/f36-tooltip';
-import { getStyles } from './CopyButton.styles';
+import { Button, type ButtonProps } from '@contentful/f36-button';
+import { getCopyButtonStyles } from './CopyButton.styles';
 
-export interface CopyButtonProps extends CommonProps {
+function isPromiseLike<T>(x: T | PromiseLike<T>): x is PromiseLike<T> {
+  return (
+    !!x &&
+    (typeof x === 'object' || typeof x === 'function') &&
+    typeof (x as PromiseLike<T>).then === 'function'
+  );
+}
+
+type StringValue = {
+  preload?: never;
+  /**
+   * Value that will be copied to clipboard when the button is clicked
+   */
+  value: string;
+};
+
+type PromiseValue = {
+  preload?: boolean;
+  /**
+   * Value that will be copied to clipboard when the button is clicked
+   */
+  value: () => Promise<string>;
+};
+
+export type CopyButtonProps = CommonProps & {
+  /**
+   * Props that are passed to the button component
+   */
+  buttonProps?: Omit<ButtonProps, 'size'>;
   /**
    * Function that gets called when the button is clicked
    */
@@ -26,10 +59,6 @@ export interface CopyButtonProps extends CommonProps {
    */
   tooltipProps?: Omit<TooltipProps, 'content' | 'children'>;
   /**
-   * Value that will be copied to clipboard when the button is clicked
-   */
-  value: string;
-  /**
    * Label to be used on aria-label for the button
    * @default Copy {value} to clipboard
    */
@@ -44,76 +73,97 @@ export interface CopyButtonProps extends CommonProps {
    * @default medium
    */
   size?: 'small' | 'medium';
-}
+} & (StringValue | PromiseValue);
 
 function _CopyButton(
-  props: ExpandProps<CopyButtonProps>,
-  ref: React.Ref<HTMLDivElement>,
-) {
-  const {
+  {
+    buttonProps,
     onCopy,
     value,
     className,
+    label,
     testId = 'cf-ui-copy-button',
     tooltipText = 'Copy to clipboard',
     tooltipCopiedText = 'Copied!',
     tooltipProps,
     isDisabled = false,
+    preload,
     size = 'medium',
     ...otherProps
-  } = props;
-  const styles = getStyles({ size });
-
+  }: ExpandProps<CopyButtonProps>,
+  ref: React.Ref<HTMLDivElement>,
+) {
+  const styles = getCopyButtonStyles({ size });
+  const [isLoading, setIsLoading] = useState(false);
   const [copied, setCopied] = useState(false);
   const button = useRef<HTMLButtonElement | null>(null);
-  const handleOnCopy = useCallback(
-    (e: string) => {
-      if (onCopy) {
-        onCopy(e);
-      }
-
-      setCopied(true);
-
-      setTimeout(() => {
-        setCopied(false);
-        if (button.current) {
-          button.current.blur();
-        }
-      }, 1000);
-    },
-    [onCopy],
+  const resolvedValue = useRef<string | Promise<string>>(
+    typeof value === 'function' ? value() : value,
   );
 
+  useEffect(() => {
+    const load = async () => {
+      if (preload && isPromiseLike(resolvedValue.current)) {
+        resolvedValue.current = await resolvedValue.current;
+      }
+    };
+
+    load();
+  }, [preload, value]);
+
+  const handleClick = useCallback<
+    MouseEventHandler<HTMLButtonElement>
+  >(async () => {
+    if (isPromiseLike(resolvedValue.current)) {
+      setIsLoading(true);
+      resolvedValue.current = await resolvedValue.current;
+      setIsLoading(false);
+    }
+
+    await window.navigator.clipboard.writeText(resolvedValue.current);
+    onCopy?.(resolvedValue.current);
+    setCopied(true);
+
+    setTimeout(() => {
+      setCopied(false);
+      if (button.current) {
+        button.current.blur();
+      }
+    }, 1000);
+  }, [onCopy]);
+
   return (
-    <div
-      ref={ref}
-      data-test-id={testId}
-      className={cx(styles.wrapper, className)}
-      {...otherProps}
-    >
-      <CopyToClipboard text={value} onCopy={handleOnCopy}>
-        <Tooltip
-          content={copied ? tooltipCopiedText : tooltipText}
-          {...tooltipProps}
-          isDisabled={isDisabled}
-        >
-          <button
-            type="button"
-            ref={button}
-            className={cx(styles.copyButton, {
-              [styles.copyButtonDisabled]: isDisabled,
-            })}
-            aria-label={`Copy ${value} to clipboard`}
-            disabled={isDisabled}
-            aria-live="assertive"
-          >
+    <div ref={ref} data-test-id={testId} className={className} {...otherProps}>
+      <Tooltip
+        content={copied ? tooltipCopiedText : tooltipText}
+        {...tooltipProps}
+        isDisabled={isDisabled}
+      >
+        <Button
+          aria-label={
+            label ??
+            `Copy ${
+              isPromiseLike(resolvedValue.current)
+                ? ''
+                : `"${resolvedValue.current}" `
+            }to clipboard`
+          }
+          aria-live="assertive"
+          className={styles.button}
+          isDisabled={isLoading || isDisabled}
+          isLoading={isLoading}
+          onClick={handleClick}
+          ref={button}
+          startIcon={
             <CopyIcon
               variant="muted"
               size={size === 'small' ? 'tiny' : 'small'}
             />
-          </button>
-        </Tooltip>
-      </CopyToClipboard>
+          }
+          variant="secondary"
+          {...buttonProps}
+        />
+      </Tooltip>
     </div>
   );
 }
