@@ -202,3 +202,5 @@ workflows:
                 - main
     jobs:
       - changelog
+          context:
+            - vault
