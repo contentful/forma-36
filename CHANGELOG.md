@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 17-01-2023
+
+**F36 Tooltip** `v4.24.1`
+
+- Normalise text transform and letter spacing
+
 ## 23-12-2022
 
 **F36 Badge** `v4.24.0`
