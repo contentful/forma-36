@@ -95,10 +95,19 @@ function _CopyButton(
   const styles = getCopyButtonStyles({ size });
   const [isLoading, setIsLoading] = useState(false);
   const [copied, setCopied] = useState(false);
+  const isMounted = useRef<boolean>(false);
   const button = useRef<HTMLButtonElement | null>(null);
   const resolvedValue = useRef<string | Promise<string>>(
     typeof value === 'function' ? value() : value,
   );
+
+  useEffect(() => {
+    isMounted.current = true;
+
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
 
   useEffect(() => {
     const load = async () => {
@@ -115,9 +124,7 @@ function _CopyButton(
   >(async () => {
     if (isPromiseLike(resolvedValue.current)) {
       setIsLoading(true);
-      console.log('loading', resolvedValue.current);
       resolvedValue.current = await resolvedValue.current;
-      console.log('done', resolvedValue.current);
       setIsLoading(false);
     }
 
@@ -126,16 +133,14 @@ function _CopyButton(
     setCopied(true);
 
     setTimeout(() => {
-      setCopied(false);
-      if (button.current) {
-        button.current.blur();
+      if (isMounted.current) {
+        setCopied(false);
+        if (button.current) {
+          button.current.blur();
+        }
       }
     }, 1000);
   }, [onCopy]);
-
-  useEffect(() => {
-    console.log('isLoading', isLoading);
-  }, [isLoading]);
 
   return (
     <div ref={ref} data-test-id={testId} className={className} {...otherProps}>
