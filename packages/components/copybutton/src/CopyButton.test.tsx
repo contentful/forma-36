@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-  waitForElementToBeRemoved,
-} from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 import userEvent from '@testing-library/user-event';
 import { setTimeout } from 'node:timers';
@@ -34,14 +28,9 @@ describe('CopyButton', () => {
     render(<CopyButton value={value} />);
 
     await user.click(screen.getByRole('button'));
-    // fireEvent(screen.getByRole('button'), 'click');
 
-    // await waitFor(async () => {
-    //   const clipboardText = await navigator.clipboard.readText();
-    //   expect(clipboardText).toBe(value);
-    // });
-
-    expect(true).toBeTruthy();
+    const clipboardText = await navigator.clipboard.readText();
+    expect(clipboardText).toBe(value);
 
     jest.runOnlyPendingTimers();
     jest.useRealTimers();
@@ -49,29 +38,21 @@ describe('CopyButton', () => {
 
   it('works with async values', async () => {
     jest.useFakeTimers();
-    // const user = userEvent.setup();
     const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
-
     const value = 'test';
     const asyncValue = async () =>
-      new Promise<string>((resolve) => setTimeout(resolve, 1000, value));
+      new Promise<string>((resolve) => setTimeout(resolve, 0, value));
     render(<CopyButton value={asyncValue} />);
 
     const button = screen.getByRole('button');
     await user.click(button);
 
-    jest.runAllTimers();
-
-    await waitForElementToBeRemoved(() =>
+    expect(
       screen.queryByTitle('Loading', { exact: false }),
-    );
+    ).not.toBeInTheDocument();
 
-    // await waitFor(async () => {
-    //   const clipboardText = await navigator.clipboard.readText();
-    //   expect(clipboardText).toBe(value);
-    // });
-
-    expect(true).toBeTruthy();
+    const clipboardText = await navigator.clipboard.readText();
+    expect(clipboardText).toBe(value);
 
     jest.runOnlyPendingTimers();
     jest.useRealTimers();

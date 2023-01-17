@@ -115,9 +115,7 @@ function _CopyButton(
   >(async () => {
     if (isPromiseLike(resolvedValue.current)) {
       setIsLoading(true);
-      console.log('loading', resolvedValue.current);
       resolvedValue.current = await resolvedValue.current;
-      console.log('done', resolvedValue.current);
       setIsLoading(false);
     }
 
@@ -132,10 +130,6 @@ function _CopyButton(
       }
     }, 1000);
   }, [onCopy]);
-
-  useEffect(() => {
-    console.log('isLoading', isLoading);
-  }, [isLoading]);
 
   return (
     <div ref={ref} data-test-id={testId} className={className} {...otherProps}>
