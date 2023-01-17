@@ -80,6 +80,7 @@ describe('Menu', function () {
   });
 
   it('do call onClose when selecting list item', async () => {
+    jest.useFakeTimers();
     const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const handleClose = jest.fn();
 
@@ -102,9 +103,13 @@ describe('Menu', function () {
 
     await user.click(screen.getByTestId('itemToClick'));
     expect(handleClose).toHaveBeenCalled();
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('do NOT call onClose when selecting list item and closeOnSelect prop is false', async () => {
+    jest.useFakeTimers();
     const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const handleClose = jest.fn();
 
@@ -125,6 +130,9 @@ describe('Menu', function () {
 
     await user.click(screen.getByTestId('itemToClick'));
     expect(handleClose).not.toHaveBeenCalled();
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('should focus FIRST item when menu is open', async () => {
@@ -150,6 +158,8 @@ describe('Menu', function () {
   });
 
   it('should focus NEXT/PREVIOUS item when ArrowDown/ArrowUp clicked accordingly', async () => {
+    jest.useFakeTimers();
+
     render(
       <Menu isOpen={true}>
         <Menu.Trigger>
@@ -180,6 +190,9 @@ describe('Menu', function () {
     await waitFor(() => {
       expect(document.activeElement).toBe(screen.getByTestId('first-item'));
     });
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('should focus FIRST item when ArrowDown clicked and focus was on the last item', async () => {
@@ -290,6 +303,7 @@ describe('Menu', function () {
       );
 
     it('should open submenu if item with submenu clicked', async () => {
+      jest.useFakeTimers();
       const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
       renderMenuWithSubMenu();
 
@@ -304,6 +318,7 @@ describe('Menu', function () {
     });
 
     it('should open submenu if item with submenu is hovered and close when its unhovered', async () => {
+      jest.useFakeTimers();
       const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
       renderMenuWithSubMenu();
 

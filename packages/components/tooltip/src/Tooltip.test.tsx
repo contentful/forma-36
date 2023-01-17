@@ -26,6 +26,7 @@ describe('Tooltip', () => {
   });
 
   it('renders the component', async () => {
+    jest.useFakeTimers();
     const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     render(
       <Tooltip content="Tooltip content">
@@ -36,9 +37,13 @@ describe('Tooltip', () => {
     await user.hover(screen.getByText('Hover me'));
 
     expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content');
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('renders the component with an additional class name', async () => {
+    jest.useFakeTimers();
     const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     render(
       <Tooltip content="Tooltip content" className="extra-class-name">
@@ -49,9 +54,13 @@ describe('Tooltip', () => {
     await user.hover(screen.getByText('Hover me'));
 
     expect(screen.getByRole('tooltip')).toHaveClass('extra-class-name');
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('renders the component with a target wrapper classname', async () => {
+    jest.useFakeTimers();
     const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const { container } = render(
       <Tooltip
@@ -67,9 +76,13 @@ describe('Tooltip', () => {
     expect(
       container.querySelector('.target-wrapper-class-name').textContent,
     ).toBe('Hover me');
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('renders the component with a placement attribute', async () => {
+    jest.useFakeTimers();
     const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     render(
       <Tooltip content="Tooltip content" placement="left">
@@ -82,9 +95,13 @@ describe('Tooltip', () => {
     expect(
       screen.getByRole('tooltip').getAttribute('data-popper-placement'),
     ).toBe('left');
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('renders the component with a id attribute', async () => {
+    jest.useFakeTimers();
     const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     render(
       <Tooltip id="Tooltip" content="Tooltip content">
@@ -95,9 +112,13 @@ describe('Tooltip', () => {
     await user.hover(screen.getByText('Hover me'));
 
     expect(screen.getByRole('tooltip').getAttribute('id')).toBe('Tooltip');
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('renders the component as span with a id attribute', async () => {
+    jest.useFakeTimers();
     const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     render(
       <Tooltip as="span" id="Tooltip" content="Tooltip content">
@@ -110,11 +131,12 @@ describe('Tooltip', () => {
     const tooltip = screen.getByRole('tooltip');
     expect(tooltip.getAttribute('id')).toBe('Tooltip');
     expect(tooltip.nodeName).toMatch(/span/i);
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('has no a11y issues', async () => {
-    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-    jest.useRealTimers();
     const user = userEvent.setup();
 
     const { container } = render(

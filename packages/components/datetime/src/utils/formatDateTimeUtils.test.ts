@@ -12,6 +12,7 @@ describe('formatDateAndTime', () => {
   });
 
   afterEach(() => {
+    jest.runOnlyPendingTimers();
     jest.useRealTimers();
   });
 

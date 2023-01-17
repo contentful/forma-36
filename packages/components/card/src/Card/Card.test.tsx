@@ -32,9 +32,6 @@ describe('Card', () => {
   });
 
   it('has no a11y issues', async () => {
-    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-    jest.useRealTimers();
-
     const { container } = render(<Card>Card</Card>);
     const results = await axe(container);
 
@@ -42,9 +39,6 @@ describe('Card', () => {
   });
 
   it('has no a11y issues when rendered as a div', async () => {
-    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-    jest.useRealTimers();
-
     const { container } = render(<Card as="div">Card</Card>);
     const results = await axe(container);
 
@@ -52,9 +46,6 @@ describe('Card', () => {
   });
 
   it('has no a11y issues when rendered as a button', async () => {
-    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-    jest.useRealTimers();
-
     const { container } = render(<Card as="button">Card</Card>);
     const results = await axe(container);
 
@@ -62,9 +53,6 @@ describe('Card', () => {
   });
 
   it('has no a11y issues when rendered as a link', async () => {
-    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-    jest.useRealTimers();
-
     const { container } = render(<Card as="a">Card</Card>);
     const results = await axe(container);
 

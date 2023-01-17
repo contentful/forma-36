@@ -107,6 +107,7 @@ describe('Popover', function () {
   });
 
   it('call onClose when clicking outside of popover', async () => {
+    jest.useFakeTimers();
     const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const handleClose = jest.fn();
 
@@ -124,9 +125,13 @@ describe('Popover', function () {
     await waitFor(() => {
       expect(handleClose).toHaveBeenCalled();
     });
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('do NOT call onClose when clicking inside of popover', async () => {
+    jest.useFakeTimers();
     const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const handleClose = jest.fn();
 
@@ -144,9 +149,13 @@ describe('Popover', function () {
     await waitFor(() => {
       expect(handleClose).not.toHaveBeenCalled();
     });
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('do NOT call onClose when clicking outside of popover and closeOnBlur is false', async () => {
+    jest.useFakeTimers();
     const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const handleClose = jest.fn();
 
@@ -164,6 +173,9 @@ describe('Popover', function () {
     await waitFor(() => {
       expect(handleClose).not.toHaveBeenCalled();
     });
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('popover should receive focus when open', async () => {
@@ -230,9 +242,6 @@ describe('Popover', function () {
   });
 
   it('has no a11y issues', async () => {
-    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-    jest.useRealTimers();
-
     const { container } = render(
       <Popover isOpen={true}>
         <Popover.Trigger>

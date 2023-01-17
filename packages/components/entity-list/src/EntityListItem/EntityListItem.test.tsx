@@ -37,6 +37,7 @@ describe('EntityList', function () {
   });
 
   it('renders the component with Menu', async () => {
+    jest.useFakeTimers();
     const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     render(
       <EntityListItem
@@ -54,6 +55,9 @@ describe('EntityList', function () {
 
     expect(screen.getByRole('menu')).toBeInTheDocument();
     expect(screen.getAllByRole('menuitem')).toHaveLength(3);
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('renders the component with custom drag handle', () => {
@@ -125,6 +129,7 @@ describe('EntityList', function () {
   });
 
   it('can call an onClick callback', async () => {
+    jest.useFakeTimers();
     const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const mockOnClick = jest.fn();
 
@@ -132,6 +137,9 @@ describe('EntityList', function () {
 
     await user.click(screen.getByText('Title'));
     expect(mockOnClick).toHaveBeenCalled();
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('renders the component with an additional class name', () => {
@@ -163,9 +171,6 @@ describe('EntityList', function () {
   });
 
   it('has no a11y issues', async () => {
-    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-    jest.useRealTimers();
-
     const { container } = render(
       <ul>
         <EntityListItem

@@ -30,6 +30,8 @@ describe('Button', function () {
   });
 
   it('should not dispatch onClick if disabled', async () => {
+    jest.useFakeTimers();
+
     const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const mockOnClick = jest.fn();
 
@@ -42,12 +44,12 @@ describe('Button', function () {
     const button = screen.getByRole('button');
     await user.click(button);
     expect(mockOnClick).not.toHaveBeenCalled();
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('has no a11y issues', async () => {
-    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-    jest.useRealTimers();
-
     const { container } = render(
       <>
         <Button variant="primary">Button</Button>

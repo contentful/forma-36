@@ -77,9 +77,6 @@ describe('Pill', () => {
   });
 
   it('has no a11y issues', async () => {
-    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-    jest.useRealTimers();
-
     const { container } = render(<Pill label="test" />);
     const results = await axe(container);
 
