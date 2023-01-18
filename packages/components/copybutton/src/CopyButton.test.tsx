@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 import userEvent from '@testing-library/user-event';
 import { setTimeout } from 'node:timers';
@@ -37,24 +37,24 @@ describe('CopyButton', () => {
   });
 
   it('works with async values', async () => {
-    jest.useFakeTimers();
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const value = 'test';
-    const asyncValue = async () =>
+    const asyncValue = () =>
+      // Can we make this work with a fake timer instead?
       new Promise<string>((resolve) => setTimeout(resolve, 0, value));
     render(<CopyButton value={asyncValue} />);
 
     const button = screen.getByRole('button');
     await user.click(button);
 
-    expect(
-      screen.queryByTitle('Loading', { exact: false }),
-    ).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(
+        screen.queryByTitle('Loading', { exact: false }),
+      ).not.toBeInTheDocument();
+    });
+
     const clipboardText = await navigator.clipboard.readText();
     expect(clipboardText).toBe(value);
-
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
   });
 
   it('should trigger onCopy with the value when button is clicked', async () => {

@@ -27,6 +27,9 @@ type StringValue = {
 };
 
 type PromiseValue = {
+  /**
+   * Preload the value so that it can be copied as soon as possible
+   */
   preload?: boolean;
   /**
    * Value that will be copied to clipboard when the button is clicked
@@ -95,17 +98,17 @@ function _CopyButton(
   const styles = getCopyButtonStyles({ size });
   const [isLoading, setIsLoading] = useState(false);
   const [copied, setCopied] = useState(false);
-  const isMounted = useRef<boolean>(false);
   const button = useRef<HTMLButtonElement | null>(null);
   const resolvedValue = useRef<string | Promise<string>>(
     typeof value === 'function' ? value() : value,
   );
+  const timer = useRef<number | undefined>();
 
   useEffect(() => {
-    isMounted.current = true;
-
     return () => {
-      isMounted.current = false;
+      if (timer.current) {
+        clearTimeout(timer.current);
+      }
     };
   }, []);
 
@@ -132,12 +135,10 @@ function _CopyButton(
     onCopy?.(resolvedValue.current);
     setCopied(true);
 
-    setTimeout(() => {
-      if (isMounted.current) {
-        setCopied(false);
-        if (button.current) {
-          button.current.blur();
-        }
+    timer.current = window.setTimeout(() => {
+      setCopied(false);
+      if (button.current) {
+        button.current.blur();
       }
     }, 1000);
   }, [onCopy]);
