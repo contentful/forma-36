@@ -99,10 +99,12 @@ function _CopyButton(
   const resolvedValue = useRef<string | Promise<string>>(
     typeof value === 'function' ? value() : value,
   );
+  const setCopiedTimer = useRef(null);
 
   useEffect(() => {
     const load = async () => {
       if (preload && isPromiseLike(resolvedValue.current)) {
+        // what if it hasn't been resolved yet but user already clicked copy, so we trigger handleClick
         resolvedValue.current = await resolvedValue.current;
       }
     };
@@ -115,7 +117,9 @@ function _CopyButton(
   >(async () => {
     if (isPromiseLike(resolvedValue.current)) {
       setIsLoading(true);
+      console.log('resolvedValue.current1', resolvedValue.current);
       resolvedValue.current = await resolvedValue.current;
+      console.log('resolvedValue.current2', resolvedValue.current);
       setIsLoading(false);
     }
 
@@ -130,6 +134,8 @@ function _CopyButton(
       }
     }, 1000);
   }, [onCopy]);
+
+  useEffect(() => () => clearTimeout(setCopiedTimer.current), []);
 
   return (
     <div ref={ref} data-test-id={testId} className={className} {...otherProps}>
