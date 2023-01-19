@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck -- disable checking since we cant cast the Promise return type
 import React from 'react';
 import { CopyButton, Flex, Paragraph } from '@contentful/f36-components';
 
