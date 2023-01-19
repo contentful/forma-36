@@ -6,7 +6,7 @@ export default function CopyButtonWithPromiseExample() {
   // copy to the clipboard
   const asyncValue = async () =>
     new Promise((resolve) =>
-      setTimeout(resolve, 3000, 'A value that you will have to wait for'),
+      setTimeout(resolve, 5000, 'A value that you will have to wait for'),
     );
 
   return (
