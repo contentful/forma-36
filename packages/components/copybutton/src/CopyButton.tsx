@@ -12,10 +12,7 @@ import { Button, type ButtonProps } from '@contentful/f36-button';
 import { getCopyButtonStyles } from './CopyButton.styles';
 
 function isPromiseLike<T>(x: T | PromiseLike<T>): x is PromiseLike<T> {
-  return (
-    (typeof x === 'object' || typeof x === 'function') &&
-    typeof (x as PromiseLike<T>).then === 'function'
-  );
+  return typeof (x as PromiseLike<T>).then === 'function';
 }
 
 type StringValue = {
