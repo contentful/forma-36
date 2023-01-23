@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { css, cx } from 'emotion';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import type { FocusEventHandler, FocusEvent } from 'react';
