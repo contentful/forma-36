@@ -99,7 +99,7 @@ jobs:
           command: yarn storybook:build
       - run:
           name: Chromatic
-          command: yarn chromatic
+          command: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes --storybook-build-dir ./dist-storybook
 
   release:
     docker:
