@@ -1,12 +1,10 @@
 import { css } from 'emotion';
-
 import React, {
   useState,
   useCallback,
   useRef,
   FocusEventHandler,
   useEffect,
-  FocusEvent,
   ChangeEvent,
 } from 'react';
 import isHotkey from 'is-hotkey';
@@ -20,24 +18,15 @@ import {
   isBefore,
   isValid,
 } from 'date-fns';
-import {
-  HelpText,
-  FormLabel,
-  TextInput,
-  ValidationMessage,
-  Dropdown,
-  DropdownListItem,
-  DropdownList,
-} from '@contentful/forma-36-react-components';
-
 import tokens from '@contentful/forma-36-tokens';
+import { FormControl, Menu, TextInput, Text } from '@contentful/f36-components';
 
 const styles = {
   selectedTime: css({
-    background: tokens.colorElementLightest,
+    background: tokens.gray100,
   }),
   dropdown: css({
-    width: '100%',
+    maxHeight: 200,
   }),
   dropdownContainer: css({
     zIndex: 1001,
@@ -158,10 +147,10 @@ export interface TimepickerProps {
   id?: string;
   name?: string;
   isRequired?: boolean;
-  disabled: boolean;
+  disabled?: boolean;
 }
 
-export const Timepicker: React.FC<TimepickerProps> = ({
+export const Timepicker = ({
   id,
   value,
   date,
@@ -172,20 +161,17 @@ export const Timepicker: React.FC<TimepickerProps> = ({
   isRequired = false,
   labelText,
   disabled,
-}) => {
-  const [isTimeSuggestionOpen, setTimeSuggestionOpen] = useState(false);
+}: TimepickerProps) => {
   const [filteredHours, setFilteredHours] = useState(
     getSuggestionList(value, date),
   );
-  const listRef = useRef() as React.MutableRefObject<HTMLUListElement>;
-  const activeListItem = useRef() as React.MutableRefObject<HTMLLIElement>;
+  const listRef = useRef<HTMLDivElement | undefined>();
+  const activeListItem = useRef<HTMLButtonElement | undefined>();
   const [selectedTime, setSelectedTime] = useState(() =>
     value
       ? format(parse(value, DATEFNS_24H_FORMAT, new Date()), DATEFNS_12H_FORMAT)
       : value,
   );
-  const [dropdownContainer, setDropdownContainer] = useState(null);
-  const inputRef = React.createRef<HTMLInputElement>();
 
   useEffect(() => {
     if (activeListItem.current && activeListItem.current.scrollIntoView) {
@@ -209,28 +195,6 @@ export const Timepicker: React.FC<TimepickerProps> = ({
     }
   }, [selectedTime, value]);
 
-  const closeDropdown = useCallback(
-    (event: FocusEvent) => {
-      if (dropdownContainer) {
-        const parent = dropdownContainer;
-        const activeElement: HTMLElement | null =
-          (event.relatedTarget as HTMLElement) ||
-          (document.activeElement as HTMLElement);
-        if (activeElement === document.body && inputRef && inputRef.current) {
-          inputRef.current.focus();
-        } else if (parent) {
-          const isDropdownListFocused =
-            activeElement === parent || parent.contains(activeElement);
-
-          if (!isDropdownListFocused) {
-            setTimeSuggestionOpen(false);
-          }
-        }
-      }
-    },
-    [dropdownContainer, inputRef],
-  );
-
   const handleChange = useCallback(
     (val) => {
       setSelectedTime(val);
@@ -246,10 +210,6 @@ export const Timepicker: React.FC<TimepickerProps> = ({
 
   const handleKeyUp = useCallback(
     (event) => {
-      if (isHotkey('enter', event)) {
-        setTimeSuggestionOpen(false);
-      }
-
       const activeIndex = filteredHours.findIndex((elem) => elem.isActive);
       let nextIndex = 0;
 
@@ -274,88 +234,71 @@ export const Timepicker: React.FC<TimepickerProps> = ({
     }
   }, []);
 
-  const handleFocus = useCallback<FocusEventHandler<HTMLInputElement>>((e) => {
-    e.preventDefault();
-    e.target.select();
-    setTimeSuggestionOpen(true);
-  }, []);
-
   const handleBlur = useCallback<FocusEventHandler<HTMLInputElement>>(
     (e) => {
       const time = getTimeFromUserInputOrDefaultToValue();
       setSelectedTime(time);
-      closeDropdown(e);
       onBlur?.(e);
     },
-    [
-      getTimeFromUserInputOrDefaultToValue,
-      setSelectedTime,
-      closeDropdown,
-      onBlur,
-    ],
+    [getTimeFromUserInputOrDefaultToValue, setSelectedTime, onBlur],
   );
 
   const inputId = id ? id : 'scheduleTimeInput';
 
   return (
-    <div>
+    <FormControl>
       {labelText && (
-        <FormLabel required={isRequired} htmlFor={inputId}>
+        <FormControl.Label isRequired={isRequired} htmlFor={inputId}>
           {labelText}
-        </FormLabel>
+        </FormControl.Label>
       )}
       <div className={styles.inputWrapper} id="scheduleTimeForm">
-        <Dropdown
-          className={styles.dropdown}
-          dropdownContainerClassName={styles.dropdownContainer}
-          // TODO: Fix getContainerRef on Dropdown to accept ref object. F36 4.0 Breaking Change
-          getContainerRef={setDropdownContainer}
-          nonClosingRefs={[inputRef]}
-          toggleElement={
+        <Menu>
+          <Menu.Trigger>
             <TextInput
-              id={inputId}
-              inputRef={inputRef}
-              name="time input"
-              data-test-id="time"
-              value={selectedTime}
-              onKeyUp={handleKeyUp}
               onKeyDown={handleKeyDown}
-              onFocus={handleFocus}
+              onKeyUp={handleKeyUp}
+              id={inputId}
+              name="time input"
+              testId="time"
               onBlur={handleBlur}
+              value={selectedTime}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 handleChange(e.target.value)
               }
-              disabled={disabled}
+              isDisabled={disabled}
               autoComplete="off"
             />
-          }
-          onClose={() => setTimeSuggestionOpen(false)}
-          isOpen={isTimeSuggestionOpen}
-        >
-          <DropdownList maxHeight={200} listRef={listRef}>
+          </Menu.Trigger>
+          <Menu.List className={styles.dropdown} ref={listRef}>
             {filteredHours.map((hour: hour) => {
               return (
-                <DropdownListItem
+                <Menu.Item
                   testId="time-suggestion"
                   className={hour.isActive ? styles.selectedTime : undefined}
                   onClick={() => {
                     handleChange(hour.format12H);
-                    setTimeSuggestionOpen(false);
                   }}
                   key={hour.format12H}
-                  listItemRef={hour.isActive ? activeListItem : undefined}
+                  ref={hour.isActive ? activeListItem : undefined}
                 >
                   {hour.format12H}
-                </DropdownListItem>
+                </Menu.Item>
               );
             })}
-          </DropdownList>
-        </Dropdown>
-        {helpText && <HelpText>{helpText}</HelpText>}
+          </Menu.List>
+        </Menu>
+        {helpText && (
+          <Text as="p" fontColor="gray500" marginTop="spacingXs">
+            {helpText}
+          </Text>
+        )}
         {validationMessage && (
-          <ValidationMessage>{validationMessage}</ValidationMessage>
+          <FormControl.ValidationMessage>
+            {validationMessage}
+          </FormControl.ValidationMessage>
         )}
       </div>
-    </div>
+    </FormControl>
   );
 };

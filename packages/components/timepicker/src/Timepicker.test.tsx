@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from 'react';
-import * as dateFns from 'date-fns';
+import { addYears, format } from 'date-fns';
 import '@testing-library/jest-dom/extend-expect';
-import { fireEvent, render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { Timepicker } from './Timepicker';
 
@@ -17,19 +17,6 @@ describe('TimePicker', () => {
     dateNowSpy.mockRestore();
   });
 
-  // @ts-ignore
-  const build = ({ value }) => {
-    const props = {
-      onChange: jest.fn(),
-      onBlur: () => {},
-      date: dateFns.format(dateFns.addYears(new Date(), 1), 'yyyy/MM/dd'),
-      value,
-      isRequired: true,
-      disabled: false,
-    };
-    return [render(<Timepicker {...props} />), props];
-  };
-
   describe('Recognises 12h and 24h formats', () => {
     it.each([
       ['15:00', '3:00 PM', '15:00', '2017-01-01T00:01'],
@@ -39,16 +26,24 @@ describe('TimePicker', () => {
     ])(
       'allows valid 24 and 12 hour formats',
       (received, expectedDisplayValue, expectedValue, now) => {
-        mockDate(dateNowSpy, now);
-        const [renderResult, props] = build({ value: '12:00' });
-        fireChangeEvent(getByTestId(renderResult, 'time'), received);
-        expect(getByTestId(renderResult, 'time').value).toBe(received);
-        // @ts-ignore
-        expect(props.onChange).toHaveBeenCalledWith(expectedValue);
-        fireBlurEvent(getByTestId(renderResult, 'time'));
-        expect(getByTestId(renderResult, 'time').value).toBe(
-          expectedDisplayValue,
+        dateNowSpy.mockImplementation(jest.fn(() => new Date(now).valueOf()));
+        const onChange = jest.fn();
+        render(
+          <Timepicker
+            date={format(addYears(new Date(), 1), 'yyyy/MM/dd')}
+            onChange={onChange}
+            value="12:00"
+          />,
         );
+
+        const timepicker = screen.getByTestId('time');
+        userEvent.clear(timepicker);
+        userEvent.type(timepicker, received);
+        expect(screen.getByTestId('time')).toHaveValue(received);
+        expect(onChange).toHaveBeenCalledWith(expectedValue);
+
+        timepicker.blur();
+        expect(timepicker).toHaveValue(expectedDisplayValue);
       },
     );
 
@@ -58,56 +53,54 @@ describe('TimePicker', () => {
     ])(
       'falls back to value if input is invalid',
       (input, value, expectedDisplayValue) => {
-        const [renderResult] = build({ value });
-        fireChangeEvent(getByTestId(renderResult, 'time'), input);
-        fireBlurEvent(getByTestId(renderResult, 'time'));
-        expect(getByTestId(renderResult, 'time').value).toBe(
-          expectedDisplayValue,
+        render(
+          <Timepicker
+            date={format(addYears(new Date(), 1), 'yyyy/MM/dd')}
+            onChange={jest.fn}
+            value={value}
+          />,
         );
+
+        const timepicker = screen.getByTestId('time');
+        userEvent.type(timepicker, input);
+        timepicker.blur();
+
+        expect(timepicker).toHaveValue(expectedDisplayValue);
       },
     );
 
-    it('increases the time by half an hour on arrow up', () => {
-      const [renderResult, props] = build({ value: '12:00' });
-      fireEvent.focus(getByTestId(renderResult, 'time'));
-      fireEvent.keyUp(getByTestId(renderResult, 'time'), {
-        key: 'up arrow',
-        keyCode: 38,
-      });
-      // @ts-ignore
-      expect(props.onChange).toHaveBeenCalledWith('23:30');
+    it('decreases the time by half an hour on arrow up', () => {
+      const onChange = jest.fn();
+      render(
+        <Timepicker
+          date={format(addYears(new Date(), 1), 'yyyy/MM/dd')}
+          onChange={onChange}
+          value="12:00"
+        />,
+      );
+
+      const timepicker = screen.getByTestId('time');
+      userEvent.type(timepicker, '{arrowup}');
+
+      expect(onChange).toHaveBeenCalledWith('23:30');
+      expect(timepicker).toHaveValue('11:30 PM');
     });
 
     it('increases the time by half an hour on arrow down', () => {
-      const [renderResult, props] = build({ value: '12:00' });
-      fireEvent.focus(getByTestId(renderResult, 'time'));
-      fireEvent.keyUp(getByTestId(renderResult, 'time'), {
-        key: 'down arrow',
-        keyCode: 40,
-      });
-      // @ts-ignore
-      expect(props.onChange).toHaveBeenCalledWith('00:30');
+      const onChange = jest.fn();
+      render(
+        <Timepicker
+          date={format(addYears(new Date(), 1), 'yyyy/MM/dd')}
+          onChange={onChange}
+          value="12:00"
+        />,
+      );
+
+      const timepicker = screen.getByTestId('time');
+      userEvent.type(timepicker, '{arrowdown}');
+
+      expect(onChange).toHaveBeenCalledWith('00:30');
+      expect(timepicker).toHaveValue('12:30 AM');
     });
   });
 });
-
-// @ts-ignore
-function fireChangeEvent(element, value) {
-  fireEvent.change(element, {
-    target: { value: value },
-  });
-}
-
-// @ts-ignore
-function fireBlurEvent(element) {
-  fireEvent.blur(element);
-}
-
-// @ts-ignore
-function mockDate(dateNowSpy, now) {
-  dateNowSpy.mockImplementation(jest.fn(() => new Date(now).valueOf()));
-}
-
-function getByTestId(renderResult: any, testId: string) {
-  return renderResult.container.querySelector(`[data-test-id="${testId}"]`);
-}
