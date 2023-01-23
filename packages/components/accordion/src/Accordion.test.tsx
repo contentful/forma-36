@@ -18,8 +18,7 @@ jest.mock('@contentful/f36-core', () => {
 
 describe('Accordion', () => {
   it('opens the accordion panel when the header is clicked', async () => {
-    jest.useFakeTimers();
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     render(
       <Accordion>
         <Accordion.Item title="Accordion Title">
@@ -34,14 +33,10 @@ describe('Accordion', () => {
 
     await user.click(screen.getByText('Accordion Title'));
     expect(panel.getAttribute('aria-hidden')).toBe('false');
-
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
   });
 
   it('calls onExpand && onCollapse when an accordion item is expanded and collapsed', async () => {
-    jest.useFakeTimers();
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const onExpand = jest.fn();
     const onCollapse = jest.fn();
     render(
@@ -63,9 +58,6 @@ describe('Accordion', () => {
     await user.click(screen.getByText('Accordion Title'));
     expect(onExpand).toHaveBeenCalledTimes(1);
     expect(onCollapse).toHaveBeenCalledTimes(1);
-
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
   });
 
   it('has no a11y issues', async () => {

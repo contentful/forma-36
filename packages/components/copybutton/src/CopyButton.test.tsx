@@ -22,8 +22,7 @@ describe('CopyButton', () => {
   });
 
   it('copies the value to the clipboard', async () => {
-    jest.useFakeTimers();
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const value = 'test';
     render(<CopyButton value={value} />);
 
@@ -31,9 +30,6 @@ describe('CopyButton', () => {
 
     const clipboardText = await navigator.clipboard.readText();
     expect(clipboardText).toBe(value);
-
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
   });
 
   it('works with async values', async () => {
@@ -58,8 +54,7 @@ describe('CopyButton', () => {
   });
 
   it('should trigger onCopy with the value when button is clicked', async () => {
-    jest.useFakeTimers();
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const mockOnCopy = jest.fn();
     const value = 'test';
 
@@ -67,9 +62,6 @@ describe('CopyButton', () => {
     await user.click(screen.getByRole('button'));
 
     expect(mockOnCopy).toHaveBeenCalledWith(value);
-
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
   });
 
   it('has no a11y issues', async () => {

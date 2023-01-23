@@ -30,9 +30,7 @@ describe('Button', function () {
   });
 
   it('should not dispatch onClick if disabled', async () => {
-    jest.useFakeTimers();
-
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const mockOnClick = jest.fn();
 
     render(
@@ -44,9 +42,6 @@ describe('Button', function () {
     const button = screen.getByRole('button');
     await user.click(button);
     expect(mockOnClick).not.toHaveBeenCalled();
-
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
   });
 
   it('has no a11y issues', async () => {

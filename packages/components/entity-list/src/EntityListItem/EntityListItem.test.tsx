@@ -37,8 +37,7 @@ describe('EntityList', function () {
   });
 
   it('renders the component with Menu', async () => {
-    jest.useFakeTimers();
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     render(
       <EntityListItem
         title="Title"
@@ -55,9 +54,6 @@ describe('EntityList', function () {
 
     expect(screen.getByRole('menu')).toBeInTheDocument();
     expect(screen.getAllByRole('menuitem')).toHaveLength(3);
-
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
   });
 
   it('renders the component with custom drag handle', () => {
@@ -129,17 +125,13 @@ describe('EntityList', function () {
   });
 
   it('can call an onClick callback', async () => {
-    jest.useFakeTimers();
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const mockOnClick = jest.fn();
 
     render(<EntityListItem title="Title" onClick={mockOnClick} />);
 
     await user.click(screen.getByText('Title'));
     expect(mockOnClick).toHaveBeenCalled();
-
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
   });
 
   it('renders the component with an additional class name', () => {

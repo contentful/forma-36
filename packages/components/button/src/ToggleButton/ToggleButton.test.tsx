@@ -51,8 +51,7 @@ describe('ToggleButton', function () {
   });
 
   it('should not dispatch onClick if disabled', async () => {
-    jest.useFakeTimers();
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     render(
       <ToggleButton onToggle={mockOnToggle} icon={<PreviewIcon />} isDisabled>
         Toggle
@@ -62,9 +61,6 @@ describe('ToggleButton', function () {
     const button = screen.getByRole('button');
     await user.click(button);
     expect(mockOnToggle).not.toHaveBeenCalled();
-
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
   });
 
   it('has no a11y issues', async () => {

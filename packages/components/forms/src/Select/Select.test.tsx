@@ -7,8 +7,7 @@ import { Select } from './CompoundSelect';
 
 describe('Select', () => {
   it('should not dispatch onChange if disabled', async () => {
-    jest.useFakeTimers();
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const mockOnChange = jest.fn();
     render(
       <Select
@@ -23,14 +22,10 @@ describe('Select', () => {
 
     await user.selectOptions(screen.getByTestId('cf-ui-select'), ['optionOne']);
     expect(mockOnChange).not.toHaveBeenCalled();
-
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
   });
 
   it('should dispatch onChange', async () => {
-    jest.useFakeTimers();
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const mockOnChange = jest.fn();
     render(
       <Select name="optionSelect" id="optionSelect" onChange={mockOnChange}>
@@ -40,9 +35,6 @@ describe('Select', () => {
 
     await user.selectOptions(screen.getByTestId('cf-ui-select'), ['optionOne']);
     expect(mockOnChange).toHaveBeenCalled();
-
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
   });
 
   it('has no a11y issues', async () => {

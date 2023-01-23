@@ -82,8 +82,7 @@ describe('TextLink', function () {
   });
 
   it('calls an onClick function', async () => {
-    jest.useFakeTimers();
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const onClickFunc = jest.fn();
     render(
       <TextLink onClick={onClickFunc} as="button">
@@ -94,14 +93,10 @@ describe('TextLink', function () {
     await user.click(screen.getByText('Text Link'));
 
     expect(onClickFunc).toHaveBeenCalled();
-
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
   });
 
   it('prevents onClick function from being called when disabled', async () => {
-    jest.useFakeTimers();
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const onClickFunc = jest.fn();
     render(
       <TextLink isDisabled onClick={onClickFunc} as="button">
@@ -111,9 +106,6 @@ describe('TextLink', function () {
 
     await user.click(screen.getByText('Text Link'));
     expect(onClickFunc).not.toHaveBeenCalled();
-
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
   });
 
   it('allows passing additional props not consumed by component', () => {
