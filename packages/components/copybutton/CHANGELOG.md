@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.25.1
+
+### Patch Changes
+
+- [#2386](https://github.com/contentful/forma-36/pull/2386) [`c398fac3`](https://github.com/contentful/forma-36/commit/c398fac32b52198d21cb4dd362a9278424dfb08f) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(copy-button): omit native HTML onCopy prop
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.25.1
+  - @contentful/f36-core@4.25.1
+  - @contentful/f36-tooltip@4.25.1
+
 ## 4.25.0
 
 ### Minor Changes
