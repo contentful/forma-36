@@ -13,11 +13,9 @@ describe('CopyButton', () => {
   });
 
   it('renders the component with an additional class name', () => {
-    const { container } = render(
-      <CopyButton value="test" className="my-extra-class" />,
-    );
+    render(<CopyButton value="test" className="my-extra-class" />);
 
-    expect(container.firstChild).toHaveClass('my-extra-class');
+    expect(screen.getByRole('button')).toHaveClass('my-extra-class');
   });
 
   it('copies the value to the clipboard', async () => {

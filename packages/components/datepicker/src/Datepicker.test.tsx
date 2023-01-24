@@ -40,7 +40,8 @@ describe('Datepicker', function () {
   });
 
   it('opens calendar when button is clicked', async () => {
-    const user = userEvent.setup();
+    jest.useFakeTimers();
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     render(<Datepicker selected={testDate} onSelect={jest.fn()} />);
 
     await user.click(screen.getByRole('button'));
@@ -51,6 +52,9 @@ describe('Datepicker', function () {
     );
     expect(screen.getByTestId('cf-ui-popover-content')).toBeInTheDocument();
     expect(screen.getByText(format(testDate, 'LLLL yyyy'))).toBeTruthy();
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('renders the calendar initialy open', () => {
@@ -83,19 +87,24 @@ describe('Datepicker', function () {
   });
 
   it('updates value and trigger onSelect when clicking a day on calendar', async () => {
-    const user = userEvent.setup();
+    jest.useFakeTimers();
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
     const onSelect = jest.fn();
     const newDate = new Date('2022-04-22');
     render(
       <Datepicker selected={testDate} onSelect={onSelect} defaultIsOpen />,
     );
 
+    screen.debug();
     const popover = await screen.findByTestId('cf-ui-popover-content');
     const element = await within(popover).findByText(newDate.getDay());
 
     await user.click(element);
 
     expect(onSelect).toHaveBeenCalledTimes(1);
+
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('should not open calendar if datepicker is disabled', async () => {
