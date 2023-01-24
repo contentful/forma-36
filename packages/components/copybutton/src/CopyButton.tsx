@@ -1,7 +1,5 @@
 import React, {
   useCallback,
-  useEffect,
-  useRef,
   useState,
   type MouseEventHandler,
   type FocusEventHandler,
@@ -12,10 +10,6 @@ import { Tooltip, type TooltipProps } from '@contentful/f36-tooltip';
 import { Button, type ButtonProps } from '@contentful/f36-button';
 import { getCopyButtonStyles } from './CopyButton.styles';
 import { cx } from 'emotion';
-
-function isPromiseLike<T>(x: T | PromiseLike<T>): x is PromiseLike<T> {
-  return typeof (x as PromiseLike<T>).then === 'function';
-}
 
 export type CopyButtonProps = Omit<
   ButtonProps,

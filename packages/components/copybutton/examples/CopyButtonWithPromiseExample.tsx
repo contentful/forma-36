@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck -- disable checking since we cant cast the Promise return type
+// @ts-nocheck -- disable checking since we cant cast the Promise return type in examples
 import React, { useEffect, useState } from 'react';
 import { CopyButton, Flex, Paragraph } from '@contentful/f36-components';
 
@@ -9,18 +9,18 @@ export default function CopyButtonWithPromiseExample() {
 
   // In your application this could be any async function returning a string to
   // copy to the clipboard
-  const asyncValue = async () =>
+  const asyncValue = () =>
     new Promise((resolve) =>
       setTimeout(resolve, 5000, 'A value that you will have to wait for'),
     );
 
   useEffect(() => {
-    const loadValue = async () => {
+    async function loadValue() {
       setIsLoading(true);
       const resolvedValue = await asyncValue();
       setValue(resolvedValue);
       setIsLoading(false);
-    };
+    }
 
     loadValue();
   }, []);
