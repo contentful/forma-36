@@ -7,8 +7,7 @@ import React, {
   useEffect,
   ChangeEvent,
 } from 'react';
-import isHotkey from 'is-hotkey';
-import orderBy from 'lodash.orderby';
+import orderBy from 'lodash/orderBy';
 import {
   format,
   addHours,
@@ -208,32 +207,6 @@ export const Timepicker = ({
     [onChange, date],
   );
 
-  const handleKeyUp = useCallback(
-    (event) => {
-      const activeIndex = filteredHours.findIndex((elem) => elem.isActive);
-      let nextIndex = 0;
-
-      if (isHotkey('arrowUp', event) && filteredHours[activeIndex + 1]) {
-        nextIndex =
-          activeIndex - 1 > 0 ? activeIndex - 1 : filteredHours.length - 1;
-        handleChange(filteredHours[nextIndex].format12H);
-      }
-
-      if (isHotkey('arrowDown', event)) {
-        nextIndex =
-          activeIndex + 1 < filteredHours.length ? activeIndex + 1 : 0;
-        handleChange(filteredHours[nextIndex].format12H);
-      }
-    },
-    [handleChange, filteredHours],
-  );
-
-  const handleKeyDown = useCallback((event) => {
-    if (isHotkey('arrowUp', event) || isHotkey('arrowDown', event)) {
-      event.preventDefault();
-    }
-  }, []);
-
   const handleBlur = useCallback<FocusEventHandler<HTMLInputElement>>(
     (e) => {
       const time = getTimeFromUserInputOrDefaultToValue();
@@ -256,8 +229,6 @@ export const Timepicker = ({
         <Menu>
           <Menu.Trigger>
             <TextInput
-              onKeyDown={handleKeyDown}
-              onKeyUp={handleKeyUp}
               id={inputId}
               name="time input"
               testId="time"

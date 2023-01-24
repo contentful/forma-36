@@ -29,9 +29,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "5.15.0",
     "@testing-library/react": "12.1.2",
-    "@types/is-hotkey": "^0.1.1",
-    "@types/jest": "25.2.3",
-    "@types/lodash.orderby": "^4.6.6"
+    "@types/jest": "25.2.3"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
@@ -39,7 +37,6 @@
     "@contentful/f36-tokens": "^4.0.1",
     "date-fns": "^2.29.3",
     "emotion": "^10.0.17",
-    "is-hotkey": "^0.1.6",
-    "lodash.orderby": "^4.6.0"
+    "lodash": "^4.17.21"
   }
 }

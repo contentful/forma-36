@@ -68,39 +68,5 @@ describe('TimePicker', () => {
         expect(timepicker).toHaveValue(expectedDisplayValue);
       },
     );
-
-    it('decreases the time by half an hour on arrow up', () => {
-      const onChange = jest.fn();
-      render(
-        <Timepicker
-          date={format(addYears(new Date(), 1), 'yyyy/MM/dd')}
-          onChange={onChange}
-          value="12:00"
-        />,
-      );
-
-      const timepicker = screen.getByTestId('time');
-      userEvent.type(timepicker, '{arrowup}');
-
-      expect(onChange).toHaveBeenCalledWith('23:30');
-      expect(timepicker).toHaveValue('11:30 PM');
-    });
-
-    it('increases the time by half an hour on arrow down', () => {
-      const onChange = jest.fn();
-      render(
-        <Timepicker
-          date={format(addYears(new Date(), 1), 'yyyy/MM/dd')}
-          onChange={onChange}
-          value="12:00"
-        />,
-      );
-
-      const timepicker = screen.getByTestId('time');
-      userEvent.type(timepicker, '{arrowdown}');
-
-      expect(onChange).toHaveBeenCalledWith('00:30');
-      expect(timepicker).toHaveValue('12:30 AM');
-    });
   });
 });
