@@ -26,7 +26,7 @@ describe('Tooltip', () => {
   });
 
   it('renders the component', async () => {
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     render(
       <Tooltip content="Tooltip content">
         <span>Hover me</span>
@@ -39,7 +39,7 @@ describe('Tooltip', () => {
   });
 
   it('renders the component with an additional class name', async () => {
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     render(
       <Tooltip content="Tooltip content" className="extra-class-name">
         <span>Hover me</span>
@@ -52,7 +52,7 @@ describe('Tooltip', () => {
   });
 
   it('renders the component with a target wrapper classname', async () => {
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const { container } = render(
       <Tooltip
         content="Tooltip content"
@@ -70,7 +70,7 @@ describe('Tooltip', () => {
   });
 
   it('renders the component with a placement attribute', async () => {
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     render(
       <Tooltip content="Tooltip content" placement="left">
         <span>Hover me</span>
@@ -85,7 +85,7 @@ describe('Tooltip', () => {
   });
 
   it('renders the component with a id attribute', async () => {
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     render(
       <Tooltip id="Tooltip" content="Tooltip content">
         <span>Hover me</span>
@@ -98,7 +98,7 @@ describe('Tooltip', () => {
   });
 
   it('renders the component as span with a id attribute', async () => {
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     render(
       <Tooltip as="span" id="Tooltip" content="Tooltip content">
         <span>Hover me</span>
@@ -113,8 +113,6 @@ describe('Tooltip', () => {
   });
 
   it('has no a11y issues', async () => {
-    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-    jest.useRealTimers();
     const user = userEvent.setup();
 
     const { container } = render(
