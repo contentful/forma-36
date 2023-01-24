@@ -32,27 +32,6 @@ describe('CopyButton', () => {
     expect(clipboardText).toBe(value);
   });
 
-  it('works with async values', async () => {
-    const user = userEvent.setup();
-    const value = 'test';
-    const asyncValue = () =>
-      // Can we make this work with a fake timer instead?
-      new Promise<string>((resolve) => setTimeout(resolve, 0, value));
-    render(<CopyButton value={asyncValue} />);
-
-    const button = screen.getByRole('button');
-    await user.click(button);
-
-    await waitFor(() => {
-      expect(
-        screen.queryByTitle('Loading', { exact: false }),
-      ).not.toBeInTheDocument();
-    });
-
-    const clipboardText = await navigator.clipboard.readText();
-    expect(clipboardText).toBe(value);
-  });
-
   it('should trigger onCopy with the value when button is clicked', async () => {
     const user = userEvent.setup();
     const mockOnCopy = jest.fn();

@@ -1,12 +1,13 @@
 import React, {
-  useState,
   useCallback,
-  useRef,
-  type MouseEventHandler,
   useEffect,
+  useRef,
+  useState,
+  type MouseEventHandler,
+  type FocusEventHandler,
 } from 'react';
 import { CopyIcon } from '@contentful/f36-icons';
-import type { CommonProps, ExpandProps } from '@contentful/f36-core';
+import type { ExpandProps } from '@contentful/f36-core';
 import { Tooltip, type TooltipProps } from '@contentful/f36-tooltip';
 import { Button, type ButtonProps } from '@contentful/f36-button';
 import { getCopyButtonStyles } from './CopyButton.styles';
@@ -15,30 +16,10 @@ function isPromiseLike<T>(x: T | PromiseLike<T>): x is PromiseLike<T> {
   return typeof (x as PromiseLike<T>).then === 'function';
 }
 
-type StringValue = {
-  preload?: never;
-  /**
-   * Value that will be copied to clipboard when the button is clicked
-   */
-  value: string;
-};
-
-type PromiseValue = {
-  /**
-   * Preload the value so that it can be copied as soon as possible
-   */
-  preload?: boolean;
-  /**
-   * Value that will be copied to clipboard when the button is clicked
-   */
-  value: () => Promise<string>;
-};
-
-export type CopyButtonProps = CommonProps & {
-  /**
-   * Props that are passed to the button component
-   */
-  buttonProps?: Omit<ButtonProps, 'size'>;
+export type CopyButtonProps = Omit<
+  ButtonProps,
+  'children' | 'endIcon' | 'startIcon' | 'isDisabed' | 'size'
+> & {
   /**
    * Function that gets called when the button is clicked
    */
@@ -59,7 +40,7 @@ export type CopyButtonProps = CommonProps & {
   tooltipProps?: Omit<TooltipProps, 'content' | 'children'>;
   /**
    * Label to be used on aria-label for the button
-   * @default Copy {value} to clipboard
+   * @default Copy to clipboard
    */
   label?: string;
   /**
@@ -72,107 +53,82 @@ export type CopyButtonProps = CommonProps & {
    * @default medium
    */
   size?: 'small' | 'medium';
-} & (StringValue | PromiseValue);
+  /**
+   * Value that will be copied to clipboard when the button is clicked
+   */
+  value: string;
+};
 
 function _CopyButton(
   {
-    buttonProps,
+    isLoading = false,
+    onBlur,
     onCopy,
     value,
-    className,
     label,
     testId = 'cf-ui-copy-button',
     tooltipText = 'Copy to clipboard',
     tooltipCopiedText = 'Copied!',
     tooltipProps,
     isDisabled = false,
-    preload,
     size = 'medium',
     ...otherProps
   }: ExpandProps<CopyButtonProps>,
-  ref: React.Ref<HTMLDivElement>,
+  ref: React.Ref<HTMLButtonElement>,
 ) {
   const styles = getCopyButtonStyles({ size });
-  const [isLoading, setIsLoading] = useState(false);
   const [copied, setCopied] = useState(false);
-  const button = useRef<HTMLButtonElement | null>(null);
-  const resolvedValue = useRef<string | Promise<string>>(
-    typeof value === 'function' ? value() : value,
-  );
-  const timer = useRef<number | undefined>();
-
-  useEffect(() => {
-    return () => {
-      if (timer.current) {
-        clearTimeout(timer.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    const load = async () => {
-      if (preload && isPromiseLike(resolvedValue.current)) {
-        resolvedValue.current = await resolvedValue.current;
-      }
-    };
-
-    load();
-  }, [preload, value]);
 
   const handleClick = useCallback<
     MouseEventHandler<HTMLButtonElement>
   >(async () => {
-    if (isPromiseLike(resolvedValue.current)) {
-      setIsLoading(true);
-      resolvedValue.current = await resolvedValue.current;
-      setIsLoading(false);
+    try {
+      await window.navigator.clipboard.writeText(value);
+    } catch (error) {
+      console.error(error);
+      return;
     }
 
-    await window.navigator.clipboard.writeText(resolvedValue.current);
-    onCopy?.(resolvedValue.current);
+    onCopy?.(value);
     setCopied(true);
+  }, [onCopy, value]);
 
-    timer.current = window.setTimeout(() => {
+  const handleBlur: FocusEventHandler<HTMLButtonElement> = (event) => {
+    if (copied) {
       setCopied(false);
-      if (button.current) {
-        button.current.blur();
-      }
-    }, 1000);
-  }, [onCopy]);
+    }
+
+    onBlur?.(event);
+  };
 
   return (
-    <div ref={ref} data-test-id={testId} className={className} {...otherProps}>
-      <Tooltip
-        content={copied ? tooltipCopiedText : tooltipText}
-        {...tooltipProps}
-        isDisabled={isDisabled}
-      >
-        <Button
-          aria-label={
-            label ??
-            `Copy ${
-              isPromiseLike(resolvedValue.current)
-                ? ''
-                : `"${resolvedValue.current}" `
-            }to clipboard`
-          }
-          aria-live="assertive"
-          className={styles.button}
-          isDisabled={isLoading || isDisabled}
-          isLoading={isLoading}
-          onClick={handleClick}
-          ref={button}
-          startIcon={
-            <CopyIcon
-              variant="muted"
-              size={size === 'small' ? 'tiny' : 'small'}
-            />
-          }
-          variant="secondary"
-          {...buttonProps}
-        />
-      </Tooltip>
-    </div>
+    <Tooltip
+      content={copied ? tooltipCopiedText : tooltipText}
+      {...tooltipProps}
+      isDisabled={isDisabled}
+    >
+      <Button
+        aria-label={
+          copied ? 'Value copied to clipboard' : label ?? `Copy to clipboard`
+        }
+        aria-live="assertive"
+        className={styles.button}
+        isDisabled={isLoading || isDisabled}
+        isLoading={isLoading}
+        onBlur={handleBlur}
+        testId={testId}
+        {...otherProps}
+        onClick={handleClick}
+        ref={ref}
+        startIcon={
+          <CopyIcon
+            variant="muted"
+            size={size === 'small' ? 'tiny' : 'small'}
+          />
+        }
+        variant="secondary"
+      />
+    </Tooltip>
   );
 }
 
