@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.25.0
+
+### Minor Changes
+
+- [#2375](https://github.com/contentful/forma-36/pull/2375) [`50fa2c08`](https://github.com/contentful/forma-36/commit/50fa2c0836fad16ecf7173059e046958351811b7) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(copy-button): implementation is now based on the Button component, making it possible to pass ButtonProps to the CopyButton.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.25.0
+  - @contentful/f36-core@4.25.0
+  - @contentful/f36-tooltip@4.25.0
+
 ## 4.24.1
 
 ### Patch Changes
