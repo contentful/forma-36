@@ -17,7 +17,7 @@ import {
   isBefore,
   isValid,
 } from 'date-fns';
-import tokens from '@contentful/forma-36-tokens';
+import tokens from '@contentful/f36-tokens';
 import { FormControl, Menu, TextInput, Text } from '@contentful/f36-components';
 
 const styles = {
