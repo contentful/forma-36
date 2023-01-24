@@ -11,6 +11,7 @@ import type { ExpandProps } from '@contentful/f36-core';
 import { Tooltip, type TooltipProps } from '@contentful/f36-tooltip';
 import { Button, type ButtonProps } from '@contentful/f36-button';
 import { getCopyButtonStyles } from './CopyButton.styles';
+import { cx } from 'emotion';
 
 function isPromiseLike<T>(x: T | PromiseLike<T>): x is PromiseLike<T> {
   return typeof (x as PromiseLike<T>).then === 'function';
@@ -61,17 +62,18 @@ export type CopyButtonProps = Omit<
 
 function _CopyButton(
   {
+    className,
+    isDisabled = false,
     isLoading = false,
+    label,
     onBlur,
     onCopy,
-    value,
-    label,
+    size = 'medium',
     testId = 'cf-ui-copy-button',
-    tooltipText = 'Copy to clipboard',
     tooltipCopiedText = 'Copied!',
     tooltipProps,
-    isDisabled = false,
-    size = 'medium',
+    tooltipText = 'Copy to clipboard',
+    value,
     ...otherProps
   }: ExpandProps<CopyButtonProps>,
   ref: React.Ref<HTMLButtonElement>,
@@ -112,7 +114,7 @@ function _CopyButton(
           copied ? 'Value copied to clipboard' : label ?? `Copy to clipboard`
         }
         aria-live="assertive"
-        className={styles.button}
+        className={cx(styles.button, className)}
         isDisabled={isLoading || isDisabled}
         isLoading={isLoading}
         onBlur={handleBlur}
