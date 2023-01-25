@@ -18,7 +18,7 @@ export type CopyButtonProps = Omit<
   | 'onCopy'
   | 'onClick'
   | 'startIcon'
-  | 'isDisabed'
+  | 'isDisabled'
   | 'size'
   | 'value'
   | 'variant'
