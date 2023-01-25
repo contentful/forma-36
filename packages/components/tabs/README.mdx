@@ -63,6 +63,15 @@ By default, `Tabs` is an uncontrolled component, but you can make it controlled 
 
 ```
 
+### Controlled Tabs with always mounted Tabs.Panel
+
+By default, `Tabs.Panel` is unmounted, if it's not an active tab. But you can make it always mounted by passing the `forceMount` prop.
+Keep in mind that you have to provide additional styles to hide not active `Tabs.Panel`.
+
+```jsx file=examples/TabsControlledWithMountedContentExample.tsx
+
+```
+
 ## Props (API reference)
 
 ### Tabs
