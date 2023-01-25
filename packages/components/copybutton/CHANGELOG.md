@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.26.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.26.0
+  - @contentful/f36-core@4.26.0
+  - @contentful/f36-tooltip@4.26.0
+
 ## 4.25.2
 
 ### Patch Changes

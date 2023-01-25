@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.26.0
+
+### Minor Changes
+
+- [#2389](https://github.com/contentful/forma-36/pull/2389) [`1f909d54`](https://github.com/contentful/forma-36/commit/1f909d544a4fcc2d1ab3517d28ad813df99c2474) Thanks [@bgutsol](https://github.com/bgutsol)! - Introduce `forceMount` prop for `Tabs.Panel` component
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.26.0
+
 ## 4.25.2
 
 ### Patch Changes
