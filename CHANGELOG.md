@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 25-01-2023
+
+**F36 Copybutton** `v4.25.0`
+
+- feat(copy-button): implementation is now based on the Button component, making it possible to pass ButtonProps to the CopyButton.
+
+**F36 Copybutton** `v4.25.1`
+
+- fix(copy-button): omit native HTML onCopy prop
+
 ## 17-01-2023
 
 **F36 Tooltip** `v4.24.1`

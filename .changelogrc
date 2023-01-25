@@ -1,1 +1,1 @@
-{"**F36 Copybutton** `v4.25.0`":["- feat(copy-button): implementation is now based on the Button component, making it possible to pass ButtonProps to the CopyButton. \n"],"**F36 Copybutton** `v4.25.1`":["- fix(copy-button): omit native HTML onCopy prop \n"]}
+{}
