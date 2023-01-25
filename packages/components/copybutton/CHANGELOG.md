@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.25.2
+
+### Patch Changes
+
+- [#2388](https://github.com/contentful/forma-36/pull/2388) [`ab0be3ac`](https://github.com/contentful/forma-36/commit/ab0be3ac0cc67bc7aba5a01ab4bae334056caa0a) Thanks [@denkristoffer](https://github.com/denkristoffer)! - chore(copy-button): omit more Button props
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.25.2
+  - @contentful/f36-core@4.25.2
+  - @contentful/f36-tooltip@4.25.2
+
 ## 4.25.1
 
 ### Patch Changes
