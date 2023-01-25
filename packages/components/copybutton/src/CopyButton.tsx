@@ -13,7 +13,15 @@ import { cx } from 'emotion';
 
 export type CopyButtonProps = Omit<
   ButtonProps,
-  'children' | 'endIcon' | 'onCopy' | 'startIcon' | 'isDisabed' | 'size'
+  | 'children'
+  | 'endIcon'
+  | 'onCopy'
+  | 'onClick'
+  | 'startIcon'
+  | 'isDisabled'
+  | 'size'
+  | 'value'
+  | 'variant'
 > & {
   /**
    * Function that gets called when the button is clicked
