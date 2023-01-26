@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 26-01-2023
+
+**F36 Copybutton** `v4.25.2`
+
+- chore(copy-button): omit more Button props
+
+**F36 Tabs** `v4.26.0`
+
+- Introduce `forceMount` prop for `Tabs.Panel` component
+
 ## 25-01-2023
 
 **F36 Copybutton** `v4.25.0`
