@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.24.0
+
+### Minor Changes
+
+- [#2391](https://github.com/contentful/forma-36/pull/2391) [`53fe79bf`](https://github.com/contentful/forma-36/commit/53fe79bf69b5eb36d304f29f6426ebab91764cbb) Thanks [@marcolink](https://github.com/marcolink)! - add ArrowDownward Icon
+
 ## 4.23.2
 
 ### Patch Changes
