@@ -17,6 +17,7 @@ export { ArrowForwardTrimmed as ArrowForwardTrimmedIcon } from './ArrowForwardTr
 export { ArrowUp as ArrowUpIcon } from './ArrowUp';
 export { ArrowUpTrimmed as ArrowUpTrimmedIcon } from './ArrowUpTrimmed';
 export { ArrowUpward as ArrowUpwardIcon } from './ArrowUpward';
+export { ArrowDownward as ArrowDownwardIcon } from './ArrowDownward';
 export { Asset as AssetIcon } from './Asset';
 export { AssetTrimmed as AssetTrimmedIcon } from './AssetTrimmed';
 export { Audio as AudioIcon } from './Audio';
