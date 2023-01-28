@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 28-01-2023
+
+**F36 Icons** `v4.24.0`
+
+- add ArrowDownward Icon
+
 ## 26-01-2023
 
 **F36 Copybutton** `v4.25.2`
