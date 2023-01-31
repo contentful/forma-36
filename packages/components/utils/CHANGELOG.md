@@ -1,5 +1,11 @@
 # @contentful/f36-utils
 
+## 4.24.0
+
+### Minor Changes
+
+- [#2393](https://github.com/contentful/forma-36/pull/2393) [`20ee7318`](https://github.com/contentful/forma-36/commit/20ee7318b63469797a957c43931e4887e30935d4) Thanks [@mshaaban0](https://github.com/mshaaban0)! - feat: add hexToRGBA utility function
+
 ## 4.23.2
 
 ## 4.23.1
