@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 01-02-2023
+
+**F36 Utils** `v4.24.0`
+
+- feat: add hexToRGBA utility function
+
 ## 28-01-2023
 
 **F36 Icons** `v4.24.0`
