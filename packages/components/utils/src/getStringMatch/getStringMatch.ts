@@ -16,8 +16,12 @@ export interface MatchObj {
  */
 export function getStringMatch(base: string, match: string): MatchObj {
   const matchResult = { before: '', match: '', after: '' };
+  const escapedMatch = match.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-  const regex = new RegExp(`(?<before>.*?)(?<match>${match})(?<after>.*)`, 'i');
+  const regex = new RegExp(
+    `(?<before>.*?)(?<match>${escapedMatch})(?<after>.*)`,
+    'i',
+  );
   const matches = base.match(regex);
 
   if (matches) {
