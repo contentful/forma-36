@@ -1,5 +1,11 @@
 # @contentful/f36-utils
 
+## 4.24.1
+
+### Patch Changes
+
+- [#2394](https://github.com/contentful/forma-36/pull/2394) [`a32a5f4d`](https://github.com/contentful/forma-36/commit/a32a5f4d394af3fe3ac55035ccc7f0b72d40911f) Thanks [@massao](https://github.com/massao)! - add autoescape special characters on getStringMatch
+
 ## 4.24.0
 
 ### Minor Changes
