@@ -19,7 +19,7 @@ describe('getStringMatch', () => {
       after: ')',
     });
   });
-  it('shoul work with any regex special character', () => {
+  it('should work with any regex special character', () => {
     const base = '.*+?^${}()|[]\\';
     const characters = base.split('');
     characters.forEach((character) => {
