@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 03-02-2023
+
+**F36 Utils** `v4.24.1`
+
+- add autoescape special characters on getStringMatch
+
 ## 01-02-2023
 
 **F36 Utils** `v4.24.0`
