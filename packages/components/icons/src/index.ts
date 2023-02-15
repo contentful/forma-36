@@ -139,6 +139,7 @@ export { Presentation as PresentationIcon } from './Presentation';
 export { Preview as PreviewIcon } from './Preview';
 export { PreviewOff as PreviewOffIcon } from './PreviewOff';
 export { Puzzle as PuzzleIcon } from './Puzzle';
+export { PuzzleFilled as PuzzleFilledIcon } from './PuzzleFilled';
 export { Quote as QuoteIcon } from './Quote';
 export { QuoteTrimmed as QuoteTrimmedIcon } from './QuoteTrimmed';
 export { Receipt as ReceiptIcon } from './Receipt';
