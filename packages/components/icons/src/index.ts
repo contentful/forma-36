@@ -95,6 +95,7 @@ export { HeadingTwoTrimmed as HeadingTwoTrimmedIcon } from './HeadingTwoTrimmed'
 export { HelpCircle as HelpCircleIcon } from './HelpCircle';
 export { HelpCircleInverted as HelpCircleInvertedIcon } from './HelpCircleInverted';
 export { HelpCircleTrimmed as HelpCircleTrimmedIcon } from './HelpCircleTrimmed';
+export { Home as HomeIcon } from './Home';
 export { HorizontalRule as HorizontalRuleIcon } from './HorizontalRule';
 export { HorizontalRuleTrimmed as HorizontalRuleTrimmedIcon } from './HorizontalRuleTrimmed';
 export { Image as ImageIcon } from './Image';
