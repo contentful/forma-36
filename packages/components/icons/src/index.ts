@@ -128,6 +128,7 @@ export { Page as PageIcon } from './Page';
 export { PageTrimmed as PageTrimmedIcon } from './PageTrimmed';
 export { Pdf as PdfIcon } from './Pdf';
 export { Person as PersonIcon } from './Person';
+export { Pen as PenIcon } from './Pen';
 export { Plaintext as PlaintextIcon } from './Plaintext';
 export { Plus as PlusIcon } from './Plus';
 export { PlusCircle as PlusCircleIcon } from './PlusCircle';
