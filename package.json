@@ -7,7 +7,7 @@
     "packages/components/*"
   ],
   "scripts": {
-    "build": "turbo run build --force",
+    "build": "turbo run build",
     "commit": "git-cz",
     "commitmsg": "validate-commit-msg",
     "generate": "plop --plopfile scripts/plopfile.js",
@@ -116,7 +116,7 @@
     "simple-git-hooks": "^2.8.1",
     "size-limit": "^8.1.0",
     "tsup": "^6.2.3",
-    "turbo": "^1.7.0",
+    "turbo": "^1.7.4",
     "typescript": "4.7.3",
     "webpack": "5"
   },
