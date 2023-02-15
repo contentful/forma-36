@@ -34,6 +34,7 @@ export { ChevronRight as ChevronRightIcon } from './ChevronRight';
 export { ChevronRightTrimmed as ChevronRightTrimmedIcon } from './ChevronRightTrimmed';
 export { ChevronUp as ChevronUpIcon } from './ChevronUp';
 export { ChevronUpTrimmed as ChevronUpTrimmedIcon } from './ChevronUpTrimmed';
+export { Clipboard as ClipboardIcon } from './Clipboard';
 export { Clock as ClockIcon } from './Clock';
 export { ClockTrimmed as ClockTrimmedIcon } from './ClockTrimmed';
 export { Close as CloseIcon } from './Close';
