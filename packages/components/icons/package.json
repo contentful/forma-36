@@ -4,7 +4,8 @@
   "description": "Forma 36: Icon components",
   "license": "MIT",
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "build:icon": "svgr --out-dir ./src --typescript --ignore-existing --template ./scripts/template.js"
   },
   "dependencies": {
     "@contentful/f36-core": "^4.23.2",
@@ -31,5 +32,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^6.5.1"
   }
 }
