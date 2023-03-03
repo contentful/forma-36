@@ -249,6 +249,11 @@
   ],
   "typographyComponents": [
     {
+      "title": "Caption",
+      "slug": "/components/caption/",
+      "status": "stable"
+    },
+    {
       "title": "DisplayText",
       "slug": "/components/display-text/",
       "status": "stable"
