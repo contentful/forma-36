@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  FontSizeTokens,
-  FontWeightTokens,
-  LineHeightTokens,
-} from '@contentful/f36-tokens';
+import { FontWeightTokens } from '@contentful/f36-tokens';
 import type {
   CommonProps,
   MarginProps,
