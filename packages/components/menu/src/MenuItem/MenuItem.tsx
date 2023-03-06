@@ -19,6 +19,10 @@ interface MenuItemInternalProps extends CommonProps {
   as?: 'a' | 'button';
 
   /**
+   * Marks item as active
+   */
+  isActive?: boolean;
+  /**
    * Sets focus on item
    */
   isInitiallyFocused?: boolean;
@@ -32,11 +36,12 @@ function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
   props: MenuItemProps<E>,
   ref: React.Ref<any>,
 ) {
-  const { testId, className, as, isInitiallyFocused, ...otherProps } = props;
+  const { testId, className, as, isActive, isInitiallyFocused, ...otherProps } =
+    props;
 
   const id = useId(undefined, 'menu-item');
   const itemTestId = testId || `cf-ui-${id}`;
-  const styles = getMenuItemStyles();
+  const styles = getMenuItemStyles({ isActive });
 
   const { getMenuItemProps, focusMenuItem } = useMenuContext();
 

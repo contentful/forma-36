@@ -14,7 +14,7 @@ export default function MenuWithDisabledItems() {
       </Menu.Trigger>
       <Menu.List>
         <Menu.Item>Item 1</Menu.Item>
-        <Menu.Item>Item 2</Menu.Item>
+        <Menu.Item isActive>Item 2</Menu.Item>
         <Menu.Item>Item 3</Menu.Item>
         <Menu.Item disabled>Item 4 (disabled)</Menu.Item>
         <Menu.Item>Item 5</Menu.Item>

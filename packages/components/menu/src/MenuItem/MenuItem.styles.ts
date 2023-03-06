@@ -1,28 +1,38 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import type { MenuItemProps } from './MenuItem';
 
-export const getMenuItemStyles = () => {
+export const getMenuItemStyles = ({
+  isActive,
+}: {
+  isActive: MenuItemProps['isActive'];
+}) => {
   return {
     root: css({
-      display: 'block',
-      width: '100%',
-      background: 'none',
+      display: 'flex',
+      width: `calc(100% - 2 * ${tokens.spacing2Xs})`,
+      background: isActive ? tokens.gray200 : 'none',
       border: 0,
-      margin: 0,
+      borderRadius: tokens.borderRadiusMedium,
+      margin: `0 ${tokens.spacing2Xs}`,
       outline: 'none',
       fontSize: tokens.fontSizeM,
       lineHeight: tokens.lineHeightM,
-      fontWeight: tokens.fontWeightNormal,
+      fontWeight: isActive ? tokens.fontWeightMedium : tokens.fontWeightNormal,
       position: 'relative',
       textAlign: 'left',
-      padding: `${tokens.spacingXs} ${tokens.spacingM}`,
+      padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
       wordBreak: 'break-word',
       whiteSpace: 'break-spaces',
       cursor: 'pointer',
       hyphens: 'auto',
       minWidth: '150px',
       textDecoration: 'none',
-      color: tokens.gray800,
+      color: tokens.gray900,
+
+      '[role="menuitem"] + &': {
+        marginTop: '2px',
+      },
 
       '&:hover': {
         backgroundColor: tokens.gray100,
@@ -30,7 +40,7 @@ export const getMenuItemStyles = () => {
       '&:focus': {
         boxShadow: `inset ${tokens.glowPrimary}`,
         // just to make boxShadow with rounded corners
-        borderRadius: tokens.borderRadiusMedium,
+        borderRadius: tokens.borderRadiusSmall,
       },
       '&:focus:not(:focus-visible)': {
         boxShadow: 'unset',
@@ -38,7 +48,7 @@ export const getMenuItemStyles = () => {
       },
       '&:focus-visible': {
         boxShadow: `inset ${tokens.glowPrimary}`,
-        borderRadius: tokens.borderRadiusMedium,
+        borderRadius: tokens.borderRadiusSmall,
       },
       '&:active': {
         backgroundColor: tokens.gray200,

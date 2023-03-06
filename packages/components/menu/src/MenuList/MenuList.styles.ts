@@ -30,10 +30,13 @@ export const getMenuListStyles = (props: {
   hasStickyHeader?: boolean;
 }) => ({
   container: css({
+    // To get to our regular border radius for the inner menu items (6px),
+    // we need to use 8px on the outer container
+    borderRadius: '8px',
     overflowY: 'auto',
     position: 'relative',
     padding: 0,
-    paddingTop: props.hasStickyHeader ? 0 : tokens.spacingXs,
-    paddingBottom: props.hasStickyFooter ? 0 : tokens.spacingXs,
+    paddingTop: props.hasStickyHeader ? 0 : tokens.spacing2Xs,
+    paddingBottom: props.hasStickyFooter ? 0 : tokens.spacing2Xs,
   }),
 });
