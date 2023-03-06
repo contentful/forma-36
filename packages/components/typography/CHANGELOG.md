@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.27.0
+
+### Minor Changes
+
+- [#2412](https://github.com/contentful/forma-36/pull/2412) [`d44144f3`](https://github.com/contentful/forma-36/commit/d44144f3ecc1faf4a5b89be33f1612bcf46526ea) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat: Caption component
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.27.0
+
 ## 4.26.0
 
 ### Patch Changes
