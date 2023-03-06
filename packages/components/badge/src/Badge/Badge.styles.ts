@@ -49,17 +49,15 @@ const sizeToStyles = ({ size }: { size: BadgeSize }): CSSObject => {
   switch (size) {
     case 'small':
       return {
-        padding: `3px ${tokens.spacing2Xs}`,
-        fontSize: '0.625rem',
-        lineHeight: '0.625rem',
-        maxHeight: '16px',
+        padding: `0 ${tokens.spacing2Xs}`,
+        lineHeight: tokens.lineHeightS,
+        maxHeight: tokens.lineHeightS,
       };
     default:
       return {
         padding: `0 ${tokens.spacingXs}`,
-        fontSize: `calc(1rem * (12 / ${tokens.fontBaseDefault}))`,
-        lineHeight: '20px',
-        maxHeight: '20px',
+        lineHeight: tokens.lineHeightM,
+        maxHeight: tokens.lineHeightM,
       };
   }
 };
@@ -69,12 +67,7 @@ export const getBadgeStyles = () => ({
     css({
       columnGap: tokens.spacing2Xs,
       alignItems: 'center',
-      fontFamily: tokens.fontStackPrimary,
-      fontWeight: tokens.fontWeightDemiBold,
-      textTransform: 'uppercase',
-      letterSpacing:
-        '0.06rem' /*move to tokens or update wide letter spacing token*/,
-      borderRadius: `${tokens.borderRadiusSmall}`,
+      borderRadius: tokens.borderRadiusSmall,
       overflow: 'hidden',
       verticalAlign: 'middle',
       ...variantToStyles({ variant }),
@@ -83,9 +76,10 @@ export const getBadgeStyles = () => ({
   badgeIcon: css({
     flexShrink: 0,
   }),
-  badgeText: css({
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-  }),
+  badgeText: ({ size }: { size: BadgeSize }) =>
+    css({
+      color: 'currentcolor',
+      lineHeight: 'inherit',
+      fontSize: size === 'small' && '0.688rem',
+    }),
 });
