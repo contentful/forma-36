@@ -1,0 +1,40 @@
+---
+title: 'Caption'
+type: 'component'
+status: 'stable'
+section: 'typographyComponents'
+slug: /components/caption/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/typography/src'
+typescript: ./Caption.tsx
+storybook: 'https://f36-storybook.contentful.com/?path=/story/typography-caption--basic'
+---
+
+`Caption` is used to display secondary and tertiary information, and in special scenarios where information should be de-emphasized.
+
+## Import
+
+```js static=true
+import { Caption } from '@contentful/f36-components';
+// or
+import { Caption } from '@contentful/f36-typography';
+```
+
+## Examples
+
+### Basic
+
+```jsx file=../../examples/CaptionExample.tsx
+
+```
+
+### `as` property
+
+We provide you with `as` property, to allow you to set the tag of the `Caption` component to another tag than `span`.
+
+```jsx file=../../examples/CaptionTagExample.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="Caption" />
