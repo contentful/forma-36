@@ -76,10 +76,8 @@ export const getBadgeStyles = () => ({
   badgeIcon: css({
     flexShrink: 0,
   }),
-  badgeText: ({ size }: { size: BadgeSize }) =>
-    css({
-      color: 'currentcolor',
-      lineHeight: 'inherit',
-      fontSize: size === 'small' && '0.688rem',
-    }),
+  badgeText: css({
+    color: 'currentcolor',
+    lineHeight: 'inherit',
+  }),
 });

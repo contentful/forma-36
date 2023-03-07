@@ -86,7 +86,7 @@ export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
         <Caption
           fontWeight="fontWeightMedium"
           isTruncated
-          className={styles.badgeText({ size })}
+          className={styles.badgeText}
         >
           {children}
         </Caption>
