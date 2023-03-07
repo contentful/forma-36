@@ -15,9 +15,6 @@ export const getTableCellStyles = ({
     verticalAlign: 'top',
     textAlign: align,
     color: sorting ? tokens.gray900 : tokens.gray700,
-    fontFamily: tokens.fontStackPrimary,
     fontWeight: isTableHead ? tokens.fontWeightMedium : tokens.fontWeightNormal,
-    fontSize: isTableHead ? tokens.fontSizeS : tokens.fontSizeM,
-    lineHeight: isTableHead ? tokens.lineHeightS : tokens.lineHeightM,
   }),
 });
