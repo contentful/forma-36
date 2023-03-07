@@ -4,7 +4,12 @@ export { TableBody } from './TableBody/TableBody';
 export type { TableBodyProps } from './TableBody/TableBody';
 export { TableCell } from './TableCell/TableCell';
 export type { TableCellProps } from './TableCell/TableCell';
-export { contextOptions, TableCellContext } from './TableCell/TableCellContext';
+export {
+  contextOptions,
+  TableCellContext,
+  TableCellContextProvider,
+  useTableCellContext,
+} from './TableCell/TableCellContext';
 export { TableHead } from './TableHead/TableHead';
 export type { TableHeadProps } from './TableHead/TableHead';
 export { TableRow } from './TableRow/TableRow';
