@@ -1,33 +1,12 @@
-import { css, cx } from 'emotion';
+import { cx } from 'emotion';
 import React, { forwardRef } from 'react';
-import tokens from '@contentful/f36-tokens';
 import {
   Box,
   type CommonProps,
   type PropsWithHTMLElement,
   type ExpandProps,
 } from '@contentful/f36-core';
-
-const getStyles = () => {
-  return {
-    root: css({
-      '&:last-child td': {
-        borderBottom: 'none',
-      },
-      '&:hover td': {
-        backgroundColor: tokens.gray100,
-      },
-    }),
-    selected: css({
-      'td, th': {
-        backgroundColor: tokens.blue100,
-      },
-      'td:last-child': {
-        boxShadow: `inset -2px 0 0 ${tokens.blue500}`,
-      },
-    }),
-  };
-};
+import { getTableRowStyles } from './TableRow.styles';
 
 export type TableRowInternalProps = CommonProps & {
   isSelected?: boolean;
@@ -50,7 +29,8 @@ export const TableRow = forwardRef<
     },
     forwardedRef,
   ) => {
-    const styles = getStyles();
+    const styles = getTableRowStyles();
+
     return (
       <Box
         {...otherProps}
