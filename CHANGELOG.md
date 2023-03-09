@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 07-03-2023
+
+**F36 Typography** `v4.27.0`
+
+- feat: Caption component
+
 ## 03-02-2023
 
 **F36 Utils** `v4.24.1`
