@@ -34,13 +34,7 @@ export const Table = forwardRef<HTMLTableElement, ExpandProps<TableProps>>(
         as="table"
         display="table"
         ref={forwardedRef}
-        className={cx(
-          styles.root,
-          {
-            [styles.inline]: layout === 'inline',
-          },
-          className,
-        )}
+        className={cx(styles.root, styles[layout], className)}
         testId={testId}
       >
         {children}

@@ -18,6 +18,9 @@ export const getTableStyles = () => ({
       borderBottomRightRadius: tokens.borderRadiusMedium,
     },
   }),
+  embedded: css({
+    borderBottom: `1px solid ${tokens.gray200}`,
+  }),
   root: css({
     width: '100%',
   }),

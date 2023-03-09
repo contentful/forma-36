@@ -11,8 +11,8 @@ export const getTableCellStyles = ({
 } & Pick<TableCellInternalProps, 'sorting' | 'align'>) => ({
   container: css({
     borderBottom: `1px solid ${tokens.gray200}`,
-    padding: `${tokens.spacingS} ${tokens.spacingXs}`,
-    verticalAlign: 'top',
+    padding: tokens.spacingS,
+    verticalAlign: 'middle',
     textAlign: align,
     color: sorting ? tokens.gray900 : tokens.gray700,
     fontWeight: isTableHead ? tokens.fontWeightMedium : tokens.fontWeightNormal,
