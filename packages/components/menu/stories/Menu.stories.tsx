@@ -26,6 +26,7 @@ export const Basic: Story<MenuProps> = (args) => {
         <Menu.Item>Embed existing entry</Menu.Item>
         <Menu.Item isActive>Create and embed existing entry</Menu.Item>
         <Menu.Divider />
+        <Menu.SectionTitle>Help</Menu.SectionTitle>
         <Menu.Item as="a" href="https://contentful.com" target="_blank">
           About Contentful
         </Menu.Item>

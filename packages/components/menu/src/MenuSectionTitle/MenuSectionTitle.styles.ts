@@ -7,8 +7,4 @@ export const getMenuSectionTitleStyles = () =>
     textAlign: 'left',
     padding: `${tokens.spacingXs} ${tokens.spacingS} ${tokens.spacing2Xs}`,
     lineHeight: tokens.lineHeightM,
-
-    'hr + &': {
-      marginTop: '-8px',
-    },
   });
