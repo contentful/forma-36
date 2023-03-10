@@ -6,10 +6,17 @@ import {
   type PropsWithHTMLElement,
   type ExpandProps,
 } from '@contentful/f36-core';
+import type * as CSS from 'csstype';
+
 import { getTableStyles } from './Table.styles';
+import { TableContextProvider } from './tableContext';
 
 export type TableInternalProps = CommonProps & {
   layout?: 'inline' | 'embedded';
+  verticalAlign?: Extract<
+    CSS.Property.VerticalAlign,
+    'baseline' | 'bottom' | 'middle' | 'top'
+  >;
 };
 
 export type TableProps = PropsWithHTMLElement<TableInternalProps, 'table'>;
@@ -21,11 +28,13 @@ export const Table = forwardRef<HTMLTableElement, ExpandProps<TableProps>>(
       className,
       layout = 'inline',
       testId = 'cf-ui-table',
+      verticalAlign = 'top',
       ...otherProps
     },
     forwardedRef,
   ) => {
     const styles = getTableStyles();
+
     return (
       <Box
         cellPadding="0"
@@ -37,7 +46,9 @@ export const Table = forwardRef<HTMLTableElement, ExpandProps<TableProps>>(
         className={cx(styles.root, styles[layout], className)}
         testId={testId}
       >
-        {children}
+        <TableContextProvider value={{ verticalAlign }}>
+          {children}
+        </TableContextProvider>
       </Box>
     );
   },

@@ -6,10 +6,11 @@ import {
   type ExpandProps,
   type PolymorphicComponent,
 } from '@contentful/f36-core';
+import { Text, Caption, type TextProps } from '@contentful/f36-typography';
 
 import { useTableCellContext } from './TableCellContext';
 import { getTableCellStyles } from './TableCell.styles';
-import { Text, Caption, type TextProps } from '@contentful/f36-typography';
+import { useTableContext } from '../tableContext';
 
 export const sortingDirections = {
   asc: 'asc',
@@ -42,9 +43,15 @@ function _TableCell(
   forwardedRef: React.Ref<any>,
 ) {
   const { as, name: context, offsetTop } = useTableCellContext();
+  const { verticalAlign } = useTableContext();
 
   const isTableHead = context === 'head';
-  const styles = getTableCellStyles({ isTableHead, sorting, align });
+  const styles = getTableCellStyles({
+    isTableHead,
+    sorting,
+    align,
+    verticalAlign,
+  });
 
   const BaseComponent = isTableHead ? Caption : Text;
 
