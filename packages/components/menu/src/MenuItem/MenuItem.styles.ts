@@ -70,6 +70,7 @@ export const getMenuItemStyles = ({
           '&:active': {
             backgroundColor: tokens.gray200,
           },
+          '&:disabled': disabledStyle,
         },
       ],
       isActive && activeStyle,
