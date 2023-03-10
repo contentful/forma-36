@@ -29,7 +29,7 @@ export const getMenuItemStyles = ({
     root: css(
       [
         {
-          display: 'flex',
+          display: 'block',
           width: `calc(100% - 2 * ${tokens.spacing2Xs})`,
           background: 'none',
           border: 0,
@@ -60,16 +60,12 @@ export const getMenuItemStyles = ({
           },
           '&:focus': {
             boxShadow: `inset ${tokens.glowPrimary}`,
-            // just to make boxShadow with rounded corners
-            borderRadius: tokens.borderRadiusSmall,
           },
           '&:focus:not(:focus-visible)': {
             boxShadow: 'unset',
-            borderRadius: 'unset',
           },
           '&:focus-visible': {
             boxShadow: `inset ${tokens.glowPrimary}`,
-            borderRadius: tokens.borderRadiusSmall,
           },
           '&:active': {
             backgroundColor: tokens.gray200,
