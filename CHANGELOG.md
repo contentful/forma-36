@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 11-03-2023
+
+**F36 Badge** `v4.28.0`
+
+- update styling of Badge and EntityStatusBadge components
+
 ## 07-03-2023
 
 **F36 Typography** `v4.27.0`

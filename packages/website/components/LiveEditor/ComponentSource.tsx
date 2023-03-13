@@ -75,12 +75,6 @@ const styles = {
     font-family: ${tokens.fontStackPrimary};
     border-radius: ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium} 0 0 !important;
   `,
-  previewWrapper: css({
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }),
   floatingPanel: css`
     position: absolute;
     bottom: ${tokens.spacingS};
@@ -161,7 +155,7 @@ export function ComponentSource({
         scope={liveProviderScope}
       >
         <Card className={styles.card}>
-          <LivePreview className={styles.previewWrapper} />
+          <LivePreview />
         </Card>
         <div style={{ position: 'relative' }}>
           <LiveError className={styles.error} />

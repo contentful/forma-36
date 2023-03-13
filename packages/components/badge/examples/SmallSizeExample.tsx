@@ -4,7 +4,7 @@ import { Badge } from '@contentful/f36-components';
 export default function SmallSizeExample() {
   return (
     <Badge variant="primary-filled" size="small">
-      new
+      New
     </Badge>
   );
 }
