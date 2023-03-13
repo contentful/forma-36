@@ -6,7 +6,7 @@ export default function ModalConfirmExample() {
   return (
     <>
       <Button variant="secondary" onClick={() => setShown(true)}>
-        Delete entry
+        Publish entry
       </Button>
       <ModalConfirm
         intent="positive"
