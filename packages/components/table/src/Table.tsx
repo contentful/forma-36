@@ -12,7 +12,13 @@ import { getTableStyles } from './Table.styles';
 import { TableContextProvider } from './tableContext';
 
 export type TableInternalProps = CommonProps & {
+  /**
+   * @default 'inline'
+   */
   layout?: 'inline' | 'embedded';
+  /**
+   * @default 'top'
+   */
   verticalAlign?: Extract<
     CSS.Property.VerticalAlign,
     'baseline' | 'bottom' | 'middle' | 'top'
