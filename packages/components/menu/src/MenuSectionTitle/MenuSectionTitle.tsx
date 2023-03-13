@@ -1,14 +1,11 @@
 import React from 'react';
 import { cx } from 'emotion';
-import {
-  SectionHeading,
-  type SectionHeadingProps,
-} from '@contentful/f36-typography';
+import { Caption, type CaptionProps } from '@contentful/f36-typography';
 import type { ExpandProps } from '@contentful/f36-core';
 
 import { getMenuSectionTitleStyles } from './MenuSectionTitle.styles';
 
-export type MenuSectionTitleProps = SectionHeadingProps;
+export type MenuSectionTitleProps = CaptionProps;
 
 export const MenuSectionTitle = (props: ExpandProps<MenuSectionTitleProps>) => {
   const {
@@ -21,17 +18,18 @@ export const MenuSectionTitle = (props: ExpandProps<MenuSectionTitleProps>) => {
   const styles = getMenuSectionTitleStyles();
 
   return (
-    <SectionHeading
+    <Caption
       // Techincally, menus cannot contain headings according to ARIA.
       // We hide the heading from assistive technology, and only use it
       // as a label
       aria-hidden="true"
+      as="div"
       testId={testId}
       className={cx(styles, className)}
       marginBottom="none"
       {...otherProps}
     >
       {children}
-    </SectionHeading>
+    </Caption>
   );
 };

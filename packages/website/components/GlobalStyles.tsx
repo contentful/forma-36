@@ -33,18 +33,6 @@ export const GlobalStyles = () => {
           min-width: 1280px;
         }
 
-        body *::-webkit-scrollbar {
-          width: 12px;
-        }
-        body *::-webkit-scrollbar-track {
-          background: ${tokens.colorWhite};
-        }
-        body *::-webkit-scrollbar-thumb {
-          background-color: ${tokens.gray400};
-          border-radius: 6px;
-          border: 3px solid ${tokens.colorWhite};
-        }
-
         code {
           font-family: ${tokens.fontStackMonospace};
           white-space: nowrap;
