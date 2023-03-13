@@ -1,5 +1,41 @@
 # Change Log
 
+## 4.29.0
+
+### Patch Changes
+
+- Updated dependencies [[`45615434`](https://github.com/contentful/forma-36/commit/45615434891121f879052b2149928b408c7840db)]:
+  - @contentful/f36-menu@4.29.0
+  - @contentful/f36-accordion@4.29.0
+  - @contentful/f36-asset@4.29.0
+  - @contentful/f36-autocomplete@4.29.0
+  - @contentful/f36-badge@4.29.0
+  - @contentful/f36-button@4.29.0
+  - @contentful/f36-card@4.29.0
+  - @contentful/f36-collapse@4.29.0
+  - @contentful/f36-copybutton@4.29.0
+  - @contentful/f36-core@4.29.0
+  - @contentful/f36-datetime@4.29.0
+  - @contentful/f36-datepicker@4.29.0
+  - @contentful/f36-drag-handle@4.29.0
+  - @contentful/f36-entity-list@4.29.0
+  - @contentful/f36-forms@4.29.0
+  - @contentful/f36-icon@4.29.0
+  - @contentful/f36-list@4.29.0
+  - @contentful/f36-modal@4.29.0
+  - @contentful/f36-note@4.29.0
+  - @contentful/f36-notification@4.29.0
+  - @contentful/f36-pagination@4.29.0
+  - @contentful/f36-pill@4.29.0
+  - @contentful/f36-popover@4.29.0
+  - @contentful/f36-skeleton@4.29.0
+  - @contentful/f36-spinner@4.29.0
+  - @contentful/f36-table@4.29.0
+  - @contentful/f36-tabs@4.29.0
+  - @contentful/f36-text-link@4.29.0
+  - @contentful/f36-tooltip@4.29.0
+  - @contentful/f36-typography@4.29.0
+
 ## 4.28.0
 
 ### Patch Changes

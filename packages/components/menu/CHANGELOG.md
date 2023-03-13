@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.29.0
+
+### Minor Changes
+
+- [#2417](https://github.com/contentful/forma-36/pull/2417) [`45615434`](https://github.com/contentful/forma-36/commit/45615434891121f879052b2149928b408c7840db) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(menu): new look and feel
+  feat(menu-item): add `isActive` and `isDisabled` props
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.29.0
+  - @contentful/f36-popover@4.29.0
+  - @contentful/f36-typography@4.29.0
+
 ## 4.28.0
 
 ### Patch Changes
