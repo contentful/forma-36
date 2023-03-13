@@ -1,4 +1,4 @@
-import { css, cx } from 'emotion';
+import { cx } from 'emotion';
 import React, { forwardRef } from 'react';
 import {
   Box,
@@ -6,9 +6,12 @@ import {
   type PropsWithHTMLElement,
   type ExpandProps,
 } from '@contentful/f36-core';
-import tokens from '@contentful/f36-tokens';
 
-import { TableCellContext, contextOptions } from './';
+import {
+  TableCellContextProvider,
+  contextOptions,
+} from '../TableCell/TableCellContext';
+import { getTableHeadStyles } from './TableHead.styles';
 
 export type TableHeadInternalProps = CommonProps & {
   isSticky?: boolean;
@@ -36,23 +39,11 @@ export const TableHead = forwardRef<
     },
     forwardedRef,
   ) => {
-    const classNames = cx(
-      // For some reason Parcel doesn't build properly if we extract this to
-      // a variable 🤷
-      isSticky
-        ? css({
-            th: {
-              position: 'sticky',
-              top: 0,
-              zIndex: tokens.zIndexDefault,
-            },
-          })
-        : '',
-      className,
-    );
+    const styles = getTableHeadStyles();
+    const classNames = cx(isSticky && styles.sticky, className);
 
     return (
-      <TableCellContext.Provider
+      <TableCellContextProvider
         value={{ ...contextOptions.head, offsetTop: offsetTop || 0 }}
       >
         <Box
@@ -64,7 +55,7 @@ export const TableHead = forwardRef<
         >
           {children}
         </Box>
-      </TableCellContext.Provider>
+      </TableCellContextProvider>
     );
   },
 );

@@ -290,6 +290,10 @@
       "slug": "/utils/get-string-match/"
     },
     {
+      "title": "hexToRGBA",
+      "slug": "/utils/hexToRGBA/"
+    },
+    {
       "title": "Portal",
       "slug": "/utils/portal/"
     },
