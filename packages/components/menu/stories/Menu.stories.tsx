@@ -24,8 +24,9 @@ export const Basic: Story<MenuProps> = (args) => {
       <Menu.List>
         <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
         <Menu.Item>Embed existing entry</Menu.Item>
-        <Menu.Item>Create and embed existing entry</Menu.Item>
+        <Menu.Item isActive>Create and embed existing entry</Menu.Item>
         <Menu.Divider />
+        <Menu.SectionTitle>Help</Menu.SectionTitle>
         <Menu.Item as="a" href="https://contentful.com" target="_blank">
           About Contentful
         </Menu.Item>
@@ -81,10 +82,10 @@ export const WithDisabledItems: Story<MenuProps> = (args) => {
         <Menu.Item>Item 1</Menu.Item>
         <Menu.Item>Item 2</Menu.Item>
         <Menu.Item>Item 3</Menu.Item>
-        <Menu.Item disabled>Item 4 (disabled)</Menu.Item>
+        <Menu.Item isDisabled>Item 4 (disabled)</Menu.Item>
         <Menu.Item>Item 5</Menu.Item>
         <Menu.Item>Item 6</Menu.Item>
-        <Menu.Item disabled>Item 7 (disabled)</Menu.Item>
+        <Menu.Item isDisabled>Item 7 (disabled)</Menu.Item>
         <Menu.Item>Item 8</Menu.Item>
       </Menu.List>
     </Menu>
