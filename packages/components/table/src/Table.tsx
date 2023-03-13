@@ -1,4 +1,4 @@
-import { cx, css } from 'emotion';
+import { cx } from 'emotion';
 import React, { forwardRef } from 'react';
 import {
   Box,
@@ -6,34 +6,23 @@ import {
   type PropsWithHTMLElement,
   type ExpandProps,
 } from '@contentful/f36-core';
-import tokens from '@contentful/f36-tokens';
+import type * as CSS from 'csstype';
 
-const getStyles = () => {
-  return {
-    inline: css({
-      borderRadius: tokens.borderRadiusMedium,
-      boxShadow: `0 0 0 1px ${tokens.gray200}`,
-      'th:first-child': {
-        borderTopLeftRadius: tokens.borderRadiusMedium,
-      },
-      'th:last-child': {
-        borderTopRightRadius: tokens.borderRadiusMedium,
-      },
-      'tr:last-child td:first-child': {
-        borderBottomLeftRadius: tokens.borderRadiusMedium,
-      },
-      'tr:last-child td:last-child': {
-        borderBottomRightRadius: tokens.borderRadiusMedium,
-      },
-    }),
-    root: css({
-      width: '100%',
-    }),
-  };
-};
+import { getTableStyles } from './Table.styles';
+import { TableContextProvider } from './tableContext';
 
 export type TableInternalProps = CommonProps & {
+  /**
+   * @default 'inline'
+   */
   layout?: 'inline' | 'embedded';
+  /**
+   * @default 'top'
+   */
+  verticalAlign?: Extract<
+    CSS.Property.VerticalAlign,
+    'baseline' | 'bottom' | 'middle' | 'top'
+  >;
 };
 
 export type TableProps = PropsWithHTMLElement<TableInternalProps, 'table'>;
@@ -45,11 +34,13 @@ export const Table = forwardRef<HTMLTableElement, ExpandProps<TableProps>>(
       className,
       layout = 'inline',
       testId = 'cf-ui-table',
+      verticalAlign = 'top',
       ...otherProps
     },
     forwardedRef,
   ) => {
-    const styles = getStyles();
+    const styles = getTableStyles();
+
     return (
       <Box
         cellPadding="0"
@@ -58,16 +49,12 @@ export const Table = forwardRef<HTMLTableElement, ExpandProps<TableProps>>(
         as="table"
         display="table"
         ref={forwardedRef}
-        className={cx(
-          styles.root,
-          {
-            [styles.inline]: layout === 'inline',
-          },
-          className,
-        )}
+        className={cx(styles.root, styles[layout], className)}
         testId={testId}
       >
-        {children}
+        <TableContextProvider value={{ verticalAlign }}>
+          {children}
+        </TableContextProvider>
       </Box>
     );
   },

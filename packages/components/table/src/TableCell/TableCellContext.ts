@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useContext } from 'react';
 
 export type TableCellContextOption = {
   name: 'body' | 'head';
@@ -15,3 +15,11 @@ export const contextOptions: {
 };
 
 export const TableCellContext = createContext(contextOptions.body);
+
+export const useTableCellContext = () => {
+  const context = useContext(TableCellContext);
+
+  return context;
+};
+
+export const TableCellContextProvider = TableCellContext.Provider;
