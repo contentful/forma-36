@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.30.0
+
+### Minor Changes
+
+- [#2418](https://github.com/contentful/forma-36/pull/2418) [`53695c2d`](https://github.com/contentful/forma-36/commit/53695c2dee758cd337c38a34b4dc6644532220f8) Thanks [@bgutsol](https://github.com/bgutsol)! - - Add new `verticalAlign` prop to control vertical alignment of table cell content.
+  - Table styles minor update.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.30.0
+  - @contentful/f36-typography@4.30.0
+
 ## 4.29.0
 
 ### Patch Changes
