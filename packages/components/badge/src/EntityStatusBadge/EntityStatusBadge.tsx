@@ -1,5 +1,4 @@
 import React from 'react';
-import { css } from 'emotion';
 import type { EntityStatus, ExpandProps } from '@contentful/f36-core';
 
 import { Badge, type BadgeProps } from '../Badge/Badge';
