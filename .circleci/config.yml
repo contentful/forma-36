@@ -101,7 +101,7 @@ jobs:
           command: npm run-script storybook:build
       - run:
           name: Chromatic
-          command: npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes --storybook-build-dir ./dist-storybook
+          command: npx chromatic --only-changed  --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes --storybook-build-dir ./dist-storybook
 
   release:
     docker:

@@ -18,7 +18,7 @@
     "prettier": "prettier --write '**/*.{jsx,js,ts,tsx,md,mdx}'",
     "prettier:check": "prettier --check '**/*.{jsx,js,ts,tsx,md,mdx}'",
     "storybook": "start-storybook -p 9001 -c ./scripts/.storybook",
-    "storybook:build": "build-storybook -c ./scripts/.storybook -o dist-storybook",
+    "storybook:build": "build-storybook -c ./scripts/.storybook -o dist-storybook --webpack-stats-json",
     "test": "jest",
     "tsc": "tsc --noEmit",
     "tsc:watch": "tsc --noEmit --watch",
