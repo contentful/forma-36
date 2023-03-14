@@ -8,6 +8,18 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 14-03-2023
+
+**F36 Menu** `v4.29.0`
+
+- feat(menu): new look and feel
+  feat(menu-item): add `isActive` and `isDisabled` props
+
+**F36 Table** `v4.30.0`
+
+- Add new `verticalAlign` prop to control vertical alignment of table cell content.
+- Table styles minor update.
+
 ## 11-03-2023
 
 **F36 Badge** `v4.28.0`
