@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.25.0
+
+### Minor Changes
+
+- [#2427](https://github.com/contentful/forma-36/pull/2427) [`c7255a88`](https://github.com/contentful/forma-36/commit/c7255a88696dc99addc596cc62a2f00ab1575793) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(environment): update icon
+  feat(environment-alias): update icon
+  feat(sort-ascending): new icon
+  feat(sort-descending): new icon
+  feat(sort): new icon
+
 ## 4.24.0
 
 ### Minor Changes
