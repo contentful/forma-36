@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.30.1
+
+### Patch Changes
+
+- [#2432](https://github.com/contentful/forma-36/pull/2432) [`e3b2518a`](https://github.com/contentful/forma-36/commit/e3b2518a6c292ec51b57bf8a36a374f989a24f44) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(badge): fix letter case
+  feat(entity-status-badge): fix letter case
+- Updated dependencies []:
+  - @contentful/f36-core@4.30.1
+
 ## 4.30.0
 
 ### Patch Changes

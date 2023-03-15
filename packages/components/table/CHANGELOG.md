@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.30.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.30.1
+  - @contentful/f36-typography@4.30.1
+
 ## 4.30.0
 
 ### Minor Changes
