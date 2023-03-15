@@ -1,5 +1,4 @@
 import React from 'react';
-import { css } from 'emotion';
 import type { EntityStatus, ExpandProps } from '@contentful/f36-core';
 
 import { Badge, type BadgeProps } from '../Badge/Badge';
@@ -19,26 +18,15 @@ export interface EntityStatusBadgeProps
   entityStatus: EntityStatus;
 }
 
-const getStyle = () => ({
-  capitalizeStatus: css({ textTransform: 'capitalize' }),
-});
-
 function EntityStatusBadge(
   props: EntityStatusBadgeProps,
   ref: React.Ref<HTMLDivElement>,
 ) {
   const { entityStatus, size = 'default', ...otherProps } = props;
-  const styles = getStyle();
 
   const variant = statusMap[entityStatus];
   return (
-    <Badge
-      {...otherProps}
-      size={size}
-      variant={variant}
-      ref={ref}
-      className={styles.capitalizeStatus}
-    >
+    <Badge {...otherProps} size={size} variant={variant} ref={ref}>
       {entityStatus}
     </Badge>
   );

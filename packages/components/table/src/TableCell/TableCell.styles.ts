@@ -13,6 +13,7 @@ export const getTableCellStyles = ({
   verticalAlign?: TableProps['verticalAlign'];
 } & Pick<TableCellInternalProps, 'sorting' | 'align'>) => ({
   container: css({
+    backgroundColor: tokens.colorWhite,
     borderBottom: `1px solid ${tokens.gray200}`,
     padding: tokens.spacingS,
     textAlign: align,

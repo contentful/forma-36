@@ -79,5 +79,9 @@ export const getBadgeStyles = () => ({
   badgeText: css({
     color: 'currentcolor',
     lineHeight: 'inherit',
+    textTransform: 'lowercase',
+    '::first-letter': {
+      textTransform: 'uppercase',
+    },
   }),
 });
