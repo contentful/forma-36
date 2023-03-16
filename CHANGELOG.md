@@ -8,6 +8,17 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 16-03-2023
+
+**F36 Badge** `v4.30.1`
+
+- feat(badge): fix letter case
+  feat(entity-status-badge): fix letter case
+
+**F36 Table** `v4.30.2`
+
+- fix(table-cell): set background colour
+
 ## 15-03-2023
 
 **F36 Icons** `v4.25.0`
