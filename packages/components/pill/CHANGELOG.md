@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.30.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.30.3
+  - @contentful/f36-core@4.30.3
+  - @contentful/f36-tooltip@4.30.3
+
 ## 4.30.2
 
 ### Patch Changes

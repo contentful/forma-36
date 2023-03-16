@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.30.3
+
+### Patch Changes
+
+- [#2435](https://github.com/contentful/forma-36/pull/2435) [`e85b5f9d`](https://github.com/contentful/forma-36/commit/e85b5f9daa6771fe01891e895d1a987aed2ac831) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(copy-button): copy in environments without clipboard API permission
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.30.3
+  - @contentful/f36-core@4.30.3
+  - @contentful/f36-tooltip@4.30.3
+
 ## 4.30.2
 
 ### Patch Changes
