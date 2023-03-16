@@ -101,8 +101,7 @@ function _CopyButton(
 
       // @ts-expect-error -- The return type of `execCommand` can also be string
       if (result === 'unsuccessful') {
-        // eslint-disable-next-line no-console
-        console.error('Failed to copy text.');
+        throw new Error('Unable to copy value', { cause: result });
       }
       input.remove();
 
