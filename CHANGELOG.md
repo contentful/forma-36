@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 17-03-2023
+
+**F36 Copybutton** `v4.30.3`
+
+- fix(copy-button): copy in environments without clipboard API permission
+
 ## 16-03-2023
 
 **F36 Badge** `v4.30.1`
