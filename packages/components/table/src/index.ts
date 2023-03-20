@@ -2,7 +2,7 @@ export { Table } from './CompoundTable';
 export type { TableProps } from './Table';
 export { TableBody } from './TableBody/TableBody';
 export type { TableBodyProps } from './TableBody/TableBody';
-export { TableCell } from './TableCell/TableCell';
+export { TableCell, TableCellSorting } from './TableCell/TableCell';
 export type { TableCellProps } from './TableCell/TableCell';
 export {
   contextOptions,

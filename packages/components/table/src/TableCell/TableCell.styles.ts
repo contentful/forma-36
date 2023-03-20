@@ -1,22 +1,29 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { TableCellInternalProps } from './TableCell';
-import { TableProps } from '../Table';
+import { type TableCellInternalProps } from './TableCell';
+import { type TableProps } from '../Table';
+
+type GetTableCellStylesArguments = {
+  align: TableCellInternalProps['align'];
+  isSortable?: TableCellInternalProps['isSortable'];
+  isSorted: TableCellInternalProps['isSorted'];
+  isTableHead: boolean;
+  verticalAlign?: TableProps['verticalAlign'];
+};
 
 export const getTableCellStyles = ({
-  isTableHead,
-  sorting,
   align,
+  isSortable,
+  isSorted,
+  isTableHead,
   verticalAlign,
-}: {
-  isTableHead?: boolean;
-  verticalAlign?: TableProps['verticalAlign'];
-} & Pick<TableCellInternalProps, 'sorting' | 'align'>) => ({
+}: GetTableCellStylesArguments) => ({
   container: css({
     borderBottom: `1px solid ${tokens.gray200}`,
+    cursor: isSortable ? 'pointer' : 'initial',
     padding: tokens.spacingS,
     textAlign: align,
-    color: sorting ? tokens.gray900 : tokens.gray700,
+    color: isSorted ? tokens.gray900 : tokens.gray700,
     fontWeight: isTableHead ? tokens.fontWeightMedium : tokens.fontWeightNormal,
     verticalAlign,
   }),
