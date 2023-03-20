@@ -26,5 +26,20 @@ export const getTableCellStyles = ({
     color: isSorted ? tokens.gray900 : tokens.gray700,
     fontWeight: isTableHead ? tokens.fontWeightMedium : tokens.fontWeightNormal,
     verticalAlign,
+
+    '&:focus': {
+      backgroundColor: tokens.gray100,
+      boxShadow: isSortable ? tokens.glowPrimary : 'none',
+      outline: 0,
+    },
+
+    '&:focus:not(:focus-visible)': {
+      backgroundColor: 'unset',
+      boxShadow: 'unset',
+    },
+    '&:focus-visible': {
+      backgroundColor: tokens.gray100,
+      boxShadow: isSortable ? tokens.glowPrimary : 'none',
+    },
   }),
 });

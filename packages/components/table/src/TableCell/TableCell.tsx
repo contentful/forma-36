@@ -70,6 +70,16 @@ function _TableCell(
 
   const BaseComponent = isTableHead ? Caption : Text;
 
+  const sortableProps = isSortable
+    ? {
+        onBlur: () => setShowSorting(false),
+        onFocus: () => setShowSorting(true),
+        onMouseEnter: () => setShowSorting(true),
+        onMouseLeave: () => setShowSorting(false),
+        tabIndex: 0,
+      }
+    : {};
+
   const Sorting = useCallback(
     (props: IconProps) => {
       switch (isSorted) {
@@ -89,12 +99,9 @@ function _TableCell(
   return (
     <BaseComponent
       {...otherProps}
+      {...sortableProps}
       as={as}
       className={cx(styles.container, className)}
-      onBlur={isSortable ? () => setShowSorting(false) : undefined}
-      onFocus={isSortable ? () => setShowSorting(true) : undefined}
-      onMouseEnter={isSortable ? () => setShowSorting(true) : undefined}
-      onMouseLeave={isSortable ? () => setShowSorting(false) : undefined}
       ref={forwardedRef}
       style={{
         ...otherProps.style,
