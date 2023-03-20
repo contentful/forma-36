@@ -105,9 +105,9 @@ function _TableCell(
       {children}
       {showSorting || isSorted ? (
         isSorted ? (
-          <Sorting variant="secondary" />
+          <Sorting size="tiny" variant="secondary" />
         ) : (
-          <SortIcon variant="secondary" />
+          <SortIcon size="tiny" variant="secondary" />
         )
       ) : null}
     </BaseComponent>
