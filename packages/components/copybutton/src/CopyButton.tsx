@@ -89,7 +89,22 @@ function _CopyButton(
     try {
       await window.navigator.clipboard.writeText(value);
     } catch (error) {
-      console.error(error);
+      // Chrome requires specific permissions on iframes using the async clipboard
+      // API. We can't control that so we fall back to this
+      const input = document.createElement('input');
+      input.style.display = 'none';
+      document.body.appendChild(input);
+      input.value = value;
+      input.focus();
+      input.select();
+      const result = document.execCommand('copy');
+
+      // @ts-expect-error -- The return type of `execCommand` can also be string
+      if (result === 'unsuccessful') {
+        throw new Error('Unable to copy value', { cause: result });
+      }
+      input.remove();
+
       return;
     }
 

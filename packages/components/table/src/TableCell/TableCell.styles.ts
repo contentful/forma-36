@@ -19,6 +19,7 @@ export const getTableCellStyles = ({
   verticalAlign,
 }: GetTableCellStylesArguments) => ({
   container: css({
+    backgroundColor: tokens.colorWhite,
     borderBottom: `1px solid ${tokens.gray200}`,
     cursor: isSortable ? 'pointer' : 'initial',
     padding: tokens.spacingS,
