@@ -61,9 +61,17 @@ As a rule of thumb, `fullWidth` modals shouldn’t be used frequently. Use them 
 
 ### Setting initial focus
 
-When the modal opens, focus is automatically set to the close button but you have a possibility to set an initial focus to a specific element of your modal dialog.
+When the modal opens, focus is automatically set to the close button, but you have the possibility to set an initial focus to a specific element of your modal dialog.
 
-```jsx file=../examples/ModalInitialFocusExample.tsx
+Either by using the `initialFocusRef` prop:
+
+```jsx file=../examples/ModalInitialFocusRefExample.tsx
+
+```
+
+... or by setting the `autoFocus` attribute to an interactive element, such as an `input` or `button`:
+
+```jsx file=../examples/ModalAutoFocusExample.tsx
 
 ```
 
