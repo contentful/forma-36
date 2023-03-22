@@ -8,7 +8,6 @@ import {
 } from '@contentful/f36-core';
 import { Text, Caption, type TextProps } from '@contentful/f36-typography';
 import {
-  IconProps,
   SortAscendingIcon,
   SortDescendingIcon,
   SortIcon,
@@ -23,11 +22,15 @@ export const sortingDirections = {
   desc: 'desc',
 };
 
-// export type TableCellSorting = keyof typeof sortingDirections | boolean;
 export enum TableCellSorting {
   ascending = 'ascending',
   descending = 'descending',
 }
+
+const SortingIconMap = {
+  [TableCellSorting.ascending]: SortAscendingIcon,
+  [TableCellSorting.descending]: SortDescendingIcon,
+};
 
 export type TableCellInternalProps = CommonProps & {
   align?: 'center' | 'left' | 'right';
@@ -58,6 +61,7 @@ function _TableCell(
   const [showSorting, setShowSorting] = useState(false);
   const { as, name: context, offsetTop } = useTableCellContext();
   const { verticalAlign } = useTableContext();
+  const SortingIcon = SortingIconMap[isSorted];
 
   const isTableHead = context === 'head';
   const styles = getTableCellStyles({
@@ -80,22 +84,6 @@ function _TableCell(
       }
     : {};
 
-  const Sorting = useCallback(
-    (props: IconProps) => {
-      switch (isSorted) {
-        case TableCellSorting.ascending: {
-          return <SortAscendingIcon {...props} />;
-        }
-        case TableCellSorting.descending: {
-          return <SortDescendingIcon {...props} />;
-        }
-        default:
-          return null;
-      }
-    },
-    [isSorted],
-  );
-
   return (
     <BaseComponent
       {...otherProps}
@@ -112,7 +100,7 @@ function _TableCell(
       {children}
       {showSorting || isSorted ? (
         isSorted ? (
-          <Sorting size="tiny" variant="secondary" />
+          <SortingIcon size="tiny" variant="secondary" />
         ) : (
           <SortIcon size="tiny" variant="secondary" />
         )

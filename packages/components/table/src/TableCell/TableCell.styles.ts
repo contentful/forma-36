@@ -32,7 +32,6 @@ export const getTableCellStyles = ({
       boxShadow: isSortable ? tokens.glowPrimary : 'none',
       outline: 0,
     },
-
     '&:focus:not(:focus-visible)': {
       backgroundColor: 'unset',
       boxShadow: 'unset',
