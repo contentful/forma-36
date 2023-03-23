@@ -1,5 +1,5 @@
 import { cx } from 'emotion';
-import React, { forwardRef, useCallback, useMemo, useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 import {
   type CommonProps,
   type PropsWithHTMLElement,
@@ -80,7 +80,6 @@ function _TableCell(
         onFocus: () => setShowSorting(true),
         onMouseEnter: () => setShowSorting(true),
         onMouseLeave: () => setShowSorting(false),
-        tabIndex: 0,
       }
     : {};
 
@@ -97,14 +96,30 @@ function _TableCell(
       }}
       testId={testId}
     >
-      {children}
-      {showSorting || isSorted ? (
-        isSorted ? (
-          <SortingIcon size="tiny" variant="secondary" />
-        ) : (
-          <SortIcon size="tiny" variant="secondary" />
-        )
-      ) : null}
+      {isSortable ? (
+        <button
+          aria-label={`Sort ${
+            isSorted === TableCellSorting.ascending
+              ? TableCellSorting.descending
+              : TableCellSorting.ascending
+          } by ${children}`}
+          className={styles.button}
+          type="button"
+        >
+          {children}
+          {isSorted ? (
+            <SortingIcon size="tiny" variant="secondary" />
+          ) : (
+            <SortIcon
+              aria-hidden={!showSorting}
+              size="tiny"
+              variant="secondary"
+            />
+          )}
+        </button>
+      ) : (
+        children
+      )}
     </BaseComponent>
   );
 }

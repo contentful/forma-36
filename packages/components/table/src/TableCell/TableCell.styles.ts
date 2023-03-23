@@ -18,11 +18,18 @@ export const getTableCellStyles = ({
   isTableHead,
   verticalAlign,
 }: GetTableCellStylesArguments) => ({
+  button: css({
+    appearance: 'none',
+    background: 'none',
+    border: 0,
+    cursor: 'pointer',
+    outline: 0,
+    padding: tokens.spacingS,
+  }),
   container: css({
     backgroundColor: tokens.colorWhite,
     borderBottom: `1px solid ${tokens.gray200}`,
-    cursor: isSortable ? 'pointer' : 'initial',
-    padding: tokens.spacingS,
+    padding: isSortable ? 0 : tokens.spacingS,
     textAlign: align,
     color: isSorted ? tokens.gray900 : tokens.gray700,
     fontWeight: isTableHead ? tokens.fontWeightMedium : tokens.fontWeightNormal,
@@ -30,7 +37,6 @@ export const getTableCellStyles = ({
 
     '&:focus': {
       backgroundColor: tokens.gray100,
-      boxShadow: isSortable ? tokens.glowPrimary : 'none',
       outline: 0,
     },
     '&:focus:not(:focus-visible)': {
@@ -39,7 +45,6 @@ export const getTableCellStyles = ({
     },
     '&:focus-visible': {
       backgroundColor: tokens.gray100,
-      boxShadow: isSortable ? tokens.glowPrimary : 'none',
     },
   }),
 });
