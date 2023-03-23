@@ -6,17 +6,14 @@ import {
   TextInput,
 } from '@contentful/f36-components';
 
-export default function ModalInitialFocusExample() {
+export default function ModalInitialFocusRefExample() {
   const [isShown, setShown] = useState(false);
-  const [contentTypeName, setContentTypeName] = useState('');
   const inputRef = useRef();
   return (
     <>
       <Button onClick={() => setShown(true)}>Create new content type</Button>
       <Modal
         onClose={() => setShown(false)}
-        shouldCloseOnOverlayClick
-        shouldCloseOnEscapePress
         isShown={isShown}
         initialFocusRef={inputRef}
       >
@@ -32,11 +29,7 @@ export default function ModalInitialFocusExample() {
                 <TextInput
                   ref={inputRef}
                   maxLength={20}
-                  value={contentTypeName}
                   placeholder="For example Product, Blog Post, Author"
-                  onChange={(e) => {
-                    setContentTypeName(e.target.value);
-                  }}
                 />
               </FormControl>
             </Modal.Content>

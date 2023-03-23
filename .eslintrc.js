@@ -76,6 +76,13 @@ module.exports = {
     'rulesdir/emotion-in-function': 'error',
   },
   overrides: [
+    // allow specific rules in example files so there are no eslint-disable comments in code playgrounds
+    {
+      files: ['**/examples/**/*'],
+      rules: {
+        'jsx-a11y/no-autofocus': 'off',
+      },
+    },
     {
       files: ['**/*.stories.*'],
       rules: {
