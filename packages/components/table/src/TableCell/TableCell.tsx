@@ -76,6 +76,11 @@ function _TableCell(
 
   const sortableProps = isSortable
     ? {
+        'aria-sort': (isSorted ?? 'none') as
+          | 'none'
+          | 'ascending'
+          | 'descending'
+          | 'other',
         onBlur: () => setShowSorting(false),
         onFocus: () => setShowSorting(true),
         onMouseEnter: () => setShowSorting(true),
@@ -112,6 +117,7 @@ function _TableCell(
           ) : (
             <SortIcon
               aria-hidden={!showSorting}
+              className={styles.sortIcon(showSorting)}
               size="tiny"
               variant="secondary"
             />

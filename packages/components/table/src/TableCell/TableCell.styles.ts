@@ -22,7 +22,10 @@ export const getTableCellStyles = ({
     appearance: 'none',
     background: 'none',
     border: 0,
+    color: isSorted ? tokens.gray900 : 'inherit',
     cursor: 'pointer',
+    display: 'inline-flex',
+    alignItems: 'flex-start',
     outline: 0,
     padding: tokens.spacingS,
   }),
@@ -31,7 +34,7 @@ export const getTableCellStyles = ({
     borderBottom: `1px solid ${tokens.gray200}`,
     padding: isSortable ? 0 : tokens.spacingS,
     textAlign: align,
-    color: isSorted ? tokens.gray900 : tokens.gray700,
+    color: tokens.gray700,
     fontWeight: isTableHead ? tokens.fontWeightMedium : tokens.fontWeightNormal,
     verticalAlign,
 
@@ -47,4 +50,9 @@ export const getTableCellStyles = ({
       backgroundColor: tokens.gray100,
     },
   }),
+  sortIcon: (showSorting: boolean) =>
+    css({
+      opacity: 0.2,
+      visibility: showSorting ? 'visible' : 'hidden',
+    }),
 });
