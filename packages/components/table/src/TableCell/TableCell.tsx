@@ -62,7 +62,6 @@ function _TableCell(
   const { as, name: context, offsetTop } = useTableCellContext();
   const { verticalAlign } = useTableContext();
   const SortingIcon = SortingIconMap[isSorted];
-
   const isTableHead = context === 'head';
   const styles = getTableCellStyles({
     isSortable: isTableHead ? isSortable : undefined,
@@ -71,9 +70,7 @@ function _TableCell(
     align,
     verticalAlign,
   });
-
   const BaseComponent = isTableHead ? Caption : Text;
-
   const sortableProps = isSortable
     ? {
         'aria-sort': (isSorted ?? 'none') as
