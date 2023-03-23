@@ -9,7 +9,7 @@ import {
   SectionHeading,
 } from '@contentful/f36-components';
 
-import { Table } from '../src';
+import { Table, TableCellSorting } from '../src';
 import tokens from '@contentful/f36-tokens';
 
 export default {
@@ -124,10 +124,12 @@ export const Overview: Story = () => (
       <Table>
         <Table.Head>
           <Table.Row>
-            <Table.Cell>Name</Table.Cell>
-            <Table.Cell>Email</Table.Cell>
-            <Table.Cell>Organization role</Table.Cell>
-            <Table.Cell>Last activity</Table.Cell>
+            <Table.Cell isSortable>Name</Table.Cell>
+            <Table.Cell isSortable>Email</Table.Cell>
+            <Table.Cell isSortable>Organization role</Table.Cell>
+            <Table.Cell isSortable isSorted={TableCellSorting.descending}>
+              Last activity
+            </Table.Cell>
           </Table.Row>
         </Table.Head>
         <Table.Body>
@@ -161,10 +163,12 @@ export const Overview: Story = () => (
       <Table layout="embedded">
         <Table.Head>
           <Table.Row>
-            <Table.Cell>Name</Table.Cell>
-            <Table.Cell>Email</Table.Cell>
-            <Table.Cell>Organization role</Table.Cell>
-            <Table.Cell>Last activity</Table.Cell>
+            <Table.Cell isSortable>Name</Table.Cell>
+            <Table.Cell isSortable>Email</Table.Cell>
+            <Table.Cell isSortable>Organization role</Table.Cell>
+            <Table.Cell isSortable isSorted={TableCellSorting.ascending}>
+              Last activity
+            </Table.Cell>
           </Table.Row>
         </Table.Head>
         <Table.Body>

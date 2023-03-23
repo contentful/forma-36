@@ -28,6 +28,19 @@ export const getTableCellStyles = ({
     alignItems: 'flex-start',
     outline: 0,
     padding: tokens.spacingS,
+
+    '&:focus': {
+      backgroundColor: tokens.gray100,
+      boxShadow: tokens.glowPrimary,
+    },
+    '&:focus:not(:focus-visible)': {
+      backgroundColor: 'unset',
+      boxShadow: 'unset',
+    },
+    '&:focus-visible': {
+      backgroundColor: tokens.gray100,
+      boxShadow: tokens.glowPrimary,
+    },
   }),
   container: css({
     backgroundColor: tokens.colorWhite,
@@ -37,18 +50,6 @@ export const getTableCellStyles = ({
     color: tokens.gray700,
     fontWeight: isTableHead ? tokens.fontWeightMedium : tokens.fontWeightNormal,
     verticalAlign,
-
-    '&:focus': {
-      backgroundColor: tokens.gray100,
-      outline: 0,
-    },
-    '&:focus:not(:focus-visible)': {
-      backgroundColor: 'unset',
-      boxShadow: 'unset',
-    },
-    '&:focus-visible': {
-      backgroundColor: tokens.gray100,
-    },
   }),
   sortIcon: (showSorting: boolean) =>
     css({

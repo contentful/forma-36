@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { Table } from '.';
 
@@ -32,7 +32,7 @@ describe('Table', () => {
 
   describe('Table.Head', () => {
     it('renders the component as sticky', () => {
-      const { container, getByRole } = render(
+      const { container } = render(
         <Table>
           <Table.Head isSticky>
             <Table.Row>
@@ -42,7 +42,7 @@ describe('Table', () => {
         </Table>,
       );
 
-      const th = getByRole('columnheader');
+      const th = screen.getByRole('columnheader');
       expect(container.firstChild).toContainElement(th);
       expect(th).toHaveStyle({
         position: 'sticky',
@@ -50,7 +50,7 @@ describe('Table', () => {
     });
 
     it('renders the component as sticky and with an offset Top', () => {
-      const { container, getByRole } = render(
+      const { container } = render(
         <Table>
           <Table.Head isSticky offsetTop="20px">
             <Table.Row>
@@ -60,11 +60,28 @@ describe('Table', () => {
         </Table>,
       );
 
-      const th = getByRole('columnheader');
+      const th = screen.getByRole('columnheader');
       expect(container.firstChild).toContainElement(th);
       expect(th).toHaveStyle({
         top: '20px',
       });
+    });
+  });
+
+  describe('Table.Cell', () => {
+    it('can render as sortable', async () => {
+      render(
+        <Table>
+          <Table.Head>
+            <Table.Row>
+              <Table.Cell isSortable>test</Table.Cell>
+            </Table.Row>
+          </Table.Head>
+        </Table>,
+      );
+
+      const th = screen.getByRole('columnheader');
+      expect(th).toHaveAttribute('aria-sort', 'none');
     });
   });
 });
