@@ -52,7 +52,7 @@ export const getTableCellStyles = ({
   }),
   sortIcon: (showSorting: boolean) =>
     css({
-      opacity: 0.2,
-      visibility: showSorting ? 'visible' : 'hidden',
+      opacity: showSorting ? 0.2 : 0,
+      transition: `opacity ${tokens.transitionEasingCubicBezier} ${tokens.transitionDurationDefault}`,
     }),
 });
