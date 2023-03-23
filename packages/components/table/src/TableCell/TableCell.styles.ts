@@ -19,13 +19,14 @@ export const getTableCellStyles = ({
   verticalAlign,
 }: GetTableCellStylesArguments) => ({
   button: css({
+    alignItems: 'flex-start',
     appearance: 'none',
     background: 'none',
     border: 0,
     color: isSorted ? tokens.gray900 : 'inherit',
     cursor: 'pointer',
     display: 'inline-flex',
-    alignItems: 'flex-start',
+    gap: tokens.spacing2Xs,
     outline: 0,
     padding: tokens.spacingS,
 
@@ -53,7 +54,8 @@ export const getTableCellStyles = ({
   }),
   sortIcon: (showSorting: boolean) =>
     css({
-      opacity: showSorting ? 0.2 : 0,
+      fill: tokens.gray400,
+      opacity: showSorting ? 1 : 0,
       transition: `opacity ${tokens.transitionEasingCubicBezier} ${tokens.transitionDurationDefault}`,
     }),
 });
