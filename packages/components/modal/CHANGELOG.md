@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.31.0
+
+### Minor Changes
+
+- [#2438](https://github.com/contentful/forma-36/pull/2438) [`6b6490de`](https://github.com/contentful/forma-36/commit/6b6490de0a72988dc4e19597696a26892d45e0f5) Thanks [@maxcheremisin](https://github.com/maxcheremisin)! - Focussing child elements should not use an arbitrary timeout
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.31.0
+  - @contentful/f36-core@4.31.0
+  - @contentful/f36-typography@4.31.0
+
 ## 4.30.3
 
 ### Patch Changes
