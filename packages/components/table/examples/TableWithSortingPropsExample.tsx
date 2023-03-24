@@ -8,12 +8,12 @@ export default function TableWithSorting() {
       name: 'Category',
       description:
         'Categories can be applied to Courses and Lessons. Assigning Multiple categories is also possible.',
-      updatedAt: 'Nov 15, 2021',
+      updatedAt: 'Nov 1, 2021',
       status: 'published',
     },
     {
       id: '2',
-      updatedAt: 'Nov 15, 2021',
+      updatedAt: 'Nov 11, 2021',
       status: 'draft',
     },
     {
@@ -21,7 +21,7 @@ export default function TableWithSorting() {
       name: 'Layout',
       description:
         'A page consisting of freely configurable and rearrangeable content modules.',
-      updatedAt: 'Nov 15, 2021',
+      updatedAt: 'Nov 18, 2021',
       status: 'published',
     },
   ];
@@ -29,18 +29,31 @@ export default function TableWithSorting() {
   const [sorting, setSorting] = useState(undefined);
   const [sortedRows, setSortedRows] = useState(contentTypes);
 
-  const handleSort = (direction) => {
+  const handleSort = ({ column }) => {
+    const direction =
+      sorting && sorting.column === column
+        ? sorting.direction === TableCellSorting.Ascending
+          ? TableCellSorting.Descending
+          : TableCellSorting.Ascending
+        : TableCellSorting.Ascending;
+
     setSortedRows((rows) => {
-      const sorted = rows.sort((a, b) => {
-        const name = a.name || 'Untitled';
-        return name.localeCompare(b.name);
+      const sorted = rows.sort((rowA, rowB) => {
+        let a = rowA[column];
+        const b = rowB[column];
+
+        if (column === 'name') {
+          a = rowA[column] || 'Untitled';
+        }
+
+        return a.localeCompare(b);
       });
 
       return direction === TableCellSorting.Ascending
         ? sorted
         : sorted.reverse();
     });
-    setSorting(direction);
+    setSorting({ column, direction });
   };
 
   return (
@@ -49,19 +62,25 @@ export default function TableWithSorting() {
         <Table.Row>
           <Table.Cell
             isSortable
-            isSorted={sorting}
-            onClick={() => {
-              const direction =
-                sorting === TableCellSorting.Ascending
-                  ? TableCellSorting.Descending
-                  : TableCellSorting.Ascending;
-              handleSort(direction);
-            }}
+            isSorted={
+              sorting && sorting.column === 'name' ? sorting.direction : false
+            }
+            onClick={() => handleSort({ column: 'name' })}
           >
             Name
           </Table.Cell>
           <Table.Cell>Description</Table.Cell>
-          <Table.Cell>Updated</Table.Cell>
+          <Table.Cell
+            isSortable
+            isSorted={
+              sorting && sorting.column === 'updatedAt'
+                ? sorting.direction
+                : false
+            }
+            onClick={() => handleSort({ column: 'updatedAt' })}
+          >
+            Updated
+          </Table.Cell>
           <Table.Cell>Status</Table.Cell>
         </Table.Row>
       </Table.Head>
