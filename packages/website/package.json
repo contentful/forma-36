@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "^1.17.0",
-    "@contentful/f36-components": "^4.31.0",
+    "@contentful/f36-components": "^4.32.0",
     "@contentful/f36-docs-utils": "^4.0.2",
-    "@contentful/f36-icon": "^4.31.0",
+    "@contentful/f36-icon": "^4.32.0",
     "@contentful/f36-icons": "^4.25.0",
     "@contentful/f36-multiselect": "^4.20.11",
     "@contentful/f36-tokens": "^4.0.0",
