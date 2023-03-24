@@ -27,7 +27,7 @@ describe('getTextFromChildren', () => {
   it('ignores unsupported node types', () => {
     const node = (
       <div>
-        <img src="" />
+        <img alt="" src="" />
         {null}
       </div>
     );
