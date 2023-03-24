@@ -1,5 +1,5 @@
 import { cx } from 'emotion';
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useMemo, useState } from 'react';
 import {
   type CommonProps,
   type PropsWithHTMLElement,
@@ -16,20 +16,16 @@ import {
 import { useTableCellContext } from './TableCellContext';
 import { getTableCellStyles } from './TableCell.styles';
 import { useTableContext } from '../tableContext';
-
-export const sortingDirections = {
-  asc: 'asc',
-  desc: 'desc',
-};
+import { getTextFromChildren } from '@contentful/f36-utils/src';
 
 export enum TableCellSorting {
-  ascending = 'ascending',
-  descending = 'descending',
+  Ascending = 'ascending',
+  Descending = 'descending',
 }
 
 const SortingIconMap = {
-  [TableCellSorting.ascending]: SortAscendingIcon,
-  [TableCellSorting.descending]: SortDescendingIcon,
+  [TableCellSorting.Ascending]: SortAscendingIcon,
+  [TableCellSorting.Descending]: SortDescendingIcon,
 };
 
 export type TableCellInternalProps = CommonProps & {
@@ -84,6 +80,34 @@ function _TableCell(
         onMouseLeave: () => setShowSorting(false),
       }
     : {};
+  const columnName = useMemo(() => getTextFromChildren(children), [children]);
+  let tableCellContent = children;
+
+  if (isSortable) {
+    tableCellContent = (
+      <button
+        aria-label={`Sort ${
+          isSorted === TableCellSorting.Ascending
+            ? TableCellSorting.Descending
+            : TableCellSorting.Ascending
+        } by ${columnName}`}
+        className={styles.button}
+        type="button"
+      >
+        {children}
+        {isSorted ? (
+          <SortingIcon size="tiny" variant="secondary" />
+        ) : (
+          <SortIcon
+            aria-hidden={!showSorting}
+            className={styles.sortIcon(showSorting)}
+            size="tiny"
+            variant="secondary"
+          />
+        )}
+      </button>
+    );
+  }
 
   return (
     <BaseComponent
@@ -98,31 +122,7 @@ function _TableCell(
       }}
       testId={testId}
     >
-      {isSortable ? (
-        <button
-          aria-label={`Sort ${
-            isSorted === TableCellSorting.ascending
-              ? TableCellSorting.descending
-              : TableCellSorting.ascending
-          } by ${children}`}
-          className={styles.button}
-          type="button"
-        >
-          {children}
-          {isSorted ? (
-            <SortingIcon size="tiny" variant="secondary" />
-          ) : (
-            <SortIcon
-              aria-hidden={!showSorting}
-              className={styles.sortIcon(showSorting)}
-              size="tiny"
-              variant="secondary"
-            />
-          )}
-        </button>
-      ) : (
-        children
-      )}
+      {tableCellContent}
     </BaseComponent>
   );
 }

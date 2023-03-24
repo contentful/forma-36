@@ -52,9 +52,9 @@ export default function TableWithSorting() {
             isSorted={sorting}
             onClick={() => {
               const direction =
-                sorting === TableCellSorting.ascending
-                  ? TableCellSorting.descending
-                  : TableCellSorting.ascending;
+                sorting === TableCellSorting.Ascending
+                  ? TableCellSorting.Descending
+                  : TableCellSorting.Ascending;
               handleSort(direction);
             }}
           >
