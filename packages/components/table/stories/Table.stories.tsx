@@ -127,7 +127,7 @@ export const Overview: Story = () => (
             <Table.Cell isSortable>Name</Table.Cell>
             <Table.Cell isSortable>Email</Table.Cell>
             <Table.Cell isSortable>Organization role</Table.Cell>
-            <Table.Cell isSortable isSorted={TableCellSorting.descending}>
+            <Table.Cell isSortable isSorted={TableCellSorting.Descending}>
               Last activity
             </Table.Cell>
           </Table.Row>
@@ -166,7 +166,7 @@ export const Overview: Story = () => (
             <Table.Cell isSortable>Name</Table.Cell>
             <Table.Cell isSortable>Email</Table.Cell>
             <Table.Cell isSortable>Organization role</Table.Cell>
-            <Table.Cell isSortable isSorted={TableCellSorting.ascending}>
+            <Table.Cell isSortable isSorted={TableCellSorting.Ascending}>
               Last activity
             </Table.Cell>
           </Table.Row>
