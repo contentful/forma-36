@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 24-03-2023
+
+**F36 Modal** `v4.31.0`
+
+- Focussing child elements should not use an arbitrary timeout
+
 ## 17-03-2023
 
 **F36 Copybutton** `v4.30.3`

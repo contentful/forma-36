@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.32.0
+
+### Minor Changes
+
+- [#2439](https://github.com/contentful/forma-36/pull/2439) [`01a5f754`](https://github.com/contentful/forma-36/commit/01a5f7541c142fcdedb19b2a1f697244820c98ac) Thanks [@bgutsol](https://github.com/bgutsol)! - Improve Popover and Menu components onBlur logic. So when a user clicks outside of the document or uses some browser features, like search (with cmd/ctrl+F combination) the dropdown is not collapsing. It's also handy for developers if they want to debug dropdown content.
+
+### Patch Changes
+
+- Updated dependencies [[`01a5f754`](https://github.com/contentful/forma-36/commit/01a5f7541c142fcdedb19b2a1f697244820c98ac)]:
+  - @contentful/f36-popover@4.32.0
+  - @contentful/f36-core@4.32.0
+  - @contentful/f36-typography@4.32.0
+
 ## 4.31.0
 
 ### Patch Changes
