@@ -36,7 +36,7 @@ export default function TableWithSorting() {
         return name.localeCompare(b.name);
       });
 
-      return direction === TableCellSorting.ascending
+      return direction === TableCellSorting.Ascending
         ? sorted
         : sorted.reverse();
     });
