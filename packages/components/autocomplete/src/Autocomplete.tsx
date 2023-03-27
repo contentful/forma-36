@@ -137,6 +137,18 @@ export interface AutocompleteProps<ItemType>
    * Defaults to `false`
    */
   usePortal?: boolean;
+
+  /**
+   * Function called when the input is focused
+   *
+   * @param event
+   */
+  onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
+  /**
+   * Function called when the input is blurred
+   * @param event
+   */
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
 }
 
 function _Autocomplete<ItemType>(
@@ -153,6 +165,8 @@ function _Autocomplete<ItemType>(
     items,
     onInputValueChange,
     onSelectItem,
+    onFocus,
+    onBlur,
     renderItem,
     icon = <ChevronDownIcon variant="muted" />,
     itemToString = (item: ItemType) => item as unknown as string,
@@ -280,11 +294,13 @@ function _Autocomplete<ItemType>(
             <TextInput
               className={styles.inputField}
               {...inputProps}
-              onFocus={() => {
+              onFocus={(e) => {
+                onFocus?.(e as React.FocusEvent<HTMLInputElement>);
                 if (!isOpen) {
                   toggleMenu();
                 }
               }}
+              onBlur={onBlur}
               id={id}
               isInvalid={isInvalid}
               isDisabled={isDisabled}

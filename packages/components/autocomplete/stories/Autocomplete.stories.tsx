@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { action } from '@storybook/addon-actions';
 import type { Meta } from '@storybook/react/types-6-0';
 
 import { Stack } from '@contentful/f36-core';
@@ -74,10 +75,12 @@ export const Basic = (args: AutocompleteProps<string>) => {
       item.toLowerCase().includes(value.toLowerCase()),
     );
     setFilteredItems(newFilteredItems);
+    action('onInputValueChange')(value);
   };
 
   const handleSelectItem = (item: string) => {
     setSelectedFruit(item);
+    action('onSelectItem')(item);
   };
 
   return (
@@ -93,6 +96,8 @@ export const Basic = (args: AutocompleteProps<string>) => {
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
+        onFocus={(e) => action('onFocus')(e)}
+        onBlur={(e) => action('onBlur')(e)}
         listWidth="full"
       />
 
@@ -135,6 +140,8 @@ export const UsingObjectsAsItems = (args: AutocompleteProps<Produce>) => {
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
+        onFocus={(e) => action('onFocus')(e)}
+        onBlur={(e) => action('onBlur')(e)}
         itemToString={(item) => item.name}
         renderItem={(item) => item.name}
       />
@@ -179,6 +186,8 @@ export const ControlledFromOutside = (args: AutocompleteProps<Produce>) => {
         onSelectItem={handleSelectItem}
         itemToString={(item) => item.name}
         renderItem={(item) => item.name}
+        onFocus={(e) => action('onFocus')(e)}
+        onBlur={(e) => action('onBlur')(e)}
         selectedItem={selectedFruit}
       />
 
@@ -229,6 +238,8 @@ export const UsingGroupedItems = (args: AutocompleteProps<Produce>) => {
         renderItem={(item) => item.name}
         itemToString={(item) => item.name}
         onInputValueChange={handleInputValueChange}
+        onFocus={(e) => action('onFocus')(e)}
+        onBlur={(e) => action('onBlur')(e)}
         onSelectItem={handleSelectItem}
         listWidth="full"
       />
@@ -269,6 +280,8 @@ export const MultipleSelection = (args: AutocompleteProps<Produce>) => {
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
+        onFocus={(e) => action('onFocus')(e)}
+        onBlur={(e) => action('onBlur')(e)}
         itemToString={(item) => item.name}
         renderItem={(item) => item.name}
         clearAfterSelect
@@ -312,6 +325,8 @@ export const WithFormControl = () => {
           items={filteredItems}
           onInputValueChange={handleInputValueChange}
           onSelectItem={handleSelectItem}
+          onFocus={(e) => action('onFocus')(e)}
+          onBlur={(e) => action('onBlur')(e)}
           itemToString={(item) => item.name}
           renderItem={(item) => item.name}
         />
@@ -352,6 +367,8 @@ export const HighlightingItems = () => {
       <Autocomplete<Produce>
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
+        onFocus={(e) => action('onFocus')(e)}
+        onBlur={(e) => action('onBlur')(e)}
         onSelectItem={handleSelectItem}
         itemToString={(item) => item.name}
         renderItem={(item, inputValue) => {
@@ -427,6 +444,8 @@ export const WithAsyncData = () => {
         items={items}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
+        onFocus={(e) => action('onFocus')(e)}
+        onBlur={(e) => action('onBlur')(e)}
         itemToString={(item) => item.name}
         renderItem={(item) => item.name}
         isLoading={isLoading}
