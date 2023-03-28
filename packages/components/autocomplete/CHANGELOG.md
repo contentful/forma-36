@@ -1,5 +1,21 @@
 # Change Log
 
+## 4.33.0
+
+### Minor Changes
+
+- [#2440](https://github.com/contentful/forma-36/pull/2440) [`62b48c8c`](https://github.com/contentful/forma-36/commit/62b48c8c00c40324bf5afdc99bc37f4d57d220c8) Thanks [@mshaaban0](https://github.com/mshaaban0)! - feat(autocomplete): expose onFocus and onBlur events
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.33.0
+  - @contentful/f36-core@4.33.0
+  - @contentful/f36-forms@4.33.0
+  - @contentful/f36-popover@4.33.0
+  - @contentful/f36-skeleton@4.33.0
+  - @contentful/f36-typography@4.33.0
+
 ## 4.32.0
 
 ### Patch Changes
