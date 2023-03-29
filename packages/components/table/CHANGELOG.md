@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.34.0
+
+### Minor Changes
+
+- [#2436](https://github.com/contentful/forma-36/pull/2436) [`3ca163da`](https://github.com/contentful/forma-36/commit/3ca163dac544d00aba231188941026a9d1dd04ed) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(table): add sorting props
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.34.0
+  - @contentful/f36-typography@4.34.0
+
 ## 4.33.0
 
 ### Patch Changes

@@ -1,17 +1,17 @@
 {
   "name": "@contentful/f36-pagination",
-  "version": "4.33.0",
+  "version": "4.34.0",
   "description": "Forma 36: Pagination component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-button": "^4.33.0",
-    "@contentful/f36-core": "^4.33.0",
-    "@contentful/f36-forms": "^4.33.0",
+    "@contentful/f36-button": "^4.34.0",
+    "@contentful/f36-core": "^4.34.0",
+    "@contentful/f36-forms": "^4.34.0",
     "@contentful/f36-icons": "^4.23.2",
     "@contentful/f36-tokens": "^4.0.0",
-    "@contentful/f36-typography": "^4.33.0",
+    "@contentful/f36-typography": "^4.34.0",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {

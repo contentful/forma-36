@@ -1,5 +1,41 @@
 # Change Log
 
+## 4.34.0
+
+### Patch Changes
+
+- Updated dependencies [[`3ca163da`](https://github.com/contentful/forma-36/commit/3ca163dac544d00aba231188941026a9d1dd04ed)]:
+  - @contentful/f36-table@4.34.0
+  - @contentful/f36-accordion@4.34.0
+  - @contentful/f36-asset@4.34.0
+  - @contentful/f36-autocomplete@4.34.0
+  - @contentful/f36-badge@4.34.0
+  - @contentful/f36-button@4.34.0
+  - @contentful/f36-card@4.34.0
+  - @contentful/f36-collapse@4.34.0
+  - @contentful/f36-copybutton@4.34.0
+  - @contentful/f36-core@4.34.0
+  - @contentful/f36-datetime@4.34.0
+  - @contentful/f36-datepicker@4.34.0
+  - @contentful/f36-drag-handle@4.34.0
+  - @contentful/f36-entity-list@4.34.0
+  - @contentful/f36-forms@4.34.0
+  - @contentful/f36-icon@4.34.0
+  - @contentful/f36-list@4.34.0
+  - @contentful/f36-menu@4.34.0
+  - @contentful/f36-modal@4.34.0
+  - @contentful/f36-note@4.34.0
+  - @contentful/f36-notification@4.34.0
+  - @contentful/f36-pagination@4.34.0
+  - @contentful/f36-pill@4.34.0
+  - @contentful/f36-popover@4.34.0
+  - @contentful/f36-skeleton@4.34.0
+  - @contentful/f36-spinner@4.34.0
+  - @contentful/f36-tabs@4.34.0
+  - @contentful/f36-text-link@4.34.0
+  - @contentful/f36-tooltip@4.34.0
+  - @contentful/f36-typography@4.34.0
+
 ## 4.33.0
 
 ### Patch Changes

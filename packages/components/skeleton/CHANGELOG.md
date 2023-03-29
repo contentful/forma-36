@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.34.0
+
+### Patch Changes
+
+- Updated dependencies [[`3ca163da`](https://github.com/contentful/forma-36/commit/3ca163dac544d00aba231188941026a9d1dd04ed)]:
+  - @contentful/f36-table@4.34.0
+  - @contentful/f36-core@4.34.0
+
 ## 4.33.0
 
 ### Patch Changes
