@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { Table } from '.';
 
@@ -70,6 +71,8 @@ describe('Table', () => {
 
   describe('Table.Cell', () => {
     it('can render as sortable', async () => {
+      const user = userEvent.setup();
+
       render(
         <Table>
           <Table.Head>
@@ -81,6 +84,9 @@ describe('Table', () => {
       );
 
       const th = screen.getByRole('columnheader');
+      expect(th).toHaveAttribute('aria-sort', 'none');
+
+      await user.click(th);
       expect(th).toHaveAttribute('aria-sort', 'none');
     });
   });

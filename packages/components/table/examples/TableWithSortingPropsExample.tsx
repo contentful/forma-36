@@ -62,22 +62,22 @@ export default function TableWithSorting() {
         <Table.Row>
           <Table.Cell
             isSortable
-            isSorted={
+            onClick={() => handleSort({ column: 'name' })}
+            sortDirection={
               sorting && sorting.column === 'name' ? sorting.direction : false
             }
-            onClick={() => handleSort({ column: 'name' })}
           >
             Name
           </Table.Cell>
           <Table.Cell>Description</Table.Cell>
           <Table.Cell
             isSortable
-            isSorted={
+            onClick={() => handleSort({ column: 'updatedAt' })}
+            sortDirection={
               sorting && sorting.column === 'updatedAt'
                 ? sorting.direction
                 : false
             }
-            onClick={() => handleSort({ column: 'updatedAt' })}
           >
             Updated
           </Table.Cell>

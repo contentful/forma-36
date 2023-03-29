@@ -30,11 +30,10 @@ const SortingIconMap = {
 
 export type TableCellInternalProps = CommonProps & {
   align?: 'center' | 'left' | 'right';
-  isSortable?: boolean;
-  isSorted?: TableCellSorting;
-  sorting?: TableCellSorting;
-  width?: string | number;
   children?: React.ReactNode;
+  isSortable?: boolean;
+  sortDirection?: TableCellSorting;
+  width?: string | number;
 } & Pick<TextProps, 'isTruncated' | 'isWordBreak'>;
 
 export type TableCellProps = PropsWithHTMLElement<
@@ -48,7 +47,7 @@ function _TableCell(
     children,
     className,
     isSortable,
-    isSorted,
+    sortDirection,
     testId = 'cf-ui-table-cell',
     ...otherProps
   }: TableCellProps,
@@ -57,11 +56,11 @@ function _TableCell(
   const [showSorting, setShowSorting] = useState(false);
   const { as, name: context, offsetTop } = useTableCellContext();
   const { verticalAlign } = useTableContext();
-  const SortingIcon = SortingIconMap[isSorted];
+  const SortingIcon = SortingIconMap[sortDirection];
   const isTableHead = context === 'head';
   const styles = getTableCellStyles({
     isSortable: isTableHead ? isSortable : undefined,
-    isSorted,
+    sortDirection,
     isTableHead,
     align,
     verticalAlign,
@@ -69,7 +68,7 @@ function _TableCell(
   const BaseComponent = isTableHead ? Caption : Text;
   const sortableProps = isSortable
     ? {
-        'aria-sort': (isSorted ?? 'none') as
+        'aria-sort': (sortDirection ?? 'none') as
           | 'none'
           | 'ascending'
           | 'descending'
@@ -87,7 +86,7 @@ function _TableCell(
     tableCellContent = (
       <button
         aria-label={`Sort ${
-          isSorted === TableCellSorting.Ascending
+          sortDirection === TableCellSorting.Ascending
             ? TableCellSorting.Descending
             : TableCellSorting.Ascending
         } by ${columnName}`}
@@ -95,7 +94,7 @@ function _TableCell(
         type="button"
       >
         {children}
-        {isSorted ? (
+        {sortDirection ? (
           <SortingIcon size="tiny" variant="secondary" />
         ) : (
           <SortIcon

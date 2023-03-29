@@ -124,10 +124,10 @@ export const Overview: Story = () => (
       <Table>
         <Table.Head>
           <Table.Row>
-            <Table.Cell isSortable>Name</Table.Cell>
-            <Table.Cell isSortable>Email</Table.Cell>
-            <Table.Cell isSortable>Organization role</Table.Cell>
-            <Table.Cell isSortable isSorted={TableCellSorting.Descending}>
+            <Table.Cell>Name</Table.Cell>
+            <Table.Cell>Email</Table.Cell>
+            <Table.Cell>Organization role</Table.Cell>
+            <Table.Cell isSortable sortDirection={TableCellSorting.Descending}>
               Last activity
             </Table.Cell>
           </Table.Row>
@@ -163,10 +163,10 @@ export const Overview: Story = () => (
       <Table layout="embedded">
         <Table.Head>
           <Table.Row>
-            <Table.Cell isSortable>Name</Table.Cell>
-            <Table.Cell isSortable>Email</Table.Cell>
-            <Table.Cell isSortable>Organization role</Table.Cell>
-            <Table.Cell isSortable isSorted={TableCellSorting.Ascending}>
+            <Table.Cell>Name</Table.Cell>
+            <Table.Cell>Email</Table.Cell>
+            <Table.Cell>Organization role</Table.Cell>
+            <Table.Cell isSortable sortDirection={TableCellSorting.Ascending}>
               Last activity
             </Table.Cell>
           </Table.Row>

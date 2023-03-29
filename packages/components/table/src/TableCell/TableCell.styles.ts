@@ -6,16 +6,16 @@ import { type TableProps } from '../Table';
 type GetTableCellStylesArguments = {
   align: TableCellInternalProps['align'];
   isSortable?: TableCellInternalProps['isSortable'];
-  isSorted: TableCellInternalProps['isSorted'];
   isTableHead: boolean;
+  sortDirection: TableCellInternalProps['sortDirection'];
   verticalAlign?: TableProps['verticalAlign'];
 };
 
 export const getTableCellStyles = ({
   align,
   isSortable,
-  isSorted,
   isTableHead,
+  sortDirection,
   verticalAlign,
 }: GetTableCellStylesArguments) => ({
   button: css({
@@ -23,7 +23,7 @@ export const getTableCellStyles = ({
     appearance: 'none',
     background: 'none',
     border: 0,
-    color: isSorted ? tokens.gray900 : 'inherit',
+    color: sortDirection ? tokens.gray900 : 'inherit',
     cursor: 'pointer',
     display: 'inline-flex',
     gap: tokens.spacing2Xs,
