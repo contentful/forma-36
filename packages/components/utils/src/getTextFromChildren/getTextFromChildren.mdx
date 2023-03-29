@@ -1,0 +1,32 @@
+---
+title: 'getTextFromChildren'
+type: 'component'
+slug: /utils/get-text-from-children/
+section: 'utils'
+---
+
+Function that can be used to extract text content from React children.
+
+## Import
+
+```jsx static=true
+import { getTextFromChildren } from '@contentful/f36-utils';
+```
+
+## Examples
+
+### Basic usage
+
+```tsx static=true
+const text = getTextFromChildren(<div>Hello world</div>);
+console.log(text);
+// "Hello world"
+
+const text = getTextFromChildren(
+  <div>
+    Status: <EntityStatusBadge entityStatusType="draft" />
+  </div>,
+);
+console.log(text);
+// "Status: Draft"
+```

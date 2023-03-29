@@ -290,8 +290,12 @@
       "slug": "/utils/get-string-match/"
     },
     {
+      "title": "getTextFromChildren",
+      "slug": "/utils/get-text-from-children/"
+    },
+    {
       "title": "hexToRGBA",
-      "slug": "/utils/hexToRGBA/"
+      "slug": "/utils/hex-to-rgba/"
     },
     {
       "title": "Portal",

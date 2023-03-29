@@ -1,24 +1,61 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { TableCellInternalProps } from './TableCell';
-import { TableProps } from '../Table';
+import { type TableCellInternalProps } from './TableCell';
+import { type TableProps } from '../Table';
+
+type GetTableCellStylesArguments = {
+  align: TableCellInternalProps['align'];
+  isSortable?: TableCellInternalProps['isSortable'];
+  isTableHead: boolean;
+  sortDirection: TableCellInternalProps['sortDirection'];
+  verticalAlign?: TableProps['verticalAlign'];
+};
 
 export const getTableCellStyles = ({
-  isTableHead,
-  sorting,
   align,
+  isSortable,
+  isTableHead,
+  sortDirection,
   verticalAlign,
-}: {
-  isTableHead?: boolean;
-  verticalAlign?: TableProps['verticalAlign'];
-} & Pick<TableCellInternalProps, 'sorting' | 'align'>) => ({
+}: GetTableCellStylesArguments) => ({
+  button: css({
+    alignItems: 'flex-start',
+    appearance: 'none',
+    background: 'none',
+    border: 0,
+    color: sortDirection ? tokens.gray900 : 'inherit',
+    cursor: 'pointer',
+    display: 'inline-flex',
+    gap: tokens.spacing2Xs,
+    outline: 0,
+    padding: tokens.spacingS,
+
+    '&:focus': {
+      backgroundColor: tokens.gray100,
+      boxShadow: tokens.glowPrimary,
+    },
+    '&:focus:not(:focus-visible)': {
+      backgroundColor: 'unset',
+      boxShadow: 'unset',
+    },
+    '&:focus-visible': {
+      backgroundColor: tokens.gray100,
+      boxShadow: tokens.glowPrimary,
+    },
+  }),
   container: css({
     backgroundColor: tokens.colorWhite,
     borderBottom: `1px solid ${tokens.gray200}`,
-    padding: tokens.spacingS,
+    padding: isSortable ? 0 : tokens.spacingS,
     textAlign: align,
-    color: sorting ? tokens.gray900 : tokens.gray700,
+    color: tokens.gray700,
     fontWeight: isTableHead ? tokens.fontWeightMedium : tokens.fontWeightNormal,
     verticalAlign,
   }),
+  sortIcon: (showSorting: boolean) =>
+    css({
+      fill: tokens.gray400,
+      opacity: showSorting ? 1 : 0,
+      transition: `opacity ${tokens.transitionEasingCubicBezier} ${tokens.transitionDurationDefault}`,
+    }),
 });
