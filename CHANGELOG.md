@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 29-03-2023
+
+**F36 Autocomplete** `v4.33.0`
+
+- feat(autocomplete): expose onFocus and onBlur events
+
 ## 25-03-2023
 
 **F36 Menu** `v4.32.0`
