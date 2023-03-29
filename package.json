@@ -125,12 +125,12 @@
     "commit-msg": "npx commitlint -e \"$@\""
   },
   "engines": {
-    "node": ">=14.18.0",
+    "node": ">=18.0.0",
     "npm": ">=8.3.0",
     "yarn": "Please use npm"
   },
   "volta": {
-    "node": "14.18.0",
+    "node": "18.15.0",
     "npm": "8.3.0"
   }
 }
