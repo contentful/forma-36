@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 30-03-2023
+
+**F36 Table** `v4.34.0`
+
+- feat(table): add sorting props
+
 ## 29-03-2023
 
 **F36 Autocomplete** `v4.33.0`
