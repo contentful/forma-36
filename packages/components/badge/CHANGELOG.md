@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.34.1
+
+### Patch Changes
+
+- [#2444](https://github.com/contentful/forma-36/pull/2444) [`672e1be3`](https://github.com/contentful/forma-36/commit/672e1be384635f2657125a44886ddd9a53858159) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(entity-status-badge): use secondary Badge variant for Archived
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.34.1
+
 ## 4.34.0
 
 ### Patch Changes
