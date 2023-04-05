@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 05-04-2023
+
+**F36 Badge** `v4.34.1`
+
+- fix(entity-status-badge): use secondary Badge variant for Archived
+
 ## 30-03-2023
 
 **F36 Table** `v4.34.0`
