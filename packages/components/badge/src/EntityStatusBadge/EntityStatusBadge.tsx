@@ -7,7 +7,7 @@ import type { BadgeVariant } from '../types';
 const statusMap: { [key in EntityStatus]: BadgeVariant } = {
   published: 'positive',
   draft: 'warning',
-  archived: 'negative',
+  archived: 'secondary',
   changed: 'primary',
   deleted: 'negative',
   new: 'primary-filled',
