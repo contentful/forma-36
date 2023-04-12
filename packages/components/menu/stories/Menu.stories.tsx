@@ -92,7 +92,7 @@ export const WithDisabledItems: Story<MenuProps> = (args) => {
   );
 };
 
-export const WithIconsOnItems: Styoe<MenuProps> = (args) => {
+export const WithIconsOnItems: Story<MenuProps> = (args) => {
   return (
     <Menu defaultIsOpen {...args}>
       <Menu.Trigger>
