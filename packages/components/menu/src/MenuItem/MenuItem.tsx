@@ -31,10 +31,6 @@ interface MenuItemInternalProps extends CommonProps {
    */
   isInitiallyFocused?: boolean;
   /**
-   * Adds icon to the left of the item if item is active or padding if item is not active
-   */
-  withActiveIcon?: boolean;
-  /**
    * Expects any of the icon components. Renders the icon aligned to the start
    */
   startIcon?: React.ReactElement;
