@@ -33,11 +33,7 @@ interface MenuItemInternalProps extends CommonProps {
   /**
    * Expects any of the icon components. Renders the icon aligned to the start
    */
-  startIcon?: React.ReactElement;
-  /**
-   * Expects any of the icon components. Renders the icon aligned to the end
-   */
-  endIcon?: React.ReactElement;
+  icon?: React.ReactElement;
 }
 
 export type MenuItemProps<
@@ -55,8 +51,7 @@ function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
     isActive = false,
     isDisabled = false,
     isInitiallyFocused,
-    startIcon,
-    endIcon,
+    icon,
     ...otherProps
   } = props;
 
@@ -85,9 +80,8 @@ function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
       ref={mergeRefs(itemRef, ref)}
       tabIndex={-1}
     >
-      {startIcon}
+      {icon}
       {props.children}
-      {endIcon}
     </Element>
   );
 }
