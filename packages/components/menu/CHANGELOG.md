@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.35.0
+
+### Minor Changes
+
+- [#2446](https://github.com/contentful/forma-36/pull/2446) [`9ba6b10c`](https://github.com/contentful/forma-36/commit/9ba6b10c6e4482b1eec92cb57ec37cffeeba48fb) Thanks [@massao](https://github.com/massao)! - add possibility to add icons on menu items
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.35.0
+  - @contentful/f36-popover@4.35.0
+  - @contentful/f36-typography@4.35.0
+
 ## 4.34.1
 
 ### Patch Changes
