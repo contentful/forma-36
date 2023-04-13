@@ -29,7 +29,9 @@ export const getMenuItemStyles = ({
     root: css(
       [
         {
-          display: 'block',
+          alignItems: 'center',
+          gap: tokens.spacingXs,
+          display: 'flex',
           width: `calc(100% - 2 * ${tokens.spacing2Xs})`,
           background: 'none',
           border: 0,

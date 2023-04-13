@@ -30,6 +30,10 @@ interface MenuItemInternalProps extends CommonProps {
    * Sets focus on item
    */
   isInitiallyFocused?: boolean;
+  /**
+   * Expects any of the icon components. Renders the icon aligned to the start
+   */
+  icon?: React.ReactElement;
 }
 
 export type MenuItemProps<
@@ -47,6 +51,7 @@ function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
     isActive = false,
     isDisabled = false,
     isInitiallyFocused,
+    icon,
     ...otherProps
   } = props;
 
@@ -75,6 +80,7 @@ function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
       ref={mergeRefs(itemRef, ref)}
       tabIndex={-1}
     >
+      {icon}
       {props.children}
     </Element>
   );
