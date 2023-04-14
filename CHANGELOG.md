@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 14-04-2023
+
+**F36 Menu** `v4.35.0`
+
+- add possibility to add icons on menu items
+
 ## 05-04-2023
 
 **F36 Badge** `v4.34.1`
