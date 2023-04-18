@@ -1,5 +1,5 @@
 import React from 'react';
-import { SkeletonContainer, SkeletonImage } from '@contentful/f36-components';
+import { SkeletonContainer, SkeletonImage } from '@contentful/f36-skeleton';
 import tokens from '@contentful/f36-tokens';
 
 export function NavbarAccountSkeleton({ ariaLabel }: { ariaLabel?: string }) {
