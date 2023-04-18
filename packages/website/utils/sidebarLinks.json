@@ -48,6 +48,11 @@
       "slug": "/components/menu/"
     },
     {
+      "title": "Navbar",
+      "slug": "/components/navbar/",
+      "status": "alpha"
+    },
+    {
       "title": "Note",
       "slug": "/components/note/"
     },
