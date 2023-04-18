@@ -1,5 +1,5 @@
 import React from 'react';
-import { generateIcon } from '@contentful/f36-components';
+import { generateIcon } from '@contentful/f36-icon';
 
 export const CircleIcon = /*#__PURE__*/ generateIcon({
   name: 'CircleIcon',
