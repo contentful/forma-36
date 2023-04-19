@@ -4,10 +4,10 @@ import React, {
   type ReactNode,
 } from 'react';
 import { cx } from 'emotion';
-import { Box, type CommonProps } from '@contentful/f36-core';
-import { Heading, Paragraph } from '@contentful/f36-typography';
+import { Flex, type CommonProps } from '@contentful/f36-core';
+import { Paragraph, Subheading } from '@contentful/f36-typography';
 import type { IconComponent } from '@contentful/f36-icon';
-import { ChevronLeftIcon } from '@contentful/f36-icons';
+import { ArrowBackwardIcon } from '@contentful/f36-icons';
 import { IconButton } from '@contentful/f36-button';
 
 import { getWorkbenchHeaderStyles } from './WorkbenchHeader.styles';
@@ -35,7 +35,7 @@ export const WorkbenchHeader = ({
   testId = 'cf-ui-workbench-header',
 }: WorkbenchHeaderProps) => {
   const hasBackButton = Boolean(onBack);
-  const styles = getWorkbenchHeaderStyles(hasBackButton);
+  const styles = getWorkbenchHeaderStyles();
   const iconComponent =
     Icon === undefined ? null : isValidElement(Icon) ? Icon : <Icon />;
 
@@ -47,6 +47,7 @@ export const WorkbenchHeader = ({
         <Paragraph
           className={styles.description}
           marginBottom="none"
+          marginLeft="spacingS"
           marginRight="spacingM"
         >
           {description}
@@ -62,33 +63,36 @@ export const WorkbenchHeader = ({
       data-test-id={testId}
     >
       {hasBackButton && (
-        <IconButton
-          aria-label="Back"
-          testId="workbench-back-btn"
-          variant="transparent"
-          className={styles.backButton}
-          onClick={() => onBack()}
-          icon={<ChevronLeftIcon size="large" variant="muted" />}
-        />
+        <>
+          <IconButton
+            aria-label="Back"
+            testId="workbench-back-btn"
+            variant="transparent"
+            onClick={() => onBack()}
+            size="small"
+            icon={<ArrowBackwardIcon size="medium" variant="muted" />}
+          />
+          <div className={styles.separator} />
+        </>
       )}
 
-      {Icon && (
-        <Box marginRight="spacingM" display="inline-flex">
-          {iconComponent}
-        </Box>
-      )}
+      <Flex
+        alignItems="center"
+        flexGrow={!description ? '1' : '0'}
+        gap="spacingXs"
+        marginLeft="spacingS"
+        marginRight="spacingS"
+      >
+        {Icon && iconComponent}
 
-      {typeof title === 'string' ? (
-        <Heading
-          className={!description && styles.flexGrow}
-          marginBottom="none"
-          marginRight="spacingM"
-        >
-          {title}
-        </Heading>
-      ) : (
-        title
-      )}
+        {typeof title === 'string' ? (
+          <Subheading className={styles.title} marginBottom="none">
+            {title}
+          </Subheading>
+        ) : (
+          title
+        )}
+      </Flex>
 
       {description && renderDescription(description)}
 
