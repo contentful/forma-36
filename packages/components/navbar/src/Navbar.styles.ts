@@ -32,5 +32,3 @@ export const getNavbarStyles = (maxWidth: string) => ({
     },
   }),
 });
-
-export const NAVBAR_FALLBACK_HEIGHT = 81;
