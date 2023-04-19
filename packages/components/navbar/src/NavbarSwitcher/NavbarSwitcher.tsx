@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { getNavbarSwitcherStyles } from './NavbarSwitcher.styles';
 import {
   Flex,
@@ -8,10 +8,14 @@ import {
 } from '@contentful/f36-core';
 import { MenuIcon } from '@contentful/f36-icons';
 import { cx } from 'emotion';
+import { ContentfulLogoIcon } from '../icons';
 
 type NavbarSwitcherOwnProps = CommonProps & {
-  children?: ReactNode;
-  logo?: ReactNode;
+  children?: React.ReactNode;
+  /**
+   * Will be displayed instead of the default Contentful logo
+   */
+  logo?: React.ReactNode;
 };
 
 export type NavbarSwitcherProps = PropsWithHTMLElement<
@@ -43,7 +47,7 @@ function _NavbarSwitcher(
       fullHeight
       gap="spacingXs"
     >
-      {logo}
+      {logo || <ContentfulLogoIcon />}
       <MenuIcon className={styles.menuIcon} size="small" variant="white" />
       <Flex as="ul" alignItems="center" className={styles.breadcrumbs}>
         {children}
