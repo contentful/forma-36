@@ -19,7 +19,7 @@ const styles = {
     fontSize: tokens.fontSizeM,
     lineHeight: tokens.lineHeightM,
     textDecoration: 'none',
-    '&:hover span:first-child': {
+    '&:hover > span:first-child': {
       textDecoration: 'underline',
     },
   }),
