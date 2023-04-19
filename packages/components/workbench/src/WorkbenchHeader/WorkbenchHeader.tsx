@@ -70,7 +70,7 @@ export const WorkbenchHeader = ({
             variant="transparent"
             onClick={() => onBack()}
             size="small"
-            icon={<ArrowBackwardIcon size="medium" variant="muted" />}
+            icon={<ArrowBackwardIcon variant="muted" />}
           />
           <div className={styles.separator} />
         </>
