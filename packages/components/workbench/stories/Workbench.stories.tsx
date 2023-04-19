@@ -302,7 +302,7 @@ export const HeaderOverview = () => {
             title={
               <Flex alignItems="center" gap="spacingXs">
                 <Heading marginBottom="none">Page title</Heading>{' '}
-                <HelpCircleIcon />
+                <HelpCircleIcon size="tiny" />
               </Flex>
             }
           />
@@ -315,7 +315,7 @@ export const HeaderOverview = () => {
 
           <Workbench.Header
             title="Page title"
-            description={<HelpCircleIcon variant="muted" />}
+            description={<HelpCircleIcon variant="muted" size="tiny" />}
           />
         </span>
 
