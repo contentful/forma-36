@@ -20,6 +20,7 @@ type NavbarItemTriggerProps = CommonProps & {
   title: string;
   icon?: NavbarItemIconProps['icon'];
   isActive?: boolean;
+  as?: React.ElementType;
 };
 
 type NavbarItemAsMenuProps = NavbarItemTriggerProps &
@@ -37,9 +38,10 @@ export type NavbarItemProps<
   E extends React.ElementType = typeof NAVBAR_ITEM_DEFAULT_TAG,
 > = PolymorphicProps<NavbarItemOwnProps, E>;
 
-function _NavbarItem<
-  E extends React.ElementType = typeof NAVBAR_ITEM_DEFAULT_TAG,
->(props: NavbarItemProps<E>, ref: React.Ref<any>) {
+function _NavbarItem(
+  props: NavbarItemProps<React.ElementType>,
+  ref: React.Ref<any>,
+) {
   const {
     as: Comp = NAVBAR_ITEM_DEFAULT_TAG,
     icon,

@@ -12,15 +12,17 @@ const NAVBAR_BADGE_DEFAULT_TAG = 'div';
 
 type NavbarBadgeOwnProps = CommonProps & {
   children?: React.ReactNode;
+  as?: React.ElementType;
 };
 
 export type NavbarBadgeProps<
   E extends React.ElementType = typeof NAVBAR_BADGE_DEFAULT_TAG,
 > = PolymorphicProps<NavbarBadgeOwnProps, E>;
 
-function _NavbarBadge<
-  E extends React.ElementType = typeof NAVBAR_BADGE_DEFAULT_TAG,
->(props: NavbarBadgeProps<E>, ref: React.Ref<any>) {
+function _NavbarBadge(
+  props: NavbarBadgeProps<React.ElementType>,
+  ref: React.Ref<any>,
+) {
   const {
     as: Comp = NAVBAR_BADGE_DEFAULT_TAG,
     children,

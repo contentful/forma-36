@@ -26,9 +26,10 @@ export type NavbarMenuItemProps<
   E extends React.ElementType = typeof NAVBAR_MENU_ITEM_DEFAULT_TAG,
 > = PolymorphicProps<NavbarMenuItemOwnProps, E>;
 
-function _NavbarMenuItem<
-  E extends React.ElementType = typeof NAVBAR_MENU_ITEM_DEFAULT_TAG,
->(props: NavbarMenuItemProps<E>, ref: React.Ref<any>) {
+function _NavbarMenuItem(
+  props: NavbarMenuItemProps<React.ElementType>,
+  ref: React.Ref<any>,
+) {
   const {
     as: Comp = NAVBAR_MENU_ITEM_DEFAULT_TAG,
     icon,
