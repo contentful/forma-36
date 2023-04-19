@@ -10,7 +10,7 @@ export const getWorkbenchHeaderStyles = () => ({
       width: '100%',
       height: '56px',
       padding: `${tokens.spacingM} ${tokens.spacingXs}`,
-      borderBottom: `1px solid ${tokens.gray300}`,
+      borderBottom: `1px solid ${tokens.gray200}`,
       backgroundColor: tokens.colorWhite,
       zIndex: tokens.zIndexWorkbenchHeader,
       boxSizing: 'border-box',
