@@ -4,7 +4,7 @@ import { Flex } from '@contentful/f36-core';
 import { MissingContent } from '../src';
 
 export default {
-  title: 'Utilities/MissingContent',
+  title: 'Empty-state/MissingContent',
   component: MissingContent,
   parameters: {
     propTypes: MissingContent['__docgenInfo'],
