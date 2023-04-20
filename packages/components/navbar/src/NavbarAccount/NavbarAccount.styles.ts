@@ -1,27 +1,27 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { NavbarAccountProps } from './NavbarAccount';
+import { getGlowOnFocusStyles } from '../utils.styles';
 
 export const getNavbarAccountStyles = () => ({
-  root: css({
-    // default button reset styles
-    margin: 0,
-    padding: 0,
-    background: 'none',
-    border: 'none',
+  root: css(
+    {
+      // default button reset styles
+      margin: 0,
+      padding: 0,
+      background: 'none',
+      border: 'none',
 
-    cursor: 'pointer',
-    position: 'relative',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: tokens.spacing2Xs,
-
-    '&:focus-visible': {
-      boxShadow: tokens.glowPrimary,
+      cursor: 'pointer',
+      position: 'relative',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: tokens.spacing2Xs,
       outline: 'none',
       borderRadius: '50%',
     },
-  }),
+    getGlowOnFocusStyles(),
+  ),
   avatar: css({
     borderRadius: '50%',
     display: 'block',
