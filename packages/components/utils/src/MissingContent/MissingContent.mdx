@@ -1,0 +1,74 @@
+---
+title: 'MissingContent'
+type: 'component'
+slug: /utils/missingcontent/
+section: 'utils'
+typescript: ./MissingContent.tsx
+---
+
+`MissingContent` component can be used to render a placeholder for an empty table cell or any inline content that is missing. Its goal is to provide a system information without cluttering the view.
+
+## Import
+
+```jsx static=true
+import { MissingContent } from '@contentful/f36-utils';
+```
+
+## Example
+
+### Basic usage
+
+```jsx
+<Table>
+  <Table.Head>
+    <Table.Row>
+      <Table.Cell>Filename</Table.Cell>
+      <Table.Cell>Dimensions</Table.Cell>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>Pony.jpg</Table.Cell>
+      <Table.Cell>160px x 300px</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>Cat.jpg</Table.Cell>
+      <Table.Cell>
+        <MissingContent title="No Dimensions available" />
+      </Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>Dog.jpg</Table.Cell>
+      <Table.Cell>
+        <MissingContent title="No Dimensions available" />
+      </Table.Cell>
+    </Table.Row>
+  </Table.Body>
+  <MissingContent />
+</Table>
+```
+
+<Stack
+  justifyContent="space-between"
+  marginTop="spacing2Xl"
+  marginBottom="spacingL"
+>
+  <Heading
+    id="props-api-reference"
+    as="h2"
+    marginTop="none"
+    marginBottom="none"
+  >
+    Props (API reference)
+  </Heading>
+  <TextLink
+    href="https://f36-storybook.contentful.com/?path=/story/utilities-missingcontent--basic"
+    target="_blank"
+    alignIcon="end"
+    icon={<ExternalLinkIcon />}
+  >
+    Open in Storybook
+  </TextLink>
+</Stack>
+
+<PropsTable of="MissingContent" />

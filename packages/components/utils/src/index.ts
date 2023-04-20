@@ -5,3 +5,4 @@ export type { UseKeyboardProps } from './useKeyboard/useKeyboard';
 export { getStringMatch } from './getStringMatch/getStringMatch';
 export { hexToRGBA } from './hexToRGBA/hexToRGBA';
 export { getTextFromChildren } from './getTextFromChildren/getTextFromChildren';
+export { MissingContent } from './MissingContent/MissingContent';
