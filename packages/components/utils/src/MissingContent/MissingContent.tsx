@@ -10,7 +10,7 @@ export interface MissingContentProps extends CommonProps {
 
 export const MissingContent = ({
   className,
-  testId = 'cf-ui-MissingContent',
+  testId = 'cf-ui-missing-content',
   title,
   ...otherProps
 }: MissingContentProps) => {
