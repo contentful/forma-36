@@ -19,7 +19,7 @@ export const MissingContent = ({
   return (
     <Text
       {...otherProps}
-      data-test-id={testId}
+      testId={testId}
       className={cx(styles.missingContent, className)}
       title={title}
     >
