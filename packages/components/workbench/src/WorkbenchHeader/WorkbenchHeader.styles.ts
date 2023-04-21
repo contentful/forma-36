@@ -30,11 +30,21 @@ export const getWorkbenchHeaderStyles = () => ({
     flexGrow: 1,
   }),
   separator: css({
-    backgroundColor: tokens.gray200,
-    height: '16px',
-    width: '1px',
-    display: 'inline',
-    transform: 'rotate3d(0, 0, 1, 18deg)',
-    margin: `0 ${tokens.spacing2Xs}`,
+    height: tokens.spacingXl,
+    marginLeft: `-${tokens.spacingXs}`,
+    position: 'relative',
+    width: tokens.spacingXs,
+
+    '&::after': {
+      backgroundColor: tokens.gray200,
+      content: '""',
+      display: 'block',
+      height: '16px',
+      position: 'absolute',
+      left: '50%',
+      top: '50%',
+      width: '1px',
+      transform: 'translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, 18deg)',
+    },
   }),
 });

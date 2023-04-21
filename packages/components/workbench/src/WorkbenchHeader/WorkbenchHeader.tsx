@@ -63,35 +63,34 @@ export const WorkbenchHeader = ({
       data-test-id={testId}
     >
       {hasBackButton && (
-        <>
-          <IconButton
-            aria-label="Back"
-            testId="workbench-back-btn"
-            variant="transparent"
-            onClick={() => onBack()}
-            size="small"
-            icon={<ArrowBackwardIcon variant="muted" />}
-          />
-          <div className={styles.separator} />
-        </>
+        <IconButton
+          aria-label="Back"
+          testId="workbench-back-btn"
+          variant="transparent"
+          onClick={() => onBack()}
+          size="small"
+          icon={<ArrowBackwardIcon variant="muted" />}
+        />
       )}
 
       <Flex
         alignItems="center"
+        gap="spacing2Xs"
         flexGrow={!description ? '1' : '0'}
-        gap="spacingXs"
-        marginLeft="spacingS"
         marginRight="spacingS"
       >
-        {Icon && iconComponent}
+        {hasBackButton && <div className={styles.separator} />}
+        <Flex alignItems="center" gap="spacingXs">
+          {Icon && iconComponent}
 
-        {typeof title === 'string' ? (
-          <Subheading className={styles.title} marginBottom="none">
-            {title}
-          </Subheading>
-        ) : (
-          title
-        )}
+          {typeof title === 'string' ? (
+            <Subheading className={styles.title} marginBottom="none">
+              {title}
+            </Subheading>
+          ) : (
+            title
+          )}
+        </Flex>
       </Flex>
 
       {description && renderDescription(description)}
