@@ -5,13 +5,13 @@ import type { CommonProps } from '@contentful/f36-core';
 import { Text } from '@contentful/f36-typography';
 
 export interface MissingContentProps extends CommonProps {
-  title?: string;
+  label?: string;
 }
 
 export const MissingContent = ({
   className,
   testId = 'cf-ui-missing-content',
-  title,
+  label,
   ...otherProps
 }: MissingContentProps) => {
   const styles = getStyles();
@@ -21,7 +21,7 @@ export const MissingContent = ({
       {...otherProps}
       data-test-id={testId}
       className={cx(styles.missingContent, className)}
-      title={title}
+      aria-label={label}
     >
       &mdash;
     </Text>

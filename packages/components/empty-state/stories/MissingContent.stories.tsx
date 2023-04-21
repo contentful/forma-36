@@ -19,7 +19,7 @@ export const Basic = () => {
   return (
     <div>
       <Flex flexDirection="row">
-        Description: <MissingContent title="No description provided" />
+        Description: <MissingContent label="No description provided" />
       </Flex>
       <Flex flexDirection="row">
         Missing: <MissingContent testId="missing-entry-1234" />
