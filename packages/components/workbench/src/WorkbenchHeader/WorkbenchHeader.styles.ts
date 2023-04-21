@@ -9,7 +9,7 @@ export const getWorkbenchHeaderStyles = () => ({
       flexShrink: 0,
       width: '100%',
       height: '56px',
-      padding: `${tokens.spacingM} ${tokens.spacingXs}`,
+      padding: `${tokens.spacingM} ${tokens.spacingS}`,
       borderBottom: `1px solid ${tokens.gray200}`,
       backgroundColor: tokens.colorWhite,
       zIndex: tokens.zIndexWorkbenchHeader,
