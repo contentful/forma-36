@@ -22,6 +22,7 @@ export const MissingContent = ({
       testId={testId}
       className={cx(styles.missingContent, className)}
       aria-label={label}
+      title={label}
     >
       &mdash;
     </Text>

@@ -2,7 +2,7 @@
 title: 'MissingContent'
 type: 'component'
 slug: /empty-state/missingcontent/
-section: 'utils'
+section: 'empty-state'
 typescript: ./MissingContent.tsx
 ---
 
@@ -47,27 +47,8 @@ import { MissingContent } from '@contentful/f36-empty-state';
 </Table>
 ```
 
-<Stack
-  justifyContent="space-between"
-  marginTop="spacing2Xl"
-  marginBottom="spacingL"
->
-  <Heading
-    id="props-api-reference"
-    as="h2"
-    marginTop="none"
-    marginBottom="none"
-  >
-    Props (API reference)
-  </Heading>
-  <TextLink
-    href="https://f36-storybook.contentful.com/?path=/story/empty-state-missingcontent--basic"
-    target="_blank"
-    alignIcon="end"
-    icon={<ExternalLinkIcon />}
-  >
-    Open in Storybook
-  </TextLink>
-</Stack>
-
 <PropsTable of="MissingContent" />
+
+## Content guidelines
+
+- This component is meant to be displayed when the expected content is missing. This can be, because it is not set yet or there was an issue processing the data. Additional information like that can be handed over via a label property
