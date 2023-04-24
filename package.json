@@ -81,7 +81,7 @@
     "chromatic": "^6.11.4",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.32.0",
+    "eslint": "^8.39.0",
     "eslint-config-dev": "^2.0.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-import": "^2.23.4",
