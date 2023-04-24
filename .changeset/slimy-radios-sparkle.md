@@ -3,4 +3,4 @@
 '@contentful/f36-website': minor
 ---
 
-Introducing a new MissingConten component
+Introducing a new MissingContent component
