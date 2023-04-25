@@ -31,7 +31,6 @@ export const getWorkbenchHeaderStyles = () => ({
   }),
   separator: css({
     height: tokens.spacingXl,
-    marginLeft: `-${tokens.spacingXs}`,
     position: 'relative',
     width: tokens.spacingXs,
 

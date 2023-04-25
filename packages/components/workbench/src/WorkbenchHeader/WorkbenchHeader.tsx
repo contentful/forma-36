@@ -75,7 +75,7 @@ export const WorkbenchHeader = ({
 
       <Flex
         alignItems="center"
-        gap="spacing2Xs"
+        gap="spacingS"
         flexGrow={!description ? '1' : '0'}
         marginRight="spacingS"
       >
