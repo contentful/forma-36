@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-collapse",
-  "version": "4.35.0",
+  "version": "4.36.0",
   "description": "Forma 36: Collapse React Component",
   "license": "MIT",
   "files": [
@@ -20,7 +20,7 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.35.0",
+    "@contentful/f36-core": "^4.36.0",
     "@contentful/f36-tokens": "^4.0.1",
     "emotion": "^10.0.17"
   },
