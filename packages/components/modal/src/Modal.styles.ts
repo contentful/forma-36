@@ -12,7 +12,6 @@ export function getModalStyles(props: {
 }) {
   const modal = cx(
     css({
-      margin: tokens.spacing2Xl,
       backgroundColor: tokens.colorWhite,
       borderRadius: props.size === 'zen' ? 0 : tokens.borderRadiusMedium,
       boxShadow: tokens.boxShadowHeavy,
