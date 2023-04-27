@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.37.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.37.1
+  - @contentful/f36-core@4.37.1
+  - @contentful/f36-icon@4.37.1
+  - @contentful/f36-typography@4.37.1
+
 ## 4.37.0
 
 ### Patch Changes

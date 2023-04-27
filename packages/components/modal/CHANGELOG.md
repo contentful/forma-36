@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.37.1
+
+### Patch Changes
+
+- [#2462](https://github.com/contentful/forma-36/pull/2462) [`2b24937c`](https://github.com/contentful/forma-36/commit/2b24937c1743a08d99561d4a99fb13b0de4e4e10) Thanks [@mshaaban0](https://github.com/mshaaban0)! - fix: close modal when clicking outside closely
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.37.1
+  - @contentful/f36-core@4.37.1
+  - @contentful/f36-typography@4.37.1
+
 ## 4.37.0
 
 ### Patch Changes
