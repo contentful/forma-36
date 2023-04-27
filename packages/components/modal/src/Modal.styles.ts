@@ -12,7 +12,6 @@ export function getModalStyles(props: {
 }) {
   const modal = cx(
     css({
-      margin: tokens.spacing2Xl,
       backgroundColor: tokens.colorWhite,
       borderRadius: props.size === 'zen' ? 0 : tokens.borderRadiusMedium,
       boxShadow: tokens.boxShadowHeavy,
@@ -88,6 +87,7 @@ export function getModalStyles(props: {
           overflowY: 'auto',
           backgroundColor: 'rgba(12, 20, 28, 0.74902)',
           textAlign: 'center',
+          padding: tokens.spacing2Xl,
         }),
         props.position === 'center'
           ? css({
