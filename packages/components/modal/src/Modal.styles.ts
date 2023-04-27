@@ -87,6 +87,7 @@ export function getModalStyles(props: {
           overflowY: 'auto',
           backgroundColor: 'rgba(12, 20, 28, 0.74902)',
           textAlign: 'center',
+          padding: tokens.spacing2Xl,
         }),
         props.position === 'center'
           ? css({
