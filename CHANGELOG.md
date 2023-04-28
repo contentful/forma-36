@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 28-04-2023
+
+**F36 Modal** `v4.37.1`
+
+- fix: close modal when clicking outside closely
+
 ## 26-04-2023
 
 `@contentful/f36-components@4.36.0`
