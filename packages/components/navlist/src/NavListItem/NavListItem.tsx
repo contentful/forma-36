@@ -14,8 +14,10 @@ const NAV_LIST_ITEM_DEFAULT_TAG = 'a';
 
 interface NavListItemInternalProps extends CommonProps {
   children?: React.ReactNode;
+  /**
+   * @default a
+   */
   as?: 'a' | 'button';
-
   /**
    * Marks item as active
    */

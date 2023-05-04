@@ -12,6 +12,9 @@ const NAV_LIST_DEFAULT_TAG = 'div';
 
 export interface NavListInternalProps extends CommonProps {
   children: React.ReactNode;
+  /**
+   * @default div
+   */
   as?: 'nav' | 'div';
 }
 
@@ -26,6 +29,7 @@ function _NavList<E extends React.ElementType = typeof NAV_LIST_DEFAULT_TAG>(
   const styles = getStyles();
 
   const { as, className, children, testId, ...otherProps } = props;
+  const role = as === 'nav' ? 'navigation' : undefined;
 
   const Element = (as ?? NAV_LIST_DEFAULT_TAG) as React.ElementType;
 
@@ -33,7 +37,9 @@ function _NavList<E extends React.ElementType = typeof NAV_LIST_DEFAULT_TAG>(
     <Element
       data-test-id={testId}
       ref={ref}
+      aria-label={props['aria-label'] ?? 'Sidebar'}
       className={cx(styles.root, className)}
+      role={role}
       {...otherProps}
     >
       {children}

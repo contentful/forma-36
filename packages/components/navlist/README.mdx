@@ -4,14 +4,11 @@ type: 'component'
 status: 'alpha'
 slug: /components/navlist/
 github: 'https://github.com/contentful/forma-36/tree/main/packages/components/navlist'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-navlist--default'
-typescript: ./src/NavList.tsx
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-navlist--basic'
+typescript: ./src/NavList/NavList.tsx,./src/NavListItem/NavListItem.tsx
 ---
 
-Short component description covering when it's used.
-(Optional: give a most common example)
-
-Optional: Most common misuse and what to use instead.
+NavList can be used to render a sidebar navigation list
 
 ## Import
 
@@ -21,25 +18,58 @@ import { NavList } from '@contentful/f36-navlist';
 
 ## Examples
 
-Repeat for every important variant
+NavList can be used to render vertical navigation list, it can be used for links and for buttons:
 
-### Example title (variant name)
+- `NavList` can be rendered as `nav` or `div`
+- `NavList.Item` can be rendered as `button` or `a`
 
-Optional: Short "when to use" with considerations towards the end user
+### Basic
 
-```jsx file=../examples/NavListExample.tsx
+Basic example of NavList rendered with links
+
+```jsx file=./examples/NavListBasicExample.tsx
+
+```
+
+### With buttons
+
+Example of NavList using button as items
+
+```jsx file=./examples/NavListWithButtonsExample.tsx
+
+```
+
+### Controlled
+
+Example of controlled NavList
+
+```jsx file=./examples/NavListControlledExample.tsx
+
+```
+
+### With active and disabled states
+
+Example with items with active or disabled state
+
+```jsx file=./examples/NavListWithActiveAndDisabledExample.tsx
 
 ```
 
 ## Props (API reference)
 
+### NavList
+
 <PropsTable of="NavList" />
+
+### NavList.Item
+
+<PropsTable of="NavListItem" />
 
 ## Content guidelines
 
-At least one important thing to consider when writing copy for this component
-Optional: Things to avoid
+Link names should be shor and descriptive
 
 ## Accessibility
 
-What makes this component accessible
+- If rendered with `div` the role of navigation is set.
+- `NavList` can be passed an `aria-label` to override the default `Sidebar`
