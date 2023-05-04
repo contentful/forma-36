@@ -62,6 +62,16 @@ const styles = {
   },
 };
 
+export const getRootStyles = ({ className, orientation }) => ({
+  root: cx(
+    css({
+      display: 'flex',
+      flexDirection: orientation === 'vertical' ? 'row' : 'column',
+    }),
+    className,
+  ),
+});
+
 export const getTabStyles = ({ className, isDisabled }) => ({
   tab: cx(css(styles.tab), className, {
     [css(styles.tabDisabled)]: isDisabled,

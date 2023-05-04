@@ -2,6 +2,8 @@ import React from 'react';
 import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 import * as RadixTabs from '@radix-ui/react-tabs';
 import { getTabStyles } from './Tabs.styles';
+import { useTabsContext } from './TabsContext';
+import { NavList } from '@contentful/f36-navlist';
 
 export interface TabProps extends CommonProps {
   /**
@@ -26,7 +28,9 @@ export const Tab = React.forwardRef<HTMLDivElement, ExpandProps<TabProps>>(
       ...otherProps
     } = props;
 
+    const { orientation, currentTab } = useTabsContext();
     const styles = getTabStyles({ className, isDisabled });
+
     return (
       <RadixTabs.Trigger
         disabled={isDisabled}
@@ -34,9 +38,20 @@ export const Tab = React.forwardRef<HTMLDivElement, ExpandProps<TabProps>>(
         data-test-id={testId}
         asChild
       >
-        <div {...otherProps} className={styles.tab} ref={ref}>
-          <span>{children}</span>
-        </div>
+        {orientation === 'vertical' ? (
+          <NavList.Item
+            {...otherProps}
+            isActive={currentTab === panelId}
+            isDisabled={isDisabled}
+            ref={ref}
+          >
+            <span>{children}</span>
+          </NavList.Item>
+        ) : (
+          <div {...otherProps} className={styles.tab} ref={ref}>
+            <span>{children}</span>
+          </div>
+        )}
       </RadixTabs.Trigger>
     );
   },

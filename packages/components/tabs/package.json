@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@contentful/f36-core": "^4.37.1",
+    "@contentful/f36-navlist": "^4.1.0-alpha.0",
     "@contentful/f36-tokens": "^4.0.1",
     "@radix-ui/react-tabs": "^1.0.1",
     "emotion": "^10.0.17"

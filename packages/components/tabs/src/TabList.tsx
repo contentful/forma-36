@@ -2,6 +2,8 @@ import React from 'react';
 import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 import * as RadixTabs from '@radix-ui/react-tabs';
 import { getTabsStyles } from './Tabs.styles';
+import { useTabsContext } from './TabsContext';
+import { NavList } from '@contentful/f36-navlist';
 
 export interface TabListProps extends CommonProps {
   /**
@@ -27,18 +29,25 @@ export const TabList = React.forwardRef<
     testId = 'cf-ui-tab-list',
     ...otherProps
   } = props;
+
   const styles = getTabsStyles({
     className,
     variant,
   });
+
+  const { orientation } = useTabsContext();
+
+  const isVertical = orientation === 'vertical';
+
   return (
     <RadixTabs.List
       {...otherProps}
       data-test-id={testId}
       className={styles.tabList}
       ref={ref}
+      asChild={isVertical}
     >
-      {children}
+      {isVertical ? <NavList>{children}</NavList> : children}
     </RadixTabs.List>
   );
 });

@@ -46,6 +46,36 @@ export const Basic: Story = (args) => {
   );
 };
 
+export const VerticalBasic: Story = (args) => {
+  return (
+    <div>
+      <Tabs
+        {...args}
+        defaultTab="first"
+        orientation="vertical"
+        onTabChange={(id: string) => {
+          action('onSelect')(id);
+        }}
+      >
+        <div>
+          <Tabs.List>
+            <Tabs.Tab panelId="first">First</Tabs.Tab>
+            <Tabs.Tab panelId="second">Second</Tabs.Tab>
+            <Tabs.Tab panelId="third" isDisabled>
+              Third (disabled)
+            </Tabs.Tab>
+          </Tabs.List>
+        </div>
+        <main>
+          <Tabs.Panel id="first">content first tab</Tabs.Panel>
+          <Tabs.Panel id="second">content second tab</Tabs.Panel>
+          <Tabs.Panel id="third">content third tab</Tabs.Panel>
+        </main>
+      </Tabs>
+    </div>
+  );
+};
+
 export const Controlled: Story = (args) => {
   const [currentTab, setCurrentTab] = React.useState('first');
   return (
@@ -112,6 +142,23 @@ export const Overview: Story = () => {
       <Flex marginBottom="spacingXl" flexDirection="column">
         <Tabs defaultTab="first" onTabChange={onSelect}>
           <Tabs.List variant="vertical-divider">
+            <Tabs.Tab panelId="first">First</Tabs.Tab>
+            <Tabs.Tab panelId="second">Second</Tabs.Tab>
+            <Tabs.Tab panelId="third">Third</Tabs.Tab>
+          </Tabs.List>
+          <Tabs.Panel id="first">content first tab</Tabs.Panel>
+          <Tabs.Panel id="second">content second tab</Tabs.Panel>
+          <Tabs.Panel id="third">content third tab</Tabs.Panel>
+        </Tabs>
+      </Flex>
+
+      <SectionHeading as="h3" marginBottom="spacingM">
+        Vertical tabs default
+      </SectionHeading>
+
+      <Flex marginBottom="spacingXl" flexDirection="column">
+        <Tabs orientation="vertical" defaultTab="first" onTabChange={onSelect}>
+          <Tabs.List>
             <Tabs.Tab panelId="first">First</Tabs.Tab>
             <Tabs.Tab panelId="second">Second</Tabs.Tab>
             <Tabs.Tab panelId="third">Third</Tabs.Tab>
