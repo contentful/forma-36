@@ -35,12 +35,12 @@ function _NavList<E extends React.ElementType = typeof NAV_LIST_DEFAULT_TAG>(
 
   return (
     <Element
+      aria-label="Sidebar"
+      {...otherProps}
       data-test-id={testId}
       ref={ref}
-      aria-label={props['aria-label'] ?? 'Sidebar'}
       className={cx(styles.root, className)}
       role={role}
-      {...otherProps}
     >
       {children}
     </Element>
