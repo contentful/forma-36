@@ -66,7 +66,9 @@ export const getNavListItemStyles = ({
           '&:focus-visible': {
             boxShadow: `inset ${tokens.glowPrimary}`,
           },
-          '&:active': activeStyle,
+          '&:active': {
+            backgroundColor: tokens.gray200,
+          },
           '&:disabled': disabledStyle,
         },
       ],
