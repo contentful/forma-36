@@ -12,6 +12,7 @@ import tokens from '@contentful/f36-tokens';
 import * as f36Components from '@contentful/f36-components';
 import { Multiselect } from '@contentful/f36-multiselect';
 import { NavList } from '@contentful/f36-navlist';
+import { Tabs } from '@contentful/f36-tabs';
 import * as f36utils from '@contentful/f36-utils';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
@@ -36,6 +37,7 @@ const liveProviderScope = {
   ...f36utils,
   Multiselect, // Remove when added to f36-components
   NavList, // Remove when added to f36-components
+  Tabs, // Remove when promoted to stable
   css,
   f36icons,
   tokens,
