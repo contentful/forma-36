@@ -52,7 +52,7 @@ export const VerticalBasic: Story = (args) => {
       <Tabs
         {...args}
         defaultTab="first"
-        orientation="vertical"
+        variant="vertical"
         onTabChange={(id: string) => {
           action('onSelect')(id);
         }}
@@ -157,7 +157,7 @@ export const Overview: Story = () => {
       </SectionHeading>
 
       <Flex marginBottom="spacingXl" flexDirection="column">
-        <Tabs orientation="vertical" defaultTab="first" onTabChange={onSelect}>
+        <Tabs variant="vertical" defaultTab="first" onTabChange={onSelect}>
           <Tabs.List>
             <Tabs.Tab panelId="first">First</Tabs.Tab>
             <Tabs.Tab panelId="second">Second</Tabs.Tab>

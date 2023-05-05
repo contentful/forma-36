@@ -9,7 +9,10 @@ export interface TabsProps extends CommonProps {
   defaultTab?: string;
   currentTab?: string;
   onTabChange?: (tab: string) => void;
-  orientation?: 'horizontal' | 'vertical';
+  /**
+   * Defines if the tabs are displayed horizontally or vertically.
+   */
+  variant?: 'horizontal' | 'vertical';
 }
 
 export const Tabs = React.forwardRef<HTMLDivElement, ExpandProps<TabsProps>>(
@@ -19,7 +22,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, ExpandProps<TabsProps>>(
       currentTab,
       onTabChange,
       children,
-      orientation = 'horizontal',
+      variant: orientation = 'horizontal',
       testId = 'cf-ui-tabs',
       className,
       ...otherProps

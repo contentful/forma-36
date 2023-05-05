@@ -2,7 +2,7 @@ import React from 'react';
 import { TabsProps } from '.';
 
 export type TabsContextType = {
-  orientation: TabsProps['orientation'];
+  orientation: TabsProps['variant'];
   currentTab?: TabsProps['currentTab'];
 };
 

@@ -3,7 +3,7 @@ import { Tabs } from '@contentful/f36-tabs';
 
 export default function TabsBasicExample() {
   return (
-    <Tabs orientation="vertical">
+    <Tabs variant="vertical">
       <Tabs.List>
         <Tabs.Tab panelId="first">First</Tabs.Tab>
         <Tabs.Tab panelId="second">Second</Tabs.Tab>
