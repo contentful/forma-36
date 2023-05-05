@@ -13,8 +13,7 @@ const activeStyle: ObjectInterpolation<undefined> = {
 
 const disabledStyle: ObjectInterpolation<undefined> = {
   opacity: 0.5,
-  pointerEvents: 'none',
-  cursor: 'auto',
+  cursor: 'not-allowed',
   '&:hover': {
     backgroundColor: 'unset',
   },

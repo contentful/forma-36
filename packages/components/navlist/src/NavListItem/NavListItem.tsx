@@ -42,6 +42,7 @@ function _NavListItem<
     isActive = false,
     isDisabled = false,
     icon,
+    onClick,
     ...otherProps
   } = props;
 
@@ -55,6 +56,13 @@ function _NavListItem<
     <Element
       {...otherProps}
       className={cx(styles.root, className)}
+      onClick={
+        isDisabled
+          ? (e) => {
+              e.preventDefault();
+            }
+          : onClick
+      }
       ref={ref}
       data-test-id={itemTestId}
       tabIndex={isDisabled ? -1 : 0}
