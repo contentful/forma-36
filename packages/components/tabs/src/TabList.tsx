@@ -30,14 +30,13 @@ export const TabList = React.forwardRef<
     ...otherProps
   } = props;
 
+  const { orientation } = useTabsContext();
+  const isVertical = orientation === 'vertical';
+
   const styles = getTabsStyles({
     className,
-    variant,
+    variant: isVertical ? 'default' : variant,
   });
-
-  const { orientation } = useTabsContext();
-
-  const isVertical = orientation === 'vertical';
 
   return (
     <RadixTabs.List
