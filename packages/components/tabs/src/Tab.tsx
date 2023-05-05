@@ -17,7 +17,7 @@ export interface TabProps extends CommonProps {
   children: React.ReactNode;
 }
 
-export const Tab = React.forwardRef<HTMLDivElement, ExpandProps<TabProps>>(
+export const Tab = React.forwardRef<any, ExpandProps<TabProps>>(
   (props, ref) => {
     const {
       children,
