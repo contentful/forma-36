@@ -94,7 +94,8 @@ export function SandpackRenderer({
           'react-scripts': '^4.0.0',
           '@contentful/f36-components': '^4.0.0',
           '@contentful/f36-multiselect': '^4.0.0', // Remove when added to f36-components
-          '@contentful/f36-navlist': '^4.1.0-alpha.0', // Remove when added to f36-components
+          '@contentful/f36-navlist': '^4.1.0-alpha.1', // Remove when added to f36-components
+          '@contentful/f36-tabs': '^4.38.0-alpha.0', // Remove when stable
           '@contentful/f36-tokens': '^4.0.0',
           '@contentful/f36-icons': '^4.0.0',
           emotion: '^10.0.17',
