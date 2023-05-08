@@ -112,10 +112,10 @@ export function getModalStyles(props: {
         props.overlayClassName,
       ),
       afterOpen: css({
-        opacity: 1,
+        opacity: '1 !important',
       }),
       beforeClose: css({
-        opacity: 0,
+        opacity: '0 !important',
       }),
     },
     modal,
