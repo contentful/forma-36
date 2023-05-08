@@ -26,6 +26,7 @@ export default function ModalSizesExample() {
             <Select.Option value="medium">medium</Select.Option>
             <Select.Option value="large">large</Select.Option>
             <Select.Option value="fullWidth">full width</Select.Option>
+            <Select.Option value="fullscreen">full screen</Select.Option>
             <Select.Option value="333px">
               333px (specific width value)
             </Select.Option>

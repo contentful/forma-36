@@ -38,6 +38,7 @@ export default {
           'medium',
           'large',
           'fullWidth',
+          'fullscreen',
           'zen',
           '200px',
           '1500px',
