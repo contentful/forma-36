@@ -28,7 +28,7 @@ function _NavList<E extends React.ElementType = typeof NAV_LIST_DEFAULT_TAG>(
 ) {
   const styles = getStyles();
 
-  const { as, className, children, testId, ...otherProps } = props;
+  const { as = 'nav', className, children, testId, ...otherProps } = props;
   const role = as === 'nav' ? 'navigation' : undefined;
 
   const Element = (as ?? NAV_LIST_DEFAULT_TAG) as React.ElementType;
