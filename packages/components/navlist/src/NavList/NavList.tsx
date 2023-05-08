@@ -8,12 +8,12 @@ import {
 } from '@contentful/f36-core';
 import { getStyles } from './NavList.styles';
 
-const NAV_LIST_DEFAULT_TAG = 'div';
+const NAV_LIST_DEFAULT_TAG = 'nav';
 
 export interface NavListInternalProps extends CommonProps {
   children: React.ReactNode;
   /**
-   * @default div
+   * @default nav
    */
   as?: 'nav' | 'div';
 }
@@ -29,7 +29,7 @@ function _NavList<E extends React.ElementType = typeof NAV_LIST_DEFAULT_TAG>(
   const styles = getStyles();
 
   const { as = 'nav', className, children, testId, ...otherProps } = props;
-  const role = as === 'nav' ? 'navigation' : undefined;
+  const role = as === 'nav' ? undefined : 'navigation';
 
   const Element = (as ?? NAV_LIST_DEFAULT_TAG) as React.ElementType;
 

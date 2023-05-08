@@ -17,7 +17,7 @@ interface NavListItemInternalProps extends CommonProps {
   /**
    * @default a
    */
-  as?: 'a' | 'button';
+  as?: React.ElementType;
   /**
    * Marks item as active
    */
