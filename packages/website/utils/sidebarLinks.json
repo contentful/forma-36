@@ -48,6 +48,11 @@
       "slug": "/components/menu/"
     },
     {
+      "title": "NavList",
+      "slug": "/components/navlist/",
+      "status": "alpha"
+    },
+    {
       "title": "Note",
       "slug": "/components/note/"
     },
@@ -164,6 +169,49 @@
       "status": "stable"
     }
   ],
+  "typographyComponents": [
+    {
+      "title": "Caption",
+      "slug": "/components/caption/",
+      "status": "stable"
+    },
+    {
+      "title": "DisplayText",
+      "slug": "/components/display-text/",
+      "status": "stable"
+    },
+    {
+      "title": "Heading",
+      "slug": "/components/heading/",
+      "status": "stable"
+    },
+    {
+      "title": "MissingContent",
+      "slug": "/components/missingcontent/",
+      "isNew": true,
+      "status": "stable"
+    },
+    {
+      "title": "Paragraph",
+      "slug": "/components/paragraph/",
+      "status": "stable"
+    },
+    {
+      "title": "SectionHeading",
+      "slug": "/components/section-heading/",
+      "status": "stable"
+    },
+    {
+      "title": "Subheading",
+      "slug": "/components/subheading/",
+      "status": "stable"
+    },
+    {
+      "title": "Text",
+      "slug": "/components/text/",
+      "status": "stable"
+    }
+  ],
   "formComponents": [
     {
       "title": "Checkbox",
@@ -245,43 +293,6 @@
     {
       "title": "InlineEntryCard",
       "slug": "/components/inline-entry-card/"
-    }
-  ],
-  "typographyComponents": [
-    {
-      "title": "Caption",
-      "slug": "/components/caption/",
-      "status": "stable"
-    },
-    {
-      "title": "DisplayText",
-      "slug": "/components/display-text/",
-      "status": "stable"
-    },
-    {
-      "title": "Heading",
-      "slug": "/components/heading/",
-      "status": "stable"
-    },
-    {
-      "title": "Paragraph",
-      "slug": "/components/paragraph/",
-      "status": "stable"
-    },
-    {
-      "title": "SectionHeading",
-      "slug": "/components/section-heading/",
-      "status": "stable"
-    },
-    {
-      "title": "Subheading",
-      "slug": "/components/subheading/",
-      "status": "stable"
-    },
-    {
-      "title": "Text",
-      "slug": "/components/text/",
-      "status": "stable"
     }
   ],
   "utils": [

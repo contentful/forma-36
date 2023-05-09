@@ -1,0 +1,35 @@
+---
+title: 'MissingContent'
+type: 'component'
+status: 'stable'
+isNew: true
+section: 'typographyComponents'
+slug: /components/missingcontent/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/empty-state/MissingContent'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/empty-state-missingcontent--basic'
+typescript: ./MissingContent.tsx
+---
+
+`MissingContent` component can be used to render a placeholder for an empty table cell or any inline content that is missing. Its goal is to provide a system information without cluttering the view.
+
+## Import
+
+```jsx static=true
+import { MissingContent } from '@contentful/f36-components';
+// or
+import { MissingContent } from '@contentful/f36-empty-state';
+```
+
+## Example
+
+### Basic usage
+
+```jsx file=examples/MissingContentExample.tsx
+
+```
+
+<PropsTable of="MissingContent" />
+
+## Content guidelines
+
+- This component is meant to be displayed when the expected content is missing. This can be, because it is not set yet or there was an issue processing the data. Additional information like that can be handed over via a label property
