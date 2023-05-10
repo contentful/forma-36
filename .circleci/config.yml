@@ -14,7 +14,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          echo 'export VAULT_ADDR=${foo_url}' >> "$BASH_ENV"
+          echo "export VAULT_ADDR=${foo_url}" >> "$BASH_ENV"
           echo 'export VAULT_MAX_RETRIES="3"' >> "$BASH_ENV"
       - vault/get-secrets:
           template-preset: semantic-release
