@@ -112,10 +112,10 @@ jobs:
     working_directory: ~/circleci-f36-build
     resource_class: xlarge
     steps:
-      - checkout
       - vault/get-secrets:
           template-preset: semantic-release
       - run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > ~/.npmrc
+      - checkout
       - attach_workspace:
           at: ~/circleci-f36-build
       - add_ssh_keys:
