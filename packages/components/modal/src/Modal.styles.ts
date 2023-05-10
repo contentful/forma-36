@@ -115,7 +115,7 @@ export function getModalStyles(props: {
         opacity: '1 !important',
       }),
       beforeClose: css({
-        opacity: '0 !important',
+        opacity: '0',
       }),
     },
     modal,
