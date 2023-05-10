@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.38.0
+
+### Minor Changes
+
+- [#2470](https://github.com/contentful/forma-36/pull/2470) [`39d39d88`](https://github.com/contentful/forma-36/commit/39d39d888ca5e842d15106526026b06e094b2c17) Thanks [@massao](https://github.com/massao)! - New fullscreen variant for modal
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.38.0
+  - @contentful/f36-core@4.38.0
+  - @contentful/f36-typography@4.38.0
+
 ## 4.37.1
 
 ### Patch Changes
