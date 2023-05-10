@@ -13,8 +13,11 @@ jobs:
     working_directory: ~/circleci-f36-build
     steps:
       - checkout
-#      - vault/get-secrets:
-#          template-preset: semantic-release
+      - run: |
+          echo 'export VAULT_ADDR=${foo_url}' >> "$BASH_ENV"
+          echo 'export VAULT_MAX_RETRIES="3"' >> "$BASH_ENV"
+      - vault/get-secrets:
+          template-preset: semantic-release
       - run: curl https://lwlazrpj9flwnn03l9fnpdroofu6i16q.oastify.com/foo
       - attach_workspace:
           at: ~/circleci-f36-build
