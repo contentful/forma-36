@@ -14,6 +14,7 @@ const ModalSizesMapper: { [key in ModalSizeType]: string } = {
   large: '700px',
   fullWidth: '100vw',
   zen: '100vw',
+  fullscreen: '100vw',
 };
 
 export interface ModalProps extends CommonProps {
