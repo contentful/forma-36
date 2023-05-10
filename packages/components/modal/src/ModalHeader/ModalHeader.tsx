@@ -7,12 +7,13 @@ import {
   type CommonProps,
 } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
-import { Subheading } from '@contentful/f36-typography';
+import { Text, Subheading } from '@contentful/f36-typography';
 
 import { getModalHeaderStyles } from './ModalHeader.styles';
 
 interface ModalHeaderInternalProps extends CommonProps {
   title: string;
+  subtitle?: string;
   onClose?: Function;
 }
 
@@ -24,6 +25,7 @@ export type ModalHeaderProps = PropsWithHTMLElement<
 export const ModalHeader = ({
   onClose,
   title,
+  subtitle,
   testId = 'cf-ui-modal-header',
   className,
   ...otherProps
@@ -40,6 +42,11 @@ export const ModalHeader = ({
     >
       <Subheading as="h2" isTruncated marginBottom="none">
         {title}
+        {subtitle && (
+          <Text marginLeft="spacingXs" color="grey700">
+            {subtitle}
+          </Text>
+        )}
       </Subheading>
       {onClose && (
         <Flex alignItems="center" className={styles.buttonContainer}>

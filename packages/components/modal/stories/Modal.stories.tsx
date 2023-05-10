@@ -73,6 +73,7 @@ export const Basic: Story<ModalProps> = (props) => {
 
 Basic.args = {
   title: 'Default modal',
+  subtitle: 'Subtitle',
 };
 
 export const LongModal: Story<ModalProps> = (props) => {
