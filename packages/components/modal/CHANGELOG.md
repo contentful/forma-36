@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.39.0
+
+### Minor Changes
+
+- [#2479](https://github.com/contentful/forma-36/pull/2479) [`2e4006d4`](https://github.com/contentful/forma-36/commit/2e4006d443c5286add1b6d5d4a05a8a74e09d850) Thanks [@mshaaban0](https://github.com/mshaaban0)! - feat: add subtitle prop to Modal
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.39.0
+  - @contentful/f36-core@4.39.0
+  - @contentful/f36-typography@4.39.0
+
 ## 4.38.1
 
 ### Patch Changes
