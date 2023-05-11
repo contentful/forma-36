@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 11-05-2023
+
+**F36 Modal** `v4.38.0`
+
+- New fullscreen variant for modal
+
 ## 28-04-2023
 
 **F36 Modal** `v4.37.1`
