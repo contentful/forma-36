@@ -43,7 +43,7 @@ export const ModalHeader = ({
       <Subheading as="h2" isTruncated marginBottom="none">
         {title}
         {subtitle && (
-          <Text marginLeft="spacingXs" color="gray700">
+          <Text marginLeft="spacingXs" fontColor="gray700">
             {subtitle}
           </Text>
         )}
