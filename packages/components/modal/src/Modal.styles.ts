@@ -76,7 +76,7 @@ export function getModalStyles(props: {
         transform: 'scale(1) !important',
       }),
       beforeClose: css({
-        transform: props.size === 'zen' ? 'scale(1)' : 'scale(0.85)',
+        transform: props.size === 'zen' ? 'scale(1)' : 'scale(0.85) !important',
       }),
     },
     modalOverlay: {
@@ -115,7 +115,7 @@ export function getModalStyles(props: {
         opacity: '1 !important',
       }),
       beforeClose: css({
-        opacity: '0',
+        opacity: '0 !important',
       }),
     },
     modal,
