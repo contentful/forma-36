@@ -68,6 +68,18 @@ export const Overview: Story = () => {
 
           <DragHandle isActive label="Reorder entry" />
         </Flex>
+
+        <Flex
+          flexDirection="column"
+          marginBottom="spacingM"
+          marginRight="spacingM"
+        >
+          <SectionHeading as="h3" marginBottom="spacingS">
+            Plain
+          </SectionHeading>
+
+          <DragHandle isPlain label="Reorder entry" />
+        </Flex>
       </Flex>
     </>
   );
