@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.38.1
+
+### Patch Changes
+
+- [#2480](https://github.com/contentful/forma-36/pull/2480) [`024959df`](https://github.com/contentful/forma-36/commit/024959df5b5b40e78191933e0e9d404181f48c9d) Thanks [@massao](https://github.com/massao)! - fix animation when closing modal
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.38.1
+  - @contentful/f36-core@4.38.1
+  - @contentful/f36-typography@4.38.1
+
 ## 4.38.0
 
 ### Minor Changes
