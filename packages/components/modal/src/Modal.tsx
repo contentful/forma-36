@@ -63,6 +63,10 @@ export interface ModalProps extends CommonProps {
    */
   title?: string;
   /**
+   * Modal subtitle that is used in header
+   */
+  subtitle?: string;
+  /**
    * Size of the modal window
    * @default medium
    */
@@ -177,6 +181,7 @@ export const Modal = ({
         {otherProps.title && (
           <ModalHeader
             title={otherProps.title}
+            subtitle={otherProps.subtitle}
             onClose={props.onClose}
             {...otherProps.modalHeaderProps}
           />
