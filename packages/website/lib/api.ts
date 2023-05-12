@@ -24,6 +24,18 @@ body {
         }
       }
     }
+
+    assets {
+      block {
+        sys {
+          id
+        }
+        url
+        description
+        width
+        height
+      }
+    }
   }
 }
 linkedFrom {
