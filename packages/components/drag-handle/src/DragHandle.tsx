@@ -58,10 +58,10 @@ export interface DragHandleInternalProps extends CommonProps {
   type?: string;
 
   /**
-   * removes default background color and border radius
-   * @default false
+   * Determines style variation
+   * @default secondary
    */
-  isPlain?: boolean;
+  variant?: 'secondary' | 'transparent';
 }
 
 export type DragHandleProps<
@@ -86,7 +86,7 @@ function _DragHandle<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
     onMouseLeave,
     testId = 'cf-ui-drag-handle',
     style,
-    isPlain = false,
+    variant = 'secondary',
     ...otherProps
   } = props;
   const [isFocused, setisFocused] = useState(isFocusedProp);
@@ -138,7 +138,7 @@ function _DragHandle<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
 
   const commonProps = {
     className: cx(
-      styles.root({ isActive, isFocused, isHovered, isPlain }),
+      styles.root({ isActive, isFocused, isHovered, variant }),
       className,
     ),
     'data-test-id': testId,

@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-import { Flex } from '@contentful/f36-core';
-import { SectionHeading } from '@contentful/f36-typography';
+import { Flex, Stack } from '@contentful/f36-core';
+import { SectionHeading, Text } from '@contentful/f36-typography';
 
 import { DragHandle } from '../src/';
 import type { DragHandleInternalProps } from '../src/DragHandle';
@@ -21,65 +21,70 @@ export const Default: Story<DragHandleInternalProps> = (args) => {
 export const Overview: Story = () => {
   return (
     <>
-      <Flex flexWrap="wrap">
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Default
-          </SectionHeading>
+      <Flex flexDirection="column" marginBottom="spacingL">
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Variants
+        </SectionHeading>
 
-          <DragHandle label="Reorder entry" />
-        </Flex>
+        <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXs">
+          <Flex
+            flexDirection="column"
+            marginBottom="spacingM"
+            marginRight="spacingM"
+          >
+            <Text marginBottom="spacingS">Secondary</Text>
 
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Hover
-          </SectionHeading>
+            <DragHandle label="Reorder entry" />
+          </Flex>
 
-          <DragHandle isHovered label="Reorder entry" />
-        </Flex>
+          <Flex
+            flexDirection="column"
+            marginBottom="spacingM"
+            marginRight="spacingM"
+          >
+            <Text marginBottom="spacingS">Transparent</Text>
 
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Focus
-          </SectionHeading>
-          <DragHandle isFocused label="Reorder entry" />
-        </Flex>
+            <DragHandle variant="transparent" label="Reorder entry" />
+          </Flex>
+        </Stack>
+      </Flex>
 
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Drag active
-          </SectionHeading>
+      <Flex flexDirection="column" marginBottom="spacingL">
+        <SectionHeading as="h3" marginBottom="spacingS">
+          States
+        </SectionHeading>
 
-          <DragHandle isActive label="Reorder entry" />
-        </Flex>
+        <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXs">
+          <Flex
+            flexDirection="column"
+            marginBottom="spacingM"
+            marginRight="spacingM"
+          >
+            <Text marginBottom="spacingS">Hover</Text>
 
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Plain
-          </SectionHeading>
+            <DragHandle isHovered label="Reorder entry" />
+          </Flex>
 
-          <DragHandle isPlain label="Reorder entry" />
-        </Flex>
+          <Flex
+            flexDirection="column"
+            marginBottom="spacingM"
+            marginRight="spacingM"
+          >
+            <Text marginBottom="spacingS">Focus</Text>
+
+            <DragHandle isFocused label="Reorder entry" />
+          </Flex>
+
+          <Flex
+            flexDirection="column"
+            marginBottom="spacingM"
+            marginRight="spacingM"
+          >
+            <Text marginBottom="spacingS"> Drag active</Text>
+
+            <DragHandle isActive label="Reorder entry" />
+          </Flex>
+        </Stack>
       </Flex>
     </>
   );

@@ -1,6 +1,7 @@
 import { cx, css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
+import { DragHandleProps } from './DragHandle';
 
 export const getStyles = () => ({
   label: css({
@@ -17,12 +18,12 @@ export const getStyles = () => ({
     isActive,
     isFocused,
     isHovered,
-    isPlain,
+    variant,
   }: {
     isActive: boolean;
     isFocused: boolean;
     isHovered: boolean;
-    isPlain: boolean;
+    variant: DragHandleProps['variant'];
   }) => {
     return cx(
       css({
@@ -51,7 +52,7 @@ export const getStyles = () => ({
           boxShadow: tokens.glowPrimary,
         },
       }),
-      !isPlain &&
+      variant === 'secondary' &&
         css({
           borderTopLeftRadius: tokens.borderRadiusMedium,
           borderBottomLeftRadius: tokens.borderRadiusMedium,
