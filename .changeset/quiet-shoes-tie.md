@@ -2,4 +2,4 @@
 '@contentful/f36-drag-handle': minor
 ---
 
-Introduce plain style to DragHandle component
+Introduce style variants to DragHandle component
