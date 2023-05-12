@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 12-05-2023
+
+**F36 Modal** `v4.38.1`
+
+- fix animation when closing modal
+
+**F36 Modal** `v4.39.0`
+
+- feat: add subtitle prop to Modal
+
 ## 11-05-2023
 
 **F36 Modal** `v4.38.0`
