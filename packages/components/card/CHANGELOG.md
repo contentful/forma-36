@@ -1,5 +1,21 @@
 # Change Log
 
+## 4.40.0
+
+### Patch Changes
+
+- Updated dependencies [[`a5fe7790`](https://github.com/contentful/forma-36/commit/a5fe779062309f9c63e83f0639a43d473aca019a)]:
+  - @contentful/f36-drag-handle@4.40.0
+  - @contentful/f36-asset@4.40.0
+  - @contentful/f36-badge@4.40.0
+  - @contentful/f36-button@4.40.0
+  - @contentful/f36-core@4.40.0
+  - @contentful/f36-icon@4.40.0
+  - @contentful/f36-menu@4.40.0
+  - @contentful/f36-skeleton@4.40.0
+  - @contentful/f36-tooltip@4.40.0
+  - @contentful/f36-typography@4.40.0
+
 ## 4.39.0
 
 ### Patch Changes

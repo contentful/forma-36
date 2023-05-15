@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.40.0
+
+### Minor Changes
+
+- [#2481](https://github.com/contentful/forma-36/pull/2481) [`a5fe7790`](https://github.com/contentful/forma-36/commit/a5fe779062309f9c63e83f0639a43d473aca019a) Thanks [@bgutsol](https://github.com/bgutsol)! - Introduce style variants to DragHandle component
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.0
+
 ## 4.39.0
 
 ### Patch Changes
