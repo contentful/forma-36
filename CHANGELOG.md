@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 16-05-2023
+
+**F36 Drag Handle** `v4.40.0`
+
+- Introduce style variants to DragHandle component
+
 ## 12-05-2023
 
 **F36 Modal** `v4.38.1`
