@@ -9,6 +9,7 @@
     "@contentful/f36-core": "^4.40.0",
     "@contentful/f36-spinner": "^4.40.0",
     "@contentful/f36-tokens": "^4.0.1",
+    "@contentful/f36-utils": "^4.24.1",
     "emotion": "^10.0.17"
   },
   "devDependencies": {

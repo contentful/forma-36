@@ -2,6 +2,7 @@ import { css } from 'emotion';
 import type { CSSObject } from '@emotion/serialize';
 import tokens from '@contentful/f36-tokens';
 import { ButtonSize, ButtonVariant, ButtonStylesProps } from '../types';
+import { hexToRGBA } from '@contentful/f36-utils';
 
 const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
   switch (variant) {
@@ -14,7 +15,7 @@ const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
     case 'negative':
       return { backgroundColor: tokens.red800, borderColor: tokens.red800 };
     case 'transparent':
-      return { backgroundColor: tokens.gray100, borderColor: tokens.gray100 };
+      return { backgroundColor: hexToRGBA(tokens.gray900, 0.1) };
     default:
       return {};
   }
@@ -121,7 +122,7 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
         borderColor: 'transparent',
         boxShadow: 'none',
         '&:hover': {
-          backgroundColor: tokens.gray100,
+          backgroundColor: hexToRGBA(tokens.gray900, 0.05),
           color: tokens.gray900,
         },
         '&:active': variantActiveStyles(variant),

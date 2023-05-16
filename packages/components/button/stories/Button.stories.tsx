@@ -5,6 +5,8 @@ import { Icon } from '@contentful/f36-icon';
 import { Flex, Stack } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import * as icons from '@contentful/f36-icons';
+import { css } from 'emotion';
+import tokens from '@contentful/f36-tokens';
 
 export default {
   title: 'Components/Button',
@@ -367,6 +369,206 @@ export const Overview = ({ startIcon, endIcon }) => {
             As a-tag with href property
           </Button>
         </Flex>
+      </Flex>
+
+      <Flex flexDirection="column" marginBottom="spacingL">
+        <SectionHeading as="h3" marginBottom="spacingS">
+          On backgrounds
+        </SectionHeading>
+
+        <div
+          className={css({
+            background: tokens.gray100,
+            padding: tokens.spacingXs,
+          })}
+        >
+          <Stack
+            flexDirection="row"
+            marginBottom="spacingM"
+            spacing="spacingXs"
+          >
+            <Button
+              variant="primary"
+              startIcon={startIcon && <Icon as={icons[startIcon]} />}
+              endIcon={endIcon && <Icon as={icons[endIcon]} />}
+            >
+              Primary
+            </Button>
+
+            <Button
+              variant="secondary"
+              startIcon={startIcon && <Icon as={icons[startIcon]} />}
+              endIcon={endIcon && <Icon as={icons[endIcon]} />}
+            >
+              Secondary
+            </Button>
+
+            <Button
+              variant="positive"
+              startIcon={startIcon && <Icon as={icons[startIcon]} />}
+              endIcon={endIcon && <Icon as={icons[endIcon]} />}
+            >
+              Positive
+            </Button>
+
+            <Button
+              variant="negative"
+              startIcon={startIcon && <Icon as={icons[startIcon]} />}
+              endIcon={endIcon && <Icon as={icons[endIcon]} />}
+            >
+              Negative
+            </Button>
+
+            <Button
+              variant="transparent"
+              startIcon={startIcon && <Icon as={icons[startIcon]} />}
+              endIcon={endIcon && <Icon as={icons[endIcon]} />}
+            >
+              Transparent
+            </Button>
+          </Stack>
+
+          <Stack marginBottom="spacingM" spacing="spacingXs">
+            <Button variant="primary" isActive>
+              Primary isActive
+            </Button>
+
+            <Button variant="secondary" isActive>
+              Secondary isActive
+            </Button>
+
+            <Button variant="positive" isActive>
+              Positive isActive
+            </Button>
+
+            <Button variant="negative" isActive>
+              Negative isActive
+            </Button>
+
+            <Button variant="transparent" isActive>
+              Transparent
+            </Button>
+          </Stack>
+
+          <Stack marginBottom="spacingM" spacing="spacingXs">
+            <Button variant="primary" isDisabled>
+              Primary disabled
+            </Button>
+
+            <Button variant="secondary" isDisabled>
+              Secondary disabled
+            </Button>
+
+            <Button variant="positive" isDisabled>
+              Positive disabled
+            </Button>
+
+            <Button variant="negative" isDisabled>
+              Negative disabled
+            </Button>
+
+            <Button variant="transparent" isDisabled>
+              Transparent
+            </Button>
+          </Stack>
+        </div>
+
+        <div
+          className={css({
+            background: tokens.gray900,
+            padding: tokens.spacingXs,
+          })}
+        >
+          <Stack
+            flexDirection="row"
+            marginBottom="spacingM"
+            spacing="spacingXs"
+          >
+            <Button
+              variant="primary"
+              startIcon={startIcon && <Icon as={icons[startIcon]} />}
+              endIcon={endIcon && <Icon as={icons[endIcon]} />}
+            >
+              Primary
+            </Button>
+
+            <Button
+              variant="secondary"
+              startIcon={startIcon && <Icon as={icons[startIcon]} />}
+              endIcon={endIcon && <Icon as={icons[endIcon]} />}
+            >
+              Secondary
+            </Button>
+
+            <Button
+              variant="positive"
+              startIcon={startIcon && <Icon as={icons[startIcon]} />}
+              endIcon={endIcon && <Icon as={icons[endIcon]} />}
+            >
+              Positive
+            </Button>
+
+            <Button
+              variant="negative"
+              startIcon={startIcon && <Icon as={icons[startIcon]} />}
+              endIcon={endIcon && <Icon as={icons[endIcon]} />}
+            >
+              Negative
+            </Button>
+
+            <Button
+              variant="transparent"
+              startIcon={startIcon && <Icon as={icons[startIcon]} />}
+              endIcon={endIcon && <Icon as={icons[endIcon]} />}
+            >
+              Transparent
+            </Button>
+          </Stack>
+
+          <Stack marginBottom="spacingM" spacing="spacingXs">
+            <Button variant="primary" isActive>
+              Primary isActive
+            </Button>
+
+            <Button variant="secondary" isActive>
+              Secondary isActive
+            </Button>
+
+            <Button variant="positive" isActive>
+              Positive isActive
+            </Button>
+
+            <Button variant="negative" isActive>
+              Negative isActive
+            </Button>
+
+            <Button variant="transparent" isActive>
+              Transparent
+            </Button>
+          </Stack>
+
+          <Stack spacing="spacingXs" marginBottom="spacingM">
+            <Button variant="primary" isDisabled>
+              Primary disabled
+            </Button>
+
+            <Button variant="secondary" isDisabled>
+              Secondary disabled
+            </Button>
+
+            <Button variant="positive" isDisabled>
+              Positive disabled
+            </Button>
+
+            <Button variant="negative" isDisabled>
+              Negative disabled
+            </Button>
+
+            <Button variant="transparent" isDisabled>
+              Transparent
+            </Button>
+          </Stack>
+        </div>
       </Flex>
     </>
   );
