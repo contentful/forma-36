@@ -8,6 +8,8 @@ export function getModalControlStyles() {
       borderBottomRightRadius: tokens.borderRadiusMedium,
       padding: `${tokens.spacingS} ${tokens.spacingM}`,
       width: `100%`,
+      // This is required in places where it is not set globally (e.g. dialogs via the app framework)
+      boxSizing: 'border-box',
     }),
   };
 }
