@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.40.1
+
+### Patch Changes
+
+- [#2485](https://github.com/contentful/forma-36/pull/2485) [`44215cf4`](https://github.com/contentful/forma-36/commit/44215cf4c2ea576b04fcb2911f8d87aefe73a31a) Thanks [@bgutsol](https://github.com/bgutsol)! - Fix DragHandle component dependencies
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.1
+
 ## 4.40.0
 
 ### Minor Changes
