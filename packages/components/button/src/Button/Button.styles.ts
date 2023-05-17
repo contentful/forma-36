@@ -127,7 +127,8 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
-          backgroundColor: 'transparent',
+          backgroundColor: hexToRGBA(tokens.gray900, 0.05),
+          color: tokens.gray900,
           boxShadow: tokens.glowPrimary,
         },
         '&:focus:not(:focus-visible)': {
@@ -225,7 +226,7 @@ export const getStyles = () => ({
       ...(isActive
         ? {
             transition: 'none',
-            '&, &:hover': variantActiveStyles(variant),
+            '&, &:focus': variantActiveStyles(variant),
           }
         : {}),
     }),
