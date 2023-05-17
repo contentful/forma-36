@@ -1,5 +1,25 @@
 # Change Log
 
+## 4.40.2
+
+### Patch Changes
+
+- [#2484](https://github.com/contentful/forma-36/pull/2484) [`1c9de54c`](https://github.com/contentful/forma-36/commit/1c9de54c9e052d231938726bce6bb4f09b048c91) Thanks [@Chaoste](https://github.com/Chaoste)! - fix(modal): use border-box for controls to avoid overflow
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.40.2
+  - @contentful/f36-core@4.40.2
+  - @contentful/f36-typography@4.40.2
+
+## 4.40.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.40.1
+  - @contentful/f36-core@4.40.1
+  - @contentful/f36-typography@4.40.1
+
 ## 4.40.0
 
 ### Patch Changes
