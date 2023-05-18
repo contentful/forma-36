@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 18-05-2023
+
+**F36 Drag Handle** `v4.40.1`
+
+- Fix DragHandle component dependencies
+
+**F36 Modal** `v4.40.2`
+
+- fix(modal): use border-box for controls to avoid overflow
+
 ## 16-05-2023
 
 **F36 Drag Handle** `v4.40.0`
