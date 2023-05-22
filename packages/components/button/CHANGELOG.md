@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.40.3
+
+### Patch Changes
+
+- [#2483](https://github.com/contentful/forma-36/pull/2483) [`6953f901`](https://github.com/contentful/forma-36/commit/6953f90182f701f28211985106ff2b766f8169be) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(button): tweak transparent variant backgrounds
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.3
+  - @contentful/f36-spinner@4.40.3
+
 ## 4.40.2
 
 ### Patch Changes

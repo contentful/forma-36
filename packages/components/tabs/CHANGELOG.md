@@ -1,5 +1,12 @@
 # Change Log
 
+## 4.40.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.3
+
 ## 4.40.2
 
 ### Patch Changes
