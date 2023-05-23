@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 23-05-2023
+
+**F36 Button** `v4.40.3`
+
+- fix(button): tweak transparent variant backgrounds
+
 ## 18-05-2023
 
 **F36 Drag Handle** `v4.40.1`
