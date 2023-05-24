@@ -58,13 +58,13 @@ function EntityStatusBadge(
     size = 'default',
     ...otherProps
   } = props;
-  const withIcon = isScheduled && size === 'default';
+  const withClockIcon = isScheduled && size === 'default';
   const variant = statusMap[entityStatus];
 
   return (
     <Badge
       {...otherProps}
-      {...(withIcon
+      {...(withClockIcon
         ? { size, startIcon: <ClockIcon testId="schedule-icon" /> }
         : { size })}
       variant={variant}
