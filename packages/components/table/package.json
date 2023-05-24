@@ -1,15 +1,15 @@
 {
   "name": "@contentful/f36-table",
-  "version": "4.40.4",
+  "version": "4.40.5",
   "description": "Forma 36: Table component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.40.4",
+    "@contentful/f36-core": "^4.40.5",
     "@contentful/f36-icons": "^4.25.0",
     "@contentful/f36-tokens": "^4.0.1",
-    "@contentful/f36-typography": "^4.40.4",
+    "@contentful/f36-typography": "^4.40.5",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {

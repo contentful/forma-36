@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.40.5
+
+### Patch Changes
+
+- [#2488](https://github.com/contentful/forma-36/pull/2488) [`b7173927`](https://github.com/contentful/forma-36/commit/b717392708c35f1ef58c61add4d0898474f3bea9) Thanks [@massao](https://github.com/massao)! - Remove background color on hover of transparent drag handle
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.5
+
 ## 4.40.4
 
 ### Patch Changes
