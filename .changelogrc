@@ -1,1 +1,1 @@
-{"**F36 Badge** `v4.40.4`":["- feat(entity-status-badge): add isScheduled prop \n"],"**F36 Drag Handle** `v4.40.5`":["- Remove background color on hover of transparent drag handle \n"]}
+{"**F36 Badge** `v4.40.4`":["- feat(entity-status-badge): add isScheduled prop \n"],"**F36 Drag Handle** `v4.40.5`":["- Remove background color on hover of transparent drag handle \n"],"**F36 Button** `v4.40.6`":["- fix(button): keep transparent button focus background \n"]}

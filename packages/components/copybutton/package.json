@@ -1,16 +1,16 @@
 {
   "name": "@contentful/f36-copybutton",
-  "version": "4.40.5",
+  "version": "4.40.6",
   "description": "Forma 36: CopyButton component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-button": "^4.40.5",
-    "@contentful/f36-core": "^4.40.5",
+    "@contentful/f36-button": "^4.40.6",
+    "@contentful/f36-core": "^4.40.6",
     "@contentful/f36-icons": "^4.23.2",
     "@contentful/f36-tokens": "^4.0.1",
-    "@contentful/f36-tooltip": "^4.40.5",
+    "@contentful/f36-tooltip": "^4.40.6",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
