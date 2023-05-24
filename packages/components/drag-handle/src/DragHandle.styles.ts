@@ -30,7 +30,6 @@ export const getStyles = () => ({
         alignItems: 'center',
         backgroundColor: 'transparent',
         border: 0,
-        borderRight: `1px solid ${tokens.gray200}`,
         boxSizing: 'border-box',
         display: 'flex',
         justifyContent: 'center',
@@ -39,9 +38,6 @@ export const getStyles = () => ({
         position: 'relative',
         transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
         width: tokens.spacingL,
-        '&:hover': {
-          backgroundColor: hexToRGBA(tokens.gray900, 0.08),
-        },
         '&:focus': {
           boxShadow: tokens.glowPrimary,
         },
@@ -54,13 +50,21 @@ export const getStyles = () => ({
       }),
       variant === 'secondary' &&
         css({
+          borderRight: `1px solid ${tokens.gray200}`,
           borderTopLeftRadius: tokens.borderRadiusMedium,
           borderBottomLeftRadius: tokens.borderRadiusMedium,
           backgroundColor: tokens.gray100,
+          '&:hover': {
+            backgroundColor: hexToRGBA(tokens.gray900, 0.08),
+          },
+        }),
+      variant === 'secondary' &&
+        (isActive || isFocused || isHovered) &&
+        css({
+          backgroundColor: hexToRGBA(tokens.gray900, 0.08),
         }),
       (isActive || isFocused || isHovered) &&
         css({
-          backgroundColor: hexToRGBA(tokens.gray900, 0.08),
           cursor: isActive ? 'grabbing' : 'grab',
         }),
     );
