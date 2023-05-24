@@ -117,18 +117,15 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
       };
     case 'transparent':
       return {
-        color: tokens.gray800,
+        color: tokens.gray900,
         background: 'none',
         borderColor: 'transparent',
         boxShadow: 'none',
         '&:hover': {
           backgroundColor: hexToRGBA(tokens.gray900, 0.05),
-          color: tokens.gray900,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
-          backgroundColor: hexToRGBA(tokens.gray900, 0.05),
-          color: tokens.gray900,
           boxShadow: tokens.glowPrimary,
         },
         '&:focus:not(:focus-visible)': {
