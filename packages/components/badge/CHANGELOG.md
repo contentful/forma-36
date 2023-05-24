@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.40.4
+
+### Patch Changes
+
+- [#2486](https://github.com/contentful/forma-36/pull/2486) [`408588b3`](https://github.com/contentful/forma-36/commit/408588b39433f3de099f80f29854eff632e99d20) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(entity-status-badge): add isScheduled prop
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.4
+
 ## 4.40.3
 
 ### Patch Changes
