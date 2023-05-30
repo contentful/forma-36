@@ -1,5 +1,23 @@
 # Change Log
 
+## 4.40.6
+
+### Patch Changes
+
+- [#2489](https://github.com/contentful/forma-36/pull/2489) [`cbef6dc2`](https://github.com/contentful/forma-36/commit/cbef6dc2b10a11bf431b7a8c1ef60271f2377a41) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(button): keep transparent button focus background
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.6
+  - @contentful/f36-spinner@4.40.6
+
+## 4.40.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.5
+  - @contentful/f36-spinner@4.40.5
+
 ## 4.40.4
 
 ### Patch Changes
