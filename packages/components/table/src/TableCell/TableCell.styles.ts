@@ -46,7 +46,7 @@ export const getTableCellStyles = ({
     borderBottom: `1px solid ${tokens.gray200}`,
     padding: isSortable ? 0 : tokens.spacingS,
     textAlign: align,
-    color: tokens.gray700,
+    color: isTableHead ? tokens.gray600 : tokens.gray700,
     fontWeight: isTableHead ? tokens.fontWeightMedium : tokens.fontWeightNormal,
     verticalAlign,
   }),
