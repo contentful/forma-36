@@ -12,10 +12,7 @@ export const getTableRowStyles = () => ({
   }),
   selected: css({
     'td, th': {
-      backgroundColor: tokens.blue100,
-    },
-    'td:last-child': {
-      boxShadow: `inset -2px 0 0 ${tokens.blue500}`,
+      backgroundColor: tokens.gray100,
     },
   }),
 });
