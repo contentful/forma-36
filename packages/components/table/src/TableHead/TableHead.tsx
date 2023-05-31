@@ -40,7 +40,7 @@ export const TableHead = forwardRef<
     forwardedRef,
   ) => {
     const styles = getTableHeadStyles();
-    const classNames = cx(isSticky && styles.sticky, className);
+    const classNames = cx(styles.root, isSticky && styles.sticky, className);
 
     return (
       <TableCellContextProvider
