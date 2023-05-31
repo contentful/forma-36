@@ -75,11 +75,6 @@ export function getPillStyles(variant: PillVariants) {
       verticalAlign: 'middle',
       outline: 'none',
     }),
-    dragIcon: css({
-      padding: tokens.spacingXs,
-      paddingRight: 0,
-      cursor: 'move',
-    }),
     pill: getPillStyle(variant),
   };
 }
