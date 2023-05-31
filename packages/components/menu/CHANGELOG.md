@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.41.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.41.0
+  - @contentful/f36-popover@4.41.0
+  - @contentful/f36-typography@4.41.0
+
 ## 4.40.7
 
 ### Patch Changes

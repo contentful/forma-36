@@ -1,1 +1,1 @@
-{"**F36 Table** `v4.40.7`":["- fix: differentiate th color from td \n","- Fix Table.Body children type \n"]}
+{"**F36 Table** `v4.40.7`":["- fix: differentiate th color from td \n","- Fix Table.Body children type \n"],"**F36 Pill** `v4.41.0`":["- feat(pill): add isDraggable prop \n"]}

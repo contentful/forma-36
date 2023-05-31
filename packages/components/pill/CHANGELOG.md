@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.41.0
+
+### Minor Changes
+
+- [#2493](https://github.com/contentful/forma-36/pull/2493) [`ecd4b11e`](https://github.com/contentful/forma-36/commit/ecd4b11e1f1c82fdbe65facc309757ddc1fdd3e1) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(pill): add isDraggable prop
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.41.0
+  - @contentful/f36-core@4.41.0
+  - @contentful/f36-drag-handle@4.41.0
+  - @contentful/f36-tooltip@4.41.0
+
 ## 4.40.7
 
 ### Patch Changes
