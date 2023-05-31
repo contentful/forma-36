@@ -13,6 +13,10 @@ import { getPillStyles } from './Pill.styles';
 
 export type PillInternalProps = CommonProps & {
   /**
+   * Mark the pill as draggable. Drag icon is rendered when this property is set.
+   */
+  isDraggable?: boolean;
+  /**
    * Text that will be shown on the pill
    */
   label: string;
@@ -21,7 +25,7 @@ export type PillInternalProps = CommonProps & {
    */
   onClose?: () => void;
   /**
-   * Function that handles when the pill is dragged. Drag icon visibility depends on if this property is set.
+   * Function that handles when the pill is dragged. Drag icon is rendered when this property is set.
    */
   onDrag?: () => void;
   /**
@@ -40,6 +44,7 @@ export type PillProps = PropsWithHTMLElement<PillInternalProps, 'div'>;
 export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
   (props, ref) => {
     const {
+      isDraggable,
       label,
       onClose,
       testId = 'cf-ui-pill',
@@ -72,7 +77,7 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
         ref={ref}
         {...otherProps}
       >
-        {onDrag &&
+        {(isDraggable || onDrag) &&
           (dragHandleComponent ? (
             dragHandleComponent
           ) : (
