@@ -1,21 +1,15 @@
 import React from 'react';
-import { Box, Card, DragHandle, Flex } from '@contentful/f36-components';
-import { css } from 'emotion';
 import { DndContext } from '@dnd-kit/core';
 import {
   arrayMove,
-  verticalListSortingStrategy,
+  horizontalListSortingStrategy,
   SortableContext,
   useSortable,
 } from '@dnd-kit/sortable';
+import { DragHandle, Flex, Pill } from '@contentful/f36-components';
 import { CSS } from '@dnd-kit/utilities';
 
-export default function WithCustomDragHandle() {
-  const styles = {
-    dragHandle: css({
-      alignSelf: 'stretch',
-    }),
-  };
+export default function DndKitExample() {
   const [items, setItems] = React.useState([
     'Tech',
     'News',
@@ -23,7 +17,7 @@ export default function WithCustomDragHandle() {
     'Contentful',
   ]);
 
-  function SortableCard({ id }) {
+  function DraggablePill({ id }) {
     const { attributes, listeners, setNodeRef, transform, transition } =
       useSortable({
         id,
@@ -35,30 +29,27 @@ export default function WithCustomDragHandle() {
     };
 
     return (
-      <Card
-        dragHandleRender={() => (
+      <Pill
+        dragHandleComponent={
           <DragHandle
-            as="button"
-            className={styles.dragHandle}
-            label="Move card"
+            label="Reorder item"
+            variant="transparent"
             {...attributes}
             {...listeners}
           />
-        )}
-        padding="none"
-        withDragHandle
+        }
+        isDraggable
+        label={id}
         ref={setNodeRef}
         style={style}
-      >
-        <Box padding="spacingM">{id}</Box>
-      </Card>
+      />
     );
   }
 
   const handleDragEnd = (event) => {
     const { active, over } = event;
 
-    if (active && over && active.id !== over.id) {
+    if (active.id !== over.id) {
       setItems((items) => {
         const oldIndex = items.indexOf(active.id);
         const newIndex = items.indexOf(over.id);
@@ -70,10 +61,10 @@ export default function WithCustomDragHandle() {
 
   return (
     <DndContext onDragEnd={handleDragEnd}>
-      <SortableContext items={items} strategy={verticalListSortingStrategy}>
-        <Flex flexDirection="column" gap="spacingS">
+      <SortableContext items={items} strategy={horizontalListSortingStrategy}>
+        <Flex gap="spacingS">
           {items.map((item) => (
-            <SortableCard key={item} id={item} />
+            <DraggablePill id={item} key={item} />
           ))}
         </Flex>
       </SortableContext>
