@@ -6,8 +6,9 @@ import type {
   ExpandProps,
 } from '@contentful/f36-core';
 import { Tooltip } from '@contentful/f36-tooltip';
-import { DragIcon, CloseIcon } from '@contentful/f36-icons';
+import { CloseIcon } from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
+import { DragHandle } from '@contentful/f36-drag-handle';
 import { PillVariants } from './types';
 import { getPillStyles } from './Pill.styles';
 
@@ -81,9 +82,7 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
           (dragHandleComponent ? (
             dragHandleComponent
           ) : (
-            <span aria-label="Drag handler" className={styles.dragIcon}>
-              <DragIcon className={styles.icon} variant="muted" />
-            </span>
+            <DragHandle label="Reorder item" variant="transparent" />
           ))}
         <Tooltip
           content={label}

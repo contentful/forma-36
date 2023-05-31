@@ -8,6 +8,7 @@
   "dependencies": {
     "@contentful/f36-button": "^4.40.7",
     "@contentful/f36-core": "^4.40.7",
+    "@contentful/f36-drag-handle": "^4.40.7",
     "@contentful/f36-icons": "^4.23.2",
     "@contentful/f36-tokens": "^4.0.1",
     "@contentful/f36-tooltip": "^4.40.7",
