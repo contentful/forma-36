@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.41.1
+
+### Patch Changes
+
+- [#2495](https://github.com/contentful/forma-36/pull/2495) [`bb6b97a2`](https://github.com/contentful/forma-36/commit/bb6b97a21779bd30bd0894a0c14a7a74eff9c6de) Thanks [@bgutsol](https://github.com/bgutsol)! - Fix Table.Body types
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.41.1
+  - @contentful/f36-typography@4.41.1
+
 ## 4.41.0
 
 ### Patch Changes

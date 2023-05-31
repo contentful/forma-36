@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.41.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.41.1
+  - @contentful/f36-core@4.41.1
+  - @contentful/f36-forms@4.41.1
+  - @contentful/f36-popover@4.41.1
+  - @contentful/f36-skeleton@4.41.1
+  - @contentful/f36-typography@4.41.1
+
 ## 4.41.0
 
 ### Patch Changes
