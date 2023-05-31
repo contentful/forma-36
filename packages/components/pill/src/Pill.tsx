@@ -96,7 +96,7 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
           <Button
             type="button"
             variant="transparent"
-            startIcon={<CloseIcon aria-label="Close" />}
+            startIcon={<CloseIcon />}
             aria-label="Close"
             onClick={onClose}
             className={styles.closeButton}
