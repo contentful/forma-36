@@ -7,7 +7,7 @@ import {
 } from '@contentful/f36-core';
 
 export type TableBodyInternalProps = CommonProps & {
-  children?: ReactNode;
+  children: ReactNode;
 };
 
 export type TableBodyProps = PropsWithHTMLElement<
