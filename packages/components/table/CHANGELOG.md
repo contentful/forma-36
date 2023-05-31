@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.40.7
+
+### Patch Changes
+
+- [#2491](https://github.com/contentful/forma-36/pull/2491) [`e36ff8b2`](https://github.com/contentful/forma-36/commit/e36ff8b25a4ee43823b875881aa35b5c03040b49) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix: differentiate th color from td
+
+* [#2492](https://github.com/contentful/forma-36/pull/2492) [`a2859199`](https://github.com/contentful/forma-36/commit/a28591999695ed0d39080536eff57bb63a8c2842) Thanks [@bgutsol](https://github.com/bgutsol)! - Fix Table.Body children type
+
+* Updated dependencies []:
+  - @contentful/f36-core@4.40.7
+  - @contentful/f36-typography@4.40.7
+
 ## 4.40.6
 
 ### Patch Changes
