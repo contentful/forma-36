@@ -28,7 +28,7 @@ export default function WithCustomDragHandle() {
   ]);
 
   function SortableCard({ id }) {
-    const { attributes, listeners, setNodeRef, transform, transition } =
+    const { attributes, listeners, setNodeRef, transform, transition, active } =
       useSortable({
         id,
       });
