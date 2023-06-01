@@ -22,7 +22,6 @@ export default function DndKitExample() {
       useSortable({
         id,
       });
-
     const style = {
       transform: CSS.Translate.toString(transform),
       transition,
