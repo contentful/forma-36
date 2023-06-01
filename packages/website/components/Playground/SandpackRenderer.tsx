@@ -89,6 +89,8 @@ export function SandpackRenderer({
       css={sandpackStyles.wrapper}
       customSetup={{
         dependencies: {
+          '@dnd-kit/core': '^6.0.0',
+          '@dnd-kit/sortable': '^7.0.0',
           react: '^17.0.0',
           'react-dom': '^17.0.0',
           'react-scripts': '^4.0.0',
@@ -102,8 +104,6 @@ export function SandpackRenderer({
           'react-hook-form': '7.22.5',
           'react-icons': '4.3.1',
           'react-focus-lock': '^2.5.2',
-          'react-sortable-hoc': '^2.0.0',
-          'array-move': '^4.0.0',
         },
       }}
       files={{

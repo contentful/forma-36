@@ -1,23 +1,20 @@
 import React from 'react';
-import { Box, Card, DragHandle, Flex } from '@contentful/f36-components';
-import { css } from 'emotion';
 import { DndContext } from '@dnd-kit/core';
 import {
   arrayMove,
-  verticalListSortingStrategy,
+  horizontalListSortingStrategy,
   SortableContext,
   useSortable,
 } from '@dnd-kit/sortable';
+import { DragHandle, Table, Text } from '@contentful/f36-components';
 import { CSS } from '@dnd-kit/utilities';
+import { css } from 'emotion';
 
-export default function WithCustomDragHandle() {
+export default function DndKitExample() {
   const styles = {
-    card: css({
+    row: css({
       // This lets us change z-index when dragging
       position: 'relative',
-    }),
-    dragHandle: css({
-      alignSelf: 'stretch',
     }),
   };
   const [items, setItems] = React.useState([
@@ -27,44 +24,39 @@ export default function WithCustomDragHandle() {
     'Contentful',
   ]);
 
-  function SortableCard({ id }) {
-    const { attributes, listeners, setNodeRef, transform, transition, active } =
+  function DraggableTableRow({ id }) {
+    const { active, attributes, listeners, setNodeRef, transform, transition } =
       useSortable({
         id,
       });
     const zIndex = active && active.id === id ? 1 : 0;
     const style = {
+      zIndex,
       transform: CSS.Translate.toString(transform),
       transition,
-      zIndex,
     };
 
     return (
-      <Card
-        className={styles.card}
-        dragHandleRender={() => (
+      <Table.Row className={styles.row} ref={setNodeRef} style={style}>
+        <Table.Cell>
           <DragHandle
-            as="button"
-            className={styles.dragHandle}
-            label="Move card"
+            label="Reorder item"
+            variant="transparent"
             {...attributes}
             {...listeners}
           />
-        )}
-        padding="none"
-        withDragHandle
-        ref={setNodeRef}
-        style={style}
-      >
-        <Box padding="spacingM">{id}</Box>
-      </Card>
+        </Table.Cell>
+        <Table.Cell width="95%">
+          <Text fontWeight="fontWeightMedium">{id}</Text>
+        </Table.Cell>
+      </Table.Row>
     );
   }
 
   const handleDragEnd = (event) => {
     const { active, over } = event;
 
-    if (active && over && active.id !== over.id) {
+    if (active.id !== over.id) {
       setItems((items) => {
         const oldIndex = items.indexOf(active.id);
         const newIndex = items.indexOf(over.id);
@@ -76,12 +68,12 @@ export default function WithCustomDragHandle() {
 
   return (
     <DndContext onDragEnd={handleDragEnd}>
-      <SortableContext items={items} strategy={verticalListSortingStrategy}>
-        <Flex flexDirection="column" gap="spacingS">
+      <SortableContext items={items} strategy={horizontalListSortingStrategy}>
+        <Table>
           {items.map((item) => (
-            <SortableCard key={item} id={item} />
+            <DraggableTableRow id={item} key={item} />
           ))}
-        </Flex>
+        </Table>
       </SortableContext>
     </DndContext>
   );

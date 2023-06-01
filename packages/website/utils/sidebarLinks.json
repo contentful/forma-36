@@ -393,6 +393,10 @@
   ],
   "integrations": [
     {
+      "title": "Dnd kit",
+      "slug": "/integrations/dnd-kit/"
+    },
+    {
       "title": "Formik",
       "slug": "/integrations/formik/"
     },
