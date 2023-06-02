@@ -1,5 +1,125 @@
 # Change Log
 
+## 4.41.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.41.1
+
+## 4.41.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.41.0
+
+## 4.40.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.7
+
+## 4.40.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.6
+
+## 4.40.5
+
+### Patch Changes
+
+- [#2488](https://github.com/contentful/forma-36/pull/2488) [`b7173927`](https://github.com/contentful/forma-36/commit/b717392708c35f1ef58c61add4d0898474f3bea9) Thanks [@massao](https://github.com/massao)! - Remove background color on hover of transparent drag handle
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.5
+
+## 4.40.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.4
+
+## 4.40.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.3
+
+## 4.40.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.2
+
+## 4.40.1
+
+### Patch Changes
+
+- [#2485](https://github.com/contentful/forma-36/pull/2485) [`44215cf4`](https://github.com/contentful/forma-36/commit/44215cf4c2ea576b04fcb2911f8d87aefe73a31a) Thanks [@bgutsol](https://github.com/bgutsol)! - Fix DragHandle component dependencies
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.1
+
+## 4.40.0
+
+### Minor Changes
+
+- [#2481](https://github.com/contentful/forma-36/pull/2481) [`a5fe7790`](https://github.com/contentful/forma-36/commit/a5fe779062309f9c63e83f0639a43d473aca019a) Thanks [@bgutsol](https://github.com/bgutsol)! - Introduce style variants to DragHandle component
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.0
+
+## 4.39.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.39.0
+
+## 4.38.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.38.1
+
+## 4.38.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.38.0
+
+## 4.37.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.37.1
+
+## 4.37.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.37.0
+
+## 4.36.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.36.0
+
 ## 4.35.0
 
 ### Patch Changes

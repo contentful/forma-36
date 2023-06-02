@@ -1,5 +1,137 @@
 # Change Log
 
+## 4.41.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.41.1
+  - @contentful/f36-spinner@4.41.1
+
+## 4.41.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.41.0
+  - @contentful/f36-spinner@4.41.0
+
+## 4.40.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.7
+  - @contentful/f36-spinner@4.40.7
+
+## 4.40.6
+
+### Patch Changes
+
+- [#2489](https://github.com/contentful/forma-36/pull/2489) [`cbef6dc2`](https://github.com/contentful/forma-36/commit/cbef6dc2b10a11bf431b7a8c1ef60271f2377a41) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(button): keep transparent button focus background
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.6
+  - @contentful/f36-spinner@4.40.6
+
+## 4.40.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.5
+  - @contentful/f36-spinner@4.40.5
+
+## 4.40.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.4
+  - @contentful/f36-spinner@4.40.4
+
+## 4.40.3
+
+### Patch Changes
+
+- [#2483](https://github.com/contentful/forma-36/pull/2483) [`6953f901`](https://github.com/contentful/forma-36/commit/6953f90182f701f28211985106ff2b766f8169be) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(button): tweak transparent variant backgrounds
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.3
+  - @contentful/f36-spinner@4.40.3
+
+## 4.40.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.2
+  - @contentful/f36-spinner@4.40.2
+
+## 4.40.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.1
+  - @contentful/f36-spinner@4.40.1
+
+## 4.40.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.0
+  - @contentful/f36-spinner@4.40.0
+
+## 4.39.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.39.0
+  - @contentful/f36-spinner@4.39.0
+
+## 4.38.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.38.1
+  - @contentful/f36-spinner@4.38.1
+
+## 4.38.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.38.0
+  - @contentful/f36-spinner@4.38.0
+
+## 4.37.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.37.1
+  - @contentful/f36-spinner@4.37.1
+
+## 4.37.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.37.0
+  - @contentful/f36-spinner@4.37.0
+
+## 4.36.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.36.0
+  - @contentful/f36-spinner@4.36.0
+
 ## 4.35.0
 
 ### Patch Changes

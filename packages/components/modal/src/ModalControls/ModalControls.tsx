@@ -6,6 +6,8 @@ import {
   type CommonProps,
 } from '@contentful/f36-core';
 import { ButtonGroup } from '@contentful/f36-button';
+import { getModalControlStyles } from './ModalControls.styles';
+import { cx } from 'emotion';
 
 interface ModalControlsInternalProps extends CommonProps {
   children: React.ReactElement[] | React.ReactElement;
@@ -22,15 +24,15 @@ export const ModalControls = ({
   children,
   ...otherProps
 }: ModalControlsProps): React.ReactElement => {
+  const styles = getModalControlStyles();
+
   return (
     <Flex
       {...otherProps}
-      className={className}
+      className={cx(styles.root, className)}
       testId={testId}
       flexDirection="row"
       justifyContent="flex-end"
-      margin="spacingL"
-      marginTop="none"
     >
       <ButtonGroup variant="spaced" spacing="spacingS">
         {children}

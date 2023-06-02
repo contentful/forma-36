@@ -1,5 +1,149 @@
 # Change Log
 
+## 4.41.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@4.41.1
+  - @contentful/f36-core@4.41.1
+  - @contentful/f36-typography@4.41.1
+
+## 4.41.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@4.41.0
+  - @contentful/f36-core@4.41.0
+  - @contentful/f36-typography@4.41.0
+
+## 4.40.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@4.40.7
+  - @contentful/f36-core@4.40.7
+  - @contentful/f36-typography@4.40.7
+
+## 4.40.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@4.40.6
+  - @contentful/f36-core@4.40.6
+  - @contentful/f36-typography@4.40.6
+
+## 4.40.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@4.40.5
+  - @contentful/f36-core@4.40.5
+  - @contentful/f36-typography@4.40.5
+
+## 4.40.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@4.40.4
+  - @contentful/f36-core@4.40.4
+  - @contentful/f36-typography@4.40.4
+
+## 4.40.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@4.40.3
+  - @contentful/f36-core@4.40.3
+  - @contentful/f36-typography@4.40.3
+
+## 4.40.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@4.40.2
+  - @contentful/f36-core@4.40.2
+  - @contentful/f36-typography@4.40.2
+
+## 4.40.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@4.40.1
+  - @contentful/f36-core@4.40.1
+  - @contentful/f36-typography@4.40.1
+
+## 4.40.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@4.40.0
+  - @contentful/f36-core@4.40.0
+  - @contentful/f36-typography@4.40.0
+
+## 4.39.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@4.39.0
+  - @contentful/f36-core@4.39.0
+  - @contentful/f36-typography@4.39.0
+
+## 4.38.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@4.38.1
+  - @contentful/f36-core@4.38.1
+  - @contentful/f36-typography@4.38.1
+
+## 4.38.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@4.38.0
+  - @contentful/f36-core@4.38.0
+  - @contentful/f36-typography@4.38.0
+
+## 4.37.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@4.37.1
+  - @contentful/f36-core@4.37.1
+  - @contentful/f36-typography@4.37.1
+
+## 4.37.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@4.37.0
+  - @contentful/f36-core@4.37.0
+  - @contentful/f36-typography@4.37.0
+
+## 4.36.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@4.36.0
+  - @contentful/f36-core@4.36.0
+  - @contentful/f36-typography@4.36.0
+
 ## 4.35.0
 
 ### Patch Changes

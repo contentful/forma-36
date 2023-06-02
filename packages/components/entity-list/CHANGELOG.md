@@ -1,5 +1,229 @@
 # Change Log
 
+## 4.41.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.41.1
+  - @contentful/f36-button@4.41.1
+  - @contentful/f36-core@4.41.1
+  - @contentful/f36-drag-handle@4.41.1
+  - @contentful/f36-icon@4.41.1
+  - @contentful/f36-menu@4.41.1
+  - @contentful/f36-skeleton@4.41.1
+  - @contentful/f36-typography@4.41.1
+
+## 4.41.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.41.0
+  - @contentful/f36-button@4.41.0
+  - @contentful/f36-core@4.41.0
+  - @contentful/f36-drag-handle@4.41.0
+  - @contentful/f36-icon@4.41.0
+  - @contentful/f36-menu@4.41.0
+  - @contentful/f36-skeleton@4.41.0
+  - @contentful/f36-typography@4.41.0
+
+## 4.40.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.40.7
+  - @contentful/f36-button@4.40.7
+  - @contentful/f36-core@4.40.7
+  - @contentful/f36-drag-handle@4.40.7
+  - @contentful/f36-icon@4.40.7
+  - @contentful/f36-menu@4.40.7
+  - @contentful/f36-skeleton@4.40.7
+  - @contentful/f36-typography@4.40.7
+
+## 4.40.6
+
+### Patch Changes
+
+- Updated dependencies [[`cbef6dc2`](https://github.com/contentful/forma-36/commit/cbef6dc2b10a11bf431b7a8c1ef60271f2377a41)]:
+  - @contentful/f36-button@4.40.6
+  - @contentful/f36-badge@4.40.6
+  - @contentful/f36-core@4.40.6
+  - @contentful/f36-drag-handle@4.40.6
+  - @contentful/f36-icon@4.40.6
+  - @contentful/f36-menu@4.40.6
+  - @contentful/f36-skeleton@4.40.6
+  - @contentful/f36-typography@4.40.6
+
+## 4.40.5
+
+### Patch Changes
+
+- Updated dependencies [[`b7173927`](https://github.com/contentful/forma-36/commit/b717392708c35f1ef58c61add4d0898474f3bea9)]:
+  - @contentful/f36-drag-handle@4.40.5
+  - @contentful/f36-badge@4.40.5
+  - @contentful/f36-button@4.40.5
+  - @contentful/f36-core@4.40.5
+  - @contentful/f36-icon@4.40.5
+  - @contentful/f36-menu@4.40.5
+  - @contentful/f36-skeleton@4.40.5
+  - @contentful/f36-typography@4.40.5
+
+## 4.40.4
+
+### Patch Changes
+
+- Updated dependencies [[`408588b3`](https://github.com/contentful/forma-36/commit/408588b39433f3de099f80f29854eff632e99d20)]:
+  - @contentful/f36-badge@4.40.4
+  - @contentful/f36-button@4.40.4
+  - @contentful/f36-core@4.40.4
+  - @contentful/f36-drag-handle@4.40.4
+  - @contentful/f36-icon@4.40.4
+  - @contentful/f36-menu@4.40.4
+  - @contentful/f36-skeleton@4.40.4
+  - @contentful/f36-typography@4.40.4
+
+## 4.40.3
+
+### Patch Changes
+
+- Updated dependencies [[`6953f901`](https://github.com/contentful/forma-36/commit/6953f90182f701f28211985106ff2b766f8169be)]:
+  - @contentful/f36-button@4.40.3
+  - @contentful/f36-badge@4.40.3
+  - @contentful/f36-core@4.40.3
+  - @contentful/f36-drag-handle@4.40.3
+  - @contentful/f36-icon@4.40.3
+  - @contentful/f36-menu@4.40.3
+  - @contentful/f36-skeleton@4.40.3
+  - @contentful/f36-typography@4.40.3
+
+## 4.40.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.40.2
+  - @contentful/f36-button@4.40.2
+  - @contentful/f36-core@4.40.2
+  - @contentful/f36-drag-handle@4.40.2
+  - @contentful/f36-icon@4.40.2
+  - @contentful/f36-menu@4.40.2
+  - @contentful/f36-skeleton@4.40.2
+  - @contentful/f36-typography@4.40.2
+
+## 4.40.1
+
+### Patch Changes
+
+- Updated dependencies [[`44215cf4`](https://github.com/contentful/forma-36/commit/44215cf4c2ea576b04fcb2911f8d87aefe73a31a)]:
+  - @contentful/f36-drag-handle@4.40.1
+  - @contentful/f36-badge@4.40.1
+  - @contentful/f36-button@4.40.1
+  - @contentful/f36-core@4.40.1
+  - @contentful/f36-icon@4.40.1
+  - @contentful/f36-menu@4.40.1
+  - @contentful/f36-skeleton@4.40.1
+  - @contentful/f36-typography@4.40.1
+
+## 4.40.0
+
+### Patch Changes
+
+- Updated dependencies [[`a5fe7790`](https://github.com/contentful/forma-36/commit/a5fe779062309f9c63e83f0639a43d473aca019a)]:
+  - @contentful/f36-drag-handle@4.40.0
+  - @contentful/f36-badge@4.40.0
+  - @contentful/f36-button@4.40.0
+  - @contentful/f36-core@4.40.0
+  - @contentful/f36-icon@4.40.0
+  - @contentful/f36-menu@4.40.0
+  - @contentful/f36-skeleton@4.40.0
+  - @contentful/f36-typography@4.40.0
+
+## 4.39.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.39.0
+  - @contentful/f36-button@4.39.0
+  - @contentful/f36-core@4.39.0
+  - @contentful/f36-drag-handle@4.39.0
+  - @contentful/f36-icon@4.39.0
+  - @contentful/f36-menu@4.39.0
+  - @contentful/f36-skeleton@4.39.0
+  - @contentful/f36-typography@4.39.0
+
+## 4.38.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.38.1
+  - @contentful/f36-button@4.38.1
+  - @contentful/f36-core@4.38.1
+  - @contentful/f36-drag-handle@4.38.1
+  - @contentful/f36-icon@4.38.1
+  - @contentful/f36-menu@4.38.1
+  - @contentful/f36-skeleton@4.38.1
+  - @contentful/f36-typography@4.38.1
+
+## 4.38.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.38.0
+  - @contentful/f36-button@4.38.0
+  - @contentful/f36-core@4.38.0
+  - @contentful/f36-drag-handle@4.38.0
+  - @contentful/f36-icon@4.38.0
+  - @contentful/f36-menu@4.38.0
+  - @contentful/f36-skeleton@4.38.0
+  - @contentful/f36-typography@4.38.0
+
+## 4.37.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.37.1
+  - @contentful/f36-button@4.37.1
+  - @contentful/f36-core@4.37.1
+  - @contentful/f36-drag-handle@4.37.1
+  - @contentful/f36-icon@4.37.1
+  - @contentful/f36-menu@4.37.1
+  - @contentful/f36-skeleton@4.37.1
+  - @contentful/f36-typography@4.37.1
+
+## 4.37.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.37.0
+  - @contentful/f36-button@4.37.0
+  - @contentful/f36-core@4.37.0
+  - @contentful/f36-drag-handle@4.37.0
+  - @contentful/f36-icon@4.37.0
+  - @contentful/f36-menu@4.37.0
+  - @contentful/f36-skeleton@4.37.0
+  - @contentful/f36-typography@4.37.0
+
+## 4.36.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.36.0
+  - @contentful/f36-button@4.36.0
+  - @contentful/f36-core@4.36.0
+  - @contentful/f36-drag-handle@4.36.0
+  - @contentful/f36-icon@4.36.0
+  - @contentful/f36-menu@4.36.0
+  - @contentful/f36-skeleton@4.36.0
+  - @contentful/f36-typography@4.36.0
+
 ## 4.35.0
 
 ### Patch Changes

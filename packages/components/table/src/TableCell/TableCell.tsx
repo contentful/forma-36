@@ -60,7 +60,6 @@ function _TableCell(
   const isTableHead = context === 'head';
   const styles = getTableCellStyles({
     isSortable: isTableHead ? isSortable : undefined,
-    sortDirection,
     isTableHead,
     align,
     verticalAlign,

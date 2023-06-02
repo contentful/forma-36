@@ -1,17 +1,17 @@
 {
   "name": "@contentful/f36-notification",
-  "version": "4.35.0",
+  "version": "4.41.1",
   "description": "Forma 36: Notification component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-button": "^4.35.0",
-    "@contentful/f36-core": "^4.35.0",
+    "@contentful/f36-button": "^4.41.1",
+    "@contentful/f36-core": "^4.41.1",
     "@contentful/f36-icons": "^4.23.2",
-    "@contentful/f36-text-link": "^4.35.0",
+    "@contentful/f36-text-link": "^4.41.1",
     "@contentful/f36-tokens": "^4.0.1",
-    "@contentful/f36-typography": "^4.35.0",
+    "@contentful/f36-typography": "^4.41.1",
     "@swc/helpers": "^0.4.14",
     "emotion": "^10.0.17",
     "react-animate-height": "^3.0.4"

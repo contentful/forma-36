@@ -1,4 +1,4 @@
-import React, { forwardRef, type ReactElement } from 'react';
+import React, { forwardRef, type ReactNode } from 'react';
 import {
   Box,
   type CommonProps,
@@ -7,7 +7,7 @@ import {
 } from '@contentful/f36-core';
 
 export type TableBodyInternalProps = CommonProps & {
-  children: ReactElement | ReactElement[];
+  children: ReactNode;
 };
 
 export type TableBodyProps = PropsWithHTMLElement<

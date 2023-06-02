@@ -13,16 +13,29 @@ import type { Block, Inline, Text } from '@contentful/rich-text-types';
 import type { RenderNode } from '@contentful/rich-text-react-renderer';
 
 import { StaticSource } from '../LiveEditor/StaticSource';
+import Image from 'next/image';
 
 const getHeadingId = (node: Block | Inline) =>
   slugger.slug((node.content[0] as Text).value, false);
 
-export function getRenderNode(links): RenderNode {
-  const entryMap = new Map();
-  // loop through the block linked entries and add them to the map
-  for (const entry of links.entries.block) {
-    entryMap.set(entry.sys.id, entry);
+const prepareMapFromArray = <T,>(array: T[], getKey: (item: T) => string) => {
+  const map = new Map();
+  for (const item of array) {
+    map.set(getKey(item), item);
   }
+  return map;
+};
+
+export function getRenderNode(links): RenderNode {
+  const entryMap = prepareMapFromArray<any>(
+    links.entries.block,
+    (entry) => entry.sys.id,
+  );
+  const assetsMap = prepareMapFromArray<any>(
+    links.assets.block,
+    (asset) => asset.sys.id,
+  );
+
   return {
     [BLOCKS.PARAGRAPH]: (_node, children) => {
       return <Paragraph>{children}</Paragraph>;
@@ -74,6 +87,20 @@ export function getRenderNode(links): RenderNode {
     [BLOCKS.EMBEDDED_ENTRY]: (node) => {
       const entry = entryMap.get(node.data.target.sys.id);
       return <StaticSource children={entry.code} className="language-jsx" />;
+    },
+    [BLOCKS.EMBEDDED_ASSET]: (node) => {
+      const asset = assetsMap.get(node.data.target.sys.id);
+      if (asset?.url) {
+        return (
+          <Image
+            src={asset.url}
+            width={asset.width}
+            height={asset.height}
+            alt={asset.description}
+          />
+        );
+      }
+      return null;
     },
     [INLINES.HYPERLINK]: (node, children) => {
       return <TextLink href={node.data.uri}>{children}</TextLink>;

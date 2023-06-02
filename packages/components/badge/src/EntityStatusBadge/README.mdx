@@ -5,7 +5,7 @@ github: 'https://github.com/contentful/forma-36/tree/main/packages/components/ba
 typescript: ./src/EntityStatusBadge.tsx
 ---
 
-EntityStatusBadge is used to indicate entity status in Contentful apps. A component is based on our [Badge](../components/badge) component and has a built-in mapping of entity status to a badge variant.
+EntityStatusBadge is used to indicate entity status in Contentful apps. The component is based on our [Badge](../components/badge) component and has a built-in mapping of entity status to a badge variant.
 
 ## Import
 
@@ -17,49 +17,52 @@ import { EntityStatusBadge } from '@contentful/f36-badge';
 
 ## Examples
 
-EntityStatusBadge can have different mark following statuses. Those values are passed as a `entityStatus` property and displayed as a content in the badge:
+EntityStatusBadge can represent different entity statuses. The value is passed as an `entityStatus` property and displayed as content in the badge:
 
-- published
-- draft
-- archived
-- changed
-- deleted
-- new
+### Published
 
-```tsx
-<EntityStatusBadge entityStatus="published" />
+```jsx file=../../examples/EntityStatusBadgePublishedExample.tsx
+
 ```
 
-```tsx
-<EntityStatusBadge entityStatus="draft" />
+### Draft
+
+```jsx file=../../examples/EntityStatusBadgeDraftExample.tsx
+
 ```
 
-```tsx
-<EntityStatusBadge entityStatus="archived" />
+### Archived
+
+```jsx file=../../examples/EntityStatusBadgeArchivedExample.tsx
+
 ```
 
-```tsx
-<EntityStatusBadge entityStatus="changed" />
+### Changed
+
+```jsx file=../../examples/EntityStatusBadgeChangedExample.tsx
+
 ```
 
-```tsx
-<EntityStatusBadge entityStatus="deleted" />
+### Deleted
+
+```jsx file=../../examples/EntityStatusBadgeDeletedExample.tsx
+
 ```
 
-```tsx
-<EntityStatusBadge entityStatus="new" />
+### New
+
+```jsx file=../../examples/EntityStatusBadgeNewExample.tsx
+
+```
+
+### With scheduled actions
+
+Some entities have scheduled actions, for instance an entry might be scheduled to be published at a specific time later on:
+
+```jsx file=../../examples/EntityStatusBadgeScheduledExample.tsx
+
 ```
 
 ## Props (API reference)
 
 <PropsTable of="EntityStatusBadge" />
-
-## Content guidelines
-
-- try to use labels with short, scannable text
-- try to use a single word to describe the status of an element
-- try to describe the status in the past tense, like changed or archived
-
-## Accessibility
-
-- text must be clear enough for color-blind users to be able to understand immediately without needing to rely only on the color.

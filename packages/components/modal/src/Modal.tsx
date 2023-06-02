@@ -14,6 +14,7 @@ const ModalSizesMapper: { [key in ModalSizeType]: string } = {
   large: '700px',
   fullWidth: '100vw',
   zen: '100vw',
+  fullscreen: '100vw',
 };
 
 export interface ModalProps extends CommonProps {
@@ -61,6 +62,10 @@ export interface ModalProps extends CommonProps {
    * Modal title that is used in header
    */
   title?: string;
+  /**
+   * Modal subtitle that is used in header
+   */
+  subtitle?: string;
   /**
    * Size of the modal window
    * @default medium
@@ -176,6 +181,7 @@ export const Modal = ({
         {otherProps.title && (
           <ModalHeader
             title={otherProps.title}
+            subtitle={otherProps.subtitle}
             onClose={props.onClose}
             {...otherProps.modalHeaderProps}
           />
