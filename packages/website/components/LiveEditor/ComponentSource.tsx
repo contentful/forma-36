@@ -12,6 +12,7 @@ import tokens from '@contentful/f36-tokens';
 import * as f36Components from '@contentful/f36-components';
 import { Multiselect } from '@contentful/f36-multiselect';
 import { NavList } from '@contentful/f36-navlist';
+import { Navbar } from '@contentful/f36-navbar';
 import * as f36utils from '@contentful/f36-utils';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
@@ -34,11 +35,12 @@ import { CSS } from '@dnd-kit/utilities';
 import { format, parse, isValid } from 'date-fns';
 
 const liveProviderScope = {
-  ...f36icons,
   ...f36Components,
+  ...f36icons,
   ...f36utils,
   Multiselect, // Remove when added to f36-components
   NavList, // Remove when added to f36-components
+  Navbar, // Remove when added to f36-components
   css,
   f36icons,
   tokens,
