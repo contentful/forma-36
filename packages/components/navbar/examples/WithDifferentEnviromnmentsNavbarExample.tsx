@@ -11,7 +11,7 @@ export default function WithDifferentEnviromnmentsNavbarExample() {
   // const envVariant = 'non-master';
   // const envName = 'development'
 
-  const isAlias = true;
+  const isAlias = false;
   // Try both master and non-master environment with alias
   // const isAlias = true;
 
