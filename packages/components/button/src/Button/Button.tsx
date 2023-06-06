@@ -58,7 +58,7 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
       primary: 'white',
       secondary: 'secondary',
       positive: 'white',
-      negative: 'secondary',
+      negative: 'negative',
       transparent: 'secondary',
     };
 

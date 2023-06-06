@@ -4,9 +4,9 @@ const colorsGreen = require('./colors-green');
 const colorsBlue = require('./colors-blue');
 
 const colorsSemantic = {
-  'color-primary': colorsBlue['blue-500'],
-  'color-positive': colorsGreen['green-500'],
-  'color-negative': colorsRed['red-500'],
+  'color-primary': colorsBlue['blue-600'],
+  'color-positive': colorsGreen['green-600'],
+  'color-negative': colorsRed['red-600'],
   'color-warning': colorsOrange['orange-400'],
 };
 
