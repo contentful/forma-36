@@ -35,7 +35,7 @@ export function getSelectStyles({ isInvalid, isDisabled, size }) {
     '&:focus': {
       outline: 'none',
       boxShadow: tokens.glowPrimary,
-      borderColor: tokens.colorPrimary,
+      borderColor: tokens.blue500,
     },
     '&:-moz-focusring': { color: 'transparent', textShadow: '0 0 0 #000' },
     '&::-ms-expand': { display: 'none' },

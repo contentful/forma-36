@@ -43,7 +43,7 @@ export const ValidationMessage = forwardRef<
           aria-hidden="true"
         />
       </Flex>
-      <Text as="p" fontColor="colorNegative">
+      <Text as="p" fontColor="red500">
         {children}
       </Text>
     </Flex>

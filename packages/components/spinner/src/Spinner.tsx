@@ -14,7 +14,7 @@ const SPINNER_DEFAULT_TAG = 'div';
 
 const variants: { [key in SpinnerVariant]: string } = {
   default: tokens.gray700,
-  primary: tokens.colorPrimary,
+  primary: tokens.blue500,
   white: tokens.colorWhite,
 };
 

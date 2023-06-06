@@ -70,8 +70,8 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
     case 'positive':
       return {
         color: tokens.colorWhite,
-        backgroundColor: tokens.colorPositive,
-        borderColor: tokens.colorPositive,
+        backgroundColor: tokens.green500,
+        borderColor: tokens.green500,
         '&:hover': {
           backgroundColor: tokens.green600,
           borderColor: tokens.green600,
@@ -83,7 +83,7 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
           boxShadow: tokens.glowPositive,
         },
         '&:focus:not(:focus-visible)': {
-          borderColor: tokens.colorPositive,
+          borderColor: tokens.green500,
           boxShadow: 'unset',
         },
         '&:focus-visible': {
