@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.42.0
+
+### Patch Changes
+
+- [#2498](https://github.com/contentful/forma-36/pull/2498) [`a0d27f0c`](https://github.com/contentful/forma-36/commit/a0d27f0c68fd5e685e723d588f340d0f025ba2ad) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(button): restyle negative variant
+  feat(textarea): change hue of invalid border color
+  feat(validation-message): change hue of negative color
+  feat(icon): change hue of negative color
+  feat(icon): change hue of positive color
+  feat(tokens): change hue of semantic colors
+- Updated dependencies [[`a0d27f0c`](https://github.com/contentful/forma-36/commit/a0d27f0c68fd5e685e723d588f340d0f025ba2ad)]:
+  - @contentful/f36-tokens@4.0.2
+  - @contentful/f36-core@4.42.0
+
 ## 4.41.1
 
 ### Patch Changes

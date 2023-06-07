@@ -1,44 +1,37 @@
 # Change Log
 
+## 4.0.2
+
+### Patch Changes
+
+- [#2498](https://github.com/contentful/forma-36/pull/2498) [`a0d27f0c`](https://github.com/contentful/forma-36/commit/a0d27f0c68fd5e685e723d588f340d0f025ba2ad) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(button): restyle negative variant
+  feat(textarea): change hue of invalid border color
+  feat(validation-message): change hue of negative color
+  feat(icon): change hue of negative color
+  feat(icon): change hue of positive color
+  feat(tokens): change hue of semantic colors
 
 ## [4.0.1](https://github.com/contentful/forma-36/compare/@contentful/f36-tokens@4.0.0...@contentful/f36-tokens@4.0.1) (2022-03-03)
 
-
 ### Bug Fixes
 
-* migrate links from master to main  ([#1923](https://github.com/contentful/forma-36/issues/1923)) ([607301d](https://github.com/contentful/forma-36/commit/607301d57a2e83190d2aa298120ddb8493e8c429))
-* Update README ([#1745](https://github.com/contentful/forma-36/issues/1745)) ([1094eb1](https://github.com/contentful/forma-36/commit/1094eb196d14c008433e1fbdedf6ec11d8570a91))
-
-
-
-
+- migrate links from master to main ([#1923](https://github.com/contentful/forma-36/issues/1923)) ([607301d](https://github.com/contentful/forma-36/commit/607301d57a2e83190d2aa298120ddb8493e8c429))
+- Update README ([#1745](https://github.com/contentful/forma-36/issues/1745)) ([1094eb1](https://github.com/contentful/forma-36/commit/1094eb196d14c008433e1fbdedf6ec11d8570a91))
 
 ## [0.11.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.11.0...@contentful/forma-36-tokens@0.11.1) (2021-08-06)
 
 **Note:** Version bump only for package @contentful/forma-36-tokens
 
-
-
-
-
 # [0.11.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.10.2...@contentful/forma-36-tokens@0.11.0) (2021-07-22)
-
 
 ### Features
 
-* new colors tokens update ([#1041](https://github.com/contentful/forma-36/issues/1041)) ([fc0beba](https://github.com/contentful/forma-36/commit/fc0beba32310d2ab31e59006f6701f6ab7c0f79f))
-* Updated color system that contains a new set of tokens with new namespaces ([#1041](https://github.com/contentful/forma-36/issues/1041)) ([fc0beba](https://github.com/contentful/forma-36/commit/fc0beba32310d2ab31e59006f6701f6ab7c0f79f))
-
-
-
+- new colors tokens update ([#1041](https://github.com/contentful/forma-36/issues/1041)) ([fc0beba](https://github.com/contentful/forma-36/commit/fc0beba32310d2ab31e59006f6701f6ab7c0f79f))
+- Updated color system that contains a new set of tokens with new namespaces ([#1041](https://github.com/contentful/forma-36/issues/1041)) ([fc0beba](https://github.com/contentful/forma-36/commit/fc0beba32310d2ab31e59006f6701f6ab7c0f79f))
 
 ## [0.10.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.10.1...@contentful/forma-36-tokens@0.10.2) (2021-05-07)
 
 **Note:** Version bump only for package @contentful/forma-36-tokens
-
-
-
-
 
 ## [0.10.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.10.0...@contentful/forma-36-tokens@0.10.1) (2021-02-09)
 
