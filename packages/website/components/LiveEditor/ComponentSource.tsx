@@ -13,6 +13,7 @@ import * as f36Components from '@contentful/f36-components';
 import { Multiselect } from '@contentful/f36-multiselect';
 import { NavList } from '@contentful/f36-navlist';
 import * as f36utils from '@contentful/f36-utils';
+import { Image } from '@contentful/f36-image';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
 import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
@@ -37,6 +38,7 @@ const liveProviderScope = {
   ...f36icons,
   ...f36Components,
   ...f36utils,
+  Image, // Remove when added to f36-components
   Multiselect, // Remove when added to f36-components
   NavList, // Remove when added to f36-components
   css,
