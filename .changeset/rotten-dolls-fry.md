@@ -1,5 +1,8 @@
 ---
 "@contentful/f36-button": minor
+"@contentful/f36-forms": patch
+"@contentful/f36-icon": patch
+"@contentful/f36-tokens": patch
 ---
 
 feat(button): restyle negative variant
