@@ -17,7 +17,7 @@ const styles = {
   box: css({
     width: '20px',
     height: '20px',
-    backgroundColor: tokens.colorPrimary,
+    backgroundColor: tokens.blue500,
   }),
 };
 

@@ -40,16 +40,16 @@ export const getBaseCardStyles = () => {
     box-shadow ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
 
         '&:focus': css({
-          borderColor: isSelected ? tokens.blue100 : tokens.colorPrimary,
+          borderColor: isSelected ? tokens.blue100 : tokens.blue500,
           boxShadow: tokens.glowPrimary,
           outline: 'none',
         }),
         '&:focus:not(:focus-visible)': css({
-          borderColor: isSelected ? tokens.colorPrimary : tokens.gray300,
+          borderColor: isSelected ? tokens.blue500 : tokens.gray300,
           boxShadow: 'unset',
         }),
         '&:focus-visible': css({
-          borderColor: tokens.colorPrimary,
+          borderColor: tokens.blue500,
           boxShadow: tokens.glowPrimary,
         }),
       };
@@ -59,13 +59,13 @@ export const getBaseCardStyles = () => {
       }
 
       if (isHovered) {
-        styles.borderColor = tokens.colorPrimary;
+        styles.borderColor = tokens.blue500;
         styles.cursor = 'pointer';
       }
 
       if (isSelected) {
         styles.backgroundColor = tokens.blue100;
-        styles.borderColor = tokens.colorPrimary;
+        styles.borderColor = tokens.blue500;
       }
 
       return css(styles);

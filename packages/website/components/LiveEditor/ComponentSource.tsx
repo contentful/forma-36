@@ -76,7 +76,7 @@ const styles = {
   error: css`
     font-family: ${tokens.fontStackMonospace};
     font-size: ${tokens.fontSizeS};
-    background: ${tokens.colorNegative};
+    background: ${tokens.red600};
     color: ${tokens.colorWhite};
     padding: ${tokens.spacingXs};
   `,

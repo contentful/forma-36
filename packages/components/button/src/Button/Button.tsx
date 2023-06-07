@@ -58,7 +58,7 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
       primary: 'white',
       secondary: 'secondary',
       positive: 'white',
-      negative: 'white',
+      negative: 'negative',
       transparent: 'secondary',
     };
 
@@ -96,7 +96,11 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
         >
           <Spinner
             customSize={18}
-            variant={variant === 'secondary' ? 'default' : 'white'}
+            variant={
+              variant === 'secondary' || variant === 'negative'
+                ? 'default'
+                : 'white'
+            }
           />
         </Box>
       )}

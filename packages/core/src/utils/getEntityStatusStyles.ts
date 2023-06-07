@@ -29,7 +29,7 @@ export const getEntityStatusStyles = ({ status }: { status: EntityStatus }) => {
     case 'new':
       return {
         color: tokens.colorWhite,
-        backgroundColor: tokens.colorPrimary,
+        backgroundColor: tokens.blue500,
       };
     default:
       console.warn(`Unknown EntityStatus: ${status}`);
