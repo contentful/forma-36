@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.43.0
+
+### Minor Changes
+
+- [#2499](https://github.com/contentful/forma-36/pull/2499) [`1d2f57f0`](https://github.com/contentful/forma-36/commit/1d2f57f0e4e817c4caf746414f4d43b7c978b272) Thanks [@denkristoffer](https://github.com/denkristoffer)! - - add new `useImageLoaded` hook
+
 ## 4.42.0
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # Change Log
 
+## 4.43.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-typography@4.43.0
+
 ## 4.42.0
 
 ### Patch Changes
