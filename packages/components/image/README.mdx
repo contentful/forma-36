@@ -1,0 +1,41 @@
+---
+title: 'Image'
+type: 'component'
+status: 'alpha'
+slug: /components/image/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/image'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-image--overview'
+typescript: ./src/Image.tsx
+---
+
+Image component that can handle showing a loading skeleton while the image is loading.
+
+## Import
+
+```jsx static=true
+import { Image } from '@contentful/f36-image';
+```
+
+## Examples
+
+### Basic example
+
+```jsx file=./examples/ImageBasicExample.tsx
+
+```
+
+### Without a `src`
+
+The image component will render a loading skeleton matching the dimensions of the image if no `src` prop is passed.
+
+```jsx file=./examples/ImageWithoutSrcExample.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="Image" />
+
+## Accessibility
+
+Make sure you pass the required `alt` prop.

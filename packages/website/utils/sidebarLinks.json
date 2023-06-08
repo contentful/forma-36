@@ -39,6 +39,11 @@
       "slug": "/components/icon/"
     },
     {
+      "title": "Image",
+      "slug": "/components/image/",
+      "status": "alpha"
+    },
+    {
       "title": "List",
       "slug": "/components/list/",
       "status": "stable"
