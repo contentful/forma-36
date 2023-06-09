@@ -17,7 +17,7 @@ export enum Variant {
 }
 
 export interface AvatarProps extends CommonProps {
-  alt?: ImageProps['src'];
+  alt?: ImageProps['alt'];
   isLoading?: boolean;
   size?: Size;
   src?: ImageProps['src'];
