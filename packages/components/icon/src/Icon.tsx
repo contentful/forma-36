@@ -115,6 +115,7 @@ export function _Icon<E extends React.ElementType = IconComponent>(
     children,
     className,
     variant = 'primary',
+    role = 'img',
     size = 'small',
     testId = 'cf-ui-icon',
     trimmed,
@@ -134,6 +135,7 @@ export function _Icon<E extends React.ElementType = IconComponent>(
     ),
     ref: forwardedRef,
     testId,
+    role,
   };
 
   const ariaHiddenProps = useAriaHidden(otherProps);
