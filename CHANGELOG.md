@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 09-06-2023
+
+**F36 Core** `v4.43.0`
+
+- add new `useImageLoaded` hook
+
 ## 08-06-2023
 
 **F36 Button** `v4.42.0`
