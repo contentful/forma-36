@@ -7,6 +7,9 @@ Our CI is configured to automatically bump the version and publish the packages 
 ## Adding changesets
 
 We use the `changeset-bot` to comment on PRs when a changeset is found or not.
+
+Note that each line in the description will be renderd as a bullet point on our changelog.
+
 In case the change you are making is only on documentation or you don't want to publish a new package version for the change, you don't need to do anything and can merge the PR once it's approved.
 
 But in case you want a new version to be published, you will need to add a changeset, for that you can:
@@ -18,6 +21,18 @@ But in case you want a new version to be published, you will need to add a chang
 - it creates a file in the `.changeset` folder that needs to be commited to the branch.
 - `changeset-bot` will show that information in its comment on the PR.
 - when the PR is merged it will trigger the release job on our CI and a new version will be published.
+
+Changesets files should be structured like:
+
+```
+---
+"@contentful/package-name": version change (minor, patch, major)
+"@contentful/another-package": version change (minor, patch, major)
+---
+
+- Description of what has changed
+- Another change
+```
 
 ## Fixed versioning
 
