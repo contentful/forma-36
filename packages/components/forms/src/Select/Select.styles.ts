@@ -5,7 +5,7 @@ export function getSelectStyles({ isInvalid, isDisabled, size }) {
   const sizeStyles =
     size === 'small'
       ? {
-          padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
+          padding: `${tokens.spacing2Xs} ${tokens.spacingL} ${tokens.spacing2Xs} ${tokens.spacingXs}`,
           height: '32px',
         }
       : {
