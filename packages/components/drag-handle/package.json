@@ -1,12 +1,12 @@
 {
   "name": "@contentful/f36-drag-handle",
-  "version": "4.43.0",
+  "version": "4.44.0",
   "description": "Forma 36: DragHandle component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.43.0",
+    "@contentful/f36-core": "^4.44.0",
     "@contentful/f36-icons": "^4.23.2",
     "@contentful/f36-utils": "^4.24.1",
     "@contentful/f36-tokens": "^4.0.2",
