@@ -26,7 +26,7 @@ const styles = {
     '&:before': {
       content: '""',
       position: 'absolute',
-      background: tokens.colorPrimary,
+      background: tokens.blue500,
       opacity: '0',
       bottom: '0',
       left: '0',
@@ -37,7 +37,7 @@ const styles = {
       opacity: '0.5',
     },
     '&[data-state="active"]': {
-      color: tokens.colorPrimary,
+      color: tokens.blue500,
       '&:before, &:hover:before, &:hover:focus': {
         opacity: '1',
       },

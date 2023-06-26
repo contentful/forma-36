@@ -13,6 +13,11 @@
       "slug": "/components/autocomplete/"
     },
     {
+      "title": "Avatar",
+      "slug": "/components/avatar/",
+      "status": "alpha"
+    },
+    {
       "title": "Badge",
       "slug": "/components/badge/",
       "status": "stable"
@@ -39,6 +44,11 @@
       "slug": "/components/icon/"
     },
     {
+      "title": "Image",
+      "slug": "/components/image/",
+      "status": "alpha"
+    },
+    {
       "title": "List",
       "slug": "/components/list/",
       "status": "stable"
@@ -46,6 +56,11 @@
     {
       "title": "Menu",
       "slug": "/components/menu/"
+    },
+    {
+      "title": "NavList",
+      "slug": "/components/navlist/",
+      "status": "alpha"
     },
     {
       "title": "Note",
@@ -387,6 +402,10 @@
     }
   ],
   "integrations": [
+    {
+      "title": "Dnd kit",
+      "slug": "/integrations/dnd-kit/"
+    },
     {
       "title": "Formik",
       "slug": "/integrations/formik/"

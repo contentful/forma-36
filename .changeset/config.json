@@ -6,7 +6,12 @@
       "repo": "contentful/forma-36"
     }
   ],
-  "ignore": ["@contentful/f36-website"],
+  "ignore": [
+    "@contentful/f36-avatar",
+    "@contentful/f36-image",
+    "@contentful/f36-navlist",
+    "@contentful/f36-website"
+  ],
   "commit": false,
   "fixed": [
     [

@@ -38,6 +38,7 @@ export default {
           'medium',
           'large',
           'fullWidth',
+          'fullscreen',
           'zen',
           '200px',
           '1500px',
@@ -72,6 +73,7 @@ export const Basic: Story<ModalProps> = (props) => {
 
 Basic.args = {
   title: 'Default modal',
+  subtitle: 'Subtitle',
 };
 
 export const LongModal: Story<ModalProps> = (props) => {

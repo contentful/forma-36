@@ -95,7 +95,6 @@ describe('Datepicker', function () {
       <Datepicker selected={testDate} onSelect={onSelect} defaultIsOpen />,
     );
 
-    screen.debug();
     const popover = await screen.findByTestId('cf-ui-popover-content');
     const element = await within(popover).findByText(newDate.getDay());
 

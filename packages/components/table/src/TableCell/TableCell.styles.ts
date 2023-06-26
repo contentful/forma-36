@@ -7,7 +7,6 @@ type GetTableCellStylesArguments = {
   align: TableCellInternalProps['align'];
   isSortable?: TableCellInternalProps['isSortable'];
   isTableHead: boolean;
-  sortDirection: TableCellInternalProps['sortDirection'];
   verticalAlign?: TableProps['verticalAlign'];
 };
 
@@ -15,7 +14,6 @@ export const getTableCellStyles = ({
   align,
   isSortable,
   isTableHead,
-  sortDirection,
   verticalAlign,
 }: GetTableCellStylesArguments) => ({
   button: css({
@@ -23,7 +21,7 @@ export const getTableCellStyles = ({
     appearance: 'none',
     background: 'none',
     border: 0,
-    color: sortDirection ? tokens.gray900 : 'inherit',
+    color: 'inherit',
     cursor: 'pointer',
     display: 'inline-flex',
     gap: tokens.spacing2Xs,
@@ -48,7 +46,7 @@ export const getTableCellStyles = ({
     borderBottom: `1px solid ${tokens.gray200}`,
     padding: isSortable ? 0 : tokens.spacingS,
     textAlign: align,
-    color: tokens.gray700,
+    color: isTableHead ? tokens.gray600 : tokens.gray700,
     fontWeight: isTableHead ? tokens.fontWeightMedium : tokens.fontWeightNormal,
     verticalAlign,
   }),

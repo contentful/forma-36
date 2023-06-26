@@ -6,12 +6,17 @@ import type {
   ExpandProps,
 } from '@contentful/f36-core';
 import { Tooltip } from '@contentful/f36-tooltip';
-import { DragIcon, CloseIcon } from '@contentful/f36-icons';
+import { CloseIcon } from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
+import { DragHandle } from '@contentful/f36-drag-handle';
 import { PillVariants } from './types';
 import { getPillStyles } from './Pill.styles';
 
 export type PillInternalProps = CommonProps & {
+  /**
+   * Mark the pill as draggable. Drag icon is rendered when this property is set.
+   */
+  isDraggable?: boolean;
   /**
    * Text that will be shown on the pill
    */
@@ -21,7 +26,7 @@ export type PillInternalProps = CommonProps & {
    */
   onClose?: () => void;
   /**
-   * Function that handles when the pill is dragged. Drag icon visibility depends on if this property is set.
+   * Function that handles when the pill is dragged. Drag icon is rendered when this property is set.
    */
   onDrag?: () => void;
   /**
@@ -40,6 +45,7 @@ export type PillProps = PropsWithHTMLElement<PillInternalProps, 'div'>;
 export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
   (props, ref) => {
     const {
+      isDraggable,
       label,
       onClose,
       testId = 'cf-ui-pill',
@@ -72,13 +78,11 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
         ref={ref}
         {...otherProps}
       >
-        {onDrag &&
+        {(isDraggable || onDrag) &&
           (dragHandleComponent ? (
             dragHandleComponent
           ) : (
-            <span aria-label="Drag handler" className={styles.dragIcon}>
-              <DragIcon className={styles.icon} variant="muted" />
-            </span>
+            <DragHandle label="Reorder item" variant="transparent" />
           ))}
         <Tooltip
           content={label}
@@ -92,7 +96,7 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
           <Button
             type="button"
             variant="transparent"
-            startIcon={<CloseIcon aria-label="Close" />}
+            startIcon={<CloseIcon />}
             aria-label="Close"
             onClick={onClose}
             className={styles.closeButton}

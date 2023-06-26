@@ -1,5 +1,127 @@
 # Change Log
 
+## 4.44.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.44.0
+
+## 4.43.0
+
+### Patch Changes
+
+- Updated dependencies [[`1d2f57f0`](https://github.com/contentful/forma-36/commit/1d2f57f0e4e817c4caf746414f4d43b7c978b272)]:
+  - @contentful/f36-core@4.43.0
+
+## 4.42.0
+
+### Patch Changes
+
+- Updated dependencies [[`a0d27f0c`](https://github.com/contentful/forma-36/commit/a0d27f0c68fd5e685e723d588f340d0f025ba2ad)]:
+  - @contentful/f36-tokens@4.0.2
+  - @contentful/f36-core@4.42.0
+
+## 4.41.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.41.1
+
+## 4.41.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.41.0
+
+## 4.40.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.7
+
+## 4.40.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.6
+
+## 4.40.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.5
+
+## 4.40.4
+
+### Patch Changes
+
+- [#2486](https://github.com/contentful/forma-36/pull/2486) [`408588b3`](https://github.com/contentful/forma-36/commit/408588b39433f3de099f80f29854eff632e99d20) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(entity-status-badge): add isScheduled prop
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.4
+
+## 4.40.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.3
+
+## 4.40.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.2
+
+## 4.40.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.1
+
+## 4.40.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.0
+
+## 4.39.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.39.0
+
+## 4.38.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.38.1
+
+## 4.38.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.38.0
+
+## 4.37.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.37.1
+
 ## 4.37.0
 
 ### Patch Changes

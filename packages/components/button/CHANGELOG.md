@@ -1,5 +1,155 @@
 # Change Log
 
+## 4.44.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.44.0
+  - @contentful/f36-spinner@4.44.0
+
+## 4.43.0
+
+### Patch Changes
+
+- Updated dependencies [[`1d2f57f0`](https://github.com/contentful/forma-36/commit/1d2f57f0e4e817c4caf746414f4d43b7c978b272)]:
+  - @contentful/f36-core@4.43.0
+  - @contentful/f36-spinner@4.43.0
+
+## 4.42.0
+
+### Minor Changes
+
+- [#2498](https://github.com/contentful/forma-36/pull/2498) [`a0d27f0c`](https://github.com/contentful/forma-36/commit/a0d27f0c68fd5e685e723d588f340d0f025ba2ad) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(button): restyle negative variant
+  feat(textarea): change hue of invalid border color
+  feat(validation-message): change hue of negative color
+  feat(icon): change hue of negative color
+  feat(icon): change hue of positive color
+  feat(tokens): change hue of semantic colors
+
+### Patch Changes
+
+- Updated dependencies [[`a0d27f0c`](https://github.com/contentful/forma-36/commit/a0d27f0c68fd5e685e723d588f340d0f025ba2ad)]:
+  - @contentful/f36-tokens@4.0.2
+  - @contentful/f36-core@4.42.0
+  - @contentful/f36-spinner@4.42.0
+
+## 4.41.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.41.1
+  - @contentful/f36-spinner@4.41.1
+
+## 4.41.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.41.0
+  - @contentful/f36-spinner@4.41.0
+
+## 4.40.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.7
+  - @contentful/f36-spinner@4.40.7
+
+## 4.40.6
+
+### Patch Changes
+
+- [#2489](https://github.com/contentful/forma-36/pull/2489) [`cbef6dc2`](https://github.com/contentful/forma-36/commit/cbef6dc2b10a11bf431b7a8c1ef60271f2377a41) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(button): keep transparent button focus background
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.6
+  - @contentful/f36-spinner@4.40.6
+
+## 4.40.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.5
+  - @contentful/f36-spinner@4.40.5
+
+## 4.40.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.4
+  - @contentful/f36-spinner@4.40.4
+
+## 4.40.3
+
+### Patch Changes
+
+- [#2483](https://github.com/contentful/forma-36/pull/2483) [`6953f901`](https://github.com/contentful/forma-36/commit/6953f90182f701f28211985106ff2b766f8169be) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(button): tweak transparent variant backgrounds
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.3
+  - @contentful/f36-spinner@4.40.3
+
+## 4.40.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.2
+  - @contentful/f36-spinner@4.40.2
+
+## 4.40.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.1
+  - @contentful/f36-spinner@4.40.1
+
+## 4.40.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.0
+  - @contentful/f36-spinner@4.40.0
+
+## 4.39.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.39.0
+  - @contentful/f36-spinner@4.39.0
+
+## 4.38.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.38.1
+  - @contentful/f36-spinner@4.38.1
+
+## 4.38.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.38.0
+  - @contentful/f36-spinner@4.38.0
+
+## 4.37.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.37.1
+  - @contentful/f36-spinner@4.37.1
+
 ## 4.37.0
 
 ### Patch Changes

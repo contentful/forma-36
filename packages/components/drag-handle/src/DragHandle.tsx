@@ -56,6 +56,12 @@ export interface DragHandleInternalProps extends CommonProps {
    * Set type button for div element
    */
   type?: string;
+
+  /**
+   * Determines style variation
+   * @default secondary
+   */
+  variant?: 'secondary' | 'transparent';
 }
 
 export type DragHandleProps<
@@ -80,6 +86,7 @@ function _DragHandle<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
     onMouseLeave,
     testId = 'cf-ui-drag-handle',
     style,
+    variant = 'secondary',
     ...otherProps
   } = props;
   const [isFocused, setisFocused] = useState(isFocusedProp);
@@ -130,7 +137,10 @@ function _DragHandle<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
   );
 
   const commonProps = {
-    className: cx(styles.root({ isActive, isFocused, isHovered }), className),
+    className: cx(
+      styles.root({ isActive, isFocused, isHovered, variant }),
+      className,
+    ),
     'data-test-id': testId,
     onBlur: handleBlur,
     onFocus: handleFocus,

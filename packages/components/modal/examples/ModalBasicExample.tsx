@@ -10,7 +10,11 @@ export default function ModalBasicExample() {
       <Modal onClose={() => setShown(false)} isShown={isShown}>
         {() => (
           <>
-            <Modal.Header title="Modal title" onClose={() => setShown(false)} />
+            <Modal.Header
+              title="Modal title"
+              subtitle="subtitle"
+              onClose={() => setShown(false)}
+            />
             <Modal.Content>
               <Heading>
                 First entry published! It can now be fetched via the APIs

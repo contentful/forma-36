@@ -1,5 +1,173 @@
 # Change Log
 
+## 4.44.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.44.0
+  - @contentful/f36-core@4.44.0
+  - @contentful/f36-typography@4.44.0
+
+## 4.43.0
+
+### Patch Changes
+
+- Updated dependencies [[`1d2f57f0`](https://github.com/contentful/forma-36/commit/1d2f57f0e4e817c4caf746414f4d43b7c978b272)]:
+  - @contentful/f36-core@4.43.0
+  - @contentful/f36-button@4.43.0
+  - @contentful/f36-typography@4.43.0
+
+## 4.42.0
+
+### Patch Changes
+
+- Updated dependencies [[`a0d27f0c`](https://github.com/contentful/forma-36/commit/a0d27f0c68fd5e685e723d588f340d0f025ba2ad)]:
+  - @contentful/f36-button@4.42.0
+  - @contentful/f36-tokens@4.0.2
+  - @contentful/f36-core@4.42.0
+  - @contentful/f36-typography@4.42.0
+
+## 4.41.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.41.1
+  - @contentful/f36-core@4.41.1
+  - @contentful/f36-typography@4.41.1
+
+## 4.41.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.41.0
+  - @contentful/f36-core@4.41.0
+  - @contentful/f36-typography@4.41.0
+
+## 4.40.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.40.7
+  - @contentful/f36-core@4.40.7
+  - @contentful/f36-typography@4.40.7
+
+## 4.40.6
+
+### Patch Changes
+
+- Updated dependencies [[`cbef6dc2`](https://github.com/contentful/forma-36/commit/cbef6dc2b10a11bf431b7a8c1ef60271f2377a41)]:
+  - @contentful/f36-button@4.40.6
+  - @contentful/f36-core@4.40.6
+  - @contentful/f36-typography@4.40.6
+
+## 4.40.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.40.5
+  - @contentful/f36-core@4.40.5
+  - @contentful/f36-typography@4.40.5
+
+## 4.40.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.40.4
+  - @contentful/f36-core@4.40.4
+  - @contentful/f36-typography@4.40.4
+
+## 4.40.3
+
+### Patch Changes
+
+- Updated dependencies [[`6953f901`](https://github.com/contentful/forma-36/commit/6953f90182f701f28211985106ff2b766f8169be)]:
+  - @contentful/f36-button@4.40.3
+  - @contentful/f36-core@4.40.3
+  - @contentful/f36-typography@4.40.3
+
+## 4.40.2
+
+### Patch Changes
+
+- [#2484](https://github.com/contentful/forma-36/pull/2484) [`1c9de54c`](https://github.com/contentful/forma-36/commit/1c9de54c9e052d231938726bce6bb4f09b048c91) Thanks [@Chaoste](https://github.com/Chaoste)! - fix(modal): use border-box for controls to avoid overflow
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.40.2
+  - @contentful/f36-core@4.40.2
+  - @contentful/f36-typography@4.40.2
+
+## 4.40.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.40.1
+  - @contentful/f36-core@4.40.1
+  - @contentful/f36-typography@4.40.1
+
+## 4.40.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.40.0
+  - @contentful/f36-core@4.40.0
+  - @contentful/f36-typography@4.40.0
+
+## 4.39.0
+
+### Minor Changes
+
+- [#2479](https://github.com/contentful/forma-36/pull/2479) [`2e4006d4`](https://github.com/contentful/forma-36/commit/2e4006d443c5286add1b6d5d4a05a8a74e09d850) Thanks [@mshaaban0](https://github.com/mshaaban0)! - feat: add subtitle prop to Modal
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.39.0
+  - @contentful/f36-core@4.39.0
+  - @contentful/f36-typography@4.39.0
+
+## 4.38.1
+
+### Patch Changes
+
+- [#2480](https://github.com/contentful/forma-36/pull/2480) [`024959df`](https://github.com/contentful/forma-36/commit/024959df5b5b40e78191933e0e9d404181f48c9d) Thanks [@massao](https://github.com/massao)! - fix animation when closing modal
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.38.1
+  - @contentful/f36-core@4.38.1
+  - @contentful/f36-typography@4.38.1
+
+## 4.38.0
+
+### Minor Changes
+
+- [#2470](https://github.com/contentful/forma-36/pull/2470) [`39d39d88`](https://github.com/contentful/forma-36/commit/39d39d888ca5e842d15106526026b06e094b2c17) Thanks [@massao](https://github.com/massao)! - New fullscreen variant for modal
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.38.0
+  - @contentful/f36-core@4.38.0
+  - @contentful/f36-typography@4.38.0
+
+## 4.37.1
+
+### Patch Changes
+
+- [#2462](https://github.com/contentful/forma-36/pull/2462) [`2b24937c`](https://github.com/contentful/forma-36/commit/2b24937c1743a08d99561d4a99fb13b0de4e4e10) Thanks [@mshaaban0](https://github.com/mshaaban0)! - fix: close modal when clicking outside closely
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.37.1
+  - @contentful/f36-core@4.37.1
+  - @contentful/f36-typography@4.37.1
+
 ## 4.37.0
 
 ### Patch Changes
