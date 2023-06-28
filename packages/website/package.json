@@ -19,7 +19,6 @@
     "@contentful/f36-image": "^4.0.0-alpha.0",
     "@contentful/f36-multiselect": "^4.20.11",
     "@contentful/f36-navlist": "4.1.0-alpha.1",
-    "@contentful/f36-navbar": "4.0.2-alpha",
     "@contentful/f36-tokens": "^4.0.2",
     "@contentful/f36-utils": "^4.24.1",
     "@contentful/rich-text-react-renderer": "^15.11.1",

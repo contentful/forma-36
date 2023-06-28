@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-navbar",
-  "version": "4.0.2-alpha",
+  "version": "4.0.0",
   "description": "Forma 36: Navbar component",
   "scripts": {
     "build": "tsup"

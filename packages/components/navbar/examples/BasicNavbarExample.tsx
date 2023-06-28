@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar } from '@contentful/f36-navbar';
+import { Navbar } from '@contentful/f36-components';
 import { EntryIcon, AssetIcon } from '@contentful/f36-icons';
 
 export default function BasicNavbarExample() {

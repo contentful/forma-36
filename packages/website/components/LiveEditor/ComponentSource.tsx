@@ -12,7 +12,6 @@ import tokens from '@contentful/f36-tokens';
 import * as f36Components from '@contentful/f36-components';
 import { Multiselect } from '@contentful/f36-multiselect';
 import { NavList } from '@contentful/f36-navlist';
-import { Navbar } from '@contentful/f36-navbar';
 import * as f36utils from '@contentful/f36-utils';
 import { Avatar, Variant, Size } from '@contentful/f36-avatar';
 import { Image } from '@contentful/f36-image';
@@ -46,7 +45,6 @@ const liveProviderScope = {
   Image, // Remove when added to f36-components
   Multiselect, // Remove when added to f36-components
   NavList, // Remove when added to f36-components
-  Navbar, // Remove when added to f36-components
   css,
   f36icons,
   tokens,

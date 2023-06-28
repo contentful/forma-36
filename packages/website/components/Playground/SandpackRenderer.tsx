@@ -99,7 +99,6 @@ export function SandpackRenderer({
           '@contentful/f36-image': '^4.0.0-alpha.0', // Remove when added to f36-components
           '@contentful/f36-multiselect': '^4.0.0', // Remove when added to f36-components
           '@contentful/f36-navlist': '^4.1.0-alpha.0', // Remove when added to f36-components
-          '@contentful/f36-navbar': '^4.0.2-alpha', // Remove when added to f36-components
           '@contentful/f36-tokens': '^4.0.0',
           '@contentful/f36-icons': '^4.0.0',
           emotion: '^10.0.17',
