@@ -8,6 +8,56 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 22-06-2023
+
+**F36 Forms** `v4.44.0`
+
+- Fix text overlapping for small Selects
+
+## 09-06-2023
+
+**F36 Core** `v4.43.0`
+
+- add new `useImageLoaded` hook
+
+## 08-06-2023
+
+**F36 Button** `v4.42.0`
+
+- feat(button): restyle negative variant
+- feat(textarea): change hue of invalid border color
+- feat(validation-message): change hue of negative color
+- feat(icon): change hue of negative color
+- feat(icon): change hue of positive color
+- feat(tokens): change hue of semantic colors
+
+**F36 Forms** `v4.42.0`
+
+- feat(button): restyle negative variant
+- feat(textarea): change hue of invalid border color
+- feat(validation-message): change hue of negative color
+- feat(icon): change hue of negative color
+- feat(icon): change hue of positive color
+- feat(tokens): change hue of semantic colors
+
+**F36 Icon** `v4.42.0`
+
+- feat(button): restyle negative variant
+- feat(textarea): change hue of invalid border color
+- feat(validation-message): change hue of negative color
+- feat(icon): change hue of negative color
+- feat(icon): change hue of positive color
+- feat(tokens): change hue of semantic colors
+
+**F36 Tokens** `v4.0.2`
+
+- feat(button): restyle negative variant
+- feat(textarea): change hue of invalid border color
+- feat(validation-message): change hue of negative color
+- feat(icon): change hue of negative color
+- feat(icon): change hue of positive color
+- feat(tokens): change hue of semantic colors
+
 ## 01-06-2023
 
 **F36 Table** `v4.40.7`
@@ -150,7 +200,7 @@ The Changelog gives an overview of the changes we've made to Forma 36
 **F36 Badge** `v4.30.1`
 
 - feat(badge): fix letter case
-  feat(entity-status-badge): fix letter case
+- feat(entity-status-badge): fix letter case
 
 **F36 Table** `v4.30.2`
 
@@ -161,17 +211,17 @@ The Changelog gives an overview of the changes we've made to Forma 36
 **F36 Icons** `v4.25.0`
 
 - feat(environment): update icon
-  feat(environment-alias): update icon
-  feat(sort-ascending): new icon
-  feat(sort-descending): new icon
-  feat(sort): new icon
+- feat(environment-alias): update icon
+- feat(sort-ascending): new icon
+- feat(sort-descending): new icon
+- feat(sort): new icon
 
 ## 14-03-2023
 
 **F36 Menu** `v4.29.0`
 
 - feat(menu): new look and feel
-  feat(menu-item): add `isActive` and `isDisabled` props
+- feat(menu-item): add `isActive` and `isDisabled` props
 
 **F36 Table** `v4.30.0`
 
@@ -449,12 +499,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 **F36 Button** `v4.21.2`
 
 - feat(button): allow icon variant for transparent buttons
-  fix(datepicker): change calendar button icon variant
+- fix(datepicker): change calendar button icon variant
 
 **F36 Datepicker** `v4.21.2`
 
 - feat(button): allow icon variant for transparent buttons
-  fix(datepicker): change calendar button icon variant
+- fix(datepicker): change calendar button icon variant
 
 ## 26-10-2022
 
@@ -533,137 +583,137 @@ The Changelog gives an overview of the changes we've made to Forma 36
 **F36 Accordion** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Asset** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Autocomplete** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Badge** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Button** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Card** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Collapse** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Copybutton** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Datepicker** `v4.2.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Datetime** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Drag Handle** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Entity List** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Forms** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Icon** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Icons** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 List** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Menu** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Modal** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Note** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Notification** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Pagination** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Pill** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Popover** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Skeleton** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Spinner** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Table** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Tabs** `v4.19.1`
 
 - build: build ESM to JS file - legacy output
-  fix(notification): use type imports
+- fix(notification): use type imports
 
 **F36 Datepicker** `v4.2.2`
 

@@ -14,6 +14,8 @@ import { Multiselect } from '@contentful/f36-multiselect';
 import { NavList } from '@contentful/f36-navlist';
 import { Navbar } from '@contentful/f36-navbar';
 import * as f36utils from '@contentful/f36-utils';
+import { Avatar, Variant, Size } from '@contentful/f36-avatar';
+import { Image } from '@contentful/f36-image';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
 import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
@@ -38,6 +40,10 @@ const liveProviderScope = {
   ...f36Components,
   ...f36icons,
   ...f36utils,
+  Avatar, // Remove when avatar is added to f36-components
+  Variant, // Remove when avatar is added to f36-components
+  Size, // Remove when avatar is added to f36-components
+  Image, // Remove when added to f36-components
   Multiselect, // Remove when added to f36-components
   NavList, // Remove when added to f36-components
   Navbar, // Remove when added to f36-components
@@ -78,7 +84,7 @@ const styles = {
   error: css`
     font-family: ${tokens.fontStackMonospace};
     font-size: ${tokens.fontSizeS};
-    background: ${tokens.colorNegative};
+    background: ${tokens.red600};
     color: ${tokens.colorWhite};
     padding: ${tokens.spacingXs};
   `,

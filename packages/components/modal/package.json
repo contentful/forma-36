@@ -1,16 +1,16 @@
 {
   "name": "@contentful/f36-modal",
-  "version": "4.41.1",
+  "version": "4.44.0",
   "description": "Forma 36: Modal component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-button": "^4.41.1",
-    "@contentful/f36-core": "^4.41.1",
+    "@contentful/f36-button": "^4.44.0",
+    "@contentful/f36-core": "^4.44.0",
     "@contentful/f36-icons": "^4.23.2",
-    "@contentful/f36-tokens": "^4.0.1",
-    "@contentful/f36-typography": "^4.41.1",
+    "@contentful/f36-tokens": "^4.0.2",
+    "@contentful/f36-typography": "^4.44.0",
     "@types/react-modal": "^3.13.1",
     "emotion": "^10.0.17",
     "react-modal": "^3.16.1"

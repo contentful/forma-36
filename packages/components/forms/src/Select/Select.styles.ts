@@ -5,7 +5,7 @@ export function getSelectStyles({ isInvalid, isDisabled, size }) {
   const sizeStyles =
     size === 'small'
       ? {
-          padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
+          padding: `${tokens.spacing2Xs} ${tokens.spacingL} ${tokens.spacing2Xs} ${tokens.spacingXs}`,
           height: '32px',
         }
       : {
@@ -35,7 +35,7 @@ export function getSelectStyles({ isInvalid, isDisabled, size }) {
     '&:focus': {
       outline: 'none',
       boxShadow: tokens.glowPrimary,
-      borderColor: tokens.colorPrimary,
+      borderColor: tokens.blue500,
     },
     '&:-moz-focusring': { color: 'transparent', textShadow: '0 0 0 #000' },
     '&::-ms-expand': { display: 'none' },

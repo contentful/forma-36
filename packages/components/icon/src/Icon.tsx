@@ -56,8 +56,8 @@ const sizes: { [key in IconSize]: { [key in 'height' | 'width']: string } } = {
 
 const fills: { [key in IconVariant]: string } = {
   muted: tokens.gray600,
-  negative: tokens.colorNegative,
-  positive: tokens.colorPositive,
+  negative: tokens.red600,
+  positive: tokens.green600,
   primary: tokens.blue600,
   secondary: tokens.gray900,
   warning: tokens.colorWarning,
@@ -115,6 +115,7 @@ export function _Icon<E extends React.ElementType = IconComponent>(
     children,
     className,
     variant = 'primary',
+    role = 'img',
     size = 'small',
     testId = 'cf-ui-icon',
     trimmed,
@@ -134,6 +135,7 @@ export function _Icon<E extends React.ElementType = IconComponent>(
     ),
     ref: forwardedRef,
     testId,
+    role,
   };
 
   const ariaHiddenProps = useAriaHidden(otherProps);

@@ -1,5 +1,20 @@
 # Change Log
 
+## 4.44.0
+
+## 4.43.0
+
+### Minor Changes
+
+- [#2499](https://github.com/contentful/forma-36/pull/2499) [`1d2f57f0`](https://github.com/contentful/forma-36/commit/1d2f57f0e4e817c4caf746414f4d43b7c978b272) Thanks [@denkristoffer](https://github.com/denkristoffer)! - - add new `useImageLoaded` hook
+
+## 4.42.0
+
+### Patch Changes
+
+- Updated dependencies [[`a0d27f0c`](https://github.com/contentful/forma-36/commit/a0d27f0c68fd5e685e723d588f340d0f025ba2ad)]:
+  - @contentful/f36-tokens@4.0.2
+
 ## 4.41.1
 
 ## 4.41.0

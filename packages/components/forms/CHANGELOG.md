@@ -1,5 +1,40 @@
 # Change Log
 
+## 4.44.0
+
+### Minor Changes
+
+- [#2506](https://github.com/contentful/forma-36/pull/2506) [`b23d856f`](https://github.com/contentful/forma-36/commit/b23d856f4d37d8449ab35acf4690f683f9c2f713) Thanks [@MayaGillilanContentful](https://github.com/MayaGillilanContentful)! - - Fix text overlapping for small Selects
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.44.0
+  - @contentful/f36-typography@4.44.0
+
+## 4.43.0
+
+### Patch Changes
+
+- Updated dependencies [[`1d2f57f0`](https://github.com/contentful/forma-36/commit/1d2f57f0e4e817c4caf746414f4d43b7c978b272)]:
+  - @contentful/f36-core@4.43.0
+  - @contentful/f36-typography@4.43.0
+
+## 4.42.0
+
+### Patch Changes
+
+- [#2498](https://github.com/contentful/forma-36/pull/2498) [`a0d27f0c`](https://github.com/contentful/forma-36/commit/a0d27f0c68fd5e685e723d588f340d0f025ba2ad) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(button): restyle negative variant
+  feat(textarea): change hue of invalid border color
+  feat(validation-message): change hue of negative color
+  feat(icon): change hue of negative color
+  feat(icon): change hue of positive color
+  feat(tokens): change hue of semantic colors
+- Updated dependencies [[`a0d27f0c`](https://github.com/contentful/forma-36/commit/a0d27f0c68fd5e685e723d588f340d0f025ba2ad)]:
+  - @contentful/f36-tokens@4.0.2
+  - @contentful/f36-core@4.42.0
+  - @contentful/f36-typography@4.42.0
+
 ## 4.41.1
 
 ### Patch Changes

@@ -29,9 +29,12 @@ function getPackageName(name) {
 function getReleaseSummary(changesets, release) {
   const formattedChangesets = release.changesets.map((changeset) => {
     const { summary } = changesets.find((cs) => cs.id === changeset) ?? {};
-    return !summary || summary?.trim().startsWith('-')
-      ? summary
-      : `- ${summary} \n`;
+    const changes = summary.split('\n');
+    return changes
+      .map((change) =>
+        !change || change?.trim().startsWith('-') ? change : `- ${change}\n`,
+      )
+      .join('');
   });
 
   const subPackageName = `**${getPackageName(release.name)}** \`v${

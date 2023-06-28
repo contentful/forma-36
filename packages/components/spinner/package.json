@@ -1,17 +1,17 @@
 {
   "name": "@contentful/f36-spinner",
-  "version": "4.41.1",
+  "version": "4.44.0",
   "description": "Forma 36: Spinner Component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.41.1",
-    "@contentful/f36-tokens": "^4.0.1",
+    "@contentful/f36-core": "^4.44.0",
+    "@contentful/f36-tokens": "^4.0.2",
     "emotion": "^10.0.17"
   },
   "devDependencies": {
-    "@contentful/f36-typography": "^4.41.1"
+    "@contentful/f36-typography": "^4.44.0"
   },
   "peerDependencies": {
     "react": ">=16.8"

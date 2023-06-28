@@ -141,28 +141,35 @@ export async function getSingleArticleBySlug(slug, preview = false) {
 }
 
 export async function getAllArticles(preview = false) {
-  const entries = await fetchGraphQL(
-    `query {
-      kbAppArticleCollection(where: { slug_exists: true }) {
-        items {
-          ${ARTICLE_GRAPHQL_FIELDS}
+  try {
+    const entries = await fetchGraphQL(
+      `query {
+        kbAppArticleCollection(where: { slug_exists: true }) {
+          items {
+            ${ARTICLE_GRAPHQL_FIELDS}
+          }
         }
-      }
-    }`,
-    preview,
-  );
+      }`,
+      preview,
+    );
 
-  const articleEntries = extractArticleEntries(entries);
+    const articleEntries = extractArticleEntries(entries);
 
-  return articleEntries;
+    return articleEntries;
+  } catch (_error) {
+    return [];
+  }
 }
 
 export async function getSidebarLinksBySectionSlug(
   sectionSlug: string,
   preview = false,
 ) {
-  const entries = await fetchGraphQL(
-    `query {
+  let data;
+
+  try {
+    const entries = await fetchGraphQL(
+      `query {
       sectionCollection(
         where: { slug_exists: true, slug: "${sectionSlug}" }
         limit: 1
@@ -197,10 +204,13 @@ export async function getSidebarLinksBySectionSlug(
       }
     }
     `,
-    preview,
-  );
+      preview,
+    );
 
-  const data = entries?.data?.sectionCollection?.items[0];
+    data = entries?.data?.sectionCollection?.items[0];
+  } catch (_error) {
+    // noop
+  }
 
   const prepareLink = (link: { slug: string; authProtected?: boolean }) => {
     // Changelog link is a special case because we don't want to prepend the section slug
@@ -264,8 +274,9 @@ export async function getSidebarLinksBySectionSlug(
 }
 
 export async function getTopbarLinks(preview = false) {
-  const entries = await fetchGraphQL(
-    `query {
+  try {
+    const entries = await fetchGraphQL(
+      `query {
         navigationCollection(limit:1) {
           items {
             sys {
@@ -284,11 +295,14 @@ export async function getTopbarLinks(preview = false) {
           }
         }
       }`,
-    preview,
-  );
+      preview,
+    );
 
-  const topbarLinks =
-    entries?.data?.navigationCollection?.items[0].sectionsCollection?.items;
+    const topbarLinks =
+      entries?.data?.navigationCollection?.items[0].sectionsCollection?.items;
 
-  return topbarLinks;
+    return topbarLinks;
+  } catch (_error) {
+    return [];
+  }
 }

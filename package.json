@@ -67,6 +67,7 @@
     "@storybook/theming": "^6.5.10",
     "@testing-library/jest-dom": "5.16.1",
     "@testing-library/react": "12.1.5",
+    "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/user-event": "14.4.3",
     "@types/jest": "^29.2.2",
     "@types/jest-axe": "3.5.4",

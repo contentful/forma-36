@@ -13,6 +13,11 @@
       "slug": "/components/autocomplete/"
     },
     {
+      "title": "Avatar",
+      "slug": "/components/avatar/",
+      "status": "alpha"
+    },
+    {
       "title": "Badge",
       "slug": "/components/badge/",
       "status": "stable"
@@ -37,6 +42,11 @@
     {
       "title": "Icons",
       "slug": "/components/icon/"
+    },
+    {
+      "title": "Image",
+      "slug": "/components/image/",
+      "status": "alpha"
     },
     {
       "title": "List",
