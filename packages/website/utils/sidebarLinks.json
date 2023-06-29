@@ -58,6 +58,12 @@
       "slug": "/components/menu/"
     },
     {
+      "title": "Navbar",
+      "slug": "/components/navbar/",
+      "isNew": true,
+      "status": "stable"
+    },
+    {
       "title": "NavList",
       "slug": "/components/navlist/",
       "status": "alpha"

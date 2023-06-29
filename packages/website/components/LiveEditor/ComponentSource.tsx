@@ -36,8 +36,8 @@ import { CSS } from '@dnd-kit/utilities';
 import { format, parse, isValid } from 'date-fns';
 
 const liveProviderScope = {
-  ...f36icons,
   ...f36Components,
+  ...f36icons,
   ...f36utils,
   Avatar, // Remove when avatar is added to f36-components
   Variant, // Remove when avatar is added to f36-components
