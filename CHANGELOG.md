@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 30-06-2023
+
+`@contentful/f36-components@4.45.0`
+
+- Release Navbar stable version, include Navbar to the umbrella @contentful/f36-components package
+
+**F36 Navbar** `v4.1.0`
+
+- Release Navbar stable version, include Navbar to the umbrella @contentful/f36-components package
+
 ## 22-06-2023
 
 **F36 Forms** `v4.44.0`
