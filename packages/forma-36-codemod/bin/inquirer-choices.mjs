@@ -1,6 +1,6 @@
-const inquirer = require('inquirer');
+import inquirer from 'inquirer';
 
-const PARSER_CHOICES = [
+export const PARSER_CHOICES = [
   {
     name: 'JavaScript',
     value: 'babel',
@@ -11,7 +11,7 @@ const PARSER_CHOICES = [
   },
 ];
 
-const SETUP_CHOICES = [
+export const SETUP_CHOICES = [
   {
     name: 'run-all-v4: Update package json with new packages and remove old ones, remove v3 CSS imports and run all possible codemods for components.',
     value: 'run-all-v4',
@@ -154,7 +154,7 @@ const V4_CODEMODS = [
   // Add extra codemods - do not remove
 ].sort((a, b) => (a.value < b.value ? -1 : 1));
 
-const TRANSFORMS_CHOICES = [
+export const TRANSFORMS_CHOICES = [
   {
     name: 'color-tokens-to-new-tokens: Converts deprecated color tokens to the new ones',
     value: 'color-tokens-to-new-tokens',
@@ -162,9 +162,3 @@ const TRANSFORMS_CHOICES = [
   new inquirer.Separator(),
   ...V4_CODEMODS,
 ];
-
-module.exports = {
-  PARSER_CHOICES,
-  TRANSFORMS_CHOICES,
-  SETUP_CHOICES,
-};
