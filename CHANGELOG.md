@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 01-07-2023
+
+**F36 Codemod** `v4.3.2`
+
+- chore: bump semver to 7.5.3
+
 ## 30-06-2023
 
 `@contentful/f36-components@4.45.0`
