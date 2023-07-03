@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
-import { Box, Stack, type CommonProps } from '@contentful/f36-core';
+import { Flex, type CommonProps } from '@contentful/f36-core';
+import { Menu } from '@contentful/f36-components';
 import type { SpacingTokens } from '@contentful/f36-tokens';
 import type { AvatarProps } from '../src';
 
@@ -27,20 +28,33 @@ export interface AvatarGroupProps extends CommonProps {
 
 const renderAvatars = (children) => {
   if (React.Children.count(children) > 3) {
-    return React.Children.map(children, (child, index) => {
-      if (index < 2) {
-        return React.cloneElement(child as React.ReactElement, {
-          key: `avatar-rendered-${index}`,
-        });
-      } else {
-        return (
-          <>
-            {index === 2 && <div>{React.Children.count(children) - 2}</div>}
-            <span key={`avatar-${index}`}>{child.props.alt}</span>
-          </>
-        );
-      }
-    });
+    return (
+      <>
+        {React.Children.map(children, (child, index) => {
+          if (index < 2) {
+            return React.cloneElement(child as React.ReactElement, {
+              key: `avatar-rendered-${index}`,
+            });
+          }
+        })}
+        <Menu>
+          <Menu.Trigger>
+            <span>{React.Children.count(children) - 2}</span>
+          </Menu.Trigger>
+          <Menu.List>
+            {React.Children.toArray(children)
+              .slice(2)
+              .map((child, index) => {
+                return (
+                  <Menu.Item key={`avatar-${index}`}>
+                    {child} {child.props.alt}
+                  </Menu.Item>
+                );
+              })}
+          </Menu.List>
+        </Menu>
+      </>
+    );
   }
   return React.Children.map(children, (child, index) => {
     return React.cloneElement(child as React.ReactElement, {
@@ -60,14 +74,14 @@ function _AvatarGroup(
   forwardedRef: React.Ref<HTMLDivElement>,
 ) {
   return (
-    <Box
-      spacing
+    <Flex
+      flexDirection="row"
       className={cx(className)}
       data-test-id={testId}
       ref={forwardedRef}
     >
       {renderAvatars(children)}
-    </Box>
+    </Flex>
   );
 }
 export const AvatarGroup = forwardRef(_AvatarGroup);
