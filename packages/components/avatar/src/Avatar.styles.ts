@@ -78,5 +78,21 @@ export const getAvatarStyles = ({
         boxShadow: `0px 0px 0px 2px ${tokens.blue400} inset !important`,
       },
     }),
+    imageContainer: css({
+      overflow: 'visible',
+      zIndex: 1,
+    }),
+    overlayIcon: css({
+      svg: {
+        backgroundColor: tokens.colorWhite,
+        borderRadius: '99999999em',
+        position: 'absolute',
+        bottom: 0,
+        right: '-10%',
+        width: '40%',
+        height: '40%',
+        zIndex: 1,
+      },
+    }),
   };
 };

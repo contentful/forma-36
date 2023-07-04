@@ -16,6 +16,7 @@ export interface AvatarProps extends CommonProps {
   variant?: Variant;
   showColorBorders?: boolean;
   isPrimary?: boolean;
+  icon?: React.ReactElement;
 }
 
 function _Avatar(
@@ -29,6 +30,7 @@ function _Avatar(
     variant = 'user',
     showColorBorders = false,
     isPrimary = false,
+    icon = null,
   }: AvatarProps,
   forwardedRef: React.Ref<HTMLDivElement>,
 ) {
@@ -41,11 +43,14 @@ function _Avatar(
       className={cx(styles.root, className, {
         [styles.rootColorBorder]: showColorBorders,
         [styles.isPrimaryAvatar]: isPrimary,
+        [styles.imageContainer]: icon !== null,
       })}
       data-test-id={testId}
       ref={forwardedRef}
     >
-      {!isFallback ? (
+      {isFallback ? (
+        <div className={styles.fallback} data-test-id={`${testId}-fallback`} />
+      ) : (
         <Image
           alt={alt}
           className={styles.image}
@@ -53,9 +58,8 @@ function _Avatar(
           src={src}
           width={size}
         />
-      ) : (
-        <div className={styles.fallback} data-test-id={`${testId}-fallback`} />
       )}
+      {icon !== null && <span className={styles.overlayIcon}>{icon}</span>}
     </div>
   );
 }

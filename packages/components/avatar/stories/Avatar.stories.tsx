@@ -4,6 +4,7 @@ import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
 import { Avatar, type AvatarProps } from '../src/Avatar';
+import { CheckCircleIcon } from '@contentful/f36-icons/src';
 
 export default {
   component: Avatar,
@@ -62,8 +63,20 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar {...args} size="large" showColorBorders isPrimary />
         <Avatar {...args} size="large" variant="app" showColorBorders />
         <Avatar {...args} size="medium" variant="app" showColorBorders />
+        <Avatar
+          {...args}
+          size="medium"
+          showColorBorders
+          icon={<CheckCircleIcon variant="positive" />}
+        />
         <Avatar {...args} size="small" variant="app" showColorBorders />
-        <Avatar {...args} size="tiny" variant="app" showColorBorders />
+        <Avatar
+          {...args}
+          size="tiny"
+          variant="app"
+          showColorBorders
+          icon={<CheckCircleIcon variant="positive" />}
+        />
       </Flex>
     </>
   );
