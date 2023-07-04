@@ -9,6 +9,7 @@
     "@contentful/f36-core": "^4.45.0",
     "@contentful/f36-image": "^4.0.0-alpha.0",
     "@contentful/f36-tokens": "^4.0.0",
+    "@contentful/f36-menu": "^4.0.0",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {

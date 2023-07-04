@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { Flex, type CommonProps } from '@contentful/f36-core';
-import { Menu } from '@contentful/f36-components';
+import { Menu } from '@contentful/f36-menu';
 import type { SpacingTokens } from '@contentful/f36-tokens';
 import { type AvatarProps, Size } from '../src';
 import { getAvatarGroupStyles } from './AvatarGroup.styles';
