@@ -24,7 +24,7 @@ const renderAvatars = (
   size: AvatarGroupProps['size'],
   variant: AvatarGroupProps['variant'],
 ) => {
-  const styles = getAvatarGroupStyles();
+  const styles = getAvatarGroupStyles(size);
 
   if (React.Children.count(children) > 3) {
     return (
