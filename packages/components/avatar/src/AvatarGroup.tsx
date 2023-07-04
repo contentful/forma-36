@@ -2,19 +2,12 @@ import React, { forwardRef } from 'react';
 import { Flex, type CommonProps } from '@contentful/f36-core';
 import { Menu } from '@contentful/f36-components';
 import type { SpacingTokens } from '@contentful/f36-tokens';
-import type { AvatarProps } from '../src';
+import { type AvatarProps, Size } from '../src';
+import { getAvatarGroupStyles } from './AvatarGroup.styles';
 
 import { cx } from 'emotion';
 
-export enum Size {
-  Small = '24px',
-  Medium = '32px',
-}
-
-export enum Variant {
-  Stacked = 'stacked',
-  Spaced = 'spaced',
-}
+export type Variant = 'stacked' | 'spaced';
 
 export interface AvatarGroupProps extends CommonProps {
   spacing?: SpacingTokens;
@@ -26,7 +19,13 @@ export interface AvatarGroupProps extends CommonProps {
     | React.ReactElement<AvatarProps>;
 }
 
-const renderAvatars = (children) => {
+const renderAvatars = (
+  children: AvatarGroupProps['children'],
+  size: AvatarGroupProps['size'],
+  variant: AvatarGroupProps['variant'],
+) => {
+  const styles = getAvatarGroupStyles();
+
   if (React.Children.count(children) > 3) {
     return (
       <>
@@ -34,20 +33,43 @@ const renderAvatars = (children) => {
           if (index < 2) {
             return React.cloneElement(child as React.ReactElement, {
               key: `avatar-rendered-${index}`,
+              size: size,
+              className: cx((child as React.ReactElement).props.className, {
+                [styles.avatarStacked]: variant === 'stacked',
+                [styles.avatarSpaced]: variant === 'spaced',
+              }),
             });
           }
         })}
-        <Menu>
+        <Menu placement="bottom-end">
           <Menu.Trigger>
-            <span>{React.Children.count(children) - 2}</span>
+            <button
+              type="button"
+              className={cx(
+                {
+                  [styles.avatarStacked]: variant === 'stacked',
+                  [styles.avatarSpaced]: variant === 'spaced',
+                },
+                styles.moreAvatarsBtn,
+              )}
+            >
+              {React.Children.count(children) - 2}
+            </button>
           </Menu.Trigger>
           <Menu.List>
             {React.Children.toArray(children)
               .slice(2)
               .map((child, index) => {
                 return (
-                  <Menu.Item key={`avatar-${index}`}>
-                    {child} {child.props.alt}
+                  <Menu.Item
+                    className={styles.moreAvatarsItem}
+                    key={`avatar-${index}`}
+                  >
+                    {React.cloneElement(child as React.ReactElement, {
+                      key: `avatar-menuitem-${index}`,
+                      size: Size.Tiny,
+                    })}
+                    {(child as React.ReactElement).props.alt}
                   </Menu.Item>
                 );
               })}
@@ -59,6 +81,11 @@ const renderAvatars = (children) => {
   return React.Children.map(children, (child, index) => {
     return React.cloneElement(child as React.ReactElement, {
       key: `avatar-rendered-${index}`,
+      size: size,
+      className: cx((child as React.ReactElement).props.className, {
+        [styles.avatarStacked]: variant === 'stacked',
+        [styles.avatarSpaced]: variant === 'spaced',
+      }),
     });
   });
 };
@@ -68,8 +95,8 @@ function _AvatarGroup(
     children,
     className,
     size = Size.Medium,
-    variant = Variant.Spaced,
-    testId = 'cf-ui.avatar-group',
+    variant = 'spaced',
+    testId = 'cf-ui-avatar-group',
   }: AvatarGroupProps,
   forwardedRef: React.Ref<HTMLDivElement>,
 ) {
@@ -80,7 +107,7 @@ function _AvatarGroup(
       data-test-id={testId}
       ref={forwardedRef}
     >
-      {renderAvatars(children)}
+      {renderAvatars(children, size, variant)}
     </Flex>
   );
 }
