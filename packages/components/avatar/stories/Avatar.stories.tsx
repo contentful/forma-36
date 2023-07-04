@@ -62,6 +62,13 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar {...args} size="medium" showColorBorders />
         <Avatar {...args} size="large" showColorBorders isPrimary />
         <Avatar {...args} size="large" variant="app" showColorBorders />
+        <Avatar
+          {...args}
+          size="large"
+          variant="app"
+          showColorBorders
+          isActive={false}
+        />
         <Avatar {...args} size="medium" variant="app" showColorBorders />
         <Avatar
           {...args}

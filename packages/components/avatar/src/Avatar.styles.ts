@@ -94,5 +94,8 @@ export const getAvatarStyles = ({
         zIndex: 1,
       },
     }),
+    isInactive: css({
+      opacity: 0.5,
+    }),
   };
 };

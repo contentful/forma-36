@@ -16,6 +16,7 @@ export interface AvatarProps extends CommonProps {
   variant?: Variant;
   showColorBorders?: boolean;
   isPrimary?: boolean;
+  isActive?: boolean;
   icon?: React.ReactElement;
 }
 
@@ -30,6 +31,7 @@ function _Avatar(
     variant = 'user',
     showColorBorders = false,
     isPrimary = false,
+    isActive = true,
     icon = null,
   }: AvatarProps,
   forwardedRef: React.Ref<HTMLDivElement>,
@@ -44,6 +46,7 @@ function _Avatar(
         [styles.rootColorBorder]: showColorBorders,
         [styles.isPrimaryAvatar]: isPrimary,
         [styles.imageContainer]: icon !== null,
+        [styles.isInactive]: !isActive,
       })}
       data-test-id={testId}
       ref={forwardedRef}
