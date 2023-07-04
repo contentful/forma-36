@@ -6,8 +6,7 @@ import { AvatarGroup } from './AvatarGroup';
 import { axe } from '@/scripts/test/axeHelper';
 
 jest.mock('@contentful/f36-image', () => ({
-  // eslint-disable-next-line jsx-a11y/alt-text
-  Image: jest.fn((props) => <img {...props} />),
+  Image: jest.fn((props) => <img alt="fallback avatar" {...props} />),
 }));
 
 const imgUrl = 'https://example.com/image.jpg';
