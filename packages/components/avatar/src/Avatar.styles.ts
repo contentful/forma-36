@@ -1,6 +1,6 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { type AvatarProps, Variant } from './Avatar';
+import { type AvatarProps } from './Avatar';
 
 export const getAvatarStyles = ({
   isFallback,
@@ -12,7 +12,14 @@ export const getAvatarStyles = ({
   variant: AvatarProps['variant'];
 }) => {
   const borderRadius =
-    variant === Variant.App ? tokens.borderRadiusSmall : '99999999em';
+    variant === 'app' ? tokens.borderRadiusSmall : '99999999em';
+
+  const sizePixels = {
+    tiny: '20px',
+    small: '24px',
+    medium: '32px',
+    large: '48px',
+  }[size];
 
   return {
     fallback: css({
@@ -27,10 +34,10 @@ export const getAvatarStyles = ({
     root: css([
       {
         borderRadius,
-        height: size,
+        height: sizePixels,
         overflow: 'hidden',
         position: 'relative',
-        width: size,
+        width: sizePixels,
       },
       !isFallback && {
         '&::after': {
@@ -46,5 +53,30 @@ export const getAvatarStyles = ({
         },
       },
     ]),
+    rootColorBorder: css({
+      ':nth-child(6n+1)::after': {
+        boxShadow: `0px 0px 0px 2px ${tokens.green400} inset`,
+      },
+      ':nth-child(6n+2)::after': {
+        boxShadow: `0px 0px 0px 2px ${tokens.red400} inset`,
+      },
+      ':nth-child(6n+3)::after': {
+        boxShadow: `0px 0px 0px 2px ${tokens.orange400} inset`,
+      },
+      ':nth-child(6n+4)::after': {
+        boxShadow: `0px 0px 0px 2px ${tokens.yellow400} inset`,
+      },
+      ':nth-child(6n+5)::after': {
+        boxShadow: `0px 0px 0px 2px ${tokens.purple400} inset`,
+      },
+      ':nth-child(6n+6)::after': {
+        boxShadow: `0px 0px 0px 2px ${tokens.gray400} inset`,
+      },
+    }),
+    isPrimaryAvatar: css({
+      '&::after': {
+        boxShadow: `0px 0px 0px 2px ${tokens.blue400} inset !important`,
+      },
+    }),
   };
 };

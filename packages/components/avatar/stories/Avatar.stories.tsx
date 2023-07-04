@@ -3,7 +3,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
-import { Avatar, Variant, type AvatarProps, Size } from '../src/Avatar';
+import { Avatar, type AvatarProps } from '../src/Avatar';
 
 export default {
   component: Avatar,
@@ -23,14 +23,15 @@ export const Overview: Story<AvatarProps> = (args) => {
         gap="spacingS"
         marginBottom="spacingM"
       >
-        <Avatar size={Size.Tiny} variant={Variant.User} />
-        <Avatar size={Size.Small} variant={Variant.User} />
-        <Avatar size={Size.Medium} variant={Variant.User} />
-        <Avatar size={Size.Large} variant={Variant.User} />
-        <Avatar size={Size.Large} variant={Variant.App} />
-        <Avatar size={Size.Medium} variant={Variant.App} />
-        <Avatar size={Size.Small} variant={Variant.App} />
-        <Avatar size={Size.Tiny} variant={Variant.App} />
+        <Avatar size="tiny" variant="user" />
+        <Avatar size="small" variant="user" />
+        <Avatar size="medium" variant="user" />
+        <Avatar size="large" variant="user" />
+        <Avatar size="large" variant="app" />
+        <Avatar size="large" variant="user" />
+        <Avatar size="medium" variant="app" />
+        <Avatar size="small" variant="app" />
+        <Avatar size="tiny" variant="app" />
       </Flex>
 
       <Flex
@@ -39,14 +40,30 @@ export const Overview: Story<AvatarProps> = (args) => {
         gap="spacingS"
         marginBottom="spacingM"
       >
-        <Avatar {...args} size={Size.Tiny} />
-        <Avatar {...args} size={Size.Small} />
-        <Avatar {...args} size={Size.Medium} />
-        <Avatar {...args} size={Size.Large} />
-        <Avatar {...args} size={Size.Large} variant={Variant.App} />
-        <Avatar {...args} size={Size.Medium} variant={Variant.App} />
-        <Avatar {...args} size={Size.Small} variant={Variant.App} />
-        <Avatar {...args} size={Size.Tiny} variant={Variant.App} />
+        <Avatar {...args} size="tiny" />
+        <Avatar {...args} size="small" />
+        <Avatar {...args} size="medium" />
+        <Avatar {...args} size="large" />
+        <Avatar {...args} size="large" variant="app" />
+        <Avatar {...args} size="medium" variant="app" />
+        <Avatar {...args} size="small" variant="app" />
+        <Avatar {...args} size="tiny" variant="app" />
+      </Flex>
+
+      <Flex
+        alignItems="center"
+        flexDirection="row"
+        gap="spacingS"
+        marginBottom="spacingM"
+      >
+        <Avatar {...args} size="tiny" showColorBorders />
+        <Avatar {...args} size="small" showColorBorders />
+        <Avatar {...args} size="medium" showColorBorders />
+        <Avatar {...args} size="large" showColorBorders isPrimary />
+        <Avatar {...args} size="large" variant="app" showColorBorders />
+        <Avatar {...args} size="medium" variant="app" showColorBorders />
+        <Avatar {...args} size="small" variant="app" showColorBorders />
+        <Avatar {...args} size="tiny" variant="app" showColorBorders />
       </Flex>
     </>
   );
