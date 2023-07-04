@@ -1,9 +1,8 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
-import { Avatar, Variant, type AvatarProps } from '../src/Avatar';
+import { Avatar, Variant, Size, type AvatarProps } from '../src/Avatar';
 import { AvatarGroup } from '../src/AvatarGroup';
 
 export default {
@@ -15,7 +14,7 @@ export const Overview: Story<AvatarProps> = (args) => {
   return (
     <>
       <SectionHeading as="h3" marginBottom="spacingS">
-        Avatar Group
+        Avatar Group spaced with menu
       </SectionHeading>
 
       <AvatarGroup>
@@ -30,10 +29,39 @@ export const Overview: Story<AvatarProps> = (args) => {
         />
       </AvatarGroup>
       <SectionHeading as="h3" marginBottom="spacingS">
-        Avatar Group
+        Avatar Group Stacked
       </SectionHeading>
 
-      <AvatarGroup>
+      <AvatarGroup variant="stacked">
+        <Avatar {...args} alt="Lisa Simpson" variant={Variant.User} />
+        <Avatar {...args} alt="Apu Nahasapeemapetilon" variant={Variant.User} />
+        <Avatar {...args} alt="Arnie Pye" variant={Variant.User} />
+        <Avatar {...args} alt="Dr. Julius Hibbert" variant={Variant.User} />
+        <Avatar
+          {...args}
+          alt="Prof. Daniel Düsentrieb"
+          variant={Variant.User}
+        />
+      </AvatarGroup>
+
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Avatar Group Spaced Small
+      </SectionHeading>
+
+      <AvatarGroup size={Size.Small}>
+        <Avatar {...args} alt="Arnie Pye" variant={Variant.User} />
+        <Avatar {...args} alt="Dr. Julius Hibbert" variant={Variant.User} />
+        <Avatar
+          {...args}
+          alt="Prof. Daniel Düsentrieb"
+          variant={Variant.User}
+        />
+      </AvatarGroup>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Avatar Group spaced Small
+      </SectionHeading>
+
+      <AvatarGroup size={Size.Small} variant="stacked">
         <Avatar {...args} alt="Arnie Pye" variant={Variant.User} />
         <Avatar {...args} alt="Dr. Julius Hibbert" variant={Variant.User} />
         <Avatar
