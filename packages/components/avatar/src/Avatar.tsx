@@ -44,10 +44,10 @@ function _Avatar(
   return (
     <div
       className={cx(styles.root, className, {
-        [styles.rootColorBorder]: showColorBorder && !isLoading,
-        [styles.isPrimaryAvatar]: isPrimary && !isLoading,
-        [styles.imageContainer]: icon !== null && !isLoading,
-        [styles.isInactive]: !isActive && !isLoading,
+        [styles.rootColorBorder]: showColorBorder,
+        [styles.isPrimaryAvatar]: isPrimary,
+        [styles.imageContainer]: icon !== null,
+        [styles.isInactive]: !isActive,
       })}
       data-test-id={testId}
       ref={forwardedRef}
