@@ -2,19 +2,11 @@ import React, { forwardRef } from 'react';
 import { cx } from 'emotion';
 import { type CommonProps } from '@contentful/f36-core';
 import { Image, type ImageProps } from '@contentful/f36-image';
-import { getAvatarStyles } from './Avatar.styles';
+import { convertSizeToPixels, getAvatarStyles } from './Avatar.styles';
 
-export enum Size {
-  Tiny = '20px',
-  Small = '24px',
-  Medium = '32px',
-  Large = '48px',
-}
+export type Size = 'tiny' | 'small' | 'medium' | 'large';
 
-export enum Variant {
-  App = 'app',
-  User = 'user',
-}
+export type Variant = 'app' | 'user';
 
 export interface AvatarProps extends CommonProps {
   alt?: ImageProps['alt'];
@@ -22,6 +14,10 @@ export interface AvatarProps extends CommonProps {
   size?: Size;
   src?: ImageProps['src'];
   variant?: Variant;
+  showColorBorder?: boolean;
+  isPrimary?: boolean;
+  isActive?: boolean;
+  icon?: React.ReactElement;
 }
 
 function _Avatar(
@@ -29,34 +25,45 @@ function _Avatar(
     alt = '',
     className,
     isLoading = false,
-    size = Size.Medium,
+    size = 'medium',
     src,
     testId = 'cf-ui-avatar',
-    variant = Variant.User,
+    variant = 'user',
+    showColorBorder = false,
+    isPrimary = false,
+    isActive = true,
+    icon = null,
   }: AvatarProps,
   forwardedRef: React.Ref<HTMLDivElement>,
 ) {
   // Only render the fallback when `src` is undefined or an empty string
   const isFallback = Boolean(!isLoading && !src);
   const styles = getAvatarStyles({ isFallback, size, variant });
+  const sizePixels = convertSizeToPixels(size);
 
   return (
     <div
-      className={cx(styles.root, className)}
+      className={cx(styles.root, className, {
+        [styles.rootColorBorder]: showColorBorder,
+        [styles.isPrimaryAvatar]: isPrimary,
+        [styles.imageContainer]: icon !== null,
+        [styles.isInactive]: !isActive,
+      })}
       data-test-id={testId}
       ref={forwardedRef}
     >
-      {!isFallback ? (
+      {isFallback ? (
+        <div className={styles.fallback} data-test-id={`${testId}-fallback`} />
+      ) : (
         <Image
           alt={alt}
           className={styles.image}
-          height={size}
+          height={sizePixels}
           src={src}
-          width={size}
+          width={sizePixels}
         />
-      ) : (
-        <div className={styles.fallback} data-test-id={`${testId}-fallback`} />
       )}
+      {icon !== null && <span className={styles.overlayIcon}>{icon}</span>}
     </div>
   );
 }

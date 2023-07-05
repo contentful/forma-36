@@ -42,6 +42,38 @@ The Avatar can be rendered in different sizes:
 
 ```
 
+### Show Color Border
+
+The Avatar can be rendered with outline colors, the color is determined by the position of the Avatar. There are 6 different colors: green, red, yellow, orange, purple and gray
+
+```jsx file=./examples/AvatarColorBorderExamples.tsx
+
+```
+
+### IsPrimary
+
+The Avatar can be rendered with a special color border reserved for the current user
+
+```jsx file=./examples/AvatarIsPrimaryExamples.tsx
+
+```
+
+### IsActive
+
+This property modifies the opacity of the Avatar component when it is not active
+
+```jsx file=./examples/AvatarIsActiveExamples.tsx
+
+```
+
+### Icons
+
+An Avatar can display an icon on top of the image
+
+```jsx file=./examples/AvatarIconExamples.tsx
+
+```
+
 ### Fallback
 
 In some cases a user or an app will have no avatar to display. Instead, a fallback can be rendered when the `src` property is undefined (or an empty string `""`) and the loading state is not `true`.
