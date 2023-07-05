@@ -2,6 +2,14 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { type AvatarProps } from './Avatar';
 
+export const convertSizeToPixels = (size: AvatarProps['size']) =>
+  ({
+    tiny: '20px',
+    small: '24px',
+    medium: '32px',
+    large: '48px',
+  }[size]);
+
 export const getAvatarStyles = ({
   isFallback,
   size,
@@ -14,12 +22,7 @@ export const getAvatarStyles = ({
   const borderRadius =
     variant === 'app' ? tokens.borderRadiusSmall : '99999999em';
 
-  const sizePixels = {
-    tiny: '20px',
-    small: '24px',
-    medium: '32px',
-    large: '48px',
-  }[size];
+  const sizePixels = convertSizeToPixels(size);
 
   return {
     fallback: css({

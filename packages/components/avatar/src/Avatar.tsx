@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import { cx } from 'emotion';
 import { type CommonProps } from '@contentful/f36-core';
 import { Image, type ImageProps } from '@contentful/f36-image';
-import { getAvatarStyles } from './Avatar.styles';
+import { convertSizeToPixels, getAvatarStyles } from './Avatar.styles';
 
 export type Size = 'tiny' | 'small' | 'medium' | 'large';
 
@@ -14,7 +14,7 @@ export interface AvatarProps extends CommonProps {
   size?: Size;
   src?: ImageProps['src'];
   variant?: Variant;
-  showColorBorders?: boolean;
+  showColorBorder?: boolean;
   isPrimary?: boolean;
   isActive?: boolean;
   icon?: React.ReactElement;
@@ -29,7 +29,7 @@ function _Avatar(
     src,
     testId = 'cf-ui-avatar',
     variant = 'user',
-    showColorBorders = false,
+    showColorBorder = false,
     isPrimary = false,
     isActive = true,
     icon = null,
@@ -39,14 +39,15 @@ function _Avatar(
   // Only render the fallback when `src` is undefined or an empty string
   const isFallback = Boolean(!isLoading && !src);
   const styles = getAvatarStyles({ isFallback, size, variant });
+  const sizePixels = convertSizeToPixels(size);
 
   return (
     <div
       className={cx(styles.root, className, {
-        [styles.rootColorBorder]: showColorBorders,
-        [styles.isPrimaryAvatar]: isPrimary,
-        [styles.imageContainer]: icon !== null,
-        [styles.isInactive]: !isActive,
+        [styles.rootColorBorder]: showColorBorder && !isLoading,
+        [styles.isPrimaryAvatar]: isPrimary && !isLoading,
+        [styles.imageContainer]: icon !== null && !isLoading,
+        [styles.isInactive]: !isActive && !isLoading,
       })}
       data-test-id={testId}
       ref={forwardedRef}
@@ -57,9 +58,9 @@ function _Avatar(
         <Image
           alt={alt}
           className={styles.image}
-          height={size}
+          height={sizePixels}
           src={src}
-          width={size}
+          width={sizePixels}
         />
       )}
       {icon !== null && <span className={styles.overlayIcon}>{icon}</span>}

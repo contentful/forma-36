@@ -27,7 +27,7 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar size="tiny" variant="user" />
         <Avatar size="small" variant="user" />
         <Avatar size="medium" variant="user" />
-        <Avatar size="large" variant="user" />
+        <Avatar isLoading size="large" variant="user" />
         <Avatar size="large" variant="app" />
         <Avatar size="large" variant="user" />
         <Avatar size="medium" variant="app" />
@@ -57,31 +57,31 @@ export const Overview: Story<AvatarProps> = (args) => {
         gap="spacingS"
         marginBottom="spacingM"
       >
-        <Avatar {...args} size="tiny" showColorBorders />
-        <Avatar {...args} size="small" showColorBorders />
-        <Avatar {...args} size="medium" showColorBorders />
-        <Avatar {...args} size="large" showColorBorders isPrimary />
-        <Avatar {...args} size="large" variant="app" showColorBorders />
+        <Avatar {...args} size="tiny" showColorBorder />
+        <Avatar {...args} size="small" showColorBorder />
+        <Avatar {...args} size="medium" showColorBorder />
+        <Avatar {...args} size="large" showColorBorder isPrimary />
+        <Avatar {...args} size="large" variant="app" showColorBorder />
         <Avatar
           {...args}
           size="large"
           variant="app"
-          showColorBorders
+          showColorBorder
           isActive={false}
         />
-        <Avatar {...args} size="medium" variant="app" showColorBorders />
+        <Avatar {...args} size="medium" variant="app" showColorBorder />
         <Avatar
           {...args}
           size="medium"
-          showColorBorders
+          showColorBorder
           icon={<CheckCircleIcon variant="positive" />}
         />
-        <Avatar {...args} size="small" variant="app" showColorBorders />
+        <Avatar {...args} size="small" variant="app" showColorBorder />
         <Avatar
           {...args}
           size="tiny"
           variant="app"
-          showColorBorders
+          showColorBorder
           icon={<CheckCircleIcon variant="positive" />}
         />
       </Flex>
