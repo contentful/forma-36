@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import UserEvent from '@testing-library/user-event/';
-import { Avatar } from './Avatar';
+import { Avatar } from '../Avatar';
 import { AvatarGroup } from './AvatarGroup';
 import { axe } from '@/scripts/test/axeHelper';
 

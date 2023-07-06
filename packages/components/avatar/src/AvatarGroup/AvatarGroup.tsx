@@ -16,28 +16,41 @@ export interface AvatarGroupProps extends CommonProps {
     | React.ReactElement<AvatarProps>;
 }
 
-const renderAvatars = (
-  children: AvatarGroupProps['children'],
-  size: AvatarGroupProps['size'],
-  variant: AvatarGroupProps['variant'],
-) => {
+function _AvatarGroup(
+  {
+    children,
+    size = 'medium',
+    variant = 'spaced',
+    testId = 'cf-ui-avatar-group',
+    className,
+  }: AvatarGroupProps,
+  forwardedRef: React.Ref<HTMLDivElement>,
+) {
   const styles = getAvatarGroupStyles(size);
 
-  if (React.Children.count(children) > 3) {
-    return (
-      <>
-        {React.Children.map(children, (child, index) => {
-          if (index < 2) {
-            return React.cloneElement(child as React.ReactElement, {
-              key: `avatar-rendered-${index}`,
-              size: size,
-              className: cx((child as React.ReactElement).props.className, {
-                [styles.avatarStacked]: variant === 'stacked',
-                [styles.avatarSpaced]: variant === 'spaced',
-              }),
-            });
-          }
-        })}
+  const childrenArray = React.Children.toArray(children);
+  const childrenToRenderCount = childrenArray.length > 3 ? 2 : 3;
+  const childrenToRender = childrenArray.slice(0, childrenToRenderCount);
+  const childrenInMenu = childrenArray.slice(childrenToRenderCount);
+
+  return (
+    <Flex
+      flexDirection="row"
+      data-test-id={testId}
+      ref={forwardedRef}
+      className={className}
+    >
+      {childrenToRender.map((child, index) => {
+        return React.cloneElement(child as React.ReactElement, {
+          key: `avatar-rendered-${index}`,
+          size: size,
+          className: cx((child as React.ReactElement).props.className, {
+            [styles.avatarStacked]: variant === 'stacked',
+            [styles.avatarSpaced]: variant === 'spaced',
+          }),
+        });
+      })}
+      {childrenInMenu.length > 0 && (
         <Menu placement="bottom-end">
           <Menu.Trigger>
             <button
@@ -50,61 +63,27 @@ const renderAvatars = (
                 styles.moreAvatarsBtn,
               )}
             >
-              {React.Children.count(children) - 2}
+              {childrenInMenu.length}
             </button>
           </Menu.Trigger>
           <Menu.List>
-            {React.Children.toArray(children)
-              .slice(2)
-              .map((child, index) => {
-                return (
-                  <Menu.Item
-                    className={styles.moreAvatarsItem}
-                    key={`avatar-${index}`}
-                  >
-                    {React.cloneElement(child as React.ReactElement, {
-                      key: `avatar-menuitem-${index}`,
-                      size: 'tiny',
-                    })}
-                    {(child as React.ReactElement).props.alt}
-                  </Menu.Item>
-                );
-              })}
+            {childrenInMenu.map((child, index) => {
+              return (
+                <Menu.Item
+                  className={styles.moreAvatarsItem}
+                  key={`avatar-${index}`}
+                >
+                  {React.cloneElement(child as React.ReactElement, {
+                    key: `avatar-menuitem-${index}`,
+                    size: 'tiny',
+                  })}
+                  {(child as React.ReactElement).props.alt}
+                </Menu.Item>
+              );
+            })}
           </Menu.List>
         </Menu>
-      </>
-    );
-  }
-  return React.Children.map(children, (child, index) => {
-    return React.cloneElement(child as React.ReactElement, {
-      key: `avatar-rendered-${index}`,
-      size: size,
-      className: cx((child as React.ReactElement).props.className, {
-        [styles.avatarStacked]: variant === 'stacked',
-        [styles.avatarSpaced]: variant === 'spaced',
-      }),
-    });
-  });
-};
-
-function _AvatarGroup(
-  {
-    children,
-    size = 'medium',
-    variant = 'spaced',
-    testId = 'cf-ui-avatar-group',
-    className,
-  }: AvatarGroupProps,
-  forwardedRef: React.Ref<HTMLDivElement>,
-) {
-  return (
-    <Flex
-      flexDirection="row"
-      data-test-id={testId}
-      ref={forwardedRef}
-      className={className}
-    >
-      {renderAvatars(children, size, variant)}
+      )}
     </Flex>
   );
 }
