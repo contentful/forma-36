@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import { Flex, type CommonProps } from '@contentful/f36-core';
 import { Menu } from '@contentful/f36-menu';
 import type { SpacingTokens } from '@contentful/f36-tokens';
-import { type AvatarProps, Size } from '../src';
+import { type AvatarProps, type Size } from './Avatar';
 import { getAvatarGroupStyles } from './AvatarGroup.styles';
 
 import { cx } from 'emotion';
@@ -12,7 +12,7 @@ export type Variant = 'stacked' | 'spaced';
 export interface AvatarGroupProps extends CommonProps {
   spacing?: SpacingTokens;
   className?: string;
-  size?: Size;
+  size?: Size['small'] | Size['medium'];
   variant?: Variant;
   children?:
     | React.ReactElement<AvatarProps>[]
@@ -67,7 +67,7 @@ const renderAvatars = (
                   >
                     {React.cloneElement(child as React.ReactElement, {
                       key: `avatar-menuitem-${index}`,
-                      size: Size.Tiny,
+                      size: 'tiny',
                     })}
                     {(child as React.ReactElement).props.alt}
                   </Menu.Item>
@@ -94,7 +94,7 @@ function _AvatarGroup(
   {
     children,
     className,
-    size = Size.Medium,
+    size = 'medium',
     variant = 'spaced',
     testId = 'cf-ui-avatar-group',
   }: AvatarGroupProps,

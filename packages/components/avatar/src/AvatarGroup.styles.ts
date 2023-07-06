@@ -1,9 +1,8 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { Size } from './Avatar';
+import { convertSizeToPixels } from './Avatar.styles';
 
 export const getAvatarGroupStyles = (size) => {
-  const avatarSize = size === 'small' ? Size.Small : Size.Medium;
   return {
     avatarSpaced: css({
       margin: '0 2px',
@@ -25,8 +24,8 @@ export const getAvatarGroupStyles = (size) => {
       border: 'none',
       boxShadow: `0px 0px 0px 1px ${tokens.gray200} inset`,
       borderRadius: '99999999em',
-      height: avatarSize,
-      width: avatarSize,
+      height: convertSizeToPixels(size),
+      width: convertSizeToPixels(size),
       overflow: 'hidden',
       zIndex: 0,
     }),

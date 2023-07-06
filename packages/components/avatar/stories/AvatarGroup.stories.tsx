@@ -2,7 +2,7 @@ import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { SectionHeading } from '@contentful/f36-typography';
 
-import { Avatar, Variant, Size, type AvatarProps } from '../src/Avatar';
+import { Avatar, type AvatarProps } from '../src/Avatar';
 import { AvatarGroup } from '../src/AvatarGroup';
 
 export default {
@@ -18,57 +18,41 @@ export const Overview: Story<AvatarProps> = (args) => {
       </SectionHeading>
 
       <AvatarGroup>
-        <Avatar {...args} alt="Lisa Simpson" variant={Variant.User} />
-        <Avatar {...args} alt="Apu Nahasapeemapetilon" variant={Variant.User} />
-        <Avatar {...args} alt="Arnie Pye" variant={Variant.User} />
-        <Avatar {...args} alt="Dr. Julius Hibbert" variant={Variant.User} />
-        <Avatar
-          {...args}
-          alt="Prof. Daniel Düsentrieb"
-          variant={Variant.User}
-        />
+        <Avatar {...args} alt="Lisa Simpson" variant="user" />
+        <Avatar {...args} alt="Apu Nahasapeemapetilon" variant="user" />
+        <Avatar {...args} alt="Arnie Pye" variant="user" />
+        <Avatar {...args} alt="Dr. Julius Hibbert" variant="user" />
+        <Avatar {...args} alt="Prof. Daniel Düsentrieb" variant="user" />
       </AvatarGroup>
       <SectionHeading as="h3" marginBottom="spacingS">
         Avatar Group Stacked
       </SectionHeading>
 
       <AvatarGroup variant="stacked">
-        <Avatar {...args} alt="Lisa Simpson" variant={Variant.User} />
-        <Avatar {...args} alt="Apu Nahasapeemapetilon" variant={Variant.User} />
-        <Avatar {...args} alt="Arnie Pye" variant={Variant.User} />
-        <Avatar {...args} alt="Dr. Julius Hibbert" variant={Variant.User} />
-        <Avatar
-          {...args}
-          alt="Prof. Daniel Düsentrieb"
-          variant={Variant.User}
-        />
+        <Avatar {...args} alt="Lisa Simpson" variant="user" />
+        <Avatar {...args} alt="Apu Nahasapeemapetilon" variant="user" />
+        <Avatar {...args} alt="Arnie Pye" variant="user" />
+        <Avatar {...args} alt="Dr. Julius Hibbert" variant="user" />
+        <Avatar {...args} alt="Prof. Daniel Düsentrieb" variant="user" />
       </AvatarGroup>
 
       <SectionHeading as="h3" marginBottom="spacingS">
         Avatar Group Spaced Small
       </SectionHeading>
 
-      <AvatarGroup size={Size.Small}>
-        <Avatar {...args} alt="Arnie Pye" variant={Variant.User} />
-        <Avatar {...args} alt="Dr. Julius Hibbert" variant={Variant.User} />
-        <Avatar
-          {...args}
-          alt="Prof. Daniel Düsentrieb"
-          variant={Variant.User}
-        />
+      <AvatarGroup size="small">
+        <Avatar {...args} alt="Arnie Pye" variant="user" />
+        <Avatar {...args} alt="Dr. Julius Hibbert" variant="user" />
+        <Avatar {...args} alt="Prof. Daniel Düsentrieb" variant="user" />
       </AvatarGroup>
       <SectionHeading as="h3" marginBottom="spacingS">
         Avatar Group spaced Small
       </SectionHeading>
 
-      <AvatarGroup size={Size.Small} variant="stacked">
-        <Avatar {...args} alt="Arnie Pye" variant={Variant.User} />
-        <Avatar {...args} alt="Dr. Julius Hibbert" variant={Variant.User} />
-        <Avatar
-          {...args}
-          alt="Prof. Daniel Düsentrieb"
-          variant={Variant.User}
-        />
+      <AvatarGroup size="small" variant="stacked">
+        <Avatar {...args} alt="Arnie Pye" variant="user" />
+        <Avatar {...args} alt="Dr. Julius Hibbert" variant="user" />
+        <Avatar {...args} alt="Prof. Daniel Düsentrieb" variant="user" />
       </AvatarGroup>
     </>
   );
