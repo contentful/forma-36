@@ -46,4 +46,10 @@ export const getWorkbenchHeaderStyles = () => ({
       transform: 'translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, 18deg)',
     },
   }),
+  minWidthZero: css({
+    minWidth: '0',
+  }),
+  icon: css({
+    flexShrink: 0,
+  }),
 });

@@ -78,10 +78,15 @@ export const WorkbenchHeader = ({
         gap="spacingS"
         flexGrow={!description ? '1' : '0'}
         marginRight="spacingS"
+        className={styles.minWidthZero}
       >
         {hasBackButton && <div className={styles.separator} />}
-        <Flex alignItems="center" gap="spacingXs">
-          {Icon && iconComponent}
+        <Flex
+          alignItems="center"
+          gap="spacingXs"
+          className={styles.minWidthZero}
+        >
+          <span className={styles.iconStyles}>{Icon && iconComponent}</span>
 
           {typeof title === 'string' ? (
             <Subheading className={styles.title} marginBottom="none">
