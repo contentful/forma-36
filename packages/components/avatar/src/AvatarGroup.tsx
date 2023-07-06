@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import { Flex, type CommonProps } from '@contentful/f36-core';
 import { Menu } from '@contentful/f36-menu';
 import type { SpacingTokens } from '@contentful/f36-tokens';
-import { type AvatarProps, type Size } from './Avatar';
+import { type AvatarProps } from './Avatar';
 import { getAvatarGroupStyles } from './AvatarGroup.styles';
 
 import { cx } from 'emotion';
@@ -12,7 +12,7 @@ export type Variant = 'stacked' | 'spaced';
 export interface AvatarGroupProps extends CommonProps {
   spacing?: SpacingTokens;
   className?: string;
-  size?: Size['small'] | Size['medium'];
+  size?: 'small' | 'medium';
   variant?: Variant;
   children?:
     | React.ReactElement<AvatarProps>[]
