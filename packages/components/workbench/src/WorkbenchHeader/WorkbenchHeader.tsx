@@ -86,7 +86,7 @@ export const WorkbenchHeader = ({
           gap="spacingXs"
           className={styles.minWidthZero}
         >
-          <span className={styles.iconStyles}>{Icon && iconComponent}</span>
+          <span className={styles.icon}>{Icon && iconComponent}</span>
 
           {typeof title === 'string' ? (
             <Subheading className={styles.title} marginBottom="none">
