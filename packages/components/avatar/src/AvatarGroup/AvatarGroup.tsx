@@ -2,18 +2,15 @@ import React, { forwardRef } from 'react';
 import { Flex, type CommonProps } from '@contentful/f36-core';
 import { Menu } from '@contentful/f36-menu';
 import type { SpacingTokens } from '@contentful/f36-tokens';
-import { type AvatarProps } from './Avatar';
+import { type AvatarProps } from '../Avatar';
 import { getAvatarGroupStyles } from './AvatarGroup.styles';
 
 import { cx } from 'emotion';
 
-export type Variant = 'stacked' | 'spaced';
-
 export interface AvatarGroupProps extends CommonProps {
   spacing?: SpacingTokens;
-  className?: string;
   size?: 'small' | 'medium';
-  variant?: Variant;
+  variant?: 'stacked' | 'spaced';
   children?:
     | React.ReactElement<AvatarProps>[]
     | React.ReactElement<AvatarProps>;
@@ -93,19 +90,19 @@ const renderAvatars = (
 function _AvatarGroup(
   {
     children,
-    className,
     size = 'medium',
     variant = 'spaced',
     testId = 'cf-ui-avatar-group',
+    className,
   }: AvatarGroupProps,
   forwardedRef: React.Ref<HTMLDivElement>,
 ) {
   return (
     <Flex
       flexDirection="row"
-      className={cx(className)}
       data-test-id={testId}
       ref={forwardedRef}
+      className={className}
     >
       {renderAvatars(children, size, variant)}
     </Flex>

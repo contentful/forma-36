@@ -5,7 +5,7 @@ status: 'alpha'
 slug: /components/avatar/
 github: 'https://github.com/contentful/forma-36/tree/main/packages/components/avatar'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-avatar--overview'
-typescript: ./src/Avatar.tsx
+typescript: ./Avatar.tsx
 ---
 
 Avatar can be used to visually represent users and apps.
@@ -13,7 +13,7 @@ Avatar can be used to visually represent users and apps.
 ## Import
 
 ```jsx static=true
-import { Avatar, Size, Variant } from '@contentful/f36-avatar';
+import { Avatar } from '@contentful/f36-avatar';
 ```
 
 ## Examples
@@ -97,39 +97,3 @@ When the avatar image is loading, a loading skeleton will be shown automatically
 ## Accessibility
 
 Make sure to pass a fitting `alt` property, especially if the avatar is used by itself without the user's name next to it.
-
----
-
-title: 'AvatarGroup'
-type: 'component'
-status: 'alpha'
-slug: /components/avatargroup/
-github: 'https://github.com/contentful/forma-36/tree/main/packages/components/avatar'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-avatar-avatargroup--overview'
-typescript: ./src/AvatarGroup.tsx
-
----
-
-Avatars can be displayed as group. The maximum visible Avatars in a group will be 3. If there are more than 3 Avatars in the group, the rest of the Avatars will be shown inside a Menu with their Avatar image and name (the alt text).
-
-### Variants
-
-The group can be rendered in two variations
-
-- **spaced** - default variant
-- **stacked**
-
-```jsx file=./examples/AvatarGroupVariantExample.tsx
-
-```
-
-### Sizes
-
-The group can be rendered in two different sizes
-
-- **Small** - 24px
-- **Medium** - 32px, default size
-
-```jsx file=./examples/AvatarGroupSizeExample.tsx
-
-```
