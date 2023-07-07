@@ -50,6 +50,7 @@ export const getWorkbenchHeaderStyles = () => ({
     minWidth: '0',
   }),
   icon: css({
+    display: 'flex',
     flexShrink: 0,
   }),
 });
