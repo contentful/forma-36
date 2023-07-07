@@ -36,7 +36,7 @@ function _AvatarGroup(
   return (
     <Flex
       flexDirection="row"
-      data-test-id={testId}
+      testId={testId}
       ref={forwardedRef}
       className={className}
     >
