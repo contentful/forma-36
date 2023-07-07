@@ -1,14 +1,12 @@
 import React, { forwardRef } from 'react';
 import { Flex, type CommonProps } from '@contentful/f36-core';
 import { Menu } from '@contentful/f36-menu';
-import type { SpacingTokens } from '@contentful/f36-tokens';
 import { type AvatarProps } from '../Avatar';
 import { getAvatarGroupStyles } from './AvatarGroup.styles';
 
 import { cx } from 'emotion';
 
 export interface AvatarGroupProps extends CommonProps {
-  spacing?: SpacingTokens;
   size?: 'small' | 'medium';
   variant?: 'stacked' | 'spaced';
   children?:
