@@ -74,6 +74,11 @@ const componentSidebarLinks: SidebarSection[] = [
       },
       {
         type: 'subsection',
+        links: mdxSidebarLinks.avatarComponents,
+        title: 'Avatar Components',
+      },
+      {
+        type: 'subsection',
         links: mdxSidebarLinks.deprecatedComponents,
         title: 'Deprecated V3 Components',
       },
