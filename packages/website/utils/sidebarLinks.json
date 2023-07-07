@@ -13,11 +13,6 @@
       "slug": "/components/autocomplete/"
     },
     {
-      "title": "Avatar",
-      "slug": "/components/avatar/",
-      "status": "alpha"
-    },
-    {
       "title": "Badge",
       "slug": "/components/badge/",
       "status": "stable"
@@ -290,6 +285,18 @@
       "title": "ModalLauncher",
       "slug": "/components/modal-launcher/",
       "status": "stable"
+    }
+  ],
+  "avatarComponents": [
+    {
+      "title": "Avatar",
+      "slug": "/components/avatar/",
+      "status": "alpha"
+    },
+    {
+      "title": "AvatarGroup",
+      "slug": "/components/avatar-group/",
+      "status": "alpha"
     }
   ],
   "cardComponents": [
