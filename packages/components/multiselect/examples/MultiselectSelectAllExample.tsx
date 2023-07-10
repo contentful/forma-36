@@ -3,14 +3,17 @@ import { Stack } from '@contentful/f36-components';
 import { Multiselect } from '@contentful/f36-multiselect';
 
 export default function MultiselectSelectAllExample() {
-  const spaces = [
-    'Travel Blog',
-    'Finnance Blog',
-    'Fitness App',
-    'News Website',
-    'eCommerce Catalogue',
-    'Photo Gallery',
-  ];
+  const spaces = React.useMemo(
+    () => [
+      'Travel Blog',
+      'Finnance Blog',
+      'Fitness App',
+      'News Website',
+      'eCommerce Catalogue',
+      'Photo Gallery',
+    ],
+    [],
+  );
 
   // This `useState` is going to store the selected "space" so we can show it in the UI
   const [selectedSpaces, setSelectedSpaces] = React.useState([]);

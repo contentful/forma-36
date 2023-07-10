@@ -4,18 +4,18 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import { CommonProps } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
 
 import { format, isValid, parse, startOfDay, endOfDay } from 'date-fns';
 import { getStyles } from './Datepicker.styles';
 import { Calendar } from './Calendar';
 import { Popover } from '@contentful/f36-popover';
-import { DayPickerSingleProps } from 'react-day-picker';
+import type { DayPickerSingleProps } from 'react-day-picker';
 import FocusLock from 'react-focus-lock';
-import { TextInput, TextInputProps } from '@contentful/f36-forms';
+import { TextInput, type TextInputProps } from '@contentful/f36-forms';
 import { IconButton } from '@contentful/f36-button';
 import { CalendarIcon } from '@contentful/f36-icons';
-import { PopoverProps } from '@contentful/f36-popover';
+import type { PopoverProps } from '@contentful/f36-popover';
 
 export type DatepickerProps = CommonProps & {
   /**

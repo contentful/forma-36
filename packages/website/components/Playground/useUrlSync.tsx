@@ -18,7 +18,7 @@ export function useUrlSync() {
       window.history.replaceState('', '', href);
       setCodeUrl(window.location.origin + href);
     }
-  }, [debouncedCode]);
+  }, [debouncedCode, router.query.code]);
 
   return { codeUrl };
 }

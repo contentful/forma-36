@@ -1,5 +1,9 @@
-import React, { ChangeEventHandler, FocusEventHandler } from 'react';
-import { Stack, type CommonProps, ExpandProps } from '@contentful/f36-core';
+import React, { type ChangeEventHandler, type FocusEventHandler } from 'react';
+import {
+  Stack,
+  type CommonProps,
+  type ExpandProps,
+} from '@contentful/f36-core';
 import { BaseCheckboxGroupContext } from './BaseCheckboxGroupContext';
 
 export interface BaseCheckboxGroupProps extends CommonProps {
