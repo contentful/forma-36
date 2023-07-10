@@ -28,7 +28,7 @@ export enum HARDCODED_WEBSITE_SECTION {
  * a sidebar link
  */
 const sidebarLinkObjectTypes = ['link', 'KbAppLink', 'KbAppArticle'] as const;
-type SidebarLinkObjectType = typeof sidebarLinkObjectTypes[number];
+type SidebarLinkObjectType = (typeof sidebarLinkObjectTypes)[number];
 
 export type SidebarLink = {
   title: string;
