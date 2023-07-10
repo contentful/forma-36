@@ -50,7 +50,7 @@
     "react-hook-form": "7.25.3",
     "react-icons": "4.4.0",
     "react-live": "2.4.1",
-    "rehype-slug": "^5.0.1",
+    "rehype-slug": "^5.1.0",
     "rehype-toc": "^3.0.2",
     "remark": "^14.0.2",
     "remark-code-import": "^1.1.1",
