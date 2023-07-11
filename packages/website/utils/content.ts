@@ -38,6 +38,7 @@ async function fetchFiles(targetPath: string) {
         files.push(...childFiles.map((f) => path.join(file, f)));
       }
     } catch (err) {
+      // eslint-disable-next-line no-console -- Allow console error
       console.error(err);
     }
   }

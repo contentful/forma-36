@@ -9,7 +9,7 @@ import tokens from '@contentful/f36-tokens';
 
 import { PlaygroundTopBar } from './PlaygroundTopBar';
 import { palette } from '../LiveEditor/theme';
-import { InterpolationWithTheme } from '@emotion/core';
+import type { InterpolationWithTheme } from '@emotion/core';
 const indexFile = `import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { GlobalStyles } from "@contentful/f36-components";

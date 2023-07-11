@@ -1,6 +1,6 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { ClassNames } from 'react-day-picker';
+import type { ClassNames } from 'react-day-picker';
 
 const cellSize = 40;
 

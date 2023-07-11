@@ -3,10 +3,10 @@ import React from 'react';
 import { getNavbarSearchStyles } from './NavbarSearch.styles';
 import { SearchIcon } from '../icons';
 import {
-  CommonProps,
-  ExpandProps,
+  type CommonProps,
+  type ExpandProps,
   Flex,
-  PropsWithHTMLElement,
+  type PropsWithHTMLElement,
 } from '@contentful/f36-core';
 
 type NavbarSearchOwnProps = CommonProps;

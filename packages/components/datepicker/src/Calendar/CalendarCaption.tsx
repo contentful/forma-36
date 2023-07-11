@@ -3,7 +3,7 @@ import React from 'react';
 import {
   CaptionDropdowns,
   CaptionNavigation,
-  CaptionProps,
+  type CaptionProps,
   useDayPicker,
 } from 'react-day-picker';
 import { Flex } from '@contentful/f36-core';

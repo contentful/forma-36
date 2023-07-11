@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { css, cx } from 'emotion';
-import { TextLink, Flex, TextLinkProps } from '@contentful/f36-components';
+import { TextLink, Flex, type TextLinkProps } from '@contentful/f36-components';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 

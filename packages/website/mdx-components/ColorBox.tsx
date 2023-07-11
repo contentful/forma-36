@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { Card, Flex, Text, TextProps } from '@contentful/f36-components';
+import { Card, Flex, Text, type TextProps } from '@contentful/f36-components';
 
 const styles = {
   swatch: css({

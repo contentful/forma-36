@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CaptionLabelProps, useDayPicker } from 'react-day-picker';
+import { type CaptionLabelProps, useDayPicker } from 'react-day-picker';
 import { Heading } from '@contentful/f36-typography';
 import { getStyles } from './Calendar.styles';
 import { cx } from 'emotion';
