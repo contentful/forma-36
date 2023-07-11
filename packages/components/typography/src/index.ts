@@ -1,3 +1,5 @@
+export { Caption } from './Caption';
+export type { CaptionProps } from './Caption';
 export { Heading } from './Heading';
 export type { HeadingProps, HeadingElement } from './Heading';
 export { Subheading } from './Subheading';

@@ -9,7 +9,7 @@ import { StaticSource } from './LiveEditor/StaticSource';
 import tokens from '@contentful/f36-tokens';
 import { CustomHeading2 } from './CustomHeading2';
 
-const { DisplayText, Subheading, Paragraph, TextLink, List, Table } =
+const { DisplayText, Subheading, Paragraph, Text, TextLink, List, Table } =
   f36Components;
 
 /* eslint-disable react/display-name */
@@ -23,6 +23,7 @@ const components = {
   h5: (props) => <Subheading as="h5" {...props} />,
   h6: (props) => <Subheading as="h6" {...props} />,
   p: (props) => <Paragraph {...props} />,
+  strong: (props) => <Text fontWeight="fontWeightDemiBold" {...props} />,
   a: (props) => {
     if (props.href && props.href.startsWith('..')) {
       return (

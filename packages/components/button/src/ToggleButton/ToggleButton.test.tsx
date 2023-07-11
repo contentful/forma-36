@@ -5,6 +5,7 @@ import { PreviewIcon } from '@contentful/f36-icons';
 import { axe } from '@/scripts/test/axeHelper';
 
 import { ToggleButton } from '.';
+
 describe('ToggleButton', function () {
   const mockOnToggle = jest.fn();
 
@@ -50,7 +51,7 @@ describe('ToggleButton', function () {
   });
 
   it('should not dispatch onClick if disabled', async () => {
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     render(
       <ToggleButton onToggle={mockOnToggle} icon={<PreviewIcon />} isDisabled>
         Toggle
@@ -63,9 +64,6 @@ describe('ToggleButton', function () {
   });
 
   it('has no a11y issues', async () => {
-    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-    jest.useRealTimers();
-
     const { container } = render(
       <ToggleButton onToggle={mockOnToggle}>Toggle</ToggleButton>,
     );

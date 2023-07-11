@@ -1,5 +1,7 @@
 import { cx, css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import { hexToRGBA } from '@contentful/f36-utils';
+import { DragHandleProps } from './DragHandle';
 
 export const getStyles = () => ({
   label: css({
@@ -16,19 +18,18 @@ export const getStyles = () => ({
     isActive,
     isFocused,
     isHovered,
+    variant,
   }: {
     isActive: boolean;
     isFocused: boolean;
     isHovered: boolean;
+    variant: DragHandleProps['variant'];
   }) => {
     return cx(
       css({
         alignItems: 'center',
-        backgroundColor: tokens.gray100,
+        backgroundColor: 'transparent',
         border: 0,
-        borderBottomLeftRadius: tokens.borderRadiusMedium,
-        borderRight: `1px solid ${tokens.gray200}`,
-        borderTopLeftRadius: tokens.borderRadiusMedium,
         boxSizing: 'border-box',
         display: 'flex',
         justifyContent: 'center',
@@ -37,9 +38,6 @@ export const getStyles = () => ({
         position: 'relative',
         transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
         width: tokens.spacingL,
-        '&:hover': {
-          backgroundColor: tokens.gray200,
-        },
         '&:focus': {
           boxShadow: tokens.glowPrimary,
         },
@@ -50,9 +48,23 @@ export const getStyles = () => ({
           boxShadow: tokens.glowPrimary,
         },
       }),
+      variant === 'secondary' &&
+        css({
+          borderRight: `1px solid ${tokens.gray200}`,
+          borderTopLeftRadius: tokens.borderRadiusMedium,
+          borderBottomLeftRadius: tokens.borderRadiusMedium,
+          backgroundColor: tokens.gray100,
+          '&:hover': {
+            backgroundColor: hexToRGBA(tokens.gray900, 0.08),
+          },
+        }),
+      variant === 'secondary' &&
+        (isActive || isFocused || isHovered) &&
+        css({
+          backgroundColor: hexToRGBA(tokens.gray900, 0.08),
+        }),
       (isActive || isFocused || isHovered) &&
         css({
-          backgroundColor: tokens.gray200,
           cursor: isActive ? 'grabbing' : 'grab',
         }),
     );

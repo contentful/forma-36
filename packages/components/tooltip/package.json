@@ -1,13 +1,13 @@
 {
   "name": "@contentful/f36-tooltip",
-  "version": "4.24.1",
+  "version": "4.45.0",
   "description": "Forma 36: Tooltip component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.24.1",
-    "@contentful/f36-tokens": "^4.0.1",
+    "@contentful/f36-core": "^4.45.0",
+    "@contentful/f36-tokens": "^4.0.2",
     "@contentful/f36-utils": "^4.23.2",
     "@popperjs/core": "^2.11.5",
     "csstype": "^3.1.1",

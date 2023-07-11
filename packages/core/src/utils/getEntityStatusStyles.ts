@@ -29,9 +29,10 @@ export const getEntityStatusStyles = ({ status }: { status: EntityStatus }) => {
     case 'new':
       return {
         color: tokens.colorWhite,
-        backgroundColor: tokens.colorPrimary,
+        backgroundColor: tokens.blue500,
       };
     default:
+      // eslint-disable-next-line no-console -- allow this warning until we refactor
       console.warn(`Unknown EntityStatus: ${status}`);
       return {};
   }

@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-import { SectionHeading } from '@contentful/f36-typography';
-import { Flex } from '@contentful/f36-core';
-import { Button } from '@contentful/f36-button';
-import { Skeleton } from '@contentful/f36-components';
+import {
+  Skeleton,
+  EntityStatusBadge,
+  type EntityStatus,
+  Button,
+  Flex,
+  SectionHeading,
+} from '@contentful/f36-components';
 
-import { Table } from '../src';
+import { Table, TableCellSorting } from '../src';
+import tokens from '@contentful/f36-tokens';
 
 export default {
   argTypes: {
@@ -122,7 +127,9 @@ export const Overview: Story = () => (
             <Table.Cell>Name</Table.Cell>
             <Table.Cell>Email</Table.Cell>
             <Table.Cell>Organization role</Table.Cell>
-            <Table.Cell>Last activity</Table.Cell>
+            <Table.Cell isSortable sortDirection={TableCellSorting.Descending}>
+              Last activity
+            </Table.Cell>
           </Table.Row>
         </Table.Head>
         <Table.Body>
@@ -159,7 +166,9 @@ export const Overview: Story = () => (
             <Table.Cell>Name</Table.Cell>
             <Table.Cell>Email</Table.Cell>
             <Table.Cell>Organization role</Table.Cell>
-            <Table.Cell>Last activity</Table.Cell>
+            <Table.Cell isSortable sortDirection={TableCellSorting.Ascending}>
+              Last activity
+            </Table.Cell>
           </Table.Row>
         </Table.Head>
         <Table.Body>
@@ -185,4 +194,87 @@ export const Overview: Story = () => (
       </Table>
     </Flex>
   </>
+);
+
+const withContentTableData: {
+  name: string;
+  status: EntityStatus;
+  contentType: string;
+  updatedBy: string;
+  updated: string;
+}[] = [
+  {
+    name: 'How does writing influence your personal brand?',
+    status: 'published',
+    contentType: 'Blog post',
+    updatedBy: 'Ayman Mahmoud',
+    updated: 'Yesterday',
+  },
+  {
+    name: 'How to optimize images in WordPress for faster loading (complete guide)',
+    status: 'published',
+    contentType: 'Blog post',
+    updatedBy: 'Ayman Mahmoud',
+    updated: '6 months ago',
+  },
+  {
+    name: 'Travelling as a way of self-discovery and progress',
+    status: 'changed',
+    contentType: 'Blog post',
+    updatedBy: 'Ayman Mahmoud',
+    updated: '9 months ago',
+  },
+  {
+    name: 'Start a blog to reach your creative peak',
+    status: 'published',
+    contentType: 'Blog post',
+    updatedBy: 'Ayman Mahmoud',
+    updated: '11 months ago',
+  },
+  {
+    name: 'Why choose a theme that looks good with WooCommerce',
+    status: 'published',
+    contentType: 'Blog post',
+    updatedBy: 'Ayman Mahmoud',
+    updated: '11 months ago',
+  },
+];
+
+export const WithContent: Story = (args) => (
+  <div style={{ width: '960px' }}>
+    <Table {...args}>
+      <Table.Head>
+        <Table.Row>
+          <Table.Cell>Name</Table.Cell>
+          <Table.Cell>Status</Table.Cell>
+          <Table.Cell>Content Type</Table.Cell>
+          <Table.Cell>Updated by</Table.Cell>
+          <Table.Cell>Updated</Table.Cell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        {withContentTableData.map((item) => (
+          <Table.Row key={item.name}>
+            <Table.Cell
+              style={{
+                maxWidth: '350px',
+                fontWeight: tokens.fontWeightDemiBold,
+              }}
+              isTruncated
+            >
+              {item.name}
+            </Table.Cell>
+            <Table.Cell style={{ width: '150px' }}>
+              <EntityStatusBadge entityStatus={item.status} />
+            </Table.Cell>
+            <Table.Cell style={{ width: '150px' }}>
+              {item.contentType}
+            </Table.Cell>
+            <Table.Cell style={{ width: '250px' }}>{item.updatedBy}</Table.Cell>
+            <Table.Cell style={{ width: '150px' }}>{item.updated}</Table.Cell>
+          </Table.Row>
+        ))}
+      </Table.Body>
+    </Table>
+  </div>
 );

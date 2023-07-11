@@ -14,6 +14,7 @@ const ModalSizesMapper: { [key in ModalSizeType]: string } = {
   large: '700px',
   fullWidth: '100vw',
   zen: '100vw',
+  fullscreen: '100vw',
 };
 
 export interface ModalProps extends CommonProps {
@@ -61,6 +62,10 @@ export interface ModalProps extends CommonProps {
    * Modal title that is used in header
    */
   title?: string;
+  /**
+   * Modal subtitle that is used in header
+   */
+  subtitle?: string;
   /**
    * Size of the modal window
    * @default medium
@@ -143,19 +148,32 @@ export const Modal = ({
     overlayClassName: otherProps.overlayProps?.className,
   });
 
-  React.useEffect(() => {
-    if (props.isShown) {
-      setTimeout(() => {
-        if (props.initialFocusRef && props.initialFocusRef.current) {
-          if (props.initialFocusRef.current.focus) {
-            props.initialFocusRef.current.focus();
-          }
-        } else if (contentRef.current) {
-          focusFirstWithinNode(contentRef.current);
-        }
-      }, 100);
+  const onInitialFocus = () => {
+    const contentEl = contentRef.current;
+    if (contentEl) {
+      const activeEl = document.activeElement;
+      const isContentContainsActive =
+        contentEl !== activeEl && contentEl.contains(activeEl);
+
+      if (isContentContainsActive) {
+        return;
+      }
     }
-  }, [props.isShown, props.initialFocusRef]);
+
+    const initialFocusEl = props.initialFocusRef?.current;
+    if (initialFocusEl) {
+      initialFocusEl.focus?.();
+    } else if (contentEl) {
+      focusFirstWithinNode(contentEl);
+    }
+  };
+
+  const onAfterOpen: ModalProps['onAfterOpen'] = (...args) => {
+    if (props.onAfterOpen) {
+      props.onAfterOpen(...args);
+    }
+    onInitialFocus();
+  };
 
   const renderDefault = () => {
     return (
@@ -163,6 +181,7 @@ export const Modal = ({
         {otherProps.title && (
           <ModalHeader
             title={otherProps.title}
+            subtitle={otherProps.subtitle}
             onClose={props.onClose}
             {...otherProps.modalHeaderProps}
           />
@@ -180,7 +199,7 @@ export const Modal = ({
       aria={aria}
       onRequestClose={props.onClose}
       isOpen={otherProps.isShown}
-      onAfterOpen={props.onAfterOpen}
+      onAfterOpen={onAfterOpen}
       shouldCloseOnEsc={shouldCloseOnEscapePress}
       shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
       shouldFocusAfterRender

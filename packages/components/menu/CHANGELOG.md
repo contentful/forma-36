@@ -1,5 +1,352 @@
 # Change Log
 
+## 4.45.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.45.0
+  - @contentful/f36-popover@4.45.0
+  - @contentful/f36-typography@4.45.0
+
+## 4.44.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.44.0
+  - @contentful/f36-popover@4.44.0
+  - @contentful/f36-typography@4.44.0
+
+## 4.43.0
+
+### Patch Changes
+
+- Updated dependencies [[`1d2f57f0`](https://github.com/contentful/forma-36/commit/1d2f57f0e4e817c4caf746414f4d43b7c978b272)]:
+  - @contentful/f36-core@4.43.0
+  - @contentful/f36-popover@4.43.0
+  - @contentful/f36-typography@4.43.0
+
+## 4.42.0
+
+### Patch Changes
+
+- Updated dependencies [[`a0d27f0c`](https://github.com/contentful/forma-36/commit/a0d27f0c68fd5e685e723d588f340d0f025ba2ad)]:
+  - @contentful/f36-tokens@4.0.2
+  - @contentful/f36-core@4.42.0
+  - @contentful/f36-popover@4.42.0
+  - @contentful/f36-typography@4.42.0
+
+## 4.41.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.41.1
+  - @contentful/f36-popover@4.41.1
+  - @contentful/f36-typography@4.41.1
+
+## 4.41.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.41.0
+  - @contentful/f36-popover@4.41.0
+  - @contentful/f36-typography@4.41.0
+
+## 4.40.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.7
+  - @contentful/f36-popover@4.40.7
+  - @contentful/f36-typography@4.40.7
+
+## 4.40.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.6
+  - @contentful/f36-popover@4.40.6
+  - @contentful/f36-typography@4.40.6
+
+## 4.40.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.5
+  - @contentful/f36-popover@4.40.5
+  - @contentful/f36-typography@4.40.5
+
+## 4.40.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.4
+  - @contentful/f36-popover@4.40.4
+  - @contentful/f36-typography@4.40.4
+
+## 4.40.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.3
+  - @contentful/f36-popover@4.40.3
+  - @contentful/f36-typography@4.40.3
+
+## 4.40.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.2
+  - @contentful/f36-popover@4.40.2
+  - @contentful/f36-typography@4.40.2
+
+## 4.40.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.1
+  - @contentful/f36-popover@4.40.1
+  - @contentful/f36-typography@4.40.1
+
+## 4.40.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.0
+  - @contentful/f36-popover@4.40.0
+  - @contentful/f36-typography@4.40.0
+
+## 4.39.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.39.0
+  - @contentful/f36-popover@4.39.0
+  - @contentful/f36-typography@4.39.0
+
+## 4.38.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.38.1
+  - @contentful/f36-popover@4.38.1
+  - @contentful/f36-typography@4.38.1
+
+## 4.38.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.38.0
+  - @contentful/f36-popover@4.38.0
+  - @contentful/f36-typography@4.38.0
+
+## 4.37.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.37.1
+  - @contentful/f36-popover@4.37.1
+  - @contentful/f36-typography@4.37.1
+
+## 4.37.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.37.0
+  - @contentful/f36-popover@4.37.0
+  - @contentful/f36-typography@4.37.0
+
+## 4.36.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.36.0
+  - @contentful/f36-popover@4.36.0
+  - @contentful/f36-typography@4.36.0
+
+## 4.35.0
+
+### Minor Changes
+
+- [#2446](https://github.com/contentful/forma-36/pull/2446) [`9ba6b10c`](https://github.com/contentful/forma-36/commit/9ba6b10c6e4482b1eec92cb57ec37cffeeba48fb) Thanks [@massao](https://github.com/massao)! - add possibility to add icons on menu items
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.35.0
+  - @contentful/f36-popover@4.35.0
+  - @contentful/f36-typography@4.35.0
+
+## 4.34.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.34.1
+  - @contentful/f36-popover@4.34.1
+  - @contentful/f36-typography@4.34.1
+
+## 4.34.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.34.0
+  - @contentful/f36-popover@4.34.0
+  - @contentful/f36-typography@4.34.0
+
+## 4.33.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.33.0
+  - @contentful/f36-popover@4.33.0
+  - @contentful/f36-typography@4.33.0
+
+## 4.32.0
+
+### Minor Changes
+
+- [#2439](https://github.com/contentful/forma-36/pull/2439) [`01a5f754`](https://github.com/contentful/forma-36/commit/01a5f7541c142fcdedb19b2a1f697244820c98ac) Thanks [@bgutsol](https://github.com/bgutsol)! - Improve Popover and Menu components onBlur logic. So when a user clicks outside of the document or uses some browser features, like search (with cmd/ctrl+F combination) the dropdown is not collapsing. It's also handy for developers if they want to debug dropdown content.
+
+### Patch Changes
+
+- Updated dependencies [[`01a5f754`](https://github.com/contentful/forma-36/commit/01a5f7541c142fcdedb19b2a1f697244820c98ac)]:
+  - @contentful/f36-popover@4.32.0
+  - @contentful/f36-core@4.32.0
+  - @contentful/f36-typography@4.32.0
+
+## 4.31.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.31.0
+  - @contentful/f36-popover@4.31.0
+  - @contentful/f36-typography@4.31.0
+
+## 4.30.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.30.3
+  - @contentful/f36-popover@4.30.3
+  - @contentful/f36-typography@4.30.3
+
+## 4.30.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.30.2
+  - @contentful/f36-popover@4.30.2
+  - @contentful/f36-typography@4.30.2
+
+## 4.30.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.30.1
+  - @contentful/f36-popover@4.30.1
+  - @contentful/f36-typography@4.30.1
+
+## 4.30.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.30.0
+  - @contentful/f36-popover@4.30.0
+  - @contentful/f36-typography@4.30.0
+
+## 4.29.0
+
+### Minor Changes
+
+- [#2417](https://github.com/contentful/forma-36/pull/2417) [`45615434`](https://github.com/contentful/forma-36/commit/45615434891121f879052b2149928b408c7840db) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(menu): new look and feel
+  feat(menu-item): add `isActive` and `isDisabled` props
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.29.0
+  - @contentful/f36-popover@4.29.0
+  - @contentful/f36-typography@4.29.0
+
+## 4.28.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.28.0
+  - @contentful/f36-popover@4.28.0
+  - @contentful/f36-typography@4.28.0
+
+## 4.27.0
+
+### Patch Changes
+
+- Updated dependencies [[`d44144f3`](https://github.com/contentful/forma-36/commit/d44144f3ecc1faf4a5b89be33f1612bcf46526ea)]:
+  - @contentful/f36-typography@4.27.0
+  - @contentful/f36-core@4.27.0
+  - @contentful/f36-popover@4.27.0
+
+## 4.26.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.26.0
+  - @contentful/f36-popover@4.26.0
+  - @contentful/f36-typography@4.26.0
+
+## 4.25.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.25.2
+  - @contentful/f36-popover@4.25.2
+  - @contentful/f36-typography@4.25.2
+
+## 4.25.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.25.1
+  - @contentful/f36-popover@4.25.1
+  - @contentful/f36-typography@4.25.1
+
+## 4.25.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.25.0
+  - @contentful/f36-popover@4.25.0
+  - @contentful/f36-typography@4.25.0
+
 ## 4.24.1
 
 ### Patch Changes

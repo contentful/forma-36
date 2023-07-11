@@ -17,6 +17,7 @@ export { ArrowForwardTrimmed as ArrowForwardTrimmedIcon } from './ArrowForwardTr
 export { ArrowUp as ArrowUpIcon } from './ArrowUp';
 export { ArrowUpTrimmed as ArrowUpTrimmedIcon } from './ArrowUpTrimmed';
 export { ArrowUpward as ArrowUpwardIcon } from './ArrowUpward';
+export { ArrowDownward as ArrowDownwardIcon } from './ArrowDownward';
 export { Asset as AssetIcon } from './Asset';
 export { AssetTrimmed as AssetTrimmedIcon } from './AssetTrimmed';
 export { Audio as AudioIcon } from './Audio';
@@ -148,6 +149,9 @@ export { SearchTrimmed as SearchTrimmedIcon } from './SearchTrimmed';
 export { Settings as SettingsIcon } from './Settings';
 export { SettingsTrimmed as SettingsTrimmedIcon } from './SettingsTrimmed';
 export { ShoppingCart as ShoppingCartIcon } from './ShoppingCart';
+export { Sort as SortIcon } from './Sort';
+export { SortAscending as SortAscendingIcon } from './SortAscending';
+export { SortDescending as SortDescendingIcon } from './SortDescending';
 export { ShoppingCartTrimmed as ShoppingCartTrimmedIcon } from './ShoppingCartTrimmed';
 export { Spreadsheet as SpreadsheetIcon } from './Spreadsheet';
 export { Star as StarIcon } from './Star';

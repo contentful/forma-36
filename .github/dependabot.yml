@@ -11,3 +11,4 @@ updates:
       - dependencies
     commit-message:
       prefix: chore
+    versioning-strategy: widen

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Highlight, {
   defaultProps as HighlightDefaultProps,
-  Language,
+  type Language,
 } from 'prism-react-renderer';
 import { theme } from './theme';
 import { cx, css } from 'emotion';

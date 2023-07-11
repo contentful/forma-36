@@ -1,5 +1,349 @@
 # Change Log
 
+## 4.45.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.45.0
+  - @contentful/f36-core@4.45.0
+  - @contentful/f36-tooltip@4.45.0
+
+## 4.44.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.44.0
+  - @contentful/f36-core@4.44.0
+  - @contentful/f36-tooltip@4.44.0
+
+## 4.43.0
+
+### Patch Changes
+
+- Updated dependencies [[`1d2f57f0`](https://github.com/contentful/forma-36/commit/1d2f57f0e4e817c4caf746414f4d43b7c978b272)]:
+  - @contentful/f36-core@4.43.0
+  - @contentful/f36-button@4.43.0
+  - @contentful/f36-tooltip@4.43.0
+
+## 4.42.0
+
+### Patch Changes
+
+- Updated dependencies [[`a0d27f0c`](https://github.com/contentful/forma-36/commit/a0d27f0c68fd5e685e723d588f340d0f025ba2ad)]:
+  - @contentful/f36-button@4.42.0
+  - @contentful/f36-tokens@4.0.2
+  - @contentful/f36-core@4.42.0
+  - @contentful/f36-tooltip@4.42.0
+
+## 4.41.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.41.1
+  - @contentful/f36-core@4.41.1
+  - @contentful/f36-tooltip@4.41.1
+
+## 4.41.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.41.0
+  - @contentful/f36-core@4.41.0
+  - @contentful/f36-tooltip@4.41.0
+
+## 4.40.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.40.7
+  - @contentful/f36-core@4.40.7
+  - @contentful/f36-tooltip@4.40.7
+
+## 4.40.6
+
+### Patch Changes
+
+- Updated dependencies [[`cbef6dc2`](https://github.com/contentful/forma-36/commit/cbef6dc2b10a11bf431b7a8c1ef60271f2377a41)]:
+  - @contentful/f36-button@4.40.6
+  - @contentful/f36-core@4.40.6
+  - @contentful/f36-tooltip@4.40.6
+
+## 4.40.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.40.5
+  - @contentful/f36-core@4.40.5
+  - @contentful/f36-tooltip@4.40.5
+
+## 4.40.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.40.4
+  - @contentful/f36-core@4.40.4
+  - @contentful/f36-tooltip@4.40.4
+
+## 4.40.3
+
+### Patch Changes
+
+- Updated dependencies [[`6953f901`](https://github.com/contentful/forma-36/commit/6953f90182f701f28211985106ff2b766f8169be)]:
+  - @contentful/f36-button@4.40.3
+  - @contentful/f36-core@4.40.3
+  - @contentful/f36-tooltip@4.40.3
+
+## 4.40.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.40.2
+  - @contentful/f36-core@4.40.2
+  - @contentful/f36-tooltip@4.40.2
+
+## 4.40.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.40.1
+  - @contentful/f36-core@4.40.1
+  - @contentful/f36-tooltip@4.40.1
+
+## 4.40.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.40.0
+  - @contentful/f36-core@4.40.0
+  - @contentful/f36-tooltip@4.40.0
+
+## 4.39.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.39.0
+  - @contentful/f36-core@4.39.0
+  - @contentful/f36-tooltip@4.39.0
+
+## 4.38.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.38.1
+  - @contentful/f36-core@4.38.1
+  - @contentful/f36-tooltip@4.38.1
+
+## 4.38.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.38.0
+  - @contentful/f36-core@4.38.0
+  - @contentful/f36-tooltip@4.38.0
+
+## 4.37.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.37.1
+  - @contentful/f36-core@4.37.1
+  - @contentful/f36-tooltip@4.37.1
+
+## 4.37.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.37.0
+  - @contentful/f36-core@4.37.0
+  - @contentful/f36-tooltip@4.37.0
+
+## 4.36.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.36.0
+  - @contentful/f36-core@4.36.0
+  - @contentful/f36-tooltip@4.36.0
+
+## 4.35.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.35.0
+  - @contentful/f36-core@4.35.0
+  - @contentful/f36-tooltip@4.35.0
+
+## 4.34.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.34.1
+  - @contentful/f36-core@4.34.1
+  - @contentful/f36-tooltip@4.34.1
+
+## 4.34.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.34.0
+  - @contentful/f36-core@4.34.0
+  - @contentful/f36-tooltip@4.34.0
+
+## 4.33.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.33.0
+  - @contentful/f36-core@4.33.0
+  - @contentful/f36-tooltip@4.33.0
+
+## 4.32.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.32.0
+  - @contentful/f36-core@4.32.0
+  - @contentful/f36-tooltip@4.32.0
+
+## 4.31.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.31.0
+  - @contentful/f36-core@4.31.0
+  - @contentful/f36-tooltip@4.31.0
+
+## 4.30.3
+
+### Patch Changes
+
+- [#2435](https://github.com/contentful/forma-36/pull/2435) [`e85b5f9d`](https://github.com/contentful/forma-36/commit/e85b5f9daa6771fe01891e895d1a987aed2ac831) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(copy-button): copy in environments without clipboard API permission
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.30.3
+  - @contentful/f36-core@4.30.3
+  - @contentful/f36-tooltip@4.30.3
+
+## 4.30.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.30.2
+  - @contentful/f36-core@4.30.2
+  - @contentful/f36-tooltip@4.30.2
+
+## 4.30.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.30.1
+  - @contentful/f36-core@4.30.1
+  - @contentful/f36-tooltip@4.30.1
+
+## 4.30.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.30.0
+  - @contentful/f36-core@4.30.0
+  - @contentful/f36-tooltip@4.30.0
+
+## 4.29.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.29.0
+  - @contentful/f36-core@4.29.0
+  - @contentful/f36-tooltip@4.29.0
+
+## 4.28.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.28.0
+  - @contentful/f36-core@4.28.0
+  - @contentful/f36-tooltip@4.28.0
+
+## 4.27.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.27.0
+  - @contentful/f36-core@4.27.0
+  - @contentful/f36-tooltip@4.27.0
+
+## 4.26.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.26.0
+  - @contentful/f36-core@4.26.0
+  - @contentful/f36-tooltip@4.26.0
+
+## 4.25.2
+
+### Patch Changes
+
+- [#2388](https://github.com/contentful/forma-36/pull/2388) [`ab0be3ac`](https://github.com/contentful/forma-36/commit/ab0be3ac0cc67bc7aba5a01ab4bae334056caa0a) Thanks [@denkristoffer](https://github.com/denkristoffer)! - chore(copy-button): omit more Button props
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.25.2
+  - @contentful/f36-core@4.25.2
+  - @contentful/f36-tooltip@4.25.2
+
+## 4.25.1
+
+### Patch Changes
+
+- [#2386](https://github.com/contentful/forma-36/pull/2386) [`c398fac3`](https://github.com/contentful/forma-36/commit/c398fac32b52198d21cb4dd362a9278424dfb08f) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(copy-button): omit native HTML onCopy prop
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.25.1
+  - @contentful/f36-core@4.25.1
+  - @contentful/f36-tooltip@4.25.1
+
+## 4.25.0
+
+### Minor Changes
+
+- [#2375](https://github.com/contentful/forma-36/pull/2375) [`50fa2c08`](https://github.com/contentful/forma-36/commit/50fa2c0836fad16ecf7173059e046958351811b7) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(copy-button): implementation is now based on the Button component, making it possible to pass ButtonProps to the CopyButton.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.25.0
+  - @contentful/f36-core@4.25.0
+  - @contentful/f36-tooltip@4.25.0
+
 ## 4.24.1
 
 ### Patch Changes

@@ -30,7 +30,7 @@ describe('Button', function () {
   });
 
   it('should not dispatch onClick if disabled', async () => {
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const mockOnClick = jest.fn();
 
     render(
@@ -45,9 +45,6 @@ describe('Button', function () {
   });
 
   it('has no a11y issues', async () => {
-    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-    jest.useRealTimers();
-
     const { container } = render(
       <>
         <Button variant="primary">Button</Button>

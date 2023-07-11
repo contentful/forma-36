@@ -74,6 +74,11 @@ const componentSidebarLinks: SidebarSection[] = [
       },
       {
         type: 'subsection',
+        links: mdxSidebarLinks.avatarComponents,
+        title: 'Avatar Components',
+      },
+      {
+        type: 'subsection',
         links: mdxSidebarLinks.deprecatedComponents,
         title: 'Deprecated V3 Components',
       },
@@ -147,7 +152,7 @@ export const getStaticProps: GetStaticProps<
   const path = await import('node:path');
   const { serialize } = await import('next-mdx-remote/serialize');
 
-  const [section] = context.params?.slug;
+  const [section] = context.params.slug;
   const isPreview = context.preview ?? false;
   const topbarLinks = await getTopbarLinks();
   let sidebarLinks = (await getSidebarLinksBySectionSlug(section)) ?? [];
@@ -278,7 +283,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   // Getting all the paths based on the data from Contentful
   const contentfulPaths = allArticles.map((item) => {
     // Article either has a section parent, or it has a category parent with a section parent
-    let [section] = item.linkedFrom?.sectionCollection?.items;
+    let [section] = item.linkedFrom?.sectionCollection?.items ?? [];
 
     if (!section) {
       section =

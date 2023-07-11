@@ -1,8 +1,12 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { IconButton } from '@contentful/f36-button';
-import { MenuIcon } from '@contentful/f36-icons';
-import { Link, BrowserRouter as Router } from 'react-router-dom';
+import { MenuIcon, DoneIcon } from '@contentful/f36-icons';
+import {
+  BrowserRouter as Router,
+  useHref,
+  useLinkClickHandler,
+} from 'react-router-dom';
 
 import { Menu, type MenuProps } from '../src';
 
@@ -24,8 +28,9 @@ export const Basic: Story<MenuProps> = (args) => {
       <Menu.List>
         <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
         <Menu.Item>Embed existing entry</Menu.Item>
-        <Menu.Item>Create and embed existing entry</Menu.Item>
+        <Menu.Item isActive>Create and embed existing entry</Menu.Item>
         <Menu.Divider />
+        <Menu.SectionTitle>Help</Menu.SectionTitle>
         <Menu.Item as="a" href="https://contentful.com" target="_blank">
           About Contentful
         </Menu.Item>
@@ -81,11 +86,30 @@ export const WithDisabledItems: Story<MenuProps> = (args) => {
         <Menu.Item>Item 1</Menu.Item>
         <Menu.Item>Item 2</Menu.Item>
         <Menu.Item>Item 3</Menu.Item>
-        <Menu.Item disabled>Item 4 (disabled)</Menu.Item>
+        <Menu.Item isDisabled>Item 4 (disabled)</Menu.Item>
         <Menu.Item>Item 5</Menu.Item>
         <Menu.Item>Item 6</Menu.Item>
-        <Menu.Item disabled>Item 7 (disabled)</Menu.Item>
+        <Menu.Item isDisabled>Item 7 (disabled)</Menu.Item>
         <Menu.Item>Item 8</Menu.Item>
+      </Menu.List>
+    </Menu>
+  );
+};
+
+export const WithIconsOnItems: Story<MenuProps> = (args) => {
+  return (
+    <Menu defaultIsOpen {...args}>
+      <Menu.Trigger>
+        <IconButton
+          variant="secondary"
+          icon={<MenuIcon />}
+          aria-label="toggle menu"
+        />
+      </Menu.Trigger>
+      <Menu.List>
+        <Menu.Item icon={<DoneIcon />}>Item 1</Menu.Item>
+        <Menu.Item>Item 2</Menu.Item>
+        <Menu.Item icon={<DoneIcon />}>Item 3</Menu.Item>
       </Menu.List>
     </Menu>
   );
@@ -139,6 +163,19 @@ export const WithStickyHeaderAndFooter: Story<MenuProps> = (args) => {
 };
 
 export const WithReactRouterLinks: Story<MenuProps> = (args) => {
+  function MenuLink({ children, replace = false, to, ...props }) {
+    const href = useHref(to);
+    const handleClick = useLinkClickHandler(to, {
+      replace,
+    });
+
+    return (
+      <Menu.Item {...props} as="a" href={href} onClick={handleClick}>
+        {children}
+      </Menu.Item>
+    );
+  }
+
   return (
     <Router>
       <Menu defaultIsOpen {...args}>
@@ -150,15 +187,9 @@ export const WithReactRouterLinks: Story<MenuProps> = (args) => {
           />
         </Menu.Trigger>
         <Menu.List>
-          <Link to="/" component={Menu.Item} as="a">
-            Home
-          </Link>
-          <Link to="/about" component={Menu.Item} as="a">
-            About
-          </Link>
-          <Link to="/other" component={Menu.Item} as="a">
-            Other
-          </Link>
+          <MenuLink to="/">Home</MenuLink>
+          <MenuLink to="/about">About</MenuLink>
+          <MenuLink to="/other">Other</MenuLink>
         </Menu.List>
       </Menu>
     </Router>

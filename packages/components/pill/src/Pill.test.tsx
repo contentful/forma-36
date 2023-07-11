@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 import tokens from '@contentful/f36-tokens';
 
@@ -7,9 +7,9 @@ import { Pill } from './Pill';
 
 describe('Pill', () => {
   it('renders the component', () => {
-    const { getByText } = render(<Pill label="test" />);
+    render(<Pill label="test" />);
 
-    expect(getByText('test')).toBeTruthy();
+    expect(screen.getByText('test')).toBeTruthy();
   });
 
   it('renders the component with an additional class name', () => {
@@ -22,11 +22,9 @@ describe('Pill', () => {
 
   it('renders the component with a dragging handle', () => {
     const mockOnDrag = jest.fn();
-    const { getByLabelText, container } = render(
-      <Pill label="test" onDrag={mockOnDrag} />,
-    );
+    const { container } = render(<Pill label="test" onDrag={mockOnDrag} />);
 
-    const dragHandler = getByLabelText('Drag handler');
+    const dragHandler = screen.getByText('Reorder item');
     expect(dragHandler).toBeTruthy();
     fireEvent.drag(container.firstChild);
     expect(mockOnDrag).toHaveBeenCalled();
@@ -34,11 +32,9 @@ describe('Pill', () => {
 
   it('renders the component with a close button', () => {
     const mockOnClose = jest.fn();
-    const { container, getByRole } = render(
-      <Pill label="test" onClose={mockOnClose} />,
-    );
+    const { container } = render(<Pill label="test" onClose={mockOnClose} />);
 
-    const button = getByRole('button');
+    const button = screen.getByRole('button');
     expect(container.firstChild).toContainElement(button);
     fireEvent.click(button);
     expect(mockOnClose).toHaveBeenCalled();
@@ -71,15 +67,12 @@ describe('Pill', () => {
   });
 
   it('renders the component with a test id', () => {
-    const { getByTestId } = render(<Pill label="test" testId="test-id" />);
+    render(<Pill label="test" testId="test-id" />);
 
-    expect(getByTestId('test-id')).toBeTruthy();
+    expect(screen.getByTestId('test-id')).toBeTruthy();
   });
 
   it('has no a11y issues', async () => {
-    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-    jest.useRealTimers();
-
     const { container } = render(<Pill label="test" />);
     const results = await axe(container);
 

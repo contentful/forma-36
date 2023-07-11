@@ -6,7 +6,12 @@
       "repo": "contentful/forma-36"
     }
   ],
-  "ignore": ["@contentful/f36-website"],
+  "ignore": [
+    "@contentful/f36-avatar",
+    "@contentful/f36-image",
+    "@contentful/f36-navlist",
+    "@contentful/f36-website"
+  ],
   "commit": false,
   "fixed": [
     [
@@ -23,6 +28,7 @@
       "@contentful/f36-datepicker",
       "@contentful/f36-drag-handle",
       "@contentful/f36-entity-list",
+      "@contentful/f36-empty-state",
       "@contentful/f36-forms",
       "@contentful/f36-icon",
       "@contentful/f36-list",

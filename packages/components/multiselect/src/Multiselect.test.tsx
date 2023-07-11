@@ -73,9 +73,6 @@ const renderComponent = (
   return [{ user }] as [{ user: typeof user }];
 };
 
-// Workaround for https://github.com/dequelabs/axe-core/issues/3055
-jest.useRealTimers();
-
 describe('Multiselect basic usage', () => {
   it('opens and closes the drawer', async () => {
     const [{ user }] = renderComponent();

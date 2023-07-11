@@ -148,10 +148,6 @@ module.exports = {
     url: 'http://localhost',
   },
 
-  fakeTimers: {
-    enableGlobally: true,
-  },
-
   // A map from regular expressions to paths to transformers
   transform: {
     '\\.[jt]sx?$': 'babel-jest',

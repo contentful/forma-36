@@ -5,7 +5,7 @@ export const getStyles = () => {
   return {
     error: css({
       '&:focus': {
-        borderColor: tokens.colorNegative,
+        borderColor: tokens.red600,
         boxShadow: tokens.glowNegative,
       },
     }),

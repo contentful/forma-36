@@ -16,6 +16,7 @@ describe('Relative datetime utility functions', function () {
   });
 
   afterEach(() => {
+    jest.runOnlyPendingTimers();
     jest.useRealTimers();
   });
 

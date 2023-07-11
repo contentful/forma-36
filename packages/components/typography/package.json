@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-typography",
-  "version": "4.24.1",
+  "version": "4.45.0",
   "description": "Forma 36: typography React Component",
   "license": "MIT",
   "files": [
@@ -20,8 +20,8 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.24.1",
-    "@contentful/f36-tokens": "^4.0.1",
+    "@contentful/f36-core": "^4.45.0",
+    "@contentful/f36-tokens": "^4.0.2",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {

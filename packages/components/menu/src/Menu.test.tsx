@@ -80,7 +80,7 @@ describe('Menu', function () {
   });
 
   it('do call onClose when selecting list item', async () => {
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const handleClose = jest.fn();
 
     render(
@@ -105,7 +105,7 @@ describe('Menu', function () {
   });
 
   it('do NOT call onClose when selecting list item and closeOnSelect prop is false', async () => {
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const handleClose = jest.fn();
 
     render(
@@ -290,7 +290,7 @@ describe('Menu', function () {
       );
 
     it('should open submenu if item with submenu clicked', async () => {
-      const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+      const user = userEvent.setup();
       renderMenuWithSubMenu();
 
       await waitFor(() => {
@@ -304,7 +304,7 @@ describe('Menu', function () {
     });
 
     it('should open submenu if item with submenu is hovered and close when its unhovered', async () => {
-      const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+      const user = userEvent.setup();
       renderMenuWithSubMenu();
 
       await waitFor(() => {

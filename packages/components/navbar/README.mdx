@@ -1,0 +1,116 @@
+---
+title: 'Navbar'
+type: 'component'
+status: 'stable'
+isNew: true
+slug: /components/navbar/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/navbar'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-navbar'
+typescript: ./src/Navbar.tsx,./src/NavbarItem/NavbarItem.tsx,./src/NavbarMenuItem/NavbarMenuItem.tsx,./src/NavbarSwitcher/NavbarSwitcher.tsx,./src/NavbarSwitcherItem/NavbarSwitcherItem.tsx,./src/NavbarSearch/NavbarSearch.tsx,./src/NavbarHelp/NavbarHelp.tsx,./src/NavbarAccount/NavbarAccount.tsx,./src/NavbarBadge/NavbarBadge.tsx,./src/NavbarTopbarItem/NavbarTopbarItem.tsx
+---
+
+The Navbar component offers a unified navigation experience across all of Contentful's products.
+It consists of a top and bottom section, each serving specific purposes.
+The bottom section is dedicated to navigation items, while the top section provides additional context and actions.
+This ensures a consistent and intuitive navigation experience throughout the application.
+
+## Import
+
+```jsx static=true
+import { Navbar } from '@contentful/f36-components';
+// or
+import { Navbar } from '@contentful/f36-navbar';
+```
+
+## Examples
+
+You can use following components to build a menu:
+
+1. `<Navbar>`: The main wrapper component.
+1. `<Navbar.Item>`: Represents a main navigation item. Use it as a child of the `<Navbar>` component or the `bottomRightItems` prop of Navbar.
+1. `<Navbar.MenuItem>`: Represents a menu item used to create dropdown menus. Use it as a child of the `<Navbar.Item>`, `<Navbar.Account>`, or `<Navbar.Help>` components.
+1. `<Navbar.MenuDivider>`: A visual separator for menu items. Use it before or after a `<Navbar.MenuItem>`.
+1. `<Navbar.MenuSectionTitle>`: A title that can be used in the menu list. Use it before or after a `<Navbar.MenuItem>`.
+1. `<Navbar.Switcher>`: Wrapper component for the logotype, organization, space, and environment information. Use it as a child of the Navbar `switcher` prop.
+1. `<Navbar.SwitcherItem>`: Represents an item within the `<Navbar.Switcher>`. Use it to render organization, space, and environment information in different states. Use it as a child of the `<Navbar.Switcher>`.
+1. `<Navbar.Search>`: Trigger for the global search. Use it as a child of the Navbar `search` prop.
+1. `<Navbar.Help>`: Trigger for the help menu. Use it as a child of the Navbar `help` prop.
+1. `<Navbar.Account>`: Trigger for the account menu. Use it as a child of the Navbar `account` prop.
+1. `<Navbar.Badge>`: Represents an item that provides additional information, such as indicating that the user's space is on a trial. Use it as a child of the Navbar `badge` prop.
+1. `<Navbar.TopbarItem>`: Represents an item that provides additional links or CTAs (Call to Actions), such as a link to the feedback form. Use it as a child of the Navbar `topRightItems` prop.
+1. `<Navbar.ItemSkeleton>`: Loading skeleton for `<Navbar.Item>`. Use it as a child of the `<Navbar>` component or the `bottomRightItems` prop of Navbar.
+1. `<Navbar.MenuItemSkeleton>`: Loading skeleton for `<Navbar.MenuItem>`. Use it as a child of the `<Navbar.Item>`, `<Navbar.Account>`, or `<Navbar.Help>` components.
+1. `<Navbar.SwitcherSkeleton>`: Loading skeleton for `<Navbar.Switcher>`. Use it as a child of the Navbar `switcher` prop.
+1. `<Navbar.AccountSkeleton>`: Loading skeleton for `<Navbar.Account>`. Use it as a child of the Navbar `account` prop.
+
+### Basic usage
+
+```tsx file=examples/BasicNavbarExample.tsx
+
+```
+
+### Complete Navbar
+
+```tsx file=examples/CompleteNavbarExample.tsx
+
+```
+
+### Navbar with different enviromnments
+
+```tsx file=examples/WithDifferentEnviromnmentsNavbarExample.tsx
+
+```
+
+### Navbar with account notification
+
+```tsx file=examples/WithAccountNotificationNavbarExample.tsx
+
+```
+
+### Navbar loading skeleton
+
+```tsx file=examples/LoadingSkeletonNavbarExample.tsx
+
+```
+
+## Props (API reference)
+
+### Navbar
+
+<PropsTable of="Navbar" />
+
+### Navbar.Item
+
+<PropsTable of="NavbarItem" />
+
+### Navbar.MenuItem
+
+<PropsTable of="NavbarMenuItem" />
+
+### Navbar.TopbarItem
+
+<PropsTable of="NavbarTopbarItem" />
+
+### Navbar.Switcher
+
+<PropsTable of="NavbarSwitcher" />
+
+### Navbar.SwitcherItem
+
+<PropsTable of="NavbarSwitcherItem" />
+
+### Navbar.Search
+
+<PropsTable of="NavbarSearch" />
+
+### Navbar.Help
+
+<PropsTable of="NavbarHelp" />
+
+### Navbar.Account
+
+<PropsTable of="NavbarAccount" />
+
+### Navbar.Badge
+
+<PropsTable of="NavbarBadge" />

@@ -33,18 +33,6 @@ export const GlobalStyles = () => {
           min-width: 1280px;
         }
 
-        body *::-webkit-scrollbar {
-          width: 12px;
-        }
-        body *::-webkit-scrollbar-track {
-          background: ${tokens.colorWhite};
-        }
-        body *::-webkit-scrollbar-thumb {
-          background-color: ${tokens.gray400};
-          border-radius: 6px;
-          border: 3px solid ${tokens.colorWhite};
-        }
-
         code {
           font-family: ${tokens.fontStackMonospace};
           white-space: nowrap;
@@ -80,7 +68,7 @@ export const GlobalStyles = () => {
         }
 
         .osano-cm-link {
-          color: ${tokens.colorPrimary};
+          color: ${tokens.blue500};
           text-decoration: none;
         }
         .osano-cm-link:focus {
@@ -129,8 +117,8 @@ export const GlobalStyles = () => {
 
         .osano-cm-dialog .osano-cm-button.osano-cm-accept-all {
           color: ${tokens.colorWhite};
-          border-color: ${tokens.colorPrimary};
-          background-color: ${tokens.colorPrimary};
+          border-color: ${tokens.blue500};
+          background-color: ${tokens.blue500};
         }
         .osano-cm-dialog .osano-cm-button.osano-cm-accept-all:focus {
           box-shadow: ${tokens.glowPrimary};
@@ -265,10 +253,10 @@ export const GlobalStyles = () => {
           color: ${tokens.colorWhite};
           font-size: ${tokens.fontSizeM};
           font-family: ${tokens.fontStackPrimary};
-          border: 2px solid ${tokens.colorPrimary};
+          border: 2px solid ${tokens.blue500};
           border-radius: ${tokens.borderRadiusMedium};
           line-height: ${tokens.lineHeightDefault};
-          background-color: ${tokens.colorPrimary};
+          background-color: ${tokens.blue500};
         }
         .osano-cm-info-dialog .osano-cm-save:focus {
           box-shadow: ${tokens.glowPrimary};

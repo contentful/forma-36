@@ -18,7 +18,7 @@ jobs:
       - node/install-packages
       - run:
           name: Build packages
-          command: npm run-script build
+          command: npm run-script build -- --force
       - persist_to_workspace:
           root: .
           paths:
@@ -101,7 +101,7 @@ jobs:
           command: npm run-script storybook:build
       - run:
           name: Chromatic
-          command: npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes --storybook-build-dir ./dist-storybook
+          command: npx chromatic --only-changed  --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes --storybook-build-dir ./dist-storybook  --externals "scripts/.storybook/public/**"
 
   release:
     docker:

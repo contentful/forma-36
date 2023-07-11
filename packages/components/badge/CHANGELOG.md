@@ -1,5 +1,275 @@
 # Change Log
 
+## 4.45.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.45.0
+
+## 4.44.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.44.0
+
+## 4.43.0
+
+### Patch Changes
+
+- Updated dependencies [[`1d2f57f0`](https://github.com/contentful/forma-36/commit/1d2f57f0e4e817c4caf746414f4d43b7c978b272)]:
+  - @contentful/f36-core@4.43.0
+
+## 4.42.0
+
+### Patch Changes
+
+- Updated dependencies [[`a0d27f0c`](https://github.com/contentful/forma-36/commit/a0d27f0c68fd5e685e723d588f340d0f025ba2ad)]:
+  - @contentful/f36-tokens@4.0.2
+  - @contentful/f36-core@4.42.0
+
+## 4.41.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.41.1
+
+## 4.41.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.41.0
+
+## 4.40.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.7
+
+## 4.40.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.6
+
+## 4.40.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.5
+
+## 4.40.4
+
+### Patch Changes
+
+- [#2486](https://github.com/contentful/forma-36/pull/2486) [`408588b3`](https://github.com/contentful/forma-36/commit/408588b39433f3de099f80f29854eff632e99d20) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(entity-status-badge): add isScheduled prop
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.4
+
+## 4.40.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.3
+
+## 4.40.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.2
+
+## 4.40.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.1
+
+## 4.40.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.40.0
+
+## 4.39.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.39.0
+
+## 4.38.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.38.1
+
+## 4.38.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.38.0
+
+## 4.37.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.37.1
+
+## 4.37.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.37.0
+
+## 4.36.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.36.0
+
+## 4.35.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.35.0
+
+## 4.34.1
+
+### Patch Changes
+
+- [#2444](https://github.com/contentful/forma-36/pull/2444) [`672e1be3`](https://github.com/contentful/forma-36/commit/672e1be384635f2657125a44886ddd9a53858159) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(entity-status-badge): use secondary Badge variant for Archived
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.34.1
+
+## 4.34.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.34.0
+
+## 4.33.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.33.0
+
+## 4.32.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.32.0
+
+## 4.31.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.31.0
+
+## 4.30.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.30.3
+
+## 4.30.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.30.2
+
+## 4.30.1
+
+### Patch Changes
+
+- [#2432](https://github.com/contentful/forma-36/pull/2432) [`e3b2518a`](https://github.com/contentful/forma-36/commit/e3b2518a6c292ec51b57bf8a36a374f989a24f44) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(badge): fix letter case
+  feat(entity-status-badge): fix letter case
+- Updated dependencies []:
+  - @contentful/f36-core@4.30.1
+
+## 4.30.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.30.0
+
+## 4.29.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.29.0
+
+## 4.28.0
+
+### Minor Changes
+
+- [#2415](https://github.com/contentful/forma-36/pull/2415) [`16081957`](https://github.com/contentful/forma-36/commit/16081957d60b640a6f5151665e37154c3d70f1f0) Thanks [@massao](https://github.com/massao)! - update styling of Badge and EntityStatusBadge components
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.28.0
+
+## 4.27.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.27.0
+
+## 4.26.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.26.0
+
+## 4.25.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.25.2
+
+## 4.25.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.25.1
+
+## 4.25.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.25.0
+
 ## 4.24.1
 
 ### Patch Changes

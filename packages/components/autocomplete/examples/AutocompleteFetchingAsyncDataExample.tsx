@@ -2,14 +2,17 @@ import React from 'react';
 import { Autocomplete, Stack, Paragraph } from '@contentful/f36-components';
 
 export default function AutocompleteFetchingAsyncDataExample() {
-  const spaces = [
-    'Travel Blog',
-    'Finnance Blog',
-    'Fitness App',
-    'News Website',
-    'eCommerce Catalogue',
-    'Photo Gallery',
-  ];
+  const spaces = React.useMemo(
+    () => [
+      'Travel Blog',
+      'Finnance Blog',
+      'Fitness App',
+      'News Website',
+      'eCommerce Catalogue',
+      'Photo Gallery',
+    ],
+    [],
+  );
 
   const [selectedFruit, setSelectedFruit] = React.useState();
 
@@ -31,7 +34,7 @@ export default function AutocompleteFetchingAsyncDataExample() {
     }, 800);
 
     return () => clearTimeout(fetchSpaces);
-  }, [inputValue]);
+  }, [inputValue, spaces]);
 
   // fetching data on each input value change
   // NOTE: Consider using throttle/debounce here for better performance

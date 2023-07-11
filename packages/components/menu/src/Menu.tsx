@@ -200,7 +200,8 @@ export function Menu(props: MenuProps) {
             return;
           }
 
-          const relatedTarget = event.relatedTarget as Node;
+          const activeElement = document.activeElement;
+          const relatedTarget = event.relatedTarget || activeElement;
 
           const targetIsMenu =
             menuListRef.current === relatedTarget ||

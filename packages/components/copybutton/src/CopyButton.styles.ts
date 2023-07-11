@@ -1,64 +1,17 @@
 import { css } from 'emotion';
-import tokens from '@contentful/f36-tokens';
+import { CopyButtonProps } from './CopyButton';
 
-export const getStyles = ({ size }) => {
+export const getCopyButtonStyles = ({
+  size,
+}: Pick<CopyButtonProps, 'size'>) => {
   const buttonSize = size === 'small' ? '32px' : '40px';
 
   return {
-    wrapper: css({
-      display: 'inline-block',
+    button: css({
       height: buttonSize,
-      position: 'relative',
+      minHeight: 'auto',
+      minWidth: 'auto',
       width: buttonSize,
-    }),
-    copyButton: css({
-      alignItems: 'center',
-      background: tokens.colorWhite,
-      border: `1px solid ${tokens.gray300}`,
-      display: 'inline-flex',
-      height: '100%',
-      justifyContent: 'center',
-      outline: 'none',
-      padding: 0,
-      margin: 0, // remove the default button margin in Safari.
-      transition: `background ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
-      width: '100%',
-      '&:hover': {
-        backgroundColor: tokens.gray100,
-        cursor: 'pointer',
-      },
-      '&:active': {
-        backgroundColor: tokens.gray200,
-        cursor: 'pointer',
-      },
-      '&:focus': {
-        boxShadow: tokens.glowMuted,
-      },
-      '&:focus:not(:focus-visible)': {
-        boxShadow: 'unset',
-      },
-      '&:focus-visible': {
-        boxShadow: tokens.glowMuted,
-      },
-    }),
-    copyButtonDisabled: css({
-      cursor: 'not-allowed',
-      backgroundColor: tokens.gray100,
-
-      '&:hover': {
-        cursor: 'not-allowed',
-        backgroundColor: tokens.gray100,
-      },
-
-      '&:focus': {
-        borderColor: tokens.gray300,
-        boxShadow: 'none',
-      },
-
-      '&:active, &:active:hover': {
-        borderColor: tokens.gray300,
-        boxShadow: 'none',
-      },
     }),
   };
 };

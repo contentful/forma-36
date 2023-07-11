@@ -47,7 +47,7 @@ Don't use `Modal`:
 
 ### Changing sizes
 
-There are 4 different sizes for modals: `small`, `medium`, `large`, `fullWidth`. Pick a size based on the amount of content you have to present in them.
+There are 4 different sizes for modals: `small`, `medium`, `large`, `fullWidth`, and `fullscreen`. Pick a size based on the amount of content you have to present in them.
 
 You can also pass an arbitary width in pixels, but we recommend to choose of the predefined values.
 
@@ -61,9 +61,17 @@ As a rule of thumb, `fullWidth` modals shouldn’t be used frequently. Use them 
 
 ### Setting initial focus
 
-When the modal opens, focus is automatically set to the close button but you have a possibility to set an initial focus to a specific element of your modal dialog.
+When the modal opens, focus is automatically set to the close button, but you have the possibility to set an initial focus to a specific element of your modal dialog.
 
-```jsx file=../examples/ModalInitialFocusExample.tsx
+Either by using the `initialFocusRef` prop:
+
+```jsx file=../examples/ModalInitialFocusRefExample.tsx
+
+```
+
+... or by setting the `autoFocus` attribute to an interactive element, such as an `input` or `button`:
+
+```jsx file=../examples/ModalAutoFocusExample.tsx
 
 ```
 

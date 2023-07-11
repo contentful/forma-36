@@ -30,9 +30,6 @@ it('renders the component with an additional class name', () => {
 });
 
 it('has no a11y issues', async () => {
-  // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-  jest.useRealTimers();
-
   const { container } = render(<EntityList />);
   const results = await axe(container);
 
@@ -40,9 +37,6 @@ it('has no a11y issues', async () => {
 });
 
 it('has no a11y issues with children', async () => {
-  // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-  jest.useRealTimers();
-
   const { container } = render(
     <EntityList>
       <EntityList.Item

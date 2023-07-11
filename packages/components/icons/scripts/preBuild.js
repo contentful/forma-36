@@ -1,3 +1,4 @@
+/* eslint-disable no-console -- allow loggin in this script */
 const path = require('path');
 const fs = require('fs');
 

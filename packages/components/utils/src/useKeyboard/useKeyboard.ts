@@ -1,4 +1,4 @@
-import { useEffect, useCallback, MutableRefObject } from 'react';
+import { useEffect, useCallback, MutableRefObject, useRef } from 'react';
 
 export interface UseKeyboardProps {
   /**
@@ -35,7 +35,7 @@ export interface UseKeyboardProps {
  */
 export const useKeyboard = (props: UseKeyboardProps) => {
   const { ref, keys, event = 'keydown' } = props;
-  let element: HTMLElement | Document = document;
+  const element = useRef<HTMLElement | Document>(document);
 
   const handleKeyEvent = useCallback(
     (e) => {
@@ -49,12 +49,13 @@ export const useKeyboard = (props: UseKeyboardProps) => {
 
   useEffect(() => {
     if (ref && ref.current) {
-      element = ref.current;
+      element.current = ref.current;
     }
 
-    element.addEventListener(event, handleKeyEvent);
+    element.current.addEventListener(event, handleKeyEvent);
+
     return () => {
-      element.removeEventListener(event, handleKeyEvent);
+      element.current.removeEventListener(event, handleKeyEvent);
     };
-  }, [event, handleKeyEvent]);
+  }, [event, handleKeyEvent, ref]);
 };

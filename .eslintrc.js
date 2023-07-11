@@ -19,7 +19,6 @@ module.exports = {
   ],
   plugins: ['import', 'react-hooks', 'jest-dom', 'testing-library', 'rulesdir'],
   parserOptions: {
-    ecmaVersion: 7,
     project: './tsconfig.json',
     sourceType: 'module',
   },
@@ -29,6 +28,7 @@ module.exports = {
     node: true,
   },
   settings: {
+    'import/extensions': ['.js', '.ts', '.tsx'],
     react: {
       version: 'detect',
     },
@@ -76,6 +76,13 @@ module.exports = {
     'rulesdir/emotion-in-function': 'error',
   },
   overrides: [
+    // allow specific rules in example files so there are no eslint-disable comments in code playgrounds
+    {
+      files: ['**/examples/**/*'],
+      rules: {
+        'jsx-a11y/no-autofocus': 'off',
+      },
+    },
     {
       files: ['**/*.stories.*'],
       rules: {
@@ -86,14 +93,6 @@ module.exports = {
     },
     {
       files: ['**/*.js', '**/*.jsx'],
-      parser: 'babel-eslint',
-      parserOptions: {
-        ecmaVersion: 7,
-        sourceType: 'module',
-        ecmaFeatures: {
-          jsx: true,
-        },
-      },
       env: {
         node: true,
         browser: true,

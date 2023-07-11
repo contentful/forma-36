@@ -38,7 +38,7 @@ export function SpacingTokensTable() {
                   style={{
                     width: value,
                     height: value,
-                    backgroundColor: tokens.colorPrimary,
+                    backgroundColor: tokens.blue500,
                   }}
                 />
               </Table.Cell>

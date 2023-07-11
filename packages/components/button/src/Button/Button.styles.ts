@@ -2,6 +2,7 @@ import { css } from 'emotion';
 import type { CSSObject } from '@emotion/serialize';
 import tokens from '@contentful/f36-tokens';
 import { ButtonSize, ButtonVariant, ButtonStylesProps } from '../types';
+import { hexToRGBA } from '@contentful/f36-utils';
 
 const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
   switch (variant) {
@@ -12,9 +13,9 @@ const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
     case 'positive':
       return { backgroundColor: tokens.green700, borderColor: tokens.green700 };
     case 'negative':
-      return { backgroundColor: tokens.red800, borderColor: tokens.red800 };
+      return { backgroundColor: tokens.gray200 };
     case 'transparent':
-      return { backgroundColor: tokens.gray100, borderColor: tokens.gray100 };
+      return { backgroundColor: hexToRGBA(tokens.gray900, 0.1) };
     default:
       return {};
   }
@@ -69,8 +70,8 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
     case 'positive':
       return {
         color: tokens.colorWhite,
-        backgroundColor: tokens.colorPositive,
-        borderColor: tokens.colorPositive,
+        backgroundColor: tokens.green500,
+        borderColor: tokens.green500,
         '&:hover': {
           backgroundColor: tokens.green600,
           borderColor: tokens.green600,
@@ -82,7 +83,7 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
           boxShadow: tokens.glowPositive,
         },
         '&:focus:not(:focus-visible)': {
-          borderColor: tokens.colorPositive,
+          borderColor: tokens.green500,
           boxShadow: 'unset',
         },
         '&:focus-visible': {
@@ -92,17 +93,16 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
       };
     case 'negative':
       return {
-        color: tokens.colorWhite,
-        backgroundColor: tokens.red600,
-        borderColor: tokens.red600,
+        color: tokens.red600,
+        backgroundColor: tokens.colorWhite,
+        borderColor: tokens.gray300,
         '&:hover': {
-          backgroundColor: tokens.red700,
-          borderColor: tokens.red700,
-          color: tokens.colorWhite,
+          backgroundColor: tokens.gray100,
+          color: tokens.red600,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
-          borderColor: tokens.red700,
+          borderColor: tokens.gray300,
           boxShadow: tokens.glowNegative,
         },
         '&:focus:not(:focus-visible)': {
@@ -116,17 +116,15 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
       };
     case 'transparent':
       return {
-        color: tokens.gray800,
+        color: tokens.gray900,
         background: 'none',
         borderColor: 'transparent',
         boxShadow: 'none',
         '&:hover': {
-          backgroundColor: tokens.gray100,
-          color: tokens.gray900,
+          backgroundColor: hexToRGBA(tokens.gray900, 0.05),
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
-          backgroundColor: 'transparent',
           boxShadow: tokens.glowPrimary,
         },
         '&:focus:not(:focus-visible)': {
@@ -224,7 +222,7 @@ export const getStyles = () => ({
       ...(isActive
         ? {
             transition: 'none',
-            '&, &:hover': variantActiveStyles(variant),
+            '&, &:focus': variantActiveStyles(variant),
           }
         : {}),
     }),

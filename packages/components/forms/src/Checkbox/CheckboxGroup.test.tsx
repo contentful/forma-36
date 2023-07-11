@@ -50,9 +50,6 @@ describe('CheckboxGroup', function () {
   });
 
   it('has no a11y issues', async () => {
-    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-    jest.useRealTimers();
-
     const { container } = render(
       <CheckboxGroup name="checkbox-options">
         <Checkbox value="option 1" id="option-1">

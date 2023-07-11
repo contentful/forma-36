@@ -232,7 +232,8 @@ export function Popover(props: ExpandProps<PopoverProps>) {
             return;
           }
 
-          const relatedTarget = event.relatedTarget as Node;
+          const activeElement = document.activeElement;
+          const relatedTarget = event.relatedTarget || activeElement;
 
           const targetIsPopover =
             popoverElement === relatedTarget ||

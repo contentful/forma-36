@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.3.2
+
+### Patch Changes
+
+- [#2515](https://github.com/contentful/forma-36/pull/2515) [`a968676e`](https://github.com/contentful/forma-36/commit/a968676e979f303e1d1bd112848eaab6502c863e) Thanks [@dependabot](https://github.com/apps/dependabot)! - chore: bump semver to 7.5.3
+
 ## 4.3.1
 
 ### Patch Changes

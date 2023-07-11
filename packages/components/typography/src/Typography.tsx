@@ -9,6 +9,7 @@ export interface TypographyProps {
  */
 export const Typography = (props: TypographyProps) => {
   useEffect(() => {
+    // eslint-disable-next-line no-console -- allow this warning until we refactor
     console.warn(
       'Forma 36: Typography component is deprecated. You can safely remove it from your components.',
     );

@@ -6,7 +6,7 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@babel/runtime": "^7.6.2",
+    "@babel/runtime": "^7.21.0",
     "@contentful/f36-button": "^4.20.8",
     "@contentful/f36-core": "^4.20.8",
     "@contentful/f36-icons": "^4.20.8",
@@ -39,7 +39,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "formik": "^2.2.9",
+    "formik": "^2.4.2",
     "react-hook-form": "^7.15.0"
   }
 }

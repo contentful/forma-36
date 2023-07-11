@@ -1,0 +1,31 @@
+---
+title: 'hexToRGBA'
+type: 'component'
+slug: /utils/hex-to-rgba/
+section: 'utils'
+typescript: ./hexToRGBA.ts
+---
+
+`hexToRGBA` is a utility function that converts a hex color to an RGBA color.
+
+## Import
+
+```jsx static=true
+import { hexToRGBA } from '@contentful/f36-utils';
+```
+
+## Example
+
+### Basic usage
+
+```ts static=true
+import tokens from '@contentful/f36-tokens';
+
+const color = hexToRGBA(tokens.colorBlack);
+console.log(color);
+// rgba(0, 0, 0, 1)
+
+const colorWithOpacity = hexToRGBA(tokens.colorBlack, 0.5);
+console.log(colorWithOpacity);
+// rgba(0, 0, 0, 0.5)
+```

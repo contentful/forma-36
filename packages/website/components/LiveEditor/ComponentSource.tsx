@@ -11,7 +11,10 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import tokens from '@contentful/f36-tokens';
 import * as f36Components from '@contentful/f36-components';
 import { Multiselect } from '@contentful/f36-multiselect';
+import { NavList } from '@contentful/f36-navlist';
 import * as f36utils from '@contentful/f36-utils';
+import { Avatar, AvatarGroup } from '@contentful/f36-avatar';
+import { Image } from '@contentful/f36-image';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
 import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
@@ -21,19 +24,26 @@ import { theme } from './theme';
 import { formatSourceCode } from './utils';
 import * as coder from '../../utils/coder';
 import FocusLock from 'react-focus-lock';
+import { DndContext } from '@dnd-kit/core';
 import {
-  SortableContainer,
-  SortableElement,
-  SortableHandle,
-} from 'react-sortable-hoc';
-import { arrayMoveImmutable } from 'array-move';
+  arrayMove,
+  horizontalListSortingStrategy,
+  SortableContext,
+  useSortable,
+  verticalListSortingStrategy,
+} from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 import { format, parse, isValid } from 'date-fns';
 
 const liveProviderScope = {
-  ...f36icons,
   ...f36Components,
+  ...f36icons,
   ...f36utils,
+  Avatar, // Remove when avatar is added to f36-components
+  AvatarGroup, // Remove when avatar is added to f36-components
+  Image, // Remove when added to f36-components
   Multiselect, // Remove when added to f36-components
+  NavList, // Remove when added to f36-components
   css,
   f36icons,
   tokens,
@@ -44,15 +54,21 @@ const liveProviderScope = {
   useRef,
   useMemo,
   useContext,
-  // other
+  // react-hook-form
   useForm,
   useController,
+  // other
   MdAccessAlarm,
   FocusLock,
-  SortableContainer,
-  SortableElement,
-  SortableHandle,
-  arrayMoveImmutable,
+  // dnd-kit
+  arrayMove,
+  CSS,
+  DndContext,
+  horizontalListSortingStrategy,
+  SortableContext,
+  useSortable,
+  verticalListSortingStrategy,
+  // date-fns
   format,
   parse,
   isValid,
@@ -65,7 +81,7 @@ const styles = {
   error: css`
     font-family: ${tokens.fontStackMonospace};
     font-size: ${tokens.fontSizeS};
-    background: ${tokens.colorNegative};
+    background: ${tokens.red600};
     color: ${tokens.colorWhite};
     padding: ${tokens.spacingXs};
   `,
@@ -75,12 +91,6 @@ const styles = {
     font-family: ${tokens.fontStackPrimary};
     border-radius: ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium} 0 0 !important;
   `,
-  previewWrapper: css({
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }),
   floatingPanel: css`
     position: absolute;
     bottom: ${tokens.spacingS};
@@ -161,7 +171,7 @@ export function ComponentSource({
         scope={liveProviderScope}
       >
         <Card className={styles.card}>
-          <LivePreview className={styles.previewWrapper} />
+          <LivePreview />
         </Card>
         <div style={{ position: 'relative' }}>
           <LiveError className={styles.error} />

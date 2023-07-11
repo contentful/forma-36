@@ -18,7 +18,7 @@ jest.mock('@contentful/f36-core', () => {
 
 describe('Accordion', () => {
   it('opens the accordion panel when the header is clicked', async () => {
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     render(
       <Accordion>
         <Accordion.Item title="Accordion Title">
@@ -36,7 +36,7 @@ describe('Accordion', () => {
   });
 
   it('calls onExpand && onCollapse when an accordion item is expanded and collapsed', async () => {
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const onExpand = jest.fn();
     const onCollapse = jest.fn();
     render(
@@ -61,9 +61,6 @@ describe('Accordion', () => {
   });
 
   it('has no a11y issues', async () => {
-    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-    jest.useRealTimers();
-
     const { container } = render(
       <Accordion>
         <Accordion.Item title="Accordion Title">

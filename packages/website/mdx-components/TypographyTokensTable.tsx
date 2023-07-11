@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Text, TextProps } from '@contentful/f36-components';
+import { Table, Text, type TextProps } from '@contentful/f36-components';
 
 import fontBaseTokens from '@contentful/f36-tokens/src/tokens/typography/font-base';
 import fontSizeTokens from '@contentful/f36-tokens/src/tokens/typography/font-size';

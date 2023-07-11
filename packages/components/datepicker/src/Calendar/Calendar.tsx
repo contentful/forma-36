@@ -4,8 +4,8 @@ import { getStyles } from './Calendar.styles';
 
 import {
   DayPicker,
-  DayPickerDefaultProps,
-  DayPickerSingleProps,
+  type DayPickerDefaultProps,
+  type DayPickerSingleProps,
 } from 'react-day-picker';
 import { CalendarCaption } from './CalendarCaption';
 import { CalendarCaptionLabel } from './CalendarCaptionLabel';

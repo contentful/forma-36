@@ -18,9 +18,9 @@ describe('RelativeDateTime', function () {
   });
 
   afterEach(() => {
+    jest.runOnlyPendingTimers();
     jest.useRealTimers();
   });
-
   it('renders', () => {
     const tree = render(<RelativeDateTime date={today.format()} />);
 

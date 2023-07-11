@@ -107,7 +107,7 @@ describe('Popover', function () {
   });
 
   it('call onClose when clicking outside of popover', async () => {
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const handleClose = jest.fn();
 
     render(
@@ -127,7 +127,7 @@ describe('Popover', function () {
   });
 
   it('do NOT call onClose when clicking inside of popover', async () => {
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const handleClose = jest.fn();
 
     render(
@@ -147,7 +147,7 @@ describe('Popover', function () {
   });
 
   it('do NOT call onClose when clicking outside of popover and closeOnBlur is false', async () => {
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup();
     const handleClose = jest.fn();
 
     render(
@@ -230,9 +230,6 @@ describe('Popover', function () {
   });
 
   it('has no a11y issues', async () => {
-    // Workaround for https://github.com/dequelabs/axe-core/issues/3055
-    jest.useRealTimers();
-
     const { container } = render(
       <Popover isOpen={true}>
         <Popover.Trigger>

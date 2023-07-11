@@ -1,0 +1,39 @@
+{
+  "name": "@contentful/f36-navbar",
+  "version": "4.1.0",
+  "description": "Forma 36: Navbar component",
+  "scripts": {
+    "build": "tsup"
+  },
+  "dependencies": {
+    "@contentful/f36-core": "^4.45.0",
+    "@contentful/f36-menu": "^4.45.0",
+    "@contentful/f36-tokens": "^4.0.1",
+    "@contentful/f36-utils": "^4.23.2",
+    "@contentful/f36-skeleton": "^4.45.0",
+    "@contentful/f36-icon": "^4.45.0",
+    "@contentful/f36-icons": "^4.23.2",
+    "emotion": "^10.0.17"
+  },
+  "peerDependencies": {
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "source": "src/index.ts",
+  "sideEffects": false,
+  "browserslist": "extends @contentful/browserslist-config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/contentful/forma-36"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -3,7 +3,7 @@ title: 'Table'
 slug: /components/table/
 github: 'https://github.com/contentful/forma-36/tree/main/packages/components/table'
 storybook: 'https://f36-storybook.contentful.com/?path=/info/components-table--default'
-typescript: ./src/Table.tsx,./src/TableCell.tsx,./src/TableRow.tsx,./src/TableBody.tsx,./src/TableHead.tsx
+typescript: ./src/Table.tsx,./src/TableCell/TableCell.tsx,./src/TableRow/TableRow.tsx,./src/TableBody/TableBody.tsx,./src/TableHead/TableHead.tsx
 ---
 
 ## Import
@@ -28,6 +28,14 @@ One very common use case for a table is that you will have a set of data and you
 To achieve that result, you can iterate over the data and create `Table.Row` and `Table.Cell` for each item:
 
 ```jsx file=./examples/TableDynamicCreation.tsx
+
+```
+
+### With sorting
+
+Table cells in the table header can be marked as sortable and sorted either in ascending or descending order.
+
+```jsx file=./examples/TableWithSortingPropsExample.tsx
 
 ```
 

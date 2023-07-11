@@ -12,7 +12,6 @@ export function getModalStyles(props: {
 }) {
   const modal = cx(
     css({
-      margin: tokens.spacing2Xl,
       backgroundColor: tokens.colorWhite,
       borderRadius: props.size === 'zen' ? 0 : tokens.borderRadiusMedium,
       boxShadow: tokens.boxShadowHeavy,
@@ -35,6 +34,15 @@ export function getModalStyles(props: {
           margin: 0,
           height: '100%',
           width: '100%',
+        })
+      : null,
+    props.size === 'fullscreen'
+      ? css({
+          maxWidth: `calc(100vw - ${tokens.spacingXl})`,
+          maxHeight: `calc(100vh - ${tokens.spacingXl})`,
+          margin: 0,
+          height: '100vh',
+          width: '100vw',
         })
       : null,
     props.className,
@@ -68,7 +76,7 @@ export function getModalStyles(props: {
         transform: 'scale(1) !important',
       }),
       beforeClose: css({
-        transform: props.size === 'zen' ? 'scale(1)' : 'scale(0.85)',
+        transform: props.size === 'zen' ? 'scale(1)' : 'scale(0.85) !important',
       }),
     },
     modalOverlay: {
@@ -88,7 +96,13 @@ export function getModalStyles(props: {
           overflowY: 'auto',
           backgroundColor: 'rgba(12, 20, 28, 0.74902)',
           textAlign: 'center',
+          padding: tokens.spacing2Xl,
         }),
+        props.size === 'fullscreen'
+          ? css({
+              padding: 0,
+            })
+          : null,
         props.position === 'center'
           ? css({
               alignItems: 'center',
@@ -98,10 +112,10 @@ export function getModalStyles(props: {
         props.overlayClassName,
       ),
       afterOpen: css({
-        opacity: 1,
+        opacity: '1 !important',
       }),
       beforeClose: css({
-        opacity: 0,
+        opacity: '0 !important',
       }),
     },
     modal,

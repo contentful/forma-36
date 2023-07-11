@@ -10,6 +10,7 @@ import {
 
 import type { BadgeSize, BadgeVariant } from '../types';
 import { getBadgeStyles } from './Badge.styles';
+import { Caption } from '@contentful/f36-typography';
 
 type BadgeSizeWithIconProps =
   | {
@@ -82,7 +83,13 @@ export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
         ref={ref}
       >
         {startIcon && size === 'default' && iconContent(startIcon)}
-        <span className={styles.badgeText}>{children}</span>
+        <Caption
+          fontWeight="fontWeightMedium"
+          isTruncated
+          className={styles.badgeText}
+        >
+          {children}
+        </Caption>
         {endIcon && size === 'default' && iconContent(endIcon)}
       </Box>
     );

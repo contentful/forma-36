@@ -60,12 +60,12 @@ export const Overview = ({ startIcon, endIcon }) => (
           startIcon={startIcon && <Icon as={icons[startIcon]} />}
           endIcon={endIcon && <Icon as={icons[endIcon]} />}
         >
-          primary
+          Primary
         </Badge>
       </Flex>
       <Flex marginRight="spacingS">
         <Badge variant="primary" size="small">
-          primary
+          Primary
         </Badge>
       </Flex>
     </Flex>
@@ -76,12 +76,12 @@ export const Overview = ({ startIcon, endIcon }) => (
           startIcon={startIcon && <Icon as={icons[startIcon]} />}
           endIcon={endIcon && <Icon as={icons[endIcon]} />}
         >
-          primary filled
+          Primary filled
         </Badge>
       </Flex>
       <Flex marginRight="spacingS">
         <Badge variant="primary-filled" size="small">
-          primary filled
+          Primary filled
         </Badge>
       </Flex>
     </Flex>
@@ -92,12 +92,12 @@ export const Overview = ({ startIcon, endIcon }) => (
           startIcon={startIcon && <Icon as={icons[startIcon]} />}
           endIcon={endIcon && <Icon as={icons[endIcon]} />}
         >
-          positive
+          Positive
         </Badge>
       </Flex>
       <Flex marginRight="spacingS">
         <Badge variant="positive" size="small">
-          positive
+          Positive
         </Badge>
       </Flex>
     </Flex>
@@ -108,12 +108,12 @@ export const Overview = ({ startIcon, endIcon }) => (
           startIcon={startIcon && <Icon as={icons[startIcon]} />}
           endIcon={endIcon && <Icon as={icons[endIcon]} />}
         >
-          negative
+          Negative
         </Badge>
       </Flex>
       <Flex marginRight="spacingS">
         <Badge variant="negative" size="small">
-          negative
+          Negative
         </Badge>
       </Flex>
     </Flex>
@@ -124,12 +124,12 @@ export const Overview = ({ startIcon, endIcon }) => (
           startIcon={startIcon && <Icon as={icons[startIcon]} />}
           endIcon={endIcon && <Icon as={icons[endIcon]} />}
         >
-          warning
+          Warning
         </Badge>
       </Flex>
       <Flex marginRight="spacingS">
         <Badge variant="warning" size="small">
-          warning
+          Warning
         </Badge>
       </Flex>
     </Flex>
@@ -140,12 +140,12 @@ export const Overview = ({ startIcon, endIcon }) => (
           startIcon={startIcon && <Icon as={icons[startIcon]} />}
           endIcon={endIcon && <Icon as={icons[endIcon]} />}
         >
-          secondary
+          Secondary
         </Badge>
       </Flex>
       <Flex marginRight="spacingS">
         <Badge variant="secondary" size="small">
-          secondary
+          Secondary
         </Badge>
       </Flex>
     </Flex>
@@ -156,12 +156,12 @@ export const Overview = ({ startIcon, endIcon }) => (
           startIcon={startIcon && <Icon as={icons[startIcon]} />}
           endIcon={endIcon && <Icon as={icons[endIcon]} />}
         >
-          featured
+          Featured
         </Badge>
       </Flex>
       <Flex marginRight="spacingS">
         <Badge variant="featured" size="small">
-          featured
+          Featured
         </Badge>
       </Flex>
     </Flex>
