@@ -667,6 +667,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Lakesxo",
+      "name": "Ridwan Ajanaku",
+      "avatar_url": "https://avatars.githubusercontent.com/u/37837222?v=4",
+      "profile": "https://olakunle.dev",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -675,5 +684,6 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": true,
-  "commitConvention": "angular"
+  "commitConvention": "angular",
+  "commitType": "docs"
 }
