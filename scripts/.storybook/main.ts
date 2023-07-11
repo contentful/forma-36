@@ -1,6 +1,7 @@
-const path = require('path');
+import type { StorybookConfig } from '@storybook/react-webpack5';
+import path from 'path';
 
-module.exports = {
+const config: StorybookConfig = {
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
@@ -14,15 +15,8 @@ module.exports = {
       },
     },
   ],
-
-  core: {
-    builder: 'webpack5',
-  },
-
   staticDirs: ['./public'],
-
   stories: ['./docs/**/*.stories.mdx', '../../packages/**/*.stories.@(ts|md)x'],
-
   webpackFinal: async (config, { configType }) => {
     // We need to split into chunks to avoid terser running out of memory
     // when trying to minify one huge JS file
@@ -37,4 +31,13 @@ module.exports = {
 
     return config;
   },
+  docs: {
+    autodocs: true,
+  },
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {},
+  },
 };
+
+export default config;
