@@ -1,7 +1,24 @@
 import React from 'react';
-import { Router, Link } from 'react-router-dom';
+import {
+  MemoryRouter as Router,
+  useHref,
+  useLinkClickHandler,
+} from 'react-router-dom';
 import { Menu, IconButton } from '@contentful/f36-components';
 import { MenuIcon } from '@contentful/f36-icons';
+
+function MenuLink({ children, replace = false, to, ...props }) {
+  const href = useHref(to);
+  const handleClick = useLinkClickHandler(to, {
+    replace,
+  });
+
+  return (
+    <Menu.Item {...props} as="a" href={href} onClick={handleClick}>
+      {children}
+    </Menu.Item>
+  );
+}
 
 export default function MenuWithReactRouterLinks() {
   return (
@@ -15,15 +32,9 @@ export default function MenuWithReactRouterLinks() {
           />
         </Menu.Trigger>
         <Menu.List>
-          <Link to="/" component={Menu.Item} as="a">
-            Home
-          </Link>
-          <Link to="/about" component={Menu.Item} as="a">
-            About
-          </Link>
-          <Link to="/other" component={Menu.Item} as="a">
-            Other
-          </Link>
+          <MenuLink to="/">Home</MenuLink>
+          <MenuLink to="/about">About</MenuLink>
+          <MenuLink to="/other">Other</MenuLink>
         </Menu.List>
       </Menu>
     </Router>

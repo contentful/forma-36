@@ -2,7 +2,11 @@ import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { IconButton } from '@contentful/f36-button';
 import { MenuIcon, DoneIcon } from '@contentful/f36-icons';
-import { Link, BrowserRouter as Router } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  useHref,
+  useLinkClickHandler,
+} from 'react-router-dom';
 
 import { Menu, type MenuProps } from '../src';
 
@@ -159,6 +163,19 @@ export const WithStickyHeaderAndFooter: Story<MenuProps> = (args) => {
 };
 
 export const WithReactRouterLinks: Story<MenuProps> = (args) => {
+  function MenuLink({ children, replace = false, to, ...props }) {
+    const href = useHref(to);
+    const handleClick = useLinkClickHandler(to, {
+      replace,
+    });
+
+    return (
+      <Menu.Item {...props} as="a" href={href} onClick={handleClick}>
+        {children}
+      </Menu.Item>
+    );
+  }
+
   return (
     <Router>
       <Menu defaultIsOpen {...args}>
@@ -170,15 +187,9 @@ export const WithReactRouterLinks: Story<MenuProps> = (args) => {
           />
         </Menu.Trigger>
         <Menu.List>
-          <Link to="/" component={Menu.Item} as="a">
-            Home
-          </Link>
-          <Link to="/about" component={Menu.Item} as="a">
-            About
-          </Link>
-          <Link to="/other" component={Menu.Item} as="a">
-            Other
-          </Link>
+          <MenuLink to="/">Home</MenuLink>
+          <MenuLink to="/about">About</MenuLink>
+          <MenuLink to="/other">Other</MenuLink>
         </Menu.List>
       </Menu>
     </Router>
