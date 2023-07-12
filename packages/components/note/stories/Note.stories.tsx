@@ -29,20 +29,25 @@ basic.args = {
     'A piece of information that is relevant to the context the user is currently in',
 };
 
-export const withCustomIcon: Story<any> = ({ children, ...args }) => (
+export const withCustomIcon: Story<any> = ({
+  children,
+  startIcon = 'StarIcon',
+  ...args
+}) => (
   <Flex fullWidth flexDirection="column">
     <SectionHeading as="h3" marginBottom="spacingS">
       Note with custom icon (inheriting the variant color by default)
     </SectionHeading>
 
     <Flex marginBottom="spacingM">
-      <Note {...args}>{children}</Note>
+      <Note startIcon={startIcon && <Icon as={icons[startIcon]} />} {...args}>
+        {children}
+      </Note>
     </Flex>
   </Flex>
 );
 
 withCustomIcon.args = {
-  startIcon: <Icon as={icons.StarIcon} />,
   variant: 'primary',
   children:
     'A piece of information that is relevant to the context the user is currently in',
