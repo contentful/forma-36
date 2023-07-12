@@ -1,7 +1,6 @@
 import React from 'react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { Skeleton } from '../src/index';
-import type { SkeletonImageProps } from '../src/SkeletonImage/SkeletonImage';
 
 export default {
   title: 'Components/Skeleton/SkeletonImage',
@@ -10,19 +9,22 @@ export default {
     propTypes: [Skeleton.Image['__docgenInfo']],
   },
   argTypes: {},
-};
+} as Meta<typeof Skeleton.Image>;
 
-export const Basic = (args: SkeletonImageProps) => (
-  <Skeleton.Container>
-    <Skeleton.Image {...args} />
-  </Skeleton.Container>
-);
+type Story = StoryObj<typeof Skeleton.Image>;
 
-Basic.args = {
-  width: 50,
-  height: 50,
-  offsetTop: 0,
-  offsetLeft: 0,
-  radiusX: 0,
-  radiusY: 0,
+export const Basic: Story = {
+  args: {
+    width: 50,
+    height: 50,
+    offsetTop: 0,
+    offsetLeft: 0,
+    radiusX: 0,
+    radiusY: 0,
+  },
+  render: (args) => (
+    <Skeleton.Container>
+      <Skeleton.Image {...args} />
+    </Skeleton.Container>
+  ),
 };

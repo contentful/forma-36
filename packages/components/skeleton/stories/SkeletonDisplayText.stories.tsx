@@ -1,7 +1,6 @@
 import React from 'react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { Skeleton } from '../src/index';
-import type { SkeletonDisplayTextProps } from '../src/SkeletonDisplayText/SkeletonDisplayText';
 
 export default {
   title: 'Components/Skeleton/SkeletonDisplayText',
@@ -10,14 +9,17 @@ export default {
     propTypes: [Skeleton.DisplayText['__docgenInfo']],
   },
   argTypes: {},
-};
+} as Meta<typeof Skeleton.DisplayText>;
 
-export const Basic = (args: SkeletonDisplayTextProps) => (
-  <Skeleton.Container>
-    <Skeleton.DisplayText {...args} />
-  </Skeleton.Container>
-);
+type Story = StoryObj<typeof Skeleton.DisplayText>;
 
-Basic.args = {
-  numberOfLines: 1,
+export const Basic: Story = {
+  args: {
+    numberOfLines: 1,
+  },
+  render: (args) => (
+    <Skeleton.Container>
+      <Skeleton.DisplayText {...args} />
+    </Skeleton.Container>
+  ),
 };

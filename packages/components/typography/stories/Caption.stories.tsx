@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
-
-import { Caption, CaptionProps } from '../src/Caption/Caption';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Caption } from '../src/Caption/Caption';
 import { Paragraph } from '../src/Paragraph/Paragraph';
 
 export default {
@@ -13,28 +13,31 @@ export default {
   argTypes: {
     className: { control: { disable: true } },
   },
+} as Meta<typeof Caption>;
+
+type Story = StoryObj<typeof Caption>;
+
+export const Basic: Story = {
+  args: {
+    children: 'Caption',
+  },
 };
 
-export const Basic = (props: CaptionProps<'span'>) => <Caption {...props} />;
+export const Overview: Story = {
+  args: {
+    children: 'Caption',
+  },
+  render: (props) => (
+    <>
+      <Flex alignItems="center" gap="spacingS">
+        <Paragraph marginBottom="none">fontWeightNormal</Paragraph>
+        <Caption {...props} fontWeight="fontWeightNormal" />
+      </Flex>
 
-Basic.args = {
-  children: 'Caption',
-};
-
-export const Overview = (props: CaptionProps) => (
-  <>
-    <Flex alignItems="center" gap="spacingS">
-      <Paragraph marginBottom="none">fontWeightNormal</Paragraph>
-      <Caption {...props} fontWeight="fontWeightNormal" />
-    </Flex>
-
-    <Flex alignItems="center" gap="spacingS">
-      <Paragraph marginBottom="none">fontWeightMedium</Paragraph>
-      <Caption {...props} fontWeight="fontWeightMedium" />
-    </Flex>
-  </>
-);
-
-Overview.args = {
-  children: 'Caption',
+      <Flex alignItems="center" gap="spacingS">
+        <Paragraph marginBottom="none">fontWeightMedium</Paragraph>
+        <Caption {...props} fontWeight="fontWeightMedium" />
+      </Flex>
+    </>
+  ),
 };

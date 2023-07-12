@@ -1,13 +1,17 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { {{componentName}}, type {{componentName}}Props } from '../src/{{componentName}}';
+import { {{componentName}} } from '../src/{{componentName}}';
 
 export default {
   component: {{componentName}},
   title: 'Components/{{componentName}}',
-} as Meta;
+} as Meta<typeof {{componentName}}>;
 
-export const Default: Story<{{componentName}}Props> = (args) => {
-  return <{{componentName}} {...args}>{{componentName}}</{{componentName}}>;
-};
+type Story = StoryObj<typeof {{componentName}}>
+
+export const Default: Story = {
+  render: (args) => {
+    return <{{componentName}} {...args}>{{componentName}}</{{componentName}}>;
+  }
+}
