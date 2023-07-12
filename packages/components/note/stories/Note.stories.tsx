@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Flex } from '@contentful/f36-core';
 import { Paragraph, SectionHeading } from '@contentful/f36-typography';
 import { Note } from '../src/Note';
@@ -17,222 +17,226 @@ export default {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
   },
-} as Meta;
+} as Meta<typeof Note>;
 
-export const basic: Story<any> = ({ children, ...args }) => (
-  <Note {...args}>{children}</Note>
-);
+type Story = StoryObj<typeof Note>;
 
-basic.args = {
-  variant: 'primary',
-  children:
-    'A piece of information that is relevant to the context the user is currently in',
-};
-
-export const withCustomIcon: Story<any> = ({
-  children,
-  icon = 'StarIcon',
-  ...args
-}) => (
-  <Flex fullWidth flexDirection="column">
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Note with custom icon (inheriting the variant color by default)
-    </SectionHeading>
-
-    <Flex marginBottom="spacingM">
-      <Note icon={icon && <Icon as={icons[icon]} />} {...args}>
-        {children}
-      </Note>
-    </Flex>
-  </Flex>
-);
-
-withCustomIcon.args = {
-  variant: 'primary',
-  children:
-    'A piece of information that is relevant to the context the user is currently in',
-};
-
-withCustomIcon.argTypes = {
-  icon: {
-    control: {
-      options: ['', ...Object.keys(icons)],
-      type: 'select',
-    },
+export const Basic: Story = {
+  args: {
+    variant: 'primary',
+    children:
+      'A piece of information that is relevant to the context the user is currently in',
   },
 };
 
-export const overview = () => (
-  <Flex fullWidth flexDirection="column">
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Note primary
-    </SectionHeading>
+export const WithCustomIcon: Story = {
+  args: {
+    variant: 'primary',
+    children:
+      'A piece of information that is relevant to the context the user is currently in',
+  },
 
-    <Flex marginBottom="spacingM">
-      <Note>
-        A piece of information that is relevant to the context the user is
-        currently in.
-      </Note>
+  argTypes: {
+    icon: {
+      control: {
+        options: ['', ...Object.keys(icons)],
+        type: 'select',
+      },
+    },
+  },
+  render: ({ children, icon = 'StarIcon', ...args }) => (
+    <Flex fullWidth flexDirection="column">
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Note with custom icon (inheriting the variant color by default)
+      </SectionHeading>
+
+      <Flex marginBottom="spacingM">
+        <Note icon={icon && <Icon as={icons[icon]} />} {...args}>
+          {children}
+        </Note>
+      </Flex>
     </Flex>
-    <Flex marginBottom="spacingM">
-      <Note icon={<Icon as={icons.StarIcon} />}>
-        A piece of information that is relevant to the context the user is
-        currently in.
-      </Note>
-    </Flex>
-    <Flex marginBottom="spacingM">
-      <Note withCloseButton>
-        A piece of information that is relevant to the context the user is
-        currently in.
-      </Note>
-    </Flex>
-    <Flex marginBottom="spacingM">
-      <Note title="Short, yet succinct title" withCloseButton>
-        <Paragraph>
+  ),
+};
+
+export const Overview: Story = {
+  render: () => (
+    <Flex fullWidth flexDirection="column">
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Note primary
+      </SectionHeading>
+
+      <Flex marginBottom="spacingM">
+        <Note>
           A piece of information that is relevant to the context the user is
-          currently in. If you like it then you should put{' '}
-          <TextLink> a link</TextLink> in it.
-        </Paragraph>
-      </Note>
-    </Flex>
-
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Note negative
-    </SectionHeading>
-
-    <Flex marginBottom="spacingM">
-      <Note variant="negative">
-        A piece of information that is relevant to the context the user is
-        currently in.
-      </Note>
-    </Flex>
-    <Flex marginBottom="spacingM">
-      <Note variant="negative" icon={<Icon as={icons.StarIcon} />}>
-        A piece of information that is relevant to the context the user is
-        currently in.
-      </Note>
-    </Flex>
-
-    <Flex marginBottom="spacingM">
-      <Note
-        title="Short, yet succinct title"
-        variant="negative"
-        withCloseButton
-      >
-        <Paragraph>
+          currently in.
+        </Note>
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <Note icon={<Icon as={icons.StarIcon} />}>
           A piece of information that is relevant to the context the user is
-          currently in. If you like it then you should put{' '}
-          <TextLink> a link</TextLink> in it.
-        </Paragraph>
-      </Note>
-    </Flex>
-
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Note warning
-    </SectionHeading>
-
-    <Flex marginBottom="spacingM">
-      <Note variant="warning">
-        A piece of information that is relevant to the context the user is
-        currently in.
-      </Note>
-    </Flex>
-    <Flex marginBottom="spacingM">
-      <Note variant="warning" icon={<Icon as={icons.StarIcon} />}>
-        A piece of information that is relevant to the context the user is
-        currently in.
-      </Note>
-    </Flex>
-    <Flex marginBottom="spacingM">
-      <Note variant="warning" title="Short, yet succinct title" withCloseButton>
-        <Paragraph>
+          currently in.
+        </Note>
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <Note withCloseButton>
           A piece of information that is relevant to the context the user is
-          currently in. If you like it then you should put{' '}
-          <TextLink> a link</TextLink> in it.
-        </Paragraph>
-      </Note>
-    </Flex>
+          currently in.
+        </Note>
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <Note title="Short, yet succinct title" withCloseButton>
+          <Paragraph>
+            A piece of information that is relevant to the context the user is
+            currently in. If you like it then you should put{' '}
+            <TextLink> a link</TextLink> in it.
+          </Paragraph>
+        </Note>
+      </Flex>
 
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Note positive
-    </SectionHeading>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Note negative
+      </SectionHeading>
 
-    <Flex marginBottom="spacingM">
-      <Note variant="positive">
-        A piece of information that is relevant to the context the user is
-        currently in.
-      </Note>
-    </Flex>
-    <Flex marginBottom="spacingM">
-      <Note variant="positive" icon={<Icon as={icons.StarIcon} />}>
-        A piece of information that is relevant to the context the user is
-        currently in.
-      </Note>
-    </Flex>
-    <Flex marginBottom="spacingM">
-      <Note
-        variant="positive"
-        title="Short, yet succinct title"
-        withCloseButton
-      >
-        <Paragraph>
+      <Flex marginBottom="spacingM">
+        <Note variant="negative">
           A piece of information that is relevant to the context the user is
-          currently in. If you like it then you should put{' '}
-          <TextLink> a link</TextLink> in it.
-        </Paragraph>
-      </Note>
-    </Flex>
-
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Note neutral
-    </SectionHeading>
-
-    <Flex marginBottom="spacingM">
-      <Note variant="neutral">
-        A piece of information that is relevant to the context the user is
-        currently in.
-      </Note>
-    </Flex>
-    <Flex marginBottom="spacingM">
-      <Note variant="neutral" icon={<Icon as={icons.StarIcon} />}>
-        A piece of information that is relevant to the context the user is
-        currently in.
-      </Note>
-    </Flex>
-    <Flex marginBottom="spacingM">
-      <Note variant="neutral" title="Short, yet succinct title" withCloseButton>
-        <Paragraph>
+          currently in.
+        </Note>
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <Note variant="negative" icon={<Icon as={icons.StarIcon} />}>
           A piece of information that is relevant to the context the user is
-          currently in. If you like it then you should put{' '}
-          <TextLink> a link</TextLink> in it.
-        </Paragraph>
-      </Note>
-    </Flex>
+          currently in.
+        </Note>
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <Note
+          title="Short, yet succinct title"
+          variant="negative"
+          withCloseButton
+        >
+          <Paragraph>
+            A piece of information that is relevant to the context the user is
+            currently in. If you like it then you should put{' '}
+            <TextLink> a link</TextLink> in it.
+          </Paragraph>
+        </Note>
+      </Flex>
 
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Note premium
-    </SectionHeading>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Note warning
+      </SectionHeading>
 
-    <Flex marginBottom="spacingM">
-      <Note variant="premium">
-        A piece of information that is relevant to the context the user is
-        currently in.
-      </Note>
-    </Flex>
-    <Flex marginBottom="spacingM">
-      <Note variant="premium" icon={<Icon as={icons.StarIcon} />}>
-        A piece of information that is relevant to the context the user is
-        currently in.
-      </Note>
-    </Flex>
-    <Flex marginBottom="spacingM">
-      <Note variant="premium" title="Short, yet succinct title" withCloseButton>
-        <Paragraph>
+      <Flex marginBottom="spacingM">
+        <Note variant="warning">
           A piece of information that is relevant to the context the user is
-          currently in. If you like it then you should put{' '}
-          <TextLink> a link</TextLink> in it.
-        </Paragraph>
-      </Note>
+          currently in.
+        </Note>
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <Note variant="warning" icon={<Icon as={icons.StarIcon} />}>
+          A piece of information that is relevant to the context the user is
+          currently in.
+        </Note>
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <Note
+          variant="warning"
+          title="Short, yet succinct title"
+          withCloseButton
+        >
+          <Paragraph>
+            A piece of information that is relevant to the context the user is
+            currently in. If you like it then you should put{' '}
+            <TextLink> a link</TextLink> in it.
+          </Paragraph>
+        </Note>
+      </Flex>
+
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Note positive
+      </SectionHeading>
+
+      <Flex marginBottom="spacingM">
+        <Note variant="positive">
+          A piece of information that is relevant to the context the user is
+          currently in.
+        </Note>
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <Note variant="neutral" icon={<Icon as={icons.StarIcon} />}>
+          A piece of information that is relevant to the context the user is
+          currently in.
+        </Note>
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <Note
+          variant="positive"
+          title="Short, yet succinct title"
+          withCloseButton
+        >
+          <Paragraph>
+            A piece of information that is relevant to the context the user is
+            currently in. If you like it then you should put{' '}
+            <TextLink> a link</TextLink> in it.
+          </Paragraph>
+        </Note>
+      </Flex>
+
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Note neutral
+      </SectionHeading>
+
+      <Flex marginBottom="spacingM">
+        <Note variant="neutral">
+          A piece of information that is relevant to the context the user is
+          currently in.
+        </Note>
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <Note
+          variant="neutral"
+          title="Short, yet succinct title"
+          withCloseButton
+        >
+          <Paragraph>
+            A piece of information that is relevant to the context the user is
+            currently in. If you like it then you should put{' '}
+            <TextLink> a link</TextLink> in it.
+          </Paragraph>
+        </Note>
+      </Flex>
+
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Note premium
+      </SectionHeading>
+
+      <Flex marginBottom="spacingM">
+        <Note variant="premium">
+          A piece of information that is relevant to the context the user is
+          currently in.
+        </Note>
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <Note variant="premium" icon={<Icon as={icons.StarIcon} />}>
+          A piece of information that is relevant to the context the user is
+          currently in.
+        </Note>
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <Note
+          variant="premium"
+          title="Short, yet succinct title"
+          withCloseButton
+        >
+          <Paragraph>
+            A piece of information that is relevant to the context the user is
+            currently in. If you like it then you should put{' '}
+            <TextLink> a link</TextLink> in it.
+          </Paragraph>
+        </Note>
+      </Flex>
     </Flex>
-  </Flex>
-);
+  ),
+};

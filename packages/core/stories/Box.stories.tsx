@@ -1,17 +1,8 @@
 import React from 'react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import tokens from '@contentful/f36-tokens';
 import { Text } from '@contentful/f36-typography';
-import { Box, BoxInternalProps } from '../src/Box/Box';
-
-const styles = {
-  demoBox: {
-    backgroundColor: tokens.gray800,
-    width: '150px',
-    height: '80px',
-    color: tokens.colorWhite,
-  },
-};
+import { Box } from '../src/Box/Box';
 
 export default {
   title: 'Layout/Box',
@@ -27,6 +18,17 @@ export default {
     exampleBoxesNumber: {
       control: { type: 'number', min: 1, max: 20, step: 1 },
     },
+  },
+} as Meta<typeof Box>;
+
+type Story = StoryObj<typeof Box>;
+
+const styles = {
+  demoBox: {
+    backgroundColor: tokens.gray800,
+    width: '150px',
+    height: '80px',
+    color: tokens.colorWhite,
   },
 };
 
@@ -49,17 +51,14 @@ const DemoBox = ({ times }: { times?: number }) => {
   );
 };
 
-interface Args extends BoxInternalProps {
-  exampleBoxesNumber: number;
-}
-
-export const Basic = ({ exampleBoxesNumber, ...args }: Args) => (
-  <Box as="article" {...args}>
-    <DemoBox times={exampleBoxesNumber} />
-  </Box>
-);
-
-Basic.args = {
-  exampleBoxesNumber: 4,
-  margin: 'spacing4Xl',
+export const Basic: Story = {
+  args: {
+    exampleBoxesNumber: 4,
+    margin: 'spacing4Xl',
+  },
+  render: ({ exampleBoxesNumber, ...args }) => (
+    <Box as="article" {...args}>
+      <DemoBox times={exampleBoxesNumber} />
+    </Box>
+  ),
 };

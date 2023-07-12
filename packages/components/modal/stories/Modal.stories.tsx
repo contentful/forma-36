@@ -1,179 +1,103 @@
-import React, { useState, MouseEventHandler, useRef } from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
-import { Button } from '@contentful/f36-button';
-import { Badge } from '@contentful/f36-badge';
+import React, { useState, useEffect, useCallback } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Paragraph } from '@contentful/f36-typography';
 
-import { type ModalProps } from '../src/Modal';
+import { ModalLauncher } from '../src/ModalLauncher/ModalLauncher';
+import { Button } from '@contentful/f36-button';
 import { Modal } from '../src';
 
-function fillArray(value: string, len: number) {
-  if (len === 0) return [];
-  let a = [value];
-  while (a.length * 2 <= len) a = a.concat(a);
-  if (a.length < len) a = a.concat(a.slice(0, len - a.length));
-  return a;
-}
-
+// @ts-expect-error don't complain about ModalLauncher being not a React component
 export default {
-  title: 'Components/Modal',
-  component: Modal,
-  parameters: {
-    propTypes: [Modal['__docgenInfo']],
-  },
-  decorators: [
-    // eslint-disable-next-line react/display-name
-    (storyFn) => (
-      <div style={{ width: '1200px', height: '800px' }}>{storyFn()}</div>
-    ),
-  ],
-  argTypes: {
-    children: { control: { disable: true } },
-    className: { control: { disable: true } },
-    testId: { control: { disable: true } },
-    position: { control: { type: 'select', options: ['center', 'top'] } },
-    size: {
-      control: {
-        type: 'select',
-        options: [
-          'small',
-          'medium',
-          'large',
-          'fullWidth',
-          'fullscreen',
-          'zen',
-          '200px',
-          '1500px',
-        ],
-      },
-    },
-  },
-} as Meta;
+  title: 'Utilities/ModalLauncher',
+  component: ModalLauncher,
+} as Meta<typeof ModalLauncher>;
 
-export const Basic: Story<ModalProps> = (props) => {
-  const [isShown, setShown] = useState(true);
+type Story = StoryObj<typeof ModalLauncher>;
 
-  return (
-    <div>
-      <Button onClick={() => setShown(true)}>Open modal</Button>
-      <Modal
-        {...props}
-        modalHeaderProps={{
-          className: 'additional-modal-header-class',
-        }}
-        modalContentProps={{
-          className: 'additional-modal-content-class',
-        }}
-        isShown={isShown}
-        onClose={() => setShown(false)}
-      >
-        Modal content. It is centered by default.
-      </Modal>
-    </div>
-  );
-};
+export const Basic: Story = {
+  render: () => {
+    const [hiddenText, setHiddenText] = useState('');
 
-Basic.args = {
-  title: 'Default modal',
-  subtitle: 'Subtitle',
-};
-
-export const LongModal: Story<ModalProps> = (props) => {
-  const [isShown, setShown] = useState(true);
-
-  return (
-    <div>
-      <Button onClick={() => setShown(true)}>
-        Different behaviors for modal
-      </Button>
-      <Modal {...props} isShown={isShown} onClose={() => setShown(false)}>
-        <div style={{ marginBottom: 10 }}>
-          Toggle <code>allowHeightOverflow</code> to see different behaviours
-        </div>
-        {fillArray('', 1000).map((item, index) => (
-          // eslint-disable-next-line
-          <div key={index}>Line #{index}</div>
-        ))}
-      </Modal>
-    </div>
-  );
-};
-
-LongModal.args = {
-  title: 'A really long modal',
-  allowHeightOverflow: false,
-};
-
-export const ControllerModal: Story<ModalProps> = (props) => {
-  const [isShown, setShown] = useState(true);
-  const confirmRef = useRef(null);
-
-  return (
-    <div>
-      <Button onClick={() => setShown(true)}>Show centered modal</Button>
-      <Modal
-        {...props}
-        isShown={isShown}
-        onClose={() => setShown(false)}
-        initialFocusRef={confirmRef}
-      >
-        {({
-          title,
-          onClose,
-        }: {
-          title: string;
-          onClose: MouseEventHandler;
-        }) => (
-          <React.Fragment>
-            <Modal.Header title={title} onClose={onClose} />
-            <Modal.Content>Hello from controlled modal window</Modal.Content>
-            <Modal.Controls>
-              <Button size="small" onClick={onClose} variant="secondary">
-                Close
-              </Button>
-              <Button
-                size="small"
-                onClick={onClose}
-                variant="positive"
-                ref={confirmRef}
+    return (
+      <React.Fragment>
+        <Button
+          onClick={() => {
+            ModalLauncher.open<string>(({ isShown, onClose }) => (
+              <Modal
+                title="Reveal hidden text"
+                isShown={isShown}
+                onClose={() => onClose(hiddenText)}
               >
-                Confirm
-              </Button>
-            </Modal.Controls>
-          </React.Fragment>
-        )}
-      </Modal>
-    </div>
-  );
+                {() => (
+                  <React.Fragment>
+                    <Modal.Header title="Reveal hidden text" />
+                    <Modal.Content>
+                      Are you want to reveal the hidden text?
+                    </Modal.Content>
+                    <Modal.Controls>
+                      <Button variant="secondary" onClick={() => onClose('')}>
+                        Hide text
+                      </Button>
+                      <Button
+                        variant="positive"
+                        onClick={() => {
+                          onClose('The text is revealed!');
+                        }}
+                      >
+                        Show text
+                      </Button>
+                    </Modal.Controls>
+                  </React.Fragment>
+                )}
+              </Modal>
+            )).then((text) => {
+              setHiddenText(text);
+            });
+          }}
+        >
+          Trigger ModalLauncher
+        </Button>
+        {hiddenText.length > 0 && <Paragraph>{hiddenText}</Paragraph>}
+      </React.Fragment>
+    );
+  },
 };
 
-ControllerModal.args = {
-  title: 'Centered modal',
-};
-
-export const ModalWithChildComponentInHeader: Story<ModalProps> = (props) => {
-  const [isShown, setShown] = useState(true);
-
-  return (
-    <div>
-      <Button onClick={() => setShown(true)}>Open modal</Button>
-      <Modal
-        {...props}
-        isShown={isShown}
-        onClose={() => setShown(false)}
-        size="fullWidth"
-      >
-        {() => (
-          <>
-            <Modal.Header
-              title="With Child Component"
-              onClose={() => setShown(false)}
+export const CloseAllStory = {
+  render: () => {
+    const openModal = useCallback((content) => {
+      ModalLauncher.open(({ isShown, onClose }) => (
+        <Modal title={content} isShown={isShown} onClose={() => onClose()}>
+          <Modal.Content>{content}</Modal.Content>
+          <Modal.Controls>
+            <Button variant="primary" onClick={() => openModal(`New modal`)}>
+              Open modal
+            </Button>
+            <Button
+              variant="secondary"
+              onClick={() => {
+                onClose();
+              }}
             >
-              <Badge>Child Component</Badge>
-            </Modal.Header>
-            <Modal.Content>Modal content</Modal.Content>
-          </>
-        )}
-      </Modal>
-    </div>
-  );
+              Close one modal
+            </Button>
+            <Button variant="secondary" onClick={ModalLauncher.closeAll}>
+              Close all
+            </Button>
+          </Modal.Controls>
+        </Modal>
+      ));
+    }, []);
+
+    useEffect(() => {
+      openModal(`Modal one`);
+      return ModalLauncher.closeAll;
+    }, [openModal]);
+
+    return (
+      <React.Fragment>
+        <Button onClick={() => openModal(`New modal`)}>Open modal</Button>
+      </React.Fragment>
+    );
+  },
 };

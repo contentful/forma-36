@@ -1,7 +1,6 @@
 import React from 'react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { Skeleton } from '../src/index';
-import type { SkeletonBodyTextProps } from '../src/SkeletonBodyText/SkeletonBodyText';
 
 export default {
   title: 'Components/Skeleton/SkeletonBodyText',
@@ -9,18 +8,21 @@ export default {
   parameters: {
     propTypes: [Skeleton.Text['__docgenInfo']],
   },
-};
+} as Meta<typeof Skeleton.Text>;
 
-export const Basic = (args: SkeletonBodyTextProps) => (
-  <Skeleton.Container>
-    <Skeleton.BodyText {...args} />
-  </Skeleton.Container>
-);
+type Story = StoryObj<typeof Skeleton.Text>;
 
-Basic.args = {
-  numberOfLines: 2,
-  offsetTop: 0,
-  offsetLeft: 0,
-  lineHeight: 16,
-  marginBottom: 8,
+export const Basic: Story = {
+  args: {
+    numberOfLines: 2,
+    offsetTop: 0,
+    offsetLeft: 0,
+    lineHeight: 16,
+    marginBottom: 8,
+  },
+  render: (args) => (
+    <Skeleton.Container>
+      <Skeleton.BodyText {...args} />
+    </Skeleton.Container>
+  ),
 };

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Flex } from '@contentful/f36-core';
 import { Heading, SectionHeading, Text } from '@contentful/f36-typography';
 import { ClockIcon } from '@contentful/f36-icons';
@@ -7,7 +7,7 @@ import { MenuItem } from '@contentful/f36-menu';
 import { Button } from '@contentful/f36-button';
 import { FormControl, TextInput, Textarea, Form } from '@contentful/f36-forms';
 
-import { Card, type CardProps } from '../src';
+import { Card } from '../src';
 
 export default {
   argTypes: {
@@ -29,348 +29,363 @@ export default {
       </Flex>
     ),
   ],
-} as Meta;
+} as Meta<typeof Card>;
 
-export const Default: Story<CardProps> = ({ children, ...args }) => {
-  return (
-    <Card {...args}>
-      <Text>{children}</Text>
-    </Card>
-  );
-};
+type Story = StoryObj<typeof Card>;
 
-Default.args = {
-  children: 'This is the Card’s content',
-};
-
-export const WithFocusableChildren = () => {
-  const [submitted, setSubmit] = useState(false);
-  const onSubmit = () => setSubmit(true);
-
-  return (
-    <Card>
-      <Form onSubmit={() => onSubmit()}>
-        <FormControl>
-          <FormControl.Label>Name</FormControl.Label>
-          <TextInput />
-          <FormControl.HelpText>
-            Please enter your first name
-          </FormControl.HelpText>
-        </FormControl>
-
-        <FormControl>
-          <FormControl.Label>Description</FormControl.Label>
-          <Textarea />
-          <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
-        </FormControl>
-        <Button variant="primary" type="submit" isDisabled={submitted}>
-          {submitted ? 'Submitted' : 'Click me to submit'}
-        </Button>
-      </Form>
-    </Card>
-  );
-};
-
-export const WithOnClick = (args: CardProps) => {
-  const [show, setShow] = useState(false);
-  return (
-    <div>
-      <Card {...args} onClick={() => setShow(!show)}>
-        Click on this card
-        <br />
-        {show && (
-          <span role="img" aria-label="sparkles">
-            ✨✨✨
-          </span>
-        )}
+export const Default: Story = {
+  args: {
+    children: 'This is the Card’s content',
+  },
+  render: ({ children, ...args }) => {
+    return (
+      <Card {...args}>
+        <Text>{children}</Text>
       </Card>
-    </div>
-  );
+    );
+  },
 };
 
-export const SelectableCards: Story<CardProps> = () => {
-  const [taco, setTaco] = useState(false);
-  const [pizza, setPizza] = useState(false);
-  const [broccoli, setBroccoli] = useState(false);
-  return (
-    <div style={{ maxWidth: '280px' }}>
-      <Heading>What is your favorite food?</Heading>
-      <Flex justifyContent="space-between" gap="spacingM">
-        <Card as="button" onClick={() => setTaco(!taco)} isSelected={taco}>
-          <span style={{ fontSize: '3rem' }} role="img" aria-label="taco">
-            🌮
-          </span>
+export const WithFocusableChildren: Story = {
+  render: () => {
+    const [submitted, setSubmit] = useState(false);
+    const onSubmit = () => setSubmit(true);
+
+    return (
+      <Card>
+        <Form onSubmit={() => onSubmit()}>
+          <FormControl>
+            <FormControl.Label>Name</FormControl.Label>
+            <TextInput />
+            <FormControl.HelpText>
+              Please enter your first name
+            </FormControl.HelpText>
+          </FormControl>
+
+          <FormControl>
+            <FormControl.Label>Description</FormControl.Label>
+            <Textarea />
+            <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
+          </FormControl>
+          <Button variant="primary" type="submit" isDisabled={submitted}>
+            {submitted ? 'Submitted' : 'Click me to submit'}
+          </Button>
+        </Form>
+      </Card>
+    );
+  },
+};
+
+export const WithOnClick: Story = {
+  render: (args) => {
+    const [show, setShow] = useState(false);
+    return (
+      <div>
+        <Card {...args} onClick={() => setShow(!show)}>
+          Click on this card
+          <br />
+          {show && (
+            <span role="img" aria-label="sparkles">
+              ✨✨✨
+            </span>
+          )}
         </Card>
-        <Card as="button" onClick={() => setPizza(!pizza)} isSelected={pizza}>
-          <span style={{ fontSize: '3rem' }} role="img" aria-label="pizza">
-            🍕
-          </span>
-        </Card>
-        <Card
-          as="button"
-          onClick={() => setBroccoli(!broccoli)}
-          isSelected={broccoli}
-        >
-          <span style={{ fontSize: '3rem' }} role="img" aria-label="broccoli">
-            🥦
-          </span>
-        </Card>
-      </Flex>
-    </div>
-  );
+      </div>
+    );
+  },
 };
 
-export const WithLinkAndTarget: Story<CardProps<'a'>> = (args) => {
-  return (
-    <Card {...args}>
-      <Text>
-        Forma 36 is an open-source design system by Contentful created with the
-        intent to reduce the overhead of creating UI by providing tools and
-        guidance for digital teams building and extending Contentful products.
-      </Text>
-    </Card>
-  );
-};
-
-WithLinkAndTarget.args = {
-  as: 'a',
-  href: 'https://f36.contentful.com/',
-  target: '_blank',
-  title: 'Forma 36',
-};
-
-export const WithLoadingState: Story<CardProps> = (args) => {
-  return (
-    <Card {...args}>
-      <Text>
-        Forma 36 is an open-source design system by Contentful created with the
-        intent to reduce the overhead of creating UI by providing tools and
-        guidance for digital teams building and extending Contentful products.
-      </Text>
-    </Card>
-  );
-};
-
-WithLoadingState.args = {
-  isLoading: true,
-};
-
-export const Overview: Story<CardProps> = () => {
-  return (
-    <>
-      <SectionHeading as="h3" marginBottom="spacingS">
-        Default
-      </SectionHeading>
-
-      <Flex flexWrap="wrap">
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Idle
-          </SectionHeading>
-
-          <Card icon={<ClockIcon />} title="Forma 36">
-            <Text>
-              Forma 36 is an open-source design system by Contentful created
-              with the intent to reduce the overhead of creating UI by providing
-              tools and guidance for digital teams building and extending
-              Contentful products.
-            </Text>
+export const SelectableCards: Story = {
+  render: () => {
+    const [taco, setTaco] = useState(false);
+    const [pizza, setPizza] = useState(false);
+    const [broccoli, setBroccoli] = useState(false);
+    return (
+      <div style={{ maxWidth: '280px' }}>
+        <Heading>What is your favorite food?</Heading>
+        <Flex justifyContent="space-between" gap="spacingM">
+          <Card as="button" onClick={() => setTaco(!taco)} isSelected={taco}>
+            <span style={{ fontSize: '3rem' }} role="img" aria-label="taco">
+              🌮
+            </span>
           </Card>
-        </Flex>
-
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Hover
-          </SectionHeading>
-
+          <Card as="button" onClick={() => setPizza(!pizza)} isSelected={pizza}>
+            <span style={{ fontSize: '3rem' }} role="img" aria-label="pizza">
+              🍕
+            </span>
+          </Card>
           <Card
-            actions={[
-              <MenuItem key="edit">Edit</MenuItem>,
-              <MenuItem key="download">Download</MenuItem>,
-              <MenuItem key="remove">Remove</MenuItem>,
-            ]}
-            isHovered
-            title="Forma 36"
+            as="button"
+            onClick={() => setBroccoli(!broccoli)}
+            isSelected={broccoli}
           >
-            <Text>
-              Forma 36 is an open-source design system by Contentful created
-              with the intent to reduce the overhead of creating UI by providing
-              tools and guidance for digital teams building and extending
-              Contentful products.
-            </Text>
+            <span style={{ fontSize: '3rem' }} role="img" aria-label="broccoli">
+              🥦
+            </span>
           </Card>
         </Flex>
+      </div>
+    );
+  },
+};
 
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Selected
-          </SectionHeading>
+export const WithLinkAndTarget: Story = {
+  args: {
+    as: 'a',
+    href: 'https://f36.contentful.com/',
+    target: '_blank',
+    title: 'Forma 36',
+  },
+  render: (args) => {
+    return (
+      <Card {...args}>
+        <Text>
+          Forma 36 is an open-source design system by Contentful created with
+          the intent to reduce the overhead of creating UI by providing tools
+          and guidance for digital teams building and extending Contentful
+          products.
+        </Text>
+      </Card>
+    );
+  },
+};
 
-          <Card isSelected title="Forma 36">
-            <Text>
-              Forma 36 is an open-source design system by Contentful created
-              with the intent to reduce the overhead of creating UI by providing
-              tools and guidance for digital teams building and extending
-              Contentful products.
-            </Text>
-          </Card>
-        </Flex>
-      </Flex>
+export const WithLoadingState: Story = {
+  args: {
+    isLoading: true,
+  },
+  render: (args) => {
+    return (
+      <Card {...args}>
+        <Text>
+          Forma 36 is an open-source design system by Contentful created with
+          the intent to reduce the overhead of creating UI by providing tools
+          and guidance for digital teams building and extending Contentful
+          products.
+        </Text>
+      </Card>
+    );
+  },
+};
 
-      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
-        Large padding
-      </SectionHeading>
+export const Overview: Story = {
+  render: () => {
+    return (
+      <>
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Default
+        </SectionHeading>
 
-      <Flex flexWrap="wrap">
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Idle
-          </SectionHeading>
-
-          <Card padding="large" title="Forma 36">
-            <Text>
-              Forma 36 is an open-source design system by Contentful created
-              with the intent to reduce the overhead of creating UI by providing
-              tools and guidance for digital teams building and extending
-              Contentful products.
-            </Text>
-          </Card>
-        </Flex>
-
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Hover
-          </SectionHeading>
-
-          <Card
-            actions={[
-              <MenuItem key="edit">Edit</MenuItem>,
-              <MenuItem key="download">Download</MenuItem>,
-              <MenuItem key="remove">Remove</MenuItem>,
-            ]}
-            isHovered
-            padding="large"
-            title="Forma 36"
+        <Flex flexWrap="wrap">
+          <Flex
+            flexDirection="column"
+            marginBottom="spacingM"
+            marginRight="spacingM"
           >
-            <Text>
-              Forma 36 is an open-source design system by Contentful created
-              with the intent to reduce the overhead of creating UI by providing
-              tools and guidance for digital teams building and extending
-              Contentful products.
-            </Text>
-          </Card>
-        </Flex>
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Idle
+            </SectionHeading>
 
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Selected
-          </SectionHeading>
+            <Card icon={<ClockIcon />} title="Forma 36">
+              <Text>
+                Forma 36 is an open-source design system by Contentful created
+                with the intent to reduce the overhead of creating UI by
+                providing tools and guidance for digital teams building and
+                extending Contentful products.
+              </Text>
+            </Card>
+          </Flex>
 
-          <Card isSelected padding="large" title="Forma 36">
-            <Text>
-              Forma 36 is an open-source design system by Contentful created
-              with the intent to reduce the overhead of creating UI by providing
-              tools and guidance for digital teams building and extending
-              Contentful products.
-            </Text>
-          </Card>
-        </Flex>
-      </Flex>
-      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
-        None Padding
-      </SectionHeading>
-
-      <Flex flexWrap="wrap">
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Idle
-          </SectionHeading>
-
-          <Card padding="none" title="Forma 36">
-            <Text>
-              Forma 36 is an open-source design system by Contentful created
-              with the intent to reduce the overhead of creating UI by providing
-              tools and guidance for digital teams building and extending
-              Contentful products.
-            </Text>
-          </Card>
-        </Flex>
-
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Hover
-          </SectionHeading>
-
-          <Card
-            actions={[
-              <MenuItem key="edit">Edit</MenuItem>,
-              <MenuItem key="download">Download</MenuItem>,
-              <MenuItem key="remove">Remove</MenuItem>,
-            ]}
-            isHovered
-            padding="none"
-            title="Forma 36"
+          <Flex
+            flexDirection="column"
+            marginBottom="spacingM"
+            marginRight="spacingM"
           >
-            <Text>
-              Forma 36 is an open-source design system by Contentful created
-              with the intent to reduce the overhead of creating UI by providing
-              tools and guidance for digital teams building and extending
-              Contentful products.
-            </Text>
-          </Card>
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Hover
+            </SectionHeading>
+
+            <Card
+              actions={[
+                <MenuItem key="edit">Edit</MenuItem>,
+                <MenuItem key="download">Download</MenuItem>,
+                <MenuItem key="remove">Remove</MenuItem>,
+              ]}
+              isHovered
+              title="Forma 36"
+            >
+              <Text>
+                Forma 36 is an open-source design system by Contentful created
+                with the intent to reduce the overhead of creating UI by
+                providing tools and guidance for digital teams building and
+                extending Contentful products.
+              </Text>
+            </Card>
+          </Flex>
+
+          <Flex
+            flexDirection="column"
+            marginBottom="spacingM"
+            marginRight="spacingM"
+          >
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Selected
+            </SectionHeading>
+
+            <Card isSelected title="Forma 36">
+              <Text>
+                Forma 36 is an open-source design system by Contentful created
+                with the intent to reduce the overhead of creating UI by
+                providing tools and guidance for digital teams building and
+                extending Contentful products.
+              </Text>
+            </Card>
+          </Flex>
         </Flex>
 
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Selected
-          </SectionHeading>
+        <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
+          Large padding
+        </SectionHeading>
 
-          <Card isSelected padding="none" title="Forma 36">
-            <Text>
-              Forma 36 is an open-source design system by Contentful created
-              with the intent to reduce the overhead of creating UI by providing
-              tools and guidance for digital teams building and extending
-              Contentful products.
-            </Text>
-          </Card>
+        <Flex flexWrap="wrap">
+          <Flex
+            flexDirection="column"
+            marginBottom="spacingM"
+            marginRight="spacingM"
+          >
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Idle
+            </SectionHeading>
+
+            <Card padding="large" title="Forma 36">
+              <Text>
+                Forma 36 is an open-source design system by Contentful created
+                with the intent to reduce the overhead of creating UI by
+                providing tools and guidance for digital teams building and
+                extending Contentful products.
+              </Text>
+            </Card>
+          </Flex>
+
+          <Flex
+            flexDirection="column"
+            marginBottom="spacingM"
+            marginRight="spacingM"
+          >
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Hover
+            </SectionHeading>
+
+            <Card
+              actions={[
+                <MenuItem key="edit">Edit</MenuItem>,
+                <MenuItem key="download">Download</MenuItem>,
+                <MenuItem key="remove">Remove</MenuItem>,
+              ]}
+              isHovered
+              padding="large"
+              title="Forma 36"
+            >
+              <Text>
+                Forma 36 is an open-source design system by Contentful created
+                with the intent to reduce the overhead of creating UI by
+                providing tools and guidance for digital teams building and
+                extending Contentful products.
+              </Text>
+            </Card>
+          </Flex>
+
+          <Flex
+            flexDirection="column"
+            marginBottom="spacingM"
+            marginRight="spacingM"
+          >
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Selected
+            </SectionHeading>
+
+            <Card isSelected padding="large" title="Forma 36">
+              <Text>
+                Forma 36 is an open-source design system by Contentful created
+                with the intent to reduce the overhead of creating UI by
+                providing tools and guidance for digital teams building and
+                extending Contentful products.
+              </Text>
+            </Card>
+          </Flex>
         </Flex>
-      </Flex>
-    </>
-  );
+        <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
+          None Padding
+        </SectionHeading>
+
+        <Flex flexWrap="wrap">
+          <Flex
+            flexDirection="column"
+            marginBottom="spacingM"
+            marginRight="spacingM"
+          >
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Idle
+            </SectionHeading>
+
+            <Card padding="none" title="Forma 36">
+              <Text>
+                Forma 36 is an open-source design system by Contentful created
+                with the intent to reduce the overhead of creating UI by
+                providing tools and guidance for digital teams building and
+                extending Contentful products.
+              </Text>
+            </Card>
+          </Flex>
+
+          <Flex
+            flexDirection="column"
+            marginBottom="spacingM"
+            marginRight="spacingM"
+          >
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Hover
+            </SectionHeading>
+
+            <Card
+              actions={[
+                <MenuItem key="edit">Edit</MenuItem>,
+                <MenuItem key="download">Download</MenuItem>,
+                <MenuItem key="remove">Remove</MenuItem>,
+              ]}
+              isHovered
+              padding="none"
+              title="Forma 36"
+            >
+              <Text>
+                Forma 36 is an open-source design system by Contentful created
+                with the intent to reduce the overhead of creating UI by
+                providing tools and guidance for digital teams building and
+                extending Contentful products.
+              </Text>
+            </Card>
+          </Flex>
+
+          <Flex
+            flexDirection="column"
+            marginBottom="spacingM"
+            marginRight="spacingM"
+          >
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Selected
+            </SectionHeading>
+
+            <Card isSelected padding="none" title="Forma 36">
+              <Text>
+                Forma 36 is an open-source design system by Contentful created
+                with the intent to reduce the overhead of creating UI by
+                providing tools and guidance for digital teams building and
+                extending Contentful products.
+              </Text>
+            </Card>
+          </Flex>
+        </Flex>
+      </>
+    );
+  },
 };

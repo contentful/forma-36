@@ -1,6 +1,5 @@
-import React from 'react';
-
-import { Text, TextProps } from '../src/Text/Text';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Text } from '../src/Text/Text';
 
 export default {
   title: 'Typography/Text',
@@ -11,10 +10,12 @@ export default {
   argTypes: {
     className: { control: { disable: true } },
   },
-};
+} as Meta<typeof Text>;
 
-export const Basic = (props: TextProps<'span'>) => <Text {...props} />;
+type Story = StoryObj<typeof Text>;
 
-Basic.args = {
-  children: 'Text',
+export const Basic: Story = {
+  args: {
+    children: 'Text',
+  },
 };

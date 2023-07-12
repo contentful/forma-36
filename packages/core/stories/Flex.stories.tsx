@@ -1,17 +1,8 @@
 import React from 'react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import tokens from '@contentful/f36-tokens';
 import { Text } from '@contentful/f36-typography';
-import { Flex, FlexInternalProps } from '../src/Flex/Flex';
-
-const styles = {
-  demoBox: {
-    backgroundColor: tokens.gray800,
-    width: '150px',
-    height: '80px',
-    color: tokens.colorWhite,
-  },
-};
+import { Flex } from '../src/Flex/Flex';
 
 export default {
   title: 'Layout/Flex',
@@ -27,6 +18,17 @@ export default {
     exampleBoxesNumber: {
       control: { type: 'number', min: 1, max: 20, step: 1 },
     },
+  },
+} as Meta<typeof Flex>;
+
+type Story = StoryObj<typeof Flex>;
+
+const styles = {
+  demoBox: {
+    backgroundColor: tokens.gray800,
+    width: '150px',
+    height: '80px',
+    color: tokens.colorWhite,
   },
 };
 
@@ -51,21 +53,18 @@ const DemoBox = ({ times }: { times?: number }) => {
   return <Flex style={styles.demoBox}>Example element</Flex>;
 };
 
-interface Args extends FlexInternalProps {
-  exampleBoxesNumber: number;
-}
-
-export const Basic = ({ exampleBoxesNumber, ...args }: Args) => (
-  <Flex as="article" flexDirection="row" {...args}>
-    <DemoBox times={exampleBoxesNumber} />
-  </Flex>
-);
-
-Basic.args = {
-  exampleBoxesNumber: 4,
-  flexDirection: 'row',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexWrap: 'wrap',
-  margin: 'spacing4Xl',
+export const Basic: Story = {
+  args: {
+    exampleBoxesNumber: 4,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    margin: 'spacing4Xl',
+  },
+  render: ({ exampleBoxesNumber, ...args }: Args) => (
+    <Flex as="article" flexDirection="row" {...args}>
+      <DemoBox times={exampleBoxesNumber} />
+    </Flex>
+  ),
 };

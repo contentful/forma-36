@@ -1,7 +1,6 @@
 import React from 'react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { Skeleton } from '../src/index';
-import type { SkeletonContainerProps } from '../src/SkeletonContainer/SkeletonContainer';
 
 export default {
   title: 'Components/Skeleton/SkeletonContainer',
@@ -12,19 +11,22 @@ export default {
   argTypes: {
     className: { control: { disable: true } },
   },
-};
+} as Meta<typeof Skeleton.Container>;
 
-export const Basic = (args: SkeletonContainerProps) => (
-  <Skeleton.Container {...args}>
-    <Skeleton.DisplayText numberOfLines={1} />
-    <Skeleton.BodyText numberOfLines={3} offsetTop={35} />
-  </Skeleton.Container>
-);
+type Story = StoryObj<typeof Skeleton.Container>;
 
-Basic.args = {
-  width: '100%',
-  height: '100',
-  backgroundColor: '#e5ebed',
-  foregroundColor: '#f7f9fa',
-  speed: 2,
+export const Basic: Story = {
+  args: {
+    width: '100%',
+    height: '100',
+    backgroundColor: '#e5ebed',
+    foregroundColor: '#f7f9fa',
+    speed: 2,
+  },
+  render: (args) => (
+    <Skeleton.Container {...args}>
+      <Skeleton.DisplayText numberOfLines={1} />
+      <Skeleton.BodyText numberOfLines={3} offsetTop={35} />
+    </Skeleton.Container>
+  ),
 };

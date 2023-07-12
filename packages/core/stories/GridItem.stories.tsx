@@ -1,18 +1,7 @@
 import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import tokens from '@contentful/f36-tokens';
-
-import { GridInternalProps } from '../src/Grid/Grid';
-import { GridItemInternalProps } from '../src/Grid/GridItem/GridItem';
 import { Grid } from '../src';
-
-const styles = {
-  demoBox: {
-    backgroundColor: tokens.gray800,
-  },
-  demoBoxDark: {
-    backgroundColor: tokens.colorBlack,
-  },
-};
 
 export default {
   title: 'Layout/Grid/GridItem',
@@ -27,6 +16,17 @@ export default {
     as: { control: { disable: true } },
     style: { control: { disable: true } },
   },
+} as Meta<typeof Grid.Item>;
+
+type Story = StoryObj<typeof Grid.Item>;
+
+const styles = {
+  demoBox: {
+    backgroundColor: tokens.gray800,
+  },
+  demoBoxDark: {
+    backgroundColor: tokens.colorBlack,
+  },
 };
 
 const DemoBox = ({ times, id }: { times?: number; id?: string }) => {
@@ -40,49 +40,38 @@ const DemoBox = ({ times, id }: { times?: number; id?: string }) => {
   return <Grid.Item style={styles.demoBox}></Grid.Item>;
 };
 
-interface GridItemArgs extends GridItemInternalProps {
-  exampleBoxes: number;
-}
-
-interface GridArgs extends GridInternalProps {
-  exampleGridHeight: string;
-}
-
-export const Basic = ({
-  exampleGridHeight,
-  exampleBoxes,
-  ...args
-}: GridArgs & GridItemArgs) => (
-  <Grid
-    columns={args.columns}
-    rows={args.rows}
-    columnGap={args.columnGap}
-    rowGap={args.rowGap}
-    style={{ height: exampleGridHeight }}
-  >
-    <Grid.Item
-      style={styles.demoBoxDark}
-      columnStart={args.columnStart}
-      columnEnd={args.columnEnd}
-      rowStart={args.rowStart}
-      rowEnd={args.rowEnd}
-      area={args.area}
-      order={args.order}
-    />
-    <DemoBox id="gi" times={exampleBoxes} />
-  </Grid>
-);
-
-Basic.args = {
-  exampleBoxes: 23,
-  exampleGridHeight: '90vh',
-  columns: 6,
-  rows: 4,
-  columnGap: 'spacingXs',
-  rowGap: 'spacingXs',
-  columnStart: 1,
-  columnEnd: 3,
-  rowStart: 1,
-  rowEnd: 4,
-  order: 0,
+export const Basic: Story = {
+  args: {
+    exampleBoxes: 23,
+    exampleGridHeight: '90vh',
+    columns: 6,
+    rows: 4,
+    columnGap: 'spacingXs',
+    rowGap: 'spacingXs',
+    columnStart: 1,
+    columnEnd: 3,
+    rowStart: 1,
+    rowEnd: 4,
+    order: 0,
+  },
+  render: ({ exampleGridHeight, exampleBoxes, ...args }) => (
+    <Grid
+      columns={args.columns}
+      rows={args.rows}
+      columnGap={args.columnGap}
+      rowGap={args.rowGap}
+      style={{ height: exampleGridHeight }}
+    >
+      <Grid.Item
+        style={styles.demoBoxDark}
+        columnStart={args.columnStart}
+        columnEnd={args.columnEnd}
+        rowStart={args.rowStart}
+        rowEnd={args.rowEnd}
+        area={args.area}
+        order={args.order}
+      />
+      <DemoBox id="gi" times={exampleBoxes} />
+    </Grid>
+  ),
 };

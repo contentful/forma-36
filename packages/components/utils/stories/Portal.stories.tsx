@@ -1,9 +1,9 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Flex } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
-import { Portal, type PortalProps } from '../src';
+import { Portal } from '../src';
 
 export default {
   title: 'Utilities/Portal',
@@ -15,21 +15,25 @@ export default {
     children: { control: { type: 'text' } },
     container: { control: { disable: true } },
   },
-} as Meta;
+} as Meta<typeof Portal>;
 
-export const Default: Story<PortalProps> = (args) => {
-  return (
-    <Flex>
-      This is a parent element of Portal
-      <Portal {...args}>
-        <Flex
-          style={{
-            backgroundColor: tokens.green300,
-          }}
-        >
-          This is a child of Portal
-        </Flex>
-      </Portal>{' '}
-    </Flex>
-  );
+type Story = StoryObj<typeof Portal>;
+
+export const Default: Story = {
+  render: (args) => {
+    return (
+      <Flex>
+        This is a parent element of Portal
+        <Portal {...args}>
+          <Flex
+            style={{
+              backgroundColor: tokens.green300,
+            }}
+          >
+            This is a child of Portal
+          </Flex>
+        </Portal>
+      </Flex>
+    );
+  },
 };

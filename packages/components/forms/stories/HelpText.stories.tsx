@@ -1,8 +1,6 @@
-import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { HelpText } from '../src';
-import type { HelpTextInternalProps } from '../src/HelpText/HelpText';
 
 export default {
   title: 'Form Elements/HelpText',
@@ -14,12 +12,12 @@ export default {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
   },
-} as Meta;
+} as Meta<typeof HelpText>;
 
-export const Default: Story<HelpTextInternalProps> = (args) => {
-  return <HelpText {...args} />;
-};
+type Story = StoryObj<typeof HelpText>;
 
-Default.args = {
-  children: 'Lorem Ipsum dolor sit amet',
+export const Default: Story = {
+  args: {
+    children: 'Lorem Ipsum dolor sit amet',
+  },
 };

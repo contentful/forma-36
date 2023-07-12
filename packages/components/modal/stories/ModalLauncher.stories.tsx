@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Paragraph } from '@contentful/f36-typography';
 
 import { ModalLauncher } from '../src/ModalLauncher/ModalLauncher';
@@ -10,88 +10,94 @@ import { Modal } from '../src';
 export default {
   title: 'Utilities/ModalLauncher',
   component: ModalLauncher,
-} as Meta;
+} as Meta<typeof ModalLauncher>;
 
-export const Basic: Story = () => {
-  const [hiddenText, setHiddenText] = useState('');
+type Story = StoryObj<typeof ModalLauncher>;
 
-  return (
-    <React.Fragment>
-      <Button
-        onClick={() => {
-          ModalLauncher.open<string>(({ isShown, onClose }) => (
-            <Modal
-              title="Reveal hidden text"
-              isShown={isShown}
-              onClose={() => onClose(hiddenText)}
-            >
-              {() => (
-                <React.Fragment>
-                  <Modal.Header title="Reveal hidden text" />
-                  <Modal.Content>
-                    Are you want to reveal the hidden text?
-                  </Modal.Content>
-                  <Modal.Controls>
-                    <Button variant="secondary" onClick={() => onClose('')}>
-                      Hide text
-                    </Button>
-                    <Button
-                      variant="positive"
-                      onClick={() => {
-                        onClose('The text is revealed!');
-                      }}
-                    >
-                      Show text
-                    </Button>
-                  </Modal.Controls>
-                </React.Fragment>
-              )}
-            </Modal>
-          )).then((text) => {
-            setHiddenText(text);
-          });
-        }}
-      >
-        Trigger ModalLauncher
-      </Button>
-      {hiddenText.length > 0 && <Paragraph>{hiddenText}</Paragraph>}
-    </React.Fragment>
-  );
+export const Basic: Story = {
+  render: () => {
+    const [hiddenText, setHiddenText] = useState('');
+
+    return (
+      <React.Fragment>
+        <Button
+          onClick={() => {
+            ModalLauncher.open<string>(({ isShown, onClose }) => (
+              <Modal
+                title="Reveal hidden text"
+                isShown={isShown}
+                onClose={() => onClose(hiddenText)}
+              >
+                {() => (
+                  <React.Fragment>
+                    <Modal.Header title="Reveal hidden text" />
+                    <Modal.Content>
+                      Are you want to reveal the hidden text?
+                    </Modal.Content>
+                    <Modal.Controls>
+                      <Button variant="secondary" onClick={() => onClose('')}>
+                        Hide text
+                      </Button>
+                      <Button
+                        variant="positive"
+                        onClick={() => {
+                          onClose('The text is revealed!');
+                        }}
+                      >
+                        Show text
+                      </Button>
+                    </Modal.Controls>
+                  </React.Fragment>
+                )}
+              </Modal>
+            )).then((text) => {
+              setHiddenText(text);
+            });
+          }}
+        >
+          Trigger ModalLauncher
+        </Button>
+        {hiddenText.length > 0 && <Paragraph>{hiddenText}</Paragraph>}
+      </React.Fragment>
+    );
+  },
 };
 
-export const CloseAllStory = () => {
-  const openModal = useCallback((content) => {
-    ModalLauncher.open(({ isShown, onClose }) => (
-      <Modal title={content} isShown={isShown} onClose={() => onClose()}>
-        <Modal.Content>{content}</Modal.Content>
-        <Modal.Controls>
-          <Button variant="primary" onClick={() => openModal(`New modal`)}>
-            Open modal
-          </Button>
-          <Button
-            variant="secondary"
-            onClick={() => {
-              onClose();
-            }}
-          >
-            Close one modal
-          </Button>
-          <Button variant="secondary" onClick={ModalLauncher.closeAll}>
-            Close all
-          </Button>
-        </Modal.Controls>
-      </Modal>
-    ));
-  }, []);
+export const CloseAllStory = {
+  render: () => {
+    const openModal = useCallback((content) => {
+      ModalLauncher.open(({ isShown, onClose }) => (
+        <Modal title={content} isShown={isShown} onClose={() => onClose()}>
+          <Modal.Content>{content}</Modal.Content>
+          <Modal.Controls>
+            <Button variant="primary" onClick={() => openModal(`New modal`)}>
+              Open modal
+            </Button>
+            <Button
+              variant="secondary"
+              onClick={() => {
+                onClose();
+              }}
+            >
+              Close one modal
+            </Button>
+            <Button variant="secondary" onClick={ModalLauncher.closeAll}>
+              Close all
+            </Button>
+          </Modal.Controls>
+        </Modal>
+      ));
+    }, []);
 
-  useEffect(() => {
-    openModal(`Modal one`);
-    return ModalLauncher.closeAll;
-  }, [openModal]);
+    useEffect(() => {
+      openModal(`Modal one`);
+      return ModalLauncher.closeAll;
+    }, [openModal]);
 
-  return (
-    <React.Fragment>
-      <Button onClick={() => openModal(`New modal`)}>Open modal</Button>
-    </React.Fragment>
-  );
+    return (
+      <React.Fragment>
+        <Button onClick={() => openModal(`New modal`)}>Open modal</Button>
+      </React.Fragment>
+    );
+  },
 };

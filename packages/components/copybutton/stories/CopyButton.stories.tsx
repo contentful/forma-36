@@ -1,8 +1,7 @@
-import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import { CopyButton, type CopyButtonProps } from '../src/CopyButton';
+import { CopyButton } from '../src/CopyButton';
 
 export default {
   component: CopyButton,
@@ -10,19 +9,19 @@ export default {
     propTypes: CopyButton['__docgenInfo'],
   },
   title: 'Components/Button components/CopyButton',
-} as Meta;
+} as Meta<typeof CopyButton>;
 
-export const Default: Story<CopyButtonProps> = (args) => {
-  return <CopyButton {...args}>CopyButton</CopyButton>;
-};
+type Story = StoryObj<typeof CopyButton>;
 
-Default.args = {
-  value: 'Lorem Ipsum',
-  tooltipCopiedText: 'Copied!',
-  tooltipText: 'Copy to clipboard',
-  onCopy: action('onCopy'),
-  tooltipProps: {
-    placement: 'bottom',
-    usePortal: true,
+export const Default: Story = {
+  args: {
+    value: 'Lorem Ipsum',
+    tooltipCopiedText: 'Copied!',
+    tooltipText: 'Copy to clipboard',
+    onCopy: action('onCopy'),
+    tooltipProps: {
+      placement: 'bottom',
+      usePortal: true,
+    },
   },
 };

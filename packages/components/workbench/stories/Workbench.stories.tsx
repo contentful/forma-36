@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import tokens from '@contentful/f36-tokens';
 import { Flex, Grid } from '@contentful/f36-core';
@@ -38,7 +38,9 @@ export default {
       </div>
     ),
   ],
-} as Meta;
+} as Meta<typeof Workbench>;
+
+type Story = StoryObj<typeof Workbench>;
 
 interface Args {
   ['Header Title']: string;
@@ -46,290 +48,311 @@ interface Args {
   ['Content Type']: WorkbenchContentProps['type'];
 }
 
-export const Basic: Story<Args> = (args) => {
-  return (
-    <Workbench {...args}>
-      <Workbench.Header
-        title={args['Header Title']}
-        description={args['Header Description']}
-        icon={StarIcon}
-      />
-      <Workbench.Content type={args['Content Type']}>
-        <Subheading>Page Content</Subheading>
-        <Paragraph>
-          This is where all the main content of your page goes
-        </Paragraph>
-        <Paragraph>
-          It’s possible to use any combination of Forma 36 Component and HTML
-          element in here
-        </Paragraph>
-        <div style={{ height: '1000px', backgroundColor: tokens.blue400 }} />
-      </Workbench.Content>
-    </Workbench>
-  );
-};
-Basic.args = {
-  ['Header Title']: 'Page title',
-  ['Header Description']: 'Page description',
-  ['Content Type']: 'default',
-};
-
-export const WithAllHeaderFeatures: Story<Args> = (args) => {
-  return (
-    <Workbench {...args}>
-      <Workbench.Header
-        title={args['Header Title']}
-        description={args['Header Description']}
-        icon={StarIcon}
-        onBack={action('back button clicked!')}
-        actions={
-          <Button size="small" onClick={action('Workbench action clicked')}>
-            Action
-          </Button>
-        }
-      />
-      <Workbench.Content type={args['Content Type']}>
-        <Subheading>Page Content</Subheading>
-        <Paragraph>
-          This is where all the main content of your page goes
-        </Paragraph>
-        <Paragraph>
-          It’s possible to use any combination of Forma 36 Component and HTML
-          element in here
-        </Paragraph>
-        <div style={{ height: '1000px', backgroundColor: tokens.blue400 }} />
-      </Workbench.Content>
-    </Workbench>
-  );
-};
-WithAllHeaderFeatures.args = {
-  ['Header Title']: 'Page title',
-  ['Header Description']: 'Page description',
-  ['Content Type']: 'default',
+export const Basic: Story = {
+  args: {
+    ['Header Title']: 'Page title',
+    ['Header Description']: 'Page description',
+    ['Content Type']: 'default',
+  },
+  render: (args) => {
+    return (
+      <Workbench {...args}>
+        <Workbench.Header
+          title={args['Header Title']}
+          description={args['Header Description']}
+          icon={StarIcon}
+        />
+        <Workbench.Content type={args['Content Type']}>
+          <Subheading>Page Content</Subheading>
+          <Paragraph>
+            This is where all the main content of your page goes
+          </Paragraph>
+          <Paragraph>
+            It’s possible to use any combination of Forma 36 Component and HTML
+            element in here
+          </Paragraph>
+          <div style={{ height: '1000px', backgroundColor: tokens.blue400 }} />
+        </Workbench.Content>
+      </Workbench>
+    );
+  },
 };
 
-export const WithLeftSidebar: Story<Args> = (args) => {
-  return (
-    <Workbench {...args}>
-      <Workbench.Header
-        title={args['Header Title']}
-        description={args['Header Description']}
-        icon={StarIcon}
-      />
-      <Workbench.Sidebar position="left">
-        <Subheading>Left Sidebar Content</Subheading>
-        <Paragraph>
-          It’s possible to use any combination of Forma 36 Component and HTML
-          element in here
-        </Paragraph>
-      </Workbench.Sidebar>
-
-      <Workbench.Content type={args['Content Type']}>
-        <Subheading>Page Content</Subheading>
-        <Paragraph>
-          This is where all the main content of your page goes
-        </Paragraph>
-        <Paragraph>
-          It’s possible to use any combination of Forma 36 Component and HTML
-          element in here
-        </Paragraph>
-      </Workbench.Content>
-    </Workbench>
-  );
-};
-WithLeftSidebar.args = {
-  ['Header Title']: 'Page title',
-  ['Header Description']: 'Page description',
-  ['Content Type']: 'default',
-};
-
-export const WithRightSidebar: Story<Args> = (args) => {
-  return (
-    <Workbench {...args}>
-      <Workbench.Header
-        title={args['Header Title']}
-        description={args['Header Description']}
-        icon={StarIcon}
-      />
-      <Workbench.Content type={args['Content Type']}>
-        <Subheading>Page Content</Subheading>
-        <Paragraph>
-          This is where all the main content of your page goes
-        </Paragraph>
-        <Paragraph>
-          It’s possible to use any combination of Forma 36 Component and HTML
-          element in here
-        </Paragraph>
-      </Workbench.Content>
-
-      <Workbench.Sidebar position="right">
-        <Subheading>Left Sidebar Content</Subheading>
-        <Paragraph>
-          It’s possible to use any combination of Forma 36 Component and HTML
-          element in here
-        </Paragraph>
-      </Workbench.Sidebar>
-    </Workbench>
-  );
-};
-WithRightSidebar.args = {
-  ['Header Title']: 'Page title',
-  ['Header Description']: 'Page description',
-  ['Content Type']: 'default',
+export const WithAllHeaderFeatures: Story = {
+  args: {
+    ['Header Title']: 'Page title',
+    ['Header Description']: 'Page description',
+    ['Content Type']: 'default',
+  },
+  render: (args) => {
+    return (
+      <Workbench {...args}>
+        <Workbench.Header
+          title={args['Header Title']}
+          description={args['Header Description']}
+          icon={StarIcon}
+          onBack={action('back button clicked!')}
+          actions={
+            <Button size="small" onClick={action('Workbench action clicked')}>
+              Action
+            </Button>
+          }
+        />
+        <Workbench.Content type={args['Content Type']}>
+          <Subheading>Page Content</Subheading>
+          <Paragraph>
+            This is where all the main content of your page goes
+          </Paragraph>
+          <Paragraph>
+            It’s possible to use any combination of Forma 36 Component and HTML
+            element in here
+          </Paragraph>
+          <div style={{ height: '1000px', backgroundColor: tokens.blue400 }} />
+        </Workbench.Content>
+      </Workbench>
+    );
+  },
 };
 
-export const WithBothSidebars: Story<Args> = (args) => {
-  return (
-    <Workbench {...args}>
-      <Workbench.Header
-        title={args['Header Title']}
-        description={args['Header Description']}
-        icon={StarIcon}
-      />
-      <Workbench.Sidebar position="left">
-        <Subheading>Left Sidebar Content</Subheading>
-        <Paragraph>
-          It’s possible to use any combination of Forma 36 Component and HTML
-          element in here
-        </Paragraph>
-      </Workbench.Sidebar>
+export const WithLeftSidebar: Story = {
+  args: {
+    ['Header Title']: 'Page title',
+    ['Header Description']: 'Page description',
+    ['Content Type']: 'default',
+  },
+  render: (args) => {
+    return (
+      <Workbench {...args}>
+        <Workbench.Header
+          title={args['Header Title']}
+          description={args['Header Description']}
+          icon={StarIcon}
+        />
+        <Workbench.Sidebar position="left">
+          <Subheading>Left Sidebar Content</Subheading>
+          <Paragraph>
+            It’s possible to use any combination of Forma 36 Component and HTML
+            element in here
+          </Paragraph>
+        </Workbench.Sidebar>
 
-      <Workbench.Content type={args['Content Type']}>
-        <Subheading>Page Content</Subheading>
-        <Paragraph>
-          This is where all the main content of your page goes
-        </Paragraph>
-        <Paragraph>
-          It’s possible to use any combination of Forma 36 Component and HTML
-          element in here
-        </Paragraph>
-      </Workbench.Content>
-
-      <Workbench.Sidebar position="right">
-        <Subheading>Right Sidebar Content</Subheading>
-        <Paragraph>
-          It’s possible to use any combination of Forma 36 Component and HTML
-          element in here
-        </Paragraph>
-      </Workbench.Sidebar>
-    </Workbench>
-  );
-};
-WithBothSidebars.args = {
-  ['Header Title']: 'Page title',
-  ['Header Description']: 'Page description',
-  ['Content Type']: 'default',
+        <Workbench.Content type={args['Content Type']}>
+          <Subheading>Page Content</Subheading>
+          <Paragraph>
+            This is where all the main content of your page goes
+          </Paragraph>
+          <Paragraph>
+            It’s possible to use any combination of Forma 36 Component and HTML
+            element in here
+          </Paragraph>
+        </Workbench.Content>
+      </Workbench>
+    );
+  },
 };
 
-export const HeaderOverview = () => {
-  return (
-    <Flex style={{ minWidth: '960px' }} flexDirection="column">
-      <Grid rowGap="spacingL" rows="repeat(2, auto)">
-        <span>
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Minimal Header
-          </SectionHeading>
+export const WithRightSidebar: Story = {
+  args: {
+    ['Header Title']: 'Page title',
+    ['Header Description']: 'Page description',
+    ['Content Type']: 'default',
+  },
+  render: (args) => {
+    return (
+      <Workbench {...args}>
+        <Workbench.Header
+          title={args['Header Title']}
+          description={args['Header Description']}
+          icon={StarIcon}
+        />
+        <Workbench.Content type={args['Content Type']}>
+          <Subheading>Page Content</Subheading>
+          <Paragraph>
+            This is where all the main content of your page goes
+          </Paragraph>
+          <Paragraph>
+            It’s possible to use any combination of Forma 36 Component and HTML
+            element in here
+          </Paragraph>
+        </Workbench.Content>
 
-          <Workbench.Header title="Page title" />
-        </span>
+        <Workbench.Sidebar position="right">
+          <Subheading>Left Sidebar Content</Subheading>
+          <Paragraph>
+            It’s possible to use any combination of Forma 36 Component and HTML
+            element in here
+          </Paragraph>
+        </Workbench.Sidebar>
+      </Workbench>
+    );
+  },
+};
 
-        <span>
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Header with description
-          </SectionHeading>
+export const WithBothSidebars: Story = {
+  args: {
+    ['Header Title']: 'Page title',
+    ['Header Description']: 'Page description',
+    ['Content Type']: 'default',
+  },
+  render: (args) => {
+    return (
+      <Workbench {...args}>
+        <Workbench.Header
+          title={args['Header Title']}
+          description={args['Header Description']}
+          icon={StarIcon}
+        />
+        <Workbench.Sidebar position="left">
+          <Subheading>Left Sidebar Content</Subheading>
+          <Paragraph>
+            It’s possible to use any combination of Forma 36 Component and HTML
+            element in here
+          </Paragraph>
+        </Workbench.Sidebar>
 
-          <Workbench.Header title="Page title" description="Page description" />
-        </span>
+        <Workbench.Content type={args['Content Type']}>
+          <Subheading>Page Content</Subheading>
+          <Paragraph>
+            This is where all the main content of your page goes
+          </Paragraph>
+          <Paragraph>
+            It’s possible to use any combination of Forma 36 Component and HTML
+            element in here
+          </Paragraph>
+        </Workbench.Content>
 
-        <span>
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Header with icon
-          </SectionHeading>
+        <Workbench.Sidebar position="right">
+          <Subheading>Right Sidebar Content</Subheading>
+          <Paragraph>
+            It’s possible to use any combination of Forma 36 Component and HTML
+            element in here
+          </Paragraph>
+        </Workbench.Sidebar>
+      </Workbench>
+    );
+  },
+};
 
-          <Workbench.Header title="Page title" icon={StarIcon} />
-        </span>
+export const HeaderOverview: Story = {
+  render: () => {
+    return (
+      <Flex style={{ minWidth: '960px' }} flexDirection="column">
+        <Grid rowGap="spacingL" rows="repeat(2, auto)">
+          <span>
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Minimal Header
+            </SectionHeading>
 
-        <span>
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Header with back button
-          </SectionHeading>
+            <Workbench.Header title="Page title" />
+          </span>
 
-          <Workbench.Header
-            title="Page title"
-            onBack={action('back button clicked!')}
-          />
-        </span>
+          <span>
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Header with description
+            </SectionHeading>
 
-        <span>
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Header with actions
-          </SectionHeading>
+            <Workbench.Header
+              title="Page title"
+              description="Page description"
+            />
+          </span>
 
-          <Workbench.Header
-            title="Page title"
-            actions={
-              <Button size="small" onClick={action('Workbench action clicked')}>
-                Action
-              </Button>
-            }
-          />
-        </span>
+          <span>
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Header with icon
+            </SectionHeading>
 
-        <span>
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Header with all features
-          </SectionHeading>
+            <Workbench.Header title="Page title" icon={StarIcon} />
+          </span>
 
-          <Workbench.Header
-            title="Page title"
-            description="Page description"
-            icon={StarIcon}
-            onBack={action('back button clicked!')}
-            actions={
-              <Button size="small" onClick={action('Workbench action clicked')}>
-                Action
-              </Button>
-            }
-          />
-        </span>
+          <span>
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Header with back button
+            </SectionHeading>
 
-        <span>
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Header with custom title element
-          </SectionHeading>
+            <Workbench.Header
+              title="Page title"
+              onBack={action('back button clicked!')}
+            />
+          </span>
 
-          <Workbench.Header
-            title={
-              <Flex alignItems="center" gap="spacingXs">
-                <Heading marginBottom="none">Page title</Heading>{' '}
-                <HelpCircleIcon />
-              </Flex>
-            }
-          />
-        </span>
+          <span>
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Header with actions
+            </SectionHeading>
 
-        <span>
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Header with custom description element
-          </SectionHeading>
+            <Workbench.Header
+              title="Page title"
+              actions={
+                <Button
+                  size="small"
+                  onClick={action('Workbench action clicked')}
+                >
+                  Action
+                </Button>
+              }
+            />
+          </span>
 
-          <Workbench.Header
-            title="Page title"
-            description={<HelpCircleIcon variant="muted" />}
-          />
-        </span>
+          <span>
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Header with all features
+            </SectionHeading>
 
-        <span>
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Header with custom icon element
-          </SectionHeading>
+            <Workbench.Header
+              title="Page title"
+              description="Page description"
+              icon={StarIcon}
+              onBack={action('back button clicked!')}
+              actions={
+                <Button
+                  size="small"
+                  onClick={action('Workbench action clicked')}
+                >
+                  Action
+                </Button>
+              }
+            />
+          </span>
 
-          <Workbench.Header
-            icon={<StarIcon size="large" variant="positive" />}
-            title="Page title"
-          />
-        </span>
-      </Grid>
-    </Flex>
-  );
+          <span>
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Header with custom title element
+            </SectionHeading>
+
+            <Workbench.Header
+              title={
+                <Flex alignItems="center" gap="spacingXs">
+                  <Heading marginBottom="none">Page title</Heading>{' '}
+                  <HelpCircleIcon />
+                </Flex>
+              }
+            />
+          </span>
+
+          <span>
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Header with custom description element
+            </SectionHeading>
+
+            <Workbench.Header
+              title="Page title"
+              description={<HelpCircleIcon variant="muted" />}
+            />
+          </span>
+
+          <span>
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Header with custom icon element
+            </SectionHeading>
+
+            <Workbench.Header
+              icon={<StarIcon size="large" variant="positive" />}
+              title="Page title"
+            />
+          </span>
+        </Grid>
+      </Flex>
+    );
+  },
 };

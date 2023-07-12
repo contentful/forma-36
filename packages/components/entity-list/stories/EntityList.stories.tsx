@@ -1,7 +1,7 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { EntityList, type EntityListProps } from '../src';
+import { EntityList } from '../src';
 
 export default {
   title: 'Components/EntityList/EntityList',
@@ -10,55 +10,61 @@ export default {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
   },
-} as Meta;
+} as Meta<typeof EntityList>;
 
-export const Basic: Story<EntityListProps> = () => (
-  <EntityList>
-    <EntityList.Item
-      title="Entry 1"
-      description="Description"
-      contentType="My content type"
-      status="published"
-    />
-    <EntityList.Item
-      title="Entry 2"
-      description="Description"
-      contentType="My content type"
-      status="draft"
-      entityType="Page"
-    />
-    <EntityList.Item
-      title="Entry 3"
-      description="Description"
-      contentType="My content type"
-      status="archived"
-      entityType="Release"
-    />
-  </EntityList>
-);
+type Story = StoryObj<typeof EntityList>;
 
-export const withDragHandle = () => (
-  <EntityList>
-    <EntityList.Item
-      title="Entry 1"
-      description="Description"
-      contentType="My content type"
-      status="published"
-      withDragHandle
-    />
-    <EntityList.Item
-      title="Entry 2"
-      description="Description"
-      contentType="My content type"
-      status="draft"
-      withDragHandle
-    />
-    <EntityList.Item
-      title="Entry 3"
-      description="Description"
-      contentType="My content type"
-      status="archived"
-      withDragHandle
-    />
-  </EntityList>
-);
+export const Basic: Story = {
+  render: () => (
+    <EntityList>
+      <EntityList.Item
+        title="Entry 1"
+        description="Description"
+        contentType="My content type"
+        status="published"
+      />
+      <EntityList.Item
+        title="Entry 2"
+        description="Description"
+        contentType="My content type"
+        status="draft"
+        entityType="Page"
+      />
+      <EntityList.Item
+        title="Entry 3"
+        description="Description"
+        contentType="My content type"
+        status="archived"
+        entityType="Release"
+      />
+    </EntityList>
+  ),
+};
+
+export const withDragHandle: Story = {
+  render: () => (
+    <EntityList>
+      <EntityList.Item
+        title="Entry 1"
+        description="Description"
+        contentType="My content type"
+        status="published"
+        withDragHandle
+      />
+      <EntityList.Item
+        title="Entry 2"
+        description="Description"
+        contentType="My content type"
+        status="draft"
+        withDragHandle
+      />
+      <EntityList.Item
+        title="Entry 3"
+        description="Description"
+        contentType="My content type"
+        status="archived"
+        withDragHandle
+      />
+    </EntityList>
+  ),
+};
