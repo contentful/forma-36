@@ -1,5 +1,22 @@
 # Change Log
 
+## 4.46.0
+
+### Minor Changes
+
+- [#2527](https://github.com/contentful/forma-36/pull/2527) [`460e989f`](https://github.com/contentful/forma-36/commit/460e989f01a9d09c7d2f34fed2f0e56c01be7e12) Thanks [@dependabot](https://github.com/apps/dependabot)! - - Update combobox aria roles
+  - Bump downshift from 6.1.12 to 7.6.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.46.0
+  - @contentful/f36-core@4.46.0
+  - @contentful/f36-forms@4.46.0
+  - @contentful/f36-popover@4.46.0
+  - @contentful/f36-skeleton@4.46.0
+  - @contentful/f36-typography@4.46.0
+
 ## 4.45.0
 
 ### Patch Changes
