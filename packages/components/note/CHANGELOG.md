@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.47.0
+
+### Minor Changes
+
+- [#2532](https://github.com/contentful/forma-36/pull/2532) [`6abb4c68d`](https://github.com/contentful/forma-36/commit/6abb4c68dbe370e18dbd008158fe42c94bca1bcb) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - - feat(note): add 'icon' prop
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.47.0
+  - @contentful/f36-core@4.47.0
+  - @contentful/f36-icon@4.47.0
+  - @contentful/f36-typography@4.47.0
+
 ## 4.46.0
 
 ### Patch Changes
