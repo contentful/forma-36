@@ -1,5 +1,18 @@
 # @contentful/f36-datepicker
 
+## 4.47.1
+
+### Patch Changes
+
+- [#2533](https://github.com/contentful/forma-36/pull/2533) [`d1b3f9689`](https://github.com/contentful/forma-36/commit/d1b3f9689fd1f88f72902616a6b271dd35d1c3ac) Thanks [@denkristoffer](https://github.com/denkristoffer)! - - fix(datepicker): prevent auto scrolling to open popover
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.47.1
+  - @contentful/f36-core@4.47.1
+  - @contentful/f36-forms@4.47.1
+  - @contentful/f36-popover@4.47.1
+  - @contentful/f36-typography@4.47.1
+
 ## 4.47.0
 
 ### Patch Changes

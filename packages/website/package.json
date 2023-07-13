@@ -11,10 +11,10 @@
   "dependencies": {
     "@codesandbox/sandpack-react": "^1.17.0",
     "@contentful/f36-avatar": "^4.0.0-alpha.0",
-    "@contentful/f36-components": "^4.47.0",
+    "@contentful/f36-components": "^4.47.1",
     "@contentful/f36-docs-utils": "^4.0.2",
-    "@contentful/f36-empty-state": "^4.47.0",
-    "@contentful/f36-icon": "^4.47.0",
+    "@contentful/f36-empty-state": "^4.47.1",
+    "@contentful/f36-icon": "^4.47.1",
     "@contentful/f36-icons": "^4.25.0",
     "@contentful/f36-image": "^4.0.0-alpha.0",
     "@contentful/f36-multiselect": "^4.20.11",
