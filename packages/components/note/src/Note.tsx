@@ -56,7 +56,7 @@ export type NoteInternalProps = CommonProps & {
   /**
    * Expects any of the icon components to override the default Note variant icon
    */
-  startIcon?: React.ReactElement;
+  icon?: React.ReactElement;
   /**
    * Callback for handling closing
    */
@@ -77,7 +77,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
       onClose,
       testId = 'cf-ui-note',
       title,
-      startIcon,
+      icon,
       ...otherProps
     } = props;
 
@@ -100,8 +100,8 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
         ref={ref}
         padding="spacingM"
       >
-        {startIcon ? (
-          iconContent(startIcon)
+        {icon ? (
+          iconContent(icon)
         ) : (
           <Icon
             as={icons[variant]}

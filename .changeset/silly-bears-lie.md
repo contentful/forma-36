@@ -2,4 +2,4 @@
 "@contentful/f36-note": minor
 ---
 
-feat(note): add 'startIcon' prop
+feat(note): add 'icon' prop

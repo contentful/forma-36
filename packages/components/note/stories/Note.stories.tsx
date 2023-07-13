@@ -31,7 +31,7 @@ basic.args = {
 
 export const withCustomIcon: Story<any> = ({
   children,
-  startIcon = 'StarIcon',
+  icon = 'StarIcon',
   ...args
 }) => (
   <Flex fullWidth flexDirection="column">
@@ -40,7 +40,7 @@ export const withCustomIcon: Story<any> = ({
     </SectionHeading>
 
     <Flex marginBottom="spacingM">
-      <Note startIcon={startIcon && <Icon as={icons[startIcon]} />} {...args}>
+      <Note icon={icon && <Icon as={icons[icon]} />} {...args}>
         {children}
       </Note>
     </Flex>
@@ -54,7 +54,7 @@ withCustomIcon.args = {
 };
 
 withCustomIcon.argTypes = {
-  startIcon: {
+  icon: {
     control: {
       options: ['', ...Object.keys(icons)],
       type: 'select',
@@ -75,7 +75,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note startIcon={<Icon as={icons.StarIcon} />}>
+      <Note icon={<Icon as={icons.StarIcon} />}>
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
@@ -107,7 +107,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note variant="negative" startIcon={<Icon as={icons.StarIcon} />}>
+      <Note variant="negative" icon={<Icon as={icons.StarIcon} />}>
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
@@ -138,7 +138,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note variant="warning" startIcon={<Icon as={icons.StarIcon} />}>
+      <Note variant="warning" icon={<Icon as={icons.StarIcon} />}>
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
@@ -164,7 +164,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note variant="positive" startIcon={<Icon as={icons.StarIcon} />}>
+      <Note variant="positive" icon={<Icon as={icons.StarIcon} />}>
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
@@ -194,7 +194,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note variant="neutral" startIcon={<Icon as={icons.StarIcon} />}>
+      <Note variant="neutral" icon={<Icon as={icons.StarIcon} />}>
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
