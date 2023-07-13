@@ -85,9 +85,8 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
 
     const iconContent = (icon: React.ReactElement) =>
       React.cloneElement(icon, {
-        size: icon.props.size ?? `${title ? 'medium' : 'small'}`,
-        variant:
-          icon.props.variant ?? `${variant === 'neutral' ? 'muted' : variant}`,
+        size: title ? 'medium' : 'small',
+        variant: variant === 'neutral' ? 'muted' : variant,
       });
 
     return (
