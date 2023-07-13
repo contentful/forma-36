@@ -173,7 +173,7 @@ export function Datepicker(props: DatepickerProps) {
         </DatepickerTrigger>
       </Popover.Trigger>
       <Popover.Content>
-        <FocusLock returnFocus={true}>
+        <FocusLock focusOptions={{ preventScroll: true }} returnFocus={true}>
           <Calendar
             {...otherProps}
             className={styles.calendar}
