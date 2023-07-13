@@ -83,10 +83,13 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
 
     const styles = getNoteStyles();
 
+    const iconSize = title ? 'medium' : 'small';
+    const iconVariant = variant === 'neutral' ? 'muted' : variant;
+
     const iconContent = (icon: React.ReactElement) =>
       React.cloneElement(icon, {
-        size: title ? 'medium' : 'small',
-        variant: variant === 'neutral' ? 'muted' : variant,
+        size: iconSize,
+        variant: iconVariant,
       });
 
     return (
@@ -102,11 +105,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
         {icon ? (
           iconContent(icon)
         ) : (
-          <Icon
-            as={icons[variant]}
-            variant={variant === 'neutral' ? 'muted' : variant}
-            size={title ? 'medium' : 'small'}
-          />
+          <Icon as={icons[variant]} variant={iconVariant} size={iconSize} />
         )}
         <Flex flexDirection="column">
           {title && (
