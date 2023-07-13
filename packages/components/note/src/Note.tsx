@@ -54,6 +54,10 @@ export type NoteInternalProps = CommonProps & {
    */
   withCloseButton?: boolean;
   /**
+   * Expects any of the icon components to override the default Note variant icon
+   */
+  icon?: React.ReactElement;
+  /**
    * Callback for handling closing
    */
   onClose?: React.MouseEventHandler<HTMLButtonElement>;
@@ -73,10 +77,20 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
       onClose,
       testId = 'cf-ui-note',
       title,
+      icon,
       ...otherProps
     } = props;
 
     const styles = getNoteStyles();
+
+    const iconSize = title ? 'medium' : 'small';
+    const iconVariant = variant === 'neutral' ? 'muted' : variant;
+
+    const iconContent = (icon: React.ReactElement) =>
+      React.cloneElement(icon, {
+        size: iconSize,
+        variant: iconVariant,
+      });
 
     return (
       <Grid
@@ -88,11 +102,11 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
         ref={ref}
         padding="spacingM"
       >
-        <Icon
-          as={icons[variant]}
-          variant={variant === 'neutral' ? 'muted' : variant}
-          size={title ? 'medium' : 'small'}
-        />
+        {icon ? (
+          iconContent(icon)
+        ) : (
+          <Icon as={icons[variant]} variant={iconVariant} size={iconSize} />
+        )}
         <Flex flexDirection="column">
           {title && (
             <Heading
