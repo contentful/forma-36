@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 14-07-2023
+
+**F36 Note** `v4.47.0`
+
+- feat(note): add 'icon' prop
+
+**F36 Datepicker** `v4.47.1`
+
+- fix(datepicker): prevent auto scrolling to open popover
+
 ## 13-07-2023
 
 **F36 Autocomplete** `v4.46.0`
