@@ -27,6 +27,10 @@ export const getMultiselectStyles = () => ({
     border: 'none',
     borderRadius: '0px',
     borderBottom: `1px solid ${tokens.gray200}`,
+    '&:focus, &:active, &:active:hover': {
+      boxShadow: 'none',
+      borderBottom: `1px solid ${tokens.gray200}`,
+    },
   }),
   toggleButton: css({
     position: 'absolute',
@@ -55,6 +59,7 @@ export const getMultiselectStyles = () => ({
     margin: tokens.spacingM,
   }),
   selectAll: css({
+    borderBottom: `1px solid ${tokens.gray200}`,
     'label > *': {
       fontWeight: 'bold',
     },
@@ -62,13 +67,20 @@ export const getMultiselectStyles = () => ({
   item: css({
     label: {
       padding: `${tokens.spacingXs} ${tokens.spacingM}`,
+      margin: `0 ${tokens.spacing2Xs}`,
+      width: `calc(100% - 2 * ${tokens.spacing2Xs})`,
       wordBreak: 'break-word',
       whiteSpace: 'break-spaces',
       hyphens: 'auto',
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
+      borderRadius: tokens.borderRadiusMedium,
+      border: 0,
       cursor: 'pointer',
+      fontSize: tokens.fontSizeM,
+      lineHeight: tokens.lineHeightM,
+      fontWeight: tokens.fontWeightNormal,
       '&:focus, &:hover': {
         backgroundColor: tokens.gray100,
       },
