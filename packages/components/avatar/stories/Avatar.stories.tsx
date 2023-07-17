@@ -51,7 +51,7 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar {...args} size="tiny" variant="app" />
       </Flex>
 
-      <SectionHeading as="h4">Colored Borders </SectionHeading>
+      <SectionHeading as="h4">Indicator properties</SectionHeading>
       <Flex
         alignItems="center"
         flexDirection="row"

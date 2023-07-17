@@ -7,7 +7,7 @@ export const getColorVariantStyles = (colorVariant: ColorVariant) => {
   const colorToken = avatarColorVariant[colorVariant];
 
   return {
-    boxShadow: `0px 0px 0px 2px ${tokens[colorToken]} inset`,
+    boxShadow: `0px 0px 0px 2px  ${tokens[colorToken]} inset, 0px 0px 0px 3px  ${tokens.colorWhite} inset`,
   };
 };
 
@@ -68,7 +68,7 @@ export const getAvatarStyles = ({
       },
     ]),
     colorBorder: css({
-      ':after': {
+      '&::after': {
         ...getColorVariantStyles(colorVariant),
       },
     }),
