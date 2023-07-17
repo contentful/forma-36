@@ -8,6 +8,7 @@ export type {
   IconSize,
   IconVariant,
 } from '@contentful/f36-icon';
+export { Appearance as AppearanceIcon } from './Appearance';
 export { Archive as ArchiveIcon } from './Archive';
 export { ArrowBackward as ArrowBackwardIcon } from './ArrowBackward';
 export { ArrowDown as ArrowDownIcon } from './ArrowDown';
