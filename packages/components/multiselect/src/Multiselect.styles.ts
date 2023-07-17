@@ -20,10 +20,16 @@ export const getMultiselectStyles = () => ({
   currentSelectionAddition: css({
     color: tokens.gray600,
   }),
+  searchBar: css({
+    paddingTop: tokens.spacing2Xs,
+    position: 'sticky',
+    top: '0px',
+    zIndex: '10',
+    backgroundColor: tokens.colorWhite,
+  }),
   inputField: css({
+    padding: `6px ${tokens.spacingXs}`,
     paddingRight: tokens.spacingXl,
-    paddingBottom: tokens.spacingXs,
-    paddingLeft: tokens.spacingS,
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     border: 'none',
@@ -48,12 +54,10 @@ export const getMultiselectStyles = () => ({
       overflow: 'auto',
       maxHeight: `${listMaxHeight}px`,
     }),
-  container: css({
-    padding: `${tokens.spacing2Xs} 0`,
-  }),
+  container: css({}),
   list: css({
     listStyle: 'none',
-    padding: `${tokens.spacingXs} 0`,
+    padding: `${tokens.spacing2Xs}`,
     margin: 0,
   }),
   groupTitle: css({
@@ -80,8 +84,7 @@ export const getMultiselectStyles = () => ({
     label: {
       // Magic number to get a height of 32px on the item
       padding: `6px ${tokens.spacingXs}`,
-      margin: `0 ${tokens.spacing2Xs}`,
-      width: `calc(100% - 2 * ${tokens.spacing2Xs})`,
+      width: '100%',
       wordBreak: 'break-word',
       whiteSpace: 'break-spaces',
       hyphens: 'auto',

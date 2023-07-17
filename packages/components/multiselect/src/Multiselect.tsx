@@ -297,7 +297,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         >
           <>
             {hasSearch && (
-              <>
+              <div className={styles.searchBar}>
                 <TextInput
                   aria-label="Search"
                   type="text"
@@ -325,7 +325,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                   isDisabled={!searchValue}
                   size="small"
                 />
-              </>
+              </div>
             )}
             {isLoading && <ListItemLoadingState />}
 
