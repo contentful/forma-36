@@ -287,7 +287,11 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         </Popover.Trigger>
         <Popover.Content
           ref={mergeRefs(listRef, internalListRef)}
-          className={cx(styles.content(listMaxHeight), popoverProps.className)}
+          className={cx(
+            styles.content(listMaxHeight),
+            popoverProps.className,
+            styles.container,
+          )}
           testId="cf-multiselect-container"
           onBlur={() => onBlur?.()}
         >

@@ -22,11 +22,14 @@ export const getMultiselectStyles = () => ({
   }),
   inputField: css({
     paddingRight: tokens.spacingXl,
+    paddingBottom: tokens.spacingXs,
+    paddingLeft: tokens.spacingS,
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     border: 'none',
     borderRadius: '0px',
     borderBottom: `1px solid ${tokens.gray200}`,
+    boxShadow: 'none',
     '&:focus, &:active, &:active:hover': {
       boxShadow: 'none',
       borderBottom: `1px solid ${tokens.gray200}`,
@@ -45,13 +48,17 @@ export const getMultiselectStyles = () => ({
       overflow: 'auto',
       maxHeight: `${listMaxHeight}px`,
     }),
+  container: css({
+    padding: `${tokens.spacing2Xs} 0`,
+  }),
   list: css({
     listStyle: 'none',
     padding: `${tokens.spacingXs} 0`,
     margin: 0,
   }),
   groupTitle: css({
-    padding: `${tokens.spacingXs} ${tokens.spacingM}`,
+    // Magic number to get a height of 32px on the item
+    padding: `6px ${tokens.spacingXs}`,
     lineHeight: tokens.lineHeightM,
   }),
   noMatchesTitle: css({
@@ -60,13 +67,19 @@ export const getMultiselectStyles = () => ({
   }),
   selectAll: css({
     borderBottom: `1px solid ${tokens.gray200}`,
+    marginBottom: tokens.spacing2Xs,
+    paddingBottom: tokens.spacing2Xs,
     'label > *': {
-      fontWeight: 'bold',
+      fontWeight: '500',
     },
+  }),
+  option: css({
+    listStyleType: 'none',
   }),
   item: css({
     label: {
-      padding: `${tokens.spacingXs} ${tokens.spacingM}`,
+      // Magic number to get a height of 32px on the item
+      padding: `6px ${tokens.spacingXs}`,
       margin: `0 ${tokens.spacing2Xs}`,
       width: `calc(100% - 2 * ${tokens.spacing2Xs})`,
       wordBreak: 'break-word',
