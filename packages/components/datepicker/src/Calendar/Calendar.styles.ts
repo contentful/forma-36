@@ -79,6 +79,9 @@ export const getStyles = (): ClassNames => {
     }),
     caption: css({
       position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
       padding: 0,
       textAlign: 'left',
 
