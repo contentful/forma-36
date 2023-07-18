@@ -14,12 +14,15 @@ export const getAvatarGroupStyles = (size: AvatarProps['size']) => {
     avatarStacked: css({
       position: 'relative',
       boxShadow: `0px 0px 0px 2px ${tokens.colorWhite}`,
-      marginLeft: `-${tokens.spacing2Xs}`,
+      '&:not(:first-child)': {
+        marginLeft: `-${tokens.spacing2Xs}`,
+      },
     }),
     moreAvatarsBtn: css({
       cursor: 'pointer',
       backgroundColor: tokens.colorWhite,
       color: tokens.gray600,
+      fontSize: tokens.fontSizeS,
       border: 'none',
       boxShadow: `0px 0px 0px 1px ${tokens.gray200} inset`,
       borderRadius: '99999999em',
