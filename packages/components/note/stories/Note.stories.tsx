@@ -208,5 +208,31 @@ export const overview = () => (
         </Paragraph>
       </Note>
     </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Note premium
+    </SectionHeading>
+
+    <Flex marginBottom="spacingM">
+      <Note variant="premium">
+        A piece of information that is relevant to the context the user is
+        currently in.
+      </Note>
+    </Flex>
+    <Flex marginBottom="spacingM">
+      <Note variant="premium" icon={<Icon as={icons.StarIcon} />}>
+        A piece of information that is relevant to the context the user is
+        currently in.
+      </Note>
+    </Flex>
+    <Flex marginBottom="spacingM">
+      <Note variant="premium" title="Short, yet succinct title" withCloseButton>
+        <Paragraph>
+          A piece of information that is relevant to the context the user is
+          currently in. If you like it then you should put{' '}
+          <TextLink> a link</TextLink> in it.
+        </Paragraph>
+      </Note>
+    </Flex>
   </Flex>
 );
