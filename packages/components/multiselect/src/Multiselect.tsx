@@ -11,6 +11,7 @@ import { Subheading } from '@contentful/f36-typography';
 
 import { getMultiselectStyles } from './Multiselect.styles';
 import { MultiselectOption, MultiselectOptionProps } from './MultiselectOption';
+import FocusLock from 'react-focus-lock';
 
 export interface MultiselectProps extends CommonProps {
   /** Select Options */
@@ -295,7 +296,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
           testId="cf-multiselect-container"
           onBlur={() => onBlur?.()}
         >
-          <>
+          <FocusLock>
             {hasSearch && (
               <div className={styles.searchBar}>
                 <TextInput
@@ -340,7 +341,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                 {noMatchesMessage}
               </Subheading>
             )}
-          </>
+          </FocusLock>
         </Popover.Content>
       </Popover>
     </div>
