@@ -1,5 +1,20 @@
 # Change Log
 
+## 4.47.2
+
+### Patch Changes
+
+- [#2536](https://github.com/contentful/forma-36/pull/2536) [`d39f72564`](https://github.com/contentful/forma-36/commit/d39f72564bb6719711df3db1b1f5a30d1a194f9f) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - - Revert "chore: bump downshift from 6.1.12 to 7.6.0 (#2527)"
+
+- Updated dependencies [[`8f80ae1dd`](https://github.com/contentful/forma-36/commit/8f80ae1dd4cc7958fd638790a36a1d563d64f197)]:
+  - @contentful/f36-icons@4.26.0
+  - @contentful/f36-button@4.47.2
+  - @contentful/f36-core@4.47.2
+  - @contentful/f36-forms@4.47.2
+  - @contentful/f36-popover@4.47.2
+  - @contentful/f36-skeleton@4.47.2
+  - @contentful/f36-typography@4.47.2
+
 ## 4.47.1
 
 ### Patch Changes
