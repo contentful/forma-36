@@ -224,6 +224,7 @@ function _Autocomplete<ItemType>(
     : items.length === 0;
 
   const {
+    getComboboxProps,
     getInputProps,
     getItemProps,
     getMenuProps,
@@ -266,6 +267,7 @@ function _Autocomplete<ItemType>(
     id: _inputId,
     ...inputProps
   } = getInputProps();
+  const comboboxProps = getComboboxProps();
   const toggleProps = getToggleButtonProps();
   const menuProps = getMenuProps();
   let elementStartIndex = 0;
@@ -288,7 +290,7 @@ function _Autocomplete<ItemType>(
         id={menuProps.id}
       >
         <Popover.Trigger>
-          <div className={styles.combobox}>
+          <div {...comboboxProps} className={styles.combobox}>
             <TextInput
               className={styles.inputField}
               {...inputProps}

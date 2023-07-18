@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.26.0
+
+### Minor Changes
+
+- [#2534](https://github.com/contentful/forma-36/pull/2534) [`8f80ae1dd`](https://github.com/contentful/forma-36/commit/8f80ae1dd4cc7958fd638790a36a1d563d64f197) Thanks [@marcolink](https://github.com/marcolink)! - Add appearance icon
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.47.2
+  - @contentful/f36-icon@4.47.2
+
 ## 4.25.0
 
 ### Minor Changes
