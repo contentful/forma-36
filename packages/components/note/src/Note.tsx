@@ -33,7 +33,8 @@ export type NoteVariant =
   | 'positive'
   | 'primary'
   | 'warning'
-  | 'neutral';
+  | 'neutral'
+  | 'premium';
 
 export type NoteInternalProps = CommonProps & {
   /**
