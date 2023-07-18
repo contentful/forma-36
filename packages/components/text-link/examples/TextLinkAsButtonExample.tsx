@@ -63,6 +63,15 @@ export default function TextLinkAsButtonExample() {
           Clear
         </TextLink>
       </div>
+      <TextLink
+        as="button"
+        variant="premium"
+        onClick={() => {
+          alert('accessing premium feature');
+        }}
+      >
+        Upgrade
+      </TextLink>
     </Stack>
   );
 }
