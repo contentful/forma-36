@@ -28,8 +28,7 @@ export const getMultiselectStyles = () => ({
     backgroundColor: tokens.colorWhite,
   }),
   inputField: css({
-    padding: `6px ${tokens.spacingXs}`,
-    paddingRight: tokens.spacingXl,
+    padding: `6px ${tokens.spacingXl} 10px ${tokens.spacingXs}`,
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     border: 'none',
