@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { Flex, type CommonProps } from '@contentful/f36-core';
+import { Stack, type CommonProps } from '@contentful/f36-core';
 import { Menu } from '@contentful/f36-menu';
 import { type AvatarProps } from '../Avatar';
 import { getAvatarGroupStyles } from './AvatarGroup.styles';
@@ -7,6 +7,7 @@ import { getAvatarGroupStyles } from './AvatarGroup.styles';
 import { cx } from 'emotion';
 
 export interface AvatarGroupProps extends CommonProps {
+  maxVisibleChildren?: number;
   size?: 'small' | 'medium';
   variant?: 'stacked' | 'spaced';
   children?:
@@ -20,6 +21,7 @@ function _AvatarGroup(
     size = 'medium',
     variant = 'spaced',
     testId = 'cf-ui-avatar-group',
+    maxVisibleChildren = 3,
     className,
   }: AvatarGroupProps,
   forwardedRef: React.Ref<HTMLDivElement>,
@@ -27,25 +29,35 @@ function _AvatarGroup(
   const styles = getAvatarGroupStyles(size);
 
   const childrenArray = React.Children.toArray(children);
-  const childrenToRenderCount = childrenArray.length > 3 ? 2 : 3;
+  const childrenToRenderCount =
+    childrenArray.length > maxVisibleChildren
+      ? maxVisibleChildren - 1
+      : maxVisibleChildren;
   const childrenToRender = childrenArray.slice(0, childrenToRenderCount);
   const childrenInMenu = childrenArray.slice(childrenToRenderCount);
 
   return (
-    <Flex
+    <Stack
       flexDirection="row"
       testId={testId}
       ref={forwardedRef}
-      className={className}
+      className={cx(className, {
+        [styles.groupStacked]: variant === 'stacked',
+        [styles.groupSpaced]: variant === 'spaced',
+      })}
     >
       {childrenToRender.map((child, index) => {
+        const zIndex = childrenToRender.length - index;
+
         return React.cloneElement(child as React.ReactElement, {
           key: `avatar-rendered-${index}`,
           size: size,
           className: cx((child as React.ReactElement).props.className, {
             [styles.avatarStacked]: variant === 'stacked',
-            [styles.avatarSpaced]: variant === 'spaced',
           }),
+          style: {
+            zIndex,
+          },
         });
       })}
       {childrenInMenu.length > 0 && (
@@ -56,7 +68,6 @@ function _AvatarGroup(
               className={cx(
                 {
                   [styles.avatarStacked]: variant === 'stacked',
-                  [styles.avatarSpaced]: variant === 'spaced',
                 },
                 styles.moreAvatarsBtn,
               )}
@@ -82,7 +93,7 @@ function _AvatarGroup(
           </Menu.List>
         </Menu>
       )}
-    </Flex>
+    </Stack>
   );
 }
 export const AvatarGroup = forwardRef(_AvatarGroup);

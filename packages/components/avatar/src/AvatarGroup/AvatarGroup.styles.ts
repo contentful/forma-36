@@ -1,26 +1,25 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import { type AvatarProps } from '../Avatar/';
 import { convertSizeToPixels } from '../Avatar/Avatar.styles';
 
-export const getAvatarGroupStyles = (size) => {
+export const getAvatarGroupStyles = (size: AvatarProps['size']) => {
   return {
-    avatarSpaced: css({
-      margin: '0 2px',
+    groupSpaced: css({
+      gap: tokens.spacing2Xs,
+    }),
+    groupStacked: css({
+      gap: 0,
     }),
     avatarStacked: css({
-      margin: '0 -2px',
       position: 'relative',
       boxShadow: `0px 0px 0px 2px ${tokens.colorWhite}`,
-      '&:first-child': {
-        zIndex: 2,
-      },
-      ':nth-child(2)': {
-        zIndex: 1,
-      },
+      marginLeft: `-${tokens.spacing2Xs}`,
     }),
     moreAvatarsBtn: css({
       cursor: 'pointer',
       backgroundColor: tokens.colorWhite,
+      color: tokens.gray600,
       border: 'none',
       boxShadow: `0px 0px 0px 1px ${tokens.gray200} inset`,
       borderRadius: '99999999em',

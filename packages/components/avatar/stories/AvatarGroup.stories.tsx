@@ -24,11 +24,24 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar {...args} alt="Dr. Julius Hibbert" variant="user" />
         <Avatar {...args} alt="Prof. Daniel Düsentrieb" variant="user" />
       </AvatarGroup>
+
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Avatar Group spaced with custom visible children
+      </SectionHeading>
+
+      <AvatarGroup maxVisibleChildren={5}>
+        <Avatar {...args} alt="Lisa Simpson" variant="user" />
+        <Avatar {...args} alt="Apu Nahasapeemapetilon" variant="user" />
+        <Avatar {...args} alt="Arnie Pye" variant="user" />
+        <Avatar {...args} alt="Dr. Julius Hibbert" variant="user" />
+        <Avatar {...args} alt="Prof. Daniel Düsentrieb" variant="user" />
+      </AvatarGroup>
+
       <SectionHeading as="h3" marginBottom="spacingS">
         Avatar Group Stacked
       </SectionHeading>
 
-      <AvatarGroup variant="stacked">
+      <AvatarGroup maxVisibleChildren={4} variant="stacked">
         <Avatar {...args} alt="Lisa Simpson" variant="user" />
         <Avatar {...args} alt="Apu Nahasapeemapetilon" variant="user" />
         <Avatar {...args} alt="Arnie Pye" variant="user" />

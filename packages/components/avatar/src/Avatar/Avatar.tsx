@@ -33,6 +33,7 @@ function _Avatar(
     colorVariant,
     isInactive = false,
     icon = null,
+    ...otherProps
   }: AvatarProps,
   forwardedRef: React.Ref<HTMLDivElement>,
 ) {
@@ -40,7 +41,6 @@ function _Avatar(
   const isFallback = Boolean(!isLoading && !src);
   const styles = getAvatarStyles({ isFallback, size, variant, colorVariant });
   const sizePixels = convertSizeToPixels(size);
-
   return (
     <div
       className={cx(styles.root, className, {
@@ -50,6 +50,7 @@ function _Avatar(
       })}
       data-test-id={testId}
       ref={forwardedRef}
+      {...otherProps}
     >
       {isFallback ? (
         <div className={styles.fallback} data-test-id={`${testId}-fallback`} />
