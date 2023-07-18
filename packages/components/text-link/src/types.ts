@@ -4,4 +4,5 @@ export type TextLinkVariant =
   | 'primary'
   | 'secondary'
   | 'muted'
-  | 'white';
+  | 'white'
+  | 'premium';
