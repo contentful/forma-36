@@ -1,5 +1,18 @@
 # @contentful/f36-datepicker
 
+## 4.47.3
+
+### Patch Changes
+
+- [#2542](https://github.com/contentful/forma-36/pull/2542) [`77ad921ee`](https://github.com/contentful/forma-36/commit/77ad921eeef519566412fb33799c06e812344500) Thanks [@bgutsol](https://github.com/bgutsol)! - refactor: internal Calendar caption layout logic
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.47.3
+  - @contentful/f36-core@4.47.3
+  - @contentful/f36-forms@4.47.3
+  - @contentful/f36-popover@4.47.3
+  - @contentful/f36-typography@4.47.3
+
 ## 4.47.2
 
 ### Patch Changes
