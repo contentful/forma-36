@@ -7,8 +7,6 @@ import {
   type DayPickerDefaultProps,
   type DayPickerSingleProps,
 } from 'react-day-picker';
-import { CalendarCaption } from './CalendarCaption';
-import { CalendarCaptionLabel } from './CalendarCaptionLabel';
 
 export type CalendarProps =
   | Omit<DayPickerDefaultProps, 'classNames'>
@@ -23,14 +21,10 @@ export function Calendar(props: CalendarProps) {
 
   return (
     <DayPicker
+      captionLayout="dropdown-buttons"
       {...props}
       weekStartsOn={props.weekStartsOn ?? 1}
       classNames={styles}
-      components={{
-        Caption: CalendarCaption,
-        CaptionLabel: CalendarCaptionLabel,
-        ...props.components,
-      }}
     />
   );
 }
