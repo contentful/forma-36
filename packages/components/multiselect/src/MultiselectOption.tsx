@@ -30,7 +30,7 @@ export const MultiselectOption = ({
   const styles = getMultiselectStyles();
 
   return (
-    <li className={className} {...rest}>
+    <li className={cx(styles.option, className)} {...rest}>
       <Checkbox
         id={itemId}
         value={value}

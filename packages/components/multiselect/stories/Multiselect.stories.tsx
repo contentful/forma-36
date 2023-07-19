@@ -176,7 +176,9 @@ export const WithTitle = () => {
         onSearchValueChange={handleSearchValueChange}
       >
         <>
-          <SectionHeading marginBottom="none"> Fruits </SectionHeading>
+          <SectionHeading marginLeft="spacingXs" marginBottom="none">
+            Fruits
+          </SectionHeading>
           <div>
             <Multiselect.Option
               value=""
@@ -332,11 +334,7 @@ export const WithSelectAll = () => {
         currentSelection={selectedFruits}
       >
         <div>
-          <SectionHeading
-            marginLeft="spacingM"
-            marginBottom="spacingXs"
-            marginTop="spacingS"
-          >
+          <SectionHeading marginLeft="spacingXs" marginBottom="spacingXs">
             Shopping List
           </SectionHeading>
           <Multiselect.SelectAll

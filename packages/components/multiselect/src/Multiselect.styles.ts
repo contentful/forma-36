@@ -20,13 +20,25 @@ export const getMultiselectStyles = () => ({
   currentSelectionAddition: css({
     color: tokens.gray600,
   }),
+  searchBar: css({
+    paddingTop: tokens.spacing2Xs,
+    position: 'sticky',
+    top: '0px',
+    zIndex: '10',
+    backgroundColor: tokens.colorWhite,
+  }),
   inputField: css({
-    paddingRight: tokens.spacingXl,
+    padding: `6px ${tokens.spacingXl} 10px ${tokens.spacingXs}`,
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     border: 'none',
     borderRadius: '0px',
     borderBottom: `1px solid ${tokens.gray200}`,
+    boxShadow: 'none',
+    '&:focus, &:active, &:active:hover': {
+      boxShadow: 'none',
+      borderBottom: `1px solid ${tokens.gray200}`,
+    },
   }),
   toggleButton: css({
     position: 'absolute',
@@ -41,13 +53,15 @@ export const getMultiselectStyles = () => ({
       overflow: 'auto',
       maxHeight: `${listMaxHeight}px`,
     }),
+  container: css({}),
   list: css({
     listStyle: 'none',
-    padding: `${tokens.spacingXs} 0`,
+    padding: `${tokens.spacing2Xs}`,
     margin: 0,
   }),
   groupTitle: css({
-    padding: `${tokens.spacingXs} ${tokens.spacingM}`,
+    // Magic number to get a height of 32px on the item
+    padding: `6px ${tokens.spacingXs}`,
     lineHeight: tokens.lineHeightM,
   }),
   noMatchesTitle: css({
@@ -55,20 +69,33 @@ export const getMultiselectStyles = () => ({
     margin: tokens.spacingM,
   }),
   selectAll: css({
+    borderBottom: `1px solid ${tokens.gray200}`,
+    marginBottom: tokens.spacing2Xs,
+    paddingBottom: tokens.spacing2Xs,
     'label > *': {
-      fontWeight: 'bold',
+      fontWeight: '500',
     },
+  }),
+  option: css({
+    listStyleType: 'none',
   }),
   item: css({
     label: {
-      padding: `${tokens.spacingXs} ${tokens.spacingM}`,
+      // Magic number to get a height of 32px on the item
+      padding: `6px ${tokens.spacingXs}`,
+      width: '100%',
       wordBreak: 'break-word',
       whiteSpace: 'break-spaces',
       hyphens: 'auto',
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
+      borderRadius: tokens.borderRadiusMedium,
+      border: 0,
       cursor: 'pointer',
+      fontSize: tokens.fontSizeM,
+      lineHeight: tokens.lineHeightM,
+      fontWeight: tokens.fontWeightNormal,
       '&:focus, &:hover': {
         backgroundColor: tokens.gray100,
       },
