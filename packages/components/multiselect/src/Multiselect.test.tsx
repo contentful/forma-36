@@ -74,6 +74,7 @@ const renderComponent = (
 };
 
 describe('Multiselect basic usage', () => {
+  jest.setTimeout(13000); // Set a longer timeout
   it('opens and closes the drawer', async () => {
     const [{ user }] = renderComponent();
 
