@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 19-07-2023
+
+**F36 Datepicker** `v4.47.3`
+
+- refactor: internal Calendar caption layout logic
+
 ## 18-07-2023
 
 **F36 Autocomplete** `v4.47.2`
