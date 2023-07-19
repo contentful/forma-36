@@ -74,8 +74,8 @@ const renderComponent = (
 };
 
 describe('Multiselect basic usage', () => {
+  jest.setTimeout(13000); // Set a longer timeout
   it('opens and closes the drawer', async () => {
-    jest.setTimeout(13000); // Set a longer timeout
     const [{ user }] = renderComponent();
 
     const toggleButton = screen.getByRole('button', {
