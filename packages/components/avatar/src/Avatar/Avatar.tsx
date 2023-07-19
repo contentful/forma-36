@@ -16,8 +16,6 @@ export interface AvatarProps extends CommonProps {
   src?: ImageProps['src'];
   variant?: Variant;
   colorVariant?: ColorVariant;
-  isPrimary?: boolean;
-  isInactive?: boolean;
   icon?: React.ReactElement;
 }
 
@@ -31,7 +29,6 @@ function _Avatar(
     testId = 'cf-ui-avatar',
     variant = 'user',
     colorVariant,
-    isInactive = false,
     icon = null,
     ...otherProps
   }: AvatarProps,
@@ -45,7 +42,7 @@ function _Avatar(
     <div
       className={cx(styles.root, className, {
         [styles.imageContainer]: icon !== null,
-        [styles.isInactive]: isInactive,
+        [styles.isInactive]: colorVariant === 'muted',
         [styles.colorBorder]: !!colorVariant,
       })}
       data-test-id={testId}

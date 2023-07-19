@@ -1,5 +1,6 @@
 export type ColorVariant =
   | 'primary'
+  | 'muted'
   | 'green'
   | 'red'
   | 'orange'
