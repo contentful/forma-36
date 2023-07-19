@@ -5,4 +5,5 @@
 '@contentful/f36-text-link': minor
 ---
 
-Add new premium variant to Note, Textlink, Icon. Add new Diamond Icon.
+- Add new premium variant to Note, TextLink, Icon.
+- Add new Diamond Icon, used as default icon for Note with premium variant
