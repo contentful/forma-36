@@ -11,6 +11,7 @@ import { Subheading } from '@contentful/f36-typography';
 
 import { getMultiselectStyles } from './Multiselect.styles';
 import { MultiselectOption, MultiselectOptionProps } from './MultiselectOption';
+import FocusLock from 'react-focus-lock';
 
 export interface MultiselectProps extends CommonProps {
   /** Select Options */
@@ -287,13 +288,17 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         </Popover.Trigger>
         <Popover.Content
           ref={mergeRefs(listRef, internalListRef)}
-          className={cx(styles.content(listMaxHeight), popoverProps.className)}
+          className={cx(
+            styles.content(listMaxHeight),
+            popoverProps.className,
+            styles.container,
+          )}
           testId="cf-multiselect-container"
           onBlur={() => onBlur?.()}
         >
-          <>
+          <FocusLock>
             {hasSearch && (
-              <>
+              <div className={styles.searchBar}>
                 <TextInput
                   aria-label="Search"
                   type="text"
@@ -321,7 +326,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                   isDisabled={!searchValue}
                   size="small"
                 />
-              </>
+              </div>
             )}
             {isLoading && <ListItemLoadingState />}
 
@@ -336,7 +341,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                 {noMatchesMessage}
               </Subheading>
             )}
-          </>
+          </FocusLock>
         </Popover.Content>
       </Popover>
     </div>
