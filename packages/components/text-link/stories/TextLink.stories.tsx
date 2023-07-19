@@ -88,6 +88,7 @@ const textLinkVariants = [
   'secondary',
   'muted',
   'white',
+  'premium',
 ];
 
 export const overview = () => (

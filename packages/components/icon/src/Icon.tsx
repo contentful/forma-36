@@ -29,7 +29,8 @@ export type IconVariant =
   | 'secondary'
   | 'warning'
   | 'muted'
-  | 'white';
+  | 'white'
+  | 'premium';
 
 const sizes: { [key in IconSize]: { [key in 'height' | 'width']: string } } = {
   xlarge: {
@@ -62,6 +63,7 @@ const fills: { [key in IconVariant]: string } = {
   secondary: tokens.gray900,
   warning: tokens.colorWarning,
   white: tokens.colorWhite,
+  premium: tokens.purple500,
 };
 
 export type IconInternalProps = CommonProps & {

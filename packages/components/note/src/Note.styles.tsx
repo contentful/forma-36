@@ -51,6 +51,15 @@ const variantToStyles = (variant: NoteVariant): CSSObject => {
           color: tokens.blue700,
         },
       };
+    case 'premium':
+      return {
+        backgroundColor: tokens.purple100,
+        borderColor: tokens.purple300,
+
+        a: {
+          color: tokens.blue700,
+        },
+      };
     default:
       return {};
   }
