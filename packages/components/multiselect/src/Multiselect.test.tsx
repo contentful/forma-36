@@ -75,7 +75,9 @@ const renderComponent = (
 
 describe('Multiselect basic usage', () => {
   it('opens and closes the drawer', async () => {
-    const [{ user }] = renderComponent();
+    jest.useFakeTimers();
+    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    renderComponent();
 
     const toggleButton = screen.getByRole('button', {
       name: 'Toggle Multiselect',
@@ -84,6 +86,8 @@ describe('Multiselect basic usage', () => {
     expect(screen.queryByRole('list')).toBeInTheDocument();
     await user.click(toggleButton);
     expect(screen.queryByRole('list')).not.toBeInTheDocument();
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('has no a11y issues', async () => {
@@ -228,7 +232,11 @@ describe('Multiselect with search', () => {
   });
 
   it('clears the search value and triggers the callback function', async () => {
-    const [{ user }] = renderComponent({
+    jest.useFakeTimers();
+    const user = userEvent.setup({
+      advanceTimers: jest.advanceTimersByTime,
+    });
+    renderComponent({
       onSearchValueChange: mockOnSearchValueChange,
     });
     await user.click(
@@ -251,6 +259,8 @@ describe('Multiselect with search', () => {
         }),
       }),
     );
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 });
 
