@@ -15,7 +15,7 @@ import {
   ErrorCircleIcon,
   InfoCircleIcon,
   WarningIcon,
-  Diamond,
+  DiamondIcon,
 } from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
 
@@ -27,7 +27,7 @@ const icons = {
   negative: ErrorCircleIcon,
   warning: WarningIcon,
   neutral: InfoCircleIcon,
-  premium: Diamond,
+  premium: DiamondIcon,
 };
 
 export type NoteVariant =
