@@ -34,6 +34,18 @@ describe('AvatarGroup', () => {
     expect(screen.getAllByRole('img')).toHaveLength(2);
     expect(screen.getByText('2')).toBeInTheDocument();
   });
+  it('allows to set visible Avatars programmatically', () => {
+    render(
+      <AvatarGroup maxVisibleChildren={4}>
+        <Avatar alt="Marge Simpson" src={imgUrl} />
+        <Avatar alt="Maggie Simpson" src={imgUrl} />
+        <Avatar alt="Lisa Simpson" src={imgUrl} />
+        <Avatar alt="Homer Simpson" src={imgUrl} />
+      </AvatarGroup>,
+    );
+
+    expect(screen.getAllByRole('img')).toHaveLength(4);
+  });
   it('renders the rest of the avatars in a menu with image and name', async () => {
     const user = UserEvent.setup();
     render(

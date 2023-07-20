@@ -1,6 +1,15 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { type AvatarProps } from './Avatar';
+import { avatarColorVariant, type ColorVariant } from './utils';
+
+export const getColorVariantStyles = (colorVariant: ColorVariant) => {
+  const colorToken = avatarColorVariant[colorVariant];
+
+  return {
+    boxShadow: `0px 0px 0px 2px  ${tokens[colorToken]} inset, 0px 0px 0px 3px  ${tokens.colorWhite} inset`,
+  };
+};
 
 export const convertSizeToPixels = (size: AvatarProps['size']) =>
   ({
@@ -14,10 +23,12 @@ export const getAvatarStyles = ({
   isFallback,
   size,
   variant,
+  colorVariant,
 }: {
   isFallback: boolean;
   size: AvatarProps['size'];
   variant: AvatarProps['variant'];
+  colorVariant?: ColorVariant;
 }) => {
   const borderRadius =
     variant === 'app' ? tokens.borderRadiusSmall : '99999999em';
@@ -56,29 +67,9 @@ export const getAvatarStyles = ({
         },
       },
     ]),
-    rootColorBorder: css({
-      ':nth-child(6n+1)::after': {
-        boxShadow: `0px 0px 0px 2px ${tokens.green400} inset`,
-      },
-      ':nth-child(6n+2)::after': {
-        boxShadow: `0px 0px 0px 2px ${tokens.red400} inset`,
-      },
-      ':nth-child(6n+3)::after': {
-        boxShadow: `0px 0px 0px 2px ${tokens.orange400} inset`,
-      },
-      ':nth-child(6n+4)::after': {
-        boxShadow: `0px 0px 0px 2px ${tokens.yellow400} inset`,
-      },
-      ':nth-child(6n+5)::after': {
-        boxShadow: `0px 0px 0px 2px ${tokens.purple400} inset`,
-      },
-      ':nth-child(6n+6)::after': {
-        boxShadow: `0px 0px 0px 2px ${tokens.gray400} inset`,
-      },
-    }),
-    isPrimaryAvatar: css({
+    colorBorder: css({
       '&::after': {
-        boxShadow: `0px 0px 0px 2px ${tokens.blue400} inset !important`,
+        ...getColorVariantStyles(colorVariant),
       },
     }),
     imageContainer: css({
