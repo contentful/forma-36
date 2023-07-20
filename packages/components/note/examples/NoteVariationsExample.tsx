@@ -9,6 +9,7 @@ export default function NoteVariationsExample() {
       <Note variant="positive">Positive</Note>
       <Note variant="warning">Warning</Note>
       <Note variant="negative">Negative</Note>
+      <Note variant="premium">Premium</Note>
     </Stack>
   );
 }

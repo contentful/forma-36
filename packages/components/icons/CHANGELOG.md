@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.27.0
+
+### Minor Changes
+
+- [#2544](https://github.com/contentful/forma-36/pull/2544) [`98b41ae0c`](https://github.com/contentful/forma-36/commit/98b41ae0ccef054d4c2482c51b60d4a492c95f33) Thanks [@stephanLeece](https://github.com/stephanLeece)! - - Add new premium variant to Note, TextLink, Icon
+  - Add new Diamond Icon, used as default icon for Note with premium variant
+
+### Patch Changes
+
+- Updated dependencies [[`98b41ae0c`](https://github.com/contentful/forma-36/commit/98b41ae0ccef054d4c2482c51b60d4a492c95f33)]:
+  - @contentful/f36-icon@4.48.0
+  - @contentful/f36-core@4.48.0
+
 ## 4.26.0
 
 ### Minor Changes

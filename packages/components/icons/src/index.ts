@@ -55,6 +55,7 @@ export { Download as DownloadIcon } from './Download';
 export { DownloadTrimmed as DownloadTrimmedIcon } from './DownloadTrimmed';
 export { Drag as DragIcon } from './Drag';
 export { DragTrimmed as DragTrimmedIcon } from './DragTrimmed';
+export { Diamond as DiamondIcon } from './Diamond';
 export { Edit as EditIcon } from './Edit';
 export { EditTrimmed as EditTrimmedIcon } from './EditTrimmed';
 export { EmbeddedEntryBlock as EmbeddedEntryBlockIcon } from './EmbeddedEntryBlock';

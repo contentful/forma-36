@@ -47,6 +47,13 @@ const variantToStyles = (variant: TextLinkVariant) => {
           color: tokens.gray100,
         },
       };
+    case 'premium':
+      return {
+        color: tokens.purple600,
+        '&:hover, &:focus': {
+          color: tokens.purple700,
+        },
+      };
     default:
       return { color: tokens.colorWhite };
   }

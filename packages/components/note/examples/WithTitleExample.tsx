@@ -17,6 +17,9 @@ export default function NoteWithTitleExample() {
       <Note title="Negative title" variant="negative">
         Negative
       </Note>
+      <Note title="Premium title" variant="premium">
+        Premium
+      </Note>
     </Stack>
   );
 }
