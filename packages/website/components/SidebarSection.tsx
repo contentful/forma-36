@@ -98,6 +98,16 @@ export function SidebarSection({
   const { currentPage } = useCurrentLocation();
   const { data: session } = useSession();
 
+  // move the deprecated link section to the end of the components list
+  const deprecatedLinkSectionIndex = links.findIndex((link) =>
+    link.title.includes('Deprecated V3 Components'),
+  );
+
+  if (deprecatedLinkSectionIndex !== -1) {
+    const removedElement = links.splice(deprecatedLinkSectionIndex, 1);
+    links.push(removedElement[0]);
+  }
+
   // don't list auth protected sections in the sidebar if the user is not logged in.
   if (isAuthProtected && !session) {
     return null;
