@@ -166,7 +166,7 @@ export const getStaticProps: GetStaticProps<
     sidebarLinks = [
       ...sidebarLinks,
       ...componentSidebarLinks,
-      { title: 'Utils', links: mdxSidebarLinks.utils },
+      { title: 'Utilities', links: mdxSidebarLinks.utils },
       { title: 'Integrations', links: mdxSidebarLinks.integrations },
     ];
   }
