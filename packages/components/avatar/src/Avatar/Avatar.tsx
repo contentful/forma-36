@@ -3,7 +3,7 @@ import { cx } from 'emotion';
 
 import { type CommonProps } from '@contentful/f36-core';
 import { Image, type ImageProps } from '@contentful/f36-image';
-import { Tooltip, TooltipProps } from '@contentful/f36-tooltip';
+import { Tooltip, type TooltipProps } from '@contentful/f36-tooltip';
 
 import { convertSizeToPixels, getAvatarStyles } from './Avatar.styles';
 import type { ColorVariant } from './utils';
