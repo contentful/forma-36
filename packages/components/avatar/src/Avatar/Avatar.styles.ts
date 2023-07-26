@@ -88,8 +88,11 @@ export const getAvatarStyles = ({
         zIndex: 1,
       },
     }),
-    isInactive: css({
-      opacity: 0.5,
+    isMuted: css({
+      backgroundColor: tokens.colorWhite,
+      img: {
+        opacity: 0.5,
+      },
     }),
   };
 };

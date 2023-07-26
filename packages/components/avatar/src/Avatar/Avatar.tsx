@@ -42,7 +42,7 @@ function _Avatar(
     <div
       className={cx(styles.root, className, {
         [styles.imageContainer]: icon !== null,
-        [styles.isInactive]: colorVariant === 'muted',
+        [styles.isMuted]: colorVariant === 'muted',
         [styles.colorBorder]: !!colorVariant,
       })}
       data-test-id={testId}
