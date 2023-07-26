@@ -64,19 +64,19 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar {...args} size="large" colorVariant="green" />
         <Avatar {...args} size="large" variant="app" colorVariant="gray" />
         <Avatar {...args} size="large" variant="app" colorVariant="muted" />
-        <Avatar {...args} size="medium" variant="app" colorVariant="red" />
+        <Avatar {...args} size="medium" variant="app" colorVariant="purple" />
         <Avatar
           {...args}
           size="medium"
-          colorVariant="purple"
+          colorVariant="pink"
           icon={<CheckCircleIcon variant="positive" />}
         />
-        <Avatar {...args} size="small" variant="app" colorVariant="yellow" />
+        <Avatar {...args} size="small" variant="app" colorVariant="lavender" />
         <Avatar
           {...args}
           size="tiny"
           variant="app"
-          colorVariant="green"
+          colorVariant="emerald"
           icon={<CheckCircleIcon variant="positive" />}
         />
       </Flex>
