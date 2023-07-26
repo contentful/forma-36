@@ -80,6 +80,25 @@ export const Overview: Story<AvatarProps> = (args) => {
           icon={<CheckCircleIcon variant="positive" />}
         />
       </Flex>
+
+      <SectionHeading as="h4">Tooltip properties</SectionHeading>
+      <Flex
+        alignItems="center"
+        flexDirection="row"
+        gap="spacingS"
+        marginBottom="spacingM"
+      >
+        <Avatar
+          {...args}
+          size="large"
+          variant="user"
+          colorVariant="gray"
+          tooltipProps={{
+            content: 'Contentful Avatar',
+            placement: 'bottom',
+          }}
+        />
+      </Flex>
     </>
   );
 };
