@@ -26,6 +26,49 @@ export const Overview: Story<AvatarProps> = (args) => {
       </AvatarGroup>
 
       <SectionHeading as="h3" marginBottom="spacingS">
+        Avatar Group spaced with menu and tooltip
+      </SectionHeading>
+
+      <AvatarGroup>
+        <Avatar
+          {...args}
+          alt="Lisa Simpson"
+          variant="user"
+          tooltipProps={{ content: 'Lisa Simpson', placement: 'bottom' }}
+        />
+        <Avatar
+          {...args}
+          alt="Apu Nahasapeemapetilon"
+          variant="user"
+          tooltipProps={{
+            content: 'Apu Nahasapeemapetilon',
+            placement: 'bottom',
+          }}
+        />
+        <Avatar
+          {...args}
+          alt="Arnie Pye"
+          variant="user"
+          tooltipProps={{ content: 'Arnie Pye', placement: 'bottom' }}
+        />
+        <Avatar
+          {...args}
+          alt="Dr. Julius Hibbert"
+          variant="user"
+          tooltipProps={{ content: 'Dr. Julius Hibbert', placement: 'bottom' }}
+        />
+        <Avatar
+          {...args}
+          alt="Prof. Daniel Düsentrieb"
+          variant="user"
+          tooltipProps={{
+            content: 'Prof. Daniel Düsentrieb',
+            placement: 'bottom',
+          }}
+        />
+      </AvatarGroup>
+
+      <SectionHeading as="h3" marginBottom="spacingS">
         Avatar Group spaced with custom visible children
       </SectionHeading>
 
