@@ -58,27 +58,27 @@ export const Overview: Story<AvatarProps> = (args) => {
         gap="spacingS"
         marginBottom="spacingM"
       >
-        <Avatar {...args} size="tiny" colorVariant="primary" />
-        <Avatar {...args} size="small" colorVariant="purple" />
-        <Avatar {...args} size="medium" colorVariant="yellow" />
+        <Avatar
+          {...args}
+          size="large"
+          colorVariant="primary"
+          icon={<CheckCircleIcon variant="positive" />}
+        />
+        <Avatar
+          {...args}
+          variant="app"
+          size="large"
+          colorVariant="primary"
+          icon={<CheckCircleIcon variant="positive" />}
+        />
+        <Avatar {...args} size="large" colorVariant="purple" />
+        <Avatar {...args} size="large" colorVariant="yellow" />
         <Avatar {...args} size="large" colorVariant="green" />
         <Avatar {...args} size="large" variant="app" colorVariant="gray" />
         <Avatar {...args} size="large" variant="app" colorVariant="muted" />
-        <Avatar {...args} size="medium" variant="app" colorVariant="red" />
-        <Avatar
-          {...args}
-          size="medium"
-          colorVariant="purple"
-          icon={<CheckCircleIcon variant="positive" />}
-        />
-        <Avatar {...args} size="small" variant="app" colorVariant="yellow" />
-        <Avatar
-          {...args}
-          size="tiny"
-          variant="app"
-          colorVariant="green"
-          icon={<CheckCircleIcon variant="positive" />}
-        />
+        <Avatar {...args} size="large" colorVariant="pink" variant="app" />
+        <Avatar {...args} size="large" variant="app" colorVariant="lavender" />
+        <Avatar {...args} size="large" variant="app" colorVariant="emerald" />
       </Flex>
     </>
   );
