@@ -35,6 +35,11 @@
       "slug": "/components/globalstyles/"
     },
     {
+      "title": "Header",
+      "slug": "/components/header/",
+      "status": "alpha"
+    },
+    {
       "title": "Icons",
       "slug": "/components/icon/"
     },

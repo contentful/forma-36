@@ -1,0 +1,51 @@
+---
+title: 'Header'
+type: 'layout'
+status: 'alpha'
+slug: /components/header/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/header'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-header--default'
+typescript: ./src/Header.tsx
+---
+
+The Header component exposes a way to build visually consistent hierarchy into apps that look and feel like part of the Contentful UI.
+
+Note that the Header is not meant to be used when building navigation, for this case you will be better served by `Navbar`.
+
+## Import
+
+```jsx static=true
+import { Header } from '@contentful/f36-components';
+// or
+import { Header } from '@contentful/f36-header';
+```
+
+## Examples
+
+### Empty Header with title (variant name)
+
+```jsx file=./examples/WithTitle.tsx
+
+```
+
+### With breadcrumbs & back button
+
+```jsx file=./examples/WithBreadcrumbs.tsx
+
+```
+
+### With actions
+
+```jsx file=./examples/WithActions.tsx
+
+```
+
+### With filters
+
+```jsx file=./examples/WithFilters.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="Header" />

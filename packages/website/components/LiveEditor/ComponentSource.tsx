@@ -14,6 +14,7 @@ import { Multiselect } from '@contentful/f36-multiselect';
 import { NavList } from '@contentful/f36-navlist';
 import * as f36utils from '@contentful/f36-utils';
 import { Avatar, AvatarGroup } from '@contentful/f36-avatar';
+import { Header } from '@contentful/f36-header';
 import { Image } from '@contentful/f36-image';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
@@ -41,6 +42,7 @@ const liveProviderScope = {
   ...f36utils,
   Avatar, // Remove when avatar is added to f36-components
   AvatarGroup, // Remove when avatar is added to f36-components
+  Header, // Remove when added to f36-components
   Image, // Remove when added to f36-components
   Multiselect, // Remove when added to f36-components
   NavList, // Remove when added to f36-components
