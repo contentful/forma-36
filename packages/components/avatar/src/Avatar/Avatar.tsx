@@ -47,7 +47,7 @@ function _Avatar(
   const styles = getAvatarStyles({ isFallback, size, variant, colorVariant });
   const sizePixels = convertSizeToPixels(size);
 
-  const Content = () => (
+  const content = (
     <div
       className={cx(styles.root, className, {
         [styles.imageContainer]: icon !== null,
@@ -73,14 +73,9 @@ function _Avatar(
     </div>
   );
 
-  if (tooltipProps)
-    return (
-      <Tooltip {...tooltipProps}>
-        <Content />
-      </Tooltip>
-    );
+  if (tooltipProps) return <Tooltip {...tooltipProps}>{content}</Tooltip>;
 
-  return <Content />;
+  return content;
 }
 
 export const Avatar = forwardRef(_Avatar);
