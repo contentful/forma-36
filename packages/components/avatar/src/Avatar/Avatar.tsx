@@ -46,6 +46,7 @@ function _Avatar(
   const isFallback = Boolean(!isLoading && !src);
   const styles = getAvatarStyles({ isFallback, size, variant, colorVariant });
   const sizePixels = convertSizeToPixels(size);
+
   const content = (
     <div
       className={cx(styles.root, className, {
