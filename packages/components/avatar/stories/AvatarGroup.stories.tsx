@@ -88,9 +88,13 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar {...args} alt="Lisa Simpson" variant="user" />
         <Avatar
           {...args}
-          alt="Apu Nahasapeemapetilon"
+          alt="Apu N."
           variant="user"
           colorVariant="muted"
+          tooltipProps={{
+            content: 'Apu Nahasapeemapetilon',
+            placement: 'bottom',
+          }}
         />
         <Avatar {...args} alt="Arnie Pye" variant="user" colorVariant="muted" />
         <Avatar
