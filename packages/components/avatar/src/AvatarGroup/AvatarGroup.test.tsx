@@ -46,6 +46,7 @@ describe('AvatarGroup', () => {
 
     expect(screen.getAllByRole('img')).toHaveLength(4);
   });
+
   it('renders the rest of the avatars in a menu with image and name', async () => {
     const user = UserEvent.setup();
     render(
@@ -66,6 +67,50 @@ describe('AvatarGroup', () => {
     expect(screen.getByText('Lisa Simpson')).toBeInTheDocument();
     expect(screen.getAllByRole('menuitem')).toHaveLength(3);
     expect(screen.getAllByRole('img')).toHaveLength(5);
+  });
+
+  it('renders the avatars with tooltip', async () => {
+    const user = UserEvent.setup();
+    render(
+      <AvatarGroup>
+        <Avatar
+          alt="Marge Simpson"
+          src={imgUrl}
+          tooltipProps={{ content: 'Marge Simpson' }}
+        />
+        <Avatar alt="Maggie Simpson" src={imgUrl} />
+        <Avatar alt="Lisa Simpson" src={imgUrl} />
+        <Avatar alt="Homer Simpson" src={imgUrl} />
+        <Avatar alt="Bart Simpson" src={imgUrl} />
+      </AvatarGroup>,
+    );
+
+    // Renders the tooltip for the presented avatars
+    await user.hover(screen.getAllByTestId('cf-ui-avatar')[0]);
+    expect(screen.getByRole('tooltip').textContent).toBe('Marge Simpson');
+  });
+
+  it('renders the avatars with tooltip in dropdown', async () => {
+    const user = UserEvent.setup();
+    render(
+      <AvatarGroup>
+        <Avatar alt="Marge Simpson" src={imgUrl} />
+        <Avatar alt="Maggie Simpson" src={imgUrl} />
+        <Avatar
+          alt="Lisa Simpson"
+          src={imgUrl}
+          tooltipProps={{ content: 'Lisa Simpson' }}
+        />
+        <Avatar alt="Homer Simpson" src={imgUrl} />
+        <Avatar alt="Bart Simpson" src={imgUrl} />
+      </AvatarGroup>,
+    );
+
+    await user.click(screen.getByRole('button', { name: '3' }));
+    // Hover over the 1st avatar in dropdown: 2 visible avatars + button
+    await user.hover(screen.getAllByTestId('cf-ui-avatar')[4]);
+
+    expect(screen.queryByTestId('tooltip')).not.toBeInTheDocument();
   });
 
   it('has no a11y issues', async () => {

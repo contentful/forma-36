@@ -1,19 +1,25 @@
+import tokens from '@contentful/f36-tokens';
+
 export type ColorVariant =
   | 'primary'
   | 'muted'
   | 'green'
-  | 'red'
   | 'orange'
   | 'yellow'
   | 'purple'
+  | 'pink'
+  | 'emerald'
+  | 'lavender'
   | 'gray';
 
-export const avatarColorVariant = {
-  primary: 'blue400',
-  green: 'green400',
-  red: 'red400',
-  orange: 'orange400',
-  yellow: 'yellow500',
-  purple: 'purple400',
-  gray: 'gray400',
+export const avatarColorMap = {
+  primary: tokens.blue500,
+  green: tokens.green400,
+  orange: tokens.orange400,
+  yellow: tokens.yellow500,
+  purple: tokens.purple400,
+  gray: tokens.gray400,
+  pink: '#FF77AE',
+  emerald: '#00B8A2',
+  lavender: '#9095FF',
 };
