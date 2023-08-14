@@ -1,9 +1,9 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
-import { List, type ListProps } from '../src';
+import { List } from '../src';
 
 export default {
   title: 'Components/List',
@@ -21,56 +21,62 @@ export default {
     testId: { control: { disable: true } },
     children: { control: { disable: true } },
   },
-} as Meta;
+} as Meta<typeof List>;
 
-export const Default: Story<ListProps> = (args) => {
-  return (
-    <List {...args}>
-      <List.Item>List Item 1</List.Item>
-      <List.Item>List Item 2</List.Item>
-      <List.Item>
-        <List {...args}>
-          <List.Item>Sublist Item 1</List.Item>
-          <List.Item>Sublist Item 2</List.Item>
-        </List>
-      </List.Item>
-    </List>
-  );
+type Story = StoryObj<typeof List>;
+
+export const Default: Story = {
+  render: (args) => {
+    return (
+      <List {...args}>
+        <List.Item>List Item 1</List.Item>
+        <List.Item>List Item 2</List.Item>
+        <List.Item>
+          <List {...args}>
+            <List.Item>Sublist Item 1</List.Item>
+            <List.Item>Sublist Item 2</List.Item>
+          </List>
+        </List.Item>
+      </List>
+    );
+  },
 };
 
-export const overview = ({ ...args }: ListProps) => (
-  <>
-    <Flex flexDirection="column" marginBottom="spacingM" fullWidth>
-      <SectionHeading marginBottom="spacingS">Unordered List</SectionHeading>
+export const Overview: Story = {
+  render: (args) => (
+    <>
+      <Flex flexDirection="column" marginBottom="spacingM" fullWidth>
+        <SectionHeading marginBottom="spacingS">Unordered List</SectionHeading>
 
-      <Flex>
-        <List {...args} as="ul">
-          <List.Item>List Item 1</List.Item>
-          <List.Item>List Item 2</List.Item>
-          <List.Item>
-            <List {...args} as="ul">
-              <List.Item>Sublist Item 1</List.Item>
-              <List.Item>Sublist Item 2</List.Item>
-            </List>
-          </List.Item>
-        </List>
+        <Flex>
+          <List {...args} as="ul">
+            <List.Item>List Item 1</List.Item>
+            <List.Item>List Item 2</List.Item>
+            <List.Item>
+              <List {...args} as="ul">
+                <List.Item>Sublist Item 1</List.Item>
+                <List.Item>Sublist Item 2</List.Item>
+              </List>
+            </List.Item>
+          </List>
+        </Flex>
       </Flex>
-    </Flex>
-    <Flex flexDirection="column">
-      <SectionHeading marginBottom="spacingS">Ordered List</SectionHeading>
+      <Flex flexDirection="column">
+        <SectionHeading marginBottom="spacingS">Ordered List</SectionHeading>
 
-      <Flex>
-        <List {...args} as="ol">
-          <List.Item>List Item 1</List.Item>
-          <List.Item>List Item 2</List.Item>
-          <List.Item>
-            <List {...args} as="ol">
-              <List.Item>Sublist Item 1</List.Item>
-              <List.Item>Sublist Item 2</List.Item>
-            </List>
-          </List.Item>
-        </List>
+        <Flex>
+          <List {...args} as="ol">
+            <List.Item>List Item 1</List.Item>
+            <List.Item>List Item 2</List.Item>
+            <List.Item>
+              <List {...args} as="ol">
+                <List.Item>Sublist Item 1</List.Item>
+                <List.Item>Sublist Item 2</List.Item>
+              </List>
+            </List.Item>
+          </List>
+        </Flex>
       </Flex>
-    </Flex>
-  </>
-);
+    </>
+  ),
+};

@@ -1,8 +1,6 @@
 import React, { useState, MouseEventHandler, useRef } from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '@contentful/f36-button';
-
-import { type ModalProps } from '../src/Modal';
 import { Modal } from '../src';
 
 function fillArray(value: string, len: number) {
@@ -46,105 +44,110 @@ export default {
       },
     },
   },
-} as Meta;
+} as Meta<typeof Modal>;
 
-export const Basic: Story<ModalProps> = (props) => {
-  const [isShown, setShown] = useState(true);
+type Story = StoryObj<typeof Modal>;
 
-  return (
-    <div>
-      <Button onClick={() => setShown(true)}>Open modal</Button>
-      <Modal
-        {...props}
-        modalHeaderProps={{
-          className: 'additional-modal-header-class',
-        }}
-        modalContentProps={{
-          className: 'additional-modal-content-class',
-        }}
-        isShown={isShown}
-        onClose={() => setShown(false)}
-      >
-        Modal content. It is centered by default.
-      </Modal>
-    </div>
-  );
+export const Basic: Story = {
+  args: {
+    title: 'Default modal',
+    subtitle: 'Subtitle',
+  },
+  render: (props) => {
+    const [isShown, setShown] = useState(true);
+
+    return (
+      <div>
+        <Button onClick={() => setShown(true)}>Open modal</Button>
+        <Modal
+          {...props}
+          modalHeaderProps={{
+            className: 'additional-modal-header-class',
+          }}
+          modalContentProps={{
+            className: 'additional-modal-content-class',
+          }}
+          isShown={isShown}
+          onClose={() => setShown(false)}
+        >
+          Modal content. It is centered by default.
+        </Modal>
+      </div>
+    );
+  },
 };
 
-Basic.args = {
-  title: 'Default modal',
-  subtitle: 'Subtitle',
+export const LongModal: Story = {
+  args: {
+    title: 'A really long modal',
+    allowHeightOverflow: false,
+  },
+  render: (props) => {
+    const [isShown, setShown] = useState(true);
+
+    return (
+      <div>
+        <Button onClick={() => setShown(true)}>
+          Different behaviors for modal
+        </Button>
+        <Modal {...props} isShown={isShown} onClose={() => setShown(false)}>
+          <div style={{ marginBottom: 10 }}>
+            Toggle <code>allowHeightOverflow</code> to see different behaviours
+          </div>
+          {fillArray('', 1000).map((item, index) => (
+            // eslint-disable-next-line
+            <div key={index}>Line #{index}</div>
+          ))}
+        </Modal>
+      </div>
+    );
+  },
 };
 
-export const LongModal: Story<ModalProps> = (props) => {
-  const [isShown, setShown] = useState(true);
+export const ControllerModal: Story = {
+  args: {
+    title: 'Centered modal',
+  },
+  render: (props) => {
+    const [isShown, setShown] = useState(true);
+    const confirmRef = useRef(null);
 
-  return (
-    <div>
-      <Button onClick={() => setShown(true)}>
-        Different behaviors for modal
-      </Button>
-      <Modal {...props} isShown={isShown} onClose={() => setShown(false)}>
-        <div style={{ marginBottom: 10 }}>
-          Toggle <code>allowHeightOverflow</code> to see different behaviours
-        </div>
-        {fillArray('', 1000).map((item, index) => (
-          // eslint-disable-next-line
-          <div key={index}>Line #{index}</div>
-        ))}
-      </Modal>
-    </div>
-  );
-};
-
-LongModal.args = {
-  title: 'A really long modal',
-  allowHeightOverflow: false,
-};
-
-export const ControllerModal: Story<ModalProps> = (props) => {
-  const [isShown, setShown] = useState(true);
-  const confirmRef = useRef(null);
-
-  return (
-    <div>
-      <Button onClick={() => setShown(true)}>Show centered modal</Button>
-      <Modal
-        {...props}
-        isShown={isShown}
-        onClose={() => setShown(false)}
-        initialFocusRef={confirmRef}
-      >
-        {({
-          title,
-          onClose,
-        }: {
-          title: string;
-          onClose: MouseEventHandler;
-        }) => (
-          <React.Fragment>
-            <Modal.Header title={title} onClose={onClose} />
-            <Modal.Content>Hello from controlled modal window</Modal.Content>
-            <Modal.Controls>
-              <Button size="small" onClick={onClose} variant="secondary">
-                Close
-              </Button>
-              <Button
-                size="small"
-                onClick={onClose}
-                variant="positive"
-                ref={confirmRef}
-              >
-                Confirm
-              </Button>
-            </Modal.Controls>
-          </React.Fragment>
-        )}
-      </Modal>
-    </div>
-  );
-};
-
-ControllerModal.args = {
-  title: 'Centered modal',
+    return (
+      <div>
+        <Button onClick={() => setShown(true)}>Show centered modal</Button>
+        <Modal
+          {...props}
+          isShown={isShown}
+          onClose={() => setShown(false)}
+          initialFocusRef={confirmRef}
+        >
+          {({
+            title,
+            onClose,
+          }: {
+            title: string;
+            onClose: MouseEventHandler;
+          }) => (
+            <React.Fragment>
+              <Modal.Header title={title} onClose={onClose} />
+              <Modal.Content>Hello from controlled modal window</Modal.Content>
+              <Modal.Controls>
+                <Button size="small" onClick={onClose} variant="secondary">
+                  Close
+                </Button>
+                <Button
+                  size="small"
+                  onClick={onClose}
+                  variant="positive"
+                  ref={confirmRef}
+                >
+                  Confirm
+                </Button>
+              </Modal.Controls>
+            </React.Fragment>
+          )}
+        </Modal>
+      </div>
+    );
+  },
 };

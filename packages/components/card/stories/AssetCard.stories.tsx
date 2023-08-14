@@ -1,12 +1,12 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Flex, Box } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
 import * as icons from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
 
-import { AssetCard, type AssetCardProps } from '../src';
+import { AssetCard } from '../src';
 
 export default {
   argTypes: {
@@ -29,252 +29,257 @@ export default {
     propTypes: AssetCard['__docgenInfo'],
   },
   title: 'Components/Card/AssetCard',
-} as Meta;
+} as Meta<typeof AssetCard>;
 
-// Cast the icon value to string, maybe there's a Storybook way to do this
-type Args = AssetCardProps & { icon?: string };
-
-export const Default: Story<Args> = (args) => {
-  return <AssetCard {...args} icon={<Icon as={icons[args.icon]} />} />;
-};
-
-Default.args = {
-  status: 'published',
-  type: 'image',
-  src: 'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300',
-  title: 'Asset title',
-};
+type Story = StoryObj<typeof AssetCard>;
 
 const actions: React.ReactNodeArray = [
   <MenuItem key="copy">Copy</MenuItem>,
   <MenuItem key="delete">Delete</MenuItem>,
 ];
 
-export const WithLoadingState: Story<Args> = (args) => {
-  return <AssetCard {...args} icon={<Icon as={icons[args.icon]} />} />;
+export const Default: Story = {
+  args: {
+    status: 'published',
+    type: 'image',
+    src: 'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300',
+    title: 'Asset title',
+  },
+  render: (args) => {
+    return <AssetCard {...args} icon={<Icon as={icons[args.icon]} />} />;
+  },
 };
 
-WithLoadingState.args = {
-  isLoading: true,
+export const WithLoadingState: Story = {
+  args: {
+    isLoading: true,
+  },
+  render: (args) => {
+    return <AssetCard {...args} icon={<Icon as={icons[args.icon]} />} />;
+  },
 };
 
-export const Overview: Story<Args> = () => {
-  return (
-    <>
-      <SectionHeading as="h3" marginBottom="spacingS">
-        Default
-      </SectionHeading>
+export const Overview: Story = {
+  render: () => {
+    return (
+      <>
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Default
+        </SectionHeading>
 
-      <Flex flexWrap="wrap">
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Default
-          </SectionHeading>
+        <Flex flexWrap="wrap">
+          <Flex flexDirection="column" marginRight="spacingM">
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Default
+            </SectionHeading>
 
-          <AssetCard
-            icon={<Icon as={icons.ClockIcon} />}
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
-            title="Asset title"
-            type="image"
-          />
+            <AssetCard
+              icon={<Icon as={icons.ClockIcon} />}
+              src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+              title="Asset title"
+              type="image"
+            />
+          </Flex>
+
+          <Flex flexDirection="column" marginRight="spacingM">
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Hover
+            </SectionHeading>
+
+            <AssetCard
+              actions={actions}
+              isHovered
+              src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+              title="Asset title"
+              type="image"
+            />
+          </Flex>
+
+          <Flex flexDirection="column" marginRight="spacingM">
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Selected
+            </SectionHeading>
+
+            <AssetCard
+              isSelected
+              src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+              title="Asset title"
+              type="image"
+            />
+          </Flex>
         </Flex>
 
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Hover
-          </SectionHeading>
+        <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
+          Small
+        </SectionHeading>
 
-          <AssetCard
-            actions={actions}
-            isHovered
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
-            title="Asset title"
-            type="image"
-          />
+        <Flex flexWrap="wrap">
+          <Flex flexDirection="column" marginRight="spacingM">
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Default
+            </SectionHeading>
+
+            <AssetCard
+              icon={<Icon as={icons.ClockIcon} />}
+              size="small"
+              src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+              title="Asset title"
+              type="image"
+            />
+          </Flex>
+
+          <Flex flexDirection="column" marginRight="spacingM">
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Hover
+            </SectionHeading>
+
+            <AssetCard
+              actions={actions}
+              isHovered
+              size="small"
+              src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+              title="Asset title"
+              type="image"
+            />
+          </Flex>
+
+          <Flex flexDirection="column" marginRight="spacingM">
+            <SectionHeading as="h3" marginBottom="spacingS">
+              Selected
+            </SectionHeading>
+
+            <AssetCard
+              isSelected
+              size="small"
+              src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+              title="Asset title"
+              type="image"
+            />
+          </Flex>
         </Flex>
-
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Selected
-          </SectionHeading>
-
-          <AssetCard
-            isSelected
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
-      </Flex>
-
-      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
-        Small
-      </SectionHeading>
-
-      <Flex flexWrap="wrap">
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Default
-          </SectionHeading>
-
-          <AssetCard
-            icon={<Icon as={icons.ClockIcon} />}
-            size="small"
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
-
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Hover
-          </SectionHeading>
-
-          <AssetCard
-            actions={actions}
-            isHovered
-            size="small"
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
-
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Selected
-          </SectionHeading>
-
-          <AssetCard
-            isSelected
-            size="small"
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
-      </Flex>
-    </>
-  );
+      </>
+    );
+  },
 };
 
-export const DifferentImageSizes: Story<Args> = () => {
-  return (
-    <>
-      <SectionHeading as="h3" marginBottom="spacingS">
-        Default
-      </SectionHeading>
+export const DifferentImageSizes: Story = {
+  render: () => {
+    return (
+      <>
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Default
+        </SectionHeading>
 
-      <Flex flexWrap="wrap">
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            200x300
-          </SectionHeading>
+        <Flex flexWrap="wrap">
+          <Flex flexDirection="column" marginRight="spacingM">
+            <SectionHeading as="h3" marginBottom="spacingS">
+              200x300
+            </SectionHeading>
 
-          <AssetCard
-            icon={<Icon as={icons.ClockIcon} />}
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
-            title="Asset title"
-            type="image"
-          />
+            <AssetCard
+              icon={<Icon as={icons.ClockIcon} />}
+              src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+              title="Asset title"
+              type="image"
+            />
+          </Flex>
+
+          <Flex flexDirection="column" marginRight="spacingM">
+            <SectionHeading as="h3" marginBottom="spacingS">
+              200x600
+            </SectionHeading>
+
+            <AssetCard
+              icon={<Icon as={icons.ClockIcon} />}
+              src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=600"
+              title="Asset title"
+              type="image"
+            />
+          </Flex>
+
+          <Flex flexDirection="column" marginRight="spacingM">
+            <SectionHeading as="h3" marginBottom="spacingS">
+              800x200
+            </SectionHeading>
+
+            <AssetCard
+              icon={<Icon as={icons.ClockIcon} />}
+              src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=800&h=200"
+              title="Asset title"
+              type="image"
+            />
+          </Flex>
         </Flex>
 
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            200x600
-          </SectionHeading>
+        <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
+          Small
+        </SectionHeading>
 
-          <AssetCard
-            icon={<Icon as={icons.ClockIcon} />}
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=600"
-            title="Asset title"
-            type="image"
-          />
+        <Flex flexWrap="wrap">
+          <Flex flexDirection="column" marginRight="spacingM">
+            <SectionHeading as="h3" marginBottom="spacingS">
+              200x300
+            </SectionHeading>
+
+            <AssetCard
+              icon={<Icon as={icons.ClockIcon} />}
+              size="small"
+              src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
+              title="Asset title"
+              type="image"
+            />
+          </Flex>
+
+          <Flex flexDirection="column" marginRight="spacingM">
+            <SectionHeading as="h3" marginBottom="spacingS">
+              200x600
+            </SectionHeading>
+
+            <AssetCard
+              actions={actions}
+              size="small"
+              src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=600"
+              title="Asset title"
+              type="image"
+            />
+          </Flex>
+
+          <Flex flexDirection="column" marginRight="spacingM">
+            <SectionHeading as="h3" marginBottom="spacingS">
+              800x200
+            </SectionHeading>
+
+            <AssetCard
+              size="small"
+              src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=800&h=200"
+              title="Asset title"
+              type="image"
+            />
+          </Flex>
         </Flex>
 
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            800x200
-          </SectionHeading>
+        <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
+          Wrapped in container
+        </SectionHeading>
 
+        <Box style={{ width: '500px' }} marginBottom="spacingS">
           <AssetCard
             icon={<Icon as={icons.ClockIcon} />}
             src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=800&h=200"
             title="Asset title"
             type="image"
           />
-        </Flex>
-      </Flex>
+        </Box>
 
-      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
-        Small
-      </SectionHeading>
-
-      <Flex flexWrap="wrap">
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            200x300
-          </SectionHeading>
-
+        <Box style={{ width: '500px' }}>
           <AssetCard
             icon={<Icon as={icons.ClockIcon} />}
-            size="small"
             src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
             title="Asset title"
             type="image"
           />
-        </Flex>
-
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            200x600
-          </SectionHeading>
-
-          <AssetCard
-            actions={actions}
-            size="small"
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=600"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
-
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            800x200
-          </SectionHeading>
-
-          <AssetCard
-            size="small"
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=800&h=200"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
-      </Flex>
-
-      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
-        Wrapped in container
-      </SectionHeading>
-
-      <Box style={{ width: '500px' }} marginBottom="spacingS">
-        <AssetCard
-          icon={<Icon as={icons.ClockIcon} />}
-          src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=800&h=200"
-          title="Asset title"
-          type="image"
-        />
-      </Box>
-
-      <Box style={{ width: '500px' }}>
-        <AssetCard
-          icon={<Icon as={icons.ClockIcon} />}
-          src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=200&h=300"
-          title="Asset title"
-          type="image"
-        />
-      </Box>
-    </>
-  );
+        </Box>
+      </>
+    );
+  },
 };

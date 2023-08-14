@@ -9,8 +9,9 @@ const emotionPlugin = [
 ];
 
 module.exports = (api) => {
-  const isTest = api.env('test');
-  if (isTest) {
+  const isTestOrDevelopment = api.env('test') || api.env('development');
+
+  if (isTestOrDevelopment) {
     return {
       presets: [
         [

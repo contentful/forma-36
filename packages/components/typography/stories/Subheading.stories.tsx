@@ -1,6 +1,5 @@
-import React from 'react';
-
-import { Subheading, SubheadingProps } from '../src/Subheading/Subheading';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Subheading } from '../src/Subheading/Subheading';
 
 export default {
   title: 'Typography/Subheading',
@@ -11,13 +10,13 @@ export default {
   argTypes: {
     className: { control: { disable: true } },
   },
-};
+} as Meta<typeof Subheading>;
 
-export const Basic = (props: SubheadingProps<'h2'>) => (
-  <Subheading {...props} />
-);
+type Story = StoryObj<typeof Subheading>;
 
-Basic.args = {
-  as: 'h2',
-  children: 'Subheading',
+export const Basic: Story = {
+  args: {
+    as: 'h2',
+    children: 'Subheading',
+  },
 };

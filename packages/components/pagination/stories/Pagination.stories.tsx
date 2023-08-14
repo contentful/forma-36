@@ -1,54 +1,57 @@
 import React, { useEffect, useState } from 'react';
-import type { Meta } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Pagination, type PaginationProps } from '../src/Pagination';
+import { Pagination } from '../src/Pagination';
 
 export default {
   component: Pagination,
   title: 'Components/Pagination',
-} as Meta;
+} as Meta<typeof Pagination>;
 
-export const Default = (args: PaginationProps) => {
-  const {
-    activePage,
-    onPageChange,
-    itemsPerPage,
-    onViewPerPageChange,
-    ...otherProps
-  } = args;
-  const [page, setPage] = useState(activePage);
-  const [view, setView] = useState(itemsPerPage);
-  useEffect(() => {
-    setPage(activePage);
-    setView(itemsPerPage);
-  }, [activePage, itemsPerPage]);
+type Story = StoryObj<typeof Pagination>;
 
-  const handlePageChange = (p) => {
-    onPageChange && onPageChange(p);
-    setPage(p);
-  };
+export const Default: Story = {
+  args: {
+    activePage: 0,
+    itemsPerPage: 50,
+    viewPerPageOptions: [20, 50, 100],
+  },
+  render: (args) => {
+    const {
+      activePage,
+      onPageChange,
+      itemsPerPage,
+      onViewPerPageChange,
+      ...otherProps
+    } = args;
+    const [page, setPage] = useState(activePage);
+    const [view, setView] = useState(itemsPerPage);
+    useEffect(() => {
+      setPage(activePage);
+      setView(itemsPerPage);
+    }, [activePage, itemsPerPage]);
 
-  const handleViewPerPageChange = (i) => {
-    onViewPerPageChange && onViewPerPageChange(i);
-    setPage(Math.floor((view * page + 1) / i));
-    setView(i);
-  };
+    const handlePageChange = (p) => {
+      onPageChange && onPageChange(p);
+      setPage(p);
+    };
 
-  return (
-    <div style={{ width: '920px' }}>
-      <Pagination
-        activePage={page}
-        onPageChange={handlePageChange}
-        onViewPerPageChange={handleViewPerPageChange}
-        itemsPerPage={view}
-        {...otherProps}
-      />
-    </div>
-  );
-};
+    const handleViewPerPageChange = (i) => {
+      onViewPerPageChange && onViewPerPageChange(i);
+      setPage(Math.floor((view * page + 1) / i));
+      setView(i);
+    };
 
-Default.args = {
-  activePage: 0,
-  itemsPerPage: 50,
-  viewPerPageOptions: [20, 50, 100],
+    return (
+      <div style={{ width: '920px' }}>
+        <Pagination
+          activePage={page}
+          onPageChange={handlePageChange}
+          onViewPerPageChange={handleViewPerPageChange}
+          itemsPerPage={view}
+          {...otherProps}
+        />
+      </div>
+    );
+  },
 };

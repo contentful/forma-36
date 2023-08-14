@@ -1,6 +1,5 @@
-import React from 'react';
-
-import { Paragraph, ParagraphProps } from '../src/Paragraph/Paragraph';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Paragraph } from '../src/Paragraph/Paragraph';
 
 export default {
   title: 'Typography/Paragraph',
@@ -11,10 +10,12 @@ export default {
   argTypes: {
     className: { control: { disable: true } },
   },
-};
+} as Meta<typeof Paragraph>;
 
-export const Basic = (props: ParagraphProps) => <Paragraph {...props} />;
+type Story = StoryObj<typeof Paragraph>;
 
-Basic.args = {
-  children: 'Paragraph',
+export const Basic: Story = {
+  args: {
+    children: 'Paragraph',
+  },
 };

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Heading, HeadingProps } from '../src/Heading/Heading';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Heading } from '../src/Heading/Heading';
 
 export default {
   title: 'Typography/Heading',
@@ -10,11 +10,13 @@ export default {
   argTypes: {
     className: { control: { disable: true } },
   },
-};
+} as Meta<typeof Heading>;
 
-export const Basic = (props: HeadingProps<'h1'>) => <Heading {...props} />;
+type Story = StoryObj<typeof Heading>;
 
-Basic.args = {
-  children: 'Heading',
-  as: 'h1',
+export const Basic: Story = {
+  args: {
+    children: 'Heading',
+    as: 'h1',
+  },
 };

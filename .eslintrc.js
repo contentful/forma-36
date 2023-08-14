@@ -4,7 +4,6 @@ rulesDirPlugin.RULES_DIR = path.resolve(
   __dirname,
   './scripts/eslint-rules/custom',
 );
-
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
@@ -16,6 +15,7 @@ module.exports = {
     'plugin:jest/recommended',
     'plugin:jest/style',
     'plugin:you-dont-need-lodash-underscore/compatible',
+    'plugin:storybook/recommended',
   ],
   plugins: ['import', 'react-hooks', 'jest-dom', 'testing-library', 'rulesdir'],
   parserOptions: {
