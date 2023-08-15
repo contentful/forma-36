@@ -124,6 +124,40 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar {...args} alt="Dr. Julius Hibbert" variant="user" />
         <Avatar {...args} alt="Prof. Daniel Düsentrieb" variant="user" />
       </AvatarGroup>
+
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Avatar Group stacked with tooltips
+      </SectionHeading>
+
+      <AvatarGroup size="small" variant="stacked">
+        <Avatar
+          {...args}
+          alt="Arnie Pye"
+          variant="user"
+          tooltipProps={{
+            content: 'Arnie Pye',
+            placement: 'bottom',
+          }}
+        />
+        <Avatar
+          {...args}
+          alt="Dr. Julius Hibbert"
+          variant="user"
+          tooltipProps={{
+            content: 'Dr. Julius Hibbert',
+            placement: 'bottom',
+          }}
+        />
+        <Avatar
+          {...args}
+          alt="Prof. Daniel Düsentrieb"
+          variant="user"
+          tooltipProps={{
+            content: 'Prof. Daniel Düsentrieb',
+            placement: 'bottom',
+          }}
+        />
+      </AvatarGroup>
     </>
   );
 };

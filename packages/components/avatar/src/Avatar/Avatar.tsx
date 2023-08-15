@@ -73,7 +73,12 @@ function _Avatar(
     </div>
   );
 
-  if (tooltipProps) return <Tooltip {...tooltipProps}>{content}</Tooltip>;
+  if (tooltipProps)
+    return (
+      <Tooltip {...tooltipProps} usePortal>
+        {content}
+      </Tooltip>
+    );
 
   return content;
 }
