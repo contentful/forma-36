@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-avatar",
-  "version": "4.0.0-alpha.7",
+  "version": "4.0.0-alpha.8",
   "description": "Forma 36: Avatar component",
   "scripts": {
     "build": "tsup"
