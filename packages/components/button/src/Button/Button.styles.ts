@@ -101,16 +101,7 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
           color: tokens.red600,
         },
         '&:active': variantActiveStyles(variant),
-        '&:focus': {
-          borderColor: tokens.gray300,
-          boxShadow: tokens.glowNegative,
-        },
-        '&:focus:not(:focus-visible)': {
-          borderColor: tokens.red600,
-          boxShadow: 'unset',
-        },
         '&:focus-visible': {
-          borderColor: tokens.red700,
           boxShadow: tokens.glowNegative,
         },
       };
