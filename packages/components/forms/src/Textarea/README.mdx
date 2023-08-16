@@ -57,14 +57,16 @@ When `Textarea` is used outside of form (without `FormControl`) and has no `<lab
 
 ```
 
+## Accessibility
+
+- To ensure `Textarea` meets accessibility keyboard standards, set the `name` and `id` properties.
+- If you are using this component in a form, provide validation to the input and use `isInvalid` to control the error state of Textarea.
+- The `invalid` and `disabled` states do not need to be set on FormControl but can be set in Textarea.
+- In case the input is required, use `isRequired` prop.
+- To display meaningful error messages make use of `<FormControl.ValidationMessage>`. For further details refer to [FormControl](./form-control).
+
 ## Props (API reference)
 
 This component also accepts [relevant HTML attributes](https://www.w3.org/wiki/HTML/Elements/textarea) as props. These include `rows`, `autoFocus` and `autoComplete`.
 
 <PropsTable of="Textarea" />
-
-## Accessibility
-
-- To ensure accessibility, provide a `name` prop
-- In case the input is required, use `isRequired` prop
-- If you are using this component in a form, provide validation to the input and use `isInvalid` to control the error state of `Textarea`. Also show meaningful error messages with the `ValidationMessage` component.
