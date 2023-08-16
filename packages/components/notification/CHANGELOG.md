@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.48.1
+
+### Patch Changes
+
+- Updated dependencies [[`384b4df31`](https://github.com/contentful/forma-36/commit/384b4df319730b305cbeafc97515ae2d4a886873)]:
+  - @contentful/f36-button@4.48.1
+  - @contentful/f36-core@4.48.1
+  - @contentful/f36-text-link@4.48.1
+  - @contentful/f36-typography@4.48.1
+
 ## 4.48.0
 
 ### Patch Changes
