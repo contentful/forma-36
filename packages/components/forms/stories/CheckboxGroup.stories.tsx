@@ -85,7 +85,7 @@ export const WithFormControl = (args: CheckboxGroupProps) => {
   }, [value]);
 
   return (
-    <FormControl>
+    <FormControl as="fieldset">
       <FormControl.Label as="legend" marginBottom="spacing2Xs">
         Fruits
       </FormControl.Label>
