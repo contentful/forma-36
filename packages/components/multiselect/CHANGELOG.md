@@ -1,5 +1,11 @@
 ## Change Log
 
+## 4.20.12
+
+### Patch Changes
+
+- [#2563](https://github.com/contentful/forma-36/pull/2563) [`bd32c9271`](https://github.com/contentful/forma-36/commit/bd32c92718319873a7b91c2958a835f70117b114) Thanks [@maxcheremisin](https://github.com/maxcheremisin)! - Multiselect: apply style refresh to multiselect
+
 ## 4.20.11
 
 ### Patch Changes
