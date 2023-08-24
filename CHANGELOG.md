@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 22-08-2023
+
+**F36 Multiselect** `v4.20.12`
+
+- Multiselect: apply style refresh to multiselect
+
 ## 17-08-2023
 
 **F36 Button** `v4.48.1`
