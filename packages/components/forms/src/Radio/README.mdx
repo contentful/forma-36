@@ -69,6 +69,27 @@ We also provide the `Radio.Group` component that helps when using multiple radio
 
 ```
 
+## Content guidelines
+
+- Use direct, succinct copy that helps a user to successfully complete a form, for example, “Dinner menu (select 1 of 3 options)“
+- Do not use punctuation for labels, for example, “Vegetarian“ instead of “Vegetarian.“
+- Use sentence style caps in which only the first word of a sentence or term is capitalized, for example, “Dairy free“ instead of “Dairy Free“
+
+## Accessibility
+
+- To ensure `Radio` meets accessibility keyboard standards, set the `name` and `id` properties.
+
+### Radio Group
+
+- Set the `name` prop to give each indivual value the same name
+- The Radio.Group should be wrapped in a `<FormControl as="fieldset">`
+- In order to easier identify the indivual Radio options as a group and set a label via `<FormControl.Label as="legend">`. For example, “Dinner menu (select 1 of 3 options): (x) Menu 1, () Menu 2, () Menu 3.”
+- For more information about validation and controlling form fields, please refer to [FormControl](./form-control).
+
+### Keyboard Usage
+
+- To switch between options with the keyboard, use the “tab + space” and the arrow keys (“←”, ”↑”, “→”, and “↓”).
+
 ## Props (API reference)
 
 ### Radio
@@ -78,14 +99,3 @@ We also provide the `Radio.Group` component that helps when using multiple radio
 ### Radio.Group
 
 <PropsTable of="RadioGroup" />
-
-## Content guidelines
-
-- Use direct, succinct copy that helps a user to successfully complete a form
-- Do not use punctuation for labels
-- Use sentence style caps (in which only the first word of a sentence or term is capitalized)
-
-## Accessibility
-
-- To ensure `Radio` meets accessibility standards, provide `name` and `id`
-- When using `Radio.Group` it should be wrapped in a `<FormControl as="fieldset">` and have a `<FormControl.Label as="legend">`

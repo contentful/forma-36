@@ -92,8 +92,20 @@ The Checkbox can be rendered as disabled with the `isDisabled` property.
 
 ## Accessibility
 
-- To ensure `Checkbox` meets accessibility standards, provide `name` and `id`;
-- When using `Checkbox.Group` it should be wrapped in a `<FormControl as="fieldset">` and have a `<FormControl.Label as="legend">`.
+- Each checkbox is independently controlled, where you can enable multiple identifiable options.
+- To ensure the `Checkbox` meets accessibility keyboard standards, set the `name` and `id` properties.
+
+### Checkbox Group
+
+- Set the `name` prop to give each indivual value the same name
+- The Checkbox.Group should be wrapped in a `<FormControl as="fieldset">`
+- In order to easier identify the indivual Checkboxes as a group and set a label via `<FormControl.Label as="legend">`.
+- For more information about validation and controlling form fields, please refer to [FormControl](./form-control).
+
+### Keyboard Usage
+
+- To switch between options, use the “tab + space” command on the keyboard.
+- To check and uncheck the checkboxes, hit “space” on the keyboard.
 
 ## Props (API reference)
 

@@ -83,16 +83,6 @@ There might be cases where you would need to include the help text or validation
 
 ```
 
-## Props (API reference)
-
-### Select
-
-<PropsTable of="Select" />
-
-### Select Option
-
-<PropsTable of="Option" />
-
 ## Content guidelines
 
 - Use `Select` to present many different options in one component
@@ -110,5 +100,22 @@ There might be cases where you would need to include the help text or validation
 
 ## Accessibility
 
-- Select should contain a label, if needed help message and validation message if needed.
-- Select should always a `name` property.
+- To ensure `Select` meets accessibility keyboard standards, set the `name` and `id` properties.
+- The component should be wrapped in a `<FormControl>` and set a label via `<FormControl.Label`.
+- Make use of `<FormControl.HelpText>` and `<FormControl.ValidationMessage>` to provide further context
+- For more information about validation and controlling form fields, please refer to [FormControl](./form-control).
+
+### Keyboard Usage
+
+- Use the “arrow keys (“←”, ”↑”. “→”, and “↓”) + enter” to send the form.
+- To switch between options with the keyboard, use the “tab + space” and the arrow keys.
+
+## Props (API reference)
+
+### Select
+
+<PropsTable of="Select" />
+
+### Select Option
+
+<PropsTable of="Option" />
