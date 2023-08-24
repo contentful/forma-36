@@ -12,7 +12,7 @@ import { CardActions } from '../BaseCard/CardActions';
 
 export type InlineEntryCardInternalProps = Omit<
   EntryCardInternalProps,
-  'icon' | 'ref' | 'src' | 'type' | keyof BaseCardDragHandleProps
+  'icon' | 'ref' | 'src' | 'size' | 'type' | keyof BaseCardDragHandleProps
 >;
 
 export type InlineEntryCardProps = InlineEntryCardInternalProps;
