@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.48.2
+
+### Patch Changes
+
+- [#2565](https://github.com/contentful/forma-36/pull/2565) [`da60b12e8`](https://github.com/contentful/forma-36/commit/da60b12e89f3fccbf7d7ef3b450a9fe62d220b91) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(asset): set full width on Asset root
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.48.2
+  - @contentful/f36-icon@4.48.2
+  - @contentful/f36-typography@4.48.2
+
 ## 4.48.1
 
 ### Patch Changes

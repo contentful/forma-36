@@ -1,5 +1,23 @@
 # Change Log
 
+## 4.48.2
+
+### Patch Changes
+
+- [#2566](https://github.com/contentful/forma-36/pull/2566) [`23e1ab447`](https://github.com/contentful/forma-36/commit/23e1ab447cbdcb25164c5cee85964b6aac995c45) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(inline-entry-card): remove unsupported size prop
+
+- Updated dependencies [[`da60b12e8`](https://github.com/contentful/forma-36/commit/da60b12e89f3fccbf7d7ef3b450a9fe62d220b91)]:
+  - @contentful/f36-asset@4.48.2
+  - @contentful/f36-badge@4.48.2
+  - @contentful/f36-button@4.48.2
+  - @contentful/f36-core@4.48.2
+  - @contentful/f36-drag-handle@4.48.2
+  - @contentful/f36-icon@4.48.2
+  - @contentful/f36-menu@4.48.2
+  - @contentful/f36-skeleton@4.48.2
+  - @contentful/f36-tooltip@4.48.2
+  - @contentful/f36-typography@4.48.2
+
 ## 4.48.1
 
 ### Patch Changes

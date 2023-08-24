@@ -1,5 +1,42 @@
 # Change Log
 
+## 4.48.2
+
+### Patch Changes
+
+- Updated dependencies [[`da60b12e8`](https://github.com/contentful/forma-36/commit/da60b12e89f3fccbf7d7ef3b450a9fe62d220b91), [`23e1ab447`](https://github.com/contentful/forma-36/commit/23e1ab447cbdcb25164c5cee85964b6aac995c45)]:
+  - @contentful/f36-asset@4.48.2
+  - @contentful/f36-card@4.48.2
+  - @contentful/f36-accordion@4.48.2
+  - @contentful/f36-autocomplete@4.48.2
+  - @contentful/f36-badge@4.48.2
+  - @contentful/f36-button@4.48.2
+  - @contentful/f36-collapse@4.48.2
+  - @contentful/f36-copybutton@4.48.2
+  - @contentful/f36-core@4.48.2
+  - @contentful/f36-datetime@4.48.2
+  - @contentful/f36-datepicker@4.48.2
+  - @contentful/f36-drag-handle@4.48.2
+  - @contentful/f36-entity-list@4.48.2
+  - @contentful/f36-empty-state@4.48.2
+  - @contentful/f36-forms@4.48.2
+  - @contentful/f36-icon@4.48.2
+  - @contentful/f36-list@4.48.2
+  - @contentful/f36-menu@4.48.2
+  - @contentful/f36-modal@4.48.2
+  - @contentful/f36-note@4.48.2
+  - @contentful/f36-notification@4.48.2
+  - @contentful/f36-pagination@4.48.2
+  - @contentful/f36-pill@4.48.2
+  - @contentful/f36-popover@4.48.2
+  - @contentful/f36-skeleton@4.48.2
+  - @contentful/f36-spinner@4.48.2
+  - @contentful/f36-table@4.48.2
+  - @contentful/f36-tabs@4.48.2
+  - @contentful/f36-text-link@4.48.2
+  - @contentful/f36-tooltip@4.48.2
+  - @contentful/f36-typography@4.48.2
+
 ## 4.48.1
 
 ### Patch Changes
