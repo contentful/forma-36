@@ -3,8 +3,9 @@ import { css } from 'emotion';
 
 export function getAssetStyles() {
   return {
-    relative: css({
+    root: css({
       position: 'relative',
+      width: '100%',
     }),
     height100: css({
       height: '100%',
