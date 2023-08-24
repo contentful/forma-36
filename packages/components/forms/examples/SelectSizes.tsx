@@ -6,8 +6,8 @@ export default function SelectSizes() {
     <Stack>
       <SectionHeading>Size Medium</SectionHeading>
       <Select
-        id="optionSelect-6"
-        name="optionSelect-6"
+        id="optionSelect-medium"
+        name="optionSelect-medium"
         defaultValue="optionTwo"
       >
         <Select.Option value="optionOne">Option 1</Select.Option>
@@ -18,8 +18,8 @@ export default function SelectSizes() {
       </Select>
       <SectionHeading>Size Small</SectionHeading>
       <Select
-        id="optionSelect-6"
-        name="optionSelect-6"
+        id="optionSelect-small"
+        name="optionSelect-small"
         size="small"
         defaultValue="optionTwo"
       >
