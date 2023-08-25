@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.49.0
+
+### Minor Changes
+
+- [#2559](https://github.com/contentful/forma-36/pull/2559) [`c62e34a35`](https://github.com/contentful/forma-36/commit/c62e34a352cfdebe2edbcea5fe49f06b9b4f9e3b) Thanks [@maxcheremisin](https://github.com/maxcheremisin)! - chore: full height button group divider; remove positive/primary button border color
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.49.0
+  - @contentful/f36-spinner@4.49.0
+
 ## 4.48.2
 
 ### Patch Changes
