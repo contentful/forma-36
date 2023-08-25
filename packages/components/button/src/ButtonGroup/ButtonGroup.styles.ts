@@ -1,61 +1,50 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import type { GetStyleArguments } from './types';
+import { hexToRGBA } from '@contentful/f36-utils';
 import type { CSSObject } from '@emotion/serialize';
+import type { GetStyleArguments } from './types';
 
-const getGroupContentStyle = ({ withDivider }: GetStyleArguments) => {
+export default ({ withDivider }: GetStyleArguments) => {
   const dividerStyle = getDividerStyle(withDivider);
 
   return {
-    borderRadius: '0 !important',
-    marginRight: '-1px',
-    zIndex: tokens.zIndexDefault,
-    '&:first-child': {
-      borderBottomLeftRadius: `${tokens.borderRadiusMedium} !important`,
-      borderTopLeftRadius: `${tokens.borderRadiusMedium} !important`,
-    },
-    '&:last-child': {
-      borderBottomRightRadius: `${tokens.borderRadiusMedium} !important`,
-      borderTopRightRadius: `${tokens.borderRadiusMedium} !important`,
-      marginRight: 0,
-    },
-    '&:focus': {
-      zIndex: tokens.zIndexDefault + 1,
-    },
-    ...dividerStyle,
+    buttonGroup: css({
+      display: 'inline-flex',
+      position: 'relative',
+    }),
+    groupContent: css({
+      borderRadius: '0 !important',
+      marginRight: '-1px',
+      '&:first-child': {
+        borderBottomLeftRadius: `${tokens.borderRadiusMedium} !important`,
+        borderTopLeftRadius: `${tokens.borderRadiusMedium} !important`,
+      },
+      '&:last-child': {
+        borderBottomRightRadius: `${tokens.borderRadiusMedium} !important`,
+        borderTopRightRadius: `${tokens.borderRadiusMedium} !important`,
+        marginRight: 0,
+      },
+      '&:focus': {
+        zIndex: tokens.zIndexDefault,
+      },
+      ...dividerStyle,
+    }),
   };
 };
 
 const getDividerStyle = (withDivider: boolean): CSSObject => {
   if (!withDivider) return {};
+
+  const divider = `1px solid ${hexToRGBA(tokens.colorWhite, 0.2)}`;
+
   return {
-    position: 'relative',
-    '&:before': {
-      content: '""',
-      width: '1px',
-      opacity: '20%',
-      backgroundColor: tokens.colorWhite,
-      height: '60%',
-      left: '0',
-      position: 'absolute',
+    borderTop: 'none',
+    borderBottom: 'none',
+    '&:not(:first-child,:focus-visible)': {
+      borderLeft: divider,
     },
-    '&:first-child, &:focus': {
-      '&:before': {
-        display: 'none',
-      },
-    },
-    '&:hover, &:hover + &': {
-      '&:before': {
-        display: 'none',
-      },
+    '&:not(:last-child,:focus-visible)': {
+      borderRight: divider,
     },
   };
 };
-
-export default ({ withDivider }: GetStyleArguments) => ({
-  buttonGroup: css({
-    display: 'inline-flex',
-    position: 'relative',
-  }),
-  groupContent: css(getGroupContentStyle({ withDivider })),
-});
