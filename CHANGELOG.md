@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 25-08-2023
+
+**F36 Asset** `v4.48.2`
+
+- fix(asset): set full width on Asset root
+
+**F36 Card** `v4.48.2`
+
+- fix(inline-entry-card): remove unsupported size prop
+
 ## 22-08-2023
 
 **F36 Multiselect** `v4.20.12`
