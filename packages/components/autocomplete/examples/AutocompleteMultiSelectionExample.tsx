@@ -35,8 +35,8 @@ export default function AutocompleteMultiSelectionExample() {
         onSelectItem={handleSelectItem}
         itemToString={(item) => item.name}
         renderItem={(item) => item.name}
-        // When this prop is `true`, it will clean the TextInput after an option is selected
-        clearAfterSelect
+        // When `textOnAfterSelect` is `"clear"`, it will clean the TextInput after an option is selected
+        textOnAfterSelect="clear"
         closeAfterSelect={false}
       />
 

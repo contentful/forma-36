@@ -106,8 +106,8 @@ describe('Autocomplete', () => {
       expect(mockOnSelectItem).toHaveBeenCalledWith('Apple 🍎');
     });
 
-    it('clears the input after item is selected when "clearAfterSelect" is true', async () => {
-      renderComponent({ clearAfterSelect: true });
+    it('clears the input after item is selected when "textOnAfterSelect" is "clear"', async () => {
+      renderComponent({ textOnAfterSelect: 'clear' });
 
       const input = screen.getByTestId('cf-autocomplete-input');
       const container = screen.getByTestId('cf-autocomplete-container');
@@ -137,6 +137,40 @@ describe('Autocomplete', () => {
       // checks if the list got closed and the value of the input is an empty string
       expect(container).not.toBeVisible();
       expect(input.getAttribute('value')).toBe('');
+      expect(mockOnSelectItem).toHaveBeenCalledWith('Apple 🍎');
+    });
+
+    it('preserves the same input value after item is selected when "textOnAfterSelect" is "preserve"', async () => {
+      renderComponent({ textOnAfterSelect: 'preserve' });
+
+      const input = screen.getByTestId('cf-autocomplete-input');
+      const container = screen.getByTestId('cf-autocomplete-container');
+
+      // Type one letter in the input to open the list
+      fireEvent.input(input, {
+        target: {
+          value: 'a',
+        },
+      });
+
+      // checks if the list is visible
+      await waitFor(() => {
+        expect(container).toBeVisible();
+      });
+
+      // go to the list first item
+      fireEvent.keyDown(input, {
+        key: 'ArrowDown',
+      });
+
+      // press Enter to select the item
+      fireEvent.keyDown(input, {
+        key: 'Enter',
+      });
+
+      // checks if the list got closed and the value of the input is an empty string
+      expect(container).not.toBeVisible();
+      expect(input.getAttribute('value')).toBe('a');
       expect(mockOnSelectItem).toHaveBeenCalledWith('Apple 🍎');
     });
 

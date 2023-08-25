@@ -41,6 +41,21 @@ export interface AutocompleteProps<ItemType>
   items: ItemType[] | GenericGroupType<ItemType>[];
 
   /**
+   * Boolean to control whether the Autocomplete menu is open
+   */
+  isOpen?: boolean;
+
+  /**
+   * Callback fired when the Autocomplete menu opens
+   */
+  onOpen?: () => void;
+
+  /**
+   * Callback fired when the Autocomplete menu closes
+   */
+  onClose?: () => void;
+
+  /**
    * Set a custom icon for the text input
    */
   icon?: React.ReactElement;
@@ -50,6 +65,10 @@ export interface AutocompleteProps<ItemType>
    */
   isGrouped?: boolean;
 
+  /**
+   * Set the value of the text input
+   */
+  inputValue?: string;
   /**
    * Function called whenever the input value changes
    */
@@ -78,10 +97,10 @@ export interface AutocompleteProps<ItemType>
    */
   itemToString?: (item: ItemType) => string;
   /**
-   * If this is set to `true` the text input will be cleared after an item is selected
-   * @default false
+   * Text input behaviour after an item is selected
+   * @default "replace"
    */
-  clearAfterSelect?: boolean;
+  textOnAfterSelect?: 'clear' | 'preserve' | 'replace';
   /**
    * If this is set to `false` the dropdown menu will stay open after selecting an item
    * @default true
@@ -156,13 +175,17 @@ function _Autocomplete<ItemType>(
   ref: React.Ref<HTMLDivElement>,
 ) {
   const {
+    isOpen: isOpenProp,
+    onClose,
+    onOpen,
     id,
     className,
-    clearAfterSelect = false,
+    textOnAfterSelect = 'replace',
     closeAfterSelect = true,
     defaultValue = '',
     selectedItem,
     items,
+    inputValue: inputValueProp,
     onInputValueChange,
     onSelectItem,
     onFocus,
@@ -192,7 +215,9 @@ function _Autocomplete<ItemType>(
 
   const styles = getAutocompleteStyles(listMaxHeight);
 
-  const [inputValue, setInputValue] = useState(defaultValue);
+  const [_inputValue, setInputValue] = useState(defaultValue);
+  const inputValue =
+    typeof inputValueProp === 'undefined' ? _inputValue : inputValueProp;
 
   const handleInputValueChange = useCallback(
     (value: string) => {
@@ -231,16 +256,64 @@ function _Autocomplete<ItemType>(
     getToggleButtonProps,
     highlightedIndex,
     isOpen,
+    openMenu,
     toggleMenu,
   } = useCombobox({
+    isOpen: isOpenProp,
+    onIsOpenChange: ({ isOpen }) => {
+      if (isOpen) {
+        onOpen?.();
+      } else {
+        onClose?.();
+      }
+    },
+    stateReducer: (state, { type, changes }) => {
+      switch (type) {
+        // item is selected by click or keydown
+        case useCombobox.stateChangeTypes.InputKeyDownEnter:
+        case useCombobox.stateChangeTypes.ItemClick: {
+          // prevent the menu from being closed when the user selects an item with a keyboard or mouse
+          if (!closeAfterSelect) {
+            return {
+              ...changes,
+              isOpen: state.isOpen,
+            };
+          }
+
+          return changes;
+        }
+        default:
+          return changes;
+      }
+    },
     items: flattenItems,
     selectedItem,
     inputValue,
     itemToString,
     onInputValueChange: ({ type, inputValue }) => {
-      if (type !== '__input_change__') {
-        handleInputValueChange(inputValue);
+      switch (type) {
+        // value is set directly from the TextInput onChange handler
+        case useCombobox.stateChangeTypes.InputChange: {
+          return;
+        }
+
+        // item is selected by click or keydown
+        case useCombobox.stateChangeTypes.ItemClick:
+        case useCombobox.stateChangeTypes.InputKeyDownEnter: {
+          // clear the TextInput value
+          if (textOnAfterSelect === 'clear') {
+            handleInputValueChange('');
+            return;
+          }
+
+          // keep the current TextInput value
+          if (textOnAfterSelect === 'preserve') {
+            return;
+          }
+        }
       }
+
+      handleInputValueChange(inputValue);
     },
     onStateChange: ({ type, selectedItem }) => {
       switch (type) {
@@ -248,12 +321,6 @@ function _Autocomplete<ItemType>(
         case useCombobox.stateChangeTypes.ItemClick:
           if (selectedItem) {
             onSelectItem(selectedItem);
-          }
-          if (clearAfterSelect) {
-            handleInputValueChange('');
-          }
-          if (!closeAfterSelect) {
-            toggleMenu();
           }
           break;
         default:
@@ -296,11 +363,12 @@ function _Autocomplete<ItemType>(
               {...inputProps}
               onFocus={(e) => {
                 onFocus?.(e as React.FocusEvent<HTMLInputElement>);
-                if (!isOpen) {
-                  toggleMenu();
-                }
+                openMenu();
               }}
-              onBlur={onBlur}
+              onBlur={(e) => {
+                onBlur?.(e as React.FocusEvent<HTMLInputElement>);
+                inputProps.onBlur(e);
+              }}
               id={id}
               isInvalid={isInvalid}
               isDisabled={isDisabled}

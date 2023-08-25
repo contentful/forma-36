@@ -284,7 +284,7 @@ export const MultipleSelection = (args: AutocompleteProps<Produce>) => {
         onBlur={(e) => action('onBlur')(e)}
         itemToString={(item) => item.name}
         renderItem={(item) => item.name}
-        clearAfterSelect
+        textOnAfterSelect="clear"
         closeAfterSelect={false}
       />
 
