@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 26-08-2023
+
+**F36 Button** `v4.49.0`
+
+- chore: full height button group divider; remove positive/primary button border color
+
 ## 25-08-2023
 
 **F36 Asset** `v4.48.2`
