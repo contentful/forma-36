@@ -15,26 +15,20 @@ const getToggleButtonStyle = ({ isActive, isDisabled }: GetStyleArguments) => {
   };
 
   const baseStyle = {
-    background: tokens.colorWhite,
-    '&:hover': {
-      background: tokens.colorWhite,
-      borderColor: isDisabled ? tokens.gray300 : tokens.blue600,
-      zIndex: tokens.zIndexDefault + 1,
-    },
     '&:focus': {
       boxShadow: tokens.glowPrimary,
+    },
+    '&:focus-visible:not([disabled])': {
       zIndex: tokens.zIndexDefault + 2,
     },
     '&:active, &:active:hover': isDisabled
       ? {
           background: tokens.colorWhite,
           borderColor: tokens.gray300,
-          zIndex: tokens.zIndexDefault + 1,
         }
       : {
           background: tokens.blue100,
           borderColor: tokens.blue600,
-          zIndex: tokens.zIndexDefault + 1,
         },
   };
 
