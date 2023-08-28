@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.49.1
+
+### Patch Changes
+
+- [#2560](https://github.com/contentful/forma-36/pull/2560) [`58bd7d911`](https://github.com/contentful/forma-36/commit/58bd7d9110136805ea2ebcd113550d7d769c836e) Thanks [@maxcheremisin](https://github.com/maxcheremisin)! - chore: remove blue border on hover; change background color on hover
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.49.1
+  - @contentful/f36-spinner@4.49.1
+
 ## 4.49.0
 
 ### Minor Changes
