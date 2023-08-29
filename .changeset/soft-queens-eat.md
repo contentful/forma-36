@@ -2,4 +2,4 @@
 '@contentful/f36-autocomplete': minor
 ---
 
-`clearAfterSelect` (`boolean`) replaced with `textOnAfterSelect` (`'clear' | 'preserve' | 'replace'`)
+Add new props: `textOnAfterSelect?: 'clear' | 'preserve' | 'replace'`, `isOpen?: boolean; onOpen?: () => void; onClose?: () => void`, `inputValue?: string`
