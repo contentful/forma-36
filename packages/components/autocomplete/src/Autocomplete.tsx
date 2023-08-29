@@ -276,6 +276,11 @@ function _Autocomplete<ItemType>(
     },
     stateReducer: (state, { type, changes }) => {
       switch (type) {
+        case useCombobox.stateChangeTypes.InputBlur: {
+          // don't change input value on blur
+          return { ...changes, inputValue: state.inputValue };
+        }
+
         // item is selected by click or keydown
         case useCombobox.stateChangeTypes.InputKeyDownEnter:
         case useCombobox.stateChangeTypes.ItemClick: {
