@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 29-08-2023
+
+**F36 Button** `v4.49.1`
+
+- chore: remove blue border on hover; change background color on hover
+
 ## 26-08-2023
 
 **F36 Button** `v4.49.0`
