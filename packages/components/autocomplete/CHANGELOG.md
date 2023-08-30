@@ -1,5 +1,21 @@
 # Change Log
 
+## 4.50.0
+
+### Minor Changes
+
+- [#2567](https://github.com/contentful/forma-36/pull/2567) [`51eb9f419`](https://github.com/contentful/forma-36/commit/51eb9f419c6f3f8ef85be39bfc228a57d3fc983c) Thanks [@maxcheremisin](https://github.com/maxcheremisin)! - Add new props: `textOnAfterSelect?: 'clear' | 'preserve' | 'replace'`, `isOpen?: boolean; onOpen?: () => void; onClose?: () => void`, `inputValue?: string`
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.50.0
+  - @contentful/f36-core@4.50.0
+  - @contentful/f36-forms@4.50.0
+  - @contentful/f36-popover@4.50.0
+  - @contentful/f36-skeleton@4.50.0
+  - @contentful/f36-typography@4.50.0
+
 ## 4.49.1
 
 ### Patch Changes
