@@ -1,1 +1,1 @@
-{"**F36 Autocomplete** `v4.50.0`":["- Add new props: `textOnAfterSelect?: 'clear' | 'preserve' | 'replace'`, `isOpen?: boolean; onOpen?: () => void; onClose?: () => void`, `inputValue?: string`\n"]}
+{}

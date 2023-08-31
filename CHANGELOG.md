@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 31-08-2023
+
+**F36 Autocomplete** `v4.50.0`
+
+- Add new props: `textOnAfterSelect?: 'clear' | 'preserve' | 'replace'`, `isOpen?: boolean; onOpen?: () => void; onClose?: () => void`, `inputValue?: string`
+
 ## 29-08-2023
 
 **F36 Button** `v4.49.1`
