@@ -47,6 +47,7 @@ function getTypescriptMetaInformation(sourcePath) {
         shouldExtractLiteralValuesFromEnum: true,
         shouldExtractValuesFromUnion: true,
         skipChildrenPropWithoutDoc: false,
+        shouldIncludePropTagMap: true,
       },
     );
 

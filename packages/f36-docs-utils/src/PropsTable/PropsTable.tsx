@@ -5,6 +5,7 @@ import {
   Subheading,
   Text,
   Table,
+  Tooltip,
 } from '@contentful/f36-components';
 
 import { getPropsTableStyles } from './PropsTable.styles';
@@ -57,6 +58,13 @@ export function PropsTable({ of }: PropsTableProps) {
                   <Badge variant="featured" size="small">
                     required
                   </Badge>
+                )}{' '}
+                {item.tags && 'deprecated' in item.tags && (
+                  <Tooltip content={item.tags.deprecated}>
+                    <Badge variant="negative" size="small">
+                      Deprecated
+                    </Badge>
+                  </Tooltip>
                 )}
               </Table.Cell>
               <Table.Cell className={styles.cell}>
