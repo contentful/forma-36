@@ -676,6 +676,17 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "cf-remylenoir",
+      "name": "Rémy Lenoir",
+      "avatar_url": "https://avatars.githubusercontent.com/u/103024358?v=4",
+      "profile": "https://github.com/cf-remylenoir",
+      "contributions": [
+        "maintenance",
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
