@@ -8,7 +8,7 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-navlist
 typescript: ./src/NavList/NavList.tsx,./src/NavListItem/NavListItem.tsx
 ---
 
-NavList can be used to render a sidebar navigation list
+`NavList` is used to render a sidebar navigation list
 
 ## Import
 
@@ -18,7 +18,7 @@ import { NavList } from '@contentful/f36-navlist';
 
 ## Examples
 
-NavList can be used to render vertical navigation list, it can be used for links and for buttons:
+NavList is used to render vertical navigation list, it may contains links or buttons:
 
 - `NavList` can be rendered as `nav` or `div`
 - `NavList.Item` can be rendered as `button` or `a`
@@ -67,9 +67,10 @@ Example with items with active or disabled state
 
 ## Content guidelines
 
-Link names should be shor and descriptive
+- `NavList.Item` texts should be short and descriptive
 
 ## Accessibility
 
-- If rendered with `div` the role of navigation is set.
-- `NavList` can be passed an `aria-label` to override the default `Sidebar`
+- When rendered with `div` the `aria-role` must be set to `navigation`.
+- `NavList` can be passed an `aria-label` to override the default `Sidebar`.
+- `NavList.Item` should always navigate the user, and not trigger other actions.
