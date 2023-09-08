@@ -76,7 +76,7 @@ function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
   };
 
   const iconContent = icon ? (
-    <Flex as="span">
+    <Flex as="span" alignSelf="center">
       {React.cloneElement(icon, {
         className: cx(icon.props.className, styles.textLinkIcon()),
         size: 'small',

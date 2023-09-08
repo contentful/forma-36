@@ -66,7 +66,7 @@ const textLink = ({
   css({
     display: 'inline-flex',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'baseline',
     boxSizing: 'border-box',
     border: 0,
     padding: 0,
@@ -84,7 +84,6 @@ const textLink = ({
     opacity: isDisabled ? 0.5 : 1,
     ...variantToStyles(variant),
     outline: 'none',
-    verticalAlign: 'bottom',
     '&:focus, &:focus-visible, &:hover': {
       textDecoration: isDisabled ? 'none' : 'underline',
     },
