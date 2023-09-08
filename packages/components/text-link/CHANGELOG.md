@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.50.1
+
+### Patch Changes
+
+- [#2574](https://github.com/contentful/forma-36/pull/2574) [`21994b4bf`](https://github.com/contentful/forma-36/commit/21994b4bfd8cfb88c7f2e3013db38d167677bf6f) Thanks [@maxcheremisin](https://github.com/maxcheremisin)! - fix(TextLink): vertical alignment when used in list
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.50.1
+
 ## 4.50.0
 
 ### Patch Changes
