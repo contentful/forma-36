@@ -97,7 +97,9 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
           <Spinner
             customSize={18}
             variant={
-              variant === 'secondary' || variant === 'negative'
+              variant === 'secondary' ||
+              variant === 'negative' ||
+              variant === 'transparent'
                 ? 'default'
                 : 'white'
             }
