@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 09-09-2023
+
+**F36 Text Link** `v4.50.1`
+
+- fix(TextLink): vertical alignment when used in list
+
 ## 31-08-2023
 
 **F36 Autocomplete** `v4.50.0`
