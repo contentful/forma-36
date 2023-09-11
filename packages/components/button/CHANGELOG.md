@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.50.2
+
+### Patch Changes
+
+- [#2575](https://github.com/contentful/forma-36/pull/2575) [`c35bdc49e`](https://github.com/contentful/forma-36/commit/c35bdc49e2fff312946e6be37c5d8a994f93f6f4) Thanks [@maxcheremisin](https://github.com/maxcheremisin)! - fix(Button): transparent variant loading icon color
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.50.2
+  - @contentful/f36-spinner@4.50.2
+
 ## 4.50.1
 
 ### Patch Changes

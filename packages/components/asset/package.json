@@ -1,16 +1,16 @@
 {
   "name": "@contentful/f36-asset",
-  "version": "4.50.1",
+  "version": "4.50.2",
   "description": "Forma 36: Asset component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.50.1",
-    "@contentful/f36-icon": "^4.50.1",
+    "@contentful/f36-core": "^4.50.2",
+    "@contentful/f36-icon": "^4.50.2",
     "@contentful/f36-icons": "^4.27.0",
     "@contentful/f36-tokens": "^4.0.2",
-    "@contentful/f36-typography": "^4.50.1",
+    "@contentful/f36-typography": "^4.50.2",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
