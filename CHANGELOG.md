@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 12-09-2023
+
+**F36 Button** `v4.50.2`
+
+- fix(Button): transparent variant loading icon color
+
 ## 09-09-2023
 
 **F36 Text Link** `v4.50.1`
