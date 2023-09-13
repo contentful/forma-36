@@ -1,6 +1,11 @@
 import React, { type ReactElement } from 'react';
 
-import { Icon, type IconProps } from './Icon';
+import {
+  Icon,
+  type IconComponent,
+  type IconProps,
+  type NewIconSize,
+} from './Icon';
 
 export type GeneratedIconProps = Omit<
   IconProps,
@@ -48,6 +53,26 @@ export function generateIcon({
   if (name) {
     Component.displayName = name;
   }
+
+  return Component;
+}
+
+type GenerateCombinedIconParameters = {
+  sizes: Record<NewIconSize, IconComponent>;
+};
+
+export function generateCombinedIcon({
+  sizes,
+}: GenerateCombinedIconParameters) {
+  const Component = function (props: IconProps) {
+    let IconComponent = sizes.small;
+
+    if (props.size === 'medium') {
+      IconComponent = sizes.medium;
+    }
+
+    return <IconComponent {...props} isNewIcon />;
+  };
 
   return Component;
 }

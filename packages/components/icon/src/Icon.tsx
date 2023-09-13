@@ -1,4 +1,4 @@
-import { css, cx } from 'emotion';
+import { cx } from 'emotion';
 import React, {
   forwardRef,
   type ComponentType,
@@ -6,7 +6,6 @@ import React, {
   type ReactElement,
   type SVGAttributes,
 } from 'react';
-import tokens from '@contentful/f36-tokens';
 import {
   Box,
   type CommonProps,
@@ -14,12 +13,14 @@ import {
   type PolymorphicProps,
   type ExpandProps,
 } from '@contentful/f36-core';
+import { getIconStyles } from './Icon.styles';
 
 const ICON_DEFAULT_TAG = 'svg';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type IconComponent = ExoticComponent<any> | ComponentType<any>;
 
+export type NewIconSize = 'small' | 'medium';
 export type IconSize = 'xlarge' | 'large' | 'medium' | 'small' | 'tiny';
 
 export type IconVariant =
@@ -32,59 +33,39 @@ export type IconVariant =
   | 'white'
   | 'premium';
 
-const sizes: { [key in IconSize]: { [key in 'height' | 'width']: string } } = {
-  xlarge: {
-    height: '48px',
-    width: '48px',
-  },
-  large: {
-    height: '32px',
-    width: '32px',
-  },
-  medium: {
-    height: '24px',
-    width: '24px',
-  },
-  small: {
-    height: '18px',
-    width: '18px',
-  },
-  tiny: {
-    height: '16px',
-    width: '16px',
-  },
-};
+type NewOrOldIconProps =
+  | {
+      // Render the icon with new sizes and styling. Not for general use.
+      isNewIcon: true;
+      /**
+       * Determines the size of the icon
+       */
+      size?: NewIconSize;
+    }
+  | {
+      isNewIcon?: false | never;
+      /**
+       * Determines the size of the icon
+       */
+      size?: IconSize;
+    };
 
-const fills: { [key in IconVariant]: string } = {
-  muted: tokens.gray600,
-  negative: tokens.red600,
-  positive: tokens.green600,
-  primary: tokens.blue600,
-  secondary: tokens.gray900,
-  warning: tokens.colorWarning,
-  white: tokens.colorWhite,
-  premium: tokens.purple500,
-};
-
-export type IconInternalProps = CommonProps & {
-  children?: ReactElement | ReactElement[];
-  /**
-   * Determines the size of the icon
-   */
-  size?: IconSize;
-  /**
-   * Whether or not to trim the icon width, i.e. set `width` to `auto`
-   */
-  trimmed?: boolean;
-  /**
-   * Determines the fill color used
-   */
-  variant?: IconVariant;
-  /**
-   * Custom SVG viewBox attribute to use
-   */
-  viewBox?: SVGAttributes<SVGSVGElement>['viewBox'];
-};
+export type IconInternalProps = CommonProps &
+  NewOrOldIconProps & {
+    children?: ReactElement | ReactElement[];
+    /**
+     * Determines the fill color used
+     */
+    variant?: IconVariant;
+    /**
+     * Custom SVG viewBox attribute to use
+     */
+    viewBox?: SVGAttributes<SVGSVGElement>['viewBox'];
+    /**
+     * Whether or not to trim the icon width, i.e. set `width` to `auto`
+     */
+    trimmed?: boolean;
+  };
 
 export type IconProps<E extends React.ElementType = IconComponent> =
   PolymorphicProps<
@@ -116,7 +97,8 @@ export function _Icon<E extends React.ElementType = IconComponent>(
     as,
     children,
     className,
-    variant = 'primary',
+    isNewIcon,
+    variant = isNewIcon ? 'secondary' : 'primary',
     role = 'img',
     size = 'small',
     testId = 'cf-ui-icon',
@@ -126,15 +108,9 @@ export function _Icon<E extends React.ElementType = IconComponent>(
   }: IconProps<E>,
   forwardedRef: React.Ref<any>,
 ) {
+  const styles = getIconStyles({ isNewIcon, size, trimmed, variant });
   const shared = {
-    className: cx(
-      css({
-        fill: fills[variant],
-        height: sizes[size].height,
-        width: trimmed ? 'auto' : sizes[size].width,
-      }),
-      className,
-    ),
+    className: cx(styles.icon, className),
     ref: forwardedRef,
     testId,
     role,
