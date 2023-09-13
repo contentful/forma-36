@@ -7,7 +7,7 @@ import {
   MarkupIcon,
   PdfIcon,
   PlaintextIcon,
-  RichtextIcon,
+  RichTextIcon,
   PresentationIcon,
   SpreadsheetIcon,
   VideoIcon,
@@ -55,7 +55,7 @@ export const AssetIcon = ({
     case 'presentation':
       return <PresentationIcon {...props} />;
     case 'richtext':
-      return <RichtextIcon {...props} />;
+      return <RichTextIcon {...props} />;
     case 'spreadsheet':
       return <SpreadsheetIcon {...props} />;
     case 'video':
