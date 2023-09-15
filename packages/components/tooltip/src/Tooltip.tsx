@@ -18,6 +18,28 @@ import { getStyles } from './Tooltip.styles';
 
 export type TooltipPlacement = Placement;
 
+type TextContentTooltip = {
+  /**
+   * Content of the tooltip
+   */
+  content?: string;
+  /**
+   * Accesible label property, only required when using ReactElement as content
+   */
+  label?: string;
+};
+
+type RichContentTooltip = {
+  /**
+   * Content of the tooltip
+   */
+  content?: React.ReactElement;
+  /**
+   * Accesible label property, only required when using ReactElement as content
+   */
+  label: string;
+};
+
 export interface TooltipProps extends CommonProps {
   /**
    * Child nodes to be rendered in the component and that will show the tooltip when they are hovered
@@ -27,10 +49,6 @@ export interface TooltipProps extends CommonProps {
    * HTML element used to wrap the target of the tooltip
    */
   as?: React.ElementType;
-  /**
-   * Content of the tooltip
-   */
-  content?: string;
   /**
    * A unique id of the tooltip
    */
@@ -101,6 +119,7 @@ export const Tooltip = ({
   className,
   as: HtmlTag = 'span',
   content,
+  label,
   id,
   isVisible = false,
   hideDelay = 0,
@@ -117,7 +136,7 @@ export const Tooltip = ({
   usePortal = false,
   isDisabled = false,
   ...otherProps
-}: TooltipProps) => {
+}: TooltipProps & (TextContentTooltip | RichContentTooltip)) => {
   const styles = getStyles();
   const [show, setShow] = useState(isVisible);
   const tooltipId = useId(id, 'tooltip');
@@ -210,7 +229,7 @@ export const Tooltip = ({
       }}
       {...attributes.popper}
     >
-      <span>{content}</span>
+      <span aria-label={label}>{content}</span>
       <span
         className={styles.tooltipArrow}
         data-placement={

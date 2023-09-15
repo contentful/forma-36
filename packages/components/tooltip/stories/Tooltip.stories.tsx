@@ -3,6 +3,7 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { Tooltip } from '../src/Tooltip';
 import { TextLink } from '@contentful/f36-text-link';
 import { Flex } from '@contentful/f36-core';
+import { css } from 'emotion';
 
 export default {
   title: 'Components/Tooltip',
@@ -206,6 +207,31 @@ export const WithDelays = () => {
       </Flex>
       <Flex marginBottom="spacingS">
         <Tooltip content="I am a Tooltip 🙌" maxWidth={360} hideDelay={400}>
+          <TextLink href="/">Hover me</TextLink>
+        </Tooltip>
+      </Flex>
+    </>
+  );
+};
+
+export const WithReactElement = () => {
+  return (
+    <>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        With React Elements as children
+      </SectionHeading>
+
+      <Flex marginBottom="spacingS">
+        <Tooltip
+          isVisible
+          hideDelay={60000}
+          label="Render a paragrah with a React Element"
+          content={
+            <Flex>
+              <p className={css({ marginBottom: 0 })}>I'm a React Element</p>
+            </Flex>
+          }
+        >
           <TextLink href="/">Hover me</TextLink>
         </Tooltip>
       </Flex>

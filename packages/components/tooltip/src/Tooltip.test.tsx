@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { axe } from '@/scripts/test/axeHelper';
 
 import { Tooltip } from './Tooltip';
+import { Paragraph } from '@contentful/f36-typography';
 
 jest.mock('@contentful/f36-core', () => {
   const actual = jest.requireActual('@contentful/f36-core');
@@ -125,5 +126,27 @@ describe('Tooltip', () => {
     const results = await axe(container);
 
     expect(results).toHaveNoViolations();
+  });
+
+  it('render a React Element as children', async () => {
+    const user = userEvent.setup();
+
+    const { container } = render(
+      <Tooltip
+        label="With React Element"
+        id="Tooltip"
+        content={<Paragraph>Ich bin ein Paragraph</Paragraph>}
+      >
+        <span>Hover me</span>
+      </Tooltip>,
+    );
+    await user.hover(screen.getByText('Hover me'));
+
+    const results = await axe(container);
+
+    expect(results).toHaveNoViolations();
+    expect(screen.getByRole('tooltip').textContent).toBe(
+      'Ich bin ein Paragraph',
+    );
   });
 });
