@@ -40,7 +40,7 @@ type RichContentTooltip = {
   label: string;
 };
 
-export interface TooltipProps extends CommonProps {
+export type TooltipProps = CommonProps & {
   /**
    * Child nodes to be rendered in the component and that will show the tooltip when they are hovered
    */
@@ -112,7 +112,7 @@ export interface TooltipProps extends CommonProps {
    * @default false
    */
   isDisabled?: boolean;
-}
+} & (TextContentTooltip | RichContentTooltip);
 
 export const Tooltip = ({
   children,
@@ -136,7 +136,7 @@ export const Tooltip = ({
   usePortal = false,
   isDisabled = false,
   ...otherProps
-}: TooltipProps & (TextContentTooltip | RichContentTooltip)) => {
+}: TooltipProps) => {
   const styles = getStyles();
   const [show, setShow] = useState(isVisible);
   const tooltipId = useId(id, 'tooltip');
