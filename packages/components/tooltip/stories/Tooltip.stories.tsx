@@ -228,7 +228,7 @@ export const WithReactElement = () => {
           label="Render a paragrah with a React Element"
           content={
             <Flex>
-              <p className={css({ marginBottom: 0 })}>I'm a React Element</p>
+              <p className={css({ marginBottom: 0 })}>I am a React Element</p>
             </Flex>
           }
         >
