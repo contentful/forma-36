@@ -20,7 +20,7 @@ export interface AvatarProps extends CommonProps {
   /**
    * A tooltipProps attribute used to conditionally render the tooltip around root element
    */
-  tooltipProps?: Omit<TooltipProps, 'children'>;
+  tooltipProps?: TooltipProps;
   variant?: Variant;
   colorVariant?: ColorVariant;
   icon?: React.ReactElement;
