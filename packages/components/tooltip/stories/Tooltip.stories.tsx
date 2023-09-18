@@ -2,8 +2,7 @@ import React from 'react';
 import { Heading, Paragraph, SectionHeading } from '@contentful/f36-typography';
 import { Tooltip } from '../src/Tooltip';
 import { TextLink } from '@contentful/f36-text-link';
-import { Flex, Stack } from '@contentful/f36-core';
-import { css } from 'emotion';
+import { Flex } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
 export default {
