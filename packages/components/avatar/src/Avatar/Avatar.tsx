@@ -3,7 +3,12 @@ import { cx } from 'emotion';
 
 import { type CommonProps } from '@contentful/f36-core';
 import { Image, type ImageProps } from '@contentful/f36-image';
-import { Tooltip, type TooltipProps } from '@contentful/f36-tooltip';
+import {
+  Tooltip,
+  type TooltipProps,
+  type TooltipInternalProps,
+  type WithEnhancedContent,
+} from '@contentful/f36-tooltip';
 
 import { convertSizeToPixels, getAvatarStyles } from './Avatar.styles';
 import type { ColorVariant } from './utils';
@@ -20,7 +25,9 @@ export interface AvatarProps extends CommonProps {
   /**
    * A tooltipProps attribute used to conditionally render the tooltip around root element
    */
-  tooltipProps?: Omit<TooltipProps, 'children'>;
+  tooltipProps?: CommonProps &
+    WithEnhancedContent &
+    Omit<TooltipInternalProps, 'children'>;
   variant?: Variant;
   colorVariant?: ColorVariant;
   icon?: React.ReactElement;

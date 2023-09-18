@@ -19,7 +19,7 @@ import { getStyles } from './Tooltip.styles';
 
 export type TooltipPlacement = Placement;
 
-type WithEnhancedContent =
+export type WithEnhancedContent =
   | {
       /**
        * Content of the tooltip
@@ -41,7 +41,7 @@ type WithEnhancedContent =
       label?: string;
     };
 
-export type TooltipProps = CommonProps & {
+export type TooltipInternalProps = {
   /**
    * Child nodes to be rendered in the component and that will show the tooltip when they are hovered
    */
@@ -113,7 +113,11 @@ export type TooltipProps = CommonProps & {
    * @default false
    */
   isDisabled?: boolean;
-} & WithEnhancedContent;
+};
+
+export type TooltipProps = CommonProps &
+  TooltipInternalProps &
+  WithEnhancedContent;
 
 export const Tooltip = ({
   children,
