@@ -5,7 +5,6 @@ import { type CommonProps } from '@contentful/f36-core';
 import { Image, type ImageProps } from '@contentful/f36-image';
 import {
   Tooltip,
-  type TooltipProps,
   type TooltipInternalProps,
   type WithEnhancedContent,
 } from '@contentful/f36-tooltip';
