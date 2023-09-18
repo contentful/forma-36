@@ -1,9 +1,10 @@
 import React from 'react';
-import { SectionHeading } from '@contentful/f36-typography';
+import { Heading, Paragraph, SectionHeading } from '@contentful/f36-typography';
 import { Tooltip } from '../src/Tooltip';
 import { TextLink } from '@contentful/f36-text-link';
-import { Flex } from '@contentful/f36-core';
+import { Flex, Stack } from '@contentful/f36-core';
 import { css } from 'emotion';
+import tokens from '@contentful/f36-tokens';
 
 export default {
   title: 'Components/Tooltip',
@@ -223,12 +224,15 @@ export const WithReactElement = () => {
 
       <Flex marginBottom="spacingS">
         <Tooltip
-          isVisible
-          hideDelay={60000}
           label="Render a paragrah with a React Element"
           content={
-            <Flex>
-              <p className={css({ marginBottom: 0 })}>I am a React Element</p>
+            <Flex flexDirection="column">
+              <Heading style={{ color: tokens.colorWhite }}>
+                I am a Heading
+              </Heading>
+              <Paragraph style={{ color: tokens.colorWhite }}>
+                I am a paragraph
+              </Paragraph>
             </Flex>
           }
         >

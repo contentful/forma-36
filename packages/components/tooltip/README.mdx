@@ -39,6 +39,8 @@ import { Tooltip } from '@contentful/f36-tooltip';
 ## Content guidelines
 
 - Use short and clear messages as the `Tooltip`’s content
+- The Tooltip component allows you to pass React elements as content. However, this should be used with care. ReactElement as content is best suited for text formatting purposes. It should not be used for interactive elements like links, buttons, or form elements. Additionally, extensive images should be avoided, except for text-decorator icons that give semantic meaning to the text shown in the tooltip (e.g., warning signs or other relevant icons).
+  - When using `ReactElement` as the content, it's recommended to use the `ScreenReaderOnly` component when displaying critical information.
 
 ## Accessibility
 
@@ -50,5 +52,3 @@ import { Tooltip } from '@contentful/f36-tooltip';
   <TextLink>Hover me</TextLink>
 </Tooltip>
 ```
-
-- When using `ReactElement` as the content, it's recommended to use the `ScreenReaderOnly` component when displaying critical information.
