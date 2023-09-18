@@ -5,6 +5,7 @@ import React, {
   type MouseEvent,
   type FocusEvent,
   type CSSProperties,
+  ReactElement,
 } from 'react';
 import { usePopper } from 'react-popper';
 import type { Placement } from '@popperjs/core';
@@ -18,27 +19,27 @@ import { getStyles } from './Tooltip.styles';
 
 export type TooltipPlacement = Placement;
 
-type TextContentTooltip = {
-  /**
-   * Content of the tooltip
-   */
-  content?: string;
-  /**
-   * Accesible label property, only required when using ReactElement as content
-   */
-  label?: string;
-};
-
-type RichContentTooltip = {
-  /**
-   * Content of the tooltip
-   */
-  content?: React.ReactElement;
-  /**
-   * Accesible label property, only required when using ReactElement as content
-   */
-  label: string;
-};
+type WithEnhancedContent =
+  | {
+      /**
+       * Content of the tooltip
+       */
+      content: ReactElement;
+      /**
+       * Accesible label property, only required when using ReactElement as content
+       */
+      label: string;
+    }
+  | {
+      /**
+       * Content of the tooltip
+       */
+      content: string;
+      /**
+       * Accesible label property, only required when using ReactElement as content
+       */
+      label?: string;
+    };
 
 export type TooltipProps = CommonProps & {
   /**
@@ -112,7 +113,7 @@ export type TooltipProps = CommonProps & {
    * @default false
    */
   isDisabled?: boolean;
-} & (TextContentTooltip | RichContentTooltip);
+} & WithEnhancedContent;
 
 export const Tooltip = ({
   children,
