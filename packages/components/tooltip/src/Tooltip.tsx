@@ -19,27 +19,16 @@ import { getStyles } from './Tooltip.styles';
 
 export type TooltipPlacement = Placement;
 
-export type WithEnhancedContent =
-  | {
-      /**
-       * Content of the tooltip
-       */
-      content: ReactElement;
-      /**
-       * Accesible label property, only required when using ReactElement as content
-       */
-      label: string;
-    }
-  | {
-      /**
-       * Content of the tooltip
-       */
-      content: string;
-      /**
-       * Accesible label property, only required when using ReactElement as content
-       */
-      label?: string;
-    };
+export type WithEnhancedContent = {
+  /**
+   * Content of the tooltip
+   */
+  content?: ReactElement | string;
+  /**
+   * Accesible label property, only required when using ReactElement as content
+   */
+  label?: string;
+};
 
 export type TooltipInternalProps = {
   /**
@@ -115,9 +104,10 @@ export type TooltipInternalProps = {
   isDisabled?: boolean;
 };
 
-export type TooltipProps = CommonProps &
-  TooltipInternalProps &
-  WithEnhancedContent;
+export interface TooltipProps
+  extends CommonProps,
+    TooltipInternalProps,
+    WithEnhancedContent {}
 
 export const Tooltip = ({
   children,
