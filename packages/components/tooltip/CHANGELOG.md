@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.51.0
+
+### Minor Changes
+
+- [#2581](https://github.com/contentful/forma-36/pull/2581) [`e97bfa6dd`](https://github.com/contentful/forma-36/commit/e97bfa6dd33415677f86612471a26a40428afd7d) Thanks [@miguelcrespo](https://github.com/miguelcrespo)! - Support ReactElement as content for Tooltips
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.51.0
+
 ## 4.50.2
 
 ### Patch Changes
