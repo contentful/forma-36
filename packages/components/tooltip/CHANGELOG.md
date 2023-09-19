@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.52.0
+
+### Minor Changes
+
+- [#2583](https://github.com/contentful/forma-36/pull/2583) [`1190ad198`](https://github.com/contentful/forma-36/commit/1190ad19840fdf0e4230cd4f7622ec5bd467b50a) Thanks [@miguelcrespo](https://github.com/miguelcrespo)! - Fix: Make content optional again
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.52.0
+
 ## 4.51.0
 
 ### Minor Changes
