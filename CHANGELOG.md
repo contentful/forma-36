@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 20-09-2023
+
+**F36 Tooltip** `v4.51.0`
+
+- Support ReactElement as content for Tooltips
+
+**F36 Tooltip** `v4.52.0`
+
+- Fix: Make content optional again
+
 ## 12-09-2023
 
 **F36 Button** `v4.50.2`
