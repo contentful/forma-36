@@ -66,7 +66,7 @@ const textLink = ({
   css({
     display: 'inline-flex',
     justifyContent: 'center',
-    alignItems: 'baseline',
+    alignItems: 'center',
     boxSizing: 'border-box',
     border: 0,
     padding: 0,
@@ -121,8 +121,16 @@ const textLinkText = ({ alignIcon }: Pick<TextLinkProps, 'alignIcon'>) => {
   }
 };
 
+const textLinkContent = () => {
+  return css({
+    display: 'flex',
+    alignItems: 'baseline',
+  });
+};
+
 export const styles = {
   textLink,
   textLinkIcon,
   textLinkText,
+  textLinkContent,
 };

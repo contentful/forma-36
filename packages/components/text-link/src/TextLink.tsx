@@ -85,7 +85,7 @@ function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
   ) : null;
 
   const commonContent = (
-    <>
+    <span className={styles.textLinkContent()}>
       {icon && alignIcon === 'start' && iconContent}
       {children && (
         <span
@@ -97,7 +97,7 @@ function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
         </span>
       )}
       {icon && alignIcon === 'end' && iconContent}
-    </>
+    </span>
   );
 
   if (as === 'button') {

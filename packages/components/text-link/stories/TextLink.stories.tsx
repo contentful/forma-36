@@ -132,6 +132,74 @@ export const UsedWithList = () => {
   );
 };
 
+export const UsedWithinFlexbox = () => {
+  const Box = ({ children }) => (
+    <Flex
+      style={{
+        width: 200,
+        height: 100,
+        background: 'black',
+        color: 'white',
+      }}
+    >
+      {children}
+    </Flex>
+  );
+
+  return (
+    <Flex flexDirection="column" gap="spacingL">
+      <Flex gap="spacingM">
+        <Box>icon: end</Box>
+        <TextLink
+          href="https://contentful.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          icon={<Icon as={icons.ExternalLinkIcon} />}
+          alignIcon="end"
+        >
+          Contentful Website
+        </TextLink>
+      </Flex>
+      <Flex gap="spacingM">
+        <Box>icon: start</Box>
+        <TextLink
+          href="https://contentful.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          icon={<Icon as={icons.ExternalLinkIcon} />}
+          alignIcon="start"
+        >
+          Contentful Website
+        </TextLink>
+      </Flex>
+      <Flex gap="spacingM" alignItems="flex-start">
+        <Box>align-items: flex-start</Box>
+        <TextLink
+          href="https://contentful.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          icon={<Icon as={icons.ExternalLinkIcon} />}
+          alignIcon="start"
+        >
+          Contentful Website
+        </TextLink>
+      </Flex>
+      <Flex gap="spacingM" alignItems="flex-end">
+        <Box>align-items: flex-end</Box>
+        <TextLink
+          href="https://contentful.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          icon={<Icon as={icons.ExternalLinkIcon} />}
+          alignIcon="end"
+        >
+          Contentful Website
+        </TextLink>
+      </Flex>
+    </Flex>
+  );
+};
+
 const textLinkVariants = [
   'primary',
   'positive',
