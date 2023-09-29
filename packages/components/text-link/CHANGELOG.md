@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.52.1
+
+### Patch Changes
+
+- [#2584](https://github.com/contentful/forma-36/pull/2584) [`a331cc1af`](https://github.com/contentful/forma-36/commit/a331cc1aff7ee44b54f40d849cc320f61031432e) Thanks [@maxcheremisin](https://github.com/maxcheremisin)! - fix(TextLink): vertical alignment when used within flexbox container
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.52.1
+
 ## 4.52.0
 
 ### Patch Changes
