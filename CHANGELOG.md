@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 30-09-2023
+
+**F36 Text Link** `v4.52.1`
+
+- fix(TextLink): vertical alignment when used within flexbox container
+
 ## 20-09-2023
 
 **F36 Tooltip** `v4.51.0`
