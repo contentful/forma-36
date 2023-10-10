@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.52.2
+
+### Patch Changes
+
+- [#2587](https://github.com/contentful/forma-36/pull/2587) [`aff991c3d`](https://github.com/contentful/forma-36/commit/aff991c3dffaf16ea1f05b1c7303db19ce307a33) Thanks [@wojtekmaj](https://github.com/wojtekmaj)! - fix: add react-dom peer dependency
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.52.2
+
 ## 4.52.1
 
 ### Patch Changes
