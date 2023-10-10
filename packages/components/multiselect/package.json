@@ -20,7 +20,8 @@
     "react-focus-lock": "^2.9.5"
   },
   "peerDependencies": {
-    "react": ">=16.8"
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   },
   "license": "MIT",
   "files": [
