@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.52.3
+
+### Patch Changes
+
+- [#2576](https://github.com/contentful/forma-36/pull/2576) [`891308e8d`](https://github.com/contentful/forma-36/commit/891308e8dfb85f45ac43cb26793751f0a1bc2299) Thanks [@maxcheremisin](https://github.com/maxcheremisin)! - IconButton: adjust size, deprecate `size="large"` and `children` props.
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.52.3
+  - @contentful/f36-spinner@4.52.3
+
 ## 4.52.2
 
 ### Patch Changes

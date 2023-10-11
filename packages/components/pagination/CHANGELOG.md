@@ -1,5 +1,15 @@
 # @contentful/f36-pagination
 
+## 4.52.3
+
+### Patch Changes
+
+- Updated dependencies [[`891308e8d`](https://github.com/contentful/forma-36/commit/891308e8dfb85f45ac43cb26793751f0a1bc2299)]:
+  - @contentful/f36-button@4.52.3
+  - @contentful/f36-core@4.52.3
+  - @contentful/f36-forms@4.52.3
+  - @contentful/f36-typography@4.52.3
+
 ## 4.52.2
 
 ### Patch Changes
