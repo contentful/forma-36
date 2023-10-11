@@ -8,6 +8,40 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 11-10-2023
+
+**F36 Icon** `v4.52.2`
+
+- fix: add react-dom peer dependency
+
+**F36 List** `v4.52.2`
+
+- fix: add react-dom peer dependency
+
+**F36 Multiselect** `v4.20.13`
+
+- fix: add react-dom peer dependency
+
+**F36 Pagination** `v4.52.2`
+
+- fix: add react-dom peer dependency
+
+**F36 Popover** `v4.52.2`
+
+- fix: add react-dom peer dependency
+
+**F36 Spinner** `v4.52.2`
+
+- fix: add react-dom peer dependency
+
+**F36 Text Link** `v4.52.2`
+
+- fix: add react-dom peer dependency
+
+**F36 Typography** `v4.52.2`
+
+- fix: add react-dom peer dependency
+
 ## 30-09-2023
 
 **F36 Text Link** `v4.52.1`
