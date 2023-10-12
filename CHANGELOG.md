@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 12-10-2023
+
+**F36 Button** `v4.52.3`
+
+- IconButton: adjust size, deprecate `size="large"` and `children` props.
+
 ## 11-10-2023
 
 **F36 Icon** `v4.52.2`
