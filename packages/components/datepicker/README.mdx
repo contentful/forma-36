@@ -64,9 +64,27 @@ You can use Datepicker with the [FormControl](/components/form-control) in order
 
 ```
 
+### Limiting the date range
+
+Use the `fromDate` and `toDate` properties to limit the available date range.
+
+```jsx file=./examples/Datepicker/WithMinMaxDate.tsx
+
+```
+
+### Multiple months
+
+If you need to show more than a month at once, use the `numberOfMonths` property.
+
+```jsx file=./examples/Datepicker/WithMultipleMonths.tsx
+
+```
+
 ### Open by default
 
-Open the dropdown and display the Calendar by default without user interaction
+Use the `defaultIsOpen` property to open the dropdown and display the Calendar by default without user interaction.
+
+**Note**: the Calendar closes by pressing the escape key or by clicking outside of the Datepicker.
 
 ```jsx file=./examples/Datepicker/DefaultOpen.tsx
 
@@ -74,7 +92,7 @@ Open the dropdown and display the Calendar by default without user interaction
 
 ### Custom
 
-If you need a custom solution, you can build it by leveraging our lower-level components, such as Calendar, Popover, and TextInput.
+If you need a custom solution, you can build it by leveraging our lower-level components, such as [Calendar](/components/calendar), [Popover](/components/popover), and [TextInput](/components/text-input).
 For example, Datepicker that uses text input as a trigger without a button.
 
 ```jsx file=./examples/Datepicker/Custom.tsx
