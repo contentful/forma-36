@@ -24,7 +24,7 @@ import { TextLink } from '@contentful/f36-text-link';
 
 By default, `TextLink` renders `<a>` HTML tag and should be used as an usual link attribute.
 
-Note that if you use `TextLink` for linking to third party content and use `target="_blank"` property, [it is recommended](https://web.dev/external-anchors-use-rel-noopener/) to set `rel="noreferrer noopener"`.
+Note that if you use `TextLink` for linking to third party content and use `target="_blank"` property, [it is recommended](https://developer.chrome.com/docs/lighthouse/best-practices/external-anchors-use-rel-noopener/) to set `rel="noreferrer noopener"`.
 
 ```jsx file=examples/TextLinkBasicExample.tsx
 
@@ -64,4 +64,4 @@ There are a number of variations of `TextLink` styles, here is a guide for when 
 ## Accessibility
 
 - Avoid using extra styling that that make link looks just like regular text.
-- If you use `TextLink` for linking to third party content and use `target="_blank"` property, it is recommended to set `rel="noreferrer noopener"`. [More details about external links security](https://web.dev/external-anchors-use-rel-noopener/)
+- If you use `TextLink` for linking to third party content and use `target="_blank"` property, it is recommended to set `rel="noreferrer noopener"`. [More details about external links security](https://developer.chrome.com/docs/lighthouse/best-practices/external-anchors-use-rel-noopener/)
