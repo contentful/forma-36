@@ -1,5 +1,11 @@
 ## Change Log
 
+## 4.21.0
+
+### Minor Changes
+
+- [#2596](https://github.com/contentful/forma-36/pull/2596) [`7b1063fad`](https://github.com/contentful/forma-36/commit/7b1063fada1eb9ddca2a00b4239a5d4fd2180b3b) Thanks [@YvesRijckaert](https://github.com/YvesRijckaert)! - fix(Multiselect): scrolling issue
+
 ## 4.20.13
 
 ### Patch Changes
