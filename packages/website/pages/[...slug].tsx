@@ -24,65 +24,67 @@ import type { SidebarProps } from '../components/Sidebar';
 import type { TopbarProps } from '../components/Topbar/Topbar';
 import { Layout } from '../components/Layout';
 import { HARDCODED_WEBSITE_SECTION, SidebarLink } from '../types';
-import type { SidebarSection } from '../types';
+import type { SidebarSection, SidebarSubsection } from '../types';
 import mdxSidebarLinks from '../utils/sidebarLinks.json';
 
 const componentSidebarLinks: SidebarSection[] = [
   {
-    links: sortByTitle([
-      ...(mdxSidebarLinks.unassigned as SidebarLink[]),
+    links: [
+      ...sortByTitle([
+        ...(mdxSidebarLinks.unassigned as SidebarLink[]),
 
+        {
+          type: 'subsection',
+          links: mdxSidebarLinks.animationComponents,
+          title: 'Animation Components',
+        },
+        {
+          type: 'subsection',
+          links: mdxSidebarLinks.layoutComponents,
+          title: 'Layout Components',
+        },
+        {
+          type: 'subsection',
+          links: mdxSidebarLinks.typographyComponents,
+          title: 'Typography Components',
+        },
+        {
+          type: 'subsection',
+          links: mdxSidebarLinks.buttonComponents,
+          title: 'Button Components',
+        },
+        {
+          type: 'subsection',
+          links: mdxSidebarLinks.formComponents,
+          title: 'Form Components',
+        },
+        {
+          type: 'subsection',
+          links: mdxSidebarLinks.dateComponents,
+          title: 'Date Components',
+        },
+        {
+          type: 'subsection',
+          links: mdxSidebarLinks.modalComponents,
+          title: 'Modal Components',
+        },
+        {
+          type: 'subsection',
+          links: mdxSidebarLinks.cardComponents,
+          title: 'Card Components',
+        },
+        {
+          type: 'subsection',
+          links: mdxSidebarLinks.avatarComponents,
+          title: 'Avatar Components',
+        },
+      ]),
       {
-        type: 'subsection',
-        links: mdxSidebarLinks.animationComponents,
-        title: 'Animation Components',
-      },
-      {
-        type: 'subsection',
-        links: mdxSidebarLinks.layoutComponents,
-        title: 'Layout Components',
-      },
-      {
-        type: 'subsection',
-        links: mdxSidebarLinks.typographyComponents,
-        title: 'Typography Components',
-      },
-      {
-        type: 'subsection',
-        links: mdxSidebarLinks.buttonComponents,
-        title: 'Button Components',
-      },
-      {
-        type: 'subsection',
-        links: mdxSidebarLinks.formComponents,
-        title: 'Form Components',
-      },
-      {
-        type: 'subsection',
-        links: mdxSidebarLinks.dateComponents,
-        title: 'Date Components',
-      },
-      {
-        type: 'subsection',
-        links: mdxSidebarLinks.modalComponents,
-        title: 'Modal Components',
-      },
-      {
-        type: 'subsection',
-        links: mdxSidebarLinks.cardComponents,
-        title: 'Card Components',
-      },
-      {
-        type: 'subsection',
-        links: mdxSidebarLinks.avatarComponents,
-        title: 'Avatar Components',
-      },
-      {
+        title: 'Deprecated V3 Components',
         type: 'subsection',
         links: mdxSidebarLinks.deprecatedComponents,
-        title: 'Deprecated V3 Components',
-      },
-    ]),
+      } as SidebarSubsection,
+    ],
   },
 ];
 
@@ -166,7 +168,7 @@ export const getStaticProps: GetStaticProps<
     sidebarLinks = [
       ...sidebarLinks,
       ...componentSidebarLinks,
-      { title: 'Utils', links: mdxSidebarLinks.utils },
+      { title: 'Utilities', links: mdxSidebarLinks.utils },
       { title: 'Integrations', links: mdxSidebarLinks.integrations },
     ];
   }

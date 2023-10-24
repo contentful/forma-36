@@ -1,5 +1,199 @@
 # Change Log
 
+## 4.52.3
+
+### Patch Changes
+
+- Updated dependencies [[`891308e8d`](https://github.com/contentful/forma-36/commit/891308e8dfb85f45ac43cb26793751f0a1bc2299)]:
+  - @contentful/f36-button@4.52.3
+  - @contentful/f36-asset@4.52.3
+  - @contentful/f36-badge@4.52.3
+  - @contentful/f36-core@4.52.3
+  - @contentful/f36-drag-handle@4.52.3
+  - @contentful/f36-icon@4.52.3
+  - @contentful/f36-menu@4.52.3
+  - @contentful/f36-skeleton@4.52.3
+  - @contentful/f36-tooltip@4.52.3
+  - @contentful/f36-typography@4.52.3
+
+## 4.52.2
+
+### Patch Changes
+
+- Updated dependencies [[`aff991c3d`](https://github.com/contentful/forma-36/commit/aff991c3dffaf16ea1f05b1c7303db19ce307a33)]:
+  - @contentful/f36-icon@4.52.2
+  - @contentful/f36-typography@4.52.2
+  - @contentful/f36-asset@4.52.2
+  - @contentful/f36-badge@4.52.2
+  - @contentful/f36-button@4.52.2
+  - @contentful/f36-core@4.52.2
+  - @contentful/f36-drag-handle@4.52.2
+  - @contentful/f36-menu@4.52.2
+  - @contentful/f36-skeleton@4.52.2
+  - @contentful/f36-tooltip@4.52.2
+
+## 4.52.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-asset@4.52.1
+  - @contentful/f36-badge@4.52.1
+  - @contentful/f36-button@4.52.1
+  - @contentful/f36-core@4.52.1
+  - @contentful/f36-drag-handle@4.52.1
+  - @contentful/f36-icon@4.52.1
+  - @contentful/f36-menu@4.52.1
+  - @contentful/f36-skeleton@4.52.1
+  - @contentful/f36-tooltip@4.52.1
+  - @contentful/f36-typography@4.52.1
+
+## 4.52.0
+
+### Patch Changes
+
+- Updated dependencies [[`1190ad198`](https://github.com/contentful/forma-36/commit/1190ad19840fdf0e4230cd4f7622ec5bd467b50a)]:
+  - @contentful/f36-tooltip@4.52.0
+  - @contentful/f36-asset@4.52.0
+  - @contentful/f36-badge@4.52.0
+  - @contentful/f36-button@4.52.0
+  - @contentful/f36-core@4.52.0
+  - @contentful/f36-drag-handle@4.52.0
+  - @contentful/f36-icon@4.52.0
+  - @contentful/f36-menu@4.52.0
+  - @contentful/f36-skeleton@4.52.0
+  - @contentful/f36-typography@4.52.0
+
+## 4.51.0
+
+### Patch Changes
+
+- Updated dependencies [[`e97bfa6dd`](https://github.com/contentful/forma-36/commit/e97bfa6dd33415677f86612471a26a40428afd7d)]:
+  - @contentful/f36-tooltip@4.51.0
+  - @contentful/f36-asset@4.51.0
+  - @contentful/f36-badge@4.51.0
+  - @contentful/f36-button@4.51.0
+  - @contentful/f36-core@4.51.0
+  - @contentful/f36-drag-handle@4.51.0
+  - @contentful/f36-icon@4.51.0
+  - @contentful/f36-menu@4.51.0
+  - @contentful/f36-skeleton@4.51.0
+  - @contentful/f36-typography@4.51.0
+
+## 4.50.2
+
+### Patch Changes
+
+- Updated dependencies [[`c35bdc49e`](https://github.com/contentful/forma-36/commit/c35bdc49e2fff312946e6be37c5d8a994f93f6f4)]:
+  - @contentful/f36-button@4.50.2
+  - @contentful/f36-asset@4.50.2
+  - @contentful/f36-badge@4.50.2
+  - @contentful/f36-core@4.50.2
+  - @contentful/f36-drag-handle@4.50.2
+  - @contentful/f36-icon@4.50.2
+  - @contentful/f36-menu@4.50.2
+  - @contentful/f36-skeleton@4.50.2
+  - @contentful/f36-tooltip@4.50.2
+  - @contentful/f36-typography@4.50.2
+
+## 4.50.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-asset@4.50.1
+  - @contentful/f36-badge@4.50.1
+  - @contentful/f36-button@4.50.1
+  - @contentful/f36-core@4.50.1
+  - @contentful/f36-drag-handle@4.50.1
+  - @contentful/f36-icon@4.50.1
+  - @contentful/f36-menu@4.50.1
+  - @contentful/f36-skeleton@4.50.1
+  - @contentful/f36-tooltip@4.50.1
+  - @contentful/f36-typography@4.50.1
+
+## 4.50.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-asset@4.50.0
+  - @contentful/f36-badge@4.50.0
+  - @contentful/f36-button@4.50.0
+  - @contentful/f36-core@4.50.0
+  - @contentful/f36-drag-handle@4.50.0
+  - @contentful/f36-icon@4.50.0
+  - @contentful/f36-menu@4.50.0
+  - @contentful/f36-skeleton@4.50.0
+  - @contentful/f36-tooltip@4.50.0
+  - @contentful/f36-typography@4.50.0
+
+## 4.49.1
+
+### Patch Changes
+
+- Updated dependencies [[`58bd7d911`](https://github.com/contentful/forma-36/commit/58bd7d9110136805ea2ebcd113550d7d769c836e)]:
+  - @contentful/f36-button@4.49.1
+  - @contentful/f36-asset@4.49.1
+  - @contentful/f36-badge@4.49.1
+  - @contentful/f36-core@4.49.1
+  - @contentful/f36-drag-handle@4.49.1
+  - @contentful/f36-icon@4.49.1
+  - @contentful/f36-menu@4.49.1
+  - @contentful/f36-skeleton@4.49.1
+  - @contentful/f36-tooltip@4.49.1
+  - @contentful/f36-typography@4.49.1
+
+## 4.49.0
+
+### Patch Changes
+
+- Updated dependencies [[`c62e34a35`](https://github.com/contentful/forma-36/commit/c62e34a352cfdebe2edbcea5fe49f06b9b4f9e3b)]:
+  - @contentful/f36-button@4.49.0
+  - @contentful/f36-asset@4.49.0
+  - @contentful/f36-badge@4.49.0
+  - @contentful/f36-core@4.49.0
+  - @contentful/f36-drag-handle@4.49.0
+  - @contentful/f36-icon@4.49.0
+  - @contentful/f36-menu@4.49.0
+  - @contentful/f36-skeleton@4.49.0
+  - @contentful/f36-tooltip@4.49.0
+  - @contentful/f36-typography@4.49.0
+
+## 4.48.2
+
+### Patch Changes
+
+- [#2566](https://github.com/contentful/forma-36/pull/2566) [`23e1ab447`](https://github.com/contentful/forma-36/commit/23e1ab447cbdcb25164c5cee85964b6aac995c45) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(inline-entry-card): remove unsupported size prop
+
+- Updated dependencies [[`da60b12e8`](https://github.com/contentful/forma-36/commit/da60b12e89f3fccbf7d7ef3b450a9fe62d220b91)]:
+  - @contentful/f36-asset@4.48.2
+  - @contentful/f36-badge@4.48.2
+  - @contentful/f36-button@4.48.2
+  - @contentful/f36-core@4.48.2
+  - @contentful/f36-drag-handle@4.48.2
+  - @contentful/f36-icon@4.48.2
+  - @contentful/f36-menu@4.48.2
+  - @contentful/f36-skeleton@4.48.2
+  - @contentful/f36-tooltip@4.48.2
+  - @contentful/f36-typography@4.48.2
+
+## 4.48.1
+
+### Patch Changes
+
+- Updated dependencies [[`384b4df31`](https://github.com/contentful/forma-36/commit/384b4df319730b305cbeafc97515ae2d4a886873)]:
+  - @contentful/f36-button@4.48.1
+  - @contentful/f36-asset@4.48.1
+  - @contentful/f36-badge@4.48.1
+  - @contentful/f36-core@4.48.1
+  - @contentful/f36-drag-handle@4.48.1
+  - @contentful/f36-icon@4.48.1
+  - @contentful/f36-menu@4.48.1
+  - @contentful/f36-skeleton@4.48.1
+  - @contentful/f36-tooltip@4.48.1
+  - @contentful/f36-typography@4.48.1
+
 ## 4.48.0
 
 ### Patch Changes

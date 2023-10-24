@@ -1,13 +1,13 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { type AvatarProps } from './Avatar';
-import { avatarColorVariant, type ColorVariant } from './utils';
+import { avatarColorMap, type ColorVariant } from './utils';
 
 export const getColorVariantStyles = (colorVariant: ColorVariant) => {
-  const colorToken = avatarColorVariant[colorVariant];
+  const colorToken = avatarColorMap[colorVariant];
 
   return {
-    boxShadow: `0px 0px 0px 2px  ${tokens[colorToken]} inset, 0px 0px 0px 3px  ${tokens.colorWhite} inset`,
+    boxShadow: `0px 0px 0px 2px ${colorToken} inset, 0px 0px 0px 3px  ${tokens.colorWhite} inset`,
   };
 };
 
@@ -88,8 +88,11 @@ export const getAvatarStyles = ({
         zIndex: 1,
       },
     }),
-    isInactive: css({
-      opacity: 0.5,
+    isMuted: css({
+      backgroundColor: tokens.colorWhite,
+      img: {
+        opacity: 0.5,
+      },
     }),
   };
 };

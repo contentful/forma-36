@@ -57,7 +57,7 @@ function _Asset(
 
   return (
     <Box
-      className={cx(styles.relative, className)}
+      className={cx(styles.root, className)}
       testId={testId}
       ref={ref}
       {...otherProps}

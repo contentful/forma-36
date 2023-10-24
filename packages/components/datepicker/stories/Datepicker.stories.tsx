@@ -13,6 +13,18 @@ const testDate = new Date('2022-04-15');
 
 export default {
   component: Datepicker,
+  args: {
+    weekStartsOn: 1,
+  },
+  argTypes: {
+    weekStartsOn: {
+      control: {
+        type: 'number',
+        min: 0,
+        max: 6,
+      },
+    },
+  },
   parameters: {
     chromatic: { delay: 1000 },
   },

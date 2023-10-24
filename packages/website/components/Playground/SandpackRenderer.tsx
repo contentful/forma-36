@@ -96,11 +96,14 @@ export function SandpackRenderer({
           'react-scripts': '^4.0.0',
           '@contentful/f36-components': '^4.0.0',
           '@contentful/f36-avatar': '^4.0.0-alpha.0', // Remove when added to f36-components
+          '@contentful/f36-header': '^4.0.0-alpha.0', // Remove when added to f36-components
           '@contentful/f36-image': '^4.0.0-alpha.0', // Remove when added to f36-components
+          '@contentful/f36-layout': '^4.0.0-alpha.0', // Remove when added to f36-components
           '@contentful/f36-multiselect': '^4.0.0', // Remove when added to f36-components
           '@contentful/f36-navlist': '^4.1.0-alpha.0', // Remove when added to f36-components
           '@contentful/f36-tokens': '^4.0.0',
           '@contentful/f36-icons': '^4.0.0',
+          '@contentful/f36-core': '^4.0.0',
           emotion: '^10.0.17',
           lodash: '^4.17.21',
           'react-hook-form': '7.22.5',
