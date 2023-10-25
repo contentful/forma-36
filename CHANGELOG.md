@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 25-10-2023
+
+**F36 Multiselect** `v4.21.0`
+
+- fix(Multiselect): scrolling issue
+
 ## 12-10-2023
 
 **F36 Button** `v4.52.3`
