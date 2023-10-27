@@ -5,7 +5,7 @@
 # This is a template file with a number of fields that need to be filled before merging this to the default branch
 apiVersion: backstage.io/v1alpha1
 # Component, API, Template, Group, User, Resource, System, Domain, Location
-kind: unknown
+kind: System
 metadata:
   name: forma-36 
   description: Forma 36 is an open-source design system by Contentful created with the intent to reduce the overhead of creating UI by providing tools and guidance for digital teams building and extending Contentful products.
@@ -14,7 +14,10 @@ metadata:
     contentful.com/service-tier: 4
 
   tags:
-    - update-me
+    - react
+    - typescript
+    - design-system
+    - monorepo
     #need to add sast.yaml to .github/workflows and enable it in polaris dashboard
     #once that is done this can be changed to sast-enabled
     - sast-disabled
