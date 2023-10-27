@@ -24,7 +24,7 @@ spec:
   #cli, component, contentful.com/template, documentation, function, library, service, template, website
   type: unknown 
   #deprecated, experimental, production, unknown
-  lifecycle: unknown  
+  lifecycle: production  
   system: unknown #optional
   # your team name as it appears in github when tagging them for reviews
   owner: group:team-unknown 
