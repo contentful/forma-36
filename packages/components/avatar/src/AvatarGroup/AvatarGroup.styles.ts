@@ -16,7 +16,7 @@ export const getAvatarGroupStyles = (size: AvatarProps['size']) => {
     }),
     avatarStacked: css({
       position: 'relative',
-      boxShadow: `0px 0px 0px 2px ${tokens.colorWhite}`,
+      boxShadow: `0px 0px 0px 1px ${tokens.colorWhite}`,
     }),
     moreAvatarsBtn: css({
       cursor: 'pointer',
