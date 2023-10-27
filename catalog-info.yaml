@@ -11,7 +11,7 @@ metadata:
   description: Forma 36 is an open-source design system by Contentful created with the intent to reduce the overhead of creating UI by providing tools and guidance for digital teams building and extending Contentful products.
   annotations:
     github.com/project-slug: contentful/forma-36 
-    contentful.com/service-tier: 4
+    contentful.com/service-tier: "4"
 
   tags:
     - react
