@@ -164,6 +164,11 @@ export interface AutocompleteProps<ItemType>
   usePortal?: boolean;
 
   /**
+   * A [data-test-id] attribute for the suggestions box used for testing purposes
+   */
+  popoverTestId?: string;
+
+  /**
    * Function called when the input is focused
    *
    * @param event
@@ -216,6 +221,7 @@ function _Autocomplete<ItemType>(
     isLoading = false,
     usePortal = false,
     testId = 'cf-autocomplete',
+    popoverTestId = 'cf-autocomplete-container',
   } = props;
 
   type GroupType = GenericGroupType<ItemType>;
@@ -419,7 +425,7 @@ function _Autocomplete<ItemType>(
             {...menuProps}
             ref={mergeRefs(menuProps.ref, listRef)}
             className={styles.content}
-            testId="cf-autocomplete-container"
+            testId={popoverTestId}
           >
             {isLoading &&
               [...Array(3)].map((_, index) => (
