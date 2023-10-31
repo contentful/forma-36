@@ -2,7 +2,6 @@
 # https://backstage.io/docs/features/software-catalog/descriptor-format/
 
 apiVersion: backstage.io/v1alpha1
-# Component, API, Template, Group, User, Resource, System, Domain, Location
 kind: System
 metadata:
   name: forma-36 
