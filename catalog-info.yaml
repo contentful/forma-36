@@ -1,8 +1,6 @@
 # Backstage documentation
 # https://backstage.io/docs/features/software-catalog/descriptor-format/
 
-# !!! WARNING !!!
-# This is a template file with a number of fields that need to be filled before merging this to the default branch
 apiVersion: backstage.io/v1alpha1
 # Component, API, Template, Group, User, Resource, System, Domain, Location
 kind: System
