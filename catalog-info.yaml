@@ -29,4 +29,4 @@ spec:
   #deprecated, experimental, production, unknown
   lifecycle: production  
   # your team name as it appears in github when tagging them for reviews
-  owner: group:team-unknown 
+  owner: group:team-core-experience
