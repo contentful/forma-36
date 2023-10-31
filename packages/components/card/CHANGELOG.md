@@ -1,5 +1,25 @@
 # Change Log
 
+## 4.53.0
+
+### Minor Changes
+
+- [#2600](https://github.com/contentful/forma-36/pull/2600) [`293f6025d`](https://github.com/contentful/forma-36/commit/293f6025dfc08f61394b714fea9940650c170d25) Thanks [@bgutsol](https://github.com/bgutsol)! - simplify BaseCard badge and ButtonGroup child props type
+
+### Patch Changes
+
+- Updated dependencies [[`293f6025d`](https://github.com/contentful/forma-36/commit/293f6025dfc08f61394b714fea9940650c170d25)]:
+  - @contentful/f36-button@4.53.0
+  - @contentful/f36-asset@4.53.0
+  - @contentful/f36-badge@4.53.0
+  - @contentful/f36-core@4.53.0
+  - @contentful/f36-drag-handle@4.53.0
+  - @contentful/f36-icon@4.53.0
+  - @contentful/f36-menu@4.53.0
+  - @contentful/f36-skeleton@4.53.0
+  - @contentful/f36-tooltip@4.53.0
+  - @contentful/f36-typography@4.53.0
+
 ## 4.52.3
 
 ### Patch Changes
