@@ -1,5 +1,21 @@
 # Change Log
 
+## 4.54.0
+
+### Minor Changes
+
+- [#2602](https://github.com/contentful/forma-36/pull/2602) [`f1cce378c`](https://github.com/contentful/forma-36/commit/f1cce378c1ba168787cf1387b89623c6165101b9) Thanks [@veu](https://github.com/veu)! - add test ID prop for suggestion box popover to Aucomplete component
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.54.0
+  - @contentful/f36-core@4.54.0
+  - @contentful/f36-forms@4.54.0
+  - @contentful/f36-popover@4.54.0
+  - @contentful/f36-skeleton@4.54.0
+  - @contentful/f36-typography@4.54.0
+
 ## 4.53.0
 
 ### Patch Changes
