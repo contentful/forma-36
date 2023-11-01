@@ -32,7 +32,7 @@ describe('AvatarGroup', () => {
       </AvatarGroup>,
     );
     expect(screen.getAllByRole('img')).toHaveLength(2);
-    expect(screen.getByText('2')).toBeInTheDocument();
+    expect(screen.getByText('+2')).toBeInTheDocument();
   });
   it('allows to set visible Avatars programmatically', () => {
     render(
@@ -63,7 +63,7 @@ describe('AvatarGroup', () => {
     expect(screen.queryByText('Lisa Simpson')).not.toBeInTheDocument();
 
     // Open the menu to show the rest of the avatars
-    await user.click(screen.getByRole('button', { name: '3' }));
+    await user.click(screen.getByRole('button', { name: '+3' }));
     expect(screen.getByText('Lisa Simpson')).toBeInTheDocument();
     expect(screen.getAllByRole('menuitem')).toHaveLength(3);
     expect(screen.getAllByRole('img')).toHaveLength(5);
@@ -106,7 +106,7 @@ describe('AvatarGroup', () => {
       </AvatarGroup>,
     );
 
-    await user.click(screen.getByRole('button', { name: '3' }));
+    await user.click(screen.getByRole('button', { name: '+3' }));
     // Hover over the 1st avatar in dropdown: 2 visible avatars + button
     await user.hover(screen.getAllByTestId('cf-ui-avatar')[4]);
 
