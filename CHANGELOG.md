@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 02-11-2023
+
+**F36 Autocomplete** `v4.54.0`
+
+- add test ID prop for suggestion box popover to Aucomplete component
+
 ## 28-10-2023
 
 **F36 Button** `v4.53.0`
