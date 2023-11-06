@@ -109,15 +109,23 @@ export const Overview = ({ startIcon, endIcon }) => {
           </Button>
 
           <Button variant="primary" size="medium">
-            Medium (default)
-          </Button>
-
-          <Button variant="primary" size="medium">
-            Medium (default) button with really long content
+            Medium
           </Button>
 
           <Button variant="primary" size="large">
             Large
+          </Button>
+        </Stack>
+      </Flex>
+
+      <Flex flexDirection="column" marginBottom="spacingL">
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Truncated
+        </SectionHeading>
+
+        <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXs">
+          <Button variant="primary" size="medium">
+            Medium button with really long content
           </Button>
         </Stack>
       </Flex>

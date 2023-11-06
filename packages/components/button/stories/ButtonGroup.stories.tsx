@@ -18,7 +18,7 @@ export default {
   argTypes: {
     variant: {
       control: {
-        options: ['collapsed', 'spaced'],
+        options: ['merged', 'spaced'],
         type: 'select',
       },
     },
