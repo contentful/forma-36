@@ -9,7 +9,7 @@ import * as icons from '@contentful/f36-icons';
 import { IconButton } from '../src/IconButton';
 
 export default {
-  title: 'Components/Button/IconButton',
+  title: 'Components/Button components/IconButton',
   component: IconButton,
   argTypes: {
     className: { control: { disable: true } },
