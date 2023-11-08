@@ -28,7 +28,7 @@ interface IconButtonInternalProps
   children?: ButtonInternalProps['children'];
   /**
    * Determines size variation of IconButton component
-   * Note: 'large' is @deprecated
+   * Note: 'large' is deprecated
    * */
   size?: ButtonInternalProps['size'];
 }
