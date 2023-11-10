@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.54.1
+
+### Patch Changes
+
+- [#2605](https://github.com/contentful/forma-36/pull/2605) [`48a30cbdc`](https://github.com/contentful/forma-36/commit/48a30cbdca2c7f79f80f11476e7943d617f9f49c) Thanks [@bgutsol](https://github.com/bgutsol)! - Fix IconButton size prop type.
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.54.1
+  - @contentful/f36-spinner@4.54.1
+
 ## 4.54.0
 
 ### Patch Changes
