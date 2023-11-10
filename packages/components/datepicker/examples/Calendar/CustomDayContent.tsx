@@ -3,7 +3,7 @@ import { Calendar, DayContent } from '@contentful/f36-components';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-export default function IndicatorExample() {
+export default function CustomDayContentExample() {
   const today = new Date();
   const tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
