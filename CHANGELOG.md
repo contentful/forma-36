@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 11-11-2023
+
+**F36 Button** `v4.54.1`
+
+- Fix IconButton size prop type.
+
 ## 02-11-2023
 
 **F36 Autocomplete** `v4.54.0`
