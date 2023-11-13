@@ -14,10 +14,10 @@ const testDate = new Date('2022-04-15');
 
 export default {
   component: Calendar,
-  title: 'Components/Datepicker/Calendar',
+  title: 'Components/Calendar',
 } as Meta;
 
-export const Default: Story<CalendarProps> = (args) => {
+export const Basic: Story<CalendarProps> = (args) => {
   const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
   return (
