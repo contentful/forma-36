@@ -708,6 +708,17 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "whitelisab",
+      "name": "Lisa White",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62958907?v=4",
+      "profile": "http://whitelisab.com",
+      "contributions": [
+        "maintenance",
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
