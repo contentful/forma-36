@@ -215,7 +215,7 @@ export const InSmallContainer: Story<PillInternalProps> = (args) => {
         <Flex flexDirection="row" marginBottom="spacingM">
           <Box marginRight="spacingXs">
             <Pill
-              draggable={args.isDraggable}
+              isDraggable={args.isDraggable}
               label={args.label}
               className={styles.pill}
               onDrag={onDrag}
@@ -224,7 +224,7 @@ export const InSmallContainer: Story<PillInternalProps> = (args) => {
           </Box>
           <Box>
             <Pill
-              draggable={args.isDraggable}
+              isDraggable={args.isDraggable}
               label={args.label}
               className={styles.pill}
               onDrag={onDrag}
