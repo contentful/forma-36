@@ -1,26 +1,27 @@
 {
   "name": "@contentful/f36-multiselect",
-  "version": "4.20.11",
+  "version": "4.21.0",
   "description": "Forma 36: Multiselect Component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
     "@babel/runtime": "^7.21.0",
-    "@contentful/f36-button": "^4.20.8",
-    "@contentful/f36-core": "^4.20.8",
-    "@contentful/f36-forms": "^4.20.8",
+    "@contentful/f36-button": "^4.52.2",
+    "@contentful/f36-core": "^4.52.2",
+    "@contentful/f36-forms": "^4.52.2",
     "@contentful/f36-icons": "^4.20.8",
-    "@contentful/f36-popover": "^4.20.8",
-    "@contentful/f36-skeleton": "^4.20.8",
+    "@contentful/f36-popover": "^4.52.2",
+    "@contentful/f36-skeleton": "^4.52.2",
     "@contentful/f36-tokens": "^4.0.1",
-    "@contentful/f36-typography": "^4.20.8",
+    "@contentful/f36-typography": "^4.52.2",
     "@contentful/f36-utils": "^4.20.8",
     "emotion": "^10.0.17",
     "react-focus-lock": "^2.9.5"
   },
   "peerDependencies": {
-    "react": ">=16.8"
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   },
   "license": "MIT",
   "files": [

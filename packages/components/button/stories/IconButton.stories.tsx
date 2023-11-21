@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import type { Meta } from '@storybook/react/types-6-0';
 import { SectionHeading, Paragraph } from '@contentful/f36-typography';
 import { Flex, Stack, Box } from '@contentful/f36-core';
+import { TextInput } from '@contentful/f36-forms';
 import { Icon } from '@contentful/f36-icon';
 import * as icons from '@contentful/f36-icons';
 
 import { IconButton } from '../src/IconButton';
 
 export default {
-  title: 'Components/Button/IconButton',
+  title: 'Components/Button components/IconButton',
   component: IconButton,
   argTypes: {
     className: { control: { disable: true } },
@@ -70,6 +71,56 @@ export const ColoredIconInTransparentIconButton = () => {
     </Flex>
   );
 };
+
+export const WithTextInput = () => {
+  return (
+    <Stack flexDirection="column">
+      <TextInput.Group>
+        <TextInput aria-label="Content type name" defaultValue="blog" />
+        <IconButton
+          variant="secondary"
+          icon={<icons.LockIcon />}
+          aria-label="Unlock"
+        />
+      </TextInput.Group>
+      <TextInput.Group>
+        <TextInput
+          size="small"
+          aria-label="Content type name"
+          defaultValue="blog"
+        />
+        <IconButton
+          size="small"
+          variant="secondary"
+          icon={<icons.LockIcon />}
+          aria-label="Unlock"
+        />
+      </TextInput.Group>
+      <TextInput.Group spacing="spacingS">
+        <TextInput aria-label="Content type name" defaultValue="blog" />
+        <IconButton
+          variant="secondary"
+          icon={<icons.LockIcon />}
+          aria-label="Unlock"
+        />
+      </TextInput.Group>
+      <TextInput.Group spacing="spacingS">
+        <TextInput
+          size="small"
+          aria-label="Content type name"
+          defaultValue="blog"
+        />
+        <IconButton
+          size="small"
+          variant="secondary"
+          icon={<icons.LockIcon />}
+          aria-label="Unlock"
+        />
+      </TextInput.Group>
+    </Stack>
+  );
+};
+
 export const Overview = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingL">
@@ -134,13 +185,6 @@ export const Overview = () => (
           icon={<Icon as={icons.PlusIcon} />}
           aria-label="Plus"
           size="medium"
-        />
-
-        <IconButton
-          variant="primary"
-          icon={<Icon as={icons.PlusIcon} />}
-          aria-label="Plus"
-          size="large"
         />
       </Stack>
     </Flex>

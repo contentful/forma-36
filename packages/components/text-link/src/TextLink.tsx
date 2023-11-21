@@ -76,7 +76,7 @@ function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
   };
 
   const iconContent = icon ? (
-    <Flex as="span">
+    <Flex as="span" alignSelf="center">
       {React.cloneElement(icon, {
         className: cx(icon.props.className, styles.textLinkIcon()),
         size: 'small',
@@ -85,7 +85,7 @@ function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
   ) : null;
 
   const commonContent = (
-    <>
+    <span className={styles.textLinkContent()}>
       {icon && alignIcon === 'start' && iconContent}
       {children && (
         <span
@@ -97,7 +97,7 @@ function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
         </span>
       )}
       {icon && alignIcon === 'end' && iconContent}
-    </>
+    </span>
   );
 
   if (as === 'button') {

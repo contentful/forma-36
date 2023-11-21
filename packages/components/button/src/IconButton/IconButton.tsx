@@ -1,4 +1,5 @@
 import React from 'react';
+import { cx } from 'emotion';
 import type {
   PolymorphicProps,
   PolymorphicComponent,
@@ -6,9 +7,13 @@ import type {
 } from '@contentful/f36-core';
 import { Button } from '../Button';
 import type { ButtonInternalProps } from '../types';
+import { getStyles } from './IconButton.styles';
 
 interface IconButtonInternalProps
-  extends Omit<ButtonInternalProps, 'startIcon' | 'endIcon'> {
+  extends Omit<
+    ButtonInternalProps,
+    'startIcon' | 'endIcon' | 'children' | 'size'
+  > {
   /**
    * Expects any of the icon components
    */
@@ -17,6 +22,15 @@ interface IconButtonInternalProps
    * Aria label is required when using icon only
    */
   'aria-label': string;
+  /**
+   * @deprecated Use <Button /> component instead
+   */
+  children?: ButtonInternalProps['children'];
+  /**
+   * Determines size variation of IconButton component
+   * Note: 'large' is deprecated
+   * */
+  size?: ButtonInternalProps['size'];
 }
 
 const ICON_BUTTON_DEFAULT_TAG = 'button';
@@ -32,14 +46,20 @@ function _IconButton<
     testId = 'cf-ui-icon-button',
     variant = 'transparent',
     icon,
+    className,
+    size = 'medium',
     ...otherProps
   } = props;
+
+  const styles = getStyles({ size });
 
   return (
     <Button
       testId={testId}
       ref={ref}
       variant={variant}
+      className={cx(styles.iconButton, className)}
+      size={size}
       {...otherProps}
       startIcon={icon}
     />

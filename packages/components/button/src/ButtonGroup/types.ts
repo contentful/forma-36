@@ -1,6 +1,6 @@
 import type { CommonProps } from '@contentful/f36-core';
 import type { SpacingTokens } from '@contentful/f36-tokens';
-import type { ReactElement } from 'react';
+import type { ReactNode } from 'react';
 
 export type ButtonGroupVariants = 'spaced' | 'merged' | 'collapsed';
 
@@ -23,12 +23,7 @@ interface BaseButtonGroupProps extends CommonProps {
    * @default spacingS
    */
   spacing?: ButtonGroupSpacing;
-  children:
-    | ReactElement
-    | boolean
-    | null
-    | undefined
-    | (ReactElement | boolean | null | undefined)[];
+  children: ReactNode;
 }
 
 interface SpacedButtonGroupProps extends BaseButtonGroupProps {

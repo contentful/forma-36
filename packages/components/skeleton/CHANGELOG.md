@@ -1,5 +1,125 @@
 # Change Log
 
+## 4.54.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.54.1
+  - @contentful/f36-table@4.54.1
+
+## 4.54.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.54.0
+  - @contentful/f36-table@4.54.0
+
+## 4.53.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.53.0
+  - @contentful/f36-table@4.53.0
+
+## 4.52.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.52.3
+  - @contentful/f36-table@4.52.3
+
+## 4.52.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.52.2
+  - @contentful/f36-table@4.52.2
+
+## 4.52.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.52.1
+  - @contentful/f36-table@4.52.1
+
+## 4.52.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.52.0
+  - @contentful/f36-table@4.52.0
+
+## 4.51.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.51.0
+  - @contentful/f36-table@4.51.0
+
+## 4.50.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.50.2
+  - @contentful/f36-table@4.50.2
+
+## 4.50.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.50.1
+  - @contentful/f36-table@4.50.1
+
+## 4.50.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.50.0
+  - @contentful/f36-table@4.50.0
+
+## 4.49.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.49.1
+  - @contentful/f36-table@4.49.1
+
+## 4.49.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.49.0
+  - @contentful/f36-table@4.49.0
+
+## 4.48.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.48.2
+  - @contentful/f36-table@4.48.2
+
+## 4.48.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.48.1
+  - @contentful/f36-table@4.48.1
+
 ## 4.48.0
 
 ### Patch Changes

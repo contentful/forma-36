@@ -1,8 +1,9 @@
 import React from 'react';
-import { SectionHeading } from '@contentful/f36-typography';
+import { Heading, Paragraph, SectionHeading } from '@contentful/f36-typography';
 import { Tooltip } from '../src/Tooltip';
 import { TextLink } from '@contentful/f36-text-link';
 import { Flex } from '@contentful/f36-core';
+import tokens from '@contentful/f36-tokens';
 
 export default {
   title: 'Components/Tooltip',
@@ -206,6 +207,34 @@ export const WithDelays = () => {
       </Flex>
       <Flex marginBottom="spacingS">
         <Tooltip content="I am a Tooltip 🙌" maxWidth={360} hideDelay={400}>
+          <TextLink href="/">Hover me</TextLink>
+        </Tooltip>
+      </Flex>
+    </>
+  );
+};
+
+export const WithReactElement = () => {
+  return (
+    <>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        With React Elements as children
+      </SectionHeading>
+
+      <Flex marginBottom="spacingS">
+        <Tooltip
+          label="Render a paragrah with a React Element"
+          content={
+            <Flex flexDirection="column">
+              <Heading style={{ color: tokens.colorWhite }}>
+                I am a Heading
+              </Heading>
+              <Paragraph style={{ color: tokens.colorWhite }}>
+                I am a paragraph
+              </Paragraph>
+            </Flex>
+          }
+        >
           <TextLink href="/">Hover me</TextLink>
         </Tooltip>
       </Flex>

@@ -24,16 +24,19 @@ export default function IconButtonExample() {
       </Stack>
       <Stack>
         <IconButton
+          size="small"
           variant="secondary"
           aria-label="Select the date"
           icon={<CalendarIcon size="tiny" />}
         />
         <IconButton
+          size="small"
           variant="transparent"
           aria-label="Select the date"
           icon={<CalendarIcon size="tiny" />}
         />
         <IconButton
+          size="small"
           variant="primary"
           aria-label="Select the date"
           icon={<CalendarIcon size="tiny" />}

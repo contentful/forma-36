@@ -7,11 +7,11 @@ import { hexToRGBA } from '@contentful/f36-utils';
 const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
   switch (variant) {
     case 'primary':
-      return { backgroundColor: tokens.blue700, borderColor: tokens.blue700 };
+      return { backgroundColor: tokens.blue700 };
     case 'secondary':
       return { backgroundColor: tokens.gray200 };
     case 'positive':
-      return { backgroundColor: tokens.green700, borderColor: tokens.green700 };
+      return { backgroundColor: tokens.green700 };
     case 'negative':
       return { backgroundColor: tokens.gray200 };
     case 'transparent':
@@ -27,23 +27,13 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
       return {
         color: tokens.colorWhite,
         backgroundColor: tokens.blue500,
-        borderColor: tokens.blue500,
+        borderColor: 'transparent',
         '&:hover': {
           backgroundColor: tokens.blue600,
-          borderColor: tokens.blue600,
           color: tokens.colorWhite,
         },
         '&:active': variantActiveStyles(variant),
-        '&:focus': {
-          borderColor: tokens.blue600,
-          boxShadow: tokens.glowPrimary,
-        },
-        '&:focus:not(:focus-visible)': {
-          borderColor: tokens.blue500,
-          boxShadow: 'unset',
-        },
         '&:focus-visible': {
-          borderColor: tokens.blue600,
           boxShadow: tokens.glowPrimary,
         },
       };
@@ -71,23 +61,13 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
       return {
         color: tokens.colorWhite,
         backgroundColor: tokens.green500,
-        borderColor: tokens.green500,
+        borderColor: 'transparent',
         '&:hover': {
           backgroundColor: tokens.green600,
-          borderColor: tokens.green600,
           color: tokens.colorWhite,
         },
         '&:active': variantActiveStyles(variant),
-        '&:focus': {
-          borderColor: tokens.green600,
-          boxShadow: tokens.glowPositive,
-        },
-        '&:focus:not(:focus-visible)': {
-          borderColor: tokens.green500,
-          boxShadow: 'unset',
-        },
         '&:focus-visible': {
-          borderColor: tokens.green600,
           boxShadow: tokens.glowPositive,
         },
       };
@@ -101,16 +81,7 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
           color: tokens.red600,
         },
         '&:active': variantActiveStyles(variant),
-        '&:focus': {
-          borderColor: tokens.gray300,
-          boxShadow: tokens.glowNegative,
-        },
-        '&:focus:not(:focus-visible)': {
-          borderColor: tokens.red600,
-          boxShadow: 'unset',
-        },
         '&:focus-visible': {
-          borderColor: tokens.red700,
           boxShadow: tokens.glowNegative,
         },
       };

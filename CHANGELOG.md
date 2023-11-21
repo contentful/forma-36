@@ -8,6 +8,142 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 11-11-2023
+
+**F36 Button** `v4.54.1`
+
+- Fix IconButton size prop type.
+
+## 02-11-2023
+
+**F36 Autocomplete** `v4.54.0`
+
+- add test ID prop for suggestion box popover to Aucomplete component
+
+## 28-10-2023
+
+**F36 Button** `v4.53.0`
+
+- simplify BaseCard badge and ButtonGroup child props type
+
+**F36 Card** `v4.53.0`
+
+- simplify BaseCard badge and ButtonGroup child props type
+
+## 25-10-2023
+
+**F36 Multiselect** `v4.21.0`
+
+- fix(Multiselect): scrolling issue
+
+## 12-10-2023
+
+**F36 Button** `v4.52.3`
+
+- IconButton: adjust size, deprecate `size="large"` and `children` props.
+
+## 11-10-2023
+
+**F36 Icon** `v4.52.2`
+
+- fix: add react-dom peer dependency
+
+**F36 List** `v4.52.2`
+
+- fix: add react-dom peer dependency
+
+**F36 Multiselect** `v4.20.13`
+
+- fix: add react-dom peer dependency
+
+**F36 Pagination** `v4.52.2`
+
+- fix: add react-dom peer dependency
+
+**F36 Popover** `v4.52.2`
+
+- fix: add react-dom peer dependency
+
+**F36 Spinner** `v4.52.2`
+
+- fix: add react-dom peer dependency
+
+**F36 Text Link** `v4.52.2`
+
+- fix: add react-dom peer dependency
+
+**F36 Typography** `v4.52.2`
+
+- fix: add react-dom peer dependency
+
+## 30-09-2023
+
+**F36 Text Link** `v4.52.1`
+
+- fix(TextLink): vertical alignment when used within flexbox container
+
+## 20-09-2023
+
+**F36 Tooltip** `v4.51.0`
+
+- Support ReactElement as content for Tooltips
+
+**F36 Tooltip** `v4.52.0`
+
+- Fix: Make content optional again
+
+## 12-09-2023
+
+**F36 Button** `v4.50.2`
+
+- fix(Button): transparent variant loading icon color
+
+## 09-09-2023
+
+**F36 Text Link** `v4.50.1`
+
+- fix(TextLink): vertical alignment when used in list
+
+## 31-08-2023
+
+**F36 Autocomplete** `v4.50.0`
+
+- Add new props: `textOnAfterSelect?: 'clear' | 'preserve' | 'replace'`, `isOpen?: boolean; onOpen?: () => void; onClose?: () => void`, `inputValue?: string`
+
+## 29-08-2023
+
+**F36 Button** `v4.49.1`
+
+- chore: remove blue border on hover; change background color on hover
+
+## 26-08-2023
+
+**F36 Button** `v4.49.0`
+
+- chore: full height button group divider; remove positive/primary button border color
+
+## 25-08-2023
+
+**F36 Asset** `v4.48.2`
+
+- fix(asset): set full width on Asset root
+
+**F36 Card** `v4.48.2`
+
+- fix(inline-entry-card): remove unsupported size prop
+
+## 22-08-2023
+
+**F36 Multiselect** `v4.20.12`
+
+- Multiselect: apply style refresh to multiselect
+
+## 17-08-2023
+
+**F36 Button** `v4.48.1`
+
+- chore: [F36-893] change Button border color of active and focused states
+
 ## 20-07-2023
 
 **F36 Icon** `v4.48.0`

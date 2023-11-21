@@ -1,5 +1,118 @@
 # Change Log
 
+## 4.54.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.54.1
+
+## 4.54.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.54.0
+
+## 4.53.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.53.0
+
+## 4.52.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.52.3
+
+## 4.52.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.52.2
+
+## 4.52.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.52.1
+
+## 4.52.0
+
+### Minor Changes
+
+- [#2583](https://github.com/contentful/forma-36/pull/2583) [`1190ad198`](https://github.com/contentful/forma-36/commit/1190ad19840fdf0e4230cd4f7622ec5bd467b50a) Thanks [@miguelcrespo](https://github.com/miguelcrespo)! - Fix: Make content optional again
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.52.0
+
+## 4.51.0
+
+### Minor Changes
+
+- [#2581](https://github.com/contentful/forma-36/pull/2581) [`e97bfa6dd`](https://github.com/contentful/forma-36/commit/e97bfa6dd33415677f86612471a26a40428afd7d) Thanks [@miguelcrespo](https://github.com/miguelcrespo)! - Support ReactElement as content for Tooltips
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.51.0
+
+## 4.50.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.50.2
+
+## 4.50.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.50.1
+
+## 4.50.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.50.0
+
+## 4.49.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.49.1
+
+## 4.49.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.49.0
+
+## 4.48.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.48.2
+
+## 4.48.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.48.1
+
 ## 4.48.0
 
 ### Patch Changes

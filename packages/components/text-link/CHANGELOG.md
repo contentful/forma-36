@@ -1,5 +1,116 @@
 # Change Log
 
+## 4.54.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.54.1
+
+## 4.54.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.54.0
+
+## 4.53.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.53.0
+
+## 4.52.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.52.3
+
+## 4.52.2
+
+### Patch Changes
+
+- [#2587](https://github.com/contentful/forma-36/pull/2587) [`aff991c3d`](https://github.com/contentful/forma-36/commit/aff991c3dffaf16ea1f05b1c7303db19ce307a33) Thanks [@wojtekmaj](https://github.com/wojtekmaj)! - fix: add react-dom peer dependency
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.52.2
+
+## 4.52.1
+
+### Patch Changes
+
+- [#2584](https://github.com/contentful/forma-36/pull/2584) [`a331cc1af`](https://github.com/contentful/forma-36/commit/a331cc1aff7ee44b54f40d849cc320f61031432e) Thanks [@maxcheremisin](https://github.com/maxcheremisin)! - fix(TextLink): vertical alignment when used within flexbox container
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.52.1
+
+## 4.52.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.52.0
+
+## 4.51.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.51.0
+
+## 4.50.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.50.2
+
+## 4.50.1
+
+### Patch Changes
+
+- [#2574](https://github.com/contentful/forma-36/pull/2574) [`21994b4bf`](https://github.com/contentful/forma-36/commit/21994b4bfd8cfb88c7f2e3013db38d167677bf6f) Thanks [@maxcheremisin](https://github.com/maxcheremisin)! - fix(TextLink): vertical alignment when used in list
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.50.1
+
+## 4.50.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.50.0
+
+## 4.49.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.49.1
+
+## 4.49.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.49.0
+
+## 4.48.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.48.2
+
+## 4.48.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.48.1
+
 ## 4.48.0
 
 ### Minor Changes

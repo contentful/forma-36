@@ -1,28 +1,29 @@
 import React, { forwardRef } from 'react';
+import { cx } from 'emotion';
+
 import { Stack, type CommonProps } from '@contentful/f36-core';
 import { Menu } from '@contentful/f36-menu';
+
 import { type AvatarProps } from '../Avatar';
 import { getAvatarGroupStyles } from './AvatarGroup.styles';
 
-import { cx } from 'emotion';
-
 export interface AvatarGroupProps extends CommonProps {
-  maxVisibleChildren?: number;
-  size?: 'small' | 'medium';
-  variant?: 'stacked' | 'spaced';
   children?:
     | React.ReactElement<AvatarProps>[]
     | React.ReactElement<AvatarProps>;
+  maxVisibleChildren?: number;
+  size?: 'small' | 'medium';
+  variant?: 'stacked' | 'spaced';
 }
 
 function _AvatarGroup(
   {
     children,
-    size = 'medium',
-    variant = 'spaced',
-    testId = 'cf-ui-avatar-group',
-    maxVisibleChildren = 3,
     className,
+    maxVisibleChildren = 3,
+    size = 'medium',
+    testId = 'cf-ui-avatar-group',
+    variant = 'spaced',
   }: AvatarGroupProps,
   forwardedRef: React.Ref<HTMLDivElement>,
 ) {
@@ -72,7 +73,7 @@ function _AvatarGroup(
                 styles.moreAvatarsBtn,
               )}
             >
-              {childrenInMenu.length}
+              +{childrenInMenu.length}
             </button>
           </Menu.Trigger>
           <Menu.List>
@@ -85,6 +86,7 @@ function _AvatarGroup(
                   {React.cloneElement(child as React.ReactElement, {
                     key: `avatar-menuitem-${index}`,
                     size: 'tiny',
+                    tooltipProps: undefined,
                   })}
                   {(child as React.ReactElement).props.alt}
                 </Menu.Item>

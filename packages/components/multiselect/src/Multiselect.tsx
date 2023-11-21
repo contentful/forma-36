@@ -296,7 +296,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
           testId="cf-multiselect-container"
           onBlur={() => onBlur?.()}
         >
-          <FocusLock>
+          <FocusLock focusOptions={{ preventScroll: true }} returnFocus={true}>
             {hasSearch && (
               <div className={styles.searchBar}>
                 <TextInput

@@ -35,12 +35,22 @@
       "slug": "/components/globalstyles/"
     },
     {
+      "title": "Header",
+      "slug": "/components/header/",
+      "status": "alpha"
+    },
+    {
       "title": "Icons",
       "slug": "/components/icon/"
     },
     {
       "title": "Image",
       "slug": "/components/image/",
+      "status": "alpha"
+    },
+    {
+      "title": "Layout",
+      "slug": "/components/layout/",
       "status": "alpha"
     },
     {

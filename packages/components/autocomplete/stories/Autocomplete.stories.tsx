@@ -159,14 +159,12 @@ export const ControlledFromOutside = (args: AutocompleteProps<Produce>) => {
     id: 9,
     name: 'Pear 🍐',
   });
-  const [filteredItems, setFilteredItems] = useState(fruits);
+  const [inputValue, setInputValue] = useState(selectedFruit.name);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleInputValueChange = (value: string) => {
-    const newFilteredItems = fruits.filter((item) =>
-      item.name.toLowerCase().includes(value.toLowerCase()),
-    );
-    setFilteredItems(newFilteredItems);
-  };
+  const filteredItems = fruits.filter((item) =>
+    item.name.toLowerCase().includes(inputValue.toLowerCase()),
+  );
 
   const handleSelectItem = (item: Produce) => {
     setSelectedFruit(item);
@@ -181,8 +179,13 @@ export const ControlledFromOutside = (args: AutocompleteProps<Produce>) => {
     >
       <Autocomplete<Produce>
         {...args}
+        listMaxHeight={120}
+        textOnAfterSelect="preserve"
         items={filteredItems}
-        onInputValueChange={handleInputValueChange}
+        isOpen={isOpen}
+        onOpen={() => setIsOpen(true)}
+        inputValue={inputValue}
+        onInputValueChange={setInputValue}
         onSelectItem={handleSelectItem}
         itemToString={(item) => item.name}
         renderItem={(item) => item.name}
@@ -190,15 +193,17 @@ export const ControlledFromOutside = (args: AutocompleteProps<Produce>) => {
         onBlur={(e) => action('onBlur')(e)}
         selectedItem={selectedFruit}
       />
-
       <Paragraph>Selected fruit: {selectedFruit?.name}</Paragraph>
+      <Paragraph>Input value: {inputValue}</Paragraph>
       <Button onClick={() => setSelectedFruit({ id: undefined, name: '' })}>
         clear selection
       </Button>
+      <Button onClick={() => setInputValue('')}>clear input value</Button>
+      <Button onClick={() => setIsOpen(!isOpen)}>toggle menu</Button>
     </Stack>
   );
 };
-UsingObjectsAsItems.args = {
+ControlledFromOutside.args = {
   placeholder: 'Search your favorite fruit',
 };
 
@@ -284,7 +289,7 @@ export const MultipleSelection = (args: AutocompleteProps<Produce>) => {
         onBlur={(e) => action('onBlur')(e)}
         itemToString={(item) => item.name}
         renderItem={(item) => item.name}
-        clearAfterSelect
+        textOnAfterSelect="clear"
         closeAfterSelect={false}
       />
 

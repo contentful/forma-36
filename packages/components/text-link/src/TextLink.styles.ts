@@ -84,7 +84,6 @@ const textLink = ({
     opacity: isDisabled ? 0.5 : 1,
     ...variantToStyles(variant),
     outline: 'none',
-    verticalAlign: 'bottom',
     '&:focus, &:focus-visible, &:hover': {
       textDecoration: isDisabled ? 'none' : 'underline',
     },
@@ -122,8 +121,16 @@ const textLinkText = ({ alignIcon }: Pick<TextLinkProps, 'alignIcon'>) => {
   }
 };
 
+const textLinkContent = () => {
+  return css({
+    display: 'flex',
+    alignItems: 'baseline',
+  });
+};
+
 export const styles = {
   textLink,
   textLinkIcon,
   textLinkText,
+  textLinkContent,
 };

@@ -676,6 +676,49 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "cf-remylenoir",
+      "name": "Rémy Lenoir",
+      "avatar_url": "https://avatars.githubusercontent.com/u/103024358?v=4",
+      "profile": "https://github.com/cf-remylenoir",
+      "contributions": [
+        "maintenance",
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "wojtekmaj",
+      "name": "Wojciech Maj",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5426427?v=4",
+      "profile": "https://wojtekmaj.pl",
+      "contributions": [
+        "bug",
+        "code"
+      ]
+    },
+    {
+      "login": "lilbitner",
+      "name": "Lillian Bitner ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/58186851?v=4",
+      "profile": "https://github.com/lilbitner",
+      "contributions": [
+        "maintenance",
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "whitelisab",
+      "name": "Lisa White",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62958907?v=4",
+      "profile": "http://whitelisab.com",
+      "contributions": [
+        "maintenance",
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

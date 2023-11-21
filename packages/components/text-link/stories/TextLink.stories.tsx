@@ -3,6 +3,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import * as icons from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
 import { Paragraph, Text } from '@contentful/f36-typography';
+import { List } from '@contentful/f36-list';
 import { Flex } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
@@ -78,6 +79,124 @@ export const UsedWithText = () => {
       third-largest metropolitan region after the Rhine-Ruhr and Rhine-Main
       regions.
     </Paragraph>
+  );
+};
+
+export const UsedWithList = () => {
+  return (
+    <List>
+      <List.Item>
+        <Text>
+          List item with a link:{' '}
+          <TextLink
+            href="https://contentful.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Contentful
+          </TextLink>{' '}
+          Website
+        </Text>
+      </List.Item>
+      <List.Item>
+        <Text>
+          List item with a link and start icon:{' '}
+          <TextLink
+            href="https://contentful.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            icon={<Icon as={icons.ExternalLinkIcon} />}
+            alignIcon="start"
+          >
+            Contentful
+          </TextLink>{' '}
+          Website
+        </Text>
+      </List.Item>
+      <List.Item>
+        <Text>
+          List item with a link and end icon:{' '}
+          <TextLink
+            href="https://contentful.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            icon={<Icon as={icons.ExternalLinkIcon} />}
+            alignIcon="end"
+          >
+            Contentful
+          </TextLink>{' '}
+          Website
+        </Text>
+      </List.Item>
+    </List>
+  );
+};
+
+export const UsedWithinFlexbox = () => {
+  const Box = ({ children }) => (
+    <Flex
+      style={{
+        width: 200,
+        height: 100,
+        background: 'black',
+        color: 'white',
+      }}
+    >
+      {children}
+    </Flex>
+  );
+
+  return (
+    <Flex flexDirection="column" gap="spacingL">
+      <Flex gap="spacingM">
+        <Box>icon: end</Box>
+        <TextLink
+          href="https://contentful.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          icon={<Icon as={icons.ExternalLinkIcon} />}
+          alignIcon="end"
+        >
+          Contentful Website
+        </TextLink>
+      </Flex>
+      <Flex gap="spacingM">
+        <Box>icon: start</Box>
+        <TextLink
+          href="https://contentful.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          icon={<Icon as={icons.ExternalLinkIcon} />}
+          alignIcon="start"
+        >
+          Contentful Website
+        </TextLink>
+      </Flex>
+      <Flex gap="spacingM" alignItems="flex-start">
+        <Box>align-items: flex-start</Box>
+        <TextLink
+          href="https://contentful.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          icon={<Icon as={icons.ExternalLinkIcon} />}
+          alignIcon="start"
+        >
+          Contentful Website
+        </TextLink>
+      </Flex>
+      <Flex gap="spacingM" alignItems="flex-end">
+        <Box>align-items: flex-end</Box>
+        <TextLink
+          href="https://contentful.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          icon={<Icon as={icons.ExternalLinkIcon} />}
+          alignIcon="end"
+        >
+          Contentful Website
+        </TextLink>
+      </Flex>
+    </Flex>
   );
 };
 

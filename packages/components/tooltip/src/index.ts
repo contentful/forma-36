@@ -1,2 +1,6 @@
 export { Tooltip } from './Tooltip';
-export type { TooltipProps } from './Tooltip';
+export type {
+  TooltipInternalProps,
+  TooltipProps,
+  WithEnhancedContent,
+} from './Tooltip';
