@@ -39,7 +39,7 @@
     "github-slugger": "^1.4.0",
     "gray-matter": "^4.0.3",
     "lz-string": "1.4.4",
-    "next": "^12.3.1",
+    "next": "^13.5.0",
     "next-auth": "^4.24.5",
     "next-mdx-remote": "^3.0.8",
     "prism-react-renderer": "1.2.1",
