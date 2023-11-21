@@ -8,6 +8,34 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 11-11-2023
+
+**F36 Button** `v4.54.1`
+
+- Fix IconButton size prop type.
+
+## 02-11-2023
+
+**F36 Autocomplete** `v4.54.0`
+
+- add test ID prop for suggestion box popover to Aucomplete component
+
+## 28-10-2023
+
+**F36 Button** `v4.53.0`
+
+- simplify BaseCard badge and ButtonGroup child props type
+
+**F36 Card** `v4.53.0`
+
+- simplify BaseCard badge and ButtonGroup child props type
+
+## 25-10-2023
+
+**F36 Multiselect** `v4.21.0`
+
+- fix(Multiselect): scrolling issue
+
 ## 12-10-2023
 
 **F36 Button** `v4.52.3`

@@ -73,7 +73,7 @@ function _AvatarGroup(
                 styles.moreAvatarsBtn,
               )}
             >
-              {childrenInMenu.length}
+              +{childrenInMenu.length}
             </button>
           </Menu.Trigger>
           <Menu.List>

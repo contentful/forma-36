@@ -9,7 +9,7 @@ export default {
   parameters: {
     propTypes: CopyButton['__docgenInfo'],
   },
-  title: 'Components/CopyButton',
+  title: 'Components/Button components/CopyButton',
 } as Meta;
 
 export const Default: Story<CopyButtonProps> = (args) => {

@@ -131,7 +131,15 @@ npm run-script test --watch
 
 ## Building
 
-We are using [Parcel](https://parceljs.org/) to build our component library. Each component builds to its own `dist` directory.
+We are using [tsup](https://tsup.egoist.dev/) and [esbuild](https://esbuild.github.io/) together with [Microbundle](https://www.npmjs.com/package/microbundle) to build our component library.
+
+Each component builds to its own `dist` directory with:
+
+- `index.d.ts` – TypeScript type declaration file
+- `index.js` – CJS (CommonJS)
+- `index.modern.mjs` – [Modern](https://github.com/developit/microbundle#-modern-mode-) output (work in all modern browsers)
+- `index.module.js` – legacy ESM (ES Modules) output (for bundlers)
+- `index.umd.js` – legacy UMD (Universal Module Definition) output (for Node & CDN use)
 
 ### Create a build of the library
 

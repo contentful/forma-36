@@ -1,0 +1,25 @@
+# Backstage documentation
+# https://backstage.io/docs/features/software-catalog/descriptor-format/
+
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: forma-36 
+  description: Forma 36 is an open-source design system by Contentful created with the intent to reduce the overhead of creating UI by providing tools and guidance for digital teams building and extending Contentful products.
+  annotations:
+    github.com/project-slug: contentful/forma-36 
+    contentful.com/service-tier: "4"
+
+  tags:
+    - react
+    - typescript
+    - design-system
+    - monorepo
+    #need to add sast.yaml to .github/workflows and enable it in polaris dashboard
+    #once that is done this can be changed to sast-enabled
+    - sast-disabled
+    - tier-4
+spec:
+  type: library 
+  lifecycle: production  
+  owner: group:team-core-experience
