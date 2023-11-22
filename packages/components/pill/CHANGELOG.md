@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.54.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.54.2
+  - @contentful/f36-core@4.54.2
+  - @contentful/f36-drag-handle@4.54.2
+  - @contentful/f36-tooltip@4.54.2
+
 ## 4.54.1
 
 ### Patch Changes
