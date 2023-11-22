@@ -16,8 +16,18 @@
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
+    "@types/react": ">=16.8",
+    "@types/react-dom": ">=16.8",
     "react": ">=16.8",
     "react-dom": ">=16.8"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
   },
   "dependencies": {
     "@contentful/f36-accordion": "^4.54.1",
@@ -54,9 +64,7 @@
     "@contentful/f36-tokens": "^4.0.2",
     "@contentful/f36-tooltip": "^4.54.1",
     "@contentful/f36-typography": "^4.54.1",
-    "@contentful/f36-utils": "^4.23.2",
-    "@types/react": "16.14.22",
-    "@types/react-dom": "16.9.14"
+    "@contentful/f36-utils": "^4.23.2"
   },
   "devDependencies": {
     "microbundle": "^0.15.1",
