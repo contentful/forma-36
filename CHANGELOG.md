@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 23-11-2023
+
+`@contentful/f36-components@4.54.2`
+
+- Make `@types/react` & `@types/react-dom` peer dependencies
+
 ## 11-11-2023
 
 **F36 Button** `v4.54.1`
