@@ -27,25 +27,35 @@ import { Calendar } from '@contentful/f36-datepicker';
 
 ### Basic
 
-Displays inline calendar to ask for user's action to select a date
+Displays inline calendar to ask for user's action to select a date.
 
 ```jsx file=../../examples/Calendar/Basic.tsx
 
 ```
 
-### Min and max date
+### Limiting the date range
 
-Set mininum and/or maximum dates to limit users to choose from a specific period in time
+Set mininum and/or maximum dates to limit users to choose from a specific period in time.
+
+Use `from...` and `to...` properties to control time frames.
+
+```jsx file=../../examples/Calendar/LimitingTheDateRange.tsx
+
+```
+
+### Multiple months
+
+Display multiple months on the calender for a more convenient way for users to view dates.
 
 Use `from...` and `to...` props to control time frames
 
-```jsx file=../../examples/Calendar/MinMax.tsx
+```jsx file=../../examples/Calendar/WithMultipleMonths.tsx
 
 ```
 
 ### Indicators
 
-Use modifiers to modify certain days, for example showing indicators for scheduled actions
+Use modifiers to modify certain days, for example showing indicators for scheduled actions.
 
 Read more about modifiers: https://react-day-picker.js.org/basics/modifiers
 
@@ -55,21 +65,11 @@ Read more about modifiers: https://react-day-picker.js.org/basics/modifiers
 
 ### Custom Day content
 
-Use components to modify certain parts of the calendar, for example modifying day content
+Use components to modify certain parts of the calendar, for example modifying day content.
 
 Read more about custom components: https://react-day-picker.js.org/guides/custom-components
 
 ```jsx file=../../examples/Calendar/CustomDayContent.tsx
-
-```
-
-### Multiple months
-
-Display multiple months on the calender for a more convenient way for users to view dates
-
-Use `from...` and `to...` props to control time frames
-
-```jsx file=../../examples/Calendar/MultiMonths.tsx
 
 ```
 
