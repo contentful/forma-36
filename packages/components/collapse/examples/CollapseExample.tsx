@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Collapse, Text, Stack } from '@contentful/f36-components';
 
-export function CollapseExample() {
+export default function CollapseExample() {
   const [isExpanded, setIsExpanded] = React.useState(true);
   return (
     <Stack flexDirection="column">
