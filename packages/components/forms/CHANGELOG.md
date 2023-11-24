@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.54.3
+
+### Patch Changes
+
+- [#2615](https://github.com/contentful/forma-36/pull/2615) [`26110b97b`](https://github.com/contentful/forma-36/commit/26110b97b3d4d589d8ee5f9c2a3d573b83d6d093) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - - fix(Radio): adjust width for large copy
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.54.3
+  - @contentful/f36-typography@4.54.3
+
 ## 4.54.2
 
 ### Patch Changes

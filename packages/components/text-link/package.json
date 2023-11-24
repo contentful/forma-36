@@ -1,12 +1,12 @@
 {
   "name": "@contentful/f36-text-link",
-  "version": "4.54.2",
+  "version": "4.54.3",
   "description": "Forma 36: TextLink component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.54.2",
+    "@contentful/f36-core": "^4.54.3",
     "@contentful/f36-tokens": "^4.0.2",
     "emotion": "^10.0.17"
   },
