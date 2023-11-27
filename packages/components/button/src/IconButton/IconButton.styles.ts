@@ -1,21 +1,24 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import { type Density } from '@contentful/f36-utils';
 import { ButtonSize } from '../types';
 
-function sizeToStyles(size: ButtonSize) {
+function sizeToStyles(size: ButtonSize, density: Density) {
+  const isHighDensity = density === 'high';
+
   switch (size) {
     case 'small': {
       return {
-        padding: tokens.spacing2Xs,
-        minHeight: '32px',
-        minWidth: '32px',
+        padding: isHighDensity ? `${tokens.spacing2Xs}` : tokens.spacing2Xs,
+        minHeight: isHighDensity ? '16px' : '32px',
+        minWidth: isHighDensity ? '16px' : '32px',
       };
     }
     case 'medium': {
       return {
         padding: tokens.spacingXs,
-        minHeight: '40px',
-        minWidth: '40px',
+        minHeight: isHighDensity ? '32px' : '40px',
+        minWidth: isHighDensity ? '32px' : '40px',
       };
     }
     default: {
@@ -24,10 +27,16 @@ function sizeToStyles(size: ButtonSize) {
   }
 }
 
-export function getStyles({ size }: { size: ButtonSize }) {
+export function getStyles({
+  size,
+  density,
+}: {
+  size: ButtonSize;
+  density: Density;
+}) {
   return {
     iconButton: css({
-      ...sizeToStyles(size),
+      ...sizeToStyles(size, density),
     }),
   };
 }
