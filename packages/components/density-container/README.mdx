@@ -1,0 +1,45 @@
+---
+title: 'DensityContainer'
+type: 'component'
+status: 'alpha'
+section: 'layoutComponents'
+slug: /components/density-container/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/density-container'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-density-container--overview'
+typescript: ./src/DensityContainer.tsx
+---
+
+This container can be used to change the density of the children.
+
+## Import
+
+```jsx static=true
+import { DensityContainer } from '@contentful/f36-components';
+// or
+import { DensityContainer } from '@contentful/f36-density-container';
+```
+
+## Examples
+
+### Usage
+
+- A `low` density results in the default experience.
+- A `high` density results in a denser UI, allowing more content and actions to fit on a single screen.
+
+```jsx file=./examples/DensityUsage.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="DensityContainer" />
+
+## Density support
+
+To enable density support in your component, use the `useDensity` hook from `@contentful/f36-utils`.
+
+Follow the density documentation (WIP) to ensure a consistent across the application.
+
+```jsx file=./examples/DensitySupport.tsx
+
+```
