@@ -56,7 +56,7 @@ export const CheckboxWithCustomLabel = (args: CheckboxProps) => {
       >
         Forma 36 checkbox label
       </Checkbox>
-      <Flex alignItems="center">
+      <Flex alignItems="center" gap="spacingXs">
         <Checkbox
           {...args}
           id="Checkbox2"
