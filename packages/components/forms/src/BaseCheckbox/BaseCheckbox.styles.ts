@@ -49,6 +49,9 @@ const getStyles = ({
       position: 'absolute',
       width: tokens.spacingM,
       zIndex: tokens.zIndexDefault,
+      '+ span': {
+        minWidth: tokens.spacingM,
+      },
       '&:focus': {
         outline: 'none',
         '& + span': {

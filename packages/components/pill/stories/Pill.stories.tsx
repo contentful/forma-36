@@ -26,7 +26,7 @@ export default {
 } as Meta;
 
 export const basic: Story<PillInternalProps> = (args) => (
-  <Pill label={args.label} />
+  <Pill label={args.label} isDraggable={args.isDraggable} />
 );
 
 basic.args = { label: 'example.user@contentful.com' };
@@ -205,6 +205,7 @@ export const InSmallContainer: Story<PillInternalProps> = (args) => {
       maxWidth: 200,
     }),
   };
+  const onDrag = args.isDraggable ? args.onDrag : undefined;
   return (
     <>
       <Flex flexDirection="column" marginBottom="spacingL">
@@ -214,19 +215,19 @@ export const InSmallContainer: Story<PillInternalProps> = (args) => {
         <Flex flexDirection="row" marginBottom="spacingM">
           <Box marginRight="spacingXs">
             <Pill
-              draggable
+              isDraggable={args.isDraggable}
               label={args.label}
               className={styles.pill}
-              onDrag={args.onDrag}
+              onDrag={onDrag}
               onClose={args.onClose}
             />
           </Box>
           <Box>
             <Pill
-              draggable
+              isDraggable={args.isDraggable}
               label={args.label}
               className={styles.pill}
-              onDrag={args.onDrag}
+              onDrag={onDrag}
               onClose={args.onClose}
             />
           </Box>
