@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 25-11-2023
+
+**F36 Forms** `v4.54.3`
+
+- fix(Radio): adjust width for large copy
+
 ## 23-11-2023
 
 `@contentful/f36-components@4.54.2`
