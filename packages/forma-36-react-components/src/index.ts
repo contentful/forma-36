@@ -9,7 +9,6 @@ export * from '@contentful/f36-copybutton';
 export * from '@contentful/f36-core';
 export * from '@contentful/f36-datetime';
 export * from '@contentful/f36-datepicker';
-export * from '@contentful/f36-density-container';
 export * from '@contentful/f36-drag-handle';
 export * from '@contentful/f36-entity-list';
 export * from '@contentful/f36-empty-state';

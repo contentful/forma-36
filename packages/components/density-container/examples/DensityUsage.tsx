@@ -1,12 +1,7 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
-import {
-  Box,
-  Button,
-  DensityContainer,
-  Flex,
-  Heading,
-} from '@contentful/f36-components';
+import { DensityContainer } from '@contentful/f36-density-container';
+import { Box, Button, Flex, Heading } from '@contentful/f36-components';
 
 export default function DensityUsage() {
   return (
