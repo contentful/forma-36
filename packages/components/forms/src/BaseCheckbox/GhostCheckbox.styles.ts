@@ -13,7 +13,6 @@ const getBaseGhostStyles = ({ isDisabled }): CSSObject => ({
   display: 'inline-flex',
   height: tokens.spacingM,
   justifyContent: 'center',
-  marginRight: tokens.spacingXs,
   width: tokens.spacingM,
 });
 

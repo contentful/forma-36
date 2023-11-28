@@ -38,6 +38,7 @@ const getStyles = ({
     display: 'inline-flex',
     position: 'relative',
     margin: '0',
+    columnGap: tokens.spacingXs,
   }),
   input: css([
     {
