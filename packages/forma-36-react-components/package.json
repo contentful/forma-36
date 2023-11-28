@@ -41,7 +41,7 @@
     "@contentful/f36-core": "^4.54.3",
     "@contentful/f36-datepicker": "^4.54.3",
     "@contentful/f36-datetime": "^4.54.3",
-    "@contentful/f36-density-container": "^4.0.0",
+    "@contentful/f36-density-container": "^4.54.3",
     "@contentful/f36-drag-handle": "^4.54.3",
     "@contentful/f36-empty-state": "^4.54.3",
     "@contentful/f36-entity-list": "^4.54.3",
