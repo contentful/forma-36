@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.54.4
+
+### Patch Changes
+
+- [#2619](https://github.com/contentful/forma-36/pull/2619) [`9c1e4a224`](https://github.com/contentful/forma-36/commit/9c1e4a2241bf9b001824a7c60fd5f0ee01d50702) Thanks [@massao](https://github.com/massao)! - Replaced hardcoded margin right with column gap
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.54.4
+  - @contentful/f36-typography@4.54.4
+
 ## 4.54.3
 
 ### Patch Changes
