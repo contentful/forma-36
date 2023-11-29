@@ -1,5 +1,16 @@
 # @contentful/f36-datepicker
 
+## 4.54.4
+
+### Patch Changes
+
+- Updated dependencies [[`9c1e4a224`](https://github.com/contentful/forma-36/commit/9c1e4a2241bf9b001824a7c60fd5f0ee01d50702)]:
+  - @contentful/f36-forms@4.54.4
+  - @contentful/f36-button@4.54.4
+  - @contentful/f36-core@4.54.4
+  - @contentful/f36-popover@4.54.4
+  - @contentful/f36-typography@4.54.4
+
 ## 4.54.3
 
 ### Patch Changes
