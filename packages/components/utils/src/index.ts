@@ -5,8 +5,5 @@ export type { UseKeyboardProps } from './useKeyboard/useKeyboard';
 export { getStringMatch } from './getStringMatch/getStringMatch';
 export { hexToRGBA } from './hexToRGBA/hexToRGBA';
 export { getTextFromChildren } from './getTextFromChildren/getTextFromChildren';
-export {
-  useDensity,
-  DensityProvider,
-  type Density,
-} from './useDensity/useDensity';
+export { useDensity, DensityProvider } from './useDensity/useDensity';
+export type { Density } from './useDensity/useDensity';
