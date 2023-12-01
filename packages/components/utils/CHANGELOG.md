@@ -1,5 +1,11 @@
 # @contentful/f36-utils
 
+## 4.24.2
+
+### Patch Changes
+
+- [#2620](https://github.com/contentful/forma-36/pull/2620) [`d78ee8da5`](https://github.com/contentful/forma-36/commit/d78ee8da56834f85d99270ca67e147ef1cacf4bd) Thanks [@massao](https://github.com/massao)! - Add density context to utils package
+
 ## 4.24.1
 
 ### Patch Changes
