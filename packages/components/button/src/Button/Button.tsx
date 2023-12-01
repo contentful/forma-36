@@ -7,6 +7,7 @@ import {
   type PolymorphicComponent,
   type ExpandProps,
 } from '@contentful/f36-core';
+import { useDensity } from '@contentful/f36-utils';
 import { Spinner } from '@contentful/f36-spinner';
 
 import type { ButtonInternalProps } from '../types';
@@ -39,11 +40,13 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
     style,
     ...otherProps
   } = props;
+  const density = useDensity();
 
   const rootClassNames = cx(
     styles.button({
       variant,
       size,
+      density,
       isActive,
       isDisabled,
       isFullWidth,

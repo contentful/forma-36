@@ -2,7 +2,7 @@ import { css } from 'emotion';
 import type { CSSObject } from '@emotion/serialize';
 import tokens from '@contentful/f36-tokens';
 import { ButtonSize, ButtonVariant, ButtonStylesProps } from '../types';
-import { hexToRGBA } from '@contentful/f36-utils';
+import { hexToRGBA, type Density } from '@contentful/f36-utils';
 
 const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
   switch (variant) {
@@ -110,21 +110,25 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
   }
 };
 
-const sizeToStyles = (size: ButtonSize): CSSObject => {
+const sizeToStyles = (size: ButtonSize, density: Density): CSSObject => {
+  const isHighDensity = density === 'high';
+
   switch (size) {
     case 'small':
       return {
-        fontSize: tokens.fontSizeM,
+        fontSize: isHighDensity ? tokens.fontSizeS : tokens.fontSizeM,
         lineHeight: tokens.lineHeightCondensed,
-        padding: `${tokens.spacing2Xs} ${tokens.spacingS}`,
-        minHeight: '32px',
+        padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
+        minHeight: isHighDensity ? '16px' : '32px',
       };
     case 'medium':
       return {
-        fontSize: tokens.fontSizeM,
+        fontSize: isHighDensity ? tokens.fontSizeS : tokens.fontSizeM,
         lineHeight: tokens.lineHeightCondensed,
-        padding: `${tokens.spacingXs} ${tokens.spacingM}`,
-        minHeight: '40px',
+        padding: isHighDensity
+          ? `${tokens.spacingXs} ${tokens.spacingS}`
+          : `${tokens.spacingXs} ${tokens.spacingM}`,
+        minHeight: isHighDensity ? '32px' : '40px',
       };
     case 'large':
       return {
@@ -162,15 +166,19 @@ export const getStyles = () => ({
   button: ({
     variant,
     size,
+    density,
     isActive,
     isDisabled,
     isFullWidth,
-  }: ButtonStylesProps) =>
+  }: ButtonStylesProps & { density: Density }) =>
     css({
       boxSizing: 'border-box',
       border: `1px solid`,
       boxShadow: '0px 1px 0px rgb(25, 37, 50, 0.08)',
-      borderRadius: tokens.borderRadiusMedium,
+      borderRadius:
+        density === 'high'
+          ? tokens.borderRadiusSmall
+          : tokens.borderRadiusMedium,
       cursor: isDisabled ? 'not-allowed' : 'pointer',
       fontFamily: tokens.fontStackPrimary,
       opacity: isDisabled ? 0.5 : 1,
@@ -189,7 +197,7 @@ export const getStyles = () => ({
         opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault},
         border-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       ...variantToStyles(variant),
-      ...sizeToStyles(size),
+      ...sizeToStyles(size, density),
       ...(isActive
         ? {
             transition: 'none',

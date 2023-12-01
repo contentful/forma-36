@@ -8,6 +8,7 @@ import type {
 import { Button } from '../Button';
 import type { ButtonInternalProps } from '../types';
 import { getStyles } from './IconButton.styles';
+import { useDensity } from '@contentful/f36-utils';
 
 interface IconButtonInternalProps
   extends Omit<
@@ -51,7 +52,9 @@ function _IconButton<
     ...otherProps
   } = props;
 
-  const styles = getStyles({ size });
+  const density = useDensity();
+
+  const styles = getStyles({ size, density });
 
   return (
     <Button
