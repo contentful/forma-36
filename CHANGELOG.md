@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 02-12-2023
+
+**F36 Button** `v4.54.5`
+
+- Consume density context on buttons
+
+**F36 Utils** `v4.24.2`
+
+- Add density context to utils package
+
 ## 30-11-2023
 
 **F36 Forms** `v4.54.4`
