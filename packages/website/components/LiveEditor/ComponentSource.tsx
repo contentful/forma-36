@@ -44,7 +44,7 @@ const liveProviderScope = {
   ...f36utils,
   Avatar, // Remove when avatar is added to f36-components
   AvatarGroup, // Remove when avatar is added to f36-components
-  DensityContainer, // Remove when avatar is added to f36-components
+  DensityContainer, // Remove when added to f36-components
   Header, // Remove when added to f36-components
   Image, // Remove when added to f36-components
   Layout, // Remove when added to f36-components
