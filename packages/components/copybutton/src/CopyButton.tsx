@@ -13,15 +13,7 @@ import { cx } from 'emotion';
 
 export type CopyButtonProps = Omit<
   ButtonProps,
-  | 'children'
-  | 'endIcon'
-  | 'onCopy'
-  | 'onClick'
-  | 'startIcon'
-  | 'isDisabled'
-  | 'size'
-  | 'value'
-  | 'variant'
+  'endIcon' | 'onCopy' | 'onClick' | 'isDisabled' | 'size' | 'value'
 > & {
   /**
    * Function that gets called when the button is clicked
@@ -136,9 +128,6 @@ function _CopyButton(
         isLoading={isLoading}
         onBlur={handleBlur}
         testId={testId}
-        {...otherProps}
-        onClick={handleClick}
-        ref={ref}
         startIcon={
           <CopyIcon
             variant="muted"
@@ -146,6 +135,9 @@ function _CopyButton(
           />
         }
         variant="secondary"
+        {...otherProps}
+        onClick={handleClick}
+        ref={ref}
       />
     </Tooltip>
   );
