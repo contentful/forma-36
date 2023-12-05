@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.55.0
+
+### Minor Changes
+
+- [#2624](https://github.com/contentful/forma-36/pull/2624) [`7b999afc8`](https://github.com/contentful/forma-36/commit/7b999afc8ff91e300daf13b94e8a9aed48505338) Thanks [@bgutsol](https://github.com/bgutsol)! - Make CopyButton component visual props less strict
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.55.0
+  - @contentful/f36-core@4.55.0
+  - @contentful/f36-tooltip@4.55.0
+
 ## 4.54.5
 
 ### Patch Changes
