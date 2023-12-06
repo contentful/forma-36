@@ -1,1 +1,1 @@
-{"**F36 Button** `v4.55.1`":["- fix(Button): default padding for small size\n"]}
+{"**F36 Button** `v4.55.1`":["- fix(Button): default padding for small size\n"],"**F36 Badge** `v4.56.0`":["- Allow passing icons to Badge component with small size\n"]}
