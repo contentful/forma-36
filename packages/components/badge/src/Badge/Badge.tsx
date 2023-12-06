@@ -22,7 +22,7 @@ export type BadgeInternalProps = CommonProps & {
    * Sets the size of the component
    * @default default
    */
-  size: BadgeSize;
+  size?: BadgeSize;
   /**
    * Expects any of the icon components. Renders the icon aligned to the start
    */
