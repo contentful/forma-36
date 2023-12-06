@@ -118,7 +118,9 @@ const sizeToStyles = (size: ButtonSize, density: Density): CSSObject => {
       return {
         fontSize: isHighDensity ? tokens.fontSizeS : tokens.fontSizeM,
         lineHeight: tokens.lineHeightCondensed,
-        padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
+        padding: isHighDensity
+          ? `${tokens.spacing2Xs} ${tokens.spacingXs}`
+          : `${tokens.spacing2Xs} ${tokens.spacingS}`,
         minHeight: isHighDensity ? '16px' : '32px',
       };
     case 'medium':
