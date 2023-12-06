@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 06-12-2023
+
+**F36 Copybutton** `v4.55.0`
+
+- Make CopyButton component visual props less strict
+
 ## 02-12-2023
 
 **F36 Button** `v4.54.5`
