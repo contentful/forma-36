@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.55.1
+
+### Patch Changes
+
+- [#2626](https://github.com/contentful/forma-36/pull/2626) [`bb5e913ed`](https://github.com/contentful/forma-36/commit/bb5e913ed94c2606bef9a532fcb8f46ff80cc1a3) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - fix(Button): default padding for small size
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.55.1
+  - @contentful/f36-spinner@4.55.1
+
 ## 4.55.0
 
 ### Patch Changes
