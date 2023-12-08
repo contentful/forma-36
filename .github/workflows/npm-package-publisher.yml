@@ -1,0 +1,20 @@
+name: "npm-package-publisher"
+
+on:
+  registry_package:
+    types: [published]
+
+jobs:
+  worker:
+    permissions:
+      contents: read
+      id-token: write
+      packages: write
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: contentful/npm-package-publisher@v1
+        with:
+          VAULT_URL: ${{ secrets.VAULT_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PACKAGE_ACCESS: "public"
