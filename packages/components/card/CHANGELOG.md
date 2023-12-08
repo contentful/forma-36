@@ -1,5 +1,37 @@
 # Change Log
 
+## 4.56.0
+
+### Patch Changes
+
+- Updated dependencies [[`73639d49f`](https://github.com/contentful/forma-36/commit/73639d49ffc94f2f5054e787bf9ebad7a55b8cad)]:
+  - @contentful/f36-badge@4.56.0
+  - @contentful/f36-asset@4.56.0
+  - @contentful/f36-button@4.56.0
+  - @contentful/f36-core@4.56.0
+  - @contentful/f36-drag-handle@4.56.0
+  - @contentful/f36-icon@4.56.0
+  - @contentful/f36-menu@4.56.0
+  - @contentful/f36-skeleton@4.56.0
+  - @contentful/f36-tooltip@4.56.0
+  - @contentful/f36-typography@4.56.0
+
+## 4.55.1
+
+### Patch Changes
+
+- Updated dependencies [[`bb5e913ed`](https://github.com/contentful/forma-36/commit/bb5e913ed94c2606bef9a532fcb8f46ff80cc1a3)]:
+  - @contentful/f36-button@4.55.1
+  - @contentful/f36-asset@4.55.1
+  - @contentful/f36-badge@4.55.1
+  - @contentful/f36-core@4.55.1
+  - @contentful/f36-drag-handle@4.55.1
+  - @contentful/f36-icon@4.55.1
+  - @contentful/f36-menu@4.55.1
+  - @contentful/f36-skeleton@4.55.1
+  - @contentful/f36-tooltip@4.55.1
+  - @contentful/f36-typography@4.55.1
+
 ## 4.55.0
 
 ### Patch Changes

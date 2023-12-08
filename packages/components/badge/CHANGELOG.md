@@ -1,5 +1,23 @@
 # Change Log
 
+## 4.56.0
+
+### Minor Changes
+
+- [#2627](https://github.com/contentful/forma-36/pull/2627) [`73639d49f`](https://github.com/contentful/forma-36/commit/73639d49ffc94f2f5054e787bf9ebad7a55b8cad) Thanks [@bgutsol](https://github.com/bgutsol)! - Allow passing icons to Badge component with small size
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.56.0
+
+## 4.55.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.55.1
+
 ## 4.55.0
 
 ### Patch Changes
