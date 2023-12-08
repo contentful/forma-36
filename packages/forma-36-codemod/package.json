@@ -23,7 +23,8 @@
     "jest": "^29.3.1"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
     "chalk": "^4.1.1",

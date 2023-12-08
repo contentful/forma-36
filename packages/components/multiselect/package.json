@@ -38,7 +38,8 @@
     "url": "https://github.com/contentful/forma-36"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
     "formik": "^2.4.2",
