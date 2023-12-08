@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.56.1
+
+### Patch Changes
+
+- [#2625](https://github.com/contentful/forma-36/pull/2625) [`35be000ac`](https://github.com/contentful/forma-36/commit/35be000ac932aae4f63331d551710e0ee5ed2380) Thanks [@andipaetzold](https://github.com/andipaetzold)! - Map gap 'none' to 0px
+
 ## 4.56.0
 
 ## 4.55.1
