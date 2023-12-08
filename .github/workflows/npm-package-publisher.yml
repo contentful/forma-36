@@ -13,7 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: contentful/npm-package-publisher@v1
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          repository: contentful/npm-package-publisher
+          ref: v1.0
+          token: ${{ secrets.GITHUB_TOKEN  }}
+          path: ./action
+      - name: Run my action
+        uses: ./action
         with:
           VAULT_URL: ${{ secrets.VAULT_URL }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
