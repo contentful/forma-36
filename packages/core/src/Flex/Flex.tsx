@@ -126,7 +126,7 @@ function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
           flexBasis,
           flexShrink,
           flexDirection,
-          gap: tokens[gap] ?? gap,
+          gap: gap === 'none' ? 0 : tokens[gap] ?? gap,
           justifyContent,
           justifyItems,
           justifySelf,
