@@ -1,6 +1,7 @@
 name: "npm-package-publisher"
 
 on:
+  workflow_dispatch:
   registry_package:
     types: [published]
 
