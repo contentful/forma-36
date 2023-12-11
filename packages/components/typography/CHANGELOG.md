@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.56.2
+
+### Patch Changes
+
+- [#2633](https://github.com/contentful/forma-36/pull/2633) [`362145318`](https://github.com/contentful/forma-36/commit/362145318b4bd29da9a90efdc76d7e77c2b43322) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - feat(Text): add `letterSpacing` support
+
+- Updated dependencies [[`362145318`](https://github.com/contentful/forma-36/commit/362145318b4bd29da9a90efdc76d7e77c2b43322)]:
+  - @contentful/f36-tokens@4.0.3
+  - @contentful/f36-core@4.56.2
+
 ## 4.56.1
 
 ### Patch Changes
