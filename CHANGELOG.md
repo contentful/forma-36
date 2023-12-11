@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 09-12-2023
+
+**F36 Core** `v4.56.1`
+
+- Map gap 'none' to 0px
+
 ## 07-12-2023
 
 **F36 Button** `v4.55.1`
