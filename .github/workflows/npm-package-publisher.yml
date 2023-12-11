@@ -19,7 +19,7 @@ jobs:
         with:
           repository: contentful/npm-package-publisher
           ref: main
-          token: ${{ secrets.GITHUB_TOKEN  }}
+          token: ${{ secrets.GITHUB_PACKAGES_WRITE_TOKEN  }}
           path: npm-package-publisher
           sparse-checkout: .
           
