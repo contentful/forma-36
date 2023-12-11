@@ -5,6 +5,7 @@ import tokens, {
   FontWeightTokens,
   FontStackTokens,
   ColorTokens,
+  LetterSpacingTokens,
 } from '@contentful/f36-tokens';
 import { css, cx } from 'emotion';
 import {
@@ -20,6 +21,7 @@ export interface TextInternalProps extends CommonProps, MarginProps {
   children?: React.ReactNode;
   fontSize?: FontSizeTokens;
   lineHeight?: LineHeightTokens;
+  letterSpacing?: LetterSpacingTokens;
   fontStack?: FontStackTokens;
   fontWeight?: FontWeightTokens;
   fontColor?: ColorTokens;
@@ -54,6 +56,7 @@ function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
     fontWeight = 'fontWeightNormal',
     fontColor = 'gray800',
     lineHeight = 'lineHeightM',
+    letterSpacing = 'letterSpacingDefault',
     children,
     isTruncated,
     isWordBreak,
@@ -78,6 +81,7 @@ function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
           color: tokens[fontColor],
           fontSize: tokens[fontSize],
           lineHeight: tokens[lineHeight],
+          letterSpacing: tokens[letterSpacing],
         }),
         isTruncated ? truncatedStyle() : null,
         isWordBreak ? wordBreakStyle() : null,
