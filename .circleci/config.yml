@@ -112,9 +112,7 @@ jobs:
       - checkout
       - vault/get-secrets:
           template-preset: semantic-release
-      - run: |
-          echo "//npm.pkg.github.com/:_authToken=${GITHUB_PACKAGES_WRITE_TOKEN}" > ~/.npmrc
-          echo "@contentful:registry=https://npm.pkg.github.com" >> ~/.npmrc
+      - run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > ~/.npmrc
       - attach_workspace:
           at: ~/circleci-f36-build
       - add_ssh_keys:
