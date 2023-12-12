@@ -179,3 +179,5 @@ export { Video as VideoIcon } from './Video';
 export { Warning as WarningIcon } from './Warning';
 export { WarningTrimmed as WarningTrimmedIcon } from './WarningTrimmed';
 export { Workflows as WorkflowsIcon } from './Workflows';
+
+export * from './v5/index';
