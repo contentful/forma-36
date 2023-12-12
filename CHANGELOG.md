@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 12-12-2023
+
+**F36 Tokens** `v4.0.3`
+
+- feat(Text): add `letterSpacing` support
+
+**F36 Typography** `v4.56.2`
+
+- feat(Text): add `letterSpacing` support
+
 ## 09-12-2023
 
 **F36 Core** `v4.56.1`
