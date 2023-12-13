@@ -47,5 +47,9 @@ export interface BaseCheckboxInternalProps
    * Optional text to be added as help text bellow the label
    */
   helpText?: string;
+  /**
+   * Optional text to render an inline validation message that is aligned with the label as opposed to aligned with the greater container
+   */
+  inlineValidationMessage?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
 }

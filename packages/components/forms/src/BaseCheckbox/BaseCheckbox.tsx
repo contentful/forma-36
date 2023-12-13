@@ -7,6 +7,7 @@ import { Text } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { HelpText } from '../HelpText/HelpText';
 import { useFormControl } from '../FormControl/FormControlContext';
+import { ValidationMessage } from '../ValidationMessage';
 
 export type BaseCheckboxProps = PropsWithHTMLElement<
   BaseCheckboxInternalProps,
@@ -41,6 +42,7 @@ function _BaseCheckbox(
     'aria-label': ariaLabel,
     size = 'medium',
     helpText,
+    inlineValidationMessage,
     ...otherProps
   } = props;
 
@@ -145,6 +147,12 @@ function _BaseCheckbox(
         <HelpText id={helpTextId} className={styles.helpText}>
           {helpText}
         </HelpText>
+      )}
+
+      {isInvalid && inlineValidationMessage && (
+        <ValidationMessage className={styles.inlineValidationMessage}>
+          {inlineValidationMessage}
+        </ValidationMessage>
       )}
     </Flex>
   );
