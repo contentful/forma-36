@@ -381,6 +381,12 @@
       "slug": "/utils/use-keyboard/"
     }
   ],
+  "hooks": [
+    {
+      "title": "useDensity",
+      "slug": "/hooks/use-density/"
+    }
+  ],
   "introduction": [
     {
       "title": "What's new",
