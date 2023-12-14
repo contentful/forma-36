@@ -20,6 +20,7 @@ export enum HARDCODED_WEBSITE_SECTION {
   TOKENS = 'tokens',
   WHATS_NEW = 'whats-new',
   UTILS = 'utils',
+  HOOKS = 'hooks',
   INTEGRATIONS = 'integrations',
 }
 

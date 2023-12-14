@@ -163,11 +163,13 @@ export const getStaticProps: GetStaticProps<
     HARDCODED_WEBSITE_SECTION.COMPONENTS,
     HARDCODED_WEBSITE_SECTION.INTEGRATIONS,
     HARDCODED_WEBSITE_SECTION.UTILS,
+    HARDCODED_WEBSITE_SECTION.HOOKS,
   ];
   if (sectionsWithComponentsSidebar.includes(section)) {
     sidebarLinks = [
       ...sidebarLinks,
       ...componentSidebarLinks,
+      { title: 'Hooks', links: mdxSidebarLinks.hooks },
       { title: 'Utilities', links: mdxSidebarLinks.utils },
       { title: 'Integrations', links: mdxSidebarLinks.integrations },
     ];
