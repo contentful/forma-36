@@ -6,8 +6,8 @@ export default function FormControlInvalidExample() {
     <FormControl isInvalid>
       <FormControl.Label>Name</FormControl.Label>
       <TextInput />
-      <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
       <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
+      <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
     </FormControl>
   );
 }
