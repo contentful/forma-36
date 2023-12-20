@@ -16,8 +16,8 @@ jobs:
       - vault/get-secrets:
           template-preset: packages-read
       - run: |
-        echo "//npm.pkg.github.com/:_authToken=${GITHUB_PACKAGES_READ_TOKEN}" > ~/.npmrc
-        echo "@contentful:registry=https://npm.pkg.github.com" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${GITHUB_PACKAGES_READ_TOKEN}" > ~/.npmrc
+          echo "@contentful:registry=https://npm.pkg.github.com" >> ~/.npmrc
       - attach_workspace:
           at: ~/circleci-f36-build
       - node/install-packages
