@@ -169,7 +169,9 @@ workflows:
   version: 2
   f36-build:
     jobs:
-      - build
+      - build:
+          context:
+            - vault
       - analyze_code:
           requires:
             - build
