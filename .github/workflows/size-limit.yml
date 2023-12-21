@@ -1,11 +1,9 @@
 name: 'size'
 
-on: 
-  pull_request: 
+on:
+  pull_request:
     branches:
       - main
-
-permissions: read-all
 
 jobs:
   size:
@@ -14,6 +12,10 @@ jobs:
       CI_JOB_NUMBER: 1
     steps:
       - uses: actions/checkout@v2
+      - name: Authenticate with Github packages
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > .npmrc
+          echo "@contentful:registry=https://npm.pkg.github.com" >> .npmrc
       - uses: andresz1/size-limit-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
