@@ -42,7 +42,6 @@ function _BaseCheckbox(
     'aria-label': ariaLabel,
     size = 'medium',
     helpText,
-    inlineValidationMessage,
     ...otherProps
   } = props;
 
@@ -147,12 +146,6 @@ function _BaseCheckbox(
         <HelpText id={helpTextId} className={styles.helpText}>
           {helpText}
         </HelpText>
-      )}
-
-      {isInvalid && inlineValidationMessage && (
-        <ValidationMessage className={styles.inlineValidationMessage}>
-          {inlineValidationMessage}
-        </ValidationMessage>
       )}
     </Flex>
   );

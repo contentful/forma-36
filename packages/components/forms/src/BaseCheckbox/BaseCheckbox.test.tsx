@@ -59,19 +59,6 @@ describe('BaseCheckbox', function () {
     expect(getByRole('switch')).toBeTruthy();
   });
 
-  it('renders an inline validation message if prop is passed', () => {
-    const { getByTestId } = render(
-      <BaseCheckbox
-        {...commonProps}
-        isInvalid
-        type="checkbox"
-        inlineValidationMessage="Error"
-      />,
-    );
-
-    expect(getByTestId('cf-ui-validation-message')).toBeTruthy();
-  });
-
   it('can blur when clicking escape', () => {
     const mockOnBlur = jest.fn();
     const { getByLabelText } = render(

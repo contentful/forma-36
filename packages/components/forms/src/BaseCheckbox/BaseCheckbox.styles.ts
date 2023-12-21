@@ -16,11 +16,7 @@ const sizeToStyle = (size) => {
   };
 };
 
-const getSupplementalTextStyle = ({
-  size,
-  type,
-  isValidationMessage = false,
-}) => {
+const getSupplementalTextStyle = ({ size, type }) => {
   let inputWidth = tokens.spacingM;
   if (type === 'switch') {
     inputWidth = sizeToStyle(size).width;
@@ -28,7 +24,7 @@ const getSupplementalTextStyle = ({
 
   return {
     marginLeft: `calc(${inputWidth} + ${tokens.spacingXs})`,
-    marginTop: isValidationMessage ? tokens.spacing2Xs : 0,
+    marginTop: 0,
   };
 };
 
@@ -72,9 +68,6 @@ const getStyles = ({
     type === 'switch' && sizeToStyle(size),
   ]),
   helpText: css(getSupplementalTextStyle({ size, type })),
-  inlineValidationMessage: css(
-    getSupplementalTextStyle({ size, type, isValidationMessage: true }),
-  ),
 });
 
 export default getStyles;

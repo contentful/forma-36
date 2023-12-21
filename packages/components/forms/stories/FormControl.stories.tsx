@@ -62,9 +62,12 @@ export const Basic = (args: FormControlInternalProps) => {
       </FormControl>
 
       <FormControl {...args}>
-        <Checkbox inlineValidationMessage="Error" defaultChecked={false}>
+        <Checkbox defaultChecked={false}>
           I confirm everything that said above is true
         </Checkbox>
+        {args.isInvalid && (
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+        )}
       </FormControl>
     </>
   );
