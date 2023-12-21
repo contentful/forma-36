@@ -7,7 +7,6 @@ import { Text } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { HelpText } from '../HelpText/HelpText';
 import { useFormControl } from '../FormControl/FormControlContext';
-import { ValidationMessage } from '../ValidationMessage';
 
 export type BaseCheckboxProps = PropsWithHTMLElement<
   BaseCheckboxInternalProps,

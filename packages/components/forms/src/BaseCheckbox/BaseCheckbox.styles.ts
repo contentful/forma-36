@@ -16,7 +16,7 @@ const sizeToStyle = (size) => {
   };
 };
 
-const getSupplementalTextStyle = ({ size, type }) => {
+const getHelpTextStyle = ({ size, type }) => {
   let inputWidth = tokens.spacingM;
   if (type === 'switch') {
     inputWidth = sizeToStyle(size).width;
@@ -67,7 +67,7 @@ const getStyles = ({
     },
     type === 'switch' && sizeToStyle(size),
   ]),
-  helpText: css(getSupplementalTextStyle({ size, type })),
+  helpText: css(getHelpTextStyle({ size, type })),
 });
 
 export default getStyles;
