@@ -99,7 +99,7 @@ async function main() {
 
   if (!dryRun) {
     await updatePackageJson(path.resolve(dir, 'package.json'), newVersion);
-    // Avoid chageset publishing it, by adding the package to the ignore list
+    // Avoid changeset publishing it, by adding the package to the ignore list
     await ignorePackage(name);
   } else {
     console.log(chalk.bold('Dry-run mode'));
