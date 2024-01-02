@@ -20,6 +20,7 @@
     "build:types": "tsc src/**/*.js --declaration --emitDeclarationOnly --declarationDir dist --jsx preserve"
   },
   "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
     "access": "public"
   }
 }

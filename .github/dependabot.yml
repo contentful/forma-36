@@ -1,5 +1,15 @@
 version: 2
 
+registries:
+  npm-npmjs:
+    type: npm-registry
+    url: https://registry.npmjs.org
+    token: '${{secrets.NPM_REGISTRY_REGISTRY_NPMJS_ORG_TOKEN}}'
+  npm-github:
+    type: npm-registry
+    url: https://npm.pkg.github.com
+    token: ${{secrets.NPM_REGISTRY_REGISTRY_GH_ORG_TOKEN}}
+
 updates:
   - package-ecosystem: npm
     directory: '/'
@@ -11,4 +21,7 @@ updates:
       - dependencies
     commit-message:
       prefix: chore
+    registries:
+      - npm-npmjs
+      - npm-github
     versioning-strategy: widen

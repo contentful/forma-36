@@ -13,6 +13,11 @@ jobs:
     working_directory: ~/circleci-f36-build
     steps:
       - checkout
+      - vault/get-secrets:
+          template-preset: packages-read
+      - run: |
+          echo "//npm.pkg.github.com/:_authToken=${GITHUB_PACKAGES_READ_TOKEN}" > ~/.npmrc
+          echo "@contentful:registry=https://npm.pkg.github.com" >> ~/.npmrc
       - attach_workspace:
           at: ~/circleci-f36-build
       - node/install-packages
@@ -112,7 +117,9 @@ jobs:
       - checkout
       - vault/get-secrets:
           template-preset: semantic-release
-      - run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > ~/.npmrc
+      - run: |
+          echo "//npm.pkg.github.com/:_authToken=${GITHUB_PACKAGES_WRITE_TOKEN}" > ~/.npmrc
+          echo "@contentful:registry=https://npm.pkg.github.com" >> ~/.npmrc
       - attach_workspace:
           at: ~/circleci-f36-build
       - add_ssh_keys:
@@ -162,7 +169,9 @@ workflows:
   version: 2
   f36-build:
     jobs:
-      - build
+      - build:
+          context:
+            - vault
       - analyze_code:
           requires:
             - build
