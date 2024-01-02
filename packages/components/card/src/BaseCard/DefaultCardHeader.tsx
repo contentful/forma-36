@@ -11,6 +11,8 @@ import { BaseCardInternalProps } from './BaseCard.types';
 const getHeaderStyles = () => {
   return {
     header: css({
+      columnGap: tokens.spacingXs,
+      rowGap: tokens.spacing2Xs,
       alignItems: 'center',
       borderBottomColor: tokens.gray200,
       borderBottomStyle: 'solid',
@@ -31,9 +33,9 @@ const getHeaderStyles = () => {
       minHeight: '37px',
     }),
     headerWithActions: css({
-      paddingBottom: 0,
+      paddingBottom: tokens.spacing2Xs,
       paddingRight: tokens.spacingXs,
-      paddingTop: 0,
+      paddingTop: tokens.spacing2Xs,
     }),
   };
 };
@@ -52,7 +54,10 @@ export const DefaultCardHeader = (
   const { icon, type, actions, actionsButtonProps, badge } = props;
   const styles = getHeaderStyles();
   return (
-    <Flex className={cx(styles.header, actions && styles.headerWithActions)}>
+    <Flex
+      flexWrap="wrap"
+      className={cx(styles.header, actions && styles.headerWithActions)}
+    >
       <Flex flexGrow={1}>
         {type && (
           <Text fontColor="gray600" isWordBreak>
@@ -60,16 +65,8 @@ export const DefaultCardHeader = (
           </Text>
         )}
       </Flex>
-      {icon && (
-        <Flex alignItems="center" marginLeft="spacingXs">
-          {icon}
-        </Flex>
-      )}
-      {badge && (
-        <Flex alignItems="center" marginLeft="spacingXs">
-          {badge}
-        </Flex>
-      )}
+      {icon && <Flex alignItems="center">{icon}</Flex>}
+      {badge && <Flex alignItems="center">{badge}</Flex>}
       {actions && actions.length > 0 && (
         <Flex
           // don't propagate click event, so onClick handler on the card is not triggered
