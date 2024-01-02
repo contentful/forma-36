@@ -11,6 +11,7 @@ import { BaseCardInternalProps } from './BaseCard.types';
 const getHeaderStyles = () => {
   return {
     header: css({
+      columnGap: tokens.spacingXs,
       rowGap: tokens.spacing2Xs,
       alignItems: 'center',
       borderBottomColor: tokens.gray200,
@@ -57,18 +58,14 @@ export const DefaultCardHeader = (
       flexWrap="wrap"
       className={cx(styles.header, actions && styles.headerWithActions)}
     >
-      <Flex flexGrow={1} marginRight="spacingXs">
+      <Flex flexGrow={1}>
         {type && (
           <Text fontColor="gray600" isWordBreak>
             {type}
           </Text>
         )}
       </Flex>
-      {icon && (
-        <Flex marginRight="spacingXs" alignItems="center">
-          {icon}
-        </Flex>
-      )}
+      {icon && <Flex alignItems="center">{icon}</Flex>}
       {badge && <Flex alignItems="center">{badge}</Flex>}
       {actions && actions.length > 0 && (
         <Flex
