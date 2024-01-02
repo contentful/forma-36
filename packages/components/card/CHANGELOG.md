@@ -1,5 +1,25 @@
 # Change Log
 
+## 4.57.0
+
+### Minor Changes
+
+- [#2643](https://github.com/contentful/forma-36/pull/2643) [`d2377d731`](https://github.com/contentful/forma-36/commit/d2377d731523bd8041e195f3ebdf101d1e8d8240) Thanks [@YvesRijckaert](https://github.com/YvesRijckaert)! - fix styling for entry cards on smaller widths
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-asset@4.57.0
+  - @contentful/f36-badge@4.57.0
+  - @contentful/f36-button@4.57.0
+  - @contentful/f36-core@4.57.0
+  - @contentful/f36-drag-handle@4.57.0
+  - @contentful/f36-icon@4.57.0
+  - @contentful/f36-menu@4.57.0
+  - @contentful/f36-skeleton@4.57.0
+  - @contentful/f36-tooltip@4.57.0
+  - @contentful/f36-typography@4.57.0
+
 ## 4.56.2
 
 ### Patch Changes
