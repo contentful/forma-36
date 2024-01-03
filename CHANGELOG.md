@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 03-01-2024
+
+**F36 Card** `v4.57.0`
+
+- fix styling for entry cards on smaller widths
+
 ## 12-12-2023
 
 **F36 Tokens** `v4.0.3`
