@@ -8,6 +8,8 @@ import {
   Flex,
   Heading,
   Text,
+  Checkbox,
+  Radio,
 } from '@contentful/f36-components';
 import { PlusIcon } from '@contentful/f36-icons';
 import { type Density } from '@contentful/f36-utils';
@@ -72,6 +74,26 @@ const Components = [
         size: 'small',
         icon: <PlusIcon />,
         'aria-label': 'Medium',
+      },
+    ],
+  },
+  {
+    name: 'Checkbox',
+    component: Checkbox,
+    props: [
+      {
+        children: 'Checkbox Label',
+        helpText: 'Some help text',
+      },
+    ],
+  },
+  {
+    name: 'Radio',
+    component: Radio,
+    props: [
+      {
+        children: 'Radio Label',
+        helpText: 'Some help text',
       },
     ],
   },

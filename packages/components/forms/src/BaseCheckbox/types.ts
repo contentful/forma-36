@@ -48,4 +48,5 @@ export interface BaseCheckboxInternalProps
    */
   helpText?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  density?: 'low' | 'high';
 }
