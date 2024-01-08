@@ -1,0 +1,42 @@
+---
+title: 'useDensity'
+type: 'hook'
+slug: /hooks/use-density/
+section: 'hooks'
+typescript: ./useDensity.ts
+---
+
+Allows to retrieve the `DensityContext` value (`low` or `high`).  
+Adding high-density support to your component is possible using this hook.
+
+## Import
+
+```jsx static=true
+import { useDensity } from '@contentful/f36-utils';
+```
+
+## Examples
+
+### Component styling
+
+Use the `useDensity` hook to add high-density support styling to your component.  
+The component will pick up the density defined in the [DensityContainer](/components/density-container) component.
+
+```jsx
+import React from 'react';
+import { Box } from '@contentful/f36-components';
+import { useDensity } from '@contentful/f36-utils';
+import { css } from 'emotion';
+
+export default function YourComponent() {
+  const density = useDensity();
+
+  const styles = {
+    box: css({
+      color: density === 'high' ? 'red' : 'green',
+    }),
+  };
+
+  return <Box className={styles.box}>Content</Box>;
+}
+```

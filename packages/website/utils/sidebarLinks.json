@@ -375,10 +375,16 @@
     {
       "title": "ScreenReaderOnly",
       "slug": "/components/screen-reader-only/"
+    }
+  ],
+  "hooks": [
+    {
+      "title": "useDensity",
+      "slug": "/hooks/use-density/"
     },
     {
       "title": "useKeyboard",
-      "slug": "/utils/use-keyboard/"
+      "slug": "/hooks/use-keyboard/"
     }
   ],
   "introduction": [
