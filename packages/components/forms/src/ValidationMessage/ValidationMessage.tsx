@@ -28,7 +28,7 @@ export const ValidationMessage = forwardRef<
   const { id } = useFormControl({});
   return (
     <Flex
-      marginTop="spacingXs"
+      marginTop="spacing2Xs"
       {...otherProps}
       ref={ref}
       testId={testId}

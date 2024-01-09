@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.58.0
+
+### Minor Changes
+
+- [#2636](https://github.com/contentful/forma-36/pull/2636) [`fafdba829`](https://github.com/contentful/forma-36/commit/fafdba829d1b7c50be4b74e44c449d6f05ce6442) Thanks [@lilbitner](https://github.com/lilbitner)! - Reduce top margin spacing of ValidationMessage component
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.58.0
+  - @contentful/f36-typography@4.58.0
+
 ## 4.57.0
 
 ### Patch Changes
