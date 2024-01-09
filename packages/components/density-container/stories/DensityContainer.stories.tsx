@@ -90,16 +90,14 @@ const Components = [
   },
   {
     name: 'FormControl',
-    component: ({ isRequired, isInvalid, withError }) => (
+    component: ({ isRequired, isInvalid, withError, size, name }) => (
       <FormControl isRequired={isRequired} isInvalid={isInvalid}>
-        <FormControl.Label>Name</FormControl.Label>
-        <TextInput />
+        <FormControl.Label>{name}</FormControl.Label>
+        <TextInput size={size} />
         {withError && (
           <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
         )}
-        <FormControl.HelpText>
-          Please enter your first name
-        </FormControl.HelpText>
+        <FormControl.HelpText>Please enter a value</FormControl.HelpText>
       </FormControl>
     ),
     props: [
@@ -107,6 +105,15 @@ const Components = [
         isRequired: true,
         isInvalid: true,
         withError: true,
+        size: 'medium',
+        name: 'Medium input',
+      },
+      {
+        isRequired: true,
+        isInvalid: true,
+        withError: true,
+        size: 'small',
+        name: 'Small input',
       },
     ],
   },

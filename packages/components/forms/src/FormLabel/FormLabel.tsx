@@ -74,7 +74,7 @@ function _FormLabel<
   return (
     <Text
       as={Element}
-      marginBottom="spacingXs"
+      marginBottom={density === 'high' ? 'spacing2Xs' : 'spacingXs'}
       {...otherProps}
       fontColor="gray900"
       id={id}
