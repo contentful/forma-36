@@ -6,6 +6,7 @@ const fontSize = {
   'font-size-l': '1rem',
   'font-size-m': '0.875rem',
   'font-size-s': '0.75rem',
+  'font-size-xs': '0.625rem',
 };
 
 module.exports = fontSize;
