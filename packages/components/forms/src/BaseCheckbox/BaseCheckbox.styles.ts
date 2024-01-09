@@ -26,7 +26,7 @@ const getHelpTextStyle = ({ size, type, density }) => {
     marginLeft: `calc(${inputWidth} + ${tokens.spacingXs})`,
     marginTop: 0,
     fontSize: density === 'high' && tokens.fontSizeS,
-    lineHeight: density === 'high' && tokens.lineHeightCondensed,
+    lineHeight: density === 'high' && tokens.lineHeightS,
   };
 };
 
@@ -45,7 +45,6 @@ const getStyles = ({
     position: 'relative',
     margin: '0',
     columnGap: tokens.spacingXs,
-    lineHeight: density === 'high' && tokens.lineHeightS,
   }),
   input: css([
     {

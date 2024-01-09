@@ -107,6 +107,7 @@ function _BaseCheckbox(
         fontColor="gray900"
         fontWeight="fontWeightMedium"
         fontSize={density === 'high' ? 'fontSizeS' : 'fontSizeM'}
+        lineHeight={density === 'high' ? 'lineHeightS' : 'lineHeightCondensed'}
         className={styles.wrapper}
         htmlFor={id}
         testId={testId}
