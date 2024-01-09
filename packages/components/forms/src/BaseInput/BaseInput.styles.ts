@@ -23,7 +23,7 @@ const getZIndex = ({
   zIndexBase = tokens.zIndexDefault,
 }) => (isDisabled || isInvalid ? zIndexBase + 1 : zIndexBase);
 
-const getStyles = ({ as, isDisabled, isInvalid, size, resize }) => ({
+const getStyles = ({ as, isDisabled, isInvalid, size, resize, density }) => ({
   rootComponentWithIcon: css({
     position: 'relative',
     display: 'flex',
@@ -39,8 +39,9 @@ const getStyles = ({ as, isDisabled, isInvalid, size, resize }) => ({
     borderRadius: tokens.borderRadiusMedium,
     color: tokens.gray700,
     fontFamily: tokens.fontStackPrimary,
-    fontSize: tokens.fontSizeM,
-    lineHeight: tokens.lineHeightM,
+    fontSize: density === 'high' ? tokens.fontSizeS : tokens.fontSizeM,
+    lineHeight:
+      density === 'high' ? tokens.lineHeightS : tokens.lineHeightCondensed,
     padding: `10px ${tokens.spacingS}`,
     margin: 0,
     cursor: isDisabled ? 'not-allowed' : 'auto',

@@ -11,6 +11,7 @@ import {
   type PolymorphicComponent,
   type ExpandProps,
 } from '@contentful/f36-core';
+import { useDensity } from '@contentful/f36-utils';
 
 import getInputStyles from './BaseInput.styles';
 import { BaseInputInternalProps } from './types';
@@ -54,7 +55,15 @@ function _BaseInput<E extends React.ElementType = typeof INPUT_DEFAULT_TAG>(
     resize = 'vertical',
     ...otherProps
   } = props;
-  const styles = getInputStyles({ as, isDisabled, isInvalid, size, resize });
+  const density = useDensity();
+  const styles = getInputStyles({
+    as,
+    isDisabled,
+    isInvalid,
+    size,
+    resize,
+    density,
+  });
 
   const handleFocus = useCallback(
     (e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {

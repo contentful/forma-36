@@ -10,7 +10,7 @@ import type {
   ExpandProps,
 } from '@contentful/f36-core';
 import { Text } from '@contentful/f36-typography';
-
+import { useDensity } from '@contentful/f36-utils';
 export interface FormLabelInternalProps extends CommonProps, MarginProps {
   /**
    * Label value to show
@@ -56,6 +56,7 @@ function _FormLabel<
   }: FormLabelProps<E>,
   forwardedRef: React.Ref<HTMLLabelElement>,
 ) {
+  const density = useDensity();
   const styles = getFormLabelStyles();
   const formControlProps = useFormControl({ isRequired });
 
@@ -81,6 +82,8 @@ function _FormLabel<
       className={cx(styles.root, className)}
       ref={forwardedRef}
       testId={testId}
+      fontSize={density === 'high' ? 'fontSizeS' : 'fontSizeM'}
+      lineHeight={density === 'high' ? 'lineHeightS' : 'lineHeightCondensed'}
     >
       {children}
       {formControlProps.isRequired && (

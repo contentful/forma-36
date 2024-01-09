@@ -9,6 +9,7 @@ import {
 import { ErrorCircleOutlineIcon } from '@contentful/f36-icons';
 import { Text } from '@contentful/f36-typography';
 import { useFormControl } from '../FormControl/FormControlContext';
+import { useDensity } from '@contentful/f36-utils';
 
 export interface ValidationMessageInternalProps
   extends CommonProps,
@@ -26,6 +27,7 @@ export const ValidationMessage = forwardRef<
   ExpandProps<ValidationMessageProps>
 >(({ children, testId = 'cf-ui-validation-message', ...otherProps }, ref) => {
   const { id } = useFormControl({});
+  const density = useDensity();
   return (
     <Flex
       marginTop="spacingXs"
@@ -38,12 +40,17 @@ export const ValidationMessage = forwardRef<
     >
       <Flex marginRight="spacing2Xs">
         <ErrorCircleOutlineIcon
-          size="small"
+          size={density === 'high' ? 'tiny' : 'small'}
           variant="negative"
           aria-hidden="true"
         />
       </Flex>
-      <Text as="p" fontColor="red600">
+      <Text
+        as="p"
+        fontColor="red600"
+        fontSize={density === 'high' ? 'fontSizeS' : 'fontSizeM'}
+        lineHeight={density === 'high' ? 'lineHeightS' : 'lineHeightCondensed'}
+      >
         {children}
       </Text>
     </Flex>

@@ -9,6 +9,7 @@ import {
   Heading,
   Text,
 } from '@contentful/f36-components';
+import { FormControl, TextInput } from '@contentful/f36-forms/src';
 import { PlusIcon } from '@contentful/f36-icons';
 import { type Density } from '@contentful/f36-utils';
 
@@ -72,6 +73,40 @@ const Components = [
         size: 'small',
         icon: <PlusIcon />,
         'aria-label': 'Medium',
+      },
+    ],
+  },
+  {
+    name: 'IconButton',
+    component: IconButton,
+    props: [
+      {
+        variant: 'primary',
+        size: 'medium',
+        icon: <PlusIcon />,
+        'aria-label': 'Medium',
+      },
+    ],
+  },
+  {
+    name: 'FormControl',
+    component: ({ isRequired, isInvalid, withError }) => (
+      <FormControl isRequired={isRequired} isInvalid={isInvalid}>
+        <FormControl.Label>Name</FormControl.Label>
+        <TextInput />
+        {withError && (
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+        )}
+        <FormControl.HelpText>
+          Please enter your first name
+        </FormControl.HelpText>
+      </FormControl>
+    ),
+    props: [
+      {
+        isRequired: true,
+        isInvalid: true,
+        withError: true,
       },
     ],
   },
