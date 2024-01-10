@@ -1,5 +1,7 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
+import { type Density } from '@contentful/f36-utils';
+import { DensityContainer } from '@contentful/f36-density-container';
 
 import { ValidationMessage } from '../src';
 import type { ValidationMessageInternalProps } from '../src/ValidationMessage/ValidationMessage';
@@ -25,4 +27,32 @@ export const Default: Story<ValidationMessageInternalProps> = (args) => (
 
 Default.args = {
   children: 'Validation message',
+};
+
+export const WithDensitySupport = () => {
+  const Densities = [
+    {
+      name: 'Low density',
+      density: 'low',
+    },
+    {
+      name: 'High density',
+      density: 'high',
+    },
+  ];
+
+  return (
+    <>
+      {Densities.map((density) => {
+        return (
+          <DensityContainer
+            key={density.name}
+            density={density.density as Density}
+          >
+            <ValidationMessage>{density.name}</ValidationMessage>
+          </DensityContainer>
+        );
+      })}
+    </>
+  );
 };

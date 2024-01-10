@@ -28,6 +28,7 @@ export const ValidationMessage = forwardRef<
 >(({ children, testId = 'cf-ui-validation-message', ...otherProps }, ref) => {
   const { id } = useFormControl({});
   const density = useDensity();
+
   return (
     <Flex
       marginTop="spacing2Xs"
