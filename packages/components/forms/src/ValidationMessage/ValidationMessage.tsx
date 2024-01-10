@@ -30,7 +30,7 @@ export const ValidationMessage = forwardRef<
   const density = useDensity();
   return (
     <Flex
-      marginTop="spacingXs"
+      marginTop="spacing2Xs"
       {...otherProps}
       ref={ref}
       testId={testId}

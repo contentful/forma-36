@@ -37,7 +37,7 @@ You will find each package’s instructions in their README files, check the [Pa
 
 ### Storybook for f36-components
 
-We use storybook with our react component library to develop components. You can start it from the root of the repo, just run `npm run-script storybook`
+We use storybook with our react component library to develop components. You can start it from the root of the repo, just run `npm run-script storybook` after building.
 
 ## Commits & releases
 
