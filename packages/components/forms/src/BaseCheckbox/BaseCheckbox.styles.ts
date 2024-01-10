@@ -26,8 +26,7 @@ const getHelpTextStyle = ({ size, type, density }) => {
     marginLeft: `calc(${inputWidth} + ${tokens.spacingXs})`,
     marginTop: 0,
     fontSize: density === 'high' ? tokens.fontSizeS : tokens.fontSizeM,
-    lineHeight:
-      density === 'high' ? tokens.lineHeightS : tokens.lineHeightCondensed,
+    lineHeight: density === 'high' ? tokens.lineHeightS : tokens.lineHeightM,
   };
 };
 
