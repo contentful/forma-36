@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Radio, RadioProps } from '../src';
 import { Flex, Box } from '@contentful/f36-core';
+import { type Density } from '@contentful/f36-utils';
+import { DensityContainer } from '@contentful/f36-density-container';
 
 export default {
   title: 'Form Elements/Radio',
@@ -48,6 +50,39 @@ export const Basic = (args: RadioProps) => {
   );
 };
 
+const DensitySupport = () => {
+  const Densities = [
+    {
+      name: 'Low density',
+      density: 'low',
+    },
+    {
+      name: 'High density',
+      density: 'high',
+    },
+  ];
+
+  return (
+    <>
+      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+        Density Support
+      </SectionHeading>
+      <Flex gap="spacingS">
+        {Densities.map((density) => {
+          return (
+            <DensityContainer
+              key={density.name}
+              density={density.density as Density}
+            >
+              <Radio name={density.name}>{density.name}</Radio>
+            </DensityContainer>
+          );
+        })}
+      </Flex>
+    </>
+  );
+};
+
 export const overview = () => (
   <>
     <SectionHeading as="h3" marginBottom="spacingS">
@@ -85,5 +120,7 @@ export const overview = () => (
         Label text
       </Radio>
     </Flex>
+
+    <DensitySupport />
   </>
 );
