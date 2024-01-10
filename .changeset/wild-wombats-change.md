@@ -2,4 +2,4 @@
 '@contentful/f36-forms': patch
 ---
 
-Consume density context on Checkbox, Radio components
+Add high-density support to Checkbox and Radio components.
