@@ -11,6 +11,7 @@ import type {
 } from '@contentful/f36-core';
 import { Text } from '@contentful/f36-typography';
 import { useDensity } from '@contentful/f36-utils';
+
 export interface FormLabelInternalProps extends CommonProps, MarginProps {
   /**
    * Label value to show
