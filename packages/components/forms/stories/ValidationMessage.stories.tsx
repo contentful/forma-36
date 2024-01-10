@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { type Density } from '@contentful/f36-utils';
-import { DensityContainer } from '@contentful/f36-density-container';
+import { DensityContainer } from '../../density-container';
 
 import { ValidationMessage } from '../src';
 import type { ValidationMessageInternalProps } from '../src/ValidationMessage/ValidationMessage';

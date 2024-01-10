@@ -3,7 +3,7 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { Checkbox, CheckboxProps } from '../src';
 import { type Density } from '@contentful/f36-utils';
-import { DensityContainer } from '@contentful/f36-density-container';
+import { DensityContainer } from '../../density-container';
 
 export default {
   title: 'Form Elements/Checkbox',
