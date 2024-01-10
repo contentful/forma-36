@@ -75,18 +75,6 @@ const Components = [
       },
     ],
   },
-  {
-    name: 'IconButton',
-    component: IconButton,
-    props: [
-      {
-        variant: 'primary',
-        size: 'medium',
-        icon: <PlusIcon />,
-        'aria-label': 'Medium',
-      },
-    ],
-  },
 ];
 
 const toStartCase = (s) => s.charAt(0).toUpperCase() + s.substring(1);
