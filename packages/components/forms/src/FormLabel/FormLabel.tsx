@@ -74,7 +74,7 @@ function _FormLabel<
   return (
     <Text
       as={Element}
-      marginBottom={density === 'high' ? 'spacing2Xs' : 'spacingXs'}
+      marginBottom="spacingXs"
       {...otherProps}
       fontColor="gray900"
       id={id}
@@ -83,7 +83,7 @@ function _FormLabel<
       ref={forwardedRef}
       testId={testId}
       fontSize={density === 'high' ? 'fontSizeS' : 'fontSizeM'}
-      lineHeight={density === 'high' ? 'lineHeightS' : 'lineHeightCondensed'}
+      lineHeight={density === 'high' ? 'lineHeightS' : 'lineHeightM'}
     >
       {children}
       {formControlProps.isRequired && (

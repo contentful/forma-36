@@ -49,7 +49,7 @@ export const ValidationMessage = forwardRef<
         as="p"
         fontColor="red600"
         fontSize={density === 'high' ? 'fontSizeS' : 'fontSizeM'}
-        lineHeight={density === 'high' ? 'lineHeightS' : 'lineHeightCondensed'}
+        lineHeight={density === 'high' ? 'lineHeightS' : 'lineHeightM'}
       >
         {children}
       </Text>

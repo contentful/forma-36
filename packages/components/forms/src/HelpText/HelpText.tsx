@@ -30,7 +30,7 @@ export const HelpText = React.forwardRef<
       as="p"
       fontColor="gray500"
       fontSize={density === 'high' ? 'fontSizeS' : 'fontSizeM'}
-      lineHeight={density === 'high' ? 'lineHeightS' : 'lineHeightCondensed'}
+      lineHeight={density === 'high' ? 'lineHeightS' : 'lineHeightM'}
       testId={testId}
       id={`${id}-helptext`}
       marginTop="spacingXs"
