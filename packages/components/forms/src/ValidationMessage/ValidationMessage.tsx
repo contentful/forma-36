@@ -38,7 +38,7 @@ export const ValidationMessage = forwardRef<
       id={id ? `${id}-validation` : undefined}
       aria-live="assertive"
     >
-      <Flex marginRight="spacing2Xs">
+      <Flex marginRight={density === 'high' ? 'spacing2Xs' : 'spacingXs'}>
         <ErrorCircleOutlineIcon
           size={density === 'high' ? 'tiny' : 'small'}
           variant="negative"

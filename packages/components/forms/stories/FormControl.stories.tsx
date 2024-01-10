@@ -228,9 +228,6 @@ export const WithDensitySupport = () => {
 
   return (
     <>
-      {/* <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
-        Density Support
-      </SectionHeading> */}
       <Flex gap="spacingS">
         {Densities.map((density) => {
           return (
@@ -240,11 +237,7 @@ export const WithDensitySupport = () => {
             >
               <FormControl isInvalid isRequired>
                 <FormControl.Label>Select Value</FormControl.Label>
-                <Checkbox.Group name="condiments">
-                  <Checkbox value="ketchup">Ketchup</Checkbox>
-                  <Checkbox value="mustard">Mustard</Checkbox>
-                  <Checkbox value="mayo">Mayo</Checkbox>
-                </Checkbox.Group>
+                <Checkbox value="ketchup">Ketchup</Checkbox>
                 <FormControl.HelpText>
                   Please Select a value
                 </FormControl.HelpText>
