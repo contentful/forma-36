@@ -16,7 +16,7 @@ const sizeToStyle = (size) => {
   };
 };
 
-const getHelpTextStyle = ({ size, type }) => {
+const getHelpTextStyle = ({ size, type, density }) => {
   let inputWidth = tokens.spacingM;
   if (type === 'switch') {
     inputWidth = sizeToStyle(size).width;
@@ -25,6 +25,8 @@ const getHelpTextStyle = ({ size, type }) => {
   return {
     marginLeft: `calc(${inputWidth} + ${tokens.spacingXs})`,
     marginTop: 0,
+    fontSize: density === 'high' ? tokens.fontSizeS : tokens.fontSizeM,
+    lineHeight: density === 'high' ? tokens.lineHeightS : tokens.lineHeightM,
   };
 };
 
@@ -32,7 +34,11 @@ const getStyles = ({
   isDisabled,
   type,
   size,
-}: Pick<BaseCheckboxInternalProps, 'isDisabled' | 'type' | 'size'>) => ({
+  density,
+}: Pick<
+  BaseCheckboxInternalProps,
+  'isDisabled' | 'type' | 'size' | 'density'
+>) => ({
   wrapper: css({
     alignItems: 'center',
     display: 'inline-flex',
@@ -67,7 +73,7 @@ const getStyles = ({
     },
     type === 'switch' && sizeToStyle(size),
   ]),
-  helpText: css(getHelpTextStyle({ size, type })),
+  helpText: css(getHelpTextStyle({ size, type, density })),
 });
 
 export default getStyles;

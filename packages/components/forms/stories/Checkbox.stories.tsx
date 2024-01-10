@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { Checkbox, CheckboxProps } from '../src';
+import { type Density } from '@contentful/f36-utils';
+import { DensityContainer } from '@contentful/f36-density-container';
 
 export default {
   title: 'Form Elements/Checkbox',
@@ -102,6 +104,39 @@ export const Indeterminate = () => {
   );
 };
 
+const DensitySupport = () => {
+  const Densities = [
+    {
+      name: 'Low density',
+      density: 'low',
+    },
+    {
+      name: 'High density',
+      density: 'high',
+    },
+  ];
+
+  return (
+    <>
+      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+        Density Support
+      </SectionHeading>
+      <Flex gap="spacingS">
+        {Densities.map((density) => {
+          return (
+            <DensityContainer
+              key={density.name}
+              density={density.density as Density}
+            >
+              <Checkbox name={density.name}>{density.name}</Checkbox>
+            </DensityContainer>
+          );
+        })}
+      </Flex>
+    </>
+  );
+};
+
 export const overview = () => (
   <>
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
@@ -168,5 +203,7 @@ export const overview = () => (
     >
       Option 1
     </Checkbox>
+
+    <DensitySupport />
   </>
 );
