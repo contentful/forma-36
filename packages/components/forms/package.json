@@ -7,10 +7,11 @@
   },
   "dependencies": {
     "@contentful/f36-core": "^4.58.0",
+    "@contentful/f36-density-container": "^4.0.0-alpha.3",
     "@contentful/f36-icons": "^4.27.0",
     "@contentful/f36-tokens": "^4.0.3",
-    "@contentful/f36-utils": "^4.24.2",
     "@contentful/f36-typography": "^4.58.0",
+    "@contentful/f36-utils": "^4.24.2",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
