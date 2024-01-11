@@ -10,6 +10,7 @@ import type {
 } from '@contentful/f36-core';
 import type { HeadingElement } from '../Heading';
 import { Text } from '../Text';
+import { useDensity } from '@contentful/f36-utils';
 
 const SECTION_HEADING_DEFAULT_TAG = 'h2';
 
@@ -35,6 +36,8 @@ function _SectionHeading<
   }: SectionHeadingProps<E>,
   ref: React.Ref<any>,
 ) {
+  const density = useDensity();
+
   return (
     <Text
       as={SECTION_HEADING_DEFAULT_TAG}
@@ -42,7 +45,7 @@ function _SectionHeading<
       marginBottom="spacingL"
       fontWeight="fontWeightDemiBold"
       fontColor="gray900"
-      fontSize="fontSizeS"
+      fontSize={density === 'high' ? 'fontSizeSHigh' : 'fontSizeS'}
       lineHeight="lineHeightS"
       className={cx(
         css({

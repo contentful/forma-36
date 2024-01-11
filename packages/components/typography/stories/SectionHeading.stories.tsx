@@ -1,5 +1,8 @@
 import React from 'react';
-
+import { Flex } from '@contentful/f36-core';
+import { Heading } from '@contentful/f36-typography';
+import type { Density } from '@contentful/f36-utils';
+import { DensityContainer } from '../../density-container';
 import {
   SectionHeading,
   SectionHeadingProps,
@@ -22,4 +25,36 @@ export const Basic = (props: SectionHeadingProps<'h3'>) => (
 
 Basic.args = {
   children: 'Section heading',
+};
+
+export const WithDensitySupport = (props: SectionHeadingProps<'h3'>) => {
+  const Densities = [
+    {
+      name: 'Low density',
+      density: 'low',
+    },
+    {
+      name: 'High density',
+      density: 'high',
+    },
+  ];
+
+  return (
+    <Flex flexDirection="column" gap="spacingS">
+      {Densities.map((density) => {
+        return (
+          <Flex key={density.name} flexDirection="column">
+            <Heading>{density.name}</Heading>
+            <DensityContainer density={density.density as Density}>
+              <SectionHeading {...props} />
+            </DensityContainer>
+          </Flex>
+        );
+      })}
+    </Flex>
+  );
+};
+
+WithDensitySupport.args = {
+  children: 'The brown fox jumps over the lazy dog',
 };
