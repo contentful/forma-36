@@ -5,6 +5,7 @@ import { GhostCheckbox } from './GhostCheckbox';
 import getStyles from './BaseCheckbox.styles';
 import { Text } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
+import { useDensity } from '@contentful/f36-utils';
 import { HelpText } from '../HelpText/HelpText';
 import { useFormControl } from '../FormControl/FormControlContext';
 
@@ -43,7 +44,7 @@ function _BaseCheckbox(
     helpText,
     ...otherProps
   } = props;
-
+  const density = useDensity();
   const inputRef = useRef<HTMLInputElement>(null);
   const finalRef = ref || inputRef;
   const { id: formFieldId } = useFormControl({});
@@ -54,7 +55,7 @@ function _BaseCheckbox(
     }
   }, [isIndeterminate, finalRef]);
 
-  const styles = getStyles({ isDisabled, type, size });
+  const styles = getStyles({ isDisabled, type, size, density });
 
   const handleFocus = useCallback(
     (e) => {
@@ -105,6 +106,8 @@ function _BaseCheckbox(
         as="label"
         fontColor="gray900"
         fontWeight="fontWeightMedium"
+        fontSize={density === 'high' ? 'fontSizeS' : 'fontSizeM'}
+        lineHeight={density === 'high' ? 'lineHeightS' : 'lineHeightM'}
         className={styles.wrapper}
         htmlFor={id}
         testId={testId}
