@@ -7,6 +7,7 @@ import type {
   ExpandProps,
 } from '@contentful/f36-core';
 import { Text } from '../Text';
+import { useDensity } from '@contentful/f36-utils';
 
 const HEADING_DEFAULT_TAG = 'h1';
 
@@ -27,6 +28,8 @@ function _Heading<E extends React.ElementType = typeof HEADING_DEFAULT_TAG>(
   { children, testId = 'cf-ui-heading', ...otherProps }: HeadingProps<E>,
   ref: React.Ref<any>,
 ) {
+  const density = useDensity();
+
   return (
     <Text
       as={HEADING_DEFAULT_TAG}
@@ -34,7 +37,7 @@ function _Heading<E extends React.ElementType = typeof HEADING_DEFAULT_TAG>(
       marginBottom="spacingM"
       fontWeight="fontWeightDemiBold"
       fontColor="gray900"
-      fontSize="fontSizeXl"
+      fontSize={density === 'high' ? 'fontSizeXlHigh' : 'fontSizeXl'}
       lineHeight="lineHeightXl"
       {...otherProps}
       ref={ref}
