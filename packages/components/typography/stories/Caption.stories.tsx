@@ -1,6 +1,9 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
+import type { Density } from '@contentful/f36-utils';
+import { Heading } from '@contentful/f36-typography';
 
+import { DensityContainer } from '../../density-container';
 import { Caption, CaptionProps } from '../src/Caption/Caption';
 import { Paragraph } from '../src/Paragraph/Paragraph';
 
@@ -37,4 +40,36 @@ export const Overview = (props: CaptionProps) => (
 
 Overview.args = {
   children: 'Caption',
+};
+
+export const WithDensitySupport = (props: CaptionProps) => {
+  const Densities = [
+    {
+      name: 'Low density',
+      density: 'low',
+    },
+    {
+      name: 'High density',
+      density: 'high',
+    },
+  ];
+
+  return (
+    <Flex flexDirection="column" gap="spacingS">
+      {Densities.map((density) => {
+        return (
+          <Flex key={density.name} flexDirection="column">
+            <Heading>{density.name}</Heading>
+            <DensityContainer density={density.density as Density}>
+              <Caption {...props} />
+            </DensityContainer>
+          </Flex>
+        );
+      })}
+    </Flex>
+  );
+};
+
+WithDensitySupport.args = {
+  children: 'The brown fox jumps over the lazy dog',
 };
