@@ -3,7 +3,7 @@ import {
   IconVariant,
   generateComponentWithVariants,
 } from '@contentful/f36-icon';
-import { generateIconComponent } from '@contentful/f36-icon/src';
+import { generateIconComponent } from '@contentful/f36-icon';
 
 export const EnvironmentIcon = generateComponentWithVariants({
   variants: {
