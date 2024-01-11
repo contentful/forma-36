@@ -14,6 +14,9 @@
     "react": ">=16.8",
     "react-dom": ">=16.8"
   },
+  "devDependencies": {
+    "@contentful/f36-icons": "^4.0.0"
+  },
   "license": "MIT",
   "files": [
     "dist"
