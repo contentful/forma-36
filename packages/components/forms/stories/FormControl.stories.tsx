@@ -13,6 +13,8 @@ import { Flex, Box } from '@contentful/f36-core';
 import { TextLink } from '@contentful/f36-text-link';
 import { LockIcon } from '@contentful/f36-icons';
 import { Paragraph } from '@contentful/f36-typography';
+import { type Density } from '@contentful/f36-utils';
+import { DensityContainer } from '../../density-container';
 
 export default {
   title: 'Form Elements/FormControl',
@@ -209,5 +211,44 @@ export const WithCustomLogic = (args: FormControlInternalProps) => {
         <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
       )}
     </FormControl>
+  );
+};
+
+export const WithDensitySupport = () => {
+  const Densities = [
+    {
+      name: 'Low density',
+      density: 'low',
+    },
+    {
+      name: 'High density',
+      density: 'high',
+    },
+  ];
+
+  return (
+    <>
+      <Flex gap="spacingS">
+        {Densities.map((density) => {
+          return (
+            <DensityContainer
+              key={density.name}
+              density={density.density as Density}
+            >
+              <FormControl isInvalid isRequired>
+                <FormControl.Label>Select Value</FormControl.Label>
+                <Checkbox value="ketchup">Ketchup</Checkbox>
+                <FormControl.HelpText>
+                  Please Select a value
+                </FormControl.HelpText>
+                <FormControl.ValidationMessage>
+                  Error
+                </FormControl.ValidationMessage>
+              </FormControl>
+            </DensityContainer>
+          );
+        })}
+      </Flex>
+    </>
   );
 };

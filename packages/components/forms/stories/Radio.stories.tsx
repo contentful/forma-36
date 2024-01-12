@@ -3,7 +3,7 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { Radio, RadioProps } from '../src';
 import { Flex, Box } from '@contentful/f36-core';
 import { type Density } from '@contentful/f36-utils';
-import { DensityContainer } from '@contentful/f36-density-container';
+import { DensityContainer } from '../../density-container';
 
 export default {
   title: 'Form Elements/Radio',
