@@ -38,7 +38,7 @@ function _Heading<E extends React.ElementType = typeof HEADING_DEFAULT_TAG>(
       fontWeight="fontWeightDemiBold"
       fontColor="gray900"
       fontSize={density === 'high' ? 'fontSizeXlHigh' : 'fontSizeXl'}
-      lineHeight="lineHeightXl"
+      lineHeight={density === 'high' ? 'lineHeightXlHigh' : 'lineHeightXl'}
       {...otherProps}
       ref={ref}
     >
