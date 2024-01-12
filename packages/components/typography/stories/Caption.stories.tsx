@@ -55,11 +55,15 @@ export const WithDensitySupport = (props: CaptionProps) => {
   ];
 
   return (
-    <Flex flexDirection="column" gap="spacingS">
+    <Flex gap="spacing2Xl">
       {Densities.map((density) => {
         return (
-          <Flex key={density.name} flexDirection="column">
-            <Heading>{density.name}</Heading>
+          <Flex
+            key={density.name}
+            flexDirection="column"
+            style={{ width: '230px' }}
+          >
+            <Heading marginBottom="spacingXs">{density.name}</Heading>
             <DensityContainer density={density.density as Density}>
               <Caption {...props} />
             </DensityContainer>
@@ -71,5 +75,5 @@ export const WithDensitySupport = (props: CaptionProps) => {
 };
 
 WithDensitySupport.args = {
-  children: 'The brown fox jumps over the lazy dog',
+  children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 };

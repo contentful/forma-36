@@ -42,7 +42,7 @@ function _Caption<E extends React.ElementType = typeof CAPTION_DEFAULT_TAG>(
       as={CAPTION_DEFAULT_TAG}
       testId={testId}
       fontSize={density === 'high' ? 'fontSizeSHigh' : 'fontSizeS'}
-      lineHeight="lineHeightS"
+      lineHeight={density === 'high' ? 'lineHeightSHigh' : 'lineHeightS'}
       fontColor="gray900"
       fontWeight={fontWeight}
       {...otherProps}
