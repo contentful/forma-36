@@ -37,7 +37,7 @@ function _Subheading<
       testId={testId}
       marginBottom="spacingM"
       fontSize={density === 'high' ? 'fontSizeLHigh' : 'fontSizeL'}
-      lineHeight="lineHeightL"
+      lineHeight={density === 'high' ? 'lineHeightLHigh' : 'lineHeightL'}
       fontWeight="fontWeightDemiBold"
       fontColor="gray900"
       {...otherProps}
