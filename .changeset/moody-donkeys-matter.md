@@ -1,6 +1,5 @@
 ---
 "@contentful/f36-tokens": patch
-"@contentful/f36-density-container": patch
 "@contentful/f36-typography": patch
 ---
 
