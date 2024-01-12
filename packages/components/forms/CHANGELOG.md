@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.58.1
+
+### Patch Changes
+
+- [#2650](https://github.com/contentful/forma-36/pull/2650) [`4e1bc3c1b`](https://github.com/contentful/forma-36/commit/4e1bc3c1b50f3436e207f16cd2406df5ca9f54f9) Thanks [@stephanLeece](https://github.com/stephanLeece)! - Add high-density support to FormControl components (FormLabel, HelpText and ValidationMessage).
+
+- [#2644](https://github.com/contentful/forma-36/pull/2644) [`b20093a79`](https://github.com/contentful/forma-36/commit/b20093a79aa3bd82e5e0fdf10e833361257ccde2) Thanks [@stephanLeece](https://github.com/stephanLeece)! - Add high-density support to Checkbox and Radio components.
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.58.1
+  - @contentful/f36-typography@4.58.1
+
 ## 4.58.0
 
 ### Minor Changes
