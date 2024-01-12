@@ -83,8 +83,8 @@ function _FormLabel<
       className={cx(styles.root, className)}
       ref={forwardedRef}
       testId={testId}
-      fontSize={density === 'high' ? 'fontSizeS' : 'fontSizeM'}
-      lineHeight={density === 'high' ? 'lineHeightS' : 'lineHeightM'}
+      fontSize={density === 'high' ? 'fontSizeMHigh' : 'fontSizeM'}
+      lineHeight={density === 'high' ? 'lineHeightMHigh' : 'lineHeightM'}
     >
       {children}
       {formControlProps.isRequired && (

@@ -106,8 +106,8 @@ function _BaseCheckbox(
         as="label"
         fontColor="gray900"
         fontWeight="fontWeightMedium"
-        fontSize={density === 'high' ? 'fontSizeS' : 'fontSizeM'}
-        lineHeight={density === 'high' ? 'lineHeightS' : 'lineHeightM'}
+        fontSize={density === 'high' ? 'fontSizeMHigh' : 'fontSizeM'}
+        lineHeight={density === 'high' ? 'lineHeightMHigh' : 'lineHeightM'}
         className={styles.wrapper}
         htmlFor={id}
         testId={testId}
