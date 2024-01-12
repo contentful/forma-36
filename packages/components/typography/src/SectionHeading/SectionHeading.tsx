@@ -46,7 +46,7 @@ function _SectionHeading<
       fontWeight="fontWeightDemiBold"
       fontColor="gray900"
       fontSize={density === 'high' ? 'fontSizeSHigh' : 'fontSizeS'}
-      lineHeight="lineHeightS"
+      lineHeight={density === 'high' ? 'lineHeightSHigh' : 'lineHeightS'}
       className={cx(
         css({
           letterSpacing: tokens.letterSpacingWide,
