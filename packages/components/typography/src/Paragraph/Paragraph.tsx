@@ -28,8 +28,8 @@ export const Paragraph = React.forwardRef<
       as="p"
       testId={testId}
       fontSize={density === 'high' ? 'fontSizeMHigh' : 'fontSizeM'}
+      lineHeight={density === 'high' ? 'lineHeightMHigh' : 'lineHeightM'}
       marginBottom="spacingM"
-      lineHeight="lineHeightM"
       {...otherProps}
       ref={ref}
     >
