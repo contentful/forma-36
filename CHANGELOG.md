@@ -8,6 +8,13 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 13-01-2024
+
+**F36 Forms** `v4.58.1`
+
+- Add high-density support to FormControl components (FormLabel, HelpText and ValidationMessage).
+- Add high-density support to Checkbox and Radio components.
+
 ## 10-01-2024
 
 **F36 Forms** `v4.58.0`
