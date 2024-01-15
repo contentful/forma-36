@@ -1,9 +1,11 @@
 import React from 'react';
-
-import { Select, SelectProps } from '../src';
-import { Flex } from '@contentful/f36-core';
-import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
+import { Flex } from '@contentful/f36-core';
+import type { Density } from '@contentful/f36-utils';
+import { Heading, SectionHeading } from '@contentful/f36-typography';
+import { Note } from '@contentful/f36-note';
+import { Select, SelectProps } from '../src';
+import { DensityContainer } from '../../density-container';
 
 export default {
   title: 'Form Elements/Select',
@@ -177,6 +179,45 @@ export const Overview = (args: SelectProps) => {
             Disabled option
           </Select.Option>
         </Select>
+      </Flex>
+    </Flex>
+  );
+};
+
+export const WithDensitySupport = (props: SelectProps) => {
+  const Densities = [
+    {
+      name: 'Low density',
+      density: 'low',
+    },
+    {
+      name: 'High density',
+      density: 'high',
+    },
+  ];
+
+  return (
+    <Flex gap="spacingM" flexDirection="column">
+      <Note variant="warning">
+        High-density support solely available for the default size (
+        <code>medium</code>)
+      </Note>
+
+      <Flex gap="spacing2Xl">
+        {Densities.map((density) => {
+          return (
+            <Flex
+              key={density.name}
+              flexDirection="column"
+              style={{ width: '230px' }}
+            >
+              <Heading>{density.name}</Heading>
+              <DensityContainer density={density.density as Density}>
+                <Basic {...props} size="medium" />
+              </DensityContainer>
+            </Flex>
+          );
+        })}
       </Flex>
     </Flex>
   );

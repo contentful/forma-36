@@ -14,6 +14,7 @@ import type {
 } from '@contentful/f36-core';
 import { useFormControl } from '../FormControl/FormControlContext';
 import { getSelectStyles } from './Select.styles';
+import { useDensity } from '@contentful/f36-utils';
 
 export type SelectSize = 'small' | 'medium';
 
@@ -60,10 +61,13 @@ const _Select = (
     id,
   });
 
+  const density = useDensity();
+
   const styles = getSelectStyles({
     isDisabled: formProps.isDisabled,
     isInvalid: formProps.isInvalid,
     size,
+    density,
   });
 
   const handleKeyDown = useCallback(
