@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.0.4
+
+### Patch Changes
+
+- [#2646](https://github.com/contentful/forma-36/pull/2646) [`f094b710a`](https://github.com/contentful/forma-36/commit/f094b710af9c6ebcb02d4f096a45d3d4673c4574) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - - Add high-density `font-size` and `line-height` tokens.
+  - Add high-density support to Caption, Heading, Paragraph, Section Heading, and Subheading components.
+  - Adjust high-density tokens for BaseCheckbox, FormLabel, HelpText, and ValidationMessage components.
+
 ## 4.0.3
 
 ### Patch Changes

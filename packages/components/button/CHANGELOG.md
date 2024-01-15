@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.58.2
+
+### Patch Changes
+
+- Updated dependencies [[`f094b710a`](https://github.com/contentful/forma-36/commit/f094b710af9c6ebcb02d4f096a45d3d4673c4574)]:
+  - @contentful/f36-tokens@4.0.4
+  - @contentful/f36-core@4.58.2
+  - @contentful/f36-spinner@4.58.2
+
 ## 4.58.1
 
 ### Patch Changes
