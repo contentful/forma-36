@@ -134,44 +134,45 @@ export const Overview: Story<DensityContainerProps> = ({
         {Densities.map((density) => {
           return (
             <Box key={density.name}>
-              <DensityContainer
-                key={density.name}
-                density={density.density as Density}
-                {...args}
-              >
+              <>
                 <Heading as="h2" marginBottom="spacingXs">
                   {density.name}
                 </Heading>
-
-                {Components.map((Component) => {
-                  return (
-                    <Box
-                      key={Component.name}
-                      marginBottom="spacingL"
-                      style={{ minHeight: '100px' }}
-                    >
-                      <Text>{Component.name}</Text>
-
+                <DensityContainer
+                  key={density.name}
+                  density={density.density as Density}
+                  {...args}
+                >
+                  {Components.map((Component) => {
+                    return (
                       <Box
-                        marginTop="spacingS"
-                        style={{
-                          backgroundColor: tokens.gray200,
-                          padding: tokens.spacingS,
-                          borderRadius: tokens.borderRadiusMedium,
-                        }}
+                        key={Component.name}
+                        marginBottom="spacingL"
+                        style={{ minHeight: '100px' }}
                       >
-                        <Flex gap="spacingS" alignItems="end">
-                          {Component.props.map((props, index) => {
-                            return (
-                              <Component.component key={index} {...props} />
-                            );
-                          })}
-                        </Flex>
+                        <Text>{Component.name}</Text>
+
+                        <Box
+                          marginTop="spacingS"
+                          style={{
+                            backgroundColor: tokens.gray200,
+                            padding: tokens.spacingS,
+                            borderRadius: tokens.borderRadiusMedium,
+                          }}
+                        >
+                          <Flex gap="spacingS" alignItems="end">
+                            {Component.props.map((props, index) => {
+                              return (
+                                <Component.component key={index} {...props} />
+                              );
+                            })}
+                          </Flex>
+                        </Box>
                       </Box>
-                    </Box>
-                  );
-                })}
-              </DensityContainer>
+                    );
+                  })}
+                </DensityContainer>
+              </>
             </Box>
           );
         })}
