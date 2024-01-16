@@ -43,6 +43,7 @@ export function getSelectStyles({ isInvalid, isDisabled, size, density }) {
     outline: 'none',
     border: `1px solid ${tokens.gray300}`,
     cursor: 'pointer',
+    overflow: 'hidden',
     textOverflow: 'ellipsis',
 
     '&::placeholder': {
