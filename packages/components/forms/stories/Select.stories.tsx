@@ -213,7 +213,19 @@ export const WithDensitySupport = (props: SelectProps) => {
             >
               <Heading>{density.name}</Heading>
               <DensityContainer density={density.density as Density}>
-                <Basic {...props} size="medium" />
+                <Select
+                  id="optionSelect"
+                  name="optionSelect"
+                  size="medium"
+                  {...props}
+                  defaultValue="optionTwo"
+                >
+                  <Select.Option value="optionOne">Option 1</Select.Option>
+                  <Select.Option value="optionTwo">
+                    The quick brown fox jumps over the lazy dog like an
+                    over-motivated frog
+                  </Select.Option>
+                </Select>
               </DensityContainer>
             </Flex>
           );

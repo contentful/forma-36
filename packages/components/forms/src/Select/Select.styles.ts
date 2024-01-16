@@ -2,29 +2,31 @@ import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 
 export function getSelectStyles({ isInvalid, isDisabled, size, density }) {
-  const isHighDensity = density === 'high';
-  const sizeStyles =
-    size === 'small'
-      ? {
+  const getSizeAndDensityStyles = () => {
+    switch (true) {
+      case size === 'small':
+        return {
           padding: `${tokens.spacing2Xs} ${tokens.spacingL} ${tokens.spacing2Xs} ${tokens.spacingXs}`,
           height: '32px',
-          fontSize: tokens.fontSizeM,
-          lineHeight: tokens.lineHeightM,
-          borderRadius: tokens.borderRadiusMedium,
-        }
-      : {
-          padding: isHighDensity
-            ? `${tokens.spacingXs} ${tokens.spacingL} ${tokens.spacingXs} ${tokens.spacingXs}`
-            : `10px ${tokens.spacingL} 10px ${tokens.spacingS}`,
-          height: isHighDensity ? '32px' : '40px',
-          fontSize: isHighDensity ? tokens.fontSizeMHigh : tokens.fontSizeM,
-          lineHeight: isHighDensity
-            ? tokens.lineHeightMHigh
-            : tokens.lineHeightM,
-          borderRadius: isHighDensity
-            ? tokens.borderRadiusSmall
-            : tokens.borderRadiusMedium,
         };
+
+      case size === 'medium' && density === 'high':
+        return {
+          padding: `${tokens.spacing2Xs} ${tokens.spacingL} ${tokens.spacing2Xs} ${tokens.spacingXs}`,
+          height: '32px',
+          fontSize: tokens.fontSizeMHigh,
+          lineHeight: tokens.lineHeightMHigh,
+          borderRadius: tokens.borderRadiusSmall,
+        };
+
+      case size === 'medium' || density === 'low':
+      default:
+        return {
+          padding: `10px ${tokens.spacingL} 10px ${tokens.spacingS}`,
+          height: '40px',
+        };
+    }
+  };
 
   const select = css({
     width: '100%',
@@ -33,11 +35,15 @@ export function getSelectStyles({ isInvalid, isDisabled, size, density }) {
     backgroundColor: tokens.colorWhite,
     color: tokens.gray700,
 
+    fontSize: tokens.fontSizeM,
+    lineHeight: tokens.lineHeightM,
     fontFamily: tokens.fontStackPrimary,
+    borderRadius: tokens.borderRadiusMedium,
     boxShadow: tokens.insetBoxShadowDefault,
     outline: 'none',
     border: `1px solid ${tokens.gray300}`,
     cursor: 'pointer',
+    textOverflow: 'ellipsis',
 
     '&::placeholder': {
       color: tokens.gray500,
@@ -74,7 +80,7 @@ export function getSelectStyles({ isInvalid, isDisabled, size, density }) {
     }),
     select: css([
       select,
-      sizeStyles,
+      getSizeAndDensityStyles(),
       isDisabled && disabled,
       isInvalid && invalid,
     ]),
