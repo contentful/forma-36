@@ -73,6 +73,11 @@ export interface MultiselectProps extends CommonProps {
   toggleRef?: React.Ref<HTMLButtonElement>;
 
   /**
+   * Use this prop to get a ref to the reset search button of the component
+   */
+  resetSearchRef?: React.Ref<HTMLButtonElement>;
+
+  /**
    * Props to pass to the Popover (Dropdown) component
    */
   popoverProps?: Partial<PopoverProps> & {
@@ -147,6 +152,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     searchInputName,
     noMatchesMessage = 'No matches found',
     toggleRef,
+    resetSearchRef,
     isLoading = false,
     testId = 'cf-multiselect',
     popoverProps = {},
@@ -312,6 +318,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                   size="small"
                 />
                 <IconButton
+                  ref={resetSearchRef}
                   aria-label={searchValue ? 'Clear search' : 'Search'}
                   className={styles.toggleButton}
                   variant="transparent"
