@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import { SectionHeading } from '@contentful/f36-typography';
-import { Radio, RadioProps } from '../src';
+import React, { ComponentProps, useState } from 'react';
 import { Flex, Box } from '@contentful/f36-core';
-import { type Density } from '@contentful/f36-utils';
-import { DensityContainer } from '../../density-container';
+import { type Density, DensityProvider } from '@contentful/f36-utils';
+import { Heading, SectionHeading } from '@contentful/f36-typography';
+import { Radio } from '../src';
 
 export default {
   title: 'Form Elements/Radio',
@@ -14,7 +13,7 @@ export default {
   },
 };
 
-export const Basic = (args: RadioProps) => {
+export const Basic = (args: ComponentProps<typeof Radio>) => {
   const [activeOption, setActiveOption] = useState('yes');
   return (
     <Flex>
@@ -50,40 +49,7 @@ export const Basic = (args: RadioProps) => {
   );
 };
 
-const DensitySupport = () => {
-  const Densities = [
-    {
-      name: 'Low density',
-      density: 'low',
-    },
-    {
-      name: 'High density',
-      density: 'high',
-    },
-  ];
-
-  return (
-    <>
-      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
-        Density Support
-      </SectionHeading>
-      <Flex gap="spacingS">
-        {Densities.map((density) => {
-          return (
-            <DensityContainer
-              key={density.name}
-              density={density.density as Density}
-            >
-              <Radio name={density.name}>{density.name}</Radio>
-            </DensityContainer>
-          );
-        })}
-      </Flex>
-    </>
-  );
-};
-
-export const overview = () => (
+export const Overview = () => (
   <>
     <SectionHeading as="h3" marginBottom="spacingS">
       Radio default
@@ -120,7 +86,39 @@ export const overview = () => (
         Label text
       </Radio>
     </Flex>
-
-    <DensitySupport />
   </>
 );
+
+export const WithDensitySupport = (props: ComponentProps<typeof Radio>) => {
+  const Densities = [
+    {
+      name: 'Low density',
+      density: 'low',
+    },
+    {
+      name: 'High density',
+      density: 'high',
+    },
+  ];
+
+  return (
+    <Flex gap="spacing2Xl">
+      {Densities.map((density) => {
+        return (
+          <Flex
+            key={density.name}
+            flexDirection="column"
+            style={{ width: '230px' }}
+          >
+            <Heading>{density.name}</Heading>
+            <DensityProvider value={density.density as Density}>
+              <Radio {...props} name={density.name}>
+                {density.name}
+              </Radio>
+            </DensityProvider>
+          </Flex>
+        );
+      })}
+    </Flex>
+  );
+};
