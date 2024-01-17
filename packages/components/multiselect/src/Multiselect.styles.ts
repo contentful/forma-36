@@ -24,7 +24,7 @@ export const getMultiselectStyles = () => ({
     paddingTop: tokens.spacing2Xs,
     position: 'sticky',
     top: '0px',
-    zIndex: '10',
+    zIndex: tokens.zIndexWorkbenchHeader,
     backgroundColor: tokens.colorWhite,
   }),
   inputField: css({
@@ -67,19 +67,27 @@ export const getMultiselectStyles = () => ({
   noMatchesTitle: css({
     color: tokens.gray500,
     margin: tokens.spacingM,
+    textAlign: 'center',
   }),
   selectAll: css({
     borderBottom: `1px solid ${tokens.gray200}`,
     marginBottom: tokens.spacing2Xs,
     paddingBottom: tokens.spacing2Xs,
     'label > *': {
-      fontWeight: '500',
+      fontWeight: tokens.fontWeightMedium,
     },
   }),
   option: css({
     listStyleType: 'none',
+    margin: '1px 0',
   }),
-  item: css({
+  optionText: css({
+    color: tokens.gray700,
+    b: {
+      color: tokens.gray900,
+    },
+  }),
+  optionCheck: css({
     label: {
       // Magic number to get a height of 32px on the item
       padding: `6px ${tokens.spacingXs}`,
