@@ -96,7 +96,6 @@ export function SandpackRenderer({
           'react-scripts': '^4.0.0',
           '@contentful/f36-components': '^4.0.0',
           '@contentful/f36-avatar': '^4.0.0-alpha.0', // Remove when added to f36-components
-          '@contentful/f36-density-container': '^4.0.0-alpha.0', // Remove when added to f36-components
           '@contentful/f36-header': '^4.0.0-alpha.0', // Remove when added to f36-components
           '@contentful/f36-image': '^4.0.0-alpha.0', // Remove when added to f36-components
           '@contentful/f36-layout': '^4.0.0-alpha.0', // Remove when added to f36-components
