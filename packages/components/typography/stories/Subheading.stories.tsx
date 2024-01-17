@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
 import { Flex } from '@contentful/f36-core';
 import { Heading } from '@contentful/f36-typography';
-import type { Density } from '@contentful/f36-utils';
-import { DensityContainer } from '../../density-container';
-import { Subheading, SubheadingProps } from '../src/Subheading/Subheading';
+import { type Density, DensityProvider } from '@contentful/f36-utils';
+import { Subheading } from '../src';
 
 export default {
   title: 'Typography/Subheading',
@@ -16,16 +15,19 @@ export default {
   },
 };
 
-export const Basic = (props: SubheadingProps<'h2'>) => (
+export const Basic = (props: ComponentProps<typeof Subheading>) => (
   <Subheading {...props} />
 );
 
 Basic.args = {
   as: 'h2',
-  children: 'Subheading',
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
 };
 
-export const WithDensitySupport = (props: SubheadingProps<'h2'>) => {
+export const WithDensitySupport = (
+  props: ComponentProps<typeof Subheading>,
+) => {
   const Densities = [
     {
       name: 'Low density',
@@ -47,9 +49,9 @@ export const WithDensitySupport = (props: SubheadingProps<'h2'>) => {
             style={{ width: '230px' }}
           >
             <Heading>{density.name}</Heading>
-            <DensityContainer density={density.density as Density}>
+            <DensityProvider value={density.density as Density}>
               <Subheading {...props} />
-            </DensityContainer>
+            </DensityProvider>
           </Flex>
         );
       })}
@@ -58,5 +60,6 @@ export const WithDensitySupport = (props: SubheadingProps<'h2'>) => {
 };
 
 WithDensitySupport.args = {
-  children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
 };
