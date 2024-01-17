@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
 import { Flex } from '@contentful/f36-core';
+import { type Density, DensityProvider } from '@contentful/f36-utils';
 import { Heading } from '@contentful/f36-typography';
-import type { Density } from '@contentful/f36-utils';
-import { Paragraph, ParagraphProps } from '../src/Paragraph/Paragraph';
-import { DensityContainer } from '../../density-container';
+import { Paragraph } from '../src';
 
 export default {
   title: 'Typography/Paragraph',
@@ -16,13 +15,16 @@ export default {
   },
 };
 
-export const Basic = (props: ParagraphProps) => <Paragraph {...props} />;
+export const Basic = (props: ComponentProps<typeof Paragraph>) => (
+  <Paragraph {...props} />
+);
 
 Basic.args = {
-  children: 'Paragraph',
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
 };
 
-export const WithDensitySupport = (props: ParagraphProps) => {
+export const WithDensitySupport = (props: ComponentProps<typeof Paragraph>) => {
   const Densities = [
     {
       name: 'Low density',
@@ -44,9 +46,9 @@ export const WithDensitySupport = (props: ParagraphProps) => {
             style={{ width: '230px' }}
           >
             <Heading>{density.name}</Heading>
-            <DensityContainer density={density.density as Density}>
+            <DensityProvider value={density.density as Density}>
               <Paragraph {...props} />
-            </DensityContainer>
+            </DensityProvider>
           </Flex>
         );
       })}
@@ -55,5 +57,6 @@ export const WithDensitySupport = (props: ParagraphProps) => {
 };
 
 WithDensitySupport.args = {
-  children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
 };
