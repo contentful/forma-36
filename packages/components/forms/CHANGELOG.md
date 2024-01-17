@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.58.3
+
+### Patch Changes
+
+- [#2653](https://github.com/contentful/forma-36/pull/2653) [`558c90559`](https://github.com/contentful/forma-36/commit/558c9055913e807873b6f0551052bc528d609ec8) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - - Add high-density support to Select (for `medium` size).
+  - Add ellipsis text-overflow support to Select.
+- Updated dependencies []:
+  - @contentful/f36-core@4.58.3
+  - @contentful/f36-typography@4.58.3
+
 ## 4.58.2
 
 ### Patch Changes
