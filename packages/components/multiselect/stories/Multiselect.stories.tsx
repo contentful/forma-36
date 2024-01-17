@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import type { Meta } from '@storybook/react/types-6-0';
 
 import { Stack } from '@contentful/f36-core';
 import { Multiselect } from '../src';
 import { SectionHeading } from '@contentful/f36-typography';
+import { Button } from '@contentful/f36-button';
 
 export default {
   title: 'Components/Multiselect',
@@ -250,6 +251,80 @@ export const WithSearch = () => {
         onSearchValueChange={handleSearchValueChange}
         popoverProps={{ isFullWidth: true, listMaxHeight: 250 }}
         currentSelection={selectedFruits}
+      >
+        {filteredItems.map((item) => {
+          return (
+            <Multiselect.Option
+              value={item.value}
+              label={item.name}
+              onSelectItem={handleSelectItem}
+              key={`key-${item.id}`}
+              itemId={`id-${item.id}`}
+              isChecked={selectedFruits.includes(item.name)}
+              isDisabled={item.isDisabled}
+            />
+          );
+        })}
+      </Multiselect>
+    </Stack>
+  );
+};
+export const OutsideControl = () => {
+  const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
+  const [filteredItems, setFilteredItems] = useState(fruits);
+  const toggleRef = useRef(null);
+  const clearSearchRef = useRef(null);
+
+  const handleToggleBtn = () => {
+    toggleRef.current.click();
+  };
+  const handleClearBtn = () => {
+    clearSearchRef.current.click();
+  };
+
+  const handleSearchValueChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    const value = event.target.value;
+    const newFilteredItems = fruits.filter((item) =>
+      item.value.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredItems(newFilteredItems);
+  };
+
+  const handleSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked, value } = event.target;
+
+    const currentFruit = fruits.find((fruit) => fruit.value === value);
+    if (!currentFruit) return;
+    if (checked) {
+      setSelectedFruits((prevState) => [...prevState, currentFruit.name]);
+    } else {
+      setSelectedFruits((prevState) => {
+        return prevState.filter((fruit) => fruit !== currentFruit.name);
+      });
+    }
+  };
+
+  return (
+    <Stack
+      style={{ width: '250px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      <Button onClick={handleToggleBtn}>Toggle Popover</Button>
+      <Button onClick={handleClearBtn}>Clear Search Field</Button>
+      <Multiselect
+        placeholder="Search your favorite fruit"
+        onSearchValueChange={handleSearchValueChange}
+        popoverProps={{
+          isFullWidth: true,
+          closeOnBlur: false,
+        }}
+        currentSelection={selectedFruits}
+        toggleRef={toggleRef}
+        resetSearchRef={clearSearchRef}
       >
         {filteredItems.map((item) => {
           return (
