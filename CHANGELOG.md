@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 18-01-2024
+
+**F36 Forms** `v4.58.3`
+
+- Add high-density support to Select (for `medium` size).- Add ellipsis text-overflow support to Select.
+
 ## 16-01-2024
 
 **F36 Forms** `v4.58.2`
