@@ -1,12 +1,8 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
 import { Flex } from '@contentful/f36-core';
+import { type Density, DensityProvider } from '@contentful/f36-utils';
 import { Heading } from '@contentful/f36-typography';
-import type { Density } from '@contentful/f36-utils';
-import { DensityContainer } from '../../density-container';
-import {
-  SectionHeading,
-  SectionHeadingProps,
-} from '../src/SectionHeading/SectionHeading';
+import { SectionHeading } from '../src';
 
 export default {
   title: 'Typography/SectionHeading',
@@ -19,15 +15,18 @@ export default {
   },
 };
 
-export const Basic = (props: SectionHeadingProps<'h3'>) => (
+export const Basic = (props: ComponentProps<typeof SectionHeading>) => (
   <SectionHeading {...props} />
 );
 
 Basic.args = {
-  children: 'Section heading',
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
 };
 
-export const WithDensitySupport = (props: SectionHeadingProps<'h3'>) => {
+export const WithDensitySupport = (
+  props: ComponentProps<typeof SectionHeading>,
+) => {
   const Densities = [
     {
       name: 'Low density',
@@ -49,9 +48,9 @@ export const WithDensitySupport = (props: SectionHeadingProps<'h3'>) => {
             style={{ width: '230px' }}
           >
             <Heading>{density.name}</Heading>
-            <DensityContainer density={density.density as Density}>
+            <DensityProvider value={density.density as Density}>
               <SectionHeading {...props} />
-            </DensityContainer>
+            </DensityProvider>
           </Flex>
         );
       })}
@@ -60,5 +59,6 @@ export const WithDensitySupport = (props: SectionHeadingProps<'h3'>) => {
 };
 
 WithDensitySupport.args = {
-  children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
 };

@@ -12,7 +12,6 @@
     "@codesandbox/sandpack-react": "^1.17.0",
     "@contentful/f36-avatar": "^4.0.0-alpha.0",
     "@contentful/f36-components": "^4.58.3",
-    "@contentful/f36-density-container": "^4.0.0-alpha.0",
     "@contentful/f36-docs-utils": "^4.0.2",
     "@contentful/f36-empty-state": "^4.58.3",
     "@contentful/f36-header": "^4.0.0-alpha.0",

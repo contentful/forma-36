@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
 import { action } from '@storybook/addon-actions';
 import { Flex } from '@contentful/f36-core';
-import type { Density } from '@contentful/f36-utils';
+import { type Density, DensityProvider } from '@contentful/f36-utils';
 import { Heading, SectionHeading } from '@contentful/f36-typography';
 import { Note } from '@contentful/f36-note';
-import { Select, SelectProps } from '../src';
-import { DensityContainer } from '../../density-container';
+import { Select } from '../src';
 
 export default {
   title: 'Form Elements/Select',
   component: Select,
 };
 
-export const Basic = (args: SelectProps) => (
+export const Basic = (args: ComponentProps<typeof Select>) => (
   <Select
     id="optionSelect"
     name="optionSelect"
@@ -31,7 +30,7 @@ Basic.args = {
   size: 'medium',
 };
 
-export const Overview = (args: SelectProps) => {
+export const Overview = (args: ComponentProps<typeof Select>) => {
   const [controlledValue, setControlledValue] = React.useState('optionTwo');
   const handleOnChange = (event) => {
     setControlledValue(event.target.value);
@@ -184,7 +183,7 @@ export const Overview = (args: SelectProps) => {
   );
 };
 
-export const WithDensitySupport = (props: SelectProps) => {
+export const WithDensitySupport = (props: ComponentProps<typeof Select>) => {
   const Densities = [
     {
       name: 'Low density',
@@ -212,7 +211,7 @@ export const WithDensitySupport = (props: SelectProps) => {
               style={{ width: '230px' }}
             >
               <Heading>{density.name}</Heading>
-              <DensityContainer density={density.density as Density}>
+              <DensityProvider value={density.density as Density}>
                 <Select
                   id="optionSelect"
                   name="optionSelect"
@@ -226,7 +225,7 @@ export const WithDensitySupport = (props: SelectProps) => {
                     over-motivated frog
                   </Select.Option>
                 </Select>
-              </DensityContainer>
+              </DensityProvider>
             </Flex>
           );
         })}
