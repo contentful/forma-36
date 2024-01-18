@@ -1,5 +1,11 @@
 # @contentful/f36-utils
 
+## 4.24.3
+
+### Patch Changes
+
+- [`7563339ee`](https://github.com/contentful/forma-36/commit/7563339eeea4d5c6a2736bc8ecf76d903c8539d7) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - - Remove alpha DensityContainer component for DensityProvider usage.
+
 ## 4.24.2
 
 ### Patch Changes
