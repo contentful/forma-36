@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import { SectionHeading } from '@contentful/f36-typography';
+import React, { ComponentProps, useState } from 'react';
 import { Flex } from '@contentful/f36-core';
-import { Checkbox, CheckboxProps } from '../src';
-import { type Density } from '@contentful/f36-utils';
-import { DensityContainer } from '../../density-container';
+import { type Density, DensityProvider } from '@contentful/f36-utils';
+import { Heading, SectionHeading } from '@contentful/f36-typography';
+import { Checkbox } from '../src';
 
 export default {
   title: 'Form Elements/Checkbox',
@@ -14,7 +13,7 @@ export default {
   },
 };
 
-export const Basic = (args: CheckboxProps) => {
+export const Basic = (args: ComponentProps<typeof Checkbox>) => {
   const [optionOne, setOptionOne] = useState(false);
   const [optionTwo, setOptionTwo] = useState(false);
 
@@ -43,7 +42,9 @@ Basic.args = {
   name: 'some name',
 };
 
-export const CheckboxWithCustomLabel = (args: CheckboxProps) => {
+export const CheckboxWithCustomLabel = (
+  args: ComponentProps<typeof Checkbox>,
+) => {
   const [optionOne, setOptionOne] = useState(false);
   const [optionTwo, setOptionTwo] = useState(false);
 
@@ -71,6 +72,7 @@ export const CheckboxWithCustomLabel = (args: CheckboxProps) => {
     </Flex>
   );
 };
+
 export const Indeterminate = () => {
   const [checkedItems, setCheckedItems] = React.useState([false, false]);
 
@@ -104,40 +106,7 @@ export const Indeterminate = () => {
   );
 };
 
-const DensitySupport = () => {
-  const Densities = [
-    {
-      name: 'Low density',
-      density: 'low',
-    },
-    {
-      name: 'High density',
-      density: 'high',
-    },
-  ];
-
-  return (
-    <>
-      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
-        Density Support
-      </SectionHeading>
-      <Flex gap="spacingS">
-        {Densities.map((density) => {
-          return (
-            <DensityContainer
-              key={density.name}
-              density={density.density as Density}
-            >
-              <Checkbox name={density.name}>{density.name}</Checkbox>
-            </DensityContainer>
-          );
-        })}
-      </Flex>
-    </>
-  );
-};
-
-export const overview = () => (
+export const Overview = () => (
   <>
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
       Checkbox default
@@ -203,7 +172,39 @@ export const overview = () => (
     >
       Option 1
     </Checkbox>
-
-    <DensitySupport />
   </>
 );
+
+export const WithDensitySupport = (props: ComponentProps<typeof Checkbox>) => {
+  const Densities = [
+    {
+      name: 'Low density',
+      density: 'low',
+    },
+    {
+      name: 'High density',
+      density: 'high',
+    },
+  ];
+
+  return (
+    <Flex gap="spacing2Xl">
+      {Densities.map((density) => {
+        return (
+          <Flex
+            key={density.name}
+            flexDirection="column"
+            style={{ width: '230px' }}
+          >
+            <Heading>{density.name}</Heading>
+            <DensityProvider value={density.density as Density}>
+              <Checkbox {...props} name={density.name}>
+                {density.name}
+              </Checkbox>
+            </DensityProvider>
+          </Flex>
+        );
+      })}
+    </Flex>
+  );
+};

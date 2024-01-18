@@ -1,11 +1,8 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
 import { Flex } from '@contentful/f36-core';
-import type { Density } from '@contentful/f36-utils';
-import { Heading } from '@contentful/f36-typography';
-
-import { DensityContainer } from '../../density-container';
-import { Caption, CaptionProps } from '../src/Caption/Caption';
-import { Paragraph } from '../src/Paragraph/Paragraph';
+import { type Density, DensityProvider } from '@contentful/f36-utils';
+import { Heading, Paragraph } from '@contentful/f36-typography';
+import { Caption } from '../src';
 
 export default {
   title: 'Typography/Caption',
@@ -18,13 +15,16 @@ export default {
   },
 };
 
-export const Basic = (props: CaptionProps<'span'>) => <Caption {...props} />;
+export const Basic = (props: ComponentProps<typeof Caption>) => (
+  <Caption {...props} />
+);
 
 Basic.args = {
-  children: 'Caption',
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
 };
 
-export const Overview = (props: CaptionProps) => (
+export const Overview = (props: ComponentProps<typeof Caption>) => (
   <>
     <Flex alignItems="center" gap="spacingS">
       <Paragraph marginBottom="none">fontWeightNormal</Paragraph>
@@ -39,10 +39,11 @@ export const Overview = (props: CaptionProps) => (
 );
 
 Overview.args = {
-  children: 'Caption',
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
 };
 
-export const WithDensitySupport = (props: CaptionProps) => {
+export const WithDensitySupport = (props: ComponentProps<typeof Caption>) => {
   const Densities = [
     {
       name: 'Low density',
@@ -64,9 +65,9 @@ export const WithDensitySupport = (props: CaptionProps) => {
             style={{ width: '230px' }}
           >
             <Heading marginBottom="spacingXs">{density.name}</Heading>
-            <DensityContainer density={density.density as Density}>
+            <DensityProvider value={density.density as Density}>
               <Caption {...props} />
-            </DensityContainer>
+            </DensityProvider>
           </Flex>
         );
       })}
@@ -75,5 +76,6 @@ export const WithDensitySupport = (props: CaptionProps) => {
 };
 
 WithDensitySupport.args = {
-  children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
 };
