@@ -39,13 +39,14 @@ Following this structure makes it easy to find the file that needs to be updated
 ## Environment variables
 
 To run this website locally, you need to create a `.env.local` with the following variables:
+(Please get the values from 1Password / Forma36 Website Dev Env)
 
 ```
-NEXT_PUBLIC_DOCSEARCH_APP_ID={{ You can find the value of this variable at our Algolia account}}
-NEXT_PUBLIC_DOCSEARCH_API_KEY={{ You can find the value of this variable at our Algolia account}}
-NEXT_PUBLIC_DOCSEARCH_INDEX_NAME={{ You can find the value of this variable at our Algolia account}}
+NEXT_PUBLIC_DOCSEARCH_APP_ID=
+NEXT_PUBLIC_DOCSEARCH_API_KEY=
+NEXT_PUBLIC_DOCSEARCH_INDEX_NAME=
 
-CONTENTFUL_SPACE_ID={{ You can find the value of this variable at our Contentful account}}
-CONTENTFUL_ACCESS_TOKEN={{ You can find the value of this variable at our Contentful account}}
-CONTENTFUL_PREVIEW_ACCESS_TOKEN={{ You can find the value of this variable at our Contentful account}}
+CONTENTFUL_SPACE_ID=
+CONTENTFUL_ACCESS_TOKEN=
+CONTENTFUL_PREVIEW_ACCESS_TOKEN=
 ```

@@ -446,6 +446,10 @@
   ],
   "tokens": [
     {
+      "title": "Border radius",
+      "slug": "/tokens/border-radius/"
+    },
+    {
       "title": "Color system",
       "slug": "/tokens/color-system/"
     },
