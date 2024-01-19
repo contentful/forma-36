@@ -719,6 +719,17 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "roosterhack",
+      "name": "Eddie Chung",
+      "avatar_url": "https://avatars.githubusercontent.com/u/47013507?v=4",
+      "profile": "https://github.com/roosterhack",
+      "contributions": [
+        "maintenance",
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
