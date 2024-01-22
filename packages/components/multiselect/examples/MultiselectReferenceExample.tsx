@@ -30,10 +30,8 @@ export default function MultiselectReferenceExample() {
     if (checked) {
       setSelectedItems((prevState) => [...prevState, value]);
     } else {
-      const newSelectedFruits = selectedItems.filter(
-        (fruit) => fruit !== value,
-      );
-      setSelectedItems(newSelectedFruits);
+      const newSelectedItems = selectedItems.filter((space) => space !== value);
+      setSelectedItems(newSelectedItems);
     }
   };
 
