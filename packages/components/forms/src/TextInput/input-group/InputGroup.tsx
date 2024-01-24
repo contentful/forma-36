@@ -7,6 +7,7 @@ import {
 } from '@contentful/f36-core';
 import getStyles from './InputGroup.styles';
 import type { InputGroupSpacing } from './types';
+import { useDensity } from '@contentful/f36-utils';
 
 export interface InputGroupProps extends CommonProps {
   /**
@@ -22,7 +23,8 @@ const _InputGroup = (
   ref: React.Ref<HTMLDivElement>,
 ) => {
   const { children, className, spacing = 'none', ...otherProps } = props;
-  const styles = getStyles({ spacing });
+  const density = useDensity();
+  const styles = getStyles({ spacing, density });
   return (
     <Stack
       {...otherProps}

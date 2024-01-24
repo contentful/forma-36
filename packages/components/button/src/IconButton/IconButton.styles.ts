@@ -11,6 +11,7 @@ function sizeToStyles(size: ButtonSize, density: Density) {
       return {
         padding: isHighDensity ? `${tokens.spacing2Xs}` : tokens.spacing2Xs,
         minHeight: isHighDensity ? '16px' : '32px',
+        maxHeight: isHighDensity ? '16px' : '32px',
         minWidth: isHighDensity ? '16px' : '32px',
       };
     }
@@ -18,6 +19,7 @@ function sizeToStyles(size: ButtonSize, density: Density) {
       return {
         padding: tokens.spacingXs,
         minHeight: isHighDensity ? '32px' : '40px',
+        maxHeight: isHighDensity ? '32px' : '40px',
         minWidth: isHighDensity ? '32px' : '40px',
       };
     }

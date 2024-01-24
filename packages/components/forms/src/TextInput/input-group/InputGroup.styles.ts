@@ -2,10 +2,13 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import type { GetStyleArguments } from './types';
 
-const getInputGroupStyle = ({ spacing }) => {
+const getInputGroupStyle = ({ spacing, density }) => {
   if (spacing !== 'none') {
     return;
   }
+
+  const densityBorderRadius =
+    density === 'high' ? tokens.borderRadiusSmall : tokens.borderRadiusMedium;
 
   return css({
     position: 'relative',
@@ -19,12 +22,12 @@ const getInputGroupStyle = ({ spacing }) => {
         boxShadow: 'none !important',
       },
       '&:first-child, &:first-child > input, &:first-child button': {
-        borderBottomLeftRadius: `${tokens.borderRadiusMedium} !important`,
-        borderTopLeftRadius: `${tokens.borderRadiusMedium} !important`,
+        borderBottomLeftRadius: `${densityBorderRadius} !important`,
+        borderTopLeftRadius: `${densityBorderRadius} !important`,
       },
       '&:last-child, &:last-child > input, &:last-child button': {
-        borderBottomRightRadius: `${tokens.borderRadiusMedium} !important`,
-        borderTopRightRadius: `${tokens.borderRadiusMedium} !important`,
+        borderBottomRightRadius: `${densityBorderRadius} !important`,
+        borderTopRightRadius: `${densityBorderRadius} !important`,
         marginRight: '0 !important',
       },
       '&:focus, &:focus-within': {
@@ -34,6 +37,6 @@ const getInputGroupStyle = ({ spacing }) => {
   });
 };
 
-export default ({ spacing }: GetStyleArguments) => ({
-  inputGroup: getInputGroupStyle({ spacing }),
+export default ({ spacing, density }: GetStyleArguments) => ({
+  inputGroup: getInputGroupStyle({ spacing, density }),
 });
