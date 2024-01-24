@@ -8,6 +8,20 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 19-01-2024
+
+**F36 Forms** `v4.58.4`
+
+- Remove alpha DensityContainer component for DensityProvider usage.
+
+**F36 Typography** `v4.58.4`
+
+- Remove alpha DensityContainer component for DensityProvider usage.
+
+**F36 Utils** `v4.24.3`
+
+- Remove alpha DensityContainer component for DensityProvider usage.
+
 ## 18-01-2024
 
 **F36 Forms** `v4.58.3`
