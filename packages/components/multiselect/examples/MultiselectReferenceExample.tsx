@@ -48,12 +48,14 @@ export default function MultiselectReferenceExample() {
       <Button onClick={handleExtToggle}>Toggle Popover</Button>
       <Button onClick={handleExtClearSearch}>Clear Search Field</Button>
       <Multiselect
-        searchPlaceholder="Search spaces"
-        onSearchValueChange={handleSearchValueChange}
+        searchProps={{
+          searchPlaceholder: 'Search spaces',
+          onSearchValueChange: handleSearchValueChange,
+          resetSearchRef: clearSearchFieldRef,
+        }}
         popoverProps={{ isFullWidth: true, closeOnBlur: false }}
         currentSelection={selectedItems}
         toggleRef={togglePopOverRef}
-        resetSearchRef={clearSearchFieldRef}
       >
         {filteredItems.map((item, index) => {
           return (

@@ -174,7 +174,7 @@ export const WithTitle = () => {
       <Multiselect
         placeholder="Select many fruits"
         currentSelection={selectedFruits}
-        onSearchValueChange={handleSearchValueChange}
+        searchProps={{ onSearchValueChange: handleSearchValueChange }}
       >
         <>
           <SectionHeading marginLeft="spacingXs" marginBottom="none">
@@ -248,7 +248,7 @@ export const WithSearch = () => {
     >
       <Multiselect
         placeholder="Search your favorite fruit"
-        onSearchValueChange={handleSearchValueChange}
+        searchProps={{ onSearchValueChange: handleSearchValueChange }}
         popoverProps={{ isFullWidth: true, listMaxHeight: 250 }}
         currentSelection={selectedFruits}
       >
@@ -317,14 +317,16 @@ export const OutsideControl = () => {
       <Button onClick={handleClearBtn}>Clear Search Field</Button>
       <Multiselect
         placeholder="Search your favorite fruit"
-        onSearchValueChange={handleSearchValueChange}
         popoverProps={{
           isFullWidth: true,
           closeOnBlur: false,
         }}
         currentSelection={selectedFruits}
         toggleRef={toggleRef}
-        resetSearchRef={clearSearchRef}
+        searchProps={{
+          onSearchValueChange: handleSearchValueChange,
+          resetSearchRef: clearSearchRef,
+        }}
       >
         {filteredItems.map((item) => {
           return (

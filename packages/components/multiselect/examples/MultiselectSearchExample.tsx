@@ -28,18 +28,18 @@ export default function MultiselectSearchExample() {
     if (checked) {
       setSelectedItems((prevState) => [...prevState, value]);
     } else {
-      const newSelectedFruits = selectedItems.filter(
-        (fruit) => fruit !== value,
-      );
-      setSelectedItems(newSelectedFruits);
+      const newSelectedItems = selectedItems.filter((space) => space !== value);
+      setSelectedItems(newSelectedItems);
     }
   };
 
   return (
     <Stack flexDirection="column" alignItems="start">
       <Multiselect
-        searchPlaceholder="Search spaces"
-        onSearchValueChange={handleSearchValueChange}
+        searchProps={{
+          searchPlaceholder: 'Search spaces',
+          onSearchValueChange: handleSearchValueChange,
+        }}
         popoverProps={{ isFullWidth: true }}
         currentSelection={selectedItems}
       >

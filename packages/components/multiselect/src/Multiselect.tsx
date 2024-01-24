@@ -13,6 +13,42 @@ import { getMultiselectStyles } from './Multiselect.styles';
 import { MultiselectOption, MultiselectOptionProps } from './MultiselectOption';
 import FocusLock from 'react-focus-lock';
 
+type SearchProps = {
+  /**
+   * Function called whenever the search input value changes
+   */
+  onSearchValueChange?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => void | undefined;
+
+  /**
+   * This is the value will be passed to the `placeholder` prop of the input.
+   * @default "Search"
+   */
+  searchPlaceholder?: string;
+
+  /**
+   * A message that will be shown when it is not possible to find any option that matches the search value
+   * @default "No matches"
+   */
+  noMatchesMessage?: string;
+
+  /**
+   * Pass a form name to the search text input
+   */
+  searchInputName?: string;
+
+  /**
+   * Use this prop to get a ref to the search input element of the component
+   */
+  searchInputRef?: React.Ref<HTMLInputElement>;
+
+  /**
+   * Use this prop to get a ref to the reset search button of the component
+   */
+  resetSearchRef?: React.Ref<HTMLButtonElement>;
+};
+
 export interface MultiselectProps extends CommonProps {
   /** Select Options */
   children?: React.ReactNode;
@@ -33,35 +69,6 @@ export interface MultiselectProps extends CommonProps {
   currentSelection?: Array<string>;
 
   /**
-   * Function called whenever the search input value changes
-   */
-  onSearchValueChange?: (
-    event: React.ChangeEvent<HTMLInputElement>,
-  ) => void | undefined;
-
-  /**
-   * This is the value will be passed to the `placeholder` prop of the input.
-   * @default "Search"
-   */
-  searchPlaceholder?: string;
-
-  /**
-   * A message that will be shown when it is not possible to find any option that matches the input value
-   * @default "No matches"
-   */
-  noMatchesMessage?: string;
-
-  /**
-   * Use this prop to get a ref to the input element of the component
-   */
-  searchInputRef?: React.Ref<HTMLInputElement>;
-
-  /**
-   * Pass a form name to the search text input
-   */
-  searchInputName?: string;
-
-  /**
    * Sets the list to show its loading state
    * @default false
    */
@@ -73,9 +80,9 @@ export interface MultiselectProps extends CommonProps {
   toggleRef?: React.Ref<HTMLButtonElement>;
 
   /**
-   * Use this prop to get a ref to the reset search button of the component
+   * Props to pass to the optional search field
    */
-  resetSearchRef?: React.Ref<HTMLButtonElement>;
+  searchProps?: SearchProps;
 
   /**
    * Props to pass to the Popover (Dropdown) component
@@ -146,21 +153,27 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     startIcon,
     placeholder = 'Select one or more Items',
     currentSelection = [],
-    onSearchValueChange,
-    searchPlaceholder = 'Search',
-    searchInputRef,
-    searchInputName,
-    noMatchesMessage = 'No matches found',
     toggleRef,
-    resetSearchRef,
     isLoading = false,
     testId = 'cf-multiselect',
+    searchProps = {
+      searchPlaceholder: 'Search',
+      noMatchesMessage: 'No matches found',
+    },
     popoverProps = {},
     children,
     onBlur,
   } = props;
 
   const { listMaxHeight = 180, listRef } = popoverProps;
+  const {
+    onSearchValueChange,
+    resetSearchRef,
+    searchInputName,
+    searchPlaceholder,
+    searchInputRef,
+    noMatchesMessage,
+  } = searchProps;
 
   const styles = getMultiselectStyles();
 
