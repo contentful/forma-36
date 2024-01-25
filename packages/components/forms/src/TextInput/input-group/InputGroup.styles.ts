@@ -15,6 +15,8 @@ const getInputGroupStyle = ({ spacing, density }) => {
 
     '& button, & input': {
       borderRadius: '0 !important',
+      minHeight: density === 'high' ? '16px' : '32px',
+      maxHeight: density === 'high' ? '24px' : '32px',
     },
     '& > *': {
       marginRight: '-1px !important',
