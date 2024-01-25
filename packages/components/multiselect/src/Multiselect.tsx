@@ -2,9 +2,9 @@ import React, { useRef, useState, useCallback, useMemo } from 'react';
 import { cx } from 'emotion';
 
 import { mergeRefs, type CommonProps } from '@contentful/f36-core';
-import { Button, IconButton } from '@contentful/f36-button';
-import { TextInput } from '@contentful/f36-forms';
-import { CloseIcon, ChevronDownIcon, SearchIcon } from '@contentful/f36-icons';
+import { Button } from '@contentful/f36-button';
+import { ChevronDownIcon } from '@contentful/f36-icons';
+
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover, type PopoverProps } from '@contentful/f36-popover';
 import { Subheading } from '@contentful/f36-typography';
@@ -13,41 +13,8 @@ import { getMultiselectStyles } from './Multiselect.styles';
 import { MultiselectOption, MultiselectOptionProps } from './MultiselectOption';
 import FocusLock from 'react-focus-lock';
 
-type SearchProps = {
-  /**
-   * Function called whenever the search input value changes
-   */
-  onSearchValueChange?: (
-    event: React.ChangeEvent<HTMLInputElement>,
-  ) => void | undefined;
-
-  /**
-   * This is the value will be passed to the `placeholder` prop of the input.
-   * @default "Search"
-   */
-  searchPlaceholder?: string;
-
-  /**
-   * A message that will be shown when it is not possible to find any option that matches the search value
-   * @default "No matches"
-   */
-  noMatchesMessage?: string;
-
-  /**
-   * Pass a form name to the search text input
-   */
-  searchInputName?: string;
-
-  /**
-   * Use this prop to get a ref to the search input element of the component
-   */
-  searchInputRef?: React.Ref<HTMLInputElement>;
-
-  /**
-   * Use this prop to get a ref to the reset search button of the component
-   */
-  resetSearchRef?: React.Ref<HTMLButtonElement>;
-};
+import type { MultiselectSearchProps as SearchProps } from './MultiselectSearch';
+import { MultiselectSearch } from './MultiselectSearch';
 
 export interface MultiselectProps extends CommonProps {
   /** Select Options */
@@ -83,6 +50,39 @@ export interface MultiselectProps extends CommonProps {
    * Props to pass to the optional search field
    */
   searchProps?: SearchProps;
+
+  /**
+   * Function called whenever the search input value changes
+   * @deprecated Handover this prop in the searchProps subcomponent properties
+   */
+  onSearchValueChange?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => void | undefined;
+
+  /**
+   * This is the value will be passed to the `placeholder` prop of the input.
+   * @deprecated Handover this prop in the searchProps subcomponent properties
+   * @default "Search"
+   */
+  searchPlaceholder?: string;
+
+  /**
+   * A message that will be shown when it is not possible to find any option that matches the search value
+   * @default "No matches"
+   */
+  noMatchesMessage?: string;
+
+  /**
+   * Pass a form name to the search text input
+   * @deprecated Handover this prop in the searchProps subcomponent properties
+   */
+  searchInputName?: string;
+
+  /**
+   * Use this prop to get a ref to the search input element of the component
+   * @deprecated Handover this prop in the searchProps subcomponent properties
+   */
+  searchInputRef?: React.Ref<HTMLInputElement>;
 
   /**
    * Props to pass to the Popover (Dropdown) component
@@ -156,34 +156,35 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     toggleRef,
     isLoading = false,
     testId = 'cf-multiselect',
-    searchProps = {
-      searchPlaceholder: 'Search',
-      noMatchesMessage: 'No matches found',
-    },
+    noMatchesMessage = 'No matches found',
+    searchProps = {},
     popoverProps = {},
     children,
     onBlur,
   } = props;
 
   const { listMaxHeight = 180, listRef } = popoverProps;
-  const {
-    onSearchValueChange,
-    resetSearchRef,
-    searchInputName,
-    searchPlaceholder,
-    searchInputRef,
-    noMatchesMessage,
-  } = searchProps;
 
   const styles = getMultiselectStyles();
 
   const [searchValue, setSearchValue] = useState('');
   const [isOpen, setIsOpen] = useState(false);
 
-  const internalSearchInputRef = useRef<HTMLInputElement>(null);
   const internalListRef = useRef<HTMLUListElement>(null);
 
-  const hasSearch = typeof onSearchValueChange === 'function';
+  const hasSearch =
+    typeof props.onSearchValueChange === 'function' ||
+    typeof searchProps.onSearchValueChange === 'function';
+
+  const handoverSearchProps =
+    Object.keys(searchProps).length > 0
+      ? searchProps
+      : {
+          onSearchValueChange: props.onSearchValueChange,
+          searchPlaceholder: props.searchPlaceholder,
+          searchInputName: props.searchInputName,
+          searchInputRef: props.searchInputRef,
+        };
 
   const focusList = useCallback(() => {
     // Clearing the search input or selecting an item triggers a rerendering and
@@ -192,28 +193,6 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     // back to the list in the popup.
     internalListRef.current?.focus();
   }, []);
-
-  const handleSearchChange = useCallback(
-    (event) => {
-      setSearchValue(event.target.value);
-      onSearchValueChange?.(event);
-    },
-    [onSearchValueChange, setSearchValue],
-  );
-
-  const resetSearchInput = useCallback(() => {
-    if (!searchValue) return;
-    focusList();
-    // this looks a bit hacky, but is the official way of externally triggering the onChange handler for an input
-    // https://stackoverflow.com/a/46012210/17269164
-    const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
-      window.HTMLInputElement.prototype,
-      'value',
-    ).set;
-    nativeInputValueSetter.call(internalSearchInputRef.current, '');
-    const forcedEvent = new Event('change', { bubbles: true });
-    internalSearchInputRef.current.dispatchEvent(forcedEvent);
-  }, [searchValue, focusList]);
 
   const renderMultiselectLabel = useCallback(() => {
     if (currentSelection.length === 0) {
@@ -317,36 +296,12 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         >
           <FocusLock focusOptions={{ preventScroll: true }} returnFocus={true}>
             {hasSearch && (
-              <div className={styles.searchBar}>
-                <TextInput
-                  aria-label="Search"
-                  type="text"
-                  value={searchValue}
-                  className={styles.inputField}
-                  testId="cf-multiselect-search"
-                  placeholder={searchPlaceholder}
-                  onChange={handleSearchChange}
-                  ref={mergeRefs(searchInputRef, internalSearchInputRef)}
-                  name={searchInputName}
-                  size="small"
-                />
-                <IconButton
-                  ref={resetSearchRef}
-                  aria-label={searchValue ? 'Clear search' : 'Search'}
-                  className={styles.toggleButton}
-                  variant="transparent"
-                  icon={
-                    searchValue ? (
-                      <CloseIcon variant="muted" />
-                    ) : (
-                      <SearchIcon variant="muted" />
-                    )
-                  }
-                  onClick={resetSearchInput}
-                  isDisabled={!searchValue}
-                  size="small"
-                />
-              </div>
+              <MultiselectSearch
+                {...handoverSearchProps}
+                setSearchValue={setSearchValue}
+                searchValue={searchValue}
+                focusList={focusList}
+              />
             )}
             {isLoading && <ListItemLoadingState />}
 
