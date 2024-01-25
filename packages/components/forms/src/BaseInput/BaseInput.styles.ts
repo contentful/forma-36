@@ -13,15 +13,15 @@ const getSizeStyles = ({ size, density }: getSizeStylesProps): CSSObject => {
   if (size === 'small') {
     return {
       padding: tokens.spacingXs,
-      minHeight: isHighDensity ? '24px' : '32px',
-      maxHeight: isHighDensity ? '24px' : '32px',
+      minHeight: isHighDensity ? tokens.spacingL : tokens.spacingXl,
+      maxHeight: isHighDensity ? tokens.spacingL : tokens.spacingXl,
     };
   }
 
   return {
     padding: isHighDensity ? tokens.spacingXs : `10px ${tokens.spacingS}`,
-    minHeight: isHighDensity ? '32px' : '40px',
-    maxHeight: isHighDensity ? '32px' : '40px',
+    minHeight: isHighDensity ? tokens.spacingXl : '40px',
+    maxHeight: isHighDensity ? tokens.spacingXl : '40px',
   };
 };
 

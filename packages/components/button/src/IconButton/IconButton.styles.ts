@@ -10,17 +10,15 @@ function sizeToStyles(size: ButtonSize, density: Density) {
     case 'small': {
       return {
         padding: isHighDensity ? `${tokens.spacing2Xs}` : tokens.spacing2Xs,
-        minHeight: isHighDensity ? '16px' : '32px',
-        maxHeight: isHighDensity ? '24px' : '32px',
-        minWidth: isHighDensity ? '16px' : '32px',
+        minHeight: isHighDensity ? tokens.spacingM : tokens.spacingXl,
+        minWidth: isHighDensity ? tokens.spacingM : tokens.spacingXl,
       };
     }
     case 'medium': {
       return {
         padding: tokens.spacingXs,
-        minHeight: isHighDensity ? '32px' : '40px',
-        maxHeight: isHighDensity ? '32px' : '40px',
-        minWidth: isHighDensity ? '32px' : '40px',
+        minHeight: isHighDensity ? tokens.spacingXl : '40px',
+        minWidth: isHighDensity ? tokens.spacingXl : '40px',
       };
     }
     default: {
