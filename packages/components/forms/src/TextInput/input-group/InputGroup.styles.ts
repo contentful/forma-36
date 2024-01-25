@@ -4,7 +4,12 @@ import type { GetStyleArguments } from './types';
 
 const getInputGroupStyle = ({ spacing, density }) => {
   if (spacing !== 'none') {
-    return;
+    return css({
+      '& button, & input': {
+        minHeight: density === 'high' ? 'auto' : undefined,
+        maxHeight: density === 'high' ? tokens.spacingL : tokens.spacingXl,
+      },
+    });
   }
 
   const densityBorderRadius =
@@ -15,7 +20,6 @@ const getInputGroupStyle = ({ spacing, density }) => {
 
     '& button, & input': {
       borderRadius: '0 !important',
-      minHeight: density === 'high' ? tokens.spacingM : tokens.spacingXl,
       maxHeight: density === 'high' ? tokens.spacingL : tokens.spacingXl,
     },
     '& > *': {
