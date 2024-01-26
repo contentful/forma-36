@@ -10,8 +10,8 @@ function sizeToStyles(size: ButtonSize, density: Density) {
     case 'small': {
       return {
         padding: isHighDensity ? `${tokens.spacing2Xs}` : tokens.spacing2Xs,
-        minHeight: isHighDensity ? tokens.spacingM : tokens.spacingXl,
-        minWidth: isHighDensity ? tokens.spacingM : tokens.spacingXl,
+        minHeight: isHighDensity ? tokens.spacingL : tokens.spacingXl,
+        minWidth: isHighDensity ? tokens.spacingL : tokens.spacingXl,
       };
     }
     case 'medium': {

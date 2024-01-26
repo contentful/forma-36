@@ -121,7 +121,8 @@ const sizeToStyles = (size: ButtonSize, density: Density): CSSObject => {
         padding: isHighDensity
           ? `${tokens.spacing2Xs} ${tokens.spacingXs}`
           : `${tokens.spacing2Xs} ${tokens.spacingS}`,
-        minHeight: isHighDensity ? '16px' : '32px',
+        minHeight: isHighDensity ? tokens.spacingL : tokens.spacingXl,
+        maxHeight: isHighDensity ? tokens.spacingL : tokens.spacingXl,
       };
     case 'medium':
       return {
@@ -130,7 +131,8 @@ const sizeToStyles = (size: ButtonSize, density: Density): CSSObject => {
         padding: isHighDensity
           ? `${tokens.spacingXs} ${tokens.spacingS}`
           : `${tokens.spacingXs} ${tokens.spacingM}`,
-        minHeight: isHighDensity ? '32px' : '40px',
+        minHeight: isHighDensity ? tokens.spacingXl : '40px',
+        maxHeight: isHighDensity ? tokens.spacingXl : '40px',
       };
     case 'large':
       return {
@@ -138,6 +140,7 @@ const sizeToStyles = (size: ButtonSize, density: Density): CSSObject => {
         lineHeight: tokens.lineHeightXl,
         padding: `${tokens.spacingXs} ${tokens.spacingM}`,
         minHeight: '48px',
+        maxHeight: '48px',
       };
     default:
       return {};
