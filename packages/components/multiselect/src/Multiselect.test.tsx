@@ -178,8 +178,10 @@ describe('Options', () => {
 describe('Multiselect with search', () => {
   it('renders a search field with placeholder', async () => {
     const [{ user }] = renderComponent({
-      onSearchValueChange: mockOnSearchValueChange,
-      searchPlaceholder: 'My Search Placeholder',
+      searchProps: {
+        onSearchValueChange: mockOnSearchValueChange,
+        searchPlaceholder: 'My Search Placeholder',
+      },
     });
 
     await user.click(
@@ -192,7 +194,9 @@ describe('Multiselect with search', () => {
 
   it('calls the callback on search value change and highlights the search phrase', async () => {
     const [{ user }] = renderComponent({
-      onSearchValueChange: mockOnSearchValueChange,
+      searchProps: {
+        onSearchValueChange: mockOnSearchValueChange,
+      },
     });
     await user.click(
       screen.getByRole('button', { name: 'Toggle Multiselect' }),
@@ -218,7 +222,7 @@ describe('Multiselect with search', () => {
   it('shows the no matches found message when there are no elements', async () => {
     const [{ user }] = renderComponent(
       {
-        onSearchValueChange: mockOnSearchValueChange,
+        searchProps: { onSearchValueChange: mockOnSearchValueChange },
       },
       [],
     );
@@ -230,7 +234,7 @@ describe('Multiselect with search', () => {
 
   it('clears the search value and triggers the callback function', async () => {
     const [{ user }] = renderComponent({
-      onSearchValueChange: mockOnSearchValueChange,
+      searchProps: { onSearchValueChange: mockOnSearchValueChange },
     });
     await user.click(
       screen.getByRole('button', { name: 'Toggle Multiselect' }),

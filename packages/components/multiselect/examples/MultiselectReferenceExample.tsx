@@ -1,8 +1,8 @@
 import React from 'react';
-import { Stack } from '@contentful/f36-components';
+import { Button, Stack } from '@contentful/f36-components';
 import { Multiselect } from '@contentful/f36-multiselect';
 
-export default function MultiselectSearchExample() {
+export default function MultiselectReferenceExample() {
   const spaces = [
     'Travel Blog',
     'Finnance Blog',
@@ -14,6 +14,8 @@ export default function MultiselectSearchExample() {
 
   const [selectedItems, setSelectedItems] = React.useState([]);
   const [filteredItems, setFilteredItems] = React.useState(spaces);
+  const togglePopOverRef = React.useRef(null);
+  const clearSearchFieldRef = React.useRef(null);
 
   const handleSearchValueChange = (event) => {
     const value = event.target.value;
@@ -33,15 +35,27 @@ export default function MultiselectSearchExample() {
     }
   };
 
+  const handleExtToggle = () => {
+    togglePopOverRef.current.click();
+  };
+
+  const handleExtClearSearch = () => {
+    clearSearchFieldRef.current.click();
+  };
+
   return (
     <Stack flexDirection="column" alignItems="start">
+      <Button onClick={handleExtToggle}>Toggle Popover</Button>
+      <Button onClick={handleExtClearSearch}>Clear Search Field</Button>
       <Multiselect
         searchProps={{
           searchPlaceholder: 'Search spaces',
           onSearchValueChange: handleSearchValueChange,
+          resetSearchRef: clearSearchFieldRef,
         }}
-        popoverProps={{ isFullWidth: true }}
+        popoverProps={{ isFullWidth: true, closeOnBlur: false }}
         currentSelection={selectedItems}
+        toggleRef={togglePopOverRef}
       >
         {filteredItems.map((item, index) => {
           return (
