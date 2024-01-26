@@ -6,7 +6,6 @@ const getInputGroupStyle = ({ spacing, density }) => {
   if (spacing !== 'none') {
     return css({
       '& button, & input': {
-        minHeight: density === 'high' ? 'auto' : undefined,
         maxHeight: density === 'high' ? tokens.spacingL : tokens.spacingXl,
       },
     });
