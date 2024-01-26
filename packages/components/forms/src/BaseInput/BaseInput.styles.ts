@@ -49,19 +49,17 @@ const getInvalidOrDisabledStyles = ({
   isDisabled?: boolean;
   isInvalid?: boolean;
 }) => {
-  const disabledStyles = {
-    borderColor: tokens.gray300,
-    boxShadow: 'none',
-  };
-  const invalidStyles = {
-    borderColor: tokens.red600,
-    boxShadow: tokens.glowNegative,
-  };
   if (isDisabled) {
-    return disabledStyles;
+    return {
+      borderColor: tokens.gray300,
+      boxShadow: 'none',
+    };
   }
   if (isInvalid) {
-    return invalidStyles;
+    return {
+      borderColor: tokens.red600,
+      boxShadow: tokens.glowNegative,
+    };
   }
   return {};
 };
@@ -115,13 +113,7 @@ const getStyles = ({
         color: tokens.gray500,
       },
 
-      '&:active, &:active:hover': {
-        borderColor: tokens.blue600,
-        boxShadow: tokens.glowPrimary,
-        ...getInvalidOrDisabledStyles({ isDisabled, isInvalid }),
-      },
-
-      '&:focus': {
+      '&:active, &:active:hover, &:focus': {
         borderColor: tokens.blue600,
         boxShadow: tokens.glowPrimary,
         ...getInvalidOrDisabledStyles({ isDisabled, isInvalid }),
