@@ -24,7 +24,6 @@ const _InputGroup = (
 ) => {
   const { children, className, spacing = 'none', ...otherProps } = props;
   const density = useDensity();
-  console.log({ density });
   const styles = getStyles({ spacing, density });
   return (
     <Stack
