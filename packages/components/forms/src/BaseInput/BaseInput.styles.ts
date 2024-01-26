@@ -42,6 +42,30 @@ type getInputStylesProps = Pick<
   density?: Density;
 };
 
+const getInvalidOrDisabledStyles = ({
+  isDisabled,
+  isInvalid,
+}: {
+  isDisabled?: boolean;
+  isInvalid?: boolean;
+}) => {
+  const disabledStyles = {
+    borderColor: tokens.gray300,
+    boxShadow: 'none',
+  };
+  const invalidStyles = {
+    borderColor: tokens.red600,
+    boxShadow: tokens.glowNegative,
+  };
+  if (isDisabled) {
+    return disabledStyles;
+  }
+  if (isInvalid) {
+    return invalidStyles;
+  }
+  return {};
+};
+
 const getStyles = ({
   as,
   isDisabled,
@@ -92,29 +116,15 @@ const getStyles = ({
       },
 
       '&:active, &:active:hover': {
-        borderColor: isInvalid
-          ? tokens.red600
-          : isDisabled
-          ? tokens.gray300
-          : tokens.blue600,
-        boxShadow: isInvalid
-          ? tokens.glowNegative
-          : isDisabled
-          ? 'none'
-          : tokens.glowPrimary,
+        borderColor: tokens.blue600,
+        boxShadow: tokens.glowPrimary,
+        ...getInvalidOrDisabledStyles({ isDisabled, isInvalid }),
       },
 
       '&:focus': {
-        borderColor: isInvalid
-          ? tokens.red600
-          : isDisabled
-          ? tokens.gray300
-          : tokens.blue600,
-        boxShadow: isInvalid
-          ? tokens.glowNegative
-          : isDisabled
-          ? 'none'
-          : tokens.glowPrimary,
+        borderColor: tokens.blue600,
+        boxShadow: tokens.glowPrimary,
+        ...getInvalidOrDisabledStyles({ isDisabled, isInvalid }),
       },
     }),
 
