@@ -80,8 +80,8 @@ const getStyles = ({
     },
     high: {
       borderRadius: tokens.borderRadiusSmall,
-      lineHeight: tokens.lineHeightS,
-      fontSize: tokens.fontSizeS,
+      lineHeight: tokens.lineHeightMHigh,
+      fontSize: tokens.fontSizeMHigh,
     },
   };
 
