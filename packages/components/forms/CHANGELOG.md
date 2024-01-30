@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.59.0
+
+### Minor Changes
+
+- [#2659](https://github.com/contentful/forma-36/pull/2659) [`54188ad3a`](https://github.com/contentful/forma-36/commit/54188ad3a2f2927555124025698290ef19dee2d2) Thanks [@massao](https://github.com/massao)! - Add high density support for TextInput and InputGroup
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.59.0
+  - @contentful/f36-typography@4.59.0
+
 ## 4.58.4
 
 ### Patch Changes
