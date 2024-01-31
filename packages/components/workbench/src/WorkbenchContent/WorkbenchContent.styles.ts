@@ -20,6 +20,7 @@ export const getWorkbenchContentStyles = (
 
   return {
     workbenchContent: css({
+      position: 'relative',
       padding: tokens.spacingL,
       overflowY: 'auto',
       overflowX: 'hidden',
