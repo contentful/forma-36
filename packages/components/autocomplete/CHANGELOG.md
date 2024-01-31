@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.59.1
+
+### Patch Changes
+
+- [#2662](https://github.com/contentful/forma-36/pull/2662) [`6a08d8de8`](https://github.com/contentful/forma-36/commit/6a08d8de8bfb1d14f98d770d3d82561c55adbbf3) Thanks [@massao](https://github.com/massao)! - fix: update button height on autocomplete
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.59.1
+  - @contentful/f36-core@4.59.1
+  - @contentful/f36-forms@4.59.1
+  - @contentful/f36-popover@4.59.1
+  - @contentful/f36-skeleton@4.59.1
+  - @contentful/f36-typography@4.59.1
+
 ## 4.59.0
 
 ### Patch Changes
