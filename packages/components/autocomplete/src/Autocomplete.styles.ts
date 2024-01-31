@@ -20,7 +20,7 @@ export const getAutocompleteStyles = (listMaxHeight: number) => ({
     right: '1px',
     zIndex: 1,
     padding: tokens.spacing2Xs,
-    height: '38px',
+    minHeight: 'calc(100% - 2px)',
   }),
   content: css({
     overflow: 'auto',
