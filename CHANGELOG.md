@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 31-01-2024
+
+**F36 Button** `v4.59.0`
+
+- Add high density support for TextInput and InputGroup
+
+**F36 Forms** `v4.59.0`
+
+- Add high density support for TextInput and InputGroup
+
 ## 27-01-2024
 
 **F36 Multiselect** `v4.22.0`
