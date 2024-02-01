@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 01-02-2024
+
+**F36 Workbench** `v4.21.1`
+
+- fix rendering glitch on Safari 17.x
+
+**F36 Autocomplete** `v4.59.1`
+
+- fix: update button height on autocomplete
+
 ## 31-01-2024
 
 **F36 Button** `v4.59.0`
