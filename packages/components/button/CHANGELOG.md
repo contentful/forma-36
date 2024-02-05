@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.59.2
+
+### Patch Changes
+
+- [#2664](https://github.com/contentful/forma-36/pull/2664) [`2ef7806ed`](https://github.com/contentful/forma-36/commit/2ef7806edfbc6468b8d6eadf53a40993a6d5122e) Thanks [@massao](https://github.com/massao)! - fix: remove maxHeight from buttons
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.59.2
+  - @contentful/f36-spinner@4.59.2
+
 ## 4.59.1
 
 ### Patch Changes

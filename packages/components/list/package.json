@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-list",
-  "version": "4.59.1",
+  "version": "4.59.2",
   "description": "Forma 36: list React Component",
   "license": "MIT",
   "files": [
@@ -20,7 +20,7 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.59.1",
+    "@contentful/f36-core": "^4.59.2",
     "@contentful/f36-tokens": "^4.0.4",
     "emotion": "^10.0.17"
   },
