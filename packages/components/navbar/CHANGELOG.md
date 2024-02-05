@@ -1,5 +1,11 @@
 # @contentful/f36-navbar
 
+## 4.1.1
+
+### Patch Changes
+
+- [#2663](https://github.com/contentful/forma-36/pull/2663) [`83519ff27`](https://github.com/contentful/forma-36/commit/83519ff273b358ed4a97a865254426f9f24cf660) Thanks [@mshaaban0](https://github.com/mshaaban0)! - feat(Navbar): update Contentful logo
+
 ## 4.1.0
 
 ### Minor Changes
