@@ -10,12 +10,23 @@ const getInputGroupStyle = ({ spacing, density }) => {
   const densityBorderRadius =
     density === 'high' ? tokens.borderRadiusSmall : tokens.borderRadiusMedium;
 
+  const iconStyles =
+    density === 'high'
+      ? {
+          '& svg': {
+            width: '14px',
+            height: '14px',
+          },
+        }
+      : {};
+
   return css({
     position: 'relative',
-
     '& button, & input': {
       borderRadius: '0 !important',
+      height: 'auto',
     },
+    ...iconStyles,
     '& > *': {
       marginRight: '-1px !important',
       '&:not(:focus), & button:not(:focus)': {
