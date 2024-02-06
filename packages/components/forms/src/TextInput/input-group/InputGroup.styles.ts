@@ -3,19 +3,36 @@ import tokens from '@contentful/f36-tokens';
 import type { GetStyleArguments } from './types';
 
 const getInputGroupStyle = ({ spacing, density }) => {
-  if (spacing !== 'none') {
-    return;
-  }
-
   const densityBorderRadius =
     density === 'high' ? tokens.borderRadiusSmall : tokens.borderRadiusMedium;
 
+  const iconStyles =
+    density === 'high'
+      ? {
+          '& svg': {
+            width: '14px',
+            height: '14px',
+          },
+        }
+      : {};
+
+  if (spacing !== 'none') {
+    return css({
+      '& button, & input': {
+        borderRadius: densityBorderRadius,
+        height: 'auto',
+      },
+      ...iconStyles,
+    });
+  }
+
   return css({
     position: 'relative',
-
     '& button, & input': {
       borderRadius: '0 !important',
+      height: 'auto',
     },
+    ...iconStyles,
     '& > *': {
       marginRight: '-1px !important',
       '&:not(:focus), & button:not(:focus)': {
