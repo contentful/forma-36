@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 07-02-2024
+
+**F36 Navbar** `v4.1.1`
+
+- feat(Navbar): update Contentful logo
+
+**F36 Button** `v4.59.2`
+
+- fix: remove maxHeight from buttons
+
 ## 01-02-2024
 
 **F36 Workbench** `v4.21.1`
