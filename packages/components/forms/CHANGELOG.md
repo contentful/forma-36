@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.59.3
+
+### Patch Changes
+
+- [#2668](https://github.com/contentful/forma-36/pull/2668) [`576a94fe2`](https://github.com/contentful/forma-36/commit/576a94fe25f23745e9a8d3787979f0f9ff00f41e) Thanks [@massao](https://github.com/massao)! - fix: normalize styles on elements inside an InputGroup
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.59.3
+  - @contentful/f36-typography@4.59.3
+
 ## 4.59.2
 
 ### Patch Changes
