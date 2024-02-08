@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 08-02-2024
+
+**F36 Forms** `v4.59.3`
+
+- fix: normalize styles on elements inside an InputGroup
+
 ## 07-02-2024
 
 **F36 Navbar** `v4.1.1`
