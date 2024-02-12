@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-import { Flex } from '@contentful/f36-core';
+import { Badge, Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
 import { ClockIcon } from '@contentful/f36-icons';
@@ -140,6 +140,25 @@ export const Overview: Story<EntryCardProps> = () => {
             contentType="Design system"
             withDragHandle
           />
+        </Flex>
+
+        <Flex flexDirection="column" gap="spacingL">
+          <Flex flexDirection="column" gap="spacingM">
+            <SectionHeading as="h3" marginBottom="none">
+              Entities with custom status badges
+            </SectionHeading>
+
+            {sizes.map((size) => (
+              <EntryCard
+                key={size}
+                thumbnailElement={thumbnail}
+                title="Forma 36"
+                contentType="External design system"
+                size={size}
+                badge={<Badge variant={'positive'}>active</Badge>}
+              />
+            ))}
+          </Flex>
         </Flex>
       </Flex>
     </>
