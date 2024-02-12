@@ -8,7 +8,7 @@ export type EntryCardSize = 'default' | 'small' | 'auto';
 
 export type EntryCardInternalProps = Omit<
   BaseCardInternalProps,
-  'badge' | 'header' | 'padding' | 'ref' | 'type' | 'title'
+    'header' | 'padding' | 'ref' | 'type' | 'title'
 > & {
   /**
    * The title of the entry, it will be used as the value for the tooltip
