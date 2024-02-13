@@ -1,9 +1,10 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-import { Badge, Flex } from '@contentful/f36-core';
+import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
 import { ClockIcon } from '@contentful/f36-icons';
+import { Badge } from '@contentful/f36-badge';
 
 import { EntryCard, type EntryCardProps } from '../src';
 
