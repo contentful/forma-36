@@ -730,6 +730,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "also",
+      "name": "Ryan Berdeen",
+      "avatar_url": "https://avatars.githubusercontent.com/u/15624?v=4",
+      "profile": "http://ryanberdeen.com/",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
