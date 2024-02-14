@@ -186,6 +186,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="http://whitelisab.com"><img src="https://avatars.githubusercontent.com/u/62958907?v=4?s=100" width="100px;" alt="Lisa White"/><br /><sub><b>Lisa White</b></sub></a><br /><a href="#maintenance-whitelisab" title="Maintenance">🚧</a> <a href="https://github.com/contentful/forma-36/commits?author=whitelisab" title="Code">💻</a> <a href="https://github.com/contentful/forma-36/commits?author=whitelisab" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/roosterhack"><img src="https://avatars.githubusercontent.com/u/47013507?v=4?s=100" width="100px;" alt="Eddie Chung"/><br /><sub><b>Eddie Chung</b></sub></a><br /><a href="#maintenance-roosterhack" title="Maintenance">🚧</a> <a href="https://github.com/contentful/forma-36/commits?author=roosterhack" title="Code">💻</a> <a href="https://github.com/contentful/forma-36/commits?author=roosterhack" title="Documentation">📖</a></td>
     </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://ryanberdeen.com/"><img src="https://avatars.githubusercontent.com/u/15624?v=4?s=100" width="100px;" alt="Ryan Berdeen"/><br /><sub><b>Ryan Berdeen</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3Aalso" title="Bug reports">🐛</a></td>
+    </tr>
   </tbody>
 </table>
 
