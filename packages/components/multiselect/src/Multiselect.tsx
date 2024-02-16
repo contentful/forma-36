@@ -163,7 +163,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     onBlur,
   } = props;
 
-  const { listMaxHeight = 180, listRef } = popoverProps;
+  const { listMaxHeight = 180, listRef, onClose } = popoverProps;
 
   const styles = getMultiselectStyles();
 
@@ -269,7 +269,12 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         {...popoverProps}
         // popoverProps should never overwrite the internal opening logic
         isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
+        onClose={() => {
+          setIsOpen(false);
+          if (onClose) {
+            onClose();
+          }
+        }}
       >
         <Popover.Trigger>
           <Button
