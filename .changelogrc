@@ -1,1 +1,1 @@
-{}
+{"**F36 Multiselect** `v4.23.0`":["- MultiSelect now forwards `popoverProps.onClose` providing a listener to the popover closing\n"]}
