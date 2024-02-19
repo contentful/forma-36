@@ -1,5 +1,11 @@
 ## Change Log
 
+## 4.23.0
+
+### Minor Changes
+
+- [#2677](https://github.com/contentful/forma-36/pull/2677) [`3d39f21a7`](https://github.com/contentful/forma-36/commit/3d39f21a765bb7e867d57a43126ec2a8ada1ac44) Thanks [@jfctfl](https://github.com/jfctfl)! - MultiSelect now forwards `popoverProps.onClose` providing a listener to the popover closing
+
 ## 4.22.0
 
 ### Minor Changes

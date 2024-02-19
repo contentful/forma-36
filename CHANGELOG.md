@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 17-02-2024
+
+**F36 Multiselect** `v4.23.0`
+
+- MultiSelect now forwards `popoverProps.onClose` providing a listener to the popover closing
+
 ## 15-02-2024
 
 **F36 Card** `v4.60.0`
