@@ -7,6 +7,7 @@ export const getWorkbenchSidebarStyles = (position = 'left') => {
 
   return {
     workbenchSidebar: css({
+      position: 'relative',
       backgroundColor: tokens.gray100,
       [borderStyleKey]: `1px solid ${tokens.gray200}`,
       width,

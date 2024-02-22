@@ -91,19 +91,22 @@ function _EntryCard<
     size,
     testId = 'cf-ui-entry-card',
     contentType,
+    badge,
     ...otherProps
   }: EntryCardProps<E>,
   forwardedRef: React.Ref<any>,
 ) {
   const styles = getEntryCardStyles();
-  const badge = status ? <EntityStatusBadge entityStatus={status} /> : null;
+  const entryStatusBadge = status ? (
+    <EntityStatusBadge entityStatus={status} />
+  ) : null;
 
   return (
     <BaseCard
       as={ENTRY_CARD_DEFAULT_TAG}
       {...otherProps}
       actions={actions}
-      badge={badge}
+      badge={badge ? badge : entryStatusBadge}
       className={cx(styles.root, className)}
       withDragHandle={withDragHandle}
       ref={forwardedRef}

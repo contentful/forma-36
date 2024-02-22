@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-workbench",
-  "version": "4.21.0",
+  "version": "4.21.1",
   "description": "Forma 36: Workbench component",
   "scripts": {
     "build": "tsup"

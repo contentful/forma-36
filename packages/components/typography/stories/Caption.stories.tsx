@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
 import { Flex } from '@contentful/f36-core';
-
-import { Caption, CaptionProps } from '../src/Caption/Caption';
-import { Paragraph } from '../src/Paragraph/Paragraph';
+import { type Density, DensityProvider } from '@contentful/f36-utils';
+import { Heading, Paragraph } from '@contentful/f36-typography';
+import { Caption } from '../src';
 
 export default {
   title: 'Typography/Caption',
@@ -15,13 +15,16 @@ export default {
   },
 };
 
-export const Basic = (props: CaptionProps<'span'>) => <Caption {...props} />;
+export const Basic = (props: ComponentProps<typeof Caption>) => (
+  <Caption {...props} />
+);
 
 Basic.args = {
-  children: 'Caption',
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
 };
 
-export const Overview = (props: CaptionProps) => (
+export const Overview = (props: ComponentProps<typeof Caption>) => (
   <>
     <Flex alignItems="center" gap="spacingS">
       <Paragraph marginBottom="none">fontWeightNormal</Paragraph>
@@ -36,5 +39,43 @@ export const Overview = (props: CaptionProps) => (
 );
 
 Overview.args = {
-  children: 'Caption',
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
+};
+
+export const WithDensitySupport = (props: ComponentProps<typeof Caption>) => {
+  const Densities = [
+    {
+      name: 'Low density',
+      density: 'low',
+    },
+    {
+      name: 'High density',
+      density: 'high',
+    },
+  ];
+
+  return (
+    <Flex gap="spacing2Xl">
+      {Densities.map((density) => {
+        return (
+          <Flex
+            key={density.name}
+            flexDirection="column"
+            style={{ width: '230px' }}
+          >
+            <Heading marginBottom="spacingXs">{density.name}</Heading>
+            <DensityProvider value={density.density as Density}>
+              <Caption {...props} />
+            </DensityProvider>
+          </Flex>
+        );
+      })}
+    </Flex>
+  );
+};
+
+WithDensitySupport.args = {
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
 };

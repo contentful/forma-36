@@ -1,5 +1,104 @@
 # Change Log
 
+## 4.60.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.60.1
+  - @contentful/f36-typography@4.60.1
+
+## 4.60.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.60.0
+  - @contentful/f36-typography@4.60.0
+
+## 4.59.3
+
+### Patch Changes
+
+- [#2668](https://github.com/contentful/forma-36/pull/2668) [`576a94fe2`](https://github.com/contentful/forma-36/commit/576a94fe25f23745e9a8d3787979f0f9ff00f41e) Thanks [@massao](https://github.com/massao)! - fix: normalize styles on elements inside an InputGroup
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.59.3
+  - @contentful/f36-typography@4.59.3
+
+## 4.59.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.59.2
+  - @contentful/f36-typography@4.59.2
+
+## 4.59.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.59.1
+  - @contentful/f36-typography@4.59.1
+
+## 4.59.0
+
+### Minor Changes
+
+- [#2659](https://github.com/contentful/forma-36/pull/2659) [`54188ad3a`](https://github.com/contentful/forma-36/commit/54188ad3a2f2927555124025698290ef19dee2d2) Thanks [@massao](https://github.com/massao)! - Add high density support for TextInput and InputGroup
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.59.0
+  - @contentful/f36-typography@4.59.0
+
+## 4.58.4
+
+### Patch Changes
+
+- [`7563339ee`](https://github.com/contentful/forma-36/commit/7563339eeea4d5c6a2736bc8ecf76d903c8539d7) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - - Remove alpha DensityContainer component for DensityProvider usage.
+
+- Updated dependencies [[`7563339ee`](https://github.com/contentful/forma-36/commit/7563339eeea4d5c6a2736bc8ecf76d903c8539d7)]:
+  - @contentful/f36-typography@4.58.4
+  - @contentful/f36-utils@4.24.3
+  - @contentful/f36-core@4.58.4
+
+## 4.58.3
+
+### Patch Changes
+
+- [#2653](https://github.com/contentful/forma-36/pull/2653) [`558c90559`](https://github.com/contentful/forma-36/commit/558c9055913e807873b6f0551052bc528d609ec8) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - - Add high-density support to Select (for `medium` size).
+  - Add ellipsis text-overflow support to Select.
+- Updated dependencies []:
+  - @contentful/f36-core@4.58.3
+  - @contentful/f36-typography@4.58.3
+
+## 4.58.2
+
+### Patch Changes
+
+- [#2646](https://github.com/contentful/forma-36/pull/2646) [`f094b710a`](https://github.com/contentful/forma-36/commit/f094b710af9c6ebcb02d4f096a45d3d4673c4574) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - - Add high-density `font-size` and `line-height` tokens.
+  - Add high-density support to Caption, Heading, Paragraph, Section Heading, and Subheading components.
+  - Adjust high-density tokens for BaseCheckbox, FormLabel, HelpText, and ValidationMessage components.
+- Updated dependencies [[`f094b710a`](https://github.com/contentful/forma-36/commit/f094b710af9c6ebcb02d4f096a45d3d4673c4574)]:
+  - @contentful/f36-tokens@4.0.4
+  - @contentful/f36-typography@4.58.2
+  - @contentful/f36-core@4.58.2
+
+## 4.58.1
+
+### Patch Changes
+
+- [#2650](https://github.com/contentful/forma-36/pull/2650) [`4e1bc3c1b`](https://github.com/contentful/forma-36/commit/4e1bc3c1b50f3436e207f16cd2406df5ca9f54f9) Thanks [@stephanLeece](https://github.com/stephanLeece)! - Add high-density support to FormControl components (FormLabel, HelpText and ValidationMessage).
+
+- [#2644](https://github.com/contentful/forma-36/pull/2644) [`b20093a79`](https://github.com/contentful/forma-36/commit/b20093a79aa3bd82e5e0fdf10e833361257ccde2) Thanks [@stephanLeece](https://github.com/stephanLeece)! - Add high-density support to Checkbox and Radio components.
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.58.1
+  - @contentful/f36-typography@4.58.1
+
 ## 4.58.0
 
 ### Minor Changes

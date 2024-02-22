@@ -8,7 +8,6 @@
   ],
   "ignore": [
     "@contentful/f36-avatar",
-    "@contentful/f36-density-container",
     "@contentful/f36-image",
     "@contentful/f36-header",
     "@contentful/f36-layout",

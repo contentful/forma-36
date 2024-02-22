@@ -190,33 +190,6 @@
       "status": "stable"
     }
   ],
-  "layoutComponents": [
-    {
-      "title": "Box",
-      "slug": "/components/box/",
-      "status": "stable"
-    },
-    {
-      "title": "DensityContainer",
-      "slug": "/components/density-container/",
-      "status": "alpha"
-    },
-    {
-      "title": "Flex",
-      "slug": "/components/flex/",
-      "status": "stable"
-    },
-    {
-      "title": "Grid",
-      "slug": "/components/grid/",
-      "status": "stable"
-    },
-    {
-      "title": "Stack",
-      "slug": "/components/stack/",
-      "status": "stable"
-    }
-  ],
   "typographyComponents": [
     {
       "title": "Caption",
@@ -387,6 +360,28 @@
       "slug": "/hooks/use-keyboard/"
     }
   ],
+  "layoutComponents": [
+    {
+      "title": "Box",
+      "slug": "/components/box/",
+      "status": "stable"
+    },
+    {
+      "title": "Flex",
+      "slug": "/components/flex/",
+      "status": "stable"
+    },
+    {
+      "title": "Grid",
+      "slug": "/components/grid/",
+      "status": "stable"
+    },
+    {
+      "title": "Stack",
+      "slug": "/components/stack/",
+      "status": "stable"
+    }
+  ],
   "introduction": [
     {
       "title": "What's new",
@@ -450,6 +445,10 @@
     }
   ],
   "tokens": [
+    {
+      "title": "Border radius",
+      "slug": "/tokens/border-radius/"
+    },
     {
       "title": "Color system",
       "slug": "/tokens/color-system/"

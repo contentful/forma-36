@@ -1,9 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
-import { DensityContainer } from '@contentful/f36-density-container';
 
-import { useDensity } from './useDensity';
+import { DensityProvider, useDensity } from './useDensity';
 
 describe('useDensity', () => {
   it('should return the default density value', () => {
@@ -13,7 +12,7 @@ describe('useDensity', () => {
   });
 
   it('should return the low density value', () => {
-    render(<DensityContainer density="low">Children</DensityContainer>);
+    render(<DensityProvider value="low">Children</DensityProvider>);
 
     const { result } = renderHook(() => useDensity());
 
@@ -21,7 +20,7 @@ describe('useDensity', () => {
   });
 
   it('should return the high density value', () => {
-    render(<DensityContainer density="high">Children</DensityContainer>);
+    render(<DensityProvider value="high">Children</DensityProvider>);
 
     const { result } = renderHook(() => useDensity());
 

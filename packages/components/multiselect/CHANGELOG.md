@@ -1,5 +1,19 @@
 ## Change Log
 
+## 4.23.0
+
+### Minor Changes
+
+- [#2677](https://github.com/contentful/forma-36/pull/2677) [`3d39f21a7`](https://github.com/contentful/forma-36/commit/3d39f21a765bb7e867d57a43126ec2a8ada1ac44) Thanks [@jfctfl](https://github.com/jfctfl)! - MultiSelect now forwards `popoverProps.onClose` providing a listener to the popover closing
+
+## 4.22.0
+
+### Minor Changes
+
+- [#2654](https://github.com/contentful/forma-36/pull/2654) [`ffb59cd7a`](https://github.com/contentful/forma-36/commit/ffb59cd7ad22121fa6f861c083b2dd59655128a4) Thanks [@Lelith](https://github.com/Lelith)! - - Deprecates some props that are now accepted as sub-component props searchProps
+  - Separates the search input from the multiselect component as its own sub-component for easier to read and maintain code
+  - Adds new property resetSearchRef as part of sub-component props
+
 ## 4.21.0
 
 ### Minor Changes

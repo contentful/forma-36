@@ -1,5 +1,97 @@
 # Change Log
 
+## 4.60.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.60.1
+  - @contentful/f36-popover@4.60.1
+  - @contentful/f36-typography@4.60.1
+
+## 4.60.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.60.0
+  - @contentful/f36-popover@4.60.0
+  - @contentful/f36-typography@4.60.0
+
+## 4.59.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.59.3
+  - @contentful/f36-popover@4.59.3
+  - @contentful/f36-typography@4.59.3
+
+## 4.59.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.59.2
+  - @contentful/f36-popover@4.59.2
+  - @contentful/f36-typography@4.59.2
+
+## 4.59.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.59.1
+  - @contentful/f36-popover@4.59.1
+  - @contentful/f36-typography@4.59.1
+
+## 4.59.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.59.0
+  - @contentful/f36-popover@4.59.0
+  - @contentful/f36-typography@4.59.0
+
+## 4.58.4
+
+### Patch Changes
+
+- Updated dependencies [[`7563339ee`](https://github.com/contentful/forma-36/commit/7563339eeea4d5c6a2736bc8ecf76d903c8539d7)]:
+  - @contentful/f36-typography@4.58.4
+  - @contentful/f36-utils@4.24.3
+  - @contentful/f36-core@4.58.4
+  - @contentful/f36-popover@4.58.4
+
+## 4.58.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.58.3
+  - @contentful/f36-popover@4.58.3
+  - @contentful/f36-typography@4.58.3
+
+## 4.58.2
+
+### Patch Changes
+
+- Updated dependencies [[`f094b710a`](https://github.com/contentful/forma-36/commit/f094b710af9c6ebcb02d4f096a45d3d4673c4574)]:
+  - @contentful/f36-tokens@4.0.4
+  - @contentful/f36-typography@4.58.2
+  - @contentful/f36-core@4.58.2
+  - @contentful/f36-popover@4.58.2
+
+## 4.58.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.58.1
+  - @contentful/f36-popover@4.58.1
+  - @contentful/f36-typography@4.58.1
+
 ## 4.58.0
 
 ### Patch Changes

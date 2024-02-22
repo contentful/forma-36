@@ -8,6 +8,7 @@ import type {
   ExpandProps,
 } from '@contentful/f36-core';
 import { Text } from '../Text';
+import { useDensity } from '@contentful/f36-utils';
 
 const CAPTION_DEFAULT_TAG = 'span';
 
@@ -34,12 +35,14 @@ function _Caption<E extends React.ElementType = typeof CAPTION_DEFAULT_TAG>(
   }: CaptionProps<E>,
   ref: React.Ref<any>,
 ) {
+  const density = useDensity();
+
   return (
     <Text
       as={CAPTION_DEFAULT_TAG}
       testId={testId}
-      fontSize="fontSizeS"
-      lineHeight="lineHeightS"
+      fontSize={density === 'high' ? 'fontSizeSHigh' : 'fontSizeS'}
+      lineHeight={density === 'high' ? 'lineHeightSHigh' : 'lineHeightS'}
       fontColor="gray900"
       fontWeight={fontWeight}
       {...otherProps}

@@ -1,17 +1,32 @@
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 
-export function getSelectStyles({ isInvalid, isDisabled, size }) {
-  const sizeStyles =
-    size === 'small'
-      ? {
+export function getSelectStyles({ isInvalid, isDisabled, size, density }) {
+  const getSizeAndDensityStyles = () => {
+    switch (true) {
+      case size === 'small':
+        return {
           padding: `${tokens.spacing2Xs} ${tokens.spacingL} ${tokens.spacing2Xs} ${tokens.spacingXs}`,
           height: '32px',
-        }
-      : {
+        };
+
+      case size === 'medium' && density === 'high':
+        return {
+          padding: `${tokens.spacing2Xs} ${tokens.spacingL} ${tokens.spacing2Xs} ${tokens.spacingXs}`,
+          height: '32px',
+          fontSize: tokens.fontSizeMHigh,
+          lineHeight: tokens.lineHeightMHigh,
+          borderRadius: tokens.borderRadiusSmall,
+        };
+
+      case size === 'medium' || density === 'low':
+      default:
+        return {
           padding: `10px ${tokens.spacingL} 10px ${tokens.spacingS}`,
           height: '40px',
         };
+    }
+  };
 
   const select = css({
     width: '100%',
@@ -28,6 +43,8 @@ export function getSelectStyles({ isInvalid, isDisabled, size }) {
     outline: 'none',
     border: `1px solid ${tokens.gray300}`,
     cursor: 'pointer',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
 
     '&::placeholder': {
       color: tokens.gray500,
@@ -64,7 +81,7 @@ export function getSelectStyles({ isInvalid, isDisabled, size }) {
     }),
     select: css([
       select,
-      sizeStyles,
+      getSizeAndDensityStyles(),
       isDisabled && disabled,
       isInvalid && invalid,
     ]),

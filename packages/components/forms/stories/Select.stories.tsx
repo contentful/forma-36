@@ -1,16 +1,17 @@
-import React from 'react';
-
-import { Select, SelectProps } from '../src';
-import { Flex } from '@contentful/f36-core';
-import { SectionHeading } from '@contentful/f36-typography';
+import React, { ComponentProps } from 'react';
 import { action } from '@storybook/addon-actions';
+import { Flex } from '@contentful/f36-core';
+import { type Density, DensityProvider } from '@contentful/f36-utils';
+import { Heading, SectionHeading } from '@contentful/f36-typography';
+import { Note } from '@contentful/f36-note';
+import { Select } from '../src';
 
 export default {
   title: 'Form Elements/Select',
   component: Select,
 };
 
-export const Basic = (args: SelectProps) => (
+export const Basic = (args: ComponentProps<typeof Select>) => (
   <Select
     id="optionSelect"
     name="optionSelect"
@@ -29,7 +30,7 @@ Basic.args = {
   size: 'medium',
 };
 
-export const Overview = (args: SelectProps) => {
+export const Overview = (args: ComponentProps<typeof Select>) => {
   const [controlledValue, setControlledValue] = React.useState('optionTwo');
   const handleOnChange = (event) => {
     setControlledValue(event.target.value);
@@ -177,6 +178,57 @@ export const Overview = (args: SelectProps) => {
             Disabled option
           </Select.Option>
         </Select>
+      </Flex>
+    </Flex>
+  );
+};
+
+export const WithDensitySupport = (props: ComponentProps<typeof Select>) => {
+  const Densities = [
+    {
+      name: 'Low density',
+      density: 'low',
+    },
+    {
+      name: 'High density',
+      density: 'high',
+    },
+  ];
+
+  return (
+    <Flex gap="spacingM" flexDirection="column">
+      <Note variant="warning">
+        High-density support solely available for the default size (
+        <code>medium</code>)
+      </Note>
+
+      <Flex gap="spacing2Xl">
+        {Densities.map((density) => {
+          return (
+            <Flex
+              key={density.name}
+              flexDirection="column"
+              style={{ width: '230px' }}
+            >
+              <Heading>{density.name}</Heading>
+              <DensityProvider value={density.density as Density}>
+                <Select
+                  id="optionSelect"
+                  name="optionSelect"
+                  size="medium"
+                  {...props}
+                  defaultValue="optionTwo"
+                >
+                  <Select.Option value="optionOne">Option 1</Select.Option>
+                  <Select.Option value="optionTwo">
+                    The quick brown fox jumps over the lazy dog like an
+                    over-motivated frog
+                  </Select.Option>
+                </Select>
+              </DensityProvider>
+            </Flex>
+          );
+        })}
       </Flex>
     </Flex>
   );

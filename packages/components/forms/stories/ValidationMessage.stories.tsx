@@ -1,8 +1,8 @@
-import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
-
+import React, { ComponentProps } from 'react';
+import { Flex } from '@contentful/f36-core';
+import { type Density, DensityProvider } from '@contentful/f36-utils';
+import { Heading } from '@contentful/f36-typography';
 import { ValidationMessage } from '../src';
-import type { ValidationMessageInternalProps } from '../src/ValidationMessage/ValidationMessage';
 
 export default {
   title: 'Form Elements/ValidationMessage',
@@ -17,12 +17,51 @@ export default {
     style: { control: { disable: true } },
     testId: { control: { disable: true } },
   },
-} as Meta;
+};
 
-export const Default: Story<ValidationMessageInternalProps> = (args) => (
+export const Default = (args: ComponentProps<typeof ValidationMessage>) => (
   <ValidationMessage {...args} />
 );
 
 Default.args = {
   children: 'Validation message',
+};
+
+export const WithDensitySupport = (
+  props: ComponentProps<typeof ValidationMessage>,
+) => {
+  const Densities = [
+    {
+      name: 'Low density',
+      density: 'low',
+    },
+    {
+      name: 'High density',
+      density: 'high',
+    },
+  ];
+
+  return (
+    <Flex gap="spacing2Xl">
+      {Densities.map((density) => {
+        return (
+          <Flex
+            key={density.name}
+            flexDirection="column"
+            style={{ width: '230px' }}
+          >
+            <Heading>{density.name}</Heading>
+            <DensityProvider value={density.density as Density}>
+              <ValidationMessage {...props} />
+            </DensityProvider>
+          </Flex>
+        );
+      })}
+    </Flex>
+  );
+};
+
+WithDensitySupport.args = {
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
 };

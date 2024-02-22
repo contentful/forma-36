@@ -9,7 +9,6 @@ export const getCopyButtonStyles = ({
   return {
     button: css({
       height: buttonSize,
-      minHeight: 'auto',
       minWidth: 'auto',
       width: buttonSize,
     }),

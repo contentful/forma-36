@@ -37,9 +37,12 @@ export const MultiselectOption = ({
         onChange={(event) => onSelectItem(event)}
         isChecked={isChecked}
         isDisabled={isDisabled}
-        className={cx(styles.item, isDisabled && styles.disabled)}
+        className={cx(styles.optionCheck, isDisabled && styles.disabled)}
       >
-        <Text data-test-id={`cf-multiselect-list-item-${itemId}`}>
+        <Text
+          className={styles.optionText}
+          data-test-id={`cf-multiselect-list-item-${itemId}`}
+        >
           <HighlightedItem item={label} inputValue={searchValue} />
         </Text>
       </Checkbox>

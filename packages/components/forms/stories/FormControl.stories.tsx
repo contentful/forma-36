@@ -1,18 +1,17 @@
-import React from 'react';
-
+import React, { ComponentProps } from 'react';
+import { Flex, Box } from '@contentful/f36-core';
+import { type Density, DensityProvider } from '@contentful/f36-utils';
+import { Heading, Paragraph } from '@contentful/f36-typography';
+import { TextLink } from '@contentful/f36-text-link';
+import { LockIcon } from '@contentful/f36-icons';
 import {
   FormControl,
-  FormControlInternalProps,
   TextInput,
   Textarea,
   Select,
   Checkbox,
   Radio,
 } from '../src';
-import { Flex, Box } from '@contentful/f36-core';
-import { TextLink } from '@contentful/f36-text-link';
-import { LockIcon } from '@contentful/f36-icons';
-import { Paragraph } from '@contentful/f36-typography';
 
 export default {
   title: 'Form Elements/FormControl',
@@ -23,7 +22,7 @@ export default {
   },
 };
 
-export const Basic = (args: FormControlInternalProps) => {
+export const Basic = (args: ComponentProps<typeof FormControl>) => {
   return (
     <>
       <FormControl {...args}>
@@ -75,7 +74,7 @@ export const Basic = (args: FormControlInternalProps) => {
   );
 };
 
-export const Invalid = (args: FormControlInternalProps) => {
+export const Invalid = (args: ComponentProps<typeof FormControl>) => {
   return (
     <Basic {...args} isInvalid>
       {args.children}
@@ -83,7 +82,7 @@ export const Invalid = (args: FormControlInternalProps) => {
   );
 };
 
-export const WithCheckboxGroup = (args: FormControlInternalProps) => {
+export const WithCheckboxGroup = (args: ComponentProps<typeof FormControl>) => {
   return (
     <>
       <FormControl as="fieldset" {...args}>
@@ -150,7 +149,9 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
   );
 };
 
-export const WithCharactersCount = (args: FormControlInternalProps) => {
+export const WithCharactersCount = (
+  args: ComponentProps<typeof FormControl>,
+) => {
   return (
     <>
       <FormControl {...args}>
@@ -185,7 +186,7 @@ export const WithCharactersCount = (args: FormControlInternalProps) => {
   );
 };
 
-export const WithCustomLogic = (args: FormControlInternalProps) => {
+export const WithCustomLogic = (args: ComponentProps<typeof FormControl>) => {
   const [isDisabled, setIsDisabled] = React.useState(true);
   return (
     <FormControl {...args} isDisabled={isDisabled}>
@@ -209,5 +210,48 @@ export const WithCustomLogic = (args: FormControlInternalProps) => {
         <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
       )}
     </FormControl>
+  );
+};
+
+export const WithDensitySupport = (
+  props: ComponentProps<typeof FormControl>,
+) => {
+  const Densities = [
+    {
+      name: 'Low density',
+      density: 'low',
+    },
+    {
+      name: 'High density',
+      density: 'high',
+    },
+  ];
+
+  return (
+    <Flex gap="spacing2Xl">
+      {Densities.map((density) => {
+        return (
+          <Flex
+            key={density.name}
+            flexDirection="column"
+            style={{ width: '230px' }}
+          >
+            <Heading>{density.name}</Heading>
+            <DensityProvider value={density.density as Density}>
+              <FormControl {...props} isInvalid isRequired>
+                <FormControl.Label>Select Value</FormControl.Label>
+                <Checkbox value="ketchup">Ketchup</Checkbox>
+                <FormControl.HelpText>
+                  Please Select a value
+                </FormControl.HelpText>
+                <FormControl.ValidationMessage>
+                  Error
+                </FormControl.ValidationMessage>
+              </FormControl>
+            </DensityProvider>
+          </Flex>
+        );
+      })}
+    </Flex>
   );
 };

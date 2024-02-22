@@ -8,6 +8,7 @@ import type {
 } from '@contentful/f36-core';
 import type { HeadingElement } from '../Heading';
 import { Text } from '../Text';
+import { useDensity } from '@contentful/f36-utils';
 
 const SUBHEADING_DEFAULT_TAG = 'h3';
 
@@ -28,13 +29,15 @@ function _Subheading<
   { children, testId = 'cf-ui-subheading', ...otherProps }: SubheadingProps<E>,
   ref: React.Ref<any>,
 ) {
+  const density = useDensity();
+
   return (
     <Text
       as={SUBHEADING_DEFAULT_TAG}
       testId={testId}
       marginBottom="spacingM"
-      fontSize="fontSizeL"
-      lineHeight="lineHeightL"
+      fontSize={density === 'high' ? 'fontSizeLHigh' : 'fontSizeL'}
+      lineHeight={density === 'high' ? 'lineHeightLHigh' : 'lineHeightL'}
       fontWeight="fontWeightDemiBold"
       fontColor="gray900"
       {...otherProps}

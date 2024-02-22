@@ -1,9 +1,8 @@
-import React from 'react';
-
-import {
-  SectionHeading,
-  SectionHeadingProps,
-} from '../src/SectionHeading/SectionHeading';
+import React, { ComponentProps } from 'react';
+import { Flex } from '@contentful/f36-core';
+import { type Density, DensityProvider } from '@contentful/f36-utils';
+import { Heading } from '@contentful/f36-typography';
+import { SectionHeading } from '../src';
 
 export default {
   title: 'Typography/SectionHeading',
@@ -16,10 +15,50 @@ export default {
   },
 };
 
-export const Basic = (props: SectionHeadingProps<'h3'>) => (
+export const Basic = (props: ComponentProps<typeof SectionHeading>) => (
   <SectionHeading {...props} />
 );
 
 Basic.args = {
-  children: 'Section heading',
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
+};
+
+export const WithDensitySupport = (
+  props: ComponentProps<typeof SectionHeading>,
+) => {
+  const Densities = [
+    {
+      name: 'Low density',
+      density: 'low',
+    },
+    {
+      name: 'High density',
+      density: 'high',
+    },
+  ];
+
+  return (
+    <Flex gap="spacing2Xl">
+      {Densities.map((density) => {
+        return (
+          <Flex
+            key={density.name}
+            flexDirection="column"
+            style={{ width: '230px' }}
+          >
+            <Heading>{density.name}</Heading>
+            <DensityProvider value={density.density as Density}>
+              <SectionHeading {...props} />
+            </DensityProvider>
+          </Flex>
+        );
+      })}
+    </Flex>
+  );
+};
+
+WithDensitySupport.args = {
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
 };

@@ -71,7 +71,7 @@ const _Textarea = (
       testId={testId}
       as="textarea"
       ref={ref}
-      className={cx(className, {
+      className={cx(styles.root, className, {
         [styles.disabled]: isDisabled,
         [styles.error]: isInvalid,
       })}

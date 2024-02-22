@@ -1,5 +1,7 @@
-import React from 'react';
-import { Heading, HeadingProps } from '../src/Heading/Heading';
+import React, { ComponentProps } from 'react';
+import { Flex } from '@contentful/f36-core';
+import { type Density, DensityProvider } from '@contentful/f36-utils';
+import { Heading } from '../src/Heading';
 
 export default {
   title: 'Typography/Heading',
@@ -12,9 +14,50 @@ export default {
   },
 };
 
-export const Basic = (props: HeadingProps<'h1'>) => <Heading {...props} />;
+export const Basic = (props: ComponentProps<typeof Heading>) => (
+  <Heading {...props} />
+);
 
 Basic.args = {
-  children: 'Heading',
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog',
+  as: 'h1',
+};
+
+export const WithDensitySupport = (props: ComponentProps<typeof Heading>) => {
+  const Densities = [
+    {
+      name: 'Low density',
+      density: 'low',
+    },
+    {
+      name: 'High density',
+      density: 'high',
+    },
+  ];
+
+  return (
+    <Flex gap="spacing2Xl">
+      {Densities.map((density) => {
+        return (
+          <Flex
+            key={density.name}
+            flexDirection="column"
+            style={{ width: '230px' }}
+          >
+            <Heading>{density.name}</Heading>
+            <DensityProvider value={density.density as Density}>
+              <Heading {...props} />
+            </DensityProvider>
+          </Flex>
+        );
+      })}
+    </Flex>
+  );
+};
+
+WithDensitySupport.args = {
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
   as: 'h1',
 };

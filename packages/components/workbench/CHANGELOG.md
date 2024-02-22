@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.21.1
+
+### Patch Changes
+
+- [#2661](https://github.com/contentful/forma-36/pull/2661) [`9a40d86bb`](https://github.com/contentful/forma-36/commit/9a40d86bb042afe20695f973331f6b9c87b2a48f) Thanks [@z0al](https://github.com/z0al)! - - fix rendering glitch on Safari 17.x
+
 ## 4.21.0
 
 ### Minor Changes

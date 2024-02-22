@@ -6,8 +6,8 @@ section: 'hooks'
 typescript: ./useDensity.ts
 ---
 
-Allows to retrieve the `DensityContext` value (`low` or `high`).  
-Adding high-density support to your component is possible using this hook.
+Use this hook to adapt your component styling/rendering based on the density.  
+The density is retrieved from the `DensityProvider`.
 
 ## Import
 
@@ -19,12 +19,9 @@ import { useDensity } from '@contentful/f36-utils';
 
 ### Component styling
 
-Use the `useDensity` hook to add high-density support styling to your component.  
-The component will pick up the density defined in the [DensityContainer](/components/density-container) component.
-
 ```jsx
 import React from 'react';
-import { Box } from '@contentful/f36-components';
+import { Paragraph } from '@contentful/f36-typography';
 import { useDensity } from '@contentful/f36-utils';
 import { css } from 'emotion';
 
@@ -32,11 +29,15 @@ export default function YourComponent() {
   const density = useDensity();
 
   const styles = {
-    box: css({
+    paragraph: css({
       color: density === 'high' ? 'red' : 'green',
     }),
   };
 
-  return <Box className={styles.box}>Content</Box>;
+  return (
+    <Paragraph marginBottom="0" className={styles.paragraph}>
+      The quick brown fox jumps over the lazy dog like an over-motivated frog.
+    </Paragraph>
+  );
 }
 ```
