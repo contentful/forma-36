@@ -1,5 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
+import { screen } from '@testing-library/dom';
 import { axe } from '@/scripts/test/axeHelper';
 
 import { ModalConfirm } from './ModalConfirm';
@@ -22,4 +23,19 @@ it('has no a11y issues', async () => {
   const results = await axe(container);
 
   expect(results).toHaveNoViolations();
+});
+
+it('renders a `x` icon to close/dismiss the modal', async () => {
+  const closeButtonSpy = jest.fn();
+
+  render(
+    <ModalConfirm isShown onConfirm={() => {}} onCancel={closeButtonSpy}>
+      ModalConfirm
+    </ModalConfirm>,
+  );
+
+  const closeButton = screen.getByRole('button', { name: /Close/i });
+  fireEvent.click(closeButton);
+
+  expect(closeButtonSpy).toHaveBeenCalledTimes(1);
 });
