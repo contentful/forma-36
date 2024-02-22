@@ -2,8 +2,8 @@ import React from 'react';
 import {
   IconVariant,
   generateComponentWithVariants,
+  generateIconComponent,
 } from '@contentful/f36-icon';
-import { generateIconComponent } from '@contentful/f36-icon';
 
 export const EnvironmentIcon = generateComponentWithVariants({
   variants: {
