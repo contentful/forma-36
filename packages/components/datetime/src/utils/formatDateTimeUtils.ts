@@ -79,7 +79,7 @@ export function formatMachineReadableDateTime(
       template = 'YYYY-MM-DDTHH:mm:ss.SSS[Z]'; // 2019-08-24T15:44:07.000Z
   }
 
-  return dayjs(date).utc().format(template);
+  return dayjs(date).format(template);
 }
 
 /**
