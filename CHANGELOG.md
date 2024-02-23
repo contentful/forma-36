@@ -8,6 +8,13 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 23-02-2024
+
+**F36 Modal** `v4.60.1`
+
+- The ModalConfirm should always render a x close button in the modal header.
+- This is accomplished by passing the onClose prop from ModalConfirm to Modal.Header to ensure that the header will render a close icon to dismiss the modal.
+
 ## 17-02-2024
 
 **F36 Multiselect** `v4.23.0`
