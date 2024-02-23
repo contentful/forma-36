@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CalendarIcon } from '@contentful/f36-icons';
+import { CalendarIcon } from '@contentful/f36-icons-v4';
 import { Stack, Flex, Text } from '@contentful/f36-components';
 
 export default function IconSizesExample() {
