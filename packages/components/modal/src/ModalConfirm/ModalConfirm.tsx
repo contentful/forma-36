@@ -152,7 +152,11 @@ export const ModalConfirm = ({
       {() => {
         return (
           <React.Fragment>
-            <Modal.Header title={title || ''} {...modalHeaderProps} />
+            <Modal.Header
+              title={title || ''}
+              {...modalHeaderProps}
+              onClose={onCancel}
+            />
             <Modal.Content {...modalContentProps}>{children}</Modal.Content>
             <Modal.Controls {...modalControlsProps}>
               {cancelButton}

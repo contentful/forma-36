@@ -6,7 +6,7 @@ import {
   type PropsWithHTMLElement,
   type CommonProps,
 } from '@contentful/f36-core';
-import { Button } from '@contentful/f36-button';
+import { IconButton } from '@contentful/f36-button';
 import { Text, Subheading } from '@contentful/f36-typography';
 
 import { getModalHeaderStyles } from './ModalHeader.styles';
@@ -50,14 +50,14 @@ export const ModalHeader = ({
       </Subheading>
       {onClose && (
         <Flex alignItems="center" className={styles.buttonContainer}>
-          <Button
+          <IconButton
             variant="transparent"
             aria-label="Close"
-            startIcon={<CloseIcon size="small" />}
+            size="small"
+            icon={<CloseIcon size="small" />}
             onClick={() => {
               onClose();
             }}
-            size="small"
           />
         </Flex>
       )}

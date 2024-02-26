@@ -8,6 +8,13 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 23-02-2024
+
+**F36 Modal** `v4.60.1`
+
+- The ModalConfirm should always render a x close button in the modal header.
+- This is accomplished by passing the onClose prop from ModalConfirm to Modal.Header to ensure that the header will render a close icon to dismiss the modal.
+
 ## 17-02-2024
 
 **F36 Multiselect** `v4.23.0`
@@ -18,7 +25,7 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 **F36 Card** `v4.60.0`
 
-- The <EntryCard> component will now accepts a new option Badge. This will enable users to add custom badges on the card for entities that do not share the same statuses as a contentful Entry.
+- The EntryCard component will now accept a new option Badge. This will enable users to add custom badges on the card for entities that do not share the same statuses as a contentful Entry.
 
 ## 08-02-2024
 

@@ -1,5 +1,27 @@
 # Change Log
 
+## 4.60.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.60.2
+  - @contentful/f36-core@4.60.2
+  - @contentful/f36-typography@4.60.2
+
+## 4.60.1
+
+### Patch Changes
+
+- [#2669](https://github.com/contentful/forma-36/pull/2669) [`807e82b07`](https://github.com/contentful/forma-36/commit/807e82b07e190d1f7e2cb54487a6e3fb3b3105c9) Thanks [@ethan-ozelius-contentful](https://github.com/ethan-ozelius-contentful)! - The ModalConfirm should always render a x close button in the modal header.
+
+  This is accomplished by passing the onClose prop from ModalConfirm to Modal.Header to ensure that the header will render a close icon to dismiss the modal.
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.60.1
+  - @contentful/f36-core@4.60.1
+  - @contentful/f36-typography@4.60.1
+
 ## 4.60.0
 
 ### Patch Changes

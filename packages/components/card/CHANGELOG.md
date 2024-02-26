@@ -1,10 +1,42 @@
 # Change Log
 
+## 4.60.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-asset@4.60.2
+  - @contentful/f36-badge@4.60.2
+  - @contentful/f36-button@4.60.2
+  - @contentful/f36-core@4.60.2
+  - @contentful/f36-drag-handle@4.60.2
+  - @contentful/f36-icon@4.60.2
+  - @contentful/f36-menu@4.60.2
+  - @contentful/f36-skeleton@4.60.2
+  - @contentful/f36-tooltip@4.60.2
+  - @contentful/f36-typography@4.60.2
+
+## 4.60.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-asset@4.60.1
+  - @contentful/f36-badge@4.60.1
+  - @contentful/f36-button@4.60.1
+  - @contentful/f36-core@4.60.1
+  - @contentful/f36-drag-handle@4.60.1
+  - @contentful/f36-icon@4.60.1
+  - @contentful/f36-menu@4.60.1
+  - @contentful/f36-skeleton@4.60.1
+  - @contentful/f36-tooltip@4.60.1
+  - @contentful/f36-typography@4.60.1
+
 ## 4.60.0
 
 ### Minor Changes
 
-- [#2671](https://github.com/contentful/forma-36/pull/2671) [`40ba00bc7`](https://github.com/contentful/forma-36/commit/40ba00bc7541534de5b443f199ce6412d4e07e66) Thanks [@Cyberxon](https://github.com/Cyberxon)! - The <EntryCard> component will now accepts a new option Badge. This will enable users to add custom badges on the card for entities that do not share the same statuses as a contentful Entry.
+- [#2671](https://github.com/contentful/forma-36/pull/2671) [`40ba00bc7`](https://github.com/contentful/forma-36/commit/40ba00bc7541534de5b443f199ce6412d4e07e66) Thanks [@Cyberxon](https://github.com/Cyberxon)! - The EntryCard component will now accept a new option Badge. This will enable users to add custom badges on the card for entities that do not share the same statuses as a contentful Entry.
 
 ### Patch Changes
 
