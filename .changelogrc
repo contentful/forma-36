@@ -1,1 +1,1 @@
-{"**F36 Datetime** `v4.60.2`":["- fix: drop transformation to UTC when creating machine readable datetime (#2680)\n"],"**F36 Multiselect** `v4.23.1`":["- Allows now setting an individual itemId for the SelectAllOption component which is a divert from MultiselectOption\n"]}
+{}
