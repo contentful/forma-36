@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.60.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.60.3
+  - @contentful/f36-core@4.60.3
+  - @contentful/f36-text-link@4.60.3
+  - @contentful/f36-typography@4.60.3
+
 ## 4.60.2
 
 ### Patch Changes
