@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 29-02-2024
+
+`@contentful/f36-components@4.60.3`
+
+- chore(f36-components): bump navbar package to latest
+
 ## 27-02-2024
 
 **F36 Datetime** `v4.60.2`
