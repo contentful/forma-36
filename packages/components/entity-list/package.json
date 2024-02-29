@@ -1,21 +1,21 @@
 {
   "name": "@contentful/f36-entity-list",
-  "version": "4.60.3",
+  "version": "4.61.0",
   "description": "Forma 36: EntityList component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-badge": "^4.60.3",
-    "@contentful/f36-button": "^4.60.3",
-    "@contentful/f36-core": "^4.60.3",
-    "@contentful/f36-drag-handle": "^4.60.3",
-    "@contentful/f36-icon": "^4.60.3",
+    "@contentful/f36-badge": "^4.61.0",
+    "@contentful/f36-button": "^4.61.0",
+    "@contentful/f36-core": "^4.61.0",
+    "@contentful/f36-drag-handle": "^4.61.0",
+    "@contentful/f36-icon": "^4.61.0",
     "@contentful/f36-icons": "^4.27.0",
-    "@contentful/f36-menu": "^4.60.3",
-    "@contentful/f36-skeleton": "^4.60.3",
+    "@contentful/f36-menu": "^4.61.0",
+    "@contentful/f36-skeleton": "^4.61.0",
     "@contentful/f36-tokens": "^4.0.4",
-    "@contentful/f36-typography": "^4.60.3",
+    "@contentful/f36-typography": "^4.61.0",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
