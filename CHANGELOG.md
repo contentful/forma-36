@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 01-03-2024
+
+**F36 Modal** `v4.61.0`
+
+- Modal.Header now accepts children prop.
+
 ## 29-02-2024
 
 `@contentful/f36-components@4.60.3`
