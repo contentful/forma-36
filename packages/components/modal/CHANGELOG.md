@@ -1,5 +1,27 @@
 # Change Log
 
+## 4.61.0
+
+### Minor Changes
+
+- [#2686](https://github.com/contentful/forma-36/pull/2686) [`035b4cd5f`](https://github.com/contentful/forma-36/commit/035b4cd5fea9a18959d7dace2e3d124be7c78e1b) Thanks [@stephanLeece](https://github.com/stephanLeece)! - Modal.Header now accepts children prop.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.61.0
+  - @contentful/f36-core@4.61.0
+  - @contentful/f36-typography@4.61.0
+
+## 4.60.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.60.3
+  - @contentful/f36-core@4.60.3
+  - @contentful/f36-typography@4.60.3
+
 ## 4.60.2
 
 ### Patch Changes

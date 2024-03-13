@@ -15,6 +15,7 @@ interface ModalHeaderInternalProps extends CommonProps {
   title: string;
   subtitle?: string;
   onClose?: Function;
+  children?: React.ReactNode;
 }
 
 export type ModalHeaderProps = PropsWithHTMLElement<
@@ -28,6 +29,7 @@ export const ModalHeader = ({
   subtitle,
   testId = 'cf-ui-modal-header',
   className,
+  children,
   ...otherProps
 }: ModalHeaderProps): React.ReactElement => {
   const styles = getModalHeaderStyles();
@@ -48,6 +50,7 @@ export const ModalHeader = ({
           </Text>
         )}
       </Subheading>
+      {children}
       {onClose && (
         <Flex alignItems="center" className={styles.buttonContainer}>
           <IconButton
