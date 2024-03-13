@@ -7,7 +7,7 @@ const colorsSemantic = {
   'color-primary': colorsBlue['blue-600'],
   'color-positive': colorsGreen['green-600'],
   'color-negative': colorsRed['red-600'],
-  'color-warning': colorsOrange['orange-600'],
+  'color-warning': colorsOrange['orange-500'],
 };
 
 module.exports = colorsSemantic;
