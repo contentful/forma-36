@@ -1,9 +1,10 @@
+import { dirname, join } from 'path';
 const path = require('path');
 
 module.exports = {
   addons: [
-    '@storybook/addon-essentials',
-    '@storybook/addon-a11y',
+    getAbsolutePath('@storybook/addon-essentials'),
+    getAbsolutePath('@storybook/addon-a11y'),
     {
       name: '@storybook/addon-storysource',
       options: {
@@ -13,14 +14,10 @@ module.exports = {
         },
       },
     },
+    getAbsolutePath('@storybook/addon-mdx-gfm'),
   ],
 
-  core: {
-    builder: 'webpack5',
-  },
-
   staticDirs: ['./public'],
-
   stories: ['./docs/**/*.stories.mdx', '../../packages/**/*.stories.@(ts|md)x'],
 
   webpackFinal: async (config, { configType }) => {
@@ -37,4 +34,17 @@ module.exports = {
 
     return config;
   },
+
+  framework: {
+    name: getAbsolutePath('@storybook/nextjs'),
+    options: {},
+  },
+
+  docs: {
+    autodocs: true,
+  },
 };
+
+function getAbsolutePath(value) {
+  return dirname(require.resolve(join(value, 'package.json')));
+}

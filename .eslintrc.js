@@ -16,6 +16,7 @@ module.exports = {
     'plugin:jest/recommended',
     'plugin:jest/style',
     'plugin:you-dont-need-lodash-underscore/compatible',
+    'plugin:storybook/recommended',
   ],
   plugins: ['import', 'react-hooks', 'jest-dom', 'testing-library', 'rulesdir'],
   parserOptions: {
