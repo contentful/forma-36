@@ -741,6 +741,15 @@
         "doc",
         "bug"
       ]
+    },
+    {
+      "login": "2wce",
+      "name": "Kudakwashe Mupeni",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5754661?v=4",
+      "profile": "https://kudamupeni.vercel.app",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
