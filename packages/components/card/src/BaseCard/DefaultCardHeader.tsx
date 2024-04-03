@@ -48,15 +48,52 @@ export const stopEvents = (e: React.MouseEvent<HTMLElement>) => {
 export const DefaultCardHeader = (
   props: Pick<
     BaseCardInternalProps,
-    'type' | 'icon' | 'badge' | 'actions' | 'actionsButtonProps'
+    | 'type'
+    | 'icon'
+    | 'badge'
+    | 'actions'
+    | 'actionsButtonProps'
+    | 'customActionButton'
   >,
 ) => {
-  const { icon, type, actions, actionsButtonProps, badge } = props;
+  const { icon, type, actions, actionsButtonProps, badge, customActionButton } =
+    props;
   const styles = getHeaderStyles();
+
+  const renderActionButton = () => {
+    if (customActionButton) {
+      return (
+        <Flex
+          // don't propagate click event, so onClick handler on the card is not triggered
+          onClick={stopEvents}
+          alignItems="center"
+        >
+          {customActionButton}
+        </Flex>
+      );
+    }
+    if (actions && actions.length > 0) {
+      return (
+        <Flex
+          // don't propagate click event, so onClick handler on the card is not triggered
+          onClick={stopEvents}
+          alignItems="center"
+        >
+          <CardActions buttonProps={actionsButtonProps}>{actions}</CardActions>
+        </Flex>
+      );
+    }
+
+    return null;
+  };
+
   return (
     <Flex
       flexWrap="wrap"
-      className={cx(styles.header, actions && styles.headerWithActions)}
+      className={cx(
+        styles.header,
+        (actions || customActionButton) && styles.headerWithActions,
+      )}
     >
       <Flex flexGrow={1}>
         {type && (
@@ -67,15 +104,7 @@ export const DefaultCardHeader = (
       </Flex>
       {icon && <Flex alignItems="center">{icon}</Flex>}
       {badge && <Flex alignItems="center">{badge}</Flex>}
-      {actions && actions.length > 0 && (
-        <Flex
-          // don't propagate click event, so onClick handler on the card is not triggered
-          onClick={stopEvents}
-          alignItems="center"
-        >
-          <CardActions buttonProps={actionsButtonProps}>{actions}</CardActions>
-        </Flex>
-      )}
+      {renderActionButton()}
     </Flex>
   );
 };
