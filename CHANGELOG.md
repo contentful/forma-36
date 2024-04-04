@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 04-04-2024
+
+**F36 Tokens** `v4.0.5`
+
+- update default warning variant color
+
 ## 01-03-2024
 
 **F36 Modal** `v4.61.0`
