@@ -1,5 +1,58 @@
 # Change Log
 
+## 4.61.0
+
+### Minor Changes
+
+- [#2686](https://github.com/contentful/forma-36/pull/2686) [`035b4cd5f`](https://github.com/contentful/forma-36/commit/035b4cd5fea9a18959d7dace2e3d124be7c78e1b) Thanks [@stephanLeece](https://github.com/stephanLeece)! - Modal.Header now accepts children prop.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.61.0
+  - @contentful/f36-core@4.61.0
+  - @contentful/f36-typography@4.61.0
+
+## 4.60.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.60.3
+  - @contentful/f36-core@4.60.3
+  - @contentful/f36-typography@4.60.3
+
+## 4.60.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.60.2
+  - @contentful/f36-core@4.60.2
+  - @contentful/f36-typography@4.60.2
+
+## 4.60.1
+
+### Patch Changes
+
+- [#2669](https://github.com/contentful/forma-36/pull/2669) [`807e82b07`](https://github.com/contentful/forma-36/commit/807e82b07e190d1f7e2cb54487a6e3fb3b3105c9) Thanks [@ethan-ozelius-contentful](https://github.com/ethan-ozelius-contentful)! - The ModalConfirm should always render a x close button in the modal header.
+
+  This is accomplished by passing the onClose prop from ModalConfirm to Modal.Header to ensure that the header will render a close icon to dismiss the modal.
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.60.1
+  - @contentful/f36-core@4.60.1
+  - @contentful/f36-typography@4.60.1
+
+## 4.60.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.60.0
+  - @contentful/f36-core@4.60.0
+  - @contentful/f36-typography@4.60.0
+
 ## 4.59.3
 
 ### Patch Changes

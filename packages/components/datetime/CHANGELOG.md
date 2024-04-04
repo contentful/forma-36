@@ -1,5 +1,42 @@
 # Change Log
 
+## 4.61.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.61.0
+
+## 4.60.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.60.3
+
+## 4.60.2
+
+### Patch Changes
+
+- [#2683](https://github.com/contentful/forma-36/pull/2683) [`dddc64f30`](https://github.com/contentful/forma-36/commit/dddc64f308349483a82e415f640b9fe00419afd5) Thanks [@Chaoste](https://github.com/Chaoste)! - fix: drop transformation to UTC when creating machine readable datetime (#2680)
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.60.2
+
+## 4.60.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.60.1
+
+## 4.60.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.60.0
+
 ## 4.59.3
 
 ### Patch Changes

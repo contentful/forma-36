@@ -730,6 +730,26 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "Cyberxon",
+      "name": "Marouen Ben Salem",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26111745?v=4",
+      "profile": "https://github.com/Cyberxon",
+      "contributions": [
+        "code",
+        "doc",
+        "bug"
+      ]
+    },
+    {
+      "login": "2wce",
+      "name": "Kudakwashe Mupeni",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5754661?v=4",
+      "profile": "https://kudamupeni.vercel.app",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

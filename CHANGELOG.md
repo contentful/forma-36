@@ -8,6 +8,53 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 04-04-2024
+
+**F36 Tokens** `v4.0.5`
+
+- update default warning variant color
+
+## 01-03-2024
+
+**F36 Modal** `v4.61.0`
+
+- Modal.Header now accepts children prop.
+
+## 29-02-2024
+
+`@contentful/f36-components@4.60.3`
+
+- chore(f36-components): bump navbar package to latest
+
+## 27-02-2024
+
+**F36 Datetime** `v4.60.2`
+
+- fix: drop transformation to UTC when creating machine readable datetime (#2680)
+
+**F36 Multiselect** `v4.23.1`
+
+- Allows now setting an individual itemId for the SelectAllOption component which is a divert from MultiselectOption
+
+## 23-02-2024
+
+**F36 Modal** `v4.60.1`
+
+- The ModalConfirm should always render a x close button in the modal header.
+- This is accomplished by passing the onClose prop from ModalConfirm to Modal.Header to ensure that the header will render a close icon to dismiss the modal.
+
+## 17-02-2024
+
+**F36 Multiselect** `v4.23.0`
+
+- MultiSelect now forwards `popoverProps.onClose` providing a listener to the popover closing
+
+## 15-02-2024
+
+**F36 Card** `v4.60.0`
+
+- The EntryCard component will now accept a new option Badge. This will enable users to add custom badges on the card for entities that do not share the same statuses as a contentful Entry.
+
 ## 08-02-2024
 
 **F36 Forms** `v4.59.3`

@@ -6,7 +6,7 @@ import {
   type PropsWithHTMLElement,
   type CommonProps,
 } from '@contentful/f36-core';
-import { Button } from '@contentful/f36-button';
+import { IconButton } from '@contentful/f36-button';
 import { Text, Subheading } from '@contentful/f36-typography';
 
 import { getModalHeaderStyles } from './ModalHeader.styles';
@@ -15,6 +15,7 @@ interface ModalHeaderInternalProps extends CommonProps {
   title: string;
   subtitle?: string;
   onClose?: Function;
+  children?: React.ReactNode;
 }
 
 export type ModalHeaderProps = PropsWithHTMLElement<
@@ -28,6 +29,7 @@ export const ModalHeader = ({
   subtitle,
   testId = 'cf-ui-modal-header',
   className,
+  children,
   ...otherProps
 }: ModalHeaderProps): React.ReactElement => {
   const styles = getModalHeaderStyles();
@@ -48,16 +50,17 @@ export const ModalHeader = ({
           </Text>
         )}
       </Subheading>
+      {children}
       {onClose && (
         <Flex alignItems="center" className={styles.buttonContainer}>
-          <Button
+          <IconButton
             variant="transparent"
             aria-label="Close"
-            startIcon={<CloseIcon size="small" />}
+            size="small"
+            icon={<CloseIcon size="small" />}
             onClick={() => {
               onClose();
             }}
-            size="small"
           />
         </Flex>
       )}

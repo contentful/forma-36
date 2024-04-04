@@ -1,5 +1,17 @@
 ## Change Log
 
+## 4.23.1
+
+### Patch Changes
+
+- [#2676](https://github.com/contentful/forma-36/pull/2676) [`f1e694256`](https://github.com/contentful/forma-36/commit/f1e6942565a0bd2c305d6ea9e5947ba018d34543) Thanks [@Lelith](https://github.com/Lelith)! - Allows now setting an individual itemId for the SelectAllOption component which is a divert from MultiselectOption
+
+## 4.23.0
+
+### Minor Changes
+
+- [#2677](https://github.com/contentful/forma-36/pull/2677) [`3d39f21a7`](https://github.com/contentful/forma-36/commit/3d39f21a765bb7e867d57a43126ec2a8ada1ac44) Thanks [@jfctfl](https://github.com/jfctfl)! - MultiSelect now forwards `popoverProps.onClose` providing a listener to the popover closing
+
 ## 4.22.0
 
 ### Minor Changes
