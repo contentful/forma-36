@@ -3,8 +3,9 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
-import { ClockIcon } from '@contentful/f36-icons';
+import { ClockIcon, CloseIcon } from '@contentful/f36-icons';
 import { Badge } from '@contentful/f36-badge';
+import { IconButton } from '@contentful/f36-button';
 
 import { EntryCard, type EntryCardProps } from '../src';
 
@@ -50,6 +51,32 @@ export const WithLoadingState: Story<EntryCardProps> = (args) => {
 
 WithLoadingState.args = {
   isLoading: true,
+};
+
+export const WithCustomActionButton: Story<EntryCardProps> = (args) => {
+  return <EntryCard {...args} />;
+};
+
+const CustomActionButton = () => (
+  <IconButton
+    aria-label="Actions"
+    icon={<CloseIcon variant="muted" />}
+    size="small"
+    variant="transparent"
+    testId="cf-ui-card-actions"
+    onClick={() => {}}
+  />
+);
+
+WithCustomActionButton.args = {
+  status: 'published',
+  contentType: 'Content type',
+  title: 'Closer',
+  customActionButton: <CustomActionButton />,
+  actions: [
+    <MenuItem key="copy">Copy</MenuItem>,
+    <MenuItem key="delete">Delete</MenuItem>,
+  ],
 };
 
 const thumbnail = (
@@ -157,6 +184,25 @@ export const Overview: Story<EntryCardProps> = () => {
                 contentType="External design system"
                 size={size}
                 badge={<Badge variant={'positive'}>active</Badge>}
+              />
+            ))}
+          </Flex>
+        </Flex>
+
+        <Flex flexDirection="column" gap="spacingL">
+          <Flex flexDirection="column" gap="spacingM">
+            <SectionHeading as="h3" marginBottom="none">
+              Entities with custom action button
+            </SectionHeading>
+
+            {sizes.map((size) => (
+              <EntryCard
+                key={size}
+                thumbnailElement={thumbnail}
+                title="Forma 36"
+                contentType="Design system"
+                size={size}
+                customActionButton={<CustomActionButton />}
               />
             ))}
           </Flex>
