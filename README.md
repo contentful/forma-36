@@ -189,6 +189,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Cyberxon"><img src="https://avatars.githubusercontent.com/u/26111745?v=4?s=100" width="100px;" alt="Marouen Ben Salem"/><br /><sub><b>Marouen Ben Salem</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=Cyberxon" title="Code">💻</a> <a href="https://github.com/contentful/forma-36/commits?author=Cyberxon" title="Documentation">📖</a> <a href="https://github.com/contentful/forma-36/issues?q=author%3ACyberxon" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://kudamupeni.vercel.app"><img src="https://avatars.githubusercontent.com/u/5754661?v=4?s=100" width="100px;" alt="Kudakwashe Mupeni"/><br /><sub><b>Kudakwashe Mupeni</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=2wce" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/msieroslawska"><img src="https://avatars.githubusercontent.com/u/8281495?v=4?s=100" width="100px;" alt="Marta Sierosławska"/><br /><sub><b>Marta Sierosławska</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=msieroslawska" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
