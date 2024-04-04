@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import type { Meta } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
-
 import { Flex, Stack } from '@contentful/f36-core';
 import { Icon } from '@contentful/f36-icon';
 import * as icons from '@contentful/f36-icons';
@@ -26,152 +25,160 @@ export default {
       },
     },
   },
-} as Meta;
+} as Meta<typeof ToggleButton>;
 
-export const Basic = ({ icon, children, isDisabled }) => {
-  const [isActive, setIsActive] = useState(false);
+type Story = StoryObj<typeof ToggleButton>;
 
-  return (
-    <ToggleButton
-      isDisabled={isDisabled}
-      isActive={isActive}
-      onToggle={() => {
-        setIsActive(!isActive);
-      }}
-      icon={icon && <Icon as={icons[icon]} />}
-    >
-      {children}
-    </ToggleButton>
-  );
-};
+export const Basic: Story = {
+  args: {
+    isDisabled: false,
+    icon: 'ThumbUpTrimmedIcon',
+    children: 'Like',
+  },
+  render: ({ icon, children, isDisabled }) => {
+    const [isActive, setIsActive] = useState(false);
 
-Basic.args = {
-  isDisabled: false,
-  icon: 'ThumbUpTrimmedIcon',
-  children: 'Like',
-};
-
-export const Grouped = () => {
-  const [isItalic, setIsItalic] = useState(false);
-  const [isBold, setIsBold] = useState(true);
-  const [isUnderline, setIsUnderline] = useState(false);
-
-  return (
-    <ButtonGroup>
+    return (
       <ToggleButton
-        isActive={isItalic}
-        icon={<Icon as={icons.FormatItalicIcon} />}
-        aria-label="Italic"
-        size="small"
+        isDisabled={isDisabled}
+        isActive={isActive}
         onToggle={() => {
-          setIsItalic(!isItalic);
+          setIsActive(!isActive);
         }}
-      />
-      <ToggleButton
-        isActive={isBold}
-        icon={<Icon as={icons.FormatBoldIcon} />}
-        aria-label="Bold"
-        size="small"
-        onToggle={() => {
-          setIsBold(!isBold);
-        }}
-      />
-      <ToggleButton
-        isActive={isUnderline}
-        icon={<Icon as={icons.FormatUnderlinedIcon} />}
-        aria-label="Underline"
-        size="small"
-        onToggle={() => {
-          setIsUnderline(!isUnderline);
-        }}
-      />
-    </ButtonGroup>
-  );
+        icon={icon && <Icon as={icons[icon]} />}
+      >
+        {children}
+      </ToggleButton>
+    );
+  },
 };
 
-export const GroupedWithOnlyOneActive = () => {
-  const [isActive, setIsActive] = useState('bold');
+export const Grouped: Story = {
+  render: () => {
+    const [isItalic, setIsItalic] = useState(false);
+    const [isBold, setIsBold] = useState(true);
+    const [isUnderline, setIsUnderline] = useState(false);
 
-  return (
-    <ButtonGroup>
-      <ToggleButton
-        isActive={isActive === 'italic'}
-        icon={<Icon as={icons.FormatItalicIcon} />}
-        aria-label="Italic"
-        size="small"
-        onToggle={() => setIsActive('italic')}
-      />
-      <ToggleButton
-        isActive={isActive === 'bold'}
-        icon={<Icon as={icons.FormatBoldIcon} />}
-        aria-label="Bold"
-        size="small"
-        onToggle={() => setIsActive('bold')}
-      />
-      <ToggleButton
-        isActive={isActive === 'underline'}
-        icon={<Icon as={icons.FormatUnderlinedIcon} />}
-        aria-label="Underline"
-        size="small"
-        onToggle={() => setIsActive('underline')}
-      />
-    </ButtonGroup>
-  );
+    return (
+      <ButtonGroup>
+        <ToggleButton
+          isActive={isItalic}
+          icon={<Icon as={icons.FormatItalicIcon} />}
+          aria-label="Italic"
+          size="small"
+          onToggle={() => {
+            setIsItalic(!isItalic);
+          }}
+        />
+        <ToggleButton
+          isActive={isBold}
+          icon={<Icon as={icons.FormatBoldIcon} />}
+          aria-label="Bold"
+          size="small"
+          onToggle={() => {
+            setIsBold(!isBold);
+          }}
+        />
+        <ToggleButton
+          isActive={isUnderline}
+          icon={<Icon as={icons.FormatUnderlinedIcon} />}
+          aria-label="Underline"
+          size="small"
+          onToggle={() => {
+            setIsUnderline(!isUnderline);
+          }}
+        />
+      </ButtonGroup>
+    );
+  },
 };
 
-export const Overview = ({ icon, ...props }) => (
-  <>
-    <Flex flexDirection="column" marginBottom="spacingL">
-      <SectionHeading as="h3" marginBottom="spacingS">
-        Toggle variants
-      </SectionHeading>
+export const GroupedWithOnlyOneActive: Story = {
+  render: () => {
+    const [isActive, setIsActive] = useState('bold');
 
-      <Stack marginBottom="spacingM" spacing="spacingXs">
-        <ToggleButton onToggle={props.onToggle}>Default</ToggleButton>
-
-        <ToggleButton isActive onToggle={props.onToggle}>
-          Active
-        </ToggleButton>
-
-        <ToggleButton isDisabled onToggle={props.onToggle}>
-          Disabled
-        </ToggleButton>
-      </Stack>
-    </Flex>
-    <Flex flexDirection="column" marginBottom="spacingL">
-      <SectionHeading as="h3" marginBottom="spacingS">
-        Toggle Button with icon
-      </SectionHeading>
-
-      <Stack marginBottom="spacingM" spacing="spacingXs">
+    return (
+      <ButtonGroup>
         <ToggleButton
-          onToggle={props.onToggle}
-          icon={icon && <Icon as={icons[icon]} />}
-        >
-          Default
-        </ToggleButton>
-
+          isActive={isActive === 'italic'}
+          icon={<Icon as={icons.FormatItalicIcon} />}
+          aria-label="Italic"
+          size="small"
+          onToggle={() => setIsActive('italic')}
+        />
         <ToggleButton
-          onToggle={props.onToggle}
-          isActive
-          icon={icon && <Icon as={icons[icon]} />}
-        >
-          Active
-        </ToggleButton>
-
+          isActive={isActive === 'bold'}
+          icon={<Icon as={icons.FormatBoldIcon} />}
+          aria-label="Bold"
+          size="small"
+          onToggle={() => setIsActive('bold')}
+        />
         <ToggleButton
-          onToggle={props.onToggle}
-          isDisabled
-          icon={icon && <Icon as={icons[icon]} />}
-        >
-          Disabled
-        </ToggleButton>
-      </Stack>
-    </Flex>
-  </>
-);
+          isActive={isActive === 'underline'}
+          icon={<Icon as={icons.FormatUnderlinedIcon} />}
+          aria-label="Underline"
+          size="small"
+          onToggle={() => setIsActive('underline')}
+        />
+      </ButtonGroup>
+    );
+  },
+};
 
-Overview.args = {
-  onToggle: action('toggled'),
-  icon: 'PreviewIcon',
+export const Overview: Story = {
+  args: {
+    onToggle: action('toggled'),
+    icon: 'PreviewIcon',
+  },
+  render: ({ icon, ...props }) => (
+    <>
+      <Flex flexDirection="column" marginBottom="spacingL">
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Toggle variants
+        </SectionHeading>
+
+        <Stack marginBottom="spacingM" spacing="spacingXs">
+          <ToggleButton onToggle={props.onToggle}>Default</ToggleButton>
+
+          <ToggleButton isActive onToggle={props.onToggle}>
+            Active
+          </ToggleButton>
+
+          <ToggleButton isDisabled onToggle={props.onToggle}>
+            Disabled
+          </ToggleButton>
+        </Stack>
+      </Flex>
+      <Flex flexDirection="column" marginBottom="spacingL">
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Toggle Button with icon
+        </SectionHeading>
+
+        <Stack marginBottom="spacingM" spacing="spacingXs">
+          <ToggleButton
+            onToggle={props.onToggle}
+            icon={icon && <Icon as={icons[icon]} />}
+          >
+            Default
+          </ToggleButton>
+
+          <ToggleButton
+            onToggle={props.onToggle}
+            isActive
+            icon={icon && <Icon as={icons[icon]} />}
+          >
+            Active
+          </ToggleButton>
+
+          <ToggleButton
+            onToggle={props.onToggle}
+            isDisabled
+            icon={icon && <Icon as={icons[icon]} />}
+          >
+            Disabled
+          </ToggleButton>
+        </Stack>
+      </Flex>
+    </>
+  ),
 };

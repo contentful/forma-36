@@ -1,16 +1,7 @@
 import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import tokens from '@contentful/f36-tokens';
-import { GridInternalProps } from '../src/Grid/Grid';
 import { Grid } from '../src';
-
-const styles = {
-  demoBox: {
-    backgroundColor: tokens.gray800,
-  },
-  demoBoxDark: {
-    backgroundColor: tokens.gray800,
-  },
-};
 
 export default {
   title: 'Layout/Grid',
@@ -18,6 +9,17 @@ export default {
   subcomponents: { GridItem: Grid.Item },
   parameters: {
     propTypes: [Grid['__docgenInfo'], Grid.Item['__docgenInfo']],
+  },
+} as Meta<typeof Grid>;
+
+type Story = StoryObj<typeof Grid>;
+
+const styles = {
+  demoBox: {
+    backgroundColor: tokens.gray800,
+  },
+  demoBoxDark: {
+    backgroundColor: tokens.gray800,
   },
 };
 
@@ -32,27 +34,23 @@ const DemoBox = ({ times, id }: { times?: number; id?: string }) => {
   return <Grid.Item style={styles.demoBox}></Grid.Item>;
 };
 
-interface Args extends GridInternalProps {
-  exampleBoxes: number;
-  exampleGridHeight: string;
-}
-
-export const Basic = ({ exampleBoxes, exampleGridHeight, ...args }: Args) => {
-  return (
-    <div style={{ width: '90vw' }}>
-      <Grid {...args} style={{ height: exampleGridHeight }}>
-        <DemoBox id="g" times={exampleBoxes} />
-      </Grid>
-    </div>
-  );
-};
-
-Basic.args = {
-  exampleBoxes: 24,
-  exampleGridHeight: '90vh',
-  columns: 6,
-  rows: 4,
-  columnGap: 'spacingXs',
-  rowGap: 'spacingXs',
-  flow: 'row',
+export const Basic: Story = {
+  args: {
+    exampleBoxes: 24,
+    exampleGridHeight: '90vh',
+    columns: 6,
+    rows: 4,
+    columnGap: 'spacingXs',
+    rowGap: 'spacingXs',
+    flow: 'row',
+  },
+  render: ({ exampleBoxes, exampleGridHeight, ...args }) => {
+    return (
+      <div style={{ width: '90vw' }}>
+        <Grid {...args} style={{ height: exampleGridHeight }}>
+          <DemoBox id="g" times={exampleBoxes} />
+        </Grid>
+      </div>
+    );
+  },
 };

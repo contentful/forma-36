@@ -1,65 +1,68 @@
 import React, { useState } from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-import {
-  Calendar,
-  DayContent,
-  DayContentProps,
-  type CalendarProps,
-} from '../src';
+import { Calendar, DayContent, DayContentProps } from '../src';
 
 const testDate = new Date('2022-04-15');
 
 export default {
   component: Calendar,
   title: 'Components/Calendar',
-} as Meta;
+} as Meta<typeof Calendar>;
 
-export const Basic: Story<CalendarProps> = (args) => {
-  const [selectedDay, setSelectedDay] = useState<Date>(testDate);
+type Story = StoryObj<typeof Calendar>;
 
-  return (
-    <Calendar
-      {...args}
-      mode="single"
-      selected={selectedDay}
-      onSelect={setSelectedDay}
-      defaultMonth={selectedDay}
-    />
-  );
+export const Default: Story = {
+  render: (args) => {
+    const [selectedDay, setSelectedDay] = useState<Date>(testDate);
+
+    return (
+      <Calendar
+        {...args}
+        mode="single"
+        selected={selectedDay}
+        onSelect={setSelectedDay}
+        defaultMonth={selectedDay}
+      />
+    );
+  },
 };
 
-export const WithMinMaxDate: Story<CalendarProps> = (args) => {
-  const [selectedDay, setSelectedDay] = useState<Date>(testDate);
+export const WithMinMaxDate: Story = {
+  render: (args) => {
+    const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
-  return (
-    <Calendar
-      {...args}
-      mode="single"
-      selected={selectedDay}
-      onSelect={setSelectedDay}
-      fromDate={testDate}
-      toYear={2025}
-      defaultMonth={selectedDay}
-    />
-  );
+    return (
+      <Calendar
+        {...args}
+        mode="single"
+        selected={selectedDay}
+        onSelect={setSelectedDay}
+        fromDate={testDate}
+        toYear={2025}
+        defaultMonth={selectedDay}
+      />
+    );
+  },
 };
 
-export const WithMultipleMonths: Story<CalendarProps> = (args) => {
-  const [selectedDay, setSelectedDay] = useState<Date>(testDate);
+export const WithMultipleMonths: Story = {
+  render: (args) => {
+    const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
-  return (
-    <Calendar
-      {...args}
-      mode="single"
-      numberOfMonths={2}
-      selected={selectedDay}
-      onSelect={setSelectedDay}
-      defaultMonth={selectedDay}
-    />
-  );
+    return (
+      <Calendar
+        {...args}
+        mode="single"
+        numberOfMonths={2}
+        selected={selectedDay}
+        onSelect={setSelectedDay}
+        defaultMonth={selectedDay}
+      />
+    );
+  },
 };
 
 const CustomDayContent = ({
@@ -97,18 +100,20 @@ const CustomDayContent = ({
   );
 };
 
-export const WithCustomDayContent: Story<CalendarProps> = (args) => {
-  const [selectedDay, setSelectedDay] = useState<Date>(testDate);
+export const WithCustomDayContent: Story = {
+  render: (args) => {
+    const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
-  return (
-    <Calendar
-      {...args}
-      mode="single"
-      selected={selectedDay}
-      onSelect={setSelectedDay}
-      defaultMonth={selectedDay}
-      components={{ DayContent: CustomDayContent }}
-      modifiers={{ scheduled: new Date('2022-04-20') }}
-    />
-  );
+    return (
+      <Calendar
+        {...args}
+        mode="single"
+        selected={selectedDay}
+        onSelect={setSelectedDay}
+        defaultMonth={selectedDay}
+        components={{ DayContent: CustomDayContent }}
+        modifiers={{ scheduled: new Date('2022-04-20') }}
+      />
+    );
+  },
 };

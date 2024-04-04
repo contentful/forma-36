@@ -1,18 +1,9 @@
 import React from 'react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import tokens from '@contentful/f36-tokens';
 import { Text } from '@contentful/f36-typography';
-import { Stack, StackInternalProps } from '../src/Stack/Stack';
+import { Stack } from '../src/Stack/Stack';
 import { Flex } from '../src/Flex';
-
-const styles = {
-  demoBox: {
-    backgroundColor: tokens.gray800,
-    width: '150px',
-    height: '80px',
-    color: tokens.colorWhite,
-  },
-};
 
 export default {
   title: 'Layout/Stack',
@@ -28,6 +19,17 @@ export default {
     exampleBoxesNumber: {
       control: { type: 'number', min: 1, max: 20, step: 1 },
     },
+  },
+} as Meta<typeof Stack>;
+
+type Story = StoryObj<typeof Stack>;
+
+const styles = {
+  demoBox: {
+    backgroundColor: tokens.gray800,
+    width: '150px',
+    height: '80px',
+    color: tokens.colorWhite,
   },
 };
 
@@ -51,19 +53,16 @@ const DemoBox = ({ times }: { times?: number }) => {
   return <Flex style={styles.demoBox}>Example element</Flex>;
 };
 
-interface Args extends StackInternalProps {
-  exampleBoxesNumber: number;
-}
-
-export const Basic = ({ exampleBoxesNumber, ...args }: Args) => (
-  <Stack {...args}>
-    <DemoBox times={exampleBoxesNumber} />
-  </Stack>
-);
-
-Basic.args = {
-  exampleBoxesNumber: 5,
-  flexDirection: 'row',
-  alignItems: 'center',
-  spacing: 'spacingM',
+export const Basic: Story = {
+  args: {
+    exampleBoxesNumber: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+    spacing: 'spacingM',
+  },
+  render: ({ exampleBoxesNumber, ...args }) => (
+    <Stack {...args}>
+      <DemoBox times={exampleBoxesNumber} />
+    </Stack>
+  ),
 };

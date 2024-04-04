@@ -9,7 +9,7 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
 export default {
-  title: 'Components/Button components',
+  title: 'Components/Button',
   component: Button,
   parameters: {
     propTypes: Button['__docgenInfo'],
@@ -32,7 +32,7 @@ export default {
   },
 };
 
-export const _Button = ({ startIcon, endIcon, children, ...args }) => (
+export const basic = ({ startIcon, endIcon, children, ...args }) => (
   <Button
     {...args}
     startIcon={startIcon && <Icon as={icons[startIcon]} />}
@@ -42,7 +42,7 @@ export const _Button = ({ startIcon, endIcon, children, ...args }) => (
   </Button>
 );
 
-_Button.args = {
+basic.args = {
   size: 'medium',
   variant: 'primary',
   children: 'Button CTA',
@@ -104,28 +104,36 @@ export const Overview = ({ startIcon, endIcon }) => {
         </SectionHeading>
 
         <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXs">
-          <Button variant="primary" size="small">
+          <Button
+            variant="primary"
+            size="small"
+            startIcon={<Icon as={icons.PlusIcon} />}
+          >
             Small
           </Button>
 
-          <Button variant="primary" size="medium">
-            Medium
+          <Button
+            variant="primary"
+            size="medium"
+            startIcon={<Icon as={icons.PlusIcon} />}
+          >
+            Medium (default)
           </Button>
 
-          <Button variant="primary" size="large">
+          <Button
+            variant="primary"
+            size="medium"
+            startIcon={<Icon as={icons.PlusIcon} />}
+          >
+            Medium (default) button with really long content
+          </Button>
+
+          <Button
+            variant="primary"
+            size="large"
+            startIcon={<Icon as={icons.PlusIcon} />}
+          >
             Large
-          </Button>
-        </Stack>
-      </Flex>
-
-      <Flex flexDirection="column" marginBottom="spacingL">
-        <SectionHeading as="h3" marginBottom="spacingS">
-          Truncated
-        </SectionHeading>
-
-        <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXs">
-          <Button variant="primary" size="medium">
-            Medium button with really long content
           </Button>
         </Stack>
       </Flex>
@@ -188,7 +196,7 @@ export const Overview = ({ startIcon, endIcon }) => {
 
       <Flex flexDirection="column" marginBottom="spacingL">
         <SectionHeading as="h3" marginBottom="spacingS">
-          Button with end icon
+          Button with icon on right side
         </SectionHeading>
 
         <Stack spacing="spacingXs" marginBottom="spacingM">
@@ -254,6 +262,77 @@ export const Overview = ({ startIcon, endIcon }) => {
           <Button variant="transparent" isLoading>
             Transparent
           </Button>
+        </Stack>
+      </Flex>
+
+      <Flex flexDirection="column" marginBottom="spacingL">
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Icon only button
+        </SectionHeading>
+        <Stack spacing="spacingXs" marginBottom="spacingM">
+          <Button
+            variant="transparent"
+            startIcon={<Icon as={icons.CloseIcon} />}
+            aria-label="Close"
+          />
+
+          <Button
+            variant="transparent"
+            startIcon={<Icon as={icons.MoreHorizontalIcon} />}
+            aria-label="More"
+          />
+
+          <Button
+            variant="secondary"
+            startIcon={<Icon as={icons.DownloadIcon} />}
+            aria-label="Download"
+          />
+
+          <Button
+            variant="secondary"
+            startIcon={<Icon as={icons.DownloadIcon} />}
+            isLoading
+          />
+
+          <Button
+            variant="positive"
+            startIcon={<Icon as={icons.DragIcon} />}
+            aria-label="Resize"
+          />
+
+          <Button
+            variant="negative"
+            startIcon={<Icon as={icons.DeleteIcon} />}
+            aria-label="Delete"
+          />
+
+          <Button
+            variant="primary"
+            startIcon={<Icon as={icons.PlusIcon} />}
+            aria-label="Add"
+          />
+        </Stack>
+        <Stack spacing="spacingXs" marginBottom="spacingM">
+          <Button
+            variant="primary"
+            startIcon={<Icon as={icons.PlusIcon} />}
+            aria-label="Plus"
+            size="small"
+          />
+
+          <Button
+            variant="primary"
+            startIcon={<Icon as={icons.PlusIcon} />}
+            aria-label="Plus"
+            size="medium"
+          />
+
+          <Button
+            variant="primary"
+            startIcon={<Icon as={icons.PlusIcon} />}
+            aria-label="Plus"
+            size="large"
+          />
         </Stack>
       </Flex>
 

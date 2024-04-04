@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Paragraph, Text } from '@contentful/f36-typography';
-import {
-  ModalConfirm,
-  type ModalConfirmProps,
-} from '../src/ModalConfirm/ModalConfirm';
+import { ModalConfirm } from '../src/ModalConfirm/ModalConfirm';
 import { Button } from '@contentful/f36-button';
 import { TextInput } from '@contentful/f36-forms';
 
@@ -50,74 +47,76 @@ export default {
       },
     },
   },
-} as Meta;
+} as Meta<typeof ModalConfirm>;
 
-function SimpleDemo(props: ModalConfirmProps) {
-  const [isShown, setShown] = useState(true);
-  return (
-    <div>
-      <Button variant="negative" onClick={() => setShown(true)}>
-        Delete something
-      </Button>
-      <ModalConfirm
-        {...props}
-        isShown={isShown}
-        onCancel={() => {
-          setShown(false);
-          action('onCancel')();
-        }}
-        onConfirm={() => {
-          setShown(false);
-          action('onConfirm')();
-        }}
-      >
-        <Text>You are about to delete SOMETHING. Think twice!</Text>
-      </ModalConfirm>
-    </div>
-  );
-}
+type Story = StoryObj<typeof ModalConfirm>;
 
-export const Basic: Story<ModalConfirmProps> = (props) => {
-  return <SimpleDemo {...props} />;
+export const Basic: Story = {
+  render: (props) => {
+    const [isShown, setShown] = useState(true);
+    return (
+      <div>
+        <Button variant="negative" onClick={() => setShown(true)}>
+          Delete something
+        </Button>
+        <ModalConfirm
+          {...props}
+          isShown={isShown}
+          onCancel={() => {
+            setShown(false);
+            action('onCancel')();
+          }}
+          onConfirm={() => {
+            setShown(false);
+            action('onConfirm')();
+          }}
+        >
+          <Text>You are about to delete SOMETHING. Think twice!</Text>
+        </ModalConfirm>
+      </div>
+    );
+  },
 };
 
-export function ComplexStory(props: ModalConfirmProps) {
-  const [isShown, setShown] = useState(true);
-  const [isLoading, setLoading] = useState(false);
-  const [repeat, setRepeat] = useState('');
+export const ComplexStory: Story = {
+  render: (props) => {
+    const [isShown, setShown] = useState(true);
+    const [isLoading, setLoading] = useState(false);
+    const [repeat, setRepeat] = useState('');
 
-  return (
-    <div>
-      <Button variant="negative" onClick={() => setShown(true)}>
-        Delete something
-      </Button>
-      <ModalConfirm
-        {...props}
-        isShown={isShown}
-        isConfirmDisabled={repeat !== 'unlock'}
-        isConfirmLoading={isLoading}
-        onCancel={() => {
-          setShown(false);
-          action('onCancel')();
-        }}
-        onConfirm={() => {
-          setLoading(true);
-          setTimeout(() => {
-            setLoading(false);
+    return (
+      <div>
+        <Button variant="negative" onClick={() => setShown(true)}>
+          Delete something
+        </Button>
+        <ModalConfirm
+          {...props}
+          isShown={isShown}
+          isConfirmDisabled={repeat !== 'unlock'}
+          isConfirmLoading={isLoading}
+          onCancel={() => {
             setShown(false);
-            setRepeat('');
-          }, 1500);
-          action('onConfirm')();
-        }}
-      >
-        <Paragraph>
-          Type <strong>unlock</strong> to allow confirming this modal
-        </Paragraph>
-        <TextInput
-          value={repeat}
-          onChange={(e) => setRepeat((e.target as HTMLInputElement).value)}
-        />
-      </ModalConfirm>
-    </div>
-  );
-}
+            action('onCancel')();
+          }}
+          onConfirm={() => {
+            setLoading(true);
+            setTimeout(() => {
+              setLoading(false);
+              setShown(false);
+              setRepeat('');
+            }, 1500);
+            action('onConfirm')();
+          }}
+        >
+          <Paragraph>
+            Type <strong>unlock</strong> to allow confirming this modal
+          </Paragraph>
+          <TextInput
+            value={repeat}
+            onChange={(e) => setRepeat((e.target as HTMLInputElement).value)}
+          />
+        </ModalConfirm>
+      </div>
+    );
+  },
+};

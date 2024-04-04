@@ -1,8 +1,10 @@
-import React, { ComponentProps } from 'react';
+import React from 'react';
 import { Flex } from '@contentful/f36-core';
+import type { Meta, StoryObj } from '@storybook/react';
 import { type Density, DensityProvider } from '@contentful/f36-utils';
-import { Heading, Paragraph } from '@contentful/f36-typography';
-import { Caption } from '../src';
+import { Caption } from '../src/Caption';
+import { Paragraph } from '../src/Paragraph';
+import { Heading } from '../src/Heading';
 
 export default {
   title: 'Typography/Caption',
@@ -13,69 +15,71 @@ export default {
   argTypes: {
     className: { control: { disable: true } },
   },
+} as Meta<typeof Caption>;
+
+type Story = StoryObj<typeof Caption>;
+
+export const Basic: Story = {
+  args: {
+    children:
+      'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
+  },
 };
 
-export const Basic = (props: ComponentProps<typeof Caption>) => (
-  <Caption {...props} />
-);
+export const Overview: Story = {
+  args: {
+    children:
+      'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
+  },
+  render: (args) => (
+    <>
+      <Flex alignItems="center" gap="spacingS">
+        <Paragraph marginBottom="none">fontWeightNormal</Paragraph>
+        <Caption {...args} fontWeight="fontWeightNormal" />
+      </Flex>
 
-Basic.args = {
-  children:
-    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
+      <Flex alignItems="center" gap="spacingS">
+        <Paragraph marginBottom="none">fontWeightMedium</Paragraph>
+        <Caption {...args} fontWeight="fontWeightMedium" />
+      </Flex>
+    </>
+  ),
 };
 
-export const Overview = (props: ComponentProps<typeof Caption>) => (
-  <>
-    <Flex alignItems="center" gap="spacingS">
-      <Paragraph marginBottom="none">fontWeightNormal</Paragraph>
-      <Caption {...props} fontWeight="fontWeightNormal" />
-    </Flex>
+export const WithDensitySupport: Story = {
+  args: {
+    children:
+      'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
+  },
+  render: (args) => {
+    const Densities = [
+      {
+        name: 'Low density',
+        density: 'low',
+      },
+      {
+        name: 'High density',
+        density: 'high',
+      },
+    ];
 
-    <Flex alignItems="center" gap="spacingS">
-      <Paragraph marginBottom="none">fontWeightMedium</Paragraph>
-      <Caption {...props} fontWeight="fontWeightMedium" />
-    </Flex>
-  </>
-);
-
-Overview.args = {
-  children:
-    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
-};
-
-export const WithDensitySupport = (props: ComponentProps<typeof Caption>) => {
-  const Densities = [
-    {
-      name: 'Low density',
-      density: 'low',
-    },
-    {
-      name: 'High density',
-      density: 'high',
-    },
-  ];
-
-  return (
-    <Flex gap="spacing2Xl">
-      {Densities.map((density) => {
-        return (
-          <Flex
-            key={density.name}
-            flexDirection="column"
-            style={{ width: '230px' }}
-          >
-            <Heading marginBottom="spacingXs">{density.name}</Heading>
-            <DensityProvider value={density.density as Density}>
-              <Caption {...props} />
-            </DensityProvider>
-          </Flex>
-        );
-      })}
-    </Flex>
-  );
-};
-
-WithDensitySupport.args = {
-  children:
-    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
+    return (
+      <Flex gap="spacing2Xl">
+        {Densities.map((density) => {
+          return (
+            <Flex
+              key={density.name}
+              flexDirection="column"
+              style={{ width: '230px' }}
+            >
+              <Heading marginBottom="spacingXs">{density.name}</Heading>
+              <DensityProvider value={density.density as Density}>
+                <Caption {...args} />
+              </DensityProvider>
+            </Flex>
+          );
+        })}
+      </Flex>
+    );
+  },
 };

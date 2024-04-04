@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
@@ -21,35 +21,39 @@ export default {
     propTypes: EntryCard['__docgenInfo'],
   },
   title: 'Components/Card/EntryCard',
-} as Meta;
+} as Meta<typeof EntryCard>;
 
-export const Default: Story<EntryCardProps> = (args) => {
-  return (
-    <EntryCard
-      {...args}
-      onClick={() => {
-        alert('click on item');
-      }}
-      actions={[
-        <MenuItem key="copy">Copy</MenuItem>,
-        <MenuItem key="delete">Delete</MenuItem>,
-      ]}
-    />
-  );
+type Story = StoryObj<typeof EntryCard>;
+
+export const Default: Story = {
+  args: {
+    status: 'published',
+    contentType: 'Content type',
+    title: 'Closer',
+  },
+  render: (args) => {
+    return (
+      <EntryCard
+        {...args}
+        onClick={() => {
+          alert('click on item');
+        }}
+        actions={[
+          <MenuItem key="copy">Copy</MenuItem>,
+          <MenuItem key="delete">Delete</MenuItem>,
+        ]}
+      />
+    );
+  },
 };
 
-Default.args = {
-  status: 'published',
-  contentType: 'Content type',
-  title: 'Closer',
-};
-
-export const WithLoadingState: Story<EntryCardProps> = (args) => {
-  return <EntryCard {...args} />;
-};
-
-WithLoadingState.args = {
-  isLoading: true,
+export const WithLoadingState: Story = {
+  args: {
+    isLoading: true,
+  },
+  render: (args) => {
+    return <EntryCard {...args} />;
+  },
 };
 
 const thumbnail = (
@@ -64,104 +68,106 @@ with the intent to reduce the overhead of creating UI by providing
 tools and guidance for digital teams building and extending
 Contentful products.`;
 
-export const Overview: Story<EntryCardProps> = () => {
-  const sizes: EntryCardProps['size'][] = ['default', 'small'];
+export const Overview: Story = {
+  render: () => {
+    const sizes: EntryCardProps['size'][] = ['default', 'small'];
 
-  return (
-    <>
-      <Flex flexDirection="column" gap="spacingL">
-        <Flex flexDirection="column" gap="spacingM">
-          <SectionHeading as="h3" marginBottom="none">
-            Default
-          </SectionHeading>
-
-          {sizes.map((size) => (
-            <EntryCard
-              key={size}
-              icon={<ClockIcon />}
-              thumbnailElement={thumbnail}
-              title="Forma 36"
-              contentType="Design system"
-              size={size}
-            />
-          ))}
-        </Flex>
-
-        <Flex flexDirection="column" gap="spacingM">
-          <SectionHeading as="h3" marginBottom="none">
-            Hover
-          </SectionHeading>
-
-          {sizes.map((size) => (
-            <EntryCard
-              key={size}
-              as="a"
-              href="https://contentful.com"
-              target="_blank"
-              actions={[
-                <MenuItem key="copy">Copy</MenuItem>,
-                <MenuItem key="delete">Delete</MenuItem>,
-              ]}
-              isHovered
-              thumbnailElement={thumbnail}
-              title="Forma 36"
-              description={description}
-              contentType="Design system"
-              size={size}
-            />
-          ))}
-        </Flex>
-
-        <Flex flexDirection="column" gap="spacingM">
-          <SectionHeading as="h3" marginBottom="none">
-            Selected
-          </SectionHeading>
-
-          {sizes.map((size) => (
-            <EntryCard
-              key={size}
-              isSelected
-              thumbnailElement={thumbnail}
-              title="Forma 36"
-              description={description}
-              contentType="Design system"
-              withDragHandle
-              size={size}
-            />
-          ))}
-        </Flex>
-
-        <Flex flexDirection="column" gap="spacingM">
-          <SectionHeading as="h3" marginBottom="none">
-            Entry card with very long title and description
-          </SectionHeading>
-          <EntryCard
-            title="verylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitle"
-            description="verylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescription"
-            contentType="Design system"
-            withDragHandle
-          />
-        </Flex>
-
+    return (
+      <>
         <Flex flexDirection="column" gap="spacingL">
           <Flex flexDirection="column" gap="spacingM">
             <SectionHeading as="h3" marginBottom="none">
-              Entities with custom status badges
+              Default
             </SectionHeading>
 
             {sizes.map((size) => (
               <EntryCard
                 key={size}
+                icon={<ClockIcon />}
                 thumbnailElement={thumbnail}
                 title="Forma 36"
-                contentType="External design system"
+                contentType="Design system"
                 size={size}
-                badge={<Badge variant={'positive'}>active</Badge>}
               />
             ))}
           </Flex>
+
+          <Flex flexDirection="column" gap="spacingM">
+            <SectionHeading as="h3" marginBottom="none">
+              Hover
+            </SectionHeading>
+
+            {sizes.map((size) => (
+              <EntryCard
+                key={size}
+                as="a"
+                href="https://contentful.com"
+                target="_blank"
+                actions={[
+                  <MenuItem key="copy">Copy</MenuItem>,
+                  <MenuItem key="delete">Delete</MenuItem>,
+                ]}
+                isHovered
+                thumbnailElement={thumbnail}
+                title="Forma 36"
+                description={description}
+                contentType="Design system"
+                size={size}
+              />
+            ))}
+          </Flex>
+
+          <Flex flexDirection="column" gap="spacingM">
+            <SectionHeading as="h3" marginBottom="none">
+              Selected
+            </SectionHeading>
+
+            {sizes.map((size) => (
+              <EntryCard
+                key={size}
+                isSelected
+                thumbnailElement={thumbnail}
+                title="Forma 36"
+                description={description}
+                contentType="Design system"
+                withDragHandle
+                size={size}
+              />
+            ))}
+          </Flex>
+
+          <Flex flexDirection="column" gap="spacingM">
+            <SectionHeading as="h3" marginBottom="none">
+              Entry card with very long title and description
+            </SectionHeading>
+            <EntryCard
+              title="verylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitleverylongtitle"
+              description="verylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescriptionverylongdescription"
+              contentType="Design system"
+              withDragHandle
+            />
+          </Flex>
+
+          <Flex flexDirection="column" gap="spacingL">
+            <Flex flexDirection="column" gap="spacingM">
+              <SectionHeading as="h3" marginBottom="none">
+                Entities with custom status badges
+              </SectionHeading>
+
+              {sizes.map((size) => (
+                <EntryCard
+                  key={size}
+                  thumbnailElement={thumbnail}
+                  title="Forma 36"
+                  contentType="External design system"
+                  size={size}
+                  badge={<Badge variant={'positive'}>active</Badge>}
+                />
+              ))}
+            </Flex>
+          </Flex>
         </Flex>
-      </Flex>
-    </>
-  );
+      </>
+    );
+  },
 };

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Checkbox, CheckboxGroupProps } from '../src';
 import { FormControl } from '@contentful/f36-forms';
@@ -13,57 +14,63 @@ export default {
     children: { control: { disable: true } },
     onChange: { control: { disable: true } },
   },
-};
+} as Meta<typeof Checkbox.Group>;
 
-export const Basic = (args: CheckboxGroupProps) => {
-  const [groupState, setGroupState] = useState(args.value || args.defaultValue);
-  const handleOnChange = (e) => {
-    e.persist();
-    const value = e.target.value;
-    setGroupState((prevState) =>
-      prevState.includes(value)
-        ? prevState.filter((v) => v !== value)
-        : [...prevState, value],
+type Story = StoryObj<typeof Checkbox.Group>;
+
+export const Basic: Story = {
+  args: {
+    defaultValue: ['apples', 'kiwis'],
+  },
+  render: (args) => {
+    const [groupState, setGroupState] = useState(
+      args.value || args.defaultValue,
     );
-    action('onChange')(e);
-  };
+    const handleOnChange = (e) => {
+      e.persist();
+      const value = e.target.value;
+      setGroupState((prevState) =>
+        prevState.includes(value)
+          ? prevState.filter((v) => v !== value)
+          : [...prevState, value],
+      );
+      action('onChange')(e);
+    };
 
-  const { value } = args;
-  useEffect(() => {
-    Array.isArray(value) && setGroupState(value);
-  }, [value]);
+    const { value } = args;
+    useEffect(() => {
+      Array.isArray(value) && setGroupState(value);
+    }, [value]);
 
-  return (
-    <Checkbox.Group {...args} value={groupState} onChange={handleOnChange}>
-      <Checkbox value="apples">Apples</Checkbox>
-      <Checkbox value="pears">Pears</Checkbox>
-      <Checkbox value="peaches">Peaches</Checkbox>
-      <Checkbox value="mangos">Mangos</Checkbox>
-      <Checkbox value="kiwis">Kiwis</Checkbox>
-      <Checkbox value="bananas">Bananas</Checkbox>
-    </Checkbox.Group>
-  );
+    return (
+      <Checkbox.Group {...args} value={groupState} onChange={handleOnChange}>
+        <Checkbox value="apples">Apples</Checkbox>
+        <Checkbox value="pears">Pears</Checkbox>
+        <Checkbox value="peaches">Peaches</Checkbox>
+        <Checkbox value="mangos">Mangos</Checkbox>
+        <Checkbox value="kiwis">Kiwis</Checkbox>
+        <Checkbox value="bananas">Bananas</Checkbox>
+      </Checkbox.Group>
+    );
+  },
 };
 
-Basic.args = {
-  defaultValue: ['apples', 'kiwis'],
-};
-
-export const Uncontrolled = (args: CheckboxGroupProps) => {
-  return (
-    <Checkbox.Group defaultValue={args.defaultValue}>
-      <Checkbox value="apples">Apples</Checkbox>
-      <Checkbox value="pears">Pears</Checkbox>
-      <Checkbox value="peaches">Peaches</Checkbox>
-      <Checkbox value="mangos">Mangos</Checkbox>
-      <Checkbox value="kiwis">Kiwis</Checkbox>
-      <Checkbox value="bananas">Bananas</Checkbox>
-    </Checkbox.Group>
-  );
-};
-
-Uncontrolled.args = {
-  defaultValue: ['apples', 'kiwis'],
+export const Uncontrolled: Story = {
+  args: {
+    defaultValue: ['apples', 'kiwis'],
+  },
+  render: (args: CheckboxGroupProps) => {
+    return (
+      <Checkbox.Group defaultValue={args.defaultValue}>
+        <Checkbox value="apples">Apples</Checkbox>
+        <Checkbox value="pears">Pears</Checkbox>
+        <Checkbox value="peaches">Peaches</Checkbox>
+        <Checkbox value="mangos">Mangos</Checkbox>
+        <Checkbox value="kiwis">Kiwis</Checkbox>
+        <Checkbox value="bananas">Bananas</Checkbox>
+      </Checkbox.Group>
+    );
+  },
 };
 
 export const WithFormControl = (args: CheckboxGroupProps) => {

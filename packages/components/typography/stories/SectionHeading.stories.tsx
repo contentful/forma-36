@@ -1,8 +1,9 @@
-import React, { ComponentProps } from 'react';
+import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Flex } from '@contentful/f36-core';
 import { type Density, DensityProvider } from '@contentful/f36-utils';
-import { Heading } from '@contentful/f36-typography';
-import { SectionHeading } from '../src';
+import { Heading } from '../src/Heading';
+import { SectionHeading } from '../src/SectionHeading';
 
 export default {
   title: 'Typography/SectionHeading',
@@ -13,52 +14,51 @@ export default {
   argTypes: {
     className: { control: { disable: true } },
   },
+} as Meta<typeof SectionHeading>;
+
+type Story = StoryObj<typeof SectionHeading>;
+
+export const Basic: Story = {
+  args: {
+    children:
+      'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
+  },
 };
 
-export const Basic = (props: ComponentProps<typeof SectionHeading>) => (
-  <SectionHeading {...props} />
-);
+export const WithDensitySupport: Story = {
+  args: {
+    children:
+      'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
+  },
+  render: (args) => {
+    const Densities = [
+      {
+        name: 'Low density',
+        density: 'low',
+      },
+      {
+        name: 'High density',
+        density: 'high',
+      },
+    ];
 
-Basic.args = {
-  children:
-    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
-};
-
-export const WithDensitySupport = (
-  props: ComponentProps<typeof SectionHeading>,
-) => {
-  const Densities = [
-    {
-      name: 'Low density',
-      density: 'low',
-    },
-    {
-      name: 'High density',
-      density: 'high',
-    },
-  ];
-
-  return (
-    <Flex gap="spacing2Xl">
-      {Densities.map((density) => {
-        return (
-          <Flex
-            key={density.name}
-            flexDirection="column"
-            style={{ width: '230px' }}
-          >
-            <Heading>{density.name}</Heading>
-            <DensityProvider value={density.density as Density}>
-              <SectionHeading {...props} />
-            </DensityProvider>
-          </Flex>
-        );
-      })}
-    </Flex>
-  );
-};
-
-WithDensitySupport.args = {
-  children:
-    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
+    return (
+      <Flex gap="spacing2Xl">
+        {Densities.map((density) => {
+          return (
+            <Flex
+              key={density.name}
+              flexDirection="column"
+              style={{ width: '230px' }}
+            >
+              <Heading>{density.name}</Heading>
+              <DensityProvider value={density.density as Density}>
+                <SectionHeading {...args} />
+              </DensityProvider>
+            </Flex>
+          );
+        })}
+      </Flex>
+    );
+  },
 };
