@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 06-04-2024
+
+**F36 Card** `v4.62.0`
+
+- Entry Card supports custom action button
+
 ## 04-04-2024
 
 **F36 Tokens** `v4.0.5`
