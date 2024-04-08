@@ -54,7 +54,7 @@
     "react-live": "2.4.1",
     "rehype-slug": "^5.1.0",
     "rehype-toc": "^3.0.2",
-    "remark": "^14.0.2",
+    "remark": "^15.0.1",
     "remark-code-import": "^1.1.1",
     "remark-code-titles": "^0.1.1",
     "use-debounce": "^8.0.4"
