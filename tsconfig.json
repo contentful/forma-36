@@ -34,12 +34,14 @@
     "skipLibCheck": true,
     "typeRoots": [
       "node_modules/@types",
+      "node_modules/@testing-library",
       "./types"
     ]
   },
   "include": [
     "packages",
-    "types"
+    "types",
+    "./setupTests.ts"
   ],
   "exclude": [
     "**/node_modules",

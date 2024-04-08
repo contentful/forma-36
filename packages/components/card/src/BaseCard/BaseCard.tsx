@@ -36,6 +36,7 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
     children,
     className,
     contentBodyProps,
+    customActionButton,
     header,
     href,
     icon,
@@ -65,12 +66,13 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
   const isInteractive = Boolean(onClick || href || withDragHandle);
   const hasHeader = Boolean(header);
   const defaultHeader =
-    type || icon || badge || actions ? (
+    type || icon || badge || actions || customActionButton ? (
       <DefaultCardHeader
         type={type}
         icon={icon}
         badge={badge}
         actions={actions}
+        customActionButton={customActionButton}
         actionsButtonProps={actionsButtonProps}
       />
     ) : null;
