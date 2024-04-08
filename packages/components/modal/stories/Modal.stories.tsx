@@ -1,6 +1,7 @@
 import React, { useState, MouseEventHandler, useRef } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Button } from '@contentful/f36-button';
+import { Badge } from '@contentful/f36-badge';
 
 import { type ModalProps } from '../src/Modal';
 import { Modal } from '../src';
@@ -147,4 +148,32 @@ export const ControllerModal: Story<ModalProps> = (props) => {
 
 ControllerModal.args = {
   title: 'Centered modal',
+};
+
+export const ModalWithChildComponentInHeader: Story<ModalProps> = (props) => {
+  const [isShown, setShown] = useState(true);
+
+  return (
+    <div>
+      <Button onClick={() => setShown(true)}>Open modal</Button>
+      <Modal
+        {...props}
+        isShown={isShown}
+        onClose={() => setShown(false)}
+        size="fullWidth"
+      >
+        {() => (
+          <>
+            <Modal.Header
+              title="With Child Component"
+              onClose={() => setShown(false)}
+            >
+              <Badge>Child Component</Badge>
+            </Modal.Header>
+            <Modal.Content>Modal content</Modal.Content>
+          </>
+        )}
+      </Modal>
+    </div>
+  );
 };

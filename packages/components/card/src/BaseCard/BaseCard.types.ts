@@ -42,6 +42,10 @@ export type BaseCardInternalProps = CommonProps &
      */
     badge?: ReactNode;
     /**
+     * An element to render as the action button
+     */
+    customActionButton?: ReactNode;
+    /**
      * Passing href into the Card. You need to also add property as="a" to make it rendered as <a />
      */
     href?: string;

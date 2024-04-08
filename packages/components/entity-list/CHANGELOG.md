@@ -1,5 +1,47 @@
 # Change Log
 
+## 4.62.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.62.0
+  - @contentful/f36-button@4.62.0
+  - @contentful/f36-core@4.62.0
+  - @contentful/f36-drag-handle@4.62.0
+  - @contentful/f36-icon@4.62.0
+  - @contentful/f36-menu@4.62.0
+  - @contentful/f36-skeleton@4.62.0
+  - @contentful/f36-typography@4.62.0
+
+## 4.61.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.61.0
+  - @contentful/f36-button@4.61.0
+  - @contentful/f36-core@4.61.0
+  - @contentful/f36-drag-handle@4.61.0
+  - @contentful/f36-icon@4.61.0
+  - @contentful/f36-menu@4.61.0
+  - @contentful/f36-skeleton@4.61.0
+  - @contentful/f36-typography@4.61.0
+
+## 4.60.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.60.3
+  - @contentful/f36-button@4.60.3
+  - @contentful/f36-core@4.60.3
+  - @contentful/f36-drag-handle@4.60.3
+  - @contentful/f36-icon@4.60.3
+  - @contentful/f36-menu@4.60.3
+  - @contentful/f36-skeleton@4.60.3
+  - @contentful/f36-typography@4.60.3
+
 ## 4.60.2
 
 ### Patch Changes
