@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.0.5
+
+### Patch Changes
+
+- [#2681](https://github.com/contentful/forma-36/pull/2681) [`80e233123`](https://github.com/contentful/forma-36/commit/80e23312307feeffb57bb0c5ed90115e53d0976c) Thanks [@2wce](https://github.com/2wce)! - update default warning variant color
+
 ## 4.0.4
 
 ### Patch Changes
