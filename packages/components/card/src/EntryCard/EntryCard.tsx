@@ -81,6 +81,7 @@ function _EntryCard<
     actions,
     children,
     className,
+    customActionButton,
     src,
     status,
     thumbnailElement,
@@ -108,6 +109,7 @@ function _EntryCard<
       actions={actions}
       badge={badge ? badge : entryStatusBadge}
       className={cx(styles.root, className)}
+      customActionButton={customActionButton}
       withDragHandle={withDragHandle}
       ref={forwardedRef}
       type={contentType}

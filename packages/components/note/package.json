@@ -1,17 +1,17 @@
 {
   "name": "@contentful/f36-note",
-  "version": "4.61.0",
+  "version": "4.62.0",
   "description": "Forma 36: Note component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-button": "^4.61.0",
-    "@contentful/f36-core": "^4.61.0",
-    "@contentful/f36-icon": "^4.61.0",
+    "@contentful/f36-button": "^4.62.0",
+    "@contentful/f36-core": "^4.62.0",
+    "@contentful/f36-icon": "^4.62.0",
     "@contentful/f36-icons": "^4.27.0",
     "@contentful/f36-tokens": "^4.0.4",
-    "@contentful/f36-typography": "^4.61.0",
+    "@contentful/f36-typography": "^4.62.0",
     "emotion": "^10.0.17"
   },
   "devDependencies": {
