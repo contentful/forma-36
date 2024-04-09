@@ -128,5 +128,12 @@ module.exports = {
         'no-console': 'off',
       },
     },
+    {
+      // Codemods all have default exports
+      files: ['**/packages/forma-36-codemod/**/*'],
+      rules: {
+        'import/no-default-export': 'off',
+      },
+    },
   ],
 };
