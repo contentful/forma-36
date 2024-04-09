@@ -22,6 +22,7 @@ type GenerateIconParameters = {
   props?: GeneratedIconProps;
   /**
    * Whether or not to trim the icon width, i.e. set `width` to `auto`
+   * @deprecated IconsV5 will no longer support the trimmed option.
    */
   trimmed?: IconProps['trimmed'];
   /**

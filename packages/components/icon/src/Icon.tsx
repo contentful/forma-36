@@ -74,6 +74,7 @@ export type IconInternalProps = CommonProps & {
   size?: IconSize;
   /**
    * Whether or not to trim the icon width, i.e. set `width` to `auto`
+   * @deprecated IconsV5 will no longer support the trimmed option.
    */
   trimmed?: boolean;
   /**
@@ -126,6 +127,16 @@ export function _Icon<E extends React.ElementType = IconComponent>(
   }: IconProps<E>,
   forwardedRef: React.Ref<any>,
 ) {
+  React.useEffect(() => {
+    if (trimmed) {
+      // eslint-disable-next-line no-console -- allow this warning until we refactor
+      console.warn(
+        'Forma 36: Trimmed Icon variants are deprecated and will be removed in the next Icon iteration.',
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const shared = {
     className: cx(
       css({
