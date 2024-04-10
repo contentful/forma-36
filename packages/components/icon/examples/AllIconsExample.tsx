@@ -11,8 +11,6 @@ import {
 } from '@contentful/f36-components';
 
 export default function AllIconsExample() {
-  console.log(f36icons);
-
   const [deprecatedIcons, availableIcons] = Object.entries(f36icons).reduce(
     (result, [name, icon]) => {
       result[name.includes('Trimmed') ? 0 : 1].push([name, icon]);
