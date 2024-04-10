@@ -1,6 +1,10 @@
 import React from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
+/**
+ * @deprecated Trimmed icons will be removed in a future major release.
+ * Please try to adapt to the untrimmed icon variant EmbeddedEntryBlock.
+ */
 export const EmbeddedEntryBlockTrimmed = /*#__PURE__*/ generateIcon({
   name: 'EmbeddedEntryBlockTrimmed',
   path: (
