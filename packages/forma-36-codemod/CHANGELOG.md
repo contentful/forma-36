@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.4.0
+
+### Minor Changes
+
+- [#2264](https://github.com/contentful/forma-36/pull/2264) [`9f63a4028`](https://github.com/contentful/forma-36/commit/9f63a4028fd03da28fe719f377d03023ae9fd7b5) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(f36-codemod): ESM
+
 ## 4.3.2
 
 ### Patch Changes
