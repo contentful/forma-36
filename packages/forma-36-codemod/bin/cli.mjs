@@ -1,13 +1,18 @@
-const path = require('path');
-const chalk = require('chalk');
-const execa = require('execa');
-const isGitClean = require('is-git-clean');
-const inquirer = require('inquirer');
-const meow = require('meow');
-const globby = require('globby');
-const inquirerChoices = require('./inquirer-choices');
-const updateDependencies = require('./updateDependencies');
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import chalk from 'chalk';
+import execa from 'execa';
+import isGitClean from 'is-git-clean';
+import inquirer from 'inquirer';
+import meow from 'meow';
+import globby from 'globby';
+import { createRequire } from 'module';
+import * as inquirerChoices from './inquirer-choices.mjs';
+import updateDependencies from './updateDependencies.mjs';
 
+const require = createRequire(import.meta.url);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const transformerDirectory = path.join(__dirname, '../', 'transforms');
 const jscodeshiftExecutable = require.resolve('.bin/jscodeshift');
 
@@ -94,7 +99,7 @@ function expandFilePathsIfNeeded(files) {
   return shouldExpandFiles ? globby.sync(files) : files;
 }
 
-function run() {
+export function run() {
   const cli = meow(
     {
       description: 'Codemods for updating Forma-36 codes',
@@ -235,7 +240,3 @@ function run() {
       });
     });
 }
-
-module.exports = {
-  run,
-};

@@ -1,11 +1,11 @@
-const path = require('path');
-const fs = require('fs');
-const chalk = require('chalk');
-const execa = require('execa');
-const semverSatisfies = require('semver/functions/satisfies');
-const readPkgUp = require('read-pkg-up');
-const packages = require('./packages-list');
-const inquirer = require('inquirer');
+import path from 'node:path';
+import fs from 'node:fs';
+import chalk from 'chalk';
+import execa from 'execa';
+import semverSatisfies from 'semver/functions/satisfies.js';
+import readPkgUp from 'read-pkg-up';
+import inquirer from 'inquirer';
+import * as packages from './packages-list.mjs';
 
 const dependencyProperties = [
   'clientDependencies',
@@ -63,7 +63,8 @@ function getOutput({ newPackages, removePackages, pkgManager = null }) {
   }
 }
 
-async function updateDependencies(targetDir) {
+// eslint-disable-next-line import/no-default-export
+export default async function updateDependencies(targetDir) {
   const cwd = path.resolve(process.cwd(), targetDir);
   const closestPkgJson = readPkgUp.sync({ cwd });
   let removePackages = packages.PACKAGES_REMOVE;
@@ -154,5 +155,3 @@ async function updateDependencies(targetDir) {
       return getOutput({ newPackages, removePackages, pkgManager });
     });
 }
-
-module.exports = updateDependencies;

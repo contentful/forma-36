@@ -1,8 +1,8 @@
 {
   "name": "@contentful/f36-codemod",
   "description": "Forma 36 Codemod",
-  "version": "4.3.2",
-  "main": "bin/f36-codemod.js",
+  "version": "4.5.0",
+  "main": "bin/f36-codemod.mjs",
   "license": "MIT",
   "files": [
     "package.json",
@@ -11,7 +11,7 @@
     "utils"
   ],
   "bin": {
-    "f36-codemod": "./bin/f36-codemod.js"
+    "f36-codemod": "./bin/f36-codemod.mjs"
   },
   "scripts": {
     "test": "jest",
@@ -19,6 +19,7 @@
     "lint": "eslint ."
   },
   "devDependencies": {
+    "@types/semver": "^7.3.12",
     "eslint": "^8.43.0",
     "jest": "^29.3.1"
   },

@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.28.0
+
+### Minor Changes
+
+- [#2706](https://github.com/contentful/forma-36/pull/2706) [`64511b6e9`](https://github.com/contentful/forma-36/commit/64511b6e9c6538c35632d1844122b3ab7c50023c) Thanks [@Lelith](https://github.com/Lelith)! - Deprecate trimmed icon variations
+
+### Patch Changes
+
+- Updated dependencies [[`64511b6e9`](https://github.com/contentful/forma-36/commit/64511b6e9c6538c35632d1844122b3ab7c50023c)]:
+  - @contentful/f36-icon@4.63.0
+  - @contentful/f36-core@4.63.0
+
 ## 4.27.0
 
 ### Minor Changes
