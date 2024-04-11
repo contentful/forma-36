@@ -74,6 +74,7 @@ export type IconInternalProps = CommonProps & {
   size?: IconSize;
   /**
    * Whether or not to trim the icon width, i.e. set `width` to `auto`
+   * @deprecated Trimmed icons will be removed in a future major release. Please try to adapt to the untrimmed icon variant.
    */
   trimmed?: boolean;
   /**
