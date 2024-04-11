@@ -1,5 +1,21 @@
 # Change Log
 
+## 4.64.0
+
+### Minor Changes
+
+- [#2709](https://github.com/contentful/forma-36/pull/2709) [`34f853cf9`](https://github.com/contentful/forma-36/commit/34f853cf979257a31e63f70ac351cd5729949a73) Thanks [@veu](https://github.com/veu)! - Add `showClearButton` prop to manually control clear button visibility
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.64.0
+  - @contentful/f36-core@4.64.0
+  - @contentful/f36-forms@4.64.0
+  - @contentful/f36-popover@4.64.0
+  - @contentful/f36-skeleton@4.64.0
+  - @contentful/f36-typography@4.64.0
+
 ## 4.63.0
 
 ### Patch Changes
