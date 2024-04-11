@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 11-04-2024
+
+**F36 Codemod** `v4.4.0`
+
+- feat(f36-codemod): ESM
+
 ## 06-04-2024
 
 **F36 Card** `v4.62.0`
