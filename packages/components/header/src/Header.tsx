@@ -50,7 +50,7 @@ type HeaderInternalProps = WithBackButtonOrNot & {
   /**
    * The title of the element this header pertains to.
    */
-  title?: string;
+  title?: ReactElement | string;
   metadata?: ReactNode;
 };
 
