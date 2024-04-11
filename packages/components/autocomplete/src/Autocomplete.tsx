@@ -179,6 +179,10 @@ export interface AutocompleteProps<ItemType>
    * @param event
    */
   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
+  /**
+   * Manually control when the button to clear the input value is shown
+   */
+  showClearButton?: boolean;
 }
 
 function _Autocomplete<ItemType>(
@@ -222,6 +226,7 @@ function _Autocomplete<ItemType>(
     usePortal = false,
     testId = 'cf-autocomplete',
     popoverTestId = 'cf-autocomplete-container',
+    showClearButton: showClearButtonProp,
   } = props;
 
   type GroupType = GenericGroupType<ItemType>;
@@ -357,6 +362,8 @@ function _Autocomplete<ItemType>(
   const menuProps = getMenuProps();
   let elementStartIndex = 0;
 
+  const showClearButton = showClearButtonProp ?? inputValue;
+
   return (
     <div
       data-test-id={testId}
@@ -403,12 +410,12 @@ function _Autocomplete<ItemType>(
             <IconButton
               {...toggleProps}
               ref={mergeRefs(toggleProps.ref, toggleRef)}
-              aria-label={inputValue ? 'Clear' : 'Show list'}
+              aria-label={showClearButton ? 'Clear' : 'Show list'}
               className={styles.toggleButton}
               variant="transparent"
-              icon={inputValue ? <CloseIcon variant="muted" /> : icon}
+              icon={showClearButton ? <CloseIcon variant="muted" /> : icon}
               onClick={() => {
-                if (inputValue) {
+                if (showClearButton) {
                   handleInputValueChange('');
                 } else {
                   toggleMenu();
