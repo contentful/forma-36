@@ -4,6 +4,7 @@ import React, {
   type Ref,
   type ReactElement,
   type ReactNode,
+  isValidElement,
 } from 'react';
 import { cx } from 'emotion';
 import {
@@ -87,7 +88,15 @@ function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
           <Segmentation>
             {withBackButton && <BackButton {...backButtonProps} />}
             {breadcrumbs && <Breadcrumb breadcrumbs={breadcrumbs} />}
-            {title && <Subheading className={styles.title}>{title}</Subheading>}
+            {title && (
+              <div className={styles.noWrap}>
+                {isValidElement(title) ? (
+                  title
+                ) : (
+                  <Subheading className={styles.title}>{title}</Subheading>
+                )}
+              </div>
+            )}
           </Segmentation>
           {metadata && (
             <Flex alignItems="center" gap="spacing2Xs">
