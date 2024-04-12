@@ -11,6 +11,7 @@ export default function HeaderExample() {
         {
           content: 'Content Types',
           url: '#',
+          onClick: () => console.log('Content Types clicked'),
         },
       ]}
     />
