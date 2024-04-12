@@ -217,6 +217,18 @@ describe('Autocomplete', () => {
       expect(screen.getByRole('listbox')).toBeVisible();
       expect(screen.getAllByLabelText('Loading component...')).toHaveLength(3);
     });
+
+    it('hides the clear button when "showClearButton" is false', async () => {
+      const user = userEvent.setup();
+
+      renderComponent({ showClearButton: false });
+
+      // Type one letter in the input which would show "Clear" button if not explicitly hidden
+      await user.type(screen.getByRole('textbox'), 'a');
+
+      // checks if the "Show list" button is visible which means the "Clear" button is hidden
+      expect(screen.getByLabelText('Show list')).toBeVisible();
+    });
   });
 
   describe('items is an array of objects', () => {
