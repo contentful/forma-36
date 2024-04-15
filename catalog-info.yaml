@@ -22,4 +22,4 @@ metadata:
 spec:
   type: library 
   lifecycle: production  
-  owner: group:team-core-experience
+  owner: group:team-isotopes
