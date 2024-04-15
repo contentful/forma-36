@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import { CheckCircleIcon } from '@contentful/f36-icons';
+import { CheckCircleIcon } from '@contentful/f36-icons-v4';
 import userEvent from '@testing-library/user-event';
 import { Avatar } from './Avatar';
 
