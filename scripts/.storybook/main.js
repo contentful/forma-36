@@ -35,6 +35,16 @@ module.exports = {
       },
     };
 
+    const customConfig = { ...config };
+
+    if (!customConfig.resolve) {
+      customConfig.resolve = {};
+    }
+
+    customConfig.resolve.extensionAlias = {
+      '.js': ['.tsx', '.ts', '.js'],
+    };
+
     return config;
   },
 };
