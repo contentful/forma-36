@@ -11,7 +11,7 @@ export function generateForma36Icon(PhosphorIcon) {
 
   return generateComponentWithVariants({
     variants: {
-      [IconVariant.Active]: (props) => <Icon {...props} weight="fill" />,
+      [IconVariant.Active]: (props) => <Icon {...props} weight="duotone" />,
       [IconVariant.Default]: Icon,
     },
   });
