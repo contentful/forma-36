@@ -3,8 +3,6 @@
   "version": "5.0.0-alpha.2",
   "description": "Forma 36: Icon components",
   "license": "MIT",
-  "main": "dist/esm/index.js",
-  "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
   "exports": {
     ".": {
@@ -23,7 +21,7 @@
   "scripts": {
     "build": "npm run build:esm && npm run build:types",
     "build:types": "tsc --outDir ./dist/types --emitDeclarationOnly",
-    "build:esm": "swc ./src -d ./dist/esm --strip-leading-paths -C module.type=es6"
+    "build:esm": "swc ./src -d ./dist/esm --strip-leading-paths"
   },
   "dependencies": {
     "@contentful/f36-core": "^4.80.4",
