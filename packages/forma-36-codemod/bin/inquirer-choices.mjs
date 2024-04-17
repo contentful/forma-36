@@ -11,24 +11,48 @@ export const PARSER_CHOICES = [
   },
 ];
 
-export const SETUP_CHOICES = [
+export const INIT_CHOICES = [
   {
-    name: 'run-all-v4: Update package json with new packages and remove old ones, remove v3 CSS imports and run all possible codemods for components.',
-    value: 'run-all-v4',
+    name: 'v4: List all available codemods for Forma 36 v4',
+    value: 'v4',
   },
   {
-    name: 'update-package-json: Updates package.json file with correct packages, and remove v3 CSS imports',
-    value: 'update-package-json',
-  },
-  {
-    name: 'migrate-all-components-to-v4: Run all existing codemods',
-    value: 'migrate-all-components-to-v4',
-  },
-  {
-    name: 'migrate-specific-component-to-v4: Select which v4 codemod you want to apply',
-    value: 'migrate-specific-component-to-v4',
+    name: 'v5: List all available codemods for Forma 36 v5',
+    value: 'v5',
   },
 ];
+
+export const SETUP_CHOICES = {
+  v4: [
+    {
+      name: 'run-all-v4: Update package json with new packages and remove old ones, remove v3 CSS imports and run all possible codemods for components.',
+      short: 'Run all v4 codemods',
+      value: 'run-all-v4',
+    },
+    {
+      name: 'update-package-json: Updates package.json file with correct packages, and remove v3 CSS imports',
+      short: 'Update package.json',
+      value: 'update-package-json',
+    },
+    {
+      name: 'migrate-all-components-to-v4: Run all existing codemods',
+      short: 'Migrate all components',
+      value: 'migrate-all-components-to-v4',
+    },
+    {
+      name: 'migrate-specific-component-to-v4: Select which v4 codemod you want to apply',
+      short: 'Migrate specific component',
+      value: 'migrate-specific-component-to-v4',
+    },
+  ],
+  v5: [
+    {
+      name: 'v5-icons: Update package json with new icon package and update usage on codebase.',
+      short: 'Update icons',
+      value: 'v5/icons',
+    },
+  ],
+};
 
 const V4_CODEMODS = [
   {

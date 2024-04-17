@@ -151,19 +151,25 @@ export function run() {
     .prompt([
       {
         type: 'list',
-        name: 'v4setup',
-        message: 'Which codemod you would like to use?',
+        name: 'version',
+        message: 'Which codemod version would you like to use?',
+        pageSize: inquirerChoices.INIT_CHOICES.length,
+        choices: inquirerChoices.INIT_CHOICES,
+      },
+      {
+        type: 'list',
+        name: 'setup',
+        message: (answers) =>
+          `Which ${answers.version} codemod you would like to use?`,
         when: !cli.input[0],
-        pageSize: inquirerChoices.TRANSFORMS_CHOICES.length,
-        choices: inquirerChoices.SETUP_CHOICES,
+        choices: (answers) => inquirerChoices.SETUP_CHOICES[answers.version],
       },
       {
         type: 'checkbox',
         name: 'transformer',
         message: 'Which component would you like to migrate to v4?',
         when: (answers) =>
-          !cli.input[0] &&
-          answers.v4setup === 'migrate-specific-component-to-v4',
+          !cli.input[0] && answers.setup === 'migrate-specific-component-to-v4',
         pageSize: inquirerChoices.TRANSFORMS_CHOICES.length,
         choices: inquirerChoices.TRANSFORMS_CHOICES,
       },
@@ -173,7 +179,7 @@ export function run() {
         message: 'Which dialect of JavaScript do you use?',
         default: 'babel',
         when: (answers) =>
-          !cli.flags.parser && answers.v4setup !== 'update-package-json',
+          !cli.flags.parser && answers.setup !== 'update-package-json',
         pageSize: inquirerChoices.PARSER_CHOICES.length,
         choices: inquirerChoices.PARSER_CHOICES,
       },
@@ -187,14 +193,14 @@ export function run() {
       },
     ])
     .then(async (answers) => {
-      const { files, transformer, parser, v4setup } = answers;
+      const { files, transformer, parser, setup, version } = answers;
 
       const filesBeforeExpansion = cli.input[1] || files;
       const filesExpanded = expandFilePathsIfNeeded([filesBeforeExpansion]);
       const selectedParser = cli.flags.parser || parser;
 
-      if (v4setup === 'update-package-json') {
-        await updateDependencies(filesBeforeExpansion);
+      if (setup === 'update-package-json') {
+        await updateDependencies(filesBeforeExpansion, version);
         return runTransform({
           files: filesExpanded,
           flags: cli.flags,
@@ -222,14 +228,18 @@ export function run() {
         });
       }
 
-      if (v4setup === 'run-all-v4') {
-        await updateDependencies(filesBeforeExpansion);
-        runTransform({
+      if (setup === 'run-all-v4') {
+        await updateDependencies(filesBeforeExpansion, version);
+        return runTransform({
           files: filesExpanded,
           flags: cli.flags,
           parser: selectedParser,
           transformer: 'v4-clean-css',
         });
+      }
+
+      if (setup === 'v5/icons') {
+        return await updateDependencies(filesBeforeExpansion, version);
       }
 
       return runTransform({

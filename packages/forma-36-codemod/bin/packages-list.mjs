@@ -8,3 +8,7 @@ export const PACKAGES_REMOVE = [
   '@contentful/forma-36-react-components',
   '@contentful/forma-36-tokens',
 ];
+
+export const V5_PACKAGES = {
+  '@contentful/f36-icons-alpha': 'npm:@contentful/f36-icons@alpha',
+};
