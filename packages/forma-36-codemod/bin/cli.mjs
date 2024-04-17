@@ -239,7 +239,13 @@ export function run() {
       }
 
       if (setup === 'v5/icons') {
-        return await updateDependencies(filesBeforeExpansion, version);
+        await updateDependencies(filesBeforeExpansion, version);
+        return runTransform({
+          files: filesExpanded,
+          flags: cli.flags,
+          parser: selectedParser,
+          transformer: 'v5/icons',
+        });
       }
 
       return runTransform({
