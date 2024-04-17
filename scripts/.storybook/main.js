@@ -41,6 +41,7 @@ module.exports = {
       customConfig.resolve = {};
     }
 
+    // Resolve ESM relative paths .js -> .tsx
     customConfig.resolve.extensionAlias = {
       '.js': ['.tsx', '.ts', '.js'],
     };
