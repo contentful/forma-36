@@ -11,7 +11,7 @@ export function wrapPhosphorIcon(PhosphorIcon: PhosphorIcon) {
     color = isActive ? tokens.blue500 : tokens.gray900,
     size = 'medium',
     ...props
-  }: GeneratedIconProps & { weight?: 'fill' }) => {
+  }: GeneratedIconProps & { weight?: 'duotone' }) => {
     return (
       <Icon
         {...props}
