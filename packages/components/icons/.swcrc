@@ -11,5 +11,8 @@
       "mangle": false
     }
   },
+  "module": {
+    "type": "es6"
+  },
   "minify": false
 }
