@@ -6,6 +6,7 @@ export const getBreadcrumbStyles = () => ({
     color: tokens.gray500,
     fontSize: tokens.fontSizeL,
     fontWeight: tokens.fontWeightNormal,
+    maxWidth: 'none',
     paddingLeft: tokens.spacingXs,
     paddingRight: tokens.spacingXs,
   }),
