@@ -64,12 +64,11 @@ function getOutput({ newPackages, removePackages, pkgManager = null }) {
 }
 
 // eslint-disable-next-line import/no-default-export
-export default async function updateDependencies(targetDir, version) {
+export default async function updateDependencies(targetDir) {
   const cwd = path.resolve(process.cwd(), targetDir);
   const closestPkgJson = readPkgUp.sync({ cwd });
-  let removePackages = version === 'v4' ? packages.PACKAGES_REMOVE : [];
-  const packagesForVersion =
-    version === 'v4' ? packages.PACKAGES_UPGRADE : packages.V5_PACKAGES;
+  let removePackages = packages.PACKAGES_REMOVE;
+  const packagesForVersion = packages.PACKAGES_UPGRADE;
   let newPackages = Object.keys(packagesForVersion);
 
   // If no package.json is found

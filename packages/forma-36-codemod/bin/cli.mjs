@@ -129,49 +129,16 @@ export function run() {
     checkGitStatus(cli.flags.force);
   }
 
-  if (
-    cli.input[0] &&
-    !inquirerChoices.TRANSFORMS_CHOICES.find((x) => x.value === cli.input[0]) &&
-    !cli.input[0]
-      ?.split(',')
-      .every((t) =>
-        inquirerChoices.TRANSFORMS_CHOICES.find((x) => x.value === t),
-      )
-  ) {
-    console.error('Invalid transform choice, pick one of:');
-    console.error(
-      inquirerChoices.TRANSFORMS_CHOICES.filter((x) => x.value)
-        .map((x) => '- ' + x.value)
-        .join('\n'),
-    );
-    process.exit(1);
-  }
+  const path = cli.input[0];
 
   inquirer
     .prompt([
       {
         type: 'list',
-        name: 'version',
-        message: 'Which codemod version would you like to use?',
-        pageSize: inquirerChoices.INIT_CHOICES.length,
-        choices: inquirerChoices.INIT_CHOICES,
-      },
-      {
-        type: 'list',
         name: 'setup',
-        message: (answers) =>
-          `Which ${answers.version} codemod you would like to use?`,
-        when: !cli.input[0],
-        choices: (answers) => inquirerChoices.SETUP_CHOICES[answers.version],
-      },
-      {
-        type: 'checkbox',
-        name: 'transformer',
-        message: 'Which component would you like to migrate to v4?',
-        when: (answers) =>
-          !cli.input[0] && answers.setup === 'migrate-specific-component-to-v4',
-        pageSize: inquirerChoices.TRANSFORMS_CHOICES.length,
-        choices: inquirerChoices.TRANSFORMS_CHOICES,
+        message: `Which codemod you would like to use?`,
+        pageSize: inquirerChoices.SETUP_CHOICES.length,
+        choices: inquirerChoices.SETUP_CHOICES,
       },
       {
         type: 'list',
@@ -187,27 +154,17 @@ export function run() {
         type: 'input',
         name: 'files',
         message: 'On which files or directory should the codemods be applied?',
-        when: !cli.input[1],
+        when: !path,
         default: '.',
         filter: (files) => files.trim(),
       },
     ])
     .then(async (answers) => {
-      const { files, transformer, parser, setup, version } = answers;
+      const { files, parser, setup } = answers;
 
-      const filesBeforeExpansion = cli.input[1] || files;
+      const filesBeforeExpansion = path || files;
       const filesExpanded = expandFilePathsIfNeeded([filesBeforeExpansion]);
       const selectedParser = cli.flags.parser || parser;
-
-      if (setup === 'update-package-json') {
-        await updateDependencies(filesBeforeExpansion, version);
-        return runTransform({
-          files: filesExpanded,
-          flags: cli.flags,
-          parser: selectedParser,
-          transformer: 'v4-clean-css',
-        });
-      }
 
       if (!filesExpanded.length) {
         console.log(
@@ -216,30 +173,8 @@ export function run() {
         return null;
       }
 
-      const selectedTransformer = cli.input[0]?.split(',') || transformer;
-      if (selectedTransformer) {
-        return selectedTransformer.forEach((t) => {
-          runTransform({
-            files: filesExpanded,
-            flags: cli.flags,
-            parser: selectedParser,
-            transformer: t,
-          });
-        });
-      }
-
-      if (setup === 'run-all-v4') {
-        await updateDependencies(filesBeforeExpansion, version);
-        return runTransform({
-          files: filesExpanded,
-          flags: cli.flags,
-          parser: selectedParser,
-          transformer: 'v4-clean-css',
-        });
-      }
-
       if (setup === 'v5/icons') {
-        await updateDependencies(filesBeforeExpansion, version);
+        await updateDependencies(filesBeforeExpansion);
         return runTransform({
           files: filesExpanded,
           flags: cli.flags,
@@ -247,12 +182,5 @@ export function run() {
           transformer: 'v5/icons',
         });
       }
-
-      return runTransform({
-        files: filesExpanded,
-        flags: cli.flags,
-        parser: selectedParser,
-        transformer: 'v4-all',
-      });
     });
 }
