@@ -16,10 +16,10 @@ const __dirname = path.dirname(__filename);
 const transformerDirectory = path.join(__dirname, '../', 'transforms');
 const jscodeshiftExecutable = require.resolve('.bin/jscodeshift');
 
-function checkGitStatus(force) {
+function checkGitStatus(force, cwd) {
   let clean = false;
   try {
-    clean = isGitClean.sync(process.cwd());
+    clean = isGitClean.sync(cwd);
   } catch (err) {
     if (err && err.stderr && err.stderr.indexOf('Not a git repository') >= 0) {
       if (!force) {
@@ -125,11 +125,11 @@ export function run() {
     },
   );
 
-  if (!cli.flags.dry) {
-    checkGitStatus(cli.flags.force);
-  }
-
   const path = cli.input[0];
+
+  if (!cli.flags.dry) {
+    checkGitStatus(cli.flags.force, path);
+  }
 
   inquirer
     .prompt([
