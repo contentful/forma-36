@@ -7,7 +7,6 @@ const { changeProperties } = require('./changeProperties');
 const { updatePropertyValue } = require('./updatePropertyValue');
 const { getProperty } = require('./getProperty');
 const { addImport } = require('./addImport');
-const { updateIcons, addIconImports } = require('./updateIcons');
 const { removeComponentImport } = require('./removeComponentImport');
 const { changeImport } = require('./changeImport');
 const { changeComponentName } = require('./changeComponentName');
@@ -29,8 +28,6 @@ module.exports = {
   updatePropertyValue,
   getProperty,
   addImport,
-  updateIcons,
-  addIconImports,
   removeComponentImport,
   changeImport,
   changeComponentName,

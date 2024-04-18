@@ -2,7 +2,7 @@ const addImports = require('jscodeshift-add-imports');
 
 /**
  * Adds imports to the source code
- * @param {j} j - jscodeshift API
+ * @param {*} j - jscodeshift API
  * @param {*} source - original source code
  * @param {*} imports - array of imports to add
  * @returns source with added imports
