@@ -17,6 +17,7 @@ const { createComponent } = require('./createComponent');
 const { getChildren } = require('./getChildren');
 const { getNewProp } = require('./getNewProp');
 const { updateComponentsToImport } = require('./updateComponentsToImport');
+const { pipe } = require('./pipe');
 
 module.exports = {
   getComponentLocalName,
@@ -39,4 +40,5 @@ module.exports = {
   getChildren,
   getNewProp,
   updateComponentsToImport,
+  pipe,
 };

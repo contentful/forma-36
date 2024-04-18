@@ -1,5 +1,5 @@
-module.exports.getFormaImport = function getFormaImport() {
-  return process.env.FORMA_IMPORT || '@contentful/forma-36-react-components';
+module.exports.getImport = function getImport(packageName = 'f36-components') {
+  return process.env.FORMA_IMPORT || `@contentful/${packageName}`;
 };
 
 module.exports.shouldSkipUpdateImport = function shouldSkipUpdateImport() {
