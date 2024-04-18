@@ -105,8 +105,7 @@ export function run() {
       description: 'Codemods for updating Forma-36 codes',
       help: `
     Usage
-      $ npx @contentful/f36-codemod <transform> <path> <...options>
-        transform        Check all included transformers on https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod#included-transforms.
+      $ npx @contentful/f36-codemod <path> <...options>
         path             Files or directory to transform. Can be a glob like src/**.test.js
     Options
       --force            Bypass Git repository safety checks and forcibly run codemods
