@@ -3,8 +3,7 @@ const {
   changeComponentName,
   changeImport,
 } = require('../../utils');
-const { getImport } = require('../../utils/v5');
-const { shouldSkipUpdateImport } = require('../../utils/config');
+const { shouldSkipUpdateImport, getImport } = require('../../utils/config');
 
 // V4 icon name : V5 icon name
 const iconsMap = {
