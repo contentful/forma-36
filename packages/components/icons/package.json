@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-icons",
-  "version": "5.0.0-alpha.3",
+  "version": "5.0.0-alpha.4",
   "description": "Forma 36: Icon components",
   "license": "MIT",
   "types": "dist/types/index.d.ts",
@@ -8,6 +8,7 @@
     ".": {
       "types": "./dist/types/index.d.ts",
       "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
       "default": "./dist/esm/index.js"
     },
     "./package.json": "./package.json"
@@ -19,9 +20,10 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "npm run build:esm && npm run build:types",
-    "build:types": "tsc --outDir ./dist/types --emitDeclarationOnly",
-    "build:esm": "swc ./src -d ./dist/esm --strip-leading-paths"
+    "build": "npm run build:esm && npm run build:cjs && npm run build:types",
+    "build:cjs": "swc ./src -d ./dist/cjs --strip-leading-paths -C module.type=commonjs",
+    "build:esm": "swc ./src -d ./dist/esm --strip-leading-paths",
+    "build:types": "tsc --outDir ./dist/types --emitDeclarationOnly"
   },
   "dependencies": {
     "@contentful/f36-core": "^4.67.3",
