@@ -62,7 +62,7 @@
   "devDependencies": {
     "@contentful/rich-text-types": "^15.11.1",
     "@emotion/babel-preset-css-prop": "^10.2.1",
-    "@next/eslint-plugin-next": "^13.1.6",
+    "@next/eslint-plugin-next": "^14.2.2",
     "babel-plugin-emotion": "10.2.2",
     "broken-link-checker": "^0.7.8",
     "dotenv": "^16.0.3",
