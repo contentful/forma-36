@@ -34,7 +34,7 @@ export type BadgeInternalProps = CommonProps & {
   /**
    * Disables CSS text transforms
    */
-  noTextTransform?: boolean;
+  noTextTransforms?: boolean;
 };
 
 export type BadgeProps = PropsWithHTMLElement<BadgeInternalProps, 'div'>;
