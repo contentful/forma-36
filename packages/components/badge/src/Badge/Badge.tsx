@@ -32,7 +32,7 @@ export type BadgeInternalProps = CommonProps & {
    */
   endIcon?: React.ReactNode;
   /**
-   * Expects any valid CSS text-transform value. If not provided, will default to 'capitalized'
+   * Expects any valid CSS text-transform value. If not provided, will default to 'capitalize'
    */
   textTransform?: CSSProperties['textTransform'];
 };
@@ -41,7 +41,7 @@ export type BadgeProps = PropsWithHTMLElement<BadgeInternalProps, 'div'>;
 
 export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
   (props, ref) => {
-    const styles = getBadgeStyles(props.textTransform ?? 'capitalized');
+    const styles = getBadgeStyles(props.textTransform ?? 'capitalize');
     const {
       children,
       variant = 'primary',
