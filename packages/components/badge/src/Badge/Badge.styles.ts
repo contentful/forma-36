@@ -2,6 +2,7 @@ import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 import type { BadgeVariant, BadgeSize, BadgeStylesProps } from '../types';
 import type { CSSObject } from '@emotion/serialize';
+import { CSSProperties } from 'react';
 
 const variantToStyles = ({ variant }: { variant: BadgeVariant }): CSSObject => {
   switch (variant) {
@@ -62,7 +63,9 @@ const sizeToStyles = ({ size }: { size: BadgeSize }): CSSObject => {
   }
 };
 
-export const getBadgeStyles = (noTextTransforms?: boolean) => ({
+export const getBadgeStyles = (
+  textTransform: CSSProperties['textTransform'],
+) => ({
   badge: ({ variant, size }: BadgeStylesProps) =>
     css({
       columnGap: tokens.spacing2Xs,
@@ -83,9 +86,6 @@ export const getBadgeStyles = (noTextTransforms?: boolean) => ({
   badgeText: css({
     color: 'currentcolor',
     lineHeight: 'inherit',
-    textTransform: noTextTransforms ? 'none' : 'lowercase',
-    '::first-letter': {
-      textTransform: noTextTransforms ? 'none' : 'uppercase',
-    },
+    textTransform,
   }),
 });

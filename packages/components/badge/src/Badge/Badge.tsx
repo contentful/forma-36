@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import { cx } from 'emotion';
 import {
   Box,
@@ -32,16 +32,16 @@ export type BadgeInternalProps = CommonProps & {
    */
   endIcon?: React.ReactNode;
   /**
-   * Disables CSS text transforms
+   * Expects any valid CSS text-transform value. If not provided, will default to 'capitalized'
    */
-  noTextTransforms?: boolean;
+  textTransform?: CSSProperties['textTransform'];
 };
 
 export type BadgeProps = PropsWithHTMLElement<BadgeInternalProps, 'div'>;
 
 export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
   (props, ref) => {
-    const styles = getBadgeStyles(props.noTextTransforms);
+    const styles = getBadgeStyles(props.textTransform ?? 'capitalized');
     const {
       children,
       variant = 'primary',
