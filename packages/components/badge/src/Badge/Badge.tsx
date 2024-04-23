@@ -31,13 +31,17 @@ export type BadgeInternalProps = CommonProps & {
    * Expects any of the icon components. Renders the icon aligned to the end
    */
   endIcon?: React.ReactNode;
+  /**
+   * Disables CSS text transforms
+   */
+  noTextTransform?: boolean;
 };
 
 export type BadgeProps = PropsWithHTMLElement<BadgeInternalProps, 'div'>;
 
 export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
   (props, ref) => {
-    const styles = getBadgeStyles();
+    const styles = getBadgeStyles(props.noTextTransforms);
     const {
       children,
       variant = 'primary',

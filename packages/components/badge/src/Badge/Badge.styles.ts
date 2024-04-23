@@ -62,7 +62,7 @@ const sizeToStyles = ({ size }: { size: BadgeSize }): CSSObject => {
   }
 };
 
-export const getBadgeStyles = () => ({
+export const getBadgeStyles = (noTextTransforms?: boolean) => ({
   badge: ({ variant, size }: BadgeStylesProps) =>
     css({
       columnGap: tokens.spacing2Xs,
@@ -83,9 +83,9 @@ export const getBadgeStyles = () => ({
   badgeText: css({
     color: 'currentcolor',
     lineHeight: 'inherit',
-    textTransform: 'lowercase',
+    textTransform: noTextTransforms ? 'none' : 'lowercase',
     '::first-letter': {
-      textTransform: 'uppercase',
+      textTransform: noTextTransforms ? 'none' : 'uppercase',
     },
   }),
 });
