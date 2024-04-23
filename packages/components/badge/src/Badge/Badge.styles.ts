@@ -64,7 +64,7 @@ const sizeToStyles = ({ size }: { size: BadgeSize }): CSSObject => {
 };
 
 export const getBadgeStyles = (
-  textTransform: CSSProperties['textTransform'],
+  textTransform: CSSProperties['textTransform'] = 'capitalize',
 ) => ({
   badge: ({ variant, size }: BadgeStylesProps) =>
     css({

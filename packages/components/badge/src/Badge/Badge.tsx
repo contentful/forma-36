@@ -41,7 +41,7 @@ export type BadgeProps = PropsWithHTMLElement<BadgeInternalProps, 'div'>;
 
 export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
   (props, ref) => {
-    const styles = getBadgeStyles(props.textTransform ?? 'capitalize');
+    const styles = getBadgeStyles(props.textTransform);
     const {
       children,
       variant = 'primary',
