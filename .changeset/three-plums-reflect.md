@@ -1,5 +1,4 @@
 ---
-"@contentful/f36-icon": patch
 "@contentful/f36-icons": patch
 ---
 
