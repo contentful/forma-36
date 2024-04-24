@@ -1,6 +1,9 @@
 import React from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
+/**
+ * @deprecated This icon will be removed in a future major release.
+ */
 export const Appearance = /*#__PURE__*/ generateIcon({
   name: 'Appearance',
   viewBox: '0 0 16 16',
