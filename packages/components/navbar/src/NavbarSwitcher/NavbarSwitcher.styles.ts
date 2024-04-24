@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
-import { getGlowOnFocusStyles, mqs } from '../utils.styles';
+import { getGlowOnFocusStyles } from '../utils.styles';
 
 export const getNavbarSwitcherStyles = () => ({
   root: css(
@@ -12,7 +12,7 @@ export const getNavbarSwitcherStyles = () => ({
       background: 'none',
       border: 'none',
 
-      color: tokens.gray300,
+      color: tokens.gray700,
       cursor: 'pointer',
       fontSize: tokens.fontSizeS,
       fontWeight: tokens.fontWeightMedium,
@@ -33,7 +33,7 @@ export const getNavbarSwitcherStyles = () => ({
         display: 'none',
       },
       '&:hover li': {
-        backgroundColor: hexToRGBA(tokens.colorWhite, 0.15),
+        backgroundColor: hexToRGBA(tokens.gray300, 0.15),
       },
     },
     getGlowOnFocusStyles(
@@ -45,11 +45,5 @@ export const getNavbarSwitcherStyles = () => ({
     margin: 0,
     padding: 0,
     position: 'relative',
-  }),
-  menuIcon: css({
-    display: 'none',
-    [mqs.medium]: {
-      display: 'block',
-    },
   }),
 });

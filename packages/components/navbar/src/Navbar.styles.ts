@@ -5,12 +5,12 @@ import { mqs } from './utils.styles';
 export const getNavbarStyles = (maxWidth: string) => ({
   containerTop: css({
     justifyContent: 'center',
-    backgroundColor: '#0C141C',
+    backgroundColor: tokens.gray100,
   }),
   containerBottom: css({
     justifyContent: 'center',
     borderTop: `1px solid #21262D`,
-    backgroundColor: '#161B22',
+    backgroundColor: tokens.gray100,
   }),
   containerTopContent: css({
     width: '100%',

@@ -1,6 +1,5 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { hexToRGBA } from '@contentful/f36-utils';
 import { mqs } from '../utils.styles';
 
 const mobileIcon = {
@@ -22,8 +21,10 @@ export const getNavbarSwitcherItemStyles = () => ({
     position: 'relative',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: hexToRGBA(tokens.gray100, 0.1),
-    boxShadow: `0px 0px 0px 2px ${tokens.colorBlack}`,
+    boxShadow: `0px 0px 0px 1px ${tokens.gray300}`,
+    border: `solid 1px ${tokens.gray300}`,
+    borderLeft: 'none',
+    borderRight: 'none',
     display: 'inline-flex',
     margin: 0,
     minWidth: 0,
@@ -31,7 +32,7 @@ export const getNavbarSwitcherItemStyles = () => ({
     height: tokens.spacingL,
     borderRadius: '3rem',
     zIndex: 2,
-    transition: `background-color ${tokens.transitionDurationShort} ${tokens.transitionEasingCubicBezier}`,
+
     whiteSpace: 'nowrap',
     '&:not(:first-child)': {
       clipPath: `path('M0 24C6 24 10 18 10 10C10 5 6 0 0 0H400C400 0 400 5 400 24H0Z')`,
