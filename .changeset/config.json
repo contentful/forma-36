@@ -8,6 +8,10 @@
   ],
   "ignore": [
     "@contentful/f36-cdn",
+    "@contentful/f36-icons",
+    "@contentful/f36-avatar",
+    "@contentful/f36-image",
+    "@contentful/f36-header",
     "@contentful/f36-layout",
     "@contentful/f36-progress-stepper",
     "@contentful/f36-navlist",
