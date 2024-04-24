@@ -20,7 +20,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "npm run build:esm && npm run build:cjs && npm run build:types",
+    "build": "tsx scripts/preBuild.mts && npm run build:esm && npm run build:cjs && npm run build:types",
     "build:cjs": "swc ./src -d ./dist/cjs --strip-leading-paths -C module.type=commonjs",
     "build:esm": "swc ./src -d ./dist/esm --strip-leading-paths",
     "build:types": "tsc --outDir ./dist/types --emitDeclarationOnly"
@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "@swc/cli": "^0.3.12",
-    "@swc/core": "^1.4.14"
+    "@swc/core": "^1.4.14",
+    "tsx": "^4.7.2"
   }
 }
