@@ -8,17 +8,7 @@ export const getNavbarAccountStyles = () => ({
     {
       // default button reset styles
       margin: 0,
-      padding: 0,
-      background: 'none',
-      border: 'none',
-
-      cursor: 'pointer',
-      position: 'relative',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: tokens.spacing2Xs,
-      outline: 'none',
-      borderRadius: '50%',
+      padding: tokens.spacing2Xs,
     },
     getGlowOnFocusStyles(),
   ),

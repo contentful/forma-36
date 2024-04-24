@@ -1,14 +1,14 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { getNavbarHelpStyles } from './NavbarHelp.styles';
 import { HelpIcon } from '../icons';
 import {
-  Flex,
   type CommonProps,
   type PropsWithHTMLElement,
   type ExpandProps,
 } from '@contentful/f36-core';
+import { Button } from '@contentful/f36-button/src';
 import { NavbarMenu } from '../NavbarMenu/NavbarMenu';
+import { getNavbarHelpStyles } from './NavbarHelp.styles';
 
 type NavbarHelpOwnProps = CommonProps & {
   children: React.ReactNode;
@@ -29,23 +29,26 @@ function _NavbarHelp(
     testId = 'cf-ui-navbar-help-trigger',
     ...otherProps
   } = props;
+
   const styles = getNavbarHelpStyles();
 
   return (
     <NavbarMenu
       testId="cf-ui-navbar-help-menu"
       trigger={
-        <Flex
+        <Button
           aria-label="Help Menu"
           {...otherProps}
           as="button"
           ref={ref}
           className={cx(styles.root, className)}
           testId={testId}
+          variant="transparent"
+          size="small"
+          startIcon={<HelpIcon size="medium" />}
         >
-          <HelpIcon size="medium" variant="white" />
           Help
-        </Flex>
+        </Button>
       }
     >
       {children}

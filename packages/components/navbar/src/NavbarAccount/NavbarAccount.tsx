@@ -8,6 +8,7 @@ import {
   type ExpandProps,
 } from '@contentful/f36-core';
 import { NavbarMenu } from '../NavbarMenu/NavbarMenu';
+import { Button } from '@contentful/f36-button/src';
 
 type NavbarAccountOwnProps = CommonProps & {
   children: React.ReactNode;
@@ -44,9 +45,10 @@ function _NavbarAccount(
   return (
     <NavbarMenu
       trigger={
-        <Flex
+        <Button
           {...otherProps}
-          as="button"
+          variant="transparent"
+          size="small"
           ref={ref}
           className={cx(styles.root, className)}
           testId={testId}
@@ -59,7 +61,7 @@ function _NavbarAccount(
           {hasNotification ? (
             <span className={styles.notificationIcon(notificationVariant)} />
           ) : null}
-        </Flex>
+        </Button>
       }
     >
       {children}

@@ -6,13 +6,14 @@
     "build": "tsup"
   },
   "dependencies": {
+    "@contentful/f36-button": "^4.64.0",
     "@contentful/f36-core": "^4.45.0",
-    "@contentful/f36-menu": "^4.45.0",
-    "@contentful/f36-tokens": "^4.0.1",
-    "@contentful/f36-utils": "^4.23.2",
-    "@contentful/f36-skeleton": "^4.45.0",
     "@contentful/f36-icon": "^4.45.0",
     "@contentful/f36-icons": "^4.23.2",
+    "@contentful/f36-menu": "^4.45.0",
+    "@contentful/f36-skeleton": "^4.45.0",
+    "@contentful/f36-tokens": "^4.0.1",
+    "@contentful/f36-utils": "^4.23.2",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
