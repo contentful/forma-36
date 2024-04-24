@@ -1,14 +1,13 @@
 import { cx } from 'emotion';
 import React from 'react';
-import { getNavbarSearchStyles } from './NavbarSearch.styles';
 import { SearchIcon } from '../icons';
 import {
   type CommonProps,
   type ExpandProps,
-  Flex,
   type PropsWithHTMLElement,
 } from '@contentful/f36-core';
-
+import { IconButton } from '@contentful/f36-button/src';
+import { getNavbarSearchStyles } from './NavbarSearch.styles';
 type NavbarSearchOwnProps = CommonProps;
 
 export type NavbarSearchProps = PropsWithHTMLElement<
@@ -22,18 +21,17 @@ function _NavbarSearch(
 ) {
   const { className, testId = 'cf-ui-navbar-search', ...otherProps } = props;
   const styles = getNavbarSearchStyles();
-
   return (
-    <Flex
+    <IconButton
       aria-label="Quick Search"
       {...otherProps}
-      as="button"
+      variant="transparent"
       ref={ref}
+      size="small"
       className={cx(styles.root, className)}
       testId={testId}
-    >
-      <SearchIcon size="medium" variant="white" />
-    </Flex>
+      icon={<SearchIcon size="medium" />}
+    />
   );
 }
 

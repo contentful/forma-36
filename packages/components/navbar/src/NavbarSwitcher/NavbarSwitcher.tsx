@@ -9,6 +9,7 @@ import {
 import { MenuIcon } from '@contentful/f36-icons';
 import { cx } from 'emotion';
 import { ContentfulLogoIcon } from '../icons';
+import { IconButton } from '@contentful/f36-button/src';
 
 type NavbarSwitcherOwnProps = CommonProps & {
   children?: React.ReactNode;
@@ -48,7 +49,12 @@ function _NavbarSwitcher(
       gap="spacingXs"
     >
       {logo || <ContentfulLogoIcon />}
-      <MenuIcon className={styles.menuIcon} size="small" variant="white" />
+      <IconButton
+        aria-label="Switch spaces"
+        size="small"
+        variant="transparent"
+        icon={<MenuIcon size="medium" />}
+      />
       <Flex as="ul" alignItems="center" className={styles.breadcrumbs}>
         {children}
       </Flex>
