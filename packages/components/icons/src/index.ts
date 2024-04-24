@@ -59,6 +59,7 @@ export * from './vendor/phosphor/FolderSimpleIcon.js';
 export * from './vendor/phosphor/FolderSimplePlusIcon.js';
 export * from './vendor/phosphor/FunnelSimpleIcon.js';
 export * from './vendor/phosphor/GearSixIcon.js';
+export * from './vendor/phosphor/GiftIcon.js';
 export * from './vendor/phosphor/GlobeIcon.js';
 export * from './vendor/phosphor/HashStraightIcon.js';
 export * from './vendor/phosphor/ImageSquareIcon.js';
