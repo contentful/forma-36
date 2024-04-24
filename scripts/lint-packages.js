@@ -83,7 +83,7 @@ for (const pkg of packages) {
   softAssert.equal(json.license, 'MIT', `${pkg} has an incorrect license`);
   softAssert.deepEqual(
     json.repository,
-    { type: 'git', url: 'https://github.com/contentful/forma-36' },
+    { type: 'git', url: 'git+https://github.com/contentful/forma-36.git' },
     `${pkg} has incorrect or missing repository url`,
   );
 
