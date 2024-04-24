@@ -1,12 +1,12 @@
 {
   "name": "@contentful/f36-tooltip",
-  "version": "4.64.0",
+  "version": "4.65.0",
   "description": "Forma 36: Tooltip component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.64.0",
+    "@contentful/f36-core": "^4.65.0",
     "@contentful/f36-tokens": "^4.0.4",
     "@contentful/f36-utils": "^4.24.3",
     "@popperjs/core": "^2.11.5",
@@ -30,7 +30,7 @@
   "browserslist": "extends @contentful/browserslist-config",
   "repository": {
     "type": "git",
-    "url": "https://github.com/contentful/forma-36"
+    "url": "git+https://github.com/contentful/forma-36.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",

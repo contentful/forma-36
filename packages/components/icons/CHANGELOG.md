@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.28.1
+
+### Patch Changes
+
+- [#2724](https://github.com/contentful/forma-36/pull/2724) [`51691ade3`](https://github.com/contentful/forma-36/commit/51691ade3c47e117ad30eb1c722c56363c702c45) Thanks [@denkristoffer](https://github.com/denkristoffer)! - Deprecate icons that will be removed in a future breaking change
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.65.0
+  - @contentful/f36-icon@4.65.0
+
 ## 4.28.0
 
 ### Minor Changes

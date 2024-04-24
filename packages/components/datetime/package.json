@@ -1,12 +1,12 @@
 {
   "name": "@contentful/f36-datetime",
-  "version": "4.64.0",
+  "version": "4.65.0",
   "description": "Forma 36: DateTime component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.64.0",
+    "@contentful/f36-core": "^4.65.0",
     "@contentful/f36-tokens": "^4.0.4",
     "dayjs": "^1.11.5",
     "emotion": "^10.0.17"
@@ -27,7 +27,7 @@
   "browserslist": "extends @contentful/browserslist-config",
   "repository": {
     "type": "git",
-    "url": "https://github.com/contentful/forma-36"
+    "url": "git+https://github.com/contentful/forma-36.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",

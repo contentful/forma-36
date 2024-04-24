@@ -31,7 +31,7 @@
   "browserslist": "extends @contentful/browserslist-config",
   "repository": {
     "type": "git",
-    "url": "https://github.com/contentful/forma-36"
+    "url": "git+https://github.com/contentful/forma-36.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
