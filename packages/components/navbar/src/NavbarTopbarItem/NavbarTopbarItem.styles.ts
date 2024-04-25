@@ -3,7 +3,7 @@ import tokens from '@contentful/f36-tokens';
 import { getGlowOnFocusStyles } from '../utils.styles';
 import { hexToRGBA } from '@contentful/f36-utils';
 export const getNavbarTopbarItemStyles = () => ({
-  root: css(
+  navbarTopItem: css(
     {
       // default button reset styles
       margin: 0,

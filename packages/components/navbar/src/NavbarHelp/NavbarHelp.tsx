@@ -41,7 +41,7 @@ function _NavbarHelp(
           {...otherProps}
           as="button"
           ref={ref}
-          className={cx(styles.root, className)}
+          className={cx(styles.navbarHelp, className)}
           testId={testId}
           variant="transparent"
           size="small"
