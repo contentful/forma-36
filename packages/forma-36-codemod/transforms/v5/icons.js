@@ -47,7 +47,7 @@ const iconsMap = {
   ExternalLink: 'ArrowSquareOut',
   FaceHappy: 'Smiley',
   Filter: 'FunnelSimple',
-  Folder: 'FolderSimple,
+  Folder: 'FolderSimple',
   FolderCreate: 'FolderSimplePlus',
   FolderOpen: 'FolderOpen',
   FormatBold: 'TextBold',
