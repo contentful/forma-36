@@ -1,17 +1,10 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
-import { getGlowOnFocusStyles, mqs } from '../utils.styles';
+import { getGlowOnFocusStyles } from '../utils.styles';
 
 export const getNavbarItemActiveStyles = () =>
   css({
-    '&': {
-      color: tokens.colorWhite,
-      '& svg': {
-        fill: tokens.colorWhite,
-      },
-    },
-
     '&::after': {
       content: '""',
       position: 'absolute',
@@ -21,7 +14,7 @@ export const getNavbarItemActiveStyles = () =>
       left: 0,
       right: 0,
       margin: 'auto',
-      backgroundColor: tokens.colorWhite,
+      backgroundColor: tokens.blue600,
       zIndex: 0,
     },
   });
@@ -29,13 +22,13 @@ export const getNavbarItemActiveStyles = () =>
 const commonItemStyles = {
   display: 'flex',
   justifyContent: 'center',
-  padding: `10px ${tokens.spacingS}`,
+  padding: `${tokens.spacing2Xs} ${tokens.spacingS}`,
   alignItems: 'center',
   background: 'none',
 };
 
 export const getNavbarItemStyles = () => ({
-  root: css(
+  navbarItem: css(
     commonItemStyles,
     {
       alignItems: 'center',
@@ -44,7 +37,7 @@ export const getNavbarItemStyles = () => ({
       margin: 0,
       outline: 'none',
       fontSize: tokens.fontSizeM,
-      lineHeight: tokens.lineHeightM,
+      lineHeight: tokens.lineHeightS,
       fontWeight: tokens.fontWeightMedium,
       position: 'relative',
       textAlign: 'left',
@@ -52,26 +45,13 @@ export const getNavbarItemStyles = () => ({
       cursor: 'pointer',
       hyphens: 'auto',
       textDecoration: 'none',
-      color: hexToRGBA(tokens.gray300, 0.8),
+      color: tokens.gray700,
       boxSizing: 'border-box',
       transition: `color ${tokens.transitionDurationShort} ${tokens.transitionEasingCubicBezier}`,
       borderRadius: tokens.borderRadiusMedium,
 
-      '&::before': {
-        content: '""',
-        position: 'absolute',
-        width: `calc(100% - ${tokens.spacingXs})`,
-        height: `calc(100% - ${tokens.spacingS})`,
-        top: `calc(${tokens.spacingS} / 2)`,
-        left: 0,
-        right: 0,
-        margin: 'auto',
-        borderRadius: tokens.borderRadiusSmall,
-        backgroundColor: hexToRGBA(tokens.colorWhite, 0.08),
-        opacity: 0,
-        zIndex: 0,
-        scale: 0,
-        transition: `all ${tokens.transitionDurationShort} ${tokens.transitionEasingCubicBezier}`,
+      '&:hover': {
+        backgroundColor: hexToRGBA(tokens.gray900, 0.05),
       },
 
       '&:hover::before': {
@@ -87,15 +67,7 @@ export const getNavbarItemStyles = () => ({
       },
 
       '& svg': {
-        fill: hexToRGBA(tokens.gray300, 0.8),
         transition: `fill ${tokens.transitionDurationShort} ${tokens.transitionEasingCubicBezier}`,
-
-        '&:first-child': {
-          display: 'none',
-          [mqs.large]: {
-            display: 'block',
-          },
-        },
       },
       '& > svg, & > span': {
         zIndex: tokens.zIndexDefault,
@@ -110,5 +82,5 @@ export const getNavbarItemStyles = () => ({
 });
 
 export const getNavbarItemSkeletonStyles = () => ({
-  root: css(commonItemStyles),
+  itemSkeleton: css(commonItemStyles),
 });
