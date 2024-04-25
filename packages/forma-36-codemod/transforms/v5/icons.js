@@ -14,6 +14,7 @@ const iconsMap = {
   ArrowForward: 'ArrowRight',
   ArrowUp: 'CaretUp',
   ArrowUpward: 'ArrowUp',
+  Asset: 'ImageSquare',
   Audio: 'FileAudio',
   Calendar: 'CalendarBlank',
   ChatBubble: 'Chat',
