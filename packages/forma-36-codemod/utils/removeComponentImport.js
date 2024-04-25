@@ -1,3 +1,10 @@
+/**
+ * Removes the import of a component from a file, it removes the entire import statement if the componentName is the only import from that package.
+ * @param {*} j - jscodeshift api
+ * @param {*} source - original source code
+ * @param {{importName: string, componentName: string}} param - Object with importName and componentName
+ * @returns updated source code with the import updated or removed.
+ */
 module.exports.removeComponentImport = function removeComponentImport(
   j,
   source,
