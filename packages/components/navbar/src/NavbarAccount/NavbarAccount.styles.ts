@@ -2,6 +2,7 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { NavbarAccountProps } from './NavbarAccount';
 import { getGlowOnFocusStyles } from '../utils.styles';
+import { hexToRGBA } from '@contentful/f36-utils';
 
 const notificationVarianColorMap: Record<
   NavbarAccountProps['notificationVariant'],
@@ -17,9 +18,25 @@ export const getNavbarAccountStyles = () => ({
     {
       // default button reset styles
       margin: 0,
+      borderColor: 'transparent',
+      cursor: 'pointer',
+      background: 'none',
       padding: tokens.spacing2Xs,
       position: 'relative',
       overflow: 'visible',
+      '&:before': css({
+        content: '""',
+        display: 'block',
+        position: 'absolute',
+        height: '24px',
+        width: '24px',
+        backgroundColor: 'transparent',
+        borderRadius: '50%',
+      }),
+      '&:hover:before': css({
+        backgroundColor: hexToRGBA(tokens.gray300, 0.15),
+        // backgroundColor: 'transparent',
+      }),
     },
     getGlowOnFocusStyles(),
   ),
