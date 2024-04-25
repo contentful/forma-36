@@ -28,7 +28,7 @@ function _NavbarSearch(
       variant="transparent"
       ref={ref}
       size="small"
-      className={cx(styles.root, className)}
+      className={cx(styles.navbarSearch, className)}
       testId={testId}
       icon={<SearchIcon size="medium" />}
     />

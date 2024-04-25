@@ -42,7 +42,7 @@ function _NavbarSwitcher(
       {...otherProps}
       as="button"
       ref={ref}
-      className={cx(styles.root, className)}
+      className={cx(styles.navbarSwitcher, className)}
       testId={testId}
       alignItems="center"
       fullHeight
