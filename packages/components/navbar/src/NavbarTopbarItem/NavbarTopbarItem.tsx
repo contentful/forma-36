@@ -34,7 +34,7 @@ function _NavbarTopbarItem<
     <Comp
       {...otherProps}
       ref={ref}
-      className={cx(styles.root, className)}
+      className={cx(styles.navbarTopItem, className)}
       data-test-id={testId}
     >
       {children}
