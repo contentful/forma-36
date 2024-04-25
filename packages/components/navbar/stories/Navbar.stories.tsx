@@ -53,7 +53,7 @@ const Account = ({
 
 const MainItems = () => (
   <>
-    <Navbar.Item title="Home" isActive />
+    <Navbar.Item title="Home" icon={<FaceHappyIcon />} isActive />
     <Navbar.Item title="Content model" />
     <Navbar.Item title="Content" icon={<EntryIcon />} />
     <Navbar.Item title="Media" icon={<AssetIcon />} />
