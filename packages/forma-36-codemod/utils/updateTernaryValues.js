@@ -1,3 +1,9 @@
+/**
+ * Checks if value is a conditional expression
+ * @param {*} value - value to check
+ * @param {*} j - jscodeshift API
+ * @returns true if value is a conditional expression, false otherwise
+ */
 function isConditionalExpression(value, j) {
   return j(value).find(j.ConditionalExpression).length > 0;
 }
@@ -11,6 +17,12 @@ const getValueFor = (key, { j, expression, valueMap = {} }) => {
   );
 };
 
+/**
+ * Updates ternary expressions
+ * @param {*} value - value to be updated
+ * @param {{j: *, valueMap: {[x: string]: string}}} param - Object with jscodeshift API and valueMap
+ * @returns updated ternary expressions
+ */
 function updateTernaryValues(value, { j, valueMap = {} }) {
   return j(value)
     .find(j.ConditionalExpression)
