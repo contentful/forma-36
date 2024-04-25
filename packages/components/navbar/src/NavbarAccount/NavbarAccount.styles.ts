@@ -9,6 +9,8 @@ export const getNavbarAccountStyles = () => ({
       // default button reset styles
       margin: 0,
       padding: tokens.spacing2Xs,
+      position: 'relative',
+      overflow: 'visible',
     },
     getGlowOnFocusStyles(),
   ),
@@ -26,7 +28,6 @@ export const getNavbarAccountStyles = () => ({
       height: tokens.spacingS,
       width: tokens.spacingS,
       borderRadius: '50%',
-      border: `2px solid ${tokens.gray900}`,
       backgroundColor:
         variant === 'negative' ? tokens.colorNegative : tokens.colorWarning,
       transform: 'translate(30%, -30%)',
