@@ -6,7 +6,7 @@ import {
   type ExpandProps,
   type PropsWithHTMLElement,
 } from '@contentful/f36-core';
-import { IconButton } from '@contentful/f36-button/src';
+import { IconButton } from '@contentful/f36-button';
 import { getNavbarSearchStyles } from './NavbarSearch.styles';
 type NavbarSearchOwnProps = CommonProps;
 

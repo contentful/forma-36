@@ -6,7 +6,7 @@ import {
   type PropsWithHTMLElement,
   type ExpandProps,
 } from '@contentful/f36-core';
-import { Button } from '@contentful/f36-button/src';
+import { Button } from '@contentful/f36-button';
 import { NavbarMenu } from '../NavbarMenu/NavbarMenu';
 import { getNavbarHelpStyles } from './NavbarHelp.styles';
 
