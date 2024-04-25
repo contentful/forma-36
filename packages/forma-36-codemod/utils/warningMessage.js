@@ -1,5 +1,12 @@
 const chalk = require('chalk');
 
+/**
+ * Prints a warning message to terminal
+ * @param {string} message - Message to be printed
+ * @param {{file: *, value: *}} param = Object with more information about the warning
+ * @param {*} param.file - File object with path information
+ * @param {*} param.value - Value object with line number information
+ */
 module.exports.warningMessage = function warningMessage(
   message,
   { file, value } = {},
