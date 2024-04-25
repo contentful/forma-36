@@ -64,7 +64,9 @@ const sizeToStyles = ({ size }: { size: BadgeSize }): CSSObject => {
 };
 
 export const getBadgeStyles = (
-  textTransform: CSSProperties['textTransform'] = 'capitalize',
+  textTransform:
+    | Extract<CSSProperties['textTransform'], 'none'>
+    | undefined = undefined,
 ) => ({
   badge: ({ variant, size }: BadgeStylesProps) =>
     css({
@@ -83,9 +85,16 @@ export const getBadgeStyles = (
     width: '0.875rem',
     height: '0.875rem',
   }),
-  badgeText: css({
-    color: 'currentcolor',
-    lineHeight: 'inherit',
-    textTransform,
-  }),
+  badgeText: css([
+    {
+      color: 'currentcolor',
+      lineHeight: 'inherit',
+    },
+    textTransform !== 'none' && {
+      textTransform: 'lowercase',
+      '&::first-letter': {
+        textTransform: 'uppercase',
+      },
+    },
+  ]),
 });
