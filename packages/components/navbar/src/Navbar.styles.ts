@@ -9,7 +9,6 @@ export const getNavbarStyles = (maxWidth: string) => ({
   }),
   containerBottom: css({
     justifyContent: 'center',
-    borderTop: `1px solid #21262D`,
     backgroundColor: tokens.gray100,
   }),
   containerTopContent: css({
@@ -25,10 +24,12 @@ export const getNavbarStyles = (maxWidth: string) => ({
     width: '100%',
     maxWidth: maxWidth,
     padding: 0,
+    paddingTop: tokens.spacing2Xs,
     minHeight: '2.5rem',
     overflow: 'auto',
     [mqs.medium]: {
-      padding: `0 ${tokens.spacing2Xs}`,
+      padding: tokens.spacing2Xs,
+      paddingBottom: tokens.spacingXs,
     },
   }),
 });

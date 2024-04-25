@@ -2,7 +2,7 @@ import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { Navbar, type NavbarProps } from '../src';
-import { AssetIcon, EntryIcon } from '@contentful/f36-icons';
+import { AssetIcon, EntryIcon, FaceHappyIcon } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { NavbarSwitcherItemProps } from '../src/NavbarSwitcherItem/NavbarSwitcherItem';
@@ -37,7 +37,7 @@ const Account = ({
 }: Partial<NavbarAccountProps>) => (
   <Navbar.Account
     username="username"
-    avatar="https://cdn-assets-us.frontify.com/s3/frontify-enterprise-files-us/eyJwYXRoIjoiY29udGVudGZ1bFwvYWNjb3VudHNcLzMxXC80MDAwODgzXC9wcm9qZWN0c1wvMTJcL2Fzc2V0c1wvNWRcLzYxN1wvY2QyMzNlNTcyNzU0MGFhMzBjYzI2ODczYmEwNzJlZWQtMTYwNjE3MzIyNS5wbmcifQ:contentful:cEKMXWYJZat1PHmH79bBuaeLNERXPhpsaGulQp2Zw5E?width=2400"
+    avatar="https://cdn-assets-us.frontify.com/s3/frontify-enterprise-files-us/eyJwYXRoIjoiY29udGVudGZ1bFwvYWNjb3VudHNcLzMxXC80MDAwODgzXC9wcm9qZWN0c1wvMTJcL2Fzc2V0c1wvYjlcLzEwNDNcLzIyNjg3OTJhOWNlNGIxNDFiNzQyZjNlMTAxN2EwNzNkLTE2MTQ5MDE0MTAucG5nIn0:contentful:Or1q25oNUcWqaqVZDc70uSWdaK27bJAgVDKrN_yAD3c?width=240"
     hasNotification={hasNotification}
     notificationVariant={notificationVariant}
   >
@@ -50,7 +50,7 @@ const Account = ({
 
 const MainItems = () => (
   <>
-    <Navbar.Item title="Home" isActive />
+    <Navbar.Item title="Home" icon={<FaceHappyIcon />} isActive />
     <Navbar.Item title="Content model" />
     <Navbar.Item title="Content" icon={<EntryIcon />} />
     <Navbar.Item title="Media" icon={<AssetIcon />} />

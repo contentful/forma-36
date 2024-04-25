@@ -48,7 +48,7 @@ function _NavbarMenuItem(
       {...otherProps}
       ref={ref}
       as={Comp as MenuItemProps['as']}
-      className={cx(styles.root, className)}
+      className={cx(styles.navbarMenuItem, className)}
     >
       {icon ? (
         <NavbarItemIcon icon={icon} variant="secondary" />
