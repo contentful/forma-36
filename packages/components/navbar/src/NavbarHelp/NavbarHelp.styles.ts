@@ -3,7 +3,7 @@ import { getGlowOnFocusStyles } from '../utils.styles';
 import tokens from '@contentful/f36-tokens';
 
 export const getNavbarHelpStyles = () => ({
-  root: css(
+  navbarHelp: css(
     {
       // default button reset styles
       fontSize: tokens.fontSizeS,

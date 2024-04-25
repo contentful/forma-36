@@ -2,7 +2,7 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
 export const getNavbarBadgeStyles = () => ({
-  root: css({
+  navbarBadge: css({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

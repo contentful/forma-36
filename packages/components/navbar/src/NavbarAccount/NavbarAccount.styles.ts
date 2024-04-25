@@ -4,7 +4,7 @@ import { NavbarAccountProps } from './NavbarAccount';
 import { getGlowOnFocusStyles } from '../utils.styles';
 
 export const getNavbarAccountStyles = () => ({
-  root: css(
+  navbarAccount: css(
     {
       // default button reset styles
       margin: 0,
