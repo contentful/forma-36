@@ -52,7 +52,7 @@ function _NavbarAccount(
           variant="transparent"
           size="small"
           ref={ref}
-          className={cx(styles.root, className)}
+          className={cx(styles.navbarAccount, className)}
           testId={testId}
         >
           <Avatar

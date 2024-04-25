@@ -4,7 +4,7 @@ import { hexToRGBA } from '@contentful/f36-utils';
 import { getGlowOnFocusStyles } from '../utils.styles';
 
 export const getNavbarSwitcherStyles = () => ({
-  root: css(
+  navbarSwitcher: css(
     {
       // default button reset styles
       margin: 0,

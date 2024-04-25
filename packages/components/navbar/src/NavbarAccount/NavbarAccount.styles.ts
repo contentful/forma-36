@@ -13,7 +13,7 @@ const notificationVarianColorMap: Record<
 };
 
 export const getNavbarAccountStyles = () => ({
-  root: css(
+  navbarAccount: css(
     {
       // default button reset styles
       margin: 0,
