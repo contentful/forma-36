@@ -49,12 +49,12 @@ export const getNavbarAccountStyles = () => ({
   notificationIcon: (variant: NavbarAccountProps['notificationVariant']) =>
     css({
       position: 'absolute',
-      top: 0,
-      right: 0,
+      top: '3px',
+      right: '3px',
       height: tokens.spacingS,
       width: tokens.spacingS,
       borderRadius: '50%',
-      border: `2px solid ${tokens.gray900}`,
+      border: `2px solid ${tokens.gray100}`,
       backgroundColor: notificationVarianColorMap[variant],
       transform: 'translate(30%, -30%)',
     }),
