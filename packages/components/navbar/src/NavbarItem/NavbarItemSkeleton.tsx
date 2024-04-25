@@ -12,11 +12,11 @@ export const NavbarItemSkeleton = ({
 
   return (
     <SkeletonContainer
-      className={styles.root}
+      className={styles.itemSkeleton}
       svgWidth={estimatedWidth}
       svgHeight={40}
-      backgroundColor={tokens.gray800}
-      foregroundColor={tokens.gray700}
+      backgroundColor={tokens.gray300}
+      foregroundColor={tokens.gray200}
     >
       <SkeletonText
         lineHeight={6}
