@@ -35,7 +35,6 @@ export const getNavbarAccountStyles = () => ({
       }),
       '&:hover:before': css({
         backgroundColor: hexToRGBA(tokens.gray300, 0.15),
-        // backgroundColor: 'transparent',
       }),
     },
     getGlowOnFocusStyles(),
