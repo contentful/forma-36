@@ -37,7 +37,7 @@ const Account = ({
 }: Partial<NavbarAccountProps>) => (
   <Navbar.Account
     username="username"
-    avatar="https://cdn-assets-us.frontify.com/s3/frontify-enterprise-files-us/eyJwYXRoIjoiY29udGVudGZ1bFwvYWNjb3VudHNcLzMxXC80MDAwODgzXC9wcm9qZWN0c1wvMTJcL2Fzc2V0c1wvYjlcLzEwNDNcLzIyNjg3OTJhOWNlNGIxNDFiNzQyZjNlMTAxN2EwNzNkLTE2MTQ5MDE0MTAucG5nIn0:contentful:Or1q25oNUcWqaqVZDc70uSWdaK27bJAgVDKrN_yAD3c?width=240"
+    avatar="https://www.gravatar.com/avatar/f6d4b637888d9c661921216832a9126e?s=50&d=https%3A%2F%2Favatars.contentful.com%2Finitials%2Fv1%2FJD%2F50"
     hasNotification={hasNotification}
     notificationVariant={notificationVariant}
   >
