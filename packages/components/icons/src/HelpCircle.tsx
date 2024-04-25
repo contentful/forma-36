@@ -1,9 +1,6 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-/**
- * @deprecated This icon will be removed in a future major release.
- */
 export const HelpCircle = /*#__PURE__*/ generateIcon({
   name: 'HelpCircle',
   path: (
