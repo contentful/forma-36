@@ -2,7 +2,6 @@ import React from 'react';
 import { cx } from 'emotion';
 import { getNavbarAccountStyles } from './NavbarAccount.styles';
 import {
-  Flex,
   type PropsWithHTMLElement,
   type CommonProps,
   type ExpandProps,
