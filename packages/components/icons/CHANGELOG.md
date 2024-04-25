@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.28.2
+
+### Patch Changes
+
+- [#2729](https://github.com/contentful/forma-36/pull/2729) [`84bdcf9a6`](https://github.com/contentful/forma-36/commit/84bdcf9a6f73a5ab3e3f159d2e29e77dec632e61) Thanks [@denkristoffer](https://github.com/denkristoffer)! - Un-deprecate icons that will be migrated by codemod in the future
+
 ## 4.28.1
 
 ### Patch Changes
