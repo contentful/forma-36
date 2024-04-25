@@ -75,7 +75,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
           className={styles.containerBottomContent}
           justifyContent="space-between"
         >
-          <Flex as="nav" aria-label="Main Navigation" alignItems="stretch">
+          <Flex as="nav" aria-label="Main Navigation">
             {children}
           </Flex>
           {bottomRightItems && <Flex>{bottomRightItems}</Flex>}

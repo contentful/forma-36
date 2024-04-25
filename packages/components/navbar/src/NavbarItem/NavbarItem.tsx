@@ -61,9 +61,9 @@ function _NavbarItem(
       {...otherProps}
       ref={ref}
       data-test-id={testId}
-      className={cx(styles.root, isActive && styles.isActive, className)}
+      className={cx(styles.navbarItem, isActive && styles.isActive, className)}
     >
-      {icon ? <NavbarItemIcon icon={icon} variant="white" /> : null}
+      {icon ? <NavbarItemIcon icon={icon} variant="secondary" /> : null}
       <span>{title}</span>
       {isNavbarItemHasMenu(props) && (
         <ArrowDownIcon className={styles.dropdownIcon} />
