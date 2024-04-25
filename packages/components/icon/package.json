@@ -1,10 +1,13 @@
 {
   "name": "@contentful/f36-icon",
-  "version": "5.0.0-alpha.0",
+  "version": "5.0.0-alpha.1",
   "description": "Forma 36: Icon component",
   "license": "MIT",
   "scripts": {
-    "build": "tsup"
+    "build": "npm run build:esm && npm run build:cjs && npm run build:types",
+    "build:cjs": "swc ./src -d ./dist/cjs --strip-leading-paths -C module.type=commonjs",
+    "build:esm": "swc ./src -d ./dist/esm --strip-leading-paths",
+    "build:types": "tsc --outDir ./dist/types --emitDeclarationOnly"
   },
   "dependencies": {
     "@contentful/f36-core": "^4.79.1",
@@ -13,12 +16,23 @@
     "emotion": "^10.0.17"
   },
   "devDependencies": {
-    "react-icons": "^4.4.0",
-    "@contentful/f36-icons-v4": "npm:@contentful/f36-icons@^4.0.0"
+    "@contentful/f36-icons-v4": "npm:@contentful/f36-icons@^4.0.0",
+    "@swc/cli": "^0.3.12",
+    "@swc/core": "^1.4.14",
+    "react-icons": "^4.4.0"
   },
   "peerDependencies": {
     "react": ">=16.8",
     "react-dom": ">=16.8"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/esm/index.js"
+    },
+    "./package.json": "./package.json"
   },
   "files": [
     "dist"
