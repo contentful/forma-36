@@ -32,9 +32,13 @@ function updateTernaryValues(value, { j, valueMap = {} }) {
       const consequent = getValueFor('consequent', commonArgs);
       const alternate = getValueFor('alternate', commonArgs);
 
-      j(expression).replaceWith(
-        j.conditionalExpression(expression.value.test, consequent, alternate),
-      );
+      if (consequent.value === alternate.value) {
+        j(expression).replaceWith(j.literal(consequent.value));
+      } else {
+        j(expression).replaceWith(
+          j.conditionalExpression(expression.value.test, consequent, alternate),
+        );
+      }
     })
     .toSource({ quote: 'single' });
 }
