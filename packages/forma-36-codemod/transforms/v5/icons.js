@@ -2,8 +2,15 @@ const {
   getComponentLocalName,
   changeComponentName,
   changeImport,
+  changeProperties,
+  deleteProperty,
+  updateTernaryValues,
+  updatePropertyValue,
+  getProperty,
+  hasProperty,
 } = require('../../utils');
 const { shouldSkipUpdateImport, getImport } = require('../../utils/config');
+const { isConditionalExpression } = require('../../utils/updateTernaryValues');
 
 // V4 icon name : V5 icon name
 const iconsMap = {
@@ -133,6 +140,78 @@ module.exports = function (file, api) {
 
   components.forEach(({ localName, v4IconName }) => {
     const newComponentName = `${iconsMap[v4IconName]}Icon`;
+
+    source = changeProperties(j, source, {
+      componentName: localName,
+      fn(attributes) {
+        let modifiedAttributes = attributes;
+
+        // Remove variant prop
+        modifiedAttributes = deleteProperty(modifiedAttributes, {
+          propertyName: 'variant',
+          file,
+        });
+
+        // Update size prop
+        if (hasProperty(modifiedAttributes, { propertyName: 'size' })) {
+          let size = getProperty(modifiedAttributes, {
+            propertyName: 'size',
+          });
+
+          // update conditional expressions
+          if (isConditionalExpression(size.value, j)) {
+            modifiedAttributes = updatePropertyValue(modifiedAttributes, {
+              j,
+              propertyName: 'size',
+              propertyValue: (value) => {
+                const valueMap = {
+                  large: 'medium',
+                  xlarge: 'medium',
+                };
+
+                const updatedValue = updateTernaryValues(value, {
+                  j,
+                  valueMap,
+                });
+
+                return updatedValue;
+              },
+            });
+          }
+
+          size = getProperty(modifiedAttributes, {
+            propertyName: 'size',
+          });
+
+          // If ternary has same value for true and false, simplify
+          if (size.value.value === undefined) {
+            const matches = size.value.match(/\{'(\w+?)'\}/);
+            if (matches[1]) {
+              modifiedAttributes = updatePropertyValue(modifiedAttributes, {
+                j,
+                propertyName: 'size',
+                propertyValue: () => {
+                  return j.literal(matches[1]);
+                },
+              });
+            }
+          }
+          size = getProperty(modifiedAttributes, {
+            propertyName: 'size',
+          });
+
+          // Remove size prop if value is 'large', 'xlarge' or 'medium'
+          if (['large', 'xlarge', 'medium'].includes(size.value.value)) {
+            modifiedAttributes = deleteProperty(modifiedAttributes, {
+              propertyName: 'size',
+              file,
+            });
+          }
+        }
+
+        return modifiedAttributes;
+      },
+    });
 
     source = changeComponentName(j, source, {
       componentName: localName,
