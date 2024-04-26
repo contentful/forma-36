@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.65.1
+
+### Patch Changes
+
+- [#2731](https://github.com/contentful/forma-36/pull/2731) [`91c71c086`](https://github.com/contentful/forma-36/commit/91c71c0869e2cc335a7aec9f473cb25be5b820a2) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(badge): restore default text transform capitalizing only the first word
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.65.1
+
 ## 4.65.0
 
 ### Minor Changes
