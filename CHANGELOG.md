@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 26-04-2024
+
+**F36 Icons** `v4.28.2`
+
+- Un-deprecate icons that will be migrated by codemod in the future
+
 ## 25-04-2024
 
 **F36 Badge** `v4.65.0`
