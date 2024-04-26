@@ -1,7 +1,10 @@
-import { CaretDownIcon, CaretUpIcon, XIcon, TrashSimpleIcon, InfoFillIcon } from "@contentful/f36-icons-alpha";
+import { CaretDownIcon, CaretUpIcon, XIcon, TrashSimpleIcon, InfoIcon } from "@contentful/f36-icons-alpha";
 
-<XIcon size="small" />;
-<CaretUpIcon size="small" />;
+<XIcon />;
+<CaretUpIcon />;
 <CaretDownIcon size="small" />;
 <TrashSimpleIcon size="small" />;
-<InfoFillIcon />;
+<InfoIcon />;
+
+const largeIcon = true;
+<XIcon />
