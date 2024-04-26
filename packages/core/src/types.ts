@@ -76,7 +76,7 @@ export type PickUnion<UnionType, Keys> = Exclude<
  * Also known as mapped type or homomorphic.
  * Use this custom Omit utility type to preserve extended Record properties.
  *
- * Why? Using Omit on extended Records results won't preserve the structure.
+ * Why? Using Omit on extended Records does not preserve the structure.
  * - https://github.com/microsoft/TypeScript/issues/36981
  * - https://github.com/microsoft/TypeScript/issues/54451
  */
