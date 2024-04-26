@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React from 'react';
 import { cx } from 'emotion';
 import {
   Box,
@@ -6,10 +6,11 @@ import {
   type PropsWithHTMLElement,
   type ExpandProps,
 } from '@contentful/f36-core';
+import { Caption } from '@contentful/f36-typography';
+import type * as CSS from 'csstype';
 
 import type { BadgeSize, BadgeVariant } from '../types';
 import { getBadgeStyles } from './Badge.styles';
-import { Caption } from '@contentful/f36-typography';
 
 export type BadgeInternalProps = CommonProps & {
   /**
@@ -32,16 +33,20 @@ export type BadgeInternalProps = CommonProps & {
    */
   endIcon?: React.ReactNode;
   /**
-   * Expects any valid CSS text-transform value. If not provided, will default to 'capitalize'
+   * By default the Badge uses CSS to capitalize only the first letter of the
+   * badge text. This CSS is hit by a bug in Firefox that results in the badge
+   * being rendered slightly too wide. To avoid the bug, set this property to
+   * `none` to disable the text transformation. Please be sure the initial
+   * letter of the badge text is already capitalized!
    */
-  textTransform?: CSSProperties['textTransform'];
+  textTransform?: Extract<CSS.Property.TextTransform, 'none'> | undefined;
 };
 
 export type BadgeProps = PropsWithHTMLElement<BadgeInternalProps, 'div'>;
 
 export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
   (props, ref) => {
-    const styles = getBadgeStyles(props.textTransform);
+    const styles = getBadgeStyles();
     const {
       children,
       variant = 'primary',
@@ -50,6 +55,7 @@ export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
       startIcon,
       endIcon,
       className,
+      textTransform = undefined,
       ...otherProps
     } = props;
 
@@ -75,7 +81,7 @@ export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
         <Caption
           fontWeight="fontWeightMedium"
           isTruncated
-          className={styles.badgeText}
+          className={styles.badgeText({ textTransform })}
         >
           {children}
         </Caption>
