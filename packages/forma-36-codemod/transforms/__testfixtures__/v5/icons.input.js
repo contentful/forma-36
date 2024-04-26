@@ -6,8 +6,11 @@ import {
   InfoCircleIcon,
 } from '@contentful/f36-icons';
 
-<CloseIcon size="small" />;
-<ChevronUpIcon size="small" />;
+<CloseIcon size="large" />;
+<ChevronUpIcon size="xlarge" />;
 <ChevronDownIcon size="small" />;
 <DeleteIcon size="small" />;
-<InfoCircleIcon />;
+<InfoCircleIcon variant="muted" />;
+
+const largeIcon = true;
+<CloseIcon size={largeIcon ? 'large' : 'xlarge'} />
