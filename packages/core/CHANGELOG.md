@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.65.3
+
+### Patch Changes
+
+- [#2734](https://github.com/contentful/forma-36/pull/2734) [`54b2354fa`](https://github.com/contentful/forma-36/commit/54b2354fac83413551550822cfe3cfcab48b1724) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - fix: export type
+
 ## 4.65.2
 
 ### Patch Changes
