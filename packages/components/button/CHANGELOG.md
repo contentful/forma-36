@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.65.2
+
+### Patch Changes
+
+- Updated dependencies [[`80c7f6726`](https://github.com/contentful/forma-36/commit/80c7f67265853662eeb0f275eafe98167daf03e4)]:
+  - @contentful/f36-core@4.65.2
+  - @contentful/f36-spinner@4.65.2
+
 ## 4.65.1
 
 ### Patch Changes

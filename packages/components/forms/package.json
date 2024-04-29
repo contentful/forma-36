@@ -1,15 +1,15 @@
 {
   "name": "@contentful/f36-forms",
-  "version": "4.65.1",
+  "version": "4.65.2",
   "description": "Forma 36: Form React Components",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.65.1",
+    "@contentful/f36-core": "^4.65.2",
     "@contentful/f36-icons": "^4.28.1",
     "@contentful/f36-tokens": "^4.0.4",
-    "@contentful/f36-typography": "^4.65.1",
+    "@contentful/f36-typography": "^4.65.2",
     "@contentful/f36-utils": "^4.24.3",
     "emotion": "^10.0.17"
   },
