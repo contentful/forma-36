@@ -75,10 +75,10 @@ export const getNavbarItemStyles = () => ({
     },
     getGlowOnFocusStyles(`inset ${tokens.glowPrimary}`),
   ),
-  isActive: getNavbarItemActiveStyles(),
-  dropdownIcon: css({
-    paddingLeft: tokens.spacing2Xs,
+  navbarItemMenuTrigger: css({
+    paddingRight: tokens.spacingXs,
   }),
+  isActive: getNavbarItemActiveStyles(),
 });
 
 export const getNavbarItemSkeletonStyles = () => ({
