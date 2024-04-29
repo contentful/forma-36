@@ -12,6 +12,7 @@ export type {
   PaddingProps,
   PickUnion,
   Spacing,
+  MappedOmit,
 } from './types';
 export { Flex } from './Flex';
 export type { FlexProps } from './Flex';
