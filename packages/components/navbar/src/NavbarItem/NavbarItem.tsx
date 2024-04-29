@@ -55,23 +55,26 @@ function _NavbarItem(
     ...otherProps
   } = props;
   const styles = getNavbarItemStyles();
-
+  const isMenuTrigger = isNavbarItemHasMenu(props);
   const item = (
     <Comp
       {...otherProps}
       ref={ref}
       data-test-id={testId}
-      className={cx(styles.navbarItem, isActive && styles.isActive, className)}
-    >
-      {icon ? <NavbarItemIcon icon={icon} variant="secondary" /> : null}
-      <span>{title}</span>
-      {isNavbarItemHasMenu(props) && (
-        <ArrowDownIcon className={styles.dropdownIcon} />
+      className={cx(
+        styles.navbarItem,
+        isMenuTrigger && styles.navbarItemMenuTrigger,
+        isActive && styles.isActive,
+        className,
       )}
+    >
+      {icon && <NavbarItemIcon icon={icon} variant="secondary" />}
+      <span>{title}</span>
+      {isMenuTrigger && <ArrowDownIcon />}
     </Comp>
   );
 
-  if (isNavbarItemHasMenu(props)) {
+  if (isMenuTrigger) {
     return (
       <NavbarMenu
         trigger={item}
