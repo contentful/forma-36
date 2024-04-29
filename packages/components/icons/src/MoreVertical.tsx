@@ -1,6 +1,10 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
+/**
+ * @deprecated This icon will be removed in a future major release.
+ * Please use the `MoreHorizontal` icon instead.
+ */
 export const MoreVertical = /*#__PURE__*/ generateIcon({
   name: 'MoreVertical',
   path: (

@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-badge",
-  "version": "4.64.0",
+  "version": "4.65.3",
   "description": "Forma 36: Badge React Component",
   "license": "MIT",
   "files": [
@@ -14,19 +14,19 @@
   "browserslist": "extends @contentful/browserslist-config",
   "repository": {
     "type": "git",
-    "url": "https://github.com/contentful/forma-36"
+    "url": "git+https://github.com/contentful/forma-36.git"
   },
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.64.0",
-    "@contentful/f36-icons": "^4.28.0",
+    "@contentful/f36-core": "^4.65.3",
+    "@contentful/f36-icons": "^4.28.1",
     "@contentful/f36-tokens": "^4.0.4",
     "emotion": "^10.0.17"
   },
   "devDependencies": {
-    "@contentful/f36-typography": "^4.64.0"
+    "@contentful/f36-typography": "^4.65.3"
   },
   "peerDependencies": {
     "react": ">=16.8",

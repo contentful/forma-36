@@ -1,5 +1,40 @@
 # Change Log
 
+## 4.65.3
+
+### Patch Changes
+
+- Updated dependencies [[`54b2354fa`](https://github.com/contentful/forma-36/commit/54b2354fac83413551550822cfe3cfcab48b1724)]:
+  - @contentful/f36-core@4.65.3
+
+## 4.65.2
+
+### Patch Changes
+
+- Updated dependencies [[`80c7f6726`](https://github.com/contentful/forma-36/commit/80c7f67265853662eeb0f275eafe98167daf03e4)]:
+  - @contentful/f36-core@4.65.2
+
+## 4.65.1
+
+### Patch Changes
+
+- [#2731](https://github.com/contentful/forma-36/pull/2731) [`91c71c086`](https://github.com/contentful/forma-36/commit/91c71c0869e2cc335a7aec9f473cb25be5b820a2) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(badge): restore default text transform capitalizing only the first word
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.65.1
+
+## 4.65.0
+
+### Minor Changes
+
+- [#2721](https://github.com/contentful/forma-36/pull/2721) [`ca6fcf3c5`](https://github.com/contentful/forma-36/commit/ca6fcf3c5b1713284ebaea9fceb6575f855e75d7) Thanks [@MayaGillilan](https://github.com/MayaGillilan)! - add prop to customize CSS text transforms
+
+### Patch Changes
+
+- Updated dependencies [[`51691ade3`](https://github.com/contentful/forma-36/commit/51691ade3c47e117ad30eb1c722c56363c702c45)]:
+  - @contentful/f36-icons@4.28.1
+  - @contentful/f36-core@4.65.0
+
 ## 4.64.0
 
 ### Patch Changes
