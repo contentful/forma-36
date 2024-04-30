@@ -1,5 +1,5 @@
-import { IconVariant } from '../types';
-import type { GeneratedIconProps } from './generateIconComponent';
+import { IconVariant } from '../types.js';
+import type { GeneratedIconProps } from './generateIconComponent.js';
 
 export function generateComponentWithVariants({
   variants,

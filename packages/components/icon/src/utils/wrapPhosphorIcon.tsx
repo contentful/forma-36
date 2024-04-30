@@ -4,8 +4,8 @@ import type {
   IconWeight as PhosphorIconWeight,
 } from '@phosphor-icons/react';
 import tokens from '@contentful/f36-tokens';
-import { Icon, sizes } from '../Icon';
-import type { GeneratedIconProps } from './generateIconComponent';
+import { Icon, sizes } from '../Icon.js';
+import type { GeneratedIconProps } from './generateIconComponent.js';
 
 type IconWeight = Extract<PhosphorIconWeight, 'duotone'>;
 
