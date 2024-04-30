@@ -1,4 +1,4 @@
 import { generateForma36Icon } from '@contentful/f36-icon';
-import { ThumbsUp } from '@phosphor-icons/react';
+import { ThumbsUp } from '@phosphor-icons/react/ThumbsUp';
 
 export const ThumbsUpIcon = generateForma36Icon(ThumbsUp);

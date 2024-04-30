@@ -1,4 +1,4 @@
 import { generateForma36Icon } from '@contentful/f36-icon';
-import { FileArchive } from '@phosphor-icons/react';
+import { FileArchive } from '@phosphor-icons/react/FileArchive';
 
 export const FileArchiveIcon = generateForma36Icon(FileArchive);
