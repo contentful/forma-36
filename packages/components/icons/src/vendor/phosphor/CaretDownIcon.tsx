@@ -1,4 +1,4 @@
 import { generateForma36Icon } from '@contentful/f36-icon';
-import { CaretDown } from '@phosphor-icons/react';
+import { CaretDown } from '@phosphor-icons/react/CaretDown';
 
 export const CaretDownIcon = generateForma36Icon(CaretDown);
