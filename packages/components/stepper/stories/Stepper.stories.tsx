@@ -5,7 +5,7 @@ import { ProgressBar } from '../src/Stepper';
 
 export default {
   component: ProgressBar,
-  title: 'Components/Stepper',
+  title: 'Components/StepperOriginal',
 } as Meta;
 
 export const Default: Story = (args) => {
