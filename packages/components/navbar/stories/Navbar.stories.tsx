@@ -37,7 +37,7 @@ const Account = ({
 }: Partial<NavbarAccountProps>) => (
   <Navbar.Account
     username="username"
-    avatar="https://www.gravatar.com/avatar/f6d4b637888d9c661921216832a9126e?s=50&d=https%3A%2F%2Favatars.contentful.com%2Finitials%2Fv1%2FJD%2F50"
+    avatar="https://avatars.contentful.com/initials/v1/JD/50"
     hasNotification={hasNotification}
     notificationVariant={notificationVariant}
   >
