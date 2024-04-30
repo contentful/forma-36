@@ -39,7 +39,12 @@ export const getNavbarSwitcherStyles = () => ({
       `0px 0px 0px 2px ${tokens.colorBlack}, 0px 0px 0px 5px ${tokens.blue300}`,
     ),
   ),
-  breadcrumbs: css({
+  switcherMenuIcon: css({
+    height: tokens.spacingM,
+    width: tokens.spacingM,
+    fill: tokens.gray700,
+  }),
+  switcherBreadcrumbs: css({
     listStyleType: 'none',
     margin: 0,
     padding: 0,

@@ -2,7 +2,8 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
 export const getNavbarItemIconStyles = () => ({
-  root: css({
+  navbarItemIcon: css({
+    fill: tokens.gray700,
     '&:first-child': {
       marginRight: tokens.spacing2Xs,
     },
