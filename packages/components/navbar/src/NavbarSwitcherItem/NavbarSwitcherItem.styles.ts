@@ -84,17 +84,17 @@ export const getNavbarSwitcherItemStyles = () => ({
     height: tokens.spacingL,
   }),
   breadcrumbsItemEnvMaster: css({
-    color: tokens.green400,
+    color: tokens.green600,
     ' svg': {
       ...mobileIcon,
-      fill: tokens.green400,
+      fill: tokens.green600,
     },
   }),
   breadcrumbsItemEnvNonMaster: css({
-    color: tokens.orange400,
+    color: tokens.orange500,
     svg: {
       ...mobileIcon,
-      fill: tokens.orange400,
+      fill: tokens.orange500,
     },
   }),
 });
