@@ -1,8 +1,24 @@
 {
   "name": "@contentful/f36-icon",
-  "version": "5.0.0-alpha.4",
+  "version": "5.0.0-alpha.6",
   "description": "Forma 36: Icon component",
   "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/esm/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "npm run build:esm && npm run build:cjs && npm run build:types",
     "build:cjs": "swc ./src -d ./dist/cjs --strip-leading-paths -C module.type=commonjs",
@@ -25,23 +41,6 @@
     "react": ">=16.8",
     "react-dom": ">=16.8"
   },
-  "exports": {
-    ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js",
-      "default": "./dist/esm/index.js"
-    },
-    "./package.json": "./package.json"
-  },
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/index.d.ts",
-  "source": "src/index.ts",
-  "sideEffects": false,
   "browserslist": "extends @contentful/browserslist-config",
   "repository": {
     "type": "git",
