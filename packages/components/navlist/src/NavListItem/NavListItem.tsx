@@ -66,6 +66,7 @@ function _NavListItem<
       ref={ref}
       data-test-id={itemTestId}
       tabIndex={isDisabled ? -1 : 0}
+      disabled={isDisabled}
     >
       {props.children}
     </Element>
