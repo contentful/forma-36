@@ -1,4 +1,4 @@
 import { generateForma36Icon } from '@contentful/f36-icon';
-import { ArrowDown } from '@phosphor-icons/react';
+import { ArrowDown } from '@phosphor-icons/react/ArrowDown';
 
 export const ArrowDownIcon = generateForma36Icon(ArrowDown);
