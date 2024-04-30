@@ -1,7 +1,8 @@
 import React, { type ReactElement } from 'react';
 import { Icon, type IconProps } from '../Icon';
+import type { MappedOmit } from '@contentful/f36-core';
 
-export type GeneratedIconProps = Omit<
+export type GeneratedIconProps = MappedOmit<
   IconProps,
   'as' | 'children' | 'name' | 'viewBox'
 > & {
