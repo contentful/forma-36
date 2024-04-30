@@ -10,7 +10,7 @@ export const getNavbarItemActiveStyles = () =>
       position: 'absolute',
       width: `calc(100% - ${tokens.spacingM})`,
       height: '2px',
-      bottom: '0.5px',
+      bottom: `-${tokens.spacing2Xs}`,
       left: 0,
       right: 0,
       margin: 'auto',
