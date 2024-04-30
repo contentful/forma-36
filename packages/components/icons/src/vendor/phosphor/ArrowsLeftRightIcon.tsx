@@ -1,4 +1,4 @@
 import { generateForma36Icon } from '@contentful/f36-icon';
-import { ArrowsLeftRight } from '@phosphor-icons/react';
+import { ArrowsLeftRight } from '@phosphor-icons/react/ArrowsLeftRight';
 
 export const ArrowsLeftRightIcon = generateForma36Icon(ArrowsLeftRight);
