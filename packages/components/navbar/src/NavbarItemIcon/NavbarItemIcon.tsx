@@ -12,7 +12,7 @@ export const NavbarItemIcon = (props: NavbarItemIconProps) => {
   const styles = getNavbarItemIconStyles();
 
   return React.cloneElement(icon, {
-    className: cx(icon.props.className, styles.root),
+    className: cx(icon.props.className, styles.navbarItemIcon),
     size: icon.props.size ?? 'tiny',
     variant: icon.props.variant ?? variant,
   });

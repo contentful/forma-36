@@ -7,6 +7,9 @@ export const getNavbarSearchStyles = () => ({
     {
       // default button reset styles
       padding: tokens.spacing2Xs,
+      svg: {
+        fill: tokens.gray700,
+      },
     },
     getGlowOnFocusStyles(),
   ),
