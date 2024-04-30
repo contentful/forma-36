@@ -1,6 +1,5 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { hexToRGBA } from '@contentful/f36-utils';
 import { getGlowOnFocusStyles } from '../utils.styles';
 
 export const getNavbarSwitcherStyles = () => ({
