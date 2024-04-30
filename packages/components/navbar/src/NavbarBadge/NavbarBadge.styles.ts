@@ -7,7 +7,7 @@ export const getNavbarBadgeStyles = () => ({
     justifyContent: 'center',
     alignItems: 'center',
     background: 'none',
-    border: `1px solid ${tokens.purple400}`,
+    border: `1px solid ${tokens.purple600}`,
     margin: 0,
     outline: 'none',
     fontSize: tokens.fontSizeS,
@@ -16,7 +16,7 @@ export const getNavbarBadgeStyles = () => ({
     textAlign: 'center',
     padding: `0 ${tokens.spacingXs}`,
     textDecoration: 'none',
-    color: `${tokens.purple400}!important`,
+    color: `${tokens.purple600}!important`,
     borderRadius: '1.75rem',
   }),
 });
