@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 30-04-2024
+
+**F36 Core** `v4.65.2`
+
+- feat: add custom omit utility type
+
+**F36 Core** `v4.65.3`
+
+- fix: export type
+
 ## 27-04-2024
 
 **F36 Badge** `v4.65.1`
