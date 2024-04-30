@@ -9,6 +9,9 @@ export const getNavbarHelpStyles = () => ({
       fontSize: tokens.fontSizeS,
       padding: tokens.spacing2Xs,
       color: tokens.gray700,
+      svg: {
+        fill: tokens.gray700,
+      },
     },
     getGlowOnFocusStyles(),
   ),

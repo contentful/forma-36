@@ -14,8 +14,8 @@ export const getNavbarStyles = (maxWidth: string) => ({
   containerTopContent: css({
     width: '100%',
     maxWidth: maxWidth,
-    padding: `${tokens.spacingXs}`,
-    minHeight: '2.5rem',
+    padding: tokens.spacingXs,
+    minHeight: tokens.spacingL,
     [mqs.medium]: {
       padding: `${tokens.spacingXs} ${tokens.spacingM}`,
     },
@@ -28,8 +28,7 @@ export const getNavbarStyles = (maxWidth: string) => ({
     minHeight: '2.5rem',
     overflow: 'auto',
     [mqs.medium]: {
-      padding: tokens.spacing2Xs,
-      paddingBottom: tokens.spacingXs,
+      padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
     },
   }),
 });

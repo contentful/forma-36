@@ -48,9 +48,9 @@ function _NavbarSwitcher(
       gap="spacingXs"
     >
       {logo || <ContentfulLogoIcon />}
-      <MenuIcon size="medium" variant="secondary" />
+      <MenuIcon size="small" className={styles.switcherMenuIcon} />
 
-      <Flex as="ul" alignItems="center" className={styles.breadcrumbs}>
+      <Flex as="ul" alignItems="center" className={styles.switcherBreadcrumbs}>
         {children}
       </Flex>
     </Flex>
