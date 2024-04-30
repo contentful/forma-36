@@ -6,5 +6,7 @@
     "allowJs": false,
     "declaration": true,
     "noEmit": false,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
   },
 }
