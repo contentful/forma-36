@@ -59,7 +59,7 @@ export const WithActiveAndDisable: Story<NavListProps> = (args) => {
   );
 };
 
-export const Controled: Story<NavListProps> = (args) => {
+export const Controlled: Story<NavListProps> = (args) => {
   const [active, setActive] = useState(0);
   const handleOnClick = (id) => () => {
     setActive(id);
