@@ -14,6 +14,7 @@ export const getNavbarAccountStyles = () => ({
       background: 'none',
       padding: tokens.spacing2Xs,
       position: 'relative',
+      outline: 'none',
       overflow: 'visible',
       '&:before': css({
         content: '""',

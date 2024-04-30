@@ -35,9 +35,7 @@ export const getNavbarSwitcherStyles = () => ({
         backgroundColor: '#f2f4f6', // calculated hex color to avoid opaque color blending
       },
     },
-    getGlowOnFocusStyles(
-      `0px 0px 0px 2px ${tokens.colorBlack}, 0px 0px 0px 5px ${tokens.blue300}`,
-    ),
+    getGlowOnFocusStyles(),
   ),
   switcherMenuIcon: css({
     height: tokens.spacingM,
