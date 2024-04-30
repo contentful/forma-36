@@ -33,7 +33,7 @@ export const getNavbarSwitcherStyles = () => ({
         display: 'none',
       },
       '&:hover li': {
-        backgroundColor: hexToRGBA(tokens.gray300, 0.15),
+        backgroundColor: '#f2f4f6', // calculated hex color to avoid opaque color blending
       },
     },
     getGlowOnFocusStyles(
