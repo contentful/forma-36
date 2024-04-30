@@ -50,7 +50,7 @@ export const getNavbarSwitcherItemStyles = () => ({
       },
     },
     '&:nth-child(3)': {
-      left: '-24px', //magic number due to round border design
+      left: '-25px', //magic number due to round border design
       paddingLeft: tokens.spacingM,
       borderRadius: `0 3rem 3rem 0`,
       fontFamily: tokens.fontStackMonospace,
