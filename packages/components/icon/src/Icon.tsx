@@ -13,7 +13,7 @@ import {
   type PolymorphicProps,
   type ExpandProps,
 } from '@contentful/f36-core';
-import type { IconComponent, IconSize } from './types';
+import type { IconComponent, IconSize } from './types.js';
 
 const ICON_DEFAULT_TAG = 'svg';
 

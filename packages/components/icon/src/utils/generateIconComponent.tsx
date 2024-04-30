@@ -1,6 +1,6 @@
 import React, { type ReactElement } from 'react';
-import { Icon, type IconProps } from '../Icon';
 import type { MappedOmit } from '@contentful/f36-core';
+import { Icon, type IconProps } from '../Icon.js';
 
 export type GeneratedIconProps = MappedOmit<
   IconProps,
