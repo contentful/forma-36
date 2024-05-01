@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 01-05-2024
+
+`@contentful/f36-components@4.65.4`
+
+- Add disabled attribute to NavList.Item when isDisabled is passed
+
 ## 30-04-2024
 
 **F36 Core** `v4.65.2`
