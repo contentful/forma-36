@@ -14,7 +14,7 @@ export const NavbarItemSkeleton = ({
     <SkeletonContainer
       className={styles.itemSkeleton}
       svgWidth={estimatedWidth}
-      svgHeight={40}
+      svgHeight={32}
       backgroundColor={tokens.gray300}
       foregroundColor={tokens.gray200}
     >
