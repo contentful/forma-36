@@ -1,1 +1,1 @@
-{}
+{"**F36 Menu** `v4.65.5`":["- Fix MenuItem component to proxy 'isDisabled' prop as native 'disabled' prop to the underlying component\n"]}
