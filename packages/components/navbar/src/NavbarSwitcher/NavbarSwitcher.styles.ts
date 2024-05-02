@@ -18,7 +18,7 @@ export const getNavbarSwitcherStyles = () => ({
       fontWeight: tokens.fontWeightMedium,
       position: 'relative',
       outline: 'none',
-      borderRadius: tokens.borderRadiusMedium,
+      borderRadius: '3rem',
 
       '&:after': {
         content: '""',
