@@ -7,7 +7,10 @@ export const getNavbarHelpStyles = () => ({
     {
       // default button reset styles
       fontSize: tokens.fontSizeS,
-      padding: tokens.spacing2Xs,
+      padding: `0 ${tokens.spacing2Xs}`,
+      width: 'max-content',
+      minHeight: '24px',
+      height: '24px',
       color: tokens.gray700,
       svg: {
         fill: tokens.gray700,

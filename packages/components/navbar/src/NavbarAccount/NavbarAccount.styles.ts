@@ -18,13 +18,14 @@ export const getNavbarAccountStyles = () => ({
     {
       // default button reset styles
       margin: 0,
-      borderColor: 'transparent',
+      padding: 0,
+      border: 0,
       cursor: 'pointer',
       background: 'none',
-      padding: tokens.spacing2Xs,
       position: 'relative',
       outline: 'none',
       overflow: 'visible',
+      borderRadius: '50%',
       '&:before': css({
         content: '""',
         display: 'block',
@@ -49,8 +50,8 @@ export const getNavbarAccountStyles = () => ({
   notificationIcon: (variant: NavbarAccountProps['notificationVariant']) =>
     css({
       position: 'absolute',
-      top: '3px',
-      right: '3px',
+      top: 0,
+      right: 0,
       height: tokens.spacingS,
       width: tokens.spacingS,
       borderRadius: '50%',
