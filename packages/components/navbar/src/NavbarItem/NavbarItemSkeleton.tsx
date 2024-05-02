@@ -21,7 +21,7 @@ export const NavbarItemSkeleton = ({
       <SkeletonText
         lineHeight={6}
         numberOfLines={1}
-        offsetTop={7}
+        offsetTop={10}
         radiusX={tokens.borderRadiusSmall}
         radiusY={tokens.borderRadiusSmall}
       />
