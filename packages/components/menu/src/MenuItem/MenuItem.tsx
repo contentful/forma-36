@@ -49,7 +49,7 @@ function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
     className,
     as,
     isActive = false,
-    isDisabled = false,
+    isDisabled,
     isInitiallyFocused,
     icon,
     ...otherProps
