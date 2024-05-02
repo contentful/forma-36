@@ -50,6 +50,7 @@ function _NavbarAccount(
           ref={ref}
           className={cx(styles.navbarAccount, className)}
           testId={testId}
+          alignItems="center"
         >
           <img
             src={avatar}

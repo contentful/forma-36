@@ -6,7 +6,10 @@ export const getNavbarSearchStyles = () => ({
   navbarSearch: css(
     {
       // default button reset styles
-      padding: tokens.spacing2Xs,
+      minWidth: '24px',
+      width: '24px',
+      minHeight: '24px',
+      height: '24px',
       svg: {
         fill: tokens.gray700,
       },

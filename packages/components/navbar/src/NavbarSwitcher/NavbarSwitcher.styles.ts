@@ -10,6 +10,7 @@ export const getNavbarSwitcherStyles = () => ({
       padding: 0,
       background: 'none',
       border: 'none',
+      height: 'max-content',
 
       color: tokens.gray700,
       cursor: 'pointer',
@@ -32,7 +33,7 @@ export const getNavbarSwitcherStyles = () => ({
         display: 'none',
       },
       '&:hover li': {
-        backgroundColor: '#f2f4f6', // calculated hex color to avoid opaque color blending
+        backgroundColor: '#f2f4f6', // Using a calculated hover alpha color because when using a RGBA value layers overlapping occur and show darker areas
       },
     },
     getGlowOnFocusStyles(),
