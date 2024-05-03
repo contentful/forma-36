@@ -13,7 +13,7 @@
     "./package.json": "./package.json"
   },
   "source": "src/index.ts",
-  "types": "dist/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "sideEffects": false,
   "type": "module",
   "files": [
