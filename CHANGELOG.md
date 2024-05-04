@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 04-05-2024
+
+**F36 Menu** `v4.65.5`
+
+- Fix MenuItem component to proxy 'isDisabled' prop as native 'disabled' prop to the underlying component
+
 ## 01-05-2024
 
 `@contentful/f36-components@4.65.4`
