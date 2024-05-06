@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Stepper } from '.';
+import { Stepper } from './Stepper';
 
 describe('Stepper', function () {
   it('renders', () => {
