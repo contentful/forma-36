@@ -9,6 +9,8 @@ export const getStyles = () => {
     list: (width: string) =>
       css({
         position: 'relative',
+        justifyContent: 'space-between',
+        width: '100%',
         '&::before, &::after': {
           content: '""',
           position: 'absolute',
