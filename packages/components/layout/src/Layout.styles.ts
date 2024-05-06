@@ -12,14 +12,17 @@ export const getLayoutMaxWidthStyles = (variant: LayoutProps['variant']) => {
 
   return css({
     width: '100%',
-    maxWidth: '1550px',
-    padding: `0 ${tokens.spacingXs}`,
+    maxWidth: '1524px',
   });
 };
+// replace this with a breakpoint
 
 export const getLayoutStyles = (variant: LayoutProps['variant']) => ({
   root: css({
     width: '100%',
+    backgroundColor: tokens.colorWhite,
+    boxShadow: tokens.boxShadowHeavy,
+    borderRadius: tokens.borderRadiusMedium,
   }),
   mainContainer: css(getLayoutMaxWidthStyles(variant), {
     minHeight: '200px',

@@ -5,6 +5,7 @@ import { getLayoutSidebarStyles } from './LayoutSidebar.styles';
 
 export type LayoutSidebarProps = {
   children: React.ReactNode;
+  sidebarSide?: 'left' | 'right';
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 
@@ -16,9 +17,10 @@ export const _LayoutSidebar = (
     children,
     className,
     testId = 'cf-layout-sidebar',
+    sidebarSide, // Add sidebarSide property to the destructured props
     ...otherProps
   } = props;
-  const styles = getLayoutSidebarStyles();
+  const styles = getLayoutSidebarStyles({ sidebarSide });
 
   return (
     <Box
