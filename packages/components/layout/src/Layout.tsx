@@ -73,9 +73,11 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
           flexGrow={1}
           testId={contentTestId}
         >
-          {leftSidebar}
+          {React.isValidElement(leftSidebar) &&
+            React.cloneElement(leftSidebar, { sidebarSide: 'left' } as any)}
           {children}
-          {rightSidebar}
+          {React.isValidElement(rightSidebar) &&
+            React.cloneElement(rightSidebar, { sidebarSide: 'right' } as any)}
         </Flex>
       </Flex>
     </LayoutContextProvider>
