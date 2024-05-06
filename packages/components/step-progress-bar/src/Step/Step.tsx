@@ -10,14 +10,13 @@ export interface StepProps extends CommonProps {
   isWarning?: boolean;
   isDisabled?: boolean;
   isComplete?: boolean;
-  orientation?: 'horizontal' | 'vertical';
   stepStyle?: 'number' | 'icon';
   // onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
 function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
   const styles = getStyles();
-  const { isActive, isInvalid, isWarning, isComplete } = props;
+  const { isActive, isInvalid, isWarning, isComplete, stepStyle } = props;
 
   const renderStep = () => {
     // TODO: implement disabled state
