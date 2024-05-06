@@ -8,6 +8,7 @@ export const getLayoutHeaderStyles = (
 ) => ({
   root: css({
     borderBottom: `1px solid ${tokens.gray200}`,
+    padding: `0 ${tokens.spacingL}`,
     width: '100%',
     justifyContent: 'center',
   }),
