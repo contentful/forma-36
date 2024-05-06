@@ -49,7 +49,7 @@ function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
     className,
     as,
     isActive = false,
-    isDisabled = false,
+    isDisabled,
     isInitiallyFocused,
     icon,
     ...otherProps
@@ -75,6 +75,7 @@ function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
       role="menuitem"
       {...otherProps}
       {...getMenuItemProps(otherProps)}
+      disabled={isDisabled ?? props.disabled}
       className={cx(styles.root, className)}
       data-test-id={itemTestId}
       ref={mergeRefs(itemRef, ref)}

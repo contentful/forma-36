@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.65.5
+
+### Patch Changes
+
+- [#2741](https://github.com/contentful/forma-36/pull/2741) [`9d1e46da2`](https://github.com/contentful/forma-36/commit/9d1e46da2bec560e38518ef6042fd417b236c1f7) Thanks [@bgutsol](https://github.com/bgutsol)! - Fix MenuItem component to proxy 'isDisabled' prop as native 'disabled' prop to the underlying component
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.65.5
+  - @contentful/f36-popover@4.65.5
+  - @contentful/f36-typography@4.65.5
+
 ## 4.65.4
 
 ### Patch Changes
