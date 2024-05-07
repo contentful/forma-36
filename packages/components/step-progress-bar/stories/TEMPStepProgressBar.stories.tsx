@@ -10,3 +10,7 @@ export default {
 export const Default: Story<StepperProps> = (args) => {
   return <TEMPStepProgressBar stepStyle="number" />;
 };
+
+export const Icon: Story<StepperProps> = (args) => {
+  return <TEMPStepProgressBar stepStyle="icon" />;
+};

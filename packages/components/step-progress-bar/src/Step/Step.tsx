@@ -11,37 +11,38 @@ export interface StepProps extends CommonProps {
   isDisabled?: boolean;
   isComplete?: boolean;
   stepStyle?: 'number' | 'icon';
+  stepNumber: number;
   // onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
 function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
   const styles = getStyles();
-  const { isActive, isInvalid, isWarning, isComplete, stepStyle } = props;
+  const {
+    isActive,
+    isInvalid,
+    isWarning,
+    isComplete,
+    isDisabled,
+    stepStyle,
+    stepNumber,
+  } = props;
 
   const renderStep = () => {
-    // TODO: implement disabled state
-    // TODO: update each state to render properly according to design
     switch (true) {
-      case isActive:
-        return <div className={styles.numberCurrent}>{''}</div>;
+      case stepStyle === 'number':
+        return stepNumber;
       case isComplete:
-        return (
-          <DoneIcon
-            size="tiny"
-            variant="muted"
-            className={cx(styles.icon, styles.confirmIcon)}
-          />
-        );
+        return <DoneIcon size="tiny" variant="white" className={styles.icon} />;
       case isInvalid:
         return (
-          <CloseIcon size="tiny" variant="negative" className={styles.icon} />
+          <CloseIcon size="tiny" variant="white" className={styles.icon} />
         );
       case isWarning:
         return (
-          <WarningIcon size="tiny" variant="warning" className={styles.icon} />
+          <WarningIcon size="tiny" variant="white" className={styles.icon} />
         );
       default:
-        return <div>{''}</div>;
+        return <div />;
     }
   };
 
@@ -50,8 +51,13 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
       <button
         type="button"
         className={cx(styles.number, {
-          [styles.numberCurrent]: isActive,
+          [styles.isActive]: isActive,
+          [styles.isDisabled]: isDisabled,
+          [styles.isComplete]: isComplete,
+          [styles.isInvalid]: isInvalid,
+          [styles.isWarning]: isWarning,
         })}
+        disabled={isDisabled}
       >
         {renderStep()}
       </button>
