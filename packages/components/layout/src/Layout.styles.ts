@@ -21,7 +21,7 @@ export const getLayoutStyles = (variant: LayoutProps['variant']) => ({
     backgroundColor: tokens.colorWhite,
     boxShadow:
       '0px 6px 16px -2px rgba(25, 37, 50, 0.1), 0px 3px 6px -3px rgba(25, 37, 50, 0.15)',
-    borderRadius: `${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium} 0 0`,
+    borderRadius: `10px 10px 0 0`,
   }),
   mainContainer: css({
     width: '100%',
