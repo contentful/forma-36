@@ -74,10 +74,14 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
           testId={contentTestId}
         >
           {React.isValidElement(leftSidebar) &&
-            React.cloneElement(leftSidebar, { sidebarSide: 'left' } as any)}
+            React.cloneElement(leftSidebar, {
+              sidebarSide: 'left',
+            } as unknown as React.ReactNode)}
           {children}
           {React.isValidElement(rightSidebar) &&
-            React.cloneElement(rightSidebar, { sidebarSide: 'right' } as any)}
+            React.cloneElement(rightSidebar, {
+              sidebarSide: 'right',
+            } as unknown as React.ReactNode)}
         </Flex>
       </Flex>
     </LayoutContextProvider>
