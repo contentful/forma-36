@@ -21,8 +21,9 @@ export const getLayoutStyles = (variant: LayoutProps['variant']) => ({
   root: css({
     width: '100%',
     backgroundColor: tokens.colorWhite,
-    boxShadow: tokens.boxShadowHeavy,
-    borderRadius: tokens.borderRadiusMedium,
+    boxShadow:
+      '0px 6px 16px -2px rgba(25, 37, 50, 0.1), 0px 3px 6px -3px rgba(25, 37, 50, 0.15)',
+    borderRadius: `${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium} 0 0`,
   }),
   mainContainer: css(getLayoutMaxWidthStyles(variant), {
     minHeight: '200px',
