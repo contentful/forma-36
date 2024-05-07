@@ -24,13 +24,31 @@ export const Default: Story<Pick<LayoutProps, 'variant'> & StoryArgs> = ({
       style={{
         minWidth: '90vw',
         minHeight: '90vh',
+        display: 'flex',
+        justifyContent: 'center',
         background: tokens.gray100,
-        padding: tokens.spacingL,
+        padding: `${tokens.spacingL} ${tokens.spacingL} 0`,
       }}
     >
       <Layout
         variant={variant}
-        header={withHeader && <Layout.Header>Header</Layout.Header>}
+        header={
+          withHeader && (
+            <Layout.Header>
+              {' '}
+              <Box
+                className={css({
+                  backgroundColor: tokens.green100,
+                  color: tokens.green600,
+                  width: '100%',
+                  height: '5vh',
+                })}
+              >
+                Header content
+              </Box>
+            </Layout.Header>
+          )
+        }
         leftSidebar={
           withLeftSidebar && (
             <Layout.Sidebar>
