@@ -58,15 +58,31 @@ export const getStyles = () => {
         boxShadow: tokens.glowPrimary,
       },
     }),
-    numberCurrent: css({
-      color: tokens.colorPrimary,
-      borderColor: tokens.colorPrimary,
-    }),
     icon: css({
       transform: 'translateY(2px)',
     }),
-    confirmIcon: css({
-      fill: tokens.gray300,
+    isActive: css({
+      color: tokens.colorPrimary,
+      borderColor: tokens.colorPrimary,
+    }),
+    isDisabled: css({
+      color: tokens.gray200,
+      borderColor: tokens.gray200,
+    }),
+    isComplete: css({
+      color: tokens.colorWhite,
+      borderColor: tokens.colorPrimary,
+      backgroundColor: tokens.colorPrimary,
+    }),
+    isInvalid: css({
+      color: tokens.colorWhite,
+      borderColor: tokens.colorNegative,
+      backgroundColor: tokens.colorNegative,
+    }),
+    isWarning: css({
+      color: tokens.colorWhite,
+      borderColor: tokens.colorWarning,
+      backgroundColor: tokens.colorWarning,
     }),
     clickable: css({
       cursor: 'pointer',

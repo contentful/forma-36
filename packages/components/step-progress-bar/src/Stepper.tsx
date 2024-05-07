@@ -24,6 +24,7 @@ function _Stepper(props: StepperProps, ref: React.Ref<HTMLDivElement>) {
           return React.cloneElement(child as React.ReactElement, {
             key: `steps-rendered-${index}`,
             stepStyle: stepStyle,
+            stepNumber: index + 1,
           });
         })}
       </Flex>
