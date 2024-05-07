@@ -3,6 +3,7 @@ import React, {
   useMemo,
   type Ref,
   type HTMLAttributes,
+  type Attributes,
 } from 'react';
 import { cx } from 'emotion';
 import { type CommonProps, Flex } from '@contentful/f36-core';
@@ -76,12 +77,12 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
           {React.isValidElement(leftSidebar) &&
             React.cloneElement(leftSidebar, {
               sidebarSide: 'left',
-            } as unknown as React.ReactNode)}
+            } as Partial<unknown> & Attributes)}
           {children}
           {React.isValidElement(rightSidebar) &&
             React.cloneElement(rightSidebar, {
               sidebarSide: 'right',
-            } as unknown as React.ReactNode)}
+            } as Partial<unknown> & Attributes)}
         </Flex>
       </Flex>
     </LayoutContextProvider>
