@@ -22,6 +22,7 @@ export const getHeaderStyles = () => ({
   root: (hasFilters?: boolean) =>
     css({
       minHeight: '56px',
+      backgroundColor: tokens.colorWhite,
       // Reduce vertical padding when there's a filter in the header
       padding: hasFilters ? `${tokens.spacingXs} 0` : `${tokens.spacingXs} 0`,
     }),
@@ -40,6 +41,5 @@ export const getHeaderStyles = () => ({
   }),
   noWrap: css({
     textWrap: 'nowrap',
-    marginLeft: tokens.spacingXs,
   }),
 });
