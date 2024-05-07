@@ -21,7 +21,7 @@ export type LayoutProps = {
    * Defines the width of the layout and its content.
    * @default 'fullscreen'
    */
-  variant?: 'wide' | 'fullscreen';
+  variant?: 'narrow' | 'wide' | 'fullscreen';
   /**
    * Classname that will be passed to the main content div,
    * which holds the sidebars and children div
