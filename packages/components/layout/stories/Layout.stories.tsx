@@ -35,7 +35,6 @@ export const Default: Story<Pick<LayoutProps, 'variant'> & StoryArgs> = ({
         header={
           withHeader && (
             <Layout.Header>
-              {' '}
               <Box
                 className={css({
                   backgroundColor: tokens.green100,
