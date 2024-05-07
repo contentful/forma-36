@@ -21,12 +21,9 @@ export const getHeaderStyles = () => ({
   }),
   root: (hasFilters?: boolean) =>
     css({
-      background: tokens.gray100,
       minHeight: '56px',
       // Reduce vertical padding when there's a filter in the header
-      padding: hasFilters
-        ? `${tokens.spacingXs} ${tokens.spacingS}`
-        : tokens.spacingS,
+      padding: hasFilters ? `${tokens.spacingXs} 0` : `${tokens.spacingXs} 0`,
     }),
   separator: css({
     backgroundColor: tokens.gray200,
