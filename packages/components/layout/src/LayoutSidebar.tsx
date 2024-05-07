@@ -17,7 +17,7 @@ export const _LayoutSidebar = (
     children,
     className,
     testId = 'cf-layout-sidebar',
-    sidebarSide, // Add sidebarSide property to the destructured props
+    sidebarSide,
     ...otherProps
   } = props;
   const styles = getLayoutSidebarStyles({ sidebarSide });
