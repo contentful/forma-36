@@ -1,29 +1,34 @@
 {
   "name": "@contentful/f36-icon",
-  "version": "5.0.0-alpha.6",
+  "version": "5.0.0-alpha.8",
   "description": "Forma 36: Icon component",
   "license": "MIT",
   "exports": {
     ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js",
-      "default": "./dist/esm/index.js"
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      },
+      "default": "./dist/cjs/index.js"
     },
     "./package.json": "./package.json"
   },
-  "source": "src/index.ts",
-  "types": "dist/types/index.d.ts",
   "sideEffects": false,
   "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "npm run build:esm && npm run build:cjs && npm run build:types",
-    "build:cjs": "swc ./src -d ./dist/cjs --strip-leading-paths -C module.type=commonjs",
-    "build:esm": "swc ./src -d ./dist/esm --strip-leading-paths",
-    "build:types": "tsc --outDir ./dist/types --emitDeclarationOnly"
+    "build": "npm run build:clean && npm run build:dual",
+    "build:clean": "rm -rf ./dist",
+    "build:dual": "tsc -p . && tsc -p ./tsconfig.cjs.json && tsconfig-to-dual-package"
   },
   "dependencies": {
     "@contentful/f36-core": "^4.79.1",
@@ -33,9 +38,8 @@
   },
   "devDependencies": {
     "@contentful/f36-icons-v4": "npm:@contentful/f36-icons@^4.0.0",
-    "@swc/cli": "^0.3.12",
-    "@swc/core": "^1.4.14",
-    "react-icons": "^4.4.0"
+    "react-icons": "^4.4.0",
+    "tsconfig-to-dual-package": "^1.2.0"
   },
   "peerDependencies": {
     "react": ">=16.8",
@@ -49,5 +53,8 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "access": "public"
+  },
+  "engines": {
+    "node": ">=16"
   }
 }
