@@ -9,7 +9,6 @@ import {
 } from '@contentful/f36-components';
 import { Header } from '@contentful/f36-header';
 import { Layout } from '@contentful/f36-layout';
-import { NavList } from '@contentful/f36-navlist';
 
 export default function BasicLayoutExample() {
   const [submitting, setSubmitting] = useState(false);
@@ -22,19 +21,12 @@ export default function BasicLayoutExample() {
     <Layout
       header={
         <Layout.Header>
-          <Header title="Content Types" />
+          <Header title="Your Details" />
         </Layout.Header>
-      }
-      leftSidebar={
-        <Box padding="spacingS">
-          <NavList>
-            <NavList.Item>Your Details</NavList.Item>
-          </NavList>
-        </Box>
       }
     >
       <Layout.Body>
-        <Box padding="spacingS">
+        <Box padding="none" marginBottom="spacingXl">
           <Form onSubmit={submitForm}>
             <FormControl>
               <FormControl.Label isRequired>Name</FormControl.Label>
