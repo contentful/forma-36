@@ -41,5 +41,8 @@ export const getHeaderStyles = () => ({
   }),
   noWrap: css({
     textWrap: 'nowrap',
+    '&:not(:first-child)': {
+      marginLeft: tokens.spacingXs,
+    },
   }),
 });
