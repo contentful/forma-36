@@ -1,12 +1,16 @@
 {
   "extends": "../../../tsconfig.json",
-  "include": ["src"],
+  "include": ["src/**/*"],
   "exclude": ["dist/**/*"],
+  "rootDir": ".",
   "compilerOptions": {
     "allowJs": false,
     "declaration": true,
     "noEmit": false,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-  },
+    "inlineSources": true,
+    "inlineSourceMap": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "outDir": "./dist/esm/",
+  }
 }
