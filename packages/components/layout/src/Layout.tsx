@@ -19,7 +19,7 @@ export type LayoutProps = {
   rightSidebar?: React.ReactNode;
   /**
    * Defines the width of the layout and its content.
-   * @default 'fullscreen'
+   * @default 'wide'
    */
   variant?: 'narrow' | 'wide' | 'fullscreen';
   /**
@@ -37,7 +37,7 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     header,
     leftSidebar,
     rightSidebar,
-    variant = 'fullscreen',
+    variant = 'wide',
     className,
     testId = 'cf-layout',
     contentTestId = 'cf-layout-main-container',
