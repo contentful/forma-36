@@ -21,10 +21,12 @@ export const getHeaderStyles = () => ({
   }),
   root: (hasFilters?: boolean) =>
     css({
+      background: tokens.gray100,
       minHeight: '56px',
-      backgroundColor: tokens.colorWhite,
       // Reduce vertical padding when there's a filter in the header
-      padding: hasFilters ? `${tokens.spacingXs} 0` : `${tokens.spacingXs} 0`,
+      padding: hasFilters
+        ? `${tokens.spacingXs} ${tokens.spacingS}`
+        : tokens.spacingS,
     }),
   separator: css({
     backgroundColor: tokens.gray200,
@@ -41,8 +43,6 @@ export const getHeaderStyles = () => ({
   }),
   noWrap: css({
     textWrap: 'nowrap',
-    '&:not(:first-child)': {
-      marginLeft: tokens.spacingXs,
-    },
+    marginLeft: tokens.spacingXs,
   }),
 });
