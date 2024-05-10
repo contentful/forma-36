@@ -1,7 +1,23 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import type { LayoutContextType } from './LayoutContext';
-import { getLayoutMaxWidthStyles } from './Layout.styles';
+import type { LayoutProps } from './Layout';
+
+export const getLayoutHeaderMaxWidthStyles = (
+  variant: LayoutProps['variant'],
+) => {
+  if (variant === 'fullscreen') {
+    return css({
+      width: '100%',
+      maxWidth: '100%',
+    });
+  }
+
+  return css({
+    width: '100%',
+    maxWidth: '1524px',
+  });
+};
 
 export const getLayoutHeaderStyles = (
   variant: LayoutContextType['variant'],
@@ -11,5 +27,5 @@ export const getLayoutHeaderStyles = (
     width: '100%',
     justifyContent: 'center',
   }),
-  maxWidthContainer: getLayoutMaxWidthStyles(variant),
+  maxWidthContainer: getLayoutHeaderMaxWidthStyles(variant),
 });
