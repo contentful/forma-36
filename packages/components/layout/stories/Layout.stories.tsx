@@ -27,7 +27,6 @@ export const Default: Story<Pick<LayoutProps, 'variant'> & StoryArgs> = ({
         display: 'flex',
         justifyContent: 'center',
         background: tokens.gray100,
-        padding: `${tokens.spacingL} ${tokens.spacingL} 0`,
       }}
     >
       <Layout
@@ -56,7 +55,7 @@ export const Default: Story<Pick<LayoutProps, 'variant'> & StoryArgs> = ({
                   backgroundColor: tokens.blue100,
                   color: tokens.blue600,
                   width: '100%',
-                  height: '80vh',
+                  height: '100%',
                 })}
               >
                 Sidebar left content
@@ -72,7 +71,7 @@ export const Default: Story<Pick<LayoutProps, 'variant'> & StoryArgs> = ({
                   backgroundColor: tokens.blue100,
                   color: tokens.blue600,
                   width: '100%',
-                  height: '80vh',
+                  height: '100%',
                 })}
               >
                 Sidebar right content
@@ -87,7 +86,7 @@ export const Default: Story<Pick<LayoutProps, 'variant'> & StoryArgs> = ({
               backgroundColor: tokens.red100,
               color: tokens.red600,
               width: '100%',
-              height: '80vh',
+              height: '100%',
             })}
           >
             Body content
