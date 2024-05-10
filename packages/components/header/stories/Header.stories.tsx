@@ -14,21 +14,12 @@ export default {
   title: 'Layout/Header',
 } as Meta;
 
-const wrapperStyles = {
-  minWidth: '1000px',
-  minHeight: '500px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  background: tokens.gray100,
-};
-
 export const Default: Story<HeaderProps> = ({
   title = 'Product',
   withBackButton: _wbb,
   ...args
 }) => (
-  <Box style={wrapperStyles}>
+  <Box style={{ minWidth: '1000px' }}>
     <Header
       withBackButton={true}
       backButtonProps={{ onClick: action('back button click') }}
@@ -62,7 +53,7 @@ export const WithFilters: Story<HeaderProps> = ({
   title = 'Content Types',
   ...args
 }) => (
-  <Box style={wrapperStyles}>
+  <Box style={{ minWidth: '1000px' }}>
     <Header
       title={title}
       filters={
