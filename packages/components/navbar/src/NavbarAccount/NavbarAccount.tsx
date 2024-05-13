@@ -17,7 +17,7 @@ type NavbarAccountOwnProps = CommonProps & {
   /**
    * @default 'warning'
    */
-  notificationVariant?: 'warning' | 'negative';
+  notificationVariant?: 'warning' | 'negative' | 'info';
 };
 
 export type NavbarAccountProps = PropsWithHTMLElement<
