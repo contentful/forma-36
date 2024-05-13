@@ -8,7 +8,7 @@ import {
   type ExpandProps,
 } from '@contentful/f36-core';
 import { NavbarMenu } from '../NavbarMenu/NavbarMenu';
-import { Avatar } from '../../../avatar/src/Avatar';
+import { Avatar } from '@contentful/f36-avatar';
 
 type NavbarAccountOwnProps = CommonProps & {
   children: React.ReactNode;
