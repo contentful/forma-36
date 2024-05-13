@@ -5,7 +5,7 @@ import { EntryIcon, AssetIcon } from '@contentful/f36-icons';
 export default function WithAccountNotificationNavbarExample() {
   const notificationVariant = 'warning';
 
-  // Try 'negative' notifification variant
+  // Try 'negative' or 'info' notifification variant
   // const notificationVariant = 'negative'
 
   return (
