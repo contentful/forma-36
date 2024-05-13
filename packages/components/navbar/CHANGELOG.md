@@ -1,5 +1,11 @@
 # @contentful/f36-navbar
 
+## 4.2.0
+
+### Minor Changes
+
+- [#2750](https://github.com/contentful/forma-36/pull/2750) [`2d0ff526d`](https://github.com/contentful/forma-36/commit/2d0ff526df37e62525ce47000fc4f48319c9faf5) Thanks [@bgutsol](https://github.com/bgutsol)! - Introduce new notification 'info' variant for NavbarAccount component
+
 ## 4.1.1
 
 ### Patch Changes
