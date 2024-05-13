@@ -36,6 +36,7 @@
       "@contentful/f36-list",
       "@contentful/f36-menu",
       "@contentful/f36-modal",
+      "@contentful/f36-navbar",
       "@contentful/f36-note",
       "@contentful/f36-notification",
       "@contentful/f36-pagination",
