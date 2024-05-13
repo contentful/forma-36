@@ -27,6 +27,7 @@ export type LayoutProps = {
    * which holds the sidebars and children div
    */
   contentClassName?: string;
+  backgroundClassName?: string;
   contentTestId?: string;
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
@@ -41,6 +42,7 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     className,
     testId = 'cf-layout',
     contentTestId = 'cf-layout-main-container',
+    backgroundClassName,
     contentClassName,
     ...otherProps
   } = props;
@@ -56,26 +58,28 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
 
   return (
     <LayoutContextProvider value={contextValue}>
-      <Flex
-        {...otherProps}
-        as="section"
-        ref={ref}
-        className={cx(styles.root, className)}
-        alignItems="center"
-        flexDirection="column"
-        justifyContent="flex-start"
-        testId={testId}
-      >
-        {header}
-
+      <Flex className={cx(styles.root, className)}>
         <Flex
-          className={cx(styles.mainContainer, contentClassName)}
-          flexGrow={1}
-          testId={contentTestId}
+          {...otherProps}
+          as="section"
+          ref={ref}
+          className={styles.mainContainer}
+          alignItems="center"
+          flexDirection="column"
+          justifyContent="flex-start"
+          testId={testId}
         >
-          {leftSidebar}
-          {children}
-          {rightSidebar}
+          {header}
+
+          <Flex
+            className={cx(styles.contentContainer, contentClassName)}
+            flexGrow={1}
+            testId={contentTestId}
+          >
+            {leftSidebar}
+            {children}
+            {rightSidebar}
+          </Flex>
         </Flex>
       </Flex>
     </LayoutContextProvider>

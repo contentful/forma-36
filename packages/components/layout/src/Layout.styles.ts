@@ -21,10 +21,14 @@ export const getLayoutMaxWidthStyles = (variant: LayoutProps['variant']) => {
 };
 
 export const getLayoutStyles = (variant: LayoutProps['variant']) => ({
-  root: css(getLayoutMaxWidthStyles(variant), {
+  root: css({
+    background: tokens.gray100,
+    width: '100%',
+  }),
+  mainContainer: css(getLayoutMaxWidthStyles(variant), {
     backgroundColor: tokens.colorWhite,
   }),
-  mainContainer: css({
+  contentContainer: css({
     width: '100%',
     minHeight: '200px',
   }),
