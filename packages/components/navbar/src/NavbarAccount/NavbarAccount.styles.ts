@@ -4,6 +4,15 @@ import { NavbarAccountProps } from './NavbarAccount';
 import { getGlowOnFocusStyles } from '../utils.styles';
 import { hexToRGBA } from '@contentful/f36-utils';
 
+const notificationVarianColorMap: Record<
+  NavbarAccountProps['notificationVariant'],
+  string
+> = {
+  warning: tokens.colorWarning,
+  negative: tokens.colorNegative,
+  info: tokens.blue500,
+};
+
 export const getNavbarAccountStyles = () => ({
   navbarAccount: css(
     {
@@ -47,8 +56,7 @@ export const getNavbarAccountStyles = () => ({
       width: tokens.spacingS,
       borderRadius: '50%',
       border: `2px solid ${tokens.gray100}`,
-      backgroundColor:
-        variant === 'negative' ? tokens.colorNegative : tokens.colorWarning,
+      backgroundColor: notificationVarianColorMap[variant],
       transform: 'translate(30%, -30%)',
     }),
 });

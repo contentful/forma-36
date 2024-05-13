@@ -226,6 +226,19 @@ export const WithAccountNotification: Story<NavbarProps> = () => {
           <MainItems />
         </Navbar>
       </Flex>
+
+      <Flex flexDirection="column">
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Info
+        </SectionHeading>
+
+        <Navbar
+          switcher={<Switcher />}
+          account={<Account hasNotification notificationVariant="info" />}
+        >
+          <MainItems />
+        </Navbar>
+      </Flex>
     </Flex>
   );
 };
