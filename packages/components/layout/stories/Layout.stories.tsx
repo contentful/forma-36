@@ -25,8 +25,6 @@ export const Default: Story<Pick<LayoutProps, 'variant'> & StoryArgs> = ({
         minWidth: '90vw',
         minHeight: '90vh',
         display: 'flex',
-        justifyContent: 'center',
-        background: tokens.gray100,
       }}
     >
       <Layout
