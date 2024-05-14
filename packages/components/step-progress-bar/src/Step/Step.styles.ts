@@ -3,8 +3,14 @@ import tokens from '@contentful/f36-tokens';
 
 export const getStyles = () => {
   return {
+    wrapper: css({
+      position: 'relative',
+    }),
     progress: css({
       position: 'relative',
+    }),
+    listItem: css({
+      listStyle: 'none',
     }),
     list: (width: string) =>
       css({
@@ -37,13 +43,15 @@ export const getStyles = () => {
       whiteSpace: 'nowrap',
       width: '1px',
     }),
-    number: css({
+    button: css({
       borderRadius: '50%',
       border: `2px solid ${tokens.gray300}`,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
       color: tokens.gray300,
       width: tokens.spacingL,
-      height: tokens.spacingL,
-      display: 'inline-block',
+      height: '24px',
       textAlign: 'center',
       backgroundColor: 'white',
       fontWeight: tokens.fontWeightDemiBold,
@@ -59,7 +67,8 @@ export const getStyles = () => {
       },
     }),
     icon: css({
-      transform: 'translateY(2px)',
+      // TO DO: adjust sizing of icon for warning only?
+      // transform: 'translateY(2px)',
     }),
     isActive: css({
       color: tokens.colorPrimary,
@@ -86,6 +95,11 @@ export const getStyles = () => {
     }),
     clickable: css({
       cursor: 'pointer',
+    }),
+    stepLabel: css({
+      position: 'absolute',
+      top: '100%',
+      whiteSpace: 'nowrap',
     }),
   };
 };

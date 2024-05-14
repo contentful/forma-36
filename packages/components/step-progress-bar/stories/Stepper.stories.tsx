@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Stepper, type StepperProps } from '../src/Stepper';
+import { Stepper, type StepperProps } from '../src';
 
 export default {
   component: Stepper,

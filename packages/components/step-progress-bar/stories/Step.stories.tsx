@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Step, type StepProps } from '../src/Step';
+import { Step, type StepProps } from '../src';
 
 export default {
   component: Step,
@@ -22,4 +22,8 @@ export const Error: Story<StepProps> = (args) => {
 
 export const Warning: Story<StepProps> = (args) => {
   return <Step {...args} isWarning />;
+};
+
+export const Disabled: Story<StepProps> = (args) => {
+  return <Step {...args} isDisabled />;
 };
