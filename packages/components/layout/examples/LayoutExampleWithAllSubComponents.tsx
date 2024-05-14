@@ -7,9 +7,8 @@ import {
   TextInput,
   Textarea,
 } from '@contentful/f36-components';
-import { Header } from '@contentful/f36-header';
 import { Layout } from '@contentful/f36-layout';
-import { Paragraph } from '@contentful/f36-typography';
+import { Heading, Paragraph } from '@contentful/f36-typography';
 
 export default function BasicLayoutExample() {
   const [submitting, setSubmitting] = useState(false);
@@ -22,26 +21,28 @@ export default function BasicLayoutExample() {
     <Layout
       header={
         <Layout.Header>
-          <Header title="Your Details" />
+          <Heading marginTop="spacingM" marginBottom="spacingM">
+            Your Details
+          </Heading>
         </Layout.Header>
       }
       leftSidebar={
         <Layout.Sidebar>
-          <Box padding="spacingS" marginBottom="spacingXl">
+          <Box padding="none" marginBottom="spacingXl">
             <Paragraph>Sidebar Content</Paragraph>
           </Box>
         </Layout.Sidebar>
       }
       rightSidebar={
         <Layout.Sidebar>
-          <Box padding="spacingS" marginBottom="spacingXl">
+          <Box padding="none" marginBottom="spacingXl">
             <Paragraph>Sidebar Content</Paragraph>
           </Box>
         </Layout.Sidebar>
       }
     >
       <Layout.Body>
-        <Box padding="spacingL" marginBottom="spacingXl">
+        <Box padding="none" marginBottom="spacingXl">
           <Form onSubmit={submitForm}>
             <FormControl>
               <FormControl.Label isRequired>Name</FormControl.Label>

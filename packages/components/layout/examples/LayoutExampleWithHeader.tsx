@@ -7,7 +7,7 @@ import {
   TextInput,
   Textarea,
 } from '@contentful/f36-components';
-import { Header } from '@contentful/f36-header';
+import { Heading } from '@contentful/f36-typography';
 import { Layout } from '@contentful/f36-layout';
 
 export default function BasicLayoutExample() {
@@ -21,12 +21,14 @@ export default function BasicLayoutExample() {
     <Layout
       header={
         <Layout.Header>
-          <Header title="Your Details" />
+          <Heading marginTop="spacingM" marginBottom="spacingM">
+            Your Details
+          </Heading>
         </Layout.Header>
       }
     >
       <Layout.Body>
-        <Box padding="spacingL" marginBottom="spacingXl">
+        <Box padding="none" marginBottom="spacingXl">
           <Form onSubmit={submitForm}>
             <FormControl>
               <FormControl.Label isRequired>Name</FormControl.Label>
