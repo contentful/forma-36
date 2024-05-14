@@ -3,6 +3,15 @@ import tokens from '@contentful/f36-tokens';
 import { NavbarAccountProps } from './NavbarAccount';
 import { getGlowOnFocusStyles } from '../utils.styles';
 
+const notificationVarianColorMap: Record<
+  NavbarAccountProps['notificationVariant'],
+  string
+> = {
+  warning: tokens.colorWarning,
+  negative: tokens.colorNegative,
+  info: tokens.blue500,
+};
+
 export const getNavbarAccountStyles = () => ({
   root: css(
     {
@@ -37,8 +46,7 @@ export const getNavbarAccountStyles = () => ({
       width: tokens.spacingS,
       borderRadius: '50%',
       border: `2px solid ${tokens.gray900}`,
-      backgroundColor:
-        variant === 'negative' ? tokens.colorNegative : tokens.colorWarning,
+      backgroundColor: notificationVarianColorMap[variant],
       transform: 'translate(30%, -30%)',
     }),
 });
