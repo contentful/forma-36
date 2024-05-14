@@ -31,6 +31,7 @@ export interface AvatarProps extends CommonProps {
   variant?: Variant;
   colorVariant?: ColorVariant;
   icon?: React.ReactElement;
+  fallBackClass?: string;
 }
 
 function _Avatar(
@@ -46,6 +47,7 @@ function _Avatar(
     testId = 'cf-ui-avatar',
     tooltipProps,
     variant = 'user',
+    fallBackClass,
     ...otherProps
   }: AvatarProps,
   forwardedRef: React.Ref<HTMLDivElement>,
@@ -67,7 +69,10 @@ function _Avatar(
       {...otherProps}
     >
       {isFallback ? (
-        <div className={styles.fallback} data-test-id={`${testId}-fallback`}>
+        <div
+          className={cx(styles.fallback, fallBackClass)}
+          data-test-id={`${testId}-fallback`}
+        >
           {initials}
         </div>
       ) : (
