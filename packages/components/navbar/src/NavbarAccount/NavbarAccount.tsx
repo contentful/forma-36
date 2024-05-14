@@ -59,7 +59,7 @@ function _NavbarAccount(
             alt={`Avatar for user ${username}`}
             className={styles.avatar}
           /> */}
-          <Avatar src={avatar} initials={initials} />
+          <Avatar src={avatar} />
           {hasNotification ? (
             <span className={styles.notificationIcon(notificationVariant)} />
           ) : null}
