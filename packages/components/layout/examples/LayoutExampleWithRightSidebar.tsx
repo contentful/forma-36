@@ -21,14 +21,14 @@ export default function BasicLayoutExample() {
     <Layout
       rightSidebar={
         <Layout.Sidebar>
-          <Box padding="spacingS" marginBottom="spacingXl">
+          <Box padding="none" marginBottom="spacingXl">
             <Paragraph>Sidebar Content</Paragraph>
           </Box>
         </Layout.Sidebar>
       }
     >
       <Layout.Body>
-        <Box padding="spacingL" marginBottom="spacingXl">
+        <Box padding="none" marginBottom="spacingXl">
           <Form onSubmit={submitForm}>
             <FormControl>
               <FormControl.Label isRequired>Name</FormControl.Label>
