@@ -1,4 +1,6 @@
 import { css } from 'emotion';
+import tokens from '@contentful/f36-tokens';
+
 import type { LayoutContextType } from './LayoutContext';
 
 export const getLayoutBodyStyles = (variant: LayoutContextType['variant']) => ({
@@ -9,5 +11,6 @@ export const getLayoutBodyStyles = (variant: LayoutContextType['variant']) => ({
     maxWidth: variant === 'narrow' ? '720px' : '100%',
     flexGrow: 1,
     minWidth: 0,
+    padding: `${tokens.spacingL} ${tokens.spacingL} 0`,
   }),
 });
