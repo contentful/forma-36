@@ -72,7 +72,7 @@ const MainItems = () => (
   </>
 );
 
-export const Basic: Story<NavbarProps> = (args) => {
+export const Basic: Story<NavbarProps & { initials?: string }> = (args) => {
   return (
     <div style={{ width: '900px' }}>
       <Navbar switcher={<Switcher />} account={<Account {...args} />}>
@@ -88,7 +88,9 @@ Basic.args = {
     'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=100&h=100',
 };
 
-export const WithInitialsAvatar: Story<NavbarProps> = (args) => {
+export const WithInitialsAvatar: Story<NavbarProps & { initials?: string }> = (
+  args,
+) => {
   return (
     <div style={{ width: '900px' }}>
       <Navbar switcher={<Switcher />} account={<Account {...args} />}>
@@ -114,7 +116,7 @@ export const WithFallbackAvatar: Story<NavbarProps> = (args) => {
 
 WithFallbackAvatar.args = {};
 
-export const Complete: Story<NavbarProps> = (args) => {
+export const Complete: Story<NavbarProps & { initials?: string }> = (args) => {
   return (
     <div style={{ width: '900px' }}>
       <Navbar
@@ -183,7 +185,9 @@ Complete.args = {
     'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=100&h=100',
 };
 
-export const WithDifferentEnvironments: Story<NavbarProps> = (args) => {
+export const WithDifferentEnvironments: Story<
+  NavbarProps & { initials?: string }
+> = (args) => {
   return (
     <Flex flexDirection="column" gap="spacingL" style={{ width: '900px' }}>
       <Flex flexDirection="column">
@@ -248,7 +252,9 @@ WithDifferentEnvironments.args = {
     'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=100&h=100',
 };
 
-export const WithAccountNotification: Story<NavbarProps> = (args) => {
+export const WithAccountNotification: Story<
+  NavbarProps & { initials?: string }
+> = (args) => {
   return (
     <Flex flexDirection="column" gap="spacingL" style={{ width: '900px' }}>
       <Flex flexDirection="column">
