@@ -27,16 +27,29 @@ function _Stepper(props: StepperProps, ref: React.Ref<HTMLDivElement>) {
       ? styles.verticalList(`${percentComplete}%`)
       : styles.list(`${percentComplete}%`);
 
+  const renderSteps = () => {
+    const steps = stepsToRender.map((child, index) => {
+      const stepChild = React.cloneElement(child as React.ReactElement, {
+        key: `steps-rendered-${index}`,
+        stepStyle: stepStyle,
+        stepNumber: index + 1,
+      });
+      return (
+        <Flex alignItems="center">
+          {stepChild}
+          {stepsToRender.length - 1 !== index ? (
+            <span className={styles.stepConnector}></span>
+          ) : null}
+        </Flex>
+      );
+    });
+    return steps;
+  };
+
   return (
     <nav className={styles.progress}>
       <Flex as="ol" className={orderedListStyling}>
-        {stepsToRender.map((child, index) => {
-          return React.cloneElement(child as React.ReactElement, {
-            key: `steps-rendered-${index}`,
-            stepStyle: stepStyle,
-            stepNumber: index + 1,
-          });
-        })}
+        {renderSteps()}
       </Flex>
     </nav>
   );
