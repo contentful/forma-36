@@ -27,7 +27,6 @@ export type LayoutProps = {
    * which holds the sidebars and children div
    */
   contentClassName?: string;
-  backgroundClassName?: string;
   contentTestId?: string;
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
@@ -42,7 +41,6 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     className,
     testId = 'cf-layout',
     contentTestId = 'cf-layout-main-container',
-    backgroundClassName,
     contentClassName,
     ...otherProps
   } = props;
