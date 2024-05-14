@@ -58,7 +58,7 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
 
   return (
     <LayoutContextProvider value={contextValue}>
-      <Flex className={cx(styles.root, className)}>
+      <Flex className={cx(styles.root, className)} justifyContent="center">
         <Flex
           {...otherProps}
           as="section"
