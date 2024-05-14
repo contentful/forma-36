@@ -8,6 +8,7 @@
   "dependencies": {
     "@contentful/f36-core": "^4.65.6",
     "@contentful/f36-menu": "^4.65.6",
+    "@contentful/f36-avatar": "^4.0.0-alpha.11",
     "@contentful/f36-tokens": "^4.0.1",
     "@contentful/f36-utils": "^4.23.2",
     "@contentful/f36-skeleton": "^4.65.6",
