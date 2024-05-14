@@ -19,7 +19,7 @@ export default function BasicLayoutExample() {
   return (
     <Layout>
       <Layout.Body>
-        <Box padding="spacingL" marginBottom="spacingXl">
+        <Box padding="none" marginBottom="spacingXl">
           <Form onSubmit={submitForm}>
             <FormControl>
               <FormControl.Label isRequired>Name</FormControl.Label>
