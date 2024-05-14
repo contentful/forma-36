@@ -1,5 +1,23 @@
 # @contentful/f36-navbar
 
+## 4.65.6
+
+### Patch Changes
+
+- [#2752](https://github.com/contentful/forma-36/pull/2752) [`45507c384`](https://github.com/contentful/forma-36/commit/45507c3841441ddf2e7de311520cefc96ee2f8ec) Thanks [@bgutsol](https://github.com/bgutsol)! - Add "@contentful/f36-navbar" to umbrella package as a fixed dependency
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.65.6
+  - @contentful/f36-icon@4.65.6
+  - @contentful/f36-menu@4.65.6
+  - @contentful/f36-skeleton@4.65.6
+
+## 4.2.0
+
+### Minor Changes
+
+- [#2750](https://github.com/contentful/forma-36/pull/2750) [`2d0ff526d`](https://github.com/contentful/forma-36/commit/2d0ff526df37e62525ce47000fc4f48319c9faf5) Thanks [@bgutsol](https://github.com/bgutsol)! - Introduce new notification 'info' variant for NavbarAccount component
+
 ## 4.1.1
 
 ### Patch Changes

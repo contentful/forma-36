@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 14-05-2024
+
+**F36 Navbar** `v4.2.0`
+
+- Introduce new notification 'info' variant for NavbarAccount component
+
+**F36 Navbar** `v4.65.6`
+
+- Add "@contentful/f36-navbar" to umbrella package as a fixed dependency
+
 ## 04-05-2024
 
 **F36 Menu** `v4.65.5`
