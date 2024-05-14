@@ -6,19 +6,48 @@ export const getStyles = () => {
     progress: css({
       position: 'relative',
     }),
+    verticalList: (height: string) =>
+      css({
+        position: 'relative',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: 'column',
+        padding: 0,
+        // TO DO: how will we decide the height of the component?
+        height: '300px',
+        '&::before, &::after': {
+          content: '""',
+          position: 'absolute',
+          top: '0',
+          // bottom of line has to be slightly above zero otherwise it appears
+          bottom: '1%',
+          left: 'calc(50% - 1px)',
+          zIndex: tokens.zIndexNegative,
+          width: '2px',
+        },
+        '&::before': {
+          backgroundColor: tokens.gray300,
+        },
+        '&::after': {
+          backgroundColor: tokens.colorPrimary,
+          height,
+          // TO DO: confirm transition for height
+          transition: `height ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
+        },
+      }),
     list: (width: string) =>
       css({
         position: 'relative',
         justifyContent: 'space-between',
         width: '100%',
+        padding: 0,
         '&::before, &::after': {
           content: '""',
           position: 'absolute',
-          top: '50%',
+          top: 'calc(50% - 1px)',
           left: '0',
           height: '2px',
           zIndex: tokens.zIndexNegative,
-          transform: 'translateY(-50%)',
         },
         '&::before': {
           backgroundColor: tokens.gray300,

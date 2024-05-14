@@ -1,8 +1,9 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { CommonProps } from '@contentful/f36-core';
+import { CommonProps, Flex } from '@contentful/f36-core';
 import { getStyles } from './Step.styles';
 import { DoneIcon, CloseIcon, WarningIcon } from '@contentful/f36-icons';
+import { Paragraph } from '@contentful/f36-typography';
 
 export interface StepProps extends CommonProps {
   isActive?: boolean;
@@ -11,7 +12,9 @@ export interface StepProps extends CommonProps {
   isDisabled?: boolean;
   isComplete?: boolean;
   stepStyle?: 'number' | 'icon';
-  stepNumber: number;
+  // make this optional prop because parent component determines its value
+  stepNumber?: number;
+  labelText?: string;
   // onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
@@ -25,6 +28,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
     isDisabled,
     stepStyle,
     stepNumber,
+    labelText,
   } = props;
 
   const renderStep = () => {
@@ -38,6 +42,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
           <CloseIcon size="tiny" variant="white" className={styles.icon} />
         );
       case isWarning:
+        // TO DO: adjust size/spacing of warning icon
         return (
           <WarningIcon size="tiny" variant="white" className={styles.icon} />
         );
@@ -47,21 +52,28 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
   };
 
   return (
-    <li style={{ listStyle: 'none' }}>
-      <button
-        type="button"
-        className={cx(styles.number, {
-          [styles.isActive]: isActive,
-          [styles.isDisabled]: isDisabled,
-          [styles.isComplete]: isComplete,
-          [styles.isInvalid]: isInvalid,
-          [styles.isWarning]: isWarning,
-        })}
-        disabled={isDisabled}
-      >
-        {renderStep()}
-      </button>
-    </li>
+    <Flex flexDirection="column" alignItems="center" justifyContent="center">
+      <li className={styles.listItem}>
+        <button
+          type="button"
+          className={cx(styles.button, {
+            [styles.isActive]: isActive,
+            [styles.isDisabled]: isDisabled,
+            [styles.isComplete]: isComplete,
+            [styles.isInvalid]: isInvalid,
+            [styles.isWarning]: isWarning,
+          })}
+          disabled={isDisabled}
+        >
+          {renderStep()}
+        </button>
+      </li>
+      {labelText && (
+        <Paragraph className={styles.stepLabel} marginBottom="none">
+          {labelText}
+        </Paragraph>
+      )}
+    </Flex>
   );
 }
 
