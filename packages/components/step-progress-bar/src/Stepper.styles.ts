@@ -107,8 +107,7 @@ export const getStyles = () => {
     stepConnector: css({
       borderTop: `2px solid ${tokens.gray300}`,
       height: 0,
-      // TO DO: the width of this line is hardcoded now - should eventually fill entire container automatically
-      width: '5rem',
+      width: '100%',
     }),
   };
 };
