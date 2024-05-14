@@ -15,25 +15,26 @@ export const getStyles = () => {
         padding: 0,
         // TO DO: how will we decide the height of the component?
         height: '300px',
-        '&::before, &::after': {
-          content: '""',
-          position: 'absolute',
-          top: '0',
-          // bottom of line has to be slightly above zero otherwise it appears
-          bottom: '1%',
-          left: 'calc(50% - 1px)',
-          zIndex: tokens.zIndexNegative,
-          width: '2px',
-        },
-        '&::before': {
-          backgroundColor: tokens.gray300,
-        },
-        '&::after': {
-          backgroundColor: tokens.colorPrimary,
-          height,
-          // TO DO: confirm transition for height
-          transition: `height ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
-        },
+        // ORIGINAL LINE CREATION
+        // '&::before, &::after': {
+        //   content: '""',
+        //   position: 'absolute',
+        //   top: '0',
+        //   // bottom of line has to be slightly above zero otherwise it appears
+        //   bottom: '1%',
+        //   left: 'calc(50% - 1px)',
+        //   zIndex: tokens.zIndexNegative,
+        //   width: '2px',
+        // },
+        // '&::before': {
+        //   backgroundColor: tokens.gray300,
+        // },
+        // '&::after': {
+        //   backgroundColor: tokens.colorPrimary,
+        //   height,
+        //   // TO DO: confirm transition for height
+        //   transition: `height ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
+        // },
       }),
     list: (width: string) =>
       css({
@@ -41,23 +42,24 @@ export const getStyles = () => {
         justifyContent: 'space-between',
         width: '100%',
         padding: 0,
-        '&::before, &::after': {
-          content: '""',
-          position: 'absolute',
-          top: 'calc(50% - 1px)',
-          left: '0',
-          height: '2px',
-          zIndex: tokens.zIndexNegative,
-        },
-        '&::before': {
-          backgroundColor: tokens.gray300,
-          width: '100%',
-        },
-        '&::after': {
-          backgroundColor: tokens.colorPrimary,
-          width,
-          transition: `width ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
-        },
+        // ORIGINAL LINE CREATION
+        // '&::before, &::after': {
+        //   content: '""',
+        //   position: 'absolute',
+        //   top: 'calc(50% - 1px)',
+        //   left: '0',
+        //   height: '2px',
+        //   zIndex: tokens.zIndexNegative,
+        // },
+        // '&::before': {
+        //   backgroundColor: tokens.gray300,
+        //   width: '100%',
+        // },
+        // '&::after': {
+        //   backgroundColor: tokens.colorPrimary,
+        //   width,
+        //   transition: `width ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
+        // },
       }),
     lastItem: css({
       clip: 'rect(0 0 0 0)',
@@ -101,6 +103,12 @@ export const getStyles = () => {
     }),
     clickable: css({
       cursor: 'pointer',
+    }),
+    stepConnector: css({
+      borderTop: `2px solid ${tokens.gray300}`,
+      height: 0,
+      // TO DO: the width of this line is hardcoded now - should eventually fill entire container automatically
+      width: '5rem',
     }),
   };
 };
