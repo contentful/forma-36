@@ -8,11 +8,13 @@ import {
   type ExpandProps,
 } from '@contentful/f36-core';
 import { NavbarMenu } from '../NavbarMenu/NavbarMenu';
+import { Avatar } from '../../../avatar/src/Avatar';
 
 type NavbarAccountOwnProps = CommonProps & {
   children: React.ReactNode;
   username: string;
-  avatar: string;
+  avatar?: string;
+  initials?: string;
   hasNotification?: boolean;
   /**
    * @default 'warning'
@@ -34,6 +36,7 @@ function _NavbarAccount(
     className,
     testId = 'cf-ui-navbar-account-trigger',
     avatar,
+    initials,
     username,
     hasNotification,
     notificationVariant = 'warning',
@@ -51,11 +54,12 @@ function _NavbarAccount(
           className={cx(styles.root, className)}
           testId={testId}
         >
-          <img
+          {/* <img
             src={avatar}
             alt={`Avatar for user ${username}`}
             className={styles.avatar}
-          />
+          /> */}
+          <Avatar src={avatar} initials={initials} />
           {hasNotification ? (
             <span className={styles.notificationIcon(notificationVariant)} />
           ) : null}
