@@ -87,7 +87,7 @@ export function _Icon<E extends ElementType = IconComponent>(
   const shared = {
     className: cx(
       css({
-        fill: color,
+        color,
         height: sizes[size],
         width: sizes[size],
       }),
