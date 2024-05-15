@@ -56,16 +56,19 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
 
   return (
     <LayoutContextProvider value={contextValue}>
-      <Flex className={cx(styles.root, className)} justifyContent="center">
+      <Flex
+        ref={ref}
+        testId={testId}
+        className={cx(styles.root, className)}
+        as="section"
+        justifyContent="center"
+      >
         <Flex
           {...otherProps}
-          as="section"
-          ref={ref}
           className={styles.mainContainer}
-          alignItems="center"
           flexDirection="column"
           justifyContent="flex-start"
-          testId={testId}
+          alignItems="center"
         >
           {header}
 
