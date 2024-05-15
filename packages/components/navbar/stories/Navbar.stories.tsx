@@ -32,15 +32,12 @@ const Switcher = ({
 );
 
 const Account = ({
-  avatar,
-  initials,
   hasNotification,
   notificationVariant,
 }: Partial<NavbarAccountProps>) => (
   <Navbar.Account
     username="username"
-    avatar={avatar}
-    initials={initials}
+    avatar="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=48&h=48"
     hasNotification={hasNotification}
     notificationVariant={notificationVariant}
   >
@@ -72,54 +69,22 @@ const MainItems = () => (
   </>
 );
 
-export const Basic: Story<NavbarProps> = (args) => {
+export const Basic: Story<NavbarProps> = () => {
   return (
     <div style={{ width: '900px' }}>
-      <Navbar switcher={<Switcher />} account={<Account {...args} />}>
+      <Navbar switcher={<Switcher />} account={<Account />}>
         <MainItems />
       </Navbar>
     </div>
   );
 };
 
-Basic.args = {
-  initials: 'AB',
-  avatar:
-    'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=100&h=100',
-};
-
-export const WithInitialsAvatar: Story<NavbarProps> = (args) => {
-  return (
-    <div style={{ width: '900px' }}>
-      <Navbar switcher={<Switcher />} account={<Account {...args} />}>
-        <MainItems />
-      </Navbar>
-    </div>
-  );
-};
-
-WithInitialsAvatar.args = {
-  initials: 'AB',
-};
-
-export const WithFallbackAvatar: Story<NavbarProps> = (args) => {
-  return (
-    <div style={{ width: '900px' }}>
-      <Navbar switcher={<Switcher />} account={<Account {...args} />}>
-        <MainItems />
-      </Navbar>
-    </div>
-  );
-};
-
-WithFallbackAvatar.args = {};
-
-export const Complete: Story<NavbarProps> = (args) => {
+export const Complete: Story<NavbarProps> = () => {
   return (
     <div style={{ width: '900px' }}>
       <Navbar
         switcher={<Switcher />}
-        account={<Account {...args} />}
+        account={<Account />}
         help={
           <Navbar.Help>
             <Navbar.MenuItem
@@ -177,13 +142,7 @@ export const Complete: Story<NavbarProps> = (args) => {
   );
 };
 
-Complete.args = {
-  initials: 'AB',
-  avatar:
-    'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=100&h=100',
-};
-
-export const WithDifferentEnvironments: Story<NavbarProps> = (args) => {
+export const WithDifferentEnviromnments: Story<NavbarProps> = () => {
   return (
     <Flex flexDirection="column" gap="spacingL" style={{ width: '900px' }}>
       <Flex flexDirection="column">
@@ -191,7 +150,7 @@ export const WithDifferentEnvironments: Story<NavbarProps> = (args) => {
           Master
         </SectionHeading>
 
-        <Navbar switcher={<Switcher />} account={<Account {...args} />}>
+        <Navbar switcher={<Switcher />} account={<Account />}>
           <MainItems />
         </Navbar>
       </Flex>
@@ -203,7 +162,7 @@ export const WithDifferentEnvironments: Story<NavbarProps> = (args) => {
 
         <Navbar
           switcher={<Switcher envVariant="non-master">development</Switcher>}
-          account={<Account {...args} />}
+          account={<Account />}
         >
           <MainItems />
         </Navbar>
@@ -216,7 +175,7 @@ export const WithDifferentEnvironments: Story<NavbarProps> = (args) => {
 
         <Navbar
           switcher={<Switcher isAlias>staging</Switcher>}
-          account={<Account {...args} />}
+          account={<Account />}
         >
           <MainItems />
         </Navbar>
@@ -233,7 +192,7 @@ export const WithDifferentEnvironments: Story<NavbarProps> = (args) => {
               dev
             </Switcher>
           }
-          account={<Account {...args} />}
+          account={<Account />}
         >
           <MainItems />
         </Navbar>
@@ -242,13 +201,7 @@ export const WithDifferentEnvironments: Story<NavbarProps> = (args) => {
   );
 };
 
-WithDifferentEnvironments.args = {
-  initials: 'AB',
-  avatar:
-    'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=100&h=100',
-};
-
-export const WithAccountNotification: Story<NavbarProps> = (args) => {
+export const WithAccountNotification: Story<NavbarProps> = () => {
   return (
     <Flex flexDirection="column" gap="spacingL" style={{ width: '900px' }}>
       <Flex flexDirection="column">
@@ -256,10 +209,7 @@ export const WithAccountNotification: Story<NavbarProps> = (args) => {
           Warning
         </SectionHeading>
 
-        <Navbar
-          switcher={<Switcher />}
-          account={<Account {...args} hasNotification />}
-        >
+        <Navbar switcher={<Switcher />} account={<Account hasNotification />}>
           <MainItems />
         </Navbar>
       </Flex>
@@ -271,9 +221,7 @@ export const WithAccountNotification: Story<NavbarProps> = (args) => {
 
         <Navbar
           switcher={<Switcher />}
-          account={
-            <Account {...args} hasNotification notificationVariant="negative" />
-          }
+          account={<Account hasNotification notificationVariant="negative" />}
         >
           <MainItems />
         </Navbar>
@@ -293,12 +241,6 @@ export const WithAccountNotification: Story<NavbarProps> = (args) => {
       </Flex>
     </Flex>
   );
-};
-
-WithAccountNotification.args = {
-  initials: 'AB',
-  avatar:
-    'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=100&h=100',
 };
 
 export const LoadingSkeleton: Story<NavbarProps> = () => {
@@ -321,5 +263,3 @@ export const LoadingSkeleton: Story<NavbarProps> = () => {
     </div>
   );
 };
-
-LoadingSkeleton.args = {};
