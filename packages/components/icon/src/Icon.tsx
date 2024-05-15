@@ -74,7 +74,7 @@ export function _Icon<E extends ElementType = IconComponent>(
     children,
     className,
     isActive = false,
-    color = isActive ? tokens.blue500 : tokens.gray900,
+    color = isActive ? tokens.blue600 : tokens.gray900,
     role = 'img',
     size = 'medium',
     testId = 'cf-ui-icon',
