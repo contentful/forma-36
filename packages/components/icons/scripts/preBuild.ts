@@ -1,4 +1,4 @@
-/* eslint-disable no-console -- allow loggin in this script */
+/* eslint-disable no-console -- allow logging in this script */
 import path from 'node:path';
 import fs from 'node:fs/promises';
 
