@@ -4,7 +4,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Navbar, type NavbarProps } from '../src';
 import { AssetIcon, EntryIcon, FaceHappyIcon } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
-import { Flex } from '@contentful/f36-core';
+import { Flex, Stack } from '@contentful/f36-core';
 import { NavbarSwitcherItemProps } from '../src/NavbarSwitcherItem/NavbarSwitcherItem';
 import { NavbarAccountProps } from '../src/NavbarAccount/NavbarAccount';
 
@@ -71,11 +71,31 @@ const MainItems = () => (
 
 export const Basic: Story<NavbarProps> = () => {
   return (
-    <div style={{ width: '97vw' }}>
+    <div style={{ width: '900px' }}>
       <Navbar switcher={<Switcher />} account={<Account />}>
         <MainItems />
       </Navbar>
     </div>
+  );
+};
+
+export const SizeVariants: Story<NavbarProps> = () => {
+  return (
+    <Flex gap="spacingL" style={{ width: '97vw' }} flexDirection="column">
+      <SectionHeading marginBottom="none">Fullscreen</SectionHeading>
+      <Navbar
+        switcher={<Switcher />}
+        account={<Account />}
+        variant="fullscreen"
+      >
+        <MainItems />
+      </Navbar>
+
+      <SectionHeading marginBottom="none">Wide</SectionHeading>
+      <Navbar switcher={<Switcher />} account={<Account />}>
+        <MainItems />
+      </Navbar>
+    </Flex>
   );
 };
 

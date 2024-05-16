@@ -29,6 +29,10 @@ type NavbarOwnProps = CommonProps & {
    * @default '100%'
    */
   contentMaxWidth?: string;
+  /**
+   * Describes the size variation of the navbar
+   */
+  variant?: 'wide' | 'fullscreen';
 };
 
 // expose only the HTML props that are needed to not pollute the API
@@ -49,16 +53,17 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
     contentMaxWidth = '100%',
     testId = 'cf-ui-navbar',
     className,
+    variant = 'wide',
     ...otherProps
   } = props;
-  const styles = getNavbarStyles(contentMaxWidth);
+  const styles = getNavbarStyles(contentMaxWidth, variant);
 
   return (
     <Box
       {...otherProps}
       ref={ref}
       testId={testId}
-      className={cx(styles.navbarWrapper, className)}
+      className={cx(className, styles.maxWidth)}
     >
       <Flex className={styles.containerTop}>
         <Flex

@@ -2,9 +2,9 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { mqs } from './utils.styles';
 
-export const getNavbarStyles = (maxWidth: string) => ({
-  navbarWrapper: css({
-    maxWidth: '1524px', //hardcoded magic number
+export const getNavbarStyles = (maxWidth: string, variant: string) => ({
+  maxWidth: css({
+    maxWidth: variant === 'wide' ? '1524px' : '100%',
   }),
   containerTop: css({
     justifyContent: 'center',
