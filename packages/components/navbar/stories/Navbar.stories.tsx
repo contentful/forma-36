@@ -4,7 +4,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Navbar, type NavbarProps } from '../src';
 import { AssetIcon, EntryIcon, FaceHappyIcon } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
-import { Flex, Stack } from '@contentful/f36-core';
+import { Flex } from '@contentful/f36-core';
 import { NavbarSwitcherItemProps } from '../src/NavbarSwitcherItem/NavbarSwitcherItem';
 import { NavbarAccountProps } from '../src/NavbarAccount/NavbarAccount';
 
