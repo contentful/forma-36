@@ -11,6 +11,7 @@
     "@contentful/f36-image",
     "@contentful/f36-header",
     "@contentful/f36-layout",
+    "@contentful/f36-navbar",
     "@contentful/f36-navlist",
     "@contentful/f36-website"
   ],

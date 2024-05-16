@@ -54,11 +54,6 @@ function _NavbarAccount(
           className={cx(styles.root, className)}
           testId={testId}
         >
-          {/* <img
-            src={avatar}
-            alt={`Avatar for user ${username}`}
-            className={styles.avatar}
-          /> */}
           <Avatar src={avatar} initials={initials} />
           {hasNotification ? (
             <span className={styles.notificationIcon(notificationVariant)} />
