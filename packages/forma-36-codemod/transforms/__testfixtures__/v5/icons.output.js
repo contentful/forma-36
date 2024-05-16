@@ -7,4 +7,7 @@ import { CaretDownIcon, CaretUpIcon, XIcon, TrashSimpleIcon, InfoIcon } from "@c
 <InfoIcon />;
 
 const largeIcon = true;
-<XIcon />
+<XIcon />;
+
+<XIcon />;
+<XIcon />;
