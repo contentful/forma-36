@@ -13,4 +13,7 @@ import {
 <InfoCircleIcon variant="muted" />;
 
 const largeIcon = true;
-<CloseIcon size={largeIcon ? 'large' : 'xlarge'} />
+<CloseIcon size={largeIcon ? 'large' : 'xlarge'} />;
+
+<CloseIcon size={'xlarge'} />;
+<CloseIcon variant={"muted"} />;
