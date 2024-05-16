@@ -179,23 +179,17 @@ module.exports = function (file, api) {
             });
           }
 
-          size = getProperty(modifiedAttributes, {
-            propertyName: 'size',
-          });
-
-          // If ternary has same value for true and false, simplify
-          if (size.value.value === undefined) {
-            const matches = size.value.match(/\{'(\w+?)'\}/);
-            if (matches[1]) {
-              modifiedAttributes = updatePropertyValue(modifiedAttributes, {
-                j,
-                propertyName: 'size',
-                propertyValue: () => {
-                  return j.literal(matches[1]);
-                },
-              });
-            }
+          // update JSXExpressionContainer
+          if (size.value.type === 'JSXExpressionContainer') {
+            modifiedAttributes = updatePropertyValue(modifiedAttributes, {
+              j,
+              propertyName: 'size',
+              propertyValue: () => {
+                return j.literal(size.value.expression.value);
+              },
+            });
           }
+
           size = getProperty(modifiedAttributes, {
             propertyName: 'size',
           });
