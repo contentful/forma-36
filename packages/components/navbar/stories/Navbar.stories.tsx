@@ -71,7 +71,7 @@ const MainItems = () => (
 
 export const Basic: Story<NavbarProps> = () => {
   return (
-    <div style={{ width: '900px' }}>
+    <div style={{ width: '97vw' }}>
       <Navbar switcher={<Switcher />} account={<Account />}>
         <MainItems />
       </Navbar>

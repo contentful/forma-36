@@ -3,6 +3,9 @@ import tokens from '@contentful/f36-tokens';
 import { mqs } from './utils.styles';
 
 export const getNavbarStyles = (maxWidth: string) => ({
+  navbarWrapper: css({
+    maxWidth: '1524px', //hardcoded magic number
+  }),
   containerTop: css({
     justifyContent: 'center',
     backgroundColor: tokens.gray100,
