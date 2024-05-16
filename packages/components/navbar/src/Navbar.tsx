@@ -6,7 +6,6 @@ import {
 } from '@contentful/f36-core';
 import React from 'react';
 import { getNavbarStyles } from './Navbar.styles';
-import { cx } from 'emotion';
 type NavbarOwnProps = CommonProps & {
   children?: React.ReactNode;
   account?: React.ReactNode;
@@ -59,12 +58,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
   const styles = getNavbarStyles(contentMaxWidth, variant);
 
   return (
-    <Box
-      {...otherProps}
-      ref={ref}
-      testId={testId}
-      className={cx(className, styles.maxWidth)}
-    >
+    <Box {...otherProps} ref={ref} testId={testId} className={className}>
       <Flex className={styles.containerTop}>
         <Flex
           className={styles.containerTopContent}
