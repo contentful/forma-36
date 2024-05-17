@@ -79,6 +79,26 @@ export const Basic: Story<NavbarProps> = () => {
   );
 };
 
+export const SizeVariants: Story<NavbarProps> = () => {
+  return (
+    <Flex gap="spacingL" style={{ width: '97vw' }} flexDirection="column">
+      <SectionHeading marginBottom="none">Fullscreen</SectionHeading>
+      <Navbar
+        switcher={<Switcher />}
+        account={<Account />}
+        variant="fullscreen"
+      >
+        <MainItems />
+      </Navbar>
+
+      <SectionHeading marginBottom="none">Wide</SectionHeading>
+      <Navbar switcher={<Switcher />} account={<Account />}>
+        <MainItems />
+      </Navbar>
+    </Flex>
+  );
+};
+
 export const Complete: Story<NavbarProps> = () => {
   return (
     <div style={{ width: '900px' }}>
