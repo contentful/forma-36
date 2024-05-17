@@ -15,12 +15,16 @@ export function wrapPhosphorIcon(PhosphorIcon: PhosphorIcon) {
     isActive = false,
     color = isActive ? tokens.blue500 : tokens.gray900,
     size = 'medium',
+    testId,
     ...props
   }: GeneratedIconProps & { weight?: IconWeight }) => {
+    const commonProps = { ...props, 'data-test-id': testId };
     return (
       <Icon
-        {...props}
-        as={() => <PhosphorIcon {...props} color={color} size={sizes[size]} />}
+        {...commonProps}
+        as={() => (
+          <PhosphorIcon {...commonProps} color={color} size={sizes[size]} />
+        )}
       />
     );
   };
