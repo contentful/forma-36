@@ -16,6 +16,9 @@ export interface StepProps extends CommonProps {
   // make this optional prop because parent component determines its value
   stepNumber?: number;
   labelText?: string;
+  orientation?: 'horizontal' | 'vertical';
+  verticalLineHeight?: number;
+  isLastStep: boolean;
   // onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
@@ -30,6 +33,9 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
     stepStyle,
     stepNumber,
     labelText,
+    orientation,
+    verticalLineHeight,
+    isLastStep,
   } = props;
 
   const renderStep = () => {
@@ -53,44 +59,68 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
   };
 
   return (
-    <Flex
-      style={{ height: '100%', width: '100%' }}
-      flexDirection="column"
-      alignItems="baseline"
-      justifyContent="center"
-    >
-      {/* <Flex flexDirection="row" alignItems="baseline" justifyContent="center"> */}
-      <li className={styles.listItem}>
-        <button
-          type="button"
-          className={cx(styles.button, {
-            [styles.isActive]: isActive,
-            [styles.isDisabled]: isDisabled,
-            [styles.isComplete]: isComplete,
-            [styles.isInvalid]: isInvalid,
-            [styles.isWarning]: isWarning,
-          })}
-          disabled={isDisabled}
+    <Flex>
+      <Flex
+        className={
+          orientation === 'vertical'
+            ? styles.verticalStep
+            : styles.horizontalStep
+        }
+      >
+        <Flex
+          flexDirection="column"
+          alignItems="baseline"
+          justifyContent="center"
         >
-          {renderStep()}
-        </button>
-      </li>
-      <span
-        style={{
-          borderTop: `2px solid ${tokens.gray300}`,
-          height: 0,
-          position: 'absolute',
-          top: '30%',
-          width: '100%',
-          zIndex: '-1',
-        }}
-      ></span>
-      {/* </Flex> */}
-      {labelText && (
-        <Paragraph className={styles.stepLabel} marginBottom="none">
-          {labelText}
-        </Paragraph>
-      )}
+          <li className={styles.listItem}>
+            <button
+              type="button"
+              className={cx(styles.button, {
+                [styles.isActive]: isActive,
+                [styles.isDisabled]: isDisabled,
+                [styles.isComplete]: isComplete,
+                [styles.isInvalid]: isInvalid,
+                [styles.isWarning]: isWarning,
+              })}
+              disabled={isDisabled}
+            >
+              {renderStep()}
+            </button>
+          </li>
+          {!isLastStep && (
+            <>
+              {orientation === 'horizontal' ? (
+                <span
+                  style={{
+                    borderTop: `2px solid ${tokens.gray300}`,
+                    height: 0,
+                    position: 'absolute',
+                    top: '30%',
+                    width: '100%',
+                    zIndex: '-1',
+                  }}
+                ></span>
+              ) : (
+                <span
+                  style={{
+                    borderLeft: `2px solid ${tokens.gray300}`,
+                    height: verticalLineHeight,
+                    // position: 'absolute',
+                    // top: '30%',
+                    width: 0,
+                    zIndex: '-1',
+                  }}
+                ></span>
+              )}
+            </>
+          )}
+        </Flex>
+        {labelText && (
+          <Paragraph className={styles.stepLabel} marginBottom="none">
+            {labelText}
+          </Paragraph>
+        )}
+      </Flex>
     </Flex>
   );
 }
