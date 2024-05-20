@@ -20,7 +20,9 @@ export const HorizontalIcon: Story<StepperProps> = (args) => {
 };
 
 export const Vertical: Story<StepperProps> = (args) => {
-  return <TEMPStepProgressBar orientation="vertical" activeStep={2} />;
+  return (
+    <TEMPStepProgressBar orientation="vertical" activeStep={2} height={300} />
+  );
 };
 
 export const VerticalIcon: Story<StepperProps> = (args) => {
@@ -29,6 +31,7 @@ export const VerticalIcon: Story<StepperProps> = (args) => {
       stepStyle="icon"
       orientation="vertical"
       activeStep={2}
+      height={300}
     />
   );
 };

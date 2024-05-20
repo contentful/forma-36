@@ -8,6 +8,7 @@ export interface StepperProps extends CommonProps, MarginProps {
   stepStyle?: 'number' | 'icon';
   activeStep?: number;
   id?: string;
+  height?: number;
 }
 
 function _Stepper(props: StepperProps, ref: React.Ref<HTMLDivElement>) {
@@ -17,6 +18,7 @@ function _Stepper(props: StepperProps, ref: React.Ref<HTMLDivElement>) {
     stepStyle = 'number',
     activeStep,
     id,
+    height,
   } = props;
   const styles = getStyles();
 
@@ -26,6 +28,12 @@ function _Stepper(props: StepperProps, ref: React.Ref<HTMLDivElement>) {
     orientation === 'vertical'
       ? styles.verticalList(`${percentComplete}%`)
       : styles.list(`${percentComplete}%`);
+  const calculateVerticalLineHeight = () => {
+    if (orientation === 'vertical' && height) {
+      return height / (stepsToRender.length - 1);
+    }
+    return 0;
+  };
 
   const renderSteps = () => {
     const steps = stepsToRender.map((child, index) => {
@@ -33,13 +41,13 @@ function _Stepper(props: StepperProps, ref: React.Ref<HTMLDivElement>) {
         key: `steps-rendered-${index}`,
         stepStyle: stepStyle,
         stepNumber: index + 1,
+        orientation,
+        verticalLineHeight: calculateVerticalLineHeight(),
+        isLastStep: stepsToRender.length - 1 === index,
       });
       return (
         <Flex flexGrow={1} alignItems="center">
           {stepChild}
-          {/* {stepsToRender.length - 1 !== index ? (
-            <span className={styles.stepConnector}></span>
-          ) : null} */}
         </Flex>
       );
     });

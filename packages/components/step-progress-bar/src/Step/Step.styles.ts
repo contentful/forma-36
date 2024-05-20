@@ -99,5 +99,16 @@ export const getStyles = () => {
     stepLabel: css({
       whiteSpace: 'nowrap',
     }),
+    verticalStep: css({
+      gap: tokens.spacing2Xs,
+      alignItems: 'baseline',
+    }),
+    horizontalStep: css({
+      height: '100%',
+      width: '100%',
+      flexDirection: 'column',
+      alignItems: 'baseline',
+      justifyContent: 'center',
+    }),
   };
 };
