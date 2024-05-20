@@ -4,6 +4,7 @@ import { CommonProps, Flex } from '@contentful/f36-core';
 import { getStyles } from './Step.styles';
 import { DoneIcon, CloseIcon, WarningIcon } from '@contentful/f36-icons';
 import { Paragraph } from '@contentful/f36-typography';
+import tokens from '@contentful/f36-tokens';
 
 export interface StepProps extends CommonProps {
   isActive?: boolean;
@@ -52,7 +53,13 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
   };
 
   return (
-    <Flex flexDirection="column" alignItems="center" justifyContent="center">
+    <Flex
+      style={{ height: '100%', width: '100%' }}
+      flexDirection="column"
+      alignItems="baseline"
+      justifyContent="center"
+    >
+      {/* <Flex flexDirection="row" alignItems="baseline" justifyContent="center"> */}
       <li className={styles.listItem}>
         <button
           type="button"
@@ -68,6 +75,17 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
           {renderStep()}
         </button>
       </li>
+      <span
+        style={{
+          borderTop: `2px solid ${tokens.gray300}`,
+          height: 0,
+          position: 'absolute',
+          top: '30%',
+          width: '100%',
+          zIndex: '-1',
+        }}
+      ></span>
+      {/* </Flex> */}
       {labelText && (
         <Paragraph className={styles.stepLabel} marginBottom="none">
           {labelText}

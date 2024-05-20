@@ -37,9 +37,9 @@ function _Stepper(props: StepperProps, ref: React.Ref<HTMLDivElement>) {
       return (
         <Flex flexGrow={1} alignItems="center">
           {stepChild}
-          {stepsToRender.length - 1 !== index ? (
+          {/* {stepsToRender.length - 1 !== index ? (
             <span className={styles.stepConnector}></span>
-          ) : null}
+          ) : null} */}
         </Flex>
       );
     });
