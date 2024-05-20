@@ -97,8 +97,6 @@ export const getStyles = () => {
       cursor: 'pointer',
     }),
     stepLabel: css({
-      position: 'absolute',
-      top: '100%',
       whiteSpace: 'nowrap',
     }),
   };
