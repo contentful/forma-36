@@ -297,7 +297,9 @@ export const WithAccountNotification: Story<{
 
         <Navbar
           switcher={<Switcher />}
-          account={<Account hasNotification notificationVariant="info" />}
+          account={
+            <Account {...args} hasNotification notificationVariant="info" />
+          }
         >
           <MainItems />
         </Navbar>
