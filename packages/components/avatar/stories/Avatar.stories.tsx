@@ -12,6 +12,7 @@ export default {
 } as Meta;
 
 export const Overview: Story<AvatarProps> = (args) => {
+  const { src, ...argsNoSrc } = args;
   return (
     <>
       <SectionHeading as="h3" marginBottom="spacingS">
@@ -33,6 +34,22 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar size="medium" variant="app" />
         <Avatar size="small" variant="app" />
         <Avatar size="tiny" variant="app" />
+      </Flex>
+
+      <Flex
+        alignItems="center"
+        flexDirection="row"
+        gap="spacingS"
+        marginBottom="spacingM"
+      >
+        <Avatar {...argsNoSrc} size="tiny" variant="user" />
+        <Avatar {...argsNoSrc} size="small" variant="user" />
+        <Avatar {...argsNoSrc} size="medium" variant="user" />
+        <Avatar {...argsNoSrc} size="large" variant="app" />
+        <Avatar {...argsNoSrc} size="large" variant="user" />
+        <Avatar {...argsNoSrc} size="medium" variant="app" />
+        <Avatar {...argsNoSrc} size="small" variant="app" />
+        <Avatar {...argsNoSrc} size="tiny" variant="app" />
       </Flex>
 
       <Flex
@@ -104,5 +121,6 @@ export const Overview: Story<AvatarProps> = (args) => {
 };
 
 Overview.args = {
+  initials: 'BB',
   src: 'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=100&h=100',
 };
