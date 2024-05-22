@@ -68,7 +68,7 @@ function _Avatar(
     >
       {isFallback ? (
         <div className={styles.fallback} data-test-id={`${testId}-fallback`}>
-          {initials}
+          {initials?.substring(0, 2).toUpperCase()}
         </div>
       ) : (
         <Image
