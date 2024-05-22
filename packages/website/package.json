@@ -57,7 +57,7 @@
     "remark": "^14.0.2",
     "remark-code-import": "^1.1.1",
     "remark-code-titles": "^0.1.1",
-    "use-debounce": "^8.0.4"
+    "use-debounce": "^10.0.0"
   },
   "devDependencies": {
     "@contentful/rich-text-types": "^15.11.1",
