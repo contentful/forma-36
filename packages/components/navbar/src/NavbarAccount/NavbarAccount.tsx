@@ -54,7 +54,12 @@ function _NavbarAccount(
           className={cx(styles.root, className)}
           testId={testId}
         >
-          <Avatar src={avatar} initials={initials} />
+          <Avatar
+            src={avatar}
+            initials={initials}
+            size="small"
+            variant="user"
+          />
           {hasNotification ? (
             <span className={styles.notificationIcon(notificationVariant)} />
           ) : null}
