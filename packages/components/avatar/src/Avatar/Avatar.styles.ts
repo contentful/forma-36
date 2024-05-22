@@ -19,6 +19,9 @@ export const convertSizeToPixels = (size: AvatarProps['size']) =>
     large: '48px',
   }[size]);
 
+const getInitialsFontSize = (sizePixels: string) =>
+  Math.round(Number(sizePixels.replace('px', '')) / 2);
+
 export const getAvatarStyles = ({
   isFallback,
   size,
@@ -38,8 +41,14 @@ export const getAvatarStyles = ({
   return {
     fallback: css({
       backgroundColor: tokens.gray200,
+      color: 'rgba(0,0,0,0.5)',
       height: '100%',
       width: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontStretch: 'semi-condensed',
+      fontSize: `${getInitialsFontSize(sizePixels)}px`,
     }),
     image: css({
       borderRadius,

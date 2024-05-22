@@ -20,6 +20,7 @@ export interface AvatarProps extends CommonProps {
   alt?: ImageProps['alt'];
   isLoading?: boolean;
   size?: Size;
+  initials?: string;
   src?: ImageProps['src'];
   /**
    * A tooltipProps attribute used to conditionally render the tooltip around root element
@@ -40,6 +41,7 @@ function _Avatar(
     icon = null,
     isLoading = false,
     size = 'medium',
+    initials,
     src,
     testId = 'cf-ui-avatar',
     tooltipProps,
@@ -65,7 +67,9 @@ function _Avatar(
       {...otherProps}
     >
       {isFallback ? (
-        <div className={styles.fallback} data-test-id={`${testId}-fallback`} />
+        <div className={styles.fallback} data-test-id={`${testId}-fallback`}>
+          {initials?.substring(0, 2).toUpperCase()}
+        </div>
       ) : (
         <Image
           alt={alt}
