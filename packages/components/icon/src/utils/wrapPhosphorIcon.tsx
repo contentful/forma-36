@@ -2,6 +2,7 @@ import React from 'react';
 import type {
   Icon as PhosphorIcon,
   IconWeight as PhosphorIconWeight,
+  IconProps as PhosphorIconProps,
 } from '@phosphor-icons/react';
 import tokens from '@contentful/f36-tokens';
 import { Icon, sizes } from '../Icon.js';
@@ -15,15 +16,15 @@ export function wrapPhosphorIcon(PhosphorIcon: PhosphorIcon) {
     isActive = false,
     color = isActive ? tokens.blue500 : tokens.gray900,
     size = 'medium',
-    testId,
     ...props
   }: GeneratedIconProps & { weight?: IconWeight }) => {
-    const commonProps = { ...props, 'data-test-id': testId };
     return (
       <Icon
-        {...commonProps}
-        as={() => (
-          <PhosphorIcon {...commonProps} color={color} size={sizes[size]} />
+        {...props}
+        // Icon renders the component on the `as` prop with its own props
+        // then we pass the props to the PhosphorIcon component
+        as={(phosporProps: PhosphorIconProps) => (
+          <PhosphorIcon {...phosporProps} color={color} size={sizes[size]} />
         )}
       />
     );
