@@ -7,7 +7,6 @@
     }
   ],
   "ignore": [
-    "@contentful/f36-avatar",
     "@contentful/f36-image",
     "@contentful/f36-header",
     "@contentful/f36-layout",
@@ -50,7 +49,8 @@
       "@contentful/f36-text-link",
       "@contentful/f36-tooltip",
       "@contentful/f36-typography",
-      "@contentful/f36-components"
+      "@contentful/f36-components",
+      "@contentful/f36-avatar"
     ]
   ],
   "access": "public",
