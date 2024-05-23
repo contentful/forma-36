@@ -9,6 +9,7 @@ const {
   getProperty,
   hasProperty,
   changeIdentifier,
+  pipe,
 } = require('../../utils');
 const { shouldSkipUpdateImport, getImport } = require('../../utils/config');
 const { isConditionalExpression } = require('../../utils/updateTernaryValues');
@@ -120,7 +121,51 @@ const iconsMap = {
   Workflows: 'Workflows',
 };
 
-module.exports = function (file, api) {
+const replaceTrimmedIcons = function (file, api) {
+  const j = api.jscodeshift;
+
+  let source = file.source;
+
+  const importName = getImport('f36-icons');
+
+  const components = Object.keys(iconsMap)
+    .map((v4IconName) => {
+      return {
+        localName: getComponentLocalName(j, source, {
+          componentName: `${v4IconName}TrimmedIcon`,
+          importName,
+        }),
+        v4IconName,
+      };
+    })
+    .filter(({ localName }) => !!localName);
+
+  components.forEach(({ localName, v4IconName }) => {
+    const newComponentName = `${v4IconName}Icon`;
+    source = changeComponentName(j, source, {
+      componentName: localName,
+      outputComponentName: newComponentName,
+    });
+
+    if (!shouldSkipUpdateImport()) {
+      source = changeImport(j, source, {
+        componentName: localName,
+        from: importName,
+        to: '@contentful/f36-icons',
+        outputComponentName: newComponentName,
+      });
+    }
+
+    source = changeIdentifier(j, source, {
+      from: localName,
+      to: newComponentName,
+    });
+  });
+
+  return source;
+};
+
+const updateToV5Icons = function (file, api) {
   const j = api.jscodeshift;
 
   let source = file.source;
@@ -230,3 +275,5 @@ module.exports = function (file, api) {
 
   return source;
 };
+
+module.exports = pipe([replaceTrimmedIcons, updateToV5Icons]);
