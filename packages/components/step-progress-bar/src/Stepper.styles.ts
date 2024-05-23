@@ -10,7 +10,7 @@ export const getStyles = () => {
       css({
         position: 'relative',
         justifyContent: 'space-between',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         flexDirection: 'column',
         padding: 0,
         // TO DO: how will we decide the height of the component?

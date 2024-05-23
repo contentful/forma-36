@@ -69,7 +69,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
       >
         <Flex
           flexDirection="column"
-          alignItems="baseline"
+          alignItems="center"
           justifyContent="center"
         >
           <li className={styles.listItem}>
