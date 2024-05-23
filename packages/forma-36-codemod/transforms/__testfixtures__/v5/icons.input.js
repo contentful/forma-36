@@ -4,7 +4,9 @@ import {
   ChevronDownIcon,
   DeleteIcon,
   InfoCircleIcon,
+  PreviewOffIcon,
 } from '@contentful/f36-icons';
+import { IconButton } from '@contentful/f36-button';
 
 <CloseIcon size="large" />;
 <ChevronUpIcon size="xlarge" />;
@@ -17,3 +19,5 @@ const largeIcon = true;
 
 <CloseIcon size={'xlarge'} />;
 <CloseIcon variant={"muted"} />;
+
+<IconButton icon={PreviewOffIcon} />;

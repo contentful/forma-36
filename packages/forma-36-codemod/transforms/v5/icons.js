@@ -8,6 +8,7 @@ const {
   updatePropertyValue,
   getProperty,
   hasProperty,
+  changeIdentifier,
 } = require('../../utils');
 const { shouldSkipUpdateImport, getImport } = require('../../utils/config');
 const { isConditionalExpression } = require('../../utils/updateTernaryValues');
@@ -85,10 +86,10 @@ const iconsMap = {
   Person: 'User',
   Plaintext: 'FileText',
   Plus: 'Plus',
-  PlusCircle: 'PlusCircle',
+  PlusCircle: 'Plus',
   Presentation: 'Presentation',
   Preview: 'Eye',
-  PreviewOff: 'EyeSlash',
+  PreviewOff: 'EyeClosed',
   Puzzle: 'PuzzlePiece',
   Quote: 'Quotes',
   Receipt: 'Receipt',
@@ -220,6 +221,11 @@ module.exports = function (file, api) {
         outputComponentName: newComponentName,
       });
     }
+
+    source = changeIdentifier(j, source, {
+      from: localName,
+      to: newComponentName,
+    });
   });
 
   return source;
