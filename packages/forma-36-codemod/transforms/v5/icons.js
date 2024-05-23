@@ -59,7 +59,7 @@ const iconsMap = {
   Folder: 'FolderSimple',
   FolderCreate: 'FolderSimplePlus',
   FolderOpen: 'FolderOpen',
-  FormatBold: 'TextBold',
+  FormatBold: 'TextB',
   FormatItalic: 'TextItalic',
   FormatUnderlined: 'TextUnderline',
   Gift: 'Gift',
