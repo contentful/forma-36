@@ -33,6 +33,7 @@
     "@contentful/f36-accordion": "^4.65.6",
     "@contentful/f36-asset": "^4.65.6",
     "@contentful/f36-autocomplete": "^4.65.6",
+    "@contentful/f36-avatar": "4.0.0",
     "@contentful/f36-badge": "^4.65.6",
     "@contentful/f36-button": "^4.65.6",
     "@contentful/f36-card": "^4.65.6",
