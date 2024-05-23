@@ -3,8 +3,14 @@ import tokens from '@contentful/f36-tokens';
 
 export const getStyles = () => {
   return {
-    progress: css({
+    horizontalProgress: css({
       position: 'relative',
+    }),
+    verticalProgress: css({
+      position: 'relative',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
     }),
     verticalList: (height: string) =>
       css({

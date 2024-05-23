@@ -55,7 +55,13 @@ function _Stepper(props: StepperProps, ref: React.Ref<HTMLDivElement>) {
   };
 
   return (
-    <nav className={styles.progress}>
+    <nav
+      className={
+        orientation === 'horizontal'
+          ? styles.horizontalProgress
+          : styles.verticalProgress
+      }
+    >
       <Flex as="ol" className={orderedListStyling}>
         {renderSteps()}
       </Flex>
