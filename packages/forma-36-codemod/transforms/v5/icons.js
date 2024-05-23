@@ -273,6 +273,17 @@ const updateToV5Icons = function (file, api) {
     });
   });
 
+  const iconPropsLocalname = getComponentLocalName(j, source, {
+    componentName: 'IconProps',
+    importName,
+  });
+  source = changeImport(j, source, {
+    componentName: iconPropsLocalname,
+    from: importName,
+    to: '@contentful/f36-icons-alpha',
+    outputComponentName: iconPropsLocalname,
+  });
+
   return source;
 };
 
