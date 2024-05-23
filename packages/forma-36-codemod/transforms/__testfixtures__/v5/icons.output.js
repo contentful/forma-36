@@ -7,6 +7,7 @@ import {
   TrashSimpleIcon,
   InfoIcon,
   EyeClosedIcon,
+  IconProps,
 } from "@contentful/f36-icons-alpha";
 
 <XIcon />;
