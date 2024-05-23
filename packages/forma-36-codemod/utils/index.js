@@ -16,6 +16,7 @@ const { createComponent } = require('./createComponent');
 const { getChildren } = require('./getChildren');
 const { getNewProp } = require('./getNewProp');
 const { updateComponentsToImport } = require('./updateComponentsToImport');
+const { changeIdentifier } = require('./changeIdentifier');
 const { pipe } = require('./pipe');
 
 module.exports = {
@@ -37,5 +38,6 @@ module.exports = {
   getChildren,
   getNewProp,
   updateComponentsToImport,
+  changeIdentifier,
   pipe,
 };
