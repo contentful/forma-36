@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-image",
-  "version": "4.0.0-alpha.0",
+  "version": "4.0.0",
   "description": "Forma 36: Image component",
   "scripts": {
     "build": "tsup"
