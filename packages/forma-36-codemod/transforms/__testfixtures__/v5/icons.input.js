@@ -5,6 +5,7 @@ import {
   DeleteIcon,
   InfoCircleIcon,
   PreviewOffIcon,
+  IconProps,
 } from '@contentful/f36-icons';
 import { IconButton } from '@contentful/f36-button';
 
