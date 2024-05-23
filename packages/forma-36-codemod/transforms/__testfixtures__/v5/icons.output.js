@@ -1,4 +1,13 @@
-import { CaretDownIcon, CaretUpIcon, XIcon, TrashSimpleIcon, InfoIcon } from "@contentful/f36-icons-alpha";
+import { IconButton } from '@contentful/f36-button';
+
+import {
+  CaretDownIcon,
+  CaretUpIcon,
+  XIcon,
+  TrashSimpleIcon,
+  InfoIcon,
+  EyeClosedIcon,
+} from "@contentful/f36-icons-alpha";
 
 <XIcon />;
 <CaretUpIcon />;
@@ -11,3 +20,5 @@ const largeIcon = true;
 
 <XIcon />;
 <XIcon />;
+
+<IconButton icon={EyeClosedIcon} />;
