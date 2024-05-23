@@ -1,7 +1,7 @@
 import {
   CloseIcon,
   ChevronUpIcon,
-  ChevronDownIcon,
+  ChevronDownTrimmedIcon,
   DeleteIcon,
   InfoCircleIcon,
   PreviewOffIcon,
@@ -10,7 +10,7 @@ import { IconButton } from '@contentful/f36-button';
 
 <CloseIcon size="large" />;
 <ChevronUpIcon size="xlarge" />;
-<ChevronDownIcon size="small" />;
+<ChevronDownTrimmedIcon size="small" />;
 <DeleteIcon size="small" />;
 <InfoCircleIcon variant="muted" />;
 
