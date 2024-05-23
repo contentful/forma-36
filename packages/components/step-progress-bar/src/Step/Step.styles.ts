@@ -101,7 +101,7 @@ export const getStyles = () => {
     }),
     verticalStep: css({
       gap: tokens.spacing2Xs,
-      alignItems: 'baseline',
+      alignItems: 'flex-start',
     }),
     horizontalStep: css({
       height: '100%',
