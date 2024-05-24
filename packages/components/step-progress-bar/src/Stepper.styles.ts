@@ -43,12 +43,13 @@ export const getStyles = () => {
         //   transition: `height ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
         // },
       }),
-    list: (width: string) =>
+    horizontalList: (width: string) =>
       css({
         position: 'relative',
         justifyContent: 'space-between',
         width: '100%',
         padding: 0,
+        alignItems: 'flex-start',
         // ORIGINAL LINE CREATION
         // '&::before, &::after': {
         //   content: '""',
