@@ -27,7 +27,7 @@ function _Stepper(props: StepperProps, ref: React.Ref<HTMLDivElement>) {
   const orderedListStyling =
     orientation === 'vertical'
       ? styles.verticalList(`${percentComplete}%`)
-      : styles.list(`${percentComplete}%`);
+      : styles.horizontalList(`${percentComplete}%`);
   const calculateVerticalLineHeight = () => {
     if (orientation === 'vertical' && height) {
       const heightOfButton = 24;
@@ -50,7 +50,11 @@ function _Stepper(props: StepperProps, ref: React.Ref<HTMLDivElement>) {
         isLastStep: stepsToRender.length - 1 === index,
       });
       return (
-        <Flex flexGrow={1} alignItems="center">
+        <Flex
+          flexGrow={1}
+          flexBasis={orientation === 'horizontal' ? 0 : 'auto'}
+          alignItems="center"
+        >
           {stepChild}
         </Flex>
       );

@@ -59,7 +59,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
   };
 
   return (
-    <Flex>
+    <Flex style={{ width: isLastStep ? 'auto' : '100%' }}>
       <Flex
         className={
           orientation === 'vertical'
@@ -68,9 +68,10 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
         }
       >
         <Flex
-          flexDirection="column"
+          flexDirection={orientation === 'vertical' ? 'column' : 'row'}
           alignItems="center"
           justifyContent="center"
+          style={orientation === 'horizontal' ? { width: '100%' } : {}}
         >
           <li className={styles.listItem}>
             <button
@@ -94,8 +95,6 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
                   style={{
                     borderTop: `2px solid ${tokens.gray300}`,
                     height: 0,
-                    position: 'absolute',
-                    top: '30%',
                     width: '100%',
                     zIndex: '-1',
                   }}
