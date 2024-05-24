@@ -30,7 +30,11 @@ function _Stepper(props: StepperProps, ref: React.Ref<HTMLDivElement>) {
       : styles.list(`${percentComplete}%`);
   const calculateVerticalLineHeight = () => {
     if (orientation === 'vertical' && height) {
-      return height / (stepsToRender.length - 1);
+      const heightOfButton = 24;
+      return (
+        (height - heightOfButton * stepsToRender.length) /
+        (stepsToRender.length - 1)
+      );
     }
     return 0;
   };

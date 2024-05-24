@@ -19,8 +19,9 @@ export const getStyles = () => {
         alignItems: 'flex-start',
         flexDirection: 'column',
         padding: 0,
+        margin: '0 auto',
         // TO DO: how will we decide the height of the component?
-        height: '300px',
+        // height: '300px',
         // ORIGINAL LINE CREATION
         // '&::before, &::after': {
         //   content: '""',
