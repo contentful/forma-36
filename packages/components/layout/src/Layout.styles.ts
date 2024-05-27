@@ -2,30 +2,35 @@ import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 import type { LayoutProps } from './Layout';
 
-export const getLayoutMaxWidthStyles = (variant: LayoutProps['variant']) => {
+export const getLayoutMaxWidthStyles = (
+  variant: LayoutProps['variant'],
+  withBoxShadow,
+) => {
   if (variant === 'fullscreen') {
     return css({
-      width: '100%',
       maxWidth: '100%',
     });
   }
 
   return css({
-    width: '100%',
     maxWidth: '1524px',
-    boxShadow:
-      '0px 6px 16px -2px rgba(25, 37, 50, 0.1), 0px 3px 6px -3px rgba(25, 37, 50, 0.15)',
+    boxShadow: withBoxShadow
+      ? '0px 6px 16px -2px rgba(25, 37, 50, 0.1), 0px 3px 6px -3px rgba(25, 37, 50, 0.15)'
+      : 'unset',
     borderRadius: `10px 10px 0 0`,
     margin: `${tokens.spacingS} ${tokens.spacingM} 0`,
   });
 };
 
-export const getLayoutStyles = (variant: LayoutProps['variant']) => ({
+export const getLayoutStyles = (
+  variant: LayoutProps['variant'],
+  withBoxShadow: boolean,
+) => ({
   root: css({
-    background: tokens.gray100,
     width: '100%',
   }),
-  mainContainer: css(getLayoutMaxWidthStyles(variant), {
+  mainContainer: css(getLayoutMaxWidthStyles(variant, withBoxShadow), {
+    width: '100%',
     backgroundColor: tokens.colorWhite,
   }),
   contentContainer: css({
