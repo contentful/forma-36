@@ -7,6 +7,7 @@ import {
   type PolymorphicComponent,
   type ExpandProps,
 } from '@contentful/f36-core';
+import tokens from '@contentful/f36-tokens';
 import { useDensity } from '@contentful/f36-utils';
 import { Spinner } from '@contentful/f36-spinner';
 
@@ -73,6 +74,8 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
         >
           {React.cloneElement(icon, {
             size: icon.props.size ?? `${size === 'large' ? 'medium' : 'small'}`,
+            color:
+              (variant === 'transparent' && icon.props.color) || 'currentColor',
             // we want to allow variants for icons for transparent buttons
             variant:
               (variant === 'transparent' && icon.props.variant) ||
