@@ -22,6 +22,7 @@ export type LayoutProps = {
    * @default 'wide'
    */
   variant?: 'narrow' | 'wide' | 'fullscreen';
+  withBoxShadow?: boolean;
   /**
    * Classname that will be passed to the main content div,
    * which holds the sidebars and children div
@@ -38,14 +39,15 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     leftSidebar,
     rightSidebar,
     variant = 'wide',
+    withBoxShadow = true,
     className,
-    testId = 'cf-layout',
+    testId = 'cf-ui-layout',
     contentTestId = 'cf-layout-main-container',
     contentClassName,
     ...otherProps
   } = props;
 
-  const styles = getLayoutStyles(variant);
+  const styles = getLayoutStyles(variant, withBoxShadow);
 
   const contextValue: LayoutContextType = useMemo(
     () => ({

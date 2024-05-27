@@ -11,10 +11,12 @@ interface StoryArgs {
   withHeader: boolean;
   withLeftSidebar: boolean;
   withRightSidebar: boolean;
+  withBoxShadow: boolean;
 }
 
 export const Default: Story<Pick<LayoutProps, 'variant'> & StoryArgs> = ({
   variant,
+  withBoxShadow,
   withHeader,
   withLeftSidebar,
   withRightSidebar,
@@ -29,6 +31,10 @@ export const Default: Story<Pick<LayoutProps, 'variant'> & StoryArgs> = ({
     >
       <Layout
         variant={variant}
+        withBoxShadow={withBoxShadow}
+        className={css({
+          backgroundColor: tokens.gray100,
+        })}
         header={
           withHeader && (
             <Layout.Header>
@@ -102,6 +108,7 @@ const meta: Meta<StoryArgs> = {
     withHeader: true,
     withLeftSidebar: false,
     withRightSidebar: false,
+    withBoxShadow: true,
   },
 };
 
