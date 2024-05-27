@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { css } from 'emotion';
 import {
   Box,
   Button,
@@ -9,6 +10,7 @@ import {
 } from '@contentful/f36-components';
 import { Layout } from '@contentful/f36-layout';
 import { Heading, Paragraph } from '@contentful/f36-typography';
+import tokens from '@contentful/f36-tokens';
 
 export default function BasicLayoutExample() {
   const [submitting, setSubmitting] = useState(false);
@@ -20,6 +22,9 @@ export default function BasicLayoutExample() {
   return (
     <Layout
       variant="fullscreen"
+      className={css({
+        backgroundColor: tokens.gray100,
+      })}
       header={
         <Layout.Header>
           <Heading marginTop="spacingM" marginBottom="spacingM">
