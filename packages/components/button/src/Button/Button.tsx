@@ -7,7 +7,6 @@ import {
   type PolymorphicComponent,
   type ExpandProps,
 } from '@contentful/f36-core';
-import tokens from '@contentful/f36-tokens';
 import { useDensity } from '@contentful/f36-utils';
 import { Spinner } from '@contentful/f36-spinner';
 
