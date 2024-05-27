@@ -1,6 +1,7 @@
 export * from '@contentful/f36-accordion';
 export * from '@contentful/f36-asset';
 export * from '@contentful/f36-autocomplete';
+export * from '@contentful/f36-avatar';
 export * from '@contentful/f36-badge';
 export * from '@contentful/f36-button';
 export * from '@contentful/f36-card';
@@ -14,6 +15,7 @@ export * from '@contentful/f36-entity-list';
 export * from '@contentful/f36-empty-state';
 export * from '@contentful/f36-forms';
 export * from '@contentful/f36-icon';
+export * from '@contentful/f36-image';
 export * from '@contentful/f36-list';
 export * from '@contentful/f36-menu';
 export * from '@contentful/f36-modal';
