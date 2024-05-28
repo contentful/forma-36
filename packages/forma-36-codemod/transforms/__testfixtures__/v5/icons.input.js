@@ -17,6 +17,7 @@ import { IconButton } from '@contentful/f36-button';
 
 const largeIcon = true;
 <CloseIcon size={largeIcon ? 'large' : 'xlarge'} />;
+<CloseIcon variant={largeIcon ? "muted" : "positive"} />;
 
 <CloseIcon size={'xlarge'} />;
 <CloseIcon variant={"muted"} />;

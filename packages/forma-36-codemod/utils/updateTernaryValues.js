@@ -12,9 +12,10 @@ const getValueFor = (key, { j, expression, valueMap = {} }) => {
   if (isConditionalExpression(expression.value[key], j)) {
     return updateTernaryValues(expression, { j, valueMap });
   }
-  return j.literal(
-    valueMap[expression.value[key].value] || expression.value[key].value,
-  );
+
+  const value =
+    valueMap[expression.value[key].value] || expression.value[key].value;
+  return value.type === 'Identifier' ? value : j.literal(value);
 };
 
 /**
@@ -32,7 +33,11 @@ function updateTernaryValues(value, { j, valueMap = {} }) {
       const consequent = getValueFor('consequent', commonArgs);
       const alternate = getValueFor('alternate', commonArgs);
 
-      if (consequent.value === alternate.value) {
+      if (
+        consequent.value === alternate.value &&
+        consequent.type !== 'Identifier' &&
+        alternate.type !== 'Identifier'
+      ) {
         j(expression).replaceWith(j.literal(consequent.value));
       } else {
         j(expression).replaceWith(
