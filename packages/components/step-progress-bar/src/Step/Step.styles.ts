@@ -57,14 +57,11 @@ export const getStyles = () => {
       fontWeight: tokens.fontWeightDemiBold,
       fontSize: tokens.fontSizeS,
       padding: 0,
-      '&:hover:enabled': {
-        cursor: 'pointer',
-        backgroundColor: tokens.gray200,
-      },
-      '&:focus': {
-        outline: '0',
-        boxShadow: tokens.glowPrimary,
-      },
+      // TO DO: do we want click feedback?
+      // '&:focus': {
+      //   outline: '0',
+      //   boxShadow: tokens.glowPrimary,
+      // },
     }),
     icon: css({
       // TO DO: adjust sizing of icon for warning only?

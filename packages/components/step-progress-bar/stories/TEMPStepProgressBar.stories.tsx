@@ -8,9 +8,14 @@ export default {
 } as Meta;
 
 export const Default: Story<StepperProps> = (args) => {
+  const [activeStep, setActiveStep] = React.useState(4);
   return (
     <div style={{ width: '400px' }}>
-      <TEMPStepProgressBar stepStyle="number" activeStep={2} />
+      <TEMPStepProgressBar
+        stepStyle="number"
+        activeStep={activeStep}
+        onClick={(stepNumber) => setActiveStep(stepNumber)}
+      />
     </div>
   );
 };

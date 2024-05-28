@@ -19,7 +19,8 @@ export interface StepProps extends CommonProps {
   orientation?: 'horizontal' | 'vertical';
   verticalLineHeight?: number;
   isLastStep: boolean;
-  // onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  onClick?: (stepIndex: number) => void;
+  activeStep?: number;
 }
 
 function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
@@ -36,7 +37,17 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
     orientation,
     verticalLineHeight,
     isLastStep,
+    onClick,
+    activeStep,
   } = props;
+
+  const isClickable = !!onClick && !isDisabled && stepNumber < activeStep;
+
+  const handleClick = () => {
+    if (isClickable) {
+      onClick(stepNumber);
+    } else return;
+  };
 
   const renderStep = () => {
     switch (true) {
@@ -82,7 +93,9 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
                 [styles.isComplete]: isComplete,
                 [styles.isInvalid]: isInvalid,
                 [styles.isWarning]: isWarning,
+                [styles.clickable]: isClickable,
               })}
+              onClick={handleClick}
               disabled={isDisabled}
             >
               {renderStep()}
@@ -93,10 +106,15 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
               {orientation === 'horizontal' ? (
                 <span
                   style={{
-                    borderTop: `2px solid ${tokens.gray300}`,
+                    borderTop: `2px solid ${
+                      stepNumber < activeStep
+                        ? tokens.colorPrimary
+                        : tokens.gray300
+                    }`,
                     height: 0,
                     width: '100%',
                     zIndex: '-1',
+                    transition: 'border-color 0.3s ease-in-out',
                   }}
                 ></span>
               ) : (
@@ -104,8 +122,6 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
                   style={{
                     borderLeft: `2px solid ${tokens.gray300}`,
                     height: verticalLineHeight,
-                    // position: 'absolute',
-                    // top: '30%',
                     width: 0,
                     zIndex: '-1',
                   }}
