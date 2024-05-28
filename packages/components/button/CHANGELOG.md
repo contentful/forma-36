@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.65.8
+
+### Patch Changes
+
+- [#2766](https://github.com/contentful/forma-36/pull/2766) [`de6c1fe62`](https://github.com/contentful/forma-36/commit/de6c1fe62ed2d6933f6035fa165a2a9c54614187) Thanks [@massao](https://github.com/massao)! - Pass color prop to icon from button
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.65.8
+  - @contentful/f36-spinner@4.65.8
+
 ## 4.65.7
 
 ### Patch Changes

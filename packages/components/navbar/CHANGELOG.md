@@ -1,5 +1,16 @@
 # @contentful/f36-navbar
 
+## 4.65.8
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.65.8
+  - @contentful/f36-icon@4.65.8
+  - @contentful/f36-menu@4.65.8
+  - @contentful/f36-skeleton@4.65.8
+  - @contentful/f36-avatar@4.65.8
+
 ## 4.65.7
 
 ### Patch Changes
