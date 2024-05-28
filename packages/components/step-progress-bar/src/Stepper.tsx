@@ -9,6 +9,7 @@ export interface StepperProps extends CommonProps, MarginProps {
   activeStep?: number;
   id?: string;
   height?: number;
+  onClick?: (stepIndex: number) => void;
 }
 
 function _Stepper(props: StepperProps, ref: React.Ref<HTMLDivElement>) {
@@ -19,6 +20,7 @@ function _Stepper(props: StepperProps, ref: React.Ref<HTMLDivElement>) {
     activeStep,
     id,
     height,
+    onClick,
   } = props;
   const styles = getStyles();
 
@@ -48,13 +50,11 @@ function _Stepper(props: StepperProps, ref: React.Ref<HTMLDivElement>) {
         orientation,
         verticalLineHeight: calculateVerticalLineHeight(),
         isLastStep: stepsToRender.length - 1 === index,
+        onClick,
+        activeStep,
       });
       return (
-        <Flex
-          flexGrow={1}
-          flexBasis={orientation === 'horizontal' ? 0 : 'auto'}
-          alignItems="center"
-        >
+        <Flex flexGrow={1} flexBasis={0} alignItems="center">
           {stepChild}
         </Flex>
       );
