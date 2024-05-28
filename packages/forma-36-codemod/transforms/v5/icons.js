@@ -10,6 +10,8 @@ const {
   hasProperty,
   changeIdentifier,
   pipe,
+  addImport,
+  renameProperties,
 } = require('../../utils');
 const { shouldSkipUpdateImport, getImport } = require('../../utils/config');
 const { isConditionalExpression } = require('../../utils/updateTernaryValues');
@@ -121,6 +123,17 @@ const iconsMap = {
   Workflows: 'Workflows',
 };
 
+const variantToColorTokenMap = (j, tokensImportName) => ({
+  primary: j.identifier(`${tokensImportName}.colorPrimary`),
+  positive: j.identifier(`${tokensImportName}.colorPositive`),
+  negative: j.identifier(`${tokensImportName}.colorNegative`),
+  warning: j.identifier(`${tokensImportName}.colorWarning`),
+  secondary: j.identifier(`${tokensImportName}.gray900`),
+  muted: j.identifier(`${tokensImportName}.gray600`),
+  white: j.identifier(`${tokensImportName}.colorWhite`),
+  premium: j.identifier(`${tokensImportName}.purple500`),
+});
+
 const replaceTrimmedIcons = function (file, api) {
   const j = api.jscodeshift;
 
@@ -171,6 +184,7 @@ const updateToV5Icons = function (file, api) {
   let source = file.source;
 
   const importName = getImport('f36-icons');
+  const tokensImportName = getImport('f36-tokens');
 
   const components = Object.keys(iconsMap)
     .map((v4IconName) => {
@@ -184,6 +198,8 @@ const updateToV5Icons = function (file, api) {
     })
     .filter(({ localName }) => !!localName);
 
+  let addTokensImport = false;
+
   components.forEach(({ localName, v4IconName }) => {
     const newComponentName = `${iconsMap[v4IconName]}Icon`;
 
@@ -192,11 +208,64 @@ const updateToV5Icons = function (file, api) {
       fn(attributes) {
         let modifiedAttributes = attributes;
 
-        // Remove variant prop
-        modifiedAttributes = deleteProperty(modifiedAttributes, {
-          propertyName: 'variant',
-          file,
-        });
+        // Replace variant with color prop
+        if (hasProperty(modifiedAttributes, { propertyName: 'variant' })) {
+          const variant = getProperty(modifiedAttributes, {
+            propertyName: 'variant',
+          });
+
+          const { result } = addImport(j, source, [
+            j.template.statement([`import tokens from "${tokensImportName}"`]),
+          ]);
+          addTokensImport = true;
+
+          if (isConditionalExpression(variant.value, j)) {
+            modifiedAttributes = updatePropertyValue(modifiedAttributes, {
+              j,
+              propertyName: 'variant',
+              propertyValue: (value) => {
+                const valueMap = variantToColorTokenMap(j, result.tokens);
+
+                const updatedValue = updateTernaryValues(value, {
+                  j,
+                  valueMap,
+                });
+
+                return updatedValue;
+              },
+            });
+          } else {
+            modifiedAttributes = updatePropertyValue(modifiedAttributes, {
+              j,
+              propertyName: 'variant',
+              propertyValue: (value) => {
+                if (value.type === 'JSXExpressionContainer') {
+                  const expressionValue = value.expression.value;
+                  if (
+                    expressionValue in variantToColorTokenMap(j, result.tokens)
+                  ) {
+                    return j.jsxExpressionContainer(
+                      variantToColorTokenMap(j, result.tokens)[expressionValue],
+                    );
+                  }
+                  return value;
+                } else {
+                  if (value.value in variantToColorTokenMap(j, result.tokens)) {
+                    return j.jsxExpressionContainer(
+                      variantToColorTokenMap(j, result.tokens)[value.value],
+                    );
+                  }
+                }
+              },
+            });
+          }
+
+          modifiedAttributes = renameProperties(modifiedAttributes, {
+            renameMap: {
+              variant: 'color',
+            },
+          });
+        }
 
         // Update size prop
         if (hasProperty(modifiedAttributes, { propertyName: 'size' })) {
@@ -277,6 +346,11 @@ const updateToV5Icons = function (file, api) {
     componentName: 'IconProps',
     importName,
   });
+  if (addTokensImport) {
+    source = addImport(j, source, [
+      j.template.statement([`import tokens from "${tokensImportName}"`]),
+    ]).source;
+  }
   source = changeImport(j, source, {
     componentName: iconPropsLocalname,
     from: importName,
