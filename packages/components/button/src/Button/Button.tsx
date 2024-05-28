@@ -76,7 +76,10 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
             // We need to pass the color to the icons to enable the usaged of the V5 icons
             // it may change in the future
             color:
-              (variant === 'transparent' && icon.props.variant === undefined && icon.props.color) || 'currentColor',
+              (variant === 'transparent' &&
+                icon.props.variant === undefined &&
+                icon.props.color) ||
+              'currentColor',
             // we want to allow variants for icons for transparent buttons
             variant:
               (variant === 'transparent' && icon.props.variant) ||
