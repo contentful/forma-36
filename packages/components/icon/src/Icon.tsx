@@ -5,7 +5,6 @@ import React, {
   type ReactElement,
   type SVGAttributes,
 } from 'react';
-import tokens from '@contentful/f36-tokens';
 import {
   Box,
   type CommonProps,
@@ -73,8 +72,7 @@ export function _Icon<E extends ElementType = IconComponent>(
     as,
     children,
     className,
-    isActive = false,
-    color = isActive ? tokens.blue600 : tokens.gray900,
+    color = 'currentColor',
     role = 'img',
     size = 'medium',
     testId = 'cf-ui-icon',
