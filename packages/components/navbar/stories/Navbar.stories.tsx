@@ -130,6 +130,34 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
 ) => {
   return (
     <div style={{ width: '900px' }}>
+      <Navbar switcher={<Switcher />} account={<Account {...args} />}>
+        <MainItems />
+      </Navbar>
+    </div>
+  );
+};
+
+WithInitialsAvatar.args = {
+  initials: 'AB',
+};
+
+export const WithFallbackAvatar: Story<{}> = (args) => {
+  return (
+    <div style={{ width: '900px' }}>
+      <Navbar switcher={<Switcher />} account={<Account {...args} />}>
+        <MainItems />
+      </Navbar>
+    </div>
+  );
+};
+
+WithFallbackAvatar.args = {};
+
+export const Complete: Story<{ initials?: string; avatar?: string }> = (
+  args,
+) => {
+  return (
+    <div style={{ width: '900px' }}>
       <Navbar
         switcher={<Switcher />}
         account={<Account {...args} />}
