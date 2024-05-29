@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 29-05-2024
+
+**F36 Button** `v4.65.8`
+
+- Pass color prop to icon from button
+
 ## 24-05-2024
 
 `@contentful/f36-components@4.65.7`
