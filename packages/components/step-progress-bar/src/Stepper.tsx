@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, CommonProps, MarginProps } from '@contentful/f36-core';
+import { Flex, type CommonProps, type MarginProps } from '@contentful/f36-core';
 import { getStyles } from './Stepper.styles';
 
 export interface StepperProps extends CommonProps, MarginProps {
