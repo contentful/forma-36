@@ -1,6 +1,6 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { CommonProps, Flex } from '@contentful/f36-core';
+import { type CommonProps, Flex } from '@contentful/f36-core';
 import { getStyles } from './Step.styles';
 import { DoneIcon, CloseIcon, WarningIcon } from '@contentful/f36-icons';
 import { Paragraph } from '@contentful/f36-typography';
