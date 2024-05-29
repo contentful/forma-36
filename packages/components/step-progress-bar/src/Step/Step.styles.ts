@@ -4,44 +4,35 @@ import tokens from '@contentful/f36-tokens';
 export const getStyles = () => {
   return {
     wrapper: css({
-      position: 'relative',
+      width: '100%',
     }),
-    progress: css({
-      position: 'relative',
+    lastStepWrapper: css({
+      width: 'auto',
+    }),
+    horizontalStepWrapper: css({
+      height: '100%',
+      width: '100%',
+      flexDirection: 'column',
+      alignItems: 'baseline',
+      justifyContent: 'center',
+    }),
+    verticalStepWrapper: css({
+      gap: tokens.spacing2Xs,
+      alignItems: 'flex-start',
+    }),
+    horizontalStep: css({
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '100%',
+    }),
+    verticalStep: css({
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
     }),
     listItem: css({
       listStyle: 'none',
-    }),
-    list: (width: string) =>
-      css({
-        position: 'relative',
-        '&::before, &::after': {
-          content: '""',
-          position: 'absolute',
-          top: '50%',
-          left: '0',
-          height: '2px',
-          zIndex: tokens.zIndexNegative,
-          transform: 'translateY(-50%)',
-        },
-        '&::before': {
-          backgroundColor: tokens.gray300,
-          width: '100%',
-        },
-        '&::after': {
-          backgroundColor: tokens.colorPrimary,
-          width,
-          transition: `width ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
-        },
-      }),
-    lastItem: css({
-      clip: 'rect(0 0 0 0)',
-      clipPath: 'inset(50%)',
-      height: '1px',
-      overflow: 'hidden',
-      position: 'absolute',
-      whiteSpace: 'nowrap',
-      width: '1px',
     }),
     button: css({
       borderRadius: '50%',
@@ -90,22 +81,69 @@ export const getStyles = () => {
       borderColor: tokens.colorWarning,
       backgroundColor: tokens.colorWarning,
     }),
-    clickable: css({
+    isClickable: css({
       cursor: 'pointer',
     }),
     stepLabel: css({
       whiteSpace: 'nowrap',
     }),
-    verticalStep: css({
-      gap: tokens.spacing2Xs,
-      alignItems: 'flex-start',
+    horizontalStepConnector: (isBeforeActiveStep: boolean) =>
+      css({
+        borderTop: `2px solid ${
+          isBeforeActiveStep ? tokens.colorPrimary : tokens.gray300
+        }`,
+        height: 0,
+        width: '100%',
+        zIndex: '-1',
+        transition: 'border-color 0.3s ease-in-out',
+      }),
+    verticalStepConnector: (
+      isBeforeActiveStep: boolean,
+      verticalLineHeight: number,
+    ) =>
+      css({
+        borderLeft: `2px solid ${
+          isBeforeActiveStep ? tokens.colorPrimary : tokens.gray300
+        }`,
+        height: verticalLineHeight,
+        width: 0,
+        zIndex: '-1',
+      }),
+
+    // TODO: clean up unused styles
+    progress: css({
+      position: 'relative',
     }),
-    horizontalStep: css({
-      height: '100%',
-      width: '100%',
-      flexDirection: 'column',
-      alignItems: 'baseline',
-      justifyContent: 'center',
+    list: (width: string) =>
+      css({
+        position: 'relative',
+        '&::before, &::after': {
+          content: '""',
+          position: 'absolute',
+          top: '50%',
+          left: '0',
+          height: '2px',
+          zIndex: tokens.zIndexNegative,
+          transform: 'translateY(-50%)',
+        },
+        '&::before': {
+          backgroundColor: tokens.gray300,
+          width: '100%',
+        },
+        '&::after': {
+          backgroundColor: tokens.colorPrimary,
+          width,
+          transition: `width ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
+        },
+      }),
+    lastItem: css({
+      clip: 'rect(0 0 0 0)',
+      clipPath: 'inset(50%)',
+      height: '1px',
+      overflow: 'hidden',
+      position: 'absolute',
+      whiteSpace: 'nowrap',
+      width: '1px',
     }),
   };
 };
