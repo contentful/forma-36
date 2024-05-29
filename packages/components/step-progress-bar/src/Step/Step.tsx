@@ -4,7 +4,6 @@ import { type CommonProps, Flex } from '@contentful/f36-core';
 import { getStyles } from './Step.styles';
 import { DoneIcon, CloseIcon, WarningIcon } from '@contentful/f36-icons';
 import { Paragraph } from '@contentful/f36-typography';
-import tokens from '@contentful/f36-tokens';
 
 export interface StepProps extends CommonProps {
   isActive?: boolean;
@@ -41,7 +40,8 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
     activeStep,
   } = props;
 
-  const isClickable = !!onClick && !isDisabled && stepNumber < activeStep;
+  const isBeforeActiveStep = stepNumber < activeStep;
+  const isClickable = !!onClick && !isDisabled && isBeforeActiveStep;
 
   const handleClick = () => {
     if (isClickable) {
@@ -70,19 +70,20 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
   };
 
   return (
-    <Flex style={{ width: isLastStep ? 'auto' : '100%' }}>
+    <Flex className={isLastStep ? styles.lastStepWrapper : styles.wrapper}>
       <Flex
         className={
-          orientation === 'vertical'
-            ? styles.verticalStep
-            : styles.horizontalStep
+          orientation === 'horizontal'
+            ? styles.horizontalStepWrapper
+            : styles.verticalStepWrapper
         }
       >
         <Flex
-          flexDirection={orientation === 'vertical' ? 'column' : 'row'}
-          alignItems="center"
-          justifyContent="center"
-          style={orientation === 'horizontal' ? { width: '100%' } : {}}
+          className={
+            orientation === 'horizontal'
+              ? styles.horizontalStep
+              : styles.verticalStep
+          }
         >
           <li className={styles.listItem}>
             <button
@@ -93,7 +94,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
                 [styles.isComplete]: isComplete,
                 [styles.isInvalid]: isInvalid,
                 [styles.isWarning]: isWarning,
-                [styles.clickable]: isClickable,
+                [styles.isClickable]: isClickable,
               })}
               onClick={handleClick}
               disabled={isDisabled}
@@ -105,26 +106,14 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
             <>
               {orientation === 'horizontal' ? (
                 <span
-                  style={{
-                    borderTop: `2px solid ${
-                      stepNumber < activeStep
-                        ? tokens.colorPrimary
-                        : tokens.gray300
-                    }`,
-                    height: 0,
-                    width: '100%',
-                    zIndex: '-1',
-                    transition: 'border-color 0.3s ease-in-out',
-                  }}
+                  className={styles.horizontalStepConnector(isBeforeActiveStep)}
                 ></span>
               ) : (
                 <span
-                  style={{
-                    borderLeft: `2px solid ${tokens.gray300}`,
-                    height: verticalLineHeight,
-                    width: 0,
-                    zIndex: '-1',
-                  }}
+                  className={styles.verticalStepConnector(
+                    isBeforeActiveStep,
+                    verticalLineHeight,
+                  )}
                 ></span>
               )}
             </>
