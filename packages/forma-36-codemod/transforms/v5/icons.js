@@ -183,7 +183,8 @@ const updateToV5Icons = function (file, api) {
 
   let source = file.source;
 
-  const importName = getImport('f36-icons');
+  const iconsImportName = getImport('f36-icons');
+  const componentsImportName = getImport('f36-components');
   const tokensImportName = getImport('f36-tokens');
 
   const components = Object.keys(iconsMap)
@@ -191,17 +192,29 @@ const updateToV5Icons = function (file, api) {
       return {
         localName: getComponentLocalName(j, source, {
           componentName: `${v4IconName}Icon`,
-          importName,
+          importName: iconsImportName,
         }),
         v4IconName,
       };
     })
+    .concat([
+      {
+        localName: getComponentLocalName(j, source, {
+          componentName: 'Icon',
+          importName: componentsImportName,
+        }),
+        v4IconName: 'Icon',
+      },
+    ])
     .filter(({ localName }) => !!localName);
 
   let addTokensImport = false;
 
   components.forEach(({ localName, v4IconName }) => {
-    const newComponentName = `${iconsMap[v4IconName]}Icon`;
+    const newComponentName =
+      v4IconName === 'Icon' ? 'Icon' : `${iconsMap[v4IconName]}Icon`;
+    const importName =
+      v4IconName === 'Icon' ? componentsImportName : iconsImportName;
 
     source = changeProperties(j, source, {
       componentName: localName,
@@ -299,9 +312,7 @@ const updateToV5Icons = function (file, api) {
             modifiedAttributes = updatePropertyValue(modifiedAttributes, {
               j,
               propertyName: 'size',
-              propertyValue: () => {
-                return j.literal(size.value.expression.value);
-              },
+              propertyValue: (value) => value,
             });
           }
 
@@ -331,7 +342,10 @@ const updateToV5Icons = function (file, api) {
       source = changeImport(j, source, {
         componentName: localName,
         from: importName,
-        to: '@contentful/f36-icons-alpha',
+        to:
+          v4IconName === 'Icon'
+            ? '@contentful/f36-icon-alpha'
+            : '@contentful/f36-icons-alpha',
         outputComponentName: newComponentName,
       });
     }
@@ -342,21 +356,27 @@ const updateToV5Icons = function (file, api) {
     });
   });
 
-  const iconPropsLocalname = getComponentLocalName(j, source, {
-    componentName: 'IconProps',
-    importName,
-  });
+  const iconProps = [iconsImportName, componentsImportName]
+    .map((importName) => ({
+      importName,
+      localName: getComponentLocalName(j, source, {
+        componentName: 'IconProps',
+        importName,
+      }),
+    }))
+    .filter(({ localName }) => Boolean(localName))[0];
+
   if (addTokensImport) {
     source = addImport(j, source, [
       j.template.statement([`import tokens from "${tokensImportName}"`]),
     ]).source;
   }
-  if (iconPropsLocalname) {
+  if (iconProps?.localName) {
     source = changeImport(j, source, {
-      componentName: iconPropsLocalname,
-      from: importName,
+      componentName: iconProps.localName,
+      from: iconProps.importName,
       to: '@contentful/f36-icons-alpha',
-      outputComponentName: iconPropsLocalname,
+      outputComponentName: iconProps.localName,
     });
   }
 
