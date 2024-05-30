@@ -10,6 +10,8 @@ import {
   IconProps,
 } from "@contentful/f36-icons-alpha";
 
+import { Icon } from "@contentful/f36-icon-alpha";
+
 import tokens from "@contentful/f36-tokens";
 
 <XIcon />;
@@ -26,3 +28,5 @@ const largeIcon = true;
 <XIcon color={tokens.gray600} />;
 
 <IconButton icon={EyeClosedIcon} />;
+
+<Icon as={EyeClosedIcon} color={tokens.gray600} />
