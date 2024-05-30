@@ -23,6 +23,9 @@ const largeIcon = true;
 <CloseIcon size={'xlarge'} />;
 <CloseIcon variant={"muted"} />;
 
+const size = 'medium';
+<CloseIcon size={size} />;
+
 <IconButton icon={PreviewOffIcon} />;
 
 <Icon as={PreviewOffIcon} variant="muted" />
