@@ -96,7 +96,7 @@ const iconsMap = {
   Puzzle: 'PuzzlePiece',
   Quote: 'Quotes',
   Receipt: 'Receipt',
-  References: 'References',
+  References: 'Swap',
   Release: 'Release',
   Richtext: 'RichText',
   Search: 'MagnifyingGlass',
