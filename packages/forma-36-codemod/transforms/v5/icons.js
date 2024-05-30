@@ -312,7 +312,12 @@ const updateToV5Icons = function (file, api) {
             modifiedAttributes = updatePropertyValue(modifiedAttributes, {
               j,
               propertyName: 'size',
-              propertyValue: (value) => value,
+              propertyValue: () => {
+                if (size.value?.expression?.type === 'Identifier') {
+                  return size.value;
+                }
+                return j.literal(size.value.expression.value);
+              },
             });
           }
 
