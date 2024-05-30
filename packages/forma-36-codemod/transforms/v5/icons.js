@@ -351,12 +351,14 @@ const updateToV5Icons = function (file, api) {
       j.template.statement([`import tokens from "${tokensImportName}"`]),
     ]).source;
   }
-  source = changeImport(j, source, {
-    componentName: iconPropsLocalname,
-    from: importName,
-    to: '@contentful/f36-icons-alpha',
-    outputComponentName: iconPropsLocalname,
-  });
+  if (iconPropsLocalname) {
+    source = changeImport(j, source, {
+      componentName: iconPropsLocalname,
+      from: importName,
+      to: '@contentful/f36-icons-alpha',
+      outputComponentName: iconPropsLocalname,
+    });
+  }
 
   return source;
 };
