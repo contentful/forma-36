@@ -7,6 +7,7 @@ import {
   PreviewOffIcon,
   IconProps,
 } from '@contentful/f36-icons';
+import { Icon } from '@contentful/f36-components';
 import { IconButton } from '@contentful/f36-button';
 
 <CloseIcon size="large" />;
@@ -23,3 +24,5 @@ const largeIcon = true;
 <CloseIcon variant={"muted"} />;
 
 <IconButton icon={PreviewOffIcon} />;
+
+<Icon as={PreviewOffIcon} variant="muted" />
