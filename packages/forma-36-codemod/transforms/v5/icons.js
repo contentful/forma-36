@@ -184,8 +184,19 @@ const updateToV5Icons = function (file, api) {
   let source = file.source;
 
   const iconsImportName = getImport('f36-icons');
+  const iconImportName = getImport('f36-icon');
   const componentsImportName = getImport('f36-components');
   const tokensImportName = getImport('f36-tokens');
+
+  const iconComponent = [iconImportName, componentsImportName]
+    .map((importName) => ({
+      importName,
+      localName: getComponentLocalName(j, source, {
+        componentName: 'Icon',
+        importName,
+      }),
+    }))
+    .find(({ localName }) => Boolean(localName));
 
   const components = Object.keys(iconsMap)
     .map((v4IconName) => {
@@ -199,10 +210,7 @@ const updateToV5Icons = function (file, api) {
     })
     .concat([
       {
-        localName: getComponentLocalName(j, source, {
-          componentName: 'Icon',
-          importName: componentsImportName,
-        }),
+        localName: iconComponent?.localName,
         v4IconName: 'Icon',
       },
     ])
@@ -211,10 +219,13 @@ const updateToV5Icons = function (file, api) {
   let addTokensImport = false;
 
   components.forEach(({ localName, v4IconName }) => {
-    const newComponentName =
-      v4IconName === 'Icon' ? 'Icon' : `${iconsMap[v4IconName]}Icon`;
-    const importName =
-      v4IconName === 'Icon' ? componentsImportName : iconsImportName;
+    const isIconComponent = v4IconName === 'Icon';
+    const newComponentName = isIconComponent
+      ? 'Icon'
+      : `${iconsMap[v4IconName]}Icon`;
+    const importName = isIconComponent
+      ? iconComponent.importName
+      : iconsImportName;
 
     source = changeProperties(j, source, {
       componentName: localName,
@@ -369,7 +380,7 @@ const updateToV5Icons = function (file, api) {
         importName,
       }),
     }))
-    .filter(({ localName }) => Boolean(localName))[0];
+    .find(({ localName }) => Boolean(localName));
 
   if (addTokensImport) {
     source = addImport(j, source, [
