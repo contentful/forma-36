@@ -47,7 +47,7 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     ...otherProps
   } = props;
 
-  const styles = getLayoutStyles(variant, withBoxShadow);
+  const styles = getLayoutStyles({ variant, withBoxShadow });
 
   const contextValue: LayoutContextType = useMemo(
     () => ({
