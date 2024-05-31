@@ -1,6 +1,6 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { LayoutSidebarProps } from './LayoutSidebar';
+import type { LayoutSidebarProps } from './LayoutSidebar';
 
 export const getLayoutSidebarStyles = (
   variant: LayoutSidebarProps['variant'],
@@ -8,7 +8,7 @@ export const getLayoutSidebarStyles = (
   root: css({
     flexShrink: 0,
     padding: `${tokens.spacingL} ${tokens.spacingS} 0`,
-    width: variant === 'narrow' ? '255px' : '320px',
+    width: variant === 'narrow' ? '255px' : '340px',
     '&:first-child': {
       borderRight: `1px solid ${tokens.gray200}`,
     },
