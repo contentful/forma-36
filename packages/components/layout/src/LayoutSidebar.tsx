@@ -5,6 +5,7 @@ import { getLayoutSidebarStyles } from './LayoutSidebar.styles';
 
 export type LayoutSidebarProps = {
   children: React.ReactNode;
+  variant?: 'narrow' | 'wide';
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 
@@ -15,10 +16,11 @@ export const _LayoutSidebar = (
   const {
     children,
     className,
+    variant = 'narrow',
     testId = 'cf-layout-sidebar',
     ...otherProps
   } = props;
-  const styles = getLayoutSidebarStyles();
+  const styles = getLayoutSidebarStyles(variant);
 
   return (
     <Box
