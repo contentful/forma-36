@@ -16,7 +16,7 @@ export const _LayoutSidebar = (
   const {
     children,
     className,
-    variant = 'narrow',
+    variant = 'wide',
     testId = 'cf-layout-sidebar',
     ...otherProps
   } = props;
