@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-icon",
-  "version": "5.0.0-alpha.14",
+  "version": "5.0.0-alpha.16",
   "description": "Forma 36: Icon component",
   "license": "MIT",
   "exports": {
