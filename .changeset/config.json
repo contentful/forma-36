@@ -7,7 +7,6 @@
     }
   ],
   "ignore": [
-    "@contentful/f36-header",
     "@contentful/f36-layout",
     "@contentful/f36-navlist",
     "@contentful/f36-website"
