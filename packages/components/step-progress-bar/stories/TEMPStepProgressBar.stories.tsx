@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { StepperProps, TEMPStepProgressBar } from '../src';
+import { TempRedesign } from '../src/TEMPRedesign/TempRedesign';
 
 export default {
   component: TEMPStepProgressBar,
@@ -26,17 +27,24 @@ export const HorizontalIcon: Story<StepperProps> = (args) => {
 
 export const Vertical: Story<StepperProps> = (args) => {
   return (
-    <TEMPStepProgressBar orientation="vertical" activeStep={2} height={300} />
+    <div style={{ height: '400px' }}>
+      <TEMPStepProgressBar orientation="vertical" activeStep={2} height={300} />
+    </div>
   );
 };
 
 export const VerticalIcon: Story<StepperProps> = (args) => {
   return (
-    <TEMPStepProgressBar
-      stepStyle="icon"
-      orientation="vertical"
-      activeStep={2}
-      height={300}
-    />
+    <div style={{ height: '400px' }}>
+      <TEMPStepProgressBar
+        stepStyle="icon"
+        orientation="vertical"
+        activeStep={2}
+      />
+    </div>
   );
+};
+
+export const PlaygroundTempRedesign: Story<any> = (args) => {
+  return <TempRedesign />;
 };
