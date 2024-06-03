@@ -19,6 +19,8 @@ export function wrapPhosphorIcon(PhosphorIcon: PhosphorIcon) {
     return (
       <Icon
         {...props}
+        size={size}
+        color={color}
         // Icon renders the component on the `as` prop with its own props
         // then we pass the props to the PhosphorIcon component
         as={(phosporProps: PhosphorIconProps) => (
