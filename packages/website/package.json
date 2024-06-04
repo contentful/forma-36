@@ -14,7 +14,7 @@
     "@contentful/f36-components": "^4.65.8",
     "@contentful/f36-docs-utils": "^4.0.2",
     "@contentful/f36-empty-state": "^4.65.8",
-    "@contentful/f36-header": "^4.0.0-alpha.0",
+    "@contentful/f36-header": "^4.0.0",
     "@contentful/f36-icon": "^4.65.8",
     "@contentful/f36-icons": "^4.28.2",
     "@contentful/f36-image": "4.65.8",
