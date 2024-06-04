@@ -1,5 +1,87 @@
 # Change Log
 
+## 4.65.8
+
+### Patch Changes
+
+- Updated dependencies [[`de6c1fe62`](https://github.com/contentful/forma-36/commit/de6c1fe62ed2d6933f6035fa165a2a9c54614187)]:
+  - @contentful/f36-button@4.65.8
+  - @contentful/f36-accordion@4.65.8
+  - @contentful/f36-asset@4.65.8
+  - @contentful/f36-autocomplete@4.65.8
+  - @contentful/f36-badge@4.65.8
+  - @contentful/f36-card@4.65.8
+  - @contentful/f36-collapse@4.65.8
+  - @contentful/f36-copybutton@4.65.8
+  - @contentful/f36-core@4.65.8
+  - @contentful/f36-datetime@4.65.8
+  - @contentful/f36-datepicker@4.65.8
+  - @contentful/f36-drag-handle@4.65.8
+  - @contentful/f36-entity-list@4.65.8
+  - @contentful/f36-empty-state@4.65.8
+  - @contentful/f36-forms@4.65.8
+  - @contentful/f36-icon@4.65.8
+  - @contentful/f36-list@4.65.8
+  - @contentful/f36-menu@4.65.8
+  - @contentful/f36-modal@4.65.8
+  - @contentful/f36-navbar@4.65.8
+  - @contentful/f36-note@4.65.8
+  - @contentful/f36-notification@4.65.8
+  - @contentful/f36-pagination@4.65.8
+  - @contentful/f36-pill@4.65.8
+  - @contentful/f36-popover@4.65.8
+  - @contentful/f36-skeleton@4.65.8
+  - @contentful/f36-spinner@4.65.8
+  - @contentful/f36-table@4.65.8
+  - @contentful/f36-tabs@4.65.8
+  - @contentful/f36-text-link@4.65.8
+  - @contentful/f36-tooltip@4.65.8
+  - @contentful/f36-typography@4.65.8
+  - @contentful/f36-image@4.65.8
+  - @contentful/f36-avatar@4.65.8
+
+## 4.65.7
+
+### Patch Changes
+
+- [#2764](https://github.com/contentful/forma-36/pull/2764) [`1d247c391`](https://github.com/contentful/forma-36/commit/1d247c39160efe4b88bf2fe2ec2f852309c33afc) Thanks [@Annmary12](https://github.com/Annmary12)! - feat(changesets): move avatar from alpha package to automatic release [AHOY-3166]
+
+- Updated dependencies [[`1d247c391`](https://github.com/contentful/forma-36/commit/1d247c39160efe4b88bf2fe2ec2f852309c33afc)]:
+  - @contentful/f36-avatar@4.65.7
+  - @contentful/f36-image@4.65.7
+  - @contentful/f36-navbar@4.65.7
+  - @contentful/f36-accordion@4.65.7
+  - @contentful/f36-asset@4.65.7
+  - @contentful/f36-autocomplete@4.65.7
+  - @contentful/f36-badge@4.65.7
+  - @contentful/f36-button@4.65.7
+  - @contentful/f36-card@4.65.7
+  - @contentful/f36-collapse@4.65.7
+  - @contentful/f36-copybutton@4.65.7
+  - @contentful/f36-core@4.65.7
+  - @contentful/f36-datetime@4.65.7
+  - @contentful/f36-datepicker@4.65.7
+  - @contentful/f36-drag-handle@4.65.7
+  - @contentful/f36-entity-list@4.65.7
+  - @contentful/f36-empty-state@4.65.7
+  - @contentful/f36-forms@4.65.7
+  - @contentful/f36-icon@4.65.7
+  - @contentful/f36-list@4.65.7
+  - @contentful/f36-menu@4.65.7
+  - @contentful/f36-modal@4.65.7
+  - @contentful/f36-note@4.65.7
+  - @contentful/f36-notification@4.65.7
+  - @contentful/f36-pagination@4.65.7
+  - @contentful/f36-pill@4.65.7
+  - @contentful/f36-popover@4.65.7
+  - @contentful/f36-skeleton@4.65.7
+  - @contentful/f36-spinner@4.65.7
+  - @contentful/f36-table@4.65.7
+  - @contentful/f36-tabs@4.65.7
+  - @contentful/f36-text-link@4.65.7
+  - @contentful/f36-tooltip@4.65.7
+  - @contentful/f36-typography@4.65.7
+
 ## 4.65.6
 
 ### Patch Changes

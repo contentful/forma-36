@@ -1,5 +1,23 @@
 # Change Log
 
+## 4.65.8
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.65.8
+  - @contentful/f36-popover@4.65.8
+  - @contentful/f36-typography@4.65.8
+
+## 4.65.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.65.7
+  - @contentful/f36-popover@4.65.7
+  - @contentful/f36-typography@4.65.7
+
 ## 4.65.6
 
 ### Patch Changes
