@@ -31,4 +31,8 @@ export const getNavbarStyles = (maxWidth: string, variant: string) => ({
       padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
     },
   }),
+  logo: css({
+    height: '28px',
+    width: '28px',
+  }),
 });
