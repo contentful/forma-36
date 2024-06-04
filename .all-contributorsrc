@@ -768,6 +768,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "stephanLeece",
+      "name": "Stephan Leece",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32452823?v=4",
+      "profile": "https://www.linkedin.com/in/stephanleece/",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
