@@ -7,7 +7,6 @@
     }
   ],
   "ignore": [
-    "@contentful/f36-header",
     "@contentful/f36-layout",
     "@contentful/f36-navlist",
     "@contentful/f36-website"
@@ -31,6 +30,7 @@
       "@contentful/f36-empty-state",
       "@contentful/f36-forms",
       "@contentful/f36-icon",
+      "@contentful/f36-header",
       "@contentful/f36-list",
       "@contentful/f36-menu",
       "@contentful/f36-modal",
