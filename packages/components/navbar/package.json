@@ -1,18 +1,18 @@
 {
   "name": "@contentful/f36-navbar",
-  "version": "4.65.8",
+  "version": "4.65.9",
   "description": "Forma 36: Navbar component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.65.8",
-    "@contentful/f36-menu": "^4.65.8",
-    "@contentful/f36-avatar": "4.65.8",
+    "@contentful/f36-core": "^4.65.9",
+    "@contentful/f36-menu": "^4.65.9",
+    "@contentful/f36-avatar": "4.65.9",
     "@contentful/f36-tokens": "^4.0.1",
     "@contentful/f36-utils": "^4.23.2",
-    "@contentful/f36-skeleton": "^4.65.8",
-    "@contentful/f36-icon": "^4.65.8",
+    "@contentful/f36-skeleton": "^4.65.9",
+    "@contentful/f36-icon": "^4.65.9",
     "@contentful/f36-icons": "^4.23.2",
     "emotion": "^10.0.17"
   },
