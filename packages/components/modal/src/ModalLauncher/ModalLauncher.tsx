@@ -41,14 +41,18 @@ const getRoot = (rootElId: string): HTMLElement => {
 };
 
 const openModalsIds: Map<string, CloseModalData> = new Map();
-function closeAll() {
-  openModalsIds.forEach(async ({ render, currentConfig, delay }, rootElId) => {
-    const config = { ...currentConfig, isShown: false };
-    render(config);
-    await new Promise((resolveDelay) => setTimeout(resolveDelay, delay));
-    ReactDOM.unmountComponentAtNode(getRoot(rootElId));
-    openModalsIds.delete(rootElId);
-  });
+async function closeAll(): Promise<void> {
+  await Promise.all(
+    Array.from(openModalsIds.entries()).map(
+      async ([rootElId, { render, currentConfig, delay }]) => {
+        const config = { ...currentConfig, isShown: false };
+        render(config);
+        await new Promise((resolveDelay) => setTimeout(resolveDelay, delay));
+        ReactDOM.unmountComponentAtNode(getRoot(rootElId));
+        openModalsIds.delete(rootElId);
+      },
+    ),
+  );
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
