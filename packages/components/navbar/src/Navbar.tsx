@@ -7,22 +7,10 @@ import {
 import React from 'react';
 import { getNavbarStyles } from './Navbar.styles';
 type NavbarOwnProps = CommonProps & {
-  children?: React.ReactNode;
-  account?: React.ReactNode;
-  search?: React.ReactNode;
-  switcher?: React.ReactNode;
-  help?: React.ReactNode;
-  badge?: React.ReactNode;
-  /**
-   * Items that will be rendered on the bottom-right of the navbar.
-   * Useful for separating other navigation items from main ones, (e.g. separating "Settings" from all other navigation items).
-   */
-  bottomRightItems?: React.ReactNode;
-  /**
-   * Items that will be rendered on the top-right of the navbar.
-   * Useful for providing additional context or actions to the user (e.g. a Feedback form link).
-   */
-  topRightItems?: React.ReactNode;
+  logo?: React.ReactNode;
+  mainNavigation?: React.ReactNode;
+  secondaryNavigation?: React.ReactNode;
+
   /**
    * Defines the max-width of the content inside the navbar.
    * @default '100%'
@@ -41,14 +29,9 @@ export type NavbarProps = NavbarHTMLElementProps & NavbarOwnProps;
 
 function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
   const {
-    children,
-    account,
-    search,
-    switcher,
-    help,
-    badge,
-    bottomRightItems,
-    topRightItems,
+    logo,
+    mainNavigation,
+    secondaryNavigation,
     contentMaxWidth = '100%',
     testId = 'cf-ui-navbar',
     className,
@@ -64,26 +47,14 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
           className={styles.containerTopContent}
           justifyContent="space-between"
         >
-          <Flex>{switcher}</Flex>
-          <Flex alignItems="center" gap="spacingXs">
-            {topRightItems}
-            {badge}
-            {search}
-            {help}
-            {account}
-          </Flex>
-        </Flex>
-      </Flex>
-
-      <Flex className={styles.containerBottom}>
-        <Flex
-          className={styles.containerBottomContent}
-          justifyContent="space-between"
-        >
+          {logo}
           <Flex as="nav" aria-label="Main Navigation">
-            {children}
+            {mainNavigation}
           </Flex>
-          {bottomRightItems && <Flex>{bottomRightItems}</Flex>}
+
+          <Flex alignItems="center" gap="spacingXs">
+            {secondaryNavigation}
+          </Flex>
         </Flex>
       </Flex>
     </Box>

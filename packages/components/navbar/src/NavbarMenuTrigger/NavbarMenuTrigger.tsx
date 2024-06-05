@@ -20,7 +20,7 @@ export type NavbarMenuTriggerProps = PropsWithHTMLElement<
   'button'
 >;
 
-export const NavbarMenuTrigger = (
+const _NavbarMenuTrigger = (
   props: ExpandProps<NavbarMenuTriggerProps>,
   ref: React.Ref<HTMLButtonElement>,
 ) => {
@@ -52,3 +52,5 @@ export const NavbarMenuTrigger = (
     </Button>
   );
 };
+
+export const NavbarMenuTrigger = React.forwardRef(_NavbarMenuTrigger);
