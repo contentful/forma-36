@@ -2,8 +2,8 @@ import { css } from 'emotion';
 import { getGlowOnFocusStyles } from '../utils.styles';
 import tokens from '@contentful/f36-tokens';
 
-export const getNavbarHelpStyles = () => ({
-  navbarHelp: css(
+export const getNavbarMenuTriggerStyles = () => ({
+  menuTrigger: css(
     {
       // default button reset styles
       fontSize: tokens.fontSizeS,
