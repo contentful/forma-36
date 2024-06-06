@@ -1,7 +1,7 @@
 import React from 'react';
-import { generateIcon } from '@contentful/f36-icon';
+import { generateIconComponent } from '@contentful/f36-icon';
 
-export const CircleIcon = /*#__PURE__*/ generateIcon({
+export const CircleIcon = /*#__PURE__*/ generateIconComponent({
   name: 'CircleIcon',
   viewBox: '0 0 24 24',
   path: (
