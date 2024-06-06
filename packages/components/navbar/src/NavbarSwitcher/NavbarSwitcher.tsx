@@ -6,16 +6,10 @@ import {
   type PropsWithHTMLElement,
   type ExpandProps,
 } from '@contentful/f36-core';
-import { MenuIcon } from '@contentful/f36-icons';
 import { cx } from 'emotion';
-import { ContentfulLogoIcon } from '../icons';
 
 type NavbarSwitcherOwnProps = CommonProps & {
   children?: React.ReactNode;
-  /**
-   * Will be displayed instead of the default Contentful logo
-   */
-  logo?: React.ReactNode;
 };
 
 export type NavbarSwitcherProps = PropsWithHTMLElement<
@@ -30,7 +24,6 @@ function _NavbarSwitcher(
   const {
     children,
     className,
-    logo,
     testId = 'cf-ui-navbar-switcher',
     ...otherProps
   } = props;
@@ -47,9 +40,6 @@ function _NavbarSwitcher(
       fullHeight
       gap="spacingXs"
     >
-      {logo || <ContentfulLogoIcon />}
-      <MenuIcon size="small" className={styles.switcherMenuIcon} />
-
       <Flex as="ul" alignItems="center" className={styles.switcherBreadcrumbs}>
         {children}
       </Flex>

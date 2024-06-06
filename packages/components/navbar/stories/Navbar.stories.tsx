@@ -18,7 +18,7 @@ const Switcher = ({
   envVariant = 'master',
   children = 'master',
 }: Partial<NavbarSwitcherItemProps>) => (
-  <Navbar.Switcher logo="">
+  <Navbar.Switcher>
     <Navbar.SwitcherItem isCircle>
       <span role="img" aria-label="org logo">
         ⚡️
