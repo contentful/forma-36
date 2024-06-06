@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.66.0
+
+### Minor Changes
+
+- [#2780](https://github.com/contentful/forma-36/pull/2780) [`2c1e89fbb`](https://github.com/contentful/forma-36/commit/2c1e89fbb11bb9f40d84a3d885db16b954890525) Thanks [@andipaetzold](https://github.com/andipaetzold)! - `closeAll()` awaits for all modals to be closed
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.66.0
+  - @contentful/f36-core@4.66.0
+  - @contentful/f36-typography@4.66.0
+
 ## 4.65.9
 
 ### Patch Changes

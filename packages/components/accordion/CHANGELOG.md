@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.66.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@4.66.0
+  - @contentful/f36-core@4.66.0
+  - @contentful/f36-typography@4.66.0
+
 ## 4.65.9
 
 ### Patch Changes
