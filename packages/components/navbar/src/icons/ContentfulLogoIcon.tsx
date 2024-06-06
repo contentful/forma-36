@@ -1,7 +1,7 @@
 import React from 'react';
-import { generateIcon } from '@contentful/f36-icon';
+import { generateIconComponent } from '@contentful/f36-icon';
 
-export const ContentfulLogoIcon = /*#__PURE__*/ generateIcon({
+export const ContentfulLogoIcon = /*#__PURE__*/ generateIconComponent({
   name: 'ContentfulLogoIcon',
   viewBox: '0 0 28 28',
   path: (
