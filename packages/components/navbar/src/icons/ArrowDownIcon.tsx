@@ -1,7 +1,7 @@
 import React from 'react';
-import { generateIcon } from '@contentful/f36-icon';
+import { generateIconComponent } from '@contentful/f36-icon';
 
-export const ArrowDownIcon = /*#__PURE__*/ generateIcon({
+export const ArrowDownIcon = /*#__PURE__*/ generateIconComponent({
   name: 'ArrowDownIcon',
   viewBox: '0 0 12 20',
   path: (
