@@ -173,7 +173,7 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
   args,
 ) => {
   return (
-    <div style={{ width: '900px' }}>
+    <div style={{ width: '1250px' }}>
       <Navbar
         switcher={<Switcher />}
         account={<Account {...args} />}
@@ -218,16 +218,18 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
           <Navbar.Item label="Quick Search" icon={<MagnifyingGlassIcon />} />
         }
         badge={<Navbar.Badge>Trial</Navbar.Badge>}
-        topRightItems={<Navbar.TopbarItem>Feedback</Navbar.TopbarItem>}
-        bottomRightItems={
-          <Navbar.Item title="Settings">
-            <Navbar.MenuSectionTitle>General</Navbar.MenuSectionTitle>
-            <Navbar.MenuItem title="Home" />
-            <Navbar.MenuItem title="API keys" />
-            <Navbar.MenuSectionTitle>Space</Navbar.MenuSectionTitle>
-            <Navbar.MenuItem title="Apps" />
-            <Navbar.MenuItem title="Permissions" />
-          </Navbar.Item>
+        topRightItems={
+          <>
+            <Navbar.TopbarItem>Feedback</Navbar.TopbarItem>
+            <Navbar.Item title="Settings">
+              <Navbar.MenuSectionTitle>General</Navbar.MenuSectionTitle>
+              <Navbar.MenuItem title="Home" />
+              <Navbar.MenuItem title="API keys" />
+              <Navbar.MenuSectionTitle>Space</Navbar.MenuSectionTitle>
+              <Navbar.MenuItem title="Apps" />
+              <Navbar.MenuItem title="Permissions" />
+            </Navbar.Item>
+          </>
         }
       >
         <MainItems />
@@ -378,7 +380,6 @@ export const LoadingSkeleton: Story<{}> = () => {
             <Navbar.SwitcherSkeleton estimatedWidth={148} />
           </Navbar.Switcher>
         }
-        bottomRightItems={<Navbar.ItemSkeleton estimatedWidth={120} />}
       >
         <Navbar.ItemSkeleton estimatedWidth={100} />
         <Navbar.ItemSkeleton estimatedWidth={100} />

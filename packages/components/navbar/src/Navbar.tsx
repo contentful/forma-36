@@ -74,6 +74,13 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
           <Flex alignItems="center" gap="spacingL">
             {logo || <ContentfulLogoIcon className={styles.logo} />}
             {switcher}
+            <Flex
+              justifyContent="space-between"
+              as="nav"
+              aria-label="Main Navigation"
+            >
+              {children}
+            </Flex>
           </Flex>
           <Flex alignItems="center" gap="spacingXs">
             {topRightItems}
@@ -82,18 +89,6 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
             {help}
             {account}
           </Flex>
-        </Flex>
-      </Flex>
-
-      <Flex className={styles.containerBottom}>
-        <Flex
-          className={styles.containerBottomContent}
-          justifyContent="space-between"
-        >
-          <Flex as="nav" aria-label="Main Navigation" gap="spacingXs">
-            {children}
-          </Flex>
-          {bottomRightItems && <Flex>{bottomRightItems}</Flex>}
         </Flex>
       </Flex>
     </Box>
