@@ -114,7 +114,7 @@
     "semver": "^7.5.3",
     "simple-git-hooks": "^2.8.1",
     "size-limit": "^8.1.0",
-    "tsup": "^7.2.0",
+    "tsup": "^8.1.0",
     "turbo": "^1.10.7",
     "typescript": "4.7.3",
     "webpack": "5"
