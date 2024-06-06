@@ -6,7 +6,7 @@ import {
   NavbarItemIcon,
   type NavbarItemIconProps,
 } from '../NavbarItemIcon/NavbarItemIcon';
-import { ArrowDownIcon } from '../icons';
+import { CaretIcon } from '../icons';
 import type {
   CommonProps,
   ExpandProps,
@@ -70,7 +70,7 @@ function _NavbarItem(
     >
       {icon && <NavbarItemIcon icon={icon} variant="secondary" />}
       <span>{title}</span>
-      {isMenuTrigger && <ArrowDownIcon />}
+      {isMenuTrigger && <CaretIcon size="tiny" isActive={isActive} />}
     </Comp>
   );
 

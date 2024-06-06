@@ -2,7 +2,11 @@ import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { Navbar } from '../src';
-import { ImageSquareIcon, EntryIcon } from '@contentful/f36-icons';
+import {
+  ImageSquareIcon,
+  PenNibIcon,
+  PuzzlePieceIcon,
+} from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { NavbarSwitcherItemProps } from '../src/NavbarSwitcherItem/NavbarSwitcherItem';
@@ -53,11 +57,11 @@ const Account = ({
 
 const MainItems = () => (
   <>
-    <Navbar.Item title="Home" isActive />
-    <Navbar.Item title="Content model" />
-    <Navbar.Item title="Content" icon={<EntryIcon />} />
+    <Navbar.Item title="Content model" icon={<PenNibIcon />} isActive />
+    <Navbar.Item title="Content" icon={<PenNibIcon />} />
+    <Navbar.Item title="Experiences" icon={<PenNibIcon />} />
     <Navbar.Item title="Media" icon={<ImageSquareIcon />} />
-    <Navbar.Item title="Apps">
+    <Navbar.Item title="Apps" icon={<PuzzlePieceIcon />}>
       <Navbar.MenuItem
         title="App 1"
         icon={
