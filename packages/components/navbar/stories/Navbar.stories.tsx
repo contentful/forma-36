@@ -8,6 +8,8 @@ import {
   PenNibIcon,
   PuzzlePieceIcon,
   WrenchIcon,
+  MagnifyingGlassIcon,
+  QuestionIcon,
 } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
@@ -176,7 +178,7 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
         switcher={<Switcher />}
         account={<Account {...args} />}
         help={
-          <Navbar.Help>
+          <Navbar.Item label="Help Menu" icon={<QuestionIcon />}>
             <Navbar.MenuItem
               as="a"
               target="_blank"
@@ -210,9 +212,11 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
               testId="cf-ui-navbar-help-support"
               href="https://support.contentful.com"
             />
-          </Navbar.Help>
+          </Navbar.Item>
         }
-        search={<Navbar.Search />}
+        search={
+          <Navbar.Item label="Quick Search" icon={<MagnifyingGlassIcon />} />
+        }
         badge={<Navbar.Badge>Trial</Navbar.Badge>}
         topRightItems={<Navbar.TopbarItem>Feedback</Navbar.TopbarItem>}
         bottomRightItems={
