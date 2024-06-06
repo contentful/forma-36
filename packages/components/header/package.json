@@ -1,16 +1,16 @@
 {
   "name": "@contentful/f36-header",
-  "version": "4.0.0-alpha.7",
+  "version": "4.65.9",
   "description": "Forma 36: Header component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-button": "^4.65.8",
-    "@contentful/f36-core": "^4.65.8",
+    "@contentful/f36-button": "^4.65.9",
+    "@contentful/f36-core": "^4.65.9",
     "@contentful/f36-icons": "^4.28.2",
     "@contentful/f36-tokens": "^4.0.5",
-    "@contentful/f36-typography": "^4.65.8",
+    "@contentful/f36-typography": "^4.65.9",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {

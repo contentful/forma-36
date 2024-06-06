@@ -15,6 +15,7 @@ export * from '@contentful/f36-entity-list';
 export * from '@contentful/f36-empty-state';
 export * from '@contentful/f36-forms';
 export * from '@contentful/f36-icon';
+export * from '@contentful/f36-header';
 export * from '@contentful/f36-image';
 export * from '@contentful/f36-list';
 export * from '@contentful/f36-menu';
