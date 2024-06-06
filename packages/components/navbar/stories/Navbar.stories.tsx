@@ -10,6 +10,7 @@ import {
   WrenchIcon,
   MagnifyingGlassIcon,
   QuestionIcon,
+  GearSixIcon,
 } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
@@ -221,7 +222,7 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
         topRightItems={
           <>
             <Navbar.TopbarItem>Feedback</Navbar.TopbarItem>
-            <Navbar.Item title="Settings">
+            <Navbar.Item label="Menu Settings" icon={<GearSixIcon />}>
               <Navbar.MenuSectionTitle>General</Navbar.MenuSectionTitle>
               <Navbar.MenuItem title="Home" />
               <Navbar.MenuItem title="API keys" />

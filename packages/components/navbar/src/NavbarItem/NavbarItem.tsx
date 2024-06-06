@@ -69,7 +69,7 @@ function _NavbarItem(
         isActive && styles.isActive,
         className,
       )}
-      ariaLabel={title ? '' : label}
+      aria-label={title ? '' : label}
     >
       {icon && <NavbarItemIcon icon={icon} isActive={isActive} />}
       {title && <span>{title}</span>}
