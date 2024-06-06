@@ -2,7 +2,7 @@ import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { Navbar } from '../src';
-import { AssetIcon, EntryIcon } from '@contentful/f36-icons';
+import { ImageSquareIcon, EntryIcon } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { NavbarSwitcherItemProps } from '../src/NavbarSwitcherItem/NavbarSwitcherItem';
@@ -56,7 +56,7 @@ const MainItems = () => (
     <Navbar.Item title="Home" icon={<FaceHappyIcon />} isActive />
     <Navbar.Item title="Content model" />
     <Navbar.Item title="Content" icon={<EntryIcon />} />
-    <Navbar.Item title="Media" icon={<AssetIcon />} />
+    <Navbar.Item title="Media" icon={<ImageSquareIcon />} />
     <Navbar.Item title="Apps">
       <Navbar.MenuItem
         title="App 1"
