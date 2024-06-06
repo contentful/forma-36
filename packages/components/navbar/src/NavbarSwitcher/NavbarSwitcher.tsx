@@ -9,7 +9,7 @@ import {
 import { cx } from 'emotion';
 
 type NavbarSwitcherOwnProps = CommonProps & {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 export type NavbarSwitcherProps = PropsWithHTMLElement<
