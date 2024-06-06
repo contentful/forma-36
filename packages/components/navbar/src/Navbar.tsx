@@ -6,28 +6,34 @@ import {
 } from '@contentful/f36-core';
 import React from 'react';
 import { getNavbarStyles } from './Navbar.styles';
+import { ContentfulLogoIcon } from './icons';
+
 type NavbarOwnProps = CommonProps & {
-  children?: React.ReactNode;
   account?: React.ReactNode;
-  search?: React.ReactNode;
-  switcher?: React.ReactNode;
-  help?: React.ReactNode;
   badge?: React.ReactNode;
   /**
    * Items that will be rendered on the bottom-right of the navbar.
    * Useful for separating other navigation items from main ones, (e.g. separating "Settings" from all other navigation items).
    */
   bottomRightItems?: React.ReactNode;
-  /**
-   * Items that will be rendered on the top-right of the navbar.
-   * Useful for providing additional context or actions to the user (e.g. a Feedback form link).
-   */
-  topRightItems?: React.ReactNode;
+  children?: React.ReactNode;
   /**
    * Defines the max-width of the content inside the navbar.
    * @default '100%'
    */
   contentMaxWidth?: string;
+  help?: React.ReactNode;
+  /**
+   * Will be displayed instead of the default Contentful logo
+   */
+  logo?: React.ReactNode;
+  search?: React.ReactNode;
+  switcher?: React.ReactNode;
+  /**
+   * Items that will be rendered on the top-right of the navbar.
+   * Useful for providing additional context or actions to the user (e.g. a Feedback form link).
+   */
+  topRightItems?: React.ReactNode;
   /**
    * Describes the size variation of the navbar
    */
@@ -41,17 +47,18 @@ export type NavbarProps = NavbarHTMLElementProps & NavbarOwnProps;
 
 function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
   const {
-    children,
     account,
-    search,
-    switcher,
-    help,
     badge,
     bottomRightItems,
-    topRightItems,
-    contentMaxWidth = '100%',
-    testId = 'cf-ui-navbar',
+    children,
     className,
+    contentMaxWidth = '100%',
+    help,
+    logo,
+    search,
+    switcher,
+    testId = 'cf-ui-navbar',
+    topRightItems,
     variant = 'wide',
     ...otherProps
   } = props;
@@ -64,7 +71,10 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
           className={styles.containerTopContent}
           justifyContent="space-between"
         >
-          <Flex>{switcher}</Flex>
+          <Flex alignItems="center" gap="spacingL">
+            {logo || <ContentfulLogoIcon className={styles.logo} />}
+            {switcher}
+          </Flex>
           <Flex alignItems="center" gap="spacingXs">
             {topRightItems}
             {badge}
