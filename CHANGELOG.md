@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 07-06-2024
+
+**F36 Modal** `v4.66.0`
+
+- `closeAll()` awaits for all modals to be closed
+
 ## 06-06-2024
 
 `@contentful/f36-components@4.65.9`
