@@ -28,7 +28,7 @@ export const getNavbarItemStyles = () => ({
     {
       alignItems: 'center',
       background: 'none',
-      border: 0,
+      border: '1px solid transparent',
       margin: 0,
       outline: 'none',
       fontSize: tokens.fontSizeM,
