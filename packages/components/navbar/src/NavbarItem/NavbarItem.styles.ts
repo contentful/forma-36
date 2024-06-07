@@ -5,26 +5,21 @@ import { getGlowOnFocusStyles } from '../utils.styles';
 
 export const getNavbarItemActiveStyles = () =>
   css({
-    '&::after': {
-      content: '""',
-      position: 'absolute',
-      width: `calc(100% - ${tokens.spacingM})`,
-      height: '2px',
-      bottom: `-${tokens.spacing2Xs}`,
-      left: 0,
-      right: 0,
-      margin: 'auto',
-      backgroundColor: tokens.blue600,
-      zIndex: 0,
+    backgroundColor: tokens.blue100,
+    border: `1px solid ${tokens.blue400}`,
+    color: tokens.blue600,
+    '&:hover': {
+      backgroundColor: tokens.blue100,
     },
   });
 
 const commonItemStyles = {
   display: 'flex',
   justifyContent: 'center',
-  padding: `${tokens.spacing2Xs} ${tokens.spacingS}`,
+  padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
   alignItems: 'center',
   background: 'none',
+  gap: tokens.spacing2Xs,
 };
 
 export const getNavbarItemStyles = () => ({
@@ -33,7 +28,7 @@ export const getNavbarItemStyles = () => ({
     {
       alignItems: 'center',
       background: 'none',
-      border: 0,
+      border: '1px solid transparent',
       margin: 0,
       outline: 'none',
       fontSize: tokens.fontSizeM,
@@ -45,7 +40,7 @@ export const getNavbarItemStyles = () => ({
       cursor: 'pointer',
       hyphens: 'auto',
       textDecoration: 'none',
-      color: tokens.gray700,
+      color: tokens.gray800,
       boxSizing: 'border-box',
       transition: `color ${tokens.transitionDurationShort} ${tokens.transitionEasingCubicBezier}`,
       borderRadius: tokens.borderRadiusMedium,
@@ -73,7 +68,7 @@ export const getNavbarItemStyles = () => ({
         zIndex: tokens.zIndexDefault,
       },
     },
-    getGlowOnFocusStyles(`inset ${tokens.glowPrimary}`),
+    getGlowOnFocusStyles(),
   ),
   navbarItemMenuTrigger: css({
     paddingRight: tokens.spacingXs,
