@@ -2,7 +2,13 @@ import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { Navbar } from '../src';
-import { ImageSquareIcon, EntryIcon } from '@contentful/f36-icons';
+import {
+  ImageSquareIcon,
+  PaintBrushIcon,
+  PenNibIcon,
+  PuzzlePieceIcon,
+  WrenchIcon,
+} from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { NavbarSwitcherItemProps } from '../src/NavbarSwitcherItem/NavbarSwitcherItem';
@@ -44,33 +50,77 @@ const Account = ({
     hasNotification={hasNotification}
     notificationVariant={notificationVariant}
   >
-    <Navbar.MenuItem title="Account settings" />
+    <Navbar.MenuItem title="Account settings" icon={<WrenchIcon />} />
     <Navbar.MenuItem title="Dashboard" />
+    <Navbar.MenuDivider />
+    <Navbar.MenuItem
+      title="External link"
+      as="a"
+      href="https://www.contentful.com"
+      target="_blank"
+    />
     <Navbar.MenuDivider />
     <Navbar.MenuItem title="Log out" />
   </Navbar.Account>
 );
 
-const MainItems = () => (
-  <>
-    <Navbar.Item title="Home" icon={<FaceHappyIcon />} isActive />
-    <Navbar.Item title="Content model" />
-    <Navbar.Item title="Content" icon={<EntryIcon />} />
-    <Navbar.Item title="Media" icon={<ImageSquareIcon />} />
-    <Navbar.Item title="Apps">
-      <Navbar.MenuItem
-        title="App 1"
-        icon={
-          <img
-            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=32&h=32"
-            alt="app 1"
-          />
-        }
-      />
-      <Navbar.MenuItem title="App 2" />
-    </Navbar.Item>
-  </>
-);
+const MainItems = () => {
+  const [activeItem, setActiveItem] = React.useState('Content model');
+
+  const items = [
+    {
+      title: 'Content model',
+      icon: <WrenchIcon />,
+      isActive: activeItem === 'Content model',
+      onClick: () => setActiveItem('Content model'),
+    },
+    {
+      title: 'Content',
+      icon: <PenNibIcon />,
+      isActive: activeItem === 'Content',
+      onClick: () => setActiveItem('Content'),
+    },
+    {
+      title: 'Experiences',
+      icon: <PaintBrushIcon />,
+      isActive: activeItem === 'Experiences',
+      onClick: () => setActiveItem('Experiences'),
+    },
+    {
+      title: 'Media',
+      icon: <ImageSquareIcon />,
+      isActive: activeItem === 'Media',
+      onClick: () => setActiveItem('Media'),
+    },
+  ];
+
+  return (
+    <>
+      {items.map(({ title, icon, isActive, onClick }) => (
+        <Navbar.Item
+          key={title}
+          title={title}
+          icon={icon}
+          isActive={isActive}
+          onClick={onClick}
+        />
+      ))}
+
+      <Navbar.Item title="Apps" icon={<PuzzlePieceIcon />}>
+        <Navbar.MenuItem
+          title="App 1"
+          icon={
+            <img
+              src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=32&h=32"
+              alt="app 1"
+            />
+          }
+        />
+        <Navbar.MenuItem title="App 2" />
+      </Navbar.Item>
+    </>
+  );
+};
 
 export const Basic: Story<{ initials?: string; avatar?: string }> = (args) => {
   return (
