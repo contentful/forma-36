@@ -51,7 +51,7 @@ function _NavbarMenuItem(
       className={cx(styles.navbarMenuItem, className)}
     >
       {icon ? (
-        <NavbarItemIcon icon={icon} variant="secondary" />
+        <NavbarItemIcon icon={icon} />
       ) : (
         itemIsExternalLink && externalIcon
       )}
@@ -61,9 +61,7 @@ function _NavbarMenuItem(
   );
 }
 
-const externalIcon = (
-  <NavbarItemIcon icon={<ArrowSquareOutIcon />} variant="muted" />
-);
+const externalIcon = <NavbarItemIcon icon={<ArrowSquareOutIcon />} />;
 
 const isExternalLink = (props: NavbarMenuItemProps<'a'>) =>
   props.as === 'a' && props.target === '_blank';

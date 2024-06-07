@@ -68,7 +68,7 @@ function _NavbarItem(
         className,
       )}
     >
-      {icon && <NavbarItemIcon icon={icon} variant="secondary" />}
+      {icon && <NavbarItemIcon icon={icon} isActive={isActive} />}
       <span>{title}</span>
       {isMenuTrigger && <CaretIcon size="tiny" isActive={isActive} />}
     </Comp>

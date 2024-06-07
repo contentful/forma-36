@@ -50,8 +50,15 @@ const Account = ({
     hasNotification={hasNotification}
     notificationVariant={notificationVariant}
   >
-    <Navbar.MenuItem title="Account settings" />
+    <Navbar.MenuItem title="Account settings" icon={<WrenchIcon />} />
     <Navbar.MenuItem title="Dashboard" />
+    <Navbar.MenuDivider />
+    <Navbar.MenuItem
+      title="External link"
+      as="a"
+      href="https://www.contentful.com"
+      target="_blank"
+    />
     <Navbar.MenuDivider />
     <Navbar.MenuItem title="Log out" />
   </Navbar.Account>
