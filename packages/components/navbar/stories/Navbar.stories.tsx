@@ -192,7 +192,7 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
         }
         secondaryNavigation={
           <>
-            <Navbar.TopbarItem>Feedback</Navbar.TopbarItem>
+            <Navbar.Item title="Feedback"></Navbar.Item>
             <Navbar.Item label="Quick Search" icon={<MagnifyingGlassIcon />} />
             <Navbar.Item label="Help Menu" icon={<QuestionIcon />}>
               <Navbar.MenuItem

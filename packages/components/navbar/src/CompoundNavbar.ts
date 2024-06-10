@@ -9,7 +9,6 @@ import { NavbarSwitcher, NavbarSwitcherSkeleton } from './NavbarSwitcher';
 
 import { NavbarSwitcherItem } from './NavbarSwitcherItem/NavbarSwitcherItem';
 import { NavbarBadge } from './NavbarBadge/NavbarBadge';
-import { NavbarTopbarItem } from './NavbarTopbarItem/NavbarTopbarItem';
 
 type CompoundNavbar = typeof OriginalNavbar & {
   Item: typeof NavbarItem;
@@ -24,7 +23,6 @@ type CompoundNavbar = typeof OriginalNavbar & {
   Account: typeof NavbarAccount;
   AccountSkeleton: typeof NavbarAccountSkeleton;
   Badge: typeof NavbarBadge;
-  TopbarItem: typeof NavbarTopbarItem;
 };
 
 export const Navbar = OriginalNavbar as CompoundNavbar;
@@ -40,4 +38,3 @@ Navbar.SwitcherItem = NavbarSwitcherItem;
 Navbar.Account = NavbarAccount;
 Navbar.AccountSkeleton = NavbarAccountSkeleton;
 Navbar.Badge = NavbarBadge;
-Navbar.TopbarItem = NavbarTopbarItem;
