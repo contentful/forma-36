@@ -128,9 +128,11 @@ const MainItems = () => {
 export const Basic: Story<{ initials?: string; avatar?: string }> = (args) => {
   return (
     <div style={{ width: '900px' }}>
-      <Navbar switcher={<Switcher />} account={<Account {...args} />}>
-        <MainItems />
-      </Navbar>
+      <Navbar
+        mainNav={<MainItems />}
+        switcher={<Switcher />}
+        account={<Account {...args} />}
+      ></Navbar>
     </div>
   );
 };
@@ -147,9 +149,11 @@ export const WithInitialsAvatar: Story<{
 }> = (args) => {
   return (
     <div style={{ width: '900px' }}>
-      <Navbar switcher={<Switcher />} account={<Account {...args} />}>
-        <MainItems />
-      </Navbar>
+      <Navbar
+        mainNav={<MainItems />}
+        switcher={<Switcher />}
+        account={<Account {...args} />}
+      ></Navbar>
     </div>
   );
 };
@@ -161,9 +165,11 @@ WithInitialsAvatar.args = {
 export const WithFallbackAvatar: Story<{}> = (args) => {
   return (
     <div style={{ width: '900px' }}>
-      <Navbar switcher={<Switcher />} account={<Account {...args} />}>
-        <MainItems />
-      </Navbar>
+      <Navbar
+        mainNav={<MainItems />}
+        switcher={<Switcher />}
+        account={<Account {...args} />}
+      ></Navbar>
     </div>
   );
 };
@@ -177,51 +183,52 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
     <div style={{ width: '1250px' }}>
       <Navbar
         switcher={<Switcher />}
-        account={<Account {...args} />}
-        help={
-          <Navbar.Item label="Help Menu" icon={<QuestionIcon />}>
-            <Navbar.MenuItem
-              as="a"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Help center"
-              testId="cf-ui-navbar-help-menu-help-center"
-              href={'https://www.contentful.com/help/'}
-            />
-            <Navbar.MenuItem
-              as="a"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Developer docs"
-              testId="cf-ui-navbar-help-menu-docs"
-              href="https://www.contentful.com/developers/docs/"
-            />
-            <Navbar.MenuItem
-              as="a"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Training courses"
-              testId="cf-ui-navbar-help-traning-center"
-              href="https://training.contentful.com"
-            />
-            <Navbar.MenuDivider />
-            <Navbar.MenuItem
-              as="a"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Get support"
-              testId="cf-ui-navbar-help-support"
-              href="https://support.contentful.com"
-            />
-          </Navbar.Item>
+        mainNav={<MainItems />}
+        account={
+          <>
+            <Navbar.Badge>Trial</Navbar.Badge>
+            <Account {...args} />
+          </>
         }
-        search={
-          <Navbar.Item label="Quick Search" icon={<MagnifyingGlassIcon />} />
-        }
-        badge={<Navbar.Badge>Trial</Navbar.Badge>}
-        topRightItems={
+        secondaryNav={
           <>
             <Navbar.TopbarItem>Feedback</Navbar.TopbarItem>
+            <Navbar.Item label="Quick Search" icon={<MagnifyingGlassIcon />} />
+            <Navbar.Item label="Help Menu" icon={<QuestionIcon />}>
+              <Navbar.MenuItem
+                as="a"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Help center"
+                testId="cf-ui-navbar-help-menu-help-center"
+                href={'https://www.contentful.com/help/'}
+              />
+              <Navbar.MenuItem
+                as="a"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Developer docs"
+                testId="cf-ui-navbar-help-menu-docs"
+                href="https://www.contentful.com/developers/docs/"
+              />
+              <Navbar.MenuItem
+                as="a"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Training courses"
+                testId="cf-ui-navbar-help-traning-center"
+                href="https://training.contentful.com"
+              />
+              <Navbar.MenuDivider />
+              <Navbar.MenuItem
+                as="a"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Get support"
+                testId="cf-ui-navbar-help-support"
+                href="https://support.contentful.com"
+              />
+            </Navbar.Item>
             <Navbar.Item label="Menu Settings" icon={<GearSixIcon />}>
               <Navbar.MenuSectionTitle>General</Navbar.MenuSectionTitle>
               <Navbar.MenuItem title="Home" />
@@ -232,9 +239,7 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
             </Navbar.Item>
           </>
         }
-      >
-        <MainItems />
-      </Navbar>
+      ></Navbar>
     </div>
   );
 };
@@ -256,9 +261,11 @@ export const WithDifferentEnvironments: Story<{
           Master
         </SectionHeading>
 
-        <Navbar switcher={<Switcher />} account={<Account {...args} />}>
-          <MainItems />
-        </Navbar>
+        <Navbar
+          mainNav={<MainItems />}
+          switcher={<Switcher />}
+          account={<Account {...args} />}
+        ></Navbar>
       </Flex>
 
       <Flex flexDirection="column">
@@ -267,11 +274,10 @@ export const WithDifferentEnvironments: Story<{
         </SectionHeading>
 
         <Navbar
+          mainNav={<MainItems />}
           switcher={<Switcher envVariant="non-master">development</Switcher>}
           account={<Account {...args} />}
-        >
-          <MainItems />
-        </Navbar>
+        ></Navbar>
       </Flex>
 
       <Flex flexDirection="column">
@@ -280,11 +286,10 @@ export const WithDifferentEnvironments: Story<{
         </SectionHeading>
 
         <Navbar
+          mainNav={<MainItems />}
           switcher={<Switcher isAlias>staging</Switcher>}
           account={<Account {...args} />}
-        >
-          <MainItems />
-        </Navbar>
+        ></Navbar>
       </Flex>
 
       <Flex flexDirection="column">
@@ -293,15 +298,14 @@ export const WithDifferentEnvironments: Story<{
         </SectionHeading>
 
         <Navbar
+          mainNav={<MainItems />}
           switcher={
             <Switcher isAlias envVariant="non-master">
               dev
             </Switcher>
           }
           account={<Account {...args} />}
-        >
-          <MainItems />
-        </Navbar>
+        ></Navbar>
       </Flex>
     </Flex>
   );
@@ -327,9 +331,8 @@ export const WithAccountNotification: Story<{
         <Navbar
           switcher={<Switcher />}
           account={<Account {...args} hasNotification />}
-        >
-          <MainItems />
-        </Navbar>
+          mainNav={<MainItems />}
+        ></Navbar>
       </Flex>
 
       <Flex flexDirection="column">
@@ -342,9 +345,8 @@ export const WithAccountNotification: Story<{
           account={
             <Account {...args} hasNotification notificationVariant="negative" />
           }
-        >
-          <MainItems />
-        </Navbar>
+          mainNav={<MainItems />}
+        ></Navbar>
       </Flex>
 
       <Flex flexDirection="column">
@@ -357,9 +359,8 @@ export const WithAccountNotification: Story<{
           account={
             <Account {...args} hasNotification notificationVariant="info" />
           }
-        >
-          <MainItems />
-        </Navbar>
+          mainNav={<MainItems />}
+        ></Navbar>
       </Flex>
     </Flex>
   );
@@ -381,12 +382,15 @@ export const LoadingSkeleton: Story<{}> = () => {
             <Navbar.SwitcherSkeleton estimatedWidth={148} />
           </Navbar.Switcher>
         }
-      >
-        <Navbar.ItemSkeleton estimatedWidth={100} />
-        <Navbar.ItemSkeleton estimatedWidth={100} />
-        <Navbar.ItemSkeleton estimatedWidth={100} />
-        <Navbar.ItemSkeleton estimatedWidth={100} />
-      </Navbar>
+        mainNav={
+          <>
+            <Navbar.ItemSkeleton estimatedWidth={100} />
+            <Navbar.ItemSkeleton estimatedWidth={100} />
+            <Navbar.ItemSkeleton estimatedWidth={100} />
+            <Navbar.ItemSkeleton estimatedWidth={100} />
+          </>
+        }
+      ></Navbar>
     </div>
   );
 };

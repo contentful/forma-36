@@ -9,33 +9,33 @@ import { getNavbarStyles } from './Navbar.styles';
 import { ContentfulLogoIcon } from './icons';
 
 type NavbarOwnProps = CommonProps & {
-  account?: React.ReactNode;
-  badge?: React.ReactNode;
   /**
-   * Items that will be rendered on the bottom-right of the navbar.
-   * Useful for separating other navigation items from main ones, (e.g. separating "Settings" from all other navigation items).
+   * Accepts a React Component that will be displayed
+   * instead of the Contentful Logo
    */
-  bottomRightItems?: React.ReactNode;
-  children?: React.ReactNode;
+  logo?: React.ReactNode;
+
+  /** Environment Switcher component */
+  switcher?: React.ReactNode;
+
+  /** Main Navigation Elements */
+  mainNav?: React.ReactNode;
+
+  /** Secondary Navigation Elements, displayed in the right side */
+  secondaryNav?: React.ReactNode;
+
+  /** User Account Component  */
+  account?: React.ReactNode;
+
   /**
    * Defines the max-width of the content inside the navbar.
    * @default '100%'
    */
   contentMaxWidth?: string;
-  help?: React.ReactNode;
+
   /**
-   * Will be displayed instead of the default Contentful logo
-   */
-  logo?: React.ReactNode;
-  search?: React.ReactNode;
-  switcher?: React.ReactNode;
-  /**
-   * Items that will be rendered on the top-right of the navbar.
-   * Useful for providing additional context or actions to the user (e.g. a Feedback form link).
-   */
-  topRightItems?: React.ReactNode;
-  /**
-   * Describes the size variation of the navbar
+   * Describes the size variation of the Navbar
+   * Variant wide will set the contentMaxWidth to 1524px
    */
   variant?: 'wide' | 'fullscreen';
 };
@@ -47,18 +47,14 @@ export type NavbarProps = NavbarHTMLElementProps & NavbarOwnProps;
 
 function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
   const {
+    logo,
+    switcher,
+    mainNav,
+    secondaryNav,
     account,
-    badge,
-    bottomRightItems,
-    children,
     className,
     contentMaxWidth = '100%',
-    help,
-    logo,
-    search,
-    switcher,
     testId = 'cf-ui-navbar',
-    topRightItems,
     variant = 'wide',
     ...otherProps
   } = props;
@@ -75,14 +71,11 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
             {logo || <ContentfulLogoIcon className={styles.logo} />}
             {switcher}
             <Flex gap="spacingXs" as="nav" aria-label="Main Navigation">
-              {children}
+              {mainNav}
             </Flex>
           </Flex>
           <Flex alignItems="center" gap="spacingXs">
-            {topRightItems}
-            {badge}
-            {search}
-            {help}
+            {secondaryNav}
             {account}
           </Flex>
         </Flex>
