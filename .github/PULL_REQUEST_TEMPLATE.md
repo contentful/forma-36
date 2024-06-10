@@ -1,7 +1,7 @@
 <!--
 🎉❤️ Thank you for taking time to contribute to Forma 36! ❤️🎉
 For ease of review, please follow this template for your contribution.
-If you have any questions feel free to get in touch on the #forma36 channel on our Contentful Community Slack (sign up here: https://www.contentful.com/slack/.
+If you have any questions feel free to get in touch on the #forma36 channel on our Contentful Community Discord (sign up here: https://www.contentful.com/discord/.
 -->
 
 # Purpose of PR
