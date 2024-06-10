@@ -778,6 +778,16 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "chrishelgert",
+      "name": "Chris Helgert",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3918488?v=4",
+      "profile": "https://github.com/chrishelgert",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
