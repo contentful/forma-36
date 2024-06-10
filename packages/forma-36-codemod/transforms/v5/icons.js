@@ -18,6 +18,7 @@ const { isConditionalExpression } = require('../../utils/updateTernaryValues');
 
 // V4 icon name : V5 icon name
 const iconsMap = {
+  Appearance: 'CircleHalf',
   Archive: 'FileArchive',
   ArrowBackward: 'ArrowLeft',
   ArrowDown: 'CaretDown',
@@ -84,6 +85,7 @@ const iconsMap = {
   Menu: 'List',
   Minus: 'Minus',
   MoreHorizontal: 'DotsThree',
+  MoreVertical: 'DotsThreeVertical',
   Page: 'File',
   Pdf: 'FilePdf',
   Person: 'User',
