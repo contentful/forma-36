@@ -74,11 +74,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
           <Flex alignItems="center" gap="spacingL">
             {logo || <ContentfulLogoIcon className={styles.logo} />}
             {switcher}
-            <Flex
-              justifyContent="space-between"
-              as="nav"
-              aria-label="Main Navigation"
-            >
+            <Flex gap="spacingXs" as="nav" aria-label="Main Navigation">
               {children}
             </Flex>
           </Flex>
