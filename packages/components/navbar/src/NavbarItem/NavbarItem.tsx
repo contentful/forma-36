@@ -17,7 +17,8 @@ import type {
 const NAVBAR_ITEM_DEFAULT_TAG = 'button';
 
 type NavbarItemTriggerProps = CommonProps & {
-  title: string;
+  label?: string;
+  title?: string;
   icon?: NavbarItemIconProps['icon'];
   isActive?: boolean;
   as?: React.ElementType;
@@ -45,6 +46,7 @@ function _NavbarItem(
   const {
     as: Comp = NAVBAR_ITEM_DEFAULT_TAG,
     icon,
+    label,
     title,
     children,
     className,
@@ -67,10 +69,11 @@ function _NavbarItem(
         isActive && styles.isActive,
         className,
       )}
+      aria-label={title ? '' : label}
     >
       {icon && <NavbarItemIcon icon={icon} isActive={isActive} />}
-      <span>{title}</span>
-      {isMenuTrigger && <CaretIcon size="tiny" isActive={isActive} />}
+      {title && <span>{title}</span>}
+      {title && isMenuTrigger && <CaretIcon size="tiny" isActive={isActive} />}
     </Comp>
   );
 

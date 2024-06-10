@@ -7,11 +7,8 @@ import { NavbarItem, NavbarItemSkeleton } from './NavbarItem';
 import { NavbarMenuItem, NavbarMenuItemSkeleton } from './NavbarMenuItem';
 import { NavbarSwitcher, NavbarSwitcherSkeleton } from './NavbarSwitcher';
 
-import { NavbarSearch } from './NavbarSearch/NavbarSearch';
 import { NavbarSwitcherItem } from './NavbarSwitcherItem/NavbarSwitcherItem';
-import { NavbarHelp } from './NavbarHelp/NavbarHelp';
 import { NavbarBadge } from './NavbarBadge/NavbarBadge';
-import { NavbarTopbarItem } from './NavbarTopbarItem/NavbarTopbarItem';
 
 type CompoundNavbar = typeof OriginalNavbar & {
   Item: typeof NavbarItem;
@@ -23,12 +20,9 @@ type CompoundNavbar = typeof OriginalNavbar & {
   Switcher: typeof NavbarSwitcher;
   SwitcherSkeleton: typeof NavbarSwitcherSkeleton;
   SwitcherItem: typeof NavbarSwitcherItem;
-  Search: typeof NavbarSearch;
-  Help: typeof NavbarHelp;
   Account: typeof NavbarAccount;
   AccountSkeleton: typeof NavbarAccountSkeleton;
   Badge: typeof NavbarBadge;
-  TopbarItem: typeof NavbarTopbarItem;
 };
 
 export const Navbar = OriginalNavbar as CompoundNavbar;
@@ -41,9 +35,6 @@ Navbar.MenuSectionTitle = MenuSectionTitle;
 Navbar.Switcher = NavbarSwitcher;
 Navbar.SwitcherSkeleton = NavbarSwitcherSkeleton;
 Navbar.SwitcherItem = NavbarSwitcherItem;
-Navbar.Search = NavbarSearch;
-Navbar.Help = NavbarHelp;
 Navbar.Account = NavbarAccount;
 Navbar.AccountSkeleton = NavbarAccountSkeleton;
 Navbar.Badge = NavbarBadge;
-Navbar.TopbarItem = NavbarTopbarItem;
