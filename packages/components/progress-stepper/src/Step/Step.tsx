@@ -1,40 +1,32 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { type CommonProps, Flex } from '@contentful/f36-core';
-import { getStyles } from './NEWStep.styles';
+import { type CommonProps } from '@contentful/f36-core';
+import { getStyles } from './Step.styles';
 import { DoneIcon, CloseIcon, WarningIcon } from '@contentful/f36-icons';
-import { Paragraph } from '@contentful/f36-typography';
 
 export interface StepProps extends CommonProps {
-  isActive?: boolean;
-  isInvalid?: boolean;
-  isWarning?: boolean;
-  isDisabled?: boolean;
-  isComplete?: boolean;
-  stepStyle?: 'number' | 'icon';
-  // make this optional prop because parent component determines its value
-  stepNumber?: number;
+  variant?:
+    | 'active'
+    | 'invalid'
+    | 'warning'
+    | 'disabled'
+    | 'complete'
+    | 'incomplete';
   labelText?: string;
+  stepNumber?: number;
+  stepStyle?: 'number' | 'icon';
   orientation?: 'horizontal' | 'vertical';
-  // verticalLineHeight?: number;
-  // isLastStep?: boolean;
   activeStep?: number;
 }
 
-function _NEWStep(props: StepProps, ref: React.Ref<HTMLDivElement>) {
+function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
   const styles = getStyles();
   const {
-    isActive,
-    isInvalid,
-    isWarning,
-    isComplete,
-    isDisabled,
-    stepStyle,
-    stepNumber,
+    variant = 'incomplete',
     labelText,
+    stepNumber,
+    stepStyle,
     orientation,
-    // verticalLineHeight,
-    // isLastStep,
     activeStep,
   } = props;
 
@@ -45,12 +37,11 @@ function _NEWStep(props: StepProps, ref: React.Ref<HTMLDivElement>) {
     switch (true) {
       case stepStyle === 'number':
         return stepNumber;
-      case isComplete:
+      case variant === 'complete':
         return <DoneIcon size="tiny" variant="white" />;
-      case isInvalid:
+      case variant === 'invalid':
         return <CloseIcon size="tiny" variant="white" />;
-      case isWarning:
-        // TO DO: adjust size/spacing of warning icon
+      case variant === 'warning':
         return <WarningIcon size="tiny" variant="white" />;
       default:
         return <div />;
@@ -67,11 +58,11 @@ function _NEWStep(props: StepProps, ref: React.Ref<HTMLDivElement>) {
     >
       <span
         className={cx(styles.listItemContent, {
-          [styles.isActive]: isActive,
-          [styles.isDisabled]: isDisabled,
-          [styles.isComplete]: isComplete,
-          [styles.isInvalid]: isInvalid,
-          [styles.isWarning]: isWarning,
+          [styles.isActive]: variant === 'active',
+          [styles.isDisabled]: variant === 'disabled',
+          [styles.isComplete]: variant === 'complete',
+          [styles.isInvalid]: variant === 'invalid',
+          [styles.isWarning]: variant === 'warning',
         })}
       >
         {renderStep()}
@@ -92,4 +83,4 @@ function _NEWStep(props: StepProps, ref: React.Ref<HTMLDivElement>) {
 /**
  * TODO: Add description of component here.
  */
-export const NEWStep = React.forwardRef(_NEWStep);
+export const Step = React.forwardRef(_Step);

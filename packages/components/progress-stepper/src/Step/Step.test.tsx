@@ -4,7 +4,10 @@ import { Step } from '.';
 
 describe('Step', function () {
   it('renders', () => {
-    const tree = render(<Step>hello world</Step>);
+    // it renders default state with only required props
+    // it renders the correct step style (icon vs number)
+    // it renders the correct order of variants
+    const tree = render(<Step />);
 
     expect(tree).toBeTruthy();
   });

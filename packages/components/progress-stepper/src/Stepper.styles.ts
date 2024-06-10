@@ -1,5 +1,4 @@
 import { css } from 'emotion';
-import tokens from '@contentful/f36-tokens';
 
 export const getStyles = () => {
   return {
@@ -16,6 +15,9 @@ export const getStyles = () => {
       gridAutoRows: '1fr',
       margin: 0,
       padding: 0,
+      height: '100%',
+    }),
+    verticalNav: css({
       height: '100%',
     }),
   };
