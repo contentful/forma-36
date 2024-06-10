@@ -8,11 +8,11 @@ export const getStyles = () => {
         margin: 0,
         padding: 0,
         display: 'grid',
-        gap: '5px 0',
+        gap: `${tokens.spacingXs} 0`,
         gridTemplateColumns: '1fr 24px 1fr',
         gridTemplateRows: '24px',
         gridTemplateAreas: `
-        "divider-before counter divider-after"
+        "divider-before circle divider-after"
         "label label label"
         `,
         '&::before': {
@@ -46,12 +46,13 @@ export const getStyles = () => {
         margin: 0,
         padding: 0,
         display: 'grid',
-        gap: '0 5px',
+        gap: `0 ${tokens.spacingXs}`, // adjusted gap spacing
         gridTemplateColumns: '24px 1fr',
         gridTemplateRows: '1fr 24px 1fr',
         gridTemplateAreas: `
-        "divider-before label" "circle label"
-        "divider-after label"
+        "divider-before ."
+        "circle label"
+        "divider-after ."
         `,
         alignItems: 'center',
         '&::before': {
@@ -94,6 +95,7 @@ export const getStyles = () => {
       '& svg': {
         height: '20px', // sizing for all other icons
       },
+      gridArea: 'circle',
     }),
     label: css({
       gridArea: 'label',
