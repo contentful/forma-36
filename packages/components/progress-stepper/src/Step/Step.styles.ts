@@ -22,7 +22,7 @@ export const getStyles = () => {
           content: '""',
           height: '2px',
           backgroundColor:
-            isBeforeActiveStep || isActive // this ensures that the active line goes to the active circle
+            isBeforeActiveStep || isActive
               ? tokens.colorPrimary
               : tokens.gray300,
           gridArea: 'divider-before',
@@ -46,7 +46,7 @@ export const getStyles = () => {
         margin: 0,
         padding: 0,
         display: 'grid',
-        gap: `0 ${tokens.spacingXs}`, // adjusted gap spacing
+        gap: `0 ${tokens.spacingXs}`,
         gridTemplateColumns: '24px 1fr',
         gridTemplateRows: '1fr 24px 1fr',
         gridTemplateAreas: `
@@ -61,7 +61,7 @@ export const getStyles = () => {
           content: '""',
           height: '100%',
           backgroundColor:
-            isBeforeActiveStep || isActive // this ensures that the active line goes to the active circle
+            isBeforeActiveStep || isActive
               ? tokens.colorPrimary
               : tokens.gray300,
           gridArea: 'divider-before',
@@ -93,7 +93,7 @@ export const getStyles = () => {
       fontWeight: tokens.fontWeightDemiBold,
       color: tokens.gray300,
       '& svg': {
-        height: '20px', // sizing for all other icons
+        height: '20px',
       },
       gridArea: 'circle',
     }),
@@ -129,7 +129,7 @@ export const getStyles = () => {
       borderColor: tokens.colorWarning,
       backgroundColor: tokens.colorWarning,
       '& svg': {
-        height: '18px', // sizing for warning icon
+        height: '18px',
       },
     }),
   };

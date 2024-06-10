@@ -3,6 +3,8 @@ import { render } from '@testing-library/react';
 import { Stepper } from './Stepper';
 
 describe('Stepper', function () {
+  // it renders default state with only required props
+  // it renders the correct amount of children
   it('renders', () => {
     const tree = render(<Stepper>hello world</Stepper>);
 
