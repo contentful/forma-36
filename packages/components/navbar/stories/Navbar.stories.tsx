@@ -129,7 +129,7 @@ export const Basic: Story<{ initials?: string; avatar?: string }> = (args) => {
   return (
     <div style={{ width: '900px' }}>
       <Navbar
-        mainNav={<MainItems />}
+        mainNavigation={<MainItems />}
         switcher={<Switcher />}
         account={<Account {...args} />}
       ></Navbar>
@@ -150,7 +150,7 @@ export const WithInitialsAvatar: Story<{
   return (
     <div style={{ width: '900px' }}>
       <Navbar
-        mainNav={<MainItems />}
+        mainNavigation={<MainItems />}
         switcher={<Switcher />}
         account={<Account {...args} />}
       ></Navbar>
@@ -166,7 +166,7 @@ export const WithFallbackAvatar: Story<{}> = (args) => {
   return (
     <div style={{ width: '900px' }}>
       <Navbar
-        mainNav={<MainItems />}
+        mainNavigation={<MainItems />}
         switcher={<Switcher />}
         account={<Account {...args} />}
       ></Navbar>
@@ -183,14 +183,14 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
     <div style={{ width: '1250px' }}>
       <Navbar
         switcher={<Switcher />}
-        mainNav={<MainItems />}
+        mainNavigation={<MainItems />}
         account={
           <>
             <Navbar.Badge>Trial</Navbar.Badge>
             <Account {...args} />
           </>
         }
-        secondaryNav={
+        secondaryNavigation={
           <>
             <Navbar.TopbarItem>Feedback</Navbar.TopbarItem>
             <Navbar.Item label="Quick Search" icon={<MagnifyingGlassIcon />} />
@@ -262,7 +262,7 @@ export const WithDifferentEnvironments: Story<{
         </SectionHeading>
 
         <Navbar
-          mainNav={<MainItems />}
+          mainNavigation={<MainItems />}
           switcher={<Switcher />}
           account={<Account {...args} />}
         ></Navbar>
@@ -274,7 +274,7 @@ export const WithDifferentEnvironments: Story<{
         </SectionHeading>
 
         <Navbar
-          mainNav={<MainItems />}
+          mainNavigation={<MainItems />}
           switcher={<Switcher envVariant="non-master">development</Switcher>}
           account={<Account {...args} />}
         ></Navbar>
@@ -286,7 +286,7 @@ export const WithDifferentEnvironments: Story<{
         </SectionHeading>
 
         <Navbar
-          mainNav={<MainItems />}
+          mainNavigation={<MainItems />}
           switcher={<Switcher isAlias>staging</Switcher>}
           account={<Account {...args} />}
         ></Navbar>
@@ -298,7 +298,7 @@ export const WithDifferentEnvironments: Story<{
         </SectionHeading>
 
         <Navbar
-          mainNav={<MainItems />}
+          mainNavigation={<MainItems />}
           switcher={
             <Switcher isAlias envVariant="non-master">
               dev
@@ -331,7 +331,7 @@ export const WithAccountNotification: Story<{
         <Navbar
           switcher={<Switcher />}
           account={<Account {...args} hasNotification />}
-          mainNav={<MainItems />}
+          mainNavigation={<MainItems />}
         ></Navbar>
       </Flex>
 
@@ -345,7 +345,7 @@ export const WithAccountNotification: Story<{
           account={
             <Account {...args} hasNotification notificationVariant="negative" />
           }
-          mainNav={<MainItems />}
+          mainNavigation={<MainItems />}
         ></Navbar>
       </Flex>
 
@@ -359,7 +359,7 @@ export const WithAccountNotification: Story<{
           account={
             <Account {...args} hasNotification notificationVariant="info" />
           }
-          mainNav={<MainItems />}
+          mainNavigation={<MainItems />}
         ></Navbar>
       </Flex>
     </Flex>
@@ -382,7 +382,7 @@ export const LoadingSkeleton: Story<{}> = () => {
             <Navbar.SwitcherSkeleton estimatedWidth={148} />
           </Navbar.Switcher>
         }
-        mainNav={
+        mainNavigation={
           <>
             <Navbar.ItemSkeleton estimatedWidth={100} />
             <Navbar.ItemSkeleton estimatedWidth={100} />

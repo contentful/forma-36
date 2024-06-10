@@ -19,10 +19,10 @@ type NavbarOwnProps = CommonProps & {
   switcher?: React.ReactNode;
 
   /** Main Navigation Elements */
-  mainNav?: React.ReactNode;
+  mainNavigation?: React.ReactNode;
 
   /** Secondary Navigation Elements, displayed in the right side */
-  secondaryNav?: React.ReactNode;
+  secondaryNavigation?: React.ReactNode;
 
   /** User Account Component  */
   account?: React.ReactNode;
@@ -49,8 +49,8 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
   const {
     logo,
     switcher,
-    mainNav,
-    secondaryNav,
+    mainNavigation,
+    secondaryNavigation,
     account,
     className,
     contentMaxWidth = '100%',
@@ -71,11 +71,11 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
             {logo || <ContentfulLogoIcon className={styles.logo} />}
             {switcher}
             <Flex gap="spacingXs" as="nav" aria-label="Main Navigation">
-              {mainNav}
+              {mainNavigation}
             </Flex>
           </Flex>
           <Flex alignItems="center" gap="spacingXs">
-            {secondaryNav}
+            {secondaryNavigation}
             {account}
           </Flex>
         </Flex>
