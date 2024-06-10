@@ -1,3 +1,11 @@
+/**
+ * Truncates a given string from the middle to a maximum length
+ *
+ * @param str String to truncate
+ * @param maxLength Maximum length of the returned string
+ * @param replacement String to replace the truncated part
+ * @returns Truncated string
+ */
 export function truncateMiddle(
   str: string,
   maxLength: number,
