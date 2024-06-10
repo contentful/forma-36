@@ -162,7 +162,9 @@ export function run() {
       const { files, parser, setup } = answers;
 
       const filesBeforeExpansion = path || files;
-      const filesExpanded = expandFilePathsIfNeeded([filesBeforeExpansion]);
+      const filesExpanded = expandFilePathsIfNeeded(
+        filesBeforeExpansion.split(' '),
+      );
       const selectedParser = cli.flags.parser || parser;
 
       if (!filesExpanded.length) {
