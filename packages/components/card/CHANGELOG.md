@@ -1,5 +1,25 @@
 # Change Log
 
+## 4.67.0
+
+### Minor Changes
+
+- [#2784](https://github.com/contentful/forma-36/pull/2784) [`90b167a9b`](https://github.com/contentful/forma-36/commit/90b167a9b61426a0609e24b77daa39009c0e171d) Thanks [@chrishelgert](https://github.com/chrishelgert)! - Add support for a custom badge to the `AssetCard`
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-asset@4.67.0
+  - @contentful/f36-badge@4.67.0
+  - @contentful/f36-button@4.67.0
+  - @contentful/f36-core@4.67.0
+  - @contentful/f36-drag-handle@4.67.0
+  - @contentful/f36-icon@4.67.0
+  - @contentful/f36-menu@4.67.0
+  - @contentful/f36-skeleton@4.67.0
+  - @contentful/f36-tooltip@4.67.0
+  - @contentful/f36-typography@4.67.0
+
 ## 4.66.0
 
 ### Patch Changes
