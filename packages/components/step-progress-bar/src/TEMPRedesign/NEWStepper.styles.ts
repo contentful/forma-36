@@ -16,6 +16,7 @@ export const getStyles = () => {
       gridAutoRows: '1fr',
       margin: 0,
       padding: 0,
+      height: '100%',
     }),
   };
 };

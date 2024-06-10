@@ -40,12 +40,12 @@ export const HorizontalIcon: Story<StepperProps> = (args) => {
 
 export const VerticalNumber: Story<StepperProps> = (args) => {
   return (
-    <div>
+    <div style={{ height: '350px' }}>
       <NEWStepper stepStyle="number" activeStep={4} orientation="vertical">
         <NEWStepper.NEWStep isActive labelText="Test label" />
         <NEWStepper.NEWStep isComplete labelText="Test label" />
         <NEWStepper.NEWStep isInvalid labelText="Test label" />
-        <NEWStepper.NEWStep isWarning labelText="Test label" />
+        <NEWStepper.NEWStep isWarning />
         <NEWStepper.NEWStep isDisabled />
         <NEWStepper.NEWStep />
       </NEWStepper>
@@ -55,7 +55,7 @@ export const VerticalNumber: Story<StepperProps> = (args) => {
 
 export const VerticalIcon: Story<StepperProps> = (args) => {
   return (
-    <div>
+    <div style={{ height: '350px' }}>
       <NEWStepper stepStyle="icon" activeStep={4} orientation="vertical">
         <NEWStepper.NEWStep isActive labelText="Test label" />
         <NEWStepper.NEWStep isComplete labelText="Test label" />
