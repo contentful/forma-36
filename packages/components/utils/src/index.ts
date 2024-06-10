@@ -7,3 +7,4 @@ export { hexToRGBA } from './hexToRGBA/hexToRGBA';
 export { getTextFromChildren } from './getTextFromChildren/getTextFromChildren';
 export { useDensity, DensityProvider } from './useDensity/useDensity';
 export type { Density } from './useDensity/useDensity';
+export { truncateMiddle } from './truncateMiddle';
