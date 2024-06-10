@@ -19,16 +19,6 @@ export const getNavbarSwitcherStyles = () => ({
       position: 'relative',
       outline: 'none',
       borderRadius: '3rem',
-
-      '&:after': {
-        content: '""',
-        border: '1px solid #353A41',
-        boxSizing: 'border-box',
-        height: '16px',
-        right: '-1px',
-        position: 'absolute',
-        width: 0,
-      },
       '&:last-child:after': {
         display: 'none',
       },

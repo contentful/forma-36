@@ -54,6 +54,7 @@ function _NavbarAccount(
           className={cx(styles.navbarAccount, className)}
           testId={testId}
           alignItems="center"
+          aria-label="Account Menu"
         >
           <Avatar
             src={avatar}
