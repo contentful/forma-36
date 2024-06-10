@@ -6,6 +6,9 @@ export const getNavbarItemIconStyles = () => ({
     '&:last-child': {
       marginLeft: tokens.spacing2Xs,
     },
+    '&:only-child': {
+      marginLeft: 0,
+    },
     'img&': {
       borderRadius: tokens.borderRadiusSmall,
       maxWidth: tokens.spacingM,
