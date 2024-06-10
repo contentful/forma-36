@@ -61,7 +61,13 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
   const styles = getNavbarStyles(contentMaxWidth, variant);
 
   return (
-    <Box {...otherProps} ref={ref} testId={testId} className={className}>
+    <Box
+      {...otherProps}
+      ref={ref}
+      testId={testId}
+      className={className}
+      as="header"
+    >
       <Flex className={styles.containerTop}>
         <Flex
           className={styles.containerTopContent}
