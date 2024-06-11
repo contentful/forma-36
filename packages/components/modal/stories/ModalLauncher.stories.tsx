@@ -86,7 +86,9 @@ export const CloseAllStory = () => {
 
   useEffect(() => {
     openModal(`Modal one`);
-    return ModalLauncher.closeAll;
+    return () => {
+      ModalLauncher.closeAll();
+    };
   }, [openModal]);
 
   return (

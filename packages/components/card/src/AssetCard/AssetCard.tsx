@@ -11,7 +11,7 @@ import { getAssetCardStyles } from './AssetCard.styles';
 import { DefaultCardHeader } from '../BaseCard/DefaultCardHeader';
 
 export interface AssetCardInternalProps
-  extends Omit<BaseCardInternalProps, 'badge' | 'header' | 'padding' | 'ref'> {
+  extends Omit<BaseCardInternalProps, 'header' | 'padding' | 'ref'> {
   size?: 'small' | 'default';
   src?: string;
   status?: AssetStatus;
@@ -36,10 +36,15 @@ export const AssetCard = ({
   withDragHandle = false,
   isLoading,
   testId = 'cf-ui-asset-card',
+  badge: customBadge,
   ...otherProps
 }: AssetCardInternalProps) => {
   const styles = getAssetCardStyles();
-  const badge = status ? <EntityStatusBadge entityStatus={status} /> : null;
+  const badge = customBadge ? (
+    customBadge
+  ) : status ? (
+    <EntityStatusBadge entityStatus={status} />
+  ) : null;
   const header =
     icon || badge || actions ? (
       <DefaultCardHeader icon={icon} badge={badge} actions={actions} />

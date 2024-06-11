@@ -61,7 +61,7 @@ We appreciate any help on our repositories. For more details about how to contri
 
 ## Reach out to us
 
-You can reach out to us using the [Contentful community Slack](https://www.contentful.com/slack/). We've setup a channel [#forma36](https://contentful-community.slack.com/messages/CFXGTMB98) in which we announce latest changes and updates.
+You can reach out to us using the [Contentful Community Discord](https://www.contentful.com/discord/).
 
 ### You found a bug or want to propose a feature?
 
@@ -192,6 +192,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/msieroslawska"><img src="https://avatars.githubusercontent.com/u/8281495?v=4?s=100" width="100px;" alt="Marta Sierosławska"/><br /><sub><b>Marta Sierosławska</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=msieroslawska" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/MayaGillilan"><img src="https://avatars.githubusercontent.com/u/101652314?v=4?s=100" width="100px;" alt="MayaGillilan"/><br /><sub><b>MayaGillilan</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=MayaGillilan" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://www.linkedin.com/in/stephanleece/"><img src="https://avatars.githubusercontent.com/u/32452823?v=4?s=100" width="100px;" alt="Stephan Leece"/><br /><sub><b>Stephan Leece</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=stephanLeece" title="Code">💻</a> <a href="#maintenance-stephanLeece" title="Maintenance">🚧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/chrishelgert"><img src="https://avatars.githubusercontent.com/u/3918488?v=4?s=100" width="100px;" alt="Chris Helgert"/><br /><sub><b>Chris Helgert</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=chrishelgert" title="Code">💻</a> <a href="https://github.com/contentful/forma-36/commits?author=chrishelgert" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>

@@ -9,7 +9,7 @@ labels: bug, needs triage
 🎉❤️ Thank you for taking time to contribute to Forma 36! ❤️🎉
 Please use this template for reporting any bugs found.
 
-If you have any questions feel free to get in touch on the #forma36 channel on our Contentful Community Slack - https://www.contentful.com/slack/.
+If you have any questions feel free to get in touch on the #forma36 channel on our Contentful Community Discord - https://www.contentful.com/discord/.
 -->
 
 # Forma 36 bug report
