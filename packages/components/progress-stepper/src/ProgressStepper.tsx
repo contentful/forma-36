@@ -1,15 +1,18 @@
 import React from 'react';
 import { type CommonProps, type MarginProps } from '@contentful/f36-core';
-import { getStyles } from './Stepper.styles';
+import { getStyles } from './ProgressStepper.styles';
 
-export interface StepperProps extends CommonProps, MarginProps {
+export interface ProgressStepperProps extends CommonProps, MarginProps {
   children: React.ReactNode;
   orientation?: 'horizontal' | 'vertical';
   stepStyle?: 'number' | 'icon';
   activeStep?: number;
 }
 
-function _Stepper(props: StepperProps, ref: React.Ref<HTMLDivElement>) {
+function _ProgressStepper(
+  props: ProgressStepperProps,
+  ref: React.Ref<HTMLDivElement>,
+) {
   const {
     children,
     orientation = 'horizontal',
@@ -56,4 +59,4 @@ function _Stepper(props: StepperProps, ref: React.Ref<HTMLDivElement>) {
 /**
  * TODO: Add description of component here.
  */
-export const Stepper = React.forwardRef(_Stepper);
+export const ProgressStepper = React.forwardRef(_ProgressStepper);

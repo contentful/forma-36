@@ -1,14 +1,14 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Stepper } from './CompoundStepper';
+import { ProgressStepper } from './CompoundProgressStepper';
 
-describe('CompoundStepper', function () {
+describe('CompoundProgressStepper', function () {
   it('renders basic content when only required props are passed', () => {
     render(
-      <Stepper>
-        <Stepper.Step />
-        <Stepper.Step />
-      </Stepper>,
+      <ProgressStepper>
+        <ProgressStepper.Step />
+        <ProgressStepper.Step />
+      </ProgressStepper>,
     );
 
     const stepOne = screen.getByText('1');
@@ -20,10 +20,10 @@ describe('CompoundStepper', function () {
 
   it('renders the correct amount of children', () => {
     render(
-      <Stepper>
-        <Stepper.Step />
-        <Stepper.Step />
-      </Stepper>,
+      <ProgressStepper>
+        <ProgressStepper.Step />
+        <ProgressStepper.Step />
+      </ProgressStepper>,
     );
 
     const steps = document.querySelectorAll('span');
