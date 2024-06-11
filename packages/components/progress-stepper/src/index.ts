@@ -1,4 +1,4 @@
-export { Stepper } from './CompoundStepper';
-export type { StepperProps } from './Stepper';
+export { ProgressStepper } from './CompoundProgressStepper';
+export type { StepperProps } from './ProgressStepper';
 export { Step } from './Step';
 export type { StepProps } from './Step';
