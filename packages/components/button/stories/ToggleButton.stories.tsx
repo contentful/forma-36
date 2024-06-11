@@ -8,7 +8,7 @@ import { Icon } from '@contentful/f36-icon';
 import * as icons from '@contentful/f36-icons';
 
 import { ButtonGroup } from '../src';
-import { ToggleButton } from '../src/ToggleButton';
+import { ToggleButton, ToggleButtonProps } from '../src/ToggleButton';
 
 export default {
   title: 'Components/Button components/ToggleButton',
@@ -28,17 +28,17 @@ export default {
   },
 } as Meta;
 
-export const Basic = ({ icon, children, isDisabled }) => {
+export const Basic = ({ icon, children, ...rest }: ToggleButtonProps) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
     <ToggleButton
-      isDisabled={isDisabled}
       isActive={isActive}
+      icon={icon && <Icon as={icons[icon]} />}
       onToggle={() => {
         setIsActive(!isActive);
       }}
-      icon={icon && <Icon as={icons[icon]} />}
+      {...rest}
     >
       {children}
     </ToggleButton>
@@ -119,7 +119,7 @@ export const GroupedWithOnlyOneActive = () => {
   );
 };
 
-export const Overview = ({ icon, ...props }) => (
+export const Overview = ({ icon, onToggle, ...rest }: ToggleButtonProps) => (
   <>
     <Flex flexDirection="column" marginBottom="spacingL">
       <SectionHeading as="h3" marginBottom="spacingS">
@@ -127,13 +127,15 @@ export const Overview = ({ icon, ...props }) => (
       </SectionHeading>
 
       <Stack marginBottom="spacingM" spacing="spacingXs">
-        <ToggleButton onToggle={props.onToggle}>Default</ToggleButton>
+        <ToggleButton onToggle={onToggle} {...rest}>
+          Default
+        </ToggleButton>
 
-        <ToggleButton isActive onToggle={props.onToggle}>
+        <ToggleButton isActive onToggle={onToggle} {...rest}>
           Active
         </ToggleButton>
 
-        <ToggleButton isDisabled onToggle={props.onToggle}>
+        <ToggleButton isDisabled onToggle={onToggle} {...rest}>
           Disabled
         </ToggleButton>
       </Stack>
@@ -145,24 +147,27 @@ export const Overview = ({ icon, ...props }) => (
 
       <Stack marginBottom="spacingM" spacing="spacingXs">
         <ToggleButton
-          onToggle={props.onToggle}
+          onToggle={onToggle}
           icon={icon && <Icon as={icons[icon]} />}
+          {...rest}
         >
           Default
         </ToggleButton>
 
         <ToggleButton
-          onToggle={props.onToggle}
+          onToggle={onToggle}
           isActive
           icon={icon && <Icon as={icons[icon]} />}
+          {...rest}
         >
           Active
         </ToggleButton>
 
         <ToggleButton
-          onToggle={props.onToggle}
+          onToggle={onToggle}
           isDisabled
           icon={icon && <Icon as={icons[icon]} />}
+          {...rest}
         >
           Disabled
         </ToggleButton>
