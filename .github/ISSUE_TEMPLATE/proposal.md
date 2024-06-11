@@ -9,7 +9,7 @@ labels: needs review, needs triage, proposal
 🎉❤️ Thank you for taking time to contribute to Forma 36! ❤️🎉
 Please use this template to propose a change you'd like to make to Forma 36
 
-If you have any questions feel free to get in touch on the #forma36 channel on our Contentful Community Slack - https://www.contentful.com/slack/.
+If you have any questions feel free to get in touch on the #forma36 channel on our Contentful Community Discord - https://www.contentful.com/discord/.
 -->
 
 # Forma 36 contribution proposal
