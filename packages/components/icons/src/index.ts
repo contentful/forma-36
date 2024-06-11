@@ -7,7 +7,7 @@ export type {
   IconComponent,
   IconSize,
   IconVariant,
-} from '@contentful/f36-icon-alpha';
+} from '@contentful/f36-icon';
 
 export * from './custom/EmbeddedBlockIcon.js';
 export * from './custom/EmbeddedLineIcon.js';
