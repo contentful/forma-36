@@ -119,7 +119,7 @@ export const getStyles = () => {
       borderColor: tokens.colorPrimary,
       backgroundColor: tokens.colorPrimary,
     }),
-    invalid: css({
+    error: css({
       color: tokens.colorWhite,
       borderColor: tokens.colorNegative,
       backgroundColor: tokens.colorNegative,
