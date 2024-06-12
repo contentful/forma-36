@@ -42,11 +42,12 @@ function _ProgressStepper(
     <nav
       className={orientation === 'vertical' ? styles.verticalNav : ''}
       data-test-id={testId}
+      ref={ref}
     >
       <ol
         className={
           orientation === 'horizontal'
-            ? styles.orderedList
+            ? styles.horizontalList
             : styles.verticalList
         }
       >

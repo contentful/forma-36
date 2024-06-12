@@ -2,7 +2,7 @@ import { css } from 'emotion';
 
 export const getStyles = () => {
   return {
-    orderedList: css({
+    horizontalList: css({
       display: 'grid',
       gridAutoFlow: 'column dense',
       gridAutoColumns: '1fr',
