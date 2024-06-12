@@ -19,7 +19,7 @@ export interface StepProps extends CommonProps {
   activeStep?: number;
 }
 
-function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
+function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
   const styles = getStyles();
   const {
     variant = 'incomplete',
@@ -52,17 +52,18 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
     <li
       className={
         orientation === 'horizontal'
-          ? styles.listItem(isBeforeActiveStep, isActiveStep)
+          ? styles.horizontalListItem(isBeforeActiveStep, isActiveStep)
           : styles.verticalListItem(isBeforeActiveStep, isActiveStep)
       }
+      ref={ref}
     >
       <span
         className={cx(styles.listItemContent, {
-          [styles.isActive]: variant === 'active',
-          [styles.isDisabled]: variant === 'disabled',
-          [styles.isComplete]: variant === 'complete',
-          [styles.isInvalid]: variant === 'invalid',
-          [styles.isWarning]: variant === 'warning',
+          [styles.active]: variant === 'active',
+          [styles.disabled]: variant === 'disabled',
+          [styles.complete]: variant === 'complete',
+          [styles.invalid]: variant === 'invalid',
+          [styles.warning]: variant === 'warning',
         })}
       >
         {renderStep()}
@@ -70,7 +71,9 @@ function _Step(props: StepProps, ref: React.Ref<HTMLDivElement>) {
       {labelText && (
         <p
           className={
-            orientation === 'horizontal' ? styles.label : styles.verticalLabel
+            orientation === 'horizontal'
+              ? styles.horizontalLabel
+              : styles.verticalLabel
           }
         >
           {labelText}

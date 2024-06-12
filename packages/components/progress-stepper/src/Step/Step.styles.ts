@@ -3,7 +3,7 @@ import tokens from '@contentful/f36-tokens';
 
 export const getStyles = () => {
   return {
-    listItem: (isBeforeActiveStep: boolean, isActive: boolean) =>
+    horizontalListItem: (isBeforeActiveStep: boolean, isActive: boolean) =>
       css({
         margin: 0,
         padding: 0,
@@ -97,7 +97,7 @@ export const getStyles = () => {
       },
       gridArea: 'circle',
     }),
-    label: css({
+    horizontalLabel: css({
       gridArea: 'label',
       textAlign: 'center',
     }),
@@ -106,25 +106,25 @@ export const getStyles = () => {
       textAlign: 'center',
       justifySelf: 'start',
     }),
-    isActive: css({
+    active: css({
       color: tokens.colorPrimary,
       borderColor: tokens.colorPrimary,
     }),
-    isDisabled: css({
+    disabled: css({
       color: tokens.gray200,
       borderColor: tokens.gray200,
     }),
-    isComplete: css({
+    complete: css({
       color: tokens.colorWhite,
       borderColor: tokens.colorPrimary,
       backgroundColor: tokens.colorPrimary,
     }),
-    isInvalid: css({
+    invalid: css({
       color: tokens.colorWhite,
       borderColor: tokens.colorNegative,
       backgroundColor: tokens.colorNegative,
     }),
-    isWarning: css({
+    warning: css({
       color: tokens.colorWhite,
       borderColor: tokens.colorWarning,
       backgroundColor: tokens.colorWarning,
