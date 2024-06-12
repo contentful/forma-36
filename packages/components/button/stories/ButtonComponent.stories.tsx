@@ -7,6 +7,7 @@ import { SectionHeading } from '@contentful/f36-typography';
 import * as icons from '@contentful/f36-icons';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'Components/Button components',
@@ -46,6 +47,7 @@ _Button.args = {
   size: 'medium',
   variant: 'primary',
   children: 'Button CTA',
+  onClick: action('click'),
 };
 
 export const Overview = ({ startIcon, endIcon }) => {

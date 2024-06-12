@@ -206,6 +206,9 @@ export const getStyles = () => ({
             '&, &:focus': variantActiveStyles(variant),
           }
         : {}),
+      '& *': {
+        pointerEvents: 'none',
+      },
     }),
   buttonIcon: getButtonIconStyle,
   buttonContent: css({

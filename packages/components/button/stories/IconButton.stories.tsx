@@ -7,6 +7,7 @@ import { Icon } from '@contentful/f36-icon';
 import * as icons from '@contentful/f36-icons';
 
 import { IconButton } from '../src/IconButton';
+import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'Components/Button components/IconButton',
@@ -44,6 +45,7 @@ basic.args = {
     size: 'medium',
   },
   variant: 'transparent',
+  onClick: action('click'),
 };
 
 export const ColoredIconInTransparentIconButton = () => {
