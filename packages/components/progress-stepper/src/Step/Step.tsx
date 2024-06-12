@@ -7,7 +7,7 @@ import { DoneIcon, CloseIcon, WarningIcon } from '@contentful/f36-icons';
 export interface StepProps extends CommonProps {
   variant?:
     | 'active'
-    | 'invalid'
+    | 'error'
     | 'warning'
     | 'disabled'
     | 'complete'
@@ -39,7 +39,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
         return stepNumber;
       case variant === 'complete':
         return <DoneIcon size="tiny" variant="white" />;
-      case variant === 'invalid':
+      case variant === 'error':
         return <CloseIcon size="tiny" variant="white" />;
       case variant === 'warning':
         return <WarningIcon size="tiny" variant="white" />;
@@ -62,7 +62,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
           [styles.active]: variant === 'active',
           [styles.disabled]: variant === 'disabled',
           [styles.complete]: variant === 'complete',
-          [styles.invalid]: variant === 'invalid',
+          [styles.error]: variant === 'error',
           [styles.warning]: variant === 'warning',
         })}
       >
