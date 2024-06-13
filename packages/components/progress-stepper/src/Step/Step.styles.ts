@@ -26,6 +26,7 @@ export const getStyles = () => {
               ? tokens.colorPrimary
               : tokens.gray300,
           gridArea: 'divider-before',
+          transition: `background-color ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
         },
         '&::after': {
           position: 'relative',
@@ -36,6 +37,7 @@ export const getStyles = () => {
           backgroundColor: isBeforeActiveStep
             ? tokens.colorPrimary
             : tokens.gray300,
+          transition: `background-color ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
           gridArea: 'divider-after',
         },
         '&:first-child::before': { visibility: 'hidden' },
@@ -64,6 +66,7 @@ export const getStyles = () => {
             isBeforeActiveStep || isActive
               ? tokens.colorPrimary
               : tokens.gray300,
+          transition: `background-color ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
           gridArea: 'divider-before',
           justifySelf: 'center',
           width: '2px',
@@ -76,6 +79,7 @@ export const getStyles = () => {
           backgroundColor: isBeforeActiveStep
             ? tokens.colorPrimary
             : tokens.gray300,
+          transition: `background-color ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
           gridArea: 'divider-after',
           justifySelf: 'center',
           width: '2px',
