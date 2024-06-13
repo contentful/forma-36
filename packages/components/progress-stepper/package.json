@@ -1,7 +1,7 @@
 {
-  "name": "@contentful/f36-step-progress-bar",
+  "name": "@contentful/f36-progress-stepper",
   "version": "4.0.0",
-  "description": "Forma 36: Stepper component",
+  "description": "Forma 36: ProgressStepper component",
   "scripts": {
     "build": "tsup"
   },
