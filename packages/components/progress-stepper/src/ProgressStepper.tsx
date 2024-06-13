@@ -18,9 +18,11 @@ function _ProgressStepper(
     orientation = 'horizontal',
     stepStyle = 'number',
     activeStep = 1,
-    testId = 'cf-ui-progress-stepper',
+    testId,
   } = props;
   const styles = getStyles();
+  const hydratedTestId =
+    testId || `cf-ui-progress-stepper-${orientation}-${stepStyle}`;
 
   const stepsToRender = React.Children.toArray(children);
 
@@ -41,7 +43,7 @@ function _ProgressStepper(
   return (
     <nav
       className={orientation === 'vertical' ? styles.verticalNav : ''}
-      data-test-id={testId}
+      data-test-id={hydratedTestId}
       ref={ref}
     >
       <ol
