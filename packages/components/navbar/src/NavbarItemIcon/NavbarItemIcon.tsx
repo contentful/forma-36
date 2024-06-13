@@ -5,7 +5,7 @@ import { cx } from 'emotion';
 
 export type NavbarItemIconProps = {
   icon: React.ReactElement<IconProps>;
-} & Pick<IconProps, 'isActive'>;
+} & Partial<Pick<IconProps, 'isActive'>>;
 
 export const NavbarItemIcon = ({ icon, isActive }: NavbarItemIconProps) => {
   const { className, size, ...rest } = icon.props;
