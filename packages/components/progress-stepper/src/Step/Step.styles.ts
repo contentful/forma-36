@@ -100,11 +100,19 @@ export const getStyles = () => {
     horizontalLabel: css({
       gridArea: 'label',
       textAlign: 'center',
+      color: tokens.gray900,
     }),
     verticalLabel: css({
       gridArea: 'label',
       textAlign: 'center',
       justifySelf: 'start',
+      color: tokens.gray900,
+    }),
+    disabledLabel: css({
+      color: tokens.gray500,
+    }),
+    incompleteLabel: css({
+      color: tokens.gray700,
     }),
     active: css({
       color: tokens.colorPrimary,

@@ -70,11 +70,15 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
       </span>
       {labelText && (
         <p
-          className={
+          className={cx(
             orientation === 'horizontal'
               ? styles.horizontalLabel
-              : styles.verticalLabel
-          }
+              : styles.verticalLabel,
+            {
+              [styles.incompleteLabel]: variant === 'incomplete',
+              [styles.disabledLabel]: variant === 'disabled',
+            },
+          )}
         >
           {labelText}
         </p>
