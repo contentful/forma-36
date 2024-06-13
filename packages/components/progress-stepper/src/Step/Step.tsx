@@ -56,6 +56,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
           : styles.verticalListItem(isBeforeActiveStep, isActiveStep)
       }
       ref={ref}
+      data-test-id={`cf-ui-step-${variant}`}
     >
       <span
         className={cx(styles.listItemContent, {
