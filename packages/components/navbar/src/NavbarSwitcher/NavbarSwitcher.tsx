@@ -8,14 +8,12 @@ import {
 } from '@contentful/f36-core';
 import { cx } from 'emotion';
 
-type NavbarSwitcherOwnProps = CommonProps & {
+export type NavbarSwitcherProps = PropsWithHTMLElement<
+  CommonProps,
+  'button'
+> & {
   children?: React.ReactNode;
 };
-
-export type NavbarSwitcherProps = PropsWithHTMLElement<
-  NavbarSwitcherOwnProps,
-  'button'
->;
 
 function _NavbarSwitcher(
   props: ExpandProps<NavbarSwitcherProps>,
