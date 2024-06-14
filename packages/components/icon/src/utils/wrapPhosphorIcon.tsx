@@ -6,6 +6,7 @@ import type {
 } from '@phosphor-icons/react';
 import { Icon, sizes } from '../Icon.js';
 import type { GeneratedIconProps } from './generateIconComponent.js';
+import type { MappedOmit } from '@contentful/f36-core';
 
 type IconWeight = Extract<PhosphorIconWeight, 'duotone'>;
 
@@ -15,7 +16,7 @@ export function wrapPhosphorIcon(PhosphorIcon: PhosphorIcon) {
     color = 'currentColor',
     size = 'medium',
     ...props
-  }: GeneratedIconProps & { weight?: IconWeight }) => {
+  }: MappedOmit<GeneratedIconProps, 'isActive'> & { weight?: IconWeight }) => {
     return (
       <Icon
         {...props}
@@ -23,8 +24,8 @@ export function wrapPhosphorIcon(PhosphorIcon: PhosphorIcon) {
         color={color}
         // Icon renders the component on the `as` prop with its own props
         // then we pass the props to the PhosphorIcon component
-        as={(phosporProps: PhosphorIconProps) => (
-          <PhosphorIcon {...phosporProps} color={color} size={sizes[size]} />
+        as={(phosphorProps: PhosphorIconProps) => (
+          <PhosphorIcon {...phosphorProps} color={color} size={sizes[size]} />
         )}
       />
     );
