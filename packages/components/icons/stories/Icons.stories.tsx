@@ -20,7 +20,7 @@ export default {
 } as Meta;
 
 export const Default: Story<IconProps> = (args) => {
-  const Component = icons.ArrowDownIcon;
+  const Icon = icons.ArrowDownIcon;
 
   return (
     <Fragment>
@@ -28,7 +28,7 @@ export const Default: Story<IconProps> = (args) => {
         Built-in icons
       </SectionHeading>
 
-      <Component {...args} />
+      <Icon {...args} />
     </Fragment>
   );
 };
@@ -41,19 +41,19 @@ export const Overview: Story = () => {
       </SectionHeading>
 
       {Object.keys(icons).map((icon) => {
-        const Component = icons[icon] as IconComponent;
+        const Icon = icons[icon] as IconComponent;
 
         return (
           <Box key={icon} marginTop="spacingM">
             <Text>{icon}</Text>
 
             <Flex alignItems="center" flexDirection="row" gap="spacingL">
-              <Component />
-              <Component isActive />
-              <Component size="small" />
-              <Component isActive size="small" />
-              <Component size="tiny" />
-              <Component isActive size="tiny" />
+              <Icon />
+              <Icon isActive />
+              <Icon size="small" />
+              <Icon isActive size="small" />
+              <Icon size="tiny" />
+              <Icon isActive size="tiny" />
             </Flex>
           </Box>
         );

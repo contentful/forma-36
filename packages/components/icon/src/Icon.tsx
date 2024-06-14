@@ -11,6 +11,7 @@ import {
   type PolymorphicComponent,
   type PolymorphicProps,
   type ExpandProps,
+  type MappedOmit,
 } from '@contentful/f36-core';
 import type { IconComponent, IconSize } from './types.js';
 
@@ -78,7 +79,7 @@ export function _Icon<E extends ElementType = IconComponent>(
     testId = 'cf-ui-icon',
     viewBox = '0 0 20 20',
     ...otherProps
-  }: IconProps<E>,
+  }: MappedOmit<IconProps<E>, 'isActive'>,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   forwardedRef: React.Ref<any>,
 ) {

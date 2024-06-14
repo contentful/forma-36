@@ -6,8 +6,8 @@ export function generateComponentWithVariants({
 }: {
   variants: Record<IconVariant, React.FunctionComponent<GeneratedIconProps>>;
 }) {
-  const Component = function (props: GeneratedIconProps) {
-    if (props.isActive) {
+  const Component = function ({ isActive, ...props }: GeneratedIconProps) {
+    if (isActive) {
       return variants[IconVariant.Active](props);
     }
 
