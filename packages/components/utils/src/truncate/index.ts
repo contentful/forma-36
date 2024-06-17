@@ -1,1 +1,1 @@
-export { truncate } from './truncate';
+export { truncate, type TruncateOptions } from './truncate';
