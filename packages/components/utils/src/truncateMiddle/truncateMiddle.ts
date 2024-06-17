@@ -1,29 +1,39 @@
+export type TruncateMiddleOptions = {
+  /**
+   * Number of characters to keep at the start of the string
+   */
+  start?: number;
+  /**
+   * Number of characters to keep at the end of the string
+   */
+  end?: number;
+  /**
+   * String to replace the truncated part
+   */
+  replacement?: string;
+};
+
 /**
- * Truncates a given string from the middle to a maximum length
+ * Truncates a given string from the middle
  *
  * @param str String to truncate
- * @param maxLength Maximum length of the returned string
- * @param replacement String to replace the truncated part
+ * @param options Truncate options
  * @returns Truncated string
  */
 export function truncateMiddle(
   str: string,
-  maxLength: number,
-  replacement = '…',
+  {
+    start: startLength = 0,
+    end: endLength = 0,
+    replacement = '…',
+  }: TruncateMiddleOptions,
 ) {
-  if (str.length <= maxLength) {
+  if (str.length <= startLength + endLength) {
     return str;
   }
 
-  const replacementLength = replacement.length;
-  if (replacementLength >= maxLength) {
-    return replacement.slice(0, maxLength);
-  }
+  const start = startLength > 0 ? str.slice(0, startLength) : '';
+  const end = endLength > 0 ? str.slice(-endLength) : '';
 
-  const maxLengthOfString = maxLength - replacementLength;
-
-  const startLength = Math.ceil(maxLengthOfString / 2);
-  const endLength = Math.floor(maxLengthOfString / 2);
-
-  return `${str.slice(0, startLength)}${replacement}${str.slice(-endLength)}`;
+  return `${start}${replacement}${end}`;
 }

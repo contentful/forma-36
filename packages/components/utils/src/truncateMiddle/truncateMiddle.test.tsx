@@ -2,21 +2,31 @@ import { truncateMiddle } from './truncateMiddle';
 
 describe('truncateMiddle', () => {
   it('should return the same string if it is shorter than the max length', () => {
-    expect(truncateMiddle('short', 10)).toBe('short');
+    expect(truncateMiddle('short', { start: 5, end: 5 })).toBe('short');
   });
 
   it('should truncate the string in the middle', () => {
-    expect(truncateMiddle('long string', 5)).toBe('lo…ng');
-    expect(truncateMiddle('long string', 6)).toBe('lon…ng');
+    expect(truncateMiddle('long string', { start: 2, end: 2 })).toBe('lo…ng');
+    expect(truncateMiddle('long string', { start: 3, end: 2 })).toBe('lon…ng');
   });
 
   it('should truncate the string in the middle with custom replacement', () => {
-    expect(truncateMiddle('long string', 5, '***')).toBe('l***g');
-    expect(truncateMiddle('long string', 6, '***')).toBe('lo***g');
+    expect(
+      truncateMiddle('long string', { start: 2, end: 2, replacement: '***' }),
+    ).toBe('lo***ng');
+    expect(
+      truncateMiddle('long string', { start: 3, end: 2, replacement: '***' }),
+    ).toBe('lon***ng');
   });
 
-  it('should return the truncated replacement if the replacement is too long', () => {
-    expect(truncateMiddle('long string', 3, '*****')).toBe('***');
-    expect(truncateMiddle('long string', 4, '*****')).toBe('****');
+  it('handles start or end being 0', () => {
+    expect(truncateMiddle('long string', { start: 0, end: 2 })).toBe('…ng');
+    expect(truncateMiddle('long string', { end: 2 })).toBe('…ng');
+
+    expect(truncateMiddle('long string', { start: 2, end: 0 })).toBe('lo…');
+    expect(truncateMiddle('long string', { start: 2 })).toBe('lo…');
+
+    expect(truncateMiddle('long string', { start: 0, end: 0 })).toBe('…');
+    expect(truncateMiddle('long string', {})).toBe('…');
   });
 });
