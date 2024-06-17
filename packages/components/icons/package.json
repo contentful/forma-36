@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-icons",
-  "version": "5.0.0-alpha.23",
+  "version": "5.0.0-alpha.24",
   "description": "Forma 36: Icon components",
   "license": "MIT",
   "exports": {
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@contentful/f36-core": "^4.63.0",
-    "@contentful/f36-icon": "alpha",
+    "@contentful/f36-icon-alpha": "npm:@contentful/f36-icon@alpha",
     "@contentful/f36-tokens": "^4.0.1",
     "@phosphor-icons/react": "^2.1.4",
     "emotion": "^10.0.17"
