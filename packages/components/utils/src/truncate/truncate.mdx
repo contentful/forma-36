@@ -1,0 +1,29 @@
+---
+title: 'truncate'
+type: 'component'
+slug: /utils/truncate/
+section: 'utils'
+typescript: ./truncate.ts
+---
+
+`truncate` is a utility function that truncates a given string from the left, right or the middle. The removed characters are replaced with a customizable string.
+
+## Import
+
+```jsx static=true
+import { truncate } from '@contentful/f36-utils';
+```
+
+## Example
+
+### Basic usage
+
+```ts static=true
+import { truncate } from '@contentful/f36-utils';
+
+truncate('long string', { start: 3, end: 2 });
+// lon…ng
+
+truncate('long string', { start: 3, replacement: '***' });
+// lon***
+```

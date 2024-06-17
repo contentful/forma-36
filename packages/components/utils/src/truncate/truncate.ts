@@ -1,4 +1,4 @@
-export type TruncateMiddleOptions = {
+export type truncateOptions = {
   /**
    * Number of characters to keep at the start of the string
    */
@@ -14,19 +14,19 @@ export type TruncateMiddleOptions = {
 };
 
 /**
- * Truncates a given string from the middle
+ * Truncates a given string from the start, end or the middle
  *
  * @param str String to truncate
  * @param options Truncate options
  * @returns Truncated string
  */
-export function truncateMiddle(
+export function truncate(
   str: string,
   {
     start: startLength = 0,
     end: endLength = 0,
     replacement = '…',
-  }: TruncateMiddleOptions,
+  }: truncateOptions,
 ) {
   if (str.length <= startLength + endLength) {
     return str;
