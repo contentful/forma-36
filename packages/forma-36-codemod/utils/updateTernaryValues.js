@@ -9,13 +9,11 @@ function isConditionalExpression(value, j) {
 }
 
 const getValueFor = (key, { j, expression, valueMap = {} }) => {
-  if (isConditionalExpression(expression.value[key], j)) {
-    return updateTernaryValues(expression, { j, valueMap });
+  if (valueMap[expression.value[key].value]) {
+    const value = valueMap[expression.value[key].value];
+    return value.type === 'Identifier' ? value : j.literal(value);
   }
-
-  const value =
-    valueMap[expression.value[key].value] || expression.value[key].value;
-  return value.type === 'Identifier' ? value : j.literal(value);
+  return expression.value[key];
 };
 
 /**
