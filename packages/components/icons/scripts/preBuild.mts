@@ -12,7 +12,7 @@ export type {
   IconComponent,
   IconSize,
   IconVariant,
-} from '@contentful/f36-icon';\n\n`;
+} from '@contentful/f36-icon-alpha';\n\n`;
 
 function buildExport(path: string) {
   const file = path.replace('.tsx', '.js');
