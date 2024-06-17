@@ -162,15 +162,11 @@ export function run() {
       const { files, parser, setup } = answers;
 
       const filesBeforeExpansion = path || files;
-      const filesExpanded = expandFilePathsIfNeeded(
-        filesBeforeExpansion.split(' '),
-      );
+      const filesExpanded = expandFilePathsIfNeeded([filesBeforeExpansion]);
       const selectedParser = cli.flags.parser || parser;
 
       if (!filesExpanded.length) {
-        console.log(
-          `No files found matching ${filesBeforeExpansion.join(' ')}`,
-        );
+        console.log(`No files found matching ${filesBeforeExpansion}`);
         return null;
       }
 
