@@ -13,7 +13,7 @@ export * from '@contentful/f36-drag-handle';
 export * from '@contentful/f36-entity-list';
 export * from '@contentful/f36-empty-state';
 export * from '@contentful/f36-forms';
-export * from '@contentful/f36-icon';
+export * from '@contentful/f36-icon-alpha';
 export * from '@contentful/f36-list';
 export * from '@contentful/f36-menu';
 export * from '@contentful/f36-modal';

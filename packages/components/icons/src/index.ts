@@ -7,7 +7,7 @@ export type {
   IconComponent,
   IconSize,
   IconVariant,
-} from '@contentful/f36-icon';
+} from '@contentful/f36-icon-alpha';
 
 export * from './custom/DesktopWideIcon.js';
 export * from './custom/EmbeddedBlockIcon.js';
