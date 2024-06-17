@@ -10,6 +10,7 @@ import { css, cx } from 'emotion';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import tokens from '@contentful/f36-tokens';
 import * as f36Components from '@contentful/f36-components';
+import { ProgressStepper } from '@contentful/f36-progress-stepper';
 import { Multiselect } from '@contentful/f36-multiselect';
 import { NavList } from '@contentful/f36-navlist';
 import * as f36utils from '@contentful/f36-utils';
@@ -41,6 +42,7 @@ const liveProviderScope = {
   Layout, // Remove when added to f36-components
   Multiselect, // Remove when added to f36-components
   NavList, // Remove when added to f36-components
+  ProgressStepper, // Remove when added to f36-components
   css,
   f36icons,
   tokens,

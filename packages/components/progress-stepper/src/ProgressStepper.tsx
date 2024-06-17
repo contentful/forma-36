@@ -4,8 +4,17 @@ import { getStyles } from './ProgressStepper.styles';
 
 export interface ProgressStepperProps extends CommonProps, MarginProps {
   children: React.ReactNode;
+  /**
+   * @default horizontal
+   */
   orientation?: 'horizontal' | 'vertical';
+  /**
+   * @default number
+   */
   stepStyle?: 'number' | 'icon';
+  /**
+   * @default 1
+   */
   activeStep?: number;
 }
 
