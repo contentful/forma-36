@@ -75,14 +75,28 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
         >
           <Flex alignItems="center" gap="spacingL">
             {logo || <ContentfulLogoIcon className={styles.logo} />}
-            {switcher}
-            <Flex gap="spacingXs" as="nav" aria-label="Main Navigation">
-              {mainNavigation}
-            </Flex>
+            {switcher && (
+              <Flex as="nav" aria-label="Space and Environment Navigation">
+                {switcher}
+              </Flex>
+            )}
+            {mainNavigation && (
+              <Flex gap="spacingXs" as="nav" aria-label="Main Navigation">
+                {mainNavigation}
+              </Flex>
+            )}
           </Flex>
           <Flex alignItems="center" gap="spacingXs">
-            {secondaryNavigation}
-            {account}
+            {secondaryNavigation && (
+              <Flex as="nav" aria-label="Secondary Navigation">
+                {secondaryNavigation}
+              </Flex>
+            )}
+            {account && (
+              <Flex as="nav" aria-label="Account Navigation">
+                {account}
+              </Flex>
+            )}
           </Flex>
         </Flex>
       </Flex>
