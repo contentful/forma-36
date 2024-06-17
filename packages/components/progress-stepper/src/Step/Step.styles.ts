@@ -108,9 +108,9 @@ export const getStyles = () => {
     }),
     verticalLabel: css({
       gridArea: 'label',
-      textAlign: 'center',
       justifySelf: 'start',
       color: tokens.gray900,
+      maxHeight: '20px',
     }),
     disabledLabel: css({
       color: tokens.gray500,
