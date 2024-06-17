@@ -1,14 +1,17 @@
 export type truncateOptions = {
   /**
    * Number of characters to keep at the start of the string
+   * @default 0
    */
   start?: number;
   /**
    * Number of characters to keep at the end of the string
+   * @default 0
    */
   end?: number;
   /**
    * String to replace the truncated part
+   * @default '…'
    */
   replacement?: string;
 };
