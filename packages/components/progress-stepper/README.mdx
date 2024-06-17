@@ -5,13 +5,10 @@ status: 'stable'
 slug: /components/progress-stepper/
 github: 'https://github.com/contentful/forma-36/tree/main/packages/components/progress-stepper'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-progress-stepper--default'
-typescript: ./src/ProgressStepper.tsx
+typescript: ./src/ProgressStepper.tsx,./src/Step/Step.tsx
 ---
 
-Short component description covering when it's used.
-(Optional: give a most common example)
-
-Optional: Most common misuse and what to use instead.
+ProgressStepper can be used to visually represent the division of a process into ordered steps
 
 ## Import
 
@@ -23,25 +20,72 @@ import { ProgressStepper } from '@contentful/f36-progress-stepper';
 
 ## Examples
 
-Repeat for every important variant
+### Variants: Orientation
 
-### Example title (variant name)
+Example of ProgressStepper with horizontal orientation.
 
-Optional: Short "when to use" with considerations towards the end user
+```jsx file=./examples/ProgressStepperHorizontalExample.tsx
 
-```jsx file=../examples/ProgressStepperExample.tsx
+```
+
+Example of ProgressStepper with vertical orientation.
+
+```jsx file=./examples/ProgressStepperVerticalExample.tsx
+
+```
+
+### Variants: Step Styles
+
+Example of ProgressStepper with number step styles and displaying the variant options.
+
+```jsx file=./examples/ProgressStepperNumberExample.tsx
+
+```
+
+Example of ProgressStepper with icon step styles and displaying the variant options.
+
+```jsx file=./examples/ProgressStepperIconExample.tsx
+
+```
+
+### Variants: Labels
+
+Example of ProgressStepper with horizontal orientation with labels.
+
+```jsx file=./examples/ProgressStepperHorizontalLabelExample.tsx
+
+```
+
+Example of ProgressStepper with vertical orientation with labels.
+
+```jsx file=./examples/ProgressStepperVerticalLabelExample.tsx
+
+```
+
+### Interactive Example
+
+Example of the ProgressStepper with buttons to move between steps.
+
+```jsx file=./examples/ProgressStepperInteractiveExample.tsx
 
 ```
 
 ## Props (API reference)
 
+### ProgressStepper
+
 <PropsTable of="ProgressStepper" />
+
+### ProgressStepper.Step
+
+<PropsTable of="Step" />
 
 ## Content guidelines
 
-At least one important thing to consider when writing copy for this component
-Optional: Things to avoid
+- The progress stepper provides visual feedback to help guide the user through a workflow that involves linear steps
+- Each step has an optional label
+- Label text should be clear and concise
 
 ## Accessibility
 
-What makes this component accessible
+- The `aria-label` should be accessible for the status and optional label of every progress step. The status should communicate information progress step's number or icon, as well as the step variant.

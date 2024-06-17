@@ -5,6 +5,9 @@ import { getStyles } from './Step.styles';
 import { DoneIcon, CloseIcon, WarningIcon } from '@contentful/f36-icons';
 
 export interface StepProps extends CommonProps {
+  /**
+   * @default incomplete
+   */
   variant?:
     | 'active'
     | 'error'
@@ -13,9 +16,25 @@ export interface StepProps extends CommonProps {
     | 'complete'
     | 'incomplete';
   labelText?: string;
+  /**
+   * Private prop for the ProgressStepper component
+   * @private
+   */
   stepNumber?: number;
+  /**
+   * Private prop for the ProgressStepper component
+   * @private
+   */
   stepStyle?: 'number' | 'icon';
+  /**
+   * Private prop for the ProgressStepper component
+   * @private
+   */
   orientation?: 'horizontal' | 'vertical';
+  /**
+   * Private prop for the ProgressStepper component
+   * @private
+   */
   activeStep?: number;
 }
 

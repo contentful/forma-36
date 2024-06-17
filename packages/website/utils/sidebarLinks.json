@@ -98,6 +98,11 @@
       "slug": "/components/popover/"
     },
     {
+      "title": "ProgressStepper",
+      "slug": "/components/progress-stepper/",
+      "status": "stable"
+    },
+    {
       "title": "Skeleton",
       "slug": "/components/skeleton/"
     },
