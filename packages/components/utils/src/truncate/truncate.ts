@@ -1,4 +1,4 @@
-export type truncateOptions = {
+export type TruncateOptions = {
   /**
    * Number of characters to keep at the start of the string
    * @default 0
@@ -29,7 +29,7 @@ export function truncate(
     start: startLength = 0,
     end: endLength = 0,
     replacement = '…',
-  }: truncateOptions,
+  }: TruncateOptions,
 ) {
   if (str.length <= startLength + endLength) {
     return str;
