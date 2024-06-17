@@ -8,10 +8,13 @@ export default {
   title: 'Components/ProgressStepper',
 } as Meta;
 
-export const HorizontalNumber: Story<ProgressStepperProps> = (args) => {
+const getContainerStyle = (orientation: ProgressStepperProps['orientation']) =>
+  orientation === 'vertical' ? { height: '400px' } : { width: '750px' };
+
+export const Basic: Story<ProgressStepperProps> = (args) => {
   return (
-    <div style={{ width: '750px' }}>
-      <ProgressStepper {...args} stepStyle="number" activeStep={3}>
+    <div style={getContainerStyle(args.orientation)}>
+      <ProgressStepper stepStyle="number" activeStep={3} {...args}>
         <ProgressStepper.Step variant="complete" />
         <ProgressStepper.Step variant="complete" />
         <ProgressStepper.Step variant="active" />
@@ -22,10 +25,10 @@ export const HorizontalNumber: Story<ProgressStepperProps> = (args) => {
   );
 };
 
-export const HorizontalIconWithLabels: Story<ProgressStepperProps> = (args) => {
+export const BasicWithLabels: Story<ProgressStepperProps> = (args) => {
   return (
-    <div style={{ width: '750px' }}>
-      <ProgressStepper {...args} stepStyle="icon" activeStep={3}>
+    <div style={getContainerStyle(args.orientation)}>
+      <ProgressStepper stepStyle="number" activeStep={3} {...args}>
         <ProgressStepper.Step variant="complete" labelText="Label 1" />
         <ProgressStepper.Step variant="complete" labelText="Label 2" />
         <ProgressStepper.Step variant="active" labelText="Label 3" />
@@ -36,44 +39,10 @@ export const HorizontalIconWithLabels: Story<ProgressStepperProps> = (args) => {
   );
 };
 
-export const VerticalNumberWithLabels: Story<ProgressStepperProps> = (args) => {
-  return (
-    <div style={{ height: '350px' }}>
-      <ProgressStepper
-        {...args}
-        stepStyle="number"
-        activeStep={2}
-        orientation="vertical"
-      >
-        <ProgressStepper.Step variant="complete" labelText="Label 1" />
-        <ProgressStepper.Step variant="active" labelText="Label 2" />
-        <ProgressStepper.Step labelText="Label 3" />
-      </ProgressStepper>
-    </div>
-  );
-};
-
-export const VerticalIcon: Story<ProgressStepperProps> = (args) => {
-  return (
-    <div style={{ height: '350px' }}>
-      <ProgressStepper
-        {...args}
-        stepStyle="icon"
-        activeStep={2}
-        orientation="vertical"
-      >
-        <ProgressStepper.Step variant="complete" />
-        <ProgressStepper.Step variant="active" />
-        <ProgressStepper.Step />
-      </ProgressStepper>
-    </div>
-  );
-};
-
 export const IconStepVariants: Story<ProgressStepperProps> = (args) => {
   return (
-    <div style={{ width: '750px' }}>
-      <ProgressStepper {...args} stepStyle="icon" activeStep={1}>
+    <div style={getContainerStyle(args.orientation)}>
+      <ProgressStepper stepStyle="icon" activeStep={1} {...args}>
         <ProgressStepper.Step variant="active" labelText="Active" />
         <ProgressStepper.Step variant="complete" labelText="Complete" />
         <ProgressStepper.Step labelText="Incomplete" />
@@ -87,8 +56,8 @@ export const IconStepVariants: Story<ProgressStepperProps> = (args) => {
 
 export const NumberStepVariants: Story<ProgressStepperProps> = (args) => {
   return (
-    <div style={{ width: '750px' }}>
-      <ProgressStepper {...args} stepStyle="number" activeStep={1}>
+    <div style={getContainerStyle(args.orientation)}>
+      <ProgressStepper stepStyle="number" activeStep={1} {...args}>
         <ProgressStepper.Step variant="active" labelText="Active" />
         <ProgressStepper.Step variant="complete" labelText="Complete" />
         <ProgressStepper.Step labelText="Incomplete" />
