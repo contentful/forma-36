@@ -13,7 +13,7 @@ export interface ProgressStepperProps extends CommonProps, MarginProps {
    */
   stepStyle?: 'number' | 'icon';
   /**
-   * @default 1
+   * @default 0
    */
   activeStep?: number;
 }
@@ -26,7 +26,7 @@ function _ProgressStepper(
     children,
     orientation = 'horizontal',
     stepStyle = 'number',
-    activeStep = 1,
+    activeStep = 0,
     testId,
   } = props;
   const styles = getStyles();
