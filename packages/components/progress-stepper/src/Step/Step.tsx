@@ -76,6 +76,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
       }
       ref={ref}
       data-test-id={`cf-ui-step-${variant}`}
+      aria-label={`Step ${stepNumber} ${variant}`}
     >
       <span
         className={cx(styles.listItemContent, {
