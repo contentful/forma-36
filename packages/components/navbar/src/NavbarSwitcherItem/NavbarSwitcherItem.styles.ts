@@ -18,70 +18,9 @@ const mobileIcon = {
 
 export const getNavbarSwitcherItemStyles = () => ({
   breadcrumbsItem: css({
-    position: 'relative',
-    alignItems: 'center',
-    justifyContent: 'center',
-    border: `solid 1px ${tokens.gray300}`,
-    borderLeft: 'none',
-    display: 'inline-flex',
-    margin: 0,
-    minWidth: 0,
-    padding: `0 ${tokens.spacingXs}`,
-    height: tokens.spacingL,
-    borderRadius: '3rem',
-    zIndex: 2,
-
-    whiteSpace: 'nowrap',
-    '&:first-child': {
-      minWidth: '24px',
-    },
-    '&:nth-child(2)': {
-      zIndex: 1,
-      marginLeft: '-10px',
-      paddingLeft: tokens.spacingM,
-      borderRadius: `0 3rem 3rem 0`,
-      span: {
-        maxWidth: '80px',
-        textOverflow: 'ellipsis',
-        overflow: 'hidden',
-        [mqs.large]: {
-          maxWidth: '100%',
-        },
-      },
-    },
-    '&:nth-child(3)': {
-      marginLeft: '-10px',
-      paddingLeft: tokens.spacingM,
-      borderRadius: `0 3rem 3rem 0`,
-      fontFamily: tokens.fontStackMonospace,
-      fontSize: tokens.fontSizeS,
-      fontWeight: tokens.fontWeightMedium,
-      zIndex: 0,
-      span: {
-        maxWidth: '40px',
-        textOverflow: 'ellipsis',
-        overflow: 'hidden',
-        [mqs.large]: {
-          maxWidth: '100%',
-        },
-      },
-      '> div': {
-        [mqs.medium]: {
-          gap: tokens.spacing2Xs,
-        },
-      },
-    },
-  }),
-  breadcrumbsItemCircle: css({
-    border: `solid 1px ${tokens.gray300}`,
-    borderRadius: '50%',
-    color: tokens.gray400,
-    padding: 0,
-    display: 'flex',
-    justifyContent: 'center',
-    fontSize: '11px',
-    width: tokens.spacingL,
-    height: tokens.spacingL,
+    fontFamily: tokens.fontStackMonospace,
+    fontSize: tokens.fontSizeS,
+    color: tokens.gray600,
   }),
   breadcrumbsItemEnvMaster: css({
     color: tokens.green600,

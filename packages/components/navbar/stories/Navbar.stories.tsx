@@ -25,18 +25,13 @@ export default {
 const Switcher = ({
   isAlias = false,
   envVariant = 'master',
-  children = 'master',
 }: Partial<NavbarSwitcherItemProps>) => (
   <Navbar.Switcher>
-    <Navbar.SwitcherItem isCircle>
-      <span role="img" aria-label="org logo">
-        ⚡️
-      </span>
-    </Navbar.SwitcherItem>
     <Navbar.SwitcherItem>Space</Navbar.SwitcherItem>
-    <Navbar.SwitcherItem isAlias={isAlias} envVariant={envVariant}>
-      {children}
-    </Navbar.SwitcherItem>
+    <Navbar.SwitcherItem
+      isAlias={isAlias}
+      envVariant={envVariant}
+    ></Navbar.SwitcherItem>
   </Navbar.Switcher>
 );
 
@@ -308,7 +303,7 @@ export const WithDifferentEnvironments: Story<{
 
         <Navbar
           mainNavigation={<MainItems />}
-          switcher={<Switcher isAlias>staging</Switcher>}
+          switcher={<Switcher isAlias />}
           account={<Account {...args} />}
         ></Navbar>
       </Flex>
@@ -320,11 +315,7 @@ export const WithDifferentEnvironments: Story<{
 
         <Navbar
           mainNavigation={<MainItems />}
-          switcher={
-            <Switcher isAlias envVariant="non-master">
-              dev
-            </Switcher>
-          }
+          switcher={<Switcher isAlias envVariant="non-master"></Switcher>}
           account={<Account {...args} />}
         ></Navbar>
       </Flex>

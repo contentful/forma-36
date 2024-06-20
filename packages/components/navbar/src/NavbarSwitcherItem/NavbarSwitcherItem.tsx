@@ -36,17 +36,14 @@ function _NavbarSwitcherItem(
   } = props;
   const styles = getNavbarSwitcherItemStyles();
   const classes = cx(styles.breadcrumbsItem, className, {
-    [styles.breadcrumbsItemCircle]: isCircle,
     [styles.breadcrumbsItemEnvMaster]: envVariant === 'master',
     [styles.breadcrumbsItemEnvNonMaster]: envVariant === 'non-master',
   });
 
   return (
     <li {...otherProps} ref={ref} className={classes} data-test-id={testId}>
-      <Flex fullHeight justifyContent="center" alignItems="center">
-        {envVariant && <NavbarEnvVariant isAlias={isAlias} />}
-        <span>{children}</span>
-      </Flex>
+      {children && <span>{children}</span>}
+      {envVariant && <NavbarEnvVariant isAlias={isAlias} />}
     </li>
   );
 }

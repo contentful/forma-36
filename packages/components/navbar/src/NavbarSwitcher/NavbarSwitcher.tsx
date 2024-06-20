@@ -38,7 +38,12 @@ function _NavbarSwitcher(
       fullHeight
       gap="spacingXs"
     >
-      <Flex as="ul" alignItems="center" className={styles.switcherBreadcrumbs}>
+      <Flex
+        as="ul"
+        gap="spacing2Xs"
+        alignItems="center"
+        className={styles.switcherBreadcrumbs}
+      >
         {children}
       </Flex>
     </Flex>
