@@ -11,8 +11,6 @@ export const getStyles = () => {
     }),
     verticalList: css({
       display: 'grid',
-      gridAutoFlow: 'row dense',
-      gridAutoRows: '1fr',
       margin: 0,
       padding: 0,
       height: '100%',
