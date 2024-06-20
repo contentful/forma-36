@@ -9,7 +9,7 @@ export const getStyles = () => {
         padding: 0,
         display: 'grid',
         gap: `${tokens.spacingXs} 0`,
-        gridTemplateColumns: '0.5fr 24px 1fr',
+        gridTemplateColumns: '1fr 24px 1fr',
         gridTemplateRows: '24px',
         gridTemplateAreas: `
         "divider-before circle divider-after"
