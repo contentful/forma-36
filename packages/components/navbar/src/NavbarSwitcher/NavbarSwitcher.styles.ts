@@ -7,17 +7,21 @@ import { getGlowOnFocusStyles } from '../utils.styles';
 export const getNavbarSwitcherStyles = () => ({
   navbarSwitcher: css(
     {
+      alignItems: 'center',
+      appearance: 'none',
       background: 'none',
       border: 'none',
-      margin: 0,
-      outline: 'none',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
-      cursor: 'pointer',
       borderRadius: tokens.borderRadiusMedium,
+      cursor: 'pointer',
+      display: 'flex',
+      flexShrink: 1,
       lineHeight: tokens.lineHeightS,
+      margin: 0,
+      maxWidth: '100%',
+      outline: 'none',
+      padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
+      userSelect: 'none',
+      whiteSpace: 'nowrap',
       '&:hover': {
         backgroundColor: hexToRGBA(tokens.gray900, 0.05),
       },
@@ -25,11 +29,14 @@ export const getNavbarSwitcherStyles = () => ({
     getGlowOnFocusStyles(),
   ),
 
-  switcherBreadcrumbs: css({
-    listStyleType: 'none',
-    margin: 0,
-    padding: 0,
-    position: 'relative',
-    gap: tokens.spacing2Xs,
+  switcherSpaceName: css({
+    minWidth: '12ch',
+  }),
+
+  switcherSpaceNameTruncation: css({
+    flexShrink: 1,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
   }),
 });

@@ -1,12 +1,8 @@
-import {
-  Box,
-  type CommonProps,
-  type ExpandProps,
-  Flex,
-} from '@contentful/f36-core';
+import { type CommonProps, type ExpandProps, Flex } from '@contentful/f36-core';
 import React from 'react';
 import { getNavbarStyles } from './Navbar.styles';
 import { ContentfulLogoIcon } from './icons';
+import { cx } from 'emotion';
 
 type NavbarOwnProps = CommonProps & {
   /**
@@ -61,46 +57,39 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
   const styles = getNavbarStyles(contentMaxWidth, variant);
 
   return (
-    <Box
+    <Flex
       {...otherProps}
       ref={ref}
       testId={testId}
-      className={className}
+      className={cx(styles.container, className)}
       as="header"
     >
-      <Flex className={styles.containerTop}>
-        <Flex
-          className={styles.containerTopContent}
-          justifyContent="space-between"
-        >
-          <Flex alignItems="center" gap="spacingL">
-            {logo || <ContentfulLogoIcon className={styles.logo} />}
-            {mainNavigation && (
-              <Flex gap="spacingXs" as="nav" aria-label="Main Navigation">
-                {mainNavigation}
-              </Flex>
-            )}
-          </Flex>
-          <Flex alignItems="center" gap="spacingXs">
-            {switcher && (
-              <Flex as="nav" aria-label="Space and Environment Navigation">
-                {switcher}
-              </Flex>
-            )}
-            {secondaryNavigation && (
-              <Flex as="nav" aria-label="Secondary Navigation">
-                {secondaryNavigation}
-              </Flex>
-            )}
-            {account && (
-              <Flex as="nav" aria-label="Account Navigation">
-                {account}
-              </Flex>
-            )}
-          </Flex>
+      <Flex
+        as="nav"
+        className={styles.navigation}
+        justifyContent="space-between"
+      >
+        <Flex alignItems="center" gap="spacingL">
+          {logo || <ContentfulLogoIcon className={styles.logo} />}
+          {mainNavigation && (
+            <Flex aria-label="Main Navigation" gap="spacingXs">
+              {mainNavigation}
+            </Flex>
+          )}
+        </Flex>
+        <Flex alignItems="center" gap="spacingXs">
+          {switcher}
+          {secondaryNavigation && (
+            <Flex aria-label="Secondary Navigation">{secondaryNavigation}</Flex>
+          )}
+          {account && (
+            <Flex aria-label="Account Navigation" gap="spacingXs">
+              {account}
+            </Flex>
+          )}
         </Flex>
       </Flex>
-    </Box>
+    </Flex>
   );
 }
 
