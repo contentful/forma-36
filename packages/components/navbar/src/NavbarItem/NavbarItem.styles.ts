@@ -26,7 +26,6 @@ export const getNavbarItemStyles = () => ({
   navbarItem: css(
     commonItemStyles,
     {
-      alignItems: 'center',
       background: 'none',
       border: '1px solid transparent',
       margin: 0,

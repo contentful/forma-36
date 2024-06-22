@@ -14,8 +14,8 @@ import {
 } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
-import { NavbarSwitcherItemProps } from '../src/NavbarSwitcherItem/NavbarSwitcherItem';
 import { NavbarAccountProps } from '../src/NavbarAccount/NavbarAccount';
+import { NavbarSwitcherProps } from '../src/NavbarSwitcher/NavbarSwitcher';
 
 export default {
   component: Navbar,
@@ -25,18 +25,9 @@ export default {
 const Switcher = ({
   isAlias = false,
   envVariant = 'master',
-  children = 'master',
-}: Partial<NavbarSwitcherItemProps>) => (
-  <Navbar.Switcher>
-    <Navbar.SwitcherItem isCircle>
-      <span role="img" aria-label="org logo">
-        ⚡️
-      </span>
-    </Navbar.SwitcherItem>
-    <Navbar.SwitcherItem>Space</Navbar.SwitcherItem>
-    <Navbar.SwitcherItem isAlias={isAlias} envVariant={envVariant}>
-      {children}
-    </Navbar.SwitcherItem>
+}: Partial<NavbarSwitcherProps>) => (
+  <Navbar.Switcher isAlias={isAlias} envVariant={envVariant}>
+    Our super long space name
   </Navbar.Switcher>
 );
 
@@ -132,7 +123,7 @@ export const Basic: Story<{ initials?: string; avatar?: string }> = (args) => {
         mainNavigation={<MainItems />}
         switcher={<Switcher />}
         account={<Account {...args} />}
-      ></Navbar>
+      />
     </div>
   );
 };
@@ -152,14 +143,14 @@ export const SizeVariants: Story<NavbarProps> = () => {
         account={<Account />}
         variant="fullscreen"
         mainNavigation={<MainItems />}
-      ></Navbar>
+      />
 
       <SectionHeading marginBottom="none">Wide</SectionHeading>
       <Navbar
         switcher={<Switcher />}
         account={<Account />}
         mainNavigation={<MainItems />}
-      ></Navbar>
+      />
     </Flex>
   );
 };
@@ -174,7 +165,7 @@ export const WithInitialsAvatar: Story<{
         switcher={<Switcher />}
         account={<Account {...args} />}
         mainNavigation={<MainItems />}
-      ></Navbar>
+      />
     </div>
   );
 };
@@ -190,7 +181,7 @@ export const WithFallbackAvatar: Story<{}> = (args) => {
         switcher={<Switcher />}
         account={<Account {...args} />}
         mainNavigation={<MainItems />}
-      ></Navbar>
+      />
     </div>
   );
 };
@@ -201,67 +192,65 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
   args,
 ) => {
   return (
-    <div style={{ width: '1250px' }}>
-      <Navbar
-        switcher={<Switcher />}
-        mainNavigation={<MainItems />}
-        account={
-          <>
-            <Navbar.Badge>Trial</Navbar.Badge>
-            <Account {...args} />
-          </>
-        }
-        secondaryNavigation={
-          <>
-            <Navbar.Item title="Feedback"></Navbar.Item>
-            <Navbar.Item label="Quick Search" icon={<MagnifyingGlassIcon />} />
-            <Navbar.Item label="Help Menu" icon={<QuestionIcon />}>
-              <Navbar.MenuItem
-                as="a"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Help center"
-                testId="cf-ui-navbar-help-menu-help-center"
-                href={'https://www.contentful.com/help/'}
-              />
-              <Navbar.MenuItem
-                as="a"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Developer docs"
-                testId="cf-ui-navbar-help-menu-docs"
-                href="https://www.contentful.com/developers/docs/"
-              />
-              <Navbar.MenuItem
-                as="a"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Training courses"
-                testId="cf-ui-navbar-help-traning-center"
-                href="https://training.contentful.com"
-              />
-              <Navbar.MenuDivider />
-              <Navbar.MenuItem
-                as="a"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Get support"
-                testId="cf-ui-navbar-help-support"
-                href="https://support.contentful.com"
-              />
-            </Navbar.Item>
-            <Navbar.Item label="Menu Settings" icon={<GearSixIcon />}>
-              <Navbar.MenuSectionTitle>General</Navbar.MenuSectionTitle>
-              <Navbar.MenuItem title="Home" />
-              <Navbar.MenuItem title="API keys" />
-              <Navbar.MenuSectionTitle>Space</Navbar.MenuSectionTitle>
-              <Navbar.MenuItem title="Apps" />
-              <Navbar.MenuItem title="Permissions" />
-            </Navbar.Item>
-          </>
-        }
-      ></Navbar>
-    </div>
+    <Navbar
+      switcher={<Switcher />}
+      mainNavigation={<MainItems />}
+      account={
+        <>
+          <Navbar.Badge>Trial</Navbar.Badge>
+          <Account {...args} />
+        </>
+      }
+      secondaryNavigation={
+        <>
+          <Navbar.Item title="Feedback"></Navbar.Item>
+          <Navbar.Item label="Quick Search" icon={<MagnifyingGlassIcon />} />
+          <Navbar.Item label="Help Menu" icon={<QuestionIcon />}>
+            <Navbar.MenuItem
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Help center"
+              testId="cf-ui-navbar-help-menu-help-center"
+              href={'https://www.contentful.com/help/'}
+            />
+            <Navbar.MenuItem
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Developer docs"
+              testId="cf-ui-navbar-help-menu-docs"
+              href="https://www.contentful.com/developers/docs/"
+            />
+            <Navbar.MenuItem
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Training courses"
+              testId="cf-ui-navbar-help-traning-center"
+              href="https://training.contentful.com"
+            />
+            <Navbar.MenuDivider />
+            <Navbar.MenuItem
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Get support"
+              testId="cf-ui-navbar-help-support"
+              href="https://support.contentful.com"
+            />
+          </Navbar.Item>
+          <Navbar.Item label="Menu Settings" icon={<GearSixIcon />}>
+            <Navbar.MenuSectionTitle>General</Navbar.MenuSectionTitle>
+            <Navbar.MenuItem title="Home" />
+            <Navbar.MenuItem title="API keys" />
+            <Navbar.MenuSectionTitle>Space</Navbar.MenuSectionTitle>
+            <Navbar.MenuItem title="Apps" />
+            <Navbar.MenuItem title="Permissions" />
+          </Navbar.Item>
+        </>
+      }
+    />
   );
 };
 
@@ -286,7 +275,7 @@ export const WithDifferentEnvironments: Story<{
           mainNavigation={<MainItems />}
           switcher={<Switcher />}
           account={<Account {...args} />}
-        ></Navbar>
+        />
       </Flex>
 
       <Flex flexDirection="column">
@@ -298,7 +287,7 @@ export const WithDifferentEnvironments: Story<{
           mainNavigation={<MainItems />}
           switcher={<Switcher envVariant="non-master">development</Switcher>}
           account={<Account {...args} />}
-        ></Navbar>
+        />
       </Flex>
 
       <Flex flexDirection="column">
@@ -308,9 +297,9 @@ export const WithDifferentEnvironments: Story<{
 
         <Navbar
           mainNavigation={<MainItems />}
-          switcher={<Switcher isAlias>staging</Switcher>}
+          switcher={<Switcher isAlias />}
           account={<Account {...args} />}
-        ></Navbar>
+        />
       </Flex>
 
       <Flex flexDirection="column">
@@ -320,13 +309,9 @@ export const WithDifferentEnvironments: Story<{
 
         <Navbar
           mainNavigation={<MainItems />}
-          switcher={
-            <Switcher isAlias envVariant="non-master">
-              dev
-            </Switcher>
-          }
+          switcher={<Switcher isAlias envVariant="non-master"></Switcher>}
           account={<Account {...args} />}
-        ></Navbar>
+        />
       </Flex>
     </Flex>
   );
@@ -353,7 +338,7 @@ export const WithAccountNotification: Story<{
           switcher={<Switcher />}
           account={<Account {...args} hasNotification />}
           mainNavigation={<MainItems />}
-        ></Navbar>
+        />
       </Flex>
 
       <Flex flexDirection="column">
@@ -367,7 +352,7 @@ export const WithAccountNotification: Story<{
             <Account {...args} hasNotification notificationVariant="negative" />
           }
           mainNavigation={<MainItems />}
-        ></Navbar>
+        />
       </Flex>
 
       <Flex flexDirection="column">
@@ -381,7 +366,7 @@ export const WithAccountNotification: Story<{
             <Account {...args} hasNotification notificationVariant="info" />
           }
           mainNavigation={<MainItems />}
-        ></Navbar>
+        />
       </Flex>
     </Flex>
   );
@@ -411,7 +396,7 @@ export const LoadingSkeleton: Story<{}> = () => {
             <Navbar.ItemSkeleton estimatedWidth={100} />
           </>
         }
-      ></Navbar>
+      />
     </div>
   );
 };

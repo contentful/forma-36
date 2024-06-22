@@ -1,42 +1,42 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import { hexToRGBA } from '@contentful/f36-utils';
+
 import { getGlowOnFocusStyles } from '../utils.styles';
 
 export const getNavbarSwitcherStyles = () => ({
   navbarSwitcher: css(
     {
-      // default button reset styles
-      margin: 0,
-      padding: 0,
+      alignItems: 'center',
+      appearance: 'none',
       background: 'none',
       border: 'none',
-      height: 'max-content',
-
-      color: tokens.gray700,
+      borderRadius: tokens.borderRadiusMedium,
       cursor: 'pointer',
-      fontSize: tokens.fontSizeS,
-      fontWeight: tokens.fontWeightMedium,
-      position: 'relative',
+      display: 'flex',
+      flexShrink: 1,
+      lineHeight: tokens.lineHeightS,
+      margin: 0,
+      maxWidth: '100%',
       outline: 'none',
-      borderRadius: '3rem',
-      '&:last-child:after': {
-        display: 'none',
-      },
-      '&:hover li': {
-        backgroundColor: '#f2f4f6', // Using a calculated hover alpha color because when using a RGBA value layers overlapping occur and show darker areas
+      padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
+      userSelect: 'none',
+      whiteSpace: 'nowrap',
+      '&:hover': {
+        backgroundColor: hexToRGBA(tokens.gray900, 0.05),
       },
     },
     getGlowOnFocusStyles(),
   ),
-  switcherMenuIcon: css({
-    height: tokens.spacingM,
-    width: tokens.spacingM,
-    fill: tokens.gray700,
+
+  switcherSpaceName: css({
+    minWidth: '12ch',
   }),
-  switcherBreadcrumbs: css({
-    listStyleType: 'none',
-    margin: 0,
-    padding: 0,
-    position: 'relative',
+
+  switcherSpaceNameTruncation: css({
+    flexShrink: 1,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
   }),
 });
