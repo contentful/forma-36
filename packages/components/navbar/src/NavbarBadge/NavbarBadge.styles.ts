@@ -18,5 +18,6 @@ export const getNavbarBadgeStyles = () => ({
     textDecoration: 'none',
     color: `${tokens.purple600}!important`,
     borderRadius: '1.75rem',
+    userSelect: 'none',
   }),
 });

@@ -3,15 +3,16 @@ import tokens from '@contentful/f36-tokens';
 import { mqs } from './utils.styles';
 
 export const getNavbarStyles = (maxWidth: string, variant: string) => ({
-  containerTop: css({
+  container: css({
     justifyContent: 'center',
     backgroundColor: tokens.gray100,
+    width: '100%',
   }),
-  containerBottom: css({
-    justifyContent: 'center',
-    backgroundColor: tokens.gray100,
+  logo: css({
+    height: '28px',
+    width: '28px',
   }),
-  containerTopContent: css({
+  navigation: css({
     width: '100%',
     maxWidth: variant === 'wide' ? '1524px' : maxWidth,
     padding: tokens.spacingXs,
@@ -19,20 +20,5 @@ export const getNavbarStyles = (maxWidth: string, variant: string) => ({
     [mqs.medium]: {
       padding: `${tokens.spacingXs} 20px`,
     },
-  }),
-  containerBottomContent: css({
-    width: '100%',
-    maxWidth: variant === 'wide' ? '1524px' : maxWidth,
-    padding: 0,
-    paddingTop: tokens.spacing2Xs,
-    minHeight: '2.5rem',
-    overflow: 'auto',
-    [mqs.medium]: {
-      padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
-    },
-  }),
-  logo: css({
-    height: '28px',
-    width: '28px',
   }),
 });

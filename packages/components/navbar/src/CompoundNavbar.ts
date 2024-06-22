@@ -6,8 +6,6 @@ import { NavbarAccount, NavbarAccountSkeleton } from './NavbarAccount';
 import { NavbarItem, NavbarItemSkeleton } from './NavbarItem';
 import { NavbarMenuItem, NavbarMenuItemSkeleton } from './NavbarMenuItem';
 import { NavbarSwitcher, NavbarSwitcherSkeleton } from './NavbarSwitcher';
-
-import { NavbarSwitcherItem } from './NavbarSwitcherItem/NavbarSwitcherItem';
 import { NavbarBadge } from './NavbarBadge/NavbarBadge';
 
 type CompoundNavbar = typeof OriginalNavbar & {
@@ -19,7 +17,6 @@ type CompoundNavbar = typeof OriginalNavbar & {
   MenuSectionTitle: typeof MenuSectionTitle;
   Switcher: typeof NavbarSwitcher;
   SwitcherSkeleton: typeof NavbarSwitcherSkeleton;
-  SwitcherItem: typeof NavbarSwitcherItem;
   Account: typeof NavbarAccount;
   AccountSkeleton: typeof NavbarAccountSkeleton;
   Badge: typeof NavbarBadge;
@@ -34,7 +31,6 @@ Navbar.MenuDivider = MenuDivider;
 Navbar.MenuSectionTitle = MenuSectionTitle;
 Navbar.Switcher = NavbarSwitcher;
 Navbar.SwitcherSkeleton = NavbarSwitcherSkeleton;
-Navbar.SwitcherItem = NavbarSwitcherItem;
 Navbar.Account = NavbarAccount;
 Navbar.AccountSkeleton = NavbarAccountSkeleton;
 Navbar.Badge = NavbarBadge;
