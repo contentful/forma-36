@@ -9,12 +9,14 @@ export const getStyles = () => {
       margin: 0,
       padding: 0,
     }),
-    verticalList: css({
-      display: 'grid',
-      margin: 0,
-      padding: 0,
-      height: '100%',
-    }),
+    verticalList: (numberOfSteps: number) =>
+      css({
+        display: 'grid',
+        gridTemplateRows: `repeat(${numberOfSteps - 1}, 1fr)`,
+        margin: 0,
+        padding: 0,
+        height: '100%',
+      }),
     verticalNav: css({
       height: '100%',
     }),

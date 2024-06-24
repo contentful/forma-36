@@ -59,7 +59,7 @@ function _ProgressStepper(
         className={
           orientation === 'horizontal'
             ? styles.horizontalList
-            : styles.verticalList
+            : styles.verticalList(stepsToRender.length)
         }
       >
         {renderSteps()}
