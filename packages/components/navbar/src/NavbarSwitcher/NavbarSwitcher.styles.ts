@@ -2,7 +2,7 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
 
-import { getGlowOnFocusStyles } from '../utils.styles';
+import { getGlowOnFocusStyles, increaseHitArea } from '../utils.styles';
 
 export const getNavbarSwitcherStyles = () => ({
   navbarSwitcher: css(
@@ -18,6 +18,7 @@ export const getNavbarSwitcherStyles = () => ({
       },
     },
     getGlowOnFocusStyles(),
+    increaseHitArea(),
   ),
 
   switcherSpaceName: css({
