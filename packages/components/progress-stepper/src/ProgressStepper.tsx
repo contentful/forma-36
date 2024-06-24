@@ -68,7 +68,4 @@ function _ProgressStepper(
   );
 }
 
-/**
- * TODO: Add description of component here.
- */
 export const ProgressStepper = React.forwardRef(_ProgressStepper);

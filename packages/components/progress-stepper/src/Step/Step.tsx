@@ -108,7 +108,4 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
   );
 }
 
-/**
- * TODO: Add description of component here.
- */
 export const Step = React.forwardRef(_Step);
