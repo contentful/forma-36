@@ -40,3 +40,18 @@ export const getNavbarSwitcherStyles = () => ({
     whiteSpace: 'nowrap',
   }),
 });
+
+export const getNavbarEnvVariantStyles = () => ({
+  envItemMaster: css({
+    color: tokens.green600,
+    svg: {
+      fill: tokens.green600,
+    },
+  }),
+  envItemNonMaster: css({
+    color: tokens.orange500,
+    svg: {
+      fill: tokens.orange500,
+    },
+  }),
+});
