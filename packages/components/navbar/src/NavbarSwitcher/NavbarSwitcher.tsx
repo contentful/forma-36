@@ -100,7 +100,9 @@ function _NavbarSwitcher(
         )}
       </Flex>
 
-      {envVariant && <NavbarEnvVariant isAlias={isAlias} />}
+      {envVariant && (
+        <NavbarEnvVariant envVariant={envVariant} isAlias={isAlias} />
+      )}
     </Flex>
   );
 }
