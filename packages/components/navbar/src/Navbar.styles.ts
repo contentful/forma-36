@@ -21,4 +21,8 @@ export const getNavbarStyles = (maxWidth: string, variant: string) => ({
       padding: `${tokens.spacingXs} 20px`,
     },
   }),
+  mobileNavigationButton: css({
+    height: '36px',
+    borderRadius: '10px',
+  }),
 });

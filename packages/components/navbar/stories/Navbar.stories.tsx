@@ -16,6 +16,7 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { NavbarAccountProps } from '../src/NavbarAccount/NavbarAccount';
 import { NavbarSwitcherProps } from '../src/NavbarSwitcher/NavbarSwitcher';
+import { Menu } from '@contentful/f36-menu';
 
 export default {
   component: Navbar,
@@ -199,12 +200,99 @@ export const WithShortSpaceName = () => {
   );
 };
 
+const MobileMenu = () => (
+  <>
+    <Navbar.MenuItem title="Content model" icon={<WrenchIcon />} />
+    <Navbar.MenuItem title="Content" icon={<PenNibIcon />} />
+    <Navbar.MenuItem title="Experiences" icon={<PaintBrushIcon />} />
+    <Navbar.MenuItem title="Media" icon={<ImageSquareIcon />} />
+    <Navbar.Submenu title="Apps" icon={<PuzzlePieceIcon />}>
+      <Navbar.MenuItem
+        title="App 1"
+        icon={
+          <img
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=32&h=32"
+            alt="app 1"
+          />
+        }
+      />
+      <Navbar.MenuItem title="App 2" />
+    </Navbar.Submenu>
+    <Menu.Submenu>
+      <Menu.SubmenuTrigger>Help</Menu.SubmenuTrigger>
+      <Menu.List>
+        <Navbar.MenuItem
+          as="a"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Help center"
+          testId="cf-ui-navbar-help-menu-help-center"
+          href={'https://www.contentful.com/help/'}
+        />
+        <Navbar.MenuItem
+          as="a"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Developer docs"
+          testId="cf-ui-navbar-help-menu-docs"
+          href="https://www.contentful.com/developers/docs/"
+        />
+        <Navbar.MenuItem
+          as="a"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Training courses"
+          testId="cf-ui-navbar-help-traning-center"
+          href="https://training.contentful.com"
+        />
+        <Navbar.MenuDivider />
+        <Navbar.MenuItem
+          as="a"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Get support"
+          testId="cf-ui-navbar-help-support"
+          href="https://support.contentful.com"
+        />
+      </Menu.List>
+    </Menu.Submenu>
+    <Menu.Submenu>
+      <Menu.SubmenuTrigger>Settings</Menu.SubmenuTrigger>
+      <Menu.List>
+        <Navbar.MenuSectionTitle>General</Navbar.MenuSectionTitle>
+        <Navbar.MenuItem title="Home" />
+        <Navbar.MenuItem title="API keys" />
+        <Navbar.MenuSectionTitle>Space</Navbar.MenuSectionTitle>
+        <Navbar.MenuItem title="Apps" />
+        <Navbar.MenuItem title="Permissions" />
+      </Menu.List>
+    </Menu.Submenu>
+    <Menu.Submenu>
+      <Menu.SubmenuTrigger>Account</Menu.SubmenuTrigger>
+      <Menu.List>
+        <Navbar.MenuItem title="Account settings" icon={<WrenchIcon />} />
+        <Navbar.MenuItem title="Dashboard" />
+        <Navbar.MenuDivider />
+        <Navbar.MenuItem
+          title="External link"
+          as="a"
+          href="https://www.contentful.com"
+          target="_blank"
+        />
+        <Navbar.MenuDivider />
+        <Navbar.MenuItem title="Log out" />
+      </Menu.List>
+    </Menu.Submenu>
+  </>
+);
+
 export const Complete: Story<{ initials?: string; avatar?: string }> = (
   args,
 ) => {
   return (
     <Navbar
       switcher={<Switcher />}
+      mobileNavigation={<MobileMenu />}
       mainNavigation={<MainItems />}
       account={
         <>
