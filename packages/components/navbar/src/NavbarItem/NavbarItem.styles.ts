@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
-import { getGlowOnFocusStyles } from '../utils.styles';
+import { getGlowOnFocusStyles, mqs } from '../utils.styles';
 
 export const getNavbarItemActiveStyles = () =>
   css({
@@ -22,7 +22,7 @@ const commonItemStyles = {
   gap: tokens.spacing2Xs,
 };
 
-export const getNavbarItemStyles = () => ({
+export const getNavbarItemStyles = ({ title }) => ({
   navbarItem: css(
     commonItemStyles,
     {
@@ -73,6 +73,12 @@ export const getNavbarItemStyles = () => ({
     paddingRight: tokens.spacingXs,
   }),
   isActive: getNavbarItemActiveStyles(),
+  icon: css({
+    display: !title ? 'block' : 'none',
+    [mqs.large]: {
+      display: 'block',
+    },
+  }),
 });
 
 export const getNavbarItemSkeletonStyles = () => ({

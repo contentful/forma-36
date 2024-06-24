@@ -291,8 +291,8 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
 ) => {
   return (
     <Navbar
-      switcher={<Switcher />}
       mobileNavigation={<MobileMenu />}
+      switcher={<Switcher />}
       mainNavigation={<MainItems />}
       account={
         <>
@@ -374,6 +374,7 @@ export const WithDifferentEnvironments: Story<{
         </SectionHeading>
 
         <Navbar
+          mobileNavigation={<MobileMenu />}
           mainNavigation={<MainItems />}
           switcher={<Switcher />}
           account={<Account {...args} />}
@@ -386,6 +387,7 @@ export const WithDifferentEnvironments: Story<{
         </SectionHeading>
 
         <Navbar
+          mobileNavigation={<MobileMenu />}
           mainNavigation={<MainItems />}
           switcher={<Switcher envVariant="non-master">development</Switcher>}
           account={<Account {...args} />}
@@ -398,6 +400,7 @@ export const WithDifferentEnvironments: Story<{
         </SectionHeading>
 
         <Navbar
+          mobileNavigation={<MobileMenu />}
           mainNavigation={<MainItems />}
           switcher={<Switcher isAlias />}
           account={<Account {...args} />}
@@ -410,6 +413,7 @@ export const WithDifferentEnvironments: Story<{
         </SectionHeading>
 
         <Navbar
+          mobileNavigation={<MobileMenu />}
           mainNavigation={<MainItems />}
           switcher={<Switcher isAlias envVariant="non-master"></Switcher>}
           account={<Account {...args} />}
@@ -437,6 +441,7 @@ export const WithAccountNotification: Story<{
         </SectionHeading>
 
         <Navbar
+          mobileNavigation={<MobileMenu />}
           switcher={<Switcher />}
           account={<Account {...args} hasNotification />}
           mainNavigation={<MainItems />}
@@ -449,6 +454,7 @@ export const WithAccountNotification: Story<{
         </SectionHeading>
 
         <Navbar
+          mobileNavigation={<MobileMenu />}
           switcher={<Switcher />}
           account={
             <Account {...args} hasNotification notificationVariant="negative" />
@@ -463,6 +469,7 @@ export const WithAccountNotification: Story<{
         </SectionHeading>
 
         <Navbar
+          mobileNavigation={<MobileMenu />}
           switcher={<Switcher />}
           account={
             <Account {...args} hasNotification notificationVariant="info" />
@@ -482,8 +489,9 @@ WithAccountNotification.args = {
 
 export const LoadingSkeleton: Story<{}> = () => {
   return (
-    <div style={{ width: '900px' }}>
+    <div>
       <Navbar
+        mobileNavigation={<MobileMenu />}
         account={<Navbar.AccountSkeleton ariaLabel="Loading account" />}
         switcher={
           <Navbar.Switcher>
