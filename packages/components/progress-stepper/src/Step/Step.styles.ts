@@ -95,7 +95,7 @@ export const getStyles = () => {
       borderRadius: '50%',
       backgroundColor: 'white',
       fontWeight: tokens.fontWeightDemiBold,
-      color: tokens.gray300,
+      color: tokens.gray600,
       '& svg': {
         height: '20px',
       },
@@ -123,7 +123,7 @@ export const getStyles = () => {
       borderColor: tokens.colorPrimary,
     }),
     disabled: css({
-      color: tokens.gray200,
+      color: tokens.gray500,
       borderColor: tokens.gray200,
     }),
     complete: css({
