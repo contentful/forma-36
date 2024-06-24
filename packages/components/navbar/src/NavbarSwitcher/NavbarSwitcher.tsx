@@ -67,7 +67,7 @@ function _NavbarSwitcher(
   } = props;
   const styles = getNavbarSwitcherStyles();
   const [start, middle, end] =
-    typeof children === 'string' ? splitSpaceName(children) : [undefined];
+    typeof children === 'string' ? splitSpaceName(children) : [];
 
   return (
     <Button
