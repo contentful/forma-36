@@ -8,6 +8,7 @@
   ],
   "ignore": [
     "@contentful/f36-layout",
+    "@contentful/f36-progress-stepper",
     "@contentful/f36-navlist",
     "@contentful/f36-website"
   ],
