@@ -7,21 +7,10 @@ import { getGlowOnFocusStyles } from '../utils.styles';
 export const getNavbarSwitcherStyles = () => ({
   navbarSwitcher: css(
     {
-      alignItems: 'center',
-      appearance: 'none',
-      background: 'none',
-      border: 'none',
-      borderRadius: tokens.borderRadiusMedium,
-      cursor: 'pointer',
-      display: 'flex',
       flexShrink: 1,
-      lineHeight: tokens.lineHeightS,
-      margin: 0,
       maxWidth: '100%',
-      outline: 'none',
+      minHeight: 'unset',
       padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
-      userSelect: 'none',
-      whiteSpace: 'nowrap',
       '&:hover': {
         backgroundColor: hexToRGBA(tokens.gray900, 0.05),
       },
@@ -38,20 +27,5 @@ export const getNavbarSwitcherStyles = () => ({
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
-  }),
-});
-
-export const getNavbarEnvVariantStyles = () => ({
-  envItemMaster: css({
-    color: tokens.green600,
-    svg: {
-      fill: tokens.green600,
-    },
-  }),
-  envItemNonMaster: css({
-    color: tokens.orange500,
-    svg: {
-      fill: tokens.orange500,
-    },
   }),
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavbarSwitcherProps } from '../NavbarSwitcher/NavbarSwitcher';
 import { EnvironmentAliasIcon, EnvironmentIcon } from '@contentful/f36-icons';
-import { getNavbarEnvVariantStyles } from './NavbarSwitcher.styles';
+import tokens from '@contentful/f36-tokens';
 
 export type NavbarEnvVariantProps = Pick<
   NavbarSwitcherProps,
@@ -12,19 +12,11 @@ export function NavbarEnvVariant({
   isAlias,
   envVariant,
 }: NavbarEnvVariantProps) {
-  const styles = getNavbarEnvVariantStyles();
+  const color = envVariant === 'master' ? tokens.green600 : tokens.orange500;
 
-  return (
-    <span
-      className={
-        envVariant === 'master' ? styles.envItemMaster : styles.envItemNonMaster
-      }
-    >
-      {isAlias ? (
-        <EnvironmentAliasIcon size="tiny" />
-      ) : (
-        <EnvironmentIcon size="tiny" />
-      )}
-    </span>
+  return isAlias ? (
+    <EnvironmentAliasIcon color={color} size="tiny" />
+  ) : (
+    <EnvironmentIcon color={color} size="tiny" />
   );
 }
