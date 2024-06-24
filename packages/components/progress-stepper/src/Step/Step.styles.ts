@@ -50,7 +50,7 @@ export const getStyles = () => {
         display: 'grid',
         gap: `0 ${tokens.spacingXs}`,
         gridTemplateColumns: '24px 1fr',
-        gridTemplateRows: '1fr 24px 1fr',
+        gridTemplateRows: '0fr 24px 1fr',
         gridTemplateAreas: `
         "divider-before ."
         "circle label"
@@ -83,12 +83,6 @@ export const getStyles = () => {
           gridArea: 'divider-after',
           justifySelf: 'center',
           width: '2px',
-        },
-        '&:first-child': {
-          gridTemplateRows: '0fr 24px 1fr',
-        },
-        '&:last-child': {
-          gridTemplateRows: '1fr 24px 0fr',
         },
         '&:first-child::before': { visibility: 'hidden' },
         '&:last-child::after': { visibility: 'hidden' },
