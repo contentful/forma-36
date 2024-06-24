@@ -85,7 +85,7 @@ function _NavbarSwitcher(
     >
       <Flex
         alignItems="center"
-        className={cx(styles.switcherSpaceName)}
+        className={styles.switcherSpaceName}
         flexDirection="row"
       >
         {start !== undefined ? (

@@ -19,7 +19,10 @@ export const getNavbarSwitcherStyles = () => ({
   ),
 
   switcherSpaceName: css({
-    minWidth: '12ch',
+    // Set min-width only when there are three span children
+    '&:has(> span:last-child:nth-child(3))': {
+      minWidth: '12ch',
+    },
   }),
 
   switcherSpaceNameTruncation: css({
