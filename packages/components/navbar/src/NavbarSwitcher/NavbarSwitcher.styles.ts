@@ -7,7 +7,9 @@ import { getGlowOnFocusStyles } from '../utils.styles';
 export const getNavbarSwitcherStyles = () => ({
   navbarSwitcher: css(
     {
+      color: tokens.gray600,
       flexShrink: 1,
+      fontWeight: tokens.fontWeightMedium,
       maxWidth: '100%',
       minHeight: 'unset',
       padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
