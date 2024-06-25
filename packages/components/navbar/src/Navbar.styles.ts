@@ -15,10 +15,10 @@ export const getNavbarStyles = (maxWidth: string, variant: string) => ({
   navigation: css({
     width: '100%',
     maxWidth: variant === 'wide' ? '1524px' : maxWidth,
-    padding: tokens.spacingXs,
+    padding: `${tokens.spacingS} ${tokens.spacingM}`,
     minHeight: tokens.spacingL,
     [mqs.medium]: {
-      padding: `${tokens.spacingXs} 20px`,
+      padding: `${tokens.spacingM} ${tokens.spacingL}`,
     },
   }),
 });
