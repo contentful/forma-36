@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { NavbarAccountProps } from './NavbarAccount';
-import { getGlowOnFocusStyles } from '../utils.styles';
+import { getGlowOnFocusStyles, increaseHitArea } from '../utils.styles';
 import { hexToRGBA } from '@contentful/f36-utils';
 
 const notificationVarianColorMap: Record<
@@ -40,6 +40,7 @@ export const getNavbarAccountStyles = () => ({
       }),
     },
     getGlowOnFocusStyles(),
+    increaseHitArea(),
   ),
   avatar: css({
     borderRadius: '50%',
