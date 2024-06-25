@@ -23,11 +23,12 @@ export default {
 } as Meta;
 
 const Switcher = ({
+  children = 'Our super long space name',
   isAlias = false,
   envVariant = 'master',
 }: Partial<NavbarSwitcherProps>) => (
   <Navbar.Switcher isAlias={isAlias} envVariant={envVariant}>
-    Our super long space name
+    {children}
   </Navbar.Switcher>
 );
 
@@ -187,6 +188,16 @@ export const WithFallbackAvatar: Story<{}> = (args) => {
 };
 
 WithFallbackAvatar.args = {};
+
+export const WithShortSpaceName = () => {
+  return (
+    <Navbar
+      mainNavigation={<MainItems />}
+      switcher={<Switcher>Space</Switcher>}
+      account={<Account />}
+    />
+  );
+};
 
 export const Complete: Story<{ initials?: string; avatar?: string }> = (
   args,
