@@ -78,19 +78,15 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
           )}
         </Flex>
         <Flex alignItems="center" gap="spacingXs">
-          <Flex alignItems="center">{switcher}</Flex>
-          <Flex alignItems="center" gap="spacingXs">
-            {secondaryNavigation && (
-              <Flex aria-label="Secondary Navigation">
-                {secondaryNavigation}
-              </Flex>
-            )}
-            {account && (
-              <Flex aria-label="Account Navigation" gap="spacingXs">
-                {account}
-              </Flex>
-            )}
-          </Flex>
+          {switcher}
+          {secondaryNavigation && (
+            <Flex aria-label="Secondary Navigation">{secondaryNavigation}</Flex>
+          )}
+          {account && (
+            <Flex aria-label="Account Navigation" gap="spacingXs">
+              {account}
+            </Flex>
+          )}
         </Flex>
       </Flex>
     </Flex>
