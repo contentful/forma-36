@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
-import { getGlowOnFocusStyles } from '../utils.styles';
+import { getGlowOnFocusStyles, increaseHitArea } from '../utils.styles';
 
 export const getNavbarItemActiveStyles = () =>
   css({
@@ -44,6 +44,7 @@ export const getNavbarItemStyles = () => ({
       boxSizing: 'border-box',
       transition: `color ${tokens.transitionDurationShort} ${tokens.transitionEasingCubicBezier}`,
       borderRadius: tokens.borderRadiusMedium,
+      minWidth: '44px',
 
       '&:hover': {
         backgroundColor: hexToRGBA(tokens.gray900, 0.05),
@@ -69,6 +70,7 @@ export const getNavbarItemStyles = () => ({
       },
     },
     getGlowOnFocusStyles(),
+    increaseHitArea(),
   ),
   navbarItemMenuTrigger: css({
     paddingRight: tokens.spacingXs,
