@@ -1,5 +1,6 @@
 import React, { type ReactNode } from 'react';
 import { getNavbarSwitcherStyles } from './NavbarSwitcher.styles';
+import { Button } from '@contentful/f36-button';
 import {
   Flex,
   type CommonProps,
@@ -66,23 +67,25 @@ function _NavbarSwitcher(
   } = props;
   const styles = getNavbarSwitcherStyles();
   const [start, middle, end] =
-    typeof children === 'string' ? splitSpaceName(children) : [undefined];
+    typeof children === 'string' ? splitSpaceName(children) : [];
 
   return (
-    <Flex
+    <Button
       {...otherProps}
-      alignItems="center"
       aria-label="Space and Environment Navigation"
-      as="button"
       className={cx(styles.navbarSwitcher, className)}
-      fullHeight
-      gap="spacing2Xs"
+      endIcon={
+        envVariant && (
+          <NavbarEnvVariant envVariant={envVariant} isAlias={isAlias} />
+        )
+      }
       ref={ref}
       testId={testId}
+      variant="transparent"
     >
       <Flex
         alignItems="center"
-        className={cx(styles.switcherSpaceName)}
+        className={styles.switcherSpaceName}
         flexDirection="row"
       >
         {start !== undefined ? (
@@ -99,11 +102,7 @@ function _NavbarSwitcher(
           children
         )}
       </Flex>
-
-      {envVariant && (
-        <NavbarEnvVariant envVariant={envVariant} isAlias={isAlias} />
-      )}
-    </Flex>
+    </Button>
   );
 }
 
