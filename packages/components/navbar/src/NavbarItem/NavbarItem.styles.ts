@@ -26,6 +26,7 @@ export const getNavbarItemStyles = ({ title }) => ({
   navbarItem: css(
     commonItemStyles,
     {
+      appearance: 'none',
       background: 'none',
       border: '1px solid transparent',
       margin: 0,
