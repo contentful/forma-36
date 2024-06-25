@@ -24,7 +24,7 @@ export const getGlowOnFocusStyles = (
 });
 
 export const increaseHitArea = (minSize = '44px'): CSSObject => ({
-  overflow: 'initial',
+  overflow: 'visible',
   position: 'relative',
   '&:after': {
     minHeight: minSize,
