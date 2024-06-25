@@ -9,7 +9,7 @@ metadata:
   annotations:
     github.com/project-slug: contentful/forma-36 
     contentful.com/service-tier: "4"
-    contentful.com/ci-alert-slack: prd-apps-isotopes-alerts
+    contentful.com/ci-alert-slack: prd-creators-isotopes-alerts
   tags:
     - react
     - typescript
