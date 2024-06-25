@@ -358,7 +358,69 @@ Complete.args = {
   avatar:
     'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=100&h=100',
 };
-Complete.parameters = {
+
+export const WithResponsiveness: Story<{
+  initials?: string;
+  avatar?: string;
+}> = (args) => {
+  return (
+    <Navbar
+      mobileNavigation={<MobileMenu />}
+      switcher={<Switcher />}
+      mainNavigation={<MainItems />}
+      account={<Account {...args} />}
+      secondaryNavigation={
+        <>
+          <Navbar.Item label="Quick Search" icon={<MagnifyingGlassIcon />} />
+          <Navbar.Item label="Help Menu" icon={<QuestionIcon />}>
+            <Navbar.MenuItem
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Help center"
+              testId="cf-ui-navbar-help-menu-help-center"
+              href={'https://www.contentful.com/help/'}
+            />
+            <Navbar.MenuItem
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Developer docs"
+              testId="cf-ui-navbar-help-menu-docs"
+              href="https://www.contentful.com/developers/docs/"
+            />
+            <Navbar.MenuItem
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Training courses"
+              testId="cf-ui-navbar-help-traning-center"
+              href="https://training.contentful.com"
+            />
+            <Navbar.MenuDivider />
+            <Navbar.MenuItem
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Get support"
+              testId="cf-ui-navbar-help-support"
+              href="https://support.contentful.com"
+            />
+          </Navbar.Item>
+          <Navbar.Item label="Menu Settings" icon={<GearSixIcon />}>
+            <Navbar.MenuSectionTitle>General</Navbar.MenuSectionTitle>
+            <Navbar.MenuItem title="Home" />
+            <Navbar.MenuItem title="API keys" />
+            <Navbar.MenuSectionTitle>Space</Navbar.MenuSectionTitle>
+            <Navbar.MenuItem title="Apps" />
+            <Navbar.MenuItem title="Permissions" />
+          </Navbar.Item>
+        </>
+      }
+    />
+  );
+};
+WithResponsiveness.parameters = {
   layout: 'fullscreen',
 };
 
