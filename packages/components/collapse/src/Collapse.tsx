@@ -33,6 +33,7 @@ export const Collapse = ({
 }: CollapseProps) => {
   const panelEl = useRef<HTMLDivElement>(null);
   const styles = getCollapseStyles({ className });
+  const isMounted = useRef(false);
 
   const getPanelContentHeight = () => {
     const { current } = panelEl;
@@ -61,6 +62,20 @@ export const Collapse = ({
     };
 
     if (current) {
+      // Don't animate on first render
+      if (isMounted.current) {
+        current.style.removeProperty('transition');
+      } else {
+        current.style.setProperty('transition', 'height 0s, padding 0s');
+        if (!isExpanded) {
+          current.style.setProperty('height', '0px');
+        } else {
+          current.style.setProperty('display', 'block');
+          current.style.setProperty('height', 'auto');
+        }
+        isMounted.current = true;
+      }
+
       current.addEventListener('transitionend', handleTransitionEnd);
       requestAnimationFrame(function () {
         if (!isExpanded) {
