@@ -1,10 +1,10 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
 import {
   Box,
   type CommonProps,
   type PropsWithHTMLElement,
 } from '@contentful/f36-core';
-
+import tokens from '@contentful/f36-tokens';
 import { getCollapseStyles } from './Collapse.styles';
 
 interface CollapseInternalProps extends CommonProps {
@@ -47,54 +47,58 @@ export const Collapse = ({
     return `${current.scrollHeight}px`;
   };
 
+  const handleTransitionEnd = () => {
+    const { current } = panelEl;
+    if (isExpanded) {
+      current?.style.setProperty('height', 'auto');
+    } else {
+      current?.style.removeProperty('pointer-events');
+      current?.style.setProperty('display', 'none');
+    }
+  };
+
   useLayoutEffect(() => {
     const { current } = panelEl;
+    // We only want to call requestAnimationFrame after the initial render when the component is mounted
+    if (isMounted.current) {
+      // We set the transition property after the first render
+      // to avoid animating the initial render
+      current?.style.setProperty(
+        'transition',
+        `height ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, padding ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
+      );
 
-    const handleTransitionEnd = () => {
-      if (current) {
-        if (isExpanded) {
-          current.style.setProperty('height', 'auto');
-        } else {
-          current.style.removeProperty('pointer-events');
-          current.style.setProperty('display', 'none');
-        }
-      }
-    };
-
-    if (current) {
-      // Don't animate on first render
-      if (isMounted.current) {
-        current.style.removeProperty('transition');
-      } else {
-        current.style.setProperty('transition', 'height 0s, padding 0s');
-        isMounted.current = true;
-      }
-
-      current.addEventListener('transitionend', handleTransitionEnd);
       requestAnimationFrame(function () {
-        if (!isExpanded) {
-          // Don't allow interaction while collapsing
-          current.style.setProperty('pointer-events', 'none');
-        } else {
+        if (isExpanded) {
           // Overwrite none display to see expanding transition
-          current.style.setProperty('display', 'block');
-          current.style.removeProperty('pointer-events');
+          current?.style.setProperty('display', 'block');
+          current?.style.removeProperty('pointer-events');
+        } else {
+          // Don't allow interaction while collapsing
+          current?.style.setProperty('pointer-events', 'none');
         }
         // Calculate panel height after removing none display
         const fromHeight = isExpanded ? '0px' : getPanelContentHeight();
         const toHeight = isExpanded ? getPanelContentHeight() : '0px';
-        current.style.setProperty('height', fromHeight);
+        current?.style.setProperty('height', fromHeight);
 
         requestAnimationFrame(function () {
-          current.style.setProperty('height', toHeight);
+          current?.style.setProperty('height', toHeight);
         });
       });
+    } else {
+      // We call the handleTransitionEnd on mount to set the correct initial styles
+      handleTransitionEnd();
+      isMounted.current = true;
     }
+  }, [isExpanded]);
 
+  useEffect(() => {
+    const { current } = panelEl;
+
+    current?.addEventListener('transitionend', handleTransitionEnd);
     return () => {
-      if (current) {
-        current.removeEventListener('transitionend', handleTransitionEnd);
-      }
+      current?.removeEventListener('transitionend', handleTransitionEnd);
     };
   }, [isExpanded]);
 
