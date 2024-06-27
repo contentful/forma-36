@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import type { Story } from '@storybook/react/types-6-0';
 import { Stack } from '@contentful/f36-core';
 import { SectionHeading, Text } from '@contentful/f36-typography';
@@ -14,7 +14,7 @@ export default {
   argTypes: {
     children: { control: { disable: true } },
     className: { control: { disable: true } },
-    isExpanded: { control: { type: 'checkbox' } },
+    isExpanded: { control: 'boolean' },
   },
 };
 
@@ -23,8 +23,11 @@ eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 enim ad minim veniam, quis nostrud exercitation ullamco laboris
 nisi ut aliquip ex ea commodo consequat.`;
 
-export const Basic: Story<CollapseProps> = () => {
-  const [isExpanded, setIsExpanded] = useState(true);
+export const Basic: Story<CollapseProps> = (args) => {
+  const [isExpanded, setIsExpanded] = useState(args.isExpanded);
+  useEffect(() => {
+    setIsExpanded(args.isExpanded);
+  }, [args.isExpanded]);
 
   return (
     <Stack flexDirection="column">
@@ -42,4 +45,31 @@ export const Basic: Story<CollapseProps> = () => {
       </Collapse>
     </Stack>
   );
+};
+
+export const Expanded: Story<CollapseProps> = (args) => {
+  const [isExpanded, setIsExpanded] = useState(args.isExpanded);
+  useEffect(() => {
+    setIsExpanded(args.isExpanded);
+  }, [args.isExpanded]);
+
+  return (
+    <Stack flexDirection="column">
+      <Button
+        onClick={() => setIsExpanded(!isExpanded)}
+        aria-label={`${isExpanded ? 'Collapse' : 'Expand'} foo content`}
+        aria-controls="collapsible-foo"
+        aria-expanded={isExpanded}
+      >
+        Toggle content
+      </Button>
+      <Collapse id="collapsible-foo" isExpanded={isExpanded}>
+        <SectionHeading>Collapsable Element</SectionHeading>
+        <Text>{defaultText}</Text>
+      </Collapse>
+    </Stack>
+  );
+};
+Expanded.args = {
+  isExpanded: true,
 };
