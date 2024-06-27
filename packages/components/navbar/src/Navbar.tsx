@@ -1,34 +1,39 @@
-import {
-  Box,
-  type CommonProps,
-  type ExpandProps,
-  Flex,
-} from '@contentful/f36-core';
+import { type CommonProps, type ExpandProps, Flex } from '@contentful/f36-core';
 import React from 'react';
 import { getNavbarStyles } from './Navbar.styles';
+import { ContentfulLogoIcon } from './icons';
+import { cx } from 'emotion';
 
 type NavbarOwnProps = CommonProps & {
-  children?: React.ReactNode;
-  account?: React.ReactNode;
-  search?: React.ReactNode;
+  /**
+   * Accepts a React Component that will be displayed
+   * instead of the Contentful Logo
+   */
+  logo?: React.ReactNode;
+
+  /** Environment Switcher component */
   switcher?: React.ReactNode;
-  help?: React.ReactNode;
-  badge?: React.ReactNode;
-  /**
-   * Items that will be rendered on the bottom-right of the navbar.
-   * Useful for separating other navigation items from main ones, (e.g. separating "Settings" from all other navigation items).
-   */
-  bottomRightItems?: React.ReactNode;
-  /**
-   * Items that will be rendered on the top-right of the navbar.
-   * Useful for providing additional context or actions to the user (e.g. a Feedback form link).
-   */
-  topRightItems?: React.ReactNode;
+
+  /** Main Navigation Elements */
+  mainNavigation?: React.ReactNode;
+
+  /** Secondary Navigation Elements, displayed in the right side */
+  secondaryNavigation?: React.ReactNode;
+
+  /** User Account Component  */
+  account?: React.ReactNode;
+
   /**
    * Defines the max-width of the content inside the navbar.
    * @default '100%'
    */
   contentMaxWidth?: string;
+
+  /**
+   * Describes the size variation of the Navbar
+   * Variant wide will set the contentMaxWidth to 1524px
+   */
+  variant?: 'wide' | 'fullscreen';
 };
 
 // expose only the HTML props that are needed to not pollute the API
@@ -38,50 +43,53 @@ export type NavbarProps = NavbarHTMLElementProps & NavbarOwnProps;
 
 function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
   const {
-    children,
-    account,
-    search,
+    logo,
     switcher,
-    help,
-    badge,
-    bottomRightItems,
-    topRightItems,
+    mainNavigation,
+    secondaryNavigation,
+    account,
+    className,
     contentMaxWidth = '100%',
     testId = 'cf-ui-navbar',
+    variant = 'wide',
     ...otherProps
   } = props;
-  const styles = getNavbarStyles(contentMaxWidth);
+  const styles = getNavbarStyles(contentMaxWidth, variant);
 
   return (
-    <Box {...otherProps} ref={ref} testId={testId}>
-      <Flex className={styles.containerTop}>
-        <Flex
-          className={styles.containerTopContent}
-          justifyContent="space-between"
-        >
-          <Flex>{switcher}</Flex>
-          <Flex alignItems="center" gap="spacingXs">
-            {topRightItems}
-            {badge}
-            {search}
-            {help}
-            {account}
-          </Flex>
+    <Flex
+      {...otherProps}
+      ref={ref}
+      testId={testId}
+      className={cx(styles.container, className)}
+      as="header"
+    >
+      <Flex
+        as="nav"
+        className={styles.navigation}
+        justifyContent="space-between"
+      >
+        <Flex alignItems="center" gap="spacingL">
+          {logo || <ContentfulLogoIcon className={styles.logo} />}
+          {mainNavigation && (
+            <Flex aria-label="Main Navigation" gap="spacingXs">
+              {mainNavigation}
+            </Flex>
+          )}
+        </Flex>
+        <Flex alignItems="center" gap="spacingXs">
+          {switcher}
+          {secondaryNavigation && (
+            <Flex aria-label="Secondary Navigation">{secondaryNavigation}</Flex>
+          )}
+          {account && (
+            <Flex aria-label="Account Navigation" gap="spacingXs">
+              {account}
+            </Flex>
+          )}
         </Flex>
       </Flex>
-
-      <Flex className={styles.containerBottom}>
-        <Flex
-          className={styles.containerBottomContent}
-          justifyContent="space-between"
-        >
-          <Flex as="nav" aria-label="Main Navigation" alignItems="stretch">
-            {children}
-          </Flex>
-          {bottomRightItems && <Flex>{bottomRightItems}</Flex>}
-        </Flex>
-      </Flex>
-    </Box>
+    </Flex>
   );
 }
 

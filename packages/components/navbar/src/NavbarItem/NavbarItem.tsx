@@ -6,7 +6,7 @@ import {
   NavbarItemIcon,
   type NavbarItemIconProps,
 } from '../NavbarItemIcon/NavbarItemIcon';
-import { ArrowDownIcon } from '../icons';
+import { CaretIcon } from '../icons';
 import type {
   CommonProps,
   ExpandProps,
@@ -17,7 +17,8 @@ import type {
 const NAVBAR_ITEM_DEFAULT_TAG = 'button';
 
 type NavbarItemTriggerProps = CommonProps & {
-  title: string;
+  label?: string;
+  title?: string;
   icon?: NavbarItemIconProps['icon'];
   isActive?: boolean;
   as?: React.ElementType;
@@ -45,6 +46,7 @@ function _NavbarItem(
   const {
     as: Comp = NAVBAR_ITEM_DEFAULT_TAG,
     icon,
+    label,
     title,
     children,
     className,
@@ -55,23 +57,27 @@ function _NavbarItem(
     ...otherProps
   } = props;
   const styles = getNavbarItemStyles();
-
+  const isMenuTrigger = isNavbarItemHasMenu(props);
   const item = (
     <Comp
       {...otherProps}
       ref={ref}
       data-test-id={testId}
-      className={cx(styles.root, isActive && styles.isActive, className)}
-    >
-      {icon ? <NavbarItemIcon icon={icon} variant="white" /> : null}
-      <span>{title}</span>
-      {isNavbarItemHasMenu(props) && (
-        <ArrowDownIcon className={styles.dropdownIcon} />
+      className={cx(
+        styles.navbarItem,
+        isMenuTrigger && styles.navbarItemMenuTrigger,
+        isActive && styles.isActive,
+        className,
       )}
+      aria-label={title ? '' : label}
+    >
+      {icon && <NavbarItemIcon icon={icon} isActive={isActive} />}
+      {title && <span>{title}</span>}
+      {title && isMenuTrigger && <CaretIcon size="tiny" isActive={isActive} />}
     </Comp>
   );
 
-  if (isNavbarItemHasMenu(props)) {
+  if (isMenuTrigger) {
     return (
       <NavbarMenu
         trigger={item}

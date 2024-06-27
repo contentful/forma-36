@@ -18,6 +18,7 @@ import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
 import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
 import * as f36icons from '@contentful/f36-icons';
+import * as f36iconsAlpha from '@contentful/f36-icons-alpha';
 import { ExternalLinkIcon } from '@contentful/f36-icons';
 import { theme } from './theme';
 import { formatSourceCode } from './utils';
@@ -38,6 +39,7 @@ const liveProviderScope = {
   ...f36Components,
   ...f36icons,
   ...f36utils,
+  ...f36iconsAlpha, // Remove when new icons are not in alpha
   Layout, // Remove when added to f36-components
   Multiselect, // Remove when added to f36-components
   NavList, // Remove when added to f36-components
