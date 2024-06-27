@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ProgressStepper, StepProps } from '../src';
+import { ProgressStepper } from '../src';
 import { Button } from '@contentful/f36-components';
 
 export default function ProgressStepperBasicExample() {
@@ -20,9 +20,7 @@ export default function ProgressStepperBasicExample() {
         stepProps['variant'] = 'complete';
       }
 
-      return (
-        <ProgressStepper.Step key={step.title} {...(stepProps as StepProps)} />
-      );
+      return <ProgressStepper.Step key={step.title} {...stepProps} />;
     });
   };
 

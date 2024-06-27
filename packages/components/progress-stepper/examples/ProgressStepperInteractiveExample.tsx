@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ProgressStepper } from '@contentful/f36-progress-stepper';
 import { Button, Flex } from '@contentful/f36-components';
-import { StepProps } from '../src';
 
 export default function ProgressStepperInteractiveExample() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -27,9 +26,7 @@ export default function ProgressStepperInteractiveExample() {
         stepProps['variant'] = 'complete';
       }
 
-      return (
-        <ProgressStepper.Step key={step.title} {...(stepProps as StepProps)} />
-      );
+      return <ProgressStepper.Step key={step.title} {...stepProps} />;
     });
   };
 
