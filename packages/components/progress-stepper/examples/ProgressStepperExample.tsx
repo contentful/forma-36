@@ -20,7 +20,9 @@ export default function ProgressStepperBasicExample() {
         stepProps['variant'] = 'complete';
       }
 
-      return <ProgressStepper.Step key={step.title} {...stepProps} />;
+      return (
+        <ProgressStepper.Step key={step.title} {...(stepProps as StepProps)} />
+      );
     });
   };
 
