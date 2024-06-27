@@ -67,12 +67,6 @@ export const Collapse = ({
         current.style.removeProperty('transition');
       } else {
         current.style.setProperty('transition', 'height 0s, padding 0s');
-        if (!isExpanded) {
-          current.style.setProperty('height', '0px');
-        } else {
-          current.style.setProperty('display', 'block');
-          current.style.setProperty('height', 'auto');
-        }
         isMounted.current = true;
       }
 
