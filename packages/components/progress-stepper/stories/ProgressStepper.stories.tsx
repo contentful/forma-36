@@ -14,7 +14,7 @@ const getContainerStyle = (orientation: ProgressStepperProps['orientation']) =>
 export const Basic: Story<ProgressStepperProps> = (args) => {
   return (
     <div style={getContainerStyle(args.orientation)}>
-      <ProgressStepper stepStyle="number" activeStep={3} {...args}>
+      <ProgressStepper stepStyle="number" activeStep={2} {...args}>
         <ProgressStepper.Step variant="complete" />
         <ProgressStepper.Step variant="complete" />
         <ProgressStepper.Step variant="active" />
@@ -28,7 +28,7 @@ export const Basic: Story<ProgressStepperProps> = (args) => {
 export const BasicWithLabels: Story<ProgressStepperProps> = (args) => {
   return (
     <div style={getContainerStyle(args.orientation)}>
-      <ProgressStepper stepStyle="number" activeStep={3} {...args}>
+      <ProgressStepper stepStyle="number" activeStep={2} {...args}>
         <ProgressStepper.Step variant="complete" labelText="Label 1" />
         <ProgressStepper.Step variant="complete" labelText="Label 2" />
         <ProgressStepper.Step variant="active" labelText="Label 3" />
@@ -42,7 +42,7 @@ export const BasicWithLabels: Story<ProgressStepperProps> = (args) => {
 export const IconStepVariants: Story<ProgressStepperProps> = (args) => {
   return (
     <div style={getContainerStyle(args.orientation)}>
-      <ProgressStepper stepStyle="icon" activeStep={1} {...args}>
+      <ProgressStepper stepStyle="icon" activeStep={0} {...args}>
         <ProgressStepper.Step variant="active" labelText="Active" />
         <ProgressStepper.Step variant="complete" labelText="Complete" />
         <ProgressStepper.Step labelText="Incomplete" />
@@ -57,7 +57,7 @@ export const IconStepVariants: Story<ProgressStepperProps> = (args) => {
 export const NumberStepVariants: Story<ProgressStepperProps> = (args) => {
   return (
     <div style={getContainerStyle(args.orientation)}>
-      <ProgressStepper stepStyle="number" activeStep={1} {...args}>
+      <ProgressStepper stepStyle="number" activeStep={0} {...args}>
         <ProgressStepper.Step variant="active" labelText="Active" />
         <ProgressStepper.Step variant="complete" labelText="Complete" />
         <ProgressStepper.Step labelText="Incomplete" />

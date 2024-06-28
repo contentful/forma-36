@@ -10,7 +10,7 @@ export default function ProgressStepperVerticalLabelExample() {
         justifyContent: 'center',
       }}
     >
-      <ProgressStepper activeStep={3} orientation="vertical">
+      <ProgressStepper activeStep={2} orientation="vertical">
         <ProgressStepper.Step variant="complete" labelText="Label 1" />
         <ProgressStepper.Step variant="complete" labelText="Label 2" />
         <ProgressStepper.Step variant="active" labelText="Label 3" />
