@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 28-06-2024
+
+**F36 Collapse** `v4.67.1`
+
+- Fix issue on Collapse with animating and flashing on initial render
+
 ## 11-06-2024
 
 **F36 Card** `v4.67.0`
