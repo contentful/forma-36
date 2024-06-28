@@ -436,3 +436,76 @@ export const WithSelectAll = () => {
     </Stack>
   );
 };
+
+export const WithClearAll = () => {
+  const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
+
+  const handleSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked, value } = event.target;
+    const currentFruit = produce.find((fruit) => fruit.value === value);
+    if (checked) {
+      setSelectedFruits((prevState) => [...prevState, currentFruit.name]);
+    } else {
+      //its important to use prevState to avoid race conditions when using the state variable as reference.
+      setSelectedFruits((prevState) => {
+        return prevState.filter((fruit) => fruit !== currentFruit.name);
+      });
+    }
+  };
+
+  const toggleAll = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked } = event.target;
+    if (checked) {
+      const newSelection = produce.map((fruit) => fruit.name);
+      setSelectedFruits(newSelection);
+    } else {
+      setSelectedFruits([]);
+    }
+  };
+
+  const handleClearSelection = () => {
+    setSelectedFruits([]);
+  };
+
+  const areAllSelected = React.useMemo(() => {
+    return produce.every((element) => selectedFruits.includes(element.name));
+  }, [selectedFruits]);
+
+  return (
+    <Stack
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+      style={{ width: '250px' }}
+    >
+      <Multiselect
+        placeholder="Select many fruits"
+        currentSelection={selectedFruits}
+        onClearSelection={handleClearSelection}
+      >
+        <div>
+          <SectionHeading marginLeft="spacingXs" marginBottom="spacingXs">
+            Shopping List
+          </SectionHeading>
+          <Multiselect.SelectAll
+            onSelectItem={toggleAll}
+            isChecked={areAllSelected}
+          />
+          {produce.map((item) => {
+            return (
+              <Multiselect.Option
+                value={item.value}
+                label={item.name}
+                onSelectItem={handleSelectItem}
+                key={`key-${item.id}`}
+                itemId={`id-${item.id}`}
+                isChecked={selectedFruits.includes(item.name)}
+                isDisabled={item.isDisabled}
+              />
+            );
+          })}
+        </div>
+      </Multiselect>
+    </Stack>
+  );
+};

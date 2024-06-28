@@ -10,12 +10,16 @@ export const getMultiselectStyles = () => ({
     justifyContent: 'space-between',
   }),
   currentSelection: css({
-    width: '50%',
+    display: 'inline-block',
+    width: '100%',
     whiteSpace: 'nowrap',
     textOverflow: 'ellipsis',
     overflow: 'hidden',
     verticalAlign: 'bottom',
     marginRight: tokens.spacing2Xs,
+  }),
+  currentSelectionWithClearButton: css({
+    paddingRight: '40px',
   }),
   currentSelectionAddition: css({
     color: tokens.gray600,
@@ -68,6 +72,11 @@ export const getMultiselectStyles = () => ({
     color: tokens.gray500,
     margin: tokens.spacingM,
     textAlign: 'center',
+  }),
+  clearSelectionButton: css({
+    position: 'absolute',
+    right: '40px',
+    top: '0',
   }),
   selectAll: css({
     borderBottom: `1px solid ${tokens.gray200}`,
