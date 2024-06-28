@@ -95,7 +95,7 @@ export function SandpackRenderer({
           'react-dom': '^17.0.0',
           'react-scripts': '^4.0.0',
           '@contentful/f36-components': '^4.0.0',
-          '@contentful/f36-layout': '^4.0.0-alpha.0', // Remove when added to f36-components
+          '@contentful/f36-layout': '4.0.0-alpha.1', // Remove when added to f36-components
           '@contentful/f36-multiselect': '^4.0.0', // Remove when added to f36-components
           '@contentful/f36-navlist': '^4.1.0-alpha.0', // Remove when added to f36-components
           '@contentful/f36-progress-stepper': '^4.0.0-alpha.4', // Remove when added to f36-components
