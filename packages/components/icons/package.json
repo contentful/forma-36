@@ -31,8 +31,8 @@
     "build:dual": "tsc -p . && tsc -p ./tsconfig.cjs.json && tsconfig-to-dual-package"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.63.0",
-    "@contentful/f36-icon-alpha": "npm:@contentful/f36-icon@alpha",
+    "@contentful/f36-core": "^4.67.1",
+    "@contentful/f36-icon-alpha": "npm:@contentful/f36-icon@5.0.0-alpha.20",
     "@contentful/f36-tokens": "^4.0.1",
     "@phosphor-icons/react": "^2.1.4",
     "emotion": "^10.0.17"
