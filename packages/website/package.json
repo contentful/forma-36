@@ -18,7 +18,7 @@
     "@contentful/f36-icon": "^4.67.1",
     "@contentful/f36-icons": "^4.28.2",
     "@contentful/f36-image": "4.67.1",
-    "@contentful/f36-layout": "^4.0.0-alpha.0",
+    "@contentful/f36-layout": "^4.0.0-alpha.1",
     "@contentful/f36-multiselect": "^4.23.1",
     "@contentful/f36-navlist": "4.1.0-alpha.1",
     "@contentful/f36-tokens": "^4.0.5",
