@@ -3,7 +3,7 @@ import { ProgressStepper } from '@contentful/f36-progress-stepper';
 
 export default function ProgressStepperIconExample() {
   return (
-    <ProgressStepper activeStep={1} stepStyle="icon">
+    <ProgressStepper activeStep={0} stepStyle="icon">
       <ProgressStepper.Step variant="active" labelText="Active" />
       <ProgressStepper.Step variant="complete" labelText="Complete" />
       <ProgressStepper.Step labelText="Incomplete" />

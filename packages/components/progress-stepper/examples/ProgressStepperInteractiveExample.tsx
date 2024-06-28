@@ -3,30 +3,43 @@ import { ProgressStepper } from '@contentful/f36-progress-stepper';
 import { Button, Flex } from '@contentful/f36-components';
 
 export default function ProgressStepperInteractiveExample() {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0);
 
   const steps = [
-    { title: 'Step 1' },
-    { title: 'Step 2' },
-    { title: 'Step 3' },
-    { title: 'Step 4' },
-    { title: 'Step 5' },
+    { label: 'Step 1' },
+    { label: 'Step 2' },
+    { label: 'Step 3' },
+    { label: 'Step 4' },
+    { label: 'Step 5' },
   ];
 
   const getSteps = () => {
     return steps.map((step, index) => {
-      const stepProps = {
-        labelText: step.title,
-        variant: 'incomplete',
-      };
-
-      if (index + 1 === currentStep) {
-        stepProps['variant'] = 'active';
-      } else if (index + 1 < currentStep) {
-        stepProps['variant'] = 'complete';
+      if (index === currentStep) {
+        return (
+          <ProgressStepper.Step
+            key={step.label}
+            variant="active"
+            labelText={step.label}
+          />
+        );
+      } else if (index < currentStep) {
+        return (
+          <ProgressStepper.Step
+            key={step.label}
+            variant="complete"
+            labelText={step.label}
+          />
+        );
       }
 
-      return <ProgressStepper.Step key={step.title} {...stepProps} />;
+      return (
+        <ProgressStepper.Step
+          key={step.label}
+          variant="incomplete"
+          labelText={step.label}
+        />
+      );
     });
   };
 
@@ -38,13 +51,13 @@ export default function ProgressStepperInteractiveExample() {
       <Flex marginTop="spacingM" gap="spacingXs">
         <Button
           onClick={() => setCurrentStep(currentStep - 1)}
-          isDisabled={currentStep <= 1}
+          isDisabled={currentStep === 0}
         >
           Previous Step
         </Button>
         <Button
           onClick={() => setCurrentStep(currentStep + 1)}
-          isDisabled={currentStep > steps.length}
+          isDisabled={currentStep > steps.length - 1}
         >
           Next Step
         </Button>

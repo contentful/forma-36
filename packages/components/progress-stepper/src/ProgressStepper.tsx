@@ -42,7 +42,7 @@ function _ProgressStepper(
         stepStyle,
         activeStep,
         key: `steps-rendered-${index}`,
-        stepNumber: index + 1,
+        stepNumber: index,
       });
       return stepChild;
     });

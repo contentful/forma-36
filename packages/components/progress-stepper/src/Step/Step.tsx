@@ -51,11 +51,12 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
 
   const isBeforeActiveStep = stepNumber < activeStep;
   const isActiveStep = stepNumber === activeStep;
+  const stepNumberToDisplay = stepNumber + 1;
 
   const renderStep = () => {
     switch (true) {
       case stepStyle === 'number':
-        return stepNumber;
+        return stepNumberToDisplay;
       case variant === 'complete':
         return <DoneIcon size="tiny" variant="white" />;
       case variant === 'error':
@@ -76,7 +77,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
       }
       ref={ref}
       data-test-id={`cf-ui-step-${variant}`}
-      aria-label={`Step ${stepNumber} ${variant}`}
+      aria-label={`Step ${stepNumberToDisplay} ${variant}`}
     >
       <span
         className={cx(styles.listItemContent, {
