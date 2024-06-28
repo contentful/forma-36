@@ -116,7 +116,7 @@
     "simple-git-hooks": "^2.8.1",
     "size-limit": "^11.1.5",
     "tsup": "^7.2.0",
-    "turbo": "^1.10.7",
+    "turbo": "^1.10.13",
     "typescript": "4.7.3",
     "wait-on": "^8.0.3",
     "webpack": "5"
