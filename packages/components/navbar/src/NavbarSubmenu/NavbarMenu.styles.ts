@@ -1,5 +1,6 @@
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
+import { mqs } from '../utils.styles';
 
 export const getNavbarSubmenuStyles = () => ({
   navbarMenuItem: css({
@@ -9,6 +10,12 @@ export const getNavbarSubmenuStyles = () => ({
     gap: tokens.spacingXs,
   }),
   menuList: css({
-    minWidth: '250px',
+    minWidth: 0,
+    marginLeft: '-24px',
+    marginTop: '10px',
+    [mqs.xsmall]: {
+      minWidth: '250px',
+      margin: 0,
+    },
   }),
 });
