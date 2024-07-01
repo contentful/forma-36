@@ -16,6 +16,7 @@ export const getNavbarStyles = (maxWidth: string, variant: string) => ({
       width: '28px',
     },
   }),
+
   navigation: css({
     width: '100%',
     maxWidth: variant === 'wide' ? '1524px' : maxWidth,
@@ -25,12 +26,14 @@ export const getNavbarStyles = (maxWidth: string, variant: string) => ({
       padding: `${tokens.spacingM} ${tokens.spacingL}`,
     },
   }),
+
   mainNavigation: css({
     display: 'none',
     [mqs.small]: {
       display: 'flex',
     },
   }),
+
   mobileNavigationButton: css({
     display: 'flex',
     height: '36px',
@@ -39,6 +42,16 @@ export const getNavbarStyles = (maxWidth: string, variant: string) => ({
       display: 'none',
     },
   }),
+
+  secondaryNavigationWrapper: css({
+    '> *:not(:first-child)': {
+      display: 'none',
+      [mqs.xsmall]: {
+        display: 'flex',
+      },
+    },
+  }),
+
   account: css({
     display: 'none',
     [mqs.xsmall]: {

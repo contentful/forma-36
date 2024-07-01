@@ -75,6 +75,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
         as="nav"
         className={styles.navigation}
         justifyContent="space-between"
+        gap="spacingXs"
       >
         <Flex alignItems="center" gap="spacingL">
           {logo || <ContentfulLogoIcon className={styles.logo} />}
@@ -106,7 +107,10 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
           <Flex alignItems="center">{switcher}</Flex>
           <Flex alignItems="center" gap="spacingXs">
             {secondaryNavigation && (
-              <Flex aria-label="Secondary Navigation">
+              <Flex
+                className={styles.secondaryNavigationWrapper}
+                aria-label="Secondary Navigation"
+              >
                 {secondaryNavigation}
               </Flex>
             )}
