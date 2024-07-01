@@ -31,7 +31,7 @@ export const getNavbarSwitcherStyles = () => ({
       maxWidth: '50vw',
     },
     [mqs.small]: {
-      maxWidth: '15vw',
+      maxWidth: '10vw',
     },
     [mqs.medium]: {
       maxWidth: '50vw',
