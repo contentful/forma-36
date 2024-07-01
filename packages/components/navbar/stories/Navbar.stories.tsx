@@ -199,11 +199,89 @@ export const WithShortSpaceName = () => {
   );
 };
 
+const MobileMenu = () => (
+  <>
+    <Navbar.MenuItem title="Content model" icon={<WrenchIcon />} />
+    <Navbar.MenuItem title="Content" icon={<PenNibIcon />} />
+    <Navbar.MenuItem title="Experiences" icon={<PaintBrushIcon />} />
+    <Navbar.MenuItem title="Media" icon={<ImageSquareIcon />} />
+    <Navbar.Submenu title="Apps" icon={<PuzzlePieceIcon />}>
+      <Navbar.MenuItem
+        title="App 1"
+        icon={
+          <img
+            src="https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=32&h=32"
+            alt="app 1"
+          />
+        }
+      />
+      <Navbar.MenuItem title="App 2" />
+    </Navbar.Submenu>
+    <Navbar.Submenu title="Help">
+      <Navbar.MenuItem
+        as="a"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Help center"
+        testId="cf-ui-navbar-help-menu-help-center"
+        href={'https://www.contentful.com/help/'}
+      />
+      <Navbar.MenuItem
+        as="a"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Developer docs"
+        testId="cf-ui-navbar-help-menu-docs"
+        href="https://www.contentful.com/developers/docs/"
+      />
+      <Navbar.MenuItem
+        as="a"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Training courses"
+        testId="cf-ui-navbar-help-traning-center"
+        href="https://training.contentful.com"
+      />
+      <Navbar.MenuDivider />
+      <Navbar.MenuItem
+        as="a"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Get support"
+        testId="cf-ui-navbar-help-support"
+        href="https://support.contentful.com"
+      />
+    </Navbar.Submenu>
+    <Navbar.Submenu title="Settings">
+      <Navbar.MenuSectionTitle>General</Navbar.MenuSectionTitle>
+      <Navbar.MenuItem title="Home" />
+      <Navbar.MenuItem title="API keys" />
+      <Navbar.MenuSectionTitle>Space</Navbar.MenuSectionTitle>
+      <Navbar.MenuItem title="Apps" />
+      <Navbar.MenuItem title="Permissions" />
+    </Navbar.Submenu>
+    <Navbar.Submenu title="Account">
+      <Navbar.MenuItem title="Account settings" icon={<WrenchIcon />} />
+      <Navbar.MenuItem title="Dashboard" />
+      <Navbar.MenuDivider />
+      <Navbar.MenuItem
+        title="External link"
+        as="a"
+        href="https://www.contentful.com"
+        target="_blank"
+      />
+      <Navbar.MenuDivider />
+      <Navbar.MenuItem title="Log out" />
+    </Navbar.Submenu>
+  </>
+);
+
 export const Complete: Story<{ initials?: string; avatar?: string }> = (
   args,
 ) => {
   return (
     <Navbar
+      mobileNavigation={<MobileMenu />}
       switcher={<Switcher />}
       mainNavigation={<MainItems />}
       account={
@@ -271,6 +349,71 @@ Complete.args = {
     'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=100&h=100',
 };
 
+export const WithResponsiveness: Story<{
+  initials?: string;
+  avatar?: string;
+}> = (args) => {
+  return (
+    <Navbar
+      mobileNavigation={<MobileMenu />}
+      switcher={<Switcher />}
+      mainNavigation={<MainItems />}
+      account={<Account {...args} />}
+      secondaryNavigation={
+        <>
+          <Navbar.Item label="Quick Search" icon={<MagnifyingGlassIcon />} />
+          <Navbar.Item label="Help Menu" icon={<QuestionIcon />}>
+            <Navbar.MenuItem
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Help center"
+              testId="cf-ui-navbar-help-menu-help-center"
+              href={'https://www.contentful.com/help/'}
+            />
+            <Navbar.MenuItem
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Developer docs"
+              testId="cf-ui-navbar-help-menu-docs"
+              href="https://www.contentful.com/developers/docs/"
+            />
+            <Navbar.MenuItem
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Training courses"
+              testId="cf-ui-navbar-help-traning-center"
+              href="https://training.contentful.com"
+            />
+            <Navbar.MenuDivider />
+            <Navbar.MenuItem
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Get support"
+              testId="cf-ui-navbar-help-support"
+              href="https://support.contentful.com"
+            />
+          </Navbar.Item>
+          <Navbar.Item label="Menu Settings" icon={<GearSixIcon />}>
+            <Navbar.MenuSectionTitle>General</Navbar.MenuSectionTitle>
+            <Navbar.MenuItem title="Home" />
+            <Navbar.MenuItem title="API keys" />
+            <Navbar.MenuSectionTitle>Space</Navbar.MenuSectionTitle>
+            <Navbar.MenuItem title="Apps" />
+            <Navbar.MenuItem title="Permissions" />
+          </Navbar.Item>
+        </>
+      }
+    />
+  );
+};
+WithResponsiveness.parameters = {
+  layout: 'fullscreen',
+};
+
 export const WithDifferentEnvironments: Story<{
   initials?: string;
   avatar?: string;
@@ -283,6 +426,7 @@ export const WithDifferentEnvironments: Story<{
         </SectionHeading>
 
         <Navbar
+          mobileNavigation={<MobileMenu />}
           mainNavigation={<MainItems />}
           switcher={<Switcher />}
           account={<Account {...args} />}
@@ -295,6 +439,7 @@ export const WithDifferentEnvironments: Story<{
         </SectionHeading>
 
         <Navbar
+          mobileNavigation={<MobileMenu />}
           mainNavigation={<MainItems />}
           switcher={<Switcher envVariant="non-master">development</Switcher>}
           account={<Account {...args} />}
@@ -307,6 +452,7 @@ export const WithDifferentEnvironments: Story<{
         </SectionHeading>
 
         <Navbar
+          mobileNavigation={<MobileMenu />}
           mainNavigation={<MainItems />}
           switcher={<Switcher isAlias />}
           account={<Account {...args} />}
@@ -319,6 +465,7 @@ export const WithDifferentEnvironments: Story<{
         </SectionHeading>
 
         <Navbar
+          mobileNavigation={<MobileMenu />}
           mainNavigation={<MainItems />}
           switcher={<Switcher isAlias envVariant="non-master"></Switcher>}
           account={<Account {...args} />}
@@ -346,6 +493,7 @@ export const WithAccountNotification: Story<{
         </SectionHeading>
 
         <Navbar
+          mobileNavigation={<MobileMenu />}
           switcher={<Switcher />}
           account={<Account {...args} hasNotification />}
           mainNavigation={<MainItems />}
@@ -358,6 +506,7 @@ export const WithAccountNotification: Story<{
         </SectionHeading>
 
         <Navbar
+          mobileNavigation={<MobileMenu />}
           switcher={<Switcher />}
           account={
             <Account {...args} hasNotification notificationVariant="negative" />
@@ -372,6 +521,7 @@ export const WithAccountNotification: Story<{
         </SectionHeading>
 
         <Navbar
+          mobileNavigation={<MobileMenu />}
           switcher={<Switcher />}
           account={
             <Account {...args} hasNotification notificationVariant="info" />
@@ -391,8 +541,9 @@ WithAccountNotification.args = {
 
 export const LoadingSkeleton: Story<{}> = () => {
   return (
-    <div style={{ width: '900px' }}>
+    <div>
       <Navbar
+        mobileNavigation={<MobileMenu />}
         account={<Navbar.AccountSkeleton ariaLabel="Loading account" />}
         switcher={
           <Navbar.Switcher>

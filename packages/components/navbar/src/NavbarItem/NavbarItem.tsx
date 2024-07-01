@@ -56,7 +56,7 @@ function _NavbarItem(
     onClose,
     ...otherProps
   } = props;
-  const styles = getNavbarItemStyles();
+  const styles = getNavbarItemStyles({ title });
   const isMenuTrigger = isNavbarItemHasMenu(props);
   const item = (
     <Comp
@@ -71,7 +71,13 @@ function _NavbarItem(
       )}
       aria-label={title ? '' : label}
     >
-      {icon && <NavbarItemIcon icon={icon} isActive={isActive} />}
+      {icon && (
+        <NavbarItemIcon
+          className={styles.icon}
+          icon={icon}
+          isActive={isActive}
+        />
+      )}
       {title && <span>{title}</span>}
       {title && isMenuTrigger && <CaretIcon size="tiny" isActive={isActive} />}
     </Comp>
