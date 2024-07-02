@@ -453,23 +453,9 @@ export const WithClearAll = () => {
     }
   };
 
-  const toggleAll = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { checked } = event.target;
-    if (checked) {
-      const newSelection = produce.map((fruit) => fruit.name);
-      setSelectedFruits(newSelection);
-    } else {
-      setSelectedFruits([]);
-    }
-  };
-
   const handleClearSelection = () => {
     setSelectedFruits([]);
   };
-
-  const areAllSelected = React.useMemo(() => {
-    return produce.every((element) => selectedFruits.includes(element.name));
-  }, [selectedFruits]);
 
   return (
     <Stack
@@ -487,10 +473,6 @@ export const WithClearAll = () => {
           <SectionHeading marginLeft="spacingXs" marginBottom="spacingXs">
             Shopping List
           </SectionHeading>
-          <Multiselect.SelectAll
-            onSelectItem={toggleAll}
-            isChecked={areAllSelected}
-          />
           {produce.map((item) => {
             return (
               <Multiselect.Option
