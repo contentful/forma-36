@@ -29,14 +29,12 @@ const fruits: Fruit[] = [
     id: 2,
     value: 'ananas',
     name: 'Ananas 🍍',
-
     isDisabled: false,
   },
   {
     id: 3,
     value: 'avocado',
     name: 'Avocado 🥑',
-
     isDisabled: false,
   },
   {
@@ -357,14 +355,12 @@ const produce: Fruit[] = [
     id: 2,
     value: 'ananas',
     name: 'Ananas 🍍',
-
     isDisabled: false,
   },
   {
     id: 3,
     value: 'avocado',
     name: 'Avocado 🥑',
-
     isDisabled: false,
   },
 ];
@@ -438,7 +434,10 @@ export const WithSelectAll = () => {
 };
 
 export const WithClearAll = () => {
-  const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
+  const [selectedFruits, setSelectedFruits] = useState<Array<string>>([
+    produce[0].name,
+    produce[2].name,
+  ]);
 
   const handleSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { checked, value } = event.target;
