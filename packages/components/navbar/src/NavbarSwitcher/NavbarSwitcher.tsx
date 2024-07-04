@@ -76,7 +76,11 @@ function _NavbarSwitcher(
       className={cx(styles.navbarSwitcher, className)}
       endIcon={
         envVariant && (
-          <NavbarEnvVariant envVariant={envVariant} isAlias={isAlias} />
+          <NavbarEnvVariant
+            envVariant={envVariant}
+            isAlias={isAlias}
+            className={styles.switcherEnvIcon}
+          />
         )
       }
       ref={ref}

@@ -77,7 +77,13 @@ export const getNavbarItemStyles = ({ title }) => ({
   }),
   isActive: getNavbarItemActiveStyles(),
   icon: css({
+    height: '20px',
+    width: '20px',
     display: !title ? 'block' : 'none',
+    [mqs.small]: {
+      height: '16px',
+      width: '16px',
+    },
     [mqs.large]: {
       display: 'block',
     },

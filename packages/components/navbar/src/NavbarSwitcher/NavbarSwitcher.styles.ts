@@ -38,6 +38,13 @@ export const getNavbarSwitcherStyles = () => ({
     },
   }),
 
+  switcherEnvIcon: css({
+    [mqs.small]: {
+      width: '16px',
+      height: '16px',
+    },
+  }),
+
   switcherSpaceNameTruncation: css({
     flexShrink: 1,
     overflow: 'hidden',

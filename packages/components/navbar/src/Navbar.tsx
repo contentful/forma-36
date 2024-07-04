@@ -84,7 +84,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
               trigger={
                 <Button
                   className={styles.mobileNavigationButton}
-                  startIcon={<ListIcon />}
+                  startIcon={<ListIcon size="medium" />}
                 >
                   Menu
                 </Button>

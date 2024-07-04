@@ -42,6 +42,10 @@ export const getNavbarStyles = (maxWidth: string, variant: string) => ({
       display: 'none',
     },
   }),
+  mobileNavigationIcon: css({
+    heigt: '20px',
+    width: '20px',
+  }),
 
   secondaryNavigationWrapper: css({
     '> *:not(:first-child)': {
