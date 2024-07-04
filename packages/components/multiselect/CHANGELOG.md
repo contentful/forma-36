@@ -1,5 +1,13 @@
 ## Change Log
 
+## 4.24.0
+
+### Minor Changes
+
+- [#2816](https://github.com/contentful/forma-36/pull/2816) [`772238d7c`](https://github.com/contentful/forma-36/commit/772238d7cbc63eb1cd2dfe39ed8b0103ce011110) Thanks [@massao](https://github.com/massao)! - feat: add clear selection button to multiselect
+
+- [#2816](https://github.com/contentful/forma-36/pull/2816) [`772238d7c`](https://github.com/contentful/forma-36/commit/772238d7cbc63eb1cd2dfe39ed8b0103ce011110) Thanks [@massao](https://github.com/massao)! - Adds a new property to show a shortcut link to clear the current selection. The link only is visible when there is more than one option selected.
+
 ## 4.23.1
 
 ### Patch Changes

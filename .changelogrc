@@ -1,1 +1,1 @@
-{}
+{"**F36 Multiselect** `v4.24.0`":["- feat: add clear selection button to multiselect\n","- Adds a new property to show a shortcut link to clear the current selection. The link only is visible when there is more than one option selected.\n"]}
