@@ -29,14 +29,12 @@ const fruits: Fruit[] = [
     id: 2,
     value: 'ananas',
     name: 'Ananas 🍍',
-
     isDisabled: false,
   },
   {
     id: 3,
     value: 'avocado',
     name: 'Avocado 🥑',
-
     isDisabled: false,
   },
   {
@@ -357,14 +355,12 @@ const produce: Fruit[] = [
     id: 2,
     value: 'ananas',
     name: 'Ananas 🍍',
-
     isDisabled: false,
   },
   {
     id: 3,
     value: 'avocado',
     name: 'Avocado 🥑',
-
     isDisabled: false,
   },
 ];
@@ -418,6 +414,64 @@ export const WithSelectAll = () => {
             onSelectItem={toggleAll}
             isChecked={areAllSelected}
           />
+          {produce.map((item) => {
+            return (
+              <Multiselect.Option
+                value={item.value}
+                label={item.name}
+                onSelectItem={handleSelectItem}
+                key={`key-${item.id}`}
+                itemId={`id-${item.id}`}
+                isChecked={selectedFruits.includes(item.name)}
+                isDisabled={item.isDisabled}
+              />
+            );
+          })}
+        </div>
+      </Multiselect>
+    </Stack>
+  );
+};
+
+export const WithClearAll = () => {
+  const [selectedFruits, setSelectedFruits] = useState<Array<string>>([
+    produce[0].name,
+    produce[2].name,
+  ]);
+
+  const handleSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked, value } = event.target;
+    const currentFruit = produce.find((fruit) => fruit.value === value);
+    if (checked) {
+      setSelectedFruits((prevState) => [...prevState, currentFruit.name]);
+    } else {
+      //its important to use prevState to avoid race conditions when using the state variable as reference.
+      setSelectedFruits((prevState) => {
+        return prevState.filter((fruit) => fruit !== currentFruit.name);
+      });
+    }
+  };
+
+  const handleClearSelection = () => {
+    setSelectedFruits([]);
+  };
+
+  return (
+    <Stack
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+      style={{ width: '250px' }}
+    >
+      <Multiselect
+        placeholder="Select many fruits"
+        currentSelection={selectedFruits}
+        onClearSelection={handleClearSelection}
+      >
+        <div>
+          <SectionHeading marginLeft="spacingXs" marginBottom="spacingXs">
+            Shopping List
+          </SectionHeading>
           {produce.map((item) => {
             return (
               <Multiselect.Option

@@ -1,13 +1,14 @@
 import React, { useRef, useState, useCallback, useMemo } from 'react';
 import { cx } from 'emotion';
 
-import { mergeRefs, type CommonProps } from '@contentful/f36-core';
-import { Button } from '@contentful/f36-button';
-import { ChevronDownIcon } from '@contentful/f36-icons';
+import { mergeRefs, type CommonProps, Flex } from '@contentful/f36-core';
+import { Button, IconButton } from '@contentful/f36-button';
+import { ChevronDownIcon, CloseIcon } from '@contentful/f36-icons';
 
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover, type PopoverProps } from '@contentful/f36-popover';
 import { Subheading } from '@contentful/f36-typography';
+import { Tooltip } from '@contentful/f36-tooltip';
 
 import { getMultiselectStyles } from './Multiselect.styles';
 import { MultiselectOption, MultiselectOptionProps } from './MultiselectOption';
@@ -105,6 +106,12 @@ export interface MultiselectProps extends CommonProps {
    * Function called when the popover loses its focus.
    */
   onBlur?: () => void;
+
+  /**
+   * Function called when the clear all button is clicked
+   * If no function is provided the clear button is not shown
+   */
+  onClearSelection?: () => void;
 }
 
 // Scan through the whole hierachy until `filter` returns true and apply `transform`
@@ -161,6 +168,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     popoverProps = {},
     children,
     onBlur,
+    onClearSelection,
   } = props;
 
   const { listMaxHeight = 180, listRef, onClose } = popoverProps;
@@ -171,6 +179,9 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
   const [isOpen, setIsOpen] = useState(false);
 
   const internalListRef = useRef<HTMLUListElement>(null);
+
+  const showClearButton =
+    currentSelection.length > 1 && typeof onClearSelection === 'function';
 
   const hasSearch =
     typeof props.onSearchValueChange === 'function' ||
@@ -194,16 +205,25 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     internalListRef.current?.focus();
   }, []);
 
+  const handleClearSelection = (e: React.MouseEvent<HTMLButtonElement>) => {
+    onClearSelection?.();
+    e.stopPropagation();
+  };
+
   const renderMultiselectLabel = useCallback(() => {
     if (currentSelection.length === 0) {
       return <>{placeholder}</>;
     }
     const leftoverCount = currentSelection.length - 1;
+    const currentSelectionClassName = cx(
+      styles.currentSelection,
+      showClearButton && styles.currentSelectionWithClearButton,
+    );
     if (leftoverCount === 0) {
       return (
         <span
           data-test-id="cf-multiselect-current-selection"
-          className={styles.currentSelection}
+          className={currentSelectionClassName}
         >
           {currentSelection[0]}
         </span>
@@ -212,7 +232,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     return (
       <span
         data-test-id="cf-multiselect-current-selection"
-        className={styles.currentSelection}
+        className={currentSelectionClassName}
       >
         {currentSelection[0]}{' '}
         <span className={styles.currentSelectionAddition}>
@@ -223,8 +243,10 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
   }, [
     currentSelection,
     placeholder,
+    showClearButton,
     styles.currentSelection,
     styles.currentSelectionAddition,
+    styles.currentSelectionWithClearButton,
   ]);
 
   const optionsLength = useMemo(
@@ -276,19 +298,38 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
           }
         }}
       >
-        <Popover.Trigger>
-          <Button
-            aria-label="Toggle Multiselect"
-            ref={toggleRef}
-            onClick={() => setIsOpen(!isOpen)}
-            startIcon={startIcon}
-            endIcon={<ChevronDownIcon />}
-            isFullWidth
-            className={styles.triggerButton}
-          >
-            {renderMultiselectLabel()}
-          </Button>
-        </Popover.Trigger>
+        <Flex alignItems="center">
+          <Popover.Trigger>
+            <Button
+              aria-label="Toggle Multiselect"
+              ref={toggleRef}
+              onClick={() => setIsOpen(!isOpen)}
+              startIcon={startIcon}
+              endIcon={<ChevronDownIcon />}
+              isFullWidth
+              className={styles.triggerButton}
+            >
+              {renderMultiselectLabel()}
+            </Button>
+          </Popover.Trigger>
+          {showClearButton && (
+            <div className={styles.clearSelectionButton}>
+              <Tooltip
+                content="Clear selection"
+                showDelay={800}
+                placement="top"
+                as="div"
+              >
+                <IconButton
+                  onClick={handleClearSelection}
+                  icon={<CloseIcon />}
+                  aria-label="Clear selection"
+                  size="small"
+                />
+              </Tooltip>
+            </div>
+          )}
+        </Flex>
         <Popover.Content
           ref={mergeRefs(listRef, internalListRef)}
           className={cx(
