@@ -279,6 +279,19 @@ describe('Multiselect with select all', () => {
 });
 
 describe('Multiselect with clear selection', () => {
+  it('does not render the button when there is no selection', async () => {
+    const onClear = jest.fn();
+
+    const produce: Fruit[] = [
+      { id: 1, name: 'Apple 🍎', isChecked: false, isDisabled: false },
+      { id: 2, name: 'Ananas 🍍', isChecked: false, isDisabled: false },
+      { id: 3, name: 'Avocado 🥑', isChecked: false, isDisabled: false },
+    ];
+    renderComponent({ onClearSelection: onClear }, produce, true);
+
+    expect(screen.getByText('Select one or more Items')).toBeInTheDocument();
+    expect(screen.queryByLabelText('Clear selection')).not.toBeInTheDocument();
+  });
   it('renders the button only when there is more than one element selected', async () => {
     const onClear = jest.fn();
 
