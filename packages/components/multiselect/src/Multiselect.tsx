@@ -315,8 +315,8 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
               <div className={styles.clearSelectionButton}>
                 <Tooltip
                   content="Clear selection"
+                  showDelay={800}
                   placement="top"
-                  showDelay={500}
                 >
                   <IconButton
                     onClick={handleClearSelection}
