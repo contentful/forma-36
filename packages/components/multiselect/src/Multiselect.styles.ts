@@ -74,9 +74,7 @@ export const getMultiselectStyles = () => ({
     textAlign: 'center',
   }),
   clearSelectionButton: css({
-    position: 'absolute',
-    right: '40px',
-    top: '0',
+    marginLeft: '-80px',
   }),
   selectAll: css({
     borderBottom: `1px solid ${tokens.gray200}`,

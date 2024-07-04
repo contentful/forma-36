@@ -1,13 +1,14 @@
 import React, { useRef, useState, useCallback, useMemo } from 'react';
 import { cx } from 'emotion';
 
-import { mergeRefs, type CommonProps } from '@contentful/f36-core';
+import { mergeRefs, type CommonProps, Flex } from '@contentful/f36-core';
 import { Button, IconButton } from '@contentful/f36-button';
 import { ChevronDownIcon, CloseIcon } from '@contentful/f36-icons';
 
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover, type PopoverProps } from '@contentful/f36-popover';
 import { Subheading } from '@contentful/f36-typography';
+import { Tooltip } from '@contentful/f36-tooltip';
 
 import { getMultiselectStyles } from './Multiselect.styles';
 import { MultiselectOption, MultiselectOptionProps } from './MultiselectOption';
@@ -298,17 +299,35 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         }}
       >
         <Popover.Trigger>
-          <Button
-            aria-label="Toggle Multiselect"
-            ref={toggleRef}
-            onClick={() => setIsOpen(!isOpen)}
-            startIcon={startIcon}
-            endIcon={<ChevronDownIcon />}
-            isFullWidth
-            className={styles.triggerButton}
-          >
-            {renderMultiselectLabel()}
-          </Button>
+          <Flex alignItems="center">
+            <Button
+              aria-label="Toggle Multiselect"
+              ref={toggleRef}
+              onClick={() => setIsOpen(!isOpen)}
+              startIcon={startIcon}
+              endIcon={<ChevronDownIcon />}
+              isFullWidth
+              className={styles.triggerButton}
+            >
+              {renderMultiselectLabel()}
+            </Button>
+            {showClearButton && (
+              <div className={styles.clearSelectionButton}>
+                <Tooltip
+                  content="Clear selection"
+                  placement="top"
+                  showDelay={500}
+                >
+                  <IconButton
+                    onClick={handleClearSelection}
+                    icon={<CloseIcon />}
+                    aria-label="Clear selection"
+                    size="small"
+                  />
+                </Tooltip>
+              </div>
+            )}
+          </Flex>
         </Popover.Trigger>
         <Popover.Content
           ref={mergeRefs(listRef, internalListRef)}
@@ -345,14 +364,6 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
           </FocusLock>
         </Popover.Content>
       </Popover>
-      {showClearButton && (
-        <IconButton
-          className={styles.clearSelectionButton}
-          onClick={handleClearSelection}
-          icon={<CloseIcon />}
-          aria-label="Clear selection"
-        />
-      )}
     </div>
   );
 }
