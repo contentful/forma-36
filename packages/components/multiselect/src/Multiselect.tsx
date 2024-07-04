@@ -298,8 +298,8 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
           }
         }}
       >
-        <Popover.Trigger>
-          <Flex alignItems="center">
+        <Flex alignItems="center">
+          <Popover.Trigger>
             <Button
               aria-label="Toggle Multiselect"
               ref={toggleRef}
@@ -311,25 +311,25 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
             >
               {renderMultiselectLabel()}
             </Button>
-            {showClearButton && (
-              <div className={styles.clearSelectionButton}>
-                <Tooltip
-                  content="Clear selection"
-                  showDelay={800}
-                  placement="top"
-                  as="div"
-                >
-                  <IconButton
-                    onClick={handleClearSelection}
-                    icon={<CloseIcon />}
-                    aria-label="Clear selection"
-                    size="small"
-                  />
-                </Tooltip>
-              </div>
-            )}
-          </Flex>
-        </Popover.Trigger>
+          </Popover.Trigger>
+          {showClearButton && (
+            <div className={styles.clearSelectionButton}>
+              <Tooltip
+                content="Clear selection"
+                showDelay={800}
+                placement="top"
+                as="div"
+              >
+                <IconButton
+                  onClick={handleClearSelection}
+                  icon={<CloseIcon />}
+                  aria-label="Clear selection"
+                  size="small"
+                />
+              </Tooltip>
+            </div>
+          )}
+        </Flex>
         <Popover.Content
           ref={mergeRefs(listRef, internalListRef)}
           className={cx(
