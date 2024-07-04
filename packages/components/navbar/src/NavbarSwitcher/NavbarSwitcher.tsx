@@ -70,39 +70,41 @@ function _NavbarSwitcher(
     typeof children === 'string' ? splitSpaceName(children) : [];
 
   return (
-    <Button
-      {...otherProps}
-      aria-label="Space and Environment Navigation"
-      className={cx(styles.navbarSwitcher, className)}
-      endIcon={
-        envVariant && (
-          <NavbarEnvVariant envVariant={envVariant} isAlias={isAlias} />
-        )
-      }
-      ref={ref}
-      testId={testId}
-      variant="transparent"
-    >
-      <Flex
-        alignItems="center"
-        className={styles.switcherSpaceName}
-        flexDirection="row"
+    <Flex alignItems="center" className={styles.navbarSwitcherWrapper}>
+      <Button
+        {...otherProps}
+        aria-label="Space and Environment Navigation"
+        className={cx(styles.navbarSwitcher, className)}
+        endIcon={
+          envVariant && (
+            <NavbarEnvVariant envVariant={envVariant} isAlias={isAlias} />
+          )
+        }
+        ref={ref}
+        testId={testId}
+        variant="transparent"
       >
-        {start !== undefined ? (
-          <>
-            <span>{start}</span>
-            {middle && (
-              <span className={styles.switcherSpaceNameTruncation}>
-                {middle}
-              </span>
-            )}
-            {end && <span>{end}</span>}
-          </>
-        ) : (
-          children
-        )}
-      </Flex>
-    </Button>
+        <Flex
+          alignItems="center"
+          className={styles.switcherSpaceName}
+          flexDirection="row"
+        >
+          {start !== undefined ? (
+            <>
+              <span>{start}</span>
+              {middle && (
+                <span className={styles.switcherSpaceNameTruncation}>
+                  {middle}
+                </span>
+              )}
+              {end && <span>{end}</span>}
+            </>
+          ) : (
+            children
+          )}
+        </Flex>
+      </Button>
+    </Flex>
   );
 }
 

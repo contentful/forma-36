@@ -77,7 +77,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
         justifyContent="space-between"
         gap="spacingXs"
       >
-        <Flex alignItems="center" gap="spacingL">
+        <Flex alignItems="center" gap="spacingL" flexShrink={0}>
           {logo || <ContentfulLogoIcon className={styles.logo} />}
           {mobileNavigation && (
             <NavbarMenu
@@ -103,27 +103,26 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
             </Flex>
           )}
         </Flex>
-        <Flex alignItems="center" gap="spacingXs">
-          <Flex alignItems="center">{switcher}</Flex>
-          <Flex alignItems="center" gap="spacingXs">
-            {secondaryNavigation && (
-              <Flex
-                className={styles.secondaryNavigationWrapper}
-                aria-label="Secondary Navigation"
-              >
-                {secondaryNavigation}
-              </Flex>
-            )}
-            {account && (
-              <Flex
-                className={styles.account}
-                aria-label="Account Navigation"
-                gap="spacingXs"
-              >
-                {account}
-              </Flex>
-            )}
-          </Flex>
+
+        {switcher}
+        <Flex alignItems="center" gap="spacingXs" flexShrink={0}>
+          {secondaryNavigation && (
+            <Flex
+              className={styles.secondaryNavigationWrapper}
+              aria-label="Secondary Navigation"
+            >
+              {secondaryNavigation}
+            </Flex>
+          )}
+          {account && (
+            <Flex
+              className={styles.account}
+              aria-label="Account Navigation"
+              gap="spacingXs"
+            >
+              {account}
+            </Flex>
+          )}
         </Flex>
       </Flex>
     </Flex>
