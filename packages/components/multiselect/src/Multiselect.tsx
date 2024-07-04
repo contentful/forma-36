@@ -317,6 +317,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                   content="Clear selection"
                   showDelay={800}
                   placement="top"
+                  as="div"
                 >
                   <IconButton
                     onClick={handleClearSelection}
