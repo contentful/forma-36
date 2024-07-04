@@ -179,10 +179,8 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
 
   const internalListRef = useRef<HTMLUListElement>(null);
 
-  const showClearButton = useMemo(
-    () => currentSelection.length > 1 && typeof onClearSelection === 'function',
-    [currentSelection.length, onClearSelection],
-  );
+  const showClearButton =
+    currentSelection.length > 1 && typeof onClearSelection === 'function';
 
   const hasSearch =
     typeof props.onSearchValueChange === 'function' ||
