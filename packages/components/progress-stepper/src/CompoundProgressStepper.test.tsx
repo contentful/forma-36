@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { ProgressStepper } from './CompoundProgressStepper';
+import { axe } from 'jest-axe';
 
 describe('CompoundProgressStepper', function () {
   it('renders basic content when only required props are passed', () => {
@@ -64,5 +65,18 @@ describe('CompoundProgressStepper', function () {
     const icons = screen.getAllByTestId('cf-ui-icon');
 
     expect(icons).toHaveLength(3);
+  });
+
+  it('has no a11y issues', async () => {
+    const { container } = render(
+      <ProgressStepper activeStep={1}>
+        <ProgressStepper.Step />
+        <ProgressStepper.Step />
+        <ProgressStepper.Step />
+      </ProgressStepper>,
+    );
+    const results = await axe(container);
+
+    expect(results).toHaveNoViolations();
   });
 });
