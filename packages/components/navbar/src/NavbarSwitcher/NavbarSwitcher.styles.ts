@@ -2,7 +2,7 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
 
-import { getGlowOnFocusStyles, increaseHitArea } from '../utils.styles';
+import { getGlowOnFocusStyles, increaseHitArea, mqs } from '../utils.styles';
 
 export const getNavbarSwitcherStyles = () => ({
   navbarSwitcher: css(
@@ -25,6 +25,23 @@ export const getNavbarSwitcherStyles = () => ({
     // Set min-width only when there are three span children
     '&:has(> span:last-child:nth-child(3))': {
       minWidth: '12ch',
+    },
+    maxWidth: '15vw',
+    [mqs.xsmall]: {
+      maxWidth: '50vw',
+    },
+    [mqs.small]: {
+      maxWidth: '10vw',
+    },
+    [mqs.medium]: {
+      maxWidth: '50vw',
+    },
+  }),
+
+  switcherEnvIcon: css({
+    [mqs.small]: {
+      width: '16px',
+      height: '16px',
     },
   }),
 

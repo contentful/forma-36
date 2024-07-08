@@ -6,17 +6,20 @@ import tokens from '@contentful/f36-tokens';
 export type NavbarEnvVariantProps = Pick<
   NavbarSwitcherProps,
   'isAlias' | 'envVariant'
->;
+> & {
+  className?: string;
+};
 
 export function NavbarEnvVariant({
   isAlias,
   envVariant,
+  className,
 }: NavbarEnvVariantProps) {
   const color = envVariant === 'master' ? tokens.green600 : tokens.orange500;
 
   return isAlias ? (
-    <EnvironmentAliasIcon color={color} size="tiny" />
+    <EnvironmentAliasIcon color={color} className={className} size="medium" />
   ) : (
-    <EnvironmentIcon color={color} size="tiny" />
+    <EnvironmentIcon color={color} className={className} size="medium" />
   );
 }

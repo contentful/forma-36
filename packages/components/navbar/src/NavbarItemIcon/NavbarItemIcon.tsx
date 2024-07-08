@@ -5,14 +5,19 @@ import { cx } from 'emotion';
 
 export type NavbarItemIconProps = {
   icon: React.ReactElement<IconProps>;
+  className?: string;
 } & Partial<Pick<IconProps, 'isActive'>>;
 
-export const NavbarItemIcon = ({ icon, isActive }: NavbarItemIconProps) => {
-  const { className, size, ...rest } = icon.props;
+export const NavbarItemIcon = ({
+  icon,
+  isActive,
+  className,
+}: NavbarItemIconProps) => {
+  const { className: iconClassName, size, ...rest } = icon.props;
   const styles = getNavbarItemIconStyles();
 
   return React.cloneElement(icon, {
-    className: cx(className, styles.navbarItemIcon),
+    className: cx(iconClassName, styles.navbarItemIcon, className),
     size: size || 'small',
     isActive,
     ...rest,
