@@ -15,6 +15,7 @@ import {
   MoreHorizontalIcon,
   PageIcon,
 } from '@contentful/f36-icons';
+import { PaintBrushIcon } from '@contentful/f36-icons-alpha';
 import { Icon } from '@contentful/f36-icon';
 import { Text } from '@contentful/f36-typography';
 import { DragHandle, type DragHandleProps } from '@contentful/f36-drag-handle';
@@ -34,6 +35,7 @@ const ICON_MAP = {
   entry: EntryIcon,
   release: ReleaseIcon,
   page: PageIcon,
+  experience: PaintBrushIcon,
 };
 
 export interface EntityListItemProps extends CommonProps {
@@ -90,7 +92,15 @@ export interface EntityListItemProps extends CommonProps {
    *
    * Note: 'entry' and 'asset' are @deprecated but supported in v1.x for backwards compatibility
    */
-  entityType?: 'Entry' | 'Asset' | 'entry' | 'asset' | 'Release' | 'Page';
+  entityType?:
+    | 'Entry'
+    | 'Asset'
+    | 'entry'
+    | 'asset'
+    | 'Release'
+    | 'Page'
+    | 'Experience'
+    | 'experience';
   /**
    * Loading state for the component - when true will display loading feedback to the user
    */
@@ -186,7 +196,11 @@ export const EntityListItem = ({
           {withThumbnail && (
             <figure className={styles.media}>
               {asIcon ? (
-                <Icon as={ICON_MAP[entityType.toLowerCase()]} variant="muted" />
+                <Icon
+                  as={ICON_MAP[entityType.toLowerCase()]}
+                  variant="muted"
+                  data-test-id={`thumbnail-icon-${entityType.toLowerCase()}`}
+                />
               ) : (
                 <img
                   src={thumbnailUrl}
