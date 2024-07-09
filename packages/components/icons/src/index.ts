@@ -22,6 +22,7 @@ export * from './custom/ReplaceIcon.js';
 export * from './custom/RichTextIcon.js';
 export * from './custom/SparkleFilledIcon.js';
 export * from './custom/SparkleIcon.js';
+export * from './custom/VariableIcon.js';
 export * from './custom/WorkflowsIcon.js';
 export * from './vendor/phosphor/ArrowCounterClockwiseIcon.js';
 export * from './vendor/phosphor/ArrowDownIcon.js';
