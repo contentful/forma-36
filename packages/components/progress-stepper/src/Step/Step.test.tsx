@@ -15,8 +15,8 @@ describe('Step', function () {
     expect(labelText).toHaveLength(0);
   });
 
-  it('renders correct variant when variant provided', () => {
-    render(<Step variant="error" />);
+  it('renders correct state when state provided', () => {
+    render(<Step state="error" />);
 
     const step = screen.getAllByTestId('cf-ui-step-error');
 
@@ -25,7 +25,7 @@ describe('Step', function () {
 
   it('renders label', () => {
     const labelText = 'Test label';
-    render(<Step variant="error" labelText={labelText} />);
+    render(<Step state="error" labelText={labelText} />);
 
     const label = screen.getByText(labelText);
 

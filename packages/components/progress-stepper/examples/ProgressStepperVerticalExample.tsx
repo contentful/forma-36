@@ -15,9 +15,9 @@ export default function ProgressStepperVerticalExample() {
         orientation="vertical"
         ariaLabel="Vertical progress stepper"
       >
-        <ProgressStepper.Step variant="complete" />
-        <ProgressStepper.Step variant="complete" />
-        <ProgressStepper.Step variant="active" />
+        <ProgressStepper.Step state="complete" />
+        <ProgressStepper.Step state="complete" />
+        <ProgressStepper.Step state="active" />
         <ProgressStepper.Step />
         <ProgressStepper.Step />
       </ProgressStepper>

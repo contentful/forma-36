@@ -20,9 +20,9 @@ export const Basic: Story<ProgressStepperProps> = (args) => {
         ariaLabel="Basic progress stepper"
         {...args}
       >
-        <ProgressStepper.Step variant="complete" />
-        <ProgressStepper.Step variant="complete" />
-        <ProgressStepper.Step variant="active" />
+        <ProgressStepper.Step state="complete" />
+        <ProgressStepper.Step state="complete" />
+        <ProgressStepper.Step state="active" />
         <ProgressStepper.Step />
         <ProgressStepper.Step />
       </ProgressStepper>
@@ -39,9 +39,9 @@ export const BasicWithLabels: Story<ProgressStepperProps> = (args) => {
         ariaLabel="Progress stepper with labels"
         {...args}
       >
-        <ProgressStepper.Step variant="complete" labelText="Label 1" />
-        <ProgressStepper.Step variant="complete" labelText="Label 2" />
-        <ProgressStepper.Step variant="active" labelText="Label 3" />
+        <ProgressStepper.Step state="complete" labelText="Label 1" />
+        <ProgressStepper.Step state="complete" labelText="Label 2" />
+        <ProgressStepper.Step state="active" labelText="Label 3" />
         <ProgressStepper.Step labelText="Label 4" />
         <ProgressStepper.Step labelText="Label 5" />
       </ProgressStepper>
@@ -49,7 +49,7 @@ export const BasicWithLabels: Story<ProgressStepperProps> = (args) => {
   );
 };
 
-export const IconStepVariants: Story<ProgressStepperProps> = (args) => {
+export const IconStepVariantStates: Story<ProgressStepperProps> = (args) => {
   return (
     <div style={getContainerStyle(args.orientation)}>
       <ProgressStepper
@@ -58,18 +58,18 @@ export const IconStepVariants: Story<ProgressStepperProps> = (args) => {
         ariaLabel="Icon progress stepper"
         {...args}
       >
-        <ProgressStepper.Step variant="active" labelText="Active" />
-        <ProgressStepper.Step variant="complete" labelText="Complete" />
+        <ProgressStepper.Step state="active" labelText="Active" />
+        <ProgressStepper.Step state="complete" labelText="Complete" />
         <ProgressStepper.Step labelText="Incomplete" />
-        <ProgressStepper.Step variant="disabled" labelText="Disabled" />
-        <ProgressStepper.Step variant="error" labelText="Error" />
-        <ProgressStepper.Step variant="warning" labelText="Warning" />
+        <ProgressStepper.Step state="disabled" labelText="Disabled" />
+        <ProgressStepper.Step state="error" labelText="Error" />
+        <ProgressStepper.Step state="warning" labelText="Warning" />
       </ProgressStepper>
     </div>
   );
 };
 
-export const NumberStepVariants: Story<ProgressStepperProps> = (args) => {
+export const NumberStepVariantStates: Story<ProgressStepperProps> = (args) => {
   return (
     <div style={getContainerStyle(args.orientation)}>
       <ProgressStepper
@@ -78,12 +78,12 @@ export const NumberStepVariants: Story<ProgressStepperProps> = (args) => {
         ariaLabel="Number progress stepper"
         {...args}
       >
-        <ProgressStepper.Step variant="active" labelText="Active" />
-        <ProgressStepper.Step variant="complete" labelText="Complete" />
+        <ProgressStepper.Step state="active" labelText="Active" />
+        <ProgressStepper.Step state="complete" labelText="Complete" />
         <ProgressStepper.Step labelText="Incomplete" />
-        <ProgressStepper.Step variant="disabled" labelText="Disabled" />
-        <ProgressStepper.Step variant="error" labelText="Error" />
-        <ProgressStepper.Step variant="warning" labelText="Warning" />
+        <ProgressStepper.Step state="disabled" labelText="Disabled" />
+        <ProgressStepper.Step state="error" labelText="Error" />
+        <ProgressStepper.Step state="warning" labelText="Warning" />
       </ProgressStepper>
     </div>
   );

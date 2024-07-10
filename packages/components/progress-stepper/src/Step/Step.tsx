@@ -8,7 +8,7 @@ export interface StepProps extends CommonProps {
   /**
    * @default incomplete
    */
-  variant?:
+  state?:
     | 'active'
     | 'error'
     | 'warning'
@@ -41,7 +41,7 @@ export interface StepProps extends CommonProps {
 function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
   const styles = getStyles();
   const {
-    variant = 'incomplete',
+    state = 'incomplete',
     labelText,
     stepNumber,
     stepStyle,
@@ -57,11 +57,11 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
     switch (true) {
       case stepStyle === 'number':
         return stepNumberToDisplay;
-      case variant === 'complete':
+      case state === 'complete':
         return <DoneIcon size="tiny" variant="white" />;
-      case variant === 'error':
+      case state === 'error':
         return <CloseIcon size="tiny" variant="white" />;
-      case variant === 'warning':
+      case state === 'warning':
         return <WarningIcon size="tiny" variant="white" />;
       default:
         return <div />;
@@ -76,16 +76,16 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
           : styles.verticalListItem(isBeforeActiveStep, isActiveStep)
       }
       ref={ref}
-      data-test-id={`cf-ui-step-${variant}`}
-      aria-label={`Step ${stepNumberToDisplay} ${variant}`}
+      data-test-id={`cf-ui-step-${state}`}
+      aria-label={`Step ${stepNumberToDisplay} ${state}`}
     >
       <span
         className={cx(styles.listItemContent, {
-          [styles.active]: variant === 'active',
-          [styles.disabled]: variant === 'disabled',
-          [styles.complete]: variant === 'complete',
-          [styles.error]: variant === 'error',
-          [styles.warning]: variant === 'warning',
+          [styles.active]: state === 'active',
+          [styles.disabled]: state === 'disabled',
+          [styles.complete]: state === 'complete',
+          [styles.error]: state === 'error',
+          [styles.warning]: state === 'warning',
         })}
       >
         {renderStep()}
@@ -97,8 +97,8 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
               ? styles.horizontalLabel
               : styles.verticalLabel,
             {
-              [styles.incompleteLabel]: variant === 'incomplete',
-              [styles.disabledLabel]: variant === 'disabled',
+              [styles.incompleteLabel]: state === 'incomplete',
+              [styles.disabledLabel]: state === 'disabled',
             },
           )}
         >

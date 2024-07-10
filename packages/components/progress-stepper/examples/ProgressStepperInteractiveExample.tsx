@@ -19,7 +19,7 @@ export default function ProgressStepperInteractiveExample() {
         return (
           <ProgressStepper.Step
             key={step.label}
-            variant="active"
+            state="active"
             labelText={step.label}
           />
         );
@@ -27,7 +27,7 @@ export default function ProgressStepperInteractiveExample() {
         return (
           <ProgressStepper.Step
             key={step.label}
-            variant="complete"
+            state="complete"
             labelText={step.label}
           />
         );
@@ -36,7 +36,7 @@ export default function ProgressStepperInteractiveExample() {
       return (
         <ProgressStepper.Step
           key={step.label}
-          variant="incomplete"
+          state="incomplete"
           labelText={step.label}
         />
       );

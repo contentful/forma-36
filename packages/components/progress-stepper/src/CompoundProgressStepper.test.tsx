@@ -6,7 +6,7 @@ import { axe } from 'jest-axe';
 describe('CompoundProgressStepper', function () {
   it('renders basic content when only required props are passed', () => {
     render(
-      <ProgressStepper>
+      <ProgressStepper ariaLabel="Basic progress stepper">
         <ProgressStepper.Step />
       </ProgressStepper>,
     );
@@ -22,7 +22,7 @@ describe('CompoundProgressStepper', function () {
 
   it('renders the correct amount of children', () => {
     render(
-      <ProgressStepper>
+      <ProgressStepper ariaLabel="Basic progress stepper">
         <ProgressStepper.Step />
         <ProgressStepper.Step />
       </ProgressStepper>,
@@ -35,7 +35,7 @@ describe('CompoundProgressStepper', function () {
 
   it('renders correct numbers when stepStyle is number', () => {
     render(
-      <ProgressStepper activeStep={1}>
+      <ProgressStepper ariaLabel="Basic progress stepper" activeStep={1}>
         <ProgressStepper.Step />
         <ProgressStepper.Step />
         <ProgressStepper.Step />
@@ -55,10 +55,14 @@ describe('CompoundProgressStepper', function () {
 
   it('renders icons for each step when stepStyle is icon', () => {
     render(
-      <ProgressStepper stepStyle="icon" activeStep={1}>
-        <ProgressStepper.Step variant="complete" />
-        <ProgressStepper.Step variant="error" />
-        <ProgressStepper.Step variant="warning" />
+      <ProgressStepper
+        ariaLabel="Basic progress stepper"
+        stepStyle="icon"
+        activeStep={1}
+      >
+        <ProgressStepper.Step state="complete" />
+        <ProgressStepper.Step state="error" />
+        <ProgressStepper.Step state="warning" />
       </ProgressStepper>,
     );
 
@@ -69,7 +73,7 @@ describe('CompoundProgressStepper', function () {
 
   it('has no a11y issues', async () => {
     const { container } = render(
-      <ProgressStepper activeStep={1}>
+      <ProgressStepper ariaLabel="Basic progress stepper" activeStep={1}>
         <ProgressStepper.Step />
         <ProgressStepper.Step />
         <ProgressStepper.Step />
