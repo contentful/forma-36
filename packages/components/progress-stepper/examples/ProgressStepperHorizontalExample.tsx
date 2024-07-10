@@ -3,7 +3,7 @@ import { ProgressStepper } from '@contentful/f36-progress-stepper';
 
 export default function ProgressStepperHorizontalExample() {
   return (
-    <ProgressStepper activeStep={2}>
+    <ProgressStepper activeStep={2} ariaLabel="Horizontal progress stepper">
       <ProgressStepper.Step variant="complete" />
       <ProgressStepper.Step variant="complete" />
       <ProgressStepper.Step variant="active" />

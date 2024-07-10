@@ -16,6 +16,10 @@ export interface ProgressStepperProps extends CommonProps, MarginProps {
    * @default 0
    */
   activeStep?: number;
+  /**
+   * Label to be used on aria-label for the nav element
+   */
+  ariaLabel: string;
 }
 
 function _ProgressStepper(
@@ -28,6 +32,7 @@ function _ProgressStepper(
     stepStyle = 'number',
     activeStep = 0,
     testId,
+    ariaLabel,
   } = props;
   const styles = getStyles();
   const hydratedTestId =
@@ -54,6 +59,7 @@ function _ProgressStepper(
       className={orientation === 'vertical' ? styles.verticalNav : ''}
       data-test-id={hydratedTestId}
       ref={ref}
+      aria-label={ariaLabel}
     >
       <ol
         className={

@@ -45,7 +45,11 @@ export default function ProgressStepperInteractiveExample() {
 
   return (
     <>
-      <ProgressStepper stepStyle="icon" activeStep={currentStep}>
+      <ProgressStepper
+        stepStyle="icon"
+        activeStep={currentStep}
+        ariaLabel="Interactive progress stepper"
+      >
         {getSteps()}
       </ProgressStepper>
       <Flex marginTop="spacingM" gap="spacingXs">

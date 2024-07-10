@@ -3,7 +3,11 @@ import { ProgressStepper } from '@contentful/f36-progress-stepper';
 
 export default function ProgressStepperNumberExample() {
   return (
-    <ProgressStepper activeStep={0} stepStyle="number">
+    <ProgressStepper
+      activeStep={0}
+      stepStyle="number"
+      ariaLabel="Number progress stepper"
+    >
       <ProgressStepper.Step variant="active" labelText="Active" />
       <ProgressStepper.Step variant="complete" labelText="Complete" />
       <ProgressStepper.Step labelText="Incomplete" />
