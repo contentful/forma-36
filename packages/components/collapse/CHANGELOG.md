@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.67.1
+
+### Patch Changes
+
+- [#2812](https://github.com/contentful/forma-36/pull/2812) [`8dbcf48ce`](https://github.com/contentful/forma-36/commit/8dbcf48ce4605c65289f0208f6ff6d69087e5974) Thanks [@massao](https://github.com/massao)! - Fix issue on Collapse with animating and flashing on initial render
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.67.1
+
 ## 4.67.0
 
 ### Patch Changes

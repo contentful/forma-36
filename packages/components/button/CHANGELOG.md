@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.67.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.67.1
+  - @contentful/f36-spinner@4.67.1
+
 ## 4.67.0
 
 ### Patch Changes

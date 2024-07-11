@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.67.1
+
+### Patch Changes
+
+- Updated dependencies [[`8dbcf48ce`](https://github.com/contentful/forma-36/commit/8dbcf48ce4605c65289f0208f6ff6d69087e5974)]:
+  - @contentful/f36-collapse@4.67.1
+  - @contentful/f36-core@4.67.1
+  - @contentful/f36-typography@4.67.1
+
 ## 4.67.0
 
 ### Patch Changes
