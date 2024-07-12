@@ -12,6 +12,7 @@
     "@contentful/f36-drag-handle": "^4.67.1",
     "@contentful/f36-icon": "^4.67.1",
     "@contentful/f36-icons": "^4.28.1",
+    "@contentful/f36-icons-alpha": "npm:@contentful/f36-icons@^5.0.0-alpha.26",
     "@contentful/f36-menu": "^4.67.1",
     "@contentful/f36-skeleton": "^4.67.1",
     "@contentful/f36-tokens": "^4.0.4",

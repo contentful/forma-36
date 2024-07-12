@@ -162,6 +162,16 @@ describe('EntityList', function () {
     expect(screen.getByLabelText('Actions')).toBeDisabled();
   });
 
+  it('renders an "Experience" entity type', () => {
+    render(
+      <EntityListItem
+        title="Premier Studio Experience"
+        entityType="Experience"
+      />,
+    );
+    expect(screen.getByTestId('thumbnail-icon-experience')).toBeInTheDocument();
+  });
+
   it('has no a11y issues', async () => {
     const { container } = render(
       <ul>
