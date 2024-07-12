@@ -1,5 +1,21 @@
 # Change Log
 
+## 4.67.2
+
+### Patch Changes
+
+- [#2821](https://github.com/contentful/forma-36/pull/2821) [`341afd50d`](https://github.com/contentful/forma-36/commit/341afd50d489c82329b194817032b3047166e4bd) Thanks [@ethan-ozelius-contentful](https://github.com/ethan-ozelius-contentful)! - feat(entity-list-item): add support for Experience type entity
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.67.2
+  - @contentful/f36-button@4.67.2
+  - @contentful/f36-core@4.67.2
+  - @contentful/f36-drag-handle@4.67.2
+  - @contentful/f36-icon@4.67.2
+  - @contentful/f36-menu@4.67.2
+  - @contentful/f36-skeleton@4.67.2
+  - @contentful/f36-typography@4.67.2
+
 ## 4.67.1
 
 ### Patch Changes
