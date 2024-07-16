@@ -46,6 +46,7 @@ type NavbarSwitcherOwnProps = CommonProps & {
   isCircle?: boolean;
   envVariant?: 'master' | 'non-master';
   isAlias?: boolean;
+  ariaLabel?: string;
 };
 
 export type NavbarSwitcherProps = PropsWithHTMLElement<
@@ -63,6 +64,7 @@ function _NavbarSwitcher(
     envVariant,
     isAlias,
     testId = 'cf-ui-navbar-switcher',
+    ariaLabel = 'Space and Environment Navigation',
     ...otherProps
   } = props;
   const styles = getNavbarSwitcherStyles();
@@ -72,7 +74,7 @@ function _NavbarSwitcher(
   return (
     <Button
       {...otherProps}
-      aria-label="Space and Environment Navigation"
+      aria-label={ariaLabel}
       className={cx(styles.navbarSwitcher, className)}
       endIcon={
         envVariant && (
