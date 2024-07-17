@@ -2,13 +2,13 @@ import React from 'react';
 import { cx } from 'emotion';
 import { getNavbarAccountStyles } from './NavbarAccount.styles';
 import {
-  Flex,
   type PropsWithHTMLElement,
   type CommonProps,
   type ExpandProps,
 } from '@contentful/f36-core';
 import { NavbarMenu } from '../NavbarMenu/NavbarMenu';
 import { Avatar } from '@contentful/f36-avatar';
+import { Flex } from '@contentful/f36-core';
 
 type NavbarAccountOwnProps = CommonProps & {
   children: React.ReactNode;
@@ -48,11 +48,13 @@ function _NavbarAccount(
     <NavbarMenu
       trigger={
         <Flex
-          {...otherProps}
           as="button"
+          {...otherProps}
           ref={ref}
-          className={cx(styles.root, className)}
+          className={cx(styles.navbarAccount, className)}
           testId={testId}
+          alignItems="center"
+          aria-label="Account Menu"
         >
           <Avatar
             src={avatar}
