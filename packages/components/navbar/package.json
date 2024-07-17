@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-navbar",
-  "version": "4.81.1",
+  "version": "5.0.0-alpha.25",
   "description": "Forma 36: Navbar component",
   "scripts": {
     "build": "tsup"
@@ -9,11 +9,12 @@
     "@contentful/f36-core": "^4.81.1",
     "@contentful/f36-menu": "^4.81.1",
     "@contentful/f36-avatar": "4.81.1",
+    "@contentful/f36-button": "^4.67.1",
     "@contentful/f36-tokens": "^4.2.0",
+    "@contentful/f36-icon": "5.0.0-alpha.20",
+    "@contentful/f36-icons": "5.0.0-alpha.25",
     "@contentful/f36-utils": "^4.23.2",
     "@contentful/f36-skeleton": "^4.81.1",
-    "@contentful/f36-icon": "^4.81.1",
-    "@contentful/f36-icons": "^4.29.1",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
