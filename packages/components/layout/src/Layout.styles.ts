@@ -16,7 +16,7 @@ export const getLayoutMaxWidthStyles = ({
   }
 
   return css({
-    maxWidth: '1524px',
+    maxWidth: '1920px',
     boxShadow: withBoxShadow
       ? '0px 6px 16px -2px rgba(25, 37, 50, 0.1), 0px 3px 6px -3px rgba(25, 37, 50, 0.15)'
       : 'unset',
