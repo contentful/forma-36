@@ -58,7 +58,7 @@ export const Basic = ({
     rows={args.rows}
     columnGap={args.columnGap}
     rowGap={args.rowGap}
-    style={{ height: exampleGridHeight }}
+    style={{ height: exampleGridHeight, width: '90vw' }}
   >
     <Grid.Item
       style={styles.demoBoxDark}

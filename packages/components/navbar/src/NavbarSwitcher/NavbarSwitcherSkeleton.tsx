@@ -13,8 +13,8 @@ export const NavbarSwitcherSkeleton = ({
   <SkeletonContainer
     svgWidth={estimatedWidth}
     svgHeight={24}
-    backgroundColor={tokens.gray800}
-    foregroundColor={tokens.gray700}
+    backgroundColor={tokens.gray300}
+    foregroundColor={tokens.gray200}
   >
     <SkeletonDisplayText
       lineHeight={24}
