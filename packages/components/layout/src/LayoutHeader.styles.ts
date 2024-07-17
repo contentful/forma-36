@@ -15,7 +15,7 @@ export const getLayoutHeaderMaxWidthStyles = (
 
   return css({
     width: '100%',
-    maxWidth: '1524px',
+    maxWidth: '1920px',
   });
 };
 
