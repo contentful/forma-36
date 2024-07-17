@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 13-07-2024
+
+**F36 Entity List** `v4.67.2`
+
+- feat(entity-list-item): add support for Experience type entity
+
 ## 05-07-2024
 
 **F36 Multiselect** `v4.24.0`

@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-import { Box, Flex } from '@contentful/f36-core';
+import { Box } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
 import { Layout } from '../src/CompoundLayout';
@@ -11,33 +11,43 @@ interface StoryArgs {
   withHeader: boolean;
   withLeftSidebar: boolean;
   withRightSidebar: boolean;
+  withBoxShadow: boolean;
 }
 
 export const Default: Story<Pick<LayoutProps, 'variant'> & StoryArgs> = ({
   variant,
+  withBoxShadow,
   withHeader,
   withLeftSidebar,
   withRightSidebar,
 }) => {
   return (
-    <div style={{ minWidth: '50vw' }}>
+    <div
+      style={{
+        minWidth: '90vw',
+        minHeight: '90vh',
+        display: 'flex',
+      }}
+    >
       <Layout
         variant={variant}
+        withBoxShadow={withBoxShadow}
+        className={css({
+          backgroundColor: tokens.gray100,
+        })}
         header={
           withHeader && (
             <Layout.Header>
-              <Flex
-                justifyContent={'center'}
-                alignItems={'center'}
+              <Box
                 className={css({
-                  backgroundColor: tokens.blue900,
-                  color: tokens.gray100,
+                  backgroundColor: tokens.green100,
+                  color: tokens.green600,
                   width: '100%',
-                  height: '50px',
+                  height: '5vh',
                 })}
               >
-                Header
-              </Flex>
+                Header content
+              </Box>
             </Layout.Header>
           )
         }
@@ -49,7 +59,7 @@ export const Default: Story<Pick<LayoutProps, 'variant'> & StoryArgs> = ({
                   backgroundColor: tokens.blue100,
                   color: tokens.blue600,
                   width: '100%',
-                  height: '600px',
+                  height: '100%',
                 })}
               >
                 Sidebar left content
@@ -65,7 +75,7 @@ export const Default: Story<Pick<LayoutProps, 'variant'> & StoryArgs> = ({
                   backgroundColor: tokens.blue100,
                   color: tokens.blue600,
                   width: '100%',
-                  height: '600px',
+                  height: '100%',
                 })}
               >
                 Sidebar right content
@@ -77,8 +87,10 @@ export const Default: Story<Pick<LayoutProps, 'variant'> & StoryArgs> = ({
         <Layout.Body>
           <Box
             className={css({
+              backgroundColor: tokens.red100,
+              color: tokens.red600,
               width: '100%',
-              minHeight: '600px',
+              height: '100%',
             })}
           >
             Body content
@@ -96,6 +108,7 @@ const meta: Meta<StoryArgs> = {
     withHeader: true,
     withLeftSidebar: false,
     withRightSidebar: false,
+    withBoxShadow: true,
   },
 };
 

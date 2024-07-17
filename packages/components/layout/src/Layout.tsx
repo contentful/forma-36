@@ -19,9 +19,10 @@ export type LayoutProps = {
   rightSidebar?: React.ReactNode;
   /**
    * Defines the width of the layout and its content.
-   * @default 'fullscreen'
+   * @default 'wide'
    */
-  variant?: 'wide' | 'fullscreen';
+  variant?: 'narrow' | 'wide' | 'fullscreen';
+  withBoxShadow?: boolean;
   /**
    * Classname that will be passed to the main content div,
    * which holds the sidebars and children div
@@ -37,15 +38,16 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     header,
     leftSidebar,
     rightSidebar,
-    variant = 'fullscreen',
+    variant = 'wide',
+    withBoxShadow = true,
     className,
-    testId = 'cf-layout',
+    testId = 'cf-ui-layout',
     contentTestId = 'cf-layout-main-container',
     contentClassName,
     ...otherProps
   } = props;
 
-  const styles = getLayoutStyles(variant);
+  const styles = getLayoutStyles({ variant, withBoxShadow });
 
   const contextValue: LayoutContextType = useMemo(
     () => ({
@@ -57,25 +59,30 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
   return (
     <LayoutContextProvider value={contextValue}>
       <Flex
-        {...otherProps}
-        as="section"
         ref={ref}
-        className={cx(styles.root, className)}
-        alignItems="center"
-        flexDirection="column"
-        justifyContent="flex-start"
         testId={testId}
+        className={cx(styles.root, className)}
+        as="section"
+        justifyContent="center"
       >
-        {header}
-
         <Flex
-          className={cx(styles.mainContainer, contentClassName)}
-          flexGrow={1}
-          testId={contentTestId}
+          {...otherProps}
+          className={styles.mainContainer}
+          flexDirection="column"
+          justifyContent="flex-start"
+          alignItems="center"
         >
-          {leftSidebar}
-          {children}
-          {rightSidebar}
+          {header}
+
+          <Flex
+            className={cx(styles.contentContainer, contentClassName)}
+            flexGrow={1}
+            testId={contentTestId}
+          >
+            {leftSidebar}
+            {children}
+            {rightSidebar}
+          </Flex>
         </Flex>
       </Flex>
     </LayoutContextProvider>

@@ -34,6 +34,13 @@ export const Basic: Story<EntityListProps> = () => (
       status="archived"
       entityType="Release"
     />
+    <EntityList.Item
+      title="Entry 4"
+      description="Description"
+      contentType="Experiences content type"
+      status="changed"
+      entityType="Experience"
+    />
   </EntityList>
 );
 
@@ -58,6 +65,14 @@ export const withDragHandle = () => (
       description="Description"
       contentType="My content type"
       status="archived"
+      withDragHandle
+    />
+    <EntityList.Item
+      title="Entry 4"
+      description="Description"
+      contentType="My Studio Experiences content type"
+      status="changed"
+      entityType="Experience"
       withDragHandle
     />
   </EntityList>

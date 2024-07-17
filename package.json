@@ -11,7 +11,6 @@
     "commit": "git-cz",
     "commitmsg": "validate-commit-msg",
     "generate": "plop --plopfile scripts/plopfile.js",
-    "postinstall": "turbo run build --scope=@contentful/f36-tokens --no-deps",
     "lint": "npm run-script lint:js && npm run-script lint:packages",
     "lint:js": "eslint packages --ext .js,.jsx,.ts,.tsx",
     "lint:packages": "node scripts/lint-packages.js",
@@ -115,7 +114,7 @@
     "simple-git-hooks": "^2.8.1",
     "size-limit": "^10.0.3",
     "tsup": "^7.2.0",
-    "turbo": "^1.10.7",
+    "turbo": "^1.10.13",
     "typescript": "4.7.3",
     "webpack": "5"
   },

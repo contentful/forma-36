@@ -36,8 +36,99 @@
     },
     {
       "title": "Header",
-      "slug": "/components/header/",
-      "status": "alpha"
+      "slug": "/components/header/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
     },
     {
       "title": "Icons",
@@ -46,7 +137,7 @@
     {
       "title": "Image",
       "slug": "/components/image/",
-      "status": "alpha"
+      "status": "stable"
     },
     {
       "title": "Layout",
@@ -96,6 +187,11 @@
     {
       "title": "Popover",
       "slug": "/components/popover/"
+    },
+    {
+      "title": "ProgressStepper",
+      "slug": "/components/progress-stepper/",
+      "status": "alpha"
     },
     {
       "title": "Skeleton",
@@ -301,12 +397,12 @@
     {
       "title": "Avatar",
       "slug": "/components/avatar/",
-      "status": "alpha"
+      "status": "stable"
     },
     {
       "title": "AvatarGroup",
       "slug": "/components/avatar-group/",
-      "status": "alpha"
+      "status": "stable"
     }
   ],
   "cardComponents": [

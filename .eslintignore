@@ -10,3 +10,6 @@ tsup.config.ts
 # next.js
 **/.next/
 **/out/
+
+# codemod tests
+**/__testfixtures__
