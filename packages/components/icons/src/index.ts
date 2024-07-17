@@ -133,6 +133,7 @@ export * from './vendor/phosphor/TextTIcon.js';
 export * from './vendor/phosphor/TextUnderlineIcon.js';
 export * from './vendor/phosphor/ThumbsDownIcon.js';
 export * from './vendor/phosphor/ThumbsUpIcon.js';
+export * from './vendor/phosphor/TranslateIcon.js';
 export * from './vendor/phosphor/TrashSimpleIcon.js';
 export * from './vendor/phosphor/TreeStructureIcon.js';
 export * from './vendor/phosphor/TriangleIcon.js';
