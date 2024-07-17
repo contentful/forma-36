@@ -4,7 +4,7 @@ import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
 import { Avatar, type AvatarProps } from '../src/Avatar';
-import { CheckCircleIcon } from '@contentful/f36-icons/src';
+import { CheckCircleIcon } from '@contentful/f36-icons-v4';
 
 export default {
   component: Avatar,

@@ -68,65 +68,12 @@ export const Overview: Story = () => {
         return (
           <Flex marginBottom="spacingM" alignItems="center" key={size}>
             <Flex marginRight="spacingS">
-              <CustomIcon variant="primary" size={size} />
+              <CustomIcon size={size} />
             </Flex>
             <Text>{size}</Text>
           </Flex>
         );
       })}
-
-      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
-        Icon variants
-      </SectionHeading>
-
-      <Flex marginBottom="spacingM" alignItems="center">
-        <Flex marginRight="spacingS">
-          <CustomIcon variant="primary" />
-        </Flex>
-        <Text>primary</Text>
-      </Flex>
-
-      <Flex marginBottom="spacingM" alignItems="center">
-        <Flex marginRight="spacingS">
-          <CustomIcon variant="positive" />
-        </Flex>
-        <Text>positive</Text>
-      </Flex>
-
-      <Flex marginBottom="spacingM" alignItems="center">
-        <Flex marginRight="spacingS">
-          <CustomIcon variant="negative" />
-        </Flex>
-        <Text>negative</Text>
-      </Flex>
-
-      <Flex marginBottom="spacingM" alignItems="center">
-        <Flex marginRight="spacingS">
-          <CustomIcon variant="warning" />
-        </Flex>
-        <Text>warning</Text>
-      </Flex>
-
-      <Flex marginBottom="spacingM" alignItems="center">
-        <Flex marginRight="spacingS">
-          <CustomIcon variant="secondary" />
-        </Flex>
-        <Text>secondary</Text>
-      </Flex>
-
-      <Flex marginBottom="spacingM" alignItems="center">
-        <Flex marginRight="spacingS">
-          <CustomIcon variant="muted" />
-        </Flex>
-        <Text>muted</Text>
-      </Flex>
-
-      <Flex marginBottom="spacingM" alignItems="center">
-        <Flex marginRight="spacingS">
-          <CustomIcon variant="white" />
-        </Flex>
-        <Text>white</Text>
-      </Flex>
     </Fragment>
   );
 };
