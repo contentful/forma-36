@@ -101,7 +101,7 @@ export function SandpackRenderer({
           '@contentful/f36-tokens': '^4.0.0',
           '@contentful/f36-icons': '^4.0.0',
           '@contentful/f36-icons-alpha':
-            'npm:@contentful/f36-icons@^5.0.0-alpha.26',
+            'npm:@contentful/f36-icons@5.0.0-alpha.30',
           '@contentful/f36-core': '^4.0.0',
           '@contentful/f36-utils': '^4.0.0',
           emotion: '^10.0.17',
