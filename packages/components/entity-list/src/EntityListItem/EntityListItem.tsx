@@ -14,8 +14,8 @@ import {
   ReleaseIcon,
   MoreHorizontalIcon,
   PageIcon,
+  PaintBrushIcon,
 } from '@contentful/f36-icons';
-import { PaintBrushIcon } from '@contentful/f36-icons-alpha';
 import { Icon } from '@contentful/f36-icon';
 import { Text } from '@contentful/f36-typography';
 import { DragHandle, type DragHandleProps } from '@contentful/f36-drag-handle';
