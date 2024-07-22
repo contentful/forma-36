@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.29.0
+
+### Minor Changes
+
+- [#2819](https://github.com/contentful/forma-36/pull/2819) [`bbc543f61`](https://github.com/contentful/forma-36/commit/bbc543f6119848dc493b6246960cd3d9f90629bf) Thanks [@ethan-ozelius-contentful](https://github.com/ethan-ozelius-contentful)! - add paintbrush icon
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.67.3
+  - @contentful/f36-icon@4.67.3
+
 ## 4.28.2
 
 ### Patch Changes

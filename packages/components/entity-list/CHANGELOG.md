@@ -1,5 +1,22 @@
 # Change Log
 
+## 4.67.3
+
+### Patch Changes
+
+- [#2819](https://github.com/contentful/forma-36/pull/2819) [`bbc543f61`](https://github.com/contentful/forma-36/commit/bbc543f6119848dc493b6246960cd3d9f90629bf) Thanks [@ethan-ozelius-contentful](https://github.com/ethan-ozelius-contentful)! - remove v5-alpha icons dependency
+
+- Updated dependencies [[`bbc543f61`](https://github.com/contentful/forma-36/commit/bbc543f6119848dc493b6246960cd3d9f90629bf)]:
+  - @contentful/f36-icons@4.29.0
+  - @contentful/f36-badge@4.67.3
+  - @contentful/f36-button@4.67.3
+  - @contentful/f36-core@4.67.3
+  - @contentful/f36-drag-handle@4.67.3
+  - @contentful/f36-icon@4.67.3
+  - @contentful/f36-menu@4.67.3
+  - @contentful/f36-skeleton@4.67.3
+  - @contentful/f36-typography@4.67.3
+
 ## 4.67.2
 
 ### Patch Changes
