@@ -1,5 +1,5 @@
 ---
-'@contentful/f36-icons': patch
+'@contentful/f36-icons': minor
 ---
 
 add paintbrush icon
