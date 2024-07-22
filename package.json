@@ -77,7 +77,7 @@
     "babel-jest": "^29.0.3",
     "babel-plugin-emotion": "10.2.2",
     "chalk": "^4.1.0",
-    "chromatic": "^6.11.4",
+    "chromatic": "^11.5.6",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.44.0",
