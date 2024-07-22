@@ -127,6 +127,7 @@ export { MoreVertical as MoreVerticalIcon } from './MoreVertical';
 export { MoreVerticalTrimmed as MoreVerticalTrimmedIcon } from './MoreVerticalTrimmed';
 export { Page as PageIcon } from './Page';
 export { PageTrimmed as PageTrimmedIcon } from './PageTrimmed';
+export { PaintBrush as PaintBrushIcon } from './PaintBrush';
 export { Pdf as PdfIcon } from './Pdf';
 export { Person as PersonIcon } from './Person';
 export { Plaintext as PlaintextIcon } from './Plaintext';
