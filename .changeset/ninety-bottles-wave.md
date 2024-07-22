@@ -2,4 +2,4 @@
 '@contentful/f36-entity-list': patch
 ---
 
-and remove v5-alpha icons dependency
+remove v5-alpha icons dependency
