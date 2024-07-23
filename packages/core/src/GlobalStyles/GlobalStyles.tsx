@@ -93,6 +93,12 @@ export const GlobalStyles = ({
     <Global
       styles={css`
         ${withNormalize ? cssReset : undefined};
+
+        @font-face {
+          font-family: 'Geist';
+          src: url('./fonts/GeistVF.woff2') format('woff2');
+        }
+
         html {
           border: 0;
           box-sizing: border-box;
@@ -102,7 +108,7 @@ export const GlobalStyles = ({
 
         body {
           color: ${tokens.gray800};
-          font-family: ${tokens.fontStackPrimary};
+          font-family: 'Geist', ${tokens.fontStackPrimary};
           font-size: ${tokens.fontSizeM};
           line-height: ${tokens.lineHeightM};
         }

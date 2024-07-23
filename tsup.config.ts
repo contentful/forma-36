@@ -12,4 +12,5 @@ export default defineConfig({
   sourcemap: true,
   target: 'es6',
   treeshake: true,
+  publicDir: 'public',
 });
