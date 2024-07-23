@@ -1,8 +1,12 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { mqs } from './utils.styles';
+import { NavbarProps } from './Navbar';
 
-export const getNavbarStyles = (maxWidth: string, variant: string) => ({
+export const getNavbarStyles = ({
+  contentMaxWidth,
+  variant,
+}: Pick<NavbarProps, 'contentMaxWidth' | 'variant'>) => ({
   container: css({
     justifyContent: 'center',
     backgroundColor: tokens.gray100,
@@ -19,7 +23,7 @@ export const getNavbarStyles = (maxWidth: string, variant: string) => ({
 
   navigation: css({
     width: '100%',
-    maxWidth: variant === 'wide' ? '1524px' : maxWidth,
+    maxWidth: variant === 'wide' ? '1920px' : contentMaxWidth,
     padding: `${tokens.spacingS} ${tokens.spacingM}`,
     minHeight: tokens.spacingL,
     [mqs.small]: {
