@@ -61,7 +61,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
     variant = 'wide',
     ...otherProps
   } = props;
-  const styles = getNavbarStyles(contentMaxWidth, variant);
+  const styles = getNavbarStyles({ contentMaxWidth, variant });
 
   return (
     <Flex

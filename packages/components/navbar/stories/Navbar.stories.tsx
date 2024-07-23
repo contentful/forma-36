@@ -146,7 +146,7 @@ export const SizeVariants: Story<NavbarProps> = () => {
         mainNavigation={<MainItems />}
       />
 
-      <SectionHeading marginBottom="none">Wide</SectionHeading>
+      <SectionHeading marginBottom="none">Wide (1920px)</SectionHeading>
       <Navbar
         switcher={<Switcher />}
         account={<Account />}
