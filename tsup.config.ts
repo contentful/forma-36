@@ -13,4 +13,7 @@ export default defineConfig({
   target: 'es6',
   treeshake: true,
   publicDir: 'public',
+  loader: {
+    '.woff2': 'copy',
+  },
 });

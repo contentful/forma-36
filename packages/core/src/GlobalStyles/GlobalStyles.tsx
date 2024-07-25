@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Global, css, type SerializedStyles } from '@emotion/core';
 import tokens from '@contentful/f36-tokens';
+import GeistVF from './GeistVF.woff2';
 
 const cssReset = css`
   /* Remove default margin */
@@ -96,7 +97,7 @@ export const GlobalStyles = ({
 
         @font-face {
           font-family: 'Geist';
-          src: url('./fonts/GeistVF.woff2') format('woff2');
+          src: url(${GeistVF}) format('woff2');
         }
 
         html {
