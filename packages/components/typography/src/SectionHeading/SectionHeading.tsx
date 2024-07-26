@@ -43,14 +43,17 @@ function _SectionHeading<
       as={SECTION_HEADING_DEFAULT_TAG}
       testId={testId}
       marginBottom="spacingL"
-      fontWeight="fontWeightDemiBold"
-      fontColor="gray900"
+      fontWeight="fontWeightMedium"
+      fontColor="gray600"
       fontSize={density === 'high' ? 'fontSizeSHigh' : 'fontSizeS'}
       lineHeight={density === 'high' ? 'lineHeightSHigh' : 'lineHeightS'}
       className={cx(
         css({
-          letterSpacing: tokens.letterSpacingWide,
-          textTransform: 'uppercase',
+          letterSpacing: tokens.letterSpacingDefault,
+          textTransform: 'lowercase',
+          '&:first-letter': {
+            textTransform: 'uppercase',
+          },
         }),
         className,
       )}
