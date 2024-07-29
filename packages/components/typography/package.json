@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-typography",
-  "version": "4.67.2",
+  "version": "5.0.0-alpha.1",
   "description": "Forma 36: typography React Component",
   "license": "MIT",
   "files": [
