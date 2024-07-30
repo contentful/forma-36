@@ -16,6 +16,7 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { NavbarAccountProps } from '../src/NavbarAccount/NavbarAccount';
 import { NavbarSwitcherProps } from '../src/NavbarSwitcher/NavbarSwitcher';
+import { Button } from '@contentful/f36-button/src';
 
 export default {
   component: Navbar,
@@ -282,6 +283,7 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
   return (
     <Navbar
       mobileNavigation={<MobileMenu />}
+      promotions={<Button>Upgrade</Button>}
       switcher={<Switcher />}
       mainNavigation={<MainItems />}
       account={
