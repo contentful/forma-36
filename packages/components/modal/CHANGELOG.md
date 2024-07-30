@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.67.4
+
+### Patch Changes
+
+- [#2836](https://github.com/contentful/forma-36/pull/2836) [`7eca6ba65`](https://github.com/contentful/forma-36/commit/7eca6ba6530b2775304021ce550f164051421818) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - refactor: adjust modal header border-color to `gray/200`
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.67.4
+  - @contentful/f36-core@4.67.4
+  - @contentful/f36-typography@4.67.4
+
 ## 4.67.3
 
 ### Patch Changes
