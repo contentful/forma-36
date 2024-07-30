@@ -16,7 +16,7 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { NavbarAccountProps } from '../src/NavbarAccount/NavbarAccount';
 import { NavbarSwitcherProps } from '../src/NavbarSwitcher/NavbarSwitcher';
-import { Button } from '@contentful/f36-button/src';
+import { Button } from '@contentful/f36-button';
 
 export default {
   component: Navbar,
