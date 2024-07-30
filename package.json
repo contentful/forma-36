@@ -19,6 +19,7 @@
     "storybook": "start-storybook -p 9001 -c ./scripts/.storybook",
     "storybook:build": "build-storybook -c ./scripts/.storybook -o dist-storybook --webpack-stats-json",
     "test": "jest",
+    "test:watch": "jest --watch",
     "tsc": "tsc --noEmit",
     "tsc:watch": "tsc --noEmit --watch",
     "docs": "npm run-script docs:next",
