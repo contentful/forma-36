@@ -14,6 +14,9 @@ type NavbarOwnProps = CommonProps & {
    */
   logo?: React.ReactNode;
 
+  /** Promotions component, displayed on most left side */
+  promotions?: React.ReactNode;
+
   /** Environment Switcher component */
   switcher?: React.ReactNode;
 
@@ -50,6 +53,7 @@ export type NavbarProps = NavbarHTMLElementProps & NavbarOwnProps;
 function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
   const {
     logo,
+    promotions,
     switcher,
     mainNavigation,
     secondaryNavigation,
@@ -104,6 +108,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
           )}
         </Flex>
         <Flex alignItems="center" gap="spacingXs">
+          <Flex alignItems="center">{promotions}</Flex>
           <Flex alignItems="center">{switcher}</Flex>
           <Flex alignItems="center" gap="spacingXs">
             {secondaryNavigation && (
