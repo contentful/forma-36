@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 31-07-2024
+
+**F36 Modal** `v4.67.4`
+
+- refactor: adjust modal header border-color to `gray/200`
+
 ## 23-07-2024
 
 **F36 Entity List** `v4.67.3`
