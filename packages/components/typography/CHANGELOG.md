@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.68.0
+
+### Minor Changes
+
+- [#2840](https://github.com/contentful/forma-36/pull/2840) [`472d123d4`](https://github.com/contentful/forma-36/commit/472d123d4161dc76438274176385954574c8f85d) Thanks [@massao](https://github.com/massao)! - Update styling of SectionHeading component
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.68.0
+
 ## 4.67.4
 
 ### Patch Changes

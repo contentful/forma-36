@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.68.0
+
+### Patch Changes
+
+- Updated dependencies [[`472d123d4`](https://github.com/contentful/forma-36/commit/472d123d4161dc76438274176385954574c8f85d)]:
+  - @contentful/f36-typography@4.68.0
+  - @contentful/f36-core@4.68.0
+  - @contentful/f36-icon@4.68.0
+
 ## 4.67.4
 
 ### Patch Changes
