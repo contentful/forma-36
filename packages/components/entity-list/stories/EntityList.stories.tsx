@@ -36,7 +36,7 @@ const actions = [
 export const Basic: Story<EntityListProps> = () => (
   <EntityList>
     <EntityList.Item
-      title="{ ONE } onClick & onMenuClick, href=undefined - <button>"
+      title="{ ONE } onClick & onMenuClick defined, href undefined, button"
       actions={actions}
       onClick={() => {
         console.log('{ ONE } onClick()');
@@ -46,14 +46,14 @@ export const Basic: Story<EntityListProps> = () => (
       status="published"
     />
     <EntityList.Item
-      title="{ TWO } href, onClick=undefined - <a>"
+      title="{ TWO } hre defined, onClick undefined, a-tag"
       href={'https://contentful.com'}
       description="Description"
       contentType="My content type"
       status="published"
     />
     <EntityList.Item
-      title="{ THREE } onClick defined & href defined - <a> "
+      title="{ THREE } onClick defined & href defined - a-tag "
       href="https://github.com/contentful/forma-36"
       description="Description"
       contentType="My content type"
@@ -64,7 +64,7 @@ export const Basic: Story<EntityListProps> = () => (
       }}
     />
     <EntityList.Item
-      title="{ FOUR } onClick() defined, href=undefined - <button>"
+      title="{ FOUR } onClick defined, href undefined - button"
       onClick={() => {
         console.log('{ FOUR } onClick()');
       }}
@@ -74,7 +74,7 @@ export const Basic: Story<EntityListProps> = () => (
       entityType="Release"
     />
     <EntityList.Item
-      title="{ FIVE } Presentational entity card - <article>"
+      title="{ FIVE } Presentational entity card - article"
       description="Description"
       contentType="Experiences content type"
       status="changed"
