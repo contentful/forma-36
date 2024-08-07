@@ -37,13 +37,17 @@ describe('EntityList', function () {
   });
 
   it('renders the component with Menu', async () => {
+    const editSpy = jest.fn();
+
     const user = userEvent.setup();
     render(
       <EntityListItem
         title="Title"
         actions={[
           <MenuSectionTitle key="title">Actions</MenuSectionTitle>,
-          <MenuItem key="edit">Edit</MenuItem>,
+          <MenuItem key="edit" onClick={editSpy}>
+            Edit
+          </MenuItem>,
           <MenuItem key="download">Download</MenuItem>,
           <MenuItem key="remove">Remove</MenuItem>,
         ]}
@@ -51,9 +55,11 @@ describe('EntityList', function () {
     );
 
     await user.click(screen.getByLabelText('Actions'));
-
     expect(screen.getByRole('menu')).toBeInTheDocument();
     expect(screen.getAllByRole('menuitem')).toHaveLength(3);
+    await user.click(screen.getByText('Edit'));
+
+    expect(editSpy).toHaveBeenCalled();
   });
 
   it('renders the component with custom drag handle', () => {

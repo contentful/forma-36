@@ -159,8 +159,10 @@ export const EntityListItem = ({
   };
 
   let Element: React.ElementType = 'article';
+  let isClickable = false;
   if (href || onClick) {
     Element = href ? 'a' : 'button';
+    isClickable = true;
   }
 
   // archived assets will not be available on the CDN, resulting in a broken image src
@@ -175,7 +177,7 @@ export const EntityListItem = ({
     >
       {renderCardDragHandle()}
       {isLoading ? (
-        <article className={styles.card}>
+        <article className={styles.card(false)}>
           <Skeleton.Container clipId="f36-entity-list-item-skeleton">
             <Skeleton.Image height={46} width={46} />
             <Skeleton.BodyText
@@ -186,107 +188,108 @@ export const EntityListItem = ({
           </Skeleton.Container>
         </article>
       ) : (
-        <Element
-          className={styles.card}
-          onClick={onClick}
-          href={href}
-          type={Element === 'button' ? 'button' : undefined}
-          target={href ? '_blank' : undefined}
-        >
-          {withThumbnail && (
-            <figure className={styles.media}>
-              {asIcon ? (
-                <Icon
-                  as={ICON_MAP[entityType.toLowerCase()]}
-                  variant="muted"
-                  data-test-id={`thumbnail-icon-${entityType.toLowerCase()}`}
-                />
-              ) : (
-                <img
-                  src={thumbnailUrl}
-                  className={styles.thumbnail}
-                  alt={thumbnailAltText}
-                />
-              )}
-            </figure>
-          )}
+        <>
+          <Element
+            className={styles.card(isClickable)}
+            onClick={onClick}
+            href={href}
+            {...(href ? { target: '_blank' } : {})}
+            {...(Element === 'button' ? { type: 'button' } : {})}
+          >
+            {withThumbnail && (
+              <figure className={styles.media}>
+                {asIcon ? (
+                  <Icon
+                    as={ICON_MAP[entityType.toLowerCase()]}
+                    variant="muted"
+                    data-test-id={`thumbnail-icon-${entityType.toLowerCase()}`}
+                  />
+                ) : (
+                  <img
+                    src={thumbnailUrl}
+                    className={styles.thumbnail}
+                    alt={thumbnailAltText}
+                  />
+                )}
+              </figure>
+            )}
 
-          <div className={styles.content}>
-            <Flex>
-              <Text
-                as="h3"
-                lineHeight="lineHeightM"
-                fontColor="gray900"
-                fontWeight="fontWeightDemiBold"
-                isTruncated
-              >
-                {title}
-              </Text>
-
-              {contentType && (
+            <div className={styles.content}>
+              <Flex>
                 <Text
-                  as="span"
-                  lineHeight="lineHeightM"
-                  fontColor="gray600"
-                  className={styles.contentType}
-                  isTruncated
-                >
-                  ({contentType})
-                </Text>
-              )}
-            </Flex>
-            <Flex marginTop="spacing2Xs">
-              {entityType && (
-                <Text
-                  lineHeight="lineHeightM"
-                  fontColor="gray600"
-                  className={styles.entityType}
-                >
-                  {entityType}
-                </Text>
-              )}
-              {description && (
-                <Text
-                  as="p"
+                  as="h3"
                   lineHeight="lineHeightM"
                   fontColor="gray900"
+                  fontWeight="fontWeightDemiBold"
                   isTruncated
-                  className={styles.description}
                 >
-                  {description}
+                  {title}
                 </Text>
+
+                {contentType && (
+                  <Text
+                    as="span"
+                    lineHeight="lineHeightM"
+                    fontColor="gray600"
+                    className={styles.contentType}
+                    isTruncated
+                  >
+                    ({contentType})
+                  </Text>
+                )}
+              </Flex>
+              <Flex marginTop="spacing2Xs">
+                {entityType && (
+                  <Text
+                    lineHeight="lineHeightM"
+                    fontColor="gray600"
+                    className={styles.entityType}
+                  >
+                    {entityType}
+                  </Text>
+                )}
+                {description && (
+                  <Text
+                    as="p"
+                    lineHeight="lineHeightM"
+                    fontColor="gray900"
+                    isTruncated
+                    className={styles.description}
+                  >
+                    {description}
+                  </Text>
+                )}
+              </Flex>
+            </div>
+
+            <Flex
+              className={styles.meta}
+              alignItems="flex-start"
+              paddingLeft="spacingXs"
+            >
+              {status && (
+                <Box marginRight={actions ? 'spacingXs' : 'none'}>
+                  <EntityStatusBadge entityStatus={status} />
+                </Box>
               )}
             </Flex>
-          </div>
-
-          <Flex
-            className={styles.meta}
-            alignItems="flex-start"
-            paddingLeft="spacingXs"
-          >
-            {status && (
-              <Box marginRight={actions ? 'spacingXs' : 'none'}>
-                <EntityStatusBadge entityStatus={status} />
-              </Box>
-            )}
-
-            {actions && (
-              <Menu>
-                <Menu.Trigger>
-                  <Button
-                    isDisabled={isActionsDisabled}
-                    startIcon={<MoreHorizontalIcon />}
-                    variant="transparent"
-                    aria-label="Actions"
-                    size="small"
-                    className={styles.menuTrigger}
-                  />
-                </Menu.Trigger>
-                <Menu.List>{actions}</Menu.List>
-              </Menu>
-            )}
-          </Flex>
-        </Element>
+          </Element>
+          {actions && (
+            <Menu>
+              <Menu.Trigger>
+                <Button
+                  isDisabled={isActionsDisabled}
+                  startIcon={<MoreHorizontalIcon />}
+                  variant="transparent"
+                  aria-label="Actions"
+                  size="small"
+                  className={styles.menuTrigger}
+                />
+              </Menu.Trigger>
+              <Menu.List>{actions}</Menu.List>
+            </Menu>
+          )}
+        </>
       )}
     </li>
   );
