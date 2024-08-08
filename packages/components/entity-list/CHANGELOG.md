@@ -1,5 +1,94 @@
 # Change Log
 
+## 4.68.1
+
+### Patch Changes
+
+- [#2839](https://github.com/contentful/forma-36/pull/2839) [`0a4636fec`](https://github.com/contentful/forma-36/commit/0a4636fecbd324a3beb16bd5d51efa409a8bd303) Thanks [@ethan-ozelius-contentful](https://github.com/ethan-ozelius-contentful)! - fix(<entitylistitem>): differentiate click events for entire entity card, and actions menu
+
+  It was previously impossible to differentiate when a user was clicking the menu trigger/menu
+  and when they were clicking anywhere else in the entity card, because events that occur in
+  the trigger/menu were also bubbling up the to the onclick handler for the entire card.
+
+  This PR also resolves a react validateDOM() warning, because when rendering an action menu,
+  we were rendering a button within a button.
+
+  The solution was to create a fragment container with 2 children, the first containing the
+  actual entity card elements like thumbnail, title, description etc. and the second
+  containing the optional actions menu. That way, click events from either component do not
+  clash with eachother.
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.68.1
+  - @contentful/f36-button@4.68.1
+  - @contentful/f36-core@4.68.1
+  - @contentful/f36-drag-handle@4.68.1
+  - @contentful/f36-icon@4.68.1
+  - @contentful/f36-menu@4.68.1
+  - @contentful/f36-skeleton@4.68.1
+  - @contentful/f36-typography@4.68.1
+
+## 4.68.0
+
+### Patch Changes
+
+- Updated dependencies [[`472d123d4`](https://github.com/contentful/forma-36/commit/472d123d4161dc76438274176385954574c8f85d)]:
+  - @contentful/f36-typography@4.68.0
+  - @contentful/f36-badge@4.68.0
+  - @contentful/f36-button@4.68.0
+  - @contentful/f36-core@4.68.0
+  - @contentful/f36-drag-handle@4.68.0
+  - @contentful/f36-icon@4.68.0
+  - @contentful/f36-menu@4.68.0
+  - @contentful/f36-skeleton@4.68.0
+
+## 4.67.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.67.4
+  - @contentful/f36-button@4.67.4
+  - @contentful/f36-core@4.67.4
+  - @contentful/f36-drag-handle@4.67.4
+  - @contentful/f36-icon@4.67.4
+  - @contentful/f36-menu@4.67.4
+  - @contentful/f36-skeleton@4.67.4
+  - @contentful/f36-typography@4.67.4
+
+## 4.67.3
+
+### Patch Changes
+
+- [#2819](https://github.com/contentful/forma-36/pull/2819) [`bbc543f61`](https://github.com/contentful/forma-36/commit/bbc543f6119848dc493b6246960cd3d9f90629bf) Thanks [@ethan-ozelius-contentful](https://github.com/ethan-ozelius-contentful)! - remove v5-alpha icons dependency
+
+- Updated dependencies [[`bbc543f61`](https://github.com/contentful/forma-36/commit/bbc543f6119848dc493b6246960cd3d9f90629bf)]:
+  - @contentful/f36-icons@4.29.0
+  - @contentful/f36-badge@4.67.3
+  - @contentful/f36-button@4.67.3
+  - @contentful/f36-core@4.67.3
+  - @contentful/f36-drag-handle@4.67.3
+  - @contentful/f36-icon@4.67.3
+  - @contentful/f36-menu@4.67.3
+  - @contentful/f36-skeleton@4.67.3
+  - @contentful/f36-typography@4.67.3
+
+## 4.67.2
+
+### Patch Changes
+
+- [#2821](https://github.com/contentful/forma-36/pull/2821) [`341afd50d`](https://github.com/contentful/forma-36/commit/341afd50d489c82329b194817032b3047166e4bd) Thanks [@ethan-ozelius-contentful](https://github.com/ethan-ozelius-contentful)! - feat(entity-list-item): add support for Experience type entity
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.67.2
+  - @contentful/f36-button@4.67.2
+  - @contentful/f36-core@4.67.2
+  - @contentful/f36-drag-handle@4.67.2
+  - @contentful/f36-icon@4.67.2
+  - @contentful/f36-menu@4.67.2
+  - @contentful/f36-skeleton@4.67.2
+  - @contentful/f36-typography@4.67.2
+
 ## 4.67.1
 
 ### Patch Changes

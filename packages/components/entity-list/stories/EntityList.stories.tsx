@@ -2,6 +2,7 @@ import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { EntityList, type EntityListProps } from '../src';
+import { MenuItem, MenuSectionTitle } from '@contentful/f36-components';
 
 export default {
   title: 'Components/EntityList/EntityList',
@@ -12,27 +13,72 @@ export default {
   },
 } as Meta;
 
+const actions = [
+  <MenuSectionTitle key="title">Actions</MenuSectionTitle>,
+  <MenuItem
+    key="edit"
+    onClick={() => {
+      console.log('[ <MenuItem> ] Edit');
+    }}
+  >
+    Edit
+  </MenuItem>,
+  <MenuItem
+    key="cancel"
+    onClick={() => {
+      console.log('[ <MenuItem> ] Delete');
+    }}
+  >
+    Delete
+  </MenuItem>,
+];
+
 export const Basic: Story<EntityListProps> = () => (
   <EntityList>
     <EntityList.Item
-      title="Entry 1"
+      title="{ ONE } onClick & onMenuClick, href=undefined - <button>"
+      actions={actions}
+      onClick={() => {
+        console.log('{ ONE } onClick()');
+      }}
       description="Description"
       contentType="My content type"
       status="published"
     />
     <EntityList.Item
-      title="Entry 2"
+      title="{ TWO } href, onClick=undefined - <a>"
+      href={'https://contentful.com'}
+      description="Description"
+      contentType="My content type"
+      status="published"
+    />
+    <EntityList.Item
+      title="{ THREE } onClick defined & href defined - <a> "
+      href="https://github.com/contentful/forma-36"
       description="Description"
       contentType="My content type"
       status="draft"
       entityType="Page"
+      onClick={() => {
+        console.log('{ THREE } onClick()');
+      }}
     />
     <EntityList.Item
-      title="Entry 3"
+      title="{ FOUR } onClick() defined, href=undefined - <button>"
+      onClick={() => {
+        console.log('{ FOUR } onClick()');
+      }}
       description="Description"
       contentType="My content type"
       status="archived"
       entityType="Release"
+    />
+    <EntityList.Item
+      title="{ FIVE } Presentational entity card - <article>"
+      description="Description"
+      contentType="Experiences content type"
+      status="changed"
+      entityType="Experience"
     />
   </EntityList>
 );
@@ -58,6 +104,14 @@ export const withDragHandle = () => (
       description="Description"
       contentType="My content type"
       status="archived"
+      withDragHandle
+    />
+    <EntityList.Item
+      title="Entry 4"
+      description="Description"
+      contentType="My Studio Experiences content type"
+      status="changed"
+      entityType="Experience"
       withDragHandle
     />
   </EntityList>

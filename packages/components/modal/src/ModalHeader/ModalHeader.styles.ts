@@ -7,7 +7,7 @@ export function getModalHeaderStyles() {
       position: 'relative',
       padding: `${tokens.spacingM} ${tokens.spacingM} ${tokens.spacingM} ${tokens.spacingL}`,
       borderRadius: `${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium} 0 0`,
-      borderBottom: `1px solid ${tokens.gray300}`,
+      borderBottom: `1px solid ${tokens.gray200}`,
     }),
     buttonContainer: css({
       position: 'relative',

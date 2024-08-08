@@ -21,17 +21,23 @@ export const getEntityListItemStyles = () => ({
         backgroundColor: tokens.gray100,
       },
     }),
-  card: css({
-    display: 'flex',
-    textDecoration: 'none',
-    width: '100%',
-    minHeight: tokens.spacing3Xl,
-    padding: tokens.spacingXs,
-    margin: 0, // remove the default button margin in Safari.
-    border: 'none',
-    background: 'none',
-    textAlign: 'left',
-  }),
+  card: (isClickable: boolean) =>
+    css({
+      display: 'flex',
+      textDecoration: 'none',
+      width: '100%',
+      minHeight: tokens.spacing3Xl,
+      padding: tokens.spacingXs,
+      margin: 0, // remove the default button margin in Safari.
+      border: 'none',
+      background: 'none',
+      textAlign: 'left',
+      cursor: isClickable ? 'pointer' : 'inherit',
+      '&:focus-visible': {
+        boxShadow: `inset ${tokens.glowPrimary}`,
+        outline: 'none',
+      },
+    }),
   content: css({
     flexGrow: 1,
     minWidth: 0,
@@ -82,5 +88,7 @@ export const getEntityListItemStyles = () => ({
   menuTrigger: css({
     padding: '0 0.125rem',
     minHeight: '1.5rem',
+    height: '1rem',
+    margin: `${tokens.spacingXs} ${tokens.spacingXs} 0 0`,
   }),
 });

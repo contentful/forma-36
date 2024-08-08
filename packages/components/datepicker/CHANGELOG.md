@@ -1,5 +1,61 @@
 # @contentful/f36-datepicker
 
+## 4.68.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.68.1
+  - @contentful/f36-core@4.68.1
+  - @contentful/f36-forms@4.68.1
+  - @contentful/f36-popover@4.68.1
+  - @contentful/f36-typography@4.68.1
+
+## 4.68.0
+
+### Patch Changes
+
+- Updated dependencies [[`472d123d4`](https://github.com/contentful/forma-36/commit/472d123d4161dc76438274176385954574c8f85d)]:
+  - @contentful/f36-typography@4.68.0
+  - @contentful/f36-button@4.68.0
+  - @contentful/f36-core@4.68.0
+  - @contentful/f36-forms@4.68.0
+  - @contentful/f36-popover@4.68.0
+
+## 4.67.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.67.4
+  - @contentful/f36-core@4.67.4
+  - @contentful/f36-forms@4.67.4
+  - @contentful/f36-popover@4.67.4
+  - @contentful/f36-typography@4.67.4
+
+## 4.67.3
+
+### Patch Changes
+
+- Updated dependencies [[`bbc543f61`](https://github.com/contentful/forma-36/commit/bbc543f6119848dc493b6246960cd3d9f90629bf)]:
+  - @contentful/f36-icons@4.29.0
+  - @contentful/f36-button@4.67.3
+  - @contentful/f36-core@4.67.3
+  - @contentful/f36-forms@4.67.3
+  - @contentful/f36-popover@4.67.3
+  - @contentful/f36-typography@4.67.3
+
+## 4.67.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.67.2
+  - @contentful/f36-core@4.67.2
+  - @contentful/f36-forms@4.67.2
+  - @contentful/f36-popover@4.67.2
+  - @contentful/f36-typography@4.67.2
+
 ## 4.67.1
 
 ### Patch Changes
