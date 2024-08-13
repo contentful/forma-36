@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- [#2839](https://github.com/contentful/forma-36/pull/2839) [`0a4636fec`](https://github.com/contentful/forma-36/commit/0a4636fecbd324a3beb16bd5d51efa409a8bd303) Thanks [@ethan-ozelius-contentful](https://github.com/ethan-ozelius-contentful)! - fix(<entitylistitem>): differentiate click events for entire entity card, and actions menu
+- [#2839](https://github.com/contentful/forma-36/pull/2839) [`0a4636fec`](https://github.com/contentful/forma-36/commit/0a4636fecbd324a3beb16bd5d51efa409a8bd303) Thanks [@ethan-ozelius-contentful](https://github.com/ethan-ozelius-contentful)! - fix(EntityListItem): differentiate click events for entire entity card, and actions menu
 
   It was previously impossible to differentiate when a user was clicking the menu trigger/menu
   and when they were clicking anywhere else in the entity card, because events that occur in

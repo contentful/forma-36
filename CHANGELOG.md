@@ -16,7 +16,7 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 **F36 Entity List** `v4.68.1`
 
-- fix(<entitylistitem>): differentiate click events for entire entity card, and actions menu
+- fix(EntityListItem): differentiate click events for entire entity card, and actions menu
 - It was previously impossible to differentiate when a user was clicking the menu trigger/menu
 - and when they were clicking anywhere else in the entity card, because events that occur in
 - the trigger/menu were also bubbling up the to the onclick handler for the entire card.
