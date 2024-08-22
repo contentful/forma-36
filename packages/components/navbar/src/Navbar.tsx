@@ -115,6 +115,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
               <Flex
                 className={styles.secondaryNavigationWrapper}
                 aria-label="Secondary Navigation"
+                gap="spacingXs"
               >
                 {secondaryNavigation}
               </Flex>
