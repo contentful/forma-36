@@ -32,7 +32,7 @@ export const getNavbarItemStyles = ({ title }) => ({
       margin: 0,
       outline: 'none',
       fontSize: tokens.fontSizeM,
-      lineHeight: tokens.lineHeightS,
+      lineHeight: tokens.lineHeightM,
       fontWeight: tokens.fontWeightMedium,
       position: 'relative',
       textAlign: 'left',
@@ -44,7 +44,6 @@ export const getNavbarItemStyles = ({ title }) => ({
       boxSizing: 'border-box',
       transition: `color ${tokens.transitionDurationShort} ${tokens.transitionEasingCubicBezier}`,
       borderRadius: tokens.borderRadiusMedium,
-      minWidth: '44px',
 
       '&:hover': {
         backgroundColor: hexToRGBA(tokens.gray900, 0.05),
