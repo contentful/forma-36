@@ -31,6 +31,8 @@ You need to pass an [Icon component](../components/icon) you want to render to t
 
 ```
 
+With tooltip for enhanced user experience.
+
 ### As toolbar actions
 
 In toolbars, action bars, and in all other space restricted containers we suggest using `IconButton` instead of `Button` component.
@@ -48,3 +50,5 @@ For these cases, it would be also beneficial to use [Tooltip](../components/tool
 ## Accessibility
 
 We enforce `aria-label` property for `IconButton` component to ensure that these buttons are fully accessible for screen readers.
+
+For easier understanding we also encourage the use of the tooltipProps and giving it the same `content` as the `aria-label`

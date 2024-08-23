@@ -21,6 +21,12 @@ export default function IconButtonExample() {
           aria-label="Select the date"
           icon={<CalendarIcon />}
         />
+        <IconButton
+          variant="primary"
+          aria-label="Select the date"
+          icon={<CalendarIcon />}
+          tooltipProps={{ content: 'Select the date' }}
+        />
       </Stack>
       <Stack>
         <IconButton
