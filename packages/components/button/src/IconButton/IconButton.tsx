@@ -4,11 +4,17 @@ import type {
   PolymorphicProps,
   PolymorphicComponent,
   ExpandProps,
+  CommonProps,
 } from '@contentful/f36-core';
 import { Button } from '../Button';
 import type { ButtonInternalProps } from '../types';
 import { getStyles } from './IconButton.styles';
 import { useDensity } from '@contentful/f36-utils';
+import {
+  Tooltip,
+  type TooltipInternalProps,
+  type WithEnhancedContent,
+} from '@contentful/f36-tooltip';
 
 interface IconButtonInternalProps
   extends Omit<
@@ -32,6 +38,12 @@ interface IconButtonInternalProps
    * Note: 'large' is deprecated
    * */
   size?: ButtonInternalProps['size'];
+  /**
+   * A tooltipProps attribute used to conditionally render the tooltip around root element
+   */
+  tooltipProps?: CommonProps &
+    WithEnhancedContent &
+    Omit<TooltipInternalProps, 'children'>;
 }
 
 const ICON_BUTTON_DEFAULT_TAG = 'button';
@@ -49,6 +61,7 @@ function _IconButton<
     icon,
     className,
     size = 'medium',
+    tooltipProps,
     ...otherProps
   } = props;
 
@@ -56,17 +69,29 @@ function _IconButton<
 
   const styles = getStyles({ size, density });
 
-  return (
+  const iconButtton = (
     <Button
       testId={testId}
       ref={ref}
       variant={variant}
       className={cx(styles.iconButton, className)}
       size={size}
-      {...otherProps}
       startIcon={icon}
+      {...otherProps}
     />
   );
+
+  if (tooltipProps) {
+    const { showDelay = 600, ...restTooltipProps } = tooltipProps;
+
+    return (
+      <Tooltip {...restTooltipProps} showDelay={showDelay}>
+        {iconButtton}
+      </Tooltip>
+    );
+  }
+
+  return iconButtton;
 }
 
 _IconButton.displayName = 'IconButton';
