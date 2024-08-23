@@ -31,6 +31,7 @@ export * from './vendor/phosphor/ArrowRightIcon.js';
 export * from './vendor/phosphor/ArrowSquareOutIcon.js';
 export * from './vendor/phosphor/ArrowUpIcon.js';
 export * from './vendor/phosphor/ArrowsLeftRightIcon.js';
+export * from './vendor/phosphor/BookOpenIcon.js';
 export * from './vendor/phosphor/BookmarkSimpleIcon.js';
 export * from './vendor/phosphor/BracketsCurlyIcon.js';
 export * from './vendor/phosphor/CalendarBlankIcon.js';
