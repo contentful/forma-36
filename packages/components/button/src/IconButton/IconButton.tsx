@@ -38,6 +38,12 @@ interface IconButtonInternalProps
    * Note: 'large' is deprecated
    * */
   size?: ButtonInternalProps['size'];
+
+  /**
+   * Triggers, wether or not to render the tooltip
+   */
+  withTooltip?: boolean;
+
   /**
    * A tooltipProps attribute used to conditionally render the tooltip around root element
    */
@@ -61,7 +67,9 @@ function _IconButton<
     icon,
     className,
     size = 'medium',
+    withTooltip = false,
     tooltipProps,
+    'aria-label': ariaLabel,
     ...otherProps
   } = props;
 
@@ -77,15 +85,20 @@ function _IconButton<
       className={cx(styles.iconButton, className)}
       size={size}
       startIcon={icon}
+      aria-label={ariaLabel}
       {...otherProps}
     />
   );
 
-  if (tooltipProps) {
-    const { showDelay = 600, ...restTooltipProps } = tooltipProps;
+  if (withTooltip) {
+    const {
+      showDelay = 600,
+      content = ariaLabel,
+      ...restTooltipProps
+    } = tooltipProps || {};
 
     return (
-      <Tooltip {...restTooltipProps} showDelay={showDelay}>
+      <Tooltip content={content} showDelay={showDelay} {...restTooltipProps}>
         {iconButtton}
       </Tooltip>
     );
