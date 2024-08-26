@@ -47,23 +47,25 @@ basic.args = {
 };
 
 export const withTooltip = ({ icon, iconProps, ...props }) => (
-  <Flex flexDirection="row" gap="spacingS">
-    <IconButton
-      icon={icon && <Icon as={icons[icon]} {...iconProps} />}
-      aria-label={'Start'}
-      tooltipProps={{
-        placement: 'bottom',
-      }}
-      withTooltip
-      {...props}
-    />
-    <IconButton
-      icon={icon && <Icon as={icons[icon]} {...iconProps} />}
-      aria-label={'Start the process'}
-      withTooltip
-      {...props}
-    />
-  </Flex>
+  <>
+    <Flex marginBottom="spacingS">
+      <IconButton
+        icon={icon && <Icon as={icons[icon]} {...iconProps} />}
+        aria-label={'Start the process'}
+        withTooltip
+        {...props}
+      />
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <IconButton
+        icon={icon && <Icon as={icons[icon]} {...iconProps} />}
+        aria-label={'Start the process'}
+        withTooltip
+        tooltipProps={{ content: 'Different Content' }}
+        {...props}
+      />
+    </Flex>
+  </>
 );
 
 withTooltip.args = {
