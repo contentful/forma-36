@@ -40,7 +40,7 @@ const Account = ({
   notificationVariant,
 }: Partial<NavbarAccountProps>) => (
   <Navbar.Account
-    username="username"
+    username="Conny Contentful"
     avatar={avatar}
     initials={initials}
     hasNotification={hasNotification}
