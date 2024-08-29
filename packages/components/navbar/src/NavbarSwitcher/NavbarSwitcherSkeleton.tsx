@@ -12,15 +12,15 @@ export const NavbarSwitcherSkeleton = ({
 }) => (
   <SkeletonContainer
     svgWidth={estimatedWidth}
-    svgHeight={24}
+    svgHeight={18}
     backgroundColor={tokens.gray300}
     foregroundColor={tokens.gray200}
   >
     <SkeletonDisplayText
-      lineHeight={24}
+      lineHeight={18}
       numberOfLines={1}
-      radiusX={12}
-      radiusY={12}
+      radiusX={9}
+      radiusY={9}
     />
   </SkeletonContainer>
 );
