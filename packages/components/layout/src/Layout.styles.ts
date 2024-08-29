@@ -34,7 +34,7 @@ export const getLayoutStyles = ({
 }) => ({
   root: css({
     width: '100%',
-    height: '100%',
+    height: '100vh',
   }),
   mainContainer: css(getLayoutMaxWidthStyles({ variant, withBoxShadow }), {
     width: '100%',
