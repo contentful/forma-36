@@ -84,6 +84,7 @@ export const getNavbarItemStyles = ({ hasTitle }: { hasTitle: boolean }) => ({
   icon: css({
     height: '20px',
     width: '20px',
+    boxSizing: 'content-box',
     display: hasTitle ? 'none' : 'block',
     [mqs.small]: {
       height: '16px',
