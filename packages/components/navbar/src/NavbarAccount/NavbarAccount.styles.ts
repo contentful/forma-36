@@ -23,7 +23,7 @@ export const getNavbarAccountStyles = () => ({
       borderRadius: '50%',
       border: 'none',
       '&:hover img': {
-        filter: 'brightness(0.3)',
+        filter: 'brightness(0.9)',
       },
     },
     getGlowOnFocusStyles(),
