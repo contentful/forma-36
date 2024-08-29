@@ -45,6 +45,7 @@ const Account = ({
     initials={initials}
     hasNotification={hasNotification}
     notificationVariant={notificationVariant}
+    label={'Account settings'}
   >
     <Navbar.MenuItem title="Account settings" icon={<WrenchIcon />} />
     <Navbar.MenuItem title="Dashboard" />

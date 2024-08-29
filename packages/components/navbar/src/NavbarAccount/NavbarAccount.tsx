@@ -17,6 +17,7 @@ type NavbarAccountOwnProps = CommonProps & {
   avatar?: string;
   initials?: string;
   hasNotification?: boolean;
+  label?: string;
   /**
    * @default 'warning'
    */
@@ -37,6 +38,7 @@ function _NavbarAccount(
     className,
     testId = 'cf-ui-navbar-account-trigger',
     avatar,
+    label = 'Account menu',
     initials,
     username,
     hasNotification,
@@ -49,12 +51,7 @@ function _NavbarAccount(
     <NavbarMenu
       trigger={
         <div>
-          <Tooltip
-            placement="bottom"
-            content={username}
-            showDelay={600}
-            usePortal
-          >
+          <Tooltip placement="bottom" content={label} showDelay={600} usePortal>
             <Flex
               as="button"
               {...otherProps}
@@ -62,7 +59,7 @@ function _NavbarAccount(
               className={cx(styles.navbarAccount, className)}
               testId={testId}
               alignItems="center"
-              aria-label="Account Menu"
+              aria-label={label}
             >
               <Avatar
                 src={avatar}
