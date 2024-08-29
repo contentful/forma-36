@@ -22,6 +22,7 @@ export const getNavbarAccountStyles = () => ({
       overflow: 'visible',
       borderRadius: '50%',
       border: 'none',
+      padding: 0,
       '&:hover img': {
         filter: 'brightness(0.9)',
       },
