@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  SkeletonContainer,
-  SkeletonDisplayText,
-} from '@contentful/f36-skeleton';
+import { SkeletonContainer, SkeletonText } from '@contentful/f36-skeleton';
 import tokens from '@contentful/f36-tokens';
 
 export const NavbarSwitcherSkeleton = ({
@@ -16,7 +13,7 @@ export const NavbarSwitcherSkeleton = ({
     backgroundColor={tokens.gray300}
     foregroundColor={tokens.gray200}
   >
-    <SkeletonDisplayText
+    <SkeletonText
       lineHeight={18}
       numberOfLines={1}
       radiusX={tokens.borderRadiusSmall}
