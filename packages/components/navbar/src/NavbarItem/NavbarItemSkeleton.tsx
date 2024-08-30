@@ -14,14 +14,14 @@ export const NavbarItemSkeleton = ({
     <SkeletonContainer
       className={styles.itemSkeleton}
       svgWidth={estimatedWidth}
-      svgHeight={32}
+      svgHeight={28}
       backgroundColor={tokens.gray300}
       foregroundColor={tokens.gray200}
     >
       <SkeletonText
-        lineHeight={6}
+        lineHeight={18}
         numberOfLines={1}
-        offsetTop={10}
+        offsetTop={2}
         radiusX={tokens.borderRadiusSmall}
         radiusY={tokens.borderRadiusSmall}
       />

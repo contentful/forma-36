@@ -40,7 +40,9 @@ export const getNavbarStyles = ({
 
   mobileNavigationButton: css({
     display: 'flex',
+    minHeight: 'initial', // unset default 40px height
     height: '36px',
+    padding: '0 12px',
     borderRadius: '10px',
     [mqs.small]: {
       display: 'none',
