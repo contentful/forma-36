@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-layout",
-  "version": "5.0.0-alpha.14",
+  "version": "5.0.0-alpha.15",
   "description": "Forma 36: Layout component",
   "scripts": {
     "build": "tsup"
