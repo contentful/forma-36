@@ -56,19 +56,18 @@ function _NavbarItem(
     onClose,
     ...otherProps
   } = props;
-  const styles = getNavbarItemStyles({ title });
+  const styles = getNavbarItemStyles({ hasTitle: !!title });
   const isMenuTrigger = isNavbarItemHasMenu(props);
+  const showCaret = title && isMenuTrigger;
   const item = (
     <Comp
       {...otherProps}
       ref={ref}
       data-test-id={testId}
-      className={cx(
-        styles.navbarItem,
-        isMenuTrigger && styles.navbarItemMenuTrigger,
-        isActive && styles.isActive,
-        className,
-      )}
+      className={cx(styles.navbarItem, className, {
+        [styles.navbarItemMenuTrigger]: showCaret,
+        [styles.isActive]: isActive,
+      })}
       aria-label={title ? '' : label}
     >
       {icon && (
@@ -79,7 +78,7 @@ function _NavbarItem(
         />
       )}
       {title && <span>{title}</span>}
-      {title && isMenuTrigger && <CaretIcon size="tiny" isActive={isActive} />}
+      {showCaret && <CaretIcon size="tiny" isActive={isActive} />}
     </Comp>
   );
 

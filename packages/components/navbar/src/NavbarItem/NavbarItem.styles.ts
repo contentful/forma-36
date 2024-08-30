@@ -3,10 +3,12 @@ import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
 import { getGlowOnFocusStyles, increaseHitArea, mqs } from '../utils.styles';
 
+const borderWidth = '1px';
+
 export const getNavbarItemActiveStyles = () =>
   css({
     backgroundColor: tokens.blue100,
-    border: `1px solid ${tokens.blue400}`,
+    border: `${borderWidth} solid ${tokens.blue400}`,
     color: tokens.blue600,
     '&:hover': {
       backgroundColor: tokens.blue100,
@@ -16,19 +18,19 @@ export const getNavbarItemActiveStyles = () =>
 const commonItemStyles = {
   display: 'flex',
   justifyContent: 'center',
-  padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
+  padding: `calc(${tokens.spacing2Xs} - ${borderWidth}) calc(${tokens.spacingXs} - ${borderWidth})`,
   alignItems: 'center',
   background: 'none',
   gap: tokens.spacing2Xs,
 };
 
-export const getNavbarItemStyles = ({ title }) => ({
+export const getNavbarItemStyles = ({ hasTitle }: { hasTitle: boolean }) => ({
   navbarItem: css(
     commonItemStyles,
     {
       appearance: 'none',
       background: 'none',
-      border: '1px solid transparent',
+      border: `${borderWidth} solid transparent`,
       margin: 0,
       outline: 'none',
       fontSize: tokens.fontSizeM,
@@ -44,6 +46,10 @@ export const getNavbarItemStyles = ({ title }) => ({
       boxSizing: 'border-box',
       transition: `color ${tokens.transitionDurationShort} ${tokens.transitionEasingCubicBezier}`,
       borderRadius: tokens.borderRadiusMedium,
+
+      padding: hasTitle
+        ? undefined
+        : `calc(${tokens.spacing2Xs} - ${borderWidth})`, // square button for icon-only items
 
       '&:hover': {
         backgroundColor: hexToRGBA(tokens.gray900, 0.05),
@@ -78,10 +84,12 @@ export const getNavbarItemStyles = ({ title }) => ({
   icon: css({
     height: '20px',
     width: '20px',
-    display: !title ? 'block' : 'none',
+    boxSizing: 'content-box',
+    display: hasTitle ? 'none' : 'block',
     [mqs.small]: {
       height: '16px',
       width: '16px',
+      padding: hasTitle ? '2px 0' : '2px', // square for icon-only items
     },
     [mqs.large]: {
       display: 'block',
