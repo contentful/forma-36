@@ -547,11 +547,7 @@ export const LoadingSkeleton: Story<{}> = () => {
       <Navbar
         mobileNavigation={<MobileMenu />}
         account={<Navbar.AccountSkeleton ariaLabel="Loading account" />}
-        switcher={
-          <Navbar.Switcher>
-            <Navbar.SwitcherSkeleton estimatedWidth={148} />
-          </Navbar.Switcher>
-        }
+        switcher={<Navbar.SwitcherSkeleton estimatedWidth={148} />}
         mainNavigation={
           <>
             <Navbar.ItemSkeleton estimatedWidth={100} />
