@@ -19,8 +19,8 @@ export const NavbarSwitcherSkeleton = ({
     <SkeletonDisplayText
       lineHeight={18}
       numberOfLines={1}
-      radiusX={9}
-      radiusY={9}
+      radiusX={tokens.borderRadiusSmall}
+      radiusY={tokens.borderRadiusSmall}
     />
   </SkeletonContainer>
 );
