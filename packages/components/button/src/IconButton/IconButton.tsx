@@ -4,11 +4,36 @@ import type {
   PolymorphicProps,
   PolymorphicComponent,
   ExpandProps,
+  CommonProps,
 } from '@contentful/f36-core';
 import { Button } from '../Button';
 import type { ButtonInternalProps } from '../types';
 import { getStyles } from './IconButton.styles';
 import { useDensity } from '@contentful/f36-utils';
+import {
+  Tooltip,
+  type TooltipInternalProps,
+  type WithEnhancedContent,
+} from '@contentful/f36-tooltip';
+
+type WithTooltipOrNot =
+  | {
+      /**
+       * Triggers, wheter or not to render the tooltip
+       */
+      withTooltip?: boolean;
+
+      /**
+       * A tooltipProps attribute used to conditionally render the tooltip around root element
+       */
+      tooltipProps?: CommonProps &
+        WithEnhancedContent &
+        Omit<TooltipInternalProps, 'children'>;
+    }
+  | {
+      withTooltip?: false;
+      tooltipProps?: never;
+    };
 
 interface IconButtonInternalProps
   extends Omit<
@@ -36,9 +61,11 @@ interface IconButtonInternalProps
 
 const ICON_BUTTON_DEFAULT_TAG = 'button';
 
+type ExtendedIconButtonProps = IconButtonInternalProps & WithTooltipOrNot;
+
 export type IconButtonProps<
   E extends React.ElementType = typeof ICON_BUTTON_DEFAULT_TAG,
-> = PolymorphicProps<IconButtonInternalProps, E, 'disabled'>;
+> = PolymorphicProps<ExtendedIconButtonProps, E, 'disabled'>;
 
 function _IconButton<
   E extends React.ElementType = typeof ICON_BUTTON_DEFAULT_TAG,
@@ -49,6 +76,9 @@ function _IconButton<
     icon,
     className,
     size = 'medium',
+    withTooltip = false,
+    tooltipProps,
+    'aria-label': ariaLabel,
     ...otherProps
   } = props;
 
@@ -56,23 +86,40 @@ function _IconButton<
 
   const styles = getStyles({ size, density });
 
-  return (
+  const iconButtton = (
     <Button
       testId={testId}
       ref={ref}
       variant={variant}
       className={cx(styles.iconButton, className)}
       size={size}
-      {...otherProps}
       startIcon={icon}
+      aria-label={ariaLabel}
+      {...otherProps}
     />
   );
+
+  if (withTooltip) {
+    const {
+      showDelay = 600,
+      content = ariaLabel,
+      ...otherTooltipProps
+    } = tooltipProps || {};
+
+    return (
+      <Tooltip content={content} showDelay={showDelay} {...otherTooltipProps}>
+        {iconButtton}
+      </Tooltip>
+    );
+  }
+
+  return iconButtton;
 }
 
 _IconButton.displayName = 'IconButton';
 
 export const IconButton: PolymorphicComponent<
-  ExpandProps<IconButtonInternalProps>,
+  ExpandProps<ExtendedIconButtonProps>,
   typeof ICON_BUTTON_DEFAULT_TAG,
   'disabled'
 > = React.forwardRef(_IconButton);
