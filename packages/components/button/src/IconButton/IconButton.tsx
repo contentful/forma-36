@@ -16,6 +16,25 @@ import {
   type WithEnhancedContent,
 } from '@contentful/f36-tooltip';
 
+type WithTooltipOrNot =
+  | {
+      /**
+       * Triggers, wheter or not to render the tooltip
+       */
+      withTooltip?: true;
+
+      /**
+       * A tooltipProps attribute used to conditionally render the tooltip around root element
+       */
+      tooltipProps?: CommonProps &
+        WithEnhancedContent &
+        Omit<TooltipInternalProps, 'children'>;
+    }
+  | {
+      withTooltip?: false;
+      tooltipProps?: never;
+    };
+
 interface IconButtonInternalProps
   extends Omit<
     ButtonInternalProps,
@@ -38,25 +57,15 @@ interface IconButtonInternalProps
    * Note: 'large' is deprecated
    * */
   size?: ButtonInternalProps['size'];
-
-  /**
-   * Triggers, wether or not to render the tooltip
-   */
-  withTooltip?: boolean;
-
-  /**
-   * A tooltipProps attribute used to conditionally render the tooltip around root element
-   */
-  tooltipProps?: CommonProps &
-    WithEnhancedContent &
-    Omit<TooltipInternalProps, 'children'>;
 }
 
 const ICON_BUTTON_DEFAULT_TAG = 'button';
 
+type ExtendedIconButtonProps = IconButtonInternalProps & WithTooltipOrNot;
+
 export type IconButtonProps<
   E extends React.ElementType = typeof ICON_BUTTON_DEFAULT_TAG,
-> = PolymorphicProps<IconButtonInternalProps, E, 'disabled'>;
+> = PolymorphicProps<ExtendedIconButtonProps, E, 'disabled'>;
 
 function _IconButton<
   E extends React.ElementType = typeof ICON_BUTTON_DEFAULT_TAG,
@@ -94,11 +103,11 @@ function _IconButton<
     const {
       showDelay = 600,
       content = ariaLabel,
-      ...restTooltipProps
+      ...otherTooltipProps
     } = tooltipProps || {};
 
     return (
-      <Tooltip content={content} showDelay={showDelay} {...restTooltipProps}>
+      <Tooltip content={content} showDelay={showDelay} {...otherTooltipProps}>
         {iconButtton}
       </Tooltip>
     );
