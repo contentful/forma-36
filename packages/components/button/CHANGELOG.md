@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.69.0
+
+### Minor Changes
+
+- [#2850](https://github.com/contentful/forma-36/pull/2850) [`8a609b2`](https://github.com/contentful/forma-36/commit/8a609b2fc9dc1b2579d5ff85f961bd90fcdca790) Thanks [@Lelith](https://github.com/Lelith)! - Offers new `withTooltip:boolean` `tooltipProps: TooltipProps` properties on the IconButton to show a built-in `Tooltip` as well to pass down additional properties. Showing of the Tooltip has a delay of 600ms. It uses the provided `aria-label` as default content.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.69.0
+  - @contentful/f36-spinner@4.69.0
+  - @contentful/f36-tooltip@4.69.0
+
 ## 4.68.1
 
 ### Patch Changes
