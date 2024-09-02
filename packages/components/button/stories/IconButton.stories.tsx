@@ -61,7 +61,7 @@ export const withTooltip = ({ icon, iconProps, ...props }) => (
         icon={icon && <Icon as={icons[icon]} {...iconProps} />}
         aria-label={'Start the process'}
         withTooltip
-        tooltipProps={{ content: 'Different Content' }}
+        tooltipProps={{ content: 'Different Content', isVisible: true }}
         {...props}
       />
     </Flex>
