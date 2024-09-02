@@ -21,7 +21,7 @@ type WithTooltipOrNot =
       /**
        * Triggers, wheter or not to render the tooltip
        */
-      withTooltip?: true;
+      withTooltip?: boolean;
 
       /**
        * A tooltipProps attribute used to conditionally render the tooltip around root element
