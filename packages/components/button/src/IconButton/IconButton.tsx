@@ -119,7 +119,7 @@ function _IconButton<
 _IconButton.displayName = 'IconButton';
 
 export const IconButton: PolymorphicComponent<
-  ExpandProps<IconButtonInternalProps>,
+  ExpandProps<ExtendedIconButtonProps>,
   typeof ICON_BUTTON_DEFAULT_TAG,
   'disabled'
 > = React.forwardRef(_IconButton);
