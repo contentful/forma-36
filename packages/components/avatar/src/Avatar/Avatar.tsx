@@ -18,7 +18,13 @@ export type Variant = 'app' | 'user';
 
 export interface AvatarProps extends CommonProps {
   alt?: ImageProps['alt'];
+  /**
+   * @default false
+   */
   isLoading?: boolean;
+  /**
+   * @default 'medium'
+   */
   size?: Size;
   initials?: string;
   src?: ImageProps['src'];
@@ -28,6 +34,9 @@ export interface AvatarProps extends CommonProps {
   tooltipProps?: CommonProps &
     WithEnhancedContent &
     Omit<TooltipInternalProps, 'children'>;
+  /**
+   * @default 'user'
+   */
   variant?: Variant;
   /**
    * @default 'gray'
