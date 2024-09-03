@@ -68,7 +68,6 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar {...args} size="tiny" variant="app" />
       </Flex>
 
-      <SectionHeading as="h4">Indicator properties</SectionHeading>
       <Flex
         alignItems="center"
         flexDirection="row"
@@ -77,17 +76,59 @@ export const Overview: Story<AvatarProps> = (args) => {
       >
         <Avatar
           {...args}
-          size="large"
-          colorVariant="primary"
+          size="tiny"
           icon={<CheckCircleIcon variant="positive" />}
         />
         <Avatar
           {...args}
-          variant="app"
-          size="large"
-          colorVariant="primary"
+          size="small"
           icon={<CheckCircleIcon variant="positive" />}
         />
+        <Avatar
+          {...args}
+          size="medium"
+          icon={<CheckCircleIcon variant="positive" />}
+        />
+        <Avatar
+          {...args}
+          size="large"
+          icon={<CheckCircleIcon variant="positive" />}
+        />
+        <Avatar
+          {...args}
+          size="large"
+          variant="app"
+          icon={<CheckCircleIcon variant="positive" />}
+        />
+        <Avatar
+          {...args}
+          size="medium"
+          variant="app"
+          icon={<CheckCircleIcon variant="positive" />}
+        />
+        <Avatar
+          {...args}
+          size="small"
+          variant="app"
+          icon={<CheckCircleIcon variant="positive" />}
+        />
+        <Avatar
+          {...args}
+          size="tiny"
+          variant="app"
+          icon={<CheckCircleIcon variant="positive" />}
+        />
+      </Flex>
+
+      <SectionHeading as="h4">Indicator properties</SectionHeading>
+      <Flex
+        alignItems="center"
+        flexDirection="row"
+        gap="spacingS"
+        marginBottom="spacingM"
+      >
+        <Avatar {...args} size="large" colorVariant="primary" />
+        <Avatar {...args} variant="app" size="large" colorVariant="primary" />
         <Avatar {...args} size="large" colorVariant="purple" />
         <Avatar {...args} size="large" colorVariant="yellow" />
         <Avatar {...args} size="large" colorVariant="green" />
