@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 03-09-2024
+
+**F36 Button** `v4.69.0`
+
+- Offers new `withTooltip:boolean` `tooltipProps: TooltipProps` properties on the IconButton to show a built-in `Tooltip` as well to pass down additional properties. Showing of the Tooltip has a delay of 600ms. It uses the provided `aria-label` as default content.
+
 ## 08-08-2024
 
 **F36 Typography** `v4.68.0`
