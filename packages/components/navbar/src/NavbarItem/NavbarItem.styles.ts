@@ -46,6 +46,7 @@ export const getNavbarItemStyles = ({ hasTitle }: { hasTitle: boolean }) => ({
       boxSizing: 'border-box',
       transition: `color ${tokens.transitionDurationShort} ${tokens.transitionEasingCubicBezier}`,
       borderRadius: tokens.borderRadiusMedium,
+      height: '30px',
 
       padding: hasTitle
         ? undefined
