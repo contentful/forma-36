@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { type AvatarProps } from './Avatar';
-import { avatarColorMap, type ColorVariant } from './utils';
+import { applyMuted, avatarColorMap, type ColorVariant } from './utils';
 
 export const getColorVariantStyles = (colorVariant: ColorVariant) => {
   const colorToken: string = avatarColorMap[colorVariant];
@@ -39,11 +39,12 @@ export const getAvatarStyles = ({
   const borderRadius = variant === 'app' ? tokens.borderRadiusSmall : '100%';
 
   const sizePixels = convertSizeToPixels(size);
+  const isMuted = colorVariant === 'muted';
 
   return {
     fallback: css({
-      backgroundColor: tokens.gray200,
-      color: 'rgba(0,0,0,0.5)',
+      backgroundColor: isMuted ? applyMuted(tokens.gray300) : tokens.gray300,
+      color: isMuted ? applyMuted(tokens.gray700) : tokens.gray700,
       height: '100%',
       width: '100%',
       display: 'flex',
@@ -78,10 +79,18 @@ export const getAvatarStyles = ({
         ...getColorVariantStyles(colorVariant),
       },
     }),
-    imageContainer: css({
-      overflow: 'visible',
-      zIndex: 1,
-    }),
+    imageContainer: css(
+      {
+        backgroundColor: tokens.colorWhite,
+        overflow: 'visible',
+        zIndex: 1,
+      },
+      colorVariant === 'muted' && {
+        img: {
+          opacity: 0.5,
+        },
+      },
+    ),
     overlayIcon: css({
       svg: {
         backgroundColor: tokens.colorWhite,
@@ -92,12 +101,6 @@ export const getAvatarStyles = ({
         width: '40%',
         height: '40%',
         zIndex: 1,
-      },
-    }),
-    isMuted: css({
-      backgroundColor: tokens.colorWhite,
-      img: {
-        opacity: 0.5,
       },
     }),
   };

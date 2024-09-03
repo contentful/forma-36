@@ -13,5 +13,9 @@ export const avatarColorMap = {
   orchid: '#BA33C6',
   ocean: '#007F9B',
   olive: '#747826',
-  muted: tokens.gray500,
+  muted: applyMuted(tokens.gray500),
 };
+
+export function applyMuted(color: string): string {
+  return `color-mix(in srgb, ${color}, ${tokens.colorWhite} 50%)`;
+}

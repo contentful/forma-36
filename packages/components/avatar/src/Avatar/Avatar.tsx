@@ -50,7 +50,7 @@ function _Avatar(
     alt = '',
     className,
     colorVariant = 'gray',
-    icon = null,
+    icon,
     isLoading = false,
     size = 'medium',
     initials,
@@ -70,8 +70,7 @@ function _Avatar(
   const content = (
     <div
       className={cx(styles.root, className, {
-        [styles.imageContainer]: icon !== null,
-        [styles.isMuted]: colorVariant === 'muted',
+        [styles.imageContainer]: !!src,
         [styles.colorBorder]: !(colorVariant === 'muted' && size === 'tiny'),
       })}
       data-test-id={testId}
@@ -91,7 +90,7 @@ function _Avatar(
           width={sizePixels}
         />
       )}
-      {icon !== null && <span className={styles.overlayIcon}>{icon}</span>}
+      {!!icon && <span className={styles.overlayIcon}>{icon}</span>}
     </div>
   );
 
