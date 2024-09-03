@@ -13,6 +13,7 @@ import type {
   PolymorphicComponent,
   PolymorphicProps,
 } from '@contentful/f36-core';
+import { Tooltip } from '@contentful/f36-tooltip';
 
 const NAVBAR_ITEM_DEFAULT_TAG = 'button';
 
@@ -59,7 +60,7 @@ function _NavbarItem(
   const styles = getNavbarItemStyles({ hasTitle: !!title });
   const isMenuTrigger = isNavbarItemHasMenu(props);
   const showCaret = title && isMenuTrigger;
-  const item = (
+  let item = (
     <Comp
       {...otherProps}
       ref={ref}
@@ -81,6 +82,16 @@ function _NavbarItem(
       {showCaret && <CaretIcon size="tiny" isActive={isActive} />}
     </Comp>
   );
+
+  if (!title) {
+    item = (
+      <div>
+        <Tooltip content={label} placement="bottom" showDelay={600} usePortal>
+          {item}
+        </Tooltip>
+      </div>
+    );
+  }
 
   if (isMenuTrigger) {
     return (
