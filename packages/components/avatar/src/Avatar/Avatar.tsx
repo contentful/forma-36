@@ -64,7 +64,7 @@ function _Avatar(
 ) {
   // Only render the fallback when `src` is undefined or an empty string
   const isFallback = Boolean(!isLoading && !src);
-  const styles = getAvatarStyles({ isFallback, size, variant, colorVariant });
+  const styles = getAvatarStyles({ size, variant, colorVariant });
   const sizePixels = convertSizeToPixels(size);
 
   const content = (

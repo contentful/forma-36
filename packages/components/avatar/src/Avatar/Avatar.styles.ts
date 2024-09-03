@@ -28,12 +28,10 @@ const getInitialsFontSize = (sizePixels: string) =>
   Math.round(Number(sizePixels.replace('px', '')) / 2);
 
 export const getAvatarStyles = ({
-  isFallback,
   size,
   variant,
   colorVariant,
 }: {
-  isFallback: boolean;
   size: AvatarProps['size'];
   variant: AvatarProps['variant'];
   colorVariant: ColorVariant;
@@ -67,22 +65,19 @@ export const getAvatarStyles = ({
         position: 'relative',
         width: sizePixels,
       },
-      !isFallback && {
-        '&::after': {
-          boxShadow: 'inset 0px 0px 0px 1px rgba(17, 27, 43, 0.1)',
-          borderRadius,
-          bottom: 0,
-          content: '""',
-          display: 'block',
-          left: 0,
-          position: 'absolute',
-          top: 0,
-          right: 0,
-        },
-      },
     ]),
     colorBorder: css({
-      '&::after': getColorVariantStyles(colorVariant),
+      '&::after': {
+        borderRadius,
+        bottom: 0,
+        content: '""',
+        display: 'block',
+        left: 0,
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        ...getColorVariantStyles(colorVariant),
+      },
     }),
     imageContainer: css({
       overflow: 'visible',
