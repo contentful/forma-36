@@ -36,8 +36,7 @@ export const getAvatarStyles = ({
   variant: AvatarProps['variant'];
   colorVariant: ColorVariant;
 }) => {
-  const borderRadius =
-    variant === 'app' ? tokens.borderRadiusSmall : '99999999em';
+  const borderRadius = variant === 'app' ? tokens.borderRadiusSmall : '100%';
 
   const sizePixels = convertSizeToPixels(size);
 
@@ -86,7 +85,7 @@ export const getAvatarStyles = ({
     overlayIcon: css({
       svg: {
         backgroundColor: tokens.colorWhite,
-        borderRadius: '99999999em',
+        borderRadius: '100%',
         position: 'absolute',
         bottom: 0,
         right: '-10%',
