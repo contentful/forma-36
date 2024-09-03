@@ -8,8 +8,13 @@ export const getColorVariantStyles = (
 ) => {
   const colorToken: string = avatarColorMap[colorVariant];
 
+  const colorWidth = colorVariant === 'gray' ? 1 : 2;
+
   return {
-    boxShadow: `0px 0px 0px 2px ${colorToken} inset, 0px 0px 0px 3px  ${tokens.colorWhite} inset`,
+    boxShadow: [
+      `0px 0px 0px ${colorWidth}px ${colorToken} inset`,
+      `0px 0px 0px ${colorWidth + 1}px ${tokens.colorWhite} inset`,
+    ].join(', '),
   };
 };
 
