@@ -29,6 +29,9 @@ export interface AvatarProps extends CommonProps {
     WithEnhancedContent &
     Omit<TooltipInternalProps, 'children'>;
   variant?: Variant;
+  /**
+   * @default 'gray'
+   */
   colorVariant?: ColorVariant;
   icon?: React.ReactElement;
 }
@@ -37,7 +40,7 @@ function _Avatar(
   {
     alt = '',
     className,
-    colorVariant,
+    colorVariant = 'gray',
     icon = null,
     isLoading = false,
     size = 'medium',
@@ -60,7 +63,6 @@ function _Avatar(
       className={cx(styles.root, className, {
         [styles.imageContainer]: icon !== null,
         [styles.isMuted]: colorVariant === 'muted',
-        [styles.colorBorder]: !!colorVariant,
       })}
       data-test-id={testId}
       ref={forwardedRef}

@@ -33,7 +33,7 @@ export const getAvatarStyles = ({
   isFallback: boolean;
   size: AvatarProps['size'];
   variant: AvatarProps['variant'];
-  colorVariant?: ColorVariant;
+  colorVariant: ColorVariant;
 }) => {
   const borderRadius =
     variant === 'app' ? tokens.borderRadiusSmall : '99999999em';
@@ -77,13 +77,10 @@ export const getAvatarStyles = ({
           right: 0,
         },
       },
+      colorVariant !== 'muted' && {
+        '&::after': getColorVariantStyles(colorVariant),
+      },
     ]),
-    colorBorder: css({
-      '&::after':
-        !!colorVariant &&
-        colorVariant !== 'muted' &&
-        getColorVariantStyles(colorVariant),
-    }),
     imageContainer: css({
       overflow: 'visible',
       zIndex: 1,
