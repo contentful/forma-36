@@ -16,7 +16,7 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { NavbarAccountProps } from '../src/NavbarAccount/NavbarAccount';
 import { NavbarSwitcherProps } from '../src/NavbarSwitcher/NavbarSwitcher';
-import { Button } from '@contentful/f36-button';
+import { TextLink } from '@contentful/f36-components';
 
 export default {
   component: Navbar,
@@ -40,11 +40,12 @@ const Account = ({
   notificationVariant,
 }: Partial<NavbarAccountProps>) => (
   <Navbar.Account
-    username="username"
+    username="Conny Contentful"
     avatar={avatar}
     initials={initials}
     hasNotification={hasNotification}
     notificationVariant={notificationVariant}
+    label={'Account settings'}
   >
     <Navbar.MenuItem title="Account settings" icon={<WrenchIcon />} />
     <Navbar.MenuItem title="Dashboard" />
@@ -283,7 +284,7 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
   return (
     <Navbar
       mobileNavigation={<MobileMenu />}
-      promotions={<Button>Upgrade</Button>}
+      promotions={<TextLink>Upgrade</TextLink>}
       switcher={<Switcher />}
       mainNavigation={<MainItems />}
       account={
