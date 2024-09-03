@@ -3,8 +3,10 @@ import tokens from '@contentful/f36-tokens';
 import { type AvatarProps } from './Avatar';
 import { avatarColorMap, type ColorVariant } from './utils';
 
-export const getColorVariantStyles = (colorVariant: ColorVariant) => {
-  const colorToken = avatarColorMap[colorVariant];
+export const getColorVariantStyles = (
+  colorVariant: Exclude<ColorVariant, 'muted'>,
+) => {
+  const colorToken: string = avatarColorMap[colorVariant];
 
   return {
     boxShadow: `0px 0px 0px 2px ${colorToken} inset, 0px 0px 0px 3px  ${tokens.colorWhite} inset`,
@@ -77,9 +79,10 @@ export const getAvatarStyles = ({
       },
     ]),
     colorBorder: css({
-      '&::after': {
-        ...getColorVariantStyles(colorVariant),
-      },
+      '&::after':
+        !!colorVariant &&
+        colorVariant !== 'muted' &&
+        getColorVariantStyles(colorVariant),
     }),
     imageContainer: css({
       overflow: 'visible',

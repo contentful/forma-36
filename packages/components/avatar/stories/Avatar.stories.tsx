@@ -130,13 +130,18 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar {...args} size="large" colorVariant="primary" />
         <Avatar {...args} variant="app" size="large" colorVariant="primary" />
         <Avatar {...args} size="large" colorVariant="purple" />
-        <Avatar {...args} size="large" colorVariant="yellow" />
+        <Avatar {...args} size="large" colorVariant="gold" />
         <Avatar {...args} size="large" colorVariant="green" />
         <Avatar {...args} size="large" variant="app" colorVariant="gray" />
         <Avatar {...args} size="large" variant="app" colorVariant="muted" />
-        <Avatar {...args} size="large" colorVariant="pink" variant="app" />
-        <Avatar {...args} size="large" variant="app" colorVariant="lavender" />
-        <Avatar {...args} size="large" variant="app" colorVariant="emerald" />
+        <Avatar
+          {...args}
+          size="large"
+          colorVariant="strawberry"
+          variant="app"
+        />
+        <Avatar {...args} size="large" variant="app" colorVariant="orchid" />
+        <Avatar {...args} size="large" variant="app" colorVariant="olive" />
       </Flex>
 
       <SectionHeading as="h4">Tooltip properties</SectionHeading>
