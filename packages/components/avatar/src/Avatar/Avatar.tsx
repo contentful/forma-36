@@ -72,6 +72,7 @@ function _Avatar(
       className={cx(styles.root, className, {
         [styles.imageContainer]: icon !== null,
         [styles.isMuted]: colorVariant === 'muted',
+        [styles.colorBorder]: !(colorVariant === 'muted' && size === 'tiny'),
       })}
       data-test-id={testId}
       ref={forwardedRef}

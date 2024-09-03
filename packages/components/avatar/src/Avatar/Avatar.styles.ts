@@ -80,10 +80,10 @@ export const getAvatarStyles = ({
           right: 0,
         },
       },
-      {
-        '&::after': getColorVariantStyles(colorVariant),
-      },
     ]),
+    colorBorder: css({
+      '&::after': getColorVariantStyles(colorVariant),
+    }),
     imageContainer: css({
       overflow: 'visible',
       zIndex: 1,
