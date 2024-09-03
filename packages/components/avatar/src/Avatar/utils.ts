@@ -1,6 +1,6 @@
 import tokens from '@contentful/f36-tokens';
 
-export type ColorVariant = keyof typeof avatarColorMap | 'muted';
+export type ColorVariant = keyof typeof avatarColorMap;
 
 export const avatarColorMap = {
   primary: tokens.blue500,
@@ -13,4 +13,5 @@ export const avatarColorMap = {
   orchid: '#BA33C6',
   ocean: '#007F9B',
   olive: '#747826',
+  muted: tokens.gray500,
 };

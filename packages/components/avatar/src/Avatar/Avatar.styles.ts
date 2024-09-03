@@ -3,12 +3,10 @@ import tokens from '@contentful/f36-tokens';
 import { type AvatarProps } from './Avatar';
 import { avatarColorMap, type ColorVariant } from './utils';
 
-export const getColorVariantStyles = (
-  colorVariant: Exclude<ColorVariant, 'muted'>,
-) => {
+export const getColorVariantStyles = (colorVariant: ColorVariant) => {
   const colorToken: string = avatarColorMap[colorVariant];
 
-  const colorWidth = colorVariant === 'gray' ? 1 : 2;
+  const colorWidth = ['muted', 'gray'].includes(colorVariant) ? 1 : 2;
 
   return {
     boxShadow: [
@@ -82,7 +80,7 @@ export const getAvatarStyles = ({
           right: 0,
         },
       },
-      colorVariant !== 'muted' && {
+      {
         '&::after': getColorVariantStyles(colorVariant),
       },
     ]),
