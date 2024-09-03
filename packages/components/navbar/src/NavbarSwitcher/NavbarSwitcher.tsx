@@ -1,4 +1,4 @@
-import React, { type ReactNode } from 'react';
+import React from 'react';
 import { getNavbarSwitcherStyles } from './NavbarSwitcher.styles';
 import { Button } from '@contentful/f36-button';
 import {
@@ -9,6 +9,10 @@ import {
 } from '@contentful/f36-core';
 import { cx } from 'emotion';
 import { NavbarEnvVariant } from './NavbarEnvVariant';
+import { NavbarSwitcherSkeleton } from './NavbarSwitcherSkeleton';
+import { CaretRightIcon } from '@contentful/f36-icons';
+import { Text } from '@contentful/f36-typography';
+import tokens from '@contentful/f36-tokens';
 
 type TruncateOptions = {
   /**
@@ -23,7 +27,7 @@ type TruncateOptions = {
   end?: number;
 };
 
-function splitSpaceName(
+function splitString(
   string: string,
   {
     start: startLength = 5,
@@ -41,35 +45,90 @@ function splitSpaceName(
   return [start, remainder, end];
 }
 
-type NavbarSwitcherOwnProps = CommonProps & {
-  children: ReactNode;
-  isCircle?: boolean;
-  envVariant?: 'master' | 'non-master';
-  isAlias?: boolean;
-  ariaLabel?: string;
-};
+type NavbarLoadingProps =
+  | {
+      isLoading?: true;
+      environemnt?: never;
+      space?: never;
+    }
+  | {
+      isLoading?: false;
+      environemnt?: string;
+      space?: string;
+    };
+
+type NavbarSwitcherOwnProps = CommonProps &
+  NavbarLoadingProps & {
+    isCircle?: boolean;
+    envVariant?: 'master' | 'non-master';
+    isAlias?: boolean;
+    ariaLabel?: string;
+    environment?: React.ReactNode;
+    space?: React.ReactNode;
+  };
 
 export type NavbarSwitcherProps = PropsWithHTMLElement<
   NavbarSwitcherOwnProps,
   'button'
 >;
 
+type SwitcherLabelEnvVariantProps =
+  | {
+      type: 'environment';
+      envVariant?: 'master' | 'non-master';
+    }
+  | {
+      type: 'space';
+      envVariant?: never;
+    };
+
+type SwitcherLabelProps = SwitcherLabelEnvVariantProps & {
+  value: React.ReactNode;
+  styles: ReturnType<typeof getNavbarSwitcherStyles>;
+  type: 'space' | 'environment';
+  envVariant?: 'master' | 'non-master';
+};
+
+const SwitcherLabel = ({
+  value,
+  styles,
+  envVariant,
+  type,
+}: SwitcherLabelProps) => {
+  const [start, middle, end] =
+    typeof value === 'string' ? splitString(value) : [];
+  const isEnv = type === 'environment';
+  const envColor = envVariant === 'master' ? 'green600' : 'gray600';
+
+  return start !== undefined ? (
+    <Text fontColor={isEnv ? envColor : 'gray600'}>
+      <span>{start}</span>
+      {middle && (
+        <span className={styles.switcherSpaceNameTruncation}>{middle}</span>
+      )}
+      {end && <span>{end}</span>}
+    </Text>
+  ) : (
+    <Text fontColor={isEnv ? envColor : 'gray600'}>{value}</Text>
+  );
+};
+
 function _NavbarSwitcher(
   props: ExpandProps<NavbarSwitcherProps>,
   ref: React.Ref<HTMLButtonElement>,
 ) {
   const {
-    children,
     className,
     envVariant,
     isAlias,
     testId = 'cf-ui-navbar-switcher',
     ariaLabel = 'Space and Environment Navigation',
+    space,
+    environment,
+    isLoading,
     ...otherProps
   } = props;
   const styles = getNavbarSwitcherStyles();
-  const [start, middle, end] =
-    typeof children === 'string' ? splitSpaceName(children) : [];
 
   return (
     <Button
@@ -94,18 +153,19 @@ function _NavbarSwitcher(
         className={styles.switcherSpaceName}
         flexDirection="row"
       >
-        {start !== undefined ? (
-          <>
-            <span>{start}</span>
-            {middle && (
-              <span className={styles.switcherSpaceNameTruncation}>
-                {middle}
-              </span>
-            )}
-            {end && <span>{end}</span>}
-          </>
+        {isLoading ? (
+          <NavbarSwitcherSkeleton estimatedWidth={148} />
         ) : (
-          children
+          <Flex gap={tokens.spacing2Xs} alignItems="center">
+            <SwitcherLabel type="space" value={space} styles={styles} />
+            <CaretRightIcon size="tiny" color={tokens.gray400} />
+            <SwitcherLabel
+              envVariant={envVariant}
+              type="environment"
+              value={environment}
+              styles={styles}
+            />
+          </Flex>
         )}
       </Flex>
     </Button>
