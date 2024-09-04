@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { getNavbarSwitcherStyles } from './NavbarSwitcher.styles';
 import { Button } from '@contentful/f36-button';
 import {
@@ -97,11 +97,19 @@ const SwitcherLabel = ({
 }: SwitcherLabelProps) => {
   const [start, middle, end] =
     typeof value === 'string' ? splitString(value) : [];
-  const isEnv = type === 'environment';
-  const envColor = envVariant === 'master' ? 'green600' : 'gray600';
+  const envColor = useMemo(() => {
+    const isEnv = type === 'environment';
+    const isMaster = envVariant === 'master';
+    switch (true) {
+      case isEnv && isMaster:
+        return 'green600';
+      default:
+        return 'gray600';
+    }
+  }, [type, envVariant]);
 
   return start !== undefined ? (
-    <Text fontColor={isEnv ? envColor : 'gray600'}>
+    <Text fontColor={envColor}>
       <span>{start}</span>
       {middle && (
         <span className={styles.switcherSpaceNameTruncation}>{middle}</span>
@@ -109,7 +117,7 @@ const SwitcherLabel = ({
       {end && <span>{end}</span>}
     </Text>
   ) : (
-    <Text fontColor={isEnv ? envColor : 'gray600'}>{value}</Text>
+    <Text fontColor={envColor}>{value}</Text>
   );
 };
 
