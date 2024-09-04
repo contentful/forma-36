@@ -127,8 +127,8 @@ export const Overview: Story<AvatarProps> = (args) => {
         gap="spacingS"
         marginBottom="spacingM"
       >
-        <Avatar {...args} size="large" colorVariant="primary" />
-        <Avatar {...args} variant="app" size="large" colorVariant="primary" />
+        <Avatar {...args} size="large" colorVariant="blue" />
+        <Avatar {...args} variant="app" size="large" colorVariant="blue" />
         <Avatar {...args} size="large" colorVariant="purple" />
         <Avatar {...args} size="large" colorVariant="gold" />
         <Avatar {...args} size="large" colorVariant="green" />
