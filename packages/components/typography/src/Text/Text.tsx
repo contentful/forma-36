@@ -16,6 +16,8 @@ import {
   type PolymorphicProps,
   type ExpandProps,
 } from '@contentful/f36-core';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Tooltip } from '@contentful/f36-tooltip';
 
 export interface TextInternalProps extends CommonProps, MarginProps {
   children?: React.ReactNode;
@@ -68,30 +70,39 @@ function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
   ref: React.Ref<any>,
 ) {
   const Element: React.ElementType = as || TEXT_DEFAULT_TAG;
+  const isString = typeof children === 'string';
+  const accessibleTitle = isTruncated && isString && children;
 
   return (
-    <Box
-      {...otherProps}
-      as={Element}
-      className={cx(
-        css({
-          padding: 0,
-          fontFamily: tokens[fontStack],
-          fontWeight: tokens[fontWeight],
-          color: tokens[fontColor],
-          fontSize: tokens[fontSize],
-          lineHeight: tokens[lineHeight],
-          letterSpacing: tokens[letterSpacing],
-        }),
-        isTruncated ? truncatedStyle() : null,
-        isWordBreak ? wordBreakStyle() : null,
-        className,
-      )}
-      margin={margin}
-      ref={ref}
+    <Tooltip
+      showDelay={1300}
+      isDisabled={!isTruncated}
+      content={accessibleTitle}
     >
-      {children}
-    </Box>
+      <Box
+        {...otherProps}
+        as={Element}
+        className={cx(
+          css({
+            padding: 0,
+            fontFamily: tokens[fontStack],
+            fontWeight: tokens[fontWeight],
+            color: tokens[fontColor],
+            fontSize: tokens[fontSize],
+            lineHeight: tokens[lineHeight],
+            letterSpacing: tokens[letterSpacing],
+          }),
+          isTruncated ? truncatedStyle() : null,
+          isWordBreak ? wordBreakStyle() : null,
+          className,
+        )}
+        // title={otherProps.title ?? accessibleTitle}
+        margin={margin}
+        ref={ref}
+      >
+        {children}
+      </Box>
+    </Tooltip>
   );
 }
 

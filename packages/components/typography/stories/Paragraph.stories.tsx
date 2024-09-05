@@ -22,6 +22,7 @@ export const Basic = (props: ComponentProps<typeof Paragraph>) => (
 Basic.args = {
   children:
     'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
+  isTruncated: true,
 };
 
 export const WithDensitySupport = (props: ComponentProps<typeof Paragraph>) => {
@@ -59,4 +60,16 @@ export const WithDensitySupport = (props: ComponentProps<typeof Paragraph>) => {
 WithDensitySupport.args = {
   children:
     'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
+};
+
+export const Truncated = (props: ComponentProps<typeof Paragraph>) => (
+  <div style={{ maxWidth: '300px' }}>
+    <Paragraph {...props} />
+  </div>
+);
+
+Truncated.args = {
+  children:
+    'The quick brown fox jumps over the lazy dog like an over-motivated frog. The quick brown fox jumps over the lazy dog like an over-motivated frog.',
+  isTruncated: true,
 };
