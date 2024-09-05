@@ -32,12 +32,45 @@ export const getLayoutMaxWidthStyles = ({
   });
 };
 
+const getContentContainerGridTemplateColumns = ({
+  variant,
+  withLeftSidebar,
+  withRightSidebar,
+}: {
+  variant: LayoutContextType['variant'];
+  withLeftSidebar?: boolean;
+  withRightSidebar?: boolean;
+}) => {
+  let gridTemplateColumns = 'auto';
+
+  const sidebarWidth = '340px';
+  if (withLeftSidebar) {
+    gridTemplateColumns = `${sidebarWidth} auto`;
+  }
+
+  if (withRightSidebar) {
+    gridTemplateColumns = `auto ${sidebarWidth}`;
+  }
+
+  if (variant !== 'narrow' && withLeftSidebar && withRightSidebar) {
+    gridTemplateColumns = 'auto auto auto';
+  }
+
+  return css({
+    gridTemplateColumns: gridTemplateColumns,
+  });
+};
+
 export const getLayoutStyles = ({
   variant,
   withBoxShadow,
+  withLeftSidebar,
+  withRightSidebar,
 }: {
   variant: LayoutProps['variant'];
   withBoxShadow?: boolean;
+  withLeftSidebar?: boolean;
+  withRightSidebar?: boolean;
 }) => ({
   // this container will scroll if the content is too long and there is no sidebar
   layoutWrapper: css({
@@ -53,9 +86,17 @@ export const getLayoutStyles = ({
       minHeight: `calc(100vh - ${NAVBAR_HEIGHT}px)`,
     },
   ),
-  layoutContentContainer: css({
-    width: '100%',
-  }),
+  layoutContentContainer: css(
+    getContentContainerGridTemplateColumns({
+      variant,
+      withLeftSidebar,
+      withRightSidebar,
+    }),
+    {
+      width: '100%',
+      display: 'grid',
+    },
+  ),
 });
 
 export const getLayoutBodyStyles = (
@@ -68,6 +109,7 @@ export const getLayoutBodyStyles = (
       maxWidth: variant === 'narrow' ? '900px' : '100%',
       width: '100%',
       padding: `${tokens.spacingL} ${tokens.spacingL} 0`,
+      margin: '0 auto',
     },
     withSidebars && {
       overflowY: 'auto',
@@ -76,14 +118,11 @@ export const getLayoutBodyStyles = (
   ),
 });
 
-export const getLayoutSidebarStyles = (
-  variant: LayoutContextType['variant'],
-  withHeader: boolean,
-) => ({
+export const getLayoutSidebarStyles = (withHeader: boolean) => ({
   layoutSidebar: css({
     flexShrink: 0,
     padding: `${tokens.spacingL} ${tokens.spacingS} 0`,
-    width: variant === 'narrow' ? '255px' : '340px',
+    width: '340px',
     overflowY: 'auto',
     height: `calc(100vh - ${getMainOffset(withHeader)})`,
     '&:first-child': {

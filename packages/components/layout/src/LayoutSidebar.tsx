@@ -19,8 +19,8 @@ export const _LayoutSidebar = (
     testId = 'cf-layout-sidebar',
     ...otherProps
   } = props;
-  const { variant, withHeader } = useLayoutContext();
-  const styles = getLayoutSidebarStyles(variant, withHeader);
+  const { withHeader } = useLayoutContext();
+  const styles = getLayoutSidebarStyles(withHeader);
 
   return (
     <Box

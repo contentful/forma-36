@@ -386,12 +386,37 @@ export const variantNarrow: Story<LayoutProps> = () => {
     </ExampleWrapper>
   );
 };
+
 export const variantNarrowWithSidebar: Story<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
         variant="narrow"
-        rightSidebar={<LayoutSidebarComp content="Left Sidebar" />}
+        leftSidebar={<LayoutSidebarComp content="Left Sidebar" />}
+        header={<LayoutHeaderComp />}
+      >
+        <Layout.Body>
+          <Box
+            className={css({
+              width: '100%',
+              height: '900px',
+              backgroundColor: 'lavenderblush',
+            })}
+          >
+            Content
+          </Box>
+        </Layout.Body>
+      </Layout>
+    </ExampleWrapper>
+  );
+};
+
+export const variantNarrowWithRightSidebar: Story<LayoutProps> = () => {
+  return (
+    <ExampleWrapper>
+      <Layout
+        variant="narrow"
+        rightSidebar={<LayoutSidebarComp content="Right Sidebar" />}
         header={<LayoutHeaderComp />}
       >
         <Layout.Body>

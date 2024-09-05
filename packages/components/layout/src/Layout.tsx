@@ -42,12 +42,19 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     withBoxShadow = true,
     className,
     testId = 'cf-ui-layout',
-    contentTestId = 'cf-layout-main-container',
+    contentTestId = 'cf-layout-content-container',
     contentClassName,
     ...otherProps
   } = props;
 
-  const styles = getLayoutStyles({ variant, withBoxShadow });
+  const withLeftSidebar = Boolean(leftSidebar);
+  const withRightSidebar = Boolean(rightSidebar);
+  const styles = getLayoutStyles({
+    variant,
+    withBoxShadow,
+    withLeftSidebar,
+    withRightSidebar,
+  });
 
   const contextValue: LayoutContextType = useMemo(
     () => ({
@@ -70,19 +77,17 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
           {...otherProps}
           className={styles.layoutMainContainer}
           flexDirection="column"
-          justifyContent="flex-start"
         >
           {header}
 
-          <Flex
+          <Box
             className={cx(styles.layoutContentContainer, contentClassName)}
             testId={contentTestId}
-            justifyContent="center"
           >
             {leftSidebar}
             {children}
             {rightSidebar}
-          </Flex>
+          </Box>
         </Flex>
       </Box>
     </LayoutContextProvider>
