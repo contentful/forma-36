@@ -6,6 +6,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Layout } from '../src/CompoundLayout';
 import { Button, DisplayText, Header } from '@contentful/f36-components';
 import { LayoutProps } from '../src';
+import { LayoutBody } from '../src/LayoutBody';
 
 export default {
   title: 'Layout/Layout',
@@ -61,15 +62,17 @@ export const withHeader: Story<LayoutProps> = (args) => {
   return (
     <ExampleWrapper>
       <Layout header={<LayoutHeaderComp />} {...args}>
-        <Box
-          className={css({
-            width: '100%',
-            height: '400px',
-            backgroundColor: 'lavenderblush',
-          })}
-        >
-          Content
-        </Box>
+        <LayoutBody>
+          <Box
+            className={css({
+              width: '100%',
+              height: '400px',
+              backgroundColor: 'lavenderblush',
+            })}
+          >
+            Content
+          </Box>
+        </LayoutBody>
       </Layout>
     </ExampleWrapper>
   );
@@ -166,7 +169,7 @@ export const withHeaderAndSidebars: Story<LayoutProps> = () => {
           <Box
             className={css({
               width: '100%',
-              height: '100px',
+              height: '1000px',
               backgroundColor: 'lavenderblush',
             })}
           >
@@ -177,6 +180,7 @@ export const withHeaderAndSidebars: Story<LayoutProps> = () => {
     </ExampleWrapper>
   );
 };
+
 export const withHeaderAndLongSidebars: Story<LayoutProps> = () => {
   return (
     <ExampleWrapper>
@@ -189,6 +193,7 @@ export const withHeaderAndLongSidebars: Story<LayoutProps> = () => {
                 backgroundColor: 'violet',
                 width: '100%',
                 height: '200px',
+                marginBottom: '1rem',
               })}
             >
               Sidebar Content
@@ -197,7 +202,8 @@ export const withHeaderAndLongSidebars: Story<LayoutProps> = () => {
               className={css({
                 backgroundColor: 'springgreen',
                 width: '100%',
-                height: '200px',
+                height: '400px',
+                marginBottom: '1rem',
               })}
             >
               Sidebar Content
@@ -207,6 +213,7 @@ export const withHeaderAndLongSidebars: Story<LayoutProps> = () => {
                 backgroundColor: 'lightcoral',
                 width: '100%',
                 height: '200px',
+                marginBottom: '1rem',
               })}
             >
               Sidebar Content
@@ -215,7 +222,8 @@ export const withHeaderAndLongSidebars: Story<LayoutProps> = () => {
               className={css({
                 backgroundColor: 'indianred',
                 width: '100%',
-                height: '200px',
+                height: '400px',
+                marginBottom: '1rem',
               })}
             >
               Sidebar Content
@@ -239,6 +247,102 @@ export const withHeaderAndLongSidebars: Story<LayoutProps> = () => {
     </ExampleWrapper>
   );
 };
+export const withLongContentAndLongSidebars: Story<LayoutProps> = () => {
+  return (
+    <ExampleWrapper>
+      <Layout
+        rightSidebar={
+          <Layout.Sidebar>
+            <Box
+              className={css({
+                backgroundColor: 'violet',
+                width: '100%',
+                height: '200px',
+                marginBottom: '1rem',
+              })}
+            >
+              Sidebar Content
+            </Box>
+            <Box
+              className={css({
+                backgroundColor: 'springgreen',
+                width: '100%',
+                height: '400px',
+                marginBottom: '1rem',
+              })}
+            >
+              Sidebar Content
+            </Box>
+            <Box
+              className={css({
+                backgroundColor: 'lightcoral',
+                width: '100%',
+                height: '200px',
+                marginBottom: '1rem',
+              })}
+            >
+              Sidebar Content
+            </Box>
+            <Box
+              className={css({
+                backgroundColor: 'indianred',
+                width: '100%',
+                height: '400px',
+                marginBottom: '1rem',
+              })}
+            >
+              Sidebar Content
+            </Box>
+          </Layout.Sidebar>
+        }
+      >
+        <Layout.Body>
+          <Box
+            className={css({
+              backgroundColor: 'violet',
+              width: '100%',
+              height: '200px',
+              marginBottom: '1rem',
+            })}
+          >
+            Body Content
+          </Box>
+          <Box
+            className={css({
+              backgroundColor: 'springgreen',
+              width: '100%',
+              height: '400px',
+              marginBottom: '1rem',
+            })}
+          >
+            Body Content
+          </Box>
+          <Box
+            className={css({
+              backgroundColor: 'lightcoral',
+              width: '100%',
+              height: '200px',
+              marginBottom: '1rem',
+            })}
+          >
+            Body Content
+          </Box>
+          <Box
+            className={css({
+              backgroundColor: 'indianred',
+              width: '100%',
+              height: '400px',
+              marginBottom: '1rem',
+            })}
+          >
+            Body Content
+          </Box>
+        </Layout.Body>
+      </Layout>
+    </ExampleWrapper>
+  );
+};
+
 export const variantFullscreen: Story<LayoutProps> = () => {
   return (
     <ExampleWrapper>
@@ -266,17 +370,34 @@ export const variantFullscreen: Story<LayoutProps> = () => {
 export const variantNarrow: Story<LayoutProps> = () => {
   return (
     <ExampleWrapper>
-      <Layout
-        header={<LayoutHeaderComp />}
-        leftSidebar={<LayoutSidebarComp content="Left Sidebar" />}
-        rightSidebar={<LayoutSidebarComp content="Right Sidebar" />}
-        variant="narrow"
-      >
+      <Layout variant="narrow">
         <Layout.Body>
           <Box
             className={css({
               width: '100%',
               height: '100px',
+              backgroundColor: 'lavenderblush',
+            })}
+          >
+            Content
+          </Box>
+        </Layout.Body>
+      </Layout>
+    </ExampleWrapper>
+  );
+};
+export const variantNarrowWithSidebar: Story<LayoutProps> = () => {
+  return (
+    <ExampleWrapper>
+      <Layout
+        variant="narrow"
+        rightSidebar={<LayoutSidebarComp content="Left Sidebar" />}
+      >
+        <Layout.Body>
+          <Box
+            className={css({
+              width: '100%',
+              height: '900px',
               backgroundColor: 'lavenderblush',
             })}
           >
