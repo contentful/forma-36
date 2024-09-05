@@ -3,6 +3,8 @@ import { LayoutProps } from './Layout';
 
 export type LayoutContextType = {
   variant: NonNullable<LayoutProps['variant']>;
+  withSidebars: boolean;
+  withHeader: boolean;
 };
 
 const LayoutContext = React.createContext<LayoutContextType | undefined>(

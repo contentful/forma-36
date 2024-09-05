@@ -5,7 +5,7 @@ import React, {
   type HTMLAttributes,
 } from 'react';
 import { cx } from 'emotion';
-import { type CommonProps, Flex } from '@contentful/f36-core';
+import { type CommonProps, Box, Flex } from '@contentful/f36-core';
 import { LayoutContextProvider, LayoutContextType } from './LayoutContext';
 import { getLayoutStyles } from './Layout.styles';
 
@@ -52,39 +52,39 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
   const contextValue: LayoutContextType = useMemo(
     () => ({
       variant,
+      withSidebars: Boolean(leftSidebar || rightSidebar),
+      withHeader: Boolean(header),
     }),
-    [variant],
+    [variant, leftSidebar, rightSidebar, header],
   );
 
   return (
     <LayoutContextProvider value={contextValue}>
-      <Flex
+      <Box
         ref={ref}
         testId={testId}
-        className={cx(styles.root, className)}
+        className={cx(styles.layoutWrapper, className)}
         as="section"
-        justifyContent="center"
       >
         <Flex
           {...otherProps}
-          className={styles.mainContainer}
+          className={styles.layoutMainContainer}
           flexDirection="column"
           justifyContent="flex-start"
-          alignItems="center"
         >
           {header}
 
           <Flex
-            className={cx(styles.contentContainer, contentClassName)}
-            flexGrow={1}
+            className={cx(styles.layoutContentContainer, contentClassName)}
             testId={contentTestId}
+            justifyContent="center"
           >
             {leftSidebar}
             {children}
             {rightSidebar}
           </Flex>
         </Flex>
-      </Flex>
+      </Box>
     </LayoutContextProvider>
   );
 };

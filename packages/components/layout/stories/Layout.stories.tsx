@@ -392,6 +392,7 @@ export const variantNarrowWithSidebar: Story<LayoutProps> = () => {
       <Layout
         variant="narrow"
         rightSidebar={<LayoutSidebarComp content="Left Sidebar" />}
+        header={<LayoutHeaderComp />}
       >
         <Layout.Body>
           <Box
