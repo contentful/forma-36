@@ -57,16 +57,12 @@ export const getAvatarStyles = ({
       borderRadius,
       display: 'block',
     }),
-    root: css([
-      {
-        borderRadius,
-        height: sizePixels,
-        overflow: 'hidden',
-        position: 'relative',
-        width: sizePixels,
-      },
-    ]),
-    colorBorder: css({
+    root: css({
+      borderRadius,
+      height: sizePixels,
+      overflow: 'hidden',
+      position: 'relative',
+      width: sizePixels,
       '&::after': {
         borderRadius,
         bottom: 0,

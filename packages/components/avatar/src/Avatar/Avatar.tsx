@@ -71,7 +71,6 @@ function _Avatar(
     <div
       className={cx(styles.root, className, {
         [styles.imageContainer]: !!src,
-        [styles.colorBorder]: !(colorVariant === 'muted' && size === 'tiny'),
       })}
       data-test-id={testId}
       ref={forwardedRef}
