@@ -17,5 +17,17 @@ export const avatarColorMap = {
 };
 
 export function applyMuted(color: string): string {
-  return `color-mix(in srgb, ${color}, ${tokens.colorWhite} 50%)`;
+  // This is a temporary solution because `color-mix` is not supported in Safari
+  const r = parseInt(color.slice(1, 3), 16);
+  const g = parseInt(color.slice(3, 5), 16);
+  const b = parseInt(color.slice(5, 7), 16);
+
+  return `rgb(${[
+    Math.round((255 + r) / 2),
+    Math.round((255 + g) / 2),
+    Math.round((255 + b) / 2),
+  ].join(' ')})`;
+
+  // Eventually we should use `color-mix`
+  // return `color-mix(in srgb, ${color}, ${tokens.colorWhite} 50%)`;
 }
