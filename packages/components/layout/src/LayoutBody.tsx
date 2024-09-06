@@ -27,7 +27,13 @@ const _LayoutBody = (props: LayoutBodyProps, ref: Ref<HTMLDivElement>) => {
       className={cx(styles.layoutBodyContainer, className)}
       testId={testId}
     >
-      {children}
+      {variant === 'narrow' ? (
+        <Box as="div" className={styles.layoutBodyInner}>
+          {children}
+        </Box>
+      ) : (
+        children
+      )}
     </Box>
   );
 };

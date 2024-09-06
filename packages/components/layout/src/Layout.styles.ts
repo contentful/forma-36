@@ -106,16 +106,18 @@ export const getLayoutBodyStyles = (
 ) => ({
   layoutBodyContainer: css(
     {
-      maxWidth: variant === 'narrow' ? '900px' : '100%',
       width: '100%',
       padding: `${tokens.spacingL} ${tokens.spacingL} 0`,
-      margin: '0 auto',
     },
     withSidebars && {
       overflowY: 'auto',
       height: `calc(100vh - ${getMainOffset(withHeader)})`,
     },
   ),
+  layoutBodyInner: css({
+    maxWidth: '900px',
+    margin: '0 auto',
+  }),
 });
 
 export const getLayoutSidebarStyles = (withHeader: boolean) => ({

@@ -416,7 +416,50 @@ export const variantNarrowWithRightSidebar: Story<LayoutProps> = () => {
     <ExampleWrapper>
       <Layout
         variant="narrow"
-        rightSidebar={<LayoutSidebarComp content="Right Sidebar" />}
+        rightSidebar={
+          <Layout.Sidebar>
+            <Box
+              className={css({
+                backgroundColor: 'violet',
+                width: '100%',
+                height: '200px',
+                marginBottom: '1rem',
+              })}
+            >
+              Sidebar Content
+            </Box>
+            <Box
+              className={css({
+                backgroundColor: 'springgreen',
+                width: '100%',
+                height: '400px',
+                marginBottom: '1rem',
+              })}
+            >
+              Sidebar Content
+            </Box>
+            <Box
+              className={css({
+                backgroundColor: 'lightcoral',
+                width: '100%',
+                height: '200px',
+                marginBottom: '1rem',
+              })}
+            >
+              Sidebar Content
+            </Box>
+            <Box
+              className={css({
+                backgroundColor: 'indianred',
+                width: '100%',
+                height: '400px',
+                marginBottom: '1rem',
+              })}
+            >
+              Sidebar Content
+            </Box>
+          </Layout.Sidebar>
+        }
         header={<LayoutHeaderComp />}
       >
         <Layout.Body>
