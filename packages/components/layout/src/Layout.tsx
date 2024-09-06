@@ -59,37 +59,32 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
   const contextValue: LayoutContextType = useMemo(
     () => ({
       variant,
-      withSidebars: Boolean(leftSidebar || rightSidebar),
       withHeader: Boolean(header),
     }),
-    [variant, leftSidebar, rightSidebar, header],
+    [variant, header],
   );
 
   return (
     <LayoutContextProvider value={contextValue}>
-      <Box
+      <Flex
         ref={ref}
         testId={testId}
-        className={cx(styles.layoutWrapper, className)}
         as="section"
+        {...otherProps}
+        className={styles.layoutMainContainer}
+        flexDirection="column"
       >
-        <Flex
-          {...otherProps}
-          className={styles.layoutMainContainer}
-          flexDirection="column"
-        >
-          {header}
+        {header}
 
-          <Box
-            className={cx(styles.layoutContentContainer, contentClassName)}
-            testId={contentTestId}
-          >
-            {leftSidebar}
-            {children}
-            {rightSidebar}
-          </Box>
-        </Flex>
-      </Box>
+        <Box
+          className={cx(styles.layoutContentContainer, contentClassName)}
+          testId={contentTestId}
+        >
+          {leftSidebar}
+          {children}
+          {rightSidebar}
+        </Box>
+      </Flex>
     </LayoutContextProvider>
   );
 };

@@ -4,7 +4,7 @@ import type { LayoutProps } from './Layout';
 import type { LayoutContextType } from './LayoutContext';
 
 export const NAVBAR_HEIGHT = 60;
-export const HEADER_HEIGHT = 56;
+export const HEADER_HEIGHT = 57; // header plus border
 
 const getMainOffset = (withHeader: boolean) =>
   withHeader ? HEADER_HEIGHT + NAVBAR_HEIGHT + 'px' : NAVBAR_HEIGHT + 'px';
@@ -53,7 +53,7 @@ const getContentContainerGridTemplateColumns = ({
   }
 
   if (variant !== 'narrow' && withLeftSidebar && withRightSidebar) {
-    gridTemplateColumns = 'auto auto auto';
+    gridTemplateColumns = `${sidebarWidth} auto ${sidebarWidth}`;
   }
 
   return css({
@@ -72,12 +72,6 @@ export const getLayoutStyles = ({
   withLeftSidebar?: boolean;
   withRightSidebar?: boolean;
 }) => ({
-  // this container will scroll if the content is too long and there is no sidebar
-  layoutWrapper: css({
-    width: '100%',
-    height: '100vh',
-    overflowY: 'auto',
-  }),
   layoutMainContainer: css(
     getLayoutMaxWidthStyles({ variant, withBoxShadow }),
     {
@@ -99,21 +93,13 @@ export const getLayoutStyles = ({
   ),
 });
 
-export const getLayoutBodyStyles = (
-  variant: LayoutContextType['variant'],
-  withSidebars: boolean,
-  withHeader: boolean,
-) => ({
-  layoutBodyContainer: css(
-    {
-      width: '100%',
-      padding: `${tokens.spacingL} ${tokens.spacingL} 0`,
-    },
-    withSidebars && {
-      overflowY: 'auto',
-      height: `calc(100vh - ${getMainOffset(withHeader)})`,
-    },
-  ),
+export const getLayoutBodyStyles = (withHeader: boolean) => ({
+  layoutBodyContainer: css({
+    width: '100%',
+    padding: `${tokens.spacingL} ${tokens.spacingL} 0`,
+    overflowY: 'auto',
+    height: `calc(100vh - ${getMainOffset(withHeader)})`,
+  }),
   layoutBodyInner: css({
     maxWidth: '900px',
     margin: '0 auto',

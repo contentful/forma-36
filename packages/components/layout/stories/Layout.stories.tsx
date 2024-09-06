@@ -28,8 +28,19 @@ const ExampleWrapper = ({ children }) => (
       height: '100vh',
       margin: '-1rem',
       backgroundColor: 'lavender',
+      flexDirection: 'column',
     })}
   >
+    <div
+      className={css({
+        width: '100vw',
+        height: '60px',
+        backgroundColor: 'lavender',
+      })}
+    >
+      Navbar
+    </div>
+
     {children}
   </div>
 );
@@ -58,15 +69,15 @@ const LayoutSidebarComp = ({ content }) => (
   </Layout.Sidebar>
 );
 
-export const withHeader: Story<LayoutProps> = (args) => {
+export const basic: Story<LayoutProps> = (args) => {
   return (
     <ExampleWrapper>
-      <Layout header={<LayoutHeaderComp />} {...args}>
+      <Layout {...args}>
         <LayoutBody>
           <Box
             className={css({
               width: '100%',
-              height: '400px',
+              height: '1200px',
               backgroundColor: 'lavenderblush',
             })}
           >
@@ -78,7 +89,7 @@ export const withHeader: Story<LayoutProps> = (args) => {
   );
 };
 
-export const withLongContent: Story<LayoutProps> = (args) => {
+export const withHeader: Story<LayoutProps> = (args) => {
   return (
     <ExampleWrapper>
       <Layout header={<LayoutHeaderComp />} {...args}>
