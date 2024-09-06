@@ -37,7 +37,6 @@ export const getAvatarStyles = ({
   colorVariant: ColorVariant;
 }) => {
   const borderRadius = variant === 'app' ? tokens.borderRadiusSmall : '100%';
-
   const sizePixels = convertSizeToPixels(size);
   const isMuted = colorVariant === 'muted';
 
