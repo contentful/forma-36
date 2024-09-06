@@ -162,7 +162,7 @@ function _NavbarSwitcher(
         ) : (
           <Flex gap={tokens.spacing2Xs} alignItems="center">
             <SwitcherLabel type="space" value={space} styles={styles} />
-            <CaretRightIcon size="tiny" color={tokens.gray400} />
+            <CaretRightIcon size="tiny" color={tokens.gray500} />
             <SwitcherLabel
               envVariant={envVariant}
               type="environment"
