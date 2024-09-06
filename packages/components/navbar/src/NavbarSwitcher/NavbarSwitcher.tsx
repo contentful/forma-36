@@ -48,12 +48,12 @@ function splitString(
 type NavbarLoadingProps =
   | {
       isLoading?: true;
-      environemnt?: never;
+      environment?: never;
       space?: never;
     }
   | {
       isLoading?: false;
-      environemnt?: string;
+      environment?: string;
       space?: string;
     };
 
@@ -63,8 +63,6 @@ type NavbarSwitcherOwnProps = CommonProps &
     envVariant?: 'master' | 'non-master';
     isAlias?: boolean;
     ariaLabel?: string;
-    environment?: React.ReactNode;
-    space?: React.ReactNode;
   };
 
 export type NavbarSwitcherProps = PropsWithHTMLElement<
@@ -100,12 +98,10 @@ const SwitcherLabel = ({
   const envColor = useMemo(() => {
     const isEnv = type === 'environment';
     const isMaster = envVariant === 'master';
-    switch (true) {
-      case isEnv && isMaster:
-        return 'green600';
-      default:
-        return 'gray600';
+    if (isEnv && isMaster) {
+      return 'green600';
     }
+    return 'gray600';
   }, [type, envVariant]);
 
   return start !== undefined ? (
