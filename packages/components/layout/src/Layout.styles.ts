@@ -5,6 +5,7 @@ import type { LayoutContextType } from './LayoutContext';
 
 export const NAVBAR_HEIGHT = 60;
 export const HEADER_HEIGHT = 57; // header plus border
+export const SIDEBAR_WIDTH = '340px';
 
 const getMainOffset = (withHeader: boolean) =>
   withHeader ? HEADER_HEIGHT + NAVBAR_HEIGHT + 'px' : NAVBAR_HEIGHT + 'px';
@@ -43,17 +44,16 @@ const getContentContainerGridTemplateColumns = ({
 }) => {
   let gridTemplateColumns = 'auto';
 
-  const sidebarWidth = '340px';
   if (withLeftSidebar) {
-    gridTemplateColumns = `${sidebarWidth} auto`;
+    gridTemplateColumns = `${SIDEBAR_WIDTH} auto`;
   }
 
   if (withRightSidebar) {
-    gridTemplateColumns = `auto ${sidebarWidth}`;
+    gridTemplateColumns = `auto ${SIDEBAR_WIDTH}`;
   }
 
   if (variant !== 'narrow' && withLeftSidebar && withRightSidebar) {
-    gridTemplateColumns = `${sidebarWidth} auto ${sidebarWidth}`;
+    gridTemplateColumns = `${SIDEBAR_WIDTH} auto ${SIDEBAR_WIDTH}`;
   }
 
   return css({
@@ -108,9 +108,8 @@ export const getLayoutBodyStyles = (withHeader: boolean) => ({
 
 export const getLayoutSidebarStyles = (withHeader: boolean) => ({
   layoutSidebar: css({
-    flexShrink: 0,
     padding: `${tokens.spacingL} ${tokens.spacingS} 0`,
-    width: '340px',
+    width: SIDEBAR_WIDTH,
     overflowY: 'auto',
     height: `calc(100vh - ${getMainOffset(withHeader)})`,
     '&:first-child': {
