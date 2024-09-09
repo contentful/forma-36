@@ -24,13 +24,17 @@ export default {
 } as Meta;
 
 const Switcher = ({
-  children = 'Our super long space name',
+  space = 'Our super long space name',
+  environment = 'master',
   isAlias = false,
   envVariant = 'master',
 }: Partial<NavbarSwitcherProps>) => (
-  <Navbar.Switcher isAlias={isAlias} envVariant={envVariant}>
-    {children}
-  </Navbar.Switcher>
+  <Navbar.Switcher
+    isAlias={isAlias}
+    envVariant={envVariant}
+    space={space}
+    environment={environment}
+  />
 );
 
 const Account = ({
@@ -121,7 +125,7 @@ const MainItems = () => {
 
 export const Basic: Story<{ initials?: string; avatar?: string }> = (args) => {
   return (
-    <div style={{ width: '900px' }}>
+    <div style={{ minWidth: '900px' }}>
       <Navbar
         mainNavigation={<MainItems />}
         switcher={<Switcher />}
@@ -163,7 +167,7 @@ export const WithInitialsAvatar: Story<{
   avatar?: string;
 }> = (args) => {
   return (
-    <div style={{ width: '900px' }}>
+    <div style={{ minWidth: '900px' }}>
       <Navbar
         switcher={<Switcher />}
         account={<Account {...args} />}
@@ -179,7 +183,7 @@ WithInitialsAvatar.args = {
 
 export const WithFallbackAvatar: Story<{}> = (args) => {
   return (
-    <div style={{ width: '900px' }}>
+    <div style={{ minWidth: '900px' }}>
       <Navbar
         switcher={<Switcher />}
         account={<Account {...args} />}
@@ -195,7 +199,7 @@ export const WithShortSpaceName = () => {
   return (
     <Navbar
       mainNavigation={<MainItems />}
-      switcher={<Switcher>Space</Switcher>}
+      switcher={<Switcher space="Space" />}
       account={<Account />}
     />
   );
@@ -422,7 +426,7 @@ export const WithDifferentEnvironments: Story<{
   avatar?: string;
 }> = (args) => {
   return (
-    <Flex flexDirection="column" gap="spacingL" style={{ width: '900px' }}>
+    <Flex flexDirection="column" gap="spacingL" style={{ minWidth: '900px' }}>
       <Flex flexDirection="column">
         <SectionHeading as="h3" marginBottom="spacingS">
           Master
@@ -444,7 +448,13 @@ export const WithDifferentEnvironments: Story<{
         <Navbar
           mobileNavigation={<MobileMenu />}
           mainNavigation={<MainItems />}
-          switcher={<Switcher envVariant="non-master">development</Switcher>}
+          switcher={
+            <Switcher
+              envVariant="non-master"
+              space="development"
+              environment="development"
+            />
+          }
           account={<Account {...args} />}
         />
       </Flex>
@@ -470,7 +480,7 @@ export const WithDifferentEnvironments: Story<{
         <Navbar
           mobileNavigation={<MobileMenu />}
           mainNavigation={<MainItems />}
-          switcher={<Switcher isAlias envVariant="non-master"></Switcher>}
+          switcher={<Switcher isAlias envVariant="non-master" />}
           account={<Account {...args} />}
         />
       </Flex>
@@ -489,7 +499,7 @@ export const WithAccountNotification: Story<{
   avatar?: string;
 }> = (args) => {
   return (
-    <Flex flexDirection="column" gap="spacingL" style={{ width: '900px' }}>
+    <Flex flexDirection="column" gap="spacingL" style={{ minWidth: '900px' }}>
       <Flex flexDirection="column">
         <SectionHeading as="h3" marginBottom="spacingS">
           Warning
@@ -548,7 +558,7 @@ export const LoadingSkeleton: Story<{}> = () => {
       <Navbar
         mobileNavigation={<MobileMenu />}
         account={<Navbar.AccountSkeleton ariaLabel="Loading account" />}
-        switcher={<Navbar.SwitcherSkeleton estimatedWidth={148} />}
+        switcher={<Navbar.Switcher isLoading />}
         mainNavigation={
           <>
             <Navbar.ItemSkeleton estimatedWidth={100} />
