@@ -169,13 +169,17 @@ function _NavbarSwitcher(
             ) : (
               <>
                 <SwitcherLabel type="space" value={space} styles={styles} />
-                <CaretRightIcon size="tiny" color={tokens.gray500} />
-                <SwitcherLabel
-                  envVariant={envVariant}
-                  type="environment"
-                  value={environment}
-                  styles={styles}
-                />
+                {environment && (
+                  <>
+                    <CaretRightIcon size="tiny" color={tokens.gray500} />
+                    <SwitcherLabel
+                      envVariant={envVariant}
+                      type="environment"
+                      value={environment}
+                      styles={styles}
+                    />
+                  </>
+                )}
               </>
             )}
           </Flex>
