@@ -15,7 +15,7 @@ export function NavbarEnvVariant({
   envVariant,
   className,
 }: NavbarEnvVariantProps) {
-  const color = envVariant === 'master' ? tokens.green600 : tokens.orange500;
+  const color = envVariant === 'master' ? tokens.green600 : tokens.gray600;
 
   return isAlias ? (
     <EnvironmentAliasIcon color={color} className={className} size="medium" />
