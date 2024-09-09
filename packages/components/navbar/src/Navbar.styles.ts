@@ -3,6 +3,8 @@ import tokens from '@contentful/f36-tokens';
 import { mqs } from './utils.styles';
 import { NavbarProps } from './Navbar';
 
+export const NAVBAR_HEIGHT = 60;
+
 export const getNavbarStyles = ({
   contentMaxWidth,
   variant,
@@ -25,7 +27,7 @@ export const getNavbarStyles = ({
     width: '100%',
     maxWidth: variant === 'wide' ? '1920px' : contentMaxWidth,
     padding: `${tokens.spacingS} ${tokens.spacingM}`,
-    minHeight: tokens.spacingL,
+    height: `${NAVBAR_HEIGHT}px`,
     [mqs.small]: {
       padding: `${tokens.spacingM} ${tokens.spacingL}`,
     },
