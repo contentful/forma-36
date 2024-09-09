@@ -48,11 +48,13 @@ function splitString(
 type NavbarLoadingProps =
   | {
       isLoading?: true;
+      children?: React.ReactNode;
       environment?: never;
       space?: never;
     }
   | {
       isLoading?: false;
+      children?: never;
       environment?: string;
       space?: string;
     };
@@ -122,6 +124,7 @@ function _NavbarSwitcher(
   ref: React.Ref<HTMLButtonElement>,
 ) {
   const {
+    children,
     className,
     envVariant,
     isAlias,
@@ -161,14 +164,20 @@ function _NavbarSwitcher(
           <NavbarSwitcherSkeleton estimatedWidth={148} />
         ) : (
           <Flex gap={tokens.spacing2Xs} alignItems="center">
-            <SwitcherLabel type="space" value={space} styles={styles} />
-            <CaretRightIcon size="tiny" color={tokens.gray500} />
-            <SwitcherLabel
-              envVariant={envVariant}
-              type="environment"
-              value={environment}
-              styles={styles}
-            />
+            {children ? (
+              <Text fontColor="gray600">{children}</Text>
+            ) : (
+              <>
+                <SwitcherLabel type="space" value={space} styles={styles} />
+                <CaretRightIcon size="tiny" color={tokens.gray500} />
+                <SwitcherLabel
+                  envVariant={envVariant}
+                  type="environment"
+                  value={environment}
+                  styles={styles}
+                />
+              </>
+            )}
           </Flex>
         )}
       </Flex>

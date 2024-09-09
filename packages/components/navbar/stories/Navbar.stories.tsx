@@ -573,3 +573,16 @@ export const LoadingSkeleton: Story<{}> = () => {
 };
 
 LoadingSkeleton.args = {};
+
+export const NoSpaceContext: Story<{}> = () => {
+  return (
+    <div>
+      <Navbar
+        mobileNavigation={<MobileMenu />}
+        account={<Account />}
+        switcher={<Navbar.Switcher>Account Settings</Navbar.Switcher>}
+        mainNavigation={<MainItems />}
+      />
+    </div>
+  );
+};
