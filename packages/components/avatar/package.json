@@ -1,16 +1,16 @@
 {
   "name": "@contentful/f36-avatar",
-  "version": "4.69.0",
+  "version": "4.69.1",
   "description": "Forma 36: Avatar component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.69.0",
-    "@contentful/f36-image": "4.69.0",
-    "@contentful/f36-menu": "^4.69.0",
+    "@contentful/f36-core": "^4.69.1",
+    "@contentful/f36-image": "4.69.1",
+    "@contentful/f36-menu": "^4.69.1",
     "@contentful/f36-tokens": "^4.0.5",
-    "@contentful/f36-tooltip": "^4.69.0",
+    "@contentful/f36-tooltip": "^4.69.1",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
