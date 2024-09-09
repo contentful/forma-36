@@ -1,6 +1,8 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
+export const HEADER_HEIGHT = 56;
+
 export const getHeaderStyles = () => ({
   actions: css({
     flexGrow: 0,
@@ -22,7 +24,7 @@ export const getHeaderStyles = () => ({
   root: (hasFilters?: boolean) =>
     css({
       background: tokens.gray100,
-      minHeight: '56px',
+      height: `${HEADER_HEIGHT}px`,
       // Reduce vertical padding when there's a filter in the header
       padding: hasFilters
         ? `${tokens.spacingXs} ${tokens.spacingS}`
