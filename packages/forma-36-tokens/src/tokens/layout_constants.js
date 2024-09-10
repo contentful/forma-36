@@ -1,0 +1,4 @@
+const LAYOUT_HEADER_HEIGHT = 57;
+const NAVBAR_HEIGHT = 60;
+
+module.exports = { LAYOUT_HEADER_HEIGHT, NAVBAR_HEIGHT };
