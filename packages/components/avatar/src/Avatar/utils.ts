@@ -3,17 +3,16 @@ import tokens from '@contentful/f36-tokens';
 export type ColorVariant = keyof typeof avatarColorMap;
 
 export const avatarColorMap = {
-  gray: tokens.gray500,
+  primary: tokens.blue500,
   muted: applyMuted(tokens.gray500),
-  blue: tokens.blue500,
-  purple: tokens.purple500,
-  orchid: '#BA33C6',
-  strawberry: '#FF4C95',
-  orange: tokens.orange500,
-  gold: tokens.yellow700,
-  olive: '#747826',
-  green: tokens.green500,
-  ocean: '#007F9B',
+  green: tokens.green400,
+  orange: tokens.orange400,
+  yellow: tokens.yellow500,
+  purple: tokens.purple400,
+  gray: tokens.gray400,
+  pink: '#FF77AE',
+  emerald: '#00B8A2',
+  lavender: '#9095FF',
 };
 
 /**
