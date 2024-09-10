@@ -2,8 +2,7 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { mqs } from './utils.styles';
 import { NavbarProps } from './Navbar';
-
-export const NAVBAR_HEIGHT = 60;
+import { NAVBAR_HEIGHT } from './constants';
 
 export const getNavbarStyles = ({
   contentMaxWidth,

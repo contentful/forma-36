@@ -1,4 +1,4 @@
-export { NAVBAR_HEIGHT } from './Navbar.styles';
+export { NAVBAR_HEIGHT } from './constants';
 
 export { Navbar } from './CompoundNavbar';
 export type { NavbarProps } from './Navbar';
