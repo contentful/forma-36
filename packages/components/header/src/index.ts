@@ -1,2 +1,2 @@
 export { Header } from './Header';
-export { HEADER_HEIGHT } from './Header.styles';
+export { HEADER_HEIGHT } from './constants';

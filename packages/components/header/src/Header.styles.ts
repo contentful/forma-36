@@ -1,7 +1,6 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-
-export const HEADER_HEIGHT = 56;
+import { HEADER_HEIGHT } from './constants';
 
 export const getHeaderStyles = () => ({
   actions: css({
