@@ -16,6 +16,9 @@ export const avatarColorMap = {
   ocean: '#007F9B',
 };
 
+/**
+ * @param color Color string in hex format with a leading `#`
+ */
 export function applyMuted(color: string): string {
   // This is a temporary solution because `color-mix` is not supported in Safari
   const r = parseInt(color.slice(1, 3), 16);
