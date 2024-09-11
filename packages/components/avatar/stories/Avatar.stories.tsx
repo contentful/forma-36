@@ -136,6 +136,17 @@ export const Overview: Story<AvatarProps> = (args) => {
             placement: 'bottom',
           }}
         />
+        <Avatar
+          {...args}
+          size="large"
+          variant="user"
+          colorVariant="gray"
+          tooltipProps={{
+            content: 'Contentful Avatar',
+            placement: 'bottom',
+            isVisible: true,
+          }}
+        />
       </Flex>
     </>
   );
