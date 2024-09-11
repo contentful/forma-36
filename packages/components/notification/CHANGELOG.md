@@ -1,5 +1,27 @@
 # Change Log
 
+## 4.69.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.69.2
+  - @contentful/f36-core@4.69.2
+  - @contentful/f36-text-link@4.69.2
+  - @contentful/f36-typography@4.69.2
+
+## 4.69.1
+
+### Patch Changes
+
+- [#2860](https://github.com/contentful/forma-36/pull/2860) [`afda129`](https://github.com/contentful/forma-36/commit/afda1294c8da9c4ea8e702e1ee7150c08bc681fa) Thanks [@denkristoffer](https://github.com/denkristoffer)! - chore: remove swc helpers
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.69.1
+  - @contentful/f36-core@4.69.1
+  - @contentful/f36-text-link@4.69.1
+  - @contentful/f36-typography@4.69.1
+
 ## 4.69.0
 
 ### Patch Changes

@@ -1,5 +1,25 @@
 # Change Log
 
+## 4.69.2
+
+### Patch Changes
+
+- [`859dc76`](https://github.com/contentful/forma-36/commit/859dc76e94171fae4bfdb1e9387330291f96f151) Thanks [@Lelith](https://github.com/Lelith)! - The header component exports now a fixed header height constant
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.69.2
+  - @contentful/f36-core@4.69.2
+  - @contentful/f36-typography@4.69.2
+
+## 4.69.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.69.1
+  - @contentful/f36-core@4.69.1
+  - @contentful/f36-typography@4.69.1
+
 ## 4.69.0
 
 ### Patch Changes

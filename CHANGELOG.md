@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 10-09-2024
+
+**F36 Notification** `v4.69.1`
+
+- chore: remove swc helpers
+
 ## 03-09-2024
 
 **F36 Button** `v4.69.0`
