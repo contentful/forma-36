@@ -7,8 +7,9 @@ import { NAVBAR_HEIGHT } from '@contentful/f36-navbar-alpha';
 
 export const SIDEBAR_WIDTH = '340px';
 
+//header + navbar + 1px border or navbar
 const getMainOffset = (withHeader: boolean) =>
-  withHeader ? HEADER_HEIGHT + NAVBAR_HEIGHT + 'px' : NAVBAR_HEIGHT + 'px';
+  withHeader ? HEADER_HEIGHT + 1 + NAVBAR_HEIGHT + 'px' : NAVBAR_HEIGHT + 'px';
 
 export const getLayoutMaxWidthStyles = ({
   variant,
