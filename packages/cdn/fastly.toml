@@ -4,7 +4,7 @@
 description = "Forma 36 CDN"
 language = "javascript"
 manifest_version = 2
-name = "@contentful/f36-cdn"
+name = "f36-cdn"
 
 [scripts]
   build = "npm run build"
