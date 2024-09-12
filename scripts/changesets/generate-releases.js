@@ -70,12 +70,15 @@ async function main() {
   // Push updated packages to github with tags
   console.log(childProcess.execSync(gitPushCommand));
 
-  const { packages: pkgs } = await getPackages(cwd);
-  const releasedPkgs = await getReleasedPackages(csOutput, pkgs);
+  // Only create releases on main branch
+  if (env.CIRCLE_BRANCH === 'main') {
+    const { packages: pkgs } = await getPackages(cwd);
+    const releasedPkgs = await getReleasedPackages(csOutput, pkgs);
 
-  // Create release for each published package
-  for (const pkg of releasedPkgs) {
-    await createRelease(octokit, pkg);
+    // Create release for each published package
+    for (const pkg of releasedPkgs) {
+      await createRelease(octokit, pkg);
+    }
   }
 }
 

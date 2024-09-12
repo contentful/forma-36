@@ -139,6 +139,33 @@ jobs:
           command: |
             npm run-script changeset:publish
 
+  release_next:
+    docker:
+      - image: cimg/node:lts
+    working_directory: ~/circleci-f36-build
+    resource_class: xlarge
+    steps:
+      - checkout
+      - vault/get-secrets:
+          template-preset: semantic-release
+      - run: |
+          echo "//npm.pkg.github.com/:_authToken=${GITHUB_PACKAGES_WRITE_TOKEN}" > ~/.npmrc
+          echo "@contentful:registry=https://npm.pkg.github.com" >> ~/.npmrc
+      - attach_workspace:
+          at: ~/circleci-f36-build
+      - add_ssh_keys:
+          fingerprints:
+            - 62:c1:53:b7:19:b8:35:4a:67:8c:58:c3:60:e0:68:11
+      - node/install-packages
+      - run: git config --global user.email ${GIT_AUTHOR_EMAIL}
+      - run: git config --global user.name ${GIT_AUTHOR_NAME}
+      - run:
+          name: Bump packages versions
+          command: npx changeset version
+      - run:
+          name: Publish packages
+          command: npm run-script changeset:publish
+
   changelog:
     docker:
       - image: cimg/node:lts
@@ -204,6 +231,17 @@ workflows:
             branches:
               only:
                 - main
+      - release_next:
+          requires:
+            - build
+            - analyze_code
+            - test
+          context:
+            - vault
+          filters:
+            branches:
+              only:
+                - next
   f36-changelog:
     triggers:
       - schedule:
