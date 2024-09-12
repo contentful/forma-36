@@ -40,6 +40,24 @@ async function main() {
     }))
     .concat(new inquirer.Separator());
 
+  console.log(chalk.red.bold('Attention'));
+  console.log(
+    "This script will update the package's version in the package.json file, publish it to the registry and add it to the changeset ignore list.",
+  );
+  console.log(
+    `If this branch is merging into the ${chalk.yellow(
+      'next',
+    )} branch, you don't need to run this script.\n\n`,
+  );
+  const { skip } = await inquirer.prompt([
+    {
+      name: 'skip',
+      message: 'Do you want to stop the script?',
+      type: 'confirm',
+    },
+  ]);
+  if (skip) return;
+
   const { pkgName } = await inquirer.prompt([
     {
       pageSize: 12,
