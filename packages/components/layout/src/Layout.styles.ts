@@ -1,7 +1,6 @@
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 import type { LayoutProps } from './Layout';
-import type { LayoutContextType } from './LayoutContext';
 import { HEADER_HEIGHT } from '@contentful/f36-header';
 import { NAVBAR_HEIGHT } from '@contentful/f36-navbar-alpha';
 
