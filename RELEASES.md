@@ -161,4 +161,4 @@ Other than that the proccess is the same:
 
 1. Build the packages
 2. Update the versioning
-3. commit the updated package.json file
+3. Commit the updated package.json file
