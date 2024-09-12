@@ -48,5 +48,6 @@ export const getNavbarAccountStyles = () => ({
       border: `2px solid ${tokens.gray900}`,
       backgroundColor: notificationVarianColorMap[variant],
       transform: 'translate(30%, -30%)',
+      zIndex: 1, // move above the avatar
     }),
 });
