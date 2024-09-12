@@ -21,6 +21,7 @@ export const getLayoutMaxWidthStyles = ({
   if (variant === 'fullscreen') {
     return css({
       maxWidth: '100%',
+      width: '100%',
     });
   }
 
@@ -30,7 +31,8 @@ export const getLayoutMaxWidthStyles = ({
       ? '0px 6px 16px -2px rgba(25, 37, 50, 0.1), 0px 3px 6px -3px rgba(25, 37, 50, 0.15)'
       : 'unset',
     borderRadius: '10px 10px 0 0',
-    margin: '0 auto',
+    margin: `0 auto`,
+    width: `calc(100% - ${tokens.spacingM} * 2)`,
   });
 };
 
@@ -76,7 +78,6 @@ export const getLayoutStyles = ({
   layoutMainContainer: css(
     getLayoutMaxWidthStyles({ variant, withBoxShadow }),
     {
-      width: '100%',
       backgroundColor: tokens.colorWhite,
       minHeight: `calc(100vh - ${NAVBAR_HEIGHT}px)`,
     },
