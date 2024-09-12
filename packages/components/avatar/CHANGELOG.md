@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.70.0
+
+### Minor Changes
+
+- [#2858](https://github.com/contentful/forma-36/pull/2858) [`7821bd3`](https://github.com/contentful/forma-36/commit/7821bd37a8a03dcea84659d559dd325af402eb0c) Thanks [@Lelith](https://github.com/Lelith)! - always render contrast border
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.70.0
+  - @contentful/f36-menu@4.70.0
+  - @contentful/f36-tooltip@4.70.0
+  - @contentful/f36-image@4.70.0
+
 ## 4.69.2
 
 ### Patch Changes
