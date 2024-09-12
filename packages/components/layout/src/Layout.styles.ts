@@ -123,7 +123,7 @@ export const getLayoutSidebarStyles = (withHeader: boolean) => ({
 });
 
 export const getLayoutHeaderStyles = (
-  variant: LayoutContextType['variant'],
+  variant: LayoutProps['variant'],
 ) => ({
   layoutHeader: css({
     borderBottom: `1px solid ${tokens.gray200}`,
