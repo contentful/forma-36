@@ -71,7 +71,7 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
         testId={testId}
         as="section"
         {...otherProps}
-        className={styles.layoutMainContainer}
+        className={cx(styles.layoutMainContainer, className)}
         flexDirection="column"
       >
         {header}
