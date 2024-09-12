@@ -6,7 +6,7 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-avatar": "4.68.1",
+    "@contentful/f36-avatar": "^4.68.1",
     "@contentful/f36-button": "^4.67.1",
     "@contentful/f36-core": "^4.68.1",
     "@contentful/f36-icon": "5.0.0-alpha.20",
