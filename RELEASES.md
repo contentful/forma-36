@@ -86,3 +86,79 @@ For that we need to take some precautions:
 Trying to make prereleases easier to handle we created a script that you can use on your branch before merging into master, that will bump the package you select, and you can choose if you it's an alpha or beta release, before publishing it to NPM.
 
 You can check the script [here](https://github.com/contentful/forma-36/blob/c6b10071959a085b21e49f5411a5ebff2f8a70d6/scripts/prerelease.mjs)
+
+## Next branch
+
+The next branch is used for the new version of Forma 36, which will probably have breaking changes. To help the development of the new packages, we have setup an automatic publishing of the packages on that branch to the `alpha` tag.
+These packages aren't shown on the website as they can have breaking changes often.
+
+### How to automatic publish
+
+To make changeset publish a new version of the packages it's the same as in the `main` branch, it just requires having a changeset generated and specifing the packages.
+Differently from the `main` branch, neither the packages changelog or the **What's new page** will be updated, and the changeset files will not be removed.
+
+### Changeset configuration
+
+To make it possible we take advantage of changeset feature of prereleasing, to make it possible we have the [.changeset/pre.json](./.changeset/pre.json) which specifies which tag to use and the initial version of the packages, which is used to calculate the alpha version, for example:
+
+```
+initial version: 4.61.2
+
+For that initial version, each type of changeset would update as following:
+patch: 4.61.3-alpha.0
+minor: 4.62.0-alpha.0
+major: 5.0.0-alpha.0
+
+If the initial version is already on the alpha tag, either version would bump the alpha.[x]
+```
+
+_In our case we want all changes to be major so we work on the following major release._
+
+**Config file explanation**
+
+The main differences on the config file are the following:
+
+```js
+{
+  "changelog": false // This is set so the changelog of the packages is not updated
+  "ignore": [] // We don't want to ignore any package on the next branch
+  "fixed": [] // We don't want to have fixed or linked versions of alpha releases
+  "baseBranch": "next", // The branch which changesets uses to check versions
+  "bumpVersionsWithWorkspaceProtocolOnly": true, // Avoid bumping dependencies on other packages
+}
+```
+
+Notes:
+
+- The changelog is not updated because when we exit the prerelease state the changeset will compile all the changesets and apply onto the new version. eg. 5.0.0 will have all the changesets of the 5.0.0-alpha.\*
+- The `bumpVersionsWithWorkspaceProtocolOnly` makes it possible to avoid bumping packages on the packages that are dependent on the pacakge being updated, this is because we want alpha packages to depend on stable packages, rather than have all of them depending on alpha packages. ie. we would make all packages bump to an alpha core in case we update it.
+
+### Exiting prerelease
+
+When exiting the prerelease state, to make the packages stable some steps are necessary:
+
+```sh
+# We need to revert the .changeset/config.json file to write the changelog files
+
+npx changeset pre exit # This sets changeset to exit prerelease mode on the next changeset version
+
+npm run changelog:gen # Generates the .changelogrc file that is used to update the What's new page
+
+npx changeset version # This updates the packages changelogs and package.json
+
+npx changeset publish # To publish the packages.
+```
+
+_Our CI already handles part of it, we would only need to revert the `.changeset/config.json` file and run the `npx changeset pre exit` command._
+
+If the last commit on the branch before merging into `main` has those changes, the CI will handle the versioning, publishing and generating github releases as usual.
+
+### Differences in the CI
+
+The main difference in the release jobs on the CI, is that in the `next` branch we don't generate the `.changelogrc` file and don't generate the github releases.
+
+Other than that the proccess is the same:
+
+1. Build the packages
+2. Update the versioning
+3. commit the updated package.json file
