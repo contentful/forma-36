@@ -40,7 +40,7 @@ const getContentContainerGridTemplateColumns = ({
   withLeftSidebar,
   withRightSidebar,
 }: {
-  variant: LayoutContextType['variant'];
+  variant: LayoutProps['variant'];
   withLeftSidebar?: boolean;
   withRightSidebar?: boolean;
 }) => {
