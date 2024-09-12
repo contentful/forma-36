@@ -31,7 +31,7 @@ export const getLayoutMaxWidthStyles = ({
       : 'unset',
     borderRadius: '10px 10px 0 0',
     margin: `0 auto`,
-    width: `calc(100% - ${tokens.spacingM} * 2)`,
+    width: `calc(100% - ${tokens.spacingM} * 2)`, // 100% - desired space to the browser border
   });
 };
 
@@ -122,9 +122,7 @@ export const getLayoutSidebarStyles = (withHeader: boolean) => ({
   }),
 });
 
-export const getLayoutHeaderStyles = (
-  variant: LayoutProps['variant'],
-) => ({
+export const getLayoutHeaderStyles = (variant: LayoutProps['variant']) => ({
   layoutHeader: css({
     borderBottom: `1px solid ${tokens.gray200}`,
     padding: `0 ${tokens.spacingL}`,
