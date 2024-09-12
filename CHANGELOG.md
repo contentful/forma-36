@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 12-09-2024
+
+**F36 Header** `v4.69.2`
+
+- The header component exports now a fixed header height constant
+
 ## 10-09-2024
 
 **F36 Notification** `v4.69.1`
