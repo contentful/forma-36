@@ -1,7 +1,6 @@
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 import type { LayoutProps } from './Layout';
-import type { LayoutContextType } from './LayoutContext';
 import { HEADER_HEIGHT } from '@contentful/f36-header';
 import { NAVBAR_HEIGHT } from '@contentful/f36-navbar-alpha';
 
@@ -41,7 +40,7 @@ const getContentContainerGridTemplateColumns = ({
   withLeftSidebar,
   withRightSidebar,
 }: {
-  variant: LayoutContextType['variant'];
+  variant: LayoutProps['variant'];
   withLeftSidebar?: boolean;
   withRightSidebar?: boolean;
 }) => {
@@ -124,7 +123,7 @@ export const getLayoutSidebarStyles = (withHeader: boolean) => ({
 });
 
 export const getLayoutHeaderStyles = (
-  variant: LayoutContextType['variant'],
+  variant: LayoutProps['variant'],
 ) => ({
   layoutHeader: css({
     borderBottom: `1px solid ${tokens.gray200}`,
