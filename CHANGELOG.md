@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 13-09-2024
+
+**F36 Avatar** `v4.70.0`
+
+- always render contrast border
+
 ## 12-09-2024
 
 **F36 Header** `v4.69.2`
