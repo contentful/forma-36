@@ -1,12 +1,12 @@
 {
   "name": "@contentful/f36-navbar",
-  "version": "5.0.0-alpha.36",
+  "version": "5.0.0-alpha.37",
   "description": "Forma 36: Navbar component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-avatar": "4.68.1",
+    "@contentful/f36-avatar": "^4.68.1",
     "@contentful/f36-button": "^4.67.1",
     "@contentful/f36-core": "^4.68.1",
     "@contentful/f36-icon": "5.0.0-alpha.20",
