@@ -90,7 +90,6 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar size="medium" variant="user" />
         <Avatar isLoading size="large" variant="user" />
         <Avatar size="large" variant="app" />
-        <Avatar size="large" variant="user" />
         <Avatar size="medium" variant="app" />
         <Avatar size="small" variant="app" />
         <Avatar size="tiny" variant="app" />
