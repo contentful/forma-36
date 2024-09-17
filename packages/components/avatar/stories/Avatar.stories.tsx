@@ -85,14 +85,14 @@ export const Overview: Story<AvatarProps> = (args) => {
         gap="spacingS"
         marginBottom="spacingM"
       >
-        <Avatar size="tiny" variant="user" />
-        <Avatar size="small" variant="user" />
-        <Avatar size="medium" variant="user" />
+        <Avatar isLoading size="tiny" variant="user" />
+        <Avatar isLoading size="small" variant="user" />
+        <Avatar isLoading size="medium" variant="user" />
         <Avatar isLoading size="large" variant="user" />
-        <Avatar size="large" variant="app" />
-        <Avatar size="medium" variant="app" />
-        <Avatar size="small" variant="app" />
-        <Avatar size="tiny" variant="app" />
+        <Avatar isLoading size="large" variant="app" />
+        <Avatar isLoading size="medium" variant="app" />
+        <Avatar isLoading size="small" variant="app" />
+        <Avatar isLoading size="tiny" variant="app" />
       </Flex>
 
       <SectionHeading as="h3" marginBottom="spacingS">
