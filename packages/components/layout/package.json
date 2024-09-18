@@ -9,7 +9,6 @@
     "@contentful/f36-core": "^4.68.1",
     "@contentful/f36-header": "^4.69.2",
     "@contentful/f36-tokens": "^4.0.5",
-    "@contentful/f36-navbar-alpha": "npm:@contentful/f36-navbar@5.0.0-alpha.36",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {

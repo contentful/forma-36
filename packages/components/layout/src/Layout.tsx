@@ -29,6 +29,7 @@ export type LayoutProps = {
    */
   contentClassName?: string;
   contentTestId?: string;
+  offsetTop?: number;
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 
@@ -44,12 +45,14 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     testId = 'cf-ui-layout',
     contentTestId = 'cf-layout-content-container',
     contentClassName,
+    offsetTop = 0,
     ...otherProps
   } = props;
 
   const withLeftSidebar = Boolean(leftSidebar);
   const withRightSidebar = Boolean(rightSidebar);
   const styles = getLayoutStyles({
+    offsetTop,
     variant,
     withBoxShadow,
     withLeftSidebar,
@@ -60,8 +63,9 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     () => ({
       variant,
       withHeader: Boolean(header),
+      offsetTop,
     }),
-    [variant, header],
+    [variant, header, offsetTop],
   );
 
   return (

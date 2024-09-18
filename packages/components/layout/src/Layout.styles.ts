@@ -2,13 +2,12 @@ import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 import type { LayoutProps } from './Layout';
 import { HEADER_HEIGHT } from '@contentful/f36-header';
-import { NAVBAR_HEIGHT } from '@contentful/f36-navbar-alpha';
 
 export const SIDEBAR_WIDTH = '340px';
 
-//header + navbar + 1px border or navbar
-const getMainOffset = (withHeader: boolean) =>
-  withHeader ? HEADER_HEIGHT + 1 + NAVBAR_HEIGHT + 'px' : NAVBAR_HEIGHT + 'px';
+//header + offsetTop + 1px border or offsetTop
+const getMainOffset = (withHeader: boolean, offsetTop: number) =>
+  withHeader ? HEADER_HEIGHT + 1 + offsetTop + 'px' : offsetTop + 'px';
 
 export const getLayoutMaxWidthStyles = ({
   variant,
@@ -68,17 +67,19 @@ export const getLayoutStyles = ({
   withBoxShadow,
   withLeftSidebar,
   withRightSidebar,
+  offsetTop,
 }: {
   variant: LayoutProps['variant'];
   withBoxShadow?: boolean;
   withLeftSidebar?: boolean;
   withRightSidebar?: boolean;
+  offsetTop: number;
 }) => ({
   layoutMainContainer: css(
     getLayoutMaxWidthStyles({ variant, withBoxShadow }),
     {
       backgroundColor: tokens.colorWhite,
-      minHeight: `calc(100vh - ${NAVBAR_HEIGHT}px)`,
+      minHeight: `calc(100vh - ${offsetTop}px)`,
     },
   ),
   layoutContentContainer: css(
@@ -94,12 +95,15 @@ export const getLayoutStyles = ({
   ),
 });
 
-export const getLayoutBodyStyles = (withHeader: boolean) => ({
+export const getLayoutBodyStyles = (
+  withHeader: boolean,
+  offsetTop: number,
+) => ({
   layoutBodyContainer: css({
     width: '100%',
     padding: `${tokens.spacingL} ${tokens.spacingL} 0`,
     overflowY: 'auto',
-    height: `calc(100vh - ${getMainOffset(withHeader)})`,
+    height: `calc(100vh - ${getMainOffset(withHeader, offsetTop)})`,
   }),
   layoutBodyInner: css({
     maxWidth: '900px',
@@ -107,12 +111,15 @@ export const getLayoutBodyStyles = (withHeader: boolean) => ({
   }),
 });
 
-export const getLayoutSidebarStyles = (withHeader: boolean) => ({
+export const getLayoutSidebarStyles = (
+  withHeader: boolean,
+  offsetTop: number,
+) => ({
   layoutSidebar: css({
     padding: `${tokens.spacingL} ${tokens.spacingS} 0`,
     width: SIDEBAR_WIDTH,
     overflowY: 'auto',
-    height: `calc(100vh - ${getMainOffset(withHeader)})`,
+    height: `calc(100vh - ${getMainOffset(withHeader, offsetTop)})`,
     '&:first-child': {
       borderRight: `1px solid ${tokens.gray200}`,
     },

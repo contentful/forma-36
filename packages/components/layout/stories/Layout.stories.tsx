@@ -8,6 +8,8 @@ import { Button, DisplayText, Header } from '@contentful/f36-components';
 import { LayoutProps } from '../src';
 import { LayoutBody } from '../src/LayoutBody';
 
+const NAVBAR_HEIGHT = 60;
+
 export default {
   title: 'Layout/Layout',
   component: Layout,
@@ -16,7 +18,7 @@ export default {
   },
 } as Meta;
 
-const ExampleWrapper = ({ children }) => (
+const ExampleWrapper = ({ withNavbar = true, children }) => (
   <div
     className={css({
       position: 'relative',
@@ -31,16 +33,17 @@ const ExampleWrapper = ({ children }) => (
       flexDirection: 'column',
     })}
   >
-    <div
-      className={css({
-        width: '100vw',
-        height: '60px',
-        backgroundColor: 'lavender',
-      })}
-    >
-      Navbar
-    </div>
-
+    {withNavbar && (
+      <div
+        className={css({
+          width: '100vw',
+          height: `${NAVBAR_HEIGHT}px`,
+          backgroundColor: 'lavender',
+        })}
+      >
+        Navbar
+      </div>
+    )}
     {children}
   </div>
 );
@@ -69,10 +72,10 @@ const LayoutSidebarComp = ({ content }) => (
   </Layout.Sidebar>
 );
 
-export const basic: Story<LayoutProps> = (args) => {
+export const basic: Story<LayoutProps> = () => {
   return (
-    <ExampleWrapper>
-      <Layout {...args}>
+    <ExampleWrapper withNavbar={false}>
+      <Layout>
         <LayoutBody>
           <Box
             className={css({
@@ -89,10 +92,10 @@ export const basic: Story<LayoutProps> = (args) => {
   );
 };
 
-export const withHeader: Story<LayoutProps> = (args) => {
+export const withHeader: Story<LayoutProps> = () => {
   return (
     <ExampleWrapper>
-      <Layout header={<LayoutHeaderComp />} {...args}>
+      <Layout header={<LayoutHeaderComp />} offsetTop={NAVBAR_HEIGHT}>
         <Layout.Body>
           <Box
             className={css({
@@ -132,7 +135,10 @@ export const withHeader: Story<LayoutProps> = (args) => {
 export const withLeftSidebar: Story<LayoutProps> = () => {
   return (
     <ExampleWrapper>
-      <Layout leftSidebar={<LayoutSidebarComp content="Left Sidebar" />}>
+      <Layout
+        leftSidebar={<LayoutSidebarComp content="Left Sidebar" />}
+        offsetTop={NAVBAR_HEIGHT}
+      >
         <Layout.Body>
           <Box
             className={css({
@@ -152,7 +158,10 @@ export const withLeftSidebar: Story<LayoutProps> = () => {
 export const withRightSidebar: Story<LayoutProps> = () => {
   return (
     <ExampleWrapper>
-      <Layout rightSidebar={<LayoutSidebarComp content="Right Sidebar" />}>
+      <Layout
+        rightSidebar={<LayoutSidebarComp content="Right Sidebar" />}
+        offsetTop={NAVBAR_HEIGHT}
+      >
         <Layout.Body>
           <Box
             className={css({
@@ -172,6 +181,7 @@ export const withHeaderAndSidebars: Story<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
+        offsetTop={NAVBAR_HEIGHT}
         header={<LayoutHeaderComp />}
         leftSidebar={<LayoutSidebarComp content="Left Sidebar" />}
         rightSidebar={<LayoutSidebarComp content="Right Sidebar" />}
@@ -196,6 +206,7 @@ export const withHeaderAndLongSidebars: Story<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
+        offsetTop={NAVBAR_HEIGHT}
         header={<LayoutHeaderComp />}
         leftSidebar={
           <Layout.Sidebar>
@@ -262,6 +273,7 @@ export const withLongContentAndLongSidebars: Story<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
+        offsetTop={NAVBAR_HEIGHT}
         rightSidebar={
           <Layout.Sidebar>
             <Box
@@ -358,6 +370,7 @@ export const variantFullscreen: Story<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
+        offsetTop={NAVBAR_HEIGHT}
         header={<LayoutHeaderComp />}
         leftSidebar={<LayoutSidebarComp content="Left Sidebar" />}
         rightSidebar={<LayoutSidebarComp content="Right Sidebar" />}
@@ -381,7 +394,7 @@ export const variantFullscreen: Story<LayoutProps> = () => {
 export const variantNarrow: Story<LayoutProps> = () => {
   return (
     <ExampleWrapper>
-      <Layout variant="narrow">
+      <Layout variant="narrow" offsetTop={NAVBAR_HEIGHT}>
         <Layout.Body>
           <Box
             className={css({
@@ -405,6 +418,7 @@ export const variantNarrowWithSidebar: Story<LayoutProps> = () => {
         variant="narrow"
         leftSidebar={<LayoutSidebarComp content="Left Sidebar" />}
         header={<LayoutHeaderComp />}
+        offsetTop={NAVBAR_HEIGHT}
       >
         <Layout.Body>
           <Box
@@ -426,6 +440,7 @@ export const variantNarrowWithRightSidebar: Story<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
+        offsetTop={NAVBAR_HEIGHT}
         variant="narrow"
         rightSidebar={
           <Layout.Sidebar>
