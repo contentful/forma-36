@@ -109,6 +109,28 @@ export const Overview: Story<AvatarProps> = (args) => {
       </Flex>
 
       <SectionHeading as="h3" marginBottom="spacingS">
+        With a broken source, the loading skeleton is also rendered
+      </SectionHeading>
+
+      <Flex
+        alignItems="center"
+        flexDirection="row"
+        gap="spacingS"
+        marginBottom="spacingM"
+      >
+        <Avatar src="#" size="tiny" variant="user" />
+        <Avatar src="#" size="small" variant="user" />
+        <Avatar src="#" size="medium" variant="user" />
+        <Avatar src="#" size="large" variant="user" />
+        <Avatar src="#" size="75px" variant="user" />
+        <Avatar src="#" size="75px" variant="app" />
+        <Avatar src="#" size="large" variant="app" />
+        <Avatar src="#" size="medium" variant="app" />
+        <Avatar src="#" size="small" variant="app" />
+        <Avatar src="#" size="tiny" variant="app" />
+      </Flex>
+
+      <SectionHeading as="h3" marginBottom="spacingS">
         Indicator properties
       </SectionHeading>
       <Flex
