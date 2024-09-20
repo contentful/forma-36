@@ -1,5 +1,5 @@
 ---
-"@contentful/f36-avatar": feat
+"@contentful/f36-avatar": minor
 ---
 
 Allow custom size
