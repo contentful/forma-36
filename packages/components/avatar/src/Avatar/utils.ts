@@ -73,8 +73,6 @@ export const convertSizeToPixels = (size: AvatarProps['size']): SizeInPixel => {
  * @param size
  * @returns The variant or custom size in pixels, e.g. '32px'
  */
-export function getSizeInPixels(
-  size: AvatarProps['size'],
-): AvatarProps['size'] {
+export function getSizeInPixels(size: AvatarProps['size']): SizeInPixel {
   return isSizeVariant(size) ? convertSizeToPixels(size) : size;
 }
