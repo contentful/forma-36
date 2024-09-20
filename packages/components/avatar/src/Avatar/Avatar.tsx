@@ -10,7 +10,12 @@ import {
 } from '@contentful/f36-tooltip';
 
 import { getAvatarStyles } from './Avatar.styles';
-import { getSizeInPixels, type Size, type ColorVariant } from './utils';
+import {
+  getSizeInPixels,
+  type ColorVariant,
+  type Size,
+  type SizeInPixel,
+} from './utils';
 
 export type Variant = 'app' | 'user';
 
@@ -21,10 +26,10 @@ export interface AvatarProps extends CommonProps {
    */
   isLoading?: boolean;
   /**
-   * Use the available sizes or a numerical custom one, e.g. '52' or '52px'
+   * Use the available sizes or a numerical custom one, e.g. '52px'
    * @default 'medium'
    */
-  size?: Size | string;
+  size?: Size | SizeInPixel;
   initials?: string;
   src?: ImageProps['src'];
   /**

@@ -51,12 +51,12 @@ export const Overview: Story<AvatarProps> = (args) => {
         />
         <Avatar
           {...args}
-          size="75"
+          size="75px"
           icon={<CheckCircleIcon variant="positive" />}
         />
         <Avatar
           {...args}
-          size="75"
+          size="75px"
           variant="app"
           icon={<CheckCircleIcon variant="positive" />}
         />
@@ -100,8 +100,8 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar isLoading size="small" variant="user" />
         <Avatar isLoading size="medium" variant="user" />
         <Avatar isLoading size="large" variant="user" />
-        <Avatar isLoading size="75" variant="user" />
-        <Avatar isLoading size="75" variant="app" />
+        <Avatar isLoading size="75px" variant="user" />
+        <Avatar isLoading size="75px" variant="app" />
         <Avatar isLoading size="large" variant="app" />
         <Avatar isLoading size="medium" variant="app" />
         <Avatar isLoading size="small" variant="app" />

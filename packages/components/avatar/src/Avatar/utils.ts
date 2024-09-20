@@ -4,6 +4,7 @@ import { AvatarProps } from './Avatar';
 
 export const SIZES = ['tiny', 'small', 'medium', 'large'] as const;
 export type Size = (typeof SIZES)[number];
+export type SizeInPixel = `${number}px`;
 
 export type ColorVariant = keyof typeof avatarColorMap;
 
@@ -55,13 +56,16 @@ export const isSizeVariant = (size: string): size is Size => {
  * @param size
  * @returns the variant size value in pixels
  */
-export const convertSizeToPixels = (size: AvatarProps['size']) =>
-  ({
+export const convertSizeToPixels = (size: AvatarProps['size']): SizeInPixel => {
+  const sizes: Record<Size, SizeInPixel> = {
     tiny: '20px',
     small: '24px',
     medium: '32px',
     large: '48px',
-  }[size]);
+  };
+
+  return sizes[size];
+};
 
 /**
  * Utility function to convert the given size variant/custom size to pixels
@@ -69,10 +73,8 @@ export const convertSizeToPixels = (size: AvatarProps['size']) =>
  * @param size
  * @returns The variant or custom size in pixels, e.g. '32px'
  */
-export function getSizeInPixels(size: AvatarProps['size']): string {
-  return isSizeVariant(size)
-    ? convertSizeToPixels(size)
-    : size.includes('px')
-    ? size
-    : `${size}px`;
+export function getSizeInPixels(
+  size: AvatarProps['size'],
+): AvatarProps['size'] {
+  return isSizeVariant(size) ? convertSizeToPixels(size) : size;
 }
