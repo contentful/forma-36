@@ -95,7 +95,50 @@ These packages aren't shown on the website as they can have breaking changes oft
 ### How to automatic publish
 
 To make changeset publish a new version of the packages it's the same as in the `main` branch, it just requires having a changeset generated and specifing the packages.
+
+```sh
+npx changeset
+# Always select major change
+```
+
 Differently from the `main` branch, neither the packages changelog or the **What's new page** will be updated, and the changeset files will not be removed.
+
+### Testing how the version would change locally
+
+It's possible to test how the version would change locally, make sure that your last changes are commited, and you can run the following commands depending on what needs to be tested.
+
+Remember to revert the changes made through the `npx changeset version` and not commit them.
+
+#### Pre release version
+
+After having the changes done, create the changeset and commit it.
+
+```sh
+npx changeset;
+# Select the package and set as major version
+# Commit the changeset
+git add .changeset; git commit -m 'chore: add changeset for [package name]'
+
+npx changeset version;
+# This will update the pre.json and the package.json file for the selected package.
+# If the package is already in alpha, it will update the version number after -alpha, e.g. alpha.0 > alpha.1
+# If the package wasn't in alpha yet, the version will be updated to the next major version and -alpha.0 added at the end.
+```
+
+#### Moving to stable version
+
+After having some pre release changsets created like on the previous step, you can run the following to look how it would look like when moving to stable.
+
+```sh
+npx changeset pre exit;
+# This updates the pre.json file to mark it as exiting prereleases mode
+
+# To test how it would update the changelogs and how it would behave as in main branch, replace the .changeset/config.json file with the one from the main branch, before running changeset version
+
+npx changeset version;
+# This will remove the pre.json file, and update all package.json files that need to be updated to the version without the -alpha tag.
+
+```
 
 ### Changeset configuration
 
