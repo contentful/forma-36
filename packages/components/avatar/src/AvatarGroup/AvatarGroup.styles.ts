@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { type AvatarProps } from '../Avatar/';
-import { convertSizeToPixels } from '../Avatar/Avatar.styles';
+import { convertSizeToPixels } from '../Avatar/utils';
 
 export const getAvatarGroupStyles = (size: AvatarProps['size']) => {
   return {

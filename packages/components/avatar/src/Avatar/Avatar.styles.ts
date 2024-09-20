@@ -1,7 +1,12 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { type AvatarProps } from './Avatar';
-import { applyMuted, avatarColorMap, type ColorVariant } from './utils';
+import {
+  applyMuted,
+  avatarColorMap,
+  getSizeInPixels,
+  type ColorVariant,
+} from './utils';
 
 export const getColorVariantStyles = (colorVariant: ColorVariant) => {
   const colorToken: string = avatarColorMap[colorVariant];
@@ -16,14 +21,6 @@ export const getColorVariantStyles = (colorVariant: ColorVariant) => {
   };
 };
 
-export const convertSizeToPixels = (size: AvatarProps['size']) =>
-  ({
-    tiny: '20px',
-    small: '24px',
-    medium: '32px',
-    large: '48px',
-  }[size]);
-
 const getInitialsFontSize = (sizePixels: string) =>
   Math.round(Number(sizePixels.replace('px', '')) / 2);
 
@@ -37,7 +34,8 @@ export const getAvatarStyles = ({
   colorVariant: ColorVariant;
 }) => {
   const borderRadius = variant === 'app' ? tokens.borderRadiusSmall : '100%';
-  const sizePixels = convertSizeToPixels(size);
+  const finalSize = getSizeInPixels(size);
+
   const isMuted = colorVariant === 'muted';
 
   return {
@@ -50,7 +48,7 @@ export const getAvatarStyles = ({
       alignItems: 'center',
       justifyContent: 'center',
       fontStretch: 'semi-condensed',
-      fontSize: `${getInitialsFontSize(sizePixels)}px`,
+      fontSize: `${getInitialsFontSize(size)}px`,
     }),
     image: css({
       borderRadius,
@@ -58,10 +56,13 @@ export const getAvatarStyles = ({
     }),
     root: css({
       borderRadius,
-      height: sizePixels,
+      height: finalSize,
       overflow: 'hidden',
       position: 'relative',
-      width: sizePixels,
+      width: finalSize,
+      svg: {
+        borderRadius,
+      },
       '&::after': {
         borderRadius,
         bottom: 0,

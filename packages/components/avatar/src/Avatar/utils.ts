@@ -1,5 +1,11 @@
 import tokens from '@contentful/f36-tokens';
 
+import { AvatarProps } from './Avatar';
+
+export const SIZES = ['tiny', 'small', 'medium', 'large'] as const;
+export type Size = (typeof SIZES)[number];
+export type SizeInPixel = `${number}px`;
+
 export type ColorVariant = keyof typeof avatarColorMap;
 
 export const avatarColorMap = {
@@ -32,4 +38,41 @@ export function applyMuted(color: string): string {
 
   // Eventually we should use `color-mix`
   // return `color-mix(in srgb, ${color}, ${tokens.colorWhite} 50%)`;
+}
+
+/**
+ * Type guard for size variants
+ *
+ * @param size
+ * @returns true/false if the size is a valid size variant
+ */
+export const isSizeVariant = (size: string): size is Size => {
+  return SIZES.includes(size as Size);
+};
+
+/**
+ * Converts the variant size to pixels
+ *
+ * @param size
+ * @returns the variant size value in pixels
+ */
+export const convertSizeToPixels = (size: AvatarProps['size']): SizeInPixel => {
+  const sizes: Record<Size, SizeInPixel> = {
+    tiny: '20px',
+    small: '24px',
+    medium: '32px',
+    large: '48px',
+  };
+
+  return sizes[size];
+};
+
+/**
+ * Utility function to convert the given size variant/custom size to pixels
+ *
+ * @param size
+ * @returns The variant or custom size in pixels, e.g. '32px'
+ */
+export function getSizeInPixels(size: AvatarProps['size']): SizeInPixel {
+  return isSizeVariant(size) ? convertSizeToPixels(size) : size;
 }
