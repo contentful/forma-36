@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.71.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.71.0
+  - @contentful/f36-skeleton@4.71.0
+
 ## 4.70.0
 
 ### Patch Changes

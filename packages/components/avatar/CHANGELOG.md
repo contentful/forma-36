@@ -1,5 +1,21 @@
 # Change Log
 
+## 4.71.0
+
+### Minor Changes
+
+- [#2880](https://github.com/contentful/forma-36/pull/2880) [`74b10dc`](https://github.com/contentful/forma-36/commit/74b10dce7886ef44584b7bec8e09f7007680cdc6) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - Allow custom size
+
+### Patch Changes
+
+- [#2880](https://github.com/contentful/forma-36/pull/2880) [`74b10dc`](https://github.com/contentful/forma-36/commit/74b10dce7886ef44584b7bec8e09f7007680cdc6) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - Avatar size and loading skeleton
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.71.0
+  - @contentful/f36-menu@4.71.0
+  - @contentful/f36-tooltip@4.71.0
+  - @contentful/f36-image@4.71.0
+
 ## 4.70.0
 
 ### Minor Changes
