@@ -8,6 +8,13 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 21-09-2024
+
+**F36 Avatar** `v4.71.0`
+
+- Avatar size and loading skeleton
+- Allow custom size
+
 ## 13-09-2024
 
 **F36 Avatar** `v4.70.0`
