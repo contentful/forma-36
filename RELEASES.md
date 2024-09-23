@@ -173,7 +173,7 @@ The main differences on the config file are the following:
 ```
 
 > [!NOTE]
-> 
+>
 > - The changelog is not updated because after exiting the prerelease state, all the changesets will be compiled and applied to the new version. For example, `5.0.0` will have all the changesets of the `5.0.0-alpha.\*`
 > - The `bumpVersionsWithWorkspaceProtocolOnly` prevents bumping packages' versions after a package they depend on is updated. This is because we want alpha packages to depend on stable packages. We would bump all packages to an alpha core if we allow it.
 
