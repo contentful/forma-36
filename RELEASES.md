@@ -105,9 +105,10 @@ Differently from the `main` branch, neither the packages changelog or the **What
 
 ### Testing how the version would change locally
 
-It's possible to test how the version would change locally, make sure that your last changes are commited, and you can run the following commands depending on what needs to be tested.
+After committing your work, test the version's change by running these commands.
 
-Remember to revert the changes made through the `npx changeset version` and not commit them.
+> [!WARNING]
+> Remember to revert the changes made through the `npx changeset version` and not commit them.
 
 #### Pre release version
 
@@ -142,7 +143,7 @@ npx changeset version;
 
 ### Changeset configuration
 
-To make it possible we take advantage of changeset feature of prereleasing, to make it possible we have the [.changeset/pre.json](./.changeset/pre.json) which specifies which tag to use and the initial version of the packages, which is used to calculate the alpha version, for example:
+We use the pre-releasing changeset feature and the [.changeset/pre.json](./.changeset/pre.json), which specifies which tag to use and the packages' initial versions. It allows to control the alpha version bump, for example:
 
 ```
 initial version: 4.61.2
@@ -171,10 +172,10 @@ The main differences on the config file are the following:
 }
 ```
 
-Notes:
-
-- The changelog is not updated because when we exit the prerelease state the changeset will compile all the changesets and apply onto the new version. eg. 5.0.0 will have all the changesets of the 5.0.0-alpha.\*
-- The `bumpVersionsWithWorkspaceProtocolOnly` makes it possible to avoid bumping packages on the packages that are dependent on the pacakge being updated, this is because we want alpha packages to depend on stable packages, rather than have all of them depending on alpha packages. ie. we would make all packages bump to an alpha core in case we update it.
+> [!NOTE]
+> 
+> - The changelog is not updated because after exiting the prerelease state, all the changesets will be compiled and applied to the new version. For example, `5.0.0` will have all the changesets of the `5.0.0-alpha.\*`
+> - The `bumpVersionsWithWorkspaceProtocolOnly` prevents bumping packages' versions after a package they depend on is updated. This is because we want alpha packages to depend on stable packages. We would bump all packages to an alpha core if we allow it.
 
 ### Exiting prerelease
 
