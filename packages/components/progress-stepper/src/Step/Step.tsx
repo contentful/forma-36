@@ -79,7 +79,8 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
       data-test-id={`cf-ui-step-${state}`}
       aria-label={`Step ${stepNumberToDisplay} ${state}`}
     >
-      <span
+      Label!
+      {/* <span
         className={cx(styles.listItemContent, {
           [styles.active]: state === 'active',
           [styles.disabled]: state === 'disabled',
@@ -104,7 +105,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
         >
           {labelText}
         </p>
-      )}
+      )} */}
     </li>
   );
 }

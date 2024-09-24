@@ -3,11 +3,12 @@ import { css } from 'emotion';
 export const getStyles = () => {
   return {
     horizontalList: css({
-      display: 'grid',
-      gridAutoFlow: 'column dense',
+      display: 'inline-grid',
+      gridAutoFlow: 'column',
+      overflow: 'hidden',
+      overflowX: 'auto',
+      counterReset: 'step',
       gridAutoColumns: '1fr',
-      margin: 0,
-      padding: 0,
     }),
     verticalList: (numberOfSteps: number) =>
       css({
