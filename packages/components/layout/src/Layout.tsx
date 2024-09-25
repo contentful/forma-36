@@ -29,6 +29,11 @@ export type LayoutProps = {
    */
   contentClassName?: string;
   contentTestId?: string;
+  /**
+   * Offset for layout heights calculation.
+   * Set to `0` for layout usage without navbar.
+   * @default 60 (= navbar height)
+   */
   offsetTop?: number;
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
@@ -45,7 +50,7 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     testId = 'cf-ui-layout',
     contentTestId = 'cf-layout-content-container',
     contentClassName,
-    offsetTop = 0,
+    offsetTop = 60,
     ...otherProps
   } = props;
 
