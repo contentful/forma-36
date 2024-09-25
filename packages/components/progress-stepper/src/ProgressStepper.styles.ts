@@ -9,6 +9,8 @@ export const getStyles = () => {
       overflowX: 'auto',
       counterReset: 'step',
       gridAutoColumns: '1fr',
+      padding: 0,
+      margin: 0,
     }),
     verticalList: (numberOfSteps: number) =>
       css({
