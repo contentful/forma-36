@@ -1,14 +1,9 @@
 import React from 'react';
-import { cx } from 'emotion';
 import { type CommonProps, type MarginProps } from '@contentful/f36-core';
 import { getStyles } from './ProgressStepper.styles';
 
 export interface ProgressStepperProps extends CommonProps, MarginProps {
   children: React.ReactNode;
-  /**
-   * string for additional classNames
-   */
-  className?: string;
   /**
    * @default horizontal
    */
@@ -33,7 +28,6 @@ function _ProgressStepper(
 ) {
   const {
     children,
-    className,
     orientation = 'horizontal',
     stepStyle = 'number',
     activeStep = 0,
@@ -62,10 +56,7 @@ function _ProgressStepper(
 
   return (
     <nav
-      className={cx(
-        className,
-        orientation === 'vertical' && styles.verticalNav,
-      )}
+      className={orientation === 'vertical' ? styles.verticalNav : ''}
       data-test-id={hydratedTestId}
       ref={ref}
       aria-label={ariaLabel}
