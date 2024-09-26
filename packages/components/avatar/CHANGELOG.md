@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.71.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.71.1
+  - @contentful/f36-menu@4.71.1
+  - @contentful/f36-tooltip@4.71.1
+  - @contentful/f36-image@4.71.1
+
 ## 4.71.0
 
 ### Minor Changes
