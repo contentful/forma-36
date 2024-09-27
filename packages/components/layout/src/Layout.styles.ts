@@ -1,9 +1,12 @@
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
-import type { LayoutProps } from './Layout';
 import { HEADER_HEIGHT } from '@contentful/f36-header';
+import type { LayoutProps, LayoutSidebarVariant } from './Layout';
 
-export const SIDEBAR_WIDTH = '340px';
+const SIDEBAR_WIDTHS: Record<LayoutSidebarVariant, `${number}px`> = {
+  narrow: '280px',
+  wide: '340px',
+};
 
 //header + offsetTop + 1px border or offsetTop
 const getMainOffset = (withHeader: boolean, offsetTop: number) =>
@@ -37,24 +40,28 @@ export const getLayoutMaxWidthStyles = ({
 const getContentContainerGridTemplateColumns = ({
   variant,
   withLeftSidebar,
+  leftSidebarVariant,
   withRightSidebar,
+  rightSidebarVariant,
 }: {
   variant: LayoutProps['variant'];
   withLeftSidebar?: boolean;
+  leftSidebarVariant?: LayoutSidebarVariant;
   withRightSidebar?: boolean;
+  rightSidebarVariant?: LayoutSidebarVariant;
 }) => {
   let gridTemplateColumns = 'auto';
 
   if (withLeftSidebar) {
-    gridTemplateColumns = `${SIDEBAR_WIDTH} auto`;
+    gridTemplateColumns = `${SIDEBAR_WIDTHS[leftSidebarVariant]} auto`;
   }
 
   if (withRightSidebar) {
-    gridTemplateColumns = `auto ${SIDEBAR_WIDTH}`;
+    gridTemplateColumns = `auto ${SIDEBAR_WIDTHS[rightSidebarVariant]}`;
   }
 
   if (variant !== 'narrow' && withLeftSidebar && withRightSidebar) {
-    gridTemplateColumns = `${SIDEBAR_WIDTH} auto ${SIDEBAR_WIDTH}`;
+    gridTemplateColumns = `${SIDEBAR_WIDTHS[leftSidebarVariant]} auto ${SIDEBAR_WIDTHS[rightSidebarVariant]}`;
   }
 
   return css({
@@ -66,13 +73,17 @@ export const getLayoutStyles = ({
   variant,
   withBoxShadow,
   withLeftSidebar,
+  leftSidebarVariant,
   withRightSidebar,
+  rightSidebarVariant,
   offsetTop,
 }: {
   variant: LayoutProps['variant'];
   withBoxShadow?: boolean;
   withLeftSidebar?: boolean;
+  leftSidebarVariant?: LayoutSidebarVariant;
   withRightSidebar?: boolean;
+  rightSidebarVariant?: LayoutSidebarVariant;
   offsetTop: number;
 }) => ({
   layoutMainContainer: css(
@@ -86,7 +97,9 @@ export const getLayoutStyles = ({
     getContentContainerGridTemplateColumns({
       variant,
       withLeftSidebar,
+      leftSidebarVariant,
       withRightSidebar,
+      rightSidebarVariant,
     }),
     {
       width: '100%',
@@ -117,7 +130,6 @@ export const getLayoutSidebarStyles = (
 ) => ({
   layoutSidebar: css({
     padding: `${tokens.spacingL} ${tokens.spacingS} 0`,
-    width: SIDEBAR_WIDTH,
     overflowY: 'auto',
     height: `calc(100vh - ${getMainOffset(withHeader, offsetTop)})`,
     '&:first-child': {

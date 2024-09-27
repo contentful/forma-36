@@ -1,11 +1,12 @@
 /* eslint-disable rulesdir/emotion-in-function */
 import React from 'react';
 import { css } from 'emotion';
-import { Box } from '@contentful/f36-core';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-import { Layout } from '../src/CompoundLayout';
+import { Box } from '@contentful/f36-core';
 import { Button, DisplayText, Header } from '@contentful/f36-components';
-import { LayoutProps } from '../src';
+
+import type { LayoutProps } from '../src';
+import { Layout } from '../src/CompoundLayout';
 import { LayoutBody } from '../src/LayoutBody';
 
 const NAVBAR_HEIGHT = 60;

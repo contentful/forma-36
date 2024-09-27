@@ -9,6 +9,8 @@ import { type CommonProps, Box, Flex } from '@contentful/f36-core';
 import { LayoutContextProvider, LayoutContextType } from './LayoutContext';
 import { getLayoutStyles } from './Layout.styles';
 
+export type LayoutSidebarVariant = 'narrow' | 'wide';
+
 export type LayoutProps = {
   /**
    * The body of the layout.
@@ -16,7 +18,17 @@ export type LayoutProps = {
   children: React.ReactNode;
   header?: React.ReactNode;
   leftSidebar?: React.ReactNode;
+  /**
+   * Defines the width of the layout left sidebar.
+   * @default 'narrow' (280px)
+   */
+  leftSidebarVariant?: LayoutSidebarVariant;
   rightSidebar?: React.ReactNode;
+  /**
+   * Defines the width of the layout right sidebar.
+   * @default 'wide' (340px)
+   */
+  rightSidebarVariant?: LayoutSidebarVariant;
   /**
    * Defines the width of the layout and its content.
    * @default 'wide'
@@ -43,7 +55,9 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     children,
     header,
     leftSidebar,
+    leftSidebarVariant = 'narrow',
     rightSidebar,
+    rightSidebarVariant = 'wide',
     variant = 'wide',
     withBoxShadow = true,
     className,
@@ -61,7 +75,9 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     variant,
     withBoxShadow,
     withLeftSidebar,
+    leftSidebarVariant,
     withRightSidebar,
+    rightSidebarVariant,
   });
 
   const contextValue: LayoutContextType = useMemo(
