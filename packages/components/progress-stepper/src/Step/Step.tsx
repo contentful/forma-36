@@ -53,21 +53,6 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
   const isActiveStep = stepNumber === activeStep;
   const stepNumberToDisplay = stepNumber + 1;
 
-  const renderStep = () => {
-    switch (true) {
-      case stepStyle === 'number':
-        return stepNumberToDisplay;
-      case state === 'complete':
-        return <DoneIcon size="tiny" variant="white" />;
-      case state === 'error':
-        return <CloseIcon size="tiny" variant="white" />;
-      case state === 'warning':
-        return <WarningIcon size="tiny" variant="white" />;
-      default:
-        return <div />;
-    }
-  };
-
   return (
     <li
       className={cx(
