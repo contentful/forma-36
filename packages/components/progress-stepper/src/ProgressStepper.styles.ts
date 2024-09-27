@@ -3,7 +3,7 @@ import { css } from 'emotion';
 export const getStyles = () => {
   return {
     horizontalList: css({
-      display: 'grid',
+      display: 'inline-grid',
       gridAutoFlow: 'column',
       overflow: 'hidden',
       overflowX: 'auto',
