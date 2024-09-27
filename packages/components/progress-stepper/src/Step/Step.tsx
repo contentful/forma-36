@@ -70,16 +70,31 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
 
   return (
     <li
-      className={
+      className={cx(
         orientation === 'horizontal'
           ? styles.horizontalListItem(isBeforeActiveStep, isActiveStep)
-          : styles.verticalListItem(isBeforeActiveStep, isActiveStep)
-      }
+          : styles.verticalListItem(isBeforeActiveStep, isActiveStep),
+        {
+          [styles.incomplete]: state === 'incomplete',
+          [styles.active]: state === 'active',
+          [styles.disabled]: state === 'disabled',
+          [styles.complete]: state === 'complete',
+          [styles.error]: state === 'error',
+          [styles.warning]: state === 'warning',
+          [styles.incompleteIcon]:
+            state === 'incomplete' && stepStyle === 'icon',
+          [styles.activeIcon]: state === 'active' && stepStyle === 'icon',
+          [styles.disabledIcon]: state === 'disabled' && stepStyle === 'icon',
+          [styles.completeIcon]: state === 'complete' && stepStyle === 'icon',
+          [styles.errorIcon]: state === 'error' && stepStyle === 'icon',
+          [styles.warningIcon]: state === 'warning' && stepStyle === 'icon',
+        },
+      )}
       ref={ref}
       data-test-id={`cf-ui-step-${state}`}
       aria-label={`Step ${stepNumberToDisplay} ${state}`}
     >
-      Label!
+      <p>{labelText}</p>
       {/* <span
         className={cx(styles.listItemContent, {
           [styles.active]: state === 'active',
