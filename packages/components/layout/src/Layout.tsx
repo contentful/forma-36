@@ -5,9 +5,11 @@ import React, {
   type HTMLAttributes,
 } from 'react';
 import { cx } from 'emotion';
-import { type CommonProps, Flex } from '@contentful/f36-core';
+import { type CommonProps, Box, Flex } from '@contentful/f36-core';
 import { LayoutContextProvider, LayoutContextType } from './LayoutContext';
 import { getLayoutStyles } from './Layout.styles';
+
+export type LayoutSidebarVariant = 'narrow' | 'wide';
 
 export type LayoutProps = {
   /**
@@ -16,7 +18,17 @@ export type LayoutProps = {
   children: React.ReactNode;
   header?: React.ReactNode;
   leftSidebar?: React.ReactNode;
+  /**
+   * Defines the width of the layout left sidebar.
+   * @default 'narrow' (280px)
+   */
+  leftSidebarVariant?: LayoutSidebarVariant;
   rightSidebar?: React.ReactNode;
+  /**
+   * Defines the width of the layout right sidebar.
+   * @default 'wide' (340px)
+   */
+  rightSidebarVariant?: LayoutSidebarVariant;
   /**
    * Defines the width of the layout and its content.
    * @default 'wide'
@@ -29,6 +41,12 @@ export type LayoutProps = {
    */
   contentClassName?: string;
   contentTestId?: string;
+  /**
+   * Offset for layout heights calculation.
+   * Set to `0` for layout usage without navbar.
+   * @default 60 (= navbar height)
+   */
+  offsetTop?: number;
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 
@@ -37,23 +55,38 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     children,
     header,
     leftSidebar,
+    leftSidebarVariant = 'narrow',
     rightSidebar,
+    rightSidebarVariant = 'wide',
     variant = 'wide',
     withBoxShadow = true,
     className,
     testId = 'cf-ui-layout',
-    contentTestId = 'cf-layout-main-container',
+    contentTestId = 'cf-layout-content-container',
     contentClassName,
+    offsetTop = 60,
     ...otherProps
   } = props;
 
-  const styles = getLayoutStyles({ variant, withBoxShadow });
+  const withLeftSidebar = Boolean(leftSidebar);
+  const withRightSidebar = Boolean(rightSidebar);
+  const styles = getLayoutStyles({
+    offsetTop,
+    variant,
+    withBoxShadow,
+    withLeftSidebar,
+    leftSidebarVariant,
+    withRightSidebar,
+    rightSidebarVariant,
+  });
 
   const contextValue: LayoutContextType = useMemo(
     () => ({
       variant,
+      withHeader: Boolean(header),
+      offsetTop,
     }),
-    [variant],
+    [variant, header, offsetTop],
   );
 
   return (
@@ -61,29 +94,21 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
       <Flex
         ref={ref}
         testId={testId}
-        className={cx(styles.root, className)}
         as="section"
-        justifyContent="center"
+        {...otherProps}
+        className={cx(styles.layoutMainContainer, className)}
+        flexDirection="column"
       >
-        <Flex
-          {...otherProps}
-          className={styles.mainContainer}
-          flexDirection="column"
-          justifyContent="flex-start"
-          alignItems="center"
-        >
-          {header}
+        {header}
 
-          <Flex
-            className={cx(styles.contentContainer, contentClassName)}
-            flexGrow={1}
-            testId={contentTestId}
-          >
-            {leftSidebar}
-            {children}
-            {rightSidebar}
-          </Flex>
-        </Flex>
+        <Box
+          className={cx(styles.layoutContentContainer, contentClassName)}
+          testId={contentTestId}
+        >
+          {leftSidebar}
+          {children}
+          {rightSidebar}
+        </Box>
       </Flex>
     </LayoutContextProvider>
   );
