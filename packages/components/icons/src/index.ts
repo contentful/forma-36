@@ -30,6 +30,8 @@ export * from './vendor/phosphor/ArrowLeftIcon.js';
 export * from './vendor/phosphor/ArrowRightIcon.js';
 export * from './vendor/phosphor/ArrowSquareOutIcon.js';
 export * from './vendor/phosphor/ArrowUpIcon.js';
+export * from './vendor/phosphor/ArrowUUpLeftIcon.js';
+export * from './vendor/phosphor/ArrowUUpRightIcon.js';
 export * from './vendor/phosphor/ArrowsLeftRightIcon.js';
 export * from './vendor/phosphor/BookOpenIcon.js';
 export * from './vendor/phosphor/BookmarkSimpleIcon.js';
