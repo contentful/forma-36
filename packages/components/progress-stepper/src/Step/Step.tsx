@@ -79,7 +79,15 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
       data-test-id={`cf-ui-step-${state}`}
       aria-label={`Step ${stepNumberToDisplay} ${state}`}
     >
-      <p>{labelText}</p>
+      <p
+        className={
+          orientation === 'horizontal'
+            ? styles.horizontalLabel
+            : styles.verticalLabel
+        }
+      >
+        {labelText}
+      </p>
       {/* <span
         className={cx(styles.listItemContent, {
           [styles.active]: state === 'active',

@@ -87,47 +87,90 @@ export const getStyles = () => {
       }),
     verticalListItem: (isBeforeActiveStep: boolean, isActive: boolean) =>
       css({
-        margin: 0,
-        padding: 0,
         display: 'grid',
+        gridTemplateColumns: '40px 1fr',
+        gridTemplateRows: 'auto',
         gap: `0 ${tokens.spacingXs}`,
-        gridTemplateColumns: '24px 1fr',
-        gridTemplateRows: '0fr 24px 1fr',
-        gridTemplateAreas: `
-        "divider-before ."
-        "circle label"
-        "divider-after ."
-        `,
-        alignItems: 'center',
+        justifyItems: 'start',
+        minHeight: '4rem',
+        placeItems: 'center',
+
         '&::before': {
-          position: 'relative',
-          display: 'block',
-          content: '""',
           height: '100%',
+          width: '2px',
+          gridColumnStart: 1,
+          gridRowStart: 1,
+          content: '""',
+          transform: 'translateY(-50%)',
+          // marginInlineStart: '50%',
           backgroundColor:
             isBeforeActiveStep || isActive
               ? tokens.colorPrimary
               : tokens.gray300,
-          transition: `background-color ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
-          gridArea: 'divider-before',
-          justifySelf: 'center',
-          width: '2px',
         },
+
+        '&:first-child::before': {
+          content: 'none',
+        },
+
         '&::after': {
+          //for numbered steps
+          content: 'counter(step)',
+          counterIncrement: 'step',
+          zIndex: 1,
           position: 'relative',
-          display: 'block',
-          content: '""',
-          height: '100%',
-          backgroundColor: isBeforeActiveStep
-            ? tokens.colorPrimary
-            : tokens.gray300,
-          transition: `background-color ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
-          gridArea: 'divider-after',
-          justifySelf: 'center',
-          width: '2px',
+          gridColumnStart: 1,
+          gridRowStart: 1,
+          display: 'grid',
+          height: '24px',
+          width: '24px',
+          placeItems: 'center',
+          placeSelf: 'center',
+          borderRadius: '50%',
+          backgroundColor: tokens.colorPrimary,
         },
-        '&:first-child::before': { visibility: 'hidden' },
-        '&:last-child::after': { visibility: 'hidden' },
+        // minHeight: '4rem'
+        // margin: 0,
+        // padding: 0,
+        // display: 'grid',
+        // gap: `0 ${tokens.spacingXs}`,
+        // gridTemplateColumns: '24px 1fr',
+        // gridTemplateRows: '0fr 24px 1fr',
+        // gridTemplateAreas: `
+        // "divider-before ."
+        // "circle label"
+        // "divider-after ."
+        // `,
+        // alignItems: 'center',
+        // '&::before': {
+        //   position: 'relative',
+        //   display: 'block',
+        //   content: '""',
+        //   height: '100%',
+        //   backgroundColor:
+        //     isBeforeActiveStep || isActive
+        //       ? tokens.colorPrimary
+        //       : tokens.gray300,
+        //   transition: `background-color ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
+        //   gridArea: 'divider-before',
+        //   justifySelf: 'center',
+        //   width: '2px',
+        // },
+        // '&::after': {
+        //   position: 'relative',
+        //   display: 'block',
+        //   content: '""',
+        //   height: '100%',
+        //   backgroundColor: isBeforeActiveStep
+        //     ? tokens.colorPrimary
+        //     : tokens.gray300,
+        //   transition: `background-color ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
+        //   gridArea: 'divider-after',
+        //   justifySelf: 'center',
+        //   width: '2px',
+        // },
+        // '&:first-child::before': { visibility: 'hidden' },
+        // '&:last-child::after': { visibility: 'hidden' },
       }),
     listItemContent: css({
       textAlign: 'center',
@@ -144,14 +187,12 @@ export const getStyles = () => {
       gridArea: 'circle',
     }),
     horizontalLabel: css({
-      gridArea: 'label',
       textAlign: 'center',
       color: tokens.gray900,
     }),
     verticalLabel: css({
-      gridArea: 'label',
-      justifySelf: 'start',
-      color: tokens.gray900,
+      placeSelf: 'flex-start',
+      alignSelf: 'center',
       maxHeight: '20px',
     }),
     disabledLabel: css({
@@ -256,7 +297,7 @@ export const getStyles = () => {
     }),
     errorIcon: css({
       '&::after': {
-        content: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffffff' viewBox='0 0 250 200'%3E%3Cpath d='M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z'%3E%3C/path%3E%3C/svg%3E");`,
+        content: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffffff' viewBox='0 0 255 180'%3E%3Cpath d='M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z'%3E%3C/path%3E%3C/svg%3E");`,
         backgroundColor: tokens.colorNegative,
       },
     }),

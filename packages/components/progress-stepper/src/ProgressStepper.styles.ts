@@ -1,9 +1,9 @@
 import { css } from 'emotion';
 
-export const getStyles = () => {
+export const getStyles = ({ isInline }) => {
   return {
     horizontalList: css({
-      display: 'inline-grid',
+      display: isInline ? 'inline-grid' : 'grid',
       gridAutoFlow: 'column',
       overflow: 'hidden',
       overflowX: 'auto',
@@ -12,14 +12,18 @@ export const getStyles = () => {
       padding: 0,
       margin: 0,
     }),
-    verticalList: (numberOfSteps: number) =>
-      css({
-        display: 'grid',
-        gridTemplateRows: `repeat(${numberOfSteps - 1}, 1fr)`,
-        margin: 0,
-        padding: 0,
-        height: '100%',
-      }),
+    verticalList: css({
+      display: isInline ? 'inline-grid' : 'grid', // we may need to adjust this?
+      // height: '100%', // ensure we allow vertical stretch
+      gridAutoRows: '1fr',
+      gridAutoFlow: 'row',
+      gridAutoColumns: '1fr',
+      overflow: 'hidden',
+      overflowX: 'auto',
+      counterReset: 'step',
+      padding: 0,
+      margin: 0,
+    }),
     verticalNav: css({
       height: '100%',
     }),

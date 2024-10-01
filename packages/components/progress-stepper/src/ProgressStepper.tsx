@@ -22,6 +22,10 @@ export interface ProgressStepperProps extends CommonProps, MarginProps {
    */
   activeStep?: number;
   /**
+   * Sets display:inline-grid
+   */
+  isInline?: boolean;
+  /**
    * Label to be used on aria-label for the nav element
    */
   ariaLabel: string;
@@ -39,8 +43,9 @@ function _ProgressStepper(
     activeStep = 0,
     testId,
     ariaLabel,
+    isInline,
   } = props;
-  const styles = getStyles();
+  const styles = getStyles({ isInline });
   const hydratedTestId =
     testId || `cf-ui-progress-stepper-${orientation}-${stepStyle}`;
 
@@ -74,7 +79,7 @@ function _ProgressStepper(
         className={
           orientation === 'horizontal'
             ? styles.horizontalList
-            : styles.verticalList(stepsToRender.length)
+            : styles.verticalList
         }
       >
         {renderSteps()}

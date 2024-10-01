@@ -9,14 +9,7 @@ export default {
 } as Meta;
 
 const getContainerStyle = (orientation: ProgressStepperProps['orientation']) =>
-  orientation === 'vertical'
-    ? { height: '400px' }
-    : {
-        width: '750px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      };
+  orientation === 'vertical' ? { height: '400px' } : { width: '750px' };
 
 export const Basic: Story<ProgressStepperProps> = (args) => {
   return (
