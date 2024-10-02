@@ -13,8 +13,8 @@ export const getStyles = ({ isInline }) => {
       margin: 0,
     }),
     verticalList: css({
-      display: isInline ? 'inline-grid' : 'grid', // we may need to adjust this?
-      // height: '100%', // ensure we allow vertical stretch
+      display: 'inline-grid',
+      height: '100%',
       gridAutoRows: '1fr',
       gridAutoFlow: 'row',
       gridAutoColumns: '1fr',
