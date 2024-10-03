@@ -53,12 +53,25 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
   const isActiveStep = stepNumber === activeStep;
   const stepNumberToDisplay = stepNumber + 1;
 
-  return (
+  const renderStep = () => {
+    switch (true) {
+      case stepStyle === 'number':
+        return stepNumberToDisplay;
+      case state === 'complete':
+        return <DoneIcon size="tiny" variant="white" />;
+      case state === 'error':
+        return <CloseIcon size="tiny" variant="white" />;
+      case state === 'warning':
+        return <WarningIcon size="tiny" variant="white" />;
+      default:
+        return <div />;
+    }
+  };
+
+  const renderHorizontalStep = () => (
     <li
       className={cx(
-        orientation === 'horizontal'
-          ? styles.horizontalListItem(isBeforeActiveStep, isActiveStep)
-          : styles.verticalListItem(isBeforeActiveStep, isActiveStep),
+        styles.horizontalListItem(isBeforeActiveStep, isActiveStep),
         {
           [styles.incomplete]: state === 'incomplete',
           [styles.active]: state === 'active',
@@ -88,34 +101,43 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
       >
         {labelText}
       </p>
-      {/* <span
+    </li>
+  );
+
+  const renderVerticalStep = () => (
+    <li
+      className={styles.verticalListItem(isBeforeActiveStep, isActiveStep)}
+      ref={ref}
+      data-test-id={`cf-ui-step-${state}`}
+      aria-label={`Step ${stepNumberToDisplay} ${state}`}
+    >
+      <span
         className={cx(styles.listItemContent, {
-          [styles.active]: state === 'active',
-          [styles.disabled]: state === 'disabled',
-          [styles.complete]: state === 'complete',
-          [styles.error]: state === 'error',
-          [styles.warning]: state === 'warning',
+          [styles.activeVertical]: state === 'active',
+          [styles.disabledVertical]: state === 'disabled',
+          [styles.completeVertical]: state === 'complete',
+          [styles.errorVertical]: state === 'error',
+          [styles.warningVertical]: state === 'warning',
         })}
       >
         {renderStep()}
       </span>
       {labelText && (
         <p
-          className={cx(
-            orientation === 'horizontal'
-              ? styles.horizontalLabel
-              : styles.verticalLabel,
-            {
-              [styles.incompleteLabel]: state === 'incomplete',
-              [styles.disabledLabel]: state === 'disabled',
-            },
-          )}
+          className={cx(styles.verticalLabel, {
+            [styles.incompleteLabel]: state === 'incomplete',
+            [styles.disabledLabel]: state === 'disabled',
+          })}
         >
           {labelText}
         </p>
-      )} */}
+      )}
     </li>
   );
+
+  return orientation === 'horizontal'
+    ? renderHorizontalStep()
+    : renderVerticalStep();
 }
 
 export const Step = React.forwardRef(_Step);
