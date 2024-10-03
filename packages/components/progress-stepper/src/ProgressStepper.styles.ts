@@ -12,18 +12,14 @@ export const getStyles = ({ isInline }) => {
       padding: 0,
       margin: 0,
     }),
-    verticalList: css({
-      display: 'inline-grid',
-      height: '100%',
-      gridAutoRows: '1fr',
-      gridAutoFlow: 'row',
-      gridAutoColumns: '1fr',
-      overflow: 'hidden',
-      overflowX: 'auto',
-      counterReset: 'step',
-      padding: 0,
-      margin: 0,
-    }),
+    verticalList: (numberOfSteps: number) =>
+      css({
+        display: 'grid',
+        gridTemplateRows: `repeat(${numberOfSteps - 1}, 1fr)`,
+        margin: 0,
+        padding: 0,
+        height: '100%',
+      }),
     verticalNav: css({
       height: '100%',
     }),

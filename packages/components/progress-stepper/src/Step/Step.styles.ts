@@ -87,90 +87,47 @@ export const getStyles = () => {
       }),
     verticalListItem: (isBeforeActiveStep: boolean, isActive: boolean) =>
       css({
+        margin: 0,
+        padding: 0,
         display: 'grid',
-        gridTemplateColumns: '40px 1fr',
-        gridTemplateRows: 'auto',
         gap: `0 ${tokens.spacingXs}`,
-        justifyItems: 'start',
-        minHeight: '4rem',
-        placeItems: 'center',
-
+        gridTemplateColumns: '24px 1fr',
+        gridTemplateRows: '0fr 24px 1fr',
+        gridTemplateAreas: `
+        "divider-before ."
+        "circle label"
+        "divider-after ."
+        `,
+        alignItems: 'center',
         '&::before': {
-          height: '100%',
-          width: '2px',
-          gridColumnStart: 1,
-          gridRowStart: 1,
+          position: 'relative',
+          display: 'block',
           content: '""',
-          transform: 'translateY(-50%)',
-          // marginInlineStart: '50%',
+          height: '100%',
           backgroundColor:
             isBeforeActiveStep || isActive
               ? tokens.colorPrimary
               : tokens.gray300,
+          transition: `background-color ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
+          gridArea: 'divider-before',
+          justifySelf: 'center',
+          width: '2px',
         },
-
-        '&:first-child::before': {
-          content: 'none',
-        },
-
         '&::after': {
-          //for numbered steps
-          content: 'counter(step)',
-          counterIncrement: 'step',
-          zIndex: 1,
           position: 'relative',
-          gridColumnStart: 1,
-          gridRowStart: 1,
-          display: 'grid',
-          height: '24px',
-          width: '24px',
-          placeItems: 'center',
-          placeSelf: 'center',
-          borderRadius: '50%',
-          backgroundColor: tokens.colorPrimary,
+          display: 'block',
+          content: '""',
+          height: '100%',
+          backgroundColor: isBeforeActiveStep
+            ? tokens.colorPrimary
+            : tokens.gray300,
+          transition: `background-color ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
+          gridArea: 'divider-after',
+          justifySelf: 'center',
+          width: '2px',
         },
-        // minHeight: '4rem'
-        // margin: 0,
-        // padding: 0,
-        // display: 'grid',
-        // gap: `0 ${tokens.spacingXs}`,
-        // gridTemplateColumns: '24px 1fr',
-        // gridTemplateRows: '0fr 24px 1fr',
-        // gridTemplateAreas: `
-        // "divider-before ."
-        // "circle label"
-        // "divider-after ."
-        // `,
-        // alignItems: 'center',
-        // '&::before': {
-        //   position: 'relative',
-        //   display: 'block',
-        //   content: '""',
-        //   height: '100%',
-        //   backgroundColor:
-        //     isBeforeActiveStep || isActive
-        //       ? tokens.colorPrimary
-        //       : tokens.gray300,
-        //   transition: `background-color ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
-        //   gridArea: 'divider-before',
-        //   justifySelf: 'center',
-        //   width: '2px',
-        // },
-        // '&::after': {
-        //   position: 'relative',
-        //   display: 'block',
-        //   content: '""',
-        //   height: '100%',
-        //   backgroundColor: isBeforeActiveStep
-        //     ? tokens.colorPrimary
-        //     : tokens.gray300,
-        //   transition: `background-color ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
-        //   gridArea: 'divider-after',
-        //   justifySelf: 'center',
-        //   width: '2px',
-        // },
-        // '&:first-child::before': { visibility: 'hidden' },
-        // '&:last-child::after': { visibility: 'hidden' },
+        '&:first-child::before': { visibility: 'hidden' },
+        '&:last-child::after': { visibility: 'hidden' },
       }),
     listItemContent: css({
       textAlign: 'center',
@@ -191,8 +148,9 @@ export const getStyles = () => {
       color: tokens.gray900,
     }),
     verticalLabel: css({
-      placeSelf: 'flex-start',
-      alignSelf: 'center',
+      gridArea: 'label',
+      justifySelf: 'start',
+      color: tokens.gray900,
       maxHeight: '20px',
     }),
     disabledLabel: css({
