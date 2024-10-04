@@ -59,6 +59,12 @@ export const getAvatarStyles = ({
     image: css({
       borderRadius: innerBorderRadius,
       display: 'block',
+
+      // loading skeleton
+      '& + svg': {
+        borderRadius: innerBorderRadius,
+        rect: { rx: 0, ry: 0 }, // has a default 4px border radius
+      },
     }),
     root: css({
       borderRadius,
@@ -67,12 +73,6 @@ export const getAvatarStyles = ({
       overflow: 'hidden',
       position: 'relative',
       padding: getTotalBorderWidth(colorVariant),
-
-      // image loading skeleton
-      svg: {
-        borderRadius: innerBorderRadius,
-        rect: { rx: 0, ry: 0 }, // has a default 4px border radius
-      },
 
       // color variant border
       '&::after': {
