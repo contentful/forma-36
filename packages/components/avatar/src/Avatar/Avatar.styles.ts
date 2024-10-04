@@ -8,6 +8,7 @@ import {
   getColorWidth,
   getTotalBorderWidth,
   parseSize,
+  toPixels,
   type ColorVariant,
 } from './utils';
 
@@ -24,11 +25,10 @@ export const getColorVariantStyles = (colorVariant: ColorVariant) => {
   };
 };
 
-const getInitialsFontSize = (sizePixels: string) =>
-  Math.round(Number(sizePixels.replace('px', '')) / 2);
+const getInitialsFontSize = (size: number) => Math.round(size / 2);
 
 export const getAvatarStyles = ({
-  size,
+  size: sizeOption,
   variant,
   colorVariant,
 }: {
@@ -47,6 +47,8 @@ export const getAvatarStyles = ({
 
   const isMuted = colorVariant === 'muted';
 
+  const size = parseSize(sizeOption);
+
   return {
     fallback: css({
       backgroundColor: isMuted ? applyMuted(tokens.gray300) : tokens.gray300,
@@ -57,7 +59,7 @@ export const getAvatarStyles = ({
       alignItems: 'center',
       justifyContent: 'center',
       fontStretch: 'semi-condensed',
-      fontSize: `${getInitialsFontSize(size)}px`,
+      fontSize: toPixels(getInitialsFontSize(size)),
     }),
     image: css({
       borderRadius: innerBorderRadius,
@@ -71,8 +73,8 @@ export const getAvatarStyles = ({
     }),
     root: css({
       borderRadius,
-      height: parseSize(size),
-      width: parseSize(size),
+      height: size,
+      width: size,
       overflow: 'hidden',
       position: 'relative',
       padding: getTotalBorderWidth(colorVariant),
