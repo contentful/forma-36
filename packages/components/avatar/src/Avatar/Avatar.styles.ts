@@ -37,6 +37,9 @@ export const getAvatarStyles = ({
   colorVariant: ColorVariant;
 }) => {
   const borderRadius = variant === 'app' ? APP_BORDER_RADIUS : '100%';
+
+  // The inner border radius is smaller than the outer border radius
+  // See https://github.com/webuild-community/advent-of-sharing/blob/main/2022/day-06.md
   const innerBorderRadius =
     variant === 'app'
       ? APP_BORDER_RADIUS - getTotalBorderWidth(colorVariant)
