@@ -8,6 +8,9 @@ export type SizeInPixel = `${number}px`;
 
 export type ColorVariant = keyof typeof avatarColorMap;
 
+export const APP_BORDER_RADIUS = 4;
+const WHITE_BORDER_WIDTH = 1;
+
 export const avatarColorMap = {
   primary: tokens.blue500,
   muted: applyMuted(tokens.gray500),
@@ -40,39 +43,36 @@ export function applyMuted(color: string): string {
   // return `color-mix(in srgb, ${color}, ${tokens.colorWhite} 50%)`;
 }
 
-/**
- * Type guard for size variants
- *
- * @param size
- * @returns true/false if the size is a valid size variant
- */
-export const isSizeVariant = (size: string): size is Size => {
-  return SIZES.includes(size as Size);
-};
+export function getColorWidth(colorVariant: ColorVariant): number {
+  return ['muted', 'gray'].includes(colorVariant) ? 1 : 2;
+}
+
+export function getTotalBorderWidth(colorVariant: ColorVariant): number {
+  return getColorWidth(colorVariant) + WHITE_BORDER_WIDTH;
+}
 
 /**
  * Converts the variant size to pixels
  *
  * @param size
- * @returns the variant size value in pixels
+ * @returns the size in pixels
  */
-export const convertSizeToPixels = (size: AvatarProps['size']): SizeInPixel => {
-  const sizes: Record<Size, SizeInPixel> = {
-    tiny: '20px',
-    small: '24px',
-    medium: '32px',
-    large: '48px',
+export const parseSize = (size: AvatarProps['size']): number => {
+  const sizeMap = {
+    tiny: 20,
+    small: 24,
+    medium: 32,
+    large: 48,
   };
 
-  return sizes[size];
+  return sizeMap[size] ?? parseInt(size.slice(0, -2), 10);
 };
 
 /**
- * Utility function to convert the given size variant/custom size to pixels
  *
  * @param size
- * @returns The variant or custom size in pixels, e.g. '32px'
+ * @returns the size in pixels with the 'px' suffix
  */
-export function getSizeInPixels(size: AvatarProps['size']): SizeInPixel {
-  return isSizeVariant(size) ? convertSizeToPixels(size) : size;
+export function toPixels(size: number): SizeInPixel {
+  return `${size}px`;
 }

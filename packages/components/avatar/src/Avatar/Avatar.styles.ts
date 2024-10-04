@@ -2,21 +2,24 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { type AvatarProps } from './Avatar';
 import {
+  APP_BORDER_RADIUS,
   applyMuted,
   avatarColorMap,
-  getSizeInPixels,
+  getColorWidth,
+  getTotalBorderWidth,
+  parseSize,
   type ColorVariant,
 } from './utils';
 
 export const getColorVariantStyles = (colorVariant: ColorVariant) => {
   const colorToken: string = avatarColorMap[colorVariant];
 
-  const colorWidth = ['muted', 'gray'].includes(colorVariant) ? 1 : 2;
-
   return {
     boxShadow: [
-      `0px 0px 0px ${colorWidth}px ${colorToken} inset`,
-      `0px 0px 0px ${colorWidth + 1}px ${tokens.colorWhite} inset`,
+      `0px 0px 0px ${getColorWidth(colorVariant)}px ${colorToken} inset`,
+      `0px 0px 0px ${getTotalBorderWidth(colorVariant)}px ${
+        tokens.colorWhite
+      } inset`,
     ].join(', '),
   };
 };
@@ -33,8 +36,11 @@ export const getAvatarStyles = ({
   variant: AvatarProps['variant'];
   colorVariant: ColorVariant;
 }) => {
-  const borderRadius = variant === 'app' ? tokens.borderRadiusSmall : '100%';
-  const finalSize = getSizeInPixels(size);
+  const borderRadius = variant === 'app' ? APP_BORDER_RADIUS : '100%';
+  const innerBorderRadius =
+    variant === 'app'
+      ? APP_BORDER_RADIUS - getTotalBorderWidth(colorVariant)
+      : '100%';
 
   const isMuted = colorVariant === 'muted';
 
@@ -51,20 +57,26 @@ export const getAvatarStyles = ({
       fontSize: `${getInitialsFontSize(size)}px`,
     }),
     image: css({
-      borderRadius,
+      borderRadius: innerBorderRadius,
       display: 'block',
     }),
     root: css({
       borderRadius,
-      height: finalSize,
+      height: parseSize(size),
+      width: parseSize(size),
       overflow: 'hidden',
       position: 'relative',
-      width: finalSize,
+      padding: getTotalBorderWidth(colorVariant),
+
+      // image loading skeleton
       svg: {
-        borderRadius,
+        borderRadius: innerBorderRadius,
+        rect: { rx: 0, ry: 0 }, // has a default 4px border radius
       },
+
+      // color variant border
       '&::after': {
-        borderRadius,
+        borderRadius: borderRadius,
         bottom: 0,
         content: '""',
         display: 'block',
