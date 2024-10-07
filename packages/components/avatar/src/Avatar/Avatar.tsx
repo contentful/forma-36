@@ -10,12 +10,7 @@ import {
 } from '@contentful/f36-tooltip';
 
 import { getAvatarStyles } from './Avatar.styles';
-import {
-  getSizeInPixels,
-  type ColorVariant,
-  type Size,
-  type SizeInPixel,
-} from './utils';
+import { type ColorVariant, type Size, type SizeInPixel } from './utils';
 
 export type Variant = 'app' | 'user';
 
@@ -68,8 +63,7 @@ function _Avatar(
 ) {
   // Only render the fallback when `src` is undefined or an empty string
   const isFallback = Boolean(!isLoading && !src);
-  const finalSize = getSizeInPixels(size);
-  const styles = getAvatarStyles({ size: finalSize, variant, colorVariant });
+  const styles = getAvatarStyles({ size, variant, colorVariant });
 
   const content = (
     <div
@@ -88,9 +82,9 @@ function _Avatar(
         <Image
           alt={alt}
           className={styles.image}
-          height={finalSize}
           src={src}
-          width={finalSize}
+          height="100%"
+          width="100%"
         />
       )}
       {!!icon && <span className={styles.overlayIcon}>{icon}</span>}

@@ -2,30 +2,33 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { type AvatarProps } from './Avatar';
 import {
+  APP_BORDER_RADIUS,
   applyMuted,
   avatarColorMap,
-  getSizeInPixels,
+  getColorWidth,
+  getTotalBorderWidth,
+  parseSize,
+  toPixels,
   type ColorVariant,
 } from './utils';
 
 export const getColorVariantStyles = (colorVariant: ColorVariant) => {
   const colorToken: string = avatarColorMap[colorVariant];
 
-  const colorWidth = ['muted', 'gray'].includes(colorVariant) ? 1 : 2;
-
   return {
     boxShadow: [
-      `0px 0px 0px ${colorWidth}px ${colorToken} inset`,
-      `0px 0px 0px ${colorWidth + 1}px ${tokens.colorWhite} inset`,
+      `0px 0px 0px ${getColorWidth(colorVariant)}px ${colorToken} inset`,
+      `0px 0px 0px ${getTotalBorderWidth(colorVariant)}px ${
+        tokens.colorWhite
+      } inset`,
     ].join(', '),
   };
 };
 
-const getInitialsFontSize = (sizePixels: string) =>
-  Math.round(Number(sizePixels.replace('px', '')) / 2);
+const getInitialsFontSize = (size: number) => Math.round(size / 2);
 
 export const getAvatarStyles = ({
-  size,
+  size: sizeOption,
   variant,
   colorVariant,
 }: {
@@ -33,10 +36,18 @@ export const getAvatarStyles = ({
   variant: AvatarProps['variant'];
   colorVariant: ColorVariant;
 }) => {
-  const borderRadius = variant === 'app' ? tokens.borderRadiusSmall : '100%';
-  const finalSize = getSizeInPixels(size);
+  const borderRadius = variant === 'app' ? APP_BORDER_RADIUS : '100%';
+
+  // The inner border radius is smaller than the outer border radius
+  // See https://github.com/webuild-community/advent-of-sharing/blob/main/2022/day-06.md
+  const innerBorderRadius =
+    variant === 'app'
+      ? APP_BORDER_RADIUS - getTotalBorderWidth(colorVariant)
+      : '100%';
 
   const isMuted = colorVariant === 'muted';
+
+  const size = parseSize(sizeOption);
 
   return {
     fallback: css({
@@ -48,21 +59,27 @@ export const getAvatarStyles = ({
       alignItems: 'center',
       justifyContent: 'center',
       fontStretch: 'semi-condensed',
-      fontSize: `${getInitialsFontSize(size)}px`,
+      fontSize: toPixels(getInitialsFontSize(size)),
     }),
     image: css({
-      borderRadius,
+      borderRadius: innerBorderRadius,
       display: 'block',
+
+      // loading skeleton
+      '& + svg': {
+        borderRadius: innerBorderRadius,
+        rect: { rx: 0, ry: 0 }, // has a default 4px border radius
+      },
     }),
     root: css({
       borderRadius,
-      height: finalSize,
+      height: size,
+      width: size,
       overflow: 'hidden',
       position: 'relative',
-      width: finalSize,
-      svg: {
-        borderRadius,
-      },
+      padding: getTotalBorderWidth(colorVariant),
+
+      // color variant border
       '&::after': {
         borderRadius,
         bottom: 0,
