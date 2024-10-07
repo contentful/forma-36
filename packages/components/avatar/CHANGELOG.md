@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.71.2
+
+### Patch Changes
+
+- [#2898](https://github.com/contentful/forma-36/pull/2898) [`d2685d6`](https://github.com/contentful/forma-36/commit/d2685d62c2efb3658235494e25cea3b660b9d818) Thanks [@andipaetzold](https://github.com/andipaetzold)! - Shrink image to reduce overlapping with the color border
+
+- [#2898](https://github.com/contentful/forma-36/pull/2898) [`d2685d6`](https://github.com/contentful/forma-36/commit/d2685d62c2efb3658235494e25cea3b660b9d818) Thanks [@andipaetzold](https://github.com/andipaetzold)! - Round overlay icon for app variant
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.71.2
+  - @contentful/f36-menu@4.71.2
+  - @contentful/f36-tooltip@4.71.2
+  - @contentful/f36-image@4.71.2
+
 ## 4.71.1
 
 ### Patch Changes
