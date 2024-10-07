@@ -81,7 +81,7 @@ export const getAvatarStyles = ({
 
       // color variant border
       '&::after': {
-        borderRadius: borderRadius,
+        borderRadius,
         bottom: 0,
         content: '""',
         display: 'block',
