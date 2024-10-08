@@ -8,6 +8,13 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 08-10-2024
+
+**F36 Avatar** `v4.71.2`
+
+- Shrink image to reduce overlapping with the color border
+- Round overlay icon for app variant
+
 ## 27-09-2024
 
 `@contentful/f36-components@4.71.1`
