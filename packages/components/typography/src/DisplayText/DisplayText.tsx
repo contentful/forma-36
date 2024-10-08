@@ -36,7 +36,7 @@ function _DisplayText<
   ref: React.Ref<any>,
 ) {
   let fontSize: FontSizeTokens = 'fontSize2Xl';
-  let lineHeight: LineHeightTokens = 'lineHeight2Xl';
+  let lineHeight: LineHeightTokens = 'lineHeightXl';
 
   if (size === 'large') {
     fontSize = 'fontSize3Xl';
