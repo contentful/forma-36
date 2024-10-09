@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.73.0
+
+### Minor Changes
+
+- [#2908](https://github.com/contentful/forma-36/pull/2908) [`453ae3d`](https://github.com/contentful/forma-36/commit/453ae3d0e3965934338c78c94a8d8e342461a2ed) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(header): render title as h1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.73.0
+  - @contentful/f36-core@4.73.0
+  - @contentful/f36-typography@4.73.0
+
 ## 4.72.0
 
 ### Patch Changes
