@@ -1,26 +1,32 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { type AvatarProps } from './Avatar';
+import { type AvatarProps, type Variant } from './Avatar';
 import {
-  APP_BORDER_RADIUS,
   applyMuted,
   avatarColorMap,
   getColorWidth,
+  getInnerRadius,
+  getOuterRadius,
   getTotalBorderWidth,
   parseSize,
   toPixels,
   type ColorVariant,
 } from './utils';
 
-export const getColorVariantStyles = (colorVariant: ColorVariant) => {
+export const getColorVariantStyles = (
+  variant: Variant,
+  colorVariant: ColorVariant,
+  size: number,
+) => {
   const colorToken: string = avatarColorMap[colorVariant];
+
+  const colorWidth = getColorWidth(colorVariant);
+  const totalBorderWidth = getTotalBorderWidth(variant, colorVariant, size);
 
   return {
     boxShadow: [
-      `0px 0px 0px ${getColorWidth(colorVariant)}px ${colorToken} inset`,
-      `0px 0px 0px ${getTotalBorderWidth(colorVariant)}px ${
-        tokens.colorWhite
-      } inset`,
+      `0px 0px 0px ${colorWidth}px ${colorToken} inset`,
+      `0px 0px 0px ${totalBorderWidth}px ${tokens.colorWhite} inset`,
     ].join(', '),
   };
 };
@@ -33,21 +39,16 @@ export const getAvatarStyles = ({
   colorVariant,
 }: {
   size: AvatarProps['size'];
-  variant: AvatarProps['variant'];
+  variant: Variant;
   colorVariant: ColorVariant;
 }) => {
-  const borderRadius = variant === 'app' ? APP_BORDER_RADIUS : '100%';
-
-  // The inner border radius is smaller than the outer border radius
-  // See https://github.com/webuild-community/advent-of-sharing/blob/main/2022/day-06.md
-  const innerBorderRadius =
-    variant === 'app'
-      ? APP_BORDER_RADIUS - getTotalBorderWidth(colorVariant)
-      : '100%';
-
-  const isMuted = colorVariant === 'muted';
+  const borderRadius = getOuterRadius(variant);
+  const innerBorderRadius = getInnerRadius(variant);
 
   const size = parseSize(sizeOption);
+  const totalBorderWidth = getTotalBorderWidth(variant, colorVariant, size);
+
+  const isMuted = colorVariant === 'muted';
 
   return {
     fallback: css({
@@ -77,7 +78,7 @@ export const getAvatarStyles = ({
       width: size,
       overflow: 'hidden',
       position: 'relative',
-      padding: getTotalBorderWidth(colorVariant),
+      padding: totalBorderWidth,
 
       // color variant border
       '&::after': {
@@ -89,7 +90,7 @@ export const getAvatarStyles = ({
         position: 'absolute',
         top: 0,
         right: 0,
-        ...getColorVariantStyles(colorVariant),
+        ...getColorVariantStyles(variant, colorVariant, size),
       },
     }),
     imageContainer: css(

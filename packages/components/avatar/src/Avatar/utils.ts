@@ -1,15 +1,12 @@
 import tokens from '@contentful/f36-tokens';
 
-import { AvatarProps } from './Avatar';
+import { AvatarProps, type Variant } from './Avatar';
 
 export const SIZES = ['tiny', 'small', 'medium', 'large'] as const;
 export type Size = (typeof SIZES)[number];
 export type SizeInPixel = `${number}px`;
 
 export type ColorVariant = keyof typeof avatarColorMap;
-
-export const APP_BORDER_RADIUS = 4;
-const WHITE_BORDER_WIDTH = 1;
 
 export const avatarColorMap = {
   primary: tokens.blue500,
@@ -43,12 +40,24 @@ export function applyMuted(color: string): string {
   // return `color-mix(in srgb, ${color}, ${tokens.colorWhite} 50%)`;
 }
 
+export function getWhiteBorderWidth(variant: Variant, size: number): number {
+  if (variant === 'user') {
+    return 1;
+  }
+
+  return size >= 48 ? 3 : 2;
+}
+
 export function getColorWidth(colorVariant: ColorVariant): number {
   return ['muted', 'gray'].includes(colorVariant) ? 1 : 2;
 }
 
-export function getTotalBorderWidth(colorVariant: ColorVariant): number {
-  return getColorWidth(colorVariant) + WHITE_BORDER_WIDTH;
+export function getTotalBorderWidth(
+  variant: Variant,
+  colorVariant: ColorVariant,
+  size: number,
+): number {
+  return getColorWidth(colorVariant) + getWhiteBorderWidth(variant, size);
 }
 
 /**
@@ -75,4 +84,12 @@ export const parseSize = (size: AvatarProps['size']): number => {
  */
 export function toPixels(size: number): SizeInPixel {
   return `${size}px`;
+}
+
+export function getOuterRadius(variant: Variant): string {
+  return variant === 'app' ? '4px' : '100%';
+}
+
+export function getInnerRadius(variant: Variant): string {
+  return variant === 'app' ? '1px' : '100%';
 }
