@@ -1,6 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { type AvatarProps, type Variant } from './Avatar';
+import { type AvatarProps } from './Avatar';
+import { type Variant } from './types';
 import {
   applyMuted,
   avatarColorMap,

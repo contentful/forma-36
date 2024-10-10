@@ -1,6 +1,7 @@
 import tokens from '@contentful/f36-tokens';
 
-import { AvatarProps, type Variant } from './Avatar';
+import { AvatarProps } from './Avatar';
+import { type Variant } from './types';
 
 export const SIZES = ['tiny', 'small', 'medium', 'large'] as const;
 export type Size = (typeof SIZES)[number];
