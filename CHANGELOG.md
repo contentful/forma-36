@@ -8,6 +8,22 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 10-10-2024
+
+**F36 Tokens** `v4.1.0`
+
+- feat(tokens): smaller font-size-2xl
+- feat(display-text): smaller line-height to match new font-size-2xl size
+
+**F36 Typography** `v4.72.0`
+
+- feat(tokens): smaller font-size-2xl
+- feat(display-text): smaller line-height to match new font-size-2xl size
+
+**F36 Header** `v4.73.0`
+
+- feat(header): render title as h1
+
 ## 08-10-2024
 
 **F36 Avatar** `v4.71.2`
