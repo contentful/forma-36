@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.74.0
+
+### Minor Changes
+
+- [#2909](https://github.com/contentful/forma-36/pull/2909) [`af9da8c`](https://github.com/contentful/forma-36/commit/af9da8c85f18a61d0dce86dd4370a86fb5a133c8) Thanks [@andipaetzold](https://github.com/andipaetzold)! - increase inner white padding for app variant
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.74.0
+  - @contentful/f36-menu@4.74.0
+  - @contentful/f36-tooltip@4.74.0
+  - @contentful/f36-image@4.74.0
+
 ## 4.73.0
 
 ### Patch Changes
