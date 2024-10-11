@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 11-10-2024
+
+**F36 Avatar** `v4.74.0`
+
+- increase inner white padding for app variant
+
 ## 10-10-2024
 
 **F36 Tokens** `v4.1.0`
