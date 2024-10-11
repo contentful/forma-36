@@ -11,8 +11,8 @@ import {
 
 import { getAvatarStyles } from './Avatar.styles';
 import { type ColorVariant, type Size, type SizeInPixel } from './utils';
-
-export type Variant = 'app' | 'user';
+import type { Variant } from './types';
+export { type Variant } from './types';
 
 export interface AvatarProps extends CommonProps {
   alt?: ImageProps['alt'];

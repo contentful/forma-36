@@ -8,6 +8,35 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 11-10-2024
+
+**F36 Avatar** `v4.74.0`
+
+- increase inner white padding for app variant
+
+## 10-10-2024
+
+**F36 Tokens** `v4.1.0`
+
+- feat(tokens): smaller font-size-2xl
+- feat(display-text): smaller line-height to match new font-size-2xl size
+
+**F36 Typography** `v4.72.0`
+
+- feat(tokens): smaller font-size-2xl
+- feat(display-text): smaller line-height to match new font-size-2xl size
+
+**F36 Header** `v4.73.0`
+
+- feat(header): render title as h1
+
+## 08-10-2024
+
+**F36 Avatar** `v4.71.2`
+
+- Shrink image to reduce overlapping with the color border
+- Round overlay icon for app variant
+
 ## 27-09-2024
 
 `@contentful/f36-components@4.71.1`
