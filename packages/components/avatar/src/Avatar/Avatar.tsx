@@ -9,17 +9,22 @@ import {
   type WithEnhancedContent,
 } from '@contentful/f36-tooltip';
 
-import { convertSizeToPixels, getAvatarStyles } from './Avatar.styles';
-import type { ColorVariant } from './utils';
-
-export type Size = 'tiny' | 'small' | 'medium' | 'large';
-
-export type Variant = 'app' | 'user';
+import { getAvatarStyles } from './Avatar.styles';
+import { type ColorVariant, type Size, type SizeInPixel } from './utils';
+import type { Variant } from './types';
+export { type Variant } from './types';
 
 export interface AvatarProps extends CommonProps {
   alt?: ImageProps['alt'];
+  /**
+   * @default false
+   */
   isLoading?: boolean;
-  size?: Size;
+  /**
+   * Use the available sizes or a numerical custom one, e.g. '52px'
+   * @default 'medium'
+   */
+  size?: Size | SizeInPixel;
   initials?: string;
   src?: ImageProps['src'];
   /**
@@ -28,7 +33,13 @@ export interface AvatarProps extends CommonProps {
   tooltipProps?: CommonProps &
     WithEnhancedContent &
     Omit<TooltipInternalProps, 'children'>;
+  /**
+   * @default 'user'
+   */
   variant?: Variant;
+  /**
+   * @default 'gray'
+   */
   colorVariant?: ColorVariant;
   icon?: React.ReactElement;
 }
@@ -37,8 +48,8 @@ function _Avatar(
   {
     alt = '',
     className,
-    colorVariant,
-    icon = null,
+    colorVariant = 'gray',
+    icon,
     isLoading = false,
     size = 'medium',
     initials,
@@ -52,15 +63,12 @@ function _Avatar(
 ) {
   // Only render the fallback when `src` is undefined or an empty string
   const isFallback = Boolean(!isLoading && !src);
-  const styles = getAvatarStyles({ isFallback, size, variant, colorVariant });
-  const sizePixels = convertSizeToPixels(size);
+  const styles = getAvatarStyles({ size, variant, colorVariant });
 
   const content = (
     <div
       className={cx(styles.root, className, {
-        [styles.imageContainer]: icon !== null,
-        [styles.isMuted]: colorVariant === 'muted',
-        [styles.colorBorder]: !!colorVariant,
+        [styles.imageContainer]: !!src,
       })}
       data-test-id={testId}
       ref={forwardedRef}
@@ -74,12 +82,12 @@ function _Avatar(
         <Image
           alt={alt}
           className={styles.image}
-          height={sizePixels}
           src={src}
-          width={sizePixels}
+          height="100%"
+          width="100%"
         />
       )}
-      {icon !== null && <span className={styles.overlayIcon}>{icon}</span>}
+      {!!icon && <span className={styles.overlayIcon}>{icon}</span>}
     </div>
   );
 

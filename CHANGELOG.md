@@ -8,6 +8,72 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 11-10-2024
+
+**F36 Avatar** `v4.74.0`
+
+- increase inner white padding for app variant
+
+## 10-10-2024
+
+**F36 Tokens** `v4.1.0`
+
+- feat(tokens): smaller font-size-2xl
+- feat(display-text): smaller line-height to match new font-size-2xl size
+
+**F36 Typography** `v4.72.0`
+
+- feat(tokens): smaller font-size-2xl
+- feat(display-text): smaller line-height to match new font-size-2xl size
+
+**F36 Header** `v4.73.0`
+
+- feat(header): render title as h1
+
+## 08-10-2024
+
+**F36 Avatar** `v4.71.2`
+
+- Shrink image to reduce overlapping with the color border
+- Round overlay icon for app variant
+
+## 27-09-2024
+
+`@contentful/f36-components@4.71.1`
+
+- fix: add className prop to progressStepper component
+
+## 21-09-2024
+
+**F36 Avatar** `v4.71.0`
+
+- Avatar size and loading skeleton
+- Allow custom size
+
+## 13-09-2024
+
+**F36 Avatar** `v4.70.0`
+
+- always render contrast border
+
+## 12-09-2024
+
+**F36 Header** `v4.69.2`
+
+- The header component exports now a fixed header height constant
+
+## 10-09-2024
+
+**F36 Notification** `v4.69.1`
+
+- chore: remove swc helpers
+
+## 03-09-2024
+
+**F36 Button** `v4.69.0`
+
+- Offers new `withTooltip:boolean` `tooltipProps: TooltipProps` properties on the IconButton to show a built-in `Tooltip` as well to pass down additional properties. Showing of the Tooltip has a delay of 600ms. It uses the provided `aria-label` as default content.
+
 ## 08-08-2024
 
 **F36 Typography** `v4.68.0`

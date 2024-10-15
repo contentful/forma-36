@@ -1,106 +1,121 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { type AvatarProps } from './Avatar';
-import { avatarColorMap, type ColorVariant } from './utils';
+import { type Variant } from './types';
+import {
+  applyMuted,
+  avatarColorMap,
+  getColorWidth,
+  getInnerRadius,
+  getOuterRadius,
+  getTotalBorderWidth,
+  parseSize,
+  toPixels,
+  type ColorVariant,
+} from './utils';
 
-export const getColorVariantStyles = (colorVariant: ColorVariant) => {
-  const colorToken = avatarColorMap[colorVariant];
+export const getColorVariantStyles = (
+  variant: Variant,
+  colorVariant: ColorVariant,
+  size: number,
+) => {
+  const colorToken: string = avatarColorMap[colorVariant];
+
+  const colorWidth = getColorWidth(colorVariant);
+  const totalBorderWidth = getTotalBorderWidth(variant, colorVariant, size);
 
   return {
-    boxShadow: `0px 0px 0px 2px ${colorToken} inset, 0px 0px 0px 3px  ${tokens.colorWhite} inset`,
+    boxShadow: [
+      `0px 0px 0px ${colorWidth}px ${colorToken} inset`,
+      `0px 0px 0px ${totalBorderWidth}px ${tokens.colorWhite} inset`,
+    ].join(', '),
   };
 };
 
-export const convertSizeToPixels = (size: AvatarProps['size']) =>
-  ({
-    tiny: '20px',
-    small: '24px',
-    medium: '32px',
-    large: '48px',
-  }[size]);
-
-const getInitialsFontSize = (sizePixels: string) =>
-  Math.round(Number(sizePixels.replace('px', '')) / 2);
+const getInitialsFontSize = (size: number) => Math.round(size / 2);
 
 export const getAvatarStyles = ({
-  isFallback,
-  size,
+  size: sizeOption,
   variant,
   colorVariant,
 }: {
-  isFallback: boolean;
   size: AvatarProps['size'];
-  variant: AvatarProps['variant'];
-  colorVariant?: ColorVariant;
+  variant: Variant;
+  colorVariant: ColorVariant;
 }) => {
-  const borderRadius =
-    variant === 'app' ? tokens.borderRadiusSmall : '99999999em';
+  const borderRadius = getOuterRadius(variant);
+  const innerBorderRadius = getInnerRadius(variant);
 
-  const sizePixels = convertSizeToPixels(size);
+  const size = parseSize(sizeOption);
+  const totalBorderWidth = getTotalBorderWidth(variant, colorVariant, size);
+
+  const isMuted = colorVariant === 'muted';
 
   return {
     fallback: css({
-      backgroundColor: tokens.gray200,
-      color: 'rgba(0,0,0,0.5)',
+      backgroundColor: isMuted ? applyMuted(tokens.gray300) : tokens.gray300,
+      color: isMuted ? applyMuted(tokens.gray700) : tokens.gray700,
       height: '100%',
       width: '100%',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       fontStretch: 'semi-condensed',
-      fontSize: `${getInitialsFontSize(sizePixels)}px`,
+      fontSize: toPixels(getInitialsFontSize(size)),
     }),
     image: css({
-      borderRadius,
+      borderRadius: innerBorderRadius,
       display: 'block',
-    }),
-    root: css([
-      {
-        borderRadius,
-        height: sizePixels,
-        overflow: 'hidden',
-        position: 'relative',
-        width: sizePixels,
+
+      // loading skeleton
+      '& + svg': {
+        borderRadius: innerBorderRadius,
+        rect: { rx: 0, ry: 0 }, // has a default 4px border radius
       },
-      !isFallback && {
-        '&::after': {
-          boxShadow: 'inset 0px 0px 0px 1px rgba(17, 27, 43, 0.1)',
-          borderRadius,
-          bottom: 0,
-          content: '""',
-          display: 'block',
-          left: 0,
-          position: 'absolute',
-          top: 0,
-          right: 0,
+    }),
+    root: css({
+      borderRadius,
+      height: size,
+      width: size,
+      overflow: 'hidden',
+      position: 'relative',
+      padding: totalBorderWidth,
+
+      // color variant border
+      '&::after': {
+        borderRadius,
+        bottom: 0,
+        content: '""',
+        display: 'block',
+        left: 0,
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        ...getColorVariantStyles(variant, colorVariant, size),
+      },
+    }),
+    imageContainer: css(
+      {
+        backgroundColor: tokens.colorWhite,
+        overflow: 'visible',
+        zIndex: 1,
+      },
+      colorVariant === 'muted' && {
+        img: {
+          opacity: 0.5,
         },
       },
-    ]),
-    colorBorder: css({
-      '&::after': {
-        ...getColorVariantStyles(colorVariant),
-      },
-    }),
-    imageContainer: css({
-      overflow: 'visible',
-      zIndex: 1,
-    }),
+    ),
     overlayIcon: css({
       svg: {
         backgroundColor: tokens.colorWhite,
-        borderRadius: '99999999em',
+        borderRadius: '100%',
         position: 'absolute',
         bottom: 0,
         right: '-10%',
         width: '40%',
         height: '40%',
         zIndex: 1,
-      },
-    }),
-    isMuted: css({
-      backgroundColor: tokens.colorWhite,
-      img: {
-        opacity: 0.5,
       },
     }),
   };

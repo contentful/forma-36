@@ -78,7 +78,12 @@ export function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Image src={contentfulLogoSVG} alt="Contentful’s logo" />
+        <Image
+          width={120}
+          height={25}
+          src={contentfulLogoSVG}
+          alt="Contentful’s logo"
+        />
       </a>
     </footer>
   );

@@ -1,5 +1,81 @@
 # Change Log
 
+## 4.74.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.74.0
+
+## 4.73.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.73.0
+
+## 4.72.0
+
+### Minor Changes
+
+- [#2903](https://github.com/contentful/forma-36/pull/2903) [`0067b57`](https://github.com/contentful/forma-36/commit/0067b57aaadbd05cb878dd5e34d407a80b000281) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(tokens): smaller font-size-2xl
+  feat(display-text): smaller line-height to match new font-size-2xl size
+
+### Patch Changes
+
+- Updated dependencies [[`0067b57`](https://github.com/contentful/forma-36/commit/0067b57aaadbd05cb878dd5e34d407a80b000281)]:
+  - @contentful/f36-tokens@4.1.0
+  - @contentful/f36-core@4.72.0
+
+## 4.71.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.71.2
+
+## 4.71.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.71.1
+
+## 4.71.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.71.0
+
+## 4.70.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.70.0
+
+## 4.69.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.69.2
+
+## 4.69.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.69.1
+
+## 4.69.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.69.0
+
 ## 4.68.1
 
 ### Patch Changes

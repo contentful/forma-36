@@ -1,5 +1,102 @@
 # Change Log
 
+## 4.74.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.74.0
+  - @contentful/f36-core@4.74.0
+  - @contentful/f36-typography@4.74.0
+
+## 4.73.0
+
+### Minor Changes
+
+- [#2908](https://github.com/contentful/forma-36/pull/2908) [`453ae3d`](https://github.com/contentful/forma-36/commit/453ae3d0e3965934338c78c94a8d8e342461a2ed) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(header): render title as h1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.73.0
+  - @contentful/f36-core@4.73.0
+  - @contentful/f36-typography@4.73.0
+
+## 4.72.0
+
+### Patch Changes
+
+- Updated dependencies [[`0067b57`](https://github.com/contentful/forma-36/commit/0067b57aaadbd05cb878dd5e34d407a80b000281)]:
+  - @contentful/f36-tokens@4.1.0
+  - @contentful/f36-typography@4.72.0
+  - @contentful/f36-button@4.72.0
+  - @contentful/f36-core@4.72.0
+
+## 4.71.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.71.2
+  - @contentful/f36-core@4.71.2
+  - @contentful/f36-typography@4.71.2
+
+## 4.71.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.71.1
+  - @contentful/f36-core@4.71.1
+  - @contentful/f36-typography@4.71.1
+
+## 4.71.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.71.0
+  - @contentful/f36-core@4.71.0
+  - @contentful/f36-typography@4.71.0
+
+## 4.70.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.70.0
+  - @contentful/f36-core@4.70.0
+  - @contentful/f36-typography@4.70.0
+
+## 4.69.2
+
+### Patch Changes
+
+- [`859dc76`](https://github.com/contentful/forma-36/commit/859dc76e94171fae4bfdb1e9387330291f96f151) Thanks [@Lelith](https://github.com/Lelith)! - The header component exports now a fixed header height constant
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.69.2
+  - @contentful/f36-core@4.69.2
+  - @contentful/f36-typography@4.69.2
+
+## 4.69.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.69.1
+  - @contentful/f36-core@4.69.1
+  - @contentful/f36-typography@4.69.1
+
+## 4.69.0
+
+### Patch Changes
+
+- Updated dependencies [[`8a609b2`](https://github.com/contentful/forma-36/commit/8a609b2fc9dc1b2579d5ff85f961bd90fcdca790)]:
+  - @contentful/f36-button@4.69.0
+  - @contentful/f36-core@4.69.0
+  - @contentful/f36-typography@4.69.0
+
 ## 4.68.1
 
 ### Patch Changes

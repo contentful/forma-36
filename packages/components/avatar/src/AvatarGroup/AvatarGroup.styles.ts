@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { type AvatarProps } from '../Avatar/';
-import { convertSizeToPixels } from '../Avatar/Avatar.styles';
+import { parseSize, toPixels } from '../Avatar/utils';
 
 export const getAvatarGroupStyles = (size: AvatarProps['size']) => {
   return {
@@ -26,8 +26,8 @@ export const getAvatarGroupStyles = (size: AvatarProps['size']) => {
       border: 'none',
       boxShadow: `0px 0px 0px 1px ${tokens.gray200} inset`,
       borderRadius: '99999999em',
-      height: convertSizeToPixels(size),
-      width: convertSizeToPixels(size),
+      height: toPixels(parseSize(size)),
+      width: toPixels(parseSize(size)),
       overflow: 'hidden',
       zIndex: 0,
     }),

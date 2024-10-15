@@ -1,5 +1,418 @@
 # Change Log
 
+## 4.74.0
+
+### Patch Changes
+
+- Updated dependencies [[`af9da8c`](https://github.com/contentful/forma-36/commit/af9da8c85f18a61d0dce86dd4370a86fb5a133c8)]:
+  - @contentful/f36-avatar@4.74.0
+  - @contentful/f36-navbar@4.74.0
+  - @contentful/f36-accordion@4.74.0
+  - @contentful/f36-asset@4.74.0
+  - @contentful/f36-autocomplete@4.74.0
+  - @contentful/f36-badge@4.74.0
+  - @contentful/f36-button@4.74.0
+  - @contentful/f36-card@4.74.0
+  - @contentful/f36-collapse@4.74.0
+  - @contentful/f36-copybutton@4.74.0
+  - @contentful/f36-core@4.74.0
+  - @contentful/f36-datetime@4.74.0
+  - @contentful/f36-datepicker@4.74.0
+  - @contentful/f36-drag-handle@4.74.0
+  - @contentful/f36-entity-list@4.74.0
+  - @contentful/f36-empty-state@4.74.0
+  - @contentful/f36-forms@4.74.0
+  - @contentful/f36-icon@4.74.0
+  - @contentful/f36-header@4.74.0
+  - @contentful/f36-list@4.74.0
+  - @contentful/f36-menu@4.74.0
+  - @contentful/f36-modal@4.74.0
+  - @contentful/f36-note@4.74.0
+  - @contentful/f36-notification@4.74.0
+  - @contentful/f36-pagination@4.74.0
+  - @contentful/f36-pill@4.74.0
+  - @contentful/f36-popover@4.74.0
+  - @contentful/f36-skeleton@4.74.0
+  - @contentful/f36-spinner@4.74.0
+  - @contentful/f36-table@4.74.0
+  - @contentful/f36-tabs@4.74.0
+  - @contentful/f36-text-link@4.74.0
+  - @contentful/f36-tooltip@4.74.0
+  - @contentful/f36-typography@4.74.0
+  - @contentful/f36-image@4.74.0
+
+## 4.73.0
+
+### Patch Changes
+
+- Updated dependencies [[`453ae3d`](https://github.com/contentful/forma-36/commit/453ae3d0e3965934338c78c94a8d8e342461a2ed)]:
+  - @contentful/f36-header@4.73.0
+  - @contentful/f36-accordion@4.73.0
+  - @contentful/f36-asset@4.73.0
+  - @contentful/f36-autocomplete@4.73.0
+  - @contentful/f36-badge@4.73.0
+  - @contentful/f36-button@4.73.0
+  - @contentful/f36-card@4.73.0
+  - @contentful/f36-collapse@4.73.0
+  - @contentful/f36-copybutton@4.73.0
+  - @contentful/f36-core@4.73.0
+  - @contentful/f36-datetime@4.73.0
+  - @contentful/f36-datepicker@4.73.0
+  - @contentful/f36-drag-handle@4.73.0
+  - @contentful/f36-entity-list@4.73.0
+  - @contentful/f36-empty-state@4.73.0
+  - @contentful/f36-forms@4.73.0
+  - @contentful/f36-icon@4.73.0
+  - @contentful/f36-list@4.73.0
+  - @contentful/f36-menu@4.73.0
+  - @contentful/f36-modal@4.73.0
+  - @contentful/f36-navbar@4.73.0
+  - @contentful/f36-note@4.73.0
+  - @contentful/f36-notification@4.73.0
+  - @contentful/f36-pagination@4.73.0
+  - @contentful/f36-pill@4.73.0
+  - @contentful/f36-popover@4.73.0
+  - @contentful/f36-skeleton@4.73.0
+  - @contentful/f36-spinner@4.73.0
+  - @contentful/f36-table@4.73.0
+  - @contentful/f36-tabs@4.73.0
+  - @contentful/f36-text-link@4.73.0
+  - @contentful/f36-tooltip@4.73.0
+  - @contentful/f36-typography@4.73.0
+  - @contentful/f36-image@4.73.0
+  - @contentful/f36-avatar@4.73.0
+
+## 4.72.0
+
+### Patch Changes
+
+- Updated dependencies [[`0067b57`](https://github.com/contentful/forma-36/commit/0067b57aaadbd05cb878dd5e34d407a80b000281)]:
+  - @contentful/f36-tokens@4.1.0
+  - @contentful/f36-typography@4.72.0
+  - @contentful/f36-accordion@4.72.0
+  - @contentful/f36-asset@4.72.0
+  - @contentful/f36-autocomplete@4.72.0
+  - @contentful/f36-badge@4.72.0
+  - @contentful/f36-button@4.72.0
+  - @contentful/f36-card@4.72.0
+  - @contentful/f36-collapse@4.72.0
+  - @contentful/f36-copybutton@4.72.0
+  - @contentful/f36-core@4.72.0
+  - @contentful/f36-datetime@4.72.0
+  - @contentful/f36-datepicker@4.72.0
+  - @contentful/f36-drag-handle@4.72.0
+  - @contentful/f36-entity-list@4.72.0
+  - @contentful/f36-empty-state@4.72.0
+  - @contentful/f36-forms@4.72.0
+  - @contentful/f36-icon@4.72.0
+  - @contentful/f36-header@4.72.0
+  - @contentful/f36-list@4.72.0
+  - @contentful/f36-menu@4.72.0
+  - @contentful/f36-modal@4.72.0
+  - @contentful/f36-navbar@4.72.0
+  - @contentful/f36-note@4.72.0
+  - @contentful/f36-notification@4.72.0
+  - @contentful/f36-pagination@4.72.0
+  - @contentful/f36-pill@4.72.0
+  - @contentful/f36-popover@4.72.0
+  - @contentful/f36-skeleton@4.72.0
+  - @contentful/f36-spinner@4.72.0
+  - @contentful/f36-table@4.72.0
+  - @contentful/f36-tabs@4.72.0
+  - @contentful/f36-text-link@4.72.0
+  - @contentful/f36-tooltip@4.72.0
+  - @contentful/f36-image@4.72.0
+  - @contentful/f36-avatar@4.72.0
+
+## 4.71.2
+
+### Patch Changes
+
+- Updated dependencies [[`d2685d6`](https://github.com/contentful/forma-36/commit/d2685d62c2efb3658235494e25cea3b660b9d818), [`d2685d6`](https://github.com/contentful/forma-36/commit/d2685d62c2efb3658235494e25cea3b660b9d818)]:
+  - @contentful/f36-avatar@4.71.2
+  - @contentful/f36-navbar@4.71.2
+  - @contentful/f36-accordion@4.71.2
+  - @contentful/f36-asset@4.71.2
+  - @contentful/f36-autocomplete@4.71.2
+  - @contentful/f36-badge@4.71.2
+  - @contentful/f36-button@4.71.2
+  - @contentful/f36-card@4.71.2
+  - @contentful/f36-collapse@4.71.2
+  - @contentful/f36-copybutton@4.71.2
+  - @contentful/f36-core@4.71.2
+  - @contentful/f36-datetime@4.71.2
+  - @contentful/f36-datepicker@4.71.2
+  - @contentful/f36-drag-handle@4.71.2
+  - @contentful/f36-entity-list@4.71.2
+  - @contentful/f36-empty-state@4.71.2
+  - @contentful/f36-forms@4.71.2
+  - @contentful/f36-icon@4.71.2
+  - @contentful/f36-header@4.71.2
+  - @contentful/f36-list@4.71.2
+  - @contentful/f36-menu@4.71.2
+  - @contentful/f36-modal@4.71.2
+  - @contentful/f36-note@4.71.2
+  - @contentful/f36-notification@4.71.2
+  - @contentful/f36-pagination@4.71.2
+  - @contentful/f36-pill@4.71.2
+  - @contentful/f36-popover@4.71.2
+  - @contentful/f36-skeleton@4.71.2
+  - @contentful/f36-spinner@4.71.2
+  - @contentful/f36-table@4.71.2
+  - @contentful/f36-tabs@4.71.2
+  - @contentful/f36-text-link@4.71.2
+  - @contentful/f36-tooltip@4.71.2
+  - @contentful/f36-typography@4.71.2
+  - @contentful/f36-image@4.71.2
+
+## 4.71.1
+
+### Patch Changes
+
+- [#2886](https://github.com/contentful/forma-36/pull/2886) [`6284f77`](https://github.com/contentful/forma-36/commit/6284f775e7d378802c592ecab1eac9f8e0a41ad2) Thanks [@stephanLeece](https://github.com/stephanLeece)! - fix: add className prop to progressStepper component
+
+- Updated dependencies []:
+  - @contentful/f36-accordion@4.71.1
+  - @contentful/f36-asset@4.71.1
+  - @contentful/f36-autocomplete@4.71.1
+  - @contentful/f36-badge@4.71.1
+  - @contentful/f36-button@4.71.1
+  - @contentful/f36-card@4.71.1
+  - @contentful/f36-collapse@4.71.1
+  - @contentful/f36-copybutton@4.71.1
+  - @contentful/f36-core@4.71.1
+  - @contentful/f36-datetime@4.71.1
+  - @contentful/f36-datepicker@4.71.1
+  - @contentful/f36-drag-handle@4.71.1
+  - @contentful/f36-entity-list@4.71.1
+  - @contentful/f36-empty-state@4.71.1
+  - @contentful/f36-forms@4.71.1
+  - @contentful/f36-icon@4.71.1
+  - @contentful/f36-header@4.71.1
+  - @contentful/f36-list@4.71.1
+  - @contentful/f36-menu@4.71.1
+  - @contentful/f36-modal@4.71.1
+  - @contentful/f36-navbar@4.71.1
+  - @contentful/f36-note@4.71.1
+  - @contentful/f36-notification@4.71.1
+  - @contentful/f36-pagination@4.71.1
+  - @contentful/f36-pill@4.71.1
+  - @contentful/f36-popover@4.71.1
+  - @contentful/f36-skeleton@4.71.1
+  - @contentful/f36-spinner@4.71.1
+  - @contentful/f36-table@4.71.1
+  - @contentful/f36-tabs@4.71.1
+  - @contentful/f36-text-link@4.71.1
+  - @contentful/f36-tooltip@4.71.1
+  - @contentful/f36-typography@4.71.1
+  - @contentful/f36-image@4.71.1
+  - @contentful/f36-avatar@4.71.1
+
+## 4.71.0
+
+### Patch Changes
+
+- Updated dependencies [[`74b10dc`](https://github.com/contentful/forma-36/commit/74b10dce7886ef44584b7bec8e09f7007680cdc6), [`74b10dc`](https://github.com/contentful/forma-36/commit/74b10dce7886ef44584b7bec8e09f7007680cdc6)]:
+  - @contentful/f36-avatar@4.71.0
+  - @contentful/f36-navbar@4.71.0
+  - @contentful/f36-accordion@4.71.0
+  - @contentful/f36-asset@4.71.0
+  - @contentful/f36-autocomplete@4.71.0
+  - @contentful/f36-badge@4.71.0
+  - @contentful/f36-button@4.71.0
+  - @contentful/f36-card@4.71.0
+  - @contentful/f36-collapse@4.71.0
+  - @contentful/f36-copybutton@4.71.0
+  - @contentful/f36-core@4.71.0
+  - @contentful/f36-datetime@4.71.0
+  - @contentful/f36-datepicker@4.71.0
+  - @contentful/f36-drag-handle@4.71.0
+  - @contentful/f36-entity-list@4.71.0
+  - @contentful/f36-empty-state@4.71.0
+  - @contentful/f36-forms@4.71.0
+  - @contentful/f36-icon@4.71.0
+  - @contentful/f36-header@4.71.0
+  - @contentful/f36-list@4.71.0
+  - @contentful/f36-menu@4.71.0
+  - @contentful/f36-modal@4.71.0
+  - @contentful/f36-note@4.71.0
+  - @contentful/f36-notification@4.71.0
+  - @contentful/f36-pagination@4.71.0
+  - @contentful/f36-pill@4.71.0
+  - @contentful/f36-popover@4.71.0
+  - @contentful/f36-skeleton@4.71.0
+  - @contentful/f36-spinner@4.71.0
+  - @contentful/f36-table@4.71.0
+  - @contentful/f36-tabs@4.71.0
+  - @contentful/f36-text-link@4.71.0
+  - @contentful/f36-tooltip@4.71.0
+  - @contentful/f36-typography@4.71.0
+  - @contentful/f36-image@4.71.0
+
+## 4.70.0
+
+### Patch Changes
+
+- Updated dependencies [[`7821bd3`](https://github.com/contentful/forma-36/commit/7821bd37a8a03dcea84659d559dd325af402eb0c)]:
+  - @contentful/f36-avatar@4.70.0
+  - @contentful/f36-navbar@4.70.0
+  - @contentful/f36-accordion@4.70.0
+  - @contentful/f36-asset@4.70.0
+  - @contentful/f36-autocomplete@4.70.0
+  - @contentful/f36-badge@4.70.0
+  - @contentful/f36-button@4.70.0
+  - @contentful/f36-card@4.70.0
+  - @contentful/f36-collapse@4.70.0
+  - @contentful/f36-copybutton@4.70.0
+  - @contentful/f36-core@4.70.0
+  - @contentful/f36-datetime@4.70.0
+  - @contentful/f36-datepicker@4.70.0
+  - @contentful/f36-drag-handle@4.70.0
+  - @contentful/f36-entity-list@4.70.0
+  - @contentful/f36-empty-state@4.70.0
+  - @contentful/f36-forms@4.70.0
+  - @contentful/f36-icon@4.70.0
+  - @contentful/f36-header@4.70.0
+  - @contentful/f36-list@4.70.0
+  - @contentful/f36-menu@4.70.0
+  - @contentful/f36-modal@4.70.0
+  - @contentful/f36-note@4.70.0
+  - @contentful/f36-notification@4.70.0
+  - @contentful/f36-pagination@4.70.0
+  - @contentful/f36-pill@4.70.0
+  - @contentful/f36-popover@4.70.0
+  - @contentful/f36-skeleton@4.70.0
+  - @contentful/f36-spinner@4.70.0
+  - @contentful/f36-table@4.70.0
+  - @contentful/f36-tabs@4.70.0
+  - @contentful/f36-text-link@4.70.0
+  - @contentful/f36-tooltip@4.70.0
+  - @contentful/f36-typography@4.70.0
+  - @contentful/f36-image@4.70.0
+
+## 4.69.2
+
+### Patch Changes
+
+- Updated dependencies [[`859dc76`](https://github.com/contentful/forma-36/commit/859dc76e94171fae4bfdb1e9387330291f96f151)]:
+  - @contentful/f36-header@4.69.2
+  - @contentful/f36-accordion@4.69.2
+  - @contentful/f36-asset@4.69.2
+  - @contentful/f36-autocomplete@4.69.2
+  - @contentful/f36-badge@4.69.2
+  - @contentful/f36-button@4.69.2
+  - @contentful/f36-card@4.69.2
+  - @contentful/f36-collapse@4.69.2
+  - @contentful/f36-copybutton@4.69.2
+  - @contentful/f36-core@4.69.2
+  - @contentful/f36-datetime@4.69.2
+  - @contentful/f36-datepicker@4.69.2
+  - @contentful/f36-drag-handle@4.69.2
+  - @contentful/f36-entity-list@4.69.2
+  - @contentful/f36-empty-state@4.69.2
+  - @contentful/f36-forms@4.69.2
+  - @contentful/f36-icon@4.69.2
+  - @contentful/f36-list@4.69.2
+  - @contentful/f36-menu@4.69.2
+  - @contentful/f36-modal@4.69.2
+  - @contentful/f36-navbar@4.69.2
+  - @contentful/f36-note@4.69.2
+  - @contentful/f36-notification@4.69.2
+  - @contentful/f36-pagination@4.69.2
+  - @contentful/f36-pill@4.69.2
+  - @contentful/f36-popover@4.69.2
+  - @contentful/f36-skeleton@4.69.2
+  - @contentful/f36-spinner@4.69.2
+  - @contentful/f36-table@4.69.2
+  - @contentful/f36-tabs@4.69.2
+  - @contentful/f36-text-link@4.69.2
+  - @contentful/f36-tooltip@4.69.2
+  - @contentful/f36-typography@4.69.2
+  - @contentful/f36-image@4.69.2
+  - @contentful/f36-avatar@4.69.2
+
+## 4.69.1
+
+### Patch Changes
+
+- Updated dependencies [[`afda129`](https://github.com/contentful/forma-36/commit/afda1294c8da9c4ea8e702e1ee7150c08bc681fa)]:
+  - @contentful/f36-notification@4.69.1
+  - @contentful/f36-accordion@4.69.1
+  - @contentful/f36-asset@4.69.1
+  - @contentful/f36-autocomplete@4.69.1
+  - @contentful/f36-badge@4.69.1
+  - @contentful/f36-button@4.69.1
+  - @contentful/f36-card@4.69.1
+  - @contentful/f36-collapse@4.69.1
+  - @contentful/f36-copybutton@4.69.1
+  - @contentful/f36-core@4.69.1
+  - @contentful/f36-datetime@4.69.1
+  - @contentful/f36-datepicker@4.69.1
+  - @contentful/f36-drag-handle@4.69.1
+  - @contentful/f36-entity-list@4.69.1
+  - @contentful/f36-empty-state@4.69.1
+  - @contentful/f36-forms@4.69.1
+  - @contentful/f36-icon@4.69.1
+  - @contentful/f36-header@4.69.1
+  - @contentful/f36-list@4.69.1
+  - @contentful/f36-menu@4.69.1
+  - @contentful/f36-modal@4.69.1
+  - @contentful/f36-navbar@4.69.1
+  - @contentful/f36-note@4.69.1
+  - @contentful/f36-pagination@4.69.1
+  - @contentful/f36-pill@4.69.1
+  - @contentful/f36-popover@4.69.1
+  - @contentful/f36-skeleton@4.69.1
+  - @contentful/f36-spinner@4.69.1
+  - @contentful/f36-table@4.69.1
+  - @contentful/f36-tabs@4.69.1
+  - @contentful/f36-text-link@4.69.1
+  - @contentful/f36-tooltip@4.69.1
+  - @contentful/f36-typography@4.69.1
+  - @contentful/f36-image@4.69.1
+  - @contentful/f36-avatar@4.69.1
+
+## 4.69.0
+
+### Patch Changes
+
+- Updated dependencies [[`8a609b2`](https://github.com/contentful/forma-36/commit/8a609b2fc9dc1b2579d5ff85f961bd90fcdca790)]:
+  - @contentful/f36-button@4.69.0
+  - @contentful/f36-accordion@4.69.0
+  - @contentful/f36-asset@4.69.0
+  - @contentful/f36-autocomplete@4.69.0
+  - @contentful/f36-badge@4.69.0
+  - @contentful/f36-card@4.69.0
+  - @contentful/f36-collapse@4.69.0
+  - @contentful/f36-copybutton@4.69.0
+  - @contentful/f36-core@4.69.0
+  - @contentful/f36-datetime@4.69.0
+  - @contentful/f36-datepicker@4.69.0
+  - @contentful/f36-drag-handle@4.69.0
+  - @contentful/f36-entity-list@4.69.0
+  - @contentful/f36-empty-state@4.69.0
+  - @contentful/f36-forms@4.69.0
+  - @contentful/f36-icon@4.69.0
+  - @contentful/f36-header@4.69.0
+  - @contentful/f36-list@4.69.0
+  - @contentful/f36-menu@4.69.0
+  - @contentful/f36-modal@4.69.0
+  - @contentful/f36-navbar@4.69.0
+  - @contentful/f36-note@4.69.0
+  - @contentful/f36-notification@4.69.0
+  - @contentful/f36-pagination@4.69.0
+  - @contentful/f36-pill@4.69.0
+  - @contentful/f36-popover@4.69.0
+  - @contentful/f36-skeleton@4.69.0
+  - @contentful/f36-spinner@4.69.0
+  - @contentful/f36-table@4.69.0
+  - @contentful/f36-tabs@4.69.0
+  - @contentful/f36-text-link@4.69.0
+  - @contentful/f36-tooltip@4.69.0
+  - @contentful/f36-typography@4.69.0
+  - @contentful/f36-image@4.69.0
+  - @contentful/f36-avatar@4.69.0
+
 ## 4.68.1
 
 ### Patch Changes

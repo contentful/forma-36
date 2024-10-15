@@ -46,6 +46,38 @@ basic.args = {
   variant: 'transparent',
 };
 
+export const withTooltip = ({ icon, iconProps, ...props }) => (
+  <>
+    <Flex marginBottom="spacingS">
+      <IconButton
+        icon={icon && <Icon as={icons[icon]} {...iconProps} />}
+        aria-label={'Start the process'}
+        withTooltip
+        {...props}
+      />
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <IconButton
+        icon={icon && <Icon as={icons[icon]} {...iconProps} />}
+        aria-label={'Start the process'}
+        withTooltip
+        tooltipProps={{ content: 'Different Content', isVisible: true }}
+        {...props}
+      />
+    </Flex>
+  </>
+);
+
+withTooltip.args = {
+  icon: 'StarIcon',
+  'aria-label': 'Label',
+  iconProps: {
+    variant: 'primary',
+    size: 'medium',
+  },
+  variant: 'transparent',
+};
+
 export const ColoredIconInTransparentIconButton = () => {
   const [isActive, setIsActive] = useState(false);
   return (
