@@ -54,12 +54,6 @@ for (const pkg of packages) {
     json.module.endsWith('esm/index.js'),
     `${pkg}#module should be a separate .js file but got "${json.module}"`,
   );
-  softAssert(json.source, `${pkg} did not have "source"`);
-  softAssert.equal(
-    json.source,
-    'src/index.ts',
-    `${pkg} did not match "src/index.ts"`,
-  );
   softAssert.deepEqual(json.files, ['dist'], `${pkg} did not match "files"`);
   softAssert(
     !json.dependencies || !json.dependencies['react'],

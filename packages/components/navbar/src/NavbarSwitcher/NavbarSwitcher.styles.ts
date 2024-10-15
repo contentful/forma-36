@@ -1,55 +1,54 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
-import { getGlowOnFocusStyles, mqs } from '../utils.styles';
+
+import { getGlowOnFocusStyles, increaseHitArea, mqs } from '../utils.styles';
 
 export const getNavbarSwitcherStyles = () => ({
-  root: css(
+  navbarSwitcher: css(
     {
-      // default button reset styles
-      margin: 0,
-      padding: 0,
-      background: 'none',
-      border: 'none',
-
-      color: tokens.gray300,
-      cursor: 'pointer',
-      fontSize: tokens.fontSizeS,
+      color: tokens.gray600,
+      flexShrink: 1,
       fontWeight: tokens.fontWeightMedium,
-      position: 'relative',
-      outline: 'none',
-      borderRadius: tokens.borderRadiusMedium,
-
-      '&:after': {
-        content: '""',
-        border: '1px solid #353A41',
-        boxSizing: 'border-box',
-        height: '16px',
-        right: '-1px',
-        position: 'absolute',
-        width: 0,
-      },
-      '&:last-child:after': {
-        display: 'none',
-      },
-      '&:hover li': {
-        backgroundColor: hexToRGBA(tokens.colorWhite, 0.15),
+      maxWidth: '100%',
+      minHeight: 'unset',
+      padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
+      '&:hover': {
+        backgroundColor: hexToRGBA(tokens.gray900, 0.05),
       },
     },
-    getGlowOnFocusStyles(
-      `0px 0px 0px 2px ${tokens.colorBlack}, 0px 0px 0px 5px ${tokens.blue300}`,
-    ),
+    getGlowOnFocusStyles(),
+    increaseHitArea(),
   ),
-  breadcrumbs: css({
-    listStyleType: 'none',
-    margin: 0,
-    padding: 0,
-    position: 'relative',
-  }),
-  menuIcon: css({
-    display: 'none',
-    [mqs.medium]: {
-      display: 'block',
+
+  switcherSpaceName: css({
+    // Set min-width only when there are three span children
+    '&:has(> span:last-child:nth-child(3))': {
+      minWidth: '12ch',
     },
+    maxWidth: '15vw',
+    [mqs.xsmall]: {
+      maxWidth: '50vw',
+    },
+    [mqs.small]: {
+      maxWidth: '10vw',
+    },
+    [mqs.medium]: {
+      maxWidth: '50vw',
+    },
+  }),
+
+  switcherEnvIcon: css({
+    [mqs.small]: {
+      width: '16px',
+      height: '16px',
+    },
+  }),
+
+  switcherSpaceNameTruncation: css({
+    flexShrink: 1,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
   }),
 });
