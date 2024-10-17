@@ -1,13 +1,16 @@
 import { css } from 'emotion';
 
-export const getStyles = () => {
+export const getStyles = ({ isInline }) => {
   return {
     horizontalList: css({
-      display: 'grid',
-      gridAutoFlow: 'column dense',
+      display: isInline ? 'inline-grid' : 'grid',
+      gridAutoFlow: 'column',
+      overflow: 'hidden',
+      overflowX: 'auto',
+      counterReset: 'step',
       gridAutoColumns: '1fr',
-      margin: 0,
       padding: 0,
+      margin: 0,
     }),
     verticalList: (numberOfSteps: number) =>
       css({
