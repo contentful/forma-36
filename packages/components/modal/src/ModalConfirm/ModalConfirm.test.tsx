@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { screen } from '@testing-library/dom';
-import { axe } from '@/scripts/test/axeHelper';
+import { axe } from 'jest-axe';
 
 import { ModalConfirm } from './ModalConfirm';
 

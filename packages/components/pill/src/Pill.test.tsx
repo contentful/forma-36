@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { axe } from '@/scripts/test/axeHelper';
+import { axe } from 'jest-axe';
 import tokens from '@contentful/f36-tokens';
 
 import { Pill } from './Pill';
