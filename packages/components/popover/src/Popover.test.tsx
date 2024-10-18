@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { axe } from '@/scripts/test/axeHelper';
+import { axe } from 'jest-axe';
 
 import { Popover } from '.';
 import { Button } from '@contentful/f36-button';

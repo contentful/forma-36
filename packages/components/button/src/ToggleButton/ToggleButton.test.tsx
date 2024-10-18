@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { PreviewIcon } from '@contentful/f36-icons';
-import { axe } from '@/scripts/test/axeHelper';
+import { axe } from 'jest-axe';
 
 import { ToggleButton } from '.';
 
