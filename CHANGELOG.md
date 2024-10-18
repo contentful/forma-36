@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 17-10-2024
+
+**F36 Table** `v4.74.1`
+
+- fix(table): add f36-utils dependency
+
 ## 11-10-2024
 
 **F36 Avatar** `v4.74.0`

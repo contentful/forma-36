@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.74.1
+
+### Patch Changes
+
+- [#2913](https://github.com/contentful/forma-36/pull/2913) [`796025b`](https://github.com/contentful/forma-36/commit/796025b1b2723a42fc009cd865fc38d60241007d) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(table): add f36-utils dependency
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.74.1
+  - @contentful/f36-typography@4.74.1
+
 ## 4.74.0
 
 ### Patch Changes
