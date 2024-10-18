@@ -36,7 +36,7 @@ function _NavbarBadge(
     <Comp
       {...otherProps}
       ref={ref}
-      className={cx(styles.root, className)}
+      className={cx(styles.navbarBadge, className)}
       data-test-id={testId}
     >
       {children}
