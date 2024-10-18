@@ -5,7 +5,7 @@ import { hexToRGBA } from '@contentful/f36-utils';
 import { getGlowOnFocusStyles, increaseHitArea, mqs } from '../utils.styles';
 
 export const getNavbarSwitcherStyles = () => ({
-  navbarSwitcher: css(
+  navbarSwitcher: css([
     {
       color: tokens.gray600,
       flexShrink: 1,
@@ -19,7 +19,7 @@ export const getNavbarSwitcherStyles = () => ({
     },
     getGlowOnFocusStyles(),
     increaseHitArea(),
-  ),
+  ]),
 
   switcherSpaceName: css({
     // Set min-width only when there are three span children

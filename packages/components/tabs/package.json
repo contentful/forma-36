@@ -32,5 +32,8 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "access": "public"
+  },
+  "devDependencies": {
+    "@emotion/serialize": "^0.11.16"
   }
 }
