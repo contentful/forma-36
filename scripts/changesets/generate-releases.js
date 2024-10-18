@@ -59,23 +59,31 @@ async function main() {
   const octokit = new Octokit({
     auth: `token ${env.GITHUB_TOKEN}`,
   });
+  const isMain = env.CIRCLE_BRANCH === 'main';
 
   // Run changesets publish and get stdout
   const csOutput = childProcess.execSync('npx changeset publish').toString();
   console.log(csOutput);
 
+  const commitMessage = isMain
+    ? 'docs(changelog): add changelogs for'
+    : 'chore: bump package versions for';
+
   const gitPushCommand = `git add . && npm run-script pretty:quick
-  git diff --staged --quiet || git commit -m "docs(changelog): add changelogs for $(git rev-parse --short HEAD) [skip ci]" && git push origin ${env.CIRCLE_BRANCH} --follow-tags`;
+  git diff --staged --quiet || git commit -m "${commitMessage} $(git rev-parse --short HEAD) [skip ci]" && git push origin ${env.CIRCLE_BRANCH} --follow-tags`;
 
   // Push updated packages to github with tags
   console.log(childProcess.execSync(gitPushCommand));
 
-  const { packages: pkgs } = await getPackages(cwd);
-  const releasedPkgs = await getReleasedPackages(csOutput, pkgs);
+  // Only create releases on main branch
+  if (isMain) {
+    const { packages: pkgs } = await getPackages(cwd);
+    const releasedPkgs = await getReleasedPackages(csOutput, pkgs);
 
-  // Create release for each published package
-  for (const pkg of releasedPkgs) {
-    await createRelease(octokit, pkg);
+    // Create release for each published package
+    for (const pkg of releasedPkgs) {
+      await createRelease(octokit, pkg);
+    }
   }
 }
 
