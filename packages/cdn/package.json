@@ -5,11 +5,11 @@
   "description": "Forma 36 CDN",
   "type": "module",
   "dependencies": {
-    "@fastly/js-compute": "3.0.0"
+    "@fastly/js-compute": "3.24.3"
   },
   "devDependencies": {
     "@fastly/cli": "10.14.0",
-    "@fastly/compute-js-static-publish": "6.1.0"
+    "@fastly/compute-js-static-publish": "6.1.1"
   },
   "engines": {
     "node": ">=20.0.0"
