@@ -1,0 +1,21 @@
+name: Deploy CDN to Fastly Compute
+
+on:
+  pull_request:
+    branches:
+      - CFISO-1735-cdn
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci --workspace=@contentful/f36-cdn
+      # - name: Deploy to Compute
+      #   uses: fastly/compute-actions@v8
+      #   with:
+      #     project_directory: packages/cdn
+      #     service_id: ${{ secrets.CDN_FASTLY_SERVICE_ID }}
+      #   env:
+      #     FASTLY_API_TOKEN: ${{ secrets.CDN_FASTLY_TOKEN }}
