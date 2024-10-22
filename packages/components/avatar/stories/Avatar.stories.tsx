@@ -51,6 +51,17 @@ export const Overview: Story<AvatarProps> = (args) => {
         />
         <Avatar
           {...args}
+          size="75px"
+          icon={<CheckCircleIcon variant="positive" />}
+        />
+        <Avatar
+          {...args}
+          size="75px"
+          variant="app"
+          icon={<CheckCircleIcon variant="positive" />}
+        />
+        <Avatar
+          {...args}
           size="large"
           variant="app"
           icon={<CheckCircleIcon variant="positive" />}
@@ -85,15 +96,38 @@ export const Overview: Story<AvatarProps> = (args) => {
         gap="spacingS"
         marginBottom="spacingM"
       >
-        <Avatar size="tiny" variant="user" />
-        <Avatar size="small" variant="user" />
-        <Avatar size="medium" variant="user" />
+        <Avatar isLoading size="tiny" variant="user" />
+        <Avatar isLoading size="small" variant="user" />
+        <Avatar isLoading size="medium" variant="user" />
         <Avatar isLoading size="large" variant="user" />
-        <Avatar size="large" variant="app" />
-        <Avatar size="large" variant="user" />
-        <Avatar size="medium" variant="app" />
-        <Avatar size="small" variant="app" />
-        <Avatar size="tiny" variant="app" />
+        <Avatar isLoading size="75px" variant="user" />
+        <Avatar isLoading size="75px" variant="app" />
+        <Avatar isLoading size="large" variant="app" />
+        <Avatar isLoading size="medium" variant="app" />
+        <Avatar isLoading size="small" variant="app" />
+        <Avatar isLoading size="tiny" variant="app" />
+      </Flex>
+
+      <SectionHeading as="h3" marginBottom="spacingS">
+        With a broken source, the loading skeleton is also rendered
+      </SectionHeading>
+
+      <Flex
+        alignItems="center"
+        flexDirection="row"
+        gap="spacingS"
+        marginBottom="spacingM"
+      >
+        <Avatar src="#" size="tiny" variant="user" />
+        <Avatar src="#" size="small" variant="user" />
+        <Avatar src="#" size="medium" variant="user" />
+        <Avatar src="#" size="large" variant="user" />
+        <Avatar src="#" size="75px" variant="user" />
+        <Avatar src="#" size="75px" variant="app" />
+        <Avatar src="#" size="large" variant="app" />
+        <Avatar src="#" size="medium" variant="app" />
+        <Avatar src="#" size="small" variant="app" />
+        <Avatar src="#" size="tiny" variant="app" />
       </Flex>
 
       <SectionHeading as="h3" marginBottom="spacingS">
@@ -187,7 +221,7 @@ export const BorderColors: Story<AvatarProps> = (args) => {
             {/* prettier-ignore */}
             <Avatar {...argsNoSrc} colorVariant={color} size="small" variant="app" />
             {/* prettier-ignore */}
-            <Avatar {...argsNoSrc}  colorVariant={color}size="tiny" variant="app" />
+            <Avatar {...argsNoSrc} colorVariant={color} size="tiny" variant="app" />
             {/* prettier-ignore */}
             <Avatar {...args} colorVariant={color} size="tiny" />
             {/* prettier-ignore */}

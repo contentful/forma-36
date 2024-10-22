@@ -1,43 +1,54 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { type AvatarProps } from './Avatar';
-import { applyMuted, avatarColorMap, type ColorVariant } from './utils';
+import { type Variant } from './types';
+import {
+  applyMuted,
+  avatarColorMap,
+  getColorWidth,
+  getInnerRadius,
+  getOuterRadius,
+  getTotalBorderWidth,
+  parseSize,
+  toPixels,
+  type ColorVariant,
+} from './utils';
 
-export const getColorVariantStyles = (colorVariant: ColorVariant) => {
+export const getColorVariantStyles = (
+  variant: Variant,
+  colorVariant: ColorVariant,
+  size: number,
+) => {
   const colorToken: string = avatarColorMap[colorVariant];
 
-  const colorWidth = ['muted', 'gray'].includes(colorVariant) ? 1 : 2;
+  const colorWidth = getColorWidth(colorVariant);
+  const totalBorderWidth = getTotalBorderWidth(variant, colorVariant, size);
 
   return {
     boxShadow: [
       `0px 0px 0px ${colorWidth}px ${colorToken} inset`,
-      `0px 0px 0px ${colorWidth + 1}px ${tokens.colorWhite} inset`,
+      `0px 0px 0px ${totalBorderWidth}px ${tokens.colorWhite} inset`,
     ].join(', '),
   };
 };
 
-export const convertSizeToPixels = (size: AvatarProps['size']) =>
-  ({
-    tiny: '20px',
-    small: '24px',
-    medium: '32px',
-    large: '48px',
-  }[size]);
-
-const getInitialsFontSize = (sizePixels: string) =>
-  Math.round(Number(sizePixels.replace('px', '')) / 2);
+const getInitialsFontSize = (size: number) => Math.round(size / 2);
 
 export const getAvatarStyles = ({
-  size,
+  size: sizeOption,
   variant,
   colorVariant,
 }: {
   size: AvatarProps['size'];
-  variant: AvatarProps['variant'];
+  variant: Variant;
   colorVariant: ColorVariant;
 }) => {
-  const borderRadius = variant === 'app' ? tokens.borderRadiusSmall : '100%';
-  const sizePixels = convertSizeToPixels(size);
+  const borderRadius = getOuterRadius(variant);
+  const innerBorderRadius = getInnerRadius(variant);
+
+  const size = parseSize(sizeOption);
+  const totalBorderWidth = getTotalBorderWidth(variant, colorVariant, size);
+
   const isMuted = colorVariant === 'muted';
 
   return {
@@ -50,18 +61,27 @@ export const getAvatarStyles = ({
       alignItems: 'center',
       justifyContent: 'center',
       fontStretch: 'semi-condensed',
-      fontSize: `${getInitialsFontSize(sizePixels)}px`,
+      fontSize: toPixels(getInitialsFontSize(size)),
     }),
     image: css({
-      borderRadius,
+      borderRadius: innerBorderRadius,
       display: 'block',
+
+      // loading skeleton
+      '& + svg': {
+        borderRadius: innerBorderRadius,
+        rect: { rx: 0, ry: 0 }, // has a default 4px border radius
+      },
     }),
     root: css({
       borderRadius,
-      height: sizePixels,
+      height: size,
+      width: size,
       overflow: 'hidden',
       position: 'relative',
-      width: sizePixels,
+      padding: totalBorderWidth,
+
+      // color variant border
       '&::after': {
         borderRadius,
         bottom: 0,
@@ -71,7 +91,7 @@ export const getAvatarStyles = ({
         position: 'absolute',
         top: 0,
         right: 0,
-        ...getColorVariantStyles(colorVariant),
+        ...getColorVariantStyles(variant, colorVariant, size),
       },
     }),
     imageContainer: css(

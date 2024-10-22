@@ -1,14 +1,14 @@
 {
   "name": "@contentful/f36-icon",
-  "version": "4.70.0",
+  "version": "4.74.1",
   "description": "Forma 36: Icon component",
   "license": "MIT",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.70.0",
-    "@contentful/f36-tokens": "^4.0.4",
+    "@contentful/f36-core": "^4.74.1",
+    "@contentful/f36-tokens": "^4.1.0",
     "emotion": "^10.0.17"
   },
   "devDependencies": {

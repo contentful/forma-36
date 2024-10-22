@@ -1,5 +1,64 @@
 # Change Log
 
+## 4.74.1
+
+### Patch Changes
+
+- [#2913](https://github.com/contentful/forma-36/pull/2913) [`796025b`](https://github.com/contentful/forma-36/commit/796025b1b2723a42fc009cd865fc38d60241007d) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(table): add f36-utils dependency
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.74.1
+  - @contentful/f36-typography@4.74.1
+
+## 4.74.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.74.0
+  - @contentful/f36-typography@4.74.0
+
+## 4.73.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.73.0
+  - @contentful/f36-typography@4.73.0
+
+## 4.72.0
+
+### Patch Changes
+
+- Updated dependencies [[`0067b57`](https://github.com/contentful/forma-36/commit/0067b57aaadbd05cb878dd5e34d407a80b000281)]:
+  - @contentful/f36-tokens@4.1.0
+  - @contentful/f36-typography@4.72.0
+  - @contentful/f36-core@4.72.0
+
+## 4.71.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.71.2
+  - @contentful/f36-typography@4.71.2
+
+## 4.71.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.71.1
+  - @contentful/f36-typography@4.71.1
+
+## 4.71.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.71.0
+  - @contentful/f36-typography@4.71.0
+
 ## 4.70.0
 
 ### Patch Changes

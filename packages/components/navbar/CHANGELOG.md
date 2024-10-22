@@ -1,5 +1,83 @@
 # @contentful/f36-navbar
 
+## 4.74.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.74.1
+  - @contentful/f36-icon@4.74.1
+  - @contentful/f36-menu@4.74.1
+  - @contentful/f36-skeleton@4.74.1
+  - @contentful/f36-avatar@4.74.1
+
+## 4.74.0
+
+### Patch Changes
+
+- Updated dependencies [[`af9da8c`](https://github.com/contentful/forma-36/commit/af9da8c85f18a61d0dce86dd4370a86fb5a133c8)]:
+  - @contentful/f36-avatar@4.74.0
+  - @contentful/f36-core@4.74.0
+  - @contentful/f36-icon@4.74.0
+  - @contentful/f36-menu@4.74.0
+  - @contentful/f36-skeleton@4.74.0
+
+## 4.73.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.73.0
+  - @contentful/f36-icon@4.73.0
+  - @contentful/f36-menu@4.73.0
+  - @contentful/f36-skeleton@4.73.0
+  - @contentful/f36-avatar@4.73.0
+
+## 4.72.0
+
+### Patch Changes
+
+- Updated dependencies [[`0067b57`](https://github.com/contentful/forma-36/commit/0067b57aaadbd05cb878dd5e34d407a80b000281)]:
+  - @contentful/f36-tokens@4.1.0
+  - @contentful/f36-core@4.72.0
+  - @contentful/f36-icon@4.72.0
+  - @contentful/f36-menu@4.72.0
+  - @contentful/f36-skeleton@4.72.0
+  - @contentful/f36-avatar@4.72.0
+
+## 4.71.2
+
+### Patch Changes
+
+- Updated dependencies [[`d2685d6`](https://github.com/contentful/forma-36/commit/d2685d62c2efb3658235494e25cea3b660b9d818), [`d2685d6`](https://github.com/contentful/forma-36/commit/d2685d62c2efb3658235494e25cea3b660b9d818)]:
+  - @contentful/f36-avatar@4.71.2
+  - @contentful/f36-core@4.71.2
+  - @contentful/f36-icon@4.71.2
+  - @contentful/f36-menu@4.71.2
+  - @contentful/f36-skeleton@4.71.2
+
+## 4.71.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.71.1
+  - @contentful/f36-icon@4.71.1
+  - @contentful/f36-menu@4.71.1
+  - @contentful/f36-skeleton@4.71.1
+  - @contentful/f36-avatar@4.71.1
+
+## 4.71.0
+
+### Patch Changes
+
+- Updated dependencies [[`74b10dc`](https://github.com/contentful/forma-36/commit/74b10dce7886ef44584b7bec8e09f7007680cdc6), [`74b10dc`](https://github.com/contentful/forma-36/commit/74b10dce7886ef44584b7bec8e09f7007680cdc6)]:
+  - @contentful/f36-avatar@4.71.0
+  - @contentful/f36-core@4.71.0
+  - @contentful/f36-icon@4.71.0
+  - @contentful/f36-menu@4.71.0
+  - @contentful/f36-skeleton@4.71.0
+
 ## 4.70.0
 
 ### Patch Changes

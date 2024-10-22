@@ -1,5 +1,12 @@
 import tokens from '@contentful/f36-tokens';
 
+import { AvatarProps } from './Avatar';
+import { type Variant } from './types';
+
+export const SIZES = ['tiny', 'small', 'medium', 'large'] as const;
+export type Size = (typeof SIZES)[number];
+export type SizeInPixel = `${number}px`;
+
 export type ColorVariant = keyof typeof avatarColorMap;
 
 export const avatarColorMap = {
@@ -32,4 +39,58 @@ export function applyMuted(color: string): string {
 
   // Eventually we should use `color-mix`
   // return `color-mix(in srgb, ${color}, ${tokens.colorWhite} 50%)`;
+}
+
+export function getWhiteBorderWidth(variant: Variant, size: number): number {
+  if (variant === 'user') {
+    return 1;
+  }
+
+  return size >= 48 ? 3 : 2;
+}
+
+export function getColorWidth(colorVariant: ColorVariant): number {
+  return ['muted', 'gray'].includes(colorVariant) ? 1 : 2;
+}
+
+export function getTotalBorderWidth(
+  variant: Variant,
+  colorVariant: ColorVariant,
+  size: number,
+): number {
+  return getColorWidth(colorVariant) + getWhiteBorderWidth(variant, size);
+}
+
+/**
+ * Converts the variant size to pixels
+ *
+ * @param size
+ * @returns the size in pixels
+ */
+export const parseSize = (size: AvatarProps['size']): number => {
+  const sizeMap = {
+    tiny: 20,
+    small: 24,
+    medium: 32,
+    large: 48,
+  };
+
+  return sizeMap[size] ?? parseInt(size.slice(0, -2), 10);
+};
+
+/**
+ *
+ * @param size
+ * @returns the size in pixels with the 'px' suffix
+ */
+export function toPixels(size: number): SizeInPixel {
+  return `${size}px`;
+}
+
+export function getOuterRadius(variant: Variant): string {
+  return variant === 'app' ? '4px' : '100%';
+}
+
+export function getInnerRadius(variant: Variant): string {
+  return variant === 'app' ? '1px' : '100%';
 }

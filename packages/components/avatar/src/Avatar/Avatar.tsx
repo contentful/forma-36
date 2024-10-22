@@ -9,12 +9,10 @@ import {
   type WithEnhancedContent,
 } from '@contentful/f36-tooltip';
 
-import { convertSizeToPixels, getAvatarStyles } from './Avatar.styles';
-import type { ColorVariant } from './utils';
-
-export type Size = 'tiny' | 'small' | 'medium' | 'large';
-
-export type Variant = 'app' | 'user';
+import { getAvatarStyles } from './Avatar.styles';
+import { type ColorVariant, type Size, type SizeInPixel } from './utils';
+import type { Variant } from './types';
+export { type Variant } from './types';
 
 export interface AvatarProps extends CommonProps {
   alt?: ImageProps['alt'];
@@ -23,9 +21,10 @@ export interface AvatarProps extends CommonProps {
    */
   isLoading?: boolean;
   /**
+   * Use the available sizes or a numerical custom one, e.g. '52px'
    * @default 'medium'
    */
-  size?: Size;
+  size?: Size | SizeInPixel;
   initials?: string;
   src?: ImageProps['src'];
   /**
@@ -65,7 +64,6 @@ function _Avatar(
   // Only render the fallback when `src` is undefined or an empty string
   const isFallback = Boolean(!isLoading && !src);
   const styles = getAvatarStyles({ size, variant, colorVariant });
-  const sizePixels = convertSizeToPixels(size);
 
   const content = (
     <div
@@ -84,9 +82,9 @@ function _Avatar(
         <Image
           alt={alt}
           className={styles.image}
-          height={sizePixels}
           src={src}
-          width={sizePixels}
+          height="100%"
+          width="100%"
         />
       )}
       {!!icon && <span className={styles.overlayIcon}>{icon}</span>}
