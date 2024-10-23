@@ -9,7 +9,7 @@ import {
   type AvatarProps,
   type ColorVariant,
 } from '../src/Avatar';
-import { CheckCircleIcon } from '@contentful/f36-icons-v4';
+import { CheckCircleIcon } from '@contentful/f36-icons';
 
 export default {
   component: Avatar,
