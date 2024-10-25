@@ -22,25 +22,17 @@ export function NavbarEnvVariant({
   const isMaster = envVariant === 'master';
   const color = isMaster ? tokens.green700 : tokens.orange700;
 
-  switch (true) {
-    case isMaster && !isAlias:
-      return (
-        <RocketLaunchIcon color={color} className={className} size="medium" />
-      );
-
-    case isAlias:
-      return (
-        <EnvironmentAliasIcon
-          color={color}
-          className={className}
-          size="medium"
-        />
-      );
-
-    case !isMaster:
-    default:
-      return (
-        <EnvironmentIcon color={color} className={className} size="medium" />
-      );
+  if (isMaster && !isAlias) {
+    return (
+      <RocketLaunchIcon color={color} className={className} size="medium" />
+    );
+  } else if (isAlias) {
+    return (
+      <EnvironmentAliasIcon color={color} className={className} size="medium" />
+    );
+  } else {
+    return (
+      <EnvironmentIcon color={color} className={className} size="medium" />
+    );
   }
 }
