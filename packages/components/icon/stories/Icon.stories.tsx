@@ -4,8 +4,7 @@ import { SectionHeading, Text } from '@contentful/f36-typography';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { MdAcUnit as ExternalIcon } from 'react-icons/md';
 
-import { Icon } from '../src/';
-import type { IconInternalProps } from '../src/Icon';
+import { Icon, type IconInternalProps } from '../src/Icon';
 
 export default {
   argTypes: {
