@@ -143,7 +143,6 @@ export const getLayoutSidebarStyles = (
 
 export const getLayoutHeaderStyles = (variant: LayoutProps['variant']) => ({
   layoutHeader: css({
-    borderBottom: `1px solid ${tokens.gray200}`,
     padding: `0 ${tokens.spacingL}`,
     width: '100%',
     maxWidth: variant === 'fullscreen' ? '100%' : '1920px',
