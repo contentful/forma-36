@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { getNavbarSwitcherStyles } from './NavbarSwitcher.styles';
 import { Button } from '@contentful/f36-button';
 import {
@@ -6,6 +6,7 @@ import {
   type CommonProps,
   type PropsWithHTMLElement,
   type ExpandProps,
+  Box,
 } from '@contentful/f36-core';
 import { cx } from 'emotion';
 import { NavbarEnvVariant } from './NavbarEnvVariant';
@@ -45,6 +46,8 @@ function splitString(
   return [start, remainder, end];
 }
 
+export type EnvVariant = 'master' | 'non-master';
+
 type NavbarLoadingProps =
   | {
       isLoading?: true;
@@ -62,7 +65,7 @@ type NavbarLoadingProps =
 type NavbarSwitcherOwnProps = CommonProps &
   NavbarLoadingProps & {
     isCircle?: boolean;
-    envVariant?: 'master' | 'non-master';
+    envVariant?: EnvVariant;
     isAlias?: boolean;
     ariaLabel?: string;
   };
@@ -72,42 +75,18 @@ export type NavbarSwitcherProps = PropsWithHTMLElement<
   'button'
 >;
 
-type SwitcherLabelEnvVariantProps =
-  | {
-      type: 'environment';
-      envVariant?: 'master' | 'non-master';
-    }
-  | {
-      type: 'space';
-      envVariant?: never;
-    };
-
-type SwitcherLabelProps = SwitcherLabelEnvVariantProps & {
+type SwitcherLabelProps = {
   value: React.ReactNode;
   styles: ReturnType<typeof getNavbarSwitcherStyles>;
-  type: 'space' | 'environment';
-  envVariant?: 'master' | 'non-master';
+  envVariant?: EnvVariant;
 };
 
-const SwitcherLabel = ({
-  value,
-  styles,
-  envVariant,
-  type,
-}: SwitcherLabelProps) => {
+const SwitcherLabel = ({ value, styles }: SwitcherLabelProps) => {
   const [start, middle, end] =
     typeof value === 'string' ? splitString(value) : [];
-  const envColor = useMemo(() => {
-    const isEnv = type === 'environment';
-    const isMaster = envVariant === 'master';
-    if (isEnv && isMaster) {
-      return 'green600';
-    }
-    return 'gray600';
-  }, [type, envVariant]);
 
   return start !== undefined ? (
-    <Text fontColor={envColor}>
+    <Text className={styles.text}>
       <span>{start}</span>
       {middle && (
         <span className={styles.switcherSpaceNameTruncation}>{middle}</span>
@@ -115,7 +94,7 @@ const SwitcherLabel = ({
       {end && <span>{end}</span>}
     </Text>
   ) : (
-    <Text fontColor={envColor}>{value}</Text>
+    <Text className={styles.text}>{value}</Text>
   );
 };
 
@@ -135,13 +114,17 @@ function _NavbarSwitcher(
     isLoading,
     ...otherProps
   } = props;
-  const styles = getNavbarSwitcherStyles();
+  const isMaster = envVariant === 'master';
+  const styles = getNavbarSwitcherStyles({ isMaster });
 
   return (
     <Button
       {...otherProps}
       aria-label={ariaLabel}
-      className={cx(styles.navbarSwitcher, className)}
+      className={cx(
+        styles.navbarSwitcher({ showSpaceEnv: !isLoading && !children }),
+        className,
+      )}
       endIcon={
         envVariant && (
           <NavbarEnvVariant
@@ -163,26 +146,37 @@ function _NavbarSwitcher(
         {isLoading ? (
           <NavbarSwitcherSkeleton estimatedWidth={148} />
         ) : (
-          <Flex gap={tokens.spacing2Xs} alignItems="center">
+          <>
             {children ? (
-              <Text fontColor="gray600">{children}</Text>
+              <Text className={styles.text}>{children}</Text>
             ) : (
-              <>
-                <SwitcherLabel type="space" value={space} styles={styles} />
-                {environment && (
-                  <>
-                    <CaretRightIcon size="tiny" color={tokens.gray500} />
-                    <SwitcherLabel
-                      envVariant={envVariant}
-                      type="environment"
-                      value={environment}
-                      styles={styles}
-                    />
-                  </>
-                )}
-              </>
+              <Flex gap={tokens.spacingXs}>
+                <Box className={styles.innerRectangle} />
+
+                <Flex
+                  className={styles.innerSpaceEnv}
+                  gap={tokens.spacing2Xs}
+                  alignItems="center"
+                >
+                  <SwitcherLabel value={space} styles={styles} />
+
+                  {environment && (
+                    <>
+                      <CaretRightIcon
+                        size="tiny"
+                        color={isMaster ? tokens.green700 : tokens.orange700}
+                      />
+                      <SwitcherLabel
+                        envVariant={envVariant}
+                        value={environment}
+                        styles={styles}
+                      />
+                    </>
+                  )}
+                </Flex>
+              </Flex>
             )}
-          </Flex>
+          </>
         )}
       </Flex>
     </Button>
