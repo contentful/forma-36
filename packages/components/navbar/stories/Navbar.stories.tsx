@@ -488,7 +488,7 @@ export const WithDifferentEnvironments: Story<{
         <Navbar
           mobileNavigation={<MobileMenu />}
           mainNavigation={<MainItems />}
-          switcher={<Switcher isAlias />}
+          switcher={<Switcher isAlias environment="master-alias" />}
           account={<Account {...args} />}
         />
       </Flex>
@@ -501,7 +501,14 @@ export const WithDifferentEnvironments: Story<{
         <Navbar
           mobileNavigation={<MobileMenu />}
           mainNavigation={<MainItems />}
-          switcher={<Switcher isAlias envVariant="non-master" />}
+          switcher={
+            <Switcher
+              isAlias
+              space="development"
+              environment="development-alias"
+              envVariant="non-master"
+            />
+          }
           account={<Account {...args} />}
         />
       </Flex>
