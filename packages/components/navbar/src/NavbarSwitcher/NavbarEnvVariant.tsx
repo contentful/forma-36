@@ -22,7 +22,7 @@ export function NavbarEnvVariant({
   const isMaster = envVariant === 'master';
   const color = isMaster ? tokens.green700 : tokens.orange700;
 
-  if (isMaster && !isAlias) {
+  if (isMaster) {
     return (
       <RocketLaunchIcon color={color} className={className} size="medium" />
     );
