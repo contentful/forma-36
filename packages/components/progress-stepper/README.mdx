@@ -74,6 +74,16 @@ Example of the ProgressStepper with buttons to move between steps.
 
 ```
 
+### Horizontal Label Width Limitation
+
+When the ProgressStepper renders in the horizontal orientation with labels, the component will have extra width on the sides of the first and last steps.
+This extra width is necessary in order to accommodate the centering of the labels under each step.
+This example demonstrates this extra width so that consumers of this component can plan accordingly in designs, as the ProgressStepper component will not be the same width as the content area.
+
+```jsx file=./examples/ProgressStepperHorizontalWidthLimitation.tsx
+
+```
+
 ## Props (API reference)
 
 ### ProgressStepper
