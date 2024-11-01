@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { axe } from '@/scripts/test/axeHelper';
+import { axe } from 'jest-axe';
 import { EntityStatusBadge } from './EntityStatusBadge';
 
 describe('EntityStatusBadge', function () {
