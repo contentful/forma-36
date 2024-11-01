@@ -70,7 +70,7 @@
     "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/user-event": "14.5.2",
     "@types/jest": "^29.2.2",
-    "@types/jest-axe": "3.5.4",
+    "@types/jest-axe": "3.5.9",
     "@types/storybook__react": "5.2.1",
     "@typescript-eslint/eslint-plugin": "^5.47.1",
     "@typescript-eslint/parser": "^5.37.0",
