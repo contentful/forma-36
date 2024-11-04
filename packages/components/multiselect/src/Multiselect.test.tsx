@@ -239,7 +239,7 @@ describe('Multiselect with search', () => {
     expect(screen.queryByText('No matches found')).not.toBeInTheDocument();
   });
 
-  it("renders item text without highlight, if search value doesn't match", async () => {
+  it("renders option label without highlight, if search value doesn't match", async () => {
     const [{ user }] = renderComponent({
       searchProps: {
         onSearchValueChange: mockOnSearchValueChange,
