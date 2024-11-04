@@ -57,7 +57,12 @@ function HighlightedItem({
   item: string;
   inputValue?: string;
 }) {
-  const { before, match, after } = getStringMatch(item, inputValue);
+  const { before, match, after } = getStringMatch(item, inputValue.trim());
+
+  if (before.length + match.length + after.length === 0) {
+    return <>{item}</>;
+  }
+
   return (
     <>
       {before}

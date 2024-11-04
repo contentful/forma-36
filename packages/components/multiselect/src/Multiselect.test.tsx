@@ -219,6 +219,46 @@ describe('Multiselect with search', () => {
     expect(screen.queryByText('No matches found')).not.toBeInTheDocument();
   });
 
+  it('trims search value', async () => {
+    const [{ user }] = renderComponent({
+      searchProps: {
+        onSearchValueChange: mockOnSearchValueChange,
+      },
+    });
+    await user.click(
+      screen.getByRole('button', { name: 'Toggle Multiselect' }),
+    );
+    const listFirstItem = screen.getByTestId('cf-multiselect-list-item-0');
+
+    await user.type(screen.getByRole('textbox', { name: 'Search' }), ' pp ');
+
+    expect(listFirstItem).toHaveTextContent('Apple');
+    expect(
+      within(listFirstItem).getByTestId('cf-multiselect-item-match'),
+    ).toHaveTextContent('pp');
+    expect(screen.queryByText('No matches found')).not.toBeInTheDocument();
+  });
+
+  it("renders item text without highlight, if search value doesn't match", async () => {
+    const [{ user }] = renderComponent({
+      searchProps: {
+        onSearchValueChange: mockOnSearchValueChange,
+      },
+    });
+    await user.click(
+      screen.getByRole('button', { name: 'Toggle Multiselect' }),
+    );
+    const listFirstItem = screen.getByTestId('cf-multiselect-list-item-0');
+
+    await user.type(screen.getByRole('textbox', { name: 'Search' }), 'Lemon');
+
+    expect(listFirstItem).toHaveTextContent('Apple');
+    expect(
+      within(listFirstItem).queryByTestId('cf-multiselect-item-match'),
+    ).not.toBeInTheDocument();
+    expect(screen.queryByText('No matches found')).not.toBeInTheDocument();
+  });
+
   it('shows the no matches found message when there are no elements', async () => {
     const [{ user }] = renderComponent(
       {
