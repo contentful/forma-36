@@ -1,5 +1,15 @@
 ## Change Log
 
+## 4.25.0
+
+### Minor Changes
+
+- [#2928](https://github.com/contentful/forma-36/pull/2928) [`5c9c55a`](https://github.com/contentful/forma-36/commit/5c9c55afdae7e79c097abd31d9dba4798aa11f02) Thanks [@andipaetzold](https://github.com/andipaetzold)! - improve option label highlighting by trimming the search value
+
+### Patch Changes
+
+- [#2928](https://github.com/contentful/forma-36/pull/2928) [`5c9c55a`](https://github.com/contentful/forma-36/commit/5c9c55afdae7e79c097abd31d9dba4798aa11f02) Thanks [@andipaetzold](https://github.com/andipaetzold)! - show option label if there is no match with the search value
+
 ## 4.24.0
 
 ### Minor Changes
