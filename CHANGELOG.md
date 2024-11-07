@@ -8,6 +8,13 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 07-11-2024
+
+**F36 Multiselect** `v4.25.0`
+
+- improve option label highlighting by trimming the search value
+- show option label if there is no match with the search value
+
 ## 17-10-2024
 
 **F36 Table** `v4.74.1`
