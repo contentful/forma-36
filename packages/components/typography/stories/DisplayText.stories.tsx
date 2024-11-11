@@ -37,7 +37,7 @@ export const Overview = (props: DisplayTextInternalProps) => (
 
     <Flex alignItems="center">
       <Flex marginRight="spacingS">
-        <Paragraph>28</Paragraph>
+        <Paragraph>24</Paragraph>
       </Flex>
       <DisplayText {...props} size="default" />
     </Flex>

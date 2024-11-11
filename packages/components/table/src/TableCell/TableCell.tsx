@@ -12,11 +12,11 @@ import {
   SortDescendingIcon,
   SortIcon,
 } from '@contentful/f36-icons';
+import { getTextFromChildren } from '@contentful/f36-utils';
 
 import { useTableCellContext } from './TableCellContext';
 import { getTableCellStyles } from './TableCell.styles';
 import { useTableContext } from '../tableContext';
-import { getTextFromChildren } from '@contentful/f36-utils/src';
 
 export enum TableCellSorting {
   Ascending = 'ascending',

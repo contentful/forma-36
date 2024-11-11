@@ -93,7 +93,9 @@ function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
                 {isValidElement(title) ? (
                   title
                 ) : (
-                  <Subheading className={styles.title}>{title}</Subheading>
+                  <Subheading as="h1" className={styles.title}>
+                    {title}
+                  </Subheading>
                 )}
               </div>
             )}

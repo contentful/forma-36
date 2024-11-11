@@ -1,0 +1,23 @@
+{
+  "name": "@contentful/f36-cdn",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Forma 36 CDN",
+  "type": "module",
+  "dependencies": {
+    "@fastly/js-compute": "3.24.3"
+  },
+  "devDependencies": {
+    "@fastly/cli": "10.14.0",
+    "@fastly/compute-js-static-publish": "6.1.1"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "deploy": "fastly compute deploy",
+    "prebuild": "npx compute-js-static-publish --build-static",
+    "build": "env -i $(which node) ./node_modules/.bin/js-compute-runtime ./src/index.js ./bin/main.wasm",
+    "serve": "fastly compute serve"
+  }
+}

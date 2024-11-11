@@ -1,7 +1,7 @@
 const fontSize = {
   'font-size-4xl': '3rem',
   'font-size-3xl': '2.25rem',
-  'font-size-2xl': '1.75rem',
+  'font-size-2xl': '1.5rem',
   'font-size-xl': '1.25rem',
   'font-size-xl-high': '1.125rem',
   'font-size-l': '1rem',

@@ -1,0 +1,11 @@
+# This file describes a Fastly Compute package. To learn more visit:
+# https://developer.fastly.com/reference/fastly-toml/
+
+description = "Forma 36 CDN"
+language = "javascript"
+manifest_version = 2
+name = "f36-cdn"
+
+[scripts]
+  build = "npm run build"
+  
