@@ -1,1 +1,1 @@
-{}
+{"**F36 Button** `v4.74.2`":["- We keep startIcon visible even when isLoading flag is true, we replace only endIcon with loading icon\n"]}

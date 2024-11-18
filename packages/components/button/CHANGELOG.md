@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.74.2
+
+### Patch Changes
+
+- [#2935](https://github.com/contentful/forma-36/pull/2935) [`c885c02`](https://github.com/contentful/forma-36/commit/c885c0298d31fb02a56e2dbb95faeeeaa07d8e54) Thanks [@bgutsol](https://github.com/bgutsol)! - We keep startIcon visible even when isLoading flag is true, we replace only endIcon with loading icon
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.74.2
+  - @contentful/f36-spinner@4.74.2
+  - @contentful/f36-tooltip@4.74.2
+
 ## 4.74.1
 
 ### Patch Changes
