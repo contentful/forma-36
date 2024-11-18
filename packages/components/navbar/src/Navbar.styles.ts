@@ -62,7 +62,12 @@ export const getNavbarStyles = ({
       },
     },
   }),
-
+  promoNavigationWrapper: css({
+    display: 'none',
+    [mqs.small]: {
+      display: 'flex',
+    },
+  }),
   account: css({
     display: 'none',
     [mqs.xsmall]: {

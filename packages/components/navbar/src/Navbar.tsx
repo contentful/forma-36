@@ -108,7 +108,14 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
           )}
         </Flex>
         <Flex alignItems="center" gap="spacingXs">
-          <Flex alignItems="center">{promotions}</Flex>
+          <Flex
+            alignItems="center"
+            className={styles.promoNavigationWrapper}
+            aria-label="Promotions"
+            gap="spacingXs"
+          >
+            {promotions}
+          </Flex>
           <Flex alignItems="center">{switcher}</Flex>
           <Flex alignItems="center" gap="spacingXs">
             {secondaryNavigation && (

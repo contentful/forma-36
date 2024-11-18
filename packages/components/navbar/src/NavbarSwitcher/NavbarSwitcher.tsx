@@ -91,7 +91,7 @@ const SwitcherLabel = ({ value, styles }: SwitcherLabelProps) => {
       {middle && (
         <span className={styles.switcherSpaceNameTruncation}>{middle}</span>
       )}
-      {end && <span>{end}</span>}
+      {end && <span className={styles.switcherSpaceNameEnd}>{end}</span>}
     </Text>
   ) : (
     <Text className={styles.text}>{value}</Text>

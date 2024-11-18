@@ -14,6 +14,19 @@ export const getNavbarSwitcherStyles = ({
   text: css({
     color: 'currentcolor',
     fontWeight: 'inherit',
+    lineHeight: 'unset',
+    'span:first-child': {
+      display: 'inline-block',
+      verticalAlign: 'middle',
+      lineHeight: '1.25rem',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+      width: '5ch',
+      [mqs.xsmall]: {
+        width: 'unset',
+      },
+    },
   }),
 
   navbarSwitcher: ({ showSpaceEnv }: { showSpaceEnv: boolean }) =>
@@ -65,7 +78,7 @@ export const getNavbarSwitcherStyles = ({
     },
     maxWidth: '15vw',
     [mqs.xsmall]: {
-      maxWidth: '50vw',
+      maxWidth: '25vw',
     },
     [mqs.small]: {
       maxWidth: '10vw',
@@ -83,10 +96,31 @@ export const getNavbarSwitcherStyles = ({
   }),
 
   switcherSpaceNameTruncation: css({
-    flexShrink: 1,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
+    lineHeight: '1.25rem',
+    verticalAlign: 'middle',
+    display: 'none',
+    [mqs.xsmall]: {
+      display: 'inline-block',
+      width: '5ch',
+    },
+    [mqs.small]: {
+      width: '8ch',
+    },
+    [mqs.medium]: {
+      width: 'unset',
+    },
+  }),
+
+  switcherSpaceNameEnd: css({
+    display: 'none',
+    [mqs.medium]: {
+      display: 'inline-block',
+      verticalAlign: 'middle',
+      lineHeight: '1.25rem',
+    },
   }),
 });
 

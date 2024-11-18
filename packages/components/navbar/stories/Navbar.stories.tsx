@@ -309,7 +309,12 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
   return (
     <Navbar
       mobileNavigation={<MobileMenu />}
-      promotions={<TextLink>Upgrade</TextLink>}
+      promotions={
+        <>
+          <TextLink>Upgrade</TextLink>
+          <Navbar.Item title="Feedback"></Navbar.Item>
+        </>
+      }
       switcher={<Switcher />}
       mainNavigation={<MainItems />}
       account={
@@ -320,7 +325,6 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
       }
       secondaryNavigation={
         <>
-          <Navbar.Item title="Feedback"></Navbar.Item>
           <Navbar.Item label="Quick Search" icon={<MagnifyingGlassIcon />} />
           <Navbar.Item label="Help Menu" icon={<QuestionIcon />}>
             <Navbar.MenuItem
