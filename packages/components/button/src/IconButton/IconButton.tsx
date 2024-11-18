@@ -93,7 +93,8 @@ function _IconButton<
       variant={variant}
       className={cx(styles.iconButton, className)}
       size={size}
-      startIcon={icon}
+      // we pass the icon as endIcon prop to have it replaced with loading icon, when isLoading prop is true
+      endIcon={icon}
       aria-label={ariaLabel}
       {...otherProps}
     />
