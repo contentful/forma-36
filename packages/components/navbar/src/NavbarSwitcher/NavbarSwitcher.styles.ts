@@ -15,18 +15,6 @@ export const getNavbarSwitcherStyles = ({
     color: 'currentcolor',
     fontWeight: 'inherit',
     lineHeight: 'unset',
-    'span:first-child': {
-      display: 'inline-block',
-      verticalAlign: 'middle',
-      lineHeight: '1.25rem',
-      overflow: 'hidden',
-      textOverflow: 'ellipsis',
-      whiteSpace: 'nowrap',
-      width: '5ch',
-      [mqs.xsmall]: {
-        width: 'unset',
-      },
-    },
   }),
 
   navbarSwitcher: ({ showSpaceEnv }: { showSpaceEnv: boolean }) =>
@@ -92,6 +80,19 @@ export const getNavbarSwitcherStyles = ({
     [mqs.small]: {
       width: '16px',
       height: '16px',
+    },
+  }),
+
+  switcherSpaceNameStart: css({
+    display: 'inline-block',
+    verticalAlign: 'middle',
+    lineHeight: '1.25rem',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    width: '5ch',
+    [mqs.small]: {
+      width: 'unset',
     },
   }),
 
