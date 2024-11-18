@@ -107,9 +107,6 @@ export const getNavbarSwitcherStyles = ({
       display: 'inline-block',
       width: '5ch',
     },
-    [mqs.small]: {
-      width: '8ch',
-    },
     [mqs.medium]: {
       width: 'unset',
     },
