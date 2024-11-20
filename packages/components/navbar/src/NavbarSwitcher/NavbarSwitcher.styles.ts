@@ -97,7 +97,8 @@ export const getNavbarSwitcherStyles = ({
   }),
 
   switcherLabelStart: css({
-    minWidth: '0',
+    maxWidth: '12ch',
+    width: '100%',
     flexShrink: 0,
   }),
 
