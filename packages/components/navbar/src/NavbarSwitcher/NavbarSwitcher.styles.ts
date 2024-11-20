@@ -11,31 +11,44 @@ export const getNavbarSwitcherStyles = ({
 }: {
   isMaster: boolean;
 }) => ({
-  text: css({
-    color: 'currentcolor',
-    fontWeight: 'inherit',
-    lineHeight: 'unset',
-  }),
-
   navbarSwitcher: ({ showSpaceEnv }: { showSpaceEnv: boolean }) =>
     css(
       {
         color: tokens.gray600,
         flexShrink: 1,
         fontWeight: tokens.fontWeightMedium,
-        maxWidth: '100%',
+
+        maxWidth: '50vw',
         minHeight: 'unset',
         padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
         '&:hover': {
           backgroundColor: hexToRGBA(tokens.gray900, 0.05),
+        },
+        [mqs.xsmall]: {
+          maxWidth: '45vw',
+        },
+        [mqs.medium]: {
+          maxWidth: '35vw',
+        },
+        [mqs.large]: {
+          maxWidth: '25vw',
+        },
+        [mqs.xlarge]: {
+          maxWidth: '100%',
         },
       },
       showSpaceEnv && getEnvVariantColor(isMaster),
       getGlowOnFocusStyles(),
       increaseHitArea(),
     ),
-
-  innerRectangle: css({
+  switcherWrapper: css({
+    // Set min-width only when there are three span children
+    minWidth: 0,
+    '&:has(> span:last-child:nth-child(3))': {
+      minWidth: '12ch',
+    },
+  }),
+  decorator: css({
     width: `calc(8px - ${BORDER_WIDTH}px)`,
     borderTopLeftRadius: `calc(${tokens.borderRadiusMedium} - ${BORDER_WIDTH}px)`,
     borderBottomLeftRadius: `calc(${tokens.borderRadiusMedium} - ${BORDER_WIDTH}px)`,
@@ -55,69 +68,54 @@ export const getNavbarSwitcherStyles = ({
     backgroundPosition: 'bottom',
   }),
 
-  innerSpaceEnv: css({
+  switcherLabelWrapper: css({
     height: '26px',
+    alignItems: 'center',
+    gap: tokens.spacing2Xs,
+    maxWidth: '100%',
   }),
 
-  switcherSpaceName: css({
-    // Set min-width only when there are three span children
-    '&:has(> span:last-child:nth-child(3))': {
-      minWidth: '12ch',
-    },
-    maxWidth: '15vw',
-    [mqs.xsmall]: {
-      maxWidth: '25vw',
-    },
-    [mqs.small]: {
-      maxWidth: '10vw',
-    },
-    [mqs.medium]: {
-      maxWidth: '50vw',
-    },
+  switcherInner: css({
+    display: 'flex',
+    alignItems: 'center',
+    gap: tokens.spacingXs,
+    maxWidth: '100%',
+  }),
+
+  switcherLabel: css({
+    color: 'currentcolor',
+    fontWeight: 'inherit',
+    lineHeight: 'unset',
+    display: 'flex',
+    flexShrink: 1,
+    minWidth: '0',
+  }),
+
+  switcherCaret: css({
+    flexShrink: 0,
+    minWidth: 0,
+  }),
+
+  switcherLabelStart: css({
+    minWidth: '0',
+    flexShrink: 0,
+  }),
+
+  switcherLabelTruncation: css({
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+  }),
+
+  switcherLabelEnd: css({
+    minWidth: '0',
+    flexShrink: 0,
   }),
 
   switcherEnvIcon: css({
     [mqs.small]: {
       width: '16px',
       height: '16px',
-    },
-  }),
-
-  switcherSpaceNameStart: css({
-    display: 'inline-block',
-    verticalAlign: 'middle',
-    lineHeight: '1.25rem',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
-    width: '5ch',
-    [mqs.small]: {
-      width: 'unset',
-    },
-  }),
-
-  switcherSpaceNameTruncation: css({
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
-    lineHeight: '1.25rem',
-    verticalAlign: 'middle',
-    display: 'none',
-    [mqs.xsmall]: {
-      display: 'inline-block',
-      width: '5ch',
-    },
-    [mqs.medium]: {
-      width: 'unset',
-    },
-  }),
-
-  switcherSpaceNameEnd: css({
-    display: 'none',
-    [mqs.medium]: {
-      display: 'inline-block',
-      verticalAlign: 'middle',
-      lineHeight: '1.25rem',
     },
   }),
 });

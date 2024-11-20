@@ -86,15 +86,15 @@ const SwitcherLabel = ({ value, styles }: SwitcherLabelProps) => {
     typeof value === 'string' ? splitString(value) : [];
 
   return start !== undefined ? (
-    <Text className={styles.text}>
-      <span className={styles.switcherSpaceNameStart}>{start}</span>
+    <Text className={styles.switcherLabel}>
+      <span className={styles.switcherLabelStart}>{start}</span>
       {middle && (
-        <span className={styles.switcherSpaceNameTruncation}>{middle}</span>
+        <span className={styles.switcherLabelTruncation}>{middle}</span>
       )}
-      {end && <span className={styles.switcherSpaceNameEnd}>{end}</span>}
+      {end && <span className={styles.switcherLabelEnd}>{end}</span>}
     </Text>
   ) : (
-    <Text className={styles.text}>{value}</Text>
+    <Text className={styles.switcherLabel}>{value}</Text>
   );
 };
 
@@ -140,7 +140,7 @@ function _NavbarSwitcher(
     >
       <Flex
         alignItems="center"
-        className={styles.switcherSpaceName}
+        className={styles.switcherWrapper}
         flexDirection="row"
       >
         {isLoading ? (
@@ -148,24 +148,20 @@ function _NavbarSwitcher(
         ) : (
           <>
             {children ? (
-              <Text className={styles.text}>{children}</Text>
+              <Text className={styles.switcherLabel}>{children}</Text>
             ) : (
-              <Flex gap={tokens.spacingXs}>
-                <Box className={styles.innerRectangle} />
-
-                <Flex
-                  className={styles.innerSpaceEnv}
-                  gap={tokens.spacing2Xs}
-                  alignItems="center"
-                >
+              <Flex className={styles.switcherInner}>
+                <Box className={styles.decorator} />
+                <Flex className={styles.switcherLabelWrapper}>
                   <SwitcherLabel value={space} styles={styles} />
-
                   {environment && (
                     <>
-                      <CaretRightIcon
-                        size="tiny"
-                        color={isMaster ? tokens.green700 : tokens.orange700}
-                      />
+                      <Box className={styles.switcherCaret}>
+                        <CaretRightIcon
+                          size="tiny"
+                          color={isMaster ? tokens.green700 : tokens.orange700}
+                        />
+                      </Box>
                       <SwitcherLabel
                         envVariant={envVariant}
                         value={environment}

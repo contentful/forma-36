@@ -3,6 +3,7 @@ import type { CSSObject } from '@emotion/serialize';
 
 type screens = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
 type mediaqueries = Record<screens, string>;
+
 export const mqs: mediaqueries = {
   xsmall: '@media (min-width: 576px)',
   small: '@media (min-width: 867px)',

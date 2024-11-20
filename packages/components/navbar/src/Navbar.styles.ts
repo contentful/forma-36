@@ -64,7 +64,7 @@ export const getNavbarStyles = ({
   }),
   promoNavigationWrapper: css({
     display: 'none',
-    [mqs.small]: {
+    [mqs.large]: {
       display: 'flex',
     },
   }),

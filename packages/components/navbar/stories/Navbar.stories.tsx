@@ -17,6 +17,7 @@ import { Flex } from '@contentful/f36-core';
 import { NavbarAccountProps } from '../src/NavbarAccount/NavbarAccount';
 import { NavbarSwitcherProps } from '../src/NavbarSwitcher/NavbarSwitcher';
 import { TextLink } from '@contentful/f36-components';
+import { css } from 'emotion';
 
 export default {
   component: Navbar,
@@ -24,8 +25,8 @@ export default {
 } as Meta;
 
 const Switcher = ({
-  space = 'Our super long space name',
-  environment = 'master',
+  space = 'Contentfuls',
+  environment = 'Staging-5e7d1f7e-3b6b-4b0b-8b2e-4f6d0f7f3f5d',
   isAlias = false,
   envVariant = 'master',
 }: Partial<NavbarSwitcherProps>) => (
@@ -307,71 +308,94 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
   args,
 ) => {
   return (
-    <Navbar
-      mobileNavigation={<MobileMenu />}
-      promotions={
-        <>
-          <TextLink>Upgrade</TextLink>
-          <Navbar.Item title="Feedback"></Navbar.Item>
-        </>
-      }
-      switcher={<Switcher />}
-      mainNavigation={<MainItems />}
-      account={
-        <>
-          <Navbar.Badge>Trial</Navbar.Badge>
-          <Account {...args} />
-        </>
-      }
-      secondaryNavigation={
-        <>
-          <Navbar.Item label="Quick Search" icon={<MagnifyingGlassIcon />} />
-          <Navbar.Item label="Help Menu" icon={<QuestionIcon />}>
-            <Navbar.MenuItem
-              as="a"
+    <div
+      className={css({
+        position: 'relative',
+        flex: '1 1 auto',
+        display: 'flex',
+        justifyContent: 'center',
+        minHeight: '300px',
+        width: '100vw',
+        height: '100vh',
+        margin: '-1rem',
+        backgroundColor: 'lavender',
+        flexDirection: 'column',
+      })}
+      id="story-wrapper"
+    >
+      <Navbar
+        mobileNavigation={<MobileMenu />}
+        promotions={
+          <>
+            <TextLink>Upgrade</TextLink>
+            <TextLink
+              icon={<MagnifyingGlassIcon />}
+              href="https://app.contentful.com"
               target="_blank"
               rel="noopener noreferrer"
-              title="Help center"
-              testId="cf-ui-navbar-help-menu-help-center"
-              href={'https://www.contentful.com/help/'}
-            />
-            <Navbar.MenuItem
-              as="a"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Developer docs"
-              testId="cf-ui-navbar-help-menu-docs"
-              href="https://www.contentful.com/developers/docs/"
-            />
-            <Navbar.MenuItem
-              as="a"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Training courses"
-              testId="cf-ui-navbar-help-traning-center"
-              href="https://training.contentful.com"
-            />
-            <Navbar.MenuDivider />
-            <Navbar.MenuItem
-              as="a"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Get support"
-              testId="cf-ui-navbar-help-support"
-              href="https://support.contentful.com"
-            />
-          </Navbar.Item>
-          <Navbar.Item label="Menu Settings" icon={<GearSixIcon />}>
-            <Navbar.MenuSectionTitle>General</Navbar.MenuSectionTitle>
-            <Navbar.MenuItem title="Home" />
-            <Navbar.MenuItem title="API keys" />
-            <Navbar.MenuSectionTitle>Space</Navbar.MenuSectionTitle>
-            <Navbar.MenuItem title="Apps" />
-            <Navbar.MenuItem title="Permissions" />
-          </Navbar.Item>
-        </>
-      }
-    />
+            >
+              Feedback
+            </TextLink>
+          </>
+        }
+        switcher={<Switcher />}
+        mainNavigation={<MainItems />}
+        account={
+          <>
+            <Navbar.Badge>Trial</Navbar.Badge>
+            <Account {...args} />
+          </>
+        }
+        secondaryNavigation={
+          <>
+            <Navbar.Item label="Quick Search" icon={<MagnifyingGlassIcon />} />
+            <Navbar.Item label="Help Menu" icon={<QuestionIcon />}>
+              <Navbar.MenuItem
+                as="a"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Help center"
+                testId="cf-ui-navbar-help-menu-help-center"
+                href={'https://www.contentful.com/help/'}
+              />
+              <Navbar.MenuItem
+                as="a"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Developer docs"
+                testId="cf-ui-navbar-help-menu-docs"
+                href="https://www.contentful.com/developers/docs/"
+              />
+              <Navbar.MenuItem
+                as="a"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Training courses"
+                testId="cf-ui-navbar-help-traning-center"
+                href="https://training.contentful.com"
+              />
+              <Navbar.MenuDivider />
+              <Navbar.MenuItem
+                as="a"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Get support"
+                testId="cf-ui-navbar-help-support"
+                href="https://support.contentful.com"
+              />
+            </Navbar.Item>
+            <Navbar.Item label="Menu Settings" icon={<GearSixIcon />}>
+              <Navbar.MenuSectionTitle>General</Navbar.MenuSectionTitle>
+              <Navbar.MenuItem title="Home" />
+              <Navbar.MenuItem title="API keys" />
+              <Navbar.MenuSectionTitle>Space</Navbar.MenuSectionTitle>
+              <Navbar.MenuItem title="Apps" />
+              <Navbar.MenuItem title="Permissions" />
+            </Navbar.Item>
+          </>
+        }
+      />
+    </div>
   );
 };
 
