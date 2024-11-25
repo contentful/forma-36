@@ -76,7 +76,7 @@ export const getNavbarSwitcherStyles = ({
 
   switcherLabelWrapper: css({
     height: '26px',
-    paddingLeft: '8px',
+    paddingLeft: `calc(${tokens.spacingXs} * 2)`,
     alignItems: 'center',
     gap: tokens.spacing2Xs,
     maxWidth: '100%',
