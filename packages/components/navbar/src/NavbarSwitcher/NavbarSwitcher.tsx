@@ -75,29 +75,6 @@ export type NavbarSwitcherProps = PropsWithHTMLElement<
   'button'
 >;
 
-type SwitcherLabelProps = {
-  value: React.ReactNode;
-  styles: ReturnType<typeof getNavbarSwitcherStyles>;
-  envVariant?: EnvVariant;
-};
-
-const SwitcherLabel = ({ value, styles }: SwitcherLabelProps) => {
-  const [start, middle, end] =
-    typeof value === 'string' ? splitString(value) : [];
-
-  return start !== undefined ? (
-    <Text className={styles.switcherLabel}>
-      <span className={styles.switcherLabelStart}>{start}</span>
-      {middle && (
-        <span className={styles.switcherLabelTruncation}>{middle}</span>
-      )}
-      {end && <span className={styles.switcherLabelEnd}>{end}</span>}
-    </Text>
-  ) : (
-    <Text className={styles.switcherLabel}>{value}</Text>
-  );
-};
-
 function _NavbarSwitcher(
   props: ExpandProps<NavbarSwitcherProps>,
   ref: React.Ref<HTMLButtonElement>,
@@ -138,11 +115,7 @@ function _NavbarSwitcher(
       testId={testId}
       variant="transparent"
     >
-      <Flex
-        alignItems="center"
-        className={styles.switcherWrapper}
-        flexDirection="row"
-      >
+      <Flex className={styles.switcherWrapper}>
         {isLoading ? (
           <NavbarSwitcherSkeleton estimatedWidth={148} />
         ) : (
@@ -150,26 +123,19 @@ function _NavbarSwitcher(
             {children ? (
               <Text className={styles.switcherLabel}>{children}</Text>
             ) : (
-              <Flex className={styles.switcherInner}>
-                <Box className={styles.decorator} />
-                <Flex className={styles.switcherLabelWrapper}>
-                  <SwitcherLabel value={space} styles={styles} />
-                  {environment && (
-                    <>
-                      <Box className={styles.switcherCaret}>
-                        <CaretRightIcon
-                          size="tiny"
-                          color={isMaster ? tokens.green700 : tokens.orange700}
-                        />
-                      </Box>
-                      <SwitcherLabel
-                        envVariant={envVariant}
-                        value={environment}
-                        styles={styles}
+              <Flex className={styles.switcherLabelWrapper}>
+                <Text className={styles.switcherLabel}>{space}</Text>
+                {environment && (
+                  <>
+                    <Flex className={styles.switcherCaret}>
+                      <CaretRightIcon
+                        size="tiny"
+                        color={isMaster ? tokens.green700 : tokens.orange700}
                       />
-                    </>
-                  )}
-                </Flex>
+                    </Flex>
+                    <Text className={styles.switcherLabel}>{environment}</Text>
+                  </>
+                )}
               </Flex>
             )}
           </>

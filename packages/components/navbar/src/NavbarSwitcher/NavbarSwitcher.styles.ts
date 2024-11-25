@@ -34,7 +34,7 @@ export const getNavbarSwitcherStyles = ({
           maxWidth: '25vw',
         },
         [mqs.xlarge]: {
-          maxWidth: '100%',
+          maxWidth: '600px',
         },
       },
       showSpaceEnv && getEnvVariantColor(isMaster),
@@ -43,42 +43,42 @@ export const getNavbarSwitcherStyles = ({
     ),
   switcherWrapper: css({
     // Set min-width only when there are three span children
+    gap: tokens.spacingXs,
+    alignItems: 'center',
     minWidth: 0,
     '&:has(> span:last-child:nth-child(3))': {
       minWidth: '12ch',
     },
-  }),
-  decorator: css({
-    width: `calc(8px - ${BORDER_WIDTH}px)`,
-    borderTopLeftRadius: `calc(${tokens.borderRadiusMedium} - ${BORDER_WIDTH}px)`,
-    borderBottomLeftRadius: `calc(${tokens.borderRadiusMedium} - ${BORDER_WIDTH}px)`,
-    background: isMaster
-      ? tokens.green300
-      : `linear-gradient(
-        -45deg, 
-        ${tokens.orange300} 28.57%, 
-        transparent 28.57%, 
-        transparent 50%, 
-        ${tokens.orange300} 50%, 
-        ${tokens.orange300} 78.57%, 
-        transparent 78.57%, 
-        transparent 100%
-      )`,
-    backgroundSize: isMaster ? 'inherit' : '9px 9px',
-    backgroundPosition: 'bottom',
+    '&:before': css({
+      content: '""',
+      position: 'absolute',
+      display: 'block',
+      width: `calc(8px - ${BORDER_WIDTH}px)`,
+      height: '26px',
+      borderTopLeftRadius: `calc(${tokens.borderRadiusMedium} - ${BORDER_WIDTH}px)`,
+      borderBottomLeftRadius: `calc(${tokens.borderRadiusMedium} - ${BORDER_WIDTH}px)`,
+      background: isMaster
+        ? tokens.green300
+        : `linear-gradient(
+          -45deg, 
+          ${tokens.orange300} 28.57%, 
+          transparent 28.57%, 
+          transparent 50%, 
+          ${tokens.orange300} 50%, 
+          ${tokens.orange300} 78.57%, 
+          transparent 78.57%, 
+          transparent 100%
+        )`,
+      backgroundSize: isMaster ? 'inherit' : '9px 9px',
+      backgroundPosition: 'bottom',
+    }),
   }),
 
   switcherLabelWrapper: css({
     height: '26px',
+    paddingLeft: '8px',
     alignItems: 'center',
     gap: tokens.spacing2Xs,
-    maxWidth: '100%',
-  }),
-
-  switcherInner: css({
-    display: 'flex',
-    alignItems: 'center',
-    gap: tokens.spacingXs,
     maxWidth: '100%',
   }),
 
@@ -86,9 +86,12 @@ export const getNavbarSwitcherStyles = ({
     color: 'currentcolor',
     fontWeight: 'inherit',
     lineHeight: 'unset',
-    display: 'flex',
+    display: 'inline-block',
     flexShrink: 1,
     minWidth: '0',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
   }),
 
   switcherCaret: css({
@@ -96,24 +99,8 @@ export const getNavbarSwitcherStyles = ({
     minWidth: 0,
   }),
 
-  switcherLabelStart: css({
-    maxWidth: '12ch',
-    width: '100%',
-    flexShrink: 0,
-  }),
-
-  switcherLabelTruncation: css({
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
-  }),
-
-  switcherLabelEnd: css({
-    minWidth: '0',
-    flexShrink: 0,
-  }),
-
   switcherEnvIcon: css({
+    minWidth: '0',
     [mqs.small]: {
       width: '16px',
       height: '16px',

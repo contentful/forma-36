@@ -25,8 +25,8 @@ export default {
 } as Meta;
 
 const Switcher = ({
-  space = 'Contentfuls',
-  environment = 'Staging-5e7d1f7e-3b6b-4b0b-8b2e-4f6d0f7f3f5d',
+  space = "Kathrin's space",
+  environment = 'staging',
   isAlias = false,
   envVariant = 'master',
 }: Partial<NavbarSwitcherProps>) => (
