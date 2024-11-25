@@ -41,25 +41,26 @@ export const getNavbarSwitcherStyles = ({
       getGlowOnFocusStyles(),
       increaseHitArea(),
     ),
-  switcherWrapper: css({
-    // Set min-width only when there are three span children
-    gap: tokens.spacingXs,
-    alignItems: 'center',
-    minWidth: 0,
-    '&:has(> span:last-child:nth-child(3))': {
-      minWidth: '12ch',
-    },
-    '&:before': css({
-      content: '""',
-      position: 'absolute',
-      display: 'block',
-      width: `calc(8px - ${BORDER_WIDTH}px)`,
-      height: '26px',
-      borderTopLeftRadius: `calc(${tokens.borderRadiusMedium} - ${BORDER_WIDTH}px)`,
-      borderBottomLeftRadius: `calc(${tokens.borderRadiusMedium} - ${BORDER_WIDTH}px)`,
-      background: isMaster
-        ? tokens.green300
-        : `linear-gradient(
+  switcherWrapper: ({ showSpaceEnv }: { showSpaceEnv: boolean }) =>
+    css({
+      // Set min-width only when there are three span children
+      gap: tokens.spacingXs,
+      alignItems: 'center',
+      minWidth: 0,
+      '&:has(> span:last-child:nth-child(3))': {
+        minWidth: '12ch',
+      },
+      '&:before': css({
+        content: '""',
+        position: 'absolute',
+        display: 'block',
+        width: `calc(8px - ${BORDER_WIDTH}px)`,
+        height: showSpaceEnv ? '26px' : 'unset',
+        borderTopLeftRadius: `calc(${tokens.borderRadiusMedium} - ${BORDER_WIDTH}px)`,
+        borderBottomLeftRadius: `calc(${tokens.borderRadiusMedium} - ${BORDER_WIDTH}px)`,
+        background: isMaster
+          ? tokens.green300
+          : `linear-gradient(
           -45deg, 
           ${tokens.orange300} 28.57%, 
           transparent 28.57%, 
@@ -69,10 +70,10 @@ export const getNavbarSwitcherStyles = ({
           transparent 78.57%, 
           transparent 100%
         )`,
-      backgroundSize: isMaster ? 'inherit' : '9px 9px',
-      backgroundPosition: 'bottom',
+        backgroundSize: isMaster ? 'inherit' : '9px 9px',
+        backgroundPosition: 'bottom',
+      }),
     }),
-  }),
 
   switcherLabelWrapper: css({
     height: '26px',

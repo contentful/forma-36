@@ -6,7 +6,6 @@ import {
   type CommonProps,
   type PropsWithHTMLElement,
   type ExpandProps,
-  Box,
 } from '@contentful/f36-core';
 import { cx } from 'emotion';
 import { NavbarEnvVariant } from './NavbarEnvVariant';
@@ -14,37 +13,6 @@ import { NavbarSwitcherSkeleton } from './NavbarSwitcherSkeleton';
 import { CaretRightIcon } from '@contentful/f36-icons';
 import { Text } from '@contentful/f36-typography';
 import tokens from '@contentful/f36-tokens';
-
-type TruncateOptions = {
-  /**
-   * Number of characters to keep at the start of the string
-   * @default 5
-   */
-  start?: number;
-  /**
-   * Number of characters to keep at the end of the string
-   * @default 6
-   */
-  end?: number;
-};
-
-function splitString(
-  string: string,
-  {
-    start: startLength = 5,
-    end: endLength = 6,
-  }: TruncateOptions | undefined = {},
-) {
-  if (string.length <= startLength + endLength) {
-    return [string, undefined, undefined];
-  }
-
-  const start = startLength > 0 ? string.slice(0, startLength) : '';
-  const end = endLength > 0 ? string.slice(-endLength) : '';
-  const remainder = string.slice(startLength, string.length - endLength);
-
-  return [start, remainder, end];
-}
 
 export type EnvVariant = 'master' | 'non-master';
 
@@ -115,7 +83,11 @@ function _NavbarSwitcher(
       testId={testId}
       variant="transparent"
     >
-      <Flex className={styles.switcherWrapper}>
+      <Flex
+        className={styles.switcherWrapper({
+          showSpaceEnv: !isLoading && !children,
+        })}
+      >
         {isLoading ? (
           <NavbarSwitcherSkeleton estimatedWidth={148} />
         ) : (
