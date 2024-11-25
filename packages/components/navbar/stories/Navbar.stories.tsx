@@ -395,6 +395,69 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
           </>
         }
       />
+      <div
+        className={css({
+          margin: '1rem',
+        })}
+      >
+        <SectionHeading>With different mobile breakpoint</SectionHeading>
+      </div>
+      <Navbar
+        mobileNavigation={<MobileMenu />}
+        mobileNavigationBp="medium"
+        promotions={
+          <>
+            <TextLink>Upgrade</TextLink>
+          </>
+        }
+        switcher={<Switcher />}
+        mainNavigation={<MainItems />}
+        account={
+          <>
+            <Navbar.Badge>Trial</Navbar.Badge>
+            <Account {...args} />
+          </>
+        }
+        secondaryNavigation={
+          <>
+            <Navbar.Item label="Help Menu" icon={<QuestionIcon />}>
+              <Navbar.MenuItem
+                as="a"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Help center"
+                testId="cf-ui-navbar-help-menu-help-center"
+                href={'https://www.contentful.com/help/'}
+              />
+              <Navbar.MenuItem
+                as="a"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Developer docs"
+                testId="cf-ui-navbar-help-menu-docs"
+                href="https://www.contentful.com/developers/docs/"
+              />
+              <Navbar.MenuItem
+                as="a"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Training courses"
+                testId="cf-ui-navbar-help-traning-center"
+                href="https://training.contentful.com"
+              />
+              <Navbar.MenuDivider />
+              <Navbar.MenuItem
+                as="a"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Get support"
+                testId="cf-ui-navbar-help-support"
+                href="https://support.contentful.com"
+              />
+            </Navbar.Item>
+          </>
+        }
+      />
     </div>
   );
 };

@@ -32,23 +32,45 @@ export const getNavbarStyles = ({
     },
   }),
 
-  mainNavigation: css({
-    display: 'none',
-    [mqs.small]: {
-      display: 'flex',
-    },
-  }),
+  mainNavigation: (mobileNavigationBp: 'small' | 'medium') =>
+    css(
+      {
+        display: 'none',
+      },
+      mobileNavigationBp === 'small'
+        ? {
+            [mqs.small]: {
+              display: 'flex',
+            },
+          }
+        : {
+            [mqs.medium]: {
+              display: 'flex',
+            },
+          },
+    ),
 
-  mobileNavigationButton: css({
-    display: 'flex',
-    minHeight: 'initial', // unset default 40px height
-    height: '36px',
-    padding: '0 12px',
-    borderRadius: '10px',
-    [mqs.small]: {
-      display: 'none',
-    },
-  }),
+  mobileNavigationButton: (mobileNavigationBp: 'small' | 'medium') =>
+    css(
+      {
+        display: 'flex',
+        minHeight: 'initial', // unset default 40px height
+        height: '36px',
+        padding: '0 12px',
+        borderRadius: '10px',
+      },
+      mobileNavigationBp === 'small'
+        ? {
+            [mqs.small]: {
+              display: 'none',
+            },
+          }
+        : {
+            [mqs.medium]: {
+              display: 'none',
+            },
+          },
+    ),
   mobileNavigationIcon: css({
     heigt: '20px',
     width: '20px',
