@@ -11,82 +11,101 @@ export const getNavbarSwitcherStyles = ({
 }: {
   isMaster: boolean;
 }) => ({
-  text: css({
-    color: 'currentcolor',
-    fontWeight: 'inherit',
-  }),
-
   navbarSwitcher: ({ showSpaceEnv }: { showSpaceEnv: boolean }) =>
     css(
       {
         color: tokens.gray600,
         flexShrink: 1,
         fontWeight: tokens.fontWeightMedium,
-        maxWidth: '100%',
+
+        maxWidth: '50vw',
         minHeight: 'unset',
         padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
         '&:hover': {
           backgroundColor: hexToRGBA(tokens.gray900, 0.05),
+        },
+        [mqs.xsmall]: {
+          maxWidth: '45vw',
+        },
+        [mqs.medium]: {
+          maxWidth: '35vw',
+        },
+        [mqs.large]: {
+          maxWidth: '25vw',
+        },
+        [mqs.xlarge]: {
+          maxWidth: '600px',
         },
       },
       showSpaceEnv && getEnvVariantColor(isMaster),
       getGlowOnFocusStyles(),
       increaseHitArea(),
     ),
+  switcherWrapper: ({ showSpaceEnv }: { showSpaceEnv: boolean }) =>
+    css({
+      // Set min-width only when there are three span children
+      gap: tokens.spacingXs,
+      alignItems: 'center',
+      minWidth: 0,
+      '&:has(> span:last-child:nth-child(3))': {
+        minWidth: '12ch',
+      },
+      '&:before': css({
+        content: '""',
+        position: 'absolute',
+        display: 'block',
+        width: `calc(8px - ${BORDER_WIDTH}px)`,
+        height: showSpaceEnv ? '26px' : 'unset',
+        borderTopLeftRadius: `calc(${tokens.borderRadiusMedium} - ${BORDER_WIDTH}px)`,
+        borderBottomLeftRadius: `calc(${tokens.borderRadiusMedium} - ${BORDER_WIDTH}px)`,
+        background: isMaster
+          ? tokens.green300
+          : `linear-gradient(
+          -45deg, 
+          ${tokens.orange300} 28.57%, 
+          transparent 28.57%, 
+          transparent 50%, 
+          ${tokens.orange300} 50%, 
+          ${tokens.orange300} 78.57%, 
+          transparent 78.57%, 
+          transparent 100%
+        )`,
+        backgroundSize: isMaster ? 'inherit' : '9px 9px',
+        backgroundPosition: 'bottom',
+      }),
+    }),
 
-  innerRectangle: css({
-    width: `calc(8px - ${BORDER_WIDTH}px)`,
-    borderTopLeftRadius: `calc(${tokens.borderRadiusMedium} - ${BORDER_WIDTH}px)`,
-    borderBottomLeftRadius: `calc(${tokens.borderRadiusMedium} - ${BORDER_WIDTH}px)`,
-    background: isMaster
-      ? tokens.green300
-      : `linear-gradient(
-        -45deg, 
-        ${tokens.orange300} 28.57%, 
-        transparent 28.57%, 
-        transparent 50%, 
-        ${tokens.orange300} 50%, 
-        ${tokens.orange300} 78.57%, 
-        transparent 78.57%, 
-        transparent 100%
-      )`,
-    backgroundSize: isMaster ? 'inherit' : '9px 9px',
-    backgroundPosition: 'bottom',
-  }),
-
-  innerSpaceEnv: css({
+  switcherLabelWrapper: css({
     height: '26px',
+    paddingLeft: `calc(${tokens.spacingXs} * 2)`,
+    alignItems: 'center',
+    gap: tokens.spacing2Xs,
+    maxWidth: '100%',
   }),
 
-  switcherSpaceName: css({
-    // Set min-width only when there are three span children
-    '&:has(> span:last-child:nth-child(3))': {
-      minWidth: '12ch',
-    },
-    maxWidth: '15vw',
-    [mqs.xsmall]: {
-      maxWidth: '50vw',
-    },
-    [mqs.small]: {
-      maxWidth: '10vw',
-    },
-    [mqs.medium]: {
-      maxWidth: '50vw',
-    },
+  switcherLabel: css({
+    color: 'currentcolor',
+    fontWeight: 'inherit',
+    lineHeight: 'unset',
+    display: 'inline-block',
+    flexShrink: 1,
+    minWidth: '0',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+  }),
+
+  switcherCaret: css({
+    flexShrink: 0,
+    minWidth: 0,
   }),
 
   switcherEnvIcon: css({
+    minWidth: '0',
     [mqs.small]: {
       width: '16px',
       height: '16px',
     },
-  }),
-
-  switcherSpaceNameTruncation: css({
-    flexShrink: 1,
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
   }),
 });
 

@@ -6,7 +6,6 @@ import {
   type CommonProps,
   type PropsWithHTMLElement,
   type ExpandProps,
-  Box,
 } from '@contentful/f36-core';
 import { cx } from 'emotion';
 import { NavbarEnvVariant } from './NavbarEnvVariant';
@@ -14,37 +13,6 @@ import { NavbarSwitcherSkeleton } from './NavbarSwitcherSkeleton';
 import { CaretRightIcon } from '@contentful/f36-icons';
 import { Text } from '@contentful/f36-typography';
 import tokens from '@contentful/f36-tokens';
-
-type TruncateOptions = {
-  /**
-   * Number of characters to keep at the start of the string
-   * @default 5
-   */
-  start?: number;
-  /**
-   * Number of characters to keep at the end of the string
-   * @default 6
-   */
-  end?: number;
-};
-
-function splitString(
-  string: string,
-  {
-    start: startLength = 5,
-    end: endLength = 6,
-  }: TruncateOptions | undefined = {},
-) {
-  if (string.length <= startLength + endLength) {
-    return [string, undefined, undefined];
-  }
-
-  const start = startLength > 0 ? string.slice(0, startLength) : '';
-  const end = endLength > 0 ? string.slice(-endLength) : '';
-  const remainder = string.slice(startLength, string.length - endLength);
-
-  return [start, remainder, end];
-}
 
 export type EnvVariant = 'master' | 'non-master';
 
@@ -74,29 +42,6 @@ export type NavbarSwitcherProps = PropsWithHTMLElement<
   NavbarSwitcherOwnProps,
   'button'
 >;
-
-type SwitcherLabelProps = {
-  value: React.ReactNode;
-  styles: ReturnType<typeof getNavbarSwitcherStyles>;
-  envVariant?: EnvVariant;
-};
-
-const SwitcherLabel = ({ value, styles }: SwitcherLabelProps) => {
-  const [start, middle, end] =
-    typeof value === 'string' ? splitString(value) : [];
-
-  return start !== undefined ? (
-    <Text className={styles.text}>
-      <span>{start}</span>
-      {middle && (
-        <span className={styles.switcherSpaceNameTruncation}>{middle}</span>
-      )}
-      {end && <span>{end}</span>}
-    </Text>
-  ) : (
-    <Text className={styles.text}>{value}</Text>
-  );
-};
 
 function _NavbarSwitcher(
   props: ExpandProps<NavbarSwitcherProps>,
@@ -139,41 +84,30 @@ function _NavbarSwitcher(
       variant="transparent"
     >
       <Flex
-        alignItems="center"
-        className={styles.switcherSpaceName}
-        flexDirection="row"
+        className={styles.switcherWrapper({
+          showSpaceEnv: !isLoading && !children,
+        })}
       >
         {isLoading ? (
           <NavbarSwitcherSkeleton estimatedWidth={148} />
         ) : (
           <>
             {children ? (
-              <Text className={styles.text}>{children}</Text>
+              <Text className={styles.switcherLabel}>{children}</Text>
             ) : (
-              <Flex gap={tokens.spacingXs}>
-                <Box className={styles.innerRectangle} />
-
-                <Flex
-                  className={styles.innerSpaceEnv}
-                  gap={tokens.spacing2Xs}
-                  alignItems="center"
-                >
-                  <SwitcherLabel value={space} styles={styles} />
-
-                  {environment && (
-                    <>
+              <Flex className={styles.switcherLabelWrapper}>
+                <Text className={styles.switcherLabel}>{space}</Text>
+                {environment && (
+                  <>
+                    <Flex className={styles.switcherCaret}>
                       <CaretRightIcon
                         size="tiny"
                         color={isMaster ? tokens.green700 : tokens.orange700}
                       />
-                      <SwitcherLabel
-                        envVariant={envVariant}
-                        value={environment}
-                        styles={styles}
-                      />
-                    </>
-                  )}
-                </Flex>
+                    </Flex>
+                    <Text className={styles.switcherLabel}>{environment}</Text>
+                  </>
+                )}
               </Flex>
             )}
           </>
