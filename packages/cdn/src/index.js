@@ -7,6 +7,8 @@ addEventListener('fetch', (event) => event.respondWith(handleRequest(event)));
 async function handleRequest(event) {
   const response = await staticContentServer.serveRequest(event.request);
   if (response != null) {
+    response.headers.append('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS');
+    response.headers.append('Access-Control-Allow-Origin', '*');
     return response;
   }
 
