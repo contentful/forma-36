@@ -32,6 +32,9 @@ type NavbarOwnProps = CommonProps & {
   /** Navigation displayed on mobile versions */
   mobileNavigation?: React.ReactNode;
 
+  /** breakpoint to determine when to show the mobile navigation */
+  mobileNavigationBp?: 'small' | 'medium';
+
   /**
    * Defines the max-width of the content inside the navbar.
    * @default '100%'
@@ -59,6 +62,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
     secondaryNavigation,
     account,
     mobileNavigation,
+    mobileNavigationBp = 'small',
     className,
     contentMaxWidth = '100%',
     testId = 'cf-ui-navbar',
@@ -87,7 +91,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
             <NavbarMenu
               trigger={
                 <Button
-                  className={styles.mobileNavigationButton}
+                  className={styles.mobileNavigationButton(mobileNavigationBp)}
                   startIcon={<ListIcon size="medium" />}
                 >
                   Menu
@@ -99,7 +103,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
           )}
           {mainNavigation && (
             <Flex
-              className={styles.mainNavigation}
+              className={styles.mainNavigation(mobileNavigationBp)}
               aria-label="Main Navigation"
               gap="spacingXs"
             >
@@ -108,7 +112,14 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
           )}
         </Flex>
         <Flex alignItems="center" gap="spacingXs">
-          <Flex alignItems="center">{promotions}</Flex>
+          <Flex
+            alignItems="center"
+            className={styles.promoNavigationWrapper}
+            aria-label="Promotions"
+            gap="spacingXs"
+          >
+            {promotions}
+          </Flex>
           <Flex alignItems="center">{switcher}</Flex>
           <Flex alignItems="center" gap="spacingXs">
             {secondaryNavigation && (
