@@ -7,7 +7,22 @@ export default function IconButtonExample() {
     <Stack flexDirection="column">
       <Stack>
         <IconButton
+          variant="primary"
+          aria-label="Select the date"
+          icon={<CalendarIcon />}
+        />
+        <IconButton
           variant="secondary"
+          aria-label="Select the date"
+          icon={<CalendarIcon />}
+        />
+        <IconButton
+          variant="positive"
+          aria-label="Select the date"
+          icon={<CalendarIcon />}
+        />
+        <IconButton
+          variant="negative"
           aria-label="Select the date"
           icon={<CalendarIcon />}
         />
@@ -15,37 +30,6 @@ export default function IconButtonExample() {
           variant="transparent"
           aria-label="Select the date"
           icon={<CalendarIcon />}
-        />
-        <IconButton
-          variant="primary"
-          aria-label="Select the date"
-          icon={<CalendarIcon />}
-        />
-        <IconButton
-          variant="primary"
-          aria-label="Select the date"
-          icon={<CalendarIcon />}
-          tooltipProps={{ content: 'Select the date' }}
-        />
-      </Stack>
-      <Stack>
-        <IconButton
-          size="small"
-          variant="secondary"
-          aria-label="Select the date"
-          icon={<CalendarIcon size="tiny" />}
-        />
-        <IconButton
-          size="small"
-          variant="transparent"
-          aria-label="Select the date"
-          icon={<CalendarIcon size="tiny" />}
-        />
-        <IconButton
-          size="small"
-          variant="primary"
-          aria-label="Select the date"
-          icon={<CalendarIcon size="tiny" />}
         />
       </Stack>
     </Stack>

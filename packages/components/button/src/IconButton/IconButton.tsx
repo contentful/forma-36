@@ -19,12 +19,12 @@ import {
 type WithTooltipOrNot =
   | {
       /**
-       * Triggers, wheter or not to render the tooltip
+       * Wrap the IconButton with a Tooltip to provide users with additional context about its purpose when they hover over it
        */
       withTooltip?: boolean;
 
       /**
-       * A tooltipProps attribute used to conditionally render the tooltip around root element
+       * The tooltip properties to be passed to the Tooltip component wrapping the IconButton
        */
       tooltipProps?: CommonProps &
         WithEnhancedContent &
@@ -86,7 +86,7 @@ function _IconButton<
 
   const styles = getStyles({ size, density });
 
-  const iconButtton = (
+  const iconButton = (
     <Button
       testId={testId}
       ref={ref}
@@ -109,12 +109,12 @@ function _IconButton<
 
     return (
       <Tooltip content={content} showDelay={showDelay} {...otherTooltipProps}>
-        {iconButtton}
+        {iconButton}
       </Tooltip>
     );
   }
 
-  return iconButtton;
+  return iconButton;
 }
 
 _IconButton.displayName = 'IconButton';

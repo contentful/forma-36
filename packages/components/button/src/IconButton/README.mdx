@@ -9,9 +9,9 @@ typescript: ./IconButton.tsx
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-button-iconbutton--basic'
 ---
 
-Start actions, such as "Lock" or "Delete".
+It represents a simple, familiar action that uses only an icon.
 
-The button meaning is only represented with an icon. Use it only with icons users are familiar with from previous experience in other products.
+Only use icon buttons with universally recognized icons that users are likely familiar with from other products or contexts. Icon buttons are best suited for simple, frequently used, or contextually clear actions, such as closing a window or deleting an item. Use them when screen space is limited or complementing a more prominent interface action.
 
 ## Import
 
@@ -23,23 +23,33 @@ import { IconButton } from '@contentful/f36-button';
 
 ## Examples
 
-### Sizes and Variations
+Variants, sizes, and states match those of the [Button](./button) component.
 
-You need to pass an [Icon component](../components/icon) you want to render to the `icon` prop, you may also provide `variant` and `size` to the icon.
+### Variations
 
-```jsx file=../../examples/IconButtonExample.tsx
+- **Primary** - For the most important actions in a scenario. While icon buttons can technically be styled as primary, they’re not recommended for primary actions due to their limited clarity compared to labeled buttons.
+- **Secondary** - For secondary actions, the most commonly used button type.
+- **Positive** - When the action has a positive connotation.
+- **Negative** - For destructive actions - when something can't be undone. For example, deleting entities.
+- **Transparent** - For having an unstyled button. Use this only on light backgrounds.
+
+```jsx file=../../examples/IconButtonVariationsExample.tsx
 
 ```
 
-With tooltip for enhanced user experience.
+### Sizes
 
-### As toolbar actions
+The button has 3 different sizes:
 
-In toolbars, action bars, and in all other space restricted containers we suggest using `IconButton` instead of `Button` component.
+```jsx file=../../examples/IconButtonSizesExample.tsx
 
-For these cases, it would be also beneficial to use [Tooltip](../components/tooltip) as a wrapper of `IconButton` to help users with understanding the button's purpose.
+```
 
-```jsx file=../../examples/IconButtonToolbarExample.tsx
+### Tooltip
+
+Wrap the IconButton with a [Tooltip](./tooltip/) to provide users with additional context about its purpose when they hover over it.
+
+```jsx file=../../examples/IconButtonTooltipExample.tsx
 
 ```
 
@@ -49,6 +59,6 @@ For these cases, it would be also beneficial to use [Tooltip](../components/tool
 
 ## Accessibility
 
-We enforce `aria-label` property for `IconButton` component to ensure that these buttons are fully accessible for screen readers.
+The IconButton component requires an `aria-label` to ensure full accessibility for screen readers.
 
-For easier understanding we also encourage the use of the tooltipProps and giving it the same `content` as the `aria-label`
+For easier understanding, use tooltipProps and set its content to match the `aria-label`. It’s recommended to ensure tooltipProps and `aria-label` have the same content.
