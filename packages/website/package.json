@@ -20,7 +20,7 @@
     "@contentful/f36-image": "4.74.2",
     "@contentful/f36-layout": "^4.0.0-alpha.0",
     "@contentful/f36-multiselect": "^4.25.0",
-    "@contentful/f36-navlist": "4.1.0-alpha.1",
+    "@contentful/f36-navlist": "4.1.0-alpha.2",
     "@contentful/f36-progress-stepper": "4.0.0-alpha.2",
     "@contentful/f36-tokens": "^4.1.0",
     "@contentful/f36-utils": "^4.24.3",
