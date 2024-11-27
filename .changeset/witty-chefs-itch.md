@@ -3,4 +3,4 @@
 "@contentful/f36-button": patch
 ---
 
-docs(IconButton): update public documentation + prop API [F36-1540]
+docs(IconButton): update public documentation + prop API
