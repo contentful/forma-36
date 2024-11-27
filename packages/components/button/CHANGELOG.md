@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.74.3
+
+### Patch Changes
+
+- [#2940](https://github.com/contentful/forma-36/pull/2940) [`96c125c`](https://github.com/contentful/forma-36/commit/96c125c8ea7210adb6ccb91b15f5d23136a92fb7) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - docs(IconButton): update public documentation + prop API
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.74.3
+  - @contentful/f36-spinner@4.74.3
+  - @contentful/f36-tooltip@4.74.3
+
 ## 4.74.2
 
 ### Patch Changes
