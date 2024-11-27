@@ -1,5 +1,4 @@
 ---
-"@contentful/f36-website": patch
 "@contentful/f36-button": patch
 ---
 
