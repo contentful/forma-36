@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 28-11-2024
+
+**F36 Button** `v4.74.3`
+
+- docs(IconButton): update public documentation + prop API
+
 ## 19-11-2024
 
 **F36 Button** `v4.74.2`
