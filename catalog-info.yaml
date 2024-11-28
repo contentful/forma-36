@@ -9,17 +9,15 @@ metadata:
   annotations:
     github.com/project-slug: contentful/forma-36 
     contentful.com/service-tier: "4"
-    contentful.com/ci-alert-slack: prd-creators-isotopes-alerts
+    contentful.com/ci-alert-slack: prd-ui-foundation-alerts
   tags:
     - react
     - typescript
     - design-system
     - monorepo
-    #need to add sast.yaml to .github/workflows and enable it in polaris dashboard
-    #once that is done this can be changed to sast-enabled
-    - sast-disabled
+    - sast-enabled
     - tier-4
 spec:
   type: library 
   lifecycle: production  
-  owner: group:team-isotopes
+  owner: group:team-ui-foundation
