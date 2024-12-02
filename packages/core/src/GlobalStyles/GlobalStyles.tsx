@@ -93,6 +93,16 @@ export const GlobalStyles = ({
     <Global
       styles={css`
         ${withNormalize ? cssReset : undefined};
+        @font-face {
+          font-family: 'Geist Mono';
+          src: url('https://cdn.f36.contentful.com/fonts/geist-mono-1.4.01.woff2');
+        }
+
+        @font-face {
+          font-family: 'Geist Sans';
+          src: url('https://cdn.f36.contentful.com/fonts/geist-sans-1.4.01.woff2');
+        }
+
         html {
           border: 0;
           box-sizing: border-box;
@@ -105,6 +115,7 @@ export const GlobalStyles = ({
           font-family: ${tokens.fontStackPrimary};
           font-size: ${tokens.fontSizeM};
           line-height: ${tokens.lineHeightM};
+          font-synthesis-weight: none;
         }
 
         code {
