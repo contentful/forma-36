@@ -24,7 +24,7 @@
     "@contentful/f36-progress-stepper": "4.0.0-alpha.2",
     "@contentful/f36-tokens": "^4.1.0",
     "@contentful/f36-utils": "^4.24.3",
-    "@contentful/rich-text-react-renderer": "^15.11.1",
+    "@contentful/rich-text-react-renderer": "^16.0.0",
     "@dnd-kit/core": "^6.0.8",
     "@dnd-kit/sortable": "^7.0.2",
     "@dnd-kit/utilities": "^3.2.1",
