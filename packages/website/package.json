@@ -61,7 +61,7 @@
     "use-debounce": "^10.0.3"
   },
   "devDependencies": {
-    "@contentful/rich-text-types": "^15.11.1",
+    "@contentful/rich-text-types": "^17.0.0",
     "@emotion/babel-preset-css-prop": "^10.2.1",
     "@next/eslint-plugin-next": "^13.1.6",
     "babel-plugin-emotion": "10.2.2",
