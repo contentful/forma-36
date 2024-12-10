@@ -1,6 +1,6 @@
 import React from 'react';
 import type { PropsWithHTMLElement, ExpandProps } from '@contentful/f36-core';
-import { Text, TextProps } from '../Text';
+import { Text, type TextProps } from '../Text';
 import { useDensity } from '@contentful/f36-utils';
 
 export type ParagraphInternalProps = TextProps & {

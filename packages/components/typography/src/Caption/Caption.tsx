@@ -5,7 +5,7 @@ import type {
   PolymorphicProps,
   ExpandProps,
 } from '@contentful/f36-core';
-import { Text, TextProps } from '../Text';
+import { Text, type TextProps } from '../Text';
 import { useDensity } from '@contentful/f36-utils';
 
 const CAPTION_DEFAULT_TAG = 'span';

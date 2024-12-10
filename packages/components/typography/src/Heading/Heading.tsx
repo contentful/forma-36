@@ -4,7 +4,7 @@ import type {
   PolymorphicProps,
   ExpandProps,
 } from '@contentful/f36-core';
-import { Text, TextProps } from '../Text';
+import { Text, type TextProps } from '../Text';
 import { useDensity } from '@contentful/f36-utils';
 
 const HEADING_DEFAULT_TAG = 'h1';
