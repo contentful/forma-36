@@ -1,18 +1,16 @@
 import React from 'react';
 import { FontSizeTokens, LineHeightTokens } from '@contentful/f36-tokens';
 import type {
-  CommonProps,
-  MarginProps,
   PolymorphicComponent,
   PolymorphicProps,
   ExpandProps,
 } from '@contentful/f36-core';
-import { Text } from '../Text';
+import { Text, TextProps } from '../Text';
 import type { HeadingElement } from '../Heading';
 
 const DISPLAY_TEXT_DEFAULT_TAG = 'h2';
 
-export interface DisplayTextInternalProps extends CommonProps, MarginProps {
+export interface DisplayTextInternalProps extends Omit<TextProps, 'as'> {
   children?: React.ReactNode;
   size?: 'default' | 'large';
   as?: HeadingElement;
@@ -31,6 +29,8 @@ function _DisplayText<
     children,
     size = 'default',
     testId = 'cf-ui-display-text',
+    as,
+    fontColor = 'gray900',
     ...otherProps
   }: DisplayTextProps<E>,
   ref: React.Ref<any>,
@@ -42,15 +42,16 @@ function _DisplayText<
     fontSize = 'fontSize3Xl';
     lineHeight = 'lineHeight3Xl';
   }
+  const Element: React.ElementType = as || DISPLAY_TEXT_DEFAULT_TAG;
 
   return (
     <Text
-      as={DISPLAY_TEXT_DEFAULT_TAG}
+      as={Element}
       testId={testId}
       marginBottom={size === 'default' ? 'spacingL' : 'spacingXl'}
       fontSize={fontSize}
       lineHeight={lineHeight}
-      fontColor="gray900"
+      fontColor={fontColor}
       fontWeight="fontWeightDemiBold"
       {...otherProps}
       ref={ref}
