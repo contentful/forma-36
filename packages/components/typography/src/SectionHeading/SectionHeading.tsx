@@ -2,19 +2,17 @@ import React from 'react';
 import tokens from '@contentful/f36-tokens';
 import { css, cx } from 'emotion';
 import type {
-  CommonProps,
-  MarginProps,
   PolymorphicComponent,
   PolymorphicProps,
   ExpandProps,
 } from '@contentful/f36-core';
 import type { HeadingElement } from '../Heading';
-import { Text } from '../Text';
+import { Text, type TextProps } from '../Text';
 import { useDensity } from '@contentful/f36-utils';
 
 const SECTION_HEADING_DEFAULT_TAG = 'h2';
 
-export interface SectionHeadingInternalProps extends CommonProps, MarginProps {
+export interface SectionHeadingInternalProps extends Omit<TextProps, 'as'> {
   children?: React.ReactNode;
   as?: HeadingElement;
   isTruncated?: boolean;
@@ -32,19 +30,23 @@ function _SectionHeading<
     children,
     className,
     testId = 'cf-ui-section-heading',
+    as,
+    fontColor = 'gray600',
+    marginBottom = 'spacingL',
     ...otherProps
   }: SectionHeadingProps<E>,
   ref: React.Ref<any>,
 ) {
   const density = useDensity();
+  const Element: React.ElementType = as || SECTION_HEADING_DEFAULT_TAG;
 
   return (
     <Text
-      as={SECTION_HEADING_DEFAULT_TAG}
+      as={Element}
       testId={testId}
-      marginBottom="spacingL"
+      marginBottom={marginBottom}
       fontWeight="fontWeightMedium"
-      fontColor="gray600"
+      fontColor={fontColor}
       fontSize={density === 'high' ? 'fontSizeSHigh' : 'fontSizeS'}
       lineHeight={density === 'high' ? 'lineHeightSHigh' : 'lineHeightS'}
       className={cx(
