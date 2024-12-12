@@ -1,19 +1,17 @@
 import React from 'react';
 import type {
-  CommonProps,
-  MarginProps,
   PolymorphicComponent,
   PolymorphicProps,
   ExpandProps,
 } from '@contentful/f36-core';
-import { Text } from '../Text';
+import { Text, type TextProps } from '../Text';
 import { useDensity } from '@contentful/f36-utils';
 
 const HEADING_DEFAULT_TAG = 'h1';
 
 export type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
-export interface HeadingInternalProps extends CommonProps, MarginProps {
+export interface HeadingInternalProps extends Omit<TextProps, 'as'> {
   as?: HeadingElement;
   children?: React.ReactNode;
   isTruncated?: boolean;
@@ -25,18 +23,26 @@ export type HeadingProps<
 > = PolymorphicProps<HeadingInternalProps, E>;
 
 function _Heading<E extends React.ElementType = typeof HEADING_DEFAULT_TAG>(
-  { children, testId = 'cf-ui-heading', ...otherProps }: HeadingProps<E>,
+  {
+    children,
+    testId = 'cf-ui-heading',
+    as,
+    fontColor = 'gray900',
+    marginBottom = 'spacingM',
+    ...otherProps
+  }: HeadingProps<E>,
   ref: React.Ref<any>,
 ) {
   const density = useDensity();
+  const Element: React.ElementType = as || HEADING_DEFAULT_TAG;
 
   return (
     <Text
-      as={HEADING_DEFAULT_TAG}
+      as={Element}
       testId={testId}
-      marginBottom="spacingM"
+      marginBottom={marginBottom}
       fontWeight="fontWeightDemiBold"
-      fontColor="gray900"
+      fontColor={fontColor}
       fontSize={density === 'high' ? 'fontSizeXlHigh' : 'fontSizeXl'}
       lineHeight={density === 'high' ? 'lineHeightXlHigh' : 'lineHeightXl'}
       {...otherProps}
