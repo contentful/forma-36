@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.75.1
+
+### Patch Changes
+
+- [#2954](https://github.com/contentful/forma-36/pull/2954) [`2f42e88`](https://github.com/contentful/forma-36/commit/2f42e881f23e400268288f4d74e56d96cfab162c) Thanks [@Lelith](https://github.com/Lelith)! - Improves contrast ratio of Avatar default border color.
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.75.1
+  - @contentful/f36-menu@4.75.1
+  - @contentful/f36-tooltip@4.75.1
+  - @contentful/f36-image@4.75.1
+
 ## 4.75.0
 
 ### Patch Changes
