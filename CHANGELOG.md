@@ -8,6 +8,14 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 12-12-2024
+
+**F36 Typography** `v4.75.0`
+
+- Enables overwriting of fontColor and marginBottom props on Typography components: Caption, DisplayText, Heading, Paragraph, SectionHeading, Subheading
+- Omits 'color' default property from Text component, in favor of 'fontColor' property.
+- Improves Types for Caption, DisplayText, Heading, Paragraph, SectionHeading, Subheading to fix Type mismatch with "as" proptery.
+
 ## 28-11-2024
 
 **F36 Button** `v4.74.3`

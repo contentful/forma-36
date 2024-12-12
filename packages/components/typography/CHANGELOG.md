@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.75.0
+
+### Minor Changes
+
+- [#2952](https://github.com/contentful/forma-36/pull/2952) [`9f032ee`](https://github.com/contentful/forma-36/commit/9f032ee6156a8cc963d85484db17cb45c94f05ec) Thanks [@Lelith](https://github.com/Lelith)! - Enables overwriting of fontColor and marginBottom props on Typography components: Caption, DisplayText, Heading, Paragraph, SectionHeading, Subheading
+  Omits 'color' default property from Text component, in favor of 'fontColor' property.
+  Improves Types for Caption, DisplayText, Heading, Paragraph, SectionHeading, Subheading to fix Type mismatch with "as" proptery.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.75.0
+
 ## 4.74.3
 
 ### Patch Changes
