@@ -1,18 +1,16 @@
 import React from 'react';
 import type {
-  CommonProps,
-  MarginProps,
   PolymorphicComponent,
   PolymorphicProps,
   ExpandProps,
 } from '@contentful/f36-core';
 import type { HeadingElement } from '../Heading';
-import { Text } from '../Text';
+import { Text, type TextProps } from '../Text';
 import { useDensity } from '@contentful/f36-utils';
 
 const SUBHEADING_DEFAULT_TAG = 'h3';
 
-export interface SubheadingInternalProps extends CommonProps, MarginProps {
+export interface SubheadingInternalProps extends Omit<TextProps, 'as'> {
   children?: React.ReactNode;
   as?: HeadingElement;
   isTruncated?: boolean;
@@ -26,20 +24,26 @@ export type SubheadingProps<
 function _Subheading<
   E extends React.ElementType = typeof SUBHEADING_DEFAULT_TAG,
 >(
-  { children, testId = 'cf-ui-subheading', ...otherProps }: SubheadingProps<E>,
+  {
+    children,
+    testId = 'cf-ui-subheading',
+    as,
+    fontColor = 'gray900',
+    ...otherProps
+  }: SubheadingProps<E>,
   ref: React.Ref<any>,
 ) {
   const density = useDensity();
-
+  const Element: React.ElementType = as || SUBHEADING_DEFAULT_TAG;
   return (
     <Text
-      as={SUBHEADING_DEFAULT_TAG}
+      as={Element}
       testId={testId}
       marginBottom="spacingM"
       fontSize={density === 'high' ? 'fontSizeLHigh' : 'fontSizeL'}
       lineHeight={density === 'high' ? 'lineHeightLHigh' : 'lineHeightL'}
       fontWeight="fontWeightDemiBold"
-      fontColor="gray900"
+      fontColor={fontColor}
       {...otherProps}
       ref={ref}
     >

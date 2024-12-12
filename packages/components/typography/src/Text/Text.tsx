@@ -47,10 +47,13 @@ function wordBreakStyle() {
 }
 
 export type TextProps<E extends React.ElementType = typeof TEXT_DEFAULT_TAG> =
-  PolymorphicProps<TextInternalProps, E>;
+  PolymorphicProps<TextInternalProps, E, 'color'>;
 
 function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
-  {
+  props: TextProps<E>,
+  ref: React.Ref<any>,
+) {
+  const {
     fontSize = 'fontSizeM',
     fontStack = 'fontStackPrimary',
     fontWeight = 'fontWeightNormal',
@@ -64,9 +67,7 @@ function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
     className,
     margin = 'none',
     ...otherProps
-  }: TextProps<E>,
-  ref: React.Ref<any>,
-) {
+  } = props;
   const Element: React.ElementType = as || TEXT_DEFAULT_TAG;
 
   return (
@@ -99,5 +100,6 @@ _Text.displayName = 'Text';
 
 export const Text: PolymorphicComponent<
   ExpandProps<TextInternalProps>,
-  typeof TEXT_DEFAULT_TAG
+  typeof TEXT_DEFAULT_TAG,
+  'color'
 > = React.forwardRef(_Text);
