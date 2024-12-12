@@ -16,7 +16,7 @@ export const avatarColorMap = {
   orange: tokens.orange400,
   yellow: tokens.yellow500,
   purple: tokens.purple400,
-  gray: tokens.gray400,
+  gray: tokens.gray500,
   pink: '#FF77AE',
   emerald: '#00B8A2',
   lavender: '#9095FF',
