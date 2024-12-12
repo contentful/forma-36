@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@fastly/cli": "10.14.0",
-    "@fastly/compute-js-static-publish": "6.1.1"
+    "@fastly/compute-js-static-publish": "6.2.0"
   },
   "engines": {
     "node": ">=18"
