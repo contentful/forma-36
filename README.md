@@ -71,6 +71,7 @@ Make sure to remove any credential from your code before sharing it.
 ## License
 
 This repository is published under the [MIT](LICENSE.md) license.
+The [Geist](packages/cdn/public/fonts) typeface included in this repository is covered by its own [license](packages/cdn/public/fonts/geist-license.txt).
 
 ## Code of Conduct
 
