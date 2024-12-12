@@ -1,1 +1,1 @@
-{"**F36 Typography** `v4.75.0`":["- Enables overwriting of fontColor and marginBottom props on Typography components: Caption, DisplayText, Heading, Paragraph, SectionHeading, Subheading\n- Omits 'color' default property from Text component, in favor of 'fontColor' property.\n- Improves Types for Caption, DisplayText, Heading, Paragraph, SectionHeading, Subheading to fix Type mismatch with \"as\" proptery.\n"]}
+{}
