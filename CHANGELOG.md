@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 13-12-2024
+
+**F36 Avatar** `v4.75.1`
+
+- Improves contrast ratio of Avatar default border color.
+
 ## 12-12-2024
 
 **F36 Typography** `v4.75.0`
