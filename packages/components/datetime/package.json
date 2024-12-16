@@ -1,12 +1,12 @@
 {
   "name": "@contentful/f36-datetime",
-  "version": "4.75.1",
+  "version": "4.75.2",
   "description": "Forma 36: DateTime component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.75.1",
+    "@contentful/f36-core": "^4.75.2",
     "@contentful/f36-tokens": "^4.1.0",
     "dayjs": "^1.11.5",
     "emotion": "^10.0.17"
