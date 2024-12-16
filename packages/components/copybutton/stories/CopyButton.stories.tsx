@@ -18,7 +18,7 @@ export const Default: Story<CopyButtonProps> = (args) => {
 
 Default.args = {
   value: 'Lorem Ipsum',
-  tooltipCopiedText: 'Copied!',
+  tooltipCopiedText: 'Value copied to clipboard',
   tooltipText: 'Copy to clipboard',
   onCopy: action('onCopy'),
   tooltipProps: {
