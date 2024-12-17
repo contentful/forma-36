@@ -37,6 +37,7 @@ export * from './vendor/phosphor/BookOpenIcon.js';
 export * from './vendor/phosphor/BookmarkSimpleIcon.js';
 export * from './vendor/phosphor/BracketsCurlyIcon.js';
 export * from './vendor/phosphor/CalendarBlankIcon.js';
+export * from './vendor/phosphor/CalendarDotsIcon.js';
 export * from './vendor/phosphor/CaretDownIcon.js';
 export * from './vendor/phosphor/CaretLeftIcon.js';
 export * from './vendor/phosphor/CaretRightIcon.js';
