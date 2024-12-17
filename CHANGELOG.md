@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 17-12-2024
+
+**F36 Copybutton** `v4.75.2`
+
+- Enable dynamic `aria-label` values.
+
 ## 13-12-2024
 
 **F36 Avatar** `v4.75.1`
