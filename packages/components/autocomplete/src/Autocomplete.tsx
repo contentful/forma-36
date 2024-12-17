@@ -183,6 +183,13 @@ export interface AutocompleteProps<ItemType>
    * Manually control when the button to clear the input value is shown
    */
   showClearButton?: boolean;
+  /**
+   * Additional aria attributes
+   */
+  aria?: {
+    showListIconLabel?: string;
+    clearSelectionIconLabel?: string;
+  };
 }
 
 function _Autocomplete<ItemType>(
@@ -227,6 +234,10 @@ function _Autocomplete<ItemType>(
     testId = 'cf-autocomplete',
     popoverTestId = 'cf-autocomplete-container',
     showClearButton: showClearButtonProp,
+    aria = {
+      clearSelectionIconLabel: 'Clear',
+      showListIconLabel: 'Show list',
+    },
   } = props;
 
   type GroupType = GenericGroupType<ItemType>;
@@ -410,7 +421,11 @@ function _Autocomplete<ItemType>(
             <IconButton
               {...toggleProps}
               ref={mergeRefs(toggleProps.ref, toggleRef)}
-              aria-label={showClearButton ? 'Clear' : 'Show list'}
+              aria-label={
+                showClearButton
+                  ? aria.clearSelectionIconLabel
+                  : aria.showListIconLabel
+              }
               className={styles.toggleButton}
               variant="transparent"
               icon={showClearButton ? <CloseIcon variant="muted" /> : icon}
