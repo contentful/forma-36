@@ -33,7 +33,9 @@ export const ModalHeader = ({
   testId = 'cf-ui-modal-header',
   className,
   children,
-  aria,
+  aria = {
+    closeIconLabel: 'Close',
+  },
   ...otherProps
 }: ModalHeaderProps): React.ReactElement => {
   const styles = getModalHeaderStyles();
@@ -59,7 +61,7 @@ export const ModalHeader = ({
         <Flex alignItems="center" className={styles.buttonContainer}>
           <IconButton
             variant="transparent"
-            aria-label={aria?.closeIconLabel || 'Close'}
+            aria-label={aria.closeIconLabel}
             size="small"
             icon={<CloseIcon size="small" />}
             onClick={() => {
