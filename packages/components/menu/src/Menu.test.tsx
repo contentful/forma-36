@@ -265,6 +265,62 @@ describe('Menu', function () {
     });
   });
 
+  it('should close when clicking outside of the menu', async () => {
+    const user = userEvent.setup();
+    const handleClose = jest.fn();
+
+    render(
+      <>
+        <Button testId="buttonToClick" />
+        <Menu isOpen={true} onClose={handleClose}>
+          <Menu.Trigger>
+            <Button>Toggle</Button>
+          </Menu.Trigger>
+          <Menu.List>
+            <Menu.Item>Create an entry</Menu.Item>
+            <Menu.Item>Remove an entry</Menu.Item>
+            <Menu.Item>Embed existing entry</Menu.Item>
+          </Menu.List>
+        </Menu>
+      </>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByRole('menu')).toBeInTheDocument();
+    });
+
+    await user.click(screen.getByTestId('buttonToClick'));
+    expect(handleClose).toHaveBeenCalled();
+  });
+
+  it('should close when clicking outside of the menu with all items disabled', async () => {
+    const user = userEvent.setup();
+    const handleClose = jest.fn();
+
+    render(
+      <>
+        <Button testId="buttonToClick" />
+        <Menu isOpen={true} onClose={handleClose}>
+          <Menu.Trigger>
+            <Button>Toggle</Button>
+          </Menu.Trigger>
+          <Menu.List>
+            <Menu.Item isDisabled>Create an entry</Menu.Item>
+            <Menu.Item isDisabled>Remove an entry</Menu.Item>
+            <Menu.Item isDisabled>Embed existing entry</Menu.Item>
+          </Menu.List>
+        </Menu>
+      </>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByRole('menu')).toBeInTheDocument();
+    });
+
+    await user.click(screen.getByTestId('buttonToClick'));
+    expect(handleClose).toHaveBeenCalled();
+  });
+
   describe('Menu.Submenu', function () {
     const renderMenuWithSubMenu = () =>
       render(
