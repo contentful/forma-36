@@ -59,6 +59,9 @@ export const Basic: Story<ModalProps> = (props) => {
         {...props}
         modalHeaderProps={{
           className: 'additional-modal-header-class',
+          aria: {
+            closeIconLabel: 'Custom close modal aria label',
+          },
         }}
         modalContentProps={{
           className: 'additional-modal-content-class',

@@ -16,6 +16,9 @@ interface ModalHeaderInternalProps extends CommonProps {
   subtitle?: string;
   onClose?: Function;
   children?: React.ReactNode;
+  aria?: {
+    closeIconLabel?: string;
+  };
 }
 
 export type ModalHeaderProps = PropsWithHTMLElement<
@@ -30,6 +33,9 @@ export const ModalHeader = ({
   testId = 'cf-ui-modal-header',
   className,
   children,
+  aria = {
+    closeIconLabel: 'Close',
+  },
   ...otherProps
 }: ModalHeaderProps): React.ReactElement => {
   const styles = getModalHeaderStyles();
@@ -55,7 +61,7 @@ export const ModalHeader = ({
         <Flex alignItems="center" className={styles.buttonContainer}>
           <IconButton
             variant="transparent"
-            aria-label="Close"
+            aria-label={aria.closeIconLabel}
             size="small"
             icon={<CloseIcon size="small" />}
             onClick={() => {
