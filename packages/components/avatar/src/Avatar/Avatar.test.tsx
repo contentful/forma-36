@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { CheckCircleIcon } from '@contentful/f36-icons';
 import userEvent from '@testing-library/user-event';
 import { Avatar } from './Avatar';
@@ -26,6 +26,8 @@ describe('Avatar', () => {
   it('renders an icon when it is provided', () => {
     const src = 'https://example.com/image.jpg';
     render(<Avatar src={src} icon={<CheckCircleIcon variant="positive" />} />);
+
+    expect(screen.queryByTestId('cf-ui-avatar-icon')).toBeInTheDocument();
   });
 
   it('renders no tooltip when no props are provided', async () => {
@@ -33,7 +35,9 @@ describe('Avatar', () => {
     render(<Avatar />);
     await user.hover(screen.getByTestId('cf-ui-avatar-fallback'));
 
-    expect(screen.queryByTestId('tooltip')).not.toBeInTheDocument();
+    await waitFor(() =>
+      expect(screen.queryByTestId('tooltip')).not.toBeInTheDocument(),
+    );
   });
 
   it('renders with tooltip when props are provided', async () => {
@@ -41,6 +45,8 @@ describe('Avatar', () => {
     render(<Avatar tooltipProps={{ content: 'some content' }} />);
     await user.hover(screen.getByTestId('cf-ui-avatar-fallback'));
 
-    expect(screen.getByRole('tooltip').textContent).toBe('some content');
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip').textContent).toBe('some content'),
+    );
   });
 });
