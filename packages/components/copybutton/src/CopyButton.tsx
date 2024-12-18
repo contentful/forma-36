@@ -64,7 +64,7 @@ function _CopyButton(
     onCopy,
     size = 'medium',
     testId = 'cf-ui-copy-button',
-    tooltipCopiedText = 'Copied!',
+    tooltipCopiedText = 'Value copied to clipboard',
     tooltipProps,
     tooltipText = 'Copy to clipboard',
     value,
@@ -119,9 +119,7 @@ function _CopyButton(
       isDisabled={isDisabled}
     >
       <Button
-        aria-label={
-          copied ? 'Value copied to clipboard' : label ?? `Copy to clipboard`
-        }
+        aria-label={copied ? tooltipCopiedText : label ?? tooltipText}
         aria-live="assertive"
         className={cx(styles.button, className)}
         isDisabled={isLoading || isDisabled}
