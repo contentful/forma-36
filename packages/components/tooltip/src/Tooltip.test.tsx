@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from '@/scripts/test/axeHelper';
 
@@ -36,7 +36,9 @@ describe('Tooltip', () => {
 
     await user.hover(screen.getByText('Hover me'));
 
-    expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content');
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+    );
   });
 
   it('renders the component with an additional class name', async () => {
@@ -49,7 +51,9 @@ describe('Tooltip', () => {
 
     await user.hover(screen.getByText('Hover me'));
 
-    expect(screen.getByRole('tooltip')).toHaveClass('extra-class-name');
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip')).toHaveClass('extra-class-name'),
+    );
   });
 
   it('renders the component with a target wrapper classname', async () => {
@@ -80,9 +84,11 @@ describe('Tooltip', () => {
 
     await user.hover(screen.getByText('Hover me'));
 
-    expect(
-      screen.getByRole('tooltip').getAttribute('data-popper-placement'),
-    ).toBe('left');
+    await waitFor(() =>
+      expect(
+        screen.getByRole('tooltip').getAttribute('data-popper-placement'),
+      ).toBe('left'),
+    );
   });
 
   it('renders the component with a id attribute', async () => {
@@ -95,7 +101,9 @@ describe('Tooltip', () => {
 
     await user.hover(screen.getByText('Hover me'));
 
-    expect(screen.getByRole('tooltip').getAttribute('id')).toBe('Tooltip');
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip').getAttribute('id')).toBe('Tooltip'),
+    );
   });
 
   it('renders the component as span with a id attribute', async () => {
@@ -108,9 +116,11 @@ describe('Tooltip', () => {
 
     await user.hover(screen.getByText('Hover me'));
 
-    const tooltip = screen.getByRole('tooltip');
-    expect(tooltip.getAttribute('id')).toBe('Tooltip');
-    expect(tooltip.nodeName).toMatch(/span/i);
+    await waitFor(() => {
+      const tooltip = screen.getByRole('tooltip');
+      expect(tooltip.getAttribute('id')).toBe('Tooltip');
+      expect(tooltip.nodeName).toMatch(/span/i);
+    });
   });
 
   it('has no a11y issues', async () => {
@@ -144,9 +154,11 @@ describe('Tooltip', () => {
 
     const results = await axe(container);
 
-    expect(results).toHaveNoViolations();
-    expect(screen.getByRole('tooltip').textContent).toBe(
-      'Ich bin ein Paragraph',
-    );
+    await waitFor(() => {
+      expect(results).toHaveNoViolations();
+      expect(screen.getByRole('tooltip').textContent).toBe(
+        'Ich bin ein Paragraph',
+      );
+    });
   });
 });
