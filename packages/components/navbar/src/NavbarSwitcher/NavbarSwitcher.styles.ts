@@ -100,9 +100,10 @@ export const getNavbarIconColor = (variant: EnvVariant) => {
       return tokens.purple700;
     case 'non-master':
       return tokens.orange700;
+    default:
+      // Default to master variant
+      return tokens.green700;
   }
-  // Default for master
-  return tokens.green700;
 };
 
 const getEnvVariantColor = (variant: EnvVariant) => {
@@ -132,17 +133,18 @@ const getEnvVariantColor = (variant: EnvVariant) => {
           backgroundColor: tokens.orange200,
         },
       };
+    default:
+      // Default to master variant
+      return {
+        ...sharedStyles,
+        color: tokens.green700,
+        backgroundColor: tokens.green100,
+        border: `${BORDER_WIDTH}px solid ${tokens.green400}`,
+        '&:hover, &:active': {
+          backgroundColor: tokens.green200,
+        },
+      };
   }
-  // Default for master
-  return {
-    ...sharedStyles,
-    color: tokens.green700,
-    backgroundColor: tokens.green100,
-    border: `${BORDER_WIDTH}px solid ${tokens.green400}`,
-    '&:hover, &:active': {
-      backgroundColor: tokens.green200,
-    },
-  };
 };
 
 const getWrapperBackground = (variant: EnvVariant) => {
@@ -165,9 +167,10 @@ const getWrapperBackground = (variant: EnvVariant) => {
         )`,
         backgroundSize: '9px 9px',
       };
+    default:
+      // Default to master variant
+      return {
+        background: tokens.green300,
+      };
   }
-  // Default for master
-  return {
-    background: tokens.green300,
-  };
 };
