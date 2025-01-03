@@ -1,5 +1,8 @@
 import React from 'react';
-import { getNavbarSwitcherStyles } from './NavbarSwitcher.styles';
+import {
+  getNavbarIconColor,
+  getNavbarSwitcherStyles,
+} from './NavbarSwitcher.styles';
 import { Button } from '@contentful/f36-button';
 import {
   Flex,
@@ -12,9 +15,8 @@ import { NavbarEnvVariant } from './NavbarEnvVariant';
 import { NavbarSwitcherSkeleton } from './NavbarSwitcherSkeleton';
 import { CaretRightIcon } from '@contentful/f36-icons';
 import { Text } from '@contentful/f36-typography';
-import tokens from '@contentful/f36-tokens';
 
-export type EnvVariant = 'master' | 'non-master';
+export type EnvVariant = 'master' | 'non-master' | 'trial';
 
 type NavbarLoadingProps =
   | {
@@ -59,8 +61,7 @@ function _NavbarSwitcher(
     isLoading,
     ...otherProps
   } = props;
-  const isMaster = envVariant === 'master';
-  const styles = getNavbarSwitcherStyles({ isMaster });
+  const styles = getNavbarSwitcherStyles(envVariant);
 
   return (
     <Button
@@ -102,7 +103,7 @@ function _NavbarSwitcher(
                     <Flex className={styles.switcherCaret}>
                       <CaretRightIcon
                         size="tiny"
-                        color={isMaster ? tokens.green700 : tokens.orange700}
+                        color={getNavbarIconColor(envVariant)}
                       />
                     </Flex>
                     <Text className={styles.switcherLabel}>{environment}</Text>

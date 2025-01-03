@@ -3,14 +3,11 @@ import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
 
 import { getGlowOnFocusStyles, increaseHitArea, mqs } from '../utils.styles';
+import { EnvVariant } from './NavbarSwitcher';
 
 const BORDER_WIDTH = 1;
 
-export const getNavbarSwitcherStyles = ({
-  isMaster,
-}: {
-  isMaster: boolean;
-}) => ({
+export const getNavbarSwitcherStyles = (variant: EnvVariant) => ({
   navbarSwitcher: ({ showSpaceEnv }: { showSpaceEnv: boolean }) =>
     css(
       {
@@ -37,7 +34,7 @@ export const getNavbarSwitcherStyles = ({
           maxWidth: '600px',
         },
       },
-      showSpaceEnv && getEnvVariantColor(isMaster),
+      showSpaceEnv && getEnvVariantColor(variant),
       getGlowOnFocusStyles(),
       increaseHitArea(),
     ),
@@ -58,19 +55,7 @@ export const getNavbarSwitcherStyles = ({
         height: showSpaceEnv ? '26px' : 'unset',
         borderTopLeftRadius: `calc(${tokens.borderRadiusMedium} - ${BORDER_WIDTH}px)`,
         borderBottomLeftRadius: `calc(${tokens.borderRadiusMedium} - ${BORDER_WIDTH}px)`,
-        background: isMaster
-          ? tokens.green300
-          : `linear-gradient(
-          -45deg, 
-          ${tokens.orange300} 28.57%, 
-          transparent 28.57%, 
-          transparent 50%, 
-          ${tokens.orange300} 50%, 
-          ${tokens.orange300} 78.57%, 
-          transparent 78.57%, 
-          transparent 100%
-        )`,
-        backgroundSize: isMaster ? 'inherit' : '9px 9px',
+        ...getWrapperBackground(variant),
         backgroundPosition: 'bottom',
       }),
     }),
@@ -109,16 +94,80 @@ export const getNavbarSwitcherStyles = ({
   }),
 });
 
-const getEnvVariantColor = (isMaster: boolean) => ({
-  padding: '0',
-  paddingRight: tokens.spacingXs,
-  color: isMaster ? tokens.green700 : tokens.orange700,
-  backgroundColor: isMaster ? tokens.green100 : tokens.orange100,
-  border: `${BORDER_WIDTH}px solid ${
-    isMaster ? tokens.green400 : tokens.orange400
-  }`,
+export const getNavbarIconColor = (variant: EnvVariant) => {
+  switch (variant) {
+    case 'trial':
+      return tokens.purple700;
+    case 'non-master':
+      return tokens.orange700;
+  }
+  // Default for master
+  return tokens.green700;
+};
 
-  '&:hover, &:active': {
-    backgroundColor: isMaster ? tokens.green200 : tokens.orange200,
-  },
-});
+const getEnvVariantColor = (variant: EnvVariant) => {
+  const sharedStyles = {
+    padding: '0',
+    paddingRight: tokens.spacingXs,
+  };
+
+  switch (variant) {
+    case 'trial':
+      return {
+        ...sharedStyles,
+        color: tokens.purple700,
+        backgroundColor: tokens.purple100,
+        border: `${BORDER_WIDTH}px solid ${tokens.purple400}`,
+        '&:hover, &:active': {
+          backgroundColor: tokens.purple200,
+        },
+      };
+    case 'non-master':
+      return {
+        ...sharedStyles,
+        color: tokens.orange700,
+        backgroundColor: tokens.orange100,
+        border: `${BORDER_WIDTH}px solid ${tokens.orange400}`,
+        '&:hover, &:active': {
+          backgroundColor: tokens.orange200,
+        },
+      };
+  }
+  // Default for master
+  return {
+    ...sharedStyles,
+    color: tokens.green700,
+    backgroundColor: tokens.green100,
+    border: `${BORDER_WIDTH}px solid ${tokens.green400}`,
+    '&:hover, &:active': {
+      backgroundColor: tokens.green200,
+    },
+  };
+};
+
+const getWrapperBackground = (variant: EnvVariant) => {
+  switch (variant) {
+    case 'trial':
+      return {
+        background: tokens.purple300,
+      };
+    case 'non-master':
+      return {
+        background: `linear-gradient(
+          -45deg,
+          ${tokens.orange300} 28.57%,
+          transparent 28.57%,
+          transparent 50%,
+          ${tokens.orange300} 50%,
+          ${tokens.orange300} 78.57%,
+          transparent 78.57%,
+          transparent 100%
+        )`,
+        backgroundSize: '9px 9px',
+      };
+  }
+  // Default for master
+  return {
+    background: tokens.green300,
+  };
+};
