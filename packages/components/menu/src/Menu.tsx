@@ -93,15 +93,17 @@ export function Menu(props: MenuProps) {
   useEffect(() => {
     if (isOpen && menuListRef.current) {
       const menuItems =
-        menuListRef.current.querySelectorAll(MENU_ITEMS_SELECTOR);
+        menuListRef.current.querySelectorAll<HTMLElement>(MENU_ITEMS_SELECTOR);
 
       if (menuItems.length > 0 && focusedIndex < menuItems.length) {
         // timeout trick to prevent scroll from jumping
         // when the popover is not positioned correctly yet in the opening phase
         setTimeout(() => {
-          (menuItems[focusedIndex] as HTMLElement).focus({
-            preventScroll: false,
-          });
+          menuItems[focusedIndex].focus({ preventScroll: false });
+        }, 0);
+      } else {
+        setTimeout(() => {
+          menuListRef.current.focus({ preventScroll: false });
         }, 0);
       }
     }
