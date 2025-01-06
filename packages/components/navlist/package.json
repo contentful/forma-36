@@ -6,7 +6,7 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.75.2",
+    "@contentful/f36-core": "^4.75.3",
     "@contentful/f36-tokens": "^4.1.0",
     "emotion": "^10.0.17"
   },
