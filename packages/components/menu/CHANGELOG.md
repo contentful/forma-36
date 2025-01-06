@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.75.3
+
+### Patch Changes
+
+- [#2957](https://github.com/contentful/forma-36/pull/2957) [`ebb96c5`](https://github.com/contentful/forma-36/commit/ebb96c50db3bd32cd7c0bb468ac92fd1327b9dce) Thanks [@veu](https://github.com/veu)! - Fix menu with all items disabled not closing on blur
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.75.3
+  - @contentful/f36-popover@4.75.3
+  - @contentful/f36-typography@4.75.3
+
 ## 4.75.2
 
 ### Patch Changes
