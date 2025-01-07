@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.75.4
+
+### Patch Changes
+
+- [#2968](https://github.com/contentful/forma-36/pull/2968) [`3be4b76`](https://github.com/contentful/forma-36/commit/3be4b76545ba1d7dbd16d7aa14a14257642a796d) Thanks [@veu](https://github.com/veu)! - Don’t focus menu if menu has just been removed
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.75.4
+  - @contentful/f36-popover@4.75.4
+  - @contentful/f36-typography@4.75.4
+
 ## 4.75.3
 
 ### Patch Changes
