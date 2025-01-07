@@ -103,7 +103,7 @@ export function Menu(props: MenuProps) {
         }, 0);
       } else {
         setTimeout(() => {
-          menuListRef.current.focus({ preventScroll: false });
+          menuListRef.current?.focus({ preventScroll: false });
         }, 0);
       }
     }
