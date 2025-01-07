@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 07-01-2025
+
+**F36 Menu** `v4.75.3`
+
+- Fix menu with all items disabled not closing on blur
+
 ## 17-12-2024
 
 **F36 Copybutton** `v4.75.2`
