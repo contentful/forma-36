@@ -603,6 +603,21 @@ export const WithDifferentEnvironments: Story<{
           account={<Account {...args} />}
         />
       </Flex>
+
+      <Flex flexDirection="column">
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Trial
+        </SectionHeading>
+
+        <Navbar
+          mobileNavigation={<MobileMenu />}
+          mainNavigation={<MainItems />}
+          switcher={
+            <Switcher envVariant="trial" space="Trial" environment="master" />
+          }
+          account={<Account {...args} />}
+        />
+      </Flex>
     </Flex>
   );
 };
