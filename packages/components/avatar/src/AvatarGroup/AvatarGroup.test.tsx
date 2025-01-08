@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import UserEvent from '@testing-library/user-event/';
 import { Avatar } from '../Avatar';
 import { AvatarGroup } from './AvatarGroup';
@@ -87,7 +87,10 @@ describe('AvatarGroup', () => {
 
     // Renders the tooltip for the presented avatars
     await user.hover(screen.getAllByTestId('cf-ui-avatar')[0]);
-    expect(screen.getByRole('tooltip').textContent).toBe('Marge Simpson');
+
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip').textContent).toBe('Marge Simpson'),
+    );
   });
 
   it('renders the avatars with tooltip in dropdown', async () => {

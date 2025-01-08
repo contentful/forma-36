@@ -87,7 +87,11 @@ function _Avatar(
           width="100%"
         />
       )}
-      {!!icon && <span className={styles.overlayIcon}>{icon}</span>}
+      {!!icon && (
+        <span className={styles.overlayIcon} data-test-id={`${testId}-icon`}>
+          {icon}
+        </span>
+      )}
     </div>
   );
 

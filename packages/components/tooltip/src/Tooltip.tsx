@@ -25,7 +25,7 @@ export type WithEnhancedContent = {
    */
   content?: ReactElement | string;
   /**
-   * Accesible label property, only required when using ReactElement as content
+   * Accessible label property, only required when using ReactElement as content
    */
   label?: string;
 };
@@ -123,7 +123,7 @@ export const Tooltip = ({
   onMouseLeave,
   onMouseOver,
   onKeyDown,
-  showDelay = 0,
+  showDelay = 375,
   targetWrapperClassName,
   maxWidth = 360,
   testId = 'cf-ui-tooltip',
