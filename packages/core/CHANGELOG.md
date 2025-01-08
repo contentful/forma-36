@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.76.0
+
+### Minor Changes
+
+- [#2953](https://github.com/contentful/forma-36/pull/2953) [`02f6680`](https://github.com/contentful/forma-36/commit/02f66808b45ecac2b969a343cc4aad95dd165ef6) Thanks [@veu](https://github.com/veu)! - add Geist typeface as new default
+
+### Patch Changes
+
+- Updated dependencies [[`02f6680`](https://github.com/contentful/forma-36/commit/02f66808b45ecac2b969a343cc4aad95dd165ef6)]:
+  - @contentful/f36-tokens@4.2.0
+
 ## 4.75.4
 
 ## 4.75.3

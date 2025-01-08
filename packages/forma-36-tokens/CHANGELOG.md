@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.2.0
+
+### Minor Changes
+
+- [#2953](https://github.com/contentful/forma-36/pull/2953) [`02f6680`](https://github.com/contentful/forma-36/commit/02f66808b45ecac2b969a343cc4aad95dd165ef6) Thanks [@veu](https://github.com/veu)! - add Geist typeface as new default
+
 ## 4.1.0
 
 ### Minor Changes
