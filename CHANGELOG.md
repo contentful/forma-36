@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 08-01-2025
+
+**F36 Menu** `v4.75.4`
+
+- Don’t focus menu if menu has just been removed
+
 ## 07-01-2025
 
 **F36 Menu** `v4.75.3`
