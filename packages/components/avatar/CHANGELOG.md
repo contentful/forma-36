@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.77.0
+
+### Minor Changes
+
+- [#2969](https://github.com/contentful/forma-36/pull/2969) [`34a33f5`](https://github.com/contentful/forma-36/commit/34a33f594de44c392b963d70d0cfc5a9f6b7898f) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - Update default show delay
+
+### Patch Changes
+
+- Updated dependencies [[`34a33f5`](https://github.com/contentful/forma-36/commit/34a33f594de44c392b963d70d0cfc5a9f6b7898f)]:
+  - @contentful/f36-tooltip@4.77.0
+  - @contentful/f36-core@4.77.0
+  - @contentful/f36-menu@4.77.0
+  - @contentful/f36-image@4.77.0
+
 ## 4.76.0
 
 ### Patch Changes

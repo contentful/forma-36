@@ -1,5 +1,16 @@
 # @contentful/f36-navbar
 
+## 4.77.0
+
+### Patch Changes
+
+- Updated dependencies [[`34a33f5`](https://github.com/contentful/forma-36/commit/34a33f594de44c392b963d70d0cfc5a9f6b7898f)]:
+  - @contentful/f36-avatar@4.77.0
+  - @contentful/f36-core@4.77.0
+  - @contentful/f36-icon@4.77.0
+  - @contentful/f36-menu@4.77.0
+  - @contentful/f36-skeleton@4.77.0
+
 ## 4.76.0
 
 ### Patch Changes
