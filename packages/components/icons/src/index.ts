@@ -63,6 +63,7 @@ export * from './vendor/phosphor/DotsSixVerticalIcon.js';
 export * from './vendor/phosphor/DotsThreeIcon.js';
 export * from './vendor/phosphor/DotsThreeVerticalIcon.js';
 export * from './vendor/phosphor/DownloadSimpleIcon.js';
+export * from './vendor/phosphor/EnvelopeIcon.js';
 export * from './vendor/phosphor/EyeClosedIcon.js';
 export * from './vendor/phosphor/EyeIcon.js';
 export * from './vendor/phosphor/FileArchive.js';
