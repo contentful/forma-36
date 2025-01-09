@@ -22,7 +22,10 @@ export const Default: Story<HeaderProps> = ({
   <Box style={{ minWidth: '1000px' }}>
     <Header
       withBackButton={true}
-      backButtonProps={{ onClick: action('back button click') }}
+      backButtonProps={{
+        onClick: action('back button click'),
+        'aria-label': 'Custom go back aria-label',
+      }}
       breadcrumbs={[
         {
           content: 'Content Types',
