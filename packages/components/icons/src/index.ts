@@ -98,6 +98,7 @@ export * from './vendor/phosphor/LockSimpleOpenIcon.js';
 export * from './vendor/phosphor/MagnifyingGlassIcon.js';
 export * from './vendor/phosphor/MapPinLineIcon.js';
 export * from './vendor/phosphor/MegaphoneSimpleIcon.js';
+export * from './vendor/phosphor/MicrosoftTeamsLogoIcon.js';
 export * from './vendor/phosphor/MinusIcon.js';
 export * from './vendor/phosphor/PaintBrushIcon.js';
 export * from './vendor/phosphor/PaperPlaneTiltIcon.js';
