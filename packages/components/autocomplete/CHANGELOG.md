@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.77.1
+
+### Patch Changes
+
+- [#2962](https://github.com/contentful/forma-36/pull/2962) [`3c9a565`](https://github.com/contentful/forma-36/commit/3c9a5659ec6cc4932be88fe66dba506e03071bf6) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - Enable dynamic `aria-label` value
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.77.1
+  - @contentful/f36-core@4.77.1
+  - @contentful/f36-forms@4.77.1
+  - @contentful/f36-popover@4.77.1
+  - @contentful/f36-skeleton@4.77.1
+  - @contentful/f36-typography@4.77.1
+
 ## 4.77.0
 
 ### Patch Changes
