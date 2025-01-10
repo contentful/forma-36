@@ -4,17 +4,23 @@ import { ArrowBackwardIcon } from '@contentful/f36-icons';
 
 export type BackButtonProps = Omit<
   Partial<IconButtonProps>,
-  'aria-label' | 'children' | 'icon' | 'variant' | 'size'
->;
+  'children' | 'icon' | 'variant' | 'size'
+> & {
+  'aria-label'?: string;
+};
 
 function _BackButton(
-  { onClick, ...otherProps }: BackButtonProps,
+  {
+    onClick,
+    'aria-label': ariaLabel = 'Go back',
+    ...otherProps
+  }: BackButtonProps,
   ref: Ref<HTMLButtonElement>,
 ) {
   return (
     <IconButton
       {...otherProps}
-      aria-label="Go back"
+      aria-label={ariaLabel}
       icon={<ArrowBackwardIcon variant="muted" />}
       onClick={onClick}
       size="small"
