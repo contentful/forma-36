@@ -8,6 +8,32 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 10-01-2025
+
+**F36 Core** `v4.76.0`
+
+- add Geist typeface as new default
+
+**F36 Tokens** `v4.2.0`
+
+- add Geist typeface as new default
+
+**F36 Avatar** `v4.77.0`
+
+- Update default show delay
+
+**F36 Tooltip** `v4.77.0`
+
+- Update default show delay
+
+**F36 Autocomplete** `v4.77.1`
+
+- Enable dynamic `aria-label` value
+
+**F36 Modal** `v4.77.2`
+
+- Enable dynamic `aria-label` value
+
 ## 08-01-2025
 
 **F36 Menu** `v4.75.4`
