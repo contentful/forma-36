@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.77.3
+
+### Patch Changes
+
+- [#2971](https://github.com/contentful/forma-36/pull/2971) [`efc27b7`](https://github.com/contentful/forma-36/commit/efc27b7b6425a9346d784fb10fa0776e1e7a1c5e) Thanks [@Lelith](https://github.com/Lelith)! - Enables a dynamic string for the aria-label on the BackButton in the Header Component.
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.77.3
+  - @contentful/f36-core@4.77.3
+  - @contentful/f36-typography@4.77.3
+
 ## 4.77.2
 
 ### Patch Changes
