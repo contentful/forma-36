@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 11-01-2025
+
+**F36 Header** `v4.77.3`
+
+- Enables a dynamic string for the aria-label on the BackButton in the Header Component.
+
 ## 10-01-2025
 
 **F36 Core** `v4.76.0`
