@@ -83,4 +83,22 @@ describe('CompoundProgressStepper', function () {
 
     expect(results).toHaveNoViolations();
   });
+
+  it('renders clickable steps', () => {
+    render(
+      <ProgressStepper
+        ariaLabel="Clickable progress stepper"
+        onClick={(stepNumber) => console.log(stepNumber)}
+        activeStep={1}
+      >
+        <ProgressStepper.Step state="complete" />
+        <ProgressStepper.Step state="error" />
+        <ProgressStepper.Step state="warning" />
+      </ProgressStepper>,
+    );
+
+    const links = screen.queryAllByRole('link');
+
+    expect(links).toHaveLength(3);
+  });
 });

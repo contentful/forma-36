@@ -36,6 +36,12 @@ export interface StepProps extends CommonProps {
    * @private
    */
   activeStep?: number;
+  /**
+   * Private prop for the ProgressStepper component
+   * @private
+   * @param stepNumber
+   */
+  onClick?: (stepNumber: number) => void;
 }
 
 function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
@@ -47,6 +53,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
     stepStyle,
     orientation,
     activeStep,
+    onClick,
   } = props;
 
   const isBeforeActiveStep = stepNumber < activeStep;
@@ -68,6 +75,39 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
     }
   };
 
+  const handleStepClick = (
+    e: React.MouseEvent<HTMLElement>,
+    stepNumber: number,
+  ) => {
+    e.preventDefault();
+    onClick(stepNumber);
+  };
+
+  const renderStepContent = () => {
+    const classNames = cx(styles.listItemContent, {
+      [styles.active]: state === 'active',
+      [styles.disabled]: state === 'disabled',
+      [styles.complete]: state === 'complete',
+      [styles.error]: state === 'error',
+      [styles.warning]: state === 'warning',
+    });
+
+    const content = renderStep();
+    const isClickable = onClick && state !== 'disabled';
+
+    return isClickable ? (
+      <a
+        href="#"
+        className={classNames}
+        onClick={(e) => handleStepClick(e, stepNumber)}
+      >
+        {content}
+      </a>
+    ) : (
+      <span className={classNames}>{content}</span>
+    );
+  };
+
   return (
     <li
       className={
@@ -79,17 +119,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
       data-test-id={`cf-ui-step-${state}`}
       aria-label={`Step ${stepNumberToDisplay} ${state}`}
     >
-      <span
-        className={cx(styles.listItemContent, {
-          [styles.active]: state === 'active',
-          [styles.disabled]: state === 'disabled',
-          [styles.complete]: state === 'complete',
-          [styles.error]: state === 'error',
-          [styles.warning]: state === 'warning',
-        })}
-      >
-        {renderStep()}
-      </span>
+      {renderStepContent()}
       {labelText && (
         <p
           className={cx(

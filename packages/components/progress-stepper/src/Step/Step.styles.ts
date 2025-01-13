@@ -99,6 +99,7 @@ export const getStyles = () => {
       '& svg': {
         height: '20px',
       },
+      textDecoration: 'none',
       gridArea: 'circle',
     }),
     horizontalLabel: css({

@@ -31,4 +31,20 @@ describe('Step', function () {
 
     expect(label).toBeTruthy();
   });
+
+  it('renders link when onClick provided', () => {
+    render(<Step state="active" onClick={() => console.log('Click')} />);
+
+    const link = screen.getByRole('link');
+
+    expect(link).toBeTruthy();
+  });
+
+  it('renders step without link when state is "disabled"', () => {
+    render(<Step state="disabled" onClick={() => console.log('Click')} />);
+
+    const link = screen.queryByRole('link');
+
+    expect(link).toBeNull();
+  });
 });
