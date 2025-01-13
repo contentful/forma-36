@@ -100,7 +100,7 @@ export const ClickableStep: Story<ProgressStepperProps> = (args) => {
         stepStyle="number"
         activeStep={0}
         ariaLabel="Number progress stepper"
-        onClick={(stepNumber) => console.log(`Step ${stepNumber} clicked`)}
+        onClick={() => {}}
         {...args}
       >
         <ProgressStepper.Step state="active" labelText="Active" />

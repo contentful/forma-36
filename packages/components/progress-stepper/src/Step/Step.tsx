@@ -96,13 +96,12 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
     const isClickable = onClick && state !== 'disabled';
 
     return isClickable ? (
-      <a
-        href="#"
+      <button
         className={classNames}
         onClick={(e) => handleStepClick(e, stepNumber)}
       >
         {content}
-      </a>
+      </button>
     ) : (
       <span className={classNames}>{content}</span>
     );

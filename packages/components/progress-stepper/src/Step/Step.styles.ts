@@ -99,7 +99,9 @@ export const getStyles = () => {
       '& svg': {
         height: '20px',
       },
-      textDecoration: 'none',
+      'button&': {
+        cursor: 'pointer',
+      },
       gridArea: 'circle',
     }),
     horizontalLabel: css({
