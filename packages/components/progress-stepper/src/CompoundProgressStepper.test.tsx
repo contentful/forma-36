@@ -88,7 +88,7 @@ describe('CompoundProgressStepper', function () {
     render(
       <ProgressStepper
         ariaLabel="Clickable progress stepper"
-        onClick={(stepNumber) => console.log(stepNumber)}
+        onClick={(stepNumber) => {}}
         activeStep={1}
       >
         <ProgressStepper.Step state="complete" />

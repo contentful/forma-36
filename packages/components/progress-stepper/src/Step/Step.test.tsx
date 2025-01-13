@@ -33,7 +33,7 @@ describe('Step', function () {
   });
 
   it('renders link when onClick provided', () => {
-    render(<Step state="active" onClick={() => console.log('Click')} />);
+    render(<Step state="active" onClick={() => {}} />);
 
     const link = screen.getByRole('link');
 
@@ -41,7 +41,7 @@ describe('Step', function () {
   });
 
   it('renders step without link when state is "disabled"', () => {
-    render(<Step state="disabled" onClick={() => console.log('Click')} />);
+    render(<Step state="disabled" onClick={() => {}} />);
 
     const link = screen.queryByRole('link');
 
