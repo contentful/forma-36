@@ -97,6 +97,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
 
     return isClickable ? (
       <button
+        type="button"
         className={classNames}
         onClick={(e) => handleStepClick(e, stepNumber)}
       >
