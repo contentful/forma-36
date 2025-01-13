@@ -97,7 +97,7 @@ describe('CompoundProgressStepper', function () {
       </ProgressStepper>,
     );
 
-    const links = screen.queryAllByRole('link');
+    const links = screen.queryAllByRole('button');
 
     expect(links).toHaveLength(3);
   });
