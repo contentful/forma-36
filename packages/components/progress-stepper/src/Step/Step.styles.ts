@@ -101,6 +101,7 @@ export const getStyles = () => {
       },
       'button&': {
         cursor: 'pointer',
+        padding: 0,
       },
       gridArea: 'circle',
     }),
