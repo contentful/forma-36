@@ -117,6 +117,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
         className={classNames}
         onClick={(e) => handleStepClick(e, stepNumber)}
         aria-label={labelText}
+        tabIndex={-1}
       >
         {labelText}
       </button>
