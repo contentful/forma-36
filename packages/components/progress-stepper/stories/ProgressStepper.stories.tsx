@@ -99,7 +99,7 @@ export const ClickableStep: Story<ProgressStepperProps> = (args) => {
       <ProgressStepper
         stepStyle="number"
         activeStep={0}
-        ariaLabel="Number progress stepper"
+        ariaLabel="Clickable progress stepper"
         onClick={() => {}}
         {...args}
       >
