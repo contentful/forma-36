@@ -94,6 +94,13 @@ export const getStyles = () => {
       border: `2px solid ${tokens.gray300}`,
       borderRadius: '50%',
       backgroundColor: 'white',
+      boxShadow: 'none',
+      '&:focus': {
+        boxShadow: tokens.glowPrimary,
+      },
+      '&:focus-visible': {
+        boxShadow: tokens.glowPrimary,
+      },
       fontWeight: tokens.fontWeightDemiBold,
       color: tokens.gray600,
       '& svg': {
@@ -107,11 +114,11 @@ export const getStyles = () => {
     }),
     label: css({
       'button&': {
-        cursor: 'pointer',
         padding: 0,
-        border: 'none',
-        backgroundColor: 'transparent',
-        borderRadius: 'none',
+        alignItems: 'flex-start',
+        '&:hover': {
+          background: 'transparent',
+        },
       },
     }),
     horizontalLabel: css({
