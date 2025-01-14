@@ -1,8 +1,8 @@
 import React from 'react';
 import { cx } from 'emotion';
 import { type CommonProps } from '@contentful/f36-core';
+import { Button } from '@contentful/f36-button';
 import { getStyles } from './Step.styles';
-import { Button } from '@contentful/f36-components';
 import { DoneIcon, CloseIcon, WarningIcon } from '@contentful/f36-icons';
 
 export interface StepProps extends CommonProps {
