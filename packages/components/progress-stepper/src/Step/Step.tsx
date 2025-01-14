@@ -60,7 +60,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
   const isActiveStep = stepNumber === activeStep;
   const stepNumberToDisplay = stepNumber + 1;
 
-  const renderStep = () => {
+  const renderStepContent = () => {
     switch (true) {
       case stepStyle === 'number':
         return stepNumberToDisplay;
@@ -95,7 +95,37 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
     onClick(stepNumber);
   };
 
-  const renderStepContent = () => {
+  const renderStepLabel = (isClickable: boolean) => {
+    if (!labelText) {
+      return null;
+    }
+
+    const classNames = cx(
+      styles.label,
+      orientation === 'horizontal'
+        ? styles.horizontalLabel
+        : styles.verticalLabel,
+      {
+        [styles.incompleteLabel]: state === 'incomplete',
+        [styles.disabledLabel]: state === 'disabled',
+      },
+    );
+
+    return isClickable ? (
+      <button
+        type="button"
+        className={classNames}
+        onClick={(e) => handleStepClick(e, stepNumber)}
+        aria-label={labelText}
+      >
+        {labelText}
+      </button>
+    ) : (
+      <span className={classNames}>{labelText}</span>
+    );
+  };
+
+  const renderStep = () => {
     const classNames = cx(styles.listItemContent, {
       [styles.active]: state === 'active',
       [styles.disabled]: state === 'disabled',
@@ -104,10 +134,9 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
       [styles.warning]: state === 'warning',
     });
 
-    const content = renderStep();
+    const content = renderStepContent();
     const isClickable = onClick && state !== 'disabled';
-
-    return isClickable ? (
+    const step = isClickable ? (
       <button
         type="button"
         className={classNames}
@@ -118,6 +147,12 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
       </button>
     ) : (
       <span className={classNames}>{content}</span>
+    );
+    return (
+      <>
+        {step}
+        {renderStepLabel(isClickable)}
+      </>
     );
   };
 
@@ -132,22 +167,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
       data-test-id={`cf-ui-step-${state}`}
       aria-label={`Step ${stepNumberToDisplay} ${state}`}
     >
-      {renderStepContent()}
-      {labelText && (
-        <p
-          className={cx(
-            orientation === 'horizontal'
-              ? styles.horizontalLabel
-              : styles.verticalLabel,
-            {
-              [styles.incompleteLabel]: state === 'incomplete',
-              [styles.disabledLabel]: state === 'disabled',
-            },
-          )}
-        >
-          {labelText}
-        </p>
-      )}
+      {renderStep()}
     </li>
   );
 }

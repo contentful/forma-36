@@ -105,6 +105,15 @@ export const getStyles = () => {
       },
       gridArea: 'circle',
     }),
+    label: css({
+      'button&': {
+        cursor: 'pointer',
+        padding: 0,
+        border: 'none',
+        backgroundColor: 'transparent',
+        borderRadius: 'none',
+      },
+    }),
     horizontalLabel: css({
       gridArea: 'label',
       textAlign: 'center',
