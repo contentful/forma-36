@@ -9,11 +9,11 @@ export default function ProgressStepperHorizontalExample() {
   };
 
   const steps = [
-    <ProgressStepper.Step state="complete" key={`step-0`} />,
-    <ProgressStepper.Step state="complete" key={`step-1`} />,
-    <ProgressStepper.Step state="active" key={`step-2`} />,
-    <ProgressStepper.Step key={`step-3`} />,
-    <ProgressStepper.Step key={`step-4`} />,
+    <ProgressStepper.Step state="complete" key="step-0" />,
+    <ProgressStepper.Step state="complete" key="step-1" />,
+    <ProgressStepper.Step state="active" key="step-2" />,
+    <ProgressStepper.Step key="step-3" />,
+    <ProgressStepper.Step key="step-4" />,
   ];
 
   const getStepState = (stepNumber) => {
