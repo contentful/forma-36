@@ -75,6 +75,18 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
     }
   };
 
+  const getStepText = () => {
+    if (labelText) {
+      return labelText;
+    }
+
+    if (stepStyle === 'number') {
+      return `Step ${stepNumberToDisplay}`;
+    }
+
+    return state.charAt(0).toUpperCase() + state.slice(1);
+  };
+
   const handleStepClick = (
     e: React.MouseEvent<HTMLElement>,
     stepNumber: number,
@@ -100,6 +112,7 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
         type="button"
         className={classNames}
         onClick={(e) => handleStepClick(e, stepNumber)}
+        aria-label={getStepText()}
       >
         {content}
       </button>
