@@ -60,6 +60,7 @@ function _ProgressStepper(
         key: `steps-rendered-${index}`,
         stepNumber: index,
         onClick,
+        ...(child as React.ReactElement).props,
       });
       return stepChild;
     });
