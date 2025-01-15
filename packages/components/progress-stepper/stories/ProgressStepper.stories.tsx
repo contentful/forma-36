@@ -19,6 +19,7 @@ export const Basic: Story<ProgressStepperProps> = (args) => {
         activeStep={2}
         ariaLabel="Basic progress stepper"
         {...args}
+        onClick={undefined}
       >
         <ProgressStepper.Step state="complete" />
         <ProgressStepper.Step state="complete" />
@@ -38,6 +39,7 @@ export const BasicWithLabels: Story<ProgressStepperProps> = (args) => {
         activeStep={2}
         ariaLabel="Progress stepper with labels"
         {...args}
+        onClick={undefined}
       >
         <ProgressStepper.Step state="complete" labelText="Label 1" />
         <ProgressStepper.Step state="complete" labelText="Label 2" />
@@ -57,6 +59,7 @@ export const IconStepVariantStates: Story<ProgressStepperProps> = (args) => {
         activeStep={0}
         ariaLabel="Icon progress stepper"
         {...args}
+        onClick={undefined}
       >
         <ProgressStepper.Step state="active" labelText="Active" />
         <ProgressStepper.Step state="complete" labelText="Complete" />
@@ -76,6 +79,28 @@ export const NumberStepVariantStates: Story<ProgressStepperProps> = (args) => {
         stepStyle="number"
         activeStep={0}
         ariaLabel="Number progress stepper"
+        {...args}
+        onClick={undefined}
+      >
+        <ProgressStepper.Step state="active" labelText="Active" />
+        <ProgressStepper.Step state="complete" labelText="Complete" />
+        <ProgressStepper.Step labelText="Incomplete" />
+        <ProgressStepper.Step state="disabled" labelText="Disabled" />
+        <ProgressStepper.Step state="error" labelText="Error" />
+        <ProgressStepper.Step state="warning" labelText="Warning" />
+      </ProgressStepper>
+    </div>
+  );
+};
+
+export const ClickableStep: Story<ProgressStepperProps> = (args) => {
+  return (
+    <div style={getContainerStyle(args.orientation)}>
+      <ProgressStepper
+        stepStyle="number"
+        activeStep={0}
+        ariaLabel="Clickable progress stepper"
+        onClick={() => {}}
         {...args}
       >
         <ProgressStepper.Step state="active" labelText="Active" />

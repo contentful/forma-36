@@ -25,6 +25,10 @@ export interface ProgressStepperProps extends CommonProps, MarginProps {
    * Label to be used on aria-label for the nav element
    */
   ariaLabel: string;
+  /**
+   * Handler when the step is clicked
+   */
+  onClick?: (stepNumber: number) => void;
 }
 
 function _ProgressStepper(
@@ -39,6 +43,7 @@ function _ProgressStepper(
     activeStep = 0,
     testId,
     ariaLabel,
+    onClick = null,
   } = props;
   const styles = getStyles();
   const hydratedTestId =
@@ -54,6 +59,7 @@ function _ProgressStepper(
         activeStep,
         key: `steps-rendered-${index}`,
         stepNumber: index,
+        onClick,
       });
       return stepChild;
     });
