@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ProgressStepper } from '@contentful/f36-progress-stepper';
 
-export default function ProgressStepperClickableExample() {
+export default function ProgressStepperOnlyPreviousStepsClickableExample() {
   const [activeStep, setActiveStep] = useState(2);
 
   const handleStepClick = (stepNumber) => {
@@ -28,8 +28,14 @@ export default function ProgressStepperClickableExample() {
 
   const getSteps = () => {
     return steps.map((step, index) => {
+      const onClickStep =
+        activeStep > index
+          ? (stepIndex) => handleStepClick(stepIndex)
+          : undefined;
+
       return React.cloneElement(step, {
         state: getStepState(index),
+        onClick: onClickStep,
       });
     });
   };
@@ -38,7 +44,6 @@ export default function ProgressStepperClickableExample() {
     <ProgressStepper
       activeStep={activeStep}
       ariaLabel="Clickable progress stepper"
-      onClick={(stepNumber) => handleStepClick(stepNumber)}
     >
       {getSteps()}
     </ProgressStepper>
