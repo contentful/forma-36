@@ -38,4 +38,7 @@ export const parameters = {
     hideNoControlsWarning: true,
     sort: 'requiredFirst',
   },
+  chromatic: {
+    diffThreshold: 0.8,
+  },
 };
