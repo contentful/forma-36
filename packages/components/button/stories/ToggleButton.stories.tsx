@@ -8,7 +8,7 @@ import { Icon } from '@contentful/f36-icon';
 import * as icons from '@contentful/f36-icons';
 
 import { ButtonGroup } from '../src';
-import { ToggleButton, ToggleButtonProps } from '../src/ToggleButton';
+import { ToggleButton, type ToggleButtonProps } from '../src/ToggleButton';
 
 export default {
   title: 'Components/Button components/ToggleButton',
@@ -34,6 +34,7 @@ export const Basic = ({ icon, children, ...rest }: ToggleButtonProps) => {
   return (
     <ToggleButton
       isActive={isActive}
+      // @ts-expect-error - The icon React Element can't be passed as a string
       icon={icon && <Icon as={icons[icon]} />}
       onToggle={() => {
         setIsActive(!isActive);
@@ -148,6 +149,7 @@ export const Overview = ({ icon, onToggle, ...rest }: ToggleButtonProps) => (
       <Stack marginBottom="spacingM" spacing="spacingXs">
         <ToggleButton
           onToggle={onToggle}
+          // @ts-expect-error - The icon React Element can't be passed as a string
           icon={icon && <Icon as={icons[icon]} />}
           {...rest}
         >
@@ -157,6 +159,7 @@ export const Overview = ({ icon, onToggle, ...rest }: ToggleButtonProps) => (
         <ToggleButton
           onToggle={onToggle}
           isActive
+          // @ts-expect-error - The icon React Element can't be passed as a string
           icon={icon && <Icon as={icons[icon]} />}
           {...rest}
         >
@@ -166,6 +169,7 @@ export const Overview = ({ icon, onToggle, ...rest }: ToggleButtonProps) => (
         <ToggleButton
           onToggle={onToggle}
           isDisabled
+          // @ts-expect-error - The icon React Element can't be passed as a string
           icon={icon && <Icon as={icons[icon]} />}
           {...rest}
         >
