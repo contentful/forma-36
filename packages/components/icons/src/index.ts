@@ -121,6 +121,7 @@ export * from './vendor/phosphor/SlackLogoIcon.js';
 export * from './vendor/phosphor/SmileyIcon.js';
 export * from './vendor/phosphor/SortAscendingIcon.js';
 export * from './vendor/phosphor/SortDescendingIcon.js';
+export * from './vendor/phosphor/SquaresFourIcon.js';
 export * from './vendor/phosphor/StackIcon.js';
 export * from './vendor/phosphor/StarIcon.js';
 export * from './vendor/phosphor/SubtractIcon.js';
