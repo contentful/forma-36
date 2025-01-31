@@ -7,6 +7,13 @@ import { MenuItem, MenuSectionTitle } from '@contentful/f36-components';
 export default {
   title: 'Components/EntityList/EntityList',
   component: EntityList,
+  decorators: [
+    (StoryComponent) => (
+      <div style={{ maxWidth: '600px' }}>
+        <StoryComponent />
+      </div>
+    ),
+  ],
   argTypes: {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
@@ -91,10 +98,11 @@ export const withDragHandle = () => (
       contentType="My content type"
       status="published"
       withDragHandle
+      isLoading
     />
     <EntityList.Item
       title="Entry 2"
-      description="Description"
+      description="This is a long description to showcase what happens when we are running out of space."
       contentType="My content type"
       status="draft"
       withDragHandle
