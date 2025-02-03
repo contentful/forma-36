@@ -178,7 +178,10 @@ export const EntityListItem = ({
       {renderCardDragHandle()}
       {isLoading ? (
         <article className={styles.card(false)}>
-          <Skeleton.Container clipId="f36-entity-list-item-skeleton">
+          <Skeleton.Container
+            svgHeight={46}
+            clipId="f36-entity-list-item-skeleton"
+          >
             <Skeleton.Image height={46} width={46} />
             <Skeleton.BodyText
               numberOfLines={2}

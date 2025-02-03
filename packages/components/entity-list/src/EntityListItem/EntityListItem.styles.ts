@@ -25,6 +25,7 @@ export const getEntityListItemStyles = () => ({
     css({
       display: 'flex',
       textDecoration: 'none',
+      minWidth: 0,
       width: '100%',
       minHeight: tokens.spacing3Xl,
       padding: tokens.spacingXs,
