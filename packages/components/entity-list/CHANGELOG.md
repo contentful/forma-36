@@ -1,5 +1,21 @@
 # Change Log
 
+## 4.77.4
+
+### Patch Changes
+
+- [#2989](https://github.com/contentful/forma-36/pull/2989) [`f1ade97`](https://github.com/contentful/forma-36/commit/f1ade97ae1b81ae2e1d37a7055a4a6f06679381c) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - fix(EntityListItem): skeleton loader height, drag handle shrinking, and card action and badge wrapping
+
+- Updated dependencies []:
+  - @contentful/f36-badge@4.77.4
+  - @contentful/f36-button@4.77.4
+  - @contentful/f36-core@4.77.4
+  - @contentful/f36-drag-handle@4.77.4
+  - @contentful/f36-icon@4.77.4
+  - @contentful/f36-menu@4.77.4
+  - @contentful/f36-skeleton@4.77.4
+  - @contentful/f36-typography@4.77.4
+
 ## 4.77.3
 
 ### Patch Changes
