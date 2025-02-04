@@ -1,7 +1,6 @@
 /* global Promise */
 
 import React from 'react';
-import { render } from 'react-dom';
 import {
   NotificationsManager,
   ShowAction,
@@ -35,7 +34,17 @@ function createRoot(callback: () => void) {
   const container = document.createElement('div');
   document.body.appendChild(container);
 
-  render(<NotificationsManager register={registerAPI} />, container, callback);
+  if (parseInt(React.version) >= 18) {
+    import("react-dom/client").then(module => {
+      const root = module.createRoot(container);
+      root.render(<NotificationsManager register={registerAPI} />);
+      callback()
+    });
+  } else {
+    import("react-dom").then(module => {
+      module.render(<NotificationsManager register={registerAPI} />, container, callback);
+    });
+  }
 }
 
 function afterInit<PromiseValueType>(fn: Function) {
