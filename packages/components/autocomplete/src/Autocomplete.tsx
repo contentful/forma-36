@@ -451,13 +451,16 @@ function _Autocomplete<ItemType>(
           >
             {isLoading &&
               [...Array(3)].map((_, index) => (
-                <div key={index} className={cx(styles.item, styles.disabled)}>
+                <div
+                  key={index}
+                  className={cx(styles.item({ isDisabled: true }))}
+                >
                   <ListItemLoadingState />
                 </div>
               ))}
 
             {!isLoading && isShowingNoMatches && (
-              <div className={styles.item}>
+              <div className={styles.item({})}>
                 <Subheading className={styles.noMatchesTitle}>
                   {noMatchesMessage}
                 </Subheading>
