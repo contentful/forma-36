@@ -28,7 +28,7 @@ export const getAutocompleteStyles = (listMaxHeight: number) => ({
   }),
   list: css({
     listStyle: 'none',
-    padding: `${tokens.spacingXs} 0`,
+    padding: `${tokens.spacingXs} ${tokens.spacing2Xs}`,
     margin: 0,
   }),
   groupTitle: css({
@@ -41,17 +41,23 @@ export const getAutocompleteStyles = (listMaxHeight: number) => ({
   }),
   item: css({
     display: 'block',
-    padding: `${tokens.spacingXs} ${tokens.spacingM}`,
+    // Magic number to get a height of 32px on the item
+    padding: `6px ${tokens.spacingXs}`,
     wordBreak: 'break-word',
     whiteSpace: 'break-spaces',
     cursor: 'pointer',
     hyphens: 'auto',
-
+    color: tokens.gray700,
+    borderRadius: tokens.borderRadiusSmall,
+    fontSize: tokens.fontSizeM,
+    lineHeight: tokens.lineHeightM,
+    fontWeight: tokens.fontWeightNormal,
     '&:focus, &:hover': {
       backgroundColor: tokens.gray100,
     },
     '&:active': {
       backgroundColor: tokens.gray200,
+      color: tokens.gray900,
     },
   }),
   disabled: css({

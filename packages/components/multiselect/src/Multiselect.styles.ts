@@ -90,6 +90,9 @@ export const getMultiselectStyles = () => ({
   }),
   optionText: css({
     color: tokens.gray700,
+    '&:active': {
+      color: tokens.gray900,
+    },
     b: {
       color: tokens.gray900,
     },
@@ -105,7 +108,7 @@ export const getMultiselectStyles = () => ({
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
-      borderRadius: tokens.borderRadiusMedium,
+      borderRadius: tokens.borderRadiusSmall,
       border: 0,
       cursor: 'pointer',
       fontSize: tokens.fontSizeM,
