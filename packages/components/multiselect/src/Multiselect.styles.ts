@@ -1,5 +1,6 @@
-import { css } from 'emotion';
+import { css, cx } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import { getMenuItemStyles } from '@contentful/f36-core';
 
 export const getMultiselectStyles = () => ({
   multiselect: css({
@@ -89,50 +90,23 @@ export const getMultiselectStyles = () => ({
     margin: '1px 0',
   }),
   optionText: css({
-    color: tokens.gray700,
-    '&:active': {
-      color: tokens.gray900,
-    },
     b: {
       color: tokens.gray900,
     },
   }),
-  optionCheck: css({
-    label: {
-      // Magic number to get a height of 32px on the item
-      padding: `6px ${tokens.spacingXs}`,
-      width: '100%',
-      wordBreak: 'break-word',
-      whiteSpace: 'break-spaces',
-      hyphens: 'auto',
-      display: 'flex',
-      flexDirection: 'row',
-      alignItems: 'center',
-      borderRadius: tokens.borderRadiusSmall,
-      border: 0,
-      cursor: 'pointer',
-      fontSize: tokens.fontSizeM,
-      lineHeight: tokens.lineHeightM,
-      fontWeight: tokens.fontWeightNormal,
-      '&:focus, &:hover': {
-        backgroundColor: tokens.gray100,
-      },
-      '&:active': {
-        backgroundColor: tokens.gray200,
-      },
-      '&:focus': {
-        boxShadow: tokens.glowPrimary,
-      },
-      '&:focus:not(:focus-visible)': {
-        boxShadow: 'unset',
-      },
-      '&:focus-visible': {
-        boxShadow: tokens.glowPrimary,
-      },
-    },
-  }),
-  disabled: css({
-    opacity: 0.5,
-    cursor: 'not-allowed',
-  }),
+  optionCheck: ({
+    isActive,
+    isDisabled,
+  }: {
+    isActive?: boolean;
+    isDisabled?: boolean;
+  }) =>
+    css({
+      label: cx(
+        getMenuItemStyles({ isActive, isDisabled }),
+        css({
+          width: '100%',
+        }),
+      ),
+    }),
 });
