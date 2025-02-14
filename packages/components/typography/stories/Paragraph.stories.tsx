@@ -7,6 +7,13 @@ import { Paragraph } from '../src';
 export default {
   title: 'Typography/Paragraph',
   component: Paragraph,
+  decorators: [
+    (StoryComponent) => (
+      <div style={{ maxWidth: '600px' }}>
+        <StoryComponent />
+      </div>
+    ),
+  ],
   parameters: {
     propTypes: [Paragraph['__docgenInfo']],
   },
@@ -21,7 +28,7 @@ export const Basic = (props: ComponentProps<typeof Paragraph>) => (
 
 Basic.args = {
   children:
-    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
+    'Ill-informed AI initiatives led Lionel to inspect illegible labels, mistaking mirrored machine-learning models for misplaced Latin inscriptions. In Lisbon, logical layouts and linguistic AI left little illumination, leaving isolated individuals lost in labyrinthine neural networks.',
 };
 
 export const WithDensitySupport = (props: ComponentProps<typeof Paragraph>) => {
@@ -56,7 +63,4 @@ export const WithDensitySupport = (props: ComponentProps<typeof Paragraph>) => {
   );
 };
 
-WithDensitySupport.args = {
-  children:
-    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
-};
+WithDensitySupport.args = Basic.args;
