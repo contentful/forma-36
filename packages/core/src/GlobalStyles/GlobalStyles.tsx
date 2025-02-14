@@ -116,6 +116,8 @@ export const GlobalStyles = ({
           font-size: ${tokens.fontSizeM};
           line-height: ${tokens.lineHeightM};
           font-synthesis-weight: none;
+          /* Improves readability of lowercase L (l) and uppercase i (I) */
+          font-feature-settings: 'ss05' on;
         }
 
         code {
