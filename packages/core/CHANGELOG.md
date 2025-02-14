@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.77.5
+
+### Patch Changes
+
+- [#2995](https://github.com/contentful/forma-36/pull/2995) [`50b070e`](https://github.com/contentful/forma-36/commit/50b070e7d1d5c899ff74c23c09dc356de1c7d7e1) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - feat(GlobalStyles): improve lowercase L (l) and uppercase i (I) readability
+
 ## 4.77.4
 
 ## 4.77.3
