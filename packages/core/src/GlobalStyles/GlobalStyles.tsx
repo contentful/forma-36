@@ -34,6 +34,8 @@ const cssReset = css`
   body {
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    /* Improves readability of lowercase L (l) and uppercase i (I) */
+    font-feature-settings: 'ss05' on;
   }
 
   /* A elements that don't have a class get default styles */
