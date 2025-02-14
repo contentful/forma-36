@@ -34,8 +34,6 @@ const cssReset = css`
   body {
     text-rendering: optimizeSpeed;
     line-height: 1.5;
-    /* Improves readability of lowercase L (l) and uppercase i (I) */
-    font-feature-settings: 'ss05' on;
   }
 
   /* A elements that don't have a class get default styles */
@@ -118,6 +116,8 @@ export const GlobalStyles = ({
           font-size: ${tokens.fontSizeM};
           line-height: ${tokens.lineHeightM};
           font-synthesis-weight: none;
+          /* Improves readability of lowercase L (l) and uppercase i (I) */
+          font-feature-settings: 'ss05' on;
         }
 
         code {
