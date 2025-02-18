@@ -43,7 +43,10 @@ export const AutocompleteItems = <ItemType,>(
             {...itemProps}
             as="li"
             key={itemIndex}
-            className={cx([styles.item({})])}
+            className={cx([
+              styles.item({}),
+              highlightedIndex === itemIndex && styles.highlighted,
+            ])}
             data-test-id={`cf-autocomplete-list-item-${itemIndex}`}
           >
             {renderItem ? (

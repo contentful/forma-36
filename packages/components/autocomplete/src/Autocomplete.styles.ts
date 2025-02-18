@@ -47,6 +47,9 @@ export const getAutocompleteStyles = (listMaxHeight: number) => ({
     isActive?: boolean;
     isDisabled?: boolean;
   }) => cx(getMenuItemStyles({ isActive, isDisabled })),
+  highlighted: css({
+    backgroundColor: tokens.gray100,
+  }),
   hidden: css({
     display: 'none',
   }),
