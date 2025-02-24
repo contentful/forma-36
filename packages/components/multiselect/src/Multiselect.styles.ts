@@ -87,7 +87,6 @@ export const getMultiselectStyles = () => ({
   }),
   option: css({
     listStyleType: 'none',
-    margin: '1px 0',
   }),
   optionText: css({
     b: {

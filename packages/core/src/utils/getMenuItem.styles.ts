@@ -3,8 +3,7 @@ import tokens from '@contentful/f36-tokens';
 
 const activeStyle: ObjectInterpolation<undefined> = {
   backgroundColor: tokens.gray200,
-  fontWeight: tokens.fontWeightMedium,
-  '&:hover': {
+  '&:hover, &:active': {
     backgroundColor: tokens.gray200,
   },
 };
@@ -29,8 +28,10 @@ export const getMenuItemStyles = ({
       alignItems: 'center',
       display: 'flex',
       background: 'none',
-      border: 0,
+      borderWidth: '1px 0',
+      borderColor: tokens.colorWhite,
       borderRadius: tokens.borderRadiusSmall,
+      borderStyle: 'solid',
       outline: 'none',
       fontSize: tokens.fontSizeM,
       lineHeight: tokens.lineHeightM,
@@ -38,7 +39,7 @@ export const getMenuItemStyles = ({
       position: 'relative',
       textAlign: 'left',
       // Magic number to get a height of 32px on the item
-      padding: `6px ${tokens.spacingXs}`,
+      padding: `5px ${tokens.spacingXs}`,
       wordBreak: 'break-word',
       whiteSpace: 'break-spaces',
       cursor: 'pointer',
@@ -46,9 +47,6 @@ export const getMenuItemStyles = ({
       minWidth: '150px',
       textDecoration: 'none',
       color: tokens.gray700,
-      '[role="menuitem"] + &': {
-        marginTop: '2px',
-      },
 
       '&:focus, &:hover': {
         backgroundColor: tokens.gray100,
