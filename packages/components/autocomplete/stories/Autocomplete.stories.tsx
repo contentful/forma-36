@@ -85,7 +85,7 @@ export const Basic = (args: AutocompleteProps<string>) => {
 
   return (
     <Stack
-      style={{ width: '150px' }}
+      style={{ width: '180px' }}
       flexDirection="column"
       spacing="spacingM"
       alignItems="start"

@@ -1,5 +1,6 @@
-import { css } from 'emotion';
+import { css, cx } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import { getMenuItemStyles } from '@contentful/f36-core';
 
 export const getAutocompleteStyles = (listMaxHeight: number) => ({
   autocomplete: css({
@@ -28,7 +29,7 @@ export const getAutocompleteStyles = (listMaxHeight: number) => ({
   }),
   list: css({
     listStyle: 'none',
-    padding: `${tokens.spacingXs} 0`,
+    padding: `${tokens.spacingXs} ${tokens.spacing2Xs}`,
     margin: 0,
   }),
   groupTitle: css({
@@ -39,25 +40,13 @@ export const getAutocompleteStyles = (listMaxHeight: number) => ({
     color: tokens.gray500,
     margin: `${tokens.spacingM} 0 ${tokens.spacingM} 0`,
   }),
-  item: css({
-    display: 'block',
-    padding: `${tokens.spacingXs} ${tokens.spacingM}`,
-    wordBreak: 'break-word',
-    whiteSpace: 'break-spaces',
-    cursor: 'pointer',
-    hyphens: 'auto',
-
-    '&:focus, &:hover': {
-      backgroundColor: tokens.gray100,
-    },
-    '&:active': {
-      backgroundColor: tokens.gray200,
-    },
-  }),
-  disabled: css({
-    opacity: 0.5,
-    pointerEvents: 'none',
-  }),
+  item: ({
+    isActive = false,
+    isDisabled = false,
+  }: {
+    isActive?: boolean;
+    isDisabled?: boolean;
+  }) => cx(getMenuItemStyles({ isActive, isDisabled })),
   highlighted: css({
     backgroundColor: tokens.gray100,
   }),
