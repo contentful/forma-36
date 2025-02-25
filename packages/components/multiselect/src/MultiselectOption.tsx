@@ -37,7 +37,7 @@ export const MultiselectOption = ({
         onChange={(event) => onSelectItem(event)}
         isChecked={isChecked}
         isDisabled={isDisabled}
-        className={cx(styles.optionCheck, isDisabled && styles.disabled)}
+        className={styles.optionCheck({ isActive: isChecked, isDisabled })}
       >
         <Text
           className={styles.optionText}
