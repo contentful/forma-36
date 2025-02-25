@@ -1,5 +1,21 @@
 # Change Log
 
+## 4.78.0
+
+### Patch Changes
+
+- [#2997](https://github.com/contentful/forma-36/pull/2997) [`8948dee`](https://github.com/contentful/forma-36/commit/8948dee68888e5a1a4d792018c163abfdb76395c) Thanks [@Lelith](https://github.com/Lelith)! - Unifies the applied styles of the following Components: Autocomplete, Menu, Multiselect, Navlist.
+
+  Exposes a new utility styling function `getMenuItemStyles({isActive?:boolean, isDisabled?: boolean })`
+
+- Updated dependencies [[`8948dee`](https://github.com/contentful/forma-36/commit/8948dee68888e5a1a4d792018c163abfdb76395c)]:
+  - @contentful/f36-core@4.78.0
+  - @contentful/f36-button@4.78.0
+  - @contentful/f36-forms@4.78.0
+  - @contentful/f36-popover@4.78.0
+  - @contentful/f36-skeleton@4.78.0
+  - @contentful/f36-typography@4.78.0
+
 ## 4.77.5
 
 ### Patch Changes

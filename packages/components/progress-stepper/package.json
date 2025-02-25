@@ -6,11 +6,11 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-button": "^4.77.5",
-    "@contentful/f36-core": "^4.77.5",
+    "@contentful/f36-button": "^4.78.0",
+    "@contentful/f36-core": "^4.78.0",
     "@contentful/f36-icons": "^4.29.0",
     "@contentful/f36-tokens": "^4.2.0",
-    "@contentful/f36-typography": "^4.77.5",
+    "@contentful/f36-typography": "^4.78.0",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
