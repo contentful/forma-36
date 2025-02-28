@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { type ReactNode } from 'react';
 import { Checkbox } from '@contentful/f36-forms';
 import { Text } from '@contentful/f36-typography';
 import { getMultiselectStyles } from './Multiselect.styles';
 import { getStringMatch } from '@contentful/f36-utils';
 import { cx } from 'emotion';
 
-export interface MultiselectOptionProps {
-  label: string;
+type LabelOrChildren =
+  | {
+      children: ReactNode;
+      label?: never;
+    }
+  | {
+      children?: never;
+      label: string;
+    };
+
+export type MultiselectOptionProps = {
   value: string;
   itemId: string;
   searchValue?: string;
@@ -14,9 +23,10 @@ export interface MultiselectOptionProps {
   onSelectItem: (event: React.ChangeEvent<HTMLInputElement>) => void;
   isChecked?: boolean;
   isDisabled?: boolean;
-}
+} & LabelOrChildren;
 
 export const MultiselectOption = ({
+  children,
   label,
   value,
   itemId,
@@ -43,7 +53,11 @@ export const MultiselectOption = ({
           className={styles.optionText}
           data-test-id={`cf-multiselect-list-item-${itemId}`}
         >
-          <HighlightedItem item={label} inputValue={searchValue} />
+          {typeof label !== 'undefined' ? (
+            <HighlightedItem item={value} inputValue={searchValue} />
+          ) : (
+            children
+          )}
         </Text>
       </Checkbox>
     </li>
