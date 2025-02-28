@@ -50,7 +50,7 @@ export const MultiselectOption = ({
   );
 };
 
-function HighlightedItem({
+export function HighlightedItem({
   item,
   inputValue = '',
 }: {
