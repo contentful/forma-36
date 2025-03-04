@@ -89,8 +89,9 @@ export const getMultiselectStyles = () => ({
     listStyleType: 'none',
   }),
   optionText: css({
-    b: {
+    span: {
       color: tokens.gray900,
+      fontWeight: tokens.fontWeightDemiBold,
     },
   }),
   optionCheck: ({

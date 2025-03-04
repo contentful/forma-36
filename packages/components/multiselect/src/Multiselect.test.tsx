@@ -173,6 +173,37 @@ describe('Options', () => {
     );
     expect(screen.getByRole('checkbox', { name: 'Banana 🍌' })).toBeChecked();
   });
+
+  it('allows you to render React children', async () => {
+    const user = userEvent.setup();
+    render(
+      <Multiselect>
+        <h2>Fruits</h2>
+        <div data-test-id="wrapper-component">
+          {fruits.map((fruit, index) => {
+            return (
+              <Multiselect.Option
+                key={`key-${fruit.id}-${index}`}
+                itemId={`${index}`}
+                value={`${fruit.id}`}
+                onSelectItem={mockOnSelectItem}
+                isDisabled={fruit.isDisabled}
+                isChecked={fruit.isChecked}
+              >
+                {fruit.name}
+              </Multiselect.Option>
+            );
+          })}
+        </div>
+      </Multiselect>,
+    );
+    await user.click(
+      screen.getByRole('button', { name: 'Toggle Multiselect' }),
+    );
+
+    expect(screen.getByRole('list')).toBeInTheDocument();
+    expect(screen.getAllByRole('listitem')).toHaveLength(12);
+  });
 });
 
 describe('Multiselect with search', () => {
@@ -229,9 +260,7 @@ describe('Multiselect with search', () => {
       screen.getByRole('button', { name: 'Toggle Multiselect' }),
     );
     const listFirstItem = screen.getByTestId('cf-multiselect-list-item-0');
-
     await user.type(screen.getByRole('textbox', { name: 'Search' }), ' pp ');
-
     expect(listFirstItem).toHaveTextContent('Apple');
     expect(
       within(listFirstItem).getByTestId('cf-multiselect-item-match'),
