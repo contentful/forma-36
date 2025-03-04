@@ -7,6 +7,11 @@ import { cx } from 'emotion';
 
 type LabelOrChildren =
   | {
+      /**
+       * When using React children it is your own responsibility to highlight
+       * the matching part of the item label. Use the `HighlightedItem`
+       * component for this.
+       */
       children: React.ReactNode;
       label?: never;
     }
