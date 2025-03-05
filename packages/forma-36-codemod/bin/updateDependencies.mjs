@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import chalk from 'chalk';
 import execa from 'execa';
 import semverSatisfies from 'semver/functions/satisfies.js';
-import readPkgUp from 'read-pkg-up';
+import { readPackageUpSync } from 'read-package-up';
 import inquirer from 'inquirer';
 import * as packages from './packages-list.mjs';
 
@@ -66,7 +66,7 @@ function getOutput({ newPackages, removePackages, pkgManager = null }) {
 // eslint-disable-next-line import/no-default-export
 export default async function updateDependencies(targetDir) {
   const cwd = path.resolve(process.cwd(), targetDir);
-  const closestPkgJson = readPkgUp.sync({ cwd });
+  const closestPkgJson = readPackageUpSync({ cwd });
   let removePackages = packages.PACKAGES_REMOVE;
   let newPackages = Object.keys(packages.PACKAGES_UPGRADE);
 

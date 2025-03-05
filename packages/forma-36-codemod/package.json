@@ -36,7 +36,7 @@
     "jscodeshift": "^0.15.1",
     "jscodeshift-add-imports": "^1.0.10",
     "meow": "9.0.0",
-    "read-pkg-up": "7.0.1",
+    "read-package-up": "^11.0.0",
     "semver": "^7.6.1"
   },
   "jest": {
