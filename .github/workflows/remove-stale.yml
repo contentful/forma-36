@@ -15,6 +15,9 @@ jobs:
       pull-requests: write
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Remove stale label
         run: gh issue edit $ISSUE --remove-label $LABEL
         env:
