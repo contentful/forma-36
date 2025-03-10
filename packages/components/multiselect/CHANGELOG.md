@@ -1,5 +1,11 @@
 ## Change Log
 
+## 4.26.0
+
+### Minor Changes
+
+- [#3006](https://github.com/contentful/forma-36/pull/3006) [`1863076`](https://github.com/contentful/forma-36/commit/1863076fbddc367438f32370a47a71c7a92e4613) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(multiselect): allow passing React children instead of string labels to options
+
 ## 4.25.1
 
 ### Patch Changes
