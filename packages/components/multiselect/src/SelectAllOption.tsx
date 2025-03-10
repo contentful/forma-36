@@ -4,7 +4,10 @@ import { getMultiselectStyles } from './Multiselect.styles';
 import { cx } from 'emotion';
 
 export interface SelectAllOptionProps
-  extends Omit<MultiselectOptionProps, 'value' | 'itemId' | 'label'> {
+  extends Omit<
+    MultiselectOptionProps,
+    'children' | 'value' | 'itemId' | 'label'
+  > {
   label?: string;
   itemId?: string;
 }

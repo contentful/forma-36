@@ -84,6 +84,14 @@ In some cases it is desired to toggle the status of the popover drawer as well a
 
 ```
 
+### With component as children
+
+You can render React components in the select options, but it's important to note that this makes it your own responsibility to highlight the matching part of the search term. To help with this there's the `HighlightedItem` component.
+
+```jsx file=./examples/MultiselectOptionChildrenExample.tsx
+
+```
+
 ## Props (API reference)
 
 <PropsTable of="Multiselect" />

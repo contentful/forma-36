@@ -5,6 +5,7 @@ import { Stack } from '@contentful/f36-core';
 import { Multiselect } from '../src';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Button } from '@contentful/f36-button';
+import { HelpCircleIcon } from '@contentful/f36-icons';
 
 export default {
   title: 'Components/Multiselect',
@@ -267,6 +268,72 @@ export const WithSearch = () => {
     </Stack>
   );
 };
+
+export const WithComponentInOption = () => {
+  const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
+  const [searchValue, setSearchValue] = useState('');
+
+  const handleSearchValueChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    const value = event.target.value;
+    setSearchValue(value);
+  };
+
+  const handleSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked, value } = event.target;
+
+    const currentFruit = fruits.find((fruit) => fruit.value === value);
+    if (!currentFruit) return;
+    if (checked) {
+      setSelectedFruits((prevState) => [...prevState, currentFruit.name]);
+    } else {
+      setSelectedFruits((prevState) => {
+        return prevState.filter((fruit) => fruit !== currentFruit.name);
+      });
+    }
+  };
+
+  return (
+    <Stack
+      style={{ width: '250px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      <Multiselect
+        currentSelection={selectedFruits}
+        placeholder="Search your favorite fruit"
+        popoverProps={{ isFullWidth: true, listMaxHeight: 250 }}
+        searchProps={{ onSearchValueChange: handleSearchValueChange }}
+      >
+        {fruits
+          .filter((item) =>
+            item.value.toLowerCase().includes(searchValue.toLowerCase()),
+          )
+          .map((item) => {
+            return (
+              <Multiselect.Option
+                value={item.value}
+                onSelectItem={handleSelectItem}
+                key={`key-${item.id}`}
+                itemId={`id-${item.id}`}
+                isChecked={selectedFruits.includes(item.name)}
+                isDisabled={item.isDisabled}
+              >
+                <Multiselect.HighlightedItem
+                  item={item.name}
+                  inputValue={searchValue}
+                />{' '}
+                <HelpCircleIcon size="tiny" />
+              </Multiselect.Option>
+            );
+          })}
+      </Multiselect>
+    </Stack>
+  );
+};
+
 export const OutsideControl = () => {
   const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
   const [filteredItems, setFilteredItems] = useState(fruits);
