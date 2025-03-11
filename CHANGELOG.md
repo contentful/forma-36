@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 11-03-2025
+
+**F36 Multiselect** `v4.26.0`
+
+- feat(multiselect): allow passing React children instead of string labels to options
+
 ## 26-02-2025
 
 **F36 Autocomplete** `v4.78.0`
