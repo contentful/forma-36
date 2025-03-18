@@ -113,7 +113,6 @@ export const Submenu = (props: SubmenuProps) => {
         onOpen={handleOpen}
         placement="right-start"
         offset={SUBMENU_OFFSET}
-        isAutoalignmentEnabled={false}
       />
     </SubmenuContextProvider>
   );
