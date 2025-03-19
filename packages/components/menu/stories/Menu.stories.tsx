@@ -7,7 +7,7 @@ import {
   useHref,
   useLinkClickHandler,
 } from 'react-router-dom';
-
+import { css } from 'emotion';
 import { Menu, type MenuProps } from '../src';
 
 export default {
@@ -129,9 +129,10 @@ export const WithMaxHeight: Story<MenuProps> = (args) => {
         // You can pass a classname with maxHeight style or a style object directly
         style={{ maxHeight: '200px' }}
       >
-        {[...Array(20)].map((_, index) => (
-          <Menu.Item key={index}>Item {index}</Menu.Item>
-        ))}
+        {[...Array(20)].map((_, index) => {
+          const uniqueKey = `item-${index}`;
+          return <Menu.Item key={uniqueKey}>Item {index}</Menu.Item>;
+        })}
       </Menu.List>
     </Menu>
   );
@@ -151,9 +152,10 @@ export const WithStickyHeaderAndFooter: Story<MenuProps> = (args) => {
         <Menu.ListHeader>
           <Menu.Item>Item header</Menu.Item>
         </Menu.ListHeader>
-        {[...Array(10)].map((_, index) => (
-          <Menu.Item key={index}>Item {index}</Menu.Item>
-        ))}
+        {[...Array(10)].map((_, index) => {
+          const uniqueKey = `sticky-header-${index}`;
+          return <Menu.Item key={uniqueKey}>Item {index}</Menu.Item>;
+        })}
         <Menu.ListFooter>
           <Menu.Item>Item footer</Menu.Item>
         </Menu.ListFooter>
@@ -240,6 +242,52 @@ export const WithSubmenu: Story<MenuProps> = (args) => {
         <Menu.Item>Embed existing entry</Menu.Item>
       </Menu.List>
     </Menu>
+  );
+};
+export const WithSubmenuDifferentAlignments: Story<MenuProps> = (args) => {
+  const styles = {
+    container: css({
+      backgroundColor: 'lightblue',
+      display: 'flex',
+      justifyContent: 'center',
+      overflow: 'hidden',
+      width: '98vw',
+    }),
+    wrapper: css({
+      display: 'flex',
+      width: '95vw',
+      justifyContent: 'right',
+      backgroundColor: 'pink',
+      overflow: 'hidden',
+    }),
+  };
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
+        <Menu {...args}>
+          <Menu.Trigger>
+            <IconButton
+              variant="secondary"
+              icon={<MenuIcon />}
+              aria-label="toggle menu"
+            />
+          </Menu.Trigger>
+          <Menu.List>
+            <Menu.Item>Create an entry</Menu.Item>
+            <Menu.Submenu isAutoalignmentEnabled>
+              <Menu.SubmenuTrigger>Remove an entry</Menu.SubmenuTrigger>
+              <Menu.List>
+                <Menu.Item>Sub item 1</Menu.Item>
+                <Menu.Item>Sub item 2</Menu.Item>
+                <Menu.Item>Sub item 3</Menu.Item>
+              </Menu.List>
+            </Menu.Submenu>
+            <Menu.Item>Embed existing entry</Menu.Item>
+          </Menu.List>
+        </Menu>
+      </div>
+    </div>
   );
 };
 
