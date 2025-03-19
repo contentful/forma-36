@@ -1,5 +1,7 @@
 # Change Log
 
+## 4.79.0
+
 ## 4.78.0
 
 ### Minor Changes

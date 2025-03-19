@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-accordion",
-  "version": "4.78.0",
+  "version": "4.79.0",
   "description": "Forma 36: Accordion React Component",
   "license": "MIT",
   "files": [
@@ -20,11 +20,11 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-collapse": "^4.78.0",
-    "@contentful/f36-core": "^4.78.0",
+    "@contentful/f36-collapse": "^4.79.0",
+    "@contentful/f36-core": "^4.79.0",
     "@contentful/f36-icons": "^4.29.0",
     "@contentful/f36-tokens": "^4.2.0",
-    "@contentful/f36-typography": "^4.78.0",
+    "@contentful/f36-typography": "^4.79.0",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
