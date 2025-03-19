@@ -5,25 +5,29 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { Menu, MenuProps } from '../Menu';
+import { Menu, type MenuProps } from '../Menu';
 import { useMenuContext } from '../MenuContext';
-import { SubmenuContextProvider, SubmenuContextType } from '../SubmenuContext';
+import {
+  SubmenuContextProvider,
+  type SubmenuContextType,
+} from '../SubmenuContext';
 import { mergeRefs } from '@contentful/f36-core';
 
 const SUBMENU_OFFSET: [number, number] = [-8, 2];
 
 export type SubmenuProps = Omit<
   MenuProps,
-  | 'placement'
-  | 'offset'
-  | 'usePortal'
-  | 'isOpen'
-  | 'isAutoalignmentEnabled'
-  | 'defaultIsOpen'
+  'offset' | 'usePortal' | 'isOpen' | 'defaultIsOpen'
 >;
 
 export const Submenu = (props: SubmenuProps) => {
-  const { onClose, onOpen, ...otherProps } = props;
+  const {
+    onClose,
+    onOpen,
+    placement = 'right-start',
+    isAutoalignmentEnabled = false,
+    ...otherProps
+  } = props;
 
   const {
     isOpen: isParentMenuOpen,
@@ -111,7 +115,8 @@ export const Submenu = (props: SubmenuProps) => {
         isOpen={isOpen}
         onClose={handleClose}
         onOpen={handleOpen}
-        placement="right-start"
+        placement={placement}
+        isAutoalignmentEnabled={isAutoalignmentEnabled}
         offset={SUBMENU_OFFSET}
       />
     </SubmenuContextProvider>
