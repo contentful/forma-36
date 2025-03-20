@@ -73,7 +73,7 @@
     "microbundle": "^0.15.1",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "semantic-release": "^19.0.5"
+    "semantic-release": "^24.2.1"
   },
   "repository": {
     "type": "git",
