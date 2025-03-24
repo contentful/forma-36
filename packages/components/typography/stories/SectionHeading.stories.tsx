@@ -1,4 +1,4 @@
-import React, { ComponentProps } from 'react';
+import React, { type ComponentProps } from 'react';
 import { Flex } from '@contentful/f36-core';
 import { type Density, DensityProvider } from '@contentful/f36-utils';
 import { Heading } from '@contentful/f36-typography';
@@ -21,7 +21,7 @@ export const Basic = (props: ComponentProps<typeof SectionHeading>) => (
 
 Basic.args = {
   children:
-    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
+    'The quick brown fox jumps over the lazy dog named Henry like an over-motivated frog.',
 };
 
 export const WithDensitySupport = (
@@ -60,5 +60,5 @@ export const WithDensitySupport = (
 
 WithDensitySupport.args = {
   children:
-    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
+    'The quick brown fox jumps over the lazy dog named Henry like an over-motivated frog.',
 };

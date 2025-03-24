@@ -35,7 +35,7 @@ function _SectionHeading<
     marginBottom = 'spacingL',
     ...otherProps
   }: SectionHeadingProps<E>,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLHeadingElement>,
 ) {
   const density = useDensity();
   const Element: React.ElementType = as || SECTION_HEADING_DEFAULT_TAG;
@@ -52,10 +52,6 @@ function _SectionHeading<
       className={cx(
         css({
           letterSpacing: tokens.letterSpacingDefault,
-          textTransform: 'lowercase',
-          '&:first-letter': {
-            textTransform: 'uppercase',
-          },
         }),
         className,
       )}
