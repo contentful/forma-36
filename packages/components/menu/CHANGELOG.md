@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.79.0
+
+### Minor Changes
+
+- [#3023](https://github.com/contentful/forma-36/pull/3023) [`3149f1f`](https://github.com/contentful/forma-36/commit/3149f1fa7af9f535297d0febc951708e556ab8dc) Thanks [@Chaoste](https://github.com/Chaoste)! - Allow overwriting placement and isAutoalignmentEnabled for Submenu component
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.79.0
+  - @contentful/f36-popover@4.79.0
+  - @contentful/f36-typography@4.79.0
+
 ## 4.78.0
 
 ### Patch Changes

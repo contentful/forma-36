@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 20-03-2025
+
+**F36 Menu** `v4.79.0`
+
+- Allow overwriting placement and isAutoalignmentEnabled for Submenu component
+
 ## 11-03-2025
 
 **F36 Multiselect** `v4.26.0`
