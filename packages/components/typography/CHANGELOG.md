@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.79.1
+
+### Patch Changes
+
+- [#3022](https://github.com/contentful/forma-36/pull/3022) [`f1e023b`](https://github.com/contentful/forma-36/commit/f1e023b0083b3363b4d2af2ff64bb8a87f3d0ebd) Thanks [@Lelith](https://github.com/Lelith)! - Remove enforced text transformations which caused wrong formatting for uppercase words insie the SectionHeading component
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.79.1
+
 ## 4.79.0
 
 ### Patch Changes

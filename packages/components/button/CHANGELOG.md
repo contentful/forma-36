@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.79.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.79.1
+  - @contentful/f36-spinner@4.79.1
+  - @contentful/f36-tooltip@4.79.1
+
 ## 4.79.0
 
 ### Patch Changes
