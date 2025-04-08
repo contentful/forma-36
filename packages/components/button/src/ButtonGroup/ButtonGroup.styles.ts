@@ -1,7 +1,6 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
-import type { CSSObject } from '@emotion/serialize';
 import type { GetStyleArguments } from './types';
 
 export default ({ withDivider }: GetStyleArguments) => {
@@ -32,7 +31,7 @@ export default ({ withDivider }: GetStyleArguments) => {
   };
 };
 
-const getDividerStyle = (withDivider: boolean): CSSObject => {
+const getDividerStyle = (withDivider: boolean) => {
   if (!withDivider) return {};
 
   const divider = `1px solid ${hexToRGBA(tokens.colorWhite, 0.2)}`;

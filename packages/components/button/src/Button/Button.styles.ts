@@ -1,10 +1,9 @@
 import { css } from 'emotion';
-import type { CSSObject } from '@emotion/serialize';
 import tokens from '@contentful/f36-tokens';
-import { ButtonSize, ButtonVariant, ButtonStylesProps } from '../types';
+import type { ButtonSize, ButtonVariant, ButtonStylesProps } from '../types';
 import { hexToRGBA, type Density } from '@contentful/f36-utils';
 
-const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
+const variantActiveStyles = (variant: ButtonVariant) => {
   switch (variant) {
     case 'primary':
       return { backgroundColor: tokens.blue700 };
@@ -21,7 +20,7 @@ const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
   }
 };
 
-const variantToStyles = (variant: ButtonVariant): CSSObject => {
+const variantToStyles = (variant: ButtonVariant) => {
   switch (variant) {
     case 'primary':
       return {
@@ -110,7 +109,7 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
   }
 };
 
-const sizeToStyles = (size: ButtonSize, density: Density): CSSObject => {
+const sizeToStyles = (size: ButtonSize, density: Density) => {
   const isHighDensity = density === 'high';
 
   switch (size) {
@@ -175,7 +174,7 @@ export const getStyles = () => ({
   }: ButtonStylesProps & { density: Density }) =>
     css({
       boxSizing: 'border-box',
-      border: `1px solid`,
+      border: '1px solid',
       boxShadow: '0px 1px 0px rgb(25, 37, 50, 0.08)',
       borderRadius:
         density === 'high'

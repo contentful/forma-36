@@ -1,5 +1,4 @@
 import { css } from 'emotion';
-import type { CSSObject } from '@emotion/serialize';
 import tokens from '@contentful/f36-tokens';
 import type { NotificationVariant } from '../types';
 
@@ -39,38 +38,30 @@ const getIconStyle = ({ variant }) =>
     alignItems: 'flex-start',
   });
 
-const notificationStyle: CSSObject = {
-  fontSize: tokens.fontSizeM,
-  lineHeight: tokens.lineHeightM,
-  width: '100%',
-};
-
-const titleStyle: CSSObject = {
-  color: tokens.gray800,
-  fontSize: tokens.fontSizeL,
-  lineHeight: tokens.lineHeightL,
-};
-
-const contentStyle: CSSObject = {
-  color: tokens.gray700,
-  wordBreak: 'break-word',
-  hyphens: 'auto',
-  '&:last-child': {
-    marginBottom: 0,
-  },
-};
-
-const closeButtonStyle: CSSObject = {
-  marginBottom: `-${tokens.spacingXs}`,
-  marginRight: `-${tokens.spacingXs}`,
-  marginTop: `-${tokens.spacingXs}`,
-};
-
 export const getStyles = ({ variant }: { variant: NotificationVariant }) => ({
   wrapper: getWrapperStyle({ variant }),
   icon: getIconStyle({ variant }),
-  notification: css(notificationStyle),
-  title: css(titleStyle),
-  content: css(contentStyle),
-  closeButton: css(closeButtonStyle),
+  notification: css({
+    fontSize: tokens.fontSizeM,
+    lineHeight: tokens.lineHeightM,
+    width: '100%',
+  }),
+  title: css({
+    color: tokens.gray800,
+    fontSize: tokens.fontSizeL,
+    lineHeight: tokens.lineHeightL,
+  }),
+  content: css({
+    color: tokens.gray700,
+    wordBreak: 'break-word',
+    hyphens: 'auto',
+    '&:last-child': {
+      marginBottom: 0,
+    },
+  }),
+  closeButton: css({
+    marginBottom: `-${tokens.spacingXs}`,
+    marginRight: `-${tokens.spacingXs}`,
+    marginTop: `-${tokens.spacingXs}`,
+  }),
 });

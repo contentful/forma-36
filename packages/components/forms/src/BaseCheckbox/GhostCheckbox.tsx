@@ -1,6 +1,6 @@
 import React from 'react';
 import { DoneIcon, MinusIcon, CloseIcon } from '@contentful/f36-icons';
-import { BaseCheckboxInternalProps } from './types';
+import type { BaseCheckboxInternalProps } from './types';
 import getStyles from './GhostCheckbox.styles';
 
 export type GhostCheckboxProps = Pick<
