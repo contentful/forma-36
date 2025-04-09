@@ -1,5 +1,25 @@
 # Change Log
 
+## 4.79.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.79.1
+  - @contentful/f36-menu@4.79.1
+  - @contentful/f36-tooltip@4.79.1
+  - @contentful/f36-image@4.79.1
+
+## 4.79.0
+
+### Patch Changes
+
+- Updated dependencies [[`3149f1f`](https://github.com/contentful/forma-36/commit/3149f1fa7af9f535297d0febc951708e556ab8dc)]:
+  - @contentful/f36-menu@4.79.0
+  - @contentful/f36-core@4.79.0
+  - @contentful/f36-tooltip@4.79.0
+  - @contentful/f36-image@4.79.0
+
 ## 4.78.0
 
 ### Patch Changes
