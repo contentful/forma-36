@@ -66,7 +66,7 @@ const Account = ({
   </Navbar.Account>
 );
 
-const MainItems = () => {
+const MainItems = ({ withDisabled }: { withDisabled?: boolean }) => {
   const [activeItem, setActiveItem] = React.useState('Content model');
 
   const items = [
@@ -75,12 +75,14 @@ const MainItems = () => {
       icon: <WrenchIcon />,
       isActive: activeItem === 'Content model',
       onClick: () => setActiveItem('Content model'),
+      isDisabled: withDisabled,
     },
     {
       title: 'Content',
       icon: <PenNibIcon />,
       isActive: activeItem === 'Content',
       onClick: () => setActiveItem('Content'),
+      isDisabled: withDisabled,
     },
     {
       title: 'Experiences',
@@ -98,17 +100,22 @@ const MainItems = () => {
 
   return (
     <>
-      {items.map(({ title, icon, isActive, onClick }) => (
+      {items.map(({ title, icon, isActive, onClick, isDisabled }) => (
         <Navbar.Item
           key={title}
           title={title}
           icon={icon}
           isActive={isActive}
           onClick={onClick}
+          isDisabled={isDisabled}
         />
       ))}
 
-      <Navbar.Item title="Apps" icon={<PuzzlePieceIcon />}>
+      <Navbar.Item
+        title="Apps"
+        icon={<PuzzlePieceIcon />}
+        isDisabled={withDisabled}
+      >
         <Navbar.MenuItem
           title="App 1"
           icon={
@@ -182,6 +189,27 @@ export const SizeVariants: Story<NavbarProps> = () => {
       />
     </Flex>
   );
+};
+
+export const WithDisabledItems: Story<{
+  initials?: string;
+  avatar?: string;
+}> = (args) => {
+  return (
+    <div style={{ minWidth: '900px' }}>
+      <Navbar
+        mainNavigation={<MainItems withDisabled />}
+        switcher={<Switcher />}
+        account={<Account {...args} />}
+      />
+    </div>
+  );
+};
+
+WithDisabledItems.args = {
+  initials: 'AB',
+  avatar:
+    'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=100&h=100',
 };
 
 export const WithInitialsAvatar: Story<{
