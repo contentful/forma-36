@@ -23,6 +23,7 @@ type NavbarItemTriggerProps = CommonProps & {
   icon?: NavbarItemIconProps['icon'];
   isActive?: boolean;
   as?: React.ElementType;
+  isDisabled?: boolean;
 };
 
 type NavbarItemAsMenuProps = NavbarItemTriggerProps &
@@ -52,6 +53,7 @@ function _NavbarItem(
     children,
     className,
     isActive,
+    isDisabled,
     testId = 'cf-ui-navbar-item',
     onOpen,
     onClose,
@@ -67,9 +69,14 @@ function _NavbarItem(
       data-test-id={testId}
       className={cx(styles.navbarItem, className, {
         [styles.navbarItemMenuTrigger]: showCaret,
-        [styles.isActive]: isActive,
+        [styles.isActive]: isActive && !isDisabled,
+        [styles.isDisabled]: isDisabled,
       })}
       aria-label={title ? '' : label}
+      {...(isDisabled &&
+        (Comp === NAVBAR_ITEM_DEFAULT_TAG
+          ? { disabled: true }
+          : { tabIndex: -1 }))}
     >
       {icon && (
         <NavbarItemIcon
