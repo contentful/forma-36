@@ -15,6 +15,13 @@ export const getNavbarItemActiveStyles = () =>
     },
   });
 
+export const getNavbarItemDisabledStyles = () =>
+  css({
+    border: 'none',
+    opacity: 0.5,
+    pointerEvents: 'none',
+  });
+
 const commonItemStyles = {
   display: 'flex',
   justifyContent: 'center',
@@ -82,6 +89,7 @@ export const getNavbarItemStyles = ({ hasTitle }: { hasTitle: boolean }) => ({
     paddingRight: tokens.spacingXs,
   }),
   isActive: getNavbarItemActiveStyles(),
+  isDisabled: getNavbarItemDisabledStyles(),
   icon: css({
     height: '20px',
     width: '20px',
