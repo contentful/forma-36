@@ -72,11 +72,11 @@ function _NavbarItem(
         [styles.isActive]: isActive && !isDisabled,
         [styles.isDisabled]: isDisabled,
       })}
-      aria-label={title ? '' : label}
+      {...(title && { 'aria-label': title })}
       {...(isDisabled &&
         (Comp === NAVBAR_ITEM_DEFAULT_TAG
           ? { disabled: true }
-          : { tabIndex: -1 }))}
+          : { tabIndex: -1, 'aria-disabled': true }))}
     >
       {icon && (
         <NavbarItemIcon
