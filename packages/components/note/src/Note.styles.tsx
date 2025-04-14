@@ -1,10 +1,10 @@
 import { css } from 'emotion';
-import type { CSSObject } from '@emotion/serialize';
+
 import tokens from '@contentful/f36-tokens';
 
 import type { NoteProps, NoteVariant } from './Note';
 
-const variantToStyles = (variant: NoteVariant): CSSObject => {
+const variantToStyles = (variant: NoteVariant) => {
   switch (variant) {
     case 'primary':
       return {

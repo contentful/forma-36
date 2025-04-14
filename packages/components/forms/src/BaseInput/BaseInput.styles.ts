@@ -1,14 +1,13 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import type { CSSObject } from '@emotion/serialize';
 import type { Density } from '@contentful/f36-utils';
-import { BaseInputInternalProps } from './types';
+import type { BaseInputInternalProps } from './types';
 
 type getSizeStylesProps = Pick<BaseInputInternalProps, 'size'> & {
   density?: Density;
 };
 
-const getSizeStyles = ({ size, density }: getSizeStylesProps): CSSObject => {
+const getSizeStyles = ({ size, density }: getSizeStylesProps) => {
   const isHighDensity = density === 'high';
   if (size === 'small') {
     return {

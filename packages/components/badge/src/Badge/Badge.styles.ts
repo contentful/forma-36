@@ -1,10 +1,9 @@
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 import type { BadgeVariant, BadgeSize, BadgeStylesProps } from '../types';
-import type { CSSObject } from '@emotion/serialize';
 import type { BadgeInternalProps } from './Badge';
 
-const variantToStyles = ({ variant }: { variant: BadgeVariant }): CSSObject => {
+const variantToStyles = ({ variant }: { variant: BadgeVariant }) => {
   switch (variant) {
     case 'positive':
       return {
@@ -46,7 +45,7 @@ const variantToStyles = ({ variant }: { variant: BadgeVariant }): CSSObject => {
   }
 };
 
-const sizeToStyles = ({ size }: { size: BadgeSize }): CSSObject => {
+const sizeToStyles = ({ size }: { size: BadgeSize }) => {
   switch (size) {
     case 'small':
       return {
