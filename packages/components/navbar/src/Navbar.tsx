@@ -36,6 +36,12 @@ type NavbarOwnProps = CommonProps & {
   mobileNavigationBp?: 'small' | 'medium';
 
   /**
+   * label of the mobile navigation trigger button
+   * @default 'Menu'
+   */
+  mobileNavigationLabel?: string;
+
+  /**
    * Defines the max-width of the content inside the navbar.
    * @default '100%'
    */
@@ -46,6 +52,16 @@ type NavbarOwnProps = CommonProps & {
    * Variant wide will set the contentMaxWidth to 1524px
    */
   variant?: 'wide' | 'fullscreen';
+
+  /**
+   * aria labels for the navbar
+   */
+  aria: {
+    labelMainNavigation?: string;
+    labelSecondaryNavigation?: string;
+    labelPromotions?: string;
+    labelAccount?: string;
+  };
 };
 
 // expose only the HTML props that are needed to not pollute the API
@@ -63,10 +79,17 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
     account,
     mobileNavigation,
     mobileNavigationBp = 'small',
+    mobileNavigationLabel = 'Menu',
     className,
     contentMaxWidth = '100%',
     testId = 'cf-ui-navbar',
     variant = 'wide',
+    aria = {
+      labelMainNavigation: 'Main Navigation',
+      labelSecondaryNavigation: 'Secondary Navigation',
+      labelPromotions: 'Promotions',
+      labelAccount: 'Account Navigation',
+    },
     ...otherProps
   } = props;
   const styles = getNavbarStyles({ contentMaxWidth, variant });
@@ -94,7 +117,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
                   className={styles.mobileNavigationButton(mobileNavigationBp)}
                   startIcon={<ListIcon size="medium" />}
                 >
-                  Menu
+                  {mobileNavigationLabel}
                 </Button>
               }
             >
@@ -104,7 +127,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
           {mainNavigation && (
             <Flex
               className={styles.mainNavigation(mobileNavigationBp)}
-              aria-label="Main Navigation"
+              aria-label={aria.labelMainNavigation}
               gap="spacingXs"
             >
               {mainNavigation}
@@ -115,7 +138,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
           <Flex
             alignItems="center"
             className={styles.promoNavigationWrapper}
-            aria-label="Promotions"
+            aria-label={aria.labelPromotions}
             gap="spacingXs"
           >
             {promotions}
@@ -125,7 +148,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
             {secondaryNavigation && (
               <Flex
                 className={styles.secondaryNavigationWrapper}
-                aria-label="Secondary Navigation"
+                aria-label={aria.labelSecondaryNavigation}
                 gap="spacingXs"
               >
                 {secondaryNavigation}
@@ -134,7 +157,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
             {account && (
               <Flex
                 className={styles.account}
-                aria-label="Account Navigation"
+                aria-label={aria.labelAccount}
                 gap="spacingXs"
               >
                 {account}
