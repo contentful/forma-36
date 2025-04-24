@@ -54,9 +54,9 @@ type NavbarOwnProps = CommonProps & {
   variant?: 'wide' | 'fullscreen';
 
   /**
-   * aria labels for the navbar
+   * aria labels for different areas of the navigation bar
    */
-  aria: {
+  aria?: {
     labelMainNavigation?: string;
     labelSecondaryNavigation?: string;
     labelPromotions?: string;

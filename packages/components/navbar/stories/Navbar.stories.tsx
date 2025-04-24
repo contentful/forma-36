@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Navbar, NavbarProps } from '../src';
+import { Navbar, type NavbarProps } from '../src';
 import {
   ImageSquareIcon,
   PaintBrushIcon,
@@ -14,8 +14,8 @@ import {
 } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
-import { NavbarAccountProps } from '../src/NavbarAccount/NavbarAccount';
-import { NavbarSwitcherProps } from '../src/NavbarSwitcher/NavbarSwitcher';
+import type { NavbarAccountProps } from '../src/NavbarAccount/NavbarAccount';
+import type { NavbarSwitcherProps } from '../src/NavbarSwitcher/NavbarSwitcher';
 import { TextLink } from '@contentful/f36-components';
 import { css } from 'emotion';
 
@@ -138,6 +138,12 @@ export const Basic: Story<{ initials?: string; avatar?: string }> = (args) => {
         mainNavigation={<MainItems />}
         switcher={<Switcher />}
         account={<Account {...args} />}
+        aria={{
+          labelMainNavigation: 'Hauptnavigation',
+          labelSecondaryNavigation: 'Sekundärnavigation',
+          labelPromotions: 'Aktionen',
+          labelAccount: 'Mein Bereich',
+        }}
       />
     </div>
   );
@@ -353,6 +359,7 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
     >
       <Navbar
         mobileNavigation={<MobileMenu />}
+        mobileNavigationLabel="Menü"
         promotions={
           <>
             <TextLink>Upgrade</TextLink>
