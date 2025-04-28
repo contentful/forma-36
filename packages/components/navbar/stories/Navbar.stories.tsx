@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Navbar, NavbarProps } from '../src';
+import { Navbar, type NavbarProps } from '../src';
 import {
   ImageSquareIcon,
   PaintBrushIcon,
@@ -14,8 +14,8 @@ import {
 } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
-import { NavbarAccountProps } from '../src/NavbarAccount/NavbarAccount';
-import { NavbarSwitcherProps } from '../src/NavbarSwitcher/NavbarSwitcher';
+import type { NavbarAccountProps } from '../src/NavbarAccount/NavbarAccount';
+import type { NavbarSwitcherProps } from '../src/NavbarSwitcher/NavbarSwitcher';
 import { TextLink } from '@contentful/f36-components';
 import { css } from 'emotion';
 
@@ -138,6 +138,12 @@ export const Basic: Story<{ initials?: string; avatar?: string }> = (args) => {
         mainNavigation={<MainItems />}
         switcher={<Switcher />}
         account={<Account {...args} />}
+        aria={{
+          labelMainNavigation: 'Hauptnavigation',
+          labelSecondaryNavigation: 'Sekundärnavigation',
+          labelPromotions: 'Aktionen',
+          labelAccount: 'Mein Bereich',
+        }}
       />
     </div>
   );
@@ -353,6 +359,7 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
     >
       <Navbar
         mobileNavigation={<MobileMenu />}
+        mobileNavigationProps={{ label: 'Menü' }}
         promotions={
           <>
             <TextLink>Upgrade</TextLink>
@@ -432,12 +439,8 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
       </div>
       <Navbar
         mobileNavigation={<MobileMenu />}
-        mobileNavigationBp="medium"
-        promotions={
-          <>
-            <TextLink>Upgrade</TextLink>
-          </>
-        }
+        mobileNavigationProps={{ breakpoint: 'medium' }}
+        promotions={<TextLink>Upgrade</TextLink>}
         switcher={<Switcher />}
         mainNavigation={<MainItems />}
         account={
@@ -447,43 +450,41 @@ export const Complete: Story<{ initials?: string; avatar?: string }> = (
           </>
         }
         secondaryNavigation={
-          <>
-            <Navbar.Item label="Help Menu" icon={<QuestionIcon />}>
-              <Navbar.MenuItem
-                as="a"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Help center"
-                testId="cf-ui-navbar-help-menu-help-center"
-                href={'https://www.contentful.com/help/'}
-              />
-              <Navbar.MenuItem
-                as="a"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Developer docs"
-                testId="cf-ui-navbar-help-menu-docs"
-                href="https://www.contentful.com/developers/docs/"
-              />
-              <Navbar.MenuItem
-                as="a"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Training courses"
-                testId="cf-ui-navbar-help-traning-center"
-                href="https://training.contentful.com"
-              />
-              <Navbar.MenuDivider />
-              <Navbar.MenuItem
-                as="a"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Get support"
-                testId="cf-ui-navbar-help-support"
-                href="https://support.contentful.com"
-              />
-            </Navbar.Item>
-          </>
+          <Navbar.Item label="Help Menu" icon={<QuestionIcon />}>
+            <Navbar.MenuItem
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Help center"
+              testId="cf-ui-navbar-help-menu-help-center"
+              href={'https://www.contentful.com/help/'}
+            />
+            <Navbar.MenuItem
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Developer docs"
+              testId="cf-ui-navbar-help-menu-docs"
+              href="https://www.contentful.com/developers/docs/"
+            />
+            <Navbar.MenuItem
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Training courses"
+              testId="cf-ui-navbar-help-traning-center"
+              href="https://training.contentful.com"
+            />
+            <Navbar.MenuDivider />
+            <Navbar.MenuItem
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Get support"
+              testId="cf-ui-navbar-help-support"
+              href="https://support.contentful.com"
+            />
+          </Navbar.Item>
         }
       />
     </div>
