@@ -32,8 +32,16 @@ type NavbarOwnProps = CommonProps & {
   /** Navigation displayed on mobile versions */
   mobileNavigation?: React.ReactNode;
 
-  /** breakpoint to determine when to show the mobile navigation */
-  mobileNavigationBp?: 'small' | 'medium';
+  mobileNavigationProps?: {
+    /** breakpoint to determine when to show the mobile navigation */
+    breakpoint?: 'small' | 'medium';
+
+    /**
+     * label of the mobile navigation trigger button
+     * @default 'Menu'
+     */
+    label?: string;
+  };
 
   /**
    * Defines the max-width of the content inside the navbar.
@@ -46,6 +54,16 @@ type NavbarOwnProps = CommonProps & {
    * Variant wide will set the contentMaxWidth to 1524px
    */
   variant?: 'wide' | 'fullscreen';
+
+  /**
+   * aria labels for different areas of the navigation bar
+   */
+  aria?: {
+    labelMainNavigation?: string;
+    labelSecondaryNavigation?: string;
+    labelPromotions?: string;
+    labelAccount?: string;
+  };
 };
 
 // expose only the HTML props that are needed to not pollute the API
@@ -62,11 +80,17 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
     secondaryNavigation,
     account,
     mobileNavigation,
-    mobileNavigationBp = 'small',
+    mobileNavigationProps = { breakpoint: 'small', label: 'Menu' },
     className,
     contentMaxWidth = '100%',
     testId = 'cf-ui-navbar',
     variant = 'wide',
+    aria = {
+      labelMainNavigation: 'Main Navigation',
+      labelSecondaryNavigation: 'Secondary Navigation',
+      labelPromotions: 'Promotions',
+      labelAccount: 'Account Navigation',
+    },
     ...otherProps
   } = props;
   const styles = getNavbarStyles({ contentMaxWidth, variant });
@@ -91,10 +115,12 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
             <NavbarMenu
               trigger={
                 <Button
-                  className={styles.mobileNavigationButton(mobileNavigationBp)}
+                  className={styles.mobileNavigationButton(
+                    mobileNavigationProps.breakpoint,
+                  )}
                   startIcon={<ListIcon size="medium" />}
                 >
-                  Menu
+                  {mobileNavigationProps.label}
                 </Button>
               }
             >
@@ -103,8 +129,10 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
           )}
           {mainNavigation && (
             <Flex
-              className={styles.mainNavigation(mobileNavigationBp)}
-              aria-label="Main Navigation"
+              className={styles.mainNavigation(
+                mobileNavigationProps.breakpoint,
+              )}
+              aria-label={aria.labelMainNavigation}
               gap="spacingXs"
             >
               {mainNavigation}
@@ -115,7 +143,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
           <Flex
             alignItems="center"
             className={styles.promoNavigationWrapper}
-            aria-label="Promotions"
+            aria-label={aria.labelPromotions}
             gap="spacingXs"
           >
             {promotions}
@@ -125,7 +153,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
             {secondaryNavigation && (
               <Flex
                 className={styles.secondaryNavigationWrapper}
-                aria-label="Secondary Navigation"
+                aria-label={aria.labelSecondaryNavigation}
                 gap="spacingXs"
               >
                 {secondaryNavigation}
@@ -134,7 +162,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
             {account && (
               <Flex
                 className={styles.account}
-                aria-label="Account Navigation"
+                aria-label={aria.labelAccount}
                 gap="spacingXs"
               >
                 {account}
