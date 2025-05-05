@@ -8,7 +8,8 @@ export default {
   component: NavList,
   title: 'Components/NavList',
   parameters: {
-    propTypes: NavList.__docgenInfo,
+    // biome-ignore lint/complexity/useLiteralKeys: its not a literal key
+    propTypes: NavList['__docgenInfo'],
   },
   argTypes: {
     className: { control: { disable: true } },
