@@ -1,6 +1,6 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { NavbarAccountProps } from './NavbarAccount';
+import type { NavbarAccountProps } from './NavbarAccount';
 import { getGlowOnFocusStyles, increaseHitArea } from '../utils.styles';
 
 const notificationVarianColorMap: Record<
@@ -13,7 +13,7 @@ const notificationVarianColorMap: Record<
 };
 
 export const getNavbarAccountStyles = () => ({
-  navbarAccount: css(
+  navbarAccount: css([
     {
       cursor: 'pointer',
       background: 'none',
@@ -29,7 +29,7 @@ export const getNavbarAccountStyles = () => ({
     },
     getGlowOnFocusStyles(),
     increaseHitArea(),
-  ),
+  ]),
   notificationIcon: (variant: NavbarAccountProps['notificationVariant']) =>
     css({
       position: 'absolute',

@@ -32,7 +32,7 @@ const commonItemStyles = {
 };
 
 export const getNavbarItemStyles = ({ hasTitle }: { hasTitle: boolean }) => ({
-  navbarItem: css(
+  navbarItem: css([
     commonItemStyles,
     {
       appearance: 'none',
@@ -43,7 +43,6 @@ export const getNavbarItemStyles = ({ hasTitle }: { hasTitle: boolean }) => ({
       fontSize: tokens.fontSizeM,
       lineHeight: tokens.lineHeightM,
       fontWeight: tokens.fontWeightMedium,
-      position: 'relative',
       textAlign: 'left',
       whiteSpace: 'nowrap',
       cursor: 'pointer',
@@ -54,7 +53,6 @@ export const getNavbarItemStyles = ({ hasTitle }: { hasTitle: boolean }) => ({
       transition: `color ${tokens.transitionDurationShort} ${tokens.transitionEasingCubicBezier}`,
       borderRadius: tokens.borderRadiusMedium,
       height: '30px',
-
       padding: hasTitle
         ? undefined
         : `calc(${tokens.spacing2Xs} - ${borderWidth})`, // square button for icon-only items
@@ -84,7 +82,7 @@ export const getNavbarItemStyles = ({ hasTitle }: { hasTitle: boolean }) => ({
     },
     getGlowOnFocusStyles(),
     increaseHitArea(),
-  ),
+  ]),
   navbarItemMenuTrigger: css({
     paddingRight: tokens.spacingXs,
   }),

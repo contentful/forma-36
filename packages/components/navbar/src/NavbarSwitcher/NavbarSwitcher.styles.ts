@@ -3,13 +3,13 @@ import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
 
 import { getGlowOnFocusStyles, increaseHitArea, mqs } from '../utils.styles';
-import { EnvVariant } from './NavbarSwitcher';
+import type { EnvVariant } from './NavbarSwitcher';
 
 const BORDER_WIDTH = 1;
 
 export const getNavbarSwitcherStyles = (variant: EnvVariant) => ({
   navbarSwitcher: ({ showSpaceEnv }: { showSpaceEnv: boolean }) =>
-    css(
+    css([
       {
         color: tokens.gray600,
         flexShrink: 1,
@@ -37,7 +37,7 @@ export const getNavbarSwitcherStyles = (variant: EnvVariant) => ({
       showSpaceEnv && getEnvVariantColor(variant),
       getGlowOnFocusStyles(),
       increaseHitArea(),
-    ),
+    ]),
   switcherWrapper: ({ showSpaceEnv }: { showSpaceEnv: boolean }) =>
     css({
       // Set min-width only when there are three span children
