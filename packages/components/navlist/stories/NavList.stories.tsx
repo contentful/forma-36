@@ -8,7 +8,7 @@ export default {
   component: NavList,
   title: 'Components/NavList',
   parameters: {
-    propTypes: NavList['__docgenInfo'],
+    propTypes: NavList.__docgenInfo,
   },
   argTypes: {
     className: { control: { disable: true } },
@@ -19,7 +19,7 @@ export default {
 
 export const Basic: Story<NavListProps> = (args) => {
   return (
-    <NavList {...args}>
+    <NavList {...args} aria-label="Navlist">
       <NavList.Item>Item 1</NavList.Item>
       <NavList.Item>Item 2</NavList.Item>
       <NavList.Item>Item 3</NavList.Item>
@@ -29,7 +29,7 @@ export const Basic: Story<NavListProps> = (args) => {
 };
 
 export const WithButtons: Story<NavListProps> = (args) => {
-  const handleOnClick = (id) => () => action(`clicked on button`)(id);
+  const handleOnClick = (id) => () => action('clicked on button')(id);
   return (
     <NavList {...args}>
       <NavList.Item onClick={handleOnClick(1)} as="button">
