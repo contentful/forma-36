@@ -25,6 +25,13 @@ export type PillInternalProps = CommonProps & {
    * Function that handles when the close icon is clicked. Close icon visibility depends on if this property is set.
    */
   onClose?: () => void;
+
+  /**
+   * Aria label for close button
+   * @default 'Close'
+   */
+  closeButtonAriaLabel?: string;
+
   /**
    * Function that handles when the pill is dragged. Drag icon is rendered when this property is set.
    */
@@ -48,6 +55,7 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
       isDraggable,
       label,
       onClose,
+      closeButtonAriaLabel = 'Close',
       testId = 'cf-ui-pill',
       onDrag,
       className,
@@ -97,7 +105,7 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
             type="button"
             variant="transparent"
             startIcon={<CloseIcon />}
-            aria-label="Close"
+            aria-label={closeButtonAriaLabel}
             onClick={onClose}
             className={styles.closeButton}
           />
