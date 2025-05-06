@@ -8,6 +8,28 @@ import { Text } from '@contentful/f36-typography';
 
 import { getRangeText } from './utils';
 
+type NavigationButtonsProps = {
+  /**
+   * Label for the next button
+   * @default "Next"
+   */
+  labelNext?: string;
+  /**
+   * Label for the previous button
+   * @default "Previous"
+   */
+  labelPrevious?: string;
+  /**
+   * Aria label for the next button
+   * @default "To next page"
+   */
+  ariaLabelNext?: string;
+  /**
+   * Aria label for the previous button
+   * @default "To previous page"
+   */
+  ariaLabelPrevious?: string;
+};
 export interface PaginationProps extends CommonProps {
   /**
    * Sets which page is active on the Pagination
@@ -35,6 +57,11 @@ export interface PaginationProps extends CommonProps {
    */
   showViewPerPage?: boolean;
   /**
+   * Label for the View per page selector
+   * @default "View"
+   */
+  viewPerPageLabel?: string;
+  /**
    * Sets how many items are displayed per page.
    * Must be one of the values passed on viewPerPageOptions prop.
    * @default 20
@@ -53,6 +80,11 @@ export interface PaginationProps extends CommonProps {
    * Handler function called when user navigates to another page on the pagination.
    */
   onPageChange: (page: number) => void;
+  /**
+   * Labels for previous and next buttons
+   * @default { labelNext: "Next", labelPrevious: "Previous", ariaLabelNext: "To next page", ariaLabelPrevious: "To previous page" }
+   */
+  navigationButtonsProps?: NavigationButtonsProps;
 }
 
 function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
@@ -67,6 +99,13 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
     activePage = 0,
     viewPerPageOptions = [20, 100],
     showViewPerPage = false,
+    viewPerPageLabel = 'View',
+    navigationButtonsProps = {
+      labelNext: 'Next',
+      labelPrevious: 'Previous',
+      ariaLabelNext: 'To next page',
+      ariaLabelPrevious: 'To previous page',
+    },
     totalItems,
     onViewPerPageChange,
     ...otherProps
@@ -95,7 +134,7 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
     >
       {showViewPerPage && (
         <Stack>
-          <Text fontColor="gray500">View</Text>
+          <Text fontColor="gray500">{viewPerPageLabel}</Text>
           <Select
             value={`${itemsPerPage}`}
             onChange={(e) =>
@@ -115,24 +154,24 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
         <Stack spacing="spacingS">
           {!isFirstPage && (
             <Button
-              aria-label="To previous page"
+              aria-label={navigationButtonsProps.ariaLabelPrevious}
               startIcon={<ChevronLeftIcon />}
               variant="secondary"
               onClick={() => onPageChange(activePage - 1)}
               testId="cf-ui-pagination-previous"
             >
-              Previous
+              {navigationButtonsProps.labelPrevious}
             </Button>
           )}
           {!isLastPage && (
             <Button
-              aria-label="To next page"
+              aria-label={navigationButtonsProps.ariaLabelNext}
               variant="secondary"
               endIcon={<ChevronRightIcon />}
               onClick={() => onPageChange(activePage + 1)}
               testId="cf-ui-pagination-next"
             >
-              Next
+              {navigationButtonsProps.labelNext}
             </Button>
           )}
         </Stack>
