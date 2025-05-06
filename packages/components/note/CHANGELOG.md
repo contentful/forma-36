@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.79.2
+
+### Patch Changes
+
+- [#3044](https://github.com/contentful/forma-36/pull/3044) [`f0d6617`](https://github.com/contentful/forma-36/commit/f0d6617f6f20708eb2ff89c6e309b4dcfad10076) Thanks [@Lelith](https://github.com/Lelith)! - Enables overwriting the aria-label on the close button.
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.79.2
+  - @contentful/f36-core@4.79.2
+  - @contentful/f36-icon@4.79.2
+  - @contentful/f36-typography@4.79.2
+
 ## 4.79.1
 
 ### Patch Changes
