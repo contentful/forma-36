@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 07-05-2025
+
+**F36 Note** `v4.79.2`
+
+- Enables overwriting the aria-label on the close button.
+
 ## 25-03-2025
 
 **F36 Typography** `v4.79.1`
