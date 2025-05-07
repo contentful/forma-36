@@ -13,22 +13,22 @@ type NavigationButtonsProps = {
    * Label for the next button
    * @default "Next"
    */
-  labelNext?: string;
+  nextLabel?: string;
   /**
    * Label for the previous button
    * @default "Previous"
    */
-  labelPrevious?: string;
+  previousLabel?: string;
   /**
    * Aria label for the next button
    * @default "To next page"
    */
-  ariaLabelNext?: string;
+  nextAriaLabel?: string;
   /**
    * Aria label for the previous button
    * @default "To previous page"
    */
-  ariaLabelPrevious?: string;
+  previousAriaLabel?: string;
 };
 export interface PaginationProps extends CommonProps {
   /**
@@ -101,10 +101,10 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
     showViewPerPage = false,
     viewPerPageLabel = 'View',
     navigationButtonsProps = {
-      labelNext: 'Next',
-      labelPrevious: 'Previous',
-      ariaLabelNext: 'To next page',
-      ariaLabelPrevious: 'To previous page',
+      nextLabel: 'Next',
+      previousLabel: 'Previous',
+      nextAriaLabel: 'To next page',
+      previousAriaLabel: 'To previous page',
     },
     totalItems,
     onViewPerPageChange,
@@ -154,24 +154,24 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
         <Stack spacing="spacingS">
           {!isFirstPage && (
             <Button
-              aria-label={navigationButtonsProps.ariaLabelPrevious}
+              aria-label={navigationButtonsProps.previousAriaLabel}
               startIcon={<ChevronLeftIcon />}
               variant="secondary"
               onClick={() => onPageChange(activePage - 1)}
               testId="cf-ui-pagination-previous"
             >
-              {navigationButtonsProps.labelPrevious}
+              {navigationButtonsProps.previousLabel}
             </Button>
           )}
           {!isLastPage && (
             <Button
-              aria-label={navigationButtonsProps.ariaLabelNext}
+              aria-label={navigationButtonsProps.nextAriaLabel}
               variant="secondary"
               endIcon={<ChevronRightIcon />}
               onClick={() => onPageChange(activePage + 1)}
               testId="cf-ui-pagination-next"
             >
-              {navigationButtonsProps.labelNext}
+              {navigationButtonsProps.nextLabel}
             </Button>
           )}
         </Stack>
