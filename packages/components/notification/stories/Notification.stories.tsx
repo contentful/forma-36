@@ -30,6 +30,7 @@ basic.args = {
   },
   onClose: action('onClose'),
   children: 'Body for the notification',
+  closeButtonAriaLabel: 'Schließen',
 };
 
 export const WithButtons = ({ notificationText, duration, ...args }) => {

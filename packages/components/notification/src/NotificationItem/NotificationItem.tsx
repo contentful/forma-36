@@ -32,6 +32,11 @@ export interface NotificationItemProps extends CommonProps {
    */
   withCloseButton?: boolean;
   /**
+   * Aria label for close button
+   * @default 'Dismiss'
+   */
+  closeButtonAriaLabel?: string;
+  /**
    * Function that will be triggered when close button is clicked
    */
   onClose?: Function;
@@ -40,7 +45,7 @@ export interface NotificationItemProps extends CommonProps {
    */
   title?: string;
   /**
-   * Content of the notificaiton
+   * Content of the notification
    */
   children: React.ReactNode;
   /**
@@ -55,6 +60,7 @@ const _NotificationItem = (props: ExpandProps<NotificationItemProps>, ref) => {
     children,
     cta,
     withCloseButton = true,
+    closeButtonAriaLabel = 'Dismiss',
     variant = 'positive',
     onClose,
     testId = 'cf-ui-notification',
@@ -124,7 +130,7 @@ const _NotificationItem = (props: ExpandProps<NotificationItemProps>, ref) => {
               onClose && onClose();
             }}
             testId="cf-ui-notification-close"
-            aria-label="Dismiss"
+            aria-label={closeButtonAriaLabel}
           />
         </Box>
       )}
