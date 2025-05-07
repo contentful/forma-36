@@ -1,5 +1,19 @@
 # @contentful/f36-pagination
 
+## 4.80.0
+
+### Minor Changes
+
+- [#3045](https://github.com/contentful/forma-36/pull/3045) [`1fc8e84`](https://github.com/contentful/forma-36/commit/1fc8e84dfbcff9c6a29fa1d3ebeafc5cd73aaac2) Thanks [@Lelith](https://github.com/Lelith)! - Enables localisation of Pagination Component by introducing new optional properties for labels.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.80.0
+  - @contentful/f36-core@4.80.0
+  - @contentful/f36-forms@4.80.0
+  - @contentful/f36-typography@4.80.0
+
 ## 4.79.2
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.80.0
+
+### Minor Changes
+
+- [#3046](https://github.com/contentful/forma-36/pull/3046) [`e1c4e3c`](https://github.com/contentful/forma-36/commit/e1c4e3c9abfdd919dbe7c1cb4a3221905c7e0de3) Thanks [@Lelith](https://github.com/Lelith)! - Enables localisation of Pill component by offering new optional props for aria-label on the close button.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.80.0
+  - @contentful/f36-core@4.80.0
+  - @contentful/f36-drag-handle@4.80.0
+  - @contentful/f36-tooltip@4.80.0
+
 ## 4.79.2
 
 ### Patch Changes

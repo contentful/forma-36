@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.80.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.80.0
+  - @contentful/f36-core@4.80.0
+  - @contentful/f36-typography@4.80.0
+
 ## 4.79.2
 
 ### Patch Changes
