@@ -1,5 +1,17 @@
 # Change Log
 
+## 4.80.1
+
+### Patch Changes
+
+- [#3047](https://github.com/contentful/forma-36/pull/3047) [`6b3bab2`](https://github.com/contentful/forma-36/commit/6b3bab2fd9117e841f5e0b1c0ea107ccc46f9672) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - Enables localization of NotificationItem component by offering new optional props for aria-label on the close button.
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.80.1
+  - @contentful/f36-core@4.80.1
+  - @contentful/f36-text-link@4.80.1
+  - @contentful/f36-typography@4.80.1
+
 ## 4.80.0
 
 ### Patch Changes
