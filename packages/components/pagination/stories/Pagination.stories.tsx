@@ -85,10 +85,10 @@ export const CustomLabels = (args: PaginationProps) => {
         showViewPerPage
         viewPerPageLabel="Einträge pro Seite"
         navigationButtonsProps={{
-          labelNext: 'Nächste',
-          labelPrevious: 'Vorherige',
-          ariaLabelNext: 'Springe zur nächsten Seite',
-          ariaLabelPrevious: 'Gehe zur vorherigen Seite',
+          nextLabel: 'Nächste',
+          previousLabel: 'Vorherige',
+          nextAriaLabel: 'Springe zur nächsten Seite',
+          previousAriaLabel: 'Gehe zur vorherigen Seite',
         }}
         activePage={page}
         onPageChange={handlePageChange}
