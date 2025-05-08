@@ -480,6 +480,10 @@ export const WithSelectAll = () => {
           <Multiselect.SelectAll
             onSelectItem={toggleAll}
             isChecked={areAllSelected}
+            selectAllOptionLabel={{
+              checked: 'Selektion aufheben',
+              unchecked: 'Alle markieren',
+            }}
           />
           {produce.map((item) => {
             return (
@@ -534,6 +538,10 @@ export const WithClearAll = () => {
         placeholder="Select many fruits"
         currentSelection={selectedFruits}
         onClearSelection={handleClearSelection}
+        clearButtonProps={{
+          tooltip: 'Auswahl aufheben',
+          ariaLabel: 'Auswahl jetzt aufheben',
+        }}
       >
         <div>
           <SectionHeading marginLeft="spacingXs" marginBottom="spacingXs">
