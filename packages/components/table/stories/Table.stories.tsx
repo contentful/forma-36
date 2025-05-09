@@ -127,7 +127,11 @@ export const Overview: Story = () => (
             <Table.Cell>Name</Table.Cell>
             <Table.Cell>Email</Table.Cell>
             <Table.Cell>Organization role</Table.Cell>
-            <Table.Cell isSortable sortDirection={TableCellSorting.Descending}>
+            <Table.Cell
+              isSortable
+              sortDirection={TableCellSorting.Descending}
+              sortButtonAriaLabel="Nach letzter Aktivität aufsteigend sortieren"
+            >
               Last activity
             </Table.Cell>
           </Table.Row>
@@ -166,7 +170,11 @@ export const Overview: Story = () => (
             <Table.Cell>Name</Table.Cell>
             <Table.Cell>Email</Table.Cell>
             <Table.Cell>Organization role</Table.Cell>
-            <Table.Cell isSortable sortDirection={TableCellSorting.Ascending}>
+            <Table.Cell
+              isSortable
+              sortDirection={TableCellSorting.Ascending}
+              sortButtonAriaLabel="Nach letzter Aktivität absteigend sortieren"
+            >
               Last activity
             </Table.Cell>
           </Table.Row>
