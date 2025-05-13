@@ -87,6 +87,7 @@ export * from './vendor/phosphor/ImageSquareIcon.js';
 export * from './vendor/phosphor/InfoIcon.js';
 export * from './vendor/phosphor/KeyIcon.js';
 export * from './vendor/phosphor/LaptopIcon.js';
+export * from './vendor/phosphor/Lightbulb.js';
 export * from './vendor/phosphor/LightningIcon.js';
 export * from './vendor/phosphor/LinkBreakIcon.js';
 export * from './vendor/phosphor/LinkSimpleIcon.js';
