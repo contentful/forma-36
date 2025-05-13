@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.80.2
+
+### Patch Changes
+
+- [#3049](https://github.com/contentful/forma-36/pull/3049) [`e73805e`](https://github.com/contentful/forma-36/commit/e73805e489902e44f2f3ab43d3947326bcbec02f) Thanks [@veu](https://github.com/veu)! - Enables localization of sortable table cells by adding aria-label prop for sort button.
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.80.2
+  - @contentful/f36-typography@4.80.2
+
 ## 4.80.1
 
 ### Patch Changes
