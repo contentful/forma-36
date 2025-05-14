@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 14-05-2025
+
+**F36 Table** `v4.80.2`
+
+- Enables localization of sortable table cells by adding aria-label prop for sort button.
+
 ## 08-05-2025
 
 **F36 Pagination** `v4.80.0`
