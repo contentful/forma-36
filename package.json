@@ -43,7 +43,8 @@
     "@types/react-dom": "16.9.14",
     "cross-spawn": "^7.0.6",
     "csstype": "3.1.1",
-    "webpack": "5"
+    "webpack": "5",
+    "@babel/runtime": "^7.27.1"
   },
   "browserslist": "extends @contentful/browserslist-config",
   "devDependencies": {
