@@ -346,7 +346,11 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
           {showClearButton && (
             <div className={styles.clearSelectionButton}>
               <Tooltip
-                content={clearButtonProps.tooltip}
+                content={
+                  clearButtonProps.tooltip
+                    ? clearButtonProps.tooltip
+                    : 'Clear selection'
+                }
                 showDelay={800}
                 placement="top"
                 as="div"
@@ -354,7 +358,11 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                 <IconButton
                   onClick={handleClearSelection}
                   icon={<CloseIcon />}
-                  aria-label={clearButtonProps.ariaLabel}
+                  aria-label={
+                    clearButtonProps.ariaLabel
+                      ? clearButtonProps.ariaLabel
+                      : 'Clear selection'
+                  }
                   size="small"
                 />
               </Tooltip>
