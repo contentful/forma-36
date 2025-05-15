@@ -6,7 +6,7 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@babel/runtime": "^7.26.10",
+    "@babel/runtime": "^7.27.1",
     "@contentful/f36-button": "^4.78.0",
     "@contentful/f36-core": "^4.78.0",
     "@contentful/f36-forms": "^4.78.0",
