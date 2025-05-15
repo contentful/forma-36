@@ -62,7 +62,8 @@ export interface MultiselectProps extends CommonProps {
   toggleRef?: React.Ref<HTMLButtonElement>;
 
   /**
-   * Aria label for toggle button that opens the list
+   * Aria label for the toggle button that opens the list
+   * @default 'Toggle Multiselect'
    */
   toggleButtonAriaLabel?: string;
 
