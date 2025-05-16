@@ -153,6 +153,7 @@ export * from './vendor/phosphor/TrendUpIcon.js';
 export * from './vendor/phosphor/TriangleIcon.js';
 export * from './vendor/phosphor/UserIcon.js';
 export * from './vendor/phosphor/UsersIcon.js';
+export * from './vendor/phosphor/VideoIcon.js';
 export * from './vendor/phosphor/WarningIcon.js';
 export * from './vendor/phosphor/WarningOctagonIcon.js';
 export * from './vendor/phosphor/WrenchIcon.js';
