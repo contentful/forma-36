@@ -1,5 +1,11 @@
 ## Change Log
 
+## 4.26.1
+
+### Patch Changes
+
+- [#3048](https://github.com/contentful/forma-36/pull/3048) [`8ccbf20`](https://github.com/contentful/forma-36/commit/8ccbf2015fee4fc9406829d44d329c103abe2654) Thanks [@Lelith](https://github.com/Lelith)! - Enable localisation of the Multiselect component by offering new optional properties
+
 ## 4.26.0
 
 ### Minor Changes
