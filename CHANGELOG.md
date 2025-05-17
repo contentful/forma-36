@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 17-05-2025
+
+**F36 Multiselect** `v4.26.1`
+
+- Enable localisation of the Multiselect component by offering new optional properties
+
 ## 14-05-2025
 
 **F36 Table** `v4.80.2`
