@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.80.3
+
+### Patch Changes
+
+- [#3054](https://github.com/contentful/forma-36/pull/3054) [`97445b3`](https://github.com/contentful/forma-36/commit/97445b315e205e9c65ca43e39c634e9a7238132f) Thanks [@Lelith](https://github.com/Lelith)! - Fix vulnerability issue with babel-runtime dev dependency
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.80.3
+  - @contentful/f36-core@4.80.3
+  - @contentful/f36-forms@4.80.3
+  - @contentful/f36-popover@4.80.3
+  - @contentful/f36-skeleton@4.80.3
+  - @contentful/f36-typography@4.80.3
+
 ## 4.80.2
 
 ### Patch Changes
