@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 20-05-2025
+
+**F36 Autocomplete** `v4.80.3`
+
+- Fix vulnerability issue with babel-runtime dev dependency
+
 ## 17-05-2025
 
 **F36 Multiselect** `v4.26.1`
