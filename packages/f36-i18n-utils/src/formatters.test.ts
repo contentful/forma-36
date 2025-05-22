@@ -7,17 +7,29 @@ import {
 
 describe('I18n utility functions', function () {
   describe('formatDate', () => {
-    it('formats date before noon', () => {
+    it('formats date before noon', async () => {
       const date = '2025-04-30T13:35:33.903Z';
-      expect(formatDate('de-DE', date)).toBe('Mi., 30. Apr. 2025 um 6:35:33');
-      expect(formatDate('fr-FR', date)).toBe('mer. 30 avr. 2025 à 6:35:33');
-      expect(formatDate('en-US', date)).toBe('Wed, 30 Apr 2025 at 6:35:33 AM');
+      expect(await formatDate('de-DE', date)).toBe(
+        'Mi., 30. Apr. 2025 um 6:35:33',
+      );
+      expect(await formatDate('fr-FR', date)).toBe(
+        'mer. 30 avr. 2025 à 6:35:33',
+      );
+      expect(await formatDate('en-US', date)).toBe(
+        'Wed, 30 Apr 2025 at 6:35:33 AM',
+      );
     });
-    it('formats date after noon', () => {
+    it('formats date after noon', async () => {
       const date = '2025-04-29T20:35:33.903Z';
-      expect(formatDate('de-DE', date)).toBe('Di., 29. Apr. 2025 um 13:35:33');
-      expect(formatDate('fr-FR', date)).toBe('mar. 29 avr. 2025 à 13:35:33');
-      expect(formatDate('en-US', date)).toBe('Tue, 29 Apr 2025 at 1:35:33 PM');
+      expect(await formatDate('de-DE', date)).toBe(
+        'Di., 29. Apr. 2025 um 13:35:33',
+      );
+      expect(await formatDate('fr-FR', date)).toBe(
+        'mar. 29 avr. 2025 à 13:35:33',
+      );
+      expect(await formatDate('en-US', date)).toBe(
+        'Tue, 29 Apr 2025 at 1:35:33 PM',
+      );
     });
   });
 

@@ -1,14 +1,17 @@
-import dayjs from 'dayjs';
-import 'dayjs/locale/de';
-import 'dayjs/locale/fr';
-import localizedFormat from 'dayjs/plugin/localizedFormat';
-
-dayjs.extend(localizedFormat);
-
-export function formatDate(locale: string, date: string): string {
-  return dayjs(date)
-    .locale(mapToDayjsLocale(locale))
-    .format(getLocalizeDateFormat(locale));
+export async function formatDate(
+  locale: string,
+  date: string,
+): Promise<string> {
+  const dayjsLocale = mapToDayjsLocale(locale);
+  return Promise.all([
+    import('dayjs'),
+    importDayjsLocalePackage(dayjsLocale),
+  ]).then(([dayjs]) =>
+    dayjs
+      .default(date)
+      .locale(dayjsLocale)
+      .format(getLocalizeDateFormat(locale)),
+  );
 }
 
 export function formatNumber(locale: string, value: number): string {
@@ -63,4 +66,15 @@ function mapToDayjsLocale(locale: string) {
       return 'fr';
   }
   return 'en';
+}
+
+async function importDayjsLocalePackage(locale: string): Promise<void> {
+  switch (locale) {
+    case 'de':
+      await import('dayjs/locale/de');
+      break;
+    case 'fr':
+      await import('dayjs/locale/fr');
+      break;
+  }
 }
