@@ -132,7 +132,7 @@
     "yarn": "Please use npm"
   },
   "volta": {
-    "node": "18.20.1",
+    "node": "18.20.8",
     "npm": "8.3.0"
   }
 }
