@@ -12,16 +12,16 @@ export const NavbarItemSkeleton = ({
 
   return (
     <SkeletonContainer
-      className={styles.root}
+      className={styles.itemSkeleton}
       svgWidth={estimatedWidth}
-      svgHeight={40}
-      backgroundColor={tokens.gray800}
-      foregroundColor={tokens.gray700}
+      svgHeight={28}
+      backgroundColor={tokens.gray300}
+      foregroundColor={tokens.gray200}
     >
       <SkeletonText
-        lineHeight={6}
+        lineHeight={18}
         numberOfLines={1}
-        offsetTop={7}
+        offsetTop={2}
         radiusX={tokens.borderRadiusSmall}
         radiusY={tokens.borderRadiusSmall}
       />
