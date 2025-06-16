@@ -113,6 +113,7 @@ export * from './vendor/phosphor/QuestionIcon.js';
 export * from './vendor/phosphor/QuotesIcon.js';
 export * from './vendor/phosphor/ReceiptIcon.js';
 export * from './vendor/phosphor/RepeatIcon.js';
+export * from './vendor/phosphor/RocketIcon.js';
 export * from './vendor/phosphor/RocketLaunchIcon.js';
 export * from './vendor/phosphor/SelectionIcon.js';
 export * from './vendor/phosphor/ShoppingCartSimpleIcon.js';
