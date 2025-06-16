@@ -26,9 +26,6 @@ const getHeaderStyles = ({ align }: StyleProps) =>
       cursor: 'pointer',
       transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault},
         box-shadow ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
-      '&:hover': {
-        backgroundColor: tokens.gray100,
-      },
       '&:focus': {
         backgroundColor: tokens.gray100,
         borderRadius: tokens.borderRadiusMedium,
@@ -44,6 +41,9 @@ const getHeaderStyles = ({ align }: StyleProps) =>
         backgroundColor: tokens.gray100,
         borderRadius: tokens.borderRadiusMedium,
         boxShadow: tokens.glowPrimary,
+      },
+      '&:hover, &:focus:hover, &:focus-visible:hover': {
+        backgroundColor: tokens.gray100,
       },
     }),
     align === 'end' &&
