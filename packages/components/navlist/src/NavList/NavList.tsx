@@ -1,10 +1,10 @@
 import React from 'react';
 import { cx } from 'emotion';
-import {
-  type CommonProps,
-  type PolymorphicProps,
-  type PolymorphicComponent,
-  type ExpandProps,
+import type {
+  CommonProps,
+  PolymorphicProps,
+  PolymorphicComponent,
+  ExpandProps,
 } from '@contentful/f36-core';
 import { getStyles } from './NavList.styles';
 
@@ -16,6 +16,7 @@ export interface NavListInternalProps extends CommonProps {
    * @default nav
    */
   as?: 'nav' | 'div';
+  'aria-label'?: string;
 }
 
 export type NavListProps<
@@ -28,14 +29,21 @@ function _NavList<E extends React.ElementType = typeof NAV_LIST_DEFAULT_TAG>(
 ) {
   const styles = getStyles();
 
-  const { as = 'nav', className, children, testId, ...otherProps } = props;
+  const {
+    as = 'nav',
+    className,
+    children,
+    testId,
+    'aria-label': ariaLabel = 'Sidebar',
+    ...otherProps
+  } = props;
   const role = as === 'nav' ? undefined : 'navigation';
 
   const Element = (as ?? NAV_LIST_DEFAULT_TAG) as React.ElementType;
 
   return (
     <Element
-      aria-label="Sidebar"
+      aria-label={ariaLabel}
       {...otherProps}
       data-test-id={testId}
       ref={ref}

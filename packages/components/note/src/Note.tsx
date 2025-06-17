@@ -57,13 +57,18 @@ export type NoteInternalProps = CommonProps & {
    */
   withCloseButton?: boolean;
   /**
-   * Expects any of the icon components to override the default Note variant icon
+   * Aria label for the close button
+   * @default 'Dismiss'
    */
-  icon?: React.ReactElement;
+  closeButtonAriaLabel?: string;
   /**
    * Callback for handling closing
    */
   onClose?: React.MouseEventHandler<HTMLButtonElement>;
+  /**
+   * Expects any of the icon components to override the default Note variant icon
+   */
+  icon?: React.ReactElement;
 };
 export type NoteProps = PropsWithHTMLElement<NoteInternalProps, 'article'>;
 
@@ -76,8 +81,9 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
       children,
       className,
       withCloseButton = false,
-      variant = 'primary',
       onClose,
+      closeButtonAriaLabel = 'Dismiss',
+      variant = 'primary',
       testId = 'cf-ui-note',
       title,
       icon,
@@ -140,7 +146,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
             startIcon={<CloseIcon className={styles.closeIcon} />}
             onClick={onClose}
             testId={`${testId}-close`}
-            aria-label="Dismiss"
+            aria-label={closeButtonAriaLabel}
             className={styles.close}
           />
         )}

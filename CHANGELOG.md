@@ -8,6 +8,44 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 20-05-2025
+
+**F36 Autocomplete** `v4.80.3`
+
+- Fix vulnerability issue with babel-runtime dev dependency
+
+## 17-05-2025
+
+**F36 Multiselect** `v4.26.1`
+
+- Enable localisation of the Multiselect component by offering new optional properties
+
+## 14-05-2025
+
+**F36 Table** `v4.80.2`
+
+- Enables localization of sortable table cells by adding aria-label prop for sort button.
+
+## 08-05-2025
+
+**F36 Pagination** `v4.80.0`
+
+- Enables localisation of Pagination Component by introducing new optional properties for labels.
+
+**F36 Pill** `v4.80.0`
+
+- Enables localisation of Pill component by offering new optional props for aria-label on the close button.
+
+**F36 Notification** `v4.80.1`
+
+- Enables localization of NotificationItem component by offering new optional props for aria-label on the close button.
+
+## 07-05-2025
+
+**F36 Note** `v4.79.2`
+
+- Enables overwriting the aria-label on the close button.
+
 ## 25-03-2025
 
 **F36 Typography** `v4.79.1`

@@ -57,7 +57,12 @@ export const Overview: Story<PillInternalProps> = (args) => (
 
       <Flex flexDirection="row" marginBottom="spacingM">
         <Box marginRight="spacingXs">
-          <Pill label="Idle" variant="idle" onClose={args.onClose} />
+          <Pill
+            label="Idle"
+            variant="idle"
+            onClose={args.onClose}
+            closeButtonAriaLabel="Remove"
+          />
         </Box>
         <Box marginRight="spacingXs">
           <Pill label="Active" variant="active" onClose={args.onClose} />

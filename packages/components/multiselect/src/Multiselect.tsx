@@ -17,6 +17,20 @@ import FocusLock from 'react-focus-lock';
 import type { MultiselectSearchProps as SearchProps } from './MultiselectSearch';
 import { MultiselectSearch } from './MultiselectSearch';
 
+type ClearButtonProps = {
+  /**
+   * Aria label for the clear button
+   * @default 'Clear selection'
+   */
+  ariaLabel?: string;
+
+  /**
+   * Tooltip for the clear button
+   * @default 'Clear selection'
+   */
+  tooltip?: string;
+};
+
 export interface MultiselectProps extends CommonProps {
   /** Select Options */
   children?: React.ReactNode;
@@ -46,6 +60,12 @@ export interface MultiselectProps extends CommonProps {
    * Use this prop to get a ref to the toggle button of the component
    */
   toggleRef?: React.Ref<HTMLButtonElement>;
+
+  /**
+   * Aria label for the toggle button that opens the list
+   * @default 'Toggle Multiselect'
+   */
+  toggleButtonAriaLabel?: string;
 
   /**
    * Props to pass to the optional search field
@@ -112,6 +132,12 @@ export interface MultiselectProps extends CommonProps {
    * If no function is provided the clear button is not shown
    */
   onClearSelection?: () => void;
+
+  /**
+   * Clear Button Props used for localization
+   * @default { ariaLabel: 'Clear selection', tooltip: 'Clear selection' }
+   */
+  clearButtonProps?: ClearButtonProps;
 }
 
 // Scan through the whole hierachy until `filter` returns true and apply `transform`
@@ -161,6 +187,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     placeholder = 'Select one or more Items',
     currentSelection = [],
     toggleRef,
+    toggleButtonAriaLabel = 'Toggle Multiselect',
     isLoading = false,
     testId = 'cf-multiselect',
     noMatchesMessage = 'No matches found',
@@ -169,6 +196,10 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     children,
     onBlur,
     onClearSelection,
+    clearButtonProps = {
+      tooltip: 'Clear selection',
+      ariaLabel: 'Clear selection',
+    },
   } = props;
 
   const { listMaxHeight = 180, listRef, onClose } = popoverProps;
@@ -301,7 +332,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
         <Flex alignItems="center">
           <Popover.Trigger>
             <Button
-              aria-label="Toggle Multiselect"
+              aria-label={toggleButtonAriaLabel}
               ref={toggleRef}
               onClick={() => setIsOpen(!isOpen)}
               startIcon={startIcon}
@@ -315,7 +346,11 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
           {showClearButton && (
             <div className={styles.clearSelectionButton}>
               <Tooltip
-                content="Clear selection"
+                content={
+                  clearButtonProps.tooltip
+                    ? clearButtonProps.tooltip
+                    : 'Clear selection'
+                }
                 showDelay={800}
                 placement="top"
                 as="div"
@@ -323,7 +358,11 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                 <IconButton
                   onClick={handleClearSelection}
                   icon={<CloseIcon />}
-                  aria-label="Clear selection"
+                  aria-label={
+                    clearButtonProps.ariaLabel
+                      ? clearButtonProps.ariaLabel
+                      : 'Clear selection'
+                  }
                   size="small"
                 />
               </Tooltip>

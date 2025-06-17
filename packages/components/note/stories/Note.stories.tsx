@@ -81,7 +81,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note withCloseButton>
+      <Note withCloseButton closeButtonAriaLabel="Schließen">
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>

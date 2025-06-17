@@ -40,7 +40,7 @@ export function Footer() {
             label="Join the developer community"
           />
           <FooterLink
-            href="https://forms.gle/qC7LLbiy4CcF5HPLA"
+            href="https://forms.gle/j3oC9GuhxEJ1DF4k6"
             label="Give us feedback"
           />
           <FooterLink isExternal={false} href="/whats-new" label="What's new" />

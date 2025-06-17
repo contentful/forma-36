@@ -1,5 +1,45 @@
 # Change Log
 
+## 4.80.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.80.3
+  - @contentful/f36-table@4.80.3
+
+## 4.80.2
+
+### Patch Changes
+
+- Updated dependencies [[`e73805e`](https://github.com/contentful/forma-36/commit/e73805e489902e44f2f3ab43d3947326bcbec02f)]:
+  - @contentful/f36-table@4.80.2
+  - @contentful/f36-core@4.80.2
+
+## 4.80.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.80.1
+  - @contentful/f36-table@4.80.1
+
+## 4.80.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.80.0
+  - @contentful/f36-table@4.80.0
+
+## 4.79.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.79.2
+  - @contentful/f36-table@4.79.2
+
 ## 4.79.1
 
 ### Patch Changes

@@ -34,6 +34,10 @@ export type TableCellInternalProps = CommonProps & {
   isSortable?: boolean;
   sortDirection?: TableCellSorting;
   width?: string | number;
+  /**
+   * Aria label for the sort button when isSortable is set
+   */
+  sortButtonAriaLabel?: string;
 } & Pick<TextProps, 'isTruncated' | 'isWordBreak'>;
 
 export type TableCellProps = PropsWithHTMLElement<
@@ -49,6 +53,7 @@ function _TableCell(
     isSortable,
     sortDirection,
     testId = 'cf-ui-table-cell',
+    sortButtonAriaLabel,
     ...otherProps
   }: TableCellProps,
   forwardedRef: React.Ref<any>,
@@ -84,11 +89,14 @@ function _TableCell(
   if (isSortable) {
     tableCellContent = (
       <button
-        aria-label={`Sort ${
-          sortDirection === TableCellSorting.Ascending
-            ? TableCellSorting.Descending
-            : TableCellSorting.Ascending
-        } by ${columnName}`}
+        aria-label={
+          sortButtonAriaLabel ??
+          `Sort ${
+            sortDirection === TableCellSorting.Ascending
+              ? TableCellSorting.Descending
+              : TableCellSorting.Ascending
+          } by ${columnName}`
+        }
         className={styles.button}
         type="button"
       >
