@@ -4,7 +4,7 @@
 
 - [Migration](#migration)
   - [Table of contents](#table-of-contents)
-  - [How to migrate your packages to v5](#how-to-migrate-your-packages-to-v4)
+  - [How to migrate your packages to v4](#how-to-migrate-your-packages-to-v4)
     - [Migrate all components to v4 with one command](#migrate-all-components-to-v4-with-one-command)
     - [Migrate to v4 - step by step guide](#migrate-to-v4---step-by-step-guide)
       - [Step 1 - Install new packages](#step-1---install-new-packages)
@@ -14,25 +14,139 @@
       - [Step 3 - Remove version 3 packages and CSS imports](#step-3---remove-version-3-packages-and-css-imports)
       - [Step 4 - Use the GlobalStyles component](#step-4---use-the-globalstyles-component)
   - [Changes per component in v4](#changes-per-component-in-v4)
+    - [Accordion](#accordion)
+      - [How to migrate your Accordion components](#how-to-migrate-your-accordion-components)
+      - [How to migrate your Accordion components with compound pattern](#how-to-migrate-your-accordion-components-with-compound-pattern)
+    - [Asset](#asset)
+      - [How to migrate your Asset components](#how-to-migrate-your-asset-components)
+    - [Autocomplete](#autocomplete)
+      - [How to migrate your Autocomplete components](#how-to-migrate-your-autocomplete-components)
+    - [Button](#button)
+      - [How to migrate your Button components](#how-to-migrate-your-button-components)
+    - [Card](#card)
+      - [How to migrate your Card components](#how-to-migrate-your-card-components)
+    - [CopyButton](#copybutton)
+      - [How to migrate your CopyButton components](#how-to-migrate-your-copybutton-components)
+    - [DateTime](#datetime)
+      - [How to migrate your DateTime components](#how-to-migrate-your-datetime-components)
+    - [Dropdown](#dropdown)
+      - [How to migrate your Dropdown components](#how-to-migrate-your-dropdown-components)
+      - [`Dropdown` to `Menu`](#dropdown-to-menu)
+    - [Simple case](#simple-case)
+    - [Case with Titles, Dividers, Links and dropdown maxHeight](#case-with-titles-dividers-links-and-dropdown-maxheight)
+    - [Case with Submenu](#case-with-submenu)
+      - [`Dropdown` to `Popover`](#dropdown-to-popover)
+    - [Popover case with checkboxes](#popover-case-with-checkboxes)
+    - [EntityList](#entitylist)
+      - [How to migrate your EntityList components](#how-to-migrate-your-entitylist-components)
+    - [Icon](#icon)
+      - [How to migrate your Icon components](#how-to-migrate-your-icon-components)
+    - [IconButton](#iconbutton)
+      - [How to migrate your IconButton components](#how-to-migrate-your-iconbutton-components)
+    - [Flex](#flex)
+      - [How to migrate your Flex components](#how-to-migrate-your-flex-components)
+    - [Form Components](#form-components)
+      - [Field Components](#field-components)
+        - [How to migrate your Field components](#how-to-migrate-your-field-components)
+      - [Checkbox](#checkbox)
+        - [How to migrate your Checkbox components](#how-to-migrate-your-checkbox-components)
+      - [RadioButton](#radiobutton)
+        - [How to migrate your RadioButton components](#how-to-migrate-your-radiobutton-components)
+      - [Select](#select)
+        - [How to migrate your Select components](#how-to-migrate-your-select-components)
+      - [Switch](#switch)
+        - [How to migrate your Switch components](#how-to-migrate-your-switch-components)
+      - [TextInput and TextArea](#textinput-and-textarea)
+        - [How to migrate your TextInput and TextArea components](#how-to-migrate-your-textinput-and-textarea-components)
+      - [FieldGroup](#fieldgroup)
+        - [How to migrate your FieldGroup components](#how-to-migrate-your-fieldgroup-components)
+      - [Form](#form)
+        - [How to migrate your Form components](#how-to-migrate-your-form-components)
+      - [FormLabel](#formlabel)
+        - [How to migrate your FormLabel components](#how-to-migrate-your-formlabel-components)
+    - [Grid](#grid)
+      - [How to migrate your Grid components](#how-to-migrate-your-grid-components)
+    - [HelpText](#helptext)
+      - [How to migrate your HelpText components](#how-to-migrate-your-helptext-components)
+    - [List](#list)
+      - [How to migrate your List components](#how-to-migrate-your-list-components)
+    - [Modal](#modal)
+      - [How to migrate your Modal components](#how-to-migrate-your-modal-components)
+    - [Note](#note)
+      - [How to migrate your Note components](#how-to-migrate-your-note-components)
+    - [Notification](#notification)
+      - [How to migrate your Notification components](#how-to-migrate-your-notification-components)
+    - [Pill](#pill)
+      - [How to migrate your Pill component](#how-to-migrate-your-pill-component)
+    - [RelativeDateTime](#relativedatetime)
+      - [How to migrate your RelativeDateTime components](#how-to-migrate-your-relativedatetime-components)
+    - [Skeleton](#skeleton)
+      - [How to migrate your Skeleton components](#how-to-migrate-your-skeleton-components)
+    - [Spinner](#spinner)
+      - [How to migrate your Spinner components](#how-to-migrate-your-spinner-components)
+    - [Table](#table)
+      - [How to migrate your Table components](#how-to-migrate-your-table-components)
+    - [Tabs](#tabs)
+      - [How to migrate your Tabs components](#how-to-migrate-your-tabs-components)
+    - [Tag becomes Badge](#tag-becomes-badge)
+      - [How to migrate your Tag to Badge](#how-to-migrate-your-tag-to-badge)
+    - [TextLink](#textlink)
+      - [How to migrate your TextLink components](#how-to-migrate-your-textlink-components)
+    - [ToggleButton](#togglebutton)
+      - [How to migrate your ToggleButton components](#how-to-migrate-your-togglebutton-components)
+    - [Tooltip](#tooltip)
+      - [How to migrate your Tooltip components](#how-to-migrate-your-tooltip-components)
+    - [Typography](#typography)
+      - [How to migrate your Typography components](#how-to-migrate-your-typography-components)
+    - [Workbench](#workbench)
+      - [How to migrate your Workbench components](#how-to-migrate-your-workbench-components)
 
-## How to migrate your packages to v5 from v4
+## How to migrate your packages from v3 to v4
 
-The following components contain breaking changes from v4 to v5
+### Migrate all components to v4 with one command
 
-- [Navbar](#navbar)
+We focused on improving your experience and creating a seamless migration to version 4. As such, you can run one codemod command and migrate the whole project to version 4.
 
-### Migrate to v5 - step by step guide
+```bash
+npx @contentful/f36-codemod
+```
+
+Note: When running this command for the first time it installs the package in the NPM cache. Make sure you run it again.
+
+When you run this command, the following prompt is displayed:
+
+```bash
+run-all-v4: Update package json with new packages and remove old ones, remove v3 CSS imports and run all possible codemods for components.
+update-package-json: Updates package.json file with correct packages, and remove v3 CSS imports
+migrate-all-components-to-v4: Run all exising codemods
+migrate-specific-component-to-v4: Select which v4 codemod you want to apply
+```
+
+Select the first option from the list: `run-all-v4`. This codemod will adjust your `package.json`, install new packages, remove old ones, and also remove the CSS imports required for version 3.
+
+The following components do not have a codemod, so you must migrate them manually:
+
+- [Accordion](#accordion)
+- [Asset](#asset)
+- [Autocomplete](https://f36.contentful.com/components/autocomplete/)
+- [DateTime](#datetime)
+- [ToggleButton](#togglebutton)
+- [Dropdown](#dropdown)
+- [Workbench](#workbench)
+- [Tabs](#tabs)
+- [Switch](#switch)
+
+### Migrate to v4 - step by step guide
 
 #### Step 1 - Install new packages
 
-Install a package that contains all of the components from Forma 36 version 5. Tree-shaking will take care of your build, so it will include only components that you use.
+Install a package that contains all of the components from Forma 36 version 4. Tree-shaking will take care of your build, so it will include only components that you use.
 
 For NPM
 
 ```bash
 npm install @contentful/f36-components
 npm install @contentful/f36-tokens
-npm install @contentful/f36-icons
 ```
 
 For YARN
@@ -40,6 +154,19 @@ For YARN
 ```bash
 yarn add @contentful/f36-components
 yarn add @contentful/f36-tokens
+```
+
+##### Install icons package separately
+
+Starting from version 4, icons are not included in the main components package. If you need to use our icons or you use them already in version 3, install them separately, by running the following commands:
+
+```bash
+npm install @contentful/f36-icons
+```
+
+For YARN
+
+```bash
 yarn add @contentful/f36-icons
 ```
 
@@ -74,99 +201,55 @@ Note: When running this command for the first time it installs the package in th
 
 There are still a couple of components that require manual migration, have a look at [the detailed documentation on how to do it](#changes-per-component-in-v4).
 
-## Changes per component in v5
+#### Step 3 - Remove version 3 packages and CSS imports
 
-### Navbar
+Now that you have your fresh version of Forma 36 installed, you don't need the old packages anymore. Remove them by running the following command:
 
-The API of the Navbar has changed, it has also significantly changed in it's design. It also now supports responsive design and offers a mobile navigation. The space switcher who before was a conglomorate of three visually different elements is now one distinct element on the right hand side.
-Many previous props have been removed or reorganized, and new props (such as logo, promotions, mainNavigation, secondaryNavigation, mobileNavigation, variant, and aria) have been introduced. The following migration guideline provides a detailed mapping and recommendations for developers upgrading to the new Navbar component
+For NPM
 
-#### Prop changes overview
+```bash
+npm uninstall @contentful/forma-36-react-components
+npm uninstall @contentful/forma-36-tokens
+npm uninstall @contentful/forma-36-fcss
+```
 
-##### Navbar.Account
+For YARN
 
-New Props
+```bash
+yarn remove @contentful/forma-36-react-components
+yarn remove @contentful/forma-36-tokens
+yarn remove @contentful/forma-36-fcss
+```
 
-- label
-- **New**. Used to give an accessible label to the menu
+Now find the following imports and remove them as well:
 
-##### Navbar.Help
+```tsx
+import '@contentful/forma-36-react-components/dist/styles.css';
+import '@contentful/forma-36-fcss/dist/styles.css';
+import '@contentful/forma-36-tokens/dist/css/index.css';
+```
 
-**Deleted** This compound component was deleted, instead replace it with a `<Navbar.Item />`
+#### Step 4 - Use the GlobalStyles component
 
-##### Navbar,Item
+Control default browser styles with the `GlobalStyles` component. The GlobalStyles component uses the Global component from [Emotion](https://emotion.sh/docs/globals) under the hood. Import GlobalStyles somewhere at the root of your project like in the example below:
 
-New Props
+```jsx static=true
+import ReactDOM from 'react-dom';
+import { GlobalStyles } from '@contentful/f36-components';
 
-- label
-  **New**. Used to give an accessible aria-label to the item.
-- isDisabled
-  **New**. Determines if an item is click-able
+import App from './App';
 
-##### Navbar
+const rootElement = document.getElementById('root');
+ReactDOM.render(
+  <>
+    <GlobalStyles />
+    <App />
+  </>,
+  rootElement,
+);
+```
 
-**Prop mapping table**
-
-| Old Prop         | New Prop(s)                                                                              | Notes                                                         |
-| ---------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| children         | mainNavigation / secondaryNavigation / logo                                              | Distribute content to structural props as appropriate         |
-| account          | account                                                                                  | No change                                                     |
-| search           | secondaryNavigation                                                                      | Place search bar within structural navigation props           |
-| switcher         | switcher                                                                                 | No change                                                     |
-| help             | secondaryNavigation                                                                      | Place help within navigation props                            |
-| badge            | secondaryNavigation / mainNavigation                                                     | Place badge within navigation props as needed                 |
-| bottomRightItems | secondaryNavigation                                                                      | Behaves as secondary actions; place here                      |
-| topRightItems    | secondaryNavigation / promotions                                                         | Place right side items into secondaryNavigation or promotions |
-| contentMaxWidth  | contentMaxWidth                                                                          | No change                                                     |
-| new              | logo, promotions, mainNavigation, variant, aria, mobileNavigation, mobileNavigationProps | Use new props where applicable                                |
-
-Removed Props
-
-- children
-  **Removed** All main content in the navbar should now be provided through explicit structural props.
-
-- search, help, badge, bottomRightItems, topRightItems
-
-  **Removed.** These should be mapped to one of the new explicit props or reorganized as part of mainNavigation, secondaryNavigation, or promotions components.
-
-Retained or Renamed Props
-
-- account
-
-  **Retained**. Use as before to supply the compound component `<Navbar.Account />`
-
-- switcher
-
-  **Retained**. Use as before for the Environment Switcher with the compound component `<Navbar.Switcher />` Visually moved from the left side to the right side.
-
-- contentMaxWidth
-
-  **Retained**, Optional. Same function, default is 100%; can be set to override the max-width of the content inside the navbar.
-
-Major Changes and New Props
-
-- logo
-
-  **New**, Optional. Accepts a React component to appear as the first element of the navbar. Per default the Contentful logo is shown.
-
-- mainNavigation
-  **New**, . All primary navigation elements should be grouped into this prop. Items previously passed as children or distributed between children/topRightItems/bottomRightItems should now be reorganized here.
-
-- promotions
-
-  **New**, Optional. Area placed right after the mainNavigation and can be used to feature promotions, company branding, or announcements that were previously placed using children or topRightItems.
-
-secondaryNavigation
-New. For navigation/action items that appear at the right side—most content from topRightItems or items you formerly split out as secondary actions should now reside here.
-
-mobileNavigation & mobileNavigationProps
-New. For specifying dedicated mobile navigation components and configuring mobile breakpoints and labels.
-
-variant
-New. Allows quick setting of size variation: 'wide' (1524px max width) or 'fullscreen'.
-
-aria
-New. For adding accessible aria-labels to distinct areas of the navbar.
+## Changes per component in v4
 
 ### Accordion
 
@@ -1285,7 +1368,7 @@ import {
   <ChevronUpIcon variant="negative" className="customClassName" />
   <CloseIcon variant="warning" style={{ marginLeft: 0 }} />
   <EditTrimmedIcon variant="secondary" />
-  <DownloadIcon color={tokens.gray600} />
+  <DownloadIcon variant="muted" />
   <FolderTrimmedIcon variant="white" size="large" />
 </div>;
 
@@ -1366,7 +1449,7 @@ import {
 
 <IconButton
   variant="transparent"
-  icon={<ChevronDownIcon color={tokens.gray600} className="className" />}
+  icon={<ChevronDownIcon variant="muted" className="className" />}
   aria-label="Some label"
 />;
 
@@ -1375,9 +1458,9 @@ const isCollapsed = true;
   variant="transparent"
   icon={
     isCollapsed ? (
-      <ChevronDownIcon color={tokens.gray600} className="className" />
+      <ChevronDownIcon variant="muted" className="className" />
     ) : (
-      <ChevronUpIcon color={tokens.gray600} className="className" />
+      <ChevronUpIcon variant="muted" className="className" />
     )
   }
   aria-label="Some label"
@@ -2895,7 +2978,7 @@ becomes:
 <TextLink
   as="button"
   isDisabled={false}
-  color={tokens.gray600}
+  variant="muted"
   className="className"
 />
 ```
@@ -2942,7 +3025,7 @@ import { ArrowDownIcon, AssetIcon } from '@contentful/f36-icons';
 <TextLink
   as="button"
   isDisabled={false}
-  color={tokens.gray600}
+  variant="muted"
   className="className"
 />;
 
@@ -2984,7 +3067,7 @@ In v4, we changed the API of the `ToggleButton` to align it with the new way we 
 becomes:
 
 ```tsx static=true
-<ToggleButton isActive icon={<CalendarBlankIcon />}>
+<ToggleButton isActive icon={<CalendarIcon />}>
   Embed Entry
 </ToggleButton>
 ```
@@ -3005,7 +3088,7 @@ You must manually migrate the version 3 `ToggleButton` component by updating the
 becomes:
 
 ```tsx static=true
-<ToggleButton isActive icon={<CalendarBlankIcon />}>
+<ToggleButton isActive icon={<CalendarIcon />}>
   Embed Entry
 </ToggleButton>
 <ToggleButton isActive icon={<PlusIcon />}>
