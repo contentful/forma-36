@@ -1,4 +1,3 @@
-export { generateIcon } from './generateIcon';
-export type { GeneratedIconProps } from './generateIcon';
-export { Icon } from './Icon';
-export type { IconProps, IconComponent, IconSize, IconVariant } from './Icon';
+export * from './utils/index.js';
+export { Icon, type IconProps } from './Icon.js';
+export * from './types.js';

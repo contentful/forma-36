@@ -16,10 +16,10 @@ const __dirname = path.dirname(__filename);
 const transformerDirectory = path.join(__dirname, '../', 'transforms');
 const jscodeshiftExecutable = require.resolve('.bin/jscodeshift');
 
-function checkGitStatus(force) {
+function checkGitStatus(force, cwd) {
   let clean = false;
   try {
-    clean = isGitClean.sync(process.cwd());
+    clean = isGitClean.sync(cwd);
   } catch (err) {
     if (err && err.stderr && err.stderr.indexOf('Not a git repository') >= 0) {
       if (!force) {
@@ -105,8 +105,7 @@ export function run() {
       description: 'Codemods for updating Forma-36 codes',
       help: `
     Usage
-      $ npx @contentful/f36-codemod <transform> <path> <...options>
-        transform        Check all included transformers on https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod#included-transforms.
+      $ npx @contentful/f36-codemod <path> <...options>
         path             Files or directory to transform. Can be a glob like src/**.test.js
     Options
       --force            Bypass Git repository safety checks and forcibly run codemods
@@ -125,47 +124,20 @@ export function run() {
     },
   );
 
-  if (!cli.flags.dry) {
-    checkGitStatus(cli.flags.force);
-  }
+  const path = cli.input[0];
 
-  if (
-    cli.input[0] &&
-    !inquirerChoices.TRANSFORMS_CHOICES.find((x) => x.value === cli.input[0]) &&
-    !cli.input[0]
-      ?.split(',')
-      .every((t) =>
-        inquirerChoices.TRANSFORMS_CHOICES.find((x) => x.value === t),
-      )
-  ) {
-    console.error('Invalid transform choice, pick one of:');
-    console.error(
-      inquirerChoices.TRANSFORMS_CHOICES.filter((x) => x.value)
-        .map((x) => '- ' + x.value)
-        .join('\n'),
-    );
-    process.exit(1);
+  if (!cli.flags.dry) {
+    checkGitStatus(cli.flags.force, path);
   }
 
   inquirer
     .prompt([
       {
         type: 'list',
-        name: 'v4setup',
-        message: 'Which codemod you would like to use?',
-        when: !cli.input[0],
-        pageSize: inquirerChoices.TRANSFORMS_CHOICES.length,
+        name: 'setup',
+        message: `Which codemod you would like to use?`,
+        pageSize: inquirerChoices.SETUP_CHOICES.length,
         choices: inquirerChoices.SETUP_CHOICES,
-      },
-      {
-        type: 'checkbox',
-        name: 'transformer',
-        message: 'Which component would you like to migrate to v4?',
-        when: (answers) =>
-          !cli.input[0] &&
-          answers.v4setup === 'migrate-specific-component-to-v4',
-        pageSize: inquirerChoices.TRANSFORMS_CHOICES.length,
-        choices: inquirerChoices.TRANSFORMS_CHOICES,
       },
       {
         type: 'list',
@@ -173,7 +145,7 @@ export function run() {
         message: 'Which dialect of JavaScript do you use?',
         default: 'babel',
         when: (answers) =>
-          !cli.flags.parser && answers.v4setup !== 'update-package-json',
+          !cli.flags.parser && answers.setup !== 'update-package-json',
         pageSize: inquirerChoices.PARSER_CHOICES.length,
         choices: inquirerChoices.PARSER_CHOICES,
       },
@@ -181,62 +153,31 @@ export function run() {
         type: 'input',
         name: 'files',
         message: 'On which files or directory should the codemods be applied?',
-        when: !cli.input[1],
+        when: !path,
         default: '.',
         filter: (files) => files.trim(),
       },
     ])
     .then(async (answers) => {
-      const { files, transformer, parser, v4setup } = answers;
+      const { files, parser, setup } = answers;
 
-      const filesBeforeExpansion = cli.input[1] || files;
+      const filesBeforeExpansion = path || files;
       const filesExpanded = expandFilePathsIfNeeded([filesBeforeExpansion]);
       const selectedParser = cli.flags.parser || parser;
 
-      if (v4setup === 'update-package-json') {
+      if (!filesExpanded.length) {
+        console.log(`No files found matching ${filesBeforeExpansion}`);
+        return null;
+      }
+
+      if (setup === 'v5/icons') {
         await updateDependencies(filesBeforeExpansion);
         return runTransform({
           files: filesExpanded,
           flags: cli.flags,
           parser: selectedParser,
-          transformer: 'v4-clean-css',
+          transformer: 'v5/icons',
         });
       }
-
-      if (!filesExpanded.length) {
-        console.log(
-          `No files found matching ${filesBeforeExpansion.join(' ')}`,
-        );
-        return null;
-      }
-
-      const selectedTransformer = cli.input[0]?.split(',') || transformer;
-      if (selectedTransformer) {
-        return selectedTransformer.forEach((t) => {
-          runTransform({
-            files: filesExpanded,
-            flags: cli.flags,
-            parser: selectedParser,
-            transformer: t,
-          });
-        });
-      }
-
-      if (v4setup === 'run-all-v4') {
-        await updateDependencies(filesBeforeExpansion);
-        runTransform({
-          files: filesExpanded,
-          flags: cli.flags,
-          parser: selectedParser,
-          transformer: 'v4-clean-css',
-        });
-      }
-
-      return runTransform({
-        files: filesExpanded,
-        flags: cli.flags,
-        parser: selectedParser,
-        transformer: 'v4-all',
-      });
     });
 }

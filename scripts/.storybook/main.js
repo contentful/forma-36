@@ -35,6 +35,17 @@ module.exports = {
       },
     };
 
+    const customConfig = { ...config };
+
+    if (!customConfig.resolve) {
+      customConfig.resolve = {};
+    }
+
+    // Resolve ESM relative paths .js -> .tsx
+    customConfig.resolve.extensionAlias = {
+      '.js': ['.tsx', '.ts', '.js'],
+    };
+
     return config;
   },
 };
