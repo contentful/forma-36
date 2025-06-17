@@ -1,6 +1,8 @@
 import React from 'react';
 import { Navbar } from '@contentful/f36-components';
-import { EntryIcon, ImageSquareIcon } from '@contentful/f36-icons';
+import { ImageSquareIcon } from '@contentful/f36-icons';
+
+import { EntryIcon } from '@contentful/f36-icons-alpha';
 
 export default function WithDifferentEnviromnmentsNavbarExample() {
   // master environment

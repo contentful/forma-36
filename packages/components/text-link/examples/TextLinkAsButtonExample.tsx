@@ -1,6 +1,7 @@
 import React from 'react';
 import { Stack, TextLink } from '@contentful/f36-components';
-import { PlusIcon } from '@contentful/f36-icons';
+
+import { PlusIcon } from '@contentful/f36-icons-alpha';
 
 export default function TextLinkAsButtonExample() {
   return (
