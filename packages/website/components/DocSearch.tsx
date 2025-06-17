@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 
-import { SearchIcon } from '@contentful/f36-icons';
 import { TextInput } from '@contentful/f36-components';
+
+import { MagnifyingGlassIcon } from '@contentful/f36-icons-alpha';
+
+import tokens from '@contentful/f36-tokens';
 
 export const DocSearch = () => {
   useEffect(() => {
@@ -37,7 +40,7 @@ export const DocSearch = () => {
   return (
     <TextInput
       id="search"
-      icon={<SearchIcon variant="muted" />}
+      icon={<MagnifyingGlassIcon color={tokens.gray600} />}
       name="search"
       type="text"
       placeholder="Search the docs"
