@@ -10,7 +10,7 @@
     "@contentful/f36-button": "^4.78.0",
     "@contentful/f36-core": "^4.78.0",
     "@contentful/f36-forms": "^4.78.0",
-    "@contentful/f36-icons-alpha": "^5.0.0",
+    "@contentful/f36-icons-alpha": "npm:@contentful/f36-icons@5.0.0-alpha.42",
     "@contentful/f36-popover": "^4.78.0",
     "@contentful/f36-skeleton": "^4.78.0",
     "@contentful/f36-tokens": "^4.0.1",
