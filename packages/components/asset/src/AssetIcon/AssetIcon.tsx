@@ -1,22 +1,23 @@
 import React from 'react';
-import {
-  ArchiveIcon,
-  AudioIcon,
-  CodeIllustrationIcon,
-  ImageIcon,
-  MarkupIcon,
-  PdfIcon,
-  PlaintextIcon,
-  RichtextIcon,
-  PresentationIcon,
-  SpreadsheetIcon,
-  VideoIcon,
-} from '@contentful/f36-icons';
 import type { GeneratedIconProps } from '@contentful/f36-icon';
 import type { AssetType } from '../types';
 
 import { cx } from 'emotion';
 import { getAssetIconStyles } from './AssetIcon.styles';
+
+import {
+  FileArchiveIcon,
+  FileAudioIcon,
+  BracketsCurlyIcon,
+  ImageSquareIcon,
+  FileCodeIcon,
+  FilePdfIcon,
+  FileTextIcon,
+  PresentationIcon,
+  RichTextIcon,
+  TableIcon,
+  FileVideoIcon,
+} from '@contentful/f36-icons-alpha';
 
 export interface AssetIconProps
   extends Omit<GeneratedIconProps, 'illustration' | 'ref'> {
@@ -41,28 +42,28 @@ export const AssetIcon = ({
 
   switch (type) {
     case 'audio':
-      return <AudioIcon {...props} />;
+      return <FileAudioIcon {...props} />;
     case 'code':
-      return <CodeIllustrationIcon {...props} />;
+      return <BracketsCurlyIcon {...props} />;
     case 'image':
-      return <ImageIcon {...props} />;
+      return <ImageSquareIcon {...props} />;
     case 'markup':
-      return <MarkupIcon {...props} />;
+      return <FileCodeIcon {...props} />;
     case 'pdf':
-      return <PdfIcon {...props} />;
+      return <FilePdfIcon {...props} />;
     case 'plaintext':
-      return <PlaintextIcon {...props} />;
+      return <FileTextIcon {...props} />;
     case 'presentation':
       return <PresentationIcon {...props} />;
     case 'richtext':
-      return <RichtextIcon {...props} />;
+      return <RichTextIcon {...props} />;
     case 'spreadsheet':
-      return <SpreadsheetIcon {...props} />;
+      return <TableIcon {...props} />;
     case 'video':
-      return <VideoIcon {...props} />;
+      return <FileVideoIcon {...props} />;
     case 'archive':
     default:
-      return <ArchiveIcon {...props} />;
+      return <FileArchiveIcon {...props} />;
   }
 };
 

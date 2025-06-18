@@ -7,16 +7,19 @@ import {
   type PolymorphicComponent,
 } from '@contentful/f36-core';
 import { Text, Caption, type TextProps } from '@contentful/f36-typography';
-import {
-  SortAscendingIcon,
-  SortDescendingIcon,
-  SortIcon,
-} from '@contentful/f36-icons';
 import { getTextFromChildren } from '@contentful/f36-utils';
 
 import { useTableCellContext } from './TableCellContext';
 import { getTableCellStyles } from './TableCell.styles';
 import { useTableContext } from '../tableContext';
+
+import {
+  CaretUpDownIcon,
+  SortAscendingIcon,
+  SortDescendingIcon,
+} from '@contentful/f36-icons-alpha';
+
+import tokens from '@contentful/f36-tokens';
 
 export enum TableCellSorting {
   Ascending = 'ascending',
@@ -104,11 +107,11 @@ function _TableCell(
         {sortDirection ? (
           <SortingIcon size="tiny" variant="secondary" />
         ) : (
-          <SortIcon
+          <CaretUpDownIcon
             aria-hidden={!showSorting}
             className={styles.sortIcon(showSorting)}
             size="tiny"
-            variant="secondary"
+            color={tokens.gray900}
           />
         )}
       </button>
