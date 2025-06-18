@@ -4,10 +4,11 @@ import type {
   ExpandProps,
   PickUnion,
 } from '@contentful/f36-core';
-import { ClockIcon } from '@contentful/f36-icons';
 
 import { Badge, type BadgeProps } from '../Badge/Badge';
 import type { BadgeSize, BadgeVariant } from '../types';
+
+import { ClockIcon } from '@contentful/f36-icons-alpha';
 
 const statusMap: { [key in EntityStatus]: BadgeVariant } = {
   published: 'positive',

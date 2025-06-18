@@ -1,6 +1,5 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { CloseIcon } from '@contentful/f36-icons';
 import {
   Flex,
   type PropsWithHTMLElement,
@@ -10,6 +9,8 @@ import { IconButton } from '@contentful/f36-button';
 import { Text, Subheading } from '@contentful/f36-typography';
 
 import { getModalHeaderStyles } from './ModalHeader.styles';
+
+import { XIcon } from '@contentful/f36-icons-alpha';
 
 interface ModalHeaderInternalProps extends CommonProps {
   title: string;
@@ -63,7 +64,7 @@ export const ModalHeader = ({
             variant="transparent"
             aria-label={aria.closeIconLabel}
             size="small"
-            icon={<CloseIcon size="small" />}
+            icon={<XIcon size="small" />}
             onClick={() => {
               onClose();
             }}

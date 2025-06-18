@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import * as icons from '@contentful/f36-icons';
-import { Icon } from '@contentful/f36-icon';
 import { Paragraph, Text } from '@contentful/f36-typography';
 import { List } from '@contentful/f36-list';
 import { Flex } from '@contentful/f36-core';
@@ -9,6 +8,8 @@ import tokens from '@contentful/f36-tokens';
 
 import { TextLink } from '../src/TextLink';
 import type { TextLinkVariant } from '../src/types';
+
+import { Icon } from '@contentful/f36-icon-alpha';
 
 export default {
   component: TextLink,

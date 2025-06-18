@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as f36icons from '@contentful/f36-icons-v4';
+import * as f36icons from '@contentful/f36-icons-alpha';
 import {
   Grid,
   Flex,

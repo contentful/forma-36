@@ -1,10 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { ArrowDownIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 import { axe } from 'jest-axe';
 import { TextLink } from './TextLink';
+
+import { CaretDownIcon } from '@contentful/f36-icons-alpha';
 
 describe('TextLink', function () {
   it('renders as a button', () => {
@@ -146,7 +147,7 @@ describe('TextLink', function () {
 
   it('renders with an icon', () => {
     const { container } = render(
-      <TextLink icon={<ArrowDownIcon data-test-id="icon" />}>
+      <TextLink icon={<CaretDownIcon data-test-id="icon" />}>
         Text Link
       </TextLink>,
     );
@@ -159,7 +160,7 @@ describe('TextLink', function () {
 
   it('renders with an icon aligned right to the text', () => {
     render(
-      <TextLink alignIcon="end" icon={<ArrowDownIcon data-test-id="icon" />}>
+      <TextLink alignIcon="end" icon={<CaretDownIcon data-test-id="icon" />}>
         Text Link
       </TextLink>,
     );

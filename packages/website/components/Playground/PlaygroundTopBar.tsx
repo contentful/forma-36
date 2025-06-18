@@ -3,10 +3,13 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import { css, cx } from 'emotion';
 import { UnstyledOpenInCodeSandboxButton } from '@codesandbox/sandpack-react';
 import tokens from '@contentful/f36-tokens';
-import { Flex, Text, Heading, Tooltip, Icon } from '@contentful/f36-components';
-import { LinkAlternateIcon } from '@contentful/f36-icons';
+import { Flex, Text, Heading, Tooltip } from '@contentful/f36-components';
 import { useUrlSync } from './useUrlSync';
 import { CodeSandboxLogo } from './codesandbox-logo';
+
+import { LinkSimpleIcon } from '@contentful/f36-icons-alpha';
+
+import { Icon } from '@contentful/f36-icon-alpha';
 
 const styles = {
   topbar: css({
@@ -56,14 +59,13 @@ export function PlaygroundTopBar() {
       <Heading as="h1" marginBottom="none">
         Playground
       </Heading>
-
       <Flex alignItems="center" className={css({ height: '100%' })}>
         <UrlCopyButton url={codeUrl} />
 
         <UnstyledOpenInCodeSandboxButton
           className={cx(styles.embeddedButton, styles.codeSandboxButton)}
         >
-          <Icon as={CodeSandboxLogo} variant="muted" size="medium" />
+          <Icon as={CodeSandboxLogo} color={tokens.gray600} />
           <Text fontColor="gray800">Open in CodeSandbox</Text>
         </UnstyledOpenInCodeSandboxButton>
       </Flex>
@@ -95,7 +97,7 @@ function UrlCopyButton({ url }) {
           gap="spacingXs"
           className={cx(styles.embeddedButton, styles.shareButton)}
         >
-          <LinkAlternateIcon variant="muted" />
+          <LinkSimpleIcon color={tokens.gray600} />
           <Text fontColor="gray800">Copy Playground URL</Text>
         </Flex>
       </Tooltip>

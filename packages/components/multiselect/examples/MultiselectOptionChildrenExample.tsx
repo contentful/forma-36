@@ -1,7 +1,8 @@
 import React from 'react';
 import { Stack } from '@contentful/f36-components';
 import { Multiselect } from '@contentful/f36-multiselect';
-import { HelpCircleIcon } from '@contentful/f36-icons';
+
+import { InfoIcon } from '@contentful/f36-icons-alpha';
 
 export default function MultiselectSearchExample() {
   const spaces = [
@@ -59,7 +60,7 @@ export default function MultiselectSearchExample() {
                   item={item}
                   inputValue={searchValue}
                 />{' '}
-                <HelpCircleIcon size="tiny" />
+                <InfoIcon size="tiny" />
               </Multiselect.Option>
             );
           })}

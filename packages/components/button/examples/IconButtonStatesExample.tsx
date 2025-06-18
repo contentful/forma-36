@@ -2,23 +2,19 @@ import React from 'react';
 import { IconButton } from '@contentful/f36-button';
 import { CalendarBlankIcon } from '@contentful/f36-icons-alpha';
 
-export default function IconButtonSizesExample() {
+export default function IconButtonStatesExample() {
   return (
     <>
       <IconButton
         aria-label="Calendar"
         icon={<CalendarBlankIcon />}
-        size="small"
+        isDisabled
       />
+      <IconButton aria-label="Calendar" icon={<CalendarBlankIcon />} isActive />
       <IconButton
         aria-label="Calendar"
         icon={<CalendarBlankIcon />}
-        size="medium"
-      />
-      <IconButton
-        aria-label="Calendar"
-        icon={<CalendarBlankIcon />}
-        size="large"
+        isLoading
       />
     </>
   );

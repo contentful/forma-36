@@ -9,7 +9,10 @@ import {
   type AvatarProps,
   type ColorVariant,
 } from '../src/Avatar';
-import { CheckCircleIcon } from '@contentful/f36-icons';
+
+import { CheckCircleIcon } from '@contentful/f36-icons-alpha';
+
+import tokens from '@contentful/f36-tokens';
 
 export default {
   component: Avatar,
@@ -22,7 +25,6 @@ export const Overview: Story<AvatarProps> = (args) => {
       <SectionHeading as="h3" marginBottom="spacingS">
         Icon
       </SectionHeading>
-
       <Flex
         alignItems="center"
         flexDirection="row"
@@ -32,64 +34,62 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar
           {...args}
           size="tiny"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPositive} />}
         />
         <Avatar
           {...args}
           size="small"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPositive} />}
         />
         <Avatar
           {...args}
           size="medium"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPositive} />}
         />
         <Avatar
           {...args}
           size="large"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPositive} />}
         />
         <Avatar
           {...args}
           size="75px"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPositive} />}
         />
         <Avatar
           {...args}
           size="75px"
           variant="app"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPositive} />}
         />
         <Avatar
           {...args}
           size="large"
           variant="app"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPositive} />}
         />
         <Avatar
           {...args}
           size="medium"
           variant="app"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPositive} />}
         />
         <Avatar
           {...args}
           size="small"
           variant="app"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPositive} />}
         />
         <Avatar
           {...args}
           size="tiny"
           variant="app"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPositive} />}
         />
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS">
         Loading
       </SectionHeading>
-
       <Flex
         alignItems="center"
         flexDirection="row"
@@ -107,11 +107,9 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar isLoading size="small" variant="app" />
         <Avatar isLoading size="tiny" variant="app" />
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS">
         With a broken source, the loading skeleton is also rendered
       </SectionHeading>
-
       <Flex
         alignItems="center"
         flexDirection="row"
@@ -129,7 +127,6 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar src="#" size="small" variant="app" />
         <Avatar src="#" size="tiny" variant="app" />
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS">
         Indicator properties
       </SectionHeading>
@@ -150,7 +147,6 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar {...args} size="large" variant="app" colorVariant="lavender" />
         <Avatar {...args} size="large" variant="app" colorVariant="emerald" />
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS">
         Tooltip properties
       </SectionHeading>

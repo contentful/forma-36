@@ -1,7 +1,7 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
-import { PreviewIcon } from '@contentful/f36-icons';
+import { EyeIcon } from '@contentful/f36-icons-alpha';
 import { axe } from 'jest-axe';
 import { Button } from './Button';
 
@@ -23,7 +23,7 @@ describe('Button', function () {
   });
 
   it('renders the component with icon', () => {
-    render(<Button startIcon={<PreviewIcon />}>Button</Button>);
+    render(<Button startIcon={<EyeIcon />}>Button</Button>);
 
     const button = screen.getByRole('button');
     expect(button.getElementsByTagName('svg')).toHaveLength(1);
@@ -34,7 +34,7 @@ describe('Button', function () {
     const mockOnClick = jest.fn();
 
     render(
-      <Button onClick={mockOnClick} startIcon={<PreviewIcon />} isDisabled>
+      <Button onClick={mockOnClick} startIcon={<EyeIcon />} isDisabled>
         Toggle
       </Button>,
     );
