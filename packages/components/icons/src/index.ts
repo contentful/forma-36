@@ -9,6 +9,9 @@ export type {
   IconVariant,
 } from '@contentful/f36-icon-alpha';
 
+export * from './custom/AWSBedrockIcon.js';
+export * from './custom/AiLoadingIcon.js';
+export * from './custom/ClaudeIcon.js';
 export * from './custom/DesktopWideIcon.js';
 export * from './custom/EmbeddedBlockIcon.js';
 export * from './custom/EmbeddedLineIcon.js';
@@ -16,6 +19,7 @@ export * from './custom/EntryIcon.js';
 export * from './custom/EnvironmentAliasIcon.js';
 export * from './custom/EnvironmentIcon.js';
 export * from './custom/FallbackIcon.js';
+export * from './custom/GptIcon.js';
 export * from './custom/InspectorModeIcon.js';
 export * from './custom/ReleaseIcon.js';
 export * from './custom/ReplaceIcon.js';
