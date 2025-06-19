@@ -10,8 +10,7 @@ export type {
 } from '@contentful/f36-icon-alpha';
 
 export * from './custom/AWSBedrockIcon.js';
-export * from './custom/AiLoadingIcon.js';
-export * from './custom/ClaudeIcon.js';
+export * from './custom/AnthropicIcon.js';
 export * from './custom/DesktopWideIcon.js';
 export * from './custom/EmbeddedBlockIcon.js';
 export * from './custom/EmbeddedLineIcon.js';
@@ -109,6 +108,7 @@ export * from './vendor/phosphor/MegaphoneSimpleIcon.js';
 export * from './vendor/phosphor/MicrosoftTeamsLogoIcon.js';
 export * from './vendor/phosphor/MinusCircleIcon.js';
 export * from './vendor/phosphor/MinusIcon.js';
+export * from './vendor/phosphor/OpenAiLogoIcon.js';
 export * from './vendor/phosphor/PaintBrushIcon.js';
 export * from './vendor/phosphor/PaperPlaneTiltIcon.js';
 export * from './vendor/phosphor/PenNibIcon.js';
