@@ -14,5 +14,5 @@ export const SuperscriptTrimmed = /*#__PURE__*/ generateIcon({
     </Fragment>
   ),
   trimmed: true,
-  viewBox: '0 0 13 18',
+  viewBox: '0 0 24 24',
 });
