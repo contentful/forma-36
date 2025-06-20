@@ -1,6 +1,5 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-import { ChevronDownIcon } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
 import { Box, Flex } from '@contentful/f36-core';
@@ -8,6 +7,8 @@ import { ButtonGroup, Button, IconButton, type ButtonGroupProps } from '../src';
 import tokens from '@contentful/f36-tokens';
 import { ButtonVariant } from '../src/types';
 import { ButtonGroupVariants } from '../src/ButtonGroup/types';
+
+import { CaretDownIcon } from '@contentful/f36-icons-alpha';
 
 export default {
   component: ButtonGroup,
@@ -40,7 +41,7 @@ export const basic: Story<ButtonGroupProps> = (args) => {
       <Button variant="secondary">Button</Button>
       <IconButton
         variant="secondary"
-        icon={<ChevronDownIcon variant="secondary" />}
+        icon={<CaretDownIcon color={tokens.gray900} />}
         aria-label="Open dropdown"
       />
     </ButtonGroup>
@@ -55,7 +56,7 @@ export const spaced: Story<ButtonGroupProps> = (args) => {
       <Button variant="secondary">Button</Button>
       <IconButton
         variant="secondary"
-        icon={<ChevronDownIcon variant="secondary" />}
+        icon={<CaretDownIcon color={tokens.gray900} />}
         aria-label="Open dropdown"
       />
     </ButtonGroup>
@@ -100,7 +101,6 @@ export const overview: Story<ButtonGroupProps> = () => {
                   <SectionHeading as="h3" marginBottom="spacingS">
                     Button Group {groupVariant} {buttonVariant}
                   </SectionHeading>
-
                   <Flex flexDirection="column" marginBottom="spacingM">
                     <Box marginBottom="spacingS">
                       <ButtonGroup
@@ -125,7 +125,7 @@ export const overview: Story<ButtonGroupProps> = () => {
                         <IconButton
                           onClick={onClick}
                           variant={buttonVariant}
-                          icon={<ChevronDownIcon variant="secondary" />}
+                          icon={<CaretDownIcon color={tokens.gray900} />}
                           aria-label="Open dropdown"
                         />
                       </ButtonGroup>

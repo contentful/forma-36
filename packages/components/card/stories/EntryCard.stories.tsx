@@ -3,11 +3,14 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
-import { ClockIcon, CloseIcon } from '@contentful/f36-icons';
 import { Badge } from '@contentful/f36-badge';
 import { IconButton } from '@contentful/f36-button';
 
 import { EntryCard, type EntryCardProps } from '../src';
+
+import { ClockIcon, XIcon } from '@contentful/f36-icons-alpha';
+
+import tokens from '@contentful/f36-tokens';
 
 export default {
   argTypes: {
@@ -60,7 +63,7 @@ export const WithCustomActionButton: Story<EntryCardProps> = (args) => {
 const CustomActionButton = () => (
   <IconButton
     aria-label="Actions"
-    icon={<CloseIcon variant="muted" />}
+    icon={<XIcon color={tokens.gray600} />}
     size="small"
     variant="transparent"
     testId="cf-ui-card-actions"

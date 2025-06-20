@@ -1,12 +1,5 @@
 import React from 'react';
 import { cx } from 'emotion';
-import {
-  CheckCircleIcon,
-  ErrorCircleIcon,
-  WarningIcon,
-  CloseIcon,
-  InfoCircleIcon,
-} from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
 import { TextLink } from '@contentful/f36-text-link';
 import {
@@ -19,6 +12,16 @@ import { Heading, Paragraph } from '@contentful/f36-typography';
 
 import type { NotificationVariant, NotificationCta } from '../types';
 import { getStyles } from './NotificationItem.styles';
+
+import {
+  CheckCircleIcon,
+  XIcon,
+  WarningOctagonIcon,
+  InfoIcon,
+  WarningIcon,
+} from '@contentful/f36-icons-alpha';
+
+import tokens from '@contentful/f36-tokens';
 
 export interface NotificationItemProps extends CommonProps {
   /**
@@ -72,10 +75,10 @@ const _NotificationItem = (props: ExpandProps<NotificationItemProps>, ref) => {
 
   const iconSize = title ? 'medium' : 'small';
   const iconVariants = {
-    positive: <CheckCircleIcon variant={variant} size={iconSize} />,
-    warning: <WarningIcon variant={variant} size={iconSize} />,
-    negative: <ErrorCircleIcon variant={variant} size={iconSize} />,
-    primary: <InfoCircleIcon variant={variant} size={iconSize} />,
+    positive: <CheckCircleIcon color={variant} size={iconSize} />,
+    warning: <WarningIcon color={variant} size={iconSize} />,
+    negative: <WarningOctagonIcon color={variant} size={iconSize} />,
+    primary: <InfoIcon color={variant} size={iconSize} />,
   };
 
   const intents = {
@@ -125,7 +128,7 @@ const _NotificationItem = (props: ExpandProps<NotificationItemProps>, ref) => {
           <Button
             className={cx(styles.closeButton)}
             variant="transparent"
-            startIcon={<CloseIcon />}
+            startIcon={<XIcon />}
             onClick={() => {
               onClose && onClose();
             }}

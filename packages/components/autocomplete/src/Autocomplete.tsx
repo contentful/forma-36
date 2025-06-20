@@ -9,13 +9,16 @@ import {
 } from '@contentful/f36-core';
 import { IconButton } from '@contentful/f36-button';
 import { TextInput, type TextInputProps } from '@contentful/f36-forms';
-import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { Skeleton } from '@contentful/f36-skeleton';
 import { Popover } from '@contentful/f36-popover';
 import { Subheading, SectionHeading } from '@contentful/f36-typography';
 
 import { AutocompleteItems } from './AutocompleteItems';
 import { getAutocompleteStyles } from './Autocomplete.styles';
+
+import { CaretDownIcon, XIcon } from '@contentful/f36-icons-alpha';
+
+import tokens from '@contentful/f36-tokens';
 
 export interface GenericGroupType<ItemType> {
   groupTitle: string;
@@ -214,7 +217,7 @@ function _Autocomplete<ItemType>(
     onFocus,
     onBlur,
     renderItem,
-    icon = <ChevronDownIcon variant="muted" />,
+    icon = <CaretDownIcon color={tokens.gray600} />,
     itemToString = (item: ItemType) => item as unknown as string,
     isInvalid,
     isDisabled,
@@ -428,7 +431,7 @@ function _Autocomplete<ItemType>(
               }
               className={styles.toggleButton}
               variant="transparent"
-              icon={showClearButton ? <CloseIcon variant="muted" /> : icon}
+              icon={showClearButton ? <XIcon color={tokens.gray600} /> : icon}
               onClick={() => {
                 if (showClearButton) {
                   handleInputValueChange('');

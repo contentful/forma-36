@@ -4,7 +4,7 @@ import { getNavbarStyles } from './Navbar.styles';
 import { ContentfulLogoIcon } from './icons';
 import { cx } from 'emotion';
 import { Button } from '@contentful/f36-button';
-import { ListIcon } from '@contentful/f36-icons';
+import { ListIcon } from '@contentful/f36-icons-alpha';
 import { NavbarMenu } from './NavbarMenu/NavbarMenu';
 
 type NavbarOwnProps = CommonProps & {

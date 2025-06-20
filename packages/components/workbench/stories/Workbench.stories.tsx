@@ -10,10 +10,11 @@ import {
   SectionHeading,
 } from '@contentful/f36-typography';
 import { Button } from '@contentful/f36-button';
-import { HelpCircleIcon, StarIcon } from '@contentful/f36-icons';
 
 import { Workbench } from '../src/CompoundWorkbench';
 import type { WorkbenchContentProps } from '../src/WorkbenchContent';
+
+import { InfoIcon, StarIcon } from '@contentful/f36-icons-alpha';
 
 export default {
   title: 'Components/Workbench',
@@ -123,7 +124,6 @@ export const WithLeftSidebar: Story<Args> = (args) => {
           element in here
         </Paragraph>
       </Workbench.Sidebar>
-
       <Workbench.Content type={args['Content Type']}>
         <Subheading>Page Content</Subheading>
         <Paragraph>
@@ -161,7 +161,6 @@ export const WithRightSidebar: Story<Args> = (args) => {
           element in here
         </Paragraph>
       </Workbench.Content>
-
       <Workbench.Sidebar position="right">
         <Subheading>Left Sidebar Content</Subheading>
         <Paragraph>
@@ -193,7 +192,6 @@ export const WithBothSidebars: Story<Args> = (args) => {
           element in here
         </Paragraph>
       </Workbench.Sidebar>
-
       <Workbench.Content type={args['Content Type']}>
         <Subheading>Page Content</Subheading>
         <Paragraph>
@@ -204,7 +202,6 @@ export const WithBothSidebars: Story<Args> = (args) => {
           element in here
         </Paragraph>
       </Workbench.Content>
-
       <Workbench.Sidebar position="right">
         <Subheading>Right Sidebar Content</Subheading>
         <Paragraph>
@@ -301,8 +298,7 @@ export const HeaderOverview = () => {
           <Workbench.Header
             title={
               <Flex alignItems="center" gap="spacingXs">
-                <Heading marginBottom="none">Page title</Heading>{' '}
-                <HelpCircleIcon />
+                <Heading marginBottom="none">Page title</Heading> <InfoIcon />
               </Flex>
             }
           />
@@ -315,7 +311,7 @@ export const HeaderOverview = () => {
 
           <Workbench.Header
             title="Page title"
-            description={<HelpCircleIcon variant="muted" />}
+            description={<InfoIcon color={tokens.gray600} />}
           />
         </span>
 
@@ -325,7 +321,7 @@ export const HeaderOverview = () => {
           </SectionHeading>
 
           <Workbench.Header
-            icon={<StarIcon size="large" variant="positive" />}
+            icon={<StarIcon color={tokens.colorPositive} />}
             title="Page title"
           />
         </span>

@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
 import { Heading, SectionHeading, Text } from '@contentful/f36-typography';
-import { ClockIcon } from '@contentful/f36-icons';
 import { MenuItem } from '@contentful/f36-menu';
 import { Button } from '@contentful/f36-button';
 import { FormControl, TextInput, Textarea, Form } from '@contentful/f36-forms';
 
 import { Card, type CardProps } from '../src';
+
+import { ClockIcon } from '@contentful/f36-icons-alpha';
 
 export default {
   argTypes: {
@@ -161,7 +162,6 @@ export const Overview: Story<CardProps> = () => {
       <SectionHeading as="h3" marginBottom="spacingS">
         Default
       </SectionHeading>
-
       <Flex flexWrap="wrap">
         <Flex
           flexDirection="column"
@@ -228,11 +228,9 @@ export const Overview: Story<CardProps> = () => {
           </Card>
         </Flex>
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
         Large padding
       </SectionHeading>
-
       <Flex flexWrap="wrap">
         <Flex
           flexDirection="column"
@@ -303,7 +301,6 @@ export const Overview: Story<CardProps> = () => {
       <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
         None Padding
       </SectionHeading>
-
       <Flex flexWrap="wrap">
         <Flex
           flexDirection="column"

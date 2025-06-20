@@ -9,25 +9,29 @@ import {
 } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
 import { Heading, Paragraph, Text } from '@contentful/f36-typography';
-import {
-  CheckCircleIcon,
-  CloseIcon,
-  ErrorCircleIcon,
-  InfoCircleIcon,
-  WarningIcon,
-  DiamondIcon,
-} from '@contentful/f36-icons';
-import { Icon } from '@contentful/f36-icon';
 
 import { getNoteStyles } from './Note.styles';
 
+import {
+  CheckCircleIcon,
+  XIcon,
+  SketchLogoIcon,
+  WarningOctagonIcon,
+  InfoIcon,
+  WarningIcon,
+} from '@contentful/f36-icons-alpha';
+
+import { Icon } from '@contentful/f36-icon-alpha';
+
+import tokens from '@contentful/f36-tokens';
+
 const icons = {
-  primary: InfoCircleIcon,
+  primary: InfoIcon,
   positive: CheckCircleIcon,
-  negative: ErrorCircleIcon,
+  negative: WarningOctagonIcon,
   warning: WarningIcon,
-  neutral: InfoCircleIcon,
-  premium: DiamondIcon,
+  neutral: InfoIcon,
+  premium: SketchLogoIcon,
 };
 
 export type NoteVariant =
@@ -114,7 +118,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
         {icon ? (
           iconContent(icon)
         ) : (
-          <Icon as={icons[variant]} variant={iconVariant} size={iconSize} />
+          <Icon as={icons[variant]} color={iconVariant} size={iconSize} />
         )}
         <Flex flexDirection="column">
           {title && (
@@ -143,7 +147,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
         {withCloseButton && (
           <Button
             variant="transparent"
-            startIcon={<CloseIcon className={styles.closeIcon} />}
+            startIcon={<XIcon className={styles.closeIcon} />}
             onClick={onClose}
             testId={`${testId}-close`}
             aria-label={closeButtonAriaLabel}

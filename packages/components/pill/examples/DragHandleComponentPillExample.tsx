@@ -1,6 +1,9 @@
 import React from 'react';
 import { Pill } from '@contentful/f36-components';
-import { DragIcon } from '@contentful/f36-icons';
+
+import { DotsSixVerticalIcon } from '@contentful/f36-icons-alpha';
+
+import tokens from '@contentful/f36-tokens';
 
 export default function DragHandleComponentPillExample() {
   return (
@@ -8,7 +11,10 @@ export default function DragHandleComponentPillExample() {
       isDraggable
       label="example.user@contentful.com"
       dragHandleComponent={
-        <DragIcon aria-label="Drag handler" variant="primary" />
+        <DotsSixVerticalIcon
+          aria-label="Drag handler"
+          color={tokens.colorPrimary}
+        />
       }
     />
   );

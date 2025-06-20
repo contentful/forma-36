@@ -3,11 +3,12 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex, Box } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
-import * as icons from '@contentful/f36-icons';
-import { Icon } from '@contentful/f36-icon';
+import * as icons from '@contentful/f36-icons-alpha';
 import { Badge } from '@contentful/f36-badge';
 
 import { AssetCard, type AssetCardProps } from '../src';
+
+import { Icon } from '@contentful/f36-icon-alpha';
 
 export default {
   argTypes: {
@@ -76,7 +77,6 @@ export const Overview: Story<Args> = () => {
       <SectionHeading as="h3" marginBottom="spacingS">
         Default
       </SectionHeading>
-
       <Flex flexWrap="wrap">
         <Flex flexDirection="column" marginRight="spacingM">
           <SectionHeading as="h3" marginBottom="spacingS">
@@ -118,11 +118,9 @@ export const Overview: Story<Args> = () => {
           />
         </Flex>
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
         Small
       </SectionHeading>
-
       <Flex flexWrap="wrap">
         <Flex flexDirection="column" marginRight="spacingM">
           <SectionHeading as="h3" marginBottom="spacingS">
@@ -177,7 +175,6 @@ export const DifferentImageSizes: Story<Args> = () => {
       <SectionHeading as="h3" marginBottom="spacingS">
         Default
       </SectionHeading>
-
       <Flex flexWrap="wrap">
         <Flex flexDirection="column" marginRight="spacingM">
           <SectionHeading as="h3" marginBottom="spacingS">
@@ -218,11 +215,9 @@ export const DifferentImageSizes: Story<Args> = () => {
           />
         </Flex>
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
         Small
       </SectionHeading>
-
       <Flex flexWrap="wrap">
         <Flex flexDirection="column" marginRight="spacingM">
           <SectionHeading as="h3" marginBottom="spacingS">
@@ -265,11 +260,9 @@ export const DifferentImageSizes: Story<Args> = () => {
           />
         </Flex>
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
         Wrapped in container
       </SectionHeading>
-
       <Box style={{ width: '500px' }} marginBottom="spacingS">
         <AssetCard
           icon={<Icon as={icons.ClockIcon} />}
@@ -278,7 +271,6 @@ export const DifferentImageSizes: Story<Args> = () => {
           type="image"
         />
       </Box>
-
       <Box style={{ width: '500px' }}>
         <AssetCard
           icon={<Icon as={icons.ClockIcon} />}

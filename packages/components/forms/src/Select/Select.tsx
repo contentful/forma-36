@@ -5,7 +5,6 @@ import React, {
   ChangeEventHandler,
 } from 'react';
 import { cx } from 'emotion';
-import { ChevronDownIcon } from '@contentful/f36-icons';
 
 import type {
   CommonProps,
@@ -15,6 +14,10 @@ import type {
 import { useFormControl } from '../FormControl/FormControlContext';
 import { getSelectStyles } from './Select.styles';
 import { useDensity } from '@contentful/f36-utils';
+
+import { CaretDownIcon } from '@contentful/f36-icons-alpha';
+
+import tokens from '@contentful/f36-tokens';
 
 export type SelectSize = 'small' | 'medium';
 
@@ -107,7 +110,7 @@ const _Select = (
       >
         {children}
       </select>
-      <ChevronDownIcon className={styles.icon} variant="muted" />
+      <CaretDownIcon className={styles.icon} color={tokens.gray600} />
     </div>
   );
 };

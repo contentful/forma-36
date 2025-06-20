@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { ToggleButton, ButtonGroup } from '@contentful/f36-components';
+
 import {
-  FormatItalicIcon,
-  FormatBoldIcon,
-  FormatUnderlinedIcon,
-} from '@contentful/f36-icons';
+  TextBIcon,
+  TextItalicIcon,
+  TextUnderlineIcon,
+} from '@contentful/f36-icons-alpha';
 
 export default function ToggleButtonGroupedExample() {
   const [isItalic, setIsItalic] = useState(false);
@@ -14,7 +15,7 @@ export default function ToggleButtonGroupedExample() {
     <ButtonGroup>
       <ToggleButton
         isActive={isItalic}
-        icon={<FormatItalicIcon />}
+        icon={<TextItalicIcon />}
         aria-label="Italic"
         size="small"
         onToggle={() => {
@@ -23,7 +24,7 @@ export default function ToggleButtonGroupedExample() {
       />
       <ToggleButton
         isActive={isBold}
-        icon={<FormatBoldIcon />}
+        icon={<TextBIcon />}
         aria-label="Bold"
         size="small"
         onToggle={() => {
@@ -32,7 +33,7 @@ export default function ToggleButtonGroupedExample() {
       />
       <ToggleButton
         isActive={isUnderline}
-        icon={<FormatUnderlinedIcon />}
+        icon={<TextUnderlineIcon />}
         aria-label="Underline"
         size="small"
         onToggle={() => {

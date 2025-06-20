@@ -5,7 +5,7 @@ import {
   EnvironmentIcon,
   FlaskIcon,
   RocketLaunchIcon,
-} from '@contentful/f36-icons';
+} from '@contentful/f36-icons-alpha';
 import tokens from '@contentful/f36-tokens';
 
 export type NavbarEnvVariantProps = Pick<

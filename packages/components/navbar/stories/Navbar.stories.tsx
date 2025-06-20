@@ -11,7 +11,7 @@ import {
   MagnifyingGlassIcon,
   QuestionIcon,
   GearSixIcon,
-} from '@contentful/f36-icons';
+} from '@contentful/f36-icons-alpha';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import type { NavbarAccountProps } from '../src/NavbarAccount/NavbarAccount';

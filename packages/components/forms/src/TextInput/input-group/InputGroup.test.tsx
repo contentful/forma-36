@@ -5,7 +5,8 @@ import { axe } from 'jest-axe';
 import { InputGroup } from './InputGroup';
 import { TextInput } from '@contentful/f36-forms';
 import { IconButton } from '@contentful/f36-button';
-import { LockIcon } from '@contentful/f36-icons';
+
+import { LockSimpleIcon } from '@contentful/f36-icons-alpha';
 
 describe('InputGroup', function () {
   it('renders the component', () => {
@@ -16,7 +17,11 @@ describe('InputGroup', function () {
           id="TextInput1"
           defaultValue="Some value"
         />
-        <IconButton variant="secondary" icon={<LockIcon />} aria-label="Lock" />
+        <IconButton
+          variant="secondary"
+          icon={<LockSimpleIcon />}
+          aria-label="Lock"
+        />
       </InputGroup>,
     );
 
@@ -32,7 +37,11 @@ describe('InputGroup', function () {
           id="TextInput1"
           defaultValue="Some value"
         />
-        <IconButton variant="secondary" icon={<LockIcon />} aria-label="Lock" />
+        <IconButton
+          variant="secondary"
+          icon={<LockSimpleIcon />}
+          aria-label="Lock"
+        />
       </InputGroup>,
     );
 
@@ -47,7 +56,11 @@ describe('InputGroup', function () {
           id="TextInput1"
           defaultValue="Some value"
         />
-        <IconButton variant="secondary" icon={<LockIcon />} aria-label="Lock" />
+        <IconButton
+          variant="secondary"
+          icon={<LockSimpleIcon />}
+          aria-label="Lock"
+        />
       </InputGroup>,
     );
     const results = await axe(container);

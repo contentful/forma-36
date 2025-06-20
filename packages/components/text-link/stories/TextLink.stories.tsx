@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-import * as icons from '@contentful/f36-icons';
+import * as icons from '@contentful/f36-icons-alpha';
 import { Paragraph, Text } from '@contentful/f36-typography';
 import { List } from '@contentful/f36-list';
 import { Flex } from '@contentful/f36-core';
@@ -52,7 +52,7 @@ export const UsedWithText = () => {
       and largest city of{' '}
       <TextLink
         href="https://www.wikiwand.com/en/Germany"
-        icon={<Icon as={icons.ExternalLinkIcon} />}
+        icon={<Icon as={icons.ArrowSquareOutIcon} />}
         alignIcon="end"
         target="_blank"
       >
@@ -60,7 +60,7 @@ export const UsedWithText = () => {
       </TextLink>{' '}
       by both area and population. Its 3,769,495 inhabitants as of 31 December
       2019 make it the most populous city of the European Union, according to
-      population within city limits.[8] The city is also one of Germany’s 16
+      population within city limits.[8] The city is also one of Germany's 16
       federal states. It is surrounded by the state of{' '}
       <TextLink href="https://www.wikiwand.com/en/Brandenburg" target="_blank">
         Brandenburg
@@ -68,15 +68,15 @@ export const UsedWithText = () => {
       , and contiguous with{' '}
       <TextLink
         href="https://www.wikiwand.com/en/Potsdam"
-        icon={<Icon as={icons.ExternalLinkIcon} />}
+        icon={<Icon as={icons.ArrowSquareOutIcon} />}
         alignIcon="start"
         target="_blank"
       >
         Potsdam
       </TextLink>
-      , Brandenburg’s capital. The two cities are at the center of the
+      , Brandenburg's capital. The two cities are at the center of the
       Berlin-Brandenburg capital region, which is, with about six million
-      inhabitants and an area of more than 30,000 km2,[9] Germany’s
+      inhabitants and an area of more than 30,000 km2,[9] Germany's
       third-largest metropolitan region after the Rhine-Ruhr and Rhine-Main
       regions.
     </Paragraph>
@@ -106,7 +106,7 @@ export const UsedWithList = () => {
             href="https://contentful.com"
             target="_blank"
             rel="noopener noreferrer"
-            icon={<Icon as={icons.ExternalLinkIcon} />}
+            icon={<Icon as={icons.ArrowSquareOutIcon} />}
             alignIcon="start"
           >
             Contentful
@@ -121,7 +121,7 @@ export const UsedWithList = () => {
             href="https://contentful.com"
             target="_blank"
             rel="noopener noreferrer"
-            icon={<Icon as={icons.ExternalLinkIcon} />}
+            icon={<Icon as={icons.ArrowSquareOutIcon} />}
             alignIcon="end"
           >
             Contentful
@@ -155,7 +155,7 @@ export const UsedWithinFlexbox = () => {
           href="https://contentful.com"
           target="_blank"
           rel="noopener noreferrer"
-          icon={<Icon as={icons.ExternalLinkIcon} />}
+          icon={<Icon as={icons.ArrowSquareOutIcon} />}
           alignIcon="end"
         >
           Contentful Website
@@ -167,7 +167,7 @@ export const UsedWithinFlexbox = () => {
           href="https://contentful.com"
           target="_blank"
           rel="noopener noreferrer"
-          icon={<Icon as={icons.ExternalLinkIcon} />}
+          icon={<Icon as={icons.ArrowSquareOutIcon} />}
           alignIcon="start"
         >
           Contentful Website
@@ -179,7 +179,7 @@ export const UsedWithinFlexbox = () => {
           href="https://contentful.com"
           target="_blank"
           rel="noopener noreferrer"
-          icon={<Icon as={icons.ExternalLinkIcon} />}
+          icon={<Icon as={icons.ArrowSquareOutIcon} />}
           alignIcon="start"
         >
           Contentful Website
@@ -191,7 +191,7 @@ export const UsedWithinFlexbox = () => {
           href="https://contentful.com"
           target="_blank"
           rel="noopener noreferrer"
-          icon={<Icon as={icons.ExternalLinkIcon} />}
+          icon={<Icon as={icons.ArrowSquareOutIcon} />}
           alignIcon="end"
         >
           Contentful Website
@@ -234,7 +234,7 @@ export const overview = () => (
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink
-            icon={<Icon as={icons.CalendarIcon} />}
+            icon={<Icon as={icons.CalendarBlankIcon} />}
             href="https://www.wikiwand.com/en/Potsdam"
             target="_blank"
             variant={variant as TextLinkVariant}
@@ -244,7 +244,7 @@ export const overview = () => (
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink
-            icon={<Icon as={icons.ExternalLinkIcon} />}
+            icon={<Icon as={icons.ArrowSquareOutIcon} />}
             alignIcon="end"
             href="https://www.wikiwand.com/en/Potsdam"
             target="_blank"
@@ -255,7 +255,7 @@ export const overview = () => (
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink
-            icon={<Icon as={icons.DownloadIcon} />}
+            icon={<Icon as={icons.DownloadSimpleIcon} />}
             href="https://www.wikiwand.com/en/Potsdam"
             target="_blank"
             variant={variant as TextLinkVariant}

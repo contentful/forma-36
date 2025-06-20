@@ -7,10 +7,13 @@ import { cx } from 'emotion';
 import { Box, type CommonProps } from '@contentful/f36-core';
 import { Heading, Paragraph } from '@contentful/f36-typography';
 import type { IconComponent } from '@contentful/f36-icon';
-import { ChevronLeftIcon } from '@contentful/f36-icons';
 import { IconButton } from '@contentful/f36-button';
 
 import { getWorkbenchHeaderStyles } from './WorkbenchHeader.styles';
+
+import { CaretLeftIcon } from '@contentful/f36-icons-alpha';
+
+import tokens from '@contentful/f36-tokens';
 
 export interface WorkbenchHeaderProps extends CommonProps {
   /** This is the title that will be shown inside the Header component */
@@ -68,16 +71,14 @@ export const WorkbenchHeader = ({
           variant="transparent"
           className={styles.backButton}
           onClick={() => onBack()}
-          icon={<ChevronLeftIcon size="large" variant="muted" />}
+          icon={<CaretLeftIcon color={tokens.gray600} />}
         />
       )}
-
       {Icon && (
         <Box marginRight="spacingM" display="inline-flex">
           {iconComponent}
         </Box>
       )}
-
       {typeof title === 'string' ? (
         <Heading
           className={!description && styles.flexGrow}
@@ -89,9 +90,7 @@ export const WorkbenchHeader = ({
       ) : (
         title
       )}
-
       {description && renderDescription(description)}
-
       {actions}
     </header>
   );

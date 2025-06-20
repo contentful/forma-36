@@ -4,11 +4,12 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
 
 import { Flex, Stack } from '@contentful/f36-core';
-import { Icon } from '@contentful/f36-icon';
-import * as icons from '@contentful/f36-icons';
+import * as icons from '@contentful/f36-icons-alpha';
 
 import { ButtonGroup } from '../src';
 import { ToggleButton, type ToggleButtonProps } from '../src/ToggleButton';
+
+import { Icon } from '@contentful/f36-icon-alpha';
 
 export default {
   title: 'Components/Button components/ToggleButton',
@@ -61,7 +62,7 @@ export const Grouped = () => {
     <ButtonGroup>
       <ToggleButton
         isActive={isItalic}
-        icon={<Icon as={icons.FormatItalicIcon} />}
+        icon={<Icon as={icons.TextItalicIcon} />}
         aria-label="Italic"
         size="small"
         onToggle={() => {
@@ -70,7 +71,7 @@ export const Grouped = () => {
       />
       <ToggleButton
         isActive={isBold}
-        icon={<Icon as={icons.FormatBoldIcon} />}
+        icon={<Icon as={icons.TextBIcon} />}
         aria-label="Bold"
         size="small"
         onToggle={() => {
@@ -79,7 +80,7 @@ export const Grouped = () => {
       />
       <ToggleButton
         isActive={isUnderline}
-        icon={<Icon as={icons.FormatUnderlinedIcon} />}
+        icon={<Icon as={icons.TextUnderlineIcon} />}
         aria-label="Underline"
         size="small"
         onToggle={() => {
@@ -97,21 +98,21 @@ export const GroupedWithOnlyOneActive = () => {
     <ButtonGroup>
       <ToggleButton
         isActive={isActive === 'italic'}
-        icon={<Icon as={icons.FormatItalicIcon} />}
+        icon={<Icon as={icons.TextItalicIcon} />}
         aria-label="Italic"
         size="small"
         onToggle={() => setIsActive('italic')}
       />
       <ToggleButton
         isActive={isActive === 'bold'}
-        icon={<Icon as={icons.FormatBoldIcon} />}
+        icon={<Icon as={icons.TextBIcon} />}
         aria-label="Bold"
         size="small"
         onToggle={() => setIsActive('bold')}
       />
       <ToggleButton
         isActive={isActive === 'underline'}
-        icon={<Icon as={icons.FormatUnderlinedIcon} />}
+        icon={<Icon as={icons.TextUnderlineIcon} />}
         aria-label="Underline"
         size="small"
         onToggle={() => setIsActive('underline')}

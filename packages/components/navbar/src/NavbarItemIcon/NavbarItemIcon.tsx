@@ -1,5 +1,5 @@
 import React from 'react';
-import type { IconProps } from '@contentful/f36-icons';
+import type { IconProps } from '@contentful/f36-icons-alpha';
 import { getNavbarItemIconStyles } from './NavbarItemIcon.styles';
 import { cx } from 'emotion';
 
