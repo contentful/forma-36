@@ -80,6 +80,7 @@ Since we want to show the documentation of the components that are still on prer
 
 For that we need to take some precautions:
 
+- The package.json of the pre-released package must be have `private: true`, to avoid changesets of trying to publish the package.
 - The package that is in prerelease (alpha, beta) needs to be added to the ignore field on the [.changeset/config.json](https://github.com/contentful/forma-36/blob/main/.changeset/config.json), so if a changeset is created for that package it will be ignored and not change the version or publish that specific package.
 - And we don't have prerelease packages being part of the umbrela package (`f36-components`), which means that when it becomes stable we add it there and replace where it was being used before, e.g. on the website and/or playground.
 
