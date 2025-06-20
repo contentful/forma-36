@@ -45,7 +45,7 @@ export const AWSBedrockIcon = generateComponentWithVariants({
             <path
               opacity="0.2"
               d="M8.07654 0.816406L10.6521 2.25156V6.23044V14.054V17.7029L7.92301 19.1662L3.06181 16.2883V13.8861L0.954834 12.3754V7.69886L3.06181 6.50093V3.65082L8.07654 0.816406Z"
-              fill="#0059C8"
+              fill="currentColor"
             />
             <path
               fillRule="evenodd"
