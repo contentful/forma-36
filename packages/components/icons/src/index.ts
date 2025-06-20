@@ -18,7 +18,6 @@ export * from './custom/EntryIcon.js';
 export * from './custom/EnvironmentAliasIcon.js';
 export * from './custom/EnvironmentIcon.js';
 export * from './custom/FallbackIcon.js';
-export * from './custom/GptIcon.js';
 export * from './custom/InspectorModeIcon.js';
 export * from './custom/ReleaseIcon.js';
 export * from './custom/ReplaceIcon.js';
