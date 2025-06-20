@@ -1,6 +1,7 @@
 {
   "name": "@contentful/f36-i18n-utils",
-  "version": "0.1.0-alpha.0",
+  "description": "Forma 36 i18n utilities",
+  "version": "1.0.0-alpha.1",
   "license": "MIT",
   "files": [
     "package.json",
@@ -9,7 +10,6 @@
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
-  "source": "src/index.ts",
   "sideEffects": false,
   "browserslist": "extends @contentful/browserslist-config",
   "repository": {
