@@ -18,9 +18,11 @@ import { Layout } from '@contentful/f36-layout';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
 import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
-import * as f36icons from '@contentful/f36-icons';
-import * as f36iconsAlpha from '@contentful/f36-icons-alpha';
-import { ExternalLinkIcon } from '@contentful/f36-icons';
+import {
+  EyeIcon,
+  EyeClosedIcon,
+  ArrowSquareOutIcon,
+} from '@contentful/f36-icons-alpha';
 import { theme } from './theme';
 import { formatSourceCode } from './utils';
 import * as coder from '../../utils/coder';
@@ -38,15 +40,12 @@ import { format, parse, isValid } from 'date-fns';
 
 const liveProviderScope = {
   ...f36Components,
-  ...f36icons,
   ...f36utils,
-  ...f36iconsAlpha, // Remove when new icons are not in alpha
   Layout, // Remove when added to f36-components
   Multiselect, // Remove when added to f36-components
   NavList, // Remove when added to f36-components
   ProgressStepper, // Remove when added to f36-components
   css,
-  f36icons,
   tokens,
   // most used react hooks
   useState,
@@ -73,6 +72,7 @@ const liveProviderScope = {
   format,
   parse,
   isValid,
+  ArrowSquareOutIcon,
 };
 
 const styles = {
@@ -145,8 +145,8 @@ const styles = {
     border-radius: 0 0 ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium};
   `,
 };
-const ComponentPreviewIcon = f36icons.PreviewIcon;
-const ComponentPreviewOffIcon = f36icons.PreviewOffIcon;
+const ComponentPreviewIcon = EyeIcon;
+const ComponentPreviewOffIcon = EyeClosedIcon;
 
 export function ComponentSource({
   children,
@@ -220,7 +220,7 @@ export function ComponentSource({
                     <Button
                       as="a"
                       className={styles.playgroundButton}
-                      endIcon={<ExternalLinkIcon />}
+                      endIcon={<ArrowSquareOutIcon />}
                       size="small"
                       href={`/playground?code=${coder.encode(children)}`}
                       target="_blank"

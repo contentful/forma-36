@@ -4,7 +4,7 @@ import {
   generateComponentWithVariants,
   generateIconComponent,
   IconVariant,
-} from '@contentful/f36-icon';
+} from '@contentful/f36-icon-alpha';
 
 export const CaretIcon = generateComponentWithVariants({
   variants: {

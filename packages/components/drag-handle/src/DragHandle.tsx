@@ -13,9 +13,12 @@ import type {
   CommonProps,
   ExpandProps,
 } from '@contentful/f36-core';
-import { DragIcon } from '@contentful/f36-icons';
 
 import { getStyles } from './DragHandle.styles';
+
+import { DotsSixVerticalIcon } from '@contentful/f36-icons-alpha';
+
+import tokens from '@contentful/f36-tokens';
 
 // We use div instead of a button because react-sortable-hoc lib cancels sorting if the event target is button.
 //
@@ -153,7 +156,7 @@ function _DragHandle<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
   if (as === 'div') {
     return (
       <div {...otherProps} {...commonProps} role="button" tabIndex={0}>
-        <DragIcon variant="muted" />
+        <DotsSixVerticalIcon color={tokens.gray600} />
         <span className={styles.label}>{label}</span>
       </div>
     );
@@ -161,7 +164,7 @@ function _DragHandle<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
 
   return (
     <button {...otherProps} {...commonProps} type="button">
-      <DragIcon variant="muted" />
+      <DotsSixVerticalIcon color={tokens.gray600} />
       <span className={styles.label}>{label}</span>
     </button>
   );

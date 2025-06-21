@@ -1,13 +1,14 @@
 import React from 'react';
 import { Flex, Menu, Button } from '@contentful/f36-components';
-import { ChevronDownIcon } from '@contentful/f36-icons';
+
+import { CaretDownIcon } from '@contentful/f36-icons-alpha';
 
 export function VersionSwitch() {
   return (
     <Flex alignItems="center" marginLeft="spacingM">
       <Menu usePortal={false}>
         <Menu.Trigger>
-          <Button size="small" endIcon={<ChevronDownIcon />}>
+          <Button size="small" endIcon={<CaretDownIcon />}>
             v4
           </Button>
         </Menu.Trigger>

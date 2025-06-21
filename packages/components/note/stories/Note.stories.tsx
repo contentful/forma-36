@@ -4,8 +4,9 @@ import { Flex } from '@contentful/f36-core';
 import { Paragraph, SectionHeading } from '@contentful/f36-typography';
 import { Note } from '../src/Note';
 import { TextLink } from '@contentful/f36-text-link';
-import * as icons from '@contentful/f36-icons';
-import { Icon } from '@contentful/f36-icon';
+import * as icons from '@contentful/f36-icon-alpha';
+
+import { Icon } from '@contentful/f36-icon-alpha';
 
 export default {
   title: 'Components/Note',

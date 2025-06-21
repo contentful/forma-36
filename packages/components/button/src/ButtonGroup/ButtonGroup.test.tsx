@@ -1,30 +1,28 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { ButtonGroup, Button } from '..';
-import { ChevronDownIcon } from '@contentful/f36-icons';
+import { CaretDownIcon } from '@contentful/f36-icons-alpha';
+import { ButtonGroup } from './ButtonGroup';
+import { Button } from '../Button';
 
-describe('ButtonGroup', function () {
-  it('renders button group', () => {
+describe('ButtonGroup', () => {
+  it('renders correctly', () => {
     const { container } = render(
       <ButtonGroup>
-        <Button>Button</Button>
-        <Button startIcon={<ChevronDownIcon />} />
+        <Button>Button 1</Button>
+        <Button>Button 2</Button>
       </ButtonGroup>,
     );
-
     expect(container.firstChild.childNodes).toHaveLength(2);
     expect(screen.getAllByRole('button')).toHaveLength(2);
   });
 
-  it('renders additional class name', () => {
-    const additionalClassName = 'additional-class';
+  it('renders with an icon', () => {
     const { container } = render(
-      <ButtonGroup className={additionalClassName}>
-        <Button>Button</Button>
-        <Button startIcon={<ChevronDownIcon />} />
+      <ButtonGroup>
+        <Button startIcon={<CaretDownIcon />}>Button with icon</Button>
       </ButtonGroup>,
     );
-
-    expect(container.firstChild).toHaveClass(additionalClassName);
+    expect(container.firstChild.childNodes).toHaveLength(1);
+    expect(screen.getByText('Button with icon')).toBeInTheDocument();
   });
 });

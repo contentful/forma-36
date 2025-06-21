@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { PreviewIcon } from '@contentful/f36-icons';
 import { axe } from 'jest-axe';
+import { EyeIcon } from '@contentful/f36-icons-alpha';
 
-import { ToggleButton } from '.';
+import { ToggleButton } from './ToggleButton';
 
 describe('ToggleButton', function () {
   const mockOnToggle = jest.fn();
@@ -41,7 +41,7 @@ describe('ToggleButton', function () {
 
   it('renders the component with icon', () => {
     render(
-      <ToggleButton onToggle={mockOnToggle} icon={<PreviewIcon />}>
+      <ToggleButton onToggle={mockOnToggle} icon={<EyeIcon />}>
         Toggle
       </ToggleButton>,
     );
@@ -53,7 +53,7 @@ describe('ToggleButton', function () {
   it('should not dispatch onClick if disabled', async () => {
     const user = userEvent.setup();
     render(
-      <ToggleButton onToggle={mockOnToggle} icon={<PreviewIcon />} isDisabled>
+      <ToggleButton onToggle={mockOnToggle} icon={<EyeIcon />} isDisabled>
         Toggle
       </ToggleButton>,
     );
@@ -70,5 +70,19 @@ describe('ToggleButton', function () {
     const results = await axe(container);
 
     expect(results).toHaveNoViolations();
+  });
+
+  it('renders correctly', () => {
+    render(<ToggleButton onToggle={() => {}}>Toggle</ToggleButton>);
+    expect(screen.getByText('Toggle')).toBeInTheDocument();
+  });
+
+  it('renders with an icon', () => {
+    render(
+      <ToggleButton icon={<EyeIcon />} onToggle={() => {}}>
+        Toggle with icon
+      </ToggleButton>,
+    );
+    expect(screen.getByText('Toggle with icon')).toBeInTheDocument();
   });
 });

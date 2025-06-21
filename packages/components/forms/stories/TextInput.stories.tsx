@@ -3,9 +3,13 @@ import React, { useState } from 'react';
 import { TextInput, TextInputProps } from '../src';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
-import { LockIcon, SearchIcon } from '@contentful/f36-icons';
 import { IconButton } from '@contentful/f36-button';
 import { DensityProvider } from '@contentful/f36-utils';
+
+import {
+  LockSimpleIcon,
+  MagnifyingGlassIcon,
+} from '@contentful/f36-icons-alpha';
 
 export default {
   title: 'Form Elements/TextInput',
@@ -42,7 +46,6 @@ export const Overview = () => {
       <SectionHeading as="h3" marginBottom="spacingS">
         Text Input default
       </SectionHeading>
-
       <Flex marginBottom="spacingL">
         <TextInput
           aria-label="Example label for input"
@@ -52,11 +55,9 @@ export const Overview = () => {
           defaultValue="defaultValue"
         />
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS">
         Text Input default small
       </SectionHeading>
-
       <Flex marginBottom="spacingL">
         <TextInput
           aria-label="Example label for input"
@@ -67,11 +68,9 @@ export const Overview = () => {
           size="small"
         />
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS">
         Text Input disabled
       </SectionHeading>
-
       <Flex marginBottom="spacingL">
         <TextInput
           aria-label="Example label for input"
@@ -81,11 +80,9 @@ export const Overview = () => {
           isDisabled
         />
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS">
         Text Input disabled small
       </SectionHeading>
-
       <Flex marginBottom="spacingL">
         <TextInput
           aria-label="Example label for input"
@@ -96,11 +93,9 @@ export const Overview = () => {
           size="small"
         />
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS">
         Text Input invalid
       </SectionHeading>
-
       <Flex marginBottom="spacingL">
         <TextInput
           aria-label="Example label for input"
@@ -110,11 +105,9 @@ export const Overview = () => {
           isInvalid
         />
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS">
         Text Input invalid small
       </SectionHeading>
-
       <Flex marginBottom="spacingL">
         <TextInput
           aria-label="Example label for input"
@@ -125,11 +118,9 @@ export const Overview = () => {
           size="small"
         />
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS">
         Text Input with icon as a placeholder
       </SectionHeading>
-
       <Flex marginBottom="spacingL">
         <TextInput
           aria-label="Example label for input"
@@ -137,14 +128,12 @@ export const Overview = () => {
           value="Example value"
           id="input-7"
           placeholder="My great input"
-          icon={<SearchIcon />}
+          icon={<MagnifyingGlassIcon />}
         />
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS">
         Text Input with icon as a placeholder small
       </SectionHeading>
-
       <Flex marginBottom="spacingL">
         <TextInput
           aria-label="Example label for input"
@@ -152,15 +141,13 @@ export const Overview = () => {
           value="Example value"
           id="input-8"
           placeholder="My great input"
-          icon={<SearchIcon />}
+          icon={<MagnifyingGlassIcon />}
           size="small"
         />
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS">
         Text Input Group with action button
       </SectionHeading>
-
       <Flex marginBottom="spacingL">
         <TextInput.Group>
           <TextInput
@@ -172,18 +159,16 @@ export const Overview = () => {
           <IconButton
             aria-label="Unlock"
             variant="secondary"
-            icon={<LockIcon />}
+            icon={<LockSimpleIcon />}
             onClick={() => {
               setFirstLocked((value) => !value);
             }}
           />
         </TextInput.Group>
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS">
         Text Input Group with action button small
       </SectionHeading>
-
       <Flex marginBottom="spacingL">
         <TextInput.Group>
           <TextInput
@@ -197,18 +182,16 @@ export const Overview = () => {
             size="small"
             aria-label="Unlock"
             variant="secondary"
-            icon={<LockIcon />}
+            icon={<LockSimpleIcon />}
             onClick={() => {
               setSecondLocked((value) => !value);
             }}
           />
         </TextInput.Group>
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS">
         Number input
       </SectionHeading>
-
       <Flex marginBottom="spacingL">
         <TextInput
           name="Example name 12"
@@ -327,7 +310,7 @@ export const WithHighDensity = () => {
             value="Example value"
             id="input-7"
             placeholder="My great input"
-            icon={<SearchIcon />}
+            icon={<MagnifyingGlassIcon />}
           />
         </Flex>
 
@@ -342,7 +325,7 @@ export const WithHighDensity = () => {
             value="Example value"
             id="input-8"
             placeholder="My great input"
-            icon={<SearchIcon />}
+            icon={<MagnifyingGlassIcon />}
             size="small"
           />
         </Flex>
@@ -362,7 +345,7 @@ export const WithHighDensity = () => {
             <IconButton
               aria-label="Unlock"
               variant="secondary"
-              icon={<LockIcon size="tiny" />}
+              icon={<LockSimpleIcon size="tiny" />}
               onClick={() => {
                 setFirstLocked((value) => !value);
               }}
@@ -387,7 +370,7 @@ export const WithHighDensity = () => {
               size="small"
               aria-label="Unlock"
               variant="secondary"
-              icon={<LockIcon size="tiny" />}
+              icon={<LockSimpleIcon size="tiny" />}
               onClick={() => {
                 setSecondLocked((value) => !value);
               }}

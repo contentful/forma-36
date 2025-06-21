@@ -3,10 +3,13 @@ import type { Meta } from '@storybook/react/types-6-0';
 import { SectionHeading, Paragraph } from '@contentful/f36-typography';
 import { Flex, Stack, Box } from '@contentful/f36-core';
 import { TextInput } from '@contentful/f36-forms';
-import { Icon } from '@contentful/f36-icon';
-import * as icons from '@contentful/f36-icons';
+import * as icons from '@contentful/f36-icons-alpha';
 
 import { IconButton } from '../src/IconButton';
+
+import { Icon } from '@contentful/f36-icon-alpha';
+
+import tokens from '@contentful/f36-tokens';
 
 export default {
   title: 'Components/Button components/IconButton',
@@ -94,7 +97,7 @@ export const ColoredIconInTransparentIconButton = () => {
           icon={
             <Icon
               as={icons.StarIcon}
-              variant={isActive ? 'primary' : 'warning'}
+              color={isActive ? tokens.colorPrimary : tokens.colorWarning}
             />
           }
           aria-label="Close"
@@ -111,7 +114,7 @@ export const WithTextInput = () => {
         <TextInput aria-label="Content type name" defaultValue="blog" />
         <IconButton
           variant="secondary"
-          icon={<icons.LockIcon />}
+          icon={<icons.LockSimpleIcon />}
           aria-label="Unlock"
         />
       </TextInput.Group>
@@ -124,7 +127,7 @@ export const WithTextInput = () => {
         <IconButton
           size="small"
           variant="secondary"
-          icon={<icons.LockIcon />}
+          icon={<icons.LockSimpleIcon />}
           aria-label="Unlock"
         />
       </TextInput.Group>
@@ -132,7 +135,7 @@ export const WithTextInput = () => {
         <TextInput aria-label="Content type name" defaultValue="blog" />
         <IconButton
           variant="secondary"
-          icon={<icons.LockIcon />}
+          icon={<icons.LockSimpleIcon />}
           aria-label="Unlock"
         />
       </TextInput.Group>
@@ -145,7 +148,7 @@ export const WithTextInput = () => {
         <IconButton
           size="small"
           variant="secondary"
-          icon={<icons.LockIcon />}
+          icon={<icons.LockSimpleIcon />}
           aria-label="Unlock"
         />
       </TextInput.Group>
@@ -163,38 +166,38 @@ export const Overview = () => (
       <Stack spacing="spacingXs" marginBottom="spacingM">
         <IconButton
           variant="transparent"
-          icon={<Icon as={icons.CloseIcon} />}
+          icon={<Icon as={icons.XIcon} />}
           aria-label="Close"
         />
 
         <IconButton
           variant="transparent"
-          icon={<Icon as={icons.MoreHorizontalIcon} />}
+          icon={<Icon as={icons.DotsThreeIcon} />}
           aria-label="More"
         />
 
         <IconButton
           variant="secondary"
-          icon={<Icon as={icons.DownloadIcon} />}
+          icon={<Icon as={icons.DownloadSimpleIcon} />}
           aria-label="Download"
         />
 
         <IconButton
           variant="secondary"
-          icon={<Icon as={icons.DownloadIcon} />}
+          icon={<Icon as={icons.DownloadSimpleIcon} />}
           aria-label="Loading"
           isLoading
         />
 
         <IconButton
           variant="positive"
-          icon={<Icon as={icons.DragIcon} />}
+          icon={<Icon as={icons.DotsSixVerticalIcon} />}
           aria-label="Resize"
         />
 
         <IconButton
           variant="negative"
-          icon={<Icon as={icons.DeleteIcon} />}
+          icon={<Icon as={icons.TrashSimpleIcon} />}
           aria-label="Delete"
         />
 

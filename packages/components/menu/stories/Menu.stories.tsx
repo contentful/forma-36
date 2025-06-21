@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { IconButton } from '@contentful/f36-button';
-import { MenuIcon, DoneIcon } from '@contentful/f36-icons';
 import {
   BrowserRouter as Router,
   useHref,
@@ -9,6 +8,8 @@ import {
 } from 'react-router-dom';
 import { css } from 'emotion';
 import { Menu, type MenuProps } from '../src';
+
+import { CheckIcon, ListIcon } from '@contentful/f36-icons-alpha';
 
 export default {
   component: Menu,
@@ -21,7 +22,7 @@ export const Basic: Story<MenuProps> = (args) => {
       <Menu.Trigger>
         <IconButton
           variant="secondary"
-          icon={<MenuIcon />}
+          icon={<ListIcon />}
           aria-label="toggle menu"
         />
       </Menu.Trigger>
@@ -55,7 +56,7 @@ export const Controlled: Story<MenuProps> = (args) => {
       <Menu.Trigger>
         <IconButton
           variant="secondary"
-          icon={<MenuIcon />}
+          icon={<ListIcon />}
           aria-label="toggle menu"
         />
       </Menu.Trigger>
@@ -78,7 +79,7 @@ export const WithDisabledItems: Story<MenuProps> = (args) => {
       <Menu.Trigger>
         <IconButton
           variant="secondary"
-          icon={<MenuIcon />}
+          icon={<ListIcon />}
           aria-label="toggle menu"
         />
       </Menu.Trigger>
@@ -102,14 +103,14 @@ export const WithIconsOnItems: Story<MenuProps> = (args) => {
       <Menu.Trigger>
         <IconButton
           variant="secondary"
-          icon={<MenuIcon />}
+          icon={<ListIcon />}
           aria-label="toggle menu"
         />
       </Menu.Trigger>
       <Menu.List>
-        <Menu.Item icon={<DoneIcon />}>Item 1</Menu.Item>
+        <Menu.Item icon={<CheckIcon />}>Item 1</Menu.Item>
         <Menu.Item>Item 2</Menu.Item>
-        <Menu.Item icon={<DoneIcon />}>Item 3</Menu.Item>
+        <Menu.Item icon={<CheckIcon />}>Item 3</Menu.Item>
       </Menu.List>
     </Menu>
   );
@@ -121,7 +122,7 @@ export const WithMaxHeight: Story<MenuProps> = (args) => {
       <Menu.Trigger>
         <IconButton
           variant="secondary"
-          icon={<MenuIcon />}
+          icon={<ListIcon />}
           aria-label="toggle menu"
         />
       </Menu.Trigger>
@@ -144,7 +145,7 @@ export const WithStickyHeaderAndFooter: Story<MenuProps> = (args) => {
       <Menu.Trigger>
         <IconButton
           variant="secondary"
-          icon={<MenuIcon />}
+          icon={<ListIcon />}
           aria-label="toggle menu"
         />
       </Menu.Trigger>
@@ -184,7 +185,7 @@ export const WithReactRouterLinks: Story<MenuProps> = (args) => {
         <Menu.Trigger>
           <IconButton
             variant="secondary"
-            icon={<MenuIcon />}
+            icon={<ListIcon />}
             aria-label="toggle menu"
           />
         </Menu.Trigger>
@@ -205,7 +206,7 @@ export const WithInitialFocusedItem: Story<MenuProps> = (args) => {
         <Menu.Trigger>
           <IconButton
             variant="secondary"
-            icon={<MenuIcon />}
+            icon={<ListIcon />}
             aria-label="toggle menu"
           />
         </Menu.Trigger>
@@ -225,7 +226,7 @@ export const WithSubmenu: Story<MenuProps> = (args) => {
       <Menu.Trigger>
         <IconButton
           variant="secondary"
-          icon={<MenuIcon />}
+          icon={<ListIcon />}
           aria-label="toggle menu"
         />
       </Menu.Trigger>
@@ -269,7 +270,7 @@ export const WithSubmenuDifferentAlignments: Story<MenuProps> = (args) => {
           <Menu.Trigger>
             <IconButton
               variant="secondary"
-              icon={<MenuIcon />}
+              icon={<ListIcon />}
               aria-label="toggle menu"
             />
           </Menu.Trigger>
@@ -297,7 +298,7 @@ export const WithMultipleSubmenus: Story<MenuProps> = (args) => {
       <Menu.Trigger>
         <IconButton
           variant="secondary"
-          icon={<MenuIcon />}
+          icon={<ListIcon />}
           aria-label="toggle menu"
         />
       </Menu.Trigger>
