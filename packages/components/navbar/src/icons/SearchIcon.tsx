@@ -1,5 +1,5 @@
 import React from 'react';
-import { generateIconComponent } from '@contentful/f36-icon';
+import { generateIconComponent } from '@contentful/f36-icon-alpha';
 
 export const SearchIcon = /*#__PURE__*/ generateIconComponent({
   name: 'SearchIcon',

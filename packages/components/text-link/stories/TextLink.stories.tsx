@@ -34,9 +34,13 @@ export default {
   },
 } as Meta;
 
-export const Basic: Story<any> = ({ icon, children, ...args }) => {
+export const Basic: Story<
+  Omit<React.ComponentProps<typeof TextLink>, 'icon'> & {
+    icon?: keyof typeof icons;
+  }
+> = ({ icon, children, ...args }) => {
   return (
-    <TextLink icon={icon ? <Icon as={icons[icon]} /> : null} {...args}>
+    <TextLink icon={icon ? <Icon as={icons[icon]} /> : undefined} {...args}>
       {children}
     </TextLink>
   );
@@ -60,8 +64,8 @@ export const UsedWithText = () => {
       </TextLink>{' '}
       by both area and population. Its 3,769,495 inhabitants as of 31 December
       2019 make it the most populous city of the European Union, according to
-      population within city limits.[8] The city is also one of Germany's 16
-      federal states. It is surrounded by the state of{' '}
+      population within city limits.[8] The city is also one of Germany&rsquo;s
+      16 federal states. It is surrounded by the state of{' '}
       <TextLink href="https://www.wikiwand.com/en/Brandenburg" target="_blank">
         Brandenburg
       </TextLink>
@@ -74,9 +78,9 @@ export const UsedWithText = () => {
       >
         Potsdam
       </TextLink>
-      , Brandenburg's capital. The two cities are at the center of the
+      , Brandenburg&rsquo;s capital. The two cities are at the center of the
       Berlin-Brandenburg capital region, which is, with about six million
-      inhabitants and an area of more than 30,000 km2,[9] Germany's
+      inhabitants and an area of more than 30,000 km2,[9] Germany&rsquo;s
       third-largest metropolitan region after the Rhine-Ruhr and Rhine-Main
       regions.
     </Paragraph>

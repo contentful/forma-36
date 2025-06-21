@@ -21,8 +21,6 @@ import {
   WarningIcon,
 } from '@contentful/f36-icons-alpha';
 
-import tokens from '@contentful/f36-tokens';
-
 export interface NotificationItemProps extends CommonProps {
   /**
    * Defines the styling of notification

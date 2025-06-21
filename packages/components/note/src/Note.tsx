@@ -23,8 +23,6 @@ import {
 
 import { Icon } from '@contentful/f36-icon-alpha';
 
-import tokens from '@contentful/f36-tokens';
-
 const icons = {
   primary: InfoIcon,
   positive: CheckCircleIcon,
