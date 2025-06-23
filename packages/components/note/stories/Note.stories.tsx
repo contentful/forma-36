@@ -5,8 +5,8 @@ import { Paragraph, SectionHeading } from '@contentful/f36-typography';
 import { Note } from '../src/Note';
 import { TextLink } from '@contentful/f36-text-link';
 import * as icons from '@contentful/f36-icon-alpha';
-
 import { Icon } from '@contentful/f36-icon-alpha';
+import { InfoIcon } from '@contentful/f36-icons-alpha';
 
 export default {
   title: 'Components/Note',
@@ -76,7 +76,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note icon={<Icon as={icons.StarIcon} />}>
+      <Note icon={<InfoIcon />}>
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
@@ -108,7 +108,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note variant="negative" icon={<Icon as={icons.StarIcon} />}>
+      <Note variant="negative" icon={<InfoIcon />}>
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
@@ -139,7 +139,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note variant="warning" icon={<Icon as={icons.StarIcon} />}>
+      <Note variant="warning" icon={<InfoIcon />}>
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
@@ -165,7 +165,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note variant="positive" icon={<Icon as={icons.StarIcon} />}>
+      <Note variant="positive" icon={<InfoIcon />}>
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
@@ -195,7 +195,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note variant="neutral" icon={<Icon as={icons.StarIcon} />}>
+      <Note variant="neutral" icon={<InfoIcon />}>
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
@@ -221,7 +221,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note variant="premium" icon={<Icon as={icons.StarIcon} />}>
+      <Note variant="premium" icon={<InfoIcon />}>
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
