@@ -2,6 +2,7 @@
   "name": "@contentful/f36-i18n-utils",
   "description": "Forma 36 i18n utilities",
   "version": "1.0.0-alpha.1",
+  "private": true,
   "license": "MIT",
   "files": [
     "package.json",
