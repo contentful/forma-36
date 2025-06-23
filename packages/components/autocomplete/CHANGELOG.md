@@ -1,5 +1,20 @@
 # Change Log
 
+## 4.80.4
+
+### Patch Changes
+
+- [#3085](https://github.com/contentful/forma-36/pull/3085) [`31e1d79`](https://github.com/contentful/forma-36/commit/31e1d7903d47ad0deb7d8ba08aa43910ff5b9a4a) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - chore: bump remnants of vulnerable babel-runtime version
+
+- Updated dependencies [[`03e8d12`](https://github.com/contentful/forma-36/commit/03e8d128132f451a13a39cbeb9e20f1c1acbd0de)]:
+  - @contentful/f36-icons@4.29.1
+  - @contentful/f36-button@4.80.4
+  - @contentful/f36-core@4.80.4
+  - @contentful/f36-forms@4.80.4
+  - @contentful/f36-popover@4.80.4
+  - @contentful/f36-skeleton@4.80.4
+  - @contentful/f36-typography@4.80.4
+
 ## 4.80.3
 
 ### Patch Changes

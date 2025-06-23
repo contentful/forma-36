@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.29.1
+
+### Patch Changes
+
+- [#3108](https://github.com/contentful/forma-36/pull/3108) [`03e8d12`](https://github.com/contentful/forma-36/commit/03e8d128132f451a13a39cbeb9e20f1c1acbd0de) Thanks [@Chaoste](https://github.com/Chaoste)! - Fixes the viewbox of the Subscript Icon to display the icon correctly.
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.80.4
+  - @contentful/f36-icon@4.80.4
+
 ## 4.29.0
 
 ### Minor Changes
