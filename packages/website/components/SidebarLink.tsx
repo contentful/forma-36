@@ -3,13 +3,14 @@ import { css, cx } from 'emotion';
 import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
 import { List, Flex, Text, Badge } from '@contentful/f36-components';
-import { ChevronDownIcon } from '@contentful/f36-icons';
-import {
-  ExternalLinkTrimmedIcon,
-  LockTrimmedIcon,
-} from '@contentful/f36-icons';
 import { useSession } from 'next-auth/react';
 import { ComponentStatus } from '../types';
+
+import {
+  CaretDownIcon,
+  ArrowSquareOutIcon,
+  LockSimpleIcon,
+} from '@contentful/f36-icons-alpha';
 
 const styles = {
   link: css({
@@ -93,8 +94,8 @@ export function SidebarSectionButton({
           {children}
         </Text>
 
-        <ChevronDownIcon
-          variant="muted"
+        <CaretDownIcon
+          color={tokens.gray600}
           className={cx(titleStyles.chevron, {
             [titleStyles.closedIcon]: !isOpen,
           })}
@@ -168,14 +169,14 @@ export function SidebarLink({
           <span className={cx([titleStyles.clickable])}>
             {children}
             {isExternal && (
-              <ExternalLinkTrimmedIcon
-                variant="muted"
+              <ArrowSquareOutIcon
+                color={tokens.gray600}
                 className={titleStyles.linkIcon}
               />
             )}
             {isAuthProtected && (
-              <LockTrimmedIcon
-                variant="muted"
+              <LockSimpleIcon
+                color={tokens.gray600}
                 className={titleStyles.linkIcon}
               />
             )}

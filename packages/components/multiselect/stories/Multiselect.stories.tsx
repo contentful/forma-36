@@ -5,7 +5,8 @@ import { Stack } from '@contentful/f36-core';
 import { Multiselect } from '../src';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Button } from '@contentful/f36-button';
-import { HelpCircleIcon } from '@contentful/f36-icons';
+
+import { InfoIcon } from '@contentful/f36-icons-alpha';
 
 export default {
   title: 'Components/Multiselect',
@@ -325,7 +326,7 @@ export const WithComponentInOption = () => {
                   item={item.name}
                   inputValue={searchValue}
                 />{' '}
-                <HelpCircleIcon size="tiny" />
+                <InfoIcon size="tiny" />
               </Multiselect.Option>
             );
           })}

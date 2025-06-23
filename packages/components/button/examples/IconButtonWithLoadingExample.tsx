@@ -1,0 +1,9 @@
+import React from 'react';
+import { IconButton } from '@contentful/f36-button';
+import { CalendarBlankIcon } from '@contentful/f36-icons-alpha';
+
+export default function IconButtonWithLoadingExample() {
+  return (
+    <IconButton aria-label="Calendar" icon={<CalendarBlankIcon />} isLoading />
+  );
+}

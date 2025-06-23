@@ -11,7 +11,6 @@ import {
   TextLink,
   Button,
 } from '@contentful/f36-components';
-import { ArrowForwardTrimmedIcon } from '@contentful/f36-icons';
 import type { InferGetStaticPropsType } from 'next';
 
 import figmaSVG from '../resources/icons/figma-icon.svg';
@@ -20,6 +19,8 @@ import homepageImg from '../public/images/homepage-illustration.svg';
 import { SCREEN_BREAKPOINT_LARGE } from '../utils/getGridStyles';
 import { Layout } from '../components/Layout';
 import { getTopbarLinks } from '../lib/api';
+
+import { ArrowRightIcon } from '@contentful/f36-icons-alpha';
 
 const styles = {
   grid: css({
@@ -72,7 +73,7 @@ export default function Home({ topbarLinks }: HomeProps) {
                 href="/introduction/getting-started"
                 variant="primary"
                 size="large"
-                endIcon={<ArrowForwardTrimmedIcon />}
+                endIcon={<ArrowRightIcon />}
               >
                 Get started
               </Button>

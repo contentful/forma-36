@@ -1,12 +1,13 @@
 import React from 'react';
 
 import { Button } from '../src/Button';
-import { Icon } from '@contentful/f36-icon';
 import { Flex, Stack } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
-import * as icons from '@contentful/f36-icons';
+import * as icons from '@contentful/f36-icons-alpha';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+
+import { Icon } from '@contentful/f36-icon-alpha';
 
 export default {
   title: 'Components/Button components',
@@ -117,7 +118,6 @@ export const Overview = ({ startIcon, endIcon }) => {
           </Button>
         </Stack>
       </Flex>
-
       <Flex flexDirection="column" marginBottom="spacingL">
         <SectionHeading as="h3" marginBottom="spacingS">
           Truncated
@@ -129,7 +129,6 @@ export const Overview = ({ startIcon, endIcon }) => {
           </Button>
         </Stack>
       </Flex>
-
       <Flex flexDirection="column" marginBottom="spacingL">
         <SectionHeading as="h3" marginBottom="spacingS">
           Button active state
@@ -157,7 +156,6 @@ export const Overview = ({ startIcon, endIcon }) => {
           </Button>
         </Stack>
       </Flex>
-
       <Flex flexDirection="column" marginBottom="spacingL">
         <SectionHeading as="h3" marginBottom="spacingS">
           Button disabled
@@ -185,50 +183,45 @@ export const Overview = ({ startIcon, endIcon }) => {
           </Button>
         </Stack>
       </Flex>
-
       <Flex flexDirection="column" marginBottom="spacingL">
         <SectionHeading as="h3" marginBottom="spacingS">
           Button with end icon
         </SectionHeading>
 
         <Stack spacing="spacingXs" marginBottom="spacingM">
-          <Button
-            variant="primary"
-            endIcon={<Icon as={icons.ChevronDownIcon} />}
-          >
+          <Button variant="primary" endIcon={<Icon as={icons.CaretDownIcon} />}>
             Primary
           </Button>
 
           <Button
             variant="secondary"
-            endIcon={<Icon as={icons.ChevronDownIcon} />}
+            endIcon={<Icon as={icons.CaretDownIcon} />}
           >
             Secondary
           </Button>
 
           <Button
             variant="positive"
-            endIcon={<Icon as={icons.ChevronDownIcon} />}
+            endIcon={<Icon as={icons.CaretDownIcon} />}
           >
             Positive
           </Button>
 
           <Button
             variant="negative"
-            endIcon={<Icon as={icons.ChevronDownIcon} />}
+            endIcon={<Icon as={icons.CaretDownIcon} />}
           >
             Negative
           </Button>
 
           <Button
             variant="transparent"
-            endIcon={<Icon as={icons.ChevronDownIcon} />}
+            endIcon={<Icon as={icons.CaretDownIcon} />}
           >
             Transparent
           </Button>
         </Stack>
       </Flex>
-
       <Flex flexDirection="column" marginBottom="spacingL">
         <SectionHeading as="h3" marginBottom="spacingS">
           Button loading
@@ -256,7 +249,6 @@ export const Overview = ({ startIcon, endIcon }) => {
           </Button>
         </Stack>
       </Flex>
-
       <Flex flexDirection="column" marginBottom="spacingL">
         <SectionHeading as="h3" marginBottom="spacingS">
           Full width button
@@ -271,12 +263,18 @@ export const Overview = ({ startIcon, endIcon }) => {
           </Button>
         </Flex>
         <Flex flexDirection="row" marginBottom="spacingS">
-          <Button startIcon={<Icon as={icons.DownloadIcon} />} isFullWidth>
+          <Button
+            startIcon={<Icon as={icons.DownloadSimpleIcon} />}
+            isFullWidth
+          >
             Full width button
           </Button>
         </Flex>
         <Flex flexDirection="row" marginBottom="spacingS">
-          <Button startIcon={<Icon as={icons.DownloadIcon} />} isFullWidth>
+          <Button
+            startIcon={<Icon as={icons.DownloadSimpleIcon} />}
+            isFullWidth
+          >
             Full width button
           </Button>
         </Flex>
@@ -291,7 +289,6 @@ export const Overview = ({ startIcon, endIcon }) => {
           </Button>
         </Flex>
       </Flex>
-
       <Flex flexDirection="column" marginBottom="spacingL">
         <SectionHeading as="h3" marginBottom="spacingS">
           On backgrounds

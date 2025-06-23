@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CalendarIcon } from '@contentful/f36-icons-v4';
+import { CalendarBlankIcon } from '@contentful/f36-icons-alpha';
 import { Stack, Flex, Text } from '@contentful/f36-components';
 
 export default function IconVariantsExample() {
@@ -7,37 +7,37 @@ export default function IconVariantsExample() {
     <Stack>
       <Flex alignItems="center">
         <Flex marginRight="spacingS">
-          <CalendarIcon variant="primary" />
+          <CalendarBlankIcon variant="primary" />
         </Flex>{' '}
         <Text>Primary</Text>
       </Flex>
       <Flex alignItems="center">
         <Flex marginRight="spacingS">
-          <CalendarIcon variant="positive" />
+          <CalendarBlankIcon variant="positive" />
         </Flex>{' '}
         <Text>Positive</Text>
       </Flex>
       <Flex alignItems="center">
         <Flex marginRight="spacingS">
-          <CalendarIcon variant="negative" />
+          <CalendarBlankIcon variant="negative" />
         </Flex>{' '}
         <Text>Negative</Text>
       </Flex>
       <Flex alignItems="center">
         <Flex marginRight="spacingS">
-          <CalendarIcon variant="warning" />
+          <CalendarBlankIcon variant="warning" />
         </Flex>{' '}
         <Text>Warning</Text>
       </Flex>
       <Flex alignItems="center">
         <Flex marginRight="spacingS">
-          <CalendarIcon variant="secondary" />
+          <CalendarBlankIcon variant="secondary" />
         </Flex>{' '}
         <Text>Secondary</Text>
       </Flex>
       <Flex alignItems="center">
         <Flex marginRight="spacingS">
-          <CalendarIcon variant="muted" />
+          <CalendarBlankIcon variant="muted" />
         </Flex>{' '}
         <Text>Muted</Text>
       </Flex>
@@ -47,7 +47,7 @@ export default function IconVariantsExample() {
         padding="spacingS"
       >
         <Flex marginRight="spacingS">
-          <CalendarIcon variant="white" />
+          <CalendarBlankIcon variant="white" />
         </Flex>{' '}
         <Text>White</Text>
       </Flex>

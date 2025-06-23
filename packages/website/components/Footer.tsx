@@ -2,11 +2,12 @@ import React from 'react';
 import Image from 'next/image';
 import { css, cx } from 'emotion';
 import { TextLink, Flex, type TextLinkProps } from '@contentful/f36-components';
-import { ExternalLinkIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 
 import contentfulLogoSVG from '../resources/icons/contentful-logo.svg';
 import { getGridStyles } from '../utils/getGridStyles';
+
+import { ArrowSquareOutIcon } from '@contentful/f36-icons-alpha';
 
 const styles = {
   footer: css({
@@ -94,7 +95,7 @@ function FooterLink({ href, label, isExternal = true }) {
     ? {
         target: '_blank',
         rel: 'noopener noreferrer',
-        icon: <ExternalLinkIcon />,
+        icon: <ArrowSquareOutIcon />,
         alignIcon: 'end' as TextLinkProps['alignIcon'],
       }
     : {};

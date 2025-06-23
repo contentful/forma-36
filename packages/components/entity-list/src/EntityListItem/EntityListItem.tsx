@@ -8,15 +8,7 @@ import {
   type EntityStatus,
   type PickUnion,
 } from '@contentful/f36-core';
-import {
-  AssetIcon,
-  EntryIcon,
-  ReleaseIcon,
-  MoreHorizontalIcon,
-  PageIcon,
-  PaintBrushIcon,
-} from '@contentful/f36-icons';
-import { Icon } from '@contentful/f36-icon';
+import { PaintBrushIcon } from '@contentful/f36-icons-alpha';
 import { Text } from '@contentful/f36-typography';
 import { DragHandle, type DragHandleProps } from '@contentful/f36-drag-handle';
 import { Button } from '@contentful/f36-button';
@@ -25,16 +17,28 @@ import { Skeleton } from '@contentful/f36-skeleton';
 
 import { getEntityListItemStyles } from './EntityListItem.styles';
 
+import {
+  ImageSquareIcon,
+  EntryIcon,
+  DotsThreeIcon,
+  FileIcon,
+  ReleaseIcon,
+} from '@contentful/f36-icons-alpha';
+
+import { Icon } from '@contentful/f36-icon-alpha';
+
+import tokens from '@contentful/f36-tokens';
+
 type EntityListItemStatus = PickUnion<
   EntityStatus,
   'archived' | 'changed' | 'draft' | 'published'
 >;
 
 const ICON_MAP = {
-  asset: AssetIcon,
+  asset: ImageSquareIcon,
   entry: EntryIcon,
   release: ReleaseIcon,
-  page: PageIcon,
+  page: FileIcon,
   experience: PaintBrushIcon,
 };
 
@@ -204,7 +208,7 @@ export const EntityListItem = ({
                 {asIcon ? (
                   <Icon
                     as={ICON_MAP[entityType.toLowerCase()]}
-                    variant="muted"
+                    color={tokens.gray600}
                     data-test-id={`thumbnail-icon-${entityType.toLowerCase()}`}
                   />
                 ) : (
@@ -282,7 +286,7 @@ export const EntityListItem = ({
               <Menu.Trigger>
                 <Button
                   isDisabled={isActionsDisabled}
-                  startIcon={<MoreHorizontalIcon />}
+                  startIcon={<DotsThreeIcon />}
                   variant="transparent"
                   aria-label="Actions"
                   size="small"
