@@ -8,7 +8,7 @@ Many previous props have been removed or reorganized, and new props (such as log
 > [!CAUTION]
 > The comoponent no longer accepts children. Navigation Items that have been handed over as children before have now to be sorted into the `mainNavigation` or `secondaryNavigation` properties.
 
-**Prop overview table**
+**Navbar prop overview table**
 
 | Property Name               | Type                       | Description                                                                       | Status     |
 | --------------------------- | -------------------------- | --------------------------------------------------------------------------------- | ---------- |
@@ -25,79 +25,65 @@ Many previous props have been removed or reorganized, and new props (such as log
 | contentMaxWidth             | string                     | Defines the max-width of the content inside the navbar (default: '100%')          | no Changes |
 | className                   | string                     | Enables additional styling on the main navbar container                           | no Changes |
 | testId                      | string                     | sets test-id property. (default: 'cf-ui-navbar')                                  | no Changes |
-| variant                     | 'wide' &#124; 'fullscreen' | Describes the size variation of the Navbar. 'wide' sets contentMaxWidth to 1524px |            |
-| aria                        | object                     | Aria labels for different areas of the navigation bar                             |            |
+| variant                     | 'wide' &#124; 'fullscreen' | Describes the size variation of the Navbar. 'wide' sets contentMaxWidth to 1524px | new        |
+| aria                        | object                     | Aria labels for different areas of the navigation bar                             | new        |
 | └─ labelMainNavigation      | string                     | aria-label for main navigation                                                    |            |
 | └─ labelSecondaryNavigation | string                     | aria-label for secondary navigation                                               |            |
 | └─ labelPromotions          | string                     | aria-label for promotions                                                         |            |
 | └─ labelAccount             | string                     | aria-label for account                                                            |            |
 
-                         |
+**Removed Props**
+| Property Name | Type | Description |
+|-------------------|------------------|---------------------------------------------------------------------------------------------------------------|
+| children | React.ReactNode | Children elements to be rendered inside the Navbar |
+| search | React.ReactNode | Search component, should now be added to the secondaryNavigation |
+| help | React.ReactNode | Help component, should now be added to the secondaryNavigation |
+| badge | React.ReactNode | Badge component, badges can be added in secondary or mainNaviagation |
+| bottomRightItems | React.ReactNode | Items rendered on the bottom-right of the navbar, should now go to secondaryNavigation |
+| topRightItems | React.ReactNode | Items rendered on the top-right of the navbar, should now go to the secondaryNavigaton |
 
-### Removed Props
+## Compund Components
 
-- children
-  **Removed** All main content in the navbar should now be provided through explicit structural props.
+The navbar offers a variety of compound components to enable styling and functionalites
 
-- search, help, badge, bottomRightItems, topRightItems
-
-  **Removed.** These should be mapped to one of the new explicit props or reorganized as part of mainNavigation, secondaryNavigation, or promotions components.
-
-### Retained or Renamed Props
-
-- account
-
-  **Retained**. Use as before to supply the compound component `<Navbar.Account />`
-
-- switcher
-
-  **Retained**. Use as before for the Environment Switcher with the compound component `<Navbar.Switcher />` Visually moved from the left side to the right side.
-
-- contentMaxWidth
-
-  **Retained**, Optional. Same function, default is 100%; can be set to override the max-width of the content inside the navbar.
-
-Major Changes and New Props
-
-- logo
-
-  **New**, Optional. Accepts a React component to appear as the first element of the navbar. Per default the Contentful logo is shown.
-
-- mainNavigation
-  **New**, . All primary navigation elements should be grouped into this prop. Items previously passed as children or distributed between children/topRightItems/bottomRightItems should now be reorganized here.
-
-- promotions
-
-  **New**, Optional. Area placed right after the mainNavigation and can be used to feature promotions, company branding, or announcements that were previously placed using children or topRightItems.
-
-secondaryNavigation
-New. For navigation/action items that appear at the right side—most content from topRightItems or items you formerly split out as secondary actions should now reside here.
-
-mobileNavigation & mobileNavigationProps
-New. For specifying dedicated mobile navigation components and configuring mobile breakpoints and labels.
-
-variant
-New. Allows quick setting of size variation: 'wide' (1524px max width) or 'fullscreen'.
-
-aria
-New. For adding accessible aria-labels to distinct areas of the navbar.
+**Removed Compund Components **
+| Removed Component | Replacement | Description|
+|-------------------|-------------|------------|
+| Navbar.Help | Navbar.Item, Navbar.MenuItem | Use Navbar.Item for the main trigger element and Navbar.MenuItem as its children to create the Popout Menu.|
+| Navbar.Search| Navbar.Item | Use Navbar.Item for the main trigger element|
+| Navbar.SwitcherItem|Navbar.Switcher|NavbarSwitcher no longer reuqires Navbar.SwitchterItem as child.|
+| Navbar.TopbarItem|Navbar.Item or Navbar.MenuItem||
 
 ## Navbar.Account
 
-New Props
+This compound component is used to generate the Accountmenu, the Menutrigger is represented by the Users Avatar.
+
+### Code Example
+
+```
+<Navbar.Account
+    username="Conny Contentful"
+    avatar='avatar.jpg'
+    initials='CC'
+    hasNotification={hasNotification}
+    notificationVariant='info'
+    label='Account settings'
+  >
+    <Navbar.MenuItem title="Account settings" icon={<WrenchIcon />} />
+    <Navbar.MenuItem title="Dashboard" />
+    <Navbar.MenuDivider />
+    <Navbar.MenuItem
+      title="External link"
+      as="a"
+      href="https://www.contentful.com"
+      target="_blank"
+    />
+    <Navbar.MenuDivider />
+    <Navbar.MenuItem title="Log out" />
+  </Navbar.Account>
+```
+
+### New Props
 
 - label
-- **New**. Used to give an accessible label to the menu
-
-##### Navbar.Help
-
-**Deleted** This compound component was deleted, instead replace it with a `<Navbar.Item />`
-
-##### Navbar,Item
-
-New Props
-
-- label
-  **New**. Used to give an accessible aria-label to the item.
-- isDisabled
-  **New**. Determines if an item is click-able
+- **New**. Used to give an accessible label to the account menu
