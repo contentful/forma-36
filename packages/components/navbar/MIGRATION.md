@@ -44,19 +44,25 @@ Many previous props have been removed or reorganized, and new props (such as log
 
 ## Compund Components
 
-The navbar offers a variety of compound components to enable styling and functionalites
+> [!CAUTION]
+> Some of the compund components no longer exist to simplify the usage and design.
 
-**Removed Compund Components **
+The navbar uses a variety of compound components to enable styling and functionalites for individual parts of the main component.
+
+**Removed Compund Components**
 | Removed Component | Replacement | Description|
 |-------------------|-------------|------------|
 | Navbar.Help | Navbar.Item, Navbar.MenuItem | Use Navbar.Item for the main trigger element and Navbar.MenuItem as its children to create the Popout Menu.|
 | Navbar.Search| Navbar.Item | Use Navbar.Item for the main trigger element|
 | Navbar.SwitcherItem|Navbar.Switcher|NavbarSwitcher no longer reuqires Navbar.SwitchterItem as child.|
-| Navbar.TopbarItem|Navbar.Item or Navbar.MenuItem||
+| Navbar.TopbarItem|Navbar.Item or Navbar.MenuItem|There is no loger a Topbar area |
 
 ## Navbar.Account
 
-This compound component is used to generate the Accountmenu, the Menutrigger is represented by the Users Avatar.
+> [!NOTE]
+> This component does not contain breaking changes
+>
+> This compound component is used to generate the Accountmenu, the Menutrigger is represented by the Users Avatar.
 
 ### Code Example
 
@@ -83,7 +89,83 @@ This compound component is used to generate the Accountmenu, the Menutrigger is 
   </Navbar.Account>
 ```
 
-### New Props
+**Navbar.Account prop overview table**
 
-- label
-- **New**. Used to give an accessible label to the account menu
+| Property Name       | Type                                      | Description                                                             | Status     |
+| ------------------- | ----------------------------------------- | ----------------------------------------------------------------------- | ---------- |
+| children            | React.ReactNode                           | Menu items to be rendered in the account dropdown                       | no Changes |
+| className           | string                                    | Enables additional styling                                              | no Changes |
+| testId              | string                                    | Sets test-id property (default: 'cf-ui-navbar-account-trigger')         | no Changes |
+| username            | string                                    | Name of the user displayed in the account menu                          | no Changes |
+| avatar              | string                                    | URL of the user's avatar image                                          | no Changes |
+| initials            | string                                    | Initials to display if no avatar image is provided                      | no Changes |
+| hasNotification     | boolean                                   | Shows a notification badge on the avatar                                | no Changes |
+| notificationVariant | 'warning' &#124; 'negative' &#124; 'info' | Variant of the notification badge (default: 'warning')                  | no Changes |
+| label               | string                                    | Accessible label for the account menu trigger (default: 'Account menu') | new        |
+
+## Navbar.Badge
+
+> [!NOTE]
+> This components usage has not changed
+>
+> This compound component is used for highlights and promotions.
+
+### Code Example
+
+```
+<Navbar.Badge>Trial</Navbar.Badge>
+```
+
+**Navbar.Badge prop overview table**
+
+| Property Name | Type              | Description                                                            | Status     |
+| ------------- | ----------------- | ---------------------------------------------------------------------- | ---------- |
+| children      | React.ReactNode   | Content to be displayed inside the badge                               | no Changes |
+| as            | React.ElementType | The element type to render the badge as (e.g., 'span', default: 'div') | no Changes |
+| className     | string            | Enables additional styling                                             | no Changes |
+| testId        | string            | Sets test-id property (default: 'cf-ui-navbar-badge')                  | no Changes |
+
+## Navbar.Item
+
+> [!NOTE]
+> This component does not contain breaking changes
+
+This component generates the Navigation Items. It expects a callback function and can not be used as a normal link. It is versatile and can be used with a title, as a Icon-Only Element or as a Dropdown Menu.
+
+### Code Examples
+
+#### Icon only
+
+As Icon only Element to replace for example the Navbar.Search, the label is required in this case to make it accessible. If the Navbar.Item is used like this, the label will then also be shown as a tooltip on hover of the element.
+
+```
+ <Navbar.Item onClick={()=> doSomething()} label="Quick Search" icon={<MagnifyingGlassIcon />} />
+```
+
+#### Icon and text
+
+```
+  <Navbar.Item
+    title='Content'
+    icon={<PenNibIcon/>}
+    isActive={isActive}
+    onClick={()=> doSomething()}
+    isDisabled={isDisabled}
+  />
+```
+
+### As menu trigger
+
+Navbar.Item accepts children, as soon as you hand over child-items, it will automatically become a dropodown menu trigger.
+
+```
+
+  <Navbar.Item
+    title="Apps"
+    icon={<PuzzlePieceIcon />}
+    isDisabled={isDisabled}
+  >
+    <Navbar.MenuItem title="App 1" />
+    <Navbar.MenuItem title="App 2" />
+  </Navbar.Item>
+```
