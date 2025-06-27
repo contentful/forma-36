@@ -8,23 +8,8 @@ import React, {
 } from 'react';
 import { css, cx } from 'emotion';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
-import tokens from '@contentful/f36-tokens';
-import * as f36Components from '@contentful/f36-components';
-import { ProgressStepper } from '@contentful/f36-progress-stepper';
-import { Multiselect } from '@contentful/f36-multiselect';
-import { NavList } from '@contentful/f36-navlist';
-import * as f36utils from '@contentful/f36-utils';
-import { Layout } from '@contentful/f36-layout';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
-import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
-import * as f36icons from '@contentful/f36-icons';
-import * as f36iconsAlpha from '@contentful/f36-icons-alpha';
-import { ExternalLinkIcon } from '@contentful/f36-icons';
-import { theme } from './theme';
-import { formatSourceCode } from './utils';
-import * as coder from '../../utils/coder';
-import FocusLock from 'react-focus-lock';
 import { DndContext } from '@dnd-kit/core';
 import {
   arrayMove,
@@ -35,6 +20,25 @@ import {
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { format, parse, isValid } from 'date-fns';
+import FocusLock from 'react-focus-lock';
+import Image from 'next/image';
+
+import tokens from '@contentful/f36-tokens';
+import * as f36utils from '@contentful/f36-utils';
+import * as f36Components from '@contentful/f36-components';
+import * as f36icons from '@contentful/f36-icons';
+import * as f36iconsAlpha from '@contentful/f36-icons-alpha';
+import { ProgressStepper } from '@contentful/f36-progress-stepper';
+import { Multiselect } from '@contentful/f36-multiselect';
+import { NavList } from '@contentful/f36-navlist';
+import { Layout } from '@contentful/f36-layout';
+import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
+
+import { theme } from './theme';
+import { formatSourceCode } from './utils';
+import * as coder from '../../utils/coder';
+import { svgStyles } from '../../utils/colorTokens';
+import arrowSquareOut from '../../resources/icons/arrow-square-out.svg';
 
 const liveProviderScope = {
   ...f36Components,
@@ -219,8 +223,10 @@ export function ComponentSource({
                   {isExampleFromFile && (
                     <Button
                       as="a"
-                      className={styles.playgroundButton}
-                      endIcon={<ExternalLinkIcon />}
+                      className={cx(styles.playgroundButton, svgStyles.gray900)}
+                      endIcon={
+                        <Image src={arrowSquareOut} width={18} height={18} />
+                      }
                       size="small"
                       href={`/playground?code=${coder.encode(children)}`}
                       target="_blank"
