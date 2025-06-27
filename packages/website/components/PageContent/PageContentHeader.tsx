@@ -1,11 +1,14 @@
 import React from 'react';
 import { css, cx } from 'emotion';
-import { DisplayText, Flex, TextLink, Note } from '@contentful/f36-components';
-import { ExternalLinkIcon } from '@contentful/f36-icons';
+import Image from 'next/image';
+
 import tokens from '@contentful/f36-tokens';
+import { DisplayText, Flex, TextLink, Note } from '@contentful/f36-components';
 
 import type { FrontMatter } from '../../types';
 import { getGridStyles } from '../../utils/getGridStyles';
+import { svgStyles } from '../../utils/colorTokens';
+import arrowSquareOut from '../../resources/icons/arrow-square-out.svg';
 
 const styles = {
   header: css({
@@ -80,7 +83,8 @@ export function PageContentHeader({
           href={getGithubIssueLink(title)}
           target="_blank"
           rel="noopener noreferrer"
-          icon={<ExternalLinkIcon />}
+          className={svgStyles.blue600}
+          icon={<Image src={arrowSquareOut} width={18} height={18} />}
           alignIcon="end"
         >
           Give feedback
