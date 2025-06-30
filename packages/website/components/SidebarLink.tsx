@@ -9,7 +9,7 @@ import { useSession } from 'next-auth/react';
 import { ComponentStatus } from '../types';
 
 import caretDown from '../resources/icons/caret-down.svg';
-import arrowOut from '../resources/icons/arrow-square-out.svg';
+import arrowSquareOut from '../resources/icons/arrow-square-out.svg';
 import lockSimple from '../resources/icons/lock-simple.svg';
 
 const styles = {
@@ -172,7 +172,7 @@ export function SidebarLink({
             {children}
             {isExternal && (
               <Image
-                src={arrowOut}
+                src={arrowSquareOut}
                 width={18}
                 height={18}
                 className={titleStyles.linkIcon}
