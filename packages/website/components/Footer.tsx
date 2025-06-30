@@ -1,13 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
-import { css, cx } from 'emotion';
+import { css } from '@emotion/core';
+import { cx } from 'emotion';
 import { TextLink, Flex, type TextLinkProps } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 
 import contentfulLogoSVG from '../resources/icons/contentful-logo.svg';
 import { getGridStyles } from '../utils/getGridStyles';
 
-import { ArrowSquareOutIcon } from '@contentful/f36-icons-alpha';
+import ArrowSquareOutIcon from '../resources/icons/arrow-square-out.svg';
 
 const styles = {
   footer: css({
@@ -83,7 +84,7 @@ export function Footer() {
           width={120}
           height={25}
           src={contentfulLogoSVG}
-          alt="Contentful’s logo"
+          alt="Contentful's logo"
         />
       </a>
     </footer>

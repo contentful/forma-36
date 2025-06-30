@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { TextInput } from '@contentful/f36-components';
 
-import { MagnifyingGlassIcon } from '@contentful/f36-icons-alpha';
+import MagnifyingGlassIcon from '../resources/icons/magnifying-glass.svg';
 
 import tokens from '@contentful/f36-tokens';
 

@@ -7,9 +7,7 @@ import { Flex, Text, Heading, Tooltip } from '@contentful/f36-components';
 import { useUrlSync } from './useUrlSync';
 import { CodeSandboxLogo } from './codesandbox-logo';
 
-import { LinkSimpleIcon } from '@contentful/f36-icons-alpha';
-
-import { Icon } from '@contentful/f36-icon-alpha';
+import LinkSimpleIcon from '../../resources/icons/lock-simple.svg';
 
 const styles = {
   topbar: css({
@@ -65,7 +63,7 @@ export function PlaygroundTopBar() {
         <UnstyledOpenInCodeSandboxButton
           className={cx(styles.embeddedButton, styles.codeSandboxButton)}
         >
-          <Icon as={CodeSandboxLogo} color={tokens.gray600} />
+          <CodeSandboxLogo color={tokens.gray600} />
           <Text fontColor="gray800">Open in CodeSandbox</Text>
         </UnstyledOpenInCodeSandboxButton>
       </Flex>

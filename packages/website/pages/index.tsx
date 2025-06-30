@@ -20,7 +20,7 @@ import { SCREEN_BREAKPOINT_LARGE } from '../utils/getGridStyles';
 import { Layout } from '../components/Layout';
 import { getTopbarLinks } from '../lib/api';
 
-import { ArrowRightIcon } from '@contentful/f36-icons-alpha';
+import ArrowRightIcon from '../resources/icons/arrow-right.svg';
 
 const styles = {
   grid: css({
@@ -81,7 +81,7 @@ export default function Home({ topbarLinks }: HomeProps) {
 
             <Flex className={styles.sections} gap="spacing2Xl">
               <Flex flexDirection="column" alignItems="flex-start">
-                <Image src={figmaSVG} alt="Figma’s logo" />
+                <Image src={figmaSVG} alt="Figma's logo" />
 
                 <Heading marginTop="spacingM">Figma UI Kit</Heading>
                 <Paragraph>
@@ -97,7 +97,7 @@ export default function Home({ topbarLinks }: HomeProps) {
               </Flex>
 
               <Flex flexDirection="column" alignItems="flex-start">
-                <Image src={reactSVG} alt="React’s logo" />
+                <Image src={reactSVG} alt="React's logo" />
 
                 <Heading marginTop="spacingM">React Components</Heading>
                 <Paragraph>
@@ -128,7 +128,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      topbarLinks,
+      topbarLinks: topbarLinks ?? [],
     },
   };
 }

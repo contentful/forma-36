@@ -1,5 +1,6 @@
 import React from 'react';
-import { css, cx } from 'emotion';
+import { css } from '@emotion/core';
+import { cx } from 'emotion';
 import { Grid, Flex, List, Button } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 
