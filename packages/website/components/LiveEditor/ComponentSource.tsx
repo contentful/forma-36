@@ -38,7 +38,7 @@ import * as coder from '../../utils/coder';
 import { svgStyles } from '../../utils/colorTokens';
 import arrowSquareOut from '../../resources/icons/arrow-square-out.svg';
 import eyeClose from '../../resources/icons/eye-slash.svg';
-import eyeOpen from '../../resources/icons/eye-open.svg';
+import eyeOpen from '../../resources/icons/eye.svg';
 
 const liveProviderScope = {
   ...f36Components,
