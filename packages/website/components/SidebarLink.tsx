@@ -9,7 +9,7 @@ import { useSession } from 'next-auth/react';
 import { ComponentStatus } from '../types';
 
 import caretDown from '../resources/icons/caret-down.svg';
-import arrowOut from '../resources/icons/arrow-out.svg';
+import arrowOut from '../resources/icons/arrow-square-out.svg';
 import lockSimple from '../resources/icons/lock-simple.svg';
 
 const styles = {
