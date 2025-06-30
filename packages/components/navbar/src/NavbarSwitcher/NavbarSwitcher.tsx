@@ -34,7 +34,6 @@ type NavbarLoadingProps =
 
 type NavbarSwitcherOwnProps = CommonProps &
   NavbarLoadingProps & {
-    isCircle?: boolean;
     envVariant?: EnvVariant;
     isAlias?: boolean;
     ariaLabel?: string;
