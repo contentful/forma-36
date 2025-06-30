@@ -1,12 +1,13 @@
 import React from 'react';
-import { css, cx } from 'emotion';
+import { css } from '@emotion/core';
+import { cx } from 'emotion';
 import { DisplayText, Flex, TextLink, Note } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 
 import type { FrontMatter } from '../../types';
 import { getGridStyles } from '../../utils/getGridStyles';
 
-import { ArrowSquareOutIcon } from '@contentful/f36-icons-alpha';
+import ArrowSquareOutIcon from '../../resources/icons/arrow-square-out.svg';
 
 const styles = {
   header: css({

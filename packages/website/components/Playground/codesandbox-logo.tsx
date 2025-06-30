@@ -1,10 +1,12 @@
 import React from 'react';
-import { generateIcon } from '@contentful/f36-icon';
 
-export const CodeSandboxLogo = generateIcon({
-  name: 'CodeSandbox',
-  viewBox: '0 0 18 18',
-  path: (
+export const CodeSandboxLogo = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 18 18"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <g>
       <path d="M3.24284 5.11427L8.63639 2.17808C8.92945 2.01854 9.28432 2.02264 9.57361 2.18889L14.7726 5.17673C15.011 5.3137 15.1579 5.56762 15.1579 5.84251V12.1884C15.1579 12.4639 15.0103 12.7183 14.7711 12.8551L9.38463 15.9346C9.1466 16.0707 8.85406 16.0696 8.61711 15.9316L3.22361 12.7912C2.9874 12.6537 2.8421 12.4009 2.8421 12.1276V5.7887C2.8421 5.50747 2.99584 5.24873 3.24284 5.11427Z" />
       <path
@@ -20,5 +22,5 @@ export const CodeSandboxLogo = generateIcon({
         fillRule="evenodd"
       />
     </g>
-  ),
-});
+  </svg>
+);

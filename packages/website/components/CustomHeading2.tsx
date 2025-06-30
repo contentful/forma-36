@@ -3,7 +3,7 @@ import { TextLink, Stack, Heading } from '@contentful/f36-components';
 
 import { useFrontMatterContext } from '../utils/frontMatterContext';
 
-import { ArrowSquareOutIcon } from '@contentful/f36-icons-alpha';
+import ArrowSquareOutIcon from '../resources/icons/arrow-square-out.svg';
 
 const PROPS_TITLE = 'Props (API reference)';
 

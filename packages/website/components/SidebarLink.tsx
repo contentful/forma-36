@@ -6,11 +6,9 @@ import { List, Flex, Text, Badge } from '@contentful/f36-components';
 import { useSession } from 'next-auth/react';
 import { ComponentStatus } from '../types';
 
-import {
-  CaretDownIcon,
-  ArrowSquareOutIcon,
-  LockSimpleIcon,
-} from '@contentful/f36-icons-alpha';
+import CaretDownIcon from '../resources/icons/caret-down.svg';
+import ArrowSquareOutIcon from '../resources/icons/arrow-square-out.svg';
+import LockSimpleIcon from '../resources/icons/lock-simple.svg';
 
 const styles = {
   link: css({

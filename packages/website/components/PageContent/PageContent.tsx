@@ -1,6 +1,7 @@
 import React from 'react';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { css, cx } from 'emotion';
+import { css } from '@emotion/core';
+import { cx } from 'emotion';
 import { Flex, Text } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 

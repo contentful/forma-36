@@ -18,11 +18,11 @@ import { Layout } from '@contentful/f36-layout';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
 import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
-import {
-  EyeIcon,
-  EyeClosedIcon,
-  ArrowSquareOutIcon,
-} from '@contentful/f36-icons-alpha';
+
+import EyeIcon from '../../resources/icons/eye.svg';
+import EyeClosedIcon from '../../resources/icons/eye-slash.svg';
+import ArrowSquareOutIcon from '../../resources/icons/arrow-square-out.svg';
+
 import { theme } from './theme';
 import { formatSourceCode } from './utils';
 import * as coder from '../../utils/coder';

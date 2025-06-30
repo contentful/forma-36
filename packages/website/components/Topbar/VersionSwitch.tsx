@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex, Menu, Button } from '@contentful/f36-components';
 
-import { CaretDownIcon } from '@contentful/f36-icons-alpha';
+import CaretDownIcon from '../../resources/icons/caret-down.svg';
 
 export function VersionSwitch() {
   return (
