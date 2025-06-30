@@ -9,6 +9,7 @@ import { useUrlSync } from './useUrlSync';
 import { CodeSandboxLogo } from './codesandbox-logo';
 
 import linkSimple from '../../resources/icons/link-simple.svg';
+import { svgStyles } from '../../utils/colorTokens';
 
 const styles = {
   topbar: css({
@@ -97,7 +98,12 @@ function UrlCopyButton({ url }) {
           gap="spacingXs"
           className={cx(styles.embeddedButton, styles.shareButton)}
         >
-          <Image src={linkSimple} width={18} height={18} />
+          <Image
+            src={linkSimple}
+            width={18}
+            height={18}
+            className={svgStyles.gray900}
+          />
           <Text fontColor="gray800">Copy Playground URL</Text>
         </Flex>
       </Tooltip>
