@@ -1,7 +1,6 @@
 import React from 'react';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { css } from '@emotion/core';
-import { cx } from 'emotion';
 import { Flex, Text } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 
@@ -74,11 +73,7 @@ export function PageContent({
 
   return (
     <div
-      className={cx(
-        styles.grid,
-        gridStyles.contentColumns,
-        gridStyles.contentColumnsBigScreens,
-      )}
+      className={`${styles.grid} ${gridStyles.contentColumns} ${gridStyles.contentColumnsBigScreens}`}
     >
       <PageContentHeader title={title} status={status}>
         {source.shortIntro && <MdxRenderer source={source.shortIntro} />}
@@ -89,7 +84,7 @@ export function PageContent({
         )}
       </PageContentHeader>
 
-      <Flex flexDirection="column" className={styles.content}>
+      <Flex flexDirection="column" className={`${styles.content}`}>
         {/**
          * We need to wrap the text of the page into an element without Grid or Flex
          * because we want the margins of our headings and paragraphs to collapse
@@ -97,7 +92,7 @@ export function PageContent({
          * A good article about margin collapse by Josh Comeau:
          * https://www.joshwcomeau.com/css/rules-of-margin-collapse/#flow-layout-only
          */}
-        <article className={styles.article}>
+        <article className={`${styles.article}`}>
           {source.mainContent && <MdxRenderer source={source.mainContent} />}
           {source.richTextBody && (
             <RichText
@@ -110,7 +105,7 @@ export function PageContent({
       </Flex>
 
       {headings.length > 1 && (
-        <nav className={styles.tableOfContent}>
+        <nav className={`${styles.tableOfContent}`}>
           <TableOfContent headings={headings} />
         </nav>
       )}

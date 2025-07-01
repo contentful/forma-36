@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import { css } from '@emotion/core';
-import { cx } from 'emotion';
 import { TextLink, Flex, type TextLinkProps } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 
@@ -25,13 +24,9 @@ export function Footer() {
 
   return (
     <footer
-      className={cx(
-        gridStyles.contentColumns,
-        gridStyles.contentColumnsBigScreens,
-        styles.footer,
-      )}
+      className={`${gridStyles.contentColumns} ${gridStyles.contentColumnsBigScreens} ${styles.footer}`}
     >
-      <Flex className={gridStyles.columnStartTwo} gap="spacing2Xl">
+      <Flex className={`${gridStyles.columnStartTwo}`} gap="spacing2Xl">
         <Flex flexDirection="column" alignItems="flex-start" gap="spacingM">
           <FooterLink
             href="https://github.com/contentful/forma-36"

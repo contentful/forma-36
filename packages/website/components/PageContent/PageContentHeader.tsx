@@ -1,6 +1,5 @@
 import React from 'react';
 import { css } from '@emotion/core';
-import { cx } from 'emotion';
 import { DisplayText, Flex, TextLink, Note } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 
@@ -66,12 +65,12 @@ export function PageContentHeader({
   const showNote = status !== 'stable';
 
   return (
-    <header className={cx(gridStyles.contentColumns, styles.header)}>
+    <header className={`${gridStyles.contentColumns}, ${styles.header}`}>
       <DisplayText as="h1" marginBottom={showNote ? 'spacingXl' : 'spacingXs'}>
         {title}
       </DisplayText>
       <Flex
-        className={styles.gitHubLink}
+        className={`${styles.gitHubLink}`}
         paddingLeft="spacing2Xl"
         flexDirection="column"
         gap={tokens.spacingXs}
@@ -110,7 +109,7 @@ export function PageContentHeader({
           </Note>
         </Flex>
       )}
-      <Flex flexDirection="column" className={styles.intro}>
+      <Flex flexDirection="column" className={`${styles.intro}`}>
         {children}
       </Flex>
     </header>
