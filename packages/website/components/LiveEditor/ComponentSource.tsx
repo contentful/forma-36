@@ -6,6 +6,7 @@ import React, {
   useMemo,
   useContext,
 } from 'react';
+import Image from 'next/image';
 import { css, cx } from 'emotion';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import tokens from '@contentful/f36-tokens';
@@ -18,11 +19,6 @@ import { Layout } from '@contentful/f36-layout';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
 import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
-import {
-  EyeIcon,
-  EyeClosedIcon,
-  ArrowSquareOutIcon,
-} from '@contentful/f36-icons-alpha';
 import { theme } from './theme';
 import { formatSourceCode } from './utils';
 import * as coder from '../../utils/coder';
@@ -37,6 +33,10 @@ import {
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { format, parse, isValid } from 'date-fns';
+import { svgStyles } from '../../utils/colorTokens';
+import arrowSquareOut from '../../resources/icons/arrow-square-out.svg';
+import eyeClose from '../../resources/icons/eye-slash.svg';
+import eyeOpen from '../../resources/icons/eye.svg';
 
 const liveProviderScope = {
   ...f36Components,
@@ -72,7 +72,6 @@ const liveProviderScope = {
   format,
   parse,
   isValid,
-  ArrowSquareOutIcon,
 };
 
 const styles = {
@@ -145,8 +144,6 @@ const styles = {
     border-radius: 0 0 ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium};
   `,
 };
-const ComponentPreviewIcon = EyeIcon;
-const ComponentPreviewOffIcon = EyeClosedIcon;
 
 export function ComponentSource({
   children,
@@ -187,9 +184,9 @@ export function ComponentSource({
                 variant="secondary"
                 startIcon={
                   showSource ? (
-                    <ComponentPreviewOffIcon />
+                    <Image src={eyeClose} width={18} height={18} />
                   ) : (
-                    <ComponentPreviewIcon />
+                    <Image src={eyeOpen} width={18} height={18} />
                   )
                 }
                 onClick={handleToggle}
@@ -219,8 +216,10 @@ export function ComponentSource({
                   {isExampleFromFile && (
                     <Button
                       as="a"
-                      className={styles.playgroundButton}
-                      endIcon={<ArrowSquareOutIcon />}
+                      className={cx(styles.playgroundButton, svgStyles.gray900)}
+                      endIcon={
+                        <Image src={arrowSquareOut} width={18} height={18} />
+                      }
                       size="small"
                       href={`/playground?code=${coder.encode(children)}`}
                       target="_blank"

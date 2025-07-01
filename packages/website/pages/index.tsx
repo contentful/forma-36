@@ -20,7 +20,7 @@ import { SCREEN_BREAKPOINT_LARGE } from '../utils/getGridStyles';
 import { Layout } from '../components/Layout';
 import { getTopbarLinks } from '../lib/api';
 
-import { ArrowRightIcon } from '@contentful/f36-icons-alpha';
+import arrowRight from '../resources/icons/arrow-right.svg';
 
 const styles = {
   grid: css({
@@ -73,7 +73,7 @@ export default function Home({ topbarLinks }: HomeProps) {
                 href="/introduction/getting-started"
                 variant="primary"
                 size="large"
-                endIcon={<ArrowRightIcon />}
+                endIcon={<Image src={arrowRight} width={18} height={18} />}
               >
                 Get started
               </Button>

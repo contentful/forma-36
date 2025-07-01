@@ -1,14 +1,18 @@
 import React from 'react';
+import Image from 'next/image';
 import { Flex, Menu, Button } from '@contentful/f36-components';
 
-import { CaretDownIcon } from '@contentful/f36-icons-alpha';
+import caretDown from '../../resources/icons/caret-down.svg';
 
 export function VersionSwitch() {
   return (
     <Flex alignItems="center" marginLeft="spacingM">
       <Menu usePortal={false}>
         <Menu.Trigger>
-          <Button size="small" endIcon={<CaretDownIcon />}>
+          <Button
+            size="small"
+            endIcon={<Image src={caretDown} width={18} height={18} />}
+          >
             v4
           </Button>
         </Menu.Trigger>

@@ -7,7 +7,8 @@ import tokens from '@contentful/f36-tokens';
 import contentfulLogoSVG from '../resources/icons/contentful-logo.svg';
 import { getGridStyles } from '../utils/getGridStyles';
 
-import { ArrowSquareOutIcon } from '@contentful/f36-icons-alpha';
+import { svgStyles } from '../utils/colorTokens';
+import arrowSquareOut from '../resources/icons/arrow-square-out.svg';
 
 const styles = {
   footer: css({
@@ -95,7 +96,8 @@ function FooterLink({ href, label, isExternal = true }) {
     ? {
         target: '_blank',
         rel: 'noopener noreferrer',
-        icon: <ArrowSquareOutIcon />,
+        className: svgStyles.gray600,
+        icon: <Image src={arrowSquareOut} width={18} height={18} />,
         alignIcon: 'end' as TextLinkProps['alignIcon'],
       }
     : {};

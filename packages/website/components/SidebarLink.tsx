@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { css, cx } from 'emotion';
 import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
@@ -6,11 +7,9 @@ import { List, Flex, Text, Badge } from '@contentful/f36-components';
 import { useSession } from 'next-auth/react';
 import { ComponentStatus } from '../types';
 
-import {
-  CaretDownIcon,
-  ArrowSquareOutIcon,
-  LockSimpleIcon,
-} from '@contentful/f36-icons-alpha';
+import caretDown from '../resources/icons/caret-down.svg';
+import arrowSquareOut from '../resources/icons/arrow-square-out.svg';
+import lockSimple from '../resources/icons/lock-simple.svg';
 
 const styles = {
   link: css({
@@ -94,7 +93,10 @@ export function SidebarSectionButton({
           {children}
         </Text>
 
-        <CaretDownIcon
+        <Image
+          src={caretDown}
+          width={18}
+          height={18}
           color={tokens.gray600}
           className={cx(titleStyles.chevron, {
             [titleStyles.closedIcon]: !isOpen,
@@ -169,13 +171,19 @@ export function SidebarLink({
           <span className={cx([titleStyles.clickable])}>
             {children}
             {isExternal && (
-              <ArrowSquareOutIcon
+              <Image
+                src={arrowSquareOut}
+                width={18}
+                height={18}
                 color={tokens.gray600}
                 className={titleStyles.linkIcon}
               />
             )}
             {isAuthProtected && (
-              <LockSimpleIcon
+              <Image
+                src={lockSimple}
+                width={18}
+                height={18}
                 color={tokens.gray600}
                 className={titleStyles.linkIcon}
               />
