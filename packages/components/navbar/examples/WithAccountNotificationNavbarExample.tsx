@@ -65,7 +65,7 @@ export default function WithAccountNotificationNavbarExample() {
           hasNotification={true}
           notificationVariant="warning"
         >
-          <Navbar.MenuItem title="Account settings" />
+          <Navbar.MenuItem title="Account settings" icon={<WrenchIcon />} />
           <Navbar.MenuItem title="Dashboard" />
           <Navbar.MenuDivider />
           <Navbar.MenuItem
