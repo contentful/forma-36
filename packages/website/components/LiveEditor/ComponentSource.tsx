@@ -114,14 +114,13 @@ const styles = {
   // !important is needed to overwrite the react live setup.
   editor: css`
     min-height: 120px;
-    padding: ${tokens.spacingL} ${tokens.spacingL} ${tokens.spacingXl} !important;
-    border-radius: 0 0 ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium};
     & > textarea {
       padding: inherit !important;
       border-radius: inherit;
     }
     & > pre {
-      padding: 0 !important;
+      border-radius: 0 0 ${tokens.borderRadiusMedium}
+        ${tokens.borderRadiusMedium};
     }
   `,
   editorHidden: css`
