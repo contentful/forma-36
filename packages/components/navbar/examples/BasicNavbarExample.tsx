@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navbar } from '@contentful/f36-components';
-import { EntryIcon, ImageSquareIcon } from '@contentful/f36-icons';
 
 export default function BasicNavbarExample() {
   return (
@@ -30,8 +29,8 @@ export default function BasicNavbarExample() {
     >
       <Navbar.Item title="Home" isActive />
       <Navbar.Item title="Content model" />
-      <Navbar.Item title="Content" icon={<EntryIcon />} />
-      <Navbar.Item title="Media" icon={<ImageSquareIcon />} />
+      <Navbar.Item title="Content" />
+      <Navbar.Item title="Media" />
       <Navbar.Item title="Apps">
         <Navbar.MenuItem
           title="App 1"
