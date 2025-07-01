@@ -1,4 +1,5 @@
 import React from 'react';
+import { cx } from 'emotion';
 import { css } from '@emotion/core';
 import { Grid } from '@contentful/f36-components';
 
@@ -42,7 +43,7 @@ export function Layout({
     <>
       {isPreview && <PreviewAlert />}
       <Grid
-        className={`${gridStyles.wrapper} ${gridStyles.wrapperColumns}`}
+        className={cx(gridStyles.wrapper, gridStyles.wrapperColumns)}
         columnGap="none"
       >
         <Topbar links={topbarLinks} />
@@ -54,7 +55,7 @@ export function Layout({
           key={currentPage}
           area="content"
           as="main"
-          className={`${styles.mainItem}`}
+          className={styles.mainItem}
         >
           {children}
           {!isPlayground && <Footer />}
