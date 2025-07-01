@@ -1,6 +1,6 @@
 import React from 'react';
 import { Subheading, type HeadingElement } from '@contentful/f36-typography';
-import { ChevronDownTrimmedIcon } from '@contentful/f36-icons';
+import { CaretDownIcon } from '@contentful/f36-icons';
 import type { CommonProps } from '@contentful/f36-core';
 
 import { getAccordionHeaderStyles } from './AccordionHeader.styles';
@@ -54,7 +54,8 @@ export const AccordionHeader = ({
         className={styles.accordionHeader}
         onClick={onClick}
       >
-        <ChevronDownTrimmedIcon
+        <CaretDownIcon
+          size="tiny"
           className={styles.accordionHeaderIcon}
           variant="secondary"
         />
