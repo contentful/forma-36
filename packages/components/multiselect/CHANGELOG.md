@@ -1,5 +1,11 @@
 ## Change Log
 
+## 4.26.2
+
+### Patch Changes
+
+- [#3123](https://github.com/contentful/forma-36/pull/3123) [`b90eb24`](https://github.com/contentful/forma-36/commit/b90eb24ac6931ff0e82fdfb9f833abe5413e5ad1) Thanks [@loweisz](https://github.com/loweisz)! - feat: add triggerbuttonprops to multiselect
+
 ## 4.26.1
 
 ### Patch Changes
