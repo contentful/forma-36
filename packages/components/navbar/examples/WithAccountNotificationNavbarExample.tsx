@@ -69,6 +69,7 @@ export default function WithAccountNotificationNavbarExample() {
             as="a"
             href="https://www.contentful.com"
             target="_blank"
+            rel="noopener noreferrer"
           />
           <Navbar.MenuDivider />
           <Navbar.MenuItem title="Log out" />
