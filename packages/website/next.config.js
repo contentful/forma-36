@@ -4,6 +4,9 @@ const withMDX = require('@next/mdx')({
 });
 
 const nextConfig = withMDX({
+  experimental: {
+    esmExternals: 'loose',
+  },
   pageExtensions: ['ts', 'tsx', 'mdx'],
   async redirects() {
     return [
