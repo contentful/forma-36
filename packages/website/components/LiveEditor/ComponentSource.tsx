@@ -36,7 +36,7 @@ import { theme } from './theme';
 import { formatSourceCode } from './utils';
 import * as coder from '../../utils/coder';
 import { svgStyles } from '../../utils/colorTokens';
-import * as f36iconsAlpha from '@contentful/f36-icons-alpha';
+import * as f36icons from '@contentful/f36-icons';
 import arrowSquareOut from '../../resources/icons/arrow-square-out.svg';
 import eyeClose from '../../resources/icons/eye-slash.svg';
 import eyeOpen from '../../resources/icons/eye.svg';
@@ -44,7 +44,7 @@ import eyeOpen from '../../resources/icons/eye.svg';
 const liveProviderScope = {
   ...f36Components,
   ...f36utils,
-  ...f36iconsAlpha, // Remove when new icons are not in alpha
+  ...f36icons,
   Layout, // Remove when added to f36-components
   Multiselect, // Remove when added to f36-components
   NavList, // Remove when added to f36-components

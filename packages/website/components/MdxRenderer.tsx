@@ -2,7 +2,7 @@ import React from 'react';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import * as f36Components from '@contentful/f36-components';
-import * as f36Icons from '@contentful/f36-icons-alpha';
+import * as f36Icons from '@contentful/f36-icons';
 import NextLink from 'next/link';
 import { MdxComponents } from '../mdx-components';
 import { ComponentSource } from './LiveEditor/ComponentSource';
