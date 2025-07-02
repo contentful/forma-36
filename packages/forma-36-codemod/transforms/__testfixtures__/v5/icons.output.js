@@ -7,10 +7,9 @@ import {
   TrashSimpleIcon,
   InfoIcon,
   EyeClosedIcon,
-  IconProps,
-} from "@contentful/f36-icons-alpha";
+} from "@contentful/f36-icons";
 
-import { Icon } from "@contentful/f36-icon-alpha";
+import { Icon } from "@contentful/f36-icon";
 
 import tokens from "@contentful/f36-tokens";
 
