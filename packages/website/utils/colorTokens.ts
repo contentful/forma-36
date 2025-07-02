@@ -24,6 +24,8 @@ export const tokens = {
 };
 
 const colorTokenToSvgFilter = {
+  white:
+    'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(345deg) brightness(102%) contrast(103%)',
   blue600:
     'brightness(0) saturate(100%) invert(30%) sepia(88%) saturate(7488%) hue-rotate(205deg) brightness(91%) contrast(101%)',
   blue700:
@@ -37,6 +39,11 @@ const colorTokenToSvgFilter = {
 };
 
 export const svgStyles = {
+  white: css({
+    img: {
+      filter: colorTokenToSvgFilter.white,
+    },
+  }),
   blue600: css({
     img: {
       filter: colorTokenToSvgFilter.blue600,

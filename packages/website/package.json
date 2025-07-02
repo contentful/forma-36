@@ -23,6 +23,7 @@
     "@contentful/f36-navlist": "4.1.0-alpha.2",
     "@contentful/f36-progress-stepper": "4.0.0-alpha.4",
     "@contentful/f36-tokens": "^4.2.0",
+    "@contentful/f36-typography": "^5.0.0-alpha.1",
     "@contentful/f36-utils": "^4.24.3",
     "@contentful/rich-text-react-renderer": "^16.0.0",
     "@dnd-kit/core": "^6.0.8",
