@@ -5,7 +5,7 @@ import {
   TextBIcon,
   TextItalicIcon,
   TextUnderlineIcon,
-} from '@contentful/f36-icons-alpha';
+} from '@contentful/f36-icons';
 
 export default function ToggleButtonGroupedExample() {
   const [isItalic, setIsItalic] = useState(false);

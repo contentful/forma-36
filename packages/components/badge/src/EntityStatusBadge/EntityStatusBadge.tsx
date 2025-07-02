@@ -8,7 +8,7 @@ import type {
 import { Badge, type BadgeProps } from '../Badge/Badge';
 import type { BadgeSize, BadgeVariant } from '../types';
 
-import { ClockIcon } from '@contentful/f36-icons-alpha';
+import { ClockIcon } from '@contentful/f36-icons';
 
 const statusMap: { [key in EntityStatus]: BadgeVariant } = {
   published: 'positive',

@@ -4,7 +4,7 @@ import React, {
   type MouseEventHandler,
   type FocusEventHandler,
 } from 'react';
-import { CopySimpleIcon } from '@contentful/f36-icons-alpha';
+import { CopySimpleIcon } from '@contentful/f36-icons';
 import type { ExpandProps } from '@contentful/f36-core';
 import { Tooltip, type TooltipProps } from '@contentful/f36-tooltip';
 import { Button, type ButtonProps } from '@contentful/f36-button';

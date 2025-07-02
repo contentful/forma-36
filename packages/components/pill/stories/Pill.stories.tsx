@@ -7,7 +7,7 @@ import { css } from 'emotion';
 
 import { Pill, type PillInternalProps } from '../src/Pill';
 
-import { InfoIcon } from '@contentful/f36-icons-alpha';
+import { InfoIcon } from '@contentful/f36-icons';
 
 import tokens from '@contentful/f36-tokens';
 
@@ -246,6 +246,6 @@ export const InSmallContainer: Story<PillInternalProps> = (args) => {
 };
 
 InSmallContainer.args = {
-  label: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac libero at dui auctor  convallis eget non dolor. Integer sodales, lacus et tempus faucibus, elit elit condimentum metus, a 
+  label: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac libero at dui auctor  convallis eget non dolor. Integer sodales, lacus et tempus faucibus, elit elit condimentum metus, a
     dignissim velit ipsum vel nisl`,
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Note } from '@contentful/f36-components';
 
-import { PuzzlePieceIcon } from '@contentful/f36-icons-alpha';
+import { PuzzlePieceIcon } from '@contentful/f36-icons';
 
 export default function WithCustomIconExample() {
   return (

@@ -4,7 +4,7 @@ import { type CommonProps } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
 import { getStyles } from './Step.styles';
 
-import { XIcon, CheckIcon, WarningIcon } from '@contentful/f36-icons-alpha';
+import { XIcon, CheckIcon, WarningIcon } from '@contentful/f36-icons';
 
 import tokens from '@contentful/f36-tokens';
 

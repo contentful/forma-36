@@ -4,7 +4,7 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
 
 import { Flex, Stack } from '@contentful/f36-core';
-import * as icons from '@contentful/f36-icons-alpha';
+import * as icons from '@contentful/f36-icons';
 
 import { ButtonGroup } from '../src';
 import { ToggleButton, type ToggleButtonProps } from '../src/ToggleButton';

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, IconButton } from '@contentful/f36-components';
 
-import { ListIcon } from '@contentful/f36-icons-alpha';
+import { ListIcon } from '@contentful/f36-icons';
 
 export default function ControlledMenuWithCustomTriggerLogic() {
   const [isOpen, setIsOpen] = useState(false);

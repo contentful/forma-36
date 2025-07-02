@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pill } from '@contentful/f36-components';
 
-import { DotsSixVerticalIcon } from '@contentful/f36-icons-alpha';
+import { DotsSixVerticalIcon } from '@contentful/f36-icons';
 
 import tokens from '@contentful/f36-tokens';
 

@@ -5,7 +5,7 @@ import { cx } from 'emotion';
 
 import { getCardActionsStyles } from './CardActions.styles';
 
-import { DotsThreeIcon } from '@contentful/f36-icons-alpha';
+import { DotsThreeIcon } from '@contentful/f36-icons';
 
 export type CardActionsProps = {
   buttonProps?: Partial<Omit<ButtonProps<'button'>, 'ref'>>;

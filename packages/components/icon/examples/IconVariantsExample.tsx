@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CalendarBlankIcon } from '@contentful/f36-icons-alpha';
+import { CalendarBlankIcon } from '@contentful/f36-icons';
 import { Stack, Flex, Text } from '@contentful/f36-components';
 
 export default function IconVariantsExample() {

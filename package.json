@@ -136,6 +136,6 @@
     "npm": "8.3.0"
   },
   "dependencies": {
-    "@contentful/f36-icons-alpha": "npm:@contentful/f36-icons@^5.0.0-alpha.44"
+    "@contentful/f36-icons": "^5.0.0-alpha.44"
   }
 }

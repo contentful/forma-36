@@ -2,7 +2,7 @@ import React from 'react';
 import { Stack } from '@contentful/f36-components';
 import { Multiselect } from '@contentful/f36-multiselect';
 
-import { InfoIcon } from '@contentful/f36-icons-alpha';
+import { InfoIcon } from '@contentful/f36-icons';
 
 export default function MultiselectSearchExample() {
   const spaces = [

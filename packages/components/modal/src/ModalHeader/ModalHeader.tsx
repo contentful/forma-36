@@ -10,7 +10,7 @@ import { Text, Subheading } from '@contentful/f36-typography';
 
 import { getModalHeaderStyles } from './ModalHeader.styles';
 
-import { XIcon } from '@contentful/f36-icons-alpha';
+import { XIcon } from '@contentful/f36-icons';
 
 interface ModalHeaderInternalProps extends CommonProps {
   title: string;

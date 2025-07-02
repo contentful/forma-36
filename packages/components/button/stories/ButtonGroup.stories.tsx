@@ -8,7 +8,7 @@ import tokens from '@contentful/f36-tokens';
 import { ButtonVariant } from '../src/types';
 import { ButtonGroupVariants } from '../src/ButtonGroup/types';
 
-import { CaretDownIcon } from '@contentful/f36-icons-alpha';
+import { CaretDownIcon } from '@contentful/f36-icons';
 
 export default {
   component: ButtonGroup,

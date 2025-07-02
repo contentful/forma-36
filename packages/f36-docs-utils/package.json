@@ -21,7 +21,7 @@
   "dependencies": {
     "@contentful/f36-components": "^4.21.4",
     "@contentful/f36-tokens": "^4.0.0",
-    "@contentful/f36-icons-alpha": "npm:@contentful/f36-icons@5.0.0-alpha.42",
+    "@contentful/f36-icons": "^5.0.0-alpha.44",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {

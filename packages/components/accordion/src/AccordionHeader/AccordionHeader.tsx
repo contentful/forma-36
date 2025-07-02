@@ -4,7 +4,7 @@ import type { CommonProps } from '@contentful/f36-core';
 
 import { getAccordionHeaderStyles } from './AccordionHeader.styles';
 
-import { CaretDownIcon } from '@contentful/f36-icons-alpha';
+import { CaretDownIcon } from '@contentful/f36-icons';
 
 import tokens from '@contentful/f36-tokens';
 

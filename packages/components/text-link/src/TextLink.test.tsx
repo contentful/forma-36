@@ -5,7 +5,7 @@ import tokens from '@contentful/f36-tokens';
 import { axe } from 'jest-axe';
 import { TextLink } from './TextLink';
 
-import { CaretDownIcon } from '@contentful/f36-icons-alpha';
+import { CaretDownIcon } from '@contentful/f36-icons';
 
 describe('TextLink', function () {
   it('renders as a button', () => {

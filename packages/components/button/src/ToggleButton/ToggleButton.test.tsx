@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
-import { EyeIcon } from '@contentful/f36-icons-alpha';
+import { EyeIcon } from '@contentful/f36-icons';
 
 import { ToggleButton } from './ToggleButton';
 

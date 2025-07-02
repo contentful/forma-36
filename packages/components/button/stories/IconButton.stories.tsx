@@ -3,7 +3,7 @@ import type { Meta } from '@storybook/react/types-6-0';
 import { SectionHeading, Paragraph } from '@contentful/f36-typography';
 import { Flex, Stack, Box } from '@contentful/f36-core';
 import { TextInput } from '@contentful/f36-forms';
-import * as icons from '@contentful/f36-icons-alpha';
+import * as icons from '@contentful/f36-icons';
 
 import { IconButton } from '../src/IconButton';
 

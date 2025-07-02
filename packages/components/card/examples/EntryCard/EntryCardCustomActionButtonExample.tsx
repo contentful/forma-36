@@ -1,7 +1,7 @@
 import React from 'react';
 import { EntryCard, IconButton } from '@contentful/f36-components';
 
-import { XIcon } from '@contentful/f36-icons-alpha';
+import { XIcon } from '@contentful/f36-icons';
 
 import tokens from '@contentful/f36-tokens';
 

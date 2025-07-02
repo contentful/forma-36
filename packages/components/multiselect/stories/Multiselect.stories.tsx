@@ -6,7 +6,7 @@ import { Multiselect } from '../src';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Button } from '@contentful/f36-button';
 
-import { InfoIcon } from '@contentful/f36-icons-alpha';
+import { InfoIcon } from '@contentful/f36-icons';
 
 export default {
   title: 'Components/Multiselect',

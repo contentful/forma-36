@@ -16,7 +16,7 @@ import FocusLock from 'react-focus-lock';
 import type { MultiselectSearchProps as SearchProps } from './MultiselectSearch';
 import { MultiselectSearch } from './MultiselectSearch';
 
-import { CaretDownIcon, XIcon } from '@contentful/f36-icons-alpha';
+import { CaretDownIcon, XIcon } from '@contentful/f36-icons';
 
 type ClearButtonProps = {
   /**

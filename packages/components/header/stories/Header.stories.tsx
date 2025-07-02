@@ -9,7 +9,7 @@ import { TextInput } from '@contentful/f36-forms';
 import { Header, type HeaderProps } from '../src/Header';
 import { action } from '@storybook/addon-actions';
 
-import { MagnifyingGlassIcon } from '@contentful/f36-icons-alpha';
+import { MagnifyingGlassIcon } from '@contentful/f36-icons';
 
 export default {
   component: Header,

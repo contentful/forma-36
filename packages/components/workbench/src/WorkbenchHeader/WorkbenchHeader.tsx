@@ -11,7 +11,7 @@ import { IconButton } from '@contentful/f36-button';
 
 import { getWorkbenchHeaderStyles } from './WorkbenchHeader.styles';
 
-import { CaretLeftIcon } from '@contentful/f36-icons-alpha';
+import { CaretLeftIcon } from '@contentful/f36-icons';
 
 import tokens from '@contentful/f36-tokens';
 

@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@contentful/f36-icon": "^4.80.3",
-    "@contentful/f36-icons-alpha": "npm:@contentful/f36-icons@5.0.0-alpha.42"
+    "@contentful/f36-icons": "^5.0.0-alpha.44"
   },
   "peerDependencies": {
     "react": ">=16.8",

@@ -6,7 +6,7 @@ import { InputGroup } from './InputGroup';
 import { TextInput } from '@contentful/f36-forms';
 import { IconButton } from '@contentful/f36-button';
 
-import { LockSimpleIcon } from '@contentful/f36-icons-alpha';
+import { LockSimpleIcon } from '@contentful/f36-icons';
 
 describe('InputGroup', function () {
   it('renders the component', () => {

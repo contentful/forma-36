@@ -11,7 +11,7 @@ import { DragHandle } from '@contentful/f36-drag-handle';
 import { PillVariants } from './types';
 import { getPillStyles } from './Pill.styles';
 
-import { XIcon } from '@contentful/f36-icons-alpha';
+import { XIcon } from '@contentful/f36-icons';
 
 export type PillInternalProps = CommonProps & {
   /**

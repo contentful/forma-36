@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextInput, Stack } from '@contentful/f36-components';
 
-import { MagnifyingGlassIcon } from '@contentful/f36-icons-alpha';
+import { MagnifyingGlassIcon } from '@contentful/f36-icons';
 
 export default function TextInputIconExample() {
   return (

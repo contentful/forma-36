@@ -6,7 +6,7 @@ import {
   type PropsWithHTMLElement,
   type ExpandProps,
 } from '@contentful/f36-core';
-import { WarningIcon } from '@contentful/f36-icons-alpha';
+import { WarningIcon } from '@contentful/f36-icons';
 import { Text } from '@contentful/f36-typography';
 import { useFormControl } from '../FormControl/FormControlContext';
 import { useDensity } from '@contentful/f36-utils';

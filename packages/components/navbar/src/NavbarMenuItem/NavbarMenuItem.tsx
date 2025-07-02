@@ -6,7 +6,7 @@ import {
   NavbarItemIcon,
   type NavbarItemIconProps,
 } from '../NavbarItemIcon/NavbarItemIcon';
-import { ArrowSquareOutIcon } from '@contentful/f36-icons-alpha';
+import { ArrowSquareOutIcon } from '@contentful/f36-icons';
 import type {
   ExpandProps,
   PolymorphicComponent,

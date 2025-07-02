@@ -8,7 +8,7 @@ import { IconButton } from '@contentful/f36-button';
 
 import { EntryCard, type EntryCardProps } from '../src';
 
-import { ClockIcon, XIcon } from '@contentful/f36-icons-alpha';
+import { ClockIcon, XIcon } from '@contentful/f36-icons';
 
 import tokens from '@contentful/f36-tokens';
 

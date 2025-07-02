@@ -16,7 +16,7 @@ import { TextInput, type TextInputProps } from '@contentful/f36-forms';
 import { IconButton } from '@contentful/f36-button';
 import type { PopoverProps } from '@contentful/f36-popover';
 
-import { CalendarBlankIcon } from '@contentful/f36-icons-alpha';
+import { CalendarBlankIcon } from '@contentful/f36-icons';
 
 export type DatepickerProps = CommonProps & {
   /**

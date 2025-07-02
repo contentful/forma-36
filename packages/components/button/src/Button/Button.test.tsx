@@ -1,7 +1,7 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
-import { EyeIcon } from '@contentful/f36-icons-alpha';
+import { EyeIcon } from '@contentful/f36-icons';
 import { axe } from 'jest-axe';
 import { Button } from './Button';
 

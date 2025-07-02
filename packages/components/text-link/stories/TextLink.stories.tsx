@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-import * as icons from '@contentful/f36-icons-alpha';
+import * as icons from '@contentful/f36-icons';
 import { Paragraph, Text } from '@contentful/f36-typography';
 import { List } from '@contentful/f36-list';
 import { Flex } from '@contentful/f36-core';

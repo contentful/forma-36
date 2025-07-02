@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
-import * as icons from '@contentful/f36-icons-alpha';
+import * as icons from '@contentful/f36-icons';
 
 import { Badge } from '../src/Badge/Badge';
 

@@ -7,7 +7,7 @@ import { Text } from '@contentful/f36-typography';
 
 import { getRangeText } from './utils';
 
-import { CaretLeftIcon, CaretRightIcon } from '@contentful/f36-icons-alpha';
+import { CaretLeftIcon, CaretRightIcon } from '@contentful/f36-icons';
 
 type NavigationButtonsProps = {
   /**

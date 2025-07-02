@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { CaretDownIcon } from '@contentful/f36-icons-alpha';
+import { CaretDownIcon } from '@contentful/f36-icons';
 import { ButtonGroup } from './ButtonGroup';
 import { Button } from '../Button';
 

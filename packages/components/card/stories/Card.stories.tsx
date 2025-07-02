@@ -8,7 +8,7 @@ import { FormControl, TextInput, Textarea, Form } from '@contentful/f36-forms';
 
 import { Card, type CardProps } from '../src';
 
-import { ClockIcon } from '@contentful/f36-icons-alpha';
+import { ClockIcon } from '@contentful/f36-icons';
 
 export default {
   argTypes: {

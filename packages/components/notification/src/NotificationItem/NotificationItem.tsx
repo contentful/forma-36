@@ -19,7 +19,7 @@ import {
   WarningOctagonIcon,
   InfoIcon,
   WarningIcon,
-} from '@contentful/f36-icons-alpha';
+} from '@contentful/f36-icons';
 
 export interface NotificationItemProps extends CommonProps {
   /**

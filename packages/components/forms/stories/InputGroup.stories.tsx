@@ -7,7 +7,7 @@ import { TextInput, InputGroupProps } from '../src';
 import { CopyButton } from '@contentful/f36-copybutton';
 import { DensityProvider } from '@contentful/f36-utils';
 
-import { LockSimpleIcon } from '@contentful/f36-icons-alpha';
+import { LockSimpleIcon } from '@contentful/f36-icons';
 
 export default {
   title: 'Form Elements/InputGroup',

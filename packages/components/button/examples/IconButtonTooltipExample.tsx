@@ -3,7 +3,7 @@ import { IconButton, Flex, Stack } from '@contentful/f36-components';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-import { TextBIcon, TextItalicIcon } from '@contentful/f36-icons-alpha';
+import { TextBIcon, TextItalicIcon } from '@contentful/f36-icons';
 
 export default function IconButtonTooltipExample() {
   const styles = {

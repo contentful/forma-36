@@ -6,10 +6,7 @@ import { Flex } from '@contentful/f36-core';
 import { IconButton } from '@contentful/f36-button';
 import { DensityProvider } from '@contentful/f36-utils';
 
-import {
-  LockSimpleIcon,
-  MagnifyingGlassIcon,
-} from '@contentful/f36-icons-alpha';
+import { LockSimpleIcon, MagnifyingGlassIcon } from '@contentful/f36-icons';
 
 export default {
   title: 'Form Elements/TextInput',

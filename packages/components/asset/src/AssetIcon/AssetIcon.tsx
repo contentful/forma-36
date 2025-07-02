@@ -17,7 +17,7 @@ import {
   RichTextIcon,
   TableIcon,
   FileVideoIcon,
-} from '@contentful/f36-icons-alpha';
+} from '@contentful/f36-icons';
 
 export interface AssetIconProps
   extends Omit<GeneratedIconProps, 'illustration' | 'ref'> {

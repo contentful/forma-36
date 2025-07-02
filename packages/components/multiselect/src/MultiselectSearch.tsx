@@ -4,7 +4,7 @@ import { IconButton } from '@contentful/f36-button';
 import { getMultiselectStyles } from './Multiselect.styles';
 import { mergeRefs } from '@contentful/f36-core';
 
-import { XIcon, MagnifyingGlassIcon } from '@contentful/f36-icons-alpha';
+import { XIcon, MagnifyingGlassIcon } from '@contentful/f36-icons';
 
 import tokens from '@contentful/f36-tokens';
 

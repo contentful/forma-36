@@ -15,7 +15,7 @@ import { useFormControl } from '../FormControl/FormControlContext';
 import { getSelectStyles } from './Select.styles';
 import { useDensity } from '@contentful/f36-utils';
 
-import { CaretDownIcon } from '@contentful/f36-icons-alpha';
+import { CaretDownIcon } from '@contentful/f36-icons';
 
 import tokens from '@contentful/f36-tokens';
 

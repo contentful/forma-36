@@ -6,7 +6,7 @@ import type { ExpandProps } from '@contentful/f36-core';
 import { cx } from 'emotion';
 import { getSubmenuTriggerStyles } from './SubmenuTrigger.styles';
 
-import { CaretRightIcon } from '@contentful/f36-icons-alpha';
+import { CaretRightIcon } from '@contentful/f36-icons';
 
 export type SubmenuTriggerProps = Omit<
   MenuItemProps<'button'>,

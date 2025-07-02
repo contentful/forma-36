@@ -10,7 +10,7 @@ import {
   type ColorVariant,
 } from '../src/Avatar';
 
-import { CheckCircleIcon } from '@contentful/f36-icons-alpha';
+import { CheckCircleIcon } from '@contentful/f36-icons';
 
 import tokens from '@contentful/f36-tokens';
 

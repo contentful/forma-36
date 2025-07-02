@@ -16,7 +16,7 @@ import type {
 
 import { getStyles } from './DragHandle.styles';
 
-import { DotsSixVerticalIcon } from '@contentful/f36-icons-alpha';
+import { DotsSixVerticalIcon } from '@contentful/f36-icons';
 
 import tokens from '@contentful/f36-tokens';
 

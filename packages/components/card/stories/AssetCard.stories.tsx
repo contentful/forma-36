@@ -3,7 +3,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex, Box } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
-import * as icons from '@contentful/f36-icons-alpha';
+import * as icons from '@contentful/f36-icons';
 import { Badge } from '@contentful/f36-badge';
 
 import { AssetCard, type AssetCardProps } from '../src';

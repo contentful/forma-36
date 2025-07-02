@@ -1,7 +1,7 @@
 import React, { forwardRef, type Ref } from 'react';
 import { IconButton, type IconButtonProps } from '@contentful/f36-button';
 
-import { ArrowLeftIcon } from '@contentful/f36-icons-alpha';
+import { ArrowLeftIcon } from '@contentful/f36-icons';
 
 import tokens from '@contentful/f36-tokens';
 

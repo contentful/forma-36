@@ -12,7 +12,7 @@ import {
   Radio,
 } from '../src';
 
-import { LockSimpleIcon } from '@contentful/f36-icons-alpha';
+import { LockSimpleIcon } from '@contentful/f36-icons';
 
 export default {
   title: 'Form Elements/FormControl',

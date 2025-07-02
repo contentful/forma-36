@@ -9,7 +9,7 @@ import {
 import { css } from 'emotion';
 import { Menu, type MenuProps } from '../src';
 
-import { CheckIcon, ListIcon } from '@contentful/f36-icons-alpha';
+import { CheckIcon, ListIcon } from '@contentful/f36-icons';
 
 export default {
   component: Menu,

@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import { Menu, IconButton } from '@contentful/f36-components';
 
-import { ListIcon } from '@contentful/f36-icons-alpha';
+import { ListIcon } from '@contentful/f36-icons';
 
 function MenuLink({ children, replace = false, to, ...props }) {
   const href = useHref(to);

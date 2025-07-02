@@ -8,7 +8,7 @@ import {
   type EntityStatus,
   type PickUnion,
 } from '@contentful/f36-core';
-import { PaintBrushIcon } from '@contentful/f36-icons-alpha';
+import { PaintBrushIcon } from '@contentful/f36-icons';
 import { Text } from '@contentful/f36-typography';
 import { DragHandle, type DragHandleProps } from '@contentful/f36-drag-handle';
 import { Button } from '@contentful/f36-button';
@@ -23,7 +23,7 @@ import {
   DotsThreeIcon,
   FileIcon,
   ReleaseIcon,
-} from '@contentful/f36-icons-alpha';
+} from '@contentful/f36-icons';
 
 import { Icon } from '@contentful/f36-icon-alpha';
 

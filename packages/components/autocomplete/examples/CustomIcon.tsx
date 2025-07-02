@@ -1,7 +1,7 @@
 import React from 'react';
 import { Autocomplete, Stack, Paragraph } from '@contentful/f36-components';
 
-import { MagnifyingGlassIcon } from '@contentful/f36-icons-alpha';
+import { MagnifyingGlassIcon } from '@contentful/f36-icons';
 
 import tokens from '@contentful/f36-tokens';
 

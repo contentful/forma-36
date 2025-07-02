@@ -16,7 +16,7 @@ import { Subheading, SectionHeading } from '@contentful/f36-typography';
 import { AutocompleteItems } from './AutocompleteItems';
 import { getAutocompleteStyles } from './Autocomplete.styles';
 
-import { CaretDownIcon, XIcon } from '@contentful/f36-icons-alpha';
+import { CaretDownIcon, XIcon } from '@contentful/f36-icons';
 
 import tokens from '@contentful/f36-tokens';
 

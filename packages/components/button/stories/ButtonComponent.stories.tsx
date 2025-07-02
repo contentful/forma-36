@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '../src/Button';
 import { Flex, Stack } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
-import * as icons from '@contentful/f36-icons-alpha';
+import * as icons from '@contentful/f36-icons';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 

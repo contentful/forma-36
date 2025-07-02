@@ -17,7 +17,7 @@ import {
   CaretUpDownIcon,
   SortAscendingIcon,
   SortDescendingIcon,
-} from '@contentful/f36-icons-alpha';
+} from '@contentful/f36-icons';
 
 import tokens from '@contentful/f36-tokens';
 

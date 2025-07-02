@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { Badge } from './Badge';
 
-import { EyeIcon } from '@contentful/f36-icons-alpha';
+import { EyeIcon } from '@contentful/f36-icons';
 
 describe('Badge', function () {
   it('renders the component', () => {

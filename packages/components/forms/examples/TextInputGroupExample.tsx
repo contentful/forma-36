@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextInput, IconButton, Stack } from '@contentful/f36-components';
 
-import { LockSimpleIcon } from '@contentful/f36-icons-alpha';
+import { LockSimpleIcon } from '@contentful/f36-icons';
 
 export default function TextInputGroupExample() {
   const [isFirstLocked, setFirstLocked] = useState(true);

@@ -47,7 +47,7 @@
     "@contentful/f36-entity-list": "^4.80.3",
     "@contentful/f36-forms": "^4.80.3",
     "@contentful/f36-icon": "^4.80.3",
-    "@contentful/f36-icons-alpha": "npm:@contentful/f36-icons@5.0.0-alpha.42",
+    "@contentful/f36-icons": "^5.0.0-alpha.44",
     "@contentful/f36-image": "4.80.3",
     "@contentful/f36-header": "^4.80.3",
     "@contentful/f36-list": "^4.80.3",

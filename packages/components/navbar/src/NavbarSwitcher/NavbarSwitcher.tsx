@@ -13,7 +13,7 @@ import {
 import { cx } from 'emotion';
 import { NavbarEnvVariant } from './NavbarEnvVariant';
 import { NavbarSwitcherSkeleton } from './NavbarSwitcherSkeleton';
-import { CaretRightIcon } from '@contentful/f36-icons-alpha';
+import { CaretRightIcon } from '@contentful/f36-icons';
 import { Text } from '@contentful/f36-typography';
 
 export type EnvVariant = 'master' | 'non-master' | 'trial';

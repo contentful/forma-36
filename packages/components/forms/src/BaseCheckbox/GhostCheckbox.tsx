@@ -2,7 +2,7 @@ import React from 'react';
 import type { BaseCheckboxInternalProps } from './types';
 import getStyles from './GhostCheckbox.styles';
 
-import { XIcon, CheckIcon, MinusIcon } from '@contentful/f36-icons-alpha';
+import { XIcon, CheckIcon, MinusIcon } from '@contentful/f36-icons';
 
 import tokens from '@contentful/f36-tokens';
 

@@ -1,11 +1,7 @@
 import React from 'react';
 import { Button, Stack } from '@contentful/f36-components';
 
-import {
-  CaretDownIcon,
-  PlusIcon,
-  GearSixIcon,
-} from '@contentful/f36-icons-alpha';
+import { CaretDownIcon, PlusIcon, GearSixIcon } from '@contentful/f36-icons';
 
 import tokens from '@contentful/f36-tokens';
 

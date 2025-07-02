@@ -6,7 +6,7 @@ import { Note } from '../src/Note';
 import { TextLink } from '@contentful/f36-text-link';
 import * as icons from '@contentful/f36-icon-alpha';
 import { Icon } from '@contentful/f36-icon-alpha';
-import { InfoIcon } from '@contentful/f36-icons-alpha';
+import { InfoIcon } from '@contentful/f36-icons';
 
 export default {
   title: 'Components/Note',
