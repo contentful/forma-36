@@ -48,7 +48,7 @@ export const Basic = ({ icon, children, ...rest }: ToggleButtonProps) => {
 
 Basic.args = {
   isDisabled: false,
-  icon: 'ThumbUpTrimmedIcon',
+  icon: 'ThumbsUpIcon',
   children: 'Like',
 };
 
@@ -182,5 +182,5 @@ export const Overview = ({ icon, onToggle, ...rest }: ToggleButtonProps) => (
 
 Overview.args = {
   onToggle: action('toggled'),
-  icon: 'PreviewIcon',
+  icon: 'EyeIcon',
 };
