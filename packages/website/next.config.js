@@ -3,7 +3,10 @@ const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
 });
 
-module.exports = withMDX({
+const nextConfig = withMDX({
+  experimental: {
+    esmExternals: 'loose',
+  },
   pageExtensions: ['ts', 'tsx', 'mdx'],
   async redirects() {
     return [
@@ -25,3 +28,5 @@ module.exports = withMDX({
     ],
   },
 });
+
+module.exports = nextConfig;

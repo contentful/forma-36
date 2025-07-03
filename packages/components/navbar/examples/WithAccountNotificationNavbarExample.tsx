@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar } from '@contentful/f36-components';
+
 import { EntryIcon, ImageSquareIcon } from '@contentful/f36-icons';
 
 export default function WithAccountNotificationNavbarExample() {

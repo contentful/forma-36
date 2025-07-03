@@ -3,10 +3,13 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
 import { Box, Flex } from '@contentful/f36-core';
-import { InfoCircleIcon } from '@contentful/f36-icons';
 import { css } from 'emotion';
 
 import { Pill, type PillInternalProps } from '../src/Pill';
+
+import { InfoIcon } from '@contentful/f36-icons';
+
+import tokens from '@contentful/f36-tokens';
 
 export default {
   title: 'Components/Pill',
@@ -196,9 +199,9 @@ Overview.args = {
   onClose: action('clicked'),
   onDrag: action('dragged'),
   dragHandleComponent: (
-    <InfoCircleIcon
+    <InfoIcon
       aria-label="Drag handler"
-      variant="muted"
+      color={tokens.gray600}
       style={{ padding: '0.375rem 0.625rem', paddingRight: 0 }}
     />
   ),
@@ -243,6 +246,6 @@ export const InSmallContainer: Story<PillInternalProps> = (args) => {
 };
 
 InSmallContainer.args = {
-  label: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac libero at dui auctor  convallis eget non dolor. Integer sodales, lacus et tempus faucibus, elit elit condimentum metus, a 
+  label: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac libero at dui auctor  convallis eget non dolor. Integer sodales, lacus et tempus faucibus, elit elit condimentum metus, a
     dignissim velit ipsum vel nisl`,
 };

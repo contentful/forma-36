@@ -1,11 +1,14 @@
 import React from 'react';
+import Image from 'next/image';
 import { css, cx } from 'emotion';
 import { DisplayText, Flex, TextLink, Note } from '@contentful/f36-components';
-import { ExternalLinkIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 
 import type { FrontMatter } from '../../types';
 import { getGridStyles } from '../../utils/getGridStyles';
+
+import { svgStyles } from '../../utils/colorTokens';
+import arrowSquareOut from '../../resources/icons/arrow-square-out.svg';
 
 const styles = {
   header: css({
@@ -68,7 +71,6 @@ export function PageContentHeader({
       <DisplayText as="h1" marginBottom={showNote ? 'spacingXl' : 'spacingXs'}>
         {title}
       </DisplayText>
-
       <Flex
         className={styles.gitHubLink}
         paddingLeft="spacing2Xl"
@@ -80,13 +82,13 @@ export function PageContentHeader({
           href={getGithubIssueLink(title)}
           target="_blank"
           rel="noopener noreferrer"
-          icon={<ExternalLinkIcon />}
+          className={svgStyles.blue600}
+          icon={<Image src={arrowSquareOut} width={18} height={18} />}
           alignIcon="end"
         >
           Give feedback
         </TextLink>
       </Flex>
-
       {isDeprecated && (
         <Flex flexDirection="column" marginBottom="spacingXl">
           <Note variant="negative" title="Deprecated component">
@@ -95,7 +97,6 @@ export function PageContentHeader({
           </Note>
         </Flex>
       )}
-
       {(isAlpha || isBeta) && (
         <Flex flexDirection="column" marginBottom="spacingXl">
           <Note
@@ -111,7 +112,6 @@ export function PageContentHeader({
           </Note>
         </Flex>
       )}
-
       <Flex flexDirection="column" className={styles.intro}>
         {children}
       </Flex>
