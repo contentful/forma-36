@@ -13,6 +13,8 @@
     - [Navbar](#navbar)
       - [Navbar prop overview table](#navbar-prop-overview-table)
       - [Removed Props](#removed-props)
+    - [Layout](#layout)
+      - [Layout prop overview table](#layout-prop-overview-table)
 
 ## How to migrate your packages to v5 from v4
 
@@ -122,3 +124,28 @@ The following props will no longer be accepted by the Navbar Component. This tab
 | badge            | React.ReactNode | Badge component, badges can be added in secondary or mainNaviagation                   |
 | bottomRightItems | React.ReactNode | Items rendered on the bottom-right of the navbar, should now go to secondaryNavigation |
 | topRightItems    | React.ReactNode | Items rendered on the top-right of the navbar, should now go to the secondaryNavigaton |
+
+### Layout
+
+The `Layout` component has undergone significant changes in its visual appearance and behavior. It accepts the following new props: `leftSidebarVariant`, `rightSidebarVariant`, `withBoxShadow`. If you have custom styles that overwrite scroll and positioning behavior, you might have to adjust them. The most siginificant change is that per default it applies the following styles. `background-color: #fff` and `max-width: 1920px`. The props API of its compound components `Layout.Header`, `Layout.Body` and `Layout.Sidebar` are unchanged.
+
+For a **detailed guide, including prop mapping tables and code examples**, see [packages/components/layout/MIGRATION.md](./packages/components/layout/MIGRATION.md).
+
+#### Layout prop overview table
+
+| Property Name       | Type                                       | Description                                                             | Status    |
+| ------------------- | ------------------------------------------ | ----------------------------------------------------------------------- | --------- |
+| children            | React.ReactNode                            | Expects the compound component `Layout.Body` as child                   | Unchanged |
+| header              | React.ReactNode                            | Header component.                                                       | Unchanged |
+| leftSidebar         | React.ReactNode                            | Left sidebar component.                                                 | Unchanged |
+| leftSidebarVariant  | 'narrow' &#124; 'wide'                     | Defines the width of the layout left sidebar. @default 'narrow' (280px) | new       |
+| rightSidebar        | React.ReactNode                            | Right sidebar component.                                                | Unchanged |
+| rightSidebarVariant | 'narrow' &#124; 'wide'                     | Defines the width of the layout right sidebar. @default 'wide' (340px)  | new       |
+| variant             | 'narrow' &#124; 'wide' &#124; 'fullscreen' | Defines the width of the layout and its content. @default 'wide'        | changed   |
+| withBoxShadow       | boolean                                    | Adds a box shadow to the layout.                                        | new       |
+| contentClassName    | string                                     | Classname for the main content div.                                     | Unchanged |
+| contentTestId       | string                                     | Test id for the main content div.                                       | Unchanged |
+| offsetTop           | number                                     | Offset for layout heights calculation. @default 60 (= navbar height)    | changed   |
+| className           | string                                     | Custom class name for the root element (from CommonProps).              | Unchanged |
+| testId              | string                                     | Test id for the root element (from CommonProps).                        | Unchanged |
+| ...HTMLAttributes   | HTMLAttributes<HTMLDivElement>             | Standard HTML div attributes.                                           |
