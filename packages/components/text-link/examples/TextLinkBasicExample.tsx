@@ -1,6 +1,6 @@
 import React from 'react';
 import { Stack, TextLink } from '@contentful/f36-components';
-import { ArrowSquareOutIcon } from '@contentful/f36-icons-alpha';
+import { ArrowSquareOutIcon } from '@contentful/f36-icons';
 
 export default function TextLinkBasicExample() {
   return (

@@ -2,10 +2,10 @@ import React from 'react';
 import { cx } from 'emotion';
 import {
   CheckCircleIcon,
-  ErrorCircleIcon,
+  WarningOctagonIcon,
   WarningIcon,
-  CloseIcon,
-  InfoCircleIcon,
+  XIcon,
+  InfoIcon,
 } from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
 import { TextLink } from '@contentful/f36-text-link';
@@ -74,8 +74,8 @@ const _NotificationItem = (props: ExpandProps<NotificationItemProps>, ref) => {
   const iconVariants = {
     positive: <CheckCircleIcon variant={variant} size={iconSize} />,
     warning: <WarningIcon variant={variant} size={iconSize} />,
-    negative: <ErrorCircleIcon variant={variant} size={iconSize} />,
-    primary: <InfoCircleIcon variant={variant} size={iconSize} />,
+    negative: <WarningOctagonIcon variant={variant} size={iconSize} />,
+    primary: <InfoIcon variant={variant} size={iconSize} />,
   };
 
   const intents = {
@@ -125,7 +125,7 @@ const _NotificationItem = (props: ExpandProps<NotificationItemProps>, ref) => {
           <Button
             className={cx(styles.closeButton)}
             variant="transparent"
-            startIcon={<CloseIcon />}
+            startIcon={<XIcon />}
             onClick={() => {
               onClose && onClose();
             }}

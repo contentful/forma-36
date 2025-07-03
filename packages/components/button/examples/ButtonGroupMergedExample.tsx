@@ -5,7 +5,7 @@ import {
   Button,
   IconButton,
 } from '@contentful/f36-components';
-import { CaretDownIcon, PlusIcon } from '@contentful/f36-icons-alpha';
+import { CaretDownIcon, PlusIcon } from '@contentful/f36-icons';
 
 export default function ButtonGroupMergedExample() {
   return (

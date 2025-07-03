@@ -11,9 +11,9 @@ import { Button } from '@contentful/f36-button';
 import { Heading, Paragraph, Text } from '@contentful/f36-typography';
 import {
   CheckCircleIcon,
-  CloseIcon,
-  ErrorCircleIcon,
-  InfoCircleIcon,
+  XIcon,
+  WarningOctagonIcon,
+  InfoIcon,
   WarningIcon,
   DiamondIcon,
 } from '@contentful/f36-icons';
@@ -22,11 +22,11 @@ import { Icon } from '@contentful/f36-icon';
 import { getNoteStyles } from './Note.styles';
 
 const icons = {
-  primary: InfoCircleIcon,
+  primary: InfoIcon,
   positive: CheckCircleIcon,
-  negative: ErrorCircleIcon,
+  negative: WarningOctagonIcon,
   warning: WarningIcon,
-  neutral: InfoCircleIcon,
+  neutral: InfoIcon,
   premium: DiamondIcon,
 };
 
@@ -143,7 +143,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
         {withCloseButton && (
           <Button
             variant="transparent"
-            startIcon={<CloseIcon className={styles.closeIcon} />}
+            startIcon={<XIcon className={styles.closeIcon} />}
             onClick={onClose}
             testId={`${testId}-close`}
             aria-label={closeButtonAriaLabel}

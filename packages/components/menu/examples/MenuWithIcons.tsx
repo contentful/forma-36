@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu, IconButton } from '@contentful/f36-components';
-import { ListIcon, CheckIcon } from '@contentful/f36-icons-alpha';
+import { ListIcon, CheckIcon } from '@contentful/f36-icons';
 
 export default function MenuWithIcons() {
   return (

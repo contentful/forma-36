@@ -1,10 +1,6 @@
 import React from 'react';
 import { Button, Stack } from '@contentful/f36-components';
-import {
-  PlusIcon,
-  CaretDownIcon,
-  GearSixIcon,
-} from '@contentful/f36-icons-alpha';
+import { PlusIcon, CaretDownIcon, GearSixIcon } from '@contentful/f36-icons';
 
 export default function ButtonWithIconExample() {
   return (

@@ -1,6 +1,6 @@
 import React, { forwardRef, type Ref } from 'react';
 import { IconButton, type IconButtonProps } from '@contentful/f36-button';
-import { ArrowBackwardIcon } from '@contentful/f36-icons';
+import { ArrowLeftIcon } from '@contentful/f36-icons';
 
 export type BackButtonProps = Omit<
   Partial<IconButtonProps>,
@@ -21,7 +21,7 @@ function _BackButton(
     <IconButton
       {...otherProps}
       aria-label={ariaLabel}
-      icon={<ArrowBackwardIcon variant="muted" />}
+      icon={<ArrowLeftIcon variant="muted" />}
       onClick={onClick}
       size="small"
       ref={ref}

@@ -111,7 +111,7 @@ export const WithTextInput = () => {
         <TextInput aria-label="Content type name" defaultValue="blog" />
         <IconButton
           variant="secondary"
-          icon={<icons.LockIcon />}
+          icon={<icons.LockSimpleIcon />}
           aria-label="Unlock"
         />
       </TextInput.Group>
@@ -124,7 +124,7 @@ export const WithTextInput = () => {
         <IconButton
           size="small"
           variant="secondary"
-          icon={<icons.LockIcon />}
+          icon={<icons.LockSimpleIcon />}
           aria-label="Unlock"
         />
       </TextInput.Group>
@@ -132,7 +132,7 @@ export const WithTextInput = () => {
         <TextInput aria-label="Content type name" defaultValue="blog" />
         <IconButton
           variant="secondary"
-          icon={<icons.LockIcon />}
+          icon={<icons.LockSimpleIcon />}
           aria-label="Unlock"
         />
       </TextInput.Group>
@@ -145,7 +145,7 @@ export const WithTextInput = () => {
         <IconButton
           size="small"
           variant="secondary"
-          icon={<icons.LockIcon />}
+          icon={<icons.LockSimpleIcon />}
           aria-label="Unlock"
         />
       </TextInput.Group>
@@ -163,38 +163,38 @@ export const Overview = () => (
       <Stack spacing="spacingXs" marginBottom="spacingM">
         <IconButton
           variant="transparent"
-          icon={<Icon as={icons.CloseIcon} />}
+          icon={<Icon as={icons.XIcon} />}
           aria-label="Close"
         />
 
         <IconButton
           variant="transparent"
-          icon={<Icon as={icons.MoreHorizontalIcon} />}
+          icon={<Icon as={icons.DotsThreeIcon} />}
           aria-label="More"
         />
 
         <IconButton
           variant="secondary"
-          icon={<Icon as={icons.DownloadIcon} />}
+          icon={<Icon as={icons.DownloadSimpleIcon} />}
           aria-label="Download"
         />
 
         <IconButton
           variant="secondary"
-          icon={<Icon as={icons.DownloadIcon} />}
+          icon={<Icon as={icons.DownloadSimpleIcon} />}
           aria-label="Loading"
           isLoading
         />
 
         <IconButton
           variant="positive"
-          icon={<Icon as={icons.DragIcon} />}
+          icon={<Icon as={icons.DotsSixVerticalIcon} />}
           aria-label="Resize"
         />
 
         <IconButton
           variant="negative"
-          icon={<Icon as={icons.DeleteIcon} />}
+          icon={<Icon as={icons.TrashSimpleIcon} />}
           aria-label="Delete"
         />
 

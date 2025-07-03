@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconButton, Stack } from '@contentful/f36-components';
-import { CalendarBlankIcon } from '@contentful/f36-icons-alpha';
+import { CalendarBlankIcon } from '@contentful/f36-icons';
 
 export default function IconButtonExample() {
   return (
