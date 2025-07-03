@@ -27,7 +27,10 @@ export const Default: Story<Pick<UsageCardProps, 'variant'> & StoryArgs> = ({
         />
       }
       description={
-        <UsageCard.Description>
+        <UsageCard.Description
+          linkTitle="Learn more"
+          link="https://www.contentful.com"
+        >
           This is a description of the usage card. It provides additional
           information about the content or purpose of the card.
         </UsageCard.Description>

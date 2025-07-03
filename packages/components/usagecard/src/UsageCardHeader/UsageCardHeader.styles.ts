@@ -6,7 +6,6 @@ export const getUsageCardHeaderStyles = () => {
     usageCardHeader: css({
       width: '100%',
       maxWidth: '1550px',
-      padding: `0 ${tokens.spacingXs}`,
     }),
     subheadingWithIcon: css({
       display: 'flex',

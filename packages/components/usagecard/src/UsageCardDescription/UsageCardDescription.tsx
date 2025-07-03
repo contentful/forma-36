@@ -36,7 +36,7 @@ const _UsageCardDescription = (
       testId={testId}
     >
       {children}
-      {text}
+      {text}{' '}
       <TextLink target="_blank" rel="noopener noreferrer" href={link}>
         {linkTitle}
       </TextLink>
