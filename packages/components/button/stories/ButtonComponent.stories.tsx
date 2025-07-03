@@ -268,12 +268,18 @@ export const Overview = ({ startIcon, endIcon }) => {
           </Button>
         </Flex>
         <Flex flexDirection="row" marginBottom="spacingS">
-          <Button startIcon={<Icon as={icons.DownloadIcon} />} isFullWidth>
+          <Button
+            startIcon={<Icon as={icons.DownloadSimpleIcon} />}
+            isFullWidth
+          >
             Full width button
           </Button>
         </Flex>
         <Flex flexDirection="row" marginBottom="spacingS">
-          <Button startIcon={<Icon as={icons.DownloadIcon} />} isFullWidth>
+          <Button
+            startIcon={<Icon as={icons.DownloadSimpleIcon} />}
+            isFullWidth
+          >
             Full width button
           </Button>
         </Flex>

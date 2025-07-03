@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
-import Image from 'next/image';
 
-import { svgStyles } from '../utils/colorTokens';
-import magnifyingGlass from '../resources/icons/magnifying-glass.svg';
 import { TextInput } from '@contentful/f36-components';
+import { MagnifyingGlassIcon } from '@contentful/f36-icons';
 
 export const DocSearch = () => {
   useEffect(() => {
@@ -39,8 +37,7 @@ export const DocSearch = () => {
   return (
     <TextInput
       id="search"
-      className={svgStyles.gray900}
-      icon={<Image src={magnifyingGlass} width={16} height={16} />}
+      icon={<MagnifyingGlassIcon />}
       name="search"
       type="text"
       placeholder="Search the docs"

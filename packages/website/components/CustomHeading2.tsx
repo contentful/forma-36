@@ -1,11 +1,9 @@
 import React from 'react';
-import Image from 'next/image';
 
 import { TextLink, Stack, Heading } from '@contentful/f36-components';
 
 import { useFrontMatterContext } from '../utils/frontMatterContext';
-import { svgStyles } from '../utils/colorTokens';
-import arrowSquareOut from '../resources/icons/arrow-square-out.svg';
+import { ArrowSquareOutIcon } from '@contentful/f36-icons';
 
 const PROPS_TITLE = 'Props (API reference)';
 
@@ -29,8 +27,7 @@ export const CustomHeading2 = (props: CustomHeading2Props) => {
           href={storybook}
           target="_blank"
           alignIcon="end"
-          className={svgStyles.blue600}
-          icon={<Image src={arrowSquareOut} width={18} height={18} />}
+          icon={<ArrowSquareOutIcon />}
         >
           Open in Storybook
         </TextLink>
