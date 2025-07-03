@@ -51,6 +51,7 @@
       "@contentful/f36-tooltip",
       "@contentful/f36-typography",
       "@contentful/f36-components",
+      "@contentful/f36-multiselect",
       "@contentful/f36-image",
       "@contentful/f36-avatar"
     ]
