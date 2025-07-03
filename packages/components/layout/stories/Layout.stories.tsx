@@ -7,7 +7,6 @@ import { Button, DisplayText, Header } from '@contentful/f36-components';
 
 import type { LayoutProps } from '../src';
 import { Layout } from '../src/CompoundLayout';
-import { LayoutBody } from '../src/LayoutBody';
 
 const NAVBAR_HEIGHT = 60;
 
@@ -77,7 +76,7 @@ export const basic: Story<LayoutProps> = () => {
   return (
     <ExampleWrapper withNavbar={false}>
       <Layout>
-        <LayoutBody>
+        <Layout.Body>
           <Box
             className={css({
               width: '100%',
@@ -87,7 +86,7 @@ export const basic: Story<LayoutProps> = () => {
           >
             Content
           </Box>
-        </LayoutBody>
+        </Layout.Body>
       </Layout>
     </ExampleWrapper>
   );
