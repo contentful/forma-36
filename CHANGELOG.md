@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 03-07-2025
+
+**F36 Multiselect** `v4.26.2`
+
+- feat: add triggerbuttonprops to multiselect
+
 ## 24-06-2025
 
 **F36 Autocomplete** `v4.80.4`
