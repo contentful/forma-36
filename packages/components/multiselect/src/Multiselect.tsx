@@ -73,7 +73,7 @@ export interface MultiselectProps extends CommonProps {
   searchProps?: SearchProps;
 
   /**
-   * Props to pass to the optional search field
+   * Props to pass to the trigger button
    */
   triggerButtonProps?: ButtonProps;
 
