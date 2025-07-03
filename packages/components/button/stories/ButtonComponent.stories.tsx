@@ -192,37 +192,34 @@ export const Overview = ({ startIcon, endIcon }) => {
         </SectionHeading>
 
         <Stack spacing="spacingXs" marginBottom="spacingM">
-          <Button
-            variant="primary"
-            endIcon={<Icon as={icons.ChevronDownIcon} />}
-          >
+          <Button variant="primary" endIcon={<Icon as={icons.CaretDownIcon} />}>
             Primary
           </Button>
 
           <Button
             variant="secondary"
-            endIcon={<Icon as={icons.ChevronDownIcon} />}
+            endIcon={<Icon as={icons.CaretDownIcon} />}
           >
             Secondary
           </Button>
 
           <Button
             variant="positive"
-            endIcon={<Icon as={icons.ChevronDownIcon} />}
+            endIcon={<Icon as={icons.CaretDownIcon} />}
           >
             Positive
           </Button>
 
           <Button
             variant="negative"
-            endIcon={<Icon as={icons.ChevronDownIcon} />}
+            endIcon={<Icon as={icons.CaretDownIcon} />}
           >
             Negative
           </Button>
 
           <Button
             variant="transparent"
-            endIcon={<Icon as={icons.ChevronDownIcon} />}
+            endIcon={<Icon as={icons.CaretDownIcon} />}
           >
             Transparent
           </Button>

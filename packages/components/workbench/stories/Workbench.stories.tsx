@@ -10,7 +10,7 @@ import {
   SectionHeading,
 } from '@contentful/f36-typography';
 import { Button } from '@contentful/f36-button';
-import { HelpCircleIcon, StarIcon } from '@contentful/f36-icons';
+import { InfoIcon, StarIcon } from '@contentful/f36-icons';
 
 import { Workbench } from '../src/CompoundWorkbench';
 import type { WorkbenchContentProps } from '../src/WorkbenchContent';
@@ -301,8 +301,7 @@ export const HeaderOverview = () => {
           <Workbench.Header
             title={
               <Flex alignItems="center" gap="spacingXs">
-                <Heading marginBottom="none">Page title</Heading>{' '}
-                <HelpCircleIcon />
+                <Heading marginBottom="none">Page title</Heading> <InfoIcon />
               </Flex>
             }
           />
@@ -315,7 +314,7 @@ export const HeaderOverview = () => {
 
           <Workbench.Header
             title="Page title"
-            description={<HelpCircleIcon variant="muted" />}
+            description={<InfoIcon variant="muted" />}
           />
         </span>
 
@@ -325,7 +324,7 @@ export const HeaderOverview = () => {
           </SectionHeading>
 
           <Workbench.Header
-            icon={<StarIcon size="large" variant="positive" />}
+            icon={<StarIcon size="medium" variant="positive" />}
             title="Page title"
           />
         </span>
