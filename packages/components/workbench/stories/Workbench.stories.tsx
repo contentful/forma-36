@@ -314,7 +314,7 @@ export const HeaderOverview = () => {
 
           <Workbench.Header
             title="Page title"
-            description={<InfoIcon variant="muted" />}
+            description={<InfoIcon color={tokens.gray600} />}
           />
         </span>
 

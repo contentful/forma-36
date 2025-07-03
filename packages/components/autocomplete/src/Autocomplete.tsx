@@ -16,6 +16,7 @@ import { Subheading, SectionHeading } from '@contentful/f36-typography';
 
 import { AutocompleteItems } from './AutocompleteItems';
 import { getAutocompleteStyles } from './Autocomplete.styles';
+import tokens from '@contentful/f36-tokens';
 
 export interface GenericGroupType<ItemType> {
   groupTitle: string;
@@ -214,7 +215,7 @@ function _Autocomplete<ItemType>(
     onFocus,
     onBlur,
     renderItem,
-    icon = <CaretDownIcon variant="muted" />,
+    icon = <CaretDownIcon color={tokens.gray600} />,
     itemToString = (item: ItemType) => item as unknown as string,
     isInvalid,
     isDisabled,
@@ -428,7 +429,7 @@ function _Autocomplete<ItemType>(
               }
               className={styles.toggleButton}
               variant="transparent"
-              icon={showClearButton ? <XIcon variant="muted" /> : icon}
+              icon={showClearButton ? <XIcon color={tokens.gray600} /> : icon}
               onClick={() => {
                 if (showClearButton) {
                   handleInputValueChange('');

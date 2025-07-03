@@ -1,4 +1,5 @@
 import React, { forwardRef, type Ref } from 'react';
+import tokens from '@contentful/f36-tokens';
 import { IconButton, type IconButtonProps } from '@contentful/f36-button';
 import { ArrowLeftIcon } from '@contentful/f36-icons';
 
@@ -21,7 +22,7 @@ function _BackButton(
     <IconButton
       {...otherProps}
       aria-label={ariaLabel}
-      icon={<ArrowLeftIcon variant="muted" />}
+      icon={<ArrowLeftIcon color={tokens.gray600} />}
       onClick={onClick}
       size="small"
       ref={ref}

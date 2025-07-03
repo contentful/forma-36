@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
+import tokens from '@contentful/f36-tokens';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
@@ -60,7 +61,7 @@ export const WithCustomActionButton: Story<EntryCardProps> = (args) => {
 const CustomActionButton = () => (
   <IconButton
     aria-label="Actions"
-    icon={<XIcon variant="muted" />}
+    icon={<XIcon color={tokens.gray600} />}
     size="small"
     variant="transparent"
     testId="cf-ui-card-actions"

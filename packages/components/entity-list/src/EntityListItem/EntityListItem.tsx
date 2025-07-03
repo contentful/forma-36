@@ -1,5 +1,6 @@
 import React, { type MouseEventHandler } from 'react';
 import { cx } from 'emotion';
+import tokens from '@contentful/f36-tokens';
 import { EntityStatusBadge } from '@contentful/f36-badge';
 import {
   Flex,
@@ -204,7 +205,7 @@ export const EntityListItem = ({
                 {asIcon ? (
                   <Icon
                     as={ICON_MAP[entityType.toLowerCase()]}
-                    variant="muted"
+                    color={tokens.gray600}
                     data-test-id={`thumbnail-icon-${entityType.toLowerCase()}`}
                   />
                 ) : (

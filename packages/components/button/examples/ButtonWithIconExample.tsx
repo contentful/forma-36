@@ -1,4 +1,5 @@
 import React from 'react';
+import tokens from '@contentful/f36-tokens';
 import { Button, Stack } from '@contentful/f36-components';
 import { PlusIcon, CaretDownIcon, GearSixIcon } from '@contentful/f36-icons';
 
@@ -9,7 +10,10 @@ export default function ButtonWithIconExample() {
         Add
       </Button>
       <Button endIcon={<CaretDownIcon />}>Menu</Button>
-      <Button startIcon={<GearSixIcon variant="muted" />} variant="transparent">
+      <Button
+        startIcon={<GearSixIcon color={tokens.gray600} />}
+        variant="transparent"
+      >
         Settings
       </Button>
     </Stack>

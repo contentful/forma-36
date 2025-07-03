@@ -14,7 +14,7 @@ import { IconButton } from '@contentful/f36-button';
 <ChevronUpIcon size="xlarge" />;
 <ChevronDownTrimmedIcon size="small" />;
 <DeleteIcon size="small" />;
-<InfoCircleIcon variant="muted" />;
+<InfoCircleIcon color={tokens.gray600} />;
 
 const largeIcon = true;
 <CloseIcon size={largeIcon ? 'large' : 'xlarge'} />;
@@ -28,4 +28,4 @@ const size = 'medium';
 
 <IconButton icon={PreviewOffIcon} />;
 
-<Icon as={PreviewOffIcon} variant="muted" />
+<Icon as={PreviewOffIcon} color={tokens.gray600} />

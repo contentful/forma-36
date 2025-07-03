@@ -63,7 +63,7 @@ export function PlaygroundTopBar() {
         <UnstyledOpenInCodeSandboxButton
           className={cx(styles.embeddedButton, styles.codeSandboxButton)}
         >
-          <Icon as={CodeSandboxLogo} variant="muted" size="medium" />
+          <Icon as={CodeSandboxLogo} color={tokens.gray600} size="medium" />
           <Text fontColor="gray800">Open in CodeSandbox</Text>
         </UnstyledOpenInCodeSandboxButton>
       </Flex>

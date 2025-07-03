@@ -4,6 +4,7 @@ import React, {
   type MouseEventHandler,
   type FocusEventHandler,
 } from 'react';
+import tokens from '@contentful/f36-tokens';
 import { CopySimpleIcon } from '@contentful/f36-icons';
 import type { ExpandProps } from '@contentful/f36-core';
 import { Tooltip, type TooltipProps } from '@contentful/f36-tooltip';
@@ -128,7 +129,7 @@ function _CopyButton(
         testId={testId}
         startIcon={
           <CopySimpleIcon
-            variant="muted"
+            color={tokens.gray600}
             size={size === 'small' ? 'tiny' : 'small'}
           />
         }

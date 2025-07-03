@@ -20,6 +20,7 @@ import {
 import { Icon } from '@contentful/f36-icon';
 
 import { getNoteStyles } from './Note.styles';
+import tokens, { ColorTokens } from '@contentful/f36-tokens';
 
 const icons = {
   primary: InfoIcon,
@@ -93,12 +94,19 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
     const styles = getNoteStyles();
 
     const iconSize = title ? 'medium' : 'small';
-    const iconVariant = variant === 'neutral' ? 'muted' : variant;
+    const iconVariant: Record<NoteVariant, ColorTokens> = {
+      neutral: 'gray600',
+      negative: 'colorNegative',
+      positive: 'colorPositive',
+      warning: 'colorWarning',
+      primary: 'colorPrimary',
+      premium: 'purple600',
+    };
 
     const iconContent = (icon: React.ReactElement) =>
       React.cloneElement(icon, {
         size: iconSize,
-        variant: iconVariant,
+        color: tokens[iconVariant[variant]],
       });
 
     return (
@@ -106,7 +114,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
         {...otherProps}
         columns={withCloseButton ? 'auto 1fr 24px' : 'auto 1fr'} // 24px is the width of the close button
         as="article"
-        className={cx(styles.container({ variant }), className)}
+        className={cx(styles.container({ variant, title }), className)}
         testId={testId}
         ref={ref}
         padding="spacingM"
@@ -114,7 +122,11 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
         {icon ? (
           iconContent(icon)
         ) : (
-          <Icon as={icons[variant]} variant={iconVariant} size={iconSize} />
+          <Icon
+            as={icons[variant]}
+            color={tokens[iconVariant[variant]]}
+            size={iconSize}
+          />
         )}
         <Flex flexDirection="column">
           {title && (
