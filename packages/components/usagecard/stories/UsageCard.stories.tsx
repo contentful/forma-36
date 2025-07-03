@@ -1,13 +1,37 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { UsageCard, type UsageCardProps } from '../src/UsageCard';
+import { UsageCardProps } from '../src';
+import { UsageCard } from '../src/CompoundUsageCard';
 
 export default {
   component: UsageCard,
   title: 'Components/UsageCard',
 } as Meta;
 
-export const Default: Story<UsageCardProps> = (args) => {
-  return <UsageCard {...args}>UsageCard</UsageCard>;
+interface StoryArgs {
+  variant: UsageCardProps['variant'];
+  children?: React.ReactNode;
+}
+
+export const Default: Story<Pick<UsageCardProps, 'variant'> & StoryArgs> = ({
+  variant,
+}) => {
+  return (
+    <UsageCard
+      variant={variant}
+      header={
+        <UsageCard.Header
+          title="Usage Card Header"
+          tooltip="This is a tooltip"
+        />
+      }
+      description={
+        <UsageCard.Description>
+          This is a description of the usage card. It provides additional
+          information about the content or purpose of the card.
+        </UsageCard.Description>
+      }
+    ></UsageCard>
+  );
 };

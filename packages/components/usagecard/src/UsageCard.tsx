@@ -1,14 +1,23 @@
-import React from 'react';
-import { CommonProps, ExpandProps, Flex } from '@contentful/f36-core';
+import React, { HTMLAttributes, useMemo } from 'react';
+import { type CommonProps, type ExpandProps, Flex } from '@contentful/f36-core';
 import { getUsageCardStyles } from './UsageCard.styles';
 import { Card } from '@contentful/f36-card';
+import {
+  UsageCardContextProvider,
+  UsageCardContextType,
+} from './UsageCardContext';
 
-export type UsageCardProps = CommonProps & {
-  children?: React.ReactNode;
-  // compounds
-  header?: React.ReactNode;
-  description?: React.ReactNode;
-};
+export type UsageCardProps = CommonProps &
+  HTMLAttributes<HTMLDivElement> & {
+    children?: React.ReactNode;
+    header?: React.ReactNode;
+    description?: React.ReactNode;
+    /**
+     * The type of the card.
+     * @default 'usage'
+     */
+    variant?: 'usage' | 'info';
+  };
 
 function _UsageCard(
   props: ExpandProps<UsageCardProps>,
@@ -18,37 +27,35 @@ function _UsageCard(
     children,
     header,
     description,
+    variant = 'usage',
     testId = 'cf-ui-usage-card',
     ...otherProps
   } = props;
-  const styles = getUsageCardStyles();
+  const styles = getUsageCardStyles(variant);
+
+  const contextValue: UsageCardContextType = useMemo(
+    () => ({
+      variant,
+    }),
+    [variant],
+  );
 
   return (
-    <Card
-      {...otherProps}
-      className={styles.usageCard}
-      ref={ref}
-      data-test-id={testId}
-    >
-      <Flex flexDirection="column">
-        {header}
-        {/* usage component */}
-        {description}
-      </Flex>
-    </Card>
+    <UsageCardContextProvider value={contextValue}>
+      <Card
+        {...otherProps}
+        className={styles.usageCard}
+        ref={ref}
+        data-test-id={testId}
+      >
+        <Flex flexDirection="column">
+          {header}
+          {children}
+          {description}
+        </Flex>
+      </Card>
+    </UsageCardContextProvider>
   );
 }
 
-/**
- * TODO: Add description of component here.
- * Compounds:
- * - UsageCard.Heading
- * - UsageCount
- * - UsageCard.Description
- * - UsageCard.Link
- * - UsageCard.LinkText
- * How to handle InfoCard?
- * - This will be handled in user_interface before. There will card type selection logic.
- * - Maybe it makes sense to have InfoCard type as a prop? All other types of cards differ by usage typpe.
- */
 export const UsageCard = React.forwardRef(_UsageCard);
