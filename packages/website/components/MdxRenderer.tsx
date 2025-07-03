@@ -2,6 +2,8 @@ import React from 'react';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import * as f36Components from '@contentful/f36-components';
+import * as f36Navbar from '@contentful/f36-navbar';
+import * as f36Layout from '@contentful/f36-layout';
 import NextLink from 'next/link';
 import { MdxComponents } from '../mdx-components';
 import { ComponentSource } from './LiveEditor/ComponentSource';
@@ -51,6 +53,8 @@ const components = {
   // eslint-disable-next-line jsx-a11y/alt-text
   img: (props) => <img style={{ width: '100%' }} {...props} />,
   ...f36Components,
+  ...f36Navbar,
+  ...f36Layout,
   ...MdxComponents,
 };
 /* eslint-enable @next/next/no-img-element */
