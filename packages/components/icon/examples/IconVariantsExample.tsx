@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { CalendarIcon } from '@contentful/f36-icons-v4';
+import tokens from '@contentful/f36-tokens';
+import { CalendarBlankIcon } from '@contentful/f36-icons';
 import { Stack, Flex, Text } from '@contentful/f36-components';
 
 export default function IconVariantsExample() {
@@ -7,37 +8,37 @@ export default function IconVariantsExample() {
     <Stack>
       <Flex alignItems="center">
         <Flex marginRight="spacingS">
-          <CalendarIcon variant="primary" />
+          <CalendarBlankIcon color={tokens.colorPrimary} />
         </Flex>{' '}
         <Text>Primary</Text>
       </Flex>
       <Flex alignItems="center">
         <Flex marginRight="spacingS">
-          <CalendarIcon variant="positive" />
+          <CalendarBlankIcon color={tokens.colorPositive} />
         </Flex>{' '}
         <Text>Positive</Text>
       </Flex>
       <Flex alignItems="center">
         <Flex marginRight="spacingS">
-          <CalendarIcon variant="negative" />
+          <CalendarBlankIcon color={tokens.colorNegative} />
         </Flex>{' '}
         <Text>Negative</Text>
       </Flex>
       <Flex alignItems="center">
         <Flex marginRight="spacingS">
-          <CalendarIcon variant="warning" />
+          <CalendarBlankIcon color={tokens.colorWarning} />
         </Flex>{' '}
         <Text>Warning</Text>
       </Flex>
       <Flex alignItems="center">
         <Flex marginRight="spacingS">
-          <CalendarIcon variant="secondary" />
+          <CalendarBlankIcon color={tokens.gray900} />
         </Flex>{' '}
         <Text>Secondary</Text>
       </Flex>
       <Flex alignItems="center">
         <Flex marginRight="spacingS">
-          <CalendarIcon variant="muted" />
+          <CalendarBlankIcon color={tokens.gray600} />
         </Flex>{' '}
         <Text>Muted</Text>
       </Flex>
@@ -47,7 +48,7 @@ export default function IconVariantsExample() {
         padding="spacingS"
       >
         <Flex marginRight="spacingS">
-          <CalendarIcon variant="white" />
+          <CalendarBlankIcon variant="white" />
         </Flex>{' '}
         <Text>White</Text>
       </Flex>
