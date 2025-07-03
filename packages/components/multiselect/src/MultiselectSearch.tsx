@@ -1,4 +1,5 @@
 import React, { useCallback, useRef } from 'react';
+import tokens from '@contentful/f36-tokens';
 import { TextInput } from '@contentful/f36-forms';
 import { XIcon, MagnifyingGlassIcon } from '@contentful/f36-icons';
 import { IconButton } from '@contentful/f36-button';
@@ -106,9 +107,9 @@ export const MultiselectSearch = ({
         variant="transparent"
         icon={
           searchValue ? (
-            <XIcon variant="muted" />
+            <XIcon color={tokens.gray600} />
           ) : (
-            <MagnifyingGlassIcon variant="muted" />
+            <MagnifyingGlassIcon color={tokens.gray600} />
           )
         }
         onClick={resetSearchInput}

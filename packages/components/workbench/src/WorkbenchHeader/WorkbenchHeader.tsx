@@ -4,6 +4,7 @@ import React, {
   type ReactNode,
 } from 'react';
 import { cx } from 'emotion';
+import tokens from '@contentful/f36-tokens';
 import { Box, type CommonProps } from '@contentful/f36-core';
 import { Heading, Paragraph } from '@contentful/f36-typography';
 import type { IconComponent } from '@contentful/f36-icon';
@@ -68,7 +69,7 @@ export const WorkbenchHeader = ({
           variant="transparent"
           className={styles.backButton}
           onClick={() => onBack()}
-          icon={<CaretLeftIcon size="medium" variant="muted" />}
+          icon={<CaretLeftIcon size="medium" color={tokens.gray600} />}
         />
       )}
 

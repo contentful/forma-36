@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import tokens from '@contentful/f36-tokens';
 import {
   Flex,
   type CommonProps,
@@ -42,7 +43,7 @@ export const ValidationMessage = forwardRef<
       <Flex marginRight={density === 'high' ? 'spacing2Xs' : 'spacingXs'}>
         <WarningOctagonIcon
           size={density === 'high' ? 'tiny' : 'small'}
-          variant="negative"
+          color={tokens.colorNegative}
           aria-hidden="true"
         />
       </Flex>

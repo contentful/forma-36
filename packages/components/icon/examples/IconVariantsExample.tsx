@@ -48,7 +48,7 @@ export default function IconVariantsExample() {
         padding="spacingS"
       >
         <Flex marginRight="spacingS">
-          <CalendarBlankIcon variant="white" />
+          <CalendarBlankIcon color={tokens.colorWhite} />
         </Flex>{' '}
         <Text>White</Text>
       </Flex>
