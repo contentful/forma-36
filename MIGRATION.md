@@ -3067,7 +3067,7 @@ In v4, we changed the API of the `ToggleButton` to align it with the new way we 
 becomes:
 
 ```tsx static=true
-<ToggleButton isActive icon={<CalendarIcon />}>
+<ToggleButton isActive icon={<CalendarBlankIcon />}>
   Embed Entry
 </ToggleButton>
 ```
@@ -3088,7 +3088,7 @@ You must manually migrate the version 3 `ToggleButton` component by updating the
 becomes:
 
 ```tsx static=true
-<ToggleButton isActive icon={<CalendarIcon />}>
+<ToggleButton isActive icon={<CalendarBlankIcon />}>
   Embed Entry
 </ToggleButton>
 <ToggleButton isActive icon={<PlusIcon />}>
