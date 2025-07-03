@@ -6,7 +6,6 @@ import React, {
   useMemo,
   useContext,
 } from 'react';
-import Image from 'next/image';
 import { css, cx } from 'emotion';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { useForm, useController } from 'react-hook-form';
@@ -35,11 +34,7 @@ import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
 import { theme } from './theme';
 import { formatSourceCode } from './utils';
 import * as coder from '../../utils/coder';
-import { svgStyles } from '../../utils/colorTokens';
 import * as f36icons from '@contentful/f36-icons';
-import arrowSquareOut from '../../resources/icons/arrow-square-out.svg';
-import eyeClose from '../../resources/icons/eye-slash.svg';
-import eyeOpen from '../../resources/icons/eye.svg';
 
 const liveProviderScope = {
   ...f36Components,
@@ -187,11 +182,7 @@ export function ComponentSource({
                 size="small"
                 variant="secondary"
                 startIcon={
-                  showSource ? (
-                    <Image src={eyeClose} width={18} height={18} />
-                  ) : (
-                    <Image src={eyeOpen} width={18} height={18} />
-                  )
+                  showSource ? <f36icons.EyeClosedIcon /> : <f36icons.EyeIcon />
                 }
                 onClick={handleToggle}
               >
@@ -220,10 +211,8 @@ export function ComponentSource({
                   {isExampleFromFile && (
                     <Button
                       as="a"
-                      className={cx(styles.playgroundButton, svgStyles.gray900)}
-                      endIcon={
-                        <Image src={arrowSquareOut} width={18} height={18} />
-                      }
+                      className={cx(styles.playgroundButton)}
+                      endIcon={<f36icons.ArrowSquareOutIcon />}
                       size="small"
                       href={`/playground?code=${coder.encode(children)}`}
                       target="_blank"
