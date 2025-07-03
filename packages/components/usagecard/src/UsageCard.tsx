@@ -1,5 +1,10 @@
 import React, { HTMLAttributes, useMemo } from 'react';
-import { type CommonProps, type ExpandProps, Flex } from '@contentful/f36-core';
+import {
+  Box,
+  type CommonProps,
+  type ExpandProps,
+  Flex,
+} from '@contentful/f36-core';
 import { getUsageCardStyles } from './UsageCard.styles';
 import { Card } from '@contentful/f36-card';
 import {
@@ -48,10 +53,14 @@ function _UsageCard(
         ref={ref}
         data-test-id={testId}
       >
-        <Flex flexDirection="column">
-          {header}
-          {children}
-          {description}
+        <Flex flexDirection="column" style={{ height: '100%' }}>
+          <Box style={{ flex: 1 }}>
+            {header}
+            {children}
+          </Box>
+          {description && (
+            <Box style={{ marginTop: 'auto' }}>{description}</Box>
+          )}
         </Flex>
       </Card>
     </UsageCardContextProvider>
