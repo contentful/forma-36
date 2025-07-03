@@ -8,7 +8,6 @@ import { action } from '@storybook/addon-actions';
 import type { LayoutProps } from '../src';
 import { Header } from '../../header/src/Header';
 import { Layout } from '../src/CompoundLayout';
-import { LayoutBody } from '../src/LayoutBody';
 
 const NAVBAR_HEIGHT = 60;
 
@@ -82,7 +81,7 @@ export const basic: Story<LayoutProps> = () => {
   return (
     <ExampleWrapper withNavbar={false}>
       <Layout>
-        <LayoutBody>
+        <Layout.Body>
           <Box
             className={css({
               width: '100%',
@@ -92,7 +91,7 @@ export const basic: Story<LayoutProps> = () => {
           >
             Content
           </Box>
-        </LayoutBody>
+        </Layout.Body>
       </Layout>
     </ExampleWrapper>
   );
