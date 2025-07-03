@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar } from '@contentful/f36-navbar-alpha';
+import { Navbar } from '@contentful/f36-navbar';
 
 export default function LoadingSkeletonNavbarExample() {
   return (
