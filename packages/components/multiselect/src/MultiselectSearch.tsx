@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from 'react';
 import { TextInput } from '@contentful/f36-forms';
-import { CloseIcon, SearchIcon } from '@contentful/f36-icons';
+import { XIcon, MagnifyingGlassIcon } from '@contentful/f36-icons';
 import { IconButton } from '@contentful/f36-button';
 import { getMultiselectStyles } from './Multiselect.styles';
 import { mergeRefs } from '@contentful/f36-core';
@@ -106,9 +106,9 @@ export const MultiselectSearch = ({
         variant="transparent"
         icon={
           searchValue ? (
-            <CloseIcon variant="muted" />
+            <XIcon variant="muted" />
           ) : (
-            <SearchIcon variant="muted" />
+            <MagnifyingGlassIcon variant="muted" />
           )
         }
         onClick={resetSearchInput}

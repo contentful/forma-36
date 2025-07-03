@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu, IconButton } from '@contentful/f36-components';
-import { ListIcon } from '@contentful/f36-icons-alpha';
+import { ListIcon } from '@contentful/f36-icons';
 
 export default function MenuWithTitle() {
   return (

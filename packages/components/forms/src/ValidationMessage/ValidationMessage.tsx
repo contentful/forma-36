@@ -6,7 +6,7 @@ import {
   type PropsWithHTMLElement,
   type ExpandProps,
 } from '@contentful/f36-core';
-import { ErrorCircleOutlineIcon } from '@contentful/f36-icons';
+import { WarningOctagonIcon } from '@contentful/f36-icons';
 import { Text } from '@contentful/f36-typography';
 import { useFormControl } from '../FormControl/FormControlContext';
 import { useDensity } from '@contentful/f36-utils';
@@ -40,7 +40,7 @@ export const ValidationMessage = forwardRef<
       aria-live="assertive"
     >
       <Flex marginRight={density === 'high' ? 'spacing2Xs' : 'spacingXs'}>
-        <ErrorCircleOutlineIcon
+        <WarningOctagonIcon
           size={density === 'high' ? 'tiny' : 'small'}
           variant="negative"
           aria-hidden="true"

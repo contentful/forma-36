@@ -7,7 +7,7 @@ import { cx } from 'emotion';
 import { Box, type CommonProps } from '@contentful/f36-core';
 import { Heading, Paragraph } from '@contentful/f36-typography';
 import type { IconComponent } from '@contentful/f36-icon';
-import { ChevronLeftIcon } from '@contentful/f36-icons';
+import { CaretLeftIcon } from '@contentful/f36-icons';
 import { IconButton } from '@contentful/f36-button';
 
 import { getWorkbenchHeaderStyles } from './WorkbenchHeader.styles';
@@ -68,7 +68,7 @@ export const WorkbenchHeader = ({
           variant="transparent"
           className={styles.backButton}
           onClick={() => onBack()}
-          icon={<ChevronLeftIcon size="large" variant="muted" />}
+          icon={<CaretLeftIcon size="medium" variant="muted" />}
         />
       )}
 

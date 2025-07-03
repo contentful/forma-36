@@ -5,7 +5,7 @@ import {
   Text,
   ModalLauncher,
 } from '@contentful/f36-components';
-import { FileArchiveIcon } from '@contentful/f36-icons-alpha';
+import { FileArchiveIcon } from '@contentful/f36-icons';
 
 export default function ModalConfirmPromptExample() {
   const onArchive = () => {

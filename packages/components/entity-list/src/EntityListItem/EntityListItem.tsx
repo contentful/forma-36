@@ -9,11 +9,11 @@ import {
   type PickUnion,
 } from '@contentful/f36-core';
 import {
-  AssetIcon,
+  ImageSquareIcon,
   EntryIcon,
   ReleaseIcon,
-  MoreHorizontalIcon,
-  PageIcon,
+  DotsThreeIcon,
+  FileIcon,
   PaintBrushIcon,
 } from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
@@ -31,10 +31,10 @@ type EntityListItemStatus = PickUnion<
 >;
 
 const ICON_MAP = {
-  asset: AssetIcon,
+  asset: ImageSquareIcon,
   entry: EntryIcon,
   release: ReleaseIcon,
-  page: PageIcon,
+  page: FileIcon,
   experience: PaintBrushIcon,
 };
 
@@ -282,7 +282,7 @@ export const EntityListItem = ({
               <Menu.Trigger>
                 <Button
                   isDisabled={isActionsDisabled}
-                  startIcon={<MoreHorizontalIcon />}
+                  startIcon={<DotsThreeIcon />}
                   variant="transparent"
                   aria-label="Actions"
                   size="small"

@@ -6,7 +6,7 @@ import type {
   ExpandProps,
 } from '@contentful/f36-core';
 import { Tooltip } from '@contentful/f36-tooltip';
-import { CloseIcon } from '@contentful/f36-icons';
+import { XIcon } from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
 import { DragHandle } from '@contentful/f36-drag-handle';
 import { PillVariants } from './types';
@@ -104,7 +104,7 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
           <Button
             type="button"
             variant="transparent"
-            startIcon={<CloseIcon />}
+            startIcon={<XIcon />}
             aria-label={closeButtonAriaLabel}
             onClick={onClose}
             className={styles.closeButton}

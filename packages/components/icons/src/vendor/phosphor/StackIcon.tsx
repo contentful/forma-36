@@ -1,4 +1,4 @@
-import { generateForma36Icon } from '@contentful/f36-icon-alpha';
+import { generateForma36Icon } from '@contentful/f36-icon';
 import { Stack } from '@phosphor-icons/react';
 
 export const StackIcon = generateForma36Icon(Stack);
