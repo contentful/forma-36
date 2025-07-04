@@ -1,7 +1,7 @@
 import React from 'react';
 import { UsageCard } from '@contentful/f36-usagecard';
 
-export default function UsageCardUsage() {
+export default function UsageCardUsageExample() {
   return (
     <UsageCard
       variant={'info'}
