@@ -4,5 +4,5 @@ import { Icon } from '@contentful/f36-icon';
 import { MdAccessAlarm } from 'react-icons/md';
 
 export default function IconAsPropExample() {
-  return <Icon as={MdAccessAlarm} color={tokens.gray900} />;
+  return <Icon as={MdAccessAlarm} size="small" color={tokens.colorPrimary} />;
 }
