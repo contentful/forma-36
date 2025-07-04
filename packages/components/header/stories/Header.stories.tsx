@@ -4,7 +4,7 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { Box, Flex } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
 import tokens from '@contentful/f36-tokens';
-import { SearchIcon } from '@contentful/f36-icons';
+import { MagnifyingGlassIcon } from '@contentful/f36-icons';
 import { TextInput } from '@contentful/f36-forms';
 
 import { Header, type HeaderProps } from '../src/Header';
@@ -46,7 +46,11 @@ export const WithFilters: Story<HeaderProps> = ({
   <Header
     title={title}
     filters={
-      <TextInput placeholder="Search" icon={<SearchIcon />} size="small" />
+      <TextInput
+        placeholder="Search"
+        icon={<MagnifyingGlassIcon />}
+        size="small"
+      />
     }
     actions={
       <Flex alignItems="center" gap={tokens.spacingS} justifyContent="flex-end">

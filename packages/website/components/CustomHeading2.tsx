@@ -1,8 +1,9 @@
 import React from 'react';
+
 import { TextLink, Stack, Heading } from '@contentful/f36-components';
 
-import { ExternalLinkIcon } from '@contentful/f36-icons';
 import { useFrontMatterContext } from '../utils/frontMatterContext';
+import { ArrowSquareOutIcon } from '@contentful/f36-icons';
 
 const PROPS_TITLE = 'Props (API reference)';
 
@@ -26,7 +27,7 @@ export const CustomHeading2 = (props: CustomHeading2Props) => {
           href={storybook}
           target="_blank"
           alignIcon="end"
-          icon={<ExternalLinkIcon />}
+          icon={<ArrowSquareOutIcon />}
         >
           Open in Storybook
         </TextLink>

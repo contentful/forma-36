@@ -1,5 +1,6 @@
 import React, { type MouseEventHandler } from 'react';
 import { cx } from 'emotion';
+import tokens from '@contentful/f36-tokens';
 import { EntityStatusBadge } from '@contentful/f36-badge';
 import {
   Flex,
@@ -9,11 +10,11 @@ import {
   type PickUnion,
 } from '@contentful/f36-core';
 import {
-  AssetIcon,
+  ImageSquareIcon,
   EntryIcon,
   ReleaseIcon,
-  MoreHorizontalIcon,
-  PageIcon,
+  DotsThreeIcon,
+  FileIcon,
   PaintBrushIcon,
 } from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
@@ -31,10 +32,10 @@ type EntityListItemStatus = PickUnion<
 >;
 
 const ICON_MAP = {
-  asset: AssetIcon,
+  asset: ImageSquareIcon,
   entry: EntryIcon,
   release: ReleaseIcon,
-  page: PageIcon,
+  page: FileIcon,
   experience: PaintBrushIcon,
 };
 
@@ -204,7 +205,7 @@ export const EntityListItem = ({
                 {asIcon ? (
                   <Icon
                     as={ICON_MAP[entityType.toLowerCase()]}
-                    variant="muted"
+                    color={tokens.gray600}
                     data-test-id={`thumbnail-icon-${entityType.toLowerCase()}`}
                   />
                 ) : (
@@ -282,7 +283,7 @@ export const EntityListItem = ({
               <Menu.Trigger>
                 <Button
                   isDisabled={isActionsDisabled}
-                  startIcon={<MoreHorizontalIcon />}
+                  startIcon={<DotsThreeIcon />}
                   variant="transparent"
                   aria-label="Actions"
                   size="small"

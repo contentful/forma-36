@@ -1,7 +1,7 @@
 import React from 'react';
-import { generateIcon } from '@contentful/f36-icon';
+import { generateIconComponent } from '@contentful/f36-icon';
 
-export const CodeSandboxLogo = generateIcon({
+export const CodeSandboxLogo = generateIconComponent({
   name: 'CodeSandbox',
   viewBox: '0 0 18 18',
   path: (

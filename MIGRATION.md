@@ -1368,7 +1368,7 @@ import {
   <ChevronUpIcon variant="negative" className="customClassName" />
   <CloseIcon variant="warning" style={{ marginLeft: 0 }} />
   <EditTrimmedIcon variant="secondary" />
-  <DownloadIcon variant="muted" />
+  <DownloadIcon color={tokens.gray600} />
   <FolderTrimmedIcon variant="white" size="large" />
 </div>;
 
@@ -1449,7 +1449,7 @@ import {
 
 <IconButton
   variant="transparent"
-  icon={<ChevronDownIcon variant="muted" className="className" />}
+  icon={<ChevronDownIcon color={tokens.gray600} className="className" />}
   aria-label="Some label"
 />;
 
@@ -1458,9 +1458,9 @@ const isCollapsed = true;
   variant="transparent"
   icon={
     isCollapsed ? (
-      <ChevronDownIcon variant="muted" className="className" />
+      <ChevronDownIcon color={tokens.gray600} className="className" />
     ) : (
-      <ChevronUpIcon variant="muted" className="className" />
+      <ChevronUpIcon color={tokens.gray600} className="className" />
     )
   }
   aria-label="Some label"
@@ -2978,7 +2978,7 @@ becomes:
 <TextLink
   as="button"
   isDisabled={false}
-  variant="muted"
+  color={tokens.gray600}
   className="className"
 />
 ```
@@ -3025,7 +3025,7 @@ import { ArrowDownIcon, AssetIcon } from '@contentful/f36-icons';
 <TextLink
   as="button"
   isDisabled={false}
-  variant="muted"
+  color={tokens.gray600}
   className="className"
 />;
 
@@ -3067,7 +3067,7 @@ In v4, we changed the API of the `ToggleButton` to align it with the new way we 
 becomes:
 
 ```tsx static=true
-<ToggleButton isActive icon={<CalendarIcon />}>
+<ToggleButton isActive icon={<CalendarBlankIcon />}>
   Embed Entry
 </ToggleButton>
 ```
@@ -3088,7 +3088,7 @@ You must manually migrate the version 3 `ToggleButton` component by updating the
 becomes:
 
 ```tsx static=true
-<ToggleButton isActive icon={<CalendarIcon />}>
+<ToggleButton isActive icon={<CalendarBlankIcon />}>
   Embed Entry
 </ToggleButton>
 <ToggleButton isActive icon={<PlusIcon />}>
