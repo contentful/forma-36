@@ -16,36 +16,33 @@ import { BackButton, type BackButtonProps } from './BackButton';
 import { Breadcrumb, type BreadcrumbProps } from './Breadcrumb';
 import { getHeaderStyles } from './Header.styles';
 import { HeaderTitle } from './HeaderTitle';
+import { Segmentation } from './Segmentation';
 
 const HEADER_DEFAULT_TAG = 'header';
 
 type Variant =
   | {
-      backButtonProps?: never;
-      breadcrumbs?: never;
-      variant: 'title';
-      withBackButton?: never;
-    }
-  | {
-      backButtonProps?: never;
       /**
        * An (optional) list of navigable links to prepend to the current title.
        */
       breadcrumbs?: BreadcrumbProps['breadcrumbs'];
-      variant?: 'breadcrumb' | undefined;
+      /**
+       * Ensure that backbutton props can not be passed when `withBackButton` is false.
+       * This is to prevent confusion, as the back button will not be rendered.
+       */
+      backButtonProps?: never;
       withBackButton?: false | never;
     }
   | {
+      /**
+       * An (optional) list of navigable links to prepend to the current title.
+       */
+      breadcrumbs?: BreadcrumbProps['breadcrumbs'];
       /**
        * Props to spread on the back button. You almost certainly want to pass
        * an `onClick` handler.
        */
       backButtonProps?: BackButtonProps;
-      /**
-       * An (optional) list of navigable links to prepend to the current title.
-       */
-      breadcrumbs?: BreadcrumbProps['breadcrumbs'];
-      variant?: 'breadcrumb' | undefined;
       /**
        * If `true`, renders a leading back button within the header.
        */
@@ -82,13 +79,13 @@ function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
     metadata,
     title,
     withBackButton,
-    variant = 'breadcrumb',
     ...otherProps
   }: HeaderProps<E>,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- polymorphic element
-  forwardedRef: Ref<any>,
+  forwardedRef: Ref<HTMLElement>,
 ) {
+  const variant = withBackButton || breadcrumbs ? 'breadcrumb' : 'title';
   const styles = getHeaderStyles({ hasFilters: Boolean(filters), variant });
+
   return (
     <Flex
       alignItems="center"
@@ -101,13 +98,13 @@ function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
       <div className={styles.context}>
         <Flex alignItems="center" gap="spacingXs">
           {variant === 'title' ? (
-            <HeaderTitle title={title} variant="title" />
+            <HeaderTitle title={title} variant={variant} />
           ) : (
-            <>
+            <Segmentation>
               {withBackButton && <BackButton {...backButtonProps} />}
               {breadcrumbs && <Breadcrumb breadcrumbs={breadcrumbs} />}
-              {title && <HeaderTitle title={title} variant="breadcrumb" />}
-            </>
+              {title && <HeaderTitle title={title} variant={variant} />}
+            </Segmentation>
           )}
 
           {metadata && (

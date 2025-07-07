@@ -5,7 +5,7 @@ import { getHeaderTitleStyles } from './HeaderTitle.styles';
 
 type HeaderTitleProps = {
   title: HeaderProps['title'];
-  variant: HeaderProps['variant'];
+  variant: string;
 };
 
 export function HeaderTitle({ title, variant }: HeaderTitleProps) {
