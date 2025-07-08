@@ -79,6 +79,7 @@ function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
     metadata,
     title,
     withBackButton,
+    testId = 'cf-ui-header',
     ...otherProps
   }: HeaderProps<E>,
   forwardedRef: Ref<HTMLElement>,
@@ -93,6 +94,7 @@ function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
       gap="spacingM"
       className={cx(styles.root, className)}
       ref={forwardedRef}
+      testId={testId}
       {...otherProps}
     >
       <div className={styles.context}>
