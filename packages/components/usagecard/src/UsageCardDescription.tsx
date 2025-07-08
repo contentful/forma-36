@@ -2,13 +2,10 @@ import React, { forwardRef, type HTMLAttributes, type Ref } from 'react';
 import { cx } from 'emotion';
 import { type CommonProps } from '@contentful/f36-core';
 import { Caption } from '@contentful/f36-typography';
-import { TextLink } from '@contentful/f36-text-link';
-import { getUsageCardDescriptionStyles } from './UsageCardDescription.styles';
+import { getUsageCardDescriptionStyles } from './UsageCard.styles';
 
 export type UsageCardDescriptionProps = {
   text?: string;
-  link?: string;
-  linkTitle?: string;
   children: React.ReactNode;
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
@@ -19,9 +16,6 @@ const _UsageCardDescription = (
 ) => {
   const {
     children,
-    text,
-    link,
-    linkTitle,
     className,
     testId = 'cf-ui-usage-card-description',
     ...otherProps
@@ -36,10 +30,6 @@ const _UsageCardDescription = (
       testId={testId}
     >
       {children}
-      {text}{' '}
-      <TextLink target="_blank" rel="noopener noreferrer" href={link}>
-        {linkTitle}
-      </TextLink>
     </Caption>
   );
 };

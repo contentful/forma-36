@@ -1,6 +1,6 @@
 import { UsageCard as OriginalUsageCard } from './UsageCard';
 import { UsageCardHeader } from './UsageCardHeader/UsageCardHeader';
-import { UsageCardDescription } from './UsageCardDescription/UsageCardDescription';
+import { UsageCardDescription } from './UsageCardDescription';
 
 type CompoundUsageCard = typeof OriginalUsageCard & {
   Header: typeof UsageCardHeader;

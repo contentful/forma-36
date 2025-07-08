@@ -1,7 +1,7 @@
 import React, { forwardRef, type HTMLAttributes, type Ref } from 'react';
 import { cx } from 'emotion';
 import { Tooltip } from '@contentful/f36-tooltip';
-import { InfoCircleIcon } from '@contentful/f36-icons';
+import { InfoIcon } from '@contentful/f36-icons-alpha';
 import { type CommonProps } from '@contentful/f36-core';
 import { Subheading } from '@contentful/f36-typography';
 import { getUsageCardHeaderStyles } from './UsageCardHeader.styles';
@@ -31,17 +31,13 @@ function _UsageCardHeader(
     <Subheading
       {...otherProps}
       ref={ref}
-      className={cx(
-        styles.usageCardHeader,
-        styles.subheadingWithIcon,
-        className,
-      )}
+      className={cx(styles.usageCardHeader(tooltip), className)}
       testId={testId}
     >
       {title}
       {tooltip && (
         <Tooltip content={tooltip} className={styles.tooltip} placement="top">
-          <InfoCircleIcon className={styles.infoIcon} size="medium" />
+          <InfoIcon className={styles.infoIcon} size="medium" />
         </Tooltip>
       )}
 

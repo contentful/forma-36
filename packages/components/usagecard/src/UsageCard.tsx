@@ -1,16 +1,8 @@
-import React, { HTMLAttributes, useMemo } from 'react';
-import {
-  Box,
-  type CommonProps,
-  type ExpandProps,
-  Flex,
-} from '@contentful/f36-core';
+import React, { HTMLAttributes } from 'react';
+import { Box, type CommonProps, type ExpandProps } from '@contentful/f36-core';
 import { getUsageCardStyles } from './UsageCard.styles';
 import { Card } from '@contentful/f36-card';
-import {
-  UsageCardContextProvider,
-  UsageCardContextType,
-} from './UsageCardContext';
+import { cx } from 'emotion';
 
 export type UsageCardProps = CommonProps &
   HTMLAttributes<HTMLDivElement> & {
@@ -30,40 +22,29 @@ function _UsageCard(
 ) {
   const {
     children,
+    className,
     header,
     description,
     variant = 'usage',
     testId = 'cf-ui-usage-card',
     ...otherProps
   } = props;
-  const styles = getUsageCardStyles(variant);
-
-  const contextValue: UsageCardContextType = useMemo(
-    () => ({
-      variant,
-    }),
-    [variant],
-  );
+  const styles = getUsageCardStyles();
 
   return (
-    <UsageCardContextProvider value={contextValue}>
-      <Card
-        {...otherProps}
-        className={styles.usageCard}
-        ref={ref}
-        data-test-id={testId}
-      >
-        <Flex flexDirection="column" style={{ height: '100%' }}>
-          <Box style={{ flex: 1 }}>
-            {header}
-            {children}
-          </Box>
-          {description && (
-            <Box style={{ marginTop: 'auto' }}>{description}</Box>
-          )}
-        </Flex>
-      </Card>
-    </UsageCardContextProvider>
+    <Card
+      {...otherProps}
+      className={cx(styles.usageCard(variant), className)}
+      ref={ref}
+      data-test-id={testId}
+      padding="large"
+    >
+      <Box style={{ flex: 1 }}>
+        {header}
+        {children}
+      </Box>
+      {description && <Box>{description}</Box>}
+    </Card>
   );
 }
 

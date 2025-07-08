@@ -2,32 +2,34 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { UsageCardProps } from './UsageCard';
 
-export const getUsageCardStyles = (variant: UsageCardProps['variant']) => {
-  if (variant === 'info') {
-    return {
-      usageCard: css({
-        borderRadius: '6px',
+const variantToStyles = (variant: UsageCardProps['variant']) => {
+  switch (variant) {
+    case 'info':
+      return {
         backgroundColor: tokens.gray100,
         border: `2px solid ${tokens.gray100}`,
-        padding: '1.3rem',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        '@media (max-width: 1024px)': {
-          marginBottom: tokens.spacingM,
-        },
-      }),
-    };
+      };
+    default:
+      return {
+        border: `2px solid ${tokens.gray200}`,
+      };
   }
-  return {
-    usageCard: css({
-      border: `2px solid ${tokens.gray200}`,
-      borderRadius: '6px',
-      padding: '1.3rem',
+};
+
+export const getUsageCardStyles = () => ({
+  usageCard: (variant: UsageCardProps['variant']) =>
+    css({
       flexDirection: 'column',
+      height: '100%',
       justifyContent: 'space-between',
-      '@media (max-width: 1024px)': {
-        marginBottom: tokens.spacingM,
-      },
+      ...variantToStyles(variant),
+    }),
+});
+
+export const getUsageCardDescriptionStyles = () => {
+  return {
+    usageCardDescription: css({
+      color: tokens.gray500,
     }),
   };
 };

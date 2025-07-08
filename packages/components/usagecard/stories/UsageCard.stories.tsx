@@ -3,6 +3,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { UsageCardProps } from '../src';
 import { UsageCard } from '../src/CompoundUsageCard';
+import { TextLink } from '@contentful/f36-text-link';
 
 export default {
   component: UsageCard,
@@ -27,11 +28,16 @@ export const Default: Story<Pick<UsageCardProps, 'variant'> & StoryArgs> = ({
         />
       }
       description={
-        <UsageCard.Description
-          linkTitle="Learn more"
-          link="https://www.contentful.com"
-        >
+        <UsageCard.Description>
           This is a description of the usage card.
+          {'  '}
+          <TextLink
+            target="_blank"
+            rel="noopener noreferrer"
+            href={'https://www.contentful.com'}
+          >
+            Learn more
+          </TextLink>
         </UsageCard.Description>
       }
     ></UsageCard>
