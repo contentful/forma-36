@@ -5,7 +5,6 @@ import { Caption } from '@contentful/f36-typography';
 import { getUsageCardDescriptionStyles } from './UsageCard.styles';
 
 export type UsageCardDescriptionProps = {
-  text?: string;
   children: React.ReactNode;
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
