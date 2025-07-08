@@ -34,13 +34,12 @@ export default {
 export const basic: Story<ButtonGroupProps> = (args) => {
   return (
     <ButtonGroup {...args}>
-      {false && <Button variant="secondary">Button</Button>}
-      <Button variant="secondary">Button</Button>
-      <Button variant="secondary">Button</Button>
-      <Button variant="secondary">Button</Button>
+      <Button>Button</Button>
+      <Button>Button</Button>
+      <Button>Button</Button>
       <IconButton
         variant="secondary"
-        icon={<CaretDownIcon variant="secondary" />}
+        icon={<CaretDownIcon color={tokens.gray900} />}
         aria-label="Open dropdown"
       />
     </ButtonGroup>
@@ -50,12 +49,12 @@ export const basic: Story<ButtonGroupProps> = (args) => {
 export const spaced: Story<ButtonGroupProps> = (args) => {
   return (
     <ButtonGroup {...args}>
-      <Button variant="secondary">Button</Button>
-      <Button variant="secondary">Button</Button>
-      <Button variant="secondary">Button</Button>
+      <Button>Button</Button>
+      <Button>Button</Button>
+      <Button>Button</Button>
       <IconButton
         variant="secondary"
-        icon={<CaretDownIcon variant="secondary" />}
+        icon={<CaretDownIcon color={tokens.gray900} />}
         aria-label="Open dropdown"
       />
     </ButtonGroup>
@@ -125,7 +124,7 @@ export const overview: Story<ButtonGroupProps> = () => {
                         <IconButton
                           onClick={onClick}
                           variant={buttonVariant}
-                          icon={<CaretDownIcon variant="secondary" />}
+                          icon={<CaretDownIcon color={tokens.gray900} />}
                           aria-label="Open dropdown"
                         />
                       </ButtonGroup>

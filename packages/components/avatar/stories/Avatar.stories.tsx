@@ -33,7 +33,7 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar
           {...args}
           size="tiny"
-          icon={<CheckCircleIcon color={tokens.colorPrimary} />}
+          icon={<CheckCircleIcon color={tokens.colorPositive} />}
         />
         <Avatar
           {...args}
