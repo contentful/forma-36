@@ -4,9 +4,9 @@ import { css, cx } from 'emotion';
 import { UnstyledOpenInCodeSandboxButton } from '@codesandbox/sandpack-react';
 import tokens from '@contentful/f36-tokens';
 import { Flex, Text, Heading, Tooltip, Icon } from '@contentful/f36-components';
-import { LinkAlternateIcon } from '@contentful/f36-icons';
 import { useUrlSync } from './useUrlSync';
 import { CodeSandboxLogo } from './codesandbox-logo';
+import { LinkSimpleIcon } from '@contentful/f36-icons';
 
 const styles = {
   topbar: css({
@@ -63,7 +63,7 @@ export function PlaygroundTopBar() {
         <UnstyledOpenInCodeSandboxButton
           className={cx(styles.embeddedButton, styles.codeSandboxButton)}
         >
-          <Icon as={CodeSandboxLogo} variant="muted" size="medium" />
+          <Icon as={CodeSandboxLogo} color={tokens.gray600} size="medium" />
           <Text fontColor="gray800">Open in CodeSandbox</Text>
         </UnstyledOpenInCodeSandboxButton>
       </Flex>
@@ -95,7 +95,7 @@ function UrlCopyButton({ url }) {
           gap="spacingXs"
           className={cx(styles.embeddedButton, styles.shareButton)}
         >
-          <LinkAlternateIcon variant="muted" />
+          <LinkSimpleIcon />
           <Text fontColor="gray800">Copy Playground URL</Text>
         </Flex>
       </Tooltip>

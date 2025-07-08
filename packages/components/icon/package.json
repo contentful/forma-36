@@ -37,7 +37,6 @@
     "emotion": "^10.0.17"
   },
   "devDependencies": {
-    "@contentful/f36-icons-v4": "npm:@contentful/f36-icons@^4.0.0",
     "react-icons": "^4.4.0",
     "tsconfig-to-dual-package": "^1.2.0"
   },

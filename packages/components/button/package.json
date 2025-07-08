@@ -14,8 +14,8 @@
     "emotion": "^10.0.17"
   },
   "devDependencies": {
-    "@contentful/f36-icon": "^4.80.3",
-    "@contentful/f36-icons": "^4.29.0"
+    "@contentful/f36-icon": "^5.0.0-alpha.20",
+    "@contentful/f36-icons": "^5.0.0-alpha.45"
   },
   "peerDependencies": {
     "react": ">=16.8",
