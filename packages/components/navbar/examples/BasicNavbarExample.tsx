@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar } from '@contentful/f36-navbar-alpha';
+import { Navbar } from '@contentful/f36-navbar';
 
 export default function BasicNavbarExample() {
   return (
@@ -7,10 +7,10 @@ export default function BasicNavbarExample() {
       mainNavigation={
         <>
           <Navbar.Item title="Home" isActive />
-          <Navbar.Item title="Content model"  />
-          <Navbar.Item title="Content"  />
+          <Navbar.Item title="Content model" />
+          <Navbar.Item title="Content" />
           <Navbar.Item title="Media" />
-          <Navbar.Item title="Apps" }>
+          <Navbar.Item title="Apps">
             <Navbar.MenuItem
               title="App 1"
               icon={
@@ -27,9 +27,9 @@ export default function BasicNavbarExample() {
       mobileNavigation={
         <>
           <Navbar.MenuItem title="Content model" />
-          <Navbar.MenuItem title="Content"  />
-          <Navbar.MenuItem title="Experiences"  />
-          <Navbar.MenuItem title="Media"  />
+          <Navbar.MenuItem title="Content" />
+          <Navbar.MenuItem title="Experiences" />
+          <Navbar.MenuItem title="Media" />
           <Navbar.Submenu title="Apps">
             <Navbar.MenuItem
               title="App 1"

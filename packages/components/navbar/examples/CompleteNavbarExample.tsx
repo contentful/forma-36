@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar } from '@contentful/f36-navbar-alpha';
+import { Navbar } from '@contentful/f36-navbar';
 import { TextLink } from '@contentful/f36-text-link';
 
 export default function CompleteNavbarExample() {
@@ -8,10 +8,10 @@ export default function CompleteNavbarExample() {
       mainNavigation={
         <>
           <Navbar.Item title="Home" isActive />
-          <Navbar.Item title="Content model" } />
+          <Navbar.Item title="Content model" />
           <Navbar.Item title="Content" />
-          <Navbar.Item title="Media"  />
-          <Navbar.Item title="Apps" >
+          <Navbar.Item title="Media" />
+          <Navbar.Item title="Apps">
             <Navbar.MenuItem
               title="App 1"
               icon={
@@ -31,7 +31,7 @@ export default function CompleteNavbarExample() {
           <Navbar.MenuItem title="Content" />
           <Navbar.MenuItem title="Experiences" />
           <Navbar.MenuItem title="Media" />
-          <Navbar.Submenu title="Apps" >
+          <Navbar.Submenu title="Apps">
             <Navbar.MenuItem
               title="App 1"
               icon={
@@ -57,7 +57,6 @@ export default function CompleteNavbarExample() {
         <>
           <TextLink>Upgrade</TextLink>
           <TextLink
-            icon={<MagnifyingGlassIcon />}
             href="https://app.contentful.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -104,7 +103,7 @@ export default function CompleteNavbarExample() {
               href="https://support.contentful.com"
             />
           </Navbar.Item>
-          <Navbar.Item label="Menu Settings" >
+          <Navbar.Item label="Menu Settings">
             <Navbar.MenuSectionTitle>General</Navbar.MenuSectionTitle>
             <Navbar.MenuItem title="Home" />
             <Navbar.MenuItem title="API keys" />
@@ -121,7 +120,7 @@ export default function CompleteNavbarExample() {
           initials="CC"
           label="Account settings"
         >
-          <Navbar.MenuItem title="Account settings" icon={<WrenchIcon />} />
+          <Navbar.MenuItem title="Account settings" />
           <Navbar.MenuItem title="Dashboard" />
           <Navbar.MenuDivider />
           <Navbar.MenuItem
