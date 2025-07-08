@@ -4,6 +4,8 @@ import { LayoutProps } from './Layout';
 export type LayoutContextType = {
   variant: NonNullable<LayoutProps['variant']>;
   withHeader: boolean;
+  withLeftSidebar: boolean;
+  withRightSidebar: boolean;
   offsetTop: number;
 };
 

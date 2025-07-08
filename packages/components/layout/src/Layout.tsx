@@ -84,9 +84,11 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     () => ({
       variant,
       withHeader: Boolean(header),
+      withLeftSidebar: withLeftSidebar,
+      withRightSidebar: withRightSidebar,
       offsetTop,
     }),
-    [variant, header, offsetTop],
+    [variant, header, withLeftSidebar, withRightSidebar, offsetTop],
   );
 
   return (
