@@ -14,6 +14,7 @@ export const getHeaderStyles = ({
     flexShrink: 1,
     flexBasis: '25%',
     justifyContent: 'flex-end',
+    gap: tokens.spacingS,
   }),
   wrapper: css({
     flexGrow: 0,
