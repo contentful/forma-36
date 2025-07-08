@@ -3,9 +3,10 @@ import React from 'react';
 import { css } from 'emotion';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Box } from '@contentful/f36-core';
-import { Button, DisplayText, Header } from '@contentful/f36-components';
+import { Button, DisplayText } from '@contentful/f36-components';
 
 import type { LayoutProps } from '../src';
+import { Header } from '../../header/src/Header';
 import { Layout } from '../src/CompoundLayout';
 import { LayoutBody } from '../src/LayoutBody';
 
