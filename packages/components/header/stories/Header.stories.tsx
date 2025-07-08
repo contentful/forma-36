@@ -90,6 +90,25 @@ export const withBackButton: Story<HeaderProps> = () => (
     />
   </ExampleWrapper>
 );
+export const withTitleOverwrites: Story<HeaderProps> = () => (
+  <ExampleWrapper>
+    <Box marginBottom="spacingM">
+      <Note>
+        The title default properties can be overwritten via the `titleProps`
+        property. It accepts `as` and `size` properties, which are passed to the
+        underlying typography component. The `as` property defines the HTML tag
+        used for the title, and the `size` property defines the font size. The
+        default `as` is `h1`, and the default `size` is `large`.
+      </Note>
+    </Box>
+    <Header
+      backButtonProps={{ onClick: action }}
+      withBackButton
+      title="Product"
+      titleProps={{ as: 'h2', size: 'medium' }} // Overwriting the default title properties
+    />
+  </ExampleWrapper>
+);
 
 export const withBackButtonAndBreadcrumbs: Story<HeaderProps> = () => (
   <ExampleWrapper>

@@ -13,9 +13,9 @@ export const getHeaderStyles = ({
     flexGrow: 0,
     flexShrink: 1,
     flexBasis: '25%',
-    textAlign: 'right',
+    justifyContent: 'flex-end',
   }),
-  context: css({
+  wrapper: css({
     flexGrow: 0,
     flexShrink: 1,
     flexBasis: '25%',
@@ -27,8 +27,6 @@ export const getHeaderStyles = ({
     flexBasis: '50%',
   }),
   root: css({
-    borderBottom:
-      variant === 'breadcrumb' ? `1px solid ${tokens.gray200}` : 'none',
     background: tokens.colorWhite,
     height: `${HEADER_HEIGHT}px`,
     marginTop: variant === 'title' ? tokens.spacingS : 0,

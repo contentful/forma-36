@@ -17,6 +17,7 @@ import { Breadcrumb, type BreadcrumbProps } from './Breadcrumb';
 import { getHeaderStyles } from './Header.styles';
 import { HeaderTitle } from './HeaderTitle';
 import { Segmentation } from './Segmentation';
+import type { HeadingElement } from '@contentful/f36-typography';
 
 const HEADER_DEFAULT_TAG = 'header';
 
@@ -62,6 +63,10 @@ type HeaderInternalProps = Variant & {
    * The title of the element this header pertains to.
    */
   title?: ReactElement | string;
+  titleProps?: {
+    as?: HeadingElement;
+    size?: 'medium' | 'large';
+  };
   metadata?: ReactNode;
 };
 
@@ -78,13 +83,14 @@ function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
     filters,
     metadata,
     title,
+    titleProps,
     withBackButton,
     testId = 'cf-ui-header',
     ...otherProps
   }: HeaderProps<E>,
   forwardedRef: Ref<HTMLElement>,
 ) {
-  const variant = withBackButton || breadcrumbs ? 'breadcrumb' : 'title';
+  const variant = breadcrumbs ? 'breadcrumb' : 'title';
   const styles = getHeaderStyles({ hasFilters: Boolean(filters), variant });
 
   return (
@@ -97,16 +103,18 @@ function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
       testId={testId}
       {...otherProps}
     >
-      <div className={styles.context}>
+      <Flex className={styles.wrapper}>
         <Flex alignItems="center" gap="spacingXs">
-          {variant === 'title' ? (
-            <HeaderTitle title={title} variant={variant} />
-          ) : (
+          {withBackButton && <BackButton {...backButtonProps} />}
+          {breadcrumbs ? (
             <Segmentation>
-              {withBackButton && <BackButton {...backButtonProps} />}
               {breadcrumbs && <Breadcrumb breadcrumbs={breadcrumbs} />}
-              {title && <HeaderTitle title={title} variant={variant} />}
+              {title && (
+                <HeaderTitle title={title} variant={variant} {...titleProps} />
+              )}
             </Segmentation>
+          ) : (
+            <HeaderTitle title={title} variant={variant} {...titleProps} />
           )}
 
           {metadata && (
@@ -115,9 +123,9 @@ function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
             </Flex>
           )}
         </Flex>
-      </div>
-      <div className={styles.filters}>{filters}</div>
-      <div className={styles.actions}>{actions}</div>
+      </Flex>
+      <Flex className={styles.filters}>{filters}</Flex>
+      <Flex className={styles.actions}>{actions}</Flex>
     </Flex>
   );
 }
