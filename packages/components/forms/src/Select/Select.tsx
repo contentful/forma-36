@@ -5,7 +5,8 @@ import React, {
   ChangeEventHandler,
 } from 'react';
 import { cx } from 'emotion';
-import { ChevronDownIcon } from '@contentful/f36-icons';
+import tokens from '@contentful/f36-tokens';
+import { CaretDownIcon } from '@contentful/f36-icons';
 
 import type {
   CommonProps,
@@ -107,7 +108,11 @@ const _Select = (
       >
         {children}
       </select>
-      <ChevronDownIcon className={styles.icon} variant="muted" />
+      <CaretDownIcon
+        className={styles.icon}
+        color={tokens.gray600}
+        size="small"
+      />
     </div>
   );
 };

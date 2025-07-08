@@ -8,23 +8,8 @@ import React, {
 } from 'react';
 import { css, cx } from 'emotion';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
-import tokens from '@contentful/f36-tokens';
-import * as f36Components from '@contentful/f36-components';
-import { ProgressStepper } from '@contentful/f36-progress-stepper';
-import { Multiselect } from '@contentful/f36-multiselect';
-import { NavList } from '@contentful/f36-navlist';
-import * as f36utils from '@contentful/f36-utils';
-import { Layout } from '@contentful/f36-layout';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
-import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
-import * as f36icons from '@contentful/f36-icons';
-import * as f36iconsAlpha from '@contentful/f36-icons-alpha';
-import { ExternalLinkIcon } from '@contentful/f36-icons';
-import { theme } from './theme';
-import { formatSourceCode } from './utils';
-import * as coder from '../../utils/coder';
-import FocusLock from 'react-focus-lock';
 import { DndContext } from '@dnd-kit/core';
 import {
   arrayMove,
@@ -35,18 +20,31 @@ import {
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { format, parse, isValid } from 'date-fns';
+import FocusLock from 'react-focus-lock';
+
+import tokens from '@contentful/f36-tokens';
+import * as f36utils from '@contentful/f36-utils';
+import * as f36Components from '@contentful/f36-components';
+import { ProgressStepper } from '@contentful/f36-progress-stepper';
+import { Multiselect } from '@contentful/f36-multiselect';
+import { NavList } from '@contentful/f36-navlist';
+import { Layout } from '@contentful/f36-layout';
+import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
+
+import { theme } from './theme';
+import { formatSourceCode } from './utils';
+import * as coder from '../../utils/coder';
+import * as f36icons from '@contentful/f36-icons';
 
 const liveProviderScope = {
   ...f36Components,
-  ...f36icons,
   ...f36utils,
-  ...f36iconsAlpha, // Remove when new icons are not in alpha
+  ...f36icons,
   Layout, // Remove when added to f36-components
   Multiselect, // Remove when added to f36-components
   NavList, // Remove when added to f36-components
   ProgressStepper, // Remove when added to f36-components
   css,
-  f36icons,
   tokens,
   // most used react hooks
   useState,
@@ -144,8 +142,6 @@ const styles = {
     border-radius: 0 0 ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium};
   `,
 };
-const ComponentPreviewIcon = f36icons.PreviewIcon;
-const ComponentPreviewOffIcon = f36icons.PreviewOffIcon;
 
 export function ComponentSource({
   children,
@@ -185,11 +181,7 @@ export function ComponentSource({
                 size="small"
                 variant="secondary"
                 startIcon={
-                  showSource ? (
-                    <ComponentPreviewOffIcon />
-                  ) : (
-                    <ComponentPreviewIcon />
-                  )
+                  showSource ? <f36icons.EyeClosedIcon /> : <f36icons.EyeIcon />
                 }
                 onClick={handleToggle}
               >
@@ -218,8 +210,8 @@ export function ComponentSource({
                   {isExampleFromFile && (
                     <Button
                       as="a"
-                      className={styles.playgroundButton}
-                      endIcon={<ExternalLinkIcon />}
+                      className={cx(styles.playgroundButton)}
+                      endIcon={<f36icons.ArrowSquareOutIcon />}
                       size="small"
                       href={`/playground?code=${coder.encode(children)}`}
                       target="_blank"

@@ -5,7 +5,7 @@ import {
   Button,
   IconButton,
 } from '@contentful/f36-components';
-import { ChevronDownIcon, PlusIcon } from '@contentful/f36-icons';
+import { CaretDownIcon, PlusIcon } from '@contentful/f36-icons';
 
 export default function ButtonGroupMergedExample() {
   return (
@@ -26,7 +26,7 @@ export default function ButtonGroupMergedExample() {
         <IconButton
           variant="positive"
           aria-label="Open dropdown"
-          icon={<ChevronDownIcon />}
+          icon={<CaretDownIcon />}
         />
       </ButtonGroup>
     </Stack>

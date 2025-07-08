@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
+import tokens from '@contentful/f36-tokens';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
@@ -32,57 +33,57 @@ export const Overview: Story<AvatarProps> = (args) => {
         <Avatar
           {...args}
           size="tiny"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPositive} />}
         />
         <Avatar
           {...args}
           size="small"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPrimary} />}
         />
         <Avatar
           {...args}
           size="medium"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPrimary} />}
         />
         <Avatar
           {...args}
           size="large"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPrimary} />}
         />
         <Avatar
           {...args}
           size="75px"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPrimary} />}
         />
         <Avatar
           {...args}
           size="75px"
           variant="app"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPrimary} />}
         />
         <Avatar
           {...args}
           size="large"
           variant="app"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPrimary} />}
         />
         <Avatar
           {...args}
           size="medium"
           variant="app"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPrimary} />}
         />
         <Avatar
           {...args}
           size="small"
           variant="app"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPrimary} />}
         />
         <Avatar
           {...args}
           size="tiny"
           variant="app"
-          icon={<CheckCircleIcon variant="positive" />}
+          icon={<CheckCircleIcon color={tokens.colorPrimary} />}
         />
       </Flex>
 

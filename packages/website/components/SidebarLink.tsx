@@ -1,15 +1,16 @@
 import React from 'react';
+import Image from 'next/image';
 import { css, cx } from 'emotion';
 import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
 import { List, Flex, Text, Badge } from '@contentful/f36-components';
-import { ChevronDownIcon } from '@contentful/f36-icons';
-import {
-  ExternalLinkTrimmedIcon,
-  LockTrimmedIcon,
-} from '@contentful/f36-icons';
+
 import { useSession } from 'next-auth/react';
 import { ComponentStatus } from '../types';
+
+import caretDown from '../resources/icons/caret-down.svg';
+import arrowSquareOut from '../resources/icons/arrow-square-out.svg';
+import lockSimple from '../resources/icons/lock-simple.svg';
 
 const styles = {
   link: css({
@@ -93,8 +94,10 @@ export function SidebarSectionButton({
           {children}
         </Text>
 
-        <ChevronDownIcon
-          variant="muted"
+        <Image
+          src={caretDown}
+          width={18}
+          height={18}
           className={cx(titleStyles.chevron, {
             [titleStyles.closedIcon]: !isOpen,
           })}
@@ -168,14 +171,18 @@ export function SidebarLink({
           <span className={cx([titleStyles.clickable])}>
             {children}
             {isExternal && (
-              <ExternalLinkTrimmedIcon
-                variant="muted"
+              <Image
+                src={arrowSquareOut}
+                width={18}
+                height={18}
                 className={titleStyles.linkIcon}
               />
             )}
             {isAuthProtected && (
-              <LockTrimmedIcon
-                variant="muted"
+              <Image
+                src={lockSimple}
+                width={18}
+                height={18}
                 className={titleStyles.linkIcon}
               />
             )}

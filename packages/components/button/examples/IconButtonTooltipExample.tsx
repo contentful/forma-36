@@ -2,7 +2,7 @@ import React from 'react';
 import { IconButton, Flex, Stack } from '@contentful/f36-components';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { FormatBoldIcon, FormatItalicIcon } from '@contentful/f36-icons';
+import { TextBIcon, TextItalicIcon } from '@contentful/f36-icons';
 
 export default function IconButtonTooltipExample() {
   const styles = {
@@ -20,7 +20,7 @@ export default function IconButtonTooltipExample() {
       <Stack spacing="spacingXs">
         <IconButton
           aria-label="Toggle bold"
-          icon={<FormatBoldIcon />}
+          icon={<TextBIcon />}
           variant="transparent"
           size="small"
           withTooltip
@@ -29,7 +29,7 @@ export default function IconButtonTooltipExample() {
 
         <IconButton
           aria-label="Toggle italic"
-          icon={<FormatItalicIcon />}
+          icon={<TextItalicIcon />}
           variant="transparent"
           size="small"
           withTooltip
