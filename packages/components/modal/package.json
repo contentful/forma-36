@@ -8,7 +8,7 @@
   "dependencies": {
     "@contentful/f36-button": "^4.80.3",
     "@contentful/f36-core": "^4.80.3",
-    "@contentful/f36-icons": "^5.0.0-alpha.44",
+    "@contentful/f36-icons": "^5.0.0-alpha.45",
     "@contentful/f36-tokens": "^4.2.0",
     "@contentful/f36-typography": "^4.80.3",
     "@types/react-modal": "^3.13.1",
