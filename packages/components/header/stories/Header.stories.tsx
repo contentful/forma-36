@@ -4,7 +4,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Box, Flex } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
 import tokens from '@contentful/f36-tokens';
-import { MagnifyingGlassIcon } from '@contentful/f36-icons';
+import { SearchIcon, CopyIcon } from '@contentful/f36-icons';
 import { TextInput } from '@contentful/f36-forms';
 
 import { Header, type HeaderProps } from '../src/Header';
@@ -78,9 +78,11 @@ export const withBackButton: Story<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
       <Note>
-        The title property is semantically the title of the entire page and
-        represented as `h1`, but displayed in a smaller font size when
-        breadcrumbs are present.
+        When a back button is present, backButtonProps are also required to be
+        set to enable onClick behavior. The back button is rendered as a Button
+        component with the `secondary` variant and `small` size. The title
+        property is semantically the title of the entire page and represented as
+        `h1`per default.
       </Note>
     </Box>
     <Header
@@ -90,6 +92,7 @@ export const withBackButton: Story<HeaderProps> = () => (
     />
   </ExampleWrapper>
 );
+
 export const withTitleOverwrites: Story<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
@@ -144,20 +147,44 @@ export const withActions: Story<HeaderProps> = () => (
     </Box>
     <Header
       actions={
-        <Flex
-          alignItems="center"
-          gap={tokens.spacingS}
-          justifyContent="flex-end"
-        >
+        <>
           <Button variant="secondary" size="small">
             Cancel
           </Button>
           <Button variant="primary" size="small">
             Save
           </Button>
-        </Flex>
+        </>
       }
       title="Product"
+    />
+  </ExampleWrapper>
+);
+
+export const withMetadata: Story<HeaderProps> = () => (
+  <ExampleWrapper>
+    <Box marginBottom="spacingM">
+      <Note>Metadata area get's rendered after the title area</Note>
+    </Box>
+    <Header
+      title="Entry ID: 1234567890"
+      metadata={
+        <>
+          <Button variant="transparent" startIcon={<CopyIcon />} size="small">
+            Copy ID
+          </Button>
+        </>
+      }
+      actions={
+        <>
+          <Button variant="secondary" size="small">
+            Cancel
+          </Button>
+          <Button variant="primary" size="small">
+            Save
+          </Button>
+        </>
+      }
     />
   </ExampleWrapper>
 );
