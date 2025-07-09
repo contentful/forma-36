@@ -11,10 +11,10 @@ export default {
 export const Default: Story<UsageCountProps> = () => {
   return (
     <UsageCount
-      variant={'periodic'}
+      variant="periodic"
       value={150}
       valueUnit="GB"
       periodType="year"
-    ></UsageCount>
+    />
   );
 };

@@ -8,6 +8,6 @@ export default function UsageCountConsumptionExample() {
       variant="consumption"
       value={150}
       valueDescription="consumption units per year"
-    ></UsageCount>
+    />
   );
 }

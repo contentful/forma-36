@@ -10,7 +10,7 @@ describe('UsageCount', function () {
         variant="consumption"
         value={150}
         valueDescription="consumption units per year"
-      ></UsageCount>,
+      />,
     );
 
     expect(screen.getByTestId('cf-ui-usage-count')).toBeTruthy();
@@ -23,7 +23,7 @@ describe('UsageCount', function () {
         value={150}
         valueUnit="GB"
         periodType="year"
-      ></UsageCount>,
+      />,
     );
 
     expect(screen.getByTestId('cf-ui-usage-count')).toBeTruthy();
@@ -35,7 +35,7 @@ describe('UsageCount', function () {
         value={150}
         valueUnit="GB"
         quota={100}
-      ></UsageCount>,
+      />,
     );
 
     expect(screen.getByTestId('cf-ui-usage-count')).toBeTruthy();
@@ -46,7 +46,7 @@ describe('UsageCount', function () {
         variant="consumption"
         value={150}
         valueDescription="consumption units per year"
-      ></UsageCount>,
+      />,
     );
 
     const results = await axe(container);
@@ -60,10 +60,20 @@ describe('UsageCount', function () {
         value={150}
         valueUnit="GB"
         periodType="year"
-      ></UsageCount>,
+      />,
     );
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  it('renders children content correctly', () => {
+    render(
+      <UsageCount variant="entitlement" value={150} valueUnit="GB" quota={100}>
+        <div>Child content</div>
+      </UsageCount>,
+    );
+
+    expect(screen.getByText('Child content')).toBeInTheDocument();
   });
 });

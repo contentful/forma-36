@@ -9,6 +9,6 @@ export default function UsageCountExample() {
       value={150}
       valueUnit="GB"
       periodType="year"
-    ></UsageCount>
+    />
   );
 }

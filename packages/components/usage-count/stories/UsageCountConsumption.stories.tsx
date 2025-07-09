@@ -11,9 +11,9 @@ export default {
 export const Consumption: Story<UsageCountProps> = () => {
   return (
     <UsageCount
-      variant={'consumption'}
+      variant="consumption"
       value={150}
       valueDescription="consumption units per year"
-    ></UsageCount>
+    />
   );
 };

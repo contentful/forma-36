@@ -10,11 +10,6 @@ export default {
 
 export const Entitlements: Story<UsageCountProps> = () => {
   return (
-    <UsageCount
-      variant={'entitlement'}
-      value={150}
-      valueUnit="GB"
-      quota={200}
-    ></UsageCount>
+    <UsageCount variant="entitlement" value={150} valueUnit="GB" quota={200} />
   );
 };
