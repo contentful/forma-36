@@ -1,5 +1,5 @@
 {
-  "name": "@contentful/f36-usagecount",
+  "name": "@contentful/f36-usage-count",
   "version": "4.0.0",
   "description": "Forma 36: UsageCount component",
   "scripts": {

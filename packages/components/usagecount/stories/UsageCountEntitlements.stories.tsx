@@ -8,13 +8,13 @@ export default {
   title: 'Components/UsageCount',
 } as Meta;
 
-export const Default: Story<UsageCountProps> = () => {
+export const Entitlements: Story<UsageCountProps> = () => {
   return (
     <UsageCount
-      variant={'periodic'}
+      variant={'entitlement'}
       value={150}
       valueUnit="GB"
-      periodType="year"
+      quota={200}
     ></UsageCount>
   );
 };

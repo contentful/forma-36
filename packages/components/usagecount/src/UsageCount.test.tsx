@@ -1,11 +1,69 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { UsageCount } from './UsageCount';
+import { axe } from 'jest-axe';
 
 describe('UsageCount', function () {
-  it('renders', () => {
-    const tree = render(<UsageCount>hello world</UsageCount>);
+  it('renders consumption component', () => {
+    render(
+      <UsageCount
+        variant="consumption"
+        value={150}
+        valueDescription="consumption units per year"
+      ></UsageCount>,
+    );
 
-    expect(tree).toBeTruthy();
+    expect(screen.getByTestId('cf-ui-usage-count')).toBeTruthy();
+  });
+
+  it('renders periodic component', () => {
+    render(
+      <UsageCount
+        variant="periodic"
+        value={150}
+        valueUnit="GB"
+        periodType="year"
+      ></UsageCount>,
+    );
+
+    expect(screen.getByTestId('cf-ui-usage-count')).toBeTruthy();
+  });
+  it('renders entitlement component', () => {
+    render(
+      <UsageCount
+        variant="entitlement"
+        value={150}
+        valueUnit="GB"
+        quota={100}
+      ></UsageCount>,
+    );
+
+    expect(screen.getByTestId('cf-ui-usage-count')).toBeTruthy();
+  });
+  it('has no a11y issues with consumption variant', async () => {
+    const { container } = render(
+      <UsageCount
+        variant="consumption"
+        value={150}
+        valueDescription="consumption units per year"
+      ></UsageCount>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('has no a11y issues with periodic variant', async () => {
+    const { container } = render(
+      <UsageCount
+        variant="periodic"
+        value={150}
+        valueUnit="GB"
+        periodType="year"
+      ></UsageCount>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
