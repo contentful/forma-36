@@ -1,5 +1,5 @@
 {
-  "name": "@contentful/f36-usagecard",
+  "name": "@contentful/f36-usage-card",
   "version": "4.0.0",
   "description": "Forma 36: UsageCard component",
   "scripts": {

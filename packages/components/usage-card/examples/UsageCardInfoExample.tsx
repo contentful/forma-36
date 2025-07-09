@@ -1,5 +1,5 @@
 import React from 'react';
-import { UsageCard } from '@contentful/f36-usagecard';
+import { UsageCard } from '@contentful/f36-usage-card';
 import { TextLink } from '@contentful/f36-text-link';
 
 export default function UsageCardInfoExample() {
