@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navbar } from '@contentful/f36-navbar';
-import { TextLink } from '@contentful/f36-text-link';
 
 export default function CompleteNavbarExample() {
   return (
@@ -55,14 +54,7 @@ export default function CompleteNavbarExample() {
       }
       promotions={
         <>
-          <TextLink>Upgrade</TextLink>
-          <TextLink
-            href="https://app.contentful.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Feedback
-          </TextLink>
+          <Navbar.Badge>Trial</Navbar.Badge>
         </>
       }
       secondaryNavigation={
