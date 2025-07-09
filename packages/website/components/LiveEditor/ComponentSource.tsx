@@ -25,6 +25,7 @@ import FocusLock from 'react-focus-lock';
 import tokens from '@contentful/f36-tokens';
 import * as f36utils from '@contentful/f36-utils';
 import * as f36Components from '@contentful/f36-components';
+import * as f36Navbar from '@contentful/f36-navbar';
 import { ProgressStepper } from '@contentful/f36-progress-stepper';
 import { Multiselect } from '@contentful/f36-multiselect';
 import { NavList } from '@contentful/f36-navlist';
@@ -40,6 +41,7 @@ const liveProviderScope = {
   ...f36Components,
   ...f36utils,
   ...f36icons,
+  ...f36Navbar,
   Layout, // Remove when added to f36-components
   Multiselect, // Remove when added to f36-components
   NavList, // Remove when added to f36-components
@@ -86,7 +88,6 @@ const styles = {
   `,
   // !important was necessary because these styles are being applied after the Card component styles
   card: css`
-    padding: 3rem;
     font-family: ${tokens.fontStackPrimary};
     border-radius: ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium} 0 0 !important;
   `,
