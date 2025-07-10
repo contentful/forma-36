@@ -9,7 +9,6 @@
     "@contentful/f36-card": "^4.80.4",
     "@contentful/f36-core": "^4.0.0",
     "@contentful/f36-icons": "^4.29.1",
-    "@contentful/f36-icons-alpha": "npm:@contentful/f36-icons@^5.0.0-alpha.44",
     "@contentful/f36-text-link": "^4.80.4",
     "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-tooltip": "^4.80.4",
