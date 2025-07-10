@@ -6,25 +6,15 @@ isNew: true
 slug: /components/navbar/
 github: 'https://github.com/contentful/forma-36/tree/main/packages/components/navbar'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-navbar'
-typescript: ./src/Navbar.tsx,./src/NavbarAccount/NavbarAccount.tsx,./src/NavbarBadge/NavbarBadge.tsx,./src/NavbarItem/NavbarItem.tsx,./src/NavbarMenuItem/NavbarMenuItem.tsx,./src/NavbarHelp/NavbarSubmenu.tsx,./src/NavbarSwitcher/NavbarSwitcher.tsx,
+typescript: ./src/Navbar.tsx,./src/NavbarAccount/NavbarAccount.tsx,./src/NavbarBadge/NavbarBadge.tsx,./src/NavbarItem/NavbarItem.tsx,./src/NavbarMenuItem/NavbarMenuItem.tsx,./src/NavbarSubmenu/NavbarSubmenu.tsx,./src/NavbarSwitcher/NavbarSwitcher.tsx,
 ---
 
 The Navbar component offers a unified navigation experience across all of Contentful's products.
 
-> [!CAUTION]
-> The Navbar component supports responsiveness. Parts of the navbar will disappear on some breakpoints. Find the detailed information in the table below.
+## Introduction
 
-The Navbar consists of multiple areas, which can be targeted via dedicated navbar props and does not accept `children`. It is responsive and shows/hides different areas on different breakpoints.
-
-| Prop                  | Description                                                                                                                                                                                                                                                                                                                                                          | Breakpoints                      | Recommended Compound Component      |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- | ----------------------------------- |
-| `logo`                | Allows to overwrite the Contentful logo with a custom logo and link. This ensures a consistent and intuitive navigation experience throughout the application.                                                                                                                                                                                                       | Always visible                   | Custom element                      |
-| `mainNavigation`      | Main navigation items. Each main navigation item should use the `Navbar.Item` compound component. This area is responsive and will be visible starting from the default breakpoint `867px`. This can be overwritten in the `mobileNavigationProps` and changed to `breakpoint: 'medium'` (`1024px`).                                                                 | `867px` (default), configurable  | `Navbar.Item`                       |
-| `mobileNavigation`    | Allows navigation on smaller screen devices. Visible until the default breakpoint of `867px`. Items in this area should use `Navbar.MenuItem` and `Navbar.Submenu` compound components. The breakpoint can be changed using `mobileNavigationProps` to `small: 867px` or `medium: 1024px`. You can also set a custom label for the mobile navigation trigger button. | `<867px` (default), configurable | `Navbar.MenuItem`, `Navbar.Submenu` |
-| `secondaryNavigation` | Contains additional navigation items, like Search, Help, etc. Items in this area should use the `Navbar.Item` compound component in the icon-only variant. This area is responsive and will be visible starting from the breakpoint `576px`.                                                                                                                         | `576px` and up                   | `Navbar.Item` (icon-only)           |
-| `promotions`          | In this area, you can add any additional items you want accessible on the Navbar, such as feedback links or other types of promotions. This area is responsive and will not be visible until the breakpoint `1200px`.                                                                                                                                                    | `1200px` and up                  | Custom element                      |
-| `switcher`            | Reserved for the `Navbar.Switcher` component to display the name of the current space and environment.                                                                                                                                                                                                                                                               | Always visible                   | `Navbar.Switcher`                   |
-| `account`             | Meant for the user's account menu. Use the `Navbar.Account` compound component to build it. This area is responsive and will be visible starting from `576px`; before that, it should be made available inside the `mobileNavigation`.                                                                                                                               | `576px` and up                   | `Navbar.Account`                    |
+The Navbar offers of multiple areas, which can be targeted via dedicated navbar props and does not accept `children`.
+These areas are designed with responsiveness in mind and will appear / disappear on certain breakpoints.
 
 ## Import
 
@@ -64,7 +54,7 @@ You can use following components to build a menu:
 
 ```
 
-### Navbar with different enviromnments
+### Navbar with different environments
 
 ```tsx file=examples/WithDifferentEnviromnmentsNavbarExample.tsx
 
@@ -81,6 +71,32 @@ You can use following components to build a menu:
 ```tsx file=examples/LoadingSkeletonNavbarExample.tsx
 
 ```
+
+## Navigation areas and responsive behaviour
+
+The Navbar component supports responsiveness. Different areas of the navbar will disappear on some breakpoints. Find the detailed information in the table below.
+
+| Prop                  | Description                                                                                                                                                                                                                                                                                                                                                          | Breakpoints                      | Recommended Compound Component      |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- | ----------------------------------- |
+| `logo`                | Allows to overwrite the Contentful logo with a custom logo and link. This ensures a consistent and intuitive navigation experience throughout the application.                                                                                                                                                                                                       | Always visible                   | Custom element                      |
+| `mainNavigation`      | Main navigation items. Each main navigation item should use the `Navbar.Item` compound component. This area is responsive and will be visible starting from the default breakpoint `867px`. This can be overwritten in the `mobileNavigationProps` and changed to `breakpoint: 'medium'` (`1024px`).                                                                 | `867px` (default), configurable  | `Navbar.Item`                       |
+| `mobileNavigation`    | Allows navigation on smaller screen devices. Visible until the default breakpoint of `867px`. Items in this area should use `Navbar.MenuItem` and `Navbar.Submenu` compound components. The breakpoint can be changed using `mobileNavigationProps` to `small: 867px` or `medium: 1024px`. You can also set a custom label for the mobile navigation trigger button. | `<867px` (default), configurable | `Navbar.MenuItem`, `Navbar.Submenu` |
+| `secondaryNavigation` | Contains additional navigation items, like Search, Help, etc. Items in this area should use the `Navbar.Item` compound component in the icon-only variant. This area is responsive and will be visible starting from the breakpoint `576px`.                                                                                                                         | `576px` and up                   | `Navbar.Item` (icon-only)           |
+| `promotions`          | In this area, you can add any additional items you want accessible on the Navbar, such as feedback links or other types of promotions. This area is responsive and will not be visible until the breakpoint `1200px`.                                                                                                                                                | `1200px` and up                  | `Navbar.Badge` or Custom element    |
+| `switcher`            | Reserved for the `Navbar.Switcher` component to display the name of the current space and environment.                                                                                                                                                                                                                                                               | Always visible                   | `Navbar.Switcher`                   |
+| `account`             | Meant for the user's account menu. Use the `Navbar.Account` compound component to build it. This area is responsive and will be visible starting from `576px`; before that, it should be made available inside the `mobileNavigation`.                                                                                                                               | `576px` and up                   | `Navbar.Account`                    |
+
+## Accessibility
+
+Each `Menu.Item` offers and increased click-able area and the whole navigation is accessible via keyboard.  
+To further improve the accessibility, each Navbar area has a `aria-label`. These labels can be set via the `aria` prop oobject. Make sure to set a label for every `Menu.Item` in Icon-only modus, this is used to describe the Item for visually impaired users.
+
+| Prop                            | Description                                   | Default Setting          |
+| ------------------------------- | --------------------------------------------- | ------------------------ |
+| `aria.labelMainNavigation`      | Aria label for the main navigation area.      | `'Main Navigation'`      |
+| `aria.labelSecondaryNavigation` | Aria label for the secondary navigation area. | `'Secondary Navigation'` |
+| `aria.labelPromotions`          | Aria label for the promotions area.           | `'Promotions'`           |
+| `aria.labelAccount`             | Aria label for the account navigation area.   | `'Account Navigation'`   |
 
 ## Props (API reference)
 
