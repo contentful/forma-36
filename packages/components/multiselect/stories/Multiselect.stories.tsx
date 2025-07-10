@@ -565,3 +565,49 @@ export const WithClearAll = () => {
     </Stack>
   );
 };
+
+export const WithDisabledTrigger = () => {
+  const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
+
+  const handleSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked, value } = event.target;
+    const currentFruit = fruits.find((fruit) => fruit.value === value);
+    if (checked) {
+      setSelectedFruits((prevState) => [...prevState, currentFruit.name]);
+    } else {
+      //its important to use prevState to avoid race conditions when using the state variable as reference.
+      setSelectedFruits((prevState) => {
+        return prevState.filter((fruit) => fruit !== currentFruit.name);
+      });
+    }
+  };
+
+  return (
+    <Stack
+      style={{ width: '180px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      <Multiselect
+        placeholder="Select many fruits"
+        currentSelection={selectedFruits}
+        triggerButtonProps={{ isDisabled: true }}
+      >
+        {fruits.map((item) => {
+          return (
+            <Multiselect.Option
+              value={item.value}
+              label={item.name}
+              onSelectItem={handleSelectItem}
+              key={`key-${item.id}`}
+              itemId={`id-${item.id}`}
+              isChecked={selectedFruits.includes(item.name)}
+              isDisabled={item.isDisabled}
+            />
+          );
+        })}
+      </Multiselect>
+    </Stack>
+  );
+};

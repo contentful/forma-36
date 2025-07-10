@@ -1,5 +1,26 @@
 ## Change Log
 
+## 4.80.5
+
+### Patch Changes
+
+- [#3125](https://github.com/contentful/forma-36/pull/3125) [`1439496`](https://github.com/contentful/forma-36/commit/1439496265bb6fbe27d630b4e4c7cf1355ae6e15) Thanks [@loweisz](https://github.com/loweisz)! - feat: [] fix multiselect release
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.80.5
+  - @contentful/f36-core@4.80.5
+  - @contentful/f36-forms@4.80.5
+  - @contentful/f36-popover@4.80.5
+  - @contentful/f36-skeleton@4.80.5
+  - @contentful/f36-tooltip@4.80.5
+  - @contentful/f36-typography@4.80.5
+
+## 4.26.2
+
+### Patch Changes
+
+- [#3123](https://github.com/contentful/forma-36/pull/3123) [`b90eb24`](https://github.com/contentful/forma-36/commit/b90eb24ac6931ff0e82fdfb9f833abe5413e5ad1) Thanks [@loweisz](https://github.com/loweisz)! - feat: add triggerbuttonprops to multiselect
+
 ## 4.26.1
 
 ### Patch Changes

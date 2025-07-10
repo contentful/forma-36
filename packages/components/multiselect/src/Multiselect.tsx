@@ -2,7 +2,7 @@ import React, { useRef, useState, useCallback, useMemo } from 'react';
 import { cx } from 'emotion';
 
 import { mergeRefs, type CommonProps, Flex } from '@contentful/f36-core';
-import { Button, IconButton } from '@contentful/f36-button';
+import { Button, IconButton, type ButtonProps } from '@contentful/f36-button';
 import { ChevronDownIcon, CloseIcon } from '@contentful/f36-icons';
 
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
@@ -71,6 +71,11 @@ export interface MultiselectProps extends CommonProps {
    * Props to pass to the optional search field
    */
   searchProps?: SearchProps;
+
+  /**
+   * Props to pass to the trigger button
+   */
+  triggerButtonProps?: ButtonProps;
 
   /**
    * Function called whenever the search input value changes
@@ -339,6 +344,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
               endIcon={<ChevronDownIcon />}
               isFullWidth
               className={styles.triggerButton}
+              {...props.triggerButtonProps}
             >
               {renderMultiselectLabel()}
             </Button>

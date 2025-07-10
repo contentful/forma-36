@@ -84,6 +84,14 @@ In some cases it is desired to toggle the status of the popover drawer as well a
 
 ```
 
+### Controlling from the Outside
+
+If you want to control the trigger of the multiselect, like adding an `isDisabled` state to it, you can add props to it via the `triggerButtonProps`.
+
+```jsx file=./examples/MultiselectIsDisabledExample.tsx
+
+```
+
 ### With component as children
 
 You can render React components in the select options, but it's important to note that this makes it your own responsibility to highlight the matching part of the search term. To help with this there's the `HighlightedItem` component.
