@@ -1,6 +1,7 @@
 import React from 'react';
 import { UsageCard } from '@contentful/f36-usage-card';
 import { TextLink } from '@contentful/f36-text-link';
+import { UsageCount } from '@contentful/f36-usage-count';
 
 export default function UsageCardUsageExample() {
   return (
@@ -25,6 +26,13 @@ export default function UsageCardUsageExample() {
           </TextLink>
         </UsageCard.Description>
       }
-    ></UsageCard>
+    >
+      <UsageCount
+        variant="periodic"
+        value={150}
+        valueUnit="GB"
+        periodType="year"
+      />
+    </UsageCard>
   );
 }

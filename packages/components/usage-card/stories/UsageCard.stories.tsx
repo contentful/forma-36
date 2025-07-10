@@ -4,6 +4,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { UsageCardProps } from '../src';
 import { UsageCard } from '../src/CompoundUsageCard';
 import { TextLink } from '@contentful/f36-text-link';
+import { UsageCount } from '@contentful/f36-usage-count';
 
 export default {
   component: UsageCard,
@@ -40,6 +41,13 @@ export const Default: Story<Pick<UsageCardProps, 'variant'> & StoryArgs> = ({
           </TextLink>
         </UsageCard.Description>
       }
-    ></UsageCard>
+    >
+      <UsageCount
+        variant="periodic"
+        value={150}
+        valueUnit="GB"
+        periodType="year"
+      />
+    </UsageCard>
   );
 };

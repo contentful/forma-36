@@ -1,16 +1,31 @@
 import React from 'react';
-import { UsageCard } from '@contentful/f36-usage-card';
+import type { Meta, Story } from '@storybook/react/types-6-0';
+
+import { UsageCardProps } from '../src';
+import { UsageCard } from '../src/CompoundUsageCard';
 import { TextLink } from '@contentful/f36-text-link';
 import { UsageCount } from '@contentful/f36-usage-count';
 
-export default function UsageCardInfoExample() {
+export default {
+  component: UsageCard,
+  title: 'Components/UsageCard',
+} as Meta;
+
+interface StoryArgs {
+  variant: UsageCardProps['variant'];
+  children?: React.ReactNode;
+}
+
+export const InfoCard: Story<Pick<UsageCardProps, 'variant'> & StoryArgs> = ({
+  variant,
+}) => {
   return (
     <UsageCard
-      variant={'info'}
+      variant={variant}
       header={
         <UsageCard.Header
-          title="This is an Info Card"
-          tooltip="This is a tooltip for Info Card"
+          title="Usage Card Header"
+          tooltip="This is a tooltip"
         />
       }
       description={
@@ -35,4 +50,4 @@ export default function UsageCardInfoExample() {
       />
     </UsageCard>
   );
-}
+};
