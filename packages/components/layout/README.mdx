@@ -1,7 +1,7 @@
 ---
 title: 'Layout'
 type: 'layout'
-status: 'alpha'
+status: 'stable'
 slug: /components/layout/
 github: 'https://github.com/contentful/forma-36/tree/main/packages/components/layout'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-layout--default'
@@ -10,19 +10,10 @@ typescript: ./src/Layout.tsx, .src/LayoutBody.tsx, .src/LayoutHeader.tsx, .src/L
 
 A primitive for implementing common layout patterns seen within Contentful apps.
 
-> [!CAUTION]
-> The Layout component is meant for usage on the highest level around a page. Do not use it inside Modals and be careful when nesting layouts.
+## Introduction
 
-The `Layout` component offers 4 individually setable areas, three of them can be set via the props `header`, `leftSidebar` and `rightSidebar`
-
-| Prop                          | Description                                                                                                                                                                                                                   | Recommended child components             |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| `children`                    | Elements handed over as children to the Layout component will be rendered as the Layouts body. Ideally all children should be wrapped inside `Layout.Body`                                                                    | `Layout.Body`                            |
-| `header`                      | Elements in the header will be overarching the whole width of the layout component. Child-Components should be wrapped inside `Layout.Header` and it is also recommended to use `Header` as the only child of `Layout.Header` | `Layout.Header` with `Header` as a child |
-| `leftSidebar`, `rightSidebar` | These child-components will be rendered on the left and right side of the body content. They should be wrapped in `Layout.Sidebar`                                                                                            | `Layout.Sidebar`                         |
-
-> [!NOTE]
-> There will be a seperating Line be displayed underneath the Header if there are Sidebars present. Without Sidebars, there will be no sperating line.
+** Caution **
+The Layout component is meant for usage on the highest level around a page. Do not use it inside Modals and be careful when nesting layouts.
 
 ## Import
 
@@ -69,6 +60,25 @@ import { Layout } from '@contentful/f36-layout';
 ```jsx file=./examples/LayoutExampleWithRightSidebar.tsx
 
 ```
+
+## Layout areas
+
+The `Layout` component offers 4 individually setable areas, three of them can be set via the props `header`, `leftSidebar` and `rightSidebar`
+
+| Prop                          | Description                                                                                                                                                                                                                   | Recommended child components             |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| `children`                    | Elements handed over as children to the Layout component will be rendered as the Layouts body. Ideally all children should be wrapped inside `Layout.Body`                                                                    | `Layout.Body`                            |
+| `header`                      | Elements in the header will be overarching the whole width of the layout component. Child-Components should be wrapped inside `Layout.Header` and it is also recommended to use `Header` as the only child of `Layout.Header` | `Layout.Header` with `Header` as a child |
+| `leftSidebar`, `rightSidebar` | These child-components will be rendered on the left and right side of the body content. They should be wrapped in `Layout.Sidebar`                                                                                            | `Layout.Sidebar`                         |
+
+** Note ** There will be a seperating Line be displayed underneath the Header if there are Sidebars present. Without Sidebars, there will be no sperating line.
+
+## Accessibility
+
+- The Layout component renders a `<section>` by default. If you use multiple layouts or want to improve landmark navigation, provide a unique aria-label
+- `Layout.Sidebar` renders as a semantic `<aside>` by default
+- `Layout.Header` renders as a semantic `<header>` by default
+- Keyboard navigation and focus management for interactive content inside the layout should be implemented by the consumer.
 
 ## Props (API reference)
 
