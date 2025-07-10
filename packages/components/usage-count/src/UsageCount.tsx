@@ -38,7 +38,6 @@ type usageCountType =
   | {
       valueDescription?: never;
       periodType?: never;
-      // make it string or number
       quota: number;
       variant: PickUnion<Variant, 'entitlement'>;
     };

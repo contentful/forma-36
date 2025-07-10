@@ -6,10 +6,45 @@ import { UsageCount, type UsageCountProps } from '../src/UsageCount';
 export default {
   component: UsageCount,
   title: 'Components/UsageCount',
-} as Meta;
+  parameters: {
+    propTypes: [UsageCount['__docgenInfo']],
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+    style: { control: { disable: true } },
+    variant: { control: { disable: true } },
+    valueDescription: { control: { disable: true } },
+    quota: {
+      control: {
+        type: 'number',
+      },
+    },
+    periodType: { control: { disable: true } },
+    value: {
+      control: {
+        type: 'number',
+      },
+    },
+    valueUnit: {
+      control: {
+        type: 'text',
+      },
+    },
+  },
+} as Meta<UsageCountProps>;
 
-export const Entitlements: Story<UsageCountProps> = () => {
+export const Entitlements: Story<UsageCountProps> = ({
+  valueUnit,
+  value,
+  quota,
+}) => {
   return (
-    <UsageCount variant="entitlement" value={150} valueUnit="GB" quota={200} />
+    <UsageCount
+      variant="entitlement"
+      value={value || 150}
+      valueUnit={valueUnit || 'GB'}
+      quota={quota || 200}
+    />
   );
 };
