@@ -44,7 +44,6 @@ type usageCountType =
     };
 
 export type UsageCountProps = {
-  children?: React.ReactNode;
   value?: number | string;
   valueUnit?: string;
 } & CommonProps &
@@ -53,7 +52,6 @@ export type UsageCountProps = {
 
 function _UsageCount(props: UsageCountProps, ref: React.Ref<HTMLDivElement>) {
   const {
-    children,
     value,
     valueUnit,
     valueDescription,
@@ -100,7 +98,6 @@ function _UsageCount(props: UsageCountProps, ref: React.Ref<HTMLDivElement>) {
           </>
         )}
       </Flex>
-      {children}
     </Box>
   );
 }

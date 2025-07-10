@@ -66,14 +66,4 @@ describe('UsageCount', function () {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
-
-  it('renders children content correctly', () => {
-    render(
-      <UsageCount variant="entitlement" value={150} valueUnit="GB" quota={100}>
-        <div>Child content</div>
-      </UsageCount>,
-    );
-
-    expect(screen.getByText('Child content')).toBeInTheDocument();
-  });
 });
