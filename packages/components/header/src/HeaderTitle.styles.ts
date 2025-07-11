@@ -1,15 +1,14 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-export const getHeaderTitleStyles = () => ({
+export const getHeaderTitleStyles = (variant) => ({
   title: css({
-    margin: `${tokens.spacing2Xs} 0`,
+    margin: variant === 'title' ? `${tokens.spacing2Xs} 0` : tokens.spacing2Xs,
     '&:not(:first-child)': {
       marginLeft: tokens.spacingXs,
     },
   }),
   noWrap: css({
     textWrap: 'nowrap',
-    marginLeft: tokens.spacingXs,
   }),
 });
