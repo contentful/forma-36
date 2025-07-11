@@ -4,7 +4,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Box, Flex } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
 import tokens from '@contentful/f36-tokens';
-import { SearchIcon, CopyIcon } from '@contentful/f36-icons';
+import { MagnifyingGlassIcon, CopySimpleIcon } from '@contentful/f36-icons';
 import { TextInput } from '@contentful/f36-forms';
 
 import { Header, type HeaderProps } from '../src/Header';
@@ -164,13 +164,17 @@ export const withActions: Story<HeaderProps> = () => (
 export const withMetadata: Story<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
-      <Note>Metadata area get's rendered after the title area</Note>
+      <Note>Metadata area gets rendered after the title area</Note>
     </Box>
     <Header
       title="Entry ID: 1234567890"
       metadata={
         <>
-          <Button variant="transparent" startIcon={<CopyIcon />} size="small">
+          <Button
+            variant="transparent"
+            startIcon={<CopySimpleIcon />}
+            size="small"
+          >
             Copy ID
           </Button>
         </>
@@ -203,7 +207,11 @@ export const WithFilters: Story<HeaderProps> = ({
     <Header
       title={title}
       filters={
-        <TextInput placeholder="Search" icon={<SearchIcon />} size="small" />
+        <TextInput
+          placeholder="Search"
+          icon={<MagnifyingGlassIcon />}
+          size="small"
+        />
       }
       actions={
         <Flex
