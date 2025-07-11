@@ -1,12 +1,11 @@
 import React from 'react';
-import { UsageCard } from '@contentful/f36-components';
 import { TextLink } from '@contentful/f36-text-link';
-import { UsageCount } from '@contentful/f36-components';
+import { UsageCount, UsageCard } from '@contentful/f36-components';
 
 export default function UsageCardUsageExample() {
   return (
     <UsageCard
-      variant={'usage'}
+      variant="usage"
       header={
         <UsageCard.Header
           title="Asset Bandwidth Usage"

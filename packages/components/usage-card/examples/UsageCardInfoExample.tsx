@@ -1,12 +1,11 @@
 import React from 'react';
-import { UsageCard } from '@contentful/f36-components';
 import { TextLink } from '@contentful/f36-text-link';
-import { UsageCount } from '@contentful/f36-components';
+import { UsageCount, UsageCard } from '@contentful/f36-components';
 
 export default function UsageCardInfoExample() {
   return (
     <UsageCard
-      variant={'info'}
+      variant="info"
       header={
         <UsageCard.Header
           title="This is an Info Card"
