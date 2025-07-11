@@ -1,16 +1,24 @@
 import React from 'react';
 import { Navbar } from '@contentful/f36-navbar';
+import {
+  ImageSquareIcon,
+  MagnifyingGlassIcon,
+  PenNibIcon,
+  PuzzlePieceIcon,
+  QuestionIcon,
+  WrenchIcon,
+  GearSixIcon,
+} from '@contentful/f36-icons';
 
 export default function CompleteNavbarExample() {
   return (
     <Navbar
       mainNavigation={
         <>
-          <Navbar.Item title="Home" isActive />
-          <Navbar.Item title="Content model" />
-          <Navbar.Item title="Content" />
-          <Navbar.Item title="Media" />
-          <Navbar.Item title="Apps">
+          <Navbar.Item title="Content model" isActive icon={<WrenchIcon />} />
+          <Navbar.Item title="Content" icon={<PenNibIcon />} />
+          <Navbar.Item title="Media" icon={<ImageSquareIcon />} />
+          <Navbar.Item title="Apps" icon={<PuzzlePieceIcon />}>
             <Navbar.MenuItem
               title="App 1"
               icon={
@@ -26,11 +34,10 @@ export default function CompleteNavbarExample() {
       }
       mobileNavigation={
         <>
-          <Navbar.MenuItem title="Content model" />
-          <Navbar.MenuItem title="Content" />
-          <Navbar.MenuItem title="Experiences" />
-          <Navbar.MenuItem title="Media" />
-          <Navbar.Submenu title="Apps">
+          <Navbar.MenuItem title="Content model" icon={<WrenchIcon />} />
+          <Navbar.MenuItem title="Content" icon={<PenNibIcon />} />
+          <Navbar.MenuItem title="Media" icon={<ImageSquareIcon />} />
+          <Navbar.Submenu title="Apps" icon={<PuzzlePieceIcon />}>
             <Navbar.MenuItem
               title="App 1"
               icon={
@@ -59,8 +66,8 @@ export default function CompleteNavbarExample() {
       }
       secondaryNavigation={
         <>
-          <Navbar.Item label="Quick Search" />
-          <Navbar.Item label="Help Menu">
+          <Navbar.Item label="Quick Search" icon={<MagnifyingGlassIcon />} />
+          <Navbar.Item label="Help Menu" icon={<QuestionIcon />}>
             <Navbar.MenuItem
               as="a"
               target="_blank"
@@ -95,7 +102,7 @@ export default function CompleteNavbarExample() {
               href="https://support.contentful.com"
             />
           </Navbar.Item>
-          <Navbar.Item label="Menu Settings">
+          <Navbar.Item label="Menu Settings" icon={<GearSixIcon />}>
             <Navbar.MenuSectionTitle>General</Navbar.MenuSectionTitle>
             <Navbar.MenuItem title="Home" />
             <Navbar.MenuItem title="API keys" />
