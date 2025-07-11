@@ -34,5 +34,6 @@ export * from '@contentful/f36-text-link';
 export * from '@contentful/f36-tooltip';
 export * from '@contentful/f36-typography';
 export * from '@contentful/f36-usage-count';
+export * from '@contentful/f36-usage-card';
 
 // -- Add imports above this line (required by plopfile.js) --

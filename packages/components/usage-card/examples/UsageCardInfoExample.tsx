@@ -1,7 +1,7 @@
 import React from 'react';
-import { UsageCard } from '@contentful/f36-usage-card';
+import { UsageCard } from '@contentful/f36-components';
 import { TextLink } from '@contentful/f36-text-link';
-import { UsageCount } from '@contentful/f36-usage-count';
+import { UsageCount } from '@contentful/f36-components';
 
 export default function UsageCardInfoExample() {
   return (
