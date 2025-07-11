@@ -134,5 +134,8 @@
   "volta": {
     "node": "18.20.1",
     "npm": "8.3.0"
+  },
+  "dependencies": {
+    "@contentful/f36-usage-count": "^4.0.0"
   }
 }
