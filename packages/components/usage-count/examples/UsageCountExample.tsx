@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { UsageCount } from '@contentful/f36-usage-count';
+import { UsageCount } from '@contentful/f36-components';
 
 export default function UsageCountExample() {
   return (
