@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 12-07-2025
+
+**F36 Usage Card** `v4.1.0`
+
+- Introduces UsageCard component for rendering usage data.
+
 ## 11-07-2025
 
 **F36 Usage Count** `v4.1.0`
