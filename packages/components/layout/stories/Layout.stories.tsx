@@ -3,9 +3,10 @@ import React from 'react';
 import { css } from 'emotion';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Box } from '@contentful/f36-core';
-import { Button, DisplayText, Header } from '@contentful/f36-components';
-
+import { Button } from '@contentful/f36-components';
+import { action } from '@storybook/addon-actions';
 import type { LayoutProps } from '../src';
+import { Header } from '../../header/src/Header';
 import { Layout } from '../src/CompoundLayout';
 import { LayoutBody } from '../src/LayoutBody';
 
@@ -53,8 +54,12 @@ const LayoutHeaderComp = () => (
   <Layout.Header>
     <Header
       className={css({ padding: '0', backgroundColor: 'white' })}
-      title={<DisplayText marginBottom="none">Headline</DisplayText>}
-      actions={<Button variant="primary">Button</Button>}
+      title="Headline"
+      actions={
+        <Button variant="primary" size="small">
+          Button
+        </Button>
+      }
     />
   </Layout.Header>
 );
@@ -133,6 +138,67 @@ export const withHeader: Story<LayoutProps> = () => {
     </ExampleWrapper>
   );
 };
+
+export const withFullHeader: Story<LayoutProps> = () => {
+  return (
+    <ExampleWrapper>
+      <Layout
+        header={
+          <Layout.Header>
+            <Header
+              className={css({ padding: '0', backgroundColor: 'white' })}
+              title="Headline"
+              breadcrumbs={[{ content: 'Content Types', url: '#' }]}
+              backButtonProps={{ onClick: action }}
+              withBackButton
+              actions={
+                <Button variant="primary" size="small">
+                  Button
+                </Button>
+              }
+            />
+          </Layout.Header>
+        }
+        offsetTop={NAVBAR_HEIGHT}
+        leftSidebar={<LayoutSidebarComp content="Left Sidebar" />}
+      >
+        <Layout.Body>
+          <Box
+            className={css({
+              width: '100%',
+              height: '400px',
+              backgroundColor: 'lavenderblush',
+              marginBottom: '1rem',
+            })}
+          >
+            Content
+          </Box>
+          <Box
+            className={css({
+              width: '100%',
+              height: '240px',
+              backgroundColor: 'blanchedalmond',
+              marginBottom: '1rem',
+            })}
+          >
+            Content
+          </Box>
+          <Box
+            className={css({
+              width: '100%',
+              height: '400px',
+              backgroundColor: 'aliceblue',
+              marginBottom: '1rem',
+            })}
+          >
+            Content
+          </Box>
+        </Layout.Body>
+      </Layout>
+    </ExampleWrapper>
+  );
+};
+
 export const withLeftSidebar: Story<LayoutProps> = () => {
   return (
     <ExampleWrapper>
