@@ -23,6 +23,7 @@ const ExampleWrapper = ({ children }) => (
       height: '250px',
       margin: '-1rem',
       flexDirection: 'column',
+      backgroundColor: 'burlywood',
     })}
   >
     {children}

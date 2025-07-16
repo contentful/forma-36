@@ -10,6 +10,7 @@ import { getHeaderTitleStyles } from './HeaderTitle.styles';
 type HeaderTitleProps = {
   title: HeaderProps['title'];
   variant: string;
+  withBackButton?: boolean;
   as?: HeadingElement;
   size?: 'medium' | 'large';
 };
@@ -17,10 +18,11 @@ type HeaderTitleProps = {
 export function HeaderTitle({
   title,
   variant,
+  withBackButton = false,
   as = 'h1',
   size = 'large',
 }: HeaderTitleProps) {
-  const styles = getHeaderTitleStyles(variant);
+  const styles = getHeaderTitleStyles({ variant, withBackButton });
   const Element =
     variant === 'breadcrumb' || size === 'medium' ? Subheading : DisplayText;
 

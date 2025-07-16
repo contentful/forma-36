@@ -91,7 +91,7 @@ function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
   forwardedRef: Ref<HTMLElement>,
 ) {
   const variant = breadcrumbs ? 'breadcrumb' : 'title';
-  const styles = getHeaderStyles({ hasFilters: Boolean(filters), variant });
+  const styles = getHeaderStyles();
 
   return (
     <Flex
@@ -104,21 +104,30 @@ function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
       {...otherProps}
     >
       <Flex className={styles.wrapper}>
-        <Flex alignItems="center" gap="spacingXs">
+        <Flex alignItems="center">
           {withBackButton && <BackButton {...backButtonProps} />}
           {breadcrumbs ? (
             <Segmentation>
               {breadcrumbs && <Breadcrumb breadcrumbs={breadcrumbs} />}
               {title && (
-                <HeaderTitle title={title} variant={variant} {...titleProps} />
+                <HeaderTitle
+                  withBackButton={withBackButton}
+                  title={title}
+                  variant={variant}
+                  {...titleProps}
+                />
               )}
             </Segmentation>
           ) : (
-            <HeaderTitle title={title} variant={variant} {...titleProps} />
+            <HeaderTitle
+              withBackButton={withBackButton}
+              title={title}
+              variant={variant}
+              {...titleProps}
+            />
           )}
-
           {metadata && (
-            <Flex alignItems="center" gap="spacing2Xs">
+            <Flex alignItems="center" gap="spacing2Xs" marginLeft="spacing2Xs">
               {metadata}
             </Flex>
           )}
