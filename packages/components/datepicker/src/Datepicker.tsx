@@ -39,7 +39,7 @@ export type DatepickerProps = CommonProps & {
   /**
    * Custom placeholder for the input field
    */
-  customPlaceholder?: string;
+  placeholder?: string;
 
   /**
    * Props to pass to the TextInput component
@@ -80,7 +80,7 @@ export function Datepicker(props: DatepickerProps) {
     locale,
     dateFormat = 'dd LLL yyyy',
     defaultIsOpen,
-    customPlaceholder,
+    placeholder,
     ...otherProps
   } = props;
 
@@ -169,9 +169,9 @@ export function Datepicker(props: DatepickerProps) {
         >
           <TextInput
             placeholder={
-              typeof customPlaceholder === 'undefined'
+              typeof placeholder === 'undefined'
                 ? format(new Date(), dateFormat)
-                : customPlaceholder
+                : placeholder
             }
             value={inputValue}
             onChange={handleInputChange}
