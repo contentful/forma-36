@@ -184,3 +184,16 @@ export const Custom = () => {
     </Popover>
   );
 };
+
+export const Placeholder: Story<DatepickerProps> = (args) => {
+  const [selectedDay, setSelectedDay] = useState<Date | undefined>(undefined);
+
+  return (
+    <Datepicker
+      {...args}
+      selected={selectedDay}
+      onSelect={setSelectedDay}
+      placeholder="Select a date"
+    />
+  );
+};
