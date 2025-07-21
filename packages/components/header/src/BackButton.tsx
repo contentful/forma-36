@@ -1,7 +1,7 @@
 import React, { forwardRef, type Ref } from 'react';
 import tokens from '@contentful/f36-tokens';
 import { IconButton, type IconButtonProps } from '@contentful/f36-button';
-import { ArrowLeftIcon } from '@contentful/f36-icons';
+import { ArrowLeftIcon } from '@contentful/f36-icons-alpha';
 
 export type BackButtonProps = Omit<
   Partial<IconButtonProps>,
