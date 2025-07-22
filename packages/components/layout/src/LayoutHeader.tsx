@@ -23,8 +23,6 @@ const _LayoutHeader = (props: LayoutHeaderProps, ref: Ref<HTMLDivElement>) => {
     withRightSidebar,
   });
 
-  console.log(withLeftSidebar, withRightSidebar);
-
   return (
     <Flex
       {...otherProps}
