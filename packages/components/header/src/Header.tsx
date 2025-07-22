@@ -127,7 +127,12 @@ function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
             />
           )}
           {metadata && (
-            <Flex alignItems="center" gap="spacing2Xs" marginLeft="spacing2Xs">
+            <Flex
+              flexShrink="0"
+              alignItems="center"
+              gap="spacing2Xs"
+              marginLeft="spacing2Xs"
+            >
               {metadata}
             </Flex>
           )}
