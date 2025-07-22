@@ -1,5 +1,20 @@
 # @contentful/f36-datepicker
 
+## 4.81.0
+
+### Minor Changes
+
+- [#3132](https://github.com/contentful/forma-36/pull/3132) [`80965e7`](https://github.com/contentful/forma-36/commit/80965e76bbf59a93415e10d042e5c6cdc7e0ebed) Thanks [@colomolo](https://github.com/colomolo)! - Add custom placeholder prop for datepicker placeholder override
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@4.81.0
+  - @contentful/f36-core@4.81.0
+  - @contentful/f36-forms@4.81.0
+  - @contentful/f36-popover@4.81.0
+  - @contentful/f36-typography@4.81.0
+
 ## 4.80.5
 
 ### Patch Changes
