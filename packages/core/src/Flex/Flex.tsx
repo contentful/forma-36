@@ -56,19 +56,13 @@ export interface FlexInternalProps
    * Defines how flexbox/grid items are aligned according to the main axis, within a flexbox/grid container. */
   justifyContent?: CSS.Property.JustifyContent;
   /**
-   * Defines the default justify-self for all items of the box, giving them all a default way of justifying each box along the appropriate axis. */
-  justifyItems?: CSS.Property.JustifyContent;
-  /**
-   * Sets the way a box is justified inside its alignment container along the appropriate axis. */
-  justifySelf?: CSS.Property.JustifySelf;
-  /**
    * Defines how flexbox items are aligned according to the cross axis, within a line of a flexbox container.
    */
   alignItems?: CSS.Property.AlignItems;
   /**
    * Works like align-items, but applies only to a single flexbox item, instead of all of them.
    */
-  alignSelf?: CSS.Property.AlignItems;
+  alignSelf?: CSS.Property.AlignSelf;
   /**
    * Defines how each line is aligned within a flexbox/grid container.
    */
@@ -100,8 +94,6 @@ function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
     fullWidth,
     gap,
     justifyContent,
-    justifyItems,
-    justifySelf,
     order,
     children,
     as,
@@ -128,8 +120,6 @@ function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
           flexDirection,
           gap: gap === 'none' ? 0 : tokens[gap] ?? gap,
           justifyContent,
-          justifyItems,
-          justifySelf,
           alignItems,
           alignSelf,
           alignContent,
