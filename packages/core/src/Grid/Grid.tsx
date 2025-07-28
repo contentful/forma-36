@@ -2,10 +2,10 @@ import * as React from 'react';
 import { css, cx } from 'emotion';
 import type * as CSS from 'csstype';
 
-import {
-  type PolymorphicProps,
-  type PolymorphicComponent,
-  type ExpandProps,
+import type {
+  PolymorphicProps,
+  PolymorphicComponent,
+  ExpandProps,
 } from '../Primitive/Primitive';
 import type { MarginProps, PaddingProps, CommonProps, Spacing } from '../types';
 import { useBox } from '../Box';
@@ -37,11 +37,29 @@ export interface GridInternalProps
    * Sets display:inline-grid */
   isInline?: boolean;
   /**
-   * One of justify-content css values */
+   * Defines how grid items are aligned on the inline axis.
+   */
   justifyContent?: CSS.Property.JustifyContent;
   /**
-   * One of justify-content css values */
+   * Defines the default justify-self for all items of the box, giving them all a default way of justifying each box along the appropriate axis.
+   */
+  justifyItems?: CSS.Property.JustifyItems;
+  /**
+   * Controls how grid items are aligned on the block axis.
+   */
+  alignItems?: CSS.Property.AlignItems;
+  /**
+   * Defines the placement of grid items within the grid container.
+   */
+  placeItems?: CSS.Property.PlaceItems;
+  /**
+   * Defines how each line is aligned within a grid container.
+   */
   alignContent?: CSS.Property.AlignContent;
+  /**
+   * Defines the placement of grid items within the grid container.
+   */
+  placeContent?: CSS.Property.PlaceContent;
 }
 
 const GRID_DEFAULT_TAG = 'div';
@@ -52,12 +70,16 @@ export type GridProps<E extends React.ElementType = typeof GRID_DEFAULT_TAG> =
 function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
   {
     alignContent,
+    alignItems,
     children,
     columnGap = 'spacingM',
     columns = 'auto',
     flow,
     isInline,
     justifyContent,
+    justifyItems,
+    placeContent,
+    placeItems,
     rowGap = 'none',
     rows = 'auto',
     as,
@@ -87,7 +109,11 @@ function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
           gridTemplateRows: handleGridTemplate(rows),
           flow,
           justifyContent,
+          justifyItems,
           alignContent,
+          alignItems,
+          placeContent,
+          placeItems,
           columnGap: convertSpacingToToken(columnGap) ?? 0,
           rowGap: convertSpacingToToken(rowGap) ?? 0,
         }),

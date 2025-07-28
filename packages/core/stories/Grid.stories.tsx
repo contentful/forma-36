@@ -1,6 +1,6 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
-import { GridInternalProps } from '../src/Grid/Grid';
+import type { GridInternalProps } from '../src/Grid/Grid';
 import { Grid } from '../src';
 
 const styles = {
@@ -18,6 +18,14 @@ export default {
   subcomponents: { GridItem: Grid.Item },
   parameters: {
     propTypes: [Grid['__docgenInfo'], Grid.Item['__docgenInfo']],
+  },
+  argTypes: {
+    alignItems: { control: { type: 'text' } },
+    alignContent: { control: { type: 'text' } },
+    justifyItems: { control: { type: 'text' } },
+    justifyContent: { control: { type: 'text' } },
+    placeItems: { control: { type: 'text' } },
+    placeContent: { control: { type: 'text' } },
   },
 };
 
