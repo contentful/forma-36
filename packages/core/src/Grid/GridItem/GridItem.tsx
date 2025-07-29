@@ -2,9 +2,9 @@ import * as React from 'react';
 import { css, cx } from 'emotion';
 import type * as CSS from 'csstype';
 
-import {
-  type PolymorphicProps,
-  type PolymorphicComponent,
+import type {
+  PolymorphicProps,
+  PolymorphicComponent,
 } from '../../Primitive/Primitive';
 import { useBox } from '../../Box';
 import type { MarginProps, PaddingProps, CommonProps } from '../../types';
@@ -36,6 +36,18 @@ export interface GridItemInternalProps
   /**
    * order css property */
   order?: number;
+  /**
+   * Defines how grid items are aligned on the inline axis.
+   */
+  justifySelf?: CSS.Property.JustifySelf;
+  /**
+   * Controls how grid items are aligned on the block axis.
+   */
+  alignSelf?: CSS.Property.AlignSelf;
+  /**
+   * Defines the placement of grid items within the grid container.
+   */
+  placeSelf?: CSS.Property.PlaceSelf;
 }
 
 export type GridItemProps<
@@ -51,6 +63,10 @@ function _GridItem<E extends React.ElementType = typeof GRID_ITEM_DEFAULT_TAG>(
     rowEnd,
     area,
     order,
+    alignSelf,
+    justifySelf,
+    placeSelf,
+    as,
     ...otherProps
   }: GridItemProps<E>,
   ref: React.Ref<any>,
@@ -64,7 +80,10 @@ function _GridItem<E extends React.ElementType = typeof GRID_ITEM_DEFAULT_TAG>(
         columnEnd || 'auto',
       ].join(' / ');
 
-  const { boxProps, Element } = useBox(otherProps);
+  const { boxProps, Element } = useBox<React.ElementType>({
+    ...otherProps,
+    as: as || GRID_ITEM_DEFAULT_TAG,
+  });
 
   return (
     <Element
@@ -73,6 +92,9 @@ function _GridItem<E extends React.ElementType = typeof GRID_ITEM_DEFAULT_TAG>(
         css({
           gridArea: calculatedArea,
           order,
+          alignSelf,
+          justifySelf,
+          placeSelf,
         }),
         boxProps.className,
       )}
