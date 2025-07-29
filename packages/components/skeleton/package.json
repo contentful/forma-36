@@ -1,13 +1,13 @@
 {
   "name": "@contentful/f36-skeleton",
-  "version": "4.81.0",
+  "version": "4.81.1",
   "description": "Forma 36: Skeleton component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.81.0",
-    "@contentful/f36-table": "^4.81.0",
+    "@contentful/f36-core": "^4.81.1",
+    "@contentful/f36-table": "^4.81.1",
     "@contentful/f36-tokens": "^4.2.0",
     "emotion": "^10.0.17"
   },

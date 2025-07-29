@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.81.1
+
+### Patch Changes
+
+- [#3134](https://github.com/contentful/forma-36/pull/3134) [`ef410f6`](https://github.com/contentful/forma-36/commit/ef410f64a37ec5b03f2a0a1881b79e23b20e0462) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - fix(core): adjust Grid, Grid.Item and Flex components alignment properties
+
 ## 4.81.0
 
 ## 4.80.5
