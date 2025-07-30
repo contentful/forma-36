@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 30-07-2025
+
+**F36 Core** `v4.81.1`
+
+- fix(core): adjust Grid, Grid.Item and Flex components alignment properties
+
 ## 23-07-2025
 
 **F36 Datepicker** `v4.81.0`
