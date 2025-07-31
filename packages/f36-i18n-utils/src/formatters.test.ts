@@ -40,6 +40,14 @@ describe('I18n utility functions', function () {
   });
 
   describe('formatNumberList', () => {
+    it('returns empty string if list is empty', () => {
+      const list = [];
+
+      expect(formatNumberList('de-DE', list)).toBe('');
+      expect(formatNumberList('en-US', list)).toBe('');
+      expect(formatNumberList('fr-FR', list)).toBe('');
+    });
+
     it('returns string if list has one element', () => {
       const list = [123];
 
@@ -83,6 +91,14 @@ describe('I18n utility functions', function () {
   });
 
   describe('formatStringList', () => {
+    it('returns an empty string if list is empty', () => {
+      const list: string[] = [];
+
+      expect(formatStringList('de-DE', list)).toBe('');
+      expect(formatStringList('en-US', list)).toBe('');
+      expect(formatStringList('fr-FR', list)).toBe('');
+    });
+
     it('returns string if list has one element', () => {
       const list = ['one'];
 

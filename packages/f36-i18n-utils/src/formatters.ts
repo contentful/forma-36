@@ -3,6 +3,9 @@ export function formatNumber(locale: string, value: number): string {
 }
 
 export function formatStringList(locale: string, items: string[]): string {
+  if (items.length === 0) {
+    return '';
+  }
   if (items.length === 1) {
     return items[0];
   }
