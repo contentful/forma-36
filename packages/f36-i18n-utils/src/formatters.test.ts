@@ -68,7 +68,7 @@ describe('I18n utility functions', function () {
         '123, 453,547 und 1.341.075',
       );
       expect(formatNumberList('en-US', list)).toBe(
-        '123, 453.547 and 1,341,075',
+        '123, 453.547, and 1,341,075',
       );
       expect(formatNumberList('fr-FR', list)).toBe('123, 453,547 et 1 341 075');
     });
@@ -79,7 +79,7 @@ describe('I18n utility functions', function () {
         '123, 453,547, 1.341.075, 8 und 9',
       );
       expect(formatNumberList('en-US', list)).toBe(
-        '123, 453.547, 1,341,075, 8 and 9',
+        '123, 453.547, 1,341,075, 8, and 9',
       );
       expect(formatNumberList('fr-FR', list)).toBe(
         '123, 453,547, 1 341 075, 8 et 9',
@@ -108,7 +108,7 @@ describe('I18n utility functions', function () {
       const list = ['one', 'two', 'three'];
 
       expect(formatStringList('de-DE', list)).toBe('one, two und three');
-      expect(formatStringList('en-US', list)).toBe('one, two and three');
+      expect(formatStringList('en-US', list)).toBe('one, two, and three');
       expect(formatStringList('fr-FR', list)).toBe('one, two et three');
     });
 
@@ -118,7 +118,7 @@ describe('I18n utility functions', function () {
         'one, two, three, four und five',
       );
       expect(formatStringList('en-US', list)).toBe(
-        'one, two, three, four and five',
+        'one, two, three, four, and five',
       );
       expect(formatStringList('fr-FR', list)).toBe(
         'one, two, three, four et five',
@@ -131,7 +131,7 @@ describe('I18n utility functions', function () {
       const list = ['one', 'two', 'three'];
 
       expect(formatTruncatedStringList('en-US', list, 3)).toBe(
-        'one, two and three',
+        'one, two, and three',
       );
       expect(formatTruncatedStringList('de-DE', list, 3)).toBe(
         'one, two und three',
@@ -152,7 +152,7 @@ describe('I18n utility functions', function () {
     it('returns truncated list when maxLength is less than the list length', () => {
       const list = ['one', 'two', 'three', 'four', 'five'];
       expect(formatTruncatedStringList('en-US', list, 2)).toBe(
-        'one, two and 3 more',
+        'one, two, and 3 more',
       );
       expect(formatTruncatedStringList('de-DE', list, 2)).toBe(
         'one, two und 3 weitere',
