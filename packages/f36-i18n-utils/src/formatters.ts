@@ -28,7 +28,9 @@ export function formatTruncatedStringList(
 
   // This prevents finishing the sentence with 'and 1 more'
   if (list.length === maxLength + 1) {
-    if (maxLength === 1) return formatStringList(locale, list);
+    if (maxLength === 1) {
+      return formatStringList(locale, list);
+    }
     maxLength = maxLength - 1;
   }
 
