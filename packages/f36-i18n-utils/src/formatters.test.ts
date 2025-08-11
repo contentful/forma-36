@@ -1,4 +1,9 @@
-import { formatNumber, formatNumberList, formatStringList } from '.';
+import {
+  formatNumber,
+  formatNumberList,
+  formatStringList,
+  formatTruncatedStringList,
+} from '.';
 
 describe('I18n utility functions', function () {
   describe('formatNumber', () => {
@@ -63,7 +68,7 @@ describe('I18n utility functions', function () {
         '123, 453,547 und 1.341.075',
       );
       expect(formatNumberList('en-US', list)).toBe(
-        '123, 453.547 and 1,341,075',
+        '123, 453.547, and 1,341,075',
       );
       expect(formatNumberList('fr-FR', list)).toBe('123, 453,547 et 1 341 075');
     });
@@ -74,7 +79,7 @@ describe('I18n utility functions', function () {
         '123, 453,547, 1.341.075, 8 und 9',
       );
       expect(formatNumberList('en-US', list)).toBe(
-        '123, 453.547, 1,341,075, 8 and 9',
+        '123, 453.547, 1,341,075, 8, and 9',
       );
       expect(formatNumberList('fr-FR', list)).toBe(
         '123, 453,547, 1 341 075, 8 et 9',
@@ -103,7 +108,7 @@ describe('I18n utility functions', function () {
       const list = ['one', 'two', 'three'];
 
       expect(formatStringList('de-DE', list)).toBe('one, two und three');
-      expect(formatStringList('en-US', list)).toBe('one, two and three');
+      expect(formatStringList('en-US', list)).toBe('one, two, and three');
       expect(formatStringList('fr-FR', list)).toBe('one, two et three');
     });
 
@@ -113,11 +118,69 @@ describe('I18n utility functions', function () {
         'one, two, three, four und five',
       );
       expect(formatStringList('en-US', list)).toBe(
-        'one, two, three, four and five',
+        'one, two, three, four, and five',
       );
       expect(formatStringList('fr-FR', list)).toBe(
         'one, two, three, four et five',
       );
+    });
+  });
+
+  describe('formatTruncatedStringList', () => {
+    it('returns full list when maxLength is equal to the list length', () => {
+      const list = ['one', 'two', 'three'];
+
+      expect(formatTruncatedStringList('en-US', list, 3)).toBe(
+        'one, two, and three',
+      );
+      expect(formatTruncatedStringList('de-DE', list, 3)).toBe(
+        'one, two und three',
+      );
+      expect(formatTruncatedStringList('fr-FR', list, 3)).toBe(
+        'one, two et three',
+      );
+    });
+
+    it('returns full list when maxLength is bigger than the list length', () => {
+      const list = ['one', 'two'];
+
+      expect(formatTruncatedStringList('en-US', list, 5)).toBe('one and two');
+      expect(formatTruncatedStringList('de-DE', list, 5)).toBe('one und two');
+      expect(formatTruncatedStringList('fr-FR', list, 5)).toBe('one et two');
+    });
+
+    it('returns truncated list when maxLength is less than the list length', () => {
+      const list = ['one', 'two', 'three', 'four', 'five'];
+      expect(formatTruncatedStringList('en-US', list, 2)).toBe(
+        'one, two, and 3 more',
+      );
+      expect(formatTruncatedStringList('de-DE', list, 2)).toBe(
+        'one, two und 3 weitere',
+      );
+      expect(formatTruncatedStringList('fr-FR', list, 2)).toBe(
+        'one, two et 3 autres',
+      );
+    });
+
+    it('reduces maxLength when list has exactly one more item than maxLength', () => {
+      const list = ['one', 'two', 'three'];
+      expect(formatTruncatedStringList('en-US', list, 2)).toBe(
+        'one and 2 more',
+      );
+      expect(formatTruncatedStringList('de-DE', list, 2)).toBe(
+        'one und 2 weitere',
+      );
+      expect(formatTruncatedStringList('fr-FR', list, 2)).toBe(
+        'one et 2 autres',
+      );
+    });
+
+    it('handles case where list has exactly one more item', () => {
+      const list = ['one', 'two'];
+
+      expect(formatTruncatedStringList('en-US', list, 1)).toBe('one and two');
+      expect(formatTruncatedStringList('de-DE', list, 1)).toBe('one und two');
+      expect(formatTruncatedStringList('fr-FR', list, 1)).toBe('one et two');
     });
   });
 });
