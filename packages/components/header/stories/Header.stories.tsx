@@ -9,7 +9,7 @@ import { TextInput } from '@contentful/f36-forms';
 
 import { Header, type HeaderProps } from '../src/Header';
 import { action } from '@storybook/addon-actions';
-import { Note } from '@contentful/f36-components';
+import { Note, TextLink } from '@contentful/f36-components';
 
 const ExampleWrapper = ({ children }) => (
   <div
@@ -180,6 +180,23 @@ export const withMetadata: Story<HeaderProps> = () => (
           </Button>
         </>
       }
+      actions={
+        <>
+          <Button variant="secondary" size="small">
+            Cancel
+          </Button>
+          <Button variant="primary" size="small">
+            Save
+          </Button>
+        </>
+      }
+    />
+    <Box marginBottom="spacingM" marginTop="spacingM">
+      <Note>Metadata area will not shrink when the space is tight</Note>
+    </Box>
+    <Header
+      title="Single Sign-On"
+      metadata={<TextLink href="#">Setup Guide</TextLink>}
       actions={
         <>
           <Button variant="secondary" size="small">
