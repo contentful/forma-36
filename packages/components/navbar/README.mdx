@@ -9,12 +9,11 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-navbar'
 typescript: ./src/Navbar.tsx,./src/NavbarAccount/NavbarAccount.tsx,./src/NavbarBadge/NavbarBadge.tsx,./src/NavbarItem/NavbarItem.tsx,./src/NavbarMenuItem/NavbarMenuItem.tsx,./src/NavbarSubmenu/NavbarSubmenu.tsx,./src/NavbarSwitcher/NavbarSwitcher.tsx,
 ---
 
-The Navbar component offers a unified navigation experience across all of Contentful's products.
+The Navbar component represents the main top navigation across all Contentful Products.
 
 ## Introduction
 
-The Navbar offers of multiple areas, which can be targeted via dedicated navbar props and does not accept `children`.
-These areas are designed with responsiveness in mind and will appear / disappear on certain breakpoints.
+The `Navbar` component is composed of multiple predefined areas, each configurable through dedicated props. It does not accept children directly. All areas are designed with responsiveness in mind and will appear or disappear based on screen breakpoints.
 
 ## Import
 
@@ -30,8 +29,8 @@ You can use following components to build a menu:
 
 1. `<Navbar>`: The main wrapper component.
 1. `<Navbar.Item>`: Represents a main navigation item. Use it as a child of the `<Navbar>` component or the `bottomRightItems` prop of Navbar.
-1. `<Navbar.MenuItem>`: Represents a menu item used to create dropdown menus. Use it as a child of the `<Navbar.Item>` or `<Navbar.Account>` components.
-1. `<Navbar.Submenu>`: Wraps `<Navbar.MenuItem>`, to create a nested Menu inside the `mobileNavigation`
+1. `<Navbar.MenuItem>`: Represents an individual menu item, typically used to create dropdowns. Use it as a child of either `<Navbar.Item>` or `<Navbar.Account>` components.
+1. `<Navbar.Submenu>`: Wraps one or more `<Navbar.MenuItem>` components, to create a nested menu within the `mobileNavigation` area.
 1. `<Navbar.MenuDivider>`: A visual separator for menu items. Use it before or after a `<Navbar.MenuItem>`.
 1. `<Navbar.MenuSectionTitle>`: A title that can be used in the menu list. Use it before or after a `<Navbar.MenuItem>`.
 1. `<Navbar.Switcher>`: Wrapper component for the space and environment information. Use it as a child of the Navbar `switcher` prop.
