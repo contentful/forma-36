@@ -55,6 +55,7 @@ export * from './vendor/phosphor/CheckIcon.js';
 export * from './vendor/phosphor/CircleHalfIcon.js';
 export * from './vendor/phosphor/ClockCounterClockwiseIcon.js';
 export * from './vendor/phosphor/ClockIcon.js';
+export * from './vendor/phosphor/CloudArrowDownIcon.js';
 export * from './vendor/phosphor/CloudArrowUpIcon.js';
 export * from './vendor/phosphor/CodeSimpleIcon.js';
 export * from './vendor/phosphor/CopySimpleIcon.js';
