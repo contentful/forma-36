@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-header",
-  "version": "4.80.3",
+  "version": "5.0.0-alpha.6",
   "description": "Forma 36: Header component",
   "scripts": {
     "build": "tsup"

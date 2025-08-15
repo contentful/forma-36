@@ -16,8 +16,12 @@ const _LayoutHeader = (props: LayoutHeaderProps, ref: Ref<HTMLDivElement>) => {
     testId = 'cf-layout-header',
     ...otherProps
   } = props;
-  const { variant } = useLayoutContext();
-  const styles = getLayoutHeaderStyles(variant);
+  const { variant, withLeftSidebar, withRightSidebar } = useLayoutContext();
+  const styles = getLayoutHeaderStyles({
+    variant,
+    withLeftSidebar,
+    withRightSidebar,
+  });
 
   return (
     <Flex
