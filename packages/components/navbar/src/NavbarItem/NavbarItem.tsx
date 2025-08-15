@@ -68,7 +68,6 @@ function _NavbarItem(
       ref={ref}
       data-test-id={testId}
       className={cx(styles.navbarItem, className, {
-        [styles.navbarItemMenuTrigger]: showCaret,
         [styles.isActive]: isActive && !isDisabled,
         [styles.isDisabled]: isDisabled,
       })}
