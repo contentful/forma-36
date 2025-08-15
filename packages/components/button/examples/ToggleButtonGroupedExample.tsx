@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { ToggleButton, ButtonGroup } from '@contentful/f36-components';
 import {
-  FormatItalicIcon,
-  FormatBoldIcon,
-  FormatUnderlinedIcon,
+  TextItalicIcon,
+  TextBIcon,
+  TextUnderlineIcon,
 } from '@contentful/f36-icons';
 
 export default function ToggleButtonGroupedExample() {
@@ -14,7 +14,7 @@ export default function ToggleButtonGroupedExample() {
     <ButtonGroup>
       <ToggleButton
         isActive={isItalic}
-        icon={<FormatItalicIcon />}
+        icon={<TextItalicIcon isActive={isItalic} />}
         aria-label="Italic"
         size="small"
         onToggle={() => {
@@ -23,7 +23,7 @@ export default function ToggleButtonGroupedExample() {
       />
       <ToggleButton
         isActive={isBold}
-        icon={<FormatBoldIcon />}
+        icon={<TextBIcon isActive={isBold} />}
         aria-label="Bold"
         size="small"
         onToggle={() => {
@@ -32,7 +32,7 @@ export default function ToggleButtonGroupedExample() {
       />
       <ToggleButton
         isActive={isUnderline}
-        icon={<FormatUnderlinedIcon />}
+        icon={<TextUnderlineIcon isActive={isUnderline} />}
         aria-label="Underline"
         size="small"
         onToggle={() => {

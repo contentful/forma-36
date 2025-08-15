@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { NavbarAccountProps } from './NavbarAccount';
-import { getGlowOnFocusStyles } from '../utils.styles';
+import { getGlowOnFocusStyles, increaseHitArea } from '../utils.styles';
 
 const notificationVarianColorMap: Record<
   NavbarAccountProps['notificationVariant'],
@@ -13,30 +13,23 @@ const notificationVarianColorMap: Record<
 };
 
 export const getNavbarAccountStyles = () => ({
-  root: css(
+  navbarAccount: css(
     {
-      // default button reset styles
-      margin: 0,
-      padding: 0,
-      background: 'none',
-      border: 'none',
-
       cursor: 'pointer',
+      background: 'none',
       position: 'relative',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: tokens.spacing2Xs,
       outline: 'none',
+      overflow: 'visible',
       borderRadius: '50%',
+      border: 'none',
+      padding: 0,
+      '&:hover img': {
+        filter: 'brightness(0.9)',
+      },
     },
     getGlowOnFocusStyles(),
+    increaseHitArea(),
   ),
-  avatar: css({
-    borderRadius: '50%',
-    display: 'block',
-    height: '24px',
-    width: '24px',
-  }),
   notificationIcon: (variant: NavbarAccountProps['notificationVariant']) =>
     css({
       position: 'absolute',
@@ -45,7 +38,7 @@ export const getNavbarAccountStyles = () => ({
       height: tokens.spacingS,
       width: tokens.spacingS,
       borderRadius: '50%',
-      border: `2px solid ${tokens.gray900}`,
+      border: `2px solid ${tokens.gray100}`,
       backgroundColor: notificationVarianColorMap[variant],
       transform: 'translate(30%, -30%)',
       zIndex: 1, // move above the avatar

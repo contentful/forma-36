@@ -1,17 +1,17 @@
 import React from 'react';
 import { TextInput, Stack } from '@contentful/f36-components';
-import { SearchIcon } from '@contentful/f36-icons';
+import { MagnifyingGlassIcon } from '@contentful/f36-icons';
 
 export default function TextInputIconExample() {
   return (
     <Stack flexDirection="column">
       <TextInput
-        icon={<SearchIcon />}
+        icon={<MagnifyingGlassIcon />}
         size="small"
         placeholder="Search for an item"
       />
       <TextInput
-        icon={<SearchIcon />}
+        icon={<MagnifyingGlassIcon />}
         size="medium"
         placeholder="Search for an item"
       />

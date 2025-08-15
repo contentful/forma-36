@@ -39,6 +39,14 @@
       "slug": "/components/header/"
     },
     {
+      "title": "Header",
+      "slug": "/components/header/"
+    },
+    {
+      "title": "Icons",
+      "slug": "/components/icon/"
+    },
+    {
       "title": "Icons",
       "slug": "/components/icon/"
     },
@@ -126,6 +134,16 @@
     {
       "title": "Tooltip",
       "slug": "/components/tooltip/",
+      "status": "stable"
+    },
+    {
+      "title": "UsageCard",
+      "slug": "/components/usage-card/",
+      "status": "stable"
+    },
+    {
+      "title": "UsageCount",
+      "slug": "/components/usage-count/",
       "status": "stable"
     },
     {

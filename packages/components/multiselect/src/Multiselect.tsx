@@ -3,7 +3,7 @@ import { cx } from 'emotion';
 
 import { mergeRefs, type CommonProps, Flex } from '@contentful/f36-core';
 import { Button, IconButton, type ButtonProps } from '@contentful/f36-button';
-import { ChevronDownIcon, CloseIcon } from '@contentful/f36-icons';
+import { CaretDownIcon, XIcon } from '@contentful/f36-icons';
 
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover, type PopoverProps } from '@contentful/f36-popover';
@@ -341,7 +341,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
               ref={toggleRef}
               onClick={() => setIsOpen(!isOpen)}
               startIcon={startIcon}
-              endIcon={<ChevronDownIcon />}
+              endIcon={<CaretDownIcon />}
               isFullWidth
               className={styles.triggerButton}
               {...props.triggerButtonProps}
@@ -363,7 +363,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
               >
                 <IconButton
                   onClick={handleClearSelection}
-                  icon={<CloseIcon />}
+                  icon={<XIcon />}
                   aria-label={
                     clearButtonProps.ariaLabel
                       ? clearButtonProps.ariaLabel

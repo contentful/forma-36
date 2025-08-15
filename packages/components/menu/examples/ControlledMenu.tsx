@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, IconButton } from '@contentful/f36-components';
-import { MenuIcon } from '@contentful/f36-icons';
+import { ListIcon } from '@contentful/f36-icons';
 
 export default function ControlledMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +13,7 @@ export default function ControlledMenu() {
       <Menu.Trigger>
         <IconButton
           variant="secondary"
-          icon={<MenuIcon />}
+          icon={<ListIcon />}
           aria-label="toggle menu"
         />
       </Menu.Trigger>
