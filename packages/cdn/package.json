@@ -21,6 +21,6 @@
     "serve": "fastly compute serve"
   },
   "optionalDependencies": {
-    "lzma": "^2.3.2"
+    "@napi-rs/lzma-linux-x64-gnu": "^1.4.5"
   }
 }
