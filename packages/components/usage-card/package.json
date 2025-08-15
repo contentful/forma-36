@@ -8,7 +8,7 @@
   "dependencies": {
     "@contentful/f36-card": "^4.80.4",
     "@contentful/f36-core": "^4.0.0",
-    "@contentful/f36-icons": "^5.0.0-alpha.45",
+    "@contentful/f36-icons": "^5.0.0-alpha.46",
     "@contentful/f36-text-link": "^4.80.4",
     "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-tooltip": "^4.80.4",
