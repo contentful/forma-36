@@ -21,6 +21,7 @@
     "serve": "fastly compute serve"
   },
   "optionalDependencies": {
+    "@bytecodealliance/wizer-linux-x64": "^9.0.0",
     "@napi-rs/lzma-linux-x64-gnu": "^1.4.5"
   }
 }
