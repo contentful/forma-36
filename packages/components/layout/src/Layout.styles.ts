@@ -141,11 +141,23 @@ export const getLayoutSidebarStyles = (
   }),
 });
 
-export const getLayoutHeaderStyles = (variant: LayoutProps['variant']) => ({
+export const getLayoutHeaderStyles = ({
+  variant,
+  withLeftSidebar,
+  withRightSidebar,
+}: {
+  variant: LayoutProps['variant'];
+  withLeftSidebar?: boolean;
+  withRightSidebar?: boolean;
+}) => ({
   layoutHeader: css({
-    padding: `0 ${tokens.spacingL}`,
+    padding: `${tokens.spacing2Xs}  ${tokens.spacingL} 0 ${tokens.spacingL} `,
     width: '100%',
     maxWidth: variant === 'fullscreen' ? '100%' : '1920px',
+    borderBottom:
+      withLeftSidebar || withRightSidebar
+        ? `1px solid ${tokens.gray200}`
+        : `none`,
   }),
   layoutHeaderInner: css({ width: '100%' }),
 });

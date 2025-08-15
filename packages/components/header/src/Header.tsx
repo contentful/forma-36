@@ -16,36 +16,34 @@ import { BackButton, type BackButtonProps } from './BackButton';
 import { Breadcrumb, type BreadcrumbProps } from './Breadcrumb';
 import { getHeaderStyles } from './Header.styles';
 import { HeaderTitle } from './HeaderTitle';
+import { Segmentation } from './Segmentation';
+import type { HeadingElement } from '@contentful/f36-typography';
 
 const HEADER_DEFAULT_TAG = 'header';
 
 type Variant =
   | {
-      backButtonProps?: never;
-      breadcrumbs?: never;
-      variant: 'title';
-      withBackButton?: never;
-    }
-  | {
-      backButtonProps?: never;
       /**
        * An (optional) list of navigable links to prepend to the current title.
        */
       breadcrumbs?: BreadcrumbProps['breadcrumbs'];
-      variant?: 'breadcrumb' | undefined;
+      /**
+       * Ensure that backbutton props can not be passed when `withBackButton` is false.
+       * This is to prevent confusion, as the back button will not be rendered.
+       */
+      backButtonProps?: never;
       withBackButton?: false | never;
     }
   | {
+      /**
+       * An (optional) list of navigable links to prepend to the current title.
+       */
+      breadcrumbs?: BreadcrumbProps['breadcrumbs'];
       /**
        * Props to spread on the back button. You almost certainly want to pass
        * an `onClick` handler.
        */
       backButtonProps?: BackButtonProps;
-      /**
-       * An (optional) list of navigable links to prepend to the current title.
-       */
-      breadcrumbs?: BreadcrumbProps['breadcrumbs'];
-      variant?: 'breadcrumb' | undefined;
       /**
        * If `true`, renders a leading back button within the header.
        */
@@ -65,6 +63,10 @@ type HeaderInternalProps = Variant & {
    * The title of the element this header pertains to.
    */
   title?: ReactElement | string;
+  titleProps?: {
+    as?: HeadingElement;
+    size?: 'medium' | 'large';
+  };
   metadata?: ReactNode;
 };
 
@@ -81,14 +83,16 @@ function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
     filters,
     metadata,
     title,
+    titleProps,
     withBackButton,
-    variant = 'breadcrumb',
+    testId = 'cf-ui-header',
     ...otherProps
   }: HeaderProps<E>,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- polymorphic element
-  forwardedRef: Ref<any>,
+  forwardedRef: Ref<HTMLElement>,
 ) {
-  const styles = getHeaderStyles({ hasFilters: Boolean(filters), variant });
+  const variant = breadcrumbs ? 'breadcrumb' : 'title';
+  const styles = getHeaderStyles();
+
   return (
     <Flex
       alignItems="center"
@@ -96,29 +100,46 @@ function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
       gap="spacingM"
       className={cx(styles.root, className)}
       ref={forwardedRef}
+      testId={testId}
       {...otherProps}
     >
-      <div className={styles.context}>
-        <Flex alignItems="center" gap="spacingXs">
-          {variant === 'title' ? (
-            <HeaderTitle title={title} variant="title" />
-          ) : (
-            <>
-              {withBackButton && <BackButton {...backButtonProps} />}
+      <Flex className={styles.wrapper}>
+        <Flex alignItems="center">
+          {withBackButton && <BackButton {...backButtonProps} />}
+          {breadcrumbs ? (
+            <Segmentation>
               {breadcrumbs && <Breadcrumb breadcrumbs={breadcrumbs} />}
-              {title && <HeaderTitle title={title} variant="breadcrumb" />}
-            </>
+              {title && (
+                <HeaderTitle
+                  withBackButton={withBackButton}
+                  title={title}
+                  variant={variant}
+                  {...titleProps}
+                />
+              )}
+            </Segmentation>
+          ) : (
+            <HeaderTitle
+              withBackButton={withBackButton}
+              title={title}
+              variant={variant}
+              {...titleProps}
+            />
           )}
-
           {metadata && (
-            <Flex alignItems="center" gap="spacing2Xs">
+            <Flex
+              flexShrink="0"
+              alignItems="center"
+              gap="spacing2Xs"
+              marginLeft="spacing2Xs"
+            >
               {metadata}
             </Flex>
           )}
         </Flex>
-      </div>
-      <div className={styles.filters}>{filters}</div>
-      <div className={styles.actions}>{actions}</div>
+      </Flex>
+      <Flex className={styles.filters}>{filters}</Flex>
+      <Flex className={styles.actions}>{actions}</Flex>
     </Flex>
   );
 }
