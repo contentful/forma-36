@@ -1,6 +1,5 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { hexToRGBA } from '@contentful/f36-utils';
 import { getGlowOnFocusStyles, increaseHitArea, mqs } from '../utils.styles';
 
 const borderWidth = '1px';
@@ -10,7 +9,7 @@ export const getNavbarItemActiveStyles = () =>
     backgroundColor: tokens.blue100,
     border: `${borderWidth} solid ${tokens.blue400}`,
     color: tokens.blue600,
-    '&:hover': {
+    '&:focus,&:hover': {
       backgroundColor: tokens.blue100,
     },
   });
@@ -37,9 +36,9 @@ export const getNavbarItemStyles = ({ hasTitle }: { hasTitle: boolean }) => ({
     {
       appearance: 'none',
       background: 'none',
+      outline: 'none',
       border: `${borderWidth} solid transparent`,
       margin: 0,
-      outline: 'none',
       fontSize: tokens.fontSizeM,
       lineHeight: tokens.lineHeightM,
       fontWeight: tokens.fontWeightMedium,
@@ -56,21 +55,15 @@ export const getNavbarItemStyles = ({ hasTitle }: { hasTitle: boolean }) => ({
       height: '30px',
 
       padding: hasTitle
-        ? undefined
+        ? `${tokens.spacing2Xs} ${tokens.spacingXs}`
         : `calc(${tokens.spacing2Xs} - ${borderWidth})`, // square button for icon-only items
 
-      '&:hover': {
-        backgroundColor: hexToRGBA(tokens.gray900, 0.05),
+      '&:focus, &:hover': {
+        backgroundColor: tokens.gray200,
       },
 
-      '&:hover::before': {
-        opacity: 1,
-        scale: '1',
-      },
+      '&:active': getNavbarItemActiveStyles(),
 
-      '&:active::before': {
-        backgroundColor: `rgba(255, 255, 255, 0.1)`,
-      },
       '&:disabled': {
         cursor: 'auto',
       },
@@ -85,9 +78,6 @@ export const getNavbarItemStyles = ({ hasTitle }: { hasTitle: boolean }) => ({
     getGlowOnFocusStyles(),
     increaseHitArea(),
   ),
-  navbarItemMenuTrigger: css({
-    paddingRight: tokens.spacingXs,
-  }),
   isActive: getNavbarItemActiveStyles(),
   isDisabled: getNavbarItemDisabledStyles(),
   icon: css({
