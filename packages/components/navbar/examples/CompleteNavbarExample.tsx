@@ -6,7 +6,6 @@ import {
   PenNibIcon,
   PuzzlePieceIcon,
   QuestionIcon,
-  WrenchIcon,
   GearSixIcon,
 } from '@contentful/f36-icons';
 
@@ -15,7 +14,6 @@ export default function CompleteNavbarExample() {
     <Navbar
       mainNavigation={
         <>
-          <Navbar.Item title="Content model" isActive icon={<WrenchIcon />} />
           <Navbar.Item title="Content" icon={<PenNibIcon />} />
           <Navbar.Item title="Media" icon={<ImageSquareIcon />} />
           <Navbar.Item title="Apps" icon={<PuzzlePieceIcon />}>
@@ -34,7 +32,6 @@ export default function CompleteNavbarExample() {
       }
       mobileNavigation={
         <>
-          <Navbar.MenuItem title="Content model" icon={<WrenchIcon />} />
           <Navbar.MenuItem title="Content" icon={<PenNibIcon />} />
           <Navbar.MenuItem title="Media" icon={<ImageSquareIcon />} />
           <Navbar.Submenu title="Apps" icon={<PuzzlePieceIcon />}>

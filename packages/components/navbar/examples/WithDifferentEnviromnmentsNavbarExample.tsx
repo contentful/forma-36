@@ -4,7 +4,6 @@ import {
   ImageSquareIcon,
   PenNibIcon,
   PuzzlePieceIcon,
-  WrenchIcon,
 } from '@contentful/f36-icons';
 
 export default function WithDifferentEnviromnmentsNavbarExample() {
@@ -12,7 +11,6 @@ export default function WithDifferentEnviromnmentsNavbarExample() {
     <Navbar
       mainNavigation={
         <>
-          <Navbar.Item title="Content model" isActive icon={<WrenchIcon />} />
           <Navbar.Item title="Content" icon={<PenNibIcon />} />
           <Navbar.Item title="Media" icon={<ImageSquareIcon />} />
           <Navbar.Item title="Apps" icon={<PuzzlePieceIcon />}>
@@ -31,7 +29,6 @@ export default function WithDifferentEnviromnmentsNavbarExample() {
       }
       mobileNavigation={
         <>
-          <Navbar.MenuItem title="Content model" icon={<WrenchIcon />} />
           <Navbar.MenuItem title="Content" icon={<PenNibIcon />} />
           <Navbar.MenuItem title="Media" icon={<ImageSquareIcon />} />
           <Navbar.Submenu title="Apps" icon={<PuzzlePieceIcon />}>
