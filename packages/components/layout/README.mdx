@@ -9,12 +9,22 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-layout-
 typescript: ./src/Layout.tsx, .src/LayoutBody.tsx, .src/LayoutHeader.tsx, .src/Layout.Sidebar.tsx
 ---
 
-A primitive for implementing common layout patterns seen within Contentful apps.
+The Layout component is the basis of every single page view.
 
 ## Introduction
 
 ** Caution **
 The Layout component is meant for usage on the highest level around a page. Do not use it inside Modals and be careful when nesting layouts.
+
+The Layout component establishes the poisition pattern within a single page. It will enable the developer to compose each site out of 4 distinct areas. Header, Body as well as left and right Sidebar.
+
+### Layout Compound components
+
+| Compound Component | Description                                                                                                                                                                                                                                                | Typical Usage Area                      |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
+| `Layout.Header`    | Should contain a `Header` component. There will be a dividing line underneath if combined with at least one `Sidebar`. Content inside will be centered. It follows through in the `max-width` adjustment from `1550px` to `1920px` for the `wide` variant. | `header`                                |
+| `Layout.Sidebar`   | Allows for variants `narrow` which equals `width: 280px` and `wide` (default) which sets `width: 340px`. Left and right sidebar can be of different widths.                                                                                                | `leftSidebar`, `rightSidebar`           |
+| `Layout.Body`      | Wrapper around all chidreln, this compound component is essential for proper overflow and scrolling behaviours.                                                                                                                                            | wrapper around all children of `Layout` |
 
 ## Import
 
