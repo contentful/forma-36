@@ -135,10 +135,6 @@
       "title": "UsageCount",
       "slug": "/components/usage-count/",
       "status": "stable"
-    },
-    {
-      "title": "Workbench",
-      "slug": "/components/workbench/"
     }
   ],
   "animationComponents": [
@@ -439,6 +435,11 @@
     {
       "title": "Typography Component",
       "slug": "/components/typography/",
+      "status": "deprecated"
+    },
+    {
+      "title": "Worbench",
+      "slug": "/components/workbench/",
       "status": "deprecated"
     }
   ],

@@ -13,12 +13,19 @@
     - [Navbar](#navbar)
       - [Navbar prop overview table](#navbar-prop-overview-table)
       - [Removed Props](#removed-props)
+  - [Deprecated Components](#deprecated-components)
+    - [Workbench](#workbench)
+      - [Key Differences](#key-differences)
+      - [Prop Mapping Table](#prop-mapping-table)
+      - [Example Migration](#example-migration)
 
 ## How to migrate your packages from v4 to v5
 
 The following components contain breaking changes from v4 to v5
 
 - [Navbar](#navbar)
+- [Layout](#layout)
+- [Header](#header)
 
 ### Migrate to v5 - step by step guide
 
@@ -122,3 +129,68 @@ The following props will no longer be accepted by the Navbar Component. This tab
 | `badge`            | `React.ReactNode` | Badge component, badges can be added to the `mainNavigation` or `secondaryNavigation`               |
 | `bottomRightItems` | `React.ReactNode` | Items rendered on the bottom-right-hand side of the navbar, should now go to `secondaryNavigation`  |
 | `topRightItems`    | `React.ReactNode` | Items rendered on the top-right-hand side of the navbar, should now go to the `secondaryNavigation` |
+
+## Deprecated Components
+
+### Workbench
+
+`Workbench` component was used to arrange the layout of a single page view. It got replaced now by the `Layout` component.
+
+#### Key Differences
+
+- `Layout` replaces `Workbench` and its compound components (`WorkbenchHeader`, `WorkbenchSidebar`, `WorkbenchContent`).
+- The API and prop names may differ.
+- `Layout` supports left and right sidebars, header, and content via dedicated props.
+
+---
+
+#### Prop Mapping Table
+
+| Workbench Prop/Component | Layout Prop/Component                                                | Notes                                                                            |
+| ------------------------ | -------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `<Workbench>`            | `<Layout>`                                                           | Main container                                                                   |
+| `<WorkbenchHeader>`      | `<Layout.Header>` supplied to `header` prop                          | Header area, use `Header` as child                                               |
+| `<WorkbenchSidebar>`     | `<Layout.Sidebar>` supplied to `leftSidebar` or `rightSidebar` props | Use `leftSidebarVariant` or `rightSidebarVariant` to adjust width of the Sidebar |
+| `<WorkbenchContent>`     | `children` wrapped in `<Layout.Body>`                                | Main content area                                                                |
+| `className`, `testId`    | `className`, `testId`                                                | Supported on both                                                                |
+| (no direct equivalent)   | `variant`, `withBoxShadow`, `offsetTop`                              | New features in `Layout`                                                         |
+
+---
+
+#### Example Migration
+
+**Before (Workbench):**
+
+```tsx
+import {
+  Workbench,
+  WorkbenchHeader,
+  WorkbenchSidebar,
+  WorkbenchContent,
+} from '@contentful/f36-workbench';
+
+<Workbench className="custom-workbench">
+  <WorkbenchHeader>Header Content</WorkbenchHeader>
+  <WorkbenchSidebar>Sidebar Content</WorkbenchSidebar>
+  <WorkbenchContent>Main Content</WorkbenchContent>
+</Workbench>;
+```
+
+**After (Layout):**
+
+```tsx
+import { Layout } from '@contentful/f36-layout';
+import { Header } from '@contentful/f36-header';
+
+<Layout
+  className="custom-workbench"
+  header={
+    <Layout.Header>
+      <Header title="Header Content" />
+    </Layout.Header>
+  }
+  leftSidebar={<Layout.Sidebar>Sidebar Content</Layout.Sidebar>}
+>
+  <Layout.Body>Main Content</Layout.Body>
+</Layout>;
+```
