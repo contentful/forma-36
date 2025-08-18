@@ -21,9 +21,6 @@ export default function BasicLayoutExample() {
 
   return (
     <Layout
-      className={css({
-        backgroundColor: tokens.gray100,
-      })}
       leftSidebar={
         <Layout.Sidebar>
           <Box padding="none" marginBottom="spacingXl">
