@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@contentful/f36-components": "^5.0.0-alpha.2",
-    "@contentful/f36-tokens": "^4.0.0",
+    "@contentful/f36-tokens": "^5.0.0-alpha.2",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
