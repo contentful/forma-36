@@ -88,37 +88,37 @@ For a **detailed migration guide, including prop mapping tables, code examples, 
 
 #### Navbar prop overview table
 
-| Property Name               | Type                       | Description                                                                       | Status     |
-| --------------------------- | -------------------------- | --------------------------------------------------------------------------------- | ---------- |
-| `logo`                        | `React.ReactNode`            | Accepts a React Component that will be displayed instead of the Contentful Logo   | new        |
-| `promotions`                  | `React.ReactNode`            | Promotions component, displayed on most left-hand side                                 | new        |
-| `switcher`                    | `React.ReactNode`            | Environment Switcher component                                                    | unchanged |
-| `mainNavigation`              | `React.ReactNode`            | Main Navigation Elements                                                          | new        |
-| `secondaryNavigation`         | `React.ReactNode`            | Secondary Navigation Elements, displayed on the right-hand side                        | new        |
-| `account`                     | `React.ReactNode`            | User Account Component                                                            | unchanged |
-| `mobileNavigation`            | `React.ReactNode`            | Navigation displayed on mobile versions                                           | new        |
-| `mobileNavigationProps`       | `object`                     | Props for mobile navigation                                                       | new        |
-| └─ `breakpoint`               | `small` &#124; `medium`    | Breakpoint to determine when to show the mobile navigation                        |            |
-| └─ `label`                    | `string`                     | Label of the mobile navigation trigger button (default: `Menu`)                   |            |
-| `contentMaxWidth`             | `string`                     | Defines the max-width of the content inside the navbar (default: `100%`)          | unchanged |
-| `className`                   | `string`                     | Enables additional styling on the main navbar container                           | unchanged |
-| `testId`                      | `string`                     | sets test-id property. (default: `cf-ui-navbar`)                                  | unchanged |
-| `variant`                     | `wide` &#124; `fullscreen` | Describes the size variation of the Navbar. `wide` sets `contentMaxWidth` to `1524px` | new        |
-| `aria`                        | `object`                     | Aria labels for different areas of the navigation bar, improve accessibility      | new        |
-| └─ `labelMainNavigation`      | `string`                     | aria-label for main navigation                                                    |            |
-| └─ `labelSecondaryNavigation` | `string`                     | aria-label for secondary navigation                                               |            |
-| └─ `labelPromotions`          | `string`                     | aria-label for promotions                                                         |            |
-| └─ `labelAccount`             | `string`                     | aria-label for account                                                            |            |
+| Property Name                 | Type                       | Description                                                                           | Status    |
+| ----------------------------- | -------------------------- | ------------------------------------------------------------------------------------- | --------- |
+| `logo`                        | `React.ReactNode`          | Accepts a React Component that will be displayed instead of the Contentful Logo       | new       |
+| `promotions`                  | `React.ReactNode`          | Promotions component, displayed on most left-hand side                                | new       |
+| `switcher`                    | `React.ReactNode`          | Environment Switcher component                                                        | unchanged |
+| `mainNavigation`              | `React.ReactNode`          | Main Navigation Elements                                                              | new       |
+| `secondaryNavigation`         | `React.ReactNode`          | Secondary Navigation Elements, displayed on the right-hand side                       | new       |
+| `account`                     | `React.ReactNode`          | User Account Component                                                                | unchanged |
+| `mobileNavigation`            | `React.ReactNode`          | Navigation displayed on mobile versions                                               | new       |
+| `mobileNavigationProps`       | `object`                   | Props for mobile navigation                                                           | new       |
+| └─ `breakpoint`               | `small` &#124; `medium`    | Breakpoint to determine when to show the mobile navigation                            |           |
+| └─ `label`                    | `string`                   | Label of the mobile navigation trigger button (default: `Menu`)                       |           |
+| `contentMaxWidth`             | `string`                   | Defines the max-width of the content inside the navbar (default: `100%`)              | unchanged |
+| `className`                   | `string`                   | Enables additional styling on the main navbar container                               | unchanged |
+| `testId`                      | `string`                   | sets test-id property. (default: `cf-ui-navbar`)                                      | unchanged |
+| `variant`                     | `wide` &#124; `fullscreen` | Describes the size variation of the Navbar. `wide` sets `contentMaxWidth` to `1524px` | new       |
+| `aria`                        | `object`                   | Aria labels for different areas of the navigation bar, improve accessibility          | new       |
+| └─ `labelMainNavigation`      | `string`                   | aria-label for main navigation                                                        |           |
+| └─ `labelSecondaryNavigation` | `string`                   | aria-label for secondary navigation                                                   |           |
+| └─ `labelPromotions`          | `string`                   | aria-label for promotions                                                             |           |
+| └─ `labelAccount`             | `string`                   | aria-label for account                                                                |           |
 
 #### Removed Props
 
 The following props will no longer be accepted by the Navbar Component. This table gives an overview of how to replace the contents in the new structure.
 
-| Property Name    | Type            | Description                                                                            |
-| ---------------- | --------------- | -------------------------------------------------------------------------------------- |
-| `children`         | `React.ReactNode` | Children elements to be rendered inside the Navbar and must be split accordingly       |
-| `search`           | `React.ReactNode` | Search component, should now be added to the secondaryNavigation as `Navbar.Item`      |
-| `help`             | `React.ReactNode` | Help component, should now be added to the secondaryNavigation as `Navbar.Item`        |
-| `badge`            | `React.ReactNode` | Badge component, badges can be added to the `mainNavigation` or `secondaryNavigation`                   |
-| `bottomRightItems` | `React.ReactNode` | Items rendered on the bottom-right-hand side of the navbar, should now go to `secondaryNavigation` |
+| Property Name      | Type              | Description                                                                                         |
+| ------------------ | ----------------- | --------------------------------------------------------------------------------------------------- |
+| `children`         | `React.ReactNode` | Children elements to be rendered inside the Navbar and must be split accordingly                    |
+| `search`           | `React.ReactNode` | Search component, should now be added to the secondaryNavigation as `Navbar.Item`                   |
+| `help`             | `React.ReactNode` | Help component, should now be added to the secondaryNavigation as `Navbar.Item`                     |
+| `badge`            | `React.ReactNode` | Badge component, badges can be added to the `mainNavigation` or `secondaryNavigation`               |
+| `bottomRightItems` | `React.ReactNode` | Items rendered on the bottom-right-hand side of the navbar, should now go to `secondaryNavigation`  |
 | `topRightItems`    | `React.ReactNode` | Items rendered on the top-right-hand side of the navbar, should now go to the `secondaryNavigation` |

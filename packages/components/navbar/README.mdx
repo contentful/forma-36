@@ -17,20 +17,20 @@ The `Navbar` component is composed of multiple predefined areas, each configurab
 
 The `Navbar` exports the following compound components
 
-| Compound Component          | Description                                                                                                                                            | Typical Usage Area                  |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------- |
+| Compound Component          | Description                                                                                                                                            | Typical Usage Area                      |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------- |
 | `<Navbar.Item>`             | Represents a main navigation item. Use it as a child of the `<Navbar>` component or the `bottomRightItems` prop of Navbar.                             | `mainNavigation`, `secondaryNavigation` |
 | `<Navbar.MenuItem>`         | Represents an individual menu item, typically used to create dropdowns. Use it as a child of either `<Navbar.Item>` or `<Navbar.Account>`.             | `mobileNavigation`, `account`           |
-| `<Navbar.Submenu>`          | Wraps one or more `<Navbar.MenuItem>` components to create a nested menu within the `mobileNavigation` area.                                           | `mobileNavigation`                    |
+| `<Navbar.Submenu>`          | Wraps one or more `<Navbar.MenuItem>` components to create a nested menu within the `mobileNavigation` area.                                           | `mobileNavigation`                      |
 | `<Navbar.MenuDivider>`      | A visual separator for menu items. Use it before or after a `<Navbar.MenuItem>`. Alias for `MenuDivider` from the `Menu` component.                    | `mobileNavigation`, `account`           |
 | `<Navbar.MenuSectionTitle>` | A title that can be used in the menu list. Use it before or after a `<Navbar.MenuItem>`. Alias for `MenuSectionTitle` from the `Menu` component.       | `mobileNavigation`, `account`           |
-| `<Navbar.Switcher>`         | Wrapper component for the space and environment information. Use it as a child of the Navbar `switcher` prop.                                          | `switcher`                            |
-| `<Navbar.Account>`          | Trigger for the account menu. Use it as a child of the Navbar `account` prop.                                                                          | `account`                             |
+| `<Navbar.Switcher>`         | Wrapper component for the space and environment information. Use it as a child of the Navbar `switcher` prop.                                          | `switcher`                              |
+| `<Navbar.Account>`          | Trigger for the account menu. Use it as a child of the Navbar `account` prop.                                                                          | `account`                               |
 | `<Navbar.Badge>`            | Represents an item that provides additional information, such as indicating that the user's space is on a trial. Use as a child of the Navbar `badge`. | `promotions`, `badge`                   |
 | `<Navbar.ItemSkeleton>`     | Loading skeleton for `<Navbar.Item>`. Use it as a child of the `<Navbar>` component or the `bottomRightItems` prop of Navbar.                          | `mainNavigation`, `secondaryNavigation` |
-| `<Navbar.MenuItemSkeleton>` | Loading skeleton for `<Navbar.MenuItem>`. Use it as a child of `<Navbar.Item>`, `<Navbar.Account>`, or `<Navbar.Help>`.                                | `mobileNavigation`, `account`, `help`     |
-| `<Navbar.SwitcherSkeleton>` | Loading skeleton for `<Navbar.Switcher>`. Use it as a child of the Navbar `switcher` prop.                                                             | `switcher`                            |
-| `<Navbar.AccountSkeleton>`  | Loading skeleton for `<Navbar.Account>`. Use it as a child of the Navbar `account` prop.                                                               | `account`                             |
+| `<Navbar.MenuItemSkeleton>` | Loading skeleton for `<Navbar.MenuItem>`. Use it as a child of `<Navbar.Item>`, `<Navbar.Account>`, or `<Navbar.Help>`.                                | `mobileNavigation`, `account`, `help`   |
+| `<Navbar.SwitcherSkeleton>` | Loading skeleton for `<Navbar.Switcher>`. Use it as a child of the Navbar `switcher` prop.                                                             | `switcher`                              |
+| `<Navbar.AccountSkeleton>`  | Loading skeleton for `<Navbar.Account>`. Use it as a child of the Navbar `account` prop.                                                               | `account`                               |
 
 #### Navbar.Account
 

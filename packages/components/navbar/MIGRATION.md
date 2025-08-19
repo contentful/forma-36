@@ -11,8 +11,8 @@ Several previous props have been removed or reorganized, and new props (such as 
     - [Navbar prop overview table](#navbar-prop-overview-table)
       - [Removed Props](#removed-props)
     - [Code Example](#code-example)
-  - [Compund Components](#compund-components)
-    - [Removed Compund Components](#removed-compund-components)
+  - [Compound Components](#compound-components)
+    - [Removed Compound Components](#removed-compound-components)
   - [Navbar.Account](#navbaraccount)
     - [Code Example](#code-example-1)
     - [Navbar.Account prop overview table](#navbaraccount-prop-overview-table)
@@ -45,38 +45,38 @@ Several previous props have been removed or reorganized, and new props (such as 
 
 | Property Name                 | Type                       | Description                                                                    | Status    |
 | ----------------------------- | -------------------------- | ------------------------------------------------------------------------------ | --------- |
-| `logo`                        |  `React.ReactNode`            | Accepts a React component to display instead of the Contentful logo            | new       |
-| `promotions`                  | `React.ReactNode`           | Promotions component, displayed on the far left                                | new       |
-| `switcher`                    | `React.ReactNode`           | Environment Switcher component                                                 | unchanged |
-| `mainNavigation`              | `React.ReactNode`           | Main navigation elements                                                       | new       |
-| `secondaryNavigation`         | `React.ReactNode`           | Secondary navigation elements, displayed on the right side                     | new       |
-| `account`                     | `React.ReactNode`           | User account component                                                         | unchanged |
-| `mobileNavigation`            | `React.ReactNode`           | Navigation displayed on mobile devices                                         | new       |
-| `mobileNavigationProps`       | `object`                     | Props for mobile navigation                                                    | new       |
+| `logo`                        | `React.ReactNode`          | Accepts a React component to display instead of the Contentful logo            | new       |
+| `promotions`                  | `React.ReactNode`          | Promotions component, displayed on the far left                                | new       |
+| `switcher`                    | `React.ReactNode`          | Environment Switcher component                                                 | unchanged |
+| `mainNavigation`              | `React.ReactNode`          | Main navigation elements                                                       | new       |
+| `secondaryNavigation`         | `React.ReactNode`          | Secondary navigation elements, displayed on the right side                     | new       |
+| `account`                     | `React.ReactNode`          | User account component                                                         | unchanged |
+| `mobileNavigation`            | `React.ReactNode`          | Navigation displayed on mobile devices                                         | new       |
+| `mobileNavigationProps`       | `object`                   | Props for mobile navigation                                                    | new       |
 | └─ `breakpoint`               | `small` &#124; `medium`    | Breakpoint to determine when to show the mobile navigation                     |           |
-| └─ `label`                    | `string`                     | Label for the mobile navigation trigger button (default: `Menu`)               |           |
-| `contentMaxWidth`             | `string`                     | Defines the max-width of the content inside the navbar (default: `100%`)       | unchanged |
-| `className`                   | `string`                     | Enables additional styling on the main navbar container                        | unchanged |
-| `testId`                      | `string`                     | Sets test-id property (default: `cf-ui-navbar`)                                | unchanged |
+| └─ `label`                    | `string`                   | Label for the mobile navigation trigger button (default: `Menu`)               |           |
+| `contentMaxWidth`             | `string`                   | Defines the max-width of the content inside the navbar (default: `100%`)       | unchanged |
+| `className`                   | `string`                   | Enables additional styling on the main navbar container                        | unchanged |
+| `testId`                      | `string`                   | Sets test-id property (default: `cf-ui-navbar`)                                | unchanged |
 | `variant`                     | `wide` &#124; `fullscreen` | Size variation of the Navbar. `wide` sets `contentMaxWidth` to `1524px`        | new       |
-| `aria`                        | `object`                     | Aria labels for different areas of the navigation bar to improve accessibility | new       |
-| └─ `labelMainNavigation`      | `string`                     | `aria-label` for main navigation                                               |           |
-| └─ `labelSecondaryNavigation` | `string`                     | `aria-label` for secondary navigation                                          |           |
-| └─ `labelPromotions`          | `string`                     | `aria-label` for promotions                                                    |           |
-| └─ `labelAccount`             | `string`                     | `aria-label` for account                                                       |           |
+| `aria`                        | `object`                   | Aria labels for different areas of the navigation bar to improve accessibility | new       |
+| └─ `labelMainNavigation`      | `string`                   | `aria-label` for main navigation                                               |           |
+| └─ `labelSecondaryNavigation` | `string`                   | `aria-label` for secondary navigation                                          |           |
+| └─ `labelPromotions`          | `string`                   | `aria-label` for promotions                                                    |           |
+| └─ `labelAccount`             | `string`                   | `aria-label` for account                                                       |           |
 
 #### Removed Props
 
 The following props will no longer be accepted by the Navbar Component. This table gives an overview of how to replace the contents in the New structure.
 
-| Property Name      | Type            | Description                                                                                  |
-| ------------------ | --------------- | -------------------------------------------------------------------------------------------- |
-| `children`         | `React.ReactNode` | Child elements to be rendered inside the `Navbar`; must now be split into appropriate props. |
-| `search`           | `React.ReactNode` | Search component; should now be added to `secondaryNavigation` as a `Navbar.Item`.           |
-| `help`             | `React.ReactNode` | Help component; should now be added to `secondaryNavigation` as a `Navbar.Item`.             |
-| `badge`            | `React.ReactNode` | Badge component; badges can be added to `mainNavigation` or  `secondaryNavigation`.           |
-| `bottomRightItems` | `React.ReactNode` | Items rendered on the bottom-right-hand side of the navbar; should now go to `secondaryNavigation`.    |
-| `topRightItems`    | `React.ReactNode` | Items rendered on the top-right-hand side of the navbar; should now go to `secondaryNavigation`.       |
+| Property Name      | Type              | Description                                                                                         |
+| ------------------ | ----------------- | --------------------------------------------------------------------------------------------------- |
+| `children`         | `React.ReactNode` | Child elements to be rendered inside the `Navbar`; must now be split into appropriate props.        |
+| `search`           | `React.ReactNode` | Search component; should now be added to `secondaryNavigation` as a `Navbar.Item`.                  |
+| `help`             | `React.ReactNode` | Help component; should now be added to `secondaryNavigation` as a `Navbar.Item`.                    |
+| `badge`            | `React.ReactNode` | Badge component; badges can be added to `mainNavigation` or `secondaryNavigation`.                  |
+| `bottomRightItems` | `React.ReactNode` | Items rendered on the bottom-right-hand side of the navbar; should now go to `secondaryNavigation`. |
+| `topRightItems`    | `React.ReactNode` | Items rendered on the top-right-hand side of the navbar; should now go to `secondaryNavigation`.    |
 
 ### Code Example
 
@@ -206,15 +206,15 @@ This compound component is used to generate the account menu; the user's Avatar 
 
 | Property Name         | Type                                            | Description                                                             | Status    |
 | --------------------- | ----------------------------------------------- | ----------------------------------------------------------------------- | --------- |
-| `children`            | `React.ReactNode`                                 | Menu items to be rendered in the account dropdown                       | unchanged |
-| `className`           | `string`                                          | Enables additional styling                                              | unchanged |
-| `testId`              | `string`                                          | Sets `data-test-id` property (default: `cf-ui-navbar-account-trigger`)  | unchanged |
-| `username`            | `string`                                          | Name of the user displayed in the account menu                          | unchanged |
-| `avatar`              | `string`                                          | URL of the user's avatar image                                          | unchanged |
-| `initials`            | `string`                                          | Initials to display if no avatar image is provided                      | unchanged |
-| `hasNotification`     | `boolean`                                         | Shows a notification badge on the avatar                                | unchanged |
-| `notificationVariant` | `'warning'` &#124; `'negative'` &#124; `'info'` | Variant of the notification badge (default: `warning`)                | unchanged |
-| `label`               | `string`                                          | Accessible label for the account menu trigger (default: `Account menu`) | new       |
+| `children`            | `React.ReactNode`                               | Menu items to be rendered in the account dropdown                       | unchanged |
+| `className`           | `string`                                        | Enables additional styling                                              | unchanged |
+| `testId`              | `string`                                        | Sets `data-test-id` property (default: `cf-ui-navbar-account-trigger`)  | unchanged |
+| `username`            | `string`                                        | Name of the user displayed in the account menu                          | unchanged |
+| `avatar`              | `string`                                        | URL of the user's avatar image                                          | unchanged |
+| `initials`            | `string`                                        | Initials to display if no avatar image is provided                      | unchanged |
+| `hasNotification`     | `boolean`                                       | Shows a notification badge on the avatar                                | unchanged |
+| `notificationVariant` | `'warning'` &#124; `'negative'` &#124; `'info'` | Variant of the notification badge (default: `warning`)                  | unchanged |
+| `label`               | `string`                                        | Accessible label for the account menu trigger (default: `Account menu`) | new       |
 
 ## Navbar.Badge
 
@@ -231,12 +231,12 @@ This compound component is used for highlights and promotions. It should be used
 
 ### Navbar.Badge prop overview table
 
-| Property Name | Type              | Description                                                                | Status    |
-| ------------- | ----------------- | -------------------------------------------------------------------------- | --------- |
-| `children`    | `React.ReactNode`   | Content to be displayed inside the badge                                   | unchanged |
+| Property Name | Type                | Description                                                            | Status    |
+| ------------- | ------------------- | ---------------------------------------------------------------------- | --------- |
+| `children`    | `React.ReactNode`   | Content to be displayed inside the badge                               | unchanged |
 | `as`          | `React.ElementType` | The element type to render the badge as (e.g., `span`, default: `div`) | unchanged |
-| `className`   | `string`            | Enables additional styling                                                 | unchanged |
-| `testId`      | `string`            | Sets `data-test-id` property (default: `cf-ui-navbar-badge`)               | unchanged |
+| `className`   | `string`            | Enables additional styling                                             | unchanged |
+| `testId`      | `string`            | Sets `data-test-id` property (default: `cf-ui-navbar-badge`)           | unchanged |
 
 ## Navbar.Item
 
@@ -286,15 +286,15 @@ This is the default use-case of the `Navbar.Item`, the `title` property is to co
 
 ### Navbar.Item prop overview table
 
-| Property Name | Type              | Description                                                                   | Status    |
-| ------------- | ----------------- | ----------------------------------------------------------------------------- | --------- |
+| Property Name | Type                | Description                                                                   | Status    |
+| ------------- | ------------------- | ----------------------------------------------------------------------------- | --------- |
 | `label`       | `string`            | Accessible label for icon-only items (required for accessibility and tooltip) | new       |
 | `title`       | `string`            | Title text displayed for the item                                             | unchanged |
-| `icon`        | `React.ReactNode`  | Icon displayed before the title or as the only content                        | unchanged |
+| `icon`        | `React.ReactNode`   | Icon displayed before the title or as the only content                        | unchanged |
 | `isActive`    | `boolean`           | Marks the item as active (e.g., for current page)                             | unchanged |
-| `as`          | `React.ElementType` | The element type to render the item as (e.g., `button`, `a`)              | unchanged |
+| `as`          | `React.ElementType` | The element type to render the item as (e.g., `button`, `a`)                  | unchanged |
 | `isDisabled`  | `boolean`           | Disables the item, making it non-interactive                                  | new       |
-| `children`    | `React.ReactNode`  | If provided, turns the item into a dropdown menu trigger                      | unchanged |
+| `children`    | `React.ReactNode`   | If provided, turns the item into a dropdown menu trigger                      | unchanged |
 | `onOpen`      | `() => void`        | Callback fired when the dropdown menu opens (only if children are provided)   | unchanged |
 | `onClose`     | `() => void`        | Callback fired when the dropdown menu closes (only if children are provided)  | unchanged |
 | `className`   | `string`            | Enables additional styling                                                    | unchanged |
@@ -339,8 +339,8 @@ These compound components are used as children of a `Navbar.Item` or as children
 
 ### Navbar.MenuItem prop overview table
 
-| Property Name | Type              | Description                                                  | Status    |
-| ------------- | ----------------- | ------------------------------------------------------------ | --------- |
+| Property Name | Type                | Description                                                  | Status    |
+| ------------- | ------------------- | ------------------------------------------------------------ | --------- |
 | `title`       | `string`            | Title text displayed for the item                            | unchanged |
 | `icon`        | `React.ReactNode`   | Icon displayed before the title or as the only content       | unchanged |
 | `as`          | `React.ElementType` | The element type to render the item as (e.g., `button`, `a`) | unchanged |
@@ -348,15 +348,15 @@ These compound components are used as children of a `Navbar.Item` or as children
 
 ### Navbar.MenuDivider prop overview table
 
-| Property Name | Type   | Description                                           | Status    |
-| ------------- | ------ | ----------------------------------------------------- | --------- |
+| Property Name | Type     | Description                                           | Status    |
+| ------------- | -------- | ----------------------------------------------------- | --------- |
 | `className`   | `string` | Enables additional styling                            | unchanged |
 | `testId`      | `string` | Sets test-id property (default: `cf-ui-menu-divider`) | unchanged |
 
 ### Navbar.SectionTitle prop overview table
 
-| Property Name | Type            | Description                                                 | Status    |
-| ------------- | --------------- | ----------------------------------------------------------- | --------- |
+| Property Name | Type              | Description                                                 | Status    |
+| ------------- | ----------------- | ----------------------------------------------------------- | --------- |
 | `className`   | `string`          | Enables additional styling                                  | unchanged |
 | `testId`      | `string`          | Sets test-id property (default: `cf-ui-menu-section-title`) | unchanged |
 | `children`    | `React.ReactNode` | Contains the actual title displayed                         | unchanged |
@@ -386,8 +386,8 @@ These compound components are used as children of a `Navbar.Item` or as children
 
 ### Navbar.Submenu prop overview table
 
-| Property Name | Type            | Description                                                                                          | Status |
-| ------------- | --------------- | ---------------------------------------------------------------------------------------------------- | ------ |
+| Property Name | Type              | Description                                                                                          | Status |
+| ------------- | ----------------- | ---------------------------------------------------------------------------------------------------- | ------ |
 | `title`       | `string`          | Title text displayed for the submenu                                                                 | new    |
 | `icon`        | `React.ReactNode` | Icon displayed before the title, required                                                            | new    |
 | `children`    | `React.ReactNode` | `Navbar.MenuItem` elements to be rendered inside the submenu                                         | new    |
@@ -397,8 +397,7 @@ These compound components are used as children of a `Navbar.Item` or as children
 
 ## Navbar.Switcher
 
-> [!Caution]
-> `Navbar.Switcher` has removed elements
+> [!Caution] > `Navbar.Switcher` has removed elements
 > The following elements have been removed or changed in the new `Navbar.Switcher` API and require code changes:
 >
 > - Compound component `Navbar.SwitcherItem`
@@ -425,16 +424,16 @@ The `Navbar.Switcher` component is used for displaying the current space and env
 
 ### Navbar.Switcher prop overview table
 
-| Property Name | Type                                              | Description                                                     | Status           |
-| ------------- | ------------------------------------------------- | --------------------------------------------------------------- | ---------------- |
-| `isLoading`   | `boolean`                                           | If `true`, shows a loading state and renders children           | new              |
-| `children`    | `React.ReactNode`                                   | Content to display when loading, dependent on `isLoading`       | changed behavior |
-| `environment` | `string`                                            | Name of the environment to display (required if not loading)    | new              |
-| `space`       | `string`                                            | Name of the space to display (required if not loading)          | new              |
+| Property Name | Type                                        | Description                                                     | Status           |
+| ------------- | ------------------------------------------- | --------------------------------------------------------------- | ---------------- |
+| `isLoading`   | `boolean`                                   | If `true`, shows a loading state and renders children           | new              |
+| `children`    | `React.ReactNode`                           | Content to display when loading, dependent on `isLoading`       | changed behavior |
+| `environment` | `string`                                    | Name of the environment to display (required if not loading)    | new              |
+| `space`       | `string`                                    | Name of the space to display (required if not loading)          | new              |
 | `envVariant`  | `master` &#124; `non-master` &#124; `trial` | Visual variant for the environment badge                        | new              |
-| `isAlias`     | `boolean`                                           | Indicates if the environment is an alias                        | new              |
-| `ariaLabel`   | `string`                                            | Accessible label for the switcher button                        | new              |
-| `className`   | `string`                                            | Enables additional styling                                      | unchanged        |
-| `testId`      | `string`                                            | Sets `data-test-id` property (default: `cf-ui-navbar-switcher`) | unchanged        |
-| `logo`        | `string`                                            | Shows the logo of the organization                              | removed          |
-| `isCircle`    | `boolean`                                           | Used for styling                                                | removed          |
+| `isAlias`     | `boolean`                                   | Indicates if the environment is an alias                        | new              |
+| `ariaLabel`   | `string`                                    | Accessible label for the switcher button                        | new              |
+| `className`   | `string`                                    | Enables additional styling                                      | unchanged        |
+| `testId`      | `string`                                    | Sets `data-test-id` property (default: `cf-ui-navbar-switcher`) | unchanged        |
+| `logo`        | `string`                                    | Shows the logo of the organization                              | removed          |
+| `isCircle`    | `boolean`                                   | Used for styling                                                | removed          |
