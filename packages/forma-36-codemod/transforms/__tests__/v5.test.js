@@ -3,7 +3,7 @@
 const defineTest = require('jscodeshift/dist/testUtils').defineTest;
 
 describe('v5 codemods', () => {
-  const tests = ['v5/icons'];
+  const tests = ['v5/icons', 'v5/workbench'];
 
   beforeEach(() => {
     // Silence warnings we show on the transforms for cleaner tests

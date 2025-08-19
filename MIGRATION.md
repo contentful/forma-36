@@ -170,9 +170,9 @@ import {
 } from '@contentful/f36-workbench';
 
 <Workbench className="custom-workbench">
-  <WorkbenchHeader>Header Content</WorkbenchHeader>
-  <WorkbenchSidebar>Sidebar Content</WorkbenchSidebar>
-  <WorkbenchContent>Main Content</WorkbenchContent>
+  <Workbench.Header>Header Content</Workbench.Header>
+  <Workbench.Sidebar>Sidebar Content</Workbench.Sidebar>
+  <Workbench.Content>Main Content</Workbench.Content>
 </Workbench>;
 ```
 
