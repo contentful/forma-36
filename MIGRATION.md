@@ -14,7 +14,7 @@
       - [Navbar prop overview table](#navbar-prop-overview-table)
       - [Removed Props](#removed-props)
 
-## How to migrate your packages to v5 from v4
+## How to migrate your packages from v4 to v5
 
 The following components contain breaking changes from v4 to v5
 
