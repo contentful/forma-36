@@ -39,14 +39,6 @@
       "slug": "/components/header/"
     },
     {
-      "title": "Header",
-      "slug": "/components/header/"
-    },
-    {
-      "title": "Icons",
-      "slug": "/components/icon/"
-    },
-    {
       "title": "Icons",
       "slug": "/components/icon/"
     },
@@ -71,9 +63,7 @@
     },
     {
       "title": "Navbar",
-      "slug": "/components/navbar/",
-      "isNew": true,
-      "status": "stable"
+      "slug": "/components/navbar/"
     },
     {
       "title": "NavList",
