@@ -247,7 +247,7 @@ export const WithSearch = () => {
     >
       <Multiselect
         placeholder="Search your favorite fruit"
-        onSearchValueChange={handleSearchValueChange}
+        searchProps={{ onSearchValueChange: handleSearchValueChange }}
         popoverProps={{ isFullWidth: true, listMaxHeight: 250 }}
         currentSelection={selectedFruits}
       >
