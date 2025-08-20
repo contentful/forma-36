@@ -103,12 +103,6 @@ export interface AutocompleteProps<ItemType>
    */
   textOnAfterSelect?: 'clear' | 'preserve' | 'replace';
   /**
-   * If this is set to `true` the text input will be cleared after an item is selected
-   * @default false
-   * @deprecated Use textOnAfterSelect="clear" instead
-   */
-  clearAfterSelect?: boolean;
-  /**
    * If this is set to `false` the dropdown menu will stay open after selecting an item
    * @default true
    */
@@ -203,8 +197,7 @@ function _Autocomplete<ItemType>(
     onOpen,
     id,
     className,
-    clearAfterSelect = false,
-    textOnAfterSelect = clearAfterSelect ? 'clear' : 'replace',
+    textOnAfterSelect = 'replace',
     closeAfterSelect = true,
     defaultValue = '',
     selectedItem,

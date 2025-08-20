@@ -180,43 +180,6 @@ export const propsMetadata = {
           name: '(item: T) => string',
         },
       },
-      clearAfterSelect: {
-        defaultValue: {
-          value: 'false',
-        },
-        description:
-          'If this is set to `true` the text input will be cleared after an item is selected',
-        name: 'clearAfterSelect',
-        parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/autocomplete/src/Autocomplete.tsx',
-          ),
-          name: 'AutocompleteProps',
-        },
-        declarations: [
-          {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/autocomplete/src/Autocomplete.tsx',
-            ),
-            name: 'AutocompleteProps',
-          },
-        ],
-        required: false,
-        type: {
-          name: 'enum',
-          raw: 'boolean',
-          value: [
-            {
-              value: 'false',
-            },
-            {
-              value: 'true',
-            },
-          ],
-        },
-      },
       placeholder: {
         defaultValue: {
           value: '"Search"',
