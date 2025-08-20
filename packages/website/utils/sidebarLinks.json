@@ -36,7 +36,8 @@
     },
     {
       "title": "Header",
-      "slug": "/components/header/"
+      "slug": "/components/header/",
+      "status": "stable"
     },
     {
       "title": "Icons",
@@ -68,7 +69,7 @@
     {
       "title": "NavList",
       "slug": "/components/navlist/",
-      "status": "alpha"
+      "status": "stable"
     },
     {
       "title": "Note",
@@ -97,7 +98,7 @@
     {
       "title": "ProgressStepper",
       "slug": "/components/progress-stepper/",
-      "status": "alpha"
+      "status": "stable"
     },
     {
       "title": "Skeleton",
@@ -264,7 +265,7 @@
     {
       "title": "Multiselect",
       "slug": "/components/multiselect/",
-      "status": "alpha"
+      "status": "stable"
     },
     {
       "title": "Radio",
