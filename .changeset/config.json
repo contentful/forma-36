@@ -10,7 +10,6 @@
     "@contentful/f36-cdn",
     "@contentful/f36-i18n-utils",
     "@contentful/f36-codemod",
-    "@contentful/f36-icons",
     "@contentful/f36-website"
   ],
   "commit": false,
@@ -35,6 +34,7 @@
       "@contentful/f36-forms",
       "@contentful/f36-header",
       "@contentful/f36-icon",
+      "@contentful/f36-icons",
       "@contentful/f36-image",
       "@contentful/f36-layout",
       "@contentful/f36-list",
