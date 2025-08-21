@@ -9,9 +9,21 @@ export type {
   IconVariant,
 } from '@contentful/f36-icon';
 
-export * from './custom/AWSBedrockIcon.js';
 export * from './custom/AnthropicIcon.js';
+export * from './custom/AWSBedrockIcon.js';
+export * from './custom/BorderRadiusBottomRightIcon.js';
+export * from './custom/BorderRadiusTopLeftIcon.js';
+export * from './custom/BorderRadiusTopRightIcon.js';
+export * from './custom/ButtonIcon.js';
+export * from './custom/CloudArrowUpDownIcon.js';
+export * from './custom/ColumnsFourIcon.js';
+export * from './custom/ColumnsRailLeftIcon.js';
+export * from './custom/ColumnsRailRightIcon.js';
+export * from './custom/ColumnsThreeIcon.js';
+export * from './custom/CubesThreeIcon.js';
+export * from './custom/DashboardIcon.js';
 export * from './custom/DesktopWideIcon.js';
+export * from './custom/DuplexIcon.js';
 export * from './custom/EmbeddedBlockIcon.js';
 export * from './custom/EmbeddedLineIcon.js';
 export * from './custom/EntryIcon.js';
@@ -19,6 +31,14 @@ export * from './custom/EnvironmentAliasIcon.js';
 export * from './custom/EnvironmentIcon.js';
 export * from './custom/FallbackIcon.js';
 export * from './custom/InspectorModeIcon.js';
+export * from './custom/MarginLeftRightIcon.js';
+export * from './custom/MarginTopBottomIcon.js';
+export * from './custom/PaddingBottomIcon.js';
+export * from './custom/PaddingLeftIcon.js';
+export * from './custom/PaddingLeftRightIcon.js';
+export * from './custom/PaddingRightIcon.js';
+export * from './custom/PaddingTopBottomIcon.js';
+export * from './custom/PaddingTopIcon.js';
 export * from './custom/ReleaseIcon.js';
 export * from './custom/ReplaceIcon.js';
 export * from './custom/RichTextIcon.js';
