@@ -111,7 +111,7 @@ const iconsMap = {
   Spreadsheet: 'Table',
   Star: 'Star',
   Subscript: 'TextSubscript',
-  Superscript: 'TextSuperscriptIcon',
+  Superscript: 'TextSuperscript',
   Tab: 'Tabs',
   Table: 'Table',
   Tags: 'Tag',
