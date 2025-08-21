@@ -40,7 +40,10 @@ import * as f36icons from '@contentful/f36-icons';
 const liveProviderScope = {
   ...f36Components,
   ...f36utils,
+  // Make all icons available as named import (e.g., import { EyeIcon })
   ...f36icons,
+  // Make all icons available as namespace import (e.g., import * as icons)
+  f36icons,
   ...f36Navbar,
   Layout, // Remove when added to f36-components
   Multiselect, // Remove when added to f36-components
