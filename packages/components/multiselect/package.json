@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-multiselect",
-  "version": "5.0.0-alpha.4",
+  "version": "5.0.0-alpha.5",
   "description": "Forma 36: Multiselect Component",
   "scripts": {
     "build": "tsup"

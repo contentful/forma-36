@@ -194,16 +194,6 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
 
   const hasSearch = typeof searchProps.onSearchValueChange === 'function';
 
-  const handoverSearchProps =
-    Object.keys(searchProps).length > 0
-      ? searchProps
-      : {
-          onSearchValueChange: searchProps.onSearchValueChange,
-          searchPlaceholder: searchProps.searchPlaceholder,
-          searchInputName: searchProps.searchInputName,
-          searchInputRef: searchProps.searchInputRef,
-        };
-
   const focusList = useCallback(() => {
     // Clearing the search input or selecting an item triggers a rerendering and
     // thereby the client loses the focus on the clicked element. To avoid having
@@ -359,7 +349,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
           <FocusLock focusOptions={{ preventScroll: true }} returnFocus={true}>
             {hasSearch && (
               <MultiselectSearch
-                {...handoverSearchProps}
+                {...searchProps}
                 setSearchValue={setSearchValue}
                 searchValue={searchValue}
                 focusList={focusList}
