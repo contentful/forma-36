@@ -88,6 +88,7 @@ const iconsMap = {
   MoreVertical: 'DotsThreeVertical',
   Page: 'File',
   Pdf: 'FilePdf',
+  PaintBrush: 'PaintBrush',
   Person: 'User',
   Plaintext: 'FileText',
   Plus: 'Plus',
@@ -362,8 +363,8 @@ const updateToV5Icons = function (file, api) {
         from: importName,
         to:
           v4IconName === 'Icon'
-            ? '@contentful/f36-icon-alpha'
-            : '@contentful/f36-icons-alpha',
+            ? '@contentful/f36-icon'
+            : '@contentful/f36-icons',
         outputComponentName: newComponentName,
       });
     }
@@ -393,7 +394,7 @@ const updateToV5Icons = function (file, api) {
     source = changeImport(j, source, {
       componentName: iconProps.localName,
       from: iconProps.importName,
-      to: '@contentful/f36-icons-alpha',
+      to: '@contentful/f36-icons',
       outputComponentName: iconProps.localName,
     });
   }
