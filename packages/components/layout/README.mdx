@@ -17,11 +17,11 @@ The Layout component defines the page view by providing four distinct areas: Hea
 
 ### Layout Compound components
 
-| Compound Component | Description                                                                                                                                                                                                                                                | Typical Usage Area                      |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
-| `Layout.Header`    | Should contain a `Header` component. There will be a dividing line underneath if combined with at least one `Sidebar`. Content inside will be centered. It follows through in the `max-width` adjustment from `1550px` to `1920px` for the `wide` variant. | `header`                                |
-| `Layout.Sidebar`   | Allows for variants `narrow` which equals `width: 280px` and `wide` (default) which sets `width: 340px`. Left and right sidebar can be of different widths.                                                                                                | `leftSidebar`, `rightSidebar`           |
-| `Layout.Body`      | Wrapper around all children, this compound component is essential for proper overflow and scrolling behaviours.                                                                                                                                            | wrapper around all children of `Layout` |
+| Compound Component | Description                                                                                                                                                                                                                                          | Typical Usage Area                      |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
+| `Layout.Header`    | Should contain a `Header` component. When passing at least one sidebar, a divider is added underneath the header. Content inside will be centered. It follows through in the `max-width` adjustment from `1550px` to `1920px` on the `wide` variant. | `header`                                |
+| `Layout.Sidebar`   | Allows for variants `narrow` (sets `width: 280px`) and `wide` (default, sets `width: 340px`). Both sidebars can have different widths.                                                                                                               | `leftSidebar`, `rightSidebar`           |
+| `Layout.Body`      | Wrapper around all children, this compound component is essential for proper overflow and scrolling behaviours.                                                                                                                                      | wrapper around all children of `Layout` |
 
 ## Import
 
@@ -71,15 +71,15 @@ import { Layout } from '@contentful/f36-layout';
 
 ## Layout areas
 
-The `Layout` component offers 4 individual areas, they can be set via the props `header`, `leftSidebar` and `rightSidebar` and as `children` for the main content area.
+The `Layout` component offers 4 individual areas, which can be set via the props `header`, `leftSidebar`, `rightSidebar`, and as `children` (for the main content area).
 
-| Prop                          | Description                                                                                                                                                                                                                   | Recommended Child components             |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| `children`                    | Elements handed over as children to the Layout component will be rendered as the Layouts body. Ideally all children should be wrapped inside `Layout.Body`                                                                    | `Layout.Body`                            |
-| `header`                      | Elements in the header will be overarching the whole width of the layout component. Child-Components should be wrapped inside `Layout.Header` and it is also recommended to use `Header` as the only child of `Layout.Header` | `Layout.Header` with `Header` as a child |
-| `leftSidebar`, `rightSidebar` | These child-components will be rendered on the left and right side of the body content. They should be wrapped in `Layout.Sidebar`                                                                                            | `Layout.Sidebar`                         |
+| Prop                                | Description                                                                                                                                                                                                     | Recommended Child components             |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| `children`                          | Elements handed over as children to the Layout component render as the Layout's body. Ideally, all children should be wrapped inside `Layout.Body`                                                              | `Layout.Body`                            |
+| `header`                            | Elements in the header overarch the whole width of the layout component. Child components should be wrapped inside `Layout.Header`. It is also recommended to use `Header` as the only child of `Layout.Header` | `Layout.Header` with `Header` as a child |
+| `leftSidebar` &#124; `rightSidebar` | These child-components render on the left and right side of the body content. They should be wrapped in `Layout.Sidebar`                                                                                        | `Layout.Sidebar`                         |
 
-** Note ** There will be a seperating Line be displayed underneath the Header if there are Sidebars present. Without Sidebars, there will be no line.
+** Note ** When passing at least one sidebar, a divider is added underneath the header. There is no divider otherwise.
 
 ## Accessibility
 

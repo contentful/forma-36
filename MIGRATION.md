@@ -127,25 +127,25 @@ The following props will no longer be accepted by the Navbar Component. This tab
 
 ### Layout
 
-The `Layout` component has undergone significant changes in its visual appearance and behavior. It accepts the following new props: `leftSidebarVariant`, `rightSidebarVariant`, `withBoxShadow`. If you have custom styles that overwrite scroll and positioning behavior, you might have to adjust them. The most siginificant change is that per default it applies the following styles. `background-color: #fff` and `max-width: 1920px`. The props API of its compound components `Layout.Header`, `Layout.Body` and `Layout.Sidebar` are unchanged.
+The `Layout` component has undergone significant changes in its visual appearance and behavior. It accepts the following new props: `leftSidebarVariant`, `rightSidebarVariant`, `withBoxShadow`. If you have custom styles that overwrite scroll and positioning behavior, you might have to adjust them. The default styling is the most significant change: `background-color: #fff` and `max-width: 1920px`. The props API of its compound components `Layout.Header`, `Layout.Body`, and `Layout.Sidebar` are unchanged.
 
 For a **detailed guide, including prop mapping tables and code examples**, see [packages/components/layout/MIGRATION.md](./packages/components/layout/MIGRATION.md).
 
 #### Layout prop overview table
 
-| Property Name       | Type                                       | Description                                                             | Status    |
-| ------------------- | ------------------------------------------ | ----------------------------------------------------------------------- | --------- |
-| children            | React.ReactNode                            | Expects the compound component `Layout.Body` as child                   | Unchanged |
-| header              | React.ReactNode                            | Header component.                                                       | Unchanged |
-| leftSidebar         | React.ReactNode                            | Left sidebar component.                                                 | Unchanged |
-| leftSidebarVariant  | 'narrow' &#124; 'wide'                     | Defines the width of the layout left sidebar. @default 'narrow' (280px) | new       |
-| rightSidebar        | React.ReactNode                            | Right sidebar component.                                                | Unchanged |
-| rightSidebarVariant | 'narrow' &#124; 'wide'                     | Defines the width of the layout right sidebar. @default 'wide' (340px)  | new       |
-| variant             | 'narrow' &#124; 'wide' &#124; 'fullscreen' | Defines the width of the layout and its content. @default 'wide'        | changed   |
-| withBoxShadow       | boolean                                    | Adds a box shadow to the layout.                                        | new       |
-| contentClassName    | string                                     | Classname for the main content div.                                     | Unchanged |
-| contentTestId       | string                                     | Test id for the main content div.                                       | Unchanged |
-| offsetTop           | number                                     | Offset for layout heights calculation. @default 60 (= navbar height)    | changed   |
-| className           | string                                     | Custom class name for the root element (from CommonProps).              | Unchanged |
-| testId              | string                                     | Test id for the root element (from CommonProps).                        | Unchanged |
-| ...HTMLAttributes   | HTMLAttributes<HTMLDivElement>             | Standard HTML div attributes.                                           |
+| Property Name         | Type                                       | Description                                                                        | Status    |
+| --------------------- | ------------------------------------------ | ---------------------------------------------------------------------------------- | --------- |
+| `children`            | `React.ReactNode`                          | Expects the compound component `Layout.Body` as child                              | unchanged |
+| `header`              | `React.ReactNode`                          | Header component.                                                                  | unchanged |
+| `leftSidebar`         | `React.ReactNode`                          | Left-hand sidebar component.                                                       | unchanged |
+| `leftSidebarVariant`  | `narrow` &#124; `wide`                     | Defines the width of the layout left-hand sidebar (default: `narrow` (`280px`))    | new       |
+| `rightSidebar`        | `React.ReactNode`                          | Right-hand sidebar component.                                                      | unchanged |
+| `rightSidebarVariant` | `narrow` &#124; `wide`                     | Defines the width of the layout right-hand sidebar (default: `wide` (`340px`))     | new       |
+| `variant`             | `narrow` &#124; `wide` &#124; `fullscreen` | Defines the width of the layout and its content. (default: `wide`)                 | changed   |
+| `withBoxShadow`       | `boolean`                                  | Adds a box shadow to the layout.                                                   | new       |
+| `contentClassName`    | `string`                                   | Classname for the main content div.                                                | unchanged |
+| `contentTestId`       | `string`                                   | Test id for the main content div.                                                  | unchanged |
+| `offsetTop`           | `number`                                   | Offset for layout heights calculation (default: `60` (equals to the navbar height) | changed   |
+| `className`           | `string`                                   | Custom class name for the root element (from `CommonProps`).                       | unchanged |
+| `testId`              | `string`                                   | Test id for the root element (from `CommonProps`).                                 | unchanged |
+| `...HTMLAttributes`   | `HTMLAttributes<HTMLDivElement>`           | Standard HTML div attributes.                                                      | unchanged |
