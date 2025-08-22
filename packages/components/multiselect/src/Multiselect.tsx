@@ -78,37 +78,10 @@ export interface MultiselectProps extends CommonProps {
   triggerButtonProps?: ButtonProps;
 
   /**
-   * Function called whenever the search input value changes
-   * @deprecated Handover this prop in the searchProps subcomponent properties
-   */
-  onSearchValueChange?: (
-    event: React.ChangeEvent<HTMLInputElement>,
-  ) => void | undefined;
-
-  /**
-   * This is the value will be passed to the `placeholder` prop of the input.
-   * @deprecated Handover this prop in the searchProps subcomponent properties
-   * @default "Search"
-   */
-  searchPlaceholder?: string;
-
-  /**
    * A message that will be shown when it is not possible to find any option that matches the search value
    * @default "No matches"
    */
   noMatchesMessage?: string;
-
-  /**
-   * Pass a form name to the search text input
-   * @deprecated Handover this prop in the searchProps subcomponent properties
-   */
-  searchInputName?: string;
-
-  /**
-   * Use this prop to get a ref to the search input element of the component
-   * @deprecated Handover this prop in the searchProps subcomponent properties
-   */
-  searchInputRef?: React.Ref<HTMLInputElement>;
 
   /**
    * Props to pass to the Popover (Dropdown) component
@@ -219,19 +192,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
   const showClearButton =
     currentSelection.length > 1 && typeof onClearSelection === 'function';
 
-  const hasSearch =
-    typeof props.onSearchValueChange === 'function' ||
-    typeof searchProps.onSearchValueChange === 'function';
-
-  const handoverSearchProps =
-    Object.keys(searchProps).length > 0
-      ? searchProps
-      : {
-          onSearchValueChange: props.onSearchValueChange,
-          searchPlaceholder: props.searchPlaceholder,
-          searchInputName: props.searchInputName,
-          searchInputRef: props.searchInputRef,
-        };
+  const hasSearch = typeof searchProps.onSearchValueChange === 'function';
 
   const focusList = useCallback(() => {
     // Clearing the search input or selecting an item triggers a rerendering and
@@ -388,7 +349,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
           <FocusLock focusOptions={{ preventScroll: true }} returnFocus={true}>
             {hasSearch && (
               <MultiselectSearch
-                {...handoverSearchProps}
+                {...searchProps}
                 setSearchValue={setSearchValue}
                 searchValue={searchValue}
                 focusList={focusList}

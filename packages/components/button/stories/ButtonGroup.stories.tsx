@@ -76,10 +76,7 @@ export const overview: Story<ButtonGroupProps> = () => {
     transparent: true,
   };
 
-  const buttonGroupVariants: Record<
-    Exclude<ButtonGroupVariants, 'collapsed'>,
-    true
-  > = {
+  const buttonGroupVariants: Record<ButtonGroupVariants, boolean> = {
     merged: true,
     spaced: true,
   };
@@ -87,7 +84,7 @@ export const overview: Story<ButtonGroupProps> = () => {
   return (
     <Flex flexDirection="column" marginBottom="spacingL">
       {Object.keys(buttonGroupVariants).map((key) => {
-        const groupVariant = key as Exclude<ButtonGroupVariants, 'collapsed'>;
+        const groupVariant = key as ButtonGroupVariants;
 
         return (
           <>
