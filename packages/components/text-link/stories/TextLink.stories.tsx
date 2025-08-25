@@ -51,7 +51,7 @@ export const UsedWithText = () => {
       and largest city of{' '}
       <TextLink
         href="https://www.wikiwand.com/en/Germany"
-        icon={<Icon as={icons.ExternalLinkIcon} />}
+        icon={<Icon as={icons.ArrowSquareOutIcon} />}
         alignIcon="end"
         target="_blank"
       >
@@ -67,7 +67,7 @@ export const UsedWithText = () => {
       , and contiguous with{' '}
       <TextLink
         href="https://www.wikiwand.com/en/Potsdam"
-        icon={<Icon as={icons.ExternalLinkIcon} />}
+        icon={<Icon as={icons.ArrowSquareOutIcon} />}
         alignIcon="start"
         target="_blank"
       >
@@ -105,7 +105,7 @@ export const UsedWithList = () => {
             href="https://contentful.com"
             target="_blank"
             rel="noopener noreferrer"
-            icon={<Icon as={icons.ExternalLinkIcon} />}
+            icon={<Icon as={icons.ArrowSquareOutIcon} />}
             alignIcon="start"
           >
             Contentful
@@ -120,7 +120,7 @@ export const UsedWithList = () => {
             href="https://contentful.com"
             target="_blank"
             rel="noopener noreferrer"
-            icon={<Icon as={icons.ExternalLinkIcon} />}
+            icon={<Icon as={icons.ArrowSquareOutIcon} />}
             alignIcon="end"
           >
             Contentful
@@ -154,7 +154,7 @@ export const UsedWithinFlexbox = () => {
           href="https://contentful.com"
           target="_blank"
           rel="noopener noreferrer"
-          icon={<Icon as={icons.ExternalLinkIcon} />}
+          icon={<Icon as={icons.ArrowSquareOutIcon} />}
           alignIcon="end"
         >
           Contentful Website
@@ -166,7 +166,7 @@ export const UsedWithinFlexbox = () => {
           href="https://contentful.com"
           target="_blank"
           rel="noopener noreferrer"
-          icon={<Icon as={icons.ExternalLinkIcon} />}
+          icon={<Icon as={icons.ArrowSquareOutIcon} />}
           alignIcon="start"
         >
           Contentful Website
@@ -178,7 +178,7 @@ export const UsedWithinFlexbox = () => {
           href="https://contentful.com"
           target="_blank"
           rel="noopener noreferrer"
-          icon={<Icon as={icons.ExternalLinkIcon} />}
+          icon={<Icon as={icons.ArrowSquareOutIcon} />}
           alignIcon="start"
         >
           Contentful Website
@@ -190,7 +190,7 @@ export const UsedWithinFlexbox = () => {
           href="https://contentful.com"
           target="_blank"
           rel="noopener noreferrer"
-          icon={<Icon as={icons.ExternalLinkIcon} />}
+          icon={<Icon as={icons.ArrowSquareOutIcon} />}
           alignIcon="end"
         >
           Contentful Website
@@ -233,7 +233,7 @@ export const overview = () => (
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink
-            icon={<Icon as={icons.CalendarIcon} />}
+            icon={<Icon as={icons.CalendarBlankIcon} />}
             href="https://www.wikiwand.com/en/Potsdam"
             target="_blank"
             variant={variant as TextLinkVariant}
@@ -243,7 +243,7 @@ export const overview = () => (
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink
-            icon={<Icon as={icons.ExternalLinkIcon} />}
+            icon={<Icon as={icons.ArrowSquareOutIcon} />}
             alignIcon="end"
             href="https://www.wikiwand.com/en/Potsdam"
             target="_blank"
@@ -254,7 +254,7 @@ export const overview = () => (
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink
-            icon={<Icon as={icons.DownloadIcon} />}
+            icon={<Icon as={icons.DownloadSimpleIcon} />}
             href="https://www.wikiwand.com/en/Potsdam"
             target="_blank"
             variant={variant as TextLinkVariant}

@@ -49,10 +49,6 @@ interface IconButtonInternalProps
    */
   'aria-label': string;
   /**
-   * @deprecated Use <Button /> component instead
-   */
-  children?: ButtonInternalProps['children'];
-  /**
    * Determines size variation of IconButton component
    * Note: 'large' is deprecated
    * */

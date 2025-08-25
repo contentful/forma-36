@@ -5,7 +5,7 @@ import {
   Text,
   ModalLauncher,
 } from '@contentful/f36-components';
-import { ArchiveIcon } from '@contentful/f36-icons';
+import { FileArchiveIcon } from '@contentful/f36-icons';
 
 export default function ModalConfirmPromptExample() {
   const onArchive = () => {
@@ -38,7 +38,11 @@ export default function ModalConfirmPromptExample() {
   };
 
   return (
-    <Button variant="negative" startIcon={<ArchiveIcon />} onClick={onArchive}>
+    <Button
+      variant="negative"
+      startIcon={<FileArchiveIcon />}
+      onClick={onArchive}
+    >
       Archive entry
     </Button>
   );

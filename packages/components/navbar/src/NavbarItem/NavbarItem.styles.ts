@@ -1,48 +1,44 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { hexToRGBA } from '@contentful/f36-utils';
-import { getGlowOnFocusStyles, mqs } from '../utils.styles';
+import { getGlowOnFocusStyles, increaseHitArea, mqs } from '../utils.styles';
+
+const borderWidth = '1px';
 
 export const getNavbarItemActiveStyles = () =>
   css({
-    '&': {
-      color: tokens.colorWhite,
-      '& svg': {
-        fill: tokens.colorWhite,
-      },
+    backgroundColor: tokens.blue100,
+    border: `${borderWidth} solid ${tokens.blue400}`,
+    color: tokens.blue600,
+    '&:focus,&:hover': {
+      backgroundColor: tokens.blue100,
     },
+  });
 
-    '&::after': {
-      content: '""',
-      position: 'absolute',
-      width: `calc(100% - ${tokens.spacingM})`,
-      height: '2px',
-      bottom: '0.5px',
-      left: 0,
-      right: 0,
-      margin: 'auto',
-      backgroundColor: tokens.colorWhite,
-      zIndex: 0,
-    },
+export const getNavbarItemDisabledStyles = () =>
+  css({
+    border: 'none',
+    opacity: 0.5,
+    pointerEvents: 'none',
   });
 
 const commonItemStyles = {
   display: 'flex',
   justifyContent: 'center',
-  padding: `10px ${tokens.spacingS}`,
+  padding: `calc(${tokens.spacing2Xs} - ${borderWidth}) calc(${tokens.spacingXs} - ${borderWidth})`,
   alignItems: 'center',
   background: 'none',
+  gap: tokens.spacing2Xs,
 };
 
-export const getNavbarItemStyles = () => ({
-  root: css(
+export const getNavbarItemStyles = ({ hasTitle }: { hasTitle: boolean }) => ({
+  navbarItem: css(
     commonItemStyles,
     {
-      alignItems: 'center',
+      appearance: 'none',
       background: 'none',
-      border: 0,
-      margin: 0,
       outline: 'none',
+      border: `${borderWidth} solid transparent`,
+      margin: 0,
       fontSize: tokens.fontSizeM,
       lineHeight: tokens.lineHeightM,
       fontWeight: tokens.fontWeightMedium,
@@ -52,63 +48,54 @@ export const getNavbarItemStyles = () => ({
       cursor: 'pointer',
       hyphens: 'auto',
       textDecoration: 'none',
-      color: hexToRGBA(tokens.gray300, 0.8),
+      color: tokens.gray800,
       boxSizing: 'border-box',
       transition: `color ${tokens.transitionDurationShort} ${tokens.transitionEasingCubicBezier}`,
       borderRadius: tokens.borderRadiusMedium,
+      height: '30px',
 
-      '&::before': {
-        content: '""',
-        position: 'absolute',
-        width: `calc(100% - ${tokens.spacingXs})`,
-        height: `calc(100% - ${tokens.spacingS})`,
-        top: `calc(${tokens.spacingS} / 2)`,
-        left: 0,
-        right: 0,
-        margin: 'auto',
-        borderRadius: tokens.borderRadiusSmall,
-        backgroundColor: hexToRGBA(tokens.colorWhite, 0.08),
-        opacity: 0,
-        zIndex: 0,
-        scale: 0,
-        transition: `all ${tokens.transitionDurationShort} ${tokens.transitionEasingCubicBezier}`,
+      padding: hasTitle
+        ? `${tokens.spacing2Xs} ${tokens.spacingXs}`
+        : `calc(${tokens.spacing2Xs} - ${borderWidth})`, // square button for icon-only items
+
+      '&:focus, &:hover': {
+        backgroundColor: tokens.gray200,
       },
 
-      '&:hover::before': {
-        opacity: 1,
-        scale: '1',
-      },
+      '&:active': getNavbarItemActiveStyles(),
 
-      '&:active::before': {
-        backgroundColor: `rgba(255, 255, 255, 0.1)`,
-      },
       '&:disabled': {
         cursor: 'auto',
       },
 
       '& svg': {
-        fill: hexToRGBA(tokens.gray300, 0.8),
         transition: `fill ${tokens.transitionDurationShort} ${tokens.transitionEasingCubicBezier}`,
-
-        '&:first-child': {
-          display: 'none',
-          [mqs.large]: {
-            display: 'block',
-          },
-        },
       },
       '& > svg, & > span': {
         zIndex: tokens.zIndexDefault,
       },
     },
-    getGlowOnFocusStyles(`inset ${tokens.glowPrimary}`),
+    getGlowOnFocusStyles(),
+    increaseHitArea(),
   ),
   isActive: getNavbarItemActiveStyles(),
-  dropdownIcon: css({
-    paddingLeft: tokens.spacing2Xs,
+  isDisabled: getNavbarItemDisabledStyles(),
+  icon: css({
+    height: '20px',
+    width: '20px',
+    boxSizing: 'content-box',
+    display: hasTitle ? 'none' : 'block',
+    [mqs.small]: {
+      height: '16px',
+      width: '16px',
+      padding: hasTitle ? '2px 0' : '2px', // square for icon-only items
+    },
+    [mqs.large]: {
+      display: 'block',
+    },
   }),
 });
 
 export const getNavbarItemSkeletonStyles = () => ({
-  root: css(commonItemStyles),
+  itemSkeleton: css(commonItemStyles),
 });

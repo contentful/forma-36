@@ -1,6 +1,6 @@
 import React from 'react';
 import { Stack, TextLink } from '@contentful/f36-components';
-import { ExternalLinkIcon } from '@contentful/f36-icons';
+import { ArrowSquareOutIcon } from '@contentful/f36-icons';
 
 export default function TextLinkBasicExample() {
   return (
@@ -13,7 +13,7 @@ export default function TextLinkBasicExample() {
         Contentful Website
       </TextLink>
       <TextLink
-        icon={<ExternalLinkIcon />}
+        icon={<ArrowSquareOutIcon />}
         alignIcon="end"
         href="https://www.contentful.com/developers/docs/"
         target="_blank"

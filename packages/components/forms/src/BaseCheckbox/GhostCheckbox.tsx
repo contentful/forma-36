@@ -1,7 +1,8 @@
 import React from 'react';
-import { DoneIcon, MinusIcon, CloseIcon } from '@contentful/f36-icons';
+import { CheckIcon, MinusIcon, XIcon } from '@contentful/f36-icons';
 import type { BaseCheckboxInternalProps } from './types';
 import getStyles from './GhostCheckbox.styles';
+import tokens from '@contentful/f36-tokens';
 
 export type GhostCheckboxProps = Pick<
   BaseCheckboxInternalProps,
@@ -15,8 +16,8 @@ export const GhostCheckbox = (props: GhostCheckboxProps) => {
   if (type === 'switch') {
     return (
       <span className={styles.switch}>
-        <DoneIcon size="tiny" variant="white" />
-        <CloseIcon size="tiny" variant="white" />
+        <CheckIcon size="tiny" color={tokens.colorWhite} />
+        <XIcon size="tiny" color={tokens.colorWhite} />
       </span>
     );
   }
@@ -25,9 +26,9 @@ export const GhostCheckbox = (props: GhostCheckboxProps) => {
     <span className={styles[type]}>
       {type === 'checkbox' &&
         (isIndeterminate ? (
-          <MinusIcon size="tiny" variant="white" />
+          <MinusIcon size="tiny" color={tokens.colorWhite} />
         ) : (
-          <DoneIcon size="tiny" variant="white" />
+          <CheckIcon size="tiny" color={tokens.colorWhite} />
         ))}
     </span>
   );

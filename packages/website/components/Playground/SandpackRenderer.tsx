@@ -94,14 +94,14 @@ export function SandpackRenderer({
           react: '^17.0.0',
           'react-dom': '^17.0.0',
           'react-scripts': '^4.0.0',
-          '@contentful/f36-components': '^4.0.0',
-          '@contentful/f36-layout': '^4.0.0-alpha.0', // Remove when added to f36-components
-          '@contentful/f36-multiselect': '^4.0.0', // Remove when added to f36-components
-          '@contentful/f36-navlist': '^4.1.0-alpha.0', // Remove when added to f36-components
-          '@contentful/f36-progress-stepper': '^4.0.0-alpha.4', // Remove when added to f36-components
-          '@contentful/f36-tokens': '^4.0.0',
-          '@contentful/f36-icons': '^4.0.0',
-          '@contentful/f36-core': '^4.0.0',
+          '@contentful/f36-components': '^5.0.0-alpha.3',
+          '@contentful/f36-layout': '^5.0.0-alpha.23',
+          '@contentful/f36-multiselect': '^5.0.0-alpha.3',
+          '@contentful/f36-navlist': '^5.0.0-alpha.3',
+          '@contentful/f36-progress-stepper': '^5.0.0-alpha.3',
+          '@contentful/f36-tokens': '^5.0.0-alpha.2',
+          '@contentful/f36-icons': '^5.0.0-alpha.49',
+          '@contentful/f36-core': '^5.0.0-alpha.5',
           '@contentful/f36-utils': '^4.0.0',
           emotion: '^10.0.17',
           lodash: '^4.17.21',

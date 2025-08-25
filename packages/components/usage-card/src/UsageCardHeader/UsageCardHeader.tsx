@@ -4,7 +4,7 @@ import { Tooltip } from '@contentful/f36-tooltip';
 import { type CommonProps } from '@contentful/f36-core';
 import { Subheading } from '@contentful/f36-typography';
 import { getUsageCardHeaderStyles } from './UsageCardHeader.styles';
-import { InfoCircleIcon } from '@contentful/f36-icons';
+import { InfoIcon } from '@contentful/f36-icons';
 
 export type UsageCardHeaderProps = {
   children?: React.ReactNode;
@@ -37,7 +37,7 @@ function _UsageCardHeader(
       {title}
       {tooltip && (
         <Tooltip content={tooltip} className={styles.tooltip} placement="top">
-          <InfoCircleIcon className={styles.infoIcon} size="medium" />
+          <InfoIcon className={styles.infoIcon} size="medium" />
         </Tooltip>
       )}
 

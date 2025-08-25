@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu, IconButton } from '@contentful/f36-components';
-import { MenuIcon } from '@contentful/f36-icons';
+import { ListIcon } from '@contentful/f36-icons';
 
 export default function MenuWithTitle() {
   return (
@@ -8,7 +8,7 @@ export default function MenuWithTitle() {
       <Menu.Trigger>
         <IconButton
           variant="secondary"
-          icon={<MenuIcon />}
+          icon={<ListIcon />}
           aria-label="toggle menu"
         />
       </Menu.Trigger>

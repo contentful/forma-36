@@ -2,7 +2,7 @@ import type { CommonProps } from '@contentful/f36-core';
 import type { SpacingTokens } from '@contentful/f36-tokens';
 import type { ReactNode } from 'react';
 
-export type ButtonGroupVariants = 'spaced' | 'merged' | 'collapsed';
+export type ButtonGroupVariants = 'spaced' | 'merged';
 
 export type ButtonGroupSpacing = SpacingTokens;
 
@@ -10,7 +10,6 @@ interface BaseButtonGroupProps extends CommonProps {
   /**
    * Determines how the Button Group will display the buttons
    * @default merged
-   * Note that `collapsed` is a synonym of `merged`
    */
   variant?: ButtonGroupVariants;
   /**
@@ -36,18 +35,7 @@ interface MergedButtonGroupProps extends BaseButtonGroupProps {
   spacing?: never;
 }
 
-/**
- * @deprecated should be removed in v5
- */
-interface CollapsedButtonGroupProps extends BaseButtonGroupProps {
-  variant?: 'collapsed';
-  spacing?: never;
-}
-
-export type ButtonGroupProps =
-  | SpacedButtonGroupProps
-  | MergedButtonGroupProps
-  | CollapsedButtonGroupProps;
+export type ButtonGroupProps = SpacedButtonGroupProps | MergedButtonGroupProps;
 
 export type GetStyleArguments = {
   withDivider: boolean;

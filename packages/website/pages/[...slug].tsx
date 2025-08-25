@@ -1,6 +1,6 @@
 import React from 'react';
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
-import type { ParsedUrlQuery } from 'querystring';
+import type { ParsedUrlQuery } from 'node:querystring';
 
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
@@ -23,8 +23,8 @@ import {
 import type { SidebarProps } from '../components/Sidebar';
 import type { TopbarProps } from '../components/Topbar/Topbar';
 import { Layout } from '../components/Layout';
-import { HARDCODED_WEBSITE_SECTION, SidebarLink } from '../types';
-import type { SidebarSection, SidebarSubsection } from '../types';
+import { HARDCODED_WEBSITE_SECTION } from '../types';
+import type { SidebarLink, SidebarSection, SidebarSubsection } from '../types';
 import mdxSidebarLinks from '../utils/sidebarLinks.json';
 
 const componentSidebarLinks: SidebarSection[] = [
@@ -78,9 +78,9 @@ const componentSidebarLinks: SidebarSection[] = [
           links: mdxSidebarLinks.avatarComponents,
           title: 'Avatar Components',
         },
-      ]),
+      ] as SidebarSubsection[]),
       {
-        title: 'Deprecated V3 Components',
+        title: 'Deprecated components',
         type: 'subsection',
         links: mdxSidebarLinks.deprecatedComponents,
       } as SidebarSubsection,

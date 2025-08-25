@@ -1,11 +1,12 @@
 import React from 'react';
 import { css, cx } from 'emotion';
-import { DisplayText, Flex, TextLink, Note } from '@contentful/f36-components';
-import { ExternalLinkIcon } from '@contentful/f36-icons';
+
 import tokens from '@contentful/f36-tokens';
+import { DisplayText, Flex, TextLink, Note } from '@contentful/f36-components';
 
 import type { FrontMatter } from '../../types';
 import { getGridStyles } from '../../utils/getGridStyles';
+import { ArrowSquareOutIcon } from '@contentful/f36-icons';
 
 const styles = {
   header: css({
@@ -80,7 +81,7 @@ export function PageContentHeader({
           href={getGithubIssueLink(title)}
           target="_blank"
           rel="noopener noreferrer"
-          icon={<ExternalLinkIcon />}
+          icon={<ArrowSquareOutIcon />}
           alignIcon="end"
         >
           Give feedback

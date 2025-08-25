@@ -1,3 +1,10 @@
+/**
+ * Runs provided function on each component with componentName in the source code and updates properties
+ * @param {*} j - jscodeshift API
+ * @param {*} source - original source code
+ * @param {{componentName: string, fn: (attributes, component) => array}} params - Object with component name and function to update properties
+ * @returns Source code with updated properties
+ */
 module.exports.changeProperties = function changeProperties(
   j,
   source,
