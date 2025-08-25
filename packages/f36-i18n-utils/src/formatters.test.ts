@@ -74,7 +74,7 @@ describe('I18n utility functions', function () {
       );
     });
 
-    it('inserts only a comma if list has two elements and type is unit', () => {
+    it('inserts comma if list has two elements and type is unit', () => {
       const list = [123, 453.547];
       expect(formatNumberList('de-DE', list, 'unit')).toBe('123, 453,547');
       expect(formatNumberList('en-US', list, 'unit')).toBe('123, 453.547');
@@ -185,7 +185,7 @@ describe('I18n utility functions', function () {
       expect(formatStringList('fr-FR', list, 'disjunction')).toBe('one ou two');
     });
 
-    it('inserts only a comma if list has two elements and type is unit', () => {
+    it('inserts comma if list has two elements and type is unit', () => {
       const list = ['one', 'two'];
       expect(formatStringList('de-DE', list, 'unit')).toBe('one, two');
       expect(formatStringList('en-US', list, 'unit')).toBe('one, two');
