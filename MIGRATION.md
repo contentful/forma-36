@@ -13,6 +13,8 @@
     - [Navbar](#navbar)
       - [Navbar prop overview table](#navbar-prop-overview-table)
       - [Removed Props](#removed-props)
+    - [Layout](#layout)
+      - [Layout prop overview table](#layout-prop-overview-table)
 
 ## How to migrate your packages from v4 to v5
 
@@ -122,3 +124,28 @@ The following props will no longer be accepted by the Navbar Component. This tab
 | `badge`            | `React.ReactNode` | Badge component, badges can be added to the `mainNavigation` or `secondaryNavigation`               |
 | `bottomRightItems` | `React.ReactNode` | Items rendered on the bottom-right-hand side of the navbar, should now go to `secondaryNavigation`  |
 | `topRightItems`    | `React.ReactNode` | Items rendered on the top-right-hand side of the navbar, should now go to the `secondaryNavigation` |
+
+### Layout
+
+The `Layout` component has undergone significant changes in its visual appearance and behavior. It accepts the following new props: `leftSidebarVariant`, `rightSidebarVariant`, `withBoxShadow`. If you have custom styles that overwrite scroll and positioning behavior, you might have to adjust them. The default styling is the most significant change: `background-color: #fff` and `max-width: 1920px`. The props API of its compound components `Layout.Header`, `Layout.Body`, and `Layout.Sidebar` are unchanged.
+
+For a **detailed guide, including prop mapping tables and code examples**, see [packages/components/layout/MIGRATION.md](./packages/components/layout/MIGRATION.md).
+
+#### Layout prop overview table
+
+| Property Name         | Type                                       | Description                                                                        | Status    |
+| --------------------- | ------------------------------------------ | ---------------------------------------------------------------------------------- | --------- |
+| `children`            | `React.ReactNode`                          | Expects the compound component `Layout.Body` as child                              | unchanged |
+| `header`              | `React.ReactNode`                          | Header component.                                                                  | unchanged |
+| `leftSidebar`         | `React.ReactNode`                          | Left-hand sidebar component.                                                       | unchanged |
+| `leftSidebarVariant`  | `narrow` &#124; `wide`                     | Defines the width of the layout left-hand sidebar (default: `narrow` (`280px`))    | new       |
+| `rightSidebar`        | `React.ReactNode`                          | Right-hand sidebar component.                                                      | unchanged |
+| `rightSidebarVariant` | `narrow` &#124; `wide`                     | Defines the width of the layout right-hand sidebar (default: `wide` (`340px`))     | new       |
+| `variant`             | `narrow` &#124; `wide` &#124; `fullscreen` | Defines the width of the layout and its content. (default: `wide`)                 | changed   |
+| `withBoxShadow`       | `boolean`                                  | Adds a box shadow to the layout.                                                   | new       |
+| `contentClassName`    | `string`                                   | Classname for the main content div.                                                | unchanged |
+| `contentTestId`       | `string`                                   | Test id for the main content div.                                                  | unchanged |
+| `offsetTop`           | `number`                                   | Offset for layout heights calculation (default: `60` (equals to the navbar height) | changed   |
+| `className`           | `string`                                   | Custom class name for the root element (from `CommonProps`).                       | unchanged |
+| `testId`              | `string`                                   | Test id for the root element (from `CommonProps`).                                 | unchanged |
+| `...HTMLAttributes`   | `HTMLAttributes<HTMLDivElement>`           | Standard HTML div attributes.                                                      | unchanged |

@@ -29,7 +29,8 @@ import * as f36Navbar from '@contentful/f36-navbar';
 import { ProgressStepper } from '@contentful/f36-progress-stepper';
 import { Multiselect } from '@contentful/f36-multiselect';
 import { NavList } from '@contentful/f36-navlist';
-import { Layout } from '@contentful/f36-layout';
+import * as f36Layout from '@contentful/f36-layout';
+import * as f36Header from '@contentful/f36-header';
 import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
 
 import { theme } from './theme';
@@ -45,7 +46,8 @@ const liveProviderScope = {
   // Make all icons available as namespace import (e.g., import * as icons)
   f36icons,
   ...f36Navbar,
-  Layout, // Remove when added to f36-components
+  ...f36Layout,
+  ...f36Header,
   Multiselect, // Remove when added to f36-components
   NavList, // Remove when added to f36-components
   ProgressStepper, // Remove when added to f36-components

@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { css } from 'emotion';
-import tokens from '@contentful/f36-tokens';
 import {
   Box,
   Button,
@@ -9,7 +7,7 @@ import {
   TextInput,
   Textarea,
 } from '@contentful/f36-components';
-import { Heading } from '@contentful/f36-typography';
+import { Header } from '@contentful/f36-header';
 import { Layout } from '@contentful/f36-layout';
 
 export default function BasicLayoutExample() {
@@ -21,14 +19,9 @@ export default function BasicLayoutExample() {
 
   return (
     <Layout
-      className={css({
-        backgroundColor: tokens.gray100,
-      })}
       header={
         <Layout.Header>
-          <Heading marginTop="spacingM" marginBottom="spacingM">
-            Your Details
-          </Heading>
+          <Header title="Your Details" />
         </Layout.Header>
       }
     >

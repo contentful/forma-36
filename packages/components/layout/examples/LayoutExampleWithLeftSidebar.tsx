@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { css } from 'emotion';
-import tokens from '@contentful/f36-tokens';
 import {
   Box,
   Button,
@@ -21,9 +19,6 @@ export default function BasicLayoutExample() {
 
   return (
     <Layout
-      className={css({
-        backgroundColor: tokens.gray100,
-      })}
       leftSidebar={
         <Layout.Sidebar>
           <Box padding="none" marginBottom="spacingXl">
