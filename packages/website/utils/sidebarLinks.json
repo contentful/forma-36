@@ -304,13 +304,6 @@
       "status": "stable"
     }
   ],
-  "deprecatedComponents": [
-    {
-      "title": "Workbench",
-      "slug": "/components/workbench/",
-      "status": "deprecated"
-    }
-  ],
   "modalComponents": [
     {
       "title": "Modal",
@@ -420,6 +413,13 @@
     {
       "title": "What's new",
       "slug": "/whats-new"
+    }
+  ],
+  "deprecatedComponents": [
+    {
+      "title": "Workbench",
+      "slug": "/components/workbench/",
+      "status": "deprecated"
     }
   ],
   "integrations": [
