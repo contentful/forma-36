@@ -1,11 +1,17 @@
+type ListFormatType = 'conjunction' | 'disjunction' | 'unit';
+
 export function formatNumber(locale: string, value: number): string {
   return Intl.NumberFormat(locale).format(value);
 }
 
-export function formatStringList(locale: string, items: string[]): string {
+export function formatStringList(
+  locale: string,
+  items: string[],
+  type: ListFormatType = 'conjunction',
+): string {
   const formatter = new Intl.ListFormat(locale, {
     style: 'long',
-    type: 'conjunction',
+    type,
   });
   return formatter.format(items);
 }
@@ -40,10 +46,15 @@ export function formatTruncatedStringList(
   return formatStringList(locale, initialList);
 }
 
-export function formatNumberList(locale: string, items: number[]): string {
+export function formatNumberList(
+  locale: string,
+  items: number[],
+  type: ListFormatType = 'conjunction',
+): string {
   return formatStringList(
     locale,
     items.map((item) => formatNumber(locale, item)),
+    type,
   );
 }
 
