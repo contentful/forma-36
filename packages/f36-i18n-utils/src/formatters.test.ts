@@ -74,11 +74,12 @@ describe('I18n utility functions', function () {
       );
     });
 
-    it('inserts comma if list has two elements and type is unit', () => {
+    // 'Unit' type lists sometimes use "and" instead of just commas, depending on the locale
+    it('inserts comma or "and" if list has two elements and type is unit', () => {
       const list = [123, 453.547];
       expect(formatNumberList('de-DE', list, 'unit')).toBe('123, 453,547');
       expect(formatNumberList('en-US', list, 'unit')).toBe('123, 453.547');
-      expect(formatNumberList('fr-FR', list, 'unit')).toBe('123, 453,547');
+      expect(formatNumberList('fr-FR', list, 'unit')).toBe('123 et 453,547');
     });
 
     it('inserts comma and "and" if list has three elements', () => {
@@ -106,16 +107,16 @@ describe('I18n utility functions', function () {
       );
     });
 
-    it('inserts only commas if list has three elements and type is unit', () => {
+    it('inserts only commas or commas and "and" if list has three elements and type is unit', () => {
       const list = [123, 453.547, 1341075];
       expect(formatNumberList('de-DE', list, 'unit')).toBe(
-        '123, 453,547, 1.341.075',
+        '123, 453,547 und 1.341.075',
       );
       expect(formatNumberList('en-US', list, 'unit')).toBe(
         '123, 453.547, 1,341,075',
       );
       expect(formatNumberList('fr-FR', list, 'unit')).toBe(
-        '123, 453,547, 1 341 075',
+        '123, 453,547 et 1 341 075',
       );
     });
 
@@ -145,16 +146,16 @@ describe('I18n utility functions', function () {
       );
     });
 
-    it('inserts only commas if list has more elements and type is unit', () => {
+    it('inserts only commas or commas and "and" if list has more elements and type is unit', () => {
       const list = [123, 453.547, 1341075, 8, 9];
       expect(formatNumberList('de-DE', list, 'unit')).toBe(
-        '123, 453,547, 1.341.075, 8, 9',
+        '123, 453,547, 1.341.075, 8 und 9',
       );
       expect(formatNumberList('en-US', list, 'unit')).toBe(
         '123, 453.547, 1,341,075, 8, 9',
       );
       expect(formatNumberList('fr-FR', list, 'unit')).toBe(
-        '123, 453,547, 1 341 075, 8, 9',
+        '123, 453,547, 1 341 075, 8 et 9',
       );
     });
   });
@@ -185,11 +186,11 @@ describe('I18n utility functions', function () {
       expect(formatStringList('fr-FR', list, 'disjunction')).toBe('one ou two');
     });
 
-    it('inserts comma if list has two elements and type is unit', () => {
+    it('inserts comma or "and" if list has two elements and type is unit', () => {
       const list = ['one', 'two'];
       expect(formatStringList('de-DE', list, 'unit')).toBe('one, two');
       expect(formatStringList('en-US', list, 'unit')).toBe('one, two');
-      expect(formatStringList('fr-FR', list, 'unit')).toBe('one, two');
+      expect(formatStringList('fr-FR', list, 'unit')).toBe('one et two');
     });
 
     it('inserts comma and "and" if list has three elements', () => {
@@ -213,11 +214,13 @@ describe('I18n utility functions', function () {
       );
     });
 
-    it('inserts only commas if list has three elements and type is unit', () => {
+    it('inserts only commas or commas and "and" if list has three elements and type is unit', () => {
       const list = ['one', 'two', 'three'];
-      expect(formatStringList('de-DE', list, 'unit')).toBe('one, two, three');
+      expect(formatStringList('de-DE', list, 'unit')).toBe(
+        'one, two und three',
+      );
       expect(formatStringList('en-US', list, 'unit')).toBe('one, two, three');
-      expect(formatStringList('fr-FR', list, 'unit')).toBe('one, two, three');
+      expect(formatStringList('fr-FR', list, 'unit')).toBe('one, two et three');
     });
 
     it('inserts commas and "and" if list has more elements', () => {
@@ -246,16 +249,16 @@ describe('I18n utility functions', function () {
       );
     });
 
-    it('inserts only commas if list has more elements and type is unit', () => {
+    it('inserts only commas or commas and "and" if list has more elements and type is unit', () => {
       const list = ['one', 'two', 'three', 'four', 'five'];
       expect(formatStringList('de-DE', list, 'unit')).toBe(
-        'one, two, three, four, five',
+        'one, two, three, four und five',
       );
       expect(formatStringList('en-US', list, 'unit')).toBe(
         'one, two, three, four, five',
       );
       expect(formatStringList('fr-FR', list, 'unit')).toBe(
-        'one, two, three, four, five',
+        'one, two, three, four et five',
       );
     });
   });
