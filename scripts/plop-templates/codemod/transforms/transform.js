@@ -2,17 +2,18 @@ const {
   getComponentLocalName,
   changeProperties,
   changeImport,
-} = require('../utils');
-const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
+} = require('../../utils');
+const { getImport, shouldSkipUpdateImport } = require('../../utils/config');
 
 module.exports = function (file, api) {
   const j = api.jscodeshift;
+  const importName = getImport();
 
   let source = file.source;
 
   const componentName = getComponentLocalName(j, source, {
     componentName: 'ComponentName',
-    importName: getFormaImport(),
+    importName,
   });
 
   if (!componentName) {
@@ -31,7 +32,7 @@ module.exports = function (file, api) {
   if (!shouldSkipUpdateImport()) {
     source = changeImport(j, source, {
       componentName,
-      from: getFormaImport(),
+      from: importName,
       to: '@contentful/f36-components',
     });
   }

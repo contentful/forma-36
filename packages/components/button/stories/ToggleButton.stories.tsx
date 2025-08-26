@@ -48,7 +48,7 @@ export const Basic = ({ icon, children, ...rest }: ToggleButtonProps) => {
 
 Basic.args = {
   isDisabled: false,
-  icon: 'ThumbUpTrimmedIcon',
+  icon: 'ThumbsUpIcon',
   children: 'Like',
 };
 
@@ -61,7 +61,7 @@ export const Grouped = () => {
     <ButtonGroup>
       <ToggleButton
         isActive={isItalic}
-        icon={<Icon as={icons.FormatItalicIcon} />}
+        icon={<Icon as={icons.TextItalicIcon} />}
         aria-label="Italic"
         size="small"
         onToggle={() => {
@@ -70,7 +70,7 @@ export const Grouped = () => {
       />
       <ToggleButton
         isActive={isBold}
-        icon={<Icon as={icons.FormatBoldIcon} />}
+        icon={<Icon as={icons.TextBIcon} />}
         aria-label="Bold"
         size="small"
         onToggle={() => {
@@ -79,7 +79,7 @@ export const Grouped = () => {
       />
       <ToggleButton
         isActive={isUnderline}
-        icon={<Icon as={icons.FormatUnderlinedIcon} />}
+        icon={<Icon as={icons.TextUnderlineIcon} />}
         aria-label="Underline"
         size="small"
         onToggle={() => {
@@ -97,21 +97,21 @@ export const GroupedWithOnlyOneActive = () => {
     <ButtonGroup>
       <ToggleButton
         isActive={isActive === 'italic'}
-        icon={<Icon as={icons.FormatItalicIcon} />}
+        icon={<Icon as={icons.TextItalicIcon} />}
         aria-label="Italic"
         size="small"
         onToggle={() => setIsActive('italic')}
       />
       <ToggleButton
         isActive={isActive === 'bold'}
-        icon={<Icon as={icons.FormatBoldIcon} />}
+        icon={<Icon as={icons.TextBIcon} />}
         aria-label="Bold"
         size="small"
         onToggle={() => setIsActive('bold')}
       />
       <ToggleButton
         isActive={isActive === 'underline'}
-        icon={<Icon as={icons.FormatUnderlinedIcon} />}
+        icon={<Icon as={icons.TextUnderlineIcon} />}
         aria-label="Underline"
         size="small"
         onToggle={() => setIsActive('underline')}
@@ -182,5 +182,5 @@ export const Overview = ({ icon, onToggle, ...rest }: ToggleButtonProps) => (
 
 Overview.args = {
   onToggle: action('toggled'),
-  icon: 'PreviewIcon',
+  icon: 'EyeIcon',
 };

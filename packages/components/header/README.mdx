@@ -1,6 +1,7 @@
 ---
 title: 'Header'
 type: 'layout'
+status: 'stable'
 slug: /components/header/
 github: 'https://github.com/contentful/forma-36/tree/main/packages/components/header'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-header--default'
@@ -21,7 +22,7 @@ import { Header } from '@contentful/f36-header';
 
 ## Examples
 
-### Empty Header with title (variant name)
+### Basic Header with title
 
 ```jsx file=./examples/WithTitle.tsx
 
@@ -44,6 +45,23 @@ import { Header } from '@contentful/f36-header';
 ```jsx file=./examples/WithFilters.tsx
 
 ```
+
+## Header areas
+
+| prop        | description                                                                                                                   | Expected content             |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| breadcrumbs | An (optional) list of navigable links to prepend to the current title.                                                        | Array of breadcumbs          |
+| title       | The title of the element this header pertains to. If handed over a string, it will wrap it in a heading element (default: h1) | Title string or ReactElement |
+| metadata    | Optional additional information to display in the header, will appear after the title.                                        | Text, Badge, Tag             |
+| filters     | Optional element displayed in the center of the header, typically used to render refinement/search UI.                        | TextInput, Select, Search    |
+| actions     | Optional elements to display as complementary actions (e.g. buttons) related to the current page/route.                       | Button, IconButton, Dropdown |
+
+## Accessibility
+
+- The Header component renders a `<header>` landmark and a heading (`<h1>` by default). Use the title prop for a meaningful heading, and adjust the heading level with `titleProps.as` as needed for your page structure.
+- If using multiple headers, use the `as` prop to avoid duplicate landmarks and keep the hierarchy of the content integer.
+- Breadcrumbs and back buttons improve navigation for all users. Ensure they have descriptive, accessible labels.
+- All interactive elements in actions and filters must be keyboard accessible and clearly labeled.
 
 ## Props (API reference)
 

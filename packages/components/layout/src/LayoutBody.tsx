@@ -1,7 +1,8 @@
 import React, { forwardRef, type HTMLAttributes, type Ref } from 'react';
 import { cx } from 'emotion';
 import { type CommonProps, Box } from '@contentful/f36-core';
-import { getLayoutBodyStyles } from './LayoutBody.styles';
+import { getLayoutBodyStyles } from './Layout.styles';
+import { useLayoutContext } from './LayoutContext';
 
 export type LayoutBodyProps = {
   children: React.ReactNode;
@@ -15,17 +16,24 @@ const _LayoutBody = (props: LayoutBodyProps, ref: Ref<HTMLDivElement>) => {
     testId = 'cf-layout-body',
     ...otherProps
   } = props;
-  const styles = getLayoutBodyStyles();
+  const { variant, withHeader, offsetTop } = useLayoutContext();
+  const styles = getLayoutBodyStyles(withHeader, offsetTop);
 
   return (
     <Box
       {...otherProps}
       as="div"
       ref={ref}
-      className={cx(styles.root, className)}
+      className={cx(styles.layoutBodyContainer, className)}
       testId={testId}
     >
-      {children}
+      {variant === 'narrow' ? (
+        <Box as="div" className={styles.layoutBodyInner}>
+          {children}
+        </Box>
+      ) : (
+        children
+      )}
     </Box>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
+import tokens from '@contentful/f36-tokens';
 import { CheckCircleIcon } from '@contentful/f36-icons';
 import userEvent from '@testing-library/user-event';
 import { Avatar } from './Avatar';
@@ -25,7 +26,12 @@ describe('Avatar', () => {
 
   it('renders an icon when it is provided', () => {
     const src = 'https://example.com/image.jpg';
-    render(<Avatar src={src} icon={<CheckCircleIcon variant="positive" />} />);
+    render(
+      <Avatar
+        src={src}
+        icon={<CheckCircleIcon color={tokens.colorPositive} />}
+      />,
+    );
 
     expect(screen.queryByTestId('cf-ui-avatar-icon')).toBeInTheDocument();
   });

@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '@contentful/f36-button';
 import { Select } from '@contentful/f36-forms';
 import { Stack, Flex, type CommonProps } from '@contentful/f36-core';
-import { ChevronLeftIcon, ChevronRightIcon } from '@contentful/f36-icons';
+import { CaretLeftIcon, CaretRightIcon } from '@contentful/f36-icons';
 import { Text } from '@contentful/f36-typography';
 
 import { getRangeText } from './utils';
@@ -155,7 +155,7 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
           {!isFirstPage && (
             <Button
               aria-label={navigationButtonsProps.previousAriaLabel}
-              startIcon={<ChevronLeftIcon />}
+              startIcon={<CaretLeftIcon />}
               variant="secondary"
               onClick={() => onPageChange(activePage - 1)}
               testId="cf-ui-pagination-previous"
@@ -167,7 +167,7 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
             <Button
               aria-label={navigationButtonsProps.nextAriaLabel}
               variant="secondary"
-              endIcon={<ChevronRightIcon />}
+              endIcon={<CaretRightIcon />}
               onClick={() => onPageChange(activePage + 1)}
               testId="cf-ui-pagination-next"
             >

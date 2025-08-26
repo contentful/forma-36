@@ -10,7 +10,7 @@ import { Text, Caption, type TextProps } from '@contentful/f36-typography';
 import {
   SortAscendingIcon,
   SortDescendingIcon,
-  SortIcon,
+  CaretUpDownIcon,
 } from '@contentful/f36-icons';
 import { getTextFromChildren } from '@contentful/f36-utils';
 
@@ -104,7 +104,7 @@ function _TableCell(
         {sortDirection ? (
           <SortingIcon size="tiny" variant="secondary" />
         ) : (
-          <SortIcon
+          <CaretUpDownIcon
             aria-hidden={!showSorting}
             className={styles.sortIcon(showSorting)}
             size="tiny"

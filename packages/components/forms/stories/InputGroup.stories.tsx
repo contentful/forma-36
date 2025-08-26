@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconButton, Button } from '@contentful/f36-button';
-import { LockIcon } from '@contentful/f36-icons';
+import { LockSimpleIcon } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Tooltip } from '@contentful/f36-tooltip';
 import { Flex } from '@contentful/f36-core';
@@ -25,7 +25,11 @@ export const Basic = (args: InputGroupProps) => {
         id="TextInput1"
         defaultValue="Some value"
       />
-      <IconButton variant="secondary" icon={<LockIcon />} aria-label="Lock" />
+      <IconButton
+        variant="secondary"
+        icon={<LockSimpleIcon />}
+        aria-label="Lock"
+      />
     </TextInput.Group>
   );
 };
@@ -50,7 +54,7 @@ export const Overview = () => {
           />
           <IconButton
             variant="secondary"
-            icon={<LockIcon />}
+            icon={<LockSimpleIcon />}
             aria-label="Lock"
           />
         </TextInput.Group>
@@ -74,7 +78,7 @@ export const Overview = () => {
           />
           <IconButton
             variant="secondary"
-            icon={<LockIcon />}
+            icon={<LockSimpleIcon />}
             aria-label="Lock"
           />
         </TextInput.Group>
@@ -92,7 +96,7 @@ export const Overview = () => {
           />
           <IconButton
             variant="secondary"
-            icon={<LockIcon />}
+            icon={<LockSimpleIcon />}
             aria-label="Lock"
           />
         </TextInput.Group>
@@ -116,7 +120,7 @@ export const Overview = () => {
           />
           <IconButton
             variant="secondary"
-            icon={<LockIcon />}
+            icon={<LockSimpleIcon />}
             aria-label="Lock"
           />
         </TextInput.Group>
@@ -138,7 +142,7 @@ export const Overview = () => {
           <IconButton
             isDisabled
             variant="secondary"
-            icon={<LockIcon />}
+            icon={<LockSimpleIcon />}
             aria-label="Lock"
           />
         </TextInput.Group>
@@ -157,7 +161,7 @@ export const Overview = () => {
           />
           <IconButton
             variant="secondary"
-            icon={<LockIcon />}
+            icon={<LockSimpleIcon />}
             aria-label="Lock"
           />
         </TextInput.Group>
@@ -175,7 +179,7 @@ export const Overview = () => {
           <Tooltip content="Tooltip text">
             <IconButton
               variant="secondary"
-              icon={<LockIcon />}
+              icon={<LockSimpleIcon />}
               aria-label="Lock"
             />
           </Tooltip>
@@ -229,7 +233,7 @@ export const WithHighDensity = () => {
             />
             <IconButton
               variant="secondary"
-              icon={<LockIcon />}
+              icon={<LockSimpleIcon />}
               aria-label="Lock"
             />
           </TextInput.Group>
@@ -253,7 +257,7 @@ export const WithHighDensity = () => {
             />
             <IconButton
               variant="secondary"
-              icon={<LockIcon />}
+              icon={<LockSimpleIcon />}
               aria-label="Lock"
             />
           </TextInput.Group>
@@ -271,7 +275,7 @@ export const WithHighDensity = () => {
             />
             <IconButton
               variant="secondary"
-              icon={<LockIcon />}
+              icon={<LockSimpleIcon />}
               aria-label="Lock"
             />
           </TextInput.Group>
@@ -295,7 +299,7 @@ export const WithHighDensity = () => {
             />
             <IconButton
               variant="secondary"
-              icon={<LockIcon />}
+              icon={<LockSimpleIcon />}
               aria-label="Lock"
             />
           </TextInput.Group>
@@ -317,7 +321,7 @@ export const WithHighDensity = () => {
             <IconButton
               isDisabled
               variant="secondary"
-              icon={<LockIcon />}
+              icon={<LockSimpleIcon />}
               aria-label="Lock"
             />
           </TextInput.Group>
@@ -336,7 +340,7 @@ export const WithHighDensity = () => {
             />
             <IconButton
               variant="secondary"
-              icon={<LockIcon />}
+              icon={<LockSimpleIcon />}
               aria-label="Lock"
             />
           </TextInput.Group>
@@ -354,7 +358,7 @@ export const WithHighDensity = () => {
             <Tooltip content="Tooltip text">
               <IconButton
                 variant="secondary"
-                icon={<LockIcon />}
+                icon={<LockSimpleIcon />}
                 aria-label="Lock"
               />
             </Tooltip>

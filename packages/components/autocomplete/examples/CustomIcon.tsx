@@ -1,6 +1,7 @@
 import React from 'react';
+import tokens from '@contentful/f36-tokens';
 import { Autocomplete, Stack, Paragraph } from '@contentful/f36-components';
-import { SearchIcon } from '@contentful/f36-icons';
+import { MagnifyingGlassIcon } from '@contentful/f36-icons';
 
 export default function AutocompleteBasicUsageExample() {
   const spaces = [
@@ -34,7 +35,7 @@ export default function AutocompleteBasicUsageExample() {
     <Stack flexDirection="column" alignItems="start">
       <Autocomplete
         items={filteredItems}
-        icon={<SearchIcon variant="muted" />}
+        icon={<MagnifyingGlassIcon color={tokens.gray600} />}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
       />

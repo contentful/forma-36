@@ -3,7 +3,7 @@ import { Flex, Box } from '@contentful/f36-core';
 import { type Density, DensityProvider } from '@contentful/f36-utils';
 import { Heading, Paragraph } from '@contentful/f36-typography';
 import { TextLink } from '@contentful/f36-text-link';
-import { LockIcon } from '@contentful/f36-icons';
+import { LockSimpleIcon } from '@contentful/f36-icons';
 import {
   FormControl,
   TextInput,
@@ -195,7 +195,7 @@ export const WithCustomLogic = (args: ComponentProps<typeof FormControl>) => {
         <Box marginBottom="spacingS">
           <TextLink
             as="button"
-            icon={<LockIcon />}
+            icon={<LockSimpleIcon />}
             onClick={() => {
               setIsDisabled((prevState) => !prevState);
             }}
