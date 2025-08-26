@@ -201,14 +201,16 @@ workflows:
             branches:
               only:
                 - main
-  f36-link-checker: 
-    jobs: 
-    - build:
-      context:
-        - vault
-    - check-links: 
-       requires:
-        - build
+
+  f36-link-checker:
+    jobs:
+      - build:
+          context:
+            - vault
+      - check-links:
+          requires:
+            - build
+
   f36-changelog:
     triggers:
       - schedule:
