@@ -83,16 +83,18 @@ export default function Home({ topbarLinks }: HomeProps) {
               <Flex flexDirection="column" alignItems="flex-start">
                 <Image src={figmaSVG} alt="Figma’s logo" />
 
-                <Heading marginTop="spacingM">Figma UI Kit</Heading>
+                <Heading marginTop="spacingM">Figma Libraries</Heading>
                 <Paragraph>
-                  Copy the UI Kit to Figma, publish it as a Team library and
-                  start prototyping.
+                  Copy the Forma 36 Components, Tokens, and Assets libraries
+                  from our Figma Community page, then enable them as Team
+                  libraries.
                 </Paragraph>
                 <TextLink
                   href="https://www.figma.com/@contentful"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Get the Figma UI Kit
+                  Get the Figma Libraries
                 </TextLink>
               </Flex>
 
