@@ -9,13 +9,7 @@ export const AWSBedrockIcon = generateComponentWithVariants({
   variants: {
     [IconVariant.Default]: generateIconComponent({
       path: (
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <g fill="currentColor">
           <g clipPath="url(#clip0_4033_69)">
             <path
               fillRule="evenodd"
@@ -29,18 +23,12 @@ export const AWSBedrockIcon = generateComponentWithVariants({
               <rect width="20" height="20" fill="white" />
             </clipPath>
           </defs>
-        </svg>
+        </g>
       ),
     }),
     [IconVariant.Active]: generateIconComponent({
       path: (
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <g fill="currentColor">
           <g clipPath="url(#clip0_4033_72)">
             <path
               opacity="0.2"
@@ -59,7 +47,7 @@ export const AWSBedrockIcon = generateComponentWithVariants({
               <rect width="20" height="20" fill="white" />
             </clipPath>
           </defs>
-        </svg>
+        </g>
       ),
     }),
   },
