@@ -9,13 +9,7 @@ export const MarginLeftRightIcon = generateComponentWithVariants({
   variants: {
     [IconVariant.Default]: generateIconComponent({
       path: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-        >
+        <g fill="currentColor">
           <path
             fillRule="evenodd"
             clipRule="evenodd"
@@ -34,18 +28,12 @@ export const MarginLeftRightIcon = generateComponentWithVariants({
           />
           <path d="M15 10L12.5 12.5V7.5L15 10Z" fill="currentColor" />
           <path d="M5 10L7.5 12.5V7.5L5 10Z" fill="currentColor" />
-        </svg>
+        </g>
       ),
     }),
     [IconVariant.Active]: generateIconComponent({
       path: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-        >
+        <g fill="currentColor">
           <rect
             opacity="0.2"
             x="3.125"
@@ -72,7 +60,7 @@ export const MarginLeftRightIcon = generateComponentWithVariants({
           />
           <path d="M15 10L12.5 12.5V7.5L15 10Z" fill="currentColor" />
           <path d="M5 10L7.5 12.5V7.5L5 10Z" fill="currentColor" />
-        </svg>
+        </g>
       ),
     }),
   },
