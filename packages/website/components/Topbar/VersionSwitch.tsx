@@ -13,15 +13,15 @@ export function VersionSwitch() {
             size="small"
             endIcon={<Image src={caretDown} width={18} height={18} />}
           >
-            v4
+            v5
           </Button>
         </Menu.Trigger>
         <Menu.List>
           <Menu.Item as="a" href="https://f36.contentful.com/">
-            v4
+            v5
           </Menu.Item>
-          <Menu.Item as="a" href="https://v3.f36.contentful.com/">
-            v3
+          <Menu.Item as="a" href="https://v4.f36.contentful.com/">
+            v4
           </Menu.Item>
         </Menu.List>
       </Menu>
