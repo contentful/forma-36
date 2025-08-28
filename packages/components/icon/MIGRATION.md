@@ -4,7 +4,7 @@ The `Icon` component has been significantly updated in version 5, introducing se
 
 ## Icon Prop
 
-```suggestion
+````suggestion
 | Property Name | Type                                    | Description                                                                                                                                                       | Status    |
 | ------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
 | `size`        | `IconSize`                                | Supports three sizes `medium` (`20px x 20px`), `small` (`16px x 16px`), and `tiny` (`14px x 14px`). No longer supported are `xlarge` (`48px x 48px`) and `large` (`32px x 32px`) | updated   |
@@ -26,7 +26,7 @@ import { MdAccessAlarm } from 'react-icons/md';
 const AccessAlarm = (props) => {
   return <Icon {...props} as={MdAccessAlarm} variant="secondary" />;
 };
-```
+````
 
 ### After
 

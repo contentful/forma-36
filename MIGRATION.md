@@ -165,15 +165,16 @@ The `Icon` component has been significantly updated in version 5, introducing se
 
 #### Icon Prop Table
 
-| Property Name | Type                                    | Description                                                                                                                                                       | Status    |
-| ------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| Property Name | Type                                      | Description                                                                                                                                                                      | Status    |
+| ------------- | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
 | `size`        | `IconSize`                                | Supports three sizes `medium` (`20px x 20px`), `small` (`16px x 16px`), and `tiny` (`14px x 14px`). No longer supported are `xlarge` (`48px x 48px`) and `large` (`32px x 32px`) | updated   |
-| `trimmed`     | `boolean`                                 |                                                                                                                                                                   | removed   |
-| `variant`     | `IconVariant`                             |                                                                                                                                                                   | removed   |
-| `color`       | `string`                                  | Allows setting the icon color directly via a string value.                                                                                                        | new       |
-| `isActive`    | `boolean`                                 | Indicates whether the icon is in an active state.                                                                                                                 | new       |
-| `viewBox`     | `SVGAttributes<SVGSVGElement>['viewBox']` | Allows custom SVG viewBox.                                                                                                                                        | unchanged |
-| `children`    | `ReactElement \| ReactElement[]`          |                                                                                                                                                                   | unchanged |
+| `trimmed`     | `boolean`                                 |                                                                                                                                                                                  | removed   |
+| `variant`     | `IconVariant`                             |                                                                                                                                                                                  | removed   |
+| `color`       | `string`                                  | Allows setting the icon color directly via a string value.                                                                                                                       | new       |
+| `isActive`    | `boolean`                                 | Indicates whether the icon is in an active state.                                                                                                                                | new       |
+| `viewBox`     | `SVGAttributes<SVGSVGElement>['viewBox']` | Allows custom SVG viewBox.                                                                                                                                                       | unchanged |
+| `children`    | `ReactElement \| ReactElement[]`          |                                                                                                                                                                                  | unchanged |
+
 ## Deprecated Components
 
 ### Workbench
