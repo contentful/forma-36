@@ -1,5 +1,18 @@
 # @contentful/f36-usage-card
 
+## 5.0.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-card@5.0.0
+  - @contentful/f36-icons@5.0.0
+  - @contentful/f36-text-link@5.0.0
+  - @contentful/f36-tooltip@5.0.0
+  - @contentful/f36-typography@5.0.0
+  - @contentful/f36-core@5.0.0
+  - @contentful/f36-tokens@5.0.0
+
 ## 4.1.0
 
 ### Minor Changes
