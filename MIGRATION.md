@@ -15,6 +15,8 @@
       - [Removed Props](#removed-props)
     - [Layout](#layout)
       - [Layout prop overview table](#layout-prop-overview-table)
+    - [Icon](#icon)
+      - [Icon Prop Table](#icon-prop-table)
   - [Deprecated Components](#deprecated-components)
     - [Workbench](#workbench)
       - [Key Differences](#key-differences)
@@ -27,7 +29,7 @@ The following components contain breaking changes from v4 to v5
 
 - [Navbar](#navbar)
 - [Layout](#layout)
-- [Header](#header)
+- [Icon](#icon)
 
 ### Migrate to v5 - step by step guide
 
@@ -156,6 +158,22 @@ For a **detailed guide, including prop mapping tables and code examples**, see [
 | `className`           | `string`                                   | Custom class name for the root element (from `CommonProps`).                       | unchanged |
 | `testId`              | `string`                                   | Test id for the root element (from `CommonProps`).                                 | unchanged |
 | `...HTMLAttributes`   | `HTMLAttributes<HTMLDivElement>`           | Standard HTML div attributes.                                                      | unchanged |
+
+### Icon
+
+The `Icon` component has been significantly updated in version 5, introducing several breaking changes to its API. The available icon sizes have been streamlined to three options for greater consistency and ease of use. The `trimmed` and `variant` props have been removed to simplify the component. Instead, a new `color` prop has been added, allowing for more flexible icon styling. Additionally, an `isActive` prop is now available to indicate the active state of an icon.
+
+#### Icon Prop Table
+
+| Property Name | Type                                    | Description                                                                                                                                         | Status    |
+| ------------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| `size`        | IconSize                                | Supports three sizes `medium`: 20px x 20px, `small`: 16px x 16px, and `tiny`: 14px x 14px. The sizes `xlarge`: 48px x 48px and `large`: 32px x 32px | updated   |
+| `trimmed`     | boolean                                 |                                                                                                                                                     | removed   |
+| `variant`     | IconVariant                             |                                                                                                                                                     | removed   |
+| `color`       | string                                  | Allows setting the icon color directly via a string value.                                                                                          | new       |
+| `isActive`    | boolean                                 | Indicates whether the icon is in an active state.                                                                                                   | new       |
+| `viewBox`     | SVGAttributes<SVGSVGElement>['viewBox'] | Allows custom SVG viewBox.                                                                                                                          | unchanged |
+| `children`    | ReactElement \| ReactElement[]          |                                                                                                                                                     | unchanged |
 
 ## Deprecated Components
 
