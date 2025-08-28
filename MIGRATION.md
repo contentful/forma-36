@@ -447,7 +447,7 @@ becomes:
 
 #### How to migrate your Button components
 
-To migrate the `Button` component to v4 run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate the `Button` component to v4 run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -670,7 +670,7 @@ This is an overview of the changed props:
 
 #### How to migrate your Card components
 
-To migrate the `Card` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate the `Card` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -1212,7 +1212,7 @@ In v4, the EntityList component has received API improvements. Here is an overvi
 
 #### How to migrate your EntityList components
 
-To migrate the `EntityList` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate the `EntityList` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -1317,7 +1317,7 @@ const CustomIcon = (props) => {
 
 #### How to migrate your Icon components
 
-To migrate the Icon component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate the Icon component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -1399,7 +1399,7 @@ import { PreviewIcon } from '@contentful/f36-icons';
 
 #### How to migrate your IconButton components
 
-To migrate the IconButton component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate the IconButton component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -1491,7 +1491,7 @@ becomes:
 
 #### How to migrate your Flex components
 
-To migrate the Flex component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate the Flex component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -1625,7 +1625,7 @@ For more detailed information and examples, see our [documentation](https://f36.
 
 ##### How to migrate your Field components
 
-To migrate your Field components to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your Field components to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -1780,7 +1780,7 @@ We also introduced API changes for the radio. This is an overview of the renamed
 
 ##### How to migrate your RadioButton components
 
-To migrate your `RadioButton` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your `RadioButton` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -1844,7 +1844,7 @@ We also introduced some API changes for the Select. This is an overview of the c
 
 ##### How to migrate your Select components
 
-To migrate your v3 `Select` component, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your v3 `Select` component, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -1974,7 +1974,7 @@ becomes:
 
 ##### How to migrate your TextInput and TextArea components
 
-To migrate the `TextInput` or `TextArea` components to v4 run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate the `TextInput` or `TextArea` components to v4 run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -2143,7 +2143,7 @@ import { Form } from '@contentful/f36-components';
 
 ##### How to migrate your Form components
 
-To migrate your `Form` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your `Form` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -2225,7 +2225,7 @@ The Grid component is now part of the `@contentful/f36-core` package. We improve
 
 #### How to migrate your Grid components
 
-To migrate your Grid component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your Grid component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -2269,7 +2269,7 @@ The properties of the HelpText component API have been aligned with our code [st
 
 #### How to migrate your HelpText components
 
-To migrate your HelpText component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your HelpText component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -2311,7 +2311,7 @@ The properties of the List component API have been aligned with our code [style 
 
 #### How to migrate your List components
 
-To migrate your `List` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your `List` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -2363,7 +2363,7 @@ In version 4:
 
 #### How to migrate your Modal components
 
-To migrate your `Modal` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your `Modal` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -2428,7 +2428,7 @@ The properties of the Note component API have been aligned with our code [style 
 
 #### How to migrate your Note components
 
-To migrate your `Note` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your `Note` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -2494,7 +2494,7 @@ The properties of the Notification component API have been aligned with our code
 
 #### How to migrate your Notification components
 
-To migrate your `Notification` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your `Notification` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -2552,7 +2552,7 @@ The API of the Pill component has not changed.
 
 #### How to migrate your Pill component
 
-To migrate your `Pill` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your `Pill` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -2598,7 +2598,7 @@ In v4, SkeletonContainer, we changed the `animate` prop to `isAnimated` to align
 
 #### How to migrate your Skeleton components
 
-To migrate your `Skeleton` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your `Skeleton` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -2675,7 +2675,7 @@ In v4, we changed the `color` prop to `variant` - to align with our code [style 
 
 #### How to migrate your Spinner components
 
-To migrate your `Spinner` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your `Spinner` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -2717,7 +2717,7 @@ In version 4, the Table component becomes a compound component. There is also on
 
 #### How to migrate your Table components
 
-To migrate your `Table` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your `Table` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -2918,7 +2918,7 @@ you can use:
 
 #### How to migrate your Tag to Badge
 
-To migrate your v3 `Tag` component to v4 `Badge` run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your v3 `Tag` component to v4 `Badge` run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -2985,7 +2985,7 @@ becomes:
 
 #### How to migrate your TextLink components
 
-To migrate your `TextLink` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your `TextLink` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -3102,7 +3102,7 @@ In v4, we renamed two Tooltip props: `containerElement` is now `as` and `place` 
 
 #### How to migrate your Tooltip components
 
-To migrate your `Tooltip` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your `Tooltip` component to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
@@ -3136,7 +3136,7 @@ In version 4, `Typography` component has been removed, and there are changes on 
 
 #### How to migrate your Typography components
 
-To migrate your `Typography` components to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/main/packages/forma-36-codemod):
+To migrate your `Typography` components to v4, run the following [codemod](https://github.com/contentful/forma-36/tree/v4/packages/forma-36-codemod):
 
 ```bash
 npx @contentful/f36-codemod
