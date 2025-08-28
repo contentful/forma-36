@@ -203,7 +203,7 @@ workflows:
           filters:
             branches:
               only:
-                - main
+                - v4
   f36-changelog:
     triggers:
       - schedule:
@@ -211,7 +211,7 @@ workflows:
           filters:
             branches:
               only:
-                - main
+                - v4
     jobs:
       - changelog:
           context:
