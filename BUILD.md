@@ -16,15 +16,9 @@ Each component builds to its own `dist` directory with:
 npm run-script build
 ```
 
-## v5 alpha/beta pre-releases
+## Dual-package emitting
 
-> [!WARNING]
->
-> Revisit the build setup before the v5 release
-
-We aim to emit ESM only in our next major release.
-
-Until then, we emit CJS and ESM using a dual-package approach with `tsc` and [tsconfig-to-dual-package](https://github.com/azu/tsconfig-to-dual-package/tree/main).
+We emit CJS and ESM using a dual-package approach with `tsc` and [tsconfig-to-dual-package](https://github.com/azu/tsconfig-to-dual-package/tree/main) for some packages.
 
 This ensures Node/TypeScript point to the right package type (commonjs, module) depending on the consumer's configuration, without the hassle of us to "hack" the main `package.json` and `tsconfig` to satisfy all use cases.
 
