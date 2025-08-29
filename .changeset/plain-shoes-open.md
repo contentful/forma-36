@@ -1,5 +1,5 @@
 ---
-'@contentful/f36-autocomplete': minor
+'@contentful/f36-autocomplete': major
 ---
 
 | Change | Recommendation |

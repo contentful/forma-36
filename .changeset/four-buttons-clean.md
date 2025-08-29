@@ -1,5 +1,5 @@
 ---
-'@contentful/f36-multiselect': minor
+'@contentful/f36-multiselect': major
 ---
 
 | Change | Recommendation |

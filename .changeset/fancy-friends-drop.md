@@ -1,5 +1,5 @@
 ---
-'@contentful/f36-core': minor
+'@contentful/f36-core': major
 ---
 
 ### Flex

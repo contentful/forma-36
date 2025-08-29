@@ -1,5 +1,5 @@
 ---
-'@contentful/f36-button': minor
+'@contentful/f36-button': major
 ---
 
 #### ButtonGroup

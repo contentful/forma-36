@@ -1,5 +1,5 @@
 ---
-'@contentful/f36-navbar': minor
+'@contentful/f36-navbar': major
 ---
 
 The `Navbar` component has undergone significant changes to its API and design.

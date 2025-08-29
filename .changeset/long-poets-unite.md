@@ -1,5 +1,5 @@
 ---
-'@contentful/f36-components': minor
+'@contentful/f36-components': major
 ---
 
 ## ⚠️ Breaking Changes
