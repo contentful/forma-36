@@ -67,11 +67,12 @@ const variantToStyles = (variant: NoteVariant) => {
 
 export const getNoteStyles = () => {
   return {
-    container: ({ variant }: Pick<NoteProps, 'variant'>) =>
+    container: ({ variant, title }: Pick<NoteProps, 'variant' | 'title'>) =>
       css({
         position: 'relative',
         borderRadius: tokens.borderRadiusMedium,
         border: '1px solid',
+        alignItems: title ? 'flex-start' : 'center',
         ...variantToStyles(variant),
       }),
     title: css({

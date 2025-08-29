@@ -56,11 +56,6 @@ export interface FlexInternalProps
    * Defines how flexbox items are aligned according to the main axis, within a flexbox container. */
   justifyContent?: CSS.Property.JustifyContent;
   /**
-   * @deprecated This property is ignored in flexbox layouts, it will be removed in the next major version.
-   *
-   * Defines the default justify-self for all items of the box, giving them all a default way of justifying each box along the appropriate axis. */
-  justifyItems?: CSS.Property.JustifyContent;
-  /**
    * Use it for flexbox items, not for flexbox containers.
    *
    * Sets the way a box is justified inside its alignment container along the appropriate axis. */
@@ -106,7 +101,6 @@ function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
     fullWidth,
     gap,
     justifyContent,
-    justifyItems,
     justifySelf,
     order,
     children,
@@ -134,7 +128,6 @@ function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
           flexDirection,
           gap: gap === 'none' ? 0 : tokens[gap] ?? gap,
           justifyContent,
-          justifyItems,
           justifySelf,
           alignItems,
           alignSelf,

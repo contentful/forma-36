@@ -5,7 +5,7 @@ import {
   useLinkClickHandler,
 } from 'react-router-dom';
 import { Menu, IconButton } from '@contentful/f36-components';
-import { MenuIcon } from '@contentful/f36-icons';
+import { ListIcon } from '@contentful/f36-icons';
 
 function MenuLink({ children, replace = false, to, ...props }) {
   const href = useHref(to);
@@ -27,7 +27,7 @@ export default function MenuWithReactRouterLinks() {
         <Menu.Trigger>
           <IconButton
             variant="secondary"
-            icon={<MenuIcon />}
+            icon={<ListIcon />}
             aria-label="toggle menu"
           />
         </Menu.Trigger>

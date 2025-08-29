@@ -1,10 +1,11 @@
 ---
 title: 'Icons'
 type: 'component'
+status: 'stable'
 slug: /components/icon/
 github: 'https://github.com/contentful/forma-36/tree/main/packages/components/icon'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-icon--default'
-typescript: ./src/Icon.tsx,../icons/src/ArrowDown.tsx
+typescript: ./src/Icon.tsx
 ---
 
 Icons are used to indicate actions, statuses and navigation. The icon components can be used in `Button`, `TextLink`, `Note` and other components.
@@ -13,7 +14,7 @@ Icons are used to indicate actions, statuses and navigation. The icon components
 
 ```js static=true
 // Import single icons
-import { PlusIcon, DoneIcon } from '@contentful/f36-icons';
+import { PlusIcon, CheckIcon } from '@contentful/f36-icons';
 // or import all icons as an object
 import * as icons from '@contentful/f36-icons';
 // or for third party custom icons, use the Forma 36 Icon component to wrap them
@@ -24,11 +25,9 @@ import { Icon } from '@contentful/f36-icons';
 
 Forma 36 provides a list of built-in icons that can be used as regular React components.
 
-### Icon variants
+### All icons
 
-The icon components can be configured in different ways using variations in color and size:
-
-```jsx file=./examples/IconVariantsExample.tsx
+```jsx file=./examples/AllIconsExample.tsx
 
 ```
 
@@ -38,17 +37,17 @@ The icon components can be configured in different ways using variations in colo
 
 ```
 
-### All icons
+### Icon states
 
-```jsx file=./examples/AllIconsExample.tsx
+```jsx file=./examples/IconStatesExample.tsx
 
 ```
 
 ### Custom icons and third-party libraries
 
-Custom icons can be rendered with Forma 36 to take advantage of the same props and styling as the built-in icons. This means you can use a prop like `variant="primary"` or `size="large"` on your own icons and they will match the built-in icons from Forma 36.
+Custom icons can be rendered with Forma 36 to take advantage of the same props and styling as the built-in icons. This means you can use a prop like `color={tokens.colorPrimary}` or `size="medium"` on your own icons and they will match the built-in icons from Forma 36.
 
-Custom icons can be used in two ways: with `as` prop and with an SVG path.
+Custom icons can be used in two ways: with `as` prop and with a SVG path.
 
 #### `as` prop
 
@@ -71,10 +70,6 @@ Another way to render custom icons is to wrapping SVG paths in the `Icon` compon
 ## Props (API reference)
 
 ### Built-in icons
-
-<PropsTable of="ArrowDown" />
-
-### Custom icons
 
 <PropsTable of="Icon" />
 

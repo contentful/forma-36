@@ -12,7 +12,6 @@ import { DocSearch } from '../DocSearch';
 import { useCurrentLocation } from '../../hooks/useCurrentLocation';
 import { TopbarLink } from './TopbarLink';
 import { TopbarLogo } from './TopbarLogo';
-import { VersionSwitch } from './VersionSwitch';
 import { signOut, useSession } from 'next-auth/react';
 
 const styles = {
@@ -65,7 +64,6 @@ export function Topbar({ links }: TopbarProps) {
     >
       <Flex paddingLeft="spacingXl">
         <TopbarLogo />
-        <VersionSwitch />
       </Flex>
 
       <Flex

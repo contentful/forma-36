@@ -1,16 +1,27 @@
+/**
+ * Checks if value is a conditional expression
+ * @param {*} value - value to check
+ * @param {*} j - jscodeshift API
+ * @returns true if value is a conditional expression, false otherwise
+ */
 function isConditionalExpression(value, j) {
   return j(value).find(j.ConditionalExpression).length > 0;
 }
 
 const getValueFor = (key, { j, expression, valueMap = {} }) => {
-  if (isConditionalExpression(expression.value[key], j)) {
-    return updateTernaryValues(expression, { j, valueMap });
+  if (valueMap[expression.value[key].value]) {
+    const value = valueMap[expression.value[key].value];
+    return value.type === 'Identifier' ? value : j.literal(value);
   }
-  return j.literal(
-    valueMap[expression.value[key].value] || expression.value[key].value,
-  );
+  return expression.value[key];
 };
 
+/**
+ * Updates ternary expressions
+ * @param {*} value - value to be updated
+ * @param {{j: *, valueMap: {[x: string]: string}}} param - Object with jscodeshift API and valueMap
+ * @returns updated ternary expressions
+ */
 function updateTernaryValues(value, { j, valueMap = {} }) {
   return j(value)
     .find(j.ConditionalExpression)
@@ -20,9 +31,17 @@ function updateTernaryValues(value, { j, valueMap = {} }) {
       const consequent = getValueFor('consequent', commonArgs);
       const alternate = getValueFor('alternate', commonArgs);
 
-      j(expression).replaceWith(
-        j.conditionalExpression(expression.value.test, consequent, alternate),
-      );
+      if (
+        consequent.value === alternate.value &&
+        consequent.type !== 'Identifier' &&
+        alternate.type !== 'Identifier'
+      ) {
+        j(expression).replaceWith(j.literal(consequent.value));
+      } else {
+        j(expression).replaceWith(
+          j.conditionalExpression(expression.value.test, consequent, alternate),
+        );
+      }
     })
     .toSource({ quote: 'single' });
 }

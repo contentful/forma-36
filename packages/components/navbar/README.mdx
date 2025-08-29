@@ -2,46 +2,70 @@
 title: 'Navbar'
 type: 'component'
 status: 'stable'
-isNew: true
 slug: /components/navbar/
 github: 'https://github.com/contentful/forma-36/tree/main/packages/components/navbar'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-navbar'
-typescript: ./src/Navbar.tsx,./src/NavbarItem/NavbarItem.tsx,./src/NavbarMenuItem/NavbarMenuItem.tsx,./src/NavbarSwitcher/NavbarSwitcher.tsx,./src/NavbarSwitcherItem/NavbarSwitcherItem.tsx,./src/NavbarSearch/NavbarSearch.tsx,./src/NavbarHelp/NavbarHelp.tsx,./src/NavbarAccount/NavbarAccount.tsx,./src/NavbarBadge/NavbarBadge.tsx,./src/NavbarTopbarItem/NavbarTopbarItem.tsx
+typescript: ./src/Navbar.tsx,./src/NavbarAccount/NavbarAccount.tsx,./src/NavbarBadge/NavbarBadge.tsx,./src/NavbarItem/NavbarItem.tsx,./src/NavbarMenuItem/NavbarMenuItem.tsx,./src/NavbarSubmenu/NavbarSubmenu.tsx,./src/NavbarSwitcher/NavbarSwitcher.tsx,
 ---
 
-The Navbar component offers a unified navigation experience across all of Contentful's products.
-It consists of a top and bottom section, each serving specific purposes.
-The bottom section is dedicated to navigation items, while the top section provides additional context and actions.
-This ensures a consistent and intuitive navigation experience throughout the application.
+The Navbar component represents the main top navigation across all Contentful Products.
+
+## Introduction
+
+The `Navbar` component is composed of multiple predefined areas, each configurable through dedicated props. It does not accept children directly. All areas are designed with responsiveness in mind and will appear or disappear based on screen breakpoints.
+
+### Navbar Compound components
+
+The `Navbar` exports the following compound components
+
+| Compound Component          | Description                                                                                                                                            | Typical Usage Area                      |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------- |
+| `<Navbar.Item>`             | Represents a main navigation item. Use it as a child of the `<Navbar>` component or the `bottomRightItems` prop of Navbar.                             | `mainNavigation`, `secondaryNavigation` |
+| `<Navbar.MenuItem>`         | Represents an individual menu item, typically used to create dropdowns. Use it as a child of either `<Navbar.Item>` or `<Navbar.Account>`.             | `mobileNavigation`, `account`           |
+| `<Navbar.Submenu>`          | Wraps one or more `<Navbar.MenuItem>` components to create a nested menu within the `mobileNavigation` area.                                           | `mobileNavigation`                      |
+| `<Navbar.MenuDivider>`      | A visual separator for menu items. Use it before or after a `<Navbar.MenuItem>`. Alias for `MenuDivider` from the `Menu` component.                    | `mobileNavigation`, `account`           |
+| `<Navbar.MenuSectionTitle>` | A title that can be used in the menu list. Use it before or after a `<Navbar.MenuItem>`. Alias for `MenuSectionTitle` from the `Menu` component.       | `mobileNavigation`, `account`           |
+| `<Navbar.Switcher>`         | Wrapper component for the space and environment information. Use it as a child of the Navbar `switcher` prop.                                          | `switcher`                              |
+| `<Navbar.Account>`          | Trigger for the account menu. Use it as a child of the Navbar `account` prop.                                                                          | `account`                               |
+| `<Navbar.Badge>`            | Represents an item that provides additional information, such as indicating that the user's space is on a trial. Use as a child of the Navbar `badge`. | `promotions`, `badge`                   |
+| `<Navbar.ItemSkeleton>`     | Loading skeleton for `<Navbar.Item>`. Use it as a child of the `<Navbar>` component or the `bottomRightItems` prop of Navbar.                          | `mainNavigation`, `secondaryNavigation` |
+| `<Navbar.MenuItemSkeleton>` | Loading skeleton for `<Navbar.MenuItem>`. Use it as a child of `<Navbar.Item>`, `<Navbar.Account>`, or `<Navbar.Help>`.                                | `mobileNavigation`, `account`, `help`   |
+| `<Navbar.SwitcherSkeleton>` | Loading skeleton for `<Navbar.Switcher>`. Use it as a child of the Navbar `switcher` prop.                                                             | `switcher`                              |
+| `<Navbar.AccountSkeleton>`  | Loading skeleton for `<Navbar.Account>`. Use it as a child of the Navbar `account` prop.                                                               | `account`                               |
+
+#### Navbar.Account
+
+This compound component is used to generate the account menu; the user's avatar represents the menu trigger. It should be handed over to the `Navbar` via the `account` property, which will be rendered as the last element.
+
+#### Navbar.Badge
+
+This compound component is used for highlights and promotions. It should be used as a element applied to the `promotions` or `account` prop on the Navbar component
+
+#### Navbar.Item
+
+This component generates the individual Navigation Items. It expects a callback function and can not be used as a normal link. It is versatile and can be used with a title, as a Icon-Only element or as a dropdown menu. It should be used within the area properties `mainNavigation` `secondaryNavigation` or `account`
+In the `secondaryNavigation` area, the `Navbar.Item`should only use an `icon` and not hand over a `title` property but `label` instead. To keep this icon-only `Navbar.Item` accessible, the label is required. This label will also be shown as a tooltip on hover of the element.
+`Navbar.Item` accepts `Navbar.MenuItem` as children. When handing over the children, this `Navbar.Item` becomes a dropdown menu, listing all children inside the menu pop-out. It is possible to have a dropdown menu with `title` and `icon` or with `icon` and `label` for an icon-only menu.
+
+#### Navbar.MenuItem, Navbar.MenuDivider, Navbar.MenuSectionTitle
+
+These compound components are used as children of a `Navbar.Item` or as children to the `mobileNavigation`
+
+#### Navbar.Submenu
+
+`Navbar.Submenu` should only be used in the `mobileNavigation` area. It can be used to generate a nested Menu, it expects `Navbar.MenuItem` as children.
+
+#### Navbar.Switcher
+
+The `Navbar.Switcher` component is used for displaying the current space and environment names. It can also be used as trigger element to open a space switcher menu. It should always be used inside the `switcher` area property to ensure proper positioning.
 
 ## Import
 
 ```jsx static=true
-import { Navbar } from '@contentful/f36-components';
-// or
 import { Navbar } from '@contentful/f36-navbar';
 ```
 
 ## Examples
-
-You can use following components to build a menu:
-
-1. `<Navbar>`: The main wrapper component.
-1. `<Navbar.Item>`: Represents a main navigation item. Use it as a child of the `<Navbar>` component or the `bottomRightItems` prop of Navbar.
-1. `<Navbar.MenuItem>`: Represents a menu item used to create dropdown menus. Use it as a child of the `<Navbar.Item>`, `<Navbar.Account>`, or `<Navbar.Help>` components.
-1. `<Navbar.MenuDivider>`: A visual separator for menu items. Use it before or after a `<Navbar.MenuItem>`.
-1. `<Navbar.MenuSectionTitle>`: A title that can be used in the menu list. Use it before or after a `<Navbar.MenuItem>`.
-1. `<Navbar.Switcher>`: Wrapper component for the logotype, organization, space, and environment information. Use it as a child of the Navbar `switcher` prop.
-1. `<Navbar.SwitcherItem>`: Represents an item within the `<Navbar.Switcher>`. Use it to render organization, space, and environment information in different states. Use it as a child of the `<Navbar.Switcher>`.
-1. `<Navbar.Search>`: Trigger for the global search. Use it as a child of the Navbar `search` prop.
-1. `<Navbar.Help>`: Trigger for the help menu. Use it as a child of the Navbar `help` prop.
-1. `<Navbar.Account>`: Trigger for the account menu. Use it as a child of the Navbar `account` prop.
-1. `<Navbar.Badge>`: Represents an item that provides additional information, such as indicating that the user's space is on a trial. Use it as a child of the Navbar `badge` prop.
-1. `<Navbar.TopbarItem>`: Represents an item that provides additional links or CTAs (Call to Actions), such as a link to the feedback form. Use it as a child of the Navbar `topRightItems` prop.
-1. `<Navbar.ItemSkeleton>`: Loading skeleton for `<Navbar.Item>`. Use it as a child of the `<Navbar>` component or the `bottomRightItems` prop of Navbar.
-1. `<Navbar.MenuItemSkeleton>`: Loading skeleton for `<Navbar.MenuItem>`. Use it as a child of the `<Navbar.Item>`, `<Navbar.Account>`, or `<Navbar.Help>` components.
-1. `<Navbar.SwitcherSkeleton>`: Loading skeleton for `<Navbar.Switcher>`. Use it as a child of the Navbar `switcher` prop.
-1. `<Navbar.AccountSkeleton>`: Loading skeleton for `<Navbar.Account>`. Use it as a child of the Navbar `account` prop.
 
 ### Basic usage
 
@@ -49,13 +73,13 @@ You can use following components to build a menu:
 
 ```
 
-### Complete Navbar
+### Complete Navbar including mobile navigation
 
 ```tsx file=examples/CompleteNavbarExample.tsx
 
 ```
 
-### Navbar with different enviromnments
+### Navbar with different environments
 
 ```tsx file=examples/WithDifferentEnviromnmentsNavbarExample.tsx
 
@@ -73,6 +97,32 @@ You can use following components to build a menu:
 
 ```
 
+## Navigation areas and responsive behaviour
+
+The Navbar component supports responsiveness. Different areas of the navbar will disappear on some breakpoints. Find the detailed information in the table below.
+
+| Prop                  | Description                                                                                                                                                                                                                                                                                                                                                          | Breakpoints                      | Recommended Compound Component      |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- | ----------------------------------- |
+| `logo`                | Allows to overwrite the Contentful logo with a custom logo and link. This ensures a consistent and intuitive navigation experience throughout the application.                                                                                                                                                                                                       | Always visible                   | Custom element                      |
+| `mainNavigation`      | Main navigation items. Each main navigation item should use the `Navbar.Item` compound component. This area is responsive and will be visible starting from the default breakpoint `867px`. This can be overwritten in the `mobileNavigationProps` and changed to `breakpoint: 'medium'` (`1024px`).                                                                 | `867px` (default), configurable  | `Navbar.Item`                       |
+| `mobileNavigation`    | Allows navigation on smaller screen devices. Visible until the default breakpoint of `867px`. Items in this area should use `Navbar.MenuItem` and `Navbar.Submenu` compound components. The breakpoint can be changed using `mobileNavigationProps` to `small: 867px` or `medium: 1024px`. You can also set a custom label for the mobile navigation trigger button. | `<867px` (default), configurable | `Navbar.MenuItem`, `Navbar.Submenu` |
+| `secondaryNavigation` | Contains additional navigation items, like Search, Help, etc. Items in this area should use the `Navbar.Item` compound component with only an icon and no `title`. This area is responsive and will be visible starting from the breakpoint `576px`.                                                                                                                 | `576px` and up                   | `Navbar.Item` (icon-only)           |
+| `promotions`          | In this area, you can add any additional items you want accessible on the Navbar, such as feedback links or other types of promotions. This area is responsive and will not be visible until the breakpoint `1200px`.                                                                                                                                                | `1200px` and up                  | `Navbar.Badge` or Custom element    |
+| `switcher`            | Reserved for the `Navbar.Switcher` component to display the name of the current space and environment.                                                                                                                                                                                                                                                               | Always visible                   | `Navbar.Switcher`                   |
+| `account`             | Meant for the user's account menu. Use the `Navbar.Account` compound component to build it. This area is responsive and will be visible starting from `576px`; before that, it should be made available inside the `mobileNavigation`.                                                                                                                               | `576px` and up                   | `Navbar.Account`                    |
+
+## Accessibility
+
+Each `Menu.Item` offers and increased click-able area and the whole navigation is accessible via keyboard.  
+To further improve the accessibility, each Navbar area has a `aria-label`. These labels can be set via the `aria` prop oobject. Make sure to set a label for every `Menu.Item` in Icon-only modus, this is used to describe the Item for visually impaired users.
+
+| Prop                            | Description                                   | Default Setting          |
+| ------------------------------- | --------------------------------------------- | ------------------------ |
+| `aria.labelMainNavigation`      | Aria label for the main navigation area.      | `'Main Navigation'`      |
+| `aria.labelSecondaryNavigation` | Aria label for the secondary navigation area. | `'Secondary Navigation'` |
+| `aria.labelPromotions`          | Aria label for the promotions area.           | `'Promotions'`           |
+| `aria.labelAccount`             | Aria label for the account navigation area.   | `'Account Navigation'`   |
+
 ## Props (API reference)
 
 ### Navbar
@@ -83,29 +133,17 @@ You can use following components to build a menu:
 
 <PropsTable of="NavbarItem" />
 
+### Navbar.Submenu
+
+<PropsTable of="NavbarSubmenu" />
+
 ### Navbar.MenuItem
 
 <PropsTable of="NavbarMenuItem" />
 
-### Navbar.TopbarItem
-
-<PropsTable of="NavbarTopbarItem" />
-
 ### Navbar.Switcher
 
 <PropsTable of="NavbarSwitcher" />
-
-### Navbar.SwitcherItem
-
-<PropsTable of="NavbarSwitcherItem" />
-
-### Navbar.Search
-
-<PropsTable of="NavbarSearch" />
-
-### Navbar.Help
-
-<PropsTable of="NavbarHelp" />
 
 ### Navbar.Account
 
