@@ -1,5 +1,18 @@
 # Change Log
 
+## 5.1.0
+
+### Minor Changes
+
+- [#2828](https://github.com/contentful/forma-36/pull/2828) [`b0fabb2`](https://github.com/contentful/forma-36/commit/b0fabb257f5527943daeaceccea2259cd6004225) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+### Patch Changes
+
+- Updated dependencies [[`b0fabb2`](https://github.com/contentful/forma-36/commit/b0fabb257f5527943daeaceccea2259cd6004225)]:
+  - @contentful/f36-skeleton@5.1.0
+  - @contentful/f36-tokens@5.1.0
+  - @contentful/f36-core@5.1.0
+
 ## 5.0.0
 
 ### Major Changes
