@@ -1,7 +1,7 @@
 {
   "name": "@contentful/f36-tokens",
   "description": "Forma 36 Tokens",
-  "version": "5.1.0",
+  "version": "6.0.0-alpha.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",

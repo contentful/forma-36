@@ -1,5 +1,11 @@
 # @contentful/f36-utils
 
+## 6.0.0-alpha.0
+
+### Major Changes
+
+- Enter pre-release mode and version packages
+
 ## 5.2.0
 
 ### Minor Changes
