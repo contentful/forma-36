@@ -1,5 +1,26 @@
 # @contentful/f36-navbar
 
+## 6.0.0-alpha.0
+
+### Major Changes
+
+- Enter pre-release mode and version packages
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-avatar@6.0.0-alpha.0
+  - @contentful/f36-button@6.0.0-alpha.0
+  - @contentful/f36-icon@6.0.0-alpha.0
+  - @contentful/f36-icons@6.0.0-alpha.0
+  - @contentful/f36-menu@6.0.0-alpha.0
+  - @contentful/f36-skeleton@6.0.0-alpha.0
+  - @contentful/f36-tooltip@6.0.0-alpha.0
+  - @contentful/f36-typography@6.0.0-alpha.0
+  - @contentful/f36-utils@6.0.0-alpha.0
+  - @contentful/f36-core@6.0.0-alpha.0
+  - @contentful/f36-tokens@6.0.0-alpha.0
+
 ## 5.9.0
 
 ### Patch Changes

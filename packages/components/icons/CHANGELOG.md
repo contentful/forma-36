@@ -1,24 +1,17 @@
 # Change Log
 
-## 5.9.0
+## 6.0.0-alpha.0
 
-### Minor Changes
+### Major Changes
 
-- [#3246](https://github.com/contentful/forma-36/pull/3246) [`37421c0`](https://github.com/contentful/forma-36/commit/37421c0084360287bb150f26713c07a9214ccb0b) Thanks [@bgutsol](https://github.com/bgutsol)! - add FadersHorizontalIcon to icon library
-
-### Patch Changes
-
-- Updated dependencies []:
-  - @contentful/f36-core@5.9.0
-  - @contentful/f36-icon@5.9.0
-
-## 5.8.1
+- Enter pre-release mode and version packages
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @contentful/f36-core@5.8.1
-  - @contentful/f36-icon@5.8.1
+  - @contentful/f36-icon@6.0.0-alpha.0
+  - @contentful/f36-core@6.0.0-alpha.0
+  - @contentful/f36-tokens@6.0.0-alpha.0
 
 ## 5.8.0
 
