@@ -1,6 +1,6 @@
 import React, { forwardRef, type HTMLAttributes, type Ref } from 'react';
 import { cx } from 'emotion';
-import { Tooltip } from '@contentful/f36-tooltip';
+//import { Tooltip } from '@contentful/f36-tooltip';
 import { type CommonProps } from '@contentful/f36-core';
 import { Subheading } from '@contentful/f36-typography';
 import { getUsageCardHeaderStyles } from './UsageCardHeader.styles';
@@ -36,9 +36,11 @@ function _UsageCardHeader(
     >
       {title}
       {tooltip && (
-        <Tooltip content={tooltip} className={styles.tooltip} placement="top">
-          <InfoIcon className={styles.infoIcon} size="medium" />
-        </Tooltip>
+        <InfoIcon className={styles.infoIcon} size="medium" />
+
+        // <Tooltip content={tooltip} className={styles.tooltip} placement="top">
+        //   <InfoIcon className={styles.infoIcon} size="medium" />
+        // </Tooltip>
       )}
 
       {children}
