@@ -10,7 +10,7 @@
     "@contentful/f36-spinner": "^6.0.0-alpha.0",
     "@contentful/f36-tokens": "^6.0.0-alpha.0",
     "@contentful/f36-utils": "^6.0.0-alpha.0",
-    "emotion": "^10.0.17"
+    "@emotion/react": "^11.14.0"
   },
   "devDependencies": {
     "@contentful/f36-icon": "^6.0.0-alpha.0",
