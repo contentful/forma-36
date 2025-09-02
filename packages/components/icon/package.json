@@ -41,8 +41,8 @@
     "tsconfig-to-dual-package": "^1.2.0"
   },
   "peerDependencies": {
-    "react": ">=16.8",
-    "react-dom": ">=16.8"
+    "react": ">=19.1.0",
+    "react-dom": ">=19.1.0"
   },
   "browserslist": "extends @contentful/browserslist-config",
   "repository": {
