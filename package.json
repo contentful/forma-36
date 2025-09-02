@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/contentful/forma-36#readme",
   "scripts": {
+    "build": "turbo run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "next build --turbopack",
     "lint": "eslint",
     "storybook": "storybook dev -p 9001 -c ./scripts/.storybook",
     "storybook:build": "storybook build -c ./scripts/.storybook -o dist-storybook --webpack-stats-json"
@@ -31,6 +31,7 @@
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
+  "packageManager": "npm@8.5.0",
   "browserslist": "extends @contentful/browserslist-config",
   "devDependencies": {
     "@chromatic-com/storybook": "^4.1.1",
