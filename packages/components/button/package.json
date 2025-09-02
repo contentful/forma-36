@@ -9,7 +9,6 @@
     "@contentful/f36-core": "^6.0.0-alpha.0",
     "@contentful/f36-spinner": "^6.0.0-alpha.0",
     "@contentful/f36-tokens": "^6.0.0-alpha.0",
-    "@contentful/f36-tooltip": "^6.0.0-alpha.0",
     "@contentful/f36-utils": "^6.0.0-alpha.0",
     "emotion": "^10.0.17"
   },
