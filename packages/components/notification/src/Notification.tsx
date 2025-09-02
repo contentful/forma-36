@@ -1,3 +1,4 @@
+import { createRoot } from "react-dom/client";
 /* global Promise */
 
 import React from 'react';
@@ -35,7 +36,8 @@ function createRoot(callback: () => void) {
   const container = document.createElement('div');
   document.body.appendChild(container);
 
-  render(<NotificationsManager register={registerAPI} />, container, callback);
+  const root = createRoot(container);
+  root.render(<NotificationsManager register={registerAPI} />);
 }
 
 function afterInit<PromiseValueType>(fn: Function) {
