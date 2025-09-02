@@ -1,0 +1,25 @@
+{
+  "name": "forma-36-monorepo",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "packages/*",
+    "packages/components/*"
+  ],
+  "description": "<h1><img src=\"./forma-icon.svg\" height=\"24\"> Forma 36 - The Contentful Design System</h1>",
+  "main": ".eslintrc.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/contentful/forma-36.git"
+  },
+  "bugs": {
+    "url": "https://github.com/contentful/forma-36/issues"
+  },
+  "homepage": "https://github.com/contentful/forma-36#readme"
+}
