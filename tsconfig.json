@@ -41,7 +41,9 @@
   "include": [
     "packages",
     "types",
-    "./setupTests.ts"
+    "./setupTests.ts",
+    "**/*.ts", 
+    "**/*.tsx"
   ],
   "exclude": [
     "**/node_modules",
