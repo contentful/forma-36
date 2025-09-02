@@ -16,8 +16,8 @@
     "react-animate-height": "^3.0.4"
   },
   "peerDependencies": {
-    "react": ">=16.8",
-    "react-dom": ">=16.8"
+    "react": ">=19.1.0",
+    "react-dom": ">=19.1.0"
   },
   "license": "MIT",
   "files": [
