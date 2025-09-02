@@ -362,13 +362,12 @@ export const WithHighDensity = () => {
               id="TextInput4"
               defaultValue="Some value"
             />
-            <Tooltip content="Tooltip text">
-              <IconButton
-                variant="secondary"
-                icon={<LockSimpleIcon />}
-                aria-label="Lock"
-              />
-            </Tooltip>
+
+            <IconButton
+              variant="secondary"
+              icon={<LockSimpleIcon />}
+              aria-label="Lock"
+            />
           </TextInput.Group>
         </Flex>
         <SectionHeading as="h3" marginBottom="spacingS">
