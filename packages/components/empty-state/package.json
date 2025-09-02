@@ -20,7 +20,7 @@
     "build": "tsup"
   },
   "dependencies": {
-    "emotion": "^10.0.17",
+    "@emotion/react": "^11.14.0",
     "@contentful/f36-tokens": "^6.0.0-alpha.0",
     "@contentful/f36-typography": "^6.0.0-alpha.0"
   },
