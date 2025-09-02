@@ -7,7 +7,7 @@ import React, {
 import tokens from '@contentful/f36-tokens';
 import { CopySimpleIcon } from '@contentful/f36-icons';
 import type { ExpandProps } from '@contentful/f36-core';
-import { Tooltip, type TooltipProps } from '@contentful/f36-tooltip';
+//import { Tooltip, type TooltipProps } from '@contentful/f36-tooltip';
 import { Button, type ButtonProps } from '@contentful/f36-button';
 import { getCopyButtonStyles } from './CopyButton.styles';
 import { cx } from 'emotion';
@@ -33,7 +33,7 @@ export type CopyButtonProps = Omit<
   /**
    * Props that are passed to the tooltip component
    */
-  tooltipProps?: Omit<TooltipProps, 'content' | 'children'>;
+  tooltipProps?: any; //Omit<TooltipProps, 'content' | 'children'>;
   /**
    * Label to be used on aria-label for the button
    * @default Copy to clipboard
@@ -114,32 +114,53 @@ function _CopyButton(
   };
 
   return (
-    <Tooltip
-      content={copied ? tooltipCopiedText : tooltipText}
-      {...tooltipProps}
-      isDisabled={isDisabled}
-    >
-      <Button
-        aria-label={copied ? tooltipCopiedText : label ?? tooltipText}
-        aria-live="assertive"
-        className={cx(styles.button, className)}
-        isDisabled={isLoading || isDisabled}
-        isLoading={isLoading}
-        onBlur={handleBlur}
-        testId={testId}
-        startIcon={
-          <CopySimpleIcon
-            color={tokens.gray600}
-            size={size === 'small' ? 'tiny' : 'small'}
-          />
-        }
-        variant="secondary"
-        {...otherProps}
-        onClick={handleClick}
-        ref={ref}
-      />
-    </Tooltip>
+    <Button
+      aria-label={copied ? tooltipCopiedText : label ?? tooltipText}
+      aria-live="assertive"
+      className={cx(styles.button, className)}
+      isDisabled={isLoading || isDisabled}
+      isLoading={isLoading}
+      onBlur={handleBlur}
+      testId={testId}
+      startIcon={
+        <CopySimpleIcon
+          color={tokens.gray600}
+          size={size === 'small' ? 'tiny' : 'small'}
+        />
+      }
+      variant="secondary"
+      {...otherProps}
+      onClick={handleClick}
+      ref={ref}
+    />
   );
+  // return (
+  //   <Tooltip
+  //     content={copied ? tooltipCopiedText : tooltipText}
+  //     {...tooltipProps}
+  //     isDisabled={isDisabled}
+  //   >
+  //     <Button
+  //       aria-label={copied ? tooltipCopiedText : label ?? tooltipText}
+  //       aria-live="assertive"
+  //       className={cx(styles.button, className)}
+  //       isDisabled={isLoading || isDisabled}
+  //       isLoading={isLoading}
+  //       onBlur={handleBlur}
+  //       testId={testId}
+  //       startIcon={
+  //         <CopySimpleIcon
+  //           color={tokens.gray600}
+  //           size={size === 'small' ? 'tiny' : 'small'}
+  //         />
+  //       }
+  //       variant="secondary"
+  //       {...otherProps}
+  //       onClick={handleClick}
+  //       ref={ref}
+  //     />
+  //   </Tooltip>
+  // );
 }
 
 _CopyButton.displayName = 'CopyButton';
