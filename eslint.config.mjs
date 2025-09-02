@@ -1,3 +1,5 @@
+import * as emotion from '@emotion/eslint-plugin'
+import {fixupPluginRules} from '@eslint/compat'
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
@@ -28,13 +30,9 @@ const eslintConfig = [
       'plugin:jest/style',
       'plugin:you-dont-need-lodash-underscore/compatible',
     ],
-    plugins: [
-      'import',
-      'react-hooks', 
-      'jest-dom', 
-      'testing-library', 
-      'rulesdir'
-    ],
+    plugins: {
+      '@emotion': fixupPluginRules(emotion),
+    },
     env: {
       jest: true,
       browser: true,

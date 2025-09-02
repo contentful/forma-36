@@ -34,7 +34,7 @@
     "@contentful/f36-core": "^6.0.0-alpha.0",
     "@contentful/f36-tokens": "^6.0.0-alpha.0",
     "@phosphor-icons/react": "^2.1.5",
-    "emotion": "^10.0.17"
+    "@emotion/react": "^11.14.0"
   },
   "devDependencies": {
     "react-icons": "^4.4.0",
