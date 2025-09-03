@@ -40,15 +40,16 @@ function _ButtonGroup(
       className={cx(styles.buttonGroup, className)}
     >
       {React.Children.map(children, (child, key) => {
-        if (!child) {
+        if (!React.isValidElement(child)) {
           return null;
         }
-        return React.cloneElement(child as React.ReactElement, {
+        // Only pass className if child.props has className property
+        const { className: childClassName, ...childProps }: any =
+          child.props || {};
+        return React.cloneElement(child, {
+          ...childProps,
           key,
-          className: cx(
-            styles.groupContent,
-            (child as React.ReactElement).props.className,
-          ),
+          className: cx(styles.groupContent, childClassName ?? ''),
         });
       })}
     </Box>

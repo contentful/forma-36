@@ -1,15 +1,11 @@
 import React from 'react';
-import { cx } from 'emotion';
-import type {
-  PolymorphicProps,
-  PolymorphicComponent,
-  ExpandProps,
-  CommonProps,
-} from '@contentful/f36-core';
+import { cx } from '@emotion/css';
+import type { PolymorphicProps, ExpandProps } from '@contentful/f36-core';
 import { Button } from '../Button';
 import type { ButtonInternalProps } from '../types';
 import { getStyles } from './IconButton.styles';
 import { useDensity } from '@contentful/f36-utils';
+import { polymorphicForwardRef } from '@contentful/f36-core/src/utils/polymorphicForwardRef';
 // import {
 //   Tooltip,
 //   type TooltipInternalProps,
@@ -26,9 +22,9 @@ type WithTooltipOrNot =
       /**
        * The tooltip properties to be passed to the Tooltip component wrapping the IconButton
        */
-      tooltipProps?: any //CommonProps &
-        WithEnhancedContent &
-        Omit<TooltipInternalProps, 'children'>;
+      tooltipProps?: any; //CommonProps &
+      // WithEnhancedContent &
+      // Omit<TooltipInternalProps, 'children'>;
     }
   | {
       withTooltip?: false;
@@ -65,7 +61,10 @@ export type IconButtonProps<
 
 function _IconButton<
   E extends React.ElementType = typeof ICON_BUTTON_DEFAULT_TAG,
->(props: IconButtonProps<E>, ref: React.Ref<any>) {
+>(
+  props: IconButtonProps<E>,
+  ref: React.ComponentPropsWithRef<E>['ref'],
+): React.ReactElement | null {
   const {
     testId = 'cf-ui-icon-button',
     variant = 'transparent',
@@ -85,14 +84,14 @@ function _IconButton<
   const iconButton = (
     <Button
       testId={testId}
-      ref={ref}
+      ref={ref as any}
       variant={variant}
       className={cx(styles.iconButton, className)}
       size={size}
       // we pass the icon as endIcon prop to have it replaced with loading icon, when isLoading prop is true
       endIcon={icon}
       aria-label={ariaLabel}
-      {...otherProps}
+      {...(otherProps as any)}
     />
   );
 
@@ -102,17 +101,8 @@ function _IconButton<
       content = ariaLabel,
       ...otherTooltipProps
     } = tooltipProps || {};
-
-    return (
-      
-        {iconButton}
-    
-    );
-    // return (
-    //   <Tooltip content={content} showDelay={showDelay} {...otherTooltipProps}>
-    //     {iconButton}
-    //   </Tooltip>
-    // );
+    // Tooltip integration pending; return button directly for now.
+    return iconButton;
   }
 
   return iconButton;
@@ -120,8 +110,8 @@ function _IconButton<
 
 _IconButton.displayName = 'IconButton';
 
-export const IconButton: PolymorphicComponent<
+export const IconButton = polymorphicForwardRef<
   ExpandProps<ExtendedIconButtonProps>,
   typeof ICON_BUTTON_DEFAULT_TAG,
   'disabled'
-> = React.forwardRef(_IconButton);
+>(_IconButton);

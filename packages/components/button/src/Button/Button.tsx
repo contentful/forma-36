@@ -4,9 +4,9 @@ import {
   Flex,
   Box,
   type PolymorphicProps,
-  type PolymorphicComponent,
   type ExpandProps,
 } from '@contentful/f36-core';
+import { polymorphicForwardRef } from '@contentful/f36-core/src/utils/polymorphicForwardRef';
 import { useDensity } from '@contentful/f36-utils';
 import { Spinner } from '@contentful/f36-spinner';
 
@@ -126,7 +126,13 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
 
   if (as === 'a') {
     return (
-      <a {...otherProps} {...commonProps} disabled={isDisabled}>
+      <a
+        ref={ref}
+        {...otherProps}
+        {...commonProps}
+        aria-disabled={isDisabled}
+        tabIndex={isDisabled ? -1 : 0}
+      >
         {commonContent}
       </a>
     );
@@ -134,6 +140,7 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
 
   return (
     <button
+      ref={ref}
       type="button"
       {...otherProps}
       {...commonProps}
@@ -149,8 +156,8 @@ _Button.displayName = 'Button';
 /**
  * @description: Buttons communicate the action that will occur when the user clicks it
  */
-export const Button: PolymorphicComponent<
+export const Button = polymorphicForwardRef<
   ExpandProps<ButtonInternalProps>,
   typeof BUTTON_DEFAULT_TAG,
   'disabled'
-> = React.forwardRef(_Button);
+>(_Button);
