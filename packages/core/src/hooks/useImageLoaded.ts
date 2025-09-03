@@ -8,7 +8,7 @@ export function useImageLoaded({
   onLoad: onLoadProp,
 }: UseImageLoadedProps = {}) {
   const [loaded, setLoaded] = useState(false);
-  const ref = useRef<HTMLImageElement | undefined>();
+  const ref = useRef<HTMLImageElement | null>(null);
 
   const onLoad = useCallback(() => {
     onLoadProp?.();
