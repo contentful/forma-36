@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Global, css, type SerializedStyles } from '@emotion/core';
+import { Global, css, type SerializedStyles } from '@emotion/react';
 import tokens from '@contentful/f36-tokens';
 
 const cssReset = css`
