@@ -8,6 +8,7 @@ import {
 import { useBox } from '../Box';
 import type { Spacing } from '../types';
 import { Flex, type FlexInternalProps } from '../Flex/Flex';
+import { polymorphicForwardRef } from '../utils/polymorphicForwardRef';
 
 export interface StackInternalProps
   extends Omit<FlexInternalProps, 'flexDirection' | 'gap'> {
@@ -59,7 +60,7 @@ function _Stack<E extends React.ElementType = typeof STACK_DEFAULT_TAG>(
 
 _Stack.displayName = 'Stack';
 
-export const Stack: PolymorphicComponent<
+export const Stack = polymorphicForwardRef<
   ExpandProps<StackInternalProps>,
   typeof STACK_DEFAULT_TAG
-> = React.forwardRef(_Stack);
+>(_Stack);

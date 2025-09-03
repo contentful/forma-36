@@ -1,15 +1,14 @@
 import * as React from 'react';
-import { css, cx } from 'emotion';
-import type * as CSS from 'csstype';
+import { cx, css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
-
+import type * as CSS from 'csstype';
 import {
   type PolymorphicProps,
-  type PolymorphicComponent,
   type ExpandProps,
 } from '../Primitive/Primitive';
 import { useBox } from '../Box';
 import type { MarginProps, PaddingProps, CommonProps, Spacing } from '../types';
+import { polymorphicForwardRef } from '../utils/polymorphicForwardRef';
 
 export interface FlexInternalProps
   extends CommonProps,
@@ -126,7 +125,7 @@ function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
           flexBasis,
           flexShrink,
           flexDirection,
-          gap: gap === 'none' ? 0 : tokens[gap] ?? gap,
+          gap: gap === 'none' ? 0 : (tokens[gap] ?? gap),
           justifyContent,
           justifySelf,
           alignItems,
@@ -147,7 +146,7 @@ function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
 
 _Flex.displayName = 'Flex';
 
-export const Flex: PolymorphicComponent<
+export const Flex = polymorphicForwardRef<
   ExpandProps<FlexInternalProps>,
   typeof FLEX_DEFAULT_TAG
-> = React.forwardRef(_Flex);
+>(_Flex);

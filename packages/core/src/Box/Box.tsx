@@ -3,7 +3,7 @@ import * as CSS from 'csstype';
 import { cx, css } from '@emotion/css';
 import type { MarginProps, PaddingProps, CommonProps } from '../types';
 import { getSpacingStyles } from '../utils/getSpacingStyles';
-import { polymorphicForwardRef } from '@contentful/f36-core/src/utils/polymorphicForwardRef';
+import { polymorphicForwardRef } from '../utils/polymorphicForwardRef';
 
 const BOX_DEFAULT_TAG: React.ElementType = 'div';
 

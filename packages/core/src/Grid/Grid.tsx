@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { css, cx } from 'emotion';
+import { cx, css } from '@emotion/css';
 import type * as CSS from 'csstype';
+import { polymorphicForwardRef } from '../utils/polymorphicForwardRef';
 
 import type {
   PolymorphicProps,
@@ -128,7 +129,7 @@ function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
 
 _Grid.displayName = 'Grid';
 
-export const Grid: PolymorphicComponent<
+export const Grid = polymorphicForwardRef<
   ExpandProps<GridInternalProps>,
   typeof GRID_DEFAULT_TAG
-> = React.forwardRef(_Grid);
+>(_Grid);
