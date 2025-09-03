@@ -1,8 +1,9 @@
 import * as React from 'react';
 import * as CSS from 'csstype';
-import { css, cx } from 'emotion';
+import { cx, css } from '@emotion/css';
 import type { MarginProps, PaddingProps, CommonProps } from '../types';
 import { getSpacingStyles } from '../utils/getSpacingStyles';
+import { polymorphicForwardRef } from '@contentful/f36-core/src/utils/polymorphicForwardRef';
 
 const BOX_DEFAULT_TAG: React.ElementType = 'div';
 
@@ -93,7 +94,7 @@ function _Box<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
 
 _Box.displayName = 'Box';
 
-export const Box: PolymorphicComponent<
+export const Box = polymorphicForwardRef<
   ExpandProps<BoxInternalProps>,
   typeof BOX_DEFAULT_TAG
-> = React.forwardRef(_Box);
+>(_Box);
