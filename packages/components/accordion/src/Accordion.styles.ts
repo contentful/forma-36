@@ -1,4 +1,4 @@
-import { css, cx } from 'emotion';
+import { cx, css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 
 export const getAccordionStyles = ({ className }: { className?: string }) => ({
