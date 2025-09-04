@@ -1,5 +1,5 @@
 import React, { forwardRef, type HTMLAttributes, type Ref } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 //import { Tooltip } from '@contentful/f36-tooltip';
 import { type CommonProps } from '@contentful/f36-core';
 import { Subheading } from '@contentful/f36-typography';

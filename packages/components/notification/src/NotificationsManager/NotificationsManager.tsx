@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 import { useAsyncState } from './useAsyncState';
 import type { NotificationCta, NotificationVariant } from '../types';

@@ -5,7 +5,7 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
 import { Box, Flex } from '@contentful/f36-core';
 import { InfoIcon } from '@contentful/f36-icons';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 
 import { Pill, type PillInternalProps } from '../src/Pill';
 
