@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Box, Flex } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';

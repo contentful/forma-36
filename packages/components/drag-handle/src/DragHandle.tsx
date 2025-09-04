@@ -6,7 +6,7 @@ import React, {
   type MouseEventHandler,
   type Ref,
 } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import type {
   PolymorphicComponent,

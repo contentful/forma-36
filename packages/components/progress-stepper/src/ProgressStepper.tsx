@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { type CommonProps, type MarginProps } from '@contentful/f36-core';
 import { getStyles } from './ProgressStepper.styles';
 

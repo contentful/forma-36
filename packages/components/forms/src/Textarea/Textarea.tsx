@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 import { BaseInput, type BaseInputProps } from '../BaseInput';
 import { useFormControl } from '../FormControl/FormControlContext';

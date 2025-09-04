@@ -4,7 +4,7 @@ import React, {
   type KeyboardEvent,
   type ChangeEvent,
 } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import {
   Box,
   type PolymorphicProps,
