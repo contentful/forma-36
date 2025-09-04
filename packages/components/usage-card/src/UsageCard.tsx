@@ -2,7 +2,7 @@ import React, { HTMLAttributes } from 'react';
 import { Box, type CommonProps, type ExpandProps } from '@contentful/f36-core';
 import { getUsageCardStyles } from './UsageCard.styles';
 //import { Card } from '@contentful/f36-card';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 export type UsageCardProps = CommonProps &
   HTMLAttributes<HTMLDivElement> & {

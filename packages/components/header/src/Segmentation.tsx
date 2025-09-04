@@ -5,7 +5,7 @@ import {
   type PolymorphicComponent,
   type PolymorphicProps,
 } from '@contentful/f36-core';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import React, {
   forwardRef,
   type ElementType,

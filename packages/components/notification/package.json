@@ -12,7 +12,7 @@
     "@contentful/f36-text-link": "^6.0.0-alpha.0",
     "@contentful/f36-tokens": "^6.0.0-alpha.0",
     "@contentful/f36-typography": "^6.0.0-alpha.0",
-    "@emotion/react": "^11.14.0",
+    "@emotion/css": "^11.13.5",
     "react-animate-height": "^3.0.4"
   },
   "peerDependencies": {

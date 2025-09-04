@@ -1,5 +1,5 @@
 import React, { forwardRef, type HTMLAttributes, type Ref } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { type CommonProps, Box } from '@contentful/f36-core';
 import { getLayoutBodyStyles } from './Layout.styles';
 import { useLayoutContext } from './LayoutContext';

@@ -4,7 +4,7 @@ import React, {
   type Ref,
   type HTMLAttributes,
 } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { type CommonProps, Box, Flex } from '@contentful/f36-core';
 import { LayoutContextProvider, LayoutContextType } from './LayoutContext';
 import { getLayoutStyles } from './Layout.styles';

@@ -20,7 +20,7 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0"
+    "@emotion/css": "^11.13.5"
   },
   "peerDependencies": {
     "react": ">=19.1.0",

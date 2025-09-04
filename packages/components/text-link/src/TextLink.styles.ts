@@ -1,4 +1,4 @@
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import { TextLinkProps } from './TextLink';
 import { TextLinkVariant } from './types';

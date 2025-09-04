@@ -10,7 +10,7 @@ import type { ExpandProps } from '@contentful/f36-core';
 //import { Tooltip, type TooltipProps } from '@contentful/f36-tooltip';
 import { Button, type ButtonProps } from '@contentful/f36-button';
 import { getCopyButtonStyles } from './CopyButton.styles';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 export type CopyButtonProps = Omit<
   ButtonProps,
@@ -115,7 +115,7 @@ function _CopyButton(
 
   return (
     <Button
-      aria-label={copied ? tooltipCopiedText : label ?? tooltipText}
+      aria-label={copied ? tooltipCopiedText : (label ?? tooltipText)}
       aria-live="assertive"
       className={cx(styles.button, className)}
       isDisabled={isLoading || isDisabled}

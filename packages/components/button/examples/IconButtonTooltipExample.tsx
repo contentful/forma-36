@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconButton, Flex, Stack } from '@contentful/f36-components';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import { TextBIcon, TextItalicIcon } from '@contentful/f36-icons';
 

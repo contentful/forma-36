@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as CSS from 'csstype';
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 import type { MarginProps, PaddingProps, CommonProps } from '../types';
 import { getSpacingStyles } from '../utils/getSpacingStyles';
 

@@ -1,4 +1,4 @@
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import React, { forwardRef, type ReactNode } from 'react';
 import { getFormLabelStyles } from './FormLabel.styles';
 import { useFormControl } from '../FormControl/FormControlContext';

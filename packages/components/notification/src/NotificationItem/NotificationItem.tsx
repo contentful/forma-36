@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import {
   CheckCircleIcon,

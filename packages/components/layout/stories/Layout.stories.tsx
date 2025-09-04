@@ -1,6 +1,6 @@
 /* eslint-disable rulesdir/emotion-in-function */
 import React from 'react';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Box } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-components';

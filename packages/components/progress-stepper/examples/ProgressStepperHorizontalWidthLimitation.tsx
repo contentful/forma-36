@@ -2,7 +2,7 @@ import React from 'react';
 import { ProgressStepper } from '@contentful/f36-progress-stepper';
 import { Box, Header } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 
 export default function ProgressStepperHorizontalWidthLimitation() {
   const styles = {
