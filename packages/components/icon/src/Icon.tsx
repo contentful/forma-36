@@ -1,7 +1,6 @@
 import { css, cx } from '@emotion/css';
 import React, {
   forwardRef,
-  type ElementType,
   type ReactElement,
   type SVGAttributes,
 } from 'react';
@@ -44,22 +43,15 @@ export type IconInternalProps = CommonProps & {
   viewBox?: SVGAttributes<SVGSVGElement>['viewBox'];
 };
 
-export type IconProps<E extends ElementType = IconComponent> = PolymorphicProps<
-  IconInternalProps,
-  E,
-  'as' | 'children' | 'width' | 'height'
->;
+export type IconProps<E extends React.ElementType = typeof ICON_DEFAULT_TAG> =
+  PolymorphicProps<
+    IconInternalProps,
+    E,
+    'as' | 'children' | 'width' | 'height'
+  >;
 
-const useAriaHidden = (
-  props: Pick<
-    IconProps<typeof ICON_DEFAULT_TAG>,
-    'aria-label' | 'aria-labelledby'
-  >,
-) => {
-  const ariaLabel = props['aria-label'];
-  const ariaLabelBy = props['aria-labelledby'];
-
-  if (ariaLabel || ariaLabelBy) {
+const useAriaHidden = ({ ariaLabel, ariaLabelledBy }) => {
+  if (ariaLabel || ariaLabelledBy) {
     return {};
   }
 
@@ -68,9 +60,12 @@ const useAriaHidden = (
   };
 };
 
-export function _Icon<E extends ElementType = IconComponent>(
-  {
-    as,
+export function _Icon<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
+  props: IconProps<E>,
+  forwardedRef: React.Ref<any>,
+) {
+  const {
+    as: Element = ICON_DEFAULT_TAG,
     children,
     className,
     color = 'currentColor',
@@ -78,11 +73,11 @@ export function _Icon<E extends ElementType = IconComponent>(
     size = 'medium',
     testId = 'cf-ui-icon',
     viewBox = '0 0 20 20',
+    isActive,
+    ariaLabel,
+    ariaLabelledBy,
     ...otherProps
-  }: MappedOmit<IconProps<E>, 'isActive'>,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  forwardedRef: React.Ref<any>,
-) {
+  } = props;
   const shared = {
     className: cx(
       css({
@@ -97,36 +92,25 @@ export function _Icon<E extends ElementType = IconComponent>(
     role,
   };
 
-  const ariaHiddenProps = useAriaHidden(otherProps);
-
-  if (as) {
-    return (
-      <Box
-        display="inline-block"
-        {...ariaHiddenProps}
-        {...otherProps}
-        {...shared}
-        as={as as React.ElementType}
-      />
-    );
-  }
+  const ariaHiddenProps = useAriaHidden({ ariaLabel, ariaLabelledBy });
 
   return (
-    <Box
-      viewBox={viewBox}
+    <Element
+      viewBox={Element === typeof ICON_DEFAULT_TAG ? viewBox : undefined}
       display="inline-block"
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
       {...ariaHiddenProps}
       {...otherProps}
-      as={ICON_DEFAULT_TAG}
       {...shared}
     >
       {children}
-    </Box>
+    </Element>
   );
 }
 
-export const Icon: PolymorphicComponent<
+export const Icon = forwardRef(_Icon) as PolymorphicComponent<
   ExpandProps<IconInternalProps>,
   typeof ICON_DEFAULT_TAG,
   'width' | 'height'
-> = forwardRef(_Icon);
+>;
