@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 import { Button } from '../Button';
 import getStyles from './ToggleButton.styles';
