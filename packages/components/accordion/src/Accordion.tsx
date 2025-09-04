@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Box, type CommonProps, type ExpandProps } from '@contentful/f36-core';
-
+import {
+  AccordionContextProvider,
+  AccordionContextType,
+} from './AccordionContext';
 import { getAccordionStyles } from './Accordion.styles';
 
 export interface AccordionProps extends CommonProps {
@@ -26,23 +29,26 @@ const _Accordion = (
   ref: React.Ref<HTMLUListElement>,
 ) => {
   const styles = getAccordionStyles({ className });
+
+  const contextValue: AccordionContextType = useMemo(
+    () => ({
+      align,
+    }),
+    [align],
+  );
+
   return (
-    <Box
-      as="ul"
-      className={styles.accordion}
-      testId={testId}
-      {...otherProps}
-      ref={ref}
-    >
-      {React.Children.map(children, (child) => {
-        if (React.isValidElement(child)) {
-          return React.cloneElement(child, {
-            align,
-          });
-        }
-        return child;
-      })}
-    </Box>
+    <AccordionContextProvider value={contextValue}>
+      <Box
+        as="ul"
+        className={styles.accordion}
+        testId={testId}
+        {...otherProps}
+        ref={ref}
+      >
+        {children}
+      </Box>
+    </AccordionContextProvider>
   );
 };
 
