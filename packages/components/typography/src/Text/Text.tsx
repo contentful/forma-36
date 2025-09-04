@@ -7,7 +7,7 @@ import tokens, {
   ColorTokens,
   LetterSpacingTokens,
 } from '@contentful/f36-tokens';
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 import {
   Box,
   type PolymorphicComponent,
@@ -98,8 +98,8 @@ function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
 
 _Text.displayName = 'Text';
 
-export const Text: PolymorphicComponent<
+export const Text = React.forwardRef(_Text) as PolymorphicComponent<
   ExpandProps<TextInternalProps>,
   typeof TEXT_DEFAULT_TAG,
   'color'
-> = React.forwardRef(_Text);
+>;
