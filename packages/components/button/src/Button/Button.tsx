@@ -118,7 +118,12 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
 
   if (as === 'a') {
     return (
-      <a {...otherProps} {...commonProps} disabled={isDisabled}>
+      <a
+        {...otherProps}
+        {...commonProps}
+        aria-disabled={isDisabled}
+        tabIndex={isDisabled ? -1 : 0}
+      >
         {commonContent}
       </a>
     );
