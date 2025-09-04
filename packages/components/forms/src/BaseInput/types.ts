@@ -1,4 +1,5 @@
 import type { CommonProps } from '@contentful/f36-core';
+import { IconProps } from '@contentful/f36-icon';
 import {
   type FocusEventHandler,
   type ChangeEventHandler,
@@ -50,7 +51,7 @@ export interface BaseInputInternalProps extends CommonProps {
   /**
    * Expects any of the icon components
    */
-  icon?: React.ReactElement;
+  icon?: React.ReactElement<IconProps>;
   /**
    * Allows to listen to an input’s change in value
    */
