@@ -3,15 +3,15 @@ import * as CSS from 'csstype';
 import { cx, css } from '@emotion/css';
 import type { MarginProps, PaddingProps, CommonProps } from '../types';
 import { getSpacingStyles } from '../utils/getSpacingStyles';
-import { polymorphicForwardRef } from '../utils/polymorphicForwardRef';
+import {
+  PolymorphicComponentPropsWithRef,
+  AsProps,
+  PolyForwardComponent,
+} from '../utils/polymorphicForwardRef';
 
 const BOX_DEFAULT_TAG: React.ElementType = 'div';
 
-import {
-  PolymorphicProps,
-  PolymorphicComponent,
-  ExpandProps,
-} from '../Primitive/Primitive';
+// Removed previous Primitive polymorphic helpers in favor of the new fast polymorphic types
 
 export interface BoxInternalProps
   extends CommonProps,
@@ -22,11 +22,10 @@ export interface BoxInternalProps
    */
   display?: CSS.Property.Display;
   children?: React.ReactNode;
-  as?: React.ElementType<any>;
 }
-
+// Build polymorphic BoxProps using the new utility types
 export type BoxProps<E extends React.ElementType = typeof BOX_DEFAULT_TAG> =
-  PolymorphicProps<BoxInternalProps, E>;
+  AsProps<E, BoxInternalProps, PolymorphicComponentPropsWithRef<E>>;
 
 export function useBox<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
   props: BoxProps<E>,
@@ -81,8 +80,8 @@ export function useBox<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
 
 function _Box<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
   props: BoxProps<E>,
-  ref: React.Ref<any>,
-) {
+  ref: React.ComponentPropsWithRef<E>['ref'],
+): React.ReactElement | null {
   const { boxProps, Element } = useBox<E>(props);
 
   return (
@@ -94,7 +93,7 @@ function _Box<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
 
 _Box.displayName = 'Box';
 
-export const Box = polymorphicForwardRef<
-  ExpandProps<BoxInternalProps>,
-  typeof BOX_DEFAULT_TAG
->(_Box);
+export const Box = React.forwardRef(_Box) as PolyForwardComponent<
+  typeof BOX_DEFAULT_TAG,
+  BoxInternalProps
+>;
