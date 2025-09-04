@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 import type * as CSS from 'csstype';
 import tokens from '@contentful/f36-tokens';
 
@@ -126,7 +126,7 @@ function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
           flexBasis,
           flexShrink,
           flexDirection,
-          gap: gap === 'none' ? 0 : tokens[gap] ?? gap,
+          gap: gap === 'none' ? 0 : (tokens[gap] ?? gap),
           justifyContent,
           justifySelf,
           alignItems,
@@ -147,7 +147,7 @@ function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
 
 _Flex.displayName = 'Flex';
 
-export const Flex: PolymorphicComponent<
+export const Flex = React.forwardRef(_Flex) as PolymorphicComponent<
   ExpandProps<FlexInternalProps>,
   typeof FLEX_DEFAULT_TAG
-> = React.forwardRef(_Flex);
+>;
