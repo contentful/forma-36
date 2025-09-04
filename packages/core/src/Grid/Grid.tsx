@@ -128,7 +128,7 @@ function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
 
 _Grid.displayName = 'Grid';
 
-export const Grid: PolymorphicComponent<
+export const Grid = React.forwardRef(_Grid) as PolymorphicComponent<
   ExpandProps<GridInternalProps>,
   typeof GRID_DEFAULT_TAG
-> = React.forwardRef(_Grid);
+>;

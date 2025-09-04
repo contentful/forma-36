@@ -59,7 +59,7 @@ function _Stack<E extends React.ElementType = typeof STACK_DEFAULT_TAG>(
 
 _Stack.displayName = 'Stack';
 
-export const Stack: PolymorphicComponent<
+export const Stack = React.forwardRef(_Stack) as PolymorphicComponent<
   ExpandProps<StackInternalProps>,
   typeof STACK_DEFAULT_TAG
-> = React.forwardRef(_Stack);
+>;
