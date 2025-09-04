@@ -19,7 +19,7 @@ const { isConditionalExpression } = require('../../utils/updateTernaryValues');
 // V4 icon name : V5 icon name
 const iconsMap = {
   App: 'Puzzle',
-  Apis: 'CloudUpDown',
+  Apis: 'CloudArrowUpDown',
   Appearance: 'CircleHalf',
   Archive: 'FileArchive',
   ArrowBackward: 'ArrowLeft',
