@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-docs-utils",
-  "version": "4.0.2",
+  "version": "5.0.0-alpha.0",
   "private": true,
   "license": "MIT",
   "files": [
@@ -19,8 +19,8 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-components": "^5.0.0-alpha.2",
-    "@contentful/f36-tokens": "^5.0.0-alpha.2",
+    "@contentful/f36-components": "^6.0.0-alpha.0",
+    "@contentful/f36-tokens": "^6.0.0-alpha.0",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
