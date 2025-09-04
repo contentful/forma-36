@@ -28,23 +28,28 @@ npx @contentful/f36-codemod
 
 ```tsx static=true
 import { Icon } from '@contentful/f36-icons';
-import { MdAccessAlarm } from 'react-icons/md';
+import { ArchiveIcon } from '@contentful/f36-icons';
 
 const AccessAlarm = (props) => {
-  return <Icon {...props} as={MdAccessAlarm} variant="secondary" />;
+  return <Icon {...props} as={ArchiveIcon} variant="secondary" />;
 };
 ```
 
 #### After
 
 ```tsx static=true
-import { Icon } from '@contentful/f36-icons';
-import { MdAccessAlarm } from 'react-icons/md';
+import { Icon } from '@contentful/f36-icon';
+import { FileArchiveIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 
 const AccessAlarm = (props) => {
   return (
-    <Icon {...props} as={MdAccessAlarm} color={tokens.colorPositive} isActive />
+    <Icon
+      {...props}
+      as={FileArchiveIcon}
+      color={tokens.colorPositive}
+      isActive
+    />
   );
 };
 ```
