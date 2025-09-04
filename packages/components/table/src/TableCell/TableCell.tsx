@@ -1,4 +1,4 @@
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import React, { forwardRef, useMemo, useState } from 'react';
 import {
   type CommonProps,
@@ -135,7 +135,7 @@ function _TableCell(
 
 _TableCell.displayName = 'TableCell';
 
-export const TableCell: PolymorphicComponent<
+export const TableCell = forwardRef(_TableCell) as PolymorphicComponent<
   ExpandProps<TableCellInternalProps>,
   'th' | 'td'
-> = forwardRef(_TableCell);
+>;
