@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import type {
   PolymorphicProps,
   PolymorphicComponent,
@@ -26,9 +26,10 @@ type WithTooltipOrNot =
       /**
        * The tooltip properties to be passed to the Tooltip component wrapping the IconButton
        */
-      tooltipProps?: any //CommonProps &
-        WithEnhancedContent &
-        Omit<TooltipInternalProps, 'children'>;
+      tooltipProps?: any;
+      // CommonProps &
+      //   WithEnhancedContent &
+      //   Omit<TooltipInternalProps, 'children'>;
     }
   | {
       withTooltip?: false;
@@ -74,6 +75,7 @@ function _IconButton<
     size = 'medium',
     withTooltip = false,
     tooltipProps,
+    as = ICON_BUTTON_DEFAULT_TAG,
     'aria-label': ariaLabel,
     ...otherProps
   } = props;
@@ -82,7 +84,7 @@ function _IconButton<
 
   const styles = getStyles({ size, density });
 
-  const iconButton = (
+  const element = (
     <Button
       testId={testId}
       ref={ref}
@@ -92,10 +94,10 @@ function _IconButton<
       // we pass the icon as endIcon prop to have it replaced with loading icon, when isLoading prop is true
       endIcon={icon}
       aria-label={ariaLabel}
-      {...otherProps}
+      as={as}
+      {...(otherProps as ButtonInternalProps)}
     />
   );
-
   if (withTooltip) {
     const {
       showDelay = 600,
@@ -103,25 +105,21 @@ function _IconButton<
       ...otherTooltipProps
     } = tooltipProps || {};
 
-    return (
-      
-        {iconButton}
-    
-    );
     // return (
     //   <Tooltip content={content} showDelay={showDelay} {...otherTooltipProps}>
     //     {iconButton}
     //   </Tooltip>
     // );
+    return element;
   }
 
-  return iconButton;
+  return element;
 }
 
 _IconButton.displayName = 'IconButton';
 
-export const IconButton: PolymorphicComponent<
+export const IconButton = React.forwardRef(_IconButton) as PolymorphicComponent<
   ExpandProps<ExtendedIconButtonProps>,
   typeof ICON_BUTTON_DEFAULT_TAG,
   'disabled'
-> = React.forwardRef(_IconButton);
+>;

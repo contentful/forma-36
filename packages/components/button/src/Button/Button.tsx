@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+
 import {
   Flex,
   Box,
@@ -9,7 +9,7 @@ import {
 } from '@contentful/f36-core';
 import { useDensity } from '@contentful/f36-utils';
 import { Spinner } from '@contentful/f36-spinner';
-
+import { cx } from '@emotion/css';
 import type { ButtonInternalProps } from '../types';
 import { getStyles } from './Button.styles';
 
@@ -149,8 +149,8 @@ _Button.displayName = 'Button';
 /**
  * @description: Buttons communicate the action that will occur when the user clicks it
  */
-export const Button: PolymorphicComponent<
+export const Button = React.forwardRef(_Button) as PolymorphicComponent<
   ExpandProps<ButtonInternalProps>,
   typeof BUTTON_DEFAULT_TAG,
   'disabled'
-> = React.forwardRef(_Button);
+>;
