@@ -1,6 +1,6 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 import type {
   PolymorphicComponent,
   PolymorphicProps,
@@ -65,7 +65,9 @@ function _SectionHeading<
 
 _SectionHeading.displayName = 'SectionHeading';
 
-export const SectionHeading: PolymorphicComponent<
+export const SectionHeading = React.forwardRef(
+  _SectionHeading,
+) as PolymorphicComponent<
   ExpandProps<SectionHeadingInternalProps>,
   typeof SECTION_HEADING_DEFAULT_TAG
-> = React.forwardRef(_SectionHeading);
+>;

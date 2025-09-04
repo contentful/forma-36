@@ -55,7 +55,7 @@ function _Heading<E extends React.ElementType = typeof HEADING_DEFAULT_TAG>(
 
 _Heading.displayName = 'Heading';
 
-export const Heading: PolymorphicComponent<
+export const Heading = React.forwardRef(_Heading) as PolymorphicComponent<
   ExpandProps<HeadingInternalProps>,
   typeof HEADING_DEFAULT_TAG
-> = React.forwardRef(_Heading);
+>;

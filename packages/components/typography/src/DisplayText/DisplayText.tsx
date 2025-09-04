@@ -63,7 +63,9 @@ function _DisplayText<
 
 _DisplayText.displayName = 'DisplayText';
 
-export const DisplayText: PolymorphicComponent<
+export const DisplayText = React.forwardRef(
+  _DisplayText,
+) as PolymorphicComponent<
   ExpandProps<DisplayTextInternalProps>,
   typeof DISPLAY_TEXT_DEFAULT_TAG
-> = React.forwardRef(_DisplayText);
+>;
