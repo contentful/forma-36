@@ -54,7 +54,7 @@ function _Subheading<
 
 _Subheading.displayName = 'Subheading';
 
-export const Subheading: PolymorphicComponent<
+export const Subheading = React.forwardRef(_Subheading) as PolymorphicComponent<
   ExpandProps<SubheadingInternalProps>,
   typeof SUBHEADING_DEFAULT_TAG
-> = React.forwardRef(_Subheading);
+>;

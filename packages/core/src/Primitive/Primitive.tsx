@@ -52,6 +52,22 @@ type PolymorphicPropsWithRef<
   E
 >;
 
+/**
+ * A polymorphic React component type.
+ *
+ * Represents a function component that can render as different element types while preserving correct prop typings and ref forwarding for the chosen element.
+ *
+ * @template P - The component's own props (the "base" props).
+ * @template D - The default element type (must extend React.ElementType)
+ * @template OmitAdditionalProps - Keys to omit when merging the component's base props with the props of the chosen element type.
+ * Example usage:
+ *  - type ButtonProps = { variant?: 'primary' | 'secondary' };
+ *  - const Button: PolymorphicComponent<ButtonProps, 'button'> = ...;
+ *  - <Button onClick={...} />         // typed as <button>
+ *  - <Button as="a" href="...">      // typed as <a>, href validated
+ *
+ * @returns A React component type that supports polymorphic "as" overrides and proper ref typing.
+ */
 export type PolymorphicComponent<
   P,
   D extends React.ElementType,

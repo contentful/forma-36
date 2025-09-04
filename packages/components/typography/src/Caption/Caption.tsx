@@ -55,7 +55,7 @@ function _Caption<E extends React.ElementType = typeof CAPTION_DEFAULT_TAG>(
 
 _Caption.displayName = 'Caption';
 
-export const Caption: PolymorphicComponent<
+export const Caption = React.forwardRef(_Caption) as PolymorphicComponent<
   ExpandProps<CaptionInternalProps>,
   typeof CAPTION_DEFAULT_TAG
-> = React.forwardRef(_Caption);
+>;
