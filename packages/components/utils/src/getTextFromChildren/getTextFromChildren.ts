@@ -8,7 +8,10 @@ import {
 function hasChildren(
   element: ReactNode,
 ): element is ReactElement<{ children: ReactNode | ReactNode[] }> {
-  return isValidElement(element) && Boolean(element.props.children);
+  return (
+    isValidElement<{ children?: ReactNode[] }>(element) &&
+    Boolean(element.props.children)
+  );
 }
 
 /**
