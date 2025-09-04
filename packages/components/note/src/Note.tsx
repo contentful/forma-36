@@ -17,7 +17,7 @@ import {
   WarningIcon,
   DiamondIcon,
 } from '@contentful/f36-icons';
-import { Icon } from '@contentful/f36-icon';
+import { Icon, type IconProps } from '@contentful/f36-icon';
 
 import { getNoteStyles } from './Note.styles';
 import tokens from '@contentful/f36-tokens';
@@ -96,7 +96,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
 
     const iconSize = title ? 'medium' : 'small';
 
-    const iconContent = (icon: React.ReactElement) =>
+    const iconContent = (icon: React.ReactElement<IconProps>) =>
       React.cloneElement(icon, {
         size: iconSize,
         color: tokens[getIconColorToken(variant, iconColorByVariant)],
