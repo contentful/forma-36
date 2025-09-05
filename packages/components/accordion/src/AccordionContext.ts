@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion } from '../dist';
+import { Accordion } from './Accordion';
 
 export type AccordionContextType = {
   align?: 'start' | 'end';
