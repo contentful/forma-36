@@ -34,7 +34,7 @@
     "@contentful/f36-core": "^5.1.0",
     "@contentful/f36-icon": "^5.1.0",
     "@contentful/f36-tokens": "^5.1.0",
-    "@phosphor-icons/react": "^2.1.4",
+    "@phosphor-icons/react": "2.1.8",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
