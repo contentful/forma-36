@@ -28,18 +28,21 @@ type usageCountType =
       periodType?: never;
       quota?: never;
       variant: PickUnion<Variant, 'consumption'>;
+      includedWord?: boolean;
     }
   | {
       valueDescription?: never;
       periodType: 'month' | 'year';
       quota?: never;
       variant: PickUnion<Variant, 'periodic'>;
+      includedWord?: boolean;
     }
   | {
       valueDescription?: never;
       periodType?: never;
       quota: number;
       variant: PickUnion<Variant, 'entitlement'>;
+      includedWord?: boolean;
     };
 
 export type UsageCountProps = {
@@ -59,6 +62,7 @@ function _UsageCount(props: UsageCountProps, ref: React.Ref<HTMLDivElement>) {
     quota,
     className,
     testId = 'cf-ui-usage-count',
+    includedWord = false,
     ...otherProps
   } = props;
   const styles = getUsageCountStyles();
@@ -66,7 +70,8 @@ function _UsageCount(props: UsageCountProps, ref: React.Ref<HTMLDivElement>) {
   const quotaCaption = quota !== undefined && (
     <Caption className={styles.captionText}>
       / {quota}
-      {valueUnit && ` ${valueUnit}`} included
+      {valueUnit && ` ${valueUnit}`}
+      {includedWord && ' included'}
     </Caption>
   );
 

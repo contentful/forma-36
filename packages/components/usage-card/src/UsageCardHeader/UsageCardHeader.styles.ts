@@ -2,7 +2,7 @@ import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 
 export const getUsageCardHeaderStyles = () => ({
-  usageCardHeader: (tooltip?: string) =>
+  usageCardHeader: (tooltip?: string | React.ReactElement) =>
     css({
       width: '100%',
       ...(tooltip && {

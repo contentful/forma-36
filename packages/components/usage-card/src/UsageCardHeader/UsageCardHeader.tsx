@@ -9,7 +9,7 @@ import { InfoIcon } from '@contentful/f36-icons';
 export type UsageCardHeaderProps = {
   children?: React.ReactNode;
   title?: string;
-  tooltip?: string;
+  tooltip?: string | React.ReactElement;
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 

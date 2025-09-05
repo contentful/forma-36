@@ -4,6 +4,12 @@ import { UsageCount } from '@contentful/f36-components';
 
 export default function UsageCountExample() {
   return (
-    <UsageCount variant="entitlement" value={150} valueUnit="GB" quota={200} />
+    <UsageCount
+      variant="entitlement"
+      value={150}
+      valueUnit="GB"
+      quota={200}
+      includedWord={true}
+    />
   );
 }
