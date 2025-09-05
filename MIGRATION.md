@@ -163,6 +163,8 @@ For a **detailed guide, including prop mapping tables and code examples**, see [
 
 The `Icon` component has been significantly updated in version 5, introducing several breaking changes to its API. The available icon sizes have been streamlined to three options for greater consistency and ease of use. The `trimmed` and `variant` props have been removed to simplify the component. Instead, a new `color` prop has been added, allowing for more flexible icon styling. Additionally, an `isActive` prop is now available to indicate the active state of an icon.
 
+Many icon components have been renamed, you can find the full list and the codemod under [packages/components/icon/MIGRATION.md](./packages/components/icon/MIGRATION.md).
+
 #### Icon Prop Table
 
 | Property Name | Type                                      | Description                                                                                                                                                                      | Status    |
