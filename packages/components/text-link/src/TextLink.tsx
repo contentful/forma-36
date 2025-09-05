@@ -10,6 +10,7 @@ import {
 
 import { styles } from './TextLink.styles';
 import { TextLinkVariant } from './types';
+import { IconProps } from '@contentful/f36-icon';
 
 const TEXT_LINK_DEFAULT_TAG = 'a';
 
@@ -75,18 +76,18 @@ function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
     ...otherProps,
   };
 
-  const iconContent = icon ? (
+  const iconContent = (icon: React.ReactElement<IconProps>) => (
     <Flex as="span" alignSelf="center">
       {React.cloneElement(icon, {
-        className: cx(icon.props.className, styles.textLinkIcon()),
         size: 'small',
+        className: cx(icon.props.className, styles.textLinkIcon()),
       })}
     </Flex>
-  ) : null;
+  );
 
   const commonContent = (
     <span className={styles.textLinkContent()}>
-      {icon && alignIcon === 'start' && iconContent}
+      {icon && alignIcon === 'start' && iconContent(icon)}
       {children && (
         <span
           className={styles.textLinkText({
@@ -96,7 +97,7 @@ function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
           {children}
         </span>
       )}
-      {icon && alignIcon === 'end' && iconContent}
+      {icon && alignIcon === 'end' && iconContent(icon)}
     </span>
   );
 
@@ -111,15 +112,8 @@ function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
   return (
     <a
       {...commonProps}
-      onClick={
-        isDisabled
-          ? (e) => {
-              e.preventDefault();
-            }
-          : commonProps.onClick
-      }
       href={href}
-      {...(isDisabled ? { tabIndex: -1 } : {})}
+      {...(isDisabled ? { tabIndex: -1, 'aria-disabled': true } : {})}
     >
       {commonContent}
     </a>
@@ -128,8 +122,8 @@ function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
 
 _TextLink.displayName = 'TextLink';
 
-export const TextLink: PolymorphicComponent<
+export const TextLink = React.forwardRef(_TextLink) as PolymorphicComponent<
   ExpandProps<TextLinkInternalProps>,
   typeof TEXT_LINK_DEFAULT_TAG,
   'disabled'
-> = React.forwardRef(_TextLink);
+>;
