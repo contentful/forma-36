@@ -2,6 +2,7 @@ import React from 'react';
 import { cx } from '@emotion/css';
 import { type CommonProps, type MarginProps } from '@contentful/f36-core';
 import { getStyles } from './ProgressStepper.styles';
+import type { StepProps } from './Step';
 
 export interface ProgressStepperProps extends CommonProps, MarginProps {
   children: React.ReactNode;
@@ -49,22 +50,23 @@ function _ProgressStepper(
   const hydratedTestId =
     testId || `cf-ui-progress-stepper-${orientation}-${stepStyle}`;
 
-  const stepsToRender = React.Children.toArray(children);
-
   const renderSteps = () => {
-    const steps = stepsToRender.map((child, index) => {
-      const stepChild = React.cloneElement(child as React.ReactElement, {
+    const stepsToRender = React.Children.map(children, (child, index) => {
+      if (!React.isValidElement(child)) {
+        return null;
+      }
+      const { ...childProps }: StepProps = child.props || {};
+      return React.cloneElement(child as React.ReactElement<StepProps>, {
         orientation,
         stepStyle,
         activeStep,
         key: `steps-rendered-${index}`,
         stepNumber: index,
         onClick,
-        ...(child as React.ReactElement).props,
+        ...childProps,
       });
-      return stepChild;
     });
-    return steps;
+    return stepsToRender;
   };
 
   return (
@@ -81,7 +83,7 @@ function _ProgressStepper(
         className={
           orientation === 'horizontal'
             ? styles.horizontalList
-            : styles.verticalList(stepsToRender.length)
+            : styles.verticalList(React.Children.toArray(children).length)
         }
       >
         {renderSteps()}
