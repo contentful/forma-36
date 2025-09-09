@@ -43,7 +43,7 @@ export const AccordionHeader = ({
   const styles = getAccordionHeaderStyles({ align, isExpanded });
 
   return (
-    <Subheading {...rest} testId={testId} marginBottom="none" as={element}>
+    <Subheading testId={testId} {...rest} marginBottom="none" as={element}>
       <button
         type="button"
         aria-expanded={isExpanded}
