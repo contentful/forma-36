@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook, waitFor } from '@testing-library/react';
 import { useImageLoaded } from './useImageLoaded';
 
 describe('useImageLoaded', () => {
@@ -15,19 +15,25 @@ describe('useImageLoaded', () => {
         }
       },
     };
-    const { result, waitForNextUpdate } = renderHook(() =>
-      useImageLoaded({ onLoad }),
-    );
+    const { result } = renderHook(() => useImageLoaded({ onLoad }));
 
     result.current.ref.current = mockImage as HTMLImageElement;
     mockImage.addEventListener('load', result.current.onLoad);
 
     expect(onLoad).not.toHaveBeenCalled();
-    expect(result.current.loaded).toBe(false);
-
-    await waitForNextUpdate();
-
+    await waitFor(
+      () => {
+        expect(result.current.loaded).toBe(false);
+      },
+      { timeout: 5000 },
+    );
     expect(onLoad).toHaveBeenCalledTimes(1);
-    expect(result.current.loaded).toBe(true);
+
+    await waitFor(
+      () => {
+        expect(result.current.loaded).toBe(true);
+      },
+      { timeout: 5000 },
+    );
   });
 });
