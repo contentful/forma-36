@@ -66,6 +66,7 @@ function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
     as,
     className,
     margin = 'none',
+    testId = 'cf-ui-text',
     ...otherProps
   } = props;
   const Element: React.ElementType = as || TEXT_DEFAULT_TAG;
@@ -74,6 +75,7 @@ function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
     <Box
       {...otherProps}
       as={Element}
+      testId={testId}
       className={cx(
         css({
           padding: 0,
