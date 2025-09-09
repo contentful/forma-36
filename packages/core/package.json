@@ -20,10 +20,9 @@
   },
   "dependencies": {
     "@contentful/f36-tokens": "^6.0.0-alpha.0",
-    "@emotion/core": "^10.1.1",
-    "@emotion/is-prop-valid": "^1.2.0",
-    "csstype": "^3.1.1",
-    "@emotion/css": "^11.13.5"
+    "@emotion/css": "^11.13.5",
+    "@emotion/react": "^11.14.0",
+    "csstype": "^3.1.1"
   },
   "peerDependencies": {
     "react": ">=19.1.0",
