@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 09-09-2025
+
+**F36 Icons** `v5.1.1`
+
+- fix(icons): pin phosphor to version with new names and working ESM build
+
 ## 30-08-2025
 
 `@contentful/f36-components@5.1.0`
