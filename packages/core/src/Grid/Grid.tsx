@@ -83,6 +83,7 @@ function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
     rowGap = 'none',
     rows = 'auto',
     as,
+    ['data-test-id']: testId,
     ...otherProps
   }: GridProps<E>,
   ref: React.Ref<any>,
@@ -101,6 +102,7 @@ function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
 
   return (
     <Element
+      data-test-id={testId}
       {...boxProps}
       className={cx(
         css({
