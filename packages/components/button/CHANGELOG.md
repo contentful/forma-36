@@ -1,5 +1,14 @@
 # Change Log
 
+## 5.2.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.2.0
+  - @contentful/f36-spinner@5.2.0
+  - @contentful/f36-tooltip@5.2.0
+
 ## 5.1.1
 
 ### Patch Changes
