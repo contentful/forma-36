@@ -57,7 +57,7 @@ function _NavList<E extends React.ElementType = typeof NAV_LIST_DEFAULT_TAG>(
 
 _NavList.displayName = 'NavList';
 
-export const NavList: PolymorphicComponent<
+export const NavList = React.forwardRef(_NavList) as PolymorphicComponent<
   ExpandProps<NavListInternalProps>,
   typeof NAV_LIST_DEFAULT_TAG
-> = React.forwardRef(_NavList);
+>;
