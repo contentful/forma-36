@@ -74,8 +74,8 @@ export function _Icon<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
     testId = 'cf-ui-icon',
     viewBox = '0 0 20 20',
     isActive,
-    ariaLabel,
-    ariaLabelledBy,
+    'aria-label': ariaLabel,
+    'aria-labelledBy': ariaLabelledBy,
     ...otherProps
   } = props;
   const shared = {
@@ -87,8 +87,8 @@ export function _Icon<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
       }),
       className,
     ),
+    ['data-test-id']: testId,
     ref: forwardedRef,
-    testId,
     role,
   };
 
@@ -96,7 +96,7 @@ export function _Icon<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
 
   return (
     <Element
-      viewBox={Element === typeof ICON_DEFAULT_TAG ? viewBox : undefined}
+      viewBox={Element === ICON_DEFAULT_TAG ? viewBox : undefined}
       display="inline-block"
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
