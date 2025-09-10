@@ -96,7 +96,7 @@ function _FormLabel<
 
 _FormLabel.displayName = 'FormLabel';
 
-export const FormLabel: PolymorphicComponent<
+export const FormLabel = forwardRef(_FormLabel) as PolymorphicComponent<
   ExpandProps<FormLabelInternalProps>,
   typeof FORM_LABEL_DEFAULT_TAG
-> = forwardRef(_FormLabel);
+>;
