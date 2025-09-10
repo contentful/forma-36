@@ -79,7 +79,9 @@ function _FormControl<
 
 _FormControl.displayName = 'FormControl';
 
-export const FormControl: PolymorphicComponent<
+export const FormControl = React.forwardRef(
+  _FormControl,
+) as PolymorphicComponent<
   ExpandProps<FormControlInternalProps>,
   typeof FORM_CONTROL_DEFAULT_TAG
-> = React.forwardRef(_FormControl);
+>;

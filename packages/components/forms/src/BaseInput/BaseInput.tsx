@@ -159,8 +159,8 @@ function _BaseInput<E extends React.ElementType = typeof INPUT_DEFAULT_TAG>(
 
 _BaseInput.displayName = 'BaseInput';
 
-export const BaseInput: PolymorphicComponent<
+export const BaseInput = React.forwardRef(_BaseInput) as PolymorphicComponent<
   ExpandProps<BaseInputInternalProps>,
   typeof INPUT_DEFAULT_TAG,
   'disabled'
-> = React.forwardRef(_BaseInput);
+>;
