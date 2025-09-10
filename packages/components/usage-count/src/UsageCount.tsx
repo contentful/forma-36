@@ -14,10 +14,10 @@ import { Caption, DisplayText, Text } from '@contentful/f36-typography';
  * - periodic: e.g. "10 GB / month"
  * - entitlement: e.g. "10 GB / 100 GB included"
  * - consumption: e.g. "150 consumption units per year". Consumption is used for InfoCard.
- * "valueDescription" is commonly used for InfoCard.
- * valueDescription cannot be used together with periodType and quota.
+ * "valueDescription" is commonly used for InfoCard. valueDescription cannot be used together with periodType and quota.
  * "periodType" is used for Periodic usages, e.g. "10 GB / month". Commonly used for UsageCard.
  * "quota" is used for Entitlement usages, e.g. "100 GB included". Commonly used for UsageCard.
+ * "includedLabel" is used for entitlement usages to add the word "included" after the quota, e.g. "100 GB included".
  */
 
 export type Variant = 'consumption' | 'periodic' | 'entitlement';
@@ -28,21 +28,21 @@ type usageCountType =
       periodType?: never;
       quota?: never;
       variant: PickUnion<Variant, 'consumption'>;
-      includedWord?: boolean;
+      includedLabel?: string;
     }
   | {
       valueDescription?: never;
       periodType: 'month' | 'year';
       quota?: never;
       variant: PickUnion<Variant, 'periodic'>;
-      includedWord?: boolean;
+      includedLabel?: string;
     }
   | {
       valueDescription?: never;
       periodType?: never;
       quota: number;
       variant: PickUnion<Variant, 'entitlement'>;
-      includedWord?: boolean;
+      includedLabel?: string;
     };
 
 export type UsageCountProps = {
@@ -62,7 +62,7 @@ function _UsageCount(props: UsageCountProps, ref: React.Ref<HTMLDivElement>) {
     quota,
     className,
     testId = 'cf-ui-usage-count',
-    includedWord = false,
+    includedLabel,
     ...otherProps
   } = props;
   const styles = getUsageCountStyles();
@@ -71,7 +71,7 @@ function _UsageCount(props: UsageCountProps, ref: React.Ref<HTMLDivElement>) {
     <Caption className={styles.captionText}>
       / {quota}
       {valueUnit && ` ${valueUnit}`}
-      {includedWord && ' included'}
+      {includedLabel && ` ${includedLabel}`}
     </Caption>
   );
 

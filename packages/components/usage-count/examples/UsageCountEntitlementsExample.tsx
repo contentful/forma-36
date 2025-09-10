@@ -9,7 +9,7 @@ export default function UsageCountExample() {
       value={150}
       valueUnit="GB"
       quota={200}
-      includedWord={true}
+      includedLabel="included"
     />
   );
 }

@@ -35,7 +35,7 @@ describe('UsageCount', function () {
         value={150}
         valueUnit="GB"
         quota={100}
-        includedWord={true}
+        includedLabel="included"
       />,
     );
 

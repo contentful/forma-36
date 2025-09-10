@@ -26,9 +26,9 @@ export default {
         type: 'number',
       },
     },
-    includedWord: {
+    includedLabel: {
       control: {
-        type: 'boolean',
+        type: 'text',
       },
     },
     valueUnit: {
@@ -43,7 +43,7 @@ export const Entitlements: Story<UsageCountProps> = ({
   valueUnit,
   value,
   quota,
-  includedWord,
+  includedLabel,
 }) => {
   return (
     <UsageCount
@@ -51,7 +51,7 @@ export const Entitlements: Story<UsageCountProps> = ({
       value={value || 150}
       valueUnit={valueUnit || 'GB'}
       quota={quota || 200}
-      includedWord={includedWord}
+      includedLabel={includedLabel}
     />
   );
 };
