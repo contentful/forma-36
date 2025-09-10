@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Segmentation } from './Segmentation';
-import { Button } from '@contentful/f36-components';
+import { Button } from '@contentful/f36-button';
 
 describe('Segmentation', function () {
   it('renders text', () => {
