@@ -134,14 +134,17 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
     >
       {showViewPerPage && (
         <Stack>
-          <Text fontColor="gray500">{viewPerPageLabel}</Text>
+          <Text as="label" htmlFor="perPageViewSelect" fontColor="gray500">
+            {viewPerPageLabel}
+          </Text>
           <Select
+            id="perPageViewSelect"
             value={`${itemsPerPage}`}
-            onChange={(e) =>
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
               onViewPerPageChange && onViewPerPageChange(+e.target.value)
             }
           >
-            {viewPerPageOptions.map((option) => (
+            {viewPerPageOptions.map((option: number) => (
               <Select.Option key={option} value={option}>
                 {option}
               </Select.Option>
