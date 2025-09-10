@@ -67,6 +67,7 @@ function _NavListItem<
       data-test-id={itemTestId}
       tabIndex={isDisabled ? -1 : 0}
       disabled={isDisabled}
+      aria-disabled={isDisabled}
     >
       {props.children}
     </Element>
@@ -75,7 +76,9 @@ function _NavListItem<
 
 _NavListItem.displayName = 'NavListItem';
 
-export const NavListItem: PolymorphicComponent<
+export const NavListItem = React.forwardRef(
+  _NavListItem,
+) as PolymorphicComponent<
   ExpandProps<NavListItemInternalProps>,
   typeof NAV_LIST_ITEM_DEFAULT_TAG
-> = React.forwardRef(_NavListItem);
+>;
