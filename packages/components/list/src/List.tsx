@@ -53,7 +53,7 @@ function _List<E extends React.ElementType = typeof LIST_DEFAULT_TAG>(
 
 _List.displayName = 'List';
 
-export const List: PolymorphicComponent<
+export const List = React.forwardRef(_List) as PolymorphicComponent<
   ExpandProps<ListInternalProps>,
   typeof LIST_DEFAULT_TAG
-> = React.forwardRef(_List);
+>;
