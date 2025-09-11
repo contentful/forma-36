@@ -26,6 +26,11 @@ export default {
         type: 'number',
       },
     },
+    includedLabel: {
+      control: {
+        type: 'text',
+      },
+    },
     valueUnit: {
       control: {
         type: 'text',
@@ -38,6 +43,7 @@ export const Entitlements: Story<UsageCountProps> = ({
   valueUnit,
   value,
   quota,
+  includedLabel,
 }) => {
   return (
     <UsageCount
@@ -45,6 +51,7 @@ export const Entitlements: Story<UsageCountProps> = ({
       value={value || 150}
       valueUnit={valueUnit || 'GB'}
       quota={quota || 200}
+      includedLabel={includedLabel}
     />
   );
 };
