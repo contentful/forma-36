@@ -12,6 +12,7 @@ import {
   SortDescendingIcon,
   CaretUpDownIcon,
 } from '@contentful/f36-icons';
+import tokens from '@contentful/f36-tokens';
 import { getTextFromChildren } from '@contentful/f36-utils';
 
 import { useTableCellContext } from './TableCellContext';
@@ -102,13 +103,13 @@ function _TableCell(
       >
         {children}
         {sortDirection ? (
-          <SortingIcon size="tiny" variant="secondary" />
+          <SortingIcon size="tiny" color={tokens.gray900} />
         ) : (
           <CaretUpDownIcon
             aria-hidden={!showSorting}
             className={styles.sortIcon(showSorting)}
             size="tiny"
-            variant="secondary"
+            color={tokens.gray900}
           />
         )}
       </button>
