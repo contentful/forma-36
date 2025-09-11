@@ -1,5 +1,17 @@
 # @contentful/f36-usage-count
 
+## 5.3.0
+
+### Minor Changes
+
+- [#3172](https://github.com/contentful/forma-36/pull/3172) [`905bd6c`](https://github.com/contentful/forma-36/commit/905bd6c02a4df53b1682c17845d0c435204c8c72) Thanks [@0math](https://github.com/0math)! - Adds includedLabel prop to UsageCount; Fixes tooltip type in UsageCard
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.3.0
+  - @contentful/f36-typography@5.3.0
+
 ## 5.2.0
 
 ### Patch Changes
