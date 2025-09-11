@@ -65,7 +65,6 @@ function _Segmentation<E extends ElementType = typeof SEGMENTATION_DEFAULT_TAG>(
       className={cx(styles.root, className)}
       ref={forwardedRef}
       testId={testId}
-      {...otherProps}
     >
       {children
         ? React.Children.toArray(children).map(mapSegments)
@@ -74,7 +73,7 @@ function _Segmentation<E extends ElementType = typeof SEGMENTATION_DEFAULT_TAG>(
   );
 }
 
-export const Segmentation: PolymorphicComponent<
+export const Segmentation = forwardRef(_Segmentation) as PolymorphicComponent<
   ExpandProps<SegmentationInternalProps>,
   typeof SEGMENTATION_DEFAULT_TAG
-> = forwardRef(_Segmentation);
+>;
