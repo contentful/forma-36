@@ -1,5 +1,15 @@
 # Change Log
 
+## 5.4.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.4.0
+  - @contentful/f36-image@5.4.0
+  - @contentful/f36-menu@5.4.0
+  - @contentful/f36-tooltip@5.4.0
+
 ## 5.3.0
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @contentful/f36-usage-count
 
+## 5.4.0
+
+### Minor Changes
+
+- [#3177](https://github.com/contentful/forma-36/pull/3177) [`0d8d0b7`](https://github.com/contentful/forma-36/commit/0d8d0b7eba21f39e7efec6aeea0041c471af6672) Thanks [@0math](https://github.com/0math)! - Makes quota of type string and number
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.4.0
+  - @contentful/f36-typography@5.4.0
+
 ## 5.3.0
 
 ### Minor Changes
