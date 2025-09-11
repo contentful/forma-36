@@ -1,5 +1,27 @@
 # Change Log
 
+## 5.2.0
+
+### Minor Changes
+
+- [#3174](https://github.com/contentful/forma-36/pull/3174) [`231660d`](https://github.com/contentful/forma-36/commit/231660d02a9e4f30bf9ad7fbbd2b69b591f3fc00) Thanks [@andipaetzold](https://github.com/andipaetzold)! - Add `GlobeXIcon`
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.2.0
+  - @contentful/f36-icon@5.2.0
+
+## 5.1.1
+
+### Patch Changes
+
+- [#3170](https://github.com/contentful/forma-36/pull/3170) [`6156a58`](https://github.com/contentful/forma-36/commit/6156a58a25edfd12edd158f95e41154b6a5a4663) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(icons): pin phosphor to version with new names and working ESM build
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.1.1
+  - @contentful/f36-icon@5.1.1
+
 ## 5.1.0
 
 ### Minor Changes

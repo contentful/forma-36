@@ -1,5 +1,99 @@
 # Change Log
 
+## 5.2.0
+
+### Patch Changes
+
+- Updated dependencies [[`231660d`](https://github.com/contentful/forma-36/commit/231660d02a9e4f30bf9ad7fbbd2b69b591f3fc00)]:
+  - @contentful/f36-icons@5.2.0
+  - @contentful/f36-accordion@5.2.0
+  - @contentful/f36-asset@5.2.0
+  - @contentful/f36-autocomplete@5.2.0
+  - @contentful/f36-avatar@5.2.0
+  - @contentful/f36-badge@5.2.0
+  - @contentful/f36-button@5.2.0
+  - @contentful/f36-card@5.2.0
+  - @contentful/f36-collapse@5.2.0
+  - @contentful/f36-copybutton@5.2.0
+  - @contentful/f36-core@5.2.0
+  - @contentful/f36-datetime@5.2.0
+  - @contentful/f36-datepicker@5.2.0
+  - @contentful/f36-drag-handle@5.2.0
+  - @contentful/f36-entity-list@5.2.0
+  - @contentful/f36-empty-state@5.2.0
+  - @contentful/f36-forms@5.2.0
+  - @contentful/f36-header@5.2.0
+  - @contentful/f36-icon@5.2.0
+  - @contentful/f36-image@5.2.0
+  - @contentful/f36-layout@5.2.0
+  - @contentful/f36-list@5.2.0
+  - @contentful/f36-menu@5.2.0
+  - @contentful/f36-modal@5.2.0
+  - @contentful/f36-multiselect@5.2.0
+  - @contentful/f36-navlist@5.2.0
+  - @contentful/f36-note@5.2.0
+  - @contentful/f36-notification@5.2.0
+  - @contentful/f36-pagination@5.2.0
+  - @contentful/f36-pill@5.2.0
+  - @contentful/f36-progress-stepper@5.2.0
+  - @contentful/f36-popover@5.2.0
+  - @contentful/f36-skeleton@5.2.0
+  - @contentful/f36-spinner@5.2.0
+  - @contentful/f36-table@5.2.0
+  - @contentful/f36-tabs@5.2.0
+  - @contentful/f36-text-link@5.2.0
+  - @contentful/f36-tooltip@5.2.0
+  - @contentful/f36-typography@5.2.0
+  - @contentful/f36-usage-card@5.2.0
+  - @contentful/f36-usage-count@5.2.0
+
+## 5.1.1
+
+### Patch Changes
+
+- Updated dependencies [[`6156a58`](https://github.com/contentful/forma-36/commit/6156a58a25edfd12edd158f95e41154b6a5a4663)]:
+  - @contentful/f36-icons@5.1.1
+  - @contentful/f36-accordion@5.1.1
+  - @contentful/f36-asset@5.1.1
+  - @contentful/f36-autocomplete@5.1.1
+  - @contentful/f36-avatar@5.1.1
+  - @contentful/f36-badge@5.1.1
+  - @contentful/f36-button@5.1.1
+  - @contentful/f36-card@5.1.1
+  - @contentful/f36-collapse@5.1.1
+  - @contentful/f36-copybutton@5.1.1
+  - @contentful/f36-core@5.1.1
+  - @contentful/f36-datetime@5.1.1
+  - @contentful/f36-datepicker@5.1.1
+  - @contentful/f36-drag-handle@5.1.1
+  - @contentful/f36-entity-list@5.1.1
+  - @contentful/f36-empty-state@5.1.1
+  - @contentful/f36-forms@5.1.1
+  - @contentful/f36-header@5.1.1
+  - @contentful/f36-icon@5.1.1
+  - @contentful/f36-image@5.1.1
+  - @contentful/f36-layout@5.1.1
+  - @contentful/f36-list@5.1.1
+  - @contentful/f36-menu@5.1.1
+  - @contentful/f36-modal@5.1.1
+  - @contentful/f36-multiselect@5.1.1
+  - @contentful/f36-navlist@5.1.1
+  - @contentful/f36-note@5.1.1
+  - @contentful/f36-notification@5.1.1
+  - @contentful/f36-pagination@5.1.1
+  - @contentful/f36-pill@5.1.1
+  - @contentful/f36-progress-stepper@5.1.1
+  - @contentful/f36-popover@5.1.1
+  - @contentful/f36-skeleton@5.1.1
+  - @contentful/f36-spinner@5.1.1
+  - @contentful/f36-table@5.1.1
+  - @contentful/f36-tabs@5.1.1
+  - @contentful/f36-text-link@5.1.1
+  - @contentful/f36-tooltip@5.1.1
+  - @contentful/f36-typography@5.1.1
+  - @contentful/f36-usage-card@5.1.1
+  - @contentful/f36-usage-count@5.1.1
+
 ## 5.1.0
 
 ### Minor Changes
