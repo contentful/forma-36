@@ -40,7 +40,7 @@ type usageCountType =
   | {
       valueDescription?: never;
       periodType?: never;
-      quota: number;
+      quota: number | string;
       variant: PickUnion<Variant, 'entitlement'>;
       includedLabel?: string;
     };
