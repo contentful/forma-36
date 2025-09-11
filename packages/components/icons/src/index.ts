@@ -136,6 +136,7 @@ export * from './vendor/phosphor/GearSixIcon.js';
 export * from './vendor/phosphor/GiftIcon.js';
 export * from './vendor/phosphor/GithubLogoIcon.js';
 export * from './vendor/phosphor/GlobeIcon.js';
+export * from './vendor/phosphor/GlobeXIcon.js';
 export * from './vendor/phosphor/GridFourIcon.js';
 export * from './vendor/phosphor/HashStraightIcon.js';
 export * from './vendor/phosphor/HeartStraightIcon.js';
