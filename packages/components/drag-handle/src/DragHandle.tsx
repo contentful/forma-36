@@ -168,8 +168,8 @@ function _DragHandle<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
   );
 }
 
-export const DragHandle: PolymorphicComponent<
+export const DragHandle = React.forwardRef(_DragHandle) as PolymorphicComponent<
   ExpandProps<DragHandleInternalProps>,
   typeof DRAG_HANDLE_DEFAULT_TAG,
   'disabled'
-> = React.forwardRef(_DragHandle);
+>;
