@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 11-09-2025
+
+**F36 Icons** `v5.2.0`
+
+- Add `GlobeXIcon`
+
 ## 09-09-2025
 
 **F36 Icons** `v5.1.1`
