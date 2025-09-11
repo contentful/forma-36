@@ -144,7 +144,7 @@ function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
   );
 }
 
-export const Header: PolymorphicComponent<
+export const Header = forwardRef(_Header) as PolymorphicComponent<
   ExpandProps<HeaderInternalProps>,
   typeof HEADER_DEFAULT_TAG
-> = forwardRef(_Header);
+>;
