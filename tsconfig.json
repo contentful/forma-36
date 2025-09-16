@@ -17,7 +17,7 @@
     "resolveJsonModule": true,
     "module": "esnext",
     // Search under node_modules for non-relative imports.
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     // Process & infer types from .js files.
     "allowJs": true,
     // Don't emit; allow Babel to transform files.
