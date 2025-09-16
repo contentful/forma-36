@@ -6,8 +6,8 @@ import type {
   ExpandProps,
 } from '@contentful/f36-core';
 import { usePopoverContext } from '../PopoverContext';
-import { Portal } from '@contentful/f36-utils';
 import { getPopoverContentStyles } from './PopoverContent.styles';
+import { FloatingPortal } from '@floating-ui/react';
 
 interface PopoverContentInternalProps extends CommonProps {
   children?: React.ReactNode;
@@ -18,7 +18,10 @@ export type PopoverContentProps = PropsWithHTMLElement<
   'div'
 >;
 
-const _PopoverContent = (props: ExpandProps<PopoverContentProps>, ref) => {
+const _PopoverContent = (
+  props: ExpandProps<PopoverContentProps>,
+  propRef: React.Ref<any>,
+) => {
   const {
     children,
     className,
@@ -26,15 +29,13 @@ const _PopoverContent = (props: ExpandProps<PopoverContentProps>, ref) => {
     role = 'dialog',
     ...otherProps
   } = props;
-  const { isOpen, renderOnlyWhenOpen, getPopoverProps, usePortal } =
-    usePopoverContext();
+  const { isOpen, renderOnlyWhenOpen, usePortal } = usePopoverContext();
 
   const styles = getPopoverContentStyles(isOpen);
 
   const content = (
     <div
       {...otherProps}
-      {...getPopoverProps(otherProps, ref)}
       className={cx(styles.container, className)}
       data-test-id={testId}
       tabIndex={-1}
@@ -51,7 +52,7 @@ const _PopoverContent = (props: ExpandProps<PopoverContentProps>, ref) => {
     return null;
   }
 
-  return usePortal ? <Portal>{content}</Portal> : content;
+  return usePortal ? <FloatingPortal>{content}</FloatingPortal> : content;
 };
 
 export const PopoverContent = React.forwardRef(_PopoverContent);
