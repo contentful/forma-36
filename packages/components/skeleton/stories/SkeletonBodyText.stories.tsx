@@ -11,16 +11,18 @@ export default {
   },
 };
 
-export const Basic = (args: SkeletonBodyTextProps) => (
-  <Skeleton.Container>
-    <Skeleton.BodyText {...args} />
-  </Skeleton.Container>
-);
+export const Basic = {
+  render: (args: SkeletonBodyTextProps) => (
+    <Skeleton.Container>
+      <Skeleton.BodyText {...args} />
+    </Skeleton.Container>
+  ),
 
-Basic.args = {
-  numberOfLines: 2,
-  offsetTop: 0,
-  offsetLeft: 0,
-  lineHeight: 16,
-  marginBottom: 8,
+  args: {
+    numberOfLines: 2,
+    offsetTop: 0,
+    offsetLeft: 0,
+    lineHeight: 16,
+    marginBottom: 8,
+  },
 };
