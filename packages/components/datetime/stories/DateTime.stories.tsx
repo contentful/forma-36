@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryFn, StoryObj, Meta } from '@storybook/react-vite';
 import { Flex, Grid } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
@@ -17,12 +17,13 @@ export default {
   },
 } as Meta;
 
-export const Basic: Story<DateTimeProps> = (args) => <DateTime {...args} />;
-Basic.args = {
-  date: '2020-08-17T15:45:00',
+export const Basic: StoryObj<DateTimeProps> = {
+  args: {
+    date: '2020-08-17T15:45:00',
+  },
 };
 
-export const Overview: Story<DateTimeProps> = () => {
+export const Overview: StoryFn<DateTimeProps> = () => {
   return (
     <Flex flexDirection="column">
       <SectionHeading as="h3" marginBottom="spacingS">

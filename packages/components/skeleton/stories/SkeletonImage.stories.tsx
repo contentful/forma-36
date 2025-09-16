@@ -12,17 +12,19 @@ export default {
   argTypes: {},
 };
 
-export const Basic = (args: SkeletonImageProps) => (
-  <Skeleton.Container>
-    <Skeleton.Image {...args} />
-  </Skeleton.Container>
-);
+export const Basic = {
+  render: (args: SkeletonImageProps) => (
+    <Skeleton.Container>
+      <Skeleton.Image {...args} />
+    </Skeleton.Container>
+  ),
 
-Basic.args = {
-  width: 50,
-  height: 50,
-  offsetTop: 0,
-  offsetLeft: 0,
-  radiusX: 0,
-  radiusY: 0,
+  args: {
+    width: 50,
+    height: 50,
+    offsetTop: 0,
+    offsetLeft: 0,
+    radiusX: 0,
+    radiusY: 0,
+  },
 };
