@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryFn, StoryObj, Meta } from '@storybook/react-vite';
 import { Flex, Grid } from '@contentful/f36-core';
 import { SectionHeading, Paragraph } from '@contentful/f36-typography';
 
@@ -20,23 +20,22 @@ export default {
   },
 } as Meta;
 
-export const Basic: Story<RelativeDateTimeProps> = (args) => (
-  <RelativeDateTime {...args} />
-);
-Basic.args = {
-  date: '2021-08-17T15:45:00+02:00',
-  baseDate: '2021-08-16T15:45:00+02:00',
+export const Basic: StoryObj<RelativeDateTimeProps> = {
+  args: {
+    date: '2021-08-17T15:45:00+02:00',
+    baseDate: '2021-08-16T15:45:00+02:00',
+  },
 };
 
-export const WithDateBeforeBaseDate: Story<RelativeDateTimeProps> = () => (
+export const WithDateBeforeBaseDate: StoryFn<RelativeDateTimeProps> = () => (
   <RelativeDateTime date="2021-08-10 12:00:00" baseDate="2021-08-20 12:00:00" />
 );
 
-export const WithDateAfterBaseDate: Story<RelativeDateTimeProps> = () => (
+export const WithDateAfterBaseDate: StoryFn<RelativeDateTimeProps> = () => (
   <RelativeDateTime date="2021-08-20 12:00:00" baseDate="2021-08-10 12:00:00" />
 );
 
-export const Overview: Story<RelativeDateTimeProps> = () => {
+export const Overview: StoryFn<RelativeDateTimeProps> = () => {
   return (
     <Flex flexDirection="column">
       <Paragraph marginBottom="spacingL">
