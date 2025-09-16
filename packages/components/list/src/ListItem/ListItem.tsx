@@ -1,4 +1,4 @@
-import { cx, css } from 'emotion';
+import { cx, css } from '@emotion/css';
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
 import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';

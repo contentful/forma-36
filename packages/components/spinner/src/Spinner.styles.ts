@@ -1,4 +1,4 @@
-import { css, keyframes } from 'emotion';
+import { css, keyframes } from '@emotion/css';
 import type { SpinnerSize } from './types';
 
 const sizes: { [key in SpinnerSize]: string } = {
