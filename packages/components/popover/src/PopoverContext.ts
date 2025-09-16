@@ -1,22 +1,15 @@
 import React, { HTMLProps } from 'react';
+import { usePopover } from './usePopover';
 
-export type PopoverContextType = {
-  isOpen: boolean;
-  usePortal: boolean;
-  renderOnlyWhenOpen: boolean;
-  getPopoverProps: (
-    _props: HTMLProps<HTMLDivElement>,
-    _ref: React.Ref<HTMLDivElement>,
-  ) => HTMLProps<HTMLDivElement>;
-  getTriggerProps: (
-    _props: HTMLProps<HTMLElement>,
-    _ref: React.Ref<HTMLElement>,
-  ) => HTMLProps<HTMLElement>;
-};
-
-const PopoverContext = React.createContext<PopoverContextType | undefined>(
-  undefined,
-);
+export type PopoverContextType =
+  | (ReturnType<typeof usePopover> & {
+      setLabelId: React.Dispatch<React.SetStateAction<string | undefined>>;
+      setDescriptionId: React.Dispatch<
+        React.SetStateAction<string | undefined>
+      >;
+    })
+  | null;
+const PopoverContext = React.createContext<PopoverContextType>(null);
 
 export const usePopoverContext = () => {
   const context = React.useContext(PopoverContext);
