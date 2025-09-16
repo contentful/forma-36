@@ -7,7 +7,7 @@ export default create({
   // Branding information
   brandTitle: 'Forma 36',
   brandUrl: '/',
-  brandImage: './public/forma-logo.png',
+  brandImage: './forma-logo.png',
 
   // Color palette
   colorPrimary: tokens.colorPrimary,
