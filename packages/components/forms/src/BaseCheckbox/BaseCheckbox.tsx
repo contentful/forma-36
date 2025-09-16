@@ -97,8 +97,8 @@ function _BaseCheckbox(
   const ariaDescribedBy = isInvalid
     ? `${formFieldId}-validation`
     : helpText
-    ? helpTextId
-    : undefined;
+      ? helpTextId
+      : undefined;
 
   return (
     <Flex alignItems="flex-start" flexDirection="column" className={className}>
