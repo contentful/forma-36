@@ -1,4 +1,4 @@
-import type { StorybookConfig } from '@storybook/nextjs-vite';
+import type { StorybookConfig } from '@storybook/react-vite';
 
 import { join, dirname } from 'path';
 
@@ -10,15 +10,18 @@ function getAbsolutePath(value: string): any {
   return dirname(require.resolve(join(value, 'package.json')));
 }
 const config: StorybookConfig = {
-  stories: ['./docs/**/*.stories.mdx', '../../packages/**/*.stories.@(ts|md)x'],
+  stories: [
+    './docs/**/*.stories.mdx',
+    '../../packages/**/*.stories.@(mdx|tsx|ts|jsx|js)',
+  ],
   addons: [
     getAbsolutePath('@chromatic-com/storybook'),
     getAbsolutePath('@storybook/addon-docs'),
-    getAbsolutePath('@storybook/addon-onboarding'),
     getAbsolutePath('@storybook/addon-a11y'),
+    getAbsolutePath('@storybook/addon-vitest'),
   ],
   framework: {
-    name: getAbsolutePath('@storybook/nextjs-vite'),
+    name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
   typescript: {
