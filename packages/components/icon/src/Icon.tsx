@@ -5,14 +5,12 @@ import React, {
   type SVGAttributes,
 } from 'react';
 import {
-  Box,
   type CommonProps,
   type PolymorphicComponent,
   type PolymorphicProps,
   type ExpandProps,
-  type MappedOmit,
 } from '@contentful/f36-core';
-import type { IconComponent, IconSize } from './types.js';
+import type { IconSize } from './types.js';
 
 const ICON_DEFAULT_TAG = 'svg';
 
@@ -96,7 +94,6 @@ export function _Icon<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
 
   return (
     <Element
-      viewBox={Element === ICON_DEFAULT_TAG ? viewBox : undefined}
       display="inline-block"
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
