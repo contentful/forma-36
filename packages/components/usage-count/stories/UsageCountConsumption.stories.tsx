@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryObj, Meta } from '@storybook/react-vite';
 
 import { UsageCount, type UsageCountProps } from '../src/UsageCount';
 
@@ -26,15 +26,15 @@ export default {
   },
 } as Meta<UsageCountProps>;
 
-export const Consumption: Story<UsageCountProps> = ({
-  valueDescription,
-  value,
-}) => {
-  return (
-    <UsageCount
-      variant="consumption"
-      value={value || 150}
-      valueDescription={valueDescription || 'consumption units per year'}
-    />
-  );
+export const Consumption: StoryObj<UsageCountProps> = {
+  render: (args) => {
+    const { valueDescription, value } = args;
+    return (
+      <UsageCount
+        variant="consumption"
+        value={value || 150}
+        valueDescription={valueDescription || 'consumption units per year'}
+      />
+    );
+  },
 };

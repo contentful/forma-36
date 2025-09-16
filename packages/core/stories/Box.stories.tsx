@@ -53,13 +53,15 @@ interface Args extends BoxInternalProps {
   exampleBoxesNumber: number;
 }
 
-export const Basic = ({ exampleBoxesNumber, ...args }: Args) => (
-  <Box as="article" {...args}>
-    <DemoBox times={exampleBoxesNumber} />
-  </Box>
-);
+export const Basic = {
+  render: ({ exampleBoxesNumber, ...args }: Args) => (
+    <Box as="article" {...args}>
+      <DemoBox times={exampleBoxesNumber} />
+    </Box>
+  ),
 
-Basic.args = {
-  exampleBoxesNumber: 4,
-  margin: 'spacing4Xl',
+  args: {
+    exampleBoxesNumber: 4,
+    margin: 'spacing4Xl',
+  },
 };

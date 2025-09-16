@@ -14,50 +14,50 @@ export default {
   },
 };
 
-export const Basic = (props: ComponentProps<typeof Heading>) => (
-  <Heading {...props} />
-);
-
-Basic.args = {
-  children:
-    'The quick brown fox jumps over the lazy dog like an over-motivated frog',
-  as: 'h1',
+export const Basic = {
+  args: {
+    children:
+      'The quick brown fox jumps over the lazy dog like an over-motivated frog',
+    as: 'h1',
+  },
 };
 
-export const WithDensitySupport = (props: ComponentProps<typeof Heading>) => {
-  const Densities = [
-    {
-      name: 'Low density',
-      density: 'low',
-    },
-    {
-      name: 'High density',
-      density: 'high',
-    },
-  ];
+export const WithDensitySupport = {
+  render: (props: ComponentProps<typeof Heading>) => {
+    const Densities = [
+      {
+        name: 'Low density',
+        density: 'low',
+      },
+      {
+        name: 'High density',
+        density: 'high',
+      },
+    ];
 
-  return (
-    <Flex gap="spacing2Xl">
-      {Densities.map((density) => {
-        return (
-          <Flex
-            key={density.name}
-            flexDirection="column"
-            style={{ width: '230px' }}
-          >
-            <Heading>{density.name}</Heading>
-            <DensityProvider value={density.density as Density}>
-              <Heading {...props} />
-            </DensityProvider>
-          </Flex>
-        );
-      })}
-    </Flex>
-  );
-};
+    return (
+      <Flex gap="spacing2Xl">
+        {Densities.map((density) => {
+          return (
+            <Flex
+              key={density.name}
+              flexDirection="column"
+              style={{ width: '230px' }}
+            >
+              <Heading>{density.name}</Heading>
+              <DensityProvider value={density.density as Density}>
+                <Heading {...props} />
+              </DensityProvider>
+            </Flex>
+          );
+        })}
+      </Flex>
+    );
+  },
 
-WithDensitySupport.args = {
-  children:
-    'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
-  as: 'h1',
+  args: {
+    children:
+      'The quick brown fox jumps over the lazy dog like an over-motivated frog.',
+    as: 'h1',
+  },
 };

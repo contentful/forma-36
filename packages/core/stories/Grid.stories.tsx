@@ -45,22 +45,24 @@ interface Args extends GridInternalProps {
   exampleGridHeight: string;
 }
 
-export const Basic = ({ exampleBoxes, exampleGridHeight, ...args }: Args) => {
-  return (
-    <div style={{ width: '90vw' }}>
-      <Grid {...args} style={{ height: exampleGridHeight }}>
-        <DemoBox id="g" times={exampleBoxes} />
-      </Grid>
-    </div>
-  );
-};
+export const Basic = {
+  render: ({ exampleBoxes, exampleGridHeight, ...args }: Args) => {
+    return (
+      <div style={{ width: '90vw' }}>
+        <Grid {...args} style={{ height: exampleGridHeight }}>
+          <DemoBox id="g" times={exampleBoxes} />
+        </Grid>
+      </div>
+    );
+  },
 
-Basic.args = {
-  exampleBoxes: 24,
-  exampleGridHeight: '90vh',
-  columns: 6,
-  rows: 4,
-  columnGap: 'spacingXs',
-  rowGap: 'spacingXs',
-  flow: 'row',
+  args: {
+    exampleBoxes: 24,
+    exampleGridHeight: '90vh',
+    columns: 6,
+    rows: 4,
+    columnGap: 'spacingXs',
+    rowGap: 'spacingXs',
+    flow: 'row',
+  },
 };

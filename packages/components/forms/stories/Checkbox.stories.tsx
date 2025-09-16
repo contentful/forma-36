@@ -13,53 +13,20 @@ export default {
   },
 };
 
-export const Basic = (args: ComponentProps<typeof Checkbox>) => {
-  const [optionOne, setOptionOne] = useState(false);
-  const [optionTwo, setOptionTwo] = useState(false);
+export const Basic = {
+  render: (args: ComponentProps<typeof Checkbox>) => {
+    const [optionOne, setOptionOne] = useState(false);
+    const [optionTwo, setOptionTwo] = useState(false);
 
-  return (
-    <Flex flexDirection="column">
-      <Checkbox
-        {...args}
-        id="Checkbox1"
-        isChecked={optionOne}
-        value="yes"
-        onChange={(e) => setOptionOne((e.target as HTMLInputElement).checked)}
-      />
-      <Checkbox
-        {...args}
-        id="Checkbox2"
-        value="no"
-        isChecked={optionTwo}
-        onChange={(e) => setOptionTwo((e.target as HTMLInputElement).checked)}
-      />
-    </Flex>
-  );
-};
-
-Basic.args = {
-  children: 'some label text',
-  name: 'some name',
-};
-
-export const CheckboxWithCustomLabel = (
-  args: ComponentProps<typeof Checkbox>,
-) => {
-  const [optionOne, setOptionOne] = useState(false);
-  const [optionTwo, setOptionTwo] = useState(false);
-
-  return (
-    <Flex flexDirection="column">
-      <Checkbox
-        {...args}
-        id="Checkbox1"
-        isChecked={optionOne}
-        value="yes"
-        onChange={(e) => setOptionOne((e.target as HTMLInputElement).checked)}
-      >
-        Forma 36 checkbox label
-      </Checkbox>
-      <Flex alignItems="center" gap="spacingXs">
+    return (
+      <Flex flexDirection="column">
+        <Checkbox
+          {...args}
+          id="Checkbox1"
+          isChecked={optionOne}
+          value="yes"
+          onChange={(e) => setOptionOne((e.target as HTMLInputElement).checked)}
+        />
         <Checkbox
           {...args}
           id="Checkbox2"
@@ -67,10 +34,47 @@ export const CheckboxWithCustomLabel = (
           isChecked={optionTwo}
           onChange={(e) => setOptionTwo((e.target as HTMLInputElement).checked)}
         />
-        <div>A custom label</div>
       </Flex>
-    </Flex>
-  );
+    );
+  },
+
+  args: {
+    children: 'some label text',
+    name: 'some name',
+  },
+};
+
+export const CheckboxWithCustomLabel = {
+  render: (args: ComponentProps<typeof Checkbox>) => {
+    const [optionOne, setOptionOne] = useState(false);
+    const [optionTwo, setOptionTwo] = useState(false);
+
+    return (
+      <Flex flexDirection="column">
+        <Checkbox
+          {...args}
+          id="Checkbox1"
+          isChecked={optionOne}
+          value="yes"
+          onChange={(e) => setOptionOne((e.target as HTMLInputElement).checked)}
+        >
+          Forma 36 checkbox label
+        </Checkbox>
+        <Flex alignItems="center" gap="spacingXs">
+          <Checkbox
+            {...args}
+            id="Checkbox2"
+            value="no"
+            isChecked={optionTwo}
+            onChange={(e) =>
+              setOptionTwo((e.target as HTMLInputElement).checked)
+            }
+          />
+          <div>A custom label</div>
+        </Flex>
+      </Flex>
+    );
+  },
 };
 
 export const Indeterminate = () => {
@@ -175,36 +179,38 @@ export const Overview = () => (
   </>
 );
 
-export const WithDensitySupport = (props: ComponentProps<typeof Checkbox>) => {
-  const Densities = [
-    {
-      name: 'Low density',
-      density: 'low',
-    },
-    {
-      name: 'High density',
-      density: 'high',
-    },
-  ];
+export const WithDensitySupport = {
+  render: (props: ComponentProps<typeof Checkbox>) => {
+    const Densities = [
+      {
+        name: 'Low density',
+        density: 'low',
+      },
+      {
+        name: 'High density',
+        density: 'high',
+      },
+    ];
 
-  return (
-    <Flex gap="spacing2Xl">
-      {Densities.map((density) => {
-        return (
-          <Flex
-            key={density.name}
-            flexDirection="column"
-            style={{ width: '230px' }}
-          >
-            <Heading>{density.name}</Heading>
-            <DensityProvider value={density.density as Density}>
-              <Checkbox {...props} name={density.name}>
-                {density.name}
-              </Checkbox>
-            </DensityProvider>
-          </Flex>
-        );
-      })}
-    </Flex>
-  );
+    return (
+      <Flex gap="spacing2Xl">
+        {Densities.map((density) => {
+          return (
+            <Flex
+              key={density.name}
+              flexDirection="column"
+              style={{ width: '230px' }}
+            >
+              <Heading>{density.name}</Heading>
+              <DensityProvider value={density.density as Density}>
+                <Checkbox {...props} name={density.name}>
+                  {density.name}
+                </Checkbox>
+              </DensityProvider>
+            </Flex>
+          );
+        })}
+      </Flex>
+    );
+  },
 };

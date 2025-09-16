@@ -18,32 +18,32 @@ export default {
   },
 };
 
-export const Basic = (props: DisplayTextInternalProps) => (
-  <DisplayText {...props} />
-);
-
-Basic.args = {
-  children: 'Display text',
+export const Basic = {
+  args: {
+    children: 'Display text',
+  },
 };
 
-export const Overview = (props: DisplayTextInternalProps) => (
-  <>
-    <Flex alignItems="center">
-      <Flex marginRight="spacingS">
-        <Paragraph>36</Paragraph>
+export const Overview = {
+  render: (props: DisplayTextInternalProps) => (
+    <>
+      <Flex alignItems="center">
+        <Flex marginRight="spacingS">
+          <Paragraph>36</Paragraph>
+        </Flex>
+        <DisplayText {...props} size="large" />
       </Flex>
-      <DisplayText {...props} size="large" />
-    </Flex>
 
-    <Flex alignItems="center">
-      <Flex marginRight="spacingS">
-        <Paragraph>24</Paragraph>
+      <Flex alignItems="center">
+        <Flex marginRight="spacingS">
+          <Paragraph>24</Paragraph>
+        </Flex>
+        <DisplayText {...props} size="default" />
       </Flex>
-      <DisplayText {...props} size="default" />
-    </Flex>
-  </>
-);
+    </>
+  ),
 
-Overview.args = {
-  children: 'Display text',
+  args: {
+    children: 'Display text',
+  },
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryObj, Meta } from '@storybook/react-vite';
 import * as icons from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
 import { Paragraph, Text } from '@contentful/f36-typography';
@@ -33,12 +33,14 @@ export default {
   },
 } as Meta;
 
-export const Basic: Story<any> = ({ icon, children, ...args }) => {
-  return (
-    <TextLink icon={icon ? <Icon as={icons[icon]} /> : null} {...args}>
-      {children}
-    </TextLink>
-  );
+export const Basic: StoryObj<any> = {
+  render: ({ ...args }) => {
+    return (
+      <TextLink icon={<Icon as={icons['CalendarBlankIcon']} />} {...args}>
+        This is a text link
+      </TextLink>
+    );
+  },
 };
 
 export const UsedWithText = () => {

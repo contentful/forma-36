@@ -10,11 +10,12 @@ export default {
   component: Textarea,
 };
 
-export const Basic = (args: TextareaProps) => <Textarea {...args} />;
-Basic.args = {
-  id: 'textarea',
-  placeholder: 'Placeholder',
-  label: 'My textarea',
+export const Basic = {
+  args: {
+    id: 'textarea',
+    placeholder: 'Placeholder',
+    label: 'My textarea',
+  },
 };
 
 export const UsingRef = () => {

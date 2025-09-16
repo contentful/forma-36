@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryFn, StoryObj, Meta } from '@storybook/react-vite';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading, Text } from '@contentful/f36-typography';
 import { Asset } from '../src/Asset';
@@ -38,19 +38,23 @@ export default {
   title: 'Components/Asset',
 } as Meta;
 
-export const Basic: Story<AssetProps> = (args) => {
-  return <Asset {...args} />;
+export const Basic: StoryObj<AssetProps> = {
+  render: (args) => {
+    return <Asset {...args} />;
+  },
 };
 
-export const WithAnImage: Story<AssetProps> = (args) => {
-  return <Asset {...args} />;
+export const WithAnImage: StoryObj<AssetProps> = {
+  render: (args) => {
+    return <Asset {...args} />;
+  },
+
+  args: {
+    type: 'image',
+  },
 };
 
-WithAnImage.args = {
-  type: 'image',
-};
-
-export const Overview: Story<AssetProps> = () => (
+export const Overview: StoryFn<AssetProps> = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingM">
       <SectionHeading as="h3" marginBottom="spacingS">
