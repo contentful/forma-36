@@ -13,8 +13,8 @@ export default {
   },
 };
 
-export const Basic = (props: TextProps<'span'>) => <Text {...props} />;
-
-Basic.args = {
-  children: 'Text',
+export const Basic = {
+  args: {
+    children: 'Text',
+  },
 };

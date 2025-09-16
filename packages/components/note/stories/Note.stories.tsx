@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryObj, Meta } from '@storybook/react-vite';
 import { Flex } from '@contentful/f36-core';
 import { Paragraph, SectionHeading } from '@contentful/f36-typography';
 import { Note } from '../src/Note';
@@ -19,45 +19,45 @@ export default {
   },
 } as Meta;
 
-export const basic: Story<any> = ({ children, ...args }) => (
-  <Note {...args}>{children}</Note>
-);
+export const basic: StoryObj<any> = {
+  render: ({ ...args }) => (
+    <Note {...args}>
+      A piece of information that is relevant to the context the user is
+      currently in
+    </Note>
+  ),
 
-basic.args = {
-  variant: 'primary',
-  children:
-    'A piece of information that is relevant to the context the user is currently in',
+  args: {
+    variant: 'primary',
+  },
 };
 
-export const withCustomIcon: Story<any> = ({
-  children,
-  icon = 'StarIcon',
-  ...args
-}) => (
-  <Flex fullWidth flexDirection="column">
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Note with custom icon (inheriting the variant color by default)
-    </SectionHeading>
+export const withCustomIcon: StoryObj<any> = {
+  render: ({ ...args }) => (
+    <Flex fullWidth flexDirection="column">
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Note with custom icon (inheriting the variant color by default)
+      </SectionHeading>
 
-    <Flex marginBottom="spacingM">
-      <Note icon={icon && <Icon as={icons[icon]} />} {...args}>
-        {children}
-      </Note>
+      <Flex marginBottom="spacingM">
+        <Note icon={<Icon as={icons['StartIcon']} />} {...args}>
+          A piece of information that is relevant to the context the user is
+          currently i
+        </Note>
+      </Flex>
     </Flex>
-  </Flex>
-);
+  ),
 
-withCustomIcon.args = {
-  variant: 'primary',
-  children:
-    'A piece of information that is relevant to the context the user is currently in',
-};
+  args: {
+    variant: 'primary',
+  },
 
-withCustomIcon.argTypes = {
-  icon: {
-    control: {
-      options: ['', ...Object.keys(icons)],
-      type: 'select',
+  argTypes: {
+    icon: {
+      control: {
+        options: ['', ...Object.keys(icons)],
+        type: 'select',
+      },
     },
   },
 };

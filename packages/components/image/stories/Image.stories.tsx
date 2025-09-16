@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryFn, Meta } from '@storybook/react-vite';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
@@ -10,7 +10,7 @@ export default {
   title: 'Components/Image',
 } as Meta;
 
-export const Overview: Story<ImageProps> = () => {
+export const Overview: StoryFn<ImageProps> = () => {
   return (
     <>
       <Flex flexDirection="column" marginBottom="spacingL">

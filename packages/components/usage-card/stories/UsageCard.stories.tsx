@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryObj, Meta, StoryFn } from '@storybook/react-vite';
 
 import { UsageCardProps } from '../src';
 import { UsageCard } from '../src/CompoundUsageCard';
@@ -16,38 +16,38 @@ interface StoryArgs {
   children?: React.ReactNode;
 }
 
-export const Default: Story<Pick<UsageCardProps, 'variant'> & StoryArgs> = ({
-  variant,
-}) => {
-  return (
-    <UsageCard
-      variant={variant}
-      header={
-        <UsageCard.Header
-          title="Usage Card Header"
-          tooltip="This is a tooltip"
+export const Default: StoryObj<Pick<UsageCardProps, 'variant'> & StoryArgs> = {
+  render: ({ variant }) => {
+    return (
+      <UsageCard
+        variant={variant}
+        header={
+          <UsageCard.Header
+            title="Usage Card Header"
+            tooltip="This is a tooltip"
+          />
+        }
+        description={
+          <UsageCard.Description>
+            This is a description of the usage card.
+            {'  '}
+            <TextLink
+              target="_blank"
+              rel="noopener noreferrer"
+              href={'https://www.contentful.com'}
+            >
+              Learn more
+            </TextLink>
+          </UsageCard.Description>
+        }
+      >
+        <UsageCount
+          variant="periodic"
+          value={150}
+          valueUnit="GB"
+          periodType="year"
         />
-      }
-      description={
-        <UsageCard.Description>
-          This is a description of the usage card.
-          {'  '}
-          <TextLink
-            target="_blank"
-            rel="noopener noreferrer"
-            href={'https://www.contentful.com'}
-          >
-            Learn more
-          </TextLink>
-        </UsageCard.Description>
-      }
-    >
-      <UsageCount
-        variant="periodic"
-        value={150}
-        valueUnit="GB"
-        periodType="year"
-      />
-    </UsageCard>
-  );
+      </UsageCard>
+    );
+  },
 };

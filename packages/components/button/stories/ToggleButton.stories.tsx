@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { Meta } from '@storybook/react/types-6-0';
+import type { Meta } from '@storybook/react-vite';
 import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
 
@@ -28,28 +28,30 @@ export default {
   },
 } as Meta;
 
-export const Basic = ({ icon, children, ...rest }: ToggleButtonProps) => {
-  const [isActive, setIsActive] = useState(false);
+export const Basic = {
+  render: ({ icon, children, ...rest }: ToggleButtonProps) => {
+    const [isActive, setIsActive] = useState(false);
 
-  return (
-    <ToggleButton
-      isActive={isActive}
-      // @ts-expect-error - The icon React Element can't be passed as a string
-      icon={icon && <Icon as={icons[icon]} />}
-      onToggle={() => {
-        setIsActive(!isActive);
-      }}
-      {...rest}
-    >
-      {children}
-    </ToggleButton>
-  );
-};
+    return (
+      <ToggleButton
+        isActive={isActive}
+        // @ts-expect-error - The icon React Element can't be passed as a string
+        icon={icon && <Icon as={icons[icon]} />}
+        onToggle={() => {
+          setIsActive(!isActive);
+        }}
+        {...rest}
+      >
+        {children}
+      </ToggleButton>
+    );
+  },
 
-Basic.args = {
-  isDisabled: false,
-  icon: 'ThumbsUpIcon',
-  children: 'Like',
+  args: {
+    isDisabled: false,
+    icon: 'ThumbsUpIcon',
+    children: 'Like',
+  },
 };
 
 export const Grouped = () => {
@@ -120,67 +122,69 @@ export const GroupedWithOnlyOneActive = () => {
   );
 };
 
-export const Overview = ({ icon, onToggle, ...rest }: ToggleButtonProps) => (
-  <>
-    <Flex flexDirection="column" marginBottom="spacingL">
-      <SectionHeading as="h3" marginBottom="spacingS">
-        Toggle variants
-      </SectionHeading>
+export const Overview = {
+  render: ({ icon, onToggle, ...rest }: ToggleButtonProps) => (
+    <>
+      <Flex flexDirection="column" marginBottom="spacingL">
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Toggle variants
+        </SectionHeading>
 
-      <Stack marginBottom="spacingM" spacing="spacingXs">
-        <ToggleButton onToggle={onToggle} {...rest}>
-          Default
-        </ToggleButton>
+        <Stack marginBottom="spacingM" spacing="spacingXs">
+          <ToggleButton onToggle={onToggle} {...rest}>
+            Default
+          </ToggleButton>
 
-        <ToggleButton isActive onToggle={onToggle} {...rest}>
-          Active
-        </ToggleButton>
+          <ToggleButton isActive onToggle={onToggle} {...rest}>
+            Active
+          </ToggleButton>
 
-        <ToggleButton isDisabled onToggle={onToggle} {...rest}>
-          Disabled
-        </ToggleButton>
-      </Stack>
-    </Flex>
-    <Flex flexDirection="column" marginBottom="spacingL">
-      <SectionHeading as="h3" marginBottom="spacingS">
-        Toggle Button with icon
-      </SectionHeading>
+          <ToggleButton isDisabled onToggle={onToggle} {...rest}>
+            Disabled
+          </ToggleButton>
+        </Stack>
+      </Flex>
+      <Flex flexDirection="column" marginBottom="spacingL">
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Toggle Button with icon
+        </SectionHeading>
 
-      <Stack marginBottom="spacingM" spacing="spacingXs">
-        <ToggleButton
-          onToggle={onToggle}
-          // @ts-expect-error - The icon React Element can't be passed as a string
-          icon={icon && <Icon as={icons[icon]} />}
-          {...rest}
-        >
-          Default
-        </ToggleButton>
+        <Stack marginBottom="spacingM" spacing="spacingXs">
+          <ToggleButton
+            onToggle={onToggle}
+            // @ts-expect-error - The icon React Element can't be passed as a string
+            icon={icon && <Icon as={icons[icon]} />}
+            {...rest}
+          >
+            Default
+          </ToggleButton>
 
-        <ToggleButton
-          onToggle={onToggle}
-          isActive
-          // @ts-expect-error - The icon React Element can't be passed as a string
-          icon={icon && <Icon as={icons[icon]} />}
-          {...rest}
-        >
-          Active
-        </ToggleButton>
+          <ToggleButton
+            onToggle={onToggle}
+            isActive
+            // @ts-expect-error - The icon React Element can't be passed as a string
+            icon={icon && <Icon as={icons[icon]} />}
+            {...rest}
+          >
+            Active
+          </ToggleButton>
 
-        <ToggleButton
-          onToggle={onToggle}
-          isDisabled
-          // @ts-expect-error - The icon React Element can't be passed as a string
-          icon={icon && <Icon as={icons[icon]} />}
-          {...rest}
-        >
-          Disabled
-        </ToggleButton>
-      </Stack>
-    </Flex>
-  </>
-);
+          <ToggleButton
+            onToggle={onToggle}
+            isDisabled
+            // @ts-expect-error - The icon React Element can't be passed as a string
+            icon={icon && <Icon as={icons[icon]} />}
+            {...rest}
+          >
+            Disabled
+          </ToggleButton>
+        </Stack>
+      </Flex>
+    </>
+  ),
 
-Overview.args = {
-  onToggle: action('toggled'),
-  icon: 'EyeIcon',
+  args: {
+    onToggle: action('toggled'),
+    icon: 'EyeIcon',
+  },
 };

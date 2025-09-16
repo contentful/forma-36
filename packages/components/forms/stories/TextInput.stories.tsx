@@ -22,15 +22,17 @@ export default {
   },
 };
 
-export const Basic = (args: TextInputProps) => {
-  return <TextInput {...args} />;
-};
+export const Basic = {
+  render: (args: TextInputProps) => {
+    return <TextInput {...args} />;
+  },
 
-Basic.args = {
-  placeholder: 'this is my placeholder',
-  name: 'Example name',
-  id: 'input-1',
-  size: 'medium',
+  args: {
+    placeholder: 'this is my placeholder',
+    name: 'Example name',
+    id: 'input-1',
+    size: 'medium',
+  },
 };
 
 export const Overview = () => {
