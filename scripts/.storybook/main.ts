@@ -21,5 +21,9 @@ const config: StorybookConfig = {
     name: getAbsolutePath('@storybook/nextjs-vite'),
     options: {},
   },
+  typescript: {
+    check: false,
+    reactDocgen: 'react-docgen-typescript',
+  },
 };
 export default config;
