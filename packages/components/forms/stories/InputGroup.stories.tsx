@@ -17,25 +17,27 @@ export default {
   },
 };
 
-export const Basic = (args: InputGroupProps) => {
-  return (
-    <TextInput.Group {...args}>
-      <TextInput
-        aria-label="Text Input"
-        id="TextInput1"
-        defaultValue="Some value"
-      />
-      <IconButton
-        variant="secondary"
-        icon={<LockSimpleIcon />}
-        aria-label="Lock"
-      />
-    </TextInput.Group>
-  );
-};
+export const Basic = {
+  render: (args: InputGroupProps) => {
+    return (
+      <TextInput.Group {...args}>
+        <TextInput
+          aria-label="Text Input"
+          id="TextInput1"
+          defaultValue="Some value"
+        />
+        <IconButton
+          variant="secondary"
+          icon={<LockSimpleIcon />}
+          aria-label="Lock"
+        />
+      </TextInput.Group>
+    );
+  },
 
-Basic.args = {
-  spacing: 'none',
+  args: {
+    spacing: 'none',
+  },
 };
 
 export const Overview = () => {

@@ -12,12 +12,14 @@ export default {
   argTypes: {},
 };
 
-export const Basic = (args: SkeletonDisplayTextProps) => (
-  <Skeleton.Container>
-    <Skeleton.DisplayText {...args} />
-  </Skeleton.Container>
-);
+export const Basic = {
+  render: (args: SkeletonDisplayTextProps) => (
+    <Skeleton.Container>
+      <Skeleton.DisplayText {...args} />
+    </Skeleton.Container>
+  ),
 
-Basic.args = {
-  numberOfLines: 1,
+  args: {
+    numberOfLines: 1,
+  },
 };
