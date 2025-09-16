@@ -28,5 +28,8 @@ const config: StorybookConfig = {
     check: false,
     reactDocgen: false,
   },
+  core: {
+    builder: '@storybook/builder-vite',
+  },
 };
 export default config;

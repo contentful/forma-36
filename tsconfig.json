@@ -2,7 +2,7 @@
   "compilerOptions": {
     // we can explicitly declare `any`, but we don't want to infer `any`
     "noImplicitAny": false,
-    "target": "ES2020",
+    "target": "ES2022",
     "lib": [
       "dom",
       "dom.iterable",
