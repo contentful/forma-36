@@ -6,25 +6,24 @@ export const getEntityStatusStyles = ({ status }: { status: EntityStatus }) => {
   switch (status) {
     case 'published':
       return {
-        color: tokens.colorGreenBase,
-        backgroundColor: tokens.colorGreenLightest,
+        color: tokens.green600,
+        backgroundColor: tokens.green100,
       };
     case 'changed':
       return {
-        color: tokens.colorBlueBase,
-        backgroundColor: tokens.colorBlueLightest,
+        color: tokens.blue600,
+        backgroundColor: tokens.blue100,
       };
     case 'deleted':
     case 'archived':
       return {
-        color: tokens.colorRedBase,
-        backgroundColor: tokens.colorRedLightest,
+        color: tokens.red600,
+        backgroundColor: tokens.red100,
       };
     case 'draft':
       return {
-        color: tokens.colorOrangeDark,
-        backgroundColor:
-          '#ffefd5' /* temporary hardcoded value until palette improvements */,
+        color: tokens.orange600,
+        backgroundColor: tokens.orange200,
       };
     case 'new':
       return {
@@ -32,8 +31,9 @@ export const getEntityStatusStyles = ({ status }: { status: EntityStatus }) => {
         backgroundColor: tokens.blue500,
       };
     default:
-      // eslint-disable-next-line no-console -- allow this warning until we refactor
-      console.warn(`Unknown EntityStatus: ${status}`);
-      return {};
+      return {
+        color: tokens.blue600,
+        backgroundColor: tokens.blue200,
+      };
   }
 };

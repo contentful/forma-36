@@ -34,19 +34,19 @@ type PropsWithAs<P, E extends React.ElementType> = P & { as?: E };
 export type PropsWithHTMLElement<
   P,
   E extends React.ElementType,
-  OmitAdditionalProps extends keyof any = never,
+  OmitAdditionalProps extends PropertyKey = never,
 > = Overwrite<Omit<React.ComponentPropsWithoutRef<E>, OmitAdditionalProps>, P>;
 
 export type PolymorphicProps<
   P,
   E extends React.ElementType,
-  OmitAdditionalProps extends keyof any = never,
+  OmitAdditionalProps extends PropertyKey = never,
 > = PropsWithAs<PropsWithHTMLElement<P, E, OmitAdditionalProps>, E>;
 
 type PolymorphicPropsWithRef<
   P,
   E extends React.ElementType,
-  OmitAdditionalProps extends keyof any = never,
+  OmitAdditionalProps extends PropertyKey = never,
 > = PropsWithAs<
   Overwrite<Omit<React.ComponentPropsWithRef<E>, OmitAdditionalProps>, P>,
   E
@@ -71,7 +71,7 @@ type PolymorphicPropsWithRef<
 export type PolymorphicComponent<
   P,
   D extends React.ElementType,
-  OmitAdditionalProps extends keyof any = never,
+  OmitAdditionalProps extends PropertyKey = never,
 > = (<E extends React.ElementType = D>(
   props: PolymorphicPropsWithRef<P, E, OmitAdditionalProps>,
 ) => React.ReactElement | null) & {

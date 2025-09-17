@@ -67,7 +67,7 @@ const GRID_DEFAULT_TAG = 'div';
 export type GridProps<E extends React.ElementType = typeof GRID_DEFAULT_TAG> =
   PolymorphicProps<GridInternalProps, E>;
 
-function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
+function GridBase<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
   {
     alignContent,
     alignItems,
@@ -86,7 +86,7 @@ function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
     ['data-test-id']: testId,
     ...otherProps
   }: GridProps<E>,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLElement>,
 ) {
   const handleGridTemplate = (value?: string | number) => {
     if (typeof value === 'number') {
@@ -128,9 +128,9 @@ function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
   );
 }
 
-_Grid.displayName = 'Grid';
+GridBase.displayName = 'Grid';
 
-export const Grid = React.forwardRef(_Grid) as PolymorphicComponent<
+export const Grid = React.forwardRef(GridBase) as PolymorphicComponent<
   ExpandProps<GridInternalProps>,
   typeof GRID_DEFAULT_TAG
 >;
