@@ -121,6 +121,8 @@ export default [
       '@typescript-eslint/no-object-literal-type-assertion': 'off',
       'import/no-default-export': 'off',
       'react/jsx-handler-names': 'off',
+      // Allow looser prototyping inside Storybook stories
+      '@typescript-eslint/no-explicit-any': 'off',
     },
   },
   // JS-only files environment
