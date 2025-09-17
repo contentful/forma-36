@@ -231,7 +231,7 @@ const generateIndex = (paths, extension) => {
   let allTokens = {};
 
   paths.forEach((srcPath) => {
-    const tokens = require(path.resolve(srcPath)); // eslint-disable-line
+    const tokens = require(path.resolve(srcPath));
 
     buildJson(srcPath, tokens);
     buildCssTokens(srcPath, tokens);
