@@ -1,5 +1,13 @@
 # Change Log
 
+## 5.4.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.4.1
+  - @contentful/f36-icons@5.4.1
+
 ## 5.4.0
 
 ### Patch Changes

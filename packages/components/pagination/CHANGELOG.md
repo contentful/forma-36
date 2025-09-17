@@ -1,5 +1,18 @@
 # @contentful/f36-pagination
 
+## 5.4.1
+
+### Patch Changes
+
+- [#3176](https://github.com/contentful/forma-36/pull/3176) [`960f872`](https://github.com/contentful/forma-36/commit/960f8728e17546a154c9fd484ecb995a1cee06b8) Thanks [@Lelith](https://github.com/Lelith)! - Improves the accessibility and the test coverage of the Pagination component
+
+- Updated dependencies []:
+  - @contentful/f36-button@5.4.1
+  - @contentful/f36-core@5.4.1
+  - @contentful/f36-forms@5.4.1
+  - @contentful/f36-icons@5.4.1
+  - @contentful/f36-typography@5.4.1
+
 ## 5.4.0
 
 ### Patch Changes
