@@ -44,7 +44,6 @@ function _Segmentation<E extends ElementType = typeof SEGMENTATION_DEFAULT_TAG>(
     segments,
     separator: SeparatorComponent,
     testId = 'cf-ui-segmentation',
-    ...otherProps
   }: SegmentationProps<E>,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- polymorphic element
   forwardedRef: Ref<any>,

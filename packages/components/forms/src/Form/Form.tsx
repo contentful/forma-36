@@ -8,7 +8,7 @@ import type {
 
 export type FormProps = PropsWithHTMLElement<CommonProps, 'form'>;
 
-function _Form(
+function FormBase(
   {
     children,
     onSubmit,
@@ -38,6 +38,6 @@ function _Form(
   );
 }
 
-_Form.displayName = 'Form';
+FormBase.displayName = 'Form';
 
-export const Form = forwardRef(_Form);
+export const Form = forwardRef(FormBase);

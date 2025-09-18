@@ -9,7 +9,7 @@ export type LayoutSidebarProps = {
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 
-export const _LayoutSidebar = (
+export const LayoutSidebarBase = (
   props: LayoutSidebarProps,
   ref: Ref<HTMLDivElement>,
 ) => {
@@ -35,4 +35,4 @@ export const _LayoutSidebar = (
   );
 };
 
-export const LayoutSidebar = forwardRef(_LayoutSidebar);
+export const LayoutSidebar = forwardRef(LayoutSidebarBase);

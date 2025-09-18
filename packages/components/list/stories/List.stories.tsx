@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryObj, Meta, StoryFn } from '@storybook/react-vite';
+import type { StoryObj, Meta } from '@storybook/react-vite';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
@@ -10,7 +10,7 @@ export default {
   component: List,
   subcomponents: { ListItem: List.Item },
   parameters: {
-    propTypes: [List['__docgenInfo'], List.Item['__docgenInfo']],
+    propTypes: [(List as any)?.__docgenInfo, (List.Item as any)?.__docgenInfo],
   },
   argTypes: {
     as: {
@@ -40,7 +40,7 @@ export const Default: StoryObj<ListProps> = {
   },
 };
 
-export const overview = {
+export const Overview = {
   render: ({ ...args }: ListProps) => (
     <>
       <Flex flexDirection="column" marginBottom="spacingM" fullWidth>

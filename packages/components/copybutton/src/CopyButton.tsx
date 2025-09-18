@@ -55,7 +55,7 @@ export type CopyButtonProps = Omit<
   value: string;
 };
 
-function _CopyButton(
+function CopyButtonBase(
   {
     className,
     isDisabled = false,
@@ -94,6 +94,8 @@ function _CopyButton(
 
       // @ts-expect-error -- The return type of `execCommand` can also be string
       if (result === 'unsuccessful') {
+        // eslint-disable-next-line no-console
+        console.warn(error);
         throw new Error('Unable to copy value', { cause: result });
       }
       input.remove();
@@ -142,6 +144,6 @@ function _CopyButton(
   );
 }
 
-_CopyButton.displayName = 'CopyButton';
+CopyButtonBase.displayName = 'CopyButton';
 
-export const CopyButton = React.forwardRef(_CopyButton);
+export const CopyButton = React.forwardRef(CopyButtonBase);
