@@ -93,9 +93,9 @@ export const Overview: Story = {
 export const DynamicContent = ({ align }: AccordionProps) => {
   const [content, updateContent] = useState(defaultText);
 
-    const addContent = () => {
-      updateContent(content + defaultText);
-    };
+  const addContent = () => {
+    updateContent(content + defaultText);
+  };
 
     return (
       <Flex flexDirection="column" fullWidth>
@@ -128,13 +128,13 @@ export const Controlled = ({ align }: AccordionProps) => {
     3: false,
   });
 
-    const handleExpand = (itemIndex: number) => () => {
-      setAccordionState((state) => ({ ...state, [itemIndex]: true }));
-    };
+  const handleExpand = (itemIndex: number) => () => {
+    setAccordionState((state) => ({ ...state, [itemIndex]: true }));
+  };
 
-    const handleCollapse = (itemIndex: number) => () => {
-      setAccordionState((state) => ({ ...state, [itemIndex]: false }));
-    };
+  const handleCollapse = (itemIndex: number) => () => {
+    setAccordionState((state) => ({ ...state, [itemIndex]: false }));
+  };
 
   return (
     <Accordion align={align}>
