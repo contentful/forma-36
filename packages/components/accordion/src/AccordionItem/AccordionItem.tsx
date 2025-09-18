@@ -57,7 +57,7 @@ const AccordionItemBase = (
   const styles = getAccordionItemStyles({ className });
   const id = useId();
   const { isOpen, handleOpen, handleClose } = useControllableState({
-    isOpen: !!isExpanded,
+    isOpen: isExpanded,
     onOpen: onExpand,
     onClose: onCollapse,
   });
