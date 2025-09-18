@@ -22,7 +22,7 @@ export type DisplayTextProps<
   E extends React.ElementType = typeof DISPLAY_TEXT_DEFAULT_TAG,
 > = PolymorphicProps<DisplayTextInternalProps, E>;
 
-function _DisplayText<
+function DisplayTextBase<
   E extends React.ElementType = typeof DISPLAY_TEXT_DEFAULT_TAG,
 >(
   {
@@ -61,10 +61,10 @@ function _DisplayText<
   );
 }
 
-_DisplayText.displayName = 'DisplayText';
+DisplayTextBase.displayName = 'DisplayText';
 
 export const DisplayText = React.forwardRef(
-  _DisplayText,
+  DisplayTextBase,
 ) as PolymorphicComponent<
   ExpandProps<DisplayTextInternalProps>,
   typeof DISPLAY_TEXT_DEFAULT_TAG

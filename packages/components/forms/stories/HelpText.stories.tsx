@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryObj, Meta, StoryFn } from '@storybook/react-vite';
+import type { StoryObj, Meta } from '@storybook/react-vite';
 
 import { HelpText } from '../src';
 import type { HelpTextInternalProps } from '../src/HelpText/HelpText';

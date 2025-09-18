@@ -94,7 +94,7 @@ async function main() {
 
   releases.forEach(({ displayName, changesets }) => {
     const prevState = content[displayName] || [];
-    // eslint-disable-next-line no-undef -- @todo: fix this
+
     content[displayName] = [...new Set([...prevState, ...changesets])];
   });
 

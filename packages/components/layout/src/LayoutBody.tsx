@@ -9,7 +9,7 @@ export type LayoutBodyProps = {
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 
-const _LayoutBody = (props: LayoutBodyProps, ref: Ref<HTMLDivElement>) => {
+const LayoutBodyBase = (props: LayoutBodyProps, ref: Ref<HTMLDivElement>) => {
   const {
     children,
     className,
@@ -38,4 +38,6 @@ const _LayoutBody = (props: LayoutBodyProps, ref: Ref<HTMLDivElement>) => {
   );
 };
 
-export const LayoutBody = forwardRef(_LayoutBody);
+LayoutBodyBase.displayName = 'LayoutBody';
+
+export const LayoutBody = forwardRef(LayoutBodyBase);
