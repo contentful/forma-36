@@ -23,7 +23,7 @@ export type SectionHeadingProps<
   E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG,
 > = PolymorphicProps<SectionHeadingInternalProps, E>;
 
-function _SectionHeading<
+function SectionHeadingBase<
   E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG,
 >(
   {
@@ -63,10 +63,10 @@ function _SectionHeading<
   );
 }
 
-_SectionHeading.displayName = 'SectionHeading';
+SectionHeadingBase.displayName = 'SectionHeading';
 
 export const SectionHeading = React.forwardRef(
-  _SectionHeading,
+  SectionHeadingBase,
 ) as PolymorphicComponent<
   ExpandProps<SectionHeadingInternalProps>,
   typeof SECTION_HEADING_DEFAULT_TAG

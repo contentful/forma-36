@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Radio, RadioGroupProps } from '../src';
 import { FormControl } from '@contentful/f36-forms';
 

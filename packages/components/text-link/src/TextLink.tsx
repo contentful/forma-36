@@ -10,7 +10,7 @@ import {
 
 import { styles } from './TextLink.styles';
 import { TextLinkVariant } from './types';
-import { IconProps } from '@contentful/f36-icon';
+import type { IconProps } from '@contentful/f36-icon';
 
 const TEXT_LINK_DEFAULT_TAG = 'a';
 
@@ -29,7 +29,7 @@ interface TextLinkInternalProps extends CommonProps {
   /**
    * Expects any of the icon components
    */
-  icon?: React.ReactElement;
+  icon?: React.ReactElement<IconProps>;
   /**
    * Determines the icon position regarding the link text
    * @default start
@@ -46,10 +46,11 @@ export type TextLinkProps<
   E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG,
 > = PolymorphicProps<TextLinkInternalProps, E, 'disabled'>;
 
-function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
-  props: TextLinkProps<E>,
-  ref: React.Ref<any>,
-) {
+type TextLinkElement = HTMLAnchorElement | HTMLButtonElement;
+
+function TextLinkBase<
+  E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG,
+>(props: TextLinkProps<E>, ref: React.Ref<TextLinkElement>) {
   const {
     children,
     className,
@@ -103,7 +104,12 @@ function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
 
   if (as === 'button') {
     return (
-      <button {...commonProps} disabled={isDisabled} type="button">
+      <button
+        {...commonProps}
+        disabled={isDisabled}
+        type="button"
+        ref={ref as React.Ref<HTMLButtonElement>}
+      >
         {commonContent}
       </button>
     );
@@ -112,6 +118,7 @@ function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
   return (
     <a
       {...commonProps}
+      ref={ref as React.Ref<HTMLAnchorElement>}
       href={href}
       {...(isDisabled ? { tabIndex: -1, 'aria-disabled': true } : {})}
     >
@@ -120,9 +127,7 @@ function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
   );
 }
 
-_TextLink.displayName = 'TextLink';
-
-export const TextLink = React.forwardRef(_TextLink) as PolymorphicComponent<
+export const TextLink = React.forwardRef(TextLinkBase) as PolymorphicComponent<
   ExpandProps<TextLinkInternalProps>,
   typeof TEXT_LINK_DEFAULT_TAG,
   'disabled'

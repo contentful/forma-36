@@ -33,7 +33,7 @@ function _DisplayText<
     fontColor = 'gray900',
     ...otherProps
   }: DisplayTextProps<E>,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLHeadingElement>,
 ) {
   let fontSize: FontSizeTokens = 'fontSize2Xl';
   let lineHeight: LineHeightTokens = 'lineHeightXl';

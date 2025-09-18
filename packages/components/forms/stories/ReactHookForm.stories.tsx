@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 import { Button } from '@contentful/f36-button';
 

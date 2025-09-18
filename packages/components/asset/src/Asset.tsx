@@ -47,7 +47,7 @@ function _Asset(
     type = 'image',
     ...otherProps
   }: AssetProps,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLElement>,
 ) {
   const styles = getAssetStyles();
   const isImage = src && src !== '' && type === 'image';

@@ -25,7 +25,7 @@ export type NavListProps<
 
 function _NavList<E extends React.ElementType = typeof NAV_LIST_DEFAULT_TAG>(
   props: NavListProps<E>,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLElement>,
 ) {
   const styles = getStyles();
 

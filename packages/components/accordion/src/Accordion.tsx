@@ -18,7 +18,7 @@ export interface AccordionProps extends CommonProps {
   children?: React.ReactNode;
 }
 
-const _Accordion = (
+const AccordionBase = (
   {
     align = 'end',
     children,
@@ -52,4 +52,4 @@ const _Accordion = (
   );
 };
 
-export const Accordion = React.forwardRef(_Accordion);
+export const Accordion = React.forwardRef(AccordionBase);

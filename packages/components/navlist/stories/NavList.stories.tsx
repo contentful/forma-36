@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import type { StoryObj, Meta, StoryFn } from '@storybook/react-vite';
+import type { StoryObj, Meta } from '@storybook/react-vite';
 
 import { NavList, type NavListProps } from '../src';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 export default {
   component: NavList,
