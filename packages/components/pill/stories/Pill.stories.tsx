@@ -1,8 +1,8 @@
 import React from 'react';
-import type { StoryObj, Meta, StoryFn } from '@storybook/react-vite';
+import type { StoryObj, Meta } from '@storybook/react-vite';
 import tokens from '@contentful/f36-tokens';
 import { SectionHeading } from '@contentful/f36-typography';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Box, Flex } from '@contentful/f36-core';
 import { InfoIcon } from '@contentful/f36-icons';
 import { css } from '@emotion/css';
@@ -13,7 +13,7 @@ export default {
   title: 'Components/Pill',
   component: Pill,
   parameters: {
-    propTypes: Pill['__docgenInfo'],
+    propTypes: (Pill as any)?.__docgenInfo,
   },
   argTypes: {
     label: { control: { type: 'text' } },
@@ -26,7 +26,7 @@ export default {
   },
 } as Meta;
 
-export const basic: StoryObj<PillInternalProps> = {
+export const Basic: StoryObj<PillInternalProps> = {
   render: (args) => <Pill label={args.label} isDraggable={args.isDraggable} />,
 
   args: { label: 'example.user@contentful.com' },

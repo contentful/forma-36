@@ -32,16 +32,16 @@ enim ad minim veniam, quis nostrud exercitation ullamco laboris
 nisi ut aliquip ex ea commodo consequat.`;
 
 export const Basic: Story = {
-  render: ({ align, ...args }: AccordionProps) => (
+  render: ({ align }: AccordionProps) => (
     <Accordion align={align}>
-      <Accordion.Item title={args['Accordion.Item Title #1']}>
-        <Text as="p">{args['Accordion.Item Content #1']}</Text>
+      <Accordion.Item title={'Accordion.Item Title #1'}>
+        <Text as="p">Accordion.Item Content #1</Text>
       </Accordion.Item>
-      <Accordion.Item title={args['Accordion.Item Title #2']}>
-        <Text as="p">{args['Accordion.Item Content #2']}</Text>
+      <Accordion.Item title={'Accordion.Item Title #2'}>
+        <Text as="p">Accordion.Item Content #2</Text>
       </Accordion.Item>
-      <Accordion.Item title={args['Accordion.Item Title #3']}>
-        <Text as="p">{args['Accordion.Item Content #3']}</Text>
+      <Accordion.Item title={'Accordion.Item Title #3'}>
+        <Text as="p">Accordion.Item Content #3</Text>
       </Accordion.Item>
     </Accordion>
   ),
@@ -51,7 +51,7 @@ export const Basic: Story = {
 };
 
 export const Overview: Story = {
-  render: ({ align, ...args }: AccordionProps) => (
+  render: () => (
     <>
       <Flex flexDirection="column" marginBottom="spacingM" fullWidth>
         <SectionHeading marginBottom="spacingS">
@@ -60,14 +60,14 @@ export const Overview: Story = {
 
         <Flex>
           <Accordion align="start">
-            <Accordion.Item title={args['Accordion.Item Title #1']}>
-              <Text as="p">{args['Accordion.Item Content #1']}</Text>
+            <Accordion.Item title={'Accordion.Item Title #1'}>
+              <Text as="p">Accordion.Item Content #1</Text>
             </Accordion.Item>
-            <Accordion.Item title={args['Accordion.Item Title #2']}>
-              <Text as="p">{args['Accordion.Item Content #2']}</Text>
+            <Accordion.Item title={'Accordion.Item Title #2'}>
+              <Text as="p">Accordion.Item Content #2</Text>
             </Accordion.Item>
-            <Accordion.Item title={args['Accordion.Item Title #3']}>
-              <Text as="p">{args['Accordion.Item Content #3']}</Text>
+            <Accordion.Item title={'Accordion.Item Title #3'}>
+              <Text as="p">Accordion.Item Content #3</Text>
             </Accordion.Item>
           </Accordion>
         </Flex>
@@ -79,14 +79,14 @@ export const Overview: Story = {
 
         <Flex>
           <Accordion align="end">
-            <Accordion.Item title={args['Accordion.Item Title #1']}>
-              <Text as="p">{args['Accordion.Item Content #1']}</Text>
+            <Accordion.Item title={'Accordion.Item Title #1'}>
+              <Text as="p">Accordion.Item Content #1</Text>
             </Accordion.Item>
-            <Accordion.Item title={args['Accordion.Item Title #2']}>
-              <Text as="p">{args['Accordion.Item Content #2']}</Text>
+            <Accordion.Item title={'Accordion.Item Title #2'}>
+              <Text as="p">Accordion.Item Content #2</Text>
             </Accordion.Item>
-            <Accordion.Item title={args['Accordion.Item Title #3']}>
-              <Text as="p">{args['Accordion.Item Content #3']}</Text>
+            <Accordion.Item title={'Accordion.Item Title #3'}>
+              <Text as="p">Accordion.Item Content #3</Text>
             </Accordion.Item>
           </Accordion>
         </Flex>
@@ -110,7 +110,7 @@ export const DynamicContent: Story = {
         </Flex>
         <Flex>
           <Accordion align={align}>
-            <Accordion.Item title={args['Accordion.Item Title #1']}>
+            <Accordion.Item title={'Accordion.Item Title #1'}>
               <Text as="p">{content}</Text>
             </Accordion.Item>
           </Accordion>
@@ -121,7 +121,7 @@ export const DynamicContent: Story = {
 };
 
 export const Controlled: Story = {
-  render: ({ align, ...args }: AccordionProps) => {
+  render: ({ align }: AccordionProps) => {
     const [accordionState, setAccordionState] = useState({
       1: true,
       2: false,
@@ -139,28 +139,28 @@ export const Controlled: Story = {
     return (
       <Accordion align={align}>
         <Accordion.Item
-          title={args['Accordion.Item Title #1']}
+          title={'Accordion.Item Title #1 '}
           isExpanded={accordionState[1]}
           onExpand={handleExpand(1)}
           onCollapse={handleCollapse(1)}
         >
-          <Text as="p">{args['Accordion.Item Content #1']}</Text>
+          <Text as="p">{'Accordion.Item Content #1 '}</Text>
         </Accordion.Item>
         <Accordion.Item
-          title={args['Accordion.Item Title #2']}
+          title={'Accordion.Item Title #2 '}
           isExpanded={accordionState[2]}
           onExpand={handleExpand(2)}
           onCollapse={handleCollapse(2)}
         >
-          <Text as="p">{args['Accordion.Item Content #2']}</Text>
+          <Text as="p">{'Accordion.Item Content #2 '}</Text>
         </Accordion.Item>
         <Accordion.Item
-          title={args['Accordion.Item Title #3']}
+          title={'Accordion.Item Title #3 '}
           isExpanded={accordionState[3]}
           onExpand={handleExpand(3)}
           onCollapse={handleCollapse(3)}
         >
-          <Text as="p">{args['Accordion.Item Content #3']}</Text>
+          <Text as="p">{'Accordion.Item Content #3 '}</Text>
         </Accordion.Item>
       </Accordion>
     );

@@ -1,5 +1,5 @@
 import React, { ComponentProps } from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Flex } from '@contentful/f36-core';
 import { type Density, DensityProvider } from '@contentful/f36-utils';
 import { Heading, SectionHeading } from '@contentful/f36-typography';

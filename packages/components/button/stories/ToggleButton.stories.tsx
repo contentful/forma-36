@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { Meta } from '@storybook/react-vite';
 import { SectionHeading } from '@contentful/f36-typography';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 import { Flex, Stack } from '@contentful/f36-core';
 import { Icon } from '@contentful/f36-icon';

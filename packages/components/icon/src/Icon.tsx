@@ -58,8 +58,9 @@ const useAriaHidden = ({ ariaLabel, ariaLabelledBy }) => {
   };
 };
 
-export function _Icon<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
+export function IconBase<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
   props: IconProps<E>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   forwardedRef: React.Ref<any>,
 ) {
   const {
@@ -97,6 +98,7 @@ export function _Icon<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
       display="inline-block"
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
+      {...(Element === ICON_DEFAULT_TAG ? { viewBox } : {})}
       {...ariaHiddenProps}
       {...otherProps}
       {...shared}
@@ -106,7 +108,7 @@ export function _Icon<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
   );
 }
 
-export const Icon = forwardRef(_Icon) as PolymorphicComponent<
+export const Icon = forwardRef(IconBase) as PolymorphicComponent<
   ExpandProps<IconInternalProps>,
   typeof ICON_DEFAULT_TAG,
   'width' | 'height'

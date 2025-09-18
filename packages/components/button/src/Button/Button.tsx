@@ -13,6 +13,7 @@ import { cx } from '@emotion/css';
 import type { Variant } from '@contentful/f36-utils';
 import type { ButtonInternalProps } from '../types';
 import { getStyles } from './Button.styles';
+import type { IconProps } from '@contentful/f36-icon';
 
 const BUTTON_DEFAULT_TAG = 'button';
 
@@ -20,8 +21,9 @@ export type ButtonProps<
   E extends React.ElementType = typeof BUTTON_DEFAULT_TAG,
 > = PolymorphicProps<ButtonInternalProps, E, 'disabled'>;
 
-function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
+function ButtonBase<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
   props: ButtonProps<E>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ref: React.Ref<any>,
 ) {
   const styles = getStyles();
@@ -34,10 +36,10 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
     size = 'medium',
     startIcon,
     endIcon,
-    isActive,
-    isDisabled,
+    isActive = false,
+    isDisabled = false,
     isLoading,
-    isFullWidth,
+    isFullWidth = false,
     style,
     ...otherProps
   } = props;
@@ -55,14 +57,7 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
     className,
   );
 
-  // Button overrides: use 'colorWhite' for 'primary' and 'positive', fallback to utility mapping for others
-  const buttonIconColorByVariant: Record<Variant, ColorTokens> = {
-    ...iconColorByVariant,
-    positive: 'colorWhite',
-    primary: 'colorWhite',
-  };
-
-  const iconContent = (icon) => {
+  const iconContent = (icon: React.ReactElement<IconProps>) => {
     return (
       <Flex
         as="span"
@@ -70,7 +65,11 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
       >
         {React.cloneElement(icon, {
           size: icon.props.size ?? `${size === 'large' ? 'medium' : 'small'}`,
-          color: tokens[getIconColorToken(variant, buttonIconColorByVariant)],
+          // We need to pass the color to the icons to enable the usaged of the V5 icons
+          // it may change in the future
+          color:
+            (variant === 'transparent' && icon.props.color) || 'currentColor',
+          // we want to allow variants for icons for transparent buttons
         })}
       </Flex>
     );
@@ -78,13 +77,15 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
 
   const commonContent = (
     <>
-      {startIcon && iconContent(startIcon)}
+      {startIcon && iconContent(startIcon as React.ReactElement<IconProps>)}
       {children && (
         <Box as="span" display="block" className={styles.buttonContent}>
           {children}
         </Box>
       )}
-      {endIcon && !isLoading && iconContent(endIcon)}
+      {endIcon &&
+        !isLoading &&
+        iconContent(endIcon as React.ReactElement<IconProps>)}
       {isLoading && (
         <Box
           as="span"
@@ -137,12 +138,12 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
   );
 }
 
-_Button.displayName = 'Button';
+ButtonBase.displayName = 'Button';
 
 /**
  * @description: Buttons communicate the action that will occur when the user clicks it
  */
-export const Button = React.forwardRef(_Button) as PolymorphicComponent<
+export const Button = React.forwardRef(ButtonBase) as PolymorphicComponent<
   ExpandProps<ButtonInternalProps>,
   typeof BUTTON_DEFAULT_TAG,
   'disabled'

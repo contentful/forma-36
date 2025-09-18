@@ -24,7 +24,7 @@ export type CaptionProps<
   E extends React.ElementType = typeof CAPTION_DEFAULT_TAG,
 > = PolymorphicProps<CaptionInternalProps, E>;
 
-function _Caption<E extends React.ElementType = typeof CAPTION_DEFAULT_TAG>(
+function CaptionBase<E extends React.ElementType = typeof CAPTION_DEFAULT_TAG>(
   {
     children,
     fontWeight = 'fontWeightNormal',
@@ -33,7 +33,7 @@ function _Caption<E extends React.ElementType = typeof CAPTION_DEFAULT_TAG>(
     fontColor = 'gray900',
     ...otherProps
   }: CaptionProps<E>,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLElement>,
 ) {
   const density = useDensity();
   const Element: React.ElementType = as || CAPTION_DEFAULT_TAG;
@@ -53,9 +53,9 @@ function _Caption<E extends React.ElementType = typeof CAPTION_DEFAULT_TAG>(
   );
 }
 
-_Caption.displayName = 'Caption';
+CaptionBase.displayName = 'Caption';
 
-export const Caption = React.forwardRef(_Caption) as PolymorphicComponent<
+export const Caption = React.forwardRef(CaptionBase) as PolymorphicComponent<
   ExpandProps<CaptionInternalProps>,
   typeof CAPTION_DEFAULT_TAG
 >;
