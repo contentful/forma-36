@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 18-09-2025
+
+**F36 Pagination** `v5.4.1`
+
+- Improves the accessibility and the test coverage of the Pagination component
+
 ## 12-09-2025
 
 **F36 Usage Card** `v5.3.0`
