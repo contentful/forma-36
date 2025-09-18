@@ -33,6 +33,9 @@ export type CopyButtonProps = Omit<
   /**
    * Props that are passed to the tooltip component
    */
+
+  // ToDo reimplement tooltip
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tooltipProps?: any; //Omit<TooltipProps, 'content' | 'children'>;
   /**
    * Label to be used on aria-label for the button

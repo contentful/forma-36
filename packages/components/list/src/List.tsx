@@ -22,7 +22,7 @@ export type ListProps<E extends React.ElementType = typeof LIST_DEFAULT_TAG> =
  * List is component that helps with vertical indexing of content.
  * Every list item begins with a bullet or a number.
  */
-function _List<E extends React.ElementType = typeof LIST_DEFAULT_TAG>(
+function ListBase<E extends React.ElementType = typeof LIST_DEFAULT_TAG>(
   {
     as,
     className,
@@ -52,9 +52,9 @@ function _List<E extends React.ElementType = typeof LIST_DEFAULT_TAG>(
   );
 }
 
-_List.displayName = 'List';
+ListBase.displayName = 'List';
 
-export const List = React.forwardRef(_List) as PolymorphicComponent<
+export const List = React.forwardRef(ListBase) as PolymorphicComponent<
   ExpandProps<ListInternalProps>,
   typeof LIST_DEFAULT_TAG
 >;
