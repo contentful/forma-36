@@ -43,7 +43,7 @@ export type FormLabelProps<
   E extends React.ElementType = typeof FORM_LABEL_DEFAULT_TAG,
 > = PolymorphicProps<FormLabelInternalProps, E>;
 
-function _FormLabel<
+function FormLabelBase<
   E extends React.ElementType = typeof FORM_LABEL_DEFAULT_TAG,
 >(
   {
@@ -94,9 +94,9 @@ function _FormLabel<
   );
 }
 
-_FormLabel.displayName = 'FormLabel';
+FormLabelBase.displayName = 'FormLabel';
 
-export const FormLabel = forwardRef(_FormLabel) as PolymorphicComponent<
+export const FormLabel = forwardRef(FormLabelBase) as PolymorphicComponent<
   ExpandProps<FormLabelInternalProps>,
   typeof FORM_LABEL_DEFAULT_TAG
 >;

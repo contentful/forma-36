@@ -23,7 +23,7 @@ export const Basic = {
   },
 };
 
-export const overview = () => (
+export const Overview = () => (
   <>
     <SectionHeading as="h3" marginBottom="spacingM">
       Switch default

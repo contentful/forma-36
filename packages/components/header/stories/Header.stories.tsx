@@ -53,7 +53,7 @@ export const Default: StoryObj<HeaderProps> = {
   },
 };
 
-export const withBreadcrumbs: StoryObj<HeaderProps> = {
+export const WithBreadcrumbs: StoryObj<HeaderProps> = {
   render: (args) => (
     <ExampleWrapper>
       <Box marginBottom="spacingM">
@@ -79,7 +79,7 @@ export const withBreadcrumbs: StoryObj<HeaderProps> = {
   },
 };
 
-export const withBackButton: StoryFn<HeaderProps> = () => (
+export const WithBackButton: StoryFn<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
       <Note>
@@ -98,7 +98,7 @@ export const withBackButton: StoryFn<HeaderProps> = () => (
   </ExampleWrapper>
 );
 
-export const withTitleOverwrites: StoryFn<HeaderProps> = () => (
+export const WithTitleOverwrites: StoryFn<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
       <Note>
@@ -118,7 +118,7 @@ export const withTitleOverwrites: StoryFn<HeaderProps> = () => (
   </ExampleWrapper>
 );
 
-export const withBackButtonAndBreadcrumbs: StoryFn<HeaderProps> = () => (
+export const WithBackButtonAndBreadcrumbs: StoryFn<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
       <Note>
@@ -142,7 +142,7 @@ export const withBackButtonAndBreadcrumbs: StoryFn<HeaderProps> = () => (
   </ExampleWrapper>
 );
 
-export const withActions: StoryFn<HeaderProps> = () => (
+export const WithActions: StoryFn<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
       <Note>
@@ -166,7 +166,7 @@ export const withActions: StoryFn<HeaderProps> = () => (
   </ExampleWrapper>
 );
 
-export const withMetadata: StoryFn<HeaderProps> = () => (
+export const WithMetadata: StoryFn<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
       <Note>Metadata area gets rendered after the title area</Note>

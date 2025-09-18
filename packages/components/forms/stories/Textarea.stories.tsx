@@ -3,7 +3,7 @@ import { Flex } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
 import { SectionHeading } from '@contentful/f36-typography';
 
-import { Textarea, TextareaProps } from '../src';
+import { Textarea } from '../src';
 
 export default {
   title: 'Form Elements/Textarea',

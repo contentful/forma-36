@@ -37,7 +37,7 @@ export interface AssetProps extends CommonProps {
   type?: AssetType;
 }
 
-function _Asset(
+function AssetBase(
   {
     className,
     src,
@@ -109,6 +109,6 @@ function _Asset(
   );
 }
 
-_Asset.displayName = 'Asset';
+AssetBase.displayName = 'Asset';
 
-export const Asset = React.forwardRef(_Asset);
+export const Asset = React.forwardRef(AssetBase);
