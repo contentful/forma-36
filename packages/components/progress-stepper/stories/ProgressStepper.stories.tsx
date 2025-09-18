@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryObj, Meta, StoryFn } from '@storybook/react-vite';
+import type { StoryObj, Meta } from '@storybook/react-vite';
 import { ProgressStepper } from '../src/CompoundProgressStepper';
 import { ProgressStepperProps } from '../src';
 
@@ -13,13 +13,14 @@ const getContainerStyle = (orientation: ProgressStepperProps['orientation']) =>
 
 export const Basic: StoryObj<ProgressStepperProps> = {
   render: (args) => {
+    const { orientation, ariaLabel, ...otherArgs } = args;
     return (
-      <div style={getContainerStyle(args.orientation)}>
+      <div style={getContainerStyle(orientation)}>
         <ProgressStepper
           stepStyle="number"
           activeStep={2}
-          ariaLabel="Basic progress stepper"
-          {...args}
+          ariaLabel={ariaLabel ? ariaLabel : 'Basic progress stepper'}
+          {...otherArgs}
           onClick={undefined}
         >
           <ProgressStepper.Step state="complete" />

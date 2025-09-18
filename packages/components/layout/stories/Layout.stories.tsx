@@ -4,7 +4,7 @@ import { css } from '@emotion/css';
 import type { StoryFn, Meta } from '@storybook/react-vite';
 import { Box } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-components';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import type { LayoutProps } from '../src';
 import { Header } from '../../header/src/Header';
 import { Layout } from '../src/CompoundLayout';
