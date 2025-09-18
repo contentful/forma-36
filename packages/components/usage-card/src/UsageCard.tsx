@@ -16,7 +16,7 @@ export type UsageCardProps = CommonProps &
     variant?: 'usage' | 'info';
   };
 
-function _UsageCard(
+function UsageCardBase(
   props: ExpandProps<UsageCardProps>,
   ref: React.Ref<HTMLDivElement>,
 ) {
@@ -48,4 +48,6 @@ function _UsageCard(
   );
 }
 
-export const UsageCard = React.forwardRef(_UsageCard);
+UsageCardBase.displayName = 'UsageCard';
+
+export const UsageCard = React.forwardRef(UsageCardBase);

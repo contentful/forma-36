@@ -75,7 +75,7 @@ type HeaderInternalProps = CommonProps &
 export type HeaderProps<E extends ElementType = typeof HEADER_DEFAULT_TAG> =
   PolymorphicProps<HeaderInternalProps, E>;
 
-function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
+function HeaderBase<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
   {
     actions,
     as,
@@ -146,7 +146,9 @@ function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
   );
 }
 
-export const Header = forwardRef(_Header) as PolymorphicComponent<
+HeaderBase.displayName = 'Header';
+
+export const Header = forwardRef(HeaderBase) as PolymorphicComponent<
   ExpandProps<HeaderInternalProps>,
   typeof HEADER_DEFAULT_TAG
 >;

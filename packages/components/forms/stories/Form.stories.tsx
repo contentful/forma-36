@@ -20,32 +20,30 @@ export default {
   },
 };
 
-export const Basic = {
-  render: (args: FormControlInternalProps) => {
-    const [submitted, setSubmit] = useState(false);
-    const onSubmit = () => setSubmit(true);
+export const Basic = (args: FormControlInternalProps) => {
+  const [submitted, setSubmit] = useState(false);
+  const onSubmit = () => setSubmit(true);
 
-    return (
-      <Form onSubmit={() => onSubmit()}>
-        <FormControl {...args}>
-          <FormControl.Label>Name</FormControl.Label>
-          <TextInput />
-          <FormControl.HelpText>
-            Please enter your first name
-          </FormControl.HelpText>
-        </FormControl>
+  return (
+    <Form onSubmit={() => onSubmit()}>
+      <FormControl {...args}>
+        <FormControl.Label>Name</FormControl.Label>
+        <TextInput />
+        <FormControl.HelpText>
+          Please enter your first name
+        </FormControl.HelpText>
+      </FormControl>
 
-        <FormControl {...args}>
-          <FormControl.Label>Description</FormControl.Label>
-          <Textarea />
-          <FormControl.HelpText>Tell me about yourself</FormControl.HelpText>
-        </FormControl>
-        <Button variant="primary" type="submit" isDisabled={submitted}>
-          {submitted ? 'Submitted' : 'Click me to submit'}
-        </Button>
-      </Form>
-    );
-  },
+      <FormControl {...args}>
+        <FormControl.Label>Description</FormControl.Label>
+        <Textarea />
+        <FormControl.HelpText>Tell me about yourself</FormControl.HelpText>
+      </FormControl>
+      <Button variant="primary" type="submit" isDisabled={submitted}>
+        {submitted ? 'Submitted' : 'Click me to submit'}
+      </Button>
+    </Form>
+  );
 };
 
 export const OverviewWithSmallInputs = {

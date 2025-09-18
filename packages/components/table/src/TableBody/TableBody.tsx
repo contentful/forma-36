@@ -15,7 +15,7 @@ export type TableBodyProps = PropsWithHTMLElement<
   'tbody'
 >;
 
-function _TableBody(
+function TableBodyBase(
   { className, children, testId = 'cf-ui-table-body', ...otherProps },
   forwardedRef,
 ) {
@@ -32,9 +32,9 @@ function _TableBody(
   );
 }
 
-_TableBody.displayName = 'TableBody';
+TableBodyBase.displayName = 'TableBody';
 
 export const TableBody = forwardRef<
   HTMLTableSectionElement,
   ExpandProps<TableBodyProps>
->(_TableBody);
+>(TableBodyBase);

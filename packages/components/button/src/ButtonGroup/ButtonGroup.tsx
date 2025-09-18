@@ -44,6 +44,7 @@ function ButtonGroupBase(
           return null;
         }
         // Only pass className if child.props has className property
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { className: childClassName, ...childProps }: any =
           child.props || {};
         return React.cloneElement(child, {
