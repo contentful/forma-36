@@ -10,7 +10,7 @@ export default {
   component: List,
   subcomponents: { ListItem: List.Item },
   parameters: {
-    propTypes: [List['__docgenInfo'], List.Item['__docgenInfo']],
+    propTypes: [(List as any)?.__docgenInfo, (List.Item as any)?.__docgenInfo],
   },
   argTypes: {
     as: {
