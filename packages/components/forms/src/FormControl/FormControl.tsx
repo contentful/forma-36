@@ -41,7 +41,7 @@ function _FormControl<
     testId = 'cf-ui-form-control',
     ...otherProps
   }: FormControlProps<E>,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLElement>,
 ) {
   const generatedId = useId(id, 'field-');
   const [inputValue, setInputValue] = useState('');

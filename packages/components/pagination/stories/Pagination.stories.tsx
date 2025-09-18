@@ -8,104 +8,108 @@ export default {
   title: 'Components/Pagination',
 } as Meta;
 
-export const Default = {
-  render: (args: PaginationProps) => {
-    const {
-      activePage,
-      onPageChange,
-      itemsPerPage,
-      onViewPerPageChange,
-      ...otherProps
-    } = args;
-    const [page, setPage] = useState(activePage);
-    const [view, setView] = useState(itemsPerPage);
-    useEffect(() => {
-      setPage(activePage);
-      setView(itemsPerPage);
-    }, [activePage, itemsPerPage]);
+export const Default = (args: PaginationProps) => {
+  const {
+    activePage = 0,
+    onPageChange,
+    itemsPerPage = 50,
+    onViewPerPageChange,
+    ...otherProps
+  } = args;
+  const [page, setPage] = useState(activePage);
+  const [view, setView] = useState(itemsPerPage);
+  useEffect(() => {
+    setPage(activePage);
+    setView(itemsPerPage);
+  }, [activePage, itemsPerPage]);
 
-    const handlePageChange = (p) => {
-      onPageChange && onPageChange(p);
-      setPage(p);
-    };
+  const handlePageChange = (p: number) => {
+    if (onPageChange) {
+      onPageChange(p);
+    }
+    setPage(p);
+  };
 
-    const handleViewPerPageChange = (i) => {
-      onViewPerPageChange && onViewPerPageChange(i);
-      setPage(Math.floor((view * page + 1) / i));
-      setView(i);
-    };
+  const handleViewPerPageChange = (i: number) => {
+    if (onViewPerPageChange) {
+      onViewPerPageChange(i);
+    }
+    setPage(Math.floor((view * page + 1) / i));
+    setView(i);
+  };
 
-    return (
-      <div style={{ width: '920px' }}>
-        <Pagination
-          activePage={page}
-          onPageChange={handlePageChange}
-          onViewPerPageChange={handleViewPerPageChange}
-          itemsPerPage={view}
-          {...otherProps}
-        />
-      </div>
-    );
-  },
-
-  args: {
-    activePage: 0,
-    itemsPerPage: 50,
-    viewPerPageOptions: [20, 50, 100],
-  },
+  return (
+    <div style={{ width: '920px' }}>
+      <Pagination
+        activePage={page}
+        onPageChange={handlePageChange}
+        onViewPerPageChange={handleViewPerPageChange}
+        itemsPerPage={view}
+        {...otherProps}
+      />
+    </div>
+  );
 };
 
-export const CustomLabels = {
-  render: (args: PaginationProps) => {
-    const {
-      activePage,
-      onPageChange,
-      itemsPerPage,
-      onViewPerPageChange,
-      ...otherProps
-    } = args;
-    const [page, setPage] = useState(activePage);
-    const [view, setView] = useState(itemsPerPage);
-    useEffect(() => {
-      setPage(activePage);
-      setView(itemsPerPage);
-    }, [activePage, itemsPerPage]);
+Default.args = {
+  activePage: 0,
+  itemsPerPage: 50,
+  viewPerPageOptions: [20, 50, 100],
+};
 
-    const handlePageChange = (p) => {
-      onPageChange && onPageChange(p);
-      setPage(p);
-    };
+export const CustomLabels = (args: PaginationProps) => {
+  const {
+    activePage = 0,
+    onPageChange,
+    itemsPerPage = 50,
+    onViewPerPageChange,
+    ...otherProps
+  } = args;
+  const [page, setPage] = useState(activePage);
+  const [view, setView] = useState(itemsPerPage);
+  useEffect(() => {
+    setPage(activePage);
+    setView(itemsPerPage);
+  }, [activePage, itemsPerPage]);
 
-    const handleViewPerPageChange = (i) => {
-      onViewPerPageChange && onViewPerPageChange(i);
-      setPage(Math.floor((view * page + 1) / i));
-      setView(i);
-    };
+  const handlePageChange = (p) => {
+    if (onPageChange) {
+      onPageChange(p);
+    }
+    setPage(p);
+  };
 
-    return (
-      <div style={{ width: '920px' }}>
-        <Pagination
-          showViewPerPage
-          viewPerPageLabel="Einträge pro Seite"
-          navigationButtonsProps={{
-            nextLabel: 'Nächste',
-            previousLabel: 'Vorherige',
-            nextAriaLabel: 'Springe zur nächsten Seite',
-            previousAriaLabel: 'Gehe zur vorherigen Seite',
-          }}
-          activePage={page}
-          onPageChange={handlePageChange}
-          onViewPerPageChange={handleViewPerPageChange}
-          itemsPerPage={view}
-          {...otherProps}
-        />
-      </div>
-    );
-  },
+  const handleViewPerPageChange = (i) => {
+    if (onViewPerPageChange) {
+      onViewPerPageChange(i);
+    }
+    setPage(Math.floor((view * page + 1) / i));
+    setView(i);
+  };
 
-  args: {
-    activePage: 0,
-    itemsPerPage: 50,
-    viewPerPageOptions: [20, 50, 100],
-  },
+  return (
+    <div style={{ width: '920px' }}>
+      <Pagination
+        showViewPerPage
+        viewPerPageLabel="Einträge pro Seite"
+        navigationButtonsProps={{
+          nextLabel: 'Nächste',
+          previousLabel: 'Vorherige',
+          nextAriaLabel: 'Springe zur nächsten Seite',
+          previousAriaLabel: 'Gehe zur vorherigen Seite',
+        }}
+        activePage={page}
+        onPageChange={handlePageChange}
+        onViewPerPageChange={handleViewPerPageChange}
+        itemsPerPage={view}
+        {...otherProps}
+      />
+    </div>
+  );
+};
+
+CustomLabels.args = {
+  activePage: 0,
+  itemsPerPage: 50,
+  viewPerPageOptions: [20, 50, 100],
 };

@@ -40,7 +40,7 @@ export interface AccordionItemProps extends CommonProps {
   isExpanded?: boolean;
 }
 
-const _AccordionItem = (
+const AccordionItemBase = (
   {
     title = 'Accordion Title',
     titleElement = 'h2',
@@ -57,7 +57,7 @@ const _AccordionItem = (
   const styles = getAccordionItemStyles({ className });
   const id = useId();
   const { isOpen, handleOpen, handleClose } = useControllableState({
-    isOpen: isExpanded,
+    isOpen: !!isExpanded,
     onOpen: onExpand,
     onClose: onCollapse,
   });
@@ -94,4 +94,4 @@ const _AccordionItem = (
   );
 };
 
-export const AccordionItem = React.forwardRef(_AccordionItem);
+export const AccordionItem = React.forwardRef(AccordionItemBase);
