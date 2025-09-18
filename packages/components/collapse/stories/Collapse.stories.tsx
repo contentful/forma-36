@@ -47,6 +47,10 @@ export const Basic: StoryObj<CollapseProps> = (args) => {
   );
 };
 
+Basic.args = {
+  isExpanded: false,
+};
+
 export const Expanded: StoryObj<CollapseProps> = (args) => {
   const [isExpanded, setIsExpanded] = useState(args.isExpanded);
   useEffect(() => {
