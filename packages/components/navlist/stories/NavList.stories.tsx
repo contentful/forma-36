@@ -8,7 +8,7 @@ export default {
   component: NavList,
   title: 'Components/NavList',
   parameters: {
-    propTypes: NavList['__docgenInfo'],
+    propTypes: (NavList as any)?.__docgenInfo,
   },
   argTypes: {
     className: { control: { disable: true } },
@@ -32,7 +32,7 @@ export const Basic: StoryObj<NavListProps> = {
 
 export const WithButtons: StoryObj<NavListProps> = {
   render: (args) => {
-    const handleOnClick = (id) => () => action('clicked on button')(id);
+    const handleOnClick = (id: number) => () => action('clicked on button')(id);
     return (
       <NavList {...args}>
         <NavList.Item onClick={handleOnClick(1)} as="button">
@@ -65,45 +65,43 @@ export const WithActiveAndDisable: StoryObj<NavListProps> = {
   },
 };
 
-export const Controlled: StoryObj<NavListProps> = {
-  render: (args) => {
-    const [active, setActive] = useState(0);
-    const handleOnClick = (id) => () => {
-      setActive(id);
-      action('clicked on button')(id);
-    };
-    return (
-      <NavList {...args}>
-        <NavList.Item
-          isActive={active === 1}
-          onClick={handleOnClick(1)}
-          as="button"
-        >
-          Item 1
-        </NavList.Item>
-        <NavList.Item
-          isActive={active === 2}
-          isDisabled
-          onClick={handleOnClick(2)}
-          as="button"
-        >
-          Item 2
-        </NavList.Item>
-        <NavList.Item
-          isActive={active === 3}
-          onClick={handleOnClick(3)}
-          as="button"
-        >
-          Item 3
-        </NavList.Item>
-        <NavList.Item
-          isActive={active === 4}
-          onClick={handleOnClick(4)}
-          as="button"
-        >
-          Item 4
-        </NavList.Item>
-      </NavList>
-    );
-  },
+export const Controlled = (args: StoryObj<NavListProps>) => {
+  const [active, setActive] = useState(0);
+  const handleOnClick = (id: number) => () => {
+    setActive(id);
+    action('clicked on button')(id);
+  };
+  return (
+    <NavList {...args}>
+      <NavList.Item
+        isActive={active === 1}
+        onClick={handleOnClick(1)}
+        as="button"
+      >
+        Item 1
+      </NavList.Item>
+      <NavList.Item
+        isActive={active === 2}
+        isDisabled
+        onClick={handleOnClick(2)}
+        as="button"
+      >
+        Item 2
+      </NavList.Item>
+      <NavList.Item
+        isActive={active === 3}
+        onClick={handleOnClick(3)}
+        as="button"
+      >
+        Item 3
+      </NavList.Item>
+      <NavList.Item
+        isActive={active === 4}
+        onClick={handleOnClick(4)}
+        as="button"
+      >
+        Item 4
+      </NavList.Item>
+    </NavList>
+  );
 };
