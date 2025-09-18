@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryObj, Meta, StoryFn } from '@storybook/react-vite';
+import type { StoryObj, Meta } from '@storybook/react-vite';
 import { action } from 'storybook/actions';
 
 import { CopyButton, type CopyButtonProps } from '../src/CopyButton';

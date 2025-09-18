@@ -4,7 +4,6 @@ import type {
   PolymorphicProps,
   PolymorphicComponent,
   ExpandProps,
-  CommonProps,
 } from '@contentful/f36-core';
 import { Button } from '../Button';
 import type { ButtonInternalProps } from '../types';
