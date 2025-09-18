@@ -100,11 +100,11 @@ function IconButtonBase<
   );
 
   if (withTooltip) {
-    const {
-      showDelay = 600,
-      content = ariaLabel,
-      ...otherTooltipProps
-    } = tooltipProps || {};
+    //   const {
+    //     showDelay = 600,
+    //     content = ariaLabel,
+    //     ...otherTooltipProps
+    //   } = tooltipProps || {};
 
     return (
       <Tooltip content={content} showDelay={showDelay} {...otherTooltipProps}>
