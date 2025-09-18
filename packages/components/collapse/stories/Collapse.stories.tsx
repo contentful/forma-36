@@ -23,58 +23,54 @@ eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 enim ad minim veniam, quis nostrud exercitation ullamco laboris
 nisi ut aliquip ex ea commodo consequat.`;
 
-export const Basic: StoryObj<CollapseProps> = {
-  render: (args) => {
-    const [isExpanded, setIsExpanded] = useState(args.isExpanded);
-    useEffect(() => {
-      setIsExpanded(args.isExpanded);
-    }, [args.isExpanded]);
+export const Basic: StoryObj<CollapseProps> = (args) => {
+  const [isExpanded, setIsExpanded] = useState(args.isExpanded);
+  useEffect(() => {
+    setIsExpanded(args.isExpanded);
+  }, [args.isExpanded]);
 
-    return (
-      <Stack flexDirection="column">
-        <Button
-          onClick={() => setIsExpanded(!isExpanded)}
-          aria-label={`${isExpanded ? 'Collapse' : 'Expand'} foo content`}
-          aria-controls="collapsible-foo"
-          aria-expanded={isExpanded}
-        >
-          Toggle content
-        </Button>
-        <Collapse id="collapsible-foo" isExpanded={isExpanded}>
-          <SectionHeading>Collapsable Element</SectionHeading>
-          <Text>{defaultText}</Text>
-        </Collapse>
-      </Stack>
-    );
-  },
+  return (
+    <Stack flexDirection="column">
+      <Button
+        onClick={() => setIsExpanded(!isExpanded)}
+        aria-label={`${isExpanded ? 'Collapse' : 'Expand'} foo content`}
+        aria-controls="collapsible-foo"
+        aria-expanded={isExpanded}
+      >
+        Toggle content
+      </Button>
+      <Collapse id="collapsible-foo" isExpanded={isExpanded}>
+        <SectionHeading>Collapsable Element</SectionHeading>
+        <Text>{defaultText}</Text>
+      </Collapse>
+    </Stack>
+  );
 };
 
-export const Expanded: StoryObj<CollapseProps> = {
-  render: (args) => {
-    const [isExpanded, setIsExpanded] = useState(args.isExpanded);
-    useEffect(() => {
-      setIsExpanded(args.isExpanded);
-    }, [args.isExpanded]);
+export const Expanded: StoryObj<CollapseProps> = (args) => {
+  const [isExpanded, setIsExpanded] = useState(args.isExpanded);
+  useEffect(() => {
+    setIsExpanded(args.isExpanded);
+  }, [args.isExpanded]);
 
-    return (
-      <Stack flexDirection="column">
-        <Button
-          onClick={() => setIsExpanded(!isExpanded)}
-          aria-label={`${isExpanded ? 'Collapse' : 'Expand'} foo content`}
-          aria-controls="collapsible-foo"
-          aria-expanded={isExpanded}
-        >
-          Toggle content
-        </Button>
-        <Collapse id="collapsible-foo" isExpanded={isExpanded}>
-          <SectionHeading>Collapsable Element</SectionHeading>
-          <Text>{defaultText}</Text>
-        </Collapse>
-      </Stack>
-    );
-  },
+  return (
+    <Stack flexDirection="column">
+      <Button
+        onClick={() => setIsExpanded(!isExpanded)}
+        aria-label={`${isExpanded ? 'Collapse' : 'Expand'} foo content`}
+        aria-controls="collapsible-foo"
+        aria-expanded={isExpanded}
+      >
+        Toggle content
+      </Button>
+      <Collapse id="collapsible-foo" isExpanded={isExpanded}>
+        <SectionHeading>Collapsable Element</SectionHeading>
+        <Text>{defaultText}</Text>
+      </Collapse>
+    </Stack>
+  );
+};
 
-  args: {
-    isExpanded: true,
-  },
+Expanded.args = {
+  isExpanded: true,
 };

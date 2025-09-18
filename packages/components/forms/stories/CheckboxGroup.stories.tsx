@@ -15,42 +15,39 @@ export default {
   },
 };
 
-export const Basic = {
-  render: (args: CheckboxGroupProps) => {
-    const [groupState, setGroupState] = useState(
-      args.value || args.defaultValue,
+export const Basic = (args: CheckboxGroupProps) => {
+  const [groupState, setGroupState] = useState(args.value || args.defaultValue);
+  const handleOnChange = (e) => {
+    e.persist();
+    const value = e.target.value;
+    setGroupState((prevState) =>
+      prevState.includes(value)
+        ? prevState.filter((v) => v !== value)
+        : [...prevState, value],
     );
-    const handleOnChange = (e) => {
-      e.persist();
-      const value = e.target.value;
-      setGroupState((prevState) =>
-        prevState.includes(value)
-          ? prevState.filter((v) => v !== value)
-          : [...prevState, value],
-      );
-      action('onChange')(e);
-    };
+    action('onChange')(e);
+  };
 
-    const { value } = args;
-    useEffect(() => {
-      Array.isArray(value) && setGroupState(value);
-    }, [value]);
+  const { value } = args;
+  useEffect(() => {
+    if (Array.isArray(value)) {
+      setGroupState(value);
+    }
+  }, [value]);
 
-    return (
-      <Checkbox.Group {...args} value={groupState} onChange={handleOnChange}>
-        <Checkbox value="apples">Apples</Checkbox>
-        <Checkbox value="pears">Pears</Checkbox>
-        <Checkbox value="peaches">Peaches</Checkbox>
-        <Checkbox value="mangos">Mangos</Checkbox>
-        <Checkbox value="kiwis">Kiwis</Checkbox>
-        <Checkbox value="bananas">Bananas</Checkbox>
-      </Checkbox.Group>
-    );
-  },
-
-  args: {
-    defaultValue: ['apples', 'kiwis'],
-  },
+  return (
+    <Checkbox.Group {...args} value={groupState} onChange={handleOnChange}>
+      <Checkbox value="apples">Apples</Checkbox>
+      <Checkbox value="pears">Pears</Checkbox>
+      <Checkbox value="peaches">Peaches</Checkbox>
+      <Checkbox value="mangos">Mangos</Checkbox>
+      <Checkbox value="kiwis">Kiwis</Checkbox>
+      <Checkbox value="bananas">Bananas</Checkbox>
+    </Checkbox.Group>
+  );
+};
+Basic.args = {
+  defaultValue: ['apples', 'kiwis'],
 };
 
 export const Uncontrolled = {
@@ -72,51 +69,49 @@ export const Uncontrolled = {
   },
 };
 
-export const WithFormControl = {
-  render: (args: CheckboxGroupProps) => {
-    const [groupState, setGroupState] = useState(
-      args.value || args.defaultValue,
+export const WithFormControl = (args: CheckboxGroupProps) => {
+  const [groupState, setGroupState] = useState(args.value || args.defaultValue);
+  const handleOnChange = (e) => {
+    e.persist();
+    const value = e.target.value;
+    setGroupState((prevState) =>
+      prevState.includes(value)
+        ? prevState.filter((v) => v !== value)
+        : [...prevState, value],
     );
-    const handleOnChange = (e) => {
-      e.persist();
-      const value = e.target.value;
-      setGroupState((prevState) =>
-        prevState.includes(value)
-          ? prevState.filter((v) => v !== value)
-          : [...prevState, value],
-      );
-      action('onChange')(e);
-    };
+    action('onChange')(e);
+  };
 
-    const { value } = args;
-    useEffect(() => {
-      Array.isArray(value) && setGroupState(value);
-    }, [value]);
+  const { value } = args;
 
-    return (
-      <FormControl as="fieldset">
-        <FormControl.Label as="legend" marginBottom="spacing2Xs">
-          Fruits
-        </FormControl.Label>
-        <Paragraph>Choose your favorit fruit</Paragraph>
-        <Checkbox.Group
-          {...args}
-          value={groupState}
-          name="Fruit"
-          onChange={handleOnChange}
-        >
-          <Checkbox value="apples">Apples</Checkbox>
-          <Checkbox value="pears">Pears</Checkbox>
-          <Checkbox value="peaches">Peaches</Checkbox>
-          <Checkbox value="mangos">Mangos</Checkbox>
-          <Checkbox value="kiwis">Kiwis</Checkbox>
-          <Checkbox value="bananas">Bananas</Checkbox>
-        </Checkbox.Group>
-      </FormControl>
-    );
-  },
+  useEffect(() => {
+    if (Array.isArray(value)) {
+      setGroupState(value);
+    }
+  }, [value]);
 
-  args: {
-    defaultValue: ['apples', 'kiwis'],
-  },
+  return (
+    <FormControl as="fieldset">
+      <FormControl.Label as="legend" marginBottom="spacing2Xs">
+        Fruits
+      </FormControl.Label>
+      <Paragraph>Choose your favorit fruit</Paragraph>
+      <Checkbox.Group
+        {...args}
+        value={groupState}
+        name="Fruit"
+        onChange={handleOnChange}
+      >
+        <Checkbox value="apples">Apples</Checkbox>
+        <Checkbox value="pears">Pears</Checkbox>
+        <Checkbox value="peaches">Peaches</Checkbox>
+        <Checkbox value="mangos">Mangos</Checkbox>
+        <Checkbox value="kiwis">Kiwis</Checkbox>
+        <Checkbox value="bananas">Bananas</Checkbox>
+      </Checkbox.Group>
+    </FormControl>
+  );
+};
+WithFormControl.args = {
+  defaultValue: ['apples', 'kiwis'],
 };

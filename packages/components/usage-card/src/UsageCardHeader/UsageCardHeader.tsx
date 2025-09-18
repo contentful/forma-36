@@ -13,7 +13,7 @@ export type UsageCardHeaderProps = {
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 
-function _UsageCardHeader(
+function UsageCardHeaderBase(
   props: UsageCardHeaderProps,
   ref: Ref<HTMLDivElement>,
 ) {
@@ -46,4 +46,6 @@ function _UsageCardHeader(
   );
 }
 
-export const UsageCardHeader = forwardRef(_UsageCardHeader);
+UsageCardHeaderBase.displayName = 'UsageCardHeader';
+
+export const UsageCardHeader = forwardRef(UsageCardHeaderBase);

@@ -46,7 +46,7 @@ export interface StepProps extends CommonProps {
   onClick?: (stepNumber: number) => void;
 }
 
-function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
+function StepBase(props: StepProps, ref: React.Ref<HTMLLIElement>) {
   const styles = getStyles();
   const {
     state = 'incomplete',
@@ -177,4 +177,6 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
   );
 }
 
-export const Step = React.forwardRef(_Step);
+StepBase.displayName = 'Step';
+
+export const Step = React.forwardRef(StepBase);
