@@ -63,16 +63,12 @@ export const SkeletonText = ({
     <React.Fragment>
       {Array.from(Array(numberOfLines)).map((_, index) => (
         <rect
-          key={`skeleton-display-text-${index}`} // eslint-disable-line
+          key={`skeleton-display-text-${index}`}
           x={offsetLeft}
-          y={
-            index * (+lineHeight! + +marginBottom!) + +offsetTop! // eslint-disable-line @typescript-eslint/no-non-null-assertion
-          }
+          y={index * (+lineHeight + +marginBottom) + +offsetTop}
           rx={radiusX}
           ry={radiusY}
-          width={getLineWidth(
-            numberOfLines! > 1 && numberOfLines! - index === 1, // eslint-disable-line @typescript-eslint/no-non-null-assertion
-          )}
+          width={getLineWidth(numberOfLines > 1 && numberOfLines - index === 1)}
           height={lineHeight}
         />
       ))}

@@ -49,8 +49,10 @@ function wordBreakStyle() {
 export type TextProps<E extends React.ElementType = typeof TEXT_DEFAULT_TAG> =
   PolymorphicProps<TextInternalProps, E, 'color'>;
 
-function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
+function TextBase<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
   props: TextProps<E>,
+  // as this is a polymorphic base component we can not narrow down the type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ref: React.Ref<any>,
 ) {
   const {
@@ -98,9 +100,9 @@ function _Text<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
   );
 }
 
-_Text.displayName = 'Text';
+TextBase.displayName = 'Text';
 
-export const Text = React.forwardRef(_Text) as PolymorphicComponent<
+export const Text = React.forwardRef(TextBase) as PolymorphicComponent<
   ExpandProps<TextInternalProps>,
   typeof TEXT_DEFAULT_TAG,
   'color'

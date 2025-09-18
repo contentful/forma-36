@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Checkbox, CheckboxGroupProps } from '../src';
 import { FormControl } from '@contentful/f36-forms';
 import { Paragraph } from '@contentful/f36-typography';

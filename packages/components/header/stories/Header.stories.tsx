@@ -8,7 +8,7 @@ import { MagnifyingGlassIcon, CopySimpleIcon } from '@contentful/f36-icons';
 import { TextInput } from '@contentful/f36-forms';
 
 import { Header, type HeaderProps } from '../src/Header';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Note, TextLink } from '@contentful/f36-components';
 
 const ExampleWrapper = ({ children }) => (

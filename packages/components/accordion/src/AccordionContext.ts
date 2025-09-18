@@ -1,8 +1,7 @@
 import React from 'react';
-import { Accordion } from './Accordion';
 
 export type AccordionContextType = {
-  align?: 'start' | 'end';
+  align: 'start' | 'end';
 };
 
 const AccordionContext = React.createContext<AccordionContextType | undefined>(
