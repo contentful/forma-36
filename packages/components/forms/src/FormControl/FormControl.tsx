@@ -26,7 +26,7 @@ export type FormControlProps<
   E extends React.ElementType = typeof FORM_CONTROL_DEFAULT_TAG,
 > = PolymorphicProps<FormControlInternalProps, E>;
 
-function _FormControl<
+function FormControlBase<
   E extends React.ElementType = typeof FORM_CONTROL_DEFAULT_TAG,
 >(
   {
@@ -77,10 +77,10 @@ function _FormControl<
   );
 }
 
-_FormControl.displayName = 'FormControl';
+FormControlBase.displayName = 'FormControl';
 
 export const FormControl = React.forwardRef(
-  _FormControl,
+  FormControlBase,
 ) as PolymorphicComponent<
   ExpandProps<FormControlInternalProps>,
   typeof FORM_CONTROL_DEFAULT_TAG

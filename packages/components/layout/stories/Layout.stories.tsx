@@ -1,4 +1,3 @@
-/* eslint-disable rulesdir/emotion-in-function */
 import React from 'react';
 import { css } from '@emotion/css';
 import type { StoryFn, Meta } from '@storybook/react-vite';
@@ -15,7 +14,7 @@ export default {
   title: 'Layout/Layout',
   component: Layout,
   parameters: {
-    propTypes: Layout['__docgenInfo'],
+    propTypes: (Layout as any)?.__docgenInfo,
   },
 } as Meta;
 
@@ -77,7 +76,7 @@ const LayoutSidebarComp = ({ content }) => (
   </Layout.Sidebar>
 );
 
-export const basic: StoryFn<LayoutProps> = () => {
+export const Basic: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper withNavbar={false}>
       <Layout>
@@ -97,7 +96,7 @@ export const basic: StoryFn<LayoutProps> = () => {
   );
 };
 
-export const withHeader: StoryFn<LayoutProps> = () => {
+export const WithHeader: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout header={<LayoutHeaderComp />} offsetTop={NAVBAR_HEIGHT}>
@@ -138,7 +137,7 @@ export const withHeader: StoryFn<LayoutProps> = () => {
   );
 };
 
-export const withFullHeader: StoryFn<LayoutProps> = () => {
+export const WithFullHeader: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
@@ -198,7 +197,7 @@ export const withFullHeader: StoryFn<LayoutProps> = () => {
   );
 };
 
-export const withLeftSidebar: StoryFn<LayoutProps> = () => {
+export const WithLeftSidebar: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
@@ -221,7 +220,7 @@ export const withLeftSidebar: StoryFn<LayoutProps> = () => {
   );
 };
 
-export const withRightSidebar: StoryFn<LayoutProps> = () => {
+export const WithRightSidebar: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
@@ -243,7 +242,7 @@ export const withRightSidebar: StoryFn<LayoutProps> = () => {
     </ExampleWrapper>
   );
 };
-export const withHeaderAndSidebars: StoryFn<LayoutProps> = () => {
+export const WithHeaderAndSidebars: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
@@ -268,7 +267,7 @@ export const withHeaderAndSidebars: StoryFn<LayoutProps> = () => {
   );
 };
 
-export const withHeaderAndLongSidebars: StoryFn<LayoutProps> = () => {
+export const WithHeaderAndLongSidebars: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
@@ -335,7 +334,7 @@ export const withHeaderAndLongSidebars: StoryFn<LayoutProps> = () => {
     </ExampleWrapper>
   );
 };
-export const withLongContentAndLongSidebars: StoryFn<LayoutProps> = () => {
+export const WithLongContentAndLongSidebars: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
@@ -432,7 +431,7 @@ export const withLongContentAndLongSidebars: StoryFn<LayoutProps> = () => {
   );
 };
 
-export const variantFullscreen: StoryFn<LayoutProps> = () => {
+export const VariantFullscreen: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
@@ -457,7 +456,7 @@ export const variantFullscreen: StoryFn<LayoutProps> = () => {
     </ExampleWrapper>
   );
 };
-export const variantNarrow: StoryFn<LayoutProps> = () => {
+export const VariantNarrow: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout variant="narrow" offsetTop={NAVBAR_HEIGHT}>
@@ -477,7 +476,7 @@ export const variantNarrow: StoryFn<LayoutProps> = () => {
   );
 };
 
-export const variantNarrowWithSidebar: StoryFn<LayoutProps> = () => {
+export const VariantNarrowWithSidebar: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
@@ -502,7 +501,7 @@ export const variantNarrowWithSidebar: StoryFn<LayoutProps> = () => {
   );
 };
 
-export const variantNarrowWithRightSidebar: StoryFn<LayoutProps> = () => {
+export const VariantNarrowWithRightSidebar: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
