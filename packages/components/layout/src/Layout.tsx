@@ -50,7 +50,7 @@ export type LayoutProps = {
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 
-const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
+const LayoutBase = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
   const {
     children,
     header,
@@ -116,4 +116,4 @@ const _Layout = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
   );
 };
 
-export const Layout = forwardRef(_Layout);
+export const Layout = forwardRef(LayoutBase);

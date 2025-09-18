@@ -39,7 +39,7 @@ export interface ToggleButtonProps extends CommonProps {
   children?: React.ReactNode;
 }
 
-function _ToggleButton(props: ExpandProps<ToggleButtonProps>, ref) {
+function ToggleButtonBase(props: ExpandProps<ToggleButtonProps>, ref) {
   const {
     testId = 'cf-ui-toggle-button',
     children,
@@ -79,6 +79,6 @@ function _ToggleButton(props: ExpandProps<ToggleButtonProps>, ref) {
   );
 }
 
-_ToggleButton.displayName = 'ToggleButton';
+ToggleButtonBase.displayName = 'ToggleButton';
 
-export const ToggleButton = React.forwardRef(_ToggleButton);
+export const ToggleButton = React.forwardRef(ToggleButtonBase);

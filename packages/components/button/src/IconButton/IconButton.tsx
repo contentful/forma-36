@@ -63,8 +63,9 @@ export type IconButtonProps<
   E extends React.ElementType = typeof ICON_BUTTON_DEFAULT_TAG,
 > = PolymorphicProps<ExtendedIconButtonProps, E, 'disabled'>;
 
-function _IconButton<
+function IconButtonBase<
   E extends React.ElementType = typeof ICON_BUTTON_DEFAULT_TAG,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 >(props: IconButtonProps<E>, ref: React.Ref<any>) {
   const {
     testId = 'cf-ui-icon-button',
@@ -98,11 +99,11 @@ function _IconButton<
     />
   );
   if (withTooltip) {
-    const {
-      showDelay = 600,
-      content = ariaLabel,
-      ...otherTooltipProps
-    } = tooltipProps || {};
+    //   const {
+    //     showDelay = 600,
+    //     content = ariaLabel,
+    //     ...otherTooltipProps
+    //   } = tooltipProps || {};
 
     return (
       <Tooltip content={content} showDelay={showDelay} {...otherTooltipProps}>
@@ -114,9 +115,11 @@ function _IconButton<
   return element;
 }
 
-_IconButton.displayName = 'IconButton';
+IconButtonBase.displayName = 'IconButton';
 
-export const IconButton = React.forwardRef(_IconButton) as PolymorphicComponent<
+export const IconButton = React.forwardRef(
+  IconButtonBase,
+) as PolymorphicComponent<
   ExpandProps<ExtendedIconButtonProps>,
   typeof ICON_BUTTON_DEFAULT_TAG,
   'disabled'

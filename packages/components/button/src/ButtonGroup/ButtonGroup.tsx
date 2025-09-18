@@ -4,7 +4,7 @@ import { Box, Stack, type ExpandProps } from '@contentful/f36-core';
 import getStyles from './ButtonGroup.styles';
 import type { ButtonGroupProps } from './types';
 
-function _ButtonGroup(
+function ButtonGroupBase(
   props: ExpandProps<ButtonGroupProps>,
   ref: React.Ref<HTMLDivElement>,
 ) {
@@ -56,6 +56,6 @@ function _ButtonGroup(
   );
 }
 
-_ButtonGroup.displayName = 'ButtonGroup';
+ButtonGroupBase.displayName = 'ButtonGroup';
 
-export const ButtonGroup = React.forwardRef(_ButtonGroup);
+export const ButtonGroup = React.forwardRef(ButtonGroupBase);

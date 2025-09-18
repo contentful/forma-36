@@ -25,7 +25,7 @@ export interface ImageProps
   width: string;
 }
 
-function _Image(
+function ImageBase(
   {
     className,
     height,
@@ -60,4 +60,4 @@ function _Image(
   );
 }
 
-export const Image = forwardRef(_Image);
+export const Image = forwardRef(ImageBase);

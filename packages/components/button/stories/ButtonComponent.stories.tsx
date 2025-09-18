@@ -32,7 +32,7 @@ export default {
   },
 };
 
-export const _Button = {
+export const ButtonComponent = {
   render: ({ startIcon, endIcon, children, ...args }) => (
     <Button
       {...args}

@@ -10,7 +10,7 @@ export type BackButtonProps = Omit<
   'aria-label'?: string;
 };
 
-function _BackButton(
+function BackButtonBase(
   {
     onClick,
     'aria-label': ariaLabel = 'Go back',
@@ -32,5 +32,5 @@ function _BackButton(
 }
 
 export const BackButton = forwardRef<HTMLButtonElement, BackButtonProps>(
-  _BackButton,
+  BackButtonBase,
 );

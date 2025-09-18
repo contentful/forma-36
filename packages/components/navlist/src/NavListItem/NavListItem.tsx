@@ -32,8 +32,9 @@ export type NavListItemProps<
   E extends React.ElementType = typeof NAV_LIST_ITEM_DEFAULT_TAG,
 > = PolymorphicProps<NavListItemInternalProps, E>;
 
-function _NavListItem<
+function NavListItemBase<
   E extends React.ElementType = typeof NAV_LIST_ITEM_DEFAULT_TAG,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 >(props: NavListItemProps<E>, ref: React.Ref<any>) {
   const {
     testId,
@@ -74,10 +75,10 @@ function _NavListItem<
   );
 }
 
-_NavListItem.displayName = 'NavListItem';
+NavListItemBase.displayName = 'NavListItem';
 
 export const NavListItem = React.forwardRef(
-  _NavListItem,
+  NavListItemBase,
 ) as PolymorphicComponent<
   ExpandProps<NavListItemInternalProps>,
   typeof NAV_LIST_ITEM_DEFAULT_TAG
