@@ -94,4 +94,6 @@ const AccordionItemBase = (
   );
 };
 
+AccordionItemBase.displayName = 'AccordionItem';
+
 export const AccordionItem = React.forwardRef(AccordionItemBase);

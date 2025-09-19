@@ -26,3 +26,5 @@ export const SkeletonRow = ({
     </>
   );
 };
+
+SkeletonRow.displayName = 'SkeletonRow';
