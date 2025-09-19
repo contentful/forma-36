@@ -46,6 +46,8 @@ const DateTimeBase = (
   );
 };
 
+DateTimeBase.displayName = 'DateTime';
+
 /**
  * The DateTime component will format a date to a human friendly format and wrap it in a `<time>` tag
  */

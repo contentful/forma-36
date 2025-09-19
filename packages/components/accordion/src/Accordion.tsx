@@ -52,4 +52,6 @@ const AccordionBase = (
   );
 };
 
+AccordionBase.displayName = 'Accordion';
+
 export const Accordion = React.forwardRef(AccordionBase);
