@@ -127,6 +127,8 @@ function TextLinkBase<
   );
 }
 
+TextLinkBase.displayName = 'TextLink';
+
 export const TextLink = React.forwardRef(TextLinkBase) as PolymorphicComponent<
   ExpandProps<TextLinkInternalProps>,
   typeof TEXT_LINK_DEFAULT_TAG,
