@@ -92,4 +92,6 @@ function ProgressStepperBase(
   );
 }
 
+ProgressStepperBase.displayName = 'ProgressStepper';
+
 export const ProgressStepper = React.forwardRef(ProgressStepperBase);
