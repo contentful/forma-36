@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { Meta } from '@storybook/react-vite';
 import { SectionHeading } from '@contentful/f36-typography';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 import { Flex, Stack } from '@contentful/f36-core';
 import { Icon } from '@contentful/f36-icon';
@@ -28,30 +28,27 @@ export default {
   },
 } as Meta;
 
-export const Basic = {
-  render: ({ icon, children, ...rest }: ToggleButtonProps) => {
-    const [isActive, setIsActive] = useState(false);
+export const Basic = ({ icon, children, ...rest }: ToggleButtonProps) => {
+  const [isActive, setIsActive] = useState(false);
 
-    return (
-      <ToggleButton
-        isActive={isActive}
-        // @ts-expect-error - The icon React Element can't be passed as a string
-        icon={icon && <Icon as={icons[icon]} />}
-        onToggle={() => {
-          setIsActive(!isActive);
-        }}
-        {...rest}
-      >
-        {children}
-      </ToggleButton>
-    );
-  },
-
-  args: {
-    isDisabled: false,
-    icon: 'ThumbsUpIcon',
-    children: 'Like',
-  },
+  return (
+    <ToggleButton
+      isActive={isActive}
+      // @ts-expect-error - The icon React Element can't be passed as a string
+      icon={icon && <Icon as={icons[icon]} />}
+      onToggle={() => {
+        setIsActive(!isActive);
+      }}
+      {...rest}
+    >
+      {children}
+    </ToggleButton>
+  );
+};
+Basic.args = {
+  isDisabled: false,
+  icon: 'ThumbsUpIcon',
+  children: 'Like',
 };
 
 export const Grouped = () => {

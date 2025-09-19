@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryObj, Meta, StoryFn } from '@storybook/react-vite';
+import type { StoryObj, Meta } from '@storybook/react-vite';
 import { Flex } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
@@ -9,7 +9,7 @@ export default {
   title: 'Utilities/Portal',
   component: Portal,
   parameters: {
-    propTypes: [Portal['__docgenInfo']],
+    propTypes: [(Portal as any)?.__docgenInfo],
   },
   argTypes: {
     children: { control: { type: 'text' } },
@@ -30,7 +30,7 @@ export const Default: StoryObj<PortalProps> = {
           >
             This is a child of Portal
           </Flex>
-        </Portal>{' '}
+        </Portal>
       </Flex>
     );
   },

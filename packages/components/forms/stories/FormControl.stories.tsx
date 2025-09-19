@@ -239,35 +239,31 @@ export const WithCharactersCount = {
   },
 };
 
-export const WithCustomLogic = {
-  render: (args: ComponentProps<typeof FormControl>) => {
-    const [isDisabled, setIsDisabled] = React.useState(true);
-    return (
-      <FormControl {...args} isDisabled={isDisabled}>
-        <Flex justifyContent="space-between" alignItems="center">
-          <FormControl.Label isRequired>Name</FormControl.Label>
-          <Box marginBottom="spacingS">
-            <TextLink
-              as="button"
-              icon={<LockSimpleIcon />}
-              onClick={() => {
-                setIsDisabled((prevState) => !prevState);
-              }}
-            >
-              {isDisabled ? 'Unlock to edit' : 'Lock'}
-            </TextLink>
-          </Box>
-        </Flex>
-        <TextInput aria-label="input" isDisabled={isDisabled} />
-        <FormControl.HelpText>
-          Please enter your first name
-        </FormControl.HelpText>
-        {args.isInvalid && (
-          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
-        )}
-      </FormControl>
-    );
-  },
+export const WithCustomLogic = (args: ComponentProps<typeof FormControl>) => {
+  const [isDisabled, setIsDisabled] = React.useState(true);
+  return (
+    <FormControl {...args} isDisabled={isDisabled}>
+      <Flex justifyContent="space-between" alignItems="center">
+        <FormControl.Label isRequired>Name</FormControl.Label>
+        <Box marginBottom="spacingS">
+          <TextLink
+            as="button"
+            icon={<LockSimpleIcon />}
+            onClick={() => {
+              setIsDisabled((prevState) => !prevState);
+            }}
+          >
+            {isDisabled ? 'Unlock to edit' : 'Lock'}
+          </TextLink>
+        </Box>
+      </Flex>
+      <TextInput aria-label="input" isDisabled={isDisabled} />
+      <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
+      {args.isInvalid && (
+        <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+      )}
+    </FormControl>
+  );
 };
 
 export const WithDensitySupport = {

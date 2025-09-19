@@ -32,7 +32,7 @@ export interface ProgressStepperProps extends CommonProps, MarginProps {
   onClick?: (stepNumber: number) => void;
 }
 
-function _ProgressStepper(
+function ProgressStepperBase(
   props: ProgressStepperProps,
   ref: React.Ref<HTMLDivElement>,
 ) {
@@ -92,4 +92,4 @@ function _ProgressStepper(
   );
 }
 
-export const ProgressStepper = React.forwardRef(_ProgressStepper);
+export const ProgressStepper = React.forwardRef(ProgressStepperBase);

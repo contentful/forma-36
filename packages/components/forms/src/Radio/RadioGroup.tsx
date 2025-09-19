@@ -15,7 +15,7 @@ export interface RadioGroupProps extends Omit<BaseCheckboxGroupProps, 'type'> {
   value?: string;
 }
 
-export const _RadioGroup = (
+export const RadioGroupBase = (
   props: RadioGroupProps,
   ref: React.Ref<HTMLDivElement>,
 ) => {
@@ -27,4 +27,6 @@ export const _RadioGroup = (
   );
 };
 
-export const RadioGroup = React.forwardRef(_RadioGroup);
+RadioGroupBase.displayName = 'RadioGroup';
+
+export const RadioGroup = React.forwardRef(RadioGroupBase);

@@ -9,7 +9,7 @@ export type UsageCardDescriptionProps = {
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 
-const _UsageCardDescription = (
+const UsageCardDescriptionBase = (
   props: UsageCardDescriptionProps,
   ref: Ref<HTMLDivElement>,
 ) => {
@@ -33,4 +33,6 @@ const _UsageCardDescription = (
   );
 };
 
-export const UsageCardDescription = forwardRef(_UsageCardDescription);
+UsageCardDescriptionBase.displayName = 'UsageCardDescription';
+
+export const UsageCardDescription = forwardRef(UsageCardDescriptionBase);

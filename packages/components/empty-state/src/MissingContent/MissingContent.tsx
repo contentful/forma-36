@@ -30,3 +30,5 @@ export const MissingContent = ({
     </Text>
   );
 };
+
+MissingContent.displayName = 'MissingContent';

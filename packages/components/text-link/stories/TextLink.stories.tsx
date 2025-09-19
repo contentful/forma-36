@@ -4,7 +4,7 @@ import * as icons from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
 import { Paragraph, Text } from '@contentful/f36-typography';
 import { List } from '@contentful/f36-list';
-import { Flex } from '@contentful/f36-core';
+import { type BoxProps, Flex } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
 import { TextLink } from '../src/TextLink';
@@ -13,7 +13,7 @@ import type { TextLinkVariant } from '../src/types';
 export default {
   component: TextLink,
   parameters: {
-    propTypes: TextLink['__docgenInfo'],
+    propTypes: (TextLink as any)?.__docgenInfo,
   },
   title: 'Components/TextLink',
   argTypes: {
@@ -135,7 +135,7 @@ export const UsedWithList = () => {
 };
 
 export const UsedWithinFlexbox = () => {
-  const Box = ({ children }) => (
+  const Box = ({ children }: BoxProps) => (
     <Flex
       style={{
         width: 200,
@@ -212,7 +212,7 @@ const textLinkVariants = [
   'premium',
 ];
 
-export const overview = () => (
+export const Overview = () => (
   <div
     style={{
       backgroundColor: tokens.colorElementLight,

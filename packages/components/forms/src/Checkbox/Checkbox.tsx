@@ -6,7 +6,7 @@ import { useBaseCheckboxGroup } from '../BaseCheckbox/BaseCheckboxGroupContext';
 
 export type CheckboxProps = Omit<BaseCheckboxProps, 'type' | 'size'>;
 
-const _Checkbox = (
+const CheckboxBase = (
   props: ExpandProps<CheckboxProps>,
   ref: React.Ref<HTMLInputElement>,
 ) => {
@@ -66,4 +66,5 @@ const _Checkbox = (
   );
 };
 
-export const Checkbox = React.forwardRef(_Checkbox);
+CheckboxBase.displayName = 'Checkbox';
+export const Checkbox = React.forwardRef(CheckboxBase);

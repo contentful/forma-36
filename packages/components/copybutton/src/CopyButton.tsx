@@ -33,6 +33,9 @@ export type CopyButtonProps = Omit<
   /**
    * Props that are passed to the tooltip component
    */
+
+  // ToDo reimplement tooltip
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tooltipProps?: any; //Omit<TooltipProps, 'content' | 'children'>;
   /**
    * Label to be used on aria-label for the button
@@ -55,7 +58,7 @@ export type CopyButtonProps = Omit<
   value: string;
 };
 
-function _CopyButton(
+function CopyButtonBase(
   {
     className,
     isDisabled = false,
@@ -94,6 +97,8 @@ function _CopyButton(
 
       // @ts-expect-error -- The return type of `execCommand` can also be string
       if (result === 'unsuccessful') {
+        // eslint-disable-next-line no-console
+        console.warn(error);
         throw new Error('Unable to copy value', { cause: result });
       }
       input.remove();
@@ -134,6 +139,8 @@ function _CopyButton(
       ref={ref}
     />
   );
+
+  // ToDo reimplement tooltip
   // return (
   //   <Tooltip
   //     content={copied ? tooltipCopiedText : tooltipText}
@@ -163,6 +170,6 @@ function _CopyButton(
   // );
 }
 
-_CopyButton.displayName = 'CopyButton';
+CopyButtonBase.displayName = 'CopyButton';
 
-export const CopyButton = React.forwardRef(_CopyButton);
+export const CopyButton = React.forwardRef(CopyButtonBase);

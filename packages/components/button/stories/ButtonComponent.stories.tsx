@@ -12,7 +12,7 @@ export default {
   title: 'Components/Button components',
   component: Button,
   parameters: {
-    propTypes: Button['__docgenInfo'],
+    propTypes: (Button as any)?.__docgenInfo,
   },
   argTypes: {
     className: { control: { disable: true } },
@@ -32,7 +32,7 @@ export default {
   },
 };
 
-export const _Button = {
+export const ButtonComponent = {
   render: ({ startIcon, endIcon, children, ...args }) => (
     <Button
       {...args}
