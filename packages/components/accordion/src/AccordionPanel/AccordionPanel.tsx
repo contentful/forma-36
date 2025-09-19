@@ -39,3 +39,5 @@ export const AccordionPanel: FC<ExpandProps<AccordionPanelProps>> = ({
     </Collapse>
   );
 };
+
+AccordionPanel.displayName = 'AccordionPanel';

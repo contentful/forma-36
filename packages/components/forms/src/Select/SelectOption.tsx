@@ -18,3 +18,5 @@ export const Option = ({
 }: OptionProps) => {
   return <option data-test-id={testId} {...otherProps} disabled={isDisabled} />;
 };
+
+Option.displayName = 'SelectOption';

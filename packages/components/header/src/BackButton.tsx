@@ -31,6 +31,7 @@ function BackButtonBase(
   );
 }
 
+BackButtonBase.displayName = 'BackButton';
 export const BackButton = forwardRef<HTMLButtonElement, BackButtonProps>(
   BackButtonBase,
 );
