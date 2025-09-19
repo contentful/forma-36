@@ -26,3 +26,5 @@ export const SkeletonBodyText = ({
     />
   );
 };
+
+SkeletonBodyText.displayName = 'SkeletonBodyTeyt';
