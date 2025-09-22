@@ -74,6 +74,7 @@ export * from './vendor/phosphor/ArticleIcon.js';
 export * from './vendor/phosphor/BellIcon.js';
 export * from './vendor/phosphor/BookOpenIcon.js';
 export * from './vendor/phosphor/BookmarkSimpleIcon.js';
+export * from './vendor/phosphor/BoxArrowUpIcon.js';
 export * from './vendor/phosphor/BracketsCurlyIcon.js';
 export * from './vendor/phosphor/BuildingIcon.js';
 export * from './vendor/phosphor/CalendarBlankIcon.js';
