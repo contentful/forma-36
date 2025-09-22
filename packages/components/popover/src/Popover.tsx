@@ -1,6 +1,6 @@
 import React from 'react';
-import { OffsetOptions, type Placement } from '@floating-ui/react';
-import { ExpandProps } from '@contentful/f36-core';
+import { type OffsetOptions, type Placement } from '@floating-ui/react';
+import { type ExpandProps } from '@contentful/f36-core';
 import { PopoverContextProvider } from './PopoverContext';
 import { usePopover } from './usePopover';
 
