@@ -8,7 +8,7 @@ import { CaretDownIcon, XIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover, type PopoverProps } from '@contentful/f36-popover';
 import { Subheading } from '@contentful/f36-typography';
-import { Tooltip } from '@contentful/f36-tooltip';
+//import { Tooltip } from '@contentful/f36-tooltip';
 
 import { getMultiselectStyles } from './Multiselect.styles';
 import { MultiselectOption, MultiselectOptionProps } from './MultiselectOption';
@@ -312,7 +312,8 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
           </Popover.Trigger>
           {showClearButton && (
             <div className={styles.clearSelectionButton}>
-              <Tooltip
+              {/** ToDo: fix tooltip */}
+              {/* <Tooltip
                 content={
                   clearButtonProps.tooltip
                     ? clearButtonProps.tooltip
@@ -331,8 +332,19 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                       : 'Clear selection'
                   }
                   size="small"
-                />
-              </Tooltip>
+                />  
+              </Tooltip> */}
+
+              <IconButton
+                onClick={handleClearSelection}
+                icon={<XIcon />}
+                aria-label={
+                  clearButtonProps.ariaLabel
+                    ? clearButtonProps.ariaLabel
+                    : 'Clear selection'
+                }
+                size="small"
+              />
             </div>
           )}
         </Flex>
