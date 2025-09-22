@@ -5,6 +5,7 @@ import {
   offset,
   flip,
   shift,
+  size,
   useClick,
   useDismiss,
   useRole,
@@ -15,8 +16,11 @@ import type { OffsetOptions, Placement } from '@floating-ui/react';
 
 export interface PopoverOptions {
   placement?: Placement | 'auto';
+  isFullWidth?: boolean;
   isAutoalignmentEnabled?: boolean;
   isOpen?: boolean;
+  closeOnEsc?: boolean;
+  closeOnBlur?: boolean;
   offset?: OffsetOptions;
   renderOnlyWhenOpen?: boolean;
   usePortal?: boolean;
@@ -25,12 +29,15 @@ export interface PopoverOptions {
 
 export function usePopover({
   placement = 'bottom-start',
+  isFullWidth = false,
   isAutoalignmentEnabled = true,
   isOpen = false,
   offset: offsetOption = 0,
   onClose,
   renderOnlyWhenOpen = true,
   usePortal = true,
+  closeOnEsc = true,
+  closeOnBlur = true,
 }: PopoverOptions = {}) {
   const [labelId, setLabelId] = React.useState<string | undefined>();
   const [descriptionId, setDescriptionId] = React.useState<
@@ -54,6 +61,21 @@ export function usePopover({
     sanitizedPlacement = placement;
   }
 
+  /**
+   * Set to same size as trigger reference element
+   */
+  if (isFullWidth) {
+    middleware.push(
+      size({
+        apply({ rects, elements }) {
+          Object.assign(elements.floating.style, {
+            minWidth: `${rects.reference.width}px`,
+          });
+        },
+      }),
+    );
+  }
+
   const data = useFloating({
     placement: sanitizedPlacement,
     open: isOpen,
@@ -67,7 +89,11 @@ export function usePopover({
   const click = useClick(context, {
     enabled: false,
   });
-  const dismiss = useDismiss(context);
+  const dismiss = useDismiss(context, {
+    escapeKey: closeOnEsc,
+    outsidePress: closeOnBlur,
+    ancestorScroll: true,
+  });
   const role = useRole(context);
 
   const interactions = useInteractions([click, dismiss, role]);
@@ -75,6 +101,7 @@ export function usePopover({
   return React.useMemo(
     () => ({
       isOpen,
+      dismiss,
       onClose,
       ...interactions,
       ...data,
@@ -85,6 +112,16 @@ export function usePopover({
       setLabelId,
       setDescriptionId,
     }),
-    [isOpen, onClose, interactions, data, labelId, descriptionId],
+    [
+      isOpen,
+      dismiss,
+      onClose,
+      interactions,
+      data,
+      renderOnlyWhenOpen,
+      usePortal,
+      labelId,
+      descriptionId,
+    ],
   );
 }
