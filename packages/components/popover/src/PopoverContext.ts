@@ -1,4 +1,4 @@
-import React, { HTMLProps } from 'react';
+import React from 'react';
 import { usePopover } from './usePopover';
 
 export type PopoverContextType =
