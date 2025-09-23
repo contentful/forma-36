@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Skeleton } from '../src/index';
-import type { SkeletonBodyTextProps } from '../src/SkeletonBodyText/SkeletonBodyText';
+import { Skeleton, type SkeletonTextProps } from '../src/index';
 
 export default {
   title: 'Components/Skeleton/SkeletonBodyText',
@@ -12,7 +11,7 @@ export default {
 };
 
 export const Basic = {
-  render: (args: SkeletonBodyTextProps) => (
+  render: (args: SkeletonTextProps) => (
     <Skeleton.Container>
       <Skeleton.BodyText {...args} />
     </Skeleton.Container>
