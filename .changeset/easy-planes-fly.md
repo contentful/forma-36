@@ -2,4 +2,4 @@
 '@contentful/f36-icons': minor
 ---
 
-Add `BoxArrowUpIcon`
+Add `TrayArrowDownIcon`
