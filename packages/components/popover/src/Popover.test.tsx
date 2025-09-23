@@ -35,7 +35,7 @@ describe('Popover', function () {
       </Popover>,
     );
 
-    const trigger = screen.getByRole('button');
+    const trigger = screen.getByTestId('cf-ui-button');
 
     await waitFor(() => {
       expect(trigger).toHaveAttribute('aria-expanded', 'true');
@@ -55,7 +55,7 @@ describe('Popover', function () {
       </Popover>,
     );
 
-    const trigger = screen.getByRole('button');
+    const trigger = screen.getByTestId('cf-ui-button');
     const popover = screen.getByRole('dialog');
 
     await waitFor(() => {
