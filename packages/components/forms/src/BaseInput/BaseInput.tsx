@@ -15,6 +15,7 @@ import {
 import getInputStyles from './BaseInput.styles';
 import { BaseInputInternalProps } from './types';
 import { useDensity } from '@contentful/f36-utils';
+import tokens from '@contentful/f36-tokens';
 
 const INPUT_DEFAULT_TAG = 'input';
 
@@ -106,7 +107,7 @@ function _BaseInput<E extends React.ElementType = typeof INPUT_DEFAULT_TAG>(
     <Box as="span" className={styles.iconPlaceholder}>
       {React.cloneElement(icon, {
         size: 'tiny',
-        variant: 'muted',
+        color: tokens.gray600,
         'aria-hidden': true,
       })}
     </Box>
