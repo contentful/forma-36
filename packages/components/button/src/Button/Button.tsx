@@ -11,6 +11,8 @@ import { useDensity } from '@contentful/f36-utils';
 import { Spinner } from '@contentful/f36-spinner';
 
 import tokens, { ColorTokens } from '@contentful/f36-tokens';
+import { getIconColorToken, iconColorByVariant } from '@contentful/f36-utils';
+import type { Variant } from '@contentful/f36-utils';
 
 import type { ButtonInternalProps } from '../types';
 import { getStyles } from './Button.styles';
@@ -56,12 +58,11 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
     className,
   );
 
-  const iconVariant: Record<ButtonInternalProps['variant'], ColorTokens> = {
-    negative: 'colorNegative',
+  // Button overrides: use 'colorWhite' for 'primary' and 'positive', fallback to utility mapping for others
+  const buttonIconColorByVariant: Record<Variant, ColorTokens> = {
+    ...iconColorByVariant,
     positive: 'colorWhite',
     primary: 'colorWhite',
-    secondary: 'gray900',
-    transparent: 'gray900',
   };
 
   const iconContent = (icon) => {
@@ -72,7 +73,7 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
       >
         {React.cloneElement(icon, {
           size: icon.props.size ?? `${size === 'large' ? 'medium' : 'small'}`,
-          color: tokens[iconVariant[variant]],
+          color: tokens[getIconColorToken(variant, buttonIconColorByVariant)],
         })}
       </Flex>
     );
