@@ -91,7 +91,7 @@ export const WithBackButton: StoryFn<HeaderProps> = () => (
       </Note>
     </Box>
     <Header
-      backButtonProps={{ onClick: action }}
+      backButtonProps={{ onClick: action('navigate back') }}
       withBackButton
       title="Product"
     />
@@ -110,7 +110,7 @@ export const WithTitleOverwrites: StoryFn<HeaderProps> = () => (
       </Note>
     </Box>
     <Header
-      backButtonProps={{ onClick: action }}
+      backButtonProps={{ onClick: action('navigate back') }}
       withBackButton
       title="Product"
       titleProps={{ as: 'h2', size: 'medium' }} // Overwriting the default title properties
@@ -129,7 +129,7 @@ export const WithBackButtonAndBreadcrumbs: StoryFn<HeaderProps> = () => (
       </Note>
     </Box>
     <Header
-      backButtonProps={{ onClick: action }}
+      backButtonProps={{ onClick: action('navigate back') }}
       withBackButton
       breadcrumbs={[
         {

@@ -6,7 +6,7 @@ import { axe } from 'jest-axe';
 import { IconButton } from './IconButton';
 
 describe('IconButton', () => {
-  test('renders with provided icon and accessible name', () => {
+  it('renders with provided icon and accessible name', () => {
     render(
       <IconButton
         aria-label="Show password"
@@ -19,7 +19,7 @@ describe('IconButton', () => {
     expect(screen.getByTestId('eye-icon')).toBeInTheDocument();
   });
 
-  test('calls onClick handler', async () => {
+  it('calls onClick handler', async () => {
     const user = userEvent.setup();
     const handleClick = jest.fn();
     render(
@@ -34,7 +34,7 @@ describe('IconButton', () => {
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
-  test('does not call onClick when disabled', async () => {
+  it('does not call onClick when disabled', async () => {
     const user = userEvent.setup();
     const handleClick = jest.fn();
     render(
@@ -49,7 +49,7 @@ describe('IconButton', () => {
     expect(handleClick).not.toHaveBeenCalled();
   });
 
-  test('supports different size prop (snapshot of className)', () => {
+  it('supports different size prop (snapshot of className)', () => {
     const { container } = render(
       // adjust size prop name if different (e.g. variant/size)
       <IconButton aria-label="Small button" size="small" icon={<EyeIcon />} />,
@@ -57,13 +57,13 @@ describe('IconButton', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('forwards ref to the underlying button element', () => {
+  it('forwards ref to the underlying button element', () => {
     const ref = createRef<HTMLButtonElement>();
     render(<IconButton aria-label="Focusable" icon={<EyeIcon />} ref={ref} />);
     expect(ref.current).toBeInstanceOf(HTMLButtonElement);
   });
 
-  test('exposes testId prop', () => {
+  it('exposes testId prop', () => {
     render(
       <IconButton
         aria-label="Has test id"
@@ -74,7 +74,7 @@ describe('IconButton', () => {
     expect(screen.getByTestId('my-icon-btn')).toBeInTheDocument();
   });
 
-  test('is accessible (axe)', async () => {
+  it('is accessible (axe)', async () => {
     const { container } = render(
       <IconButton aria-label="Accessible" icon={<EyeIcon />} />,
     );
@@ -82,14 +82,20 @@ describe('IconButton', () => {
     expect(results).toHaveNoViolations();
   });
 
-  test('warns (or fails) if aria-label missing (intentional negative)', () => {
+  it('warns (or fails) if aria-label missing (intentional negative)', () => {
     // If your component internally enforces aria-label you can skip or adapt this.
     // Here we assert no accessible name => role still present but NOT recommended.
-    render(<IconButton icon={<EyeIcon />} data-testid="no-label" />);
+    // @ts-expect-error intentional: missing aria-label to test accessibility enforcement
+    render(<IconButton icon={<EyeIcon />} testId="no-label" />);
     const btn = screen.getByTestId('no-label');
     // Accessible name should be empty string
     expect(btn).toHaveAccessibleName('');
   });
 
-  todo.test('Tooltip behaviour');
+  // TODO: Implement tooltip behavior tests:
+  // - Tooltip appears on hover and focus
+  // - Tooltip hides on mouse leave and blur
+  // - Accessible name / aria-describedby linkage
+  // - No tooltip rendered when disabled
+  test.todo('tooltip behavior (hover, focus, accessibility)');
 });
