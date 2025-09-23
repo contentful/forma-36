@@ -238,6 +238,8 @@ export * from './vendor/phosphor/ThumbsDownIcon.js';
 export * from './vendor/phosphor/ThumbsUpIcon.js';
 export * from './vendor/phosphor/TranslateIcon.js';
 export * from './vendor/phosphor/TrashSimpleIcon.js';
+export * from './vendor/phosphor/TrayArrowDownIcon.js';
+export * from './vendor/phosphor/TrayArrowUpIcon.js';
 export * from './vendor/phosphor/TreeStructureIcon.js';
 export * from './vendor/phosphor/TreeViewIcon.js';
 export * from './vendor/phosphor/TrendUpIcon.js';

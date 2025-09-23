@@ -1,5 +1,19 @@
 # Change Log
 
+## 5.5.0
+
+### Minor Changes
+
+- [#3181](https://github.com/contentful/forma-36/pull/3181) [`6063710`](https://github.com/contentful/forma-36/commit/6063710c9c73995d65478957fbc96868f68cfa86) Thanks [@andipaetzold](https://github.com/andipaetzold)! - Add `TrayArrowUpIcon`
+
+- [#3181](https://github.com/contentful/forma-36/pull/3181) [`6063710`](https://github.com/contentful/forma-36/commit/6063710c9c73995d65478957fbc96868f68cfa86) Thanks [@andipaetzold](https://github.com/andipaetzold)! - Add `TrayArrowDownIcon`
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.5.0
+  - @contentful/f36-icon@5.5.0
+
 ## 5.4.1
 
 ### Patch Changes
