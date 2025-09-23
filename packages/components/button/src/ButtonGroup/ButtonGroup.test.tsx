@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { ButtonGroup, Button } from '..';
+import { ButtonGroup, Button, IconButton } from '..';
 import { CaretDownIcon } from '@contentful/f36-icons';
 import { axe } from 'jest-axe';
 
@@ -9,7 +9,7 @@ describe('ButtonGroup', function () {
     const { container } = render(
       <ButtonGroup>
         <Button>Button</Button>
-        <Button startIcon={<CaretDownIcon />} />
+        <IconButton icon={<CaretDownIcon />} aria-label="open" />
       </ButtonGroup>,
     );
 
@@ -21,7 +21,8 @@ describe('ButtonGroup', function () {
     const { container } = render(
       <ButtonGroup>
         <Button>Button</Button>
-        <Button startIcon={<CaretDownIcon />} />
+        <Button startIcon={<CaretDownIcon />}>Open</Button>
+        <IconButton icon={<CaretDownIcon />} aria-label="open" />
       </ButtonGroup>,
     );
 
@@ -34,7 +35,7 @@ describe('ButtonGroup', function () {
     const { container } = render(
       <ButtonGroup className={additionalClassName}>
         <Button>Button</Button>
-        <Button startIcon={<CaretDownIcon />} />
+        <Button startIcon={<CaretDownIcon />}>Open</Button>
       </ButtonGroup>,
     );
 
