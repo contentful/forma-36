@@ -11,7 +11,6 @@ import {
   FloatingPortal,
   FloatingFocusManager,
   useMergeRefs,
-  useDismiss,
   useInteractions,
 } from '@floating-ui/react';
 
@@ -40,6 +39,7 @@ const PopoverContentBase = (
     isOpen,
     renderOnlyWhenOpen,
     usePortal,
+    autoFocus,
     dismiss,
     context: floatingContext,
     ...context
@@ -74,14 +74,21 @@ const PopoverContentBase = (
     </div>
   );
 
+  const maybeWrapWithFocusManager = (node: React.ReactElement) =>
+    autoFocus === false ? (
+      node
+    ) : (
+      <FloatingFocusManager context={floatingContext}>
+        {node}
+      </FloatingFocusManager>
+    );
+
   return usePortal ? (
     <FloatingPortal>
-      <FloatingFocusManager context={floatingContext}>
-        {content}
-      </FloatingFocusManager>
+      {maybeWrapWithFocusManager(content as React.ReactElement)}
     </FloatingPortal>
   ) : (
-    content
+    maybeWrapWithFocusManager(content as React.ReactElement)
   );
 };
 
