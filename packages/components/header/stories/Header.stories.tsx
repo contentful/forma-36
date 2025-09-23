@@ -8,7 +8,7 @@ import { MagnifyingGlassIcon, CopySimpleIcon } from '@contentful/f36-icons';
 import { TextInput } from '@contentful/f36-forms';
 
 import { Header, type HeaderProps } from '../src/Header';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Note, TextLink } from '@contentful/f36-components';
 
 const ExampleWrapper = ({ children }) => (
@@ -53,7 +53,7 @@ export const Default: StoryObj<HeaderProps> = {
   },
 };
 
-export const withBreadcrumbs: StoryObj<HeaderProps> = {
+export const WithBreadcrumbs: StoryObj<HeaderProps> = {
   render: (args) => (
     <ExampleWrapper>
       <Box marginBottom="spacingM">
@@ -79,7 +79,7 @@ export const withBreadcrumbs: StoryObj<HeaderProps> = {
   },
 };
 
-export const withBackButton: StoryFn<HeaderProps> = () => (
+export const WithBackButton: StoryFn<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
       <Note>
@@ -91,14 +91,14 @@ export const withBackButton: StoryFn<HeaderProps> = () => (
       </Note>
     </Box>
     <Header
-      backButtonProps={{ onClick: action }}
+      backButtonProps={{ onClick: action('navigate back') }}
       withBackButton
       title="Product"
     />
   </ExampleWrapper>
 );
 
-export const withTitleOverwrites: StoryFn<HeaderProps> = () => (
+export const WithTitleOverwrites: StoryFn<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
       <Note>
@@ -110,7 +110,7 @@ export const withTitleOverwrites: StoryFn<HeaderProps> = () => (
       </Note>
     </Box>
     <Header
-      backButtonProps={{ onClick: action }}
+      backButtonProps={{ onClick: action('navigate back') }}
       withBackButton
       title="Product"
       titleProps={{ as: 'h2', size: 'medium' }} // Overwriting the default title properties
@@ -118,7 +118,7 @@ export const withTitleOverwrites: StoryFn<HeaderProps> = () => (
   </ExampleWrapper>
 );
 
-export const withBackButtonAndBreadcrumbs: StoryFn<HeaderProps> = () => (
+export const WithBackButtonAndBreadcrumbs: StoryFn<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
       <Note>
@@ -129,7 +129,7 @@ export const withBackButtonAndBreadcrumbs: StoryFn<HeaderProps> = () => (
       </Note>
     </Box>
     <Header
-      backButtonProps={{ onClick: action }}
+      backButtonProps={{ onClick: action('navigate back') }}
       withBackButton
       breadcrumbs={[
         {
@@ -142,7 +142,7 @@ export const withBackButtonAndBreadcrumbs: StoryFn<HeaderProps> = () => (
   </ExampleWrapper>
 );
 
-export const withActions: StoryFn<HeaderProps> = () => (
+export const WithActions: StoryFn<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
       <Note>
@@ -166,7 +166,7 @@ export const withActions: StoryFn<HeaderProps> = () => (
   </ExampleWrapper>
 );
 
-export const withMetadata: StoryFn<HeaderProps> = () => (
+export const WithMetadata: StoryFn<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
       <Note>Metadata area gets rendered after the title area</Note>

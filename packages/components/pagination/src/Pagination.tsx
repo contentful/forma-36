@@ -87,7 +87,10 @@ export interface PaginationProps extends CommonProps {
   navigationButtonsProps?: NavigationButtonsProps;
 }
 
-function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
+function PaginationBase(
+  props: PaginationProps,
+  ref: React.Ref<HTMLDivElement>,
+) {
   const {
     className,
     onPageChange,
@@ -183,6 +186,6 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
   );
 }
 
-_Pagination.displayName = 'Pagination';
+PaginationBase.displayName = 'Pagination';
 
-export const Pagination = React.forwardRef(_Pagination);
+export const Pagination = React.forwardRef(PaginationBase);

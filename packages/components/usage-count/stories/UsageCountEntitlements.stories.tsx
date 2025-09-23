@@ -1,13 +1,13 @@
 import React from 'react';
-import type { StoryObj, Meta, StoryFn } from '@storybook/react-vite';
+import type { StoryObj, Meta } from '@storybook/react-vite';
 
 import { UsageCount, type UsageCountProps } from '../src/UsageCount';
 
-export default {
+const meta = {
   component: UsageCount,
   title: 'Components/UsageCount',
   parameters: {
-    propTypes: [UsageCount['__docgenInfo']],
+    propTypes: [(UsageCount as any)?.__docgenInfo],
   },
   argTypes: {
     className: { control: { disable: true } },
@@ -32,10 +32,12 @@ export default {
       },
     },
   },
-} as Meta<UsageCountProps>;
+} satisfies Meta<typeof UsageCount>;
+
+export default meta;
 
 export const Entitlements: StoryObj<UsageCountProps> = {
-  render: (args) => {
+  render: ({ ...args }) => {
     const { valueUnit, value, quota } = args;
     return (
       <UsageCount

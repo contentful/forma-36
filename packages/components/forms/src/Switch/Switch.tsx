@@ -5,7 +5,7 @@ import type { ExpandProps } from '@contentful/f36-core';
 
 export type SwitchProps = Omit<BaseCheckboxProps, 'type' | 'isIndeterminate'>;
 
-const _Switch = (
+const SwitchBase = (
   props: ExpandProps<SwitchProps>,
   ref: React.Ref<HTMLInputElement>,
 ) => {
@@ -47,4 +47,6 @@ const _Switch = (
   );
 };
 
-export const Switch = React.forwardRef(_Switch);
+SwitchBase.displayName = 'Switch';
+
+export const Switch = React.forwardRef(SwitchBase);

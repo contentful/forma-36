@@ -11,7 +11,7 @@ export default {
   title: 'Components/Note',
   component: Note,
   parameters: {
-    propTypes: [Note['__docgenInfo']],
+    propTypes: [(Note as any)?.__docgenInfo],
   },
   argTypes: {
     className: { control: { disable: true } },
@@ -19,7 +19,7 @@ export default {
   },
 } as Meta;
 
-export const basic: StoryObj<any> = {
+export const Basic: StoryObj<any> = {
   render: ({ ...args }) => (
     <Note {...args}>
       A piece of information that is relevant to the context the user is
@@ -32,7 +32,7 @@ export const basic: StoryObj<any> = {
   },
 };
 
-export const withCustomIcon: StoryObj<any> = {
+export const WithCustomIcon: StoryObj<any> = {
   render: ({ ...args }) => (
     <Flex fullWidth flexDirection="column">
       <SectionHeading as="h3" marginBottom="spacingS">
@@ -40,7 +40,7 @@ export const withCustomIcon: StoryObj<any> = {
       </SectionHeading>
 
       <Flex marginBottom="spacingM">
-        <Note icon={<Icon as={icons['StartIcon']} />} {...args}>
+        <Note icon={<Icon as={icons['StarIcon']} />} {...args}>
           A piece of information that is relevant to the context the user is
           currently i
         </Note>
@@ -62,7 +62,7 @@ export const withCustomIcon: StoryObj<any> = {
   },
 };
 
-export const overview = () => (
+export const Overview = () => (
   <Flex fullWidth flexDirection="column">
     <SectionHeading as="h3" marginBottom="spacingS">
       Note primary

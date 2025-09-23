@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryObj, Meta, StoryFn } from '@storybook/react-vite';
+import type { StoryObj, Meta } from '@storybook/react-vite';
 
 import { UsageCardProps } from '../src';
 import { UsageCard } from '../src/CompoundUsageCard';

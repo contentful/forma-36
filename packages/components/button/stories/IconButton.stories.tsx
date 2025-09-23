@@ -23,7 +23,7 @@ export default {
   },
 } as Meta;
 
-export const basic = {
+export const Basic = {
   render: ({ icon, 'aria-label': ariaLabel, iconProps, ...props }) => (
     <IconButton
       icon={icon && <Icon as={icons[icon]} {...iconProps} />}
@@ -43,7 +43,7 @@ export const basic = {
   },
 };
 
-export const withTooltip = {
+export const WithTooltip = {
   render: ({ icon, iconProps, ...props }) => (
     <>
       <Flex marginBottom="spacingS">

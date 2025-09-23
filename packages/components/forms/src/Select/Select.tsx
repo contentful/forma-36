@@ -37,7 +37,7 @@ export type SelectProps = PropsWithHTMLElement<
   'disabled' | 'required'
 >;
 
-const _Select = (
+const SelectBase = (
   {
     id,
     children,
@@ -117,4 +117,6 @@ const _Select = (
   );
 };
 
-export const Select = React.forwardRef(_Select);
+SelectBase.displayName = 'Select';
+
+export const Select = React.forwardRef(SelectBase);

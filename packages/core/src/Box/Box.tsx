@@ -21,7 +21,6 @@ export interface BoxInternalProps
    */
   display?: CSS.Property.Display;
   children?: React.ReactNode;
-  as?: React.ElementType<any>;
 }
 
 export type BoxProps<E extends React.ElementType = typeof BOX_DEFAULT_TAG> =
@@ -78,8 +77,10 @@ export function useBox<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
   };
 }
 
-function _Box<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
+function BoxBase<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
   props: BoxProps<E>,
+  // as this is a polymorphic base component we can not narrow down the type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ref: React.Ref<any>,
 ) {
   const { boxProps, Element } = useBox<E>(props);
@@ -91,9 +92,9 @@ function _Box<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
   );
 }
 
-_Box.displayName = 'Box';
+BoxBase.displayName = 'Box';
 
-export const Box = React.forwardRef(_Box) as PolymorphicComponent<
+export const Box = React.forwardRef(BoxBase) as PolymorphicComponent<
   ExpandProps<BoxInternalProps>,
   typeof BOX_DEFAULT_TAG
 >;

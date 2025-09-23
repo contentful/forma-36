@@ -33,3 +33,5 @@ export const Breadcrumb = ({ breadcrumbs, ...otherProps }: BreadcrumbProps) => {
   });
   return <Segmentation segments={segments} {...otherProps} />;
 };
+
+Breadcrumb.displayName = 'Breadcrumb';

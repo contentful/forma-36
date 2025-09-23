@@ -25,7 +25,7 @@ export type StackProps<E extends React.ElementType = typeof STACK_DEFAULT_TAG> =
 
 const STACK_DEFAULT_TAG = 'div';
 
-function _Stack<E extends React.ElementType = typeof STACK_DEFAULT_TAG>(
+function StackBase<E extends React.ElementType = typeof STACK_DEFAULT_TAG>(
   {
     flexDirection = 'row',
     alignItems = 'center',
@@ -35,7 +35,7 @@ function _Stack<E extends React.ElementType = typeof STACK_DEFAULT_TAG>(
     as,
     ...otherProps
   }: StackProps<E>,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLElement>,
 ) {
   const { boxProps, Element } = useBox<React.ElementType>({
     ...otherProps,
@@ -57,9 +57,9 @@ function _Stack<E extends React.ElementType = typeof STACK_DEFAULT_TAG>(
   );
 }
 
-_Stack.displayName = 'Stack';
+StackBase.displayName = 'Stack';
 
-export const Stack = React.forwardRef(_Stack) as PolymorphicComponent<
+export const Stack = React.forwardRef(StackBase) as PolymorphicComponent<
   ExpandProps<StackInternalProps>,
   typeof STACK_DEFAULT_TAG
 >;

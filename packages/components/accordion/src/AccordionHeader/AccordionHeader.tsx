@@ -62,3 +62,5 @@ export const AccordionHeader = ({
     </Subheading>
   );
 };
+
+AccordionHeader.displayName = 'AccordionHeader';

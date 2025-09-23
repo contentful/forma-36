@@ -46,7 +46,7 @@ export type TableCellProps = PropsWithHTMLElement<
   'th' | 'td'
 >;
 
-function _TableCell(
+function TableCellBase(
   {
     align = 'left',
     children,
@@ -57,12 +57,14 @@ function _TableCell(
     sortButtonAriaLabel,
     ...otherProps
   }: TableCellProps,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   forwardedRef: React.Ref<any>,
 ) {
   const [showSorting, setShowSorting] = useState(false);
   const { as, name: context, offsetTop } = useTableCellContext();
   const { verticalAlign } = useTableContext();
-  const SortingIcon = SortingIconMap[sortDirection];
+
+  const SortingIcon = sortDirection ? SortingIconMap[sortDirection] : undefined;
   const isTableHead = context === 'head';
   const styles = getTableCellStyles({
     isSortable: isTableHead ? isSortable : undefined,
@@ -102,7 +104,7 @@ function _TableCell(
         type="button"
       >
         {children}
-        {sortDirection ? (
+        {sortDirection && SortingIcon ? (
           <SortingIcon size="tiny" color={tokens.gray900} />
         ) : (
           <CaretUpDownIcon
@@ -134,9 +136,9 @@ function _TableCell(
   );
 }
 
-_TableCell.displayName = 'TableCell';
+TableCellBase.displayName = 'TableCell';
 
-export const TableCell = forwardRef(_TableCell) as PolymorphicComponent<
+export const TableCell = forwardRef(TableCellBase) as PolymorphicComponent<
   ExpandProps<TableCellInternalProps>,
   'th' | 'td'
 >;

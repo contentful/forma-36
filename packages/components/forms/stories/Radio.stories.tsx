@@ -13,42 +13,40 @@ export default {
   },
 };
 
-export const Basic = {
-  render: (args: ComponentProps<typeof Radio>) => {
-    const [activeOption, setActiveOption] = useState('yes');
-    return (
-      <Flex>
-        <Box marginRight="spacingS">
-          <Radio
-            {...args}
-            name="basic"
-            value="yes"
-            isChecked={activeOption === 'yes'}
-            onChange={(e) => {
-              setActiveOption((e.target as HTMLInputElement).value);
-            }}
-            id="termsCheckboxOption1"
-          >
-            Yes
-          </Radio>
-        </Box>
-        <Box marginRight="spacingS">
-          <Radio
-            {...args}
-            name="basic"
-            value="no"
-            isChecked={activeOption === 'no'}
-            onChange={(e) => {
-              setActiveOption((e.target as HTMLInputElement).value);
-            }}
-            id="termsCheckboxOption2"
-          >
-            No
-          </Radio>
-        </Box>
-      </Flex>
-    );
-  },
+export const Basic = (args: ComponentProps<typeof Radio>) => {
+  const [activeOption, setActiveOption] = useState('yes');
+  return (
+    <Flex>
+      <Box marginRight="spacingS">
+        <Radio
+          {...args}
+          name="basic"
+          value="yes"
+          isChecked={activeOption === 'yes'}
+          onChange={(e) => {
+            setActiveOption((e.target as HTMLInputElement).value);
+          }}
+          id="termsCheckboxOption1"
+        >
+          Yes
+        </Radio>
+      </Box>
+      <Box marginRight="spacingS">
+        <Radio
+          {...args}
+          name="basic"
+          value="no"
+          isChecked={activeOption === 'no'}
+          onChange={(e) => {
+            setActiveOption((e.target as HTMLInputElement).value);
+          }}
+          id="termsCheckboxOption2"
+        >
+          No
+        </Radio>
+      </Box>
+    </Flex>
+  );
 };
 
 export const Overview = () => (
