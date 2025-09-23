@@ -56,6 +56,7 @@ export const BaseCheckboxGroupBase = (
         flexDirection="column"
         alignItems="flex-start"
         spacing="spacingXs"
+        role="group"
       >
         {children}
       </Stack>
