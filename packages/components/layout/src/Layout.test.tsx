@@ -28,8 +28,8 @@ describe('Layout', () => {
   it('renders left and right sidebars', () => {
     render(
       <Layout
-        leftSidebar={<nav aria-label="left">Left sidebar</nav>}
-        rightSidebar={<aside aria-label="right">Right sidebar</aside>}
+        leftSidebar={<nav data-test-id="left">Left sidebar</nav>}
+        rightSidebar={<aside data-test-id="right">Right sidebar</aside>}
       >
         <p>Main</p>
       </Layout>,
@@ -81,8 +81,8 @@ describe('Layout', () => {
     const { container } = render(
       <Layout
         header={<div role="banner">Header</div>}
-        leftSidebar={<nav aria-label="Primary">Nav</nav>}
-        rightSidebar={<aside aria-label="Meta">Meta</aside>}
+        leftSidebar={<nav data-test-id="left">Left sidebar</nav>}
+        rightSidebar={<aside data-test-id="right">Right sidebar</aside>}
       >
         <main>
           <h1>Title</h1>

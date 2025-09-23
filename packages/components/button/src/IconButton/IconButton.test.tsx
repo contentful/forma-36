@@ -10,7 +10,7 @@ describe('IconButton', () => {
     render(
       <IconButton
         aria-label="Show password"
-        icon={<EyeIcon data-testid="eye-icon" />}
+        icon={<EyeIcon testId="eye-icon" />}
       />,
     );
     expect(
@@ -27,7 +27,7 @@ describe('IconButton', () => {
         aria-label="Toggle"
         icon={<EyeIcon />}
         onClick={handleClick}
-        data-testid="icon-btn"
+        testId="icon-btn"
       />,
     );
     await user.click(screen.getByTestId('icon-btn'));
