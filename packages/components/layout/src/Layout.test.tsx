@@ -3,22 +3,6 @@ import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { Layout } from './Layout';
 
-// Helper consumer to assert context values
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const ContextInspector: React.FC<{ onValue: (v: any) => void }> = ({
-  onValue,
-}) => {
-  // Dynamically import to avoid circular import if direct value export exists
-  const ReactCtx = require('./LayoutContext');
-  const ctx = React.useContext(ReactCtx.LayoutContext);
-  React.useEffect(() => {
-    onValue(ctx);
-  }, [ctx, onValue]);
-  return null;
-};
-
-const makeSection = (label: string) => <div data-test-id={label}>{label}</div>;
-
 describe('Layout', () => {
   it('renders children inside content container', () => {
     render(
@@ -44,8 +28,8 @@ describe('Layout', () => {
   it('renders left and right sidebars', () => {
     render(
       <Layout
-        leftSidebar={makeSection('left')}
-        rightSidebar={makeSection('right')}
+        leftSidebar={<nav aria-label="left">Left sidebar</nav>}
+        rightSidebar={<aside aria-label="right">Right sidebar</aside>}
       >
         <p>Main</p>
       </Layout>,
@@ -78,7 +62,7 @@ describe('Layout', () => {
     expect(root).toHaveAttribute('data-foo', 'bar');
   });
 
-  it('applies custom itIds (root & content)', () => {
+  it('applies custom test ids (root & content)', () => {
     render(
       <Layout testId="root-id" contentTestId="content-id">
         X
@@ -122,7 +106,7 @@ describe('Layout', () => {
 
   it('renders only one sidebar (right)', () => {
     render(
-      <Layout rightSidebar={<div data-test-id="right-only">R</div>}>
+      <Layout rightSidebar={<div data-test-id="right-only">Right Sidebar</div>}>
         <span>Body</span>
       </Layout>,
     );
