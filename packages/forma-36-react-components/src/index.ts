@@ -19,6 +19,7 @@ export * from '@contentful/f36-note';
 export * from '@contentful/f36-pagination';
 export * from '@contentful/f36-pill';
 export * from '@contentful/f36-progress-stepper';
+export * from '@contentful/f36-popover';
 export * from '@contentful/f36-skeleton';
 export * from '@contentful/f36-spinner';
 export * from '@contentful/f36-tabs';
