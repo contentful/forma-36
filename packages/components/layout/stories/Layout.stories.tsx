@@ -147,7 +147,7 @@ export const WithFullHeader: StoryFn<LayoutProps> = () => {
               className={css({ padding: '0', backgroundColor: 'white' })}
               title="Headline"
               breadcrumbs={[{ content: 'Content Types', url: '#' }]}
-              backButtonProps={{ onClick: action }}
+              backButtonProps={{ onClick: action('navigate back') }}
               withBackButton
               actions={
                 <Button variant="primary" size="small">
