@@ -1,5 +1,52 @@
 # Change Log
 
+## 5.5.0
+
+### Patch Changes
+
+- Updated dependencies [[`6063710`](https://github.com/contentful/forma-36/commit/6063710c9c73995d65478957fbc96868f68cfa86), [`6063710`](https://github.com/contentful/forma-36/commit/6063710c9c73995d65478957fbc96868f68cfa86)]:
+  - @contentful/f36-icons@5.5.0
+  - @contentful/f36-accordion@5.5.0
+  - @contentful/f36-asset@5.5.0
+  - @contentful/f36-autocomplete@5.5.0
+  - @contentful/f36-avatar@5.5.0
+  - @contentful/f36-badge@5.5.0
+  - @contentful/f36-button@5.5.0
+  - @contentful/f36-card@5.5.0
+  - @contentful/f36-collapse@5.5.0
+  - @contentful/f36-copybutton@5.5.0
+  - @contentful/f36-core@5.5.0
+  - @contentful/f36-datetime@5.5.0
+  - @contentful/f36-datepicker@5.5.0
+  - @contentful/f36-drag-handle@5.5.0
+  - @contentful/f36-entity-list@5.5.0
+  - @contentful/f36-empty-state@5.5.0
+  - @contentful/f36-forms@5.5.0
+  - @contentful/f36-header@5.5.0
+  - @contentful/f36-icon@5.5.0
+  - @contentful/f36-image@5.5.0
+  - @contentful/f36-layout@5.5.0
+  - @contentful/f36-list@5.5.0
+  - @contentful/f36-menu@5.5.0
+  - @contentful/f36-modal@5.5.0
+  - @contentful/f36-multiselect@5.5.0
+  - @contentful/f36-navlist@5.5.0
+  - @contentful/f36-note@5.5.0
+  - @contentful/f36-notification@5.5.0
+  - @contentful/f36-pagination@5.5.0
+  - @contentful/f36-pill@5.5.0
+  - @contentful/f36-progress-stepper@5.5.0
+  - @contentful/f36-popover@5.5.0
+  - @contentful/f36-skeleton@5.5.0
+  - @contentful/f36-spinner@5.5.0
+  - @contentful/f36-table@5.5.0
+  - @contentful/f36-tabs@5.5.0
+  - @contentful/f36-text-link@5.5.0
+  - @contentful/f36-tooltip@5.5.0
+  - @contentful/f36-typography@5.5.0
+  - @contentful/f36-usage-card@5.5.0
+  - @contentful/f36-usage-count@5.5.0
+
 ## 5.4.1
 
 ### Patch Changes
