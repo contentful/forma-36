@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import truncate from 'truncate';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import {
   Flex,
   type ExpandProps,
@@ -74,7 +74,7 @@ function EntryCardDescription({
 
 EntryCardDescription.displayName = 'EntryCardDescription';
 
-function _EntryCard<
+function EntryCardBase<
   E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG,
 >(
   {
@@ -103,6 +103,7 @@ function _EntryCard<
   ) : null;
 
   return (
+    // @ts-expect-error this beast of polymorphic component needs a deeper refactor.
     <BaseCard
       as={ENTRY_CARD_DEFAULT_TAG}
       {...otherProps}
@@ -134,9 +135,9 @@ function _EntryCard<
   );
 }
 
-_EntryCard.displayName = 'EntryCard';
+EntryCardBase.displayName = 'EntryCard';
 
-export const EntryCard: PolymorphicComponent<
+export const EntryCard = forwardRef(EntryCardBase) as PolymorphicComponent<
   ExpandProps<EntryCardInternalProps>,
   typeof ENTRY_CARD_DEFAULT_TAG
-> = forwardRef(_EntryCard);
+>;

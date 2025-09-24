@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import {
   Flex,
   type PolymorphicComponent,
@@ -34,7 +34,7 @@ export type CardProps<
   E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG,
 > = PolymorphicProps<CardInternalProps, E>;
 
-function _Card<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
+function CardBase<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
   {
     actions,
     badge,
@@ -51,6 +51,7 @@ function _Card<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
   const hasHeader = Boolean(title || icon || badge || actions);
 
   return (
+    // @ts-expect-error this beast of polymorphic component needs a deeper refactor.
     <BaseCard
       className={cx(styles.root, className)}
       {...otherProps}
@@ -82,9 +83,9 @@ function _Card<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
   );
 }
 
-_Card.displayName = 'Card';
+CardBase.displayName = 'Card';
 
-export const Card: PolymorphicComponent<
+export const Card = forwardRef(CardBase) as PolymorphicComponent<
   ExpandProps<CardInternalProps>,
   typeof BASE_CARD_DEFAULT_TAG
-> = forwardRef(_Card);
+>;
