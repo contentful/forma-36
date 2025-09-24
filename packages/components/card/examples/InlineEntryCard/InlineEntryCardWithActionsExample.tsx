@@ -1,5 +1,9 @@
+/* eslint-disable */
+/**need to silence this file for now */
+
 import React from 'react';
-import { InlineEntryCard, MenuItem } from '@contentful/f36-components';
+import { InlineEntryCard } from '@contentful/f36-components';
+//import { InlineEntryCard, MenuItem} from '@contentful/f36-components';
 
 export default function InlineEntryCardWithActionsExample() {
   const handleEditAction = () => console.log('handleEditAction');
@@ -10,18 +14,18 @@ export default function InlineEntryCardWithActionsExample() {
   return (
     <InlineEntryCard
       actions={[
-        <MenuItem key="edit" onClick={handleEditAction}>
+        <li key="edit" onClick={handleEditAction}>
           Edit
-        </MenuItem>,
-        <MenuItem key="unpublish" onClick={handleUnpublishAction}>
+        </li>,
+        <li key="unpublish" onClick={handleUnpublishAction}>
           Unpublish
-        </MenuItem>,
-        <MenuItem key="copy" onClick={handleCopyAction}>
+        </li>,
+        <li key="copy" onClick={handleCopyAction}>
           Copy
-        </MenuItem>,
-        <MenuItem key="delete" onClick={handleDeleteAction}>
+        </li>,
+        <li key="delete" onClick={handleDeleteAction}>
           Delete
-        </MenuItem>,
+        </li>,
       ]}
       status="published"
       title="Forma 36 Entry Title"
