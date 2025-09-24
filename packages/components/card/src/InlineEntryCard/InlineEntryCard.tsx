@@ -1,6 +1,6 @@
 import React from 'react';
-import { cx } from 'emotion';
-import { Tooltip } from '@contentful/f36-tooltip';
+import { cx } from '@emotion/css';
+//import { Tooltip } from '@contentful/f36-tooltip';
 import { Text } from '@contentful/f36-typography';
 import { Skeleton } from '@contentful/f36-skeleton';
 
@@ -47,15 +47,16 @@ export const InlineEntryCard = ({
   }
 
   return (
-    <Tooltip placement="bottom" content={title}>
-      <BaseCard
-        {...otherProps}
-        className={cx(styles.root({ status }), className)}
-        header={header}
-        testId={testId}
-      >
-        {children || <Text>{title}</Text>}
-      </BaseCard>
-    </Tooltip>
+    //ToDo: fix tooltip
+    //<Tooltip placement="bottom" content={title}>
+    <BaseCard
+      {...otherProps}
+      className={cx(styles.root({ status }), className)}
+      header={header}
+      testId={testId}
+    >
+      {children || <Text>{title}</Text>}
+    </BaseCard>
+    //</Tooltip>
   );
 };

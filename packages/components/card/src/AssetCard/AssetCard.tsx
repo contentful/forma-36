@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { Flex } from '@contentful/f36-core';
 import { EntityStatusBadge } from '@contentful/f36-badge';
 import { Asset, type AssetStatus, type AssetType } from '@contentful/f36-asset';
