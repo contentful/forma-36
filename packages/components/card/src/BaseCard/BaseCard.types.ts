@@ -28,7 +28,7 @@ export type BaseCardInternalProps = CommonProps &
     /**
      * An array of Menu elements used to render an actions menu
      */
-    actions?: React.ReactNodeArray;
+    actions?: ReactNode[];
     /**
      * Handle tag for Card component
      */
