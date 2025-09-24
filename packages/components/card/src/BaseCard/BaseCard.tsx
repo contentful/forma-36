@@ -1,6 +1,5 @@
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import React, {
-  forwardRef,
   useCallback,
   useState,
   type FocusEventHandler,
@@ -27,7 +26,9 @@ export type BaseCardProps<
   E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG,
 > = PolymorphicProps<BaseCardInternalProps, E>;
 
-function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
+function BaseCardBase<
+  E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG,
+>(
   {
     actions,
     actionsButtonProps,
@@ -150,6 +151,22 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
     />
   );
 
+  const CardInner = () => (
+    <>
+      {withDragHandle
+        ? dragHandleRender
+          ? dragHandleRender({ drag, isDragging })
+          : drag
+        : null}
+      <div className={styles.wrapper} data-card-part="wrapper">
+        {header ?? defaultHeader}
+        <div className={styles.contentBody} data-card-part="content">
+          {children}
+        </div>
+      </div>
+    </>
+  );
+
   return (
     <Box
       aria-label={title || ariaLabel}
@@ -189,24 +206,14 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
       testId={testId}
       title={title}
     >
-      {withDragHandle
-        ? dragHandleRender
-          ? dragHandleRender({ drag, isDragging })
-          : drag
-        : null}
-      <div className={styles.wrapper} data-card-part="wrapper">
-        {header ?? defaultHeader}
-        <div className={styles.contentBody} data-card-part="content">
-          {children}
-        </div>
-      </div>
+      {CardInner}
     </Box>
   );
 }
 
-_BaseCard.displayName = 'BaseCard';
+BaseCardBase.displayName = 'BaseCard';
 
-export const BaseCard: PolymorphicComponent<
+export const BaseCard = React.forwardRef(BaseCardBase) as PolymorphicComponent<
   BaseCardInternalProps,
   typeof BASE_CARD_DEFAULT_TAG
-> = forwardRef(_BaseCard);
+>;
