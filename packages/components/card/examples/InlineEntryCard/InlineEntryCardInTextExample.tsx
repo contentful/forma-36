@@ -1,15 +1,13 @@
 import React from 'react';
-import { Text, InlineEntryCard, MenuItem } from '@contentful/f36-components';
+import { Text, InlineEntryCard } from '@contentful/f36-components';
+//import { Text, InlineEntryCard, MenuItem } from '@contentful/f36-components';
 
 export default function InlineEntryCardInTextExample() {
   return (
     <Text>
       Macbeth (/məkˈbɛθ/, full title The Tragedie of Macbeth) is a tragedy by{' '}
       <InlineEntryCard
-        actions={[
-          <MenuItem key="copy">Copy</MenuItem>,
-          <MenuItem key="delete">Delete</MenuItem>,
-        ]}
+        actions={[<li key="copy">Copy</li>, <li key="delete">Delete</li>]}
         status="published"
         title="Author: William Shakespeare"
       >

@@ -34,6 +34,7 @@
     "@contentful/f36-asset": "^6.0.0-alpha.0",
     "@contentful/f36-badge": "^6.0.0-alpha.0",
     "@contentful/f36-button": "^6.0.0-alpha.0",
+    "@contentful/f36-card": "^6.0.0-alpha.0",
     "@contentful/f36-collapse": "^6.0.0-alpha.0",
     "@contentful/f36-copybutton": "^6.0.0-alpha.0",
     "@contentful/f36-core": "^6.0.0-alpha.0",
