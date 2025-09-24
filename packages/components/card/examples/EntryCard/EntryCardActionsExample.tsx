@@ -1,5 +1,6 @@
 import React from 'react';
-import { EntryCard, MenuItem } from '@contentful/f36-components';
+import { EntryCard } from '@contentful/f36-components';
+//import { EntryCard, MenuItem } from '@contentful/f36-components';
 
 export default function EntryCardActionsExample() {
   return (
@@ -9,12 +10,14 @@ export default function EntryCardActionsExample() {
       title="John Doe"
       description="Research and recommendations for modern stack websites."
       actions={[
-        <MenuItem key="copy" onClick={() => alert('copy')}>
-          Copy
-        </MenuItem>,
-        <MenuItem key="delete" onClick={() => alert('delete')}>
-          Delete
-        </MenuItem>,
+        <li>Copy</li>,
+        <li>Delete</li>,
+        // <MenuItem key="copy" onClick={() => alert('copy')}>
+        //   Copy
+        // </MenuItem>,
+        // <MenuItem key="delete" onClick={() => alert('delete')}>
+        //   Delete
+        // </MenuItem>,
       ]}
     />
   );

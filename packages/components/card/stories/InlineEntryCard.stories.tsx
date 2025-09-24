@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading, Text } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
@@ -20,7 +20,7 @@ export default {
   title: 'Components/Card/InlineEntryCard',
 } as Meta;
 
-export const Default: Story<InlineEntryCardProps> = (args) => {
+export const Default: StoryObj<InlineEntryCardProps> = (args) => {
   return (
     <Flex style={{ maxWidth: '600px' }}>
       <Text>
@@ -48,7 +48,7 @@ Default.args = {
   children: 'William Shakespeare',
 };
 
-export const WithOnlyTitle: Story<InlineEntryCardProps> = (args) => {
+export const WithOnlyTitle: StoryObj<InlineEntryCardProps> = (args) => {
   return (
     <Flex style={{ maxWidth: '600px' }}>
       <Text>
@@ -75,7 +75,7 @@ WithOnlyTitle.args = {
   title: 'Author: William Shakespeare',
 };
 
-export const WithNoTitle: Story<InlineEntryCardProps> = (args) => {
+export const WithNoTitle: StoryObj<InlineEntryCardProps> = (args) => {
   return (
     <Flex style={{ maxWidth: '600px' }}>
       <Text>
@@ -102,7 +102,7 @@ WithNoTitle.args = {
   children: 'William Shakespeare',
 };
 
-export const WithLoadingState: Story<InlineEntryCardProps> = (args) => {
+export const WithLoadingState: StoryObj<InlineEntryCardProps> = (args) => {
   return <InlineEntryCard {...args} />;
 };
 
@@ -110,7 +110,7 @@ WithLoadingState.args = {
   isLoading: true,
 };
 
-export const Overview: Story<InlineEntryCardProps> = () => {
+export const Overview = () => {
   return (
     <>
       <Flex flexWrap="wrap">

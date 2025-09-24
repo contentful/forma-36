@@ -22,7 +22,7 @@ describe('Card', () => {
 
   it('sets aria-pressed when rendered as button with isSelected', () => {
     render(
-      <Card as="button" isSelected>
+      <Card as="button" onClick={jest.fn()} isSelected>
         Toggle
       </Card>,
     );

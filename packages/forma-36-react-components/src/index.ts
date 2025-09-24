@@ -2,6 +2,7 @@ export * from '@contentful/f36-accordion';
 export * from '@contentful/f36-asset';
 export * from '@contentful/f36-badge';
 export * from '@contentful/f36-button';
+export * from '@contentful/f36-card';
 export * from '@contentful/f36-collapse';
 export * from '@contentful/f36-copybutton';
 export * from '@contentful/f36-core';

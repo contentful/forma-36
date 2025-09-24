@@ -1,5 +1,6 @@
 import React from 'react';
-import { AssetCard, MenuItem } from '@contentful/f36-components';
+import { AssetCard } from '@contentful/f36-components';
+//import { AssetCard, MenuItem } from '@contentful/f36-components';
 
 export default function AssetCardActionsExample() {
   return (
@@ -8,14 +9,7 @@ export default function AssetCardActionsExample() {
       type="image"
       title="Everest"
       src="https://bit.ly/31yL3Ps"
-      actions={[
-        <MenuItem key="copy" onClick={() => alert('copy')}>
-          Copy
-        </MenuItem>,
-        <MenuItem key="delete" onClick={() => alert('delete')}>
-          Delete
-        </MenuItem>,
-      ]}
+      actions={[<li key="copy">Copy</li>, <li key="delete">Delete</li>]}
     />
   );
 }
