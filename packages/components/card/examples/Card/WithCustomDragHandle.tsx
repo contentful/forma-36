@@ -1,26 +1,6 @@
 import React from 'react';
-import { Card } from '@contentful/f36-components';
-
-export default function WithCustomDragHandle() {
-  const [show, setShow] = React.useState(false);
-  return (
-    <>
-      <Card draggable onClick={() => setShow(!show)}>
-        Click on this card
-        <br />
-        {show && (
-          <span role="img" aria-label="sparkles">
-            ✨✨✨
-          </span>
-        )}
-      </Card>
-    </>
-  );
-}
-
-/*
-//import { Box, Card, DragHandle, Flex } from '@contentful/f36-components';
-//import { css } from '@emotion/css';
+import { Box, Card, DragHandle, Flex } from '@contentful/f36-components';
+import { css } from 'emotion';
 import { DndContext } from '@dnd-kit/core';
 import {
   arrayMove,
@@ -29,7 +9,6 @@ import {
   useSortable,
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-
 
 export default function WithCustomDragHandle() {
   const styles = {
@@ -107,4 +86,3 @@ export default function WithCustomDragHandle() {
     </DndContext>
   );
 }
-*/
