@@ -1,25 +1,10 @@
-import React, { ComponentPropsWithRef } from 'react';
-import { MenuProps } from '.';
+import React from 'react';
 
 export type MenuContextType = {
   isOpen: boolean;
-  menuId: string;
-  focusMenuItem: (item: HTMLElement) => void;
-  getTriggerProps: (
-    _props: ComponentPropsWithRef<'button'>,
-    _ref: React.Ref<HTMLButtonElement>,
-  ) => ComponentPropsWithRef<'button'>;
-  getMenuListProps: (
-    _props: ComponentPropsWithRef<'div'>,
-    _ref: React.Ref<HTMLDivElement>,
-  ) => ComponentPropsWithRef<'div'>;
-  getMenuItemProps: (
-    _props: ComponentPropsWithRef<'button'>,
-  ) => ComponentPropsWithRef<'button'>;
-  propsToPropagateToSubmenus: Pick<
-    MenuProps,
-    'closeOnBlur' | 'closeOnEsc' | 'closeOnSelect'
-  >;
+  activeIndex: number | null;
+  setActiveIndex: React.Dispatch<React.SetStateAction<number | null>>;
+  setHasFocusInside: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const MenuContext = React.createContext<MenuContextType | undefined>(undefined);
