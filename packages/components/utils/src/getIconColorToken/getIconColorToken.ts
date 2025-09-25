@@ -28,7 +28,7 @@ export const iconColorByVariant: Record<Variant, ColorTokens> = {
   muted: 'gray600',
   white: 'colorWhite',
   premium: 'purple600',
-  warning: 'colorWarning',
+  warning: 'orange600',
   'primary-filled': 'colorWhite',
   featured: 'purple600',
   neutral: 'gray600',
