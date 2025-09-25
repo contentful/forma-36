@@ -155,7 +155,7 @@ export function Menu(props: MenuProps) {
   // Safari has an issue with the relatedTarget that we use on the onBlur for menuListProps,
   // which was causing the menu to close and reopen when clicking on the trigger.
   // We will use the isMouseDown to prevent triggering blur in the cases where the user clicks on the trigger.
-  const isMouseDown = useRef<Boolean>(false);
+  const isMouseDown = useRef<boolean>(false);
 
   const contextValue: MenuContextType = useMemo(
     () => ({

@@ -13,7 +13,7 @@ import {
 } from '../SubmenuContext';
 import { mergeRefs } from '@contentful/f36-core';
 
-const SUBMENU_OFFSET: [number, number] = [-8, 2];
+const SUBMENU_OFFSET = { mainAxis: -8, crossAxis: 2 };
 
 export type SubmenuProps = Omit<
   MenuProps,

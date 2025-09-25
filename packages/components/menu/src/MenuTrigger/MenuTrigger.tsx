@@ -8,13 +8,14 @@ export interface MenuTriggerProps {
 }
 
 export const MenuTrigger = (props: ExpandProps<MenuTriggerProps>) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const child = React.Children.only(props.children) as any;
   const { getTriggerProps } = useMenuContext();
+  const triggerProps = getTriggerProps(child.props, child.ref);
 
   return (
-    <Popover.Trigger>
+    <Popover.Trigger {...triggerProps}>
       {React.cloneElement(child, {
-        ...getTriggerProps(child.props, child.ref),
         ['aria-haspopup']: 'menu',
       })}
     </Popover.Trigger>

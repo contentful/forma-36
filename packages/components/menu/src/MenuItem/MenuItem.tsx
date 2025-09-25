@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import {
   mergeRefs,
   useId,
@@ -40,10 +40,9 @@ export type MenuItemProps<
   E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG,
 > = PolymorphicProps<MenuItemInternalProps, E>;
 
-function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
-  props: MenuItemProps<E>,
-  ref: React.Ref<any>,
-) {
+function MenuItemBase<
+  E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG,
+>(props: MenuItemProps<E>, ref: React.Ref<any>) {
   const {
     testId,
     className,
@@ -87,9 +86,9 @@ function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
   );
 }
 
-_MenuItem.displayName = 'MenuItem';
+MenuItemBase.displayName = 'MenuItem';
 
-export const MenuItem: PolymorphicComponent<
+export const MenuItem = React.forwardRef(MenuItemBase) as PolymorphicComponent<
   ExpandProps<MenuItemInternalProps>,
   typeof MENU_ITEM_DEFAULT_TAG
-> = React.forwardRef(_MenuItem);
+>;

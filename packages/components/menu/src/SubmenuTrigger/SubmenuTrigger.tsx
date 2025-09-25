@@ -12,7 +12,7 @@ export type SubmenuTriggerProps = Omit<
   'isInitiallyFocused' | 'as'
 >;
 
-const _SubmenuTrigger = (
+const SubmenuTriggerBase = (
   props: ExpandProps<SubmenuTriggerProps>,
   ref: React.Ref<HTMLButtonElement>,
 ) => {
@@ -35,4 +35,6 @@ const _SubmenuTrigger = (
   );
 };
 
-export const SubmenuTrigger = React.forwardRef(_SubmenuTrigger);
+SubmenuTriggerBase.displayName = 'SubmenuTrigger';
+
+export const SubmenuTrigger = React.forwardRef(SubmenuTriggerBase);

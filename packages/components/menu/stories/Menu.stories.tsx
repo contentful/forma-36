@@ -233,31 +233,29 @@ export const WithStickyHeaderAndFooter: StoryObj<MenuProps> = {
 //     chromatic: { delay: 300 },
 //   };
 
-// export const WithInitialFocusedItem: StoryObj<MenuProps> = {
-//   render: (args) => {
-//     return (
-//       <Router>
-//         <Menu defaultIsOpen {...args}>
-//           <Menu.Trigger>
-//             <IconButton
-//               variant="secondary"
-//               icon={<ListIcon />}
-//               aria-label="toggle menu"
-//             />
-//           </Menu.Trigger>
-//           <Menu.List>
-//             <Menu.Item>Create an entry</Menu.Item>
-//             <Menu.Item isInitiallyFocused>Remove an entry</Menu.Item>
-//             <Menu.Item>Embed existing entry</Menu.Item>
-//           </Menu.List>
-//         </Menu>
-//       </Router>
-//     );
-//   },
-
-//   parameters: {
-//     chromatic: { delay: 300 },
-//   },
+export const WithInitialFocusedItem: StoryObj<MenuProps> = {
+  render: (args) => {
+    return (
+      <Menu defaultIsOpen {...args}>
+        <Menu.Trigger>
+          <IconButton
+            variant="secondary"
+            icon={<ListIcon />}
+            aria-label="toggle menu"
+          />
+        </Menu.Trigger>
+        <Menu.List>
+          <Menu.Item>Create an entry</Menu.Item>
+          <Menu.Item isInitiallyFocused>Remove an entry</Menu.Item>
+          <Menu.Item>Embed existing entry</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+  },
+};
+WithInitialFocusedItem.parameters = {
+  chromatic: { delay: 300 },
+};
 
 export const WithSubmenu: StoryObj<MenuProps> = {
   render: (args) => {

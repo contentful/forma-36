@@ -7,7 +7,7 @@ import type {
 import { useMenuContext } from '../MenuContext';
 import { useSubmenuContext } from '../SubmenuContext';
 import { Popover } from '@contentful/f36-popover';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { getMenuListStyles } from './MenuList.styles';
 import { MenuListHeader } from './MenuListHeader';
 import { MenuListFooter } from './MenuListFooter';
@@ -22,7 +22,7 @@ function assertChild(child: any): child is { type: { displayName: string } } {
 
 export type MenuListProps = PropsWithHTMLElement<MenuListInternalProps, 'div'>;
 
-const _MenuList = (
+const MenuListBase = (
   props: ExpandProps<MenuListProps>,
   ref: React.Ref<HTMLDivElement>,
 ) => {
@@ -80,4 +80,5 @@ const _MenuList = (
   );
 };
 
-export const MenuList = React.forwardRef(_MenuList);
+MenuListBase.displayName = 'MenuList';
+export const MenuList = React.forwardRef(MenuListBase);
