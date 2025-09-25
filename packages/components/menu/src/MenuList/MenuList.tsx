@@ -5,12 +5,16 @@ import type {
   ExpandProps,
 } from '@contentful/f36-core';
 import { useMenuContext } from '../MenuContext';
-import { useSubmenuContext } from '../SubmenuContext';
-import { Popover } from '@contentful/f36-popover';
-import { cx } from 'emotion';
+
+import { cx } from '@emotion/css';
 import { getMenuListStyles } from './MenuList.styles';
 import { MenuListHeader } from './MenuListHeader';
 import { MenuListFooter } from './MenuListFooter';
+import {
+  FloatingList,
+  FloatingPortal,
+  FloatingFocusManager,
+} from '@floating-ui/react';
 
 interface MenuListInternalProps extends CommonProps {
   children?: React.ReactNode;
@@ -22,10 +26,7 @@ function assertChild(child: any): child is { type: { displayName: string } } {
 
 export type MenuListProps = PropsWithHTMLElement<MenuListInternalProps, 'div'>;
 
-const _MenuList = (
-  props: ExpandProps<MenuListProps>,
-  ref: React.Ref<HTMLDivElement>,
-) => {
+const MenuListBase = (props: ExpandProps<MenuListProps>) => {
   const {
     children,
     testId = 'cf-ui-menu-list',
@@ -33,9 +34,7 @@ const _MenuList = (
     ...otherProps
   } = props;
 
-  const { getMenuListProps } = useMenuContext();
-  const submenuContext = useSubmenuContext();
-
+  const menu = useMenuContext();
   let header: React.ReactElement | null = null;
   let footer: React.ReactElement | null = null;
   const items: React.ReactElement[] = [];
@@ -59,25 +58,38 @@ const _MenuList = (
   const styles = getMenuListStyles({
     hasStickyHeader: Boolean(header),
     hasStickyFooter: Boolean(footer),
+    isOpen: menu.isOpen,
   });
 
-  const extendedOtherProps = submenuContext
-    ? submenuContext.getSubmenuListProps(otherProps)
-    : otherProps;
-
   return (
-    <Popover.Content
-      role="menu"
-      {...extendedOtherProps}
-      {...getMenuListProps(extendedOtherProps, ref)}
-      className={cx(styles.container, className)}
-      testId={testId}
-    >
-      {header}
-      {items}
-      {footer}
-    </Popover.Content>
+    <FloatingList elementsRef={menu.elementsRef} labelsRef={menu.labelsRef}>
+      {menu.isOpen && (
+        <FloatingPortal>
+          <FloatingFocusManager
+            context={menu.context}
+            modal={false}
+            initialFocus={menu.isNested ? -1 : 0}
+            returnFocus={!menu.isNested}
+          >
+            <div
+              role="menu"
+              style={menu.floatingStyles}
+              className={cx(styles.container, className)}
+              data-test-id={testId}
+              ref={menu.refs.setFloating}
+              {...otherProps}
+              {...menu.getFloatingProps()}
+            >
+              {header}
+              {items}
+              {footer}
+            </div>
+          </FloatingFocusManager>
+        </FloatingPortal>
+      )}
+    </FloatingList>
   );
 };
 
-export const MenuList = React.forwardRef(_MenuList);
+MenuListBase.displayName = 'MenuList';
+export const MenuList = React.forwardRef(MenuListBase);
