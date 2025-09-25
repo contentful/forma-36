@@ -148,7 +148,7 @@ describe('Popover', function () {
     await renderWithAct({ isOpen: true });
     const dialog = await screen.findByRole('dialog');
     await waitFor(() => {
-      expect(screen.getByRole('dialog')).toHaveFocus();
+      expect(dialog).toHaveFocus();
     });
   });
 
