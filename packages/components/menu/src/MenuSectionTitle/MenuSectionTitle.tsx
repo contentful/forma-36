@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { Caption, type CaptionProps } from '@contentful/f36-typography';
 import type { ExpandProps } from '@contentful/f36-core';
 

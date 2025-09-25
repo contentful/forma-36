@@ -1,7 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import { cx } from 'emotion';
+import React from 'react';
+import { cx } from '@emotion/css';
 import {
-  mergeRefs,
   useId,
   type CommonProps,
   type PolymorphicComponent,
@@ -9,7 +8,9 @@ import {
   type ExpandProps,
 } from '@contentful/f36-core';
 
-import { useMenuContext } from '../MenuContext';
+import { useMergeRefs } from '@floating-ui/react';
+
+import { useMenuItem } from './useMenuItem';
 import { getMenuItemStyles } from './MenuItem.styles';
 
 const MENU_ITEM_DEFAULT_TAG = 'button';
@@ -40,10 +41,9 @@ export type MenuItemProps<
   E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG,
 > = PolymorphicProps<MenuItemInternalProps, E>;
 
-function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
-  props: MenuItemProps<E>,
-  ref: React.Ref<any>,
-) {
+function MenuItemBase<
+  E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG,
+>(props: MenuItemProps<E>, forwardedRef: React.Ref<any>) {
   const {
     testId,
     className,
@@ -54,32 +54,27 @@ function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
     icon,
     ...otherProps
   } = props;
-
+  const propDisabled = isDisabled ?? props.disabled;
+  const menuItem = useMenuItem({
+    isDisabled: propDisabled,
+    label: props.children,
+  });
   const id = useId(undefined, 'menu-item');
   const itemTestId = testId || `cf-ui-${id}`;
   const styles = getMenuItemStyles({ isActive, isDisabled });
-
-  const { getMenuItemProps, focusMenuItem } = useMenuContext();
-
-  const itemRef = useRef<HTMLElement>(null);
-  useEffect(() => {
-    if (isInitiallyFocused && itemRef.current) {
-      focusMenuItem(itemRef.current);
-    }
-  }, [isInitiallyFocused, focusMenuItem]);
 
   const Element = (as ?? MENU_ITEM_DEFAULT_TAG) as React.ElementType;
 
   return (
     <Element
-      role="menuitem"
       {...otherProps}
-      {...getMenuItemProps(otherProps)}
-      disabled={isDisabled ?? props.disabled}
+      ref={useMergeRefs([menuItem.item.ref, forwardedRef])}
+      role="menuitem"
       className={cx(styles, className)}
       data-test-id={itemTestId}
-      ref={mergeRefs(itemRef, ref)}
-      tabIndex={-1}
+      tabIndex={menuItem.isActive ? 0 : -1}
+      disabled={propDisabled}
+      {...menuItem.getItemProps(props)}
     >
       {icon}
       {props.children}
@@ -87,9 +82,9 @@ function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
   );
 }
 
-_MenuItem.displayName = 'MenuItem';
+MenuItemBase.displayName = 'MenuItem';
 
-export const MenuItem: PolymorphicComponent<
+export const MenuItem = React.forwardRef(MenuItemBase) as PolymorphicComponent<
   ExpandProps<MenuItemInternalProps>,
   typeof MENU_ITEM_DEFAULT_TAG
-> = React.forwardRef(_MenuItem);
+>;

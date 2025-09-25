@@ -1,4 +1,4 @@
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 import { getMenuItemStyles as globalGetMenuItemStyles } from '@contentful/f36-core';
 import type { MenuItemProps } from './MenuItem';
 import tokens from '@contentful/f36-tokens';
