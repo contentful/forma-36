@@ -28,3 +28,5 @@ export const MenuDivider = (props: ExpandProps<MenuDividerProps>) => {
     />
   );
 };
+
+MenuDivider.displayName = 'MenuDivider';
