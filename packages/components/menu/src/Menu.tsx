@@ -64,12 +64,12 @@ export const Menu = React.forwardRef<
   HTMLDivElement,
   React.PropsWithChildren<MenuProps>
 >(function Menu(props, ref) {
-  const { children, ...rest } = props;
+  const { children, ...otherProps } = props;
   const parentId = useFloatingParentNodeId();
 
   const content = (
     <MenuComponent
-      {...rest}
+      {...otherProps}
       ref={ref as unknown as React.Ref<HTMLButtonElement>}
     >
       {children}
