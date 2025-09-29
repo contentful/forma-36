@@ -1,5 +1,15 @@
 # Change Log
 
+## 5.6.0
+
+### Patch Changes
+
+- Updated dependencies [[`5eff7cb`](https://github.com/contentful/forma-36/commit/5eff7cb8fcf000a6cad9e2753150fdc8f6a89bb7)]:
+  - @contentful/f36-button@5.6.0
+  - @contentful/f36-core@5.6.0
+  - @contentful/f36-icons@5.6.0
+  - @contentful/f36-tooltip@5.6.0
+
 ## 5.5.0
 
 ### Patch Changes

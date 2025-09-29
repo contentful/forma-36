@@ -1,5 +1,11 @@
 # @contentful/f36-utils
 
+## 5.2.0
+
+### Minor Changes
+
+- [#3182](https://github.com/contentful/forma-36/pull/3182) [`5eff7cb`](https://github.com/contentful/forma-36/commit/5eff7cb8fcf000a6cad9e2753150fdc8f6a89bb7) Thanks [@missating](https://github.com/missating)! - Adds global util function for mapping component variant to color token
+
 ## 5.1.0
 
 ### Minor Changes

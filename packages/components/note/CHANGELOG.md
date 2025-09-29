@@ -1,5 +1,21 @@
 # Change Log
 
+## 5.6.0
+
+### Minor Changes
+
+- [#3182](https://github.com/contentful/forma-36/pull/3182) [`5eff7cb`](https://github.com/contentful/forma-36/commit/5eff7cb8fcf000a6cad9e2753150fdc8f6a89bb7) Thanks [@missating](https://github.com/missating)! - Adds global util function for mapping component variant to color token
+
+### Patch Changes
+
+- Updated dependencies [[`5eff7cb`](https://github.com/contentful/forma-36/commit/5eff7cb8fcf000a6cad9e2753150fdc8f6a89bb7)]:
+  - @contentful/f36-button@5.6.0
+  - @contentful/f36-utils@5.2.0
+  - @contentful/f36-core@5.6.0
+  - @contentful/f36-icon@5.6.0
+  - @contentful/f36-icons@5.6.0
+  - @contentful/f36-typography@5.6.0
+
 ## 5.5.0
 
 ### Patch Changes
