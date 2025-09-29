@@ -1,0 +1,82 @@
+---
+title: 'Color system'
+slug: '/tokens/color-system/'
+section: 'tokens'
+---
+
+This is the color system we use at Contentful. There are 6 base colors, along with gray and black/white. Each color consists of 9 shades, ranging from `100` to `900`.
+
+## Colors overview
+
+### Semantic
+
+In rare cases, it's handy to use our base semantic colors. They are aliases for the respective `500` shade of each color and hold semantic meaning.
+
+<ColorSwatchGroup colorGroup="semantic" />
+
+### Gray
+
+Gray is our main color used for typography, borders and element backgrounds.
+
+<ColorSwatchGroup colorGroup="gray" />
+
+### Blue
+
+Blue is our primary color and should be used when you want to highlight a primary action.
+
+<ColorSwatchGroup colorGroup="blue" />
+
+### Green
+
+Green is used to highlight positive actions or messages. E.g. when showing a success message, a save action, or a marking a step as complete.
+
+<ColorSwatchGroup colorGroup="green" />
+
+### Red
+
+Red is used to highlight negative actions or messages. E.g. when performing
+a destructive action such as deleting content, for highlighting validation
+or application error messages, or for showing statuses with a negative
+context.
+
+<ColorSwatchGroup colorGroup="red" />
+
+### Purple
+
+Purple is used sparingly as a generic highlight color. E.g. when highlighting premium value or trials.
+
+<ColorSwatchGroup colorGroup="purple" />
+
+### Orange
+
+Orange is used to highlight actions or messages which require attention but
+don't necessarily have a negative context. E.g. showing a draft/unpublished
+state, or showing a gentle warning message rather than an error message.
+
+<ColorSwatchGroup colorGroup="orange" />
+
+### Yellow
+
+Yellow is used very sparingly. Use only when other colors aren't applicable or are already taken in a specific context.
+
+<ColorSwatchGroup colorGroup="yellow" />
+
+### Black
+
+<ColorSwatchGroup colorGroup="black" />
+
+### White
+
+<ColorSwatchGroup colorGroup="white" />
+
+## Accessibility
+
+Black text (anything darker than `gray-800`) is WCAG AA accessible on shades ranging from `100` to `400`, white text is accessible on colors from `500` to `900`.
+
+<A11yColors />
+
+### Combining shades
+
+When combining multiple shades of the same color, keep to the following accessible combinations. The same combinations are possible across colors (with yellow being the only exception).
+
+<CombiningShadesExample />

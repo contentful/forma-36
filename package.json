@@ -32,7 +32,11 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "tsc": "tsc --noEmit",
-    "tsc:watch": "tsc --noEmit --watch"
+    "tsc:watch": "tsc --noEmit --watch",
+    "docs": "npm run-script docs:next",
+    "docs:next": "turbo run start --filter=@contentful/f36-website --parallel --no-cache",
+    "docs:next:build": "turbo run build:prod --filter=@contentful/f36-website --parallel --force",
+    "docs:next:start-prod": "turbo run start:prod --filter=@contentful/f36-website --parallel"
   },
   "packageManager": "npm@8.5.0",
   "browserslist": "extends @contentful/browserslist-config",
