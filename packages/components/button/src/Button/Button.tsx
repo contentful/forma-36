@@ -10,6 +10,10 @@ import {
 import { useDensity } from '@contentful/f36-utils';
 import { Spinner } from '@contentful/f36-spinner';
 
+import tokens, { ColorTokens } from '@contentful/f36-tokens';
+import { getIconColorToken, iconColorByVariant } from '@contentful/f36-utils';
+import type { Variant } from '@contentful/f36-utils';
+
 import type { ButtonInternalProps } from '../types';
 import { getStyles } from './Button.styles';
 
@@ -54,17 +58,14 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
     className,
   );
 
-  const iconContent = (icon) => {
-    const defaultIconColor: {
-      [Property in ButtonInternalProps['variant']]: string;
-    } = {
-      primary: 'white',
-      secondary: 'secondary',
-      positive: 'white',
-      negative: 'negative',
-      transparent: 'secondary',
-    };
+  // Button overrides: use 'colorWhite' for 'primary' and 'positive', fallback to utility mapping for others
+  const buttonIconColorByVariant: Record<Variant, ColorTokens> = {
+    ...iconColorByVariant,
+    positive: 'colorWhite',
+    primary: 'colorWhite',
+  };
 
+  const iconContent = (icon) => {
     return (
       <Flex
         as="span"
@@ -72,17 +73,7 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
       >
         {React.cloneElement(icon, {
           size: icon.props.size ?? `${size === 'large' ? 'medium' : 'small'}`,
-          // We need to pass the color to the icons to enable the usaged of the V5 icons
-          // it may change in the future
-          color:
-            (variant === 'transparent' &&
-              icon.props.variant === undefined &&
-              icon.props.color) ||
-            'currentColor',
-          // we want to allow variants for icons for transparent buttons
-          variant:
-            (variant === 'transparent' && icon.props.variant) ||
-            defaultIconColor[variant],
+          color: tokens[getIconColorToken(variant, buttonIconColorByVariant)],
         })}
       </Flex>
     );
