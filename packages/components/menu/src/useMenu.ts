@@ -17,7 +17,10 @@ import {
   useListNavigation,
   useRole,
   useTypeahead,
+  autoPlacement,
+  size,
 } from '@floating-ui/react';
+import type { OffsetOptions, Placement } from '@floating-ui/react';
 import { MenuContext } from './MenuContext';
 
 interface UseMenuReturn {
@@ -32,8 +35,8 @@ interface UseMenuReturn {
     setReference: (node: HTMLButtonElement | null) => void;
     setFloating: (node: HTMLElement | null) => void;
   };
-  elementsRef: React.MutableRefObject<Array<HTMLButtonElement | null>>;
-  labelsRef: React.MutableRefObject<Array<string | null>>;
+  elementsRef: React.RefObject<Array<HTMLButtonElement | null>>;
+  labelsRef: React.RefObject<Array<string | null>>;
 
   // Floating UI
   floatingStyles: React.CSSProperties;
@@ -50,16 +53,36 @@ interface UseMenuReturn {
 
   // Tree and item info
   nodeId: string;
-  item: any;
-  parent: any;
+  item: ReturnType<typeof useListItem>;
+  parent: React.ContextType<typeof MenuContext>;
 }
-
 export interface MenuOptions {
+  placement?: Placement | 'auto';
+  isFullWidth?: boolean;
+  isAutoalignmentEnabled?: boolean;
   isOpen?: boolean;
+  closeOnEsc?: boolean;
+  closeOnBlur?: boolean;
+  /**
+   * If true the floating content will auto-focus on open. Defaults to true.
+   */
+  autoFocus?: boolean;
+  offset?: OffsetOptions;
+  renderOnlyWhenOpen?: boolean;
+  usePortal?: boolean;
 }
 
 export function useMenu({
+  placement = 'bottom-start',
+  isFullWidth = false,
+  isAutoalignmentEnabled = true,
   isOpen: isDefaultOpen = false,
+  offset: offsetProp,
+  renderOnlyWhenOpen = true,
+  usePortal = true,
+  closeOnEsc = true,
+  closeOnBlur = true,
+  autoFocus = true,
 }: MenuOptions): UseMenuReturn {
   const [isOpen, setIsOpen] = React.useState(isDefaultOpen);
   const [hasFocusInside, setHasFocusInside] = React.useState(false);
@@ -76,17 +99,49 @@ export function useMenu({
 
   const isNested = parentId != null;
 
+  const offsetOption = offsetProp
+    ? offsetProp
+    : { mainAxis: isNested ? 0 : 4, alignmentAxis: isNested ? +4 : 0 };
+
+  /** Configure middleware based on placement and isAutoalignmentEnabled
+   * If placement is "auto" it will use autoPlacement() in the middleware and not make use of flip and switch.
+   * If isAutoalignmentEnabled is false, it will also not use flip and switch but only use the placement variable.
+   */
+  let sanitizedPlacement: Placement = isNested ? 'right-start' : 'bottom-start';
+  const middleware = [offset(offsetOption)];
+
+  if (placement !== 'auto' && isAutoalignmentEnabled) {
+    sanitizedPlacement = placement;
+
+    middleware.push(flip({ padding: 5 }), shift({ padding: 5 }));
+  } else if (placement === 'auto') {
+    middleware.push(autoPlacement());
+  } else {
+    sanitizedPlacement = placement;
+  }
+
+  /**
+   * Set to same size as trigger reference element
+   */
+  if (isFullWidth) {
+    middleware.push(
+      size({
+        apply({ rects, elements }) {
+          Object.assign(elements.floating.style, {
+            minWidth: `${rects.reference.width}px`,
+          });
+        },
+      }),
+    );
+  }
+
   const { floatingStyles, refs, context } = useFloating<HTMLButtonElement>({
     nodeId,
     open: isOpen,
     onOpenChange: setIsOpen,
-    placement: isNested ? 'right-start' : 'bottom-start',
-    middleware: [
-      offset({ mainAxis: isNested ? 0 : 4, alignmentAxis: isNested ? -4 : 0 }),
-      flip(),
-      shift(),
-    ],
     whileElementsMounted: autoUpdate,
+    placement: sanitizedPlacement,
+    middleware,
   });
 
   const hover = useHover(context, {
@@ -100,13 +155,21 @@ export function useMenu({
     ignoreMouse: isNested,
   });
   const role = useRole(context, { role: 'menu' });
-  const dismiss = useDismiss(context, { bubbles: true });
+
+  const dismiss = useDismiss(context, {
+    escapeKey: closeOnEsc,
+    outsidePress: closeOnBlur,
+    ancestorScroll: true,
+    bubbles: true,
+  });
+
   const listNavigation = useListNavigation(context, {
     listRef: elementsRef,
     activeIndex,
     nested: isNested,
     onNavigate: setActiveIndex,
   });
+
   const typeahead = useTypeahead(context, {
     listRef: labelsRef,
     onMatch: isOpen ? setActiveIndex : undefined,
@@ -173,6 +236,9 @@ export function useMenu({
       // State setters
       setHasFocusInside,
       setActiveIndex,
+      renderOnlyWhenOpen,
+      usePortal,
+      autoFocus,
 
       // Tree and item info
       nodeId,
@@ -193,6 +259,9 @@ export function useMenu({
       nodeId,
       parent,
       refs,
+      renderOnlyWhenOpen,
+      usePortal,
+      autoFocus,
     ],
   );
 }
