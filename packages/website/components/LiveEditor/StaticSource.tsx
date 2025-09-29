@@ -5,7 +5,7 @@ import Highlight, {
   type Language,
 } from 'prism-react-renderer';
 import { theme } from './theme';
-import { cx, css } from 'emotion';
+import { cx, css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 
 const styles = {

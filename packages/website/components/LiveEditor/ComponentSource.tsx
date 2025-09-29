@@ -6,8 +6,9 @@ import React, {
   useMemo,
   useContext,
 } from 'react';
-import { css, cx } from 'emotion';
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import { css, cx } from '@emotion/css';
+// TODO: add LivePreview here
+import { LiveProvider, LiveEditor, LiveError } from 'react-live';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
 import { DndContext } from '@dnd-kit/core';
@@ -25,13 +26,17 @@ import FocusLock from 'react-focus-lock';
 import tokens from '@contentful/f36-tokens';
 import * as f36utils from '@contentful/f36-utils';
 import * as f36Components from '@contentful/f36-components';
-import * as f36Navbar from '@contentful/f36-navbar';
 import { ProgressStepper } from '@contentful/f36-progress-stepper';
-import { Multiselect } from '@contentful/f36-multiselect';
+
 import { NavList } from '@contentful/f36-navlist';
 import * as f36Layout from '@contentful/f36-layout';
 import * as f36Header from '@contentful/f36-header';
-import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
+// TODO: add card component here
+import { Button, CopyButton, Flex } from '@contentful/f36-components';
+
+// TODO: add these component back here
+// import { Multiselect } from '@contentful/f36-multiselect';
+// import * as f36Navbar from '@contentful/f36-navbar';
 
 import { theme } from './theme';
 import { formatSourceCode } from './utils';
@@ -45,10 +50,10 @@ const liveProviderScope = {
   ...f36icons,
   // Make all icons available as namespace import (e.g., import * as icons)
   f36icons,
-  ...f36Navbar,
+  // ...f36Navbar,
   ...f36Layout,
   ...f36Header,
-  Multiselect, // Remove when added to f36-components
+  // Multiselect, // Remove when added to f36-components
   NavList, // Remove when added to f36-components
   ProgressStepper, // Remove when added to f36-components
   css,
@@ -172,9 +177,9 @@ export function ComponentSource({
         // The order is important here
         scope={liveProviderScope}
       >
-        <Card className={styles.card}>
+        {/* <Card className={styles.card}>
           <LivePreview />
-        </Card>
+        </Card> */}
         <div style={{ position: 'relative' }}>
           <LiveError className={styles.error} />
           <div style={{ position: 'relative' }}>

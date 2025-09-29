@@ -9,7 +9,7 @@ import tokens from '@contentful/f36-tokens';
 
 import { PlaygroundTopBar } from './PlaygroundTopBar';
 import { palette } from '../LiveEditor/theme';
-import type { InterpolationWithTheme } from '@emotion/core';
+import type { Interpolation } from '@emotion/react';
 const indexFile = `import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { GlobalStyles } from "@contentful/f36-components";
@@ -42,7 +42,7 @@ export function SandpackRenderer({
   showOpenInCodeSandbox = false,
 }: Props) {
   // Overides to keep the style as we want it
-  const sandpackStyles: { [key: string]: InterpolationWithTheme<any> } = {
+  const sandpackStyles: { [key: string]: Interpolation<any> } = {
     wrapper: {
       display: 'flex',
       flexDirection: 'column',
