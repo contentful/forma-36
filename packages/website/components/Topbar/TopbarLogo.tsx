@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import Link from 'next/link';
 import { Text } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';

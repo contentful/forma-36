@@ -1,5 +1,5 @@
 import React from 'react';
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 import { Grid } from '@contentful/f36-components';
 
 import { useCurrentLocation } from '../hooks/useCurrentLocation';

@@ -1,5 +1,7 @@
-import createEmotionServer from 'create-emotion-server';
-import { cache } from 'emotion';
+import createEmotionServer from '@emotion/server/create-instance';
+import createCache from '@emotion/cache';
+
+const cache = createCache({ key: 'css' });
 
 export const renderStatic = async (html) => {
   if (html === undefined) {

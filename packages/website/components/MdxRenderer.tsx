@@ -1,5 +1,6 @@
 import React from 'react';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import * as f36Components from '@contentful/f36-components';
 import * as f36Icons from '@contentful/f36-icons';
@@ -14,8 +15,6 @@ import { CustomHeading2 } from './CustomHeading2';
 const { DisplayText, Subheading, Paragraph, Text, TextLink, List, Table } =
   f36Components;
 
-/* eslint-disable react/display-name */
-/* eslint-disable @next/next/no-img-element */
 const components = {
   h1: (props) => <DisplayText as="h1" {...props} />,
   // to cover a specific case with "Props (API reference)"
@@ -56,11 +55,9 @@ const components = {
 
   ...MdxComponents,
 };
-/* eslint-enable @next/next/no-img-element */
-/* eslint-enable react/display-name */
 
 export function MdxRenderer(props: {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
 }) {
-  return <MDXRemote {...props.source} components={components} />;
+  return <MDXRemote source={props.source} components={components} />;
 }
