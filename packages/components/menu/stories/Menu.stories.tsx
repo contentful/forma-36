@@ -29,7 +29,9 @@ export const Basic: StoryObj<MenuProps> = {
         <Menu.List>
           <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
           <Menu.Item>Embed existing entry</Menu.Item>
-          <Menu.Item isActive>Create and embed existing entry</Menu.Item>
+          <Menu.Item icon={<CheckIcon />}>
+            Create and embed existing entry
+          </Menu.Item>
           <Menu.Divider />
           <Menu.SectionTitle>Help</Menu.SectionTitle>
           <Menu.Item as="a" href="https://contentful.com" target="_blank">
@@ -257,37 +259,39 @@ export const Basic: StoryObj<MenuProps> = {
 //   chromatic: { delay: 300 },
 // };
 
-// export const WithSubmenu: StoryObj<MenuProps> = {
-//   render: (args) => {
-//     return (
-//       <Menu {...args}>
-//         <Menu.Trigger>
-//           <IconButton
-//             variant="secondary"
-//             icon={<ListIcon />}
-//             aria-label="toggle menu"
-//           />
-//         </Menu.Trigger>
-//         <Menu.List>
-//           <Menu.Item>Create an entry</Menu.Item>
-//           <Menu.Submenu>
-//             <Menu.SubmenuTrigger>Remove an entry</Menu.SubmenuTrigger>
-//             <Menu.List>
-//               <Menu.Item>Sub item 1</Menu.Item>
-//               <Menu.Item>Sub item 2</Menu.Item>
-//               <Menu.Item>Sub item 3</Menu.Item>
-//             </Menu.List>
-//           </Menu.Submenu>
-//           <Menu.Item>Embed existing entry</Menu.Item>
-//         </Menu.List>
-//       </Menu>
-//     );
-//   },
+export const WithSubmenu: StoryObj<MenuProps> = {
+  render: (args) => {
+    return (
+      <Menu {...args}>
+        <Menu.Trigger>
+          <IconButton
+            variant="secondary"
+            icon={<ListIcon />}
+            aria-label="toggle menu"
+          />
+        </Menu.Trigger>
+        <Menu.List>
+          <Menu.Item>Create an entry</Menu.Item>
+          <Menu>
+            <Menu.Trigger>
+              <button type="button">Remove an entry</button>
+            </Menu.Trigger>
+            <Menu.List>
+              <Menu.Item>Sub item 1</Menu.Item>
+              <Menu.Item>Sub item 2</Menu.Item>
+              <Menu.Item>Sub item 3</Menu.Item>
+            </Menu.List>
+          </Menu>
+          <Menu.Item>Embed existing entry</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+  },
 
-//   parameters: {
-//     chromatic: { delay: 300 },
-//   },
-// };
+  parameters: {
+    chromatic: { delay: 300 },
+  },
+};
 
 // export const WithSubmenuDifferentAlignments: StoryObj<MenuProps> = {
 //   render: (args) => {
