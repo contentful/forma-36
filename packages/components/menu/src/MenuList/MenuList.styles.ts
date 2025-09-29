@@ -42,7 +42,17 @@ export const getMenuListStyles = (props: {
     top: 0,
     left: 0,
     padding: 0,
+    background: tokens.colorWhite,
     paddingTop: props.hasStickyHeader ? 0 : tokens.spacing2Xs,
     paddingBottom: props.hasStickyFooter ? 0 : tokens.spacing2Xs,
+    boxShadow: tokens.boxShadowDefault,
+    zIndex: tokens.zIndexDropdown,
+    '&:focus': {
+      boxShadow: tokens.glowPrimary,
+      outline: 'none',
+    },
+    '&:focus:not(:focus-visible)': {
+      boxShadow: tokens.boxShadowDefault,
+    },
   }),
 });
