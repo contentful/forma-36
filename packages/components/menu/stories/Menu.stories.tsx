@@ -18,7 +18,7 @@ export default {
 export const Basic: StoryObj<MenuProps> = {
   render: () => {
     return (
-      <Menu>
+      <Menu isOpen={true}>
         <Menu.Trigger>
           <IconButton
             variant="secondary"
