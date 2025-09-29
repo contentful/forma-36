@@ -30,7 +30,7 @@ export const getMenuItemStyles = ({
       display: 'flex',
       background: 'none',
       borderWidth: '1px 0',
-      borderColor: tokens.colorWhite,
+      borderColor: 'transparent',
       borderRadius: tokens.borderRadiusSmall,
       borderStyle: 'solid',
       outline: 'none',
