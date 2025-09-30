@@ -1,16 +1,23 @@
 import React from 'react';
-import { useFloatingParentNodeId, FloatingTree } from '@floating-ui/react';
+import {
+  useFloatingParentNodeId,
+  FloatingTree,
+  type Placement,
+  type OffsetOptions,
+} from '@floating-ui/react';
 import { MenuComponent } from './MenuComponent';
 
 type BaseMenuProps = {
   /**
-   * By default, the Menu is uncontrolled (manage it's expanded state by itself)
-   * But you can make it controlled by providing boolean (true/false)
+   * Boolean to determine if the Popover should be the same width as
+   * the trigger element
+   *
+   * @default false
    */
-  // isOpen appears only in controlled variant below
+  isFullWidth?: boolean;
 
   /**
-   * If `true`, the Menu will be initially opened.
+   * If `true`, the Menu will be initially opened. This property has no influence on the uncontrolled status of the Menu
    */
   defaultIsOpen?: boolean;
 
@@ -23,6 +30,44 @@ type BaseMenuProps = {
    * Callback fired when the Menu closes
    */
   onClose?: () => void;
+
+  /**
+   * Determines the preferred position of where the MenuList opens. This position is not
+   * guaranteed, as the MenuList might be moved to fit the viewport.
+   *
+   * @default bottom-start OR right-start
+   */
+  placement?: Placement | 'auto';
+
+  /**
+   * Boolean to control if popover is allowed to change its placement automatically
+   * based on available space in the viewport.
+   *
+   * For example:
+   * If you set placement prop to bottom, but there isn't enough space to position the popover in that direction,
+   * it will change the popper placement to top. As soon as enough space is detected, the placement will be reverted to the defined one.
+   *
+   * If you want the popover to strictly follow the placement prop you should set this prop to false.
+   *
+   * @default true
+   */
+  isAutoalignmentEnabled?: boolean;
+
+  /**
+   * Single number as short hand for `mainAxis`
+   *  Or object which can contain `mainAxis`, `crossAxis` or `alignmentAxis`
+   *
+   * @default 0
+   */
+  offset?: OffsetOptions;
+
+  /**
+   * Defines if the menu list content should be rendered in the DOM only when it's open
+   * or all the time (after the component has been mounted)
+   *
+   * @default true
+   */
+  renderOnlyWhenOpen?: boolean;
 
   /**
    * If `true`, the Menu will close when a menu item is
@@ -54,6 +99,24 @@ type BaseMenuProps = {
    * @default true
    */
   closeOnEsc?: boolean;
+
+  /**
+   * Boolean to control whether or not to render the Menu in a React Portal.
+   * Rendering content inside a Portal allows the Menu to escape the bounds
+   * of its parent while still being positioned correctly. Using a Portal is
+   * necessary if an ancestor of the Menu hides overflow.
+   *
+   * @default true
+   */
+  usePortal?: boolean;
+
+  /**
+   * If true, the Menu will be focused after opening
+   *
+   * @default true
+   */
+  autoFocus?: boolean;
+
   /**
    * Menu compound children (Trigger, List, Item, etc.)
    */
@@ -67,27 +130,17 @@ interface UncontrolledMenuProps extends BaseMenuProps {
 
 // Controlled: isOpen present AND at least one of onOpen/onClose must be provided.
 // We encode this by creating two branches and unioning them; supplying neither will error.
-interface ControlledMenuPropsWithOnOpen extends BaseMenuProps {
+type ControlledProps = BaseMenuProps & {
   isOpen: boolean;
-  onOpen: () => void; // required
-  onClose?: () => void; // optional here
-}
-interface ControlledMenuPropsWithOnClose extends BaseMenuProps {
-  isOpen: boolean;
-  onOpen?: () => void; // optional here
-  onClose: () => void; // required
-}
-interface FullyControlledMenuProps extends BaseMenuProps {
-  isOpen: boolean;
-  onOpen: () => void;
-  onClose: () => void;
-}
+  onOpen?: () => void;
+  onClose?: () => void;
+} & (
+    | { onOpen: () => void }
+    | { onClose: () => void }
+    | { onOpen: () => void; onClose: () => void }
+  );
 
-export type MenuProps =
-  | UncontrolledMenuProps
-  | ControlledMenuPropsWithOnOpen
-  | ControlledMenuPropsWithOnClose
-  | FullyControlledMenuProps;
+export type MenuProps = UncontrolledMenuProps | ControlledProps;
 
 export const Menu = React.forwardRef<
   HTMLDivElement,
