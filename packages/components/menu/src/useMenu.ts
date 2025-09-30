@@ -20,7 +20,8 @@ import {
   autoPlacement,
   size,
 } from '@floating-ui/react';
-import type { OffsetOptions, Placement } from '@floating-ui/react';
+import type { Placement } from '@floating-ui/react';
+import type { MenuProps } from './Menu';
 import { MenuContext } from './MenuContext';
 
 interface UseMenuReturn {
@@ -40,15 +41,21 @@ interface UseMenuReturn {
 
   // Floating UI
   floatingStyles: React.CSSProperties;
-  context: any;
+  context: ReturnType<typeof useFloating>['context'];
   renderOnlyWhenOpen: boolean;
   usePortal: boolean;
   autoFocus: boolean;
 
   // Props getters
-  getReferenceProps: (userProps?: any) => Record<string, unknown>;
-  getFloatingProps: () => Record<string, unknown>;
-  getItemProps: (userProps?: any) => Record<string, unknown>;
+  getReferenceProps: (
+    userProps?: Record<string, unknown>,
+  ) => Record<string, unknown>;
+  getFloatingProps: (
+    userProps?: Record<string, unknown>,
+  ) => Record<string, unknown>;
+  getItemProps: (
+    userProps?: Record<string, unknown>,
+  ) => Record<string, unknown>;
 
   // State setters
   setHasFocusInside: React.Dispatch<React.SetStateAction<boolean>>;
@@ -58,36 +65,6 @@ interface UseMenuReturn {
   nodeId: string;
   item: ReturnType<typeof useListItem>;
   parent: React.ContextType<typeof MenuContext>;
-}
-export interface MenuOptions {
-  placement?: Placement | 'auto';
-  isFullWidth?: boolean;
-  isAutoalignmentEnabled?: boolean;
-  // allows controlling the Menu from the outside
-  isOpen?: boolean;
-
-  // initalp opening state, also for uncontrolled handling
-  defaultIsOpen?: boolean;
-
-  /**
-   * Callback fired when the Menu opens
-   */
-  onOpen?: () => void;
-
-  /**
-   * Callback fired when the Menu closes
-   */
-  onClose?: () => void;
-
-  closeOnEsc?: boolean;
-  closeOnBlur?: boolean;
-  /**
-   * If true the floating content will auto-focus on open. Defaults to true.
-   */
-  autoFocus?: boolean;
-  offset?: OffsetOptions;
-  renderOnlyWhenOpen?: boolean;
-  usePortal?: boolean;
 }
 
 export function useMenu({
@@ -103,8 +80,9 @@ export function useMenu({
   usePortal = true,
   closeOnEsc = true,
   closeOnBlur = true,
+  closeOnSelect = true,
   autoFocus = true,
-}: MenuOptions): UseMenuReturn {
+}: MenuProps): UseMenuReturn {
   const elementsRef = React.useRef<Array<HTMLButtonElement | null>>([]);
   const labelsRef = React.useRef<Array<string | null>>([]);
 
@@ -216,6 +194,7 @@ export function useMenu({
   const dismiss = useDismiss(context, {
     escapeKey: closeOnEsc,
     outsidePress: closeOnBlur,
+    referencePress: closeOnSelect,
     ancestorScroll: true,
     bubbles: true,
   });
