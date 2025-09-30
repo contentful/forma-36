@@ -61,31 +61,48 @@ const MenuListBase = (props: ExpandProps<MenuListProps>) => {
     isOpen: menu.isOpen,
   });
 
+  if (menu.renderOnlyWhenOpen && !menu.isOpen) {
+    return null;
+  }
+
+  const content = (
+    <div
+      role="menu"
+      style={menu.floatingStyles}
+      className={cx(styles.container, className)}
+      data-test-id={testId}
+      ref={menu.refs.setFloating}
+      {...otherProps}
+      {...menu.getFloatingProps()}
+    >
+      {header}
+      {items}
+      {footer}
+    </div>
+  );
+
+  const maybeWrapWithFocusManager = (node: React.ReactElement) =>
+    menu.autoFocus === false ? (
+      node
+    ) : (
+      <FloatingFocusManager
+        context={menu.context}
+        modal={false}
+        initialFocus={menu.isNested ? -1 : 0}
+        returnFocus={!menu.isNested}
+      >
+        {node}
+      </FloatingFocusManager>
+    );
+
   return (
     <FloatingList elementsRef={menu.elementsRef} labelsRef={menu.labelsRef}>
-      {menu.isOpen && (
+      {menu.usePortal ? (
         <FloatingPortal>
-          <FloatingFocusManager
-            context={menu.context}
-            modal={false}
-            initialFocus={menu.isNested ? -1 : 0}
-            returnFocus={!menu.isNested}
-          >
-            <div
-              role="menu"
-              style={menu.floatingStyles}
-              className={cx(styles.container, className)}
-              data-test-id={testId}
-              ref={menu.refs.setFloating}
-              {...otherProps}
-              {...menu.getFloatingProps()}
-            >
-              {header}
-              {items}
-              {footer}
-            </div>
-          </FloatingFocusManager>
+          {maybeWrapWithFocusManager(content as React.ReactElement)}
         </FloatingPortal>
+      ) : (
+        maybeWrapWithFocusManager(content as React.ReactElement)
       )}
     </FloatingList>
   );
