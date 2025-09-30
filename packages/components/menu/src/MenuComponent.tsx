@@ -3,17 +3,13 @@ import * as React from 'react';
 
 import { useMenu } from './useMenu';
 import { MenuContextProvider } from './MenuContext';
-
-interface MenuComponentProps {
-  children?: React.ReactNode;
-  isOpen?: boolean;
-}
+import type { MenuProps } from './Menu';
 
 export const MenuComponent = React.forwardRef<
-  HTMLButtonElement,
-  MenuComponentProps & React.HTMLProps<HTMLButtonElement>
->(({ children, isOpen = false }) => {
-  const menuContext = useMenu({ isOpen });
+  HTMLDivElement,
+  React.PropsWithChildren<MenuProps>
+>(({ children, isOpen = false, defaultIsOpen = false, ...otherProps }) => {
+  const menuContext = useMenu({ isOpen, defaultIsOpen, ...otherProps });
   return (
     <MenuContextProvider value={menuContext}>
       <FloatingNode id={menuContext.nodeId}>{children}</FloatingNode>

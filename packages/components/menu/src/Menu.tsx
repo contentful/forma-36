@@ -2,12 +2,12 @@ import React from 'react';
 import { useFloatingParentNodeId, FloatingTree } from '@floating-ui/react';
 import { MenuComponent } from './MenuComponent';
 
-export interface MenuProps {
+type BaseMenuProps = {
   /**
    * By default, the Menu is uncontrolled (manage it's expanded state by itself)
    * But you can make it controlled by providing boolean (true/false)
    */
-  isOpen?: boolean;
+  // isOpen appears only in controlled variant below
 
   /**
    * If `true`, the Menu will be initially opened.
@@ -58,7 +58,36 @@ export interface MenuProps {
    * Menu compound children (Trigger, List, Item, etc.)
    */
   children?: React.ReactNode;
+};
+
+// Uncontrolled: no isOpen prop
+interface UncontrolledMenuProps extends BaseMenuProps {
+  isOpen?: undefined;
 }
+
+// Controlled: isOpen present AND at least one of onOpen/onClose must be provided.
+// We encode this by creating two branches and unioning them; supplying neither will error.
+interface ControlledMenuPropsWithOnOpen extends BaseMenuProps {
+  isOpen: boolean;
+  onOpen: () => void; // required
+  onClose?: () => void; // optional here
+}
+interface ControlledMenuPropsWithOnClose extends BaseMenuProps {
+  isOpen: boolean;
+  onOpen?: () => void; // optional here
+  onClose: () => void; // required
+}
+interface FullyControlledMenuProps extends BaseMenuProps {
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+}
+
+export type MenuProps =
+  | UncontrolledMenuProps
+  | ControlledMenuPropsWithOnOpen
+  | ControlledMenuPropsWithOnClose
+  | FullyControlledMenuProps;
 
 export const Menu = React.forwardRef<
   HTMLDivElement,
@@ -68,10 +97,7 @@ export const Menu = React.forwardRef<
   const parentId = useFloatingParentNodeId();
 
   const content = (
-    <MenuComponent
-      {...otherProps}
-      ref={ref as unknown as React.Ref<HTMLButtonElement>}
-    >
+    <MenuComponent {...otherProps} ref={ref}>
       {children}
     </MenuComponent>
   );
