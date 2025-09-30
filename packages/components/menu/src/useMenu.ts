@@ -41,6 +41,9 @@ interface UseMenuReturn {
   // Floating UI
   floatingStyles: React.CSSProperties;
   context: any;
+  renderOnlyWhenOpen: boolean;
+  usePortal: boolean;
+  autoFocus: boolean;
 
   // Props getters
   getReferenceProps: (userProps?: any) => Record<string, unknown>;
@@ -60,7 +63,22 @@ export interface MenuOptions {
   placement?: Placement | 'auto';
   isFullWidth?: boolean;
   isAutoalignmentEnabled?: boolean;
+  // allows controlling the Menu from the outside
   isOpen?: boolean;
+
+  // initalp opening state, also for uncontrolled handling
+  defaultIsOpen?: boolean;
+
+  /**
+   * Callback fired when the Menu opens
+   */
+  onOpen?: () => void;
+
+  /**
+   * Callback fired when the Menu closes
+   */
+  onClose?: () => void;
+
   closeOnEsc?: boolean;
   closeOnBlur?: boolean;
   /**
@@ -76,7 +94,10 @@ export function useMenu({
   placement = 'bottom-start',
   isFullWidth = false,
   isAutoalignmentEnabled = true,
-  isOpen: isDefaultOpen = false,
+  isOpen: controlledIsOpen,
+  defaultIsOpen = false,
+  onOpen,
+  onClose,
   offset: offsetProp,
   renderOnlyWhenOpen = true,
   usePortal = true,
@@ -84,10 +105,6 @@ export function useMenu({
   closeOnBlur = true,
   autoFocus = true,
 }: MenuOptions): UseMenuReturn {
-  const [isOpen, setIsOpen] = React.useState(isDefaultOpen);
-  const [hasFocusInside, setHasFocusInside] = React.useState(false);
-  const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
-
   const elementsRef = React.useRef<Array<HTMLButtonElement | null>>([]);
   const labelsRef = React.useRef<Array<string | null>>([]);
 
@@ -99,14 +116,54 @@ export function useMenu({
 
   const isNested = parentId != null;
 
+  /**
+   * Handle open and closed state
+   * supports controlled and uncontrolled behavior
+   * */
+  const isControlled = !!controlledIsOpen;
+  const [uncontrolledIsOpen, setUncontrolledIsOpen] =
+    React.useState(defaultIsOpen);
+  const isOpen = isControlled ? !!controlledIsOpen : uncontrolledIsOpen;
+
+  // Track previous open for transition detection
+  const prevOpenRef = React.useRef(isOpen);
+  React.useEffect(() => {
+    prevOpenRef.current = isOpen;
+  }, [isOpen]);
+
+  const handleOpenChange = React.useCallback(
+    (nextOpen: boolean) => {
+      const wasOpen = prevOpenRef.current;
+
+      if (nextOpen === wasOpen) {
+        return;
+      }
+      if (!isControlled) {
+        setUncontrolledIsOpen(nextOpen);
+      }
+      if (nextOpen && !wasOpen) {
+        onOpen?.();
+      } else if (!nextOpen && wasOpen) {
+        onClose?.();
+      }
+    },
+    [isControlled, onOpen, onClose],
+  );
+
+  // Focus Handling
+  const [hasFocusInside, setHasFocusInside] = React.useState(false);
+  const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
+
+  /** Configure middleware based on placement with offset
+   * and isAutoalignmentEnabled
+   * If placement is "auto" it will use autoPlacement() in the middleware and not make use of flip and switch.
+   * If isAutoalignmentEnabled is false, it will also not use flip and switch but only use the placement variable.
+   */
+
   const offsetOption = offsetProp
     ? offsetProp
     : { mainAxis: isNested ? 0 : 4, alignmentAxis: isNested ? +4 : 0 };
 
-  /** Configure middleware based on placement and isAutoalignmentEnabled
-   * If placement is "auto" it will use autoPlacement() in the middleware and not make use of flip and switch.
-   * If isAutoalignmentEnabled is false, it will also not use flip and switch but only use the placement variable.
-   */
   let sanitizedPlacement: Placement = isNested ? 'right-start' : 'bottom-start';
   const middleware = [offset(offsetOption)];
 
@@ -138,7 +195,7 @@ export function useMenu({
   const { floatingStyles, refs, context } = useFloating<HTMLButtonElement>({
     nodeId,
     open: isOpen,
-    onOpenChange: setIsOpen,
+    onOpenChange: handleOpenChange,
     whileElementsMounted: autoUpdate,
     placement: sanitizedPlacement,
     middleware,
@@ -187,12 +244,12 @@ export function useMenu({
     if (!tree) return;
 
     function handleTreeClick() {
-      setIsOpen(false);
+      handleOpenChange(false);
     }
 
     function onSubMenuOpen(event: { nodeId: string; parentId: string }) {
       if (event.nodeId !== nodeId && event.parentId === parentId) {
-        setIsOpen(false);
+        handleOpenChange(false);
       }
     }
 
@@ -203,7 +260,7 @@ export function useMenu({
       tree.events.off('click', handleTreeClick);
       tree.events.off('menuopen', onSubMenuOpen);
     };
-  }, [tree, nodeId, parentId]);
+  }, [tree, nodeId, parentId, handleOpenChange]);
 
   React.useEffect(() => {
     if (isOpen && tree) {
@@ -227,6 +284,9 @@ export function useMenu({
       // Floating UI
       floatingStyles,
       context,
+      renderOnlyWhenOpen,
+      usePortal,
+      autoFocus,
 
       // Props getters
       getReferenceProps,
@@ -236,9 +296,6 @@ export function useMenu({
       // State setters
       setHasFocusInside,
       setActiveIndex,
-      renderOnlyWhenOpen,
-      usePortal,
-      autoFocus,
 
       // Tree and item info
       nodeId,
