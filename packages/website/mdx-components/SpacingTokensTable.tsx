@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Table } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
-import spacing from '@contentful/f36-tokens/src/tokens/spacing';
+import spacing from '@contentful/f36-tokens';
 
 export function SpacingTokensTable() {
   return (

@@ -1,21 +1,13 @@
 import React from 'react';
 import { Table, Text, type TextProps } from '@contentful/f36-components';
 
-import fontBaseTokens from '@contentful/f36-tokens/src/tokens/typography/font-base';
-import fontSizeTokens from '@contentful/f36-tokens/src/tokens/typography/font-size';
-import fontStackTokens from '@contentful/f36-tokens/src/tokens/typography/font-stack';
-import fontWeightTokens from '@contentful/f36-tokens/src/tokens/typography/font-weight';
-import letterSpacingTokens from '@contentful/f36-tokens/src/tokens/typography/letter-spacing';
-import lineHeightTokens from '@contentful/f36-tokens/src/tokens/typography/line-height';
-
+import FontSizeTokens from '@contentful/f36-tokens';
+import FontStackTokens from '@contentful/f36-tokens';
+import FontWeightTokens from '@contentful/f36-tokens';
+import LineHeightTokens from '@contentful/f36-tokens';
+import LetterSpacingTokens from '@contentful/f36-tokens';
 interface Props {
-  variant:
-    | 'stack'
-    | 'base'
-    | 'size'
-    | 'lineHeight'
-    | 'letterSpacing'
-    | 'weight';
+  variant: 'stack' | 'size' | 'lineHeight' | 'letterSpacing' | 'weight';
 }
 
 export function TypographyTokensTable({ variant }: Props) {
@@ -23,23 +15,20 @@ export function TypographyTokensTable({ variant }: Props) {
   const isSizeVariant = variant === 'size';
 
   switch (variant) {
-    case 'base':
-      tokenValues = fontBaseTokens;
-      break;
     case 'size':
-      tokenValues = fontSizeTokens;
+      tokenValues = FontSizeTokens;
       break;
     case 'letterSpacing':
-      tokenValues = letterSpacingTokens;
+      tokenValues = LetterSpacingTokens;
       break;
     case 'lineHeight':
-      tokenValues = lineHeightTokens;
+      tokenValues = LineHeightTokens;
       break;
     case 'weight':
-      tokenValues = fontWeightTokens;
+      tokenValues = FontWeightTokens;
       break;
     default:
-      tokenValues = fontStackTokens;
+      tokenValues = FontStackTokens;
   }
 
   return (
