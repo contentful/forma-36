@@ -20,7 +20,6 @@ interface Props {
 
 export function ColorSwatch({ name, hex, cssVar }: Props) {
   return (
-    <div>card here</div>
     // <Card padding="none">
     //   <Box
     //     className={styles.swatch}
@@ -46,5 +45,6 @@ export function ColorSwatch({ name, hex, cssVar }: Props) {
     //     </Flex>
     //   </Flex>
     // </Card>
+    <div>card here</div>
   );
 }
