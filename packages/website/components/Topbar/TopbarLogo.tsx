@@ -16,7 +16,6 @@ const styles = {
 export function TopbarLogo() {
   return (
     <Link href="/" passHref className={styles.logoLink}>
-
       <Logo />
       <Text
         fontSize="fontSizeL"
@@ -26,7 +25,6 @@ export function TopbarLogo() {
       >
         Forma 36
       </Text>
-
     </Link>
   );
 }
