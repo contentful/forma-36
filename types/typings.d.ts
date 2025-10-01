@@ -1,4 +1,6 @@
 /* eslint-disable import/no-default-export */
+/// <reference types="@emotion/react/types/css-prop" />
+
 declare module '*.mdx' {
   let MDXComponent: (props: any) => JSX.Element;
   export default MDXComponent;

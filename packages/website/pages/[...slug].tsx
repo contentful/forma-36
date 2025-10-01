@@ -204,37 +204,39 @@ export const getStaticProps: GetStaticProps<
       mainContentText = content.replace(matches[0], '');
     }
 
-    const shortIntro = await serialize(shortIntroText);
-    const mainContent = await serialize(mainContentText, {
+    const shortIntro = await serialize({ source: shortIntroText });
+    const mainContent = await serialize({
+      source: mainContentText,
       // Optionally pass remark/rehype plugins
-      mdxOptions: {
-        remarkPlugins: [
-          remarkCodeTitles,
-          [
-            codeImport,
-            {
-              // Going up the tree from website build dir `.next`
-              rootDir: path.join(__dirname, '../../../../../'),
-            },
-          ],
-        ],
-        rehypePlugins: [
-          rehypeSlug,
-          [
-            // @ts-expect-error - Type compatibility issue with rehype-toc and unified
-            rehypeToc,
-            {
-              nav: false,
-              headings: ['h1', 'h2', 'h3'],
-              customizeTOC: (t) => {
-                toc = transformToc(t);
-                return false;
+      options: {
+        mdxOptions: {
+          remarkPlugins: [
+            remarkCodeTitles,
+            [
+              codeImport,
+              {
+                // Going up the tree from website build dir `.next`
+                rootDir: path.join(__dirname, '../../../../../'),
               },
-            },
+            ],
           ],
-        ],
+          rehypePlugins: [
+            rehypeSlug,
+            [
+              rehypeToc,
+              {
+                nav: false,
+                headings: ['h1', 'h2', 'h3'],
+                customizeTOC: (t) => {
+                  toc = transformToc(t);
+                  return false;
+                },
+              },
+            ],
+          ],
+        },
+        scope: data,
       },
-      scope: data,
     });
 
     const propsMetadata = getPropsMetadata(mdxSource.filepath, data.typescript);

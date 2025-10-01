@@ -18,7 +18,6 @@ interface Props {
 
 export function ColorBox({ text, bgColor, textColor = 'colorWhite' }: Props) {
   return (
-    <div>card here</div>
     // <Card
     //   className={styles.swatch}
     //   style={{ backgroundColor: tokens[bgColor] }}
@@ -33,5 +32,6 @@ export function ColorBox({ text, bgColor, textColor = 'colorWhite' }: Props) {
     //     </Text>
     //   </Flex>
     // </Card>
+    <div>card here</div>
   );
 }

@@ -1,5 +1,5 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
+import type { Interpolation, Theme } from '@emotion/react';
 import {
   SandpackProvider,
   SandpackLayout,
@@ -10,7 +10,13 @@ import tokens from '@contentful/f36-tokens';
 
 import { PlaygroundTopBar } from './PlaygroundTopBar';
 import { palette } from '../LiveEditor/theme';
-import type { Interpolation } from '@emotion/react';
+
+// Add emotion CSS prop support
+declare module 'react' {
+  interface Attributes {
+    css?: Interpolation<Theme>;
+  }
+}
 const indexFile = `import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { GlobalStyles } from "@contentful/f36-components";
@@ -86,97 +92,98 @@ export function SandpackRenderer({
   };
 
   return (
-    <SandpackProvider
-      css={sandpackStyles.wrapper}
-      customSetup={{
-        dependencies: {
-          '@dnd-kit/core': '^6.0.0',
-          '@dnd-kit/sortable': '^7.0.0',
-          react: '^17.0.0',
-          'react-dom': '^17.0.0',
-          'react-scripts': '^4.0.0',
-          '@contentful/f36-components': '^5.0.0-alpha.3',
-          '@contentful/f36-layout': '^5.0.0-alpha.23',
-          '@contentful/f36-multiselect': '^5.0.0-alpha.3',
-          '@contentful/f36-navlist': '^5.0.0-alpha.3',
-          '@contentful/f36-progress-stepper': '^5.0.0-alpha.3',
-          '@contentful/f36-tokens': '^5.0.0-alpha.2',
-          '@contentful/f36-icons': '^5.0.0-alpha.49',
-          '@contentful/f36-core': '^5.0.0-alpha.5',
-          '@contentful/f36-utils': '^4.0.0',
-          emotion: '^10.0.17',
-          lodash: '^4.17.21',
-          'react-hook-form': '7.22.5',
-          'react-icons': '4.3.1',
-          'react-focus-lock': '^2.5.2',
-        },
-      }}
-      files={{
-        '/App.js': code,
-        '/styles.css': {
-          code: stylesFile,
-          hidden: true,
-        },
-        '/index.js': {
-          code: indexFile,
-          hidden: true,
-        },
-      }}
-      theme={{
-        colors: {
-          accent: palette.accent, // tokens.blue700
-          disabled: palette.color, // tokens.gray900
-          error: palette.deleted, // tokens.red700
-          errorSurface: palette.errorBackground, // tokens.red200
-          hover: palette.activeText, //tokens.blue700
-          surface1: palette.backgroundColor,
-          surface2: tokens.gray300, // tokens.gray300
-          surface3: palette.activeBackground, // tokens.blue200
-        },
-        font: {
-          body: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-          mono: '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
-          lineHeight: '1.4',
-          size: tokens.fontSizeM,
-        },
-        syntax: {
-          plain: palette.color, // tokens.gray900
-          comment: {
-            color: palette.comment, //tokens.gray600
-            fontStyle: 'italic',
+    <div css={sandpackStyles.wrapper}>
+      <SandpackProvider
+        customSetup={{
+          dependencies: {
+            '@dnd-kit/core': '^6.0.0',
+            '@dnd-kit/sortable': '^7.0.0',
+            react: '^17.0.0',
+            'react-dom': '^17.0.0',
+            'react-scripts': '^4.0.0',
+            '@contentful/f36-components': '^5.0.0-alpha.3',
+            '@contentful/f36-layout': '^5.0.0-alpha.23',
+            '@contentful/f36-multiselect': '^5.0.0-alpha.3',
+            '@contentful/f36-navlist': '^5.0.0-alpha.3',
+            '@contentful/f36-progress-stepper': '^5.0.0-alpha.3',
+            '@contentful/f36-tokens': '^5.0.0-alpha.2',
+            '@contentful/f36-icons': '^5.0.0-alpha.49',
+            '@contentful/f36-core': '^5.0.0-alpha.5',
+            '@contentful/f36-utils': '^4.0.0',
+            emotion: '^10.0.17',
+            lodash: '^4.17.21',
+            'react-hook-form': '7.22.5',
+            'react-icons': '4.3.1',
+            'react-focus-lock': '^2.5.2',
           },
-          keyword: palette.keyword, // tokens.red700
-          tag: palette.tag, //tokens.blue700
-          punctuation: palette.color, // tokens.gray900
-          definition: palette.definition, // tokens.green700
-          property: {
-            color: palette.selector, //tokens.blue700
-            fontStyle: 'italic',
+        }}
+        files={{
+          '/App.js': code,
+          '/styles.css': {
+            code: stylesFile,
+            hidden: true,
           },
-          static: palette.attrValue, // tokens.purple500
-          string: palette.string, // tokens.yellow800
-        },
-      }}
-      template="react"
-    >
-      <PlaygroundTopBar />
+          '/index.js': {
+            code: indexFile,
+            hidden: true,
+          },
+        }}
+        theme={{
+          colors: {
+            accent: palette.accent, // tokens.blue700
+            disabled: palette.color, // tokens.gray900
+            error: palette.deleted, // tokens.red700
+            errorSurface: palette.errorBackground, // tokens.red200
+            hover: palette.activeText, //tokens.blue700
+            surface1: palette.backgroundColor,
+            surface2: tokens.gray300, // tokens.gray300
+            surface3: palette.activeBackground, // tokens.blue200
+          },
+          font: {
+            body: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+            mono: '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
+            lineHeight: '1.4',
+            size: tokens.fontSizeM,
+          },
+          syntax: {
+            plain: palette.color, // tokens.gray900
+            comment: {
+              color: palette.comment, //tokens.gray600
+              fontStyle: 'italic',
+            },
+            keyword: palette.keyword, // tokens.red700
+            tag: palette.tag, //tokens.blue700
+            punctuation: palette.color, // tokens.gray900
+            definition: palette.definition, // tokens.green700
+            property: {
+              color: palette.selector, //tokens.blue700
+              fontStyle: 'italic',
+            },
+            static: palette.attrValue, // tokens.purple500
+            string: palette.string, // tokens.yellow800
+          },
+        }}
+        template="react"
+      >
+        <PlaygroundTopBar />
 
-      <div css={sandpackStyles.layout}>
-        <SandpackLayout>
-          <SandpackCodeEditor
-            showTabs={false}
-            showLineNumbers
-            showInlineErrors
-            wrapContent
-          />
+        <div css={sandpackStyles.layout}>
+          <SandpackLayout>
+            <SandpackCodeEditor
+              showTabs={false}
+              showLineNumbers
+              showInlineErrors
+              wrapContent
+            />
 
-          <SandpackPreview
-            showSandpackErrorOverlay
-            showOpenInCodeSandbox={showOpenInCodeSandbox}
-            showRefreshButton
-          />
-        </SandpackLayout>
-      </div>
-    </SandpackProvider>
+            <SandpackPreview
+              showSandpackErrorOverlay
+              showOpenInCodeSandbox={showOpenInCodeSandbox}
+              showRefreshButton
+            />
+          </SandpackLayout>
+        </div>
+      </SandpackProvider>
+    </div>
   );
 }
