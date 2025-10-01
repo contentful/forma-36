@@ -14,6 +14,7 @@ import {
   FloatingList,
   FloatingPortal,
   FloatingFocusManager,
+  useMergeRefs,
 } from '@floating-ui/react';
 
 interface MenuListInternalProps extends CommonProps {
@@ -26,11 +27,12 @@ function assertChild(child: any): child is { type: { displayName: string } } {
 
 export type MenuListProps = PropsWithHTMLElement<MenuListInternalProps, 'div'>;
 
-const MenuListBase = (props: ExpandProps<MenuListProps>) => {
+const MenuListBase = (props: ExpandProps<MenuListProps>, forwardedRef) => {
   const {
     children,
     testId = 'cf-ui-menu-list',
     className,
+    style,
     ...otherProps
   } = props;
 
@@ -38,6 +40,8 @@ const MenuListBase = (props: ExpandProps<MenuListProps>) => {
   let header: React.ReactElement | null = null;
   let footer: React.ReactElement | null = null;
   const items: React.ReactElement[] = [];
+
+  const refs = useMergeRefs([menu.refs.setFloating, forwardedRef]);
 
   React.Children.forEach(children, (child) => {
     let appendChild = true;
@@ -68,10 +72,10 @@ const MenuListBase = (props: ExpandProps<MenuListProps>) => {
   const content = (
     <div
       role="menu"
-      style={menu.floatingStyles}
+      style={{ ...style, ...menu.floatingStyles }}
       className={cx(styles.container, className)}
       data-test-id={testId}
-      ref={menu.refs.setFloating}
+      ref={refs}
       {...otherProps}
       {...menu.getFloatingProps()}
     >

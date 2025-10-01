@@ -25,7 +25,6 @@ const SubmenuTriggerBase = (
     <MenuTrigger>
       <MenuItem
         {...props}
-        testId="submenu-trigger"
         ref={ref}
         className={cx(styles.root({ isActive: isOpen }), className)}
       >
