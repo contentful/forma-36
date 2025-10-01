@@ -9,7 +9,10 @@ export type LayoutHeaderProps = {
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 
-const _LayoutHeader = (props: LayoutHeaderProps, ref: Ref<HTMLDivElement>) => {
+const LayoutHeaderBase = (
+  props: LayoutHeaderProps,
+  ref: Ref<HTMLDivElement>,
+) => {
   const {
     children,
     className,
@@ -38,4 +41,4 @@ const _LayoutHeader = (props: LayoutHeaderProps, ref: Ref<HTMLDivElement>) => {
   );
 };
 
-export const LayoutHeader = forwardRef(_LayoutHeader);
+export const LayoutHeader = forwardRef(LayoutHeaderBase);

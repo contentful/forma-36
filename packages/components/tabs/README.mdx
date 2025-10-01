@@ -1,0 +1,99 @@
+---
+title: 'Tabs'
+type: 'component'
+status: 'stable'
+slug: /components/tabs/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/tabs'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-tabs'
+typescript: ./src/Tabs.tsx,./src/Tab.tsx,./src/TabPanel.tsx,./src/TabList.tsx
+---
+
+Tabs is a component that makes navigating between sections of related content possible, displaying one section at a time.
+
+Use Tabs if the content can be separated into sections that make sense as standalone pieces of information.
+Be aware that the users will not see all the content at the same time. Make sure the first section is the most relevant one.
+
+## Import
+
+```jsx static=true
+import { Tabs } from '@contentful/f36-components';
+// or
+import { Tabs } from '@contentful/f36-tabs';
+```
+
+## Examples
+
+### Basic
+
+```jsx file=examples/TabsBasicExample.tsx
+
+```
+
+### With divider
+
+By default, `Tabs` has no divider, but you can add it by providing `variant` prop to the `Tabs.List`
+
+With vertical divider:
+
+```jsx file=examples/TabsWithVerticalDividerExample.tsx
+
+```
+
+With horizontal divider:
+
+```jsx file=examples/TabsWithHorizontalDividerExample.tsx
+
+```
+
+### With default open tab
+
+```jsx file=examples/TabsWithDefaultTabExample.tsx
+
+```
+
+### With disabled tab
+
+```jsx file=examples/TabsWithDisabledTabExample.tsx
+
+```
+
+### Controlled Tabs
+
+By default, `Tabs` is an uncontrolled component, but you can make it controlled by providing `currentTab` and `onTabChange` props.
+
+```jsx file=examples/TabsControlledExample.tsx
+
+```
+
+### Controlled Tabs with always mounted Tabs.Panel
+
+By default, `Tabs.Panel` is unmounted, if it's not an active tab. But you can make it always mounted by passing the `forceMount` prop.
+Keep in mind that you have to provide additional styles to hide not active `Tabs.Panel`.
+
+```jsx file=examples/TabsControlledWithMountedContentExample.tsx
+
+```
+
+## Props (API reference)
+
+### Tabs
+
+<PropsTable of="Tabs" />
+
+### Tab
+
+<PropsTable of="Tab" />
+
+### TabPanel
+
+<PropsTable of="TabPanel" />
+
+### TabList
+
+<PropsTable of="TabList" />
+
+## Content guidelines
+
+- every `Tab` should have concise copy
+- all content within a Tab should be related to it's label
+- to ensure an optimal cognitive load for users, do not use more than six (6) Tabs at any given time

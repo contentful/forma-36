@@ -29,3 +29,5 @@ export const ScreenReaderOnly = ({
     </Element>
   );
 };
+
+ScreenReaderOnly.displayName = 'ScreenReaderOnly';

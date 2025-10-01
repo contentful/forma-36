@@ -65,6 +65,8 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
     } = props;
 
     const styles = getPillStyles(variant);
+    // TODO reimplement tooltip
+    //eslint-disable-next-line
     const [textIsTruncated, setTextIsTruncated] = React.useState(false);
 
     const trackRefChange = React.useCallback(
@@ -72,7 +74,9 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
         if (!ref) {
           return;
         }
-        const { scrollWidth, offsetWidth } = ref.parentElement;
+        const parent = ref.parentElement;
+        if (!parent) return;
+        const { scrollWidth, offsetWidth } = parent;
         setTextIsTruncated(scrollWidth > offsetWidth);
       },
       [setTextIsTruncated],

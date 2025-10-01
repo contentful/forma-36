@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useRef } from 'react';
 import {
   Box,
   type CommonProps,
@@ -47,7 +47,7 @@ export const Collapse = ({
     return `${current.scrollHeight}px`;
   };
 
-  const handleTransitionEnd = () => {
+  const handleTransitionEnd = useCallback(() => {
     const { current } = panelEl;
     if (isExpanded) {
       current?.style.setProperty('height', 'auto');
@@ -55,7 +55,7 @@ export const Collapse = ({
       current?.style.removeProperty('pointer-events');
       current?.style.setProperty('display', 'none');
     }
-  };
+  }, [isExpanded]);
 
   useLayoutEffect(() => {
     const { current } = panelEl;
@@ -91,7 +91,7 @@ export const Collapse = ({
       handleTransitionEnd();
       isMounted.current = true;
     }
-  }, [isExpanded]);
+  }, [handleTransitionEnd, isExpanded]);
 
   useEffect(() => {
     const { current } = panelEl;
@@ -100,7 +100,7 @@ export const Collapse = ({
     return () => {
       current?.removeEventListener('transitionend', handleTransitionEnd);
     };
-  }, [isExpanded]);
+  }, [handleTransitionEnd, isExpanded]);
 
   return (
     <Box

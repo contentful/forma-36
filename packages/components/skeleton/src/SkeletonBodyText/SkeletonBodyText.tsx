@@ -3,9 +3,6 @@ import React from 'react';
 import { Skeleton } from '../index';
 import type { SkeletonTextProps } from '../SkeletonText/SkeletonText';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface SkeletonBodyTextProps extends SkeletonTextProps {}
-
 export const SkeletonBodyText = ({
   lineHeight = 16,
   marginBottom = 8,
@@ -13,7 +10,7 @@ export const SkeletonBodyText = ({
   offsetLeft = 0,
   offsetTop = 0,
   ...otherProps
-}: SkeletonBodyTextProps) => {
+}: SkeletonTextProps) => {
   return (
     <Skeleton.Text
       lineHeight={lineHeight}
@@ -29,3 +26,5 @@ export const SkeletonBodyText = ({
     />
   );
 };
+
+SkeletonBodyText.displayName = 'SkeletonBodyTeyt';

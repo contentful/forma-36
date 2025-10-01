@@ -2,7 +2,7 @@ import React from 'react';
 import type { StoryFn, StoryObj, Meta } from '@storybook/react-vite';
 import { CaretDownIcon } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Box, Flex } from '@contentful/f36-core';
 import { ButtonGroup, Button, IconButton, type ButtonGroupProps } from '../src';
 import tokens from '@contentful/f36-tokens';
@@ -31,7 +31,7 @@ export default {
   },
 } as Meta;
 
-export const basic: StoryObj<ButtonGroupProps> = {
+export const Basic: StoryObj<ButtonGroupProps> = {
   render: (args) => {
     return (
       <ButtonGroup {...args}>
@@ -48,7 +48,7 @@ export const basic: StoryObj<ButtonGroupProps> = {
   },
 };
 
-export const spaced: StoryObj<ButtonGroupProps> = {
+export const Spaced: StoryObj<ButtonGroupProps> = {
   render: (args) => {
     return (
       <ButtonGroup {...args}>
@@ -69,7 +69,7 @@ export const spaced: StoryObj<ButtonGroupProps> = {
   },
 };
 
-export const overview: StoryFn<ButtonGroupProps> = () => {
+export const Overview: StoryFn<ButtonGroupProps> = () => {
   const onClick = action('click');
 
   const buttonVariants: Record<ButtonVariant, true> = {

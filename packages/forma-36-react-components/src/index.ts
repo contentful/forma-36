@@ -6,9 +6,7 @@ export * from '@contentful/f36-collapse';
 export * from '@contentful/f36-copybutton';
 export * from '@contentful/f36-core';
 export * from '@contentful/f36-datetime';
-
 export * from '@contentful/f36-drag-handle';
-
 export * from '@contentful/f36-empty-state';
 export * from '@contentful/f36-forms';
 export * from '@contentful/f36-icon';
@@ -23,6 +21,7 @@ export * from '@contentful/f36-pill';
 export * from '@contentful/f36-progress-stepper';
 export * from '@contentful/f36-skeleton';
 export * from '@contentful/f36-spinner';
+export * from '@contentful/f36-tabs';
 export * from '@contentful/f36-table';
 export * from '@contentful/f36-text-link';
 export * from '@contentful/f36-typography';
