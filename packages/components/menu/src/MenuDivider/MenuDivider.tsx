@@ -4,7 +4,7 @@ import type {
   PropsWithHTMLElement,
   ExpandProps,
 } from '@contentful/f36-core';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { getMenuDividerStyles } from './MenuDivider.styles';
 
 export type MenuDividerProps = PropsWithHTMLElement<CommonProps, 'hr'>;
