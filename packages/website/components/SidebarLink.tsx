@@ -96,6 +96,7 @@ export function SidebarSectionButton({
 
         <Image
           src={caretDown}
+          alt="caret down icon"
           width={18}
           height={18}
           className={cx(titleStyles.chevron, {
@@ -173,6 +174,7 @@ export function SidebarLink({
             {isExternal && (
               <Image
                 src={arrowSquareOut}
+                alt="arrow square out icon"
                 width={18}
                 height={18}
                 className={titleStyles.linkIcon}
@@ -180,6 +182,7 @@ export function SidebarLink({
             )}
             {isAuthProtected && (
               <Image
+                alt="lock icon"
                 src={lockSimple}
                 width={18}
                 height={18}

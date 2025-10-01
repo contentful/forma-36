@@ -63,21 +63,21 @@ const componentSidebarLinks: SidebarSection[] = [
           links: mdxSidebarLinks.dateComponents,
           title: 'Date Components',
         },
-        {
-          type: 'subsection',
-          links: mdxSidebarLinks.modalComponents,
-          title: 'Modal Components',
-        },
-        {
-          type: 'subsection',
-          links: mdxSidebarLinks.cardComponents,
-          title: 'Card Components',
-        },
-        {
-          type: 'subsection',
-          links: mdxSidebarLinks.avatarComponents,
-          title: 'Avatar Components',
-        },
+        // {
+        //   type: 'subsection',
+        //   links: mdxSidebarLinks.modalComponents,
+        //   title: 'Modal Components',
+        // },
+        // {
+        //   type: 'subsection',
+        //   links: mdxSidebarLinks.cardComponents,
+        //   title: 'Card Components',
+        // },
+        // {
+        //   type: 'subsection',
+        //   links: mdxSidebarLinks.avatarComponents,
+        //   title: 'Avatar Components',
+        // },
       ] as SidebarSubsection[]),
       {
         title: 'Deprecated components',
@@ -221,6 +221,7 @@ export const getStaticProps: GetStaticProps<
         rehypePlugins: [
           rehypeSlug,
           [
+            // @ts-expect-error - Type compatibility issue with rehype-toc and unified
             rehypeToc,
             {
               nav: false,
@@ -232,7 +233,6 @@ export const getStaticProps: GetStaticProps<
             },
           ],
         ],
-        filepath: mdxSource.filepath,
       },
       scope: data,
     });

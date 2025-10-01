@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Table } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
-import boxShadowTokens from '@contentful/f36-tokens/src/tokens/box-shadows/box-shadows';
+import boxShadowTokens from '@contentful/f36-tokens';
 
 export function ShadowTokensTable() {
   return (

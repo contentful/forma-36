@@ -1,10 +1,10 @@
 import React from 'react';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import { Box, Table } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 
-import durationTokens from '@contentful/f36-tokens/src/tokens/transitions/transition-durations';
-import easingsTokens from '@contentful/f36-tokens/src/tokens/transitions/transition-easings';
+import durationTokens from '@contentful/f36-tokens';
+import easingsTokens from '@contentful/f36-tokens';
 
 const styles = {
   container: css({

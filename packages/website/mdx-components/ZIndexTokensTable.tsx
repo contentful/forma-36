@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table } from '@contentful/f36-components';
 
-import zIndexTokens from '@contentful/f36-tokens/src/tokens/z-index';
+import zIndexTokens from '@contentful/f36-tokens';
 
 export function ZIndexTokensTable() {
   const tokenValues = zIndexTokens;
