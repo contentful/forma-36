@@ -2,23 +2,30 @@ import React from 'react';
 import type { StoryObj, Meta } from '@storybook/react-vite';
 import { IconButton } from '@contentful/f36-button';
 import { ListIcon, CheckIcon } from '@contentful/f36-icons';
-// import {
-//   BrowserRouter as Router,
-//   useHref,
-//   useLinkClickHandler,
-// } from 'react-router-dom';
-import { css } from 'emotion';
+import {
+  BrowserRouter as Router,
+  useHref,
+  useLinkClickHandler,
+} from 'react-router-dom';
+import { css } from '@emotion/css';
 import { Menu, type MenuProps } from '../src';
 
 export default {
-  component: Menu,
   title: 'Components/Menu',
+  component: Menu,
+  parameters: {
+    propTypes: [
+      Menu['__docgenInfo'],
+      Menu.List['__docgenInfo'],
+      Menu.Item['__docgenInfo'],
+    ],
+  },
 } as Meta;
 
 export const Basic: StoryObj<MenuProps> = {
-  render: (args) => {
+  render: () => {
     return (
-      <Menu defaultIsOpen {...args}>
+      <Menu defaultIsOpen={true}>
         <Menu.Trigger>
           <IconButton
             variant="secondary"
@@ -29,7 +36,9 @@ export const Basic: StoryObj<MenuProps> = {
         <Menu.List>
           <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
           <Menu.Item>Embed existing entry</Menu.Item>
-          <Menu.Item isActive>Create and embed existing entry</Menu.Item>
+          <Menu.Item icon={<CheckIcon />}>
+            Create and embed existing entry
+          </Menu.Item>
           <Menu.Divider />
           <Menu.SectionTitle>Help</Menu.SectionTitle>
           <Menu.Item as="a" href="https://contentful.com" target="_blank">
@@ -85,7 +94,7 @@ Controlled.parameters = {
 export const WithDisabledItems: StoryObj<MenuProps> = {
   render: (args) => {
     return (
-      <Menu defaultIsOpen {...args}>
+      <Menu defaultIsOpen closeOnSelect={false} {...args}>
         <Menu.Trigger>
           <IconButton
             variant="secondary"
@@ -194,70 +203,67 @@ export const WithStickyHeaderAndFooter: StoryObj<MenuProps> = {
   },
 };
 
-// ToDo: Fixme
-// export const WithReactRouterLinks: StoryObj<MenuProps> = (args) => {
-//     function MenuLink({ children, replace = false, to, ...props }) {
-//       const href = useHref(to);
-//       const handleClick = useLinkClickHandler(to, {
-//         replace,
-//       });
+export const WithReactRouterLinks = (args) => {
+  function MenuLink({ children, replace = false, to, ...props }) {
+    const href = useHref(to);
+    const handleClick = useLinkClickHandler(to, {
+      replace,
+    });
 
-//       return (
-//         <Menu.Item {...props} as="a" href={href} onClick={handleClick}>
-//           {children}
-//         </Menu.Item>
-//       );
-//     }
+    return (
+      <Menu.Item {...props} as="a" href={href} onClick={handleClick}>
+        {children}
+      </Menu.Item>
+    );
+  }
 
-//     return (
-//       <Router>
-//         <Menu defaultIsOpen {...args}>
-//           <Menu.Trigger>
-//             <IconButton
-//               variant="secondary"
-//               icon={<ListIcon />}
-//               aria-label="toggle menu"
-//             />
-//           </Menu.Trigger>
-//           <Menu.List>
-//             <MenuLink to="/">Home</MenuLink>
-//             <MenuLink to="/about">About</MenuLink>
-//             <MenuLink to="/other">Other</MenuLink>
-//           </Menu.List>
-//         </Menu>
-//       </Router>
-//     );
-//   };
+  return (
+    <Router>
+      <Menu defaultIsOpen {...args}>
+        <Menu.Trigger>
+          <IconButton
+            variant="secondary"
+            icon={<ListIcon />}
+            aria-label="toggle menu"
+          />
+        </Menu.Trigger>
+        <Menu.List>
+          <MenuLink to="/">Home</MenuLink>
+          <MenuLink to="/about">About</MenuLink>
+          <MenuLink to="/other">Other</MenuLink>
+        </Menu.List>
+      </Menu>
+    </Router>
+  );
+};
 
-//   WithReactRouterLinks.parameters: {
-//     chromatic: { delay: 300 },
-//   };
+WithReactRouterLinks.parameters = {
+  chromatic: { delay: 300 },
+};
 
-// export const WithInitialFocusedItem: StoryObj<MenuProps> = {
-//   render: (args) => {
-//     return (
-//       <Router>
-//         <Menu defaultIsOpen {...args}>
-//           <Menu.Trigger>
-//             <IconButton
-//               variant="secondary"
-//               icon={<ListIcon />}
-//               aria-label="toggle menu"
-//             />
-//           </Menu.Trigger>
-//           <Menu.List>
-//             <Menu.Item>Create an entry</Menu.Item>
-//             <Menu.Item isInitiallyFocused>Remove an entry</Menu.Item>
-//             <Menu.Item>Embed existing entry</Menu.Item>
-//           </Menu.List>
-//         </Menu>
-//       </Router>
-//     );
-//   },
-
-//   parameters: {
-//     chromatic: { delay: 300 },
-//   },
+export const WithInitialFocusedItem: StoryObj<MenuProps> = {
+  render: (args) => {
+    return (
+      <Menu defaultIsOpen {...args}>
+        <Menu.Trigger>
+          <IconButton
+            variant="secondary"
+            icon={<ListIcon />}
+            aria-label="toggle menu"
+          />
+        </Menu.Trigger>
+        <Menu.List>
+          <Menu.Item>Create an entry</Menu.Item>
+          <Menu.Item isInitiallyFocused>Remove an entry</Menu.Item>
+          <Menu.Item>Embed existing entry</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+  },
+};
+WithInitialFocusedItem.parameters = {
+  chromatic: { delay: 300 },
+};
 
 export const WithSubmenu: StoryObj<MenuProps> = {
   render: (args) => {
@@ -271,15 +277,15 @@ export const WithSubmenu: StoryObj<MenuProps> = {
           />
         </Menu.Trigger>
         <Menu.List>
-          <Menu.Item>Create an entry</Menu.Item>
-          <Menu.Submenu>
+          <Menu.Item testId="non-submenu-item">Create an entry</Menu.Item>
+          <Menu>
             <Menu.SubmenuTrigger>Remove an entry</Menu.SubmenuTrigger>
             <Menu.List>
               <Menu.Item>Sub item 1</Menu.Item>
               <Menu.Item>Sub item 2</Menu.Item>
               <Menu.Item>Sub item 3</Menu.Item>
             </Menu.List>
-          </Menu.Submenu>
+          </Menu>
           <Menu.Item>Embed existing entry</Menu.Item>
         </Menu.List>
       </Menu>
@@ -323,14 +329,14 @@ export const WithSubmenuDifferentAlignments: StoryObj<MenuProps> = {
             </Menu.Trigger>
             <Menu.List>
               <Menu.Item>Create an entry</Menu.Item>
-              <Menu.Submenu isAutoalignmentEnabled>
+              <Menu isAutoalignmentEnabled>
                 <Menu.SubmenuTrigger>Remove an entry</Menu.SubmenuTrigger>
                 <Menu.List>
                   <Menu.Item>Sub item 1</Menu.Item>
                   <Menu.Item>Sub item 2</Menu.Item>
                   <Menu.Item>Sub item 3</Menu.Item>
                 </Menu.List>
-              </Menu.Submenu>
+              </Menu>
               <Menu.Item>Embed existing entry</Menu.Item>
             </Menu.List>
           </Menu>
@@ -354,34 +360,34 @@ export const WithMultipleSubmenus: StoryObj<MenuProps> = {
         <Menu.List>
           <Menu.Item>Create an entry</Menu.Item>
 
-          <Menu.Submenu>
+          <Menu>
             <Menu.SubmenuTrigger>Remove an entry</Menu.SubmenuTrigger>
             <Menu.List>
               <Menu.Item>Sub item 1</Menu.Item>
 
-              <Menu.Submenu>
+              <Menu>
                 <Menu.SubmenuTrigger>Submenu</Menu.SubmenuTrigger>
                 <Menu.List>
                   <Menu.Item>Sub item 1</Menu.Item>
                   <Menu.Item>Sub item 2</Menu.Item>
                   <Menu.Item>Sub item 3</Menu.Item>
                 </Menu.List>
-              </Menu.Submenu>
+              </Menu>
 
               <Menu.Item>Sub item 3</Menu.Item>
             </Menu.List>
-          </Menu.Submenu>
+          </Menu>
 
           <Menu.Item>Embed existing entry</Menu.Item>
 
-          <Menu.Submenu>
+          <Menu>
             <Menu.SubmenuTrigger>Second submenu</Menu.SubmenuTrigger>
             <Menu.List>
               <Menu.Item>Sub item 1</Menu.Item>
               <Menu.Item>Sub item 2</Menu.Item>
               <Menu.Item>Sub item 3</Menu.Item>
             </Menu.List>
-          </Menu.Submenu>
+          </Menu>
         </Menu.List>
       </Menu>
     );
