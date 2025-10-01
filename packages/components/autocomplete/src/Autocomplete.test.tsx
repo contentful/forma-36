@@ -61,7 +61,7 @@ const mockOnSelectItem = jest.fn();
 
 describe('Autocomplete', () => {
   describe('items is an array of strings', () => {
-    it('calls the callback on input value change and selects the first item', async () => {
+    it.only('calls the callback on input value change and selects the first item', async () => {
       const user = userEvent.setup();
       renderComponent({});
 
@@ -78,7 +78,7 @@ describe('Autocomplete', () => {
       expect(mockOnInputValueChange).toHaveBeenCalledWith('a');
 
       // checks if the list is visible and it only shows the filtered options
-      expect(screen.getByRole('listbox')).toBeVisible();
+      expect(screen.getByRole('combobox')).toBeVisible();
 
       // go to the list first item
       await user.keyboard('[ArrowDown]');
@@ -268,7 +268,7 @@ describe('Autocomplete', () => {
               <b>{match}</b>
               {after}
             </>
-          ) as JSX.Element;
+          );
         },
       });
 

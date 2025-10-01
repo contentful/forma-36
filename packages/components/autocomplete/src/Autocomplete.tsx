@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { useCombobox } from 'downshift';
 
 import {
@@ -22,8 +22,6 @@ export interface GenericGroupType<ItemType> {
   groupTitle: string;
   options: ItemType[];
 }
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface AutocompleteProps<ItemType>
   extends CommonProps,
     Pick<
@@ -187,7 +185,7 @@ export interface AutocompleteProps<ItemType>
   };
 }
 
-function _Autocomplete<ItemType>(
+function AutocompleteBase<ItemType>(
   props: AutocompleteProps<ItemType>,
   ref: React.Ref<HTMLDivElement>,
 ) {
@@ -535,8 +533,8 @@ function isUsingGroups<ItemType>(
  * to filter a list of items. That list of filtered items will be shown to the user as possible options for the input.
  * Once one of the options is selected, that option becomes the value of the `TextInput`.
  */
-export const Autocomplete = React.forwardRef(_Autocomplete) as <T>(
+export const Autocomplete = React.forwardRef(AutocompleteBase) as <T>(
   props: ExpandProps<AutocompleteProps<T>> & {
     ref?: React.Ref<HTMLDivElement>;
   },
-) => ReturnType<typeof _Autocomplete>;
+) => ReturnType<typeof AutocompleteBase>;
