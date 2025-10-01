@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { getStringMatch } from '@contentful/f36-utils';
 import type { UseComboboxGetItemPropsOptions } from 'downshift';
 import { Text } from '@contentful/f36-typography';
@@ -49,6 +49,7 @@ export const AutocompleteItems = <ItemType,>(
             ])}
             data-test-id={`cf-autocomplete-list-item-${itemIndex}`}
           >
+            {/* @ts-expect-error render item type issues*/}
             {renderItem ? (
               renderItem(item, inputValue)
             ) : typeof item === 'string' ? (
