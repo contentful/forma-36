@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import React from 'react';
 import {
   SandpackProvider,
@@ -42,7 +43,7 @@ export function SandpackRenderer({
   showOpenInCodeSandbox = false,
 }: Props) {
   // Overides to keep the style as we want it
-  const sandpackStyles: { [key: string]: Interpolation<any> } = {
+  const sandpackStyles: { [key: string]: Interpolation<unknown> } = {
     wrapper: {
       display: 'flex',
       flexDirection: 'column',
@@ -160,20 +161,22 @@ export function SandpackRenderer({
     >
       <PlaygroundTopBar />
 
-      <SandpackLayout css={sandpackStyles.layout}>
-        <SandpackCodeEditor
-          showTabs={false}
-          showLineNumbers
-          showInlineErrors
-          wrapContent
-        />
+      <div css={sandpackStyles.layout}>
+        <SandpackLayout>
+          <SandpackCodeEditor
+            showTabs={false}
+            showLineNumbers
+            showInlineErrors
+            wrapContent
+          />
 
-        <SandpackPreview
-          showSandpackErrorOverlay
-          showOpenInCodeSandbox={showOpenInCodeSandbox}
-          showRefreshButton
-        />
-      </SandpackLayout>
+          <SandpackPreview
+            showSandpackErrorOverlay
+            showOpenInCodeSandbox={showOpenInCodeSandbox}
+            showRefreshButton
+          />
+        </SandpackLayout>
+      </div>
     </SandpackProvider>
   );
 }
