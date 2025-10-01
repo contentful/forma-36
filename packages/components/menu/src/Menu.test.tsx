@@ -57,7 +57,7 @@ describe('Menu', function () {
 
   it('renders the components with an additional class names', async () => {
     render(
-      <Menu isOpen={true}>
+      <Menu defaultIsOpen>
         <Menu.Trigger>
           <Button testId="trigger" className="trigger">
             Toggle
@@ -137,7 +137,7 @@ describe('Menu', function () {
     const user = userEvent.setup();
     const handleClose = jest.fn();
     function Controlled() {
-      const [isOpen, setIsOpen] = React.useState(false);
+      const [isOpen, setIsOpen] = React.useState(true);
       return (
         <>
           <Button testId="buttonToClick" />
@@ -161,9 +161,8 @@ describe('Menu', function () {
       );
     }
     await act(async () => render(<Controlled />));
-    await waitFor(() => {
-      expect(screen.getByRole('menu')).toBeInTheDocument();
-    });
+
+    expect(screen.queryByRole('menu')).toBeInTheDocument();
 
     await user.click(screen.getByTestId('buttonToClick'));
     expect(handleClose).toHaveBeenCalled();
@@ -199,15 +198,14 @@ describe('Menu', function () {
 });
 
 describe('Menu focus behaviour', function () {
-  /** Focus and keyboard behaviour is completely broken */
   it('should focus FIRST item when menu is open', async () => {
     render(
-      <Menu isOpen={true}>
+      <Menu defaultIsOpen>
         <Menu.Trigger>
           <Button>Toggle</Button>
         </Menu.Trigger>
         <Menu.List>
-          <Menu.Item>Create an entry</Menu.Item>
+          <Menu.Item testId="first-element">Create an entry</Menu.Item>
           <Menu.Item>Remove an entry</Menu.Item>
           <Menu.Item>Embed existing entry</Menu.Item>
         </Menu.List>
@@ -216,14 +214,14 @@ describe('Menu focus behaviour', function () {
 
     await waitFor(() => {
       expect(screen.getByRole('menu')).toBeInTheDocument();
-      const menuItems = screen.getAllByRole('menuitem');
-      expect(menuItems[0]).toHaveFocus();
+
+      expect(screen.getByTestId('first-element')).toHaveFocus();
     });
   });
 
   it('should focus NEXT/PREVIOUS item when ArrowDown/ArrowUp clicked accordingly', async () => {
     render(
-      <Menu isOpen={true}>
+      <Menu defaultIsOpen>
         <Menu.Trigger>
           <Button>Toggle</Button>
         </Menu.Trigger>
@@ -255,8 +253,9 @@ describe('Menu focus behaviour', function () {
   });
 
   it('should focus FIRST item when ArrowDown clicked and focus was on the last item', async () => {
+    const user = userEvent.setup();
     render(
-      <Menu isOpen={true}>
+      <Menu defaultIsOpen>
         <Menu.Trigger>
           <Button>Toggle</Button>
         </Menu.Trigger>
@@ -272,19 +271,13 @@ describe('Menu focus behaviour', function () {
       expect(document.activeElement).toBe(screen.getByTestId('first-item'));
     });
 
-    fireEvent.keyDown(document.activeElement, {
-      key: 'ArrowDown',
-    });
-    fireEvent.keyDown(document.activeElement, {
-      key: 'ArrowDown',
-    });
+    user.keyboard('{ArrowDown}');
+    user.keyboard('{ArrowDown}');
     await waitFor(() => {
       expect(document.activeElement).toBe(screen.getByTestId('third-item'));
     });
 
-    fireEvent.keyDown(document.activeElement, {
-      key: 'ArrowDown',
-    });
+    user.keyboard('{ArrowDown}');
     await waitFor(() => {
       expect(document.activeElement).toBe(screen.getByTestId('first-item'));
     });
@@ -292,7 +285,7 @@ describe('Menu focus behaviour', function () {
 
   it('should focus LAST item when ArrowUp clicked and focus was on the first item', async () => {
     render(
-      <Menu isOpen={true}>
+      <Menu defaultIsOpen>
         <Menu.Trigger>
           <Button>Toggle</Button>
         </Menu.Trigger>
@@ -318,7 +311,7 @@ describe('Menu focus behaviour', function () {
 
   it('should focus item if isInitiallyFocused prop passed', async () => {
     render(
-      <Menu isOpen={true}>
+      <Menu defaultIsOpen>
         <Menu.Trigger>
           <Button>Toggle</Button>
         </Menu.Trigger>
@@ -341,7 +334,7 @@ describe('Menu focus behaviour', function () {
 describe('Menu.Submenu', function () {
   const renderMenuWithSubMenu = () =>
     render(
-      <Menu isOpen={true}>
+      <Menu defaultIsOpen>
         <Menu.Trigger>
           <Button>Toggle</Button>
         </Menu.Trigger>
@@ -415,8 +408,7 @@ describe('Menu.Submenu', function () {
     });
   });
 
-  // Key listeners are broken
-  it.skip('should close submenu if ArrowLeft clicked on any item in submenu', async () => {
+  it('should close submenu if ArrowLeft clicked on any item in submenu', async () => {
     renderMenuWithSubMenu();
 
     await waitFor(() => {

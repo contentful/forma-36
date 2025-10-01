@@ -43,7 +43,7 @@ export type MenuItemProps<
 
 function MenuItemBase<
   E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG,
->(props: MenuItemProps<E>, forwardedRef: React.Ref<any>) {
+>(props: MenuItemProps<E>, forwardedRef: React.Ref<Element>) {
   const {
     testId,
     className,
@@ -64,6 +64,16 @@ function MenuItemBase<
   const styles = getMenuItemStyles({ isActive, isDisabled });
 
   const Element = (as ?? MENU_ITEM_DEFAULT_TAG) as React.ElementType;
+
+  // If this item requests initial focus, set active index
+  const { menu, item } = menuItem;
+  const { setActiveIndex } = menu;
+
+  React.useEffect(() => {
+    if (isInitiallyFocused) {
+      setActiveIndex(item.index);
+    }
+  }, [isInitiallyFocused, item.index, setActiveIndex]);
 
   return (
     <Element
