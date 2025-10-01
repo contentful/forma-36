@@ -271,11 +271,9 @@ export const WithSubmenu: StoryObj<MenuProps> = {
           />
         </Menu.Trigger>
         <Menu.List>
-          <Menu.Item>Create an entry</Menu.Item>
+          <Menu.Item testId="non-submenu-item">Create an entry</Menu.Item>
           <Menu>
-            <Menu.Trigger>
-              <button type="button">Remove an entry</button>
-            </Menu.Trigger>
+            <Menu.SubmenuTrigger>Remove an entry</Menu.SubmenuTrigger>
             <Menu.List>
               <Menu.Item>Sub item 1</Menu.Item>
               <Menu.Item>Sub item 2</Menu.Item>
