@@ -32,6 +32,7 @@
   "dependencies": {
     "@contentful/f36-accordion": "^6.0.0-alpha.0",
     "@contentful/f36-asset": "^6.0.0-alpha.0",
+    "@contentful/f36-autocomplete": "^6.0.0-alpha.0",
     "@contentful/f36-badge": "^6.0.0-alpha.0",
     "@contentful/f36-button": "^6.0.0-alpha.0",
     "@contentful/f36-card": "^6.0.0-alpha.0",
