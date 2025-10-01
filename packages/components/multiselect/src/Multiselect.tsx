@@ -1,5 +1,5 @@
 import React, { useRef, useState, useCallback, useMemo } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 import { mergeRefs, type CommonProps, Flex } from '@contentful/f36-core';
 import { Button, IconButton, type ButtonProps } from '@contentful/f36-button';
