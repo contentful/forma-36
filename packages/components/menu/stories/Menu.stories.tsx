@@ -329,14 +329,14 @@ export const WithSubmenuDifferentAlignments: StoryObj<MenuProps> = {
             </Menu.Trigger>
             <Menu.List>
               <Menu.Item>Create an entry</Menu.Item>
-              <Menu.Submenu isAutoalignmentEnabled>
+              <Menu isAutoalignmentEnabled>
                 <Menu.SubmenuTrigger>Remove an entry</Menu.SubmenuTrigger>
                 <Menu.List>
                   <Menu.Item>Sub item 1</Menu.Item>
                   <Menu.Item>Sub item 2</Menu.Item>
                   <Menu.Item>Sub item 3</Menu.Item>
                 </Menu.List>
-              </Menu.Submenu>
+              </Menu>
               <Menu.Item>Embed existing entry</Menu.Item>
             </Menu.List>
           </Menu>
@@ -360,34 +360,34 @@ export const WithMultipleSubmenus: StoryObj<MenuProps> = {
         <Menu.List>
           <Menu.Item>Create an entry</Menu.Item>
 
-          <Menu.Submenu>
+          <Menu>
             <Menu.SubmenuTrigger>Remove an entry</Menu.SubmenuTrigger>
             <Menu.List>
               <Menu.Item>Sub item 1</Menu.Item>
 
-              <Menu.Submenu>
+              <Menu>
                 <Menu.SubmenuTrigger>Submenu</Menu.SubmenuTrigger>
                 <Menu.List>
                   <Menu.Item>Sub item 1</Menu.Item>
                   <Menu.Item>Sub item 2</Menu.Item>
                   <Menu.Item>Sub item 3</Menu.Item>
                 </Menu.List>
-              </Menu.Submenu>
+              </Menu>
 
               <Menu.Item>Sub item 3</Menu.Item>
             </Menu.List>
-          </Menu.Submenu>
+          </Menu>
 
           <Menu.Item>Embed existing entry</Menu.Item>
 
-          <Menu.Submenu>
+          <Menu>
             <Menu.SubmenuTrigger>Second submenu</Menu.SubmenuTrigger>
             <Menu.List>
               <Menu.Item>Sub item 1</Menu.Item>
               <Menu.Item>Sub item 2</Menu.Item>
               <Menu.Item>Sub item 3</Menu.Item>
             </Menu.List>
-          </Menu.Submenu>
+          </Menu>
         </Menu.List>
       </Menu>
     );
