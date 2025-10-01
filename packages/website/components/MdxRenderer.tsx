@@ -28,7 +28,7 @@ const components = {
   a: (props) => {
     if (props.href && props.href.startsWith('..')) {
       return (
-        <NextLink href={props.href}>
+        <NextLink href={props.href} legacyBehavior>
           <TextLink {...props} />
         </NextLink>
       );

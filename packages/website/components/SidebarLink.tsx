@@ -163,35 +163,36 @@ export function SidebarLink({
 
   return (
     <List.Item>
-      <Link href={href} passHref>
+      <Link
+        href={href}
+        passHref
+        className={cx([styles.link, titleStyles.sidebarItem])}
+        {...linksProps}>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a
-          className={cx([styles.link, titleStyles.sidebarItem])}
-          {...linksProps}
-        >
-          <span className={cx([titleStyles.clickable])}>
-            {children}
-            {isExternal && (
-              <Image
-                src={arrowSquareOut}
-                alt="arrow square out icon"
-                width={18}
-                height={18}
-                className={titleStyles.linkIcon}
-              />
-            )}
-            {isAuthProtected && (
-              <Image
-                alt="lock icon"
-                src={lockSimple}
-                width={18}
-                height={18}
-                className={titleStyles.linkIcon}
-              />
-            )}
-          </span>
-          {renderSidebarBadge({ isNew, status })}
-        </a>
+
+        <span className={cx([titleStyles.clickable])}>
+          {children}
+          {isExternal && (
+            <Image
+              src={arrowSquareOut}
+              alt="arrow square out icon"
+              width={18}
+              height={18}
+              className={titleStyles.linkIcon}
+            />
+          )}
+          {isAuthProtected && (
+            <Image
+              alt="lock icon"
+              src={lockSimple}
+              width={18}
+              height={18}
+              className={titleStyles.linkIcon}
+            />
+          )}
+        </span>
+        {renderSidebarBadge({ isNew, status })}
+
       </Link>
     </List.Item>
   );

@@ -15,19 +15,18 @@ const styles = {
 
 export function TopbarLogo() {
   return (
-    <Link href="/" passHref>
-      <a className={styles.logoLink}>
-        <Logo />
+    <Link href="/" passHref className={styles.logoLink}>
 
-        <Text
-          fontSize="fontSizeL"
-          fontWeight="fontWeightDemiBold"
-          fontColor="blue700"
-          marginLeft="spacingS"
-        >
-          Forma 36
-        </Text>
-      </a>
+      <Logo />
+      <Text
+        fontSize="fontSizeL"
+        fontWeight="fontWeightDemiBold"
+        fontColor="blue700"
+        marginLeft="spacingS"
+      >
+        Forma 36
+      </Text>
+
     </Link>
   );
 }
