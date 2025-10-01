@@ -74,7 +74,7 @@ function MenuItemBase<
       data-test-id={itemTestId}
       tabIndex={menuItem.isActive ? 0 : -1}
       disabled={propDisabled}
-      {...menuItem.getItemProps(props)}
+      {...menuItem.getItemProps(otherProps)}
     >
       {icon}
       {props.children}
