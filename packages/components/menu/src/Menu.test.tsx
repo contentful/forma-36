@@ -340,7 +340,7 @@ describe('Menu.Submenu', function () {
         </Menu.Trigger>
         <Menu.List testId="menu">
           <Menu.Item testId="first-item">Create an entry</Menu.Item>
-          <Menu.Submenu>
+          <Menu>
             <Menu.SubmenuTrigger testId="second-item">
               Remove an entry
             </Menu.SubmenuTrigger>
@@ -349,7 +349,7 @@ describe('Menu.Submenu', function () {
               <Menu.Item testId="submenu-item-2">Sub item 2</Menu.Item>
               <Menu.Item testId="submenu-item-3">Sub item 3</Menu.Item>
             </Menu.List>
-          </Menu.Submenu>
+          </Menu>
           <Menu.Item testId="third-item">Embed existing entry</Menu.Item>
         </Menu.List>
       </Menu>,
