@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import type { Meta } from '@storybook/react/types-6-0';
+import type { Meta } from '@storybook/react-vite';
 
 import { Stack } from '@contentful/f36-core';
 import { Multiselect } from '../src';
