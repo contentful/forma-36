@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta } from '@storybook/react-vite';
 import { FormControl, TextInput } from '@contentful/f36-forms';
 import { format, parse, isValid } from 'date-fns';
 import { Popover } from '@contentful/f36-popover';
@@ -7,7 +7,7 @@ import FocusLock from 'react-focus-lock';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-import { Datepicker, Calendar, type DatepickerProps } from '../src/index';
+import { Datepicker, Calendar } from '../src/index';
 
 const testDate = new Date('2022-04-15');
 
@@ -31,7 +31,7 @@ export default {
   title: 'Components/Datepicker',
 } as Meta;
 
-export const Basic: Story<DatepickerProps> = (args) => {
+export const Basic = (args) => {
   const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
   return (
@@ -44,7 +44,7 @@ export const Basic: Story<DatepickerProps> = (args) => {
   );
 };
 
-export const WithMinMaxDate: Story<DatepickerProps> = (args) => {
+export const WithMinMaxDate = (args) => {
   const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
   return (
@@ -61,7 +61,7 @@ export const WithMinMaxDate: Story<DatepickerProps> = (args) => {
   );
 };
 
-export const WithMultipleMonths: Story<DatepickerProps> = (args) => {
+export const WithMultipleMonths = (args) => {
   const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
   return (
@@ -75,7 +75,7 @@ export const WithMultipleMonths: Story<DatepickerProps> = (args) => {
   );
 };
 
-export const WithFormControl: Story<DatepickerProps> = (args) => {
+export const WithFormControl = (args) => {
   const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
   return (
@@ -185,7 +185,7 @@ export const Custom = () => {
   );
 };
 
-export const Placeholder: Story<DatepickerProps> = (args) => {
+export const Placeholder = (args) => {
   const [selectedDay, setSelectedDay] = useState<Date | undefined>(undefined);
 
   return (
