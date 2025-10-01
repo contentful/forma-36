@@ -130,7 +130,7 @@ export function useMenu({
 
   // Focus Handling
   const [hasFocusInside, setHasFocusInside] = React.useState(false);
-  const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = React.useState<number>(0);
 
   /** Configure middleware based on placement with offset
    * and isAutoalignmentEnabled
@@ -207,6 +207,7 @@ export function useMenu({
     activeIndex,
     nested: isNested,
     onNavigate: setActiveIndex,
+    loop: true,
   });
 
   const typeahead = useTypeahead(context, {
