@@ -55,10 +55,7 @@ function MenuItemBase<
     ...otherProps
   } = props;
   const propDisabled = isDisabled ?? props.disabled;
-  const menuItem = useMenuItem({
-    isDisabled: propDisabled,
-    label: props.children,
-  });
+  const menuItem = useMenuItem();
   const id = useId(undefined, 'menu-item');
   const itemTestId = testId || `cf-ui-${id}`;
   const styles = getMenuItemStyles({ isActive, isDisabled });
