@@ -1,9 +1,7 @@
 import React from 'react';
-import { useMenu } from './useMenu';
+import type { UseMenuReturn } from './useMenu';
 
-export const MenuContext = React.createContext<ReturnType<
-  typeof useMenu
-> | null>(null);
+export const MenuContext = React.createContext<UseMenuReturn | null>(null);
 
 export function useMenuContext() {
   const ctx = React.useContext(MenuContext);

@@ -24,7 +24,7 @@ import type { Placement } from '@floating-ui/react';
 import type { MenuProps } from './Menu';
 import { MenuContext } from './MenuContext';
 
-interface UseMenuReturn {
+export interface UseMenuReturn {
   // State
   isOpen: boolean;
   hasFocusInside: boolean;
