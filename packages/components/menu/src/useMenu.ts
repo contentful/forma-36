@@ -68,7 +68,7 @@ export interface UseMenuReturn {
 }
 
 export function useMenu({
-  placement = 'bottom-start',
+  placement,
   isFullWidth = false,
   isAutoalignmentEnabled = true,
   isOpen: controlledIsOpen,
@@ -140,14 +140,18 @@ export function useMenu({
 
   const offsetOption = offsetProp
     ? offsetProp
-    : { mainAxis: isNested ? 0 : 4, alignmentAxis: isNested ? +4 : 0 };
+    : isNested
+      ? { mainAxis: 4, alignmentAxis: -4 }
+      : 5;
 
-  let sanitizedPlacement: Placement = isNested ? 'right-start' : 'bottom-start';
   const middleware = [offset(offsetOption)];
+
+  // sanitize the placement to allow auto setting alongside with isAutoalignmentEnabled
+
+  let sanitizedPlacement: Placement;
 
   if (placement !== 'auto' && isAutoalignmentEnabled) {
     sanitizedPlacement = placement;
-
     middleware.push(flip({ padding: 5 }), shift({ padding: 5 }));
   } else if (placement === 'auto') {
     middleware.push(autoPlacement());
@@ -194,7 +198,6 @@ export function useMenu({
   const dismiss = useDismiss(context, {
     escapeKey: closeOnEsc,
     outsidePress: closeOnBlur,
-    referencePress: closeOnSelect,
     ancestorScroll: true,
     bubbles: true,
   });
@@ -223,7 +226,10 @@ export function useMenu({
     if (!tree) return;
 
     function handleTreeClick() {
-      handleOpenChange(false);
+      // Only close menus on item click if the consumer opted in via closeOnSelect
+      if (closeOnSelect) {
+        handleOpenChange(false);
+      }
     }
 
     function onSubMenuOpen(event: { nodeId: string; parentId: string }) {
@@ -239,7 +245,7 @@ export function useMenu({
       tree.events.off('click', handleTreeClick);
       tree.events.off('menuopen', onSubMenuOpen);
     };
-  }, [tree, nodeId, parentId, handleOpenChange]);
+  }, [tree, nodeId, parentId, handleOpenChange, closeOnSelect]);
 
   React.useEffect(() => {
     if (isOpen && tree) {
