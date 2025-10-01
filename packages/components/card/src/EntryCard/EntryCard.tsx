@@ -95,6 +95,7 @@ function EntryCardBase<
     badge,
     ...otherProps
   }: EntryCardProps<E>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   forwardedRef: React.Ref<any>,
 ) {
   const styles = getEntryCardStyles();
