@@ -21,8 +21,18 @@ interface MenuListInternalProps extends CommonProps {
   children?: React.ReactNode;
 }
 
-function assertChild(child: any): child is { type: { displayName: string } } {
-  return Boolean(child?.type?.displayName);
+type ComponentWithDisplayName = React.ComponentType<unknown> & {
+  displayName?: string;
+};
+
+function assertChild(
+  child: React.ReactNode,
+): child is React.ReactElement<unknown, ComponentWithDisplayName> {
+  if (!React.isValidElement(child)) return false;
+  // Exclude intrinsic elements (strings like 'div')
+  if (typeof child.type === 'string') return false;
+  const type = child.type as ComponentWithDisplayName;
+  return typeof type.displayName === 'string';
 }
 
 export type MenuListProps = PropsWithHTMLElement<MenuListInternalProps, 'div'>;
