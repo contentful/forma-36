@@ -3,7 +3,7 @@ import { Checkbox } from '@contentful/f36-forms';
 import { Text } from '@contentful/f36-typography';
 import { getMultiselectStyles } from './Multiselect.styles';
 import { getStringMatch } from '@contentful/f36-utils';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { useMultiselectContext } from './MultiselectContext';
 
 type LabelOrChildren =
