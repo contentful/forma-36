@@ -167,9 +167,8 @@ export function SidebarLink({
         href={href}
         passHref
         className={cx([styles.link, titleStyles.sidebarItem])}
-        {...linksProps}>
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-
+        {...linksProps}
+      >
         <span className={cx([titleStyles.clickable])}>
           {children}
           {isExternal && (
@@ -192,7 +191,6 @@ export function SidebarLink({
           )}
         </span>
         {renderSidebarBadge({ isNew, status })}
-
       </Link>
     </List.Item>
   );
