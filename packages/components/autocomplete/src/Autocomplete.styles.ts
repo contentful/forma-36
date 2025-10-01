@@ -7,9 +7,6 @@ export const getAutocompleteStyles = (listMaxHeight: number) => ({
     position: 'relative',
     width: '100%',
   }),
-  combobox: css({
-    position: 'relative',
-  }),
   inputField: css({
     paddingRight: tokens.spacingXl,
     textOverflow: 'ellipsis',
