@@ -146,11 +146,15 @@ export const Menu = React.forwardRef<
   HTMLDivElement,
   React.PropsWithChildren<MenuProps>
 >(function Menu(props, ref) {
-  const { children, ...otherProps } = props;
+  const { children, placement, ...otherProps } = props;
   const parentId = useFloatingParentNodeId();
 
+  // Set default placement based on nesting: root menus open down, nested menus open right
+  const resolvedPlacement =
+    placement ?? (parentId === null ? 'bottom-start' : 'right-start');
+
   const content = (
-    <MenuComponent {...otherProps} ref={ref}>
+    <MenuComponent placement={resolvedPlacement} {...otherProps} ref={ref}>
       {children}
     </MenuComponent>
   );
