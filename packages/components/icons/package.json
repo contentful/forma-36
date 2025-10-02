@@ -35,7 +35,7 @@
     "@contentful/f36-icon": "^6.0.0-alpha.0",
     "@contentful/f36-tokens": "^6.0.0-alpha.0",
     "@emotion/css": "^11.13.5",
-    "@phosphor-icons/react": "^2.1.10"
+    "@phosphor-icons/react": "2.1.8"
   },
   "peerDependencies": {
     "react": ">=19.1.0",

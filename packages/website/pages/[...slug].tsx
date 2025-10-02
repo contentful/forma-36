@@ -1,6 +1,7 @@
 import React from 'react';
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import type { ParsedUrlQuery } from 'node:querystring';
+import type { Plugin } from 'unified';
 
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
@@ -204,11 +205,13 @@ export const getStaticProps: GetStaticProps<
       mainContentText = content.replace(matches[0], '');
     }
 
-    const shortIntro = await serialize({ source: shortIntroText });
-    const mainContent = await serialize({
-      source: mainContentText,
-      // Optionally pass remark/rehype plugins
-      options: {
+    const shortIntro = await serialize({
+      value: shortIntroText,
+      path: mdxSource.filepath,
+    });
+    const mainContent = await serialize(
+      { value: mainContentText, path: mdxSource.filepath },
+      {
         mdxOptions: {
           remarkPlugins: [
             remarkCodeTitles,
@@ -223,11 +226,11 @@ export const getStaticProps: GetStaticProps<
           rehypePlugins: [
             rehypeSlug,
             [
-              rehypeToc,
+              rehypeToc as unknown as Plugin,
               {
                 nav: false,
                 headings: ['h1', 'h2', 'h3'],
-                customizeTOC: (t) => {
+                customizeTOC: (t: unknown) => {
                   toc = transformToc(t);
                   return false;
                 },
@@ -237,7 +240,7 @@ export const getStaticProps: GetStaticProps<
         },
         scope: data,
       },
-    });
+    );
 
     const propsMetadata = getPropsMetadata(mdxSource.filepath, data.typescript);
 
