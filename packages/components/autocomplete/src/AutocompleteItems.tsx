@@ -47,6 +47,7 @@ export const AutocompleteItems = <ItemType,>(
               styles.item({}),
               highlightedIndex === itemIndex && styles.highlighted,
             ])}
+            data-highlighted={highlightedIndex === itemIndex}
             data-test-id={`cf-autocomplete-list-item-${itemIndex}`}
           >
             {/* @ts-expect-error render item type issues*/}
