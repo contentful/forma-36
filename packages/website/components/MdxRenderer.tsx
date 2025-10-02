@@ -1,6 +1,5 @@
 import React from 'react';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { MDXRemote, type MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import * as f36Components from '@contentful/f36-components';
 import * as f36Icons from '@contentful/f36-icons';
@@ -12,9 +11,21 @@ import { StaticSource } from './LiveEditor/StaticSource';
 import tokens from '@contentful/f36-tokens';
 import { CustomHeading2 } from './CustomHeading2';
 
-const { DisplayText, Subheading, Paragraph, Text, TextLink, List, Table } =
-  f36Components;
+const {
+  DisplayText,
+  Subheading,
+  Paragraph,
+  Text,
+  TextLink,
+  List,
+  Table,
+  Heading,
+  Stack,
+  Note,
+} = f36Components;
 
+/* eslint-disable react/display-name */
+/* eslint-disable @next/next/no-img-element */
 const components = {
   h1: (props) => <DisplayText as="h1" {...props} />,
   // to cover a specific case with "Props (API reference)"
@@ -23,18 +34,22 @@ const components = {
   h4: (props) => <Subheading as="h4" {...props} />,
   h5: (props) => <Subheading as="h5" {...props} />,
   h6: (props) => <Subheading as="h6" {...props} />,
+  Heading,
+  TextLink,
+  Note,
   p: (props) => <Paragraph {...props} />,
   strong: (props) => <Text fontWeight="fontWeightDemiBold" {...props} />,
   a: (props) => {
     if (props.href && props.href.startsWith('..')) {
       return (
-        <NextLink href={props.href} legacyBehavior>
+        <NextLink href={props.href}>
           <TextLink {...props} />
         </NextLink>
       );
     }
     return <TextLink {...props} />;
   },
+  Stack,
   ul: (props) => <List style={{ marginBottom: tokens.spacingM }} {...props} />,
   li: (props) => <List.Item {...props} />,
   code: (props) => {
@@ -55,9 +70,11 @@ const components = {
 
   ...MdxComponents,
 };
+/* eslint-enable @next/next/no-img-element */
+/* eslint-enable react/display-name */
 
 export function MdxRenderer(props: {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
 }) {
-  return <MDXRemote source={props.source} components={components} />;
+  return <MDXRemote {...props.source} components={components} />;
 }
