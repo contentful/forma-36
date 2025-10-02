@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 import { css, cx } from '@emotion/css';
 // TODO: add LivePreview here
-import { LiveProvider, LiveEditor, LiveError } from 'react-live';
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
 import { DndContext } from '@dnd-kit/core';
@@ -177,9 +177,9 @@ export function ComponentSource({
         // The order is important here
         scope={liveProviderScope}
       >
-        {/* <Card className={styles.card}>
+        <div className={styles.card}>
           <LivePreview />
-        </Card> */}
+        </div>
         <div style={{ position: 'relative' }}>
           <LiveError className={styles.error} />
           <div style={{ position: 'relative' }}>
