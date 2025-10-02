@@ -71,7 +71,7 @@ export const AutoPlacement = (args: { content: string }) => {
 };
 
 AutoPlacement.args = {
-  place: 'auto',
+  placement: 'auto',
   content: (
     <>
       I will reposition automatically
@@ -81,7 +81,7 @@ AutoPlacement.args = {
   ),
 };
 
-const AutoPlacementSourceCode = `<Tooltip place="auto" content={<>I will reposition automatically<br/>when you scroll</>}>
+const AutoPlacementSourceCode = `<Tooltip placement="auto" content={<>I will reposition automatically<br/>when you scroll</>}>
   <TextLink>Hover me</TextLink>
 </Tooltip>`;
 
