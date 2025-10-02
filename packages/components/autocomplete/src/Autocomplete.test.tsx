@@ -86,7 +86,7 @@ describe('Autocomplete', () => {
       // checks if the first item of the list gets selected
       const listFirstItem = screen.getAllByRole('option')[0];
       expect(listFirstItem.getAttribute('aria-selected')).toBe('true');
-      //expect(listFirstItem.getAttribute('class')).toContain('highlighted');
+      expect(listFirstItem.getAttribute('data-highlighted')).toBeTruthy();
 
       // press Enter to select the item
       await user.keyboard('[Enter]');
@@ -238,7 +238,7 @@ describe('Autocomplete', () => {
 
       // checks if the first item of the list gets selected
       expect(listFirstItem.getAttribute('aria-selected')).toBe('true');
-      //expect(listFirstItem.getAttribute('class')).toContain('highlighted');
+      expect(listFirstItem.getAttribute('data-highlighted')).toBeTruthy();
 
       // press Enter to select the item
       await user.keyboard('[Enter]');
