@@ -149,6 +149,7 @@ export const getStaticProps: GetStaticProps<
 
   const { default: remarkCodeTitles } = await import('remark-code-titles');
   const { codeImport } = await import('remark-code-import');
+  const { remarkCodeMeta } = await import('../utils/remark-code-meta');
   const { default: rehypeSlug } = await import('rehype-slug');
   const { default: rehypeToc } = await import('rehype-toc');
   const path = await import('node:path');
@@ -221,6 +222,8 @@ export const getStaticProps: GetStaticProps<
                 rootDir: path.join(__dirname, '../../../../../'),
               },
             ],
+            // Add plugin to parse code meta attributes and pass them as props
+            remarkCodeMeta,
           ],
           rehypePlugins: [
             rehypeSlug,
