@@ -12,7 +12,7 @@ export const TooltipTrigger = React.forwardRef<
     children as unknown as { ref?: React.Ref<HTMLElement> }
   ).ref;
 
-  const ref = useMergeRefs([context.refs.setReference, propRef, childRef]);
+  const ref = useMergeRefs([childRef, propRef, context.refs.setReference]);
 
   if (React.isValidElement(children)) {
     const childProps = children.props as Record<string, unknown>;
@@ -21,9 +21,9 @@ export const TooltipTrigger = React.forwardRef<
     return React.cloneElement(
       children,
       context.getReferenceProps({
-        ref,
         ...otherProps,
         ...childProps,
+        ref: ref,
         role: 'button',
         'aria-expanded': context.isOpen,
         'aria-describedby': tooltipId,
