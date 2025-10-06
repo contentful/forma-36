@@ -1,7 +1,6 @@
 import React from 'react';
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import type { ParsedUrlQuery } from 'node:querystring';
-import type { Plugin } from 'unified';
 
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
@@ -148,7 +147,7 @@ export const getStaticProps: GetStaticProps<
     throw new Error();
   }
 
-  const remarkCodeTitles = await import('remark-code-titles');
+  const { default: remarkCodeTitles } = await import('remark-code-titles');
   const { codeImport } = await import('remark-code-import');
   const { default: rehypeSlug } = await import('rehype-slug');
   const { default: rehypeToc } = await import('rehype-toc');
@@ -226,7 +225,7 @@ export const getStaticProps: GetStaticProps<
           rehypePlugins: [
             rehypeSlug,
             [
-              rehypeToc as unknown as Plugin,
+              rehypeToc,
               {
                 nav: false,
                 headings: ['h1', 'h2', 'h3'],

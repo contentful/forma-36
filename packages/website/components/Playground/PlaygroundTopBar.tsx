@@ -1,5 +1,5 @@
 import React from 'react';
-import CopyToClipboard from 'react-copy-to-clipboard';
+// TODO: replace with copy to clipboard
 import { css, cx } from '@emotion/css';
 import { UnstyledOpenInCodeSandboxButton } from '@codesandbox/sandpack-react';
 import tokens from '@contentful/f36-tokens';
@@ -87,7 +87,7 @@ function UrlCopyButton({ url }) {
   };
 
   return (
-    <CopyToClipboard text={url} onCopy={handleOnCopy}>
+    <>
       {/* <Tooltip
         placement="bottom"
         targetWrapperClassName={styles.tooltipWrapper}
@@ -103,6 +103,6 @@ function UrlCopyButton({ url }) {
           <Text fontColor="gray800">Copy Playground URL</Text>
         </Flex>
       </Tooltip> */}
-    </CopyToClipboard>
+    </>
   );
 }
