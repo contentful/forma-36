@@ -5,7 +5,7 @@ import type {
   PropsWithHTMLElement,
   ExpandProps,
 } from '@contentful/f36-core';
-//import { Tooltip } from '@contentful/f36-tooltip';
+import { Tooltip } from '@contentful/f36-tooltip';
 import { XIcon } from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
 import { DragHandle } from '@contentful/f36-drag-handle';
@@ -65,18 +65,20 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
     } = props;
 
     const styles = getPillStyles(variant);
-    // TODO reimplement tooltip
-    //eslint-disable-next-line
     const [textIsTruncated, setTextIsTruncated] = React.useState(false);
 
     const trackRefChange = React.useCallback(
       (ref: HTMLDivElement | null) => {
+        console.log('track ref function');
+        console.log(ref);
         if (!ref) {
           return;
         }
         const parent = ref.parentElement;
+        console.log('parent', parent);
         if (!parent) return;
         const { scrollWidth, offsetWidth } = parent;
+        console.log('scrollwidrth > offset width', scrollWidth > offsetWidth);
         setTextIsTruncated(scrollWidth > offsetWidth);
       },
       [setTextIsTruncated],
@@ -97,16 +99,16 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
             <DragHandle label="Reorder item" variant="transparent" />
           ))}
 
-        <span ref={trackRefChange}>{label}</span>
-
-        {/* <Tooltip
+        <Tooltip
           content={label}
           maxWidth="none"
-          targetWrapperClassName={styles.label}
           isDisabled={!textIsTruncated}
+          targetWrapperClassName={styles.labelWrapper}
         >
-          <span ref={trackRefChange}>{label}</span>
-        </Tooltip> */}
+          <div className={styles.label}>
+            <span ref={trackRefChange}>{label}</span>
+          </div>
+        </Tooltip>
         {onClose && (
           <Button
             type="button"
