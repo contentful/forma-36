@@ -36,11 +36,7 @@ export function useTooltip({
   const [isOpen, setIsOpen] = React.useState(isVisible);
 
   let sanitizedPlacement: Placement = 'top';
-  const middleware = [
-    arrow({
-      element: arrowRef,
-    }),
-  ];
+  const middleware = [];
 
   if (placement === 'auto') {
     middleware.push(autoPlacement({ padding: 5 }));
@@ -51,12 +47,20 @@ export function useTooltip({
 
   if (
     sanitizedPlacement.startsWith('right') ||
-    sanitizedPlacement.toString().startsWith('left')
+    sanitizedPlacement.toString().startsWith('left') ||
+    placement === 'auto'
   ) {
     middleware.push(offset({ mainAxis: 10 }));
   } else {
-    middleware.push(offset({ mainAxis: 5, crossAxis: 0 }));
+    middleware.push(offset({ mainAxis: 5 }));
   }
+
+  // add arrow last to middleware so it can pick up the placement happening before
+  middleware.push(
+    arrow({
+      element: arrowRef,
+    }),
+  );
 
   const data = useFloating({
     placement: sanitizedPlacement,

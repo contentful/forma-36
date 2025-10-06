@@ -163,7 +163,6 @@ export const Tooltip = ({
     <TooltipContextProvider value={context}>
       <Box
         testId={testId}
-        as={HtmlTag}
         className={cx(styles.tooltipContainer, targetWrapperClassName)}
         onMouseEnter={(evt: MouseEvent) => {
           if (onMouseOver) onMouseOver(evt);
@@ -181,9 +180,17 @@ export const Tooltip = ({
           if (onKeyDown) onKeyDown(evt);
         }}
         {...otherProps}
+        role="button"
       >
         <TooltipTrigger tooltipId={tooltipId}>{children}</TooltipTrigger>
-        <TooltipContent content={content} label={label} style={contentStyles} />
+        <TooltipContent
+          content={content}
+          label={label}
+          style={contentStyles}
+          className={className}
+          id={id}
+          as={HtmlTag}
+        />
       </Box>
     </TooltipContextProvider>
   );

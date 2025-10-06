@@ -69,16 +69,14 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
 
     const trackRefChange = React.useCallback(
       (ref: HTMLDivElement | null) => {
-        console.log('track ref function');
-        console.log(ref);
         if (!ref) {
           return;
         }
         const parent = ref.parentElement;
-        console.log('parent', parent);
+
         if (!parent) return;
         const { scrollWidth, offsetWidth } = parent;
-        console.log('scrollwidrth > offset width', scrollWidth > offsetWidth);
+
         setTextIsTruncated(scrollWidth > offsetWidth);
       },
       [setTextIsTruncated],

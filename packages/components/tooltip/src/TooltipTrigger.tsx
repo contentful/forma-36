@@ -24,6 +24,7 @@ export const TooltipTrigger = React.forwardRef<
         ref,
         ...otherProps,
         ...childProps,
+        role: 'button',
         'aria-expanded': context.isOpen,
         'aria-describedby': tooltipId,
         'aria-haspopup': ariaHasPopup,
