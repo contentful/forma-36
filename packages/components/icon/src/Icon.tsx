@@ -70,13 +70,15 @@ export function IconBase<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
     color = 'currentColor',
     role = 'img',
     size = 'medium',
-    testId = 'cf-ui-icon',
+    testId,
+    dataTestId,
     viewBox = '0 0 20 20',
     isActive,
     'aria-label': ariaLabel,
     'aria-labelledBy': ariaLabelledBy,
     ...otherProps
   } = props;
+
   const shared = {
     className: cx(
       css({
@@ -86,7 +88,7 @@ export function IconBase<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
       }),
       className,
     ),
-    ['data-test-id']: testId,
+    ['data-test-id']: testId ?? dataTestId ?? 'cf-ui-icon',
     ref: forwardedRef,
     role,
   };

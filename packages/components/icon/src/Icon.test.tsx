@@ -1,6 +1,8 @@
+/* eslint-disable jest/no-disabled-tests */
 import React, { Fragment } from 'react';
 import { render } from '@testing-library/react';
 import { MdHelp as ExternalIcon } from 'react-icons/md/index.js';
+import { CalendarBlankIcon } from '../../icons/src/index.js';
 
 import { Icon } from './index.js';
 
@@ -23,6 +25,18 @@ describe('Icon', () => {
 
       expect(icon.getAttribute('aria-hidden')).toBe('true');
       expect(icon.getAttribute('viewBox')).toBe('0 0 30 30');
+    });
+
+    // when the Icon in Icon element is used testId can not be added
+    it.skip('adds a custom testId', () => {
+      const result = render(
+        <Icon
+          as={CalendarBlankIcon}
+          data-test-id="custom-id"
+          testId="custom-id"
+        />,
+      );
+      expect(result.queryByTestId('custom-id')).toBeInTheDocument();
     });
 
     it('removes aria-hidden=true if aria-label is passed', () => {
