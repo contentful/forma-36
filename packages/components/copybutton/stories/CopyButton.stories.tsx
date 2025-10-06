@@ -14,7 +14,7 @@ export default {
 
 export const Default: StoryObj<CopyButtonProps> = {
   render: (args) => {
-    return <CopyButton {...args}>CopyButton</CopyButton>;
+    return <CopyButton {...args} />;
   },
 
   args: {
