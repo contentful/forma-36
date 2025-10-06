@@ -11,7 +11,7 @@ export * from '@contentful/f36-core';
 export * from '@contentful/f36-datetime';
 export * from '@contentful/f36-datepicker';
 export * from '@contentful/f36-drag-handle';
-//export * from '@contentful/f36-entity-list';
+export * from '@contentful/f36-entity-list';
 export * from '@contentful/f36-empty-state';
 export * from '@contentful/f36-forms';
 export * from '@contentful/f36-icon';

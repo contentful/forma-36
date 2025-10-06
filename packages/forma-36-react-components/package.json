@@ -43,6 +43,7 @@
     "@contentful/f36-datepicker": "^6.0.0-alpha.0",
     "@contentful/f36-drag-handle": "^6.0.0-alpha.0",
     "@contentful/f36-empty-state": "^6.0.0-alpha.0",
+    "@contentful/f36-entity-list": "^6.0.0-alpha.0",
     "@contentful/f36-forms": "^6.0.0-alpha.0",
     "@contentful/f36-header": "^6.0.0-alpha.0",
     "@contentful/f36-icon": "^6.0.0-alpha.0",
