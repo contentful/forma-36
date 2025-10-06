@@ -180,7 +180,6 @@ export const Tooltip = ({
           if (onKeyDown) onKeyDown(evt);
         }}
         {...otherProps}
-        role="button"
       >
         <TooltipTrigger tooltipId={tooltipId}>{children}</TooltipTrigger>
         <TooltipContent
