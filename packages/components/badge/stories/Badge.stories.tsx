@@ -17,16 +17,29 @@ export default {
     testId: { control: { disable: true } },
     style: { control: { disable: true } },
     startIcon: {
-      control: {
-        options: ['', ...Object.keys(icons)],
-        type: 'select',
-      },
+      control: 'select',
+      options: ['', ...Object.keys(icons)],
     },
     endIcon: {
-      control: {
-        options: ['', ...Object.keys(icons)],
-        type: 'select',
-      },
+      control: 'select',
+      options: ['', ...Object.keys(icons)],
+    },
+    size: {
+      control: 'select',
+      options: ['small', 'default'],
+    },
+    textTransform: { control: 'boolean' },
+    variant: {
+      control: 'select',
+      options: [
+        'primary',
+        'negative',
+        'positive',
+        'secondary',
+        'warning',
+        'primary-filled',
+        'featured',
+      ],
     },
   },
 };

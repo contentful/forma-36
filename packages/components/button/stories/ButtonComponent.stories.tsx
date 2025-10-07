@@ -12,22 +12,23 @@ export default {
   title: 'Components/Button components',
   component: Button,
   parameters: {
-    propTypes: (Button as any)?.__docgenInfo,
+    propTypes: [Button['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
     startIcon: {
-      control: {
-        options: ['', ...Object.keys(icons)],
-        type: 'select',
-      },
+      control: 'select',
+      options: ['', ...Object.keys(icons)],
     },
     endIcon: {
-      control: {
-        options: ['', ...Object.keys(icons)],
-        type: 'select',
-      },
+      control: 'select',
+      options: ['', ...Object.keys(icons)],
+    },
+    size: { control: 'select', options: ['small', 'medium', 'large'] },
+    variant: {
+      control: 'select',
+      options: ['negative', 'positive', 'primary', 'secondary', 'transparent'],
     },
   },
 };
