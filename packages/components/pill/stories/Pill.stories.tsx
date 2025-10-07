@@ -214,7 +214,7 @@ export const InSmallContainer: StoryObj<PillInternalProps> = {
         maxWidth: 200,
       }),
     };
-    const onDrag = args.isDraggable ? args.onDrag : undefined;
+
     return (
       <>
         <Flex flexDirection="column" marginBottom="spacingL">
@@ -224,19 +224,17 @@ export const InSmallContainer: StoryObj<PillInternalProps> = {
           <Flex flexDirection="row" marginBottom="spacingM">
             <Box marginRight="spacingXs">
               <Pill
-                isDraggable={args.isDraggable}
                 label={args.label}
                 className={styles.pill}
-                onDrag={onDrag}
+                onDrag={args.onDrag}
                 onClose={args.onClose}
               />
             </Box>
             <Box>
               <Pill
-                isDraggable={args.isDraggable}
                 label={args.label}
                 className={styles.pill}
-                onDrag={onDrag}
+                onDrag={args.onDrag}
                 onClose={args.onClose}
               />
             </Box>
@@ -249,5 +247,7 @@ export const InSmallContainer: StoryObj<PillInternalProps> = {
   args: {
     label: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac libero at dui auctor  convallis eget non dolor. Integer sodales, lacus et tempus faucibus, elit elit condimentum metus, a 
       dignissim velit ipsum vel nisl`,
+    onClose: action('clicked'),
+    onDrag: action('dragged'),
   },
 };

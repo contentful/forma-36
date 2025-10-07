@@ -4,7 +4,7 @@ import { FormControl, TextInput } from '@contentful/f36-forms';
 import { format, parse, isValid } from 'date-fns';
 import { Popover } from '@contentful/f36-popover';
 import FocusLock from 'react-focus-lock';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 
 import { Datepicker, Calendar } from '../src/index';

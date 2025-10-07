@@ -6,9 +6,9 @@ import React, {
 } from 'react';
 import tokens from '@contentful/f36-tokens';
 import { CopySimpleIcon } from '@contentful/f36-icons';
-import type { ExpandProps } from '@contentful/f36-core';
-//import { Tooltip, type TooltipProps } from '@contentful/f36-tooltip';
-import { Button, type ButtonProps } from '@contentful/f36-button';
+import { type ExpandProps } from '@contentful/f36-core';
+import { type TooltipProps } from '@contentful/f36-tooltip';
+import { IconButton, type ButtonProps } from '@contentful/f36-button';
 import { getCopyButtonStyles } from './CopyButton.styles';
 import { cx } from '@emotion/css';
 
@@ -33,10 +33,7 @@ export type CopyButtonProps = Omit<
   /**
    * Props that are passed to the tooltip component
    */
-
-  // ToDo reimplement tooltip
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  tooltipProps?: any; //Omit<TooltipProps, 'content' | 'children'>;
+  tooltipProps?: Omit<TooltipProps, 'content' | 'children'>;
   /**
    * Label to be used on aria-label for the button
    * @default Copy to clipboard
@@ -72,6 +69,7 @@ function CopyButtonBase(
     tooltipProps,
     tooltipText = 'Copy to clipboard',
     value,
+    children,
     ...otherProps
   }: ExpandProps<CopyButtonProps>,
   ref: React.Ref<HTMLButtonElement>,
@@ -119,7 +117,8 @@ function CopyButtonBase(
   };
 
   return (
-    <Button
+    <IconButton
+      {...otherProps}
       aria-label={copied ? tooltipCopiedText : (label ?? tooltipText)}
       aria-live="assertive"
       className={cx(styles.button, className)}
@@ -127,47 +126,23 @@ function CopyButtonBase(
       isLoading={isLoading}
       onBlur={handleBlur}
       testId={testId}
-      startIcon={
+      icon={
         <CopySimpleIcon
           color={tokens.gray600}
           size={size === 'small' ? 'tiny' : 'small'}
         />
       }
       variant="secondary"
-      {...otherProps}
       onClick={handleClick}
       ref={ref}
+      withTooltip
+      tooltipProps={{
+        content: copied ? tooltipCopiedText : tooltipText,
+        isDisabled: isDisabled,
+        ...tooltipProps,
+      }}
     />
   );
-
-  // ToDo reimplement tooltip
-  // return (
-  //   <Tooltip
-  //     content={copied ? tooltipCopiedText : tooltipText}
-  //     {...tooltipProps}
-  //     isDisabled={isDisabled}
-  //   >
-  //     <Button
-  //       aria-label={copied ? tooltipCopiedText : label ?? tooltipText}
-  //       aria-live="assertive"
-  //       className={cx(styles.button, className)}
-  //       isDisabled={isLoading || isDisabled}
-  //       isLoading={isLoading}
-  //       onBlur={handleBlur}
-  //       testId={testId}
-  //       startIcon={
-  //         <CopySimpleIcon
-  //           color={tokens.gray600}
-  //           size={size === 'small' ? 'tiny' : 'small'}
-  //         />
-  //       }
-  //       variant="secondary"
-  //       {...otherProps}
-  //       onClick={handleClick}
-  //       ref={ref}
-  //     />
-  //   </Tooltip>
-  // );
 }
 
 CopyButtonBase.displayName = 'CopyButton';

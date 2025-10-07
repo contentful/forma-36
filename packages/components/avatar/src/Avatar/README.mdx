@@ -1,0 +1,94 @@
+---
+title: 'Avatar'
+type: 'component'
+status: 'stable'
+section: 'avatarComponents'
+slug: /components/avatar/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/avatar'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-avatar--overview'
+typescript: ./Avatar.tsx
+---
+
+Avatar can be used to visually represent users and apps.
+
+## Import
+
+```jsx static=true
+import { Avatar } from '@contentful/f36-avatar';
+// or
+import { Avatar } from '@contentful/f36-component';
+```
+
+## Examples
+
+### Variants
+
+The Avatar can be rendered in different variants:
+
+- **User** - default variant
+- **App**
+
+```jsx file=./examples/AvatarVariantExample.tsx
+
+```
+
+### Sizes
+
+The Avatar can be rendered in different sizes:
+
+- **Tiny** - 20px
+- **Small** - 24px
+- **Medium** - 32px, default size
+- **Large** - 48px
+
+```jsx file=./examples/AvatarSizeExample.tsx
+
+```
+
+### Color Border
+
+By default, the Avatar is rendered with a thin gray border. You can change the border to be one of 9 different colors: blue, purple, orchid, strawberry, orange, gold, olive, green, ocean
+
+```jsx file=./examples/AvatarColorBorderExamples.tsx
+
+```
+
+### Special style variant muted
+
+This property modifies the opacity of the Avatar component to indicate activity state.
+
+```jsx file=./examples/AvatarMutedExamples.tsx
+
+```
+
+### Icons
+
+An Avatar can display an icon on top of the image
+
+```jsx file=./examples/AvatarIconExamples.tsx
+
+```
+
+### Fallback
+
+In some cases a user or an app will have no avatar to display. Instead, a fallback can be rendered when the `src` property is undefined (or an empty string `""`) and the loading state is not `true`.
+
+```jsx file=./examples/AvatarFallbackExample.tsx
+
+```
+
+### Loading skeleton
+
+When the avatar image is loading, a loading skeleton will be shown automatically. You can also force the loading state with the `isLoading` prop.
+
+```jsx file=./examples/AvatarLoadingExample.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="Avatar" />
+
+## Accessibility
+
+Make sure to pass a fitting `alt` property, especially if the avatar is used by itself without the user's name next to it.
