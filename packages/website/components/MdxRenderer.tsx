@@ -53,10 +53,43 @@ const components = {
   ul: (props) => <List style={{ marginBottom: tokens.spacingM }} {...props} />,
   li: (props) => <List.Item {...props} />,
   code: (props) => {
-    if (props.static) {
-      return <StaticSource {...props} />;
+    // Inline code will never be inside <pre>
+    if (props.parentName !== 'pre') {
+      return (
+        <code
+          style={{
+            fontFamily: tokens.fontStackMonospace,
+            backgroundColor: tokens.gray100,
+            color: tokens.gray800,
+            padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
+            borderRadius: tokens.borderRadiusSmall,
+            fontSize: tokens.fontSizeS,
+          }}
+          {...props}
+        />
+      );
     }
-    return <ComponentSource {...props} />;
+
+    // If it's inside <pre>, MDX will render via `pre` mapping below
+    return <code {...props} />;
+  },
+  pre: (props) => {
+    const codeElement = props.children;
+    const {
+      className = '',
+      static: isStatic,
+      file,
+      children,
+    } = codeElement.props;
+
+    const code = Array.isArray(children) ? children.join('') : children;
+    const language = className.replace('language-', '');
+
+    if (isStatic) {
+      return <StaticSource code={code} language={language} />;
+    }
+
+    return <ComponentSource code={code} file={file} />;
   },
   table: (props) => <Table {...props} />,
   thead: (props) => <Table.Head {...props} />,
