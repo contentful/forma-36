@@ -13,7 +13,7 @@ export default {
   title: 'Components/Pill',
   component: Pill,
   parameters: {
-    propTypes: (Pill as any)?.__docgenInfo,
+    propTypes: [Pill['__docgenInfo']],
   },
   argTypes: {
     label: { control: { type: 'text' } },
