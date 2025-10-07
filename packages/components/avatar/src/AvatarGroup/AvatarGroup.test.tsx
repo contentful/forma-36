@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import UserEvent from '@testing-library/user-event/';
+import userEvent from '@testing-library/user-event';
 import { Avatar } from '../Avatar';
 import { AvatarGroup } from './AvatarGroup';
 import { axe } from 'jest-axe';
@@ -48,7 +48,7 @@ describe('AvatarGroup', () => {
   });
 
   it('renders the rest of the avatars in a menu with image and name', async () => {
-    const user = UserEvent.setup();
+    const user = userEvent.setup();
     render(
       <AvatarGroup>
         <Avatar alt="Marge Simpson" src={imgUrl} />
@@ -70,7 +70,7 @@ describe('AvatarGroup', () => {
   });
 
   it('renders the avatars with tooltip', async () => {
-    const user = UserEvent.setup();
+    const user = userEvent.setup();
     render(
       <AvatarGroup>
         <Avatar
@@ -94,7 +94,7 @@ describe('AvatarGroup', () => {
   });
 
   it('renders the avatars with tooltip in dropdown', async () => {
-    const user = UserEvent.setup();
+    const user = userEvent.setup();
     render(
       <AvatarGroup>
         <Avatar alt="Marge Simpson" src={imgUrl} />

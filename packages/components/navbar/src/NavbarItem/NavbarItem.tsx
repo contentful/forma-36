@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { getNavbarItemStyles } from './NavbarItem.styles';
 import { NavbarMenu, type NavbarMenuProps } from '../NavbarMenu/NavbarMenu';
 import {
@@ -41,8 +41,9 @@ export type NavbarItemProps<
   E extends React.ElementType = typeof NAVBAR_ITEM_DEFAULT_TAG,
 > = PolymorphicProps<NavbarItemOwnProps, E>;
 
-function _NavbarItem(
+function NavbarItemBase(
   props: NavbarItemProps<React.ElementType>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ref: React.Ref<any>,
 ) {
   const {
@@ -120,7 +121,10 @@ const isNavbarItemHasMenu = <E extends React.ElementType>(
 ): props is PolymorphicProps<NavbarItemAsMenuProps, E> =>
   Boolean(props.children);
 
-export const NavbarItem: PolymorphicComponent<
+NavbarItemBase.displayName = 'NavbarItemBase';
+export const NavbarItem = React.forwardRef(
+  NavbarItemBase,
+) as PolymorphicComponent<
   ExpandProps<NavbarItemOwnProps>,
   typeof NAVBAR_ITEM_DEFAULT_TAG
-> = React.forwardRef(_NavbarItem);
+>;

@@ -65,8 +65,6 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
     } = props;
 
     const styles = getPillStyles(variant);
-    // TODO reimplement tooltip
-    //eslint-disable-next-line
     const [textIsTruncated, setTextIsTruncated] = React.useState(false);
 
     const trackRefChange = React.useCallback(
@@ -75,8 +73,10 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
           return;
         }
         const parent = ref.parentElement;
+
         if (!parent) return;
         const { scrollWidth, offsetWidth } = parent;
+
         setTextIsTruncated(scrollWidth > offsetWidth);
       },
       [setTextIsTruncated],
@@ -96,13 +96,16 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
           ) : (
             <DragHandle label="Reorder item" variant="transparent" />
           ))}
+
         <Tooltip
           content={label}
           maxWidth="none"
-          targetWrapperClassName={styles.label}
           isDisabled={!textIsTruncated}
+          targetWrapperClassName={styles.labelWrapper}
         >
-          <span ref={trackRefChange}>{label}</span>
+          <div className={styles.label}>
+            <span ref={trackRefChange}>{label}</span>
+          </div>
         </Tooltip>
         {onClose && (
           <Button
