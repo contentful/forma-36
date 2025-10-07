@@ -1,4 +1,3 @@
-/* eslint-disable jest/no-disabled-tests */
 import React, { Fragment } from 'react';
 import { render } from '@testing-library/react';
 import { MdHelp as ExternalIcon } from 'react-icons/md/index.js';
