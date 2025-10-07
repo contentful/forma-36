@@ -16,18 +16,14 @@ export default {
         'https://images.ctfassets.net/iq4lnigp6fgt/72KhxI84kw1SE9gP8gDp7R/c5fa24bdc295a318018aea0ca46e2de8/forma-36-storybook-asset.png?fit=fill&f=top_left&w=200&h=300',
     },
     status: {
-      control: {
-        type: 'select',
-        options: ['archived', 'changed', 'draft', 'published'],
-      },
+      control: 'select',
+      options: ['archived', 'changed', 'draft', 'published'],
     },
     testId: { control: { disable: true } },
     title: { control: 'text', defaultValue: 'Everyone is welcome here' },
     type: {
-      control: {
-        type: 'select',
-        options: Object.keys(types),
-      },
+      control: 'select',
+      options: Object.keys(types),
       defaultValue: Object.keys(types)[0],
     },
   },
