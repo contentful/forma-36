@@ -14,7 +14,7 @@ export default {
   title: 'Layout/Layout',
   component: Layout,
   parameters: {
-    propTypes: (Layout as any)?.__docgenInfo,
+    propTypes: [Layout['__docgenInfo']],
   },
 } as Meta;
 

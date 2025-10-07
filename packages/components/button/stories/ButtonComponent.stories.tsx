@@ -12,7 +12,7 @@ export default {
   title: 'Components/Button components',
   component: Button,
   parameters: {
-    propTypes: (Button as any)?.__docgenInfo,
+    propTypes: [Button['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },

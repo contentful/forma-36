@@ -8,7 +8,7 @@ export default {
   component: NavList,
   title: 'Components/NavList',
   parameters: {
-    propTypes: (NavList as any)?.__docgenInfo,
+    propTypes: [NavList['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },
