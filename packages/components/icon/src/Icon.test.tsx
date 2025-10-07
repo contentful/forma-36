@@ -27,15 +27,8 @@ describe('Icon', () => {
       expect(icon.getAttribute('viewBox')).toBe('0 0 30 30');
     });
 
-    // when the Icon in Icon element is used testId can not be added
-    it.skip('adds a custom testId', () => {
-      const result = render(
-        <Icon
-          as={CalendarBlankIcon}
-          data-test-id="custom-id"
-          testId="custom-id"
-        />,
-      );
+    it('adds a custom testId', () => {
+      const result = render(<Icon as={CalendarBlankIcon} testId="custom-id" />);
       expect(result.queryByTestId('custom-id')).toBeInTheDocument();
     });
 

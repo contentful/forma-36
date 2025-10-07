@@ -170,7 +170,7 @@ describe('EntityList', function () {
   });
 
   // issue with testids on icons as icons
-  it.skip('renders an "Experience" entity type', () => {
+  it('renders an "Experience" entity type', () => {
     render(
       <EntityListItem
         title="Premier Studio Experience"
