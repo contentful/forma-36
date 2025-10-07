@@ -1,4 +1,4 @@
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import { mqs } from '../utils.styles';
 
 export const getNavbarMenuStyles = () => ({

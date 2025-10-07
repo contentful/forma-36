@@ -8,7 +8,6 @@ import { CaretDownIcon, XIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover, type PopoverProps } from '../../popover';
 import { Subheading } from '@contentful/f36-typography';
-//import { Tooltip } from '@contentful/f36-tooltip';
 
 import { getMultiselectStyles } from './Multiselect.styles';
 import { MultiselectOption } from './MultiselectOption';
@@ -285,17 +284,6 @@ function MultiselectBase(
             </Popover.Trigger>
             {showClearButton && (
               <div className={styles.clearSelectionButton}>
-                {/** ToDo: fix tooltip */}
-                {/* <Tooltip
-                content={
-                  clearButtonProps.tooltip
-                    ? clearButtonProps.tooltip
-                    : 'Clear selection'
-                }
-                showDelay={800}
-                placement="top"
-                as="div"
-              >
                 <IconButton
                   onClick={handleClearSelection}
                   icon={<XIcon />}
@@ -305,18 +293,16 @@ function MultiselectBase(
                       : 'Clear selection'
                   }
                   size="small"
-                />  
-              </Tooltip> */}
+                  withTooltip
+                  tooltipProps={{
+                    content: clearButtonProps.tooltip
+                      ? clearButtonProps.tooltip
+                      : 'Clear selection',
 
-                <IconButton
-                  onClick={handleClearSelection}
-                  icon={<XIcon />}
-                  aria-label={
-                    clearButtonProps.ariaLabel
-                      ? clearButtonProps.ariaLabel
-                      : 'Clear selection'
-                  }
-                  size="small"
+                    showDelay: 800,
+                    placement: 'top',
+                    as: 'div',
+                  }}
                 />
               </div>
             )}
