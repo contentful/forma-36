@@ -4,7 +4,7 @@
 
 The Popover component introduces two changes:
 
-- placement now accepts an additional literal: 'auto'
+- placement no longer accepts `"auto-start"` and `"auto-end"`
 - offset prop shape changed from a tuple [number, number] to OffsetOptions (number or object)
 
 ---
@@ -31,10 +31,16 @@ The Popover component introduces two changes:
 
 ## placement Migration
 
-Old values remain valid. New option:
+OLD: `auto-start` or `auto-end` are no longer supported. Auto-adjustment for `"top"`, `"right"`, `"bottom"`, `"left"` is already applied, so either can be used.
 
 ```tsx
-placement = 'auto';
+placement = 'auto-start';
+```
+
+NEW:
+
+```tsx
+placement = 'left-start';
 ```
 
 Use when you prefer automatic best-fit without manually managing flipping logic.
@@ -123,7 +129,7 @@ function migrateOffset(oldOffset: [number, number], placement: string) {
 ## Migration Steps Checklist
 
 1. Replace all `[x, y]` offsets with new object (or number) using mapping above.
-2. Decide if you want to adopt `placement="auto"`.
+2. Replace `auto-start` and `auto-end` with any of the other placements or adopt `placement="auto"`.
 3. Re-test visual spacing (tune mainAxis).
 4. Adjust horizontal/vertical nudges via crossAxis or alignmentAxis.
 5. Remove obsolete tuple references.

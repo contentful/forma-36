@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 import { Stack, type CommonProps } from '@contentful/f36-core';
 import { Menu } from '@contentful/f36-menu';
@@ -16,7 +16,7 @@ export interface AvatarGroupProps extends CommonProps {
   variant?: 'stacked' | 'spaced';
 }
 
-function _AvatarGroup(
+function AvatarGroupBase(
   {
     children,
     className,
@@ -48,14 +48,20 @@ function _AvatarGroup(
       })}
     >
       {childrenToRender.map((child, index) => {
+        if (!React.isValidElement(child)) {
+          return null;
+        }
         const zIndex = childrenToRender.length - index;
 
-        return React.cloneElement(child as React.ReactElement, {
+        return React.cloneElement(child as React.ReactElement<AvatarProps>, {
           key: `avatar-rendered-${index}`,
           size: size,
-          className: cx((child as React.ReactElement).props.className, {
-            [styles.avatarStacked]: variant === 'stacked',
-          }),
+          className: cx(
+            (child as React.ReactElement<AvatarProps>).props.className,
+            {
+              [styles.avatarStacked]: variant === 'stacked',
+            },
+          ),
           style: {
             zIndex,
           },
@@ -83,12 +89,15 @@ function _AvatarGroup(
                   className={styles.moreAvatarsItem}
                   key={`avatar-${index}`}
                 >
-                  {React.cloneElement(child as React.ReactElement, {
-                    key: `avatar-menuitem-${index}`,
-                    size: 'tiny',
-                    tooltipProps: undefined,
-                  })}
-                  {(child as React.ReactElement).props.alt}
+                  {React.cloneElement(
+                    child as React.ReactElement<AvatarProps>,
+                    {
+                      key: `avatar-menuitem-${index}`,
+                      size: 'tiny',
+                      tooltipProps: undefined,
+                    },
+                  )}
+                  {(child as React.ReactElement<AvatarProps>).props.alt}
                 </Menu.Item>
               );
             })}
@@ -98,4 +107,6 @@ function _AvatarGroup(
     </Stack>
   );
 }
-export const AvatarGroup = forwardRef(_AvatarGroup);
+
+AvatarGroupBase.displayName = 'AvatarGroup';
+export const AvatarGroup = forwardRef(AvatarGroupBase);

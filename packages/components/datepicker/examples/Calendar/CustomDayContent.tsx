@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Calendar, DayContent } from '@contentful/f36-components';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 
 export default function CustomDayContentExample() {

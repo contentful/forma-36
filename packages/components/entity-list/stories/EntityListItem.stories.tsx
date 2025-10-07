@@ -1,9 +1,9 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta } from '@storybook/react-vite';
 import { DragHandle } from '@contentful/f36-drag-handle';
 import { MenuItem, MenuSectionTitle } from '@contentful/f36-menu';
 
-import { EntityList, type EntityListItemProps } from '../src';
+import { EntityList } from '../src';
 
 export default {
   title: 'Components/EntityList/EntityListItem',
@@ -14,7 +14,7 @@ export default {
   },
 } as Meta;
 
-export const Basic: Story<EntityListItemProps> = (args) => (
+export const Basic = (args) => (
   <EntityList.Item
     {...args}
     actions={[
@@ -30,15 +30,12 @@ Basic.args = {
   title: 'Entity title',
   description: 'Entity description',
   contentType: 'My content type',
-  thumbnailUrl:
-    'https://images.ctfassets.net/iq4lnigp6fgt/72KhxI84kw1SE9gP8gDp7R/c5fa24bdc295a318018aea0ca46e2de8/forma-36-storybook-asset.png?fit=fill&f=top_left&w=400&h=400',
-  thumbnailAltText: 'My thumbnail text',
   withThumbnail: true,
-  entityType: 'entry',
+  entityType: 'Experience',
   status: 'published',
 };
 
-export const withDragHandle: Story<EntityListItemProps> = (args) => (
+export const WithDragHandle = (args) => (
   <EntityList.Item
     {...args}
     actions={[
@@ -51,11 +48,11 @@ export const withDragHandle: Story<EntityListItemProps> = (args) => (
   />
 );
 
-withDragHandle.args = {
+WithDragHandle.args = {
   ...Basic.args,
 };
 
-export const withCustomDragHandle: Story<EntityListItemProps> = (args) => (
+export const WithCustomDragHandle = (args) => (
   <EntityList.Item
     {...args}
     actions={[
@@ -68,6 +65,6 @@ export const withCustomDragHandle: Story<EntityListItemProps> = (args) => (
   />
 );
 
-withCustomDragHandle.args = {
+WithCustomDragHandle.args = {
   ...Basic.args,
 };

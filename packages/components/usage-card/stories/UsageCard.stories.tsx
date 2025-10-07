@@ -9,6 +9,9 @@ import { UsageCount } from '@contentful/f36-usage-count';
 export default {
   component: UsageCard,
   title: 'Components/UsageCard',
+  argTypes: {
+    variant: { control: 'select', options: ['usage', 'info'] },
+  },
 } as Meta;
 
 interface StoryArgs {
@@ -50,4 +53,8 @@ export const Default: StoryObj<Pick<UsageCardProps, 'variant'> & StoryArgs> = {
       </UsageCard>
     );
   },
+};
+
+Default.args = {
+  variant: 'usage',
 };
