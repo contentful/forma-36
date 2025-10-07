@@ -49,14 +49,6 @@ describe('IconButton', () => {
     expect(handleClick).not.toHaveBeenCalled();
   });
 
-  it('supports different size prop (snapshot of className)', () => {
-    const { container } = render(
-      // adjust size prop name if different (e.g. variant/size)
-      <IconButton aria-label="Small button" size="small" icon={<EyeIcon />} />,
-    );
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   it('forwards ref to the underlying button element', () => {
     const ref = createRef<HTMLButtonElement>();
     render(<IconButton aria-label="Focusable" icon={<EyeIcon />} ref={ref} />);

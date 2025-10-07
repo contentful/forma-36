@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 
 import { getEntityListStyles } from './EntityList.styles';
@@ -8,7 +8,7 @@ export interface EntityListProps extends CommonProps {
   children?: React.ReactNode;
 }
 
-function _EntityList(
+function EntityListBase(
   props: ExpandProps<EntityListProps>,
   ref: React.Ref<HTMLUListElement>,
 ) {
@@ -26,6 +26,6 @@ function _EntityList(
   );
 }
 
-_EntityList.displayName = 'EntityList';
+EntityListBase.displayName = 'EntityList';
 
-export const EntityList = React.forwardRef(_EntityList);
+export const EntityList = React.forwardRef(EntityListBase);
