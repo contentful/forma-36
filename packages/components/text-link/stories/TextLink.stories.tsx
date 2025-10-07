@@ -13,7 +13,7 @@ import type { TextLinkVariant } from '../src/types';
 export default {
   component: TextLink,
   parameters: {
-    propTypes: (TextLink as any)?.__docgenInfo,
+    propTypes: [TextLink['__docgenInfo']],
   },
   title: 'Components/TextLink',
   argTypes: {
