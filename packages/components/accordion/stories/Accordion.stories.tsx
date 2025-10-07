@@ -5,26 +5,22 @@ import { SectionHeading, Text } from '@contentful/f36-typography';
 import { Button } from '@contentful/f36-button';
 import { Accordion, type AccordionProps } from '../src';
 
-const meta = {
+export default {
   title: 'Components/Accordion',
   component: Accordion,
   subcomponents: { AccordionItem: Accordion.Item },
   parameters: {
-    propTypes: [
-      (Accordion as any)?.__docgenInfo,
-      (Accordion.Item as any)?.__docgenInfo,
-    ],
+    propTypes: [Accordion['__docgenInfo'], Accordion.Item['__docgenInfo']],
   },
   argTypes: {
-    align: { control: { type: 'select', options: ['start', 'end'] } },
+    align: { control: 'select', options: ['start', 'end'] },
     children: { control: { disable: true } },
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
   },
 } satisfies Meta<typeof Accordion>;
-export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<AccordionProps>;
 
 const defaultText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -45,9 +41,10 @@ export const Basic: Story = {
       </Accordion.Item>
     </Accordion>
   ),
-  args: {
-    align: 'end',
-  },
+};
+
+Basic.args = {
+  align: 'end',
 };
 
 export const Overview: Story = {
