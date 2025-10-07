@@ -30,10 +30,10 @@ const config: StorybookConfig = {
   },
   typescript: {
     check: false,
-    reactDocgen: false,
+    reactDocgen: 'react-docgen-typescript',
   },
   core: {
-    builder: '@storybook/builder-vite',
+    builder: getAbsolutePath('@storybook/builder-vite'),
   },
 };
 export default config;
