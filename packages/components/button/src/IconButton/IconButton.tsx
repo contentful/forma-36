@@ -4,6 +4,7 @@ import type {
   PolymorphicProps,
   PolymorphicComponent,
   ExpandProps,
+  CommonProps,
 } from '@contentful/f36-core';
 import { Button } from '../Button';
 import type { ButtonInternalProps } from '../types';
@@ -99,11 +100,11 @@ function IconButtonBase<
   );
 
   if (withTooltip) {
-    //   const {
-    //     showDelay = 600,
-    //     content = ariaLabel,
-    //     ...otherTooltipProps
-    //   } = tooltipProps || {};
+    const {
+      showDelay = 600,
+      content = ariaLabel,
+      ...otherTooltipProps
+    } = tooltipProps || {};
 
     return (
       <Tooltip content={content} showDelay={showDelay} {...otherTooltipProps}>

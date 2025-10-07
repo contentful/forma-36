@@ -33,6 +33,7 @@ export * from '@contentful/f36-skeleton';
 export * from '@contentful/f36-spinner';
 export * from '@contentful/f36-tabs';
 export * from '@contentful/f36-table';
+export * from '@contentful/f36-tabs';
 export * from '@contentful/f36-text-link';
 export * from '@contentful/f36-tooltip';
 export * from '@contentful/f36-typography';
