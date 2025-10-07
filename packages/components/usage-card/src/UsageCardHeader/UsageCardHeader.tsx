@@ -27,15 +27,17 @@ function UsageCardHeaderBase(
   } = props;
   const styles = getUsageCardHeaderStyles();
 
+  const hasTooltip = tooltip !== undefined;
+
   return (
     <Subheading
       {...otherProps}
       ref={ref}
-      className={cx(styles.usageCardHeader(tooltip), className)}
+      className={cx(styles.usageCardHeader(hasTooltip), className)}
       testId={testId}
     >
       {title}
-      {tooltip && (
+      {hasTooltip && (
         <Tooltip content={tooltip} className={styles.tooltip} placement="top">
           <InfoIcon className={styles.infoIcon} size="medium" />
         </Tooltip>

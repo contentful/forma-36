@@ -15,7 +15,7 @@ import {
 import { DragHandle } from '@contentful/f36-drag-handle';
 import { Skeleton } from '@contentful/f36-skeleton';
 
-import { getBaseCardStyles } from './BaseCard.styles';
+import { getBaseCardStyles, getRootStyles } from './BaseCard.styles';
 
 import { DefaultCardHeader, stopEvents } from './DefaultCardHeader';
 import type { BaseCardInternalProps, CardElement } from './BaseCard.types';
@@ -171,16 +171,11 @@ function BaseCardBase<
 
   /** Seperate the Props based on the Element Type */
 
+  const rootStyles = getRootStyles(hasHeader, isHovered, isSelected);
+
   const baseProps = {
     testId,
-    className: cx(
-      styles.root({
-        hasHeader,
-        isHovered,
-        isSelected,
-      }),
-      className,
-    ),
+    className: cx(rootStyles.root, className),
     'aria-label': title || ariaLabel,
     title,
   };

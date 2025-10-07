@@ -2,7 +2,6 @@ import React from 'react';
 import { IconButton, Button } from '@contentful/f36-button';
 import { LockSimpleIcon } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
-import { Tooltip } from '@contentful/f36-tooltip';
 import { Flex } from '@contentful/f36-core';
 import { TextInput, InputGroupProps } from '../src';
 import { CopyButton } from '@contentful/f36-copybutton';
@@ -178,13 +177,20 @@ export const Overview = () => {
             id="TextInput4"
             defaultValue="Some value"
           />
-          <Tooltip content="Tooltip text">
-            <IconButton
-              variant="secondary"
-              icon={<LockSimpleIcon />}
-              aria-label="Lock"
-            />
-          </Tooltip>
+
+          <IconButton
+            variant="secondary"
+            icon={<LockSimpleIcon />}
+            aria-label="Lock"
+          />
+
+          <IconButton
+            variant="secondary"
+            icon={<LockSimpleIcon />}
+            aria-label="Lock"
+            withTooltip
+            tooltipProps={{ content: 'Tooltip text' }}
+          />
         </TextInput.Group>
       </Flex>
       <SectionHeading as="h3" marginBottom="spacingS">

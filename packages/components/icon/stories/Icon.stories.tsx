@@ -5,7 +5,7 @@ import type { StoryObj, StoryFn, Meta } from '@storybook/react-vite';
 import { MdAcUnit as ExternalIcon } from 'react-icons/md';
 
 import { Icon, type IconInternalProps } from '../src/Icon';
-import { CalendarBlankIcon, GearSixIcon } from '@contentful/f36-icons';
+import { CalendarBlankIcon, GearSixIcon } from '../../icons';
 import tokens from '@contentful/f36-tokens';
 
 export default {
@@ -31,7 +31,9 @@ export const Sizes: StoryFn = () => {
 
       <Stack>
         <Flex alignItems="center" gap="spacingS">
-          <CalendarBlankIcon size="tiny" /> <Text>Tiny</Text>
+          <Icon as={CalendarBlankIcon} testId="my-other-test-id" size="tiny" />
+          <CalendarBlankIcon testId="my-test-id" size="tiny" />
+          <Text>Tiny</Text>
         </Flex>
         <Flex alignItems="center" gap="spacingS">
           <CalendarBlankIcon size="small" /> <Text>Small</Text>

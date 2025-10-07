@@ -5,7 +5,7 @@ export const getUsageCardHeaderStyles = () => ({
   usageCardHeader: (tooltip?: string | React.ReactElement) =>
     css({
       width: '100%',
-      ...(tooltip && {
+      ...(hasTooltip && {
         display: 'flex',
         alignItems: 'center',
         gap: tokens.spacing2Xs,

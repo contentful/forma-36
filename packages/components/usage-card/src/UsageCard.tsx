@@ -37,7 +37,7 @@ function UsageCardBase(
       className={cx(styles.usageCard(variant), className)}
       ref={ref}
       data-test-id={testId}
-      padding="spacingL"
+      padding="large"
     >
       <Box style={{ flex: 1 }}>
         {header}
