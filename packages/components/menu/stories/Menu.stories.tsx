@@ -20,12 +20,53 @@ export default {
       Menu.Item['__docgenInfo'],
     ],
   },
+  argTypes: {
+    placement: {
+      control: 'select',
+      options: [
+        'top',
+        'right',
+        'bottom',
+        'left',
+        'top-start',
+        'top-end',
+        'right-start',
+        'right-end',
+        'bottom-start',
+        'bottom-end',
+        'left-start',
+        'left-end',
+        'auto',
+      ],
+      table: {
+        defaultValue: 'bottom',
+      },
+    },
+  },
 } as Meta;
 
+const storyArgs: Partial<MenuProps> = {
+  defaultIsOpen: true,
+  isOpen: undefined,
+  onClose: undefined,
+  onOpen: undefined,
+  isFullWidth: false,
+  placement: 'bottom',
+  isAutoalignmentEnabled: true,
+  offset: 0,
+  renderOnlyWhenOpen: true,
+  closeOnSelect: true,
+  closeOnBlur: true,
+  closeOnEsc: true,
+  usePortal: true,
+  autoFocus: true,
+};
+
 export const Basic: StoryObj<MenuProps> = {
-  render: () => {
+  args: storyArgs,
+  render: (args: MenuProps) => {
     return (
-      <Menu defaultIsOpen={true}>
+      <Menu {...args}>
         <Menu.Trigger>
           <IconButton
             variant="secondary"
@@ -54,45 +95,45 @@ export const Basic: StoryObj<MenuProps> = {
   },
 };
 
-export const Controlled: StoryObj<MenuProps> = (args) => {
-  const [isOpen, setIsOpen] = React.useState(true);
-  return (
-    <Menu
-      {...args}
-      isOpen={isOpen}
-      onOpen={() => {
-        setIsOpen(true);
-      }}
-      onClose={() => {
-        setIsOpen(false);
-      }}
-    >
-      <Menu.Trigger>
-        <IconButton
-          variant="secondary"
-          icon={<ListIcon />}
-          aria-label="toggle menu"
-        />
-      </Menu.Trigger>
-      <Menu.List>
-        <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
-        <Menu.Item>Embed existing entry</Menu.Item>
-        <Menu.Item>Create and embed existing entry</Menu.Item>
-        <Menu.Divider />
-        <Menu.Item as="a" href="https://contentful.com" target="_blank">
-          About Contentful
-        </Menu.Item>
-      </Menu.List>
-    </Menu>
-  );
-};
-
-Controlled.parameters = {
-  chromatic: { delay: 300 },
+export const Controlled: StoryObj<MenuProps> = {
+  args: storyArgs,
+  render: (args: MenuProps) => {
+    const [isOpen, setIsOpen] = React.useState(true);
+    return (
+      <Menu
+        {...args}
+        isOpen={isOpen}
+        onOpen={() => {
+          setIsOpen(true);
+        }}
+        onClose={() => {
+          setIsOpen(false);
+        }}
+      >
+        <Menu.Trigger>
+          <IconButton
+            variant="secondary"
+            icon={<ListIcon />}
+            aria-label="toggle menu"
+          />
+        </Menu.Trigger>
+        <Menu.List>
+          <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
+          <Menu.Item>Embed existing entry</Menu.Item>
+          <Menu.Item>Create and embed existing entry</Menu.Item>
+          <Menu.Divider />
+          <Menu.Item as="a" href="https://contentful.com" target="_blank">
+            About Contentful
+          </Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+  },
 };
 
 export const WithDisabledItems: StoryObj<MenuProps> = {
-  render: (args) => {
+  args: storyArgs,
+  render: (args: MenuProps) => {
     return (
       <Menu defaultIsOpen closeOnSelect={false} {...args}>
         <Menu.Trigger>
@@ -115,14 +156,11 @@ export const WithDisabledItems: StoryObj<MenuProps> = {
       </Menu>
     );
   },
-
-  parameters: {
-    chromatic: { delay: 300 },
-  },
 };
 
 export const WithIconsOnItems: StoryObj<MenuProps> = {
-  render: (args) => {
+  args: storyArgs,
+  render: (args: MenuProps) => {
     return (
       <Menu defaultIsOpen {...args}>
         <Menu.Trigger>
@@ -143,7 +181,8 @@ export const WithIconsOnItems: StoryObj<MenuProps> = {
 };
 
 export const WithMaxHeight: StoryObj<MenuProps> = {
-  render: (args) => {
+  args: storyArgs,
+  render: (args: MenuProps) => {
     return (
       <Menu defaultIsOpen {...args}>
         <Menu.Trigger>
@@ -172,7 +211,8 @@ export const WithMaxHeight: StoryObj<MenuProps> = {
 };
 
 export const WithStickyHeaderAndFooter: StoryObj<MenuProps> = {
-  render: (args) => {
+  args: storyArgs,
+  render: (args: MenuProps) => {
     return (
       <Menu defaultIsOpen {...args}>
         <Menu.Trigger>
@@ -203,38 +243,41 @@ export const WithStickyHeaderAndFooter: StoryObj<MenuProps> = {
   },
 };
 
-export const WithReactRouterLinks = (args) => {
-  function MenuLink({ children, replace = false, to, ...props }) {
-    const href = useHref(to);
-    const handleClick = useLinkClickHandler(to, {
-      replace,
-    });
+export const WithReactRouterLinks: StoryObj<MenuProps> = {
+  args: storyArgs,
+  render: (args: MenuProps) => {
+    function MenuLink({ children, replace = false, to, ...props }) {
+      const href = useHref(to);
+      const handleClick = useLinkClickHandler(to, {
+        replace,
+      });
+
+      return (
+        <Menu.Item {...props} as="a" href={href} onClick={handleClick}>
+          {children}
+        </Menu.Item>
+      );
+    }
 
     return (
-      <Menu.Item {...props} as="a" href={href} onClick={handleClick}>
-        {children}
-      </Menu.Item>
+      <Router>
+        <Menu {...args} defaultIsOpen>
+          <Menu.Trigger>
+            <IconButton
+              variant="secondary"
+              icon={<ListIcon />}
+              aria-label="toggle menu"
+            />
+          </Menu.Trigger>
+          <Menu.List>
+            <MenuLink to="/">Home</MenuLink>
+            <MenuLink to="/about">About</MenuLink>
+            <MenuLink to="/other">Other</MenuLink>
+          </Menu.List>
+        </Menu>
+      </Router>
     );
-  }
-
-  return (
-    <Router>
-      <Menu defaultIsOpen {...args}>
-        <Menu.Trigger>
-          <IconButton
-            variant="secondary"
-            icon={<ListIcon />}
-            aria-label="toggle menu"
-          />
-        </Menu.Trigger>
-        <Menu.List>
-          <MenuLink to="/">Home</MenuLink>
-          <MenuLink to="/about">About</MenuLink>
-          <MenuLink to="/other">Other</MenuLink>
-        </Menu.List>
-      </Menu>
-    </Router>
-  );
+  },
 };
 
 WithReactRouterLinks.parameters = {
@@ -242,7 +285,8 @@ WithReactRouterLinks.parameters = {
 };
 
 export const WithInitialFocusedItem: StoryObj<MenuProps> = {
-  render: (args) => {
+  args: storyArgs,
+  render: (args: MenuProps) => {
     return (
       <Menu defaultIsOpen {...args}>
         <Menu.Trigger>
@@ -266,7 +310,8 @@ WithInitialFocusedItem.parameters = {
 };
 
 export const WithSubmenu: StoryObj<MenuProps> = {
-  render: (args) => {
+  args: storyArgs,
+  render: (args: MenuProps) => {
     return (
       <Menu {...args}>
         <Menu.Trigger>
@@ -298,7 +343,8 @@ export const WithSubmenu: StoryObj<MenuProps> = {
 };
 
 export const WithSubmenuDifferentAlignments: StoryObj<MenuProps> = {
-  render: (args) => {
+  args: storyArgs,
+  render: (args: MenuProps) => {
     const styles = {
       container: css({
         backgroundColor: 'lightblue',
@@ -347,7 +393,8 @@ export const WithSubmenuDifferentAlignments: StoryObj<MenuProps> = {
 };
 
 export const WithMultipleSubmenus: StoryObj<MenuProps> = {
-  render: (args) => {
+  args: storyArgs,
+  render: (args: MenuProps) => {
     return (
       <Menu {...args}>
         <Menu.Trigger>

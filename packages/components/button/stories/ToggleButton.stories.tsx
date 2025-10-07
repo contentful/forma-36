@@ -20,10 +20,13 @@ export default {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
     icon: {
-      control: {
-        options: ['', ...Object.keys(icons)],
-        type: 'select',
-      },
+      control: 'select',
+      options: ['', ...Object.keys(icons)],
+    },
+    size: { control: 'select', options: ['small', 'medium', 'large'] },
+    variant: {
+      control: 'select',
+      options: ['negative', 'positive', 'primary', 'secondary', 'transparent'],
     },
   },
 } as Meta;
@@ -49,6 +52,8 @@ Basic.args = {
   isDisabled: false,
   icon: 'ThumbsUpIcon',
   children: 'Like',
+  size: 'medium',
+  variant: 'secondary',
 };
 
 export const Grouped = () => {
@@ -183,5 +188,7 @@ export const Overview = {
   args: {
     onToggle: action('toggled'),
     icon: 'EyeIcon',
+    size: 'medium',
+    variant: 'secondary',
   },
 };

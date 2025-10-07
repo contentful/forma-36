@@ -10,12 +10,13 @@ export default {
   component: List,
   subcomponents: { ListItem: List.Item },
   parameters: {
-    propTypes: [(List as any)?.__docgenInfo, (List.Item as any)?.__docgenInfo],
+    propTypes: [List['__docgenInfo'], List.Item['__docgenInfo']],
   },
   argTypes: {
     as: {
       table: { defaultValue: { summary: 'ul' } },
-      control: { type: 'select', options: ['ul', 'ol'] },
+      control: 'select',
+      options: ['ul', 'ol'],
     },
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
