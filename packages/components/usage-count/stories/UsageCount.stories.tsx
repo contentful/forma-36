@@ -7,7 +7,7 @@ export default {
   component: UsageCount,
   title: 'Components/UsageCount',
   parameters: {
-    propTypes: [(UsageCount as any)?.__docgenInfo],
+    propTypes: [UsageCount['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },

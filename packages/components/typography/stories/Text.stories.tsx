@@ -4,7 +4,7 @@ export default {
   title: 'Typography/Text',
   component: Text,
   parameters: {
-    propTypes: [(Text as any)?.__docgenInfo],
+    propTypes: [Text['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },

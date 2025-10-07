@@ -11,7 +11,7 @@ export default {
   title: 'Components/Note',
   component: Note,
   parameters: {
-    propTypes: [(Note as any)?.__docgenInfo],
+    propTypes: [Note['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },

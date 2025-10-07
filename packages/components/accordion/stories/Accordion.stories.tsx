@@ -10,10 +10,7 @@ const meta = {
   component: Accordion,
   subcomponents: { AccordionItem: Accordion.Item },
   parameters: {
-    propTypes: [
-      (Accordion as any)?.__docgenInfo,
-      (Accordion.Item as any)?.__docgenInfo,
-    ],
+    propTypes: [Accordion['__docgenInfo'], Accordion.Item['__docgenInfo']],
   },
   argTypes: {
     align: { control: { type: 'select', options: ['start', 'end'] } },

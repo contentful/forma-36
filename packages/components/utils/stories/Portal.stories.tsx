@@ -9,7 +9,7 @@ export default {
   title: 'Utilities/Portal',
   component: Portal,
   parameters: {
-    propTypes: [(Portal as any)?.__docgenInfo],
+    propTypes: [Portal['__docgenInfo']],
   },
   argTypes: {
     children: { control: { type: 'text' } },
