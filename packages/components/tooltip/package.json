@@ -1,0 +1,37 @@
+{
+  "name": "@contentful/f36-tooltip",
+  "version": "6.0.0-alpha.0",
+  "description": "Forma 36: Tooltip component",
+  "scripts": {
+    "build": "tsup"
+  },
+  "dependencies": {
+    "@contentful/f36-core": "^6.0.0-alpha.0",
+    "@contentful/f36-tokens": "^6.0.0-alpha.0",
+    "@contentful/f36-utils": "^6.0.0-alpha.0",
+    "@emotion/css": "^11.13.5",
+    "@floating-ui/react": "^0.27.16"
+  },
+  "peerDependencies": {
+    "react": ">=19.1.0",
+    "react-dom": ">=19.1.0"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "source": "src/index.ts",
+  "sideEffects": false,
+  "browserslist": "extends @contentful/browserslist-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/contentful/forma-36.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  }
+}

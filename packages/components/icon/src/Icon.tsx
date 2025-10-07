@@ -10,6 +10,7 @@ import {
   type PolymorphicProps,
   type ExpandProps,
 } from '@contentful/f36-core';
+import { Box } from '@contentful/f36-core';
 import type { IconSize } from './types.js';
 
 const ICON_DEFAULT_TAG = 'svg';
@@ -77,6 +78,7 @@ export function IconBase<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
     'aria-labelledBy': ariaLabelledBy,
     ...otherProps
   } = props;
+
   const shared = {
     className: cx(
       css({
@@ -86,7 +88,6 @@ export function IconBase<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
       }),
       className,
     ),
-    ['data-test-id']: testId,
     ref: forwardedRef,
     role,
   };
@@ -94,17 +95,20 @@ export function IconBase<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
   const ariaHiddenProps = useAriaHidden({ ariaLabel, ariaLabelledBy });
 
   return (
-    <Element
+    // @ts-expect-error has polymorphic type issues
+    <Box
+      as={Element}
       display="inline-block"
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
+      testId={testId}
       {...(Element === ICON_DEFAULT_TAG ? { viewBox } : {})}
       {...ariaHiddenProps}
       {...otherProps}
       {...shared}
     >
       {children}
-    </Element>
+    </Box>
   );
 }
 
