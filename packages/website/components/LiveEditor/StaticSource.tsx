@@ -17,19 +17,20 @@ const styles = {
 };
 
 interface StaticSourceProps {
-  children: string;
+  code: string;
+  language?: string;
   className?: string;
 }
 
 export function StaticSource(props: StaticSourceProps) {
-  const language = props.className?.replace('language-', '') ?? 'jsx';
+  // const language = props.className?.replace('language-', '') ?? 'jsx';
 
   return (
     <Highlight
       {...HighlightDefaultProps}
       theme={theme}
-      code={props.children.trim()}
-      language={language as Language}
+      code={props.code.trim()}
+      language={props.language as Language}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={cx(styles.root, className)} style={style}>
