@@ -17,17 +17,14 @@ export default {
   title: 'Components/Button components/ButtonGroup',
   argTypes: {
     variant: {
-      control: {
-        options: ['merged', 'spaced'],
-        type: 'select',
-      },
+      control: 'select',
+      options: ['merged', 'spaced'],
     },
     spacing: {
-      control: {
-        options: Object.keys(tokens).filter((key) => key.startsWith('spacing')),
-        type: 'select',
-      },
+      control: 'select',
+      options: Object.keys(tokens).filter((key) => key.startsWith('spacing')),
     },
+    size: { control: 'select', options: ['small', 'medium', 'large'] },
   },
 } as Meta;
 

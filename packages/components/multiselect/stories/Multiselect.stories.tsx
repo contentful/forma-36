@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import type { Meta } from '@storybook/react-vite';
 
 import { Stack } from '@contentful/f36-core';
-import { Multiselect } from '../src';
+import { Multiselect, MultiselectProps } from '../src';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Button } from '@contentful/f36-button';
 import { InfoIcon } from '@contentful/f36-icons';
@@ -90,7 +90,7 @@ const fruits: Fruit[] = [
   { id: 12, value: 'tomato', name: 'Tomato 🍅', isDisabled: false },
 ];
 
-export const Basic = () => {
+export const Basic = (args: MultiselectProps) => {
   const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
 
   const handleSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -116,6 +116,7 @@ export const Basic = () => {
       <Multiselect
         placeholder="Select many fruits"
         currentSelection={selectedFruits}
+        {...args}
       >
         {fruits.map((item) => {
           return (
