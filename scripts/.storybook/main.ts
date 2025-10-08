@@ -32,7 +32,17 @@ const config: StorybookConfig = {
     check: false,
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
-      include: ['packages/components/**/*.tsx', 'packages/core/**/*.tsx'],
+      include: [
+        'packages/components/**/src/*.tsx',
+        'packages/core/src/**/*.tsx',
+      ],
+      exclude: [
+        'packages/components/icons/**',
+        'packages/components/icon/**',
+        'packages/components/utils/**',
+        'packages/core/**/examples/',
+        'packages/components/**/examples/',
+      ],
     },
   },
   core: {
