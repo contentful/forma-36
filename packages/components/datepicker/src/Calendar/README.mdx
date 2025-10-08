@@ -1,0 +1,84 @@
+---
+title: 'Calendar'
+type: 'component'
+status: 'stable'
+slug: /components/calendar/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/datepicker/src/Calendar'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-datepicker-calendar--default'
+section: 'dateComponents'
+typescript: ./Calendar.tsx
+---
+
+Calendar component enables users to select and view dates inline.
+
+At Contentful calendar is used to ask user's input to set, edit, or view schedule actions.
+
+The component is built on top of React Day Picker, see full documentation: https://daypicker.dev
+
+## Import
+
+```jsx static=true
+import { Calendar } from '@contentful/f36-components';
+// or
+import { Calendar } from '@contentful/f36-datepicker';
+```
+
+## Examples
+
+### Basic
+
+Displays inline calendar to ask for user's action to select a date.
+
+```jsx file=../../examples/Calendar/Basic.tsx
+
+```
+
+### Limiting the date range
+
+Set minimum and/or maximum dates to limit users to choose from a specific period in time.
+
+Use `from...` and `to...` properties to control time frames.
+
+```jsx file=../../examples/Calendar/LimitingTheDateRange.tsx
+
+```
+
+### Multiple months
+
+Display multiple months on the calendar for a more convenient way for users to view dates.
+
+Use `from...` and `to...` props to control time frames
+
+```jsx file=../../examples/Calendar/WithMultipleMonths.tsx
+
+```
+
+### Indicators
+
+Use modifiers to modify certain days, for example showing indicators for scheduled actions.
+
+Read more about modifiers: https://daypicker.dev/guides/custom-modifiers
+
+```jsx file=../../examples/Calendar/Indicator.tsx
+
+```
+
+### Custom Day content
+
+Use components to modify certain parts of the calendar, for example modifying day content.
+
+Read more about custom components: https://daypicker.dev/guides/custom-components
+
+```jsx file=../../examples/Calendar/CustomDayContent.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="Calendar" />
+
+## Accessibility
+
+- Keyboard navigation is supported
+- Necessary `aria` roles were added and tested with screen readers
+- When customizing the Calendar HTML elements or providing custom components. keyboard functionality and screen readers must be tested

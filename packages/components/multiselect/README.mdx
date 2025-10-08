@@ -1,0 +1,119 @@
+---
+title: 'Multiselect'
+type: 'component'
+status: 'stable'
+section: 'formComponents'
+slug: /components/multiselect/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/Multiselect'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-multiselect--basic'
+typescript: ./Multiselect.tsx,./MultiselectOption.tsx
+---
+
+Multiselect allows users to make a multi selection from a list of options.
+It has multiple optional features like a search.
+
+## Import
+
+```jsx static=true
+import { Multiselect } from '@contentful/f36-multiselect';
+// or
+import { Multiselect } from '@contentful/f36-components';
+```
+
+## Examples
+
+### Basic usage
+
+The Multiselect is a fully controlled form element and expects the selectable items as children via the compound component Multiselect.Option.
+
+Properties are:
+
+For the multiselect itself:
+
+- currentSelection (optional but recommended): an array of the labels of selected options. This will give the user a hint that there are selected items. This is optional
+- placeholder (optional): Label of the trigger button without selected elements
+- startIcon (optional): Icon on the start of the trigger button
+- isLoading: enables showing a loading animation while searching or loading results
+
+Inherited propertys from Popover Component.
+
+- listWidth (optional): auto or full
+- listMaxHeight (optional): sets the maximum height of the list drawer, overflow will be scrolled
+
+It also accepts refs for the toggle button, the searchInput and the list.
+
+For the option:
+
+- itemId: identifier for the element, used to link the label with the checkbox
+- value: the actual value of the select option
+- label: displayed label
+- onSelectItem: This function is called when the user selects a option, it needs to be passed to the MultiselectOption
+- isChecked (optional): controlls if a element is initially selected
+- isDisabled (optional): controlls if a element is changeable
+
+```jsx file=./examples/MultiselectBasicUsageExample.tsx
+
+```
+
+### Searchable options
+
+One optional feature of the Multiselect component is to allow filtering the list via a search field.
+To make it work, the onSearchValueChange callback function needs to be provided.
+
+To enable searching the following properties have to be set.
+
+- onSearchValueChange: Callbackfunction which enables the search field. This function needs to provide the search /filter algorithm
+- searchPlaceholder (optional): placeholder for the search field
+- noMatchesMessage (optional): message shown when search result is empty
+
+```jsx file=./examples/MultiselectSearchExample.tsx
+
+```
+
+### SelectAll Option
+
+To offer a shortcut for selecting and deselecting all options, you can use the compound component SelectAll. This requires a callback function which needs to contain your implementation for selecting all options.
+
+```jsx file=./examples/MultiselectSelectAllExample.tsx
+
+```
+
+### Controlling from the Outside
+
+In some cases it is desired to toggle the status of the popover drawer as well as to clear the search field from the parent. E.g. after a change has been applied. For this the Component offers two optional reference properties `toggleRef` and `resetSearchRef`
+
+```jsx file=./examples/MultiselectReferenceExample.tsx
+
+```
+
+### Controlling from the Outside
+
+If you want to control the trigger of the multiselect, like adding an `isDisabled` state to it, you can add props to it via the `triggerButtonProps`.
+
+```jsx file=./examples/MultiselectIsDisabledExample.tsx
+
+```
+
+### With component as children
+
+You can render React components in the select options, but it's important to note that this makes it your own responsibility to highlight the matching part of the search term. To help with this there's the `HighlightedItem` component.
+
+```jsx file=./examples/MultiselectOptionChildrenExample.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="Multiselect" />
+
+## Content guidelines
+
+- Multiselect placeholder should be short but descriptive.
+- Multiselect options can come from a simple array of strings or more complex objects.
+- Do not use the index position of the items in the filtered array for keys or ids, as they are going to change while filtering.
+- Use any algorithm you like in order to search and filter. Depending on your implementation you can also generate a new request to your dataset based on the users input.
+
+## Accessibility
+
+- When focussing the toggle button, the enter key opens it. The dropdown content automatically will be focussed
+- Pressing the space bar toggles the checked state of an option and will trigger the onSelectItem callback function
