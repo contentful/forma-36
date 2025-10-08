@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
@@ -33,14 +32,10 @@ describe('Navlist and Navlist Item', () => {
           Item 2
         </NavListItem>
         <NavListItem href="#Item3">Item 3</NavListItem>
-        <NavListItem onClick={() => console.log('click')} as="button">
+        <NavListItem onClick={jest.fn()} as="button">
           Item 4
         </NavListItem>
-        <NavListItem
-          isDisabled
-          onClick={() => console.log('click')}
-          as="button"
-        >
+        <NavListItem isDisabled onClick={jest.fn()} as="button">
           Item 4
         </NavListItem>
       </NavList>,
