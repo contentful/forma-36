@@ -14,6 +14,7 @@ export * from '@contentful/f36-header';
 export * from '@contentful/f36-image';
 export * from '@contentful/f36-layout';
 export * from '@contentful/f36-list';
+export * from '@contentful/f36-modal';
 export * from '@contentful/f36-navlist';
 export * from '@contentful/f36-note';
 export * from '@contentful/f36-pagination';

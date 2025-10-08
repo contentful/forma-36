@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://f36.contentful.com/</loc>
+    <lastmod>2025-10-06T16:15:41.512Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/playground</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/accordion</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/asset</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/collapse</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/copy-button</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/drag-handle</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/missingcontent</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/header</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/icon</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/image</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/layout</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/list</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/navlist</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/note</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/pagination</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/pill</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/progress-stepper</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/skeleton</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/spinner</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/table</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/text-link</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/usage-card</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/usage-count</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/badge</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/entity-status-badge</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/button</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/button-group</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/icon-button</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/toggle-button</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/datetime</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/relative-datetime</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/datetime-functions</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/checkbox</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/form</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/form-control</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/radio</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/select</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/switch</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/text-input</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/textarea</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/caption</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/display-text</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/heading</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/paragraph</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/section-heading</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/subheading</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/text</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/utils/portal</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/utils/get-string-match</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/utils/get-text-from-children</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/utils/hex-to-rgba</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/hooks/use-density</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/hooks/use-keyboard</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/box</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/flex</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/globalstyles</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/grid</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/screen-reader-only</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/stack</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/whats-new</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/components/workbench</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/integrations/dnd-kit</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/integrations/formik</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/integrations/react-hook-form</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/tokens/border-radius</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/tokens/color-system</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/tokens/shadows-and-glows</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/tokens/spacing</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/tokens/transitions</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/tokens/typography</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://f36.contentful.com/tokens/z-index</loc>
+    <lastmod>2025-10-06T16:15:41.513Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
