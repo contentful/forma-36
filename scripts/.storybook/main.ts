@@ -31,6 +31,9 @@ const config: StorybookConfig = {
   typescript: {
     check: false,
     reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      include: ['packages/components/**/*.tsx', 'packages/core/**/*.tsx'],
+    },
   },
   core: {
     builder: getAbsolutePath('@storybook/builder-vite'),
