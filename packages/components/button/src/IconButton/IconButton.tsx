@@ -9,13 +9,11 @@ import { Button } from '../Button';
 import type { ButtonInternalProps } from '../types';
 import { getStyles } from './IconButton.styles';
 import { useDensity } from '@contentful/f36-utils';
-
-// ToDo reimplement tooltip
-// import {
-//   Tooltip,
-//   type TooltipInternalProps,
-//   type WithEnhancedContent,
-// } from '@contentful/f36-tooltip';
+import {
+  Tooltip,
+  type TooltipInternalProps,
+  type WithEnhancedContent,
+} from '@contentful/f36-tooltip';
 
 type WithTooltipOrNot =
   | {
@@ -27,11 +25,9 @@ type WithTooltipOrNot =
       /**
        * The tooltip properties to be passed to the Tooltip component wrapping the IconButton
        */
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      tooltipProps?: any;
-      // CommonProps &
-      //   WithEnhancedContent &
-      //   Omit<TooltipInternalProps, 'children'>;
+      tooltipProps?: CommonProps &
+        WithEnhancedContent &
+        Omit<TooltipInternalProps, 'children'>;
     }
   | {
       withTooltip?: false;
@@ -108,12 +104,11 @@ function IconButtonBase<
     //     ...otherTooltipProps
     //   } = tooltipProps || {};
 
-    // return (
-    //   <Tooltip content={content} showDelay={showDelay} {...otherTooltipProps}>
-    //     {iconButton}
-    //   </Tooltip>
-    // );
-    return element;
+    return (
+      <Tooltip content={content} showDelay={showDelay} {...otherTooltipProps}>
+        {iconButton}
+      </Tooltip>
+    );
   }
 
   return element;

@@ -11,6 +11,7 @@
     "@contentful/f36-drag-handle": "^6.0.0-alpha.0",
     "@contentful/f36-icons": "^6.0.0-alpha.0",
     "@contentful/f36-tokens": "^6.0.0-alpha.0",
+    "@contentful/f36-tooltip": "^6.0.0-alpha.0",
     "@emotion/css": "^11.13.5"
   },
   "peerDependencies": {
