@@ -1,0 +1,31 @@
+---
+title: 'Spacing'
+slug: '/tokens/spacing/'
+section: 'tokens'
+---
+
+In Forma 36, we built our components independent of any styling outside of them. This means that
+you will need to manage spacing between elements using our spacing tokens in any CSS solution you chose.
+The only exception to this rule is our layout components:
+[Flex](/components/flex), [Stack](/components/stack), [Grid](/components/grid), [Box](/components/box).
+
+## Tokens
+
+<SpacingTokensTable />
+
+## Tokens with inline styles
+
+```jsx static=true
+import tokens from '@contentful/f36-tokens';
+
+<div style={{ padding: tokens.spacingM }} />;
+```
+
+## Tokens with emotion
+
+```jsx static=true
+import tokens from '@contentful/f36-tokens';
+import { css } from 'emotion';
+
+css({ padding: tokens.spacingM });
+```
