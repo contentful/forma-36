@@ -1,0 +1,133 @@
+---
+title: 'Notification'
+type: 'component'
+status: 'stable'
+slug: /components/notification/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/notification'
+typescript: ./src/Notification.tsx,./src/NotificationItem/NotificationItem.tsx,./src/NotificationItem/NotificationItemContainer.tsx,./src/NotificationsManager/NotificationsManager.tsx
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-notification--basic'
+---
+
+`Notification` gives an immediate feedback about an action triggered or experienced by an user.
+
+By default, `Notification` will dismiss after 6 seconds, or after being clicked.
+
+## Import
+
+```js static=true
+import { Notification } from '@contentful/f36-components';
+// or
+import { Notification } from '@contentful/f36-notification';
+```
+
+## Examples
+
+### Basic
+
+```jsx file=examples/NotificationBasicExample.tsx
+
+```
+
+### Intent
+
+The `Notification` component can be configured in a number of different ways. Here is a guide to when to use certain variations.
+
+```jsx file=examples/NotificationIntentsExample.tsx
+
+```
+
+### Placement
+
+```jsx file=examples/NotificationPlacementExample.tsx
+
+```
+
+### With title
+
+```jsx file=examples/NotificationTitleExample.tsx
+
+```
+
+### Sticky notification
+
+If you want to disabled auto-closing behavior, you can pass `0` as duration of the notification.
+
+```jsx file=examples/NotificationStickyExample.tsx
+
+```
+
+### Using unique `id`
+
+If you want to make sure that the same notification appears only once at any given time, you can specify a custom notification id.
+
+```jsx file=examples/NotificationUniqueIdExample.tsx
+
+```
+
+### Using call to action
+
+You call append an additional call to action to all notificataion by using `cta` property.
+
+The common use case is `undo` button.
+
+```jsx file=examples/NotificationCtaExample.tsx
+
+```
+
+## Props (API reference)
+
+All main intent functions (`success`, `error`, and `warning`) have the following type declaration:
+
+```tsx static=true
+type NotificationAction = (
+  text: string,
+  settings?: {
+    // you can specify a custom notification duration
+    // tip: use 0 to make your notification sticky
+    duration?: number;
+    // whether notification has close button or not
+    withClose?: boolean;
+    // custom id, by default the unique id is generated automatically
+    // by specifying custom id, you can make sure
+    // that the specific notification is present only once at any given moment
+    id?: string;
+    // Additional header title of the notification
+    title?: string;
+    // Call to action properties
+    // For example, your notification can have `Undo` button
+    cta?: Partial<{
+      label: string;
+      textLinkProps: Partial<TextLinkProps>;
+    }>;
+  },
+) => Notification;
+```
+
+By default, the notification closes after 6s, but when the user hovers (mouse overs) the notification it will stop the countdown timer and the toast will stay alive as long as the toast is being hovered.
+
+```jsx static=true
+// closing one notification
+const notification = await Notification.success('hello');
+Notification.close(notification.id);
+
+// In some situations toasts might become outdated before they expire.
+// In those situations you can use `Notification.closeAll()` to close all open toasts.
+Notification.closeAll();
+
+// change placement for all notifications
+// (default is bottom and offset is 20)
+Notification.setPlacement('top', { offset: 100 });
+Notification.setPlacement('bottom', { offset: 0 });
+
+// change duration of expiration change placement for all notifications
+// (default is 6000ms)
+Notification.setDuration(1000); // 1 second
+Notification.setDuration(100000); // 100 seconds
+```
+
+## Content guidelines
+
+- Don't confuse `Notification` with `Note`, which persist in the UI and do not dismiss
+- Use clear and succinct copy, since the notification will only be available for 6 seconds
+- Use active voice, present tense, and consider tone of voice depending on the circumstance
+- Use sentence style caps (in which only the first word of a sentence or term is capitalized)

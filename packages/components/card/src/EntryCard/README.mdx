@@ -1,0 +1,104 @@
+---
+title: 'EntryCard'
+type: 'component'
+status: 'stable'
+slug: /components/entry-card/
+section: 'cardComponents'
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/card/src/EntryCard'
+typescript: ./EntryCard.tsx
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-card-entrycard--default'
+---
+
+Display entries with preview and other options.
+
+## Import
+
+```jsx static=true
+import { EntryCard } from '@contentful/f36-components';
+// or
+import { EntryCard } from '@contentful/f36-card';
+```
+
+## Examples
+
+The two main props to show the content of your entry are `title` and `description`.
+It’s also possible to pass the Entry’s content type in the `contentType` prop.
+To show a badge with the status of the entry,
+you can pass one of "archived", "changed", "deleted", "draft", "new", or "published" to the `status` prop.
+
+### Basic usage
+
+```jsx file=../../examples/EntryCard/EntryCardExample.tsx
+
+```
+
+### Clickable card
+
+Like the `Card` component, it’s possible to pass a function to the `onClick` prop
+and it will be called when the user clicks on the card.
+
+```jsx file=../../examples/EntryCard/EntryCardClickableExample.tsx
+
+```
+
+### Card actions
+
+To show a `...` button with a menu in the card, pass an array of `MenuItem` components
+
+```jsx file=../../examples/EntryCard/EntryCardActionsExample.tsx
+
+```
+
+### Loading state
+
+```jsx file=../../examples/EntryCard/EntryCardLoadingExample.tsx
+
+```
+
+### Different sizes
+
+```jsx file=../../examples/EntryCard/EntryCardSizesExample.tsx
+
+```
+
+### With a drag handle
+
+```jsx file=../../examples/EntryCard/EntryCardDragHandleExample.tsx
+
+```
+
+### With a thumbnail
+
+```jsx file=../../examples/EntryCard/EntryCardThumbnailExample.tsx
+
+```
+
+### With a custom badge
+
+Like the `Card` component, it’s possible to pass a custom badge using the `badge` prop if the entity has different statuses than
+"archived", "changed", "deleted", "draft", "new", or "published". In this case the `status` prop will be ignored.
+
+```jsx file=../../examples/EntryCard/EntryCardCustomBadgeExample.tsx
+
+```
+
+### With a custom action button
+
+It is also possible to pass a custom component to be rendered in place of `...` action button. In that case, the `actions` prop will be ignored.
+
+```jsx file=../../examples/EntryCard/EntryCardCustomActionButtonExample.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="EntryCard" />
+
+## Content guidelines
+
+Since this is a very opinionated component, we recommend using it only to show your entries.
+Similar to how references are shown in Contentful.
+
+## Accessibility
+
+It inherits the accessibility features of [Card](/components/card)

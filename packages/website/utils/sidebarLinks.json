@@ -357,10 +357,6 @@
   ],
   "utils": [
     {
-      "title": "getIconColorToken",
-      "slug": "/utils/get-icon-color-token/"
-    },
-    {
       "title": "getStringMatch",
       "slug": "/utils/get-string-match/"
     },
