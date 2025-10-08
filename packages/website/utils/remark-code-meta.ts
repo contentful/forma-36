@@ -22,7 +22,7 @@ export function remarkCodeMeta() {
       if (!node.data) node.data = {};
       if (!node.data.hProperties) node.data.hProperties = {};
 
-      // :white_check_mark: Ensures MDX passes these to the <code> component
+      // Add parsed attributes to hProperties so they get passed as props
       node.data.hName = 'code';
       Object.assign(node.data.hProperties, attrs);
     });
@@ -31,12 +31,15 @@ export function remarkCodeMeta() {
 
 function parseMetaString(meta: string): Record<string, unknown> {
   const attrs: Record<string, unknown> = {};
+  // Match key=value pairs and standalone keys
   const regex = /(\w+)(?:=(?:"([^"]*)"|'([^']*)'|([^\s]+)))?/g;
   let match;
 
   while ((match = regex.exec(meta)) !== null) {
     const key = match[1];
     const raw = match[2] || match[3] || match[4] || true;
+
+    // Convert string "true"/"false" to boolean
     attrs[key] = raw === 'true' ? true : raw === 'false' ? false : raw;
   }
 
