@@ -5,7 +5,7 @@ import type {
   PropsWithHTMLElement,
   ExpandProps,
 } from '@contentful/f36-core';
-//import { Tooltip } from '@contentful/f36-tooltip';
+import { Tooltip } from '@contentful/f36-tooltip';
 import { XIcon } from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
 import { DragHandle } from '@contentful/f36-drag-handle';
@@ -92,17 +92,14 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
           ) : (
             <DragHandle label="Reorder item" variant="transparent" />
           ))}
-
-        <span ref={trackRefChange}>{label}</span>
-
-        {/* <Tooltip
+        <Tooltip
           content={label}
           maxWidth="none"
           targetWrapperClassName={styles.label}
           isDisabled={!textIsTruncated}
         >
           <span ref={trackRefChange}>{label}</span>
-        </Tooltip> */}
+        </Tooltip>
         {onClose && (
           <Button
             type="button"

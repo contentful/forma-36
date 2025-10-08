@@ -1,0 +1,49 @@
+---
+title: 'EntityList'
+type: 'component'
+status: 'stable'
+slug: /components/entity-list/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/entity-list'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-entity-list--default'
+typescript: ./src/EntityList.tsx,./src/EntityListItem/EntityListItem.tsx
+---
+
+The EntityList is used to represent lists of entities (entries and assets). This component should be used in combination with the EntityList.Item component. Its main purpose is to be used to entries or assets when in a list context, for example, a multiple entry reference field. It differs from existing EntryCard/AssetCard components as its intended use is for lists of entities, not individual ones.
+
+## Import
+
+```js static=true
+import { EntityList } from '@contentful/f36-components';
+// or
+import { EntityList } from '@contentful/f36-entity-list';
+```
+
+## Examples
+
+### Basic
+
+```jsx file=examples/BasicEntityListExample.tsx
+
+```
+
+### With actions menu
+
+```jsx file=examples/EntityListWithActionsMenuExample.tsx
+
+```
+
+### With drag handle
+
+```jsx file=examples/EntityListWithDragHandleExample.tsx
+
+```
+
+## Props (API reference)
+
+### EntityList
+
+<PropsTable of="EntityList" />
+
+### EntityList.Item
+
+<PropsTable of="EntityListItem" />
