@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { NotificationItem, Notification } from '../src';
 import type { Placement } from '../src/NotificationsManager';
 import { Button, ButtonGroup } from '@contentful/f36-button';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 

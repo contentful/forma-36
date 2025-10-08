@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
-import { action } from '@storybook/addon-actions';
+import type { Meta, StoryObj as Story } from '@storybook/react-vite';
+import { action } from 'storybook/actions';
 import { Paragraph, Text } from '@contentful/f36-typography';
 import {
   ModalConfirm,

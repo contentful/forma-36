@@ -1,5 +1,5 @@
 import React, { useState, MouseEventHandler, useRef } from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj as Story } from '@storybook/react-vite';
 import { Button } from '@contentful/f36-button';
 import { Badge } from '@contentful/f36-badge';
 

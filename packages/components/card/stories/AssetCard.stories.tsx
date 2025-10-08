@@ -15,10 +15,8 @@ export default {
     as: { control: { disable: true } },
     className: { control: { disable: true } },
     icon: {
-      control: {
-        options: Object.keys(icons),
-        type: 'select',
-      },
+      control: 'select',
+      options: Object.keys(icons),
       defaultValue: icons.ClockIcon,
     },
     rel: { control: { disable: true } },

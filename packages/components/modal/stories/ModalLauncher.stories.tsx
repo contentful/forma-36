@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj as Story } from '@storybook/react-vite';
 import { Paragraph } from '@contentful/f36-typography';
 
 import { ModalLauncher } from '../src/ModalLauncher/ModalLauncher';
