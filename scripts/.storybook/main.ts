@@ -26,7 +26,20 @@ const config: StorybookConfig = {
   },
   typescript: {
     check: false,
-    reactDocgen: false,
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      include: [
+        'packages/components/**/src/*.tsx',
+        'packages/core/src/**/*.tsx',
+      ],
+      exclude: [
+        'packages/components/icons/**',
+        'packages/components/icon/**',
+        'packages/components/utils/**',
+        'packages/core/**/examples/',
+        'packages/components/**/examples/',
+      ],
+    },
   },
   core: {
     builder: '@storybook/builder-vite',
