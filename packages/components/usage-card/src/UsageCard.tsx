@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from 'react';
 import { Box, type CommonProps, type ExpandProps } from '@contentful/f36-core';
 import { getUsageCardStyles } from './UsageCard.styles';
-//import { Card } from '@contentful/f36-card';
+import { Card } from '@contentful/f36-card';
 import { cx } from '@emotion/css';
 
 export type UsageCardProps = CommonProps &
@@ -32,7 +32,7 @@ function _UsageCard(
   const styles = getUsageCardStyles();
 
   return (
-    <Box
+    <Card
       {...otherProps}
       className={cx(styles.usageCard(variant), className)}
       ref={ref}
@@ -44,24 +44,8 @@ function _UsageCard(
         {children}
       </Box>
       {description && <Box>{description}</Box>}
-    </Box>
+    </Card>
   );
-
-  // return (
-  //   <Card
-  //     {...otherProps}
-  //     className={cx(styles.usageCard(variant), className)}
-  //     ref={ref}
-  //     data-test-id={testId}
-  //     padding="large"
-  //   >
-  //     <Box style={{ flex: 1 }}>
-  //       {header}
-  //       {children}
-  //     </Box>
-  //     {description && <Box>{description}</Box>}
-  //   </Card>
-  // );
 }
 
 export const UsageCard = React.forwardRef(_UsageCard);
