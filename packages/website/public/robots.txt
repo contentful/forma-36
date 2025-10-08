@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://f36.contentful.com
+
+# Sitemaps
+Sitemap: https://f36.contentful.com/sitemap.xml

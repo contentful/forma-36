@@ -1,9 +1,7 @@
 /* global Promise */
-import ReactDOM from 'react-dom';
-
-// @todo: change any to unknown
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export interface ModalLauncherComponentRendererProps<T = any> {
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+export interface ModalLauncherComponentRendererProps<T = void> {
   isShown: boolean;
   onClose: (result?: T) => void;
 }
@@ -20,10 +18,11 @@ export interface ModalLauncherOpenOptions {
   delay?: number;
 }
 
-interface CloseModalData {
+interface CloseModalData<T = unknown> {
+  root: ReactDOM.Root;
   delay: number;
-  render: (args: ModalLauncherComponentRendererProps<any>) => void;
-  currentConfig: ModalLauncherComponentRendererProps<any>;
+  render: (args: ModalLauncherComponentRendererProps<T>) => void;
+  currentConfig: ModalLauncherComponentRendererProps<T>;
 }
 
 const getRoot = (rootElId: string): HTMLElement => {
@@ -44,11 +43,14 @@ const openModalsIds: Map<string, CloseModalData> = new Map();
 async function closeAll(): Promise<void> {
   await Promise.all(
     Array.from(openModalsIds.entries()).map(
-      async ([rootElId, { render, currentConfig, delay }]) => {
+      async ([rootElId, { root, render, currentConfig, delay }]) => {
         const config = { ...currentConfig, isShown: false };
         render(config);
         await new Promise((resolveDelay) => setTimeout(resolveDelay, delay));
-        ReactDOM.unmountComponentAtNode(getRoot(rootElId));
+        root.unmount();
+
+        const rootDom = document.getElementById(rootElId);
+        if (rootDom) rootDom.remove();
         openModalsIds.delete(rootElId);
       },
     ),
@@ -59,7 +61,7 @@ async function closeAll(): Promise<void> {
 function open<T = any>(
   componentRenderer: (
     props: ModalLauncherComponentRendererProps<T>,
-  ) => JSX.Element,
+  ) => React.JSX.Element,
   options: ModalLauncherOpenOptions = {},
 ): Promise<T> {
   options = { delay: 300, ...options };
@@ -67,6 +69,7 @@ function open<T = any>(
   // Allow components to specify if they wish to reuse the modal container
   const rootElId = `modals-root${options.modalId || Date.now()}`;
   const rootDom = getRoot(rootElId);
+  const root = ReactDOM.createRoot(rootDom);
 
   return new Promise((resolve) => {
     let currentConfig = { onClose, isShown: true };
@@ -75,7 +78,7 @@ function open<T = any>(
       onClose,
       isShown,
     }: ModalLauncherComponentRendererProps<T>) {
-      ReactDOM.render(componentRenderer({ onClose, isShown }), rootDom);
+      root.render(componentRenderer({ onClose, isShown }));
     }
 
     async function onClose(arg?: T) {
@@ -87,7 +90,7 @@ function open<T = any>(
       await new Promise((resolveDelay) =>
         setTimeout(resolveDelay, options.delay),
       );
-      ReactDOM.unmountComponentAtNode(rootDom);
+      root.unmount();
       rootDom.remove();
       openModalsIds.delete(rootElId);
       resolve(arg);
@@ -95,6 +98,7 @@ function open<T = any>(
 
     render(currentConfig);
     openModalsIds.set(rootElId, {
+      root,
       render,
       currentConfig,
       delay: options.delay,

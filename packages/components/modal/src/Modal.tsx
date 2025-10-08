@@ -187,7 +187,9 @@ export const Modal = ({
           />
         )}
         <ModalContent {...otherProps.modalContentProps}>
-          {otherProps.children}
+          {typeof otherProps.children === 'function'
+            ? null
+            : otherProps.children}
         </ModalContent>
       </>
     );
