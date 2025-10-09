@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, MouseEventHandler, useRef } from 'react';
 import type { Meta, StoryObj, StoryFn } from '@storybook/react-vite';
 import { Button } from '@contentful/f36-button';
 import { Badge } from '@contentful/f36-badge';
@@ -117,7 +117,13 @@ export const ControllerModal: StoryObj<ModalProps> = (props) => {
         onClose={() => setShown(false)}
         initialFocusRef={confirmRef}
       >
-        {({ title, onClose }: { title: string; onClose: () => void }) => (
+        {({
+          title,
+          onClose,
+        }: {
+          title: string;
+          onClose: MouseEventHandler;
+        }) => (
           <React.Fragment>
             <Modal.Header title={title} onClose={onClose} />
             <Modal.Content>Hello from controlled modal window</Modal.Content>

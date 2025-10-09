@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { cx } from '@emotion/css';
 import { XIcon } from '@contentful/f36-icons';
 import {
@@ -14,7 +15,7 @@ import { getModalHeaderStyles } from './ModalHeader.styles';
 interface ModalHeaderInternalProps extends CommonProps {
   title: string;
   subtitle?: string;
-  onClose?: () => void;
+  onClose?: (event?: React.MouseEvent | React.KeyboardEvent) => void;
   children?: React.ReactNode;
   aria?: {
     closeIconLabel?: string;
