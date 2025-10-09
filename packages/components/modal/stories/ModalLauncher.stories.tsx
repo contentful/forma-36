@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Paragraph } from '@contentful/f36-typography';
 
 import { ModalLauncher } from '../src/ModalLauncher/ModalLauncher';
@@ -12,7 +12,7 @@ export default {
   component: ModalLauncher,
 } as Meta;
 
-export const Basic: Story = () => {
+export const Basic: StoryFn = () => {
   const [hiddenText, setHiddenText] = useState('');
 
   return (
