@@ -21,3 +21,8 @@ export const Submenu = (props: MenuProps) => {
 };
 
 Submenu.displayName = 'Submenu';
+
+/**
+ * @deprecated Use MenuProps instead.
+ */
+export type SubmenuProps = MenuProps;
