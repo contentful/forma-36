@@ -6,7 +6,7 @@ function Example(){
     <div>
       <Popover
         placement="right-start"
-        offset={{mainAxis:5, crossAxis:6}} 
+        offset={5}
         renderOnlyWhenOpen={false}
         isOpen
         onClose={() => {}}>
@@ -18,7 +18,12 @@ function Example(){
         </Popover.Content>
       </Popover>
       <Tooltip content="auto-start" placement="right-start"><Button>Hover me</Button></Tooltip>
-      <Menu placement="right-start" offset={{mainAxis:5, crossAxis:6}}>
+      <Menu
+        placement="right-start"
+        offset={{
+          mainAxis: 5,
+          crossAxis: 6
+        }}>
         <Menu.Trigger>
           <Button>auto-start</Button>
         </Menu.Trigger>

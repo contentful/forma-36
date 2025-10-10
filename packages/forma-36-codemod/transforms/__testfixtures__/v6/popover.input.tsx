@@ -4,7 +4,7 @@ import { Popover, Tooltip, Menu, Button } from '@contentful/f36-components';
 function Example(){
   return (
     <div>
-      <Popover placement="auto-start" offset={[5,6]} renderOnlyWhenOpen={false} isOpen onClose={() => {}}>
+      <Popover placement="auto-start" offset={[5]} renderOnlyWhenOpen={false} isOpen onClose={() => {}}>
         <Popover.Trigger>
           <Button>Toggle</Button>
         </Popover.Trigger>
