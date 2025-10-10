@@ -2,7 +2,7 @@
 const defineTest = require('jscodeshift/dist/testUtils').defineTest;
 
 describe('v6 codemods', () => {
-  const tests = ['v6/skeleton'];
+  const tests = ['v6/skeleton', 'v6/popover'];
   beforeEach(() => {
     // Silence warnings we show on the transforms for cleaner tests
     // Comment this out if you want to check the warning messages
