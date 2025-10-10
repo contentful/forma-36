@@ -55,12 +55,3 @@ Use when you prefer automatic best-fit without manually managing flipping logic.
 
 1. Replace `auto-start` and `auto-end` with any of the other placements or adopt `placement="auto"`.
 2. Re-test behavior
-
----
-
-## Validation
-
-- Popover still opens/closes correctly.
-- Spacing matches expectations.
-- No TypeScript errors for offset.
-- Optional: add tests for placement='auto' behavior (if used).
