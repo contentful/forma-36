@@ -3,6 +3,7 @@ import { cx } from '@emotion/css';
 
 import { useAsyncState } from './useAsyncState';
 import type { NotificationCta, NotificationVariant } from '../types';
+import type { NotificationsAPI } from '../Notification';
 import { NotificationItemContainer } from '../NotificationItem';
 import { getStyles } from './NotificationsManager.styles';
 
@@ -11,7 +12,7 @@ export type Placement = 'top' | 'bottom';
 export interface NotificationProps {
   id: string | number;
   text: string;
-  onClose: Function;
+  onClose: () => void;
   duration?: number;
   withClose: boolean;
   isShown: boolean;
@@ -44,7 +45,10 @@ export type SetPlacementAction<T> = (
 ) => T;
 
 export interface NotificationsManagerProps {
-  register: (name: string, callback: Function) => void;
+  register: <K extends keyof NotificationsAPI>(
+    name: K,
+    callback: NotificationsAPI[K],
+  ) => void;
 }
 
 let uniqueId = 0;
