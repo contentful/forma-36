@@ -24,7 +24,7 @@ export * from '@contentful/f36-modal';
 export * from '@contentful/f36-multiselect';
 export * from '@contentful/f36-navlist';
 export * from '@contentful/f36-note';
-//export * from '@contentful/f36-notification';
+export * from '@contentful/f36-notification';
 export * from '@contentful/f36-pagination';
 export * from '@contentful/f36-pill';
 export * from '@contentful/f36-popover';
