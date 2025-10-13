@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-navlist",
-  "version": "6.0.0-alpha.0",
+  "version": "6.0.0-alpha.1",
   "description": "Forma 36: NavList component",
   "scripts": {
     "build": "tsup"
