@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AnimateHeight from 'react-animate-height';
 
 import { NotificationItem, NotificationItemProps } from './NotificationItem';
-import { cx, css } from 'emotion';
+import { cx, css } from '@emotion/css';
 
 export interface NotificationItemContainerProps extends NotificationItemProps {
   duration?: number;
