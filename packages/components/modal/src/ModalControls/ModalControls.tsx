@@ -7,7 +7,7 @@ import {
 } from '@contentful/f36-core';
 import { ButtonGroup } from '@contentful/f36-button';
 import { getModalControlStyles } from './ModalControls.styles';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 interface ModalControlsInternalProps extends CommonProps {
   children: React.ReactElement[] | React.ReactElement;

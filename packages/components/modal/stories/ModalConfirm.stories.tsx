@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
-import { action } from '@storybook/addon-actions';
+import type { StoryObj, Meta } from '@storybook/react-vite';
+import { action } from 'storybook/actions';
 import { Paragraph, Text } from '@contentful/f36-typography';
 import {
   ModalConfirm,
@@ -16,9 +16,8 @@ export default {
     propTypes: [ModalConfirm['__docgenInfo']],
   },
   decorators: [
-    // eslint-disable-next-line react/display-name
-    (storyFn) => (
-      <div style={{ width: '1200px', height: '800px' }}>{storyFn()}</div>
+    (Story) => (
+      <div style={{ width: '1200px', height: '800px' }}>{Story()}</div>
     ),
   ],
   argTypes: {
@@ -77,8 +76,10 @@ function SimpleDemo(props: ModalConfirmProps) {
   );
 }
 
-export const Basic: Story<ModalConfirmProps> = (props) => {
-  return <SimpleDemo {...props} />;
+export const Basic: StoryObj<ModalConfirmProps> = {
+  render: (props) => {
+    return <SimpleDemo {...props} />;
+  },
 };
 
 export function ComplexStory(props: ModalConfirmProps) {
