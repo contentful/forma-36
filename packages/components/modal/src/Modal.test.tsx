@@ -40,7 +40,7 @@ it('should focus initialFocusRef element', async () => {
   const onAfterOpen = jest.fn();
 
   const Test = () => {
-    const ref = React.useRef();
+    const ref = React.useRef<HTMLButtonElement | null>(null);
     return (
       <Modal
         title="Modal with initialFocusRef"

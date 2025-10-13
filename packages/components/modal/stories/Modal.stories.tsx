@@ -1,5 +1,5 @@
 import React, { useState, MouseEventHandler, useRef } from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj, StoryFn } from '@storybook/react-vite';
 import { Button } from '@contentful/f36-button';
 import { Badge } from '@contentful/f36-badge';
 
@@ -21,9 +21,8 @@ export default {
     propTypes: [Modal['__docgenInfo']],
   },
   decorators: [
-    // eslint-disable-next-line react/display-name
-    (storyFn) => (
-      <div style={{ width: '1200px', height: '800px' }}>{storyFn()}</div>
+    (Story) => (
+      <div style={{ width: '1200px', height: '800px' }}>{Story()}</div>
     ),
   ],
   argTypes: {
@@ -49,7 +48,7 @@ export default {
   },
 } as Meta;
 
-export const Basic: Story<ModalProps> = (props) => {
+export const Basic: StoryObj<ModalProps> = (props) => {
   const [isShown, setShown] = useState(true);
 
   return (
@@ -80,7 +79,7 @@ Basic.args = {
   subtitle: 'Subtitle',
 };
 
-export const LongModal: Story<ModalProps> = (props) => {
+export const LongModal: StoryObj<ModalProps> = (props) => {
   const [isShown, setShown] = useState(true);
 
   return (
@@ -93,7 +92,6 @@ export const LongModal: Story<ModalProps> = (props) => {
           Toggle <code>allowHeightOverflow</code> to see different behaviours
         </div>
         {fillArray('', 1000).map((item, index) => (
-          // eslint-disable-next-line
           <div key={index}>Line #{index}</div>
         ))}
       </Modal>
@@ -106,7 +104,7 @@ LongModal.args = {
   allowHeightOverflow: false,
 };
 
-export const ControllerModal: Story<ModalProps> = (props) => {
+export const ControllerModal: StoryObj<ModalProps> = (props) => {
   const [isShown, setShown] = useState(true);
   const confirmRef = useRef(null);
 
@@ -153,7 +151,7 @@ ControllerModal.args = {
   title: 'Centered modal',
 };
 
-export const ModalWithChildComponentInHeader: Story<ModalProps> = (props) => {
+export const ModalWithChildComponentInHeader: StoryFn<ModalProps> = (props) => {
   const [isShown, setShown] = useState(true);
 
   return (
