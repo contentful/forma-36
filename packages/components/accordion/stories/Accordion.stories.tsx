@@ -97,18 +97,10 @@ export const DynamicContent = ({ align }: AccordionProps) => {
     updateContent(content + defaultText);
   };
 
-    return (
-      <Flex flexDirection="column" fullWidth>
-        <Flex marginBottom="spacingS">
-          <Button onClick={addContent}>Add content</Button>
-        </Flex>
-        <Flex>
-          <Accordion align={align}>
-            <Accordion.Item title={args['Accordion.Item Title #1']}>
-              <Text as="p">{content}</Text>
-            </Accordion.Item>
-          </Accordion>
-        </Flex>
+  return (
+    <Flex flexDirection="column" fullWidth>
+      <Flex marginBottom="spacingS">
+        <Button onClick={addContent}>Add content</Button>
       </Flex>
       <Flex>
         <Accordion align={align}>
