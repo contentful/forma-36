@@ -10,12 +10,15 @@ const cwd = process.cwd();
 
 // Umbrella package
 const componentsPkg = '@contentful/f36-components';
+
+// todo: could this be retrieved from .changeset/config.json? there is some overlap but docs-utils is not there and codemod is
 // Packages we don't want to have on changelog
 const ignorePkgs = [
   '@contentful/f36-cdn',
   '@contentful/f36-i18n-utils',
   '@contentful/f36-website',
   '@contentful/f36-docs-utils',
+  '@contentful/f36-ai-components',
 ];
 
 // Format package names as Start Case
