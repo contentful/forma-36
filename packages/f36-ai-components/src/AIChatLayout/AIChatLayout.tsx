@@ -142,6 +142,8 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
                     button.display ? styles.buttonVisible : styles.buttonHidden
                   }
                   style={{ ['--button-delay' as string]: `${delay}ms` }}
+                  aria-hidden={!button.display}
+                  tabIndex={button.display ? null : -1}
                 />
               );
             })}
