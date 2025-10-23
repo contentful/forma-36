@@ -140,7 +140,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
                   variant="transparent"
                   size="small"
                   icon={button.icon}
-                  aria-label={button.ariaLabel || `Action button ${index + 1}`}
+                  aria-label={button.ariaLabel}
                   onClick={() => button.onClick()}
                   testId={button.testId || `${testId}-button-${index}`}
                   className={
