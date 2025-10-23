@@ -42,7 +42,7 @@ The \`onChange\` callback is called when the open state should change.
     icon: {
       type: 'string',
       control: 'select',
-      options: [...Object.keys(icons)],
+      options: ['', ...Object.keys(icons)],
     },
     content: {
       type: 'string',
@@ -118,7 +118,11 @@ export const Basic = ({
       {...args}
       isOpen={isOpen}
       onOpen={() => setIsOpen(true)}
-      icon={<Icon as={icons[icon]} className={styles.aiGradientIcon} />}
+      icon={
+        icon ? (
+          <Icon as={icons[icon]} className={styles.aiGradientIcon} />
+        ) : null
+      }
       buttons={availableButtons.filter((button) =>
         buttons?.includes(button.id),
       )}

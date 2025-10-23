@@ -61,6 +61,7 @@ export const getStyles = (props: StyleProps = {}) => {
       flexShrink: 0,
       justifyContent: 'flex-end',
       position: 'relative',
+      marginLeft: 'auto',
     }),
 
     buttonIcon: css({
