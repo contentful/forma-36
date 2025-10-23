@@ -92,7 +92,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     buttons = [],
     children,
     className,
-    testId = 'cf-ai-chat-layout',
+    testId = 'cf-ui-ai-chat-layout',
     ...otherProps
   } = props;
 
@@ -101,60 +101,6 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
 
   const styles = getStyles({ type: effectiveType, isOpen });
 
-  // Render all buttons but control visibility with CSS
-
-  const header = (
-    <Flex
-      className={styles.header}
-      alignItems="center"
-      testId={`${testId}-header`}
-      onClick={!isOpen ? onOpen : undefined}
-    >
-      {icon && (
-        <Box className={styles.icon} testId={`${testId}-icon`}>
-          {icon}
-        </Box>
-      )}
-
-      {title && (
-        <Box className={styles.title} testId={`${testId}-title`}>
-          {title}
-        </Box>
-      )}
-
-      {buttons.length > 0 && (
-        <Flex className={styles.buttonGroup} testId={`${testId}-buttons`}>
-          {buttons.map((button, index) => {
-            const delayIncrement = (index + 1) * 30;
-            const delay = button.display
-              ? 200 + delayIncrement
-              : delayIncrement;
-
-            return (
-              <IconButton
-                key={index}
-                variant="transparent"
-                size="small"
-                icon={button.icon}
-                aria-label={button.ariaLabel || `Action button ${index + 1}`}
-                onClick={() => button.onClick()}
-                testId={button.testId || `${testId}-button-${index}`}
-                className={
-                  button.display ? styles.buttonVisible : styles.buttonHidden
-                }
-                style={
-                  {
-                    '--button-delay': `${delay}ms`,
-                  } as React.CSSProperties
-                }
-              />
-            );
-          })}
-        </Flex>
-      )}
-    </Flex>
-  );
-
   return (
     <Flex
       ref={ref}
@@ -162,7 +108,55 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
       testId={testId}
       {...otherProps}
     >
-      {header}
+      <Flex
+        className={styles.header}
+        alignItems="center"
+        testId={`${testId}-header`}
+        onClick={!isOpen ? onOpen : undefined}
+      >
+        {icon && (
+          <Box className={styles.icon} testId={`${testId}-icon`}>
+            {icon}
+          </Box>
+        )}
+
+        {title && (
+          <Box className={styles.title} testId={`${testId}-title`}>
+            {title}
+          </Box>
+        )}
+
+        {buttons.length > 0 && (
+          <Flex className={styles.buttonGroup} testId={`${testId}-buttons`}>
+            {buttons.map((button, index) => {
+              const delayIncrement = (index + 1) * 30;
+              const delay = button.display
+                ? 200 + delayIncrement
+                : delayIncrement;
+
+              return (
+                <IconButton
+                  key={index}
+                  variant="transparent"
+                  size="small"
+                  icon={button.icon}
+                  aria-label={button.ariaLabel || `Action button ${index + 1}`}
+                  onClick={() => button.onClick()}
+                  testId={button.testId || `${testId}-button-${index}`}
+                  className={
+                    button.display ? styles.buttonVisible : styles.buttonHidden
+                  }
+                  style={
+                    {
+                      '--button-delay': `${delay}ms`,
+                    } as React.CSSProperties
+                  }
+                />
+              );
+            })}
+          </Flex>
+        )}
+      </Flex>
 
       {/* Content area - only for non-collapsed layouts */}
       <Collapse isExpanded={isOpen}>
