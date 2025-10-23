@@ -7,20 +7,17 @@ import { getStyles } from './AIChatLayout.styles';
 /**
  * AIChatLayout - A flexible layout component for AI chat interfaces
  *
- * Supports 3 layout types controlled by type and isOpen props:
- * 1. Closed (isOpen=false) - Compact lozenge with icon, title, and buttons (no children)
- * 2. Normal (isOpen=true, type='normal') - Standard layout with header and content area (360px width)
- * 3. Expanded (isOpen=true, type='expanded') - Large layout with more space (480px width)
- *
- * The isOpen prop controls whether the layout shows the full interface or just the compact lozenge.
- * The type prop determines the size when isOpen=true.
+ * Supports 3 layout states controlled by type and isOpen props:
+ * 1. Collapsed (isOpen=false) - Compact lozenge with icon, title, and buttons
+ * 2. Normal (isOpen=true, type='normal') - Standard copilot layout with header and content area
+ * 3. Expanded (isOpen=true, type='expanded') - Large layout with more space for artifacts
  */
 
 export type AIChatLayoutType = 'collapsed' | 'normal' | 'expanded';
 
 export interface AIChatLayoutButton {
   /**
-   * Icon component for the button (React element)
+   * Icon component for the button
    */
   icon: React.ReactElement;
   /**
@@ -28,7 +25,7 @@ export interface AIChatLayoutButton {
    */
   onClick: () => void;
   /**
-   * Whether the button should be displayed
+   * Whether the button should be displayed (use this to enable animations when the button appears/disappears)
    */
   display: boolean;
   /**
@@ -44,8 +41,8 @@ export interface AIChatLayoutButton {
 export interface AIChatLayoutProps extends CommonProps {
   /**
    * Layout type defining the visual state when open
-   * - 'normal': Standard layout with header and content area (360px width)
-   * - 'expanded': Large layout with more space (480px width)
+   * - 'normal': Standard copilot layout
+   * - 'expanded': Larger layout for artifacts
    * @default 'normal'
    */
   type?: 'normal' | 'expanded';
@@ -57,9 +54,9 @@ export interface AIChatLayoutProps extends CommonProps {
    */
   isOpen?: boolean;
   /**
-   * Callback function called when the layout is opened
+   * Callback function called when the collapsed lozenge is clicked
    */
-  onOpen?: () => void;
+  onCollapsedClick?: () => void;
   /**
    * Icon to display in the layout header
    */
@@ -86,7 +83,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   const {
     type = 'normal',
     isOpen = true,
-    onOpen = () => {},
+    onCollapsedClick: onOpen = () => {},
     icon,
     title,
     buttons = [],
@@ -96,7 +93,6 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     ...otherProps
   } = props;
 
-  // Determine effective type for styling - 'collapsed' when closed, otherwise use the type prop
   const effectiveType: AIChatLayoutType = isOpen ? type : 'collapsed';
 
   const styles = getStyles({ type: effectiveType, isOpen });
@@ -110,7 +106,6 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     >
       <Flex
         className={styles.header}
-        alignItems="center"
         testId={`${testId}-header`}
         onClick={!isOpen ? onOpen : undefined}
       >
@@ -129,7 +124,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
         {buttons.length > 0 && (
           <Flex className={styles.buttonGroup} testId={`${testId}-buttons`}>
             {buttons.map((button, index) => {
-              const delayIncrement = (index + 1) * 30;
+              const delayIncrement = index * 30;
               const delay = button.display
                 ? 200 + delayIncrement
                 : delayIncrement;
@@ -146,11 +141,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
                   className={
                     button.display ? styles.buttonVisible : styles.buttonHidden
                   }
-                  style={
-                    {
-                      '--button-delay': `${delay}ms`,
-                    } as React.CSSProperties
-                  }
+                  style={{ ['--button-delay' as string]: `${delay}ms` }}
                 />
               );
             })}
@@ -158,7 +149,6 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
         )}
       </Flex>
 
-      {/* Content area - only for non-collapsed layouts */}
       <Collapse isExpanded={isOpen}>
         <Box className={styles.content} testId={`${testId}-content`}>
           {children}

@@ -117,7 +117,7 @@ export const Basic = ({
     <AIChatLayout
       {...args}
       isOpen={isOpen}
-      onOpen={() => setIsOpen(true)}
+      onCollapsedClick={() => setIsOpen(true)}
       icon={
         icon ? (
           <Icon as={icons[icon]} className={styles.aiGradientIcon} />

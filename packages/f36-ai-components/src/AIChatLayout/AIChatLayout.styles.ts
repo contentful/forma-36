@@ -30,6 +30,7 @@ export const getStyles = (props: StyleProps = {}) => {
       padding: `0px ${tokens.spacingS}`,
       backgroundColor: 'transparent',
       flexShrink: 0,
+      alignItems: 'center',
       gap: tokens.spacing2Xs,
       borderBottom: isOpen
         ? `1px solid ${hexToRGBA(tokens.gray900, 0.05)}`
@@ -107,9 +108,10 @@ export const getStyles = (props: StyleProps = {}) => {
     }),
 
     aiGradientIcon: css({
-      width: isOpen ? '16px' : '20px',
-      height: isOpen ? '16px' : '20px',
-      transition: `width ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, height ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
+      width: '20px',
+      height: '20px',
+      transform: isOpen ? 'scale(1)' : 'scale(0.8)',
+      transition: `transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
 
       '*': {
         fill: `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><linearGradient id='grad' gradientTransform='rotate(46.64 .5 .5)' gradientUnits='objectBoundingBox'><stop offset='19.41%' stop-color='%231872E5'/><stop offset='38.04%' stop-color='%238C2EEA'/><stop offset='56.68%' stop-color='%23E65325'/><stop offset='75.31%' stop-color='%23EAAF09'/></linearGradient></svg>#grad") rgba(140, 46, 234, 1)`,

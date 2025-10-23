@@ -147,7 +147,7 @@ describe('AIChatLayout', () => {
     const user = userEvent.setup();
     const mockOnOpen = jest.fn();
 
-    render(<AIChatLayout isOpen={false} onOpen={mockOnOpen} />);
+    render(<AIChatLayout isOpen={false} onCollapsedClick={mockOnOpen} />);
 
     const header = screen.getByTestId('cf-ui-ai-chat-layout-header');
     await user.click(header);
@@ -159,7 +159,7 @@ describe('AIChatLayout', () => {
     const user = userEvent.setup();
     const mockOnOpen = jest.fn();
 
-    render(<AIChatLayout isOpen={true} onOpen={mockOnOpen} />);
+    render(<AIChatLayout isOpen={true} onCollapsedClick={mockOnOpen} />);
 
     const header = screen.getByTestId('cf-ui-ai-chat-layout-header');
     await user.click(header);
