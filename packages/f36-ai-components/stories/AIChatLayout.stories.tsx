@@ -44,7 +44,9 @@ The \`onChange\` callback is called when the open state should change.
       control: 'select',
       options: [...Object.keys(icons)],
     },
-    // isOpen: { control: { disable: true } },
+    content: {
+      type: 'string',
+    },
     children: { control: { disable: true } },
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
@@ -52,7 +54,13 @@ The \`onChange\` callback is called when the open state should change.
   },
 };
 
-export const Basic = ({ buttons, icon, isOpen: initialIsOpen, ...args }) => {
+export const Basic = ({
+  buttons,
+  icon,
+  isOpen: initialIsOpen,
+  content,
+  ...args
+}) => {
   const [isOpen, setIsOpen] = useState(initialIsOpen);
 
   useEffect(() => {
@@ -113,12 +121,7 @@ export const Basic = ({ buttons, icon, isOpen: initialIsOpen, ...args }) => {
         buttons?.includes(button.id),
       )}
     >
-      <Text>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </Text>
+      <Text>{content}</Text>
     </AIChatLayout>
   );
 };
@@ -128,4 +131,6 @@ Basic.args = {
   icon: 'TranslateIcon',
   buttons: ['open', 'minimize', 'close', 'threads'],
   isOpen: false,
+  content:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 };

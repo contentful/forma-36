@@ -1,13 +1,14 @@
 import tokens from '@contentful/f36-tokens';
-import boxShadows from '@contentful/f36-tokens/src/tokens/box-shadows/box-shadows';
+import { hexToRGBA } from '@contentful/f36-utils';
 import { css } from 'emotion';
 
 interface StyleProps {
   type?: 'collapsed' | 'normal' | 'expanded';
+  isOpen?: boolean;
 }
 
 export const getStyles = (props: StyleProps = {}) => {
-  const { type = 'normal' } = props;
+  const { type = 'normal', isOpen = true } = props;
 
   const getLayoutWidth = () => {
     switch (type) {
@@ -24,8 +25,11 @@ export const getStyles = (props: StyleProps = {}) => {
       transition: `width ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       backgroundColor: tokens.colorWhite,
       display: 'flex',
+      flexDirection: 'column',
+      justifyContent: isOpen ? 'flex-start' : 'center',
+      alignItems: 'flex-start',
       overflow: 'hidden',
-      boxShadow: boxShadows['box-shadow-heavy'],
+      boxShadow: tokens.boxShadowHeavy,
       borderRadius: '16px', // todo: replace with tokens?
     }),
 
@@ -36,6 +40,9 @@ export const getStyles = (props: StyleProps = {}) => {
       backgroundColor: 'transparent',
       flexShrink: 0,
       gap: tokens.spacingXs,
+      ...(isOpen
+        ? { borderBottom: `1px solid ${hexToRGBA(tokens.gray900, 0.1)}` }
+        : {}),
     }),
 
     icon: css({
@@ -58,16 +65,51 @@ export const getStyles = (props: StyleProps = {}) => {
     buttonGroup: css({
       display: 'flex',
       alignItems: 'center',
-      gap: tokens.spacingXs,
       flexShrink: 0,
+      justifyContent: 'flex-end',
+      position: 'relative',
+      transition: `all ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
     }),
 
     buttonIcon: css({
       filter: 'drop-shadow(0px 1px 0px rgba(17, 27, 43, 0.05))',
     }),
 
+    buttonVisible: css({
+      opacity: 1,
+      transform: 'translateX(0) scale(1)',
+      transition: `opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`, // Match Button component transitions
+      transitionDelay: 'var(--button-delay, 0ms)',
+      pointerEvents: 'auto',
+      marginLeft: tokens.spacingXs,
+      // Prevent focus outline flashing during animation
+      outline: 'none',
+      border: 'none',
+      boxShadow: 'none',
+      '&:first-child': {
+        marginLeft: '0',
+      },
+    }),
+
+    buttonHidden: css({
+      opacity: 0,
+      transform: 'translateX(4px) scale(0.95)', // More subtle: smaller translate and scale
+      transition: `opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, width ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`, // Match Button component transitions + width
+      transitionDelay: 'var(--button-delay, 0ms)',
+      pointerEvents: 'none',
+      // Completely collapse the button
+      width: '0',
+      minWidth: '0',
+      maxWidth: '0',
+      margin: '0',
+      padding: '0',
+      border: 'none',
+      overflow: 'hidden',
+    }),
+
     content: css({
       flex: 1,
+      height: '768px',
       padding: tokens.spacingM,
       overflow: 'auto',
       backgroundColor: tokens.colorWhite,
