@@ -40,9 +40,10 @@ export const getStyles = (props: StyleProps = {}) => {
       backgroundColor: 'transparent',
       flexShrink: 0,
       gap: tokens.spacingXs,
-      ...(isOpen
-        ? { borderBottom: `1px solid ${hexToRGBA(tokens.gray900, 0.1)}` }
-        : {}),
+      borderBottom: isOpen
+        ? `1px solid ${hexToRGBA(tokens.gray900, 0.1)}`
+        : '0',
+      cursor: !isOpen ? 'pointer' : 'auto',
     }),
 
     icon: css({

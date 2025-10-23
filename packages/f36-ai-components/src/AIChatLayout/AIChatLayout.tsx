@@ -57,6 +57,10 @@ export interface AIChatLayoutProps extends CommonProps {
    */
   isOpen?: boolean;
   /**
+   * Callback function called when the layout is opened
+   */
+  onOpen?: () => void;
+  /**
    * Icon to display in the layout header
    */
   icon?: React.ReactNode;
@@ -82,6 +86,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   const {
     type = 'normal',
     isOpen = true,
+    onOpen = () => {},
     icon,
     title,
     buttons = [],
@@ -103,6 +108,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
       className={styles.header}
       alignItems="center"
       testId={`${testId}-header`}
+      onClick={!isOpen ? onOpen : undefined}
     >
       {icon && (
         <Box className={styles.icon} testId={`${testId}-icon`}>
@@ -119,7 +125,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
       {buttons.length > 0 && (
         <Flex className={styles.buttonGroup} testId={`${testId}-buttons`}>
           {buttons.map((button, index) => {
-            const delayIncrement = index * 30;
+            const delayIncrement = (index + 1) * 30;
             const delay = button.display
               ? 200 + delayIncrement
               : delayIncrement;
