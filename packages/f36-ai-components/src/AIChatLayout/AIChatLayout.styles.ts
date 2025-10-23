@@ -10,18 +10,9 @@ interface StyleProps {
 export const getStyles = (props: StyleProps = {}) => {
   const { type = 'normal', isOpen = true } = props;
 
-  const getLayoutWidth = () => {
-    switch (type) {
-      case 'expanded':
-        return '985px';
-      default:
-        return '350px';
-    }
-  };
-
   return {
     root: css({
-      width: getLayoutWidth(),
+      width: type === 'expanded' ? '985px' : '350px',
       transition: `width ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       backgroundColor: tokens.colorWhite,
       display: 'flex',
@@ -30,13 +21,13 @@ export const getStyles = (props: StyleProps = {}) => {
       alignItems: 'flex-start',
       overflow: 'hidden',
       boxShadow: tokens.boxShadowHeavy,
-      borderRadius: '16px', // todo: replace with tokens?
+      borderRadius: '16px',
     }),
 
     header: css({
       width: '100%',
       height: '48px',
-      padding: '0px 12px 0px 20px', // todo: replace with tokens?
+      padding: `0px ${tokens.spacingS}`,
       backgroundColor: 'transparent',
       flexShrink: 0,
       gap: tokens.spacing2Xs,
@@ -51,6 +42,7 @@ export const getStyles = (props: StyleProps = {}) => {
       alignItems: 'center',
       justifyContent: 'center',
       flexShrink: 0,
+      paddingLeft: tokens.spacingXs,
     }),
 
     title: css({
@@ -69,21 +61,19 @@ export const getStyles = (props: StyleProps = {}) => {
       flexShrink: 0,
       justifyContent: 'flex-end',
       position: 'relative',
-      transition: `all ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}`,
     }),
 
     buttonIcon: css({
-      filter: 'drop-shadow(0px 1px 0px rgba(17, 27, 43, 0.05))',
+      filter: `drop-shadow(0px 1px 0px ${hexToRGBA(tokens.gray900, 0.05)})`,
     }),
 
     buttonVisible: css({
       opacity: 1,
       transform: 'translateX(0) scale(1)',
-      transition: `opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`, // Match Button component transitions
+      transition: `opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       transitionDelay: 'var(--button-delay, 0ms)',
       pointerEvents: 'auto',
       marginLeft: tokens.spacing2Xs,
-      // Prevent focus outline flashing during animation
       outline: 'none',
       border: 'none',
       boxShadow: 'none',
@@ -94,11 +84,10 @@ export const getStyles = (props: StyleProps = {}) => {
 
     buttonHidden: css({
       opacity: 0,
-      transform: 'translateX(4px) scale(0.95)', // More subtle: smaller translate and scale
+      transform: 'translateX(4px) scale(0.95)',
       transition: `opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, width ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`, // Match Button component transitions + width
       transitionDelay: 'var(--button-delay, 0ms)',
       pointerEvents: 'none',
-      // Completely collapse the button
       width: '0',
       minWidth: '0',
       maxWidth: '0',
