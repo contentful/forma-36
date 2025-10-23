@@ -11,57 +11,29 @@ export const getStyles = (props: StyleProps = {}) => {
 
   const getLayoutWidth = () => {
     switch (type) {
-      case 'collapsed':
-        return '350px';
       case 'expanded':
-        return '480px';
-      case 'normal':
+        return '985px';
       default:
-        return '360px';
+        return '350px';
     }
-  };
-
-  const getLayoutPosition = () => {
-    return {
-      position: 'relative' as const,
-      height: type === 'collapsed' ? 'auto' : '100%', // Auto height for collapsed
-    };
-  };
-
-  const getCollapsedStyles = () => {
-    if (type === 'collapsed') {
-      return {
-        padding: '14px 12px 14px 20px', // todo: replace with tokens?
-        borderRadius: '16px', // todo: replace with tokens?
-        boxShadow: boxShadows['box-shadow-heavy'],
-        height: '48px',
-        flexDirection: 'row' as const,
-        gap: tokens.spacing2Xs,
-      };
-    }
-    return {
-      flexDirection: 'column' as const,
-    };
   };
 
   return {
     root: css({
       width: getLayoutWidth(),
+      transition: `width ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       backgroundColor: tokens.colorWhite,
-      borderRadius: tokens.borderRadiusMedium,
       display: 'flex',
       overflow: 'hidden',
-      ...getLayoutPosition(),
-      ...getCollapsedStyles(),
+      boxShadow: boxShadows['box-shadow-heavy'],
+      borderRadius: '16px', // todo: replace with tokens?
     }),
 
     header: css({
-      display: 'flex',
-      alignItems: 'center',
-      padding: type === 'collapsed' ? '0' : tokens.spacingS, // No extra padding for collapsed
-      borderBottom:
-        type === 'collapsed' ? 'none' : `1px solid ${tokens.gray300}`, // No border for collapsed
-      backgroundColor: type === 'collapsed' ? 'transparent' : tokens.gray100, // No background for collapsed
+      width: '100%',
+      height: '48px',
+      padding: '0px 12px 0px 20px', // todo: replace with tokens?
+      backgroundColor: 'transparent',
       flexShrink: 0,
       gap: tokens.spacingXs,
     }),
@@ -74,7 +46,7 @@ export const getStyles = (props: StyleProps = {}) => {
     }),
 
     title: css({
-      flex: type === 'collapsed' ? '0 1 auto' : 1, // Don't grow in collapsed mode
+      flex: '1 1 auto',
       fontSize: tokens.fontSizeM,
       fontWeight: tokens.fontWeightMedium,
       color: tokens.gray900,
@@ -88,7 +60,6 @@ export const getStyles = (props: StyleProps = {}) => {
       alignItems: 'center',
       gap: tokens.spacingXs,
       flexShrink: 0,
-      marginLeft: 'auto',
     }),
 
     buttonIcon: css({
