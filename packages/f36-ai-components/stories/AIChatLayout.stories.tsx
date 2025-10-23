@@ -48,6 +48,7 @@ The \`onChange\` callback is called when the open state should change.
       type: 'string',
     },
     children: { control: { disable: true } },
+    onOpen: { control: { disable: true } },
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
     style: { control: { disable: true } },
@@ -116,6 +117,7 @@ export const Basic = ({
     <AIChatLayout
       {...args}
       isOpen={isOpen}
+      onOpen={() => setIsOpen(true)}
       icon={<Icon as={icons[icon]} className={styles.aiGradientIcon} />}
       buttons={availableButtons.filter((button) =>
         buttons?.includes(button.id),
