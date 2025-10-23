@@ -39,9 +39,9 @@ export const getStyles = (props: StyleProps = {}) => {
       padding: '0px 12px 0px 20px', // todo: replace with tokens?
       backgroundColor: 'transparent',
       flexShrink: 0,
-      gap: tokens.spacingXs,
+      gap: tokens.spacing2Xs,
       borderBottom: isOpen
-        ? `1px solid ${hexToRGBA(tokens.gray900, 0.1)}`
+        ? `1px solid ${hexToRGBA(tokens.gray900, 0.05)}`
         : '0',
       cursor: !isOpen ? 'pointer' : 'auto',
     }),
@@ -82,7 +82,7 @@ export const getStyles = (props: StyleProps = {}) => {
       transition: `opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`, // Match Button component transitions
       transitionDelay: 'var(--button-delay, 0ms)',
       pointerEvents: 'auto',
-      marginLeft: tokens.spacingXs,
+      marginLeft: tokens.spacing2Xs,
       // Prevent focus outline flashing during animation
       outline: 'none',
       border: 'none',
@@ -110,14 +110,20 @@ export const getStyles = (props: StyleProps = {}) => {
 
     content: css({
       flex: 1,
-      height: '768px',
+      height: '720px',
       padding: tokens.spacingM,
       overflow: 'auto',
       backgroundColor: tokens.colorWhite,
     }),
 
     aiGradientIcon: css({
-      fill: `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><linearGradient id='grad' gradientTransform='rotate(46.64 .5 .5)' gradientUnits='objectBoundingBox'><stop offset='19.41%' stop-color='%231872E5'/><stop offset='38.04%' stop-color='%238C2EEA'/><stop offset='56.68%' stop-color='%23E65325'/><stop offset='75.31%' stop-color='%23EAAF09'/></linearGradient></svg>#grad") rgba(140, 46, 234, 1)`,
+      width: isOpen ? '16px' : '20px',
+      height: isOpen ? '16px' : '20px',
+      transition: `width ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, height ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
+
+      '*': {
+        fill: `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><linearGradient id='grad' gradientTransform='rotate(46.64 .5 .5)' gradientUnits='objectBoundingBox'><stop offset='19.41%' stop-color='%231872E5'/><stop offset='38.04%' stop-color='%238C2EEA'/><stop offset='56.68%' stop-color='%23E65325'/><stop offset='75.31%' stop-color='%23EAAF09'/></linearGradient></svg>#grad") rgba(140, 46, 234, 1)`,
+      },
     }),
   };
 };
