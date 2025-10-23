@@ -68,7 +68,7 @@ export const Basic = ({
     setIsOpen(initialIsOpen);
   }, [initialIsOpen]);
 
-  const styles = getStyles();
+  const styles = getStyles({ isOpen });
 
   const availableButtons = [
     {
