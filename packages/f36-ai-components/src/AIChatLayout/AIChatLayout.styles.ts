@@ -87,7 +87,7 @@ export const getStyles = (props: StyleProps = {}) => {
     buttonHidden: css({
       opacity: 0,
       transform: 'translateX(4px) scale(0.95)',
-      transition: `opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, width ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`, // Match Button component transitions + width
+      transition: `opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, width ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       transitionDelay: 'var(--button-delay, 0ms)',
       pointerEvents: 'none',
       width: '0',
