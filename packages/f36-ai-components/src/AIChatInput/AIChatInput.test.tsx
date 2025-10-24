@@ -4,7 +4,7 @@ import { AIChatInput } from './AIChatInput';
 import { Editor } from '@tiptap/react';
 import { Box } from '@contentful/f36-core';
 
-describe(AIChatInput.name, () => {
+describe('AIChatInput', () => {
   it('renders the component', () => {
     render(<AIChatInput onSubmit={() => {}} onStop={() => {}} />);
     expect(screen.getByTestId('cf-ui-ai-chat-input')).toBeTruthy();
