@@ -40,6 +40,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@tiptap/extension-mention": "^2.26.4"
+    "@tiptap/extension-mention": "^2.26.4",
+    "@tiptap/extension-paragraph": "^2.26.4"
   }
 }
