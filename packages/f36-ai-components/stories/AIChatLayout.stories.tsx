@@ -69,12 +69,21 @@ export const Basic = ({
   ...args
 }) => {
   const [display, setDisplay] = useState(initialDisplay);
+  const [showButton, setShowButton] = useState(initialDisplay === 'closed');
 
   useEffect(() => {
     setDisplay(initialDisplay);
+    setShowButton(initialDisplay === 'closed');
   }, [initialDisplay]);
 
+  const onButtonClick = () => {
+    setShowButton(false);
+    setDisplay('collapsed');
+  };
+
   const styles = getStyles({ display });
+
+  const isCollapsed = display === 'collapsed';
 
   const availableButtons = [
     {
@@ -83,7 +92,7 @@ export const Basic = ({
         <icons.ClockCounterClockwiseIconIcon className={styles.buttonIcon} />
       ),
       onClick: action('view-threads'),
-      display: display === 'open',
+      display: !isCollapsed,
       ariaLabel: 'View threads',
       testId: 'view-threads',
     },
@@ -94,7 +103,7 @@ export const Basic = ({
         action('open-chat')();
         setDisplay('open');
       },
-      display: display === 'collapsed',
+      display: isCollapsed,
       ariaLabel: 'Open chat',
       testId: 'open-button',
     },
@@ -105,7 +114,7 @@ export const Basic = ({
         action('minimize-chat')();
         setDisplay('collapsed');
       },
-      display: display === 'open',
+      display: !isCollapsed,
       ariaLabel: 'Minimize chat',
       testId: 'minimize-button',
     },
@@ -117,18 +126,11 @@ export const Basic = ({
         setDisplay('closed');
         setShowButton(true);
       },
-      display: display === 'open',
+      display: !isCollapsed,
       ariaLabel: 'Close chat',
       testId: 'close-button',
     },
   ];
-
-  const [showButton, setShowButton] = useState(false);
-
-  const onButtonClick = () => {
-    setShowButton(false);
-    setDisplay('collapsed');
-  };
 
   return (
     <>
@@ -147,7 +149,14 @@ export const Basic = ({
       >
         <Text>{content}</Text>
       </AIChatLayout>
-      {showButton && <Button onClick={onButtonClick}>Show component</Button>}
+      {showButton && (
+        <Button
+          onClick={onButtonClick}
+          style={{ position: 'absolute', top: '50%', left: '50%' }}
+        >
+          Show component
+        </Button>
+      )}
     </>
   );
 };
