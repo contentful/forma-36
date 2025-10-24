@@ -7,15 +7,15 @@ import { getStyles } from './AIChatLayout.styles';
 /**
  * AIChatLayout - A flexible layout component for AI chat interfaces
  *
- * Supports 4 layout states controlled by the display and type props:
+ * Supports 4 layout states controlled by the display and variant props:
  * 1. Closed (display='closed') - Component is completely hidden
  * 2. Collapsed (display='collapsed') - Compact lozenge with icon, title, and buttons (no content area)
- * 3. Normal (display='open', type='normal') - Standard copilot layout with header and content area
- * 4. Expanded (display='open', type='expanded') - Large layout with more space for artifacts
+ * 3. Normal (display='open', variant='normal') - Standard copilot layout with header and content area
+ * 4. Expanded (display='open', variant='expanded') - Large layout with more space for artifacts
  */
 
 export type AIChatLayoutDisplay = 'closed' | 'collapsed' | 'open';
-export type AIChatLayoutType = 'normal' | 'expanded';
+export type AIChatLayoutVariant = 'normal' | 'expanded';
 
 export interface AIChatLayoutButton {
   /**
@@ -42,12 +42,12 @@ export interface AIChatLayoutButton {
 
 export interface AIChatLayoutProps extends CommonProps {
   /**
-   * Layout type defining the visual state when open
+   * Layout variant defining the visual state when open
    * - 'normal': Standard copilot layout
    * - 'expanded': Larger layout for artifacts
    * @default 'normal'
    */
-  type?: 'normal' | 'expanded';
+  variant?: 'normal' | 'expanded';
   /**
    * Display state of the layout
    * - 'closed': Component is completely hidden
@@ -84,7 +84,7 @@ export interface AIChatLayoutProps extends CommonProps {
 
 function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   const {
-    type = 'normal',
+    variant = 'normal',
     display = 'open',
     onCollapsedClick: onOpen = () => {},
     icon,
@@ -100,7 +100,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     return null;
   }
 
-  const styles = getStyles({ display, type });
+  const styles = getStyles({ display, variant });
 
   return (
     <Flex

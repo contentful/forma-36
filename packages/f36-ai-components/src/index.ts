@@ -3,5 +3,5 @@ export type {
   AIChatLayoutButton,
   AIChatLayoutDisplay,
   AIChatLayoutProps,
-  AIChatLayoutType,
+  AIChatLayoutVariant,
 } from './AIChatLayout/AIChatLayout';
