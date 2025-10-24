@@ -7,13 +7,15 @@ import { getStyles } from './AIChatLayout.styles';
 /**
  * AIChatLayout - A flexible layout component for AI chat interfaces
  *
- * Supports 3 layout states controlled by type and isOpen props:
- * 1. Collapsed (isOpen=false) - Compact lozenge with icon, title, and buttons
- * 2. Normal (isOpen=true, type='normal') - Standard copilot layout with header and content area
- * 3. Expanded (isOpen=true, type='expanded') - Large layout with more space for artifacts
+ * Supports 4 layout states controlled by the display and type props:
+ * 1. Closed (display='closed') - Component is completely hidden
+ * 2. Collapsed (display='collapsed') - Compact lozenge with icon, title, and buttons (no content area)
+ * 3. Normal (display='open', type='normal') - Standard copilot layout with header and content area
+ * 4. Expanded (display='open', type='expanded') - Large layout with more space for artifacts
  */
 
-export type AIChatLayoutType = 'collapsed' | 'normal' | 'expanded';
+export type AIChatLayoutDisplay = 'closed' | 'collapsed' | 'open';
+export type AIChatLayoutType = 'normal' | 'expanded';
 
 export interface AIChatLayoutButton {
   /**
@@ -47,12 +49,13 @@ export interface AIChatLayoutProps extends CommonProps {
    */
   type?: 'normal' | 'expanded';
   /**
-   * Whether the layout is open or closed
-   * - true: Shows the full layout with content area (normal or expanded based on type)
-   * - false: Shows only a compact lozenge (collapsed state)
-   * @default true
+   * Display state of the layout
+   * - 'closed': Component is completely hidden
+   * - 'collapsed': Shows only a compact lozenge with header (no content area)
+   * - 'open': Shows the full layout with content area
+   * @default 'open'
    */
-  isOpen?: boolean;
+  display?: AIChatLayoutDisplay;
   /**
    * Callback function called when the collapsed lozenge is clicked
    */
@@ -70,7 +73,7 @@ export interface AIChatLayoutProps extends CommonProps {
    */
   buttons?: AIChatLayoutButton[];
   /**
-   * Main content area (hidden when isOpen is false)
+   * Main content area (hidden when display is 'collapsed' or 'closed')
    */
   children?: React.ReactNode;
   /**
@@ -82,7 +85,7 @@ export interface AIChatLayoutProps extends CommonProps {
 function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   const {
     type = 'normal',
-    isOpen = true,
+    display = 'open',
     onCollapsedClick: onOpen = () => {},
     icon,
     title,
@@ -93,9 +96,11 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     ...otherProps
   } = props;
 
-  const effectiveType: AIChatLayoutType = isOpen ? type : 'collapsed';
+  if (display === 'closed') {
+    return null;
+  }
 
-  const styles = getStyles({ type: effectiveType, isOpen });
+  const styles = getStyles({ display, type });
 
   return (
     <Flex
@@ -107,7 +112,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
       <Flex
         className={styles.header}
         testId={`${testId}-header`}
-        onClick={!isOpen ? onOpen : undefined}
+        onClick={display === 'collapsed' ? onOpen : undefined}
       >
         {icon && (
           <Box className={styles.icon} testId={`${testId}-icon`}>
@@ -151,7 +156,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
         )}
       </Flex>
 
-      <Collapse isExpanded={isOpen}>
+      <Collapse isExpanded={display === 'open'}>
         <Box className={styles.content} testId={`${testId}-content`}>
           {children}
         </Box>
