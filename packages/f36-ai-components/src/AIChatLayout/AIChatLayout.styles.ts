@@ -6,17 +6,17 @@ import type { AIChatLayoutDisplay } from './AIChatLayout';
 
 interface StyleProps {
   display?: AIChatLayoutDisplay;
-  type?: 'normal' | 'expanded';
+  variant?: 'normal' | 'expanded';
 }
 
 export const getStyles = (props: StyleProps = {}) => {
-  const { display = 'open', type = 'normal' } = props;
+  const { display = 'open', variant = 'normal' } = props;
 
   const isOpen = display === 'open';
 
   return {
     root: css({
-      width: type === 'expanded' ? '985px' : '350px',
+      width: variant === 'expanded' && isOpen ? '985px' : '350px',
       transition: `width ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       backgroundColor: tokens.colorWhite,
       display: 'flex',

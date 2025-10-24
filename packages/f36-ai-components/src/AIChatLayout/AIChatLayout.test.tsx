@@ -97,13 +97,15 @@ describe('AIChatLayout', () => {
     ).not.toBeInTheDocument();
   });
 
-  it('handles different layout types', () => {
-    const { rerender } = render(<AIChatLayout display="open" type="normal" />);
+  it('handles different layout variants', () => {
+    const { rerender } = render(
+      <AIChatLayout display="open" variant="normal" />,
+    );
 
     let root = screen.getByTestId('cf-ui-ai-chat-layout');
     expect(root).toBeTruthy();
 
-    rerender(<AIChatLayout display="open" type="expanded" />);
+    rerender(<AIChatLayout display="open" variant="expanded" />);
 
     root = screen.getByTestId('cf-ui-ai-chat-layout');
     expect(root).toBeTruthy();
