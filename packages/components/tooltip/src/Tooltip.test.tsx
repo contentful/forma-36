@@ -42,7 +42,7 @@ describe('Tooltip', () => {
     );
   });
 
-  // Enable again once emotion/jest is compatible again
+  // TODO: Enable again once emotion/jest is compatible again
   // it('renders the component with an additional class name', async () => {
   //   const user = userEvent.setup();
   //   render(
