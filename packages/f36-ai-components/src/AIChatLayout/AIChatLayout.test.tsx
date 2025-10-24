@@ -6,7 +6,7 @@ import React from 'react';
 import { AIChatLayout } from './AIChatLayout';
 
 const defaultProps = {
-  isOpen: true,
+  display: 'open' as const,
   title: 'Test Agent',
   icon: <StarIcon />,
 };
@@ -70,32 +70,40 @@ describe('AIChatLayout', () => {
   });
 
   it('renders children content when open', () => {
-    render(<AIChatLayout isOpen={true}>Test content</AIChatLayout>);
+    render(<AIChatLayout display="open">Test content</AIChatLayout>);
 
     expect(
       screen.getByTestId('cf-ui-ai-chat-layout-content'),
     ).toHaveTextContent('Test content');
   });
 
-  it('hides content when closed', () => {
-    render(<AIChatLayout isOpen={false}>Test content</AIChatLayout>);
+  it('hides content when collapsed', () => {
+    render(<AIChatLayout display="collapsed">Test content</AIChatLayout>);
     const content = screen.getByTestId('cf-ui-ai-chat-layout-content');
 
     // Content should be hidden via Collapse component but still in DOM
     expect(content).toHaveTextContent('Test content');
 
-    // The collapse component should set aria-hidden="true" when closed
+    // The collapse component should set aria-hidden="true" when collapsed
     const collapseContainer = content.closest('[data-test-id="cf-collapse"]');
     expect(collapseContainer).toHaveAttribute('aria-hidden', 'true');
   });
 
+  it('does not render when closed', () => {
+    render(<AIChatLayout display="closed">Test content</AIChatLayout>);
+
+    expect(
+      screen.queryByTestId('cf-ui-ai-chat-layout'),
+    ).not.toBeInTheDocument();
+  });
+
   it('handles different layout types', () => {
-    const { rerender } = render(<AIChatLayout isOpen={true} type="normal" />);
+    const { rerender } = render(<AIChatLayout display="open" type="normal" />);
 
     let root = screen.getByTestId('cf-ui-ai-chat-layout');
     expect(root).toBeTruthy();
 
-    rerender(<AIChatLayout isOpen={true} type="expanded" />);
+    rerender(<AIChatLayout display="open" type="expanded" />);
 
     root = screen.getByTestId('cf-ui-ai-chat-layout');
     expect(root).toBeTruthy();
@@ -143,11 +151,11 @@ describe('AIChatLayout', () => {
     expect(mockOnClick).toHaveBeenCalledTimes(1);
   });
 
-  it('calls onOpen when header is clicked and layout is closed', async () => {
+  it('calls onCollapsedClick when header is clicked and layout is collapsed', async () => {
     const user = userEvent.setup();
     const mockOnOpen = jest.fn();
 
-    render(<AIChatLayout isOpen={false} onCollapsedClick={mockOnOpen} />);
+    render(<AIChatLayout display="collapsed" onCollapsedClick={mockOnOpen} />);
 
     const header = screen.getByTestId('cf-ui-ai-chat-layout-header');
     await user.click(header);
@@ -155,11 +163,11 @@ describe('AIChatLayout', () => {
     expect(mockOnOpen).toHaveBeenCalledTimes(1);
   });
 
-  it('does not call onOpen when header is clicked and layout is open', async () => {
+  it('does not call onCollapsedClick when header is clicked and layout is open', async () => {
     const user = userEvent.setup();
     const mockOnOpen = jest.fn();
 
-    render(<AIChatLayout isOpen={true} onCollapsedClick={mockOnOpen} />);
+    render(<AIChatLayout display="open" onCollapsedClick={mockOnOpen} />);
 
     const header = screen.getByTestId('cf-ui-ai-chat-layout-header');
     await user.click(header);
@@ -221,11 +229,24 @@ describe('AIChatLayout', () => {
     expect(results).toHaveNoViolations();
   });
 
+  it('has no a11y issues when collapsed', async () => {
+    const { container } = render(
+      <AIChatLayout {...defaultProps} display="collapsed">
+        <p>Accessible content when collapsed</p>
+      </AIChatLayout>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
   it('has no a11y issues when closed', async () => {
     const { container } = render(
-      <AIChatLayout {...defaultProps} isOpen={false}>
-        <p>Accessible content when closed</p>
-      </AIChatLayout>,
+      <div>
+        <AIChatLayout {...defaultProps} display="closed">
+          <p>Accessible content when closed</p>
+        </AIChatLayout>
+      </div>,
     );
 
     const results = await axe(container);

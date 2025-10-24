@@ -1,4 +1,4 @@
-import { Icon, Text } from '@contentful/f36-components';
+import { Button, Icon, Text } from '@contentful/f36-components';
 import * as icons from '@contentful/f36-icons';
 import { action } from '@storybook/addon-actions';
 import React, { useEffect, useState } from 'react';
@@ -13,15 +13,17 @@ export default {
     docs: {
       description: {
         component: `
-AIChatLayout supports 3 layout states controlled by \`isOpen\` and \`type\` props:
-1. **Closed** (isOpen=false) - Compact lozenge with icon, title, and buttons (no children)
+AIChatLayout supports 4 layout states controlled by \`display\` and \`type\` props:
+1. **Closed** (display='closed') - Component is completely hidden
 
-2. **Normal** (isOpen=true, type='normal') - Standard layout with header and content area (360px width)
+2. **Collapsed** (display='collapsed') - Compact lozenge with icon, title, and buttons (no content area)
 
-3. **Expanded** (isOpen=true, type='expanded') - Large layout with more space (480px width)
+3. **Normal** (display='open', type='normal') - Standard layout with header and content area (360px width)
 
-Use \`isOpen\` to control whether the layout is open or closed, and \`type\` to control the size when open.
-The \`onChange\` callback is called when the open state should change.
+4. **Expanded** (display='open', type='expanded') - Large layout with more space (480px width)
+
+Use \`display\` to control the visibility and layout state, and \`type\` to control the size when open.
+The \`onCollapsedClick\` callback is called when the collapsed lozenge is clicked.
         `,
       },
       source: {
@@ -33,6 +35,10 @@ The \`onChange\` callback is called when the open state should change.
     type: {
       control: 'select',
       options: ['normal', 'expanded'],
+    },
+    display: {
+      control: 'select',
+      options: ['closed', 'collapsed', 'open'],
     },
     buttons: {
       type: 'string',
@@ -48,7 +54,7 @@ The \`onChange\` callback is called when the open state should change.
       type: 'string',
     },
     children: { control: { disable: true } },
-    onOpen: { control: { disable: true } },
+    onCollapsedClick: { control: { disable: true } },
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
     style: { control: { disable: true } },
@@ -58,17 +64,17 @@ The \`onChange\` callback is called when the open state should change.
 export const Basic = ({
   buttons,
   icon,
-  isOpen: initialIsOpen,
+  display: initialDisplay,
   content,
   ...args
 }) => {
-  const [isOpen, setIsOpen] = useState(initialIsOpen);
+  const [display, setDisplay] = useState(initialDisplay);
 
   useEffect(() => {
-    setIsOpen(initialIsOpen);
-  }, [initialIsOpen]);
+    setDisplay(initialDisplay);
+  }, [initialDisplay]);
 
-  const styles = getStyles({ isOpen });
+  const styles = getStyles({ display });
 
   const availableButtons = [
     {
@@ -77,7 +83,7 @@ export const Basic = ({
         <icons.ClockCounterClockwiseIconIcon className={styles.buttonIcon} />
       ),
       onClick: action('view-threads'),
-      display: isOpen === true,
+      display: display === 'open',
       ariaLabel: 'View threads',
       testId: 'view-threads',
     },
@@ -86,9 +92,9 @@ export const Basic = ({
       icon: <icons.CaretUpIcon className={styles.buttonIcon} />,
       onClick: () => {
         action('open-chat')();
-        setIsOpen(true);
+        setDisplay('open');
       },
-      display: isOpen === false,
+      display: display === 'collapsed',
       ariaLabel: 'Open chat',
       testId: 'open-button',
     },
@@ -97,38 +103,52 @@ export const Basic = ({
       icon: <icons.CaretDownIcon className={styles.buttonIcon} />,
       onClick: () => {
         action('minimize-chat')();
-        setIsOpen(false);
+        setDisplay('collapsed');
       },
-      display: isOpen === true,
+      display: display === 'open',
       ariaLabel: 'Minimize chat',
       testId: 'minimize-button',
     },
     {
       id: 'close',
       icon: <icons.XIcon className={styles.buttonIcon} />,
-      onClick: action('close-chat'),
-      display: isOpen === true,
+      onClick: () => {
+        action('close-chat');
+        setDisplay('closed');
+        setShowButton(true);
+      },
+      display: display === 'open',
       ariaLabel: 'Close chat',
       testId: 'close-button',
     },
   ];
 
+  const [showButton, setShowButton] = useState(false);
+
+  const onButtonClick = () => {
+    setShowButton(false);
+    setDisplay('collapsed');
+  };
+
   return (
-    <AIChatLayout
-      {...args}
-      isOpen={isOpen}
-      onCollapsedClick={() => setIsOpen(true)}
-      icon={
-        icon ? (
-          <Icon as={icons[icon]} className={styles.aiGradientIcon} />
-        ) : null
-      }
-      buttons={availableButtons.filter((button) =>
-        buttons?.includes(button.id),
-      )}
-    >
-      <Text>{content}</Text>
-    </AIChatLayout>
+    <>
+      <AIChatLayout
+        {...args}
+        display={display}
+        onCollapsedClick={() => setDisplay('open')}
+        icon={
+          icon ? (
+            <Icon as={icons[icon]} className={styles.aiGradientIcon} />
+          ) : null
+        }
+        buttons={availableButtons.filter((button) =>
+          buttons?.includes(button.id),
+        )}
+      >
+        <Text>{content}</Text>
+      </AIChatLayout>
+      {showButton && <Button onClick={onButtonClick}>Show component</Button>}
+    </>
   );
 };
 
@@ -136,7 +156,7 @@ Basic.args = {
   title: 'Translation Agent',
   icon: 'TranslateIcon',
   buttons: ['open', 'minimize', 'close', 'threads'],
-  isOpen: false,
+  display: 'collapsed',
   content:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 };

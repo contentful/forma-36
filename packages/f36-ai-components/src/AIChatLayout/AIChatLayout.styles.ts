@@ -2,13 +2,17 @@ import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
 import { css } from 'emotion';
 
+import type { AIChatLayoutDisplay } from './AIChatLayout';
+
 interface StyleProps {
-  type?: 'collapsed' | 'normal' | 'expanded';
-  isOpen?: boolean;
+  display?: AIChatLayoutDisplay;
+  type?: 'normal' | 'expanded';
 }
 
 export const getStyles = (props: StyleProps = {}) => {
-  const { type = 'normal', isOpen = true } = props;
+  const { display = 'open', type = 'normal' } = props;
+
+  const isOpen = display === 'open';
 
   return {
     root: css({
@@ -35,7 +39,7 @@ export const getStyles = (props: StyleProps = {}) => {
       borderBottom: isOpen
         ? `1px solid ${hexToRGBA(tokens.gray900, 0.05)}`
         : '0',
-      cursor: !isOpen ? 'pointer' : 'auto',
+      cursor: display === 'collapsed' ? 'pointer' : 'auto',
     }),
 
     icon: css({
