@@ -14,40 +14,44 @@ export const TooltipTrigger = React.forwardRef<
   const baseRef = useMergeRefs([propRef, context.refs.setReference]);
   const ref = useMergeRefs([childRef, baseRef]);
 
-  if (React.isValidElement(children)) {
-    const childType = typeof children.type;
-    const childProps = children.props as Record<string, unknown>;
-    const ariaHasPopup = (childProps['aria-haspopup'] ??
-      'dialog') as React.AriaAttributes['aria-haspopup'];
-    if (childType !== 'function' && childType !== 'symbol') {
-      return React.cloneElement(
-        children,
-        context.getReferenceProps({
-          ...otherProps,
-          ...childProps,
-          ref: ref,
-          role: 'button',
-          'aria-expanded': context.isOpen,
-          'aria-describedby': tooltipId,
-          'aria-haspopup': ariaHasPopup,
-        }),
-      );
-    }
+  if (!React.isValidElement(children)) {
+    console.error(
+      'Only valid React elements are supported - https://react.dev/reference/react/isValidElement',
+    );
+    return null;
+  }
 
-    return (
-      <span
-        {...context.getReferenceProps({
-          ...otherProps,
-          ref: baseRef,
-          role: 'button',
-          'aria-expanded': context.isOpen,
-          'aria-describedby': tooltipId,
-          'aria-haspopup': ariaHasPopup,
-        })}
-      >
-        {children}
-      </span>
+  const childType = typeof children.type;
+  const childProps = children.props as Record<string, unknown>;
+  const ariaHasPopup = (childProps['aria-haspopup'] ??
+    'dialog') as React.AriaAttributes['aria-haspopup'];
+  if (childType !== 'function' && childType !== 'symbol') {
+    return React.cloneElement(
+      children,
+      context.getReferenceProps({
+        ...otherProps,
+        ...childProps,
+        ref: ref,
+        role: 'button',
+        'aria-expanded': context.isOpen,
+        'aria-describedby': tooltipId,
+        'aria-haspopup': ariaHasPopup,
+      }),
     );
   }
-  return null;
+
+  return (
+    <span
+      {...context.getReferenceProps({
+        ...otherProps,
+        ref: baseRef,
+        role: 'button',
+        'aria-expanded': context.isOpen,
+        'aria-describedby': tooltipId,
+        'aria-haspopup': ariaHasPopup,
+      })}
+    >
+      {children}
+    </span>
+  );
 });

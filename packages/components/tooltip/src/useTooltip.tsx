@@ -13,7 +13,9 @@ import {
   arrow,
   shift,
   flip,
+  safePolygon,
   type Placement,
+  type Middleware,
 } from '@floating-ui/react';
 import type { TooltipPlacement } from './Tooltip';
 
@@ -36,7 +38,7 @@ export function useTooltip({
   const [isOpen, setIsOpen] = React.useState(isVisible);
 
   let sanitizedPlacement: Placement = 'top';
-  const middleware = [];
+  const middleware: Middleware[] = [];
 
   if (placement === 'auto') {
     middleware.push(autoPlacement({ padding: 5 }));
@@ -47,7 +49,7 @@ export function useTooltip({
 
   if (
     sanitizedPlacement.startsWith('right') ||
-    sanitizedPlacement.toString().startsWith('left') ||
+    sanitizedPlacement.startsWith('left') ||
     placement === 'auto'
   ) {
     middleware.push(offset({ mainAxis: 10 }));
@@ -73,6 +75,7 @@ export function useTooltip({
   const context = data.context;
 
   const hover = useHover(context, {
+    handleClose: safePolygon({ requireIntent: false }),
     delay: { open: showDelay, close: hideDelay },
   });
   const focus = useFocus(context);
@@ -90,6 +93,6 @@ export function useTooltip({
       ...interactions,
       ...data,
     }),
-    [isOpen, setIsOpen, arrowRef, usePortal, interactions, data],
+    [isOpen, usePortal, interactions, data],
   );
 }
