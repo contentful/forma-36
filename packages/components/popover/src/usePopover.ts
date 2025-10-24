@@ -12,7 +12,7 @@ import {
   useInteractions,
   autoPlacement,
 } from '@floating-ui/react';
-import type { OffsetOptions, Placement } from '@floating-ui/react';
+import type { Middleware, OffsetOptions, Placement } from '@floating-ui/react';
 
 export interface PopoverOptions {
   placement?: Placement | 'auto';
@@ -55,7 +55,7 @@ export function usePopover({
    */
 
   let sanitizedPlacement: Placement = 'bottom-start';
-  const middleware = [offset(offsetOption)];
+  const middleware: Middleware[] = [offset(offsetOption)];
 
   if (placement !== 'auto' && isAutoalignmentEnabled) {
     sanitizedPlacement = placement;
