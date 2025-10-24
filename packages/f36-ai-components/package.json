@@ -19,6 +19,12 @@
   "dependencies": {
     "@contentful/f36-core": "^5.0.0",
     "@contentful/f36-tokens": "^5.0.0",
+    "@tiptap/extension-document": "^2.26.3",
+    "@tiptap/extension-history": "^2.26.3",
+    "@tiptap/extension-placeholder": "^2.26.3",
+    "@tiptap/extension-text": "^2.26.3",
+    "@tiptap/pm": "^2.26.3",
+    "@tiptap/react": "^2.26.3",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
@@ -32,5 +38,8 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "access": "public"
+  },
+  "devDependencies": {
+    "@tiptap/extension-mention": "^2.26.4"
   }
 }
