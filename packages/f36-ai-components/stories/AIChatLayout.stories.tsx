@@ -11,21 +11,6 @@ export default {
   title: 'Components/AIChatLayout',
   parameters: {
     docs: {
-      description: {
-        component: `
-AIChatLayout supports 4 layout states controlled by \`display\` and \`variant\` props:
-1. **Closed** (display='closed') - Component is completely hidden
-
-2. **Collapsed** (display='collapsed') - Compact lozenge with icon, title, and buttons (no content area)
-
-3. **Normal** (display='open', variant='normal') - Standard layout with header and content area (360px width)
-
-4. **Expanded** (display='open', variant='expanded') - Large layout with more space (480px width)
-
-Use \`display\` to control the visibility and layout state, and \`variant\` to control the size when open.
-The \`onCollapsedClick\` callback is called when the collapsed lozenge is clicked.
-        `,
-      },
       source: {
         type: 'code',
       },

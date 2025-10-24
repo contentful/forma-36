@@ -4,16 +4,6 @@ import { cx } from 'emotion';
 import React, { forwardRef, useEffect, useState, type Ref } from 'react';
 import { getStyles } from './AIChatLayout.styles';
 
-/**
- * AIChatLayout - A flexible layout component for AI chat interfaces
- *
- * Supports 4 layout states controlled by the display and variant props:
- * 1. Closed (display='closed') - Component is completely hidden
- * 2. Collapsed (display='collapsed') - Compact lozenge with icon, title, and buttons (no content area)
- * 3. Normal (display='open', variant='normal') - Standard copilot layout with header and content area
- * 4. Expanded (display='open', variant='expanded') - Large layout with more space for artifacts
- */
-
 export type AIChatLayoutDisplay = 'closed' | 'collapsed' | 'open';
 export type AIChatLayoutVariant = 'normal' | 'expanded';
 
@@ -210,4 +200,14 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   );
 }
 
+/**
+ * AIChatLayout supports 4 layout states controlled by `display` and `variant` props:
+ * 1. **Closed** (display='closed') - Component is completely hidden
+ * 2. **Collapsed** (display='collapsed') - Compact lozenge with icon, title, and buttons (no content area)
+ * 3. **Normal** (display='open', variant='normal') - Standard layout with header and content area (360px width)
+ * 4. **Expanded** (display='open', variant='expanded') - Large layout with more space (480px width)
+ *
+ * Use `display` to control the visibility and layout state, and `variant` to control the size when open.
+ * The `onCollapsedClick` callback is called when the collapsed lozenge is clicked.
+ */
 export const AIChatLayout = forwardRef(_AIChatLayout);
