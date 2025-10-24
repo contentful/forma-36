@@ -7,17 +7,27 @@ import type { AIChatLayoutDisplay } from './AIChatLayout';
 interface StyleProps {
   display?: AIChatLayoutDisplay;
   variant?: 'normal' | 'expanded';
+  isAnimatingOut?: boolean;
 }
 
 export const getStyles = (props: StyleProps = {}) => {
-  const { display = 'open', variant = 'normal' } = props;
+  const {
+    display = 'open',
+    variant = 'normal',
+    isAnimatingOut = false,
+  } = props;
 
-  const isOpen = display === 'open';
+  const isOpen = display !== 'collapsed';
 
   return {
     root: css({
+      position: 'fixed',
+      bottom: tokens.spacing2Xs,
+      right: tokens.spacingXs,
       width: variant === 'expanded' && isOpen ? '985px' : '350px',
-      transition: `width ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
+      transition: `width ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
+      transform: isAnimatingOut ? 'translateX(50%)' : 'translateX(0)',
+      opacity: isAnimatingOut ? 0 : 1,
       backgroundColor: tokens.colorWhite,
       display: 'flex',
       flexDirection: 'column',

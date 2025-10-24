@@ -1,7 +1,7 @@
 import { Collapse, IconButton } from '@contentful/f36-components';
 import { Box, Flex, type CommonProps } from '@contentful/f36-core';
 import { cx } from 'emotion';
-import React, { forwardRef, type Ref } from 'react';
+import React, { forwardRef, useEffect, useState, type Ref } from 'react';
 import { getStyles } from './AIChatLayout.styles';
 
 /**
@@ -96,11 +96,41 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     ...otherProps
   } = props;
 
-  if (display === 'closed') {
+  const [isAnimatingOut, setIsAnimatingOut] = useState(false);
+  const [shouldRender, setShouldRender] = useState(display !== 'closed');
+
+  // Handle the slide-out animation when display becomes 'closed'
+  useEffect(() => {
+    if (display === 'closed') {
+      if (shouldRender && !isAnimatingOut) {
+        setIsAnimatingOut(true);
+        // Hide the component after animation completes (200ms)
+        const timer = setTimeout(() => {
+          setShouldRender(false);
+          setIsAnimatingOut(false);
+        }, 200);
+
+        // Return cleanup function to clear timer if component unmounts or effect re-runs
+        return () => {
+          clearTimeout(timer);
+        };
+      }
+    } else {
+      // Show the component when it should be visible again
+      if (!shouldRender) {
+        setShouldRender(true);
+      }
+      if (isAnimatingOut) {
+        setIsAnimatingOut(false);
+      }
+    }
+  }, [display, shouldRender]);
+
+  if (!shouldRender) {
     return null;
   }
 
-  const styles = getStyles({ display, variant });
+  const styles = getStyles({ display, variant, isAnimatingOut });
 
   return (
     <Flex
@@ -156,7 +186,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
         )}
       </Flex>
 
-      <Collapse isExpanded={display === 'open'}>
+      <Collapse isExpanded={display !== 'collapsed'}>
         <Box className={styles.content} testId={`${testId}-content`}>
           {children}
         </Box>
