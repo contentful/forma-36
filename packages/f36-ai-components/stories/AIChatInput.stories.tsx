@@ -1,4 +1,4 @@
-import type { Meta, Story } from '@storybook/react';
+import type { Story } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import React from 'react';
 
@@ -44,14 +44,13 @@ const Template: React.FC<
   );
 };
 
-const meta = {
+export default {
   title: 'Components/AIChatInput',
   component: AIChatInput,
   args: DEFAULT_ARGS,
   render: Template,
   parameters: { propTypes: [AIChatInput['__docgenInfo']] },
-} satisfies Meta<AIChatInputProps>;
-export default meta;
+};
 
 export const Default = {};
 

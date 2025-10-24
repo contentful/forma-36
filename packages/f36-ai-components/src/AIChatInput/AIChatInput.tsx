@@ -5,17 +5,14 @@ import { IconButton } from '@contentful/f36-button';
 import { ArrowUpIcon } from '@contentful/f36-icons';
 import { Card } from '@contentful/f36-card';
 import { Box, Flex, type CommonProps } from '@contentful/f36-core';
-import {
-  Editor,
-  EditorContent,
-  useEditor,
-  UseEditorOptions,
-} from '@tiptap/react';
+import { Editor, EditorContent, useEditor } from '@tiptap/react';
 import Document from '@tiptap/extension-document';
 import History from '@tiptap/extension-history';
 import Paragraph from '@tiptap/extension-paragraph';
 import Placeholder from '@tiptap/extension-placeholder';
 import Text from '@tiptap/extension-text';
+
+type UseEditorOptions = Parameters<typeof useEditor>[0];
 
 export interface AIChatInputProps extends CommonProps {
   /** Initial content of the input field. See [here](https://tiptap.dev/docs/editor/api/editor#content) */
@@ -57,8 +54,8 @@ function _AIChatInput(props: AIChatInputProps, ref: React.Ref<HTMLDivElement>) {
     if (isSteaming) return;
     props.onSubmit?.(...args);
   };
-  const editorRef: React.MutableRefObject<Editor> =
-    props.editorRef || useRef<Editor>(null);
+  const internalEditorRef = useRef<Editor>(null);
+  const editorRef = props.editorRef || internalEditorRef;
 
   return (
     <Box testId={testId} className={className} style={style} ref={ref}>
