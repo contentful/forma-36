@@ -1,6 +1,6 @@
 import React from 'react';
 import { InlineEntryCard } from '@contentful/f36-components';
-//import { InlineEntryCard, MenuItem} from '@contentful/f36-components';
+// TODO - FIXME import { InlineEntryCard, MenuItem} from '@contentful/f36-components';
 
 export default function BasicInlineEntryCardExample() {
   return (
