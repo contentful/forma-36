@@ -22,7 +22,7 @@ export interface AIChatInputProps extends CommonProps {
   /** Placeholder text for the input field */
   placeholder?: string;
   /** Indicates if the AI is currently streaming a response */
-  isSteaming?: boolean;
+  isStreaming?: boolean;
   /** Handler for submit button click */
   onSubmit: (editor: Editor) => void;
   /** Handler for stop button click */
@@ -42,7 +42,7 @@ function _AIChatInput(props: AIChatInputProps, ref: React.Ref<HTMLDivElement>) {
     style,
     placeholder,
     onStop,
-    isSteaming,
+    isStreaming,
     promptInputTools,
     initialContent,
     onUpdate,
@@ -51,7 +51,7 @@ function _AIChatInput(props: AIChatInputProps, ref: React.Ref<HTMLDivElement>) {
   const styles = getStyles();
   const onSubmit: AIChatInputProps['onSubmit'] = (...args) => {
     // Block submits while streaming
-    if (isSteaming) return;
+    if (isStreaming) return;
     props.onSubmit?.(...args);
   };
   const internalEditorRef = useRef<Editor>(null);
@@ -75,7 +75,7 @@ function _AIChatInput(props: AIChatInputProps, ref: React.Ref<HTMLDivElement>) {
           <Flex alignItems="bottom" className={styles.inputActions}>
             <AIChatSubmitButton
               testId={testId}
-              isSteaming={isSteaming}
+              isStreaming={isStreaming}
               onSubmit={onSubmit}
               onStop={onStop}
               editorRef={editorRef}
@@ -179,13 +179,13 @@ const AIChatInputTextArea: React.FC<AIChatInputTextAreaProps> = ({
 
 type AIChatSubmitButtonProps = Pick<
   AIChatInputProps,
-  'isSteaming' | 'onSubmit' | 'onStop'
+  'isStreaming' | 'onSubmit' | 'onStop'
 > &
   Required<Pick<AIChatInputProps, 'testId' | 'onSubmit' | 'editorRef'>>;
 
 const AIChatSubmitButton: React.FC<AIChatSubmitButtonProps> = ({
   testId,
-  isSteaming,
+  isStreaming,
   onSubmit,
   onStop,
   editorRef,
@@ -213,7 +213,7 @@ const AIChatSubmitButton: React.FC<AIChatSubmitButtonProps> = ({
     />
   );
 
-  return !isSteaming ? submitButton : stopButton;
+  return !isStreaming ? submitButton : stopButton;
 };
 
 /**

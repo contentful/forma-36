@@ -25,7 +25,7 @@ export const getStyles = () => {
       borderColor: tokens.gray900,
     }),
     inputActions: css({
-      marginTop: tokens.spacingM,
+      marginTop: tokens.spacing2Xs,
     }),
   };
 };

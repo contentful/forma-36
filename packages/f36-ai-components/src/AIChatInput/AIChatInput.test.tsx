@@ -45,7 +45,7 @@ describe('AIChatInput', () => {
     const onSubmitMock = jest.fn();
     render(
       <AIChatInput
-        isSteaming={false}
+        isStreaming={false}
         onSubmit={onSubmitMock}
         onStop={() => {}}
       />,
@@ -63,7 +63,11 @@ describe('AIChatInput', () => {
   it('renders the stop button when streaming and calls onStop when clicked', () => {
     const onStopMock = jest.fn();
     render(
-      <AIChatInput isSteaming={true} onSubmit={() => {}} onStop={onStopMock} />,
+      <AIChatInput
+        isStreaming={true}
+        onSubmit={() => {}}
+        onStop={onStopMock}
+      />,
     );
 
     const stopButton = screen.getByTestId('cf-ui-ai-chat-input-stop-button');

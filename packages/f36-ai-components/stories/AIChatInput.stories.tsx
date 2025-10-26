@@ -22,23 +22,29 @@ const DEFAULT_ARGS: Partial<AIChatInputProps> = {
 };
 
 const Template: React.FC<
-  Omit<AIChatInputProps, 'setValue' | 'isSteaming' | 'onSubmit' | 'onStop'>
+  Omit<AIChatInputProps, 'setValue' | 'onSubmit' | 'onStop'>
 > = (args) => {
-  const [isSteaming, setIsSteaming] = React.useState(false);
+  const [isStreaming, setIsStreaming] = React.useState(
+    args.isStreaming || false,
+  );
+  React.useEffect(() => {
+    setIsStreaming(args.isStreaming || false);
+  }, [args.isStreaming]);
+
   return (
     <AIChatInput
       {...args}
-      isSteaming={isSteaming}
+      isStreaming={isStreaming}
       onUpdate={(content) => {
         action('onUpdate')(content);
       }}
       onSubmit={(editor) => {
         action('onSubmit')(editor);
-        setIsSteaming(true);
+        setIsStreaming(true);
       }}
       onStop={() => {
         action('onStop')();
-        setIsSteaming(false);
+        setIsStreaming(false);
       }}
     />
   );
