@@ -3,6 +3,7 @@ import { Box, Flex, type CommonProps } from '@contentful/f36-core';
 import { cx } from 'emotion';
 import React, { forwardRef, useEffect, useState, type Ref } from 'react';
 import { getStyles } from './AIChatLayout.styles';
+import { IconGradient } from './IconGradient';
 
 export type AIChatLayoutDisplay = 'closed' | 'collapsed' | 'open';
 export type AIChatLayoutVariant = 'normal' | 'expanded';
@@ -135,9 +136,12 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
         onClick={display === 'collapsed' ? onOpen : undefined}
       >
         {icon && (
-          <Box className={styles.icon} testId={`${testId}-icon`}>
-            {icon}
-          </Box>
+          <>
+            <Box className={styles.icon} testId={`${testId}-icon`}>
+              {icon}
+            </Box>
+            <IconGradient />
+          </>
         )}
 
         {title && (
@@ -181,21 +185,6 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
           {children}
         </Box>
       </Collapse>
-
-      <svg xmlns="http://www.w3.org/2000/svg" width={0} height={0}>
-        <defs>
-          <linearGradient
-            id="icon-gradient"
-            gradientTransform="rotate(46.64 .5 .5)"
-            gradientUnits="objectBoundingBox"
-          >
-            <stop offset="19.41%" stopColor="#1872E5" />
-            <stop offset="38.04%" stopColor="#8C2EEA" />
-            <stop offset="56.68%" stopColor="#E65325" />
-            <stop offset="75.31%" stopColor="#EAAF09" />
-          </linearGradient>
-        </defs>
-      </svg>
     </Flex>
   );
 }
