@@ -26,10 +26,8 @@ export const getStyles = () => {
       borderRadius: 2,
       borderColor: tokens.gray900,
     }),
-    inputActions: css({}),
     inputActionsContainer: css({
       position: 'relative',
-      marginTop: 0,
       '&::before': {
         content: "''",
         position: 'absolute',
@@ -41,6 +39,9 @@ export const getStyles = () => {
           'linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1))',
         pointerEvents: 'none' /* allows clicks through the gradient */,
       },
+    }),
+    inputActions: css({
+      marginTop: tokens.spacing2Xs,
     }),
   };
 };
