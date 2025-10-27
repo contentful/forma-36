@@ -1,5 +1,5 @@
 const borderRadius = {
-  'nem': 'value',
+  'name': 'value',
 };
 
 module.exports = borderRadiusSemantic;
