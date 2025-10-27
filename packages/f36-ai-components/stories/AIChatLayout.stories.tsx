@@ -1,16 +1,156 @@
-import type { Meta, Story } from '@storybook/react/types-6-0';
-import React from 'react';
+import { Button, Icon, Text } from '@contentful/f36-components';
+import * as icons from '@contentful/f36-icons';
+import { action } from '@storybook/addon-actions';
+import React, { useEffect, useState } from 'react';
 
-import {
-  AIChatLayout,
-  type AIChatLayoutProps,
-} from '../src/AIChatLayout/AIChatLayout';
+import { AIChatLayout } from '../src/AIChatLayout/AIChatLayout';
+import { getStyles } from '../src/AIChatLayout/AIChatLayout.styles';
 
 export default {
   component: AIChatLayout,
   title: 'Components/AIChatLayout',
-} as Meta;
+  parameters: {
+    docs: {
+      source: {
+        type: 'code',
+      },
+    },
+  },
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['normal', 'expanded'],
+    },
+    display: {
+      control: 'select',
+      options: ['closed', 'collapsed', 'open'],
+    },
+    buttons: {
+      type: 'string',
+      control: 'check',
+      options: ['open', 'minimize', 'close', 'threads'],
+    },
+    icon: {
+      type: 'string',
+      control: 'select',
+      options: ['', ...Object.keys(icons)],
+    },
+    content: {
+      type: 'string',
+    },
+    children: { control: { disable: true } },
+    onCollapsedClick: { control: { disable: true } },
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+    style: { control: { disable: true } },
+  },
+};
 
-export const Default: Story<AIChatLayoutProps> = (args) => {
-  return <AIChatLayout {...args}>AIChatLayout</AIChatLayout>;
+export const Basic = ({
+  buttons,
+  icon,
+  display: initialDisplay,
+  content,
+  ...args
+}) => {
+  const [display, setDisplay] = useState(initialDisplay);
+  const [showButton, setShowButton] = useState(initialDisplay === 'closed');
+
+  useEffect(() => {
+    setDisplay(initialDisplay);
+    setShowButton(initialDisplay === 'closed');
+  }, [initialDisplay]);
+
+  const onButtonClick = () => {
+    setShowButton(false);
+    setDisplay('collapsed');
+  };
+
+  const styles = getStyles({ display });
+
+  const isCollapsed = display === 'collapsed';
+
+  const availableButtons = [
+    {
+      id: 'threads',
+      icon: (
+        <icons.ClockCounterClockwiseIconIcon className={styles.buttonIcon} />
+      ),
+      onClick: action('view-threads'),
+      display: !isCollapsed,
+      ariaLabel: 'View threads',
+      testId: 'view-threads',
+    },
+    {
+      id: 'open',
+      icon: <icons.CaretUpIcon className={styles.buttonIcon} />,
+      onClick: () => {
+        action('open-chat')();
+        setDisplay('open');
+      },
+      display: isCollapsed,
+      ariaLabel: 'Open chat',
+      testId: 'open-button',
+    },
+    {
+      id: 'minimize',
+      icon: <icons.CaretDownIcon className={styles.buttonIcon} />,
+      onClick: () => {
+        action('minimize-chat')();
+        setDisplay('collapsed');
+      },
+      display: !isCollapsed,
+      ariaLabel: 'Minimize chat',
+      testId: 'minimize-button',
+    },
+    {
+      id: 'close',
+      icon: <icons.XIcon className={styles.buttonIcon} />,
+      onClick: () => {
+        action('close-chat');
+        setDisplay('closed');
+        setShowButton(true);
+      },
+      display: !isCollapsed,
+      ariaLabel: 'Close chat',
+      testId: 'close-button',
+    },
+  ];
+
+  return (
+    <>
+      <AIChatLayout
+        {...args}
+        display={display}
+        onCollapsedClick={() => setDisplay('open')}
+        icon={
+          icon ? (
+            <Icon as={icons[icon]} className={styles.aiGradientIcon} />
+          ) : null
+        }
+        buttons={availableButtons.filter((button) =>
+          buttons?.includes(button.id),
+        )}
+      >
+        <Text>{content}</Text>
+      </AIChatLayout>
+      {showButton && (
+        <Button
+          onClick={onButtonClick}
+          style={{ position: 'absolute', top: '50%', left: '50%' }}
+        >
+          Show component
+        </Button>
+      )}
+    </>
+  );
+};
+
+Basic.args = {
+  title: 'Translation Agent',
+  icon: 'TranslateIcon',
+  buttons: ['open', 'minimize', 'close', 'threads'],
+  display: 'collapsed',
+  content:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 };
