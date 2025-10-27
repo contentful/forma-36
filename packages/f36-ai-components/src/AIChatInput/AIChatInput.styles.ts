@@ -42,6 +42,7 @@ export const getStyles = () => {
           'linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1))',
         pointerEvents: 'none' /* allows clicks through the gradient */,
       },
+      marginTop: tokens.spacingM,
     }),
   };
 };
