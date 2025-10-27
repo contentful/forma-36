@@ -27,6 +27,7 @@
     "@contentful/f36-utils": "^5.2.0",
     "@tiptap/extension-document": "^2.26.4",
     "@tiptap/extension-history": "^2.26.4",
+    "@tiptap/extension-paragraph": "^2.26.4",
     "@tiptap/extension-placeholder": "^2.26.4",
     "@tiptap/extension-text": "^2.26.4",
     "@tiptap/pm": "^2.26.4",
