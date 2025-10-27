@@ -6,15 +6,15 @@ import {
   AIChatInput,
   type AIChatInputProps,
 } from '../src/AIChatInput/AIChatInput';
-import { Select } from '@contentful/f36-forms';
-import { PlusIcon } from '@contentful/f36-icons';
-import { IconButton } from '@contentful/f36-button';
+import { PlusIcon, CaretDownIcon } from '@contentful/f36-icons';
+import { Button, IconButton } from '@contentful/f36-button';
 import { Tooltip } from '@contentful/f36-tooltip';
 import { Flex } from '@contentful/f36-core';
 import { range } from 'lodash';
 import Mention from '@tiptap/extension-mention';
 import { List } from '@contentful/f36-list';
 import { Editor } from '@tiptap/react';
+import { Menu } from '@contentful/f36-menu';
 
 const DEFAULT_ARGS: Partial<AIChatInputProps> = {
   style: { width: '400px' },
@@ -86,22 +86,29 @@ const InputTools: React.FC = () => {
       <Tooltip content="Add media to your prompt" placement="bottom">
         <IconButton
           aria-label="Add media"
-          variant="secondary"
+          variant="transparent"
           size="small"
           icon={<PlusIcon />}
         />
       </Tooltip>
-      <Select
-        size="small"
-        value={selectedModel}
-        onChange={(e) => setSelectedModel(e.target.value)}
-      >
-        {models.map((model) => (
-          <Select.Option key={model} value={model}>
-            {model}
-          </Select.Option>
-        ))}
-      </Select>
+      <Menu>
+        <Menu.Trigger>
+          <Button variant="transparent" endIcon={<CaretDownIcon />}>
+            {selectedModel}
+          </Button>
+        </Menu.Trigger>
+        <Menu.List>
+          {models.map((model) => (
+            <Menu.Item
+              key={model}
+              isActive={model === selectedModel}
+              onClick={() => setSelectedModel(model)}
+            >
+              {model}
+            </Menu.Item>
+          ))}
+        </Menu.List>
+      </Menu>
     </>
   );
 };
@@ -149,7 +156,7 @@ export const WithCustomizedEditorStory: Story<AIChatInputProps> = (args) => {
           >
             {/* Adds the '@' character to allow the user to start the mention */}
             <IconButton
-              variant="secondary"
+              variant="transparent"
               aria-label="Add variable"
               size="small"
               icon={<>@</>}

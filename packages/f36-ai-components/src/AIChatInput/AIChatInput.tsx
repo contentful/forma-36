@@ -8,6 +8,16 @@ import { AIChatInputTextArea } from './AIChatTextArea';
 
 type UseEditorOptions = Parameters<typeof useEditor>[0];
 
+function isInteractive(el: Element | null): boolean {
+  if (!el) return false;
+  // If the exact thing you clicked is interactive, or is inside one
+  const interactive = el.closest(
+    'input, textarea, select, button, a[href], [contenteditable], [tabindex]:not([tabindex="-1"])',
+  );
+  // Ignore disabled elements
+  return !!interactive && !(interactive as HTMLInputElement).disabled;
+}
+
 export interface AIChatInputProps extends CommonProps {
   /** Initial content of the input field. See [here](https://tiptap.dev/docs/editor/api/editor#content) */
   initialContent?: UseEditorOptions['content'];
@@ -51,9 +61,20 @@ function _AIChatInput(props: AIChatInputProps, ref: React.Ref<HTMLDivElement>) {
   const internalEditorRef = useRef<Editor>(null);
   const editorRef = props.editorRef || internalEditorRef;
 
+  const handleContainerClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
+    if (!isInteractive(e.target as Element)) {
+      // If anywhere on the container is selected, other than interactive elements,
+      //  then focus the editor
+      editorRef.current?.chain().focus();
+    }
+  };
+
   return (
     <Box testId={testId} className={className} style={style} ref={ref}>
-      <Box className={styles.aiChatInputContainer}>
+      <Box
+        className={styles.aiChatInputContainer}
+        onClick={handleContainerClick}
+      >
         <AIChatInputTextArea
           placeholder={placeholder}
           initialContent={initialContent}
@@ -67,7 +88,10 @@ function _AIChatInput(props: AIChatInputProps, ref: React.Ref<HTMLDivElement>) {
           alignItems="end"
           className={styles.inputActionsContainer}
         >
-          <InputGroup spacing="spacingS" testId={`${testId}-input-tool-group`}>
+          <InputGroup
+            spacing="spacing2Xs"
+            testId={`${testId}-input-tool-group`}
+          >
             {promptInputTools}
           </InputGroup>
           <Flex alignItems="bottom" className={styles.inputActions}>

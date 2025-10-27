@@ -4,9 +4,10 @@ import { css } from 'emotion';
 export const getStyles = () => {
   return {
     aiChatInputContainer: css({
+      cursor: 'text',
       padding: tokens.spacing2Xs,
       boxShadow: tokens.boxShadowDefault,
-      borderRadius: tokens.borderRadiusMedium,
+      borderRadius: 10,
     }),
     editor: css({
       padding: tokens.spacingXs,
@@ -41,7 +42,7 @@ export const getStyles = () => {
       },
     }),
     inputActions: css({
-      marginTop: tokens.spacing2Xs,
+      marginTop: tokens.spacingM,
     }),
   };
 };
