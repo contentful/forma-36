@@ -3,8 +3,10 @@ import { css } from 'emotion';
 
 export const getStyles = () => {
   return {
-    aiChatInputCard: css({
+    aiChatInputContainer: css({
       padding: tokens.spacing2Xs,
+      boxShadow: tokens.boxShadowDefault,
+      borderRadius: tokens.borderRadiusMedium,
     }),
     editor: css({
       padding: tokens.spacingXs,
@@ -26,6 +28,20 @@ export const getStyles = () => {
     }),
     inputActions: css({
       marginTop: tokens.spacing2Xs,
+    }),
+    inputActionsContainer: css({
+      position: 'relative',
+      '&::before': {
+        content: "''",
+        position: 'absolute',
+        top: -5,
+        left: 0,
+        right: 0,
+        height: '6px' /* adjust fade height */,
+        background:
+          'linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1))',
+        pointerEvents: 'none' /* allows clicks through the gradient */,
+      },
     }),
   };
 };
