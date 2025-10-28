@@ -1,7 +1,7 @@
 /* global Promise */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-export interface ModalLauncherComponentRendererProps<T = void> {
+export interface ModalLauncherComponentRendererProps<T = unknown> {
   isShown: boolean;
   onClose: (result?: T) => void;
 }
@@ -58,18 +58,29 @@ async function closeAll(): Promise<void> {
   );
 }
 
-function open<T = void>(
+function open<T = unknown>(
   componentRenderer: (
     props: ModalLauncherComponentRendererProps<T>,
   ) => React.ReactElement,
   options: ModalLauncherOpenOptions = {},
-): Promise<T | undefined> {
+): Promise<T> {
   options = { delay: 300, ...options };
 
   // Allow components to specify if they wish to reuse the modal container
   const rootElId = `modals-root${options.modalId || Date.now()}`;
   const rootDom = getRoot(rootElId);
-  const root = ReactDOM.createRoot(rootDom);
+  let root: ReactDOM.Root;
+  if (openModalsIds.has(rootElId)) {
+    // Reuse the existing root if present
+    const modalData = openModalsIds.get(rootElId);
+    if (modalData) {
+      root = modalData.root;
+    } else {
+      root = ReactDOM.createRoot(rootDom);
+    }
+  } else {
+    root = ReactDOM.createRoot(rootDom);
+  }
 
   return new Promise((resolve) => {
     let currentConfig: ModalLauncherComponentRendererProps<T>;
