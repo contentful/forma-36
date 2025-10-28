@@ -93,7 +93,7 @@ const InputTools: React.FC = () => {
       </Tooltip>
       <Menu>
         <Menu.Trigger>
-          <Button variant="transparent" endIcon={<CaretDownIcon />}>
+          <Button variant="transparent" size="small" endIcon={<CaretDownIcon />}>
             {selectedModel}
           </Button>
         </Menu.Trigger>
