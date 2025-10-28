@@ -15,6 +15,7 @@ export const TooltipTrigger = React.forwardRef<
   const ref = useMergeRefs([childRef, baseRef]);
 
   if (!React.isValidElement(children)) {
+    // eslint-disable-next-line no-console
     console.error(
       'Only valid React elements are supported - https://react.dev/reference/react/isValidElement',
     );
