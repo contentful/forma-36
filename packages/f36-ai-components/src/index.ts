@@ -5,3 +5,4 @@ export type {
   AIChatLayoutProps,
   AIChatLayoutVariant,
 } from './AIChatLayout/AIChatLayout';
+export * from './AIChatInput';
