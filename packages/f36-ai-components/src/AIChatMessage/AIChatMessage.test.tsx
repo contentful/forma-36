@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { AIChatMessage } from './AIChatMessage';
 import { Box } from '@contentful/f36-core';
-import { Button } from '@contentful/f36-button';
 
 // Mocking react-markdown and its plugins as current jest version does not support ESM
 jest.mock('react-markdown', () => ({
@@ -20,7 +19,7 @@ jest.mock('rehype-raw', () => ({
 
 describe('AIChatMessage', () => {
   it('renders the component', () => {
-    render(<AIChatMessage role="user" content="hello world" />);
+    render(<AIChatMessage authorRole="user" content="hello world" />);
     // message is rendered
     expect(screen.getByTestId('cf-ui-ai-chat-message')).toBeTruthy();
     // optional content is not rendered
@@ -34,7 +33,7 @@ describe('AIChatMessage', () => {
     const additionalClassName = 'my-extra-class';
     render(
       <AIChatMessage
-        role="user"
+        authorRole="user"
         content="hello world"
         className={additionalClassName}
       />,
@@ -50,7 +49,7 @@ describe('AIChatMessage', () => {
   it('renders the component with custom testId', () => {
     render(
       <AIChatMessage
-        role="user"
+        authorRole="user"
         content="hello world"
         testId="custom-test-id"
       />,
@@ -62,7 +61,7 @@ describe('AIChatMessage', () => {
   it('renders the optional components', () => {
     render(
       <AIChatMessage
-        role="user"
+        authorRole="user"
         content="hello world"
         additionalContent={<Box>Additional Content</Box>}
         messageActionButtons={<Box>Action Buttons</Box>}

@@ -3,10 +3,10 @@ import { css } from 'emotion';
 import { AIChatMessageRole } from './AIChatMessage';
 
 interface GetStylesParams {
-  role: AIChatMessageRole;
+  authorRole: AIChatMessageRole;
 }
 
-export function getStyles({ role }: GetStylesParams) {
+export function getStyles({ authorRole }: GetStylesParams) {
   return {
     message: css({
       minWidth: 200,
@@ -14,7 +14,7 @@ export function getStyles({ role }: GetStylesParams) {
       margin: 8,
       alignItems: 'center',
       justifyContent: 'flex-end',
-      ...(role === 'user'
+      ...(authorRole === 'user'
         ? {
             borderRadius: '14px 14px 4px 14px;',
             padding: '12px 16px',

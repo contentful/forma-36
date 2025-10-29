@@ -1,4 +1,4 @@
-import { Box, CommonProps, Flex } from '@contentful/f36-core';
+import { Box, type CommonProps, Flex } from '@contentful/f36-core';
 import { forwardRef, Ref } from 'react';
 import { getStyles } from './AIChatMessage.styles';
 import React from 'react';
@@ -12,7 +12,7 @@ export type AIChatMessageRole = 'user' | 'assistant';
 
 export interface AIChatMessageProps extends CommonProps {
   /** Role of the message author */
-  role: AIChatMessageRole;
+  authorRole: AIChatMessageRole;
   /** Message content in markdown format */
   content: string;
   /** Optional custom content to be rendered below the message */
@@ -25,12 +25,12 @@ function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
   const {
     className,
     testId = 'cf-ui-ai-chat-message',
-    role,
+    authorRole,
     content,
     additionalContent,
     messageActionButtons,
   } = props;
-  const styles = getStyles({ role });
+  const styles = getStyles({ authorRole });
 
   return (
     <Box ref={ref} testId={testId} className={className}>
@@ -78,7 +78,7 @@ function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
       {messageActionButtons && (
         <Flex
           testId={`${testId}-actions`}
-          justifyContent={role === 'user' ? 'flex-start' : 'flex-end'}
+          justifyContent={authorRole === 'user' ? 'flex-start' : 'flex-end'}
         >
           {messageActionButtons}
         </Flex>
