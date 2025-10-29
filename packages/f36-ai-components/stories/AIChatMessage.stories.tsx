@@ -58,7 +58,11 @@ const AssistantMessageActions: React.FC = () => (
 
 const Template: React.FC<AIChatMessageProps> = (args) => {
   const messageActions =
-    args.role === 'assistant' ? <AssistantMessageActions /> : <CopyButton />;
+    args.authorRole === 'assistant' ? (
+      <AssistantMessageActions />
+    ) : (
+      <CopyButton />
+    );
   return <AIChatMessage messageActionButtons={messageActions} {...args} />;
 };
 
@@ -88,28 +92,28 @@ const markdown = `
 
 export const UserMessage = {
   args: {
-    role: 'user',
+    authorRole: 'user',
     content: 'Find all entries about butterflies and dogs',
   },
 };
 
 export const AssistantMessage = {
   args: {
-    role: 'assistant',
+    authorRole: 'assistant',
     content: 'Here are the entries about butterflies and dogs you requested.',
   },
 };
 
 export const AssistantMarkdownMessage = {
   args: {
-    role: 'assistant',
+    authorRole: 'assistant',
     content: markdown,
   },
 };
 
 export const AssistantMessageWithAdditionalContent = {
   args: {
-    role: 'assistant',
+    authorRole: 'assistant',
     content:
       '## Entries\n- [Butterflies](#-butterfly-highlights)\n- [Dogs](#-dog-highlights)',
     additionalContent: (
