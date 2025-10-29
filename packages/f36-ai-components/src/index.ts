@@ -6,3 +6,4 @@ export type {
   AIChatLayoutVariant,
 } from './AIChatLayout/AIChatLayout';
 export * from './AIChatInput';
+export * from './AIChatMessage';
