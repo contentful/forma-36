@@ -8,3 +8,4 @@ export type {
 
 export { AIChatArtifactMessage } from './AIChatArtifactMessage/AIChatArtifactMessage';
 export type { AIChatArtifactMessageProps } from './AIChatArtifactMessage/AIChatArtifactMessage';
+export * from './AIChatInput';
