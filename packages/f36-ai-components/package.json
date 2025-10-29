@@ -32,7 +32,10 @@
     "@tiptap/extension-text": "^2.26.4",
     "@tiptap/pm": "^2.26.4",
     "@tiptap/react": "^2.26.4",
-    "emotion": "^10.0.17"
+    "emotion": "^10.0.17",
+    "react-markdown": "^7.1.2",
+    "rehype-raw": "^6.1.1",
+    "remark-gfm": "^3.0.1"
   },
   "peerDependencies": {
     "react": ">=16.8",
