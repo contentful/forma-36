@@ -11,11 +11,11 @@ export interface AIChatArtifactMessageProps extends CommonProps {
   /**
    * Icon component to display in the header
    */
-  icon: React.ReactElement;
+  icon?: React.ReactElement;
   /**
    * Title text to display in the header
    */
-  title: string;
+  title?: string;
 }
 
 function _AIChatArtifactMessage(
