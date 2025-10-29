@@ -171,7 +171,7 @@ export const ControlledFromOutside = () => {
       alignItems="start"
     >
       <Autocomplete<Produce>
-        placeholder="select your favorit fruit"
+        placeholder="select your favorite fruit"
         listMaxHeight={120}
         textOnAfterSelect="preserve"
         items={filteredItems}
