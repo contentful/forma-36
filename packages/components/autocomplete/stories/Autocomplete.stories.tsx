@@ -92,7 +92,7 @@ export const Basic = (args: AutocompleteProps<string>) => {
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<string>
-        {...args}
+        placeholder="select your favorite fruit"
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
