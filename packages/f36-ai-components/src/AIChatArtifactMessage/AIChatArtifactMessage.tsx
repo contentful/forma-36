@@ -22,7 +22,13 @@ function _AIChatArtifactMessage(
   props: AIChatArtifactMessageProps,
   ref: React.Ref<HTMLDivElement>,
 ) {
-  const { children, icon, title, ...otherProps } = props;
+  const {
+    children,
+    icon,
+    title,
+    testId = 'cf-ui-ai-chat-artifact-message',
+    ...otherProps
+  } = props;
 
   if (!title && !icon) {
     return null;
@@ -32,7 +38,7 @@ function _AIChatArtifactMessage(
 
   return (
     <Box
-      data-test-id={props.testId}
+      data-test-id={testId}
       ref={ref}
       className={cx(styles.container, props.className)}
       {...otherProps}

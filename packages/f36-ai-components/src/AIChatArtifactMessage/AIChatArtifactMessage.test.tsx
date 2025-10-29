@@ -1,15 +1,19 @@
-import { render } from '@testing-library/react';
+import { EyeIcon } from '@contentful/f36-icons';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { AIChatArtifactMessage } from './AIChatArtifactMessage';
 
 describe('AIChatArtifactMessage', function () {
   it('renders with both icon and title', () => {
-    const TestIcon = () => <div data-test-id="test-icon">Icon</div>;
     const tree = render(
-      <AIChatArtifactMessage icon={<TestIcon />} title="Test Title">
+      <AIChatArtifactMessage icon={<EyeIcon />} title="Review">
         <div>Test content</div>
       </AIChatArtifactMessage>,
     );
+
+    expect(
+      screen.getByTestId('cf-ui-ai-chat-artifact-message'),
+    ).toBeInTheDocument();
 
     expect(tree.getByTestId('test-icon')).toBeInTheDocument();
     expect(tree.getByText('Test Title')).toBeInTheDocument();
@@ -22,7 +26,8 @@ describe('AIChatArtifactMessage', function () {
       </AIChatArtifactMessage>,
     );
 
-    const headerElements = tree.container.querySelectorAll('[class*="header"]');
-    expect(headerElements).toHaveLength(0);
+    expect(
+      screen.queryByText('cf-ui-ai-chat-artifact-message'),
+    ).not.toBeInTheDocument();
   });
 });

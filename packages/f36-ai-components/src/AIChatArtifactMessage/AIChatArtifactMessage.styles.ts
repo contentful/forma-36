@@ -7,7 +7,6 @@ export const getStyles = () => {
       border: `1px solid ${tokens.gray200}`,
       borderRadius: tokens.borderRadiusMedium,
       backgroundColor: tokens.colorWhite,
-      overflow: 'hidden',
     }),
     header: css({
       backgroundColor: tokens.gray100,
