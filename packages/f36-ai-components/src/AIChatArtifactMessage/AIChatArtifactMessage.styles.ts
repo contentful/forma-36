@@ -4,31 +4,32 @@ import { css } from 'emotion';
 export const getStyles = () => {
   return {
     container: css({
-      border: `1px solid ${tokens.gray300}`,
+      border: `1px solid ${tokens.gray200}`,
       borderRadius: tokens.borderRadiusMedium,
       backgroundColor: tokens.colorWhite,
       overflow: 'hidden',
     }),
     header: css({
       backgroundColor: tokens.gray100,
-      padding: `${tokens.spacingXs} ${tokens.spacingS}`,
-      borderBottom: `1px solid ${tokens.gray300}`,
+      padding: '7px',
       display: 'flex',
       alignItems: 'center',
-      gap: tokens.spacingXs,
+      gap: tokens.spacing2Xs,
     }),
     icon: css({
       display: 'flex',
       alignItems: 'center',
-      color: tokens.gray600,
+      color: tokens.gray500,
+      lineHeight: tokens.lineHeightS,
     }),
     title: css({
-      fontSize: tokens.fontSizeS,
-      fontWeight: tokens.fontWeightMedium,
-      color: tokens.gray700,
       margin: 0,
+      fontSize: tokens.fontSizeS,
+      color: tokens.gray500,
+      lineHeight: tokens.lineHeightS,
     }),
     content: css({
+      borderTop: `1px solid ${tokens.gray200}`,
       padding: tokens.spacingS,
     }),
   };

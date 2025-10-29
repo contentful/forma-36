@@ -32,9 +32,9 @@ export default {
     style: { control: { disable: true } },
   },
   args: {
-    title: 'Generated Code',
-    content: 'const greeting = "Hello from AI!";\nconsole.log(greeting);',
-    icon: 'CodeSimpleIcon',
+    title: 'Review',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: 'EyeIcon',
   },
 } as Meta;
 
