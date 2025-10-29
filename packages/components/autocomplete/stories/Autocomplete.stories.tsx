@@ -268,7 +268,7 @@ export const MultipleSelection = () => {
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<Produce>
-        placeholder="select your favorit fruit"
+        placeholder="select your favorite fruit"
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
