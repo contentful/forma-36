@@ -226,7 +226,7 @@ export const UsingGroupedItems = () => {
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<Produce>
-        placeholder="select your favorit fruit"
+        placeholder="select your favorite fruit"
         selectedItem={selectedItem}
         items={filteredItems}
         isGrouped
