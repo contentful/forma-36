@@ -2,7 +2,7 @@
 
 ## Breaking change: Changed prop types
 
-The Men component introduces two changes:
+The Menu component introduces two changes:
 
 - placement no longer accepts `"auto-start"` and `"auto-end"`
 - offset prop shape changed from a tuple [number, number] to OffsetOptions (number or object)
