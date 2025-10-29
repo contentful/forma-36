@@ -1,20 +1,20 @@
-import type { Story } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import type { Story } from '@storybook/react';
 import React from 'react';
 
+import { Button, IconButton } from '@contentful/f36-button';
+import { Flex } from '@contentful/f36-core';
+import { CaretDownIcon, PlusIcon } from '@contentful/f36-icons';
+import { List } from '@contentful/f36-list';
+import { Menu } from '@contentful/f36-menu';
+import { Tooltip } from '@contentful/f36-tooltip';
+import Mention from '@tiptap/extension-mention';
+import { Editor } from '@tiptap/react';
+import { range } from 'lodash';
 import {
   AIChatInput,
   type AIChatInputProps,
 } from '../src/AIChatInput/AIChatInput';
-import { PlusIcon, CaretDownIcon } from '@contentful/f36-icons';
-import { Button, IconButton } from '@contentful/f36-button';
-import { Tooltip } from '@contentful/f36-tooltip';
-import { Flex } from '@contentful/f36-core';
-import { range } from 'lodash';
-import Mention from '@tiptap/extension-mention';
-import { List } from '@contentful/f36-list';
-import { Editor } from '@tiptap/react';
-import { Menu } from '@contentful/f36-menu';
 
 const DEFAULT_ARGS: Partial<AIChatInputProps> = {
   style: { width: '400px' },
@@ -93,7 +93,11 @@ const InputTools: React.FC = () => {
       </Tooltip>
       <Menu>
         <Menu.Trigger>
-          <Button variant="transparent" size="small" endIcon={<CaretDownIcon />}>
+          <Button
+            variant="transparent"
+            size="small"
+            endIcon={<CaretDownIcon />}
+          >
             {selectedModel}
           </Button>
         </Menu.Trigger>
