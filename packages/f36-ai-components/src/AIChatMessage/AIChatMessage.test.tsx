@@ -65,7 +65,7 @@ describe('AIChatMessage', () => {
         role="user"
         content="hello world"
         additionalContent={<Box>Additional Content</Box>}
-        messageActionButtons={<Button>Action Buttons</Button>}
+        messageActionButtons={<Box>Action Buttons</Box>}
       />,
     );
 

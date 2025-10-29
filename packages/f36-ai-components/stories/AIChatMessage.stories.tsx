@@ -1,6 +1,6 @@
-import { Button, Icon, IconButton, Text } from '@contentful/f36-components';
+import { Button, IconButton } from '@contentful/f36-components';
 import { action } from '@storybook/addon-actions';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { AIChatMessage, AIChatMessageProps } from '../src/AIChatMessage';
 import {
   CopySimpleIcon,
