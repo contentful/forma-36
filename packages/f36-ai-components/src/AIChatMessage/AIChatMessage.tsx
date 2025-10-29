@@ -71,14 +71,16 @@ function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
             td: (props) => <Table.Cell children={props.children} />,
           }}
         />
+        {additionalContent && (
+          <Box testId={`${testId}-additional-content`}>{additionalContent}</Box>
+        )}
       </Box>
-      {additionalContent && (
-        <Box testId={`${testId}-additional-content`}>{additionalContent}</Box>
-      )}
       {messageActionButtons && (
         <Flex
           testId={`${testId}-actions`}
-          justifyContent={authorRole === 'user' ? 'flex-start' : 'flex-end'}
+          justifyContent={
+            authorRole === 'assistant' ? 'flex-start' : 'flex-end'
+          }
         >
           {messageActionButtons}
         </Flex>

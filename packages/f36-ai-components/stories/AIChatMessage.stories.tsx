@@ -122,6 +122,7 @@ export const AssistantMessageWithAdditionalContent = {
         startIcon={<TranslateIcon />}
         variant="secondary"
         size="small"
+        style={{ marginTop: '8px' }}
       >
         Translate
       </Button>
