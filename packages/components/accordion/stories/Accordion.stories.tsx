@@ -30,12 +30,14 @@ nisi ut aliquip ex ea commodo consequat.`;
 export const Basic: Story = {
   render: ({ align, ...args }: AccordionProps) => (
     <Accordion align={align}>
+      <Accordion.Item title={'Accordion I'}>
+        <Text as="p">{defaultText}</Text>
       </Accordion.Item>
-      <Accordion.Item title={args['Accordion.Item Title #2']}>
-        <Text as="p">{args['Accordion.Item Content #2']}</Text>
+      <Accordion.Item title={'Accordion II'}>
+        <Text as="p">{defaultText}</Text>
       </Accordion.Item>
-      <Accordion.Item title={args['Accordion.Item Title #3']}>
-        <Text as="p">{args['Accordion.Item Content #3']}</Text>
+      <Accordion.Item title={'Accordion III'}>
+        <Text as="p">{defaultText}</Text>
       </Accordion.Item>
     </Accordion>
   ),
@@ -55,14 +57,14 @@ export const Overview: Story = {
 
         <Flex>
           <Accordion align="start">
-            <Accordion.Item title={args['Accordion.Item Title #1']}>
-              <Text as="p">{args['Accordion.Item Content #1']}</Text>
+            <Accordion.Item title={'Accordion Title'}>
+              <Text as="p">Accordion.Item Content #1</Text>
             </Accordion.Item>
-            <Accordion.Item title={args['Accordion.Item Title #2']}>
-              <Text as="p">{args['Accordion.Item Content #2']}</Text>
+            <Accordion.Item title={'Accordion Title'}>
+              <Text as="p">Accordion.Item Content #2</Text>
             </Accordion.Item>
-            <Accordion.Item title={args['Accordion.Item Title #3']}>
-              <Text as="p">{args['Accordion.Item Content #3']}</Text>
+            <Accordion.Item title={'Accordion Title'}>
+              <Text as="p">Accordion.Item Content #3</Text>
             </Accordion.Item>
           </Accordion>
         </Flex>
@@ -74,14 +76,14 @@ export const Overview: Story = {
 
         <Flex>
           <Accordion align="end">
-            <Accordion.Item title={args['Accordion.Item Title #1']}>
-              <Text as="p">{args['Accordion.Item Content #1']}</Text>
+            <Accordion.Item title={'Accordion Title'}>
+              <Text as="p">Accordion.Item Content #1</Text>
             </Accordion.Item>
-            <Accordion.Item title={args['Accordion.Item Title #2']}>
-              <Text as="p">{args['Accordion.Item Content #2']}</Text>
+            <Accordion.Item title={'Accordion Title'}>
+              <Text as="p">Accordion.Item Content #2</Text>
             </Accordion.Item>
-            <Accordion.Item title={args['Accordion.Item Title #3']}>
-              <Text as="p">{args['Accordion.Item Content #3']}</Text>
+            <Accordion.Item title={'Accordion Title'}>
+              <Text as="p">Accordion.Item Content #3</Text>
             </Accordion.Item>
           </Accordion>
         </Flex>
@@ -104,7 +106,7 @@ export const DynamicContent = ({ align }: AccordionProps) => {
       </Flex>
       <Flex>
         <Accordion align={align}>
-          <Accordion.Item title={'Accordion.Item Title #1'}>
+          <Accordion.Item title={'Accordion Title'}>
             <Text as="p">{content}</Text>
           </Accordion.Item>
         </Accordion>
@@ -131,28 +133,28 @@ export const Controlled = ({ align }: AccordionProps) => {
   return (
     <Accordion align={align}>
       <Accordion.Item
-        title={'Accordion.Item Title #1 '}
+        title={'Accordion Title'}
         isExpanded={accordionState[1]}
         onExpand={handleExpand(1)}
         onCollapse={handleCollapse(1)}
       >
-        <Text as="p">{'Accordion.Item Content #1 '}</Text>
+        <Text as="p">{'Accordion Content #1'}</Text>
       </Accordion.Item>
       <Accordion.Item
-        title={'Accordion.Item Title #2 '}
+        title={'Accordion Title'}
         isExpanded={accordionState[2]}
         onExpand={handleExpand(2)}
         onCollapse={handleCollapse(2)}
       >
-        <Text as="p">{'Accordion.Item Content #2 '}</Text>
+        <Text as="p">{'Accordion Content #2'}</Text>
       </Accordion.Item>
       <Accordion.Item
-        title={'Accordion.Item Title #3 '}
+        title={'Accordion Title'}
         isExpanded={accordionState[3]}
         onExpand={handleExpand(3)}
         onCollapse={handleCollapse(3)}
       >
-        <Text as="p">{'Accordion.Item Content #3 '}</Text>
+        <Text as="p">{'Accordion Content #3'}</Text>
       </Accordion.Item>
     </Accordion>
   );
