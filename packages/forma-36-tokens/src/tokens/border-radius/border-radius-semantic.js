@@ -1,9 +1,7 @@
-const shapeControlBorderRadiusSmall = require('./colors-orange');
-const colorsRed = require('./colors-red');
-const colorsGreen = require('./colors-green');
-const colorsBlue = require('./colors-blue');
+const shapeRadiusControlSmall = require('./border-radius-s');
 
-const colorsSemantic = {
+
+const radiusSemantic = {
   'color-primary': colorsBlue['blue-600'],
   'color-positive': colorsGreen['green-600'],
   'color-negative': colorsRed['red-600'],
@@ -11,3 +9,11 @@ const colorsSemantic = {
 };
 
 module.exports = colorsSemantic;
+
+
+
+  'border-radius-s': '4px',
+  'border-radius-m': '8px',
+  'border-radius-l': '12px',
+  'border-radius-xl': '16px',
+};
