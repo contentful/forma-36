@@ -4,7 +4,7 @@
 
 The duplicated component prop types `SkeletonDisplayTextProps` and `SkeletonBodyTextProps` have been removed. Use the single unified `SkeletonTextProps` instead.
 
-### Why was this changed?
+### Why did it change?
 
 Both removed types were structurally identical to `SkeletonTextProps`, which meant:
 
@@ -90,13 +90,13 @@ npx jscodeshift -t replace-skeleton-prop-types.js "src/**/*.{ts,tsx}"
 
 ### FAQ
 
-**Q: Do I need to update my runtime props?**  
+**Q: Do I need to update my runtime props?**
 A: No. Only the exported type names changed.
 
-**Q: Will `Skeleton.DisplayText` or `Skeleton.BodyText` be removed?**  
+**Q: Will `Skeleton.DisplayText` or `Skeleton.BodyText` be removed?**
 A: No. This change only affects TypeScript type exports.
 
-**Q: What if I had both old types imported?**  
+**Q: What if I had both old types imported?**
 A: You can safely collapse them into a single `SkeletonTextProps` import.
 
 ### Summary
