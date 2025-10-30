@@ -58,13 +58,13 @@ export const Overview: Story = {
         <Flex>
           <Accordion align="start">
             <Accordion.Item title={'Accordion Title'}>
-              <Text as="p">Accordion.Item Content #1</Text>
+              <Text as="p">{defaultText}</Text>
             </Accordion.Item>
             <Accordion.Item title={'Accordion Title'}>
-              <Text as="p">Accordion.Item Content #2</Text>
+              <Text as="p">{defaultText}</Text>
             </Accordion.Item>
             <Accordion.Item title={'Accordion Title'}>
-              <Text as="p">Accordion.Item Content #3</Text>
+              <Text as="p">{defaultText}</Text>
             </Accordion.Item>
           </Accordion>
         </Flex>
@@ -77,13 +77,13 @@ export const Overview: Story = {
         <Flex>
           <Accordion align="end">
             <Accordion.Item title={'Accordion Title'}>
-              <Text as="p">Accordion.Item Content #1</Text>
+              <Text as="p">{defaultText}</Text>
             </Accordion.Item>
             <Accordion.Item title={'Accordion Title'}>
-              <Text as="p">Accordion.Item Content #2</Text>
+              <Text as="p">{defaultText}</Text>
             </Accordion.Item>
             <Accordion.Item title={'Accordion Title'}>
-              <Text as="p">Accordion.Item Content #3</Text>
+              <Text as="p">{defaultText}</Text>
             </Accordion.Item>
           </Accordion>
         </Flex>

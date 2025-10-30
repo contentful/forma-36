@@ -41,8 +41,7 @@ function FormControlBase<
     testId = 'cf-ui-form-control',
     ...otherProps
   }: FormControlProps<E>,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLDivElement>,
 ) {
   const generatedId = useId(id, 'field-');
   const [inputValue, setInputValue] = useState('');

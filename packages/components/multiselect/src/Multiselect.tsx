@@ -6,7 +6,7 @@ import { Button, IconButton, type ButtonProps } from '@contentful/f36-button';
 import { CaretDownIcon, XIcon } from '@contentful/f36-icons';
 
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
-import { Popover, type PopoverProps } from '../../popover';
+import { Popover, type PopoverProps } from '@contentful/f36-popover';
 import { Subheading } from '@contentful/f36-typography';
 
 import { getMultiselectStyles } from './Multiselect.styles';

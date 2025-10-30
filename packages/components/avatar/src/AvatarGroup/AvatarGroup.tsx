@@ -49,6 +49,10 @@ function AvatarGroupBase(
     >
       {childrenToRender.map((child, index) => {
         if (!React.isValidElement(child)) {
+          // eslint-disable-next-line no-console
+          console.error(
+            'Only valid React elements are supported - https://react.dev/reference/react/isValidElement',
+          );
           return null;
         }
         const zIndex = childrenToRender.length - index;
