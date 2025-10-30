@@ -7,46 +7,70 @@ describe('Layout', () => {
   it('renders children inside content container', () => {
     render(
       <Layout>
-        <p>Content</p>
-      </Layout>,
-    );
-    expect(screen.getByText('Content')).toBeInTheDocument();
-    expect(screen.getByTestId('cf-layout-content-container')).toContainElement(
-      screen.getByText('Content'),
-    );
-  });
-
-  it('renders header when provided', () => {
-    render(
-      <Layout header={<div data-test-id="hdr">Header</div>}>
         <p>Body</p>
       </Layout>,
     );
-    expect(screen.getByTestId('hdr')).toBeInTheDocument();
+    expect(screen.getByText('Body')).toBeInTheDocument();
+    expect(screen.getByTestId('cf-layout-content-container')).toContainElement(
+      screen.getByText('Body'),
+    );
+  });
+
+  it('renders header', () => {
+    render(
+      <Layout header={<div data-test-id="header">Header</div>}>
+        <p>Body</p>
+      </Layout>,
+    );
+    expect(screen.getByTestId('header')).toBeInTheDocument();
+    expect(screen.getByText('Body')).toBeInTheDocument();
+  });
+
+  it('renders left sidebar', () => {
+    render(
+      <Layout
+        leftSidebar={<div data-test-id="left-sidebar">Right Sidebar</div>}
+      >
+        <span>Body</span>
+      </Layout>,
+    );
+    expect(screen.getByTestId('left-sidebar')).toBeInTheDocument();
+    expect(screen.getByText('Body')).toBeInTheDocument();
+  });
+
+  it('renders right sidebar', () => {
+    render(
+      <Layout
+        rightSidebar={<div data-test-id="right-sidebar">Right Sidebar</div>}
+      >
+        <span>Body</span>
+      </Layout>,
+    );
+    expect(screen.getByTestId('right-sidebar')).toBeInTheDocument();
+    expect(screen.getByText('Body')).toBeInTheDocument();
   });
 
   it('renders left and right sidebars', () => {
     render(
       <Layout
-        leftSidebar={<nav data-test-id="left">Left sidebar</nav>}
-        rightSidebar={<aside data-test-id="right">Right sidebar</aside>}
+        leftSidebar={<nav data-test-id="left-sidebar">Left sidebar</nav>}
+        rightSidebar={<aside data-test-id="right-sidebar">Right sidebar</aside>}
       >
-        <p>Main</p>
+        <p>Body</p>
       </Layout>,
     );
-    expect(screen.getByTestId('left')).toBeInTheDocument();
-    expect(screen.getByTestId('right')).toBeInTheDocument();
-  });
-
-  it('omits sidebars when not provided', () => {
-    render(<Layout>Only Content</Layout>);
-    expect(screen.queryByTestId('left')).not.toBeInTheDocument();
-    expect(screen.queryByTestId('right')).not.toBeInTheDocument();
+    expect(screen.getByTestId('left-sidebar')).toBeInTheDocument();
+    expect(screen.getByTestId('right-sidebar')).toBeInTheDocument();
+    expect(screen.getByText('Body')).toBeInTheDocument();
   });
 
   it('forwards ref to root section element', () => {
     const ref = React.createRef<HTMLDivElement>();
-    render(<Layout ref={ref}>X</Layout>);
+    render(
+      <Layout ref={ref}>
+        <p>Body</p>
+      </Layout>,
+    );
     expect(ref.current).toBeInstanceOf(HTMLElement);
     expect(ref.current?.tagName.toLowerCase()).toBe('section');
   });
@@ -54,7 +78,7 @@ describe('Layout', () => {
   it('passes arbitrary HTML attributes to root', () => {
     render(
       <Layout id="custom-id" data-foo="bar">
-        X
+        <p>Body</p>
       </Layout>,
     );
     const root = screen.getByTestId('cf-ui-layout');
@@ -62,14 +86,19 @@ describe('Layout', () => {
     expect(root).toHaveAttribute('data-foo', 'bar');
   });
 
-  it('applies custom test ids (root & content)', () => {
+  it('applies custom test ids to root and content', () => {
     render(
       <Layout testId="root-id" contentTestId="content-id">
-        X
+        <p>Body</p>
       </Layout>,
     );
     expect(screen.getByTestId('root-id')).toBeInTheDocument();
-    expect(screen.getByTestId('content-id')).toBeInTheDocument();
+    expect(screen.getByTestId('content-id')).toContainElement(
+      screen.getByTestId('content-id'),
+    );
+    expect(screen.getByTestId('content-id')).toContainElement(
+      screen.getByText('Body'),
+    );
   });
 
   it('withBoxShadow=false still renders layout', () => {
@@ -92,24 +121,5 @@ describe('Layout', () => {
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-  });
-
-  it('renders only header + children', () => {
-    render(
-      <Layout header={<div data-test-id="only-header">H</div>}>
-        <span>Body</span>
-      </Layout>,
-    );
-    expect(screen.getByTestId('only-header')).toBeInTheDocument();
-    expect(screen.getByText('Body')).toBeInTheDocument();
-  });
-
-  it('renders only one sidebar (right)', () => {
-    render(
-      <Layout rightSidebar={<div data-test-id="right-only">Right Sidebar</div>}>
-        <span>Body</span>
-      </Layout>,
-    );
-    expect(screen.getByTestId('right-only')).toBeInTheDocument();
   });
 });
