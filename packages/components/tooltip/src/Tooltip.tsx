@@ -166,24 +166,18 @@ export const Tooltip = ({
         as="span"
         testId={testId}
         className={cx(styles.tooltipContainer, targetWrapperClassName)}
-        onMouseEnter={(evt: MouseEvent) => {
-          if (onMouseOver) onMouseOver(evt);
-        }}
-        onMouseLeave={(evt: MouseEvent) => {
-          if (onMouseLeave) onMouseLeave(evt);
-        }}
-        onFocus={(evt: FocusEvent) => {
-          if (onFocus) onFocus(evt);
-        }}
-        onBlur={(evt: FocusEvent) => {
-          if (onBlur) onBlur(evt);
-        }}
-        onKeyDown={(evt: KeyboardEvent<HTMLSpanElement>) => {
-          if (onKeyDown) onKeyDown(evt);
-        }}
         {...otherProps}
       >
-        <TooltipTrigger tooltipId={tooltipId}>{children}</TooltipTrigger>
+        <TooltipTrigger
+          tooltipId={tooltipId}
+          onMouseEnter={onMouseOver}
+          onMouseLeave={onMouseLeave}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          onKeyDown={onKeyDown}
+        >
+          {children}
+        </TooltipTrigger>
         <TooltipContent
           content={content}
           label={label}

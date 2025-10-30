@@ -43,8 +43,7 @@ export type NavbarItemProps<
 
 function NavbarItemBase(
   props: NavbarItemProps<React.ElementType>,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLElement>,
 ) {
   const {
     as: Comp = NAVBAR_ITEM_DEFAULT_TAG,
