@@ -1,9 +1,9 @@
 const scaleRadius = {
-  'border-radius-s': '4px',
-  'border-radius-m': '8px',
-  'border-radius-l': '12px',
-  'border-radius-xl': '16px',
-  'border-radius-full': '999px',
+  'border-radius-s': '0.25rem',
+  'border-radius-m': '0.5rem',
+  'border-radius-l': '0.75rem',
+  'border-radius-xl': '1rem',
+  'border-radius-full': '999rem',
 };
 
 module.exports = scaleRadius;
