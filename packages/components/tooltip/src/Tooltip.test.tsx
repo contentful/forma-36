@@ -42,39 +42,38 @@ describe('Tooltip', () => {
     );
   });
 
-  // TODO: Enable again once emotion/jest is compatible again
-  // it('renders the component with an additional class name', async () => {
-  //   const user = userEvent.setup();
-  //   render(
-  //     <Tooltip content="Tooltip content" className="extra-class-name">
-  //       <span>Hover me</span>
-  //     </Tooltip>,
-  //   );
+  it('renders the component with an additional class name', async () => {
+    const user = userEvent.setup();
+    render(
+      <Tooltip content="Tooltip content" className="extra-class-name">
+        <span>Hover me</span>
+      </Tooltip>,
+    );
 
-  //   await user.hover(screen.getByText('Hover me'));
+    await user.hover(screen.getByText('Hover me'));
 
-  //   await waitFor(() =>
-  //     expect(screen.getByRole('tooltip')).toHaveClass('extra-class-name'),
-  //   );
-  // });
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip')).toHaveClass('extra-class-name'),
+    );
+  });
 
-  // it('renders the component with a target wrapper classname', async () => {
-  //   const user = userEvent.setup();
-  //   const { container } = render(
-  //     <Tooltip
-  //       content="Tooltip content"
-  //       targetWrapperClassName="target-wrapper-class-name"
-  //     >
-  //       <span>Hover me</span>
-  //     </Tooltip>,
-  //   );
+  it('renders the component with a target wrapper classname', async () => {
+    const user = userEvent.setup();
+    const { container } = render(
+      <Tooltip
+        content="Tooltip content"
+        targetWrapperClassName="target-wrapper-class-name"
+      >
+        <span>Hover me</span>
+      </Tooltip>,
+    );
 
-  //   await user.hover(screen.getByText('Hover me'));
+    await user.hover(screen.getByText('Hover me'));
 
-  //   expect(
-  //     container.querySelector('.target-wrapper-class-name').textContent,
-  //   ).toBe('Hover me');
-  // });
+    expect(
+      container.querySelector('.target-wrapper-class-name').textContent,
+    ).toBe('Hover me');
+  });
 
   it('renders the component with a id attribute', async () => {
     const user = userEvent.setup();

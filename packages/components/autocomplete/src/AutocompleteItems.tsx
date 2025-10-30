@@ -50,7 +50,6 @@ export const AutocompleteItems = <ItemType,>(
             data-highlighted={highlightedIndex === itemIndex}
             data-test-id={`cf-autocomplete-list-item-${itemIndex}`}
           >
-            {/* @ts-expect-error render item type issues*/}
             {renderItem ? (
               renderItem(item, inputValue)
             ) : typeof item === 'string' ? (

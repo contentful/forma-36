@@ -121,7 +121,7 @@ const isNavbarItemHasMenu = <E extends React.ElementType>(
 ): props is PolymorphicProps<NavbarItemAsMenuProps, E> =>
   Boolean(props.children);
 
-NavbarItemBase.displayName = 'NavbarItemBase';
+NavbarItemBase.displayName = 'NavbarItem';
 export const NavbarItem = React.forwardRef(
   NavbarItemBase,
 ) as PolymorphicComponent<
