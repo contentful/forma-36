@@ -10,4 +10,4 @@ const spacing = {
   'spacing-4xl': '5rem',
 };
 
-module.exports = spacing;
+module.exports = scale-spacing;
