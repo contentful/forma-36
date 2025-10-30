@@ -89,22 +89,17 @@ export const Invalid = {
             </FormControl.HelpText>
             <FormControl.Counter />
           </Flex>
-
-          {args.isInvalid && (
-            <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
-          )}
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
         </FormControl>
 
-        <FormControl {...args}>
+        <FormControl {...args} isInvalid>
           <FormControl.Label>Description</FormControl.Label>
           <Textarea />
           <FormControl.HelpText>Tell me about yourself</FormControl.HelpText>
-          {args.isInvalid && (
-            <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
-          )}
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
         </FormControl>
 
-        <FormControl {...args}>
+        <FormControl {...args} isInvalid>
           <FormControl.Label>City</FormControl.Label>
           <Select defaultValue="">
             <Select.Option value="" isDisabled>
@@ -115,15 +110,13 @@ export const Invalid = {
           </Select>
         </FormControl>
 
-        <FormControl {...args}>
+        <FormControl {...args} isInvalid>
           <Checkbox defaultChecked={false}>
             I confirm everything that said above is true
           </Checkbox>
-          {args.isInvalid && (
-            <FormControl.ValidationMessage marginLeft="spacingL">
-              Error
-            </FormControl.ValidationMessage>
-          )}
+          <FormControl.ValidationMessage marginLeft="spacingL">
+            Error
+          </FormControl.ValidationMessage>
         </FormControl>
       </>
     );
