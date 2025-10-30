@@ -15,9 +15,7 @@ export default [
   {
     ignores: [
       'node_modules/**',
-      '.next/**',
       '**/out/**',
-      'next-env.d.ts',
       '**/dist-storybook/**',
       '**/dist/**',
       'dist/**',
@@ -52,7 +50,7 @@ export default [
         ...globals.node,
         ...globals.jest,
       },
-      },
+    },
     settings: {
       react: { version: 'detect' },
       'import/extensions': ['.js', '.ts', '.tsx'],
@@ -60,7 +58,10 @@ export default [
     rules: {
       'no-console': 'warn',
       'react/prop-types': 'off',
-      'react/prefer-stateless-function': ['off', { ignorePureComponents: true }],
+      'react/prefer-stateless-function': [
+        'off',
+        { ignorePureComponents: true },
+      ],
       'react/jsx-filename-extension': ['off', { extensions: ['.js', '.tsx'] }],
       'react/forbid-prop-types': 'off',
       'react/destructuring-assignment': 'off',
