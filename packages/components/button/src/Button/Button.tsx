@@ -23,8 +23,7 @@ export type ButtonProps<
 
 function ButtonBase<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
   props: ButtonProps<E>,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLButtonElement | HTMLAnchorElement>,
 ) {
   const styles = getStyles();
   const {
@@ -69,7 +68,6 @@ function ButtonBase<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
           // it may change in the future
           color:
             (variant === 'transparent' && icon.props.color) || 'currentColor',
-          // we want to allow variants for icons for transparent buttons
         })}
       </Flex>
     );
@@ -109,7 +107,6 @@ function ButtonBase<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
   const commonProps = {
     ['data-test-id']: testId,
     className: rootClassNames,
-    ref: ref,
     style,
   };
 
@@ -118,6 +115,7 @@ function ButtonBase<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
       <a
         {...otherProps}
         {...commonProps}
+        ref={ref as React.Ref<HTMLAnchorElement>}
         aria-disabled={isDisabled}
         tabIndex={isDisabled ? -1 : 0}
       >
@@ -131,6 +129,7 @@ function ButtonBase<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
       type="button"
       {...otherProps}
       {...commonProps}
+      ref={ref as React.Ref<HTMLButtonElement>}
       disabled={isDisabled}
     >
       {commonContent}

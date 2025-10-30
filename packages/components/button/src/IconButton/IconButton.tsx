@@ -65,8 +65,7 @@ export type IconButtonProps<
 
 function IconButtonBase<
   E extends React.ElementType = typeof ICON_BUTTON_DEFAULT_TAG,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
->(props: IconButtonProps<E>, ref: React.Ref<any>) {
+>(props: IconButtonProps<E>, ref: React.Ref<HTMLButtonElement>) {
   const {
     testId = 'cf-ui-icon-button',
     variant = 'transparent',

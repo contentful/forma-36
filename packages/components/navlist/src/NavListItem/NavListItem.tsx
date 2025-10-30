@@ -34,8 +34,7 @@ export type NavListItemProps<
 
 function NavListItemBase<
   E extends React.ElementType = typeof NAV_LIST_ITEM_DEFAULT_TAG,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
->(props: NavListItemProps<E>, ref: React.Ref<any>) {
+>(props: NavListItemProps<E>, ref: React.Ref<HTMLAnchorElement>) {
   const {
     testId,
     className,

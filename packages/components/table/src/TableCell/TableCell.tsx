@@ -57,8 +57,7 @@ function TableCellBase(
     sortButtonAriaLabel,
     ...otherProps
   }: TableCellProps,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  forwardedRef: React.Ref<any>,
+  forwardedRef: React.Ref<HTMLTableCellElement>,
 ) {
   const [showSorting, setShowSorting] = useState(false);
   const { as, name: context, offsetTop } = useTableCellContext();

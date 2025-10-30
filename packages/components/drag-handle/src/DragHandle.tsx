@@ -71,8 +71,7 @@ export type DragHandleProps<
 
 function DragHandleBase<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
   props: DragHandleProps<E>,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ref: Ref<any>,
+  ref: Ref<HTMLDivElement | HTMLButtonElement>,
 ) {
   const styles = getStyles();
   const {
@@ -148,13 +147,18 @@ function DragHandleBase<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
     onFocus: handleFocus,
     onMouseEnter: handleMouseEnter,
     onMouseLeave: handleMouseLeave,
-    ref,
     style,
   };
 
   if (as === 'div') {
     return (
-      <div {...otherProps} {...commonProps} role="button" tabIndex={0}>
+      <div
+        {...otherProps}
+        {...commonProps}
+        ref={ref as Ref<HTMLDivElement>}
+        role="button"
+        tabIndex={0}
+      >
         <DotsSixVerticalIcon color={tokens.gray600} />
         <span className={styles.label}>{label}</span>
       </div>
@@ -162,7 +166,12 @@ function DragHandleBase<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
   }
 
   return (
-    <button {...otherProps} {...commonProps} type="button">
+    <button
+      {...otherProps}
+      {...commonProps}
+      ref={ref as Ref<HTMLButtonElement>}
+      type="button"
+    >
       <DotsSixVerticalIcon color={tokens.gray600} />
       <span className={styles.label}>{label}</span>
     </button>
