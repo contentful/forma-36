@@ -2,4 +2,3 @@ import { borderRadiusSmall, borderRadiusMedium, borderRadiusLarge } from '@conte
 
 const small = borderRadiusSmall;
 const medium = borderRadiusMedium;
-const large = borderRadiusLarge;
