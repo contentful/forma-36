@@ -47,8 +47,7 @@ function SegmentationBase<
     separator: SeparatorComponent,
     testId = 'cf-ui-segmentation',
   }: SegmentationProps<E>,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- polymorphic element
-  forwardedRef: Ref<any>,
+  forwardedRef: Ref<HTMLDivElement>,
 ) {
   const styles = getSegmentationStyles();
   const separator = SeparatorComponent ?? <div className={styles.separator} />;
