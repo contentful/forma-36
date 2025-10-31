@@ -2,6 +2,7 @@ import { Paragraph } from '@contentful/f36-components';
 import React from 'react';
 
 import { AIChatReasoning } from '../src/AIChatReasoning/AIChatReasoning';
+import { action } from '@storybook/addon-actions';
 
 export default {
   component: AIChatReasoning,
@@ -22,14 +23,9 @@ export default {
       control: 'text',
       description: 'Content to be rendered inside the reasoning component',
     },
-    defaultExpanded: {
-      control: 'boolean',
-      description: 'Whether the component is initially expanded',
-    },
     isExpanded: {
       control: 'boolean',
-      description:
-        'Whether the component is controlled (expanded state managed externally)',
+      description: 'Whether the component is expanded',
     },
     children: { control: { disable: true } },
     onToggle: { control: { disable: true } },
@@ -44,7 +40,7 @@ export const Basic = (args) => {
 
   return (
     <div style={{ width: '350px' }}>
-      <AIChatReasoning {...componentProps}>
+      <AIChatReasoning {...componentProps} onToggle={action('toggled')}>
         <Paragraph>{content}</Paragraph>
       </AIChatReasoning>
     </div>
@@ -55,5 +51,4 @@ Basic.args = {
   label: 'Processing...',
   content:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  defaultExpanded: false,
 };

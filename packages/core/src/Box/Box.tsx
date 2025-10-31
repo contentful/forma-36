@@ -72,8 +72,6 @@ export function useBox<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
     ...otherProps,
   };
 
-  console.log('boxProps:', boxProps);
-
   return {
     boxProps: boxProps,
     Element,
@@ -85,8 +83,6 @@ function _Box<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
   ref: React.Ref<any>,
 ) {
   const { boxProps, Element } = useBox<E>(props);
-
-  console.log('boxProps:', boxProps);
 
   return (
     <Element {...boxProps} ref={ref}>

@@ -2,12 +2,11 @@ import tokens from '@contentful/f36-tokens';
 import { css, keyframes } from 'emotion';
 
 interface StyleProps {
-  shouldAnimateIcon?: boolean;
+  shouldAnimate?: boolean;
   isExpanded?: boolean;
   testId?: string;
 }
 
-// Pulse animation for the sparkle icon
 const pulseOpacityAndScaleAnimation = keyframes`
   0%, 100% {
     opacity: 1;
@@ -34,7 +33,6 @@ const fadeOutAnimation = keyframes`
   }
 `;
 
-// Animated dots animation for "Processing..." text
 const dotsAnimation = keyframes`
   0%, 100% {
     content: '';
@@ -51,7 +49,7 @@ const dotsAnimation = keyframes`
 `;
 
 export const getStyles = (props: StyleProps = {}) => {
-  const { shouldAnimateIcon = true, isExpanded = false, testId } = props;
+  const { shouldAnimate = true, isExpanded = false, testId } = props;
 
   return {
     root: css({
@@ -75,13 +73,13 @@ export const getStyles = (props: StyleProps = {}) => {
       '&:hover': {
         [`& #${testId}-collapsed-icon`]: {
           animation:
-            shouldAnimateIcon && !isExpanded
+            shouldAnimate && !isExpanded
               ? `${fadeOutAnimation} 200ms ease-out 0ms 1 forwards`
               : 'none',
         },
         [`& #${testId}-hover-icon`]: {
           animation:
-            shouldAnimateIcon && !isExpanded
+            shouldAnimate && !isExpanded
               ? `${fadeOutAnimation} 200ms ease-in 0ms 1 forwards, ${pulseOpacityAnimation} 1.2s ease-in-out 200ms infinite`
               : 'none',
         },
@@ -112,9 +110,8 @@ export const getStyles = (props: StyleProps = {}) => {
       justifyContent: 'center',
       opacity: isExpanded ? 0 : 1,
       transition: `opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
-      // Apply pulse animation when not expanded and not hovered
       animation:
-        shouldAnimateIcon && !isExpanded
+        shouldAnimate && !isExpanded
           ? `${pulseOpacityAndScaleAnimation} 1.5s ease-in-out infinite`
           : 'none',
     }),

@@ -6,7 +6,7 @@ import {
   SparkleFilledIcon,
 } from '@contentful/f36-icons';
 import { cx } from 'emotion';
-import React, { forwardRef, useState, type Ref } from 'react';
+import React, { forwardRef, useEffect, useState, type Ref } from 'react';
 import { getStyles } from './AIChatReasoning.styles';
 
 export interface AIChatReasoningProps extends CommonProps {
@@ -16,23 +16,19 @@ export interface AIChatReasoningProps extends CommonProps {
   children?: React.ReactNode;
   /**
    * Custom label text to display. Defaults to "Processing..."
-   * @default "Processing...
+   * @default Processing...
    */
   label?: string;
   /**
-   * Whether the component is initially expanded
-   * @default false
-   */
-  defaultExpanded?: boolean; // todo: remove
-  /**
    * Whether the component is controlled (expanded state managed externally)
+   * @default false
    */
   isExpanded?: boolean;
   /**
-   * Whether the sparkle icon should animate
+   * Whether the sparkle icon and ellipsis should animate
    * @default true
    */
-  shouldAnimateIcon?: boolean;
+  shouldAnimate?: boolean;
   /**
    * Callback called when the expand/collapse state changes
    */
@@ -50,48 +46,52 @@ function _AIChatReasoning(
   const {
     children,
     label = 'Processing...',
-    defaultExpanded = false,
-    isExpanded: controlledExpanded,
-    shouldAnimateIcon = true,
-    onToggle,
-    className,
+    isExpanded = false,
+    shouldAnimate = true,
+    onToggle = () => {},
     testId = 'cf-ui-ai-chat-reasoning',
     ...otherProps
   } = props;
 
-  // Handle both controlled and uncontrolled state
-  const [internalExpanded, setInternalExpanded] = useState(defaultExpanded);
-  const isControlled = controlledExpanded !== undefined;
-  const isExpanded = isControlled ? controlledExpanded : internalExpanded;
+  const [internalExpanded, setInternalExpanded] = useState(isExpanded);
+
+  useEffect(() => {
+    setInternalExpanded(isExpanded);
+  }, [isExpanded]);
 
   const handleToggle = () => {
-    const newExpanded = !isExpanded;
-
-    if (!isControlled) {
-      setInternalExpanded(newExpanded);
-    }
-
+    const newExpanded = !internalExpanded;
+    setInternalExpanded(newExpanded);
     onToggle?.(newExpanded);
   };
 
-  const shouldAnimateDots = label.includes('...');
+  const shouldAnimateDots = shouldAnimate && label.includes('...');
   const formattedLabel = shouldAnimateDots
     ? label.replace(/\.\.\.$/, '')
     : label;
 
-  const styles = getStyles({ shouldAnimateIcon, isExpanded, testId });
+  const styles = getStyles({
+    shouldAnimate,
+    isExpanded: internalExpanded,
+    testId,
+  });
 
   return (
-    <Box ref={ref} className={styles.root} data-testid={testId} {...otherProps}>
+    <Box
+      ref={ref}
+      className={styles.root}
+      data-test-id={testId}
+      {...otherProps}
+    >
       <button
         className={styles.header}
         onClick={handleToggle}
-        aria-expanded={isExpanded}
+        aria-expanded={internalExpanded}
         aria-controls={`${testId}-content`}
-        data-testid={`${testId}-header`}
+        data-test-id={`${testId}-header`}
         type="button"
       >
-        <Box className={styles.iconContainer} data-testid={`${testId}-icon`}>
+        <Box className={styles.iconContainer} data-test-id={`${testId}-icon`}>
           <Box className={styles.collapsedIcon} id={`${testId}-collapsed-icon`}>
             <SparkleFilledIcon />
           </Box>
@@ -109,21 +109,21 @@ function _AIChatReasoning(
         <Box
           className={
             shouldAnimateDots
-              ? isExpanded
+              ? internalExpanded
                 ? styles.labelWithStaticDots
                 : styles.labelWithAnimatedDots
               : styles.label
           }
-          data-testid={`${testId}-label`}
+          data-test-id={`${testId}-label`}
         >
           {formattedLabel}
         </Box>
       </button>
 
-      <Collapse isExpanded={isExpanded}>
+      <Collapse isExpanded={internalExpanded}>
         <Box
           className={styles.content}
-          data-testid={`${testId}-content`}
+          data-test-id={`${testId}-content`}
           id={`${testId}-content`}
         >
           {children}
@@ -139,7 +139,5 @@ function _AIChatReasoning(
  *
  * The sparkle icon animates with a pulse effect when collapsed to indicate background processing,
  * and stops animating when expanded.
- *
- * The component supports both controlled and uncontrolled usage patterns.
  */
 export const AIChatReasoning = forwardRef(_AIChatReasoning);

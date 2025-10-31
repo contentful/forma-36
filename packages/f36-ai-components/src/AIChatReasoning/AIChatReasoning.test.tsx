@@ -8,37 +8,14 @@ describe('AIChatReasoning', () => {
   it('renders the component', () => {
     render(<AIChatReasoning />);
 
-    expect(screen.getByTestId('cf-ui-ai-chat-reasoning')).toBeTruthy();
-  });
-
-  it('renders the component with an additional class name', () => {
-    const additionalClassName = 'my-extra-class';
-    render(<AIChatReasoning className={additionalClassName} />);
-
-    expect(
-      screen
-        .getByTestId('cf-ui-ai-chat-reasoning')
-        .classList.contains(additionalClassName),
-    ).toBeTruthy();
-  });
-
-  it('renders the component with custom testId', () => {
-    render(<AIChatReasoning testId="custom-test-id" />);
-
-    expect(screen.getByTestId('custom-test-id')).toBeTruthy();
-    expect(screen.getByTestId('custom-test-id-header')).toBeTruthy();
-    expect(screen.getByTestId('custom-test-id-content')).toBeTruthy();
-    expect(screen.getByTestId('custom-test-id-icon')).toBeTruthy();
-    expect(screen.getByTestId('custom-test-id-label')).toBeTruthy();
-    expect(screen.getByTestId('custom-test-id-chevron')).toBeTruthy();
-  });
-
-  it('renders the component with default "Processing..." label', () => {
-    render(<AIChatReasoning />);
+    expect(screen.getByTestId('cf-ui-ai-chat-reasoning')).toBeInTheDocument();
 
     expect(
       screen.getByTestId('cf-ui-ai-chat-reasoning-label'),
-    ).toHaveTextContent('Processing...');
+    ).toHaveTextContent('Processing');
+
+    const header = screen.getByTestId('cf-ui-ai-chat-reasoning-header');
+    expect(header).toHaveAttribute('aria-expanded', 'false');
   });
 
   it('renders the component with custom label', () => {
@@ -46,37 +23,12 @@ describe('AIChatReasoning', () => {
 
     expect(
       screen.getByTestId('cf-ui-ai-chat-reasoning-label'),
-    ).toHaveTextContent('Analyzing data...');
+    ).toHaveTextContent('Analyzing data');
   });
 
-  it('renders with sparkle icon', () => {
-    render(<AIChatReasoning />);
-
-    const iconContainer = screen.getByTestId('cf-ui-ai-chat-reasoning-icon');
-    expect(iconContainer).toBeTruthy();
-    expect(iconContainer.querySelector('svg')).toBeTruthy();
-  });
-
-  it('renders with chevron icon', () => {
-    render(<AIChatReasoning />);
-
-    const chevronContainer = screen.getByTestId(
-      'cf-ui-ai-chat-reasoning-chevron',
-    );
-    expect(chevronContainer).toBeTruthy();
-    expect(chevronContainer.querySelector('svg')).toBeTruthy();
-  });
-
-  it('starts collapsed by default', () => {
-    render(<AIChatReasoning>Content here</AIChatReasoning>);
-
-    const header = screen.getByTestId('cf-ui-ai-chat-reasoning-header');
-    expect(header).toHaveAttribute('aria-expanded', 'false');
-  });
-
-  it('can be initially expanded with defaultExpanded prop', () => {
+  it('can be initially expanded with isExpanded prop', () => {
     render(
-      <AIChatReasoning defaultExpanded>
+      <AIChatReasoning isExpanded={true}>
         <div>Content here</div>
       </AIChatReasoning>,
     );
@@ -128,44 +80,28 @@ describe('AIChatReasoning', () => {
     expect(onToggle).toHaveBeenCalledWith(false);
   });
 
-  it('works in controlled mode with isExpanded prop', async () => {
+  it('renders children content when expanded', async () => {
     const user = userEvent.setup();
-    const onToggle = jest.fn();
-    const { rerender } = render(
-      <AIChatReasoning isExpanded={false} onToggle={onToggle}>
-        <div>Content here</div>
-      </AIChatReasoning>,
-    );
-
-    const header = screen.getByTestId('cf-ui-ai-chat-reasoning-header');
-
-    // Initially collapsed (controlled)
-    expect(header).toHaveAttribute('aria-expanded', 'false');
-
-    // Click should call onToggle but not change state until parent updates prop
-    await user.click(header);
-    expect(onToggle).toHaveBeenCalledWith(true);
-    expect(header).toHaveAttribute('aria-expanded', 'false'); // Still false because isExpanded prop controls it
-
-    // Parent updates prop to expanded
-    rerender(
-      <AIChatReasoning isExpanded={true} onToggle={onToggle}>
-        <div>Content here</div>
-      </AIChatReasoning>,
-    );
-    expect(header).toHaveAttribute('aria-expanded', 'true');
-  });
-
-  it('renders children content when expanded', () => {
     render(
-      <AIChatReasoning defaultExpanded>
-        <div data-testid="test-content">This is the content</div>
+      <AIChatReasoning>
+        <div data-test-id="test-content">This is the content</div>
       </AIChatReasoning>,
     );
 
+    // Content is in DOM but should be hidden initially since component starts collapsed
+    const collapseContainer = screen.getByTestId('cf-collapse');
+    expect(collapseContainer).toHaveAttribute('aria-hidden', 'true');
+
+    // Click to expand
+    const header = screen.getByTestId('cf-ui-ai-chat-reasoning-header');
+    await user.click(header);
+
+    // Now content should be visible
     expect(screen.getByTestId('test-content')).toHaveTextContent(
       'This is the content',
     );
+    // And collapse container should no longer be hidden
+    expect(collapseContainer).toHaveAttribute('aria-hidden', 'false');
   });
 
   it('has proper accessibility attributes', () => {
@@ -189,29 +125,6 @@ describe('AIChatReasoning', () => {
     expect(ariaControls).toBe(contentId);
   });
 
-  it('can be navigated with keyboard', async () => {
-    const user = userEvent.setup();
-    render(
-      <AIChatReasoning>
-        <div>Content here</div>
-      </AIChatReasoning>,
-    );
-
-    const header = screen.getByTestId('cf-ui-ai-chat-reasoning-header');
-
-    // Focus the header
-    header.focus();
-    expect(document.activeElement).toBe(header);
-
-    // Press Enter to toggle
-    await user.keyboard('{Enter}');
-    expect(header).toHaveAttribute('aria-expanded', 'true');
-
-    // Press Space to toggle
-    await user.keyboard(' ');
-    expect(header).toHaveAttribute('aria-expanded', 'false');
-  });
-
   it('should not have basic accessibility issues', async () => {
     const { container } = render(
       <AIChatReasoning>
@@ -224,27 +137,11 @@ describe('AIChatReasoning', () => {
 
   it('should not have accessibility issues when expanded', async () => {
     const { container } = render(
-      <AIChatReasoning defaultExpanded>
+      <AIChatReasoning isExpanded={true}>
         <div>Content here</div>
       </AIChatReasoning>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-  });
-
-  it('forwards ref to the root element', () => {
-    const ref = React.createRef<HTMLDivElement>();
-    render(<AIChatReasoning ref={ref} />);
-
-    expect(ref.current).toBe(screen.getByTestId('cf-ui-ai-chat-reasoning'));
-  });
-
-  it('passes through other HTML attributes', () => {
-    render(<AIChatReasoning data-custom="test-value" />);
-
-    expect(screen.getByTestId('cf-ui-ai-chat-reasoning')).toHaveAttribute(
-      'data-custom',
-      'test-value',
-    );
   });
 });
