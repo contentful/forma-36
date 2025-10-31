@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import tokens from '@contentful/f36-tokens';
 import { CheckCircleIcon } from '@contentful/f36-icons';
-import userEvent from '@testing-library/user-event';
 import { Avatar } from './Avatar';
 
 jest.mock('@contentful/f36-image', () => ({
@@ -21,7 +21,7 @@ describe('Avatar', () => {
     const src = 'https://example.com/image.jpg';
     render(<Avatar src={src} />);
 
-    expect(screen.getByRole('img')).toHaveAttribute('src', src);
+    expect(screen.getByRole('presentation')).toHaveAttribute('src', src);
   });
 
   it('renders an icon when it is provided', () => {

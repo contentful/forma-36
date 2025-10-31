@@ -48,7 +48,7 @@ export type EntityStatusBadgeProps = Omit<
     entityStatus: EntityStatus;
   };
 
-function EntityStatusBadge(
+function EntityStatusBadgeBase(
   props: EntityStatusBadgeProps,
   ref: React.Ref<HTMLDivElement>,
 ) {
@@ -75,10 +75,10 @@ function EntityStatusBadge(
   );
 }
 
-EntityStatusBadge.displayName = 'EntityStatusBadge';
+EntityStatusBadgeBase.displayName = 'EntityStatusBadge';
 
-const _EntityStatusBadge = React.forwardRef<
+const EntityStatusBadge = React.forwardRef<
   HTMLDivElement,
   ExpandProps<EntityStatusBadgeProps>
->(EntityStatusBadge);
-export { _EntityStatusBadge as EntityStatusBadge };
+>(EntityStatusBadgeBase);
+export { EntityStatusBadge };

@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryObj, Meta } from '@storybook/react-vite';
 
 import { HelpText } from '../src';
 import type { HelpTextInternalProps } from '../src/HelpText/HelpText';
@@ -16,10 +16,12 @@ export default {
   },
 } as Meta;
 
-export const Default: Story<HelpTextInternalProps> = (args) => {
-  return <HelpText {...args} />;
-};
+export const Default: StoryObj<HelpTextInternalProps> = {
+  render: (args) => {
+    return <HelpText {...args} />;
+  },
 
-Default.args = {
-  children: 'Lorem Ipsum dolor sit amet',
+  args: {
+    children: 'Lorem Ipsum dolor sit amet',
+  },
 };

@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { Text, TextProps } from '../src/Text/Text';
+import { Text } from '../src/Text/Text';
 
 export default {
   title: 'Typography/Text',
@@ -13,8 +11,8 @@ export default {
   },
 };
 
-export const Basic = (props: TextProps<'span'>) => <Text {...props} />;
-
-Basic.args = {
-  children: 'Text',
+export const Basic = {
+  args: {
+    children: 'Text',
+  },
 };

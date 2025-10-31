@@ -23,7 +23,7 @@ interface DateTimeOwnProps extends CommonProps {
 
 export type DateTimeProps = PropsWithHTMLElement<DateTimeOwnProps, 'time'>;
 
-const _DateTime = (
+const DateTimeBase = (
   {
     date,
     format = 'full',
@@ -46,7 +46,9 @@ const _DateTime = (
   );
 };
 
+DateTimeBase.displayName = 'DateTime';
+
 /**
  * The DateTime component will format a date to a human friendly format and wrap it in a `<time>` tag
  */
-export const DateTime = React.forwardRef(_DateTime);
+export const DateTime = React.forwardRef(DateTimeBase);

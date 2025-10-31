@@ -1,10 +1,10 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryObj, Meta } from '@storybook/react-vite';
 import * as icons from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
 import { Paragraph, Text } from '@contentful/f36-typography';
 import { List } from '@contentful/f36-list';
-import { Flex } from '@contentful/f36-core';
+import { type BoxProps, Flex } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
 import { TextLink } from '../src/TextLink';
@@ -13,7 +13,7 @@ import type { TextLinkVariant } from '../src/types';
 export default {
   component: TextLink,
   parameters: {
-    propTypes: TextLink['__docgenInfo'],
+    propTypes: [TextLink['__docgenInfo']],
   },
   title: 'Components/TextLink',
   argTypes: {
@@ -33,12 +33,14 @@ export default {
   },
 } as Meta;
 
-export const Basic: Story<any> = ({ icon, children, ...args }) => {
-  return (
-    <TextLink icon={icon ? <Icon as={icons[icon]} /> : null} {...args}>
-      {children}
-    </TextLink>
-  );
+export const Basic: StoryObj<any> = {
+  render: ({ ...args }) => {
+    return (
+      <TextLink icon={<Icon as={icons['CalendarBlankIcon']} />} {...args}>
+        This is a text link
+      </TextLink>
+    );
+  },
 };
 
 export const UsedWithText = () => {
@@ -133,7 +135,7 @@ export const UsedWithList = () => {
 };
 
 export const UsedWithinFlexbox = () => {
-  const Box = ({ children }) => (
+  const Box = ({ children }: BoxProps) => (
     <Flex
       style={{
         width: 200,
@@ -210,7 +212,7 @@ const textLinkVariants = [
   'premium',
 ];
 
-export const overview = () => (
+export const Overview = () => (
   <div
     style={{
       backgroundColor: tokens.colorElementLight,

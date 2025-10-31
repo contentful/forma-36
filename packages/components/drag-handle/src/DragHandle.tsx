@@ -69,9 +69,9 @@ export type DragHandleProps<
   E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG,
 > = PolymorphicProps<DragHandleInternalProps, E>;
 
-function _DragHandle<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
+function DragHandleBase<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
   props: DragHandleProps<E>,
-  ref: Ref<any>,
+  ref: Ref<HTMLDivElement | HTMLButtonElement>,
 ) {
   const styles = getStyles();
   const {
@@ -147,13 +147,18 @@ function _DragHandle<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
     onFocus: handleFocus,
     onMouseEnter: handleMouseEnter,
     onMouseLeave: handleMouseLeave,
-    ref,
     style,
   };
 
   if (as === 'div') {
     return (
-      <div {...otherProps} {...commonProps} role="button" tabIndex={0}>
+      <div
+        {...otherProps}
+        {...commonProps}
+        ref={ref as Ref<HTMLDivElement>}
+        role="button"
+        tabIndex={0}
+      >
         <DotsSixVerticalIcon color={tokens.gray600} />
         <span className={styles.label}>{label}</span>
       </div>
@@ -161,14 +166,23 @@ function _DragHandle<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
   }
 
   return (
-    <button {...otherProps} {...commonProps} type="button">
+    <button
+      {...otherProps}
+      {...commonProps}
+      ref={ref as Ref<HTMLButtonElement>}
+      type="button"
+    >
       <DotsSixVerticalIcon color={tokens.gray600} />
       <span className={styles.label}>{label}</span>
     </button>
   );
 }
 
-export const DragHandle = React.forwardRef(_DragHandle) as PolymorphicComponent<
+DragHandleBase.displayName = 'DragHandle';
+
+export const DragHandle = React.forwardRef(
+  DragHandleBase,
+) as PolymorphicComponent<
   ExpandProps<DragHandleInternalProps>,
   typeof DRAG_HANDLE_DEFAULT_TAG,
   'disabled'

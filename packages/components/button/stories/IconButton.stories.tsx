@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import type { Meta } from '@storybook/react/types-6-0';
+import type { Meta } from '@storybook/react-vite';
 import { SectionHeading, Paragraph } from '@contentful/f36-typography';
 import { Flex, Stack, Box } from '@contentful/f36-core';
 import { TextInput } from '@contentful/f36-forms';
 import { Icon } from '@contentful/f36-icon';
 import * as icons from '@contentful/f36-icons';
+import tokens from '@contentful/f36-tokens';
 
 import { IconButton } from '../src/IconButton';
 
@@ -23,59 +24,58 @@ export default {
   },
 } as Meta;
 
-export const basic = ({
-  icon,
-  'aria-label': ariaLabel,
-  iconProps,
-  ...props
-}) => (
-  <IconButton
-    icon={icon && <Icon as={icons[icon]} {...iconProps} />}
-    aria-label={ariaLabel}
-    {...props}
-  />
-);
+export const Basic = {
+  render: ({ icon, 'aria-label': ariaLabel, iconProps, ...props }) => (
+    <IconButton
+      icon={icon && <Icon as={icons[icon]} {...iconProps} />}
+      aria-label={ariaLabel}
+      {...props}
+    />
+  ),
 
-basic.args = {
-  icon: 'StarIcon',
-  'aria-label': 'Label',
-  iconProps: {
-    variant: 'primary',
-    size: 'medium',
+  args: {
+    icon: 'StarIcon',
+    'aria-label': 'Label',
+    iconProps: {
+      color: tokens.colorPrimary,
+      size: 'medium',
+    },
+    variant: 'transparent',
   },
-  variant: 'transparent',
 };
 
-export const withTooltip = ({ icon, iconProps, ...props }) => (
-  <>
-    <Flex marginBottom="spacingS">
-      <IconButton
-        icon={icon && <Icon as={icons[icon]} {...iconProps} />}
-        aria-label={'Start the process'}
-        withTooltip
-        {...props}
-      />
-    </Flex>
-    <Flex marginBottom="spacingS">
-      <IconButton
-        icon={icon && <Icon as={icons[icon]} {...iconProps} />}
-        aria-label={'Start the process'}
-        withTooltip
-        tooltipProps={{ content: 'Different Content', isVisible: true }}
-        {...props}
-      />
-    </Flex>
-  </>
-);
+export const WithTooltip = {
+  render: ({ icon, iconProps, ...props }) => (
+    <>
+      <Flex marginBottom="spacingS">
+        <IconButton
+          icon={icon && <Icon as={icons[icon]} {...iconProps} />}
+          aria-label={'Start the process'}
+          withTooltip
+          {...props}
+        />
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <IconButton
+          icon={icon && <Icon as={icons[icon]} {...iconProps} />}
+          aria-label={'Start the process'}
+          withTooltip
+          tooltipProps={{ content: 'Different Content', isVisible: true }}
+          {...props}
+        />
+      </Flex>
+    </>
+  ),
 
-withTooltip.args = {
-  icon: 'StarIcon',
-  'aria-label': 'Label',
-  iconProps: {
-    variant: 'primary',
-    size: 'medium',
+  args: {
+    icon: 'StarIcon',
+    'aria-label': 'Label',
+    iconProps: {
+      color: tokens.colorPrimary,
+      size: 'medium',
+    },
+    variant: 'transparent',
   },
-  variant: 'transparent',
 };
 
 export const ColoredIconInTransparentIconButton = () => {
@@ -94,7 +94,7 @@ export const ColoredIconInTransparentIconButton = () => {
           icon={
             <Icon
               as={icons.StarIcon}
-              variant={isActive ? 'primary' : 'warning'}
+              color={isActive ? tokens.colorPrimary : tokens.colorWarning}
             />
           }
           aria-label="Close"

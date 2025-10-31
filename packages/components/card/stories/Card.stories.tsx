@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Flex } from '@contentful/f36-core';
 import { Heading, SectionHeading, Text } from '@contentful/f36-typography';
 import { ClockIcon } from '@contentful/f36-icons';
@@ -31,7 +31,7 @@ export default {
   ],
 } as Meta;
 
-export const Default: Story<CardProps> = ({ children, ...args }) => {
+export const Default: StoryObj<CardProps> = ({ children, ...args }) => {
   return (
     <Card {...args}>
       <Text>{children}</Text>
@@ -88,7 +88,7 @@ export const WithOnClick = (args: CardProps) => {
   );
 };
 
-export const SelectableCards: Story<CardProps> = () => {
+export const SelectableCards = () => {
   const [taco, setTaco] = useState(false);
   const [pizza, setPizza] = useState(false);
   const [broccoli, setBroccoli] = useState(false);
@@ -120,7 +120,7 @@ export const SelectableCards: Story<CardProps> = () => {
   );
 };
 
-export const WithLinkAndTarget: Story<CardProps<'a'>> = (args) => {
+export const WithLinkAndTarget: StoryObj<CardProps<'a'>> = (args) => {
   return (
     <Card {...args}>
       <Text>
@@ -139,7 +139,7 @@ WithLinkAndTarget.args = {
   title: 'Forma 36',
 };
 
-export const WithLoadingState: Story<CardProps> = (args) => {
+export const WithLoadingState: StoryObj<CardProps> = (args) => {
   return (
     <Card {...args}>
       <Text>
@@ -155,7 +155,7 @@ WithLoadingState.args = {
   isLoading: true,
 };
 
-export const Overview: Story<CardProps> = () => {
+export const Overview = () => {
   return (
     <>
       <SectionHeading as="h3" marginBottom="spacingS">

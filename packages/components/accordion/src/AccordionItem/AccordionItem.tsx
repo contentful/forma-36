@@ -40,7 +40,7 @@ export interface AccordionItemProps extends CommonProps {
   isExpanded?: boolean;
 }
 
-const _AccordionItem = (
+const AccordionItemBase = (
   {
     title = 'Accordion Title',
     titleElement = 'h2',
@@ -94,4 +94,6 @@ const _AccordionItem = (
   );
 };
 
-export const AccordionItem = React.forwardRef(_AccordionItem);
+AccordionItemBase.displayName = 'AccordionItem';
+
+export const AccordionItem = React.forwardRef(AccordionItemBase);

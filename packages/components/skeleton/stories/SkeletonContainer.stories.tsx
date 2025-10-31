@@ -14,17 +14,19 @@ export default {
   },
 };
 
-export const Basic = (args: SkeletonContainerProps) => (
-  <Skeleton.Container {...args}>
-    <Skeleton.DisplayText numberOfLines={1} />
-    <Skeleton.BodyText numberOfLines={3} offsetTop={35} />
-  </Skeleton.Container>
-);
+export const Basic = {
+  render: (args: SkeletonContainerProps) => (
+    <Skeleton.Container {...args}>
+      <Skeleton.DisplayText numberOfLines={1} />
+      <Skeleton.BodyText numberOfLines={3} offsetTop={35} />
+    </Skeleton.Container>
+  ),
 
-Basic.args = {
-  width: '100%',
-  height: '100',
-  backgroundColor: '#e5ebed',
-  foregroundColor: '#f7f9fa',
-  speed: 2,
+  args: {
+    width: '100%',
+    height: '100',
+    backgroundColor: '#e5ebed',
+    foregroundColor: '#f7f9fa',
+    speed: 2,
+  },
 };

@@ -37,17 +37,17 @@ export type SegmentationProps<
   E extends ElementType = typeof SEGMENTATION_DEFAULT_TAG,
 > = PolymorphicProps<SegmentationInternalProps, E>;
 
-function _Segmentation<E extends ElementType = typeof SEGMENTATION_DEFAULT_TAG>(
+function SegmentationBase<
+  E extends ElementType = typeof SEGMENTATION_DEFAULT_TAG,
+>(
   {
     children,
     className,
     segments,
     separator: SeparatorComponent,
     testId = 'cf-ui-segmentation',
-    ...otherProps
   }: SegmentationProps<E>,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- polymorphic element
-  forwardedRef: Ref<any>,
+  forwardedRef: Ref<HTMLDivElement>,
 ) {
   const styles = getSegmentationStyles();
   const separator = SeparatorComponent ?? <div className={styles.separator} />;
@@ -73,7 +73,11 @@ function _Segmentation<E extends ElementType = typeof SEGMENTATION_DEFAULT_TAG>(
   );
 }
 
-export const Segmentation = forwardRef(_Segmentation) as PolymorphicComponent<
+SegmentationBase.displayName = 'Segmentation';
+
+export const Segmentation = forwardRef(
+  SegmentationBase,
+) as PolymorphicComponent<
   ExpandProps<SegmentationInternalProps>,
   typeof SEGMENTATION_DEFAULT_TAG
 >;

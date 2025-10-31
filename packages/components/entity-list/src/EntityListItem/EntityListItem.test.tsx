@@ -168,6 +168,7 @@ describe('EntityList', function () {
     expect(screen.getByLabelText('Actions')).toBeDisabled();
   });
 
+  // issue with testids on icons as icons
   it('renders an "Experience" entity type', () => {
     render(
       <EntityListItem

@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { getNavbarAccountStyles } from './NavbarAccount.styles';
 import {
   type PropsWithHTMLElement,
@@ -29,7 +29,7 @@ export type NavbarAccountProps = PropsWithHTMLElement<
   'button'
 >;
 
-function _NavbarAccount(
+function NavbarAccountBase(
   props: ExpandProps<NavbarAccountProps>,
   ref: React.Ref<HTMLButtonElement>,
 ) {
@@ -83,4 +83,5 @@ function _NavbarAccount(
   );
 }
 
-export const NavbarAccount = React.forwardRef(_NavbarAccount);
+NavbarAccountBase.displayName = 'NavbarAccount';
+export const NavbarAccount = React.forwardRef(NavbarAccountBase);

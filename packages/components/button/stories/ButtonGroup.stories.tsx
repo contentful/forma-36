@@ -1,8 +1,8 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryFn, StoryObj, Meta } from '@storybook/react-vite';
 import { CaretDownIcon } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Box, Flex } from '@contentful/f36-core';
 import { ButtonGroup, Button, IconButton, type ButtonGroupProps } from '../src';
 import tokens from '@contentful/f36-tokens';
@@ -31,41 +31,45 @@ export default {
   },
 } as Meta;
 
-export const basic: Story<ButtonGroupProps> = (args) => {
-  return (
-    <ButtonGroup {...args}>
-      <Button>Button</Button>
-      <Button>Button</Button>
-      <Button>Button</Button>
-      <IconButton
-        variant="secondary"
-        icon={<CaretDownIcon color={tokens.gray900} />}
-        aria-label="Open dropdown"
-      />
-    </ButtonGroup>
-  );
+export const Basic: StoryObj<ButtonGroupProps> = {
+  render: (args) => {
+    return (
+      <ButtonGroup {...args}>
+        <Button>Button</Button>
+        <Button>Button</Button>
+        <Button>Button</Button>
+        <IconButton
+          variant="secondary"
+          icon={<CaretDownIcon color={tokens.gray900} />}
+          aria-label="Open dropdown"
+        />
+      </ButtonGroup>
+    );
+  },
 };
 
-export const spaced: Story<ButtonGroupProps> = (args) => {
-  return (
-    <ButtonGroup {...args}>
-      <Button>Button</Button>
-      <Button>Button</Button>
-      <Button>Button</Button>
-      <IconButton
-        variant="secondary"
-        icon={<CaretDownIcon color={tokens.gray900} />}
-        aria-label="Open dropdown"
-      />
-    </ButtonGroup>
-  );
+export const Spaced: StoryObj<ButtonGroupProps> = {
+  render: (args) => {
+    return (
+      <ButtonGroup {...args}>
+        <Button>Button</Button>
+        <Button>Button</Button>
+        <Button>Button</Button>
+        <IconButton
+          variant="secondary"
+          icon={<CaretDownIcon color={tokens.gray900} />}
+          aria-label="Open dropdown"
+        />
+      </ButtonGroup>
+    );
+  },
+
+  args: {
+    variant: 'spaced',
+  },
 };
 
-spaced.args = {
-  variant: 'spaced',
-};
-
-export const overview: Story<ButtonGroupProps> = () => {
+export const Overview: StoryFn<ButtonGroupProps> = () => {
   const onClick = action('click');
 
   const buttonVariants: Record<ButtonVariant, true> = {

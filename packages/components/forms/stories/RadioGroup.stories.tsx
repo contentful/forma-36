@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Radio, RadioGroupProps } from '../src';
 import { FormControl } from '@contentful/f36-forms';
 
@@ -16,7 +16,7 @@ export default {
 
 export const Basic = (args: RadioGroupProps) => {
   const [groupState, setGroupState] = useState(args.defaultValue);
-  const handleOnChange = (e) => {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.persist();
     setGroupState(e.target.value);
     action('onChange')(e);
@@ -52,32 +52,37 @@ Basic.args = {
   name: 'fruits',
 };
 
-export const Uncontrolled = (args: RadioGroupProps) => {
-  return (
-    <Radio.Group {...args}>
-      <Radio value="apples">Apples</Radio>
-      <Radio value="pears">Pears</Radio>
-      <Radio value="peaches">Peaches</Radio>
-      <Radio value="mangos">Mangos</Radio>
-      <Radio value="kiwis">Kiwis</Radio>
-      <Radio value="bananas">Bananas</Radio>
-    </Radio.Group>
-  );
+export const Uncontrolled = {
+  render: (args: RadioGroupProps) => {
+    return (
+      <Radio.Group {...args}>
+        <Radio value="apples">Apples</Radio>
+        <Radio value="pears">Pears</Radio>
+        <Radio value="peaches">Peaches</Radio>
+        <Radio value="mangos">Mangos</Radio>
+        <Radio value="kiwis">Kiwis</Radio>
+        <Radio value="bananas">Bananas</Radio>
+      </Radio.Group>
+    );
+  },
+
+  argTypes: {
+    value: { control: { disable: true } },
+  },
+
+  args: {
+    defaultValue: 'kiwis',
+    name: 'fruits',
+  },
 };
 
-Uncontrolled.argTypes = {
-  value: { control: { disable: true } },
+export const WithFormControl = {
+  render: (args: RadioGroupProps) => <WithFormControlWrapper {...args} />,
 };
 
-Uncontrolled.args = {
-  defaultValue: 'kiwis',
-  name: 'fruits',
-};
-
-export const WithFormControl = (args: RadioGroupProps) => {
+const WithFormControlWrapper = (args: RadioGroupProps) => {
   const [groupState, setGroupState] = useState(args.defaultValue);
-  const handleOnChange = (e) => {
-    e.persist();
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setGroupState(e.target.value);
     action('onChange')(e);
   };
@@ -105,17 +110,4 @@ export const WithFormControl = (args: RadioGroupProps) => {
       </Radio.Group>
     </FormControl>
   );
-};
-
-Basic.argTypes = {
-  defaultValue: { control: { disable: true } },
-  value: {
-    options: ['apples', 'pears', 'peaches', 'mangos', 'kiwis', 'bananas'],
-    control: { type: 'select' },
-  },
-};
-
-Basic.args = {
-  defaultValue: 'peaches',
-  name: 'fruits',
 };

@@ -89,36 +89,38 @@ export const Overview = () => (
   </>
 );
 
-export const WithDensitySupport = (props: ComponentProps<typeof Radio>) => {
-  const Densities = [
-    {
-      name: 'Low density',
-      density: 'low',
-    },
-    {
-      name: 'High density',
-      density: 'high',
-    },
-  ];
+export const WithDensitySupport = {
+  render: (props: ComponentProps<typeof Radio>) => {
+    const Densities = [
+      {
+        name: 'Low density',
+        density: 'low',
+      },
+      {
+        name: 'High density',
+        density: 'high',
+      },
+    ];
 
-  return (
-    <Flex gap="spacing2Xl">
-      {Densities.map((density) => {
-        return (
-          <Flex
-            key={density.name}
-            flexDirection="column"
-            style={{ width: '230px' }}
-          >
-            <Heading>{density.name}</Heading>
-            <DensityProvider value={density.density as Density}>
-              <Radio {...props} name={density.name}>
-                {density.name}
-              </Radio>
-            </DensityProvider>
-          </Flex>
-        );
-      })}
-    </Flex>
-  );
+    return (
+      <Flex gap="spacing2Xl">
+        {Densities.map((density) => {
+          return (
+            <Flex
+              key={density.name}
+              flexDirection="column"
+              style={{ width: '230px' }}
+            >
+              <Heading>{density.name}</Heading>
+              <DensityProvider value={density.density as Density}>
+                <Radio {...props} name={density.name}>
+                  {density.name}
+                </Radio>
+              </DensityProvider>
+            </Flex>
+          );
+        })}
+      </Flex>
+    );
+  },
 };

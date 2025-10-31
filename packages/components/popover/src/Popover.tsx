@@ -1,14 +1,8 @@
-import React, {
-  useMemo,
-  useState,
-  useEffect,
-  useCallback,
-  useRef,
-} from 'react';
-import { useId, mergeRefs, type ExpandProps } from '@contentful/f36-core';
-import type { Placement, Modifier } from '@popperjs/core';
-import { PopoverContextProvider, PopoverContextType } from './PopoverContext';
-import { usePopper } from 'react-popper';
+import React from 'react';
+import { type OffsetOptions, type Placement } from '@floating-ui/react';
+import { type ExpandProps } from '@contentful/f36-core';
+import { PopoverContextProvider } from './PopoverContext';
+import { usePopover } from './usePopover';
 
 export interface PopoverProps {
   children: React.ReactNode;
@@ -39,7 +33,7 @@ export interface PopoverProps {
    *
    * @default bottom-start
    */
-  placement?: Placement;
+  placement?: Placement | 'auto';
 
   /**
    * Boolean to control if popover is allowed to change its placement automatically
@@ -95,12 +89,12 @@ export interface PopoverProps {
   id?: string;
 
   /**
-   * The `X-axis` and `Y-axis` offset to position popper element
-   * from its trigger element. `[X, Y]`
+   * Single number as short hand for `mainAxis`
+   *  Or object which can contain `mainAxis`, `crossAxis` or `alignmentAxis`
    *
-   * @default [1, 4]
+   * @default 0
    */
-  offset?: [number, number];
+  offset?: OffsetOptions;
 
   /**
    * Defines if popover should be rendered in the DOM only when it's open
@@ -112,192 +106,10 @@ export interface PopoverProps {
 }
 
 export function Popover(props: ExpandProps<PopoverProps>) {
-  const {
-    children,
-    isOpen,
-    placement = 'bottom-start',
-    isFullWidth = false,
-    isAutoalignmentEnabled = true,
-    usePortal = true,
-    closeOnBlur = true,
-    closeOnEsc = true,
-    onClose,
-    autoFocus = true,
-    id,
-    offset = [1, 4],
-    renderOnlyWhenOpen = true,
-  } = props;
-
-  const [triggerElement, setTriggerElement] = useState<HTMLElement | null>(
-    null,
-  );
-  const [popoverElement, setPopoverElement] = useState<HTMLElement | null>(
-    null,
-  );
-
-  const {
-    attributes: popperAttributes,
-    update,
-    styles: popperStyles,
-  } = usePopper(triggerElement, popoverElement, {
-    placement,
-    modifiers: [
-      {
-        name: 'offset',
-        options: {
-          offset,
-        },
-      },
-      {
-        ...sameWidth,
-        enabled: isFullWidth,
-      },
-      {
-        name: 'preventOverflow',
-        enabled: isAutoalignmentEnabled,
-        options: {
-          mainAxis: true,
-        },
-      },
-      {
-        name: 'flip',
-        enabled: isAutoalignmentEnabled,
-      },
-    ],
-  });
-
-  useEffect(() => {
-    if (isOpen && autoFocus && popoverElement) {
-      popoverElement.focus({ preventScroll: true });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isOpen, popoverElement]);
-
-  useEffect(() => {
-    const updatePosition = async () => {
-      if (isOpen && update) {
-        await update();
-      }
-    };
-    updatePosition();
-  }, [isOpen, update]);
-
-  const popoverGeneratedId = useId(undefined, 'popover-content');
-  const popoverId = id || popoverGeneratedId;
-
-  const closeAndFocusTrigger = useCallback(() => {
-    onClose?.();
-
-    // setTimeout trick to make it work with focus-lock
-    setTimeout(() => triggerElement?.focus({ preventScroll: true }), 0);
-  }, [onClose, triggerElement]);
-
-  // Safari has an issue with the relatedTarget that we use on the onBlur for getPopoverProps,
-  // which was causing the popover to close and reopen when clicking on the trigger.
-  // We will use the isMouseDown to prevent triggering blur in the cases where the user clicks on the trigger.
-  const isMouseDown = useRef<Boolean>(false);
-
-  const contextValue: PopoverContextType = useMemo(
-    () => ({
-      isOpen: Boolean(isOpen),
-      usePortal,
-      renderOnlyWhenOpen,
-      getTriggerProps: (_props = {}, _ref = null) => ({
-        onMouseDown: (event) => {
-          isMouseDown.current = true;
-          _props.onMouseDown?.(event);
-        },
-        onMouseUp: (event) => {
-          isMouseDown.current = false;
-          _props.onMouseUp?.(event);
-        },
-        ref: mergeRefs(setTriggerElement, _ref),
-        ['aria-expanded']: Boolean(isOpen),
-        ['aria-controls']: popoverId,
-      }),
-      getPopoverProps: (_props = {}, _ref = null) => ({
-        ...popperAttributes.popper,
-        style: {
-          ...(_props.style || {}),
-          ...popperStyles.popper,
-        },
-        ref: mergeRefs(setPopoverElement, _ref),
-        id: popoverId,
-        onBlur: (event: React.FocusEvent<HTMLDivElement>) => {
-          if (_props.onBlur) {
-            _props.onBlur(event);
-          }
-
-          if (!closeOnBlur) {
-            return;
-          }
-
-          const activeElement = document.activeElement;
-          const relatedTarget = event.relatedTarget || activeElement;
-
-          const targetIsPopover =
-            popoverElement === relatedTarget ||
-            popoverElement?.contains(relatedTarget);
-          const targetIsTrigger =
-            triggerElement === relatedTarget ||
-            triggerElement?.contains(relatedTarget) ||
-            isMouseDown.current;
-
-          if (targetIsPopover || targetIsTrigger) {
-            return;
-          }
-
-          onClose?.();
-        },
-        onKeyDown: (event: React.KeyboardEvent<HTMLDivElement>) => {
-          if (_props.onKeyDown) {
-            _props.onKeyDown(event);
-          }
-
-          if (closeOnEsc && event.key === 'Escape') {
-            closeAndFocusTrigger();
-          }
-        },
-      }),
-    }),
-    [
-      isOpen,
-      renderOnlyWhenOpen,
-      popperAttributes,
-      popperStyles,
-      usePortal,
-      popoverId,
-      closeOnEsc,
-      closeOnBlur,
-      popoverElement,
-      triggerElement,
-      closeAndFocusTrigger,
-      onClose,
-    ],
-  );
+  const { children, ...otherOptions } = props;
+  const popover = usePopover({ ...otherOptions });
 
   return (
-    <PopoverContextProvider value={contextValue}>
-      {children}
-    </PopoverContextProvider>
+    <PopoverContextProvider value={popover}>{children}</PopoverContextProvider>
   );
 }
-
-/**
- * Sets the popover width to the size of the trigger element.
- */
-const sameWidth: Modifier<'sameWidth', any> = {
-  name: 'sameWidth',
-  enabled: true,
-  phase: 'beforeWrite',
-  requires: ['computeStyles'],
-  fn: ({ state }) => {
-    state.styles.popper.width = `${state.rects.reference.width}px`;
-  },
-  effect:
-    ({ state }) =>
-    () => {
-      const reference = state.elements.reference as HTMLElement;
-      state.elements.popper.style.width = `${reference.offsetWidth}px`;
-    },
-};

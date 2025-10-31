@@ -16,7 +16,7 @@ export type UsageCardProps = CommonProps &
     variant?: 'usage' | 'info';
   };
 
-function _UsageCard(
+function UsageCardBase(
   props: ExpandProps<UsageCardProps>,
   ref: React.Ref<HTMLDivElement>,
 ) {
@@ -37,7 +37,7 @@ function _UsageCard(
       className={cx(styles.usageCard(variant), className)}
       ref={ref}
       data-test-id={testId}
-      padding="spacingL"
+      padding="large"
     >
       <Box style={{ flex: 1 }}>
         {header}
@@ -48,4 +48,6 @@ function _UsageCard(
   );
 }
 
-export const UsageCard = React.forwardRef(_UsageCard);
+UsageCardBase.displayName = 'UsageCard';
+
+export const UsageCard = React.forwardRef(UsageCardBase);

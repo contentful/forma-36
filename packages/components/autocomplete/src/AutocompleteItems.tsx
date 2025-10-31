@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { getStringMatch } from '@contentful/f36-utils';
 import type { UseComboboxGetItemPropsOptions } from 'downshift';
 import { Text } from '@contentful/f36-typography';
@@ -33,6 +33,23 @@ export const AutocompleteItems = <ItemType,>(
 
   const styles = getAutocompleteStyles(listMaxHeight);
 
+  const renderHighlightedItem = (item: ItemType, inputValue) => {
+    if (renderItem) {
+      return renderItem(item, inputValue);
+    }
+    if (typeof item === 'string') {
+      return <HighlightedItem item={item} inputValue={inputValue} />;
+    }
+    if (!React.isValidElement(item)) {
+      // eslint-disable-next-line no-console
+      console.error(
+        'Only valid React elements are supported - https://react.dev/reference/react/isValidElement',
+      );
+      return null;
+    }
+    return item;
+  };
+
   return (
     <ul className={styles.list} data-test-id="cf-autocomplete-list">
       {items.map((item: ItemType, index: number) => {
@@ -47,15 +64,10 @@ export const AutocompleteItems = <ItemType,>(
               styles.item({}),
               highlightedIndex === itemIndex && styles.highlighted,
             ])}
+            data-highlighted={highlightedIndex === itemIndex}
             data-test-id={`cf-autocomplete-list-item-${itemIndex}`}
           >
-            {renderItem ? (
-              renderItem(item, inputValue)
-            ) : typeof item === 'string' ? (
-              <HighlightedItem item={item} inputValue={inputValue} />
-            ) : (
-              item
-            )}
+            {renderHighlightedItem(item, inputValue)}
           </Text>
         );
       })}

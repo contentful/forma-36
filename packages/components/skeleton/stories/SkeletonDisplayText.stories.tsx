@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Skeleton } from '../src/index';
-import type { SkeletonDisplayTextProps } from '../src/SkeletonDisplayText/SkeletonDisplayText';
+import { Skeleton, type SkeletonTextProps } from '../src/index';
 
 export default {
   title: 'Components/Skeleton/SkeletonDisplayText',
@@ -12,12 +11,14 @@ export default {
   argTypes: {},
 };
 
-export const Basic = (args: SkeletonDisplayTextProps) => (
-  <Skeleton.Container>
-    <Skeleton.DisplayText {...args} />
-  </Skeleton.Container>
-);
+export const Basic = {
+  render: (args: SkeletonTextProps) => (
+    <Skeleton.Container>
+      <Skeleton.DisplayText {...args} />
+    </Skeleton.Container>
+  ),
 
-Basic.args = {
-  numberOfLines: 1,
+  args: {
+    numberOfLines: 1,
+  },
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { getNavbarMenuItemStyles } from './NavbarMenuItem.styles';
 import { Menu, type MenuItemProps } from '@contentful/f36-menu';
 import {
@@ -26,8 +26,9 @@ export type NavbarMenuItemProps<
   E extends React.ElementType = typeof NAVBAR_MENU_ITEM_DEFAULT_TAG,
 > = PolymorphicProps<NavbarMenuItemOwnProps, E>;
 
-function _NavbarMenuItem(
+function NavbarMenuItemBase(
   props: NavbarMenuItemProps<React.ElementType>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ref: React.Ref<any>,
 ) {
   const {
@@ -66,7 +67,9 @@ const externalIcon = <NavbarItemIcon icon={<ArrowSquareOutIcon />} />;
 const isExternalLink = (props: NavbarMenuItemProps<'a'>) =>
   props.as === 'a' && props.target === '_blank';
 
-export const NavbarMenuItem: PolymorphicComponent<
+export const NavbarMenuItem = React.forwardRef(
+  NavbarMenuItemBase,
+) as PolymorphicComponent<
   ExpandProps<NavbarMenuItemOwnProps>,
   typeof NAVBAR_MENU_ITEM_DEFAULT_TAG
-> = React.forwardRef(_NavbarMenuItem);
+>;

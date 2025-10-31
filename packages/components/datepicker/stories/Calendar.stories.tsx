@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
-import { css } from 'emotion';
+import type { Meta } from '@storybook/react-vite';
+import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 
-import {
-  Calendar,
-  DayContent,
-  DayContentProps,
-  type CalendarProps,
-} from '../src';
+import { Calendar, DayContent, DayContentProps } from '../src';
 
 const testDate = new Date('2022-04-15');
 
@@ -17,7 +12,7 @@ export default {
   title: 'Components/Calendar',
 } as Meta;
 
-export const Basic: Story<CalendarProps> = (args) => {
+export const Basic = (args) => {
   const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
   return (
@@ -31,7 +26,7 @@ export const Basic: Story<CalendarProps> = (args) => {
   );
 };
 
-export const WithMinMaxDate: Story<CalendarProps> = (args) => {
+export const WithMinMaxDate = (args) => {
   const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
   return (
@@ -47,7 +42,7 @@ export const WithMinMaxDate: Story<CalendarProps> = (args) => {
   );
 };
 
-export const WithMultipleMonths: Story<CalendarProps> = (args) => {
+export const WithMultipleMonths = (args) => {
   const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
   return (
@@ -97,7 +92,7 @@ const CustomDayContent = ({
   );
 };
 
-export const WithCustomDayContent: Story<CalendarProps> = (args) => {
+export const WithCustomDayContent = (args) => {
   const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 
   return (

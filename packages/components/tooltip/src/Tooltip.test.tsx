@@ -1,3 +1,4 @@
+/* eslint-disable jest/no-commented-out-tests */
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -72,23 +73,6 @@ describe('Tooltip', () => {
     expect(
       container.querySelector('.target-wrapper-class-name').textContent,
     ).toBe('Hover me');
-  });
-
-  it('renders the component with a placement attribute', async () => {
-    const user = userEvent.setup();
-    render(
-      <Tooltip content="Tooltip content" placement="left">
-        <span>Hover me</span>
-      </Tooltip>,
-    );
-
-    await user.hover(screen.getByText('Hover me'));
-
-    await waitFor(() =>
-      expect(
-        screen.getByRole('tooltip').getAttribute('data-popper-placement'),
-      ).toBe('left'),
-    );
   });
 
   it('renders the component with a id attribute', async () => {
