@@ -182,6 +182,12 @@ export const Overview = () => {
             variant="secondary"
             icon={<LockSimpleIcon />}
             aria-label="Lock"
+          />
+
+          <IconButton
+            variant="secondary"
+            icon={<LockSimpleIcon />}
+            aria-label="Lock"
             withTooltip
             tooltipProps={{ content: 'Tooltip text' }}
           />
