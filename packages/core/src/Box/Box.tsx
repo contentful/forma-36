@@ -1,15 +1,15 @@
-import * as React from 'react';
 import * as CSS from 'csstype';
 import { css, cx } from 'emotion';
-import type { MarginProps, PaddingProps, CommonProps } from '../types';
+import * as React from 'react';
+import type { CommonProps, MarginProps, PaddingProps } from '../types';
 import { getSpacingStyles } from '../utils/getSpacingStyles';
 
 const BOX_DEFAULT_TAG: React.ElementType = 'div';
 
 import {
-  PolymorphicProps,
-  PolymorphicComponent,
   ExpandProps,
+  PolymorphicComponent,
+  PolymorphicProps,
 } from '../Primitive/Primitive';
 
 export interface BoxInternalProps
@@ -72,6 +72,8 @@ export function useBox<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
     ...otherProps,
   };
 
+  console.log('boxProps:', boxProps);
+
   return {
     boxProps: boxProps,
     Element,
@@ -83,6 +85,8 @@ function _Box<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
   ref: React.Ref<any>,
 ) {
   const { boxProps, Element } = useBox<E>(props);
+
+  console.log('boxProps:', boxProps);
 
   return (
     <Element {...boxProps} ref={ref}>
