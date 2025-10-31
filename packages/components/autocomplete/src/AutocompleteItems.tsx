@@ -55,7 +55,7 @@ export const AutocompleteItems = <ItemType,>(
             ) : typeof item === 'string' ? (
               <HighlightedItem item={item} inputValue={inputValue} />
             ) : (
-              item
+              String(item)
             )}
           </Text>
         );
