@@ -63,6 +63,7 @@
     "@eslint/js": "^9.35.0",
     "@manypkg/get-packages": "^3.1.0",
     "@storybook/addon-a11y": "^9.1.10",
+    "@storybook/addon-actions": "^9.0.8",
     "@storybook/addon-docs": "^9.1.10",
     "@storybook/addon-vitest": "^9.1.10",
     "@storybook/react-vite": "^9.1.10",
