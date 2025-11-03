@@ -33,10 +33,6 @@ export interface AIChatReasoningProps extends CommonProps {
    * Callback called when the expand/collapse state changes
    */
   onToggle?: (isExpanded: boolean) => void;
-  /**
-   * Test ID for the component
-   */
-  testId?: string;
 }
 
 function _AIChatReasoning(
