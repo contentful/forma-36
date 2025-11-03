@@ -10,3 +10,5 @@ export { AIChatArtifactMessage } from './AIChatArtifactMessage/AIChatArtifactMes
 export type { AIChatArtifactMessageProps } from './AIChatArtifactMessage/AIChatArtifactMessage';
 export * from './AIChatInput';
 export * from './AIChatMessage';
+export { AIChatReasoning } from './AIChatReasoning/AIChatReasoning';
+export type { AIChatReasoningProps } from './AIChatReasoning/AIChatReasoning';
