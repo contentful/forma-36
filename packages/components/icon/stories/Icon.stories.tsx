@@ -110,17 +110,3 @@ export const WithExternalIcon: StoryObj<
     </Fragment>
   ),
 };
-
-export const IconasImage: StoryFn<
-  IconInternalProps & { children?: never }
-> = () => (
-  <Fragment>
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Icon component with third-party libraries
-    </SectionHeading>
-
-    <Icon as="img">
-      <GearSixIcon />
-    </Icon>
-  </Fragment>
-);

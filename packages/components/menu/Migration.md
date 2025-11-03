@@ -2,7 +2,7 @@
 
 ## Breaking change: Changed prop types
 
-The Men component introduces two changes:
+The Menu component introduces two changes:
 
 - placement no longer accepts `"auto-start"` and `"auto-end"`
 - offset prop shape changed from a tuple [number, number] to OffsetOptions (number or object)
@@ -51,7 +51,7 @@ Use when you prefer automatic best-fit without manually managing flipping logic.
 
 ## offset Migration
 
-OLD: `[x, y]` where x = horizontal shift, y = vertical gap (for top/bottom placements).  
+OLD: `[x, y]` where x = horizontal shift, y = vertical gap (for top/bottom placements).
 NEW: `offset` can be:
 
 - `number` → shorthand for `{ mainAxis: number }`
@@ -144,9 +144,7 @@ Previously you could nest menus using:
   <Menu.List>
     <Menu.Item>Item 1</Menu.Item>
     <Menu.Submenu>
-      <Menu.SubmenuTrigger>
-        More actions
-      </Menu.Trigger>
+      <Menu.SubmenuTrigger>More actions</Menu.SubmenuTrigger>
       <Menu.List>
         <Menu.Item>Nested A</Menu.Item>
         <Menu.Item>Nested B</Menu.Item>
@@ -173,9 +171,7 @@ Updated example:
   <Menu.List>
     <Menu.Item>Item 1</Menu.Item>
     <Menu>
-      <Menu.SubmenuTrigger>
-        More actions
-      </Menu.Trigger>
+      <Menu.SubmenuTrigger>More actions</Menu.SubmenuTrigger>
       <Menu.List>
         <Menu.Item>Nested A</Menu.Item>
         <Menu.Item>Nested B</Menu.Item>

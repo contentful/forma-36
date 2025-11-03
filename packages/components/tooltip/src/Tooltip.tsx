@@ -2,7 +2,8 @@ import React, {
   type MouseEvent,
   type FocusEvent,
   type CSSProperties,
-  ReactElement,
+  type ReactElement,
+  type KeyboardEvent,
 } from 'react';
 
 import type { Placement } from '@floating-ui/react';
@@ -74,7 +75,7 @@ export type TooltipInternalProps = {
   /**
    * Function that will be called when the user uses a keyboard key on the target
    */
-  onKeyDown?: (evt: KeyboardEvent) => void;
+  onKeyDown?: (evt: KeyboardEvent<HTMLSpanElement>) => void;
 
   /**
    * It sets the "preferred" position of the tooltip
@@ -162,26 +163,21 @@ export const Tooltip = ({
   return (
     <TooltipContextProvider value={context}>
       <Box
+        as="span"
         testId={testId}
         className={cx(styles.tooltipContainer, targetWrapperClassName)}
-        onMouseEnter={(evt: MouseEvent) => {
-          if (onMouseOver) onMouseOver(evt);
-        }}
-        onMouseLeave={(evt: MouseEvent) => {
-          if (onMouseLeave) onMouseLeave(evt);
-        }}
-        onFocus={(evt: FocusEvent) => {
-          if (onFocus) onFocus(evt);
-        }}
-        onBlur={(evt: FocusEvent) => {
-          if (onBlur) onBlur(evt);
-        }}
-        onKeyDown={(evt: KeyboardEvent) => {
-          if (onKeyDown) onKeyDown(evt);
-        }}
         {...otherProps}
       >
-        <TooltipTrigger tooltipId={tooltipId}>{children}</TooltipTrigger>
+        <TooltipTrigger
+          tooltipId={tooltipId}
+          onMouseEnter={onMouseOver}
+          onMouseLeave={onMouseLeave}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          onKeyDown={onKeyDown}
+        >
+          {children}
+        </TooltipTrigger>
         <TooltipContent
           content={content}
           label={label}

@@ -16,6 +16,20 @@ const preview: Preview = {
   ],
   parameters: {
     layout: 'centered',
+    options: {
+      storySort: {
+        method: 'alphabetical',
+        order: [
+          'Documentation',
+          'Layout',
+          'Typography',
+          'Form Elements',
+          'Components',
+          'Utils',
+          'Utilities',
+        ],
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

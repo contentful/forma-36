@@ -9,12 +9,8 @@ export default function AssetCardActionsExample() {
       title="Everest"
       src="https://bit.ly/31yL3Ps"
       actions={[
-        <MenuItem key="copy" onClick={() => alert('copy')}>
-          Copy
-        </MenuItem>,
-        <MenuItem key="delete" onClick={() => alert('delete')}>
-          Delete
-        </MenuItem>,
+        <MenuItem key="copy">Copy</MenuItem>,
+        <MenuItem key="delete">Delete</MenuItem>,
       ]}
     />
   );

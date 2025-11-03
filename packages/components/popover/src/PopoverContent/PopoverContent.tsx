@@ -60,7 +60,6 @@ const PopoverContentBase = (
       className={cx(styles.container, className)}
       style={{ ...context.floatingStyles }}
       {...getFloatingProps()}
-      aria-labelledby={context.labelId}
       aria-describedby={context.descriptionId}
       data-test-id={testId}
       tabIndex={-1}
