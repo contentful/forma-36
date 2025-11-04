@@ -26,7 +26,7 @@ describe('AIChatHistoryThread', () => {
   it('renders last activity time when provided', () => {
     render(<AIChatHistoryThread thread={mockThread} />);
 
-    expect(screen.getByText('30m ago')).toBeTruthy();
+    expect(screen.getByText('30 minutes ago')).toBeTruthy();
   });
 
   it('calls onThreadClick when clicked', () => {
@@ -60,6 +60,5 @@ describe('AIChatHistoryThread', () => {
     render(<AIChatHistoryThread thread={threadWithoutActivity} />);
 
     expect(screen.getByText('Test Thread Title')).toBeTruthy();
-    expect(screen.queryByText('30m ago')).toBeNull();
   });
 });

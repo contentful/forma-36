@@ -1,9 +1,8 @@
-import { Text } from '@contentful/f36-components';
+import { formatRelativeDateTime, Text } from '@contentful/f36-components';
 import { Box, type CommonProps } from '@contentful/f36-core';
 import { cx } from 'emotion';
 import React, { forwardRef, Ref } from 'react';
 import { MessageThread } from '../AIChatHistory';
-import { formatTime } from '../utils';
 import { getStyles } from './AIChatHistoryThread.styles';
 
 export interface AIChatHistoryThreadProps extends CommonProps {
@@ -15,7 +14,11 @@ function _AIChatHistoryThread(
   props: AIChatHistoryThreadProps,
   ref: Ref<HTMLDivElement>,
 ) {
-  const { className, testId, thread } = props;
+  const {
+    className,
+    thread,
+    testId = `cf-ui-ai-chat-history-thread-${thread.id}`,
+  } = props;
   const styles = getStyles();
 
   const handleThreadClick = () => {
@@ -27,13 +30,13 @@ function _AIChatHistoryThread(
       ref={ref}
       className={cx(styles.thread, className)}
       onClick={handleThreadClick}
-      testId={testId || `cf-ui-ai-chat-history-thread-${thread.id}`}
+      testId={testId}
       role="button"
       tabIndex={0}
       id={`thread-${thread.id}`}
       aria-label={`Thread: ${thread.title}${
         thread.lastActivity
-          ? `, last activity ${formatTime(thread.lastActivity)}`
+          ? `, last activity ${formatRelativeDateTime(thread.lastActivity)}`
           : ''
       }`}
       onKeyDown={(e) => {
@@ -51,7 +54,7 @@ function _AIChatHistoryThread(
           <Box className={styles.threadMeta}>
             {thread.lastActivity && (
               <Text className={styles.threadTime}>
-                {formatTime(thread.lastActivity)}
+                {formatRelativeDateTime(thread.lastActivity)}
               </Text>
             )}
           </Box>
@@ -59,7 +62,7 @@ function _AIChatHistoryThread(
         {thread.statusIcon && (
           <Box
             className={styles.threadStatus}
-            aria-label="Status"
+            aria-label={`Status: ${thread.status}`}
             title="Status"
           >
             {thread.statusIcon}
@@ -70,7 +73,4 @@ function _AIChatHistoryThread(
   );
 }
 
-/**
- * Individual thread component for the AI Chat History
- */
 export const AIChatHistoryThread = forwardRef(_AIChatHistoryThread);

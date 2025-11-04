@@ -5,7 +5,7 @@ export const getStyles = () => {
   return {
     thread: css({
       height: '54px',
-      padding: `8px 8px ${tokens.spacingXs} 12px`,
+      padding: `${tokens.spacingXs} ${tokens.spacingXs} ${tokens.spacingXs} ${tokens.spacingS}`,
       cursor: 'pointer',
       borderRadius: tokens.borderRadiusSmall,
       transition: `background-color ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
@@ -13,7 +13,7 @@ export const getStyles = () => {
         backgroundColor: tokens.gray100,
       },
       '&:first-child': {
-        marginTop: '8px',
+        marginTop: tokens.spacingXs,
       },
       '&:focus-visible': {
         outline: `2px solid ${tokens.blue600}`,
@@ -28,12 +28,10 @@ export const getStyles = () => {
     }),
     threadInfo: css({
       flex: 1,
-      minWidth: 0, // Allows text truncation
+      minWidth: 0,
     }),
     threadTitle: css({
-      margin: 0,
-      marginTop: '2px',
-      marginBottom: '1px',
+      margin: '2px 0px 1px',
       fontSize: tokens.fontSizeM,
       color: tokens.gray700,
       lineHeight: tokens.lineHeightCondensed,
@@ -44,11 +42,11 @@ export const getStyles = () => {
     threadMeta: css({
       display: 'flex',
       alignItems: 'center',
-      gap: '4px',
+      gap: tokens.spacing2Xs,
       marginTop: '0',
     }),
     threadTime: css({
-      fontSize: '12px',
+      fontSize: tokens.fontSizeS,
       color: tokens.gray500,
     }),
     threadStatus: css({
@@ -66,7 +64,7 @@ export const getStyles = () => {
       backgroundColor: tokens.blue200,
       fill: tokens.blue600,
     }),
-    warningIcon: css({
+    warningStatusIcon: css({
       backgroundColor: tokens.orange200,
       fill: tokens.orange600,
     }),

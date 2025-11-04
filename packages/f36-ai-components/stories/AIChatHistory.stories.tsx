@@ -1,21 +1,21 @@
 import {
+  CheckCircleIcon,
   CheckIcon,
+  ClockIcon,
   ColumnsIcon,
   EyeIcon,
   LightningIcon,
   WarningIcon,
 } from '@contentful/f36-icons';
 import { action } from '@storybook/addon-actions';
+import { cx } from 'emotion';
 import React from 'react';
 import {
   AIChatHistory,
-  MessageGroup,
   MessageThread,
 } from '../src/AIChatHistory/AIChatHistory';
 import { getStyles } from '../src/AIChatHistory/AIChatHistoryThread/AIChatHistoryThread.styles';
-import { cx } from 'emotion';
 
-// Sample data for stories
 interface MockThreadData {
   title: string;
   group: 'paused' | 'processing' | 'done';
@@ -138,7 +138,7 @@ const createMockThreads = (): MessageThread[] => {
         statusIcon = (
           <WarningIcon
             key={`warning-${index}`}
-            className={cx(styles.statusIcon, styles.warningIcon)}
+            className={cx(styles.statusIcon, styles.warningStatusIcon)}
           />
         );
         break;
@@ -164,294 +164,74 @@ const createMockThreads = (): MessageThread[] => {
   });
 };
 
-const statusGroups: MessageGroup[] = [
-  {
-    id: 'paused',
-    label: 'Paused',
-    icon: <ColumnsIcon />,
-    filter: (thread) => thread.group === 'paused',
-  },
-  {
-    id: 'processing',
-    label: 'Processing',
-    icon: <LightningIcon />,
-    filter: (thread) => thread.group === 'processing',
-  },
-  {
-    id: 'done',
-    label: 'Done',
-    icon: <CheckIcon />,
-    filter: (thread) => thread.group === 'done',
-  },
-];
-
 export default {
   title: 'Components/AIChatHistory',
   component: AIChatHistory,
-  argTypes: {
-    threads: {
-      description: 'Array of message threads to display',
-    },
-    groups: {
-      description: 'Optional groups to organize threads',
-    },
-    maxHeight: {
-      description: 'Maximum height of the scrollable area',
-      control: { type: 'text' },
-    },
-    isLoading: {
-      description: 'Loading state',
-      control: { type: 'boolean' },
-    },
-  },
-  parameters: {
-    docs: {
-      description: {
-        component:
-          'Displays a scrollable list of message threads, optionally grouped by status. Supports filtering threads into groups with custom labels and icons.',
-      },
-    },
-  },
 };
 
 export const Default = {
   args: {
     threads: createMockThreads(),
-    groups: statusGroups,
-    maxHeight: '400px',
-  },
-};
-
-export const WithGroups = {
-  args: {
-    threads: createMockThreads(),
-    groups: statusGroups,
-    maxHeight: '600px',
-  },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'Threads organized into groups with custom labels and icons. Groups are filtered dynamically based on thread properties. This shows the refined sidebar-style design with better spacing and typography.',
-      },
-    },
-  },
-};
-
-export const EmptyState = {
-  args: {
-    threads: [],
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Default empty state when no threads are available.',
-      },
-    },
-  },
-};
-
-export const CustomEmptyState = {
-  args: {
-    threads: [],
-    emptyState: (
-      <div style={{ textAlign: 'center', padding: '20px' }}>
-        <h3>No conversations found</h3>
-        <p>Start a new conversation to see it here.</p>
-      </div>
-    ),
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Custom empty state with custom content.',
-      },
-    },
-  },
-};
-
-export const Loading = {
-  args: {
-    threads: createMockThreads(),
-    isLoading: true,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Loading state while threads are being fetched.',
-      },
-    },
-  },
-};
-
-export const SingleGroup = {
-  args: {
-    threads: createMockThreads(),
-    groups: [statusGroups[0]], // Only "Recent" group
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Threads organized into a single group.',
-      },
-    },
-  },
-};
-
-export const ScreenshotExample = {
-  args: {
-    threads: [
+    groups: [
       {
-        id: '1',
-        title: 'Localize Content Models for Japan',
-        lastActivity: new Date(Date.now() - 3 * 60 * 1000),
-        statusIcon: <EyeIcon />,
-        statusType: 'visible' as const,
-        onThreadClick: action('Localize Content Models clicked'),
+        id: 'paused',
+        label: 'Paused',
+        icon: <ColumnsIcon />,
+        filter: (thread: MessageThread) => thread.group === 'paused',
       },
       {
-        id: '2',
-        title: 'Translate About Us for Japanese market',
-        lastActivity: new Date(Date.now() - 7 * 60 * 1000),
-        isActive: true,
-        onThreadClick: action('Translate About Us clicked'),
+        id: 'processing',
+        label: 'Processing',
+        icon: <LightningIcon />,
+        filter: (thread: MessageThread) => thread.group === 'processing',
       },
       {
-        id: '3',
-        title: 'Optimize SEO keywords for Japan',
-        lastActivity: new Date(Date.now() - 58 * 60 * 1000),
-        statusIcon: <EyeIcon />,
-        statusType: 'visible' as const,
-        onThreadClick: action('Optimize SEO clicked'),
-      },
-      {
-        id: '4',
-        title: 'Adapt Contact page for Japan',
-        lastActivity: new Date(Date.now() - 20 * 60 * 60 * 1000),
-        onThreadClick: action('Adapt Contact clicked'),
-      },
-      {
-        id: '5',
-        title: 'Revise FAQ content for Japan',
-        lastActivity: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000),
-        statusIcon: <WarningIcon />,
-        statusType: 'warning' as const,
-        onThreadClick: action('Revise FAQ clicked'),
-      },
-      {
-        id: '6',
-        title: 'Create Japanese metadata',
-        lastActivity: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
-        statusIcon: <EyeIcon />,
-        statusType: 'visible' as const,
-        onThreadClick: action('Create metadata clicked'),
+        id: 'done',
+        label: 'Done',
+        icon: <CheckIcon />,
+        filter: (thread: MessageThread) => thread.group === 'done',
       },
     ],
-    groups: statusGroups,
-    maxHeight: '400px',
-  },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'Exact reproduction of the provided screenshot with tab-style groups, status icons, and clean card design.',
-      },
-    },
   },
 };
 
-export const TabFiltering = {
-  args: {
-    threads: [
-      // Processing threads (no status)
-      {
-        id: '1',
-        title: 'Creating content model for Products',
-        lastActivity: new Date(Date.now() - 3 * 60 * 1000),
-        onThreadClick: action('Processing thread 1 clicked'),
-      },
-      {
-        id: '2',
-        title: 'Generating API documentation',
-        lastActivity: new Date(Date.now() - 7 * 60 * 1000),
-        isActive: true,
-        onThreadClick: action('Processing thread 2 clicked'),
-      },
-      // Done threads (visible status)
-      {
-        id: '3',
-        title: 'SEO optimization completed',
-        lastActivity: new Date(Date.now() - 58 * 60 * 1000),
-        statusIcon: <EyeIcon />,
-        statusType: 'visible' as const,
-        onThreadClick: action('Done thread 1 clicked'),
-      },
-      {
-        id: '4',
-        title: 'Translation workflow finished',
-        lastActivity: new Date(Date.now() - 2 * 60 * 60 * 1000),
-        statusIcon: <EyeIcon />,
-        statusType: 'visible' as const,
-        onThreadClick: action('Done thread 2 clicked'),
-      },
-      // Paused threads (warning status)
-      {
-        id: '5',
-        title: 'Content review paused',
-        lastActivity: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000),
-        statusIcon: <WarningIcon />,
-        statusType: 'warning' as const,
-        onThreadClick: action('Paused thread 1 clicked'),
-      },
-      {
-        id: '6',
-        title: 'Migration halted due to error',
-        lastActivity: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
-        statusIcon: <WarningIcon />,
-        statusType: 'warning' as const,
-        onThreadClick: action('Paused thread 2 clicked'),
-      },
-    ],
-    groups: statusGroups,
-    maxHeight: '400px',
-  },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'Demonstrates tab filtering functionality. Click different tabs to see how threads are filtered: Processing (2 threads), Done (2 threads), Paused (2 threads).',
-      },
-    },
-  },
-};
-
-export const SidebarStyle = {
+export const TwoGroups = {
   args: {
     threads: createMockThreads(),
-    groups: statusGroups,
-    maxHeight: '500px',
+    groups: [
+      {
+        id: 'processing',
+        label: 'Recent',
+        icon: <ClockIcon />,
+        filter: (thread: MessageThread) =>
+          thread.group === 'processing' || thread.group === 'paused',
+      },
+      {
+        id: 'done',
+        label: 'Finished',
+        icon: <CheckCircleIcon />,
+        filter: (thread: MessageThread) => thread.group === 'done',
+      },
+    ],
   },
   parameters: {
     docs: {
       description: {
-        story:
-          'Clean sidebar-style design without borders, featuring rounded thread cards with subtle hover effects and refined typography hierarchy.',
+        story: 'Threads organized into two groups.',
       },
     },
   },
-  decorators: [
-    (Story: React.ComponentType) => (
-      <div
-        style={{
-          width: '300px',
-          height: '500px',
-          backgroundColor: '#f7f9fc',
-          padding: '16px',
-          borderRadius: '8px',
-        }}
-      >
-        <Story />
-      </div>
-    ),
-  ],
+};
+
+export const NoGroups = {
+  args: {
+    threads: createMockThreads(),
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Threads without any groups.',
+      },
+    },
+  },
 };
