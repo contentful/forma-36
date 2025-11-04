@@ -22,8 +22,6 @@ export const AIChatMentionList: React.FC<AIChatMentionListProps> = ({
   editor,
   command,
 }) => {
-  if (items.length === 0) return null;
-
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -49,7 +47,7 @@ export const AIChatMentionList: React.FC<AIChatMentionListProps> = ({
     return acc;
   }, {});
 
-  return (
+  return items.length === 0 ? null : (
     <Menu isOpen usePortal={false}>
       <Menu.List ref={ref} onKeyDown={() => editor.commands.focus()}>
         {Object.entries(groups).map(([category, groupItems]) => (
