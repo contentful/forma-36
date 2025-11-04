@@ -22,16 +22,22 @@ export const AIChatMentionList: React.FC<AIChatMentionListProps> = ({
   editor,
   command,
 }) => {
+  if (items.length === 0) return null;
+
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!ref.current || !clientRect) return;
 
     // position the menu under the '@' symbol
-    const { top, left } = clientRect();
+    const textAreaBottom =
+      editor.view.dom.parentElement.getBoundingClientRect().bottom + 10;
+    const mentionPosition = clientRect().top + 25;
+    const top = Math.min(mentionPosition, textAreaBottom);
+
     ref.current.style.position = 'absolute';
-    ref.current.style.top = `${top + 25}px`;
-    ref.current.style.left = `${left}px`;
+    ref.current.style.top = `${top}px`;
+    ref.current.style.left = `${clientRect().left}px`;
   }, []);
 
   const groups = items.reduce<Record<string, SuggestionItem[]>>((acc, item) => {

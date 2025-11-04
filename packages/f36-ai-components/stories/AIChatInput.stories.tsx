@@ -161,7 +161,7 @@ export const WithMentionSupport: Story<AIChatInputProps> = (args) => {
       editorRef={editorRef}
       promptInputTools={
         <Tooltip
-          content="Use this button or the '@' key specify a content type"
+          content="Use this button or the '@' key to specify a content type"
           placement="top"
         >
           {/* Adds the '@' character to allow the user to start the mention */}
