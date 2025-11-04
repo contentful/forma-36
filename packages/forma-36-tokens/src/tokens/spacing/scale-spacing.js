@@ -1,4 +1,4 @@
-const scale-spacing = {
+const scaleSpacing = {
   'spacing-100': '0.25rem',
   'spacing-200': '0.5rem',
   'spacing-300': '0.75rem',
@@ -10,4 +10,4 @@ const scale-spacing = {
   'spacing-900': '5rem',
 };
 
-module.exports = scale-spacing;
+module.exports = scaleSpacing;
