@@ -9,13 +9,17 @@ interface GetStylesParams {
 export function getStyles({ maxHeight }: GetStylesParams) {
   return {
     container: css({
+      width: '330px',
       height: '380px',
       maxHeight: typeof maxHeight === 'number' ? `${maxHeight}px` : maxHeight,
       overflowY: 'auto',
       backgroundColor: tokens.colorWhite,
-      borderRadius: '16px',
-      boxShadow: '0 8px 24px rgba(0, 0, 0, 0.12)',
-      padding: '16px',
+      borderRadius: '10px',
+      boxShadow: `0px 6px 12px -2px rgba(25, 37, 50, 0.1),
+                  0px 3px 7px -3px rgba(25, 37, 50, 0.1),
+                  0px 0px 0px 1px rgba(25, 37, 50, 0.1)`,
+
+      padding: '12px 8px',
       border: 'none',
     }),
 

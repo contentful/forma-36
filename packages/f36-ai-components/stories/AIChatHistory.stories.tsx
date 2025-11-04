@@ -1,6 +1,6 @@
 import {
-  CheckCircleIcon,
-  ClockIcon,
+  CheckIcon,
+  ColumnsIcon,
   EyeIcon,
   LightningIcon,
   WarningIcon,
@@ -74,7 +74,7 @@ const statusGroups: MessageGroup[] = [
   {
     id: 'paused',
     label: 'Paused',
-    icon: <ClockIcon />,
+    icon: <ColumnsIcon />,
     filter: (thread) => thread.statusType === 'warning', // Show warning status threads
   },
   {
@@ -86,7 +86,7 @@ const statusGroups: MessageGroup[] = [
   {
     id: 'done',
     label: 'Done',
-    icon: <CheckCircleIcon />,
+    icon: <CheckIcon />,
     filter: (thread) =>
       thread.statusType === 'visible' || thread.statusType === 'success', // Show visible/success status threads
   },

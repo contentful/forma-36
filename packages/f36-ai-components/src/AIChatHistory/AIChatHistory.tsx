@@ -1,9 +1,9 @@
 import { Text } from '@contentful/f36-components';
 import { Box, type CommonProps, Flex } from '@contentful/f36-core';
 import React, { forwardRef, Ref, useState } from 'react';
-import { getStyles } from './AIChatHistory.styles';
 import { AIChatHistoryTabs } from './AIChatHistoryTabs';
 import { AIChatHistoryThread } from './AIChatHistoryThread';
+import { getStyles } from './AIChatHistory.styles';
 
 export interface MessageThread {
   /** Unique identifier for the thread */
