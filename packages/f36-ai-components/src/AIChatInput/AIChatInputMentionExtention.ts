@@ -1,8 +1,9 @@
 import Mention from '@tiptap/extension-mention';
-import { SuggestionOptions, SuggestionProps } from '@tiptap/suggestion';
 
-import { AIChatMentionList, SuggestionItem } from './AIChatMentionList';
+import { AIChatMentionList } from './AIChatMentionList';
 import { ReactRenderer } from '@tiptap/react';
+
+type SuggestionOptions = Parameters<typeof Mention.configure>[0]['suggestion'];
 
 export type AiChatInputMentionConfig = Pick<
   SuggestionOptions,
@@ -33,10 +34,7 @@ export function createAiChatMentionExtension({
 
 const renderer = (): SuggestionOptions['render'] => {
   return () => {
-    let component: ReactRenderer<
-      unknown,
-      SuggestionProps<SuggestionItem, SuggestionItem>
-    > | null;
+    let component: ReactRenderer | null;
 
     const handleKeyExit = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {

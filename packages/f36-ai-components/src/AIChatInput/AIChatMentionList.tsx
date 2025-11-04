@@ -1,5 +1,5 @@
 import { Menu } from '@contentful/f36-components';
-import { SuggestionProps } from '@tiptap/suggestion';
+import { Editor } from '@tiptap/react';
 import React, { useRef, useEffect } from 'react';
 
 const NO_CATEGORY_ID = '__NA__';
@@ -9,7 +9,14 @@ export interface SuggestionItem {
   category?: string;
 }
 
-export const AIChatMentionList: React.FC<SuggestionProps<SuggestionItem>> = ({
+interface AIChatMentionListProps {
+  clientRect: (() => DOMRect | null) | null;
+  items: SuggestionItem[];
+  editor: Editor;
+  command: (props: SuggestionItem) => void;
+}
+
+export const AIChatMentionList: React.FC<AIChatMentionListProps> = ({
   clientRect,
   items,
   editor,
