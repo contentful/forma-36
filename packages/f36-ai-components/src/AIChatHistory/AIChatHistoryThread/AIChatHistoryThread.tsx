@@ -22,37 +22,32 @@ function _AIChatHistoryThread(
     thread.onThreadClick?.();
   };
 
-  const getStatusIconStyles = () => {
-    switch (thread.statusType) {
-      case 'warning':
-        return styles.warningIcon;
-      case 'success':
-        return styles.successIcon;
-      default:
-        return styles.visibleIcon;
-    }
-  };
-
   return (
     <Box
       ref={ref}
-      className={cx(
-        styles.thread,
-        thread.isActive && styles.activeThread,
-        className,
-      )}
+      className={cx(styles.thread, className)}
       onClick={handleThreadClick}
       testId={testId || `cf-ui-ai-chat-history-thread-${thread.id}`}
-      data-active={thread.isActive}
+      role="button"
+      tabIndex={0}
+      id={`thread-${thread.id}`}
+      aria-label={`Thread: ${thread.title}${
+        thread.lastActivity
+          ? `, last activity ${formatTime(thread.lastActivity)}`
+          : ''
+      }`}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleThreadClick();
+        }
+      }}
     >
       <Box className={styles.threadContent}>
         <Box className={styles.threadInfo}>
           <Text as="h3" className={styles.threadTitle}>
             {thread.title}
           </Text>
-          {thread.preview && (
-            <Text className={styles.threadPreview}>{thread.preview}</Text>
-          )}
           <Box className={styles.threadMeta}>
             {thread.lastActivity && (
               <Text className={styles.threadTime}>
@@ -61,8 +56,14 @@ function _AIChatHistoryThread(
             )}
           </Box>
         </Box>
-        {(thread.statusIcon || thread.statusType) && (
-          <Box className={styles.threadStatus}>{thread.statusIcon}</Box>
+        {thread.statusIcon && (
+          <Box
+            className={styles.threadStatus}
+            aria-label="Status"
+            title="Status"
+          >
+            {thread.statusIcon}
+          </Box>
         )}
       </Box>
     </Box>

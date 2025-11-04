@@ -62,6 +62,9 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
     groups && groups.length > 0 ? groups[0].id : undefined,
   );
 
+  // State to track the currently focused thread for keyboard navigation
+  const [focusedThreadIndex, setFocusedThreadIndex] = useState<number>(0);
+
   // Ref for the scrollable thread container
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -70,7 +73,59 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollTop = 0;
     }
+    // Reset focused thread when group changes
+    setFocusedThreadIndex(0);
   }, [activeGroupId]);
+
+  const handleContainerKeyDown = (event: React.KeyboardEvent) => {
+    // Find the currently displayed threads
+    const activeGroup = groups?.find((group) => group.id === activeGroupId);
+    const filteredThreads = activeGroup
+      ? threads.filter(activeGroup.filter)
+      : threads;
+
+    if (filteredThreads.length === 0) return;
+
+    let newIndex = focusedThreadIndex;
+
+    switch (event.key) {
+      case 'ArrowDown':
+        event.preventDefault();
+        newIndex = Math.min(focusedThreadIndex + 1, filteredThreads.length - 1);
+        break;
+      case 'ArrowUp':
+        event.preventDefault();
+        newIndex = Math.max(focusedThreadIndex - 1, 0);
+        break;
+      case 'Home':
+        event.preventDefault();
+        newIndex = 0;
+        break;
+      case 'End':
+        event.preventDefault();
+        newIndex = filteredThreads.length - 1;
+        break;
+      case 'Enter':
+      case ' ': {
+        event.preventDefault();
+        const focusedThread = filteredThreads[focusedThreadIndex];
+        if (focusedThread?.onThreadClick) {
+          focusedThread.onThreadClick();
+        }
+        return;
+      }
+      default:
+        return;
+    }
+
+    setFocusedThreadIndex(newIndex);
+
+    // Focus the thread element
+    const threadElement = document.getElementById(
+      `thread-${filteredThreads[newIndex].id}`,
+    );
+    threadElement?.focus();
+  };
 
   const styles = getStyles({ maxHeight });
 
@@ -86,7 +141,18 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
 
   const renderGroupedThreads = () => {
     if (!groups || groups.length === 0) {
-      return threads.map(renderThread);
+      return (
+        <Box
+          ref={scrollContainerRef}
+          className={styles.groupThreads}
+          onKeyDown={handleContainerKeyDown}
+          tabIndex={0}
+          role="list"
+          aria-label="Message threads"
+        >
+          {threads.map((thread) => renderThread(thread))}
+        </Box>
+      );
     }
 
     const handleTabClick = (groupId: string) => {
@@ -116,8 +182,17 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
     return (
       <>
         {renderTabs()}
-        <Box ref={scrollContainerRef} className={styles.groupThreads}>
-          {filteredThreads.map(renderThread)}
+        <Box
+          ref={scrollContainerRef}
+          className={styles.groupThreads}
+          role="tabpanel"
+          id={`tabpanel-${activeGroupId}`}
+          aria-labelledby={`tab-${activeGroupId}`}
+          aria-label={`${activeGroup?.label || 'All'} threads`}
+          onKeyDown={handleContainerKeyDown}
+          tabIndex={0}
+        >
+          {filteredThreads.map((thread) => renderThread(thread))}
         </Box>
       </>
     );

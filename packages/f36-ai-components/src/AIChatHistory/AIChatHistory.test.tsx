@@ -8,23 +8,17 @@ describe('AIChatHistory', () => {
     {
       id: 'thread-1',
       title: 'How to implement React hooks?',
-      preview: 'I need help understanding useState and useEffect...',
       lastActivity: new Date(Date.now() - 1000 * 60 * 30), // 30 minutes ago
-      isActive: true,
     },
     {
       id: 'thread-2',
       title: 'CSS Grid Layout Question',
-      preview: 'Can you explain grid-template-areas?',
       lastActivity: new Date(Date.now() - 1000 * 60 * 60), // 1 hour ago
-      isActive: false,
     },
     {
       id: 'thread-3',
       title: 'JavaScript async/await',
-      preview: 'What is the difference between async/await and promises?',
       lastActivity: new Date(Date.now() - 1000 * 60 * 60 * 25), // 25 hours ago
-      isActive: false,
     },
   ];
 
@@ -195,7 +189,7 @@ describe('AIChatHistory', () => {
     ).toBeTruthy();
   });
 
-  it('handles threads without preview or lastActivity', () => {
+  it('handles threads without lastActivity', () => {
     const minimalThread: MessageThread = {
       id: 'minimal',
       title: 'Minimal Thread',

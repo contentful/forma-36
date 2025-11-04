@@ -15,6 +15,10 @@ export const getStyles = () => {
       '&:first-child': {
         marginTop: '8px',
       },
+      '&:focus-visible': {
+        outline: `2px solid ${tokens.blue600}`,
+        outlineOffset: '-2px',
+      },
     }),
     threadContent: css({
       display: 'flex',
@@ -33,15 +37,6 @@ export const getStyles = () => {
       fontSize: tokens.fontSizeM,
       color: tokens.gray700,
       lineHeight: tokens.lineHeightCondensed,
-      overflow: 'hidden',
-      textOverflow: 'ellipsis',
-      whiteSpace: 'nowrap',
-    }),
-    threadPreview: css({
-      margin: 0,
-      fontSize: '12px',
-      color: tokens.gray600,
-      lineHeight: 1.3,
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap',
@@ -70,9 +65,6 @@ export const getStyles = () => {
       borderRadius: tokens.borderRadiusSmall,
       backgroundColor: tokens.blue200,
       fill: tokens.blue600,
-    }),
-    visibleIcon: css({
-      color: tokens.gray400,
     }),
     warningIcon: css({
       backgroundColor: tokens.orange200,

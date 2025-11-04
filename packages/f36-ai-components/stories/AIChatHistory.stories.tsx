@@ -6,7 +6,6 @@ import {
   WarningIcon,
 } from '@contentful/f36-icons';
 import { action } from '@storybook/addon-actions';
-import { cx } from 'emotion';
 import React from 'react';
 import {
   AIChatHistory,
@@ -14,6 +13,7 @@ import {
   MessageThread,
 } from '../src/AIChatHistory/AIChatHistory';
 import { getStyles } from '../src/AIChatHistory/AIChatHistoryThread/AIChatHistoryThread.styles';
+import { cx } from 'emotion';
 
 // Sample data for stories
 interface MockThreadData {

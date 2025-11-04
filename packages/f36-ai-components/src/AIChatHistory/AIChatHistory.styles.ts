@@ -89,6 +89,10 @@ export function getStyles({ maxHeight }: GetStylesParams) {
       overflowX: 'hidden',
       overflowY: 'auto',
       scrollbarWidth: 'none',
+      '&:focus-visible': {
+        outline: `2px solid ${tokens.blue600}`,
+        outlineOffset: '2px',
+      },
     }),
 
     thread: css({
@@ -135,19 +139,6 @@ export function getStyles({ maxHeight }: GetStylesParams) {
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap',
-    }),
-
-    threadPreview: css({
-      display: '-webkit-box',
-      marginBottom: '4px',
-      lineHeight: 1.3,
-      fontSize: '12px',
-      color: tokens.gray600,
-      // Show 2 lines of preview text
-      overflow: 'hidden',
-      WebkitLineClamp: 2,
-      WebkitBoxOrient: 'vertical',
-      whiteSpace: 'normal',
     }),
 
     threadTime: css({

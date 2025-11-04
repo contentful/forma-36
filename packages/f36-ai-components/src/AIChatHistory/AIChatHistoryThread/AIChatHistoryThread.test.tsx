@@ -10,7 +10,6 @@ describe('AIChatHistoryThread', () => {
     id: 'test-thread',
     title: 'Test Thread Title',
     lastActivity: new Date(Date.now() - 1000 * 60 * 30), // 30 minutes ago
-    isActive: false,
     onThreadClick: mockOnClick,
   };
 
@@ -41,43 +40,15 @@ describe('AIChatHistoryThread', () => {
     expect(mockOnClick).toHaveBeenCalledTimes(1);
   });
 
-  it('applies active state correctly', () => {
-    const activeThread = { ...mockThread, isActive: true };
-    render(<AIChatHistoryThread thread={activeThread} />);
-
-    const threadElement = screen.getByTestId(
-      'cf-ui-ai-chat-history-thread-test-thread',
-    );
-    expect(threadElement).toHaveAttribute('data-active', 'true');
-  });
-
   it('renders status icon when provided', () => {
     const threadWithIcon = {
       ...mockThread,
       statusIcon: <span data-testid="custom-icon">✓</span>,
-      statusType: 'success' as const,
     };
 
     render(<AIChatHistoryThread thread={threadWithIcon} />);
 
     expect(screen.getByText('✓')).toBeTruthy();
-  });
-
-  it('renders status type without icon when statusType is provided', () => {
-    const threadWithStatusType = {
-      ...mockThread,
-      statusType: 'warning' as const,
-    };
-
-    render(<AIChatHistoryThread thread={threadWithStatusType} />);
-
-    const threadElement = screen.getByTestId(
-      'cf-ui-ai-chat-history-thread-test-thread',
-    );
-    const statusElement = threadElement.querySelector(
-      '[data-status="warning"]',
-    );
-    expect(statusElement).toBeTruthy();
   });
 
   it('handles thread without lastActivity', () => {
