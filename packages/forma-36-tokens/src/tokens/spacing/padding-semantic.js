@@ -3,6 +3,8 @@ const scaleSpace = require('./space-scale');
 const paddingSemantic = {
   // Control paddings
   'space-control-padding-horizontal-tight': scaleSpace['space-100'],
+  'space-control-padding-horizontal-small': scaleSpace['space-200'],
+  'space-control-padding-vertical-tight': scaleSpace['space-50'],
 
   // Container paddings
   'space-container-padding-horizontal-tight': scaleSpace['space-100'],
