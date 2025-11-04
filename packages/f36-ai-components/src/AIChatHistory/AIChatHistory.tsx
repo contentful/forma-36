@@ -1,27 +1,25 @@
 import { Text } from '@contentful/f36-components';
 import { Box, type CommonProps, Flex } from '@contentful/f36-core';
-import React, { forwardRef, Ref, useState } from 'react';
+import React, { forwardRef, Ref, useEffect, useRef, useState } from 'react';
+import { getStyles } from './AIChatHistory.styles';
 import { AIChatHistoryTabs } from './AIChatHistoryTabs';
 import { AIChatHistoryThread } from './AIChatHistoryThread';
-import { getStyles } from './AIChatHistory.styles';
 
 export interface MessageThread {
   /** Unique identifier for the thread */
   id: string;
   /** Title of the message thread */
   title: string;
-  /** Preview of the latest message in the thread */
-  preview?: string;
   /** Timestamp of the last activity */
   lastActivity?: Date;
-  /** Whether the thread is currently active/selected */
-  isActive?: boolean;
   /** Click handler for the thread */
   onThreadClick?: () => void;
   /** Status icon to display on the right */
   statusIcon?: React.ReactNode;
-  /** Status type for styling */
-  statusType?: 'visible' | 'warning' | 'success';
+  /** Optional status indicator */
+  status?: 'review' | 'error';
+  /** Group the thread belongs to */
+  group?: 'paused' | 'processing' | 'done';
 }
 
 export interface MessageGroup {
@@ -63,6 +61,16 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
   const [activeGroupId, setActiveGroupId] = useState<string | undefined>(
     groups && groups.length > 0 ? groups[0].id : undefined,
   );
+
+  // Ref for the scrollable thread container
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Reset scroll position when active group changes
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = 0;
+    }
+  }, [activeGroupId]);
 
   const styles = getStyles({ maxHeight });
 
@@ -108,7 +116,7 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
     return (
       <>
         {renderTabs()}
-        <Box className={styles.groupThreads}>
+        <Box ref={scrollContainerRef} className={styles.groupThreads}>
           {filteredThreads.map(renderThread)}
         </Box>
       </>

@@ -6,68 +6,162 @@ import {
   WarningIcon,
 } from '@contentful/f36-icons';
 import { action } from '@storybook/addon-actions';
+import { cx } from 'emotion';
 import React from 'react';
 import {
   AIChatHistory,
   MessageGroup,
   MessageThread,
 } from '../src/AIChatHistory/AIChatHistory';
+import { getStyles } from '../src/AIChatHistory/AIChatHistoryThread/AIChatHistoryThread.styles';
 
 // Sample data for stories
-const createMockThreads = (count = 5): MessageThread[] => {
-  const titles = [
-    'Localize Content Models for Japan',
-    'Translate About Us for Japanese market',
-    'Optimize SEO keywords for Japan',
-    'Adapt Contact page for Japan',
-    'Revise FAQ content for Japan',
-    'Create Japanese metadata',
-    'Update product descriptions',
-    'Localize pricing information',
-    'Translate legal documents',
-    'Adapt user interface text',
-  ];
+interface MockThreadData {
+  title: string;
+  group: 'paused' | 'processing' | 'done';
+  timeOffset: number;
+  status?: 'review' | 'error';
+}
 
-  const statusIcons = [
-    <EyeIcon key="eye1" />,
-    null,
-    <EyeIcon key="eye2" />,
-    null,
-    <WarningIcon key="warning" />,
-    <EyeIcon key="eye3" />,
-  ];
+const mockThreadsData: MockThreadData[] = [
+  {
+    title: 'Localize Content Models for Japan',
+    group: 'paused',
+    timeOffset: 3 * 60 * 1000, // 3 minutes ago,
+    status: 'review',
+  },
+  {
+    title: 'Tailor Content Models for the Japanese Audience',
+    group: 'processing',
+    timeOffset: 3 * 60 * 1000, // 3 minutes ago
+  },
+  {
+    title: 'Customize Content Models for Japanese Users',
+    group: 'done',
+    timeOffset: 3 * 60 * 1000, // 3 minutes ago
+  },
+  {
+    title: "Translate 'About Us' for Japanese market",
+    group: 'paused',
+    timeOffset: 7 * 60 * 1000, // 7 minutes ago
+  },
+  {
+    title: 'Adapt About Us for the Japanese Market',
+    group: 'processing',
+    timeOffset: 7 * 60 * 1000, // 7 minutes ago
+  },
+  {
+    title: 'Revise About Us for Japanese Consumers',
+    group: 'done',
+    timeOffset: 7 * 60 * 1000, // 7 minutes ago
+  },
+  {
+    title: 'Optimize SEO keywords for Japan',
+    group: 'paused',
+    timeOffset: 58 * 60 * 1000, // 58 minutes ago
+    status: 'review',
+  },
+  {
+    title: 'Enhance SEO Keywords for the Japanese Market',
+    group: 'processing',
+    timeOffset: 58 * 60 * 1000, // 58 minutes ago
+  },
+  {
+    title: 'Optimize SEO Keywords for the Japanese Audience',
+    group: 'done',
+    timeOffset: 58 * 60 * 1000, // 58 minutes ago
+  },
+  {
+    title: 'Adapt Contact page for Japan',
+    group: 'paused',
+    timeOffset: 20 * 60 * 60 * 1000, // 20 hours ago
+  },
+  {
+    title: 'Modify Contact Page for Japanese Users',
+    group: 'processing',
+    timeOffset: 20 * 60 * 60 * 1000, // 20 hours ago
+  },
+  {
+    title: 'Revamp Contact Page for Japanese Visitors',
+    group: 'done',
+    timeOffset: 20 * 60 * 60 * 1000, // 20 hours ago
+  },
+  {
+    title: 'Revise FAQ content for Japan',
+    group: 'paused',
+    timeOffset: 4 * 24 * 60 * 60 * 1000, // 4 days ago
+    status: 'error',
+  },
+  {
+    title: 'Revise FAQ content for Japan 2',
+    group: 'paused',
+    timeOffset: 4 * 24 * 60 * 60 * 1000, // 4 days ago
+    status: 'error',
+  },
+  {
+    title: 'Update FAQ Section for Japanese Customers',
+    group: 'processing',
+    timeOffset: 4 * 24 * 60 * 60 * 1000, // 4 days ago
+  },
+  {
+    title: 'Refresh FAQ Section for Japanese Clients',
+    group: 'done',
+    timeOffset: 4 * 24 * 60 * 60 * 1000, // 4 days ago
+  },
+  {
+    title: 'Create Japanese metadata',
+    group: 'paused',
+    timeOffset: 28 * 24 * 60 * 60 * 1000, // 28 days ago
+    status: 'review',
+  },
+  {
+    title: 'Develop Metadata for the Japanese Audience',
+    group: 'processing',
+    timeOffset: 28 * 24 * 60 * 60 * 1000, // 28 days ago
+  },
+  {
+    title: 'Create Metadata for the Japanese Audience',
+    group: 'done',
+    timeOffset: 28 * 24 * 60 * 60 * 1000, // 28 days ago
+  },
+];
 
-  const statusTypes: ('visible' | 'warning' | 'success' | undefined)[] = [
-    'visible',
-    undefined,
-    'visible',
-    undefined,
-    'warning',
-    'visible',
-  ];
+const createMockThreads = (): MessageThread[] => {
+  const styles = getStyles();
 
-  const timeOffsets = [
-    3 * 60 * 1000, // 3 minutes
-    7 * 60 * 1000, // 7 minutes
-    58 * 60 * 1000, // 58 minutes
-    20 * 60 * 60 * 1000, // 20 hours
-    4 * 24 * 60 * 60 * 1000, // 4 days
-    28 * 24 * 60 * 60 * 1000, // 28 days
-  ];
+  return Array.from(mockThreadsData, (mockData, index) => {
+    // Map status to appropriate icon
+    let statusIcon = null;
 
-  return Array.from({ length: count }, (_, index) => ({
-    id: `thread-${index + 1}`,
-    title: titles[index % titles.length],
-    lastActivity: new Date(
-      Date.now() -
-        (timeOffsets[index % timeOffsets.length] ||
-          Math.random() * 7 * 24 * 60 * 60 * 1000),
-    ),
-    isActive: index === 1, // Second thread is active (like in screenshot)
-    onThreadClick: action(`Thread ${index + 1} clicked`),
-    statusIcon: statusIcons[index % statusIcons.length],
-    statusType: statusTypes[index % statusTypes.length],
-  }));
+    switch (mockData.status) {
+      case 'error':
+        statusIcon = (
+          <WarningIcon
+            key={`warning-${index}`}
+            className={cx(styles.statusIcon, styles.warningIcon)}
+          />
+        );
+        break;
+      case 'review':
+        statusIcon = (
+          <EyeIcon key={`eye-${index}`} className={styles.statusIcon} />
+        );
+        break;
+      default:
+        statusIcon = null;
+        break;
+    }
+
+    return {
+      id: `thread-${index + 1}`,
+      title: mockData.title,
+      lastActivity: new Date(Date.now() - mockData.timeOffset),
+      onThreadClick: action(`${mockData.title} clicked`),
+      statusIcon,
+      status: mockData.status,
+      group: mockData.group,
+    };
+  });
 };
 
 const statusGroups: MessageGroup[] = [
@@ -75,20 +169,19 @@ const statusGroups: MessageGroup[] = [
     id: 'paused',
     label: 'Paused',
     icon: <ColumnsIcon />,
-    filter: (thread) => thread.statusType === 'warning', // Show warning status threads
+    filter: (thread) => thread.group === 'paused',
   },
   {
     id: 'processing',
     label: 'Processing',
     icon: <LightningIcon />,
-    filter: (thread) => !thread.statusType || thread.statusType === undefined, // Show threads without status
+    filter: (thread) => thread.group === 'processing',
   },
   {
     id: 'done',
     label: 'Done',
     icon: <CheckIcon />,
-    filter: (thread) =>
-      thread.statusType === 'visible' || thread.statusType === 'success', // Show visible/success status threads
+    filter: (thread) => thread.group === 'done',
   },
 ];
 
@@ -123,7 +216,7 @@ export default {
 
 export const Default = {
   args: {
-    threads: createMockThreads(6),
+    threads: createMockThreads(),
     groups: statusGroups,
     maxHeight: '400px',
   },
@@ -131,7 +224,7 @@ export const Default = {
 
 export const WithGroups = {
   args: {
-    threads: createMockThreads(10),
+    threads: createMockThreads(),
     groups: statusGroups,
     maxHeight: '600px',
   },
@@ -179,7 +272,7 @@ export const CustomEmptyState = {
 
 export const Loading = {
   args: {
-    threads: createMockThreads(5),
+    threads: createMockThreads(),
     isLoading: true,
   },
   parameters: {
@@ -193,7 +286,7 @@ export const Loading = {
 
 export const SingleGroup = {
   args: {
-    threads: createMockThreads(6),
+    threads: createMockThreads(),
     groups: [statusGroups[0]], // Only "Recent" group
   },
   parameters: {
@@ -334,7 +427,7 @@ export const TabFiltering = {
 
 export const SidebarStyle = {
   args: {
-    threads: createMockThreads(8),
+    threads: createMockThreads(),
     groups: statusGroups,
     maxHeight: '500px',
   },

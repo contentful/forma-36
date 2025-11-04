@@ -7,7 +7,6 @@ export const getStyles = () => {
       backgroundColor: tokens.gray100,
       borderRadius: '6px',
       padding: '2px',
-      marginBottom: '12px',
     }),
     tabsList: css({
       display: 'flex',

@@ -11,11 +11,11 @@ export function formatTime(date: Date): string {
   if (diffInMinutes < 1) {
     return 'Just now';
   } else if (diffInMinutes < 60) {
-    return `${diffInMinutes}m ago`;
+    return `${diffInMinutes} minutes ago`;
   } else if (diffInHours < 24) {
-    return `${diffInHours}h ago`;
+    return `${diffInHours} hours ago`;
   } else if (diffInDays < 7) {
-    return `${diffInDays}d ago`;
+    return `${diffInDays} days ago`;
   } else {
     return date.toLocaleDateString();
   }

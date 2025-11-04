@@ -12,14 +12,16 @@ export function getStyles({ maxHeight }: GetStylesParams) {
       width: '330px',
       height: '380px',
       maxHeight: typeof maxHeight === 'number' ? `${maxHeight}px` : maxHeight,
-      overflowY: 'auto',
+      display: 'flex',
+      flexDirection: 'column',
+      overflow: 'hidden',
       backgroundColor: tokens.colorWhite,
       borderRadius: '10px',
       boxShadow: `0px 6px 12px -2px rgba(25, 37, 50, 0.1),
                   0px 3px 7px -3px rgba(25, 37, 50, 0.1),
                   0px 0px 0px 1px rgba(25, 37, 50, 0.1)`,
 
-      padding: '12px 8px',
+      padding: '12px 8px 0px',
       border: 'none',
     }),
 
@@ -31,7 +33,6 @@ export function getStyles({ maxHeight }: GetStylesParams) {
 
     groupHeader: css({
       gap: 0,
-      marginBottom: '12px',
       padding: '3px',
       backgroundColor: tokens.gray100,
       borderRadius: '12px',
@@ -84,7 +85,10 @@ export function getStyles({ maxHeight }: GetStylesParams) {
     }),
 
     groupThreads: css({
-      // No additional styles needed, threads will handle their own styling
+      flex: 1,
+      overflowX: 'hidden',
+      overflowY: 'auto',
+      scrollbarWidth: 'none',
     }),
 
     thread: css({

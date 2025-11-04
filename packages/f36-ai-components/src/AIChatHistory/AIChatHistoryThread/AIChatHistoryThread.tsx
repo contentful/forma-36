@@ -62,14 +62,7 @@ function _AIChatHistoryThread(
           </Box>
         </Box>
         {(thread.statusIcon || thread.statusType) && (
-          <Box className={styles.threadStatus}>
-            <Box
-              className={cx(styles.statusIcon, getStatusIconStyles())}
-              data-status={thread.statusType}
-            >
-              {thread.statusIcon}
-            </Box>
-          </Box>
+          <Box className={styles.threadStatus}>{thread.statusIcon}</Box>
         )}
       </Box>
     </Box>

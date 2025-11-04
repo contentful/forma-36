@@ -1,30 +1,26 @@
 import tokens from '@contentful/f36-tokens';
-import { hexToRGBA } from '@contentful/f36-utils';
 import { css } from 'emotion';
 
 export const getStyles = () => {
   return {
     thread: css({
-      padding: '12px',
+      height: '54px',
+      padding: `8px 8px ${tokens.spacingXs} 12px`,
       cursor: 'pointer',
-      borderRadius: '8px',
+      borderRadius: tokens.borderRadiusSmall,
       transition: `background-color ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
-      margin: '0 -8px 8px -8px',
       '&:hover': {
-        backgroundColor: hexToRGBA(tokens.gray900, 0.02),
+        backgroundColor: tokens.gray100,
       },
-    }),
-    activeThread: css({
-      backgroundColor: hexToRGBA(tokens.blue600, 0.08),
-      '&:hover': {
-        backgroundColor: hexToRGBA(tokens.blue600, 0.08),
+      '&:first-child': {
+        marginTop: '8px',
       },
     }),
     threadContent: css({
       display: 'flex',
       alignItems: 'flex-start',
       justifyContent: 'space-between',
-      gap: '8px',
+      gap: tokens.spacingXs,
     }),
     threadInfo: css({
       flex: 1,
@@ -32,11 +28,11 @@ export const getStyles = () => {
     }),
     threadTitle: css({
       margin: 0,
-      marginBottom: '4px',
-      fontSize: '14px',
-      fontWeight: 500,
-      color: tokens.gray900,
-      lineHeight: 1.3,
+      marginTop: '2px',
+      marginBottom: '1px',
+      fontSize: tokens.fontSizeM,
+      color: tokens.gray700,
+      lineHeight: tokens.lineHeightCondensed,
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap',
@@ -54,7 +50,7 @@ export const getStyles = () => {
       display: 'flex',
       alignItems: 'center',
       gap: '4px',
-      marginTop: '4px',
+      marginTop: '0',
     }),
     threadTime: css({
       fontSize: '12px',
@@ -62,22 +58,25 @@ export const getStyles = () => {
     }),
     threadStatus: css({
       display: 'flex',
+      justifyContent: 'center',
       alignItems: 'center',
       flexShrink: 0,
+      lineHeight: tokens.lineHeightS,
     }),
     statusIcon: css({
-      display: 'flex',
-      alignItems: 'center',
-      fontSize: '14px',
+      width: '20px',
+      height: '20px',
+      padding: '3px',
+      borderRadius: tokens.borderRadiusSmall,
+      backgroundColor: tokens.blue200,
+      fill: tokens.blue600,
     }),
     visibleIcon: css({
       color: tokens.gray400,
     }),
     warningIcon: css({
-      color: tokens.orange600,
-    }),
-    successIcon: css({
-      color: tokens.green600,
+      backgroundColor: tokens.orange200,
+      fill: tokens.orange600,
     }),
   };
 };
