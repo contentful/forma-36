@@ -46,7 +46,7 @@ function _AIChatHistoryThread(
         }
       }}
     >
-      <Box className={styles.threadContent}>
+      <Box className={styles.threadContent} title={thread.title}>
         <Box className={styles.threadInfo}>
           <Text as="h3" className={styles.threadTitle}>
             {thread.title}
