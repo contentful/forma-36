@@ -1,13 +1,13 @@
 const spacing = {
-  'spacing-2xs': '0.25rem',
-  'spacing-xs': '0.5rem',
-  'spacing-s': '0.75rem',
-  'spacing-m': '1rem',
-  'spacing-l': '1.5rem',
-  'spacing-xl': '2rem',
-  'spacing-2xl': '3rem',
-  'spacing-3xl': '4rem',
-  'spacing-4xl': '5rem',
+  'spacing-100': '0.25rem',
+  'spacing-200': '0.5rem',
+  'spacing-300': '0.75rem',
+  'spacing-400': '1rem',
+  'spacing-500': '1.5rem',
+  'spacing-600': '2rem',
+  'spacing-700': '3rem',
+  'spacing-800': '4rem',
+  'spacing-900': '5rem',
 };
 
 module.exports = scale-spacing;
