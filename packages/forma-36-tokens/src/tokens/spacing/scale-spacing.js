@@ -1,4 +1,5 @@
 const scaleSpace = {
+  'spacing-50': '0.125rem',
   'spacing-100': '0.25rem',
   'spacing-200': '0.5rem',
   'spacing-300': '0.75rem',
