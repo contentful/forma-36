@@ -1,11 +1,11 @@
-const scaleSpacing = require('./spacing-scale');
+const scaleSpace = require('./space-scale');
 
 const paddingSemantic = {
   // Control paddings
-  'shape-radius-control-small': scaleRadius['radius-100'],
+  'space-padding-horizontal-control-small': scaleSpace['space-100'],
 
   // Container paddings
-  'spacing-padding-horizontal-container-tight': scaleSpacing['spacing-400'],
+  'space-container-padding-horizontal-tight': scaleSpace['space-400'],
 };
 
 module.exports = paddingSemantic;
