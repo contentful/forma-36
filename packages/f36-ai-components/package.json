@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-ai-components",
-  "private": true,
+  "private": false,
   "version": "0.0.1-alpha.0",
   "description": "A collection of components for use in AI applications, such as conversational interfaces.",
   "license": "MIT",
@@ -44,7 +44,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/contentful/forma-36"
+    "url": "git+https://github.com/contentful/forma-36.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
