@@ -304,7 +304,7 @@ export async function getTopbarLinks(preview = false) {
       entries?.data?.navigationCollection?.items?.[0]?.sectionsCollection
         ?.items;
 
-    return topbarLinks || [];
+    return Array.isArray(topbarLinks) ? topbarLinks : [];
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (_error) {
     return [];
