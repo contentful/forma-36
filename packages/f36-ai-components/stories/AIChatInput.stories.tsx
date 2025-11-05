@@ -105,18 +105,14 @@ const InputTools: React.FC = () => {
       <Tooltip content="Add media to your prompt" placement="bottom">
         <IconButton
           aria-label="Add media"
-          variant="transparent"
+          variant="secondary"
           size="small"
           icon={<PlusIcon />}
         />
       </Tooltip>
       <Menu>
         <Menu.Trigger>
-          <Button
-            variant="transparent"
-            size="small"
-            endIcon={<CaretDownIcon />}
-          >
+          <Button variant="secondary" size="small" endIcon={<CaretDownIcon />}>
             {selectedModel}
           </Button>
         </Menu.Trigger>
@@ -166,14 +162,26 @@ export const WithMentionSupport: Story<AIChatInputProps> = (args) => {
         >
           {/* Adds the '@' character to allow the user to start the mention */}
           <IconButton
-            variant="transparent"
+            variant="secondary"
             aria-label="Add variable"
             size="small"
             icon={<>@</>}
-            onClick={() => {
+            onClick={(e) => {
               if (!editorRef.current) return;
               const editor = editorRef.current;
-              editor.chain().focus().insertContent('@').run();
+
+              // keep focus in the editor (no blur)
+              e.preventDefault();
+              e.stopPropagation();
+
+              // insert '@' and keep the caret after it
+              const { from } = editor.state.selection;
+              editor
+                .chain()
+                .focus()
+                .insertContent('@')
+                .setTextSelection(from + 1)
+                .run();
             }}
           />
         </Tooltip>

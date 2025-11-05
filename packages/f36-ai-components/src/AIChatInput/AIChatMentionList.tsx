@@ -1,6 +1,6 @@
-import { Menu } from '@contentful/f36-components';
+import { Box, Menu } from '@contentful/f36-components';
 import { Editor } from '@tiptap/react';
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 
 const NO_CATEGORY_ID = '__NA__';
 
@@ -22,21 +22,11 @@ export const AIChatMentionList: React.FC<AIChatMentionListProps> = ({
   editor,
   command,
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!ref.current || !clientRect) return;
-
-    // position the menu under the '@' symbol
-    const textAreaBottom =
-      editor.view.dom.parentElement.getBoundingClientRect().bottom + 10;
-    const mentionPosition = clientRect().top + 25;
-    const top = Math.min(mentionPosition, textAreaBottom);
-
-    ref.current.style.position = 'absolute';
-    ref.current.style.top = `${top}px`;
-    ref.current.style.left = `${clientRect().left}px`;
-  }, []);
+  const textAreaBottom =
+    editor.view.dom.parentElement.getBoundingClientRect().bottom + 10;
+  const mentionPosition = clientRect().top + 25;
+  const top = Math.min(mentionPosition, textAreaBottom);
+  const left = clientRect().left;
 
   const groups = items.reduce<Record<string, SuggestionItem[]>>((acc, item) => {
     const category = item.category || NO_CATEGORY_ID;
@@ -48,21 +38,23 @@ export const AIChatMentionList: React.FC<AIChatMentionListProps> = ({
   }, {});
 
   return items.length === 0 ? null : (
-    <Menu isOpen usePortal={false}>
-      <Menu.List ref={ref} onKeyDown={() => editor.commands.focus()}>
-        {Object.entries(groups).map(([category, groupItems]) => (
-          <>
-            {category !== NO_CATEGORY_ID && (
-              <Menu.SectionTitle key={category}>{category}</Menu.SectionTitle>
-            )}
-            {groupItems.map((item, index) => (
-              <Menu.Item key={index} onClick={() => command({ id: item.id })}>
-                {item.id}
-              </Menu.Item>
-            ))}
-          </>
-        ))}
-      </Menu.List>
-    </Menu>
+    <Box style={{ position: 'absolute', top, left }}>
+      <Menu isOpen usePortal={false}>
+        <Menu.List onKeyDown={() => editor.commands.focus()}>
+          {Object.entries(groups).map(([category, groupItems]) => (
+            <>
+              {category !== NO_CATEGORY_ID && (
+                <Menu.SectionTitle key={category}>{category}</Menu.SectionTitle>
+              )}
+              {groupItems.map((item, index) => (
+                <Menu.Item key={index} onClick={() => command({ id: item.id })}>
+                  {item.id}
+                </Menu.Item>
+              ))}
+            </>
+          ))}
+        </Menu.List>
+      </Menu>
+    </Box>
   );
 };
