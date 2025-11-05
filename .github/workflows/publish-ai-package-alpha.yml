@@ -36,6 +36,7 @@ jobs:
           exportEnv: false
           secrets: |
             secret/data/github/github_packages_write GITHUB_PACKAGES_WRITE_TOKEN | GITHUB_PACKAGES_WRITE_TOKEN ;
+            github/token/forma-36-semantic-release token | SEMANTIC_RELEASE_GITHUB_TOKEN ;
 
       - name: Configure Git
         run: |
@@ -71,6 +72,8 @@ jobs:
       - name: Publish to GitHub Packages
         working-directory: packages/f36-ai-components
         run: npm publish --tag alpha
+        env:
+          GITHUB_TOKEN: ${{ steps.vault.outputs.SEMANTIC_RELEASE_GITHUB_TOKEN }}
 
       - name: Summary
         run: |
