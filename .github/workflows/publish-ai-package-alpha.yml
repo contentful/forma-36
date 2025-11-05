@@ -23,7 +23,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          registry-url: 'https://npm.pkg.github.com'
           cache: 'npm'
 
       - name: Retrieve NPM Token from Vault
