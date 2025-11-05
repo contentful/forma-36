@@ -47,7 +47,7 @@
     "url": "git+https://github.com/contentful/forma-36.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
+    "registry": "https://npm.pkg.github.com",
     "access": "public"
   },
   "devDependencies": {
