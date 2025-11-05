@@ -14,6 +14,7 @@ import { CustomHeading2 } from './CustomHeading2';
 const {
   DisplayText,
   Subheading,
+  SectionHeading,
   Paragraph,
   Text,
   TextLink,
@@ -21,6 +22,7 @@ const {
   Table,
   Heading,
   Stack,
+  Flex,
   Note,
 } = f36Components;
 
@@ -33,21 +35,28 @@ const components = {
   h5: (props) => <Subheading as="h5" {...props} />,
   h6: (props) => <Subheading as="h6" {...props} />,
   Heading,
+  DisplayText,
+  Subheading,
+  SectionHeading,
+  Paragraph,
+  Text,
   TextLink,
   Note,
+  Stack,
+  Flex,
   p: (props) => <Paragraph {...props} />,
   strong: (props) => <Text fontWeight="fontWeightDemiBold" {...props} />,
   a: (props) => {
     if (props.href && props.href.startsWith('..')) {
+      const { href, children, ...textLinkProps } = props;
       return (
-        <NextLink href={props.href}>
-          <TextLink {...props} />
-        </NextLink>
+        <TextLink as={NextLink} href={href} {...textLinkProps}>
+          {children}
+        </TextLink>
       );
     }
     return <TextLink {...props} />;
   },
-  Stack,
   ul: (props) => <List style={{ marginBottom: tokens.spacingM }} {...props} />,
   li: (props) => <List.Item {...props} />,
   code: (props) => {
