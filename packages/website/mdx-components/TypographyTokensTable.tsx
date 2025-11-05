@@ -1,34 +1,89 @@
 import React from 'react';
 import { Table, Text, type TextProps } from '@contentful/f36-components';
+import tokens from '@contentful/f36-tokens';
 
-import FontSizeTokens from '@contentful/f36-tokens';
-import FontStackTokens from '@contentful/f36-tokens';
-import FontWeightTokens from '@contentful/f36-tokens';
-import LineHeightTokens from '@contentful/f36-tokens';
-import LetterSpacingTokens from '@contentful/f36-tokens';
 interface Props {
-  variant: 'stack' | 'size' | 'lineHeight' | 'letterSpacing' | 'weight';
+  variant:
+    | 'stack'
+    | 'base'
+    | 'size'
+    | 'lineHeight'
+    | 'letterSpacing'
+    | 'weight';
 }
 
 export function TypographyTokensTable({ variant }: Props) {
+  const fontBaseTokens = {
+    'font-base-default': tokens.fontBaseDefault,
+  };
+
+  const fontSizeTokens = {
+    'font-size-4xl': tokens.fontSize4Xl,
+    'font-size-3xl': tokens.fontSize3Xl,
+    'font-size-2xl': tokens.fontSize2Xl,
+    'font-size-xl': tokens.fontSizeXl,
+    'font-size-xl-high': tokens.fontSizeXlHigh,
+    'font-size-l': tokens.fontSizeL,
+    'font-size-l-high': tokens.fontSizeLHigh,
+    'font-size-m': tokens.fontSizeM,
+    'font-size-m-high': tokens.fontSizeMHigh,
+    'font-size-s': tokens.fontSizeS,
+    'font-size-s-high': tokens.fontSizeSHigh,
+  };
+
+  const fontStackTokens = {
+    'font-stack-primary': tokens.fontStackPrimary,
+    'font-stack-monospace': tokens.fontStackMonospace,
+  };
+
+  const fontWeightTokens = {
+    'font-weight-normal': tokens.fontWeightNormal,
+    'font-weight-medium': tokens.fontWeightMedium,
+    'font-weight-demi-bold': tokens.fontWeightDemiBold,
+  };
+
+  const letterSpacingTokens = {
+    'letter-spacing-default': tokens.letterSpacingDefault,
+    'letter-spacing-wide': tokens.letterSpacingWide,
+  };
+
+  const lineHeightTokens = {
+    'line-height-default': tokens.lineHeightDefault,
+    'line-height-condensed': tokens.lineHeightCondensed,
+    'line-height-4xl': tokens.lineHeight4Xl,
+    'line-height-3xl': tokens.lineHeight3Xl,
+    'line-height-2xl': tokens.lineHeight2Xl,
+    'line-height-xl': tokens.lineHeightXl,
+    'line-height-xl-high': tokens.lineHeightXlHigh,
+    'line-height-l': tokens.lineHeightL,
+    'line-height-l-high': tokens.lineHeightLHigh,
+    'line-height-m': tokens.lineHeightM,
+    'line-height-m-high': tokens.lineHeightMHigh,
+    'line-height-s': tokens.lineHeightS,
+    'line-height-s-high': tokens.lineHeightSHigh,
+  };
+
   let tokenValues;
   const isSizeVariant = variant === 'size';
 
   switch (variant) {
+    case 'base':
+      tokenValues = fontBaseTokens;
+      break;
     case 'size':
-      tokenValues = FontSizeTokens;
+      tokenValues = fontSizeTokens;
       break;
     case 'letterSpacing':
-      tokenValues = LetterSpacingTokens;
+      tokenValues = letterSpacingTokens;
       break;
     case 'lineHeight':
-      tokenValues = LineHeightTokens;
+      tokenValues = lineHeightTokens;
       break;
     case 'weight':
-      tokenValues = FontWeightTokens;
+      tokenValues = fontWeightTokens;
       break;
     default:
-      tokenValues = FontStackTokens;
+      tokenValues = fontStackTokens;
   }
 
   return (

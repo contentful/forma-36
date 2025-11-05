@@ -3,9 +3,6 @@ import { css } from '@emotion/css';
 import { Box, Table } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 
-import durationTokens from '@contentful/f36-tokens';
-import easingsTokens from '@contentful/f36-tokens';
-
 const styles = {
   container: css({
     width: '80px',
@@ -26,7 +23,18 @@ interface Props {
 }
 
 export function TransitionTokensTable({ variant }: Props) {
-  const tokenValues = variant === 'duration' ? durationTokens : easingsTokens;
+  const durationTokens = {
+    'transition-duration-short': tokens.transitionDurationShort,
+    'transition-duration-default': tokens.transitionDurationDefault,
+    'transition-duration-long': tokens.transitionDurationLong,
+  };
+
+  const easingTokens = {
+    'transition-easing-default': tokens.transitionEasingDefault,
+    'transition-easing-cubic-bezier': tokens.transitionEasingCubicBezier,
+  };
+
+  const tokenValues = variant === 'duration' ? durationTokens : easingTokens;
 
   return (
     <Table style={{ maxWidth: '960px' }}>
