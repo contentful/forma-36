@@ -47,9 +47,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ steps.vault.outputs.GITHUB_PACKAGES_WRITE_TOKEN }}
 
-      - name: DEBUG WhoAmI
-        run: npm whoami
-
       - name: Install dependencies
         run: npm ci
 
@@ -76,6 +73,7 @@ jobs:
         run: npm publish --tag alpha
         env:
           GITHUB_TOKEN: ${{ steps.vault.outputs.GITHUB_PACKAGES_WRITE_TOKEN }}
+          NPM_TOKEN: ${{ steps.vault.outputs.GITHUB_PACKAGES_WRITE_TOKEN }}
 
       - name: Summary
         run: |
