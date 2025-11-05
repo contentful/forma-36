@@ -70,7 +70,7 @@ jobs:
 
       - name: Publish to GitHub Packages
         working-directory: packages/f36-ai-components
-        run: npm publish --tag alpha
+        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ steps.vault.outputs.GITHUB_PACKAGES_WRITE_TOKEN }}
           NPM_TOKEN: ${{ steps.vault.outputs.GITHUB_PACKAGES_WRITE_TOKEN }}
