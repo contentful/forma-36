@@ -160,25 +160,13 @@ export const WithCheckboxGroup = () => {
         <FormControl.Label as="legend">Fruits</FormControl.Label>
 
         <Checkbox.Group name="uncontrolled-fruits" defaultValue={['apples']}>
-          <Checkbox
-            id="apples"
-            value="apples"
-            {...register('uncontrolled-fruits')}
-          >
+          <Checkbox id="apples" value="apples" {...register('apples')}>
             Apples
           </Checkbox>
-          <Checkbox
-            id="pears"
-            value="pears"
-            {...register('uncontrolled-fruits')}
-          >
+          <Checkbox id="pears" value="pears" {...register('pears')}>
             Pears
           </Checkbox>
-          <Checkbox
-            id="peaches"
-            value="peaches"
-            {...register('uncontrolled-fruits')}
-          >
+          <Checkbox id="peaches" value="peaches" {...register('peaches')}>
             Peaches
           </Checkbox>
         </Checkbox.Group>
