@@ -4,6 +4,7 @@ import * as snippet from '@segment/snippet';
 import { renderStatic } from '../utils/renderer';
 
 const { SEGMENT_KEY, NODE_ENV } = process.env;
+// eslint-disable-next-line import/no-default-export
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const page = await ctx.renderPage();
