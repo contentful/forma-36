@@ -38,7 +38,6 @@ jobs:
           exportEnv: false
           secrets: |
             secret/data/github/github_packages_write GITHUB_PACKAGES_WRITE_TOKEN | GITHUB_PACKAGES_WRITE_TOKEN ;
-            secret/data/github/github_packages_read GITHUB_PACKAGES_READ_TOKEN | GITHUB_PACKAGES_READ_TOKEN ;
             github/token/${{ github.event.repository.name }}-semantic-release token | SEMANTIC_RELEASE_TOKEN ;
 
       - name: Configure Git
@@ -46,11 +45,10 @@ jobs:
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
 
-      - name: 'Create GH .npmrc'
-        shell: bash
+      - name: Configure npm for GitHub Packages
         run: |
-          echo -e "//npm.pkg.github.com/:_authToken=${{ steps.vault.outputs.GITHUB_PACKAGES_READ_TOKEN }}\n@contentful:registry=https://npm.pkg.github.com\nalways-auth=true" > .npmrc
-        working-directory: packages/f36-ai-components
+          echo "@contentful:registry=https://npm.pkg.github.com" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ steps.vault.outputs.GITHUB_PACKAGES_WRITE_TOKEN }}" >> ~/.npmrc
 
       - name: Install dependencies
         run: npm ci
@@ -77,8 +75,8 @@ jobs:
         working-directory: packages/f36-ai-components
         run: npm publish --tag alpha
         env:
-          GITHUB_TOKEN: ${{ steps.vault.outputs.SEMANTIC_RELEASE_TOKEN }}
-          NPM_TOKEN: ${{ steps.vault.outputs.SEMANTIC_RELEASE_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.vault.outputs.GITHUB_PACKAGES_WRITE_TOKEN }}
+          NPM_TOKEN: ${{ steps.vault.outputs.GITHUB_PACKAGES_WRITE_TOKEN }}
 
       - name: Summary
         run: |
