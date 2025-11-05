@@ -31,7 +31,7 @@ jobs:
         uses: hashicorp/vault-action@v2.4.3
         with:
           url: ${{ secrets.VAULT_URL }}
-          role: forma-36-github-action
+          role: ${{ github.event.repository.name }}-github-action
           method: jwt
           path: github-actions
           exportEnv: false
