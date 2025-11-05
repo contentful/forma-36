@@ -79,9 +79,7 @@ export function useBox<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
 
 function BoxBase<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
   props: BoxProps<E>,
-  // as this is a polymorphic base component we can not narrow down the type
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLElement>,
 ) {
   const { boxProps, Element } = useBox<E>(props);
 

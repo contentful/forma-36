@@ -24,7 +24,6 @@ type LabelOrChildren =
 export type MultiselectOptionProps = {
   value: string;
   itemId: string;
-  searchValue?: string;
   className?: string;
   onSelectItem: (event: React.ChangeEvent<HTMLInputElement>) => void;
   isChecked?: boolean;

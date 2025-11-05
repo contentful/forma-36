@@ -30,7 +30,13 @@ export const PopoverTrigger = React.forwardRef<
 
   const ref = useMergeRefs([context?.refs.setReference, propRef, childRef]);
 
-  if (!React.isValidElement(children)) return null;
+  if (!React.isValidElement(children)) {
+    // eslint-disable-next-line no-console
+    console.error(
+      'Only valid React elements are supported - https://react.dev/reference/react/isValidElement',
+    );
+    return null;
+  }
 
   // Ensure TypeScript understands this is an object so spreading is allowed.
   const childProps = children.props as Record<string, unknown>;

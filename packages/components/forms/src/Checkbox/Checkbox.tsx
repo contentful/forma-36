@@ -66,5 +66,5 @@ const CheckboxBase = (
   );
 };
 
-CheckboxBase.displayName = 'CheckboxBase';
+CheckboxBase.displayName = 'Checkbox';
 export const Checkbox = React.forwardRef(CheckboxBase);

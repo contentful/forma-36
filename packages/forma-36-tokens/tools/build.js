@@ -79,7 +79,7 @@ const buildIndexJS = (srcPath, tokens) => {
 const buildIndexMJS = (srcPath, tokens) => {
   const objectLiteral = JSON.stringify(tokens, null, 2);
   const esm = `// ESM build for @contentful/f36-tokens\nconst tokens = ${objectLiteral};\nexport default tokens;\nexport { tokens };\n`;
-  return fse.outputFile(srcPath.replace(/index\.js$/, 'index.mjs'), esm);
+  return fse.outputFile(srcPath, esm);
 };
 
 function createUnionFromKeys(keys, typename) {
@@ -243,6 +243,6 @@ const generateIndex = (paths, extension) => {
   allTokens = camelCaseKeys(allTokens);
 
   await buildIndexJS('dist/index.js', allTokens);
-  await buildIndexMJS('dist/index.js', allTokens);
+  await buildIndexMJS('dist/index.mjs', allTokens);
   await buildIndexDTS('dist/index.d.ts', allTokens);
 })();

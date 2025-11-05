@@ -91,7 +91,7 @@ export const Basic = () => {
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<string>
-        placeholder="select your favorit fruit"
+        placeholder="select your favorite fruit"
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
@@ -171,7 +171,7 @@ export const ControlledFromOutside = () => {
       alignItems="start"
     >
       <Autocomplete<Produce>
-        placeholder="select your favorit fruit"
+        placeholder="select your favorite fruit"
         listMaxHeight={120}
         textOnAfterSelect="preserve"
         items={filteredItems}
@@ -226,7 +226,7 @@ export const UsingGroupedItems = () => {
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<Produce>
-        placeholder="select your favorit fruit"
+        placeholder="select your favorite fruit"
         selectedItem={selectedItem}
         items={filteredItems}
         isGrouped
@@ -268,7 +268,7 @@ export const MultipleSelection = () => {
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<Produce>
-        placeholder="select your favorit fruit"
+        placeholder="select your favorite fruit"
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}

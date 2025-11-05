@@ -6,7 +6,7 @@ import {
   useMergeRefs,
 } from '@floating-ui/react';
 import { useTooltipContext } from './TooltipContext';
-import { WithEnhancedContent } from './Tooltip';
+import type { WithEnhancedContent } from './Tooltip';
 import { getTooltipContentStyles } from './Tooltip.styles';
 import { cx } from '@emotion/css';
 
@@ -20,6 +20,7 @@ export const TooltipContent = React.forwardRef<
   const state = useTooltipContext();
   const ref = useMergeRefs([state.refs.setFloating, propRef]);
   const styles = getTooltipContentStyles(state.isOpen);
+
   if (!state.isOpen) {
     return null;
   }
@@ -33,7 +34,7 @@ export const TooltipContent = React.forwardRef<
       ref={ref}
       id={id}
     >
-      <span aria-label={label}>{content}</span>
+      <span>{content}</span>
       <FloatingArrow ref={state.arrowRef} context={state.context} />
     </Box>
   ) : null;

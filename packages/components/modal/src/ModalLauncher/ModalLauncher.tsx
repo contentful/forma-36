@@ -1,7 +1,7 @@
 /* global Promise */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-export interface ModalLauncherComponentRendererProps<T = void> {
+export interface ModalLauncherComponentRendererProps<T = unknown> {
   isShown: boolean;
   onClose: (result?: T) => void;
 }
@@ -50,27 +50,29 @@ async function closeAll(): Promise<void> {
         await new Promise((resolveDelay) => setTimeout(resolveDelay, delay));
         root.unmount();
       } finally {
-        const el = document.getElementById(rootElId);
-        if (el) el.remove();
-        openModalsIds.delete(rootElId);
+        // Only clean up if this entry still exists (avoid race with individual onClose)
+        if (openModalsIds.has(rootElId)) {
+          const el = document.getElementById(rootElId);
+          if (el) el.remove();
+          openModalsIds.delete(rootElId);
+        }
       }
     }),
   );
 }
 
-function open<T = void>(
+function open<T = unknown>(
   componentRenderer: (
     props: ModalLauncherComponentRendererProps<T>,
   ) => React.ReactElement,
   options: ModalLauncherOpenOptions = {},
-): Promise<T | undefined> {
+): Promise<T> {
   options = { delay: 300, ...options };
 
-  // Allow components to specify if they wish to reuse the modal container
-  const rootElId = `modals-root${options.modalId || Date.now()}`;
+  // Generate a unique ID for each modal instance to avoid root reuse conflicts
+  const rootElId = `modals-root-${options.modalId || ''}-${Date.now()}-${Math.random()}`;
   const rootDom = getRoot(rootElId);
   const root = ReactDOM.createRoot(rootDom);
-
   return new Promise((resolve) => {
     let currentConfig: ModalLauncherComponentRendererProps<T>;
 

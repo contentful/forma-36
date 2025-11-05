@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { action } from 'storybook/actions';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading, Text } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
@@ -46,6 +47,7 @@ Default.args = {
   status: 'published',
   title: 'Author: William Shakespeare',
   children: 'William Shakespeare',
+  onClick: action('card-clicked'),
 };
 
 export const WithOnlyTitle: StoryObj<InlineEntryCardProps> = (args) => {
@@ -73,6 +75,7 @@ WithOnlyTitle.args = {
   ],
   status: 'published',
   title: 'Author: William Shakespeare',
+  onClick: action('card-clicked'),
 };
 
 export const WithNoTitle: StoryObj<InlineEntryCardProps> = (args) => {
@@ -100,6 +103,7 @@ WithNoTitle.args = {
   ],
   status: 'published',
   children: 'William Shakespeare',
+  onClick: action('card-clicked'),
 };
 
 export const WithLoadingState: StoryObj<InlineEntryCardProps> = (args) => {
@@ -126,6 +130,7 @@ export const Overview = () => {
           <InlineEntryCard
             status="published"
             title="Author: William Shakespeare"
+            onClick={action('inline-card-clicked')}
           >
             William Shakespeare
           </InlineEntryCard>
@@ -144,6 +149,7 @@ export const Overview = () => {
             isHovered
             status="archived"
             title="Author: William Shakespeare"
+            onClick={action('hover-card-clicked')}
           >
             William Shakespeare
           </InlineEntryCard>
@@ -162,6 +168,7 @@ export const Overview = () => {
             isSelected
             status="deleted"
             title="Author: William Shakespeare"
+            onClick={action('selected-card-clicked')}
           >
             William Shakespeare
           </InlineEntryCard>
