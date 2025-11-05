@@ -11,6 +11,11 @@
       "status": "stable"
     },
     {
+      "title": "Autocomplete",
+      "slug": "/components/autocomplete/",
+      "status": "stable"
+    },
+    {
       "title": "Badge",
       "slug": "/components/badge/",
       "status": "stable"
@@ -18,6 +23,11 @@
     {
       "title": "DragHandle",
       "slug": "/components/drag-handle/",
+      "status": "stable"
+    },
+    {
+      "title": "EntityList",
+      "slug": "/components/entity-list/",
       "status": "stable"
     },
     {
@@ -56,6 +66,16 @@
       "status": "stable"
     },
     {
+      "title": "Menu",
+      "slug": "/components/menu/",
+      "status": "stable"
+    },
+    {
+      "title": "Navbar",
+      "slug": "/components/navbar/",
+      "status": "stable"
+    },
+    {
       "title": "NavList",
       "slug": "/components/navlist/",
       "status": "stable"
@@ -66,6 +86,11 @@
       "status": "stable"
     },
     {
+      "title": "Notification",
+      "slug": "/components/notification/",
+      "status": "stable"
+    },
+    {
       "title": "Pagination",
       "slug": "/components/pagination/",
       "status": "stable"
@@ -73,6 +98,11 @@
     {
       "title": "Pill",
       "slug": "/components/pill/",
+      "status": "stable"
+    },
+    {
+      "title": "Popover",
+      "slug": "/components/popover/",
       "status": "stable"
     },
     {
@@ -97,8 +127,18 @@
       "status": "stable"
     },
     {
+      "title": "Tabs",
+      "slug": "/components/tabs/",
+      "status": "stable"
+    },
+    {
       "title": "TextLink",
       "slug": "/components/text-link/",
+      "status": "stable"
+    },
+    {
+      "title": "Tooltip",
+      "slug": "/components/tooltip/",
       "status": "stable"
     },
     {
@@ -148,6 +188,33 @@
       "status": "stable"
     }
   ],
+  "dateComponents": [
+    {
+      "title": "Calendar",
+      "slug": "/components/calendar/",
+      "status": "stable"
+    },
+    {
+      "title": "Date utilities",
+      "slug": "/components/datetime-functions/",
+      "status": "stable"
+    },
+    {
+      "title": "Datepicker",
+      "slug": "/components/datepicker/",
+      "status": "stable"
+    },
+    {
+      "title": "DateTime",
+      "slug": "/components/datetime/",
+      "status": "stable"
+    },
+    {
+      "title": "RelativeDateTime",
+      "slug": "/components/relative-datetime/",
+      "status": "stable"
+    }
+  ],
   "typographyComponents": [
     {
       "title": "Caption",
@@ -190,23 +257,6 @@
       "status": "stable"
     }
   ],
-  "dateComponents": [
-    {
-      "title": "Date utilities",
-      "slug": "/components/datetime-functions/",
-      "status": "stable"
-    },
-    {
-      "title": "DateTime",
-      "slug": "/components/datetime/",
-      "status": "stable"
-    },
-    {
-      "title": "RelativeDateTime",
-      "slug": "/components/relative-datetime/",
-      "status": "stable"
-    }
-  ],
   "formComponents": [
     {
       "title": "Checkbox",
@@ -221,6 +271,11 @@
     {
       "title": "FormControl",
       "slug": "/components/form-control/",
+      "status": "stable"
+    },
+    {
+      "title": "Multiselect",
+      "slug": "/components/multiselect/",
       "status": "stable"
     },
     {
@@ -246,6 +301,57 @@
     {
       "title": "TextInput",
       "slug": "/components/text-input/",
+      "status": "stable"
+    }
+  ],
+  "modalComponents": [
+    {
+      "title": "Modal",
+      "slug": "/components/modal/",
+      "status": "stable"
+    },
+    {
+      "title": "ModalConfirm",
+      "slug": "/components/modal-confirm/",
+      "status": "stable"
+    },
+    {
+      "title": "ModalLauncher",
+      "slug": "/components/modal-launcher/",
+      "status": "stable"
+    }
+  ],
+  "avatarComponents": [
+    {
+      "title": "Avatar",
+      "slug": "/components/avatar/",
+      "status": "stable"
+    },
+    {
+      "title": "AvatarGroup",
+      "slug": "/components/avatar-group/",
+      "status": "stable"
+    }
+  ],
+  "cardComponents": [
+    {
+      "title": "AssetCard",
+      "slug": "/components/asset-card/",
+      "status": "stable"
+    },
+    {
+      "title": "Card",
+      "slug": "/components/card/",
+      "status": "stable"
+    },
+    {
+      "title": "EntryCard",
+      "slug": "/components/entry-card/",
+      "status": "stable"
+    },
+    {
+      "title": "InlineEntryCard",
+      "slug": "/components/inline-entry-card/",
       "status": "stable"
     }
   ],

@@ -24,8 +24,6 @@ const {
   Note,
 } = f36Components;
 
-/* eslint-disable react/display-name */
-/* eslint-disable @next/next/no-img-element */
 const components = {
   h1: (props) => <DisplayText as="h1" {...props} />,
   // to cover a specific case with "Props (API reference)"
@@ -103,8 +101,6 @@ const components = {
 
   ...MdxComponents,
 };
-/* eslint-enable @next/next/no-img-element */
-/* eslint-enable react/display-name */
 
 export function MdxRenderer(props: {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
