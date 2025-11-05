@@ -301,27 +301,9 @@ export async function getTopbarLinks(preview = false) {
     );
 
     const topbarLinks =
-      entries?.data?.navigationCollection?.items?.[0]?.sectionsCollection
-        ?.items;
+      entries?.data?.navigationCollection?.items[0].sectionsCollection?.items;
 
-    // Ensure we return a clean array without any undefined values
-    if (!Array.isArray(topbarLinks)) {
-      return [];
-    }
-
-    // Filter and clean the topbar links to remove any undefined properties
-    const cleanedTopbarLinks = topbarLinks
-      .filter((link) => link && link.sys?.id) // Remove null/undefined items
-      .map((link) => ({
-        sys: {
-          id: link.sys.id,
-        },
-        title: link.title || null,
-        slug: link.slug || null,
-        initialLink: link.initialLink || null,
-      }));
-
-    return cleanedTopbarLinks;
+    return topbarLinks;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (_error) {
     return [];

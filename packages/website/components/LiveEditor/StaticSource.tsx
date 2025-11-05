@@ -23,8 +23,6 @@ interface StaticSourceProps {
 }
 
 export function StaticSource(props: StaticSourceProps) {
-  // const language = props.className?.replace('language-', '') ?? 'jsx';
-
   return (
     <Highlight
       {...HighlightDefaultProps}
