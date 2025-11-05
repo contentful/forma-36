@@ -27,10 +27,12 @@ const prepareMapFromArray = <T,>(array: T[], getKey: (item: T) => string) => {
 };
 
 export function getRenderNode(links): RenderNode {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const entryMap = prepareMapFromArray<any>(
     links.entries.block,
     (entry) => entry.sys.id,
   );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const assetsMap = prepareMapFromArray<any>(
     links.assets.block,
     (asset) => asset.sys.id,
@@ -107,6 +109,7 @@ export function getRenderNode(links): RenderNode {
     },
     [BLOCKS.TABLE]: (node) => {
       // The first element in the array is always the table’s header
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const [headerRow, ...bodyRows] = node.content as any[];
 
       return (

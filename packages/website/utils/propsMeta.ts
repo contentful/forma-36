@@ -113,10 +113,12 @@ function getPropsMetadata(filePath: string, sourcesPaths?: string) {
   return propsMetadata;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function transformToc(toc: any) {
   if (!toc || !toc.children) {
     return null;
   }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const result: any[] = [];
   toc.children.forEach((element) => {
     switch (element.tagName) {
