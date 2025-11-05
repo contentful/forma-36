@@ -44,8 +44,8 @@ jobs:
 
       - name: Configure npm for GitHub Packages
         run: |
-          echo "@contentful:registry=https://npm.pkg.github.com" >> ~/.npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ steps.vault.outputs.GITHUB_PACKAGES_WRITE_TOKEN }}" >> ~/.npmrc
+          echo "@contentful:registry=https://npm.pkg.github.com" > .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ steps.vault.outputs.GITHUB_PACKAGES_WRITE_TOKEN }}" >> .npmrc
 
       - name: Install dependencies
         run: npm ci
@@ -70,7 +70,7 @@ jobs:
 
       - name: Publish to GitHub Packages
         working-directory: packages/f36-ai-components
-        run: npx semantic-release
+        run: npm publish --tag alpha
         env:
           GITHUB_TOKEN: ${{ steps.vault.outputs.GITHUB_PACKAGES_WRITE_TOKEN }}
           NPM_TOKEN: ${{ steps.vault.outputs.GITHUB_PACKAGES_WRITE_TOKEN }}
