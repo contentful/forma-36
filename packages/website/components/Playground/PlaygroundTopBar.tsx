@@ -1,14 +1,12 @@
 import React from 'react';
-// TODO: replace with copy to clipboard
+import copy from 'copy-to-clipboard';
 import { css, cx } from '@emotion/css';
 import { UnstyledOpenInCodeSandboxButton } from '@codesandbox/sandpack-react';
 import tokens from '@contentful/f36-tokens';
-// TODO: add Tooltip back here
-import { Flex, Text, Heading, Icon } from '@contentful/f36-components';
+import { Flex, Text, Heading, Tooltip, Icon } from '@contentful/f36-components';
 import { useUrlSync } from './useUrlSync';
 import { CodeSandboxLogo } from './codesandbox-logo';
-// TODO: add linksimple icon
-// import { LinkSimpleIcon } from '@contentful/f36-icons';
+import { LinkSimpleIcon } from '@contentful/f36-icons';
 
 const styles = {
   topbar: css({
@@ -79,6 +77,7 @@ function UrlCopyButton({ url }) {
   const [copied, setCopied] = React.useState(false);
 
   const handleOnCopy = () => {
+    copy(url);
     setCopied(true);
 
     setTimeout(() => {
@@ -87,22 +86,21 @@ function UrlCopyButton({ url }) {
   };
 
   return (
-    <>
-      {/* <Tooltip
-        placement="bottom"
-        targetWrapperClassName={styles.tooltipWrapper}
-        content={copied ? 'Copied' : 'Copy url'}
+    <Tooltip
+      placement="bottom"
+      targetWrapperClassName={styles.tooltipWrapper}
+      content={copied ? 'Copied' : 'Copy url'}
+    >
+      <Flex
+        as="button"
+        alignItems="center"
+        gap="spacingXs"
+        className={cx(styles.embeddedButton, styles.shareButton)}
+        onClick={handleOnCopy}
       >
-        <Flex
-          as="button"
-          alignItems="center"
-          gap="spacingXs"
-          className={cx(styles.embeddedButton, styles.shareButton)}
-        >
-          <LinkSimpleIcon />
-          <Text fontColor="gray800">Copy Playground URL</Text>
-        </Flex>
-      </Tooltip> */}
-    </>
+        <LinkSimpleIcon />
+        <Text fontColor="gray800">Copy Playground URL</Text>
+      </Flex>
+    </Tooltip>
   );
 }
