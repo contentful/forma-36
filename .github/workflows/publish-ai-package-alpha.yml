@@ -38,6 +38,7 @@ jobs:
           exportEnv: false
           secrets: |
             secret/data/github/github_packages_write GITHUB_PACKAGES_WRITE_TOKEN | GITHUB_PACKAGES_WRITE_TOKEN ;
+            github/token/${{ github.event.repository.name }}-semantic-release token | SEMANTIC_RELEASE_TOKEN ;
 
       - name: Configure Git
         run: |
@@ -49,7 +50,7 @@ jobs:
         run: |
           echo -e "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}\n@contentful:registry=https://npm.pkg.github.com\nalways-auth=true" > .npmrc
         env:
-          NPM_TOKEN: ${{ steps.vault.outputs.GITHUB_PACKAGES_WRITE_TOKEN }}
+          NPM_TOKEN: ${{ steps.vault.outputs.SEMANTIC_RELEASE_TOKEN }}
         working-directory: packages/f36-ai-components
 
       - name: Install dependencies
