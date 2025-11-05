@@ -301,9 +301,10 @@ export async function getTopbarLinks(preview = false) {
     );
 
     const topbarLinks =
-      entries?.data?.navigationCollection?.items[0].sectionsCollection?.items;
+      entries?.data?.navigationCollection?.items?.[0]?.sectionsCollection
+        ?.items;
 
-    return topbarLinks;
+    return topbarLinks || [];
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (_error) {
     return [];
