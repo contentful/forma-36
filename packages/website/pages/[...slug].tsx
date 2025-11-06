@@ -288,6 +288,12 @@ export const getStaticProps: GetStaticProps<
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  // eslint-disable-next-line no-console
+  console.log('DEBUG build worker ENV:', {
+    space: process.env.CONTENTFUL_SPACE_ID,
+    env: process.env.CONTENTFUL_SPACE_ENVIRONMENT,
+    token: !!process.env.CONTENTFUL_ACCESS_TOKEN,
+  });
   const mdxPaths = await getMdxPaths();
   const allArticles = (await getAllArticles()) ?? [];
 
