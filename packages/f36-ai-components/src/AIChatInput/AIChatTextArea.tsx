@@ -7,10 +7,15 @@ import Paragraph from '@tiptap/extension-paragraph';
 import Placeholder from '@tiptap/extension-placeholder';
 import Text from '@tiptap/extension-text';
 import { AIChatInputProps } from './AIChatInput';
+import { createAiChatMentionExtension } from './AIChatInputMentionExtention';
 
 type AIChatInputTextAreaProps = Pick<
   AIChatInputProps,
-  'placeholder' | 'initialContent' | 'onUpdate' | 'editorExtensions'
+  | 'placeholder'
+  | 'initialContent'
+  | 'onUpdate'
+  | 'mentionConfig'
+  | 'editorExtensions'
 > &
   Required<Pick<AIChatInputProps, 'onSubmit' | 'editorRef'>>;
 
@@ -19,6 +24,7 @@ export const AIChatInputTextArea: React.FC<AIChatInputTextAreaProps> = ({
   initialContent,
   onUpdate,
   onSubmit,
+  mentionConfig,
   editorExtensions,
   editorRef,
 }) => {
@@ -56,6 +62,7 @@ export const AIChatInputTextArea: React.FC<AIChatInputTextAreaProps> = ({
       Text,
       History,
       Placeholder.configure({ placeholder }),
+      mentionConfig ? createAiChatMentionExtension(mentionConfig) : undefined,
     ],
     onUpdate: (...args) => {
       adjustEditorContentHeight();

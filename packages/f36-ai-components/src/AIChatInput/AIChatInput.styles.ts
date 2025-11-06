@@ -19,6 +19,11 @@ export const getStyles = () => {
         float: 'left',
         height: '0',
       },
+      '& .mention': {
+        backgroundColor: tokens.gray200,
+        padding: `2px 4px`,
+        borderRadius: tokens.borderRadiusSmall,
+      },
     }),
     stopIcon: css({
       border: '1.5px solid',

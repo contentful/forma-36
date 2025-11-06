@@ -5,6 +5,7 @@ import { Box, Flex, type CommonProps } from '@contentful/f36-core';
 import { Editor, useEditor } from '@tiptap/react';
 import { AIChatSubmitButton } from './AIChatSubmitButton';
 import { AIChatInputTextArea } from './AIChatTextArea';
+import { AiChatInputMentionConfig } from './AIChatInputMentionExtention';
 
 type UseEditorOptions = Parameters<typeof useEditor>[0];
 
@@ -37,6 +38,8 @@ export interface AIChatInputProps extends CommonProps {
   editorExtensions?: UseEditorOptions['extensions'];
   /** Ref to expose the TipTap editor instance to parent components */
   editorRef?: React.MutableRefObject<Editor>;
+  /** Allows the client to customize the mention behavior using [tiptap mention](https://tiptap.dev/docs/editor/extensions/nodes/mention) */
+  mentionConfig?: AiChatInputMentionConfig;
 }
 
 function _AIChatInput(props: AIChatInputProps, ref: React.Ref<HTMLDivElement>) {
@@ -51,6 +54,7 @@ function _AIChatInput(props: AIChatInputProps, ref: React.Ref<HTMLDivElement>) {
     initialContent,
     onUpdate,
     editorExtensions,
+    mentionConfig,
   } = props;
   const styles = getStyles();
   const onSubmit: AIChatInputProps['onSubmit'] = (...args) => {
@@ -81,6 +85,7 @@ function _AIChatInput(props: AIChatInputProps, ref: React.Ref<HTMLDivElement>) {
           onUpdate={onUpdate}
           onSubmit={onSubmit}
           editorExtensions={editorExtensions}
+          mentionConfig={mentionConfig}
           editorRef={editorRef}
         />
         <Flex
