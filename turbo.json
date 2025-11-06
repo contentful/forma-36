@@ -13,7 +13,13 @@
     },
     "build:prod": {
       "dependsOn": ["^build:prod"],
-      "outputs": [".next/**"]
+      "outputs": [".next/**"],
+      "env": [
+        "CONTENTFUL_SPACE_ID",
+        "CONTENTFUL_SPACE_ENVIRONMENT",
+        "CONTENTFUL_ACCESS_TOKEN",
+        "CONTENTFUL_PREVIEW_ACCESS_TOKEN"
+      ]
     }
   }
 }
