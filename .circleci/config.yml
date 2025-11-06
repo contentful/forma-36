@@ -86,21 +86,27 @@ jobs:
       - run:
           name: Test Contentful GraphQL access
           command: |
-            node -e "import('node-fetch').then(async ({default: fetch}) => {
-              const url = \`https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_SPACE_ENVIRONMENT || 'master'}\`;
-              const res = await fetch(url, {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                  Authorization: \`Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}\`,
-                },
-                body: JSON.stringify({ query: '{ kbAppArticleCollection(limit: 1) { total } }' }),
-              });
-              const data = await res.json();
+            node -e "
+            const spaceId = process.env.CONTENTFUL_SPACE_ID;
+            const environment = process.env.CONTENTFUL_SPACE_ENVIRONMENT || 'master';
+            const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
+            const url = 'https://graphql.contentful.com/content/v1/spaces/' + spaceId + '/environments/' + environment;
+
+            fetch(url, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + accessToken,
+              },
+              body: JSON.stringify({ query: '{ kbAppArticleCollection(limit: 1) { total } }' }),
+            }).then(res => res.json()).then(data => {
               const total = data?.data?.kbAppArticleCollection?.total ?? null;
               const err = data?.errors ? JSON.stringify(data.errors) : 'none';
               console.log('Contentful GraphQL test => total:', total, ' errors:', err);
-            });"
+            }).catch(err => {
+              console.error('GraphQL test failed:', err.message);
+            });
+            "
       - attach_workspace:
           at: ~/circleci-f36-build
       - node/install-packages
