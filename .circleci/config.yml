@@ -78,14 +78,6 @@ jobs:
           at: ~/circleci-f36-build
       - node/install-packages
       - run:
-          name: Inject Contentful env info
-          command: |
-            echo "CONTENTFUL_SPACE_ID=$CONTENTFUL_SPACE_ID" > .env.production
-            echo "CONTENTFUL_SPACE_ENVIRONMENT=$CONTENTFUL_SPACE_ENVIRONMENT" >> .env.production
-            echo "CONTENTFUL_ACCESS_TOKEN=$CONTENTFUL_ACCESS_TOKEN" >> .env.production
-            echo "CONTENTFUL_PREVIEW_ACCESS_TOKEN=$CONTENTFUL_PREVIEW_ACCESS_TOKEN" >> .env.production
-            cat .env.production | sed 's/ACCESS_TOKEN=.*/ACCESS_TOKEN=[REDACTED]/'
-      - run:
           name: Build Next.js website
           command: npm run-script docs:next:build
       - run:
