@@ -36,6 +36,7 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
     testId = 'cf-ui-ai-chat-history',
     threads,
     groups,
+    ...otherProps
   } = props;
 
   const hasGroups = groups && groups.length > 0;
@@ -166,7 +167,13 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
   };
 
   return (
-    <Box ref={ref} testId={testId} className={className} data-test-id={testId}>
+    <Box
+      ref={ref}
+      testId={testId}
+      className={className}
+      data-test-id={testId}
+      {...otherProps}
+    >
       <Box className={styles.container}>{renderGroupedThreads()}</Box>
     </Box>
   );

@@ -42,7 +42,7 @@ export const getStyles = () => {
       },
       '&:focus-visible': {
         outline: `2px solid ${tokens.blue600}`,
-        outlineOffset: '2px',
+        outlineOffset: '-2px',
       },
     }),
     activeTab: css({

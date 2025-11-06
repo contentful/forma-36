@@ -169,69 +169,75 @@ export default {
   component: AIChatHistory,
 };
 
-export const Default = {
-  args: {
-    threads: createMockThreads(),
-    groups: [
-      {
-        id: 'paused',
-        label: 'Paused',
-        icon: <ColumnsIcon />,
-        filter: (thread: MessageThread) => thread.group === 'paused',
-      },
-      {
-        id: 'processing',
-        label: 'Processing',
-        icon: <LightningIcon />,
-        filter: (thread: MessageThread) => thread.group === 'processing',
-      },
-      {
-        id: 'done',
-        label: 'Done',
-        icon: <CheckIcon />,
-        filter: (thread: MessageThread) => thread.group === 'done',
-      },
-    ],
-  },
+const render = (args) => (
+  <AIChatHistory {...args} style={{ width: '330px', height: '380px' }} />
+);
+
+export const Default = (args) => render(args);
+
+Default.args = {
+  threads: createMockThreads(),
+  groups: [
+    {
+      id: 'paused',
+      label: 'Paused',
+      icon: <ColumnsIcon />,
+      filter: (thread: MessageThread) => thread.group === 'paused',
+    },
+    {
+      id: 'processing',
+      label: 'Processing',
+      icon: <LightningIcon />,
+      filter: (thread: MessageThread) => thread.group === 'processing',
+    },
+    {
+      id: 'done',
+      label: 'Done',
+      icon: <CheckIcon />,
+      filter: (thread: MessageThread) => thread.group === 'done',
+    },
+  ],
 };
 
-export const TwoGroups = {
-  args: {
-    threads: createMockThreads(),
-    groups: [
-      {
-        id: 'processing',
-        label: 'Recent',
-        icon: <ClockIcon />,
-        filter: (thread: MessageThread) =>
-          thread.group === 'processing' || thread.group === 'paused',
-      },
-      {
-        id: 'done',
-        label: 'Finished',
-        icon: <CheckCircleIcon />,
-        filter: (thread: MessageThread) => thread.group === 'done',
-      },
-    ],
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Threads organized into two groups.',
-      },
+export const TwoGroups = (args) => render(args);
+
+TwoGroups.args = {
+  threads: createMockThreads(),
+  groups: [
+    {
+      id: 'processing',
+      label: 'Recent',
+      icon: <ClockIcon />,
+      filter: (thread: MessageThread) =>
+        thread.group === 'processing' || thread.group === 'paused',
+    },
+    {
+      id: 'done',
+      label: 'Finished',
+      icon: <CheckCircleIcon />,
+      filter: (thread: MessageThread) => thread.group === 'done',
+    },
+  ],
+};
+
+TwoGroups.parameters = {
+  docs: {
+    description: {
+      story: 'Threads organized into two groups.',
     },
   },
 };
 
-export const NoGroups = {
-  args: {
-    threads: createMockThreads(),
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Threads without any groups.',
-      },
+export const NoGroups = (args) => render(args);
+
+NoGroups.args = {
+  threads: createMockThreads(),
+};
+
+NoGroups.parameters = {
+  docs: {
+    description: {
+      story: 'Threads without any groups.',
     },
   },
 };

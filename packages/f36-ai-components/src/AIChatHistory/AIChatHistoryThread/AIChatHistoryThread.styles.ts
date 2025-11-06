@@ -13,7 +13,7 @@ export const getStyles = () => {
         backgroundColor: tokens.gray100,
       },
       '&:first-child': {
-        marginTop: tokens.spacingXs,
+        marginTop: '1.25rem',
       },
       '&:focus-visible': {
         outline: `2px solid ${tokens.blue600}`,

@@ -8,17 +8,13 @@ interface GetStylesParams {
 export function getStyles({ hasGroups = false }: GetStylesParams) {
   return {
     container: css({
-      width: '330px',
-      height: '380px',
+      width: '100%',
+      height: '100%',
       display: 'flex',
       flexDirection: 'column',
       overflow: 'hidden',
       backgroundColor: tokens.colorWhite,
-      borderRadius: tokens.borderRadiusMedium,
-      boxShadow: tokens.boxShadowDefault,
-      padding: hasGroups
-        ? `${tokens.spacingS} ${tokens.spacingXs} 0px`
-        : `0px ${tokens.spacingXs} 0px`,
+      paddingTop: hasGroups ? '1.25rem' : '0px',
       border: 'none',
     }),
 
@@ -30,7 +26,7 @@ export function getStyles({ hasGroups = false }: GetStylesParams) {
 
       '&:focus-visible': {
         outline: `2px solid ${tokens.blue600}`,
-        outlineOffset: '2px',
+        outlineOffset: '-2px',
       },
     }),
   };
