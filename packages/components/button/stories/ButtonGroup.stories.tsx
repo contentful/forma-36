@@ -88,12 +88,12 @@ export const Overview: StoryFn<ButtonGroupProps> = () => {
         const groupVariant = key as ButtonGroupVariants;
 
         return (
-          <>
+          <Flex key={key} flexDirection="column">
             {Object.keys(buttonVariants).map((key) => {
               const buttonVariant = key as ButtonVariant;
 
               return (
-                <>
+                <Flex key={key} flexDirection="column">
                   <SectionHeading as="h3" marginBottom="spacingS">
                     Button Group {groupVariant} {buttonVariant}
                   </SectionHeading>
@@ -128,10 +128,10 @@ export const Overview: StoryFn<ButtonGroupProps> = () => {
                       </ButtonGroup>
                     </Box>
                   </Flex>
-                </>
+                </Flex>
               );
             })}
-          </>
+          </Flex>
         );
       })}
     </Flex>
