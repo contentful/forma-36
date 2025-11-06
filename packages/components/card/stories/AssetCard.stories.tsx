@@ -17,11 +17,13 @@ export default {
     icon: {
       control: 'select',
       options: Object.keys(icons),
-      defaultValue: icons.ClockIcon,
     },
     rel: { control: { disable: true } },
     style: { control: { disable: true } },
     testId: { control: { disable: true } },
+  },
+  args: {
+    icon: icons.ClockIcon,
   },
   component: AssetCard,
   parameters: {
