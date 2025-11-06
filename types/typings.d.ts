@@ -9,10 +9,6 @@ declare module '*.md' {
   export default value;
 }
 
-declare module '@storybook/addon-actions' {
-  export const action: any;
-}
-
 declare module 'truncate' {
   const value: (value: string, chars: number, option: any) => string;
   export default value;
