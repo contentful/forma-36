@@ -77,8 +77,30 @@ jobs:
       - vault/get-secrets:
           template-preset: packages-read
       - run:
-          name: Print all env vars
-          command: printenv | grep -i contentful || echo "No CONTENTFUL vars found"
+          name: Debug environment variables
+          command: |
+            echo "CONTENTFUL_SPACE_ID=${CONTENTFUL_SPACE_ID}"
+            echo "CONTENTFUL_SPACE_ENVIRONMENT=${CONTENTFUL_SPACE_ENVIRONMENT}"
+            echo "CONTENTFUL_ACCESS_TOKEN is set? $( [ -n \"$CONTENTFUL_ACCESS_TOKEN\" ] && echo yes || echo no )"
+            echo "CONTENTFUL_PREVIEW_ACCESS_TOKEN is set? $( [ -n \"$CONTENTFUL_PREVIEW_ACCESS_TOKEN\" ] && echo yes || echo no )"
+      - run:
+          name: Test Contentful GraphQL access
+          command: |
+            node -e "import('node-fetch').then(async ({default: fetch}) => {
+              const url = \`https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_SPACE_ENVIRONMENT || 'master'}\`;
+              const res = await fetch(url, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  Authorization: \`Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}\`,
+                },
+                body: JSON.stringify({ query: '{ kbAppArticleCollection(limit: 1) { total } }' }),
+              });
+              const data = await res.json();
+              const total = data?.data?.kbAppArticleCollection?.total ?? null;
+              const err = data?.errors ? JSON.stringify(data.errors) : 'none';
+              console.log('Contentful GraphQL test => total:', total, ' errors:', err);
+            });"
       - attach_workspace:
           at: ~/circleci-f36-build
       - node/install-packages
