@@ -291,6 +291,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const mdxPaths = await getMdxPaths();
   const allArticles = (await getAllArticles()) ?? [];
 
+  // eslint-disable-next-line no-console
+  console.log('[CI DEBUG] Contentful articles found:', allArticles.length);
+  // eslint-disable-next-line no-console
+  console.log(
+    '[CI DEBUG] First few slugs:',
+    allArticles.slice(0, 5).map((a) => a.slug),
+  );
+
   // Getting all the paths based on the data from Contentful
   const contentfulPaths = allArticles.map((item) => {
     // Article either has a section parent, or it has a category parent with a section parent
@@ -317,7 +325,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths: [...mdxPaths, ...contentfulPaths],
-    fallback: false,
+    fallback: 'blocking',
   };
 };
 
