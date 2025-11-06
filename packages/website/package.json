@@ -34,7 +34,7 @@
     "@emotion/server": "^11.11.0",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^2.1.1",
-    "@next/mdx": "^14.2.13",
+    "@next/mdx": "^15.1.0",
     "@segment/snippet": "^4.15.3",
     "copy-to-clipboard": "^3.3.3",
     "date-fns": "^2.28.0",
