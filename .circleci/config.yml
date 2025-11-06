@@ -70,8 +70,6 @@ jobs:
   check-links:
     docker:
       - image: cimg/node:lts-browsers
-    context:
-      - vault
     resource_class: xlarge
     working_directory: ~/circleci-f36-build
     steps:
@@ -212,6 +210,8 @@ workflows:
           context:
             - vault
       - check-links:
+          context:
+            - vault
           requires:
             - build
 
