@@ -86,10 +86,10 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
       case 'Enter':
       case ' ': {
         event.preventDefault();
+
         const focusedThread = filteredThreads[focusedThreadIndex];
-        if (focusedThread?.onThreadClick) {
-          focusedThread.onThreadClick();
-        }
+        focusedThread?.onThreadClick();
+
         return;
       }
       default:
