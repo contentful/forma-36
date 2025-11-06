@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import type { Meta } from '@storybook/react-vite';
 
 import { Stack } from '@contentful/f36-core';
