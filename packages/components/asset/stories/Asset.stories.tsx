@@ -12,20 +12,21 @@ export default {
     className: { control: { disable: true } },
     src: {
       control: 'text',
-      defaultValue:
-        'https://images.ctfassets.net/iq4lnigp6fgt/72KhxI84kw1SE9gP8gDp7R/c5fa24bdc295a318018aea0ca46e2de8/forma-36-storybook-asset.png?fit=fill&f=top_left&w=200&h=300',
     },
     status: {
       control: 'select',
       options: ['archived', 'changed', 'draft', 'published'],
     },
     testId: { control: { disable: true } },
-    title: { control: 'text', defaultValue: 'Everyone is welcome here' },
+    title: { control: 'text' },
     type: {
       control: 'select',
       options: Object.keys(types),
-      defaultValue: Object.keys(types)[0],
     },
+  },
+  args: {
+    title: 'Everyone is welcome here',
+    type: Object.keys(types)[0],
   },
   component: Asset,
   parameters: {
@@ -47,6 +48,7 @@ export const WithAnImage: StoryObj<AssetProps> = {
 
   args: {
     type: 'image',
+    src: 'https://images.ctfassets.net/iq4lnigp6fgt/72KhxI84kw1SE9gP8gDp7R/c5fa24bdc295a318018aea0ca46e2de8/forma-36-storybook-asset.png?fit=fill&f=top_left&w=200&h=300',
   },
 };
 
