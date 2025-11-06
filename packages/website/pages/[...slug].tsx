@@ -317,7 +317,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths: [...mdxPaths, ...contentfulPaths],
-    fallback: 'blocking',
+    fallback: false,
   };
 };
 
