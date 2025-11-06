@@ -76,6 +76,9 @@ jobs:
       - checkout
       - vault/get-secrets:
           template-preset: packages-read
+      - run:
+          name: Print all env vars
+          command: printenv | grep -i contentful || echo "No CONTENTFUL vars found"
       - attach_workspace:
           at: ~/circleci-f36-build
       - node/install-packages
