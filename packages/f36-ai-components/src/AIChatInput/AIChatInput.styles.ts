@@ -21,8 +21,8 @@ export const getStyles = () => {
       },
       '& .mention': {
         backgroundColor: tokens.gray200,
-        padding: '2px 4px',
-        borderRadius: '4px',
+        padding: `2px 4px`,
+        borderRadius: tokens.borderRadiusSmall,
       },
     }),
     stopIcon: css({
