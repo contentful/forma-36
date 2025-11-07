@@ -1,14 +1,25 @@
 import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
-import { css } from 'emotion';
+import { css, keyframes } from 'emotion';
 
 import type { AIChatLayoutDisplay } from './AIChatLayout';
+
+const fadeIn = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
+
+const fadeOut = keyframes`
+  from { opacity: 1; }
+  to { opacity: 0; }
+`;
 
 interface StyleProps {
   display?: AIChatLayoutDisplay;
   variant?: 'normal' | 'expanded';
   isAnimatingOut?: boolean;
   headerTransitionDirection?: 'left' | 'right' | null;
+  isHeaderTransitioning?: boolean;
 }
 
 export const getStyles = (props: StyleProps = {}) => {
@@ -17,6 +28,7 @@ export const getStyles = (props: StyleProps = {}) => {
     variant = 'normal',
     isAnimatingOut = false,
     headerTransitionDirection = null,
+    isHeaderTransitioning = false,
   } = props;
 
   const isOpen = display !== 'collapsed';
@@ -78,8 +90,10 @@ export const getStyles = (props: StyleProps = {}) => {
       gap: tokens.spacing2Xs,
       width: '100%',
       flex: '0 0 auto',
-      // opacity: 1,
-      // transition: `opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
+      opacity: 1,
+      animation: isHeaderTransitioning
+        ? `${fadeOut} 1s ${tokens.transitionEasingDefault} forwards`
+        : 'none',
     }),
 
     headerContentEntering: css({
@@ -88,8 +102,8 @@ export const getStyles = (props: StyleProps = {}) => {
       gap: tokens.spacing2Xs,
       width: '100%',
       flex: '0 0 auto',
-      // opacity: 0,
-      // transition: `opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
+      opacity: 0,
+      animation: `${fadeIn} 1s ${tokens.transitionEasingDefault} forwards`,
     }),
 
     icon: css({
