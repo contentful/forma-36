@@ -1,3 +1,4 @@
+import { NavList } from '@contentful/f36-components';
 import { Box, type CommonProps } from '@contentful/f36-core';
 import React, { forwardRef, Ref, useEffect, useRef, useState } from 'react';
 import { getStyles } from './AIChatHistory.styles';
@@ -119,16 +120,16 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
   const renderGroupedThreads = () => {
     if (!hasGroups) {
       return (
-        <Box
+        <NavList
           ref={scrollContainerRef}
           className={styles.groupThreads}
           onKeyDown={handleContainerKeyDown}
           tabIndex={0}
-          role="list"
           aria-label="Message threads"
+          as="div"
         >
           {threads.map((thread) => renderThread(thread))}
-        </Box>
+        </NavList>
       );
     }
 
@@ -150,7 +151,7 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
           onTabClick={handleTabClick}
           testId={`${testId}-tabs`}
         />
-        <Box
+        <NavList
           ref={scrollContainerRef}
           className={styles.groupThreads}
           role="tabpanel"
@@ -159,9 +160,10 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
           aria-label={`${activeGroup?.label || 'All'} threads`}
           onKeyDown={handleContainerKeyDown}
           tabIndex={0}
+          as="div"
         >
           {filteredThreads.map((thread) => renderThread(thread))}
-        </Box>
+        </NavList>
       </>
     );
   };

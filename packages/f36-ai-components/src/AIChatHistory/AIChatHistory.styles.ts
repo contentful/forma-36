@@ -23,6 +23,7 @@ export function getStyles({ hasGroups = false }: GetStylesParams) {
       overflowX: 'hidden',
       overflowY: 'auto',
       scrollbarWidth: 'none',
+      gap: 0,
 
       '&:focus-visible': {
         outline: `2px solid ${tokens.blue600}`,

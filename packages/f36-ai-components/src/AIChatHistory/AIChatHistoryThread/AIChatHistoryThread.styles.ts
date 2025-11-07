@@ -4,11 +4,15 @@ import { css } from 'emotion';
 export const getStyles = () => {
   return {
     thread: css({
+      width: '100%',
       height: '54px',
       padding: `${tokens.spacingXs} ${tokens.spacingXs} ${tokens.spacingXs} ${tokens.spacingS}`,
       cursor: 'pointer',
       borderRadius: tokens.borderRadiusSmall,
       transition: `background-color ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
+      border: 'none',
+      background: 'none',
+      textAlign: 'left',
       '&:hover': {
         backgroundColor: tokens.gray100,
       },
@@ -22,6 +26,7 @@ export const getStyles = () => {
     }),
     threadContent: css({
       display: 'flex',
+      width: '100%',
       alignItems: 'flex-start',
       justifyContent: 'space-between',
       gap: tokens.spacingXs,

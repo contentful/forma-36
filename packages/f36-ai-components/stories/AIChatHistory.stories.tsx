@@ -25,7 +25,8 @@ interface MockThreadData {
 
 const mockThreadsData: MockThreadData[] = [
   {
-    title: 'Localize Content Models for Japan',
+    title:
+      'Localize Content Models for Japan Localize Content Models for Japan',
     group: 'paused',
     timeOffset: 3 * 60 * 1000, // 3 minutes ago,
     status: 'review',

@@ -1,4 +1,8 @@
-import { formatRelativeDateTime, Text } from '@contentful/f36-components';
+import {
+  formatRelativeDateTime,
+  NavList,
+  Text,
+} from '@contentful/f36-components';
 import { Box, type CommonProps } from '@contentful/f36-core';
 import { cx } from 'emotion';
 import React, { forwardRef, Ref } from 'react';
@@ -12,7 +16,7 @@ export interface AIChatHistoryThreadProps extends CommonProps {
 
 function _AIChatHistoryThread(
   props: AIChatHistoryThreadProps,
-  ref: Ref<HTMLDivElement>,
+  ref: Ref<HTMLButtonElement>,
 ) {
   const {
     className,
@@ -26,25 +30,18 @@ function _AIChatHistoryThread(
   };
 
   return (
-    <Box
+    <NavList.Item
       ref={ref}
       className={cx(styles.thread, className)}
-      onClick={handleThreadClick}
       testId={testId}
-      role="button"
-      tabIndex={0}
+      as="button"
+      onClick={handleThreadClick}
       id={`thread-${thread.id}`}
       aria-label={`Thread: ${thread.title}${
         thread.lastActivity
           ? `, last activity ${formatRelativeDateTime(thread.lastActivity)}`
           : ''
       }`}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          handleThreadClick();
-        }
-      }}
     >
       <Box className={styles.threadContent} title={thread.title}>
         <Box className={styles.threadInfo}>
@@ -69,7 +66,7 @@ function _AIChatHistoryThread(
           </Box>
         )}
       </Box>
-    </Box>
+    </NavList.Item>
   );
 }
 
