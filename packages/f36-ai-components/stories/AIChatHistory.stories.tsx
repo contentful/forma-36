@@ -1,3 +1,4 @@
+import { Tooltip } from '@contentful/f36-components';
 import {
   CheckCircleIcon,
   CheckIcon,
@@ -137,15 +138,25 @@ const createMockThreads = (): MessageThread[] => {
     switch (mockData.status) {
       case 'error':
         statusIcon = (
-          <WarningIcon
-            key={`warning-${index}`}
-            className={cx(styles.statusIcon, styles.warningStatusIcon)}
-          />
+          <Tooltip
+            content="The agent failed. Provide more input to continue."
+            placement="top"
+          >
+            <WarningIcon
+              key={`warning-${index}`}
+              className={cx(styles.statusIcon, styles.warningStatusIcon)}
+            />
+          </Tooltip>
         );
         break;
       case 'review':
         statusIcon = (
-          <EyeIcon key={`eye-${index}`} className={styles.statusIcon} />
+          <Tooltip
+            content="The agent needs your review or input to proceed."
+            placement="top"
+          >
+            <EyeIcon key={`eye-${index}`} className={styles.statusIcon} />
+          </Tooltip>
         );
         break;
       default:
@@ -168,6 +179,13 @@ const createMockThreads = (): MessageThread[] => {
 export default {
   title: 'Components/AIChatHistory',
   component: AIChatHistory,
+  argTypes: {
+    threads: { control: { disable: true } },
+    groups: { control: { disable: true } },
+    className: { control: { disable: true } },
+    style: { control: { disable: true } },
+    testId: { control: { disable: true } },
+  },
 };
 
 const render = (args) => (
