@@ -65,6 +65,10 @@ export const getStyles = () => {
       alignItems: 'center',
       fontSize: '14px',
       lineHeight: 1,
+      color: tokens.gray600,
+    }),
+    activeTabIcon: css({
+      color: tokens.gray900,
     }),
   };
 };

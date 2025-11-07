@@ -88,7 +88,7 @@ function _AIChatHistoryTabs(
             >
               <Box
                 as="button"
-                className={`${styles.tab} ${isActive ? styles.activeTab : ''}`}
+                className={cx(styles.tab, isActive && styles.activeTab)}
                 onClick={() => handleTabClick(group.id)}
                 onKeyDown={(e) => handleKeyDown(e, group.id, index)}
                 testId={`${testId}-group-${group.id}`}
@@ -99,7 +99,13 @@ function _AIChatHistoryTabs(
                 tabIndex={isActive ? 0 : -1}
               >
                 {group.icon && (
-                  <Box className={styles.tabIcon} aria-hidden="true">
+                  <Box
+                    className={cx(
+                      styles.tabIcon,
+                      isActive && styles.activeTabIcon,
+                    )}
+                    aria-hidden="true"
+                  >
                     {group.icon}
                   </Box>
                 )}
