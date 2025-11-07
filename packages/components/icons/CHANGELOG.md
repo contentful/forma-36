@@ -1,5 +1,17 @@
 # Change Log
 
+## 5.7.0
+
+### Minor Changes
+
+- [#3219](https://github.com/contentful/forma-36/pull/3219) [`3ebf269`](https://github.com/contentful/forma-36/commit/3ebf269c33b3b638bbc27c0aca89fa823d9ad3a7) Thanks [@YvesRijckaert](https://github.com/YvesRijckaert)! - feat: add square split horizontal icon
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.7.0
+  - @contentful/f36-icon@5.7.0
+
 ## 5.6.0
 
 ### Patch Changes
