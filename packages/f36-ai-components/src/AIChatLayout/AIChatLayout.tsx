@@ -31,6 +31,21 @@ export interface AIChatLayoutButton {
   testId?: string;
 }
 
+export interface AIChatLayoutHeaderState {
+  /**
+   * Icon to display in the layout header
+   */
+  icon?: React.ReactNode;
+  /**
+   * Title for the layout header
+   */
+  title?: string;
+  /**
+   * Array of action buttons for this header state
+   */
+  buttons?: AIChatLayoutButton[];
+}
+
 export interface AIChatLayoutProps extends CommonProps {
   /**
    * Layout variant defining the visual state when open
@@ -52,17 +67,29 @@ export interface AIChatLayoutProps extends CommonProps {
    */
   onCollapsedClick?: () => void;
   /**
-   * Icon to display in the layout header
+   * Current header state configuration
+   */
+  headerState?: AIChatLayoutHeaderState;
+  /**
+   * Icon to display in the layout header (deprecated - use headerState.icon)
+   * @deprecated Use headerState.icon instead
    */
   icon?: React.ReactNode;
   /**
-   * Title for the layout
+   * Title for the layout (deprecated - use headerState.title)
+   * @deprecated Use headerState.title instead
    */
   title?: string;
   /**
-   * Array of action buttons
+   * Array of action buttons (deprecated - use headerState.buttons)
+   * @deprecated Use headerState.buttons instead
    */
   buttons?: AIChatLayoutButton[];
+  /**
+   * Button that should maintain its position (typically a close button)
+   * This button will always be positioned at the end of the button group
+   */
+  fixedButton?: AIChatLayoutButton;
   /**
    * Main content area (hidden when display is 'collapsed' or 'closed')
    */
@@ -78,17 +105,66 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     variant = 'normal',
     display = 'open',
     onCollapsedClick: onOpen = () => {},
-    icon,
-    title,
-    buttons = [],
+    headerState,
+    // Deprecated props - maintain backward compatibility
+    icon: deprecatedIcon,
+    title: deprecatedTitle,
+    buttons: deprecatedButtons = [],
+    fixedButton,
     children,
     className,
     testId = 'cf-ui-ai-chat-layout',
     ...otherProps
   } = props;
 
+  // Use headerState if provided, otherwise fall back to deprecated props
+  const currentIcon = headerState?.icon ?? deprecatedIcon;
+  const currentTitle = headerState?.title ?? deprecatedTitle;
+  const currentButtons = headerState?.buttons ?? deprecatedButtons;
+
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const [shouldRender, setShouldRender] = useState(display !== 'closed');
+
+  // Header transition state
+  const [headerTransitionDirection, setHeaderTransitionDirection] = useState<
+    'left' | 'right' | null
+  >(null);
+  const [previousHeaderState, setPreviousHeaderState] = useState<
+    typeof headerState | null
+  >(null);
+  const [isHeaderTransitioning, setIsHeaderTransitioning] = useState(true);
+
+  // Track header state changes for animations
+  useEffect(() => {
+    if (
+      headerState &&
+      previousHeaderState &&
+      headerState !== previousHeaderState
+    ) {
+      // Determine slide direction based on content change
+      const currentTitle = headerState.title || '';
+      const previousTitle = previousHeaderState.title || '';
+
+      // If transitioning to or from history mode, use specific direction
+      const isEnteringHistory =
+        currentTitle.includes('History') && !previousTitle.includes('History');
+      const direction = isEnteringHistory ? 'right' : 'left';
+
+      setHeaderTransitionDirection(direction);
+      setIsHeaderTransitioning(true);
+
+      // Reset transition after animation completes
+      const timer = setTimeout(() => {
+        setHeaderTransitionDirection(null);
+        setIsHeaderTransitioning(false);
+        setPreviousHeaderState(headerState);
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    } else if (headerState) {
+      setPreviousHeaderState(headerState);
+    }
+  }, [headerState, previousHeaderState]);
 
   // Handle the slide-out animation when display becomes 'closed'
   useEffect(() => {
@@ -115,13 +191,73 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
         setIsAnimatingOut(false);
       }
     }
-  }, [display, shouldRender]);
+  }, [display, shouldRender, isAnimatingOut]);
 
   if (!shouldRender) {
     return null;
   }
 
-  const styles = getStyles({ display, variant, isAnimatingOut });
+  const styles = getStyles({
+    display,
+    variant,
+    isAnimatingOut,
+    headerTransitionDirection,
+  });
+
+  // Helper function to render header content
+  const renderHeaderContent = (
+    icon: React.ReactNode,
+    title: string | undefined,
+    buttons: typeof currentButtons,
+    className?: string,
+    style?: React.CSSProperties,
+  ) => (
+    <div className={className} style={style}>
+      {icon && (
+        <>
+          <Box className={styles.icon} testId={`${testId}-icon`}>
+            {icon}
+          </Box>
+          <IconGradient />
+        </>
+      )}
+
+      {title && (
+        <Box className={styles.title} testId={`${testId}-title`}>
+          {title}
+        </Box>
+      )}
+
+      {buttons.length > 0 && (
+        <Flex className={styles.buttonGroup} testId={`${testId}-buttons`}>
+          {buttons.map((button, index) => {
+            const delayIncrement = index * 30;
+            const delay = button.display
+              ? 200 + delayIncrement
+              : delayIncrement;
+
+            return (
+              <IconButton
+                key={`dynamic-${index}`}
+                variant="transparent"
+                size="small"
+                icon={button.icon}
+                aria-label={button.ariaLabel}
+                onClick={() => button.onClick()}
+                testId={button.testId || `${testId}-button-${index}`}
+                className={
+                  button.display ? styles.buttonVisible : styles.buttonHidden
+                }
+                style={{ ['--button-delay' as string]: `${delay}ms` }}
+                aria-hidden={!button.display}
+                tabIndex={button.display ? null : -1}
+              />
+            );
+          })}
+        </Flex>
+      )}
+    </div>
+  );
 
   return (
     <Flex
@@ -135,48 +271,49 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
         testId={`${testId}-header`}
         onClick={display === 'collapsed' ? onOpen : undefined}
       >
-        {icon && (
-          <>
-            <Box className={styles.icon} testId={`${testId}-icon`}>
-              {icon}
-            </Box>
-            <IconGradient />
-          </>
+        {isHeaderTransitioning ? (
+          /* Sliding container with both old and new content */
+          <div className={styles.headerSlideContainer}>
+            {/* Current content (first half) */}
+            {renderHeaderContent(
+              previousHeaderState?.icon || currentIcon,
+              previousHeaderState?.title || currentTitle,
+              previousHeaderState?.buttons || currentButtons,
+              styles.headerContent,
+            )}
+            {/* New content (second half) */}
+            {renderHeaderContent(
+              currentIcon,
+              currentTitle,
+              currentButtons,
+              styles.headerContentEntering,
+            )}
+          </div>
+        ) : (
+          /* Normal static content */
+          <div style={{ display: 'flex', alignItems: 'center', flex: 1 }}>
+            {renderHeaderContent(
+              currentIcon,
+              currentTitle,
+              currentButtons,
+              styles.headerContent,
+            )}
+          </div>
         )}
-
-        {title && (
-          <Box className={styles.title} testId={`${testId}-title`}>
-            {title}
-          </Box>
-        )}
-
-        {buttons.length > 0 && (
-          <Flex className={styles.buttonGroup} testId={`${testId}-buttons`}>
-            {buttons.map((button, index) => {
-              const delayIncrement = index * 30;
-              const delay = button.display
-                ? 200 + delayIncrement
-                : delayIncrement;
-
-              return (
-                <IconButton
-                  key={index}
-                  variant="transparent"
-                  size="small"
-                  icon={button.icon}
-                  aria-label={button.ariaLabel}
-                  onClick={() => button.onClick()}
-                  testId={button.testId || `${testId}-button-${index}`}
-                  className={
-                    button.display ? styles.buttonVisible : styles.buttonHidden
-                  }
-                  style={{ ['--button-delay' as string]: `${delay}ms` }}
-                  aria-hidden={!button.display}
-                  tabIndex={button.display ? null : -1}
-                />
-              );
-            })}
-          </Flex>
+        {/* Fixed button always visible outside the sliding area */}
+        {fixedButton && (
+          <IconButton
+            variant="transparent"
+            size="small"
+            icon={fixedButton.icon}
+            aria-label={fixedButton.ariaLabel}
+            onClick={() => fixedButton.onClick()}
+            testId={fixedButton.testId || `${testId}-fixed-button`}
+            className={styles.buttonVisible}
+            style={{
+              ['--button-delay' as string]: '0ms',
+            }}
+          />
         )}
       </Flex>
 
@@ -195,6 +332,11 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
  * 2. **Collapsed** (display='collapsed') - Compact lozenge with icon, title, and buttons (no content area)
  * 3. **Normal** (display='open', variant='normal') - Standard layout with header and content area (360px width)
  * 4. **Expanded** (display='open', variant='expanded') - Large layout with more space (480px width)
+ *
+ * The header content can be controlled via:
+ * - `headerState` prop for dynamic content that can transition (icon, title, buttons)
+ * - `fixedButton` prop for a button that maintains position (e.g., close button)
+ * - Legacy props (`icon`, `title`, `buttons`) for backward compatibility
  *
  * Use `display` to control the visibility and layout state, and `variant` to control the size when open.
  * The `onCollapsedClick` callback is called when the collapsed lozenge is clicked.

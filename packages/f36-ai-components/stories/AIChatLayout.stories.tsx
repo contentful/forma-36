@@ -154,3 +154,105 @@ Basic.args = {
   content:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 };
+
+// New HeaderState Transition Story
+export const HeaderStateTransition = () => {
+  const [isHistoryMode, setIsHistoryMode] = useState(false);
+
+  // Define the default chat state
+  const defaultHeaderState = {
+    icon: <Icon as={icons.TranslateIcon} />,
+    title: 'Translation Agent',
+    buttons: [
+      {
+        icon: <icons.ClockIcon />,
+        onClick: () => setIsHistoryMode(true),
+        display: true,
+        ariaLabel: 'View History',
+        testId: 'history-button',
+      },
+    ],
+  };
+
+  // Define the history state
+  const historyHeaderState = {
+    icon: <icons.ClockIcon />,
+    title: 'AI Copilot History',
+    buttons: [
+      {
+        icon: <icons.ArrowLeftIcon />,
+        onClick: () => setIsHistoryMode(false),
+        display: true,
+        ariaLabel: 'Back to Chat',
+        testId: 'back-button',
+      },
+    ],
+  };
+
+  // Fixed close button that maintains position
+  const closeButton = {
+    icon: <icons.XIcon />,
+    onClick: action('close-chat'),
+    display: true,
+    ariaLabel: 'Close',
+    testId: 'close-button',
+  };
+
+  return (
+    <AIChatLayout
+      display="open"
+      variant="normal"
+      headerState={isHistoryMode ? historyHeaderState : defaultHeaderState}
+      fixedButton={closeButton}
+      testId="chat-layout"
+    >
+      <div style={{ padding: '16px' }}>
+        {isHistoryMode ? (
+          <div>
+            <Text as="h3">History Content</Text>
+            <Text>Previous conversations and interactions...</Text>
+          </div>
+        ) : (
+          <div>
+            <Text as="h3">Chat Content</Text>
+            <Text>Current conversation with the Translation Agent...</Text>
+          </div>
+        )}
+      </div>
+    </AIChatLayout>
+  );
+};
+
+// Backward Compatibility Story
+export const BackwardCompatibility = () => {
+  const closeButton = {
+    icon: <icons.XIcon />,
+    onClick: action('close-chat'),
+    display: true,
+    ariaLabel: 'Close',
+  };
+
+  return (
+    <AIChatLayout
+      display="open"
+      icon={<Icon as={icons.TranslateIcon} />}
+      title="Legacy Usage"
+      buttons={[
+        {
+          icon: <icons.ClockIcon />,
+          onClick: action('view-history'),
+          display: true,
+          ariaLabel: 'History',
+        },
+      ]}
+      fixedButton={closeButton}
+    >
+      <div style={{ padding: '16px' }}>
+        <Text>
+          This story shows backward compatibility with legacy props (icon,
+          title, buttons) while using the new fixedButton prop.
+        </Text>
+      </div>
+    </AIChatLayout>
+  );
+};

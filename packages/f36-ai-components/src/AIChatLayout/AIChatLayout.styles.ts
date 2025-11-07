@@ -8,6 +8,7 @@ interface StyleProps {
   display?: AIChatLayoutDisplay;
   variant?: 'normal' | 'expanded';
   isAnimatingOut?: boolean;
+  headerTransitionDirection?: 'left' | 'right' | null;
 }
 
 export const getStyles = (props: StyleProps = {}) => {
@@ -15,6 +16,7 @@ export const getStyles = (props: StyleProps = {}) => {
     display = 'open',
     variant = 'normal',
     isAnimatingOut = false,
+    headerTransitionDirection = null,
   } = props;
 
   const isOpen = display !== 'collapsed';
@@ -50,6 +52,44 @@ export const getStyles = (props: StyleProps = {}) => {
         ? `1px solid ${hexToRGBA(tokens.gray900, 0.05)}`
         : '0',
       cursor: display === 'collapsed' ? 'pointer' : 'auto',
+      position: 'relative',
+      overflow: 'hidden',
+    }),
+
+    headerSlideContainer: css({
+      display: 'flex',
+      alignItems: 'center',
+      // overflow: 'hidden',
+      width: '100%', // Double width to fit both contents side by side
+      minWidth: '0',
+      flex: '1',
+      transition: `transform 1s ease-out`,
+      transform:
+        headerTransitionDirection === 'right'
+          ? 'translateX(-100%)' // Show the second half (new content)
+          : headerTransitionDirection === 'left'
+          ? 'translateX(-100%)' // Show the second half (new content)
+          : 'translateX(0)', // Show the first half (current content)
+    }),
+
+    headerContent: css({
+      display: 'flex',
+      alignItems: 'center',
+      gap: tokens.spacing2Xs,
+      width: '100%',
+      flex: '0 0 auto',
+      // opacity: 1,
+      // transition: `opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
+    }),
+
+    headerContentEntering: css({
+      display: 'flex',
+      alignItems: 'center',
+      gap: tokens.spacing2Xs,
+      width: '100%',
+      flex: '0 0 auto',
+      // opacity: 0,
+      // transition: `opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
     }),
 
     icon: css({
