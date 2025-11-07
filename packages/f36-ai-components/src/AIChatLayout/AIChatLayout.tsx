@@ -134,8 +134,6 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   >(null);
   const [isHeaderTransitioning, setIsHeaderTransitioning] = useState(false);
 
-  console.log('isHeaderTransitioning:', isHeaderTransitioning);
-
   // Track header state changes for animations
   useEffect(() => {
     if (

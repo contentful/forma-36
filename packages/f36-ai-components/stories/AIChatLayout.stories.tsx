@@ -159,9 +159,11 @@ Basic.args = {
 export const HeaderStateTransition = () => {
   const [isHistoryMode, setIsHistoryMode] = useState(false);
 
+  const styles = getStyles({ display: 'open' });
+
   // Define the default chat state
   const defaultHeaderState = {
-    icon: <Icon as={icons.TranslateIcon} />,
+    icon: <Icon as={icons.TranslateIcon} className={styles.aiGradientIcon} />,
     title: 'Translation Agent',
     buttons: [
       {
