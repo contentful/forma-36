@@ -132,7 +132,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   const [previousHeaderState, setPreviousHeaderState] = useState<
     typeof headerState | null
   >(null);
-  const [isHeaderTransitioning, setIsHeaderTransitioning] = useState(true);
+  const [isHeaderTransitioning, setIsHeaderTransitioning] = useState(false);
 
   console.log('isHeaderTransitioning:', isHeaderTransitioning);
 
@@ -276,21 +276,23 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
       >
         {isHeaderTransitioning ? (
           /* Sliding container with both old and new content */
-          <div className={styles.headerSlideContainer}>
-            {/* Current content (first half) */}
-            {renderHeaderContent(
-              previousHeaderState?.icon || currentIcon,
-              previousHeaderState?.title || currentTitle,
-              previousHeaderState?.buttons || currentButtons,
-              styles.headerContent,
-            )}
-            {/* New content (second half) */}
-            {renderHeaderContent(
-              currentIcon,
-              currentTitle,
-              currentButtons,
-              styles.headerContentEntering,
-            )}
+          <div style={{ overflow: 'hidden', flex: 1, display: 'flex' }}>
+            <div className={styles.headerSlideContainer}>
+              {/* Current content (first half) */}
+              {renderHeaderContent(
+                previousHeaderState?.icon || currentIcon,
+                previousHeaderState?.title || currentTitle,
+                previousHeaderState?.buttons || currentButtons,
+                styles.headerContent,
+              )}
+              {/* New content (second half) */}
+              {renderHeaderContent(
+                currentIcon,
+                currentTitle,
+                currentButtons,
+                styles.headerContentEntering,
+              )}
+            </div>
           </div>
         ) : (
           /* Normal static content */
