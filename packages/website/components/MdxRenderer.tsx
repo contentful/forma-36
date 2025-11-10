@@ -70,7 +70,7 @@ const components = {
             color: tokens.gray800,
             padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
             borderRadius: tokens.borderRadiusSmall,
-            fontSize: tokens.fontSizeXlHigh,
+            fontSize: tokens.fontSizeM,
           }}
           {...props}
         />
