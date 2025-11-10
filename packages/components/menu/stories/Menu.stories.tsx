@@ -38,32 +38,27 @@ export default {
         'left-end',
         'auto',
       ],
-      table: {
-        defaultValue: 'bottom',
-      },
     },
   },
-} as Meta;
-
-const storyArgs: Partial<MenuProps> = {
-  defaultIsOpen: true,
-  isOpen: undefined,
-  onClose: undefined,
-  onOpen: undefined,
-  isFullWidth: false,
-  placement: 'bottom',
-  isAutoalignmentEnabled: true,
-  offset: 0,
-  renderOnlyWhenOpen: true,
-  closeOnSelect: true,
-  closeOnBlur: true,
-  closeOnEsc: true,
-  usePortal: true,
-  autoFocus: true,
-};
+  args: {
+    defaultIsOpen: true,
+    isOpen: undefined,
+    onClose: undefined,
+    onOpen: undefined,
+    isFullWidth: false,
+    placement: 'bottom',
+    isAutoalignmentEnabled: true,
+    offset: 0,
+    renderOnlyWhenOpen: true,
+    closeOnSelect: true,
+    closeOnBlur: true,
+    closeOnEsc: true,
+    usePortal: true,
+    autoFocus: true,
+  },
+} satisfies Meta<typeof Menu>;
 
 export const Basic: StoryObj<MenuProps> = {
-  args: storyArgs,
   render: (args: MenuProps) => {
     return (
       <Menu {...args}>
@@ -96,7 +91,6 @@ export const Basic: StoryObj<MenuProps> = {
 };
 
 export const Controlled: StoryObj<MenuProps> = {
-  args: storyArgs,
   render: (args: MenuProps) => {
     const [isOpen, setIsOpen] = React.useState(true);
     return (
@@ -132,7 +126,6 @@ export const Controlled: StoryObj<MenuProps> = {
 };
 
 export const WithDisabledItems: StoryObj<MenuProps> = {
-  args: storyArgs,
   render: (args: MenuProps) => {
     return (
       <Menu defaultIsOpen closeOnSelect={false} {...args}>
@@ -159,7 +152,6 @@ export const WithDisabledItems: StoryObj<MenuProps> = {
 };
 
 export const WithIconsOnItems: StoryObj<MenuProps> = {
-  args: storyArgs,
   render: (args: MenuProps) => {
     return (
       <Menu defaultIsOpen {...args}>
@@ -181,7 +173,6 @@ export const WithIconsOnItems: StoryObj<MenuProps> = {
 };
 
 export const WithMaxHeight: StoryObj<MenuProps> = {
-  args: storyArgs,
   render: (args: MenuProps) => {
     return (
       <Menu defaultIsOpen {...args}>
@@ -211,7 +202,6 @@ export const WithMaxHeight: StoryObj<MenuProps> = {
 };
 
 export const WithStickyHeaderAndFooter: StoryObj<MenuProps> = {
-  args: storyArgs,
   render: (args: MenuProps) => {
     return (
       <Menu defaultIsOpen {...args}>
@@ -244,7 +234,6 @@ export const WithStickyHeaderAndFooter: StoryObj<MenuProps> = {
 };
 
 export const WithReactRouterLinks: StoryObj<MenuProps> = {
-  args: storyArgs,
   render: (args: MenuProps) => {
     function MenuLink({ children, replace = false, to, ...props }) {
       const href = useHref(to);
@@ -285,7 +274,6 @@ WithReactRouterLinks.parameters = {
 };
 
 export const WithInitialFocusedItem: StoryObj<MenuProps> = {
-  args: storyArgs,
   render: (args: MenuProps) => {
     return (
       <Menu defaultIsOpen {...args}>
@@ -310,7 +298,6 @@ WithInitialFocusedItem.parameters = {
 };
 
 export const WithSubmenu: StoryObj<MenuProps> = {
-  args: storyArgs,
   render: (args: MenuProps) => {
     return (
       <Menu {...args}>
@@ -343,7 +330,6 @@ export const WithSubmenu: StoryObj<MenuProps> = {
 };
 
 export const WithSubmenuDifferentAlignments: StoryObj<MenuProps> = {
-  args: storyArgs,
   render: (args: MenuProps) => {
     const styles = {
       container: css({
@@ -393,7 +379,6 @@ export const WithSubmenuDifferentAlignments: StoryObj<MenuProps> = {
 };
 
 export const WithMultipleSubmenus: StoryObj<MenuProps> = {
-  args: storyArgs,
   render: (args: MenuProps) => {
     return (
       <Menu {...args}>
