@@ -1,5 +1,17 @@
 # Change Log
 
+## 5.8.0
+
+### Minor Changes
+
+- [#3222](https://github.com/contentful/forma-36/pull/3222) [`d2e900b`](https://github.com/contentful/forma-36/commit/d2e900bb10135cdbdd9bf2b0fa799530548f11a4) Thanks [@harikakondur](https://github.com/harikakondur)! - new icons for app logo
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.8.0
+  - @contentful/f36-icon@5.8.0
+
 ## 5.7.0
 
 ### Minor Changes
