@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 08-11-2025
+
+**F36 Icons** `v5.7.0`
+
+- feat: add square split horizontal icon
+
 ## 30-09-2025
 
 **F36 Badge** `v5.6.0`
