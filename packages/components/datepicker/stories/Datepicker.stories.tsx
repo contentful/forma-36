@@ -18,9 +18,7 @@ export default {
   },
   argTypes: {
     weekStartsOn: {
-      control: 'number',
-      min: 0,
-      max: 6,
+      control: { type: 'number', min: 0, max: 6 },
     },
   },
   parameters: {
