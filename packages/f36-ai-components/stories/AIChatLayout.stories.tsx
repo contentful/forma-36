@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 
 import { AIChatLayout } from '../src/AIChatLayout/AIChatLayout';
 import { getStyles } from '../src/AIChatLayout/AIChatLayout.styles';
+import { Slider } from '../src/Slider/Slider';
 
 export default {
   component: AIChatLayout,
@@ -208,19 +209,24 @@ export const HeaderStateTransition = () => {
       fixedButton={closeButton}
       testId="chat-layout"
     >
-      <div style={{ padding: '16px' }}>
-        {isHistoryMode ? (
-          <div>
-            <Text as="h3">History Content</Text>
-            <Text>Previous conversations and interactions...</Text>
-          </div>
-        ) : (
-          <div>
-            <Text as="h3">Chat Content</Text>
-            <Text>Current conversation with the Translation Agent...</Text>
-          </div>
-        )}
-      </div>
+      <Slider
+        contentState={{
+          id: isHistoryMode ? 'history' : 'chat',
+          content: isHistoryMode ? (
+            <div style={{ padding: '16px' }}>
+              <Text as="h3">History Content</Text>
+              <Text>Previous conversations and interactions...</Text>
+            </div>
+          ) : (
+            <div style={{ padding: '16px' }}>
+              <Text as="h3">Chat Content</Text>
+              <Text>Current conversation with the Translation Agent...</Text>
+            </div>
+          ),
+        }}
+        direction={isHistoryMode ? 'left' : 'right'}
+        duration={2000}
+      />
     </AIChatLayout>
   );
 };

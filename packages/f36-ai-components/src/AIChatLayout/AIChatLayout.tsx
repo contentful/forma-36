@@ -229,7 +229,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
 
     const currentTitle = headerState.title || '';
     const isEnteringHistory = currentTitle.includes('History');
-    return isEnteringHistory ? 'right' : 'left';
+    return isEnteringHistory ? 'left' : 'right';
   }, [headerState]);
 
   // Handle the slide-out animation when display becomes 'closed'
