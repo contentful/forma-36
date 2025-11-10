@@ -31,7 +31,6 @@ export * from '@contentful/f36-popover';
 export * from '@contentful/f36-progress-stepper';
 export * from '@contentful/f36-skeleton';
 export * from '@contentful/f36-spinner';
-export * from '@contentful/f36-tabs';
 export * from '@contentful/f36-table';
 export * from '@contentful/f36-tabs';
 export * from '@contentful/f36-text-link';

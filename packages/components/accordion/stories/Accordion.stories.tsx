@@ -28,7 +28,7 @@ enim ad minim veniam, quis nostrud exercitation ullamco laboris
 nisi ut aliquip ex ea commodo consequat.`;
 
 export const Basic: Story = {
-  render: ({ align, ...args }: AccordionProps) => (
+  render: ({ align }: AccordionProps) => (
     <Accordion align={align}>
       <Accordion.Item title={args['Accordion.Item Title #1']}>
         <Text as="p">{args['Accordion.Item Content #1']}</Text>
@@ -41,14 +41,13 @@ export const Basic: Story = {
       </Accordion.Item>
     </Accordion>
   ),
-};
-
-Basic.args = {
-  align: 'end',
+  args: {
+    align: 'end',
+  },
 };
 
 export const Overview: Story = {
-  render: ({ align, ...args }: AccordionProps) => (
+  render: () => (
     <>
       <Flex flexDirection="column" marginBottom="spacingM" fullWidth>
         <SectionHeading marginBottom="spacingS">
