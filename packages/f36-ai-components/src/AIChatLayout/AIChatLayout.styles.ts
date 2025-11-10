@@ -8,6 +8,7 @@ interface StyleProps {
   display?: AIChatLayoutDisplay;
   variant?: 'normal' | 'expanded';
   isAnimatingOut?: boolean;
+  hasStartButtonGroup?: boolean;
 }
 
 export const getStyles = (props: StyleProps = {}) => {
@@ -15,6 +16,7 @@ export const getStyles = (props: StyleProps = {}) => {
     display = 'open',
     variant = 'normal',
     isAnimatingOut = false,
+    hasStartButtonGroup = false,
   } = props;
 
   const isOpen = display !== 'collapsed';
@@ -41,7 +43,9 @@ export const getStyles = (props: StyleProps = {}) => {
     header: css({
       width: '100%',
       height: '48px',
-      padding: `0px ${tokens.spacingS}`,
+      padding: hasStartButtonGroup
+        ? `0px ${tokens.spacingS} 0px ${tokens.spacingXs}`
+        : `0px ${tokens.spacingS}`,
       backgroundColor: 'transparent',
       flexShrink: 0,
       alignItems: 'center',
@@ -59,7 +63,8 @@ export const getStyles = (props: StyleProps = {}) => {
       alignItems: 'center',
       justifyContent: 'center',
       flexShrink: 0,
-      paddingLeft: tokens.spacingXs,
+      marginLeft: hasStartButtonGroup ? tokens.spacing2Xs : tokens.spacingXs,
+      marginRight: tokens.spacing2Xs,
     }),
 
     title: css({
@@ -117,20 +122,20 @@ export const getStyles = (props: StyleProps = {}) => {
 
     content: css({
       flex: 1,
+      width: '100%',
       height: '720px',
-      padding: tokens.spacingM,
       overflow: 'auto',
       backgroundColor: tokens.colorWhite,
     }),
 
     aiGradientIcon: css({
-      width: '20px',
-      height: '20px',
-      transition: `transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
-
       '*': {
         fill: `url("#icon-gradient") rgba(140, 46, 234, 1)`,
       },
+    }),
+
+    contentWrapper: css({
+      width: '100%',
     }),
   };
 };

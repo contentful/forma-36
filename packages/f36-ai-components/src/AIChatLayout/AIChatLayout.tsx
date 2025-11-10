@@ -149,10 +149,13 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const [shouldRender, setShouldRender] = useState(display !== 'closed');
 
+  const hasStartButtonGroup = currentButtonsStart.length > 0;
+
   const styles = getStyles({
     display,
     variant,
     isAnimatingOut,
+    hasStartButtonGroup,
   });
 
   // Helper function to render a button group
@@ -344,7 +347,10 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
         )}
       </Flex>
 
-      <Collapse isExpanded={display !== 'collapsed'}>
+      <Collapse
+        isExpanded={display !== 'collapsed'}
+        className={styles.contentWrapper}
+      >
         <Box className={styles.content} testId={`${testId}-content`}>
           {children}
         </Box>
