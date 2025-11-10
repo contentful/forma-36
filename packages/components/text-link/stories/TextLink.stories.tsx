@@ -20,18 +20,18 @@ export default {
     classNames: { control: { disable: true } },
     testId: { control: { disable: true } },
   },
-} as Meta;
+} satisfies Meta<typeof TextLink>;
 
-export const Basic: StoryObj<any> = {
+export const Basic: StoryObj<
+  Omit<TextLinkProps, 'icon'> & { icon: keyof typeof icons }
+> = {
   argTypes: {
     alignIcon: {
-      control: { type: 'select' },
+      control: 'select',
       options: ['start', 'end'],
     },
     icon: {
-      control: {
-        type: 'select',
-      },
+      control: 'select',
       options: Object.keys(icons),
     },
   },
@@ -39,11 +39,7 @@ export const Basic: StoryObj<any> = {
     alignIcon: 'start',
     children: 'This is a text link',
   },
-  render: ({
-    children,
-    icon,
-    ...args
-  }: Omit<TextLinkProps, 'icon'> & { icon: keyof typeof icons }) => {
+  render: ({ children, icon, ...args }) => {
     return (
       <TextLink icon={icon ? <Icon as={icons[icon]} /> : null} {...args}>
         {children}

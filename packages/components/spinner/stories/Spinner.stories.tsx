@@ -24,15 +24,11 @@ export const Default: StoryObj<SpinnerInternalProps> = {
   },
   argTypes: {
     size: {
-      control: {
-        type: 'select',
-      },
+      control: 'select',
       options: ['large', 'medium', 'small'],
     },
     variant: {
-      control: {
-        type: 'select',
-      },
+      control: 'select',
       options: ['primary', 'default', 'white'],
     },
   },
