@@ -66,11 +66,11 @@ const components = {
         <code
           style={{
             fontFamily: tokens.fontStackMonospace,
-            backgroundColor: tokens.gray100,
+            backgroundColor: tokens.gray200,
             color: tokens.gray800,
             padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
             borderRadius: tokens.borderRadiusSmall,
-            fontSize: tokens.fontSizeS,
+            fontSize: tokens.fontSizeXlHigh,
           }}
           {...props}
         />
