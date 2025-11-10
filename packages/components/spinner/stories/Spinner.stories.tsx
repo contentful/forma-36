@@ -22,7 +22,16 @@ export const Default: StoryObj<SpinnerInternalProps> = {
   render: (args) => {
     return <Spinner {...args} />;
   },
-
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['large', 'medium', 'small'],
+    },
+    variant: {
+      control: 'select',
+      options: ['primary', 'default', 'white'],
+    },
+  },
   args: {
     size: 'large',
     variant: 'primary',
@@ -30,11 +39,11 @@ export const Default: StoryObj<SpinnerInternalProps> = {
 };
 
 export const WithText: StoryObj<SpinnerInternalProps> = {
-  render: (args) => {
+  render: () => {
     return (
-      <>
-        Loading <Spinner {...args} />
-      </>
+      <Flex marginBottom="spacingM">
+        Loading <Spinner />
+      </Flex>
     );
   },
 };

@@ -15,15 +15,15 @@ export default {
     as: { control: { disable: true } },
     className: { control: { disable: true } },
     icon: {
-      control: {
-        options: Object.keys(icons),
-        type: 'select',
-      },
-      defaultValue: icons.ClockIcon,
+      control: 'select',
+      options: Object.keys(icons),
     },
     rel: { control: { disable: true } },
     style: { control: { disable: true } },
     testId: { control: { disable: true } },
+  },
+  args: {
+    icon: icons.ClockIcon,
   },
   component: AssetCard,
   parameters: {

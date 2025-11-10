@@ -216,7 +216,7 @@ export const WithMetadata: StoryFn<HeaderProps> = () => (
 );
 
 export const WithFilters: StoryObj<HeaderProps> = {
-  render: ({ title = 'Content Types', ...args }) => (
+  render: ({ title, ...args }) => (
     <ExampleWrapper>
       <Box marginBottom="spacingM">
         <Note>
@@ -248,4 +248,7 @@ export const WithFilters: StoryObj<HeaderProps> = {
       />
     </ExampleWrapper>
   ),
+  args: {
+    title: 'Content Types',
+  },
 };
