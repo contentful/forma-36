@@ -249,6 +249,6 @@ export const WithFilters: StoryObj<HeaderProps> = {
     </ExampleWrapper>
   ),
   args: {
-    title: 'ContentTypes',
+    title: 'Content Types',
   },
 };
