@@ -1,9 +1,4 @@
-const {
-  pipe,
-  changeIdentifier,
-  changeImport,
-  getImport,
-} = require('../../utils');
+const { pipe, changeIdentifier } = require('../../utils');
 
 const updateToV6Skeleton = function (file, api) {
   const j = api.jscodeshift;

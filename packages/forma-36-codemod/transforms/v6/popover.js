@@ -3,10 +3,8 @@ const {
   hasProperty,
   getProperty,
   changeProperties,
-  updateTernaryValues,
   updatePropertyValue,
 } = require('../../utils');
-const { isConditionalExpression } = require('../../utils/updateTernaryValues');
 
 const updateToV6Popover = function (file, api) {
   const j = api.jscodeshift;
@@ -42,10 +40,6 @@ const updateToV6Popover = function (file, api) {
 
         // transform offset={[mainAxis, crossAxis]} into offset={{mainAxis: X, crossAxis: Y}}
         if (hasProperty(modifiedAttributes, { propertyName: 'offset' })) {
-          const offsetProp = getProperty(modifiedAttributes, {
-            propertyName: 'offset',
-          });
-
           modifiedAttributes = updatePropertyValue(modifiedAttributes, {
             j,
             propertyName: 'offset',
