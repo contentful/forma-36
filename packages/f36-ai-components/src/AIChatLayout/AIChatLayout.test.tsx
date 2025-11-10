@@ -7,8 +7,10 @@ import { AIChatLayout } from './AIChatLayout';
 
 const defaultProps = {
   display: 'open' as const,
-  title: 'Test Agent',
-  icon: <StarIcon />,
+  header: {
+    title: 'Test Agent',
+    icon: <StarIcon />,
+  },
 };
 
 describe('AIChatLayout', () => {
@@ -38,7 +40,14 @@ describe('AIChatLayout', () => {
   });
 
   it('renders the component with title and icon', () => {
-    render(<AIChatLayout title="Test Chat" icon={<StarIcon />} />);
+    render(
+      <AIChatLayout
+        header={{
+          title: 'Test Chat',
+          icon: <StarIcon />,
+        }}
+      />,
+    );
 
     expect(screen.getByTestId('cf-ui-ai-chat-layout-title')).toHaveTextContent(
       'Test Chat',
@@ -52,7 +61,7 @@ describe('AIChatLayout', () => {
   });
 
   it('renders the component without icon when not provided', () => {
-    render(<AIChatLayout title="Test" />);
+    render(<AIChatLayout header={{ title: 'Test' }} />);
 
     expect(
       screen.queryByTestId('cf-ui-ai-chat-layout-icon'),
@@ -61,7 +70,7 @@ describe('AIChatLayout', () => {
   });
 
   it('renders the component without title when not provided', () => {
-    render(<AIChatLayout icon={<StarIcon />} />);
+    render(<AIChatLayout header={{ icon: <StarIcon /> }} />);
 
     expect(
       screen.queryByTestId('cf-ui-ai-chat-layout-title'),
@@ -123,7 +132,7 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout buttons={buttons} />);
+    render(<AIChatLayout header={{ buttons }} />);
 
     expect(screen.getByTestId('cf-ui-ai-chat-layout-buttons')).toBeTruthy();
     expect(screen.getByTestId('close-button')).toBeTruthy();
@@ -145,7 +154,7 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout buttons={buttons} />);
+    render(<AIChatLayout header={{ buttons }} />);
 
     const button = screen.getByTestId('close-button');
     await user.click(button);
@@ -188,7 +197,7 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout buttons={buttons} />);
+    render(<AIChatLayout header={{ buttons }} />);
 
     const button = screen.getByTestId('close-button');
     expect(button).toHaveAttribute('aria-label', 'Close chat');
@@ -222,7 +231,10 @@ describe('AIChatLayout', () => {
     ];
 
     const { container } = render(
-      <AIChatLayout {...defaultProps} buttons={buttons}>
+      <AIChatLayout
+        {...defaultProps}
+        header={{ ...defaultProps.header, buttons }}
+      >
         <p>Accessible content with buttons</p>
       </AIChatLayout>,
     );

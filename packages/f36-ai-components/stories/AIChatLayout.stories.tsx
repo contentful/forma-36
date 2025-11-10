@@ -39,6 +39,10 @@ export default {
       control: 'select',
       options: ['', ...Object.keys(icons)],
     },
+    title: {
+      type: 'string',
+      control: 'text',
+    },
     content: {
       type: 'string',
     },
@@ -47,6 +51,8 @@ export default {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
     style: { control: { disable: true } },
+    header: { control: { disable: true } },
+    fixedButton: { control: { disable: true } },
   },
 };
 
@@ -121,20 +127,21 @@ export const Basic = ({
     },
   ];
 
+  const header = {
+    icon: icon ? (
+      <Icon as={icons[icon]} className={styles.aiGradientIcon} />
+    ) : undefined,
+    title: args.title,
+    buttons: availableButtons.filter((button) => buttons?.includes(button.id)),
+  };
+
   return (
     <>
       <AIChatLayout
         {...args}
         display={display}
         onCollapsedClick={() => setDisplay('open')}
-        icon={
-          icon ? (
-            <Icon as={icons[icon]} className={styles.aiGradientIcon} />
-          ) : null
-        }
-        buttons={availableButtons.filter((button) =>
-          buttons?.includes(button.id),
-        )}
+        header={header}
       >
         <Box style={{ padding: '20px' }}>
           <Text>{content}</Text>
@@ -161,14 +168,14 @@ Basic.args = {
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 };
 
-// New HeaderState Transition Story
-export const HeaderStateTransition = () => {
+// New Header Transition Story
+export const HeaderTransition = () => {
   const [isHistoryMode, setIsHistoryMode] = useState(false);
 
   const styles = getStyles({ display: 'open' });
 
   // Define the default chat state
-  const defaultHeaderState = {
+  const defaultHeader = {
     icon: <Icon as={icons.TranslateIcon} className={styles.aiGradientIcon} />,
     title: 'Translation Agent',
     buttons: [
@@ -183,7 +190,7 @@ export const HeaderStateTransition = () => {
   };
 
   // Define the history state
-  const historyHeaderState = {
+  const historyHeader = {
     icon: <icons.ClockCounterClockwiseIconIcon />,
     title: 'History',
     buttonsStart: [
@@ -253,7 +260,7 @@ export const HeaderStateTransition = () => {
     <AIChatLayout
       display="open"
       variant="normal"
-      headerState={isHistoryMode ? historyHeaderState : defaultHeaderState}
+      header={isHistoryMode ? historyHeader : defaultHeader}
       fixedButton={closeButton}
       testId="chat-layout"
     >
@@ -361,7 +368,7 @@ This version maintains the professional tone while feeling warm and approachable
 export const ButtonPositioning = () => {
   const styles = getStyles({ display: 'open' });
 
-  const headerState = {
+  const header = {
     icon: <Icon as={icons.TranslateIcon} className={styles.aiGradientIcon} />,
     title: 'Translation Agent',
     buttonsStart: [
@@ -402,7 +409,7 @@ export const ButtonPositioning = () => {
     <AIChatLayout
       display="open"
       variant="normal"
-      headerState={headerState}
+      header={header}
       testId="chat-layout"
     >
       <div style={{ padding: '16px' }}>

@@ -39,7 +39,7 @@ export interface AIChatLayoutButton {
   testId?: string;
 }
 
-export interface AIChatLayoutHeaderState {
+export interface AIChatLayoutHeader {
   /**
    * Icon to display in the layout header
    */
@@ -83,24 +83,9 @@ export interface AIChatLayoutProps extends CommonProps {
    */
   onCollapsedClick?: () => void;
   /**
-   * Current header state configuration
+   * Current header configuration
    */
-  headerState?: AIChatLayoutHeaderState;
-  /**
-   * Icon to display in the layout header (deprecated - use headerState.icon)
-   * @deprecated Use headerState.icon instead
-   */
-  icon?: React.ReactNode;
-  /**
-   * Title for the layout (deprecated - use headerState.title)
-   * @deprecated Use headerState.title instead
-   */
-  title?: string;
-  /**
-   * Array of action buttons (deprecated - use headerState.buttons)
-   * @deprecated Use headerState.buttons instead
-   */
-  buttons?: AIChatLayoutButton[];
+  header?: AIChatLayoutHeader;
   /**
    * Button that should maintain its position (typically a close button)
    * This button will always be positioned at the end of the button group
@@ -121,11 +106,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     variant = 'normal',
     display = 'open',
     onCollapsedClick: onOpen = () => {},
-    headerState,
-    // Deprecated props - maintain backward compatibility
-    icon: deprecatedIcon,
-    title: deprecatedTitle,
-    buttons: deprecatedButtons = [],
+    header,
     fixedButton,
     children,
     className,
@@ -133,17 +114,20 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     ...otherProps
   } = props;
 
-  // Use headerState if provided, otherwise fall back to deprecated props
-  const currentIcon = headerState?.icon ?? deprecatedIcon;
-  const currentTitle = headerState?.title ?? deprecatedTitle;
-  const currentButtons = headerState?.buttons ?? deprecatedButtons;
+  // Get header values from header
+  const currentIcon = header?.icon;
+  const currentTitle = header?.title;
+  const currentButtons = useMemo(
+    () => header?.buttons ?? [],
+    [header?.buttons],
+  );
   const currentButtonsStart = useMemo(
-    () => headerState?.buttonsStart ?? [],
-    [headerState?.buttonsStart],
+    () => header?.buttonsStart ?? [],
+    [header?.buttonsStart],
   );
   const currentButtonsEnd = useMemo(
-    () => headerState?.buttonsEnd ?? [],
-    [headerState?.buttonsEnd],
+    () => header?.buttonsEnd ?? [],
+    [header?.buttonsEnd],
   );
 
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
@@ -239,7 +223,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   // Header content state for slider
   const headerSliderState = useMemo((): SliderContentState | undefined => {
     if (
-      !headerState &&
+      !header &&
       !currentIcon &&
       !currentTitle &&
       currentButtons.length === 0
@@ -268,18 +252,18 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     currentButtons,
     currentButtonsStart,
     currentButtonsEnd,
-    headerState,
+    header,
     renderHeaderContent,
   ]);
 
   // Determine slide direction based on content change
   const slideDirection = useMemo(() => {
-    if (!headerState || !headerState.title) return 'left';
+    if (!header || !header.title) return 'left';
 
-    const currentTitle = headerState.title || '';
+    const currentTitle = header.title || '';
     const isEnteringHistory = currentTitle.includes('History');
     return isEnteringHistory ? 'left' : 'right';
-  }, [headerState]);
+  }, [header]);
 
   // Handle the slide-out animation when display becomes 'closed'
   useEffect(() => {
@@ -366,10 +350,9 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
  * 3. **Normal** (display='open', variant='normal') - Standard layout with header and content area (360px width)
  * 4. **Expanded** (display='open', variant='expanded') - Large layout with more space (480px width)
  *
- * The header content can be controlled via:
- * - `headerState` prop for dynamic content that can transition (icon, title, buttons)
+ * The header content is controlled via:
+ * - `header` prop for dynamic content that can transition (icon, title, buttons)
  * - `fixedButton` prop for a button that maintains position (e.g., close button)
- * - Legacy props (`icon`, `title`, `buttons`) for backward compatibility
  *
  * Use `display` to control the visibility and layout state, and `variant` to control the size when open.
  * The `onCollapsedClick` callback is called when the collapsed lozenge is clicked.
