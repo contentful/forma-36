@@ -91,7 +91,7 @@ export const Basic: StoryObj<MenuProps> = {
 };
 
 export const Controlled: StoryObj<MenuProps> = {
-  render: (args: MenuProps) => {
+  render: function Render(args: MenuProps) {
     const [isOpen, setIsOpen] = React.useState(true);
     return (
       <Menu
