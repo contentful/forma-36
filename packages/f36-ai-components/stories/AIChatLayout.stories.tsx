@@ -181,9 +181,9 @@ export const HeaderStateTransition = () => {
   const historyHeaderState = {
     icon: <icons.ClockIcon />,
     title: 'AI Copilot History',
-    buttons: [
+    buttonsStart: [
       {
-        icon: <icons.ArrowLeftIcon />,
+        icon: <icons.CaretLeftIcon />,
         onClick: () => setIsHistoryMode(false),
         display: true,
         ariaLabel: 'Back to Chat',
@@ -225,8 +225,68 @@ export const HeaderStateTransition = () => {
           ),
         }}
         direction={isHistoryMode ? 'left' : 'right'}
-        duration={2000}
+        duration={300}
       />
+    </AIChatLayout>
+  );
+};
+
+// New story to demonstrate button positioning
+export const ButtonPositioning = () => {
+  const styles = getStyles({ display: 'open' });
+
+  const headerState = {
+    icon: <Icon as={icons.TranslateIcon} className={styles.aiGradientIcon} />,
+    title: 'Translation Agent',
+    buttonsStart: [
+      {
+        icon: <icons.ArrowLeftIcon />,
+        onClick: action('back'),
+        display: true,
+        ariaLabel: 'Back',
+        testId: 'back-button',
+      },
+      {
+        icon: <icons.ListIcon />,
+        onClick: action('menu'),
+        display: true,
+        ariaLabel: 'Menu',
+        testId: 'menu-button',
+      },
+    ],
+    buttonsEnd: [
+      {
+        icon: <icons.ClockIcon />,
+        onClick: action('history'),
+        display: true,
+        ariaLabel: 'View History',
+        testId: 'history-button',
+      },
+      {
+        icon: <icons.GearSixIcon />,
+        onClick: action('settings'),
+        display: true,
+        ariaLabel: 'Settings',
+        testId: 'settings-button',
+      },
+    ],
+  };
+
+  return (
+    <AIChatLayout
+      display="open"
+      variant="normal"
+      headerState={headerState}
+      testId="chat-layout"
+    >
+      <div style={{ padding: '16px' }}>
+        <Text as="h3">Button Positioning Demo</Text>
+        <Text>
+          This example shows buttons positioned before (back, menu) and after
+          (history, settings) the icon & title. The layout is: [Back] [Menu]
+          [Icon] [Title] [History] [Settings]
+        </Text>
+      </div>
     </AIChatLayout>
   );
 };

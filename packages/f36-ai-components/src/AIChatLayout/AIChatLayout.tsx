@@ -49,9 +49,17 @@ export interface AIChatLayoutHeaderState {
    */
   title?: string;
   /**
-   * Array of action buttons for this header state
+   * Array of action buttons for this header state (will appear after icon & title for backward compatibility)
    */
   buttons?: AIChatLayoutButton[];
+  /**
+   * Array of action buttons to display before the icon & title
+   */
+  buttonsStart?: AIChatLayoutButton[];
+  /**
+   * Array of action buttons to display after the icon & title
+   */
+  buttonsEnd?: AIChatLayoutButton[];
 }
 
 export interface AIChatLayoutProps extends CommonProps {
@@ -129,6 +137,14 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   const currentIcon = headerState?.icon ?? deprecatedIcon;
   const currentTitle = headerState?.title ?? deprecatedTitle;
   const currentButtons = headerState?.buttons ?? deprecatedButtons;
+  const currentButtonsStart = useMemo(
+    () => headerState?.buttonsStart ?? [],
+    [headerState?.buttonsStart],
+  );
+  const currentButtonsEnd = useMemo(
+    () => headerState?.buttonsEnd ?? [],
+    [headerState?.buttonsEnd],
+  );
 
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const [shouldRender, setShouldRender] = useState(display !== 'closed');
@@ -139,14 +155,59 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     isAnimatingOut,
   });
 
+  // Helper function to render a button group
+  const renderButtonGroup = useCallback(
+    (buttons: typeof currentButtons, testIdSuffix: string) => {
+      if (!buttons.length) return null;
+
+      return (
+        <Flex
+          className={styles.buttonGroup}
+          testId={`${testId}-${testIdSuffix}`}
+        >
+          {buttons.map((button, index) => {
+            const delayIncrement = index * 30;
+            const delay = button.display
+              ? 200 + delayIncrement
+              : delayIncrement;
+
+            return (
+              <IconButton
+                key={`${testIdSuffix}-${index}`}
+                variant="transparent"
+                size="small"
+                icon={button.icon}
+                aria-label={button.ariaLabel}
+                onClick={() => button.onClick()}
+                testId={button.testId || `${testId}-${testIdSuffix}-${index}`}
+                className={
+                  button.display ? styles.buttonVisible : styles.buttonHidden
+                }
+                style={{ ['--button-delay' as string]: `${delay}ms` }}
+                aria-hidden={!button.display}
+                tabIndex={button.display ? null : -1}
+              />
+            );
+          })}
+        </Flex>
+      );
+    },
+    [styles, testId],
+  );
+
   // Helper function to render header content
   const renderHeaderContent = useCallback(
     (
       icon: React.ReactNode,
       title: string | undefined,
       buttons: typeof currentButtons,
+      buttonsStart: typeof currentButtonsStart,
+      buttonsEnd: typeof currentButtonsEnd,
     ) => (
       <>
+        {/* Render buttons before icon & title */}
+        {renderButtonGroup(buttonsStart, 'buttons-start')}
+
         {icon && (
           <>
             <Box className={styles.icon} testId={`${testId}-icon`}>
@@ -162,37 +223,14 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
           </Box>
         )}
 
-        {buttons.length > 0 && (
-          <Flex className={styles.buttonGroup} testId={`${testId}-buttons`}>
-            {buttons.map((button, index) => {
-              const delayIncrement = index * 30;
-              const delay = button.display
-                ? 200 + delayIncrement
-                : delayIncrement;
+        {/* Render legacy buttons (for backward compatibility) */}
+        {renderButtonGroup(buttons, 'buttons')}
 
-              return (
-                <IconButton
-                  key={`dynamic-${index}`}
-                  variant="transparent"
-                  size="small"
-                  icon={button.icon}
-                  aria-label={button.ariaLabel}
-                  onClick={() => button.onClick()}
-                  testId={button.testId || `${testId}-button-${index}`}
-                  className={
-                    button.display ? styles.buttonVisible : styles.buttonHidden
-                  }
-                  style={{ ['--button-delay' as string]: `${delay}ms` }}
-                  aria-hidden={!button.display}
-                  tabIndex={button.display ? null : -1}
-                />
-              );
-            })}
-          </Flex>
-        )}
+        {/* Render buttons after icon & title */}
+        {renderButtonGroup(buttonsEnd, 'buttons-end')}
       </>
     ),
-    [styles, testId],
+    [styles, testId, renderButtonGroup],
   );
 
   // Header content state for slider
@@ -213,12 +251,20 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
 
     return {
       id,
-      content: renderHeaderContent(currentIcon, currentTitle, currentButtons),
+      content: renderHeaderContent(
+        currentIcon,
+        currentTitle,
+        currentButtons,
+        currentButtonsStart,
+        currentButtonsEnd,
+      ),
     };
   }, [
     currentIcon,
     currentTitle,
     currentButtons,
+    currentButtonsStart,
+    currentButtonsEnd,
     headerState,
     renderHeaderContent,
   ]);
@@ -278,7 +324,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
         <Slider
           contentState={headerSliderState}
           direction={slideDirection}
-          duration={2000}
+          duration={300}
           containerStyle={{ flex: 1, display: 'flex', alignItems: 'center' }}
         />
         {/* Fixed button always visible outside the sliding area */}
