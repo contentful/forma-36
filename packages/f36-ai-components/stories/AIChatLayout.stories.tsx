@@ -224,37 +224,3 @@ export const HeaderStateTransition = () => {
     </AIChatLayout>
   );
 };
-
-// Backward Compatibility Story
-export const BackwardCompatibility = () => {
-  const closeButton = {
-    icon: <icons.XIcon />,
-    onClick: action('close-chat'),
-    display: true,
-    ariaLabel: 'Close',
-  };
-
-  return (
-    <AIChatLayout
-      display="open"
-      icon={<Icon as={icons.TranslateIcon} />}
-      title="Legacy Usage"
-      buttons={[
-        {
-          icon: <icons.ClockIcon />,
-          onClick: action('view-history'),
-          display: true,
-          ariaLabel: 'History',
-        },
-      ]}
-      fixedButton={closeButton}
-    >
-      <div style={{ padding: '16px' }}>
-        <Text>
-          This story shows backward compatibility with legacy props (icon,
-          title, buttons) while using the new fixedButton prop.
-        </Text>
-      </div>
-    </AIChatLayout>
-  );
-};

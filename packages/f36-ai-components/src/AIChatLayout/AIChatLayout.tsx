@@ -1,7 +1,15 @@
 import { Collapse, IconButton } from '@contentful/f36-components';
 import { Box, Flex, type CommonProps } from '@contentful/f36-core';
 import { cx } from 'emotion';
-import React, { forwardRef, useEffect, useState, type Ref } from 'react';
+import React, {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+  type Ref,
+} from 'react';
+import { Slider, type SliderContentState } from '../Slider';
 import { getStyles } from './AIChatLayout.styles';
 import { IconGradient } from './IconGradient';
 
@@ -125,46 +133,104 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const [shouldRender, setShouldRender] = useState(display !== 'closed');
 
-  // Header transition state
-  const [headerTransitionDirection, setHeaderTransitionDirection] = useState<
-    'left' | 'right' | null
-  >(null);
-  const [previousHeaderState, setPreviousHeaderState] = useState<
-    typeof headerState | null
-  >(null);
-  const [isHeaderTransitioning, setIsHeaderTransitioning] = useState(false);
+  const styles = getStyles({
+    display,
+    variant,
+    isAnimatingOut,
+  });
 
-  // Track header state changes for animations
-  useEffect(() => {
+  // Helper function to render header content
+  const renderHeaderContent = useCallback(
+    (
+      icon: React.ReactNode,
+      title: string | undefined,
+      buttons: typeof currentButtons,
+    ) => (
+      <>
+        {icon && (
+          <>
+            <Box className={styles.icon} testId={`${testId}-icon`}>
+              {icon}
+            </Box>
+            <IconGradient />
+          </>
+        )}
+
+        {title && (
+          <Box className={styles.title} testId={`${testId}-title`}>
+            {title}
+          </Box>
+        )}
+
+        {buttons.length > 0 && (
+          <Flex className={styles.buttonGroup} testId={`${testId}-buttons`}>
+            {buttons.map((button, index) => {
+              const delayIncrement = index * 30;
+              const delay = button.display
+                ? 200 + delayIncrement
+                : delayIncrement;
+
+              return (
+                <IconButton
+                  key={`dynamic-${index}`}
+                  variant="transparent"
+                  size="small"
+                  icon={button.icon}
+                  aria-label={button.ariaLabel}
+                  onClick={() => button.onClick()}
+                  testId={button.testId || `${testId}-button-${index}`}
+                  className={
+                    button.display ? styles.buttonVisible : styles.buttonHidden
+                  }
+                  style={{ ['--button-delay' as string]: `${delay}ms` }}
+                  aria-hidden={!button.display}
+                  tabIndex={button.display ? null : -1}
+                />
+              );
+            })}
+          </Flex>
+        )}
+      </>
+    ),
+    [styles, testId],
+  );
+
+  // Header content state for slider
+  const headerSliderState = useMemo((): SliderContentState | undefined => {
     if (
-      headerState &&
-      previousHeaderState &&
-      headerState !== previousHeaderState
+      !headerState &&
+      !currentIcon &&
+      !currentTitle &&
+      currentButtons.length === 0
     ) {
-      // Determine slide direction based on content change
-      const currentTitle = headerState.title || '';
-      const previousTitle = previousHeaderState.title || '';
-
-      // If transitioning to or from history mode, use specific direction
-      const isEnteringHistory =
-        currentTitle.includes('History') && !previousTitle.includes('History');
-      const direction = isEnteringHistory ? 'right' : 'left';
-
-      setHeaderTransitionDirection(direction);
-      setIsHeaderTransitioning(true);
-
-      // Reset transition after animation completes
-      const timer = setTimeout(() => {
-        setHeaderTransitionDirection(null);
-        setIsHeaderTransitioning(false);
-        setPreviousHeaderState(headerState);
-      }, 1000);
-
-      return () => clearTimeout(timer);
-    } else if (headerState) {
-      setPreviousHeaderState(headerState);
+      return undefined;
     }
-  }, [headerState, previousHeaderState]);
+
+    // Create a unique ID based on the header content
+    const id = `${currentTitle || 'header'}-${JSON.stringify(
+      currentButtons?.map((b) => b.ariaLabel),
+    )}`;
+
+    return {
+      id,
+      content: renderHeaderContent(currentIcon, currentTitle, currentButtons),
+    };
+  }, [
+    currentIcon,
+    currentTitle,
+    currentButtons,
+    headerState,
+    renderHeaderContent,
+  ]);
+
+  // Determine slide direction based on content change
+  const slideDirection = useMemo(() => {
+    if (!headerState || !headerState.title) return 'left';
+
+    const currentTitle = headerState.title || '';
+    const isEnteringHistory = currentTitle.includes('History');
+    return isEnteringHistory ? 'right' : 'left';
+  }, [headerState]);
 
   // Handle the slide-out animation when display becomes 'closed'
   useEffect(() => {
@@ -197,69 +263,6 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     return null;
   }
 
-  const styles = getStyles({
-    display,
-    variant,
-    isAnimatingOut,
-    headerTransitionDirection,
-    isHeaderTransitioning,
-  });
-
-  // Helper function to render header content
-  const renderHeaderContent = (
-    icon: React.ReactNode,
-    title: string | undefined,
-    buttons: typeof currentButtons,
-    className?: string,
-    style?: React.CSSProperties,
-  ) => (
-    <div className={className} style={style}>
-      {icon && (
-        <>
-          <Box className={styles.icon} testId={`${testId}-icon`}>
-            {icon}
-          </Box>
-          <IconGradient />
-        </>
-      )}
-
-      {title && (
-        <Box className={styles.title} testId={`${testId}-title`}>
-          {title}
-        </Box>
-      )}
-
-      {buttons.length > 0 && (
-        <Flex className={styles.buttonGroup} testId={`${testId}-buttons`}>
-          {buttons.map((button, index) => {
-            const delayIncrement = index * 30;
-            const delay = button.display
-              ? 200 + delayIncrement
-              : delayIncrement;
-
-            return (
-              <IconButton
-                key={`dynamic-${index}`}
-                variant="transparent"
-                size="small"
-                icon={button.icon}
-                aria-label={button.ariaLabel}
-                onClick={() => button.onClick()}
-                testId={button.testId || `${testId}-button-${index}`}
-                className={
-                  button.display ? styles.buttonVisible : styles.buttonHidden
-                }
-                style={{ ['--button-delay' as string]: `${delay}ms` }}
-                aria-hidden={!button.display}
-                tabIndex={button.display ? null : -1}
-              />
-            );
-          })}
-        </Flex>
-      )}
-    </div>
-  );
-
   return (
     <Flex
       ref={ref}
@@ -272,37 +275,12 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
         testId={`${testId}-header`}
         onClick={display === 'collapsed' ? onOpen : undefined}
       >
-        {isHeaderTransitioning ? (
-          /* Sliding container with both old and new content */
-          <div style={{ overflow: 'hidden', flex: 1, display: 'flex' }}>
-            <div className={styles.headerSlideContainer}>
-              {/* Current content (first half) */}
-              {renderHeaderContent(
-                previousHeaderState?.icon || currentIcon,
-                previousHeaderState?.title || currentTitle,
-                previousHeaderState?.buttons || currentButtons,
-                styles.headerContent,
-              )}
-              {/* New content (second half) */}
-              {renderHeaderContent(
-                currentIcon,
-                currentTitle,
-                currentButtons,
-                styles.headerContentEntering,
-              )}
-            </div>
-          </div>
-        ) : (
-          /* Normal static content */
-          <div style={{ display: 'flex', alignItems: 'center', flex: 1 }}>
-            {renderHeaderContent(
-              currentIcon,
-              currentTitle,
-              currentButtons,
-              styles.headerContent,
-            )}
-          </div>
-        )}
+        <Slider
+          contentState={headerSliderState}
+          direction={slideDirection}
+          duration={2000}
+          containerStyle={{ flex: 1, display: 'flex', alignItems: 'center' }}
+        />
         {/* Fixed button always visible outside the sliding area */}
         {fixedButton && (
           <IconButton

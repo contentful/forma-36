@@ -13,3 +13,5 @@ export * from './AIChatInput';
 export * from './AIChatMessage';
 export { AIChatReasoning } from './AIChatReasoning/AIChatReasoning';
 export type { AIChatReasoningProps } from './AIChatReasoning/AIChatReasoning';
+
+export * from './Slider';

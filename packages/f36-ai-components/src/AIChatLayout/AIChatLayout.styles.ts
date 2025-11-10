@@ -1,25 +1,13 @@
 import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
-import { css, keyframes } from 'emotion';
+import { css } from 'emotion';
 
 import type { AIChatLayoutDisplay } from './AIChatLayout';
-
-const fadeIn = keyframes`
-  from { opacity: 0; }
-  to { opacity: 1; }
-`;
-
-const fadeOut = keyframes`
-  from { opacity: 1; }
-  to { opacity: 0; }
-`;
 
 interface StyleProps {
   display?: AIChatLayoutDisplay;
   variant?: 'normal' | 'expanded';
   isAnimatingOut?: boolean;
-  headerTransitionDirection?: 'left' | 'right' | null;
-  isHeaderTransitioning?: boolean;
 }
 
 export const getStyles = (props: StyleProps = {}) => {
@@ -27,8 +15,6 @@ export const getStyles = (props: StyleProps = {}) => {
     display = 'open',
     variant = 'normal',
     isAnimatingOut = false,
-    headerTransitionDirection = null,
-    isHeaderTransitioning = false,
   } = props;
 
   const isOpen = display !== 'collapsed';
@@ -66,44 +52,6 @@ export const getStyles = (props: StyleProps = {}) => {
       cursor: display === 'collapsed' ? 'pointer' : 'auto',
       position: 'relative',
       overflow: 'hidden',
-    }),
-
-    headerSlideContainer: css({
-      display: 'flex',
-      alignItems: 'center',
-      // overflow: 'hidden',
-      width: '100%', // Double width to fit both contents side by side
-      minWidth: '0',
-      flex: '1',
-      transition: `transform 1s ease-out`,
-      transform:
-        headerTransitionDirection === 'right'
-          ? 'translateX(-100%)' // Show the second half (new content)
-          : headerTransitionDirection === 'left'
-          ? 'translateX(-100%)' // Show the second half (new content)
-          : 'translateX(0)', // Show the first half (current content)
-    }),
-
-    headerContent: css({
-      display: 'flex',
-      alignItems: 'center',
-      gap: tokens.spacing2Xs,
-      width: '100%',
-      flex: '0 0 auto',
-      opacity: 1,
-      animation: isHeaderTransitioning
-        ? `${fadeOut} 1s ${tokens.transitionEasingDefault} forwards`
-        : 'none',
-    }),
-
-    headerContentEntering: css({
-      display: 'flex',
-      alignItems: 'center',
-      gap: tokens.spacing2Xs,
-      width: '100%',
-      flex: '0 0 auto',
-      opacity: 0,
-      animation: `${fadeIn} 1s ${tokens.transitionEasingDefault} forwards`,
     }),
 
     icon: css({
