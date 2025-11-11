@@ -1,21 +1,15 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import React from 'react';
-import { Slider, type SliderContentState } from './Slider';
-
-const defaultContentState: SliderContentState = {
-  id: 'test-content',
-  content: <div>Test Content</div>,
-};
-
-const alternativeContentState: SliderContentState = {
-  id: 'alternative-content',
-  content: <div>Alternative Content</div>,
-};
+import { Slider } from './Slider';
 
 describe('Slider', () => {
   it('renders the component', () => {
-    render(<Slider contentState={defaultContentState} />);
+    render(
+      <Slider slideKey="test-content">
+        <div>Test Content</div>
+      </Slider>,
+    );
 
     expect(screen.getByTestId('cf-ui-slider')).toBeInTheDocument();
     expect(screen.getByText('Test Content')).toBeInTheDocument();
@@ -23,7 +17,9 @@ describe('Slider', () => {
 
   it('renders the component with custom testId', () => {
     render(
-      <Slider contentState={defaultContentState} testId="custom-slider" />,
+      <Slider slideKey="test-content" testId="custom-slider">
+        <div>Test Content</div>
+      </Slider>,
     );
 
     expect(screen.getByTestId('custom-slider')).toBeInTheDocument();
@@ -31,20 +27,26 @@ describe('Slider', () => {
 
   it('renders the component with additional class name', () => {
     const { container } = render(
-      <Slider contentState={defaultContentState} className="my-extra-class" />,
+      <Slider slideKey="test-content" className="my-extra-class">
+        <div>Test Content</div>
+      </Slider>,
     );
 
     expect(container.firstChild).toHaveClass('my-extra-class');
   });
 
-  it('does not render when contentState is undefined', () => {
+  it('does not render when children or slideKey is missing', () => {
     render(<Slider />);
 
     expect(screen.queryByTestId('cf-ui-slider')).not.toBeInTheDocument();
   });
 
   it('renders static content when not transitioning', () => {
-    render(<Slider contentState={defaultContentState} />);
+    render(
+      <Slider slideKey="test-content">
+        <div>Test Content</div>
+      </Slider>,
+    );
 
     expect(screen.getByText('Test Content')).toBeInTheDocument();
 
@@ -52,12 +54,20 @@ describe('Slider', () => {
     expect(slider.querySelector('[class*="slideContainer"]')).toBeNull();
   });
 
-  it('handles content state changes with transition', async () => {
-    const { rerender } = render(<Slider contentState={defaultContentState} />);
+  it('handles content key changes with transition', async () => {
+    const { rerender } = render(
+      <Slider slideKey="content-1">
+        <div>Test Content</div>
+      </Slider>,
+    );
 
     expect(screen.getByText('Test Content')).toBeInTheDocument();
 
-    rerender(<Slider contentState={alternativeContentState} />);
+    rerender(
+      <Slider slideKey="content-2">
+        <div>Alternative Content</div>
+      </Slider>,
+    );
 
     await waitFor(() => {
       expect(screen.getByText('Alternative Content')).toBeInTheDocument();
@@ -67,14 +77,15 @@ describe('Slider', () => {
   it('respects custom duration', async () => {
     const shortDuration = 100;
     const { rerender } = render(
-      <Slider contentState={defaultContentState} duration={shortDuration} />,
+      <Slider slideKey="content-1" duration={shortDuration}>
+        <div>Test Content</div>
+      </Slider>,
     );
 
     rerender(
-      <Slider
-        contentState={alternativeContentState}
-        duration={shortDuration}
-      />,
+      <Slider slideKey="content-2" duration={shortDuration}>
+        <div>Alternative Content</div>
+      </Slider>,
     );
 
     await waitFor(
@@ -86,23 +97,22 @@ describe('Slider', () => {
   });
 
   it('handles multiple rapid content changes', async () => {
-    const contentState1: SliderContentState = {
-      id: 'content-1',
-      content: <div>Content 1</div>,
-    };
-    const contentState2: SliderContentState = {
-      id: 'content-2',
-      content: <div>Content 2</div>,
-    };
-    const contentState3: SliderContentState = {
-      id: 'content-3',
-      content: <div>Content 3</div>,
-    };
+    const { rerender } = render(
+      <Slider slideKey="content-1">
+        <div>Content 1</div>
+      </Slider>,
+    );
 
-    const { rerender } = render(<Slider contentState={contentState1} />);
-
-    rerender(<Slider contentState={contentState2} />);
-    rerender(<Slider contentState={contentState3} />);
+    rerender(
+      <Slider slideKey="content-2">
+        <div>Content 2</div>
+      </Slider>,
+    );
+    rerender(
+      <Slider slideKey="content-3">
+        <div>Content 3</div>
+      </Slider>,
+    );
 
     await waitFor(() => {
       expect(screen.getByText('Content 3')).toBeInTheDocument();
@@ -112,7 +122,9 @@ describe('Slider', () => {
   describe('Accessibility', () => {
     it('has no a11y issues', async () => {
       const { container } = render(
-        <Slider contentState={defaultContentState} />,
+        <Slider slideKey="test-content">
+          <div>Test Content</div>
+        </Slider>,
       );
 
       const results = await axe(container);
@@ -121,28 +133,31 @@ describe('Slider', () => {
 
     it('has no a11y issues during transition', async () => {
       const { container, rerender } = render(
-        <Slider contentState={defaultContentState} />,
+        <Slider slideKey="content-1">
+          <div>Test Content</div>
+        </Slider>,
       );
 
-      rerender(<Slider contentState={alternativeContentState} />);
+      rerender(
+        <Slider slideKey="content-2">
+          <div>Alternative Content</div>
+        </Slider>,
+      );
 
       const results = await axe(container);
       expect(results).toHaveNoViolations();
     });
 
     it('has no a11y issues with complex content', async () => {
-      const complexContent: SliderContentState = {
-        id: 'complex-content',
-        content: (
+      const { container } = render(
+        <Slider slideKey="complex-content">
           <div>
             <button type="button">Interactive Button</button>
             <input aria-label="Test input" />
             <div role="status">Status message</div>
           </div>
-        ),
-      };
-
-      const { container } = render(<Slider contentState={complexContent} />);
+        </Slider>,
+      );
 
       const results = await axe(container);
       expect(results).toHaveNoViolations();
@@ -150,34 +165,35 @@ describe('Slider', () => {
   });
 });
 
-describe('Content State Management', () => {
-  it('handles null content state gracefully', () => {
-    render(<Slider contentState={null as SliderContentState | null} />);
+describe('Content Management', () => {
+  it('handles missing slideKey gracefully', () => {
+    render(
+      <Slider>
+        <div>Test Content</div>
+      </Slider>,
+    );
     expect(screen.queryByTestId('cf-ui-slider')).not.toBeInTheDocument();
   });
 
-  it('handles empty content', () => {
-    const emptyContentState: SliderContentState = {
-      id: 'empty',
-      content: null,
-    };
+  it('handles missing children gracefully', () => {
+    render(<Slider slideKey="test" />);
+    expect(screen.getByTestId('cf-ui-slider')).toBeInTheDocument();
+  });
 
-    render(<Slider contentState={emptyContentState} />);
+  it('handles empty content', () => {
+    render(<Slider slideKey="empty">{null}</Slider>);
     expect(screen.getByTestId('cf-ui-slider')).toBeInTheDocument();
   });
 
   it('handles React fragment content', () => {
-    const fragmentContent: SliderContentState = {
-      id: 'fragment',
-      content: (
+    render(
+      <Slider slideKey="fragment">
         <>
           <span>First</span>
           <span>Second</span>
         </>
-      ),
-    };
-
-    render(<Slider contentState={fragmentContent} />);
+      </Slider>,
+    );
     expect(screen.getByText('First')).toBeInTheDocument();
     expect(screen.getByText('Second')).toBeInTheDocument();
   });

@@ -1,36 +1,35 @@
 import { type CommonProps } from '@contentful/f36-core';
 import { cx } from 'emotion';
-import React, { forwardRef, useEffect, useState, type Ref } from 'react';
+import React, {
+  forwardRef,
+  useEffect,
+  useMemo,
+  useState,
+  type Ref,
+} from 'react';
 import { getStyles } from './Slider.styles';
 
-function isContentStateEqual(
-  a: SliderContentState | null,
-  b: SliderContentState | null,
+function isContentEqual(
+  a: { key: string; children: React.ReactNode } | null,
+  b: { key: string; children: React.ReactNode } | null,
 ): boolean {
   if (a === b) return true;
   if (!a || !b) return false;
-  return a.id === b.id;
+  return a.key === b.key;
 }
 
 export type SliderDirection = 'left' | 'right';
 export type SliderState = 'idle' | 'transitioning';
 
-export interface SliderContentState {
-  /**
-   * Unique identifier for this content state
-   */
-  id: string;
-  /**
-   * The content to render
-   */
-  content: React.ReactNode;
-}
-
 export interface SliderProps extends CommonProps {
   /**
-   * Current content state to display
+   * The content to display
    */
-  contentState?: SliderContentState;
+  children?: React.ReactNode;
+  /**
+   * Unique key to track content changes and trigger transitions
+   */
+  slideKey: string;
   /**
    * Direction to slide when transitioning between content states
    * - 'left': New content slides in from the left
@@ -47,7 +46,8 @@ export interface SliderProps extends CommonProps {
 
 function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
   const {
-    contentState,
+    children,
+    slideKey,
     direction = 'left',
     duration = 1000,
     className,
@@ -55,30 +55,35 @@ function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
     ...otherProps
   } = props;
 
+  type ContentState = { key: string; children: React.ReactNode } | null;
+
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [transitionDirection, setTransitionDirection] =
     useState<SliderDirection | null>(null);
-  const [previousState, setPreviousState] = useState<SliderContentState | null>(
-    null,
+  const [previousState, setPreviousState] = useState<ContentState>(null);
+  const [currentState, setCurrentState] = useState<ContentState>(
+    slideKey !== undefined ? { key: slideKey, children } : null,
   );
-  const [currentState, setCurrentState] = useState<SliderContentState | null>(
-    contentState || null,
+
+  const newContentState = useMemo(
+    () => (slideKey !== undefined ? { key: slideKey, children } : null),
+    [children, slideKey],
   );
 
   useEffect(() => {
     if (
-      contentState &&
+      newContentState &&
       currentState &&
-      !isContentStateEqual(contentState, currentState)
+      !isContentEqual(newContentState, currentState)
     ) {
       setTransitionDirection(direction);
       setIsTransitioning(true);
       setPreviousState(currentState);
-      setCurrentState(contentState);
+      setCurrentState(newContentState);
     } else {
-      setCurrentState(contentState);
+      setCurrentState(newContentState);
     }
-  }, [contentState, currentState, direction]);
+  }, [newContentState, currentState, direction]);
 
   useEffect(() => {
     if (isTransitioning) {
@@ -113,11 +118,11 @@ function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
     >
       {isTransitioning && previousState ? (
         <div className={styles.slideContainer}>
-          <div className={styles.contentSlot}>{previousState.content}</div>
-          <div className={styles.contentSlot}>{currentState.content}</div>
+          <div className={styles.contentSlot}>{previousState.children}</div>
+          <div className={styles.contentSlot}>{currentState.children}</div>
         </div>
       ) : (
-        <div className={styles.staticContent}>{currentState.content}</div>
+        <div className={styles.staticContent}>{currentState.children}</div>
       )}
     </div>
   );
@@ -126,20 +131,18 @@ function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
 /**
  * Slider provides smooth sliding transitions between different content states.
  *
- * It manages the transition animations when the contentState changes, sliding
+ * It manages the transition animations when the slideKey prop changes, sliding
  * the new content in from the specified direction while sliding the old content out.
  *
  * Usage:
  * ```tsx
- * const [state, setState] = useState({
- *   id: 'view1',
- *   content: <div>View 1 Content</div>
- * });
- *
+ * const [slideKey, setSlideKey] = useState('view1');
  * <Slider
- *   contentState={state}
+ *   slideKey={slideKey}
  *   direction="right"
- * />
+ * >
+ *   {content}
+ * </Slider>
  * ```
  */
 export const Slider = forwardRef(_Slider);

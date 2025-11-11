@@ -9,7 +9,7 @@ import React, {
   useState,
   type Ref,
 } from 'react';
-import { Slider, type SliderContentState } from '../Slider';
+import { Slider } from '../Slider';
 import { getStyles } from './AIChatLayout.styles';
 import { IconGradient } from './IconGradient';
 
@@ -218,36 +218,25 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     [styles, testId, renderButtonGroup],
   );
 
-  const headerSliderState = useMemo((): SliderContentState | undefined => {
-    if (
-      !header &&
-      !currentIcon &&
-      !currentTitle &&
-      currentButtonsLeft.length === 0 &&
-      currentButtonsRight.length === 0
-    ) {
-      return undefined;
+  const headerSliderKey = header?.id;
+
+  const headerSliderContent = useMemo(() => {
+    if (!headerSliderKey) {
+      return null;
     }
 
-    if (!header?.id) {
-      return undefined;
-    }
-
-    return {
-      id: header.id,
-      content: renderHeaderContentForSlider(
-        currentIcon,
-        currentTitle,
-        currentButtonsLeft,
-        currentButtonsRight,
-      ),
-    };
+    return renderHeaderContentForSlider(
+      currentIcon,
+      currentTitle,
+      currentButtonsLeft,
+      currentButtonsRight,
+    );
   }, [
+    headerSliderKey,
     currentIcon,
     currentTitle,
     currentButtonsLeft,
     currentButtonsRight,
-    header,
     renderHeaderContentForSlider,
   ]);
 
@@ -296,11 +285,13 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
         onClick={display === 'collapsed' ? onOpen : undefined}
       >
         <Slider
-          contentState={headerSliderState}
+          slideKey={headerSliderKey}
           direction={slideDirection}
           duration={300}
           style={{ flex: 1, display: 'flex', alignItems: 'center' }}
-        />
+        >
+          {headerSliderContent}
+        </Slider>
         {currentFixedButtons.length > 0 &&
           renderButtonGroup(currentFixedButtons, 'fixed-buttons')}
       </Flex>

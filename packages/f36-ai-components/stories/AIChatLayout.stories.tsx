@@ -239,73 +239,72 @@ export const WithChangableHeader = ({ icon, title, variant }) => {
       testId="chat-layout"
     >
       <Slider
-        contentState={{
-          id: isHistoryMode ? 'history' : 'chat',
-          content: isHistoryMode ? (
-            <div
-              style={{
-                width: '100%',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                padding: '0px 10px',
-              }}
-            >
-              <AIChatHistory
-                threads={threadsWithActions}
-                groups={
-                  mockHistoryGroups as [
-                    (typeof mockHistoryGroups)[0],
-                    (typeof mockHistoryGroups)[1],
-                  ]
-                }
-              />
-            </div>
-          ) : (
-            <div
-              style={{
-                width: '100%',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                overflow: 'hidden',
-              }}
-            >
-              <div
-                style={{
-                  flex: 1,
-                  overflowY: 'auto',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  padding: tokens.spacingXs,
-                }}
-              >
-                {mockChatMessages.map((message, index) => (
-                  <AIChatMessage
-                    key={index}
-                    authorRole={message.authorRole}
-                    content={message.content}
-                  />
-                ))}
-              </div>
-              <div
-                style={{
-                  padding: tokens.spacingXs,
-                }}
-              >
-                <AIChatInput
-                  placeholder="Type your message here..."
-                  onSubmit={() => {}}
-                  onStop={() => {}}
-                  isStreaming={false}
-                />
-              </div>
-            </div>
-          ),
-        }}
+        slideKey={isHistoryMode ? 'history' : 'chat'}
         direction={isHistoryMode ? 'left' : 'right'}
         duration={300}
-      />
+      >
+        {isHistoryMode ? (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              padding: '0px 10px',
+            }}
+          >
+            <AIChatHistory
+              threads={threadsWithActions}
+              groups={
+                mockHistoryGroups as [
+                  (typeof mockHistoryGroups)[0],
+                  (typeof mockHistoryGroups)[1],
+                ]
+              }
+            />
+          </div>
+        ) : (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              overflow: 'hidden',
+            }}
+          >
+            <div
+              style={{
+                flex: 1,
+                overflowY: 'auto',
+                display: 'flex',
+                flexDirection: 'column',
+                padding: tokens.spacingXs,
+              }}
+            >
+              {mockChatMessages.map((message, index) => (
+                <AIChatMessage
+                  key={index}
+                  authorRole={message.authorRole}
+                  content={message.content}
+                />
+              ))}
+            </div>
+            <div
+              style={{
+                padding: tokens.spacingXs,
+              }}
+            >
+              <AIChatInput
+                placeholder="Type your message here..."
+                onSubmit={() => {}}
+                onStop={() => {}}
+                isStreaming={false}
+              />
+            </div>
+          </div>
+        )}
+      </Slider>
     </AIChatLayout>
   );
 };
