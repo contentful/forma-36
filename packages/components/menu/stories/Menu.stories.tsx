@@ -92,14 +92,16 @@ export const Basic: StoryObj<MenuProps> = {
 
 export const Controlled: StoryObj<MenuProps> = {
   render: function Render(args: MenuProps) {
-    const [isOpen, setIsOpen] = React.useState(true);
+    const [isOpen, setIsOpen] = React.useState(false);
+
+    const handleToggle = () => {
+      setIsOpen(!isOpen);
+    };
+
     return (
       <Menu
         {...args}
         isOpen={isOpen}
-        onOpen={() => {
-          setIsOpen(true);
-        }}
         onClose={() => {
           setIsOpen(false);
         }}
@@ -109,6 +111,7 @@ export const Controlled: StoryObj<MenuProps> = {
             variant="secondary"
             icon={<ListIcon />}
             aria-label="toggle menu"
+            onClick={handleToggle}
           />
         </Menu.Trigger>
         <Menu.List>
