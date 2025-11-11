@@ -17,7 +17,7 @@ export const getStyles = () => {
         backgroundColor: tokens.gray100,
       },
       '&:first-child': {
-        marginTop: '1.25rem',
+        marginTop: '1rem',
       },
       '&:focus-visible': {
         outline: `2px solid ${tokens.blue600}`,
