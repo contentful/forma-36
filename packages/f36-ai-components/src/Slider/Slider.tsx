@@ -55,18 +55,6 @@ export interface SliderProps extends CommonProps {
    */
   duration?: number;
   /**
-   * Callback fired when a transition starts
-   */
-  onTransitionStart?: (newState: SliderContentState) => void;
-  /**
-   * Callback fired when a transition completes
-   */
-  onTransitionEnd?: (newState: SliderContentState) => void;
-  /**
-   * Test ID for the component
-   */
-  testId?: string;
-  /**
    * Custom styles for the container
    */
   containerStyle?: React.CSSProperties;
@@ -77,8 +65,6 @@ function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
     contentState,
     direction = 'left',
     duration = 1000,
-    onTransitionStart,
-    onTransitionEnd,
     className,
     testId = 'cf-ui-slider',
     containerStyle,
@@ -95,16 +81,6 @@ function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
     contentState || null,
   );
 
-  // Use refs to store latest callbacks to avoid effect re-runs
-  const onTransitionStartRef = useRef(onTransitionStart);
-  const onTransitionEndRef = useRef(onTransitionEnd);
-
-  // Update refs when callbacks change
-  useEffect(() => {
-    onTransitionStartRef.current = onTransitionStart;
-    onTransitionEndRef.current = onTransitionEnd;
-  });
-
   // Handle content state changes and trigger transitions
   useEffect(() => {
     if (
@@ -117,8 +93,6 @@ function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
       setIsTransitioning(true);
       setPreviousState(currentState);
       setCurrentState(contentState);
-
-      onTransitionStartRef.current?.(contentState);
     } else if (contentState && !currentState) {
       // Initial state - no transition needed
       setCurrentState(contentState);
@@ -132,10 +106,6 @@ function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
         setTransitionDirection(null);
         setIsTransitioning(false);
         setPreviousState(null);
-        // Get the current state from the current state value
-        if (currentState) {
-          onTransitionEndRef.current?.(currentState);
-        }
       }, duration);
 
       return () => {
@@ -194,7 +164,6 @@ function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
  * <Slider
  *   contentState={state}
  *   direction="right"
- *   onTransitionEnd={() => console.log('Transition complete')}
  * />
  * ```
  */

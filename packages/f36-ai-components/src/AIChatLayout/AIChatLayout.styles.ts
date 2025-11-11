@@ -8,7 +8,7 @@ interface StyleProps {
   display?: AIChatLayoutDisplay;
   variant?: 'normal' | 'expanded';
   isAnimatingOut?: boolean;
-  hasStartButtonGroup?: boolean;
+  hasLeftButtonGroup?: boolean;
 }
 
 export const getStyles = (props: StyleProps = {}) => {
@@ -16,7 +16,7 @@ export const getStyles = (props: StyleProps = {}) => {
     display = 'open',
     variant = 'normal',
     isAnimatingOut = false,
-    hasStartButtonGroup = false,
+    hasLeftButtonGroup = false,
   } = props;
 
   const isOpen = display !== 'collapsed';
@@ -43,7 +43,7 @@ export const getStyles = (props: StyleProps = {}) => {
     header: css({
       width: '100%',
       height: '48px',
-      padding: hasStartButtonGroup
+      padding: hasLeftButtonGroup
         ? `0px ${tokens.spacingS} 0px ${tokens.spacingXs}`
         : `0px ${tokens.spacingS}`,
       backgroundColor: 'transparent',
@@ -63,7 +63,7 @@ export const getStyles = (props: StyleProps = {}) => {
       alignItems: 'center',
       justifyContent: 'center',
       flexShrink: 0,
-      marginLeft: hasStartButtonGroup ? tokens.spacing2Xs : tokens.spacingXs,
+      marginLeft: hasLeftButtonGroup ? tokens.spacing2Xs : tokens.spacingXs,
       marginRight: tokens.spacing2Xs,
     }),
 

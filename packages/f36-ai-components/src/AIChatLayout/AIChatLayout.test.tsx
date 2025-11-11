@@ -132,9 +132,11 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout header={{ buttonsEnd }} />);
+    render(<AIChatLayout header={{ buttonsRight: buttonsEnd }} />);
 
-    expect(screen.getByTestId('cf-ui-ai-chat-layout-buttons-end')).toBeTruthy();
+    expect(
+      screen.getByTestId('cf-ui-ai-chat-layout-buttons-right'),
+    ).toBeTruthy();
     expect(screen.getByTestId('close-button')).toBeTruthy();
     expect(
       screen.getByTestId('close-button').getElementsByTagName('svg'),
@@ -154,7 +156,7 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout header={{ buttonsEnd }} />);
+    render(<AIChatLayout header={{ buttonsRight: buttonsEnd }} />);
 
     const button = screen.getByTestId('close-button');
     await user.click(button);
@@ -197,10 +199,212 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout header={{ buttonsEnd }} />);
+    render(<AIChatLayout header={{ buttonsRight: buttonsEnd }} />);
 
     const button = screen.getByTestId('close-button');
     expect(button).toHaveAttribute('aria-label', 'Close chat');
+  });
+
+  it('renders the component with left buttons', () => {
+    const mockOnClick = jest.fn();
+    const buttonsLeft = [
+      {
+        icon: <StarIcon />,
+        onClick: mockOnClick,
+        display: true,
+        ariaLabel: 'Back',
+        testId: 'back-button',
+      },
+    ];
+
+    render(<AIChatLayout header={{ buttonsLeft }} />);
+
+    expect(
+      screen.getByTestId('cf-ui-ai-chat-layout-buttons-left'),
+    ).toBeTruthy();
+    expect(screen.getByTestId('back-button')).toBeTruthy();
+    expect(
+      screen.getByTestId('back-button').getElementsByTagName('svg'),
+    ).toHaveLength(1);
+  });
+
+  it('renders the component with fixed buttons', () => {
+    const mockOnClick = jest.fn();
+    const fixedButtons = [
+      {
+        icon: <XIcon />,
+        onClick: mockOnClick,
+        display: true,
+        ariaLabel: 'Close',
+        testId: 'fixed-close-button',
+      },
+    ];
+
+    render(<AIChatLayout header={{ fixedButtonsRight: fixedButtons }} />);
+
+    expect(
+      screen.getByTestId('cf-ui-ai-chat-layout-fixed-buttons'),
+    ).toBeTruthy();
+    expect(screen.getByTestId('fixed-close-button')).toBeTruthy();
+  });
+
+  it('calls left button onClick when clicked', async () => {
+    const user = userEvent.setup();
+    const mockOnClick = jest.fn();
+    const buttonsLeft = [
+      {
+        icon: <StarIcon />,
+        onClick: mockOnClick,
+        display: true,
+        ariaLabel: 'Back',
+        testId: 'back-button',
+      },
+    ];
+
+    render(<AIChatLayout header={{ buttonsLeft }} />);
+
+    const button = screen.getByTestId('back-button');
+    await user.click(button);
+
+    expect(mockOnClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('calls fixed button onClick when clicked', async () => {
+    const user = userEvent.setup();
+    const mockOnClick = jest.fn();
+    const fixedButtons = [
+      {
+        icon: <XIcon />,
+        onClick: mockOnClick,
+        display: true,
+        ariaLabel: 'Close',
+        testId: 'fixed-close-button',
+      },
+    ];
+
+    render(<AIChatLayout header={{ fixedButtonsRight: fixedButtons }} />);
+
+    const button = screen.getByTestId('fixed-close-button');
+    await user.click(button);
+
+    expect(mockOnClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('hides buttons when display is false', () => {
+    const buttonsRight = [
+      {
+        icon: <XIcon />,
+        onClick: jest.fn(),
+        display: false,
+        ariaLabel: 'Close',
+        testId: 'hidden-button',
+      },
+    ];
+
+    render(<AIChatLayout header={{ buttonsRight }} />);
+
+    const button = screen.getByTestId('hidden-button');
+    expect(button).toHaveAttribute('aria-hidden', 'true');
+    expect(button).toHaveAttribute('tabIndex', '-1');
+  });
+
+  it('shows buttons when display is true', () => {
+    const buttonsRight = [
+      {
+        icon: <XIcon />,
+        onClick: jest.fn(),
+        display: true,
+        ariaLabel: 'Close',
+        testId: 'visible-button',
+      },
+    ];
+
+    render(<AIChatLayout header={{ buttonsRight }} />);
+
+    const button = screen.getByTestId('visible-button');
+    expect(button).toHaveAttribute('aria-hidden', 'false');
+    expect(button).not.toHaveAttribute('tabIndex', '-1');
+  });
+
+  it('renders with both left and right buttons', () => {
+    const buttonsLeft = [
+      {
+        icon: <StarIcon />,
+        onClick: jest.fn(),
+        display: true,
+        ariaLabel: 'Back',
+        testId: 'back-button',
+      },
+    ];
+    const buttonsRight = [
+      {
+        icon: <XIcon />,
+        onClick: jest.fn(),
+        display: true,
+        ariaLabel: 'Close',
+        testId: 'close-button',
+      },
+    ];
+
+    render(<AIChatLayout header={{ buttonsLeft, buttonsRight }} />);
+
+    expect(
+      screen.getByTestId('cf-ui-ai-chat-layout-buttons-left'),
+    ).toBeTruthy();
+    expect(
+      screen.getByTestId('cf-ui-ai-chat-layout-buttons-right'),
+    ).toBeTruthy();
+    expect(screen.getByTestId('back-button')).toBeTruthy();
+    expect(screen.getByTestId('close-button')).toBeTruthy();
+  });
+
+  it('renders with all button types', () => {
+    const buttonsLeft = [
+      {
+        icon: <StarIcon />,
+        onClick: jest.fn(),
+        display: true,
+        ariaLabel: 'Back',
+        testId: 'back-button',
+      },
+    ];
+    const buttonsRight = [
+      {
+        icon: <DownloadSimpleIcon />,
+        onClick: jest.fn(),
+        display: true,
+        ariaLabel: 'Download',
+        testId: 'download-button',
+      },
+    ];
+    const fixedButtonsRight = [
+      {
+        icon: <XIcon />,
+        onClick: jest.fn(),
+        display: true,
+        ariaLabel: 'Close',
+        testId: 'fixed-close-button',
+      },
+    ];
+
+    render(
+      <AIChatLayout
+        header={{ buttonsLeft, buttonsRight, fixedButtonsRight }}
+      />,
+    );
+
+    expect(
+      screen.getByTestId('cf-ui-ai-chat-layout-buttons-left'),
+    ).toBeTruthy();
+    expect(
+      screen.getByTestId('cf-ui-ai-chat-layout-buttons-right'),
+    ).toBeTruthy();
+    expect(
+      screen.getByTestId('cf-ui-ai-chat-layout-fixed-buttons'),
+    ).toBeTruthy();
+    expect(screen.getByTestId('back-button')).toBeTruthy();
+    expect(screen.getByTestId('download-button')).toBeTruthy();
+    expect(screen.getByTestId('fixed-close-button')).toBeTruthy();
   });
 
   it('has no a11y issues', async () => {
@@ -233,7 +437,7 @@ describe('AIChatLayout', () => {
     const { container } = render(
       <AIChatLayout
         {...defaultProps}
-        header={{ ...defaultProps.header, buttonsEnd }}
+        header={{ ...defaultProps.header, buttonsRight: buttonsEnd }}
       >
         <p>Accessible content with buttons</p>
       </AIChatLayout>,
@@ -265,5 +469,103 @@ describe('AIChatLayout', () => {
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  it('has no a11y issues with all button types', async () => {
+    const buttonsLeft = [
+      {
+        icon: <StarIcon />,
+        onClick: jest.fn(),
+        display: true,
+        ariaLabel: 'Back to previous',
+      },
+    ];
+    const buttonsRight = [
+      {
+        icon: <DownloadSimpleIcon />,
+        onClick: jest.fn(),
+        display: true,
+        ariaLabel: 'Download transcript',
+      },
+    ];
+    const fixedButtonsRight = [
+      {
+        icon: <XIcon />,
+        onClick: jest.fn(),
+        display: true,
+        ariaLabel: 'Close chat',
+      },
+    ];
+
+    const { container } = render(
+      <AIChatLayout
+        {...defaultProps}
+        header={{
+          ...defaultProps.header,
+          buttonsLeft,
+          buttonsRight,
+          fixedButtonsRight,
+        }}
+      >
+        <p>Accessible content with all button types</p>
+      </AIChatLayout>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('renders without header when no header props are provided', () => {
+    render(<AIChatLayout />);
+
+    expect(screen.getByTestId('cf-ui-ai-chat-layout')).toBeTruthy();
+    expect(screen.getByTestId('cf-ui-ai-chat-layout-header')).toBeTruthy();
+    // Should still render header container but without content
+  });
+
+  it('renders header with slide direction', () => {
+    render(
+      <AIChatLayout
+        header={{
+          title: 'Test Chat',
+          slideDirection: 'left',
+        }}
+      />,
+    );
+
+    expect(screen.getByTestId('cf-ui-ai-chat-layout-title')).toHaveTextContent(
+      'Test Chat',
+    );
+  });
+
+  it('handles dynamic header changes', () => {
+    const { rerender } = render(
+      <AIChatLayout
+        header={{
+          title: 'Original Title',
+          icon: <StarIcon />,
+        }}
+      />,
+    );
+
+    expect(
+      screen.getAllByTestId('cf-ui-ai-chat-layout-title')[0],
+    ).toHaveTextContent('Original Title');
+
+    rerender(
+      <AIChatLayout
+        header={{
+          title: 'Updated Title',
+          icon: <XIcon />,
+        }}
+      />,
+    );
+
+    // After rerender, should find the updated title in the slider content
+    const titleElements = screen.getAllByTestId('cf-ui-ai-chat-layout-title');
+    const hasUpdatedTitle = titleElements.some(
+      (element) => element.textContent === 'Updated Title',
+    );
+    expect(hasUpdatedTitle).toBe(true);
   });
 });

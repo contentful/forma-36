@@ -36,21 +36,21 @@ export const getStyles = (props: StyleProps = {}) => {
       display: 'flex',
       flexDirection: transitionDirection === 'left' ? 'row' : 'row-reverse',
       alignItems: 'center',
-      width: '100%', // Double width to fit both contents side by side
+      width: '100%',
       height: '100%',
       transition: `transform ${duration}ms ease-out`,
       transform:
         transitionDirection === 'right'
-          ? 'translateX(100%)' // Show the second half (new content)
+          ? 'translateX(100%)'
           : transitionDirection === 'left'
-          ? 'translateX(-100%)' // Show the second half (new content)
-          : 'translateX(0)', // Show the first half (current content)
+          ? 'translateX(-100%)'
+          : 'translateX(0)',
     }),
 
     contentSlot: css({
       display: 'flex',
       alignItems: 'center',
-      width: '100%', // Each content slot takes half of the slide container
+      width: '100%',
       height: '100%',
       flex: '0 0 auto',
       opacity: 1,

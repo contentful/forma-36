@@ -51,16 +51,21 @@ export interface AIChatLayoutHeader {
   /**
    * Array of action buttons to display before the icon & title
    */
-  buttonsStart?: AIChatLayoutButton[];
+  buttonsLeft?: AIChatLayoutButton[];
   /**
    * Array of action buttons to display after the icon & title
    */
-  buttonsEnd?: AIChatLayoutButton[];
+  buttonsRight?: AIChatLayoutButton[];
   /**
    * Array of fixed buttons that maintain their position outside the sliding area
    * These buttons will always be positioned at the end of the header
    */
-  fixedButtons?: AIChatLayoutButton[];
+  fixedButtonsRight?: AIChatLayoutButton[];
+  /**
+   * Direction for the header content transition animation
+   * @default 'right'
+   */
+  slideDirection?: 'left' | 'right';
 }
 
 export interface AIChatLayoutProps extends CommonProps {
@@ -109,35 +114,34 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     ...otherProps
   } = props;
 
-  // Get header values from header
   const currentIcon = header?.icon;
   const currentTitle = header?.title;
-  const currentButtonsStart = useMemo(
-    () => header?.buttonsStart ?? [],
-    [header?.buttonsStart],
+
+  const currentButtonsLeft = useMemo(
+    () => header?.buttonsLeft ?? [],
+    [header?.buttonsLeft],
   );
-  const currentButtonsEnd = useMemo(
-    () => header?.buttonsEnd ?? [],
-    [header?.buttonsEnd],
+  const currentButtonsRight = useMemo(
+    () => header?.buttonsRight ?? [],
+    [header?.buttonsRight],
   );
   const currentFixedButtons = useMemo(
-    () => header?.fixedButtons ?? [],
-    [header?.fixedButtons],
+    () => header?.fixedButtonsRight ?? [],
+    [header?.fixedButtonsRight],
   );
 
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const [shouldRender, setShouldRender] = useState(display !== 'closed');
 
-  const hasStartButtonGroup = currentButtonsStart.length > 0;
+  const hasLeftButtonGroup = currentButtonsLeft.length > 0;
 
   const styles = getStyles({
     display,
     variant,
     isAnimatingOut,
-    hasStartButtonGroup,
+    hasLeftButtonGroup,
   });
 
-  // Helper function to render a button group
   const renderButtonGroup = useCallback(
     (buttons: AIChatLayoutButton[], testIdSuffix: string) => {
       if (!buttons.length) return null;
@@ -177,18 +181,16 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     [styles, testId],
   );
 
-  // Helper function to render header content
-  const renderHeaderContent = useCallback(
+  const renderHeaderContentForSlider = useCallback(
     (
       icon: React.ReactNode,
       title: string | undefined,
-      buttonsStart: AIChatLayoutButton[],
-      buttonsEnd: AIChatLayoutButton[],
+      buttonsLeft: AIChatLayoutButton[],
+      buttonsRight: AIChatLayoutButton[],
     ) => {
       return (
         <>
-          {/* Render buttons before icon & title */}
-          {renderButtonGroup(buttonsStart, 'buttons-start')}
+          {renderButtonGroup(buttonsLeft, 'buttons-left')}
 
           {icon && (
             <>
@@ -205,76 +207,65 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
             </Box>
           )}
 
-          {/* Render buttons after icon & title */}
-          {renderButtonGroup(buttonsEnd, 'buttons-end')}
+          {renderButtonGroup(buttonsRight, 'buttons-right')}
         </>
       );
     },
     [styles, testId, renderButtonGroup],
   );
 
-  // Header content state for slider
   const headerSliderState = useMemo((): SliderContentState | undefined => {
     if (
       !header &&
       !currentIcon &&
       !currentTitle &&
-      currentButtonsStart.length === 0 &&
-      currentButtonsEnd.length === 0
+      currentButtonsLeft.length === 0 &&
+      currentButtonsRight.length === 0
     ) {
       return undefined;
     }
 
-    // Create a unique ID based on the header content
     const id = `${currentTitle || 'header'}-${JSON.stringify(
-      [...currentButtonsStart, ...currentButtonsEnd].map((b) => b.ariaLabel),
+      [...currentButtonsLeft, ...currentButtonsRight].map((b) => b.ariaLabel),
     )}`;
 
     return {
       id,
-      content: renderHeaderContent(
+      content: renderHeaderContentForSlider(
         currentIcon,
         currentTitle,
-        currentButtonsStart,
-        currentButtonsEnd,
+        currentButtonsLeft,
+        currentButtonsRight,
       ),
     };
   }, [
     currentIcon,
     currentTitle,
-    currentButtonsStart,
-    currentButtonsEnd,
+    currentButtonsLeft,
+    currentButtonsRight,
     header,
-    renderHeaderContent,
+    renderHeaderContentForSlider,
   ]);
 
-  // Determine slide direction based on content change
   const slideDirection = useMemo(() => {
-    if (!header || !header.title) return 'left';
+    return header?.slideDirection ?? 'right';
+  }, [header?.slideDirection]);
 
-    const currentTitle = header.title || '';
-    const isEnteringHistory = currentTitle.includes('History');
-    return isEnteringHistory ? 'left' : 'right';
-  }, [header]);
-
-  // Handle the slide-out animation when display becomes 'closed'
   useEffect(() => {
     if (display === 'closed') {
       if (shouldRender && !isAnimatingOut) {
         setIsAnimatingOut(true);
-        // Hide the component after animation completes (200ms)
+
         const timer = setTimeout(() => {
           setShouldRender(false);
           setIsAnimatingOut(false);
         }, 200);
 
-        // Return cleanup function to clear timer if component unmounts or effect re-runs
         return () => {
           clearTimeout(timer);
         };
       }
     } else {
-      // Show the component when it should be visible again
       if (!shouldRender) {
         setShouldRender(true);
       }
@@ -306,7 +297,6 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
           duration={300}
           containerStyle={{ flex: 1, display: 'flex', alignItems: 'center' }}
         />
-        {/* Fixed buttons always visible outside the sliding area */}
         {currentFixedButtons.length > 0 &&
           renderButtonGroup(currentFixedButtons, 'fixed-buttons')}
       </Flex>
@@ -331,8 +321,8 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
  * 4. **Expanded** (display='open', variant='expanded') - Large layout with more space (480px width)
  *
  * The header content is controlled via the `header` prop which includes:
- * - Dynamic content that can transition (icon, title, buttonsStart, buttonsEnd)
- * - Fixed buttons that maintain position outside the sliding area (fixedButtons)
+ * - Dynamic content that can transition via a slider (icon, title, buttonsLeft, buttonsRight)
+ * - Fixed buttons that maintain position outside the sliding area (fixedButtonsRight)
  *
  * Use `display` to control the visibility and layout state, and `variant` to control the size when open.
  * The `onCollapsedClick` callback is called when the collapsed lozenge is clicked.

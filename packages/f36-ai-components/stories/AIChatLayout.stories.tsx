@@ -35,7 +35,7 @@ export default {
       control: 'select',
       options: ['closed', 'collapsed', 'open'],
     },
-    buttonsEnd: {
+    buttonsRight: {
       type: 'string',
       control: 'check',
       options: ['open', 'minimize', 'close', 'threads'],
@@ -62,7 +62,7 @@ export default {
 };
 
 export const Default = ({
-  buttonsEnd,
+  buttonsRight,
   icon,
   display: initialDisplay,
   content,
@@ -137,8 +137,9 @@ export const Default = ({
       <Icon as={icons[icon]} className={styles.aiGradientIcon} />
     ) : undefined,
     title: args.title,
-    buttonsEnd: availableButtons.filter((button) =>
-      buttonsEnd?.includes(button.id),
+    slideDirection: 'right' as const,
+    buttonsRight: availableButtons.filter((button) =>
+      buttonsRight?.includes(button.id),
     ),
   };
 
@@ -169,7 +170,7 @@ export const Default = ({
 Default.args = {
   title: 'Translation Agent',
   icon: 'TranslateIcon',
-  buttonsEnd: ['open', 'minimize', 'close', 'threads'],
+  buttonsRight: ['open', 'minimize', 'close', 'threads'],
   display: 'collapsed',
   content:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -193,7 +194,8 @@ export const WithChangableHeader = ({ icon, title, variant }) => {
       <Icon as={icons[icon]} className={styles.aiGradientIcon} />
     ) : undefined,
     title: title,
-    buttonsEnd: [
+    slideDirection: 'right' as const,
+    buttonsRight: [
       {
         icon: <icons.ClockIcon />,
         onClick: () => setIsHistoryMode(true),
@@ -202,13 +204,14 @@ export const WithChangableHeader = ({ icon, title, variant }) => {
         testId: 'history-button',
       },
     ],
-    fixedButtons: [closeButton],
+    fixedButtonsRight: [closeButton],
   };
 
   const historyHeader = {
     icon: <icons.ClockCounterClockwiseIconIcon />,
     title: 'History',
-    buttonsStart: [
+    slideDirection: 'left' as const,
+    buttonsLeft: [
       {
         icon: <icons.CaretLeftIcon />,
         onClick: () => setIsHistoryMode(false),
@@ -217,7 +220,7 @@ export const WithChangableHeader = ({ icon, title, variant }) => {
         testId: 'back-button',
       },
     ],
-    fixedButtons: [closeButton],
+    fixedButtonsRight: [closeButton],
   };
 
   return (
@@ -308,6 +311,6 @@ WithChangableHeader.args = {
 WithChangableHeader.argTypes = {
   variant: { control: { disable: true } },
   display: { control: { disable: true } },
-  buttonsEnd: { control: { disable: true } },
+  buttonsRight: { control: { disable: true } },
   content: { control: { disable: true } },
 };
