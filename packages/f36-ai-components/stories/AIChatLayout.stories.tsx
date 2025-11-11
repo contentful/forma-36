@@ -1,5 +1,6 @@
 import { Box, Button, Icon, Text } from '@contentful/f36-components';
 import * as icons from '@contentful/f36-icons';
+import tokens from '@contentful/f36-tokens';
 import { action } from '@storybook/addon-actions';
 import React, { useEffect, useState } from 'react';
 
@@ -9,6 +10,11 @@ import { AIChatLayout } from '../src/AIChatLayout/AIChatLayout';
 import { getStyles } from '../src/AIChatLayout/AIChatLayout.styles';
 import { AIChatMessage } from '../src/AIChatMessage/AIChatMessage';
 import { Slider } from '../src/Slider/Slider';
+import {
+  mockChatMessages,
+  mockHistoryGroups,
+  mockThreads,
+} from './utils/mockData';
 
 export default {
   component: AIChatLayout,
@@ -29,7 +35,7 @@ export default {
       control: 'select',
       options: ['closed', 'collapsed', 'open'],
     },
-    buttons: {
+    buttonsEnd: {
       type: 'string',
       control: 'check',
       options: ['open', 'minimize', 'close', 'threads'],
@@ -57,7 +63,7 @@ export default {
 };
 
 export const Basic = ({
-  buttons,
+  buttonsEnd,
   icon,
   display: initialDisplay,
   content,
@@ -79,8 +85,6 @@ export const Basic = ({
   const styles = getStyles({ display });
 
   const isCollapsed = display === 'collapsed';
-
-  console.log({ display, isCollapsed });
 
   const availableButtons = [
     {
@@ -134,7 +138,9 @@ export const Basic = ({
       <Icon as={icons[icon]} className={styles.aiGradientIcon} />
     ) : undefined,
     title: args.title,
-    buttons: availableButtons.filter((button) => buttons?.includes(button.id)),
+    buttonsEnd: availableButtons.filter((button) =>
+      buttonsEnd?.includes(button.id),
+    ),
   };
 
   return (
@@ -164,7 +170,7 @@ export const Basic = ({
 Basic.args = {
   title: 'Translation Agent',
   icon: 'TranslateIcon',
-  buttons: ['open', 'minimize', 'close', 'threads'],
+  buttonsEnd: ['open', 'minimize', 'close', 'threads'],
   display: 'collapsed',
   content:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -180,7 +186,7 @@ export const HeaderTransition = () => {
   const defaultHeader = {
     icon: <Icon as={icons.TranslateIcon} className={styles.aiGradientIcon} />,
     title: 'Translation Agent',
-    buttons: [
+    buttonsEnd: [
       {
         icon: <icons.ClockIcon />,
         onClick: () => setIsHistoryMode(true),
@@ -216,47 +222,7 @@ export const HeaderTransition = () => {
   };
 
   // Mock threads for history component
-  const mockThreads = [
-    {
-      id: '1',
-      title: 'Translate marketing copy',
-      lastActivity: new Date('2024-11-09T14:30:00'),
-      onThreadClick: action('thread-1-click'),
-      status: 'completed',
-      group: 'recent',
-    },
-    {
-      id: '2',
-      title: 'Help with Spanish grammar',
-      lastActivity: new Date('2024-11-08T09:15:00'),
-      onThreadClick: action('thread-2-click'),
-      status: 'in-progress',
-      group: 'recent',
-    },
-    {
-      id: '3',
-      title: 'Translate technical documentation',
-      lastActivity: new Date('2024-11-07T16:45:00'),
-      onThreadClick: action('thread-3-click'),
-      status: 'completed',
-      group: 'older',
-    },
-  ];
-
-  const historyGroups = [
-    {
-      id: 'recent',
-      label: 'Recent',
-      icon: <icons.ClockIcon />,
-      filter: (thread) => thread.group === 'recent',
-    },
-    {
-      id: 'older',
-      label: 'Older',
-      icon: <icons.FileIcon />,
-      filter: (thread) => thread.group === 'older',
-    },
-  ];
+  // Using imported mock data
 
   return (
     <AIChatLayout
@@ -282,9 +248,9 @@ export const HeaderTransition = () => {
               <AIChatHistory
                 threads={mockThreads}
                 groups={
-                  historyGroups as [
-                    (typeof historyGroups)[0],
-                    (typeof historyGroups)[1],
+                  mockHistoryGroups as [
+                    (typeof mockHistoryGroups)[0],
+                    (typeof mockHistoryGroups)[1],
                   ]
                 }
               />
@@ -305,46 +271,20 @@ export const HeaderTransition = () => {
                   overflowY: 'auto',
                   display: 'flex',
                   flexDirection: 'column',
-                  padding: '8px',
+                  padding: tokens.spacingXs,
                 }}
               >
-                <AIChatMessage
-                  authorRole="user"
-                  content="Can you help me translate this marketing copy from English to Spanish? I want to make sure the tone stays professional but friendly."
-                />
-                <AIChatMessage
-                  authorRole="assistant"
-                  content="I'd be happy to help you translate your marketing copy from English to Spanish while maintaining a professional yet friendly tone. Please share the text you'd like me to translate, and I'll ensure it captures the right nuance for your target audience.
-
-Here are a few things I'll consider:
-- **Cultural context** - Adapting expressions that work well in Spanish-speaking markets
-- **Tone consistency** - Maintaining the balance between professionalism and friendliness
-- **Marketing effectiveness** - Using persuasive language that resonates with Spanish speakers
-
-Go ahead and paste your content!"
-                />
-                <AIChatMessage
-                  authorRole="user"
-                  content="Here's the text: 'Transform your business with our cutting-edge solutions. Join thousands of satisfied customers who trust us to deliver results.'"
-                />
-                <AIChatMessage
-                  authorRole="assistant"
-                  content="Here's a professional yet friendly Spanish translation:
-
-**'Transforma tu negocio con nuestras soluciones innovadoras. Únete a miles de clientes satisfechos que confían en nosotros para obtener resultados.'**
-
-Key translation choices:
-- 'Transforma' (transform) - direct and action-oriented
-- 'soluciones innovadoras' (innovative solutions) - sounds more natural than 'de vanguardia'
-- 'Únete' (join) - friendly and inviting
-- 'confían en nosotros' (trust us) - builds credibility
-
-This version maintains the professional tone while feeling warm and approachable in Spanish."
-                />
+                {mockChatMessages.map((message, index) => (
+                  <AIChatMessage
+                    key={index}
+                    authorRole={message.authorRole}
+                    content={message.content}
+                  />
+                ))}
               </div>
               <div
                 style={{
-                  padding: '8px',
+                  padding: tokens.spacingXs,
                 }}
               >
                 <AIChatInput
@@ -414,7 +354,7 @@ export const ButtonPositioning = () => {
       header={header}
       testId="chat-layout"
     >
-      <div style={{ padding: '16px' }}>
+      <div style={{ padding: tokens.spacingM }}>
         <Text as="h3">Button Positioning Demo</Text>
         <Text>
           This example shows buttons positioned before (back, menu) and after

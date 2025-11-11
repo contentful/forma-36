@@ -122,7 +122,7 @@ describe('AIChatLayout', () => {
 
   it('renders the component with buttons', () => {
     const mockOnClick = jest.fn();
-    const buttons = [
+    const buttonsEnd = [
       {
         icon: <XIcon />,
         onClick: mockOnClick,
@@ -132,9 +132,9 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout header={{ buttons }} />);
+    render(<AIChatLayout header={{ buttonsEnd }} />);
 
-    expect(screen.getByTestId('cf-ui-ai-chat-layout-buttons')).toBeTruthy();
+    expect(screen.getByTestId('cf-ui-ai-chat-layout-buttons-end')).toBeTruthy();
     expect(screen.getByTestId('close-button')).toBeTruthy();
     expect(
       screen.getByTestId('close-button').getElementsByTagName('svg'),
@@ -144,7 +144,7 @@ describe('AIChatLayout', () => {
   it('calls button onClick when clicked', async () => {
     const user = userEvent.setup();
     const mockOnClick = jest.fn();
-    const buttons = [
+    const buttonsEnd = [
       {
         icon: <XIcon />,
         onClick: mockOnClick,
@@ -154,7 +154,7 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout header={{ buttons }} />);
+    render(<AIChatLayout header={{ buttonsEnd }} />);
 
     const button = screen.getByTestId('close-button');
     await user.click(button);
@@ -187,7 +187,7 @@ describe('AIChatLayout', () => {
   });
 
   it('applies correct aria-label to buttons', () => {
-    const buttons = [
+    const buttonsEnd = [
       {
         icon: <XIcon />,
         onClick: jest.fn(),
@@ -197,7 +197,7 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout header={{ buttons }} />);
+    render(<AIChatLayout header={{ buttonsEnd }} />);
 
     const button = screen.getByTestId('close-button');
     expect(button).toHaveAttribute('aria-label', 'Close chat');
@@ -215,7 +215,7 @@ describe('AIChatLayout', () => {
   });
 
   it('has no a11y issues with buttons', async () => {
-    const buttons = [
+    const buttonsEnd = [
       {
         icon: <DownloadSimpleIcon />,
         onClick: jest.fn(),
@@ -233,7 +233,7 @@ describe('AIChatLayout', () => {
     const { container } = render(
       <AIChatLayout
         {...defaultProps}
-        header={{ ...defaultProps.header, buttons }}
+        header={{ ...defaultProps.header, buttonsEnd }}
       >
         <p>Accessible content with buttons</p>
       </AIChatLayout>,

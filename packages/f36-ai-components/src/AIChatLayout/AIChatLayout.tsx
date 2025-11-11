@@ -49,10 +49,6 @@ export interface AIChatLayoutHeader {
    */
   title?: string;
   /**
-   * Array of action buttons for this header state (will appear after icon & title for backward compatibility)
-   */
-  buttons?: AIChatLayoutButton[];
-  /**
    * Array of action buttons to display before the icon & title
    */
   buttonsStart?: AIChatLayoutButton[];
@@ -117,16 +113,10 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   // Get header values from header
   const currentIcon = header?.icon;
   const currentTitle = header?.title;
-
-  const currentButtons = useMemo(
-    () => header?.buttons ?? [],
-    [header?.buttons],
-  );
   const currentButtonsStart = useMemo(
     () => header?.buttonsStart ?? [],
     [header?.buttonsStart],
   );
-
   const currentButtonsEnd = useMemo(
     () => header?.buttonsEnd ?? [],
     [header?.buttonsEnd],
@@ -146,9 +136,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
 
   // Helper function to render a button group
   const renderButtonGroup = useCallback(
-    (buttons: typeof currentButtons, testIdSuffix: string) => {
-      console.log({ buttons });
-
+    (buttons: AIChatLayoutButton[], testIdSuffix: string) => {
       if (!buttons.length) return null;
 
       return (
@@ -191,12 +179,9 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     (
       icon: React.ReactNode,
       title: string | undefined,
-      buttons: typeof currentButtons,
-      buttonsStart: typeof currentButtonsStart,
-      buttonsEnd: typeof currentButtonsEnd,
+      buttonsStart: AIChatLayoutButton[],
+      buttonsEnd: AIChatLayoutButton[],
     ) => {
-      console.log({ icon, title, buttons, buttonsStart, buttonsEnd });
-
       return (
         <>
           {/* Render buttons before icon & title */}
@@ -217,9 +202,6 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
             </Box>
           )}
 
-          {/* Render legacy buttons (for backward compatibility) */}
-          {renderButtonGroup(buttons, 'buttons')}
-
           {/* Render buttons after icon & title */}
           {renderButtonGroup(buttonsEnd, 'buttons-end')}
         </>
@@ -234,14 +216,15 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
       !header &&
       !currentIcon &&
       !currentTitle &&
-      currentButtons.length === 0
+      currentButtonsStart.length === 0 &&
+      currentButtonsEnd.length === 0
     ) {
       return undefined;
     }
 
     // Create a unique ID based on the header content
     const id = `${currentTitle || 'header'}-${JSON.stringify(
-      currentButtons?.map((b) => b.ariaLabel),
+      [...currentButtonsStart, ...currentButtonsEnd].map((b) => b.ariaLabel),
     )}`;
 
     return {
@@ -249,7 +232,6 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
       content: renderHeaderContent(
         currentIcon,
         currentTitle,
-        currentButtons,
         currentButtonsStart,
         currentButtonsEnd,
       ),
@@ -257,7 +239,6 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   }, [
     currentIcon,
     currentTitle,
-    currentButtons,
     currentButtonsStart,
     currentButtonsEnd,
     header,
