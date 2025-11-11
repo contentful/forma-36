@@ -207,7 +207,6 @@ export const getStaticProps: GetStaticProps<
 
     const shortIntro = await serialize({
       value: shortIntroText,
-      path: mdxSource.filepath,
     });
     const mainContent = await serialize(
       { value: mainContentText, path: mdxSource.filepath },
