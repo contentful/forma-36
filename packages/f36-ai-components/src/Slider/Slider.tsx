@@ -1,12 +1,6 @@
 import { type CommonProps } from '@contentful/f36-core';
 import { cx } from 'emotion';
-import React, {
-  forwardRef,
-  useEffect,
-  useRef,
-  useState,
-  type Ref,
-} from 'react';
+import React, { forwardRef, useEffect, useState, type Ref } from 'react';
 import { getStyles } from './Slider.styles';
 
 // Simple deep comparison function for SliderContentState
@@ -54,10 +48,6 @@ export interface SliderProps extends CommonProps {
    * @default 1000
    */
   duration?: number;
-  /**
-   * Custom styles for the container
-   */
-  containerStyle?: React.CSSProperties;
 }
 
 function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
@@ -67,7 +57,6 @@ function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
     duration = 1000,
     className,
     testId = 'cf-ui-slider',
-    containerStyle,
     ...otherProps
   } = props;
 
@@ -81,25 +70,21 @@ function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
     contentState || null,
   );
 
-  // Handle content state changes and trigger transitions
   useEffect(() => {
     if (
       contentState &&
       currentState &&
-      !isContentStateEqual(contentState, currentState) // TODO: this fixes the button issue because it's causing a "transition", this isn't the permanent fix but it shows the way - it's this area of the code that's controlling the memoisation and causing the issue (perhaps introduce a means to invalidate the memoisation externally?)
+      !isContentStateEqual(contentState, currentState)
     ) {
-      // Start transition
       setTransitionDirection(direction);
       setIsTransitioning(true);
       setPreviousState(currentState);
       setCurrentState(contentState);
     } else if (contentState && !currentState) {
-      // Initial state - no transition needed
       setCurrentState(contentState);
     }
   }, [contentState, currentState, direction]);
 
-  // Separate effect to handle the timeout cleanup
   useEffect(() => {
     if (isTransitioning) {
       const timer = setTimeout(() => {
@@ -129,19 +114,14 @@ function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
       ref={ref}
       className={cx(styles.root, className)}
       data-testid={testId}
-      style={containerStyle}
       {...otherProps}
     >
       {isTransitioning && previousState ? (
-        /* Sliding container with both old and new content */
         <div className={styles.slideContainer}>
-          {/* Previous content (first position) */}
           <div className={styles.contentSlot}>{previousState.content}</div>
-          {/* New content (second position) */}
           <div className={styles.contentSlot}>{currentState.content}</div>
         </div>
       ) : (
-        /* Normal static content */
         <div className={styles.staticContent}>{currentState.content}</div>
       )}
     </div>

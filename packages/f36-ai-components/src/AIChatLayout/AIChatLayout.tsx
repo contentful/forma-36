@@ -295,7 +295,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
           contentState={headerSliderState}
           direction={slideDirection}
           duration={300}
-          containerStyle={{ flex: 1, display: 'flex', alignItems: 'center' }}
+          style={{ flex: 1, display: 'flex', alignItems: 'center' }}
         />
         {currentFixedButtons.length > 0 &&
           renderButtonGroup(currentFixedButtons, 'fixed-buttons')}
