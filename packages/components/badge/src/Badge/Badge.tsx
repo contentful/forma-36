@@ -7,6 +7,8 @@ import {
   type ExpandProps,
 } from '@contentful/f36-core';
 import { Caption } from '@contentful/f36-typography';
+import tokens from '@contentful/f36-tokens';
+import { getIconColorToken, iconColorByVariant } from '@contentful/f36-utils';
 import type * as CSS from 'csstype';
 
 import type { BadgeSize, BadgeVariant } from '../types';
