@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 11-11-2025
+
+**F36 Icons** `v5.8.0`
+
+- new icons for app logo
+
 ## 08-11-2025
 
 **F36 Icons** `v5.7.0`
