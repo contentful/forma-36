@@ -69,36 +69,28 @@ export const mockChatMessages: MockChatMessage[] = [
   {
     authorRole: 'user',
     content:
-      'Can you help me translate this marketing copy from English to Spanish? I want to make sure the tone stays professional but friendly.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   },
   {
     authorRole: 'assistant',
-    content: `I'd be happy to help you translate your marketing copy from English to Spanish while maintaining a professional yet friendly tone. Please share the text you'd like me to translate, and I'll ensure it captures the right nuance for your target audience.
+    content: `Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
-Here are a few things I'll consider:
-- **Cultural context** - Adapting expressions that work well in Spanish-speaking markets
-- **Tone consistency** - Maintaining the balance between professionalism and friendliness
-- **Marketing effectiveness** - Using persuasive language that resonates with Spanish speakers
-
-Go ahead and paste your content!`,
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Laboris nisi ut aliquip ex ea commodo consequat!`,
   },
   {
     authorRole: 'user',
     content:
-      "Here's the text: 'Transform your business with our cutting-edge solutions. Join thousands of satisfied customers who trust us to deliver results.'",
+      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
   },
   {
     authorRole: 'assistant',
-    content: `Here's a professional yet friendly Spanish translation:
+    content: `Sunt in culpa qui officia deserunt mollit anim id est laborum:
 
-**'Transforma tu negocio con nuestras soluciones innovadoras. Únete a miles de clientes satisfechos que confían en nosotros para obtener resultados.'**
-
-Key translation choices:
-- 'Transforma' (transform) - direct and action-oriented
-- 'soluciones innovadoras' (innovative solutions) - sounds more natural than 'de vanguardia'
-- 'Únete' (join) - friendly and inviting
-- 'confían en nosotros' (trust us) - builds credibility
-
-This version maintains the professional tone while feeling warm and approachable in Spanish.`,
+**Lorem ipsum dolor sit amet, consectetur adipiscing elit**, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+  },
+  {
+    authorRole: 'user',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   },
 ];
