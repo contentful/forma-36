@@ -13,6 +13,9 @@ import { cx } from '@emotion/css';
 import type { ButtonInternalProps } from '../types';
 import { getStyles } from './Button.styles';
 import type { IconProps } from '@contentful/f36-icon';
+import tokens, { ColorTokens } from '@contentful/f36-tokens';
+import { getIconColorToken, iconColorByVariant } from '@contentful/f36-utils';
+import type { Variant } from '@contentful/f36-utils';
 
 const BUTTON_DEFAULT_TAG = 'button';
 
@@ -55,6 +58,13 @@ function ButtonBase<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
     className,
   );
 
+  // Button overrides: use 'colorWhite' for 'primary' and 'positive', fallback to utility mapping for others
+  const buttonIconColorByVariant: Record<Variant, ColorTokens> = {
+    ...iconColorByVariant,
+    positive: 'colorWhite',
+    primary: 'colorWhite',
+  };
+
   const iconContent = (icon: React.ReactElement<IconProps>) => {
     return (
       <Flex
@@ -63,10 +73,7 @@ function ButtonBase<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
       >
         {React.cloneElement(icon, {
           size: icon.props.size ?? `${size === 'large' ? 'medium' : 'small'}`,
-          // We need to pass the color to the icons to enable the usaged of the V5 icons
-          // it may change in the future
-          color:
-            (variant === 'transparent' && icon.props.color) || 'currentColor',
+          color: tokens[getIconColorToken(variant, buttonIconColorByVariant)],
         })}
       </Flex>
     );
