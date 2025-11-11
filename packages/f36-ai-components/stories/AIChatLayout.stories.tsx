@@ -62,7 +62,7 @@ export default {
   },
 };
 
-export const Basic = ({
+export const Default = ({
   buttonsEnd,
   icon,
   display: initialDisplay,
@@ -167,7 +167,7 @@ export const Basic = ({
   );
 };
 
-Basic.args = {
+Default.args = {
   title: 'Translation Agent',
   icon: 'TranslateIcon',
   buttonsEnd: ['open', 'minimize', 'close', 'threads'],
@@ -176,16 +176,16 @@ Basic.args = {
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 };
 
-// New Header Transition Story
-export const HeaderTransition = () => {
+export const WithChangableHeader = ({ icon, title, variant }) => {
   const [isHistoryMode, setIsHistoryMode] = useState(false);
 
   const styles = getStyles({ display: 'open' });
 
-  // Define the default chat state
   const defaultHeader = {
-    icon: <Icon as={icons.TranslateIcon} className={styles.aiGradientIcon} />,
-    title: 'Translation Agent',
+    icon: icon ? (
+      <Icon as={icons[icon]} className={styles.aiGradientIcon} />
+    ) : undefined,
+    title: title,
     buttonsEnd: [
       {
         icon: <icons.ClockIcon />,
@@ -197,7 +197,6 @@ export const HeaderTransition = () => {
     ],
   };
 
-  // Define the history state
   const historyHeader = {
     icon: <icons.ClockCounterClockwiseIconIcon />,
     title: 'History',
@@ -212,7 +211,6 @@ export const HeaderTransition = () => {
     ],
   };
 
-  // Fixed close button that maintains position
   const closeButton = {
     icon: <icons.XIcon />,
     onClick: action('close-chat'),
@@ -221,13 +219,10 @@ export const HeaderTransition = () => {
     testId: 'close-button',
   };
 
-  // Mock threads for history component
-  // Using imported mock data
-
   return (
     <AIChatLayout
       display="open"
-      variant="normal"
+      variant={variant}
       header={isHistoryMode ? historyHeader : defaultHeader}
       fixedButton={closeButton}
       testId="chat-layout"
@@ -289,10 +284,8 @@ export const HeaderTransition = () => {
               >
                 <AIChatInput
                   placeholder="Type your message here..."
-                  onSubmit={(editor) =>
-                    action('submit-message')(editor.getHTML())
-                  }
-                  onStop={() => action('stop-generation')()}
+                  onSubmit={() => {}}
+                  onStop={() => {}}
                   isStreaming={false}
                 />
               </div>
@@ -306,62 +299,15 @@ export const HeaderTransition = () => {
   );
 };
 
-// New story to demonstrate button positioning
-export const ButtonPositioning = () => {
-  const styles = getStyles({ display: 'open' });
+WithChangableHeader.args = {
+  title: 'Translation Agent',
+  icon: 'TranslateIcon',
+  variant: 'normal',
+};
 
-  const header = {
-    icon: <Icon as={icons.TranslateIcon} className={styles.aiGradientIcon} />,
-    title: 'Translation Agent',
-    buttonsStart: [
-      {
-        icon: <icons.ArrowLeftIcon />,
-        onClick: action('back'),
-        display: true,
-        ariaLabel: 'Back',
-        testId: 'back-button',
-      },
-      {
-        icon: <icons.ListIcon />,
-        onClick: action('menu'),
-        display: true,
-        ariaLabel: 'Menu',
-        testId: 'menu-button',
-      },
-    ],
-    buttonsEnd: [
-      {
-        icon: <icons.ClockIcon />,
-        onClick: action('history'),
-        display: true,
-        ariaLabel: 'View History',
-        testId: 'history-button',
-      },
-      {
-        icon: <icons.GearSixIcon />,
-        onClick: action('settings'),
-        display: true,
-        ariaLabel: 'Settings',
-        testId: 'settings-button',
-      },
-    ],
-  };
-
-  return (
-    <AIChatLayout
-      display="open"
-      variant="normal"
-      header={header}
-      testId="chat-layout"
-    >
-      <div style={{ padding: tokens.spacingM }}>
-        <Text as="h3">Button Positioning Demo</Text>
-        <Text>
-          This example shows buttons positioned before (back, menu) and after
-          (history, settings) the icon & title. The layout is: [Back] [Menu]
-          [Icon] [Title] [History] [Settings]
-        </Text>
-      </div>
-    </AIChatLayout>
-  );
+WithChangableHeader.argTypes = {
+  variant: { control: { disable: true } },
+  display: { control: { disable: true } },
+  buttonsEnd: { control: { disable: true } },
+  content: { control: { disable: true } },
 };
