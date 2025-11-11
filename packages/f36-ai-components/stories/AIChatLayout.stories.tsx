@@ -133,6 +133,7 @@ export const Default = ({
   ];
 
   const header = {
+    id: 'default-header',
     icon: icon ? (
       <Icon as={icons[icon]} className={styles.aiGradientIcon} />
     ) : undefined,
@@ -195,6 +196,7 @@ export const WithChangableHeader = ({ icon, title, variant }) => {
   };
 
   const defaultHeader = {
+    id: 'default-header',
     icon: icon ? (
       <Icon as={icons[icon]} className={styles.aiGradientIcon} />
     ) : undefined,
@@ -213,6 +215,7 @@ export const WithChangableHeader = ({ icon, title, variant }) => {
   };
 
   const historyHeader = {
+    id: 'history-header',
     icon: <icons.ClockCounterClockwiseIconIcon />,
     title: 'History',
     slideDirection: 'left' as const,

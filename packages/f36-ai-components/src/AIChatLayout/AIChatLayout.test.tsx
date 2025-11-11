@@ -8,6 +8,7 @@ import { AIChatLayout } from './AIChatLayout';
 const defaultProps = {
   display: 'open' as const,
   header: {
+    id: 'test-header',
     title: 'Test Agent',
     icon: <StarIcon />,
   },
@@ -43,6 +44,7 @@ describe('AIChatLayout', () => {
     render(
       <AIChatLayout
         header={{
+          id: 'test-header',
           title: 'Test Chat',
           icon: <StarIcon />,
         }}
@@ -61,7 +63,7 @@ describe('AIChatLayout', () => {
   });
 
   it('renders the component without icon when not provided', () => {
-    render(<AIChatLayout header={{ title: 'Test' }} />);
+    render(<AIChatLayout header={{ id: 'test', title: 'Test' }} />);
 
     expect(
       screen.queryByTestId('cf-ui-ai-chat-layout-icon'),
@@ -70,7 +72,7 @@ describe('AIChatLayout', () => {
   });
 
   it('renders the component without title when not provided', () => {
-    render(<AIChatLayout header={{ icon: <StarIcon /> }} />);
+    render(<AIChatLayout header={{ id: 'test', icon: <StarIcon /> }} />);
 
     expect(
       screen.queryByTestId('cf-ui-ai-chat-layout-title'),
@@ -132,7 +134,7 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout header={{ buttonsRight: buttonsEnd }} />);
+    render(<AIChatLayout header={{ id: 'test', buttonsRight: buttonsEnd }} />);
 
     expect(
       screen.getByTestId('cf-ui-ai-chat-layout-buttons-right'),
@@ -156,7 +158,7 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout header={{ buttonsRight: buttonsEnd }} />);
+    render(<AIChatLayout header={{ id: 'test', buttonsRight: buttonsEnd }} />);
 
     const button = screen.getByTestId('close-button');
     await user.click(button);
@@ -199,7 +201,7 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout header={{ buttonsRight: buttonsEnd }} />);
+    render(<AIChatLayout header={{ id: 'test', buttonsRight: buttonsEnd }} />);
 
     const button = screen.getByTestId('close-button');
     expect(button).toHaveAttribute('aria-label', 'Close chat');
@@ -217,7 +219,7 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout header={{ buttonsLeft }} />);
+    render(<AIChatLayout header={{ id: 'test', buttonsLeft }} />);
 
     expect(
       screen.getByTestId('cf-ui-ai-chat-layout-buttons-left'),
@@ -240,7 +242,9 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout header={{ fixedButtonsRight: fixedButtons }} />);
+    render(
+      <AIChatLayout header={{ id: 'test', fixedButtonsRight: fixedButtons }} />,
+    );
 
     expect(
       screen.getByTestId('cf-ui-ai-chat-layout-fixed-buttons'),
@@ -261,7 +265,7 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout header={{ buttonsLeft }} />);
+    render(<AIChatLayout header={{ id: 'test', buttonsLeft }} />);
 
     const button = screen.getByTestId('back-button');
     await user.click(button);
@@ -282,7 +286,9 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout header={{ fixedButtonsRight: fixedButtons }} />);
+    render(
+      <AIChatLayout header={{ id: 'test', fixedButtonsRight: fixedButtons }} />,
+    );
 
     const button = screen.getByTestId('fixed-close-button');
     await user.click(button);
@@ -301,7 +307,7 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout header={{ buttonsRight }} />);
+    render(<AIChatLayout header={{ id: 'test', buttonsRight }} />);
 
     const button = screen.getByTestId('hidden-button');
     expect(button).toHaveAttribute('aria-hidden', 'true');
@@ -319,7 +325,7 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout header={{ buttonsRight }} />);
+    render(<AIChatLayout header={{ id: 'test', buttonsRight }} />);
 
     const button = screen.getByTestId('visible-button');
     expect(button).toHaveAttribute('aria-hidden', 'false');
@@ -346,7 +352,7 @@ describe('AIChatLayout', () => {
       },
     ];
 
-    render(<AIChatLayout header={{ buttonsLeft, buttonsRight }} />);
+    render(<AIChatLayout header={{ id: 'test', buttonsLeft, buttonsRight }} />);
 
     expect(
       screen.getByTestId('cf-ui-ai-chat-layout-buttons-left'),
@@ -389,7 +395,7 @@ describe('AIChatLayout', () => {
 
     render(
       <AIChatLayout
-        header={{ buttonsLeft, buttonsRight, fixedButtonsRight }}
+        header={{ id: 'test', buttonsLeft, buttonsRight, fixedButtonsRight }}
       />,
     );
 
@@ -527,6 +533,7 @@ describe('AIChatLayout', () => {
     render(
       <AIChatLayout
         header={{
+          id: 'test',
           title: 'Test Chat',
           slideDirection: 'left',
         }}
@@ -542,6 +549,7 @@ describe('AIChatLayout', () => {
     const { rerender } = render(
       <AIChatLayout
         header={{
+          id: 'test-1',
           title: 'Original Title',
           icon: <StarIcon />,
         }}
@@ -555,6 +563,7 @@ describe('AIChatLayout', () => {
     rerender(
       <AIChatLayout
         header={{
+          id: 'test-2',
           title: 'Updated Title',
           icon: <XIcon />,
         }}

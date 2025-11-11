@@ -3,18 +3,13 @@ import { cx } from 'emotion';
 import React, { forwardRef, useEffect, useState, type Ref } from 'react';
 import { getStyles } from './Slider.styles';
 
-// Simple deep comparison function for SliderContentState
 function isContentStateEqual(
   a: SliderContentState | null,
   b: SliderContentState | null,
 ): boolean {
   if (a === b) return true;
   if (!a || !b) return false;
-  if (a.id !== b.id) return false;
-
-  // For React nodes, we compare by reference since deep comparison
-  // of React elements is complex and not reliable
-  return a.content === b.content;
+  return a.id === b.id;
 }
 
 export type SliderDirection = 'left' | 'right';
@@ -80,7 +75,7 @@ function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
       setIsTransitioning(true);
       setPreviousState(currentState);
       setCurrentState(contentState);
-    } else if (contentState && !currentState) {
+    } else {
       setCurrentState(contentState);
     }
   }, [contentState, currentState, direction]);

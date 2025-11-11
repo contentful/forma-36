@@ -41,6 +41,10 @@ export interface AIChatLayoutButton {
 
 export interface AIChatLayoutHeader {
   /**
+   * Unique identifier for the header state (when this changes, the header content will transition via the slider)
+   */
+  id: string;
+  /**
    * Icon to display in the layout header
    */
   icon?: React.ReactNode;
@@ -225,12 +229,12 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
       return undefined;
     }
 
-    const id = `${currentTitle || 'header'}-${JSON.stringify(
-      [...currentButtonsLeft, ...currentButtonsRight].map((b) => b.ariaLabel),
-    )}`;
+    if (!header?.id) {
+      return undefined;
+    }
 
     return {
-      id,
+      id: header.id,
       content: renderHeaderContentForSlider(
         currentIcon,
         currentTitle,
