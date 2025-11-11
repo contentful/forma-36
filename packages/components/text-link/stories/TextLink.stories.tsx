@@ -7,7 +7,7 @@ import { List } from '@contentful/f36-list';
 import { type BoxProps, Flex } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
-import { TextLink } from '../src/TextLink';
+import { TextLink, TextLinkProps } from '../src/TextLink';
 import type { TextLinkVariant } from '../src/types';
 
 export default {
@@ -19,25 +19,30 @@ export default {
   argTypes: {
     classNames: { control: { disable: true } },
     testId: { control: { disable: true } },
-    icon: {
-      control: {
-        options: Object.keys(icons),
-        type: 'select',
-      },
-    },
-    alignIcon: {
-      defaultValue: 'start',
-      control: { options: ['start', 'end'], type: 'select' },
-    },
-    children: { defaultValue: 'This is a text link' },
   },
-} as Meta;
+} satisfies Meta<typeof TextLink>;
 
-export const Basic: StoryObj<any> = {
-  render: ({ ...args }) => {
+export const Basic: StoryObj<
+  Omit<TextLinkProps, 'icon'> & { icon: keyof typeof icons }
+> = {
+  argTypes: {
+    alignIcon: {
+      control: 'select',
+      options: ['start', 'end'],
+    },
+    icon: {
+      control: 'select',
+      options: Object.keys(icons),
+    },
+  },
+  args: {
+    alignIcon: 'start',
+    children: 'This is a text link',
+  },
+  render: ({ children, icon, ...args }) => {
     return (
-      <TextLink icon={<Icon as={icons['CalendarBlankIcon']} />} {...args}>
-        This is a text link
+      <TextLink icon={icon ? <Icon as={icons[icon]} /> : null} {...args}>
+        {children}
       </TextLink>
     );
   },

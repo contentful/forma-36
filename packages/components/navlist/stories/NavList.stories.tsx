@@ -13,7 +13,7 @@ export default {
   argTypes: {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
-    as: { control: { type: 'select', options: ['nav', 'div'] } },
+    as: { control: 'select', options: ['nav', 'div'] },
   },
 } as Meta;
 
