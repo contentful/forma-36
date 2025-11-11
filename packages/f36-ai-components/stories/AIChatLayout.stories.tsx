@@ -9,6 +9,7 @@ import { AIChatInput } from '../src/AIChatInput/AIChatInput';
 import { AIChatLayout } from '../src/AIChatLayout/AIChatLayout';
 import { getStyles } from '../src/AIChatLayout/AIChatLayout.styles';
 import { AIChatMessage } from '../src/AIChatMessage/AIChatMessage';
+import { AIChatSidePanel } from '../src/AIChatSidePanel/AIChatSidePanel';
 import { Slider } from '../src/Slider/Slider';
 import {
   mockChatMessages,
@@ -244,15 +245,7 @@ export const WithChangableHeader = ({ icon, title, variant }) => {
         duration={300}
       >
         {isHistoryMode ? (
-          <div
-            style={{
-              width: '100%',
-              height: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              padding: '0px 10px',
-            }}
-          >
+          <AIChatSidePanel>
             <AIChatHistory
               threads={threadsWithActions}
               groups={
@@ -262,7 +255,7 @@ export const WithChangableHeader = ({ icon, title, variant }) => {
                 ]
               }
             />
-          </div>
+          </AIChatSidePanel>
         ) : (
           <div
             style={{
