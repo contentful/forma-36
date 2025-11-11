@@ -108,7 +108,7 @@ function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
     <div
       ref={ref}
       className={cx(styles.root, className)}
-      data-testid={testId}
+      {...{ ['data-test-id']: testId }}
       {...otherProps}
     >
       {isTransitioning && previousState ? (
