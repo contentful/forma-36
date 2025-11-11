@@ -181,6 +181,11 @@ export const WithChangableHeader = ({ icon, title, variant }) => {
 
   const styles = getStyles({ display: 'open' });
 
+  const threadsWithActions = mockThreads.map((thread) => ({
+    ...thread,
+    onThreadClick: action(`thread-${thread.id}-click`),
+  }));
+
   const closeButton = {
     icon: <icons.XIcon />,
     onClick: action('close-chat'),
@@ -244,7 +249,7 @@ export const WithChangableHeader = ({ icon, title, variant }) => {
               }}
             >
               <AIChatHistory
-                threads={mockThreads}
+                threads={threadsWithActions}
                 groups={
                   mockHistoryGroups as [
                     (typeof mockHistoryGroups)[0],

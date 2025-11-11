@@ -1,5 +1,4 @@
 import * as icons from '@contentful/f36-icons';
-import { action } from '@storybook/addon-actions';
 import React from 'react';
 
 export interface MockThread {
@@ -23,7 +22,7 @@ export const mockThreads: MockThread[] = [
     id: '1',
     title: 'Translate marketing copy',
     lastActivity: new Date('2024-11-09T14:30:00'),
-    onThreadClick: action('thread-1-click'),
+    onThreadClick: () => {},
     status: 'completed',
     group: 'recent',
   },
@@ -31,7 +30,7 @@ export const mockThreads: MockThread[] = [
     id: '2',
     title: 'Help with Spanish grammar',
     lastActivity: new Date('2024-11-08T09:15:00'),
-    onThreadClick: action('thread-2-click'),
+    onThreadClick: () => {},
     status: 'in-progress',
     group: 'recent',
   },
@@ -39,7 +38,7 @@ export const mockThreads: MockThread[] = [
     id: '3',
     title: 'Translate technical documentation',
     lastActivity: new Date('2024-11-07T16:45:00'),
-    onThreadClick: action('thread-3-click'),
+    onThreadClick: () => {},
     status: 'completed',
     group: 'older',
   },
