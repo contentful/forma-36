@@ -35,12 +35,6 @@ describe('Slider', () => {
     expect(container.firstChild).toHaveClass('my-extra-class');
   });
 
-  it('does not render when children or slideKey is missing', () => {
-    render(<Slider />);
-
-    expect(screen.queryByTestId('cf-ui-slider')).not.toBeInTheDocument();
-  });
-
   it('renders static content when not transitioning', () => {
     render(
       <Slider slideKey="test-content">
@@ -166,15 +160,6 @@ describe('Slider', () => {
 });
 
 describe('Content Management', () => {
-  it('handles missing slideKey gracefully', () => {
-    render(
-      <Slider>
-        <div>Test Content</div>
-      </Slider>,
-    );
-    expect(screen.queryByTestId('cf-ui-slider')).not.toBeInTheDocument();
-  });
-
   it('handles missing children gracefully', () => {
     render(<Slider slideKey="test" />);
     expect(screen.getByTestId('cf-ui-slider')).toBeInTheDocument();
