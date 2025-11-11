@@ -1,10 +1,21 @@
-import { Button, Icon, Text } from '@contentful/f36-components';
+import { Box, Button, Icon, Text } from '@contentful/f36-components';
 import * as icons from '@contentful/f36-icons';
+import tokens from '@contentful/f36-tokens';
 import { action } from '@storybook/addon-actions';
 import React, { useEffect, useState } from 'react';
 
+import { AIChatHistory } from '../src/AIChatHistory/AIChatHistory';
+import { AIChatInput } from '../src/AIChatInput/AIChatInput';
 import { AIChatLayout } from '../src/AIChatLayout/AIChatLayout';
 import { getStyles } from '../src/AIChatLayout/AIChatLayout.styles';
+import { AIChatMessage } from '../src/AIChatMessage/AIChatMessage';
+import { AIChatSidePanel } from '../src/AIChatSidePanel/AIChatSidePanel';
+import { Slider } from '../src/Slider/Slider';
+import {
+  mockChatMessages,
+  mockHistoryGroups,
+  mockThreads,
+} from './utils/mockData';
 
 export default {
   component: AIChatLayout,
@@ -25,7 +36,7 @@ export default {
       control: 'select',
       options: ['closed', 'collapsed', 'open'],
     },
-    buttons: {
+    buttonsRight: {
       type: 'string',
       control: 'check',
       options: ['open', 'minimize', 'close', 'threads'],
@@ -35,6 +46,10 @@ export default {
       control: 'select',
       options: ['', ...Object.keys(icons)],
     },
+    title: {
+      type: 'string',
+      control: 'text',
+    },
     content: {
       type: 'string',
     },
@@ -43,11 +58,12 @@ export default {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
     style: { control: { disable: true } },
+    header: { control: { disable: true } },
   },
 };
 
-export const Basic = ({
-  buttons,
+export const Default = ({
+  buttonsRight,
   icon,
   display: initialDisplay,
   content,
@@ -117,22 +133,29 @@ export const Basic = ({
     },
   ];
 
+  const header = {
+    id: 'default-header',
+    icon: icon ? (
+      <Icon as={icons[icon]} className={styles.aiGradientIcon} />
+    ) : undefined,
+    title: args.title,
+    slideDirection: 'right' as const,
+    buttonsRight: availableButtons.filter((button) =>
+      buttonsRight?.includes(button.id),
+    ),
+  };
+
   return (
     <>
       <AIChatLayout
         {...args}
         display={display}
         onCollapsedClick={() => setDisplay('open')}
-        icon={
-          icon ? (
-            <Icon as={icons[icon]} className={styles.aiGradientIcon} />
-          ) : null
-        }
-        buttons={availableButtons.filter((button) =>
-          buttons?.includes(button.id),
-        )}
+        header={header}
       >
-        <Text>{content}</Text>
+        <Box style={{ padding: '20px' }}>
+          <Text>{content}</Text>
+        </Box>
       </AIChatLayout>
       {showButton && (
         <Button
@@ -146,11 +169,148 @@ export const Basic = ({
   );
 };
 
-Basic.args = {
+Default.args = {
   title: 'Translation Agent',
   icon: 'TranslateIcon',
-  buttons: ['open', 'minimize', 'close', 'threads'],
+  buttonsRight: ['open', 'minimize', 'close', 'threads'],
   display: 'collapsed',
   content:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+};
+
+export const WithChangableHeader = ({ icon, title, variant }) => {
+  const [isHistoryMode, setIsHistoryMode] = useState(false);
+
+  const styles = getStyles({ display: 'open' });
+
+  const threadsWithActions = mockThreads.map((thread) => ({
+    ...thread,
+    onThreadClick: action(`thread-${thread.id}-click`),
+  }));
+
+  const closeButton = {
+    icon: <icons.XIcon />,
+    onClick: action('close-chat'),
+    display: true,
+    ariaLabel: 'Close',
+    testId: 'close-button',
+  };
+
+  const defaultHeader = {
+    id: 'default-header',
+    icon: icon ? (
+      <Icon as={icons[icon]} className={styles.aiGradientIcon} />
+    ) : undefined,
+    title: title,
+    slideDirection: 'right' as const,
+    buttonsRight: [
+      {
+        icon: <icons.ClockIcon />,
+        onClick: () => setIsHistoryMode(true),
+        display: true,
+        ariaLabel: 'View History',
+        testId: 'history-button',
+      },
+    ],
+    fixedButtonsRight: [closeButton],
+  };
+
+  const historyHeader = {
+    id: 'history-header',
+    icon: <icons.ClockCounterClockwiseIconIcon />,
+    title: 'History',
+    slideDirection: 'left' as const,
+    buttonsLeft: [
+      {
+        icon: <icons.CaretLeftIcon />,
+        onClick: () => setIsHistoryMode(false),
+        display: true,
+        ariaLabel: 'Back to Chat',
+        testId: 'back-button',
+      },
+    ],
+    fixedButtonsRight: [closeButton],
+  };
+
+  return (
+    <AIChatLayout
+      display="open"
+      variant={variant}
+      header={isHistoryMode ? historyHeader : defaultHeader}
+      testId="chat-layout"
+    >
+      <Slider
+        slideKey={isHistoryMode ? 'history' : 'chat'}
+        direction={isHistoryMode ? 'left' : 'right'}
+        duration={300}
+      >
+        {isHistoryMode ? (
+          <AIChatSidePanel>
+            <AIChatHistory
+              threads={threadsWithActions}
+              groups={
+                mockHistoryGroups as [
+                  (typeof mockHistoryGroups)[0],
+                  (typeof mockHistoryGroups)[1],
+                ]
+              }
+            />
+          </AIChatSidePanel>
+        ) : (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              overflow: 'hidden',
+            }}
+          >
+            <div
+              style={{
+                flex: 1,
+                overflowY: 'auto',
+                display: 'flex',
+                flexDirection: 'column',
+                padding: tokens.spacingXs,
+              }}
+            >
+              {mockChatMessages.map((message, index) => (
+                <AIChatMessage
+                  key={index}
+                  authorRole={message.authorRole}
+                  content={message.content}
+                />
+              ))}
+            </div>
+            <div
+              style={{
+                padding: tokens.spacingXs,
+              }}
+            >
+              <AIChatInput
+                placeholder="Type your message here..."
+                onSubmit={() => {}}
+                onStop={() => {}}
+                isStreaming={false}
+              />
+            </div>
+          </div>
+        )}
+      </Slider>
+    </AIChatLayout>
+  );
+};
+
+WithChangableHeader.args = {
+  title: 'Translation Agent',
+  icon: 'TranslateIcon',
+  variant: 'normal',
+};
+
+WithChangableHeader.argTypes = {
+  variant: { control: { disable: true } },
+  display: { control: { disable: true } },
+  buttonsRight: { control: { disable: true } },
+  content: { control: { disable: true } },
 };

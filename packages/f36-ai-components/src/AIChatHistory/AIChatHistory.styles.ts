@@ -14,7 +14,7 @@ export function getStyles({ hasGroups = false }: GetStylesParams) {
       flexDirection: 'column',
       overflow: 'hidden',
       backgroundColor: tokens.colorWhite,
-      paddingTop: hasGroups ? '1.25rem' : '0px',
+      paddingTop: hasGroups ? '1rem' : '0px',
       border: 'none',
     }),
 
