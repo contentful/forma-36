@@ -9,11 +9,17 @@ typescript: ./getIconColorToken.ts
 The `getIconColorToken` utility function maps a given variant (such as `primary`, `negative`, etc.) to its corresponding icon color token from the design system.
 This ensures that icons always use the correct color for their variant, providing consistent icon coloring across all components by referencing the right color tokens.
 
-## Usage
+## Import
 
-## Example: Shared and Per-Component Usage
+```jsx static=true
+import { getIconColorToken } from '@contentful/f36-utils';
+```
 
-```ts
+## Example
+
+### Shared and Per-Component Usage
+
+```tsx static=true
 import { getIconColorToken, iconColorByVariant } from '@contentful/f36-utils';
 
 // Shared usage (universal variants)
@@ -24,7 +30,8 @@ const buttonIconColorByVariant = {
   ...iconColorByVariant,
   primary: 'colorWhite', // Button-specific override
 };
+
 const buttonColor = getIconColorToken('primary', buttonIconColorByVariant); // returns 'colorWhite'
 
-> The mapping object can be partial or custom for each component.
+// The mapping object can be partial or custom for each component.
 ```
