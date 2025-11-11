@@ -9,6 +9,20 @@ import React, {
 } from 'react';
 import { getStyles } from './Slider.styles';
 
+// Simple deep comparison function for SliderContentState
+function isContentStateEqual(
+  a: SliderContentState | null,
+  b: SliderContentState | null,
+): boolean {
+  if (a === b) return true;
+  if (!a || !b) return false;
+  if (a.id !== b.id) return false;
+
+  // For React nodes, we compare by reference since deep comparison
+  // of React elements is complex and not reliable
+  return a.content === b.content;
+}
+
 export type SliderDirection = 'left' | 'right';
 export type SliderState = 'idle' | 'transitioning';
 
@@ -93,7 +107,11 @@ function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
 
   // Handle content state changes and trigger transitions
   useEffect(() => {
-    if (contentState && currentState && contentState.id !== currentState.id) {
+    if (
+      contentState &&
+      currentState &&
+      !isContentStateEqual(contentState, currentState) // TODO: this fixes the button issue because it's causing a "transition", this isn't the permanent fix but it shows the way - it's this area of the code that's controlling the memoisation and causing the issue (perhaps introduce a means to invalidate the memoisation externally?)
+    ) {
       // Start transition
       setTransitionDirection(direction);
       setIsTransitioning(true);

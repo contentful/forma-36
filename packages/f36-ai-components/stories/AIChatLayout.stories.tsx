@@ -80,6 +80,8 @@ export const Basic = ({
 
   const isCollapsed = display === 'collapsed';
 
+  console.log({ display, isCollapsed });
+
   const availableButtons = [
     {
       id: 'threads',

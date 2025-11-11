@@ -117,6 +117,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   // Get header values from header
   const currentIcon = header?.icon;
   const currentTitle = header?.title;
+
   const currentButtons = useMemo(
     () => header?.buttons ?? [],
     [header?.buttons],
@@ -125,6 +126,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     () => header?.buttonsStart ?? [],
     [header?.buttonsStart],
   );
+
   const currentButtonsEnd = useMemo(
     () => header?.buttonsEnd ?? [],
     [header?.buttonsEnd],
@@ -145,6 +147,8 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   // Helper function to render a button group
   const renderButtonGroup = useCallback(
     (buttons: typeof currentButtons, testIdSuffix: string) => {
+      console.log({ buttons });
+
       if (!buttons.length) return null;
 
       return (
@@ -190,33 +194,37 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
       buttons: typeof currentButtons,
       buttonsStart: typeof currentButtonsStart,
       buttonsEnd: typeof currentButtonsEnd,
-    ) => (
-      <>
-        {/* Render buttons before icon & title */}
-        {renderButtonGroup(buttonsStart, 'buttons-start')}
+    ) => {
+      console.log({ icon, title, buttons, buttonsStart, buttonsEnd });
 
-        {icon && (
-          <>
-            <Box className={styles.icon} testId={`${testId}-icon`}>
-              {icon}
+      return (
+        <>
+          {/* Render buttons before icon & title */}
+          {renderButtonGroup(buttonsStart, 'buttons-start')}
+
+          {icon && (
+            <>
+              <Box className={styles.icon} testId={`${testId}-icon`}>
+                {icon}
+              </Box>
+              <IconGradient />
+            </>
+          )}
+
+          {title && (
+            <Box className={styles.title} testId={`${testId}-title`}>
+              {title}
             </Box>
-            <IconGradient />
-          </>
-        )}
+          )}
 
-        {title && (
-          <Box className={styles.title} testId={`${testId}-title`}>
-            {title}
-          </Box>
-        )}
+          {/* Render legacy buttons (for backward compatibility) */}
+          {renderButtonGroup(buttons, 'buttons')}
 
-        {/* Render legacy buttons (for backward compatibility) */}
-        {renderButtonGroup(buttons, 'buttons')}
-
-        {/* Render buttons after icon & title */}
-        {renderButtonGroup(buttonsEnd, 'buttons-end')}
-      </>
-    ),
+          {/* Render buttons after icon & title */}
+          {renderButtonGroup(buttonsEnd, 'buttons-end')}
+        </>
+      );
+    },
     [styles, testId, renderButtonGroup],
   );
 
