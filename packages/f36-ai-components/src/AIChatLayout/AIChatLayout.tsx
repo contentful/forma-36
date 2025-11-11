@@ -56,6 +56,11 @@ export interface AIChatLayoutHeader {
    * Array of action buttons to display after the icon & title
    */
   buttonsEnd?: AIChatLayoutButton[];
+  /**
+   * Array of fixed buttons that maintain their position outside the sliding area
+   * These buttons will always be positioned at the end of the header
+   */
+  fixedButtons?: AIChatLayoutButton[];
 }
 
 export interface AIChatLayoutProps extends CommonProps {
@@ -83,11 +88,6 @@ export interface AIChatLayoutProps extends CommonProps {
    */
   header?: AIChatLayoutHeader;
   /**
-   * Button that should maintain its position (typically a close button)
-   * This button will always be positioned at the end of the button group
-   */
-  fixedButton?: AIChatLayoutButton;
-  /**
    * Main content area (hidden when display is 'collapsed' or 'closed')
    */
   children?: React.ReactNode;
@@ -103,7 +103,6 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
     display = 'open',
     onCollapsedClick: onOpen = () => {},
     header,
-    fixedButton,
     children,
     className,
     testId = 'cf-ui-ai-chat-layout',
@@ -120,6 +119,10 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   const currentButtonsEnd = useMemo(
     () => header?.buttonsEnd ?? [],
     [header?.buttonsEnd],
+  );
+  const currentFixedButtons = useMemo(
+    () => header?.fixedButtons ?? [],
+    [header?.fixedButtons],
   );
 
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
@@ -303,21 +306,9 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
           duration={300}
           containerStyle={{ flex: 1, display: 'flex', alignItems: 'center' }}
         />
-        {/* Fixed button always visible outside the sliding area */}
-        {fixedButton && (
-          <IconButton
-            variant="transparent"
-            size="small"
-            icon={fixedButton.icon}
-            aria-label={fixedButton.ariaLabel}
-            onClick={() => fixedButton.onClick()}
-            testId={fixedButton.testId || `${testId}-fixed-button`}
-            className={styles.buttonVisible}
-            style={{
-              ['--button-delay' as string]: '0ms',
-            }}
-          />
-        )}
+        {/* Fixed buttons always visible outside the sliding area */}
+        {currentFixedButtons.length > 0 &&
+          renderButtonGroup(currentFixedButtons, 'fixed-buttons')}
       </Flex>
 
       <Collapse
@@ -339,9 +330,9 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
  * 3. **Normal** (display='open', variant='normal') - Standard layout with header and content area (360px width)
  * 4. **Expanded** (display='open', variant='expanded') - Large layout with more space (480px width)
  *
- * The header content is controlled via:
- * - `header` prop for dynamic content that can transition (icon, title, buttons)
- * - `fixedButton` prop for a button that maintains position (e.g., close button)
+ * The header content is controlled via the `header` prop which includes:
+ * - Dynamic content that can transition (icon, title, buttonsStart, buttonsEnd)
+ * - Fixed buttons that maintain position outside the sliding area (fixedButtons)
  *
  * Use `display` to control the visibility and layout state, and `variant` to control the size when open.
  * The `onCollapsedClick` callback is called when the collapsed lozenge is clicked.

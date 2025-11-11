@@ -58,7 +58,6 @@ export default {
     testId: { control: { disable: true } },
     style: { control: { disable: true } },
     header: { control: { disable: true } },
-    fixedButton: { control: { disable: true } },
   },
 };
 
@@ -181,6 +180,14 @@ export const WithChangableHeader = ({ icon, title, variant }) => {
 
   const styles = getStyles({ display: 'open' });
 
+  const closeButton = {
+    icon: <icons.XIcon />,
+    onClick: action('close-chat'),
+    display: true,
+    ariaLabel: 'Close',
+    testId: 'close-button',
+  };
+
   const defaultHeader = {
     icon: icon ? (
       <Icon as={icons[icon]} className={styles.aiGradientIcon} />
@@ -195,6 +202,7 @@ export const WithChangableHeader = ({ icon, title, variant }) => {
         testId: 'history-button',
       },
     ],
+    fixedButtons: [closeButton],
   };
 
   const historyHeader = {
@@ -209,14 +217,7 @@ export const WithChangableHeader = ({ icon, title, variant }) => {
         testId: 'back-button',
       },
     ],
-  };
-
-  const closeButton = {
-    icon: <icons.XIcon />,
-    onClick: action('close-chat'),
-    display: true,
-    ariaLabel: 'Close',
-    testId: 'close-button',
+    fixedButtons: [closeButton],
   };
 
   return (
@@ -224,7 +225,6 @@ export const WithChangableHeader = ({ icon, title, variant }) => {
       display="open"
       variant={variant}
       header={isHistoryMode ? historyHeader : defaultHeader}
-      fixedButton={closeButton}
       testId="chat-layout"
     >
       <Slider

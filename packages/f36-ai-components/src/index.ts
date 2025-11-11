@@ -2,6 +2,7 @@ export { AIChatLayout } from './AIChatLayout/AIChatLayout';
 export type {
   AIChatLayoutButton,
   AIChatLayoutDisplay,
+  AIChatLayoutHeader,
   AIChatLayoutProps,
   AIChatLayoutVariant,
 } from './AIChatLayout/AIChatLayout';
