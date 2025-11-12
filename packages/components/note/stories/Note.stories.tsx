@@ -234,5 +234,19 @@ export const Overview = () => (
         </Paragraph>
       </Note>
     </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Note premium with TextLink as premium
+    </SectionHeading>
+
+    <Flex marginBottom="spacingM">
+      <Note variant="premium" title="Short, yet succinct title" withCloseButton>
+        <Paragraph>
+          A piece of information that is relevant to the context the user is
+          currently in. If you like it then you should put{' '}
+          <TextLink variant="premium"> a link</TextLink> in it.
+        </Paragraph>
+      </Note>
+    </Flex>
   </Flex>
 );
