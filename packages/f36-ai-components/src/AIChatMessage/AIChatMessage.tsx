@@ -62,7 +62,10 @@ function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
             a: TextLink,
             ul: (props) => <List {...props} as={'ul'} />,
             ol: (props) => <List {...props} as={'ol'} />,
-            li: List.Item,
+            // tmp fix needed until https://github.com/contentful/forma-36/pull/3227 is shipped
+            li: (props) => (
+              <List.Item children={props.children || <></>} {...props} />
+            ),
             table: (props) => <Table {...props} />,
             tbody: (props) => <Table.Body {...props} />,
             thead: (props) => <Table.Head {...props} />,
