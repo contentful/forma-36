@@ -17,19 +17,19 @@ declare module 'react' {
   }
 }
 const indexFile = `import React, { StrictMode } from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { GlobalStyles } from "@contentful/f36-components";
 import "./styles.css";
 
 import App from "./App";
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(
   <StrictMode>
     <GlobalStyles />
     <App />
   </StrictMode>,
-  rootElement
 );`;
 
 const stylesFile = `
@@ -94,25 +94,25 @@ export function SandpackRenderer({
       css={sandpackStyles.wrapper}
       customSetup={{
         dependencies: {
-          '@dnd-kit/core': '^6.0.0',
-          '@dnd-kit/sortable': '^7.0.0',
-          react: '^17.0.0',
-          'react-dom': '^17.0.0',
+          '@dnd-kit/core': '^6.0.8',
+          '@dnd-kit/sortable': '^7.0.2',
+          react: '^19.1.0',
+          'react-dom': '^19.1.0',
           'react-scripts': '^4.0.0',
-          '@contentful/f36-components': '^5.0.0-alpha.3',
-          '@contentful/f36-layout': '^5.0.0-alpha.23',
-          '@contentful/f36-multiselect': '^5.0.0-alpha.3',
-          '@contentful/f36-navlist': '^5.0.0-alpha.3',
-          '@contentful/f36-progress-stepper': '^5.0.0-alpha.3',
-          '@contentful/f36-tokens': '^5.0.0-alpha.2',
-          '@contentful/f36-icons': '^5.0.0-alpha.49',
-          '@contentful/f36-core': '^5.0.0-alpha.5',
-          '@contentful/f36-utils': '^4.0.0',
-          emotion: '^10.0.17',
+          '@contentful/f36-components': '^6.0.0-alpha.0',
+          '@contentful/f36-layout': '^6.0.0-alpha.0',
+          '@contentful/f36-multiselect': '^6.0.0-alpha.0',
+          '@contentful/f36-navlist': '^6.0.0-alpha.0',
+          '@contentful/f36-progress-stepper': '^6.0.0-alpha.0',
+          '@contentful/f36-tokens': '^6.0.0-alpha.0',
+          '@contentful/f36-icons': '^6.0.0-alpha.0',
+          '@contentful/f36-core': '^6.0.0-alpha.0',
+          '@contentful/f36-utils': '^6.0.0-alpha.0',
+          '@emotion/css': '^11.13.5',
           lodash: '^4.17.21',
-          'react-hook-form': '7.22.5',
-          'react-icons': '4.3.1',
-          'react-focus-lock': '^2.5.2',
+          'react-hook-form': '^7.53.2',
+          'react-icons': '^4.4.0',
+          'react-focus-lock': '^2.9.1',
         },
       }}
       files={{
