@@ -1,4 +1,4 @@
-import type {SkeletonTextProps} from '@contentful/f36-components';
+import type { SkeletonTextProps } from '@contentful/f36-components';
 
 const skeletonDisplayProps:SkeletonTextProps = {
   numberOfLines: 2,
