@@ -42,12 +42,13 @@
     "packages",
     "types",
     "./setupTests.ts",
-    "**/*.ts", 
+    "**/*.ts",
     "**/*.tsx"
   ],
   "exclude": [
     "**/node_modules",
     "**/dist",
-    "tsup.config.ts"
+    "tsup.config.ts",
+    "**/__testfixtures__"
   ]
 }
