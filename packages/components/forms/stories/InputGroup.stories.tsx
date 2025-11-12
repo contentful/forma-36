@@ -177,13 +177,6 @@ export const Overview = () => {
             id="TextInput4"
             defaultValue="Some value"
           />
-
-          <IconButton
-            variant="secondary"
-            icon={<LockSimpleIcon />}
-            aria-label="Lock"
-          />
-
           <IconButton
             variant="secondary"
             icon={<LockSimpleIcon />}

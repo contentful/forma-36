@@ -36,6 +36,10 @@
     "test:watch": "jest --watch",
     "tsc": "tsc --noEmit",
     "tsc:watch": "tsc --noEmit --watch",
+    "docs": "npm run-script docs:next",
+    "docs:next": "turbo run start --filter=@contentful/f36-website --parallel --no-cache",
+    "docs:next:build": "turbo run build:prod --filter=@contentful/f36-website --parallel --force",
+    "docs:next:start-prod": "turbo run start:prod --filter=@contentful/f36-website --parallel",
     "changelog:write": "node scripts/changesets/changelog-write.js",
     "changeset:publish": "node scripts/changesets/generate-releases.js",
     "postversion": "npx prettier",
@@ -110,6 +114,9 @@
   "overrides": {
     "@emotion/eslint-plugin": {
       "eslint": ">=9.0.0"
+    },
+    "react-day-picker": {
+      "react": ">=19.1.0"
     }
   }
 }
