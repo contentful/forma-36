@@ -91,6 +91,22 @@ describe('Pagination', () => {
     expect(screen.getByText('21 - 40 of 55 items')).toBeInTheDocument();
   });
 
+  it('renders custom range text with totalItems', () => {
+    render(
+      <Pagination
+        activePage={1}
+        itemsPerPage={20}
+        totalItems={55}
+        totalItemsLabels={{
+          of: 'von',
+          items: 'Artikeln',
+        }}
+        onPageChange={handlePageChange}
+      />,
+    );
+    expect(screen.getByText('21 - 40 von 55 Artikeln')).toBeInTheDocument();
+  });
+
   it('renders correct last page truncated range when derived last page', () => {
     render(
       <Pagination
