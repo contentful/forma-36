@@ -27,12 +27,6 @@ const pulseOpacityAnimation = keyframes`
   }
 `;
 
-const fadeOutAnimation = keyframes`
-  100% {
-    opacity: 0;
-  }
-`;
-
 const dotsAnimation = keyframes`
   0%, 100% {
     content: '';
@@ -72,15 +66,16 @@ export const getStyles = (props: StyleProps = {}) => {
       transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       '&:hover': {
         [`& #${testId}-collapsed-icon`]: {
-          animation:
-            shouldAnimate && !isExpanded
-              ? `${fadeOutAnimation} 200ms ease-out 0ms 1 forwards`
-              : 'none',
+          opacity: 0,
+          transition: `opacity 150ms ease-out`,
+          animation: 'none',
         },
         [`& #${testId}-hover-icon`]: {
+          opacity: shouldAnimate && !isExpanded ? 1 : 0,
+          transition: `opacity 150ms ease-in 50ms`,
           animation:
             shouldAnimate && !isExpanded
-              ? `${fadeOutAnimation} 200ms ease-in 0ms 1 forwards, ${pulseOpacityAnimation} 1.2s ease-in-out 200ms infinite`
+              ? `${pulseOpacityAnimation} 1.2s ease-in-out 200ms infinite`
               : 'none',
         },
       },
