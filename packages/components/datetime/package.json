@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-datetime",
-  "version": "6.0.0-alpha.1",
+  "version": "6.0.0-alpha.2",
   "description": "Forma 36: DateTime component",
   "scripts": {
     "build": "tsup"
