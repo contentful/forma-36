@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-progress-stepper",
-  "version": "6.0.0-alpha.1",
+  "version": "6.0.0-alpha.2",
   "description": "Forma 36: ProgressStepper component",
   "scripts": {
     "build": "tsup"
