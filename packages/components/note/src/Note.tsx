@@ -20,7 +20,8 @@ import {
 import { Icon, type IconProps } from '@contentful/f36-icon';
 
 import { getNoteStyles } from './Note.styles';
-import tokens, { ColorTokens } from '@contentful/f36-tokens';
+import tokens from '@contentful/f36-tokens';
+import { getIconColorToken, iconColorByVariant } from '@contentful/f36-utils';
 
 const icons = {
   primary: InfoIcon,
@@ -94,19 +95,11 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
     const styles = getNoteStyles();
 
     const iconSize = title ? 'medium' : 'small';
-    const iconVariant: Record<NoteVariant, ColorTokens> = {
-      neutral: 'gray600',
-      negative: 'colorNegative',
-      positive: 'colorPositive',
-      warning: 'colorWarning',
-      primary: 'colorPrimary',
-      premium: 'purple600',
-    };
 
     const iconContent = (icon: React.ReactElement<IconProps>) =>
       React.cloneElement(icon, {
         size: iconSize,
-        color: tokens[iconVariant[variant]],
+        color: tokens[getIconColorToken(variant, iconColorByVariant)],
       });
 
     return (
@@ -124,7 +117,7 @@ export const Note = React.forwardRef<HTMLElement, ExpandProps<NoteProps>>(
         ) : (
           <Icon
             as={icons[variant]}
-            color={tokens[iconVariant[variant]]}
+            color={tokens[getIconColorToken(variant, iconColorByVariant)]}
             size={iconSize}
           />
         )}
