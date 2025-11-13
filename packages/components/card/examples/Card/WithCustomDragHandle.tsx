@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Card, DragHandle, Flex } from '@contentful/f36-components';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import { DndContext } from '@dnd-kit/core';
 import {
   arrayMove,

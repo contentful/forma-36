@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import tokens from '@contentful/f36-tokens';
 
@@ -16,6 +16,11 @@ describe('Flex', () => {
     const { container } = render(<Flex className="my-extra-class">Flex</Flex>);
 
     expect(container.firstChild).toHaveClass('my-extra-class');
+  });
+
+  it('renders with custom test Id', () => {
+    render(<Flex testId="custom-flex-id">Flex</Flex>);
+    expect(screen.getByTestId('custom-flex-id')).toBeTruthy();
   });
 
   it('has no a11y issues', async () => {

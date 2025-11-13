@@ -1,5 +1,5 @@
 import tokens from '@contentful/f36-tokens';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import type { BadgeVariant, BadgeSize, BadgeStylesProps } from '../types';
 import type { BadgeInternalProps } from './Badge';
 

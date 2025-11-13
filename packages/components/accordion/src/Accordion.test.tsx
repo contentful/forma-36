@@ -51,7 +51,7 @@ describe('Accordion', () => {
       </Accordion>,
     );
 
-    await user.click(screen.getByText('Accordion Title'));
+    await user.click(screen.getByRole('button'));
     expect(onExpand).toHaveBeenCalledTimes(1);
     expect(onCollapse).toHaveBeenCalledTimes(0);
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryFn, StoryObj, Meta } from '@storybook/react-vite';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading, Text } from '@contentful/f36-typography';
 import { Asset } from '../src/Asset';
@@ -12,24 +12,21 @@ export default {
     className: { control: { disable: true } },
     src: {
       control: 'text',
-      defaultValue:
-        'https://images.ctfassets.net/iq4lnigp6fgt/72KhxI84kw1SE9gP8gDp7R/c5fa24bdc295a318018aea0ca46e2de8/forma-36-storybook-asset.png?fit=fill&f=top_left&w=200&h=300',
     },
     status: {
-      control: {
-        type: 'select',
-        options: ['archived', 'changed', 'draft', 'published'],
-      },
+      control: 'select',
+      options: ['archived', 'changed', 'draft', 'published'],
     },
     testId: { control: { disable: true } },
-    title: { control: 'text', defaultValue: 'Everyone is welcome here' },
+    title: { control: 'text' },
     type: {
-      control: {
-        type: 'select',
-        options: Object.keys(types),
-      },
-      defaultValue: Object.keys(types)[0],
+      control: 'select',
+      options: Object.keys(types),
     },
+  },
+  args: {
+    title: 'Everyone is welcome here',
+    type: Object.keys(types)[0],
   },
   component: Asset,
   parameters: {
@@ -38,19 +35,24 @@ export default {
   title: 'Components/Asset',
 } as Meta;
 
-export const Basic: Story<AssetProps> = (args) => {
-  return <Asset {...args} />;
+export const Basic: StoryObj<AssetProps> = {
+  render: (args) => {
+    return <Asset {...args} />;
+  },
 };
 
-export const WithAnImage: Story<AssetProps> = (args) => {
-  return <Asset {...args} />;
+export const WithAnImage: StoryObj<AssetProps> = {
+  render: (args) => {
+    return <Asset {...args} />;
+  },
+
+  args: {
+    type: 'image',
+    src: 'https://images.ctfassets.net/iq4lnigp6fgt/72KhxI84kw1SE9gP8gDp7R/c5fa24bdc295a318018aea0ca46e2de8/forma-36-storybook-asset.png?fit=fill&f=top_left&w=200&h=300',
+  },
 };
 
-WithAnImage.args = {
-  type: 'image',
-};
-
-export const Overview: Story<AssetProps> = () => (
+export const Overview: StoryFn<AssetProps> = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingM">
       <SectionHeading as="h3" marginBottom="spacingS">

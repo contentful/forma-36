@@ -17,174 +17,191 @@ export default {
     testId: { control: { disable: true } },
     style: { control: { disable: true } },
     startIcon: {
-      control: {
-        options: ['', ...Object.keys(icons)],
-        type: 'select',
-      },
+      control: 'select',
+      options: ['', ...Object.keys(icons)],
     },
     endIcon: {
-      control: {
-        options: ['', ...Object.keys(icons)],
-        type: 'select',
-      },
+      control: 'select',
+      options: ['', ...Object.keys(icons)],
+    },
+    size: {
+      control: 'select',
+      options: ['small', 'default'],
+    },
+    textTransform: { control: 'boolean' },
+    variant: {
+      control: 'select',
+      options: [
+        'primary',
+        'negative',
+        'positive',
+        'secondary',
+        'warning',
+        'primary-filled',
+        'featured',
+      ],
     },
   },
 };
 
-export const Basic = ({ startIcon, endIcon, children, ...args }) => (
-  <Badge
-    startIcon={startIcon && <Icon as={icons[startIcon]} />}
-    endIcon={endIcon && <Icon as={icons[endIcon]} />}
-    {...args}
-  >
-    {children}
-  </Badge>
-);
+export const Basic = {
+  render: ({ startIcon, endIcon, children, ...args }) => (
+    <Badge
+      startIcon={startIcon && <Icon as={icons[startIcon]} />}
+      endIcon={endIcon && <Icon as={icons[endIcon]} />}
+      {...args}
+    >
+      {children}
+    </Badge>
+  ),
 
-Basic.args = {
-  size: 'default',
-  variant: 'primary',
-  children: 'Published',
+  args: {
+    size: 'default',
+    variant: 'primary',
+    children: 'Published',
+  },
 };
 
-export const Overview = ({ startIcon, endIcon }) => (
-  <>
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Badge variants & sizes
-    </SectionHeading>
+export const Overview = {
+  render: ({ startIcon, endIcon }) => (
+    <>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Badge variants & sizes
+      </SectionHeading>
 
-    <Flex marginBottom="spacingM" alignItems="center">
-      <Flex marginRight="spacingS">
-        <Badge
-          variant="primary"
-          startIcon={startIcon && <Icon as={icons[startIcon]} />}
-          endIcon={endIcon && <Icon as={icons[endIcon]} />}
-        >
-          Primary
-        </Badge>
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS">
+          <Badge
+            variant="primary"
+            startIcon={startIcon && <Icon as={icons[startIcon]} />}
+            endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          >
+            Primary
+          </Badge>
+        </Flex>
+        <Flex marginRight="spacingS">
+          <Badge variant="primary" size="small">
+            Primary
+          </Badge>
+        </Flex>
       </Flex>
-      <Flex marginRight="spacingS">
-        <Badge variant="primary" size="small">
-          Primary
-        </Badge>
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS">
+          <Badge
+            variant="primary-filled"
+            startIcon={startIcon && <Icon as={icons[startIcon]} />}
+            endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          >
+            Primary filled
+          </Badge>
+        </Flex>
+        <Flex marginRight="spacingS">
+          <Badge variant="primary-filled" size="small">
+            Primary filled
+          </Badge>
+        </Flex>
       </Flex>
-    </Flex>
-    <Flex marginBottom="spacingM" alignItems="center">
-      <Flex marginRight="spacingS">
-        <Badge
-          variant="primary-filled"
-          startIcon={startIcon && <Icon as={icons[startIcon]} />}
-          endIcon={endIcon && <Icon as={icons[endIcon]} />}
-        >
-          Primary filled
-        </Badge>
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS">
+          <Badge
+            variant="positive"
+            startIcon={startIcon && <Icon as={icons[startIcon]} />}
+            endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          >
+            Positive
+          </Badge>
+        </Flex>
+        <Flex marginRight="spacingS">
+          <Badge variant="positive" size="small">
+            Positive
+          </Badge>
+        </Flex>
       </Flex>
-      <Flex marginRight="spacingS">
-        <Badge variant="primary-filled" size="small">
-          Primary filled
-        </Badge>
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS">
+          <Badge
+            variant="negative"
+            startIcon={startIcon && <Icon as={icons[startIcon]} />}
+            endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          >
+            Negative
+          </Badge>
+        </Flex>
+        <Flex marginRight="spacingS">
+          <Badge variant="negative" size="small">
+            Negative
+          </Badge>
+        </Flex>
       </Flex>
-    </Flex>
-    <Flex marginBottom="spacingM" alignItems="center">
-      <Flex marginRight="spacingS">
-        <Badge
-          variant="positive"
-          startIcon={startIcon && <Icon as={icons[startIcon]} />}
-          endIcon={endIcon && <Icon as={icons[endIcon]} />}
-        >
-          Positive
-        </Badge>
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS">
+          <Badge
+            variant="warning"
+            startIcon={startIcon && <Icon as={icons[startIcon]} />}
+            endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          >
+            Warning
+          </Badge>
+        </Flex>
+        <Flex marginRight="spacingS">
+          <Badge variant="warning" size="small">
+            Warning
+          </Badge>
+        </Flex>
       </Flex>
-      <Flex marginRight="spacingS">
-        <Badge variant="positive" size="small">
-          Positive
-        </Badge>
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS">
+          <Badge
+            variant="secondary"
+            startIcon={startIcon && <Icon as={icons[startIcon]} />}
+            endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          >
+            Secondary
+          </Badge>
+        </Flex>
+        <Flex marginRight="spacingS">
+          <Badge variant="secondary" size="small">
+            Secondary
+          </Badge>
+        </Flex>
       </Flex>
-    </Flex>
-    <Flex marginBottom="spacingM" alignItems="center">
-      <Flex marginRight="spacingS">
-        <Badge
-          variant="negative"
-          startIcon={startIcon && <Icon as={icons[startIcon]} />}
-          endIcon={endIcon && <Icon as={icons[endIcon]} />}
-        >
-          Negative
-        </Badge>
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS">
+          <Badge
+            variant="featured"
+            startIcon={startIcon && <Icon as={icons[startIcon]} />}
+            endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          >
+            Featured
+          </Badge>
+        </Flex>
+        <Flex marginRight="spacingS">
+          <Badge variant="featured" size="small">
+            Featured
+          </Badge>
+        </Flex>
       </Flex>
-      <Flex marginRight="spacingS">
-        <Badge variant="negative" size="small">
-          Negative
-        </Badge>
-      </Flex>
-    </Flex>
-    <Flex marginBottom="spacingM" alignItems="center">
-      <Flex marginRight="spacingS">
-        <Badge
-          variant="warning"
-          startIcon={startIcon && <Icon as={icons[startIcon]} />}
-          endIcon={endIcon && <Icon as={icons[endIcon]} />}
-        >
-          Warning
-        </Badge>
-      </Flex>
-      <Flex marginRight="spacingS">
-        <Badge variant="warning" size="small">
-          Warning
-        </Badge>
-      </Flex>
-    </Flex>
-    <Flex marginBottom="spacingM" alignItems="center">
-      <Flex marginRight="spacingS">
-        <Badge
-          variant="secondary"
-          startIcon={startIcon && <Icon as={icons[startIcon]} />}
-          endIcon={endIcon && <Icon as={icons[endIcon]} />}
-        >
-          Secondary
-        </Badge>
-      </Flex>
-      <Flex marginRight="spacingS">
-        <Badge variant="secondary" size="small">
-          Secondary
-        </Badge>
-      </Flex>
-    </Flex>
-    <Flex marginBottom="spacingM" alignItems="center">
-      <Flex marginRight="spacingS">
-        <Badge
-          variant="featured"
-          startIcon={startIcon && <Icon as={icons[startIcon]} />}
-          endIcon={endIcon && <Icon as={icons[endIcon]} />}
-        >
-          Featured
-        </Badge>
-      </Flex>
-      <Flex marginRight="spacingS">
-        <Badge variant="featured" size="small">
-          Featured
-        </Badge>
-      </Flex>
-    </Flex>
 
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Text Overflow
-    </SectionHeading>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Text Overflow
+      </SectionHeading>
 
-    <Flex marginBottom="spacingM" alignItems="center">
-      <Flex marginRight="spacingS" style={{ maxWidth: '6rem' }}>
-        <Badge
-          variant="primary"
-          startIcon={startIcon && <Icon as={icons[startIcon]} />}
-          endIcon={endIcon && <Icon as={icons[endIcon]} />}
-        >
-          Lorem Ipsum Dolor Sit Amet
-        </Badge>
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS" style={{ maxWidth: '6rem' }}>
+          <Badge
+            variant="primary"
+            startIcon={startIcon && <Icon as={icons[startIcon]} />}
+            endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          >
+            Lorem Ipsum Dolor Sit Amet
+          </Badge>
+        </Flex>
+        <Flex marginRight="spacingS" style={{ maxWidth: '6rem' }}>
+          <Badge variant="primary" size="small">
+            Lorem Ipsum Dolor Sit Amet
+          </Badge>
+        </Flex>
       </Flex>
-      <Flex marginRight="spacingS" style={{ maxWidth: '6rem' }}>
-        <Badge variant="primary" size="small">
-          Lorem Ipsum Dolor Sit Amet
-        </Badge>
-      </Flex>
-    </Flex>
-  </>
-);
+    </>
+  ),
+};

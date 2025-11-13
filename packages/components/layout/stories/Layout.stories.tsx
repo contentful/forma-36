@@ -1,10 +1,9 @@
-/* eslint-disable rulesdir/emotion-in-function */
 import React from 'react';
-import { css } from 'emotion';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import { css } from '@emotion/css';
+import type { StoryFn, Meta } from '@storybook/react-vite';
 import { Box } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-components';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import type { LayoutProps } from '../src';
 import { Header } from '../../header/src/Header';
 import { Layout } from '../src/CompoundLayout';
@@ -15,7 +14,7 @@ export default {
   title: 'Layout/Layout',
   component: Layout,
   parameters: {
-    propTypes: Layout['__docgenInfo'],
+    propTypes: [Layout['__docgenInfo']],
   },
 } as Meta;
 
@@ -77,7 +76,7 @@ const LayoutSidebarComp = ({ content }) => (
   </Layout.Sidebar>
 );
 
-export const basic: Story<LayoutProps> = () => {
+export const Basic: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper withNavbar={false}>
       <Layout>
@@ -97,7 +96,7 @@ export const basic: Story<LayoutProps> = () => {
   );
 };
 
-export const withHeader: Story<LayoutProps> = () => {
+export const WithHeader: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout header={<LayoutHeaderComp />} offsetTop={NAVBAR_HEIGHT}>
@@ -138,7 +137,7 @@ export const withHeader: Story<LayoutProps> = () => {
   );
 };
 
-export const withFullHeader: Story<LayoutProps> = () => {
+export const WithFullHeader: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
@@ -148,7 +147,7 @@ export const withFullHeader: Story<LayoutProps> = () => {
               className={css({ padding: '0', backgroundColor: 'white' })}
               title="Headline"
               breadcrumbs={[{ content: 'Content Types', url: '#' }]}
-              backButtonProps={{ onClick: action }}
+              backButtonProps={{ onClick: action('navigate back') }}
               withBackButton
               actions={
                 <Button variant="primary" size="small">
@@ -198,7 +197,7 @@ export const withFullHeader: Story<LayoutProps> = () => {
   );
 };
 
-export const withLeftSidebar: Story<LayoutProps> = () => {
+export const WithLeftSidebar: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
@@ -221,7 +220,7 @@ export const withLeftSidebar: Story<LayoutProps> = () => {
   );
 };
 
-export const withRightSidebar: Story<LayoutProps> = () => {
+export const WithRightSidebar: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
@@ -243,7 +242,7 @@ export const withRightSidebar: Story<LayoutProps> = () => {
     </ExampleWrapper>
   );
 };
-export const withHeaderAndSidebars: Story<LayoutProps> = () => {
+export const WithHeaderAndSidebars: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
@@ -268,7 +267,7 @@ export const withHeaderAndSidebars: Story<LayoutProps> = () => {
   );
 };
 
-export const withHeaderAndLongSidebars: Story<LayoutProps> = () => {
+export const WithHeaderAndLongSidebars: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
@@ -335,7 +334,7 @@ export const withHeaderAndLongSidebars: Story<LayoutProps> = () => {
     </ExampleWrapper>
   );
 };
-export const withLongContentAndLongSidebars: Story<LayoutProps> = () => {
+export const WithLongContentAndLongSidebars: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
@@ -432,7 +431,7 @@ export const withLongContentAndLongSidebars: Story<LayoutProps> = () => {
   );
 };
 
-export const variantFullscreen: Story<LayoutProps> = () => {
+export const VariantFullscreen: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
@@ -457,7 +456,7 @@ export const variantFullscreen: Story<LayoutProps> = () => {
     </ExampleWrapper>
   );
 };
-export const variantNarrow: Story<LayoutProps> = () => {
+export const VariantNarrow: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout variant="narrow" offsetTop={NAVBAR_HEIGHT}>
@@ -477,7 +476,7 @@ export const variantNarrow: Story<LayoutProps> = () => {
   );
 };
 
-export const variantNarrowWithSidebar: Story<LayoutProps> = () => {
+export const VariantNarrowWithSidebar: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
@@ -502,7 +501,7 @@ export const variantNarrowWithSidebar: Story<LayoutProps> = () => {
   );
 };
 
-export const variantNarrowWithRightSidebar: Story<LayoutProps> = () => {
+export const VariantNarrowWithRightSidebar: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout

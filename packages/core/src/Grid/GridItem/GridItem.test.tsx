@@ -32,35 +32,35 @@ describe('GridItem', () => {
     it('should result to gridColumn', () => {
       const { container } = render(<GridItem columnStart={3} columnEnd={6} />);
       expect(container.firstChild).toHaveStyle({
-        gridArea: 'auto / 3 / auto / 6',
+        gridArea: 'auto/3/auto/6',
       });
     });
 
     it('columnStart should have the correct value', () => {
       const { container } = render(<GridItem columnStart={3} />);
       expect(container.firstChild).toHaveStyle({
-        gridArea: 'auto / 3 / auto / auto',
+        gridArea: 'auto/3/auto/auto',
       });
     });
 
     it('columnEnd should have the correct value', () => {
       const { container } = render(<GridItem columnEnd={4} />);
       expect(container.firstChild).toHaveStyle({
-        gridArea: 'auto / auto / auto / 4',
+        gridArea: 'auto/auto/auto/4',
       });
     });
 
     it('rowStart should have the correct value', () => {
       const { container } = render(<GridItem rowStart={3} />);
       expect(container.firstChild).toHaveStyle({
-        gridArea: '3 / auto / auto / auto',
+        gridArea: '3/auto/auto/auto',
       });
     });
 
     it('rowEnd should have the correct value', () => {
       const { container } = render(<GridItem rowEnd={4} />);
       expect(container.firstChild).toHaveStyle({
-        gridArea: 'auto / auto / 4 / auto',
+        gridArea: 'auto/auto/4/auto',
       });
     });
   });

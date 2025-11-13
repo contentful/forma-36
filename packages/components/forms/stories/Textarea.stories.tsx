@@ -3,18 +3,19 @@ import { Flex } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
 import { SectionHeading } from '@contentful/f36-typography';
 
-import { Textarea, TextareaProps } from '../src';
+import { Textarea } from '../src';
 
 export default {
   title: 'Form Elements/Textarea',
   component: Textarea,
 };
 
-export const Basic = (args: TextareaProps) => <Textarea {...args} />;
-Basic.args = {
-  id: 'textarea',
-  placeholder: 'Placeholder',
-  label: 'My textarea',
+export const Basic = {
+  args: {
+    id: 'textarea',
+    placeholder: 'Placeholder',
+    label: 'My textarea',
+  },
 };
 
 export const UsingRef = () => {

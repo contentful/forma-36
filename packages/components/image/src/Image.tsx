@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithoutRef, forwardRef, type Ref } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import {
   type CommonProps,
   mergeRefs,
@@ -25,7 +25,7 @@ export interface ImageProps
   width: string;
 }
 
-function _Image(
+function ImageBase(
   {
     className,
     height,
@@ -60,4 +60,4 @@ function _Image(
   );
 }
 
-export const Image = forwardRef(_Image);
+export const Image = forwardRef(ImageBase);

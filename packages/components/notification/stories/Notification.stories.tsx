@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-
+import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { NotificationItem, Notification } from '../src';
 import type { Placement } from '../src/NotificationsManager';
 import { Button, ButtonGroup } from '@contentful/f36-button';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
@@ -13,28 +13,19 @@ const getUniqueNumber = () => {
   return index;
 };
 
-export default {
+const meta: Meta<typeof NotificationItem> = {
   component: NotificationItem,
   title: 'Components/Notification',
 };
+export default meta;
 
-export const basic = (args) => {
-  return <NotificationItem {...args} />;
-};
-
-basic.args = {
-  title: 'Notification title',
-  variant: 'positive',
-  cta: {
-    label: 'Notification CTA',
-  },
-  onClose: action('onClose'),
-  children: 'Body for the notification',
-  closeButtonAriaLabel: 'Schließen',
-};
-
-export const WithButtons = ({ notificationText, duration, ...args }) => {
-  const [placement, setPlacement] = useState<Placement>('top');
+const BasicStoryComponent: React.FC<
+  (typeof Basic)['args'] & {
+    duration: number;
+    notificationText: string;
+  }
+> = (args) => {
+  const [placement, setPlacement] = React.useState<Placement>('top');
   const togglePlacement = () => {
     setPlacement(placement === 'bottom' ? 'top' : 'bottom');
   };
@@ -48,9 +39,12 @@ export const WithButtons = ({ notificationText, duration, ...args }) => {
           <Button
             variant="positive"
             onClick={() =>
-              Notification.success(`${notificationText} ${getUniqueNumber()}`, {
-                duration,
-              })
+              Notification.success(
+                `${args.notificationText} ${getUniqueNumber()}`,
+                {
+                  duration: args.duration,
+                },
+              )
             }
           >
             show success
@@ -58,9 +52,12 @@ export const WithButtons = ({ notificationText, duration, ...args }) => {
           <Button
             variant="negative"
             onClick={() =>
-              Notification.error(`${notificationText} ${getUniqueNumber()}`, {
-                duration,
-              })
+              Notification.error(
+                `${args.notificationText} ${getUniqueNumber()}`,
+                {
+                  duration: args.duration,
+                },
+              )
             }
           >
             show error
@@ -68,9 +65,12 @@ export const WithButtons = ({ notificationText, duration, ...args }) => {
           <Button
             variant="secondary"
             onClick={() =>
-              Notification.warning(`${notificationText} ${getUniqueNumber()}`, {
-                duration,
-              })
+              Notification.warning(
+                `${args.notificationText} ${getUniqueNumber()}`,
+                {
+                  duration: args.duration,
+                },
+              )
             }
           >
             show warning
@@ -78,9 +78,12 @@ export const WithButtons = ({ notificationText, duration, ...args }) => {
           <Button
             variant="primary"
             onClick={() =>
-              Notification.info(`${notificationText} ${getUniqueNumber()}`, {
-                duration,
-              })
+              Notification.info(
+                `${args.notificationText} ${getUniqueNumber()}`,
+                {
+                  duration: args.duration,
+                },
+              )
             }
           >
             show info
@@ -89,7 +92,7 @@ export const WithButtons = ({ notificationText, duration, ...args }) => {
             variant="secondary"
             onClick={() =>
               Notification.warning('Notification that should not be repeated', {
-                duration,
+                duration: args.duration,
                 id: 'some-concrete-notification',
               })
             }
@@ -99,10 +102,13 @@ export const WithButtons = ({ notificationText, duration, ...args }) => {
           <Button
             variant="positive"
             onClick={() =>
-              Notification.success(`${notificationText} ${getUniqueNumber()}`, {
-                duration,
-                ...args,
-              })
+              Notification.success(
+                `${args.notificationText} ${getUniqueNumber()}`,
+                {
+                  duration: args.duration,
+                  ...args,
+                },
+              )
             }
           >
             show notification with title and CTA
@@ -129,43 +135,72 @@ export const WithButtons = ({ notificationText, duration, ...args }) => {
   );
 };
 
-WithButtons.args = {
+export const Basic: StoryObj<typeof NotificationItem> = {
+  render: (args) => {
+    return <NotificationItem {...args} />;
+  },
+};
+
+Basic.args = {
   title: 'Notification title',
-  intent: 'success',
+  variant: 'positive',
   cta: {
     label: 'Notification CTA',
   },
-  notificationText: 'Body for the notification',
-  duration: 6000,
+  onClose: action('onClose'),
+  children: 'Body for the notification',
+  closeButtonAriaLabel: 'Close',
 };
 
-export const overview = (args) => {
-  return (
+export const WithButtons: StoryObj<typeof NotificationItem> = {
+  render: (args) => {
+    return (
+      <BasicStoryComponent
+        {...args}
+        duration={3000}
+        notificationText="Notification"
+      />
+    );
+  },
+};
+
+WithButtons.args = {
+  title: 'Notification title',
+  variant: 'positive',
+  cta: {
+    label: 'Notification CTA',
+  },
+};
+
+export const Overview: StoryObj = {
+  args: {
+    title: 'Notification title',
+    cta: {
+      label: 'Notification CTA',
+    },
+    onClose: action('onClose'),
+    children: 'Body for the notification',
+  },
+  render: (args: (typeof Overview)['args'] & { children: React.ReactNode }) => (
     <Flex fullWidth flexDirection="column">
       <SectionHeading marginBottom="spacingS" as="h3">
         Notification positive
       </SectionHeading>
-
       <Flex marginBottom="spacingL">
         <NotificationItem {...args} variant="positive" />
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS">
         Notification negative
       </SectionHeading>
-
       <Flex marginBottom="spacingL">
         <NotificationItem {...args} variant="negative" />
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS">
         Notification warning
       </SectionHeading>
-
       <Flex marginBottom="spacingL">
         <NotificationItem {...args} variant="warning" />
       </Flex>
-
       <SectionHeading as="h3" marginBottom="spacingS">
         Notification only with body
       </SectionHeading>
@@ -173,14 +208,5 @@ export const overview = (args) => {
         <NotificationItem variant="positive">{args.children}</NotificationItem>
       </Flex>
     </Flex>
-  );
-};
-
-overview.args = {
-  title: 'Notification title',
-  cta: {
-    label: 'Notification CTA',
-  },
-  onClose: action('onClose'),
-  children: 'Body for the notification',
+  ),
 };

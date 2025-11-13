@@ -208,7 +208,6 @@ type DatepickerTriggerProps = {
   onTriggerClick: () => void;
 } & Pick<DatepickerProps, 'className' | 'style' | 'testId'>;
 
-// eslint-disable-next-line react/display-name
 const DatepickerTrigger = React.forwardRef<
   HTMLDivElement,
   DatepickerTriggerProps

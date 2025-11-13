@@ -1,5 +1,5 @@
 import React, { forwardRef, type HTMLAttributes, type Ref } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { type CommonProps, Box } from '@contentful/f36-core';
 import { getLayoutSidebarStyles } from './Layout.styles';
 import { useLayoutContext } from './LayoutContext';
@@ -9,7 +9,7 @@ export type LayoutSidebarProps = {
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 
-export const _LayoutSidebar = (
+export const LayoutSidebarBase = (
   props: LayoutSidebarProps,
   ref: Ref<HTMLDivElement>,
 ) => {
@@ -35,4 +35,4 @@ export const _LayoutSidebar = (
   );
 };
 
-export const LayoutSidebar = forwardRef(_LayoutSidebar);
+export const LayoutSidebar = forwardRef(LayoutSidebarBase);

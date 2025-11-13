@@ -1,9 +1,7 @@
 /* global Promise */
-import ReactDOM from 'react-dom';
-
-// @todo: change any to unknown
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export interface ModalLauncherComponentRendererProps<T = any> {
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+export interface ModalLauncherComponentRendererProps<T = unknown> {
   isShown: boolean;
   onClose: (result?: T) => void;
 }
@@ -20,10 +18,11 @@ export interface ModalLauncherOpenOptions {
   delay?: number;
 }
 
-interface CloseModalData {
+interface CloseModalData<T = unknown> {
+  root: ReactDOM.Root;
   delay: number;
-  render: (args: ModalLauncherComponentRendererProps<any>) => void;
-  currentConfig: ModalLauncherComponentRendererProps<any>;
+  render: (args: ModalLauncherComponentRendererProps<T>) => void;
+  currentConfig: ModalLauncherComponentRendererProps<T>;
 }
 
 const getRoot = (rootElId: string): HTMLElement => {
@@ -42,59 +41,65 @@ const getRoot = (rootElId: string): HTMLElement => {
 
 const openModalsIds: Map<string, CloseModalData> = new Map();
 async function closeAll(): Promise<void> {
+  const modals = Array.from(openModalsIds.entries());
   await Promise.all(
-    Array.from(openModalsIds.entries()).map(
-      async ([rootElId, { render, currentConfig, delay }]) => {
+    modals.map(async ([rootElId, { root, render, currentConfig, delay }]) => {
+      try {
         const config = { ...currentConfig, isShown: false };
         render(config);
         await new Promise((resolveDelay) => setTimeout(resolveDelay, delay));
-        ReactDOM.unmountComponentAtNode(getRoot(rootElId));
-        openModalsIds.delete(rootElId);
-      },
-    ),
+        root.unmount();
+      } finally {
+        // Only clean up if this entry still exists (avoid race with individual onClose)
+        if (openModalsIds.has(rootElId)) {
+          const el = document.getElementById(rootElId);
+          if (el) el.remove();
+          openModalsIds.delete(rootElId);
+        }
+      }
+    }),
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function open<T = any>(
+function open<T = unknown>(
   componentRenderer: (
     props: ModalLauncherComponentRendererProps<T>,
-  ) => JSX.Element,
+  ) => React.ReactElement,
   options: ModalLauncherOpenOptions = {},
 ): Promise<T> {
   options = { delay: 300, ...options };
 
-  // Allow components to specify if they wish to reuse the modal container
-  const rootElId = `modals-root${options.modalId || Date.now()}`;
+  // Generate a unique ID for each modal instance to avoid root reuse conflicts
+  const rootElId = `modals-root-${options.modalId || ''}-${Date.now()}-${Math.random()}`;
   const rootDom = getRoot(rootElId);
-
+  const root = ReactDOM.createRoot(rootDom);
   return new Promise((resolve) => {
-    let currentConfig = { onClose, isShown: true };
+    let currentConfig: ModalLauncherComponentRendererProps<T>;
+
+    async function onClose(result?: T) {
+      currentConfig = { ...currentConfig, isShown: false };
+      render(currentConfig);
+      await new Promise((resolveDelay) =>
+        setTimeout(resolveDelay, options.delay),
+      );
+      root.unmount();
+      rootDom.remove();
+      openModalsIds.delete(rootElId);
+      resolve(result);
+    }
 
     function render({
       onClose,
       isShown,
     }: ModalLauncherComponentRendererProps<T>) {
-      ReactDOM.render(componentRenderer({ onClose, isShown }), rootDom);
+      root.render(componentRenderer({ onClose, isShown }));
     }
 
-    async function onClose(arg?: T) {
-      currentConfig = {
-        ...currentConfig,
-        isShown: false,
-      };
-      render(currentConfig);
-      await new Promise((resolveDelay) =>
-        setTimeout(resolveDelay, options.delay),
-      );
-      ReactDOM.unmountComponentAtNode(rootDom);
-      rootDom.remove();
-      openModalsIds.delete(rootElId);
-      resolve(arg);
-    }
-
+    currentConfig = { onClose, isShown: true };
     render(currentConfig);
+
     openModalsIds.set(rootElId, {
+      root,
       render,
       currentConfig,
       delay: options.delay,

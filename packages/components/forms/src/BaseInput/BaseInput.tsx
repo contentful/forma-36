@@ -4,7 +4,7 @@ import React, {
   type KeyboardEvent,
   type ChangeEvent,
 } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import {
   Box,
   type PolymorphicProps,
@@ -15,6 +15,7 @@ import {
 import getInputStyles from './BaseInput.styles';
 import { BaseInputInternalProps } from './types';
 import { useDensity } from '@contentful/f36-utils';
+import tokens from '@contentful/f36-tokens';
 
 const INPUT_DEFAULT_TAG = 'input';
 
@@ -26,7 +27,7 @@ export type BaseInputProps<
   'disabled' | 'required' | 'readOnly'
 >;
 
-function _BaseInput<E extends React.ElementType = typeof INPUT_DEFAULT_TAG>(
+function BaseInputBase<E extends React.ElementType = typeof INPUT_DEFAULT_TAG>(
   props: BaseInputProps<E>,
   ref: React.Ref<HTMLInputElement | HTMLTextAreaElement>,
 ) {
@@ -106,7 +107,7 @@ function _BaseInput<E extends React.ElementType = typeof INPUT_DEFAULT_TAG>(
     <Box as="span" className={styles.iconPlaceholder}>
       {React.cloneElement(icon, {
         size: 'tiny',
-        variant: 'muted',
+        color: tokens.gray600,
         'aria-hidden': true,
       })}
     </Box>
@@ -156,10 +157,12 @@ function _BaseInput<E extends React.ElementType = typeof INPUT_DEFAULT_TAG>(
   return inputContent();
 }
 
-_BaseInput.displayName = 'BaseInput';
+BaseInputBase.displayName = 'BaseInput';
 
-export const BaseInput: PolymorphicComponent<
+export const BaseInput = React.forwardRef(
+  BaseInputBase,
+) as PolymorphicComponent<
   ExpandProps<BaseInputInternalProps>,
   typeof INPUT_DEFAULT_TAG,
   'disabled'
-> = React.forwardRef(_BaseInput);
+>;

@@ -1,9 +1,13 @@
 import React from 'react';
 import { Box, Table } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
-import borderRadius from '@contentful/f36-tokens/src/tokens/border-radius/border-radius';
 
 export function BorderRadiusTable() {
+  const borderRadiusTokens = {
+    'border-radius-small': tokens.borderRadiusSmall,
+    'border-radius-medium': tokens.borderRadiusMedium,
+  };
+
   return (
     <Table>
       <Table.Head>
@@ -14,8 +18,8 @@ export function BorderRadiusTable() {
         </Table.Row>
       </Table.Head>
       <Table.Body>
-        {Object.keys(borderRadius).map((token) => {
-          const value = borderRadius[token];
+        {Object.keys(borderRadiusTokens).map((token) => {
+          const value = borderRadiusTokens[token];
           const tokenName = token.replace(/-\d?[a-z]{1}/, (match) =>
             match.toUpperCase().replace('-', ''),
           );

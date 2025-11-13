@@ -51,41 +51,43 @@ interface GridArgs extends GridInternalProps {
   exampleGridHeight: string;
 }
 
-export const Basic = ({
-  exampleGridHeight,
-  exampleBoxes,
-  ...args
-}: GridArgs & GridItemArgs) => (
-  <Grid
-    columns={args.columns}
-    rows={args.rows}
-    columnGap={args.columnGap}
-    rowGap={args.rowGap}
-    style={{ height: exampleGridHeight, width: '90vw' }}
-  >
-    <Grid.Item
-      style={styles.demoBoxDark}
-      columnStart={args.columnStart}
-      columnEnd={args.columnEnd}
-      rowStart={args.rowStart}
-      rowEnd={args.rowEnd}
-      area={args.area}
-      order={args.order}
-    />
-    <DemoBox id="gi" times={exampleBoxes} />
-  </Grid>
-);
+export const Basic = {
+  render: ({
+    exampleGridHeight,
+    exampleBoxes,
+    ...args
+  }: GridArgs & GridItemArgs) => (
+    <Grid
+      columns={args.columns}
+      rows={args.rows}
+      columnGap={args.columnGap}
+      rowGap={args.rowGap}
+      style={{ height: exampleGridHeight, width: '90vw' }}
+    >
+      <Grid.Item
+        style={styles.demoBoxDark}
+        columnStart={args.columnStart}
+        columnEnd={args.columnEnd}
+        rowStart={args.rowStart}
+        rowEnd={args.rowEnd}
+        area={args.area}
+        order={args.order}
+      />
+      <DemoBox id="gi" times={exampleBoxes} />
+    </Grid>
+  ),
 
-Basic.args = {
-  exampleBoxes: 23,
-  exampleGridHeight: '90vh',
-  columns: 6,
-  rows: 4,
-  columnGap: 'spacingXs',
-  rowGap: 'spacingXs',
-  columnStart: 1,
-  columnEnd: 3,
-  rowStart: 1,
-  rowEnd: 4,
-  order: 0,
+  args: {
+    exampleBoxes: 23,
+    exampleGridHeight: '90vh',
+    columns: 6,
+    rows: 4,
+    columnGap: 'spacingXs',
+    rowGap: 'spacingXs',
+    columnStart: 1,
+    columnEnd: 3,
+    rowStart: 1,
+    rowEnd: 4,
+    order: 0,
+  },
 };

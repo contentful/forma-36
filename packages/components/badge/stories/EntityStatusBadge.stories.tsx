@@ -3,7 +3,6 @@ import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
 import { EntityStatusBadge } from '../src/EntityStatusBadge/EntityStatusBadge';
-import { EntityStatusBadgeProps } from '../src/EntityStatusBadge/EntityStatusBadge';
 
 export default {
   title: 'Components/EntityStatusBadge',
@@ -18,13 +17,11 @@ export default {
   },
 };
 
-export const Basic = (args: EntityStatusBadgeProps) => (
-  <EntityStatusBadge {...args} />
-);
-
-Basic.args = {
-  size: 'default',
-  entityStatus: 'published',
+export const Basic = {
+  args: {
+    size: 'default',
+    entityStatus: 'published',
+  },
 };
 
 export const Overview = () => (

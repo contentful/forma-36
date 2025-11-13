@@ -2,7 +2,7 @@ import { type CommonProps, type ExpandProps, Flex } from '@contentful/f36-core';
 import React from 'react';
 import { getNavbarStyles } from './Navbar.styles';
 import { ContentfulLogoIcon } from './icons';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { Button } from '@contentful/f36-button';
 import { ListIcon } from '@contentful/f36-icons';
 import { NavbarMenu } from './NavbarMenu/NavbarMenu';

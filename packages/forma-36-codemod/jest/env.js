@@ -14,11 +14,9 @@ global.test = (transformName, testFileName, options) => {
   const source = read(testFileName + '.js');
   const output = read(testFileName + '.output.js');
   let path = testFileName + '.js';
-  let transform = require(path.join(
-    global.baseDir,
-    '/transforms/',
-    transformName,
-  ));
+  let transform = require(
+    path.join(global.baseDir, '/transforms/', transformName),
+  );
 
   expect(
     (transform({ path, source }, { jscodeshift }, options || {}) || '').trim(),

@@ -28,8 +28,7 @@ export enum HARDCODED_WEBSITE_SECTION {
  * Helper for checking whether an object from GraphQL should be rendered as
  * a sidebar link
  */
-const sidebarLinkObjectTypes = ['link', 'KbAppLink', 'KbAppArticle'] as const;
-type SidebarLinkObjectType = (typeof sidebarLinkObjectTypes)[number];
+type SidebarLinkObjectType = 'link' | 'KbAppLink' | 'KbAppArticle';
 
 export type SidebarLink = {
   title: string;

@@ -89,7 +89,7 @@ jobs:
           command: npx wait-on http://localhost:3000
       - run:
           name: Run links checker
-          command: npx blc http://localhost:3000 -ro --exclude "https://medium.com/contentful-design" --exclude "https://github.com/contentful/forma-36" --exclude "https://www.figma.com/@contentful"
+          command: npx blc http://localhost:3000 -ro --exclude "https://medium.com/contentful-design" --exclude "https://github.com/contentful/forma-36" --exclude "https://www.figma.com/@contentful" --exclude "https://react-hook-form.com"
 
   deploy_chromatic:
     docker:

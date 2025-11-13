@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
 import { List, Flex, Text, Badge } from '@contentful/f36-components';
@@ -96,6 +96,7 @@ export function SidebarSectionButton({
 
         <Image
           src={caretDown}
+          alt="caret down icon"
           width={18}
           height={18}
           className={cx(titleStyles.chevron, {
@@ -162,33 +163,34 @@ export function SidebarLink({
 
   return (
     <List.Item>
-      <Link href={href} passHref>
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a
-          className={cx([styles.link, titleStyles.sidebarItem])}
-          {...linksProps}
-        >
-          <span className={cx([titleStyles.clickable])}>
-            {children}
-            {isExternal && (
-              <Image
-                src={arrowSquareOut}
-                width={18}
-                height={18}
-                className={titleStyles.linkIcon}
-              />
-            )}
-            {isAuthProtected && (
-              <Image
-                src={lockSimple}
-                width={18}
-                height={18}
-                className={titleStyles.linkIcon}
-              />
-            )}
-          </span>
-          {renderSidebarBadge({ isNew, status })}
-        </a>
+      <Link
+        href={href}
+        passHref
+        className={cx([styles.link, titleStyles.sidebarItem])}
+        {...linksProps}
+      >
+        <span className={cx([titleStyles.clickable])}>
+          {children}
+          {isExternal && (
+            <Image
+              src={arrowSquareOut}
+              alt="arrow square out icon"
+              width={18}
+              height={18}
+              className={titleStyles.linkIcon}
+            />
+          )}
+          {isAuthProtected && (
+            <Image
+              alt="lock icon"
+              src={lockSimple}
+              width={18}
+              height={18}
+              className={titleStyles.linkIcon}
+            />
+          )}
+        </span>
+        {renderSidebarBadge({ isNew, status })}
       </Link>
     </List.Item>
   );

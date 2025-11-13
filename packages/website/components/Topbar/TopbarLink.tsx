@@ -1,5 +1,5 @@
 import React from 'react';
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 import Link from 'next/link';
 import { Text } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
@@ -21,7 +21,7 @@ const styles = {
 
 export function TopbarLink({ href, label, isActive = false }) {
   return (
-    <Link href={href} passHref>
+    <Link href={href} passHref legacyBehavior>
       <Text
         as="a"
         className={cx(styles.navListLink, { [styles.active]: isActive })}
