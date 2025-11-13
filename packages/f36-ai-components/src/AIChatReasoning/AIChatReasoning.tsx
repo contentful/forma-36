@@ -56,7 +56,6 @@ function _AIChatReasoning(
     setInternalExpanded(isExpanded);
   }, [isExpanded]);
 
-  // Force Collapse to recalculate height when children change
   useEffect(() => {
     if (internalExpanded) {
       setChildrenKey((prev) => prev + 1);
