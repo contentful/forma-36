@@ -18,7 +18,7 @@ You need to first install all dependencies on the codemod directory.
 
 ```sh
 # Inside the forma-36-codemod directory
-npm install --legacy-peer-deps
+npm install
 npm link
 ```
 
@@ -29,7 +29,28 @@ If using `nvm` or similar make sure to be on the same version that you used to l
 f36-codemod <path> [...options]
 ```
 
-### Included Transforms
+## Included Transforms
+
+### v6
+
+codemods for migration from version 5 to version 6
+
+#### `v6/menu`
+
+Migrates removed type value for `placement` and migrates changed type for propterty `offset`.
+Migrates deprecarted `Menu.Submenu` component
+
+#### `v6/popover`
+
+Migrates removed type value for `placement` and migrates changed type for propterty `offset`
+
+#### `v6/skeleton`
+
+Migrates removed types
+
+### v5
+
+codemods for migration from version 4 to version 5
 
 #### `v5/icons`
 
