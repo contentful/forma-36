@@ -26,7 +26,7 @@ export const ListItem = ({
           fontFamily: tokens.fontStackPrimary,
           lineHeight: tokens.lineHeightL,
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          listStyle: (children as any).type === List ? 'none' : '',
+          listStyle: (children as any)?.type === List ? 'none' : '',
         }),
         className,
       )}
