@@ -1,5 +1,5 @@
-import React from "react";
-import { Menu, SubmenuTrigger, type MenuProps } from "@contentful/f36-menu";
+import React from 'react';
+import { Menu, SubmenuTrigger, type MenuProps } from '@contentful/f36-menu';
 
 function Example (){
   const submenuProps: MenuProps = {
