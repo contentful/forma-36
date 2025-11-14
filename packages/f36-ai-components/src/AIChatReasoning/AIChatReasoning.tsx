@@ -50,10 +50,17 @@ function _AIChatReasoning(
   } = props;
 
   const [internalExpanded, setInternalExpanded] = useState(isExpanded);
+  const [childrenKey, setChildrenKey] = useState(0);
 
   useEffect(() => {
     setInternalExpanded(isExpanded);
   }, [isExpanded]);
+
+  useEffect(() => {
+    if (internalExpanded) {
+      setChildrenKey((prev) => prev + 1);
+    }
+  }, [children]);
 
   const handleToggle = () => {
     const newExpanded = !internalExpanded;
@@ -116,7 +123,7 @@ function _AIChatReasoning(
         </Box>
       </button>
 
-      <Collapse isExpanded={internalExpanded}>
+      <Collapse key={childrenKey} isExpanded={internalExpanded}>
         <Box
           className={styles.content}
           data-test-id={`${testId}-content`}
