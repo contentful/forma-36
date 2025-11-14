@@ -86,13 +86,10 @@ export interface PaginationProps extends CommonProps {
    */
   navigationButtonsProps?: NavigationButtonsProps;
   /**
-   * Labels for the text when total items are shown
-   * @default { of: "of", items: "items" }
+   * Label shown when the `totalItems` is provided.
+   * @default `of ${totalItems} items`
    */
-  totalItemsLabels?: {
-    of: string;
-    items: string;
-  };
+  totalItemsLabel?: (totalItems: number) => string;
 }
 
 function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
@@ -114,10 +111,7 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
       nextAriaLabel: 'To next page',
       previousAriaLabel: 'To previous page',
     },
-    totalItemsLabels = {
-      of: 'of',
-      items: 'items',
-    },
+    totalItemsLabel = (totalItems: number) => `of ${totalItems} items`,
     totalItems,
     onViewPerPageChange,
     ...otherProps
@@ -132,7 +126,7 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
     itemsPerPage,
     pageLength,
     isLastPage,
-    totalItemsLabels,
+    totalItemsLabel,
   });
 
   return (

@@ -97,10 +97,7 @@ describe('Pagination', () => {
         activePage={1}
         itemsPerPage={20}
         totalItems={55}
-        totalItemsLabels={{
-          of: 'von',
-          items: 'Artikeln',
-        }}
+        totalItemsLabel={(totalItems) => `von ${totalItems} Artikeln`}
         onPageChange={handlePageChange}
       />,
     );
