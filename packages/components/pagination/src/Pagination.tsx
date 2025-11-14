@@ -30,7 +30,7 @@ type NavigationButtonsProps = {
    */
   previousAriaLabel?: string;
 };
-export interface PaginationProps extends CommonProps {
+interface BasePaginationProps extends CommonProps {
   /**
    * Sets which page is active on the Pagination
    * @default 0
@@ -47,10 +47,6 @@ export interface PaginationProps extends CommonProps {
    * @default 20
    */
   pageLength?: number;
-  /**
-   * Total amount of items the pagination is applied to.
-   */
-  totalItems?: number;
   /**
    * Sets if the View per page selector is shown
    * @default false
@@ -85,12 +81,26 @@ export interface PaginationProps extends CommonProps {
    * @default { labelNext: "Next", labelPrevious: "Previous", ariaLabelNext: "To next page", ariaLabelPrevious: "To previous page" }
    */
   navigationButtonsProps?: NavigationButtonsProps;
-  /**
-   * Label shown when the `totalItems` is provided.
-   * @default `of ${totalItems} items`
-   */
-  totalItemsLabel?: (totalItems: number) => string;
 }
+
+type WithTotalItemsAndLabelOrNot =
+  | {
+      /**
+       * Total amount of items the pagination is applied to.
+       */
+      totalItems: number;
+      /**
+       * Label shown when the `totalItems` is provided.
+       * @default `of ${totalItems} items`
+       */
+      totalItemsLabel?: (totalItems: number) => string;
+    }
+  | {
+      totalItems?: never;
+      totalItemsLabel?: never;
+    };
+
+export type PaginationProps = BasePaginationProps & WithTotalItemsAndLabelOrNot;
 
 function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
   const {

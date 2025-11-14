@@ -94,7 +94,7 @@ export const CustomLabels = (args: PaginationProps) => {
         onPageChange={handlePageChange}
         onViewPerPageChange={handleViewPerPageChange}
         itemsPerPage={view}
-        totalItems={123}
+        totalItems={55}
         totalItemsLabel={(totalItems) => `von ${totalItems} Artikeln`}
         {...otherProps}
       />
