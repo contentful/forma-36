@@ -91,7 +91,7 @@ describe('Pagination', () => {
     expect(screen.getByText('21 - 40 of 55 items')).toBeInTheDocument();
   });
 
-  it('renders custom range text with totalItems', () => {
+  it('renders the custom total items label', () => {
     render(
       <Pagination
         activePage={1}
