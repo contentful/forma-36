@@ -8,8 +8,24 @@ typescript: ./src/Menu.tsx,./src/MenuItem/MenuItem.tsx,./src/MenuList/MenuList.t
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-menu--basic'
 ---
 
-Menu is a component that offers a list of choices to the user, such as a set of actions or links.
-Menu uses Popover component as a base.
+Menu is a component that offers a list of choices to the user, such as a set of actions or links. It needs to be provided with a trigger element, which can contain text, text with icon or icon only.
+
+## Technical information
+
+Menu is based on the popover component and offers compound components to build flexible menus that can be nested.
+
+### Compound components
+
+1. `<Menu.Trigger>` The wrapper for the menu list trigger. Must be a direct child of `<Menu>`.  
+   NOTE: 🚨 Ensure that the component that you pass accepts `ref`. Consider using `forwardRef` for functional components.
+1. `<Menu.List>`: The wrapper for the menu items. Must be a direct child of `<Menu>`.
+1. `<Menu.Item>` The trigger that handles menu selection. Must be a direct child of `<Menu.List>`.
+1. `<Menu.Divider>` A visual separator for menu items.
+1. `<Menu.SectionTitle>` A title that you can use in the menu list.
+1. `<Menu.ListHeader>` The wrapper for one menu item that will be sticked to the top of the menu list. `<Menu.Item>` must be provided as a child.
+1. `<Menu.ListFooter>` The wrapper for one menu item that will be sticked to
+   the bottom of the menu list. `<Menu.Item>` must be provided as a child. 1._deprecated_ `<Menu.Submenu>` The wrapper for for submenu components. Structure of the children remains the same like in `<Menu>`, except you should use `<Menu.SubmenuTrigger>` instead of `<Menu.Trigger>`.
+1. `<Menu.SubmenuTrigger>` The wrapper for the submenu list trigger. Must be a direct child of `<Menu.Submenu>`.
 
 ## Import
 
@@ -18,20 +34,6 @@ import { Menu } from '@contentful/f36-components';
 ```
 
 ## Examples
-
-You can use following components to build a menu:
-
-1. `<Menu>`: The main wrapper that provides nested components with all the context and state.
-1. `<Menu.Trigger>` The wrapper for the menu list trigger. Must be a direct child of `<Menu>`.  
-   NOTE: 🚨 Ensure that the component that you pass accepts `ref`. Consider using `forwardRef` for functional components.
-1. `<Menu.List>`: The wrapper for the menu items. Must be a direct child of `<Menu>`.
-1. `<Menu.Item>` The trigger that handles menu selection. Must be a direct child of `<Menu.List>`.
-1. `<Menu.Divider>` A visual separator for menu items.
-1. `<Menu.SectionTitle>` A title that you can use in the menu list.
-1. `<Menu.ListHeader>` The wrapper for one menu item that will be sticked to the top of the menu list. `<Menu.Item>` must be provided as a child.
-1. `<Menu.ListFooter>` The wrapper for one menu item that will be sticked to the bottom of the menu list. `<Menu.Item>` must be provided as a child.
-1. `<Menu.Submenu>` The wrapper for for submenu components. Structure of the children remains the same like in `<Menu>`, except you should use `<Menu.SubmenuTrigger>` instead of `<Menu.Trigger>`.
-1. `<Menu.SubmenuTrigger>` The wrapper for the submenu list trigger. Must be a direct child of `<Menu.Submenu>`.
 
 ### Basic usage
 
@@ -111,7 +113,7 @@ But if you have to provide your own toggle menu logic on the trigger component, 
 
 ```
 
-### With submenu
+### With nested submenu
 
 By default props like `closeOnSelect`, `closeOnBlur`, `closeOnEsc` that you pass to `Menu` will be shared to all submenus
 but you can redefine them on any submenu by passing those props directly to that `Submenu`.

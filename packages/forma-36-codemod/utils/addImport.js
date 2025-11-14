@@ -12,6 +12,6 @@ module.exports.addImport = function addImport(j, source, imports) {
   const result = addImports(root, imports);
   return {
     result,
-    source: root.toSource(),
+    source: root.toSource({ quote: 'single' }),
   };
 };
