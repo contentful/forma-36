@@ -31,6 +31,6 @@ f36-codemod <path> [...options]
 
 ### Included Transforms
 
-#### `v5/icons`
+#### `v7/replace-shape-radius-tokens.ts`
 
-Updates dependency and usage of icons to the v5-alpha icons
+replaces base tokens with new numeric ramp naming
