@@ -1,11 +1,11 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import chalk from 'chalk';
-import execa from 'execa';
+import { execa, execaSync } from 'execa';
 import isGitClean from 'is-git-clean';
 import inquirer from 'inquirer';
 import meow from 'meow';
-import globby from 'globby';
+import { globby } from 'globby';
 import { createRequire } from 'module';
 import * as inquirerChoices from './inquirer-choices.mjs';
 import updateDependencies from './updateDependencies.mjs';
@@ -84,7 +84,7 @@ function runTransform({ files, flags, parser, transformer }) {
 
   console.log(`Executing command: jscodeshift ${args.join(' ')}`);
 
-  const result = execa.sync(jscodeshiftExecutable, args, {
+  const result = execaSync(jscodeshiftExecutable, args, {
     stdio: 'inherit',
     stripEof: false,
   });
@@ -179,5 +179,11 @@ export function run() {
           transformer: 'v5/icons',
         });
       }
+      return runTransform({
+        files: filesExpanded,
+        flags: cli.flags,
+        parser: selectedParser,
+        transformer: 'v4-all',
+      });
     });
 }
