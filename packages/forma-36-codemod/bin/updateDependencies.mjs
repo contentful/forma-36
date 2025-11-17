@@ -1,7 +1,7 @@
 import path from 'node:path';
 import fs from 'node:fs';
 import chalk from 'chalk';
-import execa from 'execa';
+import { execa } from 'execa';
 import semverSatisfies from 'semver/functions/satisfies.js';
 import { readPackageUpSync } from 'read-package-up';
 import inquirer from 'inquirer';
