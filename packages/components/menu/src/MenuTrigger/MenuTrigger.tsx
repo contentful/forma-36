@@ -20,8 +20,9 @@ export const MenuTrigger = React.forwardRef<HTMLElement, MenuTriggerProps>(
     } = menu;
 
     // Existing ref on the child (if any) so we can merge it.
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const childRef: React.Ref<HTMLElement> | undefined = (children as any).ref;
+    const childRef: React.Ref<HTMLElement> | undefined = (
+      children as unknown as { ref?: React.Ref<HTMLElement> }
+    ).ref;
 
     const parentActiveIndex = parent?.activeIndex;
     const getItemProps = parent ? parent.getItemProps : menu.getItemProps;
