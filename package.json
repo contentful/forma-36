@@ -160,6 +160,7 @@
     "@esbuild/win32-arm64": "^0.25.5",
     "@esbuild/win32-ia32": "^0.25.5",
     "@esbuild/win32-x64": "^0.25.5",
+    "esbuild": "^0.21.5",
     "turbo-darwin-64": "^1.13.4",
     "turbo-linux-64": "^1.13.4",
     "turbo-linux-arm64": "^1.13.4",
