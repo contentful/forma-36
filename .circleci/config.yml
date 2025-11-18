@@ -8,7 +8,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/node:lts-browsers
+      - image: cimg/node:18.20-browsers
     resource_class: xlarge
     working_directory: ~/circleci-f36-build
     steps:
