@@ -1,5 +1,17 @@
 # @contentful/f36-docs-utils
 
+## 5.0.0-alpha.0
+
+### Major Changes
+
+- Enter pre-release mode and version packages
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-components@6.0.0-alpha.0
+  - @contentful/f36-tokens@6.0.0-alpha.0
+
 ## 4.0.2
 
 ### Patch Changes

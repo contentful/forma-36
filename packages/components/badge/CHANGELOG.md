@@ -1,5 +1,18 @@
 # Change Log
 
+## 6.0.0-alpha.0
+
+### Major Changes
+
+- Enter pre-release mode and version packages
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-icons@6.0.0-alpha.0
+  - @contentful/f36-core@6.0.0-alpha.0
+  - @contentful/f36-tokens@6.0.0-alpha.0
+
 ## 5.8.0
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-empty-state",
-  "version": "5.8.0",
+  "version": "6.0.0-alpha.0",
   "description": "Forma 36: Empty State React Components",
   "license": "MIT",
   "files": [
@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "emotion": "^10.0.17",
+    "@contentful/f36-tokens": "^6.0.0-alpha.0",
+    "@contentful/f36-typography": "^6.0.0-alpha.0"
     "@contentful/f36-tokens": "^5.1.0",
     "@contentful/f36-typography": "^5.8.0"
   },
