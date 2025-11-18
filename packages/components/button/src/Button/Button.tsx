@@ -18,9 +18,6 @@ import type { Variant } from '@contentful/f36-utils';
 import type { ButtonInternalProps } from '../types';
 import { getStyles } from './Button.styles';
 import type { IconProps } from '@contentful/f36-icon';
-import tokens, { ColorTokens } from '@contentful/f36-tokens';
-import { getIconColorToken, iconColorByVariant } from '@contentful/f36-utils';
-import type { Variant } from '@contentful/f36-utils';
 
 const BUTTON_DEFAULT_TAG = 'button';
 
