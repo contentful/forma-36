@@ -14,7 +14,7 @@ jobs:
       - name: Install dependencies
         run: npm ci --workspace=@contentful/f36-cdn
       - name: Deploy to Compute
-        uses: fastly/compute-actions@v11
+        uses: fastly/compute-actions@v12
         with:
           project_directory: packages/cdn
           service_id: ${{ secrets.CDN_FASTLY_SERVICE_ID }}
