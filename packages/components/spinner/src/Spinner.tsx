@@ -1,4 +1,4 @@
-import { cx, css } from 'emotion';
+import { cx, css } from '@emotion/css';
 import React, { forwardRef } from 'react';
 import tokens from '@contentful/f36-tokens';
 import {

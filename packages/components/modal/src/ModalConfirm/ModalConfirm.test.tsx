@@ -8,7 +8,6 @@ import { ModalConfirm } from './ModalConfirm';
 jest.mock(
   'react-modal',
   () =>
-    // eslint-disable-next-line
     function ReactModalMock({ children }: { children: React.ReactNode }) {
       return <div className="react-modal">{children}</div>;
     },

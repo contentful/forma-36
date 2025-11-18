@@ -33,3 +33,5 @@ export const GhostCheckbox = (props: GhostCheckboxProps) => {
     </span>
   );
 };
+
+GhostCheckbox.displayName = 'GhostCheckbox';

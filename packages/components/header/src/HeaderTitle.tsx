@@ -38,3 +38,5 @@ export function HeaderTitle({
     </div>
   );
 }
+
+HeaderTitle.displayName = 'HeaderTitle';

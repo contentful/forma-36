@@ -13,24 +13,26 @@ export default {
   argTypes: {},
 };
 
-export const Basic = (args: SkeletonRowProps) => (
-  <Table>
-    <Table.Head>
-      <Table.Row>
-        <Table.Cell>Name</Table.Cell>
-        <Table.Cell>Email</Table.Cell>
-        <Table.Cell>Address</Table.Cell>
-        <Table.Cell>Postal Code</Table.Cell>
-        <Table.Cell>City</Table.Cell>
-      </Table.Row>
-    </Table.Head>
-    <Table.Body>
-      <Skeleton.Row {...args} />
-    </Table.Body>
-  </Table>
-);
+export const Basic = {
+  render: (args: SkeletonRowProps) => (
+    <Table>
+      <Table.Head>
+        <Table.Row>
+          <Table.Cell>Name</Table.Cell>
+          <Table.Cell>Email</Table.Cell>
+          <Table.Cell>Address</Table.Cell>
+          <Table.Cell>Postal Code</Table.Cell>
+          <Table.Cell>City</Table.Cell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        <Skeleton.Row {...args} />
+      </Table.Body>
+    </Table>
+  ),
 
-Basic.args = {
-  rowCount: 5,
-  columnCount: 5,
+  args: {
+    rowCount: 5,
+    columnCount: 5,
+  },
 };

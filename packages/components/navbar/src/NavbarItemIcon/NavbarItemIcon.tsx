@@ -1,7 +1,7 @@
 import React from 'react';
 import type { IconProps } from '@contentful/f36-icons';
 import { getNavbarItemIconStyles } from './NavbarItemIcon.styles';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 export type NavbarItemIconProps = {
   icon: React.ReactElement<IconProps>;
@@ -23,3 +23,5 @@ export const NavbarItemIcon = ({
     ...rest,
   });
 };
+
+NavbarItemIcon.displayName = 'NavbarItemIcon';

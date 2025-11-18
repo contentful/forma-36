@@ -52,7 +52,10 @@ export type UsageCountProps = {
   usageCountType &
   HTMLAttributes<HTMLDivElement>;
 
-function _UsageCount(props: UsageCountProps, ref: React.Ref<HTMLDivElement>) {
+function UsageCountBase(
+  props: UsageCountProps,
+  ref: React.Ref<HTMLDivElement>,
+) {
   const {
     value,
     valueUnit,
@@ -106,4 +109,6 @@ function _UsageCount(props: UsageCountProps, ref: React.Ref<HTMLDivElement>) {
   );
 }
 
-export const UsageCount = React.forwardRef(_UsageCount);
+UsageCountBase.displayName = 'UsageCount';
+
+export const UsageCount = React.forwardRef(UsageCountBase);

@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryObj, Meta } from '@storybook/react-vite';
 
 import { UsageCount, type UsageCountProps } from '../src/UsageCount';
 
@@ -35,17 +35,17 @@ export default {
   },
 } as Meta<UsageCountProps>;
 
-export const Default: Story<UsageCountProps> = ({
-  periodType,
-  valueUnit,
-  value,
-}) => {
-  return (
-    <UsageCount
-      variant="periodic"
-      value={value || 150}
-      valueUnit={valueUnit || 'GB'}
-      periodType={periodType}
-    />
-  );
+export const Default: StoryObj<UsageCountProps> = {
+  render: ({ ...args }) => {
+    const { periodType, valueUnit, value, ...other } = args;
+    return (
+      <UsageCount
+        {...other}
+        variant="periodic"
+        value={value || 150}
+        valueUnit={valueUnit || 'GB'}
+        periodType={periodType}
+      />
+    );
+  },
 };

@@ -19,6 +19,6 @@ module.exports.warningMessage = function warningMessage(
   const warning = [messageHeader, message, '\n']
     .filter((x) => x !== '')
     .join('\n');
-  // eslint-disable-next-line no-console
+
   console.warn(chalk.yellow(warning));
 };

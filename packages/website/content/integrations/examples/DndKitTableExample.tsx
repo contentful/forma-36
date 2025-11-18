@@ -8,7 +8,7 @@ import {
 } from '@dnd-kit/sortable';
 import { DragHandle, Table, Text } from '@contentful/f36-components';
 import { CSS } from '@dnd-kit/utilities';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 
 export default function DndKitExample() {
   const styles = {

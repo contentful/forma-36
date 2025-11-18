@@ -1,7 +1,5 @@
-import { create } from '@storybook/theming/create';
+import { create } from 'storybook/theming';
 import tokens from '@contentful/f36-tokens';
-
-import logo from './public/forma-logo.png';
 
 export default create({
   base: 'light',
@@ -9,15 +7,15 @@ export default create({
   // Branding information
   brandTitle: 'Forma 36',
   brandUrl: '/',
-  brandImage: logo,
+  brandImage: './forma-logo.png',
 
   // Color palette
   colorPrimary: tokens.colorPrimary,
 
   // UI
-  appBg: tokens.colorElementLightest,
+  appBg: tokens.gray100,
   appContentBg: tokens.colorWhite,
-  appBorderColor: tokens.colorElementLight,
+  appBorderColor: tokens.gray200,
   appBorderRadius: 4,
 
   // Fonts
@@ -29,12 +27,12 @@ export default create({
   textInverseColor: tokens.colorWhite,
 
   // Toolbar default and active colors
-  barTextColor: tokens.colorTextLightest,
+  barTextColor: tokens.gray500,
   barSelectedColor: tokens.colorPrimary,
   barBg: tokens.colorWhite,
   // Form colors
   inputBg: tokens.colorWhite,
-  inputBorder: tokens.colorElementMid,
-  inputTextColor: tokens.colorTextDark,
+  inputBorder: tokens.gray300,
+  inputTextColor: tokens.gray900,
   inputBorderRadius: 2,
 });

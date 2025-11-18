@@ -28,3 +28,5 @@ export const NavbarItemSkeleton = ({
     </SkeletonContainer>
   );
 };
+
+NavbarItemSkeleton.displayName = 'NavbarItemSkeleton';

@@ -1,19 +1,17 @@
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 import React, {
   forwardRef,
-  type ElementType,
   type ReactElement,
   type SVGAttributes,
 } from 'react';
 import {
-  Box,
   type CommonProps,
   type PolymorphicComponent,
   type PolymorphicProps,
   type ExpandProps,
-  type MappedOmit,
 } from '@contentful/f36-core';
-import type { IconComponent, IconSize } from './types.js';
+import { Box } from '@contentful/f36-core';
+import type { IconSize } from './types.js';
 
 const ICON_DEFAULT_TAG = 'svg';
 
@@ -44,22 +42,15 @@ export type IconInternalProps = CommonProps & {
   viewBox?: SVGAttributes<SVGSVGElement>['viewBox'];
 };
 
-export type IconProps<E extends ElementType = IconComponent> = PolymorphicProps<
-  IconInternalProps,
-  E,
-  'as' | 'children' | 'width' | 'height'
->;
+export type IconProps<E extends React.ElementType = typeof ICON_DEFAULT_TAG> =
+  PolymorphicProps<
+    IconInternalProps,
+    E,
+    'as' | 'children' | 'width' | 'height'
+  >;
 
-const useAriaHidden = (
-  props: Pick<
-    IconProps<typeof ICON_DEFAULT_TAG>,
-    'aria-label' | 'aria-labelledby'
-  >,
-) => {
-  const ariaLabel = props['aria-label'];
-  const ariaLabelBy = props['aria-labelledby'];
-
-  if (ariaLabel || ariaLabelBy) {
+const useAriaHidden = ({ ariaLabel, ariaLabelledBy }) => {
+  if (ariaLabel || ariaLabelledBy) {
     return {};
   }
 
@@ -68,9 +59,13 @@ const useAriaHidden = (
   };
 };
 
-export function _Icon<E extends ElementType = IconComponent>(
-  {
-    as,
+export function IconBase<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
+  props: IconProps<E>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  forwardedRef: React.Ref<any>,
+) {
+  const {
+    as: Element = ICON_DEFAULT_TAG,
     children,
     className,
     color = 'currentColor',
@@ -78,11 +73,12 @@ export function _Icon<E extends ElementType = IconComponent>(
     size = 'medium',
     testId = 'cf-ui-icon',
     viewBox = '0 0 20 20',
+    isActive,
+    'aria-label': ariaLabel,
+    'aria-labelledBy': ariaLabelledBy,
     ...otherProps
-  }: MappedOmit<IconProps<E>, 'isActive'>,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  forwardedRef: React.Ref<any>,
-) {
+  } = props;
+
   const shared = {
     className: cx(
       css({
@@ -93,31 +89,22 @@ export function _Icon<E extends ElementType = IconComponent>(
       className,
     ),
     ref: forwardedRef,
-    testId,
     role,
   };
 
-  const ariaHiddenProps = useAriaHidden(otherProps);
-
-  if (as) {
-    return (
-      <Box
-        display="inline-block"
-        {...ariaHiddenProps}
-        {...otherProps}
-        {...shared}
-        as={as as React.ElementType}
-      />
-    );
-  }
+  const ariaHiddenProps = useAriaHidden({ ariaLabel, ariaLabelledBy });
 
   return (
+    // @ts-expect-error has polymorphic type issues
     <Box
-      viewBox={viewBox}
+      as={Element}
       display="inline-block"
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
+      testId={testId}
+      {...(Element === ICON_DEFAULT_TAG ? { viewBox } : {})}
       {...ariaHiddenProps}
       {...otherProps}
-      as={ICON_DEFAULT_TAG}
       {...shared}
     >
       {children}
@@ -125,8 +112,8 @@ export function _Icon<E extends ElementType = IconComponent>(
   );
 }
 
-export const Icon: PolymorphicComponent<
+export const Icon = forwardRef(IconBase) as PolymorphicComponent<
   ExpandProps<IconInternalProps>,
   typeof ICON_DEFAULT_TAG,
   'width' | 'height'
-> = forwardRef(_Icon);
+>;

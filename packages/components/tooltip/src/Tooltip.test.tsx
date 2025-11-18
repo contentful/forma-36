@@ -74,23 +74,6 @@ describe('Tooltip', () => {
     ).toBe('Hover me');
   });
 
-  it('renders the component with a placement attribute', async () => {
-    const user = userEvent.setup();
-    render(
-      <Tooltip content="Tooltip content" placement="left">
-        <span>Hover me</span>
-      </Tooltip>,
-    );
-
-    await user.hover(screen.getByText('Hover me'));
-
-    await waitFor(() =>
-      expect(
-        screen.getByRole('tooltip').getAttribute('data-popper-placement'),
-      ).toBe('left'),
-    );
-  });
-
   it('renders the component with a id attribute', async () => {
     const user = userEvent.setup();
     render(

@@ -1,4 +1,4 @@
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import React, { forwardRef, useMemo, useState } from 'react';
 import {
   type CommonProps,
@@ -12,6 +12,7 @@ import {
   SortDescendingIcon,
   CaretUpDownIcon,
 } from '@contentful/f36-icons';
+import tokens from '@contentful/f36-tokens';
 import { getTextFromChildren } from '@contentful/f36-utils';
 
 import { useTableCellContext } from './TableCellContext';
@@ -45,7 +46,7 @@ export type TableCellProps = PropsWithHTMLElement<
   'th' | 'td'
 >;
 
-function _TableCell(
+function TableCellBase(
   {
     align = 'left',
     children,
@@ -56,12 +57,13 @@ function _TableCell(
     sortButtonAriaLabel,
     ...otherProps
   }: TableCellProps,
-  forwardedRef: React.Ref<any>,
+  forwardedRef: React.Ref<HTMLTableCellElement>,
 ) {
   const [showSorting, setShowSorting] = useState(false);
   const { as, name: context, offsetTop } = useTableCellContext();
   const { verticalAlign } = useTableContext();
-  const SortingIcon = SortingIconMap[sortDirection];
+
+  const SortingIcon = sortDirection ? SortingIconMap[sortDirection] : undefined;
   const isTableHead = context === 'head';
   const styles = getTableCellStyles({
     isSortable: isTableHead ? isSortable : undefined,
@@ -101,14 +103,14 @@ function _TableCell(
         type="button"
       >
         {children}
-        {sortDirection ? (
-          <SortingIcon size="tiny" variant="secondary" />
+        {sortDirection && SortingIcon ? (
+          <SortingIcon size="tiny" color={tokens.gray900} />
         ) : (
           <CaretUpDownIcon
             aria-hidden={!showSorting}
             className={styles.sortIcon(showSorting)}
             size="tiny"
-            variant="secondary"
+            color={tokens.gray900}
           />
         )}
       </button>
@@ -133,9 +135,9 @@ function _TableCell(
   );
 }
 
-_TableCell.displayName = 'TableCell';
+TableCellBase.displayName = 'TableCell';
 
-export const TableCell: PolymorphicComponent<
+export const TableCell = forwardRef(TableCellBase) as PolymorphicComponent<
   ExpandProps<TableCellInternalProps>,
   'th' | 'td'
-> = forwardRef(_TableCell);
+>;

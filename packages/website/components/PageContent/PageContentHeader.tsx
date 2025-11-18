@@ -1,5 +1,5 @@
 import React from 'react';
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 
 import tokens from '@contentful/f36-tokens';
 import { DisplayText, Flex, TextLink, Note } from '@contentful/f36-components';

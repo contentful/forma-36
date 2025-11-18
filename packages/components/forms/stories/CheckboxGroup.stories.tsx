@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Checkbox, CheckboxGroupProps } from '../src';
 import { FormControl } from '@contentful/f36-forms';
 import { Paragraph } from '@contentful/f36-typography';
@@ -30,7 +30,9 @@ export const Basic = (args: CheckboxGroupProps) => {
 
   const { value } = args;
   useEffect(() => {
-    Array.isArray(value) && setGroupState(value);
+    if (Array.isArray(value)) {
+      setGroupState(value);
+    }
   }, [value]);
 
   return (
@@ -44,26 +46,27 @@ export const Basic = (args: CheckboxGroupProps) => {
     </Checkbox.Group>
   );
 };
-
 Basic.args = {
   defaultValue: ['apples', 'kiwis'],
 };
 
-export const Uncontrolled = (args: CheckboxGroupProps) => {
-  return (
-    <Checkbox.Group defaultValue={args.defaultValue}>
-      <Checkbox value="apples">Apples</Checkbox>
-      <Checkbox value="pears">Pears</Checkbox>
-      <Checkbox value="peaches">Peaches</Checkbox>
-      <Checkbox value="mangos">Mangos</Checkbox>
-      <Checkbox value="kiwis">Kiwis</Checkbox>
-      <Checkbox value="bananas">Bananas</Checkbox>
-    </Checkbox.Group>
-  );
-};
+export const Uncontrolled = {
+  render: (args: CheckboxGroupProps) => {
+    return (
+      <Checkbox.Group defaultValue={args.defaultValue}>
+        <Checkbox value="apples">Apples</Checkbox>
+        <Checkbox value="pears">Pears</Checkbox>
+        <Checkbox value="peaches">Peaches</Checkbox>
+        <Checkbox value="mangos">Mangos</Checkbox>
+        <Checkbox value="kiwis">Kiwis</Checkbox>
+        <Checkbox value="bananas">Bananas</Checkbox>
+      </Checkbox.Group>
+    );
+  },
 
-Uncontrolled.args = {
-  defaultValue: ['apples', 'kiwis'],
+  args: {
+    defaultValue: ['apples', 'kiwis'],
+  },
 };
 
 export const WithFormControl = (args: CheckboxGroupProps) => {
@@ -80,8 +83,11 @@ export const WithFormControl = (args: CheckboxGroupProps) => {
   };
 
   const { value } = args;
+
   useEffect(() => {
-    Array.isArray(value) && setGroupState(value);
+    if (Array.isArray(value)) {
+      setGroupState(value);
+    }
   }, [value]);
 
   return (
@@ -106,7 +112,6 @@ export const WithFormControl = (args: CheckboxGroupProps) => {
     </FormControl>
   );
 };
-
 WithFormControl.args = {
   defaultValue: ['apples', 'kiwis'],
 };

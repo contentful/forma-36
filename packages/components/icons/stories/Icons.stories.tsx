@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Box, Flex } from '@contentful/f36-core';
 import { SectionHeading, Text } from '@contentful/f36-typography';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryFn, StoryObj, Meta } from '@storybook/react-vite';
 import * as icons from '../src';
 import type { IconProps, IconComponent } from '../src';
 
@@ -19,21 +19,23 @@ export default {
   title: 'Components/Icons',
 } as Meta;
 
-export const Default: Story<IconProps> = (args) => {
-  const Icon = icons.ArrowDownIcon;
+export const Default: StoryObj<IconProps> = {
+  render: (args) => {
+    const Icon = icons.ArrowDownIcon;
 
-  return (
-    <Fragment>
-      <SectionHeading as="h3" marginRight="spacingS" marginBottom="spacingS">
-        Built-in icons
-      </SectionHeading>
+    return (
+      <Fragment>
+        <SectionHeading as="h3" marginRight="spacingS" marginBottom="spacingS">
+          Built-in icons
+        </SectionHeading>
 
-      <Icon {...args} />
-    </Fragment>
-  );
+        <Icon {...args} />
+      </Fragment>
+    );
+  },
 };
 
-export const Overview: Story = () => {
+export const Overview: StoryFn = () => {
   return (
     <Fragment>
       <SectionHeading as="h3" marginBottom="spacingS">

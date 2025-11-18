@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { MDXRemote, type MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import * as f36Components from '@contentful/f36-components';
 import * as f36Icons from '@contentful/f36-icons';
@@ -11,11 +11,21 @@ import { StaticSource } from './LiveEditor/StaticSource';
 import tokens from '@contentful/f36-tokens';
 import { CustomHeading2 } from './CustomHeading2';
 
-const { DisplayText, Subheading, Paragraph, Text, TextLink, List, Table } =
-  f36Components;
+const {
+  DisplayText,
+  Subheading,
+  SectionHeading,
+  Paragraph,
+  Text,
+  TextLink,
+  List,
+  Table,
+  Heading,
+  Stack,
+  Flex,
+  Note,
+} = f36Components;
 
-/* eslint-disable react/display-name */
-/* eslint-disable @next/next/no-img-element */
 const components = {
   h1: (props) => <DisplayText as="h1" {...props} />,
   // to cover a specific case with "Props (API reference)"
@@ -24,14 +34,25 @@ const components = {
   h4: (props) => <Subheading as="h4" {...props} />,
   h5: (props) => <Subheading as="h5" {...props} />,
   h6: (props) => <Subheading as="h6" {...props} />,
+  Heading,
+  DisplayText,
+  Subheading,
+  SectionHeading,
+  Paragraph,
+  Text,
+  TextLink,
+  Note,
+  Stack,
+  Flex,
   p: (props) => <Paragraph {...props} />,
   strong: (props) => <Text fontWeight="fontWeightDemiBold" {...props} />,
   a: (props) => {
     if (props.href && props.href.startsWith('..')) {
+      const { href, children, ...textLinkProps } = props;
       return (
-        <NextLink href={props.href}>
-          <TextLink {...props} />
-        </NextLink>
+        <TextLink as={NextLink} href={href} {...textLinkProps}>
+          {children}
+        </TextLink>
       );
     }
     return <TextLink {...props} />;
@@ -39,10 +60,43 @@ const components = {
   ul: (props) => <List style={{ marginBottom: tokens.spacingM }} {...props} />,
   li: (props) => <List.Item {...props} />,
   code: (props) => {
-    if (props.static) {
-      return <StaticSource {...props} />;
+    // Inline code will never be inside <pre>
+    if (props.parentName !== 'pre') {
+      return (
+        <code
+          style={{
+            fontFamily: tokens.fontStackMonospace,
+            backgroundColor: tokens.gray200,
+            color: tokens.gray800,
+            padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
+            borderRadius: tokens.borderRadiusSmall,
+            fontSize: tokens.fontSizeM,
+          }}
+          {...props}
+        />
+      );
     }
-    return <ComponentSource {...props} />;
+
+    // If it's inside <pre>, MDX will render via `pre` mapping below
+    return <code {...props} />;
+  },
+  pre: (props) => {
+    const codeElement = props.children;
+    const {
+      className = '',
+      static: isStatic,
+      file,
+      children,
+    } = codeElement.props;
+
+    const code = Array.isArray(children) ? children.join('') : children;
+    const language = className.replace('language-', '');
+
+    if (isStatic) {
+      return <StaticSource code={code} language={language} />;
+    }
+
+    return <ComponentSource code={code} file={file} />;
   },
   table: (props) => <Table {...props} />,
   thead: (props) => <Table.Head {...props} />,
@@ -56,8 +110,6 @@ const components = {
 
   ...MdxComponents,
 };
-/* eslint-enable @next/next/no-img-element */
-/* eslint-enable react/display-name */
 
 export function MdxRenderer(props: {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;

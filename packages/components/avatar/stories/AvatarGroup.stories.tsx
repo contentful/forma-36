@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { SectionHeading } from '@contentful/f36-typography';
 
 import { Avatar, type AvatarProps } from '../src/Avatar';
@@ -10,7 +10,7 @@ export default {
   title: 'Components/Avatar/AvatarGroup',
 } as Meta;
 
-export const Overview: Story<AvatarProps> = (args) => {
+export const Overview: StoryObj<AvatarProps> = (args) => {
   return (
     <>
       <SectionHeading as="h3" marginBottom="spacingS">

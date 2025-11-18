@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import tokens from '@contentful/f36-tokens';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
@@ -17,7 +17,7 @@ export default {
   title: 'Components/Avatar',
 } as Meta;
 
-export const Overview: Story<AvatarProps> = (args) => {
+export const Overview: StoryObj<AvatarProps> = (args) => {
   return (
     <>
       <SectionHeading as="h3" marginBottom="spacingS">
@@ -192,7 +192,7 @@ Overview.args = {
   src: 'https://images.ctfassets.net/iq4lnigp6fgt/72KhxI84kw1SE9gP8gDp7R/c5fa24bdc295a318018aea0ca46e2de8/forma-36-storybook-asset.png?fit=fill&f=top_left&w=100&h=100',
 };
 
-export const BorderColors: Story<AvatarProps> = (args) => {
+export const BorderColors: StoryObj<AvatarProps> = (args) => {
   const { src, ...argsNoSrc } = args;
   return (
     <>

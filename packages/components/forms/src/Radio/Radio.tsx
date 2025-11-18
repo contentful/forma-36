@@ -10,7 +10,7 @@ export type RadioProps = Omit<
   'type' | 'isIndeterminate' | 'size'
 >;
 
-const _Radio = (
+const RadioBase = (
   props: ExpandProps<RadioProps>,
   ref: React.Ref<HTMLInputElement>,
 ) => {
@@ -70,4 +70,6 @@ const _Radio = (
   );
 };
 
-export const Radio = React.forwardRef(_Radio);
+RadioBase.displayName = 'Radio';
+
+export const Radio = React.forwardRef(RadioBase);
