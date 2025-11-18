@@ -1,7 +1,7 @@
 ---
 title: 'Multiselect'
 type: 'component'
-status: 'alpha'
+status: 'stable'
 section: 'formComponents'
 slug: /components/multiselect/
 github: 'https://github.com/contentful/forma-36/tree/main/packages/components/Multiselect'
@@ -16,6 +16,8 @@ It has multiple optional features like a search.
 
 ```jsx static=true
 import { Multiselect } from '@contentful/f36-multiselect';
+// or
+import { Multiselect } from '@contentful/f36-components';
 ```
 
 ## Examples
@@ -81,6 +83,14 @@ To offer a shortcut for selecting and deselecting all options, you can use the c
 In some cases it is desired to toggle the status of the popover drawer as well as to clear the search field from the parent. E.g. after a change has been applied. For this the Component offers two optional reference properties `toggleRef` and `resetSearchRef`
 
 ```jsx file=./examples/MultiselectReferenceExample.tsx
+
+```
+
+### Controlling from the Outside
+
+If you want to control the trigger of the multiselect, like adding an `isDisabled` state to it, you can add props to it via the `triggerButtonProps`.
+
+```jsx file=./examples/MultiselectIsDisabledExample.tsx
 
 ```
 

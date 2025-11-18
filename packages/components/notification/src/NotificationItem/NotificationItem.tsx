@@ -1,11 +1,12 @@
 import React from 'react';
 import { cx } from 'emotion';
+import tokens from '@contentful/f36-tokens';
 import {
   CheckCircleIcon,
-  ErrorCircleIcon,
+  WarningOctagonIcon,
   WarningIcon,
-  CloseIcon,
-  InfoCircleIcon,
+  XIcon,
+  InfoIcon,
 } from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
 import { TextLink } from '@contentful/f36-text-link';
@@ -71,11 +72,13 @@ const _NotificationItem = (props: ExpandProps<NotificationItemProps>, ref) => {
   const styles = getStyles({ variant });
 
   const iconSize = title ? 'medium' : 'small';
-  const iconVariants = {
-    positive: <CheckCircleIcon variant={variant} size={iconSize} />,
-    warning: <WarningIcon variant={variant} size={iconSize} />,
-    negative: <ErrorCircleIcon variant={variant} size={iconSize} />,
-    primary: <InfoCircleIcon variant={variant} size={iconSize} />,
+  const iconVariants: Record<NotificationVariant, JSX.Element> = {
+    positive: <CheckCircleIcon color={tokens.colorPositive} size={iconSize} />,
+    warning: <WarningIcon color={tokens.colorWarning} size={iconSize} />,
+    negative: (
+      <WarningOctagonIcon color={tokens.colorNegative} size={iconSize} />
+    ),
+    primary: <InfoIcon color={tokens.colorPrimary} size={iconSize} />,
   };
 
   const intents = {
@@ -92,11 +95,16 @@ const _NotificationItem = (props: ExpandProps<NotificationItemProps>, ref) => {
       data-intent={intents[variant]}
       aria-live={variant === 'positive' ? 'polite' : 'assertive'}
       className={cx(styles.wrapper, className)}
+      alignItems={title ? 'flex-start' : 'center'}
       {...otherProps}
       ref={ref}
     >
-      <Box className={cx(styles.icon)}>{iconVariants[variant]}</Box>
-      <Box className={cx(styles.notification)}>
+      <Flex className={cx(styles.icon)}>{iconVariants[variant]}</Flex>
+      <Flex
+        flexDirection="column"
+        alignItems="flex-start"
+        className={cx(styles.notification)}
+      >
         {title && (
           <Heading
             as="h2"
@@ -119,13 +127,13 @@ const _NotificationItem = (props: ExpandProps<NotificationItemProps>, ref) => {
             {cta.label}
           </TextLink>
         )}
-      </Box>
+      </Flex>
       {withCloseButton && (
         <Box>
           <Button
             className={cx(styles.closeButton)}
             variant="transparent"
-            startIcon={<CloseIcon />}
+            startIcon={<XIcon />}
             onClick={() => {
               onClose && onClose();
             }}

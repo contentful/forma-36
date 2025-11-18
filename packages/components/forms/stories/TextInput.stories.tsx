@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { TextInput, TextInputProps } from '../src';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
-import { LockIcon, SearchIcon } from '@contentful/f36-icons';
+import { LockSimpleIcon, MagnifyingGlassIcon } from '@contentful/f36-icons';
 import { IconButton } from '@contentful/f36-button';
 import { DensityProvider } from '@contentful/f36-utils';
 
@@ -137,7 +137,7 @@ export const Overview = () => {
           value="Example value"
           id="input-7"
           placeholder="My great input"
-          icon={<SearchIcon />}
+          icon={<MagnifyingGlassIcon />}
         />
       </Flex>
 
@@ -152,7 +152,7 @@ export const Overview = () => {
           value="Example value"
           id="input-8"
           placeholder="My great input"
-          icon={<SearchIcon />}
+          icon={<MagnifyingGlassIcon />}
           size="small"
         />
       </Flex>
@@ -172,7 +172,7 @@ export const Overview = () => {
           <IconButton
             aria-label="Unlock"
             variant="secondary"
-            icon={<LockIcon />}
+            icon={<LockSimpleIcon />}
             onClick={() => {
               setFirstLocked((value) => !value);
             }}
@@ -197,7 +197,7 @@ export const Overview = () => {
             size="small"
             aria-label="Unlock"
             variant="secondary"
-            icon={<LockIcon />}
+            icon={<LockSimpleIcon />}
             onClick={() => {
               setSecondLocked((value) => !value);
             }}
@@ -327,7 +327,7 @@ export const WithHighDensity = () => {
             value="Example value"
             id="input-7"
             placeholder="My great input"
-            icon={<SearchIcon />}
+            icon={<MagnifyingGlassIcon />}
           />
         </Flex>
 
@@ -342,7 +342,7 @@ export const WithHighDensity = () => {
             value="Example value"
             id="input-8"
             placeholder="My great input"
-            icon={<SearchIcon />}
+            icon={<MagnifyingGlassIcon />}
             size="small"
           />
         </Flex>
@@ -362,7 +362,7 @@ export const WithHighDensity = () => {
             <IconButton
               aria-label="Unlock"
               variant="secondary"
-              icon={<LockIcon size="tiny" />}
+              icon={<LockSimpleIcon size="tiny" />}
               onClick={() => {
                 setFirstLocked((value) => !value);
               }}
@@ -387,7 +387,7 @@ export const WithHighDensity = () => {
               size="small"
               aria-label="Unlock"
               variant="secondary"
-              icon={<LockIcon size="tiny" />}
+              icon={<LockSimpleIcon size="tiny" />}
               onClick={() => {
                 setSecondLocked((value) => !value);
               }}

@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  docker: circleci/docker@2.1.3
+  docker: circleci/docker@2.8.2
   node: circleci/node@5.0.2
   vault: contentful/vault@1.29.0
 
@@ -89,7 +89,7 @@ jobs:
           command: npx wait-on http://localhost:3000
       - run:
           name: Run links checker
-          command: npx blc http://localhost:3000 -ro --exclude "https://medium.com/contentful-design" --exclude "https://github.com/contentful/forma-36" --exclude "https://www.figma.com/@contentful"
+          command: npx blc http://localhost:3000 -ro --exclude "https://medium.com/contentful-design" --exclude "https://github.com/contentful/forma-36" --exclude "https://www.figma.com/@contentful" --exclude "https://react-hook-form.com"
 
   deploy_chromatic:
     docker:
@@ -181,9 +181,6 @@ workflows:
       - test:
           requires:
             - build
-      - check-links:
-          requires:
-            - build
       - deploy_chromatic:
           requires:
             - build
@@ -204,6 +201,16 @@ workflows:
             branches:
               only:
                 - main
+
+  f36-link-checker:
+    jobs:
+      - build:
+          context:
+            - vault
+      - check-links:
+          requires:
+            - build
+
   f36-changelog:
     triggers:
       - schedule:

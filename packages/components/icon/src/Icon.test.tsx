@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { render } from '@testing-library/react';
-import { MdHelp as ExternalIcon } from 'react-icons/md';
+import { MdHelp as ExternalIcon } from 'react-icons/md/index.js';
 
-import { Icon } from '.';
+import { Icon } from './index.js';
 
 describe('Icon', () => {
   describe('with children', () => {

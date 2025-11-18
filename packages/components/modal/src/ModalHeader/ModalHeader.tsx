@@ -1,6 +1,6 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { CloseIcon } from '@contentful/f36-icons';
+import { XIcon } from '@contentful/f36-icons';
 import {
   Flex,
   type PropsWithHTMLElement,
@@ -63,7 +63,7 @@ export const ModalHeader = ({
             variant="transparent"
             aria-label={aria.closeIconLabel}
             size="small"
-            icon={<CloseIcon size="small" />}
+            icon={<XIcon size="small" />}
             onClick={() => {
               onClose();
             }}

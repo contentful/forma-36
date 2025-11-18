@@ -1,5 +1,157 @@
 # Change Log
 
+## 5.8.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.8.1
+  - @contentful/f36-icon@5.8.1
+
+## 5.8.0
+
+### Minor Changes
+
+- [#3222](https://github.com/contentful/forma-36/pull/3222) [`d2e900b`](https://github.com/contentful/forma-36/commit/d2e900bb10135cdbdd9bf2b0fa799530548f11a4) Thanks [@harikakondur](https://github.com/harikakondur)! - new icons for app logo
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.8.0
+  - @contentful/f36-icon@5.8.0
+
+## 5.7.0
+
+### Minor Changes
+
+- [#3219](https://github.com/contentful/forma-36/pull/3219) [`3ebf269`](https://github.com/contentful/forma-36/commit/3ebf269c33b3b638bbc27c0aca89fa823d9ad3a7) Thanks [@YvesRijckaert](https://github.com/YvesRijckaert)! - feat: add square split horizontal icon
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.7.0
+  - @contentful/f36-icon@5.7.0
+
+## 5.6.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.6.0
+  - @contentful/f36-icon@5.6.0
+
+## 5.5.0
+
+### Minor Changes
+
+- [#3181](https://github.com/contentful/forma-36/pull/3181) [`6063710`](https://github.com/contentful/forma-36/commit/6063710c9c73995d65478957fbc96868f68cfa86) Thanks [@andipaetzold](https://github.com/andipaetzold)! - Add `TrayArrowUpIcon`
+
+- [#3181](https://github.com/contentful/forma-36/pull/3181) [`6063710`](https://github.com/contentful/forma-36/commit/6063710c9c73995d65478957fbc96868f68cfa86) Thanks [@andipaetzold](https://github.com/andipaetzold)! - Add `TrayArrowDownIcon`
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.5.0
+  - @contentful/f36-icon@5.5.0
+
+## 5.4.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.4.1
+  - @contentful/f36-icon@5.4.1
+
+## 5.4.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.4.0
+  - @contentful/f36-icon@5.4.0
+
+## 5.3.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.3.0
+  - @contentful/f36-icon@5.3.0
+
+## 5.2.0
+
+### Minor Changes
+
+- [#3174](https://github.com/contentful/forma-36/pull/3174) [`231660d`](https://github.com/contentful/forma-36/commit/231660d02a9e4f30bf9ad7fbbd2b69b591f3fc00) Thanks [@andipaetzold](https://github.com/andipaetzold)! - Add `GlobeXIcon`
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.2.0
+  - @contentful/f36-icon@5.2.0
+
+## 5.1.1
+
+### Patch Changes
+
+- [#3170](https://github.com/contentful/forma-36/pull/3170) [`6156a58`](https://github.com/contentful/forma-36/commit/6156a58a25edfd12edd158f95e41154b6a5a4663) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(icons): pin phosphor to version with new names and working ESM build
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.1.1
+  - @contentful/f36-icon@5.1.1
+
+## 5.1.0
+
+### Minor Changes
+
+- [#2828](https://github.com/contentful/forma-36/pull/2828) [`b0fabb2`](https://github.com/contentful/forma-36/commit/b0fabb257f5527943daeaceccea2259cd6004225) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+### Patch Changes
+
+- Updated dependencies [[`b0fabb2`](https://github.com/contentful/forma-36/commit/b0fabb257f5527943daeaceccea2259cd6004225)]:
+  - @contentful/f36-icon@5.1.0
+  - @contentful/f36-tokens@5.1.0
+  - @contentful/f36-core@5.1.0
+
+## 5.0.0
+
+### Major Changes
+
+- [#2828](https://github.com/contentful/forma-36/pull/2828) [`a2df764`](https://github.com/contentful/forma-36/commit/a2df764247f7439d5b1b4f3fa71e2b46597c2785) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - Notice: 5.0.0 is not to be installed
+
+  3 years ago, some packages were bumped to 5.0.0 by mistake.
+
+  Therefore, please rely on the next minor version 5.1.0 to avoid any issues.
+
+- [#2828](https://github.com/contentful/forma-36/pull/2828) [`a2df764`](https://github.com/contentful/forma-36/commit/a2df764247f7439d5b1b4f3fa71e2b46597c2785) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - The `Icon` component has been significantly updated in version 5, introducing several breaking changes to its API. The available icon sizes have been streamlined to three options for greater consistency and ease of use. The `trimmed` and `variant` props have been removed to simplify the component. Instead, a new `color` prop has been added, allowing for more flexible icon styling. Additionally, an `isActive` prop is now available to indicate the active state of an icon.
+
+  📖 Follow this [migration guide](https://github.com/contentful/forma-36/blob/main/MIGRATION.md#icon).
+
+  ### Codemod
+
+  A codemod is available to migrate your icons:
+
+  ```bash
+  npx @contentful/f36-codemod
+  ```
+
+### Patch Changes
+
+- Updated dependencies [[`a2df764`](https://github.com/contentful/forma-36/commit/a2df764247f7439d5b1b4f3fa71e2b46597c2785), [`a2df764`](https://github.com/contentful/forma-36/commit/a2df764247f7439d5b1b4f3fa71e2b46597c2785)]:
+  - @contentful/f36-core@5.0.0
+  - @contentful/f36-icon@5.0.0
+  - @contentful/f36-tokens@5.0.0
+
+## 4.29.1
+
+### Patch Changes
+
+- [#3108](https://github.com/contentful/forma-36/pull/3108) [`03e8d12`](https://github.com/contentful/forma-36/commit/03e8d128132f451a13a39cbeb9e20f1c1acbd0de) Thanks [@Chaoste](https://github.com/Chaoste)! - Fixes the viewbox of the Subscript Icon to display the icon correctly.
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.80.4
+  - @contentful/f36-icon@4.80.4
+
 ## 4.29.0
 
 ### Minor Changes

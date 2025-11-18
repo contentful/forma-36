@@ -53,12 +53,11 @@ export interface FlexInternalProps
    * Defines a gap between flexbox items. */
   gap?: Spacing | string;
   /**
-   * Defines how flexbox/grid items are aligned according to the main axis, within a flexbox/grid container. */
+   * Defines how flexbox items are aligned according to the main axis, within a flexbox container. */
   justifyContent?: CSS.Property.JustifyContent;
   /**
-   * Defines the default justify-self for all items of the box, giving them all a default way of justifying each box along the appropriate axis. */
-  justifyItems?: CSS.Property.JustifyContent;
-  /**
+   * Use it for flexbox items, not for flexbox containers.
+   *
    * Sets the way a box is justified inside its alignment container along the appropriate axis. */
   justifySelf?: CSS.Property.JustifySelf;
   /**
@@ -66,11 +65,13 @@ export interface FlexInternalProps
    */
   alignItems?: CSS.Property.AlignItems;
   /**
+   * Use it for flexbox items, not for flexbox containers.
+   *
    * Works like align-items, but applies only to a single flexbox item, instead of all of them.
    */
-  alignSelf?: CSS.Property.AlignItems;
+  alignSelf?: CSS.Property.AlignSelf;
   /**
-   * Defines how each line is aligned within a flexbox/grid container.
+   * Defines how each line is aligned within a flexbox container.
    */
   alignContent?: CSS.Property.AlignContent;
   /**
@@ -100,7 +101,6 @@ function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
     fullWidth,
     gap,
     justifyContent,
-    justifyItems,
     justifySelf,
     order,
     children,
@@ -128,7 +128,6 @@ function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
           flexDirection,
           gap: gap === 'none' ? 0 : tokens[gap] ?? gap,
           justifyContent,
-          justifyItems,
           justifySelf,
           alignItems,
           alignSelf,

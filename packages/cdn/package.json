@@ -8,7 +8,7 @@
     "@fastly/js-compute": "3.32.2"
   },
   "devDependencies": {
-    "@fastly/cli": "10.14.0",
+    "@fastly/cli": "10.19.0",
     "@fastly/compute-js-static-publish": "6.2.0"
   },
   "engines": {
@@ -19,5 +19,9 @@
     "prebuild": "npx compute-js-static-publish --build-static",
     "build": "env -i $(which node) ../../node_modules/.bin/js-compute-runtime ./src/index.js ./bin/main.wasm",
     "serve": "fastly compute serve"
+  },
+  "optionalDependencies": {
+    "@bytecodealliance/wizer-linux-x64": "^9.0.0",
+    "@napi-rs/lzma-linux-x64-gnu": "^1.4.5"
   }
 }

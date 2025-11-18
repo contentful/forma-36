@@ -2,15 +2,18 @@
   "unassigned": [
     {
       "title": "Accordion",
-      "slug": "/components/accordion/"
+      "slug": "/components/accordion/",
+      "status": "stable"
     },
     {
       "title": "Asset",
-      "slug": "/components/asset/"
+      "slug": "/components/asset/",
+      "status": "stable"
     },
     {
       "title": "Autocomplete",
-      "slug": "/components/autocomplete/"
+      "slug": "/components/autocomplete/",
+      "status": "stable"
     },
     {
       "title": "Badge",
@@ -19,7 +22,8 @@
     },
     {
       "title": "DragHandle",
-      "slug": "/components/drag-handle/"
+      "slug": "/components/drag-handle/",
+      "status": "stable"
     },
     {
       "title": "EntityList",
@@ -28,7 +32,8 @@
     },
     {
       "title": "EntityStatusBadge",
-      "slug": "/components/entity-status-badge/"
+      "slug": "/components/entity-status-badge/",
+      "status": "stable"
     },
     {
       "title": "GlobalStyles",
@@ -36,11 +41,13 @@
     },
     {
       "title": "Header",
-      "slug": "/components/header/"
+      "slug": "/components/header/",
+      "status": "stable"
     },
     {
       "title": "Icons",
-      "slug": "/components/icon/"
+      "slug": "/components/icon/",
+      "status": "stable"
     },
     {
       "title": "Image",
@@ -50,7 +57,8 @@
     {
       "title": "Layout",
       "slug": "/components/layout/",
-      "status": "alpha"
+      "isNew": true,
+      "status": "stable"
     },
     {
       "title": "List",
@@ -59,22 +67,23 @@
     },
     {
       "title": "Menu",
-      "slug": "/components/menu/"
+      "slug": "/components/menu/",
+      "status": "stable"
     },
     {
       "title": "Navbar",
       "slug": "/components/navbar/",
-      "isNew": true,
       "status": "stable"
     },
     {
       "title": "NavList",
       "slug": "/components/navlist/",
-      "status": "alpha"
+      "status": "stable"
     },
     {
       "title": "Note",
-      "slug": "/components/note/"
+      "slug": "/components/note/",
+      "status": "stable"
     },
     {
       "title": "Notification",
@@ -84,7 +93,6 @@
     {
       "title": "Pagination",
       "slug": "/components/pagination/",
-      "isNew": true,
       "status": "stable"
     },
     {
@@ -94,16 +102,19 @@
     },
     {
       "title": "Popover",
-      "slug": "/components/popover/"
+      "slug": "/components/popover/",
+      "status": "stable"
     },
     {
       "title": "ProgressStepper",
       "slug": "/components/progress-stepper/",
-      "status": "alpha"
+      "isNew": true,
+      "status": "stable"
     },
     {
       "title": "Skeleton",
-      "slug": "/components/skeleton/"
+      "slug": "/components/skeleton/",
+      "status": "stable"
     },
     {
       "title": "Spinner",
@@ -112,11 +123,13 @@
     },
     {
       "title": "Table",
-      "slug": "/components/table/"
+      "slug": "/components/table/",
+      "status": "stable"
     },
     {
       "title": "Tabs",
-      "slug": "/components/tabs/"
+      "slug": "/components/tabs/",
+      "status": "stable"
     },
     {
       "title": "TextLink",
@@ -129,14 +142,23 @@
       "status": "stable"
     },
     {
-      "title": "Workbench",
-      "slug": "/components/workbench/"
+      "title": "UsageCard",
+      "slug": "/components/usage-card/",
+      "isNew": true,
+      "status": "stable"
+    },
+    {
+      "title": "UsageCount",
+      "slug": "/components/usage-count/",
+      "isNew": true,
+      "status": "stable"
     }
   ],
   "animationComponents": [
     {
       "title": "Collapse",
-      "slug": "/components/collapse/"
+      "slug": "/components/collapse/",
+      "status": "stable"
     }
   ],
   "buttonComponents": [
@@ -170,7 +192,6 @@
     {
       "title": "Calendar",
       "slug": "/components/calendar/",
-      "isNew": true,
       "status": "stable"
     },
     {
@@ -181,12 +202,12 @@
     {
       "title": "Datepicker",
       "slug": "/components/datepicker/",
-      "isNew": true,
       "status": "stable"
     },
     {
       "title": "DateTime",
-      "slug": "/components/datetime/"
+      "slug": "/components/datetime/",
+      "status": "stable"
     },
     {
       "title": "RelativeDateTime",
@@ -213,7 +234,6 @@
     {
       "title": "MissingContent",
       "slug": "/components/missingcontent/",
-      "isNew": true,
       "status": "stable"
     },
     {
@@ -256,7 +276,7 @@
     {
       "title": "Multiselect",
       "slug": "/components/multiselect/",
-      "status": "alpha"
+      "status": "stable"
     },
     {
       "title": "Radio",
@@ -316,7 +336,8 @@
   "cardComponents": [
     {
       "title": "AssetCard",
-      "slug": "/components/asset-card/"
+      "slug": "/components/asset-card/",
+      "status": "stable"
     },
     {
       "title": "Card",
@@ -325,14 +346,20 @@
     },
     {
       "title": "EntryCard",
-      "slug": "/components/entry-card/"
+      "slug": "/components/entry-card/",
+      "status": "stable"
     },
     {
       "title": "InlineEntryCard",
-      "slug": "/components/inline-entry-card/"
+      "slug": "/components/inline-entry-card/",
+      "status": "stable"
     }
   ],
   "utils": [
+    {
+      "title": "getIconColorToken",
+      "slug": "/utils/get-icon-color-token/"
+    },
     {
       "title": "getStringMatch",
       "slug": "/utils/get-string-match/"
@@ -394,43 +421,8 @@
   ],
   "deprecatedComponents": [
     {
-      "title": "Dropdown",
-      "slug": "/components/dropdown/",
-      "status": "deprecated"
-    },
-    {
-      "title": "EditorToolbar",
-      "slug": "/components/editor-toolbar/",
-      "status": "deprecated"
-    },
-    {
-      "title": "EmptyState",
-      "slug": "/components/empty-state/",
-      "status": "deprecated"
-    },
-    {
-      "title": "Illustration",
-      "slug": "/components/illustration/",
-      "status": "deprecated"
-    },
-    {
-      "title": "InViewport",
-      "slug": "/components/in-viewport/",
-      "status": "deprecated"
-    },
-    {
-      "title": "TabFocusTrap",
-      "slug": "/components/tab-focus-trap/",
-      "status": "deprecated"
-    },
-    {
-      "title": "Tag",
-      "slug": "/components/tag/",
-      "status": "deprecated"
-    },
-    {
-      "title": "Typography Component",
-      "slug": "/components/typography/",
+      "title": "Workbench",
+      "slug": "/components/workbench/",
       "status": "deprecated"
     }
   ],

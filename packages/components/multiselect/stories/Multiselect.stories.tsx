@@ -5,7 +5,7 @@ import { Stack } from '@contentful/f36-core';
 import { Multiselect } from '../src';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Button } from '@contentful/f36-button';
-import { HelpCircleIcon } from '@contentful/f36-icons';
+import { InfoIcon } from '@contentful/f36-icons';
 
 export default {
   title: 'Components/Multiselect',
@@ -247,7 +247,7 @@ export const WithSearch = () => {
     >
       <Multiselect
         placeholder="Search your favorite fruit"
-        onSearchValueChange={handleSearchValueChange}
+        searchProps={{ onSearchValueChange: handleSearchValueChange }}
         popoverProps={{ isFullWidth: true, listMaxHeight: 250 }}
         currentSelection={selectedFruits}
       >
@@ -325,7 +325,7 @@ export const WithComponentInOption = () => {
                   item={item.name}
                   inputValue={searchValue}
                 />{' '}
-                <HelpCircleIcon size="tiny" />
+                <InfoIcon size="tiny" />
               </Multiselect.Option>
             );
           })}
@@ -561,6 +561,52 @@ export const WithClearAll = () => {
             );
           })}
         </div>
+      </Multiselect>
+    </Stack>
+  );
+};
+
+export const WithDisabledTrigger = () => {
+  const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
+
+  const handleSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked, value } = event.target;
+    const currentFruit = fruits.find((fruit) => fruit.value === value);
+    if (checked) {
+      setSelectedFruits((prevState) => [...prevState, currentFruit.name]);
+    } else {
+      //its important to use prevState to avoid race conditions when using the state variable as reference.
+      setSelectedFruits((prevState) => {
+        return prevState.filter((fruit) => fruit !== currentFruit.name);
+      });
+    }
+  };
+
+  return (
+    <Stack
+      style={{ width: '180px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      <Multiselect
+        placeholder="Select many fruits"
+        currentSelection={selectedFruits}
+        triggerButtonProps={{ isDisabled: true }}
+      >
+        {fruits.map((item) => {
+          return (
+            <Multiselect.Option
+              value={item.value}
+              label={item.name}
+              onSelectItem={handleSelectItem}
+              key={`key-${item.id}`}
+              itemId={`id-${item.id}`}
+              isChecked={selectedFruits.includes(item.name)}
+              isDisabled={item.isDisabled}
+            />
+          );
+        })}
       </Multiselect>
     </Stack>
   );

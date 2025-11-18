@@ -24,7 +24,7 @@ export const getGridStyles = (isFullScreen = false) => ({
   // this style will make the content centered withou breaking the layout in big screens
   contentColumnsBigScreens: css({
     [`@media screen and (min-width: ${SCREEN_BREAKPOINT_LARGE})`]: {
-      gridTemplateColumns: '1fr 720px 240px 1fr',
+      gridTemplateColumns: '1fr 900px 240px 1fr',
     },
   }),
   // this style will "push" the content to the 2nd column in big screens

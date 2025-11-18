@@ -1,5 +1,179 @@
 # Change Log
 
+## 5.8.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.8.1
+  - @contentful/f36-image@5.8.1
+  - @contentful/f36-menu@5.8.1
+  - @contentful/f36-tooltip@5.8.1
+
+## 5.8.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.8.0
+  - @contentful/f36-image@5.8.0
+  - @contentful/f36-menu@5.8.0
+  - @contentful/f36-tooltip@5.8.0
+
+## 5.7.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.7.0
+  - @contentful/f36-image@5.7.0
+  - @contentful/f36-menu@5.7.0
+  - @contentful/f36-tooltip@5.7.0
+
+## 5.6.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.6.0
+  - @contentful/f36-image@5.6.0
+  - @contentful/f36-menu@5.6.0
+  - @contentful/f36-tooltip@5.6.0
+
+## 5.5.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.5.0
+  - @contentful/f36-image@5.5.0
+  - @contentful/f36-menu@5.5.0
+  - @contentful/f36-tooltip@5.5.0
+
+## 5.4.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.4.1
+  - @contentful/f36-image@5.4.1
+  - @contentful/f36-menu@5.4.1
+  - @contentful/f36-tooltip@5.4.1
+
+## 5.4.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.4.0
+  - @contentful/f36-image@5.4.0
+  - @contentful/f36-menu@5.4.0
+  - @contentful/f36-tooltip@5.4.0
+
+## 5.3.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.3.0
+  - @contentful/f36-image@5.3.0
+  - @contentful/f36-menu@5.3.0
+  - @contentful/f36-tooltip@5.3.0
+
+## 5.2.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.2.0
+  - @contentful/f36-image@5.2.0
+  - @contentful/f36-menu@5.2.0
+  - @contentful/f36-tooltip@5.2.0
+
+## 5.1.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.1.1
+  - @contentful/f36-image@5.1.1
+  - @contentful/f36-menu@5.1.1
+  - @contentful/f36-tooltip@5.1.1
+
+## 5.1.0
+
+### Minor Changes
+
+- [#2828](https://github.com/contentful/forma-36/pull/2828) [`b0fabb2`](https://github.com/contentful/forma-36/commit/b0fabb257f5527943daeaceccea2259cd6004225) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+### Patch Changes
+
+- Updated dependencies [[`b0fabb2`](https://github.com/contentful/forma-36/commit/b0fabb257f5527943daeaceccea2259cd6004225)]:
+  - @contentful/f36-tooltip@5.1.0
+  - @contentful/f36-image@5.1.0
+  - @contentful/f36-menu@5.1.0
+  - @contentful/f36-tokens@5.1.0
+  - @contentful/f36-core@5.1.0
+
+## 5.0.0
+
+### Major Changes
+
+- [#2828](https://github.com/contentful/forma-36/pull/2828) [`a2df764`](https://github.com/contentful/forma-36/commit/a2df764247f7439d5b1b4f3fa71e2b46597c2785) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - Notice: 5.0.0 is not to be installed
+
+  3 years ago, some packages were bumped to 5.0.0 by mistake.
+
+  Therefore, please rely on the next minor version 5.1.0 to avoid any issues.
+
+### Patch Changes
+
+- Updated dependencies [[`a2df764`](https://github.com/contentful/forma-36/commit/a2df764247f7439d5b1b4f3fa71e2b46597c2785), [`a2df764`](https://github.com/contentful/forma-36/commit/a2df764247f7439d5b1b4f3fa71e2b46597c2785)]:
+  - @contentful/f36-core@5.0.0
+  - @contentful/f36-tooltip@5.0.0
+  - @contentful/f36-image@5.0.0
+  - @contentful/f36-menu@5.0.0
+  - @contentful/f36-tokens@5.0.0
+
+## 4.81.1
+
+### Patch Changes
+
+- Updated dependencies [[`ef410f6`](https://github.com/contentful/forma-36/commit/ef410f64a37ec5b03f2a0a1881b79e23b20e0462)]:
+  - @contentful/f36-core@4.81.1
+  - @contentful/f36-menu@4.81.1
+  - @contentful/f36-tooltip@4.81.1
+  - @contentful/f36-image@4.81.1
+
+## 4.81.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.81.0
+  - @contentful/f36-menu@4.81.0
+  - @contentful/f36-tooltip@4.81.0
+  - @contentful/f36-image@4.81.0
+
+## 4.80.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.80.5
+  - @contentful/f36-menu@4.80.5
+  - @contentful/f36-tooltip@4.80.5
+  - @contentful/f36-image@4.80.5
+
+## 4.80.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@4.80.4
+  - @contentful/f36-menu@4.80.4
+  - @contentful/f36-tooltip@4.80.4
+  - @contentful/f36-image@4.80.4
+
 ## 4.80.3
 
 ### Patch Changes

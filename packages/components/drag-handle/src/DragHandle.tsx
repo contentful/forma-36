@@ -7,13 +7,14 @@ import React, {
   type Ref,
 } from 'react';
 import { cx } from 'emotion';
+import tokens from '@contentful/f36-tokens';
 import type {
   PolymorphicComponent,
   PolymorphicProps,
   CommonProps,
   ExpandProps,
 } from '@contentful/f36-core';
-import { DragIcon } from '@contentful/f36-icons';
+import { DotsSixVerticalIcon } from '@contentful/f36-icons';
 
 import { getStyles } from './DragHandle.styles';
 
@@ -153,7 +154,7 @@ function _DragHandle<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
   if (as === 'div') {
     return (
       <div {...otherProps} {...commonProps} role="button" tabIndex={0}>
-        <DragIcon variant="muted" />
+        <DotsSixVerticalIcon color={tokens.gray600} />
         <span className={styles.label}>{label}</span>
       </div>
     );
@@ -161,7 +162,7 @@ function _DragHandle<E extends ElementType = typeof DRAG_HANDLE_DEFAULT_TAG>(
 
   return (
     <button {...otherProps} {...commonProps} type="button">
-      <DragIcon variant="muted" />
+      <DotsSixVerticalIcon color={tokens.gray600} />
       <span className={styles.label}>{label}</span>
     </button>
   );

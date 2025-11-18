@@ -4,14 +4,10 @@ import { GlobalStyles } from '@contentful/f36-core';
 // Setup Decorators
 export const decorators = [
   (Story) => (
-    <div
-      style={{
-        minWidth: '340px',
-      }}
-    >
+    <>
       <GlobalStyles />
       <Story />
-    </div>
+    </>
   ),
 ];
 

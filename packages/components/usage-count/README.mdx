@@ -1,0 +1,44 @@
+---
+title: 'UsageCount'
+type: 'component'
+status: 'stable'
+isNew: true
+slug: /components/usage-count/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/usage-count'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-usagecount--default'
+typescript: ./src/UsageCount.tsx
+---
+
+UsageCount is used for render usage values. Often used inside UsageCard component.
+
+## Import
+
+```jsx static=true
+import { UsageCount } from '@contentful/f36-components';
+// or
+import { UsageCount } from '@contentful/f36-usage-count';
+```
+
+## Examples
+
+### Default UsageCount example of `periodic` variant.
+
+```jsx file=./examples/UsageCountExample.tsx
+
+```
+
+### UsageCount example of `consumption` variant.
+
+```jsx file=./examples/UsageCountConsumptionExample.tsx
+
+```
+
+### UsageCount example of `entitlement` variant.
+
+```jsx file=./examples/UsageCountEntitlementsExample.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="UsageCount" />

@@ -1,13 +1,14 @@
 import React from 'react';
+import tokens from '@contentful/f36-tokens';
 import { EntryCard, IconButton } from '@contentful/f36-components';
-import { CloseIcon } from '@contentful/f36-icons';
+import { XIcon } from '@contentful/f36-icons';
 
 export default function EntryCardCustomActionButtonExample() {
   function CustomActionButton() {
     return (
       <IconButton
         aria-label="Actions"
-        icon={<CloseIcon variant="muted" />}
+        icon={<XIcon color={tokens.gray600} />}
         size="small"
         variant="transparent"
         onClick={() => {}}

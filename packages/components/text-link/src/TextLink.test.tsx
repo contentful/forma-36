@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ArrowDownIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
-import { axe } from '@/scripts/test/axeHelper';
+import { axe } from 'jest-axe';
 import { TextLink } from './TextLink';
 
 describe('TextLink', function () {

@@ -1,9 +1,10 @@
 import React from 'react';
 import { cx } from 'emotion';
 import { type CommonProps } from '@contentful/f36-core';
+import tokens from '@contentful/f36-tokens';
 import { Button } from '@contentful/f36-button';
 import { getStyles } from './Step.styles';
-import { DoneIcon, CloseIcon, WarningIcon } from '@contentful/f36-icons';
+import { CheckIcon, XIcon, WarningIcon } from '@contentful/f36-icons';
 
 export interface StepProps extends CommonProps {
   /**
@@ -66,11 +67,11 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
       case stepStyle === 'number':
         return stepNumberToDisplay;
       case state === 'complete':
-        return <DoneIcon size="tiny" variant="white" />;
+        return <CheckIcon size="tiny" color={tokens.colorWhite} />;
       case state === 'error':
-        return <CloseIcon size="tiny" variant="white" />;
+        return <XIcon size="tiny" color={tokens.colorWhite} />;
       case state === 'warning':
-        return <WarningIcon size="tiny" variant="white" />;
+        return <WarningIcon size="tiny" color={tokens.colorWhite} />;
       default:
         return <div />;
     }

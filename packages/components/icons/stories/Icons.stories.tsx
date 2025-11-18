@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react';
-import { Flex, Grid } from '@contentful/f36-core';
-import { SectionHeading } from '@contentful/f36-typography';
+import { Box, Flex } from '@contentful/f36-core';
+import { SectionHeading, Text } from '@contentful/f36-typography';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-
 import * as icons from '../src';
-import type { IconProps } from '../src';
+import type { IconProps, IconComponent } from '../src';
 
 export default {
   argTypes: {
@@ -21,7 +20,7 @@ export default {
 } as Meta;
 
 export const Default: Story<IconProps> = (args) => {
-  const Component = icons.ArrowDownIcon;
+  const Icon = icons.ArrowDownIcon;
 
   return (
     <Fragment>
@@ -29,7 +28,7 @@ export const Default: Story<IconProps> = (args) => {
         Built-in icons
       </SectionHeading>
 
-      <Component {...args} />
+      <Icon {...args} />
     </Fragment>
   );
 };
@@ -41,25 +40,24 @@ export const Overview: Story = () => {
         Built-in icons
       </SectionHeading>
 
-      <Grid columns="auto 1fr 1fr 1fr 1fr">
-        {Object.keys(icons).map((icon) => {
-          const Component = icons[icon];
+      {Object.keys(icons).map((icon) => {
+        const Icon = icons[icon] as IconComponent;
 
-          return (
-            <Flex
-              key={icon}
-              padding="spacingS"
-              marginRight="spacingM"
-              alignItems="center"
-              justifyContent="flex-start"
-              flexGrow={0}
-            >
-              <Flex marginRight="spacingS">{icon}</Flex>
-              <Component />
+        return (
+          <Box key={icon} marginTop="spacingM">
+            <Text>{icon}</Text>
+
+            <Flex alignItems="center" flexDirection="row" gap="spacingL">
+              <Icon />
+              <Icon isActive />
+              <Icon size="small" />
+              <Icon isActive size="small" />
+              <Icon size="tiny" />
+              <Icon isActive size="tiny" />
             </Flex>
-          );
-        })}
-      </Grid>
+          </Box>
+        );
+      })}
     </Fragment>
   );
 };

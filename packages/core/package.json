@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-core",
-  "version": "4.80.3",
+  "version": "5.8.1",
   "description": "Forma 36 core",
   "license": "MIT",
   "files": [
@@ -19,7 +19,7 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-tokens": "^4.2.0",
+    "@contentful/f36-tokens": "^5.1.0",
     "@emotion/core": "^10.1.1",
     "@emotion/is-prop-valid": "^1.2.0",
     "csstype": "^3.1.1",

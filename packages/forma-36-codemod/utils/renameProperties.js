@@ -1,3 +1,9 @@
+/**
+ * Rename properties in the list of attributes, keeping the same value
+ * @param {*} attributes - original list of attributes
+ * @param {{renameMap: { [x: string]: string }}} param - Object with renameMap
+ * @returns Attributes list with renamed properties
+ */
 module.exports.renameProperties = function renameProperties(
   attributes,
   { renameMap },

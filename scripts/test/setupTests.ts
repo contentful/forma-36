@@ -1,13 +1,16 @@
 import '@testing-library/jest-dom';
 import 'jest-axe/extend-expect';
+import { configureAxe, toHaveNoViolations } from 'jest-axe';
 import { configure } from '@testing-library/react';
 
 configure({ testIdAttribute: 'data-test-id' });
+configureAxe({
+  rules: {
+    region: { enabled: false },
+  },
+});
 
-// We need to override window.getComputedStyle
-// See https://github.com/nickcolley/jest-axe/issues/147
-const { getComputedStyle } = window;
-window.getComputedStyle = (elt) => getComputedStyle(elt);
+expect.extend(toHaveNoViolations);
 
 // We shouldn't allow failed prop types in tests
 const error = console.error;

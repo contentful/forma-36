@@ -788,6 +788,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "0math",
+      "name": "Andrei Tigai",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16032038?v=4",
+      "profile": "https://github.com/0math",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

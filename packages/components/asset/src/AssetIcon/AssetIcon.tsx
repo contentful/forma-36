@@ -1,16 +1,16 @@
 import React from 'react';
 import {
-  ArchiveIcon,
-  AudioIcon,
-  CodeIllustrationIcon,
-  ImageIcon,
-  MarkupIcon,
-  PdfIcon,
-  PlaintextIcon,
-  RichtextIcon,
+  FileArchiveIcon,
+  FileAudioIcon,
+  BracketsCurlyIcon,
+  ImageSquareIcon,
+  FileCodeIcon,
+  FilePdfIcon,
+  FileTextIcon,
+  RichTextIcon,
   PresentationIcon,
-  SpreadsheetIcon,
-  VideoIcon,
+  TableIcon,
+  FileVideoIcon,
 } from '@contentful/f36-icons';
 import type { GeneratedIconProps } from '@contentful/f36-icon';
 import type { AssetType } from '../types';
@@ -41,28 +41,28 @@ export const AssetIcon = ({
 
   switch (type) {
     case 'audio':
-      return <AudioIcon {...props} />;
+      return <FileAudioIcon {...props} />;
     case 'code':
-      return <CodeIllustrationIcon {...props} />;
+      return <BracketsCurlyIcon {...props} />;
     case 'image':
-      return <ImageIcon {...props} />;
+      return <ImageSquareIcon {...props} />;
     case 'markup':
-      return <MarkupIcon {...props} />;
+      return <FileCodeIcon {...props} />;
     case 'pdf':
-      return <PdfIcon {...props} />;
+      return <FilePdfIcon {...props} />;
     case 'plaintext':
-      return <PlaintextIcon {...props} />;
+      return <FileTextIcon {...props} />;
     case 'presentation':
       return <PresentationIcon {...props} />;
     case 'richtext':
-      return <RichtextIcon {...props} />;
+      return <RichTextIcon {...props} />;
     case 'spreadsheet':
-      return <SpreadsheetIcon {...props} />;
+      return <TableIcon {...props} />;
     case 'video':
-      return <VideoIcon {...props} />;
+      return <FileVideoIcon {...props} />;
     case 'archive':
     default:
-      return <ArchiveIcon {...props} />;
+      return <FileArchiveIcon {...props} />;
   }
 };
 

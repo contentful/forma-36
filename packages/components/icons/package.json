@@ -1,29 +1,46 @@
 {
   "name": "@contentful/f36-icons",
-  "version": "4.29.0",
+  "version": "5.8.1",
   "description": "Forma 36: Icon components",
   "license": "MIT",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      },
+      "default": "./dist/cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsup"
+    "build": "npm run build:clean && tsx scripts/preBuild.mts && npm run build:dual",
+    "build:clean": "rm -rf ./dist",
+    "build:dual": "tsc -p . && tsc -p ./tsconfig.cjs.json && tsconfig-to-dual-package"
   },
   "dependencies": {
-    "@contentful/f36-core": "^4.67.3",
-    "@contentful/f36-icon": "^4.67.3",
-    "@contentful/f36-tokens": "^4.0.1",
+    "@contentful/f36-core": "^5.8.1",
+    "@contentful/f36-icon": "^5.8.1",
+    "@contentful/f36-tokens": "^5.1.0",
+    "@phosphor-icons/react": "2.1.8",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
     "react": ">=16.8",
     "react-dom": ">=16.8"
   },
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/index.d.ts",
-  "source": "src/index.ts",
-  "sideEffects": false,
   "browserslist": "extends @contentful/browserslist-config",
   "repository": {
     "type": "git",
@@ -32,5 +49,12 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "access": "public"
+  },
+  "devDependencies": {
+    "tsconfig-to-dual-package": "^1.2.0",
+    "tsx": "^4.7.2"
+  },
+  "engines": {
+    "node": ">=16"
   }
 }

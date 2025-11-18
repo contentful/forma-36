@@ -2,7 +2,7 @@ import React from 'react';
 import { MenuTrigger } from '../MenuTrigger/MenuTrigger';
 import { MenuItem, MenuItemProps } from '../MenuItem/MenuItem';
 import { useSubmenuContext } from '../SubmenuContext';
-import { ChevronRightIcon } from '@contentful/f36-icons';
+import { CaretRightIcon } from '@contentful/f36-icons';
 import type { ExpandProps } from '@contentful/f36-core';
 import { cx } from 'emotion';
 import { getSubmenuTriggerStyles } from './SubmenuTrigger.styles';
@@ -29,7 +29,7 @@ const _SubmenuTrigger = (
         className={cx(styles.root({ isActive: isOpen }), className)}
       >
         <span className={styles.content}>{children}</span>
-        <ChevronRightIcon className={styles.icon} />
+        <CaretRightIcon className={styles.icon} />
       </MenuItem>
     </MenuTrigger>
   );

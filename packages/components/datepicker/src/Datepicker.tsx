@@ -14,7 +14,7 @@ import type { DayPickerSingleProps } from 'react-day-picker';
 import FocusLock from 'react-focus-lock';
 import { TextInput, type TextInputProps } from '@contentful/f36-forms';
 import { IconButton } from '@contentful/f36-button';
-import { CalendarIcon } from '@contentful/f36-icons';
+import { CalendarBlankIcon } from '@contentful/f36-icons';
 import type { PopoverProps } from '@contentful/f36-popover';
 
 export type DatepickerProps = CommonProps & {
@@ -35,6 +35,11 @@ export type DatepickerProps = CommonProps & {
    * If `true`, the Datepicker will be initially opened.
    */
   defaultIsOpen?: boolean;
+
+  /**
+   * Custom placeholder for the input field
+   */
+  placeholder?: string;
 
   /**
    * Props to pass to the TextInput component
@@ -75,6 +80,7 @@ export function Datepicker(props: DatepickerProps) {
     locale,
     dateFormat = 'dd LLL yyyy',
     defaultIsOpen,
+    placeholder,
     ...otherProps
   } = props;
 
@@ -162,7 +168,11 @@ export function Datepicker(props: DatepickerProps) {
           }}
         >
           <TextInput
-            placeholder={format(new Date(), dateFormat)}
+            placeholder={
+              typeof placeholder === 'undefined'
+                ? format(new Date(), dateFormat)
+                : placeholder
+            }
             value={inputValue}
             onChange={handleInputChange}
             isInvalid={inputProps?.isInvalid || isTextInputValueInvalid}
@@ -225,7 +235,7 @@ const DatepickerTrigger = React.forwardRef<
       <IconButton
         aria-label="Use calendar"
         variant="secondary"
-        icon={<CalendarIcon aria-label="calendar" />}
+        icon={<CalendarBlankIcon aria-label="calendar" />}
         onClick={onTriggerClick}
         isDisabled={isDisabled}
         testId="cf-ui-datepicker-button"

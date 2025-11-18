@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TextInput, IconButton, Stack } from '@contentful/f36-components';
-import { LockIcon } from '@contentful/f36-icons';
+import { LockSimpleIcon, LockSimpleOpenIcon } from '@contentful/f36-icons';
 
 export default function TextInputGroupExample() {
   const [isFirstLocked, setFirstLocked] = useState(true);
@@ -16,7 +16,7 @@ export default function TextInputGroupExample() {
         />
         <IconButton
           variant="secondary"
-          icon={<LockIcon />}
+          icon={isFirstLocked ? <LockSimpleIcon /> : <LockSimpleOpenIcon />}
           onClick={() => {
             setFirstLocked((value) => !value);
           }}
@@ -32,7 +32,7 @@ export default function TextInputGroupExample() {
         />
         <IconButton
           variant="secondary"
-          icon={<LockIcon />}
+          icon={isSecondLocked ? <LockSimpleIcon /> : <LockSimpleOpenIcon />}
           onClick={() => {
             setSecondLocked((value) => !value);
           }}

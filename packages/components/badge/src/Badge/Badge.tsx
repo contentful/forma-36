@@ -11,6 +11,8 @@ import type * as CSS from 'csstype';
 
 import type { BadgeSize, BadgeVariant } from '../types';
 import { getBadgeStyles } from './Badge.styles';
+import tokens from '@contentful/f36-tokens';
+import { getIconColorToken, iconColorByVariant } from '@contentful/f36-utils';
 
 export type BadgeInternalProps = CommonProps & {
   /**
@@ -65,7 +67,7 @@ export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
         className: cx(styles.badgeIcon, icon.props.className, {
           [styles.badgeIconCustomTiny]: size === 'small',
         }),
-        variant: variant === 'primary-filled' ? 'white' : variant,
+        color: tokens[getIconColorToken(variant, iconColorByVariant)],
       });
 
     return (

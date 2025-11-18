@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { PreviewIcon } from '@contentful/f36-icons';
-import { axe } from '@/scripts/test/axeHelper';
+import { EyeIcon } from '@contentful/f36-icons';
+import { axe } from 'jest-axe';
 import { Badge } from './Badge';
 
 describe('Badge', function () {
@@ -12,14 +12,14 @@ describe('Badge', function () {
   });
 
   it('renders the component with a start icon', () => {
-    render(<Badge startIcon={<PreviewIcon />}>Badge</Badge>);
+    render(<Badge startIcon={<EyeIcon />}>Badge</Badge>);
 
     const badge = screen.getByTestId('cf-ui-badge');
     expect(badge.getElementsByTagName('svg')).toHaveLength(1);
   });
 
   it('renders the component with an end icon', () => {
-    render(<Badge endIcon={<PreviewIcon />}>Badge</Badge>);
+    render(<Badge endIcon={<EyeIcon />}>Badge</Badge>);
 
     const badge = screen.getByTestId('cf-ui-badge');
     expect(badge.getElementsByTagName('svg')).toHaveLength(1);

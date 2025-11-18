@@ -8,6 +8,307 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 11-11-2025
+
+**F36 Icons** `v5.8.0`
+
+- new icons for app logo
+
+## 08-11-2025
+
+**F36 Icons** `v5.7.0`
+
+- feat: add square split horizontal icon
+
+## 30-09-2025
+
+**F36 Badge** `v5.6.0`
+
+- Adds global util function for mapping component variant to color token
+
+**F36 Button** `v5.6.0`
+
+- Adds global util function for mapping component variant to color token
+
+**F36 Forms** `v5.6.0`
+
+- Adds global util function for mapping component variant to color token
+
+**F36 Note** `v5.6.0`
+
+- Adds global util function for mapping component variant to color token
+
+**F36 Utils** `v5.2.0`
+
+- Adds global util function for mapping component variant to color token
+
+## 24-09-2025
+
+**F36 Icons** `v5.5.0`
+
+- Add `TrayArrowUpIcon`
+- Add `TrayArrowDownIcon`
+
+## 18-09-2025
+
+**F36 Pagination** `v5.4.1`
+
+- Improves the accessibility and the test coverage of the Pagination component
+
+## 12-09-2025
+
+**F36 Usage Card** `v5.3.0`
+
+- Adds includedLabel prop to UsageCount; Fixes tooltip type in UsageCard
+
+**F36 Usage Count** `v5.3.0`
+
+- Adds includedLabel prop to UsageCount; Fixes tooltip type in UsageCard
+
+**F36 Usage Count** `v5.4.0`
+
+- Makes quota of type string and number
+
+## 11-09-2025
+
+**F36 Icons** `v5.2.0`
+
+- Add `GlobeXIcon`
+
+## 09-09-2025
+
+**F36 Icons** `v5.1.1`
+
+- fix(icons): pin phosphor to version with new names and working ESM build
+
+## 30-08-2025
+
+`@contentful/f36-components@5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Accordion** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Asset** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Autocomplete** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Avatar** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Badge** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Button** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Card** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Collapse** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Copybutton** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Core** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Datepicker** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Datetime** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Drag Handle** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Empty State** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Entity List** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Forms** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Header** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Icon** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Icons** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Image** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Layout** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 List** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Menu** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Modal** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Multiselect** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Navbar** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Navlist** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Note** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Notification** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Pagination** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Pill** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Popover** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Progress Stepper** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Skeleton** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Spinner** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Table** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Tabs** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Text Link** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Tokens** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Tooltip** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Typography** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Usage Card** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Usage Count** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+**F36 Utils** `v5.1.0`
+
+- Bumping one minor version to prevent conflicts with the previously major release that happened by mistake 3 years ago.
+
+## 30-07-2025
+
+**F36 Core** `v4.81.1`
+
+- fix(core): adjust Grid, Grid.Item and Flex components alignment properties
+
+## 23-07-2025
+
+**F36 Datepicker** `v4.81.0`
+
+- Add custom placeholder prop for datepicker placeholder override
+
+## 12-07-2025
+
+**F36 Usage Card** `v4.1.0`
+
+- Introduces UsageCard component for rendering usage data.
+
+## 11-07-2025
+
+**F36 Usage Count** `v4.1.0`
+
+- Introduces UsageCount component for rendering usage related values.
+
+## 04-07-2025
+
+**F36 Multiselect** `v4.80.5`
+
+- feat: [] fix multiselect release
+
+## 03-07-2025
+
+**F36 Multiselect** `v4.26.2`
+
+- feat: add triggerbuttonprops to multiselect
+
+## 24-06-2025
+
+**F36 Autocomplete** `v4.80.4`
+
+- chore: bump remnants of vulnerable babel-runtime version
+
+**F36 Icons** `v4.29.1`
+
+- Fixes the viewbox of the Subscript Icon to display the icon correctly.
+
 ## 20-05-2025
 
 **F36 Autocomplete** `v4.80.3`

@@ -6,6 +6,8 @@ import { Text } from '@contentful/f36-typography';
 
 export interface MissingContentProps extends CommonProps {
   label?: string;
+  className?: string;
+  testId?: string;
 }
 
 export const MissingContent = ({

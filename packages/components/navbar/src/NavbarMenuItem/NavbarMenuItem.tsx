@@ -6,7 +6,7 @@ import {
   NavbarItemIcon,
   type NavbarItemIconProps,
 } from '../NavbarItemIcon/NavbarItemIcon';
-import { ExternalLinkIcon } from '@contentful/f36-icons';
+import { ArrowSquareOutIcon } from '@contentful/f36-icons';
 import type {
   ExpandProps,
   PolymorphicComponent,
@@ -48,10 +48,10 @@ function _NavbarMenuItem(
       {...otherProps}
       ref={ref}
       as={Comp as MenuItemProps['as']}
-      className={cx(styles.root, className)}
+      className={cx(styles.navbarMenuItem, className)}
     >
       {icon ? (
-        <NavbarItemIcon icon={icon} variant="secondary" />
+        <NavbarItemIcon icon={icon} />
       ) : (
         itemIsExternalLink && externalIcon
       )}
@@ -61,9 +61,7 @@ function _NavbarMenuItem(
   );
 }
 
-const externalIcon = (
-  <NavbarItemIcon icon={<ExternalLinkIcon />} variant="muted" />
-);
+const externalIcon = <NavbarItemIcon icon={<ArrowSquareOutIcon />} />;
 
 const isExternalLink = (props: NavbarMenuItemProps<'a'>) =>
   props.as === 'a' && props.target === '_blank';

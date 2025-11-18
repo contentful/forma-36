@@ -3,7 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import UserEvent from '@testing-library/user-event/';
 import { Avatar } from '../Avatar';
 import { AvatarGroup } from './AvatarGroup';
-import { axe } from '@/scripts/test/axeHelper';
+import { axe } from 'jest-axe';
 
 jest.mock('@contentful/f36-image', () => ({
   Image: jest.fn((props) => <img alt="fallback avatar" {...props} />),

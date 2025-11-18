@@ -1,8 +1,8 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
 
-import { GridInternalProps } from '../src/Grid/Grid';
-import { GridItemInternalProps } from '../src/Grid/GridItem/GridItem';
+import type { GridInternalProps } from '../src/Grid/Grid';
+import type { GridItemInternalProps } from '../src/Grid/GridItem/GridItem';
 import { Grid } from '../src';
 
 const styles = {
@@ -26,6 +26,9 @@ export default {
     testId: { control: { disable: true } },
     as: { control: { disable: true } },
     style: { control: { disable: true } },
+    alignSelf: { control: { type: 'text' } },
+    justifySelf: { control: { type: 'text' } },
+    placeSelf: { control: { type: 'text' } },
   },
 };
 
@@ -58,7 +61,7 @@ export const Basic = ({
     rows={args.rows}
     columnGap={args.columnGap}
     rowGap={args.rowGap}
-    style={{ height: exampleGridHeight }}
+    style={{ height: exampleGridHeight, width: '90vw' }}
   >
     <Grid.Item
       style={styles.demoBoxDark}

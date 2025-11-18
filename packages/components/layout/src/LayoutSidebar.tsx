@@ -1,7 +1,8 @@
 import React, { forwardRef, type HTMLAttributes, type Ref } from 'react';
 import { cx } from 'emotion';
 import { type CommonProps, Box } from '@contentful/f36-core';
-import { getLayoutSidebarStyles } from './LayoutSidebar.styles';
+import { getLayoutSidebarStyles } from './Layout.styles';
+import { useLayoutContext } from './LayoutContext';
 
 export type LayoutSidebarProps = {
   children: React.ReactNode;
@@ -18,14 +19,15 @@ export const _LayoutSidebar = (
     testId = 'cf-layout-sidebar',
     ...otherProps
   } = props;
-  const styles = getLayoutSidebarStyles();
+  const { withHeader, offsetTop } = useLayoutContext();
+  const styles = getLayoutSidebarStyles(withHeader, offsetTop);
 
   return (
     <Box
       {...otherProps}
       as="aside"
       ref={ref}
-      className={cx(styles.root, className)}
+      className={cx(styles.layoutSidebar, className)}
       testId={testId}
     >
       {children}

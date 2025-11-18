@@ -1,0 +1,49 @@
+---
+title: 'UsageCard'
+type: 'component'
+status: 'stable'
+isNew: true
+slug: /components/usage-card/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/usage-card'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-usagecard--default'
+typescript: ./src/UsageCard.tsx
+---
+
+UsageCard is a generic component used for rendering usage data.
+
+## Import
+
+```jsx static=true
+import { UsageCard } from '@contentful/f36-components';
+// or
+import { UsageCard } from '@contentful/f36-usage-card';
+```
+
+## Examples
+
+### Basic UsageCard of `usage` variant
+
+```jsx file=./examples/UsageCardUsageExample.tsx
+
+```
+
+### Basic UsageCard of `info` variant
+
+```jsx file=./examples/UsageCardInfoExample.tsx
+
+```
+
+## UsageCard areas
+
+The `UsageCard` component offers 4 individually setable areas, three of them can be set via the props `header`, `description` and `variant`.
+
+| Prop          | Description                                                                                                                                                                                                                             | Recommended child components                      |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| `children`    | Elements handed over as children to the UsageCard component will be rendered as the UsageCard body. The common case is using `UsageCount` component for rendering usage value.                                                          | `UsageCount`                                      |
+| `header`      | `header` prop expects compound component `UsageCard.Header`. `UsageCard.Header` can take `children`, `title` and `tooltip` as props. Title value will be rendered as `Subheading`, tooltip will be rendered inside `Tooltip` with icon. | `UsageCard.Header`                                |
+| `description` | `description` prop expects compound component `UsageCard.Description`. Child-Components should be wraped in `UsageCard.Description`. Common use case is using `Text` or `TextLink` with as child-components.                            | `UsageCard.Description` with `Text` or `TextLink` |
+| `variant`     | `variant` prop expects `usage` or `info`. It's responsible for look and feel of the `UsageCard`, with `info` set the `backgroundColor` is `gray100` and border is invisible.                                                            | N/A                                               |
+
+## Props (API reference)
+
+<PropsTable of="UsageCard" />

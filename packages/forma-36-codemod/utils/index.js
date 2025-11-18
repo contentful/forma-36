@@ -7,7 +7,6 @@ const { changeProperties } = require('./changeProperties');
 const { updatePropertyValue } = require('./updatePropertyValue');
 const { getProperty } = require('./getProperty');
 const { addImport } = require('./addImport');
-const { updateIcons, addIconImports } = require('./updateIcons');
 const { removeComponentImport } = require('./removeComponentImport');
 const { changeImport } = require('./changeImport');
 const { changeComponentName } = require('./changeComponentName');
@@ -17,6 +16,8 @@ const { createComponent } = require('./createComponent');
 const { getChildren } = require('./getChildren');
 const { getNewProp } = require('./getNewProp');
 const { updateComponentsToImport } = require('./updateComponentsToImport');
+const { changeIdentifier } = require('./changeIdentifier');
+const { pipe } = require('./pipe');
 
 module.exports = {
   getComponentLocalName,
@@ -28,8 +29,6 @@ module.exports = {
   updatePropertyValue,
   getProperty,
   addImport,
-  updateIcons,
-  addIconImports,
   removeComponentImport,
   changeImport,
   changeComponentName,
@@ -39,4 +38,6 @@ module.exports = {
   getChildren,
   getNewProp,
   updateComponentsToImport,
+  changeIdentifier,
+  pipe,
 };

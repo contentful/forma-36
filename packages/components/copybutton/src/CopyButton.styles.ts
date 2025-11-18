@@ -11,6 +11,8 @@ export const getCopyButtonStyles = ({
       height: buttonSize,
       minWidth: 'auto',
       width: buttonSize,
+
+      'span:first-child': { marginRight: 0 },
     }),
   };
 };

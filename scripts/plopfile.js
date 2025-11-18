@@ -58,7 +58,7 @@ module.exports = function (plop) {
         type: 'list',
         name: 'context',
         message: 'context of the codemod',
-        choices: ['v4', 'color-tokens'],
+        choices: ['v5'],
       },
       {
         type: 'input',
@@ -75,13 +75,14 @@ module.exports = function (plop) {
     ],
     actions: function (data) {
       const { context, codemodName, description } = data;
-      const transform = `${context}-${codemodName}`;
+      const transform = `${context}/${codemodName}`;
+
       let actions = [];
       actions.push({
         type: 'add',
         path: `../packages/forma-36-codemod/transforms/${transform}.js`,
         templateFile: './plop-templates/codemod/transforms/transform.js',
-        data: { transform },
+        data: { transform: codemodName },
       });
       actions.push({
         type: 'addMany',
@@ -89,18 +90,18 @@ module.exports = function (plop) {
         base: './plop-templates/codemod/transforms/',
         templateFiles:
           './plop-templates/codemod/transforms/__testfixtures__/**',
-        data: { context, transform },
+        data: { context, transform: codemodName },
       });
       actions.push({
         type: 'modify',
         path: '../packages/forma-36-codemod/transforms/__tests__/{{context}}.test.js',
-        pattern: /(const tests = \[\n)/,
+        pattern: /(const tests = \[)/,
         template: "$1'{{transform}}',\n",
         data: { context, transform },
       });
       actions.push({
         type: 'modify',
-        path: '../packages/forma-36-codemod/bin/inquirer-choices.js',
+        path: '../packages/forma-36-codemod/bin/inquirer-choices.mjs',
         pattern: /\s+(\/\/ Add extra codemods - do not remove)/,
         templateFile: './plop-templates/codemod/bin/inquirer-choices.hbs',
         data: { transform, description },

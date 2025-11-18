@@ -97,29 +97,6 @@ describe('Autocomplete', () => {
       expect(mockOnSelectItem).toHaveBeenCalledWith('Apple 🍎');
     });
 
-    it('clears the input after item is selected when "clearAfterSelect" is true', async () => {
-      const user = userEvent.setup();
-
-      renderComponent({ clearAfterSelect: true });
-
-      // Type one letter in the input to open the list
-      await user.type(screen.getByRole('textbox'), 'a');
-
-      // checks if the list is visible
-      expect(screen.getByRole('listbox')).toBeVisible();
-
-      // go to the list first item
-      await user.keyboard('[ArrowDown]');
-
-      // press Enter to select the item
-      await user.keyboard('[Enter]');
-
-      // checks if the list got closed and the value of the input is an empty string
-      expect(screen.getByRole('listbox', { hidden: true })).not.toBeVisible();
-      expect(screen.getByRole('textbox')).toHaveValue('');
-      expect(mockOnSelectItem).toHaveBeenCalledWith('Apple 🍎');
-    });
-
     it('clears the input after item is selected when "textOnAfterSelect" is "clear"', async () => {
       const user = userEvent.setup();
 

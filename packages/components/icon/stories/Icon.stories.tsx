@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react';
-import { Flex } from '@contentful/f36-core';
+import { Flex, Stack } from '@contentful/f36-core';
 import { SectionHeading, Text } from '@contentful/f36-typography';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { MdAcUnit as ExternalIcon } from 'react-icons/md';
 
-import { Icon } from '../src/';
-import type { IconInternalProps } from '../src/Icon';
+import { Icon, type IconInternalProps } from '../src/Icon';
+import { CalendarBlankIcon, GearSixIcon } from '@contentful/f36-icons';
+import tokens from '@contentful/f36-tokens';
 
 export default {
   argTypes: {
@@ -21,6 +22,45 @@ export default {
   title: 'Components/Icon',
 } as Meta;
 
+export const Sizes: Story = () => {
+  return (
+    <Fragment>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Icon sizes
+      </SectionHeading>
+
+      <Stack>
+        <Flex alignItems="center" gap="spacingS">
+          <CalendarBlankIcon size="tiny" /> <Text>Tiny</Text>
+        </Flex>
+        <Flex alignItems="center" gap="spacingS">
+          <CalendarBlankIcon size="small" /> <Text>Small</Text>
+        </Flex>
+        <Flex alignItems="center" gap="spacingS">
+          <CalendarBlankIcon size="medium" /> <Text>Medium</Text>
+        </Flex>
+      </Stack>
+    </Fragment>
+  );
+};
+
+export const States: Story = () => {
+  return (
+    <Fragment>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Icon states
+      </SectionHeading>
+      <Stack>
+        <Flex alignItems="center" gap="spacingS">
+          <GearSixIcon isActive />
+          <GearSixIcon isActive color={tokens.colorPrimary} />
+          <GearSixIcon isActive color={tokens.colorPositive} />
+        </Flex>
+      </Stack>
+    </Fragment>
+  );
+};
+
 export const WithSVGPath: Story<IconInternalProps> = (args) => (
   <Fragment>
     <SectionHeading as="h3" marginBottom="spacingS">
@@ -28,11 +68,27 @@ export const WithSVGPath: Story<IconInternalProps> = (args) => (
     </SectionHeading>
 
     <Icon {...args}>
-      <Fragment>
-        <path d="M0 0h24v24H0z" fill="none" />
-        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-        <path d="M0 0h24v24H0z" fill="none" />
-      </Fragment>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+        <rect width="256" height="256" fill="none" />
+        <circle
+          cx="128"
+          cy="128"
+          r="40"
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="16"
+        />
+        <path
+          d="M130.05,206.11c-1.34,0-2.69,0-4,0L94,224a104.61,104.61,0,0,1-34.11-19.2l-.12-36c-.71-1.12-1.38-2.25-2-3.41L25.9,147.24a99.15,99.15,0,0,1,0-38.46l31.84-18.1c.65-1.15,1.32-2.29,2-3.41l.16-36A104.58,104.58,0,0,1,94,32l32,17.89c1.34,0,2.69,0,4,0L162,32a104.61,104.61,0,0,1,34.11,19.2l.12,36c.71,1.12,1.38,2.25,2,3.41l31.85,18.14a99.15,99.15,0,0,1,0,38.46l-31.84,18.1c-.65,1.15-1.32,2.29-2,3.41l-.16,36A104.58,104.58,0,0,1,162,224Z"
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="16"
+        />
+      </svg>
     </Icon>
   </Fragment>
 );
@@ -48,85 +104,3 @@ export const WithExternalIcon: Story<
     <Icon {...args} as={ExternalIcon} />
   </Fragment>
 );
-const CustomIcon = (props: IconInternalProps) => (
-  <Icon {...props}>
-    <path d="M8 0a1 1 0 011 1v1h6V1a1 1 0 112 0v1h2.778A3.222 3.222 0 0123 5.222v15.556A3.222 3.222 0 0119.778 24H4.222A3.222 3.222 0 011 20.778V5.222A3.222 3.222 0 014.222 2H7V1a1 1 0 011-1zM7 4H4.222C3.547 4 3 4.547 3 5.222V9h18V5.222C21 4.547 20.453 4 19.778 4H17v1a1 1 0 11-2 0V4H9v1a1 1 0 01-2 0V4zm14 7H3v9.778C3 21.453 3.547 22 4.222 22h15.556c.675 0 1.222-.547 1.222-1.222V11z" />
-  </Icon>
-);
-
-export const Overview: Story = () => {
-  const sizes = ['xlarge', 'large', 'medium', 'small', 'tiny'];
-
-  return (
-    <Fragment>
-      <SectionHeading as="h3" marginBottom="spacingS">
-        Icon sizes
-      </SectionHeading>
-
-      {sizes.map((sizeKey) => {
-        const size = sizeKey as IconInternalProps['size'];
-        return (
-          <Flex marginBottom="spacingM" alignItems="center" key={size}>
-            <Flex marginRight="spacingS">
-              <CustomIcon variant="primary" size={size} />
-            </Flex>
-            <Text>{size}</Text>
-          </Flex>
-        );
-      })}
-
-      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
-        Icon variants
-      </SectionHeading>
-
-      <Flex marginBottom="spacingM" alignItems="center">
-        <Flex marginRight="spacingS">
-          <CustomIcon variant="primary" />
-        </Flex>
-        <Text>primary</Text>
-      </Flex>
-
-      <Flex marginBottom="spacingM" alignItems="center">
-        <Flex marginRight="spacingS">
-          <CustomIcon variant="positive" />
-        </Flex>
-        <Text>positive</Text>
-      </Flex>
-
-      <Flex marginBottom="spacingM" alignItems="center">
-        <Flex marginRight="spacingS">
-          <CustomIcon variant="negative" />
-        </Flex>
-        <Text>negative</Text>
-      </Flex>
-
-      <Flex marginBottom="spacingM" alignItems="center">
-        <Flex marginRight="spacingS">
-          <CustomIcon variant="warning" />
-        </Flex>
-        <Text>warning</Text>
-      </Flex>
-
-      <Flex marginBottom="spacingM" alignItems="center">
-        <Flex marginRight="spacingS">
-          <CustomIcon variant="secondary" />
-        </Flex>
-        <Text>secondary</Text>
-      </Flex>
-
-      <Flex marginBottom="spacingM" alignItems="center">
-        <Flex marginRight="spacingS">
-          <CustomIcon variant="muted" />
-        </Flex>
-        <Text>muted</Text>
-      </Flex>
-
-      <Flex marginBottom="spacingM" alignItems="center">
-        <Flex marginRight="spacingS">
-          <CustomIcon variant="white" />
-        </Flex>
-        <Text>white</Text>
-      </Flex>
-    </Fragment>
-  );
-};

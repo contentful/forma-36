@@ -68,7 +68,8 @@ export default async function updateDependencies(targetDir) {
   const cwd = path.resolve(process.cwd(), targetDir);
   const closestPkgJson = readPackageUpSync({ cwd });
   let removePackages = packages.PACKAGES_REMOVE;
-  let newPackages = Object.keys(packages.PACKAGES_UPGRADE);
+  const packagesForVersion = packages.PACKAGES_UPGRADE;
+  let newPackages = Object.keys(packagesForVersion);
 
   // If no package.json is found
   if (!closestPkgJson) {
@@ -78,9 +79,7 @@ export default async function updateDependencies(targetDir) {
       ),
     );
 
-    newPackages = newPackages.map(
-      (pkg) => `${pkg}@${packages.PACKAGES_UPGRADE[pkg]}`,
-    );
+    newPackages = newPackages.map((pkg) => `${pkg}@${packagesForVersion[pkg]}`);
 
     return getOutput({ newPackages, removePackages });
   }
@@ -102,9 +101,9 @@ export default async function updateDependencies(targetDir) {
     .filter(
       (pkg) =>
         !allDeps[pkg] ||
-        !semverSatisfies(packages.PACKAGES_UPGRADE[pkg], allDeps[pkg]),
+        !semverSatisfies(packagesForVersion[pkg], allDeps[pkg]),
     )
-    .map((pkg) => `${pkg}@${packages.PACKAGES_UPGRADE[pkg]}`);
+    .map((pkg) => `${pkg}@${packagesForVersion[pkg]}`);
 
   // Select package manager based on lock file, fallback to npm if no lock file is found
   const pkgManager =
@@ -147,8 +146,9 @@ export default async function updateDependencies(targetDir) {
         ]
           .filter((c) => c.trim())
           .join(' && ');
-        console.log(`Executing command: ${cmd}`);
-        const { stdout } = execa.commandSync(cmd, { shell: true });
+
+        console.log(`Executing command: ${cmd} on ${cwd}`);
+        const { stdout } = execa.commandSync(cmd, { shell: true, cwd: cwd });
         console.log(stdout);
         return;
       }

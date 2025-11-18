@@ -6,21 +6,24 @@ import {
   NavbarItemIcon,
   type NavbarItemIconProps,
 } from '../NavbarItemIcon/NavbarItemIcon';
-import { ArrowDownIcon } from '../icons';
+import { CaretIcon } from '../icons';
 import type {
   CommonProps,
   ExpandProps,
   PolymorphicComponent,
   PolymorphicProps,
 } from '@contentful/f36-core';
+import { Tooltip } from '@contentful/f36-tooltip';
 
 const NAVBAR_ITEM_DEFAULT_TAG = 'button';
 
 type NavbarItemTriggerProps = CommonProps & {
-  title: string;
+  label?: string;
+  title?: string;
   icon?: NavbarItemIconProps['icon'];
   isActive?: boolean;
   as?: React.ElementType;
+  isDisabled?: boolean;
 };
 
 type NavbarItemAsMenuProps = NavbarItemTriggerProps &
@@ -45,33 +48,58 @@ function _NavbarItem(
   const {
     as: Comp = NAVBAR_ITEM_DEFAULT_TAG,
     icon,
+    label,
     title,
     children,
     className,
     isActive,
+    isDisabled,
     testId = 'cf-ui-navbar-item',
     onOpen,
     onClose,
     ...otherProps
   } = props;
-  const styles = getNavbarItemStyles();
-
-  const item = (
+  const styles = getNavbarItemStyles({ hasTitle: !!title });
+  const isMenuTrigger = isNavbarItemHasMenu(props);
+  const showCaret = title && isMenuTrigger;
+  let item = (
     <Comp
       {...otherProps}
       ref={ref}
       data-test-id={testId}
-      className={cx(styles.root, isActive && styles.isActive, className)}
+      className={cx(styles.navbarItem, className, {
+        [styles.isActive]: isActive && !isDisabled,
+        [styles.isDisabled]: isDisabled,
+      })}
+      {...(!title && { 'aria-label': label })}
+      {...(isDisabled &&
+        (Comp === NAVBAR_ITEM_DEFAULT_TAG
+          ? { disabled: true }
+          : { tabIndex: -1, 'aria-disabled': true }))}
     >
-      {icon ? <NavbarItemIcon icon={icon} variant="white" /> : null}
-      <span>{title}</span>
-      {isNavbarItemHasMenu(props) && (
-        <ArrowDownIcon className={styles.dropdownIcon} />
+      {icon && (
+        <NavbarItemIcon
+          className={styles.icon}
+          icon={icon}
+          isActive={isActive}
+        />
       )}
+      {title && <span>{title}</span>}
+      {showCaret && <CaretIcon size="tiny" isActive={isActive} />}
     </Comp>
   );
 
-  if (isNavbarItemHasMenu(props)) {
+  if (!title) {
+    item = (
+      <div>
+        <Tooltip content={label} placement="bottom" showDelay={600} usePortal>
+          {item}
+        </Tooltip>
+      </div>
+    );
+  }
+
+  if (isMenuTrigger) {
     return (
       <NavbarMenu
         trigger={item}
