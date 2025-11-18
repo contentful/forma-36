@@ -1,5 +1,18 @@
 # @contentful/f36-pagination
 
+## 5.8.1
+
+### Patch Changes
+
+- [#3235](https://github.com/contentful/forma-36/pull/3235) [`420fefa`](https://github.com/contentful/forma-36/commit/420fefaed5301c64a47b2d7d87eb45b9ac7679b4) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - feat(Pagination): add support for custom total items label
+
+- Updated dependencies []:
+  - @contentful/f36-button@5.8.1
+  - @contentful/f36-core@5.8.1
+  - @contentful/f36-forms@5.8.1
+  - @contentful/f36-icons@5.8.1
+  - @contentful/f36-typography@5.8.1
+
 ## 5.8.0
 
 ### Patch Changes

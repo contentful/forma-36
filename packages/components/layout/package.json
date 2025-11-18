@@ -1,13 +1,13 @@
 {
   "name": "@contentful/f36-layout",
-  "version": "5.8.0",
+  "version": "5.8.1",
   "description": "Forma 36: Layout component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^5.8.0",
-    "@contentful/f36-header": "^5.8.0",
+    "@contentful/f36-core": "^5.8.1",
+    "@contentful/f36-header": "^5.8.1",
     "@contentful/f36-tokens": "^5.1.0",
     "emotion": "^10.0.17"
   },
