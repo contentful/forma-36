@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const IconGradient = function () {
+export const PrimaryIconGradient = function () {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={0} height={0}>
       <defs>
