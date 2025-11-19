@@ -116,8 +116,8 @@
     "commit-msg": "npx commitlint -e \"$@\""
   },
   "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8.3.0",
+    "node": ">=20.0.0",
+    "npm": ">=8.5.0",
     "yarn": "Please use npm"
   },
   "overrides": {
