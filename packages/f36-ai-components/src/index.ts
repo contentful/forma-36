@@ -7,6 +7,8 @@ export type {
   AIChatLayoutVariant,
 } from './AIChatLayout/AIChatLayout';
 
+export { PrimaryIconGradient } from './AIIconGradients/PrimaryIconGradient';
+
 export { AIChatArtifactMessage } from './AIChatArtifactMessage/AIChatArtifactMessage';
 export type { AIChatArtifactMessageProps } from './AIChatArtifactMessage/AIChatArtifactMessage';
 export * from './AIChatHistory';

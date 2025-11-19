@@ -11,7 +11,7 @@ import React, {
 } from 'react';
 import { Slider } from '../Slider';
 import { getStyles } from './AIChatLayout.styles';
-import { IconGradient } from './IconGradient';
+import { PrimaryIconGradient } from '../AIIconGradients/PrimaryIconGradient';
 
 export type AIChatLayoutDisplay = 'closed' | 'collapsed' | 'open';
 export type AIChatLayoutVariant = 'normal' | 'expanded';
@@ -201,7 +201,7 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
               <Box className={styles.icon} testId={`${testId}-icon`}>
                 {icon}
               </Box>
-              <IconGradient />
+              <PrimaryIconGradient />
             </>
           )}
 
