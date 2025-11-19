@@ -8,6 +8,7 @@ import { AIChatHistory } from '../src/AIChatHistory/AIChatHistory';
 import { AIChatInput } from '../src/AIChatInput/AIChatInput';
 import { AIChatLayout } from '../src/AIChatLayout/AIChatLayout';
 import { getStyles } from '../src/AIChatLayout/AIChatLayout.styles';
+import { getAIIconGradientStyles } from '../src/AIIconGradients/AIIconGradients.styles';
 import { AIChatMessage } from '../src/AIChatMessage/AIChatMessage';
 import { AIChatSidePanel } from '../src/AIChatSidePanel/AIChatSidePanel';
 import { Slider } from '../src/Slider/Slider';
@@ -83,6 +84,7 @@ export const Default = ({
   };
 
   const styles = getStyles({ display });
+  const { primaryGradientIconStyle } = getAIIconGradientStyles();
 
   const isCollapsed = display === 'collapsed';
 
@@ -136,7 +138,7 @@ export const Default = ({
   const header = {
     id: 'default-header',
     icon: icon ? (
-      <Icon as={icons[icon]} className={styles.aiGradientIcon} />
+      <Icon as={icons[icon]} className={primaryGradientIconStyle} />
     ) : undefined,
     title: args.title,
     slideDirection: 'right' as const,
@@ -181,7 +183,7 @@ Default.args = {
 export const WithChangableHeader = ({ icon, title, variant }) => {
   const [isHistoryMode, setIsHistoryMode] = useState(false);
 
-  const styles = getStyles({ display: 'open' });
+  const { primaryGradientIconStyle } = getAIIconGradientStyles();
 
   const threadsWithActions = mockThreads.map((thread) => ({
     ...thread,
@@ -199,7 +201,7 @@ export const WithChangableHeader = ({ icon, title, variant }) => {
   const defaultHeader = {
     id: 'default-header',
     icon: icon ? (
-      <Icon as={icons[icon]} className={styles.aiGradientIcon} />
+      <Icon as={icons[icon]} className={primaryGradientIconStyle} />
     ) : undefined,
     title: title,
     slideDirection: 'right' as const,

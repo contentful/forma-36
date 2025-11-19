@@ -7,7 +7,10 @@ export type {
   AIChatLayoutVariant,
 } from './AIChatLayout/AIChatLayout';
 
-export { PrimaryIconGradient } from './AIIconGradients/PrimaryIconGradient';
+export {
+  PrimaryIconGradient,
+  getAIIconGradientStyles,
+} from './AIIconGradients';
 
 export { AIChatArtifactMessage } from './AIChatArtifactMessage/AIChatArtifactMessage';
 export type { AIChatArtifactMessageProps } from './AIChatArtifactMessage/AIChatArtifactMessage';

@@ -5,7 +5,7 @@ export const PrimaryIconGradient = function () {
     <svg xmlns="http://www.w3.org/2000/svg" width={0} height={0}>
       <defs>
         <linearGradient
-          id="icon-gradient"
+          id="primary-icon-gradient"
           gradientTransform="rotate(46.64 .5 .5)"
           gradientUnits="objectBoundingBox"
         >
