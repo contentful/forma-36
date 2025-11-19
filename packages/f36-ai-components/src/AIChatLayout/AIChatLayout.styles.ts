@@ -128,12 +128,6 @@ export const getStyles = (props: StyleProps = {}) => {
       backgroundColor: tokens.colorWhite,
     }),
 
-    aiGradientIcon: css({
-      '*': {
-        fill: `url("#icon-gradient") rgba(140, 46, 234, 1)`,
-      },
-    }),
-
     contentWrapper: css({
       width: '100%',
     }),
