@@ -11,10 +11,10 @@ export type ChatEmptyStateSuggestion = {
   text: string;
 };
 
-interface AIChatEmptyStateProps {
+export interface AIChatEmptyStateProps {
   welcomeMessage?: string;
   suggestions: ChatEmptyStateSuggestion[];
-  onSuggestionClick?: (suggestion: string) => void;
+  onSuggestionClick?: (suggestion: ChatEmptyStateSuggestion) => void;
   testId?: string;
 }
 
@@ -25,11 +25,14 @@ export const AIChatEmptyState = ({
   testId,
 }: AIChatEmptyStateProps) => {
   const welcomeMessageToDisplay = welcomeMessage ?? 'How can I help?';
-  const handleSuggestionClick = (suggestion: string) => {
+  const handleSuggestionClick = (suggestion: ChatEmptyStateSuggestion) => {
     onSuggestionClick?.(suggestion);
   };
 
-  const handleKeyDown = (event: React.KeyboardEvent, suggestion: string) => {
+  const handleKeyDown = (
+    event: React.KeyboardEvent,
+    suggestion: ChatEmptyStateSuggestion,
+  ) => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
       handleSuggestionClick(suggestion);
@@ -56,8 +59,8 @@ export const AIChatEmptyState = ({
               key={index}
               type="button"
               className={styles.suggestionPill}
-              onClick={() => handleSuggestionClick(suggestion.text)}
-              onKeyDown={(event) => handleKeyDown(event, suggestion.text)}
+              onClick={() => handleSuggestionClick(suggestion)}
+              onKeyDown={(event) => handleKeyDown(event, suggestion)}
             >
               <Flex alignItems="center" gap="spacingXs">
                 <IconComponent className={styles.suggestionIcon} />
