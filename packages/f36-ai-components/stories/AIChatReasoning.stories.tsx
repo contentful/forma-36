@@ -6,7 +6,7 @@ import { AIChatReasoning } from '../src/AIChatReasoning/AIChatReasoning';
 
 export default {
   component: AIChatReasoning,
-  title: 'Components/AIChatReasoning',
+  title: 'Components/AIChat/AIChatReasoning',
   parameters: {
     docs: {
       source: {

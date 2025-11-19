@@ -68,7 +68,7 @@ const Template: React.FC<AIChatMessageProps> = (args) => {
 
 export default {
   component: AIChatMessage,
-  title: 'Components/AIChatMessage',
+  title: 'Components/AIChat/AIChatMessage',
   render: Template,
   parameters: { propTypes: [AIChatMessage['__docgenInfo']] },
 };

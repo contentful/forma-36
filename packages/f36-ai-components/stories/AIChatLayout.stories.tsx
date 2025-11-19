@@ -20,7 +20,7 @@ import {
 
 export default {
   component: AIChatLayout,
-  title: 'Components/AIChatLayout',
+  title: 'Components/AIChat/AIChatLayout',
   parameters: {
     docs: {
       source: {
