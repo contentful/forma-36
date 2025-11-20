@@ -170,20 +170,22 @@ export function run() {
         return null;
       }
 
-      if (setup === 'v5/icons') {
-        await updateDependencies(filesBeforeExpansion);
-        return runTransform({
-          files: filesExpanded,
-          flags: cli.flags,
-          parser: selectedParser,
-          transformer: 'v5/icons',
-        });
+      switch (setup) {
+        case 'v5/icons':
+          await updateDependencies(filesBeforeExpansion);
+          return runTransform({
+            files: filesExpanded,
+            flags: cli.flags,
+            parser: selectedParser,
+            transformer: 'v5/icons',
+          });
+        default:
+          return runTransform({
+            files: filesExpanded,
+            flags: cli.flags,
+            parser: selectedParser,
+            transformer:setup,
+          });
       }
-      return runTransform({
-        files: filesExpanded,
-        flags: cli.flags,
-        parser: selectedParser,
-        transformer: 'v4-all',
-      });
     });
 }

@@ -11,7 +11,7 @@ export const PARSER_CHOICES = [
 
 export const SETUP_CHOICES = [
   {
-    name: 'v6-popover: Update usage on codebase.',
+    name: 'v6-popover: Update changed placement and offset properties of Popove, Menu and Tooltip',
     short: 'Update popover',
     value: 'v6/popover',
   },

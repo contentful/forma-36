@@ -32,6 +32,8 @@ const updateToV6Popover = function (file, api) {
                   return j.literal('right-end');
                 } else if (placement.value.value === 'auto-start') {
                   return j.literal('right-start');
+                } else {
+                  return j.literal(placement.value.value);
                 }
               }
             },
