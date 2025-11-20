@@ -19,7 +19,8 @@ export * from './AIChatInput';
 export * from './AIChatMessage';
 export { AIChatReasoning } from './AIChatReasoning/AIChatReasoning';
 export type { AIChatReasoningProps } from './AIChatReasoning/AIChatReasoning';
-export * from './AIChatEmptyState';
+export * from './AIChatConversationEmptyState';
+export type { ChatEmptyStateSuggestion } from './types';
 
 export { AIChatSidePanel } from './AIChatSidePanel/AIChatSidePanel';
 export type { AIChatSidePanelProps } from './AIChatSidePanel/AIChatSidePanel';

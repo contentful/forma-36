@@ -1,8 +1,9 @@
 import React from 'react';
 import {
-  AIChatEmptyState,
+  AIChatConversationEmptyState,
+  AIChatSuggestionList,
   ChatEmptyStateSuggestion,
-} from '../src/AIChatEmptyState';
+} from '../src';
 import { Flex } from '@contentful/f36-core';
 import {
   DeviceMobileCameraIcon,
@@ -11,42 +12,57 @@ import {
 } from '@contentful/f36-icons';
 
 export default {
-  title: 'Components/AIChat/AIChatEmptyState',
-  component: AIChatEmptyState,
-  argTypes: {
-    welcomeMessage: { control: 'text' },
-    suggestions: { control: 'array' },
-    onSuggestionClick: { action: 'suggestion clicked' },
-  },
+  title: 'Components/AIChat/AIChatConversationEmptyState',
+  component: AIChatConversationEmptyState,
 };
 
 const defaultSuggestions: ChatEmptyStateSuggestion[] = [
   {
-    id: '1',
     icon: DeviceMobileCameraIcon,
     text: 'How many mobile visitors do we have?',
   },
   {
-    id: '2',
     icon: UsersIcon,
     text: 'What is the count of users accessing our site?',
   },
   {
-    id: '3',
     icon: ListBulletsIcon,
     text: 'Can you provide statistics on visitor traffic?',
   },
 ];
 
-const render = (args) => (
+const Template = (args) => (
   <Flex style={{ width: '450px' }}>
-    <AIChatEmptyState {...args} />
+    <AIChatConversationEmptyState {...args}>
+      <AIChatSuggestionList
+        suggestions={args.suggestions}
+        onSelect={args.onSelect}
+      />
+    </AIChatConversationEmptyState>
   </Flex>
 );
 
-export const Default = (args) => render(args);
-
+export const Default = Template.bind({});
 Default.args = {
-  welcomeMessage: 'How can I assist you today?',
+  title: 'How can I assist you today?',
+  description: 'Ask me anything about your analytics',
   suggestions: defaultSuggestions,
+  onSelect: (suggestion) => console.log('Selected:', suggestion),
+};
+
+export const WithoutDescription = Template.bind({});
+WithoutDescription.args = {
+  title: 'How can I help?',
+  suggestions: defaultSuggestions,
+  onSelect: (suggestion) => console.log('Selected:', suggestion),
+};
+
+export const WithoutSuggestions = (args) => (
+  <Flex style={{ width: '450px' }}>
+    <AIChatConversationEmptyState {...args} />
+  </Flex>
+);
+WithoutSuggestions.args = {
+  title: 'How can I assist you today?',
+  description: 'Start typing your question below',
 };
