@@ -4,23 +4,25 @@ import { css } from 'emotion';
 import { Caption, Flex } from '@contentful/f36-components';
 import type { ChatEmptyStateSuggestion } from '../types';
 
-const styles = {
-  suggestionPill: css({
-    backgroundColor: tokens.colorWhite,
-    border: `1px solid ${tokens.gray200}`,
-    borderRadius: '99px',
-    padding: `6px ${tokens.spacingS}`,
-    cursor: 'pointer',
-    ':hover': {
-      backgroundColor: tokens.gray100,
-    },
-    ':active': {
-      backgroundColor: tokens.gray200,
-    },
-  }),
-  suggestionIcon: css({
-    color: tokens.gray500,
-  }),
+const getStyles = () => {
+  return {
+    suggestionPill: css({
+      backgroundColor: tokens.colorWhite,
+      border: `1px solid ${tokens.gray200}`,
+      borderRadius: '99px',
+      padding: `6px ${tokens.spacingS}`,
+      cursor: 'pointer',
+      ':hover': {
+        backgroundColor: tokens.gray100,
+      },
+      ':active': {
+        backgroundColor: tokens.gray200,
+      },
+    }),
+    suggestionIcon: css({
+      color: tokens.gray500,
+    }),
+  };
 };
 
 interface AIChatSuggestionListProps {
@@ -34,6 +36,7 @@ export const AIChatSuggestionList = ({
   onSelect,
   testId,
 }: AIChatSuggestionListProps) => {
+  const styles = getStyles();
   const activeSuggestions = suggestions || [];
 
   const handleSuggestionClick = (suggestion: string) => {
