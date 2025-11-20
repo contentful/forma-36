@@ -21,9 +21,8 @@ const styles = {
 
 export function TopbarLink({ href, label, isActive = false }) {
   return (
-    <Link href={href} passHref legacyBehavior>
+    <Link href={href}>
       <Text
-        as="a"
         className={cx(styles.navListLink, { [styles.active]: isActive })}
         fontSize="fontSizeL"
         lineHeight="lineHeightL"

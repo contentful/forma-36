@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-datepicker",
-  "version": "6.0.0-alpha.2",
+  "version": "6.0.0-alpha.3",
   "description": "Forma 36: Datepicker component",
   "scripts": {
     "build": "tsup"

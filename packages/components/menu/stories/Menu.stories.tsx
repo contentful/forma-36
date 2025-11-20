@@ -46,7 +46,7 @@ export default {
     onClose: undefined,
     onOpen: undefined,
     isFullWidth: false,
-    placement: 'bottom',
+    placement: 'bottom-start',
     isAutoalignmentEnabled: true,
     offset: 0,
     renderOnlyWhenOpen: true,
@@ -60,15 +60,16 @@ export default {
 
 export const Basic: StoryObj<MenuProps> = {
   render: (args: MenuProps) => {
+    const triggerElement = (
+      <IconButton
+        variant="secondary"
+        icon={<ListIcon />}
+        aria-label="toggle menu"
+      />
+    );
     return (
       <Menu {...args}>
-        <Menu.Trigger>
-          <IconButton
-            variant="secondary"
-            icon={<ListIcon />}
-            aria-label="toggle menu"
-          />
-        </Menu.Trigger>
+        <Menu.Trigger>{triggerElement}</Menu.Trigger>
         <Menu.List>
           <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
           <Menu.Item>Embed existing entry</Menu.Item>

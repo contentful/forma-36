@@ -165,7 +165,6 @@ export function SidebarLink({
     <List.Item>
       <Link
         href={href}
-        passHref
         className={cx([styles.link, titleStyles.sidebarItem])}
         {...linksProps}
       >

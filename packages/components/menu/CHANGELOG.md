@@ -16,6 +16,16 @@
   - @contentful/f36-core@6.0.0-alpha.0
   - @contentful/f36-tokens@6.0.0-alpha.0
 
+## 5.8.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.8.1
+  - @contentful/f36-icons@5.8.1
+  - @contentful/f36-popover@5.8.1
+  - @contentful/f36-typography@5.8.1
+
 ## 5.8.0
 
 ### Patch Changes
