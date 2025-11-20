@@ -70,7 +70,7 @@ const Template: React.FC<
 };
 
 export default {
-  title: 'Components/AIChatInput',
+  title: 'Components/AIChat/AIChatInput',
   component: AIChatInput,
   args: DEFAULT_ARGS,
   render: Template,

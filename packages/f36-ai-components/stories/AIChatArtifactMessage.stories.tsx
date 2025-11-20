@@ -10,7 +10,7 @@ import {
 
 export default {
   component: AIChatArtifactMessage,
-  title: 'Components/AIChatArtifactMessage',
+  title: 'Components/AIChat/AIChatArtifactMessage',
   argTypes: {
     title: {
       control: 'text',
