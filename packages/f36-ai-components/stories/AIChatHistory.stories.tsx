@@ -177,7 +177,7 @@ const createMockThreads = (): MessageThread[] => {
 };
 
 export default {
-  title: 'Components/AIChatHistory',
+  title: 'Components/AIChat/AIChatHistory',
   component: AIChatHistory,
   argTypes: {
     threads: { control: { disable: true } },
