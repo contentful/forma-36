@@ -1,26 +1,38 @@
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
-import { AIChatMessageRole } from './AIChatMessage';
 
 interface GetStylesParams {
-  authorRole: AIChatMessageRole;
+  isUserMessage: boolean;
 }
 
-export function getStyles({ authorRole }: GetStylesParams) {
+export function getStyles({ isUserMessage }: GetStylesParams) {
+  const userMessageStyle = {
+    borderRadius: '14px 14px 4px 14px;',
+    padding: '12px 16px',
+    backgroundColor: tokens.gray200,
+    maxWidth: '90%',
+  };
+
+  const assistantMessageStyle = {
+    width: tokens.contentWidthFull,
+  };
+
   return {
+    messageContainer: css({
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: isUserMessage ? 'flex-end' : 'flex-start',
+      width: '100%',
+    }),
     message: css({
-      minWidth: 200,
-      maxWidth: 300,
+      display: 'inline-flex',
+      flexDirection: 'column',
+      flex: '0 1 auto',
+      flexWrap: 'wrap',
       margin: 8,
-      alignItems: 'center',
-      justifyContent: 'flex-end',
-      ...(authorRole === 'user'
-        ? {
-            borderRadius: '14px 14px 4px 14px;',
-            padding: '12px 16px',
-            backgroundColor: tokens.gray200,
-          }
-        : {}),
+      overflowWrap: 'anywhere',
+      wordBreak: 'break-word',
+      ...(isUserMessage ? userMessageStyle : assistantMessageStyle),
     }),
   };
 }

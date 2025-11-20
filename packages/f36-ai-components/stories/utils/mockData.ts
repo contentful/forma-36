@@ -92,4 +92,12 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   },
+  {
+    authorRole: 'assistant',
+    content: 'Donec magna quam, aliquet eget?',
+  },
+  {
+    authorRole: 'user',
+    content: 'EG!',
+  },
 ];
