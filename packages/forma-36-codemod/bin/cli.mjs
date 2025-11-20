@@ -187,11 +187,5 @@ export function run() {
             transformer:setup,
           });
       }
-      return runTransform({
-        files: filesExpanded,
-        flags: cli.flags,
-        parser: selectedParser,
-        transformer: 'v4-all',
-      });
     });
 }
