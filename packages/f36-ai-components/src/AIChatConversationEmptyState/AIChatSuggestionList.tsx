@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { ComponentType } from 'react';
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 import { Caption, Flex } from '@contentful/f36-components';
-import type { ChatEmptyStateSuggestion } from '../types';
+import type { IconProps } from '@contentful/f36-icons';
 
 const getStyles = () => {
   return {
@@ -25,7 +25,12 @@ const getStyles = () => {
   };
 };
 
-interface AIChatSuggestionListProps {
+export type ChatEmptyStateSuggestion = {
+  icon: ComponentType<IconProps>;
+  text: string;
+};
+
+export interface AIChatSuggestionListProps {
   suggestions?: ChatEmptyStateSuggestion[];
   onSelect?: (suggestion: string) => void;
   testId?: string;

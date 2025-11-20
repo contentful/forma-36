@@ -2,7 +2,7 @@ import React from 'react';
 import type { ReactNode } from 'react';
 import { Flex, Heading, Text } from '@contentful/f36-components';
 
-interface AIChatConversationEmptyStateProps {
+export interface AIChatConversationEmptyStateProps {
   title?: string;
   description?: string;
   children?: ReactNode;
