@@ -7,6 +7,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { Heading, List, TextLink, Table } from '@contentful/f36-components';
+import { cx } from 'emotion';
 
 export type AIChatMessageRole = 'user' | 'assistant';
 
@@ -30,10 +31,16 @@ function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
     additionalContent,
     messageActionButtons,
   } = props;
-  const styles = getStyles({ authorRole });
+
+  const isUserMessage = authorRole === 'user';
+  const styles = getStyles({ isUserMessage });
 
   return (
-    <Box ref={ref} testId={testId} className={className}>
+    <Box
+      ref={ref}
+      testId={testId}
+      className={cx(styles.messageContainer, className)}
+    >
       <Box className={styles.message}>
         <ReactMarkdown
           children={content}
@@ -79,14 +86,7 @@ function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
         )}
       </Box>
       {messageActionButtons && (
-        <Flex
-          testId={`${testId}-actions`}
-          justifyContent={
-            authorRole === 'assistant' ? 'flex-start' : 'flex-end'
-          }
-        >
-          {messageActionButtons}
-        </Flex>
+        <Flex testId={`${testId}-actions`}>{messageActionButtons}</Flex>
       )}
     </Box>
   );
