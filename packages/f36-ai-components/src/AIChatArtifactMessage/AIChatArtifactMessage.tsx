@@ -26,6 +26,7 @@ function _AIChatArtifactMessage(
     children,
     icon,
     title,
+    className,
     testId = 'cf-ui-ai-chat-artifact-message',
     ...otherProps
   } = props;
@@ -40,7 +41,7 @@ function _AIChatArtifactMessage(
     <Box
       data-test-id={testId}
       ref={ref}
-      className={cx(styles.container, props.className)}
+      className={cx(styles.container, className)}
       {...otherProps}
     >
       <Box className={styles.header}>
