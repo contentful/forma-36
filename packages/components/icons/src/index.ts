@@ -123,6 +123,7 @@ export * from './vendor/phosphor/EnvelopeIcon.js';
 export * from './vendor/phosphor/EyeClosedIcon.js';
 export * from './vendor/phosphor/EyeIcon.js';
 export * from './vendor/phosphor/EyedropperIcon.js';
+export * from './vendor/phosphor/FadersHorizontalIcon.js';
 export * from './vendor/phosphor/FileArchiveIcon.js';
 export * from './vendor/phosphor/FileAudioIcon.js';
 export * from './vendor/phosphor/FileCodeIcon.js';
