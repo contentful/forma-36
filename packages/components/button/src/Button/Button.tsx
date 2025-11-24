@@ -66,14 +66,23 @@ function ButtonBase<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
   };
 
   const iconContent = (icon: React.ReactElement<IconProps>) => {
+    const hasVariant = props.variant !== undefined;
+
+    const iconColor = hasVariant
+      ? tokens[getIconColorToken(variant as Variant, buttonIconColorByVariant)]
+      : 'currentColor';
+
     return (
       <Flex
         as="span"
-        className={styles.buttonIcon({ hasChildren: !!children, variant })}
+        className={styles.buttonIcon({
+          hasChildren: !!children,
+          variant,
+        })}
       >
         {React.cloneElement(icon, {
           size: icon.props.size ?? `${size === 'large' ? 'medium' : 'small'}`,
-          color: tokens[getIconColorToken(variant, buttonIconColorByVariant)],
+          color: iconColor,
         })}
       </Flex>
     );
