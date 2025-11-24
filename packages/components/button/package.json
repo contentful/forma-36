@@ -1,21 +1,21 @@
 {
   "name": "@contentful/f36-button",
-  "version": "5.8.1",
+  "version": "5.9.0",
   "description": "Forma 36: Button component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^5.8.1",
-    "@contentful/f36-spinner": "^5.8.1",
+    "@contentful/f36-core": "^5.9.0",
+    "@contentful/f36-spinner": "^5.9.0",
     "@contentful/f36-tokens": "^5.1.0",
-    "@contentful/f36-tooltip": "^5.8.1",
+    "@contentful/f36-tooltip": "^5.9.0",
     "@contentful/f36-utils": "^5.2.0",
     "emotion": "^10.0.17"
   },
   "devDependencies": {
-    "@contentful/f36-icon": "^5.8.1",
-    "@contentful/f36-icons": "^5.8.1"
+    "@contentful/f36-icon": "^5.9.0",
+    "@contentful/f36-icons": "^5.9.0"
   },
   "peerDependencies": {
     "react": ">=16.8",

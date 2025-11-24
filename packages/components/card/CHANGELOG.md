@@ -1,5 +1,22 @@
 # Change Log
 
+## 5.9.0
+
+### Patch Changes
+
+- Updated dependencies [[`37421c0`](https://github.com/contentful/forma-36/commit/37421c0084360287bb150f26713c07a9214ccb0b)]:
+  - @contentful/f36-icons@5.9.0
+  - @contentful/f36-asset@5.9.0
+  - @contentful/f36-badge@5.9.0
+  - @contentful/f36-button@5.9.0
+  - @contentful/f36-core@5.9.0
+  - @contentful/f36-drag-handle@5.9.0
+  - @contentful/f36-icon@5.9.0
+  - @contentful/f36-menu@5.9.0
+  - @contentful/f36-skeleton@5.9.0
+  - @contentful/f36-tooltip@5.9.0
+  - @contentful/f36-typography@5.9.0
+
 ## 5.8.1
 
 ### Patch Changes
