@@ -1,6 +1,7 @@
 import React from 'react';
 import { Flex, Text } from '@contentful/f36-components';
 import { ClockCounterClockwiseIconIcon } from '@contentful/f36-icons';
+import { getStyles } from './AIChatHistoryEmptyState.styles';
 
 interface AIChatHistoryEmptyStateProps {
   /**
@@ -21,6 +22,8 @@ interface AIChatHistoryEmptyStateProps {
    */
   testId?: string;
 }
+
+const styles = getStyles();
 
 export const AIChatHistoryEmptyState = ({
   state,
@@ -45,10 +48,10 @@ export const AIChatHistoryEmptyState = ({
       testId={testId}
     >
       <ClockCounterClockwiseIconIcon variant="muted" size="medium" />
-      <Text fontWeight="fontWeightMedium" fontColor="gray700">
-        {title || defaultTitle}
+      <Text className={styles.title}>{title || defaultTitle}</Text>
+      <Text className={styles.description}>
+        {description || defaultDescription}
       </Text>
-      <Text fontColor="gray700">{description || defaultDescription}</Text>
     </Flex>
   );
 };
