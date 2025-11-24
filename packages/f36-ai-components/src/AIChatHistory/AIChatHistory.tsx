@@ -4,6 +4,7 @@ import React, { forwardRef, Ref, useEffect, useRef, useState } from 'react';
 import { getStyles } from './AIChatHistory.styles';
 import { AIChatHistoryTabs } from './AIChatHistoryTabs';
 import { AIChatHistoryThread } from './AIChatHistoryThread';
+import { AIChatHistoryEmptyState } from '../AIChatHistoryEmptyState';
 
 export interface MessageThread {
   id: string;
@@ -119,6 +120,10 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
 
   const renderGroupedThreads = () => {
     if (!hasGroups) {
+      if (threads.length === 0) {
+        return <AIChatHistoryEmptyState />;
+      }
+
       return (
         <NavList
           ref={scrollContainerRef}
@@ -151,19 +156,23 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
           onTabClick={handleTabClick}
           testId={`${testId}-tabs`}
         />
-        <NavList
-          ref={scrollContainerRef}
-          className={styles.groupThreads}
-          role="tabpanel"
-          id={`tabpanel-${activeGroupId}`}
-          aria-labelledby={`tab-${activeGroupId}`}
-          aria-label={`${activeGroup?.label || 'All'} threads`}
-          onKeyDown={handleContainerKeyDown}
-          tabIndex={0}
-          as="div"
-        >
-          {filteredThreads.map((thread) => renderThread(thread))}
-        </NavList>
+        {filteredThreads.length === 0 ? (
+          <AIChatHistoryEmptyState state={activeGroup?.label.toLowerCase()} />
+        ) : (
+          <NavList
+            ref={scrollContainerRef}
+            className={styles.groupThreads}
+            role="tabpanel"
+            id={`tabpanel-${activeGroupId}`}
+            aria-labelledby={`tab-${activeGroupId}`}
+            aria-label={`${activeGroup?.label || 'All'} threads`}
+            onKeyDown={handleContainerKeyDown}
+            tabIndex={0}
+            as="div"
+          >
+            {filteredThreads.map((thread) => renderThread(thread))}
+          </NavList>
+        )}
       </>
     );
   };
