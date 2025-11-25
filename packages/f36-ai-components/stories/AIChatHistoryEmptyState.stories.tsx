@@ -18,6 +18,9 @@ export default {
       control: 'text',
       description: 'Custom description text',
     },
+    className: { control: { disable: true } },
+    style: { control: { disable: true } },
+    testId: { control: { disable: true } },
   },
 };
 

@@ -21,7 +21,6 @@ export { AIChatReasoning } from './AIChatReasoning/AIChatReasoning';
 export type { AIChatReasoningProps } from './AIChatReasoning/AIChatReasoning';
 export * from './AIChatConversationEmptyState';
 export * from './AIChatHistoryEmptyState';
-export type { ChatEmptyStateSuggestion } from './types';
 
 export { AIChatSidePanel } from './AIChatSidePanel/AIChatSidePanel';
 export type { AIChatSidePanelProps } from './AIChatSidePanel/AIChatSidePanel';
