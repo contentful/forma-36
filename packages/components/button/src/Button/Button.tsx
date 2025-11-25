@@ -68,9 +68,13 @@ function ButtonBase<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
   const iconContent = (icon: React.ReactElement<IconProps>) => {
     const hasVariant = props.variant !== undefined;
 
-    const iconColor = hasVariant
-      ? tokens[getIconColorToken(variant as Variant, buttonIconColorByVariant)]
-      : 'currentColor';
+    const iconColor =
+      icon.props.color ??
+      (hasVariant
+        ? tokens[
+            getIconColorToken(variant as Variant, buttonIconColorByVariant)
+          ]
+        : 'currentColor');
 
     return (
       <Flex
