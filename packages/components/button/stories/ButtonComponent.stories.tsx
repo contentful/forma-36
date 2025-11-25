@@ -513,6 +513,18 @@ export const Overview = {
             </Stack>
           </div>
         </Flex>
+
+        <Flex flexDirection="column" marginBottom="spacingL">
+          <SectionHeading as="h3" marginBottom="spacingS">
+            with custom styles
+          </SectionHeading>
+          <Button
+            style={{ color: tokens.colorWhite, background: tokens.purple800 }}
+            endIcon={<Icon as={icons.CaretDownIcon} />}
+          >
+            Positive
+          </Button>
+        </Flex>
       </>
     );
   },
