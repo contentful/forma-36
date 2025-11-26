@@ -98,10 +98,10 @@ export function useMenu({
    * Handle open and closed state
    * supports controlled and uncontrolled behavior
    * */
-  const isControlled = !!controlledIsOpen;
+  const isControlled = controlledIsOpen !== undefined;
   const [uncontrolledIsOpen, setUncontrolledIsOpen] =
     React.useState(defaultIsOpen);
-  const isOpen = isControlled ? !!controlledIsOpen : uncontrolledIsOpen;
+  const isOpen = isControlled ? controlledIsOpen : uncontrolledIsOpen;
 
   // Track previous open for transition detection
   const prevOpenRef = React.useRef(isOpen);
@@ -112,7 +112,6 @@ export function useMenu({
   const handleOpenChange = React.useCallback(
     (nextOpen: boolean) => {
       const wasOpen = prevOpenRef.current;
-
       if (nextOpen === wasOpen) {
         return;
       }
