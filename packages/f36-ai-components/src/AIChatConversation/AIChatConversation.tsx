@@ -3,16 +3,16 @@ import React from 'react';
 
 import { Box, type CommonProps } from '@contentful/f36-core';
 import { cx } from 'emotion';
-import { getStyles } from './AIChatMainPanel.styles';
+import { getStyles } from './AIChatConversation.styles';
 
-export interface AIChatMainPanelProps extends CommonProps {
+export interface AIChatConversationProps extends CommonProps {
   /**
-   * Content to be rendered inside the side panel
+   * Content to be rendered inside the conversation
    */
   children: ReactNode;
 }
 
-export const AIChatMainPanel: React.FC<AIChatMainPanelProps> = ({
+export const AIChatConversation: React.FC<AIChatConversationProps> = ({
   children,
   className,
   ...otherProps
@@ -26,4 +26,4 @@ export const AIChatMainPanel: React.FC<AIChatMainPanelProps> = ({
   );
 };
 
-AIChatMainPanel.displayName = 'AIChatSidePanel';
+AIChatConversation.displayName = 'AIChatConversation';

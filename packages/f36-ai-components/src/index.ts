@@ -22,7 +22,7 @@ export * from './AIChatMessageList';
 export { AIChatReasoning } from './AIChatReasoning/AIChatReasoning';
 export type { AIChatReasoningProps } from './AIChatReasoning/AIChatReasoning';
 
-export * from './AIChatMainPanel';
+export * from './AIChatConversation';
 export * from './AIChatSidePanel';
 
 export * from './Slider';
