@@ -6,6 +6,7 @@ import {
   type OffsetOptions,
 } from '@floating-ui/react';
 import { MenuComponent } from './MenuComponent';
+import type { ExpandProps } from '@contentful/f36-core';
 
 type BaseMenuProps = {
   /**
@@ -142,10 +143,7 @@ type ControlledProps = BaseMenuProps & {
 
 export type MenuProps = UncontrolledMenuProps | ControlledProps;
 
-export const Menu = React.forwardRef<
-  HTMLDivElement,
-  React.PropsWithChildren<MenuProps>
->(function Menu(props, ref) {
+export const Menu = (props: ExpandProps<MenuProps>) => {
   const { children, placement, ...otherProps } = props;
   const parentId = useFloatingParentNodeId();
 
@@ -154,7 +152,7 @@ export const Menu = React.forwardRef<
     placement ?? (parentId === null ? 'bottom-start' : 'right-start');
 
   const content = (
-    <MenuComponent placement={resolvedPlacement} {...otherProps} ref={ref}>
+    <MenuComponent placement={resolvedPlacement} {...otherProps}>
       {children}
     </MenuComponent>
   );
@@ -164,6 +162,6 @@ export const Menu = React.forwardRef<
   }
 
   return content;
-});
+};
 
 Menu.displayName = 'Menu';
