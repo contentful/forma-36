@@ -11,6 +11,7 @@ export function getStyles({ isUserMessage }: GetStylesParams) {
     padding: '12px 16px',
     backgroundColor: tokens.gray200,
     maxWidth: '90%',
+    margin: `${tokens.spacingXs} 1px ${tokens.spacingXs} ${tokens.spacingXs}`,
   };
 
   const assistantMessageStyle = {

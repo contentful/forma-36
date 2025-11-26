@@ -4,10 +4,11 @@ import { css } from 'emotion';
 export const getStyles = () => {
   return {
     messageList: css({
+      padding: `${tokens.spacingXs}`,
       overflowY: 'auto',
       overflowX: 'hidden',
       scrollbarGutter: 'stable',
-      padding: tokens.spacingXs,
+      scrollbarWidth: 'thin',
     }),
   };
 };

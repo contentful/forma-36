@@ -1,11 +1,12 @@
+import { Box, Flex, type CommonProps } from '@contentful/f36-core';
+import { InputGroup } from '@contentful/f36-forms/src/TextInput/input-group/InputGroup';
+import { Editor, useEditor } from '@tiptap/react';
 import React, { useRef } from 'react';
 import { getStyles } from './AIChatInput.styles';
-import { InputGroup } from '@contentful/f36-forms/src/TextInput/input-group/InputGroup';
-import { Box, Flex, type CommonProps } from '@contentful/f36-core';
-import { Editor, useEditor } from '@tiptap/react';
+import { AiChatInputMentionConfig } from './AIChatInputMentionExtention';
 import { AIChatSubmitButton } from './AIChatSubmitButton';
 import { AIChatInputTextArea } from './AIChatTextArea';
-import { AiChatInputMentionConfig } from './AIChatInputMentionExtention';
+import { cx } from 'emotion';
 
 type UseEditorOptions = Parameters<typeof useEditor>[0];
 
@@ -74,7 +75,12 @@ function _AIChatInput(props: AIChatInputProps, ref: React.Ref<HTMLDivElement>) {
   };
 
   return (
-    <Box testId={testId} className={className} style={style} ref={ref}>
+    <Box
+      testId={testId}
+      className={cx(className, styles.root)}
+      style={style}
+      ref={ref}
+    >
       <Box
         className={styles.aiChatInputContainer}
         onClick={handleContainerClick}
