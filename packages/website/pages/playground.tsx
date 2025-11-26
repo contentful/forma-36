@@ -16,7 +16,6 @@ const PlaygroundComponentWithNoSSR = dynamic(
 
 type PlaygroundProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-// eslint-disable-next-line import/no-default-export
 export default function Playground({ topbarLinks }: PlaygroundProps) {
   return (
     <Layout topbarLinks={topbarLinks}>

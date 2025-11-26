@@ -47,7 +47,6 @@ const styles = {
 
 type HomeProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-// eslint-disable-next-line import/no-default-export
 export default function Home({ topbarLinks }: HomeProps) {
   return (
     <Layout topbarLinks={topbarLinks}>
