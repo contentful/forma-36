@@ -5,6 +5,8 @@ export const getStyles = () => {
   return {
     messageList: css({
       overflowY: 'auto',
+      overflowX: 'hidden',
+      scrollbarGutter: 'stable',
       padding: tokens.spacingXs,
     }),
   };
