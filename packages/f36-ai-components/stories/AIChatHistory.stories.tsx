@@ -260,3 +260,52 @@ NoGroups.parameters = {
     },
   },
 };
+
+export const EmptyWithGroups = (args) => render(args);
+
+EmptyWithGroups.args = {
+  threads: [],
+  groups: [
+    {
+      id: 'paused',
+      label: 'Paused',
+      icon: <ColumnsIcon />,
+      filter: (thread: MessageThread) => thread.group === 'paused',
+    },
+    {
+      id: 'processing',
+      label: 'Processing',
+      icon: <LightningIcon />,
+      filter: (thread: MessageThread) => thread.group === 'processing',
+    },
+    {
+      id: 'done',
+      label: 'Done',
+      icon: <CheckIcon />,
+      filter: (thread: MessageThread) => thread.group === 'done',
+    },
+  ],
+};
+
+EmptyWithGroups.parameters = {
+  docs: {
+    description: {
+      story:
+        'Empty state shown when no threads are available for the selected group filter.',
+    },
+  },
+};
+
+export const EmptyWithoutGroups = (args) => render(args);
+
+EmptyWithoutGroups.args = {
+  threads: [],
+};
+
+EmptyWithoutGroups.parameters = {
+  docs: {
+    description: {
+      story: 'Empty state shown when no threads are available.',
+    },
+  },
+};
