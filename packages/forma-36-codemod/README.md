@@ -37,7 +37,7 @@ codemods for migration from version 5 to version 6
 
 #### `v6/menu`
 
-Migrates removed type value for `placement` and migrates changed type for propterty `offset`.
+Migrates removed type value for `placement` and migrates changed type for property `offset`.
 Migrates deprecarted `Menu.Submenu` component
 
 #### `v6/popover`
