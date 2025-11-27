@@ -33,7 +33,7 @@ export type WithEnhancedContent = {
 
 export type TooltipInternalProps = {
   /**
-   * Child nodes to be rendere as the trigger of the tooltip component. The tooltip will be displayed on hover or focus of the child element
+   * Child nodes to be rendered as the trigger of the tooltip component. The tooltip will be displayed on hover or focus of the child element
    */
   children: React.ReactNode;
   /**
