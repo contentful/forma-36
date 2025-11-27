@@ -30,7 +30,6 @@ export type IconInternalProps = CommonProps &
     /**
      * Determines the color of the icon
      */
-    // @todo: We can't use the ColorTokens type here yet. Maybe fix in v5;
     color?: string;
     /**
      * Determines the active state of the icon
