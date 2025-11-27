@@ -34,6 +34,39 @@ describe('Menu', function () {
     });
   });
 
+  it('opens and closes the Menu', async () => {
+    const user = userEvent.setup();
+    render(
+      <Menu>
+        <Menu.Trigger>
+          <Button testId="trigger">Toggle</Button>
+        </Menu.Trigger>
+        <Menu.List>
+          <Menu.Item>Create an entry</Menu.Item>
+          <Menu.Item>Remove an entry</Menu.Item>
+          <Menu.Item>Embed existing entry</Menu.Item>
+        </Menu.List>
+      </Menu>,
+    );
+
+    const trigger = screen.getByRole('button');
+    await waitFor(() => {
+      expect(screen.queryByRole('menu')).not.toBeInTheDocument();
+    });
+
+    // open
+    await user.click(trigger);
+    await waitFor(() => {
+      expect(screen.queryByRole('menu')).toBeInTheDocument();
+    });
+
+    // close
+    await user.click(trigger);
+    await waitFor(() => {
+      expect(screen.queryByRole('menu')).not.toBeInTheDocument();
+    });
+  });
+
   it('renders open by default', async () => {
     render(
       <Menu defaultIsOpen>
@@ -138,13 +171,15 @@ describe('Menu', function () {
       const user = userEvent.setup();
       const handleClose = jest.fn();
       const Controlled = () => {
+        const [isOpen, setIsOpen] = React.useState(true);
         return (
           <>
             <Button testId="buttonToClick" />
             <Menu
-              isOpen={true}
+              isOpen={isOpen}
               onClose={() => {
                 handleClose();
+                setIsOpen(false);
               }}
             >
               <Menu.Trigger>
@@ -165,6 +200,7 @@ describe('Menu', function () {
 
       await user.click(screen.getByTestId('buttonToClick'));
       expect(handleClose).toHaveBeenCalled();
+      expect(screen.queryByRole('menu')).not.toBeInTheDocument();
     });
 
     it('should close when clicking outside of the menu with all items disabled', async () => {
