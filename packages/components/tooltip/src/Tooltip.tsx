@@ -26,14 +26,14 @@ export type WithEnhancedContent = {
    */
   content?: ReactElement | string;
   /**
-   * Accessible label property, only required when using ReactElement as content
+   * Accessible label property, only required when using a ReactElement as content
    */
   label?: string;
 };
 
 export type TooltipInternalProps = {
   /**
-   * Child nodes to be rendered in the component and that will show the tooltip when they are hovered
+   * Child nodes to be rendered as the trigger of the tooltip component. The tooltip will be displayed on hover or focus of the child element
    */
   children: React.ReactNode;
   /**

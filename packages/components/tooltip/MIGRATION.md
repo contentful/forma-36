@@ -2,13 +2,13 @@
 
 ## Breaking change: Changed prop types
 
-The Popover component introduces one change:
+The Tooltip component introduces one change:
 
 - placement no longer accepts `"auto-start"` and `"auto-end"`
 
 ---
 
-## Summary of Changes
+## Summary of changes
 
 | Prop                     | Old Type                                                                                                                                                                                       | New Type                                                                                                                                                                      | Default (Old → New)   | Status                                                                                                                                        |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -33,7 +33,7 @@ The Popover component introduces one change:
 
 ---
 
-## placement Migration
+## Proptery placement migration
 
 OLD: `auto-start` or `auto-end` are no longer supported. Auto-adjustment for `"top"`, `"right"`, `"bottom"`, `"left"` is already applied, so either can be used.
 
@@ -51,16 +51,7 @@ Use when you prefer automatic best-fit without manually managing flipping logic.
 
 ---
 
-## Migration Steps Checklist
+## Migration steps checklist
 
 1. Replace `auto-start` and `auto-end` with any of the other placements or adopt `placement="auto"`.
 2. Re-test behavior
-
----
-
-## Validation
-
-- Popover still opens/closes correctly.
-- Spacing matches expectations.
-- No TypeScript errors for offset.
-- Optional: add tests for placement='auto' behavior (if used).

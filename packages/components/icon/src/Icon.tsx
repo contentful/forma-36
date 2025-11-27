@@ -9,6 +9,8 @@ import {
   type PolymorphicComponent,
   type PolymorphicProps,
   type ExpandProps,
+  type MarginProps,
+  type PaddingProps,
 } from '@contentful/f36-core';
 import { Box } from '@contentful/f36-core';
 import type { IconSize } from './types.js';
@@ -21,26 +23,27 @@ export const sizes: { [key in IconSize]: `${number}px` } = {
   medium: '20px',
 };
 
-export type IconInternalProps = CommonProps & {
-  children?: ReactElement | ReactElement[];
-  /**
-   * Determines the color of the icon
-   */
-  // @todo: We can't use the ColorTokens type here yet. Maybe fix in v5;
-  color?: string;
-  /**
-   * Determines the active state of the icon
-   */
-  isActive?: boolean;
-  /**
-   * Determines the size of the icon
-   */
-  size?: IconSize;
-  /**
-   * Custom SVG viewBox attribute to use
-   */
-  viewBox?: SVGAttributes<SVGSVGElement>['viewBox'];
-};
+export type IconInternalProps = CommonProps &
+  MarginProps &
+  PaddingProps & {
+    children?: ReactElement | ReactElement[];
+    /**
+     * Determines the color of the icon
+     */
+    color?: string;
+    /**
+     * Determines the active state of the icon
+     */
+    isActive?: boolean;
+    /**
+     * Determines the size of the icon
+     */
+    size?: IconSize;
+    /**
+     * Custom SVG viewBox attribute to use
+     */
+    viewBox?: SVGAttributes<SVGSVGElement>['viewBox'];
+  };
 
 export type IconProps<E extends React.ElementType = typeof ICON_DEFAULT_TAG> =
   PolymorphicProps<

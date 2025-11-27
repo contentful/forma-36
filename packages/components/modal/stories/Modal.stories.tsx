@@ -163,12 +163,9 @@ export const ModalWithChildComponentInHeader: StoryFn<ModalProps> = (props) => {
         onClose={() => setShown(false)}
         size="fullWidth"
       >
-        {() => (
+        {({ onClose }) => (
           <>
-            <Modal.Header
-              title="With Child Component"
-              onClose={() => setShown(false)}
-            >
+            <Modal.Header title="With Child Component" onClose={onClose}>
               <Badge>Child Component</Badge>
             </Modal.Header>
             <Modal.Content>Modal content</Modal.Content>

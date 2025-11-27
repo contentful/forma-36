@@ -9,9 +9,9 @@ import {
 } from '@contentful/f36-icons';
 import { IconButton } from '@contentful/f36-button';
 
-import { Icon } from "@contentful/f36-icon";
+import { Icon } from '@contentful/f36-icon';
 
-import tokens from "@contentful/f36-tokens";
+import tokens from '@contentful/f36-tokens';
 
 <XIcon />;
 <CaretUpIcon />;
