@@ -42,7 +42,7 @@ Migrates deprecated `Menu.Submenu` component
 
 #### `v6/popover`
 
-Migrates removed type value for `placement` and migrates changed type for propterty `offset`
+Migrates removed type value for `placement` and migrates changed type for property `offset`
 
 #### `v6/skeleton`
 
