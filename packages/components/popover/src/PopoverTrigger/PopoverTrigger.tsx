@@ -4,14 +4,8 @@ import { usePopoverContext } from '../PopoverContext';
 
 // Make the component generic over the kind of HTMLElement the ref will point to.
 // We accept any ReactElement whose props are an object (default in React) and may contain a ref.
-export interface PopoverTriggerProps<E extends HTMLElement = HTMLElement> {
-  children: React.ReactElement<
-    Record<string, unknown> & {
-      ref?: React.Ref<E>;
-      'aria-haspopup'?: React.AriaAttributes['aria-haspopup'];
-    },
-    React.ElementType
-  >;
+export interface PopoverTriggerProps {
+  children: React.ReactElement;
 }
 
 /**

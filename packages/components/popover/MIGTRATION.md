@@ -9,7 +9,7 @@ The Popover component introduces two changes:
 
 ---
 
-## Summary of Changes
+## Summary of changes
 
 | Prop                     | Old Type                                                                                                                                                                                       | New Type                                                                                                                                                                      | Default (Old → New)                   | Status                                                                                                                                        |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -29,7 +29,7 @@ The Popover component introduces two changes:
 
 ---
 
-## placement Migration
+## Property placement migration
 
 OLD: `auto-start` or `auto-end` are no longer supported. Auto-adjustment for `"top"`, `"right"`, `"bottom"`, `"left"` is already applied, so either can be used.
 
@@ -47,7 +47,7 @@ Use when you prefer automatic best-fit without manually managing flipping logic.
 
 ---
 
-## offset Migration
+## Property offset migration
 
 OLD: `[x, y]` where x = horizontal shift, y = vertical gap (for top/bottom placements).  
 NEW: `offset` can be:
@@ -60,7 +60,7 @@ Axis mapping depends on the primary side:
 - top / bottom: mainAxis = vertical gap, crossAxis = horizontal shift
 - left / right: mainAxis = horizontal gap, crossAxis = vertical shift
 
-### Mapping Table
+### Mapping table
 
 | Primary Placement | Old [x, y] | New Object                    |
 | ----------------- | ---------- | ----------------------------- |
@@ -111,7 +111,7 @@ Advanced alignment tweak:
 <Popover placement="bottom-end" offset={{ mainAxis: 8, alignmentAxis: -4 }} />
 ```
 
-### Optional Helper
+### Optional helper
 
 ```ts
 function migrateOffset(oldOffset: [number, number], placement: string) {
@@ -126,7 +126,7 @@ function migrateOffset(oldOffset: [number, number], placement: string) {
 
 ---
 
-## Migration Steps Checklist
+## Migration steps checklist
 
 1. Replace all `[x, y]` offsets with new object (or number) using mapping above.
 2. Replace `auto-start` and `auto-end` with any of the other placements or adopt `placement="auto"`.
