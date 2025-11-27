@@ -43,6 +43,18 @@ const styles = {
     },
   }),
   imgContainer: css({ flexGrow: 1, '> span': { flexGrow: 1 } }),
+  textLink: css({
+    fontFamily: tokens.fontStackPrimary,
+    fontSize: tokens.fontSizeM,
+    fontWeight: tokens.fontWeightMedium,
+    textDecoration: 'none',
+    color: tokens.blue700,
+    transition: `color ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
+    '&:hover': {
+      textDecoration: 'underline',
+      color: tokens.blue700,
+    },
+  }),
 };
 
 type HomeProps = InferGetStaticPropsType<typeof getStaticProps>;
@@ -105,8 +117,8 @@ export default function Home({ topbarLinks }: HomeProps) {
                 <Paragraph>
                   Browse the components and try them out live in the Playground.
                 </Paragraph>
-                <Link href="/components/accordion" passHref legacyBehavior>
-                  <TextLink>View the components</TextLink>
+                <Link href="/components/accordion" className={styles.textLink}>
+                  View the components
                 </Link>
               </Flex>
             </Flex>
