@@ -14,7 +14,7 @@
 
 ## Rationale
 
-Previously, allowing `align` on each item/header introduced prop duplication, and increased rendering complexity. The property was always overwritten by the parent `Accordion` and therefore lead to wrong expectations of the chevron positioning. Centralizing the setting:
+Previously, allowing `align` on each item/header introduced prop duplication, and increased rendering complexity. The property was always overwritten by the parent `Accordion` and therefore led to wrong expectations of the chevron positioning. Centralizing the setting:
 
 1. Reduces prop surface area and cognitive load.
 2. Simplifies implementation by making use of react context instead of prop-drilling.
