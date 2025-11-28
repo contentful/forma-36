@@ -3,6 +3,9 @@ import { css } from 'emotion';
 
 export const getStyles = () => {
   return {
+    root: css({
+      padding: `0 ${tokens.spacingXs} ${tokens.spacingXs}`,
+    }),
     aiChatInputContainer: css({
       cursor: 'text',
       padding: tokens.spacing2Xs,

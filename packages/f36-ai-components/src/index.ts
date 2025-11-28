@@ -8,21 +8,24 @@ export type {
 } from './AIChatLayout/AIChatLayout';
 
 export {
-  PrimaryIconGradient,
   getAIIconGradientStyles,
+  PrimaryIconGradient,
 } from './AIIconGradients';
 
 export { AIChatArtifactMessage } from './AIChatArtifactMessage/AIChatArtifactMessage';
 export type { AIChatArtifactMessageProps } from './AIChatArtifactMessage/AIChatArtifactMessage';
+export * from './AIChatConversationEmptyState';
 export * from './AIChatHistory';
 export * from './AIChatInput';
 export * from './AIChatMessage';
+export * from './AIChatMessageList';
 export { AIChatReasoning } from './AIChatReasoning/AIChatReasoning';
 export type { AIChatReasoningProps } from './AIChatReasoning/AIChatReasoning';
+
 export * from './AIChatConversationEmptyState';
 export * from './AIChatHistoryEmptyState';
 
-export { AIChatSidePanel } from './AIChatSidePanel/AIChatSidePanel';
-export type { AIChatSidePanelProps } from './AIChatSidePanel/AIChatSidePanel';
+export * from './AIChatConversation';
+export * from './AIChatSidePanel';
 
 export * from './Slider';

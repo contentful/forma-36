@@ -10,11 +10,13 @@ export function getStyles({ isUserMessage }: GetStylesParams) {
     borderRadius: '14px 14px 4px 14px;',
     padding: '12px 16px',
     backgroundColor: tokens.gray200,
-    maxWidth: '90%',
+    maxWidth: '93%',
+    margin: `${tokens.spacingXs} 1px ${tokens.spacingXs} ${tokens.spacingXs}`,
   };
 
   const assistantMessageStyle = {
     width: tokens.contentWidthFull,
+    padding: `${tokens.spacingXs} 11px ${tokens.spacingXs} 11px`,
   };
 
   return {
@@ -29,7 +31,6 @@ export function getStyles({ isUserMessage }: GetStylesParams) {
       flexDirection: 'column',
       flex: '0 1 auto',
       flexWrap: 'wrap',
-      margin: 8,
       overflowWrap: 'anywhere',
       wordBreak: 'break-word',
       ...(isUserMessage ? userMessageStyle : assistantMessageStyle),
