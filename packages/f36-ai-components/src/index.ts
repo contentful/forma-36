@@ -22,6 +22,9 @@ export * from './AIChatMessageList';
 export { AIChatReasoning } from './AIChatReasoning/AIChatReasoning';
 export type { AIChatReasoningProps } from './AIChatReasoning/AIChatReasoning';
 
+export * from './AIChatConversationEmptyState';
+export * from './AIChatHistoryEmptyState';
+
 export * from './AIChatConversation';
 export * from './AIChatSidePanel';
 
