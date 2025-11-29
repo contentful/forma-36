@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 29-11-2025
+
+**F36 Icons** `v5.9.0`
+
+- add FadersHorizontalIcon to icon library
+
 ## 19-11-2025
 
 **F36 Pagination** `v5.8.1`
