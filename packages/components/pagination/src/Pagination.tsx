@@ -102,7 +102,10 @@ type WithTotalItemsAndLabelOrNot =
 
 export type PaginationProps = BasePaginationProps & WithTotalItemsAndLabelOrNot;
 
-function PaginationBase(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
+function PaginationBase(
+  props: PaginationProps,
+  ref: React.Ref<HTMLDivElement>,
+) {
   const {
     className,
     onPageChange,
