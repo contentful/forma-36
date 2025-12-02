@@ -78,3 +78,35 @@ export const Expanded: StoryObj<CollapseProps> = (args) => {
 Expanded.args = {
   isExpanded: true,
 };
+
+export const Nested: StoryObj<CollapseProps> = (args) => {
+  const [isExpanded, setIsExpanded] = useState(args.isExpanded);
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    setIsExpanded(args.isExpanded);
+  }, [args.isExpanded]);
+
+  return (
+    <Stack flexDirection="column">
+      <Button
+        onClick={() => setIsExpanded(!isExpanded)}
+        aria-label={`${isExpanded ? 'Collapse' : 'Expand'} foo content`}
+        aria-controls="collapsible-foo"
+        aria-expanded={isExpanded}
+      >
+        Toggle content
+      </Button>
+      <Collapse id="collapsible-outer" isExpanded={isExpanded}>
+        <Button onClick={() => setIsOpen(!isOpen)}>Toggle inner</Button>
+
+        <Collapse isExpanded={isOpen} id="collapsible-inner">
+          <Text>{defaultText}</Text>
+        </Collapse>
+      </Collapse>
+    </Stack>
+  );
+};
+Nested.args = {
+  isExpanded: false,
+};
