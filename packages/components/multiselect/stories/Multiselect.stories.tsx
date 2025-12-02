@@ -612,3 +612,73 @@ export const WithDisabledTrigger = () => {
     </Stack>
   );
 };
+
+export const WithRef = () => {
+  const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
+  const multiselectRef = useRef<HTMLDivElement>(null);
+  const toggleButtonRef = useRef<HTMLButtonElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
+
+  const handleSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked, value } = event.target;
+    const currentFruit = fruits.find((fruit) => fruit.value === value);
+    if (!currentFruit) return;
+
+    if (checked) {
+      setSelectedFruits((prevState) => [...prevState, currentFruit.name]);
+    } else {
+      setSelectedFruits((prevState) =>
+        prevState.filter((fruit) => fruit !== currentFruit.name),
+      );
+    }
+  };
+
+  const outsideToogle = () => {
+    toggleButtonRef.current?.click();
+  };
+
+  const scrollListToTop = () => {
+    if (listRef.current) {
+      listRef.current.scrollTop = 0;
+    }
+  };
+
+  return (
+    <Stack flexDirection="column" spacing="spacingM" alignItems="start">
+      <Stack flexDirection="row" spacing="spacingS">
+        <Button size="small" onClick={outsideToogle}>
+          Toggle from outside
+        </Button>
+        <Button size="small" onClick={scrollListToTop}>
+          Scroll List to Top
+        </Button>
+      </Stack>
+
+      <div style={{ width: '250px' }}>
+        <Multiselect
+          ref={multiselectRef}
+          toggleRef={toggleButtonRef}
+          placeholder="Select fruits with refs"
+          currentSelection={selectedFruits}
+          popoverProps={{
+            closeOnBlur: false,
+            listRef,
+            listMaxHeight: 200,
+          }}
+        >
+          {fruits.map((item) => (
+            <Multiselect.Option
+              value={item.value}
+              label={item.name}
+              onSelectItem={handleSelectItem}
+              key={`key-${item.id}`}
+              itemId={`id-${item.id}`}
+              isChecked={selectedFruits.includes(item.name)}
+              isDisabled={item.isDisabled}
+            />
+          ))}
+        </Multiselect>
+      </div>
+    </Stack>
+  );
+};
