@@ -1,17 +1,17 @@
 {
   "name": "@contentful/f36-pill",
-  "version": "5.6.0",
+  "version": "5.9.0",
   "description": "Forma 36: Pill component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-button": "^5.6.0",
-    "@contentful/f36-core": "^5.6.0",
-    "@contentful/f36-drag-handle": "^5.6.0",
-    "@contentful/f36-icons": "^5.6.0",
+    "@contentful/f36-button": "^5.9.0",
+    "@contentful/f36-core": "^5.9.0",
+    "@contentful/f36-drag-handle": "^5.9.0",
+    "@contentful/f36-icons": "^5.9.0",
     "@contentful/f36-tokens": "^5.1.0",
-    "@contentful/f36-tooltip": "^5.6.0",
+    "@contentful/f36-tooltip": "^5.9.0",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
