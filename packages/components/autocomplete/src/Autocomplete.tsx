@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { cx } from '@emotion/css';
 import { useCombobox } from 'downshift';
 
@@ -215,7 +215,7 @@ function AutocompleteBase<ItemType>(
     showEmptyList,
     noMatchesMessage = 'No matches found',
     placeholder = 'Search',
-    inputRef,
+    inputRef: inputRefProp,
     toggleRef,
     listRef,
     listWidth = 'auto',
@@ -239,6 +239,7 @@ function AutocompleteBase<ItemType>(
   const [_inputValue, setInputValue] = useState(defaultValue);
   const inputValue =
     typeof inputValueProp === 'undefined' ? _inputValue : inputValueProp;
+  const inputRef = useRef(null);
 
   const handleInputValueChange = useCallback(
     (value: string) => {
@@ -270,14 +271,12 @@ function AutocompleteBase<ItemType>(
     : items.length === 0;
 
   const {
-    getComboboxProps,
     getInputProps,
     getItemProps,
     getMenuProps,
     getToggleButtonProps,
     highlightedIndex,
     isOpen,
-    openMenu,
     toggleMenu,
   } = useCombobox({
     isOpen: isOpenProp,
@@ -359,8 +358,7 @@ function AutocompleteBase<ItemType>(
     'aria-labelledby': _labelledby,
     id: _inputId,
     ...inputProps
-  } = getInputProps();
-  const comboboxProps = getComboboxProps();
+  } = getInputProps({ ref: inputRef });
   const toggleProps = getToggleButtonProps();
   const menuProps = getMenuProps();
   let elementStartIndex = 0;
@@ -384,14 +382,13 @@ function AutocompleteBase<ItemType>(
         autoFocus={false}
         id={menuProps.id}
       >
-        <Popover.Trigger ref={comboboxProps.ref}>
+        <Popover.Trigger>
           <div>
             <TextInput
               className={styles.inputField}
               {...inputProps}
               onFocus={(e) => {
                 onFocus?.(e as React.FocusEvent<HTMLInputElement>);
-                openMenu();
               }}
               onBlur={(e) => {
                 onBlur?.(e as React.FocusEvent<HTMLInputElement>);
@@ -402,7 +399,7 @@ function AutocompleteBase<ItemType>(
               isDisabled={isDisabled}
               isRequired={isRequired}
               isReadOnly={isReadOnly}
-              ref={mergeRefs(inputProps.ref, inputRef)}
+              ref={mergeRefs(inputProps.ref, inputRefProp)}
               testId="cf-autocomplete-input"
               placeholder={placeholder}
               onChange={(event) => {
