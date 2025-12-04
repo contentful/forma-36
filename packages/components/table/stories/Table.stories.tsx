@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryFn, StoryObj, Meta } from '@storybook/react-vite';
 import {
   Skeleton,
   EntityStatusBadge,
@@ -36,38 +36,40 @@ export default {
   title: 'Components/Table',
 } as Meta;
 
-export const Default: Story = (args) => {
-  return (
-    <div style={{ width: '800px' }}>
-      <Table {...args}>
-        <Table.Head>
-          <Table.Row>
-            <Table.Cell>Name</Table.Cell>
-            <Table.Cell>Email</Table.Cell>
-            <Table.Cell>Organization role</Table.Cell>
-            <Table.Cell>Last activity</Table.Cell>
-          </Table.Row>
-        </Table.Head>
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell>Jane Roe</Table.Cell>
-            <Table.Cell>jane@roe.com</Table.Cell>
-            <Table.Cell>CEO</Table.Cell>
-            <Table.Cell>August 29, 2018</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>John Doe</Table.Cell>
-            <Table.Cell>john@doe.com</Table.Cell>
-            <Table.Cell>CTO</Table.Cell>
-            <Table.Cell>July 27, 2019</Table.Cell>
-          </Table.Row>
-        </Table.Body>
-      </Table>
-    </div>
-  );
+export const Default: StoryObj = {
+  render: (args) => {
+    return (
+      <div style={{ width: '800px' }}>
+        <Table {...args}>
+          <Table.Head>
+            <Table.Row>
+              <Table.Cell>Name</Table.Cell>
+              <Table.Cell>Email</Table.Cell>
+              <Table.Cell>Organization role</Table.Cell>
+              <Table.Cell>Last activity</Table.Cell>
+            </Table.Row>
+          </Table.Head>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Jane Roe</Table.Cell>
+              <Table.Cell>jane@roe.com</Table.Cell>
+              <Table.Cell>CEO</Table.Cell>
+              <Table.Cell>August 29, 2018</Table.Cell>
+            </Table.Row>
+            <Table.Row>
+              <Table.Cell>John Doe</Table.Cell>
+              <Table.Cell>john@doe.com</Table.Cell>
+              <Table.Cell>CTO</Table.Cell>
+              <Table.Cell>July 27, 2019</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>
+      </div>
+    );
+  },
 };
 
-export const WithLoadingState: Story = () => {
+export const WithLoadingState: StoryFn = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
@@ -114,7 +116,7 @@ export const WithLoadingState: Story = () => {
   );
 };
 
-export const Overview: Story = () => (
+export const Overview: StoryFn = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingL">
       <SectionHeading as="h3" marginBottom="spacingS">
@@ -248,41 +250,45 @@ const withContentTableData: {
   },
 ];
 
-export const WithContent: Story = (args) => (
-  <div style={{ width: '960px' }}>
-    <Table {...args}>
-      <Table.Head>
-        <Table.Row>
-          <Table.Cell>Name</Table.Cell>
-          <Table.Cell>Status</Table.Cell>
-          <Table.Cell>Content Type</Table.Cell>
-          <Table.Cell>Updated by</Table.Cell>
-          <Table.Cell>Updated</Table.Cell>
-        </Table.Row>
-      </Table.Head>
-      <Table.Body>
-        {withContentTableData.map((item) => (
-          <Table.Row key={item.name}>
-            <Table.Cell
-              style={{
-                maxWidth: '350px',
-                fontWeight: tokens.fontWeightDemiBold,
-              }}
-              isTruncated
-            >
-              {item.name}
-            </Table.Cell>
-            <Table.Cell style={{ width: '150px' }}>
-              <EntityStatusBadge entityStatus={item.status} />
-            </Table.Cell>
-            <Table.Cell style={{ width: '150px' }}>
-              {item.contentType}
-            </Table.Cell>
-            <Table.Cell style={{ width: '250px' }}>{item.updatedBy}</Table.Cell>
-            <Table.Cell style={{ width: '150px' }}>{item.updated}</Table.Cell>
+export const WithContent: StoryObj = {
+  render: (args) => (
+    <div style={{ width: '960px' }}>
+      <Table {...args}>
+        <Table.Head>
+          <Table.Row>
+            <Table.Cell>Name</Table.Cell>
+            <Table.Cell>Status</Table.Cell>
+            <Table.Cell>Content Type</Table.Cell>
+            <Table.Cell>Updated by</Table.Cell>
+            <Table.Cell>Updated</Table.Cell>
           </Table.Row>
-        ))}
-      </Table.Body>
-    </Table>
-  </div>
-);
+        </Table.Head>
+        <Table.Body>
+          {withContentTableData.map((item) => (
+            <Table.Row key={item.name}>
+              <Table.Cell
+                style={{
+                  maxWidth: '350px',
+                  fontWeight: tokens.fontWeightDemiBold,
+                }}
+                isTruncated
+              >
+                {item.name}
+              </Table.Cell>
+              <Table.Cell style={{ width: '150px' }}>
+                <EntityStatusBadge entityStatus={item.status} />
+              </Table.Cell>
+              <Table.Cell style={{ width: '150px' }}>
+                {item.contentType}
+              </Table.Cell>
+              <Table.Cell style={{ width: '250px' }}>
+                {item.updatedBy}
+              </Table.Cell>
+              <Table.Cell style={{ width: '150px' }}>{item.updated}</Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      </Table>
+    </div>
+  ),
+};

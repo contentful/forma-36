@@ -10,7 +10,7 @@ import {
   type PropsWithHTMLElement,
   type ExpandProps,
 } from '@contentful/f36-core';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { NavbarEnvVariant } from './NavbarEnvVariant';
 import { NavbarSwitcherSkeleton } from './NavbarSwitcherSkeleton';
 import { CaretRightIcon } from '@contentful/f36-icons';
@@ -44,7 +44,7 @@ export type NavbarSwitcherProps = PropsWithHTMLElement<
   'button'
 >;
 
-function _NavbarSwitcher(
+function NavbarSwitcherBase(
   props: ExpandProps<NavbarSwitcherProps>,
   ref: React.Ref<HTMLButtonElement>,
 ) {
@@ -117,4 +117,5 @@ function _NavbarSwitcher(
   );
 }
 
-export const NavbarSwitcher = React.forwardRef(_NavbarSwitcher);
+NavbarSwitcherBase.displayName = 'NavbarSwitcher';
+export const NavbarSwitcher = React.forwardRef(NavbarSwitcherBase);

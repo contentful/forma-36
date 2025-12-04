@@ -2,7 +2,6 @@ import React from 'react';
 import { IconButton, Button } from '@contentful/f36-button';
 import { LockSimpleIcon } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
-import { Tooltip } from '@contentful/f36-tooltip';
 import { Flex } from '@contentful/f36-core';
 import { TextInput, InputGroupProps } from '../src';
 import { CopyButton } from '@contentful/f36-copybutton';
@@ -17,25 +16,27 @@ export default {
   },
 };
 
-export const Basic = (args: InputGroupProps) => {
-  return (
-    <TextInput.Group {...args}>
-      <TextInput
-        aria-label="Text Input"
-        id="TextInput1"
-        defaultValue="Some value"
-      />
-      <IconButton
-        variant="secondary"
-        icon={<LockSimpleIcon />}
-        aria-label="Lock"
-      />
-    </TextInput.Group>
-  );
-};
+export const Basic = {
+  render: (args: InputGroupProps) => {
+    return (
+      <TextInput.Group {...args}>
+        <TextInput
+          aria-label="Text Input"
+          id="TextInput1"
+          defaultValue="Some value"
+        />
+        <IconButton
+          variant="secondary"
+          icon={<LockSimpleIcon />}
+          aria-label="Lock"
+        />
+      </TextInput.Group>
+    );
+  },
 
-Basic.args = {
-  spacing: 'none',
+  args: {
+    spacing: 'none',
+  },
 };
 
 export const Overview = () => {
@@ -176,13 +177,13 @@ export const Overview = () => {
             id="TextInput4"
             defaultValue="Some value"
           />
-          <Tooltip content="Tooltip text">
-            <IconButton
-              variant="secondary"
-              icon={<LockSimpleIcon />}
-              aria-label="Lock"
-            />
-          </Tooltip>
+          <IconButton
+            variant="secondary"
+            icon={<LockSimpleIcon />}
+            aria-label="Lock"
+            withTooltip
+            tooltipProps={{ content: 'Tooltip text' }}
+          />
         </TextInput.Group>
       </Flex>
       <SectionHeading as="h3" marginBottom="spacingS">
@@ -355,13 +356,12 @@ export const WithHighDensity = () => {
               id="TextInput4"
               defaultValue="Some value"
             />
-            <Tooltip content="Tooltip text">
-              <IconButton
-                variant="secondary"
-                icon={<LockSimpleIcon />}
-                aria-label="Lock"
-              />
-            </Tooltip>
+
+            <IconButton
+              variant="secondary"
+              icon={<LockSimpleIcon />}
+              aria-label="Lock"
+            />
           </TextInput.Group>
         </Flex>
         <SectionHeading as="h3" marginBottom="spacingS">

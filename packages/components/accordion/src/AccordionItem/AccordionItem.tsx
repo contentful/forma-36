@@ -34,18 +34,13 @@ export interface AccordionItemProps extends CommonProps {
    */
   onCollapse?: () => void;
   /**
-   * Specify the alignment of the chevron inside the accordion header
-   */
-  align?: 'start' | 'end';
-
-  /**
    * By default, the AccordionItem is uncontrolled (manage it's expanded state by itself)
    * But you can make it controlled by providing boolean
    */
   isExpanded?: boolean;
 }
 
-const _AccordionItem = (
+const AccordionItemBase = (
   {
     title = 'Accordion Title',
     titleElement = 'h2',
@@ -53,7 +48,6 @@ const _AccordionItem = (
     onExpand,
     onCollapse,
     children,
-    align = 'end',
     className,
     isExpanded,
     ...otherProps
@@ -89,7 +83,6 @@ const _AccordionItem = (
         isExpanded={isOpen}
         element={titleElement}
         ariaId={id}
-        align={align}
       >
         {title}
       </AccordionHeader>
@@ -101,4 +94,6 @@ const _AccordionItem = (
   );
 };
 
-export const AccordionItem = React.forwardRef(_AccordionItem);
+AccordionItemBase.displayName = 'AccordionItem';
+
+export const AccordionItem = React.forwardRef(AccordionItemBase);

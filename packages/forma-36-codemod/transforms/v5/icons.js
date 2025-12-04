@@ -262,7 +262,7 @@ const updateToV5Icons = function (file, api) {
           });
 
           const { result } = addImport(j, source, [
-            j.template.statement([`import tokens from "${tokensImportName}"`]),
+            j.template.statement([`import tokens from '${tokensImportName}'`]),
           ]);
           addTokensImport = true;
 
@@ -407,7 +407,7 @@ const updateToV5Icons = function (file, api) {
 
   if (addTokensImport) {
     source = addImport(j, source, [
-      j.template.statement([`import tokens from "${tokensImportName}"`]),
+      j.template.statement([`import tokens from '${tokensImportName}'`]),
     ]).source;
   }
   if (iconProps?.localName) {

@@ -24,7 +24,7 @@ The Header component is meant to include the title of a page and therefore on de
 
 ```jsx
     <Header
-      backButtonProps={{ onClick: action }}
+      backButtonProps={{ onClick: action('navigate back') }}
       withBackButton
       breadcrumbs={[
         {

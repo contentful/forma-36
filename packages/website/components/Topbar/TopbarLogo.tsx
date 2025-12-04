@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import Link from 'next/link';
 import { Text } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
@@ -15,19 +15,16 @@ const styles = {
 
 export function TopbarLogo() {
   return (
-    <Link href="/" passHref>
-      <a className={styles.logoLink}>
-        <Logo />
-
-        <Text
-          fontSize="fontSizeL"
-          fontWeight="fontWeightDemiBold"
-          fontColor="blue700"
-          marginLeft="spacingS"
-        >
-          Forma 36
-        </Text>
-      </a>
+    <Link href="/" className={styles.logoLink}>
+      <Logo />
+      <Text
+        fontSize="fontSizeL"
+        fontWeight="fontWeightDemiBold"
+        fontColor="blue700"
+        marginLeft="spacingS"
+      >
+        Forma 36
+      </Text>
     </Link>
   );
 }

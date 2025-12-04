@@ -1,6 +1,6 @@
 import React from 'react';
-import CopyToClipboard from 'react-copy-to-clipboard';
-import { css, cx } from 'emotion';
+import copy from 'copy-to-clipboard';
+import { css, cx } from '@emotion/css';
 import { UnstyledOpenInCodeSandboxButton } from '@codesandbox/sandpack-react';
 import tokens from '@contentful/f36-tokens';
 import { Flex, Text, Heading, Tooltip, Icon } from '@contentful/f36-components';
@@ -63,7 +63,9 @@ export function PlaygroundTopBar() {
         <UnstyledOpenInCodeSandboxButton
           className={cx(styles.embeddedButton, styles.codeSandboxButton)}
         >
-          <Icon as={CodeSandboxLogo} color={tokens.gray600} size="medium" />
+          <Icon as="span" color={tokens.gray600} size="medium">
+            <CodeSandboxLogo />
+          </Icon>
           <Text fontColor="gray800">Open in CodeSandbox</Text>
         </UnstyledOpenInCodeSandboxButton>
       </Flex>
@@ -75,6 +77,7 @@ function UrlCopyButton({ url }) {
   const [copied, setCopied] = React.useState(false);
 
   const handleOnCopy = () => {
+    copy(url);
     setCopied(true);
 
     setTimeout(() => {
@@ -83,22 +86,21 @@ function UrlCopyButton({ url }) {
   };
 
   return (
-    <CopyToClipboard text={url} onCopy={handleOnCopy}>
-      <Tooltip
-        placement="bottom"
-        targetWrapperClassName={styles.tooltipWrapper}
-        content={copied ? 'Copied' : 'Copy url'}
+    <Tooltip
+      placement="bottom"
+      targetWrapperClassName={styles.tooltipWrapper}
+      content={copied ? 'Copied' : 'Copy url'}
+    >
+      <Flex
+        as="button"
+        alignItems="center"
+        gap="spacingXs"
+        className={cx(styles.embeddedButton, styles.shareButton)}
+        onClick={handleOnCopy}
       >
-        <Flex
-          as="button"
-          alignItems="center"
-          gap="spacingXs"
-          className={cx(styles.embeddedButton, styles.shareButton)}
-        >
-          <LinkSimpleIcon />
-          <Text fontColor="gray800">Copy Playground URL</Text>
-        </Flex>
-      </Tooltip>
-    </CopyToClipboard>
+        <LinkSimpleIcon />
+        <Text fontColor="gray800">Copy Playground URL</Text>
+      </Flex>
+    </Tooltip>
   );
 }

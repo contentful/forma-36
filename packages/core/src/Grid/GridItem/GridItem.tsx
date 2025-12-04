@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 import type * as CSS from 'csstype';
 
 import type {
@@ -54,7 +54,9 @@ export type GridItemProps<
   E extends React.ElementType = typeof GRID_ITEM_DEFAULT_TAG,
 > = PolymorphicProps<GridItemInternalProps, E>;
 
-function _GridItem<E extends React.ElementType = typeof GRID_ITEM_DEFAULT_TAG>(
+function GridItemBase<
+  E extends React.ElementType = typeof GRID_ITEM_DEFAULT_TAG,
+>(
   {
     children,
     columnStart,
@@ -69,7 +71,7 @@ function _GridItem<E extends React.ElementType = typeof GRID_ITEM_DEFAULT_TAG>(
     as,
     ...otherProps
   }: GridItemProps<E>,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLElement>,
 ) {
   const calculatedArea = area
     ? area
@@ -105,9 +107,9 @@ function _GridItem<E extends React.ElementType = typeof GRID_ITEM_DEFAULT_TAG>(
   );
 }
 
-_GridItem.displayName = 'GridItem';
+GridItemBase.displayName = 'GridItem';
 
-export const GridItem: PolymorphicComponent<
+export const GridItem = React.forwardRef(GridItemBase) as PolymorphicComponent<
   GridItemInternalProps,
   typeof GRID_ITEM_DEFAULT_TAG
-> = React.forwardRef(_GridItem);
+>;

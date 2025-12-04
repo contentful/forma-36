@@ -1,4 +1,4 @@
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import { PillVariants } from './types';
 
@@ -70,6 +70,11 @@ export function getPillStyles(variant: PillVariants) {
   return {
     closeButton: getCloseButtonStyle(),
     label: getLabelStyle(),
+    labelWrapper: css({
+      display: 'inline-flex',
+      maxWidth: '100%',
+      minWidth: '0',
+    }),
     icon: css({
       fill: tokens.gray600,
       verticalAlign: 'middle',

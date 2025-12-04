@@ -1,6 +1,6 @@
 import React from 'react';
-import { css } from 'emotion';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import { css } from '@emotion/css';
+import type { StoryFn, StoryObj, Meta } from '@storybook/react-vite';
 import { Box, Flex } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
 import tokens from '@contentful/f36-tokens';
@@ -8,7 +8,7 @@ import { MagnifyingGlassIcon, CopySimpleIcon } from '@contentful/f36-icons';
 import { TextInput } from '@contentful/f36-forms';
 
 import { Header, type HeaderProps } from '../src/Header';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Note, TextLink } from '@contentful/f36-components';
 
 const ExampleWrapper = ({ children }) => (
@@ -35,47 +35,51 @@ export default {
   title: 'Layout/Header',
 } as Meta;
 
-export const Default: Story<HeaderProps> = (args) => (
-  <ExampleWrapper>
-    <Box marginBottom="spacingM">
-      <Note>
-        The title property is semantically the title of the entire page and
-        represented as `h1`
-      </Note>
-    </Box>
-    <Header {...args} />
-  </ExampleWrapper>
-);
+export const Default: StoryObj<HeaderProps> = {
+  render: (args) => (
+    <ExampleWrapper>
+      <Box marginBottom="spacingM">
+        <Note>
+          The title property is semantically the title of the entire page and
+          represented as `h1`
+        </Note>
+      </Box>
+      <Header {...args} />
+    </ExampleWrapper>
+  ),
 
-Default.args = {
-  title: 'Product',
+  args: {
+    title: 'Product',
+  },
 };
 
-export const withBreadcrumbs: Story<HeaderProps> = (args) => (
-  <ExampleWrapper>
-    <Box marginBottom="spacingM">
-      <Note>
-        The breadcrumbs are rendered as a Segmentation component, which allows
-        for custom styling and layout. The title property is semantically the
-        title of the entire page and represented as `h1`, but displayed in a
-        smaller font size when breadcrumbs are present.
-      </Note>
-    </Box>
-    <Header {...args} />
-  </ExampleWrapper>
-);
+export const WithBreadcrumbs: StoryObj<HeaderProps> = {
+  render: (args) => (
+    <ExampleWrapper>
+      <Box marginBottom="spacingM">
+        <Note>
+          The breadcrumbs are rendered as a Segmentation component, which allows
+          for custom styling and layout. The title property is semantically the
+          title of the entire page and represented as `h1`, but displayed in a
+          smaller font size when breadcrumbs are present.
+        </Note>
+      </Box>
+      <Header {...args} />
+    </ExampleWrapper>
+  ),
 
-withBreadcrumbs.args = {
-  breadcrumbs: [
-    {
-      content: 'Content Types',
-      url: '#',
-    },
-  ],
-  title: 'Product',
+  args: {
+    breadcrumbs: [
+      {
+        content: 'Content Types',
+        url: '#',
+      },
+    ],
+    title: 'Product',
+  },
 };
 
-export const withBackButton: Story<HeaderProps> = () => (
+export const WithBackButton: StoryFn<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
       <Note>
@@ -87,14 +91,14 @@ export const withBackButton: Story<HeaderProps> = () => (
       </Note>
     </Box>
     <Header
-      backButtonProps={{ onClick: action }}
+      backButtonProps={{ onClick: action('navigate back') }}
       withBackButton
       title="Product"
     />
   </ExampleWrapper>
 );
 
-export const withTitleOverwrites: Story<HeaderProps> = () => (
+export const WithTitleOverwrites: StoryFn<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
       <Note>
@@ -106,7 +110,7 @@ export const withTitleOverwrites: Story<HeaderProps> = () => (
       </Note>
     </Box>
     <Header
-      backButtonProps={{ onClick: action }}
+      backButtonProps={{ onClick: action('navigate back') }}
       withBackButton
       title="Product"
       titleProps={{ as: 'h2', size: 'medium' }} // Overwriting the default title properties
@@ -114,7 +118,7 @@ export const withTitleOverwrites: Story<HeaderProps> = () => (
   </ExampleWrapper>
 );
 
-export const withBackButtonAndBreadcrumbs: Story<HeaderProps> = () => (
+export const WithBackButtonAndBreadcrumbs: StoryFn<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
       <Note>
@@ -125,7 +129,7 @@ export const withBackButtonAndBreadcrumbs: Story<HeaderProps> = () => (
       </Note>
     </Box>
     <Header
-      backButtonProps={{ onClick: action }}
+      backButtonProps={{ onClick: action('navigate back') }}
       withBackButton
       breadcrumbs={[
         {
@@ -138,7 +142,7 @@ export const withBackButtonAndBreadcrumbs: Story<HeaderProps> = () => (
   </ExampleWrapper>
 );
 
-export const withActions: Story<HeaderProps> = () => (
+export const WithActions: StoryFn<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
       <Note>
@@ -162,7 +166,7 @@ export const withActions: Story<HeaderProps> = () => (
   </ExampleWrapper>
 );
 
-export const withMetadata: Story<HeaderProps> = () => (
+export const WithMetadata: StoryFn<HeaderProps> = () => (
   <ExampleWrapper>
     <Box marginBottom="spacingM">
       <Note>Metadata area gets rendered after the title area</Note>
@@ -211,38 +215,40 @@ export const withMetadata: Story<HeaderProps> = () => (
   </ExampleWrapper>
 );
 
-export const WithFilters: Story<HeaderProps> = ({
-  title = 'Content Types',
-  ...args
-}) => (
-  <ExampleWrapper>
-    <Box marginBottom="spacingM">
-      <Note>
-        The header title property is presenting the title of the current page
-        and is represented as `h1`
-      </Note>
-    </Box>
-    <Header
-      title={title}
-      filters={
-        <TextInput
-          placeholder="Search"
-          icon={<MagnifyingGlassIcon />}
-          size="small"
-        />
-      }
-      actions={
-        <Flex
-          alignItems="center"
-          gap={tokens.spacingS}
-          justifyContent="flex-end"
-        >
-          <Button variant="positive" size="small">
-            Save
-          </Button>
-        </Flex>
-      }
-      {...args}
-    />
-  </ExampleWrapper>
-);
+export const WithFilters: StoryObj<HeaderProps> = {
+  render: ({ title, ...args }) => (
+    <ExampleWrapper>
+      <Box marginBottom="spacingM">
+        <Note>
+          The header title property is presenting the title of the current page
+          and is represented as `h1`
+        </Note>
+      </Box>
+      <Header
+        title={title}
+        filters={
+          <TextInput
+            placeholder="Search"
+            icon={<MagnifyingGlassIcon />}
+            size="small"
+          />
+        }
+        actions={
+          <Flex
+            alignItems="center"
+            gap={tokens.spacingS}
+            justifyContent="flex-end"
+          >
+            <Button variant="positive" size="small">
+              Save
+            </Button>
+          </Flex>
+        }
+        {...args}
+      />
+    </ExampleWrapper>
+  ),
+  args: {
+    title: 'Content Types',
+  },
+};

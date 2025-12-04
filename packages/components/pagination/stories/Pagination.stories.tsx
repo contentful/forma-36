@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import type { Meta } from '@storybook/react/types-6-0';
+import type { Meta } from '@storybook/react-vite';
 
 import { Pagination, type PaginationProps } from '../src/Pagination';
 
@@ -10,9 +10,9 @@ export default {
 
 export const Default = (args: PaginationProps) => {
   const {
-    activePage,
+    activePage = 0,
     onPageChange,
-    itemsPerPage,
+    itemsPerPage = 50,
     onViewPerPageChange,
     ...otherProps
   } = args;
@@ -23,13 +23,17 @@ export const Default = (args: PaginationProps) => {
     setView(itemsPerPage);
   }, [activePage, itemsPerPage]);
 
-  const handlePageChange = (p) => {
-    onPageChange && onPageChange(p);
+  const handlePageChange = (p: number) => {
+    if (onPageChange) {
+      onPageChange(p);
+    }
     setPage(p);
   };
 
-  const handleViewPerPageChange = (i) => {
-    onViewPerPageChange && onViewPerPageChange(i);
+  const handleViewPerPageChange = (i: number) => {
+    if (onViewPerPageChange) {
+      onViewPerPageChange(i);
+    }
     setPage(Math.floor((view * page + 1) / i));
     setView(i);
   };
@@ -55,9 +59,9 @@ Default.args = {
 
 export const CustomLabels = (args: PaginationProps) => {
   const {
-    activePage,
+    activePage = 0,
     onPageChange,
-    itemsPerPage,
+    itemsPerPage = 50,
     onViewPerPageChange,
     ...otherProps
   } = args;
@@ -69,12 +73,16 @@ export const CustomLabels = (args: PaginationProps) => {
   }, [activePage, itemsPerPage]);
 
   const handlePageChange = (p) => {
-    onPageChange && onPageChange(p);
+    if (onPageChange) {
+      onPageChange(p);
+    }
     setPage(p);
   };
 
   const handleViewPerPageChange = (i) => {
-    onViewPerPageChange && onViewPerPageChange(i);
+    if (onViewPerPageChange) {
+      onViewPerPageChange(i);
+    }
     setPage(Math.floor((view * page + 1) / i));
     setView(i);
   };
@@ -94,6 +102,8 @@ export const CustomLabels = (args: PaginationProps) => {
         onPageChange={handlePageChange}
         onViewPerPageChange={handleViewPerPageChange}
         itemsPerPage={view}
+        totalItems={55}
+        totalItemsLabel={(totalItems) => `von ${totalItems} Artikeln`}
         {...otherProps}
       />
     </div>

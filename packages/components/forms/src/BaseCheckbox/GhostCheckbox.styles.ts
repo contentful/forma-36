@@ -1,4 +1,4 @@
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import type { GhostCheckboxProps } from './GhostCheckbox';
 import tokens from '@contentful/f36-tokens';
 

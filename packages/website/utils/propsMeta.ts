@@ -11,6 +11,35 @@ const PROPS_TO_HIDE = ['ref', 'key', 'style'];
 
 type PropsMetadata = { [key: string]: PropComponentDefinition };
 
+// Helper function to recursively sanitize objects for JSON serialization
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const sanitizeForJSON = (obj: any): any => {
+  if (obj === null || obj === undefined) {
+    return obj;
+  }
+
+  if (typeof obj === 'function') {
+    return '[Function]';
+  }
+
+  if (Array.isArray(obj)) {
+    return obj.map(sanitizeForJSON);
+  }
+
+  if (typeof obj === 'object') {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const sanitized: any = {};
+    for (const key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        sanitized[key] = sanitizeForJSON(obj[key]);
+      }
+    }
+    return sanitized;
+  }
+
+  return obj;
+};
+
 const getPreparedComponent = (
   component: PropComponentDefinition,
 ): PropComponentDefinition => {
@@ -32,6 +61,8 @@ const getPreparedComponent = (
       ...prop,
       // Convert undefined to null for further data serialization
       parent: (prop.parent ?? null) as PropDefinition['parent'],
+      // Sanitize the entire prop object to handle nested functions
+      defaultValue: sanitizeForJSON(prop.defaultValue),
     };
   });
 
@@ -82,10 +113,12 @@ function getPropsMetadata(filePath: string, sourcesPaths?: string) {
   return propsMetadata;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function transformToc(toc: any) {
   if (!toc || !toc.children) {
     return null;
   }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const result: any[] = [];
   toc.children.forEach((element) => {
     switch (element.tagName) {

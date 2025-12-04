@@ -1,11 +1,11 @@
 import tokens from '@contentful/f36-tokens';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 
 export const getUsageCardHeaderStyles = () => ({
-  usageCardHeader: (tooltip?: string | React.ReactElement) =>
+  usageCardHeader: (hasTooltip?: boolean) =>
     css({
       width: '100%',
-      ...(tooltip && {
+      ...(hasTooltip && {
         display: 'flex',
         alignItems: 'center',
         gap: tokens.spacing2Xs,

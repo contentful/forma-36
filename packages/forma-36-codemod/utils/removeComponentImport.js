@@ -25,5 +25,5 @@ module.exports.removeComponentImport = function removeComponentImport(
         }
       });
     })
-    .toSource();
+    .toSource({ quote: 'single' });
 };

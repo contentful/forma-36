@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import Image from 'next/image';
 import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
@@ -47,6 +47,7 @@ const styles = {
 
 type HomeProps = InferGetStaticPropsType<typeof getStaticProps>;
 
+// eslint-disable-next-line import/no-default-export
 export default function Home({ topbarLinks }: HomeProps) {
   return (
     <Layout topbarLinks={topbarLinks}>
@@ -105,7 +106,8 @@ export default function Home({ topbarLinks }: HomeProps) {
                 <Paragraph>
                   Browse the components and try them out live in the Playground.
                 </Paragraph>
-                <Link href="/components/accordion" passHref>
+                <Link href="/components/accordion">
+                  {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */}
                   <TextLink>View the components</TextLink>
                 </Link>
               </Flex>

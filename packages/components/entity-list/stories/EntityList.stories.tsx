@@ -1,7 +1,8 @@
+/* eslint-disable no-console */
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta } from '@storybook/react-vite';
 
-import { EntityList, type EntityListProps } from '../src';
+import { EntityList } from '../src';
 import { MenuItem, MenuSectionTitle } from '@contentful/f36-components';
 
 export default {
@@ -40,7 +41,7 @@ const actions = [
   </MenuItem>,
 ];
 
-export const Basic: Story<EntityListProps> = () => (
+export const Basic = () => (
   <EntityList>
     <EntityList.Item
       title="{ ONE } onClick & onMenuClick, href=undefined - <button>"
@@ -90,7 +91,7 @@ export const Basic: Story<EntityListProps> = () => (
   </EntityList>
 );
 
-export const withDragHandle = () => (
+export const WithDragHandle = () => (
   <EntityList>
     <EntityList.Item
       title="Entry 1"

@@ -1,5 +1,5 @@
 import React, { forwardRef, type HTMLAttributes, type Ref } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { type CommonProps, Box } from '@contentful/f36-core';
 import { getLayoutBodyStyles } from './Layout.styles';
 import { useLayoutContext } from './LayoutContext';
@@ -9,7 +9,7 @@ export type LayoutBodyProps = {
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 
-const _LayoutBody = (props: LayoutBodyProps, ref: Ref<HTMLDivElement>) => {
+const LayoutBodyBase = (props: LayoutBodyProps, ref: Ref<HTMLDivElement>) => {
   const {
     children,
     className,
@@ -38,4 +38,6 @@ const _LayoutBody = (props: LayoutBodyProps, ref: Ref<HTMLDivElement>) => {
   );
 };
 
-export const LayoutBody = forwardRef(_LayoutBody);
+LayoutBodyBase.displayName = 'LayoutBody';
+
+export const LayoutBody = forwardRef(LayoutBodyBase);

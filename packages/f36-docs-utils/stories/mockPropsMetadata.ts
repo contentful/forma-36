@@ -1,5 +1,3 @@
-const path = require('path');
-
 export const propsMetadata = {
   Autocomplete: {
     tags: {},
@@ -14,18 +12,12 @@ export const propsMetadata = {
           'It’s an array of data to be used as "options" by the autocomplete component.\ndefined as any, because in this moment we do not know if items is a group',
         name: 'items',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/autocomplete/src/Autocomplete.tsx',
-          ),
+          fileName: '../../components/autocomplete/src/Autocomplete.tsx',
           name: 'AutocompleteProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/autocomplete/src/Autocomplete.tsx',
-            ),
+            fileName: '../../components/autocomplete/src/Autocomplete.tsx',
             name: 'AutocompleteProps',
           },
         ],
@@ -48,18 +40,12 @@ export const propsMetadata = {
         description: 'Tells if the item is a object with groups',
         name: 'isGrouped',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/autocomplete/src/Autocomplete.tsx',
-          ),
+          fileName: '../../components/autocomplete/src/Autocomplete.tsx',
           name: 'AutocompleteProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/autocomplete/src/Autocomplete.tsx',
-            ),
+            fileName: '../../components/autocomplete/src/Autocomplete.tsx',
             name: 'AutocompleteProps',
           },
         ],
@@ -82,18 +68,12 @@ export const propsMetadata = {
         description: 'Function called whenever the input value changes',
         name: 'onInputValueChange',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/autocomplete/src/Autocomplete.tsx',
-          ),
+          fileName: '../../components/autocomplete/src/Autocomplete.tsx',
           name: 'AutocompleteProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/autocomplete/src/Autocomplete.tsx',
-            ),
+            fileName: '../../components/autocomplete/src/Autocomplete.tsx',
             name: 'AutocompleteProps',
           },
         ],
@@ -108,18 +88,12 @@ export const propsMetadata = {
           'This is the function that will be called when the user selects one of the "options" in the list.\nIt receives the selected item as an argument and it needs to return a string that will be set as the value of `TextInput`.',
         name: 'onSelectItem',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/autocomplete/src/Autocomplete.tsx',
-          ),
+          fileName: '../../components/autocomplete/src/Autocomplete.tsx',
           name: 'AutocompleteProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/autocomplete/src/Autocomplete.tsx',
-            ),
+            fileName: '../../components/autocomplete/src/Autocomplete.tsx',
             name: 'AutocompleteProps',
           },
         ],
@@ -134,18 +108,12 @@ export const propsMetadata = {
           'This is the function that will be called for each "item" passed in the `items` prop.\nIt receives the "item" and "inputValue" as arguments and returns a ReactNode.\nThe inputValue is passed in case you want to highlight the match on the render.',
         name: 'renderItem',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/autocomplete/src/Autocomplete.tsx',
-          ),
+          fileName: '../../components/autocomplete/src/Autocomplete.tsx',
           name: 'AutocompleteProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/autocomplete/src/Autocomplete.tsx',
-            ),
+            fileName: '../../components/autocomplete/src/Autocomplete.tsx',
             name: 'AutocompleteProps',
           },
         ],
@@ -160,18 +128,12 @@ export const propsMetadata = {
           'When using objects as `items`, we recommend passing a function that tells Downshift how to extract a string\nfrom those objetcs to be used as inputValue',
         name: 'itemToString',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/autocomplete/src/Autocomplete.tsx',
-          ),
+          fileName: '../../components/autocomplete/src/Autocomplete.tsx',
           name: 'AutocompleteProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/autocomplete/src/Autocomplete.tsx',
-            ),
+            fileName: '../../components/autocomplete/src/Autocomplete.tsx',
             name: 'AutocompleteProps',
           },
         ],
@@ -188,18 +150,12 @@ export const propsMetadata = {
           'This is the value will be passed to the `placeholder` prop of the input.',
         name: 'placeholder',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/autocomplete/src/Autocomplete.tsx',
-          ),
+          fileName: '../../components/autocomplete/src/Autocomplete.tsx',
           name: 'AutocompleteProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/autocomplete/src/Autocomplete.tsx',
-            ),
+            fileName: '../../components/autocomplete/src/Autocomplete.tsx',
             name: 'AutocompleteProps',
           },
         ],
@@ -216,18 +172,12 @@ export const propsMetadata = {
           'A message that will be shown when it is not possible to find any option that matches the input value',
         name: 'noMatchesMessage',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/autocomplete/src/Autocomplete.tsx',
-          ),
+          fileName: '../../components/autocomplete/src/Autocomplete.tsx',
           name: 'AutocompleteProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/autocomplete/src/Autocomplete.tsx',
-            ),
+            fileName: '../../components/autocomplete/src/Autocomplete.tsx',
             name: 'AutocompleteProps',
           },
         ],
@@ -242,18 +192,12 @@ export const propsMetadata = {
           'Use this prop to get a ref to the input element of the component',
         name: 'inputRef',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/autocomplete/src/Autocomplete.tsx',
-          ),
+          fileName: '../../components/autocomplete/src/Autocomplete.tsx',
           name: 'AutocompleteProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/autocomplete/src/Autocomplete.tsx',
-            ),
+            fileName: '../../components/autocomplete/src/Autocomplete.tsx',
             name: 'AutocompleteProps',
           },
         ],
@@ -277,18 +221,12 @@ export const propsMetadata = {
           'Use this prop to get a ref to the toggle button of the component',
         name: 'toggleRef',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/autocomplete/src/Autocomplete.tsx',
-          ),
+          fileName: '../../components/autocomplete/src/Autocomplete.tsx',
           name: 'AutocompleteProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/autocomplete/src/Autocomplete.tsx',
-            ),
+            fileName: '../../components/autocomplete/src/Autocomplete.tsx',
             name: 'AutocompleteProps',
           },
         ],
@@ -312,18 +250,12 @@ export const propsMetadata = {
           'Use this prop to get a ref to the list of items of the component',
         name: 'listRef',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/autocomplete/src/Autocomplete.tsx',
-          ),
+          fileName: '../../components/autocomplete/src/Autocomplete.tsx',
           name: 'AutocompleteProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/autocomplete/src/Autocomplete.tsx',
-            ),
+            fileName: '../../components/autocomplete/src/Autocomplete.tsx',
             name: 'AutocompleteProps',
           },
         ],
@@ -348,18 +280,12 @@ export const propsMetadata = {
         description: 'It sets the width of the list',
         name: 'listWidth',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/autocomplete/src/Autocomplete.tsx',
-          ),
+          fileName: '../../components/autocomplete/src/Autocomplete.tsx',
           name: 'AutocompleteProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/autocomplete/src/Autocomplete.tsx',
-            ),
+            fileName: '../../components/autocomplete/src/Autocomplete.tsx',
             name: 'AutocompleteProps',
           },
         ],
@@ -385,18 +311,12 @@ export const propsMetadata = {
           'It sets the max-height, in pixels, of the list\nThe default value is the height of 5 single line items',
         name: 'listMaxHeight',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/autocomplete/src/Autocomplete.tsx',
-          ),
+          fileName: '../../components/autocomplete/src/Autocomplete.tsx',
           name: 'AutocompleteProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/autocomplete/src/Autocomplete.tsx',
-            ),
+            fileName: '../../components/autocomplete/src/Autocomplete.tsx',
             name: 'AutocompleteProps',
           },
         ],
@@ -412,18 +332,12 @@ export const propsMetadata = {
         description: 'Sets the list to show its loading state',
         name: 'isLoading',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/autocomplete/src/Autocomplete.tsx',
-          ),
+          fileName: '../../components/autocomplete/src/Autocomplete.tsx',
           name: 'AutocompleteProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/autocomplete/src/Autocomplete.tsx',
-            ),
+            fileName: '../../components/autocomplete/src/Autocomplete.tsx',
             name: 'AutocompleteProps',
           },
         ],
@@ -447,7 +361,7 @@ export const propsMetadata = {
         name: 'className',
         declarations: [
           {
-            fileName: path.resolve(__dirname, '../../core/dist/types.d.ts'),
+            fileName: '../../core/dist/types.d.ts',
             name: 'TypeLiteral',
           },
         ],
@@ -462,7 +376,7 @@ export const propsMetadata = {
         name: 'testId',
         declarations: [
           {
-            fileName: path.resolve(__dirname, '../../core/dist/types.d.ts'),
+            fileName: '../../core/dist/types.d.ts',
             name: 'TypeLiteral',
           },
         ],
@@ -478,7 +392,7 @@ export const propsMetadata = {
         name: 'style',
         declarations: [
           {
-            fileName: path.resolve(__dirname, '../../core/dist/types.d.ts'),
+            fileName: '../../core/dist/types.d.ts',
             name: 'TypeLiteral',
           },
         ],
@@ -494,18 +408,12 @@ export const propsMetadata = {
         description: 'Applies disabled styles',
         name: 'isDisabled',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/forms/dist/types.d.ts',
-          ),
+          fileName: '../../components/forms/dist/types.d.ts',
           name: 'BaseInputInternalProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/forms/dist/types.d.ts',
-            ),
+            fileName: '../../components/forms/dist/types.d.ts',
             name: 'BaseInputInternalProps',
           },
         ],
@@ -530,18 +438,12 @@ export const propsMetadata = {
         description: 'Applies invalid styles',
         name: 'isInvalid',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/forms/dist/types.d.ts',
-          ),
+          fileName: '../../components/forms/dist/types.d.ts',
           name: 'BaseInputInternalProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/forms/dist/types.d.ts',
-            ),
+            fileName: '../../components/forms/dist/types.d.ts',
             name: 'BaseInputInternalProps',
           },
         ],
@@ -566,18 +468,12 @@ export const propsMetadata = {
         description: 'Applies read-only styles',
         name: 'isReadOnly',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/forms/dist/types.d.ts',
-          ),
+          fileName: '../../components/forms/dist/types.d.ts',
           name: 'BaseInputInternalProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/forms/dist/types.d.ts',
-            ),
+            fileName: '../../components/forms/dist/types.d.ts',
             name: 'BaseInputInternalProps',
           },
         ],
@@ -602,18 +498,12 @@ export const propsMetadata = {
         description: 'Validate the input',
         name: 'isRequired',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/forms/dist/types.d.ts',
-          ),
+          fileName: '../../components/forms/dist/types.d.ts',
           name: 'BaseInputInternalProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/forms/dist/types.d.ts',
-            ),
+            fileName: '../../components/forms/dist/types.d.ts',
             name: 'BaseInputInternalProps',
           },
         ],
@@ -636,18 +526,12 @@ export const propsMetadata = {
         description: 'Sets the id of the input',
         name: 'id',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/forms/dist/types.d.ts',
-          ),
+          fileName: '../../components/forms/dist/types.d.ts',
           name: 'BaseInputInternalProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/forms/dist/types.d.ts',
-            ),
+            fileName: '../../components/forms/dist/types.d.ts',
             name: 'BaseInputInternalProps',
           },
         ],
@@ -661,18 +545,12 @@ export const propsMetadata = {
         description: "Set's default value for text input",
         name: 'defaultValue',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/forms/dist/types.d.ts',
-          ),
+          fileName: '../../components/forms/dist/types.d.ts',
           name: 'TextInputProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/forms/dist/types.d.ts',
-            ),
+            fileName: '../../components/forms/dist/types.d.ts',
             name: 'TextInputProps',
           },
         ],
@@ -687,10 +565,7 @@ export const propsMetadata = {
         name: 'ref',
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/autocomplete/src/Autocomplete.tsx',
-            ),
+            fileName: '../../components/autocomplete/src/Autocomplete.tsx',
             name: 'TypeLiteral',
           },
         ],
@@ -724,18 +599,12 @@ export const propsMetadata = {
           'Specify the alignment of the chevron inside the accordion header',
         name: 'align',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/accordion/src/Accordion.tsx',
-          ),
+          fileName: '../../components/accordion/src/Accordion.tsx',
           name: 'AccordionProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/accordion/src/Accordion.tsx',
-            ),
+            fileName: '../../components/accordion/src/Accordion.tsx',
             name: 'AccordionProps',
           },
         ],
@@ -758,18 +627,12 @@ export const propsMetadata = {
         description: 'Child nodes to be rendered in the component',
         name: 'children',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/accordion/src/Accordion.tsx',
-          ),
+          fileName: '../../components/accordion/src/Accordion.tsx',
           name: 'AccordionProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/accordion/src/Accordion.tsx',
-            ),
+            fileName: '../../components/accordion/src/Accordion.tsx',
             name: 'AccordionProps',
           },
         ],
@@ -811,7 +674,7 @@ export const propsMetadata = {
         name: 'className',
         declarations: [
           {
-            fileName: path.resolve(__dirname, '../../core/dist/types.d.ts'),
+            fileName: '../../core/dist/types.d.ts',
             name: 'TypeLiteral',
           },
         ],
@@ -828,7 +691,7 @@ export const propsMetadata = {
         name: 'testId',
         declarations: [
           {
-            fileName: path.resolve(__dirname, '../../core/dist/types.d.ts'),
+            fileName: '../../core/dist/types.d.ts',
             name: 'TypeLiteral',
           },
         ],
@@ -844,7 +707,7 @@ export const propsMetadata = {
         name: 'style',
         declarations: [
           {
-            fileName: path.resolve(__dirname, '../../core/dist/types.d.ts'),
+            fileName: '../../core/dist/types.d.ts',
             name: 'TypeLiteral',
           },
         ],
@@ -858,18 +721,12 @@ export const propsMetadata = {
         description: '',
         name: 'ref',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../../node_modules/@types/react/index.d.ts',
-          ),
+          fileName: '../../../node_modules/@types/react/index.d.ts',
           name: 'RefAttributes',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../../node_modules/@types/react/index.d.ts',
-            ),
+            fileName: '../../../node_modules/@types/react/index.d.ts',
             name: 'RefAttributes',
           },
         ],
@@ -892,18 +749,12 @@ export const propsMetadata = {
         description: '',
         name: 'key',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../../node_modules/@types/react/index.d.ts',
-          ),
+          fileName: '../../../node_modules/@types/react/index.d.ts',
           name: 'Attributes',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../../node_modules/@types/react/index.d.ts',
-            ),
+            fileName: '../../../node_modules/@types/react/index.d.ts',
             name: 'Attributes',
           },
         ],
@@ -937,18 +788,12 @@ export const propsMetadata = {
         description: '',
         name: 'children',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/button/src/types.ts',
-          ),
+          fileName: '../../components/button/src/types.ts',
           name: 'ButtonInternalProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/button/src/types.ts',
-            ),
+            fileName: '../../components/button/src/types.ts',
             name: 'ButtonInternalProps',
           },
         ],
@@ -991,18 +836,12 @@ export const propsMetadata = {
         description: 'Determines style variation of Button component',
         name: 'variant',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/button/src/types.ts',
-          ),
+          fileName: '../../components/button/src/types.ts',
           name: 'ButtonInternalProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/button/src/types.ts',
-            ),
+            fileName: '../../components/button/src/types.ts',
             name: 'ButtonInternalProps',
           },
         ],
@@ -1036,18 +875,12 @@ export const propsMetadata = {
         description: 'Determines size variation of Button component',
         name: 'size',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/button/src/types.ts',
-          ),
+          fileName: '../../components/button/src/types.ts',
           name: 'ButtonInternalProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/button/src/types.ts',
-            ),
+            fileName: '../../components/button/src/types.ts',
             name: 'ButtonInternalProps',
           },
         ],
@@ -1075,18 +908,12 @@ export const propsMetadata = {
         description: 'Applies active styles',
         name: 'isActive',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/button/src/types.ts',
-          ),
+          fileName: '../../components/button/src/types.ts',
           name: 'ButtonInternalProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/button/src/types.ts',
-            ),
+            fileName: '../../components/button/src/types.ts',
             name: 'ButtonInternalProps',
           },
         ],
@@ -1111,18 +938,12 @@ export const propsMetadata = {
         description: 'Disabled interaction and applies disabled styles',
         name: 'isDisabled',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/button/src/types.ts',
-          ),
+          fileName: '../../components/button/src/types.ts',
           name: 'ButtonInternalProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/button/src/types.ts',
-            ),
+            fileName: '../../components/button/src/types.ts',
             name: 'ButtonInternalProps',
           },
         ],
@@ -1146,18 +967,12 @@ export const propsMetadata = {
           'Expects any of the icon components. Renders the icon aligned to the start',
         name: 'startIcon',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/button/src/types.ts',
-          ),
+          fileName: '../../components/button/src/types.ts',
           name: 'ButtonInternalProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/button/src/types.ts',
-            ),
+            fileName: '../../components/button/src/types.ts',
             name: 'ButtonInternalProps',
           },
         ],
@@ -1172,18 +987,12 @@ export const propsMetadata = {
           'Expects any of the icon components. Renders the icon aligned to the end',
         name: 'endIcon',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/button/src/types.ts',
-          ),
+          fileName: '../../components/button/src/types.ts',
           name: 'ButtonInternalProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/button/src/types.ts',
-            ),
+            fileName: '../../components/button/src/types.ts',
             name: 'ButtonInternalProps',
           },
         ],
@@ -1197,18 +1006,12 @@ export const propsMetadata = {
         description: 'Adds loading indicator icon and disables interactions',
         name: 'isLoading',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/button/src/types.ts',
-          ),
+          fileName: '../../components/button/src/types.ts',
           name: 'ButtonInternalProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/button/src/types.ts',
-            ),
+            fileName: '../../components/button/src/types.ts',
             name: 'ButtonInternalProps',
           },
         ],
@@ -1231,18 +1034,12 @@ export const propsMetadata = {
         description: 'Forces button to take 100% of the container',
         name: 'isFullWidth',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/button/src/types.ts',
-          ),
+          fileName: '../../components/button/src/types.ts',
           name: 'ButtonInternalProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/button/src/types.ts',
-            ),
+            fileName: '../../components/button/src/types.ts',
             name: 'ButtonInternalProps',
           },
         ],
@@ -1267,22 +1064,16 @@ export const propsMetadata = {
         description: 'The element used for the root node.',
         name: 'as',
         parent: {
-          fileName: path.resolve(
-            __dirname,
-            '../../components/button/src/types.ts',
-          ),
+          fileName: '../../components/button/src/types.ts',
           name: 'ButtonInternalProps',
         },
         declarations: [
           {
-            fileName: path.resolve(
-              __dirname,
-              '../../components/button/src/types.ts',
-            ),
+            fileName: '../../components/button/src/types.ts',
             name: 'ButtonInternalProps',
           },
           {
-            fileName: path.resolve(__dirname, '../../core/dist/types.d.ts'),
+            fileName: '../../core/dist/types.d.ts',
             name: 'TypeLiteral',
           },
         ],
@@ -1318,7 +1109,7 @@ export const propsMetadata = {
         name: 'className',
         declarations: [
           {
-            fileName: path.resolve(__dirname, '../../core/dist/types.d.ts'),
+            fileName: '../../core/dist/types.d.ts',
             name: 'TypeLiteral',
           },
         ],
@@ -1333,7 +1124,7 @@ export const propsMetadata = {
         name: 'testId',
         declarations: [
           {
-            fileName: path.resolve(__dirname, '../../core/dist/types.d.ts'),
+            fileName: '../../core/dist/types.d.ts',
             name: 'TypeLiteral',
           },
         ],
@@ -1349,7 +1140,7 @@ export const propsMetadata = {
         name: 'style',
         declarations: [
           {
-            fileName: path.resolve(__dirname, '../../core/dist/types.d.ts'),
+            fileName: '../../core/dist/types.d.ts',
             name: 'TypeLiteral',
           },
         ],

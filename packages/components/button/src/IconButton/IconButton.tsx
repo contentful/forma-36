@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import type {
   PolymorphicProps,
   PolymorphicComponent,
@@ -63,9 +63,9 @@ export type IconButtonProps<
   E extends React.ElementType = typeof ICON_BUTTON_DEFAULT_TAG,
 > = PolymorphicProps<ExtendedIconButtonProps, E, 'disabled'>;
 
-function _IconButton<
+function IconButtonBase<
   E extends React.ElementType = typeof ICON_BUTTON_DEFAULT_TAG,
->(props: IconButtonProps<E>, ref: React.Ref<any>) {
+>(props: IconButtonProps<E>, ref: React.Ref<HTMLButtonElement>) {
   const {
     testId = 'cf-ui-icon-button',
     variant = 'transparent',
@@ -74,6 +74,7 @@ function _IconButton<
     size = 'medium',
     withTooltip = false,
     tooltipProps,
+    as = ICON_BUTTON_DEFAULT_TAG,
     'aria-label': ariaLabel,
     ...otherProps
   } = props;
@@ -82,7 +83,7 @@ function _IconButton<
 
   const styles = getStyles({ size, density });
 
-  const iconButton = (
+  const element = (
     <Button
       testId={testId}
       ref={ref}
@@ -92,7 +93,8 @@ function _IconButton<
       // we pass the icon as endIcon prop to have it replaced with loading icon, when isLoading prop is true
       endIcon={icon}
       aria-label={ariaLabel}
-      {...otherProps}
+      as={as}
+      {...(otherProps as ButtonInternalProps)}
     />
   );
 
@@ -105,18 +107,20 @@ function _IconButton<
 
     return (
       <Tooltip content={content} showDelay={showDelay} {...otherTooltipProps}>
-        {iconButton}
+        {element}
       </Tooltip>
     );
   }
 
-  return iconButton;
+  return element;
 }
 
-_IconButton.displayName = 'IconButton';
+IconButtonBase.displayName = 'IconButton';
 
-export const IconButton: PolymorphicComponent<
+export const IconButton = React.forwardRef(
+  IconButtonBase,
+) as PolymorphicComponent<
   ExpandProps<ExtendedIconButtonProps>,
   typeof ICON_BUTTON_DEFAULT_TAG,
   'disabled'
-> = React.forwardRef(_IconButton);
+>;

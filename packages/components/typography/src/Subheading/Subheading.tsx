@@ -21,7 +21,7 @@ export type SubheadingProps<
   E extends React.ElementType = typeof SUBHEADING_DEFAULT_TAG,
 > = PolymorphicProps<SubheadingInternalProps, E>;
 
-function _Subheading<
+function SubheadingBase<
   E extends React.ElementType = typeof SUBHEADING_DEFAULT_TAG,
 >(
   {
@@ -31,7 +31,7 @@ function _Subheading<
     fontColor = 'gray900',
     ...otherProps
   }: SubheadingProps<E>,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLHeadingElement>,
 ) {
   const density = useDensity();
   const Element: React.ElementType = as || SUBHEADING_DEFAULT_TAG;
@@ -52,9 +52,11 @@ function _Subheading<
   );
 }
 
-_Subheading.displayName = 'Subheading';
+SubheadingBase.displayName = 'Subheading';
 
-export const Subheading: PolymorphicComponent<
+export const Subheading = React.forwardRef(
+  SubheadingBase,
+) as PolymorphicComponent<
   ExpandProps<SubheadingInternalProps>,
   typeof SUBHEADING_DEFAULT_TAG
-> = React.forwardRef(_Subheading);
+>;

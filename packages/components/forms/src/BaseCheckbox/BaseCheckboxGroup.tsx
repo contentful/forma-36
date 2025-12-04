@@ -37,7 +37,7 @@ export interface BaseCheckboxGroupProps extends CommonProps {
   value?: Array<string> | string;
 }
 
-export const _BaseCheckboxGroup = (
+export const BaseCheckboxGroupBase = (
   props: ExpandProps<BaseCheckboxGroupProps>,
   ref: React.Ref<HTMLDivElement>,
 ) => {
@@ -56,6 +56,7 @@ export const _BaseCheckboxGroup = (
         flexDirection="column"
         alignItems="flex-start"
         spacing="spacingXs"
+        role="group"
       >
         {children}
       </Stack>
@@ -63,4 +64,6 @@ export const _BaseCheckboxGroup = (
   );
 };
 
-export const BaseCheckboxGroup = React.forwardRef(_BaseCheckboxGroup);
+BaseCheckboxGroupBase.displayName = 'BaseCheckboxGroup';
+
+export const BaseCheckboxGroup = React.forwardRef(BaseCheckboxGroupBase);

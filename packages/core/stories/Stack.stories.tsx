@@ -55,15 +55,17 @@ interface Args extends StackInternalProps {
   exampleBoxesNumber: number;
 }
 
-export const Basic = ({ exampleBoxesNumber, ...args }: Args) => (
-  <Stack {...args}>
-    <DemoBox times={exampleBoxesNumber} />
-  </Stack>
-);
+export const Basic = {
+  render: ({ exampleBoxesNumber, ...args }: Args) => (
+    <Stack {...args}>
+      <DemoBox times={exampleBoxesNumber} />
+    </Stack>
+  ),
 
-Basic.args = {
-  exampleBoxesNumber: 5,
-  flexDirection: 'row',
-  alignItems: 'center',
-  spacing: 'spacingM',
+  args: {
+    exampleBoxesNumber: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+    spacing: 'spacingM',
+  },
 };
