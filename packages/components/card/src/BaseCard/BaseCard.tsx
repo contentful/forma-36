@@ -26,6 +26,44 @@ export type BaseCardProps<
   E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG,
 > = PolymorphicProps<BaseCardInternalProps, E>;
 
+type CardInnerProps = {
+  withDragHandle?: boolean;
+  dragHandleRender?: BaseCardInternalProps['dragHandleRender'];
+  drag: BaseCardInternalProps['drag'];
+  isDragging: boolean;
+  header?: React.ReactNode;
+  defaultHeader: React.ReactNode;
+  children: React.ReactNode;
+  styles: { wrapper: string; contentBody: string };
+};
+
+const CardInner = ({
+  withDragHandle,
+  dragHandleRender,
+  drag,
+  isDragging,
+  header,
+  defaultHeader,
+  children,
+  styles,
+}: CardInnerProps) => (
+  <>
+    {withDragHandle
+      ? dragHandleRender
+        ? dragHandleRender({ drag, isDragging })
+        : drag
+      : null}
+    <div className={styles.wrapper} data-card-part="wrapper">
+      {header ?? defaultHeader}
+      <div className={styles.contentBody} data-card-part="content">
+        {children}
+      </div>
+    </div>
+  </>
+);
+
+CardInner.displayName = 'CardInner';
+
 function BaseCardBase<
   E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG,
 >(
@@ -142,31 +180,6 @@ function BaseCardBase<
     );
   }
 
-  const drag = (
-    <DragHandle
-      className={styles.dragHandle}
-      isActive={isDragging}
-      label="Reorder entry"
-      onClick={stopEvents}
-    />
-  );
-
-  const CardInner = () => (
-    <>
-      {withDragHandle
-        ? dragHandleRender
-          ? dragHandleRender({ drag, isDragging })
-          : drag
-        : null}
-      <div className={styles.wrapper} data-card-part="wrapper">
-        {header ?? defaultHeader}
-        <div className={styles.contentBody} data-card-part="content">
-          {children}
-        </div>
-      </div>
-    </>
-  );
-
   const Element = as || BASE_CARD_DEFAULT_TAG;
 
   /** Seperate the Props based on the Element Type */
@@ -179,6 +192,15 @@ function BaseCardBase<
     'aria-label': title || ariaLabel,
     title,
   };
+
+  const drag = (
+    <DragHandle
+      className={styles.dragHandle}
+      isActive={isDragging}
+      label="Reorder entry"
+      onClick={stopEvents}
+    />
+  );
 
   // anchor exclusive properties
   const anchorProps = {
@@ -207,7 +229,17 @@ function BaseCardBase<
         }
         {...otherProps}
       >
-        <CardInner />
+        <CardInner
+          withDragHandle={withDragHandle}
+          dragHandleRender={dragHandleRender}
+          drag={drag}
+          isDragging={isDragging}
+          header={header}
+          defaultHeader={defaultHeader}
+          styles={styles}
+        >
+          {children}
+        </CardInner>
       </Box>
     );
   }
@@ -236,7 +268,17 @@ function BaseCardBase<
         ref={forwardedRef}
         {...otherProps}
       >
-        <CardInner />
+        <CardInner
+          withDragHandle={withDragHandle}
+          dragHandleRender={dragHandleRender}
+          drag={drag}
+          isDragging={isDragging}
+          header={header}
+          defaultHeader={defaultHeader}
+          styles={styles}
+        >
+          {children}
+        </CardInner>
       </Box>
     );
   }
@@ -247,7 +289,17 @@ function BaseCardBase<
       {...otherProps}
       ref={forwardedRef}
     >
-      <CardInner />
+      <CardInner
+        withDragHandle={withDragHandle}
+        dragHandleRender={dragHandleRender}
+        drag={drag}
+        isDragging={isDragging}
+        header={header}
+        defaultHeader={defaultHeader}
+        styles={styles}
+      >
+        {children}
+      </CardInner>
     </Box>
   );
 }

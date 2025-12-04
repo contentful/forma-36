@@ -3,6 +3,7 @@ import { action } from 'storybook/actions';
 import type { Meta } from '@storybook/react-vite';
 
 import { Stack } from '@contentful/f36-core';
+import { Card } from '../../card/src/Card';
 import { FormControl } from '@contentful/f36-forms';
 import { Paragraph } from '@contentful/f36-typography';
 import { Button } from '@contentful/f36-button';
@@ -84,12 +85,7 @@ export const Basic = (args: AutocompleteProps<string>) => {
   };
 
   return (
-    <Stack
-      style={{ width: '180px' }}
-      flexDirection="column"
-      spacing="spacingM"
-      alignItems="start"
-    >
+    <Card as="div" style={{ width: '180px' }}>
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<string>
         placeholder="select your favorite fruit"
@@ -102,7 +98,7 @@ export const Basic = (args: AutocompleteProps<string>) => {
       />
 
       <Paragraph>Selected fruit: {selectedFruit}</Paragraph>
-    </Stack>
+    </Card>
   );
 };
 Basic.args = {
@@ -462,4 +458,67 @@ export const WithAsyncData = () => {
 };
 WithAsyncData.args = {
   placeholder: 'Search your favorite fruit',
+};
+
+export const brokenExample = () => {
+  type SourceType = 'TaxonomyConcept' | 'TaxonomyConceptScheme';
+
+  type Source = {
+    type: SourceType;
+    name: string;
+    description: string;
+  };
+
+  const [source, setSource] = useState('');
+
+  const sources: Source[] = [
+    {
+      type: 'TaxonomyConcept',
+      name: t({
+        id: 'UI.ContentTypeEditor.TaxonomyValidations.EditCardConceptName',
+        message: 'Concept',
+      }),
+      description: t({
+        id: 'UI.ContentTypeEditor.TaxonomyValidations.EditCardConceptDescription',
+        message: 'Subconcepts of the selected concept are allowed',
+      }),
+    },
+    {
+      type: 'TaxonomyConceptScheme',
+      name: t({
+        id: 'UI.ContentTypeEditor.TaxonomyValidations.EditCardConceptSchemeName',
+        message: 'Concept scheme',
+      }),
+      description: t({
+        id: 'UI.ContentTypeEditor.TaxonomyValidations.EditCardConceptSchemeDescription',
+        message: 'Concepts belonging to the selected group are allowed',
+      }),
+    },
+  ];
+
+  const [filteredSources, setFilteredSources] = useState(sources);
+
+  const handleInputValueChange = (value: string) => {
+    const newFilteredSources = sources.filter((item) =>
+      item.name.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredSources(newFilteredSources);
+  };
+
+  const handleSelectItem = (item: Source) => {
+    console.log(source);
+    setSource(item.type);
+  };
+
+  return (
+    <Card>
+      <Autocomplete<Source>
+        items={filteredSources}
+        onInputValueChange={handleInputValueChange}
+        onSelectItem={handleSelectItem}
+        itemToString={(item) => item.name}
+        renderItem={(item) => item.name}
+      />
+    </Card>
+  );
 };
