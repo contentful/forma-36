@@ -1,7 +1,6 @@
 import { getSingleArticleBySlug } from '../../lib/api';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-// eslint-disable-next-line import/no-default-export
 export default async function preview(
   req: NextApiRequest,
   res: NextApiResponse,

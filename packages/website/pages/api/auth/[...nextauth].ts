@@ -20,5 +20,5 @@ export const authOptions: NextAuthOptions = {
     logo: '/favicon.png',
   },
 };
-// eslint-disable-next-line import/no-default-export
+
 export default NextAuth(authOptions);

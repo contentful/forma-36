@@ -43,11 +43,22 @@ const styles = {
     },
   }),
   imgContainer: css({ flexGrow: 1, '> span': { flexGrow: 1 } }),
+  textLink: css({
+    fontFamily: tokens.fontStackPrimary,
+    fontSize: tokens.fontSizeM,
+    fontWeight: tokens.fontWeightMedium,
+    textDecoration: 'none',
+    color: tokens.blue700,
+    transition: `color ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
+    '&:hover': {
+      textDecoration: 'underline',
+      color: tokens.blue700,
+    },
+  }),
 };
 
 type HomeProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-// eslint-disable-next-line import/no-default-export
 export default function Home({ topbarLinks }: HomeProps) {
   return (
     <Layout topbarLinks={topbarLinks}>
@@ -106,9 +117,8 @@ export default function Home({ topbarLinks }: HomeProps) {
                 <Paragraph>
                   Browse the components and try them out live in the Playground.
                 </Paragraph>
-                <Link href="/components/accordion">
-                  {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */}
-                  <TextLink>View the components</TextLink>
+                <Link href="/components/accordion" className={styles.textLink}>
+                  View the components
                 </Link>
               </Flex>
             </Flex>
