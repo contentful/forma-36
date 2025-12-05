@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { UsageCount, type UsageCountProps } from '../src/UsageCount';
 
@@ -40,12 +40,12 @@ const meta = {
 } satisfies Meta<typeof UsageCount>;
 
 export default meta;
-export const Entitlements: Story<UsageCountProps> = ({
+export const Entitlements = ({
   valueUnit,
   value,
   quota,
   includedLabel,
-}) => {
+}: UsageCountProps) => {
   return (
     <UsageCount
       variant="entitlement"
