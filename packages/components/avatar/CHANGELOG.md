@@ -1,5 +1,45 @@
 # Change Log
 
+## 5.9.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.9.0
+  - @contentful/f36-image@5.9.0
+  - @contentful/f36-menu@5.9.0
+  - @contentful/f36-tooltip@5.9.0
+
+## 5.8.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.8.1
+  - @contentful/f36-image@5.8.1
+  - @contentful/f36-menu@5.8.1
+  - @contentful/f36-tooltip@5.8.1
+
+## 5.8.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.8.0
+  - @contentful/f36-image@5.8.0
+  - @contentful/f36-menu@5.8.0
+  - @contentful/f36-tooltip@5.8.0
+
+## 5.7.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.7.0
+  - @contentful/f36-image@5.7.0
+  - @contentful/f36-menu@5.7.0
+  - @contentful/f36-tooltip@5.7.0
+
 ## 5.6.0
 
 ### Patch Changes
