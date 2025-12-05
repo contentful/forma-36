@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryObj, Meta } from '@storybook/react-vite';
+import type { Meta } from '@storybook/react-vite';
 
 import { UsageCount, type UsageCountProps } from '../src/UsageCount';
 
