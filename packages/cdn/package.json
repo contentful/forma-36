@@ -17,7 +17,7 @@
   "scripts": {
     "deploy": "fastly compute deploy",
     "prebuild": "npx compute-js-static-publish --build-static",
-    "build": "env -i $(which node) ../../node_modules/.bin/js-compute-runtime ./src/index.js ./bin/main.wasm",
+    "build": "npm run prebuild && env -i $(which node) ../../node_modules/.bin/js-compute-runtime ./src/index.js ./bin/main.wasm",
     "serve": "fastly compute serve"
   },
   "optionalDependencies": {
