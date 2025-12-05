@@ -360,7 +360,8 @@ function AutocompleteBase<ItemType>(
     ...inputProps
   } = getInputProps({ ref: inputRef });
   const toggleProps = getToggleButtonProps();
-  const menuProps = getMenuProps();
+  const menuRef = useRef(null);
+  const menuProps = getMenuProps({ ref: menuRef });
   let elementStartIndex = 0;
 
   const showClearButton = showClearButtonProp ?? inputValue;

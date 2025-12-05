@@ -72,7 +72,7 @@ describe('Autocomplete', () => {
       expect(list.childElementCount).toBe(12);
 
       // Type one letter in the input to open the list
-      await user.type(screen.getByRole('textbox'), 'a');
+      await user.type(screen.getByRole('combobox'), 'a');
 
       // checks that onInputValueChange was called with the value we typed
       expect(mockOnInputValueChange).toHaveBeenCalledWith('a');
@@ -93,7 +93,7 @@ describe('Autocomplete', () => {
 
       // checks if the list got closed and the value of the input is the one we selected
       expect(list).not.toBeVisible();
-      expect(screen.getByRole('textbox')).toHaveValue('Apple 🍎');
+      expect(screen.getByRole('combobox')).toHaveValue('Apple 🍎');
       expect(mockOnSelectItem).toHaveBeenCalledWith('Apple 🍎');
     });
 
@@ -103,7 +103,7 @@ describe('Autocomplete', () => {
       renderComponent({ textOnAfterSelect: 'clear' });
 
       // Type one letter in the input to open the list
-      await user.type(screen.getByRole('textbox'), 'a');
+      await user.type(screen.getByRole('combobox'), 'a');
 
       // checks if the list is visible
       expect(screen.queryByRole('listbox')).toBeVisible();
@@ -116,7 +116,7 @@ describe('Autocomplete', () => {
 
       // checks if the list got closed and the value of the input is an empty string
       expect(screen.queryByRole('listbox', { hidden: true })).not.toBeVisible();
-      expect(screen.getByRole('textbox')).toHaveValue('');
+      expect(screen.getByRole('combobox')).toHaveValue('');
       expect(mockOnSelectItem).toHaveBeenCalledWith('Apple 🍎');
     });
 
@@ -126,7 +126,7 @@ describe('Autocomplete', () => {
       renderComponent({ textOnAfterSelect: 'preserve' });
 
       // Type one letter in the input to open the list
-      await user.type(screen.getByRole('textbox'), 'a');
+      await user.type(screen.getByRole('combobox'), 'a');
 
       // checks if the list is visible
       expect(screen.getByRole('listbox')).toBeVisible();
@@ -139,7 +139,7 @@ describe('Autocomplete', () => {
 
       // checks if the list got closed and the value of the input is an empty string
       expect(screen.getByRole('listbox', { hidden: true })).not.toBeVisible();
-      expect(screen.getByRole('textbox')).toHaveValue('a');
+      expect(screen.getByRole('combobox')).toHaveValue('a');
       expect(mockOnSelectItem).toHaveBeenCalledWith('Apple 🍎');
     });
 
@@ -150,7 +150,7 @@ describe('Autocomplete', () => {
       renderComponent({ noMatchesMessage, items: [] });
 
       // type anything to open the list
-      await user.type(screen.getByRole('textbox'), 'tesst');
+      await user.type(screen.getByRole('combobox'), 'tesst');
 
       // checks if the list is visible and it only shows the "No matches" message
       expect(screen.getByRole('listbox')).toBeVisible();
@@ -166,7 +166,7 @@ describe('Autocomplete', () => {
       expect(screen.queryByRole('listbox', { hidden: true })).not.toBeVisible();
 
       // focus on input to open the list
-      await user.type(screen.getByRole('textbox'), 'a');
+      await user.type(screen.getByRole('combobox'), 'a');
 
       // Should be visible after clicking on the input
       expect(screen.queryByRole('listbox')).toBeVisible();
@@ -177,10 +177,10 @@ describe('Autocomplete', () => {
       const user = userEvent.setup();
       renderComponent({ items: [] });
 
-      await user.click(screen.getByRole('textbox'));
+      await user.click(screen.getByRole('combobox'));
 
       // checks if the list is not visible
-      expect(screen.getByRole('textbox')).toHaveFocus();
+      expect(screen.getByRole('combobox')).toHaveFocus();
       expect(screen.getByRole('listbox', { hidden: true })).not.toBeVisible();
     });
 
@@ -189,7 +189,7 @@ describe('Autocomplete', () => {
       renderComponent({ isLoading: true });
 
       // type anything to open the list
-      await user.type(screen.getByRole('textbox'), 'broccoli');
+      await user.type(screen.getByRole('combobox'), 'broccoli');
 
       // checks if the list is visible and it shows the loading state
       expect(screen.getByRole('listbox')).toBeVisible();
@@ -202,7 +202,7 @@ describe('Autocomplete', () => {
       renderComponent({ showClearButton: false });
 
       // Type one letter in the input which would show "Clear" button if not explicitly hidden
-      await user.type(screen.getByRole('textbox'), 'a');
+      await user.type(screen.getByRole('combobox'), 'a');
 
       // checks if the "Show list" button is visible which means the "Clear" button is hidden
       expect(screen.getByLabelText('Show list')).toBeVisible();
@@ -228,7 +228,7 @@ describe('Autocomplete', () => {
       expect(list.childElementCount).toBe(12);
 
       // Type one letter in the input to open the list
-      await user.type(screen.getByRole('textbox'), 'a');
+      await user.type(screen.getByRole('combobox'), 'a');
 
       // checks if the list is visible
       expect(list).toBeVisible();
@@ -245,7 +245,7 @@ describe('Autocomplete', () => {
 
       // checks if the list got closed and the value of the input is the one we selected
       expect(list).not.toBeVisible();
-      expect(screen.getByRole('textbox')).toHaveValue('Apple 🍎');
+      expect(screen.getByRole('combobox')).toHaveValue('Apple 🍎');
       expect(mockOnSelectItem).toHaveBeenCalledWith({
         id: 1,
         name: 'Apple 🍎',
@@ -274,7 +274,7 @@ describe('Autocomplete', () => {
       });
 
       // Type a text to be matched and open the list of suggestions
-      await user.type(screen.getByRole('textbox'), 'ana');
+      await user.type(screen.getByRole('combobox'), 'ana');
 
       // checks if the list is visible and it only shows the filtered options
       expect(screen.getByRole('list')).toBeVisible();
@@ -291,7 +291,7 @@ describe('Autocomplete', () => {
     const openDropdown = async () => {
       const user = userEvent.setup();
 
-      const input = screen.getByRole('textbox');
+      const input = screen.getByRole('combobox');
       const container = screen.getByRole('listbox', { hidden: true });
       // list is initially closed
       expect(container).not.toBeVisible();
