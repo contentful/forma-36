@@ -32,10 +32,10 @@ export const Basic = (args) => {
 
   return (
     <Datepicker
-      {...args}
       selected={selectedDay}
       onSelect={setSelectedDay}
       defaultIsOpen={true}
+      {...args}
     />
   );
 };
