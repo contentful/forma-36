@@ -28,7 +28,7 @@ enim ad minim veniam, quis nostrud exercitation ullamco laboris
 nisi ut aliquip ex ea commodo consequat.`;
 
 export const Basic: Story = {
-  render: ({ align }: AccordionProps) => (
+  render: ({ align, ...args }: AccordionProps) => (
     <Accordion align={align}>
       <Accordion.Item title={'Accordion I'}>
         <Text as="p">{defaultText}</Text>
