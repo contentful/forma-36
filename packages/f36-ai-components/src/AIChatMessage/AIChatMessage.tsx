@@ -93,15 +93,13 @@ function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
             u: (props) => <Text as="u" {...props} />,
             code: ({
               inline,
-              className,
               children,
               ...props
             }: {
               inline?: boolean;
-              className?: string;
               children?: React.ReactNode;
             }) =>
-              inline !== false && !className ? (
+              inline ? (
                 <code className={styles.inlineCode} {...props}>
                   {children}
                 </code>
