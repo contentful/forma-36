@@ -35,5 +35,31 @@ export function getStyles({ isUserMessage }: GetStylesParams) {
       wordBreak: 'break-word',
       ...(isUserMessage ? userMessageStyle : assistantMessageStyle),
     }),
+    inlineCode: css({
+      fontFamily: tokens.fontStackMonospace,
+      fontSize: tokens.fontSizeM,
+      fontWeight: tokens.fontWeightNormal,
+      lineHeight: tokens.lineHeightCondensed,
+    }),
+    codeBlock: css({
+      display: 'block',
+      padding: tokens.spacingXs,
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: tokens.borderRadiusSmall,
+      backgroundColor: tokens.gray200,
+      fontFamily: tokens.fontStackMonospace,
+      fontSize: tokens.fontSizeM,
+      fontWeight: tokens.fontWeightNormal,
+      lineHeight: tokens.lineHeightCondensed,
+      overflowX: 'auto',
+      whiteSpace: 'pre-wrap',
+      wordBreak: 'break-word',
+    }),
+    blockquote: css({
+      borderLeft: `4px solid ${tokens.gray300}`,
+      margin: 0,
+      paddingLeft: tokens.spacingM,
+    }),
   };
 }
