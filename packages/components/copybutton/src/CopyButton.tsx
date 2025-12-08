@@ -118,6 +118,7 @@ function CopyButtonBase(
 
   return (
     <IconButton
+      variant="secondary"
       {...otherProps}
       aria-label={copied ? tooltipCopiedText : (label ?? tooltipText)}
       aria-live="assertive"
@@ -132,7 +133,6 @@ function CopyButtonBase(
           size={size === 'small' ? 'tiny' : 'small'}
         />
       }
-      variant="secondary"
       onClick={handleClick}
       ref={ref}
       withTooltip
