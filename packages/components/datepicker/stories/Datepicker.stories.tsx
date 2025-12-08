@@ -40,6 +40,20 @@ export const Basic = (args) => {
   );
 };
 
+export const SizeVariation = (args) => {
+  const [selectedDay, setSelectedDay] = useState<Date>(testDate);
+
+  return (
+    <Datepicker
+      {...args}
+      selected={selectedDay}
+      onSelect={setSelectedDay}
+      defaultIsOpen={true}
+      size="small"
+    />
+  );
+};
+
 export const WithMinMaxDate = (args) => {
   const [selectedDay, setSelectedDay] = useState<Date>(testDate);
 

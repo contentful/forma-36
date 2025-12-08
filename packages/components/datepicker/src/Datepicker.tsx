@@ -41,6 +41,9 @@ export type DatepickerProps = CommonProps & {
    */
   placeholder?: string;
 
+  /** Size variations */
+  size?: 'small' | 'medium';
+
   /**
    * Props to pass to the TextInput component
    */
@@ -81,6 +84,7 @@ export function Datepicker(props: DatepickerProps) {
     dateFormat = 'dd LLL yyyy',
     defaultIsOpen,
     placeholder,
+    size = 'medium',
     ...otherProps
   } = props;
 
@@ -159,6 +163,7 @@ export function Datepicker(props: DatepickerProps) {
       <Popover.Trigger>
         {/* we need this additional component to pass <Popover.Trigger> props to the correct trigger button */}
         <DatepickerTrigger
+          size={size}
           className={className}
           style={style}
           testId={testId}
@@ -178,6 +183,7 @@ export function Datepicker(props: DatepickerProps) {
             isInvalid={inputProps?.isInvalid || isTextInputValueInvalid}
             aria-label="Enter date"
             testId="cf-ui-datepicker-input"
+            size={size}
             {...inputProps}
           />
         </DatepickerTrigger>
@@ -206,6 +212,7 @@ type DatepickerTriggerProps = {
   children: React.ReactNode;
   isDisabled: boolean;
   onTriggerClick: () => void;
+  size: DatepickerProps['size'];
 } & Pick<DatepickerProps, 'className' | 'style' | 'testId'>;
 
 const DatepickerTrigger = React.forwardRef<
@@ -219,6 +226,7 @@ const DatepickerTrigger = React.forwardRef<
     className,
     onTriggerClick,
     isDisabled,
+    size,
     // props will be passed from <Popover.Trigger> wrapper
     ...popoverTriggerProps
   } = props;
@@ -238,6 +246,7 @@ const DatepickerTrigger = React.forwardRef<
         onClick={onTriggerClick}
         isDisabled={isDisabled}
         testId="cf-ui-datepicker-button"
+        size={size}
         {...popoverTriggerProps}
       />
     </TextInput.Group>
