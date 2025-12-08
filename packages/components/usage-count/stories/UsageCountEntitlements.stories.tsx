@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta } from '@storybook/react-vite';
 
-import { UsageCount, type UsageCountProps } from '../src/UsageCount';
+import { UsageCount } from '../src/UsageCount';
 
 const meta = {
   component: UsageCount,
@@ -40,12 +40,7 @@ const meta = {
 } satisfies Meta<typeof UsageCount>;
 
 export default meta;
-export const Entitlements = ({
-  valueUnit,
-  value,
-  quota,
-  includedLabel,
-}: UsageCountProps) => {
+export const Entitlements = ({ valueUnit, value, quota, includedLabel }) => {
   return (
     <UsageCount
       variant="entitlement"
