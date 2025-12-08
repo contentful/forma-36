@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import chalk from 'chalk';
-import { execa, execaSync } from 'execa';
+import {  execaSync } from 'execa';
 import isGitClean from 'is-git-clean';
 import inquirer from 'inquirer';
 import meow from 'meow';

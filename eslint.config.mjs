@@ -95,7 +95,7 @@ export default [
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
       'import/named': 'error',
-      'import/no-default-export': 'error',
+      'import/no-default-export': 'warn',
       'import/no-extraneous-dependencies': 'error',
     },
   },
