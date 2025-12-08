@@ -212,8 +212,7 @@ type DatepickerTriggerProps = {
   children: React.ReactNode;
   isDisabled: boolean;
   onTriggerClick: () => void;
-  size: DatepickerProps['size'];
-} & Pick<DatepickerProps, 'className' | 'style' | 'testId'>;
+} & Pick<DatepickerProps, 'className' | 'size' | 'style' | 'testId'>;
 
 const DatepickerTrigger = React.forwardRef<
   HTMLDivElement,
