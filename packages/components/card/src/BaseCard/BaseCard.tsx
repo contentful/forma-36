@@ -20,6 +20,44 @@ import { getBaseCardStyles, getRootStyles } from './BaseCard.styles';
 import { DefaultCardHeader, stopEvents } from './DefaultCardHeader';
 import type { BaseCardInternalProps, CardElement } from './BaseCard.types';
 
+type CardInnerProps = {
+  withDragHandle?: boolean;
+  dragHandleRender?: BaseCardInternalProps['dragHandleRender'];
+  drag: React.ReactElement;
+  isDragging: boolean;
+  header?: React.ReactNode;
+  defaultHeader: React.ReactNode;
+  children: React.ReactNode;
+  styles: { wrapper: string; contentBody: string };
+};
+
+const CardInner = ({
+  children,
+  defaultHeader,
+  drag,
+  dragHandleRender,
+  header,
+  isDragging,
+  styles,
+  withDragHandle,
+}: CardInnerProps) => (
+  <>
+    {withDragHandle
+      ? dragHandleRender
+        ? dragHandleRender({ drag, isDragging })
+        : drag
+      : null}
+    <div className={styles.wrapper} data-card-part="wrapper">
+      {header ?? defaultHeader}
+      <div className={styles.contentBody} data-card-part="content">
+        {children}
+      </div>
+    </div>
+  </>
+);
+
+CardInner.displayName = 'CardInner';
+
 export const BASE_CARD_DEFAULT_TAG = 'article';
 
 export type BaseCardProps<
@@ -151,22 +189,6 @@ function BaseCardBase<
     />
   );
 
-  const CardInner = () => (
-    <>
-      {withDragHandle
-        ? dragHandleRender
-          ? dragHandleRender({ drag, isDragging })
-          : drag
-        : null}
-      <div className={styles.wrapper} data-card-part="wrapper">
-        {header ?? defaultHeader}
-        <div className={styles.contentBody} data-card-part="content">
-          {children}
-        </div>
-      </div>
-    </>
-  );
-
   const Element = as || BASE_CARD_DEFAULT_TAG;
 
   /** Seperate the Props based on the Element Type */
@@ -207,7 +229,16 @@ function BaseCardBase<
         }
         {...otherProps}
       >
-        <CardInner />
+        <CardInner
+          children={children}
+          defaultHeader={defaultHeader}
+          drag={drag}
+          dragHandleRender={dragHandleRender}
+          header={header}
+          isDragging={isDragging}
+          styles={styles}
+          withDragHandle={withDragHandle}
+        />
       </Box>
     );
   }
@@ -236,7 +267,16 @@ function BaseCardBase<
         ref={forwardedRef}
         {...otherProps}
       >
-        <CardInner />
+        <CardInner
+          children={children}
+          defaultHeader={defaultHeader}
+          drag={drag}
+          dragHandleRender={dragHandleRender}
+          header={header}
+          isDragging={isDragging}
+          styles={styles}
+          withDragHandle={withDragHandle}
+        />
       </Box>
     );
   }
@@ -247,7 +287,16 @@ function BaseCardBase<
       {...otherProps}
       ref={forwardedRef}
     >
-      <CardInner />
+      <CardInner
+        children={children}
+        defaultHeader={defaultHeader}
+        drag={drag}
+        dragHandleRender={dragHandleRender}
+        header={header}
+        isDragging={isDragging}
+        styles={styles}
+        withDragHandle={withDragHandle}
+      />
     </Box>
   );
 }

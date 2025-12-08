@@ -28,10 +28,10 @@ enim ad minim veniam, quis nostrud exercitation ullamco laboris
 nisi ut aliquip ex ea commodo consequat.`;
 
 export const Basic: Story = {
-  render: ({ align, ...args }: AccordionProps) => (
+  render: ({ align }: AccordionProps) => (
     <Accordion align={align}>
-      <Accordion.Item title={args['Accordion.Item Title #1']}>
-        <Text as="p">{args['Accordion.Item Content #1']}</Text>
+      <Accordion.Item title={'Accordion I'}>
+        <Text as="p">{defaultText}</Text>
       </Accordion.Item>
       <Accordion.Item title={'Accordion II'}>
         <Text as="p">{defaultText}</Text>
