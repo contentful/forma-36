@@ -49,10 +49,10 @@ function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
           components={{
             // as per design we need smaller h1 so using h2 and simlar style for h2 and h3
             h1: (props) => (
-              <Heading {...props} as={'h2'} fontSize="fontSizeXl" />
+              <Heading {...props} as={'h2'} fontSize="fontSizeL" />
             ),
             h2: (props) => (
-              <Heading {...props} as={'h3'} fontSize="fontSizeL" />
+              <Heading {...props} as={'h3'} fontSize="fontSizeM" />
             ),
             h3: (props) => (
               <Heading {...props} as={'h3'} fontSize="fontSizeM" />
@@ -66,10 +66,14 @@ function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
             h6: (props) => (
               <Text {...props} as={'h6'} fontWeight="fontWeightMedium" />
             ),
-            p: Text,
+            p: (props) => <Text as="p" marginBottom="spacingS" {...props} />,
             a: TextLink,
-            ul: (props) => <List {...props} as={'ul'} />,
-            ol: (props) => <List {...props} as={'ol'} />,
+            ul: (props) => (
+              <List {...props} as={'ul'} className={styles.list} />
+            ),
+            ol: (props) => (
+              <List {...props} as={'ol'} className={styles.list} />
+            ),
             li: (props) => <List.Item {...props} />,
             table: (props) => <Table {...props} />,
             tbody: (props) => <Table.Body {...props} />,

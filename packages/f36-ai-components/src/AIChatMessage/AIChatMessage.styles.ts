@@ -40,6 +40,7 @@ export function getStyles({ isUserMessage }: GetStylesParams) {
       fontSize: tokens.fontSizeM,
       fontWeight: tokens.fontWeightNormal,
       lineHeight: tokens.lineHeightCondensed,
+      marginBottom: tokens.spacingS,
     }),
     codeBlock: css({
       display: 'block',
@@ -55,11 +56,19 @@ export function getStyles({ isUserMessage }: GetStylesParams) {
       overflowX: 'auto',
       whiteSpace: 'pre-wrap',
       wordBreak: 'break-word',
+      marginBottom: tokens.spacingS,
     }),
     blockquote: css({
       borderLeft: `4px solid ${tokens.gray300}`,
-      margin: 0,
-      paddingLeft: tokens.spacingM,
+      padding: `${tokens.spacingS} ${tokens.spacingM}`,
+      marginBottom: tokens.spacingS,
+      '> p': {
+        padding: 0,
+        margin: 0,
+      },
+    }),
+    list: css({
+      marginBottom: tokens.spacingS,
     }),
   };
 }
