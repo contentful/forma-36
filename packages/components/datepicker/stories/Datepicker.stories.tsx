@@ -32,10 +32,24 @@ export const Basic = (args) => {
 
   return (
     <Datepicker
+      selected={selectedDay}
+      onSelect={setSelectedDay}
+      defaultIsOpen={true}
+      {...args}
+    />
+  );
+};
+
+export const SizeVariation = (args) => {
+  const [selectedDay, setSelectedDay] = useState<Date>(testDate);
+
+  return (
+    <Datepicker
       {...args}
       selected={selectedDay}
       onSelect={setSelectedDay}
       defaultIsOpen={true}
+      size="small"
     />
   );
 };
