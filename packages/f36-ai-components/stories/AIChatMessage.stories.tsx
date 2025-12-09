@@ -90,6 +90,50 @@ const markdown = `
 | Diet           | Nectar            | Omnivore           |
 `;
 
+const allMarkdownElements = `
+# Heading Level 1
+
+## Heading Level 2
+
+### Heading Level 3
+
+This is a paragraph with **bold text** and *italic text*.
+
+Here's some ~~strikethrough text~~ and <ins>underlined text</ins>.
+
+This is \`inline code\` within a sentence.
+
+\`\`\`
+function codeBlock() {
+  return "This is a code block";
+}
+\`\`\`
+
+> This is a blockquote. It has a left border and padding.
+
+> > This is a nested blockquote
+
+Here's a [link to example](https://example.com).
+
+### Unordered List
+- First item
+- Second item
+- Third item
+
+### Ordered List
+1. First ordered item
+2. Second ordered item
+3. Third ordered item
+
+### Table
+
+| Feature       | Description       | Status             |
+|---------------|-------------------|--------------------|
+| Bold          | **bold text**     | Supported          |
+| Italic        | *italic text*     | Supported          |
+| Code          | \`inline code\`   | Supported          |
+`;
+
 export const UserMessage = {
   args: {
     authorRole: 'user',
@@ -108,6 +152,13 @@ export const AssistantMarkdownMessage = {
   args: {
     authorRole: 'assistant',
     content: markdown,
+  },
+};
+
+export const AllMarkdownElements = {
+  args: {
+    authorRole: 'assistant',
+    content: allMarkdownElements,
   },
 };
 

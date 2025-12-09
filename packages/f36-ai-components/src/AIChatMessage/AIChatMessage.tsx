@@ -47,38 +47,105 @@ function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw]}
           components={{
+            // as per design we need smaller h1 so using h2 and simlar style for h2 and h3
             h1: (props) => (
-              <Heading {...props} as={'h1'} fontSize="fontSizeXl" />
+              <Heading
+                {...props}
+                as={'h2'}
+                fontSize="fontSizeL"
+                marginBottom="spacingS"
+              />
             ),
             h2: (props) => (
-              <Heading {...props} as={'h2'} fontSize="fontSizeL" />
+              <Heading
+                {...props}
+                as={'h3'}
+                fontSize="fontSizeM"
+                marginBottom="spacingS"
+              />
             ),
             h3: (props) => (
-              <Heading {...props} as={'h3'} fontSize="fontSizeM" />
+              <Heading
+                {...props}
+                as={'h3'}
+                fontSize="fontSizeM"
+                marginBottom="spacingS"
+              />
             ),
             h4: (props) => (
-              <Heading {...props} as={'h4'} fontSize="fontSizeS" />
+              <Heading
+                {...props}
+                as={'h4'}
+                fontSize="fontSizeS"
+                marginBottom="spacingS"
+              />
             ),
             h5: (props) => (
-              <Text {...props} as={'h5'} fontWeight="fontWeightDemiBold" />
+              <Text
+                {...props}
+                as={'h5'}
+                fontWeight="fontWeightDemiBold"
+                marginBottom="spacingS"
+              />
             ),
             h6: (props) => (
-              <Text {...props} as={'h6'} fontWeight="fontWeightMedium" />
+              <Text
+                {...props}
+                as={'h6'}
+                fontWeight="fontWeightMedium"
+                marginBottom="spacingS"
+              />
             ),
-            p: Text,
+            p: (props) => <Text as="p" marginBottom="spacingS" {...props} />,
             a: TextLink,
-            ul: (props) => <List {...props} as={'ul'} />,
-            ol: (props) => <List {...props} as={'ol'} />,
-            // tmp fix needed until https://github.com/contentful/forma-36/pull/3227 is shipped
-            li: (props) => (
-              <List.Item children={props.children || <></>} {...props} />
+            ul: (props) => (
+              <List {...props} as={'ul'} className={styles.list} />
             ),
+            ol: (props) => (
+              <List {...props} as={'ol'} className={styles.list} />
+            ),
+            li: (props) => <List.Item {...props} />,
             table: (props) => <Table {...props} />,
             tbody: (props) => <Table.Body {...props} />,
             thead: (props) => <Table.Head {...props} />,
             tr: (props) => <Table.Row {...props} />,
             th: (props) => <Table.Cell children={props.children} />,
             td: (props) => <Table.Cell children={props.children} />,
+            strong: (props) => (
+              <Text
+                as="strong"
+                fontWeight="fontWeightDemiBold"
+                fontSize="fontSizeM"
+                {...props}
+              />
+            ),
+            em: (props) => (
+              <Text as="strong" fontWeight="fontWeightDemiBold" {...props} />
+            ),
+            del: (props) => <Text as="del" {...props} />,
+            ins: (props) => <Text as="u" {...props} />,
+            u: (props) => <Text as="u" {...props} />,
+            code: ({
+              inline,
+              children,
+              ...props
+            }: {
+              inline?: boolean;
+              children?: React.ReactNode;
+            }) =>
+              inline ? (
+                <code className={styles.inlineCode} {...props}>
+                  {children}
+                </code>
+              ) : (
+                <code className={styles.codeBlock} {...props}>
+                  {children}
+                </code>
+              ),
+            pre: ({ children }) => <>{children}</>,
+            blockquote: (props) => (
+              <blockquote className={styles.blockquote} {...props} />
+            ),
           }}
         />
         {additionalContent && (
