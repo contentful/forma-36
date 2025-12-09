@@ -17,6 +17,13 @@ export const Default: StoryObj<CopyButtonProps> = {
     return <CopyButton {...args} />;
   },
 
+  argTypes: {
+    variant: {
+      control: { type: 'select' },
+      options: ['negative', 'positive', 'primary', 'secondary', 'transparent'],
+    },
+  },
+
   args: {
     value: 'Lorem Ipsum',
     tooltipCopiedText: 'Value copied to clipboard',

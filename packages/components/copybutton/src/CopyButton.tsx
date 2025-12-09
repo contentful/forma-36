@@ -4,7 +4,6 @@ import React, {
   type MouseEventHandler,
   type FocusEventHandler,
 } from 'react';
-import tokens from '@contentful/f36-tokens';
 import { CopySimpleIcon } from '@contentful/f36-icons';
 import { type ExpandProps } from '@contentful/f36-core';
 import { type TooltipProps } from '@contentful/f36-tooltip';
@@ -70,6 +69,7 @@ function CopyButtonBase(
     tooltipText = 'Copy to clipboard',
     value,
     children,
+    variant = 'secondary',
     ...otherProps
   }: ExpandProps<CopyButtonProps>,
   ref: React.Ref<HTMLButtonElement>,
@@ -119,6 +119,7 @@ function CopyButtonBase(
   return (
     <IconButton
       {...otherProps}
+      variant={variant}
       aria-label={copied ? tooltipCopiedText : (label ?? tooltipText)}
       aria-live="assertive"
       className={cx(styles.button, className)}
@@ -126,13 +127,7 @@ function CopyButtonBase(
       isLoading={isLoading}
       onBlur={handleBlur}
       testId={testId}
-      icon={
-        <CopySimpleIcon
-          color={tokens.gray600}
-          size={size === 'small' ? 'tiny' : 'small'}
-        />
-      }
-      variant="secondary"
+      icon={<CopySimpleIcon size={size === 'small' ? 'tiny' : 'small'} />}
       onClick={handleClick}
       ref={ref}
       withTooltip
