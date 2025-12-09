@@ -70,6 +70,7 @@ function CopyButtonBase(
     tooltipText = 'Copy to clipboard',
     value,
     children,
+    variant = 'secondary',
     ...otherProps
   }: ExpandProps<CopyButtonProps>,
   ref: React.Ref<HTMLButtonElement>,
@@ -118,8 +119,8 @@ function CopyButtonBase(
 
   return (
     <IconButton
-      variant="secondary"
       {...otherProps}
+      variant={variant}
       aria-label={copied ? tooltipCopiedText : (label ?? tooltipText)}
       aria-live="assertive"
       className={cx(styles.button, className)}
@@ -127,12 +128,7 @@ function CopyButtonBase(
       isLoading={isLoading}
       onBlur={handleBlur}
       testId={testId}
-      icon={
-        <CopySimpleIcon
-          color={tokens.gray600}
-          size={size === 'small' ? 'tiny' : 'small'}
-        />
-      }
+      icon={<CopySimpleIcon size={size === 'small' ? 'tiny' : 'small'} />}
       onClick={handleClick}
       ref={ref}
       withTooltip
