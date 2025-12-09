@@ -1,5 +1,49 @@
 # Change Log
 
+## 5.9.0
+
+### Minor Changes
+
+- [#3246](https://github.com/contentful/forma-36/pull/3246) [`37421c0`](https://github.com/contentful/forma-36/commit/37421c0084360287bb150f26713c07a9214ccb0b) Thanks [@bgutsol](https://github.com/bgutsol)! - add FadersHorizontalIcon to icon library
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.9.0
+  - @contentful/f36-icon@5.9.0
+
+## 5.8.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.8.1
+  - @contentful/f36-icon@5.8.1
+
+## 5.8.0
+
+### Minor Changes
+
+- [#3222](https://github.com/contentful/forma-36/pull/3222) [`d2e900b`](https://github.com/contentful/forma-36/commit/d2e900bb10135cdbdd9bf2b0fa799530548f11a4) Thanks [@harikakondur](https://github.com/harikakondur)! - new icons for app logo
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.8.0
+  - @contentful/f36-icon@5.8.0
+
+## 5.7.0
+
+### Minor Changes
+
+- [#3219](https://github.com/contentful/forma-36/pull/3219) [`3ebf269`](https://github.com/contentful/forma-36/commit/3ebf269c33b3b638bbc27c0aca89fa823d9ad3a7) Thanks [@YvesRijckaert](https://github.com/YvesRijckaert)! - feat: add square split horizontal icon
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.7.0
+  - @contentful/f36-icon@5.7.0
+
 ## 5.6.0
 
 ### Patch Changes

@@ -4,14 +4,17 @@ export function getRangeText({
   totalItems = 0,
   pageLength,
   isLastPage = false,
+  totalItemsLabel,
 }: {
   activePage: number;
   itemsPerPage: number;
   totalItems?: number;
   pageLength?: number;
   isLastPage?: boolean;
+  totalItemsLabel?: (totalItems: number) => string;
 }): string {
-  const total = totalItems ? `of ${totalItems} items` : '';
+  const total =
+    totalItems && totalItemsLabel ? totalItemsLabel(totalItems) : '';
   const firstItem = activePage * itemsPerPage + 1;
   if (isLastPage && pageLength) {
     return [`${firstItem} - ${firstItem - 1 + pageLength}`, total].join(' ');
