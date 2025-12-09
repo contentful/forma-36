@@ -49,22 +49,52 @@ function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
           components={{
             // as per design we need smaller h1 so using h2 and simlar style for h2 and h3
             h1: (props) => (
-              <Heading {...props} as={'h2'} fontSize="fontSizeL" />
+              <Heading
+                {...props}
+                as={'h2'}
+                fontSize="fontSizeL"
+                marginBottom="spacingS"
+              />
             ),
             h2: (props) => (
-              <Heading {...props} as={'h3'} fontSize="fontSizeM" />
+              <Heading
+                {...props}
+                as={'h3'}
+                fontSize="fontSizeM"
+                marginBottom="spacingS"
+              />
             ),
             h3: (props) => (
-              <Heading {...props} as={'h3'} fontSize="fontSizeM" />
+              <Heading
+                {...props}
+                as={'h3'}
+                fontSize="fontSizeM"
+                marginBottom="spacingS"
+              />
             ),
             h4: (props) => (
-              <Heading {...props} as={'h4'} fontSize="fontSizeS" />
+              <Heading
+                {...props}
+                as={'h4'}
+                fontSize="fontSizeS"
+                marginBottom="spacingS"
+              />
             ),
             h5: (props) => (
-              <Text {...props} as={'h5'} fontWeight="fontWeightDemiBold" />
+              <Text
+                {...props}
+                as={'h5'}
+                fontWeight="fontWeightDemiBold"
+                marginBottom="spacingS"
+              />
             ),
             h6: (props) => (
-              <Text {...props} as={'h6'} fontWeight="fontWeightMedium" />
+              <Text
+                {...props}
+                as={'h6'}
+                fontWeight="fontWeightMedium"
+                marginBottom="spacingS"
+              />
             ),
             p: (props) => <Text as="p" marginBottom="spacingS" {...props} />,
             a: TextLink,
