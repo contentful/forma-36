@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-modal",
-  "version": "6.0.0-alpha.4",
+  "version": "6.0.0-alpha.5",
   "description": "Forma 36: Modal component",
   "scripts": {
     "build": "tsup"

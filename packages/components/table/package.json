@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-table",
-  "version": "6.0.0-alpha.2",
+  "version": "6.0.0-alpha.3",
   "description": "Forma 36: Table component",
   "scripts": {
     "build": "tsup"

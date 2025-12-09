@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-copybutton",
-  "version": "6.0.0-alpha.3",
+  "version": "6.0.0-alpha.4",
   "description": "Forma 36: CopyButton component",
   "scripts": {
     "build": "tsup"
