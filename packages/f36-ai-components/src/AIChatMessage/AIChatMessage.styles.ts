@@ -68,6 +68,7 @@ export function getStyles({ isUserMessage }: GetStylesParams) {
       },
     }),
     list: css({
+      paddingLeft: tokens.spacingM,
       marginBottom: tokens.spacingS,
     }),
   };
