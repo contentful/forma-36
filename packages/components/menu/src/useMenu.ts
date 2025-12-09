@@ -197,7 +197,6 @@ export function useMenu({
   const dismiss = useDismiss(context, {
     escapeKey: closeOnEsc,
     outsidePress: closeOnBlur,
-    ancestorScroll: true,
     bubbles: true,
   });
 
