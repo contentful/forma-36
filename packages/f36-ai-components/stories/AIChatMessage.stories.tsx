@@ -132,6 +132,8 @@ Here's a [link to example](https://example.com).
 | Bold          | **bold text**     | Supported          |
 | Italic        | *italic text*     | Supported          |
 | Code          | \`inline code\`   | Supported          |
+
+This is the last paragraph in the document.
 `;
 
 export const UserMessage = {

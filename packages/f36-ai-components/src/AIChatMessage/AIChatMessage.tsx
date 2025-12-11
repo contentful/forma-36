@@ -96,7 +96,9 @@ function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
                 marginBottom="spacingS"
               />
             ),
-            p: (props) => <Text as="p" marginBottom="spacingS" {...props} />,
+            p: (props) => (
+              <Text as="p" className={styles.paragraph} {...props} />
+            ),
             a: TextLink,
             ul: (props) => (
               <List {...props} as={'ul'} className={styles.list} />
@@ -105,7 +107,7 @@ function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
               <List {...props} as={'ol'} className={styles.list} />
             ),
             li: (props) => <List.Item {...props} />,
-            table: (props) => <Table {...props} />,
+            table: (props) => <Table {...props} className={styles.table} />,
             tbody: (props) => <Table.Body {...props} />,
             thead: (props) => <Table.Head {...props} />,
             tr: (props) => <Table.Row {...props} />,
