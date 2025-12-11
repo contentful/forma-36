@@ -1,7 +1,7 @@
 {
   "name": "@contentful/f36-ai-components",
   "private": false,
-  "version": "0.0.1-alpha.29",
+  "version": "0.0.1-alpha.30",
   "description": "A collection of components for use in AI applications, such as conversational interfaces.",
   "license": "MIT",
   "files": [
