@@ -71,5 +71,14 @@ export function getStyles({ isUserMessage }: GetStylesParams) {
       paddingLeft: tokens.spacingM,
       marginBottom: tokens.spacingS,
     }),
+    paragraph: css({
+      ':last-child': {
+        marginBottom: 0,
+      },
+      marginBottom: tokens.spacingS,
+    }),
+    table: css({
+      marginBottom: tokens.spacingS,
+    }),
   };
 }
