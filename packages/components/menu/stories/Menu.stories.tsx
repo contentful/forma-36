@@ -132,6 +132,29 @@ export const Controlled: StoryObj<MenuProps> = {
   },
 };
 
+export const WithCustomTriggerLogic: StoryObj<MenuProps> = {
+  render: function Render() {
+    const [isOpen, setIsOpen] = React.useState(false);
+    return (
+      <Menu isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <Menu.Trigger>
+          <IconButton
+            variant="secondary"
+            icon={<ListIcon />}
+            aria-label="toggle menu"
+            onClick={() => setIsOpen(!isOpen)}
+          />
+        </Menu.Trigger>
+        <Menu.List>
+          <Menu.Item>Create an entry</Menu.Item>
+          <Menu.Item>Remove an entry</Menu.Item>
+          <Menu.Item>Embed existing entry</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+  },
+};
+
 export const WithDisabledItems: StoryObj<MenuProps> = {
   render: (args: MenuProps) => {
     return (
