@@ -20,7 +20,7 @@ import {
   autoPlacement,
   size,
 } from '@floating-ui/react';
-import type { Placement } from '@floating-ui/react';
+import type { Placement, UseFloatingOptions } from '@floating-ui/react';
 import type { MenuProps } from './Menu';
 import { MenuContext } from './MenuContext';
 
@@ -109,18 +109,30 @@ export function useMenu({
     prevOpenRef.current = isOpen;
   }, [isOpen]);
 
-  const handleOpenChange = React.useCallback(
-    (nextOpen: boolean) => {
+  const handleOpenChange = React.useCallback<
+    UseFloatingOptions['onOpenChange']
+  >(
+    (nextOpen, _event, reason) => {
+      // if the user made component controlled by providing isOpen prop
+      // but onOpen callback is not provided, we won't add toggle logic
+      // to the trigger component. So they can make any toggle logic on their own.
+      const isFullyControlled = isControlled && !onOpen;
+      if (isFullyControlled && reason === 'click') {
+        return;
+      }
+
       const wasOpen = prevOpenRef.current;
       if (nextOpen === wasOpen) {
         return;
       }
+
       if (!isControlled) {
         setUncontrolledIsOpen(nextOpen);
       }
-      if (nextOpen && !wasOpen) {
+
+      if (nextOpen) {
         onOpen?.();
-      } else if (!nextOpen && wasOpen) {
+      } else {
         onClose?.();
       }
     },
