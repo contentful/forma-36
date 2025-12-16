@@ -1,6 +1,6 @@
 import { Menu } from '@contentful/f36-components';
 import { Editor } from '@tiptap/react';
-import React from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 
 const NO_CATEGORY_ID = '__NA__';
 
@@ -22,7 +22,20 @@ export const AIChatMentionList: React.FC<AIChatMentionListProps> = ({
   editor,
   command,
 }) => {
-  const rect = clientRect();
+  const [rect, setRect] = useState<DOMRect | null>(null);
+
+  // Scroll cursor into view and get updated position
+  useLayoutEffect(() => {
+    // Scroll the cursor into view
+    editor.commands.scrollIntoView();
+    // Use requestAnimationFrame to get the rect after scroll completes
+    requestAnimationFrame(() => {
+      const newRect = clientRect?.();
+      if (newRect) {
+        setRect(newRect);
+      }
+    });
+  }, [editor, clientRect]);
 
   const groups = items.reduce<Record<string, SuggestionItem[]>>((acc, item) => {
     const category = item.category || NO_CATEGORY_ID;
@@ -33,8 +46,13 @@ export const AIChatMentionList: React.FC<AIChatMentionListProps> = ({
     return acc;
   }, {});
 
-  return items.length === 0 ? null : (
-    <Menu isOpen usePortal={false} isAutoalignmentEnabled={true}>
+  // Don't render until we have the rect after scrolling
+  if (items.length === 0 || !rect) {
+    return null;
+  }
+
+  return (
+    <Menu isOpen usePortal={false} isAutoalignmentEnabled>
       {/* Invisible trigger element positioned at cursor location */}
       <Menu.Trigger>
         <span
