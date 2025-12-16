@@ -23,7 +23,7 @@ export const MenuTrigger = React.forwardRef<HTMLElement, MenuTriggerProps>(
       children as unknown as { ref?: React.Ref<HTMLElement> }
     ).ref;
 
-    // Get children's existing props (onClick, onFocus, etc.)
+    // Get children's existing props to merge event handlers
     const childProps = children.props as React.ComponentPropsWithRef<any>;
 
     const parentActiveIndex = parent?.activeIndex;
@@ -42,7 +42,14 @@ export const MenuTrigger = React.forwardRef<HTMLElement, MenuTriggerProps>(
       'data-focus-inside': hasFocusInside ? '' : undefined,
       ...menu.getReferenceProps(
         getItemProps({
-          ...childProps,
+          onClick: childProps.onClick,
+          onMouseDown: childProps.onMouseDown,
+          onKeyDown: childProps.onKeyDown,
+          onMouseEnter: childProps.onMouseEnter,
+          onMouseLeave: childProps.onMouseLeave,
+          onPointerDown: childProps.onPointerDown,
+          onPointerEnter: childProps.onPointerEnter,
+          onPointerLeave: childProps.onPointerLeave,
           onFocus(event: React.FocusEvent<HTMLElement>) {
             childProps.onFocus?.(event);
             setHasFocusInside(false);
