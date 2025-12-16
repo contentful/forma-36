@@ -190,3 +190,68 @@ export const WithMentionSupport: Story<AIChatInputProps> = (args) => {
     />
   );
 };
+
+/** With mention popup auto-positioning - menu flips above when input is at the bottom of the viewport */
+export const WithMentionAtBottomOfViewport: Story<AIChatInputProps> = (
+  args,
+) => {
+  const mentionConfig: AiChatInputMentionConfig = {
+    items: async ({ query }): Promise<SuggestionItem[]> => {
+      const items: SuggestionItem[] = EXAMPLE_CONTENT_TYPES.map((label) => ({
+        id: label,
+        category: 'Content Types',
+      }));
+      return items
+        .filter((item) => item.id.toLowerCase().startsWith(query.toLowerCase()))
+        .slice(0, 5);
+    },
+  };
+  const editorRef = React.useRef<Editor>(null);
+
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        height: '400px',
+        border: '1px solid #ccc',
+        padding: '16px',
+      }}
+    >
+      <Template
+        {...args}
+        editorRef={editorRef}
+        promptInputTools={
+          <Tooltip
+            content="Use this button or the '@' key to specify a content type"
+            placement="top"
+          >
+            <IconButton
+              variant="secondary"
+              aria-label="Add variable"
+              size="small"
+              icon={<>@</>}
+              onClick={(e) => {
+                if (!editorRef.current) return;
+                const editor = editorRef.current;
+
+                e.preventDefault();
+                e.stopPropagation();
+
+                const { from } = editor.state.selection;
+                editor
+                  .chain()
+                  .focus()
+                  .insertContent('@')
+                  .setTextSelection(from + 1)
+                  .run();
+              }}
+            />
+          </Tooltip>
+        }
+        mentionConfig={mentionConfig}
+      />
+    </div>
+  );
+};
