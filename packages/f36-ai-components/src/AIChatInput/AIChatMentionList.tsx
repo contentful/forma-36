@@ -1,4 +1,4 @@
-import { Box, Menu } from '@contentful/f36-components';
+import { Menu } from '@contentful/f36-components';
 import { Editor } from '@tiptap/react';
 import React from 'react';
 
@@ -22,11 +22,7 @@ export const AIChatMentionList: React.FC<AIChatMentionListProps> = ({
   editor,
   command,
 }) => {
-  const textAreaBottom =
-    editor.view.dom.parentElement.getBoundingClientRect().bottom + 10;
-  const mentionPosition = clientRect().top + 25;
-  const top = Math.min(mentionPosition, textAreaBottom);
-  const left = clientRect().left;
+  const rect = clientRect();
 
   const groups = items.reduce<Record<string, SuggestionItem[]>>((acc, item) => {
     const category = item.category || NO_CATEGORY_ID;
@@ -38,23 +34,34 @@ export const AIChatMentionList: React.FC<AIChatMentionListProps> = ({
   }, {});
 
   return items.length === 0 ? null : (
-    <Box style={{ position: 'absolute', top, left }}>
-      <Menu isOpen usePortal={false}>
-        <Menu.List onKeyDown={() => editor.commands.focus()}>
-          {Object.entries(groups).map(([category, groupItems]) => (
-            <>
-              {category !== NO_CATEGORY_ID && (
-                <Menu.SectionTitle key={category}>{category}</Menu.SectionTitle>
-              )}
-              {groupItems.map((item, index) => (
-                <Menu.Item key={index} onClick={() => command({ id: item.id })}>
-                  {item.id}
-                </Menu.Item>
-              ))}
-            </>
-          ))}
-        </Menu.List>
-      </Menu>
-    </Box>
+    <Menu isOpen usePortal={false} isAutoalignmentEnabled={true}>
+      {/* Invisible trigger element positioned at cursor location */}
+      <Menu.Trigger>
+        <span
+          style={{
+            position: 'fixed',
+            top: rect.top,
+            left: rect.left,
+            width: rect.width,
+            height: rect.height,
+            pointerEvents: 'none',
+          }}
+        />
+      </Menu.Trigger>
+      <Menu.List onKeyDown={() => editor.commands.focus()}>
+        {Object.entries(groups).map(([category, groupItems]) => (
+          <React.Fragment key={category}>
+            {category !== NO_CATEGORY_ID && (
+              <Menu.SectionTitle>{category}</Menu.SectionTitle>
+            )}
+            {groupItems.map((item, index) => (
+              <Menu.Item key={index} onClick={() => command({ id: item.id })}>
+                {item.id}
+              </Menu.Item>
+            ))}
+          </React.Fragment>
+        ))}
+      </Menu.List>
+    </Menu>
   );
 };
