@@ -14,6 +14,8 @@ import { getStyles } from './AIChatLayout.styles';
 import { PrimaryIconGradient } from '../AIIconGradients/PrimaryIconGradient';
 
 export type AIChatLayoutDisplay = 'closed' | 'collapsed' | 'open';
+
+// When new variants are added, they will also need to be added in ui-extensions-sdk
 export type AIChatLayoutVariant = 'normal' | 'expanded';
 
 export interface AIChatLayoutButton {
@@ -79,7 +81,7 @@ export interface AIChatLayoutProps extends CommonProps {
    * - 'expanded': Larger layout for artifacts
    * @default 'normal'
    */
-  variant?: 'normal' | 'expanded';
+  variant?: AIChatLayoutVariant;
   /**
    * Display state of the layout
    * - 'closed': Component is completely hidden
