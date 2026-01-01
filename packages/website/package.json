@@ -41,7 +41,7 @@
     "github-slugger": "^1.4.0",
     "gray-matter": "^4.0.3",
     "lz-string": "1.5.0",
-    "next": "^12.3.6",
+    "next": "^14.2.35",
     "next-auth": "^4.24.11",
     "next-mdx-remote": "^3.0.8",
     "next-transpile-modules": "^10.0.1",
