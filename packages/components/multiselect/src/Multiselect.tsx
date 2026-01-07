@@ -11,7 +11,6 @@ import { Subheading } from '@contentful/f36-typography';
 
 import { getMultiselectStyles } from './Multiselect.styles';
 import { MultiselectOption } from './MultiselectOption';
-import FocusLock from 'react-focus-lock';
 
 import type { MultiselectSearchProps as SearchProps } from './MultiselectSearch';
 import { MultiselectSearch } from './MultiselectSearch';
@@ -317,32 +316,27 @@ function MultiselectBase(
             testId="cf-multiselect-container"
             onBlur={() => onBlur?.()}
           >
-            <FocusLock
-              focusOptions={{ preventScroll: true }}
-              returnFocus={true}
-            >
-              {hasSearch && (
-                <MultiselectSearch
-                  {...searchProps}
-                  setSearchValue={setSearchValue}
-                  searchValue={searchValue}
-                  focusList={focusList}
-                />
-              )}
-              {isLoading && <ListItemLoadingState />}
+            {hasSearch && (
+              <MultiselectSearch
+                {...searchProps}
+                setSearchValue={setSearchValue}
+                searchValue={searchValue}
+                focusList={focusList}
+              />
+            )}
+            {isLoading && <ListItemLoadingState />}
 
-              {!isLoading && optionsLength > 0 && (
-                <ul className={styles.list} data-test-id="cf-multiselect-items">
-                  {children}
-                </ul>
-              )}
+            {!isLoading && optionsLength > 0 && (
+              <ul className={styles.list} data-test-id="cf-multiselect-items">
+                {children}
+              </ul>
+            )}
 
-              {!isLoading && optionsLength === 0 && (
-                <Subheading className={styles.noMatchesTitle}>
-                  {noMatchesMessage}
-                </Subheading>
-              )}
-            </FocusLock>
+            {!isLoading && optionsLength === 0 && (
+              <Subheading className={styles.noMatchesTitle}>
+                {noMatchesMessage}
+              </Subheading>
+            )}
           </Popover.Content>
         </Popover>
       </div>
