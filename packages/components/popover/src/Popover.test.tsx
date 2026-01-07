@@ -36,7 +36,7 @@ describe('Popover', function () {
   it('renders the components as open', async () => {
     await renderWithAct({ isOpen: true });
 
-    const trigger = screen.getByTestId('cf-ui-button');
+    const trigger = screen.getByRole('button', { name: 'Toggle' });
 
     await waitFor(() => {
       expect(trigger).toHaveAttribute('aria-expanded', 'true');
@@ -58,7 +58,7 @@ describe('Popover', function () {
       ),
     );
 
-    const trigger = screen.getByTestId('cf-ui-button');
+    const trigger = screen.getByRole('button', { name: 'Toggle' });
     const popover = screen.getByRole('dialog');
 
     await waitFor(() => {
