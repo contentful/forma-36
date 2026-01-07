@@ -77,7 +77,7 @@ const PopoverContentBase = (
     autoFocus === false ? (
       node
     ) : (
-      <FloatingFocusManager context={floatingContext}>
+      <FloatingFocusManager context={floatingContext} modal={false}>
         {node}
       </FloatingFocusManager>
     );

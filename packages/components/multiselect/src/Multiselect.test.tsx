@@ -78,7 +78,9 @@ describe('Multiselect basic usage', () => {
   it('opens and closes the drawer', async () => {
     const [{ user }] = renderComponent();
 
-    const toggleButton = screen.getByTestId('triggerButton');
+    const toggleButton = screen.getByRole('button', {
+      name: 'Toggle Multiselect',
+    });
     await user.click(toggleButton);
     expect(screen.queryByRole('list')).toBeInTheDocument();
     await user.click(toggleButton);
@@ -100,7 +102,11 @@ describe('Multiselect basic usage', () => {
 
   it('renders all child elements in the correct hierarchy', async () => {
     const [{ user }] = renderComponent();
-    await user.click(screen.getByTestId('triggerButton'));
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Toggle Multiselect',
+      }),
+    );
     expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent(
       'Fruits',
     );
@@ -136,7 +142,11 @@ describe('Options', () => {
   afterEach(cleanup);
   it('renders all available options', async () => {
     const [{ user }] = renderComponent();
-    await user.click(screen.getByTestId('triggerButton'));
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Toggle Multiselect',
+      }),
+    );
     expect(screen.getByRole('list')).toBeInTheDocument();
     expect(screen.getAllByRole('listitem')).toHaveLength(12);
   });
@@ -144,21 +154,33 @@ describe('Options', () => {
   it('calls the callbackfunction on option selection', async () => {
     const [{ user }] = renderComponent();
 
-    await user.click(screen.getByTestId('triggerButton'));
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Toggle Multiselect',
+      }),
+    );
     await user.click(screen.getByRole('checkbox', { name: 'Coconut 🥥' }));
     expect(mockOnSelectItem).toHaveBeenCalled();
   });
 
   it('can disable the option selection', async () => {
     const [{ user }] = renderComponent();
-    await user.click(screen.getByTestId('triggerButton'));
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Toggle Multiselect',
+      }),
+    );
     fireEvent.click(screen.getByText('Lemon 🍋'));
     expect(mockOnSelectItem).not.toHaveBeenCalled();
   });
 
   it('renders a default selected option', async () => {
     const [{ user }] = renderComponent();
-    await user.click(screen.getByTestId('triggerButton'));
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Toggle Multiselect',
+      }),
+    );
     expect(screen.getByRole('checkbox', { name: 'Banana 🍌' })).toBeChecked();
   });
 
@@ -185,7 +207,11 @@ describe('Options', () => {
         </div>
       </Multiselect>,
     );
-    await user.click(screen.getByTestId('triggerButton'));
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Toggle Multiselect',
+      }),
+    );
 
     expect(screen.getByRole('list')).toBeInTheDocument();
     expect(screen.getAllByRole('listitem')).toHaveLength(12);
@@ -201,7 +227,11 @@ describe('Multiselect with search', () => {
       },
     });
 
-    await user.click(screen.getByTestId('triggerButton'));
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Toggle Multiselect',
+      }),
+    );
     expect(
       screen.getByPlaceholderText('My Search Placeholder'),
     ).toBeInTheDocument();
@@ -213,7 +243,11 @@ describe('Multiselect with search', () => {
         onSearchValueChange: mockOnSearchValueChange,
       },
     });
-    await user.click(screen.getByTestId('triggerButton'));
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Toggle Multiselect',
+      }),
+    );
     const listFirstItem = screen.getByTestId('cf-multiselect-list-item-0');
 
     await user.type(screen.getByRole('textbox', { name: 'Search' }), 'pp');
@@ -238,7 +272,11 @@ describe('Multiselect with search', () => {
         onSearchValueChange: mockOnSearchValueChange,
       },
     });
-    await user.click(screen.getByTestId('triggerButton'));
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Toggle Multiselect',
+      }),
+    );
     const listFirstItem = screen.getByTestId('cf-multiselect-list-item-0');
     await user.type(screen.getByRole('textbox', { name: 'Search' }), ' pp ');
     expect(listFirstItem).toHaveTextContent('Apple');
@@ -254,7 +292,11 @@ describe('Multiselect with search', () => {
         onSearchValueChange: mockOnSearchValueChange,
       },
     });
-    await user.click(screen.getByTestId('triggerButton'));
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Toggle Multiselect',
+      }),
+    );
     const listFirstItem = screen.getByTestId('cf-multiselect-list-item-0');
 
     await user.type(screen.getByRole('textbox', { name: 'Search' }), 'Lemon');
@@ -273,7 +315,11 @@ describe('Multiselect with search', () => {
       },
       [],
     );
-    await user.click(screen.getByTestId('triggerButton'));
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Toggle Multiselect',
+      }),
+    );
     expect(screen.queryByText('No matches found')).toBeInTheDocument();
   });
 
@@ -281,7 +327,11 @@ describe('Multiselect with search', () => {
     const [{ user }] = renderComponent({
       searchProps: { onSearchValueChange: mockOnSearchValueChange },
     });
-    await user.click(screen.getByTestId('triggerButton'));
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Toggle Multiselect',
+      }),
+    );
 
     expect(screen.getByRole('button', { name: 'Search' })).toBeDisabled();
 
@@ -310,7 +360,11 @@ describe('Multiselect with select all', () => {
       { id: 3, name: 'Avocado 🥑', isChecked: true, isDisabled: false },
     ];
     const [{ user }] = renderComponent({}, produce, true);
-    await user.click(screen.getByTestId('triggerButton'));
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Toggle Multiselect',
+      }),
+    );
     expect(
       screen.getByRole('checkbox', { name: 'Deselect all' }),
     ).toBeInTheDocument();
