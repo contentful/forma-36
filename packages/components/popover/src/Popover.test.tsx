@@ -44,6 +44,38 @@ describe('Popover', function () {
     });
   });
 
+  it('opens and closes the component when clicking on the trigger', async () => {
+    function Controlled() {
+      const [isOpen, setIsOpen] = useState(false);
+      return (
+        <Popover isOpen={isOpen} onClose={() => setIsOpen(false)}>
+          <Popover.Trigger>
+            <Button className="trigger" onClick={() => setIsOpen(!isOpen)}>
+              Toggle
+            </Button>
+          </Popover.Trigger>
+          <Popover.Content className="popover">
+            This is the content.
+          </Popover.Content>
+        </Popover>
+      );
+    }
+    render(<Controlled />);
+    expect(screen.queryByText('This is the content.')).not.toBeInTheDocument();
+    await userEvent.click(screen.getByRole('button', { name: 'Toggle' }));
+    expect(screen.getByRole('button', { name: 'Toggle' })).toHaveAttribute(
+      'aria-expanded',
+      'true',
+    );
+    expect(screen.getByText('This is the content.')).toBeVisible();
+    await userEvent.click(screen.getByRole('button', { name: 'Toggle' }));
+    expect(screen.queryByText('This is the content.')).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Toggle' })).toHaveAttribute(
+      'aria-expanded',
+      'false',
+    );
+  });
+
   it('renders the components with an additional class names', async () => {
     await act(async () =>
       render(
