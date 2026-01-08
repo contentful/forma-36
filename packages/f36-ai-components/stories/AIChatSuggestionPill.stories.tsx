@@ -26,13 +26,9 @@ export default {
 
 export const Default = (args: AIChatSuggestionPillProps & { icon: string }) => {
   const { icon, ...componentProps } = args;
+  const IconComponent = icon && icons[icon] ? icons[icon] : icons.UsersIcon;
 
-  return (
-    <AIChatSuggestionPill
-      {...componentProps}
-      icon={icon ? icons[icon] : undefined}
-    />
-  );
+  return <AIChatSuggestionPill {...componentProps} icon={IconComponent} />;
 };
 
 Default.args = {

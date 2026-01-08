@@ -3,9 +3,13 @@ import { css } from 'emotion';
 
 interface GetStylesParams {
   isActive: boolean;
+  isTransitioning?: boolean;
 }
 
-export function getStyles({ isActive }: GetStylesParams) {
+export function getStyles({
+  isActive,
+  isTransitioning = false,
+}: GetStylesParams) {
   return {
     suggestionPill: css({
       backgroundColor: isActive ? tokens.gray100 : tokens.colorWhite,
@@ -23,6 +27,8 @@ export function getStyles({ isActive }: GetStylesParams) {
     }),
     suggestionIcon: css({
       color: isActive ? tokens.gray700 : tokens.gray500,
+      transition: `opacity ${tokens.transitionDurationDefault} ease-in-out`,
+      opacity: isTransitioning ? 0 : 1,
     }),
     suggestionText: css({
       color: isActive ? tokens.gray700 : 'inherit',

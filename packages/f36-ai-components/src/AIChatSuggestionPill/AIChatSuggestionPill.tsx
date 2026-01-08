@@ -1,7 +1,7 @@
 import { Caption, Flex } from '@contentful/f36-components';
 import type { IconProps } from '@contentful/f36-icons';
 import { cx } from 'emotion';
-import React, { ComponentType } from 'react';
+import React, { ComponentType, useEffect, useRef, useState } from 'react';
 import { getStyles } from './AIChatSuggestionPill.styles';
 
 export interface AIChatSuggestionPillProps {
@@ -40,7 +40,22 @@ export const AIChatSuggestionPill = ({
   className,
   testId = 'cf-ui-ai-chat-suggestion-pill',
 }: AIChatSuggestionPillProps) => {
-  const styles = getStyles({ isActive });
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const currentIconRef = useRef(IconComponent);
+  const styles = getStyles({ isActive, isTransitioning });
+
+  useEffect(() => {
+    if (currentIconRef.current !== IconComponent) {
+      setIsTransitioning(true);
+      const timer = setTimeout(() => {
+        currentIconRef.current = IconComponent;
+        setIsTransitioning(false);
+      }, 200);
+      return () => clearTimeout(timer);
+    }
+  }, [IconComponent]);
+
+  const DisplayIcon = currentIconRef.current;
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === 'Enter' || event.key === ' ') {
@@ -58,7 +73,11 @@ export const AIChatSuggestionPill = ({
       data-test-id={testId}
     >
       <Flex alignItems="center" gap="spacingXs">
-        <IconComponent size="small" className={styles.suggestionIcon} />
+        <DisplayIcon
+          size="small"
+          className={styles.suggestionIcon}
+          isActive={false}
+        />
         <Caption
           fontWeight="fontWeightMedium"
           className={styles.suggestionText}
