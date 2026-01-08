@@ -21,6 +21,7 @@ export default {
     onClick: { action: 'clicked' },
     className: { control: false },
     testId: { control: false },
+    style: { control: false },
   },
 };
 

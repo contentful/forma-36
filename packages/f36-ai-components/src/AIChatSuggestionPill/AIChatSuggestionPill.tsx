@@ -1,10 +1,11 @@
 import { Caption, Flex } from '@contentful/f36-components';
+import { type CommonProps } from '@contentful/f36-core';
 import type { IconProps } from '@contentful/f36-icons';
 import { cx } from 'emotion';
 import React, { ComponentType, useEffect, useRef, useState } from 'react';
 import { getStyles } from './AIChatSuggestionPill.styles';
 
-export interface AIChatSuggestionPillProps {
+export interface AIChatSuggestionPillProps extends CommonProps {
   /**
    * The icon component to display in the pill
    */
@@ -22,14 +23,6 @@ export interface AIChatSuggestionPillProps {
    * @default false
    */
   isActive?: boolean;
-  /**
-   * Additional CSS class name
-   */
-  className?: string;
-  /**
-   * Test ID for testing purposes
-   */
-  testId?: string;
 }
 
 export const AIChatSuggestionPill = ({
@@ -39,6 +32,7 @@ export const AIChatSuggestionPill = ({
   isActive = false,
   className,
   testId = 'cf-ui-ai-chat-suggestion-pill',
+  ...otherProps
 }: AIChatSuggestionPillProps) => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const currentIconRef = useRef(IconComponent);
@@ -71,6 +65,7 @@ export const AIChatSuggestionPill = ({
       onClick={onClick}
       onKeyDown={handleKeyDown}
       data-test-id={testId}
+      {...otherProps}
     >
       <Flex alignItems="center" gap="spacingXs">
         <DisplayIcon
