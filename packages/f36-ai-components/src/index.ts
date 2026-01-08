@@ -27,5 +27,6 @@ export * from './AIChatHistoryEmptyState';
 
 export * from './AIChatConversation';
 export * from './AIChatSidePanel';
+export * from './AIChatSuggestionPill';
 
 export * from './Slider';
