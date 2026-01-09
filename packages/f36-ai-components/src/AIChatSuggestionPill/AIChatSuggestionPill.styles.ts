@@ -15,7 +15,7 @@ export function getStyles({
       backgroundColor: isActive ? tokens.gray100 : tokens.colorWhite,
       border: `1px solid ${isActive ? tokens.gray300 : tokens.gray200}`,
       borderRadius: '99px',
-      padding: `5px ${tokens.spacingS}`,
+      padding: `6px ${tokens.spacingS}`,
       cursor: 'pointer',
       transition: `background-color ${tokens.transitionDurationDefault} ease-out, border-color ${tokens.transitionDurationDefault} ease`,
       ':hover': {
