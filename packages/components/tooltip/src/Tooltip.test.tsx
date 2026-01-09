@@ -5,6 +5,9 @@ import { axe } from 'jest-axe';
 
 import { Tooltip } from './Tooltip';
 import { Paragraph } from '@contentful/f36-typography';
+import { StarIcon } from '@contentful/f36-icons';
+import { Icon } from '../../icon/src';
+import { Button } from '@contentful/f36-button';
 
 jest.mock('@contentful/f36-core', () => {
   const actual = jest.requireActual('@contentful/f36-core');
@@ -36,6 +39,44 @@ describe('Tooltip', () => {
 
     await user.hover(screen.getByText('Hover me'));
 
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+    );
+  });
+
+  it.only('renders around an Custom Icon', async () => {
+    render(
+      <Tooltip content="Tooltip content">
+        <Icon as={StarIcon} testId="hover-me" />
+      </Tooltip>,
+    );
+
+    await userEvent.hover(screen.getByTestId('hover-me'));
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+    );
+  });
+
+  it('renders around an Icon', async () => {
+    render(
+      <Tooltip content="Tooltip content">
+        <StarIcon testId="hover-me" />
+      </Tooltip>,
+    );
+
+    await userEvent.hover(screen.getByTestId('hover-me'));
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+    );
+  });
+
+  it('renders around an Button', async () => {
+    render(
+      <Tooltip content="Tooltip content">
+        <Button testId="hover-me">Hover me</Button>
+      </Tooltip>,
+    );
+    await userEvent.hover(screen.getByTestId('hover-me'));
     await waitFor(() =>
       expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
     );

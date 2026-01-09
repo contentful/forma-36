@@ -3,6 +3,8 @@ import { Heading, Paragraph, SectionHeading } from '@contentful/f36-typography';
 import { Tooltip } from '../src/Tooltip';
 import { TextLink } from '@contentful/f36-text-link';
 import { Flex } from '@contentful/f36-core';
+import { StarIcon } from '@contentful/f36-icons';
+import { Icon } from '@contentful/f36-icon';
 import tokens from '@contentful/f36-tokens';
 
 export default {
@@ -96,6 +98,16 @@ AutoPlacement.parameters = {
       code: AutoPlacementSourceCode,
     },
   },
+};
+
+export const TooltipTriggerElements = () => {
+  return (
+    <div>
+      <Tooltip content="Tooltip content">
+        <Icon as={StarIcon} />
+      </Tooltip>
+    </div>
+  );
 };
 
 export const Overview = () => {
