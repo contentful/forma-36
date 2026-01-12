@@ -44,7 +44,7 @@ describe('Tooltip', () => {
     );
   });
 
-  it.only('renders around an Custom Icon', async () => {
+  it('renders around an Custom Icon', async () => {
     render(
       <Tooltip content="Tooltip content">
         <Icon as={StarIcon} testId="hover-me" />
