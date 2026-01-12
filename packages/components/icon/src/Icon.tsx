@@ -1,9 +1,5 @@
 import { css, cx } from '@emotion/css';
-import React, {
-  forwardRef,
-  type ReactElement,
-  type SVGAttributes,
-} from 'react';
+import React, { type ReactElement, type SVGAttributes } from 'react';
 import {
   type CommonProps,
   type PolymorphicComponent,
@@ -64,8 +60,6 @@ const useAriaHidden = ({ ariaLabel, ariaLabelledBy }) => {
 
 export function IconBase<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
   props: IconProps<E>,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  forwardedRef: React.Ref<any>,
 ) {
   const {
     as: Element = ICON_DEFAULT_TAG,
@@ -79,6 +73,7 @@ export function IconBase<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
     isActive,
     'aria-label': ariaLabel,
     'aria-labelledBy': ariaLabelledBy,
+    ref: forwardedRef,
     ...otherProps
   } = props;
 
@@ -115,7 +110,7 @@ export function IconBase<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
   );
 }
 
-export const Icon = forwardRef(IconBase) as PolymorphicComponent<
+export const Icon = IconBase as PolymorphicComponent<
   ExpandProps<IconInternalProps>,
   typeof ICON_DEFAULT_TAG,
   'width' | 'height'
