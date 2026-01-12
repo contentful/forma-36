@@ -106,7 +106,10 @@ function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
             ol: (props) => (
               <List {...props} as={'ol'} className={styles.list} />
             ),
-            li: (props) => <List.Item {...props} />,
+            // tmp fix needed until https://github.com/contentful/forma-36/pull/3227 is merged to main
+            li: (props) => (
+              <List.Item children={props.children || <></>} {...props} />
+            ),
             table: (props) => <Table {...props} className={styles.table} />,
             tbody: (props) => <Table.Body {...props} />,
             thead: (props) => <Table.Head {...props} />,
