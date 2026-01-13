@@ -6,8 +6,8 @@ import React, {
 } from 'react';
 import { CopySimpleIcon } from '@contentful/f36-icons';
 import { type ExpandProps } from '@contentful/f36-core';
-import { type TooltipProps } from '@contentful/f36-tooltip';
-import { IconButton, type ButtonProps } from '@contentful/f36-button';
+import { Tooltip, type TooltipProps } from '@contentful/f36-tooltip';
+import { Button, type ButtonProps } from '@contentful/f36-button';
 import { getCopyButtonStyles } from './CopyButton.styles';
 import { cx } from '@emotion/css';
 
@@ -74,7 +74,10 @@ function CopyButtonBase(
   }: ExpandProps<CopyButtonProps>,
   ref: React.Ref<HTMLButtonElement>,
 ) {
-  const styles = getCopyButtonStyles({ size });
+  const styles = getCopyButtonStyles({
+    size,
+    hasChildren: Boolean(children),
+  });
   const [copied, setCopied] = useState(false);
 
   const handleClick = useCallback<
@@ -95,6 +98,7 @@ function CopyButtonBase(
 
       // @ts-expect-error -- The return type of `execCommand` can also be string
       if (result === 'unsuccessful') {
+        // this is for enabling debugging
         // eslint-disable-next-line no-console
         console.warn(error);
         throw new Error('Unable to copy value', { cause: result });
@@ -116,8 +120,8 @@ function CopyButtonBase(
     onBlur?.(event);
   };
 
-  return (
-    <IconButton
+  const btnComp = (
+    <Button
       {...otherProps}
       variant={variant}
       aria-label={copied ? tooltipCopiedText : (label ?? tooltipText)}
@@ -127,16 +131,22 @@ function CopyButtonBase(
       isLoading={isLoading}
       onBlur={handleBlur}
       testId={testId}
-      icon={<CopySimpleIcon size={size === 'small' ? 'tiny' : 'small'} />}
+      startIcon={<CopySimpleIcon size={size === 'small' ? 'tiny' : 'small'} />}
       onClick={handleClick}
       ref={ref}
-      withTooltip
-      tooltipProps={{
-        content: copied ? tooltipCopiedText : tooltipText,
-        isDisabled: isDisabled,
-        ...tooltipProps,
-      }}
-    />
+    >
+      {children}
+    </Button>
+  );
+
+  return (
+    <Tooltip
+      content={copied ? tooltipCopiedText : tooltipText}
+      isDisabled={isDisabled}
+      {...tooltipProps}
+    >
+      {btnComp}
+    </Tooltip>
   );
 }
 

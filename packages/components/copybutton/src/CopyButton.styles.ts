@@ -3,16 +3,20 @@ import { CopyButtonProps } from './CopyButton';
 
 export const getCopyButtonStyles = ({
   size,
-}: Pick<CopyButtonProps, 'size'>) => {
+  hasChildren = false,
+}: Pick<CopyButtonProps, 'size'> & { hasChildren?: boolean }) => {
   const buttonSize = size === 'small' ? '32px' : '40px';
 
   return {
     button: css({
       height: buttonSize,
       minWidth: 'auto',
-      width: buttonSize,
-
-      'span:first-child': { marginRight: 0 },
+      ...(hasChildren
+        ? {}
+        : {
+            width: buttonSize,
+            'span:first-child': { marginRight: 0 },
+          }),
     }),
   };
 };
