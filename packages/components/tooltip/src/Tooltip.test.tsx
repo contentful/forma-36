@@ -19,16 +19,6 @@ jest.mock('@contentful/f36-core', () => {
 });
 
 describe('Tooltip', () => {
-  it('does not render the component if no mouseover event on child', () => {
-    render(
-      <Tooltip content="Tooltip content">
-        <span>Hover me</span>
-      </Tooltip>,
-    );
-
-    expect(screen.queryByText('Tooltip content')).toBeNull();
-  });
-
   it('renders the component', async () => {
     const user = userEvent.setup();
     render(
@@ -176,7 +166,7 @@ describe('Tooltip', () => {
     expect(results).toHaveNoViolations();
   });
 
-  it('render a React Element as children', async () => {
+  it('renders without a11y issues when around React Elements', async () => {
     const user = userEvent.setup();
 
     const { container } = render(
@@ -185,7 +175,7 @@ describe('Tooltip', () => {
         id="Tooltip"
         content={<Paragraph>Ich bin ein Paragraph</Paragraph>}
       >
-        <span>Hover me</span>
+        <Paragraph>Hover me</Paragraph>
       </Tooltip>,
     );
     await user.hover(screen.getByText('Hover me'));
@@ -200,14 +190,14 @@ describe('Tooltip', () => {
     });
   });
 
-  it('render text as children', async () => {
+  it('renders without a11y issues when around Text', async () => {
     const user = userEvent.setup();
 
     const { container } = render(
       <Tooltip
         label="With React Element"
         id="Tooltip"
-        content={<Paragraph>Ich bin ein Paragraph</Paragraph>}
+        content="Ich bin ein Paragraph"
       >
         Hover me
       </Tooltip>,
