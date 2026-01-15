@@ -82,6 +82,20 @@ describe('Tooltip', () => {
     );
   });
 
+  it('renders around a disabled Button', async () => {
+    render(
+      <Tooltip content="Tooltip content">
+        <Button isDisabled testId="hover-me">
+          Hover me
+        </Button>
+      </Tooltip>,
+    );
+    await userEvent.hover(screen.getByTestId('hover-me'));
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+    );
+  });
+
   it('renders the component with an additional class name', async () => {
     const user = userEvent.setup();
     render(
@@ -172,6 +186,30 @@ describe('Tooltip', () => {
         content={<Paragraph>Ich bin ein Paragraph</Paragraph>}
       >
         <span>Hover me</span>
+      </Tooltip>,
+    );
+    await user.hover(screen.getByText('Hover me'));
+
+    const results = await axe(container);
+
+    await waitFor(() => {
+      expect(results).toHaveNoViolations();
+      expect(screen.getByRole('tooltip').textContent).toBe(
+        'Ich bin ein Paragraph',
+      );
+    });
+  });
+
+  it('render text as children', async () => {
+    const user = userEvent.setup();
+
+    const { container } = render(
+      <Tooltip
+        label="With React Element"
+        id="Tooltip"
+        content={<Paragraph>Ich bin ein Paragraph</Paragraph>}
+      >
+        Hover me
       </Tooltip>,
     );
     await user.hover(screen.getByText('Hover me'));
