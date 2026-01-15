@@ -19,16 +19,6 @@ jest.mock('@contentful/f36-core', () => {
 });
 
 describe('Tooltip', () => {
-  it('does not render the component if no mouseover event on child', () => {
-    render(
-      <Tooltip content="Tooltip content">
-        <span>Hover me</span>
-      </Tooltip>,
-    );
-
-    expect(screen.queryByText('Tooltip content')).toBeNull();
-  });
-
   it('renders the component', async () => {
     const user = userEvent.setup();
     render(
@@ -74,6 +64,20 @@ describe('Tooltip', () => {
     render(
       <Tooltip content="Tooltip content">
         <Button testId="hover-me">Hover me</Button>
+      </Tooltip>,
+    );
+    await userEvent.hover(screen.getByTestId('hover-me'));
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+    );
+  });
+
+  it('renders around a disabled Button', async () => {
+    render(
+      <Tooltip content="Tooltip content">
+        <Button isDisabled testId="hover-me">
+          Hover me
+        </Button>
       </Tooltip>,
     );
     await userEvent.hover(screen.getByTestId('hover-me'));
@@ -162,7 +166,7 @@ describe('Tooltip', () => {
     expect(results).toHaveNoViolations();
   });
 
-  it('render a React Element as children', async () => {
+  it('renders without a11y issues when around React Elements', async () => {
     const user = userEvent.setup();
 
     const { container } = render(
@@ -171,7 +175,31 @@ describe('Tooltip', () => {
         id="Tooltip"
         content={<Paragraph>Ich bin ein Paragraph</Paragraph>}
       >
-        <span>Hover me</span>
+        <Paragraph>Hover me</Paragraph>
+      </Tooltip>,
+    );
+    await user.hover(screen.getByText('Hover me'));
+
+    const results = await axe(container);
+
+    await waitFor(() => {
+      expect(results).toHaveNoViolations();
+      expect(screen.getByRole('tooltip').textContent).toBe(
+        'Ich bin ein Paragraph',
+      );
+    });
+  });
+
+  it('renders without a11y issues when around Text', async () => {
+    const user = userEvent.setup();
+
+    const { container } = render(
+      <Tooltip
+        label="With React Element"
+        id="Tooltip"
+        content="Ich bin ein Paragraph"
+      >
+        Hover me
       </Tooltip>,
     );
     await user.hover(screen.getByText('Hover me'));
