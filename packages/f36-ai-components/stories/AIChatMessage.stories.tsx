@@ -1,4 +1,8 @@
-import { Button, IconButton, TextLinkProps } from '@contentful/f36-components';
+import {
+  Button,
+  IconButton,
+  type TextLinkProps,
+} from '@contentful/f36-components';
 import { action } from '@storybook/addon-actions';
 import React, { useState } from 'react';
 import { AIChatMessage, AIChatMessageProps } from '../src/AIChatMessage';

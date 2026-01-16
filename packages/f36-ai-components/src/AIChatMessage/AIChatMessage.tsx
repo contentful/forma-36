@@ -1,8 +1,17 @@
-import { Box, BoxProps, type CommonProps, Flex } from '@contentful/f36-core';
+import {
+  Box,
+  type BoxProps,
+  type CommonProps,
+  Flex,
+} from '@contentful/f36-core';
 import { forwardRef, Ref } from 'react';
 import { getStyles } from './AIChatMessage.styles';
 import React from 'react';
-import { HeadingProps, Text, TextProps } from '@contentful/f36-typography';
+import {
+  type HeadingProps,
+  Text,
+  type TextProps,
+} from '@contentful/f36-typography';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
@@ -11,13 +20,13 @@ import {
   List,
   TextLink,
   Table,
-  TextLinkProps,
-  ListProps,
-  ListItemProps,
-  TableProps,
-  TableBodyProps,
-  TableHeadProps,
-  TableRowProps,
+  type TextLinkProps,
+  type ListProps,
+  type ListItemProps,
+  type TableProps,
+  type TableBodyProps,
+  type TableHeadProps,
+  type TableRowProps,
 } from '@contentful/f36-components';
 import { cx } from 'emotion';
 
