@@ -7,7 +7,6 @@ import React, {
 } from 'react';
 
 import type { Placement } from '@floating-ui/react';
-import { cx } from '@emotion/css';
 import type * as CSS from 'csstype';
 import tokens from '@contentful/f36-tokens';
 import { Box, useId, type CommonProps } from '@contentful/f36-core';
