@@ -7,7 +7,6 @@ import React, {
 } from 'react';
 
 import type { Placement } from '@floating-ui/react';
-import { cx } from '@emotion/css';
 import type * as CSS from 'csstype';
 import tokens from '@contentful/f36-tokens';
 import { Box, useId, type CommonProps } from '@contentful/f36-core';
@@ -162,12 +161,7 @@ export const Tooltip = ({
 
   return (
     <TooltipContextProvider value={context}>
-      <Box
-        as="span"
-        testId={testId}
-        className={cx(styles.tooltipContainer, targetWrapperClassName)}
-        {...otherProps}
-      >
+      <Box as="span" className={styles.tooltipContainer}>
         <TooltipTrigger
           tooltipId={tooltipId}
           onMouseEnter={onMouseOver}
@@ -175,6 +169,9 @@ export const Tooltip = ({
           onFocus={onFocus}
           onBlur={onBlur}
           onKeyDown={onKeyDown}
+          testId={testId}
+          className={targetWrapperClassName}
+          {...otherProps}
         >
           {children}
         </TooltipTrigger>
