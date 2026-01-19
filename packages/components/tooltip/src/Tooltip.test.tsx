@@ -151,6 +151,34 @@ describe('Tooltip', () => {
     });
   });
 
+  it('passes testId to trigger element', async () => {
+    const user = userEvent.setup();
+    render(
+      <Tooltip content="Tooltip content" testId="custom-trigger-test-id">
+        <span>Hover me</span>
+      </Tooltip>,
+    );
+
+    await user.hover(screen.getByTestId('custom-trigger-test-id'));
+
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+    );
+  });
+
+  it('passes custom props to trigger element', async () => {
+    render(
+      <Tooltip content="Tooltip content" data-custom-attribute="test">
+        <span>Hover me</span>
+      </Tooltip>,
+    );
+
+    expect(screen.getByTestId('cf-ui-tooltip')).toHaveAttribute(
+      'data-custom-attribute',
+      'test',
+    );
+  });
+
   it('has no a11y issues', async () => {
     const user = userEvent.setup();
 

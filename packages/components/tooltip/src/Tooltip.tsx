@@ -162,12 +162,7 @@ export const Tooltip = ({
 
   return (
     <TooltipContextProvider value={context}>
-      <Box
-        as="span"
-        testId={testId}
-        className={cx(styles.tooltipContainer, targetWrapperClassName)}
-        {...otherProps}
-      >
+      <Box as="span" className={styles.tooltipContainer}>
         <TooltipTrigger
           tooltipId={tooltipId}
           onMouseEnter={onMouseOver}
@@ -175,6 +170,9 @@ export const Tooltip = ({
           onFocus={onFocus}
           onBlur={onBlur}
           onKeyDown={onKeyDown}
+          testId={testId}
+          className={targetWrapperClassName}
+          {...otherProps}
         >
           {children}
         </TooltipTrigger>
