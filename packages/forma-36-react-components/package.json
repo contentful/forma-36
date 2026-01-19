@@ -1,7 +1,7 @@
 {
   "name": "@contentful/f36-components",
   "description": "Contentful UI Component Library",
-  "version": "6.0.0-alpha.13",
+  "version": "6.0.0-alpha.14",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "module": "dist/index.module.js",
@@ -68,7 +68,7 @@
     "@contentful/f36-table": "^6.0.0-alpha.0",
     "@contentful/f36-text-link": "^6.0.0-alpha.0",
     "@contentful/f36-tokens": "^6.0.0-alpha.0",
-    "@contentful/f36-tooltip": "^6.0.0-alpha.5",
+    "@contentful/f36-tooltip": "^6.0.0-alpha.6",
     "@contentful/f36-typography": "^6.0.0-alpha.0",
     "@contentful/f36-usage-card": "^6.0.0-alpha.0",
     "@contentful/f36-usage-count": "^6.0.0-alpha.0",
