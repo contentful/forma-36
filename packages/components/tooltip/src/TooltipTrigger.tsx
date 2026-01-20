@@ -1,16 +1,14 @@
 import React, { HTMLAttributes, ReactNode } from 'react';
-import type { CommonProps } from '@contentful/f36-core';
 import { useTooltipContext } from './TooltipContext';
 import { useMergeRefs } from '@floating-ui/react';
 
 export const TooltipTrigger = React.forwardRef<
   HTMLElement,
   React.HTMLProps<HTMLElement> & {
-    testId: CommonProps['testId'];
     tooltipId: string;
   }
 >(function TooltipTrigger(
-  { children, className, testId, tooltipId, ...otherProps },
+  { children, className, tooltipId, ...otherProps },
   propRef,
 ) {
   const context = useTooltipContext();
@@ -23,7 +21,6 @@ export const TooltipTrigger = React.forwardRef<
           ...otherProps,
           ref: baseRef,
         })}
-        data-test-id={testId}
         className={className}
       >
         {React.cloneElement<HTMLAttributes<ReactNode>>(children, {
@@ -40,7 +37,6 @@ export const TooltipTrigger = React.forwardRef<
         ref: baseRef,
         'aria-describedby': tooltipId,
       })}
-      data-test-id={testId}
       className={className}
     >
       {children}

@@ -151,31 +151,32 @@ describe('Tooltip', () => {
     });
   });
 
-  it('passes testId to trigger element', async () => {
+  it('passes testId to tooltip content element', async () => {
     const user = userEvent.setup();
     render(
-      <Tooltip content="Tooltip content" testId="custom-trigger-test-id">
+      <Tooltip content="Tooltip content" testId="custom-tooltip-test-id">
         <span>Hover me</span>
       </Tooltip>,
     );
 
-    await user.hover(screen.getByTestId('custom-trigger-test-id'));
+    await user.hover(screen.getByText('Hover me'));
 
     await waitFor(() =>
-      expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+      expect(screen.getByTestId('custom-tooltip-test-id').textContent).toBe(
+        'Tooltip content',
+      ),
     );
   });
 
   it('passes custom props to trigger element', async () => {
     render(
-      <Tooltip content="Tooltip content" data-custom-attribute="test">
+      <Tooltip content="Tooltip content" data-test-id="custom-trigger-test-id">
         <span>Hover me</span>
       </Tooltip>,
     );
 
-    expect(screen.getByTestId('cf-ui-tooltip')).toHaveAttribute(
-      'data-custom-attribute',
-      'test',
+    expect(screen.getByTestId('custom-trigger-test-id')).toHaveTextContent(
+      'Hover me',
     );
   });
 
