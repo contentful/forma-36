@@ -169,7 +169,6 @@ export const Tooltip = ({
           onFocus={onFocus}
           onBlur={onBlur}
           onKeyDown={onKeyDown}
-          testId={testId}
           className={targetWrapperClassName}
           {...otherProps}
         >
@@ -181,6 +180,7 @@ export const Tooltip = ({
           style={contentStyles}
           className={className}
           id={id}
+          testId={testId}
           as={HtmlTag}
         />
       </Box>
