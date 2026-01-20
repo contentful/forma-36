@@ -1,9 +1,16 @@
-import { Button, IconButton } from '@contentful/f36-components';
+import {
+  Button,
+  IconButton,
+  type TextLinkProps,
+} from '@contentful/f36-components';
 import { action } from '@storybook/addon-actions';
-import React from 'react';
+import React, { useState } from 'react';
 import { AIChatMessage, AIChatMessageProps } from '../src/AIChatMessage';
 import {
+  ArrowSquareOutIcon,
+  CheckCircleIcon,
   CopySimpleIcon,
+  PlusIcon,
   ThumbsDownIcon,
   ThumbsUpIcon,
   TranslateIcon,
@@ -35,6 +42,7 @@ const LikeMessageButton: React.FC = () => {
     />
   );
 };
+
 const DislikeMessageButton: React.FC = () => {
   const title = 'Dislike message';
   return (
@@ -48,6 +56,21 @@ const DislikeMessageButton: React.FC = () => {
     />
   );
 };
+
+const AddButton: React.FC = () => {
+  const [isAdded, setIsAdded] = useState(false);
+
+  return (
+    <Button
+      startIcon={isAdded ? <CheckCircleIcon /> : <PlusIcon />}
+      onClick={() => setIsAdded(!isAdded)}
+      variant={isAdded ? 'positive' : 'primary'}
+    >
+      {isAdded ? 'Done' : 'Add'}
+    </Button>
+  );
+};
+
 const AssistantMessageActions: React.FC = () => (
   <>
     <CopyButton />
@@ -88,6 +111,15 @@ const markdown = `
 | Warm-blooded   | No                | Yes                |
 | Habitat        | Air/Gardens       | Land/Homes         |
 | Diet           | Nectar            | Omnivore           |
+`;
+
+const advancedMarkdown = `
+- [regular link](#)
+- <a href="#" target="_blank" rel="noopener noreferrer">new tab link</a>
+- <a data-navigatePath="app.page">client side naviagation link</a>
+
+__Or fully custom component:__
+<div data-component="add-button" />
 `;
 
 const allMarkdownElements = `
@@ -161,6 +193,39 @@ export const AllMarkdownElements = {
   args: {
     authorRole: 'assistant',
     content: allMarkdownElements,
+  },
+};
+
+export const CustomisedMarkdownElements = {
+  args: {
+    authorRole: 'assistant',
+    content: advancedMarkdown,
+    contentComponentsOverrides: {
+      a: (props) => {
+        const overrides: TextLinkProps = {};
+        const isNewTab = props.target === '_blank';
+        if (isNewTab) {
+          overrides.icon = <ArrowSquareOutIcon />;
+          overrides.alignIcon = 'end';
+        }
+        if (props['data-navigatepath']) {
+          overrides.onClick = (e) => {
+            e.preventDefault();
+            action(`Navigate to ${props['data-navigatepath']}`)();
+            alert(`Client-side navigation to ${props['data-navigatepath']}`);
+          };
+        }
+
+        return overrides;
+      },
+      div: (props) => {
+        if (props['data-component'] === 'add-button') {
+          return {
+            children: <AddButton />,
+          };
+        }
+      },
+    },
   },
 };
 
