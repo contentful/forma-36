@@ -154,7 +154,7 @@ describe('Tooltip', () => {
   it('passes testId to tooltip content element', async () => {
     const user = userEvent.setup();
     render(
-      <Tooltip content="Tooltip content" testId="custom-trigger-test-id">
+      <Tooltip content="Tooltip content" testId="custom-tooltip-test-id">
         <span>Hover me</span>
       </Tooltip>,
     );
@@ -162,7 +162,7 @@ describe('Tooltip', () => {
     await user.hover(screen.getByText('Hover me'));
 
     await waitFor(() =>
-      expect(screen.getByTestId('custom-trigger-test-id').textContent).toBe(
+      expect(screen.getByTestId('custom-tooltip-test-id').textContent).toBe(
         'Tooltip content',
       ),
     );
@@ -170,12 +170,14 @@ describe('Tooltip', () => {
 
   it('passes custom props to trigger element', async () => {
     render(
-      <Tooltip content="Tooltip content" data-test-id="custom-test-id">
+      <Tooltip content="Tooltip content" data-test-id="custom-trigger-test-id">
         <span>Hover me</span>
       </Tooltip>,
     );
 
-    expect(screen.getByTestId('custom-test-id')).toHaveTextContent('Hover me');
+    expect(screen.getByTestId('custom-trigger-test-id')).toHaveTextContent(
+      'Hover me',
+    );
   });
 
   it('has no a11y issues', async () => {
