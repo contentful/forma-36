@@ -259,6 +259,7 @@ export * from './vendor/phosphor/TreeStructureIcon.js';
 export * from './vendor/phosphor/TreeViewIcon.js';
 export * from './vendor/phosphor/TrendUpIcon.js';
 export * from './vendor/phosphor/TriangleIcon.js';
+export * from './vendor/phosphor/UserCircleDashedIcon.js';
 export * from './vendor/phosphor/UserFocusIcon.js';
 export * from './vendor/phosphor/UserIcon.js';
 export * from './vendor/phosphor/UsersIcon.js';
