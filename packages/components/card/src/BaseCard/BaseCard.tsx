@@ -219,6 +219,7 @@ function BaseCardBase<
         {...anchorProps}
         {...baseProps}
         ref={forwardedRef as React.Ref<HTMLAnchorElement>}
+        onClick={handleClick}
         onFocus={handleFocus}
         onBlur={handleBlur}
         onMouseEnter={
