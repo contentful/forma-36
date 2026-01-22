@@ -59,6 +59,20 @@ describe('Card', () => {
     expect(screen.getByRole('textbox')).toHaveValue('Apple 🍎');
   });
 
+  it('calls onClick when rendered as a link', async () => {
+    const onClick = jest.fn();
+    const user = userEvent.setup();
+    render(
+      <Card as="a" onClick={onClick}>
+        Card as link
+      </Card>,
+    );
+
+    await user.click(screen.getByText('Card as link'));
+
+    expect(onClick).toHaveBeenCalled();
+  });
+
   it('has no a11y issues', async () => {
     const { container } = render(<Card>Card</Card>);
     const results = await axe(container);
