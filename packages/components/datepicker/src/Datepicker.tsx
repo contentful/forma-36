@@ -214,10 +214,7 @@ type DatepickerTriggerProps = {
   onTriggerClick: () => void;
 } & Pick<DatepickerProps, 'className' | 'size' | 'style' | 'testId'>;
 
-const DatepickerTrigger = React.forwardRef<
-  HTMLDivElement,
-  DatepickerTriggerProps
->((props, ref) => {
+const DatepickerTrigger = (props: DatepickerTriggerProps) => {
   const {
     children,
     testId,
@@ -231,12 +228,7 @@ const DatepickerTrigger = React.forwardRef<
   } = props;
 
   return (
-    <TextInput.Group
-      ref={ref}
-      className={className}
-      style={style}
-      testId={testId}
-    >
+    <TextInput.Group className={className} style={style} testId={testId}>
       {children}
       <IconButton
         aria-label="Use calendar"
@@ -250,4 +242,4 @@ const DatepickerTrigger = React.forwardRef<
       />
     </TextInput.Group>
   );
-});
+};
