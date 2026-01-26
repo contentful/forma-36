@@ -39,8 +39,9 @@ function initNotificationsRoot(onMounted: () => void) {
   document.body.appendChild(container);
 
   root = createRoot(container);
-  root.render(<NotificationsManager register={registerAPI} />);
-  Promise.resolve().then(onMounted);
+  root.render(
+    <NotificationsManager register={registerAPI} onReady={onMounted} />,
+  );
 }
 
 function afterInit<PromiseValueType>(
