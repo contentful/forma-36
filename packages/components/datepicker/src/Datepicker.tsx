@@ -1,5 +1,6 @@
 import React, {
-  ChangeEventHandler,
+  type ChangeEventHandler,
+  type RefObject,
   useCallback,
   useEffect,
   useState,
@@ -212,6 +213,7 @@ type DatepickerTriggerProps = {
   children: React.ReactNode;
   isDisabled: boolean;
   onTriggerClick: () => void;
+  ref?: RefObject<HTMLDivElement | null>;
 } & Pick<DatepickerProps, 'className' | 'size' | 'style' | 'testId'>;
 
 const DatepickerTrigger = (props: DatepickerTriggerProps) => {
@@ -223,12 +225,18 @@ const DatepickerTrigger = (props: DatepickerTriggerProps) => {
     onTriggerClick,
     isDisabled,
     size,
+    ref,
     // props will be passed from <Popover.Trigger> wrapper
     ...popoverTriggerProps
   } = props;
 
   return (
-    <TextInput.Group className={className} style={style} testId={testId}>
+    <TextInput.Group
+      ref={ref}
+      className={className}
+      style={style}
+      testId={testId}
+    >
       {children}
       <IconButton
         aria-label="Use calendar"
