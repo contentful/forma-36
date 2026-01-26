@@ -21,6 +21,7 @@ export interface NotificationsAPI {
   closeAll: CloseAllAction<void>;
   setPlacement: SetPlacementAction<void>;
   setDuration: SetDurationAction<void>;
+  cleanup: () => void;
 }
 
 let initiated = false;
@@ -111,6 +112,7 @@ export const Notification: {
   closeAll: CloseAllAction<Promise<void>>;
   setPlacement: SetPlacementAction<Promise<void>>;
   setDuration: SetDurationAction<Promise<void>>;
+  cleanup: () => Promise<void>;
 } = {
   success: afterInit<NotificationProps>(show('positive')),
   error: afterInit<NotificationProps>(show('negative')),
@@ -138,4 +140,12 @@ export const Notification: {
       return internalAPI.setDuration(duration);
     }
   }),
+  cleanup: () => {
+    if (root) {
+      root.unmount();
+    }
+    initiated = false;
+    root = null;
+    return Promise.resolve();
+  },
 };
