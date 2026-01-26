@@ -27,12 +27,11 @@ export class NotificationItemContainer extends Component<
   timer: number | null = null;
 
   state = {
-    isShown: false,
+    isShown: Boolean(this.props.isShown),
   };
 
   componentDidMount() {
     this.startTimer();
-    this.setState({ isShown: true });
   }
 
   componentDidUpdate(prevProps: NotificationItemContainerProps) {

@@ -169,7 +169,7 @@ export const NotificationsManager = ({
     register('setPlacement', setPlacement);
     register('setDuration', setDuration);
     onReady?.();
-  }, [register]);
+  }, [close, closeAll, onReady, register, setPlacement, show]);
 
   return (
     <div
