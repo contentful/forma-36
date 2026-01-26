@@ -1,5 +1,6 @@
 import React, {
-  ChangeEventHandler,
+  type ChangeEventHandler,
+  type RefObject,
   useCallback,
   useEffect,
   useState,
@@ -212,12 +213,10 @@ type DatepickerTriggerProps = {
   children: React.ReactNode;
   isDisabled: boolean;
   onTriggerClick: () => void;
+  ref?: RefObject<HTMLDivElement | null>;
 } & Pick<DatepickerProps, 'className' | 'size' | 'style' | 'testId'>;
 
-const DatepickerTrigger = React.forwardRef<
-  HTMLDivElement,
-  DatepickerTriggerProps
->((props, ref) => {
+const DatepickerTrigger = (props: DatepickerTriggerProps) => {
   const {
     children,
     testId,
@@ -226,6 +225,7 @@ const DatepickerTrigger = React.forwardRef<
     onTriggerClick,
     isDisabled,
     size,
+    ref,
     // props will be passed from <Popover.Trigger> wrapper
     ...popoverTriggerProps
   } = props;
@@ -250,4 +250,4 @@ const DatepickerTrigger = React.forwardRef<
       />
     </TextInput.Group>
   );
-});
+};
