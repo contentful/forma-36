@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useLayoutEffect, useState } from 'react';
 import { cx } from '@emotion/css';
 
 import { useAsyncState } from './useAsyncState';
@@ -49,6 +49,7 @@ export interface NotificationsManagerProps {
     name: K,
     callback: NotificationsAPI[K],
   ) => void;
+  onReady?: () => void;
 }
 
 let uniqueId = 0;
@@ -60,6 +61,7 @@ const getUniqueId = (): number => {
 
 export const NotificationsManager = ({
   register,
+  onReady,
 }: NotificationsManagerProps): React.ReactElement => {
   const [items, setItems] = useAsyncState<NotificationProps[]>([]);
   const [placement, setPlacementState] = useState('bottom');
@@ -160,11 +162,14 @@ export const NotificationsManager = ({
     [closeAndDelete, duration, items, placement, setItems],
   );
 
-  register('close', close);
-  register('show', show);
-  register('closeAll', closeAll);
-  register('setPlacement', setPlacement);
-  register('setDuration', setDuration);
+  useLayoutEffect(() => {
+    register('close', close);
+    register('show', show);
+    register('closeAll', closeAll);
+    register('setPlacement', setPlacement);
+    register('setDuration', setDuration);
+    onReady?.();
+  }, [close, closeAll, onReady, register, setPlacement, show]);
 
   return (
     <div
