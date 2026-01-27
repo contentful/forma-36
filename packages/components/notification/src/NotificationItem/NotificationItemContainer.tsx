@@ -80,6 +80,8 @@ export class NotificationItemContainer extends Component<
 
   render() {
     const { isShown, duration, ...otherProps } = this.props;
+    const isClosing = !this.state.isShown;
+
     return (
       <AnimateHeight
         duration={200}
@@ -98,6 +100,8 @@ export class NotificationItemContainer extends Component<
           className={cx(css({ pointerEvents: 'all' }))}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
+          data-state={isClosing ? 'closing' : 'shown'}
+          aria-hidden={isClosing}
         >
           <NotificationItem {...otherProps} onClose={this.handleClose} />
         </div>

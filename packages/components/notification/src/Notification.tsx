@@ -10,6 +10,7 @@ import {
   SetDurationAction,
   NotificationProps,
   Placement,
+  registerClosePromise,
 } from './NotificationsManager';
 import type { NotificationVariant, NotificationCta } from './types';
 
@@ -22,6 +23,7 @@ export interface NotificationsAPI {
   setPlacement: SetPlacementAction<void>;
   setDuration: SetDurationAction<void>;
   cleanup: () => void;
+  getNotificationIds: () => Array<string | number>;
 }
 
 let initiated = false;
@@ -120,12 +122,27 @@ export const Notification: {
   info: afterInit<NotificationProps>(show('primary')),
   close: afterInit<void>((id: string | number) => {
     if (internalAPI.close) {
-      return internalAPI.close(id);
+      // Create a promise that resolves when the close animation completes
+      return new Promise<void>((resolve) => {
+        registerClosePromise(id, resolve);
+        internalAPI.close(id);
+      });
     }
   }),
   closeAll: afterInit<void>(() => {
-    if (internalAPI.closeAll) {
-      return internalAPI.closeAll();
+    if (internalAPI.closeAll && internalAPI.getNotificationIds) {
+      const ids = internalAPI.getNotificationIds();
+      if (ids.length === 0) {
+        return Promise.resolve();
+      }
+      const closePromises = ids.map(
+        (id) =>
+          new Promise<void>((resolve) => {
+            registerClosePromise(id, resolve);
+          }),
+      );
+      internalAPI.closeAll();
+      return Promise.all(closePromises).then(() => undefined);
     }
   }),
   setPlacement: afterInit<void>(

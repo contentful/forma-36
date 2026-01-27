@@ -6,9 +6,10 @@ describe('Notification with custom container', () => {
     jest.useFakeTimers();
   });
 
-  afterEach(() => {
+  afterEach(async () => {
     jest.runOnlyPendingTimers();
     jest.useRealTimers();
+    await Notification.cleanup();
   });
 
   it('cleanup unmounts the React root and resets state', async () => {

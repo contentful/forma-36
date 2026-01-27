@@ -21,6 +21,34 @@ export interface NotificationProps {
   cta?: Partial<NotificationCta>;
 }
 
+type ClosePromiseResolver = () => void;
+const pendingClosePromises = new Map<string | number, ClosePromiseResolver[]>();
+
+/**
+ * Register a promise resolver for a notification close operation.
+ * The resolver will be called when the notification is fully removed from the DOM.
+ * @internal - Used by Notification.tsx to await close animations
+ */
+export function registerClosePromise(
+  id: string | number,
+  resolve: ClosePromiseResolver,
+): void {
+  const existing = pendingClosePromises.get(id) || [];
+  pendingClosePromises.set(id, [...existing, resolve]);
+}
+
+/**
+ * Resolve all pending close promises for a notification.
+ * Called after the close animation completes.
+ */
+function resolveClosePromises(id: string | number): void {
+  const resolvers = pendingClosePromises.get(id);
+  if (resolvers) {
+    resolvers.forEach((resolve) => resolve());
+    pendingClosePromises.delete(id);
+  }
+}
+
 export type ShowAction<T> = (
   text: string,
   setting?: {
@@ -101,6 +129,7 @@ export const NotificationsManager = ({
   const closeAndDelete = useCallback(
     (id: string | number) => {
       setItems(items.current.filter((item) => item.id !== id));
+      resolveClosePromises(id);
     },
     [items, setItems],
   );
@@ -162,14 +191,27 @@ export const NotificationsManager = ({
     [closeAndDelete, duration, items, placement, setItems],
   );
 
+  const getNotificationIds = useCallback(() => {
+    return items.current.map((item) => item.id);
+  }, [items]);
+
   useLayoutEffect(() => {
     register('close', close);
     register('show', show);
     register('closeAll', closeAll);
     register('setPlacement', setPlacement);
     register('setDuration', setDuration);
+    register('getNotificationIds', getNotificationIds);
     onReady?.();
-  }, [close, closeAll, onReady, register, setPlacement, show]);
+  }, [
+    close,
+    closeAll,
+    getNotificationIds,
+    onReady,
+    register,
+    setPlacement,
+    show,
+  ]);
 
   return (
     <div
