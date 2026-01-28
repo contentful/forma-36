@@ -96,7 +96,7 @@ const iconsMap = {
   MoreHorizontal: 'DotsThree',
   MoreVertical: 'DotsThreeVertical',
   Oauth: 'Fingerprint',
-  Orginfo: 'Bulding',
+  Orginfo: 'Building',
   Organizations: 'Building',
   Page: 'File',
   Pdf: 'FilePdf',
