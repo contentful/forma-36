@@ -22,8 +22,17 @@ export default function IconColorsExample() {
       <Flex alignItems="center" gap="spacingS">
         <GearSixIcon color={tokens.purple600} /> <Text>Accent</Text>
       </Flex>
-      <Flex alignItems="center" gap="spacingS" className={css({ backgroundColor: tokens.gray600, padding: tokens.spacingXs, borderRadius: tokens.borderRadiusSmall })}>
-        <GearSixIcon color={tokens.colorWhite} /> <Text fontColor="colorWhite">White</Text>
+      <Flex
+        alignItems="center"
+        gap="spacingS"
+        className={css({
+          backgroundColor: tokens.gray600,
+          padding: tokens.spacingXs,
+          borderRadius: tokens.borderRadiusSmall,
+        })}
+      >
+        <GearSixIcon color={tokens.colorWhite} />{' '}
+        <Text fontColor="colorWhite">White</Text>
       </Flex>
       <Flex alignItems="center" gap="spacingS">
         <GearSixIcon color={tokens.gray600} /> <Text>Muted</Text>
