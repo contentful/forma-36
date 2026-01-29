@@ -74,10 +74,8 @@ describe('Tooltip', () => {
 
   it('renders around a disabled Button', async () => {
     render(
-      <Tooltip content="Tooltip content">
-        <Button isDisabled testId="hover-me">
-          Hover me
-        </Button>
+      <Tooltip content="Tooltip content" data-test-id="hover-me">
+        <Button isDisabled>Hover me</Button>
       </Tooltip>,
     );
     await userEvent.hover(screen.getByTestId('hover-me'));
@@ -119,7 +117,7 @@ describe('Tooltip', () => {
     ).toBe('Hover me');
   });
 
-  it('renders the component with a id attribute', async () => {
+  it('renders the component with an id attribute', async () => {
     const user = userEvent.setup();
     render(
       <Tooltip id="Tooltip" content="Tooltip content">
@@ -137,7 +135,7 @@ describe('Tooltip', () => {
   it('renders the component as span with a id attribute', async () => {
     const user = userEvent.setup();
     render(
-      <Tooltip as="span" id="Tooltip" content="Tooltip content">
+      <Tooltip id="Tooltip" content="Tooltip content">
         <span>Hover me</span>
       </Tooltip>,
     );
