@@ -27,6 +27,7 @@ export const TooltipContent = React.forwardRef<
 
   const wrappedTooltipContents = content ? (
     <Box
+      as="span"
       {...state.getFloatingProps()}
       {...otherProps}
       className={cx(styles.tooltip, className)}

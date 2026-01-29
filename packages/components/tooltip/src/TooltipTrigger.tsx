@@ -1,14 +1,16 @@
 import React, { HTMLAttributes, ReactNode } from 'react';
 import { useTooltipContext } from './TooltipContext';
 import { useMergeRefs } from '@floating-ui/react';
+import { TooltipInternalProps } from './Tooltip';
 
 export const TooltipTrigger = React.forwardRef<
   HTMLElement,
-  React.HTMLProps<HTMLElement> & {
+  Omit<React.HTMLProps<HTMLElement>, 'as'> & {
     tooltipId: string;
+    as: TooltipInternalProps['as'];
   }
 >(function TooltipTrigger(
-  { children, className, tooltipId, ...otherProps },
+  { children, className, tooltipId, as: Element, ...otherProps },
   propRef,
 ) {
   const context = useTooltipContext();
@@ -16,7 +18,7 @@ export const TooltipTrigger = React.forwardRef<
 
   if (React.isValidElement(children)) {
     return (
-      <span
+      <Element
         {...context.getReferenceProps({
           ...otherProps,
           ref: baseRef,
@@ -26,12 +28,12 @@ export const TooltipTrigger = React.forwardRef<
         {React.cloneElement<HTMLAttributes<ReactNode>>(children, {
           'aria-describedby': tooltipId,
         })}
-      </span>
+      </Element>
     );
   }
 
   return (
-    <span
+    <Element
       {...context.getReferenceProps({
         ...otherProps,
         ref: baseRef,
@@ -40,6 +42,6 @@ export const TooltipTrigger = React.forwardRef<
       className={className}
     >
       {children}
-    </span>
+    </Element>
   );
 });
