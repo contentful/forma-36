@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback, type FormEvent } from 'react';
+import React, { forwardRef, useCallback, type SubmitEvent } from 'react';
 
 import type {
   CommonProps,
@@ -18,7 +18,7 @@ function FormBase(
   ref: React.Ref<HTMLFormElement>,
 ) {
   const handleSubmit = useCallback(
-    (event: FormEvent<HTMLFormElement>) => {
+    (event: SubmitEvent<HTMLFormElement>) => {
       event.preventDefault();
       if (onSubmit) {
         onSubmit(event);
