@@ -9,7 +9,7 @@ import React, {
 import type { Placement } from '@floating-ui/react';
 import type * as CSS from 'csstype';
 import tokens from '@contentful/f36-tokens';
-import { Box, useId, type CommonProps } from '@contentful/f36-core';
+import { useId, type CommonProps } from '@contentful/f36-core';
 
 import { getStyles } from './Tooltip.styles';
 import { TooltipTrigger } from './TooltipTrigger';
@@ -176,7 +176,7 @@ export const Tooltip = ({
         label={label}
         style={contentStyles}
         className={className}
-        id={id}
+        id={tooltipId}
         testId={testId}
       />
     </TooltipContextProvider>
