@@ -263,7 +263,7 @@ export const getStaticProps: GetStaticProps<
     if (!contentfulResult) {
       throw new Error(
         'Could not find an entry in Contentful or a MDX file for: ' +
-        context.params?.slug,
+          context.params?.slug,
       );
     }
 
