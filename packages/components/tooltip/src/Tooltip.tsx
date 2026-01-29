@@ -16,6 +16,7 @@ import { TooltipTrigger } from './TooltipTrigger';
 import { TooltipContent } from './TooltipContent';
 import { TooltipContextProvider } from './TooltipContext';
 import { useTooltip } from './useTooltip';
+import { cx } from '@emotion/css';
 
 export type TooltipPlacement = Placement | 'auto';
 
@@ -152,38 +153,32 @@ export const Tooltip = ({
   };
 
   if (!content || isDisabled) {
-    return (
-      <Box as={HtmlTag} className={targetWrapperClassName}>
-        {children}
-      </Box>
-    );
+    return <HtmlTag className={targetWrapperClassName}>{children}</HtmlTag>;
   }
 
   return (
     <TooltipContextProvider value={context}>
-      <Box as="span" className={styles.tooltipContainer}>
-        <TooltipTrigger
-          tooltipId={tooltipId}
-          onMouseEnter={onMouseOver}
-          onMouseLeave={onMouseLeave}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          onKeyDown={onKeyDown}
-          className={targetWrapperClassName}
-          {...otherProps}
-        >
-          {children}
-        </TooltipTrigger>
-        <TooltipContent
-          content={content}
-          label={label}
-          style={contentStyles}
-          className={className}
-          id={id}
-          testId={testId}
-          as={HtmlTag}
-        />
-      </Box>
+      <TooltipTrigger
+        tooltipId={tooltipId}
+        onMouseEnter={onMouseOver}
+        onMouseLeave={onMouseLeave}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        onKeyDown={onKeyDown}
+        className={cx(styles.tooltipContainer, targetWrapperClassName)}
+        as={HtmlTag}
+        {...otherProps}
+      >
+        {children}
+      </TooltipTrigger>
+      <TooltipContent
+        content={content}
+        label={label}
+        style={contentStyles}
+        className={className}
+        id={id}
+        testId={testId}
+      />
     </TooltipContextProvider>
   );
 };
