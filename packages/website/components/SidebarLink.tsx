@@ -10,7 +10,7 @@ import { ComponentStatus } from '../types';
 import caretDown from '../resources/icons/caret-down.svg';
 import arrowSquareOut from '../resources/icons/arrow-square-out.svg';
 import lockSimple from '../resources/icons/lock-simple.svg';
-import { InternalLink } from './Link';
+import { InternalLink } from './InternalLink';
 
 const styles = {
   link: css({

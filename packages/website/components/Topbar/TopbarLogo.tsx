@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from '@emotion/css';
 import { Text } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
-import { InternalLink } from '../Link';
+import { InternalLink } from '../InternalLink';
 
 const styles = {
   logoLink: css({
