@@ -46,7 +46,9 @@ export const getStyles = (props: StyleProps = {}) => {
           }
         : {}),
       width: variant === 'expanded' && isOpen ? '985px' : '350px',
-      ...(position === 'relative' ? { height: '100%' } : {}),
+      ...(position === 'relative' && height === 'auto' && isOpen
+        ? { height: '100%' }
+        : {}),
       transition: `width ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       transform: isAnimatingOut ? 'translateX(50%)' : 'translateX(0)',
       opacity: isAnimatingOut ? 0 : 1,

@@ -156,7 +156,13 @@ export const Default = ({
   };
 
   return (
-    <>
+    <Box
+      style={
+        args.height === 'auto' && args.position === 'relative'
+          ? { height: '90vh' }
+          : {}
+      }
+    >
       <AIChatLayout
         {...args}
         display={display}
@@ -175,7 +181,7 @@ export const Default = ({
           Show component
         </Button>
       )}
-    </>
+    </Box>
   );
 };
 
