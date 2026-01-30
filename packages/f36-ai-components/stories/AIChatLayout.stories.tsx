@@ -8,9 +8,9 @@ import { AIChatHistory } from '../src/AIChatHistory/AIChatHistory';
 import { AIChatInput } from '../src/AIChatInput/AIChatInput';
 import { AIChatLayout } from '../src/AIChatLayout/AIChatLayout';
 import { getStyles } from '../src/AIChatLayout/AIChatLayout.styles';
-import { getAIIconGradientStyles } from '../src/AIIconGradients/AIIconGradients.styles';
 import { AIChatMessage } from '../src/AIChatMessage/AIChatMessage';
 import { AIChatSidePanel } from '../src/AIChatSidePanel/AIChatSidePanel';
+import { getAIIconGradientStyles } from '../src/AIIconGradients/AIIconGradients.styles';
 import { Slider } from '../src/Slider/Slider';
 import {
   mockChatMessages,
@@ -36,6 +36,14 @@ export default {
     display: {
       control: 'select',
       options: ['closed', 'collapsed', 'open'],
+    },
+    height: {
+      control: 'select',
+      options: ['default', 'auto', 400, 600, 800],
+    },
+    position: {
+      control: 'select',
+      options: ['fixed', 'relative'],
     },
     buttonsRight: {
       type: 'string',
@@ -148,7 +156,13 @@ export const Default = ({
   };
 
   return (
-    <>
+    <Box
+      style={
+        args.height === 'auto' && args.position === 'relative'
+          ? { height: '90vh' }
+          : {}
+      }
+    >
       <AIChatLayout
         {...args}
         display={display}
@@ -167,7 +181,7 @@ export const Default = ({
           Show component
         </Button>
       )}
-    </>
+    </Box>
   );
 };
 
@@ -176,6 +190,9 @@ Default.args = {
   icon: 'TranslateIcon',
   buttonsRight: ['open', 'minimize', 'close', 'threads'],
   display: 'collapsed',
+  variant: 'normal',
+  height: 'default',
+  position: 'fixed',
   content:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 };
@@ -313,6 +330,8 @@ WithChangableHeader.args = {
 WithChangableHeader.argTypes = {
   variant: { control: { disable: true } },
   display: { control: { disable: true } },
+  height: { control: { disable: true } },
+  position: { control: { disable: true } },
   buttonsRight: { control: { disable: true } },
   content: { control: { disable: true } },
 };

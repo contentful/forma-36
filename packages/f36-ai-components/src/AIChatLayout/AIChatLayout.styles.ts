@@ -7,6 +7,8 @@ import type { AIChatLayoutDisplay } from './AIChatLayout';
 interface StyleProps {
   display?: AIChatLayoutDisplay;
   variant?: 'normal' | 'expanded';
+  height?: 'default' | 'auto' | number | string;
+  position?: 'fixed' | 'relative';
   isAnimatingOut?: boolean;
   hasLeftButtonGroup?: boolean;
 }
@@ -15,18 +17,38 @@ export const getStyles = (props: StyleProps = {}) => {
   const {
     display = 'open',
     variant = 'normal',
+    height = 'default',
+    position = 'fixed',
     isAnimatingOut = false,
     hasLeftButtonGroup = false,
   } = props;
 
   const isOpen = display !== 'collapsed';
+  let contentHeight: string;
+
+  if (height === 'auto') {
+    contentHeight = 'auto';
+  } else if (typeof height === 'number') {
+    contentHeight = `${height}px`;
+  } else if (typeof height === 'string' && height !== 'default') {
+    contentHeight = height;
+  } else {
+    contentHeight = '720px';
+  }
 
   return {
     root: css({
-      position: 'fixed',
-      bottom: tokens.spacing2Xs,
-      right: tokens.spacingXs,
+      position: position === 'relative' ? 'relative' : 'fixed',
+      ...(position === 'fixed'
+        ? {
+            bottom: tokens.spacing2Xs,
+            right: tokens.spacingXs,
+          }
+        : {}),
       width: variant === 'expanded' && isOpen ? '985px' : '350px',
+      ...(position === 'relative' && height === 'auto' && isOpen
+        ? { height: '100%' }
+        : {}),
       transition: `width ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       transform: isAnimatingOut ? 'translateX(50%)' : 'translateX(0)',
       opacity: isAnimatingOut ? 0 : 1,
@@ -123,13 +145,14 @@ export const getStyles = (props: StyleProps = {}) => {
     content: css({
       flex: 1,
       width: '100%',
-      height: '720px',
+      height: contentHeight === 'auto' ? '100%' : contentHeight,
       overflow: 'auto',
       backgroundColor: tokens.colorWhite,
     }),
 
     contentWrapper: css({
       width: '100%',
+      ...(contentHeight === 'auto' ? { flex: '1' } : {}),
     }),
   };
 };

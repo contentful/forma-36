@@ -9,9 +9,9 @@ import React, {
   useState,
   type Ref,
 } from 'react';
+import { PrimaryIconGradient } from '../AIIconGradients/PrimaryIconGradient';
 import { Slider } from '../Slider';
 import { getStyles } from './AIChatLayout.styles';
-import { PrimaryIconGradient } from '../AIIconGradients/PrimaryIconGradient';
 
 export type AIChatLayoutDisplay = 'closed' | 'collapsed' | 'open';
 
@@ -91,6 +91,15 @@ export interface AIChatLayoutProps extends CommonProps {
    */
   display?: AIChatLayoutDisplay;
   /**
+   * Height of the chat layout when open
+   */
+  height?: 'default' | 'auto' | number | string;
+  /**
+   * How the layout is positioned on the screen
+   * @default 'fixed'
+   */
+  position?: 'fixed' | 'relative';
+  /**
    * Callback function called when the collapsed lozenge is clicked
    */
   onCollapsedClick?: () => void;
@@ -102,16 +111,14 @@ export interface AIChatLayoutProps extends CommonProps {
    * Main content area (hidden when display is 'collapsed' or 'closed')
    */
   children?: React.ReactNode;
-  /**
-   * Test ID for the component
-   */
-  testId?: string;
 }
 
 function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   const {
     variant = 'normal',
     display = 'open',
+    height = 'default',
+    position = 'fixed',
     onCollapsedClick: onOpen = () => {},
     header,
     children,
@@ -144,6 +151,8 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   const styles = getStyles({
     display,
     variant,
+    height,
+    position,
     isAnimatingOut,
     hasLeftButtonGroup,
   });
