@@ -20,6 +20,7 @@ import { Layout } from '../components/Layout';
 import { getTopbarLinks } from '../lib/api';
 
 import { ArrowRightIcon } from '@contentful/f36-icons';
+import { InternalLink } from '../components/InternalLink';
 
 const styles = {
   grid: css({
@@ -42,6 +43,16 @@ const styles = {
     },
   }),
   imgContainer: css({ flexGrow: 1, '> span': { flexGrow: 1 } }),
+  link: css({
+    textDecoration: 'none',
+    color: tokens.colorPrimary,
+    fontWeight: tokens.fontWeightMedium,
+
+    '&:hover': {
+      textDecoration: 'underline',
+      color: tokens.blue700,
+    },
+  }),
 };
 
 type HomeProps = InferGetStaticPropsType<typeof getStaticProps>;
@@ -104,9 +115,9 @@ export default function Home({ topbarLinks }: HomeProps) {
                 <Paragraph>
                   Browse the components and try them out live in the Playground.
                 </Paragraph>
-                <TextLink href="/components/accordion">
+                <InternalLink href="/components/accordion" className={styles.link}>
                   View the components
-                </TextLink>
+                </InternalLink>
               </Flex>
             </Flex>
           </Flex>

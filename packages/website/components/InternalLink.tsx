@@ -9,9 +9,15 @@ const styles = {
   }),
 };
 
-export const InternalLink = ({ href, children, className, ...props }) => {
+type InternalLinkProps = {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+};
+
+export const InternalLink = ({ href, children, className }: InternalLinkProps) => {
   return (
-    <Link href={href} className={cx(styles.link, className)} {...props}>
+    <Link href={href} className={cx(styles.link, className)}>
       {children}
     </Link>
   );
