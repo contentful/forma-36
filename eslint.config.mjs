@@ -29,6 +29,7 @@ export default [
       '**/.next/**',
       '**/.turbo/**',
       '**/chunks/**',
+      '**/next-env.d.ts',
     ],
   },
   js.configs.recommended,

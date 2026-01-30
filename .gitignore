@@ -8,6 +8,10 @@
 # next.js
 **/.next/
 **/out/
+**/next-env.d.ts
+
+# vercel deployment from CLI
+.vercel
 
 # misc
 **/.DS_Store
@@ -37,5 +41,3 @@
 
 *storybook.log
 storybook-static
-.vercel
-.env*.local
