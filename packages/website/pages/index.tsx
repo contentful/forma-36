@@ -104,7 +104,9 @@ export default function Home({ topbarLinks }: HomeProps) {
                 <Paragraph>
                   Browse the components and try them out live in the Playground.
                 </Paragraph>
-                <TextLink href="/components/accordion">View the components</TextLink>
+                <TextLink href="/components/accordion">
+                  View the components
+                </TextLink>
               </Flex>
             </Flex>
           </Flex>
