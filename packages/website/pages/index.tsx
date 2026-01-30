@@ -1,7 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/css';
 import Image from 'next/image';
-import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
 import {
   DisplayText,
@@ -21,6 +20,7 @@ import { Layout } from '../components/Layout';
 import { getTopbarLinks } from '../lib/api';
 
 import { ArrowRightIcon } from '@contentful/f36-icons';
+import { InternalLink } from '../components/InternalLink';
 
 const styles = {
   grid: css({
@@ -43,6 +43,16 @@ const styles = {
     },
   }),
   imgContainer: css({ flexGrow: 1, '> span': { flexGrow: 1 } }),
+  link: css({
+    textDecoration: 'none',
+    color: tokens.colorPrimary,
+    fontWeight: tokens.fontWeightMedium,
+
+    '&:hover': {
+      textDecoration: 'underline',
+      color: tokens.blue700,
+    },
+  }),
 };
 
 type HomeProps = InferGetStaticPropsType<typeof getStaticProps>;
@@ -105,19 +115,23 @@ export default function Home({ topbarLinks }: HomeProps) {
                 <Paragraph>
                   Browse the components and try them out live in the Playground.
                 </Paragraph>
-                <Link href="/components/accordion">
-                  {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */}
-                  <TextLink>View the components</TextLink>
-                </Link>
+                <InternalLink
+                  href="/components/accordion"
+                  className={styles.link}
+                >
+                  View the components
+                </InternalLink>
               </Flex>
             </Flex>
           </Flex>
 
           <Flex className={styles.imgContainer}>
             <Image
+              priority
               src={homepageImg}
               alt="UI components in a browser"
-              layout="responsive"
+              width={424}
+              height={287}
             />
           </Flex>
         </Flex>

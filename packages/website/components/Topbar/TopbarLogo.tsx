@@ -1,21 +1,20 @@
 import React from 'react';
 import { css } from '@emotion/css';
-import Link from 'next/link';
 import { Text } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
+import { InternalLink } from '../InternalLink';
 
 const styles = {
   logoLink: css({
     display: 'flex',
     alignItems: 'center',
-    textDecoration: 'none',
     color: tokens.colorWhite,
   }),
 };
 
 export function TopbarLogo() {
   return (
-    <Link href="/" className={styles.logoLink}>
+    <InternalLink href="/" className={styles.logoLink}>
       <Logo />
       <Text
         fontSize="fontSizeL"
@@ -25,7 +24,7 @@ export function TopbarLogo() {
       >
         Forma 36
       </Text>
-    </Link>
+    </InternalLink>
   );
 }
 

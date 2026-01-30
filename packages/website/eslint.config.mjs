@@ -23,4 +23,12 @@ export default [
     files: ['pages/**/*', 'content/**/*'],
     rules: { 'import/no-default-export': 'off' },
   },
+  {
+    files: [
+      'next-env.d.ts'
+    ],
+    rules: { 
+      '@typescript-eslint/triple-slash-reference': 'off' 
+    }
+  }
 ];

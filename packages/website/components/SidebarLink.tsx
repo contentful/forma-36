@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import { css, cx } from '@emotion/css';
-import Link from 'next/link';
 import tokens from '@contentful/f36-tokens';
 import { List, Flex, Text, Badge } from '@contentful/f36-components';
 
@@ -11,6 +10,7 @@ import { ComponentStatus } from '../types';
 import caretDown from '../resources/icons/caret-down.svg';
 import arrowSquareOut from '../resources/icons/arrow-square-out.svg';
 import lockSimple from '../resources/icons/lock-simple.svg';
+import { InternalLink } from './InternalLink';
 
 const styles = {
   link: css({
@@ -19,7 +19,6 @@ const styles = {
     gap: tokens.spacing2Xs,
     fontSize: tokens.fontSizeM,
     lineHeight: tokens.lineHeightM,
-    textDecoration: 'none',
     '&:hover > span:first-child': {
       textDecoration: 'underline',
     },
@@ -163,7 +162,7 @@ export function SidebarLink({
 
   return (
     <List.Item>
-      <Link
+      <InternalLink
         href={href}
         className={cx([styles.link, titleStyles.sidebarItem])}
         {...linksProps}
@@ -190,7 +189,7 @@ export function SidebarLink({
           )}
         </span>
         {renderSidebarBadge({ isNew, status })}
-      </Link>
+      </InternalLink>
     </List.Item>
   );
 }
