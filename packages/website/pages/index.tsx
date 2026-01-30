@@ -111,9 +111,11 @@ export default function Home({ topbarLinks }: HomeProps) {
 
           <Flex className={styles.imgContainer}>
             <Image
+              priority
               src={homepageImg}
               alt="UI components in a browser"
-              layout="responsive"
+              width={424}
+              height={287}
             />
           </Flex>
         </Flex>
