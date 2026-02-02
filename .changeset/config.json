@@ -7,6 +7,7 @@
     }
   ],
   "ignore": [
+    "@contentful/f36-docs-utils",
     "@contentful/f36-utils",
     "@contentful/f36-usage-count",
     "@contentful/f36-usage-card",
