@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-icon",
-  "version": "6.0.0-alpha.0",
+  "version": "6.0.0-alpha.6",
   "description": "Forma 36: Icon component",
   "license": "MIT",
   "exports": {
@@ -33,16 +33,16 @@
   "dependencies": {
     "@contentful/f36-core": "^6.0.0-alpha.0",
     "@contentful/f36-tokens": "^6.0.0-alpha.0",
-    "@phosphor-icons/react": "^2.1.5",
-    "emotion": "^10.0.17"
+    "@phosphor-icons/react": "2.1.8",
+    "@emotion/css": "^11.13.5"
   },
   "devDependencies": {
     "react-icons": "^4.4.0",
     "tsconfig-to-dual-package": "^1.2.0"
   },
   "peerDependencies": {
-    "react": ">=16.8",
-    "react-dom": ">=16.8"
+    "react": ">=19.1.0",
+    "react-dom": ">=19.1.0"
   },
   "browserslist": "extends @contentful/browserslist-config",
   "repository": {

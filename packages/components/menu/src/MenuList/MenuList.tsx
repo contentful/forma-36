@@ -5,40 +5,53 @@ import type {
   ExpandProps,
 } from '@contentful/f36-core';
 import { useMenuContext } from '../MenuContext';
-import { useSubmenuContext } from '../SubmenuContext';
-import { Popover } from '@contentful/f36-popover';
-import { cx } from 'emotion';
+
+import { cx } from '@emotion/css';
 import { getMenuListStyles } from './MenuList.styles';
 import { MenuListHeader } from './MenuListHeader';
 import { MenuListFooter } from './MenuListFooter';
+import {
+  FloatingList,
+  FloatingPortal,
+  FloatingFocusManager,
+  useMergeRefs,
+} from '@floating-ui/react';
 
 interface MenuListInternalProps extends CommonProps {
   children?: React.ReactNode;
 }
 
-function assertChild(child: any): child is { type: { displayName: string } } {
-  return Boolean(child?.type?.displayName);
+type ComponentWithDisplayName = React.ComponentType<unknown> & {
+  displayName?: string;
+};
+
+function assertChild(
+  child: React.ReactNode,
+): child is React.ReactElement<unknown, ComponentWithDisplayName> {
+  if (!React.isValidElement(child)) return false;
+  // Exclude intrinsic elements (strings like 'div')
+  if (typeof child.type === 'string') return false;
+  const type = child.type as ComponentWithDisplayName;
+  return typeof type.displayName === 'string';
 }
 
 export type MenuListProps = PropsWithHTMLElement<MenuListInternalProps, 'div'>;
 
-const _MenuList = (
-  props: ExpandProps<MenuListProps>,
-  ref: React.Ref<HTMLDivElement>,
-) => {
+const MenuListBase = (props: ExpandProps<MenuListProps>, forwardedRef) => {
   const {
     children,
     testId = 'cf-ui-menu-list',
     className,
+    style,
     ...otherProps
   } = props;
 
-  const { getMenuListProps } = useMenuContext();
-  const submenuContext = useSubmenuContext();
-
+  const menu = useMenuContext();
   let header: React.ReactElement | null = null;
   let footer: React.ReactElement | null = null;
   const items: React.ReactElement[] = [];
+
+  const refs = useMergeRefs([menu.refs.setFloating, forwardedRef]);
 
   React.Children.forEach(children, (child) => {
     let appendChild = true;
@@ -59,25 +72,55 @@ const _MenuList = (
   const styles = getMenuListStyles({
     hasStickyHeader: Boolean(header),
     hasStickyFooter: Boolean(footer),
+    isOpen: menu.isOpen,
   });
 
-  const extendedOtherProps = submenuContext
-    ? submenuContext.getSubmenuListProps(otherProps)
-    : otherProps;
+  if (menu.renderOnlyWhenOpen && !menu.isOpen) {
+    return null;
+  }
 
-  return (
-    <Popover.Content
+  const content = (
+    <div
       role="menu"
-      {...extendedOtherProps}
-      {...getMenuListProps(extendedOtherProps, ref)}
+      style={{ ...style, ...menu.floatingStyles }}
       className={cx(styles.container, className)}
-      testId={testId}
+      data-test-id={testId}
+      ref={refs}
+      {...otherProps}
+      {...menu.getFloatingProps()}
     >
       {header}
       {items}
       {footer}
-    </Popover.Content>
+    </div>
+  );
+
+  const maybeWrapWithFocusManager = (node: React.ReactElement) =>
+    menu.autoFocus === false ? (
+      node
+    ) : (
+      <FloatingFocusManager
+        context={menu.context}
+        modal={false}
+        initialFocus={menu.isNested ? -1 : 0}
+        returnFocus={!menu.isNested}
+      >
+        {node}
+      </FloatingFocusManager>
+    );
+
+  return (
+    <FloatingList elementsRef={menu.elementsRef} labelsRef={menu.labelsRef}>
+      {menu.usePortal ? (
+        <FloatingPortal>
+          {maybeWrapWithFocusManager(content as React.ReactElement)}
+        </FloatingPortal>
+      ) : (
+        maybeWrapWithFocusManager(content as React.ReactElement)
+      )}
+    </FloatingList>
   );
 };
 
-export const MenuList = React.forwardRef(_MenuList);
+MenuListBase.displayName = 'MenuList';
+export const MenuList = React.forwardRef(MenuListBase);

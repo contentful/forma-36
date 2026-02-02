@@ -1,4 +1,4 @@
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import { UsageCardProps } from './UsageCard';
 
@@ -7,11 +7,7 @@ const variantToStyles = (variant: UsageCardProps['variant']) => {
     case 'info':
       return {
         backgroundColor: tokens.gray100,
-        border: `2px solid ${tokens.gray100}`,
-      };
-    default:
-      return {
-        border: `2px solid ${tokens.gray200}`,
+        borderColor: tokens.gray100,
       };
   }
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+
 import {
   Flex,
   Box,
@@ -9,13 +9,13 @@ import {
 } from '@contentful/f36-core';
 import { useDensity } from '@contentful/f36-utils';
 import { Spinner } from '@contentful/f36-spinner';
-
-import tokens, { ColorTokens } from '@contentful/f36-tokens';
-import { getIconColorToken, iconColorByVariant } from '@contentful/f36-utils';
+import { cx } from '@emotion/css';
 import type { Variant } from '@contentful/f36-utils';
-
 import type { ButtonInternalProps } from '../types';
 import { getStyles } from './Button.styles';
+import type { IconProps } from '@contentful/f36-icon';
+import tokens, { ColorTokens } from '@contentful/f36-tokens';
+import { getIconColorToken, iconColorByVariant } from '@contentful/f36-utils';
 
 const BUTTON_DEFAULT_TAG = 'button';
 
@@ -23,9 +23,9 @@ export type ButtonProps<
   E extends React.ElementType = typeof BUTTON_DEFAULT_TAG,
 > = PolymorphicProps<ButtonInternalProps, E, 'disabled'>;
 
-function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
+function ButtonBase<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
   props: ButtonProps<E>,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLButtonElement | HTMLAnchorElement>,
 ) {
   const styles = getStyles();
   const {
@@ -37,10 +37,10 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
     size = 'medium',
     startIcon,
     endIcon,
-    isActive,
-    isDisabled,
+    isActive = false,
+    isDisabled = false,
     isLoading,
-    isFullWidth,
+    isFullWidth = false,
     style,
     ...otherProps
   } = props;
@@ -65,15 +65,28 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
     primary: 'colorWhite',
   };
 
-  const iconContent = (icon) => {
+  const iconContent = (icon: React.ReactElement<IconProps>) => {
+    const hasVariant = props.variant !== undefined;
+
+    const iconColor =
+      icon.props.color ??
+      (hasVariant
+        ? tokens[
+            getIconColorToken(variant as Variant, buttonIconColorByVariant)
+          ]
+        : 'currentColor');
+
     return (
       <Flex
         as="span"
-        className={styles.buttonIcon({ hasChildren: !!children, variant })}
+        className={styles.buttonIcon({
+          hasChildren: !!children,
+          variant,
+        })}
       >
         {React.cloneElement(icon, {
           size: icon.props.size ?? `${size === 'large' ? 'medium' : 'small'}`,
-          color: tokens[getIconColorToken(variant, buttonIconColorByVariant)],
+          color: iconColor,
         })}
       </Flex>
     );
@@ -81,13 +94,15 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
 
   const commonContent = (
     <>
-      {startIcon && iconContent(startIcon)}
+      {startIcon && iconContent(startIcon as React.ReactElement<IconProps>)}
       {children && (
         <Box as="span" display="block" className={styles.buttonContent}>
           {children}
         </Box>
       )}
-      {endIcon && !isLoading && iconContent(endIcon)}
+      {endIcon &&
+        !isLoading &&
+        iconContent(endIcon as React.ReactElement<IconProps>)}
       {isLoading && (
         <Box
           as="span"
@@ -111,13 +126,18 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
   const commonProps = {
     ['data-test-id']: testId,
     className: rootClassNames,
-    ref: ref,
     style,
   };
 
   if (as === 'a') {
     return (
-      <a {...otherProps} {...commonProps} disabled={isDisabled}>
+      <a
+        {...otherProps}
+        {...commonProps}
+        ref={ref as React.Ref<HTMLAnchorElement>}
+        aria-disabled={isDisabled}
+        tabIndex={isDisabled ? -1 : 0}
+      >
         {commonContent}
       </a>
     );
@@ -128,6 +148,7 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
       type="button"
       {...otherProps}
       {...commonProps}
+      ref={ref as React.Ref<HTMLButtonElement>}
       disabled={isDisabled}
     >
       {commonContent}
@@ -135,13 +156,13 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
   );
 }
 
-_Button.displayName = 'Button';
+ButtonBase.displayName = 'Button';
 
 /**
  * @description: Buttons communicate the action that will occur when the user clicks it
  */
-export const Button: PolymorphicComponent<
+export const Button = React.forwardRef(ButtonBase) as PolymorphicComponent<
   ExpandProps<ButtonInternalProps>,
   typeof BUTTON_DEFAULT_TAG,
   'disabled'
-> = React.forwardRef(_Button);
+>;

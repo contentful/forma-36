@@ -1,9 +1,18 @@
 {
   "name": "@contentful/f36-tokens",
   "description": "Forma 36 Tokens",
-  "version": "6.0.0-alpha.0",
+  "version": "6.0.0-alpha.2",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "default": "./dist/index.mjs"
+    }
+  },
   "license": "MIT",
   "files": [
     "package.json",

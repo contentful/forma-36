@@ -1,23 +1,24 @@
 import React, {
-  useEffect,
-  useState,
-  useRef,
   type MouseEvent,
   type FocusEvent,
   type CSSProperties,
-  ReactElement,
+  type ReactElement,
+  type KeyboardEvent,
 } from 'react';
-import { usePopper } from 'react-popper';
-import type { Placement } from '@popperjs/core';
-import { cx } from 'emotion';
+
+import type { Placement } from '@floating-ui/react';
 import type * as CSS from 'csstype';
 import tokens from '@contentful/f36-tokens';
-import { Portal } from '@contentful/f36-utils';
-import { Box, useId, type CommonProps } from '@contentful/f36-core';
+import { useId, type CommonProps } from '@contentful/f36-core';
 
 import { getStyles } from './Tooltip.styles';
+import { TooltipTrigger } from './TooltipTrigger';
+import { TooltipContent } from './TooltipContent';
+import { TooltipContextProvider } from './TooltipContext';
+import { useTooltip } from './useTooltip';
+import { cx } from '@emotion/css';
 
-export type TooltipPlacement = Placement;
+export type TooltipPlacement = Placement | 'auto';
 
 export type WithEnhancedContent = {
   /**
@@ -25,14 +26,14 @@ export type WithEnhancedContent = {
    */
   content?: ReactElement | string;
   /**
-   * Accessible label property, only required when using ReactElement as content
+   * Accessible label property, only required when using a ReactElement as content
    */
   label?: string;
 };
 
 export type TooltipInternalProps = {
   /**
-   * Child nodes to be rendered in the component and that will show the tooltip when they are hovered
+   * Child nodes to be rendered as the trigger of the tooltip component. The tooltip will be displayed on hover or focus of the child element
    */
   children: React.ReactNode;
   /**
@@ -74,7 +75,7 @@ export type TooltipInternalProps = {
   /**
    * Function that will be called when the user uses a keyboard key on the target
    */
-  onKeyDown?: (evt: KeyboardEvent) => void;
+  onKeyDown?: (evt: KeyboardEvent<HTMLSpanElement>) => void;
 
   /**
    * It sets the "preferred" position of the tooltip
@@ -127,66 +128,21 @@ export const Tooltip = ({
   targetWrapperClassName,
   maxWidth = 360,
   testId = 'cf-ui-tooltip',
-  placement = 'auto',
+  placement,
   usePortal = false,
   isDisabled = false,
   ...otherProps
 }: TooltipProps) => {
-  const styles = getStyles();
-  const [show, setShow] = useState(isVisible);
   const tooltipId = useId(id, 'tooltip');
-  const elementRef = useRef(null);
-  const popperRef = useRef(null);
-  const [arrowRef, setArrowRef] = useState<HTMLSpanElement | null>(null);
-  const {
-    styles: popperStyles,
-    attributes,
-    update,
-  } = usePopper(elementRef.current, popperRef.current, {
-    placement: placement,
-    modifiers: [
-      {
-        name: 'arrow',
-        options: {
-          element: arrowRef,
-          padding: parseFloat(tokens.borderRadiusSmall),
-        },
-      },
-      {
-        name: 'offset',
-        options: {
-          offset: [0, 10],
-        },
-      },
-    ],
+  const styles = getStyles();
+
+  const context = useTooltip({
+    hideDelay,
+    showDelay,
+    placement,
+    usePortal,
+    isVisible,
   });
-
-  // necessary to update tooltip position in case the content is being updated
-  useEffect(() => {
-    const updatePosition = async () => {
-      if (update !== null) {
-        await update();
-      }
-    };
-    updatePosition();
-  }, [content, update]);
-
-  const showTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
-  const hideTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
-  const clearTimeouts = () => {
-    clearTimeout(showTimeoutRef.current);
-    clearTimeout(hideTimeoutRef.current);
-  };
-  useEffect(() => clearTimeouts, []);
-
-  const showPopover = () => {
-    clearTimeouts();
-    showTimeoutRef.current = setTimeout(() => setShow(true), showDelay);
-  };
-  const hidePopover = () => {
-    clearTimeouts();
-    hideTimeoutRef.current = setTimeout(() => setShow(false), hideDelay);
-  };
 
   const contentMaxWidth =
     typeof maxWidth === 'string' ? maxWidth : `${maxWidth}px`;
@@ -194,90 +150,35 @@ export const Tooltip = ({
   const contentStyles: CSSProperties = {
     zIndex: tokens.zIndexTooltip,
     maxWidth: contentMaxWidth,
-    ...popperStyles.popper,
   };
 
   if (!content || isDisabled) {
-    return (
-      <Box as={HtmlTag} className={targetWrapperClassName}>
-        {children}
-      </Box>
-    );
+    return <HtmlTag className={targetWrapperClassName}>{children}</HtmlTag>;
   }
 
-  const tooltip = (
-    <Box
-      as="span"
-      id={tooltipId}
-      ref={popperRef}
-      role="tooltip"
-      style={contentStyles}
-      className={cx(styles.tooltip, className)}
-      testId={testId}
-      onMouseEnter={() => {
-        clearTimeouts();
-        setShow(true);
-      }}
-      onMouseLeave={() => {
-        clearTimeouts();
-        setShow(false);
-      }}
-      {...attributes.popper}
-    >
-      <span aria-label={label}>{content}</span>
-      <span
-        className={styles.tooltipArrow}
-        data-placement={
-          attributes.popper && attributes.popper['data-popper-placement']
-        }
-        ref={setArrowRef}
-        style={popperStyles.arrow}
-      />
-    </Box>
-  );
-
   return (
-    <>
-      {show ? <>{usePortal ? <Portal>{tooltip}</Portal> : tooltip}</> : null}
-      <Box
-        as={HtmlTag}
-        ref={elementRef}
+    <TooltipContextProvider value={context}>
+      <TooltipTrigger
+        tooltipId={tooltipId}
+        onMouseEnter={onMouseOver}
+        onMouseLeave={onMouseLeave}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        onKeyDown={onKeyDown}
         className={cx(styles.tooltipContainer, targetWrapperClassName)}
-        onMouseEnter={(evt: MouseEvent) => {
-          showPopover();
-          if (onMouseOver) onMouseOver(evt);
-        }}
-        onMouseLeave={(evt: MouseEvent) => {
-          hidePopover();
-          if (onMouseLeave) onMouseLeave(evt);
-        }}
-        onFocus={(evt: FocusEvent) => {
-          showPopover();
-          if (onFocus) onFocus(evt);
-        }}
-        onBlur={(evt: FocusEvent) => {
-          hidePopover();
-          if (onBlur) onBlur(evt);
-        }}
-        onKeyDown={(evt: KeyboardEvent) => {
-          if (evt.key === 'Escape') {
-            hidePopover();
-          }
-          if (onKeyDown) onKeyDown(evt);
-        }}
+        as={HtmlTag}
         {...otherProps}
       >
-        {React.Children.map<React.ReactNode, React.ReactNode>(
-          children,
-          (child) => {
-            if (React.isValidElement(child)) {
-              return React.cloneElement(child, {
-                'aria-describedby': tooltipId,
-              });
-            }
-          },
-        )}
-      </Box>
-    </>
+        {children}
+      </TooltipTrigger>
+      <TooltipContent
+        content={content}
+        label={label}
+        style={contentStyles}
+        className={className}
+        id={tooltipId}
+        testId={testId}
+      />
+    </TooltipContextProvider>
   );
 };

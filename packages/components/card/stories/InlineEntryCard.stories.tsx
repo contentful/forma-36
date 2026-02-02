@@ -1,5 +1,6 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { action } from 'storybook/actions';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading, Text } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
@@ -20,7 +21,7 @@ export default {
   title: 'Components/Card/InlineEntryCard',
 } as Meta;
 
-export const Default: Story<InlineEntryCardProps> = (args) => {
+export const Default: StoryObj<InlineEntryCardProps> = (args) => {
   return (
     <Flex style={{ maxWidth: '600px' }}>
       <Text>
@@ -46,9 +47,10 @@ Default.args = {
   status: 'published',
   title: 'Author: William Shakespeare',
   children: 'William Shakespeare',
+  onClick: action('card-clicked'),
 };
 
-export const WithOnlyTitle: Story<InlineEntryCardProps> = (args) => {
+export const WithOnlyTitle: StoryObj<InlineEntryCardProps> = (args) => {
   return (
     <Flex style={{ maxWidth: '600px' }}>
       <Text>
@@ -73,9 +75,10 @@ WithOnlyTitle.args = {
   ],
   status: 'published',
   title: 'Author: William Shakespeare',
+  onClick: action('card-clicked'),
 };
 
-export const WithNoTitle: Story<InlineEntryCardProps> = (args) => {
+export const WithNoTitle: StoryObj<InlineEntryCardProps> = (args) => {
   return (
     <Flex style={{ maxWidth: '600px' }}>
       <Text>
@@ -100,9 +103,10 @@ WithNoTitle.args = {
   ],
   status: 'published',
   children: 'William Shakespeare',
+  onClick: action('card-clicked'),
 };
 
-export const WithLoadingState: Story<InlineEntryCardProps> = (args) => {
+export const WithLoadingState: StoryObj<InlineEntryCardProps> = (args) => {
   return <InlineEntryCard {...args} />;
 };
 
@@ -110,7 +114,7 @@ WithLoadingState.args = {
   isLoading: true,
 };
 
-export const Overview: Story<InlineEntryCardProps> = () => {
+export const Overview = () => {
   return (
     <>
       <Flex flexWrap="wrap">
@@ -126,6 +130,7 @@ export const Overview: Story<InlineEntryCardProps> = () => {
           <InlineEntryCard
             status="published"
             title="Author: William Shakespeare"
+            onClick={action('inline-card-clicked')}
           >
             William Shakespeare
           </InlineEntryCard>
@@ -144,6 +149,7 @@ export const Overview: Story<InlineEntryCardProps> = () => {
             isHovered
             status="archived"
             title="Author: William Shakespeare"
+            onClick={action('hover-card-clicked')}
           >
             William Shakespeare
           </InlineEntryCard>
@@ -162,6 +168,7 @@ export const Overview: Story<InlineEntryCardProps> = () => {
             isSelected
             status="deleted"
             title="Author: William Shakespeare"
+            onClick={action('selected-card-clicked')}
           >
             William Shakespeare
           </InlineEntryCard>

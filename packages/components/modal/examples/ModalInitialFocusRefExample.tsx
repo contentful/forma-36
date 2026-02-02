@@ -8,7 +8,7 @@ import {
 
 export default function ModalInitialFocusRefExample() {
   const [isShown, setShown] = useState(false);
-  const inputRef = useRef();
+  const inputRef = useRef(null);
   return (
     <>
       <Button onClick={() => setShown(true)}>Create new content type</Button>

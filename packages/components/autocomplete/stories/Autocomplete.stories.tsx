@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { action } from '@storybook/addon-actions';
-import type { Meta } from '@storybook/react/types-6-0';
+import { action } from 'storybook/actions';
+import type { Meta } from '@storybook/react-vite';
 
 import { Stack } from '@contentful/f36-core';
 import { FormControl } from '@contentful/f36-forms';
@@ -66,7 +66,7 @@ const groceryList: GroceryList[] = [
 
 const fruitStrings = fruits.reduce((acc, fruit) => [...acc, fruit.name], []);
 
-export const Basic = (args: AutocompleteProps<string>) => {
+export const Basic = () => {
   const [selectedFruit, setSelectedFruit] = useState<string>('');
   const [filteredItems, setFilteredItems] = useState(fruitStrings);
 
@@ -92,7 +92,7 @@ export const Basic = (args: AutocompleteProps<string>) => {
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<string>
-        {...args}
+        placeholder="select your favorite fruit"
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
@@ -154,7 +154,7 @@ UsingObjectsAsItems.args = {
   placeholder: 'Search your favorite fruit',
 };
 
-export const ControlledFromOutside = (args: AutocompleteProps<Produce>) => {
+export const ControlledFromOutside = () => {
   const [selectedFruit, setSelectedFruit] = useState<Produce>({
     id: 9,
     name: 'Pear 🍐',
@@ -178,7 +178,7 @@ export const ControlledFromOutside = (args: AutocompleteProps<Produce>) => {
       alignItems="start"
     >
       <Autocomplete<Produce>
-        {...args}
+        placeholder="select your favorite fruit"
         listMaxHeight={120}
         textOnAfterSelect="preserve"
         items={filteredItems}
@@ -207,7 +207,7 @@ ControlledFromOutside.args = {
   placeholder: 'Search your favorite fruit',
 };
 
-export const UsingGroupedItems = (args: AutocompleteProps<Produce>) => {
+export const UsingGroupedItems = () => {
   const [selectedItem, setSelectedItem] = useState<Produce>({} as Produce);
   const [filteredItems, setFilteredItems] = useState(groceryList);
 
@@ -236,7 +236,7 @@ export const UsingGroupedItems = (args: AutocompleteProps<Produce>) => {
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<Produce>
-        {...args}
+        placeholder="select your favorite fruit"
         selectedItem={selectedItem}
         items={filteredItems}
         isGrouped
@@ -257,7 +257,7 @@ UsingGroupedItems.args = {
   placeholder: 'Search your favorite fruit',
 };
 
-export const MultipleSelection = (args: AutocompleteProps<Produce>) => {
+export const MultipleSelection = () => {
   const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
   const [filteredItems, setFilteredItems] = useState(fruits);
 
@@ -281,7 +281,7 @@ export const MultipleSelection = (args: AutocompleteProps<Produce>) => {
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<Produce>
-        {...args}
+        placeholder="select your favorite fruit"
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}

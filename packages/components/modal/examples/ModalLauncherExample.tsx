@@ -11,7 +11,7 @@ export default function ModalLauncherExample() {
   const [result, setResult] = useState('');
 
   const onClickHandler = () => {
-    ModalLauncher.open(({ isShown, onClose }) => (
+    ModalLauncher.open<string>(({ isShown, onClose }) => (
       <ModalConfirm
         isShown={isShown}
         onCancel={() => {

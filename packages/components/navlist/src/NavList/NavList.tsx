@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import type {
   CommonProps,
   PolymorphicProps,
@@ -23,9 +23,9 @@ export type NavListProps<
   E extends React.ElementType = typeof NAV_LIST_DEFAULT_TAG,
 > = PolymorphicProps<NavListInternalProps, E>;
 
-function _NavList<E extends React.ElementType = typeof NAV_LIST_DEFAULT_TAG>(
+function NavListBase<E extends React.ElementType = typeof NAV_LIST_DEFAULT_TAG>(
   props: NavListProps<E>,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLElement>,
 ) {
   const styles = getStyles();
 
@@ -55,9 +55,9 @@ function _NavList<E extends React.ElementType = typeof NAV_LIST_DEFAULT_TAG>(
   );
 }
 
-_NavList.displayName = 'NavList';
+NavListBase.displayName = 'NavList';
 
-export const NavList: PolymorphicComponent<
+export const NavList = React.forwardRef(NavListBase) as PolymorphicComponent<
   ExpandProps<NavListInternalProps>,
   typeof NAV_LIST_DEFAULT_TAG
-> = React.forwardRef(_NavList);
+>;

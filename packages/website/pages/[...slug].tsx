@@ -147,8 +147,9 @@ export const getStaticProps: GetStaticProps<
     throw new Error();
   }
 
-  const remarkCodeTitles = await import('remark-code-titles');
+  const { default: remarkCodeTitles } = await import('remark-code-titles');
   const { codeImport } = await import('remark-code-import');
+  const { remarkCodeMeta } = await import('../utils/remark-code-meta');
   const { default: rehypeSlug } = await import('rehype-slug');
   const { default: rehypeToc } = await import('rehype-toc');
   const path = await import('node:path');
@@ -204,38 +205,43 @@ export const getStaticProps: GetStaticProps<
       mainContentText = content.replace(matches[0], '');
     }
 
-    const shortIntro = await serialize(shortIntroText);
-    const mainContent = await serialize(mainContentText, {
-      // Optionally pass remark/rehype plugins
-      mdxOptions: {
-        remarkPlugins: [
-          remarkCodeTitles,
-          [
-            codeImport,
-            {
-              // Going up the tree from website build dir `.next`
-              rootDir: path.join(__dirname, '../../../../../'),
-            },
-          ],
-        ],
-        rehypePlugins: [
-          rehypeSlug,
-          [
-            rehypeToc,
-            {
-              nav: false,
-              headings: ['h1', 'h2', 'h3'],
-              customizeTOC: (t) => {
-                toc = transformToc(t);
-                return false;
-              },
-            },
-          ],
-        ],
-        filepath: mdxSource.filepath,
-      },
-      scope: data,
+    const shortIntro = await serialize({
+      value: shortIntroText,
     });
+    const mainContent = await serialize(
+      { value: mainContentText, path: mdxSource.filepath },
+      {
+        mdxOptions: {
+          remarkPlugins: [
+            remarkCodeTitles,
+            [
+              codeImport,
+              {
+                // Going up the tree from website build dir `.next`
+                rootDir: path.join(__dirname, '../../../../../'),
+              },
+            ],
+            // Add plugin to parse code meta attributes and pass them as props
+            remarkCodeMeta,
+          ],
+          rehypePlugins: [
+            rehypeSlug,
+            [
+              rehypeToc,
+              {
+                nav: false,
+                headings: ['h1', 'h2', 'h3'],
+                customizeTOC: (t: unknown) => {
+                  toc = transformToc(t);
+                  return false;
+                },
+              },
+            ],
+          ],
+        },
+        scope: data,
+      },
+    );
 
     const propsMetadata = getPropsMetadata(mdxSource.filepath, data.typescript);
 
@@ -310,7 +316,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths: [...mdxPaths, ...contentfulPaths],
-    fallback: false,
+    fallback: 'blocking',
   };
 };
 

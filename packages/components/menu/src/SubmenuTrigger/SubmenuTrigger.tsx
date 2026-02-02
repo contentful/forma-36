@@ -1,10 +1,10 @@
 import React from 'react';
 import { MenuTrigger } from '../MenuTrigger/MenuTrigger';
 import { MenuItem, MenuItemProps } from '../MenuItem/MenuItem';
-import { useSubmenuContext } from '../SubmenuContext';
+import { useMenuContext } from '../MenuContext';
 import { CaretRightIcon } from '@contentful/f36-icons';
 import type { ExpandProps } from '@contentful/f36-core';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { getSubmenuTriggerStyles } from './SubmenuTrigger.styles';
 
 export type SubmenuTriggerProps = Omit<
@@ -12,20 +12,20 @@ export type SubmenuTriggerProps = Omit<
   'isInitiallyFocused' | 'as'
 >;
 
-const _SubmenuTrigger = (
+const SubmenuTriggerBase = (
   props: ExpandProps<SubmenuTriggerProps>,
   ref: React.Ref<HTMLButtonElement>,
 ) => {
   const { className, children } = props;
-  const { getSubmenuTriggerProps, isOpen } = useSubmenuContext();
 
   const styles = getSubmenuTriggerStyles();
+  const { isOpen } = useMenuContext();
 
   return (
     <MenuTrigger>
       <MenuItem
         {...props}
-        {...getSubmenuTriggerProps(props, ref)}
+        ref={ref}
         className={cx(styles.root({ isActive: isOpen }), className)}
       >
         <span className={styles.content}>{children}</span>
@@ -35,4 +35,4 @@ const _SubmenuTrigger = (
   );
 };
 
-export const SubmenuTrigger = React.forwardRef(_SubmenuTrigger);
+export const SubmenuTrigger = React.forwardRef(SubmenuTriggerBase);

@@ -17,7 +17,7 @@ export interface CheckboxGroupProps
   value?: Array<string>;
 }
 
-export const _CheckboxGroup = (
+export const CheckboxGroupBase = (
   props: ExpandProps<CheckboxGroupProps>,
   ref: React.Ref<HTMLDivElement>,
 ) => {
@@ -34,4 +34,6 @@ export const _CheckboxGroup = (
   );
 };
 
-export const CheckboxGroup = React.forwardRef(_CheckboxGroup);
+CheckboxGroupBase.displayName = 'CheckboxGroup';
+
+export const CheckboxGroup = React.forwardRef(CheckboxGroupBase);

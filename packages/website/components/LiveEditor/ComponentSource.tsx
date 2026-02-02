@@ -6,7 +6,7 @@ import React, {
   useMemo,
   useContext,
 } from 'react';
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
@@ -150,10 +150,10 @@ const styles = {
 };
 
 export function ComponentSource({
-  children,
+  code,
   file,
 }: {
-  children: string;
+  code: string;
   file?: string;
 }) {
   const [showSource, setShowSource] = useState(true);
@@ -167,7 +167,7 @@ export function ComponentSource({
   return (
     <Flex flexDirection="column" className={styles.root}>
       <LiveProvider
-        code={formatSourceCode(children)}
+        code={formatSourceCode(code)}
         theme={theme}
         // The order is important here
         scope={liveProviderScope}
@@ -210,7 +210,7 @@ export function ComponentSource({
                   <CopyButton
                     tooltipProps={{ placement: 'top' }}
                     className={styles.copyButton}
-                    value={children}
+                    value={code}
                     size="small"
                   />
                   {isExampleFromFile && (
@@ -219,7 +219,7 @@ export function ComponentSource({
                       className={cx(styles.playgroundButton)}
                       endIcon={<f36icons.ArrowSquareOutIcon />}
                       size="small"
-                      href={`/playground?code=${coder.encode(children)}`}
+                      href={`/playground?code=${coder.encode(code)}`}
                       target="_blank"
                     >
                       Open in Playground

@@ -15,3 +15,5 @@ export function NavbarAccountSkeleton({ ariaLabel }: { ariaLabel?: string }) {
     </SkeletonContainer>
   );
 }
+
+NavbarAccountSkeleton.displayName = 'NavbarAccountSkeletton';

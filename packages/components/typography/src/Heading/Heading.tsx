@@ -22,7 +22,7 @@ export type HeadingProps<
   E extends React.ElementType = typeof HEADING_DEFAULT_TAG,
 > = PolymorphicProps<HeadingInternalProps, E>;
 
-function _Heading<E extends React.ElementType = typeof HEADING_DEFAULT_TAG>(
+function HeadingBase<E extends React.ElementType = typeof HEADING_DEFAULT_TAG>(
   {
     children,
     testId = 'cf-ui-heading',
@@ -31,7 +31,7 @@ function _Heading<E extends React.ElementType = typeof HEADING_DEFAULT_TAG>(
     marginBottom = 'spacingM',
     ...otherProps
   }: HeadingProps<E>,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLHeadingElement>,
 ) {
   const density = useDensity();
   const Element: React.ElementType = as || HEADING_DEFAULT_TAG;
@@ -53,9 +53,9 @@ function _Heading<E extends React.ElementType = typeof HEADING_DEFAULT_TAG>(
   );
 }
 
-_Heading.displayName = 'Heading';
+HeadingBase.displayName = 'Heading';
 
-export const Heading: PolymorphicComponent<
+export const Heading = React.forwardRef(HeadingBase) as PolymorphicComponent<
   ExpandProps<HeadingInternalProps>,
   typeof HEADING_DEFAULT_TAG
-> = React.forwardRef(_Heading);
+>;

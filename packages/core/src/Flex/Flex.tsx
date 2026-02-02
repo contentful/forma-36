@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 import type * as CSS from 'csstype';
 import tokens from '@contentful/f36-tokens';
 
@@ -85,7 +85,7 @@ export type FlexProps<E extends React.ElementType = typeof FLEX_DEFAULT_TAG> =
 
 const FLEX_DEFAULT_TAG = 'div';
 
-function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
+function FlexBase<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
   {
     isInline,
     alignItems,
@@ -107,8 +107,7 @@ function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
     as,
     ...otherProps
   }: FlexProps<E>,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- We want to support all element types
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLElement>,
 ) {
   const { boxProps, Element } = useBox<React.ElementType>({
     ...otherProps,
@@ -126,7 +125,7 @@ function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
           flexBasis,
           flexShrink,
           flexDirection,
-          gap: gap === 'none' ? 0 : tokens[gap] ?? gap,
+          gap: gap === 'none' ? 0 : (tokens[gap] ?? gap),
           justifyContent,
           justifySelf,
           alignItems,
@@ -145,9 +144,9 @@ function _Flex<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
   );
 }
 
-_Flex.displayName = 'Flex';
+FlexBase.displayName = 'Flex';
 
-export const Flex: PolymorphicComponent<
+export const Flex = React.forwardRef(FlexBase) as PolymorphicComponent<
   ExpandProps<FlexInternalProps>,
   typeof FLEX_DEFAULT_TAG
-> = React.forwardRef(_Flex);
+>;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 import { Button } from '@contentful/f36-button';
 
@@ -160,25 +160,13 @@ export const WithCheckboxGroup = () => {
         <FormControl.Label as="legend">Fruits</FormControl.Label>
 
         <Checkbox.Group name="uncontrolled-fruits" defaultValue={['apples']}>
-          <Checkbox
-            id="apples"
-            value="apples"
-            {...register('uncontrolled-fruits')}
-          >
+          <Checkbox id="apples" value="apples" {...register('apples')}>
             Apples
           </Checkbox>
-          <Checkbox
-            id="pears"
-            value="pears"
-            {...register('uncontrolled-fruits')}
-          >
+          <Checkbox id="pears" value="pears" {...register('pears')}>
             Pears
           </Checkbox>
-          <Checkbox
-            id="peaches"
-            value="peaches"
-            {...register('uncontrolled-fruits')}
-          >
+          <Checkbox id="peaches" value="peaches" {...register('peaches')}>
             Peaches
           </Checkbox>
         </Checkbox.Group>
