@@ -2,7 +2,10 @@
 
 ## Summary of Breaking Change
 
-`align` is no longer accepted on `AccordionItem` or `AccordionHeader`. Alignment is now a single top‑level concern configured **only on the parent `Accordion`** component and provided to its descendants via context.
+The Accordion component has been refactored to use React Context for internal state management. As part of this refactor:
+
+1. `align` is no longer accepted on `AccordionItem` or `AccordionHeader`. Alignment is now a single top‑level concern configured **only on the parent `Accordion`** component and provided to its descendants via React Context.
+2. **`AccordionItem` and `AccordionHeader` must now be used inside an `Accordion` wrapper** — they can no longer be used as standalone components.
 
 > Note: In v5, any `align` value you passed to `AccordionItem` or `AccordionHeader` was **already ignored** because the effective alignment always came from the parent `Accordion` (defaulting to `end`). The v6 removal simply formalizes this behavior and eliminates a misleading prop surface.
 
@@ -18,6 +21,7 @@ Previously, allowing `align` on each item/header introduced prop duplication, an
 
 1. Reduces prop surface area and cognitive load.
 2. Simplifies implementation by making use of react context instead of prop-drilling.
+3. Enforces proper component hierarchy — `AccordionItem` and `AccordionHeader` now require the context provided by `Accordion`.
 
 ## Migration Steps
 
@@ -36,7 +40,12 @@ Previously, allowing `align` on each item/header introduced prop duplication, an
   <AccordionItem title="C">
     <AccordionHeader align="start">Custom Header</AccordionHeader>
   </AccordionItem>
-</Accordion>
+</Accordion>;
+
+{
+  /* Standalone usage (no longer supported) */
+}
+<AccordionItem title="Standalone" />;
 ```
 
 ### After (v6.x)
@@ -48,7 +57,14 @@ Previously, allowing `align` on each item/header introduced prop duplication, an
   <AccordionItem title="C">
     <AccordionHeader>Custom Header</AccordionHeader>
   </AccordionItem>
-</Accordion>
+</Accordion>;
+
+{
+  /* Standalone usage now requires wrapper */
+}
+<Accordion>
+  <AccordionItem title="Standalone" />
+</Accordion>;
 ```
 
 If you previously mixed different alignments per item, choose a single value that best matches the dominant layout (typically `end`, which remains the default). The new API intentionally does **not** support heterogeneous alignment inside one Accordion.
@@ -74,3 +90,9 @@ A: Wrap that item in a separate Accordion instance if absolutely necessary, or r
 
 **Q: What happens if I leave old `align` props in place?**  
 A: They will be ignored (and in strict TypeScript settings, produce a type error). Remove them to prevent confusion.
+
+**Q: What happens if I use `AccordionItem` outside of `Accordion`?**  
+A: You will get a runtime error because the component requires the React Context provided by `Accordion`. Always wrap `AccordionItem` and `AccordionHeader` in an `Accordion` component.
+
+**Q: Can I still use `AccordionItem` independently?**  
+A: No. In v6, `AccordionItem` relies on context from `Accordion`. If you need a single item, wrap it in `<Accordion>`. If you only need the behaviour of an opening / closing component use the `<Collapse>` component
