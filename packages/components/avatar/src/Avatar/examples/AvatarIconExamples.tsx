@@ -1,7 +1,6 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
-import { Avatar } from '@contentful/f36-avatar';
-import { Stack } from '@contentful/f36-core';
+import { Avatar, Stack } from '@contentful/f36-avatar';
 import { CheckCircleIcon } from '@contentful/f36-icons';
 
 export default function AvatarIconExamples() {
