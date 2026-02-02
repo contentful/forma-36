@@ -1,5 +1,24 @@
 # Change Log
 
+## 6.1.0
+
+### Minor Changes
+
+- [#3301](https://github.com/contentful/forma-36/pull/3301) [`dc09889`](https://github.com/contentful/forma-36/commit/dc098898b5b8e847a9a1a7d62a588c72a8246442) Thanks [@Lelith](https://github.com/Lelith)! - Exit pre-release mode and release first major version 6
+
+### Patch Changes
+
+- Updated dependencies [[`dc09889`](https://github.com/contentful/forma-36/commit/dc098898b5b8e847a9a1a7d62a588c72a8246442)]:
+  - @contentful/f36-button@6.1.0
+  - @contentful/f36-forms@6.1.0
+  - @contentful/f36-icons@6.1.0
+  - @contentful/f36-popover@6.1.0
+  - @contentful/f36-skeleton@6.1.0
+  - @contentful/f36-typography@6.1.0
+  - @contentful/f36-utils@6.1.0
+  - @contentful/f36-core@6.1.0
+  - @contentful/f36-tokens@6.1.0
+
 ## 6.0.0
 
 ### Major Changes

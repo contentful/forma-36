@@ -21,3 +21,27 @@ spec:
   type: library 
   lifecycle: production  
   owner: group:team-ui-foundation
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: forma-36
+  description: |
+    Forma 36 is an open-source design system by Contentful created with the intent to reduce the overhead of creating UI by providing tools and guidance for digital teams building and extending Contentful products.
+  annotations:
+    circleci.com/project-slug: github/contentful/forma-36
+    github.com/project-slug: contentful/forma-36
+    contentful.com/service-tier: "4"
+    backstage.io/techdocs-ref: url:s3://contentful-roadie-tech-docs/default/Component/forma-36/
+    contentful.com/ci-alert-slack: prd-ui-foundation-alerts
+  tags:
+    - react
+    - typescript
+    - design-system
+    - monorepo
+    - sast-enabled
+    - tier-4
+spec:
+  type: library
+  lifecycle: production
+  owner: group:team-ui-foundation
