@@ -37,7 +37,7 @@ export const Basic: StoryObj<ButtonGroupProps> = {
         <Button>Button</Button>
         <IconButton
           variant="secondary"
-          icon={<CaretDownIcon color={tokens.gray900} />}
+          icon={<CaretDownIcon />}
           aria-label="Open dropdown"
         />
       </ButtonGroup>
@@ -54,7 +54,7 @@ export const Spaced: StoryObj<ButtonGroupProps> = {
         <Button>Button</Button>
         <IconButton
           variant="secondary"
-          icon={<CaretDownIcon color={tokens.gray900} />}
+          icon={<CaretDownIcon />}
           aria-label="Open dropdown"
         />
       </ButtonGroup>
@@ -104,11 +104,11 @@ export const Overview: StoryFn<ButtonGroupProps> = () => {
                         {...(groupVariant === 'spaced'
                           ? { variant: groupVariant }
                           : {
-                              variant: groupVariant,
-                              withDivider:
-                                buttonVariant === 'positive' ||
-                                buttonVariant === 'primary',
-                            })}
+                            variant: groupVariant,
+                            withDivider:
+                              buttonVariant === 'positive' ||
+                              buttonVariant === 'primary',
+                          })}
                       >
                         <Button onClick={onClick} variant={buttonVariant}>
                           Button
@@ -122,7 +122,7 @@ export const Overview: StoryFn<ButtonGroupProps> = () => {
                         <IconButton
                           onClick={onClick}
                           variant={buttonVariant}
-                          icon={<CaretDownIcon color={tokens.gray900} />}
+                          icon={<CaretDownIcon />}
                           aria-label="Open dropdown"
                         />
                       </ButtonGroup>
