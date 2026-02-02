@@ -77,13 +77,13 @@ A component's directory should resemble the following:
   package.json
 ```
 
-For more detailes you can have a look in document that describes [folder structure in details](https://github.com/contentful/forma-36/blob/main/docs/folder-structure.md).
+For more detailes you can have a look in document that describes [folder structure in details](https://github.com/contentful/forma-36/blob/v5/docs/folder-structure.md).
 
 > If you use `npm run-script generate` in the root of the repo, this structure will be created automatically for you
 
 ### Code Style Guide
 
-[Our code style guide](https://github.com/contentful/forma-36/blob/main/docs/code-style-guide.md)
+[Our code style guide](https://github.com/contentful/forma-36/blob/v5/docs/code-style-guide.md)
 
 ### Component principles
 

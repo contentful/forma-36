@@ -23,7 +23,7 @@ jobs:
       - node/install-packages
       - run:
           name: Build packages
-          command: npm run-script build -- --force
+          command: npm run-script build -- --filter=!@contentful/f36-cdn --force
       - persist_to_workspace:
           root: .
           paths:
@@ -66,30 +66,6 @@ jobs:
       - run:
           name: Test
           command: npm run-script test
-
-  check-links:
-    docker:
-      - image: cimg/node:lts-browsers
-    resource_class: xlarge
-    working_directory: ~/circleci-f36-build
-    steps:
-      - checkout
-      - attach_workspace:
-          at: ~/circleci-f36-build
-      - node/install-packages
-      - run:
-          name: Build Next.js website
-          command: npm run-script docs:next:build
-      - run:
-          name: Run production version of the website locally
-          command: npm run-script docs:next:start-prod
-          background: true
-      - run:
-          name: Wait for localhost:3000 to be ready
-          command: npx wait-on http://localhost:3000
-      - run:
-          name: Run links checker
-          command: npx blc http://localhost:3000 -ro --exclude "https://medium.com/contentful-design" --exclude "https://github.com/contentful/forma-36" --exclude "https://www.figma.com/@contentful" --exclude "https://react-hook-form.com"
 
   deploy_chromatic:
     docker:
@@ -200,16 +176,7 @@ workflows:
           filters:
             branches:
               only:
-                - main
-
-  f36-link-checker:
-    jobs:
-      - build:
-          context:
-            - vault
-      - check-links:
-          requires:
-            - build
+                - v5
 
   f36-changelog:
     triggers:
@@ -218,7 +185,7 @@ workflows:
           filters:
             branches:
               only:
-                - main
+                - v5
     jobs:
       - changelog:
           context:

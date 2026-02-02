@@ -61,7 +61,7 @@
     ]
   ],
   "access": "public",
-  "baseBranch": "main",
+  "baseBranch": "v5",
   "updateInternalDependencies": "patch",
   "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
     "onlyUpdatePeerDependentsWhenOutOfRange": true

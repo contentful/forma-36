@@ -583,11 +583,11 @@
 
   The package remains accessible in its latest v4 version, but its maintenance will be stopped in six months.
 
-  📖 Follow this [migration guide](https://github.com/contentful/forma-36/blob/main/MIGRATION.md#workbench).
+  📖 Follow this [migration guide](https://github.com/contentful/forma-36/blob/v5/MIGRATION.md#workbench).
 
   ### Typography is removed
 
-  It has been deprecated since v3 -> v4, follow the [migration recommendations](https://github.com/contentful/forma-36/blob/main/MIGRATION_V3_V4.md#typography).
+  It has been deprecated since v3 -> v4, follow the [migration recommendations](https://github.com/contentful/forma-36/blob/v5/MIGRATION_V3_V4.md#typography).
 
   ## 📝 API changes in various components
 
@@ -635,7 +635,7 @@
 
   The `Icon` component has been significantly updated in version 5, introducing several breaking changes to its API. The available icon sizes have been streamlined to three options for greater consistency and ease of use. The `trimmed` and `variant` props have been removed to simplify the component. Instead, a new `color` prop has been added, allowing for more flexible icon styling. Additionally, an `isActive` prop is now available to indicate the active state of an icon.
 
-  📖 Follow this [migration guide](https://github.com/contentful/forma-36/blob/main/MIGRATION.md#icon).
+  📖 Follow this [migration guide](https://github.com/contentful/forma-36/blob/v5/MIGRATION.md#icon).
 
   A codemod is available to migrate your icons:
 
@@ -661,7 +661,7 @@
   | ----------------------------------------------------------------------- | ----------------------------------------------- |
   | The component is not exported from `@contentful/f36-components` anymore | Import it from `@contentful/f36-navbar` instead |
 
-  📖 Follow this [migration guide](https://github.com/contentful/forma-36/blob/main/MIGRATION.md#navbar).
+  📖 Follow this [migration guide](https://github.com/contentful/forma-36/blob/v5/MIGRATION.md#navbar).
 
   ### Multiselect
 
@@ -683,7 +683,7 @@
 
   ### Layout
 
-  Learn more about this component on the [documentation page](https://github.com/contentful/forma-36/blob/main/MIGRATION.md#layout).
+  Learn more about this component on the [documentation page](https://github.com/contentful/forma-36/blob/v5/MIGRATION.md#layout).
 
   ### Multiselect
 
@@ -716,7 +716,7 @@
 
   ## 📖 Migration
 
-  The [migration guide](https://github.com/contentful/forma-36/blob/main/MIGRATION.md) details all changes and outlines the necessary actions, whether manual or automated using Codemod.
+  The [migration guide](https://github.com/contentful/forma-36/blob/v5/MIGRATION.md) details all changes and outlines the necessary actions, whether manual or automated using Codemod.
 
   ## 🫶 Contributors
 

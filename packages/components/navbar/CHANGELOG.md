@@ -197,7 +197,7 @@
   | ----------------------------------------------------------------------- | ----------------------------------------------- |
   | The component is not exported from `@contentful/f36-components` anymore | Import it from `@contentful/f36-navbar` instead |
 
-  📖 Follow this [migration guide](https://github.com/contentful/forma-36/blob/main/MIGRATION.md#navbar).
+  📖 Follow this [migration guide](https://github.com/contentful/forma-36/blob/v5/MIGRATION.md#navbar).
 
 - [#2828](https://github.com/contentful/forma-36/pull/2828) [`a2df764`](https://github.com/contentful/forma-36/commit/a2df764247f7439d5b1b4f3fa71e2b46597c2785) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - Notice: 5.0.0 is not to be installed
 
