@@ -1,5 +1,58 @@
 # Change Log
 
+## 6.1.0
+
+### Minor Changes
+
+- [#3301](https://github.com/contentful/forma-36/pull/3301) [`dc09889`](https://github.com/contentful/forma-36/commit/dc098898b5b8e847a9a1a7d62a588c72a8246442) Thanks [@Lelith](https://github.com/Lelith)! - Exit pre-release mode and release first major version 6
+
+### Patch Changes
+
+- Updated dependencies [[`dc09889`](https://github.com/contentful/forma-36/commit/dc098898b5b8e847a9a1a7d62a588c72a8246442)]:
+  - @contentful/f36-accordion@6.1.0
+  - @contentful/f36-asset@6.1.0
+  - @contentful/f36-autocomplete@6.1.0
+  - @contentful/f36-avatar@6.1.0
+  - @contentful/f36-badge@6.1.0
+  - @contentful/f36-button@6.1.0
+  - @contentful/f36-card@6.1.0
+  - @contentful/f36-collapse@6.1.0
+  - @contentful/f36-copybutton@6.1.0
+  - @contentful/f36-datepicker@6.1.0
+  - @contentful/f36-datetime@6.1.0
+  - @contentful/f36-drag-handle@6.1.0
+  - @contentful/f36-empty-state@6.1.0
+  - @contentful/f36-entity-list@6.1.0
+  - @contentful/f36-forms@6.1.0
+  - @contentful/f36-header@6.1.0
+  - @contentful/f36-icon@6.1.0
+  - @contentful/f36-icons@6.1.0
+  - @contentful/f36-image@6.1.0
+  - @contentful/f36-layout@6.1.0
+  - @contentful/f36-list@6.1.0
+  - @contentful/f36-menu@6.1.0
+  - @contentful/f36-modal@6.1.0
+  - @contentful/f36-multiselect@6.1.0
+  - @contentful/f36-navlist@6.1.0
+  - @contentful/f36-note@6.1.0
+  - @contentful/f36-notification@6.1.0
+  - @contentful/f36-pagination@6.1.0
+  - @contentful/f36-pill@6.1.0
+  - @contentful/f36-popover@6.1.0
+  - @contentful/f36-progress-stepper@6.1.0
+  - @contentful/f36-skeleton@6.1.0
+  - @contentful/f36-spinner@6.1.0
+  - @contentful/f36-table@6.1.0
+  - @contentful/f36-tabs@6.1.0
+  - @contentful/f36-text-link@6.1.0
+  - @contentful/f36-tooltip@6.1.0
+  - @contentful/f36-typography@6.1.0
+  - @contentful/f36-usage-card@6.1.0
+  - @contentful/f36-usage-count@6.1.0
+  - @contentful/f36-utils@6.1.0
+  - @contentful/f36-core@6.1.0
+  - @contentful/f36-tokens@6.1.0
+
 ## 6.0.0
 
 ### Major Changes
