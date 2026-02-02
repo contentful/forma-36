@@ -104,11 +104,11 @@ export const Overview: StoryFn<ButtonGroupProps> = () => {
                         {...(groupVariant === 'spaced'
                           ? { variant: groupVariant }
                           : {
-                            variant: groupVariant,
-                            withDivider:
-                              buttonVariant === 'positive' ||
-                              buttonVariant === 'primary',
-                          })}
+                              variant: groupVariant,
+                              withDivider:
+                                buttonVariant === 'positive' ||
+                                buttonVariant === 'primary',
+                            })}
                       >
                         <Button onClick={onClick} variant={buttonVariant}>
                           Button
