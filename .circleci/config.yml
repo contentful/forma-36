@@ -23,7 +23,7 @@ jobs:
       - node/install-packages
       - run:
           name: Build packages
-          command: npm run-script build -- --force
+          command: npm run-script build -- --filter=!@contentful/f36-cdn --force
       - persist_to_workspace:
           root: .
           paths:
