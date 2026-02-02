@@ -28,8 +28,7 @@ export interface NotificationItemProps extends CommonProps {
    */
   variant?: NotificationVariant;
   /**
-   * Defines if the close button should be rendered
-   * @default true
+   * @deprecated This prop no longer has any effect as Notifications must always have a close button. The prop will be removed in the next major release.
    */
   withCloseButton?: boolean;
   /**
@@ -60,7 +59,7 @@ const _NotificationItem = (props: ExpandProps<NotificationItemProps>, ref) => {
     className,
     children,
     cta,
-    withCloseButton = true,
+    withCloseButton: _withCloseButton,
     closeButtonAriaLabel = 'Dismiss',
     variant = 'positive',
     onClose,
@@ -128,22 +127,21 @@ const _NotificationItem = (props: ExpandProps<NotificationItemProps>, ref) => {
           </TextLink>
         )}
       </Flex>
-      {withCloseButton && (
-        <Box>
-          <Button
-            className={cx(styles.closeButton)}
-            variant="transparent"
-            startIcon={<XIcon />}
-            onClick={() => {
-              if (onClose) {
-                onClose();
-              }
-            }}
-            testId="cf-ui-notification-close"
-            aria-label={closeButtonAriaLabel}
-          />
-        </Box>
-      )}
+
+      <Box>
+        <Button
+          className={cx(styles.closeButton)}
+          variant="transparent"
+          startIcon={<XIcon />}
+          onClick={() => {
+            if (onClose) {
+              onClose();
+            }
+          }}
+          testId="cf-ui-notification-close"
+          aria-label={closeButtonAriaLabel}
+        />
+      </Box>
     </Flex>
   );
 };
