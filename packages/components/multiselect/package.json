@@ -1,22 +1,22 @@
 {
   "name": "@contentful/f36-multiselect",
-  "version": "6.0.0-alpha.7",
+  "version": "6.0.0",
   "description": "Forma 36: Multiselect Component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
     "@babel/runtime": "^7.27.1",
-    "@contentful/f36-button": "^6.0.0-alpha.0",
-    "@contentful/f36-core": "^6.0.0-alpha.0",
-    "@contentful/f36-forms": "^6.0.0-alpha.0",
-    "@contentful/f36-icons": "^6.0.0-alpha.0",
-    "@contentful/f36-popover": "^6.0.0-alpha.8",
-    "@contentful/f36-skeleton": "^6.0.0-alpha.0",
-    "@contentful/f36-tokens": "^6.0.0-alpha.0",
-    "@contentful/f36-tooltip": "^6.0.0-alpha.0",
-    "@contentful/f36-typography": "^6.0.0-alpha.0",
-    "@contentful/f36-utils": "^6.0.0-alpha.0",
+    "@contentful/f36-button": "^6.0.0",
+    "@contentful/f36-core": "^6.0.0",
+    "@contentful/f36-forms": "^6.0.0",
+    "@contentful/f36-icons": "^6.0.0",
+    "@contentful/f36-popover": "^6.0.0",
+    "@contentful/f36-skeleton": "^6.0.0",
+    "@contentful/f36-tokens": "^6.0.0",
+    "@contentful/f36-tooltip": "^6.0.0",
+    "@contentful/f36-typography": "^6.0.0",
+    "@contentful/f36-utils": "^6.0.0",
     "@emotion/css": "^11.13.5"
   },
   "peerDependencies": {

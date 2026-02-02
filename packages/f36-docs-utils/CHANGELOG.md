@@ -1,5 +1,17 @@
 # @contentful/f36-docs-utils
 
+## 5.0.0
+
+### Major Changes
+
+- [#3164](https://github.com/contentful/forma-36/pull/3164) [`918ce52`](https://github.com/contentful/forma-36/commit/918ce52e152338a091737832a17519828f76f8bb) Thanks [@Lelith](https://github.com/Lelith)! - Enter pre-release mode and version packages
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-components@6.0.0
+  - @contentful/f36-tokens@6.0.0
+
 ## 5.0.0-alpha.0
 
 ### Major Changes

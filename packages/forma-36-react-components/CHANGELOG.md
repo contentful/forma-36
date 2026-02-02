@@ -1,5 +1,58 @@
 # Change Log
 
+## 6.0.0
+
+### Major Changes
+
+- [#3164](https://github.com/contentful/forma-36/pull/3164) [`918ce52`](https://github.com/contentful/forma-36/commit/918ce52e152338a091737832a17519828f76f8bb) Thanks [@Lelith](https://github.com/Lelith)! - Enter pre-release mode and version packages
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-accordion@6.0.0
+  - @contentful/f36-asset@6.0.0
+  - @contentful/f36-autocomplete@6.0.0
+  - @contentful/f36-avatar@6.0.0
+  - @contentful/f36-badge@6.0.0
+  - @contentful/f36-button@6.0.0
+  - @contentful/f36-card@6.0.0
+  - @contentful/f36-collapse@6.0.0
+  - @contentful/f36-copybutton@6.0.0
+  - @contentful/f36-datepicker@6.0.0
+  - @contentful/f36-datetime@6.0.0
+  - @contentful/f36-drag-handle@6.0.0
+  - @contentful/f36-empty-state@6.0.0
+  - @contentful/f36-entity-list@6.0.0
+  - @contentful/f36-forms@6.0.0
+  - @contentful/f36-header@6.0.0
+  - @contentful/f36-icon@6.0.0
+  - @contentful/f36-icons@6.0.0
+  - @contentful/f36-image@6.0.0
+  - @contentful/f36-layout@6.0.0
+  - @contentful/f36-list@6.0.0
+  - @contentful/f36-menu@6.0.0
+  - @contentful/f36-modal@6.0.0
+  - @contentful/f36-multiselect@6.0.0
+  - @contentful/f36-navlist@6.0.0
+  - @contentful/f36-note@6.0.0
+  - @contentful/f36-notification@6.0.0
+  - @contentful/f36-pagination@6.0.0
+  - @contentful/f36-pill@6.0.0
+  - @contentful/f36-popover@6.0.0
+  - @contentful/f36-progress-stepper@6.0.0
+  - @contentful/f36-skeleton@6.0.0
+  - @contentful/f36-spinner@6.0.0
+  - @contentful/f36-table@6.0.0
+  - @contentful/f36-tabs@6.0.0
+  - @contentful/f36-text-link@6.0.0
+  - @contentful/f36-tooltip@6.0.0
+  - @contentful/f36-typography@6.0.0
+  - @contentful/f36-usage-card@6.0.0
+  - @contentful/f36-usage-count@6.0.0
+  - @contentful/f36-utils@6.0.0
+  - @contentful/f36-core@6.0.0
+  - @contentful/f36-tokens@6.0.0
+
 ## 6.0.0-alpha.0
 
 ### Major Changes
@@ -643,7 +696,6 @@
   It has been deprecated since v3 -> v4, follow the [migration recommendations](https://github.com/contentful/forma-36/blob/main/MIGRATION_V3_V4.md#typography).
 
   ## 📝 API changes in various components
-
   - Autocomplete
   - ButtonGroup
   - Flex
@@ -728,7 +780,6 @@
   | The `onSearchValueChange` prop is removed | Use the `searchProps.searchInputRef` instead      |
 
   ## ✅ Entering stable
-
   - Layout
   - Multiselect
   - NavList
@@ -751,7 +802,6 @@
   Learn more about this component on the [documentation page](https://f36.contentful.com/components/progress-stepper).
 
   ## 🆕 New components
-
   - UsageCard
   - UsageCount
 
