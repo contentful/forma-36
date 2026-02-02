@@ -82,6 +82,7 @@ For that we need to take some precautions:
 
 - The package.json of the pre-released package must be have `private: true`, to avoid changesets of trying to publish the package.
 - The package that is in prerelease (alpha, beta) needs to be added to the ignore field on the [.changeset/config.json](https://github.com/contentful/forma-36/blob/main/.changeset/config.json), so if a changeset is created for that package it will be ignored and not change the version or publish that specific package.
+- The package that is in prerelease (alpha, beta) needs to be added to the `ignorePkgs` array in [scripts/changesets/changelog-generate.js](https://github.com/contentful/forma-36/blob/main/scripts/changesets/changelog-generate.js), so if a changeset is created for that package it will be ignored and not change the version or publish that specific package.
 - And we don't have prerelease packages being part of the umbrela package (`f36-components`), which means that when it becomes stable we add it there and replace where it was being used before, e.g. on the website and/or playground.
 
 Trying to make prereleases easier to handle we created a script that you can use on your branch before merging into master, that will bump the package you select, and you can choose if you it's an alpha or beta release, before publishing it to NPM.
