@@ -1,5 +1,5 @@
 import tokens from '@contentful/f36-tokens';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import { HEADER_HEIGHT } from '@contentful/f36-header';
 import type { LayoutProps, LayoutSidebarVariant } from './Layout';
 

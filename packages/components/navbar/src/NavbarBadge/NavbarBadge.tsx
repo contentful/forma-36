@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { getNavbarBadgeStyles } from './NavbarBadge.styles';
 import type {
   CommonProps,
@@ -19,8 +19,9 @@ export type NavbarBadgeProps<
   E extends React.ElementType = typeof NAVBAR_BADGE_DEFAULT_TAG,
 > = PolymorphicProps<NavbarBadgeOwnProps, E>;
 
-function _NavbarBadge(
+function NavbarBadgeBase(
   props: NavbarBadgeProps<React.ElementType>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ref: React.Ref<any>,
 ) {
   const {
@@ -44,7 +45,10 @@ function _NavbarBadge(
   );
 }
 
-export const NavbarBadge: PolymorphicComponent<
+NavbarBadgeBase.displayName = 'NavbarBadge';
+export const NavbarBadge = React.forwardRef(
+  NavbarBadgeBase,
+) as PolymorphicComponent<
   ExpandProps<NavbarBadgeOwnProps>,
   typeof NAVBAR_BADGE_DEFAULT_TAG
-> = React.forwardRef(_NavbarBadge);
+>;

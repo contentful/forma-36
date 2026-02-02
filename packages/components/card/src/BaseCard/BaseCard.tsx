@@ -1,6 +1,5 @@
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import React, {
-  forwardRef,
   useCallback,
   useState,
   type FocusEventHandler,
@@ -16,10 +15,48 @@ import {
 import { DragHandle } from '@contentful/f36-drag-handle';
 import { Skeleton } from '@contentful/f36-skeleton';
 
-import { getBaseCardStyles } from './BaseCard.styles';
+import { getBaseCardStyles, getRootStyles } from './BaseCard.styles';
 
 import { DefaultCardHeader, stopEvents } from './DefaultCardHeader';
-import type { BaseCardInternalProps } from './BaseCard.types';
+import type { BaseCardInternalProps, CardElement } from './BaseCard.types';
+
+type CardInnerProps = {
+  withDragHandle?: boolean;
+  dragHandleRender?: BaseCardInternalProps['dragHandleRender'];
+  drag: React.ReactElement;
+  isDragging: boolean;
+  header?: React.ReactNode;
+  defaultHeader: React.ReactNode;
+  children: React.ReactNode;
+  styles: { wrapper: string; contentBody: string };
+};
+
+const CardInner = ({
+  children,
+  defaultHeader,
+  drag,
+  dragHandleRender,
+  header,
+  isDragging,
+  styles,
+  withDragHandle,
+}: CardInnerProps) => (
+  <>
+    {withDragHandle
+      ? dragHandleRender
+        ? dragHandleRender({ drag, isDragging })
+        : drag
+      : null}
+    <div className={styles.wrapper} data-card-part="wrapper">
+      {header ?? defaultHeader}
+      <div className={styles.contentBody} data-card-part="content">
+        {children}
+      </div>
+    </div>
+  </>
+);
+
+CardInner.displayName = 'CardInner';
 
 export const BASE_CARD_DEFAULT_TAG = 'article';
 
@@ -27,7 +64,9 @@ export type BaseCardProps<
   E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG,
 > = PolymorphicProps<BaseCardInternalProps, E>;
 
-function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
+function BaseCardBase<
+  E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG,
+>(
   {
     actions,
     actionsButtonProps,
@@ -35,7 +74,6 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
     badge,
     children,
     className,
-    contentBodyProps,
     customActionButton,
     header,
     href,
@@ -57,6 +95,7 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
     withDragHandle,
     dragHandleRender,
     isLoading,
+    as,
     ...otherProps
   }: BaseCardProps<E>,
   forwardedRef: React.Ref<HTMLElement>,
@@ -150,63 +189,122 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
     />
   );
 
+  const Element = as || BASE_CARD_DEFAULT_TAG;
+
+  /** Seperate the Props based on the Element Type */
+
+  const rootStyles = getRootStyles(hasHeader, isHovered, isSelected);
+
+  const baseProps = {
+    testId,
+    className: cx(rootStyles.root, className),
+    'aria-label': title || ariaLabel,
+    title,
+  };
+
+  // anchor exclusive properties
+  const anchorProps = {
+    href,
+    target,
+    rel: rel ?? 'noreferrer',
+  } as Pick<
+    React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    'href' | 'rel' | 'target'
+  >;
+
+  if (Element === 'a') {
+    return (
+      <Box
+        as="a"
+        {...anchorProps}
+        {...baseProps}
+        ref={forwardedRef as React.Ref<HTMLAnchorElement>}
+        onClick={handleClick}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        onMouseEnter={
+          typeof isHoveredProp === 'undefined' ? handleMouseEnter : undefined
+        }
+        onMouseLeave={
+          typeof isHoveredProp === 'undefined' ? handleMouseLeave : undefined
+        }
+        {...otherProps}
+      >
+        <CardInner
+          children={children}
+          defaultHeader={defaultHeader}
+          drag={drag}
+          dragHandleRender={dragHandleRender}
+          header={header}
+          isDragging={isDragging}
+          styles={styles}
+          withDragHandle={withDragHandle}
+        />
+      </Box>
+    );
+  }
+
+  // Narrow the element type after early-return anchor case to exclude 'a'
+  const nonAnchorElement = Element as Exclude<CardElement, 'a'>;
+
+  if (isInteractive) {
+    return (
+      <Box
+        as={nonAnchorElement}
+        {...baseProps}
+        aria-pressed={nonAnchorElement === 'button' ? !!isSelected : undefined}
+        onBlur={handleBlur}
+        onClick={handleClick}
+        onFocus={handleFocus}
+        onMouseEnter={
+          typeof isHoveredProp === 'undefined' ? handleMouseEnter : undefined
+        }
+        onMouseLeave={
+          typeof isHoveredProp === 'undefined' ? handleMouseLeave : undefined
+        }
+        onKeyDown={handleKeyDown}
+        role={onClick ? 'button' : undefined}
+        tabIndex={onClick ? 0 : undefined}
+        ref={forwardedRef}
+        {...otherProps}
+      >
+        <CardInner
+          children={children}
+          defaultHeader={defaultHeader}
+          drag={drag}
+          dragHandleRender={dragHandleRender}
+          header={header}
+          isDragging={isDragging}
+          styles={styles}
+          withDragHandle={withDragHandle}
+        />
+      </Box>
+    );
+  }
   return (
     <Box
-      aria-label={title || ariaLabel}
-      aria-pressed={
-        otherProps.as === 'button' ? (isSelected ? 'true' : 'false') : undefined
-      }
-      as={BASE_CARD_DEFAULT_TAG}
-      className={cx(
-        styles.root({
-          hasHeader,
-          isHovered,
-          isSelected,
-        }),
-        className,
-      )}
-      href={href}
-      onBlur={handleBlur}
-      onClick={handleClick}
-      onFocus={handleFocus}
-      onMouseEnter={
-        typeof isHoveredProp === 'undefined' && isInteractive
-          ? handleMouseEnter
-          : undefined
-      }
-      onMouseLeave={
-        typeof isHoveredProp === 'undefined' && isInteractive
-          ? handleMouseLeave
-          : undefined
-      }
-      onKeyDown={handleKeyDown}
-      rel={href && (rel || 'noreferrer')}
-      role={onClick && !href ? 'button' : undefined}
-      tabIndex={onClick ? 0 : undefined}
-      target={target}
+      as={nonAnchorElement}
+      {...baseProps}
       {...otherProps}
       ref={forwardedRef}
-      testId={testId}
-      title={title}
     >
-      {withDragHandle
-        ? dragHandleRender
-          ? dragHandleRender({ drag, isDragging })
-          : drag
-        : null}
-      <div className={styles.wrapper} data-card-part="wrapper">
-        {header ?? defaultHeader}
-        <div className={styles.contentBody} data-card-part="content">
-          {children}
-        </div>
-      </div>
+      <CardInner
+        children={children}
+        defaultHeader={defaultHeader}
+        drag={drag}
+        dragHandleRender={dragHandleRender}
+        header={header}
+        isDragging={isDragging}
+        styles={styles}
+        withDragHandle={withDragHandle}
+      />
     </Box>
   );
 }
 
-_BaseCard.displayName = 'BaseCard';
+BaseCardBase.displayName = 'BaseCard';
 
-export const BaseCard: PolymorphicComponent<
+export const BaseCard = React.forwardRef(BaseCardBase) as PolymorphicComponent<
   BaseCardInternalProps,
   typeof BASE_CARD_DEFAULT_TAG
-> = forwardRef(_BaseCard);
+>;

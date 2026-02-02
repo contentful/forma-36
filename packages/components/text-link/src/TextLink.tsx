@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import {
   Flex,
   type CommonProps,
@@ -10,6 +10,7 @@ import {
 
 import { styles } from './TextLink.styles';
 import { TextLinkVariant } from './types';
+import type { IconProps } from '@contentful/f36-icon';
 
 const TEXT_LINK_DEFAULT_TAG = 'a';
 
@@ -28,7 +29,7 @@ interface TextLinkInternalProps extends CommonProps {
   /**
    * Expects any of the icon components
    */
-  icon?: React.ReactElement;
+  icon?: React.ReactElement<IconProps>;
   /**
    * Determines the icon position regarding the link text
    * @default start
@@ -45,10 +46,11 @@ export type TextLinkProps<
   E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG,
 > = PolymorphicProps<TextLinkInternalProps, E, 'disabled'>;
 
-function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
-  props: TextLinkProps<E>,
-  ref: React.Ref<any>,
-) {
+type TextLinkElement = HTMLAnchorElement | HTMLButtonElement;
+
+function TextLinkBase<
+  E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG,
+>(props: TextLinkProps<E>, ref: React.Ref<TextLinkElement>) {
   const {
     children,
     className,
@@ -75,18 +77,18 @@ function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
     ...otherProps,
   };
 
-  const iconContent = icon ? (
+  const iconContent = (icon: React.ReactElement<IconProps>) => (
     <Flex as="span" alignSelf="center">
       {React.cloneElement(icon, {
-        className: cx(icon.props.className, styles.textLinkIcon()),
         size: 'small',
+        className: cx(icon.props.className, styles.textLinkIcon()),
       })}
     </Flex>
-  ) : null;
+  );
 
   const commonContent = (
     <span className={styles.textLinkContent()}>
-      {icon && alignIcon === 'start' && iconContent}
+      {icon && alignIcon === 'start' && iconContent(icon)}
       {children && (
         <span
           className={styles.textLinkText({
@@ -96,13 +98,18 @@ function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
           {children}
         </span>
       )}
-      {icon && alignIcon === 'end' && iconContent}
+      {icon && alignIcon === 'end' && iconContent(icon)}
     </span>
   );
 
   if (as === 'button') {
     return (
-      <button {...commonProps} disabled={isDisabled} type="button">
+      <button
+        {...commonProps}
+        disabled={isDisabled}
+        type="button"
+        ref={ref as React.Ref<HTMLButtonElement>}
+      >
         {commonContent}
       </button>
     );
@@ -111,25 +118,19 @@ function _TextLink<E extends React.ElementType = typeof TEXT_LINK_DEFAULT_TAG>(
   return (
     <a
       {...commonProps}
-      onClick={
-        isDisabled
-          ? (e) => {
-              e.preventDefault();
-            }
-          : commonProps.onClick
-      }
+      ref={ref as React.Ref<HTMLAnchorElement>}
       href={href}
-      {...(isDisabled ? { tabIndex: -1 } : {})}
+      {...(isDisabled ? { tabIndex: -1, 'aria-disabled': true } : {})}
     >
       {commonContent}
     </a>
   );
 }
 
-_TextLink.displayName = 'TextLink';
+TextLinkBase.displayName = 'TextLink';
 
-export const TextLink: PolymorphicComponent<
+export const TextLink = React.forwardRef(TextLinkBase) as PolymorphicComponent<
   ExpandProps<TextLinkInternalProps>,
   typeof TEXT_LINK_DEFAULT_TAG,
   'disabled'
-> = React.forwardRef(_TextLink);
+>;

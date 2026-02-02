@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import {
   Box,
   type CommonProps,
@@ -7,12 +7,12 @@ import {
   type ExpandProps,
 } from '@contentful/f36-core';
 import { Caption } from '@contentful/f36-typography';
+import tokens from '@contentful/f36-tokens';
+import { getIconColorToken, iconColorByVariant } from '@contentful/f36-utils';
 import type * as CSS from 'csstype';
 
 import type { BadgeSize, BadgeVariant } from '../types';
 import { getBadgeStyles } from './Badge.styles';
-import tokens from '@contentful/f36-tokens';
-import { getIconColorToken, iconColorByVariant } from '@contentful/f36-utils';
 
 export type BadgeInternalProps = CommonProps & {
   /**

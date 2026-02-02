@@ -85,10 +85,10 @@ module.exports = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  // preset:
+  preset: 'ts-jest',
 
-  // Run tests from one or more projects
-  projects: ['<rootDir>'],
+  // Run tests from one or more projects. We include the codemod package as a separate project so it can use its own Node test environment and setup (env.js)
+  projects: ['<rootDir>', '<rootDir>/packages/forma-36-codemod'],
 
   // Use this configuration option to add custom reporters to Jest
   // reporters: undefined,
@@ -133,7 +133,11 @@ module.exports = {
   testMatch: ['<rootDir>/**/*.(spec|test).{ts,tsx,js,jsx}'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  testPathIgnorePatterns: ['/node_modules/', '/dist/'],
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '/dist/',
+    '/packages/forma-36-codemod/',
+  ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],
@@ -151,6 +155,7 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   transform: {
+    '^.+\\.(ts|tsx)?$': 'ts-jest',
     '\\.[jt]sx?$': 'babel-jest',
   },
 

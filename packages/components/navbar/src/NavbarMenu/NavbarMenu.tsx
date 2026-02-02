@@ -3,7 +3,7 @@ import { Menu, type MenuListProps, type MenuProps } from '@contentful/f36-menu';
 import { getNavbarMenuStyles } from './NavbarMenu.styles';
 
 export type NavbarMenuProps = {
-  trigger: React.ReactNode;
+  trigger: React.ReactElement<Record<string, unknown>, React.ElementType>;
   children?: React.ReactNode;
 } & Pick<MenuListProps, 'testId'> &
   Pick<MenuProps, 'onOpen' | 'onClose'>;

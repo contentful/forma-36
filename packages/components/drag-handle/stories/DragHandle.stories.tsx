@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryFn, StoryObj, Meta } from '@storybook/react-vite';
 import { Flex, Stack } from '@contentful/f36-core';
 import { SectionHeading, Text } from '@contentful/f36-typography';
 
@@ -14,11 +14,13 @@ export default {
   title: 'Components/DragHandle',
 } as Meta;
 
-export const Default: Story<DragHandleInternalProps> = (args) => {
-  return <DragHandle {...args}>DragHandle</DragHandle>;
+export const Default: StoryObj<DragHandleInternalProps> = {
+  render: (args) => {
+    return <DragHandle {...args}>DragHandle</DragHandle>;
+  },
 };
 
-export const Overview: Story = () => {
+export const Overview: StoryFn = () => {
   return (
     <>
       <Flex flexDirection="column" marginBottom="spacingL">

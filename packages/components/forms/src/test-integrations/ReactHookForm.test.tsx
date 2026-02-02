@@ -13,7 +13,7 @@ import {
   Select,
   Textarea,
   TextInput,
-} from '@contentful/f36-components';
+} from '../index';
 
 const MockRequiredMessage = () => (
   <FormControl.ValidationMessage>

@@ -37,18 +37,18 @@ describe('Grid', () => {
       expect(getByText('Grid')).toHaveStyle({ columnGap: '1rem' });
     });
 
-    it('should has correct numbers of columns', () => {
+    it('should have correct numbers of columns', () => {
       const { getByText } = render(<Grid columns={12}>Grid</Grid>);
 
       expect(getByText('Grid')).toHaveStyle({
-        gridTemplateColumns: 'repeat(12,minmax(0,1fr))',
+        gridTemplateColumns: 'repeat(12, minmax(0, 1fr))',
       });
     });
 
-    it('should has correct numbers of rows', () => {
+    it('should have correct numbers of rows', () => {
       const { getByText } = render(<Grid rows={12}>Grid</Grid>);
       expect(getByText('Grid')).toHaveStyle({
-        gridTemplateRows: 'repeat(12,minmax(0,1fr))',
+        gridTemplateRows: 'repeat(12, minmax(0, 1fr))',
       });
     });
   });

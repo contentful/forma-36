@@ -4,7 +4,7 @@ import { TextInputProps } from './types';
 import { useFormControl } from '../FormControl/FormControlContext';
 import type { ExpandProps } from '@contentful/f36-core';
 
-export const _TextInput = (
+export const TextInputBase = (
   {
     className,
     testId = 'cf-ui-text-input',
@@ -73,4 +73,6 @@ export const _TextInput = (
   );
 };
 
-export const TextInput = React.forwardRef(_TextInput);
+TextInputBase.displayName = 'TextInput';
+
+export const TextInput = React.forwardRef(TextInputBase);

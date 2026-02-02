@@ -1,9 +1,20 @@
 import React from 'react';
 import { Table } from '@contentful/f36-components';
-
-import zIndexTokens from '@contentful/f36-tokens/src/tokens/z-index';
+import tokens from '@contentful/f36-tokens';
 
 export function ZIndexTokensTable() {
+  const zIndexTokens = {
+    'z-index-negative': tokens.zIndexNegative,
+    'z-index-workbench': tokens.zIndexWorkbench,
+    'z-index-default': tokens.zIndexDefault,
+    'z-index-workbench-header': tokens.zIndexWorkbenchHeader,
+    'z-index-modal': tokens.zIndexModal,
+    'z-index-modal-content': tokens.zIndexModalContent,
+    'z-index-dropdown': tokens.zIndexDropdown,
+    'z-index-tooltip': tokens.zIndexTooltip,
+    'z-index-notification': tokens.zIndexNotification,
+  };
+
   const tokenValues = zIndexTokens;
 
   return (

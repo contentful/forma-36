@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 import { BaseInput, type BaseInputProps } from '../BaseInput';
 import { useFormControl } from '../FormControl/FormControlContext';
@@ -14,7 +14,7 @@ export interface TextareaProps
   defaultValue?: string;
 }
 
-const _Textarea = (
+const TextareaBase = (
   {
     className,
     isDisabled,
@@ -82,7 +82,8 @@ const _Textarea = (
   );
 };
 
+TextareaBase.displayName = 'Textarea';
 /**
  * Textarea is a form component that allows the user to enter a sizeable amount of multi-line plain text.
  */
-export const Textarea = React.forwardRef(_Textarea);
+export const Textarea = React.forwardRef(TextareaBase);

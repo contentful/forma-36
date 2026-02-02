@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryObj, Meta } from '@storybook/react-vite';
 import { Flex } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
@@ -17,19 +17,21 @@ export default {
   },
 } as Meta;
 
-export const Default: Story<PortalProps> = (args) => {
-  return (
-    <Flex>
-      This is a parent element of Portal
-      <Portal {...args}>
-        <Flex
-          style={{
-            backgroundColor: tokens.green300,
-          }}
-        >
-          This is a child of Portal
-        </Flex>
-      </Portal>{' '}
-    </Flex>
-  );
+export const Default: StoryObj<PortalProps> = {
+  render: (args) => {
+    return (
+      <Flex>
+        This is a parent element of Portal
+        <Portal {...args}>
+          <Flex
+            style={{
+              backgroundColor: tokens.green300,
+            }}
+          >
+            This is a child of Portal
+          </Flex>
+        </Portal>
+      </Flex>
+    );
+  },
 };

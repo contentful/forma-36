@@ -1,5 +1,5 @@
 import tokens from '@contentful/f36-tokens';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 
 type screens = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
 type mediaqueries = Record<screens, string>;

@@ -156,6 +156,7 @@ export async function getAllArticles(preview = false) {
     const articleEntries = extractArticleEntries(entries);
 
     return articleEntries;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (_error) {
     return [];
   }
@@ -208,6 +209,7 @@ export async function getSidebarLinksBySectionSlug(
     );
 
     data = entries?.data?.sectionCollection?.items[0];
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (_error) {
     // noop
   }
@@ -299,9 +301,11 @@ export async function getTopbarLinks(preview = false) {
     );
 
     const topbarLinks =
-      entries?.data?.navigationCollection?.items[0].sectionsCollection?.items;
+      entries?.data?.navigationCollection?.items?.[0]?.sectionsCollection
+        ?.items;
 
-    return topbarLinks;
+    return Array.isArray(topbarLinks) ? topbarLinks : [];
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (_error) {
     return [];
   }

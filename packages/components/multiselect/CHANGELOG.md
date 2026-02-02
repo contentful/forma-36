@@ -1,5 +1,45 @@
 ## Change Log
 
+## 6.0.0
+
+### Major Changes
+
+- [#3164](https://github.com/contentful/forma-36/pull/3164) [`918ce52`](https://github.com/contentful/forma-36/commit/918ce52e152338a091737832a17519828f76f8bb) Thanks [@Lelith](https://github.com/Lelith)! - Enter pre-release mode and version packages
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.0.0
+  - @contentful/f36-forms@6.0.0
+  - @contentful/f36-icons@6.0.0
+  - @contentful/f36-popover@6.0.0
+  - @contentful/f36-skeleton@6.0.0
+  - @contentful/f36-tooltip@6.0.0
+  - @contentful/f36-typography@6.0.0
+  - @contentful/f36-utils@6.0.0
+  - @contentful/f36-core@6.0.0
+  - @contentful/f36-tokens@6.0.0
+
+## 6.0.0-alpha.0
+
+### Major Changes
+
+- Enter pre-release mode and version packages
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.0.0-alpha.0
+  - @contentful/f36-forms@6.0.0-alpha.0
+  - @contentful/f36-icons@6.0.0-alpha.0
+  - @contentful/f36-popover@6.0.0-alpha.0
+  - @contentful/f36-skeleton@6.0.0-alpha.0
+  - @contentful/f36-tooltip@6.0.0-alpha.0
+  - @contentful/f36-typography@6.0.0-alpha.0
+  - @contentful/f36-utils@6.0.0-alpha.0
+  - @contentful/f36-core@6.0.0-alpha.0
+  - @contentful/f36-tokens@6.0.0-alpha.0
+
 ## 5.9.0
 
 ### Patch Changes

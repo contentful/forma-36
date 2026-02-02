@@ -1,34 +1,30 @@
 import React from 'react';
-import { css } from 'emotion';
-import Link from 'next/link';
+import { css } from '@emotion/css';
 import { Text } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
+import { InternalLink } from '../InternalLink';
 
 const styles = {
   logoLink: css({
     display: 'flex',
     alignItems: 'center',
-    textDecoration: 'none',
     color: tokens.colorWhite,
   }),
 };
 
 export function TopbarLogo() {
   return (
-    <Link href="/" passHref>
-      <a className={styles.logoLink}>
-        <Logo />
-
-        <Text
-          fontSize="fontSizeL"
-          fontWeight="fontWeightDemiBold"
-          fontColor="blue700"
-          marginLeft="spacingS"
-        >
-          Forma 36
-        </Text>
-      </a>
-    </Link>
+    <InternalLink href="/" className={styles.logoLink}>
+      <Logo />
+      <Text
+        fontSize="fontSizeL"
+        fontWeight="fontWeightDemiBold"
+        fontColor="blue700"
+        marginLeft="spacingS"
+      >
+        Forma 36
+      </Text>
+    </InternalLink>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import tokens from '@contentful/f36-tokens';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
@@ -25,7 +25,7 @@ export default {
   title: 'Components/Card/EntryCard',
 } as Meta;
 
-export const Default: Story<EntryCardProps> = (args) => {
+export const Default: StoryObj<EntryCardProps> = (args) => {
   return (
     <EntryCard
       {...args}
@@ -46,7 +46,7 @@ Default.args = {
   title: 'Closer',
 };
 
-export const WithLoadingState: Story<EntryCardProps> = (args) => {
+export const WithLoadingState: StoryObj<EntryCardProps> = (args) => {
   return <EntryCard {...args} />;
 };
 
@@ -54,7 +54,7 @@ WithLoadingState.args = {
   isLoading: true,
 };
 
-export const WithCustomActionButton: Story<EntryCardProps> = (args) => {
+export const WithCustomActionButton: StoryObj<EntryCardProps> = (args) => {
   return <EntryCard {...args} />;
 };
 
@@ -92,7 +92,7 @@ with the intent to reduce the overhead of creating UI by providing
 tools and guidance for digital teams building and extending
 Contentful products.`;
 
-export const Overview: Story<EntryCardProps> = () => {
+export const Overview = () => {
   const sizes: EntryCardProps['size'][] = ['default', 'small'];
 
   return (

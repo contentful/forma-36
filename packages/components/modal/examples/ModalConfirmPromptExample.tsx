@@ -9,7 +9,7 @@ import { FileArchiveIcon } from '@contentful/f36-icons';
 
 export default function ModalConfirmPromptExample() {
   const onArchive = () => {
-    ModalLauncher.open(({ isShown, onClose }) => {
+    ModalLauncher.open<boolean>(({ isShown, onClose }) => {
       return (
         <ModalConfirm
           title="This entry is linked in other entries"

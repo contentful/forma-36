@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { type CommonProps } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 import { Button } from '@contentful/f36-button';
@@ -46,7 +46,7 @@ export interface StepProps extends CommonProps {
   onClick?: (stepNumber: number) => void;
 }
 
-function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
+function StepBase(props: StepProps, ref: React.Ref<HTMLLIElement>) {
   const styles = getStyles();
   const {
     state = 'incomplete',
@@ -177,4 +177,6 @@ function _Step(props: StepProps, ref: React.Ref<HTMLLIElement>) {
   );
 }
 
-export const Step = React.forwardRef(_Step);
+StepBase.displayName = 'Step';
+
+export const Step = React.forwardRef(StepBase);
