@@ -13,7 +13,7 @@ export const DocSearch = () => {
       try {
         docsearch.default({
           // The key is added here only give access to searching the public content of the website https://docsearch.algolia.com/docs/what-is-docsearch
-          // You can even check Forma 36's configuration in DocSearch's repo https://github.com/algolia/docsearch-configs/blob/main/configs/contentful_forma-36.json
+          // You can even check Forma 36's configuration in DocSearch's repo https://github.com/algolia/docsearch-configs/blob/v5/configs/contentful_forma-36.json
           appId: process.env.NEXT_PUBLIC_DOCSEARCH_APP_ID || '',
           apiKey: process.env.NEXT_PUBLIC_DOCSEARCH_API_KEY || '',
           indexName: process.env.NEXT_PUBLIC_DOCSEARCH_INDEX_NAME || '',

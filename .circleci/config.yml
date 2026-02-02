@@ -200,7 +200,7 @@ workflows:
           filters:
             branches:
               only:
-                - main
+                - v5
 
   f36-link-checker:
     jobs:
@@ -218,7 +218,7 @@ workflows:
           filters:
             branches:
               only:
-                - main
+                - v5
     jobs:
       - changelog:
           context:

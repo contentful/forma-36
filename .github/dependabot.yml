@@ -16,7 +16,7 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
-    target-branch: main
+    target-branch: v5
     labels:
       - dependencies
     commit-message:
