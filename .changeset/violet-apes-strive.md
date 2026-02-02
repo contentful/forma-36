@@ -43,7 +43,6 @@
 '@contentful/f36-utils': minor
 '@contentful/f36-core': minor
 '@contentful/f36-docs-utils': minor
-'@contentful/f36-codemod': minor
 '@contentful/f36-components': minor
 '@contentful/f36-tokens': minor
 ---
