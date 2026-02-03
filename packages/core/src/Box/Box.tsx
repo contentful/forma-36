@@ -1,15 +1,15 @@
-import * as CSS from 'csstype';
-import { css, cx } from 'emotion';
 import * as React from 'react';
-import type { CommonProps, MarginProps, PaddingProps } from '../types';
+import * as CSS from 'csstype';
+import { css, cx } from '@emotion/css';
+import type { MarginProps, PaddingProps, CommonProps } from '../types';
 import { getSpacingStyles } from '../utils/getSpacingStyles';
 
 const BOX_DEFAULT_TAG: React.ElementType = 'div';
 
 import {
-  ExpandProps,
-  PolymorphicComponent,
   PolymorphicProps,
+  PolymorphicComponent,
+  ExpandProps,
 } from '../Primitive/Primitive';
 
 export interface BoxInternalProps
