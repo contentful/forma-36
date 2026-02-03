@@ -54,7 +54,7 @@ export function useTooltip({
   ) {
     middleware.push(offset({ mainAxis: 10 }));
   } else {
-    middleware.push(offset({ mainAxis: 5 }));
+    middleware.push(offset({ mainAxis: 10 }));
   }
 
   // add arrow last to middleware so it can pick up the placement happening before
