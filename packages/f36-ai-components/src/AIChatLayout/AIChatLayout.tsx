@@ -113,7 +113,7 @@ export interface AIChatLayoutProps extends CommonProps {
   children?: React.ReactNode;
 }
 
-function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
+function AIChatLayoutBase(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   const {
     variant = 'normal',
     display = 'open',
@@ -333,4 +333,4 @@ function _AIChatLayout(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
  * Use `display` to control the visibility and layout state, and `variant` to control the size when open.
  * The `onCollapsedClick` callback is called when the collapsed lozenge is clicked.
  */
-export const AIChatLayout = forwardRef(_AIChatLayout);
+export const AIChatLayout = forwardRef(AIChatLayoutBase);

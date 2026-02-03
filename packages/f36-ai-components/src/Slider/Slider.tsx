@@ -44,7 +44,7 @@ export interface SliderProps extends CommonProps {
   duration?: number;
 }
 
-function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
+function SliderBase(props: SliderProps, ref: Ref<HTMLDivElement>) {
   const {
     children,
     slideKey,
@@ -145,4 +145,4 @@ function _Slider(props: SliderProps, ref: Ref<HTMLDivElement>) {
  * </Slider>
  * ```
  */
-export const Slider = forwardRef(_Slider);
+export const Slider = forwardRef(SliderBase);

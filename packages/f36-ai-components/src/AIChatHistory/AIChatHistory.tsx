@@ -1,10 +1,10 @@
 import { NavList } from '@contentful/f36-components';
 import { Box, type CommonProps } from '@contentful/f36-core';
 import React, { forwardRef, Ref, useEffect, useRef, useState } from 'react';
+import { AIChatHistoryEmptyState } from '../AIChatHistoryEmptyState';
 import { getStyles } from './AIChatHistory.styles';
 import { AIChatHistoryTabs } from './AIChatHistoryTabs';
 import { AIChatHistoryThread } from './AIChatHistoryThread';
-import { AIChatHistoryEmptyState } from '../AIChatHistoryEmptyState';
 
 export interface MessageThread {
   id: string;
@@ -32,7 +32,10 @@ export interface AIChatHistoryProps extends CommonProps {
   groups?: MessageGroups;
 }
 
-function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
+function AIChatHistoryBase(
+  props: AIChatHistoryProps,
+  ref: Ref<HTMLDivElement>,
+) {
   const {
     className,
     testId = 'cf-ui-ai-chat-history',
@@ -193,4 +196,4 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
 /**
  * Displays a scrollable list of message threads, optionally grouped into tabs. Groups and status indicators can be customised.
  */
-export const AIChatHistory = forwardRef(_AIChatHistory);
+export const AIChatHistory = forwardRef(AIChatHistoryBase);

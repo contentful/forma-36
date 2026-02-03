@@ -20,6 +20,7 @@
     "@contentful/f36-button": "^5.6.0",
     "@contentful/f36-components": "^5.6.0",
     "@contentful/f36-core": "^5.0.0",
+    "@contentful/f36-forms": "^5.9.0",
     "@contentful/f36-header": "^5.6.0",
     "@contentful/f36-icons": "^5.6.0",
     "@contentful/f36-layout": "^5.6.0",
@@ -36,9 +37,9 @@
     "@tiptap/react": "^2.26.4",
     "@tiptap/suggestion": "^2.27.1",
     "emotion": "^10.0.17",
-    "react-markdown": "^7.1.2",
-    "rehype-raw": "^6.1.1",
-    "remark-gfm": "^3.0.1"
+    "react-markdown": "^9.0.0",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.0"
   },
   "peerDependencies": {
     "react": ">=16.8",

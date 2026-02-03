@@ -1,6 +1,6 @@
-import { action } from '@storybook/addon-actions';
-import type { Story } from '@storybook/react';
+import type { StoryFn } from '@storybook/react-vite';
 import React from 'react';
+import { action } from 'storybook/actions';
 
 import { Button, IconButton } from '@contentful/f36-button';
 import { Flex } from '@contentful/f36-core';
@@ -79,7 +79,9 @@ export default {
 
 export const Default = {};
 
-export const InputGrowsWithMultipleLines: Story<AIChatInputProps> = (args) => (
+export const InputGrowsWithMultipleLines: StoryFn<AIChatInputProps> = (
+  args,
+) => (
   <Flex gap="spacingM">
     <Template
       {...args}
@@ -137,7 +139,7 @@ export const WithInputTools = {
 };
 
 /** With a customized editor to provide @ mentioning ability */
-export const WithMentionSupport: Story<AIChatInputProps> = (args) => {
+export const WithMentionSupport: StoryFn<AIChatInputProps> = (args) => {
   const mentionConfig: AiChatInputMentionConfig = {
     items: async ({ query }): Promise<SuggestionItem[]> => {
       const items: SuggestionItem[] = EXAMPLE_CONTENT_TYPES.map((label) => ({
@@ -192,7 +194,7 @@ export const WithMentionSupport: Story<AIChatInputProps> = (args) => {
 };
 
 /** With mention popup auto-positioning - menu flips above when input is at the bottom of the viewport */
-export const WithMentionAtBottomOfViewport: Story<AIChatInputProps> = (
+export const WithMentionAtBottomOfViewport: StoryFn<AIChatInputProps> = (
   args,
 ) => {
   const mentionConfig: AiChatInputMentionConfig = {

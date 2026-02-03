@@ -8,9 +8,9 @@ import {
   LightningIcon,
   WarningIcon,
 } from '@contentful/f36-icons';
-import { action } from '@storybook/addon-actions';
 import { cx } from 'emotion';
 import React from 'react';
+import { action } from 'storybook/actions';
 import {
   AIChatHistory,
   MessageThread,

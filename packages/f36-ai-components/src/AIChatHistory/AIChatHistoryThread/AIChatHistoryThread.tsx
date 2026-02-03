@@ -14,7 +14,7 @@ export interface AIChatHistoryThreadProps extends CommonProps {
   thread: MessageThread;
 }
 
-function _AIChatHistoryThread(
+function AIChatHistoryThreadBase(
   props: AIChatHistoryThreadProps,
   ref: Ref<HTMLButtonElement>,
 ) {
@@ -70,4 +70,4 @@ function _AIChatHistoryThread(
   );
 }
 
-export const AIChatHistoryThread = forwardRef(_AIChatHistoryThread);
+export const AIChatHistoryThread = forwardRef(AIChatHistoryThreadBase);

@@ -11,7 +11,7 @@ export interface AIChatHistoryTabsProps extends CommonProps {
   onTabClick?: (groupId: string) => void;
 }
 
-function _AIChatHistoryTabs(
+function AIChatHistoryTabsBase(
   props: AIChatHistoryTabsProps,
   ref: Ref<HTMLDivElement>,
 ) {
@@ -119,4 +119,4 @@ function _AIChatHistoryTabs(
   );
 }
 
-export const AIChatHistoryTabs = forwardRef(_AIChatHistoryTabs);
+export const AIChatHistoryTabs = forwardRef(AIChatHistoryTabsBase);

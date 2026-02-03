@@ -1,34 +1,34 @@
 import {
+  Heading,
+  List,
+  type ListItemProps,
+  type ListProps,
+  Table,
+  type TableBodyProps,
+  type TableHeadProps,
+  type TableProps,
+  type TableRowProps,
+  TextLink,
+  type TextLinkProps,
+} from '@contentful/f36-components';
+import {
   Box,
   type BoxProps,
   type CommonProps,
   Flex,
 } from '@contentful/f36-core';
-import { forwardRef, Ref } from 'react';
-import { getStyles } from './AIChatMessage.styles';
-import React from 'react';
 import {
+  type HeadingElement,
   type HeadingProps,
   Text,
   type TextProps,
 } from '@contentful/f36-typography';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import rehypeRaw from 'rehype-raw';
-import {
-  Heading,
-  List,
-  TextLink,
-  Table,
-  type TextLinkProps,
-  type ListProps,
-  type ListItemProps,
-  type TableProps,
-  type TableBodyProps,
-  type TableHeadProps,
-  type TableRowProps,
-} from '@contentful/f36-components';
 import { cx } from 'emotion';
+import React, { forwardRef, Ref } from 'react';
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
+import { getStyles } from './AIChatMessage.styles';
 
 export type AIChatMessageRole = 'user' | 'assistant';
 
@@ -66,7 +66,10 @@ export interface ComponentsPropOverrides {
     React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
   >;
   blockquote?: ComponentPropOverrideHandler<
-    React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
+    React.DetailedHTMLProps<
+      React.BlockquoteHTMLAttributes<HTMLQuoteElement>,
+      HTMLQuoteElement
+    >
   >;
   div?: ComponentPropOverrideHandler<React.PropsWithChildren<BoxProps>>;
 }
@@ -93,7 +96,7 @@ function getMarkdownComponents(
     h1: (props) => (
       <Heading
         {...{
-          as: 'h2' as any,
+          as: 'h2' as HeadingElement,
           fontSize: 'fontSizeL',
           marginBottom: 'spacingS',
           ...props,
@@ -106,7 +109,7 @@ function getMarkdownComponents(
     h2: (props) => (
       <Heading
         {...{
-          as: 'h2' as any,
+          as: 'h2' as HeadingElement,
           fontSize: 'fontSizeM',
           marginBottom: 'spacingS',
           ...props,
@@ -119,7 +122,7 @@ function getMarkdownComponents(
     h3: (props) => (
       <Heading
         {...{
-          as: 'h3' as any,
+          as: 'h3' as HeadingElement,
           fontSize: 'fontSizeM',
           marginBottom: 'spacingS',
           ...props,
@@ -132,7 +135,7 @@ function getMarkdownComponents(
     h4: (props) => (
       <Heading
         {...{
-          as: 'h4' as any,
+          as: 'h4' as HeadingElement,
           fontSize: 'fontSizeS',
           marginBottom: 'spacingS',
           ...props,
@@ -145,7 +148,7 @@ function getMarkdownComponents(
     h5: (props) => (
       <Text
         {...{
-          as: 'h5' as any,
+          as: 'h5' as const,
           fontWeight: 'fontWeightDemiBold',
           marginBottom: 'spacingS',
           ...props,
@@ -158,7 +161,7 @@ function getMarkdownComponents(
     h6: (props) => (
       <Text
         {...{
-          as: 'h6' as any,
+          as: 'h6' as const,
           fontWeight: 'fontWeightMedium',
           marginBottom: 'spacingS',
           ...props,
@@ -171,7 +174,7 @@ function getMarkdownComponents(
     p: (props) => (
       <Text
         {...{
-          as: 'p' as any,
+          as: 'p' as const,
           className: styles.paragraph,
           ...props,
           ...(contentComponentsOverrides?.p
@@ -205,7 +208,7 @@ function getMarkdownComponents(
     ol: (props) => (
       <List
         {...{
-          as: 'ol' as any,
+          as: 'ol' as const,
           className: styles.list,
           ...props,
           ...(contentComponentsOverrides?.ol
@@ -290,7 +293,7 @@ function getMarkdownComponents(
     strong: (props) => (
       <Text
         {...{
-          as: 'strong' as any,
+          as: 'strong' as const,
           fontWeight: 'fontWeightDemiBold',
           fontSize: 'fontSizeM',
           ...props,
@@ -303,7 +306,7 @@ function getMarkdownComponents(
     em: (props) => (
       <Text
         {...{
-          as: 'strong' as any,
+          as: 'strong' as const,
           fontWeight: 'fontWeightDemiBold',
           ...props,
           ...(contentComponentsOverrides?.em
@@ -315,7 +318,7 @@ function getMarkdownComponents(
     del: (props) => (
       <Text
         {...{
-          as: 'del' as any,
+          as: 'del' as const,
           ...props,
           ...(contentComponentsOverrides?.del
             ? contentComponentsOverrides.del(props)
@@ -326,7 +329,7 @@ function getMarkdownComponents(
     ins: (props) => (
       <Text
         {...{
-          as: 'u' as any,
+          as: 'u' as const,
           ...props,
           ...(contentComponentsOverrides?.ins
             ? contentComponentsOverrides.ins(props)
@@ -337,7 +340,7 @@ function getMarkdownComponents(
     u: (props) => (
       <Text
         {...{
-          as: 'u' as any,
+          as: 'u' as const,
           ...props,
           ...(contentComponentsOverrides?.u
             ? contentComponentsOverrides.u(props)
@@ -374,7 +377,10 @@ function getMarkdownComponents(
     },
     blockquote: (
       props: React.PropsWithChildren<
-        React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
+        React.DetailedHTMLProps<
+          React.BlockquoteHTMLAttributes<HTMLQuoteElement>,
+          HTMLQuoteElement
+        >
       >,
     ) => (
       <blockquote
@@ -400,7 +406,10 @@ function getMarkdownComponents(
   };
 }
 
-function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
+function AIChatMessageBase(
+  props: AIChatMessageProps,
+  ref: Ref<HTMLDivElement>,
+) {
   const {
     className,
     testId = 'cf-ui-ai-chat-message',
@@ -442,4 +451,4 @@ function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
  * Displays a user's or assistant's message with support for markdown content.
  * Message can be augmented with additional content and action buttons.
  */
-export const AIChatMessage = forwardRef(_AIChatMessage);
+export const AIChatMessage = forwardRef(AIChatMessageBase);

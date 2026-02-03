@@ -1,12 +1,12 @@
 import { Box, Flex, type CommonProps } from '@contentful/f36-core';
-import { InputGroup } from '@contentful/f36-forms/src/TextInput/input-group/InputGroup';
+import { TextInput } from '@contentful/f36-forms';
 import { Editor, useEditor } from '@tiptap/react';
+import { cx } from 'emotion';
 import React, { useRef } from 'react';
 import { getStyles } from './AIChatInput.styles';
 import { AiChatInputMentionConfig } from './AIChatInputMentionExtention';
 import { AIChatSubmitButton } from './AIChatSubmitButton';
 import { AIChatInputTextArea } from './AIChatTextArea';
-import { cx } from 'emotion';
 
 type UseEditorOptions = Parameters<typeof useEditor>[0];
 
@@ -43,7 +43,10 @@ export interface AIChatInputProps extends CommonProps {
   mentionConfig?: AiChatInputMentionConfig;
 }
 
-function _AIChatInput(props: AIChatInputProps, ref: React.Ref<HTMLDivElement>) {
+function AIChatInputBase(
+  props: AIChatInputProps,
+  ref: React.Ref<HTMLDivElement>,
+) {
   const {
     testId = 'cf-ui-ai-chat-input',
     className,
@@ -99,12 +102,12 @@ function _AIChatInput(props: AIChatInputProps, ref: React.Ref<HTMLDivElement>) {
           alignItems="end"
           className={styles.inputActionsContainer}
         >
-          <InputGroup
+          <TextInput.Group
             spacing="spacing2Xs"
             testId={`${testId}-input-tool-group`}
           >
             {promptInputTools}
-          </InputGroup>
+          </TextInput.Group>
           <Flex alignItems="bottom" className={styles.inputActions}>
             <AIChatSubmitButton
               testId={testId}
@@ -123,4 +126,4 @@ function _AIChatInput(props: AIChatInputProps, ref: React.Ref<HTMLDivElement>) {
 /**
  * Component allows user to construct and submit prompts to an AI model.
  */
-export const AIChatInput = React.forwardRef(_AIChatInput);
+export const AIChatInput = React.forwardRef(AIChatInputBase);

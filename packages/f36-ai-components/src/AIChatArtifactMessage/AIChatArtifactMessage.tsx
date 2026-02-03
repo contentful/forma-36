@@ -18,7 +18,7 @@ export interface AIChatArtifactMessageProps extends CommonProps {
   title?: string;
 }
 
-function _AIChatArtifactMessage(
+function AIChatArtifactMessageBase(
   props: AIChatArtifactMessageProps,
   ref: React.Ref<HTMLDivElement>,
 ) {
@@ -57,4 +57,6 @@ function _AIChatArtifactMessage(
  * A container component for displaying AI-generated artifacts with a gray header
  * containing an optional icon and title, and a content area for any children.
  */
-export const AIChatArtifactMessage = React.forwardRef(_AIChatArtifactMessage);
+export const AIChatArtifactMessage = React.forwardRef(
+  AIChatArtifactMessageBase,
+);

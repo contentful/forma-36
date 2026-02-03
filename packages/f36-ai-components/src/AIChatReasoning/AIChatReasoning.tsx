@@ -35,7 +35,7 @@ export interface AIChatReasoningProps extends CommonProps {
   onToggle?: (isExpanded: boolean) => void;
 }
 
-function _AIChatReasoning(
+function AIChatReasoningBase(
   props: AIChatReasoningProps,
   ref: Ref<HTMLDivElement>,
 ) {
@@ -60,7 +60,7 @@ function _AIChatReasoning(
     if (internalExpanded) {
       setChildrenKey((prev) => prev + 1);
     }
-  }, [children]);
+  }, [children, internalExpanded]);
 
   const handleToggle = () => {
     const newExpanded = !internalExpanded;
@@ -143,4 +143,4 @@ function _AIChatReasoning(
  * The sparkle icon animates with a pulse effect when collapsed to indicate background processing,
  * and stops animating when expanded.
  */
-export const AIChatReasoning = forwardRef(_AIChatReasoning);
+export const AIChatReasoning = forwardRef(AIChatReasoningBase);

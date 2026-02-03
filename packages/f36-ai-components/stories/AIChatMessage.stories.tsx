@@ -3,9 +3,6 @@ import {
   IconButton,
   type TextLinkProps,
 } from '@contentful/f36-components';
-import { action } from '@storybook/addon-actions';
-import React, { useState } from 'react';
-import { AIChatMessage, AIChatMessageProps } from '../src/AIChatMessage';
 import {
   ArrowSquareOutIcon,
   CheckCircleIcon,
@@ -15,6 +12,9 @@ import {
   ThumbsUpIcon,
   TranslateIcon,
 } from '@contentful/f36-icons';
+import React, { useState } from 'react';
+import { action } from 'storybook/actions';
+import { AIChatMessage, AIChatMessageProps } from '../src/AIChatMessage';
 
 const CopyButton: React.FC = () => {
   const title = 'Copy message';

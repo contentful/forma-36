@@ -1,15 +1,16 @@
-import React from 'react';
-import {
-  AIChatConversationEmptyState,
-  AIChatSuggestionList,
-  ChatEmptyStateSuggestion,
-} from '../src';
 import { Flex } from '@contentful/f36-core';
 import {
   DeviceMobileCameraIcon,
   ListBulletsIcon,
   UsersIcon,
 } from '@contentful/f36-icons';
+import React from 'react';
+import { action } from 'storybook/actions';
+import {
+  AIChatConversationEmptyState,
+  AIChatSuggestionList,
+  ChatEmptyStateSuggestion,
+} from '../src';
 
 export default {
   title: 'Components/AIChat/AIChatConversationEmptyState',
@@ -47,14 +48,14 @@ Default.args = {
   title: 'How can I assist you today?',
   description: 'Ask me anything about your analytics',
   suggestions: defaultSuggestions,
-  onSelect: (suggestion) => console.log('Selected:', suggestion),
+  onSelect: action('Selected'),
 };
 
 export const WithoutDescription = Template.bind({});
 WithoutDescription.args = {
   title: 'How can I help?',
   suggestions: defaultSuggestions,
-  onSelect: (suggestion) => console.log('Selected:', suggestion),
+  onSelect: action('Selected'),
 };
 
 export const WithoutSuggestions = (args) => (

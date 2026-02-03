@@ -1,6 +1,6 @@
 import { Button } from '@contentful/f36-button';
 import { Box } from '@contentful/f36-components';
-import type { Meta, Story } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import React, {
   useCallback,
   useEffect,
@@ -33,7 +33,7 @@ export default {
   },
 } as Meta;
 
-export const Default: Story<
+export const Default: StoryFn<
   AIChatMessageListProps & {
     numberOfChildren: number;
     width: number;
@@ -64,7 +64,7 @@ Default.args = {
   height: 600,
 };
 
-export const WithCustomScroll: Story<
+export const WithCustomScroll: StoryFn<
   AIChatMessageListProps & {
     numberOfChildren: number;
     width: number;
@@ -106,7 +106,7 @@ WithCustomScroll.args = {
   height: 600,
 };
 
-export const WithStreamingChunks: Story<
+export const WithStreamingChunks: StoryFn<
   AIChatMessageListProps & {
     numberOfChildren: number;
     width: number;

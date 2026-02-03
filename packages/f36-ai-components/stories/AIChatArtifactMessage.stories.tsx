@@ -1,6 +1,6 @@
 import { Icon, Text } from '@contentful/f36-components';
 import * as icons from '@contentful/f36-icons';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import React from 'react';
 
 import {
@@ -38,7 +38,7 @@ export default {
   },
 } as Meta;
 
-export const Basic: Story<
+export const Basic: StoryFn<
   AIChatArtifactMessageProps & { content: string; icon: string }
 > = (args) => {
   const { content, icon, ...componentProps } = args;

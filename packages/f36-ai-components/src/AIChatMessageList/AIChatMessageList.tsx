@@ -40,7 +40,7 @@ export interface AIChatMessageListRef extends HTMLDivElement {
   scrollToBottom: () => void;
 }
 
-function _AIChatMessageList(
+function AIChatMessageListBase(
   props: AIChatMessageListProps,
   ref: Ref<AIChatMessageListRef>,
 ) {
@@ -111,4 +111,4 @@ function _AIChatMessageList(
 export const AIChatMessageList = forwardRef<
   AIChatMessageListRef,
   AIChatMessageListProps
->(_AIChatMessageList);
+>(AIChatMessageListBase);
