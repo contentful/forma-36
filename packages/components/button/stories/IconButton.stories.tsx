@@ -5,6 +5,7 @@ import { Flex, Stack, Box } from '@contentful/f36-core';
 import { TextInput } from '@contentful/f36-forms';
 import { Icon } from '@contentful/f36-icon';
 import * as icons from '@contentful/f36-icons';
+import tokens from '@contentful/f36-tokens';
 
 import { IconButton } from '../src/IconButton';
 
@@ -101,6 +102,16 @@ export const ColoredIconInTransparentIconButton = () => {
         />
       </Box>
     </Flex>
+  );
+};
+
+export const WithCustomIconColor = () => {
+  return (
+    <IconButton
+      variant="secondary"
+      icon={<Icon as={icons.StarIcon} color={tokens.red500} />}
+      aria-label="Label"
+    />
   );
 };
 
