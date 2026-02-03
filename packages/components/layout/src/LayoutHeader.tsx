@@ -1,5 +1,5 @@
 import React, { forwardRef, type HTMLAttributes, type Ref } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { Flex, type CommonProps } from '@contentful/f36-core';
 import { useLayoutContext } from './LayoutContext';
 import { getLayoutHeaderStyles } from './Layout.styles';
@@ -9,7 +9,10 @@ export type LayoutHeaderProps = {
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 
-const _LayoutHeader = (props: LayoutHeaderProps, ref: Ref<HTMLDivElement>) => {
+const LayoutHeaderBase = (
+  props: LayoutHeaderProps,
+  ref: Ref<HTMLDivElement>,
+) => {
   const {
     children,
     className,
@@ -38,4 +41,4 @@ const _LayoutHeader = (props: LayoutHeaderProps, ref: Ref<HTMLDivElement>) => {
   );
 };
 
-export const LayoutHeader = forwardRef(_LayoutHeader);
+export const LayoutHeader = forwardRef(LayoutHeaderBase);

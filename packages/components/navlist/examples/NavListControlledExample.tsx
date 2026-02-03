@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavList } from '@contentful/f36-navlist';
+import { NavList } from '@contentful/f36-components';
 
 export default function NavListControlled() {
   const [active, setActive] = useState(0);

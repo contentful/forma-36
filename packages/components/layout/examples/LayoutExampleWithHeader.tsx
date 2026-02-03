@@ -6,9 +6,9 @@ import {
   FormControl,
   TextInput,
   Textarea,
+  Layout,
+  Header,
 } from '@contentful/f36-components';
-import { Header } from '@contentful/f36-header';
-import { Layout } from '@contentful/f36-layout';
 
 export default function BasicLayoutExample() {
   const [submitting, setSubmitting] = useState(false);

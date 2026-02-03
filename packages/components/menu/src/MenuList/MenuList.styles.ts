@@ -1,4 +1,4 @@
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 
 export const getMenuHeaderStyles = () => {
@@ -30,15 +30,29 @@ export const getMenuFooterStyles = () => {
 export const getMenuListStyles = (props: {
   hasStickyFooter?: boolean;
   hasStickyHeader?: boolean;
+  isOpen?: boolean;
 }) => ({
   container: css({
+    display: props.isOpen ? 'initial' : 'none',
     // To get to our regular border radius for the inner menu items (6px),
     // we need to use 8px on the outer container
     borderRadius: '8px',
     overflowY: 'auto',
-    position: 'relative',
+    position: 'absolute',
+    top: 0,
+    left: 0,
     padding: 0,
+    background: tokens.colorWhite,
     paddingTop: props.hasStickyHeader ? 0 : tokens.spacing2Xs,
     paddingBottom: props.hasStickyFooter ? 0 : tokens.spacing2Xs,
+    boxShadow: tokens.boxShadowDefault,
+    zIndex: tokens.zIndexDropdown,
+    '&:focus': {
+      boxShadow: tokens.glowPrimary,
+      outline: 'none',
+    },
+    '&:focus:not(:focus-visible)': {
+      boxShadow: tokens.boxShadowDefault,
+    },
   }),
 });

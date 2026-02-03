@@ -12,16 +12,18 @@ export default {
   },
 };
 
-export const Basic = (args: SwitchProps) => (
-  <Switch {...args} name="basic" value="yes" id="switchOption1" />
-);
+export const Basic = {
+  render: (args: SwitchProps) => (
+    <Switch {...args} name="basic" value="yes" id="switchOption1" />
+  ),
 
-Basic.args = {
-  children: 'Some label text',
-  size: 'medium',
+  args: {
+    children: 'Some label text',
+    size: 'medium',
+  },
 };
 
-export const overview = () => (
+export const Overview = () => (
   <>
     <SectionHeading as="h3" marginBottom="spacingM">
       Switch default

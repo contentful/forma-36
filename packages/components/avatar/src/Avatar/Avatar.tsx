@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 import { type CommonProps } from '@contentful/f36-core';
 import { Image, type ImageProps } from '@contentful/f36-image';
@@ -44,7 +44,7 @@ export interface AvatarProps extends CommonProps {
   icon?: React.ReactElement;
 }
 
-function _Avatar(
+function AvatarBase(
   {
     alt = '',
     className,
@@ -105,4 +105,5 @@ function _Avatar(
   return content;
 }
 
-export const Avatar = forwardRef(_Avatar);
+AvatarBase.displayName = 'Avatar';
+export const Avatar = forwardRef(AvatarBase);

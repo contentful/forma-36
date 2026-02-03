@@ -1,6 +1,5 @@
 import React from 'react';
-import { MissingContent } from '@contentful/f36-empty-state';
-import { Table } from '@contentful/f36-components';
+import { MissingContent, Table } from '@contentful/f36-components';
 
 export default function BasicExample() {
   return (

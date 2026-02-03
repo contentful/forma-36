@@ -1,9 +1,16 @@
 import React from 'react';
 import { Box, Table } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
-import glowTokens from '@contentful/f36-tokens/src/tokens/box-shadows/glows';
 
 export function GlowTokensTable() {
+  const glowTokens = {
+    'glow-primary': tokens.glowPrimary,
+    'glow-negative': tokens.glowNegative,
+    'glow-positive': tokens.glowPositive,
+    'glow-warning': tokens.glowWarning,
+    'glow-muted': tokens.glowMuted,
+  };
+
   return (
     <Table>
       <Table.Head>

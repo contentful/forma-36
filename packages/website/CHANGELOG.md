@@ -1,3 +1,23 @@
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-empty-state@6.0.0
+  - @contentful/f36-header@6.0.0
+  - @contentful/f36-icon@6.0.0
+  - @contentful/f36-icons@6.0.0
+  - @contentful/f36-image@6.0.0
+  - @contentful/f36-layout@6.0.0
+  - @contentful/f36-multiselect@6.0.0
+  - @contentful/f36-navbar@6.0.0
+  - @contentful/f36-navlist@6.0.0
+  - @contentful/f36-progress-stepper@6.0.0
+  - @contentful/f36-utils@6.0.0
+  - @contentful/f36-docs-utils@5.0.0
+  - @contentful/f36-components@6.0.0
+  - @contentful/f36-tokens@6.0.0
+
 # @contentful/f36-website
 
 ## 1.0.0

@@ -51,13 +51,22 @@ export const useBaseCheckboxGroup = (
   }
 
   const onChange = (event) => {
-    props.onChange && props.onChange(event);
-    context.onChange && context.onChange(event);
+    if (props.onChange) {
+      props.onChange(event);
+    }
+
+    if (context.onChange) {
+      context.onChange(event);
+    }
   };
 
   const onBlur = (event) => {
-    props.onBlur && props.onBlur(event);
-    context.onBlur && context.onBlur(event);
+    if (props.onBlur) {
+      props.onBlur(event);
+    }
+    if (context.onBlur) {
+      context.onBlur(event);
+    }
   };
 
   return {

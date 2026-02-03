@@ -110,10 +110,10 @@ describe('TextLink', function () {
 
   it('allows passing additional props not consumed by component', () => {
     const { getByTestId } = render(
-      <TextLink data-test-id="Testing Id">Text Link</TextLink>,
+      <TextLink testId="Testing-Id">Text Link</TextLink>,
     );
 
-    expect(getByTestId('Testing Id')).toBeTruthy();
+    expect(getByTestId('Testing-Id')).toBeTruthy();
   });
 
   it('allows passing additional class names to component', () => {
@@ -146,9 +146,7 @@ describe('TextLink', function () {
 
   it('renders with an icon', () => {
     const { container } = render(
-      <TextLink icon={<ArrowDownIcon data-test-id="icon" />}>
-        Text Link
-      </TextLink>,
+      <TextLink icon={<ArrowDownIcon testId="icon" />}>Text Link</TextLink>,
     );
 
     expect(container.firstChild).toContainElement(screen.getByTestId('icon'));
@@ -159,13 +157,16 @@ describe('TextLink', function () {
 
   it('renders with an icon aligned right to the text', () => {
     render(
-      <TextLink alignIcon="end" icon={<ArrowDownIcon data-test-id="icon" />}>
+      <TextLink
+        alignIcon="end"
+        icon={<ArrowDownIcon testId="arrow-down-icon" />}
+      >
         Text Link
       </TextLink>,
     );
 
-    expect(screen.getByTestId('icon').parentElement.previousSibling).toEqual(
-      screen.getByText('Text Link'),
-    );
+    expect(
+      screen.getByTestId('arrow-down-icon').parentElement.previousSibling,
+    ).toEqual(screen.getByText('Text Link'));
   });
 });

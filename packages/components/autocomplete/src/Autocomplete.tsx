@@ -1,5 +1,5 @@
-import React, { useCallback, useState } from 'react';
-import { cx } from 'emotion';
+import React, { useCallback, useRef, useState } from 'react';
+import { cx } from '@emotion/css';
 import { useCombobox } from 'downshift';
 
 import {
@@ -22,8 +22,6 @@ export interface GenericGroupType<ItemType> {
   groupTitle: string;
   options: ItemType[];
 }
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface AutocompleteProps<ItemType>
   extends CommonProps,
     Pick<
@@ -187,7 +185,7 @@ export interface AutocompleteProps<ItemType>
   };
 }
 
-function _Autocomplete<ItemType>(
+function AutocompleteBase<ItemType>(
   props: AutocompleteProps<ItemType>,
   ref: React.Ref<HTMLDivElement>,
 ) {
@@ -217,7 +215,7 @@ function _Autocomplete<ItemType>(
     showEmptyList,
     noMatchesMessage = 'No matches found',
     placeholder = 'Search',
-    inputRef,
+    inputRef: inputRefProp,
     toggleRef,
     listRef,
     listWidth = 'auto',
@@ -241,6 +239,7 @@ function _Autocomplete<ItemType>(
   const [_inputValue, setInputValue] = useState(defaultValue);
   const inputValue =
     typeof inputValueProp === 'undefined' ? _inputValue : inputValueProp;
+  const inputRef = useRef(null);
 
   const handleInputValueChange = useCallback(
     (value: string) => {
@@ -272,14 +271,12 @@ function _Autocomplete<ItemType>(
     : items.length === 0;
 
   const {
-    getComboboxProps,
     getInputProps,
     getItemProps,
     getMenuProps,
     getToggleButtonProps,
     highlightedIndex,
     isOpen,
-    openMenu,
     toggleMenu,
   } = useCombobox({
     isOpen: isOpenProp,
@@ -361,10 +358,10 @@ function _Autocomplete<ItemType>(
     'aria-labelledby': _labelledby,
     id: _inputId,
     ...inputProps
-  } = getInputProps();
-  const comboboxProps = getComboboxProps();
+  } = getInputProps({ ref: inputRef });
   const toggleProps = getToggleButtonProps();
-  const menuProps = getMenuProps();
+  const menuRef = useRef(null);
+  const menuProps = getMenuProps({ ref: menuRef });
   let elementStartIndex = 0;
 
   const showClearButton = showClearButtonProp ?? inputValue;
@@ -387,13 +384,12 @@ function _Autocomplete<ItemType>(
         id={menuProps.id}
       >
         <Popover.Trigger>
-          <div {...comboboxProps} className={styles.combobox}>
+          <div>
             <TextInput
               className={styles.inputField}
               {...inputProps}
               onFocus={(e) => {
                 onFocus?.(e as React.FocusEvent<HTMLInputElement>);
-                openMenu();
               }}
               onBlur={(e) => {
                 onBlur?.(e as React.FocusEvent<HTMLInputElement>);
@@ -404,7 +400,7 @@ function _Autocomplete<ItemType>(
               isDisabled={isDisabled}
               isRequired={isRequired}
               isReadOnly={isReadOnly}
-              ref={mergeRefs(inputProps.ref, inputRef)}
+              ref={mergeRefs(inputProps.ref, inputRefProp)}
               testId="cf-autocomplete-input"
               placeholder={placeholder}
               onChange={(event) => {
@@ -535,8 +531,8 @@ function isUsingGroups<ItemType>(
  * to filter a list of items. That list of filtered items will be shown to the user as possible options for the input.
  * Once one of the options is selected, that option becomes the value of the `TextInput`.
  */
-export const Autocomplete = React.forwardRef(_Autocomplete) as <T>(
+export const Autocomplete = React.forwardRef(AutocompleteBase) as <T>(
   props: ExpandProps<AutocompleteProps<T>> & {
     ref?: React.Ref<HTMLDivElement>;
   },
-) => ReturnType<typeof _Autocomplete>;
+) => ReturnType<typeof AutocompleteBase>;

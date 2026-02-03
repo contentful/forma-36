@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import {
   Stack,
   type ExpandProps,
@@ -18,7 +18,7 @@ export interface InputGroupProps extends CommonProps {
   children: React.ReactNode;
 }
 
-const _InputGroup = (
+const InputGroupBase = (
   props: ExpandProps<InputGroupProps>,
   ref: React.Ref<HTMLDivElement>,
 ) => {
@@ -38,4 +38,6 @@ const _InputGroup = (
   );
 };
 
-export const InputGroup = React.forwardRef(_InputGroup);
+InputGroupBase.displayName = 'InputGroup';
+
+export const InputGroup = React.forwardRef(InputGroupBase);

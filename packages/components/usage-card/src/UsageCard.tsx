@@ -2,7 +2,7 @@ import React, { HTMLAttributes } from 'react';
 import { Box, type CommonProps, type ExpandProps } from '@contentful/f36-core';
 import { getUsageCardStyles } from './UsageCard.styles';
 import { Card } from '@contentful/f36-card';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 export type UsageCardProps = CommonProps &
   HTMLAttributes<HTMLDivElement> & {
@@ -16,7 +16,7 @@ export type UsageCardProps = CommonProps &
     variant?: 'usage' | 'info';
   };
 
-function _UsageCard(
+function UsageCardBase(
   props: ExpandProps<UsageCardProps>,
   ref: React.Ref<HTMLDivElement>,
 ) {
@@ -48,4 +48,6 @@ function _UsageCard(
   );
 }
 
-export const UsageCard = React.forwardRef(_UsageCard);
+UsageCardBase.displayName = 'UsageCard';
+
+export const UsageCard = React.forwardRef(UsageCardBase);

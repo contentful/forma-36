@@ -1,14 +1,15 @@
-import { css, cx, type ObjectInterpolation } from 'emotion';
+import { css, cx } from '@emotion/css';
+
 import tokens from '@contentful/f36-tokens';
 
-const activeStyle: ObjectInterpolation<undefined> = {
+const activeStyle = {
   backgroundColor: tokens.gray200,
   '&:hover, &:active': {
     backgroundColor: tokens.gray200,
   },
 };
 
-const disabledStyle: ObjectInterpolation<undefined> = {
+const disabledStyle = {
   opacity: 0.5,
   cursor: 'auto',
   '&:hover': {
@@ -29,7 +30,7 @@ export const getMenuItemStyles = ({
       display: 'flex',
       background: 'none',
       borderWidth: '1px 0',
-      borderColor: tokens.colorWhite,
+      borderColor: 'transparent',
       borderRadius: tokens.borderRadiusSmall,
       borderStyle: 'solid',
       outline: 'none',

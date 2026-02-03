@@ -1,26 +1,26 @@
 {
   "name": "@contentful/f36-autocomplete",
-  "version": "5.9.0",
+  "version": "6.1.0",
   "description": "Forma 36: Autocomplete component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-button": "^5.9.0",
-    "@contentful/f36-core": "^5.9.0",
-    "@contentful/f36-forms": "^5.9.0",
-    "@contentful/f36-popover": "^5.9.0",
-    "@contentful/f36-skeleton": "^5.9.0",
-    "@contentful/f36-icons": "^5.9.0",
-    "@contentful/f36-tokens": "^5.1.0",
-    "@contentful/f36-typography": "^5.9.0",
-    "@contentful/f36-utils": "^5.2.0",
-    "downshift": "^6.1.12",
-    "emotion": "^10.0.17"
+    "@contentful/f36-button": "^6.1.0",
+    "@contentful/f36-core": "^6.1.0",
+    "@contentful/f36-forms": "^6.1.0",
+    "@contentful/f36-popover": "^6.1.0",
+    "@contentful/f36-skeleton": "^6.1.0",
+    "@contentful/f36-icons": "^6.1.0",
+    "@contentful/f36-tokens": "^6.1.0",
+    "@contentful/f36-typography": "^6.1.0",
+    "@contentful/f36-utils": "^6.1.0",
+    "downshift": "^9.0.10",
+    "@emotion/css": "^11.13.5"
   },
   "peerDependencies": {
-    "react": ">=16.8",
-    "react-dom": ">=16.8"
+    "react": ">=19.1.0",
+    "react-dom": ">=19.1.0"
   },
   "license": "MIT",
   "files": [

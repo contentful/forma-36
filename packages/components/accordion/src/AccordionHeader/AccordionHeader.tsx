@@ -5,6 +5,7 @@ import { CaretDownIcon } from '@contentful/f36-icons';
 import type { CommonProps } from '@contentful/f36-core';
 
 import { getAccordionHeaderStyles } from './AccordionHeader.styles';
+import { useAccordionContext } from '../AccordionContext';
 
 export interface AccordionHeaderProps extends CommonProps {
   /**
@@ -27,10 +28,6 @@ export interface AccordionHeaderProps extends CommonProps {
    * The heading element that will be used by the Subheading component
    */
   element?: HeadingElement;
-  /**
-   * Specify the alignment of the chevron inside the accordion header
-   */
-  align?: 'start' | 'end';
 }
 
 export const AccordionHeader = ({
@@ -39,14 +36,14 @@ export const AccordionHeader = ({
   isExpanded = false,
   ariaId,
   element = 'h2',
-  align = 'end',
   testId = 'cf-ui-accordion-header',
   ...rest
 }: AccordionHeaderProps) => {
+  const { align } = useAccordionContext();
   const styles = getAccordionHeaderStyles({ align, isExpanded });
 
   return (
-    <Subheading {...rest} testId={testId} marginBottom="none" as={element}>
+    <Subheading testId={testId} {...rest} marginBottom="none" as={element}>
       <button
         type="button"
         aria-expanded={isExpanded}
@@ -65,3 +62,5 @@ export const AccordionHeader = ({
     </Subheading>
   );
 };
+
+AccordionHeader.displayName = 'AccordionHeader';

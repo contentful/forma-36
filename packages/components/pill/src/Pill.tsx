@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import type {
   CommonProps,
   PropsWithHTMLElement,
@@ -72,7 +72,11 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
         if (!ref) {
           return;
         }
-        const { scrollWidth, offsetWidth } = ref.parentElement;
+        const parent = ref.parentElement;
+
+        if (!parent) return;
+        const { scrollWidth, offsetWidth } = parent;
+
         setTextIsTruncated(scrollWidth > offsetWidth);
       },
       [setTextIsTruncated],
@@ -92,13 +96,16 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
           ) : (
             <DragHandle label="Reorder item" variant="transparent" />
           ))}
+
         <Tooltip
           content={label}
           maxWidth="none"
-          targetWrapperClassName={styles.label}
           isDisabled={!textIsTruncated}
+          targetWrapperClassName={styles.labelWrapper}
         >
-          <span ref={trackRefChange}>{label}</span>
+          <div className={styles.label}>
+            <span ref={trackRefChange}>{label}</span>
+          </div>
         </Tooltip>
         {onClose && (
           <Button

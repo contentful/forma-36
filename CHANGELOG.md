@@ -8,6 +8,8 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+[object Promise]
+
 ## 29-11-2025
 
 **F36 Icons** `v5.9.0`

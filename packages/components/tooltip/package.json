@@ -1,22 +1,21 @@
 {
   "name": "@contentful/f36-tooltip",
-  "version": "5.9.0",
+  "version": "6.1.0",
   "description": "Forma 36: Tooltip component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^5.9.0",
-    "@contentful/f36-tokens": "^5.1.0",
-    "@contentful/f36-utils": "^5.2.0",
-    "@popperjs/core": "^2.11.5",
-    "csstype": "^3.1.1",
-    "emotion": "^10.0.17",
-    "react-popper": "^2.3.0"
+    "@contentful/f36-core": "^6.1.0",
+    "@contentful/f36-tokens": "^6.1.0",
+    "@contentful/f36-utils": "^6.1.0",
+    "@emotion/css": "^11.13.5",
+    "@floating-ui/dom": "^1.7.4",
+    "@floating-ui/react": "^0.27.16"
   },
   "peerDependencies": {
-    "react": ">=16.8",
-    "react-dom": ">=16.8"
+    "react": ">=19.1.0",
+    "react-dom": ">=19.1.0"
   },
   "license": "MIT",
   "files": [

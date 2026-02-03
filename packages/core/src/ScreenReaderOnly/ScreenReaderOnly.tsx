@@ -1,4 +1,4 @@
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import React from 'react';
 import { getStyles } from './ScreenReaderOnly.styles';
 import type { CommonProps } from '../types';
@@ -29,3 +29,5 @@ export const ScreenReaderOnly = ({
     </Element>
   );
 };
+
+ScreenReaderOnly.displayName = 'ScreenReaderOnly';

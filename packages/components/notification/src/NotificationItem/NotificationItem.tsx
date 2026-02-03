@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import {
   CheckCircleIcon,
@@ -40,7 +40,7 @@ export interface NotificationItemProps extends CommonProps {
   /**
    * Function that will be triggered when close button is clicked
    */
-  onClose?: Function;
+  onClose?: () => void;
   /**
    * Title of the notification
    */
@@ -72,7 +72,7 @@ const _NotificationItem = (props: ExpandProps<NotificationItemProps>, ref) => {
   const styles = getStyles({ variant });
 
   const iconSize = title ? 'medium' : 'small';
-  const iconVariants: Record<NotificationVariant, JSX.Element> = {
+  const iconVariants: Record<NotificationVariant, React.ReactElement> = {
     positive: <CheckCircleIcon color={tokens.colorPositive} size={iconSize} />,
     warning: <WarningIcon color={tokens.colorWarning} size={iconSize} />,
     negative: (
@@ -135,7 +135,9 @@ const _NotificationItem = (props: ExpandProps<NotificationItemProps>, ref) => {
             variant="transparent"
             startIcon={<XIcon />}
             onClick={() => {
-              onClose && onClose();
+              if (onClose) {
+                onClose();
+              }
             }}
             testId="cf-ui-notification-close"
             aria-label={closeButtonAriaLabel}

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { render } from '@testing-library/react';
 import { MdHelp as ExternalIcon } from 'react-icons/md/index.js';
+import { CalendarBlankIcon } from '../../icons/src/index.js';
 
 import { Icon } from './index.js';
 
@@ -23,6 +24,11 @@ describe('Icon', () => {
 
       expect(icon.getAttribute('aria-hidden')).toBe('true');
       expect(icon.getAttribute('viewBox')).toBe('0 0 30 30');
+    });
+
+    it('adds a custom testId', () => {
+      const result = render(<Icon as={CalendarBlankIcon} testId="custom-id" />);
+      expect(result.queryByTestId('custom-id')).toBeInTheDocument();
     });
 
     it('removes aria-hidden=true if aria-label is passed', () => {
