@@ -1,4 +1,4 @@
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import { type AvatarProps } from '../Avatar/';
 import { parseSize, toPixels } from '../Avatar/utils';

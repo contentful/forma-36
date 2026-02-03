@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Tabs } from '@contentful/f36-components';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 
 export default function TabsControlledWithMountedContentExample() {
   const [currentTab, setCurrentTab] = useState('first');

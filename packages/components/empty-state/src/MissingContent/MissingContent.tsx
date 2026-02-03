@@ -1,4 +1,4 @@
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import React from 'react';
 import { getStyles } from './MissingContent.styles';
 import type { CommonProps } from '@contentful/f36-core';
@@ -30,3 +30,5 @@ export const MissingContent = ({
     </Text>
   );
 };
+
+MissingContent.displayName = 'MissingContent';

@@ -1,4 +1,5 @@
 import type { CommonProps } from '@contentful/f36-core';
+import type { IconProps } from '@contentful/f36-icon';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
 
@@ -42,11 +43,11 @@ export interface ButtonInternalProps extends CommonProps {
   /**
    * Expects any of the icon components. Renders the icon aligned to the start
    */
-  startIcon?: React.ReactElement;
+  startIcon?: React.ReactElement<IconProps>;
   /**
    * Expects any of the icon components. Renders the icon aligned to the end
    */
-  endIcon?: React.ReactElement;
+  endIcon?: React.ReactElement<IconProps>;
   /**
    * Adds loading indicator icon and disables interactions
    */

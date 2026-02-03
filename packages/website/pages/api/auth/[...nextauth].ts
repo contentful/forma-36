@@ -20,4 +20,5 @@ export const authOptions: NextAuthOptions = {
     logo: '/favicon.png',
   },
 };
+
 export default NextAuth(authOptions);

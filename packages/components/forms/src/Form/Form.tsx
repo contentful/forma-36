@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback, type FormEvent } from 'react';
+import React, { forwardRef, useCallback, type SubmitEvent } from 'react';
 
 import type {
   CommonProps,
@@ -8,7 +8,7 @@ import type {
 
 export type FormProps = PropsWithHTMLElement<CommonProps, 'form'>;
 
-function _Form(
+function FormBase(
   {
     children,
     onSubmit,
@@ -18,7 +18,7 @@ function _Form(
   ref: React.Ref<HTMLFormElement>,
 ) {
   const handleSubmit = useCallback(
-    (event: FormEvent<HTMLFormElement>) => {
+    (event: SubmitEvent<HTMLFormElement>) => {
       event.preventDefault();
       if (onSubmit) {
         onSubmit(event);
@@ -38,6 +38,6 @@ function _Form(
   );
 }
 
-_Form.displayName = 'Form';
+FormBase.displayName = 'Form';
 
-export const Form = forwardRef(_Form);
+export const Form = forwardRef(FormBase);

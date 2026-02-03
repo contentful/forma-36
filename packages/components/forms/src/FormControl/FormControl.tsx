@@ -26,7 +26,7 @@ export type FormControlProps<
   E extends React.ElementType = typeof FORM_CONTROL_DEFAULT_TAG,
 > = PolymorphicProps<FormControlInternalProps, E>;
 
-function _FormControl<
+function FormControlBase<
   E extends React.ElementType = typeof FORM_CONTROL_DEFAULT_TAG,
 >(
   {
@@ -41,7 +41,7 @@ function _FormControl<
     testId = 'cf-ui-form-control',
     ...otherProps
   }: FormControlProps<E>,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLDivElement>,
 ) {
   const generatedId = useId(id, 'field-');
   const [inputValue, setInputValue] = useState('');
@@ -77,9 +77,11 @@ function _FormControl<
   );
 }
 
-_FormControl.displayName = 'FormControl';
+FormControlBase.displayName = 'FormControl';
 
-export const FormControl: PolymorphicComponent<
+export const FormControl = React.forwardRef(
+  FormControlBase,
+) as PolymorphicComponent<
   ExpandProps<FormControlInternalProps>,
   typeof FORM_CONTROL_DEFAULT_TAG
-> = React.forwardRef(_FormControl);
+>;

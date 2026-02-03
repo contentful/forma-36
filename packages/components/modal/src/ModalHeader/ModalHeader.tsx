@@ -1,5 +1,6 @@
 import React from 'react';
-import { cx } from 'emotion';
+import ReactModal from 'react-modal';
+import { cx } from '@emotion/css';
 import { XIcon } from '@contentful/f36-icons';
 import {
   Flex,
@@ -14,7 +15,7 @@ import { getModalHeaderStyles } from './ModalHeader.styles';
 interface ModalHeaderInternalProps extends CommonProps {
   title: string;
   subtitle?: string;
-  onClose?: Function;
+  onClose?: ReactModal.Props['onRequestClose'];
   children?: React.ReactNode;
   aria?: {
     closeIconLabel?: string;
@@ -64,9 +65,7 @@ export const ModalHeader = ({
             aria-label={aria.closeIconLabel}
             size="small"
             icon={<XIcon size="small" />}
-            onClick={() => {
-              onClose();
-            }}
+            onClick={onClose}
           />
         </Flex>
       )}

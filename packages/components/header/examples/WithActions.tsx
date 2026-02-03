@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button, Flex } from '@contentful/f36-components';
-import { Header } from '@contentful/f36-header';
+import { Button, Flex, Header } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 
 export default function HeaderExample() {

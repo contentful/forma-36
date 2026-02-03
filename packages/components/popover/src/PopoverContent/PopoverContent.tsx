@@ -1,13 +1,18 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import type {
   CommonProps,
   PropsWithHTMLElement,
   ExpandProps,
 } from '@contentful/f36-core';
 import { usePopoverContext } from '../PopoverContext';
-import { Portal } from '@contentful/f36-utils';
 import { getPopoverContentStyles } from './PopoverContent.styles';
+import {
+  FloatingPortal,
+  FloatingFocusManager,
+  useMergeRefs,
+  useInteractions,
+} from '@floating-ui/react';
 
 interface PopoverContentInternalProps extends CommonProps {
   children?: React.ReactNode;
@@ -18,7 +23,10 @@ export type PopoverContentProps = PropsWithHTMLElement<
   'div'
 >;
 
-const _PopoverContent = (props: ExpandProps<PopoverContentProps>, ref) => {
+const PopoverContentBase = (
+  props: ExpandProps<PopoverContentProps>,
+  propRef: React.Ref<HTMLElement>,
+) => {
   const {
     children,
     className,
@@ -26,19 +34,37 @@ const _PopoverContent = (props: ExpandProps<PopoverContentProps>, ref) => {
     role = 'dialog',
     ...otherProps
   } = props;
-  const { isOpen, renderOnlyWhenOpen, getPopoverProps, usePortal } =
-    usePopoverContext();
+
+  const {
+    isOpen,
+    renderOnlyWhenOpen,
+    usePortal,
+    autoFocus,
+    dismiss,
+    context: floatingContext,
+    ...context
+  } = usePopoverContext();
+  const ref = useMergeRefs([context.refs.setFloating, propRef]);
 
   const styles = getPopoverContentStyles(isOpen);
+
+  const { getFloatingProps } = useInteractions([dismiss]);
+
+  if (renderOnlyWhenOpen && !isOpen) {
+    return null;
+  }
 
   const content = (
     <div
       {...otherProps}
-      {...getPopoverProps(otherProps, ref)}
       className={cx(styles.container, className)}
+      style={{ ...context.floatingStyles }}
+      {...getFloatingProps()}
+      aria-describedby={context.descriptionId}
       data-test-id={testId}
       tabIndex={-1}
       role={role}
+      ref={ref}
       // specific attribute to mark that this element is absolute positioned
       // for internal contentful apps usage
       data-position-absolute
@@ -47,11 +73,24 @@ const _PopoverContent = (props: ExpandProps<PopoverContentProps>, ref) => {
     </div>
   );
 
-  if (renderOnlyWhenOpen && !isOpen) {
-    return null;
-  }
+  const maybeWrapWithFocusManager = (node: React.ReactElement) =>
+    autoFocus === false ? (
+      node
+    ) : (
+      <FloatingFocusManager context={floatingContext} modal={false}>
+        {node}
+      </FloatingFocusManager>
+    );
 
-  return usePortal ? <Portal>{content}</Portal> : content;
+  return usePortal ? (
+    <FloatingPortal>
+      {maybeWrapWithFocusManager(content as React.ReactElement)}
+    </FloatingPortal>
+  ) : (
+    maybeWrapWithFocusManager(content as React.ReactElement)
+  );
 };
 
-export const PopoverContent = React.forwardRef(_PopoverContent);
+PopoverContentBase.displayName = 'PopoverContent';
+
+export const PopoverContent = React.forwardRef(PopoverContentBase);

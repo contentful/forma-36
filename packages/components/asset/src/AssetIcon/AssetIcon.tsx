@@ -15,7 +15,7 @@ import {
 import type { GeneratedIconProps } from '@contentful/f36-icon';
 import type { AssetType } from '../types';
 
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { getAssetIconStyles } from './AssetIcon.styles';
 
 export interface AssetIconProps

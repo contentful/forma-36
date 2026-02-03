@@ -22,7 +22,7 @@ module.exports.changeImport = function changeImport(
     j.template.statement([
       `import { ${
         outputComponentName ? outputComponentName : componentName
-      } } from "${to}"`,
+      } } from '${to}'`,
     ]),
   ]);
 

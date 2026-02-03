@@ -1,6 +1,5 @@
 import React from 'react';
-import { Avatar } from '@contentful/f36-avatar';
-import { Stack } from '@contentful/f36-core';
+import { Avatar, Stack } from '@contentful/f36-components';
 
 export default function AvatarColorBordersExample() {
   return (

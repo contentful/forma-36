@@ -1,7 +1,6 @@
 /* global Promise */
-
 import React from 'react';
-import { render } from 'react-dom';
+import { createRoot, Root } from 'react-dom/client';
 import {
   NotificationsManager,
   ShowAction,
@@ -15,41 +14,60 @@ import {
 import type { NotificationVariant, NotificationCta } from './types';
 
 export interface NotificationsAPI {
-  success: ShowAction<Notification>;
-  error: ShowAction<Notification>;
-  show: ShowAction<Notification>;
+  success: ShowAction<NotificationProps>;
+  error: ShowAction<NotificationProps>;
+  show: ShowAction<NotificationProps>;
   close: CloseAction<void>;
   closeAll: CloseAllAction<void>;
   setPlacement: SetPlacementAction<void>;
   setDuration: SetDurationAction<void>;
+  cleanup: () => void;
 }
 
 let initiated = false;
+let root: Root | null = null;
 const internalAPI: Partial<NotificationsAPI> = {};
 
-function registerAPI(fnName: string, fn: Function) {
-  internalAPI[fnName] = fn;
+function registerAPI<K extends keyof NotificationsAPI>(
+  FnName: K,
+  fn: NotificationsAPI[K],
+) {
+  internalAPI[FnName] = fn;
 }
 
-function createRoot(callback: () => void) {
+function initNotificationsRoot(onMounted: () => void) {
   const container = document.createElement('div');
   document.body.appendChild(container);
 
-  render(<NotificationsManager register={registerAPI} />, container, callback);
+  root = createRoot(container);
+  root.render(
+    <NotificationsManager register={registerAPI} onReady={onMounted} />,
+  );
 }
 
-function afterInit<PromiseValueType>(fn: Function) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return (...args: any[]) => {
+function afterInit<PromiseValueType>(
+  fn: (...args: unknown[]) => PromiseValueType | Promise<PromiseValueType>,
+) {
+  return (...args: unknown[]): Promise<PromiseValueType> => {
     if (!initiated) {
       initiated = true;
-      return new Promise<PromiseValueType>((resolve) => {
-        createRoot(() => {
-          resolve(fn(...args));
+      return new Promise<PromiseValueType>((resolve, reject) => {
+        initNotificationsRoot(() => {
+          try {
+            const result = fn(...args);
+            Promise.resolve(result).then(resolve, reject);
+          } catch (error) {
+            reject(error);
+          }
         });
       });
-    } else {
-      return Promise.resolve<PromiseValueType>(fn(...args));
+    }
+
+    try {
+      const result = fn(...args);
+      return Promise.resolve(result);
+    } catch (error) {
+      return Promise.reject(error);
     }
   };
 }
@@ -65,7 +83,7 @@ const show =
       title?: string;
       cta?: Partial<NotificationCta>;
     },
-  ) => {
+  ): NotificationProps => {
     if (internalAPI.show) {
       return internalAPI.show(text, {
         ...(settings || {}),
@@ -94,6 +112,7 @@ export const Notification: {
   closeAll: CloseAllAction<Promise<void>>;
   setPlacement: SetPlacementAction<Promise<void>>;
   setDuration: SetDurationAction<Promise<void>>;
+  cleanup: () => Promise<void>;
 } = {
   success: afterInit<NotificationProps>(show('positive')),
   error: afterInit<NotificationProps>(show('negative')),
@@ -121,4 +140,12 @@ export const Notification: {
       return internalAPI.setDuration(duration);
     }
   }),
+  cleanup: () => {
+    if (root) {
+      root.unmount();
+    }
+    initiated = false;
+    root = null;
+    return Promise.resolve();
+  },
 };

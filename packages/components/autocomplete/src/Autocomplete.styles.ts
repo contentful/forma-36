@@ -1,4 +1,4 @@
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import { getMenuItemStyles } from '@contentful/f36-core';
 
@@ -6,9 +6,6 @@ export const getAutocompleteStyles = (listMaxHeight: number) => ({
   autocomplete: css({
     position: 'relative',
     width: '100%',
-  }),
-  combobox: css({
-    position: 'relative',
   }),
   inputField: css({
     paddingRight: tokens.spacingXl,

@@ -1,37 +1,15 @@
-import React, { ComponentPropsWithRef } from 'react';
-import { MenuProps } from '.';
+import React from 'react';
+import type { UseMenuReturn } from './useMenu';
 
-export type MenuContextType = {
-  isOpen: boolean;
-  menuId: string;
-  focusMenuItem: (item: HTMLElement) => void;
-  getTriggerProps: (
-    _props: ComponentPropsWithRef<'button'>,
-    _ref: React.Ref<HTMLButtonElement>,
-  ) => ComponentPropsWithRef<'button'>;
-  getMenuListProps: (
-    _props: ComponentPropsWithRef<'div'>,
-    _ref: React.Ref<HTMLDivElement>,
-  ) => ComponentPropsWithRef<'div'>;
-  getMenuItemProps: (
-    _props: ComponentPropsWithRef<'button'>,
-  ) => ComponentPropsWithRef<'button'>;
-  propsToPropagateToSubmenus: Pick<
-    MenuProps,
-    'closeOnBlur' | 'closeOnEsc' | 'closeOnSelect'
-  >;
-};
+export const MenuContext = React.createContext<UseMenuReturn | null>(null);
 
-const MenuContext = React.createContext<MenuContextType | undefined>(undefined);
-
-export const useMenuContext = () => {
-  const context = React.useContext(MenuContext);
-
-  if (context === undefined) {
-    throw new Error('useMenuContext must be used within a MenuContextProvider');
+export function useMenuContext() {
+  const ctx = React.useContext(MenuContext);
+  if (!ctx) {
+    throw new Error(
+      'useMenuContext must be used within <MenuContext.Provider>',
+    );
   }
-
-  return context;
-};
-
+  return ctx;
+}
 export const MenuContextProvider = MenuContext.Provider;

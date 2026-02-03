@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { axe } from 'jest-axe';
 
 import { Table } from '.';
 
@@ -29,6 +30,30 @@ describe('Table', () => {
     expect(container.firstChild).toContainElement(th);
     expect(cells).toHaveLength(2);
     expect(th).toEqual(getByText('Table heading'));
+  });
+
+  it('has no a11y issues', async () => {
+    const { container } = render(
+      <Table>
+        <Table.Head>
+          <Table.Row>
+            <Table.Cell>Table heading</Table.Cell>
+          </Table.Row>
+        </Table.Head>
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell>Cell 1</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Cell 2</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table>,
+    );
+
+    const results = await axe(container);
+
+    expect(results).toHaveNoViolations();
   });
 
   describe('Table.Head', () => {

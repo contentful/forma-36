@@ -1,23 +1,23 @@
 {
   "name": "@contentful/f36-note",
-  "version": "5.8.1",
+  "version": "6.1.0",
   "description": "Forma 36: Note component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-button": "^5.8.1",
-    "@contentful/f36-core": "^5.8.1",
-    "@contentful/f36-icon": "^5.8.1",
-    "@contentful/f36-icons": "^5.8.1",
-    "@contentful/f36-tokens": "^5.1.0",
-    "@contentful/f36-utils": "^5.2.0",
-    "@contentful/f36-typography": "^5.8.1",
-    "emotion": "^10.0.17"
+    "@contentful/f36-button": "^6.1.0",
+    "@contentful/f36-core": "^6.1.0",
+    "@contentful/f36-icon": "^6.1.0",
+    "@contentful/f36-icons": "^6.1.0",
+    "@contentful/f36-tokens": "^6.1.0",
+    "@contentful/f36-utils": "^6.1.0",
+    "@contentful/f36-typography": "^6.1.0",
+    "@emotion/css": "^11.13.5"
   },
   "peerDependencies": {
-    "react": ">=16.8",
-    "react-dom": ">=16.8"
+    "react": ">=19.1.0",
+    "react-dom": ">=19.1.0"
   },
   "license": "MIT",
   "files": [
