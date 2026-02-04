@@ -195,6 +195,7 @@ export * from './vendor/phosphor/PlaceholderIcon.js';
 export * from './vendor/phosphor/PlusIcon.js';
 export * from './vendor/phosphor/PresentationIcon.js';
 export * from './vendor/phosphor/PuzzlePieceIcon.js';
+export * from './vendor/phosphor/QrCodeIcon.js';
 export * from './vendor/phosphor/QuestionIcon.js';
 export * from './vendor/phosphor/QuotesIcon.js';
 export * from './vendor/phosphor/ReceiptIcon.js';
