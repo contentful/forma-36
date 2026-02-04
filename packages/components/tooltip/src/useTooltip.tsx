@@ -47,15 +47,7 @@ export function useTooltip({
     middleware.push(shift(), flip());
   }
 
-  if (
-    sanitizedPlacement.startsWith('right') ||
-    sanitizedPlacement.startsWith('left') ||
-    placement === 'auto'
-  ) {
-    middleware.push(offset({ mainAxis: 10 }));
-  } else {
-    middleware.push(offset({ mainAxis: 10 }));
-  }
+  middleware.push(offset({ mainAxis: 10 }));
 
   // add arrow last to middleware so it can pick up the placement happening before
   middleware.push(
