@@ -1,5 +1,52 @@
 # Change Log
 
+## 6.2.0
+
+### Patch Changes
+
+- Updated dependencies [[`76458f5`](https://github.com/contentful/forma-36/commit/76458f53d6e0f7bdc7fe47fc90f0a3d3f97ce4a7)]:
+  - @contentful/f36-icons@6.2.0
+  - @contentful/f36-accordion@6.2.0
+  - @contentful/f36-asset@6.2.0
+  - @contentful/f36-autocomplete@6.2.0
+  - @contentful/f36-avatar@6.2.0
+  - @contentful/f36-badge@6.2.0
+  - @contentful/f36-button@6.2.0
+  - @contentful/f36-card@6.2.0
+  - @contentful/f36-collapse@6.2.0
+  - @contentful/f36-copybutton@6.2.0
+  - @contentful/f36-core@6.2.0
+  - @contentful/f36-datetime@6.2.0
+  - @contentful/f36-datepicker@6.2.0
+  - @contentful/f36-drag-handle@6.2.0
+  - @contentful/f36-entity-list@6.2.0
+  - @contentful/f36-empty-state@6.2.0
+  - @contentful/f36-forms@6.2.0
+  - @contentful/f36-header@6.2.0
+  - @contentful/f36-icon@6.2.0
+  - @contentful/f36-image@6.2.0
+  - @contentful/f36-layout@6.2.0
+  - @contentful/f36-list@6.2.0
+  - @contentful/f36-menu@6.2.0
+  - @contentful/f36-modal@6.2.0
+  - @contentful/f36-multiselect@6.2.0
+  - @contentful/f36-navlist@6.2.0
+  - @contentful/f36-note@6.2.0
+  - @contentful/f36-notification@6.2.0
+  - @contentful/f36-pagination@6.2.0
+  - @contentful/f36-pill@6.2.0
+  - @contentful/f36-progress-stepper@6.2.0
+  - @contentful/f36-popover@6.2.0
+  - @contentful/f36-skeleton@6.2.0
+  - @contentful/f36-spinner@6.2.0
+  - @contentful/f36-table@6.2.0
+  - @contentful/f36-tabs@6.2.0
+  - @contentful/f36-text-link@6.2.0
+  - @contentful/f36-tooltip@6.2.0
+  - @contentful/f36-typography@6.2.0
+  - @contentful/f36-usage-card@6.2.0
+  - @contentful/f36-usage-count@6.2.0
+
 ## 6.1.0
 
 ### Minor Changes
