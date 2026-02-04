@@ -1,5 +1,19 @@
 # Change Log
 
+## 6.3.0
+
+### Minor Changes
+
+- [#3319](https://github.com/contentful/forma-36/pull/3319) [`15e1ee8`](https://github.com/contentful/forma-36/commit/15e1ee8275228560b2c8bf0b38cb1187c1be7d1d) Thanks [@Lelith](https://github.com/Lelith)! - Make the useTypeahead feature of floating-ui a controllable property and disabled per default.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.0
+  - @contentful/f36-icons@6.3.0
+  - @contentful/f36-popover@6.3.0
+  - @contentful/f36-typography@6.3.0
+
 ## 6.2.0
 
 ### Patch Changes
