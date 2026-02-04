@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.2.0
+
+### Minor Changes
+
+- [#3316](https://github.com/contentful/forma-36/pull/3316) [`76458f5`](https://github.com/contentful/forma-36/commit/76458f53d6e0f7bdc7fe47fc90f0a3d3f97ce4a7) Thanks [@jshmo](https://github.com/jshmo)! - Added the QrCodeIcon to the icon library.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.2.0
+  - @contentful/f36-icon@6.2.0
+
 ## 6.1.0
 
 ### Minor Changes
