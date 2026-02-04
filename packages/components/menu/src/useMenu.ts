@@ -78,6 +78,7 @@ export function useMenu({
   offset: offsetProp,
   renderOnlyWhenOpen = true,
   usePortal = true,
+  useTypeahead: useTypeaheadProp = false,
   closeOnEsc = true,
   closeOnBlur = true,
   closeOnSelect = true,
@@ -221,6 +222,7 @@ export function useMenu({
   });
 
   const typeahead = useTypeahead(context, {
+    enabled: useTypeaheadProp,
     listRef: labelsRef,
     onMatch: isOpen ? setActiveIndex : undefined,
     activeIndex,

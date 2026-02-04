@@ -22,6 +22,7 @@ The Menu component introduces two changes:
 | `placement`              | `"auto"`, `"left"`, `"right"`, `"top"`, `"bottom"`, `"auto-start"`, `"auto-end"`, `"top-start"`, `"top-end"`, `"bottom-start"`, `"bottom-end"`, `"right-start"`, `"right-end"`, `"left-start"` | `"auto"`, `"top"`, `"right"`, `"bottom"`, `"left"`, `"bottom-start"`, `"bottom-end"`, `"left-start"`, `"left-end"`,`"right-start"`, `"right-end"`, `"top-start"`, `"top-end"` | 'auto' OR bottom-start → bottom-start | Changed `"auto-start"` and `"auto-end"` have been removed, as auto-adjustment for `"top"`, `"right"`, `"bottom"`, `"left"` is already applied |
 | `isAutoalignmentEnabled` | `boolean`                                                                                                                                                                                      | `boolean`                                                                                                                                                                     | true → true                           | Unchanged                                                                                                                                     |
 | `usePortal`              | `boolean`                                                                                                                                                                                      | `boolean`                                                                                                                                                                     | true → true                           | Unchanged                                                                                                                                     |
+| `useTypeahead`           | `boolean`                                                                                                                                                                                      | `boolean`                                                                                                                                                                     | false                                 | New                                                                                                                                           |
 | `closeOnBlur`            | `boolean`                                                                                                                                                                                      | `boolean`                                                                                                                                                                     | true → true                           | Unchanged                                                                                                                                     |
 | `closeOnEsc`             | `boolean`                                                                                                                                                                                      | `boolean`                                                                                                                                                                     | true → true                           | Unchanged                                                                                                                                     |
 | `autoFocus`              | `boolean`                                                                                                                                                                                      | `boolean`                                                                                                                                                                     | true → true                           | Unchanged                                                                                                                                     |
@@ -124,6 +125,33 @@ function migrateOffset(oldOffset: [number, number], placement: string) {
   }
   return { mainAxis: x, crossAxis: y };
 }
+```
+
+---
+
+## New Property Typeahead
+
+The `useTypeahead` prop enables a quick navigation feature within a Menu. If a user opens the menu and then starts typing, the focus will jump to the first entry with the typed letter.
+Important: `useTypeahead` will catch and intervene `onKeyDown` events. So it can not be used with `TextInput` inside the `MenuList`.
+
+### Example
+
+```tsx
+<Menu useTypeahead>
+  <Menu.Trigger>
+    <Button>Open</Button>
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.Item>Apple</Menu.Item>
+    <Menu.Submenu>
+      <Menu.SubmenuTrigger>Banana</Menu.SubmenuTrigger>
+      <Menu.List>
+        <Menu.Item>Cantaloupe</Menu.Item>
+        <Menu.Item>Dates</Menu.Item>
+      </Menu.List>
+    </Menu.Submenu>
+  </Menu.List>
+</Menu>
 ```
 
 ---
