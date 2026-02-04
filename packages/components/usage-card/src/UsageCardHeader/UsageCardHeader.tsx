@@ -1,5 +1,5 @@
 import React, { forwardRef, type HTMLAttributes, type Ref } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { Tooltip } from '@contentful/f36-tooltip';
 import { type CommonProps } from '@contentful/f36-core';
 import { Subheading } from '@contentful/f36-typography';
@@ -13,7 +13,7 @@ export type UsageCardHeaderProps = {
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 
-function _UsageCardHeader(
+function UsageCardHeaderBase(
   props: UsageCardHeaderProps,
   ref: Ref<HTMLDivElement>,
 ) {
@@ -27,15 +27,17 @@ function _UsageCardHeader(
   } = props;
   const styles = getUsageCardHeaderStyles();
 
+  const hasTooltip = tooltip !== undefined;
+
   return (
     <Subheading
       {...otherProps}
       ref={ref}
-      className={cx(styles.usageCardHeader(tooltip), className)}
+      className={cx(styles.usageCardHeader(hasTooltip), className)}
       testId={testId}
     >
       {title}
-      {tooltip && (
+      {hasTooltip && (
         <Tooltip content={tooltip} className={styles.tooltip} placement="top">
           <InfoIcon className={styles.infoIcon} size="medium" />
         </Tooltip>
@@ -46,4 +48,6 @@ function _UsageCardHeader(
   );
 }
 
-export const UsageCardHeader = forwardRef(_UsageCardHeader);
+UsageCardHeaderBase.displayName = 'UsageCardHeader';
+
+export const UsageCardHeader = forwardRef(UsageCardHeaderBase);

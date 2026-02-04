@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 import type * as CSS from 'csstype';
 
 import type {
@@ -67,7 +67,7 @@ const GRID_DEFAULT_TAG = 'div';
 export type GridProps<E extends React.ElementType = typeof GRID_DEFAULT_TAG> =
   PolymorphicProps<GridInternalProps, E>;
 
-function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
+function GridBase<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
   {
     alignContent,
     alignItems,
@@ -83,9 +83,10 @@ function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
     rowGap = 'none',
     rows = 'auto',
     as,
+    ['data-test-id']: testId,
     ...otherProps
   }: GridProps<E>,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLElement>,
 ) {
   const handleGridTemplate = (value?: string | number) => {
     if (typeof value === 'number') {
@@ -101,6 +102,7 @@ function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
 
   return (
     <Element
+      data-test-id={testId}
       {...boxProps}
       className={cx(
         css({
@@ -126,9 +128,9 @@ function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
   );
 }
 
-_Grid.displayName = 'Grid';
+GridBase.displayName = 'Grid';
 
-export const Grid: PolymorphicComponent<
+export const Grid = React.forwardRef(GridBase) as PolymorphicComponent<
   ExpandProps<GridInternalProps>,
   typeof GRID_DEFAULT_TAG
-> = React.forwardRef(_Grid);
+>;

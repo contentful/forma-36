@@ -15,7 +15,9 @@ export function useScrollSpy(
       entries.forEach((entry) => {
         if (entry?.isIntersecting && entry.target) {
           const entryId = entry.target.getAttribute('id');
-          entryId && setActiveId(entryId);
+          if (entryId) {
+            setActiveId(entryId);
+          }
         }
       });
     }, options);

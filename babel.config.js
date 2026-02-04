@@ -1,13 +1,3 @@
-const emotionPlugin = [
-  'babel-plugin-emotion',
-  {
-    sourceMap: process.env.NODE_ENV !== 'production',
-    autoLabel: process.env.NODE_ENV !== 'production',
-    labelFormat: '[local]',
-    cssPropOptimization: true,
-  },
-];
-
 module.exports = (api) => {
   const isTest = api.env('test');
   if (isTest) {
@@ -24,11 +14,31 @@ module.exports = (api) => {
         '@babel/preset-env',
         ['@babel/preset-typescript', { allExtensions: true, isTSX: true }],
       ],
-      plugins: [emotionPlugin],
+      plugins: [
+        [
+          '@emotion',
+          {
+            sourceMap: true,
+            autoLabel: 'dev-only',
+            labelFormat: '[local]',
+            cssPropOptimization: true,
+          },
+        ],
+      ],
     };
   } else {
     return {
-      plugins: [emotionPlugin],
+      plugins: [
+        [
+          '@emotion',
+          {
+            sourceMap: true,
+            autoLabel: 'dev-only',
+            labelFormat: '[local]',
+            cssPropOptimization: true,
+          },
+        ],
+      ],
     };
   }
 };

@@ -44,7 +44,7 @@ export type RelativeDateTimeProps = PropsWithHTMLElement<
   'time'
 >;
 
-const _RelativeDateTime = (
+const RelativeDateTimeBase = (
   {
     date,
     baseDate,
@@ -86,8 +86,10 @@ const _RelativeDateTime = (
   );
 };
 
+RelativeDateTimeBase.displayName = 'RelativeDateTime';
+
 /**
  * The RelativeDateTime will show a `date` relative to "now" or to the `baseDate`
  * (e.g. in a day, in one month, one month ago, etc).
  */
-export const RelativeDateTime = React.forwardRef(_RelativeDateTime);
+export const RelativeDateTime = React.forwardRef(RelativeDateTimeBase);

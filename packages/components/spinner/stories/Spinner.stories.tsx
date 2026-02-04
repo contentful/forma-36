@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryFn, StoryObj, Meta } from '@storybook/react-vite';
 import { SectionHeading, Subheading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
@@ -18,24 +18,37 @@ export default {
   title: 'Components/Spinner',
 } as Meta;
 
-export const Default: Story<SpinnerInternalProps> = (args) => {
-  return <Spinner {...args} />;
+export const Default: StoryObj<SpinnerInternalProps> = {
+  render: (args) => {
+    return <Spinner {...args} />;
+  },
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['large', 'medium', 'small'],
+    },
+    variant: {
+      control: 'select',
+      options: ['primary', 'default', 'white'],
+    },
+  },
+  args: {
+    size: 'large',
+    variant: 'primary',
+  },
 };
 
-Default.args = {
-  size: 'large',
-  variant: 'primary',
+export const WithText: StoryObj<SpinnerInternalProps> = {
+  render: () => {
+    return (
+      <Flex marginBottom="spacingM">
+        Loading <Spinner />
+      </Flex>
+    );
+  },
 };
 
-export const WithText: Story<SpinnerInternalProps> = (args) => {
-  return (
-    <>
-      Loading <Spinner {...args} />
-    </>
-  );
-};
-
-export const Overview: Story = () => {
+export const Overview: StoryFn = () => {
   return (
     <>
       <SectionHeading as="h3" marginBottom="spacingS">

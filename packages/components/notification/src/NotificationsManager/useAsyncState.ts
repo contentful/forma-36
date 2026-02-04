@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 /**
  * An asyncronous state hook.
@@ -16,12 +16,12 @@ export function useAsyncState<ValueType>(
   const ref = useRef<ValueType>(value);
   const [, forceUpdate] = useState(false);
 
-  const setState = (newState: ValueType) => {
+  const setState = useCallback((newState: ValueType) => {
     if (!Object.is(ref.current, newState)) {
       ref.current = newState;
       forceUpdate((state) => !state);
     }
-  };
+  }, []);
 
   return [ref, setState];
 }

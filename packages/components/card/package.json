@@ -1,29 +1,29 @@
 {
   "name": "@contentful/f36-card",
-  "version": "5.6.0",
+  "version": "6.2.0",
   "description": "Forma 36: Card components",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-asset": "^5.6.0",
-    "@contentful/f36-badge": "^5.6.0",
-    "@contentful/f36-button": "^5.6.0",
-    "@contentful/f36-core": "^5.6.0",
-    "@contentful/f36-drag-handle": "^5.6.0",
-    "@contentful/f36-icon": "^5.6.0",
-    "@contentful/f36-icons": "^5.6.0",
-    "@contentful/f36-menu": "^5.6.0",
-    "@contentful/f36-skeleton": "^5.6.0",
-    "@contentful/f36-tokens": "^5.1.0",
-    "@contentful/f36-tooltip": "^5.6.0",
-    "@contentful/f36-typography": "^5.6.0",
-    "emotion": "^10.0.17",
+    "@contentful/f36-asset": "^6.2.0",
+    "@contentful/f36-badge": "^6.2.0",
+    "@contentful/f36-button": "^6.2.0",
+    "@contentful/f36-core": "^6.2.0",
+    "@contentful/f36-drag-handle": "^6.2.0",
+    "@contentful/f36-icon": "^6.2.0",
+    "@contentful/f36-icons": "^6.2.0",
+    "@contentful/f36-menu": "^6.2.0",
+    "@contentful/f36-skeleton": "^6.2.0",
+    "@contentful/f36-tokens": "^6.1.0",
+    "@contentful/f36-tooltip": "^6.2.0",
+    "@contentful/f36-typography": "^6.2.0",
+    "@emotion/css": "^11.13.5",
     "truncate": "^3.0.0"
   },
   "peerDependencies": {
-    "react": ">=16.8",
-    "react-dom": ">=16.8"
+    "react": ">=19.1.0",
+    "react-dom": ">=19.1.0"
   },
   "license": "MIT",
   "files": [

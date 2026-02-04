@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { Tooltip } from '@contentful/f36-tooltip';
 import { Text } from '@contentful/f36-typography';
 import { Skeleton } from '@contentful/f36-skeleton';

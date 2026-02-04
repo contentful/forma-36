@@ -30,7 +30,7 @@ type NavigationButtonsProps = {
    */
   previousAriaLabel?: string;
 };
-export interface PaginationProps extends CommonProps {
+export interface BasePaginationProps extends CommonProps {
   /**
    * Sets which page is active on the Pagination
    * @default 0
@@ -47,10 +47,6 @@ export interface PaginationProps extends CommonProps {
    * @default 20
    */
   pageLength?: number;
-  /**
-   * Total amount of items the pagination is applied to.
-   */
-  totalItems?: number;
   /**
    * Sets if the View per page selector is shown
    * @default false
@@ -87,7 +83,29 @@ export interface PaginationProps extends CommonProps {
   navigationButtonsProps?: NavigationButtonsProps;
 }
 
-function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
+type WithTotalItemsAndLabelOrNot =
+  | {
+      /**
+       * Total amount of items the pagination is applied to.
+       */
+      totalItems: number;
+      /**
+       * Label shown when the `totalItems` is provided.
+       * @default `of ${totalItems} items`
+       */
+      totalItemsLabel?: (totalItems: number) => string;
+    }
+  | {
+      totalItems?: never;
+      totalItemsLabel?: never;
+    };
+
+export type PaginationProps = BasePaginationProps & WithTotalItemsAndLabelOrNot;
+
+function PaginationBase(
+  props: PaginationProps,
+  ref: React.Ref<HTMLDivElement>,
+) {
   const {
     className,
     onPageChange,
@@ -106,6 +124,7 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
       nextAriaLabel: 'To next page',
       previousAriaLabel: 'To previous page',
     },
+    totalItemsLabel = (totalItems: number) => `of ${totalItems} items`,
     totalItems,
     onViewPerPageChange,
     ...otherProps
@@ -120,6 +139,7 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
     itemsPerPage,
     pageLength,
     isLastPage,
+    totalItemsLabel,
   });
 
   return (
@@ -183,6 +203,6 @@ function _Pagination(props: PaginationProps, ref: React.Ref<HTMLDivElement>) {
   );
 }
 
-_Pagination.displayName = 'Pagination';
+PaginationBase.displayName = 'Pagination';
 
-export const Pagination = React.forwardRef(_Pagination);
+export const Pagination = React.forwardRef(PaginationBase);

@@ -5,13 +5,16 @@ import { tokens } from '../utils/colorTokens';
 import { ColorBox } from './ColorBox';
 
 export function A11yColors() {
-  const listOfColors: string[] = Object.values(tokens).reduce((acc, colors) => {
-    const tokenNames = Object.keys(colors)
-      .filter((color) => !color.includes('color'))
-      .map((color) => color.replace('-', ''));
+  const listOfColors: string[] = Object.entries(tokens).reduce(
+    (acc, [, colors]) => {
+      const tokenNames = Object.keys(colors)
+        .filter((color) => !color.includes('color'))
+        .map((color) => color.replace('-', ''));
 
-    return [...acc, ...tokenNames];
-  }, []);
+      return [...acc, ...tokenNames];
+    },
+    [] as string[],
+  );
 
   return (
     <Grid columns={9} rowGap="spacingM" marginBottom="spacingL">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProgressStepper } from '@contentful/f36-progress-stepper';
+import { ProgressStepper } from '@contentful/f36-components';
 
 export default function ProgressStepperVerticalExample() {
   return (

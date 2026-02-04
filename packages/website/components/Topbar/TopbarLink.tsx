@@ -1,13 +1,12 @@
 import React from 'react';
-import { css, cx } from 'emotion';
-import Link from 'next/link';
+import { css, cx } from '@emotion/css';
 import { Text } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
+import { InternalLink } from '../InternalLink';
 
 const styles = {
   navListLink: css({
     color: tokens.gray900,
-    textDecoration: 'none',
 
     '&:hover': {
       textDecoration: 'underline',
@@ -21,10 +20,9 @@ const styles = {
 
 export function TopbarLink({ href, label, isActive = false }) {
   return (
-    <Link href={href} passHref>
+    <InternalLink href={href} className={styles.navListLink}>
       <Text
-        as="a"
-        className={cx(styles.navListLink, { [styles.active]: isActive })}
+        className={cx({ [styles.active]: isActive })}
         fontSize="fontSizeL"
         lineHeight="lineHeightL"
         fontWeight="fontWeightDemiBold"
@@ -32,6 +30,6 @@ export function TopbarLink({ href, label, isActive = false }) {
       >
         {label}
       </Text>
-    </Link>
+    </InternalLink>
   );
 }

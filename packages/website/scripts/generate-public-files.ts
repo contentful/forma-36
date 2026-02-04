@@ -38,16 +38,14 @@ async function generateSitemap() {
   </urlset>
 `;
 
-  const formatted = prettier.format(sitemap, {
+  const formatted = await prettier.format(sitemap, {
     parser: 'html',
   });
 
-  // eslint-disable-next-line no-sync
   writeFileSync('public/sitemap.xml', formatted);
 }
 
 async function generateRobots() {
-  // eslint-disable-next-line no-sync
   writeFileSync(
     'public/robots.txt',
     `# *

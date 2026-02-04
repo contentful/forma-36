@@ -1,10 +1,10 @@
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import React from 'react';
 import { Box, Stack, type ExpandProps } from '@contentful/f36-core';
 import getStyles from './ButtonGroup.styles';
 import type { ButtonGroupProps } from './types';
 
-function _ButtonGroup(
+function ButtonGroupBase(
   props: ExpandProps<ButtonGroupProps>,
   ref: React.Ref<HTMLDivElement>,
 ) {
@@ -40,21 +40,23 @@ function _ButtonGroup(
       className={cx(styles.buttonGroup, className)}
     >
       {React.Children.map(children, (child, key) => {
-        if (!child) {
+        if (!React.isValidElement(child)) {
           return null;
         }
-        return React.cloneElement(child as React.ReactElement, {
+        // Only pass className if child.props has className property
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const { className: childClassName, ...childProps }: any =
+          child.props || {};
+        return React.cloneElement(child, {
+          ...childProps,
           key,
-          className: cx(
-            styles.groupContent,
-            (child as React.ReactElement).props.className,
-          ),
+          className: cx(styles.groupContent, childClassName ?? ''),
         });
       })}
     </Box>
   );
 }
 
-_ButtonGroup.displayName = 'ButtonGroup';
+ButtonGroupBase.displayName = 'ButtonGroup';
 
-export const ButtonGroup = React.forwardRef(_ButtonGroup);
+export const ButtonGroup = React.forwardRef(ButtonGroupBase);

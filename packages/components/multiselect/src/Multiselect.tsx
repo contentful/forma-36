@@ -1,5 +1,5 @@
 import React, { useRef, useState, useCallback, useMemo } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 import { mergeRefs, type CommonProps, Flex } from '@contentful/f36-core';
 import { Button, IconButton, type ButtonProps } from '@contentful/f36-button';
@@ -8,14 +8,16 @@ import { CaretDownIcon, XIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover, type PopoverProps } from '@contentful/f36-popover';
 import { Subheading } from '@contentful/f36-typography';
-import { Tooltip } from '@contentful/f36-tooltip';
 
 import { getMultiselectStyles } from './Multiselect.styles';
-import { MultiselectOption, MultiselectOptionProps } from './MultiselectOption';
-import FocusLock from 'react-focus-lock';
+import { MultiselectOption } from './MultiselectOption';
 
 import type { MultiselectSearchProps as SearchProps } from './MultiselectSearch';
 import { MultiselectSearch } from './MultiselectSearch';
+import {
+  MultiselectContextProvider,
+  MultiselectContextType,
+} from './MultiselectContext';
 
 type ClearButtonProps = {
   /**
@@ -118,28 +120,6 @@ export interface MultiselectProps extends CommonProps {
   clearButtonProps?: ClearButtonProps;
 }
 
-// Scan through the whole hierachy until `filter` returns true and apply `transform`
-// Inspired from https://stackoverflow.com/a/70676868/17269164
-const iterateOverChildren = (
-  children: React.ReactNode,
-  filter: (child: React.ReactElement) => boolean,
-  callback: (child: React.ReactElement) => React.ReactElement | void,
-): React.ReactNode => {
-  return React.Children.map(children, (child) => {
-    // equal to (if (child == null || typeof child == 'string'))
-    if (!React.isValidElement(child)) return child;
-    if (filter(child)) {
-      return callback(child);
-    }
-    const childChildren = iterateOverChildren(
-      child.props.children,
-      filter,
-      callback,
-    );
-    return React.cloneElement(child, { children: childChildren } as unknown);
-  });
-};
-
 // Scan through the whole hierachy to count the number of children where `filter` returns true
 const countMatchingChildren = (
   children: React.ReactNode,
@@ -147,10 +127,11 @@ const countMatchingChildren = (
 ): number => {
   let counter = 0;
   React.Children.forEach(children, (child) => {
-    // equal to (if (child == null || typeof child == 'string'))
     if (!React.isValidElement(child)) return;
-    if (!filter(child)) {
-      counter += countMatchingChildren(child.props.children, filter);
+    // Narrow props to include optional children for recursive descent
+    const el = child as React.ReactElement<{ children?: React.ReactNode }>;
+    if (!filter(el)) {
+      counter += countMatchingChildren(el.props.children, filter);
     } else {
       counter += 1;
     }
@@ -158,7 +139,10 @@ const countMatchingChildren = (
   return counter;
 };
 
-function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
+function MultiselectBase(
+  props: MultiselectProps,
+  ref: React.Ref<HTMLDivElement>,
+) {
   const {
     className,
     startIcon,
@@ -255,73 +239,50 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
     [children],
   );
 
-  // clones and enriches the multiselect options
-  const enrichOptions = React.useCallback(
-    (children: React.ReactNode): React.ReactNode => {
-      return iterateOverChildren(
-        children,
-        (child) => child.type === MultiselectOption,
-        (child) => {
-          const onSelectItem = (event: React.ChangeEvent<HTMLInputElement>) => {
-            focusList();
-            child.props?.onSelectItem(event);
-          };
-          return React.cloneElement(child, {
-            searchValue,
-            onSelectItem,
-          } as Partial<MultiselectOptionProps>);
-        },
-      );
-    },
-    [searchValue, focusList],
+  const contextValue: MultiselectContextType = useMemo(
+    () => ({
+      focusList,
+      searchValue,
+    }),
+    [focusList, searchValue],
   );
 
   return (
-    <div
-      data-test-id={testId}
-      className={cx(styles.multiselect, className)}
-      ref={ref}
-    >
-      <Popover
-        renderOnlyWhenOpen={false}
-        isFullWidth
-        {...popoverProps}
-        // popoverProps should never overwrite the internal opening logic
-        isOpen={isOpen}
-        onClose={() => {
-          setIsOpen(false);
-          if (onClose) {
-            onClose();
-          }
-        }}
+    <MultiselectContextProvider value={contextValue}>
+      <div
+        data-test-id={testId}
+        className={cx(styles.multiselect, className)}
+        ref={ref}
       >
-        <Flex alignItems="center">
-          <Popover.Trigger>
-            <Button
-              aria-label={toggleButtonAriaLabel}
-              ref={toggleRef}
-              onClick={() => setIsOpen(!isOpen)}
-              startIcon={startIcon}
-              endIcon={<CaretDownIcon />}
-              isFullWidth
-              className={styles.triggerButton}
-              {...props.triggerButtonProps}
-            >
-              {renderMultiselectLabel()}
-            </Button>
-          </Popover.Trigger>
-          {showClearButton && (
-            <div className={styles.clearSelectionButton}>
-              <Tooltip
-                content={
-                  clearButtonProps.tooltip
-                    ? clearButtonProps.tooltip
-                    : 'Clear selection'
-                }
-                showDelay={800}
-                placement="top"
-                as="div"
+        <Popover
+          renderOnlyWhenOpen={false}
+          isFullWidth
+          {...popoverProps}
+          // popoverProps should never overwrite the internal opening logic
+          isOpen={isOpen}
+          onClose={() => {
+            setIsOpen(false);
+            if (onClose) {
+              onClose();
+            }
+          }}
+        >
+          <Flex alignItems="center">
+            <Popover.Trigger ref={toggleRef}>
+              <Button
+                aria-label={toggleButtonAriaLabel}
+                onClick={() => setIsOpen(!isOpen)}
+                startIcon={startIcon}
+                endIcon={<CaretDownIcon />}
+                isFullWidth
+                className={styles.triggerButton}
+                {...props.triggerButtonProps}
               >
+                {renderMultiselectLabel()}
+              </Button>
+            </Popover.Trigger>
+            {showClearButton && (
+              <div className={styles.clearSelectionButton}>
                 <IconButton
                   onClick={handleClearSelection}
                   icon={<XIcon />}
@@ -331,22 +292,30 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                       : 'Clear selection'
                   }
                   size="small"
+                  withTooltip
+                  tooltipProps={{
+                    content: clearButtonProps.tooltip
+                      ? clearButtonProps.tooltip
+                      : 'Clear selection',
+
+                    showDelay: 800,
+                    placement: 'top',
+                    as: 'div',
+                  }}
                 />
-              </Tooltip>
-            </div>
-          )}
-        </Flex>
-        <Popover.Content
-          ref={mergeRefs(listRef, internalListRef)}
-          className={cx(
-            styles.content(listMaxHeight),
-            popoverProps.className,
-            styles.container,
-          )}
-          testId="cf-multiselect-container"
-          onBlur={() => onBlur?.()}
-        >
-          <FocusLock focusOptions={{ preventScroll: true }} returnFocus={true}>
+              </div>
+            )}
+          </Flex>
+          <Popover.Content
+            ref={mergeRefs(listRef, internalListRef)}
+            className={cx(
+              styles.content(listMaxHeight),
+              popoverProps.className,
+              styles.container,
+            )}
+            testId="cf-multiselect-container"
+            onBlur={() => onBlur?.()}
+          >
             {hasSearch && (
               <MultiselectSearch
                 {...searchProps}
@@ -359,7 +328,7 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
 
             {!isLoading && optionsLength > 0 && (
               <ul className={styles.list} data-test-id="cf-multiselect-items">
-                {hasSearch ? enrichOptions(children) : children}
+                {children}
               </ul>
             )}
 
@@ -368,10 +337,10 @@ function _Multiselect(props: MultiselectProps, ref: React.Ref<HTMLDivElement>) {
                 {noMatchesMessage}
               </Subheading>
             )}
-          </FocusLock>
-        </Popover.Content>
-      </Popover>
-    </div>
+          </Popover.Content>
+        </Popover>
+      </div>
+    </MultiselectContextProvider>
   );
 }
 
@@ -383,8 +352,5 @@ const ListItemLoadingState = () => {
   );
 };
 
-/**
- * The Multiselect is a component that will allow a user to select multiple items.
- * It has an optional
- */
-export const Multiselect = React.forwardRef(_Multiselect);
+MultiselectBase.displayName = 'Multiselect';
+export const Multiselect = React.forwardRef(MultiselectBase);

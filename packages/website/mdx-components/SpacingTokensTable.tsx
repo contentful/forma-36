@@ -1,9 +1,20 @@
 import React from 'react';
 import { Box, Table } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
-import spacing from '@contentful/f36-tokens/src/tokens/spacing';
 
 export function SpacingTokensTable() {
+  const spacingTokens = {
+    'spacing-2xs': tokens.spacing2Xs,
+    'spacing-xs': tokens.spacingXs,
+    'spacing-s': tokens.spacingS,
+    'spacing-m': tokens.spacingM,
+    'spacing-l': tokens.spacingL,
+    'spacing-xl': tokens.spacingXl,
+    'spacing-2xl': tokens.spacing2Xl,
+    'spacing-3xl': tokens.spacing3Xl,
+    'spacing-4xl': tokens.spacing4Xl,
+  };
+
   return (
     <Table>
       <Table.Head>
@@ -15,8 +26,8 @@ export function SpacingTokensTable() {
         </Table.Row>
       </Table.Head>
       <Table.Body>
-        {Object.keys(spacing).map((token) => {
-          const value = spacing[token];
+        {Object.keys(spacingTokens).map((token) => {
+          const value = spacingTokens[token];
           const valuePx = parseFloat(value) * 16;
           const tokenName = token.replace(/-\d?[a-z]{1}/, (match) =>
             match.toUpperCase().replace('-', ''),

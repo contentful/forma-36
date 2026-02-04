@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 
 import { Card } from './Card';
@@ -22,13 +23,54 @@ describe('Card', () => {
 
   it('sets aria-pressed when rendered as button with isSelected', () => {
     render(
-      <Card as="button" isSelected>
+      <Card as="button" onClick={jest.fn()} isSelected>
         Toggle
       </Card>,
     );
 
     const card = screen.getByTestId('cf-ui-card');
     expect(card.getAttribute('aria-pressed')).toBe('true');
+  });
+
+  it('does not rerender children when state changes', async () => {
+    const StatefulCard = () => {
+      const [, setSelectedFruit] = useState<string>('');
+      const inputRef = useRef(null);
+
+      const selectItem = () => {
+        inputRef.current.value = 'Apple 🍎';
+        setSelectedFruit('Apple 🍎');
+      };
+
+      return (
+        <Card>
+          <input ref={inputRef} />
+          <button onClick={() => selectItem()} type="button">
+            select fruit
+          </button>
+        </Card>
+      );
+    };
+
+    const user = userEvent.setup();
+    render(<StatefulCard />);
+
+    await user.click(screen.getByText('select fruit'));
+    expect(screen.getByRole('textbox')).toHaveValue('Apple 🍎');
+  });
+
+  it('calls onClick when rendered as a link', async () => {
+    const onClick = jest.fn();
+    const user = userEvent.setup();
+    render(
+      <Card as="a" onClick={onClick}>
+        Card as link
+      </Card>,
+    );
+
+    await user.click(screen.getByText('Card as link'));
+
+    expect(onClick).toHaveBeenCalled();
   });
 
   it('has no a11y issues', async () => {

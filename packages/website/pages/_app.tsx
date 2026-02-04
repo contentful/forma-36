@@ -1,6 +1,7 @@
 import React from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import Script from 'next/script';
 import { GlobalStyles as FormaGlobalStyles } from '@contentful/f36-components';
 import { GlobalStyles } from '../components/GlobalStyles';
 import { SessionProvider } from 'next-auth/react';
@@ -25,12 +26,13 @@ function MyApp({ Component, pageProps }: AppProps<{ session: Session }>) {
           content="contentful, design, design-system, react, component library"
         />
         <link rel="icon" href="/favicon.png" />
-        <script
-          async
-          type="text/javascript"
-          src="https://cmp.osano.com/16BcqiRsJId123ATa/fcd81040-24a4-4474-9a22-f295cbec8600/osano.js"
-        ></script>
       </Head>
+
+      <Script
+        async
+        type="text/javascript"
+        src="https://cmp.osano.com/16BcqiRsJId123ATa/fcd81040-24a4-4474-9a22-f295cbec8600/osano.js"
+      ></Script>
 
       <SessionProvider session={pageProps.session}>
         <Component {...pageProps} />

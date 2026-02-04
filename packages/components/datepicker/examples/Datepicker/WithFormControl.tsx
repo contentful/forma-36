@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Datepicker } from '@contentful/f36-components';
-import { FormControl } from '@contentful/f36-forms';
+import { Datepicker, FormControl } from '@contentful/f36-components';
 
 export default function WithFormControlExample() {
   const [selectedDay, setSelectedDay] = useState(new Date());

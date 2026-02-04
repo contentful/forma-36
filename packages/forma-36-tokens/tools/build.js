@@ -71,16 +71,15 @@ const buildScssTokens = (srcPath, tokens) => {
 };
 
 const buildIndexJS = (srcPath, tokens) => {
-  return fse.outputFile(
-    srcPath,
-    `
-    Object.defineProperty(exports, "__esModule", {
-      value: true
-    });
+  const objectLiteral = JSON.stringify(tokens, null, 2);
+  const cjs = `Object.defineProperty(exports, "__esModule", { value: true });\nconst tokens = ${objectLiteral};\nmodule.exports = tokens;\nmodule.exports.default = tokens;\n`;
+  return fse.outputFile(srcPath, cjs);
+};
 
-    module.exports = ${JSON.stringify(tokens, null, 2)}
-    `,
-  );
+const buildIndexMJS = (srcPath, tokens) => {
+  const objectLiteral = JSON.stringify(tokens, null, 2);
+  const esm = `// ESM build for @contentful/f36-tokens\nconst tokens = ${objectLiteral};\nexport default tokens;\nexport { tokens };\n`;
+  return fse.outputFile(srcPath, esm);
 };
 
 function createUnionFromKeys(keys, typename) {
@@ -232,7 +231,7 @@ const generateIndex = (paths, extension) => {
   let allTokens = {};
 
   paths.forEach((srcPath) => {
-    const tokens = require(path.resolve(srcPath)); // eslint-disable-line
+    const tokens = require(path.resolve(srcPath));
 
     buildJson(srcPath, tokens);
     buildCssTokens(srcPath, tokens);
@@ -244,5 +243,6 @@ const generateIndex = (paths, extension) => {
   allTokens = camelCaseKeys(allTokens);
 
   await buildIndexJS('dist/index.js', allTokens);
+  await buildIndexMJS('dist/index.mjs', allTokens);
   await buildIndexDTS('dist/index.d.ts', allTokens);
 })();

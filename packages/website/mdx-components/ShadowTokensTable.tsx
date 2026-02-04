@@ -1,9 +1,15 @@
 import React from 'react';
 import { Box, Table } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
-import boxShadowTokens from '@contentful/f36-tokens/src/tokens/box-shadows/box-shadows';
 
 export function ShadowTokensTable() {
+  const shadowTokens = {
+    'box-shadow-positive': tokens.boxShadowPositive,
+    'box-shadow-default': tokens.boxShadowDefault,
+    'box-shadow-heavy': tokens.boxShadowHeavy,
+    'inset-box-shadow-default': tokens.insetBoxShadowDefault,
+  };
+
   return (
     <Table>
       <Table.Head>
@@ -14,8 +20,8 @@ export function ShadowTokensTable() {
         </Table.Row>
       </Table.Head>
       <Table.Body>
-        {Object.keys(boxShadowTokens).map((token) => {
-          const value = boxShadowTokens[token];
+        {Object.keys(shadowTokens).map((token) => {
+          const value = shadowTokens[token];
           const tokenName = token.replace(/-\d?[a-z]/g, (match) =>
             match.toUpperCase().replace('-', ''),
           );
@@ -36,7 +42,7 @@ export function ShadowTokensTable() {
                     width: '100px',
                     height: '100px',
                     border: `1px solid ${tokens.gray100}`,
-                    boxShadow: tokens[tokenName],
+                    boxShadow: value,
                   }}
                 />
               </Table.Cell>

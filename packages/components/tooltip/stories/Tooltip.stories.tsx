@@ -3,6 +3,8 @@ import { Heading, Paragraph, SectionHeading } from '@contentful/f36-typography';
 import { Tooltip } from '../src/Tooltip';
 import { TextLink } from '@contentful/f36-text-link';
 import { Flex } from '@contentful/f36-core';
+import { StarIcon } from '@contentful/f36-icons';
+import { Icon } from '@contentful/f36-icon';
 import tokens from '@contentful/f36-tokens';
 
 export default {
@@ -47,9 +49,13 @@ export const AutoPlacement = (args: { content: string }) => {
   return (
     <div
       style={{
-        height: '300px',
         width: '100%',
+        height: '300px',
+        display: 'flex',
+        alignItems: 'center',
         overflowY: 'scroll',
+        border: '1px dashed gray',
+        borderRadius: '3px',
       }}
     >
       <div
@@ -59,7 +65,7 @@ export const AutoPlacement = (args: { content: string }) => {
           justifyContent: 'center',
           alignItems: 'center',
           height: '600px',
-          width: '100%',
+          width: '300px',
         }}
       >
         <Tooltip {...args}>
@@ -71,7 +77,8 @@ export const AutoPlacement = (args: { content: string }) => {
 };
 
 AutoPlacement.args = {
-  place: 'auto',
+  placement: 'auto',
+  isVisible: true,
   content: (
     <>
       I will reposition automatically
@@ -81,7 +88,7 @@ AutoPlacement.args = {
   ),
 };
 
-const AutoPlacementSourceCode = `<Tooltip place="auto" content={<>I will reposition automatically<br/>when you scroll</>}>
+const AutoPlacementSourceCode = `<Tooltip placement="auto" content={<>I will reposition automatically<br/>when you scroll</>}>
   <TextLink>Hover me</TextLink>
 </Tooltip>`;
 
@@ -93,12 +100,23 @@ AutoPlacement.parameters = {
   },
 };
 
+export const TooltipTriggerElements = () => {
+  return (
+    <div>
+      <Tooltip content="Tooltip content">
+        <Icon as={StarIcon} />
+      </Tooltip>
+    </div>
+  );
+};
+
 export const Overview = () => {
   return (
     <>
       <SectionHeading as="h3" marginBottom="spacingS">
         Tooltip disabled
       </SectionHeading>
+
       <Flex marginBottom="spacingS">
         <Tooltip content="I am a Tooltip 🙌" maxWidth={360} placement="top">
           <TextLink href="/" isDisabled>
@@ -108,14 +126,14 @@ export const Overview = () => {
       </Flex>
 
       <SectionHeading as="h3" marginBottom="spacingS">
-        Tooltip left
+        Tooltip top
       </SectionHeading>
 
       <Flex marginBottom="spacingS">
         <Tooltip
           content="I am a Tooltip 🙌"
           maxWidth={360}
-          placement="left"
+          placement="top"
           isVisible
         >
           <TextLink href="/" isDisabled={false}>
@@ -142,14 +160,14 @@ export const Overview = () => {
       </Flex>
 
       <SectionHeading as="h3" marginBottom="spacingS">
-        Tooltip top
+        Tooltip left
       </SectionHeading>
 
       <Flex marginBottom="spacingS">
         <Tooltip
           content="I am a Tooltip 🙌"
           maxWidth={360}
-          placement="top"
+          placement="left"
           isVisible
         >
           <TextLink href="/" isDisabled={false}>
@@ -182,31 +200,21 @@ export const WithDelays = () => {
   return (
     <>
       <SectionHeading as="h3" marginBottom="spacingS">
-        Show Delay
+        Show Delay (1s)
       </SectionHeading>
 
       <Flex marginBottom="spacingS">
-        <Tooltip content="I am a Tooltip 🙌" maxWidth={360} showDelay={400}>
-          <TextLink href="/">Hover me</TextLink>
-        </Tooltip>
-      </Flex>
-      <Flex marginBottom="spacingS">
-        <Tooltip content="I am a Tooltip 🙌" maxWidth={360} showDelay={400}>
+        <Tooltip content="I am a Tooltip 🙌" maxWidth={360} showDelay={1000}>
           <TextLink href="/">Hover me</TextLink>
         </Tooltip>
       </Flex>
 
       <SectionHeading as="h3" marginBottom="spacingS">
-        Hide Delay
+        Hide Delay (1s)
       </SectionHeading>
 
       <Flex marginBottom="spacingS">
-        <Tooltip content="I am a Tooltip 🙌" maxWidth={360} hideDelay={400}>
-          <TextLink href="/">Hover me</TextLink>
-        </Tooltip>
-      </Flex>
-      <Flex marginBottom="spacingS">
-        <Tooltip content="I am a Tooltip 🙌" maxWidth={360} hideDelay={400}>
+        <Tooltip content="I am a Tooltip 🙌" maxWidth={360} hideDelay={1000}>
           <TextLink href="/">Hover me</TextLink>
         </Tooltip>
       </Flex>
@@ -223,7 +231,7 @@ export const WithReactElement = () => {
 
       <Flex marginBottom="spacingS">
         <Tooltip
-          label="Render a paragrah with a React Element"
+          label="Render a paragraph with a React Element"
           content={
             <Flex flexDirection="column">
               <Heading style={{ color: tokens.colorWhite }}>

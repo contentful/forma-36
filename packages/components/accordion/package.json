@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-accordion",
-  "version": "5.6.0",
+  "version": "6.2.0",
   "description": "Forma 36: Accordion React Component",
   "license": "MIT",
   "files": [
@@ -20,16 +20,16 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-collapse": "^5.6.0",
-    "@contentful/f36-core": "^5.6.0",
-    "@contentful/f36-icons": "^5.6.0",
-    "@contentful/f36-tokens": "^5.1.0",
-    "@contentful/f36-typography": "^5.6.0",
-    "emotion": "^10.0.17"
+    "@contentful/f36-collapse": "^6.2.0",
+    "@contentful/f36-core": "^6.2.0",
+    "@contentful/f36-icons": "^6.2.0",
+    "@contentful/f36-tokens": "^6.1.0",
+    "@contentful/f36-typography": "^6.2.0",
+    "@emotion/css": "^11.13.5"
   },
   "peerDependencies": {
-    "react": ">=16.8",
-    "react-dom": ">=16.8"
+    "react": ">=19.1.0",
+    "react-dom": ">=19.1.0"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",

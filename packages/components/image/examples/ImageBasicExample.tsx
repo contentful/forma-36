@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image } from '@contentful/f36-image';
+import { Image } from '@contentful/f36-components';
 
 export default function ImageBasicExample() {
   return (

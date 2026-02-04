@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Flex, Box } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
@@ -15,15 +15,15 @@ export default {
     as: { control: { disable: true } },
     className: { control: { disable: true } },
     icon: {
-      control: {
-        options: Object.keys(icons),
-        type: 'select',
-      },
-      defaultValue: icons.ClockIcon,
+      control: 'select',
+      options: Object.keys(icons),
     },
     rel: { control: { disable: true } },
     style: { control: { disable: true } },
     testId: { control: { disable: true } },
+  },
+  args: {
+    icon: icons.ClockIcon,
   },
   component: AssetCard,
   parameters: {
@@ -35,7 +35,7 @@ export default {
 // Cast the icon value to string, maybe there's a Storybook way to do this
 type Args = AssetCardProps & { icon?: string };
 
-export const Default: Story<Args> = (args) => {
+export const Default: StoryObj<Args> = (args) => {
   return <AssetCard {...args} icon={<Icon as={icons[args.icon]} />} />;
 };
 
@@ -46,12 +46,12 @@ Default.args = {
   title: 'Asset title',
 };
 
-const actions: React.ReactNodeArray = [
+const actions: React.ReactNode[] = [
   <MenuItem key="copy">Copy</MenuItem>,
   <MenuItem key="delete">Delete</MenuItem>,
 ];
 
-export const WithLoadingState: Story<Args> = (args) => {
+export const WithLoadingState: StoryObj<AssetCardProps> = (args) => {
   return <AssetCard {...args} icon={<Icon as={icons[args.icon]} />} />;
 };
 
@@ -59,19 +59,21 @@ WithLoadingState.args = {
   isLoading: true,
 };
 
-export const WithCustomBadge: Story<Args> = () => {
-  return (
-    <AssetCard
-      src="https://images.ctfassets.net/iq4lnigp6fgt/72KhxI84kw1SE9gP8gDp7R/c5fa24bdc295a318018aea0ca46e2de8/forma-36-storybook-asset.png?fit=fill&f=top_left&w=200&h=300"
-      title="Asset title"
-      type="image"
-      badge={<Badge variant={'positive'}>active</Badge>}
-    />
-  );
+export const WithCustomBadge: StoryObj<AssetCardProps> = {
+  render: () => {
+    return (
+      <AssetCard
+        src="https://images.ctfassets.net/iq4lnigp6fgt/72KhxI84kw1SE9gP8gDp7R/c5fa24bdc295a318018aea0ca46e2de8/forma-36-storybook-asset.png?fit=fill&f=top_left&w=200&h=300"
+        title="Asset title"
+        type="image"
+        badge={<Badge variant={'positive'}>active</Badge>}
+      />
+    );
+  },
 };
 
-export const Overview: Story<Args> = () => {
-  return (
+export const Overview: StoryObj<AssetCardProps> = {
+  render: () => (
     <>
       <SectionHeading as="h3" marginBottom="spacingS">
         Default
@@ -168,11 +170,11 @@ export const Overview: Story<Args> = () => {
         </Flex>
       </Flex>
     </>
-  );
+  ),
 };
 
-export const DifferentImageSizes: Story<Args> = () => {
-  return (
+export const DifferentImageSizes: StoryObj<Args> = {
+  render: () => (
     <>
       <SectionHeading as="h3" marginBottom="spacingS">
         Default
@@ -288,5 +290,5 @@ export const DifferentImageSizes: Story<Args> = () => {
         />
       </Box>
     </>
-  );
+  ),
 };

@@ -26,7 +26,7 @@ export const NavbarSubmenu = (props: NavbarSubmenuProps) => {
   const styles = getNavbarSubmenuStyles();
 
   return (
-    <Menu.Submenu onOpen={onOpen} onClose={onClose}>
+    <Menu onOpen={onOpen} onClose={onClose}>
       <Menu.SubmenuTrigger>
         <Flex className={styles.navbarMenuItem}>
           {icon && <NavbarItemIcon icon={icon} />}
@@ -36,6 +36,6 @@ export const NavbarSubmenu = (props: NavbarSubmenuProps) => {
       <Menu.List className={styles.menuList} testId={testId}>
         {children}
       </Menu.List>
-    </Menu.Submenu>
+    </Menu>
   );
 };
