@@ -1,5 +1,14 @@
 # Change Log
 
+## 6.3.1
+
+### Patch Changes
+
+- [#3315](https://github.com/contentful/forma-36/pull/3315) [`f74966b`](https://github.com/contentful/forma-36/commit/f74966b449497ae342bf860868507e81a5a51582) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - chore(tooltip): adjust vertical offset
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.1
+
 ## 6.3.0
 
 ### Patch Changes

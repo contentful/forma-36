@@ -1,5 +1,18 @@
 # Change Log
 
+## 6.3.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.3.1
+  - @contentful/f36-core@6.3.1
+  - @contentful/f36-forms@6.3.1
+  - @contentful/f36-icons@6.3.1
+  - @contentful/f36-popover@6.3.1
+  - @contentful/f36-skeleton@6.3.1
+  - @contentful/f36-typography@6.3.1
+
 ## 6.3.0
 
 ### Patch Changes
