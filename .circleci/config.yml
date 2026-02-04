@@ -201,6 +201,7 @@ workflows:
             branches:
               only:
                 - main
+                - v5
 
   f36-link-checker:
     jobs:
@@ -219,6 +220,7 @@ workflows:
             branches:
               only:
                 - main
+                - v5
     jobs:
       - changelog:
           context:
