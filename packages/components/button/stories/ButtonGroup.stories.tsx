@@ -39,7 +39,7 @@ export const basic: Story<ButtonGroupProps> = (args) => {
       <Button>Button</Button>
       <IconButton
         variant="secondary"
-        icon={<CaretDownIcon />}
+        icon={<CaretDownIcon color={tokens.gray900} />}
         aria-label="Open dropdown"
       />
     </ButtonGroup>
@@ -54,7 +54,7 @@ export const spaced: Story<ButtonGroupProps> = (args) => {
       <Button>Button</Button>
       <IconButton
         variant="secondary"
-        icon={<CaretDownIcon />}
+        icon={<CaretDownIcon color={tokens.gray900} />}
         aria-label="Open dropdown"
       />
     </ButtonGroup>
@@ -121,7 +121,7 @@ export const overview: Story<ButtonGroupProps> = () => {
                         <IconButton
                           onClick={onClick}
                           variant={buttonVariant}
-                          icon={<CaretDownIcon />}
+                          icon={<CaretDownIcon color={tokens.gray900} />}
                           aria-label="Open dropdown"
                         />
                       </ButtonGroup>

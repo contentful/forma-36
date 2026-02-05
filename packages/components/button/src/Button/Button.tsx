@@ -73,14 +73,7 @@ function _Button<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
       >
         {React.cloneElement(icon, {
           size: icon.props.size ?? `${size === 'large' ? 'medium' : 'small'}`,
-          color:
-            icon.props.color ??
-            tokens[
-              getIconColorToken(
-                icon.props.variant ?? variant,
-                buttonIconColorByVariant,
-              )
-            ],
+          color: tokens[getIconColorToken(variant, buttonIconColorByVariant)],
         })}
       </Flex>
     );
