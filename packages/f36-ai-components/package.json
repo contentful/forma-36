@@ -1,0 +1,56 @@
+{
+  "name": "@contentful/f36-ai-components",
+  "private": false,
+  "version": "0.0.1-alpha.36",
+  "description": "A collection of components for use in AI applications, such as conversational interfaces.",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "source": "src/index.ts",
+  "sideEffects": false,
+  "browserslist": "extends @contentful/browserslist-config",
+  "scripts": {
+    "build": "tsup"
+  },
+  "dependencies": {
+    "@contentful/f36-button": "^5.6.0",
+    "@contentful/f36-components": "^5.6.0",
+    "@contentful/f36-core": "^5.0.0",
+    "@contentful/f36-forms": "^5.9.0",
+    "@contentful/f36-header": "^5.6.0",
+    "@contentful/f36-icons": "^5.6.0",
+    "@contentful/f36-layout": "^5.6.0",
+    "@contentful/f36-tokens": "^5.0.0",
+    "@contentful/f36-typography": "^5.6.0",
+    "@contentful/f36-utils": "^5.2.0",
+    "@tiptap/extension-document": "^2.26.4",
+    "@tiptap/extension-history": "^2.26.4",
+    "@tiptap/extension-mention": "^2.27.1",
+    "@tiptap/extension-paragraph": "^2.26.4",
+    "@tiptap/extension-placeholder": "^2.26.4",
+    "@tiptap/extension-text": "^2.26.4",
+    "@tiptap/pm": "^2.26.4",
+    "@tiptap/react": "^2.26.4",
+    "@tiptap/suggestion": "^2.27.1",
+    "emotion": "^10.0.17",
+    "react-markdown": "^9.0.0",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/contentful/forma-36.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  }
+}
