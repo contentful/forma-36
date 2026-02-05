@@ -58,6 +58,11 @@ The CI will use the changeset publish method to update the versions on the packa
 
 It also updates the [What's new](https://f36.contentful.com/whats-new) page that we show in our [website](https://f36.contentful.com/whats-new). In order to update the website daily we had to create a custom flow where we group all changes by package.
 
+## Previous major versions
+
+Releases for changes not merged into the `main` branch (i.e. previous major versions) have to be triggered manually through CircleCI by a maintainer.
+For maintainers: look for the _Trigger Pipeline_ button and make sure to select the target branch as _Config Source_.
+
 ## Generating What's new page
 
 What we are doing in this custom flow, is that we store all changesets in a single file from where we later extract the changes to add to the page, that is handled by the CI, on the release job, and uses the [changelog-generate.js](https://github.com/contentful/forma-36/blob/fe934ff657852993ef321348651cbce0a68dc349/scripts/changesets/changelog-generate.js) script file.
