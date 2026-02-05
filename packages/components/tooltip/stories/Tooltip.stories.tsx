@@ -249,3 +249,74 @@ export const WithReactElement = () => {
     </>
   );
 };
+
+export const WithLongContent = () => {
+  const longText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.`;
+
+  const leftAlignedContent = (
+    <div style={{ textAlign: 'left' }}>{longText}</div>
+  );
+
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '60px',
+        padding: '60px',
+        minHeight: '800px',
+      }}
+    >
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Long tooltip content - Top placement
+      </SectionHeading>
+
+      <Flex marginBottom="spacingL">
+        <Tooltip content={leftAlignedContent} maxWidth={350} placement="top">
+          <TextLink href="/">Hover for tooltip above</TextLink>
+        </Tooltip>
+      </Flex>
+
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Long tooltip content - Right placement
+      </SectionHeading>
+
+      <Flex marginBottom="spacingL">
+        <Tooltip content={leftAlignedContent} maxWidth={350} placement="right">
+          <TextLink href="/">Hover for tooltip on right</TextLink>
+        </Tooltip>
+      </Flex>
+
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Long tooltip content - Bottom placement
+      </SectionHeading>
+
+      <Flex marginBottom="spacingL">
+        <Tooltip content={leftAlignedContent} maxWidth={350} placement="bottom">
+          <TextLink href="/">Hover for tooltip below</TextLink>
+        </Tooltip>
+      </Flex>
+
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Long tooltip content - Left placement (narrow)
+      </SectionHeading>
+
+      <Flex marginBottom="spacingL">
+        <Tooltip content={leftAlignedContent} maxWidth={350} placement="left">
+          <TextLink href="/">Hover for tooltip on left (narrow)</TextLink>
+        </Tooltip>
+      </Flex>
+
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Long tooltip content - Left placement (wider)
+      </SectionHeading>
+
+      <Flex marginBottom="spacingL">
+        <Tooltip content={leftAlignedContent} maxWidth={500} placement="left">
+          <TextLink href="/">Hover for tooltip on left (wider)</TextLink>
+        </Tooltip>
+      </Flex>
+    </div>
+  );
+};
