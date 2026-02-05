@@ -1,5 +1,16 @@
 # Change Log
 
+## 5.9.1
+
+### Patch Changes
+
+- [#3322](https://github.com/contentful/forma-36/pull/3322) [`cdf37ce`](https://github.com/contentful/forma-36/commit/cdf37cea24c87ed4e2e46cd9881828924df3ed4e) Thanks [@veu](https://github.com/veu)! - fix(Button): allow custom color or variant for button icons
+
+- Updated dependencies []:
+  - @contentful/f36-core@5.9.1
+  - @contentful/f36-spinner@5.9.1
+  - @contentful/f36-tooltip@5.9.1
+
 ## 5.9.0
 
 ### Patch Changes

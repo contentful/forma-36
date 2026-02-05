@@ -1,12 +1,12 @@
 {
   "name": "@contentful/f36-popover",
-  "version": "5.9.0",
+  "version": "5.9.1",
   "description": "Forma 36: Popover component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^5.9.0",
+    "@contentful/f36-core": "^5.9.1",
     "@contentful/f36-tokens": "^5.1.0",
     "@contentful/f36-utils": "^5.2.0",
     "@popperjs/core": "^2.11.5",

@@ -1,12 +1,12 @@
 {
   "name": "@contentful/f36-text-link",
-  "version": "5.9.0",
+  "version": "5.9.1",
   "description": "Forma 36: TextLink component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^5.9.0",
+    "@contentful/f36-core": "^5.9.1",
     "@contentful/f36-tokens": "^5.1.0",
     "emotion": "^10.0.17"
   },
@@ -15,7 +15,7 @@
     "react-dom": ">=16.8"
   },
   "devDependencies": {
-    "@contentful/f36-icons": "^5.9.0"
+    "@contentful/f36-icons": "^5.9.1"
   },
   "license": "MIT",
   "files": [
