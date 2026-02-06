@@ -48,6 +48,11 @@ const veggies: Produce[] = [
   { id: 4, name: 'Pepper 🫑' },
 ];
 
+const longTag: Produce = {
+  id: 13,
+  name: 'A fruit with a very long name that should not overflow outside of the container',
+};
+
 const groceryList: GroceryList[] = [
   {
     groupTitle: 'Fruit',
@@ -106,6 +111,51 @@ export const Basic = () => {
   );
 };
 Basic.args = {
+  placeholder: 'Search your favorite fruit',
+};
+
+export const BasicFullWidthList = () => {
+  const items = [...fruitStrings, longTag.name];
+  const [selectedFruit, setSelectedFruit] = useState<string>('');
+  const [filteredItems, setFilteredItems] = useState(items);
+
+  const handleInputValueChange = (value: string) => {
+    const newFilteredItems = items.filter((item) =>
+      item.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredItems(newFilteredItems);
+    action('onInputValueChange')(value);
+  };
+
+  const handleSelectItem = (item: string) => {
+    setSelectedFruit(item);
+    action('onSelectItem')(item);
+  };
+
+  return (
+    <Stack
+      style={{ width: '480px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      {/* It’s not necessary to pass "Fruit" (type of one item)  */}
+      <Autocomplete<string>
+        isOpen
+        placeholder="select your favorite fruit"
+        items={filteredItems}
+        onInputValueChange={handleInputValueChange}
+        onSelectItem={handleSelectItem}
+        onFocus={(e) => action('onFocus')(e)}
+        onBlur={(e) => action('onBlur')(e)}
+        listWidth="full"
+      />
+
+      <Paragraph>Selected fruit: {selectedFruit}</Paragraph>
+    </Stack>
+  );
+};
+BasicFullWidthList.args = {
   placeholder: 'Search your favorite fruit',
 };
 
