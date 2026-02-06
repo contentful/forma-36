@@ -5,6 +5,7 @@ import { getStyles } from './AIChatHistory.styles';
 import { AIChatHistoryTabs } from './AIChatHistoryTabs';
 import { AIChatHistoryThread } from './AIChatHistoryThread';
 import { AIChatHistoryEmptyState } from '../AIChatHistoryEmptyState';
+import _ from 'lodash';
 
 export interface MessageThread {
   id: string;
@@ -30,6 +31,8 @@ export type MessageGroups =
 export interface AIChatHistoryProps extends CommonProps {
   threads: MessageThread[];
   groups?: MessageGroups;
+  /** Indicates whether the component is in a loading state, showing skeletons instead of content */
+  isLoading?: boolean;
 }
 
 function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
@@ -38,6 +41,7 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
     testId = 'cf-ui-ai-chat-history',
     threads,
     groups,
+    isLoading = false,
     ...otherProps
   } = props;
 
@@ -108,12 +112,13 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
 
   const styles = getStyles({ hasGroups });
 
-  const renderThread = (thread: MessageThread) => {
+  const renderThread = (thread: MessageThread, isLoading?: boolean) => {
     return (
       <AIChatHistoryThread
         key={thread.id}
         thread={thread}
-        testId={`${testId}-thread-${thread.id}`}
+        testId={`${testId}-loading-thread-${thread.id}`}
+        isLoading={isLoading}
       />
     );
   };
@@ -156,7 +161,7 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
           onTabClick={handleTabClick}
           testId={`${testId}-tabs`}
         />
-        {filteredThreads.length === 0 ? (
+        {!isLoading && filteredThreads.length === 0 ? (
           <AIChatHistoryEmptyState state={activeGroup?.label.toLowerCase()} />
         ) : (
           <NavList
@@ -170,7 +175,11 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
             tabIndex={0}
             as="div"
           >
-            {filteredThreads.map((thread) => renderThread(thread))}
+            {isLoading
+              ? _.range(6).map((index) =>
+                  renderThread({ id: `loading-${index}`, title: '' }, true),
+                )
+              : filteredThreads.map((thread) => renderThread(thread))}
           </NavList>
         )}
       </>
