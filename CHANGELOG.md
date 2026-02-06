@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 06-02-2026
+
+**F36 Button** `v5.9.1`
+
+- fix(Button): allow custom color or variant for button icons
+
 ## 29-11-2025
 
 **F36 Icons** `v5.9.0`
