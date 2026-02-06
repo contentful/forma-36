@@ -13,6 +13,7 @@ import { cx } from 'emotion';
 import React from 'react';
 import {
   AIChatHistory,
+  MessageGroups,
   MessageThread,
 } from '../src/AIChatHistory/AIChatHistory';
 import { getStyles } from '../src/AIChatHistory/AIChatHistoryThread/AIChatHistoryThread.styles';
@@ -128,6 +129,27 @@ const mockThreadsData: MockThreadData[] = [
   },
 ];
 
+const threeGroups: MessageGroups = [
+  {
+    id: 'paused',
+    label: 'Paused',
+    icon: <ColumnsIcon />,
+    filter: (thread: MessageThread) => thread.group === 'paused',
+  },
+  {
+    id: 'processing',
+    label: 'Processing',
+    icon: <LightningIcon />,
+    filter: (thread: MessageThread) => thread.group === 'processing',
+  },
+  {
+    id: 'done',
+    label: 'Done',
+    icon: <CheckIcon />,
+    filter: (thread: MessageThread) => thread.group === 'done',
+  },
+];
+
 const createMockThreads = (): MessageThread[] => {
   const styles = getStyles();
 
@@ -196,26 +218,7 @@ export const Default = (args) => render(args);
 
 Default.args = {
   threads: createMockThreads(),
-  groups: [
-    {
-      id: 'paused',
-      label: 'Paused',
-      icon: <ColumnsIcon />,
-      filter: (thread: MessageThread) => thread.group === 'paused',
-    },
-    {
-      id: 'processing',
-      label: 'Processing',
-      icon: <LightningIcon />,
-      filter: (thread: MessageThread) => thread.group === 'processing',
-    },
-    {
-      id: 'done',
-      label: 'Done',
-      icon: <CheckIcon />,
-      filter: (thread: MessageThread) => thread.group === 'done',
-    },
-  ],
+  groups: threeGroups,
 };
 
 export const TwoGroups = (args) => render(args);
@@ -265,26 +268,7 @@ export const EmptyWithGroups = (args) => render(args);
 
 EmptyWithGroups.args = {
   threads: [],
-  groups: [
-    {
-      id: 'paused',
-      label: 'Paused',
-      icon: <ColumnsIcon />,
-      filter: (thread: MessageThread) => thread.group === 'paused',
-    },
-    {
-      id: 'processing',
-      label: 'Processing',
-      icon: <LightningIcon />,
-      filter: (thread: MessageThread) => thread.group === 'processing',
-    },
-    {
-      id: 'done',
-      label: 'Done',
-      icon: <CheckIcon />,
-      filter: (thread: MessageThread) => thread.group === 'done',
-    },
-  ],
+  groups: threeGroups,
 };
 
 EmptyWithGroups.parameters = {
@@ -308,4 +292,12 @@ EmptyWithoutGroups.parameters = {
       story: 'Empty state shown when no threads are available.',
     },
   },
+};
+
+export const LoadingWithGroups = (args) => render(args);
+
+LoadingWithGroups.args = {
+  isLoading: true,
+  threads: [],
+  groups: threeGroups,
 };
