@@ -5,7 +5,6 @@ import { getStyles } from './AIChatHistory.styles';
 import { AIChatHistoryTabs } from './AIChatHistoryTabs';
 import { AIChatHistoryThread } from './AIChatHistoryThread';
 import { AIChatHistoryEmptyState } from '../AIChatHistoryEmptyState';
-import _ from 'lodash';
 
 export interface MessageThread {
   id: string;
@@ -176,7 +175,7 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
             as="div"
           >
             {isLoading
-              ? _.range(6).map((index) =>
+              ? [1, 2, 3, 4, 5, 6].map((index) =>
                   renderThread({ id: `loading-${index}`, title: '' }, true),
                 )
               : filteredThreads.map((thread) => renderThread(thread))}
