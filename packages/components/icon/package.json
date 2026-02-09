@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-icon",
-  "version": "6.3.1",
+  "version": "6.3.2",
   "description": "Forma 36: Icon component",
   "license": "MIT",
   "exports": {
@@ -31,7 +31,7 @@
     "build:dual": "tsc -p . && tsc -p ./tsconfig.cjs.json && tsconfig-to-dual-package"
   },
   "dependencies": {
-    "@contentful/f36-core": "^6.3.1",
+    "@contentful/f36-core": "^6.3.2",
     "@contentful/f36-tokens": "^6.1.0",
     "@phosphor-icons/react": "2.1.8",
     "@emotion/css": "^11.13.5"

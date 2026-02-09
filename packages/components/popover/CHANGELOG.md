@@ -1,5 +1,14 @@
 # Change Log
 
+## 6.3.2
+
+### Patch Changes
+
+- [#3324](https://github.com/contentful/forma-36/pull/3324) [`b19fec3`](https://github.com/contentful/forma-36/commit/b19fec34a3daeea4cb1abedb2bd8c1906ca3d589) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - fix(autocomplete): adjust popover container width
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.2
+
 ## 6.3.1
 
 ### Patch Changes
