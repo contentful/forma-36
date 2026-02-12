@@ -10,7 +10,8 @@
     "@contentful/f36-cdn",
     "@contentful/f36-i18n-utils",
     "@contentful/f36-codemod",
-    "@contentful/f36-website"
+    "@contentful/f36-website",
+    "@contentful/f36-ai-components"
   ],
   "commit": false,
   "fixed": [
