@@ -30,6 +30,8 @@ export type MessageGroups =
 export interface AIChatHistoryProps extends CommonProps {
   threads: MessageThread[];
   groups?: MessageGroups;
+  /** Indicates whether the component is in a loading state, showing skeletons instead of content */
+  isLoading?: boolean;
 }
 
 function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
@@ -38,6 +40,7 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
     testId = 'cf-ui-ai-chat-history',
     threads,
     groups,
+    isLoading = false,
     ...otherProps
   } = props;
 
@@ -108,12 +111,17 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
 
   const styles = getStyles({ hasGroups });
 
-  const renderThread = (thread: MessageThread) => {
+  const renderThread = (thread: MessageThread, isLoading?: boolean) => {
     return (
       <AIChatHistoryThread
         key={thread.id}
         thread={thread}
-        testId={`${testId}-thread-${thread.id}`}
+        testId={
+          isLoading
+            ? `${testId}-loading-thread-${thread.id}`
+            : `${testId}-thread-${thread.id}`
+        }
+        isLoading={isLoading}
       />
     );
   };
@@ -156,7 +164,7 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
           onTabClick={handleTabClick}
           testId={`${testId}-tabs`}
         />
-        {filteredThreads.length === 0 ? (
+        {!isLoading && filteredThreads.length === 0 ? (
           <AIChatHistoryEmptyState state={activeGroup?.label.toLowerCase()} />
         ) : (
           <NavList
@@ -170,7 +178,11 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
             tabIndex={0}
             as="div"
           >
-            {filteredThreads.map((thread) => renderThread(thread))}
+            {isLoading
+              ? [1, 2, 3, 4, 5, 6].map((index) =>
+                  renderThread({ id: `loading-${index}`, title: '' }, true),
+                )
+              : filteredThreads.map((thread) => renderThread(thread))}
           </NavList>
         )}
       </>
