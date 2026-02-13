@@ -116,7 +116,11 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
       <AIChatHistoryThread
         key={thread.id}
         thread={thread}
-        testId={`${testId}-loading-thread-${thread.id}`}
+        testId={
+          isLoading
+            ? `${testId}-loading-thread-${thread.id}`
+            : `${testId}-thread-${thread.id}`
+        }
         isLoading={isLoading}
       />
     );
