@@ -1,5 +1,5 @@
 import {
-  formatCurrencyWithLocale,
+  formatCurrency,
   formatNumber,
   formatNumberList,
   formatStringList,
@@ -45,19 +45,19 @@ describe('I18n utility functions', function () {
     });
   });
 
-  describe('formatCurrencyWithLocale', () => {
+  describe('formatCurrency', () => {
     it('formats number as currency based on locale', () => {
-      expect(formatCurrencyWithLocale('en-US', 15)).toBe('$15');
-      expect(formatCurrencyWithLocale('fr-FR', 15)).toBe('15 $');
-      expect(formatCurrencyWithLocale('de-DE', 15)).toBe('15 $');
+      expect(formatCurrency('en-US', 15)).toBe('$15');
+      expect(formatCurrency('fr-FR', 15)).toBe('15 $');
+      expect(formatCurrency('de-DE', 15)).toBe('15 $');
     });
 
     it('overrides currency when provided in options', () => {
-      expect(formatCurrencyWithLocale('en-US', 15, { currency: 'EUR' })).toBe(
+      expect(formatCurrency('en-US', 15, { currency: 'EUR' })).toBe(
         '€15',
       );
       expect(
-        formatCurrencyWithLocale('en-US', 15.5, { minimumFractionDigits: 2 }),
+        formatCurrency('en-US', 15.5, { minimumFractionDigits: 2 }),
       ).toBe('$15.50');
     });
   });

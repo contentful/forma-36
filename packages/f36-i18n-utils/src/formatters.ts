@@ -47,21 +47,21 @@ export function formatNumberList(
 /**
  * Formats the given number as currency based on the provided locale.
  *
- * @example formatCurrencyWithLocale('en-US', 15);
+ * @example formatCurrency('en-US', 15);
  * // '$15'
- * @example formatCurrencyWithLocale('fr-FR', 15);
+ * @example formatCurrency('fr-FR', 15);
  * // '15 $'
- * @example formatCurrencyWithLocale('de-DE', 15);
+ * @example formatCurrency('de-DE', 15);
  * // '15 $'
  *
  * - The currency is set to USD by default, but can be overridden with options.
- * @example formatCurrencyWithLocale('en-US', 15, { currency: 'EUR' });
+ * @example formatCurrency('en-US', 15, { currency: 'EUR' });
  * // '€15'
  * - Decimal places are set to 0 by default, but can be overridden with options.
- * @example formatCurrencyWithLocale('en-US', 15.5, { minimumFractionDigits: 2 });
+ * @example formatCurrency('en-US', 15.5, { minimumFractionDigits: 2 });
  * // '$15.50'
  */
-export function formatCurrencyWithLocale(
+export function formatCurrency(
   locale: string,
   value: number,
   options?: Intl.NumberFormatOptions,
