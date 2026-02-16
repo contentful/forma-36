@@ -64,14 +64,13 @@ export function formatNumberList(
 export function formatCurrency(
   locale: string,
   value: number,
-  options?: Intl.NumberFormatOptions,
+  options?: { currency?: string; minimumFractionDigits?: number },
 ): string {
   return new Intl.NumberFormat(locale, {
     style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 0,
     currencyDisplay: 'narrowSymbol',
-    ...options,
+    currency: options?.currency ?? 'USD',
+    minimumFractionDigits: options?.minimumFractionDigits ?? 0,
   }).format(value);
 }
 
