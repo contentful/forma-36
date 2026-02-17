@@ -1,5 +1,20 @@
 # Change Log
 
+## 6.5.0
+
+### Minor Changes
+
+- [#3304](https://github.com/contentful/forma-36/pull/3304) [`ea160fe`](https://github.com/contentful/forma-36/commit/ea160fe369b08db778c2bd76cd2a327625fb1316) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat(notification-item): deprecate `withCloseButton`
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.5.0
+  - @contentful/f36-core@6.5.0
+  - @contentful/f36-icons@6.5.0
+  - @contentful/f36-text-link@6.5.0
+  - @contentful/f36-typography@6.5.0
+
 ## 6.4.0
 
 ### Patch Changes
