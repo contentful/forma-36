@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.4.0
+
+### Minor Changes
+
+- [#3336](https://github.com/contentful/forma-36/pull/3336) [`c26b059`](https://github.com/contentful/forma-36/commit/c26b0596ed9af5e6025fc4d501c2f012accec230) Thanks [@Lelith](https://github.com/Lelith)! - Add explicit `as` prop to Badge component for TypeScript support. While the prop was previously functional through the spread operator, it now has proper type definitions, allowing developers to customize the underlying HTML element (e.g., render as `span` instead of `div`) with full IDE autocomplete and type checking. This resolves HTML validation issues when Badge needs to be used within inline contexts.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.4.0
+  - @contentful/f36-icons@6.4.0
+
 ## 6.3.2
 
 ### Patch Changes

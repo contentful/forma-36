@@ -1,16 +1,16 @@
 {
   "name": "@contentful/f36-menu",
-  "version": "6.3.2",
+  "version": "6.4.0",
   "description": "Forma 36: Menu component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^6.3.2",
-    "@contentful/f36-icons": "^6.3.2",
-    "@contentful/f36-popover": "^6.3.2",
+    "@contentful/f36-core": "^6.4.0",
+    "@contentful/f36-icons": "^6.4.0",
+    "@contentful/f36-popover": "^6.4.0",
     "@contentful/f36-tokens": "^6.1.0",
-    "@contentful/f36-typography": "^6.3.2",
+    "@contentful/f36-typography": "^6.4.0",
     "@contentful/f36-utils": "^6.1.0",
     "@emotion/css": "^11.13.5",
     "@floating-ui/dom": "^1.7.4",
