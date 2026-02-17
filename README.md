@@ -198,6 +198,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/missating"><img src="https://avatars.githubusercontent.com/u/29452947?v=4?s=100" width="100px;" alt="Nkoyo Ating"/><br /><sub><b>Nkoyo Ating</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=missating" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.schmoe.dev/"><img src="https://avatars.githubusercontent.com/u/124524543?v=4?s=100" width="100px;" alt="Joe Bingham"/><br /><sub><b>Joe Bingham</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=jshmo" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

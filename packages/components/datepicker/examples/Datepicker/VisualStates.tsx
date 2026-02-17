@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { SectionHeading } from '@contentful/f36-components';
-import { Datepicker } from '@contentful/f36-components';
+import { Datepicker, SectionHeading } from '@contentful/f36-components';
 
 export default function VisualStatesExample() {
   const [selectedDay, setSelectedDay] = useState(new Date());

@@ -1,4 +1,5 @@
 import {
+  formatCurrency,
   formatNumber,
   formatNumberList,
   formatStringList,
@@ -41,6 +42,21 @@ describe('I18n utility functions', function () {
       expect(formatNumber('de-DE', -54213256.89)).toBe('-54.213.256,89');
       expect(formatNumber('en-US', -54213256.89)).toBe('-54,213,256.89');
       expect(formatNumber('fr-FR', -54213256.89)).toBe('-54 213 256,89');
+    });
+  });
+
+  describe('formatCurrency', () => {
+    it('formats number as currency based on locale', () => {
+      expect(formatCurrency('en-US', 15)).toBe('$15');
+      expect(formatCurrency('fr-FR', 15)).toBe('15 $');
+      expect(formatCurrency('de-DE', 15)).toBe('15 $');
+    });
+
+    it('overrides currency when provided in options', () => {
+      expect(formatCurrency('en-US', 15, { currency: 'EUR' })).toBe('€15');
+      expect(formatCurrency('en-US', 15.5, { minimumFractionDigits: 2 })).toBe(
+        '$15.50',
+      );
     });
   });
 

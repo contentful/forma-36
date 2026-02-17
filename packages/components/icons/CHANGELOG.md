@@ -1,5 +1,54 @@
 # Change Log
 
+## 6.3.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.2
+  - @contentful/f36-icon@6.3.2
+
+## 6.3.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.1
+  - @contentful/f36-icon@6.3.1
+
+## 6.3.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.0
+  - @contentful/f36-icon@6.3.0
+
+## 6.2.0
+
+### Minor Changes
+
+- [#3316](https://github.com/contentful/forma-36/pull/3316) [`76458f5`](https://github.com/contentful/forma-36/commit/76458f53d6e0f7bdc7fe47fc90f0a3d3f97ce4a7) Thanks [@jshmo](https://github.com/jshmo)! - Added the QrCodeIcon to the icon library.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.2.0
+  - @contentful/f36-icon@6.2.0
+
+## 6.1.0
+
+### Minor Changes
+
+- [#3301](https://github.com/contentful/forma-36/pull/3301) [`dc09889`](https://github.com/contentful/forma-36/commit/dc098898b5b8e847a9a1a7d62a588c72a8246442) Thanks [@Lelith](https://github.com/Lelith)! - Exit pre-release mode and release first major version 6
+
+### Patch Changes
+
+- Updated dependencies [[`dc09889`](https://github.com/contentful/forma-36/commit/dc098898b5b8e847a9a1a7d62a588c72a8246442)]:
+  - @contentful/f36-icon@6.1.0
+  - @contentful/f36-core@6.1.0
+  - @contentful/f36-tokens@6.1.0
+
 ## 6.0.0
 
 ### Major Changes

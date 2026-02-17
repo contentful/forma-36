@@ -1,5 +1,70 @@
 # @contentful/f36-usage-card
 
+## 6.3.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-card@6.3.2
+  - @contentful/f36-core@6.3.2
+  - @contentful/f36-icons@6.3.2
+  - @contentful/f36-text-link@6.3.2
+  - @contentful/f36-tooltip@6.3.2
+  - @contentful/f36-typography@6.3.2
+
+## 6.3.1
+
+### Patch Changes
+
+- Updated dependencies [[`f74966b`](https://github.com/contentful/forma-36/commit/f74966b449497ae342bf860868507e81a5a51582)]:
+  - @contentful/f36-tooltip@6.3.1
+  - @contentful/f36-card@6.3.1
+  - @contentful/f36-core@6.3.1
+  - @contentful/f36-icons@6.3.1
+  - @contentful/f36-text-link@6.3.1
+  - @contentful/f36-typography@6.3.1
+
+## 6.3.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-card@6.3.0
+  - @contentful/f36-core@6.3.0
+  - @contentful/f36-icons@6.3.0
+  - @contentful/f36-text-link@6.3.0
+  - @contentful/f36-tooltip@6.3.0
+  - @contentful/f36-typography@6.3.0
+
+## 6.2.0
+
+### Patch Changes
+
+- Updated dependencies [[`76458f5`](https://github.com/contentful/forma-36/commit/76458f53d6e0f7bdc7fe47fc90f0a3d3f97ce4a7)]:
+  - @contentful/f36-icons@6.2.0
+  - @contentful/f36-card@6.2.0
+  - @contentful/f36-core@6.2.0
+  - @contentful/f36-text-link@6.2.0
+  - @contentful/f36-tooltip@6.2.0
+  - @contentful/f36-typography@6.2.0
+
+## 6.1.0
+
+### Minor Changes
+
+- [#3301](https://github.com/contentful/forma-36/pull/3301) [`dc09889`](https://github.com/contentful/forma-36/commit/dc098898b5b8e847a9a1a7d62a588c72a8246442) Thanks [@Lelith](https://github.com/Lelith)! - Exit pre-release mode and release first major version 6
+
+### Patch Changes
+
+- Updated dependencies [[`dc09889`](https://github.com/contentful/forma-36/commit/dc098898b5b8e847a9a1a7d62a588c72a8246442)]:
+  - @contentful/f36-card@6.1.0
+  - @contentful/f36-icons@6.1.0
+  - @contentful/f36-text-link@6.1.0
+  - @contentful/f36-tooltip@6.1.0
+  - @contentful/f36-typography@6.1.0
+  - @contentful/f36-core@6.1.0
+  - @contentful/f36-tokens@6.1.0
+
 ## 6.0.0
 
 ### Major Changes

@@ -8,6 +8,212 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 16-02-2026
+
+**F36 Autocomplete** `v6.3.2`
+
+- fix(autocomplete): adjust popover container width
+
+**F36 Popover** `v6.3.2`
+
+- fix(autocomplete): adjust popover container width
+
+## 16-02-2026
+
+**F36 Icons** `v6.2.0`
+
+- Added the QrCodeIcon to the icon library.
+
+**F36 Menu** `v6.3.0`
+
+- Make the useTypeahead feature of floating-ui a controllable property and disabled per default.
+
+**F36 Tooltip** `v6.3.1`
+
+- chore(tooltip): adjust vertical offset
+
+## 16-02-2026
+
+`@contentful/f36-components@6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Accordion** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Asset** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Autocomplete** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Avatar** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Badge** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Button** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Card** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Collapse** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Copybutton** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Core** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Datepicker** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Datetime** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Drag Handle** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Empty State** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Entity List** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Forms** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Header** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Icon** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Icons** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Image** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Layout** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 List** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Menu** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Modal** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Multiselect** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Navbar** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Navlist** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Note** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Notification** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Pagination** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Pill** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Popover** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Progress Stepper** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Skeleton** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Spinner** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Table** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Tabs** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Text Link** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Tokens** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Tooltip** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Typography** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Usage Card** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Usage Count** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Utils** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
 ## 29-11-2025
 
 **F36 Icons** `v5.9.0`
