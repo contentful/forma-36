@@ -1,5 +1,11 @@
 # Change Log
 
+## 6.1.1
+
+### Patch Changes
+
+- [#3338](https://github.com/contentful/forma-36/pull/3338) [`d383e8e`](https://github.com/contentful/forma-36/commit/d383e8e013982ef9fcb58129f1136d084852e46b) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(tokens): re-export default []
+
 ## 6.1.0
 
 ### Minor Changes
