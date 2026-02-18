@@ -1,6 +1,11 @@
 import React from 'react';
 import type { StoryFn, StoryObj, Meta } from '@storybook/react-vite';
-import { CaretDownIcon } from '@contentful/f36-icons';
+import {
+  ArrowClockwiseIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  CaretDownIcon,
+} from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { action } from 'storybook/actions';
 import { Box, Flex } from '@contentful/f36-core';
@@ -63,6 +68,60 @@ export const Spaced: StoryObj<ButtonGroupProps> = {
 
   args: {
     variant: 'spaced',
+  },
+};
+
+export const Toolbar: StoryObj<ButtonGroupProps> = {
+  render: (args) => {
+    return (
+      <ButtonGroup {...args}>
+        <IconButton
+          variant="secondary"
+          icon={<ArrowLeftIcon />}
+          aria-label="Navigate back"
+        />
+        <IconButton
+          variant="secondary"
+          icon={<ArrowClockwiseIcon />}
+          aria-label="Refresh"
+        />
+        <IconButton
+          variant="secondary"
+          icon={<ArrowRightIcon />}
+          aria-label="Navigate forward"
+        />
+      </ButtonGroup>
+    );
+  },
+};
+
+export const ToolbarWithTooltip: StoryObj<ButtonGroupProps> = {
+  render: (args) => {
+    return (
+      <ButtonGroup {...args}>
+        <IconButton
+          variant="secondary"
+          icon={<ArrowLeftIcon />}
+          aria-label="Navigate back"
+          withTooltip
+          tooltipProps={{ content: 'Left tooltip content' }}
+        />
+        <IconButton
+          variant="secondary"
+          icon={<ArrowClockwiseIcon />}
+          aria-label="Refresh"
+          withTooltip
+          tooltipProps={{ content: 'Middle tooltip content' }}
+        />
+        <IconButton
+          variant="secondary"
+          icon={<ArrowRightIcon />}
+          aria-label="Navigate forward"
+          withTooltip
+          tooltipProps={{ content: 'Right tooltip content' }}
+        />
+      </ButtonGroup>
+    );
   },
 };
 

@@ -13,12 +13,15 @@ export default ({ withDivider }: GetStyleArguments) => {
     }),
     groupContent: css({
       borderRadius: '0 !important',
+      '& > *': {
+        borderRadius: '0 !important',
+      },
       marginRight: '-1px',
-      '&:first-child': {
+      '&:first-child, &:first-child > *': {
         borderBottomLeftRadius: `${tokens.borderRadiusMedium} !important`,
         borderTopLeftRadius: `${tokens.borderRadiusMedium} !important`,
       },
-      '&:last-child': {
+      '&:last-child, &:last-child > *': {
         borderBottomRightRadius: `${tokens.borderRadiusMedium} !important`,
         borderTopRightRadius: `${tokens.borderRadiusMedium} !important`,
         marginRight: 0,

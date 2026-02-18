@@ -47,10 +47,29 @@ function ButtonGroupBase(
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { className: childClassName, ...childProps }: any =
           child.props || {};
+
+        const isIconButtonWithTooltip = Boolean(childProps?.withTooltip);
+        const combinedTooltipProps = isIconButtonWithTooltip
+          ? {
+              ...childProps.tooltipProps,
+              targetWrapperClassName: cx(
+                styles.groupContent,
+                childProps.tooltipProps?.targetWrapperClassName ?? '',
+              ),
+            }
+          : childProps.tooltipProps;
+
+        const finalClassName = isIconButtonWithTooltip
+          ? (childClassName ?? '')
+          : cx(styles.groupContent, childClassName ?? '');
+
         return React.cloneElement(child, {
           ...childProps,
+          ...(isIconButtonWithTooltip
+            ? { tooltipProps: combinedTooltipProps }
+            : {}),
           key,
-          className: cx(styles.groupContent, childClassName ?? ''),
+          className: finalClassName,
         });
       })}
     </Box>

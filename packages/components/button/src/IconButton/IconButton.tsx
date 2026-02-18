@@ -106,7 +106,12 @@ function IconButtonBase<
     } = tooltipProps || {};
 
     return (
-      <Tooltip content={content} showDelay={showDelay} {...otherTooltipProps}>
+      <Tooltip
+        usePortal
+        content={content}
+        showDelay={showDelay}
+        {...otherTooltipProps}
+      >
         {element}
       </Tooltip>
     );
