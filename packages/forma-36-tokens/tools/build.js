@@ -78,7 +78,7 @@ const buildIndexJS = (srcPath, tokens) => {
 
 const buildIndexMJS = (srcPath, tokens) => {
   const objectLiteral = JSON.stringify(tokens, null, 2);
-  const esm = `// ESM build for @contentful/f36-tokens\nconst tokens = ${objectLiteral};\nexport default tokens;\nexport { tokens };\n`;
+  const esm = `// ESM build for @contentful/f36-tokens\nconst tokens = ${objectLiteral};\nexport { tokens as default };\nexport { tokens };\n`;
   return fse.outputFile(srcPath, esm);
 };
 
@@ -196,7 +196,7 @@ const buildIndexDTS = async (srcPath, tokens) => {
       ${createUnionThatStarts('zIndex', 'ZIndexTokens')}
       ${createUnionThatStarts('glow', 'GlowTokens')}
       const tokens: F36Tokens;
-      export default tokens;
+      export { tokens as default };
     }`,
   );
 };
