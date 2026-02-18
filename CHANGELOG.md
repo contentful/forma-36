@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 18-02-2026
+
+**F36 Badge** `v6.4.0`
+
+- Add explicit `as` prop to Badge component for TypeScript support. While the prop was previously functional through the spread operator, it now has proper type definitions, allowing developers to customize the underlying HTML element (e.g., render as `span` instead of `div`) with full IDE autocomplete and type checking. This resolves HTML validation issues when Badge needs to be used within inline contexts.
+
+**F36 Notification** `v6.5.0`
+
+- feat(notification-item): deprecate `withCloseButton`
+
 ## 16-02-2026
 
 **F36 Autocomplete** `v6.3.2`
