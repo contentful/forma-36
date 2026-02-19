@@ -43,14 +43,39 @@ function ButtonGroupBase(
         if (!React.isValidElement(child)) {
           return null;
         }
+
         // Only pass className if child.props has className property
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { className: childClassName, ...childProps }: any =
           child.props || {};
+
+        const isIconButtonWithTooltip = Boolean(childProps?.withTooltip);
+
+        let finalClassName = cx(styles.groupContent, childClassName ?? '');
+        let combinedTooltipProps = childProps.tooltipProps;
+
+        // When the child is an IconButton with tooltip,
+        // we need to pass the groupContent styles to the tooltip target wrapper,
+        // otherwise the styling does not get applied to the buttons
+        if (isIconButtonWithTooltip) {
+          finalClassName = childClassName ?? '';
+
+          combinedTooltipProps = {
+            ...childProps.tooltipProps,
+            targetWrapperClassName: cx(
+              styles.groupContent,
+              childProps.tooltipProps?.targetWrapperClassName ?? '',
+            ),
+          };
+        }
+
         return React.cloneElement(child, {
           ...childProps,
+          ...(isIconButtonWithTooltip
+            ? { tooltipProps: combinedTooltipProps }
+            : {}),
           key,
-          className: cx(styles.groupContent, childClassName ?? ''),
+          className: finalClassName,
         });
       })}
     </Box>
