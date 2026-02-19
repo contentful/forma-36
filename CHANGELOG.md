@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 19-02-2026
+
+**F36 Tokens** `v6.1.1`
+
+- fix(tokens): re-export default []
+
 ## 18-02-2026
 
 **F36 Badge** `v6.4.0`
