@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.6.0
+
+### Minor Changes
+
+- [#3341](https://github.com/contentful/forma-36/pull/3341) [`3c504b9`](https://github.com/contentful/forma-36/commit/3c504b960ba3d7b21812311b0b45d9aaf60cb34a) Thanks [@YvesRijckaert](https://github.com/YvesRijckaert)! - add calendar x icon
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.6.0
+  - @contentful/f36-icon@6.6.0
+
 ## 6.5.1
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # Change Log
 
+## 6.6.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.6.0
+  - @contentful/f36-spinner@6.6.0
+  - @contentful/f36-tooltip@6.6.0
+
 ## 6.5.1
 
 ### Patch Changes
