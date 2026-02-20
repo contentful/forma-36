@@ -94,7 +94,7 @@ const _NotificationItem = (props: ExpandProps<NotificationItemProps>, ref) => {
       data-intent={intents[variant]}
       aria-live={variant === 'positive' ? 'polite' : 'assertive'}
       className={cx(styles.wrapper, className)}
-      alignItems={title ? 'flex-start' : 'center'}
+      alignItems="flex-start"
       {...otherProps}
       ref={ref}
     >
