@@ -80,6 +80,7 @@ export * from './vendor/phosphor/BracketsCurlyIcon.js';
 export * from './vendor/phosphor/BuildingIcon.js';
 export * from './vendor/phosphor/CalendarBlankIcon.js';
 export * from './vendor/phosphor/CalendarDotsIcon.js';
+export * from './vendor/phosphor/CalendarXIcon.js';
 export * from './vendor/phosphor/CardsIcon.js';
 export * from './vendor/phosphor/CaretCircleDoubleUpIcon.js';
 export * from './vendor/phosphor/CaretCircleUpIcon.js';
