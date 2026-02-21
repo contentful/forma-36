@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 21-02-2026
+
+**F36 Icons** `v6.6.0`
+
+- add calendar x icon
+
 ## 20-02-2026
 
 **F36 Button** `v6.5.1`
