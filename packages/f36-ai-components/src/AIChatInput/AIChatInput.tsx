@@ -1,7 +1,7 @@
 import { Box, Flex, type CommonProps } from '@contentful/f36-core';
 import { TextInput } from '@contentful/f36-forms';
+import { cx } from '@emotion/css';
 import { Editor, useEditor } from '@tiptap/react';
-import { cx } from 'emotion';
 import React, { useRef } from 'react';
 import { getStyles } from './AIChatInput.styles';
 import { AiChatInputMentionConfig } from './AIChatInputMentionExtention';

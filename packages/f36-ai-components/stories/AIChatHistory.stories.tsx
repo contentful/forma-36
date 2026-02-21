@@ -8,7 +8,7 @@ import {
   LightningIcon,
   WarningIcon,
 } from '@contentful/f36-icons';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import React from 'react';
 import { action } from 'storybook/actions';
 import {

@@ -1,5 +1,5 @@
 import tokens from '@contentful/f36-tokens';
-import { css, keyframes } from 'emotion';
+import { css, keyframes } from '@emotion/css';
 
 const fadeIn = keyframes`
   from { opacity: 0; }

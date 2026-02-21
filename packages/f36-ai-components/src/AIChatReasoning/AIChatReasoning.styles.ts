@@ -1,5 +1,5 @@
 import tokens from '@contentful/f36-tokens';
-import { css, keyframes } from 'emotion';
+import { css, keyframes } from '@emotion/css';
 
 interface StyleProps {
   shouldAnimate?: boolean;

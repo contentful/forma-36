@@ -5,7 +5,7 @@ import {
   CaretRightIcon,
   SparkleFilledIcon,
 } from '@contentful/f36-icons';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import React, { forwardRef, useEffect, useState, type Ref } from 'react';
 import { getStyles } from './AIChatReasoning.styles';
 

@@ -23,7 +23,7 @@ import {
   Text,
   type TextProps,
 } from '@contentful/f36-typography';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import React, { forwardRef, Ref } from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';

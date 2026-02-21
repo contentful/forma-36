@@ -1,7 +1,7 @@
-import React from 'react';
 import { Flex, Text } from '@contentful/f36-components';
-import { ClockCounterClockwiseIconIcon } from '@contentful/f36-icons';
 import { type CommonProps } from '@contentful/f36-core';
+import { ClockCounterClockwiseIconIcon } from '@contentful/f36-icons';
+import React from 'react';
 import { getStyles } from './AIChatHistoryEmptyState.styles';
 
 export interface AIChatHistoryEmptyStateProps extends CommonProps {
@@ -48,7 +48,7 @@ export const AIChatHistoryEmptyState = ({
       testId={testId}
       style={style}
     >
-      <ClockCounterClockwiseIconIcon variant="muted" size="medium" />
+      <ClockCounterClockwiseIconIcon size="medium" />
       <Text className={styles.title}>{title || defaultTitle}</Text>
       <Text className={styles.description}>
         {description || defaultDescription}
