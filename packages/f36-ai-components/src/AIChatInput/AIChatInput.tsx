@@ -38,7 +38,7 @@ export interface AIChatInputProps extends CommonProps {
   /** Additional Tiptap editor extensions. See [here](https://tiptap.dev/docs/editor/core-concepts/extensions) */
   editorExtensions?: UseEditorOptions['extensions'];
   /** Ref to expose the TipTap editor instance to parent components */
-  editorRef?: React.MutableRefObject<Editor>;
+  editorRef?: React.MutableRefObject<Editor | null>;
   /** Allows the client to customize the mention behavior using [tiptap mention](https://tiptap.dev/docs/editor/extensions/nodes/mention) */
   mentionConfig?: AiChatInputMentionConfig;
 }
@@ -63,14 +63,14 @@ function _AIChatInput(props: AIChatInputProps, ref: React.Ref<HTMLDivElement>) {
     if (isStreaming) return;
     props.onSubmit?.(...args);
   };
-  const internalEditorRef = useRef<Editor>(null);
+  const internalEditorRef = useRef<Editor | null>(null);
   const editorRef = props.editorRef || internalEditorRef;
 
   const handleContainerClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
     if (!isInteractive(e.target as Element)) {
       // If anywhere on the container is selected, other than interactive elements,
       //  then focus the editor
-      editorRef.current?.chain().focus();
+      editorRef.current?.chain().focus().run();
     }
   };
 
