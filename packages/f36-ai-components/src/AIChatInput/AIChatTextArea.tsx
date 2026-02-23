@@ -2,10 +2,9 @@ import React, { useRef, useEffect } from 'react';
 import { getStyles } from './AIChatInput.styles';
 import { EditorContent, useEditor } from '@tiptap/react';
 import Document from '@tiptap/extension-document';
-import History from '@tiptap/extension-history';
 import Paragraph from '@tiptap/extension-paragraph';
-import Placeholder from '@tiptap/extension-placeholder';
 import Text from '@tiptap/extension-text';
+import { Placeholder, UndoRedo } from '@tiptap/extensions';
 import { AIChatInputProps } from './AIChatInput';
 import { createAiChatMentionExtension } from './AIChatInputMentionExtention';
 
@@ -60,9 +59,9 @@ export const AIChatInputTextArea: React.FC<AIChatInputTextAreaProps> = ({
       Document,
       Paragraph,
       Text,
-      History,
+      UndoRedo,
       Placeholder.configure({ placeholder }),
-      mentionConfig ? createAiChatMentionExtension(mentionConfig) : undefined,
+      ...(mentionConfig ? [createAiChatMentionExtension(mentionConfig)] : []),
     ],
     onUpdate: (...args) => {
       adjustEditorContentHeight();
@@ -81,7 +80,9 @@ export const AIChatInputTextArea: React.FC<AIChatInputTextAreaProps> = ({
         // On Enter, submit the content
         if (event.key === 'Enter') {
           event.preventDefault();
-          onSubmit(editor);
+          if (editor) {
+            onSubmit(editor);
+          }
           return true;
         }
 
