@@ -1,5 +1,13 @@
 # @contentful/f36-usage-count
 
+## 6.6.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.6.1
+  - @contentful/f36-typography@6.6.1
+
 ## 6.6.0
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.6.1
+
+### Patch Changes
+
+- [#3343](https://github.com/contentful/forma-36/pull/3343) [`b51e219`](https://github.com/contentful/forma-36/commit/b51e21976d96f73a2f8ee1c5438694b2a8a86d29) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat: allow react 18.3+ peer dependency
+
+- Updated dependencies [[`b51e219`](https://github.com/contentful/forma-36/commit/b51e21976d96f73a2f8ee1c5438694b2a8a86d29)]:
+  - @contentful/f36-collapse@6.6.1
+  - @contentful/f36-icons@6.6.1
+  - @contentful/f36-core@6.6.1
+  - @contentful/f36-typography@6.6.1
+
 ## 6.6.0
 
 ### Patch Changes
