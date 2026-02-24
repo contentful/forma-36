@@ -74,6 +74,8 @@ function CopyButtonBase(
   }: ExpandProps<CopyButtonProps>,
   ref: React.Ref<HTMLButtonElement>,
 ) {
+  const { asChild: _asChild, ...tooltipPropsWithoutAsChild } =
+    tooltipProps || {};
   const styles = getCopyButtonStyles({
     size,
     hasChildren: Boolean(children),
@@ -143,7 +145,7 @@ function CopyButtonBase(
     <Tooltip
       content={copied ? tooltipCopiedText : tooltipText}
       isDisabled={isDisabled}
-      {...tooltipProps}
+      {...tooltipPropsWithoutAsChild}
     >
       {btnComp}
     </Tooltip>
