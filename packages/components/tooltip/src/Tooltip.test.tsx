@@ -72,6 +72,42 @@ describe('Tooltip', () => {
     );
   });
 
+  it('renders without a wrapper when using asChild', async () => {
+    render(
+      <Tooltip content="Tooltip content" asChild>
+        <button type="button" data-test-id="hover-me">
+          Hover me
+        </button>
+      </Tooltip>,
+    );
+
+    await userEvent.hover(screen.getByTestId('hover-me'));
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+    );
+  });
+
+  it('renders children without tooltip when asChild is used with an invalid child', () => {
+    const consoleErrorSpy = jest
+      .spyOn(console, 'error')
+      .mockImplementation(() => {});
+    const InvalidTooltip = Tooltip as unknown as React.ComponentType<any>;
+
+    render(
+      <InvalidTooltip content="Tooltip content" asChild>
+        Hover me
+      </InvalidTooltip>,
+    );
+
+    expect(screen.getByText('Hover me')).toBeInTheDocument();
+    expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      'Tooltip with `asChild` requires a single valid React element child.',
+    );
+
+    consoleErrorSpy.mockRestore();
+  });
+
   it('renders around a disabled Button', async () => {
     render(
       <Tooltip content="Tooltip content" data-test-id="hover-me">
@@ -81,6 +117,21 @@ describe('Tooltip', () => {
     await userEvent.hover(screen.getByTestId('hover-me'));
     await waitFor(() =>
       expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+    );
+  });
+
+  it('does not render tooltip when isDisabled and asChild are true', async () => {
+    render(
+      <Tooltip content="Tooltip content" isDisabled asChild>
+        <button type="button" data-test-id="hover-me">
+          Hover me
+        </button>
+      </Tooltip>,
+    );
+
+    await userEvent.hover(screen.getByTestId('hover-me'));
+    await waitFor(() =>
+      expect(screen.queryByRole('tooltip')).not.toBeInTheDocument(),
     );
   });
 

@@ -45,6 +45,26 @@ Basic.parameters = {
   },
 };
 
+export const AsChild = () => {
+  return (
+    <Tooltip asChild content="I am rendered without an extra wrapper">
+      <TextLink href="/">Hover me</TextLink>
+    </Tooltip>
+  );
+};
+
+const AsChildSourceCode = `<Tooltip asChild content="I am rendered without an extra wrapper">
+  <TextLink href="/">Hover me</TextLink>
+</Tooltip>`;
+
+AsChild.parameters = {
+  docs: {
+    source: {
+      code: AsChildSourceCode,
+    },
+  },
+};
+
 export const AutoPlacement = (args: { content: string }) => {
   return (
     <div
