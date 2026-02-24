@@ -1,5 +1,14 @@
 # Change Log
 
+## 6.7.1
+
+### Patch Changes
+
+- [#3346](https://github.com/contentful/forma-36/pull/3346) [`9e4d1bf`](https://github.com/contentful/forma-36/commit/9e4d1bf49cd5ef8b36a3a05b73d766eab1403d33) Thanks [@bgutsol](https://github.com/bgutsol)! - fix: tooltip return type
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.7.1
+
 ## 6.7.0
 
 ### Minor Changes

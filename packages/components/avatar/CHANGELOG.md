@@ -1,5 +1,15 @@
 # Change Log
 
+## 6.7.1
+
+### Patch Changes
+
+- Updated dependencies [[`9e4d1bf`](https://github.com/contentful/forma-36/commit/9e4d1bf49cd5ef8b36a3a05b73d766eab1403d33)]:
+  - @contentful/f36-tooltip@6.7.1
+  - @contentful/f36-core@6.7.1
+  - @contentful/f36-image@6.7.1
+  - @contentful/f36-menu@6.7.1
+
 ## 6.7.0
 
 ### Patch Changes
