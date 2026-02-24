@@ -91,12 +91,12 @@ describe('Tooltip', () => {
     const consoleErrorSpy = jest
       .spyOn(console, 'error')
       .mockImplementation(() => {});
-    const InvalidTooltip = Tooltip as unknown as React.ComponentType<any>;
 
     render(
-      <InvalidTooltip content="Tooltip content" asChild>
+      // @ts-expect-error -- Testing invalid usage of `asChild`
+      <Tooltip content="Tooltip content" asChild>
         Hover me
-      </InvalidTooltip>,
+      </Tooltip>,
     );
 
     expect(screen.getByText('Hover me')).toBeInTheDocument();
