@@ -141,7 +141,7 @@ export const Tooltip = ({
   usePortal = false,
   isDisabled = false,
   ...otherProps
-}: TooltipProps) => {
+}: TooltipProps): React.JSX.Element => {
   const tooltipId = useId(id, 'tooltip');
   const styles = getStyles();
 
@@ -164,12 +164,12 @@ export const Tooltip = ({
   if (!withTriggerWrapper && !React.isValidElement(children)) {
     // eslint-disable-next-line no-console
     console.error(WITH_TRIGGER_WRAPPER_DISABLED_ERROR);
-    return children;
+    return <>{children}</>;
   }
 
   if (!content || isDisabled) {
     if (!withTriggerWrapper) {
-      return children;
+      return <>{children}</>;
     }
 
     return <HtmlTag className={targetWrapperClassName}>{children}</HtmlTag>;
