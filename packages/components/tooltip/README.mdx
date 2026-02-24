@@ -32,6 +32,17 @@ import { Tooltip } from '@contentful/f36-tooltip';
 
 ```
 
+### Tooltip without wrapper (`withTriggerWrapper={false}`)
+
+- Use `withTriggerWrapper={false}` to avoid rendering an additional wrapper element around the trigger.
+- `withTriggerWrapper={false}` requires a single valid React element as `children`.
+- `as` and `targetWrapperClassName` only apply when the trigger wrapper is enabled.
+- If the trigger element is disabled, the tooltip will not be shown on hover in this mode.
+
+```jsx file=./examples/WithoutTriggerWrapperTooltipExample.tsx
+
+```
+
 ## Props (API reference)
 
 <PropsTable of="Tooltip" />
