@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.7.0
+
+### Patch Changes
+
+- [#3345](https://github.com/contentful/forma-36/pull/3345) [`f6ed0aa`](https://github.com/contentful/forma-36/commit/f6ed0aa7091fcca7dbe4c10eb9da835c6686a29e) Thanks [@bgutsol](https://github.com/bgutsol)! - Add a `withTriggerWrapper` prop to Tooltip to allow configuring whether to inject an extra wrapper element around the trigger.
+
+- Updated dependencies [[`f6ed0aa`](https://github.com/contentful/forma-36/commit/f6ed0aa7091fcca7dbe4c10eb9da835c6686a29e)]:
+  - @contentful/f36-tooltip@6.7.0
+  - @contentful/f36-core@6.7.0
+  - @contentful/f36-image@6.7.0
+  - @contentful/f36-menu@6.7.0
+
 ## 6.6.1
 
 ### Patch Changes
