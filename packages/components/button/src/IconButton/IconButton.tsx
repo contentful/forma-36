@@ -99,18 +99,16 @@ function IconButtonBase<
   );
 
   if (withTooltip) {
-    const {
-      showDelay = 600,
-      content = ariaLabel,
-      ...otherTooltipProps
-    } = tooltipProps || {};
+    const showDelay = tooltipProps?.showDelay ?? 600;
+    const content = tooltipProps?.content ?? ariaLabel;
+    const { asChild: _asChild, ...otherTooltipProps } = tooltipProps || {};
 
     return (
       <Tooltip
         usePortal
+        {...otherTooltipProps}
         content={content}
         showDelay={showDelay}
-        {...otherTooltipProps}
       >
         {element}
       </Tooltip>
