@@ -72,9 +72,9 @@ describe('Tooltip', () => {
     );
   });
 
-  it('renders without a wrapper when using asChild', async () => {
+  it('renders without a wrapper when withTriggerWrapper is false', async () => {
     render(
-      <Tooltip content="Tooltip content" asChild>
+      <Tooltip content="Tooltip content" withTriggerWrapper={false}>
         <button type="button" data-test-id="hover-me">
           Hover me
         </button>
@@ -87,14 +87,13 @@ describe('Tooltip', () => {
     );
   });
 
-  it('renders children without tooltip when asChild is used with an invalid child', () => {
+  it('renders children without tooltip when withTriggerWrapper is false and child is invalid', () => {
     const consoleErrorSpy = jest
       .spyOn(console, 'error')
       .mockImplementation(() => {});
 
     render(
-      // @ts-expect-error -- Testing invalid usage of `asChild`
-      <Tooltip content="Tooltip content" asChild>
+      <Tooltip content="Tooltip content" withTriggerWrapper={false}>
         Hover me
       </Tooltip>,
     );
@@ -102,7 +101,7 @@ describe('Tooltip', () => {
     expect(screen.getByText('Hover me')).toBeInTheDocument();
     expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
     expect(consoleErrorSpy).toHaveBeenCalledWith(
-      'Tooltip with `asChild` requires a single valid React element child.',
+      'Tooltip with `withTriggerWrapper={false}` requires a single valid React element child.',
     );
 
     consoleErrorSpy.mockRestore();
@@ -120,9 +119,9 @@ describe('Tooltip', () => {
     );
   });
 
-  it('does not render tooltip when isDisabled and asChild are true', async () => {
+  it('does not render tooltip when isDisabled and withTriggerWrapper is false', async () => {
     render(
-      <Tooltip content="Tooltip content" isDisabled asChild>
+      <Tooltip content="Tooltip content" isDisabled withTriggerWrapper={false}>
         <button type="button" data-test-id="hover-me">
           Hover me
         </button>

@@ -18,8 +18,8 @@ import { TooltipContextProvider } from './TooltipContext';
 import { useTooltip } from './useTooltip';
 import { cx } from '@emotion/css';
 
-const AS_CHILD_ERROR =
-  'Tooltip with `asChild` requires a single valid React element child.';
+const WITH_TRIGGER_WRAPPER_DISABLED_ERROR =
+  'Tooltip with `withTriggerWrapper={false}` requires a single valid React element child.';
 
 export type TooltipPlacement = Placement | 'auto';
 
@@ -34,7 +34,15 @@ export type WithEnhancedContent = {
   label?: string;
 };
 
-type TooltipCommonProps = {
+export type TooltipInternalProps = {
+  /**
+   * Child nodes to be rendered as the trigger of the tooltip component. The tooltip will be displayed on hover or focus of the child element
+   */
+  children: React.ReactNode;
+  /**
+   * HTML element used to wrap the target of the tooltip
+   */
+  as?: React.ElementType;
   /**
    * A unique id of the tooltip
    */
@@ -81,6 +89,10 @@ type TooltipCommonProps = {
    */
   showDelay?: number;
   /**
+   * Class names to be appended to the className prop of the tooltip’s target wrapper
+   */
+  targetWrapperClassName?: string;
+  /**
    * Boolean to control whether or not to render the tooltip in a React Portal.
    * Rendering content inside a Portal allows the tooltip to escape the bounds
    * of its parent while still being positioned correctly. Using a Portal is
@@ -94,47 +106,23 @@ type TooltipCommonProps = {
    * @default false
    */
   isDisabled?: boolean;
+  /**
+   * Whether the trigger should be wrapped in an element.
+   * @default true
+   */
+  withTriggerWrapper?: boolean;
 };
 
-type TooltipWrapperModeProps = {
-  /**
-   * Child nodes to be rendered as the trigger of the tooltip component. The tooltip will be displayed on hover or focus of the child element
-   */
-  children: React.ReactNode;
-  /**
-   * HTML element used to wrap the target of the tooltip
-   */
-  as?: React.ElementType;
-  /**
-   * Class names to be appended to the className prop of the tooltip’s target wrapper
-   */
-  targetWrapperClassName?: string;
-  asChild?: false;
-};
-
-type TooltipAsChildModeProps = {
-  /**
-   * Child node to be rendered as the trigger of the tooltip component.
-   * Must be a single valid React element when `asChild` is true.
-   */
-  children: ReactElement;
-  asChild: true;
-  as?: never;
-  targetWrapperClassName?: never;
-};
-
-export type TooltipInternalProps = TooltipCommonProps &
-  (TooltipWrapperModeProps | TooltipAsChildModeProps);
-
-export type TooltipProps = CommonProps &
-  TooltipInternalProps &
-  WithEnhancedContent;
+export interface TooltipProps
+  extends CommonProps,
+    TooltipInternalProps,
+    WithEnhancedContent {}
 
 export const Tooltip = ({
   children,
   className,
   as: HtmlTag = 'span',
-  asChild = false,
+  withTriggerWrapper = true,
   content,
   label,
   id,
@@ -173,14 +161,14 @@ export const Tooltip = ({
     maxWidth: contentMaxWidth,
   };
 
-  if (asChild && !React.isValidElement(children)) {
+  if (!withTriggerWrapper && !React.isValidElement(children)) {
     // eslint-disable-next-line no-console
-    console.error(AS_CHILD_ERROR);
+    console.error(WITH_TRIGGER_WRAPPER_DISABLED_ERROR);
     return children;
   }
 
   if (!content || isDisabled) {
-    if (asChild && React.isValidElement(children)) {
+    if (!withTriggerWrapper) {
       return children;
     }
 
@@ -198,7 +186,7 @@ export const Tooltip = ({
         onKeyDown={onKeyDown}
         className={cx(styles.tooltipContainer, targetWrapperClassName)}
         as={HtmlTag}
-        asChild={asChild}
+        withTriggerWrapper={withTriggerWrapper}
         {...otherProps}
       >
         {children}

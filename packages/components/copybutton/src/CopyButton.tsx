@@ -32,7 +32,10 @@ export type CopyButtonProps = Omit<
   /**
    * Props that are passed to the tooltip component
    */
-  tooltipProps?: Omit<TooltipProps, 'content' | 'children'>;
+  tooltipProps?: Omit<
+    TooltipProps,
+    'content' | 'children' | 'withTriggerWrapper'
+  >;
   /**
    * Label to be used on aria-label for the button
    * @default Copy to clipboard
@@ -74,8 +77,6 @@ function CopyButtonBase(
   }: ExpandProps<CopyButtonProps>,
   ref: React.Ref<HTMLButtonElement>,
 ) {
-  const { asChild: _asChild, ...tooltipPropsWithoutAsChild } =
-    tooltipProps || {};
   const styles = getCopyButtonStyles({
     size,
     hasChildren: Boolean(children),
@@ -145,7 +146,7 @@ function CopyButtonBase(
     <Tooltip
       content={copied ? tooltipCopiedText : tooltipText}
       isDisabled={isDisabled}
-      {...tooltipPropsWithoutAsChild}
+      {...tooltipProps}
     >
       {btnComp}
     </Tooltip>

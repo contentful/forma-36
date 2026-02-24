@@ -32,13 +32,13 @@ import { Tooltip } from '@contentful/f36-tooltip';
 
 ```
 
-### Tooltip without wrapper (`asChild`)
+### Tooltip without wrapper (`withTriggerWrapper={false}`)
 
-- Use `asChild` to avoid rendering an additional wrapper element around the trigger.
-- `asChild` requires a single valid React element as `children`.
-- `as` and `targetWrapperClassName` are wrapper-mode props and cannot be used together with `asChild`.
+- Use `withTriggerWrapper={false}` to avoid rendering an additional wrapper element around the trigger.
+- `withTriggerWrapper={false}` requires a single valid React element as `children`.
+- `as` and `targetWrapperClassName` only apply when the trigger wrapper is enabled.
 
-```jsx file=./examples/AsChildTooltipExample.tsx
+```jsx file=./examples/WithoutTriggerWrapperTooltipExample.tsx
 
 ```
 

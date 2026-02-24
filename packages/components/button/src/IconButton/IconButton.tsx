@@ -28,7 +28,7 @@ type WithTooltipOrNot =
        */
       tooltipProps?: CommonProps &
         WithEnhancedContent &
-        Omit<TooltipInternalProps, 'children'>;
+        Omit<TooltipInternalProps, 'children' | 'withTriggerWrapper'>;
     }
   | {
       withTooltip?: false;
@@ -101,12 +101,11 @@ function IconButtonBase<
   if (withTooltip) {
     const showDelay = tooltipProps?.showDelay ?? 600;
     const content = tooltipProps?.content ?? ariaLabel;
-    const { asChild: _asChild, ...otherTooltipProps } = tooltipProps || {};
 
     return (
       <Tooltip
         usePortal
-        {...otherTooltipProps}
+        {...tooltipProps}
         content={content}
         showDelay={showDelay}
       >

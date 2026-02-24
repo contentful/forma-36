@@ -45,22 +45,25 @@ Basic.parameters = {
   },
 };
 
-export const AsChild = () => {
+export const WithoutTriggerWrapper = () => {
   return (
-    <Tooltip asChild content="I am rendered without an extra wrapper">
+    <Tooltip
+      withTriggerWrapper={false}
+      content="I am rendered without an extra wrapper"
+    >
       <TextLink href="/">Hover me</TextLink>
     </Tooltip>
   );
 };
 
-const AsChildSourceCode = `<Tooltip asChild content="I am rendered without an extra wrapper">
+const WithoutTriggerWrapperSourceCode = `<Tooltip withTriggerWrapper={false} content="I am rendered without an extra wrapper">
   <TextLink href="/">Hover me</TextLink>
 </Tooltip>`;
 
-AsChild.parameters = {
+WithoutTriggerWrapper.parameters = {
   docs: {
     source: {
-      code: AsChildSourceCode,
+      code: WithoutTriggerWrapperSourceCode,
     },
   },
 };

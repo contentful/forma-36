@@ -19,7 +19,7 @@ export const TooltipTrigger = React.forwardRef<
   Omit<React.HTMLProps<HTMLElement>, 'as'> & {
     tooltipId: string;
     as: TooltipInternalProps['as'];
-    asChild?: boolean;
+    withTriggerWrapper?: boolean;
   }
 >(function TooltipTrigger(
   {
@@ -27,7 +27,7 @@ export const TooltipTrigger = React.forwardRef<
     className,
     tooltipId,
     as: Element,
-    asChild = false,
+    withTriggerWrapper = true,
     ...otherProps
   },
   propRef,
@@ -37,7 +37,7 @@ export const TooltipTrigger = React.forwardRef<
   const childRef = getChildRef(children);
   const baseWithChildRef = useMergeRefs([baseRef, childRef]);
 
-  if (asChild) {
+  if (!withTriggerWrapper) {
     const child = children as React.ReactElement;
     const childProps = child.props as Record<string, unknown>;
     const mergedProps = context.getReferenceProps({

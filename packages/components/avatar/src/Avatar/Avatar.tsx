@@ -32,7 +32,7 @@ export interface AvatarProps extends CommonProps {
    */
   tooltipProps?: CommonProps &
     WithEnhancedContent &
-    Omit<TooltipInternalProps, 'children'>;
+    Omit<TooltipInternalProps, 'children' | 'withTriggerWrapper'>;
   /**
    * @default 'user'
    */
@@ -96,10 +96,8 @@ function AvatarBase(
   );
 
   if (tooltipProps) {
-    const { asChild: _asChild, ...tooltipPropsWithoutAsChild } =
-      tooltipProps || {};
     return (
-      <Tooltip {...tooltipPropsWithoutAsChild} usePortal>
+      <Tooltip {...tooltipProps} usePortal>
         {content}
       </Tooltip>
     );
