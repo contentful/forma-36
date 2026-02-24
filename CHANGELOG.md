@@ -8,6 +8,120 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 24-02-2026
+
+**F36 Accordion** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Asset** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Autocomplete** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Avatar** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Badge** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Button** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Card** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Collapse** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Copybutton** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Datepicker** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Datetime** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Drag Handle** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Empty State** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Entity List** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Forms** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Header** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Icon** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Icons** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Image** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Layout** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 List** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Menu** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Modal** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Multiselect** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Navbar** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Navlist** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Note** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Notification** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
 ## 21-02-2026
 
 **F36 Icons** `v6.6.0`
