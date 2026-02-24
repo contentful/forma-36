@@ -95,12 +95,15 @@ function AvatarBase(
     </div>
   );
 
-  if (tooltipProps)
+  if (tooltipProps) {
+    const { asChild: _asChild, ...tooltipPropsWithoutAsChild } =
+      tooltipProps || {};
     return (
-      <Tooltip {...tooltipProps} usePortal>
+      <Tooltip {...tooltipPropsWithoutAsChild} usePortal>
         {content}
       </Tooltip>
     );
+  }
 
   return content;
 }
