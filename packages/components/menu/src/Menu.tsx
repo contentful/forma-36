@@ -112,6 +112,12 @@ type BaseMenuProps = {
   usePortal?: boolean;
 
   /**
+   * Boolean to control wether or not to enable Typeahead functionality
+   *  which enables focus an item as the user types
+   */
+  useTypeahead?: boolean;
+
+  /**
    * If true, the Menu will be focused after opening
    *
    * @default true

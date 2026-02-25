@@ -41,6 +41,10 @@ export default {
         'featured',
       ],
     },
+    as: {
+      control: 'select',
+      options: ['div', 'span', 'p'],
+    },
   },
 };
 
@@ -183,8 +187,17 @@ export const Overview = {
       </Flex>
 
       <SectionHeading as="h3" marginBottom="spacingS">
+        Rendering as different element
+      </SectionHeading>
+
+      <SectionHeading as="h3" marginBottom="spacingS">
         Text Overflow
       </SectionHeading>
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex as="p" marginRight="spacingS" style={{ maxWidth: '6rem' }}>
+          <Badge as="span">As span</Badge>
+        </Flex>
+      </Flex>
 
       <Flex marginBottom="spacingM" alignItems="center">
         <Flex marginRight="spacingS" style={{ maxWidth: '6rem' }}>

@@ -1,5 +1,90 @@
 # Change Log
 
+## 6.7.1
+
+### Patch Changes
+
+- [#3346](https://github.com/contentful/forma-36/pull/3346) [`9e4d1bf`](https://github.com/contentful/forma-36/commit/9e4d1bf49cd5ef8b36a3a05b73d766eab1403d33) Thanks [@bgutsol](https://github.com/bgutsol)! - fix: tooltip return type
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.7.1
+
+## 6.7.0
+
+### Minor Changes
+
+- [#3345](https://github.com/contentful/forma-36/pull/3345) [`f6ed0aa`](https://github.com/contentful/forma-36/commit/f6ed0aa7091fcca7dbe4c10eb9da835c6686a29e) Thanks [@bgutsol](https://github.com/bgutsol)! - Add a `withTriggerWrapper` prop to Tooltip to allow configuring whether to inject an extra wrapper element around the trigger.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.7.0
+
+## 6.6.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.6.1
+
+## 6.6.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.6.0
+
+## 6.5.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.5.1
+
+## 6.5.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.5.0
+
+## 6.4.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.4.0
+
+## 6.3.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.2
+
+## 6.3.1
+
+### Patch Changes
+
+- [#3315](https://github.com/contentful/forma-36/pull/3315) [`f74966b`](https://github.com/contentful/forma-36/commit/f74966b449497ae342bf860868507e81a5a51582) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - chore(tooltip): adjust vertical offset
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.1
+
+## 6.3.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.0
+
+## 6.2.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.2.0
+
 ## 6.1.0
 
 ### Minor Changes

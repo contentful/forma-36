@@ -806,6 +806,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jshmo",
+      "name": "Joe Bingham",
+      "avatar_url": "https://avatars.githubusercontent.com/u/124524543?v=4",
+      "profile": "https://www.schmoe.dev/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
