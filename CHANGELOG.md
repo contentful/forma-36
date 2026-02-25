@@ -8,7 +8,379 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
-[object Promise]
+## 25-02-2026
+
+**F36 Avatar** `v6.7.0`
+
+- Add a `withTriggerWrapper` prop to Tooltip to allow configuring whether to inject an extra wrapper element around the trigger.
+
+**F36 Button** `v6.7.0`
+
+- Add a `withTriggerWrapper` prop to Tooltip to allow configuring whether to inject an extra wrapper element around the trigger.
+
+**F36 Copybutton** `v6.7.0`
+
+- Add a `withTriggerWrapper` prop to Tooltip to allow configuring whether to inject an extra wrapper element around the trigger.
+
+**F36 Tooltip** `v6.7.0`
+
+- Add a `withTriggerWrapper` prop to Tooltip to allow configuring whether to inject an extra wrapper element around the trigger.
+
+**F36 Tooltip** `v6.7.1`
+
+- fix: tooltip return type
+
+## 24-02-2026
+
+**F36 Accordion** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Asset** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Autocomplete** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Avatar** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Badge** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Button** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Card** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Collapse** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Copybutton** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Datepicker** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Datetime** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Drag Handle** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Empty State** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Entity List** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Forms** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Header** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Icon** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Icons** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Image** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Layout** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 List** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Menu** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Modal** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Multiselect** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Navbar** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Navlist** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Note** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+**F36 Notification** `v6.6.1`
+
+- feat: allow react 18.3+ peer dependency
+
+## 21-02-2026
+
+**F36 Icons** `v6.6.0`
+
+- add calendar x icon
+
+## 20-02-2026
+
+**F36 Button** `v6.5.1`
+
+- fix(button): adjust merged `IconButton` when a tooltip is used with a `ButtonGroup`.
+
+**F36 Tokens** `v6.1.2`
+
+- chore(tokens): update build process
+
+## 19-02-2026
+
+**F36 Tokens** `v6.1.1`
+
+- fix(tokens): re-export default []
+
+## 18-02-2026
+
+**F36 Badge** `v6.4.0`
+
+- Add explicit `as` prop to Badge component for TypeScript support. While the prop was previously functional through the spread operator, it now has proper type definitions, allowing developers to customize the underlying HTML element (e.g., render as `span` instead of `div`) with full IDE autocomplete and type checking. This resolves HTML validation issues when Badge needs to be used within inline contexts.
+
+**F36 Notification** `v6.5.0`
+
+- feat(notification-item): deprecate `withCloseButton`
+
+## 16-02-2026
+
+**F36 Autocomplete** `v6.3.2`
+
+- fix(autocomplete): adjust popover container width
+
+**F36 Popover** `v6.3.2`
+
+- fix(autocomplete): adjust popover container width
+
+## 16-02-2026
+
+**F36 Icons** `v6.2.0`
+
+- Added the QrCodeIcon to the icon library.
+
+**F36 Menu** `v6.3.0`
+
+- Make the useTypeahead feature of floating-ui a controllable property and disabled per default.
+
+**F36 Tooltip** `v6.3.1`
+
+- chore(tooltip): adjust vertical offset
+
+## 16-02-2026
+
+`@contentful/f36-components@6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Accordion** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Asset** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Autocomplete** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Avatar** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Badge** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Button** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Card** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Collapse** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Copybutton** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Core** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Datepicker** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Datetime** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Drag Handle** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Empty State** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Entity List** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Forms** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Header** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Icon** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Icons** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Image** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Layout** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 List** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Menu** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Modal** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Multiselect** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Navbar** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Navlist** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Note** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Notification** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Pagination** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Pill** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Popover** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Progress Stepper** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Skeleton** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Spinner** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Table** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Tabs** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Text Link** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Tokens** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Tooltip** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Typography** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Usage Card** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Usage Count** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
+
+**F36 Utils** `v6.1.0`
+
+- Exit pre-release mode and release first major version 6
 
 ## 29-11-2025
 

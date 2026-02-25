@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.1.2
+
+### Patch Changes
+
+- [#3340](https://github.com/contentful/forma-36/pull/3340) [`1b4173e`](https://github.com/contentful/forma-36/commit/1b4173e2fc5435d8407c21f0f5f862bd320cf29b) Thanks [@denkristoffer](https://github.com/denkristoffer)! - chore(tokens): update build process
+
+## 6.1.1
+
+### Patch Changes
+
+- [#3338](https://github.com/contentful/forma-36/pull/3338) [`d383e8e`](https://github.com/contentful/forma-36/commit/d383e8e013982ef9fcb58129f1136d084852e46b) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(tokens): re-export default []
+
 ## 6.1.0
 
 ### Minor Changes

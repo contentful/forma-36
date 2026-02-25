@@ -32,7 +32,10 @@ export type CopyButtonProps = Omit<
   /**
    * Props that are passed to the tooltip component
    */
-  tooltipProps?: Omit<TooltipProps, 'content' | 'children'>;
+  tooltipProps?: Omit<
+    TooltipProps,
+    'content' | 'children' | 'withTriggerWrapper'
+  >;
   /**
    * Label to be used on aria-label for the button
    * @default Copy to clipboard

@@ -1,5 +1,126 @@
 # Change Log
 
+## 6.7.1
+
+### Patch Changes
+
+- Updated dependencies [[`9e4d1bf`](https://github.com/contentful/forma-36/commit/9e4d1bf49cd5ef8b36a3a05b73d766eab1403d33)]:
+  - @contentful/f36-tooltip@6.7.1
+  - @contentful/f36-button@6.7.1
+  - @contentful/f36-core@6.7.1
+  - @contentful/f36-drag-handle@6.7.1
+  - @contentful/f36-icons@6.7.1
+
+## 6.7.0
+
+### Patch Changes
+
+- Updated dependencies [[`f6ed0aa`](https://github.com/contentful/forma-36/commit/f6ed0aa7091fcca7dbe4c10eb9da835c6686a29e)]:
+  - @contentful/f36-button@6.7.0
+  - @contentful/f36-tooltip@6.7.0
+  - @contentful/f36-core@6.7.0
+  - @contentful/f36-drag-handle@6.7.0
+  - @contentful/f36-icons@6.7.0
+
+## 6.6.1
+
+### Patch Changes
+
+- Updated dependencies [[`b51e219`](https://github.com/contentful/forma-36/commit/b51e21976d96f73a2f8ee1c5438694b2a8a86d29)]:
+  - @contentful/f36-button@6.6.1
+  - @contentful/f36-drag-handle@6.6.1
+  - @contentful/f36-icons@6.6.1
+  - @contentful/f36-core@6.6.1
+  - @contentful/f36-tooltip@6.6.1
+
+## 6.6.0
+
+### Patch Changes
+
+- Updated dependencies [[`3c504b9`](https://github.com/contentful/forma-36/commit/3c504b960ba3d7b21812311b0b45d9aaf60cb34a)]:
+  - @contentful/f36-icons@6.6.0
+  - @contentful/f36-button@6.6.0
+  - @contentful/f36-core@6.6.0
+  - @contentful/f36-drag-handle@6.6.0
+  - @contentful/f36-tooltip@6.6.0
+
+## 6.5.1
+
+### Patch Changes
+
+- Updated dependencies [[`bb7d181`](https://github.com/contentful/forma-36/commit/bb7d181dfd954b726c1be08e2c3f7e3efccf2962)]:
+  - @contentful/f36-button@6.5.1
+  - @contentful/f36-core@6.5.1
+  - @contentful/f36-drag-handle@6.5.1
+  - @contentful/f36-icons@6.5.1
+  - @contentful/f36-tooltip@6.5.1
+
+## 6.5.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.5.0
+  - @contentful/f36-core@6.5.0
+  - @contentful/f36-drag-handle@6.5.0
+  - @contentful/f36-icons@6.5.0
+  - @contentful/f36-tooltip@6.5.0
+
+## 6.4.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.4.0
+  - @contentful/f36-core@6.4.0
+  - @contentful/f36-drag-handle@6.4.0
+  - @contentful/f36-icons@6.4.0
+  - @contentful/f36-tooltip@6.4.0
+
+## 6.3.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.3.2
+  - @contentful/f36-core@6.3.2
+  - @contentful/f36-drag-handle@6.3.2
+  - @contentful/f36-icons@6.3.2
+  - @contentful/f36-tooltip@6.3.2
+
+## 6.3.1
+
+### Patch Changes
+
+- Updated dependencies [[`f74966b`](https://github.com/contentful/forma-36/commit/f74966b449497ae342bf860868507e81a5a51582)]:
+  - @contentful/f36-tooltip@6.3.1
+  - @contentful/f36-button@6.3.1
+  - @contentful/f36-core@6.3.1
+  - @contentful/f36-drag-handle@6.3.1
+  - @contentful/f36-icons@6.3.1
+
+## 6.3.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.3.0
+  - @contentful/f36-core@6.3.0
+  - @contentful/f36-drag-handle@6.3.0
+  - @contentful/f36-icons@6.3.0
+  - @contentful/f36-tooltip@6.3.0
+
+## 6.2.0
+
+### Patch Changes
+
+- Updated dependencies [[`76458f5`](https://github.com/contentful/forma-36/commit/76458f53d6e0f7bdc7fe47fc90f0a3d3f97ce4a7)]:
+  - @contentful/f36-icons@6.2.0
+  - @contentful/f36-button@6.2.0
+  - @contentful/f36-core@6.2.0
+  - @contentful/f36-drag-handle@6.2.0
+  - @contentful/f36-tooltip@6.2.0
+
 ## 6.1.0
 
 ### Minor Changes

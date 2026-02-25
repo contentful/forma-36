@@ -1,11 +1,11 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import chalk from 'chalk';
-import {  execaSync } from 'execa';
+import { execaSync } from 'execa';
 import isGitClean from 'is-git-clean';
 import inquirer from 'inquirer';
 import meow from 'meow';
-import { globby } from 'globby';
+import { globbySync } from 'globby';
 import { createRequire } from 'module';
 import * as inquirerChoices from './inquirer-choices.mjs';
 import updateDependencies from './updateDependencies.mjs';
@@ -96,7 +96,7 @@ function runTransform({ files, flags, parser, transformer }) {
 
 function expandFilePathsIfNeeded(files) {
   const shouldExpandFiles = files.some((file) => file.includes('*'));
-  return shouldExpandFiles ? globby.sync(files) : files;
+  return shouldExpandFiles ? globbySync(files) : files;
 }
 
 export function run() {
@@ -184,7 +184,7 @@ export function run() {
             files: filesExpanded,
             flags: cli.flags,
             parser: selectedParser,
-            transformer:setup,
+            transformer: setup,
           });
       }
     });

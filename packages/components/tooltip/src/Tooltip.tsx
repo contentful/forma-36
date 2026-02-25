@@ -18,6 +18,9 @@ import { TooltipContextProvider } from './TooltipContext';
 import { useTooltip } from './useTooltip';
 import { cx } from '@emotion/css';
 
+const WITH_TRIGGER_WRAPPER_DISABLED_ERROR =
+  'Tooltip with `withTriggerWrapper={false}` requires a single valid React element child.';
+
 export type TooltipPlacement = Placement | 'auto';
 
 export type WithEnhancedContent = {
@@ -86,7 +89,7 @@ export type TooltipInternalProps = {
    */
   showDelay?: number;
   /**
-   * Class names to be appended to the className prop of the tooltip’s target
+   * Class names to be appended to the className prop of the tooltip’s target wrapper
    */
   targetWrapperClassName?: string;
   /**
@@ -103,6 +106,11 @@ export type TooltipInternalProps = {
    * @default false
    */
   isDisabled?: boolean;
+  /**
+   * Whether the trigger should be wrapped in an element.
+   * @default true
+   */
+  withTriggerWrapper?: boolean;
 };
 
 export interface TooltipProps
@@ -114,6 +122,7 @@ export const Tooltip = ({
   children,
   className,
   as: HtmlTag = 'span',
+  withTriggerWrapper = true,
   content,
   label,
   id,
@@ -132,7 +141,7 @@ export const Tooltip = ({
   usePortal = false,
   isDisabled = false,
   ...otherProps
-}: TooltipProps) => {
+}: TooltipProps): React.JSX.Element => {
   const tooltipId = useId(id, 'tooltip');
   const styles = getStyles();
 
@@ -152,7 +161,17 @@ export const Tooltip = ({
     maxWidth: contentMaxWidth,
   };
 
+  if (!withTriggerWrapper && !React.isValidElement(children)) {
+    // eslint-disable-next-line no-console
+    console.error(WITH_TRIGGER_WRAPPER_DISABLED_ERROR);
+    return <>{children}</>;
+  }
+
   if (!content || isDisabled) {
+    if (!withTriggerWrapper) {
+      return <>{children}</>;
+    }
+
     return <HtmlTag className={targetWrapperClassName}>{children}</HtmlTag>;
   }
 
@@ -167,6 +186,7 @@ export const Tooltip = ({
         onKeyDown={onKeyDown}
         className={cx(styles.tooltipContainer, targetWrapperClassName)}
         as={HtmlTag}
+        withTriggerWrapper={withTriggerWrapper}
         {...otherProps}
       >
         {children}

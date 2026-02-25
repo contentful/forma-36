@@ -1,5 +1,103 @@
 # Change Log
 
+## 6.7.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.7.1
+  - @contentful/f36-icon@6.7.1
+
+## 6.7.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.7.0
+  - @contentful/f36-icon@6.7.0
+
+## 6.6.1
+
+### Patch Changes
+
+- [#3343](https://github.com/contentful/forma-36/pull/3343) [`b51e219`](https://github.com/contentful/forma-36/commit/b51e21976d96f73a2f8ee1c5438694b2a8a86d29) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat: allow react 18.3+ peer dependency
+
+- Updated dependencies [[`b51e219`](https://github.com/contentful/forma-36/commit/b51e21976d96f73a2f8ee1c5438694b2a8a86d29)]:
+  - @contentful/f36-icon@6.6.1
+  - @contentful/f36-core@6.6.1
+
+## 6.6.0
+
+### Minor Changes
+
+- [#3341](https://github.com/contentful/forma-36/pull/3341) [`3c504b9`](https://github.com/contentful/forma-36/commit/3c504b960ba3d7b21812311b0b45d9aaf60cb34a) Thanks [@YvesRijckaert](https://github.com/YvesRijckaert)! - add calendar x icon
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.6.0
+  - @contentful/f36-icon@6.6.0
+
+## 6.5.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.5.1
+  - @contentful/f36-icon@6.5.1
+
+## 6.5.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.5.0
+  - @contentful/f36-icon@6.5.0
+
+## 6.4.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.4.0
+  - @contentful/f36-icon@6.4.0
+
+## 6.3.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.2
+  - @contentful/f36-icon@6.3.2
+
+## 6.3.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.1
+  - @contentful/f36-icon@6.3.1
+
+## 6.3.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.0
+  - @contentful/f36-icon@6.3.0
+
+## 6.2.0
+
+### Minor Changes
+
+- [#3316](https://github.com/contentful/forma-36/pull/3316) [`76458f5`](https://github.com/contentful/forma-36/commit/76458f53d6e0f7bdc7fe47fc90f0a3d3f97ce4a7) Thanks [@jshmo](https://github.com/jshmo)! - Added the QrCodeIcon to the icon library.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.2.0
+  - @contentful/f36-icon@6.2.0
+
 ## 6.1.0
 
 ### Minor Changes

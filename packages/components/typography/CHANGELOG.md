@@ -1,5 +1,82 @@
 # Change Log
 
+## 6.7.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.7.1
+
+## 6.7.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.7.0
+
+## 6.6.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.6.1
+
+## 6.6.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.6.0
+
+## 6.5.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.5.1
+
+## 6.5.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.5.0
+
+## 6.4.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.4.0
+
+## 6.3.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.2
+
+## 6.3.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.1
+
+## 6.3.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.0
+
+## 6.2.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.2.0
+
 ## 6.1.0
 
 ### Minor Changes
