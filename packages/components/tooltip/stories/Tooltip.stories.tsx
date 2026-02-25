@@ -45,6 +45,29 @@ Basic.parameters = {
   },
 };
 
+export const WithoutTriggerWrapper = () => {
+  return (
+    <Tooltip
+      withTriggerWrapper={false}
+      content="I am rendered without an extra wrapper"
+    >
+      <TextLink href="/">Hover me</TextLink>
+    </Tooltip>
+  );
+};
+
+const WithoutTriggerWrapperSourceCode = `<Tooltip withTriggerWrapper={false} content="I am rendered without an extra wrapper">
+  <TextLink href="/">Hover me</TextLink>
+</Tooltip>`;
+
+WithoutTriggerWrapper.parameters = {
+  docs: {
+    source: {
+      code: WithoutTriggerWrapperSourceCode,
+    },
+  },
+};
+
 export const AutoPlacement = (args: { content: string }) => {
   return (
     <div

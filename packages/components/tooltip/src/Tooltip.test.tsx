@@ -72,6 +72,41 @@ describe('Tooltip', () => {
     );
   });
 
+  it('renders without a wrapper when withTriggerWrapper is false', async () => {
+    render(
+      <Tooltip content="Tooltip content" withTriggerWrapper={false}>
+        <button type="button" data-test-id="hover-me">
+          Hover me
+        </button>
+      </Tooltip>,
+    );
+
+    await userEvent.hover(screen.getByTestId('hover-me'));
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+    );
+  });
+
+  it('renders children without tooltip when withTriggerWrapper is false and child is invalid', () => {
+    const consoleErrorSpy = jest
+      .spyOn(console, 'error')
+      .mockImplementation(() => {});
+
+    render(
+      <Tooltip content="Tooltip content" withTriggerWrapper={false}>
+        Hover me
+      </Tooltip>,
+    );
+
+    expect(screen.getByText('Hover me')).toBeInTheDocument();
+    expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      'Tooltip with `withTriggerWrapper={false}` requires a single valid React element child.',
+    );
+
+    consoleErrorSpy.mockRestore();
+  });
+
   it('renders around a disabled Button', async () => {
     render(
       <Tooltip content="Tooltip content" data-test-id="hover-me">
@@ -81,6 +116,21 @@ describe('Tooltip', () => {
     await userEvent.hover(screen.getByTestId('hover-me'));
     await waitFor(() =>
       expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+    );
+  });
+
+  it('does not render tooltip when isDisabled and withTriggerWrapper is false', async () => {
+    render(
+      <Tooltip content="Tooltip content" isDisabled withTriggerWrapper={false}>
+        <button type="button" data-test-id="hover-me">
+          Hover me
+        </button>
+      </Tooltip>,
+    );
+
+    await userEvent.hover(screen.getByTestId('hover-me'));
+    await waitFor(() =>
+      expect(screen.queryByRole('tooltip')).not.toBeInTheDocument(),
     );
   });
 

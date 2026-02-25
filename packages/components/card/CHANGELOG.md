@@ -1,5 +1,58 @@
 # Change Log
 
+## 6.7.1
+
+### Patch Changes
+
+- Updated dependencies [[`9e4d1bf`](https://github.com/contentful/forma-36/commit/9e4d1bf49cd5ef8b36a3a05b73d766eab1403d33)]:
+  - @contentful/f36-tooltip@6.7.1
+  - @contentful/f36-asset@6.7.1
+  - @contentful/f36-badge@6.7.1
+  - @contentful/f36-button@6.7.1
+  - @contentful/f36-core@6.7.1
+  - @contentful/f36-drag-handle@6.7.1
+  - @contentful/f36-icon@6.7.1
+  - @contentful/f36-icons@6.7.1
+  - @contentful/f36-menu@6.7.1
+  - @contentful/f36-skeleton@6.7.1
+  - @contentful/f36-typography@6.7.1
+
+## 6.7.0
+
+### Patch Changes
+
+- Updated dependencies [[`f6ed0aa`](https://github.com/contentful/forma-36/commit/f6ed0aa7091fcca7dbe4c10eb9da835c6686a29e)]:
+  - @contentful/f36-button@6.7.0
+  - @contentful/f36-tooltip@6.7.0
+  - @contentful/f36-asset@6.7.0
+  - @contentful/f36-badge@6.7.0
+  - @contentful/f36-core@6.7.0
+  - @contentful/f36-drag-handle@6.7.0
+  - @contentful/f36-icon@6.7.0
+  - @contentful/f36-icons@6.7.0
+  - @contentful/f36-menu@6.7.0
+  - @contentful/f36-skeleton@6.7.0
+  - @contentful/f36-typography@6.7.0
+
+## 6.6.1
+
+### Patch Changes
+
+- [#3343](https://github.com/contentful/forma-36/pull/3343) [`b51e219`](https://github.com/contentful/forma-36/commit/b51e21976d96f73a2f8ee1c5438694b2a8a86d29) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat: allow react 18.3+ peer dependency
+
+- Updated dependencies [[`b51e219`](https://github.com/contentful/forma-36/commit/b51e21976d96f73a2f8ee1c5438694b2a8a86d29)]:
+  - @contentful/f36-asset@6.6.1
+  - @contentful/f36-badge@6.6.1
+  - @contentful/f36-button@6.6.1
+  - @contentful/f36-drag-handle@6.6.1
+  - @contentful/f36-icon@6.6.1
+  - @contentful/f36-icons@6.6.1
+  - @contentful/f36-menu@6.6.1
+  - @contentful/f36-core@6.6.1
+  - @contentful/f36-skeleton@6.6.1
+  - @contentful/f36-tooltip@6.6.1
+  - @contentful/f36-typography@6.6.1
+
 ## 6.6.0
 
 ### Patch Changes
