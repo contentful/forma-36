@@ -1,5 +1,99 @@
 # Change Log
 
+## 6.7.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.7.1
+  - @contentful/f36-icons@6.7.1
+
+## 6.7.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.7.0
+  - @contentful/f36-icons@6.7.0
+
+## 6.6.1
+
+### Patch Changes
+
+- [#3343](https://github.com/contentful/forma-36/pull/3343) [`b51e219`](https://github.com/contentful/forma-36/commit/b51e21976d96f73a2f8ee1c5438694b2a8a86d29) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat: allow react 18.3+ peer dependency
+
+- Updated dependencies [[`b51e219`](https://github.com/contentful/forma-36/commit/b51e21976d96f73a2f8ee1c5438694b2a8a86d29)]:
+  - @contentful/f36-icons@6.6.1
+  - @contentful/f36-core@6.6.1
+
+## 6.6.0
+
+### Patch Changes
+
+- Updated dependencies [[`3c504b9`](https://github.com/contentful/forma-36/commit/3c504b960ba3d7b21812311b0b45d9aaf60cb34a)]:
+  - @contentful/f36-icons@6.6.0
+  - @contentful/f36-core@6.6.0
+
+## 6.5.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.5.1
+  - @contentful/f36-icons@6.5.1
+
+## 6.5.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.5.0
+  - @contentful/f36-icons@6.5.0
+
+## 6.4.0
+
+### Minor Changes
+
+- [#3336](https://github.com/contentful/forma-36/pull/3336) [`c26b059`](https://github.com/contentful/forma-36/commit/c26b0596ed9af5e6025fc4d501c2f012accec230) Thanks [@Lelith](https://github.com/Lelith)! - Add explicit `as` prop to Badge component for TypeScript support. While the prop was previously functional through the spread operator, it now has proper type definitions, allowing developers to customize the underlying HTML element (e.g., render as `span` instead of `div`) with full IDE autocomplete and type checking. This resolves HTML validation issues when Badge needs to be used within inline contexts.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.4.0
+  - @contentful/f36-icons@6.4.0
+
+## 6.3.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.2
+  - @contentful/f36-icons@6.3.2
+
+## 6.3.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.1
+  - @contentful/f36-icons@6.3.1
+
+## 6.3.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.0
+  - @contentful/f36-icons@6.3.0
+
+## 6.2.0
+
+### Patch Changes
+
+- Updated dependencies [[`76458f5`](https://github.com/contentful/forma-36/commit/76458f53d6e0f7bdc7fe47fc90f0a3d3f97ce4a7)]:
+  - @contentful/f36-icons@6.2.0
+  - @contentful/f36-core@6.2.0
+
 ## 6.1.0
 
 ### Minor Changes

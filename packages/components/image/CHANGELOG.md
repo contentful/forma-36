@@ -1,5 +1,95 @@
 # Change Log
 
+## 6.7.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.7.1
+  - @contentful/f36-skeleton@6.7.1
+
+## 6.7.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.7.0
+  - @contentful/f36-skeleton@6.7.0
+
+## 6.6.1
+
+### Patch Changes
+
+- [#3343](https://github.com/contentful/forma-36/pull/3343) [`b51e219`](https://github.com/contentful/forma-36/commit/b51e21976d96f73a2f8ee1c5438694b2a8a86d29) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat: allow react 18.3+ peer dependency
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.6.1
+  - @contentful/f36-skeleton@6.6.1
+
+## 6.6.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.6.0
+  - @contentful/f36-skeleton@6.6.0
+
+## 6.5.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.5.1
+  - @contentful/f36-skeleton@6.5.1
+
+## 6.5.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.5.0
+  - @contentful/f36-skeleton@6.5.0
+
+## 6.4.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.4.0
+  - @contentful/f36-skeleton@6.4.0
+
+## 6.3.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.2
+  - @contentful/f36-skeleton@6.3.2
+
+## 6.3.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.1
+  - @contentful/f36-skeleton@6.3.1
+
+## 6.3.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.3.0
+  - @contentful/f36-skeleton@6.3.0
+
+## 6.2.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.2.0
+  - @contentful/f36-skeleton@6.2.0
+
 ## 6.1.0
 
 ### Minor Changes

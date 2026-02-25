@@ -48,6 +48,11 @@ const veggies: Produce[] = [
   { id: 4, name: 'Pepper 🫑' },
 ];
 
+const longTag: Produce = {
+  id: 13,
+  name: 'A fruit with a very long name that should not overflow outside of the container',
+};
+
 const groceryList: GroceryList[] = [
   {
     groupTitle: 'Fruit',
@@ -64,11 +69,14 @@ const groceryList: GroceryList[] = [
   },
 ];
 
-const fruitStrings = fruits.reduce((acc, fruit) => [...acc, fruit.name], []);
+const fruitStrings = fruits.reduce<string[]>(
+  (acc, fruit) => [...acc, fruit.name],
+  [],
+);
 
-export const Basic = () => {
+export const Basic = (args: AutocompleteProps<string>) => {
   const [selectedFruit, setSelectedFruit] = useState<string>('');
-  const [filteredItems, setFilteredItems] = useState(fruitStrings);
+  const [filteredItems, setFilteredItems] = useState<string[]>(fruitStrings);
 
   const handleInputValueChange = (value: string) => {
     const newFilteredItems = fruitStrings.filter((item) =>
@@ -92,13 +100,13 @@ export const Basic = () => {
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<string>
-        placeholder="select your favorite fruit"
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
         onFocus={(e) => action('onFocus')(e)}
         onBlur={(e) => action('onBlur')(e)}
         listWidth="full"
+        {...args}
       />
 
       <Paragraph>Selected fruit: {selectedFruit}</Paragraph>
@@ -109,12 +117,54 @@ Basic.args = {
   placeholder: 'Search your favorite fruit',
 };
 
+export const BasicOpenFullWidthList = (args: AutocompleteProps<string>) => {
+  const items = [longTag.name, ...fruitStrings];
+  const [selectedFruit, setSelectedFruit] = useState<string>('');
+  const [filteredItems, setFilteredItems] = useState<string[]>(items);
+
+  const handleInputValueChange = (value: string) => {
+    const newFilteredItems = items.filter((item) =>
+      item.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredItems(newFilteredItems);
+    action('onInputValueChange')(value);
+  };
+
+  const handleSelectItem = (item: string) => {
+    setSelectedFruit(item);
+    action('onSelectItem')(item);
+  };
+
+  return (
+    <Stack
+      style={{ width: '480px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      {/* It’s not necessary to pass "Fruit" (type of one item)  */}
+      <Autocomplete<string>
+        isOpen
+        items={filteredItems}
+        onInputValueChange={handleInputValueChange}
+        onSelectItem={handleSelectItem}
+        onFocus={(e) => action('onFocus')(e)}
+        onBlur={(e) => action('onBlur')(e)}
+        listWidth="full"
+        {...args}
+      />
+
+      <Paragraph>Selected fruit: {selectedFruit}</Paragraph>
+    </Stack>
+  );
+};
+BasicOpenFullWidthList.args = {
+  placeholder: 'Search your favorite fruit',
+};
+
 export const UsingObjectsAsItems = (args: AutocompleteProps<Produce>) => {
-  const [selectedFruit, setSelectedFruit] = useState<Produce>({
-    id: undefined,
-    name: '',
-  });
-  const [filteredItems, setFilteredItems] = useState(fruits);
+  const [selectedFruit, setSelectedFruit] = useState<Produce>();
+  const [filteredItems, setFilteredItems] = useState<Produce[]>(fruits);
 
   const handleInputValueChange = (value: string) => {
     const newFilteredItems = fruits.filter((item) =>
@@ -136,7 +186,6 @@ export const UsingObjectsAsItems = (args: AutocompleteProps<Produce>) => {
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<Produce>
-        {...args}
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
@@ -144,6 +193,7 @@ export const UsingObjectsAsItems = (args: AutocompleteProps<Produce>) => {
         onBlur={(e) => action('onBlur')(e)}
         itemToString={(item) => item.name}
         renderItem={(item) => item.name}
+        {...args}
       />
 
       <Paragraph>Selected fruit: {selectedFruit?.name}</Paragraph>
@@ -154,13 +204,13 @@ UsingObjectsAsItems.args = {
   placeholder: 'Search your favorite fruit',
 };
 
-export const ControlledFromOutside = () => {
+export const ControlledFromOutside = (args: AutocompleteProps<Produce>) => {
   const [selectedFruit, setSelectedFruit] = useState<Produce>({
     id: 9,
     name: 'Pear 🍐',
   });
-  const [inputValue, setInputValue] = useState(selectedFruit.name);
-  const [isOpen, setIsOpen] = useState(false);
+  const [inputValue, setInputValue] = useState<string>(selectedFruit.name);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const filteredItems = fruits.filter((item) =>
     item.name.toLowerCase().includes(inputValue.toLowerCase()),
@@ -178,7 +228,6 @@ export const ControlledFromOutside = () => {
       alignItems="start"
     >
       <Autocomplete<Produce>
-        placeholder="select your favorite fruit"
         listMaxHeight={120}
         textOnAfterSelect="preserve"
         items={filteredItems}
@@ -192,6 +241,7 @@ export const ControlledFromOutside = () => {
         onFocus={(e) => action('onFocus')(e)}
         onBlur={(e) => action('onBlur')(e)}
         selectedItem={selectedFruit}
+        {...args}
       />
       <Paragraph>Selected fruit: {selectedFruit?.name}</Paragraph>
       <Paragraph>Input value: {inputValue}</Paragraph>
@@ -208,8 +258,9 @@ ControlledFromOutside.args = {
 };
 
 export const UsingGroupedItems = () => {
-  const [selectedItem, setSelectedItem] = useState<Produce>({} as Produce);
-  const [filteredItems, setFilteredItems] = useState(groceryList);
+  const [selectedItem, setSelectedItem] = useState<Produce>();
+  const [filteredItems, setFilteredItems] =
+    useState<GroceryList[]>(groceryList);
 
   const handleInputValueChange = (value: string) => {
     const newFilteredItems = groceryList.map((group) => {
@@ -257,9 +308,9 @@ UsingGroupedItems.args = {
   placeholder: 'Search your favorite fruit',
 };
 
-export const MultipleSelection = () => {
-  const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
-  const [filteredItems, setFilteredItems] = useState(fruits);
+export const MultipleSelection = (args: AutocompleteProps<Produce>) => {
+  const [selectedFruits, setSelectedFruits] = useState<string[]>([]);
+  const [filteredItems, setFilteredItems] = useState<Produce[]>(fruits);
 
   const handleInputValueChange = (value: string) => {
     const newFilteredItems = fruits.filter((item) =>
@@ -281,7 +332,6 @@ export const MultipleSelection = () => {
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<Produce>
-        placeholder="select your favorite fruit"
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
@@ -291,6 +341,7 @@ export const MultipleSelection = () => {
         renderItem={(item) => item.name}
         textOnAfterSelect="clear"
         closeAfterSelect={false}
+        {...args}
       />
 
       <span>
@@ -304,10 +355,13 @@ export const MultipleSelection = () => {
     </Stack>
   );
 };
+MultipleSelection.args = {
+  placeholder: 'Search your favorite fruits',
+};
 
-export const WithFormControl = () => {
+export const WithFormControl = (args: AutocompleteProps<Produce>) => {
   const [selectedFruit, setSelectedFruit] = useState<Produce>();
-  const [filteredItems, setFilteredItems] = useState(fruits);
+  const [filteredItems, setFilteredItems] = useState<Produce[]>(fruits);
 
   const handleInputValueChange = (value: string) => {
     const newFilteredItems = fruits.filter((item) =>
@@ -334,6 +388,7 @@ export const WithFormControl = () => {
           onBlur={(e) => action('onBlur')(e)}
           itemToString={(item) => item.name}
           renderItem={(item) => item.name}
+          {...args}
         />
 
         <FormControl.ValidationMessage>
@@ -345,10 +400,13 @@ export const WithFormControl = () => {
     </>
   );
 };
+WithFormControl.args = {
+  placeholder: 'Search your favorite fruit',
+};
 
-export const HighlightingItems = () => {
+export const HighlightingItems = (args: AutocompleteProps<Produce>) => {
   const [selectedFruit, setSelectedFruit] = useState<Produce>();
-  const [filteredItems, setFilteredItems] = useState(fruits);
+  const [filteredItems, setFilteredItems] = useState<Produce[]>(fruits);
 
   const handleInputValueChange = (value: string) => {
     const newFilteredItems = fruits.filter((item) =>
@@ -390,11 +448,15 @@ export const HighlightingItems = () => {
             </>
           );
         }}
+        {...args}
       />
 
       <Paragraph>Selected fruit: {selectedFruit?.name}</Paragraph>
     </Stack>
   );
+};
+HighlightingItems.args = {
+  placeholder: 'Search your favorite fruit',
 };
 
 const fetchFruits = (filterBy?: string) =>
@@ -411,8 +473,8 @@ const fetchFruits = (filterBy?: string) =>
     }, 800);
   });
 
-export const WithAsyncData = () => {
-  const [isLoading, setIsLoading] = useState(false);
+export const WithAsyncData = (args: AutocompleteProps<Produce>) => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [selectedFruit, setSelectedFruit] = useState<Produce>();
   const [items, setItems] = useState<Produce[]>([]);
 
@@ -454,6 +516,7 @@ export const WithAsyncData = () => {
         itemToString={(item) => item.name}
         renderItem={(item) => item.name}
         isLoading={isLoading}
+        {...args}
       />
 
       <Paragraph>Selected fruit: {selectedFruit?.name}</Paragraph>

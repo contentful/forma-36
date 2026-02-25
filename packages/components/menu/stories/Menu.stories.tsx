@@ -1,8 +1,9 @@
 import React from 'react';
 import type { StoryObj, Meta } from '@storybook/react-vite';
-import { IconButton } from '@contentful/f36-button';
+import { IconButton, Button } from '@contentful/f36-button';
 import { ListIcon, CheckIcon } from '@contentful/f36-icons';
 import { action } from 'storybook/internal/actions';
+import { TextInput } from '@contentful/f36-forms';
 import {
   BrowserRouter as Router,
   useHref,
@@ -132,6 +133,51 @@ export const Controlled: StoryObj<MenuProps> = {
   },
 };
 
+export const WithInput: StoryObj<MenuProps> = {
+  render: function Render() {
+    const [isOpen, setIsOpen] = React.useState(false);
+    const [inputValue, setInputValue] = React.useState('');
+
+    const callbackOnMenuClose = () => {
+      setIsOpen(false);
+      action('onClose');
+    };
+    const callbackOnMenuOpen = () => {
+      setIsOpen(true);
+      action('onOpen');
+    };
+
+    return (
+      <Menu
+        isOpen={isOpen}
+        onClose={callbackOnMenuClose}
+        onOpen={callbackOnMenuOpen}
+      >
+        <Menu.Trigger>
+          <IconButton
+            variant="secondary"
+            icon={<ListIcon />}
+            aria-label="toggle menu"
+          />
+        </Menu.Trigger>
+        <Menu.List>
+          <TextInput
+            value={inputValue}
+            onChange={(evt) => setInputValue(evt.target.value)}
+          />
+          <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
+          <Menu.Item>Embed existing entry</Menu.Item>
+          <Menu.Item>Create and embed existing entry</Menu.Item>
+          <Menu.Divider />
+          <Menu.Item as="a" href="https://contentful.com" target="_blank">
+            About Contentful
+          </Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+  },
+};
+
 export const WithCustomTriggerLogic: StoryObj<MenuProps> = {
   render: function Render() {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -178,6 +224,37 @@ export const WithDisabledItems: StoryObj<MenuProps> = {
         </Menu.List>
       </Menu>
     );
+  },
+};
+
+export const WithTypeahead: StoryObj<MenuProps> = {
+  render: (args: MenuProps) => {
+    const triggerElement = (
+      <Button variant="secondary" aria-label="toggle menu">
+        Jumps to a menu point when you type a letter
+      </Button>
+    );
+    return (
+      <Menu {...args} useTypeahead>
+        <Menu.Trigger>{triggerElement}</Menu.Trigger>
+        <Menu.List>
+          <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
+          <Menu.Item>Embed existing entry</Menu.Item>
+          <Menu.Item icon={<CheckIcon />}>
+            Create and embed existing entry
+          </Menu.Item>
+          <Menu.Divider />
+          <Menu.SectionTitle>Help</Menu.SectionTitle>
+          <Menu.Item as="a" href="https://contentful.com" target="_blank">
+            About Contentful
+          </Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+  },
+
+  parameters: {
+    chromatic: { delay: 300 },
   },
 };
 
