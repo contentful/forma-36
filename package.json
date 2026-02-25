@@ -127,7 +127,7 @@
     "commit-msg": "npx commitlint -e \"$@\""
   },
   "engines": {
-    "node": ">=20.0.0",
+    "node": ">=20.19.0",
     "npm": ">=8.5.0",
     "yarn": "Please use npm"
   },
