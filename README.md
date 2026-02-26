@@ -14,6 +14,7 @@
 - [Development](#development)
   - [Storybook for f36-components](#storybook-for-f36-components)
 - [Commits & releases](#commits--releases)
+- [Deprecation process](#deprecation-process)
 - [Testing with your own project locally](#testing-with-your-own-project-locally)
 - [Get involved](#get-involved)
 - [Reach out to us](#reach-out-to-us)
@@ -44,6 +45,12 @@ We use storybook with our react component library to develop components. You can
 Use `npm run-script commit`. This uses the [Commitzen](https://github.com/commitizen/cz-cli) CLI to create a conventional commit message based on your changes. CI is setup to release all new commits on the main branch that contains a new [changeset](https://github.com/changesets/changesets).
 
 Read more about changeset [here](RELEASES.md)
+
+## Deprecation process
+
+We follow a structured deprecation process to ensure smooth transitions when components or APIs are being phased out. Deprecations are announced at least one major version in advance, with clear migration paths and runtime warnings.
+
+Read more about our deprecation guidelines [here](DEPRECATION.md)
 
 ## Testing with your own project locally
 
