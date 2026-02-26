@@ -8,11 +8,12 @@ import {
   TOPBAR_HEIGHT,
   SCREEN_BREAKPOINT_LARGE,
 } from '../../utils/getGridStyles';
-import { DocSearch } from '../DocSearch';
 import { useCurrentLocation } from '../../hooks/useCurrentLocation';
 import { TopbarLink } from './TopbarLink';
 import { TopbarLogo } from './TopbarLogo';
 import { signOut, useSession } from 'next-auth/react';
+import { DocSearch } from '@docsearch/react';
+import '@docsearch/css';
 
 const styles = {
   header: css({
@@ -102,7 +103,11 @@ export function Topbar({ links }: TopbarProps) {
         </Flex>
 
         <Flex className={styles.docSearchContainer}>
-          <DocSearch />
+          <DocSearch
+            appId={process.env.NEXT_PUBLIC_DOCSEARCH_APP_ID || ''}
+            apiKey={process.env.NEXT_PUBLIC_DOCSEARCH_API_KEY || ''}
+            indices={[process.env.NEXT_PUBLIC_DOCSEARCH_INDEX_NAME || '']}
+          />
           {session ? (
             <Button
               className={styles.signOut}
