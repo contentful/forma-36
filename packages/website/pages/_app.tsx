@@ -7,7 +7,6 @@ import { GlobalStyles } from '../components/GlobalStyles';
 import { SessionProvider } from 'next-auth/react';
 
 import '../resources/css/sandpack.css';
-import 'docsearch.js/dist/cdn/docsearch.min.css';
 import { Session } from 'next-auth';
 
 function MyApp({ Component, pageProps }: AppProps<{ session: Session }>) {
