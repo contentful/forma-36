@@ -3,7 +3,8 @@ import Document, { Head, Html, Main, NextScript } from 'next/document';
 import * as snippet from '@segment/snippet';
 import { renderStatic } from '../utils/renderer';
 
-const { SEGMENT_KEY, NODE_ENV } = process.env;
+const { NEXT_PUBLIC_SEGMENT_API_KEY, NODE_ENV } = process.env;
+
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const page = await ctx.renderPage();
@@ -23,9 +24,9 @@ export default class MyDocument extends Document {
     };
   }
 
-  renderSnipet() {
+  renderSnippet() {
     const opts = {
-      apiKey: SEGMENT_KEY,
+      apiKey: NEXT_PUBLIC_SEGMENT_API_KEY,
       page: true,
     };
 
@@ -37,7 +38,7 @@ export default class MyDocument extends Document {
   }
 
   render() {
-    const renderedSnippet = this.renderSnipet();
+    const renderedSnippet = this.renderSnippet();
 
     return (
       <Html lang="en">
