@@ -3,11 +3,7 @@ import { css, cx } from '@emotion/css';
 import { Grid, Flex, List, Button } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 
-import {
-  getGridStyles,
-  TOPBAR_HEIGHT,
-  SCREEN_BREAKPOINT_LARGE,
-} from '../../utils/getGridStyles';
+import { getGridStyles, TOPBAR_HEIGHT } from '../../utils/getGridStyles';
 import { useCurrentLocation } from '../../hooks/useCurrentLocation';
 import { TopbarLink } from './TopbarLink';
 import { TopbarLogo } from './TopbarLogo';
@@ -33,11 +29,21 @@ const styles = {
     },
   }),
   docSearchContainer: css({
-    '& .algolia-autocomplete': {
-      width: '100%',
+    '.DocSearch-Button': {
+      fontSize: tokens.fontSizeM,
+      lineHeight: tokens.lineHeightCondensed,
+      minHeight: '40px',
+      fontWeight: tokens.fontWeightMedium,
+      border: '1px solid',
+      boxShadow: '0px 1px 0px rgb(25, 37, 50, 0.08)',
+      borderRadius: tokens.borderRadiusMedium,
+      borderColor: tokens.gray300,
+      '&:hover': {
+        backgroundColor: tokens.gray100,
+      },
     },
-    [`@media screen and (min-width: ${SCREEN_BREAKPOINT_LARGE})`]: {
-      gridColumnStart: 4,
+    '.DocSearch-Button-Key, .DocSearch-Button': {
+      color: tokens.gray900,
     },
   }),
   signOut: css({
