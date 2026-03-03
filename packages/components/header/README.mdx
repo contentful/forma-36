@@ -12,6 +12,67 @@ The Header component exposes a way to build visually consistent hierarchy into a
 
 Note that the Header is not meant to be used when building navigation, for this case you will be better served by `Navbar`.
 
+## Header areas
+
+The header offers different areas for certain content. These are there to ensure the proper alignment and styling for the contents provieded.
+
+<Table>
+  <Table.Head>
+    <Table.Row>
+      <Table.Cell style={{ textAlign: 'left' }}>
+        <Subheading>prop</Subheading>
+      </Table.Cell>
+      <Table.Cell style={{ textAlign: 'left' }}>
+        <Subheading>description</Subheading>
+      </Table.Cell>
+      <Table.Cell style={{ textAlign: 'left' }}>
+        <Subheading>expected content</Subheading>
+      </Table.Cell>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>breadcrumbs</Table.Cell>
+      <Table.Cell>
+        An (optional) list of navigable links to prepend to the current title.
+      </Table.Cell>
+      <Table.Cell>Array of breadcrumbs</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>title</Table.Cell>
+      <Table.Cell>
+        The title of the element this header pertains to. If handed over a
+        string, it will wrap it in a heading element (default: h1).
+      </Table.Cell>
+      <Table.Cell>Title string or ReactElement</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>metadata</Table.Cell>
+      <Table.Cell>
+        Optional additional information to display in the header, will appear
+        after the title.
+      </Table.Cell>
+      <Table.Cell>Text, Badge, Tag</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>filters</Table.Cell>
+      <Table.Cell>
+        Optional element displayed in the center of the header, typically used
+        to render refinement/search UI.
+      </Table.Cell>
+      <Table.Cell>TextInput, Select, Search</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>actions</Table.Cell>
+      <Table.Cell>
+        Optional elements to display as complementary actions (e.g. buttons)
+        related to the current page/route.
+      </Table.Cell>
+      <Table.Cell>Button, IconButton, Dropdown</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table>
+
 ## Import
 
 ```jsx static=true
@@ -45,16 +106,6 @@ import { Header } from '@contentful/f36-header';
 ```jsx file=./examples/WithFilters.tsx
 
 ```
-
-## Header areas
-
-| prop        | description                                                                                                                   | Expected content             |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| breadcrumbs | An (optional) list of navigable links to prepend to the current title.                                                        | Array of breadcumbs          |
-| title       | The title of the element this header pertains to. If handed over a string, it will wrap it in a heading element (default: h1) | Title string or ReactElement |
-| metadata    | Optional additional information to display in the header, will appear after the title.                                        | Text, Badge, Tag             |
-| filters     | Optional element displayed in the center of the header, typically used to render refinement/search UI.                        | TextInput, Select, Search    |
-| actions     | Optional elements to display as complementary actions (e.g. buttons) related to the current page/route.                       | Button, IconButton, Dropdown |
 
 ## Accessibility
 
