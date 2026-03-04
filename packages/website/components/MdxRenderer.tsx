@@ -44,6 +44,7 @@ const components = {
   Note,
   Stack,
   Flex,
+  Table,
   p: (props) => <Paragraph {...props} />,
   strong: (props) => <Text fontWeight="fontWeightDemiBold" {...props} />,
   a: (props) => {
