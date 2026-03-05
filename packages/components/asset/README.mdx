@@ -5,7 +5,7 @@ status: 'stable'
 slug: /components/asset/
 github: 'https://github.com/contentful/forma-36/tree/main/packages/components/asset'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-asset--basic'
-typescript: ./src/Asset.tsx
+typescript: ./src/Asset.tsx,./src/AssetIcon/AssetIcon.tsx
 ---
 
 Represent an asset visually without showing the actual asset.
@@ -15,9 +15,9 @@ Useful in a file selector, a drag-n-drop component or in lists.
 ## Import
 
 ```js static=true
-import { Asset } from '@contentful/f36-components';
+import { Asset, AssetIcon } from '@contentful/f36-components';
 // or
-import { Asset } from '@contentful/f36-asset';
+import { Asset, AssetIcon } from '@contentful/f36-asset';
 ```
 
 ## Examples
@@ -44,6 +44,20 @@ If asset `status` is set to `archived`, an image icon is displayed instead of th
 
 ```
 
+### AssetIcon
+
+`AssetIcon` renders only the icon that represents an asset's type. It can be used independently from the `Asset` component.
+
+```jsx file=examples/AssetIconExample.tsx
+
+```
+
 ## Props (API reference)
 
+### Asset
+
 <PropsTable of="Asset" />
+
+### AssetIcon
+
+<PropsTable of="AssetIcon" />
