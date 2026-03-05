@@ -4,6 +4,8 @@ The release and versioning of our packages is done using [changesets](https://gi
 
 Our CI is configured to automatically bump the version and publish the packages on all new commits in `main` branch that contains a new changeset added.
 
+> **Note**: For information about deprecating components or features, see our [Deprecation Process](DEPRECATION.md) guide.
+
 ## Adding changesets
 
 We use the `changeset-bot` to comment on PRs when a changeset is found or not.
