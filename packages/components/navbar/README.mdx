@@ -8,13 +8,17 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-navbar'
 typescript: ./src/Navbar.tsx,./src/NavbarAccount/NavbarAccount.tsx,./src/NavbarBadge/NavbarBadge.tsx,./src/NavbarItem/NavbarItem.tsx,./src/NavbarMenuItem/NavbarMenuItem.tsx,./src/NavbarSubmenu/NavbarSubmenu.tsx,./src/NavbarSwitcher/NavbarSwitcher.tsx,
 ---
 
-The Navbar component represents the main top navigation across all Contentful Products.
-
-## Introduction
+The `Navbar` component represents the main top navigation across all Contentful Products.
 
 The `Navbar` component is composed of multiple predefined areas, each configurable through dedicated props. It does not accept children directly. All areas are designed with responsiveness in mind and will appear or disappear based on screen breakpoints.
 
-### Navbar Compound components
+## Import
+
+```jsx static=true
+import { Navbar } from '@contentful/f36-navbar';
+```
+
+## Navbar Compound Components
 
 The `Navbar` exports the following compound components
 
@@ -147,12 +151,6 @@ These compound components are used as children of a `Navbar.Item` or as children
 #### Navbar.Switcher
 
 The `Navbar.Switcher` component is used for displaying the current space and environment names. It can also be used as trigger element to open a space switcher menu. It should always be used inside the `switcher` area property to ensure proper positioning.
-
-## Import
-
-```jsx static=true
-import { Navbar } from '@contentful/f36-navbar';
-```
 
 ## Examples
 

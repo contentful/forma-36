@@ -11,13 +11,6 @@ typescript: ./src/Popover.tsx
 Popover is used to display some content on top of another, and should be paired with a clickable trigger element.
 It is a base for other more specific component, like `Menu`, `Autocomplete` and `Multiselect`. Please, consider using these specific componenets to cover your needs.
 
-### How to use Popover
-
-- Only if `Menu`, `Autocomplete` and `Multiselect` components are not covering your use cases, you should use `Popover`.
-- Before using this component, double-check your design requirements. We are providing `Menu`, `Autocomplete`, and `Multiselect` for more specific use-cases and they can address your needs.
-- Keep in mind that you will have to implement everything related to accessibility for the popover content.
-- Component is controllable, so don't forget to pass `onClose` callback prop. Otherwise `closeOnEsc` and `closeOnBlur` will not work properly.
-
 ## Import
 
 ```jsx static=true
@@ -25,6 +18,13 @@ import { Popover } from '@contentful/f36-components';
 // or
 import { Popover } from '@contentful/f36-popover';
 ```
+
+## How to use Popover
+
+- Only if `Menu`, `Autocomplete` and `Multiselect` components are not covering your use cases, you should use `Popover`.
+- Before using this component, double-check your design requirements. We are providing `Menu`, `Autocomplete`, and `Multiselect` for more specific use-cases and they can address your needs.
+- Keep in mind that you will have to implement everything related to accessibility for the popover content.
+- Component is controllable, so don't forget to pass `onClose` callback prop. Otherwise `closeOnEsc` and `closeOnBlur` will not work properly.
 
 ## Examples
 
