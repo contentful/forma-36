@@ -10,11 +10,15 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-menu--b
 
 Menu is a component that offers a list of choices to the user, such as a set of actions or links. It needs to be provided with a trigger element, which can contain text, text with icon or icon only.
 
-## Technical information
+## Import
 
-Menu is based on the popover component and offers compound components to build flexible menus that can be nested.
+```jsx static=true
+import { Menu } from '@contentful/f36-components';
+```
 
-### Compound components
+## Compound components
+
+`Menu` is based on the popover component and offers compound components to build flexible menus that can be nested.
 
 1. `<Menu.Trigger>` The wrapper for the menu list trigger. Must be a direct child of `<Menu>`.  
    NOTE: 🚨 Ensure that the component that you pass accepts `ref`. Consider using `forwardRef` for functional components.
@@ -27,12 +31,6 @@ Menu is based on the popover component and offers compound components to build f
    the bottom of the menu list. `<Menu.Item>` must be provided as a child.
 1. _deprecated_ `<Menu.Submenu>` The wrapper for for submenu components. Structure of the children remains the same like in `<Menu>`, except you should use `<Menu.SubmenuTrigger>` instead of `<Menu.Trigger>`.
 1. `<Menu.SubmenuTrigger>` The wrapper for the submenu list trigger. Must be a direct child of `<Menu.Submenu>`.
-
-## Import
-
-```jsx static=true
-import { Menu } from '@contentful/f36-components';
-```
 
 ## Examples
 
