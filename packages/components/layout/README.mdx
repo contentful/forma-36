@@ -2,7 +2,6 @@
 title: 'Layout'
 type: 'layout'
 status: 'stable'
-isNew: true
 slug: /components/layout/
 github: 'https://github.com/contentful/forma-36/tree/main/packages/components/layout'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-layout--default'
@@ -15,14 +14,6 @@ The Layout component is the basis of every single page view.
 
 The Layout component defines the page view by providing four distinct areas: Header, Body, Left Sidebar, and Right Sidebar. Use it at the top level of your page to create a clear and flexible structure. For best results, avoid placing the Layout inside modals or nesting multiple Layout components within each other.
 
-### Layout Compound components
-
-| Compound Component | Description                                                                                                                                                                                                                                          | Typical Usage Area                      |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
-| `Layout.Header`    | Should contain a `Header` component. When passing at least one sidebar, a divider is added underneath the header. Content inside will be centered. It follows through in the `max-width` adjustment from `1550px` to `1920px` on the `wide` variant. | `header`                                |
-| `Layout.Sidebar`   | Allows for variants `narrow` (sets `width: 280px`) and `wide` (default, sets `width: 340px`). Both sidebars can have different widths.                                                                                                               | `leftSidebar`, `rightSidebar`           |
-| `Layout.Body`      | Wrapper around all children, this compound component is essential for proper overflow and scrolling behaviours.                                                                                                                                      | wrapper around all children of `Layout` |
-
 ## Import
 
 ```jsx static=true
@@ -30,6 +21,49 @@ import { Layout } from '@contentful/f36-components';
 // or
 import { Layout } from '@contentful/f36-layout';
 ```
+
+## Layout Compound Components
+
+The `Layout` exports the following compound components
+
+<Table>
+  <Table.Head>
+    <Table.Row>
+      <Table.Cell style={{ textAlign: 'left' }}>
+        <Subheading>Compound Component</Subheading>
+      </Table.Cell>
+      <Table.Cell style={{ textAlign: 'left' }}>
+        <Subheading>Description</Subheading>
+      </Table.Cell>
+      <Table.Cell style={{ textAlign: 'left' }}>
+        <Subheading>Typical Usage Area</Subheading>
+      </Table.Cell>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>`Layout.Header`</Table.Cell>
+      <Table.Cell>
+        Should contain a `Header` component. When passing at least one sidebar, a divider is added underneath the header. Content inside will be centered. It follows through in the `max-width` adjustment from `1550px` to `1920px` on the `wide` variant.
+      </Table.Cell>
+      <Table.Cell>`header`</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`Layout.Sidebar`</Table.Cell>
+      <Table.Cell>
+        Allows for variants `narrow` (sets `width: 280px`) and `wide` (default, sets `width: 340px`). Both sidebars can have different widths.
+      </Table.Cell>
+      <Table.Cell>`leftSidebar`, `rightSidebar`</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`Layout.Body`</Table.Cell>
+      <Table.Cell>
+        Wrapper around all children, this compound component is essential for proper overflow and scrolling behaviors.
+      </Table.Cell>
+      <Table.Cell>wrapper around all children of `Layout`</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table>
 
 ## Examples
 
