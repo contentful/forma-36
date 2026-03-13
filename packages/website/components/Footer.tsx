@@ -37,7 +37,7 @@ export function Footer() {
             label="View the repo on GitHub"
           />
           <FooterLink
-            href="https://www.contentful.com/developers/"
+            href="https://www.contentful.com/developers/docs/"
             label="Join the developer community"
           />
           <FooterLink

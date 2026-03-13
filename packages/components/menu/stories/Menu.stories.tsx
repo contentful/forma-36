@@ -2,7 +2,7 @@ import React from 'react';
 import type { StoryObj, Meta } from '@storybook/react-vite';
 import { IconButton, Button } from '@contentful/f36-button';
 import { ListIcon, CheckIcon } from '@contentful/f36-icons';
-import { action } from 'storybook/internal/actions';
+import { action } from 'storybook/actions';
 import { TextInput } from '@contentful/f36-forms';
 import {
   BrowserRouter as Router,
