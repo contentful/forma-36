@@ -23,12 +23,6 @@ interface PropertyTypeProps {
 }
 
 export function PropertyType({ type, name }: PropertyTypeProps) {
-  if (name === 'as') {
-    return (
-      <PropertyValue value="HTML Tag or React Component (e.g. div, span, etc)" />
-    );
-  }
-
   if (name === 'children') {
     return <PropertyValue value={type.raw} />;
   }
