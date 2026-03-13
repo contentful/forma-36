@@ -23,14 +23,13 @@ interface PropertyTypeProps {
 }
 
 export function PropertyType({ type, name }: PropertyTypeProps) {
-  if (name === 'as') {
+  if (name === 'as' && type.value) {
     const filteredValue = type.value.filter(
       (item) => !item.value.includes('&'),
     );
     const sortedValue = filteredValue.sort((a, b) =>
       a.value.localeCompare(b.value),
     );
-
     return (
       <>
         {sortedValue.map(({ value }, idx) => {
