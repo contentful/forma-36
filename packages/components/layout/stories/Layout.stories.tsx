@@ -18,6 +18,89 @@ export default {
   },
 } as Meta;
 
+const styles = {
+  appShell: (withToolbar?: boolean) =>
+    css({
+      backgroundColor: 'deeppink',
+      display: 'grid',
+      gridTemplateColumns: withToolbar
+        ? `minmax(auto, 450px) 1fr minmax(auto, 450px)`
+        : `minmax(auto, 450px) 1fr 1fr`,
+      gridTemplateAreas: withToolbar
+        ? `
+    'header header header'
+    'nav content toolbar'
+    'nav content toolbar'
+  `
+        : `
+    'header header header'
+    'nav content content '
+    'nav content content '
+        `,
+    }),
+  topBar: css({
+    backgroundColor: 'silver',
+    gridArea: 'header',
+  }),
+  sidebarNav: css({
+    backgroundColor: 'lime',
+    gridArea: 'nav',
+  }),
+  mainContent: css({
+    backgroundColor: 'darkviolet',
+    gridArea: 'content',
+  }),
+  toolbar: css({
+    backgroundColor: 'periwinkle',
+    gridArea: 'toolbar',
+  }),
+};
+
+const AppShell = ({ children, withToolbar = false }) => {
+  return (
+    <div className={styles.appShell(withToolbar)}>
+      <div className={styles.topBar}>
+        <div
+          className={css({
+            width: '100%',
+            height: '60px',
+            backgroundColor: 'honeydew',
+          })}
+        >
+          Navbar
+        </div>
+      </div>
+      <div className={styles.sidebarNav}>
+        <Box
+          className={css({
+            width: '100%',
+            height: '400px',
+            backgroundColor: 'aliceblue',
+            marginBottom: '1rem',
+          })}
+        >
+          Sidebar
+        </Box>
+      </div>
+      <div className={styles.mainContent}>{children}</div>
+      {withToolbar && (
+        <div className={styles.toolbar}>
+          <Box
+            className={css({
+              width: '100%',
+              height: '400px',
+              backgroundColor: 'aliceblue',
+              marginBottom: '1rem',
+            })}
+          >
+            Sidebar
+          </Box>
+        </div>
+      )}
+    </div>
+  );
+};
+
 const ExampleWrapper = ({ withNavbar = true, children }) => (
   <div
     className={css({
@@ -29,7 +112,6 @@ const ExampleWrapper = ({ withNavbar = true, children }) => (
       width: '100vw',
       height: '100vh',
       margin: '-1rem',
-      backgroundColor: 'lavender',
       flexDirection: 'column',
     })}
   >
@@ -75,6 +157,115 @@ const LayoutSidebarComp = ({ content }) => (
     </Box>
   </Layout.Sidebar>
 );
+
+export const AppShellExample = () => {
+  return (
+    <div
+      className={css({
+        position: 'relative',
+        flex: '1 1 auto',
+        display: 'flex',
+        justifyContent: 'center',
+        minHeight: '300px',
+        width: '100vw',
+        margin: '-1rem',
+        backgroundColor: 'lavender',
+        flexDirection: 'column',
+      })}
+    >
+      <AppShell>
+        <Layout header={<LayoutHeaderComp />} offsetTop={NAVBAR_HEIGHT}>
+          <Layout.Body>
+            <Box
+              className={css({
+                width: '100%',
+                height: '400px',
+                backgroundColor: 'lavenderblush',
+                marginBottom: '1rem',
+              })}
+            >
+              Content
+            </Box>
+            <Box
+              className={css({
+                width: '100%',
+                height: '240px',
+                backgroundColor: 'blanchedalmond',
+                marginBottom: '1rem',
+              })}
+            >
+              Content
+            </Box>
+            <Box
+              className={css({
+                width: '100%',
+                height: '400px',
+                backgroundColor: 'aliceblue',
+                marginBottom: '1rem',
+              })}
+            >
+              Content
+            </Box>
+          </Layout.Body>
+        </Layout>
+      </AppShell>
+    </div>
+  );
+};
+export const AppShellExampleAndToolbar = () => {
+  return (
+    <div
+      className={css({
+        position: 'relative',
+        flex: '1 1 auto',
+        display: 'flex',
+        justifyContent: 'center',
+        minHeight: '300px',
+        width: '100vw',
+        margin: '-1rem',
+        backgroundColor: 'lavender',
+        flexDirection: 'column',
+      })}
+    >
+      <AppShell withToolbar>
+        <Layout header={<LayoutHeaderComp />} offsetTop={NAVBAR_HEIGHT}>
+          <Layout.Body>
+            <Box
+              className={css({
+                width: '100%',
+                height: '400px',
+                backgroundColor: 'lavenderblush',
+                marginBottom: '1rem',
+              })}
+            >
+              Content
+            </Box>
+            <Box
+              className={css({
+                width: '100%',
+                height: '240px',
+                backgroundColor: 'blanchedalmond',
+                marginBottom: '1rem',
+              })}
+            >
+              Content
+            </Box>
+            <Box
+              className={css({
+                width: '100%',
+                height: '400px',
+                backgroundColor: 'aliceblue',
+                marginBottom: '1rem',
+              })}
+            >
+              Content
+            </Box>
+          </Layout.Body>
+        </Layout>
+      </AppShell>
+    </div>
+  );
+};
 
 export const Basic: StoryFn<LayoutProps> = () => {
   return (
