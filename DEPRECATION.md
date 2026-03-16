@@ -34,15 +34,18 @@ Consider deprecating a component, prop, or feature when:
 
 ## Deprecation Timeline
 
-We follow a **graduated deprecation approach** aligned with [semantic versioning](https://semver.org/):
+We follow a **gradual deprecation approach** aligned with [semantic versioning](https://semver.org/):
 
 ### Phase 1: Deprecation (Minor Release)
 
 - Mark the feature as deprecated
+- Add an entry for this feature / component into the deprecation log
 - Add runtime console warnings (development only)
 - Update documentation with deprecation notices
 - Provide migration guide
+- Create codemod if applicable (for complex migrations)
 - Feature remains fully functional
+- Feature is in maintenance mode and will receive security updates as well as bug fixes
 
 **Minimum duration**: At least **one major version cycle** or **6 months**, whichever is longer
 
@@ -51,7 +54,6 @@ We follow a **graduated deprecation approach** aligned with [semantic versioning
 - Remove the deprecated feature in the next major version
 - Update documentation and examples
 - Update migration guides
-- Create codemod if applicable (for complex migrations)
 
 ### Example Timeline
 
@@ -59,6 +61,16 @@ We follow a **graduated deprecation approach** aligned with [semantic versioning
 v4.10.0 (Minor) - Component deprecated, warnings added
 v4.11.0 - v4.x  - Deprecated but functional
 v5.0.0  (Major) - Component removed
+```
+
+Or if the next major version is sooner than 6 months
+
+```text
+v4.10.0 (Minor) - Component deprecated, warnings added
+v4.11.0 - v4.x  - Deprecated but functional
+v5.0.0 (Major)  - Deprecated but functional
+v5.0.0 - v5.x   - Deprecated but functional
+v6.0.0  (Major) - Component removed
 ```
 
 ## Communication Process
@@ -85,17 +97,6 @@ Add a prominent deprecation notice at the top of the component page:
 > Please use [NewComponent](link) instead. See the [migration guide](#migration).
 ```
 
-#### API Documentation
-
-Mark deprecated props with JSDoc comments:
-
-```typescript
-/**
- * @deprecated Use `newProp` instead. This prop will be removed in v5.0.0.
- */
-oldProp?: string;
-```
-
 #### Changelog
 
 Include deprecation notices in the package CHANGELOG:
@@ -105,6 +106,10 @@ Include deprecation notices in the package CHANGELOG:
 
 - **ComponentName**: Deprecated in favor of NewComponent. Will be removed in v5.0.0.
 ```
+
+### Deprecationlog
+
+Document the deprecated feature or component in the Deprecation log
 
 ### 3. Runtime Warnings
 
@@ -157,7 +162,7 @@ export const OldComponent: React.FC<OldComponentProps> = (props) => {
 
 For individual props, keep the prop functional but add type annotations:
 
-```typescript
+````typescript
 export interface ComponentProps {
   /**
    * @deprecated Use `variant` prop instead. Will be removed in v5.0.0.
@@ -167,26 +172,8 @@ export interface ComponentProps {
   /** The variant of the component */
   variant?: 'primary' | 'secondary';
 }
-```
-
-### Component Deprecation
-
-Create a wrapper that imports the new component:
-
-```typescript
-import { NewComponent } from './NewComponent';
-
-/**
- * @deprecated Use NewComponent instead. Will be removed in v5.0.0.
- */
-
-export const OldComponent: React.FC<OldComponentProps> = (props) => {
-  if (process.env.NODE_ENV === 'development') {
-    console.warn('OldComponent is deprecated...');
-  }
-  return <NewComponent {...convertProps(props)} />;
-};
-```
+```rop?: string;
+````
 
 ### Export Strategy
 
