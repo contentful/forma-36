@@ -1,5 +1,5 @@
 import { Flex, type CommonProps } from '@contentful/f36-core';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import React, {
   forwardRef,
   Ref,

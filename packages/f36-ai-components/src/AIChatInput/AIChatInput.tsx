@@ -6,7 +6,7 @@ import { getStyles } from './AIChatInput.styles';
 import { AiChatInputMentionConfig } from './AIChatInputMentionExtention';
 import { AIChatSubmitButton } from './AIChatSubmitButton';
 import { AIChatInputTextArea } from './AIChatTextArea';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 type UseEditorOptions = Parameters<typeof useEditor>[0];
 

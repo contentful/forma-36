@@ -28,7 +28,7 @@ import {
   type TableHeadProps,
   type TableRowProps,
 } from '@contentful/f36-components';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 export type AIChatMessageRole = 'user' | 'assistant';
 

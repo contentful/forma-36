@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import React from 'react';
 
 import { Box, type CommonProps } from '@contentful/f36-core';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { getStyles } from './AIChatConversation.styles';
 
 export interface AIChatConversationProps extends CommonProps {
