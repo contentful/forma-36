@@ -3,7 +3,7 @@ import {
   IconButton,
   type TextLinkProps,
 } from '@contentful/f36-components';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import React, { useState } from 'react';
 import { AIChatMessage, AIChatMessageProps } from '../src/AIChatMessage';
 import {

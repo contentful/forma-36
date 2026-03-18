@@ -8,8 +8,8 @@ import {
   LightningIcon,
   WarningIcon,
 } from '@contentful/f36-icons';
-import { action } from '@storybook/addon-actions';
-import { cx } from 'emotion';
+import { action } from 'storybook/actions';
+import { cx } from '@emotion/css';
 import React from 'react';
 import {
   AIChatHistory,

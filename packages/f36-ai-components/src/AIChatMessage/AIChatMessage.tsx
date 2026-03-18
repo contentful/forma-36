@@ -372,11 +372,8 @@ function getMarkdownComponents(
       };
       return <>{finalProps.children}</>;
     },
-    blockquote: (
-      props: React.PropsWithChildren<
-        React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
-      >,
-    ) => (
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    blockquote: (props: any) => (
       <blockquote
         {...{
           className: styles.blockquote,

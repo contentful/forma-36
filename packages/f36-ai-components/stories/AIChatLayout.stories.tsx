@@ -1,7 +1,7 @@
 import { Box, Button, Icon, Text } from '@contentful/f36-components';
 import * as icons from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import React, { useEffect, useState } from 'react';
 
 import { AIChatHistory } from '../src/AIChatHistory/AIChatHistory';

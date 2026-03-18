@@ -1,7 +1,7 @@
 import { Button, Paragraph } from '@contentful/f36-components';
 import React from 'react';
 
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { AIChatReasoning } from '../src/AIChatReasoning/AIChatReasoning';
 
 export default {
