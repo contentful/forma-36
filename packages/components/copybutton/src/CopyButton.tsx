@@ -4,13 +4,12 @@ import React, {
   type MouseEventHandler,
   type FocusEventHandler,
 } from 'react';
-import tokens from '@contentful/f36-tokens';
 import { CopySimpleIcon } from '@contentful/f36-icons';
-import type { ExpandProps } from '@contentful/f36-core';
+import { type ExpandProps } from '@contentful/f36-core';
 import { Tooltip, type TooltipProps } from '@contentful/f36-tooltip';
 import { Button, type ButtonProps } from '@contentful/f36-button';
 import { getCopyButtonStyles } from './CopyButton.styles';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 export type CopyButtonProps = Omit<
   ButtonProps,
@@ -33,7 +32,10 @@ export type CopyButtonProps = Omit<
   /**
    * Props that are passed to the tooltip component
    */
-  tooltipProps?: Omit<TooltipProps, 'content' | 'children'>;
+  tooltipProps?: Omit<
+    TooltipProps,
+    'content' | 'children' | 'withTriggerWrapper'
+  >;
   /**
    * Label to be used on aria-label for the button
    * @default Copy to clipboard
@@ -55,7 +57,7 @@ export type CopyButtonProps = Omit<
   value: string;
 };
 
-function _CopyButton(
+function CopyButtonBase(
   {
     className,
     isDisabled = false,
@@ -69,11 +71,16 @@ function _CopyButton(
     tooltipProps,
     tooltipText = 'Copy to clipboard',
     value,
+    children,
+    variant = 'secondary',
     ...otherProps
   }: ExpandProps<CopyButtonProps>,
   ref: React.Ref<HTMLButtonElement>,
 ) {
-  const styles = getCopyButtonStyles({ size });
+  const styles = getCopyButtonStyles({
+    size,
+    hasChildren: Boolean(children),
+  });
   const [copied, setCopied] = useState(false);
 
   const handleClick = useCallback<
@@ -94,6 +101,9 @@ function _CopyButton(
 
       // @ts-expect-error -- The return type of `execCommand` can also be string
       if (result === 'unsuccessful') {
+        // this is for enabling debugging
+        // eslint-disable-next-line no-console
+        console.warn(error);
         throw new Error('Unable to copy value', { cause: result });
       }
       input.remove();
@@ -113,35 +123,36 @@ function _CopyButton(
     onBlur?.(event);
   };
 
+  const btnComp = (
+    <Button
+      {...otherProps}
+      variant={variant}
+      aria-label={copied ? tooltipCopiedText : label ?? tooltipText}
+      aria-live="assertive"
+      className={cx(styles.button, className)}
+      isDisabled={isLoading || isDisabled}
+      isLoading={isLoading}
+      onBlur={handleBlur}
+      testId={testId}
+      startIcon={<CopySimpleIcon size={size === 'small' ? 'tiny' : 'small'} />}
+      onClick={handleClick}
+      ref={ref}
+    >
+      {children}
+    </Button>
+  );
+
   return (
     <Tooltip
       content={copied ? tooltipCopiedText : tooltipText}
-      {...tooltipProps}
       isDisabled={isDisabled}
+      {...tooltipProps}
     >
-      <Button
-        aria-label={copied ? tooltipCopiedText : label ?? tooltipText}
-        aria-live="assertive"
-        className={cx(styles.button, className)}
-        isDisabled={isLoading || isDisabled}
-        isLoading={isLoading}
-        onBlur={handleBlur}
-        testId={testId}
-        startIcon={
-          <CopySimpleIcon
-            color={tokens.gray600}
-            size={size === 'small' ? 'tiny' : 'small'}
-          />
-        }
-        variant="secondary"
-        {...otherProps}
-        onClick={handleClick}
-        ref={ref}
-      />
+      {btnComp}
     </Tooltip>
   );
 }
 
-_CopyButton.displayName = 'CopyButton';
+CopyButtonBase.displayName = 'CopyButton';
 
-export const CopyButton = React.forwardRef(_CopyButton);
+export const CopyButton = React.forwardRef(CopyButtonBase);

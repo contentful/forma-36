@@ -1,4 +1,4 @@
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import type { ImageProps } from './Image';
 
 export const getImageStyles = ({

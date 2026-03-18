@@ -1,7 +1,7 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { Navbar, type NavbarProps } from '../src';
+import { Navbar } from '../src';
 import {
   ImageSquareIcon,
   PaintBrushIcon,
@@ -17,7 +17,7 @@ import { Flex } from '@contentful/f36-core';
 import type { NavbarAccountProps } from '../src/NavbarAccount/NavbarAccount';
 import type { NavbarSwitcherProps } from '../src/NavbarSwitcher/NavbarSwitcher';
 import { TextLink } from '@contentful/f36-components';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 
 export default {
   component: Navbar,
@@ -132,7 +132,9 @@ const MainItems = ({ withDisabled }: { withDisabled?: boolean }) => {
   );
 };
 
-export const Basic: Story<{ initials?: string; avatar?: string }> = (args) => {
+export const Basic: StoryObj<{ initials?: string; avatar?: string }> = (
+  args,
+) => {
   return (
     <div style={{ minWidth: '900px' }}>
       <Navbar
@@ -156,7 +158,7 @@ Basic.args = {
     'https://images.ctfassets.net/iq4lnigp6fgt/72KhxI84kw1SE9gP8gDp7R/c5fa24bdc295a318018aea0ca46e2de8/forma-36-storybook-asset.png?fit=fill&f=top_left&w=100&h=100',
 };
 
-export const BasicNoEnvironment: Story<{
+export const BasicNoEnvironment: StoryObj<{
   initials?: string;
   avatar?: string;
 }> = (args) => {
@@ -177,7 +179,7 @@ BasicNoEnvironment.args = {
     'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=100&h=100',
 };
 
-export const SizeVariants: Story<NavbarProps> = () => {
+export const SizeVariants = () => {
   return (
     <Flex gap="spacingL" style={{ width: '97vw' }} flexDirection="column">
       <SectionHeading marginBottom="none">Fullscreen</SectionHeading>
@@ -198,7 +200,7 @@ export const SizeVariants: Story<NavbarProps> = () => {
   );
 };
 
-export const WithDisabledItems: Story<{
+export const WithDisabledItems: StoryObj<{
   initials?: string;
   avatar?: string;
 }> = (args) => {
@@ -219,7 +221,7 @@ WithDisabledItems.args = {
     'https://images.ctfassets.net/iq4lnigp6fgt/2EEEk92Kiz6KxREsjBLPAN/810d5a21650d91abad12e95da4cd3beb/2021-06_Everyone_is_Welcome_here_1_.png?fit=fill&f=top_left&w=100&h=100',
 };
 
-export const WithInitialsAvatar: Story<{
+export const WithInitialsAvatar: StoryObj<{
   initials?: string;
   avatar?: string;
 }> = (args) => {
@@ -238,7 +240,7 @@ WithInitialsAvatar.args = {
   initials: 'AB',
 };
 
-export const WithFallbackAvatar: Story<{}> = (args) => {
+export const WithFallbackAvatar = (args) => {
   return (
     <div style={{ minWidth: '900px' }}>
       <Navbar
@@ -340,9 +342,7 @@ const MobileMenu = () => (
   </>
 );
 
-export const Complete: Story<{ initials?: string; avatar?: string }> = (
-  args,
-) => {
+export const Complete = (args) => {
   return (
     <div
       className={css({
@@ -499,10 +499,7 @@ Complete.args = {
     'https://images.ctfassets.net/iq4lnigp6fgt/72KhxI84kw1SE9gP8gDp7R/c5fa24bdc295a318018aea0ca46e2de8/forma-36-storybook-asset.png?fit=fill&f=top_left&w=100&h=100',
 };
 
-export const WithResponsiveness: Story<{
-  initials?: string;
-  avatar?: string;
-}> = (args) => {
+export const WithResponsiveness = (args) => {
   return (
     <Navbar
       mobileNavigation={<MobileMenu />}
@@ -564,10 +561,7 @@ WithResponsiveness.parameters = {
   layout: 'fullscreen',
 };
 
-export const WithDifferentEnvironments: Story<{
-  initials?: string;
-  avatar?: string;
-}> = (args) => {
+export const WithDifferentEnvironments = (args) => {
   return (
     <Flex flexDirection="column" gap="spacingL" style={{ minWidth: '900px' }}>
       <Flex flexDirection="column">
@@ -659,7 +653,7 @@ WithDifferentEnvironments.args = {
     'https://images.ctfassets.net/iq4lnigp6fgt/72KhxI84kw1SE9gP8gDp7R/c5fa24bdc295a318018aea0ca46e2de8/forma-36-storybook-asset.png?fit=fill&f=top_left&w=100&h=100',
 };
 
-export const WithAccountNotification: Story<{
+export const WithAccountNotification: StoryObj<{
   initials?: string;
   avatar?: string;
 }> = (args) => {
@@ -717,7 +711,7 @@ WithAccountNotification.args = {
     'https://images.ctfassets.net/iq4lnigp6fgt/72KhxI84kw1SE9gP8gDp7R/c5fa24bdc295a318018aea0ca46e2de8/forma-36-storybook-asset.png?fit=fill&f=top_left&w=100&h=100',
 };
 
-export const LoadingSkeleton: Story<{}> = () => {
+export const LoadingSkeleton = () => {
   return (
     <div>
       <Navbar
@@ -739,7 +733,7 @@ export const LoadingSkeleton: Story<{}> = () => {
 
 LoadingSkeleton.args = {};
 
-export const NoSpaceContext: Story<{}> = () => {
+export const NoSpaceContext = () => {
   return (
     <div>
       <Navbar

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Stack } from '@contentful/f36-components';
-import { Multiselect } from '@contentful/f36-multiselect';
+import { Stack, Multiselect } from '@contentful/f36-components';
 
 export default function MultiselectSelectAllExample() {
   const spaces = React.useMemo(

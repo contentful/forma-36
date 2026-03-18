@@ -15,7 +15,7 @@ export type BaseCheckboxProps = PropsWithHTMLElement<
   'htmlFor'
 >;
 
-function _BaseCheckbox(
+function BaseCheckboxBase(
   props: ExpandProps<BaseCheckboxProps>,
   ref: React.RefObject<HTMLInputElement>,
 ) {
@@ -58,7 +58,7 @@ function _BaseCheckbox(
   const styles = getStyles({ isDisabled, type, size, density });
 
   const handleFocus = useCallback(
-    (e) => {
+    (e: React.FocusEvent<HTMLInputElement>) => {
       e.persist();
       if (onFocus) {
         onFocus(e);
@@ -68,7 +68,7 @@ function _BaseCheckbox(
   );
 
   const handleBlur = useCallback(
-    (e) => {
+    (e: React.FocusEvent<HTMLInputElement>) => {
       e.persist();
       if (onBlur) {
         onBlur(e);
@@ -78,20 +78,15 @@ function _BaseCheckbox(
   );
 
   const handleKeyDown = useCallback(
-    (e) => {
-      e.persist();
+    (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (willBlurOnEsc && e.key === 'Escape') {
-        finalRef?.current?.blur();
+        finalRef.current?.blur();
       }
-      if (onKeyDown) {
-        onKeyDown(e);
-      }
+      onKeyDown?.(e);
     },
     [willBlurOnEsc, onKeyDown, finalRef],
   );
-
-  const ariaChecked =
-    typeof isChecked !== undefined ? isChecked : defaultChecked;
+  const ariaChecked = isChecked ?? defaultChecked;
 
   const helpTextId = id ? `${id}-helptext` : undefined;
   const ariaDescribedBy = isInvalid
@@ -153,6 +148,6 @@ function _BaseCheckbox(
   );
 }
 
-_BaseCheckbox.displayName = 'BaseCheckbox';
+BaseCheckboxBase.displayName = 'BaseCheckbox';
 
-export const BaseCheckbox = React.forwardRef(_BaseCheckbox);
+export const BaseCheckbox = React.forwardRef(BaseCheckboxBase);

@@ -138,7 +138,14 @@ describe('Datepicker', function () {
       <Datepicker selected={testDate} onSelect={jest.fn()} defaultIsOpen />,
     );
 
-    const results = await axe(container);
+    // aria-command-name test disabled because of a known issue with axe and floating ui https://github.com/floating-ui/floating-ui/issues/2823
+    const results = await axe(container, {
+      rules: {
+        'aria-command-name': {
+          enabled: false,
+        },
+      },
+    });
 
     expect(results).toHaveNoViolations();
   });

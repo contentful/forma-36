@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 
 import tokens from '@contentful/f36-tokens';
 import { TextLink, Flex, type TextLinkProps } from '@contentful/f36-components';
@@ -37,7 +37,7 @@ export function Footer() {
             label="View the repo on GitHub"
           />
           <FooterLink
-            href="https://www.contentful.com/developers/"
+            href="https://www.contentful.com/developers/docs/"
             label="Join the developer community"
           />
           <FooterLink
@@ -64,7 +64,9 @@ export function Footer() {
             variant="secondary"
             onClick={(e) => {
               e.preventDefault();
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               if ((window as any).Osano) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 (window as any).Osano.cm.showDrawer();
               }
             }}

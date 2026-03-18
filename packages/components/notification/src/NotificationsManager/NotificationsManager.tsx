@@ -1,8 +1,9 @@
-import React, { useCallback, useState } from 'react';
-import { cx } from 'emotion';
+import React, { useCallback, useLayoutEffect, useState } from 'react';
+import { cx } from '@emotion/css';
 
 import { useAsyncState } from './useAsyncState';
 import type { NotificationCta, NotificationVariant } from '../types';
+import type { NotificationsAPI } from '../Notification';
 import { NotificationItemContainer } from '../NotificationItem';
 import { getStyles } from './NotificationsManager.styles';
 
@@ -11,7 +12,7 @@ export type Placement = 'top' | 'bottom';
 export interface NotificationProps {
   id: string | number;
   text: string;
-  onClose: Function;
+  onClose: () => void;
   duration?: number;
   withClose: boolean;
   isShown: boolean;
@@ -44,7 +45,11 @@ export type SetPlacementAction<T> = (
 ) => T;
 
 export interface NotificationsManagerProps {
-  register: (name: string, callback: Function) => void;
+  register: <K extends keyof NotificationsAPI>(
+    name: K,
+    callback: NotificationsAPI[K],
+  ) => void;
+  onReady?: () => void;
 }
 
 let uniqueId = 0;
@@ -56,6 +61,7 @@ const getUniqueId = (): number => {
 
 export const NotificationsManager = ({
   register,
+  onReady,
 }: NotificationsManagerProps): React.ReactElement => {
   const [items, setItems] = useAsyncState<NotificationProps[]>([]);
   const [placement, setPlacementState] = useState('bottom');
@@ -156,11 +162,14 @@ export const NotificationsManager = ({
     [closeAndDelete, duration, items, placement, setItems],
   );
 
-  register('close', close);
-  register('show', show);
-  register('closeAll', closeAll);
-  register('setPlacement', setPlacement);
-  register('setDuration', setDuration);
+  useLayoutEffect(() => {
+    register('close', close);
+    register('show', show);
+    register('closeAll', closeAll);
+    register('setPlacement', setPlacement);
+    register('setDuration', setDuration);
+    onReady?.();
+  }, [close, closeAll, onReady, register, setPlacement, show]);
 
   return (
     <div

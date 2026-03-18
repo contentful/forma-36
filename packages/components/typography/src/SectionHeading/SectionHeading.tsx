@@ -1,6 +1,6 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 import type {
   PolymorphicComponent,
   PolymorphicProps,
@@ -23,7 +23,7 @@ export type SectionHeadingProps<
   E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG,
 > = PolymorphicProps<SectionHeadingInternalProps, E>;
 
-function _SectionHeading<
+function SectionHeadingBase<
   E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG,
 >(
   {
@@ -63,9 +63,11 @@ function _SectionHeading<
   );
 }
 
-_SectionHeading.displayName = 'SectionHeading';
+SectionHeadingBase.displayName = 'SectionHeading';
 
-export const SectionHeading: PolymorphicComponent<
+export const SectionHeading = React.forwardRef(
+  SectionHeadingBase,
+) as PolymorphicComponent<
   ExpandProps<SectionHeadingInternalProps>,
   typeof SECTION_HEADING_DEFAULT_TAG
-> = React.forwardRef(_SectionHeading);
+>;

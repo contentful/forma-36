@@ -1,5 +1,5 @@
 import tokens from '@contentful/f36-tokens';
-import { css, cx } from 'emotion';
+import { css, cx } from '@emotion/css';
 
 import type { ModalProps } from './Modal';
 

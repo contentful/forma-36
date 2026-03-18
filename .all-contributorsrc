@@ -797,6 +797,24 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "missating",
+      "name": "Nkoyo Ating",
+      "avatar_url": "https://avatars.githubusercontent.com/u/29452947?v=4",
+      "profile": "https://github.com/missating",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jshmo",
+      "name": "Joe Bingham",
+      "avatar_url": "https://avatars.githubusercontent.com/u/124524543?v=4",
+      "profile": "https://www.schmoe.dev/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

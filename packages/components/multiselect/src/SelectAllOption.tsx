@@ -1,7 +1,7 @@
 import React from 'react';
 import { MultiselectOption, MultiselectOptionProps } from './MultiselectOption';
 import { getMultiselectStyles } from './Multiselect.styles';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 /**
  * Labels for the select all option

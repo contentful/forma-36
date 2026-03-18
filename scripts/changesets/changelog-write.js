@@ -12,7 +12,7 @@ function getCurrentDate() {
   return `## ${day}-${month}-${year}`;
 }
 
-function getContent(releases) {
+async function getContent(releases) {
   const releaseEntries = Object.entries(releases).map(
     ([displayName, changesets]) =>
       [displayName, '\n\n', ...changesets].join(''),
@@ -20,13 +20,12 @@ function getContent(releases) {
 
   let content = [getCurrentDate(), ...releaseEntries].join('\n\n');
 
-  content = prettier.format(content, {
+  content = await prettier.format(content, {
     parser: 'markdown',
     printWidth: 80,
     singleQuote: true,
     trailingComma: 'es5',
   });
-
   return content;
 }
 
@@ -34,14 +33,14 @@ async function main() {
   const releases = JSON.parse(
     fs.readFileSync(`${cwd}/.changelogrc`).toString(),
   );
-
   if (!Object.entries(releases).length) return;
 
-  const content = getContent(releases);
+  const content = await getContent(releases);
 
   const changelogPath = `${cwd}/CHANGELOG.md`;
   const changelogPathWebsite = `${cwd}/packages/website/content/changelog.mdx`;
   const changelog = await fs.promises.readFile(changelogPath, 'utf8');
+
   const newChangelog = changelog.replace(
     '<!-- CHANGELOG:INSERT -->',
     `<!-- CHANGELOG:INSERT -->\n\n${content}`,

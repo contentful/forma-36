@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { ProgressStepper } from '@contentful/f36-progress-stepper';
-import { Button, Flex } from '@contentful/f36-components';
+import { Button, Flex, ProgressStepper } from '@contentful/f36-components';
 
 export default function ProgressStepperInteractiveExample() {
   const [currentStep, setCurrentStep] = useState(0);

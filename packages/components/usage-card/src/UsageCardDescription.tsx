@@ -1,5 +1,5 @@
 import React, { forwardRef, type HTMLAttributes, type Ref } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import { type CommonProps } from '@contentful/f36-core';
 import { Caption } from '@contentful/f36-typography';
 import { getUsageCardDescriptionStyles } from './UsageCard.styles';
@@ -9,7 +9,7 @@ export type UsageCardDescriptionProps = {
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 
-const _UsageCardDescription = (
+const UsageCardDescriptionBase = (
   props: UsageCardDescriptionProps,
   ref: Ref<HTMLDivElement>,
 ) => {
@@ -33,4 +33,6 @@ const _UsageCardDescription = (
   );
 };
 
-export const UsageCardDescription = forwardRef(_UsageCardDescription);
+UsageCardDescriptionBase.displayName = 'UsageCardDescription';
+
+export const UsageCardDescription = forwardRef(UsageCardDescriptionBase);

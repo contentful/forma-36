@@ -1,5 +1,35 @@
 # Change Log
 
+## 6.1.2
+
+### Patch Changes
+
+- [#3340](https://github.com/contentful/forma-36/pull/3340) [`1b4173e`](https://github.com/contentful/forma-36/commit/1b4173e2fc5435d8407c21f0f5f862bd320cf29b) Thanks [@denkristoffer](https://github.com/denkristoffer)! - chore(tokens): update build process
+
+## 6.1.1
+
+### Patch Changes
+
+- [#3338](https://github.com/contentful/forma-36/pull/3338) [`d383e8e`](https://github.com/contentful/forma-36/commit/d383e8e013982ef9fcb58129f1136d084852e46b) Thanks [@denkristoffer](https://github.com/denkristoffer)! - fix(tokens): re-export default []
+
+## 6.1.0
+
+### Minor Changes
+
+- [#3301](https://github.com/contentful/forma-36/pull/3301) [`dc09889`](https://github.com/contentful/forma-36/commit/dc098898b5b8e847a9a1a7d62a588c72a8246442) Thanks [@Lelith](https://github.com/Lelith)! - Exit pre-release mode and release first major version 6
+
+## 6.0.0
+
+### Major Changes
+
+- [#3164](https://github.com/contentful/forma-36/pull/3164) [`918ce52`](https://github.com/contentful/forma-36/commit/918ce52e152338a091737832a17519828f76f8bb) Thanks [@Lelith](https://github.com/Lelith)! - Enter pre-release mode and version packages
+
+## 6.0.0-alpha.0
+
+### Major Changes
+
+- Enter pre-release mode and version packages
+
 ## 5.1.0
 
 ### Minor Changes

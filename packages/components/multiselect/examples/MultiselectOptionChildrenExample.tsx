@@ -1,6 +1,5 @@
 import React from 'react';
-import { Stack } from '@contentful/f36-components';
-import { Multiselect } from '@contentful/f36-multiselect';
+import { Stack, Multiselect } from '@contentful/f36-components';
 import { QuestionIcon } from '@contentful/f36-icons';
 
 export default function MultiselectSearchExample() {

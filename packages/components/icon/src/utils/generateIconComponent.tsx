@@ -1,12 +1,14 @@
 import React, { type ReactElement } from 'react';
 import type { MappedOmit } from '@contentful/f36-core';
 import { Icon, type IconProps } from '../Icon.js';
+import type { GeneratedIconComponent } from './generateComponentWithVariants';
 
 export type GeneratedIconProps = MappedOmit<
   IconProps,
   'as' | 'children' | 'name' | 'viewBox'
 > & {
   children?: never;
+  isActive?: boolean; // ensure compatibility with variant wrapper
 };
 
 type GenerateIconComponentParameters = {
@@ -33,7 +35,7 @@ export function generateIconComponent({
   path,
   props: defaultProps,
   viewBox,
-}: GenerateIconComponentParameters) {
+}: GenerateIconComponentParameters): GeneratedIconComponent {
   const Component = function (props: IconProps) {
     return (
       <Icon viewBox={viewBox} {...defaultProps} {...props}>

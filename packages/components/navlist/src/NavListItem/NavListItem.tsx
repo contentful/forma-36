@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import {
   useId,
   type CommonProps,
@@ -32,9 +32,9 @@ export type NavListItemProps<
   E extends React.ElementType = typeof NAV_LIST_ITEM_DEFAULT_TAG,
 > = PolymorphicProps<NavListItemInternalProps, E>;
 
-function _NavListItem<
+function NavListItemBase<
   E extends React.ElementType = typeof NAV_LIST_ITEM_DEFAULT_TAG,
->(props: NavListItemProps<E>, ref: React.Ref<any>) {
+>(props: NavListItemProps<E>, ref: React.Ref<HTMLAnchorElement>) {
   const {
     testId,
     className,
@@ -67,15 +67,18 @@ function _NavListItem<
       data-test-id={itemTestId}
       tabIndex={isDisabled ? -1 : 0}
       disabled={isDisabled}
+      aria-disabled={isDisabled}
     >
       {props.children}
     </Element>
   );
 }
 
-_NavListItem.displayName = 'NavListItem';
+NavListItemBase.displayName = 'NavListItem';
 
-export const NavListItem: PolymorphicComponent<
+export const NavListItem = React.forwardRef(
+  NavListItemBase,
+) as PolymorphicComponent<
   ExpandProps<NavListItemInternalProps>,
   typeof NAV_LIST_ITEM_DEFAULT_TAG
-> = React.forwardRef(_NavListItem);
+>;

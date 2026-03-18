@@ -1,6 +1,9 @@
 import React from 'react';
-import { AvatarGroup, Avatar } from '@contentful/f36-avatar';
-import { SectionHeading } from '@contentful/f36-typography';
+import {
+  AvatarGroup,
+  Avatar,
+  SectionHeading,
+} from '@contentful/f36-components';
 
 export default function AvatarVariantsExample() {
   return (

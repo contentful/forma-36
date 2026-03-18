@@ -30,7 +30,7 @@ export const AccordionPanel: FC<ExpandProps<AccordionPanelProps>> = ({
 
   return (
     <Collapse
-      data-test-id={testId}
+      testId={testId}
       aria-labelledby={`accordion--${ariaId}`}
       isExpanded={isExpanded}
       {...otherProps}
@@ -39,3 +39,5 @@ export const AccordionPanel: FC<ExpandProps<AccordionPanelProps>> = ({
     </Collapse>
   );
 };
+
+AccordionPanel.displayName = 'AccordionPanel';

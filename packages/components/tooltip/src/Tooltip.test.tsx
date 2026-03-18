@@ -5,6 +5,9 @@ import { axe } from 'jest-axe';
 
 import { Tooltip } from './Tooltip';
 import { Paragraph } from '@contentful/f36-typography';
+import { StarIcon } from '@contentful/f36-icons';
+import { Icon } from '../../icon/src';
+import { Button } from '@contentful/f36-button';
 
 jest.mock('@contentful/f36-core', () => {
   const actual = jest.requireActual('@contentful/f36-core');
@@ -16,16 +19,6 @@ jest.mock('@contentful/f36-core', () => {
 });
 
 describe('Tooltip', () => {
-  it('does not render the component if no mouseover event on child', () => {
-    render(
-      <Tooltip content="Tooltip content">
-        <span>Hover me</span>
-      </Tooltip>,
-    );
-
-    expect(screen.queryByText('Tooltip content')).toBeNull();
-  });
-
   it('renders the component', async () => {
     const user = userEvent.setup();
     render(
@@ -38,6 +31,106 @@ describe('Tooltip', () => {
 
     await waitFor(() =>
       expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+    );
+  });
+
+  it('renders around an Custom Icon', async () => {
+    render(
+      <Tooltip content="Tooltip content">
+        <Icon as={StarIcon} testId="hover-me" />
+      </Tooltip>,
+    );
+
+    await userEvent.hover(screen.getByTestId('hover-me'));
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+    );
+  });
+
+  it('renders around an Icon', async () => {
+    render(
+      <Tooltip content="Tooltip content">
+        <StarIcon testId="hover-me" />
+      </Tooltip>,
+    );
+
+    await userEvent.hover(screen.getByTestId('hover-me'));
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+    );
+  });
+
+  it('renders around an Button', async () => {
+    render(
+      <Tooltip content="Tooltip content">
+        <Button testId="hover-me">Hover me</Button>
+      </Tooltip>,
+    );
+    await userEvent.hover(screen.getByTestId('hover-me'));
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+    );
+  });
+
+  it('renders without a wrapper when withTriggerWrapper is false', async () => {
+    render(
+      <Tooltip content="Tooltip content" withTriggerWrapper={false}>
+        <button type="button" data-test-id="hover-me">
+          Hover me
+        </button>
+      </Tooltip>,
+    );
+
+    await userEvent.hover(screen.getByTestId('hover-me'));
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+    );
+  });
+
+  it('renders children without tooltip when withTriggerWrapper is false and child is invalid', () => {
+    const consoleErrorSpy = jest
+      .spyOn(console, 'error')
+      .mockImplementation(() => {});
+
+    render(
+      <Tooltip content="Tooltip content" withTriggerWrapper={false}>
+        Hover me
+      </Tooltip>,
+    );
+
+    expect(screen.getByText('Hover me')).toBeInTheDocument();
+    expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      'Tooltip with `withTriggerWrapper={false}` requires a single valid React element child.',
+    );
+
+    consoleErrorSpy.mockRestore();
+  });
+
+  it('renders around a disabled Button', async () => {
+    render(
+      <Tooltip content="Tooltip content" data-test-id="hover-me">
+        <Button isDisabled>Hover me</Button>
+      </Tooltip>,
+    );
+    await userEvent.hover(screen.getByTestId('hover-me'));
+    await waitFor(() =>
+      expect(screen.getByRole('tooltip').textContent).toBe('Tooltip content'),
+    );
+  });
+
+  it('does not render tooltip when isDisabled and withTriggerWrapper is false', async () => {
+    render(
+      <Tooltip content="Tooltip content" isDisabled withTriggerWrapper={false}>
+        <button type="button" data-test-id="hover-me">
+          Hover me
+        </button>
+      </Tooltip>,
+    );
+
+    await userEvent.hover(screen.getByTestId('hover-me'));
+    await waitFor(() =>
+      expect(screen.queryByRole('tooltip')).not.toBeInTheDocument(),
     );
   });
 
@@ -74,24 +167,7 @@ describe('Tooltip', () => {
     ).toBe('Hover me');
   });
 
-  it('renders the component with a placement attribute', async () => {
-    const user = userEvent.setup();
-    render(
-      <Tooltip content="Tooltip content" placement="left">
-        <span>Hover me</span>
-      </Tooltip>,
-    );
-
-    await user.hover(screen.getByText('Hover me'));
-
-    await waitFor(() =>
-      expect(
-        screen.getByRole('tooltip').getAttribute('data-popper-placement'),
-      ).toBe('left'),
-    );
-  });
-
-  it('renders the component with a id attribute', async () => {
+  it('renders the component with an id attribute', async () => {
     const user = userEvent.setup();
     render(
       <Tooltip id="Tooltip" content="Tooltip content">
@@ -109,7 +185,7 @@ describe('Tooltip', () => {
   it('renders the component as span with a id attribute', async () => {
     const user = userEvent.setup();
     render(
-      <Tooltip as="span" id="Tooltip" content="Tooltip content">
+      <Tooltip id="Tooltip" content="Tooltip content">
         <span>Hover me</span>
       </Tooltip>,
     );
@@ -121,6 +197,35 @@ describe('Tooltip', () => {
       expect(tooltip.getAttribute('id')).toBe('Tooltip');
       expect(tooltip.nodeName).toMatch(/span/i);
     });
+  });
+
+  it('passes testId to tooltip content element', async () => {
+    const user = userEvent.setup();
+    render(
+      <Tooltip content="Tooltip content" testId="custom-tooltip-test-id">
+        <span>Hover me</span>
+      </Tooltip>,
+    );
+
+    await user.hover(screen.getByText('Hover me'));
+
+    await waitFor(() =>
+      expect(screen.getByTestId('custom-tooltip-test-id').textContent).toBe(
+        'Tooltip content',
+      ),
+    );
+  });
+
+  it('passes custom props to trigger element', async () => {
+    render(
+      <Tooltip content="Tooltip content" data-test-id="custom-trigger-test-id">
+        <span>Hover me</span>
+      </Tooltip>,
+    );
+
+    expect(screen.getByTestId('custom-trigger-test-id')).toHaveTextContent(
+      'Hover me',
+    );
   });
 
   it('has no a11y issues', async () => {
@@ -138,7 +243,7 @@ describe('Tooltip', () => {
     expect(results).toHaveNoViolations();
   });
 
-  it('render a React Element as children', async () => {
+  it('renders without a11y issues when around React Elements', async () => {
     const user = userEvent.setup();
 
     const { container } = render(
@@ -147,7 +252,31 @@ describe('Tooltip', () => {
         id="Tooltip"
         content={<Paragraph>Ich bin ein Paragraph</Paragraph>}
       >
-        <span>Hover me</span>
+        <Paragraph>Hover me</Paragraph>
+      </Tooltip>,
+    );
+    await user.hover(screen.getByText('Hover me'));
+
+    const results = await axe(container);
+
+    await waitFor(() => {
+      expect(results).toHaveNoViolations();
+      expect(screen.getByRole('tooltip').textContent).toBe(
+        'Ich bin ein Paragraph',
+      );
+    });
+  });
+
+  it('renders without a11y issues when around Text', async () => {
+    const user = userEvent.setup();
+
+    const { container } = render(
+      <Tooltip
+        label="With React Element"
+        id="Tooltip"
+        content="Ich bin ein Paragraph"
+      >
+        Hover me
       </Tooltip>,
     );
     await user.hover(screen.getByText('Hover me'));

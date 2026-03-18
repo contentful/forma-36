@@ -1,5 +1,5 @@
 import React from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import {
   Box,
   type CommonProps,
@@ -7,12 +7,12 @@ import {
   type ExpandProps,
 } from '@contentful/f36-core';
 import { Caption } from '@contentful/f36-typography';
+import tokens from '@contentful/f36-tokens';
+import { getIconColorToken, iconColorByVariant } from '@contentful/f36-utils';
 import type * as CSS from 'csstype';
 
 import type { BadgeSize, BadgeVariant } from '../types';
 import { getBadgeStyles } from './Badge.styles';
-import tokens from '@contentful/f36-tokens';
-import { getIconColorToken, iconColorByVariant } from '@contentful/f36-utils';
 
 export type BadgeInternalProps = CommonProps & {
   /**
@@ -42,6 +42,12 @@ export type BadgeInternalProps = CommonProps & {
    * letter of the badge text is already capitalized!
    */
   textTransform?: Extract<CSS.Property.TextTransform, 'none'> | undefined;
+
+  /**
+   * HTML element used to wrap the target of the tooltip
+   * @default 'div'
+   */
+  as?: React.ElementType;
 };
 
 export type BadgeProps = PropsWithHTMLElement<BadgeInternalProps, 'div'>;
@@ -58,6 +64,7 @@ export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
       endIcon,
       className,
       textTransform = undefined,
+      as = 'div',
       ...otherProps
     } = props;
 
@@ -72,7 +79,7 @@ export const Badge = React.forwardRef<HTMLDivElement, ExpandProps<BadgeProps>>(
 
     return (
       <Box
-        as="div"
+        as={as}
         testId={testId}
         display="inline-flex"
         className={cx(styles.badge({ variant, size }), className)}

@@ -4,7 +4,7 @@ import React, {
   ReactNode,
   ChangeEventHandler,
 } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import { CaretDownIcon } from '@contentful/f36-icons';
 
@@ -37,7 +37,7 @@ export type SelectProps = PropsWithHTMLElement<
   'disabled' | 'required'
 >;
 
-const _Select = (
+const SelectBase = (
   {
     id,
     children,
@@ -117,4 +117,6 @@ const _Select = (
   );
 };
 
-export const Select = React.forwardRef(_Select);
+SelectBase.displayName = 'Select';
+
+export const Select = React.forwardRef(SelectBase);

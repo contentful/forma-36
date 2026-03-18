@@ -5,12 +5,13 @@ import React, {
   type ReactElement,
   type ReactNode,
 } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import {
   Flex,
   type ExpandProps,
   type PolymorphicComponent,
   type PolymorphicProps,
+  type CommonProps,
 } from '@contentful/f36-core';
 import { BackButton, type BackButtonProps } from './BackButton';
 import { Breadcrumb, type BreadcrumbProps } from './Breadcrumb';
@@ -50,30 +51,31 @@ type Variant =
       withBackButton: true;
     };
 
-type HeaderInternalProps = Variant & {
-  /**
-   * Optional JSX children to display as complementary actions (e.g. buttons) related to the current page/route.
-   */
-  actions?: ReactElement | ReactElement[];
-  /**
-   * An (optional) element displayed in the center of the header, typically used to render refinement/search UI.
-   */
-  filters?: ReactElement;
-  /**
-   * The title of the element this header pertains to.
-   */
-  title?: ReactElement | string;
-  titleProps?: {
-    as?: HeadingElement;
-    size?: 'medium' | 'large';
+type HeaderInternalProps = CommonProps &
+  Variant & {
+    /**
+     * Optional JSX children to display as complementary actions (e.g. buttons) related to the current page/route.
+     */
+    actions?: ReactElement | ReactElement[];
+    /**
+     * An (optional) element displayed in the center of the header, typically used to render refinement/search UI.
+     */
+    filters?: ReactElement;
+    /**
+     * The title of the element this header pertains to.
+     */
+    title?: ReactElement | string;
+    titleProps?: {
+      as?: HeadingElement;
+      size?: 'medium' | 'large';
+    };
+    metadata?: ReactNode;
   };
-  metadata?: ReactNode;
-};
 
 export type HeaderProps<E extends ElementType = typeof HEADER_DEFAULT_TAG> =
   PolymorphicProps<HeaderInternalProps, E>;
 
-function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
+function HeaderBase<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
   {
     actions,
     as,
@@ -144,7 +146,9 @@ function _Header<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
   );
 }
 
-export const Header: PolymorphicComponent<
+HeaderBase.displayName = 'Header';
+
+export const Header = forwardRef(HeaderBase) as PolymorphicComponent<
   ExpandProps<HeaderInternalProps>,
   typeof HEADER_DEFAULT_TAG
-> = forwardRef(_Header);
+>;

@@ -1,21 +1,29 @@
-import React from 'react';
-import { render, fireEvent, waitFor, screen } from '@testing-library/react';
+import React, { useState } from 'react';
+import { render, act, waitFor, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 
 import { Popover } from '.';
 import { Button } from '@contentful/f36-button';
 
-describe('Popover', function () {
-  it('renders the component', async () => {
-    render(
-      <Popover>
+const renderWithAct = async (props) => {
+  let result: ReturnType<typeof render>;
+  await act(async () => {
+    result = render(
+      <Popover {...props}>
         <Popover.Trigger>
           <Button>Toggle</Button>
         </Popover.Trigger>
         <Popover.Content>This is the content.</Popover.Content>
       </Popover>,
     );
+  });
+  return result;
+};
+
+describe('Popover', function () {
+  it('renders the component', async () => {
+    await renderWithAct({});
 
     const trigger = screen.getByRole('button');
 
@@ -26,16 +34,9 @@ describe('Popover', function () {
   });
 
   it('renders the components as open', async () => {
-    render(
-      <Popover isOpen={true}>
-        <Popover.Trigger>
-          <Button>Toggle</Button>
-        </Popover.Trigger>
-        <Popover.Content>This is the content.</Popover.Content>
-      </Popover>,
-    );
+    await renderWithAct({ isOpen: true });
 
-    const trigger = screen.getByRole('button');
+    const trigger = screen.getByRole('button', { name: 'Toggle' });
 
     await waitFor(() => {
       expect(trigger).toHaveAttribute('aria-expanded', 'true');
@@ -43,19 +44,53 @@ describe('Popover', function () {
     });
   });
 
+  it('opens and closes the component when clicking on the trigger', async () => {
+    function Controlled() {
+      const [isOpen, setIsOpen] = useState(false);
+      return (
+        <Popover isOpen={isOpen} onClose={() => setIsOpen(false)}>
+          <Popover.Trigger>
+            <Button className="trigger" onClick={() => setIsOpen(!isOpen)}>
+              Toggle
+            </Button>
+          </Popover.Trigger>
+          <Popover.Content className="popover">
+            This is the content.
+          </Popover.Content>
+        </Popover>
+      );
+    }
+    render(<Controlled />);
+    expect(screen.queryByText('This is the content.')).not.toBeInTheDocument();
+    await userEvent.click(screen.getByRole('button', { name: 'Toggle' }));
+    expect(screen.getByRole('button', { name: 'Toggle' })).toHaveAttribute(
+      'aria-expanded',
+      'true',
+    );
+    expect(screen.getByText('This is the content.')).toBeVisible();
+    await userEvent.click(screen.getByRole('button', { name: 'Toggle' }));
+    expect(screen.queryByText('This is the content.')).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Toggle' })).toHaveAttribute(
+      'aria-expanded',
+      'false',
+    );
+  });
+
   it('renders the components with an additional class names', async () => {
-    render(
-      <Popover isOpen={true}>
-        <Popover.Trigger>
-          <Button className="trigger">Toggle</Button>
-        </Popover.Trigger>
-        <Popover.Content className="popover">
-          This is the content.
-        </Popover.Content>
-      </Popover>,
+    await act(async () =>
+      render(
+        <Popover isOpen={true}>
+          <Popover.Trigger>
+            <Button className="trigger">Toggle</Button>
+          </Popover.Trigger>
+          <Popover.Content className="popover">
+            This is the content.
+          </Popover.Content>
+        </Popover>,
+      ),
     );
 
-    const trigger = screen.getByRole('button');
+    const trigger = screen.getByRole('button', { name: 'Toggle' });
     const popover = screen.getByRole('dialog');
 
     await waitFor(() => {
@@ -66,20 +101,11 @@ describe('Popover', function () {
 
   it('call onClose when pressing Esc key', async () => {
     const handleClose = jest.fn();
+    const user = userEvent.setup();
 
-    render(
-      <Popover isOpen={true} onClose={handleClose}>
-        <Popover.Trigger>
-          <Button>Toggle</Button>
-        </Popover.Trigger>
-        <Popover.Content>This is the content.</Popover.Content>
-      </Popover>,
-    );
+    await renderWithAct({ isOpen: true, onClose: handleClose });
 
-    fireEvent.keyDown(document.activeElement, {
-      key: 'Escape',
-    });
-
+    await user.keyboard('{Escape}');
     await waitFor(() => {
       expect(handleClose).toHaveBeenCalled();
     });
@@ -87,20 +113,15 @@ describe('Popover', function () {
 
   it('do NOT call onClose when pressing Esc key and closeOnEsc prop is false', async () => {
     const handleClose = jest.fn();
+    const user = userEvent.setup();
 
-    render(
-      <Popover isOpen={true} onClose={handleClose} closeOnEsc={false}>
-        <Popover.Trigger>
-          <Button>Toggle</Button>
-        </Popover.Trigger>
-        <Popover.Content>This is the content.</Popover.Content>
-      </Popover>,
-    );
-
-    fireEvent.keyDown(document.activeElement, {
-      key: 'Escape',
+    await renderWithAct({
+      isOpen: true,
+      onClose: handleClose,
+      closeOnEsc: false,
     });
 
+    await user.keyboard('{Escape}');
     await waitFor(() => {
       expect(handleClose).not.toHaveBeenCalled();
     });
@@ -110,14 +131,10 @@ describe('Popover', function () {
     const user = userEvent.setup();
     const handleClose = jest.fn();
 
-    render(
-      <Popover isOpen={true} onClose={handleClose}>
-        <Popover.Trigger>
-          <Button>Toggle</Button>
-        </Popover.Trigger>
-        <Popover.Content>This is the content.</Popover.Content>
-      </Popover>,
-    );
+    await renderWithAct({
+      isOpen: true,
+      onClose: handleClose,
+    });
 
     await user.click(document.body);
 
@@ -130,14 +147,10 @@ describe('Popover', function () {
     const user = userEvent.setup();
     const handleClose = jest.fn();
 
-    render(
-      <Popover isOpen={true} onClose={handleClose}>
-        <Popover.Trigger>
-          <Button>Toggle</Button>
-        </Popover.Trigger>
-        <Popover.Content>This is the content.</Popover.Content>
-      </Popover>,
-    );
+    await renderWithAct({
+      isOpen: true,
+      onClose: handleClose,
+    });
 
     await user.click(screen.getByRole('dialog'));
 
@@ -150,14 +163,11 @@ describe('Popover', function () {
     const user = userEvent.setup();
     const handleClose = jest.fn();
 
-    render(
-      <Popover isOpen={true} onClose={handleClose} closeOnBlur={false}>
-        <Popover.Trigger>
-          <Button>Toggle</Button>
-        </Popover.Trigger>
-        <Popover.Content>This is the content.</Popover.Content>
-      </Popover>,
-    );
+    await renderWithAct({
+      isOpen: true,
+      onClose: handleClose,
+      closeOnBlur: false,
+    });
 
     await user.click(document.body);
 
@@ -166,46 +176,49 @@ describe('Popover', function () {
     });
   });
 
-  it('popover should receive focus when open', async () => {
-    render(
-      <Popover isOpen={true}>
-        <Popover.Trigger>
-          <Button>Toggle</Button>
-        </Popover.Trigger>
-        <Popover.Content>This is the content.</Popover.Content>
-      </Popover>,
-    );
+  it('popover should receive focus when open by default (autoFocus=true)', async () => {
+    await renderWithAct({ isOpen: true });
+    const dialog = await screen.findByRole('dialog');
+    await waitFor(() => {
+      expect(dialog).toHaveFocus();
+    });
+  });
 
+  it('popover should receive focus after opening', async () => {
+    function Controlled() {
+      const [isOpen, setIsOpen] = useState(false);
+      return (
+        <Popover isOpen={isOpen} onClose={() => setIsOpen(false)}>
+          <Popover.Trigger>
+            <Button className="trigger" onClick={() => setIsOpen(true)}>
+              Toggle
+            </Button>
+          </Popover.Trigger>
+          <Popover.Content className="popover">
+            This is the content.
+          </Popover.Content>
+        </Popover>
+      );
+    }
+
+    await act(async () => render(<Controlled />));
+    const user = userEvent.setup();
+    await user.click(screen.getByTestId('cf-ui-button'));
+    expect(screen.queryByTestId('cf-ui-popover-content')).toBeInTheDocument();
     await waitFor(() => {
       expect(screen.getByRole('dialog')).toHaveFocus();
     });
   });
 
-  it('popover should NOT receive focus when open and autoFocus is false', async () => {
-    render(
-      // eslint-disable-next-line jsx-a11y/no-autofocus
-      <Popover isOpen={true} autoFocus={false}>
-        <Popover.Trigger>
-          <Button>Toggle</Button>
-        </Popover.Trigger>
-        <Popover.Content>This is the content.</Popover.Content>
-      </Popover>,
-    );
-
+  it('popover should NOT receive focus when autoFocus=false', async () => {
+    await renderWithAct({ isOpen: true, autoFocus: false });
     await waitFor(() => {
       expect(screen.getByRole('dialog')).not.toHaveFocus();
     });
   });
 
   it('popover should NOT be rendered in the DOM by default (when renderOnlyWhenOpen=true)', async () => {
-    render(
-      <Popover>
-        <Popover.Trigger>
-          <Button>Toggle</Button>
-        </Popover.Trigger>
-        <Popover.Content>This is the content.</Popover.Content>
-      </Popover>,
-    );
+    await renderWithAct({});
 
     await waitFor(() => {
       expect(
@@ -215,29 +228,16 @@ describe('Popover', function () {
   });
 
   it('popover should be rendered in the DOM when renderOnlyWhenOpen=false', async () => {
-    render(
-      <Popover renderOnlyWhenOpen={false}>
-        <Popover.Trigger>
-          <Button>Toggle</Button>
-        </Popover.Trigger>
-        <Popover.Content>This is the content.</Popover.Content>
-      </Popover>,
-    );
-
+    await renderWithAct({
+      renderOnlyWhenOpen: false,
+    });
     await waitFor(() => {
       expect(screen.queryByTestId('cf-ui-popover-content')).toBeInTheDocument();
     });
   });
 
   it('has no a11y issues', async () => {
-    const { container } = render(
-      <Popover isOpen={true}>
-        <Popover.Trigger>
-          <Button>Toggle</Button>
-        </Popover.Trigger>
-        <Popover.Content>This is the content.</Popover.Content>
-      </Popover>,
-    );
+    const { container } = await renderWithAct({});
 
     const results = await axe(container);
 

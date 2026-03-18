@@ -1,5 +1,5 @@
 import React, { type MouseEventHandler } from 'react';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import { EntityStatusBadge } from '@contentful/f36-badge';
 import {
@@ -71,7 +71,7 @@ export interface EntityListItemProps extends CommonProps {
   /**
    * Menu elements rendered as actions in Menu
    */
-  actions?: React.ReactNodeArray;
+  actions?: React.ReactNode[];
   /**
    * Renders a drag handle for the component for use in drag and drop contexts
    */
@@ -206,13 +206,14 @@ export const EntityListItem = ({
                   <Icon
                     as={ICON_MAP[entityType.toLowerCase()]}
                     color={tokens.gray600}
-                    data-test-id={`thumbnail-icon-${entityType.toLowerCase()}`}
+                    testId={`thumbnail-icon-${entityType.toLowerCase()}`}
                   />
                 ) : (
                   <img
                     src={thumbnailUrl}
                     className={styles.thumbnail}
                     alt={thumbnailAltText}
+                    data-test-id={`thumbnail-icon-${entityType.toLowerCase()}`}
                   />
                 )}
               </figure>

@@ -1,44 +1,51 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { StoryObj, Meta } from '@storybook/react-vite';
 import * as icons from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
 import { Paragraph, Text } from '@contentful/f36-typography';
 import { List } from '@contentful/f36-list';
-import { Flex } from '@contentful/f36-core';
+import { type BoxProps, Flex } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
-import { TextLink } from '../src/TextLink';
+import { TextLink, TextLinkProps } from '../src/TextLink';
 import type { TextLinkVariant } from '../src/types';
 
 export default {
   component: TextLink,
   parameters: {
-    propTypes: TextLink['__docgenInfo'],
+    propTypes: [TextLink['__docgenInfo']],
   },
   title: 'Components/TextLink',
   argTypes: {
     classNames: { control: { disable: true } },
     testId: { control: { disable: true } },
-    icon: {
-      control: {
-        options: Object.keys(icons),
-        type: 'select',
-      },
-    },
-    alignIcon: {
-      defaultValue: 'start',
-      control: { options: ['start', 'end'], type: 'select' },
-    },
-    children: { defaultValue: 'This is a text link' },
   },
-} as Meta;
+} satisfies Meta<typeof TextLink>;
 
-export const Basic: Story<any> = ({ icon, children, ...args }) => {
-  return (
-    <TextLink icon={icon ? <Icon as={icons[icon]} /> : null} {...args}>
-      {children}
-    </TextLink>
-  );
+export const Basic: StoryObj<
+  Omit<TextLinkProps, 'icon'> & { icon: keyof typeof icons }
+> = {
+  argTypes: {
+    alignIcon: {
+      control: 'select',
+      options: ['start', 'end'],
+    },
+    icon: {
+      control: 'select',
+      options: Object.keys(icons),
+    },
+  },
+  args: {
+    alignIcon: 'start',
+    children: 'This is a text link',
+  },
+  render: ({ children, icon, ...args }) => {
+    return (
+      <TextLink icon={icon ? <Icon as={icons[icon]} /> : null} {...args}>
+        {children}
+      </TextLink>
+    );
+  },
 };
 
 export const UsedWithText = () => {
@@ -133,7 +140,7 @@ export const UsedWithList = () => {
 };
 
 export const UsedWithinFlexbox = () => {
-  const Box = ({ children }) => (
+  const Box = ({ children }: BoxProps) => (
     <Flex
       style={{
         width: 200,
@@ -210,7 +217,7 @@ const textLinkVariants = [
   'premium',
 ];
 
-export const overview = () => (
+export const Overview = () => (
   <div
     style={{
       backgroundColor: tokens.colorElementLight,

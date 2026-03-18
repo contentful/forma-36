@@ -1,15 +1,15 @@
-import * as CSS from 'csstype';
-import { css, cx } from 'emotion';
 import * as React from 'react';
-import type { CommonProps, MarginProps, PaddingProps } from '../types';
+import * as CSS from 'csstype';
+import { css, cx } from '@emotion/css';
+import type { MarginProps, PaddingProps, CommonProps } from '../types';
 import { getSpacingStyles } from '../utils/getSpacingStyles';
 
 const BOX_DEFAULT_TAG: React.ElementType = 'div';
 
 import {
-  ExpandProps,
-  PolymorphicComponent,
   PolymorphicProps,
+  PolymorphicComponent,
+  ExpandProps,
 } from '../Primitive/Primitive';
 
 export interface BoxInternalProps
@@ -21,7 +21,6 @@ export interface BoxInternalProps
    */
   display?: CSS.Property.Display;
   children?: React.ReactNode;
-  as?: React.ElementType<any>;
 }
 
 export type BoxProps<E extends React.ElementType = typeof BOX_DEFAULT_TAG> =
@@ -78,9 +77,9 @@ export function useBox<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
   };
 }
 
-function _Box<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
+function BoxBase<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
   props: BoxProps<E>,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLElement>,
 ) {
   const { boxProps, Element } = useBox<E>(props);
 
@@ -91,9 +90,9 @@ function _Box<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
   );
 }
 
-_Box.displayName = 'Box';
+BoxBase.displayName = 'Box';
 
-export const Box: PolymorphicComponent<
+export const Box = React.forwardRef(BoxBase) as PolymorphicComponent<
   ExpandProps<BoxInternalProps>,
   typeof BOX_DEFAULT_TAG
-> = React.forwardRef(_Box);
+>;

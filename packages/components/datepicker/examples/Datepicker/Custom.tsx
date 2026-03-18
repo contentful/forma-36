@@ -1,10 +1,8 @@
 import React, { useState, useRef } from 'react';
-import { Calendar } from '@contentful/f36-components';
-import { TextInput } from '@contentful/f36-forms';
+import { Calendar, Popover, TextInput } from '@contentful/f36-components';
 import { format, parse, isValid } from 'date-fns';
-import { Popover } from '@contentful/f36-popover';
 import FocusLock from 'react-focus-lock';
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 
 export default function CustomExample() {

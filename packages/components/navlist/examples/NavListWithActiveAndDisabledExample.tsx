@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavList } from '@contentful/f36-navlist';
+import { NavList } from '@contentful/f36-components';
 
 export default function NavListWithActiveAndDisabled() {
   return (

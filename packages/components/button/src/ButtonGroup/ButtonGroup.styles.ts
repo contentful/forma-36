@@ -1,4 +1,4 @@
-import { css } from 'emotion';
+import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
 import type { GetStyleArguments } from './types';
@@ -14,16 +14,19 @@ export default ({ withDivider }: GetStyleArguments) => {
     groupContent: css({
       borderRadius: '0 !important',
       marginRight: '-1px',
-      '&:first-child': {
+      '& > button': {
+        borderRadius: '0 !important',
+      },
+      '&:first-child, &:first-child > button': {
         borderBottomLeftRadius: `${tokens.borderRadiusMedium} !important`,
         borderTopLeftRadius: `${tokens.borderRadiusMedium} !important`,
       },
-      '&:last-child': {
+      '&:last-child, &:last-child > button': {
         borderBottomRightRadius: `${tokens.borderRadiusMedium} !important`,
         borderTopRightRadius: `${tokens.borderRadiusMedium} !important`,
         marginRight: 0,
       },
-      '&:focus': {
+      '&:focus, &:focus > button': {
         zIndex: tokens.zIndexDefault,
       },
       ...dividerStyle,

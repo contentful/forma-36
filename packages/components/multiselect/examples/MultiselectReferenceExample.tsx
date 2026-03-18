@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button, Stack } from '@contentful/f36-components';
-import { Multiselect } from '@contentful/f36-multiselect';
+import { Button, Stack, Multiselect } from '@contentful/f36-components';
 
 export default function MultiselectReferenceExample() {
   const spaces = [

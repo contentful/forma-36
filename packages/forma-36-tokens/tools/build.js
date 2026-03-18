@@ -71,16 +71,20 @@ const buildScssTokens = (srcPath, tokens) => {
 };
 
 const buildIndexJS = (srcPath, tokens) => {
-  return fse.outputFile(
-    srcPath,
-    `
-    Object.defineProperty(exports, "__esModule", {
-      value: true
-    });
+  const objectLiteral = JSON.stringify(tokens, null, 2);
+  const cjs = `Object.defineProperty(exports, "__esModule", { value: true });\nconst tokens = ${objectLiteral};\nmodule.exports = tokens;\nmodule.exports.default = tokens;\n`;
+  return fse.outputFile(srcPath, cjs);
+};
 
-    module.exports = ${JSON.stringify(tokens, null, 2)}
-    `,
-  );
+const buildIndexMJS = (srcPath, tokens) => {
+  const objectLiteral = JSON.stringify(tokens, null, 2);
+  const tokensModule = `const tokens = ${objectLiteral};\nexport { tokens };\n`;
+
+  const tokensPath = srcPath.replace('index.mjs', 'tokens.mjs');
+  fse.outputFileSync(tokensPath, tokensModule);
+
+  const esm = `export { tokens as default } from './tokens.mjs';\nexport { tokens } from './tokens.mjs';\n`;
+  return fse.outputFile(srcPath, esm);
 };
 
 function createUnionFromKeys(keys, typename) {
@@ -197,7 +201,7 @@ const buildIndexDTS = async (srcPath, tokens) => {
       ${createUnionThatStarts('zIndex', 'ZIndexTokens')}
       ${createUnionThatStarts('glow', 'GlowTokens')}
       const tokens: F36Tokens;
-      export default tokens;
+      export { tokens as default };
     }`,
   );
 };
@@ -232,7 +236,7 @@ const generateIndex = (paths, extension) => {
   let allTokens = {};
 
   paths.forEach((srcPath) => {
-    const tokens = require(path.resolve(srcPath)); // eslint-disable-line
+    const tokens = require(path.resolve(srcPath));
 
     buildJson(srcPath, tokens);
     buildCssTokens(srcPath, tokens);
@@ -244,5 +248,6 @@ const generateIndex = (paths, extension) => {
   allTokens = camelCaseKeys(allTokens);
 
   await buildIndexJS('dist/index.js', allTokens);
+  await buildIndexMJS('dist/index.mjs', allTokens);
   await buildIndexDTS('dist/index.d.ts', allTokens);
 })();

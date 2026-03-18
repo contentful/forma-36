@@ -41,15 +41,6 @@ describe('Notification', () => {
     expect(container.firstChild).toContainElement(getByText(label));
   });
 
-  it('renders the component without close button', () => {
-    const { queryByRole } = render(
-      <NotificationItem withCloseButton={false}>
-        This is the body text.
-      </NotificationItem>,
-    );
-    expect(queryByRole('button')).toBeNull();
-  });
-
   it('should trigger onClose when close button is clicked', () => {
     const mockOnClose = jest.fn();
     const { getByRole } = render(

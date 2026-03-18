@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { css, cx } from 'emotion';
-import Link from 'next/link';
+import { css, cx } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import { List, Flex, Text, Badge } from '@contentful/f36-components';
 
@@ -11,6 +10,7 @@ import { ComponentStatus } from '../types';
 import caretDown from '../resources/icons/caret-down.svg';
 import arrowSquareOut from '../resources/icons/arrow-square-out.svg';
 import lockSimple from '../resources/icons/lock-simple.svg';
+import { InternalLink } from './InternalLink';
 
 const styles = {
   link: css({
@@ -19,7 +19,6 @@ const styles = {
     gap: tokens.spacing2Xs,
     fontSize: tokens.fontSizeM,
     lineHeight: tokens.lineHeightM,
-    textDecoration: 'none',
     '&:hover > span:first-child': {
       textDecoration: 'underline',
     },
@@ -96,6 +95,7 @@ export function SidebarSectionButton({
 
         <Image
           src={caretDown}
+          alt="caret down icon"
           width={18}
           height={18}
           className={cx(titleStyles.chevron, {
@@ -162,34 +162,34 @@ export function SidebarLink({
 
   return (
     <List.Item>
-      <Link href={href} passHref>
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a
-          className={cx([styles.link, titleStyles.sidebarItem])}
-          {...linksProps}
-        >
-          <span className={cx([titleStyles.clickable])}>
-            {children}
-            {isExternal && (
-              <Image
-                src={arrowSquareOut}
-                width={18}
-                height={18}
-                className={titleStyles.linkIcon}
-              />
-            )}
-            {isAuthProtected && (
-              <Image
-                src={lockSimple}
-                width={18}
-                height={18}
-                className={titleStyles.linkIcon}
-              />
-            )}
-          </span>
-          {renderSidebarBadge({ isNew, status })}
-        </a>
-      </Link>
+      <InternalLink
+        href={href}
+        className={cx([styles.link, titleStyles.sidebarItem])}
+        {...linksProps}
+      >
+        <span className={cx([titleStyles.clickable])}>
+          {children}
+          {isExternal && (
+            <Image
+              src={arrowSquareOut}
+              alt="arrow square out icon"
+              width={18}
+              height={18}
+              className={titleStyles.linkIcon}
+            />
+          )}
+          {isAuthProtected && (
+            <Image
+              alt="lock icon"
+              src={lockSimple}
+              width={18}
+              height={18}
+              className={titleStyles.linkIcon}
+            />
+          )}
+        </span>
+        {renderSidebarBadge({ isNew, status })}
+      </InternalLink>
     </List.Item>
   );
 }

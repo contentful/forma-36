@@ -1,7 +1,7 @@
 const path = require('path');
 const util = require('util');
 const fs = require('fs');
-const globby = require('globby');
+const { globbySync } = require('globby');
 
 const renameAsync = util.promisify(fs.rename);
 
@@ -26,9 +26,7 @@ module.exports = async function renameMany(data, userConfig, plop) {
     .concat(cfg.templateFiles) // Ensure `cfg.templateFiles` is an array, even if a string is passed.
     .map((file) => plop.renderString(file, data)); // render the paths as hbs templates
 
-  const templateFiles = globby.sync(cfg.templateFiles, {
-    nobrace: true,
-  });
+  const templateFiles = globbySync(cfg.templateFiles);
 
   const filesRenamed = [];
   for (let filepath of templateFiles) {
