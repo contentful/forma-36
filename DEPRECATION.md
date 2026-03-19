@@ -39,7 +39,7 @@ We follow a **gradual deprecation approach** aligned with [semantic versioning](
 ### Phase 1: Deprecation (Minor Release)
 
 - Mark the feature as deprecated
-- Add an entry for this feature or component into the deprecation log
+- Add an entry for this feature or component in the deprecation log
 - Add runtime console warnings (development only)
 - Update documentation with deprecation notices
 - Provide migration guide
