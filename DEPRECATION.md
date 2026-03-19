@@ -54,6 +54,7 @@ We follow a **gradual deprecation approach** aligned with [semantic versioning](
 - Remove the deprecated feature in the next major version
 - Update documentation and examples
 - Update migration guides
+- Update deprecation log
 
 ### Example Timeline
 
@@ -93,7 +94,7 @@ Update the following locations:
 Add a prominent deprecation notice at the top of the component page:
 
 ```markdown
-> **⚠️ Deprecated**: This component is deprecated and will be removed in v5.0.0.
+> **⚠️ Deprecated**: This component is deprecated and will be removed in next major version
 > Please use [NewComponent](link) instead. See the [migration guide](#migration).
 ```
 
@@ -104,7 +105,7 @@ Include deprecation notices in the package CHANGELOG:
 ```markdown
 ### Deprecated
 
-- **ComponentName**: Deprecated in favor of NewComponent. Will be removed in v5.0.0.
+- **ComponentName**: Deprecated in favor of NewComponent. Will be removed in next major version
 ```
 
 ### Deprecationlog
@@ -118,7 +119,7 @@ Add console warnings in development mode:
 ```typescript
 if (process.env.NODE_ENV === 'development') {
   console.warn(
-    'Warning: `OldComponent` is deprecated and will be removed in v5.0.0. ' +
+    'Warning: `OldComponent` is deprecated and will be removed in next major version ' +
       'Please use `NewComponent` instead. ' +
       'See migration guide: https://f36.contentful.com/components/old-component#migration',
   );
@@ -130,7 +131,7 @@ For deprecated props on components still in use:
 ```typescript
 if (process.env.NODE_ENV === 'development' && oldProp !== undefined) {
   console.warn(
-    '`oldProp` on ComponentName is deprecated and will be removed in v5.0.0. ' +
+    '`oldProp` on ComponentName is deprecated and will be removed in next major version ' +
       'Please use `newProp` instead.',
   );
 }
@@ -198,7 +199,7 @@ Structure the changeset with clear messaging:
 
 ### Changeset Guidelines
 
-- **Version bump**: Deprecations are `minor` or `feature` changes (new warnings, not breaking)
+- **Version bump**: Deprecations are `minor` changes (new warnings, not breaking)
 - **Label clearly**: Start with `**Deprecated**` in the description
 - **Provide context**: Explain what's deprecated and what to use instead
 - **Link to docs**: Always include a link to migration guidance
@@ -217,7 +218,7 @@ Every deprecation must include a migration guide. The guide should contain:
 ### 2. Before/After Examples
 
 ```tsx
-// ❌ Deprecated - will be removed in v5.0.0
+// ❌ Deprecated - will be removed in next major version
 <OldButton type="primary">Click me</OldButton>
 
 // ✅ Recommended
@@ -290,7 +291,12 @@ export const Button: React.FC<ButtonProps> = ({
   if (process.env.NODE_ENV === 'development' && buttonType) {
     console.warn(
       'Button: `buttonType` prop is deprecated. Use `variant` instead. ' +
-      'This prop will be removed in v5.0.0.'
+      'This prop will be removed in the next major version'
+    );
+  } else if ( process.env.NODE_ENV === 'development' && buttonType && variant) {
+     console.warn(
+      'Button: `buttonType` prop is deprecated in favor of `variant` and will be ignored.' +
+      'This prop will be removed in the next major version'
     );
   }
 
@@ -313,7 +319,7 @@ import { Card } from './Card';
 
 /**
  * @deprecated Use `Card` from '@contentful/f36-card' instead.
- * Will be removed in v5.0.0.
+ * Will be removed in next Major Version
  *
  * @see {@link Card} for the replacement component
  * @example
@@ -328,7 +334,7 @@ import { Card } from './Card';
 export const LegacyCard: React.FC<LegacyCardProps> = (props) => {
   if (process.env.NODE_ENV === 'development') {
     console.warn(
-      'LegacyCard is deprecated and will be removed in v5.0.0. ' +
+      'LegacyCard is deprecated and will be removed in next major version ' +
       'Please migrate to Card. ' +
       'See: https://f36.contentful.com/components/card#migration'
     );
