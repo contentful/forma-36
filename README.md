@@ -48,7 +48,7 @@ Read more about changeset [here](RELEASES.md)
 
 ## Deprecation process
 
-We follow a structured deprecation process to ensure smooth transitions when components or APIs are being phased out. Deprecations are announced at least one major version in advance, with clear migration paths and runtime warnings.
+We follow a structured deprecation process to ensure smooth transitions when components, props, and features are being phased out. Deprecations are announced at least one major version in advance, with clear migration paths and runtime warnings.
 
 Read more about our deprecation guidelines [here](DEPRECATION.md)
 
