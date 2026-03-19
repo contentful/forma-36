@@ -153,8 +153,8 @@ export function useMenu({
   const offsetOption = offsetProp
     ? offsetProp
     : isNested
-    ? { mainAxis: 4, alignmentAxis: -4 }
-    : 5;
+      ? { mainAxis: 4, alignmentAxis: -4 }
+      : 5;
 
   const middleware = [offset(offsetOption)];
 

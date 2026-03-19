@@ -70,9 +70,7 @@ function open<T = unknown>(
   options = { delay: 300, ...options };
 
   // Generate a unique ID for each modal instance to avoid root reuse conflicts
-  const rootElId = `modals-root-${
-    options.modalId || ''
-  }-${Date.now()}-${Math.random()}`;
+  const rootElId = `modals-root-${options.modalId || ''}-${Date.now()}-${Math.random()}`;
   const rootDom = getRoot(rootElId);
   const root = ReactDOM.createRoot(rootDom);
   return new Promise((resolve) => {

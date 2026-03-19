@@ -127,7 +127,7 @@ function CopyButtonBase(
     <Button
       {...otherProps}
       variant={variant}
-      aria-label={copied ? tooltipCopiedText : label ?? tooltipText}
+      aria-label={copied ? tooltipCopiedText : (label ?? tooltipText)}
       aria-live="assertive"
       className={cx(styles.button, className)}
       isDisabled={isLoading || isDisabled}

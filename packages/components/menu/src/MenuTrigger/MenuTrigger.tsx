@@ -34,8 +34,8 @@ export const MenuTrigger = React.forwardRef<HTMLElement, MenuTriggerProps>(
       tabIndex: !isNested
         ? undefined
         : parentActiveIndex === item.index
-        ? 0
-        : -1,
+          ? 0
+          : -1,
       role: isNested ? 'menuitem' : undefined,
       'data-open': isOpen ? '' : undefined,
       'data-nested': isNested ? '' : undefined,

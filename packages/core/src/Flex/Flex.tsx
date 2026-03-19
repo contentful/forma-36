@@ -125,7 +125,7 @@ function FlexBase<E extends React.ElementType = typeof FLEX_DEFAULT_TAG>(
           flexBasis,
           flexShrink,
           flexDirection,
-          gap: gap === 'none' ? 0 : tokens[gap] ?? gap,
+          gap: gap === 'none' ? 0 : (tokens[gap] ?? gap),
           justifyContent,
           justifySelf,
           alignItems,
