@@ -11,7 +11,7 @@ This log tracks all deprecated features and components in Forma 36. For details 
 <!-- Format example ---
 - **Deprecated**: YYYY-MM-DD
 - **Deprecated In**: v5.x.x
-- **Removal Planned**: v6.0.0
+- **Removal Planned**: next Major
 - **Reason**: [Brief explanation - e.g., "Replaced by improved component with better accessibility"]
 - **Migration**: Use `NewComponent` instead
 - **Guide**: [Migration documentation link]

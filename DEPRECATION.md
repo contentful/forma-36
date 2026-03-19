@@ -39,13 +39,13 @@ We follow a **gradual deprecation approach** aligned with [semantic versioning](
 ### Phase 1: Deprecation (Minor Release)
 
 - Mark the feature as deprecated
-- Add an entry for this feature / component into the deprecation log
+- Add an entry for this feature or component into the deprecation log
 - Add runtime console warnings (development only)
 - Update documentation with deprecation notices
 - Provide migration guide
-- Create codemod if applicable (for complex migrations)
+- Create codemod if applicable
 - Feature remains fully functional
-- Feature is in maintenance mode and will receive security updates as well as bug fixes
+- Feature is in maintenance mode and will receive security updates
 
 **Minimum duration**: At least **one major version cycle** or **6 months**, whichever is longer
 
@@ -144,13 +144,13 @@ if (process.env.NODE_ENV === 'development' && oldProp !== undefined) {
 
 ## Implementation Guidelines
 
-### TypeScript Support
+### Component Deprecation
 
 Use TypeScript's `@deprecated` JSDoc tag for IDE support:
 
 ```typescript
 /**
- * @deprecated Use NewComponent instead. Will be removed in v5.0.0.
+ * @deprecated Use NewComponent instead. Will be removed in the next major version.
  * @see {@link NewComponent}
  */
 export const OldComponent: React.FC<OldComponentProps> = (props) => {
@@ -162,31 +162,16 @@ export const OldComponent: React.FC<OldComponentProps> = (props) => {
 
 For individual props, keep the prop functional but add type annotations:
 
-````typescript
+```typescript
 export interface ComponentProps {
   /**
-   * @deprecated Use `variant` prop instead. Will be removed in v5.0.0.
+   * @deprecated Use `variant` prop instead. Will be removed in the next major version.
    */
   type?: 'primary' | 'secondary';
 
   /** The variant of the component */
   variant?: 'primary' | 'secondary';
 }
-```rop?: string;
-````
-
-### Export Strategy
-
-Keep deprecated exports available but marked:
-
-```typescript
-// src/index.ts
-export { NewComponent } from './NewComponent';
-
-/**
- * @deprecated Use NewComponent instead
- */
-export { OldComponent } from './OldComponent';
 ```
 
 ## Creating Changesets for Deprecations
@@ -213,7 +198,7 @@ Structure the changeset with clear messaging:
 
 ### Changeset Guidelines
 
-- **Version bump**: Deprecations are `minor` changes (new warnings, not breaking)
+- **Version bump**: Deprecations are `minor` or `feature` changes (new warnings, not breaking)
 - **Label clearly**: Start with `**Deprecated**` in the description
 - **Provide context**: Explain what's deprecated and what to use instead
 - **Link to docs**: Always include a link to migration guidance
@@ -276,8 +261,8 @@ Provide a way to get help:
 ```markdown
 If you encounter issues during migration, please:
 
-- Check our [GitHub Issues](https://github.com/contentful/forma-36/issues)
-- Send us direct feedback via [our form](https://forms.gle/j3oC9GuhxEJ1DF4k6)
+- Check our [GitHub Issues](https://github.com/contentful/forma-36/issues) or create a new one
+- Send us direct feedback via our feedback form on our [website](https://f36.contentful.com/)
 ```
 
 ## Examples
@@ -292,7 +277,7 @@ export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'positive' | 'negative';
 
   /**
-   * @deprecated Use `variant` instead. Will be removed in v5.0.0.
+   * @deprecated Use `variant` instead. Will be removed in the next Major version.
    */
   buttonType?: 'primary' | 'secondary' | 'positive' | 'negative';
 }
@@ -358,24 +343,6 @@ export const LegacyCard: React.FC<LegacyCardProps> = (props) => {
   return <Card {...newProps} />;
 };
 ````
-
-### Example 3: Changeset for Deprecation
-
-`.changeset/deprecate-legacy-card.md`:
-
-```markdown
----
-'@contentful/f36-card': minor
-'@contentful/f36-components': minor
----
-
-**Deprecated**
-
-- `LegacyCard`: This component is deprecated in favor of the new `Card` component which provides better performance and accessibility. The `LegacyCard` will be removed in v5.0.0.
-  - Use `Card` instead with updated prop names
-  - See migration guide: https://f36.contentful.com/components/card#migration-from-legacy-card
-  - Console warnings added in development mode to help identify usage
-```
 
 ## Related Documentation
 
