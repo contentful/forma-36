@@ -43,8 +43,8 @@ export const getStyles = (props: StyleProps = {}) => {
         transitionDirection === 'right'
           ? 'translateX(100%)'
           : transitionDirection === 'left'
-          ? 'translateX(-100%)'
-          : 'translateX(0)',
+            ? 'translateX(-100%)'
+            : 'translateX(0)',
     }),
 
     contentSlot: css({
