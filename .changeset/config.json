@@ -10,8 +10,7 @@
     "@contentful/f36-cdn",
     "@contentful/f36-i18n-utils",
     "@contentful/f36-codemod",
-    "@contentful/f36-website",
-    "@contentful/f36-ai-components"
+    "@contentful/f36-website"
   ],
   "commit": false,
   "fixed": [
@@ -58,7 +57,8 @@
       "@contentful/f36-tooltip",
       "@contentful/f36-typography",
       "@contentful/f36-usage-card",
-      "@contentful/f36-usage-count"
+      "@contentful/f36-usage-count",
+      "@contentful/f36-ai-components"
     ]
   ],
   "access": "public",
