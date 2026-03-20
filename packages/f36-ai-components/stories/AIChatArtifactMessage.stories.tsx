@@ -1,6 +1,6 @@
 import { Icon, Text } from '@contentful/f36-components';
 import * as icons from '@contentful/f36-icons';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta, StoryFn as Story } from '@storybook/react-vite';
 import React from 'react';
 
 import {

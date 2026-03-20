@@ -52,7 +52,7 @@ export const AIChatMentionList: React.FC<AIChatMentionListProps> = ({
   }
 
   return (
-    <Menu isOpen usePortal={false} isAutoalignmentEnabled>
+    <Menu isOpen onClose={() => {}} usePortal={false} isAutoalignmentEnabled>
       {/* Invisible trigger element positioned at cursor location */}
       <Menu.Trigger>
         <span

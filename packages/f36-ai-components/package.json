@@ -37,9 +37,9 @@
     "@tiptap/react": "^2.26.4",
     "@tiptap/suggestion": "^2.27.1",
     "@emotion/css": "^11.13.5",
-    "react-markdown": "^7.1.2",
-    "rehype-raw": "^6.1.1",
-    "remark-gfm": "^3.0.1"
+    "react-markdown": "^9.0.3",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.0"
   },
   "peerDependencies": {
     "react": "^18.3.0 || >=19.1.0",
