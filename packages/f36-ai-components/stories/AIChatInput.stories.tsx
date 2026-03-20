@@ -1,5 +1,5 @@
 import { action } from 'storybook/actions';
-import type { Story } from '@storybook/react';
+import type { StoryFn as Story } from '@storybook/react-vite';
 import React from 'react';
 
 import { Button, IconButton } from '@contentful/f36-button';

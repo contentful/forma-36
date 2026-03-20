@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   Box,
   type BoxProps,
@@ -372,7 +373,6 @@ function getMarkdownComponents(
       };
       return <>{finalProps.children}</>;
     },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     blockquote: (props: any) => (
       <blockquote
         {...{
@@ -397,7 +397,10 @@ function getMarkdownComponents(
   };
 }
 
-function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
+function AIChatMessageBase(
+  props: AIChatMessageProps,
+  ref: Ref<HTMLDivElement>,
+) {
   const {
     className,
     testId = 'cf-ui-ai-chat-message',
@@ -439,4 +442,4 @@ function _AIChatMessage(props: AIChatMessageProps, ref: Ref<HTMLDivElement>) {
  * Displays a user's or assistant's message with support for markdown content.
  * Message can be augmented with additional content and action buttons.
  */
-export const AIChatMessage = forwardRef(_AIChatMessage);
+export const AIChatMessage = forwardRef(AIChatMessageBase);

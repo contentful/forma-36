@@ -34,7 +34,10 @@ export interface AIChatHistoryProps extends CommonProps {
   isLoading?: boolean;
 }
 
-function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
+function AIChatHistoryBase(
+  props: AIChatHistoryProps,
+  ref: Ref<HTMLDivElement>,
+) {
   const {
     className,
     testId = 'cf-ui-ai-chat-history',
@@ -205,4 +208,4 @@ function _AIChatHistory(props: AIChatHistoryProps, ref: Ref<HTMLDivElement>) {
 /**
  * Displays a scrollable list of message threads, optionally grouped into tabs. Groups and status indicators can be customised.
  */
-export const AIChatHistory = forwardRef(_AIChatHistory);
+export const AIChatHistory = forwardRef(AIChatHistoryBase);

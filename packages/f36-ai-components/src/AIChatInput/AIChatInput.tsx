@@ -44,7 +44,10 @@ export interface AIChatInputProps extends CommonProps {
   mentionConfig?: AiChatInputMentionConfig;
 }
 
-function _AIChatInput(props: AIChatInputProps, ref: React.Ref<HTMLDivElement>) {
+function AIChatInputBase(
+  props: AIChatInputProps,
+  ref: React.Ref<HTMLDivElement>,
+) {
   const {
     testId = 'cf-ui-ai-chat-input',
     className,
@@ -124,4 +127,4 @@ function _AIChatInput(props: AIChatInputProps, ref: React.Ref<HTMLDivElement>) {
 /**
  * Component allows user to construct and submit prompts to an AI model.
  */
-export const AIChatInput = React.forwardRef(_AIChatInput);
+export const AIChatInput = React.forwardRef(AIChatInputBase);

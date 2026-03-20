@@ -1,6 +1,6 @@
 import { Button } from '@contentful/f36-button';
 import { Box } from '@contentful/f36-components';
-import type { Meta, Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react-vite';
 import React, {
   useCallback,
   useEffect,
