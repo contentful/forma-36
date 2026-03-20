@@ -108,7 +108,7 @@ Include deprecation notices in the package CHANGELOG:
 - **ComponentName**: Deprecated in favor of NewComponent. Will be removed in next major version
 ```
 
-### Deprecationlog
+### Deprecation Log
 
 Document the deprecated feature or component in the Deprecation log
 
