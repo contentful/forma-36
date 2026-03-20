@@ -141,7 +141,7 @@ if (process.env.NODE_ENV === 'development' && oldProp !== undefined) {
 
 - Announce deprecation in release notes
 - Consider posting in community channels
-- For major deprecations, consider a blog post
+- Consider a blog post for deprecations that affect more than one component
 
 ## Implementation Guidelines
 
