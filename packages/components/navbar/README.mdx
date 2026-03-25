@@ -25,13 +25,13 @@ The `Navbar` exports the following compound components
 <Table>
   <Table.Head>
     <Table.Row>
-      <Table.Cell style={{ textAlign: 'left' }}>
+      <Table.Cell>
         <Subheading>Compound Component</Subheading>
       </Table.Cell>
-      <Table.Cell style={{ textAlign: 'left' }}>
+      <Table.Cell>
         <Subheading>Description</Subheading>
       </Table.Cell>
-      <Table.Cell style={{ textAlign: 'left' }}>
+      <Table.Cell>
         <Subheading>Typical Usage Area</Subheading>
       </Table.Cell>
     </Table.Row>
@@ -188,27 +188,145 @@ The `Navbar.Switcher` component is used for displaying the current space and env
 
 The Navbar component supports responsiveness. Different areas of the navbar will disappear on some breakpoints. Find the detailed information in the table below.
 
-| Prop                  | Description                                                                                                                                                                                                                                                                                                                                                          | Breakpoints                      | Recommended Compound Component      |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- | ----------------------------------- |
-| `logo`                | Allows to overwrite the Contentful logo with a custom logo and link. This ensures a consistent and intuitive navigation experience throughout the application.                                                                                                                                                                                                       | Always visible                   | Custom element                      |
-| `mainNavigation`      | Main navigation items. Each main navigation item should use the `Navbar.Item` compound component. This area is responsive and will be visible starting from the default breakpoint `867px`. This can be overwritten in the `mobileNavigationProps` and changed to `breakpoint: 'medium'` (`1024px`).                                                                 | `867px` (default), configurable  | `Navbar.Item`                       |
-| `mobileNavigation`    | Allows navigation on smaller screen devices. Visible until the default breakpoint of `867px`. Items in this area should use `Navbar.MenuItem` and `Navbar.Submenu` compound components. The breakpoint can be changed using `mobileNavigationProps` to `small: 867px` or `medium: 1024px`. You can also set a custom label for the mobile navigation trigger button. | `<867px` (default), configurable | `Navbar.MenuItem`, `Navbar.Submenu` |
-| `secondaryNavigation` | Contains additional navigation items, like Search, Help, etc. Items in this area should use the `Navbar.Item` compound component with only an icon and no `title`. This area is responsive and will be visible starting from the breakpoint `576px`.                                                                                                                 | `576px` and up                   | `Navbar.Item` (icon-only)           |
-| `promotions`          | In this area, you can add any additional items you want accessible on the Navbar, such as feedback links or other types of promotions. This area is responsive and will not be visible until the breakpoint `1200px`.                                                                                                                                                | `1200px` and up                  | `Navbar.Badge` or Custom element    |
-| `switcher`            | Reserved for the `Navbar.Switcher` component to display the name of the current space and environment.                                                                                                                                                                                                                                                               | Always visible                   | `Navbar.Switcher`                   |
-| `account`             | Meant for the user's account menu. Use the `Navbar.Account` compound component to build it. This area is responsive and will be visible starting from `576px`; before that, it should be made available inside the `mobileNavigation`.                                                                                                                               | `576px` and up                   | `Navbar.Account`                    |
+<Table>
+  <Table.Head>
+    <Table.Row>
+      <Table.Cell>
+        <Subheading>Prop</Subheading>
+      </Table.Cell>
+      <Table.Cell>
+        <Subheading>Description</Subheading>
+      </Table.Cell>
+      <Table.Cell>
+        <Subheading>Breakpoints</Subheading>
+      </Table.Cell>
+      <Table.Cell>
+        <Subheading>Recommended Compound Component</Subheading>
+      </Table.Cell>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>`logo`</Table.Cell>
+      <Table.Cell>
+        Allows to overwrite the Contentful logo with a custom logo and link.
+        This ensures a consistent and intuitive navigation experience throughout
+        the application.
+      </Table.Cell>
+      <Table.Cell>Always visible</Table.Cell>
+      <Table.Cell>Custom element</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`mainNavigation`</Table.Cell>
+      <Table.Cell>
+        Main navigation items. Each main navigation item should use the
+        `Navbar.Item` compound component. This area is responsive and will be
+        visible starting from the default breakpoint `867px`. This can be
+        overwritten in the `mobileNavigationProps` and changed to `breakpoint:
+        'medium'` (`1024px`).
+      </Table.Cell>
+      <Table.Cell>`867px` (default), configurable</Table.Cell>
+      <Table.Cell>`Navbar.Item`</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`mobileNavigation`</Table.Cell>
+      <Table.Cell>
+        Allows navigation on smaller screen devices. Visible until the default
+        breakpoint of `867px`. Items in this area should use `Navbar.MenuItem`
+        and `Navbar.Submenu` compound components. The breakpoint can be changed
+        using `mobileNavigationProps` to `small: 867px` or `medium: 1024px`. You
+        can also set a custom label for the mobile navigation trigger button.
+      </Table.Cell>
+      <Table.Cell>`&lt;867px` (default), configurable</Table.Cell>
+      <Table.Cell>`Navbar.MenuItem`, `Navbar.Submenu`</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`secondaryNavigation`</Table.Cell>
+      <Table.Cell>
+        Contains additional navigation items, like Search, Help, etc. Items in
+        this area should use the `Navbar.Item` compound component with only an
+        icon and no `title`. This area is responsive and will be visible
+        starting from the breakpoint `576px`.
+      </Table.Cell>
+      <Table.Cell>`576px` and up</Table.Cell>
+      <Table.Cell>`Navbar.Item` (icon-only)</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`promotions`</Table.Cell>
+      <Table.Cell>
+        In this area, you can add any additional items you want accessible on
+        the Navbar, such as feedback links or other types of promotions. This
+        area is responsive and will not be visible until the breakpoint
+        `1200px`.
+      </Table.Cell>
+      <Table.Cell>`1200px` and up</Table.Cell>
+      <Table.Cell>`Navbar.Badge` or Custom element</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`switcher`</Table.Cell>
+      <Table.Cell>
+        Reserved for the `Navbar.Switcher` component to display the name of the
+        current space and environment.
+      </Table.Cell>
+      <Table.Cell>Always visible</Table.Cell>
+      <Table.Cell>`Navbar.Switcher`</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`account`</Table.Cell>
+      <Table.Cell>
+        Meant for the user's account menu. Use the `Navbar.Account` compound
+        component to build it. This area is responsive and will be visible
+        starting from `576px`; before that, it should be made available inside
+        the `mobileNavigation`.
+      </Table.Cell>
+      <Table.Cell>`576px` and up</Table.Cell>
+      <Table.Cell>`Navbar.Account`</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table>
 
 ## Accessibility
 
 Each `Menu.Item` offers and increased click-able area and the whole navigation is accessible via keyboard.  
 To further improve the accessibility, each Navbar area has a `aria-label`. These labels can be set via the `aria` prop oobject. Make sure to set a label for every `Menu.Item` in Icon-only modus, this is used to describe the Item for visually impaired users.
 
-| Prop                            | Description                                   | Default Setting          |
-| ------------------------------- | --------------------------------------------- | ------------------------ |
-| `aria.labelMainNavigation`      | Aria label for the main navigation area.      | `'Main Navigation'`      |
-| `aria.labelSecondaryNavigation` | Aria label for the secondary navigation area. | `'Secondary Navigation'` |
-| `aria.labelPromotions`          | Aria label for the promotions area.           | `'Promotions'`           |
-| `aria.labelAccount`             | Aria label for the account navigation area.   | `'Account Navigation'`   |
+<Table>
+  <Table.Head>
+    <Table.Row>
+      <Table.Cell>
+        <Subheading>Prop</Subheading>
+      </Table.Cell>
+      <Table.Cell>
+        <Subheading>Description</Subheading>
+      </Table.Cell>
+      <Table.Cell>
+        <Subheading>Default Setting</Subheading>
+      </Table.Cell>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>`aria.labelMainNavigation`</Table.Cell>
+      <Table.Cell>Aria label for the main navigation area.</Table.Cell>
+      <Table.Cell>`'Main Navigation'`</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`aria.labelSecondaryNavigation`</Table.Cell>
+      <Table.Cell>Aria label for the secondary navigation area.</Table.Cell>
+      <Table.Cell>`'Secondary Navigation'`</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`aria.labelPromotions`</Table.Cell>
+      <Table.Cell>Aria label for the promotions area.</Table.Cell>
+      <Table.Cell>`'Promotions'`</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`aria.labelAccount`</Table.Cell>
+      <Table.Cell>Aria label for the account navigation area.</Table.Cell>
+      <Table.Cell>`'Account Navigation'`</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table>
 
 ## Props (API reference)
 

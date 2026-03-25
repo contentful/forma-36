@@ -22,13 +22,40 @@ import { DateTime } from '@contentful/f36-datetime';
 The DateTime component will format any date to a human friendly format and wrap it in a `<time>` tag.
 It allows four different forms of display that can be controlled by changing the `format` prop:
 
-| `format` option   | Result                    |
-| ----------------- | ------------------------- |
-| `full`            | 12 Aug 2020 at 8:00 AM    |
-| `fullWithSeconds` | 12 Aug 2020 at 8:00:00 AM |
-| `day`             | 12 Aug 2020               |
-| `time`            | 8:00 AM                   |
-| `weekday`         | Wed, 12 Aug               |
+<Table>
+  <Table.Head>
+    <Table.Row>
+      <Table.Cell>
+        <Subheading>`format` option</Subheading>
+      </Table.Cell>
+      <Table.Cell>
+        <Subheading>Result</Subheading>
+      </Table.Cell>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>`full`</Table.Cell>
+      <Table.Cell>12 Aug 2020 at 8:00 AM</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`fullWithSeconds`</Table.Cell>
+      <Table.Cell>12 Aug 2020 at 8:00:00 AM</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`day`</Table.Cell>
+      <Table.Cell>12 Aug 2020</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`time`</Table.Cell>
+      <Table.Cell>8:00 AM</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`weekday`</Table.Cell>
+      <Table.Cell>Wed, 12 Aug</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table>
 
 ## Examples
 

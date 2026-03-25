@@ -27,13 +27,13 @@ The `Layout` exports the following compound components
 <Table>
   <Table.Head>
     <Table.Row>
-      <Table.Cell style={{ textAlign: 'left' }}>
+      <Table.Cell>
         <Subheading>Compound Component</Subheading>
       </Table.Cell>
-      <Table.Cell style={{ textAlign: 'left' }}>
+      <Table.Cell>
         <Subheading>Description</Subheading>
       </Table.Cell>
-      <Table.Cell style={{ textAlign: 'left' }}>
+      <Table.Cell>
         <Subheading>Typical Usage Area</Subheading>
       </Table.Cell>
     </Table.Row>
@@ -110,11 +110,49 @@ The `Layout` exports the following compound components
 
 The `Layout` component offers 4 individual areas, which can be set via the props `header`, `leftSidebar`, `rightSidebar`, and as `children` (for the main content area).
 
-| Prop                                | Description                                                                                                                                                                                                     | Recommended Child components             |
-| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| `children`                          | Elements handed over as children to the Layout component render as the Layout's body. Ideally, all children should be wrapped inside `Layout.Body`                                                              | `Layout.Body`                            |
-| `header`                            | Elements in the header overarch the whole width of the layout component. Child components should be wrapped inside `Layout.Header`. It is also recommended to use `Header` as the only child of `Layout.Header` | `Layout.Header` with `Header` as a child |
-| `leftSidebar` &#124; `rightSidebar` | These child-components render on the left and right side of the body content. They should be wrapped in `Layout.Sidebar`                                                                                        | `Layout.Sidebar`                         |
+<Table>
+  <Table.Head>
+    <Table.Row>
+      <Table.Cell>
+        <Subheading>Prop</Subheading>
+      </Table.Cell>
+      <Table.Cell>
+        <Subheading>Description</Subheading>
+      </Table.Cell>
+      <Table.Cell>
+        <Subheading>Recommended Child components</Subheading>
+      </Table.Cell>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>`children`</Table.Cell>
+      <Table.Cell>
+        Elements handed over as children to the Layout component render as the
+        Layout's body. Ideally, all children should be wrapped inside
+        `Layout.Body`
+      </Table.Cell>
+      <Table.Cell>`Layout.Body`</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`header`</Table.Cell>
+      <Table.Cell>
+        Elements in the header overarch the whole width of the layout component.
+        Child components should be wrapped inside `Layout.Header`. It is also
+        recommended to use `Header` as the only child of `Layout.Header`
+      </Table.Cell>
+      <Table.Cell>`Layout.Header` with `Header` as a child</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`leftSidebar` | `rightSidebar`</Table.Cell>
+      <Table.Cell>
+        These child-components render on the left and right side of the body
+        content. They should be wrapped in `Layout.Sidebar`
+      </Table.Cell>
+      <Table.Cell>`Layout.Sidebar`</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table>
 
 ** Note ** When passing at least one sidebar, a divider is added underneath the header. There is no divider otherwise.
 
