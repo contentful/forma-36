@@ -1,5 +1,11 @@
 # @contentful/f36-utils
 
+## 6.1.1
+
+### Patch Changes
+
+- [#3373](https://github.com/contentful/forma-36/pull/3373) [`822552f`](https://github.com/contentful/forma-36/commit/822552fe985c2adec27ff06fb87bb32a6e2ed415) Thanks [@denkristoffer](https://github.com/denkristoffer)! - feat: allow react 18.3+ peer dependency
+
 ## 6.1.0
 
 ### Minor Changes
