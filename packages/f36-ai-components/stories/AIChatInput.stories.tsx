@@ -149,7 +149,7 @@ export const WithMentionSupport: Story<AIChatInputProps> = (args) => {
         .slice(0, 5);
     },
   };
-  const editorRef = React.useRef<Editor>(null);
+  const editorRef = React.useRef<Editor | null>(null);
 
   return (
     <Template
@@ -206,7 +206,7 @@ export const WithMentionAtBottomOfViewport: Story<AIChatInputProps> = (
         .slice(0, 5);
     },
   };
-  const editorRef = React.useRef<Editor>(null);
+  const editorRef = React.useRef<Editor | null>(null);
 
   return (
     <div

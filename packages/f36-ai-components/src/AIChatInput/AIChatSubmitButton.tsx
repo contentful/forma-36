@@ -23,7 +23,11 @@ export const AIChatSubmitButton: React.FC<AIChatSubmitButtonProps> = ({
   const submitButton = (
     <IconButton
       testId={`${testId}-submit-button`}
-      onClick={() => onSubmit(editorRef.current)}
+      onClick={() => {
+        if (editorRef.current) {
+          onSubmit(editorRef.current);
+        }
+      }}
       variant="primary"
       aria-label="send prompt"
       title="send prompt"

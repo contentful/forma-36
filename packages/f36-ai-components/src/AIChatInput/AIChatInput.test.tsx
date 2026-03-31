@@ -93,7 +93,7 @@ describe('AIChatInput', () => {
   });
 
   it('exposes editor instance via ref', () => {
-    const editorRef = React.createRef<Editor>();
+    const editorRef: React.MutableRefObject<Editor | null> = { current: null };
     render(
       <AIChatInput
         testId="custom-test-id"
