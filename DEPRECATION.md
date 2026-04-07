@@ -80,7 +80,7 @@ Effective communication is crucial for successful deprecations. Follow these ste
 
 ### 1. Internal Discussion
 
-- Discuss deprecation with the team
+- Discuss deprecation with the forma36 owners
 - Document reasons and alternatives
 - Plan migration strategy
 - Consider impact on known consumers
