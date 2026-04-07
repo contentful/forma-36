@@ -3,11 +3,10 @@ import type { BaseInputInternalProps } from '../BaseInput/types';
 import type { Density } from '@contentful/f36-utils';
 export type checkboxTypes = 'checkbox' | 'radio' | 'switch';
 
-export interface BaseCheckboxInternalProps
-  extends Omit<
-    BaseInputInternalProps,
-    'type' | 'as' | 'placeholder' | 'isReadOnly' | 'icon' | 'label'
-  > {
+export interface BaseCheckboxInternalProps extends Omit<
+  BaseInputInternalProps,
+  'type' | 'as' | 'placeholder' | 'isReadOnly' | 'icon' | 'label'
+> {
   /**
    * Defines the type of the input to be rendered
    * @default checkbox

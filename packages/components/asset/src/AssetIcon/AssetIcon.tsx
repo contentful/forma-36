@@ -18,8 +18,10 @@ import type { AssetType } from '../types';
 import { cx } from '@emotion/css';
 import { getAssetIconStyles } from './AssetIcon.styles';
 
-export interface AssetIconProps
-  extends Omit<GeneratedIconProps, 'illustration' | 'ref'> {
+export interface AssetIconProps extends Omit<
+  GeneratedIconProps,
+  'illustration' | 'ref'
+> {
   type?: AssetType;
 }
 

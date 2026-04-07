@@ -12,9 +12,7 @@ import type { MarginProps, PaddingProps, CommonProps } from '../../types';
 const GRID_ITEM_DEFAULT_TAG = 'div';
 
 export interface GridItemInternalProps
-  extends CommonProps,
-    MarginProps,
-    PaddingProps {
+  extends CommonProps, MarginProps, PaddingProps {
   /**
    * Child nodes to be rendered in the component */
   children?: React.ReactNode;

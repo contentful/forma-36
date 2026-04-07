@@ -5,8 +5,10 @@ import {
 } from '../BaseCheckbox/BaseCheckboxGroup';
 import type { ExpandProps } from '@contentful/f36-core';
 
-export interface CheckboxGroupProps
-  extends Omit<BaseCheckboxGroupProps, 'type'> {
+export interface CheckboxGroupProps extends Omit<
+  BaseCheckboxGroupProps,
+  'type'
+> {
   /**
    * Array of values of the checkboxes that should be checked for uncontrolled inputs
    */
