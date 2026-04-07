@@ -23,7 +23,8 @@ export interface GenericGroupType<ItemType> {
   options: ItemType[];
 }
 export interface AutocompleteProps<ItemType>
-  extends CommonProps,
+  extends
+    CommonProps,
     Pick<
       TextInputProps,
       | 'isDisabled'

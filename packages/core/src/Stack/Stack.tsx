@@ -9,8 +9,10 @@ import { useBox } from '../Box';
 import type { Spacing } from '../types';
 import { Flex, type FlexInternalProps } from '../Flex/Flex';
 
-export interface StackInternalProps
-  extends Omit<FlexInternalProps, 'flexDirection' | 'gap'> {
+export interface StackInternalProps extends Omit<
+  FlexInternalProps,
+  'flexDirection' | 'gap'
+> {
   /**
    * Defines how flexbox items are ordered within a flexbox container. */
   flexDirection?: 'row' | 'column';

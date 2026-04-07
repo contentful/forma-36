@@ -13,9 +13,7 @@ import {
 } from '../Primitive/Primitive';
 
 export interface BoxInternalProps
-  extends CommonProps,
-    MarginProps,
-    PaddingProps {
+  extends CommonProps, MarginProps, PaddingProps {
   /**
    * Sets the display behavior of the element
    */

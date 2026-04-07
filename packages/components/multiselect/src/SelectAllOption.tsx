@@ -19,11 +19,10 @@ type SelectAllOptionLabel = {
    */
   unchecked: string;
 };
-export interface SelectAllOptionProps
-  extends Omit<
-    MultiselectOptionProps,
-    'children' | 'value' | 'itemId' | 'label'
-  > {
+export interface SelectAllOptionProps extends Omit<
+  MultiselectOptionProps,
+  'children' | 'value' | 'itemId' | 'label'
+> {
   label?: string;
   itemId?: string;
   selectAllOptionLabel?: SelectAllOptionLabel;

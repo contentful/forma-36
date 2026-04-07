@@ -5,8 +5,7 @@ import type { TabsContentProps } from '@radix-ui/react-tabs';
 import { getTabPanelStyles } from './Tabs.styles';
 
 export interface TabPanelProps
-  extends CommonProps,
-    Pick<TabsContentProps, 'forceMount'> {
+  extends CommonProps, Pick<TabsContentProps, 'forceMount'> {
   id: string;
   children: React.ReactNode;
 }

@@ -12,9 +12,7 @@ import { useBox } from '../Box';
 import { convertSpacingToToken } from '../utils/getSpacingStyles';
 
 export interface GridInternalProps
-  extends CommonProps,
-    MarginProps,
-    PaddingProps {
+  extends CommonProps, MarginProps, PaddingProps {
   /**
    * Child nodes to be rendered in the component */
   children?: React.ReactNode;

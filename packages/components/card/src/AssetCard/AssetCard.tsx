@@ -10,8 +10,10 @@ import type { BaseCardInternalProps } from '../BaseCard/BaseCard.types';
 import { getAssetCardStyles } from './AssetCard.styles';
 import { DefaultCardHeader } from '../BaseCard/DefaultCardHeader';
 
-export interface AssetCardInternalProps
-  extends Omit<BaseCardInternalProps, 'header' | 'padding' | 'ref'> {
+export interface AssetCardInternalProps extends Omit<
+  BaseCardInternalProps,
+  'header' | 'padding' | 'ref'
+> {
   size?: 'small' | 'default';
   src?: string;
   status?: AssetStatus;
