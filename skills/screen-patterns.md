@@ -1,4 +1,4 @@
-# Forma 36 — UI Patterns
+# Forma 36 — Screen Patterns
 
 Named, reusable patterns for the most common Contentful UI screens. When a design calls for one of these, use this as the structural template — not a blank canvas.
 
