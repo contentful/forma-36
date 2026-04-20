@@ -160,6 +160,7 @@ export * from './vendor/phosphor/KeyIcon.js';
 export * from './vendor/phosphor/KeyReturnIcon.js';
 export * from './vendor/phosphor/KeyholeIcon.js';
 export * from './vendor/phosphor/LaptopIcon.js';
+export * from './vendor/phosphor/LegoIcon.js';
 export * from './vendor/phosphor/LifebuoyIcon.js';
 export * from './vendor/phosphor/LightbulbIcon.js';
 export * from './vendor/phosphor/LightningIcon.js';
