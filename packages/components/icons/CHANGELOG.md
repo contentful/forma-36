@@ -1,5 +1,15 @@
 # Change Log
 
+## 6.7.2
+
+### Patch Changes
+
+- [#3386](https://github.com/contentful/forma-36/pull/3386) [`6cee751`](https://github.com/contentful/forma-36/commit/6cee7516cc71561892d5fc1d74f545adf2a1a83b) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - feat: add BuildingBlock icon
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.7.2
+  - @contentful/f36-icon@6.7.2
+
 ## 6.7.1
 
 ### Patch Changes
