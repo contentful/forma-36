@@ -1,5 +1,14 @@
 # Change Log
 
+## 6.7.3
+
+### Patch Changes
+
+- [#3390](https://github.com/contentful/forma-36/pull/3390) [`66a5e45`](https://github.com/contentful/forma-36/commit/66a5e454a452f73316bee7b3c45fe910994cd5dc) Thanks [@marcmll](https://github.com/marcmll)! - feat: added `textWrap` property to typography components (`Caption`, `DisplayText`, `Heading`, `Paragraph`, `SectionHeading`, `Subheading`, and `Text`)
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.7.3
+
 ## 6.7.2
 
 ### Patch Changes
