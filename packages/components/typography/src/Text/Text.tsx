@@ -27,6 +27,7 @@ export interface TextInternalProps extends CommonProps, MarginProps {
   fontColor?: ColorTokens;
   isTruncated?: boolean;
   isWordBreak?: boolean;
+  textWrap?: 'wrap' | 'nowrap' | 'balance' | 'pretty' | 'stable';
 }
 
 const TEXT_DEFAULT_TAG = 'span';
@@ -69,6 +70,7 @@ function TextBase<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
     className,
     margin = 'none',
     testId = 'cf-ui-text',
+    textWrap = 'wrap',
     ...otherProps
   } = props;
   const Element: React.ElementType = as || TEXT_DEFAULT_TAG;
@@ -87,6 +89,7 @@ function TextBase<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
           fontSize: tokens[fontSize],
           lineHeight: tokens[lineHeight],
           letterSpacing: tokens[letterSpacing],
+          textWrap,
         }),
         isTruncated ? truncatedStyle() : null,
         isWordBreak ? wordBreakStyle() : null,
