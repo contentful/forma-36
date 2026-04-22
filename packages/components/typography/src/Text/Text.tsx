@@ -28,7 +28,10 @@ export interface TextInternalProps extends CommonProps, MarginProps {
   fontColor?: ColorTokens;
   isTruncated?: boolean;
   isWordBreak?: boolean;
-  textWrap?: CSS.Property.TextWrap;
+  textWrap?: Extract<
+    CSS.Property.TextWrap,
+    'wrap' | 'nowrap' | 'balance' | 'pretty' | 'stable'
+  >;
 }
 
 const TEXT_DEFAULT_TAG = 'span';
