@@ -8,6 +8,7 @@ import tokens, {
   LetterSpacingTokens,
 } from '@contentful/f36-tokens';
 import { css, cx } from '@emotion/css';
+import type * as CSS from 'csstype';
 import {
   Box,
   type PolymorphicComponent,
@@ -27,7 +28,7 @@ export interface TextInternalProps extends CommonProps, MarginProps {
   fontColor?: ColorTokens;
   isTruncated?: boolean;
   isWordBreak?: boolean;
-  textWrap?: 'wrap' | 'nowrap' | 'balance' | 'pretty' | 'stable';
+  textWrap?: CSS.Property.TextWrap;
 }
 
 const TEXT_DEFAULT_TAG = 'span';
