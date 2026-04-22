@@ -8,6 +8,18 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 22-04-2026
+
+**F36 Icons** `v6.7.2`
+
+- feat: add BuildingBlock icon
+
+## 01-04-2026
+
+**F36 Utils** `v6.1.1`
+
+- feat: allow react 18.3+ peer dependency
+
 ## 25-02-2026
 
 **F36 Avatar** `v6.7.0`

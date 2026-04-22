@@ -114,9 +114,7 @@ export type TooltipInternalProps = {
 };
 
 export interface TooltipProps
-  extends CommonProps,
-    TooltipInternalProps,
-    WithEnhancedContent {}
+  extends CommonProps, TooltipInternalProps, WithEnhancedContent {}
 
 export const Tooltip = ({
   children,

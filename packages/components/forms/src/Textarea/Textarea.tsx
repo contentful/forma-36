@@ -6,8 +6,10 @@ import { useFormControl } from '../FormControl/FormControlContext';
 import { getStyles } from './Textarea.styles';
 import type { ExpandProps } from '@contentful/f36-core';
 
-export interface TextareaProps
-  extends Omit<BaseInputProps<'textarea'>, 'as' | 'type' | 'size'> {
+export interface TextareaProps extends Omit<
+  BaseInputProps<'textarea'>,
+  'as' | 'type' | 'size'
+> {
   /**
    * Set's default value for textarea
    */

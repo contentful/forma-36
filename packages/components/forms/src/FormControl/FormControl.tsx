@@ -15,9 +15,7 @@ import type { FormControlContextProps } from './types';
 const FORM_CONTROL_DEFAULT_TAG = 'div';
 
 export interface FormControlInternalProps
-  extends FormControlContextProps,
-    CommonProps,
-    MarginProps {
+  extends FormControlContextProps, CommonProps, MarginProps {
   as?: 'div' | 'fieldset';
   children: React.ReactNode;
 }

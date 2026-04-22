@@ -12,9 +12,7 @@ import { useBox } from '../Box';
 import type { MarginProps, PaddingProps, CommonProps, Spacing } from '../types';
 
 export interface FlexInternalProps
-  extends CommonProps,
-    MarginProps,
-    PaddingProps {
+  extends CommonProps, MarginProps, PaddingProps {
   /**
    * Child nodes to be rendered in the component */
   children?: React.ReactNode;

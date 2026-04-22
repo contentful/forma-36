@@ -35,11 +35,10 @@ type WithTooltipOrNot =
       tooltipProps?: never;
     };
 
-interface IconButtonInternalProps
-  extends Omit<
-    ButtonInternalProps,
-    'startIcon' | 'endIcon' | 'children' | 'size'
-  > {
+interface IconButtonInternalProps extends Omit<
+  ButtonInternalProps,
+  'startIcon' | 'endIcon' | 'children' | 'size'
+> {
   /**
    * Expects any of the icon components
    */

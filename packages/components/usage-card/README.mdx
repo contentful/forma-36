@@ -36,12 +36,60 @@ import { UsageCard } from '@contentful/f36-usage-card';
 
 The `UsageCard` component offers 4 individually setable areas, three of them can be set via the props `header`, `description` and `variant`.
 
-| Prop          | Description                                                                                                                                                                                                                             | Recommended child components                      |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| `children`    | Elements handed over as children to the UsageCard component will be rendered as the UsageCard body. The common case is using `UsageCount` component for rendering usage value.                                                          | `UsageCount`                                      |
-| `header`      | `header` prop expects compound component `UsageCard.Header`. `UsageCard.Header` can take `children`, `title` and `tooltip` as props. Title value will be rendered as `Subheading`, tooltip will be rendered inside `Tooltip` with icon. | `UsageCard.Header`                                |
-| `description` | `description` prop expects compound component `UsageCard.Description`. Child-Components should be wraped in `UsageCard.Description`. Common use case is using `Text` or `TextLink` with as child-components.                            | `UsageCard.Description` with `Text` or `TextLink` |
-| `variant`     | `variant` prop expects `usage` or `info`. It's responsible for look and feel of the `UsageCard`, with `info` set the `backgroundColor` is `gray100` and border is invisible.                                                            | N/A                                               |
+<Table>
+  <Table.Head>
+    <Table.Row>
+      <Table.Cell>
+        <Subheading>Prop</Subheading>
+      </Table.Cell>
+      <Table.Cell>
+        <Subheading>Description</Subheading>
+      </Table.Cell>
+      <Table.Cell>
+        <Subheading>Recommended child components</Subheading>
+      </Table.Cell>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>`children`</Table.Cell>
+      <Table.Cell>
+        Elements handed over as children to the UsageCard component will be
+        rendered as the UsageCard body. The common case is using `UsageCount`
+        component for rendering usage value.
+      </Table.Cell>
+      <Table.Cell>`UsageCount`</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`header`</Table.Cell>
+      <Table.Cell>
+        `header` prop expects compound component `UsageCard.Header`.
+        `UsageCard.Header` can take `children`, `title` and `tooltip` as props.
+        Title value will be rendered as `Subheading`, tooltip will be rendered
+        inside `Tooltip` with icon.
+      </Table.Cell>
+      <Table.Cell>`UsageCard.Header`</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`description`</Table.Cell>
+      <Table.Cell>
+        `description` prop expects compound component `UsageCard.Description`.
+        Child-Components should be wraped in `UsageCard.Description`. Common use
+        case is using `Text` or `TextLink` with as child-components.
+      </Table.Cell>
+      <Table.Cell>`UsageCard.Description` with `Text` or `TextLink`</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`variant`</Table.Cell>
+      <Table.Cell>
+        `variant` prop expects `usage` or `info`. It's responsible for look and
+        feel of the `UsageCard`, with `info` set the `backgroundColor` is
+        `gray100` and border is invisible.
+      </Table.Cell>
+      <Table.Cell>N/A</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table>
 
 ## Props (API reference)
 

@@ -9,8 +9,7 @@ import { Skeleton } from '@contentful/f36-skeleton';
 import { getImageStyles } from './Image.styles';
 
 export interface ImageProps
-  extends CommonProps,
-    Omit<ComponentPropsWithoutRef<'img'>, 'onLoad'> {
+  extends CommonProps, Omit<ComponentPropsWithoutRef<'img'>, 'onLoad'> {
   /**
    * Alt attribute to pass to the image element
    */
