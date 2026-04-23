@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 23-04-2026
+
+**F36 Typography** `v6.7.3`
+
+- feat: added `textWrap` property to typography components (`Caption`, `DisplayText`, `Heading`, `Paragraph`, `SectionHeading`, `Subheading`, and `Text`)
+
 ## 22-04-2026
 
 **F36 Icons** `v6.7.2`
