@@ -8,9 +8,8 @@ const rotatedClassName = css({
   transformOrigin: 'center',
 });
 
-export const VariantIcon = ({
-  className,
-  ...props
-}: GeneratedIconProps) => {
-  return <GitBranchIcon {...props} className={cx(rotatedClassName, className)} />;
+export const VariantIcon = ({ className, ...props }: GeneratedIconProps) => {
+  return (
+    <GitBranchIcon {...props} className={cx(rotatedClassName, className)} />
+  );
 };
