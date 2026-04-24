@@ -1,7 +1,7 @@
 import React from 'react';
 import { css, cx } from '@emotion/css';
 import type { GeneratedIconProps } from '@contentful/f36-icon';
-import { GitBranchIcon } from '../vendor/phosphor/GitBranchIcon';
+import { GitBranchIcon } from '../vendor/phosphor/GitBranchIcon.js';
 
 const rotatedClassName = css({
   transform: 'rotate(90deg)',
