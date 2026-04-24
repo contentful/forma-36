@@ -1,5 +1,14 @@
 # Change Log
 
+## 6.7.4
+
+### Patch Changes
+
+- [#3393](https://github.com/contentful/forma-36/pull/3393) [`7257924`](https://github.com/contentful/forma-36/commit/7257924e88dd8d576959a7d99506bf7f3e97ca34) Thanks [@marcmll](https://github.com/marcmll)! - fix: removed default `wrap` value from typography components' `textWrap` property
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.7.4
+
 ## 6.7.3
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # Change Log
 
+## 6.7.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.7.4
+  - @contentful/f36-header@6.7.4
+
 ## 6.7.3
 
 ### Patch Changes
