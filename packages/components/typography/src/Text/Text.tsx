@@ -74,7 +74,7 @@ function TextBase<E extends React.ElementType = typeof TEXT_DEFAULT_TAG>(
     className,
     margin = 'none',
     testId = 'cf-ui-text',
-    textWrap = 'wrap',
+    textWrap,
     ...otherProps
   } = props;
   const Element: React.ElementType = as || TEXT_DEFAULT_TAG;
