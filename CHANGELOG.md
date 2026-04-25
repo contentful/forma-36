@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 25-04-2026
+
+**F36 Typography** `v6.7.4`
+
+- fix: removed default `wrap` value from typography components' `textWrap` property
+
 ## 23-04-2026
 
 **F36 Typography** `v6.7.3`
