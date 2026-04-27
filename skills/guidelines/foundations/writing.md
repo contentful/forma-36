@@ -4,12 +4,12 @@ The Contentful interface is clear, direct, respectful, and calm.
 
 ## Voice
 
-| Quality | What it means |
-|---|---|
-| **Clear** | Say exactly what you mean. No jargon, no hedging. |
-| **Direct** | Lead with the action or outcome. Do not bury the point. |
-| **Respectful** | Treat users as capable adults. Do not over-explain. |
-| **Calm** | Even error messages stay composed. The interface never panics. |
+| Quality        | What it means                                                  |
+| -------------- | -------------------------------------------------------------- |
+| **Clear**      | Say exactly what you mean. No jargon, no hedging.              |
+| **Direct**     | Lead with the action or outcome. Do not bury the point.        |
+| **Respectful** | Treat users as capable adults. Do not over-explain.            |
+| **Calm**       | Even error messages stay composed. The interface never panics. |
 
 The voice is never casual, never corporate, never clever, never apologetic.
 
@@ -42,14 +42,14 @@ Do not write: "Something went wrong", "Error", "Invalid input".
 
 Do not use these phrases anywhere in the interface:
 
-| Phrase | Instead |
-|---|---|
-| "Click here" | Describe the action |
-| "Please" | Direct language is respectful |
-| "Sorry" | Fix the problem |
-| "Successfully" | Just state the result: "Entry published" |
+| Phrase          | Instead                                                          |
+| --------------- | ---------------------------------------------------------------- |
+| "Click here"    | Describe the action                                              |
+| "Please"        | Direct language is respectful                                    |
+| "Sorry"         | Fix the problem                                                  |
+| "Successfully"  | Just state the result: "Entry published"                         |
 | "Are you sure?" | State what will happen: "This will permanently delete the entry" |
-| "Learn more" | Link to the specific topic |
+| "Learn more"    | Link to the specific topic                                       |
 
 ## Confirmation dialogs
 
@@ -65,7 +65,7 @@ Never use "Cancel", "Go back", or "No" as the cancel label.
 ## Notifications
 
 - Active voice, present tense: "Entry published"
-- Max 1–2 sentences
+- Max 1-2 sentences
 - Auto-dismiss after 6 seconds unless error
 
 ## Tooltips
@@ -76,11 +76,11 @@ Never use "Cancel", "Go back", or "No" as the cancel label.
 
 ## Status labels
 
-| Status | Label |
-|---|---|
-| Published and current | "Published" |
-| Published with changes | "Changed" |
-| Never published | "Draft" |
-| Removed from publication | "Archived" |
+| Status                   | Label       |
+| ------------------------ | ----------- |
+| Published and current    | "Published" |
+| Published with changes   | "Changed"   |
+| Never published          | "Draft"     |
+| Removed from publication | "Archived"  |
 
 Do not invent custom status labels for standard Contentful entity states.

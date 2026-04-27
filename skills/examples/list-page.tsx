@@ -1,7 +1,5 @@
-/**
- * List / Index Page — the most common Contentful screen pattern.
- * Shows a filterable, paginated table of content types.
- */
+// REQUIRED: CSS import — without this, all components render unstyled
+import '@contentful/f36-components/dist/styles.css';
 import {
   Layout,
   Header,
@@ -18,8 +16,14 @@ import {
   Heading,
   Skeleton,
 } from '@contentful/f36-components';
-import { PlusIcon, SearchIcon, MoreHorizontalIcon } from '@contentful/f36-icons';
+// Icons: only from @contentful/f36-icons (Phosphor). DotsThreeIcon for menus, NOT MoreHorizontalIcon.
+import {
+  PlusIcon,
+  MagnifyingGlassIcon,
+  DotsThreeIcon,
+} from '@contentful/f36-icons';
 
+// Layout.Header, Layout.Body, Layout.Sidebar are REAL compound sub-components (verified in source)
 function ContentTypesListPage() {
   return (
     <Layout
@@ -37,7 +41,7 @@ function ContentTypesListPage() {
               <TextInput
                 type="search"
                 placeholder="Search content types"
-                icon={<SearchIcon />}
+                icon={<MagnifyingGlassIcon />}
               />
             }
           />
@@ -67,7 +71,7 @@ function ContentTypesListPage() {
                 <Menu>
                   <Menu.Trigger>
                     <IconButton
-                      icon={<MoreHorizontalIcon />}
+                      icon={<DotsThreeIcon />}
                       aria-label="Actions"
                       variant="transparent"
                       size="small"
@@ -98,9 +102,6 @@ function ContentTypesListPage() {
   );
 }
 
-/**
- * Empty state variant — shown when no content types exist yet.
- */
 function ContentTypesEmptyState() {
   return (
     <Flex
@@ -110,9 +111,11 @@ function ContentTypesEmptyState() {
       padding="spacing2Xl"
       style={{ minHeight: '400px' }}
     >
+      {/* Sentence case: "No content types yet" — never Title Case */}
       <Heading marginBottom="spacingS">No content types yet</Heading>
       <Paragraph marginBottom="spacingL">
-        Content types define the structure of your content. Start by adding your first one.
+        Content types define the structure of your content. Start by adding your
+        first one.
       </Paragraph>
       <Button variant="primary" startIcon={<PlusIcon />}>
         Add content type
@@ -121,9 +124,7 @@ function ContentTypesEmptyState() {
   );
 }
 
-/**
- * Loading state — shown while data is being fetched.
- */
+// Skeleton.Row renders table loading rows (props: rowCount, columnCount)
 function ContentTypesLoading() {
   return (
     <Table>

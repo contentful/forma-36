@@ -1,6 +1,5 @@
-/**
- * Standalone Form Page — narrow layout, grouped fields, inline validation.
- */
+// REQUIRED: CSS import — without this, all components render unstyled
+import '@contentful/f36-components/dist/styles.css';
 import {
   Layout,
   Header,
@@ -45,7 +44,6 @@ function CreateContentTypePage() {
     >
       <Layout.Body>
         <Stack flexDirection="column" spacing="spacingXl">
-          {/* Basic info */}
           <Stack flexDirection="column" spacing="spacingM">
             <Heading>Basic information</Heading>
 
@@ -67,11 +65,13 @@ function CreateContentTypePage() {
 
             <FormControl>
               <FormControl.Label>Description</FormControl.Label>
-              <Textarea rows={3} placeholder="Describe what this content type is for" />
+              <Textarea
+                rows={3}
+                placeholder="Describe what this content type is for"
+              />
             </FormControl>
           </Stack>
 
-          {/* Display settings */}
           <Stack flexDirection="column" spacing="spacingM">
             <Heading>Display</Heading>
 
@@ -87,7 +87,6 @@ function CreateContentTypePage() {
             </FormControl>
           </Stack>
 
-          {/* Advanced — collapsed by default */}
           <Accordion>
             <Accordion.Item title="Advanced settings">
               <Stack flexDirection="column" spacing="spacingM">

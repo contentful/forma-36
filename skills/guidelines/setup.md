@@ -40,7 +40,7 @@ Import tokens for use in inline styles and custom CSS:
 import tokens from '@contentful/f36-tokens';
 
 // Use in inline styles
-<div style={{ padding: tokens.spacingM, color: tokens.colorPrimary }} />
+<div style={{ padding: tokens.spacingM, color: tokens.colorPrimary }} />;
 
 // Or import individual tokens
 import { spacingM, colorPrimary } from '@contentful/f36-tokens';
@@ -53,7 +53,11 @@ Do not hardcode hex values, pixel measurements, or font stacks. Always use the t
 All icons come from the Phosphor library, packaged in `@contentful/f36-icons`:
 
 ```tsx
-import { PlusIcon, SearchIcon, DeleteIcon } from '@contentful/f36-icons';
+import {
+  PlusIcon,
+  MagnifyingGlassIcon,
+  TrashSimpleIcon,
+} from '@contentful/f36-icons';
 ```
 
 Do not use Material Icons, Heroicons, Feather, Lucide, or any other icon library.

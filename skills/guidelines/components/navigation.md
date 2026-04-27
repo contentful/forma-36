@@ -15,18 +15,19 @@ Navigate between sections of related content. Maximum 6 tabs.
 </Tabs>
 ```
 
-| Prop | Notes |
-|---|---|
-| `defaultTab` | Initial active tab ID |
-| `currentTab` / `onTabChange` | Controlled mode |
-| `Tabs.List variant` | `'default'` `'horizontal-divider'` `'vertical-divider'` |
-| `Tabs.Panel forceMount` | Keep mounted (for form state, animation) |
+| Prop                         | Notes                                                   |
+| ---------------------------- | ------------------------------------------------------- |
+| `defaultTab`                 | Initial active tab ID                                   |
+| `currentTab` / `onTabChange` | Controlled mode                                         |
+| `Tabs.List variant`          | `'default'` `'horizontal-divider'` `'vertical-divider'` |
+| `Tabs.Panel forceMount`      | Keep mounted (for form state, animation)                |
 
 Labels must be concise and describe the panel content accurately.
 
 ## Modal
 
 Blocks the interface. Use only when:
+
 - An action needs confirmation before proceeding
 - Information is essential to the current workflow
 
@@ -34,10 +35,14 @@ Blocks the interface. Use only when:
 <Modal isShown={isOpen} onClose={() => setIsOpen(false)}>
   <Modal.Header title="Delete content type" onClose={() => setIsOpen(false)} />
   <Modal.Content>
-    <Paragraph>This content type and all its fields will be permanently deleted.</Paragraph>
+    <Paragraph>
+      This content type and all its fields will be permanently deleted.
+    </Paragraph>
   </Modal.Content>
   <Modal.Controls>
-    <Button variant="secondary" onClick={() => setIsOpen(false)}>Never mind</Button>
+    <Button variant="secondary" onClick={() => setIsOpen(false)}>
+      Never mind
+    </Button>
     <Button variant="negative" isLoading={deleting} onClick={handleDelete}>
       Delete content type
     </Button>
@@ -45,14 +50,15 @@ Blocks the interface. Use only when:
 </Modal>
 ```
 
-| Prop | Notes |
-|---|---|
-| `size` | `'small'` `'medium'` `'large'` `'fullWidth'` `'fullscreen'` |
-| `shouldCloseOnOverlayClick` | `false` for destructive modals |
-| `shouldCloseOnEscapePress` | default `true` |
-| `initialFocusRef` | Focus a specific element on open |
+| Prop                        | Notes                                                       |
+| --------------------------- | ----------------------------------------------------------- |
+| `size`                      | `'small'` `'medium'` `'large'` `'fullWidth'` `'fullscreen'` |
+| `shouldCloseOnOverlayClick` | `false` for destructive modals                              |
+| `shouldCloseOnEscapePress`  | default `true`                                              |
+| `initialFocusRef`           | Focus a specific element on open                            |
 
 **Rules:**
+
 - Title: verb + noun ("Delete content type")
 - Confirm button: verb + noun, matching the title
 - Cancel: "Never mind"
@@ -66,7 +72,11 @@ Action list triggered by a button.
 ```tsx
 <Menu>
   <Menu.Trigger>
-    <IconButton icon={<MoreHorizontalIcon />} aria-label="Actions" variant="secondary" />
+    <IconButton
+      icon={<DotsThreeIcon />}
+      aria-label="Actions"
+      variant="secondary"
+    />
   </Menu.Trigger>
   <Menu.List>
     <Menu.Item onClick={handleEdit}>Edit</Menu.Item>
@@ -91,15 +101,16 @@ Supplementary, non-critical context on hover/focus.
 </Tooltip>
 ```
 
-| Prop | Notes |
-|---|---|
-| `content` | Short text — one sentence max |
-| `id` | Required for ARIA |
-| `placement` | Positioning |
-| `showDelay` | Default 375ms |
+| Prop        | Notes                               |
+| ----------- | ----------------------------------- |
+| `content`   | Short text — one sentence max       |
+| `id`        | Required for ARIA                   |
+| `placement` | Positioning                         |
+| `showDelay` | Default 375ms                       |
 | `usePortal` | Use with `overflow: hidden` parents |
 
 **Rules:**
+
 - No buttons, links, or forms inside Tooltip content
 - Content must be non-critical — if the user needs this info, put it in the UI
 - Always include a unique `id`
@@ -125,8 +136,12 @@ Vertical sidebar navigation.
 
 ```tsx
 <NavList aria-label="Main navigation">
-  <NavList.Item as="a" href="/experiences" isActive>Experiences</NavList.Item>
-  <NavList.Item as="a" href="/content">Content</NavList.Item>
+  <NavList.Item as="a" href="/experiences" isActive>
+    Experiences
+  </NavList.Item>
+  <NavList.Item as="a" href="/content">
+    Content
+  </NavList.Item>
 </NavList>
 ```
 

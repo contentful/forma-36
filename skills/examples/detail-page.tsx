@@ -1,6 +1,5 @@
-/**
- * Detail / Edit Page — single entity view with right sidebar.
- */
+// REQUIRED: CSS import — without this, all components render unstyled
+import '@contentful/f36-components/dist/styles.css';
 import {
   Layout,
   Header,
@@ -62,7 +61,10 @@ function EntryDetailPage() {
 
           <FormControl>
             <FormControl.Label>Description</FormControl.Label>
-            <Textarea rows={4} defaultValue="Main promotional banner for the homepage." />
+            <Textarea
+              rows={4}
+              defaultValue="Main promotional banner for the homepage."
+            />
             <FormControl.HelpText>
               A short description displayed below the banner title.
             </FormControl.HelpText>

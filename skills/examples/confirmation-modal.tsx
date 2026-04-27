@@ -1,11 +1,9 @@
-/**
- * Confirmation Dialog — destructive action pattern.
- * Title and confirm button always match. Cancel is "Never mind".
- */
+// REQUIRED: CSS import — without this, all components render unstyled
+import '@contentful/f36-components/dist/styles.css';
 import { Modal, Button, Paragraph } from '@contentful/f36-components';
 import { useState } from 'react';
 
-function DeleteContentTypeDialog() {
+function DeleteContentTypeModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -28,17 +26,26 @@ function DeleteContentTypeDialog() {
         size="small"
         shouldCloseOnOverlayClick={false}
       >
-        <Modal.Header title="Delete content type" onClose={() => setIsOpen(false)} />
+        <Modal.Header
+          title="Delete content type"
+          onClose={() => setIsOpen(false)}
+        />
         <Modal.Content>
           <Paragraph>
-            This content type and all its fields will be permanently deleted. This cannot be undone.
+            This content type and all its fields will be permanently deleted.
+            This cannot be undone.
           </Paragraph>
         </Modal.Content>
         <Modal.Controls>
+          {/* Cancel label MUST be "Never mind" for destructive confirmations — never "Cancel" */}
           <Button variant="secondary" onClick={() => setIsOpen(false)}>
             Never mind
           </Button>
-          <Button variant="negative" isLoading={isDeleting} onClick={handleDelete}>
+          <Button
+            variant="negative"
+            isLoading={isDeleting}
+            onClick={handleDelete}
+          >
             Delete content type
           </Button>
         </Modal.Controls>
@@ -47,4 +54,4 @@ function DeleteContentTypeDialog() {
   );
 }
 
-export { DeleteContentTypeDialog };
+export { DeleteContentTypeModal };

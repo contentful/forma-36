@@ -1,6 +1,5 @@
-/**
- * Settings Page — feature configuration with danger zone.
- */
+// REQUIRED: CSS import — without this, all components render unstyled
+import '@contentful/f36-components/dist/styles.css';
 import {
   Layout,
   Header,
@@ -14,6 +13,7 @@ import {
   Note,
   Box,
 } from '@contentful/f36-components';
+// Tokens: ALL colors/spacing/typography from this package — never hardcode hex or px
 import tokens from '@contentful/f36-tokens';
 
 function WebhookSettingsPage() {
@@ -31,7 +31,6 @@ function WebhookSettingsPage() {
     >
       <Layout.Body>
         <Stack flexDirection="column" spacing="spacingXl">
-          {/* General section */}
           <Box>
             <Heading marginBottom="spacingM">General</Heading>
             <Stack flexDirection="column" spacing="spacingM">
@@ -42,7 +41,10 @@ function WebhookSettingsPage() {
 
               <FormControl isRequired>
                 <FormControl.Label>URL</FormControl.Label>
-                <TextInput type="url" defaultValue="https://api.example.com/webhook" />
+                <TextInput
+                  type="url"
+                  defaultValue="https://api.example.com/webhook"
+                />
                 <FormControl.HelpText>
                   The endpoint that receives the webhook payload.
                 </FormControl.HelpText>
@@ -52,13 +54,14 @@ function WebhookSettingsPage() {
                 <FormControl.Label>Content type</FormControl.Label>
                 <Select defaultValue="json">
                   <Select.Option value="json">application/json</Select.Option>
-                  <Select.Option value="form">application/x-www-form-urlencoded</Select.Option>
+                  <Select.Option value="form">
+                    application/x-www-form-urlencoded
+                  </Select.Option>
                 </Select>
               </FormControl>
             </Stack>
           </Box>
 
-          {/* Triggers section */}
           <Box>
             <Heading marginBottom="spacingM">Triggers</Heading>
             <Stack flexDirection="column" spacing="spacingM">
@@ -68,9 +71,17 @@ function WebhookSettingsPage() {
             </Stack>
           </Box>
 
-          {/* Danger zone */}
-          <Box style={{ borderTop: `1px solid ${tokens.gray200}`, paddingTop: tokens.spacingXl }}>
-            <Note variant="negative" title="Danger zone" marginBottom="spacingM">
+          <Box
+            style={{
+              borderTop: `1px solid ${tokens.gray200}`,
+              paddingTop: tokens.spacingXl,
+            }}
+          >
+            <Note
+              variant="negative"
+              title="Danger zone"
+              marginBottom="spacingM"
+            >
               Deleting this webhook is permanent and cannot be undone.
             </Note>
             <Button variant="negative">Delete webhook</Button>

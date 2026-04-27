@@ -22,14 +22,23 @@ Content
 ```
 
 **Rules:**
+
 - Primary action ("Create experience") is top-right in Header
-- Row actions via Menu with IconButton trigger (MoreHorizontalIcon) — not inline buttons
+- Row actions via Menu with IconButton trigger (`DotsThreeIcon`) — not inline buttons
 - Status column uses `EntityStatusBadge`
 - Bulk selection: checkbox column left, bulk action bar above table
-- Loading: `Skeleton.Row` inside table body
+- Loading: `Skeleton.Row` inside `Table.Body` (props: `rowCount`, `columnCount`)
 
 **Empty state (no items):** "No [items] yet" + one sentence about purpose + primary create button
 **Empty state (no search results):** `No results for "[query]"` + "Try a different search term or clear filters." + TextLink "Clear filters"
+
+**Common list page mistakes — avoid these:**
+
+- Row action trigger: use `<IconButton icon={<DotsThreeIcon />} />` — never `MoreHorizontalIcon`, `MoreVerticalIcon`, or `EllipsisIcon`
+- Search input: must be inside a `FormControl` with a `Label` (use `visually-hidden` Label if no visible label desired)
+- Loading skeleton: use `Skeleton.Row` for tables — it renders the right number of rows and columns automatically
+- Sidebar nav icons: use only icons from `@contentful/f36-icons` — never `HomeIcon`, `SettingsIcon` (use `HouseIcon`, `GearSixIcon`, etc.)
+- Table column widths: use token-based spacing or percentage values, not arbitrary pixel widths
 
 ---
 
@@ -49,6 +58,7 @@ Content (two-column when sidebar present)
 ```
 
 **Rules:**
+
 - `dividerLine={true}` on Header when right sidebar present
 - Publish button: `positive` variant — "Publish"
 - Save draft: `secondary` — "Save"
@@ -74,9 +84,10 @@ Content
 ```
 
 **Rules:**
+
 - Group under `Heading` / `SectionHeading` with `gray200` divider
 - Danger zone always at very bottom, visually separated
-- Destructive actions: `negative` Button → confirmation Modal
+- Destructive actions: `negative` Button -> confirmation Modal
 - Inline save: `Notification.success` — don't navigate away
 
 ---
@@ -94,11 +105,13 @@ Centered container (vertical + horizontal)
 ```
 
 **Heading formulas:**
+
 - First-time: "No [content types] yet"
 - No results: `No results for "[query]"`
 - Permission: "You don't have access to [section]"
 
 **Body formulas:**
+
 - First-time: "[Section] lets you [purpose]. Start by [action]."
 - No results: "Try a different search term or adjust filters."
 - Error: "Something went wrong while loading [items]."
@@ -118,6 +131,7 @@ Centered container
 ```
 
 **Rules:**
+
 - "Couldn't load" not "Error 500" — humanize
 - Always offer a recovery action
 - Log technical details to console
@@ -137,6 +151,7 @@ Modal size="small"
 ```
 
 **Rules:**
+
 - Title and confirm button always match: same verb + noun
 - Confirm: `negative` variant
 - Cancel: "Never mind" — never "Cancel", "No", "Go back"
@@ -158,6 +173,7 @@ Layout variant="narrow" or Modal size="large"/"fullscreen"
 ```
 
 **Rules:**
+
 - "Back" on left, "Continue" on right
 - Final step: `positive` variant — "Create [thing]" or "Finish setup"
 - Show progress indicator — never leave users guessing
@@ -180,10 +196,11 @@ Content
 ```
 
 **Rules:**
+
 - Metric cards: equal width, `padding="default"`
 - Max 4 cards per row
-- Recent activity: 5–10 items, link to full list
-- Loading: `Skeleton.Container` per card
+- Recent activity: 5-10 items, link to full list
+- Loading: `Skeleton.Container` with `Skeleton.BodyText` per card
 - Empty state per section independently
 
 ---
@@ -203,8 +220,23 @@ Layout variant="narrow"
 ```
 
 **Rules:**
+
 - Use `Layout variant="narrow"` — never full width
 - Group related fields under Heading
 - `isRequired` on FormControl for required fields
 - Validate inline, on blur or submit
 - On success: `Notification.success` + navigate to result
+
+---
+
+## Navigation Hierarchy
+
+| Level                          | Pattern                              |
+| ------------------------------ | ------------------------------------ |
+| Top-level sections             | Left sidebar sections                |
+| Sub-sections within a section  | Tabs in the content area             |
+| Drill-down to a single item    | Header with Breadcrumb + back button |
+| Related views on a single item | Tabs in the detail page content area |
+
+**Never use modals as navigation.** A modal should complete a task, not replace a page.
+**Never use Tabs at the sidebar level** — sidebar items navigate between sections, not tabs.

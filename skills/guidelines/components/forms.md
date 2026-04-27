@@ -20,17 +20,18 @@ The wrapper for all form fields. Propagates state to children automatically.
 </FormControl>
 ```
 
-**Structure order:** Label → Input → HelpText → ValidationMessage
+**Structure order:** Label -> Input -> HelpText -> ValidationMessage
 
-| Prop | Type | Notes |
-|---|---|---|
-| `isRequired` | boolean | Shows asterisk on label |
-| `isInvalid` | boolean | Shows validation message, red border on input |
-| `isDisabled` | boolean | Disables the input |
-| `isReadOnly` | boolean | |
-| `as` | `'div'` `'fieldset'` | Use `fieldset` for checkbox/radio groups |
+| Prop         | Type                 | Notes                                         |
+| ------------ | -------------------- | --------------------------------------------- |
+| `isRequired` | boolean              | Shows asterisk on label                       |
+| `isInvalid`  | boolean              | Shows validation message, red border on input |
+| `isDisabled` | boolean              | Disables the input                            |
+| `isReadOnly` | boolean              |                                               |
+| `as`         | `'div'` `'fieldset'` | Use `fieldset` for checkbox/radio groups      |
 
 **Sub-components:**
+
 - `FormControl.Label` — required for accessibility. Use `as="legend"` inside fieldsets
 - `FormControl.HelpText` — always-visible guidance
 - `FormControl.ValidationMessage` — error text, appears when `isInvalid`
@@ -44,16 +45,16 @@ Short free text.
 
 ```tsx
 <TextInput value={val} onChange={e => setVal(e.target.value)} placeholder="e.g. Blog Post" />
-<TextInput type="search" icon={<SearchIcon />} />
+<TextInput type="search" icon={<MagnifyingGlassIcon />} />
 ```
 
-| Prop | Type |
-|---|---|
-| `value` / `onChange` | standard |
-| `placeholder` | string |
-| `size` | `'small'` `'medium'` |
-| `icon` | ReactNode |
-| `type` | `'text'` `'email'` `'number'` `'password'` `'search'` `'url'` |
+| Prop                 | Type                                                          |
+| -------------------- | ------------------------------------------------------------- |
+| `value` / `onChange` | standard                                                      |
+| `placeholder`        | string                                                        |
+| `size`               | `'small'` `'medium'`                                          |
+| `icon`               | ReactNode                                                     |
+| `type`               | `'text'` `'email'` `'number'` `'password'` `'search'` `'url'` |
 
 Use `TextInput.Group` to pair an input with an adjacent action button.
 
@@ -62,15 +63,15 @@ Use `TextInput.Group` to pair an input with an adjacent action button.
 Long-form text. Always inside FormControl.
 
 ```tsx
-<Textarea value={desc} onChange={e => setDesc(e.target.value)} rows={4} />
+<Textarea value={desc} onChange={(e) => setDesc(e.target.value)} rows={4} />
 ```
 
 ## Select
 
-For 2–8 options. Never use Select for triggering actions (use Menu).
+For 2-8 options. Never use Select for triggering actions (use Menu).
 
 ```tsx
-<Select value={type} onChange={e => setType(e.target.value)}>
+<Select value={type} onChange={(e) => setType(e.target.value)}>
   <Select.Option value="text">Text</Select.Option>
   <Select.Option value="number">Number</Select.Option>
 </Select>
@@ -83,9 +84,9 @@ For lists >8 items or when search is needed. Manage filtering externally.
 ```tsx
 <Autocomplete
   items={filteredItems}
-  onSelectItem={item => setSelected(item)}
-  onInputValueChange={val => setFilter(val)}
-  itemToString={item => item?.name ?? ''}
+  onSelectItem={(item) => setSelected(item)}
+  onInputValueChange={(val) => setFilter(val)}
+  itemToString={(item) => item?.name ?? ''}
 />
 ```
 
@@ -95,7 +96,7 @@ Multiple selection from a list.
 
 ```tsx
 <Multiselect currentSelection={selected} placeholder="Select tags">
-  {tags.map(tag => (
+  {tags.map((tag) => (
     <Multiselect.Option
       key={tag.id}
       itemId={tag.id}
@@ -125,7 +126,7 @@ Use `Checkbox.Group` for multiple selections. `isIndeterminate` for partial sele
 Mutually exclusive single selection.
 
 ```tsx
-<Radio.Group value={type} onChange={e => setType(e.target.value)}>
+<Radio.Group value={type} onChange={(e) => setType(e.target.value)}>
   <Radio value="short">Short text</Radio>
   <Radio value="long">Long text</Radio>
 </Radio.Group>
@@ -136,7 +137,9 @@ Mutually exclusive single selection.
 Toggle with immediate effect (no save needed).
 
 ```tsx
-<Switch isChecked={enabled} onChange={() => setEnabled(!enabled)}>Dark mode</Switch>
+<Switch isChecked={enabled} onChange={() => setEnabled(!enabled)}>
+  Dark mode
+</Switch>
 ```
 
 Use Switch when the action takes effect immediately. Use Checkbox when a save is required.
@@ -149,8 +152,8 @@ Calendar date input.
 <DatePicker value={date} onChange={setDate} dateFormat="day" />
 ```
 
-| Prop | Type |
-|---|---|
-| `value` / `onChange` | Date |
-| `dateFormat` | `'full'` `'day'` `'time'` |
-| `minDate` / `maxDate` | Date |
+| Prop                  | Type                      |
+| --------------------- | ------------------------- |
+| `value` / `onChange`  | Date                      |
+| `dateFormat`          | `'full'` `'day'` `'time'` |
+| `minDate` / `maxDate` | Date                      |

@@ -12,8 +12,9 @@ Notification.error('Upload failed', { duration: 0, withClose: true }); // persis
 ```
 
 **Rules:**
+
 - Active voice, present tense: "Entry published" not "The entry has been published"
-- Max 1–2 sentences
+- Max 1-2 sentences
 - `duration: 0` for errors that need acknowledgment
 - Use `id` to prevent duplicate toasts
 - Do not use Notification for persistent context — use Note
@@ -30,22 +31,22 @@ Persistent inline context. Stays visible until dismissed or the condition change
 <Note variant="positive">Environment published successfully.</Note>
 ```
 
-| Variant | Icon | Use |
-|---|---|---|
-| `primary` | InfoIcon | General information |
-| `neutral` | InfoIcon | Neutral context |
-| `positive` | CheckCircleIcon | Success, confirmation |
-| `warning` | WarningIcon | Caution, potential issues |
-| `negative` | WarningOctagonIcon | Errors, critical issues |
-| `premium` | DiamondIcon | Paid feature context |
+| Variant    | Icon               | Use                       |
+| ---------- | ------------------ | ------------------------- |
+| `primary`  | InfoIcon           | General information       |
+| `neutral`  | InfoIcon           | Neutral context           |
+| `positive` | CheckCircleIcon    | Success, confirmation     |
+| `warning`  | WarningIcon        | Caution, potential issues |
+| `negative` | WarningOctagonIcon | Errors, critical issues   |
+| `premium`  | DiamondIcon        | Paid feature context      |
 
-| Prop | Type | Notes |
-|---|---|---|
-| `variant` | see above | Default: `'primary'` |
-| `title` | string | Optional heading |
-| `withCloseButton` | boolean | Adds dismiss button |
-| `onClose` | function | Pair with `withCloseButton` |
-| `icon` | ReactNode | Override default variant icon |
+| Prop              | Type      | Notes                         |
+| ----------------- | --------- | ----------------------------- |
+| `variant`         | see above | Default: `'primary'`          |
+| `title`           | string    | Optional heading              |
+| `withCloseButton` | boolean   | Adds dismiss button           |
+| `onClose`         | function  | Pair with `withCloseButton`   |
+| `icon`            | ReactNode | Override default variant icon |
 
 Place Note near the relevant content, not generically at the top of the page.
 
@@ -54,20 +55,22 @@ Place Note near the relevant content, not generically at the top of the page.
 Labels and status indicators. Keep to one word.
 
 ```tsx
-<Badge variant="positive">Published</Badge>
-<Badge variant="warning">Draft</Badge>
+<Badge variant="positive">Active</Badge>
+<Badge variant="warning">Pending</Badge>
 <Badge variant="featured">New</Badge>
 ```
 
-| Variant | Use |
-|---|---|
-| `primary` | Default |
-| `primary-filled` | Emphasized default |
-| `positive` | Published, active |
-| `negative` | Deleted, error |
-| `warning` | Draft, pending |
-| `secondary` | Muted status |
-| `featured` | Premium, new |
+| Variant          | Use                       |
+| ---------------- | ------------------------- |
+| `primary`        | Default                   |
+| `primary-filled` | Emphasized default        |
+| `positive`       | Active, enabled           |
+| `negative`       | Error, removed            |
+| `warning`        | Pending, attention needed |
+| `secondary`      | Muted status              |
+| `featured`       | Premium, new              |
+
+Do not use Badge for Contentful entity statuses (published, draft, changed, archived) — use `EntityStatusBadge` instead.
 
 Sizes: `default`, `small`. Use `textTransform="none"` when text is already in correct case.
 
