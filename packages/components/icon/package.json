@@ -33,7 +33,7 @@
   "dependencies": {
     "@contentful/f36-core": "^6.7.4",
     "@contentful/f36-tokens": "^6.1.0",
-    "@phosphor-icons/react": "2.1.8",
+    "@phosphor-icons/react": "2.1.10",
     "@emotion/css": "^11.13.5"
   },
   "devDependencies": {
