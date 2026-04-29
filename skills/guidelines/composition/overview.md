@@ -4,10 +4,11 @@ This section covers how to assemble components into complete screens. Every Cont
 
 ## Files
 
-| File | What it covers |
-|---|---|
-| `base-shell.md` | The standard app chrome — top bar, sidebar, content area |
-| `screen-patterns.md` | Named patterns: list, detail, settings, empty state, error, confirmation, wizard, dashboard, form |
+| File                     | What it covers                                                                                    |
+| ------------------------ | ------------------------------------------------------------------------------------------------- |
+| `base-shell.md`          | The standard app chrome — top bar, sidebar, content area                                          |
+| `screen-patterns.md`     | Named patterns: list, detail, settings, empty state, error, confirmation, wizard, dashboard, form |
+| `visual-verification.md` | Figma-to-code post-flight — screenshot comparison loop to catch missing page elements             |
 
 ## Rule
 

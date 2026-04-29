@@ -24,10 +24,10 @@ Forma 36 is the design language of Contentful. Every screen, component, and inte
 ```
 REQUIRED  import '@contentful/f36-components/dist/styles.css'  — without this, all components render unstyled
 REQUIRED  Every component has an explicit import from @contentful/f36-components or @contentful/f36-icons
-REQUIRED  All icon names come from @contentful/f36-icons (Phosphor set) — see guidelines/foundations/icons.md for the approved list. NEVER invent icon names. Common: DotsThreeIcon (menus), TrashSimpleIcon (delete), PencilSimpleIcon (edit), GearSixIcon (settings), PlusIcon, MagnifyingGlassIcon (search), XIcon (close), CheckIcon, WarningIcon, ArrowLeftIcon.
+REQUIRED  All icon names come from @contentful/f36-icons (Phosphor set) — see guidelines/foundations/icons.md for the approved list. NEVER invent icon names. Common: DotsThreeIcon (menus), TrashIcon (delete), PencilIcon (edit), GearIcon (settings), PlusIcon, SearchIcon, CloseIcon, CheckIcon, WarningIcon, ArrowLeftIcon.
 REQUIRED  All colors, spacing, typography use @contentful/f36-tokens — NEVER hardcode hex, px, or font stacks
 REQUIRED  Use Layout (not Workbench) as the page shell. Layout.Header, Layout.Body, Layout.Sidebar are REAL compound sub-components (verified in source) — use them confidently. These are the ONLY valid sub-components.
-REQUIRED  Skeleton sub-components: Skeleton.Container, Skeleton.DisplayText, Skeleton.BodyText, Skeleton.Image, Skeleton.Row (for table loading: rowCount, columnCount props). There is no Skeleton.Table or Skeleton.Cell.
+REQUIRED  Skeleton sub-components: Skeleton.Container, Skeleton.DisplayText, Skeleton.BodyText, Skeleton.Image — these are the ONLY valid sub-components. There is NO Skeleton.Row.
 ```
 
 ---
@@ -105,6 +105,30 @@ A Figma URL is present. The goal is to translate Figma designs into production c
 - **48 components** connected in the Forma 36 Components Figma file
 - **239 icons** connected in the Forma 36 Assets Figma file
 - See `guidelines/code-connect.md` for the complete mapping table
+
+**Visual verification (post-flight for Path C):**
+
+Code Connect maps individual components but does NOT describe page-level composition — sidebar presence, top nav structure, filter chip patterns, avatar columns, or layout hierarchy. The design context alone is often incomplete. You MUST visually verify.
+
+After generating code from a Figma design context:
+
+1. **Screenshot the source** — call `get_screenshot(fileKey, nodeId)` to capture the original Figma design
+2. **Render your output** — start a local dev server and open the generated page
+3. **Screenshot your output** — use Playwright MCP `browser_take_screenshot` to capture the rendered page
+4. **Compare both screenshots.** Systematically check for:
+   - Missing navigation (top bar, sidebar, breadcrumbs, nav items)
+   - Missing or extra table/list columns (avatars, workflows, icons)
+   - Different filter patterns (chips vs dropdowns, filter bar layout)
+   - Missing UI elements (content type icons next to entries, avatars, badges)
+   - Layout structure differences (sidebar vs no sidebar, narrow vs wide)
+   - Data format mismatches (relative vs absolute dates, "by Author" attribution)
+   - Missing page-level chrome (space/environment pill, search icon, settings icon)
+5. **Fix every difference** — update the code to match the source design
+6. **Re-render and re-compare** until the output faithfully matches the source
+
+This loop typically converges in 1–2 iterations. The first comparison catches structural gaps (missing sidebar, missing columns); the second catches detail gaps (wrong date format, missing icons).
+
+See `guidelines/composition/visual-verification.md` for the detailed checklist.
 
 ### Path D — Code to Figma design (writing to Figma via MCP)
 
@@ -211,7 +235,7 @@ These apply to all paths. Do not override them.
 - **Phosphor icons only** — never Material, Heroicons, Feather, or Lucide.
 - **"Never mind"** — the cancel label for destructive confirmations. Not "Cancel".
 - **`Layout` not `Workbench`** — Workbench is deprecated.
-- **No custom shadows** — only `boxShadowDefault`, `boxShadowHeavy`, `boxShadowPositive`, `insetBoxShadowDefault`.
+- **No custom shadows** — only `shadowDefault`, `shadowHeavy`, `shadowButton`, `insetBoxShadowDefault`.
 - **No border radius outside the scale** — 4px, 6px, 12px, 100px only.
 
 ---
@@ -299,11 +323,12 @@ Each folder contains an `overview.md` that indexes its contents.
 
 ### `guidelines/composition/`
 
-| File                 | What it covers                                                                                      |
-| -------------------- | --------------------------------------------------------------------------------------------------- |
-| `overview.md`        | Composition philosophy and file index                                                               |
-| `base-shell.md`      | Standard app chrome — top bar (52px), sidebar (240px), content area                                 |
-| `screen-patterns.md` | 9 named patterns: list, detail, settings, empty state, error, confirmation, wizard, dashboard, form |
+| File                     | What it covers                                                                                      |
+| ------------------------ | --------------------------------------------------------------------------------------------------- |
+| `overview.md`            | Composition philosophy and file index                                                               |
+| `base-shell.md`          | Standard app chrome — top bar (52px), sidebar (240px), content area                                 |
+| `screen-patterns.md`     | 9 named patterns: list, detail, settings, empty state, error, confirmation, wizard, dashboard, form |
+| `visual-verification.md` | Figma-to-code post-flight — screenshot comparison loop to catch missing page-level elements         |
 
 ### `guidelines/foundations/`
 
@@ -318,14 +343,14 @@ Each folder contains an `overview.md` that indexes its contents.
 
 Working TSX files demonstrating correct usage. Each maps to a screen pattern.
 
-| File                     | Pattern         | What it shows                                                                        |
-| ------------------------ | --------------- | ------------------------------------------------------------------------------------ |
-| `list-page.tsx`          | List / Index    | Table, search, EntityStatusBadge, Menu actions, Pagination, empty state, Skeleton    |
-| `detail-page.tsx`        | Detail / Edit   | Right sidebar, breadcrumbs, form validation, unsaved-changes Note                    |
-| `settings-page.tsx`      | Settings        | Grouped sections, Switch toggles, danger zone                                        |
-| `confirmation-modal.tsx` | Confirmation    | Modal, "Never mind" cancel, `isLoading` confirm, `shouldCloseOnOverlayClick={false}` |
-| `form-page.tsx`          | Standalone Form | `Layout variant="narrow"`, grouped FormControls, Accordion, Notification             |
-| `error-state.tsx`        | Error State     | Centered error, WarningOctagonIcon, "Try again" + "Go back"                          |
+| File                      | Pattern         | What it shows                                                                        |
+| ------------------------- | --------------- | ------------------------------------------------------------------------------------ |
+| `list-page.tsx`           | List / Index    | Table, search, EntityStatusBadge, Menu actions, Pagination, empty state, Skeleton    |
+| `detail-page.tsx`         | Detail / Edit   | Right sidebar, breadcrumbs, form validation, unsaved-changes Note                    |
+| `settings-page.tsx`       | Settings        | Grouped sections, Switch toggles, danger zone                                        |
+| `confirmation-dialog.tsx` | Confirmation    | Modal, "Never mind" cancel, `isLoading` confirm, `shouldCloseOnOverlayClick={false}` |
+| `form-page.tsx`           | Standalone Form | `Layout variant="narrow"`, grouped FormControls, Accordion, Notification             |
+| `error-state.tsx`         | Error State     | Centered error, WarningOctagonIcon, "Try again" + "Go back"                          |
 
 ---
 
