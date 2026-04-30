@@ -1,5 +1,18 @@
 # Change Log
 
+## 6.8.0
+
+### Minor Changes
+
+- [#3394](https://github.com/contentful/forma-36/pull/3394) [`524c1f3`](https://github.com/contentful/forma-36/commit/524c1f30b756b3df0d58356a8ee63f69b6e4186e) Thanks [@maroun9t](https://github.com/maroun9t)! - Added the `GitBranchIcon` component
+  Added the `VariantIcon` component
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.8.0
+  - @contentful/f36-icon@6.8.0
+
 ## 6.7.4
 
 ### Patch Changes
