@@ -57,7 +57,8 @@
       "@contentful/f36-tooltip",
       "@contentful/f36-typography",
       "@contentful/f36-usage-card",
-      "@contentful/f36-usage-count"
+      "@contentful/f36-usage-count",
+      "@contentful/f36-ai-components"
     ]
   ],
   "access": "public",
