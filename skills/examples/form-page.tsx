@@ -1,5 +1,3 @@
-// REQUIRED: CSS import — without this, all components render unstyled
-import '@contentful/f36-components/dist/styles.css';
 import {
   Layout,
   Header,
@@ -32,8 +30,10 @@ function CreateContentTypePage() {
             withBackButton
             actions={
               <Stack spacing="spacingS">
-                <Button variant="secondary">Never mind</Button>
-                <Button variant="primary" onClick={handleSave}>
+                <Button variant="secondary" size="small">
+                  Never mind
+                </Button>
+                <Button variant="primary" size="small" onClick={handleSave}>
                   Create
                 </Button>
               </Stack>

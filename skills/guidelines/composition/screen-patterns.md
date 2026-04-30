@@ -124,7 +124,7 @@ Never show empty state while data is loading — show Skeleton.
 
 ```
 Centered container
-  |- Icon: WarningIcon or CloseCircleIcon, 48px, red600
+  |- Icon: WarningOctagonIcon, 48px, red600
   |- Heading: "Couldn't load [section]"
   |- Body: brief explanation + what user can do
   |- Actions: "Try again" (primary) + optional "Go back" (secondary)

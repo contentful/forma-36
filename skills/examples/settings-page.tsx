@@ -1,5 +1,3 @@
-// REQUIRED: CSS import — without this, all components render unstyled
-import '@contentful/f36-components/dist/styles.css';
 import {
   Layout,
   Header,
@@ -24,7 +22,11 @@ function WebhookSettingsPage() {
         <Layout.Header>
           <Header
             title="Webhook settings"
-            actions={<Button variant="primary">Save changes</Button>}
+            actions={
+              <Button variant="primary" size="small">
+                Save changes
+              </Button>
+            }
           />
         </Layout.Header>
       }
@@ -84,7 +86,9 @@ function WebhookSettingsPage() {
             >
               Deleting this webhook is permanent and cannot be undone.
             </Note>
-            <Button variant="negative">Delete webhook</Button>
+            <Button variant="negative" size="small">
+              Delete webhook
+            </Button>
           </Box>
         </Stack>
       </Layout.Body>

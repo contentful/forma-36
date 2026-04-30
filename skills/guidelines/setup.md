@@ -5,20 +5,16 @@
 Install the Forma 36 packages:
 
 ```bash
-npm install @contentful/f36-components @contentful/f36-tokens @contentful/f36-icons
+npm install @contentful/f36-components @contentful/f36-tokens @contentful/f36-icons @contentful/f36-navbar
 ```
 
 Forma 36 requires React 18 and is compatible with Vite.
 
 ## CSS
 
-Import the Forma 36 stylesheet at the root of your application:
+Forma 36 v6 uses **Emotion** for runtime CSS injection. Components are self-styling — there is no separate CSS file to import.
 
-```tsx
-import '@contentful/f36-components/dist/styles.css';
-```
-
-This import is required. Components will render without styles if you skip it.
+**Do NOT add** `import '@contentful/f36-components/dist/styles.css'` — this file does not exist in v6 and will cause a build error.
 
 ## Font
 

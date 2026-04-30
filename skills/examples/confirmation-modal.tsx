@@ -1,5 +1,3 @@
-// REQUIRED: CSS import — without this, all components render unstyled
-import '@contentful/f36-components/dist/styles.css';
 import { Modal, Button, Paragraph } from '@contentful/f36-components';
 import { useState } from 'react';
 
@@ -16,7 +14,7 @@ function DeleteContentTypeModal() {
 
   return (
     <>
-      <Button variant="negative" onClick={() => setIsOpen(true)}>
+      <Button variant="negative" size="small" onClick={() => setIsOpen(true)}>
         Delete content type
       </Button>
 
@@ -38,11 +36,16 @@ function DeleteContentTypeModal() {
         </Modal.Content>
         <Modal.Controls>
           {/* Cancel label MUST be "Never mind" for destructive confirmations — never "Cancel" */}
-          <Button variant="secondary" onClick={() => setIsOpen(false)}>
+          <Button
+            variant="secondary"
+            size="small"
+            onClick={() => setIsOpen(false)}
+          >
             Never mind
           </Button>
           <Button
             variant="negative"
+            size="small"
             isLoading={isDeleting}
             onClick={handleDelete}
           >

@@ -29,6 +29,7 @@ When all three elements are present, this is the structural skeleton:
 
 ```tsx
 import { Navbar } from '@contentful/f36-navbar';
+import tokens from '@contentful/f36-tokens';
 
 <Box style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
   {/* Top bar — only if the design shows it */}
@@ -42,13 +43,15 @@ import { Navbar } from '@contentful/f36-navbar';
 
     {/* Content area — fills remaining width */}
     <Box style={{ flex: 1, ... }}>
-      <Box style={{ padding: '12px 24px 0' }}>
+      <Box style={{ padding: `${tokens.spacingS} ${tokens.spacingL} 0` }}>
         ...
       </Box>
     </Box>
   </Flex>
 </Box>
 ```
+
+> **Token compliance note:** Shell structure dimensions like sidebar width (`280px`), nav item height (`34px`), and border-radius (`12px`) have no dedicated token — use raw pixel values for these. All other values (colors, spacing, typography) must use `@contentful/f36-tokens`.
 
 ---
 

@@ -22,12 +22,12 @@ Forma 36 is the design language of Contentful. Every screen, component, and inte
 ## Pre-flight checklist — VERIFY before generating ANY code
 
 ```
-REQUIRED  import '@contentful/f36-components/dist/styles.css'  — without this, all components render unstyled
+REQUIRED  f36 v6 is self-styling via Emotion — NO CSS import needed. Do NOT add `import '@contentful/f36-components/dist/styles.css'` — that file does not exist and will break the build.
 REQUIRED  Every component has an explicit import from @contentful/f36-components or @contentful/f36-icons
-REQUIRED  All icon names come from @contentful/f36-icons (Phosphor set) — see guidelines/foundations/icons.md for the approved list. NEVER invent icon names. Common: DotsThreeIcon (menus), TrashIcon (delete), PencilIcon (edit), GearIcon (settings), PlusIcon, SearchIcon, CloseIcon, CheckIcon, WarningIcon, ArrowLeftIcon.
+REQUIRED  All icon names come from @contentful/f36-icons (Phosphor set) — see guidelines/foundations/icons.md for the approved list. NEVER invent icon names. Common: DotsThreeIcon (menus), TrashSimpleIcon (delete), PencilSimpleIcon (edit), GearSixIcon (settings), PlusIcon, MagnifyingGlassIcon (search), XIcon (close), CheckIcon, WarningIcon, ArrowLeftIcon.
 REQUIRED  All colors, spacing, typography use @contentful/f36-tokens — NEVER hardcode hex, px, or font stacks
 REQUIRED  Use Layout (not Workbench) as the page shell. Layout.Header, Layout.Body, Layout.Sidebar are REAL compound sub-components (verified in source) — use them confidently. These are the ONLY valid sub-components.
-REQUIRED  Skeleton sub-components: Skeleton.Container, Skeleton.DisplayText, Skeleton.BodyText, Skeleton.Image — these are the ONLY valid sub-components. There is NO Skeleton.Row.
+REQUIRED  Skeleton sub-components: Skeleton.Container, Skeleton.DisplayText, Skeleton.BodyText, Skeleton.Image, Skeleton.Row — these are the ONLY valid sub-components. Use Skeleton.Row inside Table.Body for table loading states (props: rowCount, columnCount).
 ```
 
 ---
@@ -136,7 +136,7 @@ See `guidelines/composition/visual-verification.md` for the detailed checklist.
 
 These apply to all paths. Do not override them.
 
-- **CSS import is REQUIRED** — every file must include `import '@contentful/f36-components/dist/styles.css';`. Without it, all components render unstyled. This is the #1 most-forgotten rule.
+- **No CSS import needed** — f36 v6 uses Emotion for runtime styling. `@contentful/f36-components/dist/styles.css` does not exist. Do NOT add it — it will cause a build error.
 - **Tokens only** — never hardcode hex colors, pixel values, or font stacks. Always use `@contentful/f36-tokens`.
 - **Sentence case** — all labels, headings, buttons, menu items. Never Title Case or ALL CAPS.
 - **One primary button** per screen section maximum.
@@ -148,6 +148,7 @@ These apply to all paths. Do not override them.
 - **`Layout` not `Workbench`** — Workbench is deprecated.
 - **No custom shadows** — only `shadowDefault`, `shadowHeavy`, `shadowButton`, `insetBoxShadowDefault`.
 - **No border radius outside the scale** — 4px, 6px, 12px, 100px only.
+- **`Button size="small"` always** — the default 32px height is standard. Never use medium (40px).
 
 ---
 
@@ -161,6 +162,7 @@ From the [Forma 36 code style guide](https://github.com/contentful/forma-36/blob
 - Component type names use `ComponentNameProps` pattern
 - Use `camelCase` for all prop names
 - Pass string prop values with double quotes directly, not wrapped in `{}`
+- Use `style` prop for inline styles — it works universally. The `css` prop (Emotion) only works if the host app has Emotion configured (f36 uses it internally but doesn't expose it to consumers).
 - Prefer `className` over inline `style` unless manipulating dynamic values
 
 ---
@@ -168,14 +170,10 @@ From the [Forma 36 code style guide](https://github.com/contentful/forma-36/blob
 ## Dependencies
 
 ```bash
-npm install @contentful/f36-components @contentful/f36-tokens @contentful/f36-icons
+npm install @contentful/f36-components @contentful/f36-tokens @contentful/f36-icons @contentful/f36-navbar
 ```
 
-Requires React 18. Compatible with Vite. CSS import is mandatory:
-
-```tsx
-import '@contentful/f36-components/dist/styles.css';
-```
+Requires React 18. Compatible with Vite. f36 v6 is self-styling via Emotion — no CSS file import needed.
 
 Font: Geist from `https://cdn.f36.contentful.com`. Apply `font-feature-settings: 'ss05' 1`.
 
@@ -254,27 +252,29 @@ Each folder contains an `overview.md` that indexes its contents.
 
 Working TSX files demonstrating correct usage. Each maps to a screen pattern.
 
-| File                      | Pattern         | What it shows                                                                        |
-| ------------------------- | --------------- | ------------------------------------------------------------------------------------ |
-| `list-page.tsx`           | List / Index    | Table, search, EntityStatusBadge, Menu actions, Pagination, empty state, Skeleton    |
-| `detail-page.tsx`         | Detail / Edit   | Right sidebar, breadcrumbs, form validation, unsaved-changes Note                    |
-| `settings-page.tsx`       | Settings        | Grouped sections, Switch toggles, danger zone                                        |
-| `confirmation-dialog.tsx` | Confirmation    | Modal, "Never mind" cancel, `isLoading` confirm, `shouldCloseOnOverlayClick={false}` |
-| `form-page.tsx`           | Standalone Form | `Layout variant="narrow"`, grouped FormControls, Accordion, Notification             |
-| `error-state.tsx`         | Error State     | Centered error, WarningOctagonIcon, "Try again" + "Go back"                          |
+| File                      | Pattern         | What it shows                                                                                                          |
+| ------------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `app-shell.tsx`           | Full app chrome | Navbar (from f36-navbar), sidebar (280px, nav items, sections), content area — the outer wrapper most pages sit inside |
+| `list-page.tsx`           | List / Index    | Table, search, EntityStatusBadge, Menu actions, Pagination, empty state, Skeleton                                      |
+| `detail-page.tsx`         | Detail / Edit   | Right sidebar, breadcrumbs, form validation, unsaved-changes Note                                                      |
+| `settings-page.tsx`       | Settings        | Grouped sections, Switch toggles, danger zone                                                                          |
+| `confirmation-dialog.tsx` | Confirmation    | Modal, "Never mind" cancel, `isLoading` confirm, `shouldCloseOnOverlayClick={false}`                                   |
+| `form-page.tsx`           | Standalone Form | `Layout variant="narrow"`, grouped FormControls, Accordion, Notification                                               |
+| `error-state.tsx`         | Error State     | Centered error, WarningOctagonIcon, "Try again" + "Go back"                                                            |
 
 ---
 
 ## Post-flight checklist — VERIFY before returning code to the user
 
 ```
-CHECK  CSS import present: import '@contentful/f36-components/dist/styles.css'
-CHECK  Every color, spacing, and font value comes from @contentful/f36-tokens — no hardcoded hex, px, or font stacks
+CHECK  No CSS import — f36 v6 is self-styling via Emotion. `dist/styles.css` does not exist and will break the build if imported.
+CHECK  Every color, spacing, and font value comes from @contentful/f36-tokens — no hardcoded hex, px, or font stacks (exception: shell structure dimensions like sidebar width, border-radius, and nav item padding that have no token equivalent — see base-shell.md)
 CHECK  Every icon name exists in @contentful/f36-icons — see guidelines/foundations/icons.md. If unsure, DON'T guess.
 CHECK  Every input is inside a FormControl with a Label
 CHECK  Only ONE primary button per visible screen section
 CHECK  All labels and headings use sentence case — never Title Case or ALL CAPS
 CHECK  Destructive confirmation cancel label is "Never mind" — not "Cancel"
 CHECK  No usage of Workbench — use Layout instead
-CHECK  No fabricated sub-components: Layout only has Layout.Header, Layout.Body, Layout.Sidebar. Skeleton only has Skeleton.Container, Skeleton.DisplayText, Skeleton.BodyText, Skeleton.Image.
+CHECK  No fabricated sub-components: Layout only has Layout.Header, Layout.Body, Layout.Sidebar. Skeleton only has Skeleton.Container, Skeleton.DisplayText, Skeleton.BodyText, Skeleton.Image, Skeleton.Row.
+CHECK  Every Button and IconButton uses size="small" — never omit (defaults to medium/40px).
 ```

@@ -1,5 +1,3 @@
-// REQUIRED: CSS import — without this, all components render unstyled
-import '@contentful/f36-components/dist/styles.css';
 import {
   Flex,
   Heading,
@@ -17,11 +15,11 @@ function PageError({ section = 'content types' }: { section?: string }) {
       alignItems="center"
       justifyContent="center"
       padding="spacing2Xl"
-      css={{ minHeight: '400px' }}
+      style={{ minHeight: '400px' }}
     >
       <WarningOctagonIcon
         size="medium"
-        css={{
+        style={{
           width: '48px',
           height: '48px',
           color: tokens.red600,
@@ -34,10 +32,18 @@ function PageError({ section = 'content types' }: { section?: string }) {
         try again.
       </Paragraph>
       <Stack spacing="spacingS">
-        <Button variant="primary" onClick={() => window.location.reload()}>
+        <Button
+          variant="primary"
+          size="small"
+          onClick={() => window.location.reload()}
+        >
           Try again
         </Button>
-        <Button variant="secondary" onClick={() => window.history.back()}>
+        <Button
+          variant="secondary"
+          size="small"
+          onClick={() => window.history.back()}
+        >
           Go back
         </Button>
       </Stack>

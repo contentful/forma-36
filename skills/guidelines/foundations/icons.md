@@ -69,7 +69,7 @@ These are the most commonly used icons in `@contentful/f36-icons`. **Only use na
 
 ### UI & System
 
-`GearSixIcon` `DotsThreeIcon` `DotsThreeVerticalIcon` `DotsSixVerticalIcon` `GridFourIcon` `ColumnsIcon` `RowsIcon` `StarIcon` `HeartStraightIcon` `BookmarkSimpleIcon` `GlobeIcon` `GlobeXIcon` `UserIcon` `UsersIcon` `UsersThreeIcon` `LightningIcon` `RocketIcon` `RocketLaunchIcon` `LightbulbIcon` `FlaskIcon` `DiamondIcon` `CubeIcon` `TreeStructureIcon` `StackIcon` `WrenchIcon` `GaugeIcon`
+`GearSixIcon` `DotsThreeIcon` `DotsThreeVerticalIcon` `DotsSixVerticalIcon` `GridFourIcon` `ColumnsIcon` `RowsIcon` `StarIcon` `HeartStraightIcon` `BookmarkSimpleIcon` `GlobeIcon` `GlobeXIcon` `HouseIcon` `UserIcon` `UsersIcon` `UsersThreeIcon` `LightningIcon` `RocketIcon` `RocketLaunchIcon` `LightbulbIcon` `FlaskIcon` `DiamondIcon` `CubeIcon` `TreeStructureIcon` `StackIcon` `WrenchIcon` `GaugeIcon`
 
 ### Content modeling & Contentful-specific (custom icons)
 
@@ -104,3 +104,4 @@ These are the most commonly used icons in `@contentful/f36-icons`. **Only use na
 - ~~`HeartIcon`~~ → use `HeartStraightIcon`
 - ~~`EyeSlashIcon`~~ → use `EyeClosedIcon`
 - ~~`ExternalLinkIcon`~~ → use `ArrowSquareOutIcon`
+- ~~`HomeIcon`~~ → use `HouseIcon`

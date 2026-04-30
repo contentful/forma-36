@@ -1,5 +1,3 @@
-// REQUIRED: CSS import — without this, all components render unstyled
-import '@contentful/f36-components/dist/styles.css';
 import {
   Layout,
   Header,
@@ -28,8 +26,12 @@ function EntryDetailPage() {
             dividerLine
             actions={
               <Stack spacing="spacingS">
-                <Button variant="secondary">Save</Button>
-                <Button variant="positive">Publish</Button>
+                <Button variant="secondary" size="small">
+                  Save
+                </Button>
+                <Button variant="positive" size="small">
+                  Publish
+                </Button>
               </Stack>
             }
           />

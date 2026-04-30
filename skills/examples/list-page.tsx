@@ -1,5 +1,3 @@
-// REQUIRED: CSS import — without this, all components render unstyled
-import '@contentful/f36-components/dist/styles.css';
 import {
   Layout,
   Header,
@@ -33,7 +31,7 @@ function ContentTypesListPage() {
           <Header
             title="Content types"
             actions={
-              <Button variant="primary" startIcon={<PlusIcon />}>
+              <Button variant="primary" size="small" startIcon={<PlusIcon />}>
                 Add content type
               </Button>
             }
@@ -117,7 +115,7 @@ function ContentTypesEmptyState() {
         Content types define the structure of your content. Start by adding your
         first one.
       </Paragraph>
-      <Button variant="primary" startIcon={<PlusIcon />}>
+      <Button variant="primary" size="small" startIcon={<PlusIcon />}>
         Add content type
       </Button>
     </Flex>
