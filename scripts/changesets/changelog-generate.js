@@ -10,6 +10,7 @@ const cwd = process.cwd();
 
 // Umbrella package
 const componentsPkg = '@contentful/f36-components';
+
 // Packages we don't want to have on changelog
 const ignorePkgs = [
   '@contentful/f36-cdn',
