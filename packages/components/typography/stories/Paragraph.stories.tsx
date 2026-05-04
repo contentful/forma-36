@@ -64,3 +64,37 @@ export const WithDensitySupport = {
 
   args: Basic.args,
 };
+
+export const WithTextWrap = {
+  render: (props: ComponentProps<typeof Paragraph> & { width: number }) => (
+    <Flex flexDirection="column" gap="spacing2Xl">
+      <Flex flexDirection="column">
+        <Heading>Default</Heading>
+        <Flex style={{ width: props.width }}>
+          <Paragraph {...props} />
+        </Flex>
+      </Flex>
+      <Flex flexDirection="column">
+        <Heading>Pretty</Heading>
+        <Flex style={{ width: props.width }}>
+          <Paragraph {...props} textWrap="pretty" />
+        </Flex>
+      </Flex>
+      <Flex flexDirection="column">
+        <Heading>Balance</Heading>
+        <Flex style={{ width: props.width }}>
+          <Paragraph {...props} textWrap="balance" />
+        </Flex>
+      </Flex>
+    </Flex>
+  ),
+  args: {
+    ...Basic.args,
+    width: 448,
+  },
+  argTypes: {
+    width: {
+      control: { type: 'range', min: 200, max: 800, step: 8 },
+    },
+  },
+};

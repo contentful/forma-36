@@ -1,5 +1,30 @@
 # Change Log
 
+## 6.8.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.8.0
+
+## 6.7.4
+
+### Patch Changes
+
+- [#3393](https://github.com/contentful/forma-36/pull/3393) [`7257924`](https://github.com/contentful/forma-36/commit/7257924e88dd8d576959a7d99506bf7f3e97ca34) Thanks [@marcmll](https://github.com/marcmll)! - fix: removed default `wrap` value from typography components' `textWrap` property
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.7.4
+
+## 6.7.3
+
+### Patch Changes
+
+- [#3390](https://github.com/contentful/forma-36/pull/3390) [`66a5e45`](https://github.com/contentful/forma-36/commit/66a5e454a452f73316bee7b3c45fe910994cd5dc) Thanks [@marcmll](https://github.com/marcmll)! - feat: added `textWrap` property to typography components (`Caption`, `DisplayText`, `Heading`, `Paragraph`, `SectionHeading`, `Subheading`, and `Text`)
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.7.3
+
 ## 6.7.2
 
 ### Patch Changes
