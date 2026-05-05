@@ -1,0 +1,25 @@
+{
+  "codeConnect": {
+    "parser": "react",
+    "include": [
+      "packages/components/**/*.figma.tsx",
+      "packages/components/**/src/**/*.tsx",
+      "packages/core/**/*.figma.tsx",
+      "packages/core/**/src/**/*.tsx"
+    ],
+    "exclude": [
+      "**/*.test.*",
+      "**/*.stories.*",
+      "**/index.ts",
+      "**/index.tsx",
+      "**/examples/**"
+    ],
+    "label": "React",
+    "language": "typescript",
+    "importPaths": {
+      "packages/components/navbar/src/*": "@contentful/f36-navbar",
+      "packages/components/icons/src/*": "@contentful/f36-icons",
+      "src/*": "@contentful/f36-components"
+    }
+  }
+}
