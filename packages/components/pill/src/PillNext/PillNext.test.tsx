@@ -31,9 +31,7 @@ describe('PillNext', () => {
     });
 
     it('renders primary variant', () => {
-      const { container } = render(
-        <PillNext label="test" variant="primary" />,
-      );
+      const { container } = render(<PillNext label="test" variant="primary" />);
       expect(container.firstChild).toHaveStyle({
         backgroundColor: '#E8F5FF',
       });
@@ -82,9 +80,7 @@ describe('PillNext', () => {
     });
 
     it('disables remove button when isRemoveDisabled is true', () => {
-      render(
-        <PillNext label="test" onRemove={() => {}} isRemoveDisabled />,
-      );
+      render(<PillNext label="test" onRemove={() => {}} isRemoveDisabled />);
       expect(screen.getByRole('button', { name: 'Remove' })).toBeDisabled();
     });
 
@@ -136,9 +132,7 @@ describe('PillNext', () => {
     });
 
     it('remove button is not focusable when disabled', () => {
-      render(
-        <PillNext label="test" onRemove={() => {}} isRemoveDisabled />,
-      );
+      render(<PillNext label="test" onRemove={() => {}} isRemoveDisabled />);
       const button = screen.getByRole('button', { name: 'Remove' });
       expect(button).toBeDisabled();
     });

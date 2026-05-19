@@ -55,77 +55,78 @@ export type PillProps = PropsWithHTMLElement<PillInternalProps, 'div'>;
 /**
  * @deprecated Use PillNext instead. This component will be removed in a future major version.
  */
-export const LegacyPill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
-  (props, ref) => {
-    const {
-      isDraggable,
-      label,
-      onClose,
-      closeButtonAriaLabel = 'Close',
-      testId = 'cf-ui-pill',
-      onDrag,
-      className,
-      dragHandleComponent,
-      variant = 'idle',
-      ...otherProps
-    } = props;
+export const LegacyPill = React.forwardRef<
+  HTMLDivElement,
+  ExpandProps<PillProps>
+>((props, ref) => {
+  const {
+    isDraggable,
+    label,
+    onClose,
+    closeButtonAriaLabel = 'Close',
+    testId = 'cf-ui-pill',
+    onDrag,
+    className,
+    dragHandleComponent,
+    variant = 'idle',
+    ...otherProps
+  } = props;
 
-    const styles = getPillStyles(variant);
-    const [textIsTruncated, setTextIsTruncated] = React.useState(false);
+  const styles = getPillStyles(variant);
+  const [textIsTruncated, setTextIsTruncated] = React.useState(false);
 
-    const trackRefChange = React.useCallback(
-      (ref: HTMLDivElement | null) => {
-        if (!ref) {
-          return;
-        }
-        const parent = ref.parentElement;
+  const trackRefChange = React.useCallback(
+    (ref: HTMLDivElement | null) => {
+      if (!ref) {
+        return;
+      }
+      const parent = ref.parentElement;
 
-        if (!parent) return;
-        const { scrollWidth, offsetWidth } = parent;
+      if (!parent) return;
+      const { scrollWidth, offsetWidth } = parent;
 
-        setTextIsTruncated(scrollWidth > offsetWidth);
-      },
-      [setTextIsTruncated],
-    );
+      setTextIsTruncated(scrollWidth > offsetWidth);
+    },
+    [setTextIsTruncated],
+  );
 
-    return (
-      <div
-        className={cx(styles.pill, className)}
-        data-test-id={testId}
-        onDrag={onDrag}
-        ref={ref}
-        {...otherProps}
+  return (
+    <div
+      className={cx(styles.pill, className)}
+      data-test-id={testId}
+      onDrag={onDrag}
+      ref={ref}
+      {...otherProps}
+    >
+      {(isDraggable || onDrag) &&
+        (dragHandleComponent ? (
+          dragHandleComponent
+        ) : (
+          <DragHandle label="Reorder item" variant="transparent" />
+        ))}
+
+      <Tooltip
+        content={label}
+        maxWidth="none"
+        isDisabled={!textIsTruncated}
+        targetWrapperClassName={styles.labelWrapper}
       >
-        {(isDraggable || onDrag) &&
-          (dragHandleComponent ? (
-            dragHandleComponent
-          ) : (
-            <DragHandle label="Reorder item" variant="transparent" />
-          ))}
-
-        <Tooltip
-          content={label}
-          maxWidth="none"
-          isDisabled={!textIsTruncated}
-          targetWrapperClassName={styles.labelWrapper}
-        >
-          <div className={styles.label}>
-            <span ref={trackRefChange}>{label}</span>
-          </div>
-        </Tooltip>
-        {onClose && (
-          <Button
-            type="button"
-            variant="transparent"
-            startIcon={<XIcon />}
-            aria-label={closeButtonAriaLabel}
-            onClick={onClose}
-            className={styles.closeButton}
-          />
-        )}
-      </div>
-    );
-  },
-);
+        <div className={styles.label}>
+          <span ref={trackRefChange}>{label}</span>
+        </div>
+      </Tooltip>
+      {onClose && (
+        <Button
+          type="button"
+          variant="transparent"
+          startIcon={<XIcon />}
+          aria-label={closeButtonAriaLabel}
+          onClick={onClose}
+          className={styles.closeButton}
+        />
+      )}
+    </div>
+  );
+});
 
 LegacyPill.displayName = 'Pill';
