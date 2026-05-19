@@ -14,26 +14,12 @@ import { getPillNextStyles } from './PillNext.styles';
 export type PillNextInternalProps = CommonProps & {
   label: string;
   variant?: PillNextVariant;
-  /**
-   * Called when the remove button is clicked. The remove button is only rendered when this is provided.
-   */
   onRemove?: () => void;
-  /**
-   * Accessible label for the remove button.
-   * @default "Remove"
-   */
+  /** @default "Remove" */
   removeButtonLabel?: string;
-  /**
-   * Disables the remove button when true.
-   */
   isRemoveDisabled?: boolean;
-  /**
-   * Supporting copy displayed in a tooltip on the leading icon (warning/negative variants only).
-   */
+  /** Only rendered for variants with a leading icon (warning/negative). */
   tooltipContent?: string;
-  /**
-   * Value associated with this pill, useful for identifying it in callbacks.
-   */
   value?: string;
 };
 
