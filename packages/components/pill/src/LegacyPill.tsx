@@ -9,9 +9,12 @@ import { Tooltip } from '@contentful/f36-tooltip';
 import { XIcon } from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
 import { DragHandle } from '@contentful/f36-drag-handle';
-import { PillVariants } from './types';
-import { getPillStyles } from './Pill.styles';
+import { PillVariants } from './LegacyPill.types';
+import { getPillStyles } from './LegacyPill.styles';
 
+/**
+ * @deprecated Use PillNext instead. This component will be removed in a future major version.
+ */
 export type PillInternalProps = CommonProps & {
   /**
    * Mark the pill as draggable. Drag icon is rendered when this property is set.
@@ -49,7 +52,10 @@ export type PillInternalProps = CommonProps & {
 
 export type PillProps = PropsWithHTMLElement<PillInternalProps, 'div'>;
 
-export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
+/**
+ * @deprecated Use PillNext instead. This component will be removed in a future major version.
+ */
+export const LegacyPill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
   (props, ref) => {
     const {
       isDraggable,
@@ -122,4 +128,4 @@ export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
   },
 );
 
-Pill.displayName = 'Pill';
+LegacyPill.displayName = 'Pill';
