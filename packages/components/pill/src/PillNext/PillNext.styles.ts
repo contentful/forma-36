@@ -66,8 +66,6 @@ export function getPillNextStyles(
       fontSize: tokens.fontSizeM,
       fontWeight: tokens.fontWeightMedium,
       lineHeight: tokens.lineHeightM,
-      // Figma spec uses -0.154px; no token exists for negative letter-spacing
-      letterSpacing: '-0.154px',
       whiteSpace: 'nowrap',
       textOverflow: 'ellipsis',
       overflow: 'hidden',
