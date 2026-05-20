@@ -2,7 +2,7 @@ import React from 'react';
 import type { StoryObj, Meta } from '@storybook/react-vite';
 import { SectionHeading } from '@contentful/f36-typography';
 import { action } from 'storybook/actions';
-import { Box, Flex } from '@contentful/f36-core';
+import { Flex } from '@contentful/f36-core';
 import { css } from '@emotion/css';
 
 import { PillNext } from '../src/PillNext';
