@@ -65,7 +65,7 @@ export const PillNext = React.forwardRef<
     ...otherProps
   } = props;
 
-  const styles = getPillNextStyles(variant);
+  const styles = getPillNextStyles(variant, Boolean(onRemove));
   const [textIsTruncated, setTextIsTruncated] = React.useState(false);
 
   const labelRef = React.useCallback((node: HTMLSpanElement | null) => {
@@ -77,7 +77,12 @@ export const PillNext = React.forwardRef<
   const iconColor = leadingIconColors[variant];
 
   const leadingIconElement = LeadingIcon ? (
-    <span className={styles.leadingIcon}>
+    <span
+      className={styles.leadingIcon}
+      tabIndex={tooltipContent ? 0 : undefined}
+      role={tooltipContent ? 'img' : undefined}
+      aria-label={tooltipContent || undefined}
+    >
       <LeadingIcon color={iconColor} size="small" />
     </span>
   ) : null;
@@ -94,6 +99,7 @@ export const PillNext = React.forwardRef<
           <Tooltip
             content={tooltipContent}
             placement="bottom"
+            targetWrapperClassName={styles.leadingIconWrapper}
             {...tooltipProps}
           >
             {leadingIconElement}

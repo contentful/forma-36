@@ -24,7 +24,10 @@ const variantStyles: Record<
   },
 };
 
-export function getPillNextStyles(variant: PillNextVariant) {
+export function getPillNextStyles(
+  variant: PillNextVariant,
+  hasRemoveButton: boolean,
+) {
   const { background, border } = variantStyles[variant];
 
   return {
@@ -34,12 +37,19 @@ export function getPillNextStyles(variant: PillNextVariant) {
       // TODO: replace with border-radius token when new tokens ship in next major
       borderRadius: '16px',
       height: '32px',
-      padding: `${tokens.spacing2Xs} ${tokens.spacingS}`,
+      paddingTop: tokens.spacing2Xs,
+      paddingBottom: tokens.spacing2Xs,
+      paddingLeft: tokens.spacingS,
+      paddingRight: hasRemoveButton ? tokens.spacing2Xs : tokens.spacingS,
       border: `1px solid ${border}`,
       backgroundColor: background,
       maxWidth: '100%',
       fontFamily: tokens.fontStackPrimary,
       boxSizing: 'border-box',
+    }),
+    leadingIconWrapper: css({
+      display: 'inline-flex',
+      alignItems: 'center',
     }),
     leadingIcon: css({
       display: 'inline-flex',
@@ -53,6 +63,9 @@ export function getPillNextStyles(variant: PillNextVariant) {
       maxWidth: '100%',
     }),
     label: css({
+      fontSize: tokens.fontSizeM,
+      fontWeight: tokens.fontWeightMedium,
+      lineHeight: tokens.lineHeightM,
       // Figma spec uses -0.154px; no token exists for negative letter-spacing
       letterSpacing: '-0.154px',
       whiteSpace: 'nowrap',
@@ -64,8 +77,16 @@ export function getPillNextStyles(variant: PillNextVariant) {
         width: '24px',
         height: '24px',
         minHeight: 'auto',
+        minWidth: 'auto',
+        padding: tokens.spacing2Xs,
         borderRadius: '50%',
         marginLeft: tokens.spacingXs,
+      },
+      '&&:hover:not(:disabled)': {
+        backgroundColor: tokens.gray300,
+      },
+      '&&:hover:disabled': {
+        backgroundColor: 'transparent',
       },
     }),
   };
