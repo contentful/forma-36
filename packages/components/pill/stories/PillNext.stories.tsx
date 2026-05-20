@@ -20,7 +20,7 @@ export default {
       control: { type: 'select' },
       options: ['secondary', 'primary', 'warning', 'negative'],
     },
-    isRemoveDisabled: { control: { type: 'boolean' } },
+    isDisabled: { control: { type: 'boolean' } },
     tooltipContent: { control: { type: 'text' } },
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
@@ -86,25 +86,25 @@ export const Removable: StoryObj<PillNextInternalProps> = {
             label="Secondary"
             variant="secondary"
             onRemove={args.onRemove}
-            isRemoveDisabled
+            isDisabled
           />
           <PillNext
             label="Primary"
             variant="primary"
             onRemove={args.onRemove}
-            isRemoveDisabled
+            isDisabled
           />
           <PillNext
             label="Warning"
             variant="warning"
             onRemove={args.onRemove}
-            isRemoveDisabled
+            isDisabled
           />
           <PillNext
             label="Negative"
             variant="negative"
             onRemove={args.onRemove}
-            isRemoveDisabled
+            isDisabled
           />
         </Flex>
       </Flex>

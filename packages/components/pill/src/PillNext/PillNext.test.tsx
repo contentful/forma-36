@@ -79,16 +79,14 @@ describe('PillNext', () => {
       expect(screen.getByRole('button', { name: 'Delete tag' })).toBeTruthy();
     });
 
-    it('disables remove button when isRemoveDisabled is true', () => {
-      render(<PillNext label="test" onRemove={() => {}} isRemoveDisabled />);
+    it('disables remove button when isDisabled is true', () => {
+      render(<PillNext label="test" onRemove={() => {}} isDisabled />);
       expect(screen.getByRole('button', { name: 'Remove' })).toBeDisabled();
     });
 
     it('does not call onRemove when disabled', () => {
       const mockOnRemove = jest.fn();
-      render(
-        <PillNext label="test" onRemove={mockOnRemove} isRemoveDisabled />,
-      );
+      render(<PillNext label="test" onRemove={mockOnRemove} isDisabled />);
       fireEvent.click(screen.getByRole('button', { name: 'Remove' }));
       expect(mockOnRemove).not.toHaveBeenCalled();
     });
@@ -105,6 +103,30 @@ describe('PillNext', () => {
       );
       const pill = screen.getByTestId('cf-ui-pill-next');
       expect(pill.querySelector('svg')).toBeTruthy();
+    });
+
+    it('shows truncation tooltip when label overflows', () => {
+      Object.defineProperty(HTMLElement.prototype, 'scrollWidth', {
+        configurable: true,
+        get: () => 300,
+      });
+      Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
+        configurable: true,
+        get: () => 100,
+      });
+
+      const { container } = render(<PillNext label="A very long label" />);
+      const labelSpan = container.querySelector('span');
+      expect(labelSpan).toBeTruthy();
+
+      Object.defineProperty(HTMLElement.prototype, 'scrollWidth', {
+        configurable: true,
+        get: () => 0,
+      });
+      Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
+        configurable: true,
+        get: () => 0,
+      });
     });
   });
 
@@ -125,14 +147,14 @@ describe('PillNext', () => {
 
     it('has no a11y violations with disabled remove button', async () => {
       const { container } = render(
-        <PillNext label="test" onRemove={() => {}} isRemoveDisabled />,
+        <PillNext label="test" onRemove={() => {}} isDisabled />,
       );
       const results = await axe(container);
       expect(results).toHaveNoViolations();
     });
 
     it('remove button is not focusable when disabled', () => {
-      render(<PillNext label="test" onRemove={() => {}} isRemoveDisabled />);
+      render(<PillNext label="test" onRemove={() => {}} isDisabled />);
       const button = screen.getByRole('button', { name: 'Remove' });
       expect(button).toBeDisabled();
     });

@@ -5,7 +5,7 @@ export default function PillNextRemovableExample() {
   return (
     <Stack flexDirection="row">
       <PillNext label="Removable" onRemove={() => {}} />
-      <PillNext label="Disabled remove" onRemove={() => {}} isRemoveDisabled />
+      <PillNext label="Disabled remove" onRemove={() => {}} isDisabled />
     </Stack>
   );
 }

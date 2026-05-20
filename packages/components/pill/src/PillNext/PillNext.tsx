@@ -5,7 +5,12 @@ import type {
   PropsWithHTMLElement,
   ExpandProps,
 } from '@contentful/f36-core';
-import { Tooltip } from '@contentful/f36-tooltip';
+import {
+  Tooltip,
+  type TooltipInternalProps,
+  type WithEnhancedContent,
+} from '@contentful/f36-tooltip';
+import { IconButton } from '@contentful/f36-button';
 import { XIcon, WarningIcon, WarningOctagonIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 import type { PillNextVariant } from './PillNext.types';
@@ -17,16 +22,22 @@ export type PillNextInternalProps = CommonProps & {
   onRemove?: () => void;
   /** @default "Remove" */
   removeButtonLabel?: string;
-  isRemoveDisabled?: boolean;
+  isDisabled?: boolean;
   /** Only rendered for variants with a leading icon (warning/negative). */
   tooltipContent?: string;
-  value?: string;
+  tooltipProps?: Omit<
+    CommonProps & WithEnhancedContent & TooltipInternalProps,
+    'content' | 'children' | 'withTriggerWrapper'
+  >;
 };
 
 export type PillNextProps = PropsWithHTMLElement<PillNextInternalProps, 'div'>;
 
 const leadingIcons: Partial<
-  Record<PillNextVariant, React.ComponentType<{ className?: string }>>
+  Record<
+    PillNextVariant,
+    React.ComponentType<{ color?: string; size?: string }>
+  >
 > = {
   warning: WarningIcon,
   negative: WarningOctagonIcon,
@@ -46,9 +57,9 @@ export const PillNext = React.forwardRef<
     variant = 'secondary',
     onRemove,
     removeButtonLabel = 'Remove',
-    isRemoveDisabled = false,
+    isDisabled = false,
     tooltipContent,
-    value,
+    tooltipProps,
     testId = 'cf-ui-pill-next',
     className,
     ...otherProps
@@ -66,8 +77,8 @@ export const PillNext = React.forwardRef<
   const iconColor = leadingIconColors[variant];
 
   const leadingIconElement = LeadingIcon ? (
-    <span className={styles.leadingIcon} style={{ color: iconColor }}>
-      <LeadingIcon />
+    <span className={styles.leadingIcon}>
+      <LeadingIcon color={iconColor} size="small" />
     </span>
   ) : null;
 
@@ -80,7 +91,11 @@ export const PillNext = React.forwardRef<
     >
       {leadingIconElement &&
         (tooltipContent ? (
-          <Tooltip content={tooltipContent} placement="bottom">
+          <Tooltip
+            content={tooltipContent}
+            placement="bottom"
+            {...tooltipProps}
+          >
             {leadingIconElement}
           </Tooltip>
         ) : (
@@ -99,15 +114,15 @@ export const PillNext = React.forwardRef<
       </Tooltip>
 
       {onRemove && (
-        <button
-          type="button"
-          className={styles.removeButton}
-          onClick={onRemove}
-          disabled={isRemoveDisabled}
+        <IconButton
+          variant="transparent"
+          size="small"
+          icon={<XIcon size="small" />}
           aria-label={removeButtonLabel}
-        >
-          <XIcon className={styles.removeIcon} />
-        </button>
+          onClick={onRemove}
+          isDisabled={isDisabled}
+          className={styles.removeButton}
+        />
       )}
     </div>
   );
