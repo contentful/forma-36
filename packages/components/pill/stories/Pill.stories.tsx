@@ -7,8 +7,7 @@ import { Box, Flex } from '@contentful/f36-core';
 import { InfoIcon } from '@contentful/f36-icons';
 import { css } from '@emotion/css';
 
-import { LegacyPill as Pill } from '../src/LegacyPill';
-import type { PillInternalProps } from '../src/LegacyPill';
+import { Pill, type PillInternalProps } from '../src/Pill';
 
 export default {
   title: 'Components/Pill',

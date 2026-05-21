@@ -1,2 +1,2 @@
-export { LegacyPill as Pill } from './LegacyPill';
-export type { PillProps } from './LegacyPill';
+export { Pill } from './Pill';
+export type { PillProps } from './Pill';

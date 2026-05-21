@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
-import { PillVariants } from './LegacyPill.types';
+import { PillVariants } from './types';
 
 const getCloseButtonStyle = () => {
   return css({
