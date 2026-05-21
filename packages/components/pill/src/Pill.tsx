@@ -12,6 +12,12 @@ import { DragHandle } from '@contentful/f36-drag-handle';
 import { PillVariants } from './types';
 import { getPillStyles } from './Pill.styles';
 
+/**
+ * @deprecated Use `PillNext` from `@contentful/f36-pill-next` instead.
+ * Will be removed in the next major version.
+ *
+ * @see {@link https://f36.contentful.com/components/pill-next} for the replacement component
+ */
 export type PillInternalProps = CommonProps & {
   /**
    * Mark the pill as draggable. Drag icon is rendered when this property is set.
@@ -49,8 +55,22 @@ export type PillInternalProps = CommonProps & {
 
 export type PillProps = PropsWithHTMLElement<PillInternalProps, 'div'>;
 
+/**
+ * @deprecated Use `PillNext` from `@contentful/f36-pill-next` instead.
+ * Will be removed in the next major version.
+ *
+ * @see {@link https://f36.contentful.com/components/pill-next} for the replacement component
+ */
 export const Pill = React.forwardRef<HTMLDivElement, ExpandProps<PillProps>>(
   (props, ref) => {
+    if (process.env.NODE_ENV === 'development') {
+      console.warn(
+        'Pill is deprecated and will be removed in the next major version. ' +
+          'Please migrate to PillNext from @contentful/f36-pill-next. ' +
+          'See: https://f36.contentful.com/components/pill#migration',
+      );
+    }
+
     const {
       isDraggable,
       label,
