@@ -7,3 +7,6 @@ export type {
   PillNextInternalProps,
   PillNextVariant,
 } from './PillNext';
+
+export { Tag } from './Tag';
+export type { TagProps, TagInternalProps } from './Tag';
