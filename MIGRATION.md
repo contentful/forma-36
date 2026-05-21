@@ -21,7 +21,7 @@
 
 Forma 36 v6 introduces several breaking changes focused on:
 
-- **React 19 & Node Version Updates**: Updated peer dependencies to support React 19 and newer Node versions
+- **React 19 & Node Version Updates**: Updated peer dependencies to support React 18.3+ and React 19, and newer Node versions
 - **Emotion CSS Upgrade**: Updated from Emotion v10 to v11, requiring updates to styling dependencies
 - **API Simplification**: Removed redundant props and consolidated type definitions across multiple components
 
