@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import tokens from '@contentful/f36-tokens';
 
-import { LegacyPill as Pill } from './LegacyPill';
+import { Pill } from './Pill';
 
 describe('Pill', () => {
   it('renders the component', () => {
