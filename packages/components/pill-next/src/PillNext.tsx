@@ -66,12 +66,6 @@ export const PillNext = React.forwardRef<
   } = props;
 
   const styles = getPillNextStyles(variant, Boolean(onRemove));
-  const [textIsTruncated, setTextIsTruncated] = React.useState(false);
-
-  const labelRef = React.useCallback((node: HTMLSpanElement | null) => {
-    if (!node) return;
-    setTextIsTruncated(node.scrollWidth > node.offsetWidth);
-  }, []);
 
   const LeadingIcon = leadingIcons[variant];
   const iconColor = leadingIconColors[variant];
@@ -105,19 +99,12 @@ export const PillNext = React.forwardRef<
             {leadingIconElement}
           </Tooltip>
         ) : (
-          leadingIconElement
+          <span className={styles.leadingIconWrapper}>
+            {leadingIconElement}
+          </span>
         ))}
 
-      <Tooltip
-        content={label}
-        maxWidth="none"
-        isDisabled={!textIsTruncated}
-        targetWrapperClassName={styles.labelWrapper}
-      >
-        <span className={styles.label} ref={labelRef}>
-          {label}
-        </span>
-      </Tooltip>
+      <span className={styles.label}>{label}</span>
 
       {onRemove && (
         <IconButton

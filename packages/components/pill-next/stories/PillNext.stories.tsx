@@ -3,7 +3,6 @@ import type { StoryObj, Meta } from '@storybook/react-vite';
 import { SectionHeading } from '@contentful/f36-typography';
 import { action } from 'storybook/actions';
 import { Flex } from '@contentful/f36-core';
-import { css } from '@emotion/css';
 
 import { PillNext } from '../src/PillNext';
 import type { PillNextInternalProps } from '../src/PillNext';
@@ -144,35 +143,35 @@ export const WithTooltip: StoryObj<PillNextInternalProps> = {
   },
 };
 
-export const LabelTruncation: StoryObj<PillNextInternalProps> = {
-  render: (args) => {
-    const constrainedStyle = css({ maxWidth: 200 });
-
-    return (
-      <Flex flexDirection="column" gap="spacingL">
-        <Flex flexDirection="column" gap="spacingS">
-          <SectionHeading as="h3">
-            Label truncation in constrained container
-          </SectionHeading>
-          <Flex flexDirection="row" gap="spacingXs">
-            <PillNext
-              label="This is a very long label that will be truncated"
-              variant="secondary"
-              className={constrainedStyle}
-              onRemove={args.onRemove}
-            />
-            <PillNext
-              label="Another long label that overflows its container"
-              variant="primary"
-              className={constrainedStyle}
-              onRemove={args.onRemove}
-            />
-          </Flex>
+export const LongLabels: StoryObj<PillNextInternalProps> = {
+  render: (args) => (
+    <Flex flexDirection="column" gap="spacingL">
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">
+          Very long labels (pill expands, border-radius stays 16px)
+        </SectionHeading>
+        <Flex flexDirection="column" gap="spacingXs">
+          <PillNext
+            label="fefhjejhfehufheuhfuehfuewdwhudhwuhduwhduehfuheufheufheuf"
+            variant="secondary"
+            onRemove={args.onRemove}
+          />
+          <PillNext
+            label="This is an extremely long label that demonstrates the pill expanding to accommodate text without breaking the border radius"
+            variant="primary"
+            onRemove={args.onRemove}
+          />
+          <PillNext
+            label="Short"
+            variant="warning"
+            onRemove={args.onRemove}
+          />
         </Flex>
       </Flex>
-    );
-  },
+    </Flex>
+  ),
   args: {
     onRemove: action('remove'),
   },
 };
+

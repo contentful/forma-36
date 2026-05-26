@@ -105,28 +105,10 @@ describe('PillNext', () => {
       expect(pill.querySelector('svg')).toBeTruthy();
     });
 
-    it('shows truncation tooltip when label overflows', () => {
-      Object.defineProperty(HTMLElement.prototype, 'scrollWidth', {
-        configurable: true,
-        get: () => 300,
-      });
-      Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
-        configurable: true,
-        get: () => 100,
-      });
-
-      const { container } = render(<PillNext label="A very long label" />);
-      const labelSpan = container.querySelector('span');
-      expect(labelSpan).toBeTruthy();
-
-      Object.defineProperty(HTMLElement.prototype, 'scrollWidth', {
-        configurable: true,
-        get: () => 0,
-      });
-      Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
-        configurable: true,
-        get: () => 0,
-      });
+    it('renders full label without truncation', () => {
+      const longLabel = 'A very long label that should not be truncated';
+      render(<PillNext label={longLabel} />);
+      expect(screen.getByText(longLabel)).toBeTruthy();
     });
   });
 

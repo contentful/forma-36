@@ -43,32 +43,23 @@ export function getPillNextStyles(
       paddingRight: hasRemoveButton ? tokens.spacing2Xs : tokens.spacingS,
       border: `1px solid ${border}`,
       backgroundColor: background,
-      maxWidth: '100%',
       fontFamily: tokens.fontStackPrimary,
       boxSizing: 'border-box',
     }),
     leadingIconWrapper: css({
       display: 'inline-flex',
       alignItems: 'center',
+      flexShrink: 0,
+      marginRight: tokens.spacing2Xs,
     }),
     leadingIcon: css({
       display: 'inline-flex',
       alignItems: 'center',
-      flexShrink: 0,
-      marginRight: tokens.spacing2Xs,
-    }),
-    labelWrapper: css({
-      display: 'inline-flex',
-      minWidth: 0,
-      maxWidth: '100%',
     }),
     label: css({
       fontSize: tokens.fontSizeM,
       fontWeight: tokens.fontWeightMedium,
       lineHeight: tokens.lineHeightM,
-      whiteSpace: 'nowrap',
-      textOverflow: 'ellipsis',
-      overflow: 'hidden',
     }),
     removeButton: css({
       '&&': {
@@ -82,6 +73,7 @@ export function getPillNextStyles(
       },
       '&&:hover:not(:disabled)': {
         backgroundColor: tokens.gray300,
+        mixBlendMode: 'luminosity',
       },
       '&&:hover:disabled': {
         backgroundColor: 'transparent',
