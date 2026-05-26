@@ -71,10 +71,10 @@ export function getPillNextStyles(
         padding: tokens.spacing2Xs,
         borderRadius: '50%',
         marginLeft: tokens.spacingXs,
+        mixBlendMode: 'luminosity',
       },
       '&&:hover:not(:disabled)': {
         backgroundColor: tokens.gray300,
-        mixBlendMode: 'luminosity',
       },
       '&&:hover:disabled': {
         backgroundColor: 'transparent',
