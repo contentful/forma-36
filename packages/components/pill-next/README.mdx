@@ -1,0 +1,59 @@
+---
+title: 'PillNext'
+type: 'component'
+status: 'alpha'
+slug: /components/pill-next/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/pill-next'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-pillnext--basic'
+typescript: ./src/PillNext.tsx
+---
+
+`PillNext` is a refreshed pill component for communicating category or metadata in a compact format. It supports four visual variants, an optional leading icon with tooltip, and an optional removable end icon.
+
+> **Alpha:** This component is in alpha. Props may change before promotion to stable.
+
+## Import
+
+```js static=true
+import { PillNext } from '@contentful/f36-pill-next';
+```
+
+## Examples
+
+### Variants
+
+```jsx file=./examples/PillNextVariantsExample.tsx
+
+```
+
+### Removable
+
+```jsx file=./examples/PillNextRemovableExample.tsx
+
+```
+
+### Warning and negative with tooltip
+
+```jsx file=./examples/PillNextWarningExample.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="PillNext" />
+
+## Variants
+
+| Variant   | Use case                                             |
+| --------- | ---------------------------------------------------- |
+| secondary | Default. General-purpose category or metadata label. |
+| primary   | Highlighted or active selection.                     |
+| warning   | Restricted access or limited visibility.             |
+| negative  | Deleted or errored state.                            |
+
+## Accessibility
+
+- The remove button is the only focusable element by default. Tab focuses it; Enter/Space triggers removal.
+- When `tooltipContent` is provided, the leading icon becomes keyboard-focusable so screen reader and keyboard users can access the explanation.
+- When disabled, the remove button is removed from tab order and does not fire events.
+- Labels that overflow truncate with an ellipsis; a tooltip showing the full label appears on hover/focus.
