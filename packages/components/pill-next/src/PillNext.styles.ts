@@ -60,6 +60,7 @@ export function getPillNextStyles(
       fontSize: tokens.fontSizeM,
       fontWeight: tokens.fontWeightMedium,
       lineHeight: tokens.lineHeightM,
+      whiteSpace: 'nowrap',
     }),
     removeButton: css({
       '&&': {
