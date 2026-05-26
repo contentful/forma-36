@@ -150,7 +150,7 @@ export const LongLabels: StoryObj<PillNextInternalProps> = {
         <SectionHeading as="h3">
           Very long labels (pill expands, border-radius stays 16px)
         </SectionHeading>
-        <Flex flexDirection="column" gap="spacingXs">
+        <Flex flexDirection="column" alignItems="flex-start" gap="spacingXs">
           <PillNext
             label="fefhjejhfehufheuhfuehfuewdwhudhwuhduwhduehfuheufheufheuf"
             variant="secondary"
@@ -161,11 +161,6 @@ export const LongLabels: StoryObj<PillNextInternalProps> = {
             variant="primary"
             onRemove={args.onRemove}
           />
-          <PillNext
-            label="Short"
-            variant="warning"
-            onRemove={args.onRemove}
-          />
         </Flex>
       </Flex>
     </Flex>
@@ -174,4 +169,3 @@ export const LongLabels: StoryObj<PillNextInternalProps> = {
     onRemove: action('remove'),
   },
 };
-
