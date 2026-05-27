@@ -74,7 +74,7 @@ export function getTagStyles(
         minWidth: 'auto',
         padding: tokens.spacing2Xs,
         borderRadius: '50%',
-        marginLeft: tokens.spacing2Xs,
+        marginLeft: tokens.spacingXs,
         mixBlendMode: 'luminosity',
       },
       '&&:hover:not(:disabled)': {
