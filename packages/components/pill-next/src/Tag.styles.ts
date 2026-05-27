@@ -65,7 +65,6 @@ export function getTagStyles(
       display: 'inline-flex',
       alignItems: 'center',
       marginLeft: tokens.spacing2Xs,
-      marginRight: hasRemoveButton ? tokens.spacingXs : 0,
     }),
     removeButton: css({
       '&&': {
@@ -81,8 +80,9 @@ export function getTagStyles(
       '&&:hover:not(:disabled)': {
         backgroundColor: tokens.gray300,
       },
-      '&&:hover:disabled': {
+      '&&:disabled': {
         backgroundColor: 'transparent',
+        color: tokens.gray400,
       },
     }),
   };
