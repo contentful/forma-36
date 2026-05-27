@@ -30,4 +30,9 @@ export const aiPillOverrides = css({
   },
 });
 
-export const aiPillRemoveButton = css({});
+export const aiPillRemoveButton = css({
+  '&&:hover:not(:disabled)': {
+    backgroundColor: '#CFD9E0',
+    mixBlendMode: 'luminosity',
+  },
+});
