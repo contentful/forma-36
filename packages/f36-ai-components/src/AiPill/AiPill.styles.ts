@@ -30,15 +30,16 @@ export const aiPillOverrides = css({
   '& > span:first-of-type': {
     color: '#6c3ecf',
   },
-  // Remove button icon color + hover
-  '& button': {
+  // Remove button — needs &&& to beat PillNext's && specificity
+  '&&& button': {
     color: '#6c3ecf',
-  },
-  '& button:hover:not(:disabled)': {
-    backgroundColor: tokens.gray300,
     mixBlendMode: 'luminosity',
   },
-  '& button:disabled': {
+  '&&& button:hover:not(:disabled)': {
+    backgroundColor: tokens.gray300,
+  },
+  '&&& button:disabled': {
     color: tokens.gray400,
+    mixBlendMode: 'initial',
   },
 });
