@@ -1,5 +1,4 @@
 import { css } from '@emotion/css';
-import tokens from '@contentful/f36-tokens';
 
 const AI_GRADIENT =
   'linear-gradient(157.5deg, #1872E5 0.77%, #8C2EEA 31.5%, #E65325 62.3%, #EAAF09 93.9%)';
