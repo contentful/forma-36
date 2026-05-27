@@ -32,24 +32,13 @@ export const Basic: StoryObj<TagInternalProps> = {
   args: {
     label: 'Content type',
     variant: 'secondary',
+    badge: <Badge variant="secondary">Draft</Badge>,
   },
 };
 
 export const AllVariants: StoryObj<TagInternalProps> = {
   render: () => (
     <Flex flexDirection="column" gap="spacingL">
-      <Flex flexDirection="column" gap="spacingS">
-        <SectionHeading as="h3">
-          Variants without badge (same as PillNext — use PillNext directly if
-          you never need a badge)
-        </SectionHeading>
-        <Flex flexDirection="row" gap="spacingXs">
-          <Tag label="Secondary" variant="secondary" />
-          <Tag label="Primary" variant="primary" />
-          <Tag label="Warning" variant="warning" />
-          <Tag label="Negative" variant="negative" />
-        </Flex>
-      </Flex>
       <Flex flexDirection="column" gap="spacingS">
         <SectionHeading as="h3">Variants with badge</SectionHeading>
         <Flex flexDirection="row" gap="spacingXs">
@@ -101,53 +90,36 @@ export const AllVariants: StoryObj<TagInternalProps> = {
   ),
 };
 
-export const WithBadge: StoryObj<TagInternalProps> = {
-  render: (args) => (
-    <Flex flexDirection="column" gap="spacingL">
-      <Flex flexDirection="column" gap="spacingS">
-        <SectionHeading as="h3">Badge between label and remove</SectionHeading>
-        <Flex flexDirection="row" gap="spacingXs">
-          <Tag
-            label="Blog post"
-            variant="secondary"
-            badge={<Badge variant="secondary">Draft</Badge>}
-            onRemove={args.onRemove}
-          />
-          <Tag
-            label="Landing page"
-            variant="primary"
-            badge={<Badge variant="primary">Published</Badge>}
-            onRemove={args.onRemove}
-          />
-        </Flex>
-      </Flex>
-      <Flex flexDirection="column" gap="spacingS">
-        <SectionHeading as="h3">Badge without remove button</SectionHeading>
-        <Flex flexDirection="row" gap="spacingXs">
-          <Tag
-            label="Category"
-            variant="secondary"
-            badge={<Badge variant="secondary">3 items</Badge>}
-          />
-        </Flex>
-      </Flex>
-    </Flex>
-  ),
-  args: {
-    onRemove: action('remove'),
-  },
-};
-
 export const Removable: StoryObj<TagInternalProps> = {
   render: (args) => (
     <Flex flexDirection="column" gap="spacingL">
       <Flex flexDirection="column" gap="spacingS">
         <SectionHeading as="h3">With remove button</SectionHeading>
         <Flex flexDirection="row" gap="spacingXs">
-          <Tag label="Secondary" variant="secondary" onRemove={args.onRemove} />
-          <Tag label="Primary" variant="primary" onRemove={args.onRemove} />
-          <Tag label="Warning" variant="warning" onRemove={args.onRemove} />
-          <Tag label="Negative" variant="negative" onRemove={args.onRemove} />
+          <Tag
+            label="Secondary"
+            variant="secondary"
+            badge={<Badge variant="secondary">Draft</Badge>}
+            onRemove={args.onRemove}
+          />
+          <Tag
+            label="Primary"
+            variant="primary"
+            badge={<Badge variant="primary">Published</Badge>}
+            onRemove={args.onRemove}
+          />
+          <Tag
+            label="Warning"
+            variant="warning"
+            badge={<Badge variant="warning">Restricted</Badge>}
+            onRemove={args.onRemove}
+          />
+          <Tag
+            label="Negative"
+            variant="negative"
+            badge={<Badge variant="negative">Deleted</Badge>}
+            onRemove={args.onRemove}
+          />
         </Flex>
       </Flex>
       <Flex flexDirection="column" gap="spacingS">
@@ -156,12 +128,14 @@ export const Removable: StoryObj<TagInternalProps> = {
           <Tag
             label="Secondary"
             variant="secondary"
+            badge={<Badge variant="secondary">Draft</Badge>}
             onRemove={args.onRemove}
             isDisabled
           />
           <Tag
             label="Primary"
             variant="primary"
+            badge={<Badge variant="primary">Published</Badge>}
             onRemove={args.onRemove}
             isDisabled
           />
@@ -192,6 +166,7 @@ export const WithTooltip: StoryObj<TagInternalProps> = {
           label="Deleted tag"
           variant="negative"
           tooltipContent="This tag was deleted from the system"
+          badge={<Badge variant="negative">Removed</Badge>}
           onRemove={args.onRemove}
         />
       </Flex>

@@ -22,8 +22,8 @@ export type TagInternalProps = CommonProps & {
     CommonProps & WithEnhancedContent & TooltipInternalProps,
     'content' | 'children' | 'withTriggerWrapper'
   >;
-  /** Optional badge element rendered between label and end icon. */
-  badge?: React.ReactNode;
+  /** Badge element rendered between label and end icon. */
+  badge: React.ReactNode;
 };
 
 export type TagProps = TagInternalProps & {
@@ -42,7 +42,7 @@ export const Tag = React.forwardRef<HTMLDivElement, ExpandProps<TagProps>>(
 
     return (
       <PillNext ref={ref} testId={testId} {...pillProps}>
-        {badge && <span className={badgeStyle}>{badge}</span>}
+        <span className={badgeStyle}>{badge}</span>
       </PillNext>
     );
   },

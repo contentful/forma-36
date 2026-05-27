@@ -6,57 +6,58 @@ import { Tag } from './Tag';
 
 describe('Tag', () => {
   it('renders with label', () => {
-    render(<Tag label="Category" />);
+    render(<Tag label="Category" badge={<span>Draft</span>} />);
     expect(screen.getByText('Category')).toBeTruthy();
   });
 
   it('renders with custom test id', () => {
-    render(<Tag label="test" testId="custom-tag" />);
+    render(<Tag label="test" badge={<span>1</span>} testId="custom-tag" />);
     expect(screen.getByTestId('custom-tag')).toBeTruthy();
   });
 
   it('renders with additional class name', () => {
-    const { container } = render(<Tag label="test" className="my-class" />);
+    const { container } = render(
+      <Tag label="test" badge={<span>1</span>} className="my-class" />,
+    );
     expect(container.firstChild).toHaveClass('my-class');
   });
 
   describe('variants', () => {
     it('renders secondary variant by default', () => {
-      const { container } = render(<Tag label="test" />);
+      const { container } = render(
+        <Tag label="test" badge={<span>1</span>} />,
+      );
       expect(container.firstChild).toHaveStyle({
         backgroundColor: '#F7F9FA',
       });
     });
 
     it('renders primary variant', () => {
-      const { container } = render(<Tag label="test" variant="primary" />);
+      const { container } = render(
+        <Tag label="test" badge={<span>1</span>} variant="primary" />,
+      );
       expect(container.firstChild).toHaveStyle({
         backgroundColor: '#E8F5FF',
       });
     });
 
     it('renders warning variant with leading icon', () => {
-      render(<Tag label="test" variant="warning" />);
+      render(<Tag label="test" badge={<span>1</span>} variant="warning" />);
       const tag = screen.getByTestId('cf-ui-tag');
       expect(tag.querySelector('svg')).toBeTruthy();
     });
 
     it('renders negative variant with leading icon', () => {
-      render(<Tag label="test" variant="negative" />);
+      render(<Tag label="test" badge={<span>1</span>} variant="negative" />);
       const tag = screen.getByTestId('cf-ui-tag');
       expect(tag.querySelector('svg')).toBeTruthy();
     });
   });
 
   describe('badge', () => {
-    it('renders badge when provided', () => {
+    it('renders badge', () => {
       render(<Tag label="test" badge={<span>Draft</span>} />);
       expect(screen.getByText('Draft')).toBeTruthy();
-    });
-
-    it('does not render badge slot when not provided', () => {
-      const { container } = render(<Tag label="test" />);
-      expect(container.querySelector('[class*="badge"]')).toBeNull();
     });
 
     it('renders badge between label and remove button', () => {
@@ -77,37 +78,48 @@ describe('Tag', () => {
 
   describe('remove button', () => {
     it('renders remove button when onRemove is provided', () => {
-      render(<Tag label="test" onRemove={() => {}} />);
+      render(<Tag label="test" badge={<span>1</span>} onRemove={() => {}} />);
       expect(screen.getByRole('button', { name: 'Remove' })).toBeTruthy();
     });
 
     it('does not render remove button when onRemove is not provided', () => {
-      render(<Tag label="test" />);
+      render(<Tag label="test" badge={<span>1</span>} />);
       expect(screen.queryByRole('button')).toBeNull();
     });
 
     it('calls onRemove when remove button is clicked', () => {
       const mockOnRemove = jest.fn();
-      render(<Tag label="test" onRemove={mockOnRemove} />);
+      render(
+        <Tag label="test" badge={<span>1</span>} onRemove={mockOnRemove} />,
+      );
       fireEvent.click(screen.getByRole('button', { name: 'Remove' }));
       expect(mockOnRemove).toHaveBeenCalledTimes(1);
     });
 
     it('uses custom remove button label', () => {
       render(
-        <Tag label="test" onRemove={() => {}} removeButtonLabel="Delete tag" />,
+        <Tag
+          label="test"
+          badge={<span>1</span>}
+          onRemove={() => {}}
+          removeButtonLabel="Delete tag"
+        />,
       );
       expect(screen.getByRole('button', { name: 'Delete tag' })).toBeTruthy();
     });
 
     it('disables remove button when isDisabled is true', () => {
-      render(<Tag label="test" onRemove={() => {}} isDisabled />);
+      render(
+        <Tag label="test" badge={<span>1</span>} onRemove={() => {}} isDisabled />,
+      );
       expect(screen.getByRole('button', { name: 'Remove' })).toBeDisabled();
     });
 
     it('does not call onRemove when disabled', () => {
       const mockOnRemove = jest.fn();
-      render(<Tag label="test" onRemove={mockOnRemove} isDisabled />);
+      render(
+        <Tag label="test" badge={<span>1</span>} onRemove={mockOnRemove} isDisabled />,
+      );
       fireEvent.click(screen.getByRole('button', { name: 'Remove' }));
       expect(mockOnRemove).not.toHaveBeenCalled();
     });
@@ -116,7 +128,12 @@ describe('Tag', () => {
   describe('tooltip', () => {
     it('renders tooltip on leading icon when tooltipContent is provided', () => {
       render(
-        <Tag label="test" variant="warning" tooltipContent="Warning info" />,
+        <Tag
+          label="test"
+          badge={<span>1</span>}
+          variant="warning"
+          tooltipContent="Warning info"
+        />,
       );
       const tag = screen.getByTestId('cf-ui-tag');
       expect(tag.querySelector('svg')).toBeTruthy();
@@ -124,13 +141,15 @@ describe('Tag', () => {
   });
 
   describe('accessibility', () => {
-    it('has no a11y violations with label only', async () => {
-      const { container } = render(<Tag label="test" />);
+    it('has no a11y violations', async () => {
+      const { container } = render(
+        <Tag label="test" badge={<span>Draft</span>} />,
+      );
       const results = await axe(container);
       expect(results).toHaveNoViolations();
     });
 
-    it('has no a11y violations with badge and remove button', async () => {
+    it('has no a11y violations with remove button', async () => {
       const { container } = render(
         <Tag label="test" badge={<span>Draft</span>} onRemove={() => {}} />,
       );
@@ -140,7 +159,12 @@ describe('Tag', () => {
 
     it('has no a11y violations with disabled remove button', async () => {
       const { container } = render(
-        <Tag label="test" onRemove={() => {}} isDisabled />,
+        <Tag
+          label="test"
+          badge={<span>Draft</span>}
+          onRemove={() => {}}
+          isDisabled
+        />,
       );
       const results = await axe(container);
       expect(results).toHaveNoViolations();
