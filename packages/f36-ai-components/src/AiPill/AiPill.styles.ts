@@ -1,47 +1,44 @@
 import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 
-export function getAiPillStyles(hasRemoveButton: boolean) {
-  return {
-    pill: css({
-      display: 'inline-flex',
-      alignItems: 'center',
-      borderRadius: '16px',
-      height: '32px',
-      paddingTop: tokens.spacing2Xs,
-      paddingBottom: tokens.spacing2Xs,
-      paddingLeft: tokens.spacingS,
-      paddingRight: hasRemoveButton ? tokens.spacing2Xs : tokens.spacingS,
-      border: '1px solid #1872e5',
-      background:
-        'linear-gradient(157.5deg, rgba(24,114,229,0.05) 0.77%, rgba(140,46,234,0.05) 31.5%, rgba(230,83,37,0.05) 62.3%, rgba(234,175,9,0.05) 93.9%)',
-      fontFamily: tokens.fontStackPrimary,
-      boxSizing: 'border-box',
-    }),
-    label: css({
-      fontSize: tokens.fontSizeM,
-      fontWeight: tokens.fontWeightMedium,
-      lineHeight: tokens.lineHeightM,
-      whiteSpace: 'nowrap',
-      color: '#6c3ecf',
-    }),
-    removeButton: css({
-      '&&': {
-        width: '24px',
-        height: '24px',
-        minHeight: 'auto',
-        minWidth: 'auto',
-        padding: tokens.spacing2Xs,
-        borderRadius: '50%',
-        marginLeft: tokens.spacingXs,
-      },
-      '&&:hover:not(:disabled)': {
-        backgroundColor: tokens.gray300,
-      },
-      '&&:disabled': {
-        backgroundColor: 'transparent',
-        color: tokens.gray400,
-      },
-    }),
-  };
-}
+const AI_GRADIENT =
+  'linear-gradient(157.5deg, #1872E5 0.77%, #8C2EEA 31.5%, #E65325 62.3%, #EAAF09 93.9%)';
+
+const AI_BACKGROUND =
+  'linear-gradient(157.5deg, rgba(24,114,229,0.05) 0.77%, rgba(140,46,234,0.05) 31.5%, rgba(230,83,37,0.05) 62.3%, rgba(234,175,9,0.05) 93.9%)';
+
+export const aiPillOverrides = css({
+  '&&': {
+    position: 'relative',
+    border: 'none',
+    background: AI_BACKGROUND,
+  },
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    inset: 0,
+    borderRadius: '16px',
+    padding: '1px',
+    background: AI_GRADIENT,
+    WebkitMask:
+      'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+    WebkitMaskComposite: 'xor',
+    maskComposite: 'exclude',
+    pointerEvents: 'none',
+  },
+  // Label color
+  '& > span:first-of-type': {
+    color: '#6c3ecf',
+  },
+  // Remove button icon color + hover
+  '& button': {
+    color: '#6c3ecf',
+  },
+  '& button:hover:not(:disabled)': {
+    backgroundColor: tokens.gray300,
+    mixBlendMode: 'luminosity',
+  },
+  '& button:disabled': {
+    color: tokens.gray400,
+  },
+});
