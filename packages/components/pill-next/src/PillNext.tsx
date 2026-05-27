@@ -29,6 +29,8 @@ export type PillNextInternalProps = CommonProps & {
     CommonProps & WithEnhancedContent & TooltipInternalProps,
     'content' | 'children' | 'withTriggerWrapper'
   >;
+  /** Content rendered between label and remove button. */
+  children?: React.ReactNode;
 };
 
 export type PillNextProps = PropsWithHTMLElement<PillNextInternalProps, 'div'>;
@@ -60,6 +62,7 @@ export const PillNext = React.forwardRef<
     isDisabled = false,
     tooltipContent,
     tooltipProps,
+    children,
     testId = 'cf-ui-pill-next',
     className,
     ...otherProps
@@ -105,6 +108,8 @@ export const PillNext = React.forwardRef<
         ))}
 
       <span className={styles.label}>{label}</span>
+
+      {children}
 
       {onRemove && (
         <IconButton
