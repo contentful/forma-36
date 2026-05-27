@@ -14,6 +14,7 @@ export default function TagRemovableExample() {
       <Tag
         label="Restricted"
         variant="warning"
+        badge={<Badge variant="warning">Limited</Badge>}
         tooltipContent="This tag has restricted visibility"
         onRemove={() => console.log('removed')}
       />

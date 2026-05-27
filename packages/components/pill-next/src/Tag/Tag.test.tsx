@@ -24,9 +24,7 @@ describe('Tag', () => {
 
   describe('variants', () => {
     it('renders secondary variant by default', () => {
-      const { container } = render(
-        <Tag label="test" badge={<span>1</span>} />,
-      );
+      const { container } = render(<Tag label="test" badge={<span>1</span>} />);
       expect(container.firstChild).toHaveStyle({
         backgroundColor: '#F7F9FA',
       });
@@ -110,7 +108,12 @@ describe('Tag', () => {
 
     it('disables remove button when isDisabled is true', () => {
       render(
-        <Tag label="test" badge={<span>1</span>} onRemove={() => {}} isDisabled />,
+        <Tag
+          label="test"
+          badge={<span>1</span>}
+          onRemove={() => {}}
+          isDisabled
+        />,
       );
       expect(screen.getByRole('button', { name: 'Remove' })).toBeDisabled();
     });
@@ -118,7 +121,12 @@ describe('Tag', () => {
     it('does not call onRemove when disabled', () => {
       const mockOnRemove = jest.fn();
       render(
-        <Tag label="test" badge={<span>1</span>} onRemove={mockOnRemove} isDisabled />,
+        <Tag
+          label="test"
+          badge={<span>1</span>}
+          onRemove={mockOnRemove}
+          isDisabled
+        />,
       );
       fireEvent.click(screen.getByRole('button', { name: 'Remove' }));
       expect(mockOnRemove).not.toHaveBeenCalled();

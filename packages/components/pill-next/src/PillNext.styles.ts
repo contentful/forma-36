@@ -76,9 +76,8 @@ export function getPillNextStyles(
       '&&:hover:not(:disabled)': {
         backgroundColor: tokens.gray300,
       },
-      '&&:disabled': {
+      '&&:hover:disabled': {
         backgroundColor: 'transparent',
-        color: tokens.gray400,
       },
     }),
   };
