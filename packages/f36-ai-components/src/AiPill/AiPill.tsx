@@ -37,7 +37,7 @@ export const AiPill = React.forwardRef<HTMLDivElement, AiPillProps>(
         testId={testId}
         className={cx(aiPillOverrides, className)}
         removeButtonClassName={aiPillRemoveButton}
-        removeIconColor={isDisabled ? undefined : PURPLE_600}
+        removeIconColor={PURPLE_600}
         {...otherProps}
       />
     );
