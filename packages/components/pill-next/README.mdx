@@ -62,7 +62,7 @@ import { PillNext } from '@contentful/f36-pill-next';
 
 ## Tag
 
-`Tag` is a metadata-oriented pill with an additional badge slot. It composes the same visual base as PillNext and adds an optional badge qualifier between the label and end icon. Use Tag when a label needs supporting metadata; use PillNext when a single label is enough.
+`Tag` is a metadata-oriented pill with an additional badge slot. It composes the same visual base as PillNext and adds an optional badge qualifier between the label and end icon. Use Tag when a label needs supporting metadata; use PillNext when a single label is enough. A Tag without a badge is visually identical to PillNext — if you will never use the badge slot, prefer PillNext directly.
 
 ### Import
 
@@ -97,6 +97,8 @@ import { Tag } from '@contentful/f36-pill-next';
 ### Badge slot
 
 The `badge` prop accepts any React node. It is rendered between the label and the remove button. The spec does not prescribe a specific badge component — consumers supply the rendered element (e.g. `<Badge>` from `@contentful/f36-badge`).
+
+The badge variant does not have to correspond with the Tag variant — for example, a secondary Tag can contain a primary or warning badge to communicate independent status information.
 
 ### Accessibility
 

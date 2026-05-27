@@ -39,7 +39,10 @@ export const AllVariants: StoryObj<TagInternalProps> = {
   render: () => (
     <Flex flexDirection="column" gap="spacingL">
       <Flex flexDirection="column" gap="spacingS">
-        <SectionHeading as="h3">Variants without badge</SectionHeading>
+        <SectionHeading as="h3">
+          Variants without badge (same as PillNext — use PillNext directly if
+          you never need a badge)
+        </SectionHeading>
         <Flex flexDirection="row" gap="spacingXs">
           <Tag label="Secondary" variant="secondary" />
           <Tag label="Primary" variant="primary" />
@@ -69,6 +72,28 @@ export const AllVariants: StoryObj<TagInternalProps> = {
             label="Negative"
             variant="negative"
             badge={<Badge variant="negative">Deleted</Badge>}
+          />
+        </Flex>
+      </Flex>
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">
+          Badge variant does not have to match Tag variant
+        </SectionHeading>
+        <Flex flexDirection="row" gap="spacingXs">
+          <Tag
+            label="Blog post"
+            variant="secondary"
+            badge={<Badge variant="primary">Published</Badge>}
+          />
+          <Tag
+            label="API reference"
+            variant="primary"
+            badge={<Badge variant="warning">Review</Badge>}
+          />
+          <Tag
+            label="Migration guide"
+            variant="secondary"
+            badge={<Badge variant="negative">Outdated</Badge>}
           />
         </Flex>
       </Flex>
