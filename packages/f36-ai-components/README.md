@@ -31,10 +31,6 @@ import { AiPill } from '@contentful/f36-ai-components';
 | `className`         | `string`     | —                 | Additional class name for the pill  |
 | `testId`            | `string`     | `"cf-ui-ai-pill"` | Test ID for the root element        |
 
-### Visual treatment
+### When to use AiPill vs PillNext
 
-- Gradient border (AI Gradient/Default) via CSS mask technique
-- Gradient background (AI Gradient/Shimmer at 5% opacity)
-- Purple/600 (`#6c3ecf`) label and remove icon color
-- Purple/200 (`#EDE3FF`) hover background on remove button
-- Disabled state keeps the purple icon
+Use `AiPill` for content that was generated or suggested by AI — it communicates to users that the item originates from an AI system. Use `PillNext` for user-created or system-defined metadata where the AI distinction is not relevant.

@@ -1,10 +1,9 @@
 import React from 'react';
 import { cx } from '@emotion/css';
 import type { CommonProps } from '@contentful/f36-core';
+import tokens from '@contentful/f36-tokens';
 import { PillNext } from '@contentful/f36-pill-next';
 import { aiPillOverrides, aiPillRemoveButton } from './AiPill.styles';
-
-const PURPLE_600 = '#6c3ecf';
 
 export interface AiPillProps extends CommonProps {
   label: string;
@@ -37,7 +36,7 @@ export const AiPill = React.forwardRef<HTMLDivElement, AiPillProps>(
         testId={testId}
         className={cx(aiPillOverrides, className)}
         removeButtonClassName={aiPillRemoveButton}
-        removeIconColor={PURPLE_600}
+        removeIconColor={tokens.purple600}
         {...otherProps}
       />
     );

@@ -1,4 +1,5 @@
 import { css } from '@emotion/css';
+import tokens from '@contentful/f36-tokens';
 
 const AI_GRADIENT =
   'linear-gradient(157.5deg, #1872E5 0.77%, #8C2EEA 31.5%, #E65325 62.3%, #EAAF09 93.9%)';
@@ -19,19 +20,17 @@ export const aiPillOverrides = css({
     borderRadius: '16px',
     padding: '1px',
     background: AI_GRADIENT,
-    WebkitMask:
-      'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-    WebkitMaskComposite: 'xor',
+    mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
     maskComposite: 'exclude',
     pointerEvents: 'none',
   },
   '& > span:first-of-type': {
-    color: '#6c3ecf',
+    color: tokens.purple600,
   },
 });
 
 export const aiPillRemoveButton = css({
   '&&&:hover:not(:disabled)': {
-    backgroundColor: '#EDE3FF',
+    backgroundColor: tokens.purple200,
   },
 });
