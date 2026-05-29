@@ -31,6 +31,10 @@ export type PillNextInternalProps = CommonProps & {
   >;
   /** Content rendered between label and remove button. */
   children?: React.ReactNode;
+  /** Additional className applied to the remove button. */
+  removeButtonClassName?: string;
+  /** Color of the remove icon. Defaults to currentColor (inherits from button). */
+  removeIconColor?: string;
 };
 
 export type PillNextProps = PropsWithHTMLElement<PillNextInternalProps, 'div'>;
@@ -63,6 +67,8 @@ export const PillNext = React.forwardRef<
     tooltipContent,
     tooltipProps,
     children,
+    removeButtonClassName,
+    removeIconColor,
     testId = 'cf-ui-pill-next',
     className,
     ...otherProps
@@ -115,11 +121,11 @@ export const PillNext = React.forwardRef<
         <IconButton
           variant="transparent"
           size="small"
-          icon={<XIcon size="small" />}
+          icon={<XIcon size="small" color={removeIconColor} />}
           aria-label={removeButtonLabel}
           onClick={onRemove}
           isDisabled={isDisabled}
-          className={styles.removeButton}
+          className={cx(styles.removeButton, removeButtonClassName)}
         />
       )}
     </div>

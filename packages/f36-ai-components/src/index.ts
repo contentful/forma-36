@@ -30,3 +30,5 @@ export * from './AIChatSidePanel';
 export * from './AIChatSuggestionPill';
 
 export * from './Slider';
+
+export * from './AiPill';
