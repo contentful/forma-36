@@ -13,15 +13,9 @@ figma.connect(Menu.Item, FIGMA_URL, {
       true: figma.instance('Start icon'),
       false: undefined,
     }),
-    shortcut: figma.boolean('Show hint', {
-      true: figma.string('Hint label'),
-      false: undefined,
-    }),
   },
-  example: ({ children, icon, shortcut }) => (
-    <Menu.Item icon={icon} label={shortcut}>
-      {children}
-    </Menu.Item>
+  example: ({ children, icon }) => (
+    <Menu.Item icon={icon}>{children}</Menu.Item>
   ),
 });
 
@@ -33,13 +27,9 @@ figma.connect(Menu.Item, FIGMA_URL, {
       true: figma.instance('Start icon'),
       false: undefined,
     }),
-    shortcut: figma.boolean('Show hint', {
-      true: figma.string('Hint label'),
-      false: undefined,
-    }),
   },
-  example: ({ children, icon, shortcut }) => (
-    <Menu.Item icon={icon} isDisabled label={shortcut}>
+  example: ({ children, icon }) => (
+    <Menu.Item icon={icon} isDisabled>
       {children}
     </Menu.Item>
   ),
@@ -53,13 +43,9 @@ figma.connect(Menu.Item, FIGMA_URL, {
       true: figma.instance('Start icon'),
       false: undefined,
     }),
-    shortcut: figma.boolean('Show hint', {
-      true: figma.string('Hint label'),
-      false: undefined,
-    }),
   },
-  example: ({ children, icon, shortcut }) => (
-    <Menu.Item icon={icon} className="destructive" label={shortcut}>
+  example: ({ children, icon }) => (
+    <Menu.Item icon={icon} className="destructive">
       {children}
     </Menu.Item>
   ),
@@ -73,13 +59,9 @@ figma.connect(Menu.Item, FIGMA_URL, {
       true: figma.instance('Start icon'),
       false: undefined,
     }),
-    shortcut: figma.boolean('Show hint', {
-      true: figma.string('Hint label'),
-      false: undefined,
-    }),
   },
-  example: ({ children, icon, shortcut }) => (
-    <Menu.Item icon={icon} isDisabled className="destructive" label={shortcut}>
+  example: ({ children, icon }) => (
+    <Menu.Item icon={icon} isDisabled className="destructive">
       {children}
     </Menu.Item>
   ),

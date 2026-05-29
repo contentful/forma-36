@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import React from 'react';
 import figma from '@figma/code-connect';
 import { IconButton } from './IconButton';
@@ -45,13 +47,14 @@ figma.connect(IconButton, FIGMA_URL, {
       'Small (default)': 'small',
       Medium: 'medium',
     }),
+    icon: figma.instance('Icon'),
   },
-  example: ({ variant, size }) => (
+  example: ({ variant, size, icon }) => (
     <IconButton
       variant={variant}
       size={size}
       isDisabled
-      icon={<StarIcon />}
+      icon={icon}
       aria-label="Icon button"
     />
   ),

@@ -1,6 +1,7 @@
 import React from 'react';
 import figma from '@figma/code-connect';
 import { Tooltip } from './Tooltip';
+import { Button } from '@contentful/f36-button';
 
 figma.connect(
   Tooltip,
