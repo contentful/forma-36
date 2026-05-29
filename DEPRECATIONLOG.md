@@ -6,16 +6,14 @@ This log tracks all deprecated features and components in Forma 36. For details 
 
 ## Active Deprecations
 
-### Component Name / Feature Name
+### Pill (`@contentful/f36-pill`)
 
-<!-- Format example ---
-- **Deprecated**: YYYY-MM-DD
-- **Deprecated In**: v5.x.x
-- **Removal Planned**: next Major
-- **Reason**: [Brief explanation - e.g., "Replaced by improved component with better accessibility"]
-- **Migration**: Use `NewComponent` instead
-- **Guide**: [Migration documentation link]
--->
+- **Deprecated**: 2026-05-21
+- **Deprecated In**: v6.x.x
+- **Removal Planned**: next Major (v7)
+- **Reason**: Replaced by `PillNext` from `@contentful/f36-pill-next` with improved variant support, accessibility, and alignment with the refreshed design system
+- **Migration**: Use `PillNext` from `@contentful/f36-pill-next` instead
+- **Guide**: [Migration documentation](./packages/components/pill/MIGRATION.md)
 
 ---
 

@@ -1,0 +1,105 @@
+---
+title: 'PillNext'
+type: 'component'
+status: 'alpha'
+slug: /components/pill-next/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/pill-next'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-pillnext--basic'
+typescript: ./src/PillNext.tsx
+---
+
+`PillNext` is a refreshed pill component for communicating category or metadata in a compact format. It supports four visual variants, an optional leading icon with tooltip, and an optional removable end icon.
+
+> **Alpha:** This component is in alpha. Props may change before promotion to stable.
+
+## Import
+
+```js static=true
+import { PillNext } from '@contentful/f36-pill-next';
+```
+
+## Examples
+
+### Variants
+
+```jsx file=./examples/PillNextVariantsExample.tsx
+
+```
+
+### Removable
+
+```jsx file=./examples/PillNextRemovableExample.tsx
+
+```
+
+### Warning and negative with tooltip
+
+```jsx file=./examples/PillNextWarningExample.tsx
+
+```
+
+## Props (API reference)
+
+<PropsTable of="PillNext" />
+
+## Variants
+
+| Variant   | Use case                                             |
+| --------- | ---------------------------------------------------- |
+| secondary | Default. General-purpose category or metadata label. |
+| primary   | Highlighted or active selection.                     |
+| warning   | Restricted access or limited visibility.             |
+| negative  | Deleted or errored state.                            |
+
+## Accessibility
+
+- The remove button is the only focusable element by default. Tab focuses it; Enter/Space triggers removal.
+- When `tooltipContent` is provided, the leading icon becomes keyboard-focusable so screen reader and keyboard users can access the explanation.
+- When disabled, the remove button is removed from tab order and does not fire events.
+- PillNext does not truncate labels. The pill expands horizontally to accommodate the full text.
+
+---
+
+## Tag
+
+`Tag` is a metadata-oriented pill with a required badge slot. It composes the same visual base as PillNext and adds a badge qualifier between the label and end icon. Use Tag when a label needs supporting metadata; use PillNext when a single label is enough.
+
+### Import
+
+```js static=true
+import { Tag } from '@contentful/f36-pill-next';
+```
+
+### Examples
+
+#### Basic variants
+
+```jsx file=./examples/TagBasicExample.tsx
+
+```
+
+#### With badge
+
+```jsx file=./examples/TagWithBadgeExample.tsx
+
+```
+
+#### Removable with badge and tooltip
+
+```jsx file=./examples/TagRemovableExample.tsx
+
+```
+
+### Props (API reference)
+
+<PropsTable of="Tag" />
+
+### Badge slot
+
+The `badge` prop is required and accepts any React node. It is rendered between the label and the remove button. The spec does not prescribe a specific badge component — consumers supply the rendered element (e.g. `<Badge>` from `@contentful/f36-badge`).
+
+The badge variant does not have to correspond with the Tag variant — for example, a secondary Tag can contain a primary or warning badge to communicate independent status information.
+
+### Accessibility
+
+Tag inherits all accessibility behaviour from PillNext. The badge is rendered inline and visible to screen readers as part of the pill's content.
