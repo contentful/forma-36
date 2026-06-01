@@ -29,8 +29,28 @@ export const aiPillOverrides = css({
   },
 });
 
-export const aiPillRemoveButton = css({
-  '&&&:hover:not(:disabled)': {
+export const aiPillWithAction = css({
+  '&&': {
+    paddingRight: tokens.spacing2Xs,
+  },
+});
+
+export const aiPillActionButton = css({
+  all: 'unset',
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '24px',
+  height: '24px',
+  borderRadius: '50%',
+  cursor: 'pointer',
+  flexShrink: 0,
+  marginLeft: tokens.spacingXs,
+  '&:hover:not(:disabled)': {
     backgroundColor: tokens.purple200,
+  },
+  '&:disabled': {
+    cursor: 'not-allowed',
+    opacity: 0.5,
   },
 });
