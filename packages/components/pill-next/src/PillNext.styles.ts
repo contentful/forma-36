@@ -36,7 +36,8 @@ export function getPillNextStyles(
       alignItems: 'center',
       // TODO: replace with border-radius token when new tokens ship in next major
       borderRadius: '16px',
-      height: '32px',
+      minHeight: '32px',
+      maxWidth: '100%',
       paddingTop: tokens.spacing2Xs,
       paddingBottom: tokens.spacing2Xs,
       paddingLeft: tokens.spacingS,
@@ -60,7 +61,7 @@ export function getPillNextStyles(
       fontSize: tokens.fontSizeM,
       fontWeight: tokens.fontWeightMedium,
       lineHeight: tokens.lineHeightM,
-      whiteSpace: 'nowrap',
+      wordBreak: 'break-word',
     }),
     removeButton: css({
       '&&': {
