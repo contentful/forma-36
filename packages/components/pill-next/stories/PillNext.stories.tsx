@@ -186,7 +186,14 @@ export const LongLabels: StoryObj<PillNextInternalProps> = {
           />
           <PillNext
             label="fefhjejhfehufheuhfuehfuewdwhudhwuhduwhduehfuheufheufheuf euhfuehfuheufhuehfuheufheufhuehfuheufheufheuhf"
-            variant="primary"
+            variant="warning"
+            tooltipContent="This tag has restricted visibility"
+            onRemove={args.onRemove}
+          />
+          <PillNext
+            label="Negative variant with a long label that wraps to verify leading icon alignment with the remove button"
+            variant="negative"
+            tooltipContent="This tag was deleted"
             onRemove={args.onRemove}
           />
           <PillNext
