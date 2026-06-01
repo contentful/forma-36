@@ -1,6 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
+import { PlusIcon, XIcon } from '@contentful/f36-icons';
 
 import { AiPill } from './AiPill';
 
@@ -20,53 +21,90 @@ describe('AiPill', () => {
     expect(container.firstChild).toHaveClass('my-class');
   });
 
-  it('renders gradient background', () => {
-    const { container } = render(<AiPill label="test" />);
-    const pill = container.firstChild as HTMLElement;
-    expect(pill.style || pill.className).toBeTruthy();
+  it('does not render action button when no actionIcon is provided', () => {
+    render(<AiPill label="test" />);
+    expect(screen.queryByRole('button')).toBeNull();
   });
 
-  describe('remove button', () => {
-    it('renders remove button when onRemove is provided', () => {
-      render(<AiPill label="test" onRemove={() => {}} />);
-      expect(screen.getByRole('button', { name: 'Remove' })).toBeTruthy();
-    });
-
-    it('does not render remove button when onRemove is not provided', () => {
-      render(<AiPill label="test" />);
-      expect(screen.queryByRole('button')).toBeNull();
-    });
-
-    it('calls onRemove when remove button is clicked', () => {
-      const mockOnRemove = jest.fn();
-      render(<AiPill label="test" onRemove={mockOnRemove} />);
-      fireEvent.click(screen.getByRole('button', { name: 'Remove' }));
-      expect(mockOnRemove).toHaveBeenCalledTimes(1);
-    });
-
-    it('uses custom remove button label', () => {
+  describe('action button', () => {
+    it('renders action button when actionIcon is provided', () => {
       render(
         <AiPill
           label="test"
-          onRemove={() => {}}
-          removeButtonLabel="Delete suggestion"
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Remove"
+        />,
+      );
+      expect(screen.getByRole('button', { name: 'Remove' })).toBeTruthy();
+    });
+
+    it('calls onAction when action button is clicked', () => {
+      const mockOnAction = jest.fn();
+      render(
+        <AiPill
+          label="test"
+          actionIcon={<XIcon />}
+          onAction={mockOnAction}
+          actionButtonLabel="Remove"
+        />,
+      );
+      fireEvent.click(screen.getByRole('button', { name: 'Remove' }));
+      expect(mockOnAction).toHaveBeenCalledTimes(1);
+    });
+
+    it('uses custom action button label', () => {
+      render(
+        <AiPill
+          label="test"
+          actionIcon={<PlusIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Add suggestion"
         />,
       );
       expect(
-        screen.getByRole('button', { name: 'Delete suggestion' }),
+        screen.getByRole('button', { name: 'Add suggestion' }),
       ).toBeTruthy();
     });
 
-    it('disables remove button when isDisabled is true', () => {
-      render(<AiPill label="test" onRemove={() => {}} isDisabled />);
+    it('disables action button when isDisabled is true', () => {
+      render(
+        <AiPill
+          label="test"
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Remove"
+          isDisabled
+        />,
+      );
       expect(screen.getByRole('button', { name: 'Remove' })).toBeDisabled();
     });
 
-    it('does not call onRemove when disabled', () => {
-      const mockOnRemove = jest.fn();
-      render(<AiPill label="test" onRemove={mockOnRemove} isDisabled />);
+    it('does not call onAction when disabled', () => {
+      const mockOnAction = jest.fn();
+      render(
+        <AiPill
+          label="test"
+          actionIcon={<XIcon />}
+          onAction={mockOnAction}
+          actionButtonLabel="Remove"
+          isDisabled
+        />,
+      );
       fireEvent.click(screen.getByRole('button', { name: 'Remove' }));
-      expect(mockOnRemove).not.toHaveBeenCalled();
+      expect(mockOnAction).not.toHaveBeenCalled();
+    });
+
+    it('works with any icon (PlusIcon)', () => {
+      render(
+        <AiPill
+          label="test"
+          actionIcon={<PlusIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Add"
+        />,
+      );
+      expect(screen.getByRole('button', { name: 'Add' })).toBeTruthy();
     });
   });
 
@@ -77,15 +115,28 @@ describe('AiPill', () => {
       expect(results).toHaveNoViolations();
     });
 
-    it('has no a11y violations with remove button', async () => {
-      const { container } = render(<AiPill label="test" onRemove={() => {}} />);
+    it('has no a11y violations with action button', async () => {
+      const { container } = render(
+        <AiPill
+          label="test"
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Remove"
+        />,
+      );
       const results = await axe(container);
       expect(results).toHaveNoViolations();
     });
 
-    it('has no a11y violations with disabled remove button', async () => {
+    it('has no a11y violations with disabled action button', async () => {
       const { container } = render(
-        <AiPill label="test" onRemove={() => {}} isDisabled />,
+        <AiPill
+          label="test"
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Remove"
+          isDisabled
+        />,
       );
       const results = await axe(container);
       expect(results).toHaveNoViolations();

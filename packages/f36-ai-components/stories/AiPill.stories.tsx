@@ -3,6 +3,7 @@ import type { StoryObj, Meta } from '@storybook/react-vite';
 import { SectionHeading } from '@contentful/f36-typography';
 import { action } from 'storybook/actions';
 import { Flex } from '@contentful/f36-core';
+import { PlusIcon, XIcon } from '@contentful/f36-icons';
 
 import { AiPill } from '../src/AiPill';
 import type { AiPillProps } from '../src/AiPill';
@@ -25,36 +26,105 @@ export const Basic: StoryObj<AiPillProps> = {
   },
 };
 
-export const Removable: StoryObj<AiPillProps> = {
-  render: (args) => (
+export const WithRemoveIcon: StoryObj<AiPillProps> = {
+  render: () => (
     <Flex flexDirection="column" gap="spacingL">
       <Flex flexDirection="column" gap="spacingS">
-        <SectionHeading as="h3">With remove button</SectionHeading>
-        <Flex flexDirection="row" gap="spacingXs">
-          <AiPill label="Machine learning" onRemove={args.onRemove} />
-          <AiPill label="Data science" onRemove={args.onRemove} />
-          <AiPill label="Neural networks" onRemove={args.onRemove} />
-        </Flex>
-      </Flex>
-      <Flex flexDirection="column" gap="spacingS">
-        <SectionHeading as="h3">Disabled remove button</SectionHeading>
+        <SectionHeading as="h3">Dismiss action (XIcon)</SectionHeading>
         <Flex flexDirection="row" gap="spacingXs">
           <AiPill
             label="Machine learning"
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('dismiss')}
+            actionButtonLabel="Dismiss Machine learning"
+          />
+          <AiPill
+            label="Data science"
+            actionIcon={<XIcon />}
+            onAction={action('dismiss')}
+            actionButtonLabel="Dismiss Data science"
+          />
+          <AiPill
+            label="Neural networks"
+            actionIcon={<XIcon />}
+            onAction={action('dismiss')}
+            actionButtonLabel="Dismiss Neural networks"
+          />
+        </Flex>
+      </Flex>
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">Disabled</SectionHeading>
+        <Flex flexDirection="row" gap="spacingXs">
+          <AiPill
+            label="Machine learning"
+            actionIcon={<XIcon />}
+            onAction={action('dismiss')}
+            actionButtonLabel="Dismiss"
             isDisabled
           />
-          <AiPill label="Data science" onRemove={args.onRemove} isDisabled />
+          <AiPill
+            label="Data science"
+            actionIcon={<XIcon />}
+            onAction={action('dismiss')}
+            actionButtonLabel="Dismiss"
+            isDisabled
+          />
         </Flex>
       </Flex>
     </Flex>
   ),
-  args: {
-    onRemove: action('remove'),
-  },
 };
 
-export const WithoutRemove: StoryObj<AiPillProps> = {
+export const WithAddIcon: StoryObj<AiPillProps> = {
+  render: () => (
+    <Flex flexDirection="column" gap="spacingL">
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">Add action (PlusIcon)</SectionHeading>
+        <Flex flexDirection="row" gap="spacingXs">
+          <AiPill
+            label="Machine learning"
+            actionIcon={<PlusIcon />}
+            onAction={action('add')}
+            actionButtonLabel="Add Machine learning suggestion"
+          />
+          <AiPill
+            label="Data science"
+            actionIcon={<PlusIcon />}
+            onAction={action('add')}
+            actionButtonLabel="Add Data science suggestion"
+          />
+          <AiPill
+            label="Neural networks"
+            actionIcon={<PlusIcon />}
+            onAction={action('add')}
+            actionButtonLabel="Add Neural networks suggestion"
+          />
+        </Flex>
+      </Flex>
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">Disabled</SectionHeading>
+        <Flex flexDirection="row" gap="spacingXs">
+          <AiPill
+            label="Machine learning"
+            actionIcon={<PlusIcon />}
+            onAction={action('add')}
+            actionButtonLabel="Add suggestion"
+            isDisabled
+          />
+          <AiPill
+            label="Data science"
+            actionIcon={<PlusIcon />}
+            onAction={action('add')}
+            actionButtonLabel="Add suggestion"
+            isDisabled
+          />
+        </Flex>
+      </Flex>
+    </Flex>
+  ),
+};
+
+export const WithoutAction: StoryObj<AiPillProps> = {
   render: () => (
     <Flex flexDirection="row" gap="spacingXs">
       <AiPill label="Suggested category" />
