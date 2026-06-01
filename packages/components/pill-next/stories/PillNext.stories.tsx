@@ -148,17 +148,57 @@ export const LongLabels: StoryObj<PillNextInternalProps> = {
     <Flex flexDirection="column" gap="spacingL">
       <Flex flexDirection="column" gap="spacingS">
         <SectionHeading as="h3">
-          Very long labels (pill expands, border-radius stays 16px)
+          Wide container — long pill fits on one line
         </SectionHeading>
-        <Flex flexDirection="column" alignItems="flex-start" gap="spacingXs">
+        <Flex
+          flexDirection="column"
+          alignItems="flex-start"
+          gap="spacingXs"
+          style={{ width: '800px', border: '1px dashed #ccc', padding: '16px' }}
+        >
           <PillNext
-            label="fefhjejhfehufheuhfuehfuewdwhudhwuhduwhduehfuheufheufheuf"
+            label="Vewkjsdhfkjsdhf kdsjhfdskjfhdskjfhdskjfhdskjfh sdkfjhsdkfh sdkfjhsdkfjh sdkfjhsdkfjh sdkfjhsdkfjh"
             variant="secondary"
             onRemove={args.onRemove}
           />
           <PillNext
-            label="This is an extremely long label that demonstrates the pill expanding to accommodate text without breaking the border radius"
-            variant="primary"
+            label="Short label"
+            variant="secondary"
+            onRemove={args.onRemove}
+          />
+        </Flex>
+      </Flex>
+
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">
+          Narrower container — long pill wraps to two lines
+        </SectionHeading>
+        <Flex
+          flexDirection="column"
+          alignItems="flex-start"
+          gap="spacingXs"
+          style={{ width: '550px', border: '1px dashed #ccc', padding: '16px' }}
+        >
+          <PillNext
+            label="Vewkjsdhfkjsdhf kdsjhfdskjfhdskjfhdskjfhdskjfh sdkfjhsdkfh sdkfjhsdkfjh sdkfjhsdkfjh sdkfjhsdkfjh"
+            variant="secondary"
+            onRemove={args.onRemove}
+          />
+          <PillNext
+            label="fefhjejhfehufheuhfuehfuewdwhudhwuhduwhduehfuheufheufheuf euhfuehfuheufhuehfuheufheufhuehfuheufheufheuhf"
+            variant="warning"
+            tooltipContent="This tag has restricted visibility"
+            onRemove={args.onRemove}
+          />
+          <PillNext
+            label="Negative variant with a long label that wraps to verify leading icon alignment with the remove button"
+            variant="negative"
+            tooltipContent="This tag was deleted"
+            onRemove={args.onRemove}
+          />
+          <PillNext
+            label="Short label"
+            variant="secondary"
             onRemove={args.onRemove}
           />
         </Flex>
