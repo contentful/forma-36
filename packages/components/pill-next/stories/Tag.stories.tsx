@@ -148,6 +148,72 @@ export const Removable: StoryObj<TagInternalProps> = {
   },
 };
 
+export const LongLabels: StoryObj<TagInternalProps> = {
+  render: (args) => (
+    <Flex flexDirection="column" gap="spacingL">
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">
+          Wide container — long tag fits on one line
+        </SectionHeading>
+        <Flex
+          flexDirection="column"
+          alignItems="flex-start"
+          gap="spacingXs"
+          style={{ width: '800px', border: '1px dashed #ccc', padding: '16px' }}
+        >
+          <Tag
+            label="Vewkjsdhfkjsdhf kdsjhfdskjfhdskjfhdskjfhdskjfh sdkfjhsdkfh sdkfjhsdkfjh sdkfjhsdkfjh"
+            variant="secondary"
+            badge={<Badge variant="secondary">Private</Badge>}
+            onRemove={args.onRemove}
+          />
+          <Tag
+            label="Short label"
+            variant="secondary"
+            badge={<Badge variant="secondary">Private</Badge>}
+            onRemove={args.onRemove}
+          />
+        </Flex>
+      </Flex>
+
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">
+          Narrower container — long tag wraps to multiple lines
+        </SectionHeading>
+        <Flex
+          flexDirection="column"
+          alignItems="flex-start"
+          gap="spacingXs"
+          style={{ width: '550px', border: '1px dashed #ccc', padding: '16px' }}
+        >
+          <Tag
+            label="Vewkjsdhfkjsdhf kdsjhfdskjfhdskjfhdskjfhdskjfh sdkfjhsdkfh sdkfjhsdkfjh sdkfjhsdkfjh sdkfjhsdkfjh"
+            variant="secondary"
+            badge={<Badge variant="secondary">Private</Badge>}
+            onRemove={args.onRemove}
+          />
+          <Tag
+            label="fefhjejhfehufheuhfuehfuewdwhudhwuhduwhduehfuheufheufheuf euhfuehfuheufhuehfuheufheufhuehfuheufheufheuhf"
+            variant="warning"
+            tooltipContent="This tag has restricted visibility"
+            badge={<Badge variant="warning">Restricted</Badge>}
+            onRemove={args.onRemove}
+          />
+          <Tag
+            label="Short label"
+            variant="secondary"
+            badge={<Badge variant="primary">Public</Badge>}
+            onRemove={args.onRemove}
+          />
+        </Flex>
+      </Flex>
+    </Flex>
+  ),
+  args: {
+    onRemove: action('remove'),
+  },
+};
+
 export const WithTooltip: StoryObj<TagInternalProps> = {
   render: (args) => (
     <Flex flexDirection="column" gap="spacingS">

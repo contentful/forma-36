@@ -33,6 +33,7 @@ export type TagProps = TagInternalProps & {
 const badgeStyle = css({
   display: 'inline-flex',
   alignItems: 'center',
+  alignSelf: 'center',
   marginLeft: tokens.spacing2Xs,
 });
 

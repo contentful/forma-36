@@ -36,7 +36,6 @@ export function getPillNextStyles(
       alignItems: 'center',
       // TODO: replace with border-radius token when new tokens ship in next major
       borderRadius: '16px',
-      minHeight: '32px',
       maxWidth: '100%',
       paddingTop: tokens.spacing2Xs,
       paddingBottom: tokens.spacing2Xs,
@@ -50,6 +49,7 @@ export function getPillNextStyles(
     leadingIconWrapper: css({
       display: 'inline-flex',
       alignItems: 'center',
+      alignSelf: 'center',
       flexShrink: 0,
       marginRight: tokens.spacing2Xs,
     }),
@@ -72,6 +72,9 @@ export function getPillNextStyles(
         padding: tokens.spacing2Xs,
         borderRadius: '50%',
         marginLeft: tokens.spacingXs,
+        marginTop: '-2px',
+        marginBottom: '-2px',
+        alignSelf: 'center',
         mixBlendMode: 'luminosity',
       },
       '&&:hover:not(:disabled)': {
