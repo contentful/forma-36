@@ -37,6 +37,7 @@ export function getPillNextStyles(
       // TODO: replace with border-radius token when new tokens ship in next major
       borderRadius: '16px',
       minHeight: '32px',
+      minWidth: 0,
       maxWidth: '100%',
       paddingTop: tokens.spacing2Xs,
       paddingBottom: tokens.spacing2Xs,
