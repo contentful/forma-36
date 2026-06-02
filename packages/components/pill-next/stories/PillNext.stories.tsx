@@ -203,6 +203,34 @@ export const LongLabels: StoryObj<PillNextInternalProps> = {
           />
         </Flex>
       </Flex>
+
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">
+          Row flex-wrap container — pills should wrap text, not overflow
+        </SectionHeading>
+        <Flex
+          flexDirection="row"
+          flexWrap="wrap"
+          gap="spacingXs"
+          style={{ width: '550px', border: '1px dashed #ccc', padding: '16px' }}
+        >
+          <PillNext
+            label="Short label"
+            variant="secondary"
+            onRemove={args.onRemove}
+          />
+          <PillNext
+            label="Vewkjsdhfkjsdhf kdsjhfdskjfhdskjfhdskjfhdskjfh sdkfjhsdkfh sdkfjhsdkfjh sdkfjhsdkfjh sdkfjhsdkfjh"
+            variant="secondary"
+            onRemove={args.onRemove}
+          />
+          <PillNext
+            label="Another short one"
+            variant="primary"
+            onRemove={args.onRemove}
+          />
+        </Flex>
+      </Flex>
     </Flex>
   ),
   args: {
