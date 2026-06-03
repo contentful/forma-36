@@ -24,8 +24,8 @@ export const CardActions = ({
     <Menu>
       <Menu.Trigger>
         <IconButton
-          {...buttonProps}
           aria-label="Actions"
+          {...buttonProps}
           icon={<DotsThreeIcon />}
           className={cx(styles.root, buttonProps?.className)}
           size="small"
