@@ -1,5 +1,17 @@
 # @contentful/f36-usage-card
 
+## 6.9.1
+
+### Patch Changes
+
+- Updated dependencies [[`71768b8`](https://github.com/contentful/forma-36/commit/71768b8db6f1aeeb3576e8d2f48ba4079f806730)]:
+  - @contentful/f36-card@6.9.1
+  - @contentful/f36-core@6.9.1
+  - @contentful/f36-icons@6.9.1
+  - @contentful/f36-text-link@6.9.1
+  - @contentful/f36-tooltip@6.9.1
+  - @contentful/f36-typography@6.9.1
+
 ## 6.9.0
 
 ### Patch Changes

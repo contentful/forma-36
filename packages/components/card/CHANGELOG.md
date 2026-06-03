@@ -1,5 +1,24 @@
 # Change Log
 
+## 6.9.1
+
+### Patch Changes
+
+- [#3424](https://github.com/contentful/forma-36/pull/3424) [`71768b8`](https://github.com/contentful/forma-36/commit/71768b8db6f1aeeb3576e8d2f48ba4079f806730) Thanks [@Lelith](https://github.com/Lelith)! - Fixes the versioning of the released packages
+
+- Updated dependencies []:
+  - @contentful/f36-asset@6.9.1
+  - @contentful/f36-badge@6.9.1
+  - @contentful/f36-button@6.9.1
+  - @contentful/f36-core@6.9.1
+  - @contentful/f36-drag-handle@6.9.1
+  - @contentful/f36-icon@6.9.1
+  - @contentful/f36-icons@6.9.1
+  - @contentful/f36-menu@6.9.1
+  - @contentful/f36-skeleton@6.9.1
+  - @contentful/f36-tooltip@6.9.1
+  - @contentful/f36-typography@6.9.1
+
 ## 6.9.0
 
 ### Patch Changes
