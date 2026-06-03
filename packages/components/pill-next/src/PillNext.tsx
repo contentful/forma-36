@@ -134,10 +134,7 @@ export const PillNext = React.forwardRef<
         <IconButton
           variant="transparent"
           size="small"
-          icon={React.cloneElement(
-            actionIcon as React.ReactElement<{ size?: string }>,
-            { size: 'small' },
-          )}
+          icon={actionIcon}
           aria-label={actionButtonLabel}
           onClick={onAction}
           isDisabled={isDisabled}
