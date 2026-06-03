@@ -4,19 +4,20 @@ import { AIChatInput } from './AIChatInput';
 import { Editor } from '@tiptap/react';
 import { Box } from '@contentful/f36-core';
 
+const mockEditor = {
+  chain: () => ({ focus: () => ({ run: jest.fn() }) }),
+  getHTML: jest.fn(() => ''),
+  commands: {},
+  isEditable: true,
+  isDestroyed: false,
+};
+
 jest.mock('@tiptap/react', () => {
   const actual = jest.requireActual('@tiptap/react');
-  const mockEditor = {
-    chain: () => ({ focus: () => ({ run: jest.fn() }) }),
-    getHTML: jest.fn(() => ''),
-    commands: {},
-    isEditable: true,
-    isDestroyed: false,
-  };
   return {
     ...actual,
     useEditor: jest.fn(() => mockEditor),
-    EditorContent: ({ editor }: { editor: unknown }) =>
+    EditorContent: () =>
       React.createElement('div', { 'data-testid': 'editor-content' }),
   };
 });
@@ -120,7 +121,8 @@ describe('AIChatInput', () => {
       />,
     );
 
-    expect(editorRef.current).toBeTruthy();
-    expect(typeof editorRef.current?.getHTML).toBe('function');
+    // Verify the ref points to the editor produced by useEditor — proves the
+    // wiring in AIChatTextArea's useEffect, not just that the mock has methods.
+    expect(editorRef.current).toBe(mockEditor);
   });
 });
