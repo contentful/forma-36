@@ -27,20 +27,20 @@
     "@contentful/f36-typography": "^6.0.0",
     "@contentful/f36-utils": "^6.0.0",
     "@emotion/css": "^11.13.5",
+    "@tiptap/core": "3.24.0",
     "@tiptap/extension-document": "3.24.0",
     "@tiptap/extension-mention": "3.24.0",
     "@tiptap/extension-paragraph": "3.24.0",
     "@tiptap/extension-text": "3.24.0",
     "@tiptap/extensions": "3.24.0",
+    "@tiptap/pm": "3.24.0",
+    "@tiptap/react": "3.24.0",
     "@tiptap/suggestion": "3.24.0",
     "react-markdown": "^9.0.3",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.0"
   },
   "peerDependencies": {
-    "@tiptap/core": "3.24.0",
-    "@tiptap/pm": "3.24.0",
-    "@tiptap/react": "3.24.0",
     "react": "^18.3.0 || >=19.1.0",
     "react-dom": "^18.3.0 || >=19.1.0"
   },
@@ -51,10 +51,5 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
     "access": "public"
-  },
-  "devDependencies": {
-    "@tiptap/core": "3.24.0",
-    "@tiptap/pm": "3.24.0",
-    "@tiptap/react": "3.24.0"
   }
 }
