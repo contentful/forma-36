@@ -4,6 +4,23 @@ import { AIChatInput } from './AIChatInput';
 import { Editor } from '@tiptap/react';
 import { Box } from '@contentful/f36-core';
 
+jest.mock('@tiptap/react', () => {
+  const actual = jest.requireActual('@tiptap/react');
+  const mockEditor = {
+    chain: () => ({ focus: () => ({ run: jest.fn() }) }),
+    getHTML: jest.fn(() => ''),
+    commands: {},
+    isEditable: true,
+    isDestroyed: false,
+  };
+  return {
+    ...actual,
+    useEditor: jest.fn(() => mockEditor),
+    EditorContent: ({ editor }: { editor: unknown }) =>
+      React.createElement('div', { 'data-testid': 'editor-content' }),
+  };
+});
+
 describe('AIChatInput', () => {
   it('renders the component', () => {
     render(<AIChatInput onSubmit={() => {}} onStop={() => {}} />);
