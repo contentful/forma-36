@@ -1,5 +1,15 @@
 # Change Log
 
+## 6.9.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.9.0
+  - @contentful/f36-core@6.9.0
+  - @contentful/f36-icons@6.9.0
+  - @contentful/f36-tooltip@6.9.0
+
 ## 6.8.0
 
 ### Patch Changes
