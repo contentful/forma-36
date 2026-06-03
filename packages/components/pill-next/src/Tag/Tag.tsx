@@ -24,6 +24,14 @@ export type TagInternalProps = CommonProps & {
   >;
   /** Badge element rendered between label and end icon. */
   badge: React.ReactNode;
+  /** Icon element rendered as a generic end action. Takes precedence over onRemove when both are provided. */
+  actionIcon?: React.ReactElement;
+  /** Callback fired when the action button is clicked. Required when actionIcon is provided. */
+  onAction?: () => void;
+  /** Accessible label for the action button. Required when actionIcon is provided. */
+  actionButtonLabel?: string;
+  /** Additional className applied to the action button. */
+  actionButtonClassName?: string;
 };
 
 export type TagProps = TagInternalProps & {

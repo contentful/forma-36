@@ -112,6 +112,65 @@ describe('PillNext', () => {
     });
   });
 
+  describe('action icon', () => {
+    it('renders action button when actionIcon is provided', () => {
+      const MockIcon = () => <svg data-testid="mock-icon" />;
+      render(
+        <PillNext
+          label="test"
+          actionIcon={<MockIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Open menu"
+        />,
+      );
+      expect(screen.getByRole('button', { name: 'Open menu' })).toBeTruthy();
+    });
+
+    it('calls onAction when action button is clicked', () => {
+      const mockOnAction = jest.fn();
+      const MockIcon = () => <svg data-testid="mock-icon" />;
+      render(
+        <PillNext
+          label="test"
+          actionIcon={<MockIcon />}
+          onAction={mockOnAction}
+          actionButtonLabel="Open menu"
+        />,
+      );
+      fireEvent.click(screen.getByRole('button', { name: 'Open menu' }));
+      expect(mockOnAction).toHaveBeenCalledTimes(1);
+    });
+
+    it('disables action button when isDisabled is true', () => {
+      const MockIcon = () => <svg data-testid="mock-icon" />;
+      render(
+        <PillNext
+          label="test"
+          actionIcon={<MockIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Open menu"
+          isDisabled
+        />,
+      );
+      expect(screen.getByRole('button', { name: 'Open menu' })).toBeDisabled();
+    });
+
+    it('takes precedence over onRemove', () => {
+      const MockIcon = () => <svg data-testid="mock-icon" />;
+      render(
+        <PillNext
+          label="test"
+          actionIcon={<MockIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Open menu"
+          onRemove={() => {}}
+        />,
+      );
+      expect(screen.getByRole('button', { name: 'Open menu' })).toBeTruthy();
+      expect(screen.queryByRole('button', { name: 'Remove' })).toBeNull();
+    });
+  });
+
   describe('accessibility', () => {
     it('has no a11y violations with label only', async () => {
       const { container } = render(<PillNext label="test" />);

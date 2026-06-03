@@ -35,6 +35,14 @@ export type PillNextInternalProps = CommonProps & {
   removeButtonClassName?: string;
   /** Color of the remove icon. Defaults to currentColor (inherits from button). */
   removeIconColor?: string;
+  /** Icon element rendered as a generic end action. Takes precedence over onRemove when both are provided. */
+  actionIcon?: React.ReactElement;
+  /** Callback fired when the action button is clicked. Required when actionIcon is provided. */
+  onAction?: () => void;
+  /** Accessible label for the action button. Required when actionIcon is provided. */
+  actionButtonLabel?: string;
+  /** Additional className applied to the action button. */
+  actionButtonClassName?: string;
 };
 
 export type PillNextProps = PropsWithHTMLElement<PillNextInternalProps, 'div'>;
@@ -69,12 +77,17 @@ export const PillNext = React.forwardRef<
     children,
     removeButtonClassName,
     removeIconColor,
+    actionIcon,
+    onAction,
+    actionButtonLabel,
+    actionButtonClassName,
     testId = 'cf-ui-pill-next',
     className,
     ...otherProps
   } = props;
 
-  const styles = getPillNextStyles(variant, Boolean(onRemove));
+  const hasEndButton = Boolean(actionIcon) || Boolean(onRemove);
+  const styles = getPillNextStyles(variant, hasEndButton);
 
   const LeadingIcon = leadingIcons[variant];
   const iconColor = leadingIconColors[variant];
@@ -117,16 +130,31 @@ export const PillNext = React.forwardRef<
 
       {children}
 
-      {onRemove && (
-        <IconButton
-          variant="transparent"
-          size="small"
-          icon={<XIcon size="small" color={removeIconColor} />}
-          aria-label={removeButtonLabel}
-          onClick={onRemove}
-          isDisabled={isDisabled}
-          className={cx(styles.removeButton, removeButtonClassName)}
-        />
+      {actionIcon ? (
+        <button
+          type="button"
+          aria-label={actionButtonLabel}
+          disabled={isDisabled}
+          onClick={onAction}
+          className={cx(styles.actionButton, actionButtonClassName)}
+        >
+          {React.cloneElement(
+            actionIcon as React.ReactElement<{ size?: string }>,
+            { size: 'small' },
+          )}
+        </button>
+      ) : (
+        onRemove && (
+          <IconButton
+            variant="transparent"
+            size="small"
+            icon={<XIcon size="small" color={removeIconColor} />}
+            aria-label={removeButtonLabel}
+            onClick={onRemove}
+            isDisabled={isDisabled}
+            className={cx(styles.removeButton, removeButtonClassName)}
+          />
+        )
       )}
     </div>
   );

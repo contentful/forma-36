@@ -26,7 +26,7 @@ const variantStyles: Record<
 
 export function getPillNextStyles(
   variant: PillNextVariant,
-  hasRemoveButton: boolean,
+  hasEndButton: boolean,
 ) {
   const { background, border } = variantStyles[variant];
 
@@ -42,7 +42,7 @@ export function getPillNextStyles(
       paddingTop: tokens.spacing2Xs,
       paddingBottom: tokens.spacing2Xs,
       paddingLeft: tokens.spacingS,
-      paddingRight: hasRemoveButton ? tokens.spacing2Xs : tokens.spacingS,
+      paddingRight: hasEndButton ? tokens.spacing2Xs : tokens.spacingS,
       border: `1px solid ${border}`,
       backgroundColor: background,
       fontFamily: tokens.fontStackPrimary,
@@ -80,6 +80,26 @@ export function getPillNextStyles(
       },
       '&&:hover:disabled': {
         backgroundColor: 'transparent',
+      },
+    }),
+    actionButton: css({
+      all: 'unset',
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '24px',
+      height: '24px',
+      borderRadius: '50%',
+      cursor: 'pointer',
+      flexShrink: 0,
+      marginLeft: tokens.spacingXs,
+      mixBlendMode: 'luminosity',
+      '&:hover:not(:disabled)': {
+        backgroundColor: tokens.gray300,
+      },
+      '&:disabled': {
+        cursor: 'not-allowed',
+        opacity: 0.5,
       },
     }),
   };
