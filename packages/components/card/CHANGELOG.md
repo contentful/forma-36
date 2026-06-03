@@ -1,5 +1,43 @@
 # Change Log
 
+## 6.9.1
+
+### Patch Changes
+
+- [#3424](https://github.com/contentful/forma-36/pull/3424) [`71768b8`](https://github.com/contentful/forma-36/commit/71768b8db6f1aeeb3576e8d2f48ba4079f806730) Thanks [@Lelith](https://github.com/Lelith)! - Fixes the versioning of the released packages
+
+- Updated dependencies []:
+  - @contentful/f36-asset@6.9.1
+  - @contentful/f36-badge@6.9.1
+  - @contentful/f36-button@6.9.1
+  - @contentful/f36-core@6.9.1
+  - @contentful/f36-drag-handle@6.9.1
+  - @contentful/f36-icon@6.9.1
+  - @contentful/f36-icons@6.9.1
+  - @contentful/f36-menu@6.9.1
+  - @contentful/f36-skeleton@6.9.1
+  - @contentful/f36-tooltip@6.9.1
+  - @contentful/f36-typography@6.9.1
+
+## 6.9.0
+
+### Patch Changes
+
+- [#3422](https://github.com/contentful/forma-36/pull/3422) [`1b4305b`](https://github.com/contentful/forma-36/commit/1b4305b151385fa22a67fea7e4a3a8f9d239f2d4) Thanks [@maroun9t](https://github.com/maroun9t)! - - Restore `actionsButtonProps['aria-label']` override behavior for card action buttons.
+  - Pass `actionsButtonProps` through the `Card` header action path.
+- Updated dependencies []:
+  - @contentful/f36-asset@6.9.0
+  - @contentful/f36-badge@6.9.0
+  - @contentful/f36-button@6.9.0
+  - @contentful/f36-core@6.9.0
+  - @contentful/f36-drag-handle@6.9.0
+  - @contentful/f36-icon@6.9.0
+  - @contentful/f36-icons@6.9.0
+  - @contentful/f36-menu@6.9.0
+  - @contentful/f36-skeleton@6.9.0
+  - @contentful/f36-tooltip@6.9.0
+  - @contentful/f36-typography@6.9.0
+
 ## 6.8.0
 
 ### Patch Changes

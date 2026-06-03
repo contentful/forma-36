@@ -1,5 +1,27 @@
 # @contentful/f36-pagination
 
+## 6.9.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.9.1
+  - @contentful/f36-core@6.9.1
+  - @contentful/f36-forms@6.9.1
+  - @contentful/f36-icons@6.9.1
+  - @contentful/f36-typography@6.9.1
+
+## 6.9.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.9.0
+  - @contentful/f36-core@6.9.0
+  - @contentful/f36-forms@6.9.0
+  - @contentful/f36-icons@6.9.0
+  - @contentful/f36-typography@6.9.0
+
 ## 6.8.0
 
 ### Patch Changes

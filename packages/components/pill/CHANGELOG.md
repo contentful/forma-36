@@ -1,5 +1,33 @@
 # Change Log
 
+## 6.9.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.9.1
+  - @contentful/f36-core@6.9.1
+  - @contentful/f36-drag-handle@6.9.1
+  - @contentful/f36-icons@6.9.1
+  - @contentful/f36-tooltip@6.9.1
+
+## 6.9.0
+
+### Minor Changes
+
+- [#3412](https://github.com/contentful/forma-36/pull/3412) [`a3ac5ff`](https://github.com/contentful/forma-36/commit/a3ac5ff8e66f51284f6ea7637a9b5ea1a740b7ca) Thanks [@matthet](https://github.com/matthet)! - **Deprecated**
+  - `Pill`: Deprecated in favor of `PillNext` from `@contentful/f36-pill-next`. Will be removed in the next major version (v7).
+  - Migration guide available at: https://f36.contentful.com/components/pill#migration
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.9.0
+  - @contentful/f36-core@6.9.0
+  - @contentful/f36-drag-handle@6.9.0
+  - @contentful/f36-icons@6.9.0
+  - @contentful/f36-tooltip@6.9.0
+
 ## 6.8.0
 
 ### Patch Changes
