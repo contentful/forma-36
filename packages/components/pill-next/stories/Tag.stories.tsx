@@ -176,3 +176,107 @@ export const WithTooltip: StoryObj<TagInternalProps> = {
     onRemove: action('remove'),
   },
 };
+
+export const LongLabels: StoryObj<TagInternalProps> = {
+  render: (args) => (
+    <Flex flexDirection="column" gap="spacingL">
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">
+          Narrower container — long tag wraps to two lines
+        </SectionHeading>
+        <Flex
+          flexDirection="column"
+          alignItems="flex-start"
+          gap="spacingXs"
+          style={{ width: '550px', border: '1px dashed #ccc', padding: '16px' }}
+        >
+          <Tag
+            label="Vewkjsdhfkjsdhf kdsjhfdskjfhdskjfhdskjfhdskjfh sdkfjhsdkfh sdkfjhsdkfjh"
+            variant="secondary"
+            badge={<Badge variant="secondary">Draft</Badge>}
+            onRemove={args.onRemove}
+          />
+          <Tag
+            label="Warning variant with a long label that wraps to verify badge and icon alignment"
+            variant="warning"
+            tooltipContent="This tag has restricted visibility"
+            badge={<Badge variant="warning">Limited</Badge>}
+            onRemove={args.onRemove}
+          />
+          <Tag
+            label="Short label"
+            variant="primary"
+            badge={<Badge variant="primary">Published</Badge>}
+            onRemove={args.onRemove}
+          />
+        </Flex>
+      </Flex>
+
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">
+          Row flex-wrap container — tags should wrap text, not overflow
+        </SectionHeading>
+        <Flex
+          flexDirection="row"
+          flexWrap="wrap"
+          gap="spacingXs"
+          style={{ width: '550px', border: '1px dashed #ccc', padding: '16px' }}
+        >
+          <Tag
+            label="Short label"
+            variant="secondary"
+            badge={<Badge variant="secondary">Draft</Badge>}
+            onRemove={args.onRemove}
+          />
+          <Tag
+            label="Vewkjsdhfkjsdhf kdsjhfdskjfhdskjfhdskjfhdskjfh sdkfjhsdkfh sdkfjhsdkfjh"
+            variant="secondary"
+            badge={<Badge variant="primary">Published</Badge>}
+            onRemove={args.onRemove}
+          />
+          <Tag
+            label="Another short one"
+            variant="primary"
+            badge={<Badge variant="primary">Live</Badge>}
+            onRemove={args.onRemove}
+          />
+        </Flex>
+      </Flex>
+
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">
+          Row flex-wrap with tooltip variants
+        </SectionHeading>
+        <Flex
+          flexDirection="row"
+          flexWrap="wrap"
+          gap="spacingXs"
+          style={{ width: '550px', border: '1px dashed #ccc', padding: '16px' }}
+        >
+          <Tag
+            label="Restricted access with a long label to test wrapping"
+            variant="warning"
+            tooltipContent="This tag has restricted visibility"
+            badge={<Badge variant="warning">Limited</Badge>}
+            onRemove={args.onRemove}
+          />
+          <Tag
+            label="Deleted content type"
+            variant="negative"
+            tooltipContent="This tag was deleted"
+            badge={<Badge variant="negative">Removed</Badge>}
+            onRemove={args.onRemove}
+          />
+          <Tag
+            label="Normal tag"
+            variant="secondary"
+            badge={<Badge variant="secondary">Draft</Badge>}
+          />
+        </Flex>
+      </Flex>
+    </Flex>
+  ),
+  args: {
+    onRemove: action('remove'),
+  },
+};
