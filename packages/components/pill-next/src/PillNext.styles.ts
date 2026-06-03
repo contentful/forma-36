@@ -64,7 +64,7 @@ export function getPillNextStyles(
       lineHeight: tokens.lineHeightM,
       wordBreak: 'break-word',
     }),
-    removeButton: css({
+    endButton: css({
       '&&': {
         width: '24px',
         height: '24px',
@@ -80,26 +80,6 @@ export function getPillNextStyles(
       },
       '&&:hover:disabled': {
         backgroundColor: 'transparent',
-      },
-    }),
-    actionButton: css({
-      all: 'unset',
-      display: 'inline-flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: '24px',
-      height: '24px',
-      borderRadius: '50%',
-      cursor: 'pointer',
-      flexShrink: 0,
-      marginLeft: tokens.spacingXs,
-      mixBlendMode: 'luminosity',
-      '&:hover:not(:disabled)': {
-        backgroundColor: tokens.gray300,
-      },
-      '&:disabled': {
-        cursor: 'not-allowed',
-        opacity: 0.5,
       },
     }),
   };

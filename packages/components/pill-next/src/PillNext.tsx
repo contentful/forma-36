@@ -131,18 +131,18 @@ export const PillNext = React.forwardRef<
       {children}
 
       {actionIcon ? (
-        <button
-          type="button"
-          aria-label={actionButtonLabel}
-          disabled={isDisabled}
-          onClick={onAction}
-          className={cx(styles.actionButton, actionButtonClassName)}
-        >
-          {React.cloneElement(
+        <IconButton
+          variant="transparent"
+          size="small"
+          icon={React.cloneElement(
             actionIcon as React.ReactElement<{ size?: string }>,
             { size: 'small' },
           )}
-        </button>
+          aria-label={actionButtonLabel}
+          onClick={onAction}
+          isDisabled={isDisabled}
+          className={cx(styles.endButton, actionButtonClassName)}
+        />
       ) : (
         onRemove && (
           <IconButton
@@ -152,7 +152,7 @@ export const PillNext = React.forwardRef<
             aria-label={removeButtonLabel}
             onClick={onRemove}
             isDisabled={isDisabled}
-            className={cx(styles.removeButton, removeButtonClassName)}
+            className={cx(styles.endButton, removeButtonClassName)}
           />
         )
       )}
