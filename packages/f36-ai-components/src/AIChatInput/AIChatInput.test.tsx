@@ -4,13 +4,7 @@ import { AIChatInput } from './AIChatInput';
 import { Editor } from '@tiptap/react';
 import { Box } from '@contentful/f36-core';
 
-const mockEditor = {
-  chain: () => ({ focus: () => ({ run: jest.fn() }) }),
-  getHTML: jest.fn(() => ''),
-  commands: {},
-  isEditable: true,
-  isDestroyed: false,
-};
+const mockEditor = {};
 
 jest.mock('@tiptap/react', () => {
   const actual = jest.requireActual('@tiptap/react');
