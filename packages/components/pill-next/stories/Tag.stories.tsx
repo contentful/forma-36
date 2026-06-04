@@ -91,66 +91,8 @@ export const AllVariants: StoryObj<TagInternalProps> = {
   ),
 };
 
-export const Removable: StoryObj<TagInternalProps> = {
-  render: (args) => (
-    <Flex flexDirection="column" gap="spacingL">
-      <Flex flexDirection="column" gap="spacingS">
-        <SectionHeading as="h3">With remove button</SectionHeading>
-        <Flex flexDirection="row" gap="spacingXs">
-          <Tag
-            label="Secondary"
-            variant="secondary"
-            badge={<Badge variant="secondary">Draft</Badge>}
-            onRemove={args.onRemove}
-          />
-          <Tag
-            label="Primary"
-            variant="primary"
-            badge={<Badge variant="primary">Published</Badge>}
-            onRemove={args.onRemove}
-          />
-          <Tag
-            label="Warning"
-            variant="warning"
-            badge={<Badge variant="warning">Restricted</Badge>}
-            onRemove={args.onRemove}
-          />
-          <Tag
-            label="Negative"
-            variant="negative"
-            badge={<Badge variant="negative">Deleted</Badge>}
-            onRemove={args.onRemove}
-          />
-        </Flex>
-      </Flex>
-      <Flex flexDirection="column" gap="spacingS">
-        <SectionHeading as="h3">Disabled remove button</SectionHeading>
-        <Flex flexDirection="row" gap="spacingXs">
-          <Tag
-            label="Secondary"
-            variant="secondary"
-            badge={<Badge variant="secondary">Draft</Badge>}
-            onRemove={args.onRemove}
-            isDisabled
-          />
-          <Tag
-            label="Primary"
-            variant="primary"
-            badge={<Badge variant="primary">Published</Badge>}
-            onRemove={args.onRemove}
-            isDisabled
-          />
-        </Flex>
-      </Flex>
-    </Flex>
-  ),
-  args: {
-    onRemove: action('remove'),
-  },
-};
-
 export const WithTooltip: StoryObj<TagInternalProps> = {
-  render: (args) => (
+  render: () => (
     <Flex flexDirection="column" gap="spacingS">
       <SectionHeading as="h3">
         Leading icon with tooltip (warning/negative)
@@ -161,21 +103,22 @@ export const WithTooltip: StoryObj<TagInternalProps> = {
           variant="warning"
           tooltipContent="This tag has restricted visibility"
           badge={<Badge variant="warning">Limited</Badge>}
-          onRemove={args.onRemove}
+          actionIcon={<XIcon />}
+          onAction={action('remove')}
+          actionButtonLabel="Remove"
         />
         <Tag
           label="Deleted tag"
           variant="negative"
           tooltipContent="This tag was deleted from the system"
           badge={<Badge variant="negative">Removed</Badge>}
-          onRemove={args.onRemove}
+          actionIcon={<XIcon />}
+          onAction={action('remove')}
+          actionButtonLabel="Remove"
         />
       </Flex>
     </Flex>
   ),
-  args: {
-    onRemove: action('remove'),
-  },
 };
 
 export const ActionIcons: StoryObj<TagInternalProps> = {
@@ -287,7 +230,7 @@ export const ActionIcons: StoryObj<TagInternalProps> = {
 };
 
 export const LongLabels: StoryObj<TagInternalProps> = {
-  render: (args) => (
+  render: () => (
     <Flex flexDirection="column" gap="spacingL">
       <Flex flexDirection="column" gap="spacingS">
         <SectionHeading as="h3">
@@ -303,20 +246,26 @@ export const LongLabels: StoryObj<TagInternalProps> = {
             label="Vewkjsdhfkjsdhf kdsjhfdskjfhdskjfhdskjfhdskjfh sdkfjhsdkfh sdkfjhsdkfjh"
             variant="secondary"
             badge={<Badge variant="secondary">Draft</Badge>}
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
           <Tag
             label="Warning variant with a long label that wraps to verify badge and icon alignment"
             variant="warning"
             tooltipContent="This tag has restricted visibility"
             badge={<Badge variant="warning">Limited</Badge>}
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
           <Tag
             label="Short label"
             variant="primary"
             badge={<Badge variant="primary">Published</Badge>}
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
         </Flex>
       </Flex>
@@ -335,19 +284,25 @@ export const LongLabels: StoryObj<TagInternalProps> = {
             label="Short label"
             variant="secondary"
             badge={<Badge variant="secondary">Draft</Badge>}
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
           <Tag
             label="Vewkjsdhfkjsdhf kdsjhfdskjfhdskjfhdskjfhdskjfh sdkfjhsdkfh sdkfjhsdkfjh"
             variant="secondary"
             badge={<Badge variant="primary">Published</Badge>}
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
           <Tag
             label="Another short one"
             variant="primary"
             badge={<Badge variant="primary">Live</Badge>}
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
         </Flex>
       </Flex>
@@ -367,14 +322,18 @@ export const LongLabels: StoryObj<TagInternalProps> = {
             variant="warning"
             tooltipContent="This tag has restricted visibility"
             badge={<Badge variant="warning">Limited</Badge>}
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
           <Tag
             label="Deleted content type"
             variant="negative"
             tooltipContent="This tag was deleted"
             badge={<Badge variant="negative">Removed</Badge>}
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
           <Tag
             label="Normal tag"
@@ -385,7 +344,4 @@ export const LongLabels: StoryObj<TagInternalProps> = {
       </Flex>
     </Flex>
   ),
-  args: {
-    onRemove: action('remove'),
-  },
 };

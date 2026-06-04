@@ -12,9 +12,6 @@ import type {
 export type TagInternalProps = CommonProps & {
   label: string;
   variant?: PillNextVariant;
-  onRemove?: () => void;
-  /** @default "Remove" */
-  removeButtonLabel?: string;
   isDisabled?: boolean;
   /** Only rendered for variants with a leading icon (warning/negative). */
   tooltipContent?: string;
@@ -24,11 +21,11 @@ export type TagInternalProps = CommonProps & {
   >;
   /** Badge element rendered between label and end icon. */
   badge: React.ReactNode;
-  /** Icon element rendered as a generic end action. Takes precedence over onRemove when both are provided. */
+  /** Icon element rendered as the end action button. */
   actionIcon?: React.ReactElement;
-  /** Callback fired when the action button is clicked. Required when actionIcon is provided. */
+  /** Callback fired when the action button is clicked. */
   onAction?: () => void;
-  /** Accessible label for the action button. Required when actionIcon is provided. */
+  /** Accessible label for the action button. */
   actionButtonLabel?: string;
   /** Additional className applied to the action button. */
   actionButtonClassName?: string;

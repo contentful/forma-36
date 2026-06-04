@@ -11,7 +11,7 @@ import {
   type WithEnhancedContent,
 } from '@contentful/f36-tooltip';
 import { IconButton } from '@contentful/f36-button';
-import { XIcon, WarningIcon, WarningOctagonIcon } from '@contentful/f36-icons';
+import { WarningIcon, WarningOctagonIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 import type { PillNextVariant } from './PillNext.types';
 import { getPillNextStyles } from './PillNext.styles';
@@ -19,9 +19,6 @@ import { getPillNextStyles } from './PillNext.styles';
 export type PillNextInternalProps = CommonProps & {
   label: string;
   variant?: PillNextVariant;
-  onRemove?: () => void;
-  /** @default "Remove" */
-  removeButtonLabel?: string;
   isDisabled?: boolean;
   /** Only rendered for variants with a leading icon (warning/negative). */
   tooltipContent?: string;
@@ -29,17 +26,13 @@ export type PillNextInternalProps = CommonProps & {
     CommonProps & WithEnhancedContent & TooltipInternalProps,
     'content' | 'children' | 'withTriggerWrapper'
   >;
-  /** Content rendered between label and remove button. */
+  /** Content rendered between label and end action button. */
   children?: React.ReactNode;
-  /** Additional className applied to the remove button. */
-  removeButtonClassName?: string;
-  /** Color of the remove icon. Defaults to currentColor (inherits from button). */
-  removeIconColor?: string;
-  /** Icon element rendered as a generic end action. Takes precedence over onRemove when both are provided. */
+  /** Icon element rendered as the end action button. */
   actionIcon?: React.ReactElement;
-  /** Callback fired when the action button is clicked. Required when actionIcon is provided. */
+  /** Callback fired when the action button is clicked. */
   onAction?: () => void;
-  /** Accessible label for the action button. Required when actionIcon is provided. */
+  /** Accessible label for the action button. */
   actionButtonLabel?: string;
   /** Additional className applied to the action button. */
   actionButtonClassName?: string;
@@ -69,14 +62,10 @@ export const PillNext = React.forwardRef<
   const {
     label,
     variant = 'secondary',
-    onRemove,
-    removeButtonLabel = 'Remove',
     isDisabled = false,
     tooltipContent,
     tooltipProps,
     children,
-    removeButtonClassName,
-    removeIconColor,
     actionIcon,
     onAction,
     actionButtonLabel,
@@ -86,8 +75,7 @@ export const PillNext = React.forwardRef<
     ...otherProps
   } = props;
 
-  const hasEndButton = Boolean(actionIcon) || Boolean(onRemove);
-  const styles = getPillNextStyles(variant, hasEndButton);
+  const styles = getPillNextStyles(variant, Boolean(actionIcon));
 
   const LeadingIcon = leadingIcons[variant];
   const iconColor = leadingIconColors[variant];
@@ -130,7 +118,7 @@ export const PillNext = React.forwardRef<
 
       {children}
 
-      {actionIcon ? (
+      {actionIcon && (
         <IconButton
           variant="transparent"
           size="small"
@@ -140,18 +128,6 @@ export const PillNext = React.forwardRef<
           isDisabled={isDisabled}
           className={cx(styles.endButton, actionButtonClassName)}
         />
-      ) : (
-        onRemove && (
-          <IconButton
-            variant="transparent"
-            size="small"
-            icon={<XIcon size="small" color={removeIconColor} />}
-            aria-label={removeButtonLabel}
-            onClick={onRemove}
-            isDisabled={isDisabled}
-            className={cx(styles.endButton, removeButtonClassName)}
-          />
-        )
       )}
     </div>
   );

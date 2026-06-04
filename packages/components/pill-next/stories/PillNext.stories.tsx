@@ -51,72 +51,9 @@ export const AllVariants: StoryObj<PillNextInternalProps> = {
   ),
 };
 
-export const Removable: StoryObj<PillNextInternalProps> = {
-  render: (args) => (
-    <Flex flexDirection="column" gap="spacingL">
-      <Flex flexDirection="column" gap="spacingS">
-        <SectionHeading as="h3">With remove button</SectionHeading>
-        <Flex flexDirection="row" gap="spacingXs">
-          <PillNext
-            label="Secondary"
-            variant="secondary"
-            onRemove={args.onRemove}
-          />
-          <PillNext
-            label="Primary"
-            variant="primary"
-            onRemove={args.onRemove}
-          />
-          <PillNext
-            label="Warning"
-            variant="warning"
-            onRemove={args.onRemove}
-          />
-          <PillNext
-            label="Negative"
-            variant="negative"
-            onRemove={args.onRemove}
-          />
-        </Flex>
-      </Flex>
-      <Flex flexDirection="column" gap="spacingS">
-        <SectionHeading as="h3">Disabled remove button</SectionHeading>
-        <Flex flexDirection="row" gap="spacingXs">
-          <PillNext
-            label="Secondary"
-            variant="secondary"
-            onRemove={args.onRemove}
-            isDisabled
-          />
-          <PillNext
-            label="Primary"
-            variant="primary"
-            onRemove={args.onRemove}
-            isDisabled
-          />
-          <PillNext
-            label="Warning"
-            variant="warning"
-            onRemove={args.onRemove}
-            isDisabled
-          />
-          <PillNext
-            label="Negative"
-            variant="negative"
-            onRemove={args.onRemove}
-            isDisabled
-          />
-        </Flex>
-      </Flex>
-    </Flex>
-  ),
-  args: {
-    onRemove: action('remove'),
-  },
-};
 
 export const WithTooltip: StoryObj<PillNextInternalProps> = {
-  render: (args) => (
+  render: () => (
     <Flex flexDirection="column" gap="spacingL">
       <Flex flexDirection="column" gap="spacingS">
         <SectionHeading as="h3">
@@ -127,21 +64,22 @@ export const WithTooltip: StoryObj<PillNextInternalProps> = {
             label="Restricted access"
             variant="warning"
             tooltipContent="This tag has restricted visibility"
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
           <PillNext
             label="Deleted tag"
             variant="negative"
             tooltipContent="This tag was deleted from the system"
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
         </Flex>
       </Flex>
     </Flex>
   ),
-  args: {
-    onRemove: action('remove'),
-  },
 };
 
 export const ActionIcons: StoryObj<PillNextInternalProps> = {
@@ -258,7 +196,7 @@ export const ActionIcons: StoryObj<PillNextInternalProps> = {
 };
 
 export const LongLabels: StoryObj<PillNextInternalProps> = {
-  render: (args) => (
+  render: () => (
     <Flex flexDirection="column" gap="spacingL">
       <Flex flexDirection="column" gap="spacingS">
         <SectionHeading as="h3">
@@ -273,12 +211,16 @@ export const LongLabels: StoryObj<PillNextInternalProps> = {
           <PillNext
             label="Vewkjsdhfkjsdhf kdsjhfdskjfhdskjfhdskjfhdskjfh sdkfjhsdkfh sdkfjhsdkfjh sdkfjhsdkfjh sdkfjhsdkfjh"
             variant="secondary"
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
           <PillNext
             label="Short label"
             variant="secondary"
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
         </Flex>
       </Flex>
@@ -296,24 +238,32 @@ export const LongLabels: StoryObj<PillNextInternalProps> = {
           <PillNext
             label="Vewkjsdhfkjsdhf kdsjhfdskjfhdskjfhdskjfhdskjfh sdkfjhsdkfh sdkfjhsdkfjh sdkfjhsdkfjh sdkfjhsdkfjh"
             variant="secondary"
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
           <PillNext
             label="fefhjejhfehufheuhfuehfuewdwhudhwuhduwhduehfuheufheufheuf euhfuehfuheufhuehfuheufheufhuehfuheufheufheuhf"
             variant="warning"
             tooltipContent="This tag has restricted visibility"
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
           <PillNext
             label="Negative variant with a long label that wraps to verify leading icon alignment with the remove button"
             variant="negative"
             tooltipContent="This tag was deleted"
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
           <PillNext
             label="Short label"
             variant="secondary"
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
         </Flex>
       </Flex>
@@ -331,23 +281,26 @@ export const LongLabels: StoryObj<PillNextInternalProps> = {
           <PillNext
             label="Short label"
             variant="secondary"
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
           <PillNext
             label="Vewkjsdhfkjsdhf kdsjhfdskjfhdskjfhdskjfhdskjfh sdkfjhsdkfh sdkfjhsdkfjh sdkfjhsdkfjh sdkfjhsdkfjh"
             variant="secondary"
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
           <PillNext
             label="Another short one"
             variant="primary"
-            onRemove={args.onRemove}
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
           />
         </Flex>
       </Flex>
     </Flex>
   ),
-  args: {
-    onRemove: action('remove'),
-  },
 };
