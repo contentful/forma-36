@@ -51,7 +51,6 @@ export const AllVariants: StoryObj<PillNextInternalProps> = {
   ),
 };
 
-
 export const WithTooltip: StoryObj<PillNextInternalProps> = {
   render: () => (
     <Flex flexDirection="column" gap="spacingL">

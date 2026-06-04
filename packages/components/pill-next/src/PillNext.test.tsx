@@ -144,7 +144,6 @@ describe('PillNext', () => {
     });
   });
 
-
   describe('accessibility', () => {
     it('has no a11y violations with label only', async () => {
       const { container } = render(<PillNext label="test" />);
