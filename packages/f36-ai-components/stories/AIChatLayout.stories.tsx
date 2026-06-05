@@ -197,6 +197,60 @@ Default.args = {
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 };
 
+export const WithCustomTitle = () => {
+  const header = {
+    id: 'custom-title-header',
+    title: (
+      <Button
+        size="small"
+        variant="transparent"
+        endIcon={<icons.CaretDownIcon />}
+        onClick={action('select-agent')}
+      >
+        Experience Generation
+      </Button>
+    ),
+    buttonsRight: [
+      {
+        icon: <icons.ClockIcon />,
+        onClick: action('view-history'),
+        display: true,
+        ariaLabel: 'View History',
+        testId: 'history-button',
+      },
+      {
+        icon: <icons.XIcon />,
+        onClick: action('close-chat'),
+        display: true,
+        ariaLabel: 'Close chat',
+        testId: 'close-button',
+      },
+    ],
+  };
+
+  return (
+    <AIChatLayout display="open" header={header} position="relative">
+      <Box style={{ padding: tokens.spacingM }}>
+        <Text>
+          Header title accepts a React node, so consumers can render controls
+          like an agent selector in the title slot.
+        </Text>
+      </Box>
+    </AIChatLayout>
+  );
+};
+
+WithCustomTitle.argTypes = {
+  variant: { control: { disable: true } },
+  display: { control: { disable: true } },
+  height: { control: { disable: true } },
+  position: { control: { disable: true } },
+  buttonsRight: { control: { disable: true } },
+  icon: { control: { disable: true } },
+  title: { control: { disable: true } },
+  content: { control: { disable: true } },
+};
+
 export const WithChangableHeader = ({ icon, title, variant }) => {
   const [isHistoryMode, setIsHistoryMode] = useState(false);
 
