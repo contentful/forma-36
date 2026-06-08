@@ -17,6 +17,8 @@ const ignorePkgs = [
   '@contentful/f36-i18n-utils',
   '@contentful/f36-website',
   '@contentful/f36-docs-utils',
+  '@contentful/f36-pill-next',
+  '@contentful/ai-components',
 ];
 
 // Format package names as Start Case
