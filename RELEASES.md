@@ -87,11 +87,15 @@ Since we want to show the documentation of the components that are still on prer
 
 For that we need to take some precautions:
 
-- The package.json of the pre-released package must be have `private: true`, to avoid changesets of trying to publish the package.
-- The package that is in prerelease (alpha, beta) needs to be added to the ignore field on the [.changeset/config.json](https://github.com/contentful/forma-36/blob/main/.changeset/config.json), so if a changeset is created for that package it will be ignored and not change the version or publish that specific package.
-- The package that is in prerelease (alpha, beta) needs to be added to the `ignorePkgs` array in [scripts/changesets/changelog-generate.js](https://github.com/contentful/forma-36/blob/main/scripts/changesets/changelog-generate.js), so if a changeset is created for that package it will be ignored and not change the version or publish that specific package.
-- And we don't have prerelease packages being part of the umbrela package (`f36-components`), which means that when it becomes stable we add it there and replace where it was being used before, e.g. on the website and/or playground.
+- The `package.json` of the prerelease package must have `private: true` committed, to avoid changesets trying to publish the package.
+- The package that is in prerelease (alpha, beta) needs to be added to the ignore field on the [.changeset/config.json](https://github.com/contentful/forma-36/blob/main/.changeset/config.json), so it is excluded from the automated changeset release process.
+- The package that is in prerelease (alpha, beta) needs to be added to the `ignorePkgs` array in [scripts/changesets/changelog-generate.js](https://github.com/contentful/forma-36/blob/main/scripts/changesets/changelog-generate.js), so it is excluded from the automated What's new changelog generation.
+- Do not add a manual changeset file for prerelease packages. These files will not be processed correctly while the package is excluded through changeset config and the changelog generation script.
+- If you want to track a changelog entry for a prerelease package, add it manually to the package changelog.
+- And we don't have prerelease packages being part of the umbrella package (`f36-components`), which means that when it becomes stable we add it there and replace where it was being used before, e.g. on the website and/or playground.
 
-Trying to make prereleases easier to handle we created a script that you can use on your branch before merging into master, that will bump the package you select, and you can choose if you it's an alpha or beta release, before publishing it to NPM.
+Trying to make prereleases easier to handle we created a script that you can use on your branch before merging into `main`, that will bump the package you select, and you can choose if it's an alpha or beta release, before publishing it to NPM.
+
+Before running the local manual prerelease publish command, temporarily remove the `private: true` setting from the prerelease package's local `package.json`. This local edit is only needed so the npm publish command can run. Do not commit the removal; keep `private: true` in the package on `main` so the package stays out of the automated release process.
 
 You can check the script [here](https://github.com/contentful/forma-36/blob/c6b10071959a085b21e49f5411a5ebff2f8a70d6/scripts/prerelease.mjs)
