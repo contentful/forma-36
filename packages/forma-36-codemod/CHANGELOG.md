@@ -1,5 +1,11 @@
 # Change Log
 
+## 6.0.1
+
+### Patch Changes
+
+- [#3335](https://github.com/contentful/forma-36/pull/3335) [`74411d2`](https://github.com/contentful/forma-36/commit/74411d2f0ba2e4918871180b71420652502dfe32) Thanks [@veu](https://github.com/veu)! - fix: 🤖 add missing dependencies for codemode CLI
+
 ## 6.0.0
 
 ## 5.0.0
