@@ -1,16 +1,13 @@
-import { defineConfig } from 'tsup';
+import { defineConfig, type Options } from 'tsup';
 import sharedConfig from '../../tsup.config';
 
-export default defineConfig((options) => {
-  const base =
-    typeof sharedConfig === 'function' ? sharedConfig(options) : sharedConfig;
+const base = sharedConfig as Options;
 
-  return {
-    ...base,
-    entry: {
-      index: 'src/index.ts',
-      aipill: 'src/AiPill/index.ts',
-    },
-    external: [...(base.external ?? []), '@tiptap/*'],
-  };
+export default defineConfig({
+  ...base,
+  entry: {
+    index: 'src/index.ts',
+    aipill: 'src/AiPill/index.ts',
+  },
+  external: [...(base.external ?? []), '@tiptap/*'],
 });
