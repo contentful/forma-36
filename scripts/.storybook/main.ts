@@ -46,5 +46,18 @@ const config: StorybookConfig = {
       ],
     },
   },
+  async viteFinal(config) {
+    return {
+      ...config,
+      optimizeDeps: {
+        ...config.optimizeDeps,
+        include: [
+          ...(config.optimizeDeps?.include ?? []),
+          '@contentful/f36-icons',
+          '@phosphor-icons/react',
+        ],
+      },
+    };
+  },
 };
 export default config;
