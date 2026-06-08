@@ -11,6 +11,19 @@
   "types": "dist/index.d.ts",
   "source": "src/index.ts",
   "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/index.js"
+    },
+    "./aipill": {
+      "types": "./dist/aipill.d.ts",
+      "import": "./dist/esm/aipill.js",
+      "require": "./dist/aipill.js"
+    },
+    "./package.json": "./package.json"
+  },
   "browserslist": "extends @contentful/browserslist-config",
   "scripts": {
     "build": "tsup"
@@ -27,25 +40,31 @@
     "@contentful/f36-typography": "^6.9.1",
     "@contentful/f36-utils": "^6.0.0",
     "@emotion/css": "^11.13.5",
-    "@tiptap/extension-document": "3.24.0",
-    "@tiptap/extension-mention": "3.24.0",
-    "@tiptap/extension-paragraph": "3.24.0",
-    "@tiptap/extension-text": "3.24.0",
-    "@tiptap/extensions": "3.24.0",
-    "@tiptap/suggestion": "3.24.0",
     "react-markdown": "^9.0.3",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
     "@tiptap/core": "3.24.0",
-    "@tiptap/pm": "3.24.0",
-    "@tiptap/react": "3.24.0"
-  },
-  "peerDependencies": {
-    "@tiptap/core": "3.24.0",
+    "@tiptap/extension-document": "3.24.0",
+    "@tiptap/extension-mention": "3.24.0",
+    "@tiptap/extension-paragraph": "3.24.0",
+    "@tiptap/extension-text": "3.24.0",
+    "@tiptap/extensions": "3.24.0",
     "@tiptap/pm": "3.24.0",
     "@tiptap/react": "3.24.0",
+    "@tiptap/suggestion": "3.24.0"
+  },
+  "peerDependencies": {
+    "@tiptap/core": "^3.15.0",
+    "@tiptap/extension-document": "^3.15.0",
+    "@tiptap/extension-mention": "^3.15.0",
+    "@tiptap/extension-paragraph": "^3.15.0",
+    "@tiptap/extension-text": "^3.15.0",
+    "@tiptap/extensions": "^3.15.0",
+    "@tiptap/pm": "^3.15.0",
+    "@tiptap/react": "^3.15.0",
+    "@tiptap/suggestion": "^3.15.0",
     "react": "^18.3.0 || >=19.1.0",
     "react-dom": "^18.3.0 || >=19.1.0"
   },
