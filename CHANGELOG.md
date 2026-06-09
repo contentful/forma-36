@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 09-06-2026
+
+**F36 Codemod** `v6.0.1`
+
+- fix: 🤖 add missing dependencies for codemode CLI
+
 ## 04-06-2026
 
 **F36 Card** `v6.9.0`
