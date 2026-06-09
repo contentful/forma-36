@@ -101,7 +101,7 @@
     "inquirer": "^12.9.6",
     "jest": "^30.1.3",
     "jest-axe": "^10.0.0",
-    "jest-environment-jsdom": "^30.1.2",
+    "jest-environment-jsdom": "^30.4.0",
     "jest-resolve": "^30.1.3",
     "jest-watch-typeahead": "^3.0.1",
     "octokit": "^2.0.14",
