@@ -133,6 +133,10 @@
     "npm": ">=8.5.0",
     "yarn": "Please use npm"
   },
+  "optionalDependencies": {
+    "@emnapi/core": "1.11.0",
+    "@emnapi/runtime": "1.11.0"
+  },
   "overrides": {
     "@emotion/eslint-plugin": {
       "eslint": ">=9.0.0"
