@@ -52,6 +52,15 @@ const config: StorybookConfig = {
   async viteFinal(config) {
     return {
       ...config,
+      resolve: {
+        ...config.resolve,
+        alias: {
+          ...config.resolve?.alias,
+          '@contentful/f36-icons': fromRoot(
+            'packages/components/icons/src/index.ts',
+          ),
+        },
+      },
       optimizeDeps: {
         ...config.optimizeDeps,
         include: [
