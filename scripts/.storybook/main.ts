@@ -1,10 +1,12 @@
-// This file has been automatically migrated to valid ESM format by Storybook.
 import { createRequire } from 'node:module';
+import { fileURLToPath } from 'node:url';
 import type { StorybookConfig } from '@storybook/react-vite';
 
 import { join, dirname } from 'path';
 
 const require = createRequire(import.meta.url);
+const fromRoot = (p: string) =>
+  join(fileURLToPath(new URL('../..', import.meta.url)), p);
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -33,16 +35,17 @@ const config: StorybookConfig = {
     check: false,
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
+      tsconfigPath: fromRoot('tsconfig.json'),
       include: [
-        'packages/components/**/src/*.tsx',
-        'packages/core/src/**/*.tsx',
+        fromRoot('packages/components/**/src/*.tsx'),
+        fromRoot('packages/core/src/**/*.tsx'),
       ],
       exclude: [
-        'packages/components/icons/**',
-        'packages/components/icon/**',
-        'packages/components/utils/**',
-        'packages/core/**/examples/',
-        'packages/components/**/examples/',
+        fromRoot('packages/components/icons/**'),
+        fromRoot('packages/components/icon/**'),
+        fromRoot('packages/components/utils/**'),
+        fromRoot('packages/core/**/examples/'),
+        fromRoot('packages/components/**/examples/'),
       ],
     },
   },
