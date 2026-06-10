@@ -5,7 +5,7 @@ import type { StoryObj, StoryFn, Meta } from '@storybook/react-vite';
 import { MdAcUnit as ExternalIcon } from 'react-icons/md';
 
 import { Icon, type IconInternalProps } from '../src/Icon';
-import { CalendarBlankIcon, GearSixIcon } from '../../icons';
+import { CalendarBlankIcon, GearSixIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/css';
 
