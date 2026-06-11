@@ -1,0 +1,7 @@
+{
+  "types/typings.d.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  }
+}
