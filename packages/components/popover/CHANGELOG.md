@@ -1,5 +1,16 @@
 # Change Log
 
+## 6.10.0
+
+### Minor Changes
+
+- [#3434](https://github.com/contentful/forma-36/pull/3434) [`ce1e13d`](https://github.com/contentful/forma-36/commit/ce1e13dc1a3bb93867120a862a58f5890fff5557) Thanks [@maxcheremisin](https://github.com/maxcheremisin)! - Add `closeOnScroll` to allow popovers to stay open when an ancestor scrolls.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.10.0
+
 ## 6.9.1
 
 ### Patch Changes
