@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { render, act, waitFor, screen } from '@testing-library/react';
+import {
+  render,
+  act,
+  waitFor,
+  screen,
+  fireEvent,
+} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 
@@ -170,6 +176,37 @@ describe('Popover', function () {
     });
 
     await user.click(document.body);
+
+    await waitFor(() => {
+      expect(handleClose).not.toHaveBeenCalled();
+    });
+  });
+
+  it('call onClose when scrolling an ancestor', async () => {
+    const handleClose = jest.fn();
+
+    await renderWithAct({
+      isOpen: true,
+      onClose: handleClose,
+    });
+
+    fireEvent.scroll(window);
+
+    await waitFor(() => {
+      expect(handleClose).toHaveBeenCalled();
+    });
+  });
+
+  it('do NOT call onClose when scrolling an ancestor and closeOnScroll is false', async () => {
+    const handleClose = jest.fn();
+
+    await renderWithAct({
+      isOpen: true,
+      onClose: handleClose,
+      closeOnScroll: false,
+    });
+
+    fireEvent.scroll(window);
 
     await waitFor(() => {
       expect(handleClose).not.toHaveBeenCalled();

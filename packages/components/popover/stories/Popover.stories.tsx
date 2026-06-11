@@ -50,6 +50,7 @@ export const Basic = () => {
 export const InteractionOverview = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [is2Open, setIs2Open] = useState(false);
+  const [is3Open, setIs3Open] = useState(false);
   return (
     <section style={{ display: 'flex', gap: '15px', flexDirection: 'column' }}>
       <h3>Will not close when pressing escape</h3>
@@ -76,6 +77,22 @@ export const InteractionOverview = () => {
       >
         <Popover.Trigger>
           <Button onClick={() => setIs2Open(!is2Open)}>Toggle</Button>
+        </Popover.Trigger>
+        <Popover.Content>
+          <Box padding="spacingM">
+            <Paragraph>This is the content.</Paragraph>
+            <Button>Some action</Button>
+          </Box>
+        </Popover.Content>
+      </Popover>
+      <h3>Will not close on scroll</h3>
+      <Popover
+        closeOnScroll={false}
+        isOpen={is3Open}
+        onClose={() => setIs3Open(false)}
+      >
+        <Popover.Trigger>
+          <Button onClick={() => setIs3Open(!is3Open)}>Toggle</Button>
         </Popover.Trigger>
         <Popover.Content>
           <Box padding="spacingM">
