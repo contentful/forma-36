@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useLayoutEffect, useRef } from 'react';
+import type { TransitionDurationTokens } from '@contentful/f36-tokens';
 import {
   Box,
   type CommonProps,
@@ -14,12 +15,19 @@ interface CollapseInternalProps extends CommonProps {
   children?: React.ReactNode;
   /**
    * A boolean that tells if the accordion should be expanded or collapsed
+   * @default false
    */
   isExpanded: boolean;
   /**
    * string for additional classNames
    */
   className?: string;
+  /**
+   * Control the expansion/collapsing transition duration.
+   * Accepts Forma 36 transition duration token values or any valid CSS time value.
+   * @default 'transitionDurationDefault'
+   */
+  transitionDuration?: TransitionDurationTokens;
 }
 
 export type CollapseProps = PropsWithHTMLElement<CollapseInternalProps, 'div'>;
@@ -28,12 +36,14 @@ export const Collapse = ({
   children,
   className,
   isExpanded = false,
+  transitionDuration = 'transitionDurationDefault',
   testId = 'cf-collapse',
   ...otherProps
 }: CollapseProps) => {
   const panelEl = useRef<HTMLDivElement>(null);
   const styles = getCollapseStyles({ className });
   const isMounted = useRef(false);
+  const duration = tokens[transitionDuration];
 
   const getPanelContentHeight = () => {
     const { current } = panelEl;
@@ -65,7 +75,7 @@ export const Collapse = ({
       // to avoid animating the initial render
       current?.style.setProperty(
         'transition',
-        `height ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, padding ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
+        `height ${duration} ${tokens.transitionEasingDefault}, padding ${duration} ${tokens.transitionEasingDefault}`,
       );
 
       requestAnimationFrame(function () {
@@ -91,7 +101,7 @@ export const Collapse = ({
       handleTransitionEnd();
       isMounted.current = true;
     }
-  }, [handleTransitionEnd, isExpanded]);
+  }, [handleTransitionEnd, isExpanded, duration]);
 
   useEffect(() => {
     const { current } = panelEl;
