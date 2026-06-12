@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.11.0
+
+### Minor Changes
+
+- [#3437](https://github.com/contentful/forma-36/pull/3437) [`972f1fd`](https://github.com/contentful/forma-36/commit/972f1fd8ea64b03e11ebc96f4750cbb98131b80b) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - feat(icons): add SidebarSimple icon
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.11.0
+  - @contentful/f36-icon@6.11.0
+
 ## 6.10.1
 
 ### Patch Changes
