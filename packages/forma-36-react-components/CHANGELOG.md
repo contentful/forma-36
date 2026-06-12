@@ -1,5 +1,55 @@
 # Change Log
 
+## 6.10.1
+
+### Patch Changes
+
+- [#3436](https://github.com/contentful/forma-36/pull/3436) [`53b0436`](https://github.com/contentful/forma-36/commit/53b0436a2a9d9060a8db0545d95330d3aeb64c07) Thanks [@Lelith](https://github.com/Lelith)! - Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+- Updated dependencies [[`53b0436`](https://github.com/contentful/forma-36/commit/53b0436a2a9d9060a8db0545d95330d3aeb64c07)]:
+  - @contentful/f36-progress-stepper@6.10.1
+  - @contentful/f36-autocomplete@6.10.1
+  - @contentful/f36-notification@6.10.1
+  - @contentful/f36-drag-handle@6.10.1
+  - @contentful/f36-empty-state@6.10.1
+  - @contentful/f36-entity-list@6.10.1
+  - @contentful/f36-multiselect@6.10.1
+  - @contentful/f36-usage-count@6.10.1
+  - @contentful/f36-copybutton@6.10.1
+  - @contentful/f36-datepicker@6.10.1
+  - @contentful/f36-pagination@6.10.1
+  - @contentful/f36-typography@6.10.1
+  - @contentful/f36-usage-card@6.10.1
+  - @contentful/f36-accordion@6.10.1
+  - @contentful/f36-text-link@6.10.1
+  - @contentful/f36-collapse@6.10.1
+  - @contentful/f36-datetime@6.10.1
+  - @contentful/f36-skeleton@6.10.1
+  - @contentful/f36-navlist@6.10.1
+  - @contentful/f36-popover@6.10.1
+  - @contentful/f36-spinner@6.10.1
+  - @contentful/f36-tooltip@6.10.1
+  - @contentful/f36-avatar@6.10.1
+  - @contentful/f36-button@6.10.1
+  - @contentful/f36-header@6.10.1
+  - @contentful/f36-layout@6.10.1
+  - @contentful/f36-asset@6.10.1
+  - @contentful/f36-badge@6.10.1
+  - @contentful/f36-forms@6.10.1
+  - @contentful/f36-icons@6.10.1
+  - @contentful/f36-image@6.10.1
+  - @contentful/f36-modal@6.10.1
+  - @contentful/f36-table@6.10.1
+  - @contentful/f36-utils@6.1.2
+  - @contentful/f36-card@6.10.1
+  - @contentful/f36-icon@6.10.1
+  - @contentful/f36-list@6.10.1
+  - @contentful/f36-menu@6.10.1
+  - @contentful/f36-note@6.10.1
+  - @contentful/f36-pill@6.10.1
+  - @contentful/f36-tabs@6.10.1
+  - @contentful/f36-core@6.10.1
+
 ## 6.10.0
 
 ### Patch Changes
