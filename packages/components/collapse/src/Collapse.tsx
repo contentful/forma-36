@@ -24,7 +24,6 @@ interface CollapseInternalProps extends CommonProps {
   className?: string;
   /**
    * Control the expansion/collapsing transition duration.
-   * Accepts Forma 36 transition duration token values or any valid CSS time value.
    * @default 'transitionDurationDefault'
    */
   transitionDuration?: TransitionDurationTokens;
