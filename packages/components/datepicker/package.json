@@ -12,7 +12,7 @@
     "@contentful/f36-popover": "^6.10.0",
     "@contentful/f36-icons": "^6.10.0",
     "@contentful/f36-button": "^6.10.0",
-    "@contentful/f36-tokens": "^6.1.0",
+    "@contentful/f36-tokens": "^6.1.2",
     "@emotion/css": "^11.13.5",
     "date-fns": "^2.28.0",
     "react-day-picker": "^8.7.1",

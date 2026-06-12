@@ -9,7 +9,7 @@
     "@contentful/f36-button": "^6.10.0",
     "@contentful/f36-core": "^6.10.0",
     "@contentful/f36-icons": "^6.10.0",
-    "@contentful/f36-tokens": "^6.1.0",
+    "@contentful/f36-tokens": "^6.1.2",
     "@contentful/f36-typography": "^6.10.0",
     "@types/react-modal": "^3.16.3",
     "@emotion/css": "^11.13.5",
