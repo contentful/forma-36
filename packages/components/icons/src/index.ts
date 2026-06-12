@@ -212,6 +212,7 @@ export * from './vendor/phosphor/RowsPlusBottomIcon.js';
 export * from './vendor/phosphor/SealIcon.js';
 export * from './vendor/phosphor/SelectionIcon.js';
 export * from './vendor/phosphor/ShoppingCartSimpleIcon.js';
+export * from './vendor/phosphor/SidebarSimpleIcon.js';
 export * from './vendor/phosphor/SignInIcon.js';
 export * from './vendor/phosphor/SignOutIcon.js';
 export * from './vendor/phosphor/SketchLogoIcon.js';
