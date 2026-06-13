@@ -8,6 +8,188 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 13-06-2026
+
+`@contentful/f36-components@6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Accordion** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Asset** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Autocomplete** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Avatar** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Badge** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Button** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Card** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Collapse** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Copybutton** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Core** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Datepicker** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Datetime** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Drag Handle** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Empty State** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Entity List** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Forms** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Header** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Icon** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Icons** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Image** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Layout** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 List** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Menu** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Modal** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Multiselect** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Navbar** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Navlist** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Note** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Notification** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Pagination** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Pill** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Popover** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Progress Stepper** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Skeleton** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Spinner** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Table** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Tabs** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Text Link** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Tooltip** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Typography** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Usage Card** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Usage Count** `v6.10.1`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Utils** `v6.1.2`
+
+- Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+**F36 Icons** `v6.11.0`
+
+- feat(icons): add SidebarSimple icon
+
 ## 12-06-2026
 
 **F36 Popover** `v6.10.0`
