@@ -1,5 +1,13 @@
 # Change Log
 
+## 6.11.1
+
+### Patch Changes
+
+- Updated dependencies [[`61a6c8f`](https://github.com/contentful/forma-36/commit/61a6c8f066448a8dc1f9b66d6f16e12ee6b41d73)]:
+  - @contentful/f36-tokens@6.1.3
+  - @contentful/f36-typography@6.11.1
+
 ## 6.11.0
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # Change Log
 
+## 6.11.1
+
+### Patch Changes
+
+- [#3438](https://github.com/contentful/forma-36/pull/3438) [`61a6c8f`](https://github.com/contentful/forma-36/commit/61a6c8f066448a8dc1f9b66d6f16e12ee6b41d73) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - feat(collapse): introduce the transition duration property
+
+- Updated dependencies [[`61a6c8f`](https://github.com/contentful/forma-36/commit/61a6c8f066448a8dc1f9b66d6f16e12ee6b41d73)]:
+  - @contentful/f36-tokens@6.1.3
+  - @contentful/f36-core@6.11.1
+
 ## 6.11.0
 
 ### Patch Changes
