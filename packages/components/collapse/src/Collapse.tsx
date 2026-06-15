@@ -24,7 +24,9 @@ interface CollapseInternalProps extends CommonProps {
   className?: string;
   /**
    * Control the expansion/collapsing transition duration.
+   * Pass one of the transition duration token values.
    * @default 'transitionDurationDefault'
+   * @example <Collapse transitionDuration="transitionDurationLong" ... />
    */
   transitionDuration?: TransitionDurationTokens;
 }
