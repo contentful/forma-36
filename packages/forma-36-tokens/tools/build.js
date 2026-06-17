@@ -177,6 +177,7 @@ const buildIndexDTS = async (srcPath, tokens) => {
           'colorNegative',
           'colorPositive',
           'colorWhite',
+          'colorDataviz',
         ].concat(
           generatePaletteNames([
             'gray',
