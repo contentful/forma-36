@@ -1,5 +1,53 @@
 # Change Log
 
+## 6.11.1
+
+### Patch Changes
+
+- Updated dependencies [[`61a6c8f`](https://github.com/contentful/forma-36/commit/61a6c8f066448a8dc1f9b66d6f16e12ee6b41d73)]:
+  - @contentful/f36-tokens@6.1.3
+  - @contentful/f36-button@6.11.1
+  - @contentful/f36-core@6.11.1
+  - @contentful/f36-icon@6.11.1
+  - @contentful/f36-icons@6.11.1
+  - @contentful/f36-typography@6.11.1
+
+## 6.11.0
+
+### Patch Changes
+
+- Updated dependencies [[`972f1fd`](https://github.com/contentful/forma-36/commit/972f1fd8ea64b03e11ebc96f4750cbb98131b80b)]:
+  - @contentful/f36-icons@6.11.0
+  - @contentful/f36-button@6.11.0
+  - @contentful/f36-core@6.11.0
+  - @contentful/f36-icon@6.11.0
+  - @contentful/f36-typography@6.11.0
+
+## 6.10.1
+
+### Patch Changes
+
+- [#3436](https://github.com/contentful/forma-36/pull/3436) [`53b0436`](https://github.com/contentful/forma-36/commit/53b0436a2a9d9060a8db0545d95330d3aeb64c07) Thanks [@Lelith](https://github.com/Lelith)! - Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+- Updated dependencies [[`53b0436`](https://github.com/contentful/forma-36/commit/53b0436a2a9d9060a8db0545d95330d3aeb64c07)]:
+  - @contentful/f36-typography@6.10.1
+  - @contentful/f36-button@6.10.1
+  - @contentful/f36-icons@6.10.1
+  - @contentful/f36-utils@6.1.2
+  - @contentful/f36-icon@6.10.1
+  - @contentful/f36-core@6.10.1
+
+## 6.10.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.10.0
+  - @contentful/f36-core@6.10.0
+  - @contentful/f36-icon@6.10.0
+  - @contentful/f36-icons@6.10.0
+  - @contentful/f36-typography@6.10.0
+
 ## 6.9.1
 
 ### Patch Changes

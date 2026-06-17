@@ -1,6 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
+import { XIcon } from '@contentful/f36-icons';
 
 import { PillNext } from './PillNext';
 
@@ -50,45 +51,76 @@ describe('PillNext', () => {
     });
   });
 
-  describe('remove button', () => {
-    it('renders remove button when onRemove is provided', () => {
-      render(<PillNext label="test" onRemove={() => {}} />);
+  describe('action button', () => {
+    it('renders action button when actionIcon is provided', () => {
+      render(
+        <PillNext
+          label="test"
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Remove"
+        />,
+      );
       expect(screen.getByRole('button', { name: 'Remove' })).toBeTruthy();
     });
 
-    it('does not render remove button when onRemove is not provided', () => {
+    it('does not render action button when actionIcon is not provided', () => {
       render(<PillNext label="test" />);
       expect(screen.queryByRole('button')).toBeNull();
     });
 
-    it('calls onRemove when remove button is clicked', () => {
-      const mockOnRemove = jest.fn();
-      render(<PillNext label="test" onRemove={mockOnRemove} />);
-      fireEvent.click(screen.getByRole('button', { name: 'Remove' }));
-      expect(mockOnRemove).toHaveBeenCalledTimes(1);
-    });
-
-    it('uses custom remove button label', () => {
+    it('calls onAction when action button is clicked', () => {
+      const mockOnAction = jest.fn();
       render(
         <PillNext
           label="test"
-          onRemove={() => {}}
-          removeButtonLabel="Delete tag"
+          actionIcon={<XIcon />}
+          onAction={mockOnAction}
+          actionButtonLabel="Remove"
+        />,
+      );
+      fireEvent.click(screen.getByRole('button', { name: 'Remove' }));
+      expect(mockOnAction).toHaveBeenCalledTimes(1);
+    });
+
+    it('uses custom action button label', () => {
+      render(
+        <PillNext
+          label="test"
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Delete tag"
         />,
       );
       expect(screen.getByRole('button', { name: 'Delete tag' })).toBeTruthy();
     });
 
-    it('disables remove button when isDisabled is true', () => {
-      render(<PillNext label="test" onRemove={() => {}} isDisabled />);
+    it('disables action button when isDisabled is true', () => {
+      render(
+        <PillNext
+          label="test"
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Remove"
+          isDisabled
+        />,
+      );
       expect(screen.getByRole('button', { name: 'Remove' })).toBeDisabled();
     });
 
-    it('does not call onRemove when disabled', () => {
-      const mockOnRemove = jest.fn();
-      render(<PillNext label="test" onRemove={mockOnRemove} isDisabled />);
+    it('does not call onAction when disabled', () => {
+      const mockOnAction = jest.fn();
+      render(
+        <PillNext
+          label="test"
+          actionIcon={<XIcon />}
+          onAction={mockOnAction}
+          actionButtonLabel="Remove"
+          isDisabled
+        />,
+      );
       fireEvent.click(screen.getByRole('button', { name: 'Remove' }));
-      expect(mockOnRemove).not.toHaveBeenCalled();
+      expect(mockOnAction).not.toHaveBeenCalled();
     });
   });
 
@@ -119,24 +151,43 @@ describe('PillNext', () => {
       expect(results).toHaveNoViolations();
     });
 
-    it('has no a11y violations with remove button', async () => {
+    it('has no a11y violations with action button', async () => {
       const { container } = render(
-        <PillNext label="test" onRemove={() => {}} />,
+        <PillNext
+          label="test"
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Remove"
+        />,
       );
       const results = await axe(container);
       expect(results).toHaveNoViolations();
     });
 
-    it('has no a11y violations with disabled remove button', async () => {
+    it('has no a11y violations with disabled action button', async () => {
       const { container } = render(
-        <PillNext label="test" onRemove={() => {}} isDisabled />,
+        <PillNext
+          label="test"
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Remove"
+          isDisabled
+        />,
       );
       const results = await axe(container);
       expect(results).toHaveNoViolations();
     });
 
-    it('remove button is not focusable when disabled', () => {
-      render(<PillNext label="test" onRemove={() => {}} isDisabled />);
+    it('action button is not focusable when disabled', () => {
+      render(
+        <PillNext
+          label="test"
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Remove"
+          isDisabled
+        />,
+      );
       const button = screen.getByRole('button', { name: 'Remove' });
       expect(button).toBeDisabled();
     });

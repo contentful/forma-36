@@ -24,7 +24,7 @@ export default [
       '*.css.d.ts',
       'public/**',
       '.cache/**',
-      'tsup.config.ts',
+      '**/tsup.config.ts',
       '**/__testfixtures__',
       '**/.next/**',
       '**/.turbo/**',

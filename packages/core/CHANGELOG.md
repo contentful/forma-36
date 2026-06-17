@@ -1,5 +1,22 @@
 # Change Log
 
+## 6.11.1
+
+### Patch Changes
+
+- Updated dependencies [[`61a6c8f`](https://github.com/contentful/forma-36/commit/61a6c8f066448a8dc1f9b66d6f16e12ee6b41d73)]:
+  - @contentful/f36-tokens@6.1.3
+
+## 6.11.0
+
+## 6.10.1
+
+### Patch Changes
+
+- [#3436](https://github.com/contentful/forma-36/pull/3436) [`53b0436`](https://github.com/contentful/forma-36/commit/53b0436a2a9d9060a8db0545d95330d3aeb64c07) Thanks [@Lelith](https://github.com/Lelith)! - Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+## 6.10.0
+
 ## 6.9.1
 
 ## 6.9.0

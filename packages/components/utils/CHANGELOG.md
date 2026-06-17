@@ -1,5 +1,11 @@
 # @contentful/f36-utils
 
+## 6.1.2
+
+### Patch Changes
+
+- [#3436](https://github.com/contentful/forma-36/pull/3436) [`53b0436`](https://github.com/contentful/forma-36/commit/53b0436a2a9d9060a8db0545d95330d3aeb64c07) Thanks [@Lelith](https://github.com/Lelith)! - Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
 ## 6.1.1
 
 ### Patch Changes

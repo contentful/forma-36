@@ -53,7 +53,7 @@ export interface AIChatLayoutHeader {
   /**
    * Title for the layout header
    */
-  title?: string;
+  title?: React.ReactNode;
   /**
    * Array of action buttons to display before the icon & title
    */
@@ -199,7 +199,7 @@ function AIChatLayoutBase(props: AIChatLayoutProps, ref: Ref<HTMLDivElement>) {
   const renderHeaderContentForSlider = useCallback(
     (
       icon: React.ReactNode,
-      title: string | undefined,
+      title: React.ReactNode,
       buttonsLeft: AIChatLayoutButton[],
       buttonsRight: AIChatLayoutButton[],
     ) => {

@@ -21,6 +21,7 @@ export interface PopoverOptions {
   isOpen?: boolean;
   closeOnEsc?: boolean;
   closeOnBlur?: boolean;
+  closeOnScroll?: boolean;
   /**
    * If true the floating content will auto-focus on open. Defaults to true.
    */
@@ -42,6 +43,7 @@ export function usePopover({
   usePortal = true,
   closeOnEsc = true,
   closeOnBlur = true,
+  closeOnScroll = true,
   autoFocus = true,
 }: PopoverOptions = {}) {
   const [labelId, setLabelId] = React.useState<string | undefined>();
@@ -97,7 +99,7 @@ export function usePopover({
   const dismiss = useDismiss(context, {
     escapeKey: closeOnEsc,
     outsidePress: closeOnBlur,
-    ancestorScroll: true,
+    ancestorScroll: closeOnScroll,
   });
   const role = useRole(context);
 
