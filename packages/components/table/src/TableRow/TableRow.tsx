@@ -1,5 +1,5 @@
-import { cx } from '@emotion/css';
-import React, { forwardRef } from 'react';
+import { css, cx } from '@emotion/css';
+import React, { Children, forwardRef } from 'react';
 import {
   Box,
   type CommonProps,
@@ -7,6 +7,8 @@ import {
   type ExpandProps,
 } from '@contentful/f36-core';
 import { getTableRowStyles } from './TableRow.styles';
+import { useTableContext } from '../tableContext';
+import { TableCell } from '../TableCell/TableCell';
 
 export type TableRowInternalProps = CommonProps & {
   isSelected?: boolean;
@@ -30,6 +32,18 @@ export const TableRow = forwardRef<
     forwardedRef,
   ) => {
     const styles = getTableRowStyles();
+    const { columnTitles } = useTableContext();
+
+    const originalCells = Children.toArray(children);
+    const updatedCells = [];
+    columnTitles?.forEach((title, i) => {
+      if (i > 0) {
+        updatedCells.push(<TableCell aria-hidden>{title} x</TableCell>);
+      }
+      if (originalCells.length > i) {
+        updatedCells.push(originalCells[i]);
+      }
+    });
 
     return (
       <Box
@@ -45,7 +59,7 @@ export const TableRow = forwardRef<
         ref={forwardedRef}
         testId={testId}
       >
-        {children}
+        {updatedCells}
       </Box>
     );
   },

@@ -252,17 +252,8 @@ const withContentTableData: {
 
 export const WithContent: StoryObj = {
   render: (args) => (
-    <div style={{ width: '960px' }}>
+    <div style={{ width: 'calc(100vw - 32px)', containerType: 'inline-size' }}>
       <Table {...args}>
-        <Table.Head>
-          <Table.Row>
-            <Table.Cell>Name</Table.Cell>
-            <Table.Cell>Status</Table.Cell>
-            <Table.Cell>Content Type</Table.Cell>
-            <Table.Cell>Updated by</Table.Cell>
-            <Table.Cell>Updated</Table.Cell>
-          </Table.Row>
-        </Table.Head>
         <Table.Body>
           {withContentTableData.map((item) => (
             <Table.Row key={item.name}>
@@ -291,4 +282,7 @@ export const WithContent: StoryObj = {
       </Table>
     </div>
   ),
+  args: {
+    columnTitles: ['Name', 'Status', 'Content Type', 'Updated by', 'Updated'],
+  },
 };

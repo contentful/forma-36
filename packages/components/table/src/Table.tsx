@@ -10,6 +10,9 @@ import type * as CSS from 'csstype';
 
 import { getTableStyles } from './Table.styles';
 import { TableContextProvider } from './tableContext';
+import { TableHead } from './TableHead/TableHead';
+import { TableCell } from './TableCell/TableCell';
+import { TableRow } from './TableRow/TableRow';
 
 export type TableInternalProps = CommonProps & {
   /**
@@ -23,6 +26,7 @@ export type TableInternalProps = CommonProps & {
     CSS.Property.VerticalAlign,
     'baseline' | 'bottom' | 'middle' | 'top'
   >;
+  columnTitles?: Array<string>;
 };
 
 export type TableProps = PropsWithHTMLElement<TableInternalProps, 'table'>;
@@ -35,11 +39,22 @@ export const Table = forwardRef<HTMLTableElement, ExpandProps<TableProps>>(
       layout = 'inline',
       testId = 'cf-ui-table',
       verticalAlign = 'top',
+      columnTitles,
       ...otherProps
     },
     forwardedRef,
   ) => {
     const styles = getTableStyles();
+
+    const tableHeader = columnTitles && (
+      <TableHead>
+        <TableRow>
+          {columnTitles.map((title) => (
+            <TableCell key={title}>{title}</TableCell>
+          ))}
+        </TableRow>
+      </TableHead>
+    );
 
     return (
       <Box
@@ -52,7 +67,8 @@ export const Table = forwardRef<HTMLTableElement, ExpandProps<TableProps>>(
         className={cx(styles.root, styles[layout], className)}
         testId={testId}
       >
-        <TableContextProvider value={{ verticalAlign }}>
+        <TableContextProvider value={{ verticalAlign, columnTitles }}>
+          {tableHeader}
           {children}
         </TableContextProvider>
       </Box>
