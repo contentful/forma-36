@@ -80,13 +80,25 @@ TBD
 
 ### States
 
-#### Common States
 
-- Default
-- Loading
-- Error
-- Success
-- Empty
+#### Toolbar States
+
+- **Default:** Toolbar icons are available for selection.
+- **Loading:** Icons or toolbar data is loading.
+
+#### Toolbar Icon States
+
+- **Default:** Icons are idle and available.
+- **Hover:** Icons visually indicate interactivity when hovered.
+- **Selected:** Icons clearly highlight when their corresponding panel is active.
+- **Error:** Indicates issues loading toolbar icons or functionality.
+
+#### Panel States
+
+- **Expanded:** Panel is fully visible and interactive.
+- **Collapsed:** Panel is minimized, but accessible via the toolbar icon.
+- **Loading:** Panel content is loading. Refer to the [Loading](insert link) pattern.
+- **Error:** Content inside the panel failed to load or perform actions. Refer to the [Error Handling](insert link) pattern.
 
 *(Visual example or demo link)*
 ```jsx file=.path.tsx
