@@ -11,22 +11,23 @@ section: 'guidelinesPatterns'
 
 ### Purpose
 
-Provides persistent, in-context access to complementary tools so users can stay focused on their primary editing task.
+The toolbar pattern provides global and consistent access to critical tools and contextually relevant apps within the platform. It addresses user needs for quick actions, enhances efficiency by minimizing navigation friction, and aligns closely with user workflows. By providing focused and immediate interactions, the toolbar pattern supports a streamlined editing experience, integrates seamlessly with different platform views, and reinforces the user's core jobs-to-be-done across various tasks.
 
 ---
 
 ### When to Use
 
-Describe the user goals, scenarios, and constraints that make this pattern appropriate.
+Use the toolbar pattern when users frequently need quick, persistent access to tools and functionalities directly related to their primary tasks, enabling them to perform actions without leaving their current context.
 
 #### Typical Use Cases
 
-- Accessing AI agents while staying in the current workflow
-- Managing tags, taxonomies and entity metadata
-- Using analytics or performance insights in-context while editing or reviewing an Experience
-- Accessing personalization controls such as variants or audience-specific configuration
-- Triggering workflows and automations alongside the main task
-- Surfacing apps and third-party integrations relevant to the current page or editor context
+- Engaging agents for tasks like spinning up new experiences, viewing analytics insights, or performing other specialized tasks through a chat interface.
+- Quick access to optimization tools relevant to content performance and management.
+- Collaborative workflows that require persistent commenting and feedback mechanisms.
+- Seamless integration and access to third-party apps directly within the editing context.
+- Workflow management activities that benefit from immediate and persistent tool accessibility.
+
+
 
 ---
 
@@ -35,11 +36,18 @@ Describe the user goals, scenarios, and constraints that make this pattern appro
 Identify situations where another pattern would be more suitable.
 
 #### Consider These Alternatives
+### Use a Different Pattern Instead
 
-| Scenario | Alternative Pattern | Reason |
-|----------|---------------------|--------|
-| ...      | ...                 | ...    |
-| ...      | ...                 | ...    |
+Consider other patterns when persistent access to tools is unnecessary or when providing extensive tool sets might overwhelm the user.
+
+| Scenario                                                       | Alternative Pattern | Reason                                                                        |
+|----------------------------------------------------------------|---------------------|-------------------------------------------------------------------------------|
+| Simple actions within a limited context                        | Action Buttons      | A toolbar would add unnecessary complexity                                    |                 |
+| Single task-focused tools without ongoing context              | Modal Dialog        | Ensures users remain focused without permanent interface elements             |
+| One-time setup or configuration tasks                          | Wizard              | Provides step-by-step guidance without persistent toolbar complexity          |
+| Primary actions that should always be prominently available    | Header Actions      | Ensures immediate visibility for critical actions                             |
+| Essential information and actions visible at all times         | Persistent Sidebar  | Offers constant visibility within content layout                              |
+| Long forms and extensive editing tasks                         | Dedicated Page      | Provides appropriate space and focus for extensive content manipulation       |
 
 ---
 
@@ -47,37 +55,30 @@ Identify situations where another pattern would be more suitable.
 
 #### Required
 
-- Component ([Forma 36 Documentation](https://forma-36-docs.com))
-- Component ([Forma 36 Documentation](https://forma-36-docs.com))
-
-#### Optional
-
-- Component ([Forma 36 Documentation](https://forma-36-docs.com))
-- Component ([Forma 36 Documentation](https://forma-36-docs.com))
+- Toolbar (Reusable component in the [user-interface](https://github.com/contentful/user_interface/blob/master/src/javascripts/features/toolbar/components/Toolbar.tsx) repository, not part of Forma 36)
 
 ---
 
 ### Typical Interactions
 
-Describe the expected user flow and key interaction behaviors. Include visuals or animations when possible.
-
 #### Example Flow
 
-1. User initiates...
-2. System responds...
-3. User...
-4. System...
+1. User selects an icon in the toolbar.
+2. The corresponding panel expands.
+3. The user performs their required action within the panel (e.g., viewing insights, commenting, or task management).
+4. Once completed, the user can collapse the panel via the close button in the panel header or by clicking the corresponding icon in the toolbar again.
+5. Alternatively, the user can switch directly to another toolbar item as needed.
 
 *(Visual example or demo link)*
 ```jsx file=.path.tsx
 ```
 
+#### Interoperability of toolbar tabs
+TBD
 
 ---
 
 ### States
-
-Document any meaningful states.
 
 #### Common States
 
