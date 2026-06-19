@@ -72,8 +72,10 @@ Consider other patterns when persistent access to tools is unnecessary or when p
 *(Visual example or demo link)*
 ```jsx file=.path.tsx
 ```
+#### External triggers
+Only open the panel when the user deliberately triggers it. Aside from the Toolbar tabs, opening the panel can also be triggered by buttons (not links) in the main content area.
 
-#### Interoperability of toolbar tabs
+#### Interoperability of Toolbar tabs
 TBD
 
 ---
@@ -83,15 +85,15 @@ TBD
 
 #### Toolbar States
 
-- **Default:** Toolbar icons are available for selection.
-- **Loading:** Icons or toolbar data is loading.
+- **Default:** Toolbar tabs are available for selection.
+- **Loading:** Tab or toolbar data is loading.
 
-#### Toolbar Icon States
+#### Toolbar tab States
 
-- **Default:** Icons are idle and available.
-- **Hover:** Icons visually indicate interactivity when hovered.
-- **Selected:** Icons clearly highlight when their corresponding panel is active.
-- **Error:** Indicates issues loading toolbar icons or functionality.
+- **Default:** Tabs are idle and available.
+- **Hover:** Tabs visually indicate interactivity when hovered.
+- **Selected:** Tabs clearly highlight when their corresponding panel is active.
+- **Error:** Indicates issues loading Toolbar tabs or functionality.
 
 #### Panel States
 
@@ -106,19 +108,41 @@ TBD
 
 ---
 
-### Accessibility
+### Accessibility (W.I.P.)
+
+#### Screen Reader Support
+##### Aria roles
+| Element             | Role/Attribute                | Purpose                             |
+|---------------------|-------------------------------|-------------------------------------|
+| Container for icons | role="tablist"                | Groups the tab controls             |
+| Each icon button    | role="tab"                    | Identifies each control             |
+| Each panel          | role="tabpanel"               | The content area                    |
+| Tablist             | aria-orientation="vertical"   | Critical for your vertical layout   |
+| Active tab          | aria-selected="true"          | Shows which tab is currently active |
+| Tab → Panel link    | aria-controls="panel-id"      | Associates tab with its panel       |
+| Panel → Tab link    | aria-labelledby="tab-id"      | Labels the panel by its tab         |
 
 #### Keyboard Interactions
 
-- Describe keyboard shortcuts and commands...
+- **Up/Down Arrow:** Navigate between tabs (not Left/Right)
+- **Enter/Space:** Activate the focused tab (optional—can auto-activate on focus)
+- **Esc:** Collapse an expanded panel.
+- **Tab*:* Move focus into the panel content
+- **Shift+Tab:** Return focus to the active tab
 
-#### Screen Reader Support
+#### Landmarks
+- Use a single region landmark for the entire panel with a clear label
+- Use headings (<h2>, <h3>, etc.) to structure content within the panel rather than nested landmarks
+- Reserve additional landmarks only if the panel has truly distinct, complex sections
 
-- Outline ARIA roles and behaviors...
+#### Announcing changes
+- Use live regions to announce the opening and closing of the panel and witch panel opened
+- Updates on background processes that happen insde tha panel, open or closed. For example: an Agent has completed a run.
 
 #### Cognitive Considerations
 
-- Strategies for cognitive simplicity...
+- Consistently place Toolbar tabs to foster intuitive use and reduce learning curves
+- Use clear and concise labels to facilitate quick recognition of each action
 
 ---
 
@@ -131,8 +155,9 @@ TBD
 
 #### Don'ts
 
-- Pitfalls to avoid...
-- ...
+- Add actions to the Toolbar tabs. The Toolbar tabs are a navigational device an functionality should only be shwon inside the open panel.
+- Switch the order of tabs between different views
+- Open or close the panel without a deliberate user interaction
 
 #### Anti-patterns
 
