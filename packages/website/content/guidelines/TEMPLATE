@@ -1,1 +1,167 @@
+Pattern Name
 
+Purpose
+
+What user problem does this pattern solve?
+
+Clearly define the problem addressed and how this pattern aligns with overall UX goals and principles.
+
+⸻
+
+When to Use
+
+Describe the user goals, scenarios, and constraints
+
+Clarify when this pattern is appropriate.
+
+Typical use cases
+
+* …
+* …
+* …
+
+⸻
+
+Use a Different Pattern Instead
+
+Situations where another pattern would be more suitable
+
+Consider these alternatives
+
+Scenario	Alternative Pattern	Reason
+…	…	…
+…	…	…
+
+⸻
+
+Components Used
+
+Required
+
+* Component (Forma 36 Documentation⁠￼)
+* Component
+
+Optional
+
+* Component
+* Component
+
+⸻
+
+Typical Interactions
+
+Expected user flow and key interaction behaviors
+
+Include visual examples or animations if possible.
+
+Example flow
+
+1. User initiates…
+2. System responds…
+3. User…
+4. System…
+
+⸻
+
+States
+
+Common states
+
+* Default
+* Loading
+* Error
+* Success
+* Empty
+
+⸻
+
+Accessibility
+
+Keyboard interactions
+
+* Describe keyboard shortcuts and commands…
+
+Screen reader support
+
+* Outline ARIA roles and screen reader behavior…
+
+Cognitive considerations
+
+* Recommendations for cognitive simplicity…
+
+⸻
+
+Dos and Don’ts
+
+Dos
+
+* Clearly define recommended practices…
+* …
+
+Don’ts
+
+* Outline pitfalls to avoid…
+* …
+
+Anti-patterns
+
+* Describe common mistakes with explanations…
+* …
+
+⸻
+
+Trade-offs
+
+Benefits
+
+* …
+* …
+
+Limitations
+
+* …
+* …
+
+⸻
+
+Technical Implementation
+
+Provide relevant code snippets or implementation guides
+
+⸻
+
+Metrics & Evaluation
+
+Suggested metrics for evaluating pattern effectiveness
+
+* Metric 1…
+* Metric 2…
+
+⸻
+
+Responsiveness
+
+Behavior across various devices and screen sizes
+
+* Desktop: …
+* Mobile: …
+* Tablet: …
+
+⸻
+
+Related Patterns
+
+* Pattern…
+* Pattern…
+
+⸻
+
+Examples
+
+Example 1
+
+(Visual example or demo link)
+
+Example 2
+
+(Visual example or demo link)
