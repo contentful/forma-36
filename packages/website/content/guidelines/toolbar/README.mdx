@@ -1,29 +1,28 @@
 ---
-title: 'Toolbar'
+title: toolbar
 section: 'guidelinesPatterns'
 ---
 
-//
-Add a slug to the frontmatter to make the page publish on the website. Include /:path*/protected/:path* in the slug to add pasword protection.
-IMPORTANT: Remove this note when you add a slug. Otherwise it will show up on the website!
-//
+// Add a slug to the frontmatter to make the page publish on the website. Include /:path*/protected/:path* in the slug to add pasword protection. IMPORTANT: Remove this note when you add a slug. Otherwise it will show up on the website! //
 
-# Toolbar
+## Toolbar
 
-## Purpose
+---
+
+### Purpose
 
 Provides persistent, in-context access to complementary tools so users can stay focused on their primary editing task.
 
 ---
 
-## When to Use
+### When to Use
 
 Describe the user goals, scenarios, and constraints that make this pattern appropriate.
 
-### Typical use cases
+#### Typical Use Cases
 
 - Accessing AI agents while staying in the current workflow
-- Managing tags, taxonomies and entity metadata 
+- Managing tags, taxonomies and entity metadata
 - Using analytics or performance insights in-context while editing or reviewing an Experience
 - Accessing personalization controls such as variants or audience-specific configuration
 - Triggering workflows and automations alongside the main task
@@ -31,148 +30,141 @@ Describe the user goals, scenarios, and constraints that make this pattern appro
 
 ---
 
-## Use a Different Pattern Instead
+### Use a Different Pattern Instead
 
-Describe situations where another pattern would be more suitable.
+Identify situations where another pattern would be more suitable.
 
-### Consider these alternatives
+#### Consider These Alternatives
 
-| Scenario | Alternative Pattern |
-
-|-----------|-----------|
-
-| ... | ... |
-
-| ... | ... |
+| Scenario | Alternative Pattern | Reason |
+|----------|---------------------|--------|
+| ...      | ...                 | ...    |
+| ...      | ...                 | ...    |
 
 ---
 
-## Components Used
+### Components Used
 
-### Required
+#### Required
 
-- user-interface/appshell
+- Component ([Forma 36 Documentation](https://forma-36-docs.com))
+- Component ([Forma 36 Documentation](https://forma-36-docs.com))
 
-- user-interface/toolbar
+#### Optional
 
-### Optional
-
-- Component
-
-- Component
+- Component ([Forma 36 Documentation](https://forma-36-docs.com))
+- Component ([Forma 36 Documentation](https://forma-36-docs.com))
 
 ---
 
-## Typical Interactions
+### Typical Interactions
 
-Describe the expected user flow and key interaction behaviors.
+Describe the expected user flow and key interaction behaviors. Include visuals or animations when possible.
 
-### Example flow
+#### Example Flow
 
-1. User ...
+1. User initiates...
+2. System responds...
+3. User...
+4. System...
 
-2. System ...
+*(Visual example or demo link)*
+```jsx file=.path.tsx
+```
 
-3. User ...
-
-4. System ...
 
 ---
 
-## States
+### States
 
 Document any meaningful states.
 
-### Common states
+#### Common States
 
 - Default
-
 - Loading
-
 - Error
-
 - Success
-
 - Empty
 
----
-
-## Accessibility
-
-### Keyboard
-
-...
-
-### Screen Reader
-
-...
-
-### Cognitive Considerations
-
-...
+*(Visual example or demo link)*
+```jsx file=.path.tsx
+```
 
 ---
 
-## Dos
+### Accessibility
 
-### Do
+#### Keyboard Interactions
 
-- ...
+- Describe keyboard shortcuts and commands...
 
-- ...
+#### Screen Reader Support
+
+- Outline ARIA roles and behaviors...
+
+#### Cognitive Considerations
+
+- Strategies for cognitive simplicity...
 
 ---
 
-## Don'ts / Anti-patterns
+### Dos and Don'ts
 
-### Don't
+#### Dos
 
+- Clearly define best practices...
 - ...
 
+#### Don'ts
+
+- Pitfalls to avoid...
 - ...
 
-### Anti-patterns
+#### Anti-patterns
 
-- ...
-
+- Common mistakes and explanations...
 - ...
 
 ---
 
-## Trade-offs
+### Trade-offs (optional)
 
-Describe the benefits and limitations of this pattern.
+Clearly explain the benefits and limitations of this pattern.
 
-### Benefits
-
-- ...
+#### Benefits
 
 - ...
-
-### Limitations
-
 - ...
 
-- ...
-
----
-
-## Related Patterns
+#### Limitations
 
 - ...
-
 - ...
 
 ---
 
-## Examples
+### Responsiveness
 
-### Example 1
+Detail how the pattern behaves across different screen sizes and different devices if supported.
 
-...
+- Desktop: ...
+- Mobile: ...
+- Tablet: ...
 
-### Example 2
+*(Visual example or demo link)*
+```jsx file=.path.tsx
+```
+---
 
-...
+### Technical Implementation
 
-...
+Provide or link to relevant code snippets, implementation guides, or repositories.
+
+---
+
+
+### Related Patterns
+
+- Pattern...
+- Pattern...
