@@ -33,11 +33,6 @@ Use the toolbar pattern when users frequently need quick, persistent access to t
 
 ### Use a Different Pattern Instead
 
-Identify situations where another pattern would be more suitable.
-
-#### Consider These Alternatives
-### Use a Different Pattern Instead
-
 Consider other patterns when persistent access to tools is unnecessary or when providing extensive tool sets might overwhelm the user.
 
 | Scenario                                                       | Alternative Pattern | Reason                                                                        |
@@ -55,7 +50,7 @@ Consider other patterns when persistent access to tools is unnecessary or when p
 
 #### Required
 
-- Toolbar (Reusable component in the [user-interface](https://github.com/contentful/user_interface/blob/master/src/javascripts/features/toolbar/components/Toolbar.tsx) repository, not part of Forma 36)
+- [Toolbar](https://github.com/contentful/user_interface/blob/master/src/javascripts/features/toolbar/components/Toolbar.tsx): Reusable component in the user-interface repository, not part of Forma 36
 
 ---
 
@@ -127,12 +122,12 @@ TBD
 - **Up/Down Arrow:** Navigate between tabs (not Left/Right)
 - **Enter/Space:** Activate the focused tab (optional—can auto-activate on focus)
 - **Esc:** Collapse an expanded panel.
-- **Tab*:* Move focus into the panel content
+- **Tab:** Move focus into the panel content
 - **Shift+Tab:** Return focus to the active tab
 
 #### Landmarks
 - Use a single region landmark for the entire panel with a clear label
-- Use headings (<h2>, <h3>, etc.) to structure content within the panel rather than nested landmarks
+- Use headings (h2, h3, etc.) to structure content within the panel rather than nested landmarks
 - Reserve additional landmarks only if the panel has truly distinct, complex sections
 
 #### Announcing changes
