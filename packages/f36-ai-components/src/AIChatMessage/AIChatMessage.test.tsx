@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { AIChatMessage } from './AIChatMessage';
+import { AIChatMessage, getMarkdownComponents } from './AIChatMessage';
+import { getStyles } from './AIChatMessage.styles';
 import { Box } from '@contentful/f36-core';
 
 // Mocking react-markdown and its plugins as current jest version does not support ESM
@@ -75,5 +76,36 @@ describe('AIChatMessage', () => {
 
     const actionButtons = screen.getByTestId('cf-ui-ai-chat-message-actions');
     expect(actionButtons.textContent).toContain('Action Buttons');
+  });
+});
+
+describe('AIChatMessage code rendering', () => {
+  const styles = getStyles({ isUserMessage: false });
+  const components = getMarkdownComponents(styles);
+
+  // react-markdown is mocked above (it is ESM-only), so the `code` renderer is
+  // exercised directly rather than through a full markdown render.
+  it('renders inline code with the inline style, not the block style', () => {
+    const element = components.code({ children: 'spaceId' });
+
+    expect(element.props.className).toContain(styles.inlineCode);
+    expect(element.props.className).not.toContain(styles.codeBlock);
+  });
+
+  it('renders a fenced code block with the block style', () => {
+    const element = components.code({
+      className: 'language-ts',
+      children: 'const id = "x"\n',
+    });
+
+    expect(element.props.className).toContain(styles.codeBlock);
+    expect(element.props.className).not.toContain(styles.inlineCode);
+  });
+
+  it('renders an unlabelled multi-line code block with the block style', () => {
+    const element = components.code({ children: 'first line\nsecond line\n' });
+
+    expect(element.props.className).toContain(styles.codeBlock);
+    expect(element.props.className).not.toContain(styles.inlineCode);
   });
 });
