@@ -2,4 +2,4 @@
 '@contentful/f36-icons': minor
 ---
 
-Add UserCircleDashedIcon, ChartBarIcon, BroadcastIcon, and PresentationChartIcon from Phosphor for Optimization Hub navigation (NT-3540)
+Add UserCircleDashedIcon, ChartBarIcon, BroadcastIcon, and PresentationChartIcon from Phosphor
