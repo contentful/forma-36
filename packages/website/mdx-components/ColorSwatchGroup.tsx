@@ -26,9 +26,9 @@ export function ColorSwatchGroup({ colorGroup }: Props) {
       {Object.keys(colors).map((color, idx) => {
         const value = colors[color];
 
-        const tokenName = color
-          .replace(/-\d?[a-z]{1}/, (match) => match.toUpperCase())
-          .replace('-', '');
+        const tokenName = color.replace(/-([a-z0-9])/g, (_, c) =>
+          c.toUpperCase(),
+        );
 
         return (
           <ColorSwatch
