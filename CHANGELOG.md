@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 24-06-2026
+
+**F36 Icons** `v6.12.0`
+
+- Add UserCircleDashedIcon, ChartBarIcon, BroadcastIcon, and PresentationChartIcon from Phosphor
+
 ## 16-06-2026
 
 **F36 Collapse** `v6.11.1`
