@@ -1,1 +1,143 @@
+---
+title: Source → Destination Highlighting
+section: 'guidelinesPatterns'
+---
 
+## Source → Destination Highlighting
+
+---
+
+### Purpose
+
+Source → Destination Highlighting helps users maintain orientation when an interaction shifts their workflow to another visible area of the interface.
+
+When a user initiates an action in one panel that requires them to continue working in another, the pattern briefly highlights both the originating element and the destination panel. This creates a clear visual connection between the user's action and the resulting interface change, helping users quickly understand where to continue their task.
+
+For example, selecting **Edit** for a content type in the navigation tree opens its editor in the right-hand panel. The selected content type remains highlighted while the editor briefly receives a highlight, directing the user's attention to the next step in the workflow.
+
+---
+
+### When to Use
+
+Use Source → Destination Highlighting when:
+
+- An interaction updates or reveals content in another visible region of the interface.
+- Users are expected to continue their workflow in the destination immediately.
+- Both the source and destination remain visible at the same time.
+
+Do not use this pattern when navigating to a new page or opening a modal, as these interactions naturally establish a new point of focus.
+
+---
+
+### Components Used
+
+#### Required
+
+- Navigation Tree
+- Side Panel
+- Selection state
+- Focus management
+
+---
+
+### Typical Interaction
+
+When a user opens a content type for editing:
+
+1. The user selects **Edit** for a content type in the navigation tree.
+2. The selected content type remains highlighted.
+3. The editor opens in the right-hand panel.
+4. The editor panel receives a temporary highlight.
+5. Keyboard focus moves to the **Name** field.
+6. The temporary highlight fades while the content type remains selected.
+
+The destination highlight should occur only once as the panel opens. It should never repeat or pulse after the user's attention has shifted.
+
+*(Visual example or demo)*
+
+```jsx file=.path.tsx
+```
+
+---
+
+### States
+
+#### Default
+
+No source or destination is highlighted.
+
+```jsx file=.path.tsx
+```
+
+#### Active
+
+A content type is selected, and its editor has just opened.
+
+- The selected content type remains highlighted.
+- The editor receives a temporary highlight.
+- Keyboard focus moves to the **Name** field.
+
+```jsx file=.path.tsx
+```
+
+---
+
+### Accessibility
+
+#### Keyboard Interactions
+
+After the editor opens, move keyboard focus directly to the **Name** field so keyboard users can continue editing immediately.
+
+Users should be able to navigate back to the navigation tree using the standard tab order or keyboard shortcuts without unexpected focus changes.
+
+#### Screen Reader Support
+
+Announce the editor as a newly available editing region using an appropriate landmark and heading.
+
+The temporary highlight is purely decorative and should not be relied upon to communicate the interface change.
+
+#### Cognitive Considerations
+
+- Keep the originating content type selected throughout the editing workflow.
+- Use the highlight only to establish the relationship between the source and destination.
+- Avoid competing attention cues while the highlight is active.
+
+---
+
+### Dos and Don'ts
+
+#### Do
+
+- Keep the selected content type highlighted while its editor is open.
+- Briefly highlight the editor as it appears.
+- Move keyboard focus to the first editable field.
+- Allow the highlight to fade once the user's attention has shifted.
+
+#### Don't
+
+- Remove the selection from the navigation tree when the editor opens.
+- Repeat or continuously animate the destination highlight.
+- Highlight multiple destination panels at the same time.
+- Require users to search for where the interface changed.
+
+---
+
+### Technical Implementation
+
+Treat the interaction as three independent states:
+
+- **Selection** — the selected content type remains highlighted until another item is selected.
+- **Attention** — the editor receives a temporary highlight when it opens.
+- **Focus** — keyboard focus moves to the **Name** field after the editor becomes available.
+
+The temporary highlight supports orientation only. It should never represent selection, focus, validation, or another component state.
+
+---
+
+### Related Patterns
+
+- Side Panel
+- Selection
+- Focus Management
+- Motion
+- Master–Detail Layout
