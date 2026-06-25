@@ -31,15 +31,15 @@ export function ColorSwatch({ name, hex, cssVar }: Props) {
         padding="spacingM"
       >
         <Flex gap="spacingXs" alignItems="center">
-          {name}{' '}
+          <Box style={{ wordBreak: 'break-all', textAlign: 'right' }}>{name}</Box>
           <CopyButton size="small" value={name} tooltipProps={{ id: name }} />
         </Flex>
         <Flex gap="spacingXs" alignItems="center">
-          {hex}{' '}
+          <Box style={{ wordBreak: 'break-all', textAlign: 'right' }}>{hex}</Box>
           <CopyButton size="small" value={hex} tooltipProps={{ id: name }} />
         </Flex>
         <Flex gap="spacingXs" alignItems="center">
-          {cssVar}{' '}
+          <Box style={{ wordBreak: 'break-all', textAlign: 'right' }}>{cssVar}</Box>
           <CopyButton size="small" value={cssVar} tooltipProps={{ id: name }} />
         </Flex>
       </Flex>

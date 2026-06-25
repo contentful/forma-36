@@ -15,14 +15,24 @@ interface Props {
     | 'red'
     | 'semantic'
     | 'white'
-    | 'yellow';
+    | 'yellow'
+    | 'datavizCategorical'
+    | 'datavizCategoricalMuted'
+    | 'datavizSequentialBlue'
+    | 'datavizSequentialPurple'
+    | 'datavizSequentialTeal'
+    | 'datavizSequentialPink'
+    | 'datavizSemantic';
 }
+
+const sequentialGroups = ['datavizSequentialBlue', 'datavizSequentialPurple', 'datavizSequentialTeal', 'datavizSequentialPink'];
 
 export function ColorSwatchGroup({ colorGroup }: Props) {
   const colors = tokens[colorGroup];
+  const columns = sequentialGroups.includes(colorGroup) ? 5 : 4;
 
   return (
-    <Grid columns={4} rowGap="spacingM" marginBottom="spacingL">
+    <Grid columns={columns} rowGap="spacingM" marginBottom="spacingL">
       {Object.keys(colors).map((color, idx) => {
         const value = colors[color];
 

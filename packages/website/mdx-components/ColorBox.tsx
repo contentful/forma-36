@@ -7,6 +7,12 @@ const styles = {
   swatch: css({
     height: '100px',
   }),
+  text: css({
+    width: '100%',
+    textAlign: 'center',
+    wordBreak: 'break-word',
+    overflowWrap: 'break-word',
+  }),
 };
 
 interface Props {
@@ -26,7 +32,7 @@ export function ColorBox({ text, bgColor, textColor = 'colorWhite' }: Props) {
         alignItems="center"
         style={{ height: '100%' }}
       >
-        <Text fontColor={textColor} fontWeight="fontWeightDemiBold">
+        <Text as="div" fontColor={textColor} fontWeight="fontWeightDemiBold" className={styles.text}>
           {text}
         </Text>
       </Flex>

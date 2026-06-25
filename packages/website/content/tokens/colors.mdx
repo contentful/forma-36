@@ -75,8 +75,49 @@ Black text (anything darker than `gray-800`) is WCAG AA accessible on shades ran
 
 <A11yColors />
 
-### Combining shades
+## Combining shades
 
 When combining multiple shades of the same color, keep to the following accessible combinations. The same combinations are possible across colors (with yellow being the only exception).
 
 <CombiningShadesExample />
+## Data visualization colors
+
+Data visualization colors are reserved exclusively for data components and should not be used for general UI elements (buttons, backgrounds, or borders).
+
+### Categorical
+
+Use these colors for distinguishing between different data series. Follow the numbered sequence for maximum accessibility and visual distinction. The first six colors cover most use cases — categories beyond 5 are typically grouped into an "Other" bucket. Four additional overflow colors support up to 10 unique data series.
+
+<ColorSwatchGroup colorGroup="datavizCategorical" />
+
+### Muted categorical (spotlighting)
+
+When a user hovers over a data element, inactive series drop to 40% opacity. Use the muted variants to represent this interaction state.
+
+<ColorSwatchGroup colorGroup="datavizCategoricalMuted" />
+
+### Sequential
+
+Sequential scales visualize the magnitude or intensity of a single metric (e.g. heatmaps, density maps). Values run from light (low) to dark (high) in 5 steps. Map your minimum value to the `100` token and your maximum to the `900` token.
+
+#### Blue
+
+<ColorSwatchGroup colorGroup="datavizSequentialBlue" />
+
+#### Purple
+
+<ColorSwatchGroup colorGroup="datavizSequentialPurple" />
+
+#### Teal
+
+<ColorSwatchGroup colorGroup="datavizSequentialTeal" />
+
+#### Pink
+
+<ColorSwatchGroup colorGroup="datavizSequentialPink" />
+
+### Semantic and structural
+
+Semantic colors are reserved for delta badges indicating positive or negative trends. Never use them as categorical bars or lines within a chart. Gridline and axis colors provide structural context without competing for attention.
+
+<ColorSwatchGroup colorGroup="datavizSemantic" />
