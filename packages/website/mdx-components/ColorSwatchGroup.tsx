@@ -34,10 +34,10 @@ const sequentialGroups = [
 
 export function ColorSwatchGroup({ colorGroup }: Props) {
   const colors = tokens[colorGroup];
-  const columns = sequentialGroups.includes(colorGroup) ? 5 : 4;
+  const columnCount = sequentialGroups.includes(colorGroup) ? 5 : 4;
 
   return (
-    <Grid columns={columns} rowGap="spacingM" marginBottom="spacingL">
+    <Grid columns={columnCount} rowGap="spacingM" marginBottom="spacingL">
       {Object.keys(colors).map((color, idx) => {
         const value = colors[color];
 

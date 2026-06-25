@@ -33,7 +33,6 @@ export function ColorBox({ text, bgColor, textColor = 'colorWhite' }: Props) {
         style={{ height: '100%' }}
       >
         <Text
-          as="div"
           fontColor={textColor}
           fontWeight="fontWeightDemiBold"
           className={styles.text}
