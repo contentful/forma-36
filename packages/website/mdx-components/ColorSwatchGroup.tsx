@@ -25,7 +25,12 @@ interface Props {
     | 'datavizSemantic';
 }
 
-const sequentialGroups = ['datavizSequentialBlue', 'datavizSequentialPurple', 'datavizSequentialTeal', 'datavizSequentialPink'];
+const sequentialGroups = [
+  'datavizSequentialBlue',
+  'datavizSequentialPurple',
+  'datavizSequentialTeal',
+  'datavizSequentialPink',
+];
 
 export function ColorSwatchGroup({ colorGroup }: Props) {
   const colors = tokens[colorGroup];

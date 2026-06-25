@@ -5,7 +5,15 @@ import { tokens } from '../utils/colorTokens';
 import { ColorBox } from './ColorBox';
 
 export function A11yColors() {
-  const baseColorGroups = ['gray', 'blue', 'green', 'orange', 'purple', 'red', 'yellow'];
+  const baseColorGroups = [
+    'gray',
+    'blue',
+    'green',
+    'orange',
+    'purple',
+    'red',
+    'yellow',
+  ];
 
   const listOfColors: string[] = Object.entries(tokens).reduce(
     (acc, [group, colors]) => {

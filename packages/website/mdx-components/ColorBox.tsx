@@ -32,7 +32,12 @@ export function ColorBox({ text, bgColor, textColor = 'colorWhite' }: Props) {
         alignItems="center"
         style={{ height: '100%' }}
       >
-        <Text as="div" fontColor={textColor} fontWeight="fontWeightDemiBold" className={styles.text}>
+        <Text
+          as="div"
+          fontColor={textColor}
+          fontWeight="fontWeightDemiBold"
+          className={styles.text}
+        >
           {text}
         </Text>
       </Flex>
