@@ -37,6 +37,7 @@ export type CardProps<
 function CardBase<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
   {
     actions,
+    actionsButtonProps,
     badge,
     icon,
     padding = 'default',
@@ -74,7 +75,11 @@ function CardBase<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
                 {badge}
               </Flex>
             )}
-            {actions && <CardActions>{actions}</CardActions>}
+            {actions && (
+              <CardActions buttonProps={actionsButtonProps}>
+                {actions}
+              </CardActions>
+            )}
           </Flex>
         )
       }

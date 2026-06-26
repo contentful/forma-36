@@ -2,8 +2,8 @@ import React, { Fragment } from 'react';
 import { Box, Flex } from '@contentful/f36-core';
 import { SectionHeading, Text } from '@contentful/f36-typography';
 import type { StoryFn, StoryObj, Meta } from '@storybook/react-vite';
-import * as icons from '../src';
-import type { IconProps, IconComponent } from '../src';
+import * as icons from '@contentful/f36-icons';
+import type { IconProps, IconComponent } from '@contentful/f36-icons';
 
 export default {
   argTypes: {

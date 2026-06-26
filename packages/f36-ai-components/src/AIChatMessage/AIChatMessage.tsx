@@ -85,7 +85,45 @@ export interface AIChatMessageProps extends CommonProps {
   contentComponentsOverrides?: ComponentsPropOverrides;
 }
 
-function getMarkdownComponents(
+/**
+ * Determines whether a react-markdown `code` node is a fenced or indented code
+ * block rather than inline code.
+ *
+ * @remarks
+ * react-markdown v9 removed the `inline` prop that previously distinguished the
+ * two, so block code is inferred from the `language-*` class it adds to fenced
+ * blocks or from a newline in the code contents (block code always carries a
+ * trailing newline, while inline code never spans multiple lines).
+ *
+ * @param props - The props react-markdown passes to the `code` renderer.
+ * @returns `true` for block code, `false` for inline code.
+ */
+export function isBlockCode(props: {
+  className?: string;
+  children?: React.ReactNode;
+}): boolean {
+  if (/(?:^|\s)language-/.test(props.className ?? '')) {
+    return true;
+  }
+
+  return React.Children.toArray(props.children).some(
+    (child) => typeof child === 'string' && child.includes('\n'),
+  );
+}
+
+/**
+ * Builds the markdown element renderers used by {@link AIChatMessage}.
+ *
+ * @remarks
+ * Exported for unit testing the individual element renderers (most notably
+ * `code`), since react-markdown is ESM-only and cannot be rendered under the
+ * package's jest setup. Not part of the package's public API.
+ *
+ * @param styles - The resolved style classes for the message.
+ * @param contentComponentsOverrides - Optional per-element prop overrides.
+ * @returns A map of markdown tag names to React element renderers.
+ */
+export function getMarkdownComponents(
   styles: ReturnType<typeof getStyles>,
   contentComponentsOverrides: ComponentsPropOverrides = {},
 ) {
@@ -349,9 +387,12 @@ function getMarkdownComponents(
     code: (props) => (
       <code
         {...{
-          className: props.inline ? styles.inlineCode : styles.codeBlock,
           children: props.children,
           ...props,
+          // Set the style class after `...props`: react-markdown v9 dropped the
+          // `inline` prop, and the className it provides (e.g. "language-ts" for
+          // fenced blocks, or none for inline code) would otherwise clobber it.
+          className: isBlockCode(props) ? styles.codeBlock : styles.inlineCode,
           ...(contentComponentsOverrides?.code
             ? contentComponentsOverrides.code(props)
             : {}),

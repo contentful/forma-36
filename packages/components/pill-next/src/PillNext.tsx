@@ -11,7 +11,7 @@ import {
   type WithEnhancedContent,
 } from '@contentful/f36-tooltip';
 import { IconButton } from '@contentful/f36-button';
-import { XIcon, WarningIcon, WarningOctagonIcon } from '@contentful/f36-icons';
+import { WarningIcon, WarningOctagonIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 import type { PillNextVariant } from './PillNext.types';
 import { getPillNextStyles } from './PillNext.styles';
@@ -19,9 +19,6 @@ import { getPillNextStyles } from './PillNext.styles';
 export type PillNextInternalProps = CommonProps & {
   label: string;
   variant?: PillNextVariant;
-  onRemove?: () => void;
-  /** @default "Remove" */
-  removeButtonLabel?: string;
   isDisabled?: boolean;
   /** Only rendered for variants with a leading icon (warning/negative). */
   tooltipContent?: string;
@@ -29,8 +26,16 @@ export type PillNextInternalProps = CommonProps & {
     CommonProps & WithEnhancedContent & TooltipInternalProps,
     'content' | 'children' | 'withTriggerWrapper'
   >;
-  /** Content rendered between label and remove button. */
+  /** Content rendered between label and end action button. */
   children?: React.ReactNode;
+  /** Icon element rendered as the end action button. */
+  actionIcon?: React.ReactElement;
+  /** Callback fired when the action button is clicked. */
+  onAction?: () => void;
+  /** Accessible label for the action button. */
+  actionButtonLabel?: string;
+  /** Additional className applied to the action button. */
+  actionButtonClassName?: string;
 };
 
 export type PillNextProps = PropsWithHTMLElement<PillNextInternalProps, 'div'>;
@@ -57,18 +62,20 @@ export const PillNext = React.forwardRef<
   const {
     label,
     variant = 'secondary',
-    onRemove,
-    removeButtonLabel = 'Remove',
     isDisabled = false,
     tooltipContent,
     tooltipProps,
     children,
+    actionIcon,
+    onAction,
+    actionButtonLabel,
+    actionButtonClassName,
     testId = 'cf-ui-pill-next',
     className,
     ...otherProps
   } = props;
 
-  const styles = getPillNextStyles(variant, Boolean(onRemove));
+  const styles = getPillNextStyles(variant, Boolean(actionIcon));
 
   const LeadingIcon = leadingIcons[variant];
   const iconColor = leadingIconColors[variant];
@@ -111,15 +118,15 @@ export const PillNext = React.forwardRef<
 
       {children}
 
-      {onRemove && (
+      {actionIcon && (
         <IconButton
           variant="transparent"
           size="small"
-          icon={<XIcon size="small" />}
-          aria-label={removeButtonLabel}
-          onClick={onRemove}
+          icon={actionIcon}
+          aria-label={actionButtonLabel}
+          onClick={onAction}
           isDisabled={isDisabled}
-          className={styles.removeButton}
+          className={cx(styles.endButton, actionButtonClassName)}
         />
       )}
     </div>

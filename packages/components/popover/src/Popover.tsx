@@ -74,6 +74,13 @@ export interface PopoverProps {
   closeOnEsc?: boolean;
 
   /**
+   * If true, the popover will close when an overflow ancestor is scrolled
+   *
+   * @default true
+   */
+  closeOnScroll?: boolean;
+
+  /**
    * If true, the popover will be focused after opening
    *
    * @default true

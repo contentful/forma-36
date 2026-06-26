@@ -3,7 +3,13 @@ import type { StoryObj } from '@storybook/react-vite';
 import { Stack } from '@contentful/f36-core';
 import { SectionHeading, Text } from '@contentful/f36-typography';
 import { Button } from '@contentful/f36-button';
+import tokens, { type TransitionDurationTokens } from '@contentful/f36-tokens';
+
 import { Collapse, CollapseProps } from '../src';
+
+const transitionDurationOptions = Object.keys(tokens).filter((key) =>
+  key.startsWith('transitionDuration'),
+) as TransitionDurationTokens[];
 
 export default {
   title: 'Animation/Collapse',
@@ -15,6 +21,10 @@ export default {
     children: { control: { disable: true } },
     className: { control: { disable: true } },
     isExpanded: { control: 'boolean' },
+    transitionDuration: {
+      control: 'select',
+      options: transitionDurationOptions,
+    },
   },
 };
 
@@ -39,7 +49,11 @@ export const Basic: StoryObj<CollapseProps> = (args) => {
       >
         Toggle content
       </Button>
-      <Collapse id="collapsible-foo" isExpanded={isExpanded}>
+      <Collapse
+        id="collapsible-foo"
+        isExpanded={isExpanded}
+        transitionDuration={args.transitionDuration}
+      >
         <SectionHeading>Collapsable Element</SectionHeading>
         <Text>{defaultText}</Text>
       </Collapse>
@@ -49,6 +63,7 @@ export const Basic: StoryObj<CollapseProps> = (args) => {
 
 Basic.args = {
   isExpanded: false,
+  transitionDuration: 'transitionDurationDefault',
 };
 
 export const Expanded: StoryObj<CollapseProps> = (args) => {
@@ -109,4 +124,34 @@ export const Nested: StoryObj<CollapseProps> = (args) => {
 };
 Nested.args = {
   isExpanded: false,
+};
+
+export const TransitionDuration: StoryObj<CollapseProps> = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const durations = transitionDurationOptions.map((value) => ({
+    label: value.replace('transitionDuration', ''),
+    value,
+  }));
+
+  return (
+    <Stack flexDirection="column" spacing="spacingL">
+      <Button onClick={() => setIsExpanded(!isExpanded)}>Toggle all</Button>
+      {durations.map(({ label, value }) => (
+        <Stack key={label} flexDirection="column" spacing="spacingXs">
+          <Text fontWeight="fontWeightMedium">
+            {label} ({tokens[value]})
+          </Text>
+          <Collapse isExpanded={isExpanded} transitionDuration={value}>
+            <Text>{defaultText}</Text>
+          </Collapse>
+        </Stack>
+      ))}
+    </Stack>
+  );
+};
+
+TransitionDuration.args = {
+  isExpanded: false,
+  transitionDuration: 'transitionDurationDefault',
 };

@@ -53,6 +53,7 @@ export const AIChatInputTextArea: React.FC<AIChatInputTextAreaProps> = ({
   };
 
   const editor = useEditor({
+    immediatelyRender: false,
     content: initialContent,
     extensions: [
       ...(editorExtensions || []),

@@ -26,7 +26,7 @@ const variantStyles: Record<
 
 export function getPillNextStyles(
   variant: PillNextVariant,
-  hasRemoveButton: boolean,
+  hasEndButton: boolean,
 ) {
   const { background, border } = variantStyles[variant];
 
@@ -36,11 +36,13 @@ export function getPillNextStyles(
       alignItems: 'center',
       // TODO: replace with border-radius token when new tokens ship in next major
       borderRadius: '16px',
-      height: '32px',
+      minHeight: '32px',
+      minWidth: 0,
+      maxWidth: '100%',
       paddingTop: tokens.spacing2Xs,
       paddingBottom: tokens.spacing2Xs,
       paddingLeft: tokens.spacingS,
-      paddingRight: hasRemoveButton ? tokens.spacing2Xs : tokens.spacingS,
+      paddingRight: hasEndButton ? tokens.spacing2Xs : tokens.spacingS,
       border: `1px solid ${border}`,
       backgroundColor: background,
       fontFamily: tokens.fontStackPrimary,
@@ -60,9 +62,9 @@ export function getPillNextStyles(
       fontSize: tokens.fontSizeM,
       fontWeight: tokens.fontWeightMedium,
       lineHeight: tokens.lineHeightM,
-      whiteSpace: 'nowrap',
+      wordBreak: 'break-word',
     }),
-    removeButton: css({
+    endButton: css({
       '&&': {
         width: '24px',
         height: '24px',

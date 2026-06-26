@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.2.0
+
+### Minor Changes
+
+- [#3441](https://github.com/contentful/forma-36/pull/3441) [`acb26a3`](https://github.com/contentful/forma-36/commit/acb26a3daff562b4778844f8ffa1fdd8b845bce9) Thanks [@FailedSitcom](https://github.com/FailedSitcom)! - feat(tokens): introduce data visualization tokens
+
+## 6.1.3
+
+### Patch Changes
+
+- [#3438](https://github.com/contentful/forma-36/pull/3438) [`61a6c8f`](https://github.com/contentful/forma-36/commit/61a6c8f066448a8dc1f9b66d6f16e12ee6b41d73) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - feat(collapse): introduce the transition duration property
+
 ## 6.1.2
 
 ### Patch Changes

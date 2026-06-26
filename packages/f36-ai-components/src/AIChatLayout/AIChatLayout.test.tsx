@@ -62,6 +62,25 @@ describe('AIChatLayout', () => {
     ).toHaveLength(1);
   });
 
+  it('renders a React node title', () => {
+    render(
+      <AIChatLayout
+        header={{
+          id: 'test-header',
+          title: <button type="button">Select agent</button>,
+          icon: <StarIcon />,
+        }}
+      />,
+    );
+
+    expect(
+      screen.getByRole('button', { name: 'Select agent' }),
+    ).toBeInTheDocument();
+    expect(screen.getByTestId('cf-ui-ai-chat-layout-title')).toContainElement(
+      screen.getByRole('button', { name: 'Select agent' }),
+    );
+  });
+
   it('renders the component without icon when not provided', () => {
     render(<AIChatLayout header={{ id: 'test', title: 'Test' }} />);
 

@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
+import { MenuItem } from '@contentful/f36-menu';
 
 import { Card } from './Card';
 
@@ -71,6 +72,22 @@ describe('Card', () => {
     await user.click(screen.getByText('Card as link'));
 
     expect(onClick).toHaveBeenCalled();
+  });
+
+  it('uses the provided aria-label for the actions button', () => {
+    render(
+      <Card
+        title="Card title"
+        actionsButtonProps={{ 'aria-label': 'Toggle card actions' }}
+        actions={[<MenuItem key="copy">Copy</MenuItem>]}
+      >
+        Card
+      </Card>,
+    );
+
+    expect(
+      screen.getByRole('button', { name: 'Toggle card actions' }),
+    ).toBeInTheDocument();
   });
 
   it('has no a11y issues', async () => {

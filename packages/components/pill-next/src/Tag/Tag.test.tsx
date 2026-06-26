@@ -1,6 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
+import { XIcon } from '@contentful/f36-icons';
 
 import { Tag } from './Tag';
 
@@ -58,9 +59,15 @@ describe('Tag', () => {
       expect(screen.getByText('Draft')).toBeTruthy();
     });
 
-    it('renders badge between label and remove button', () => {
+    it('renders badge between label and action button', () => {
       const { container } = render(
-        <Tag label="test" badge={<span>Status</span>} onRemove={() => {}} />,
+        <Tag
+          label="test"
+          badge={<span>Status</span>}
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Remove"
+        />,
       );
       const tag = container.firstChild as HTMLElement;
       const children = Array.from(tag.children);
@@ -74,62 +81,81 @@ describe('Tag', () => {
     });
   });
 
-  describe('remove button', () => {
-    it('renders remove button when onRemove is provided', () => {
-      render(<Tag label="test" badge={<span>1</span>} onRemove={() => {}} />);
-      expect(screen.getByRole('button', { name: 'Remove' })).toBeTruthy();
-    });
-
-    it('does not render remove button when onRemove is not provided', () => {
-      render(<Tag label="test" badge={<span>1</span>} />);
-      expect(screen.queryByRole('button')).toBeNull();
-    });
-
-    it('calls onRemove when remove button is clicked', () => {
-      const mockOnRemove = jest.fn();
-      render(
-        <Tag label="test" badge={<span>1</span>} onRemove={mockOnRemove} />,
-      );
-      fireEvent.click(screen.getByRole('button', { name: 'Remove' }));
-      expect(mockOnRemove).toHaveBeenCalledTimes(1);
-    });
-
-    it('uses custom remove button label', () => {
+  describe('action button', () => {
+    it('renders action button when actionIcon is provided', () => {
       render(
         <Tag
           label="test"
           badge={<span>1</span>}
-          onRemove={() => {}}
-          removeButtonLabel="Delete tag"
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Remove"
+        />,
+      );
+      expect(screen.getByRole('button', { name: 'Remove' })).toBeTruthy();
+    });
+
+    it('does not render action button when actionIcon is not provided', () => {
+      render(<Tag label="test" badge={<span>1</span>} />);
+      expect(screen.queryByRole('button')).toBeNull();
+    });
+
+    it('calls onAction when action button is clicked', () => {
+      const mockOnAction = jest.fn();
+      render(
+        <Tag
+          label="test"
+          badge={<span>1</span>}
+          actionIcon={<XIcon />}
+          onAction={mockOnAction}
+          actionButtonLabel="Remove"
+        />,
+      );
+      fireEvent.click(screen.getByRole('button', { name: 'Remove' }));
+      expect(mockOnAction).toHaveBeenCalledTimes(1);
+    });
+
+    it('uses custom action button label', () => {
+      render(
+        <Tag
+          label="test"
+          badge={<span>1</span>}
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Delete tag"
         />,
       );
       expect(screen.getByRole('button', { name: 'Delete tag' })).toBeTruthy();
     });
 
-    it('disables remove button when isDisabled is true', () => {
+    it('disables action button when isDisabled is true', () => {
       render(
         <Tag
           label="test"
           badge={<span>1</span>}
-          onRemove={() => {}}
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Remove"
           isDisabled
         />,
       );
       expect(screen.getByRole('button', { name: 'Remove' })).toBeDisabled();
     });
 
-    it('does not call onRemove when disabled', () => {
-      const mockOnRemove = jest.fn();
+    it('does not call onAction when disabled', () => {
+      const mockOnAction = jest.fn();
       render(
         <Tag
           label="test"
           badge={<span>1</span>}
-          onRemove={mockOnRemove}
+          actionIcon={<XIcon />}
+          onAction={mockOnAction}
+          actionButtonLabel="Remove"
           isDisabled
         />,
       );
       fireEvent.click(screen.getByRole('button', { name: 'Remove' }));
-      expect(mockOnRemove).not.toHaveBeenCalled();
+      expect(mockOnAction).not.toHaveBeenCalled();
     });
   });
 
@@ -157,20 +183,28 @@ describe('Tag', () => {
       expect(results).toHaveNoViolations();
     });
 
-    it('has no a11y violations with remove button', async () => {
+    it('has no a11y violations with action button', async () => {
       const { container } = render(
-        <Tag label="test" badge={<span>Draft</span>} onRemove={() => {}} />,
+        <Tag
+          label="test"
+          badge={<span>Draft</span>}
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Remove"
+        />,
       );
       const results = await axe(container);
       expect(results).toHaveNoViolations();
     });
 
-    it('has no a11y violations with disabled remove button', async () => {
+    it('has no a11y violations with disabled action button', async () => {
       const { container } = render(
         <Tag
           label="test"
           badge={<span>Draft</span>}
-          onRemove={() => {}}
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Remove"
           isDisabled
         />,
       );

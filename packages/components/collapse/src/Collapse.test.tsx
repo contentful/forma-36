@@ -1,9 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
+import tokens from '@contentful/f36-tokens';
 
 import { Collapse } from './Collapse';
-import userEvent from '@testing-library/user-event';
 
 it('has no a11y issues', async () => {
   const { container } = render(<Collapse isExpanded>Collapse me </Collapse>);
@@ -67,6 +68,22 @@ describe('Collapse behavior', () => {
     // After transition ends height should be auto per handleTransitionEnd
     expect(panel.style.height).toBe('auto');
     expect(panel.style.display).toBe('block');
+  });
+
+  it('applies transition duration from token', () => {
+    const { getByTestId, rerender } = render(
+      <Collapse isExpanded={false} transitionDuration="transitionDurationLong">
+        Content
+      </Collapse>,
+    );
+    const panel = getByTestId('cf-collapse');
+    setMockScrollHeight(panel, 128);
+    rerender(
+      <Collapse isExpanded transitionDuration="transitionDurationLong">
+        Content
+      </Collapse>,
+    );
+    expect(panel.style.transition).toContain(tokens.transitionDurationLong);
   });
 
   it('collapses from expanded: sets pointer-events none and display none after transition', () => {

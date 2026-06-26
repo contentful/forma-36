@@ -177,6 +177,7 @@ const buildIndexDTS = async (srcPath, tokens) => {
           'colorNegative',
           'colorPositive',
           'colorWhite',
+          'colorDataviz',
         ].concat(
           generatePaletteNames([
             'gray',
@@ -200,6 +201,8 @@ const buildIndexDTS = async (srcPath, tokens) => {
       ${createUnionThatStarts('borderRadius', 'BorderRadiusTokens')}
       ${createUnionThatStarts('zIndex', 'ZIndexTokens')}
       ${createUnionThatStarts('glow', 'GlowTokens')}
+      ${createUnionThatStarts('transitionDuration', 'TransitionDurationTokens')}
+      ${createUnionThatStarts('transitionEasing', 'TransitionEasingTokens')}
       const tokens: F36Tokens;
       export { tokens as default };
     }`,

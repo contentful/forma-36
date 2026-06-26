@@ -1,5 +1,131 @@
 # Change Log
 
+## 6.12.0
+
+### Patch Changes
+
+- Updated dependencies [[`c05bd46`](https://github.com/contentful/forma-36/commit/c05bd4674ee47d187b0b19f9434091139ab98be4)]:
+  - @contentful/f36-icons@6.12.0
+  - @contentful/f36-asset@6.12.0
+  - @contentful/f36-badge@6.12.0
+  - @contentful/f36-button@6.12.0
+  - @contentful/f36-core@6.12.0
+  - @contentful/f36-drag-handle@6.12.0
+  - @contentful/f36-icon@6.12.0
+  - @contentful/f36-menu@6.12.0
+  - @contentful/f36-skeleton@6.12.0
+  - @contentful/f36-tooltip@6.12.0
+  - @contentful/f36-typography@6.12.0
+
+## 6.11.1
+
+### Patch Changes
+
+- Updated dependencies [[`61a6c8f`](https://github.com/contentful/forma-36/commit/61a6c8f066448a8dc1f9b66d6f16e12ee6b41d73)]:
+  - @contentful/f36-tokens@6.1.3
+  - @contentful/f36-asset@6.11.1
+  - @contentful/f36-badge@6.11.1
+  - @contentful/f36-button@6.11.1
+  - @contentful/f36-core@6.11.1
+  - @contentful/f36-drag-handle@6.11.1
+  - @contentful/f36-icon@6.11.1
+  - @contentful/f36-icons@6.11.1
+  - @contentful/f36-menu@6.11.1
+  - @contentful/f36-skeleton@6.11.1
+  - @contentful/f36-tooltip@6.11.1
+  - @contentful/f36-typography@6.11.1
+
+## 6.11.0
+
+### Patch Changes
+
+- Updated dependencies [[`972f1fd`](https://github.com/contentful/forma-36/commit/972f1fd8ea64b03e11ebc96f4750cbb98131b80b)]:
+  - @contentful/f36-icons@6.11.0
+  - @contentful/f36-asset@6.11.0
+  - @contentful/f36-badge@6.11.0
+  - @contentful/f36-button@6.11.0
+  - @contentful/f36-core@6.11.0
+  - @contentful/f36-drag-handle@6.11.0
+  - @contentful/f36-icon@6.11.0
+  - @contentful/f36-menu@6.11.0
+  - @contentful/f36-skeleton@6.11.0
+  - @contentful/f36-tooltip@6.11.0
+  - @contentful/f36-typography@6.11.0
+
+## 6.10.1
+
+### Patch Changes
+
+- [#3436](https://github.com/contentful/forma-36/pull/3436) [`53b0436`](https://github.com/contentful/forma-36/commit/53b0436a2a9d9060a8db0545d95330d3aeb64c07) Thanks [@Lelith](https://github.com/Lelith)! - Fixes a unmatched peer dependency issue with react 18 vs 19 by making sure all packages and internal package references define both as accepted versions
+
+- Updated dependencies [[`53b0436`](https://github.com/contentful/forma-36/commit/53b0436a2a9d9060a8db0545d95330d3aeb64c07)]:
+  - @contentful/f36-drag-handle@6.10.1
+  - @contentful/f36-typography@6.10.1
+  - @contentful/f36-skeleton@6.10.1
+  - @contentful/f36-tooltip@6.10.1
+  - @contentful/f36-button@6.10.1
+  - @contentful/f36-asset@6.10.1
+  - @contentful/f36-badge@6.10.1
+  - @contentful/f36-icons@6.10.1
+  - @contentful/f36-icon@6.10.1
+  - @contentful/f36-menu@6.10.1
+  - @contentful/f36-core@6.10.1
+
+## 6.10.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-asset@6.10.0
+  - @contentful/f36-badge@6.10.0
+  - @contentful/f36-button@6.10.0
+  - @contentful/f36-core@6.10.0
+  - @contentful/f36-drag-handle@6.10.0
+  - @contentful/f36-icon@6.10.0
+  - @contentful/f36-icons@6.10.0
+  - @contentful/f36-menu@6.10.0
+  - @contentful/f36-skeleton@6.10.0
+  - @contentful/f36-tooltip@6.10.0
+  - @contentful/f36-typography@6.10.0
+
+## 6.9.1
+
+### Patch Changes
+
+- [#3424](https://github.com/contentful/forma-36/pull/3424) [`71768b8`](https://github.com/contentful/forma-36/commit/71768b8db6f1aeeb3576e8d2f48ba4079f806730) Thanks [@Lelith](https://github.com/Lelith)! - Fixes the versioning of the released packages
+
+- Updated dependencies []:
+  - @contentful/f36-asset@6.9.1
+  - @contentful/f36-badge@6.9.1
+  - @contentful/f36-button@6.9.1
+  - @contentful/f36-core@6.9.1
+  - @contentful/f36-drag-handle@6.9.1
+  - @contentful/f36-icon@6.9.1
+  - @contentful/f36-icons@6.9.1
+  - @contentful/f36-menu@6.9.1
+  - @contentful/f36-skeleton@6.9.1
+  - @contentful/f36-tooltip@6.9.1
+  - @contentful/f36-typography@6.9.1
+
+## 6.9.0
+
+### Patch Changes
+
+- [#3422](https://github.com/contentful/forma-36/pull/3422) [`1b4305b`](https://github.com/contentful/forma-36/commit/1b4305b151385fa22a67fea7e4a3a8f9d239f2d4) Thanks [@maroun9t](https://github.com/maroun9t)! - - Restore `actionsButtonProps['aria-label']` override behavior for card action buttons.
+  - Pass `actionsButtonProps` through the `Card` header action path.
+- Updated dependencies []:
+  - @contentful/f36-asset@6.9.0
+  - @contentful/f36-badge@6.9.0
+  - @contentful/f36-button@6.9.0
+  - @contentful/f36-core@6.9.0
+  - @contentful/f36-drag-handle@6.9.0
+  - @contentful/f36-icon@6.9.0
+  - @contentful/f36-icons@6.9.0
+  - @contentful/f36-menu@6.9.0
+  - @contentful/f36-skeleton@6.9.0
+  - @contentful/f36-tooltip@6.9.0
+  - @contentful/f36-typography@6.9.0
+
 ## 6.8.0
 
 ### Patch Changes
