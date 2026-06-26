@@ -37,7 +37,12 @@ export function ColorBox({ text, bgColor, textColor = 'colorWhite' }: Props) {
           fontWeight="fontWeightDemiBold"
           className={styles.text}
         >
-          {text}
+          {text.split(/(?<=\D)(?=\d)/).map((part, i, arr) => (
+            <React.Fragment key={i}>
+              {part}
+              {i < arr.length - 1 && <br />}
+            </React.Fragment>
+          ))}
         </Text>
       </Flex>
     </Card>
