@@ -15,6 +15,7 @@
   - [Storybook for f36-components](#storybook-for-f36-components)
 - [Commits & releases](#commits--releases)
 - [Deprecation process](#deprecation-process)
+- [Figma Code Connect](#figma-code-connect)
 - [Testing with your own project locally](#testing-with-your-own-project-locally)
 - [Get involved](#get-involved)
 - [Reach out to us](#reach-out-to-us)
@@ -51,6 +52,10 @@ Read more about changeset [here](RELEASES.md)
 We follow a structured deprecation process to ensure smooth transitions when components, props, and features are being phased out. Deprecations are announced at least one major version in advance, with clear migration paths and runtime warnings.
 
 Read more about our deprecation guidelines [here](DEPRECATION.md)
+
+## Figma Code Connect
+
+Component mappings for Figma Dev Mode are maintained alongside each component source as `*.figma.tsx` files. See [docs/code-connect.md](docs/code-connect.md) for details on how to update mappings and publish changes.
 
 ## Testing with your own project locally
 
