@@ -149,6 +149,7 @@ export default [
     files: [
       '**/*.stories.*',
       '**/*.test.*',
+      '**/*.figma.*',
       '**/examples/**',
       '**/packages/**/__testfixtures__/**',
     ],
