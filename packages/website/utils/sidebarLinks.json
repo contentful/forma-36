@@ -97,7 +97,12 @@
     {
       "title": "Pill",
       "slug": "/components/pill/",
-      "status": "stable"
+      "status": "deprecated"
+    },
+    {
+      "title": "PillNext",
+      "slug": "/components/pill-next/",
+      "status": "alpha"
     },
     {
       "title": "Popover",

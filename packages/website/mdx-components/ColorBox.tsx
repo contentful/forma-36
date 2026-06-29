@@ -7,6 +7,11 @@ const styles = {
   swatch: css({
     height: '100px',
   }),
+  text: css({
+    width: '100%',
+    textAlign: 'center',
+    overflowWrap: 'break-word',
+  }),
 };
 
 interface Props {
@@ -16,6 +21,10 @@ interface Props {
 }
 
 export function ColorBox({ text, bgColor, textColor = 'colorWhite' }: Props) {
+  const textParts = text.split(/(?<=\D)(?=\d)/);
+  const colorName = textParts.shift();
+  const shadeNumber = textParts.pop();
+
   return (
     <Card
       className={styles.swatch}
@@ -26,8 +35,15 @@ export function ColorBox({ text, bgColor, textColor = 'colorWhite' }: Props) {
         alignItems="center"
         style={{ height: '100%' }}
       >
-        <Text fontColor={textColor} fontWeight="fontWeightDemiBold">
-          {text}
+        <Text
+          isWordBreak
+          fontColor={textColor}
+          fontWeight="fontWeightDemiBold"
+          className={styles.text}
+        >
+          {colorName}
+          <br />
+          {shadeNumber}
         </Text>
       </Flex>
     </Card>
