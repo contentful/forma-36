@@ -1,4 +1,5 @@
 const scaleGray = require('./scale-gray');
+const colorsSemantic = require('./colors-semantic');
 
 const colorsDataviz = {
   'color-dataviz-categorical-1-default': '#4269D0',
@@ -49,6 +50,10 @@ const colorsDataviz = {
 
   'color-dataviz-chart-gridline': scaleGray['gray-200'],
   'color-dataviz-axis-labels': scaleGray['gray-500'],
+
+  'color-dataviz-positive': colorsSemantic['color-positive'],
+  'color-dataviz-negative': colorsSemantic['color-negative'],
+  'color-dataviz-warning': colorsSemantic['color-warning'],
 };
 
 module.exports = colorsDataviz;
