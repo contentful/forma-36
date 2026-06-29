@@ -22,7 +22,7 @@
     "@contentful/f36-navbar": "^6.12.0",
     "@contentful/f36-navlist": "^6.12.0",
     "@contentful/f36-progress-stepper": "^6.12.0",
-    "@contentful/f36-tokens": "^6.2.0",
+    "@contentful/f36-tokens": "^6.2.1",
     "@contentful/f36-utils": "^6.1.2",
     "@contentful/rich-text-react-renderer": "^16.0.0",
     "@dnd-kit/core": "^6.0.8",

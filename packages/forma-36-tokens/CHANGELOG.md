@@ -1,5 +1,11 @@
 # Change Log
 
+## 6.2.1
+
+### Patch Changes
+
+- [#3449](https://github.com/contentful/forma-36/pull/3449) [`e0061a2`](https://github.com/contentful/forma-36/commit/e0061a2d4ff1d617868c430118d3f9d866cf69bd) Thanks [@damann](https://github.com/damann)! - feat(tokens): add semantic data visualization tokens
+
 ## 6.2.0
 
 ### Minor Changes
