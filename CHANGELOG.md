@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 30-06-2026
+
+**F36 Tokens** `v6.2.1`
+
+- feat(tokens): add semantic data visualization tokens
+
 ## 26-06-2026
 
 **F36 Tokens** `v6.2.0`
