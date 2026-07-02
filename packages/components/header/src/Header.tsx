@@ -19,6 +19,7 @@ import { getHeaderStyles } from './Header.styles';
 import { HeaderTitle } from './HeaderTitle';
 import { Segmentation } from './Segmentation';
 import type { HeadingElement } from '@contentful/f36-typography';
+import { useLayoutContext } from '@contentful/f36-layout/src/LayoutContext';
 
 const HEADER_DEFAULT_TAG = 'header';
 
@@ -93,7 +94,14 @@ function HeaderBase<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
   forwardedRef: Ref<HTMLElement>,
 ) {
   const variant = breadcrumbs ? 'breadcrumb' : 'title';
-  const styles = getHeaderStyles();
+  const { withResponsiveHeader } = useLayoutContext(true);
+  const styles = getHeaderStyles(withResponsiveHeader);
+
+  if (withResponsiveHeader && filters) {
+    throw new Error(
+      'The "filters" prop cannot be used when the layout’s "withResponsiveHeader" prop is set.',
+    );
+  }
 
   return (
     <Flex
@@ -134,13 +142,16 @@ function HeaderBase<E extends ElementType = typeof HEADER_DEFAULT_TAG>(
               alignItems="center"
               gap="spacing2Xs"
               marginLeft="spacing2Xs"
+              {...(withResponsiveHeader && { alignSelf: 'flex-start' })}
             >
               {metadata}
             </Flex>
           )}
         </Flex>
       </Flex>
-      <Flex className={styles.filters}>{filters}</Flex>
+      {!withResponsiveHeader && (
+        <Flex className={styles.filters}>{filters}</Flex>
+      )}
       <Flex className={styles.actions}>{actions}</Flex>
     </Flex>
   );

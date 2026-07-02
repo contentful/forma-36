@@ -15,6 +15,7 @@ import React, {
   type ReactElement,
 } from 'react';
 import { getSegmentationStyles } from './Segmentation.styles';
+import { useLayoutContext } from '@contentful/f36-layout/src/LayoutContext';
 
 const SEGMENTATION_DEFAULT_TAG = 'div';
 
@@ -49,7 +50,8 @@ function SegmentationBase<
   }: SegmentationProps<E>,
   forwardedRef: Ref<HTMLDivElement>,
 ) {
-  const styles = getSegmentationStyles();
+  const { withResponsiveHeader } = useLayoutContext(true);
+  const styles = getSegmentationStyles(withResponsiveHeader);
   const separator = SeparatorComponent ?? <div className={styles.separator} />;
 
   const mapSegments = (segment: ReactNode, index: number) => (

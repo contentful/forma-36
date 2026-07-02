@@ -1,12 +1,15 @@
 import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/css';
 
-export const getSegmentationStyles = () => {
+export const getSegmentationStyles = (withResponsiveHeader: boolean) => {
   return {
-    root: css({
-      alignItems: 'center',
-      display: 'flex',
-    }),
+    root: css(
+      css({
+        alignItems: 'center',
+        display: 'flex',
+      }),
+      withResponsiveHeader && css({ flexWrap: 'wrap' }),
+    ),
     separator: css({
       height: tokens.spacingXl,
       position: 'relative',

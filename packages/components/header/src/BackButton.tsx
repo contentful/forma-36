@@ -2,6 +2,9 @@ import React, { forwardRef, type Ref } from 'react';
 import tokens from '@contentful/f36-tokens';
 import { IconButton, type IconButtonProps } from '@contentful/f36-button';
 import { ArrowLeftIcon } from '@contentful/f36-icons';
+import { useLayoutContext } from '@contentful/f36-layout/src/LayoutContext';
+import { cx } from '@emotion/css';
+import { getBackButtonStyles } from './BackButton.styles';
 
 export type BackButtonProps = Omit<
   Partial<IconButtonProps>,
@@ -14,13 +17,18 @@ function BackButtonBase(
   {
     onClick,
     'aria-label': ariaLabel = 'Go back',
+    className,
     ...otherProps
   }: BackButtonProps,
   ref: Ref<HTMLButtonElement>,
 ) {
+  const { withResponsiveHeader } = useLayoutContext(true);
+  const styles = getBackButtonStyles(withResponsiveHeader);
+
   return (
     <IconButton
       {...otherProps}
+      className={cx(styles.button, className)}
       aria-label={ariaLabel}
       icon={<ArrowLeftIcon color={tokens.gray600} />}
       onClick={onClick}

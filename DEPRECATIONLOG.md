@@ -6,6 +6,15 @@ This log tracks all deprecated features and components in Forma 36. For details 
 
 ## Active Deprecations
 
+### Header – `filter` prop (`@contentful/f36-header`)
+
+- **Deprecated**: 2026-07-15
+- **Deprecated In**: v6.x.x
+- **Removal Planned**: future major release
+- **Reason**: Incompatible with responsive header (enabled with `Layout`’s `withResponsiveHeader` prop)
+- **Migration**: Add the filters as a separate component below the header
+- **Guide**: [Migration documentation](./packages/components/layout/MIGRATION_UPCOMING.md)
+
 ### Pill (`@contentful/f36-pill`)
 
 - **Deprecated**: 2026-05-21

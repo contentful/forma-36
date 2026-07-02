@@ -6,6 +6,7 @@ import {
 } from '@contentful/f36-typography';
 import type { HeaderProps } from './Header';
 import { getHeaderTitleStyles } from './HeaderTitle.styles';
+import { useLayoutContext } from '@contentful/f36-layout/src/LayoutContext';
 
 type HeaderTitleProps = {
   title: HeaderProps['title'];
@@ -25,9 +26,10 @@ export function HeaderTitle({
   const styles = getHeaderTitleStyles({ variant, withBackButton });
   const Element =
     variant === 'breadcrumb' || size === 'medium' ? Subheading : DisplayText;
+  const { withResponsiveHeader } = useLayoutContext(true);
 
   return (
-    <div className={styles.noWrap}>
+    <div className={withResponsiveHeader ? undefined : styles.noWrap}>
       {isValidElement(title) ? (
         title
       ) : (

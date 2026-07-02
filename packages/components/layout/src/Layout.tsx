@@ -5,7 +5,7 @@ import React, {
   type HTMLAttributes,
 } from 'react';
 import { cx } from '@emotion/css';
-import { type CommonProps, Box, Flex } from '@contentful/f36-core';
+import { type CommonProps, Box } from '@contentful/f36-core';
 import { LayoutContextProvider, LayoutContextType } from './LayoutContext';
 import { getLayoutStyles } from './Layout.styles';
 
@@ -47,6 +47,10 @@ export type LayoutProps = {
    * @default 60 (= navbar height)
    */
   offsetTop?: number;
+  /**
+   * Allows the header to split into multiple lines. Disallows passing the `filters` prop to the header.
+   */
+  withResponsiveHeader?: boolean;
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 
@@ -65,6 +69,7 @@ const LayoutBase = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     contentTestId = 'cf-layout-content-container',
     contentClassName,
     offsetTop = 60,
+    withResponsiveHeader = false,
     ...otherProps
   } = props;
 
@@ -78,6 +83,7 @@ const LayoutBase = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     leftSidebarVariant,
     withRightSidebar,
     rightSidebarVariant,
+    withResponsiveHeader,
   });
 
   const contextValue: LayoutContextType = useMemo(
@@ -86,20 +92,27 @@ const LayoutBase = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
       withHeader: Boolean(header),
       withLeftSidebar: withLeftSidebar,
       withRightSidebar: withRightSidebar,
+      withResponsiveHeader,
       offsetTop,
     }),
-    [variant, header, withLeftSidebar, withRightSidebar, offsetTop],
+    [
+      variant,
+      header,
+      withLeftSidebar,
+      withRightSidebar,
+      withResponsiveHeader,
+      offsetTop,
+    ],
   );
 
   return (
     <LayoutContextProvider value={contextValue}>
-      <Flex
+      <Box
         ref={ref}
         testId={testId}
         as="section"
         {...otherProps}
         className={cx(styles.layoutMainContainer, className)}
-        flexDirection="column"
       >
         {header}
 
@@ -111,7 +124,7 @@ const LayoutBase = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
           {children}
           {rightSidebar}
         </Box>
-      </Flex>
+      </Box>
     </LayoutContextProvider>
   );
 };
