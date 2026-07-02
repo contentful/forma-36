@@ -76,6 +76,7 @@ export const getLayoutStyles = ({
   leftSidebarVariant,
   withRightSidebar,
   rightSidebarVariant,
+  withResponsiveHeader,
   offsetTop,
 }: {
   variant: LayoutProps['variant'];
@@ -84,6 +85,7 @@ export const getLayoutStyles = ({
   leftSidebarVariant?: LayoutSidebarVariant;
   withRightSidebar?: boolean;
   rightSidebarVariant?: LayoutSidebarVariant;
+  withResponsiveHeader: boolean;
   offsetTop: number;
 }) => ({
   layoutMainContainer: css(
@@ -92,32 +94,61 @@ export const getLayoutStyles = ({
       backgroundColor: tokens.colorWhite,
       minHeight: `calc(100vh - ${offsetTop}px)`,
     },
+    !withResponsiveHeader && {
+      display: 'flex',
+      flexDirection: 'column',
+    },
+    withResponsiveHeader && {
+      display: 'grid',
+      gridTemplateRows: 'max-content auto',
+    },
+    withResponsiveHeader &&
+      getContentContainerGridTemplateColumns({
+        variant,
+        withLeftSidebar,
+        leftSidebarVariant,
+        withRightSidebar,
+        rightSidebarVariant,
+      }),
   ),
   layoutContentContainer: css(
-    getContentContainerGridTemplateColumns({
-      variant,
-      withLeftSidebar,
-      leftSidebarVariant,
-      withRightSidebar,
-      rightSidebarVariant,
-    }),
+    !withResponsiveHeader &&
+      getContentContainerGridTemplateColumns({
+        variant,
+        withLeftSidebar,
+        leftSidebarVariant,
+        withRightSidebar,
+        rightSidebarVariant,
+      }),
     {
       width: '100%',
       display: 'grid',
+    },
+    withResponsiveHeader && {
+      gridTemplateColumns: 'subgrid',
+      gridTemplateRows: 'subgrid',
+      gridColumn: '1 / -1',
+      minHeight: 0,
     },
   ),
 });
 
 export const getLayoutBodyStyles = (
   withHeader: boolean,
+  withResponsiveHeader: boolean,
   offsetTop: number,
 ) => ({
-  layoutBodyContainer: css({
-    width: '100%',
-    padding: `${tokens.spacingL} ${tokens.spacingL} 0`,
-    overflowY: 'auto',
-    height: `calc(100vh - ${getMainOffset(withHeader, offsetTop)})`,
-  }),
+  layoutBodyContainer: css(
+    {
+      width: '100%',
+      padding: `${tokens.spacingL} ${tokens.spacingL} 0`,
+      overflowY: 'auto',
+    },
+    !withResponsiveHeader &&
+      css({
+        height: `calc(100vh - ${getMainOffset(withHeader, offsetTop)})`,
+      }),
+  ),
   layoutBodyInner: css({
     maxWidth: '900px',
     margin: '0 auto',
@@ -145,19 +176,24 @@ export const getLayoutHeaderStyles = ({
   variant,
   withLeftSidebar,
   withRightSidebar,
+  withResponsiveHeader,
 }: {
   variant: LayoutProps['variant'];
-  withLeftSidebar?: boolean;
-  withRightSidebar?: boolean;
+  withLeftSidebar: boolean;
+  withRightSidebar: boolean;
+  withResponsiveHeader: boolean;
 }) => ({
-  layoutHeader: css({
-    padding: `${tokens.spacing2Xs}  ${tokens.spacingL} 0 ${tokens.spacingL} `,
-    width: '100%',
-    maxWidth: variant === 'fullscreen' ? '100%' : '1920px',
-    borderBottom:
-      withLeftSidebar || withRightSidebar
-        ? `1px solid ${tokens.gray200}`
-        : `none`,
-  }),
+  layoutHeader: css(
+    {
+      padding: `${tokens.spacing2Xs}  ${tokens.spacingL} 0 ${tokens.spacingL} `,
+      width: '100%',
+      maxWidth: variant === 'fullscreen' ? '100%' : '1920px',
+      borderBottom:
+        withLeftSidebar || withRightSidebar
+          ? `1px solid ${tokens.gray200}`
+          : `none`,
+    },
+    withResponsiveHeader && css({ gridColumn: '1 / -1' }),
+  ),
   layoutHeaderInner: css({ width: '100%' }),
 });

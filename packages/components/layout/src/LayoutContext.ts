@@ -6,6 +6,8 @@ export type LayoutContextType = {
   withHeader: boolean;
   withLeftSidebar: boolean;
   withRightSidebar: boolean;
+  withResponsiveHeader: boolean;
+  setWithResponsiveHeader: (value: boolean) => void;
   offsetTop: number;
 };
 

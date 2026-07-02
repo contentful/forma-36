@@ -3,9 +3,10 @@ import React, {
   useMemo,
   type Ref,
   type HTMLAttributes,
+  useState,
 } from 'react';
 import { cx } from '@emotion/css';
-import { type CommonProps, Box, Flex } from '@contentful/f36-core';
+import { type CommonProps, Box } from '@contentful/f36-core';
 import { LayoutContextProvider, LayoutContextType } from './LayoutContext';
 import { getLayoutStyles } from './Layout.styles';
 
@@ -68,6 +69,7 @@ const LayoutBase = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     ...otherProps
   } = props;
 
+  const [withResponsiveHeader, setWithResponsiveHeader] = useState(false);
   const withLeftSidebar = Boolean(leftSidebar);
   const withRightSidebar = Boolean(rightSidebar);
   const styles = getLayoutStyles({
@@ -78,6 +80,7 @@ const LayoutBase = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
     leftSidebarVariant,
     withRightSidebar,
     rightSidebarVariant,
+    withResponsiveHeader,
   });
 
   const contextValue: LayoutContextType = useMemo(
@@ -86,20 +89,29 @@ const LayoutBase = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
       withHeader: Boolean(header),
       withLeftSidebar: withLeftSidebar,
       withRightSidebar: withRightSidebar,
+      withResponsiveHeader,
+      setWithResponsiveHeader,
       offsetTop,
     }),
-    [variant, header, withLeftSidebar, withRightSidebar, offsetTop],
+    [
+      variant,
+      header,
+      withLeftSidebar,
+      withRightSidebar,
+      withResponsiveHeader,
+      setWithResponsiveHeader,
+      offsetTop,
+    ],
   );
 
   return (
     <LayoutContextProvider value={contextValue}>
-      <Flex
+      <Box
         ref={ref}
         testId={testId}
         as="section"
         {...otherProps}
         className={cx(styles.layoutMainContainer, className)}
-        flexDirection="column"
       >
         {header}
 
@@ -111,7 +123,7 @@ const LayoutBase = (props: LayoutProps, ref: Ref<HTMLDivElement>) => {
           {children}
           {rightSidebar}
         </Box>
-      </Flex>
+      </Box>
     </LayoutContextProvider>
   );
 };

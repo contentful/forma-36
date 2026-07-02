@@ -2,6 +2,7 @@ import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { Layout } from './Layout';
+import { LayoutHeaderInner } from './LayoutHeaderInner/LayoutHeaderInner';
 
 describe('Layout', () => {
   it('renders children inside content container', () => {
@@ -121,5 +122,78 @@ describe('Layout', () => {
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  describe('with LayoutHeaderInner', () => {
+    it('renders header', () => {
+      render(
+        <Layout header={<LayoutHeaderInner title="Header"></LayoutHeaderInner>}>
+          <p>Body</p>
+        </Layout>,
+      );
+      expect(screen.getByText('Header')).toBeInTheDocument();
+      expect(screen.getByText('Body')).toBeInTheDocument();
+    });
+
+    it('has no a11y issues', async () => {
+      const { container } = render(
+        <Layout
+          header={<LayoutHeaderInner title="Header" />}
+          leftSidebar={<nav data-test-id="left">Left sidebar</nav>}
+          rightSidebar={<aside data-test-id="right">Right sidebar</aside>}
+        >
+          <main>
+            <h1>Title</h1>
+            <p>Body</p>
+          </main>
+        </Layout>,
+      );
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+
+    it('has no a11y issues with back button and breadcrumbs', async () => {
+      const { container } = render(
+        <Layout
+          header={
+            <LayoutHeaderInner
+              title="Header"
+              withBackButton
+              backButtonProps={{ onClick: jest.fn() }}
+              breadcrumbs={[{ content: 'Breadcrumb', url: '#' }]}
+            />
+          }
+        >
+          <main>
+            <h1>Title</h1>
+            <p>Body</p>
+          </main>
+        </Layout>,
+      );
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+
+    it('renders header with custom className', async () => {
+      const additionalClassName = 'my-extra-class';
+      render(
+        <Layout
+          header={
+            <LayoutHeaderInner title="Header" className={additionalClassName} />
+          }
+        >
+          <main>
+            <h1>Title</h1>
+            <p>Body</p>
+          </main>
+        </Layout>,
+      );
+
+      expect(
+        screen
+          .getByTestId('cf-ui-header')
+          .classList.contains(additionalClassName),
+      ).toBeTruthy();
+    });
   });
 });
