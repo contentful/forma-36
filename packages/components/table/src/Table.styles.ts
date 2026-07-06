@@ -24,4 +24,10 @@ export const getTableStyles = () => ({
   root: css({
     width: '100%',
   }),
+  scrollableWrapper: css({
+    overflowX: 'auto',
+  }),
+  scrollable: css({
+    // do nothing for now
+  }),
 });

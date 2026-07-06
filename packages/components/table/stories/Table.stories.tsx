@@ -8,6 +8,7 @@ import {
   Flex,
   SectionHeading,
   Note,
+  Layout,
 } from '@contentful/f36-components';
 import { withLongContentTableData } from './WithLongContent.mockdata';
 import { css } from '@emotion/css';
@@ -269,54 +270,60 @@ export const Scrollable: StoryObj = {
         overflow: 'hidden',
       })}
     >
-      <div
-        className={css({
-          width: '80%',
-          margin: ' 0 auto',
-          overflowY: 'auto',
-          overflowX: 'hidden',
-          backgroundColor: 'lavender',
-          padding: '1rem',
-        })}
-      >
-        <Note className={css({ margin: '1rem' })}>
-          Table with sticky header, sticky first column and scrollable
-        </Note>
-        <Table {...args}>
-          <Table.Head isSticky>
-            <Table.Row>
-              <Table.Cell>Name</Table.Cell>
-              <Table.Cell>Status</Table.Cell>
-              <Table.Cell>Content Type</Table.Cell>
-              <Table.Cell>Updated by</Table.Cell>
-              <Table.Cell>Updated</Table.Cell>
-              <Table.Cell>Locale</Table.Cell>
-              <Table.Cell>Space</Table.Cell>
-              <Table.Cell>Environment</Table.Cell>
-              <Table.Cell>Tags</Table.Cell>
-              <Table.Cell>ID</Table.Cell>
-            </Table.Row>
-          </Table.Head>
-          <Table.Body>
-            {withLongContentTableData.map((item) => (
-              <Table.Row key={item.id}>
-                <Table.Cell>{item.name}</Table.Cell>
-                <Table.Cell>
-                  <EntityStatusBadge entityStatus={item.status} />
-                </Table.Cell>
-                <Table.Cell>{item.contentType}</Table.Cell>
-                <Table.Cell>{item.updatedBy}</Table.Cell>
-                <Table.Cell>{item.updated}</Table.Cell>
-                <Table.Cell>{item.locale}</Table.Cell>
-                <Table.Cell>{item.space}</Table.Cell>
-                <Table.Cell>{item.environment}</Table.Cell>
-                <Table.Cell>{item.tags}</Table.Cell>
-                <Table.Cell>{item.id}</Table.Cell>
-              </Table.Row>
-            ))}
-          </Table.Body>
-        </Table>
+      <div className={css({ backgroundColor: 'silver', height: '60px' })}>
+        Navbar
       </div>
+      <Layout>
+        <Layout.Body>
+          <div
+            className={css({
+              display: 'flex',
+              flexDirection: 'column',
+              height: '100%',
+              padding: '1px',
+              overflow: 'hidden',
+            })}
+          >
+            <Note className={css({ margin: '1rem' })}>
+              Table with sticky header, sticky first column and scrollable
+            </Note>
+            <Table {...args} layout="scrollable">
+              <Table.Head isSticky>
+                <Table.Row>
+                  <Table.Cell>Name</Table.Cell>
+                  <Table.Cell>Status</Table.Cell>
+                  <Table.Cell>Content Type</Table.Cell>
+                  <Table.Cell>Updated by</Table.Cell>
+                  <Table.Cell>Updated</Table.Cell>
+                  <Table.Cell>Locale</Table.Cell>
+                  <Table.Cell>Space</Table.Cell>
+                  <Table.Cell>Environment</Table.Cell>
+                  <Table.Cell>Tags</Table.Cell>
+                  <Table.Cell>ID</Table.Cell>
+                </Table.Row>
+              </Table.Head>
+              <Table.Body>
+                {withLongContentTableData.map((item) => (
+                  <Table.Row key={item.id}>
+                    <Table.Cell>{item.name}</Table.Cell>
+                    <Table.Cell>
+                      <EntityStatusBadge entityStatus={item.status} />
+                    </Table.Cell>
+                    <Table.Cell>{item.contentType}</Table.Cell>
+                    <Table.Cell>{item.updatedBy}</Table.Cell>
+                    <Table.Cell>{item.updated}</Table.Cell>
+                    <Table.Cell>{item.locale}</Table.Cell>
+                    <Table.Cell>{item.space}</Table.Cell>
+                    <Table.Cell>{item.environment}</Table.Cell>
+                    <Table.Cell>{item.tags}</Table.Cell>
+                    <Table.Cell>{item.id}</Table.Cell>
+                  </Table.Row>
+                ))}
+              </Table.Body>
+            </Table>
+          </div>
+        </Layout.Body>
+      </Layout>
     </div>
   ),
 };

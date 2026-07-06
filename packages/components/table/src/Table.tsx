@@ -15,7 +15,7 @@ export type TableInternalProps = CommonProps & {
   /**
    * @default 'inline'
    */
-  layout?: 'inline' | 'embedded';
+  layout?: 'inline' | 'embedded' | 'scrollable';
   /**
    * @default 'top'
    */
@@ -41,7 +41,7 @@ export const Table = forwardRef<HTMLTableElement, ExpandProps<TableProps>>(
   ) => {
     const styles = getTableStyles();
 
-    return (
+    const tableElement = (
       <Box
         cellPadding="0"
         cellSpacing="0"
@@ -57,6 +57,11 @@ export const Table = forwardRef<HTMLTableElement, ExpandProps<TableProps>>(
         </TableContextProvider>
       </Box>
     );
+
+    if (layout === 'scrollable') {
+      return <div className={styles.scrollableWrapper}>{tableElement}</div>;
+    }
+    return tableElement;
   },
 );
 
