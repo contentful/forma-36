@@ -85,7 +85,9 @@ function ButtonBase<E extends React.ElementType = typeof BUTTON_DEFAULT_TAG>(
         })}
       >
         {React.cloneElement(icon, {
-          size: icon.props.size ?? `${size === 'large' ? 'medium' : 'small'}`,
+          size:
+            icon.props.size ??
+            (size === 'large' ? 'medium' : size === 'tiny' ? 'tiny' : 'small'),
           color: iconColor,
         })}
       </Flex>

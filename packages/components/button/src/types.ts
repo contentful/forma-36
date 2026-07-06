@@ -1,7 +1,7 @@
 import type { CommonProps } from '@contentful/f36-core';
 import type { IconProps } from '@contentful/f36-icon';
 
-export type ButtonSize = 'small' | 'medium' | 'large';
+export type ButtonSize = 'tiny' | 'small' | 'medium' | 'large';
 
 export type ButtonVariant =
   | 'negative'

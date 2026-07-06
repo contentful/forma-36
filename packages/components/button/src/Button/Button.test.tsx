@@ -29,6 +29,13 @@ describe('Button', function () {
     expect(button.getElementsByTagName('svg')).toHaveLength(1);
   });
 
+  it('renders the tiny size', () => {
+    render(<Button size="tiny">Button</Button>);
+
+    const button = screen.getByRole('button');
+    expect(button).toHaveStyle({ minHeight: '1.5rem' });
+  });
+
   it('should not dispatch onClick if disabled', async () => {
     const user = userEvent.setup();
     const mockOnClick = jest.fn();
