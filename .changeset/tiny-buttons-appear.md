@@ -2,4 +2,4 @@
 "@contentful/f36-button": minor
 ---
 
-feat(button): add `tiny` size variant to Button
+feat(button): add `tiny` size variant
