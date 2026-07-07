@@ -84,7 +84,12 @@ export const Table = forwardRef<HTMLTableElement, ExpandProps<TableProps>>(
     );
 
     if (isScrollable) {
-      return <div className={styles.scrollableWrapper}>{tableElement}</div>;
+      return (
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- scrollable region requires tabIndex for keyboard access (WCAG 2.1 SC 2.1.1)
+        <section tabIndex={0} className={styles.scrollableWrapper}>
+          {tableElement}
+        </section>
+      );
     }
     return tableElement;
   },
