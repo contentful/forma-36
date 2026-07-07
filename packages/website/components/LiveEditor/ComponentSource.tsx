@@ -70,6 +70,16 @@ const liveProviderScope = {
   isValid,
 };
 
+function getStableCopyTooltipId(value: string) {
+  let hash = 0;
+
+  for (let index = 0; index < value.length; index++) {
+    hash = (hash * 31 + value.charCodeAt(index)) >>> 0;
+  }
+
+  return `component-source-copy-${hash.toString(36)}`;
+}
+
 const styles = {
   root: css`
     margin-bottom: ${tokens.spacingM};
@@ -147,6 +157,10 @@ export function ComponentSource({
   file?: string;
 }) {
   const [showSource, setShowSource] = useState(true);
+  const copyTooltipId = useMemo(
+    () => getStableCopyTooltipId(file ?? code),
+    [code, file],
+  );
 
   const handleToggle = () => {
     setShowSource((prevState) => !prevState);
@@ -198,7 +212,7 @@ export function ComponentSource({
               {showSource && (
                 <Flex gap="spacingXs">
                   <CopyButton
-                    tooltipProps={{ placement: 'top' }}
+                    tooltipProps={{ id: copyTooltipId, placement: 'top' }}
                     className={styles.copyButton}
                     value={code}
                     size="small"
