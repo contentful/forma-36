@@ -3,8 +3,10 @@ import tokens from '@contentful/f36-tokens';
 
 export const getTableStyles = ({
   isHeaderSticky = false,
+  isFirstColumnSticky = false,
 }: {
   isHeaderSticky: boolean;
+  isFirstColumnSticky: boolean;
 }) => ({
   inline: css({
     borderRadius: tokens.borderRadiusMedium,
@@ -35,6 +37,15 @@ export const getTableStyles = ({
     }),
   }),
   scrollable: css({
-    // do nothing for now
+    ...(isFirstColumnSticky && {
+      'td:first-child, th:first-child': {
+        position: 'sticky',
+        zIndex: 2,
+        left: 0,
+      },
+      'th:first-child': {
+        zIndex: 5,
+      },
+    }),
   }),
 });

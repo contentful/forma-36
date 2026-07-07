@@ -11,19 +11,35 @@ import type * as CSS from 'csstype';
 import { getTableStyles } from './Table.styles';
 import { TableContextProvider } from './tableContext';
 
-export type TableInternalProps = CommonProps & {
-  /**
-   * @default 'inline'
-   */
-  layout?: 'inline' | 'embedded' | 'scrollable';
-  /**
-   * @default 'top'
-   */
-  verticalAlign?: Extract<
-    CSS.Property.VerticalAlign,
-    'baseline' | 'bottom' | 'middle' | 'top'
-  >;
-};
+type TableLayoutProps =
+  | {
+      /**
+       * @default 'inline'
+       */
+      layout?: 'inline' | 'embedded';
+      /**
+       * @default false
+       */
+      isFirstColumnSticky?: false;
+    }
+  | {
+      layout: 'scrollable';
+      /**
+       * @default false
+       */
+      isFirstColumnSticky?: boolean;
+    };
+
+export type TableInternalProps = CommonProps &
+  TableLayoutProps & {
+    /**
+     * @default 'top'
+     */
+    verticalAlign?: Extract<
+      CSS.Property.VerticalAlign,
+      'baseline' | 'bottom' | 'middle' | 'top'
+    >;
+  };
 
 export type TableProps = PropsWithHTMLElement<TableInternalProps, 'table'>;
 
@@ -35,12 +51,13 @@ export const Table = forwardRef<HTMLTableElement, ExpandProps<TableProps>>(
       layout = 'inline',
       testId = 'cf-ui-table',
       verticalAlign = 'top',
+      isFirstColumnSticky = false,
       ...otherProps
     },
     forwardedRef,
   ) => {
     const [isHeaderSticky, setIsHeaderSticky] = useState(false);
-    const styles = getTableStyles({ isHeaderSticky });
+    const styles = getTableStyles({ isHeaderSticky, isFirstColumnSticky });
     const isScrollable = layout === 'scrollable';
 
     const tableElement = (
