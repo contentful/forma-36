@@ -1,7 +1,11 @@
 import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 
-export const getTableStyles = () => ({
+export const getTableStyles = ({
+  isHeaderSticky = false,
+}: {
+  isHeaderSticky: boolean;
+}) => ({
   inline: css({
     borderRadius: tokens.borderRadiusMedium,
     boxShadow: `0 0 0 1px ${tokens.gray200}`,
@@ -26,6 +30,9 @@ export const getTableStyles = () => ({
   }),
   scrollableWrapper: css({
     overflowX: 'auto',
+    ...(isHeaderSticky && {
+      height: '100%',
+    }),
   }),
   scrollable: css({
     // do nothing for now

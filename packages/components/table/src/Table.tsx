@@ -1,5 +1,5 @@
 import { cx } from '@emotion/css';
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useState } from 'react';
 import {
   Box,
   type CommonProps,
@@ -39,7 +39,9 @@ export const Table = forwardRef<HTMLTableElement, ExpandProps<TableProps>>(
     },
     forwardedRef,
   ) => {
-    const styles = getTableStyles();
+    const [isHeaderSticky, setIsHeaderSticky] = useState(false);
+    const styles = getTableStyles({ isHeaderSticky });
+    const isScrollable = layout === 'scrollable';
 
     const tableElement = (
       <Box
@@ -52,13 +54,19 @@ export const Table = forwardRef<HTMLTableElement, ExpandProps<TableProps>>(
         className={cx(styles.root, styles[layout], className)}
         testId={testId}
       >
-        <TableContextProvider value={{ verticalAlign }}>
+        <TableContextProvider
+          value={{
+            verticalAlign,
+            isHeaderSticky,
+            setIsHeaderSticky,
+          }}
+        >
           {children}
         </TableContextProvider>
       </Box>
     );
 
-    if (layout === 'scrollable') {
+    if (isScrollable) {
       return <div className={styles.scrollableWrapper}>{tableElement}</div>;
     }
     return tableElement;
