@@ -177,7 +177,7 @@ const names = [
 ];
 
 export const withLongContentTableData: LongContentRow[] = Array.from(
-  { length: 100 },
+  { length: 15 },
   (_, i) => ({
     id: `entry-${i + 1}`,
     name: names[i % names.length],
