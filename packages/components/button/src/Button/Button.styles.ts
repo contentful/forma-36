@@ -113,6 +113,13 @@ const sizeToStyles = (size: ButtonSize, density: Density) => {
   const isHighDensity = density === 'high';
 
   switch (size) {
+    case 'tiny':
+      return {
+        fontSize: tokens.fontSizeS,
+        lineHeight: tokens.lineHeightCondensed,
+        padding: `${tokens.spacing2Xs} ${tokens.spacingS}`,
+        minHeight: tokens.spacingL,
+      };
     case 'small':
       return {
         fontSize: isHighDensity ? tokens.fontSizeS : tokens.fontSizeM,

@@ -25,7 +25,7 @@ export default {
       control: 'select',
       options: ['', ...Object.keys(icons)],
     },
-    size: { control: 'select', options: ['small', 'medium', 'large'] },
+    size: { control: 'select', options: ['tiny', 'small', 'medium', 'large'] },
     variant: {
       control: 'select',
       options: ['negative', 'positive', 'primary', 'secondary', 'transparent'],
@@ -116,6 +116,10 @@ export const Overview = {
             marginBottom="spacingM"
             spacing="spacingXs"
           >
+            <Button variant="primary" size="tiny">
+              Tiny
+            </Button>
+
             <Button variant="primary" size="small">
               Small
             </Button>
