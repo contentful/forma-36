@@ -1,5 +1,18 @@
 # Change Log
 
+## 6.13.0
+
+### Minor Changes
+
+- [#3454](https://github.com/contentful/forma-36/pull/3454) [`84fd5d8`](https://github.com/contentful/forma-36/commit/84fd5d811fdb93cad8afc748db124bc2a510f9da) Thanks [@GigiIanni](https://github.com/GigiIanni)! - feat(button): add `tiny` size variant
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.13.0
+  - @contentful/f36-spinner@6.13.0
+  - @contentful/f36-tooltip@6.13.0
+
 ## 6.12.0
 
 ### Patch Changes
