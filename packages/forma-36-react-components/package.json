@@ -86,7 +86,7 @@
     "url": "https://github.com/contentful/forma-36.git"
   },
   "resolutions": {
-    "url-parse": "1.4.4",
+    "url-parse": "1.5.9",
     "merge": "2.1.1",
     "extend": "3.0.2",
     "set-value": "2.0.1",
