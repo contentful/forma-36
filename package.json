@@ -142,7 +142,7 @@
     "yarn": "Please use npm"
   },
   "optionalDependencies": {
-    "@emnapi/core": "1.11.0",
+    "@emnapi/core": "1.11.1",
     "@emnapi/runtime": "1.11.1"
   },
   "overrides": {
