@@ -13,11 +13,11 @@ jobs:
     if: ${{ github.actor != 'renovate[bot]' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - name: Install dependencies
         run: npm ci --workspace=@contentful/f36-cdn
       - name: Deploy to Compute
-        uses: fastly/compute-actions@v12
+        uses: fastly/compute-actions@3b4355cb74cc7428a92dad1194bd564898372d55 # v12
         with:
           project_directory: packages/cdn
           service_id: ${{ secrets.CDN_FASTLY_SERVICE_ID }}
