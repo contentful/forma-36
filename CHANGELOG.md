@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 09-07-2026
+
+**F36 Button** `v6.13.0`
+
+- feat(button): add `tiny` size variant
+
 ## 30-06-2026
 
 **F36 Tokens** `v6.2.1`
