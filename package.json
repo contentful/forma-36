@@ -48,7 +48,7 @@
     "figma:publish:dry": "figma connect publish --token $FIGMA_ACCESS_TOKEN --dry-run",
     "figma:unpublish": "figma connect unpublish --token $FIGMA_ACCESS_TOKEN"
   },
-  "packageManager": "npm@8.5.0",
+  "packageManager": "npm@8.11.0",
   "browserslist": "extends @contentful/browserslist-config",
   "devDependencies": {
     "@babel/core": "^7.29.6",
@@ -138,7 +138,7 @@
   },
   "engines": {
     "node": ">=20.19.0",
-    "npm": ">=8.5.0",
+    "npm": ">=8.11.0",
     "yarn": "Please use npm"
   },
   "optionalDependencies": {
