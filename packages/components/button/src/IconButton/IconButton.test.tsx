@@ -90,6 +90,14 @@ describe('IconButton', () => {
     expect(results).toHaveNoViolations();
   });
 
+  it('is accessible in the tiny size (axe)', async () => {
+    const { container } = render(
+      <IconButton aria-label="Accessible" icon={<EyeIcon />} size="tiny" />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
   it('warns (or fails) if aria-label missing (intentional negative)', () => {
     // If your component internally enforces aria-label you can skip or adapt this.
     // Here we assert no accessible name => role still present but NOT recommended.

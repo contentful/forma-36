@@ -19,7 +19,7 @@ export default {
       control: 'select',
       options: ['', ...Object.keys(icons)],
     },
-    size: { control: 'select', options: ['tiny', 'small', 'medium'] },
+    size: { control: 'select', options: ['tiny', 'small', 'medium', 'large'] },
     variant: {
       control: 'select',
       options: ['negative', 'positive', 'primary', 'secondary', 'transparent'],
