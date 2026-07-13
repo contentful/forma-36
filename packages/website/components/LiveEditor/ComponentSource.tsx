@@ -26,6 +26,7 @@ import tokens from '@contentful/f36-tokens';
 import * as f36utils from '@contentful/f36-utils';
 import * as f36Components from '@contentful/f36-components';
 import * as f36Navbar from '@contentful/f36-navbar';
+import * as f36PillNext from '@contentful/f36-pill-next';
 import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
 
 import { theme } from './theme';
@@ -41,6 +42,7 @@ const liveProviderScope = {
   // Make all icons available as namespace import (e.g., import * as icons)
   f36icons,
   ...f36Navbar,
+  ...f36PillNext,
   css,
   tokens,
   // most used react hooks
