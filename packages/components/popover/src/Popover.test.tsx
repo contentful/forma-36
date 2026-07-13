@@ -247,6 +247,16 @@ describe('Popover', function () {
     });
   });
 
+  it('does not render portal tab-order guards', async () => {
+    await renderWithAct({ isOpen: true });
+
+    expect(
+      document.querySelector(
+        '[data-floating-ui-focus-guard][data-type="outside"]',
+      ),
+    ).not.toBeInTheDocument();
+  });
+
   it('popover should NOT receive focus when autoFocus=false', async () => {
     await renderWithAct({ isOpen: true, autoFocus: false });
     await waitFor(() => {

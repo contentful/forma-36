@@ -83,7 +83,7 @@ const PopoverContentBase = (
     );
 
   return usePortal ? (
-    <FloatingPortal>
+    <FloatingPortal preserveTabOrder={false}>
       {maybeWrapWithFocusManager(content as React.ReactElement)}
     </FloatingPortal>
   ) : (
