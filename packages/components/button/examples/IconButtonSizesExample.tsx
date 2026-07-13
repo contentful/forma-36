@@ -7,6 +7,12 @@ export default function IconButtonExample() {
     <Stack flexDirection="column">
       <Stack>
         <IconButton
+          size="tiny"
+          variant="secondary"
+          aria-label="Select the date"
+          icon={<CalendarBlankIcon size="tiny" />}
+        />
+        <IconButton
           size="small"
           variant="secondary"
           aria-label="Select the date"

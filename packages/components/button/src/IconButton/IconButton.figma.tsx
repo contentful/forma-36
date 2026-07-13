@@ -18,6 +18,7 @@ figma.connect(IconButton, FIGMA_URL, {
       Transparent: 'transparent',
     }),
     size: figma.enum('Size', {
+      Tiny: 'tiny',
       'Small (default)': 'small',
       Medium: 'medium',
     }),
@@ -44,6 +45,7 @@ figma.connect(IconButton, FIGMA_URL, {
       Transparent: 'transparent',
     }),
     size: figma.enum('Size', {
+      Tiny: 'tiny',
       'Small (default)': 'small',
       Medium: 'medium',
     }),

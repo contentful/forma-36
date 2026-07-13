@@ -49,6 +49,22 @@ describe('IconButton', () => {
     expect(handleClick).not.toHaveBeenCalled();
   });
 
+  it('renders the tiny size', () => {
+    render(
+      <IconButton
+        aria-label="Toggle"
+        icon={<EyeIcon />}
+        size="tiny"
+        testId="tiny-icon-btn"
+      />,
+    );
+    expect(screen.getByTestId('tiny-icon-btn')).toHaveStyle({
+      minHeight: '1.5rem',
+      minWidth: '1.5rem',
+      padding: '0.25rem',
+    });
+  });
+
   it('forwards ref to the underlying button element', () => {
     const ref = createRef<HTMLButtonElement>();
     render(<IconButton aria-label="Focusable" icon={<EyeIcon />} ref={ref} />);
