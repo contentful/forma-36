@@ -1,7 +1,13 @@
 import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 
-export const getTableStyles = () => ({
+export const getTableStyles = ({
+  isHeaderSticky = false,
+  isFirstColumnSticky = false,
+}: {
+  isHeaderSticky: boolean;
+  isFirstColumnSticky: boolean;
+}) => ({
   inline: css({
     borderRadius: tokens.borderRadiusMedium,
     boxShadow: `0 0 0 1px ${tokens.gray200}`,
@@ -23,5 +29,23 @@ export const getTableStyles = () => ({
   }),
   root: css({
     width: '100%',
+  }),
+  scrollableWrapper: css({
+    overflowX: 'auto',
+    ...(isHeaderSticky && {
+      height: '100%',
+    }),
+  }),
+  scrollable: css({
+    ...(isFirstColumnSticky && {
+      'td:first-child, th:first-child': {
+        position: 'sticky',
+        zIndex: 2,
+        left: 0,
+      },
+      'th:first-child': {
+        zIndex: 5,
+      },
+    }),
   }),
 });
