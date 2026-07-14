@@ -27,4 +27,4 @@ export const SkeletonBodyText = ({
   );
 };
 
-SkeletonBodyText.displayName = 'SkeletonBodyTeyt';
+SkeletonBodyText.displayName = 'SkeletonBodyText';
