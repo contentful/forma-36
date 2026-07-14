@@ -1,49 +1,49 @@
 import React from 'react';
 import { EntityStatusBadge, Table } from '@contentful/f36-components';
 
-const withLongContentTableData = Array.from({ length: 15 }, (_, index) => {
-  const entries = [
-    {
-      name: 'How to optimize images in WordPress for faster loading',
-      status: 'published',
-      contentType: 'Blog post',
-      updatedBy: 'Ayman Mahmoud',
-      locale: 'en-US',
-      space: 'Marketing',
-      environment: 'master',
-      tags: 'featured, seo-optimized',
-    },
-    {
-      name: 'Building accessible web applications from the ground up',
-      status: 'changed',
-      contentType: 'Landing page',
-      updatedBy: 'Jane Roe',
-      locale: 'de-DE',
-      space: 'Documentation',
-      environment: 'staging',
-      tags: 'accessibility, review',
-    },
-    {
-      name: 'Content modeling best practices for large teams',
-      status: 'draft',
-      contentType: 'Case study',
-      updatedBy: 'John Doe',
-      locale: 'fr-FR',
-      space: 'Support',
-      environment: 'development',
-      tags: 'internal',
-    },
-  ] as const;
-  const entry = entries[index % entries.length];
-
-  return {
-    ...entry,
-    id: `entry-${index + 1}`,
-    updated: `${index + 1} days ago`,
-  };
-});
-
 export default function TableScrollableStickyFirstColumnExample() {
+  const withLongContentTableData = Array.from({ length: 5 }, (_, index) => {
+    const entries = [
+      {
+        name: 'How to optimize images in WordPress for faster loading',
+        status: 'published',
+        contentType: 'Blog post',
+        updatedBy: 'Ayman Mahmoud',
+        locale: 'en-US',
+        space: 'Marketing',
+        environment: 'master',
+        tags: 'featured, seo-optimized',
+      },
+      {
+        name: 'Building accessible web applications from the ground up',
+        status: 'changed',
+        contentType: 'Landing page',
+        updatedBy: 'Jane Roe',
+        locale: 'de-DE',
+        space: 'Documentation',
+        environment: 'staging',
+        tags: 'accessibility, review',
+      },
+      {
+        name: 'Content modeling best practices for large teams',
+        status: 'draft',
+        contentType: 'Case study',
+        updatedBy: 'John Doe',
+        locale: 'fr-FR',
+        space: 'Support',
+        environment: 'development',
+        tags: 'internal',
+      },
+    ];
+    const entry = entries[index % entries.length];
+
+    return {
+      ...entry,
+      id: `entry-${index + 1}`,
+      updated: `${index + 1} days ago`,
+    };
+  });
+
   return (
     <Table layout="scrollable" isFirstColumnSticky>
       <Table.Head>
@@ -65,7 +65,15 @@ export default function TableScrollableStickyFirstColumnExample() {
           <Table.Row key={item.id}>
             <Table.Cell>{item.name}</Table.Cell>
             <Table.Cell>
-              <EntityStatusBadge entityStatus={item.status} />
+              <EntityStatusBadge
+                entityStatus={
+                  item.status === 'published'
+                    ? 'published'
+                    : item.status === 'changed'
+                      ? 'changed'
+                      : 'draft'
+                }
+              />
             </Table.Cell>
             <Table.Cell>{item.contentType}</Table.Cell>
             <Table.Cell>{item.updatedBy}</Table.Cell>
