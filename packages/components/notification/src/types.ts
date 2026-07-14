@@ -6,7 +6,4 @@ export interface NotificationCta {
 }
 
 export type NotificationVariant =
-  | 'positive'
-  | 'negative'
-  | 'warning'
-  | 'primary';
+  'positive' | 'negative' | 'warning' | 'primary';

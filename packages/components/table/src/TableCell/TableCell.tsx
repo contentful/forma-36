@@ -75,10 +75,7 @@ function TableCellBase(
   const sortableProps = isSortable
     ? {
         'aria-sort': (sortDirection ?? 'none') as
-          | 'none'
-          | 'ascending'
-          | 'descending'
-          | 'other',
+          'none' | 'ascending' | 'descending' | 'other',
         onBlur: () => setShowSorting(false),
         onFocus: () => setShowSorting(true),
         onMouseEnter: () => setShowSorting(true),

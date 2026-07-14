@@ -11,12 +11,7 @@ export interface StepProps extends CommonProps {
    * @default incomplete
    */
   state?:
-    | 'active'
-    | 'error'
-    | 'warning'
-    | 'disabled'
-    | 'complete'
-    | 'incomplete';
+    'active' | 'error' | 'warning' | 'disabled' | 'complete' | 'incomplete';
   labelText?: string;
   /**
    * Private prop for the ProgressStepper component
