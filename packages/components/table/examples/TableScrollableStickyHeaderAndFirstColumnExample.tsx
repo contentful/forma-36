@@ -73,7 +73,15 @@ export default function TableScrollableStickyHeaderAndFirstColumnExample() {
             <Table.Row key={item.id}>
               <Table.Cell>{item.name}</Table.Cell>
               <Table.Cell>
-                <EntityStatusBadge entityStatus={item.status} />
+                <EntityStatusBadge
+                  entityStatus={
+                    item.status === 'published'
+                      ? 'published'
+                      : item.status === 'changed'
+                        ? 'changed'
+                        : 'draft'
+                  }
+                />
               </Table.Cell>
               <Table.Cell>{item.contentType}</Table.Cell>
               <Table.Cell>{item.updatedBy}</Table.Cell>
