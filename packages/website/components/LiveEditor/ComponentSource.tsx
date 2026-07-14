@@ -5,6 +5,7 @@ import React, {
   useRef,
   useMemo,
   useContext,
+  useId,
 } from 'react';
 import { css, cx } from '@emotion/css';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
@@ -149,6 +150,8 @@ export function ComponentSource({
   file?: string;
 }) {
   const [showSource, setShowSource] = useState(true);
+  const tooltipId = useId();
+  const copyTooltipId = `component-source-copy-${tooltipId}`;
 
   const handleToggle = () => {
     setShowSource((prevState) => !prevState);
@@ -200,7 +203,7 @@ export function ComponentSource({
               {showSource && (
                 <Flex gap="spacingXs">
                   <CopyButton
-                    tooltipProps={{ placement: 'top' }}
+                    tooltipProps={{ id: copyTooltipId, placement: 'top' }}
                     className={styles.copyButton}
                     value={code}
                     size="small"
