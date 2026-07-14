@@ -1,5 +1,5 @@
 import { cx } from '@emotion/css';
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useEffect } from 'react';
 import {
   Box,
   type CommonProps,
@@ -12,6 +12,7 @@ import {
   contextOptions,
 } from '../TableCell/TableCellContext';
 import { getTableHeadStyles } from './TableHead.styles';
+import { useTableContext } from '../tableContext';
 
 export type TableHeadInternalProps = CommonProps & {
   isSticky?: boolean;
@@ -39,12 +40,20 @@ export const TableHead = forwardRef<
     },
     forwardedRef,
   ) => {
+    const { setIsHeaderSticky } = useTableContext();
+    useEffect(() => {
+      setIsHeaderSticky?.(isSticky);
+    }, [isSticky, setIsHeaderSticky]);
+
     const styles = getTableHeadStyles();
     const classNames = cx(styles.root, isSticky && styles.sticky, className);
 
     return (
       <TableCellContextProvider
-        value={{ ...contextOptions.head, offsetTop: offsetTop || 0 }}
+        value={{
+          ...contextOptions.head,
+          offsetTop: offsetTop || 0,
+        }}
       >
         <Box
           {...otherProps}

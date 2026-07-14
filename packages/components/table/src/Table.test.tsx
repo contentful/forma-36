@@ -32,28 +32,101 @@ describe('Table', () => {
     expect(th).toEqual(getByText('Table heading'));
   });
 
-  it('has no a11y issues', async () => {
-    const { container } = render(
-      <Table>
-        <Table.Head>
-          <Table.Row>
-            <Table.Cell>Table heading</Table.Cell>
-          </Table.Row>
-        </Table.Head>
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell>Cell 1</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>Cell 2</Table.Cell>
-          </Table.Row>
-        </Table.Body>
-      </Table>,
-    );
+  describe('accessibility of table component', () => {
+    it('has no a11y issues with default layout', async () => {
+      const { container } = render(
+        <Table>
+          <Table.Head>
+            <Table.Row>
+              <Table.Cell>Table heading</Table.Cell>
+            </Table.Row>
+          </Table.Head>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Cell 1</Table.Cell>
+            </Table.Row>
+            <Table.Row>
+              <Table.Cell>Cell 2</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
 
-    const results = await axe(container);
+      const results = await axe(container);
 
-    expect(results).toHaveNoViolations();
+      expect(results).toHaveNoViolations();
+    });
+
+    it('has no a11y issue with embedded layout', async () => {
+      const { container } = render(
+        <Table layout="embedded">
+          <Table.Head>
+            <Table.Row>
+              <Table.Cell>Table heading</Table.Cell>
+            </Table.Row>
+          </Table.Head>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Cell 1</Table.Cell>
+            </Table.Row>
+            <Table.Row>
+              <Table.Cell>Cell 2</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const results = await axe(container);
+
+      expect(results).toHaveNoViolations();
+    });
+    it('has no a11y issue with scrollable layout', async () => {
+      const { container } = render(
+        <Table layout="scrollable">
+          <Table.Head>
+            <Table.Row>
+              <Table.Cell>Table heading</Table.Cell>
+            </Table.Row>
+          </Table.Head>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Cell 1</Table.Cell>
+            </Table.Row>
+            <Table.Row>
+              <Table.Cell>Cell 2</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const results = await axe(container);
+
+      expect(results).toHaveNoViolations();
+    });
+
+    it('has no a11y issue with scrollable layout and sticky header and first column', async () => {
+      const { container } = render(
+        <Table layout="scrollable" isFirstColumnSticky>
+          <Table.Head isSticky>
+            <Table.Row>
+              <Table.Cell>Table heading</Table.Cell>
+            </Table.Row>
+          </Table.Head>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Cell 1</Table.Cell>
+            </Table.Row>
+            <Table.Row>
+              <Table.Cell>Cell 2</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const results = await axe(container);
+
+      expect(results).toHaveNoViolations();
+    });
   });
 
   describe('Table.Head', () => {

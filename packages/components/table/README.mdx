@@ -41,6 +41,30 @@ Table cells in the table header can be marked as sortable and sorted either in a
 
 ```
 
+### Scrollable
+
+Use `layout="scrollable"` for tables with many columns or content that should not be compressed on smaller viewports. The table keeps its column layout and allows horizontal scrolling when the available width is not enough.
+
+```jsx file=./examples/TableScrollableExample.tsx
+
+```
+
+### Scrollable with sticky first column
+
+Combine `layout="scrollable"` with `isFirstColumnSticky` when the first column contains the primary identifier for each row. This keeps the row context visible while users scroll horizontally.
+
+```jsx file=./examples/TableScrollableStickyFirstColumnExample.tsx
+
+```
+
+### Scrollable with sticky header and first column
+
+For large tables that need both horizontal and vertical scrolling, combine `layout="scrollable"`, `isFirstColumnSticky`, and `Table.Head isSticky`. Place the table in a height-constrained container to avoid double scrollbars coming from the outer container.
+
+```jsx file=./examples/TableScrollableStickyHeaderAndFirstColumnExample.tsx
+
+```
+
 ## Props (API reference)
 
 ### Table
