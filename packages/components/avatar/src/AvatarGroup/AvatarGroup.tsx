@@ -9,8 +9,7 @@ import { getAvatarGroupStyles } from './AvatarGroup.styles';
 
 export interface AvatarGroupProps extends CommonProps {
   children?:
-    | React.ReactElement<AvatarProps>[]
-    | React.ReactElement<AvatarProps>;
+    React.ReactElement<AvatarProps>[] | React.ReactElement<AvatarProps>;
   maxVisibleChildren?: number;
   size?: 'small' | 'medium';
   variant?: 'stacked' | 'spaced';

@@ -33,12 +33,7 @@ const icons = {
 };
 
 export type NoteVariant =
-  | 'negative'
-  | 'positive'
-  | 'primary'
-  | 'warning'
-  | 'neutral'
-  | 'premium';
+  'negative' | 'positive' | 'primary' | 'warning' | 'neutral' | 'premium';
 
 export type NoteInternalProps = CommonProps & {
   /**
