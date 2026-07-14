@@ -7,14 +7,10 @@ const semver = require('semver');
 
 const cwd = process.cwd();
 
-// Create release on github
-const createRelease = async (octokit, { pkg, tagName }) => {
-  const changelogPath = path.join(pkg.dir, 'CHANGELOG.md');
-
-  const changelog = await fs.promises.readFile(changelogPath, 'utf8');
+const getReleaseNotes = (changelog) => {
   const changelogArr = changelog.split('\n');
-  let releaseNotes = [];
-  // Get release notes from changelog
+  const releaseNotes = [];
+
   for (const line of changelogArr) {
     if (line.match(/^#{3}\s/)) {
       releaseNotes.push(line);
@@ -25,9 +21,21 @@ const createRelease = async (octokit, { pkg, tagName }) => {
     }
   }
 
-  // Check if it's a prerelease
+  return releaseNotes.join('\n');
+};
+
+const isPrerelease = ({ pkg, tagName }) => {
   const prereleaseParts =
     semver.prerelease(tagName.replace(`${pkg.packageJson.name}@`, '')) || [];
+
+  return prereleaseParts.length > 0;
+};
+
+// Create release on github
+const createRelease = async (octokit, { pkg, tagName }) => {
+  const changelogPath = path.join(pkg.dir, 'CHANGELOG.md');
+
+  const changelog = await fs.promises.readFile(changelogPath, 'utf8');
 
   // Create release on github
   await octokit.rest.repos.createRelease({
@@ -35,8 +43,8 @@ const createRelease = async (octokit, { pkg, tagName }) => {
     repo: 'forma-36',
     name: tagName,
     tag_name: tagName,
-    body: releaseNotes.join('\n'),
-    prerelease: prereleaseParts.length > 0,
+    body: getReleaseNotes(changelog),
+    prerelease: isPrerelease({ pkg, tagName }),
   });
 };
 
@@ -79,4 +87,13 @@ async function main() {
   }
 }
 
-main();
+if (require.main === module) {
+  main();
+}
+
+module.exports = {
+  createRelease,
+  getReleasedPackages,
+  getReleaseNotes,
+  isPrerelease,
+};
