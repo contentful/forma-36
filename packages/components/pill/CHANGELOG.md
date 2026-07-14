@@ -1,5 +1,27 @@
 # Change Log
 
+## 6.14.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.14.1
+  - @contentful/f36-core@6.14.1
+  - @contentful/f36-drag-handle@6.14.1
+  - @contentful/f36-icons@6.14.1
+  - @contentful/f36-tooltip@6.14.1
+
+## 6.14.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.14.0
+  - @contentful/f36-core@6.14.0
+  - @contentful/f36-drag-handle@6.14.0
+  - @contentful/f36-icons@6.14.0
+  - @contentful/f36-tooltip@6.14.0
+
 ## 6.13.0
 
 ### Patch Changes

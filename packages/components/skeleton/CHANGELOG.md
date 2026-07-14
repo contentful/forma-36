@@ -1,5 +1,23 @@
 # Change Log
 
+## 6.14.1
+
+### Patch Changes
+
+- [#3493](https://github.com/contentful/forma-36/pull/3493) [`7515a8f`](https://github.com/contentful/forma-36/commit/7515a8f1e2896f80c29fdcb51583b3f5935502e5) Thanks [@andipaetzold](https://github.com/andipaetzold)! - - Fix the `SkeletonBodyText` display name
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.14.1
+  - @contentful/f36-table@6.14.1
+
+## 6.14.0
+
+### Patch Changes
+
+- Updated dependencies [[`90515e7`](https://github.com/contentful/forma-36/commit/90515e7799453d113fa956f19f3e93a86b0a1469)]:
+  - @contentful/f36-table@6.14.0
+  - @contentful/f36-core@6.14.0
+
 ## 6.13.0
 
 ### Patch Changes

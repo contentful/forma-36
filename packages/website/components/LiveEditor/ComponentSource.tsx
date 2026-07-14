@@ -5,6 +5,7 @@ import React, {
   useRef,
   useMemo,
   useContext,
+  useId,
 } from 'react';
 import { css, cx } from '@emotion/css';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
@@ -26,6 +27,7 @@ import tokens from '@contentful/f36-tokens';
 import * as f36utils from '@contentful/f36-utils';
 import * as f36Components from '@contentful/f36-components';
 import * as f36Navbar from '@contentful/f36-navbar';
+import * as f36PillNext from '@contentful/f36-pill-next';
 import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
 
 import { theme } from './theme';
@@ -41,6 +43,7 @@ const liveProviderScope = {
   // Make all icons available as namespace import (e.g., import * as icons)
   f36icons,
   ...f36Navbar,
+  ...f36PillNext,
   css,
   tokens,
   // most used react hooks
@@ -147,6 +150,8 @@ export function ComponentSource({
   file?: string;
 }) {
   const [showSource, setShowSource] = useState(true);
+  const tooltipId = useId();
+  const copyTooltipId = `component-source-copy-${tooltipId}`;
 
   const handleToggle = () => {
     setShowSource((prevState) => !prevState);
@@ -198,7 +203,7 @@ export function ComponentSource({
               {showSource && (
                 <Flex gap="spacingXs">
                   <CopyButton
-                    tooltipProps={{ placement: 'top' }}
+                    tooltipProps={{ id: copyTooltipId, placement: 'top' }}
                     className={styles.copyButton}
                     value={code}
                     size="small"

@@ -7,7 +7,11 @@ import {
   Button,
   Flex,
   SectionHeading,
+  Note,
+  Layout,
 } from '@contentful/f36-components';
+import { withLongContentTableData } from './WithLongContent.mockdata';
+import { css } from '@emotion/css';
 
 import { Table, TableCellSorting } from '../src';
 import tokens from '@contentful/f36-tokens';
@@ -249,6 +253,209 @@ const withContentTableData: {
     updated: '11 months ago',
   },
 ];
+
+export const Scrollable: StoryObj = {
+  render: (args) => (
+    <div
+      className={css({
+        position: 'relative',
+        flex: '1 1 auto',
+        display: 'flex',
+        justifyContent: 'center',
+        minHeight: '300px',
+        width: '100vw',
+        height: '100vh',
+        margin: '-1rem',
+        flexDirection: 'column',
+        overflow: 'hidden',
+      })}
+    >
+      <div className={css({ backgroundColor: 'silver', height: '60px' })}>
+        Navbar
+      </div>
+      <Layout>
+        <Layout.Body>
+          <Note className={css({ margin: '1rem' })}>
+            Table with overflow-x scrollbar
+          </Note>
+          <Table {...args} layout="scrollable">
+            <Table.Head>
+              <Table.Row>
+                <Table.Cell>Name</Table.Cell>
+                <Table.Cell>Status</Table.Cell>
+                <Table.Cell>Content Type</Table.Cell>
+                <Table.Cell>Updated by</Table.Cell>
+                <Table.Cell>Updated</Table.Cell>
+                <Table.Cell>Locale</Table.Cell>
+                <Table.Cell>Space</Table.Cell>
+                <Table.Cell>Environment</Table.Cell>
+                <Table.Cell>Tags</Table.Cell>
+                <Table.Cell>ID</Table.Cell>
+              </Table.Row>
+            </Table.Head>
+            <Table.Body>
+              {withLongContentTableData.map((item) => (
+                <Table.Row key={item.id}>
+                  <Table.Cell>{item.name}</Table.Cell>
+                  <Table.Cell>
+                    <EntityStatusBadge entityStatus={item.status} />
+                  </Table.Cell>
+                  <Table.Cell>{item.contentType}</Table.Cell>
+                  <Table.Cell>{item.updatedBy}</Table.Cell>
+                  <Table.Cell>{item.updated}</Table.Cell>
+                  <Table.Cell>{item.locale}</Table.Cell>
+                  <Table.Cell>{item.space}</Table.Cell>
+                  <Table.Cell>{item.environment}</Table.Cell>
+                  <Table.Cell>{item.tags}</Table.Cell>
+                  <Table.Cell>{item.id}</Table.Cell>
+                </Table.Row>
+              ))}
+            </Table.Body>
+          </Table>
+        </Layout.Body>
+      </Layout>
+    </div>
+  ),
+};
+
+export const ScrollableStickyFirstColumn: StoryObj = {
+  render: (args) => (
+    <div
+      className={css({
+        position: 'relative',
+        flex: '1 1 auto',
+        display: 'flex',
+        justifyContent: 'center',
+        minHeight: '300px',
+        width: '100vw',
+        height: '100vh',
+        margin: '-1rem',
+        flexDirection: 'column',
+        overflow: 'hidden',
+      })}
+    >
+      <div className={css({ backgroundColor: 'silver', height: '60px' })}>
+        Navbar
+      </div>
+      <Layout>
+        <Layout.Body>
+          <Note className={css({ margin: '1rem' })}>
+            Table with overflow-x and fixed first column
+          </Note>
+          <Table {...args} layout="scrollable" isFirstColumnSticky>
+            <Table.Head>
+              <Table.Row>
+                <Table.Cell>Name</Table.Cell>
+                <Table.Cell>Status</Table.Cell>
+                <Table.Cell>Content Type</Table.Cell>
+                <Table.Cell>Updated by</Table.Cell>
+                <Table.Cell>Updated</Table.Cell>
+                <Table.Cell>Locale</Table.Cell>
+                <Table.Cell>Space</Table.Cell>
+                <Table.Cell>Environment</Table.Cell>
+                <Table.Cell>Tags</Table.Cell>
+                <Table.Cell>ID</Table.Cell>
+              </Table.Row>
+            </Table.Head>
+            <Table.Body>
+              {withLongContentTableData.map((item) => (
+                <Table.Row key={item.id}>
+                  <Table.Cell>{item.name}</Table.Cell>
+                  <Table.Cell>
+                    <EntityStatusBadge entityStatus={item.status} />
+                  </Table.Cell>
+                  <Table.Cell>{item.contentType}</Table.Cell>
+                  <Table.Cell>{item.updatedBy}</Table.Cell>
+                  <Table.Cell>{item.updated}</Table.Cell>
+                  <Table.Cell>{item.locale}</Table.Cell>
+                  <Table.Cell>{item.space}</Table.Cell>
+                  <Table.Cell>{item.environment}</Table.Cell>
+                  <Table.Cell>{item.tags}</Table.Cell>
+                  <Table.Cell>{item.id}</Table.Cell>
+                </Table.Row>
+              ))}
+            </Table.Body>
+          </Table>
+        </Layout.Body>
+      </Layout>
+    </div>
+  ),
+};
+export const ScrollableStickyHeaderAndFirstColumn: StoryObj = {
+  render: (args) => (
+    <div
+      className={css({
+        position: 'relative',
+        flex: '1 1 auto',
+        display: 'flex',
+        justifyContent: 'center',
+        minHeight: '300px',
+        width: '100vw',
+        height: '100vh',
+        margin: '-1rem',
+        flexDirection: 'column',
+        overflow: 'hidden',
+      })}
+    >
+      <div className={css({ backgroundColor: 'silver', height: '60px' })}>
+        Navbar
+      </div>
+      <Layout>
+        <Layout.Body>
+          <div
+            className={css({
+              display: 'flex',
+              flexDirection: 'column',
+              height: '100%',
+            })}
+          >
+            <Note className={css({ margin: '1rem' })}>
+              Table with sticky header, sticky first column and scrollable.
+              Because of compatiability issues of sticky-top with overflow-x,
+              the scrollbar moves from the outer container to the table
+              container. To avoid the outer container overflow, the contents of
+              the layout.body are additionally contained in a flexbox
+            </Note>
+            <Table {...args} layout="scrollable" isFirstColumnSticky>
+              <Table.Head isSticky>
+                <Table.Row>
+                  <Table.Cell>Name</Table.Cell>
+                  <Table.Cell>Status</Table.Cell>
+                  <Table.Cell>Content Type</Table.Cell>
+                  <Table.Cell>Updated by</Table.Cell>
+                  <Table.Cell>Updated</Table.Cell>
+                  <Table.Cell>Locale</Table.Cell>
+                  <Table.Cell>Space</Table.Cell>
+                  <Table.Cell>Environment</Table.Cell>
+                  <Table.Cell>Tags</Table.Cell>
+                  <Table.Cell>ID</Table.Cell>
+                </Table.Row>
+              </Table.Head>
+              <Table.Body>
+                {withLongContentTableData.map((item) => (
+                  <Table.Row key={item.id}>
+                    <Table.Cell>{item.name}</Table.Cell>
+                    <Table.Cell>
+                      <EntityStatusBadge entityStatus={item.status} />
+                    </Table.Cell>
+                    <Table.Cell>{item.contentType}</Table.Cell>
+                    <Table.Cell>{item.updatedBy}</Table.Cell>
+                    <Table.Cell>{item.updated}</Table.Cell>
+                    <Table.Cell>{item.locale}</Table.Cell>
+                    <Table.Cell>{item.space}</Table.Cell>
+                    <Table.Cell>{item.environment}</Table.Cell>
+                    <Table.Cell>{item.tags}</Table.Cell>
+                    <Table.Cell>{item.id}</Table.Cell>
+                  </Table.Row>
+                ))}
+              </Table.Body>
+            </Table>
+          </div>
+        </Layout.Body>
+      </Layout>
+    </div>
+  ),
+};
 
 export const WithContent: StoryObj = {
   render: (args) => (
