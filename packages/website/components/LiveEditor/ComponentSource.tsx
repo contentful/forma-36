@@ -5,6 +5,7 @@ import React, {
   useRef,
   useMemo,
   useContext,
+  useId,
 } from 'react';
 import { css, cx } from '@emotion/css';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
@@ -71,16 +72,6 @@ const liveProviderScope = {
   parse,
   isValid,
 };
-
-function getStableCopyTooltipId(value: string) {
-  let hash = 0;
-
-  for (let index = 0; index < value.length; index++) {
-    hash = (hash * 31 + value.charCodeAt(index)) >>> 0;
-  }
-
-  return `component-source-copy-${hash.toString(36)}`;
-}
 
 const styles = {
   root: css`
@@ -159,10 +150,9 @@ export function ComponentSource({
   file?: string;
 }) {
   const [showSource, setShowSource] = useState(true);
-  const copyTooltipId = useMemo(
-    () => getStableCopyTooltipId(file ?? code),
-    [code, file],
-  );
+  const reactId = useId();
+  const tooltipId = reactId.replace(/:/g, '');
+  const copyTooltipId = `component-source-copy-${tooltipId}`;
 
   const handleToggle = () => {
     setShowSource((prevState) => !prevState);
