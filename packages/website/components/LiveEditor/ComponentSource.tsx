@@ -150,8 +150,7 @@ export function ComponentSource({
   file?: string;
 }) {
   const [showSource, setShowSource] = useState(true);
-  const reactId = useId();
-  const tooltipId = reactId.replace(/:/g, '');
+  const tooltipId = useId();
   const copyTooltipId = `component-source-copy-${tooltipId}`;
 
   const handleToggle = () => {
