@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 15-07-2026
+
+**F36 Skeleton** `v6.14.1`
+
+- Fix the `SkeletonBodyText` display name
+
 ## 14-07-2026
 
 **F36 Table** `v6.14.0`
