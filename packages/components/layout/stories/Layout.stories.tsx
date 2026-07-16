@@ -66,7 +66,7 @@ const LayoutHeaderComp = () => (
 
 const LayoutHeaderResponsiveComp = () => (
   <Layout.Header>
-    <Header
+    <Layout.HeaderInner
       className={css({ backgroundColor: 'white' })}
       title="Long Headline to Showcase Responsive Header"
       actions={
