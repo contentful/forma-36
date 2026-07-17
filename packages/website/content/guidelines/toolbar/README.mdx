@@ -75,60 +75,83 @@ Features that don’t meet all of these criteria may still be appropriate when t
 ### Interactions
 
 #### Open the panel
+
 Select a tab while the panel is closed. The panel opens and displays the selected tab’s content.
+
+Only open the panel in response to an explicit user action. In addition to selecting a Toolbar tab, a Button in the main content area may activate a Toolbar tab and open the panel.
+
 ### Switch tabs
+
 Select a different tab while the panel is open. The panel updates to display the selected tab’s content.
-### Navigate between tabs
-Follow a guided transition to another tab. The destination tab opens with the relevant context carried over.
+
+#### Continue work in another tab
+
+Continue a workflow in another tab when another capability is needed to complete the user’s task.
+
+Use a Button to activate the destination tab.
+
+- Label the Button with the user’s goal rather than the destination tab.
+- Place the Button where the need for the other capability naturally arises.
+- Preserve any active context needed to continue the workflow.
+
+For example, prefer:
+
+- Generate translations
+- Review comments
+- Assign taxonomy
+
+Instead of:
+
+- Open AI Agent
+- Go to Comments
+- Workflow →
+
+##### Active context
+
+Active context is the information carried from one tab to another so users can continue their work without repeating previous steps.
+
+Carry over only the context that is relevant to the next task.
+
+Display the active context in close proximity to where it is used.
+  - In the source tab, place the active context near the Button that initiates the transition.
+  - In the destination tab, place the active context near the action or section where users continue their work.
+  - When the active context applies to the entire tab, placing it below the panel header is generally preferred.
+
+Represent the active context using the most appropriate component available for the entity type.
+  - Use InlinEntryCard for entries.
+  - Use Pill for other entity types or simple values.
+
+Where appropriate, allow users to clear or replace the active context.
+
+##### Support returning to the previous tab
+
+When users temporarily switch tabs to complete a supporting task, help them resume their original workflow.
+
+Provide a clear Button to return to the previously active tab when:
+
+* the supporting task has been completed,
+* users are likely to continue their original workflow.
+
+The return action should:
+
+* activate the previously active tab,
+* preserve any relevant active context,
+* clearly communicate the next step.
+
+Prefer labels that describe the user’s goal, for example:
+
+* Continue workflow
+* Continue reviewing
+* Continue commenting
+
 ### Close the panel
+
 Select the active tab again or use the close button. The panel closes and the tabs switch to their default state.
 
-
-
-#### Following a recommendation
-
-Interaction
-
-1. A panel identifies that another capability is needed.
-2. The user follows a CTA to another Toolbar panel.
-3. The destination panel opens with the relevant context already applied.
-
-Patterns
-
-- Use explicit transitions.
-- Preserve context.
-- Provide a clear way to continue the original task.
-
-⸻
-
-Closing a panel
-
-Interaction
-
-The user closes the panel or reselects the active Toolbar item.
-
-Patterns
-
-* Preserve work where appropriate.
-* Return focus to the main content.
-* Avoid unexpected data loss.
-
-#### Example Flow
-
-1. User selects an icon in the toolbar.
-2. The corresponding panel expands.
-3. The user performs their required action within the panel (e.g., viewing insights, commenting, or task management).
-4. Once completed, the user can collapse the panel via the close button in the panel header or by clicking the corresponding icon in the toolbar again.
-5. Alternatively, the user can switch directly to another toolbar item as needed.
 
 *(Visual example or demo link)*
 ```jsx file=.path.tsx
 ```
-#### External triggers
-Only open the panel when the user deliberately triggers it. Aside from the Toolbar tabs, opening the panel can also be triggered by buttons (not links) in the main content area.
-
-#### Interoperability of Toolbar tabs
-TBD
 
 ---
 
