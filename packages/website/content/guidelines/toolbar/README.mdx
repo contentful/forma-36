@@ -16,15 +16,7 @@ The toolbar pattern provides global and consistent access to critical tools and 
 
 ### When to Use
 
-Use the toolbar pattern when users frequently need quick, persistent access to tools and functionalities directly related to their primary tasks, enabling them to perform actions without leaving their current context.
-
-#### Typical Use Cases
-
-- Engaging agents for tasks like spinning up new experiences, viewing analytics insights, or performing other specialized tasks through a chat interface.
-- Quick access to optimization tools relevant to content performance and management.
-- Collaborative workflows that require persistent commenting and feedback mechanisms.
-- Seamless integration and access to third-party apps directly within the editing context.
-- Workflow management activities that benefit from immediate and persistent tool accessibility.
+Use the Toolbar when users benefit from persistent access to capabilities that support their work without interrupting it.
 
 ---
 
@@ -40,6 +32,35 @@ Consider other patterns when persistent access to tools is unnecessary or when p
 | Primary actions that should always be prominently available    | Header Actions      | Ensures immediate visibility for critical actions                             |
 | Essential information and actions visible at all times         | Persistent Sidebar  | Offers constant visibility within content layout                              |
 | Long forms and extensive editing tasks                         | Dedicated Page      | Provides appropriate space and focus for extensive content manipulation       |
+
+---
+
+### Adding features
+
+Not every feature should be added to the Toolbar. Toolbar space is intentionally limited and reserved for high-value capabilities.
+
+A feature is suitable for the Toolbar when it meets most of the following criteria:
+
+- **Frequently used** – Users access the feature repeatedly during their work.
+- **Supports an ongoing workflow** – The feature helps users complete work that unfolds over time rather than a one-off task.
+- **Spans multiple pages** – Users benefit from being able to access the feature without interrupting work as they move through related content and tasks.
+
+Examples:
+
+- Comments – Frequently used during reviews, support collaboration over time, and remain relevant as users move between content.
+- Workflows – Support an ongoing publishing process and span multiple pages, entries, or views.
+- Taxonomies – Applied repeatedly across content and benefit from being readily available while classifying different entities.
+
+Avoid adding features that:
+
+- Support one-off or infrequent tasks rather than ongoing work.
+- Primarily configure the platform rather than help users complete their work.
+- Perform a single action that doesn’t require persistent access.
+- Primarily navigate users to another destination rather than providing a capability that supports their work.
+- Duplicate functionality that is already available through a more appropriate pattern.
+- Only support interactions with a specific part of the current view, where contextual controls are more appropriate.
+
+Features that don’t meet all of these criteria may still be appropriate when there is clear evidence that persistent access improves users’ workflows.
 
 ---
 
