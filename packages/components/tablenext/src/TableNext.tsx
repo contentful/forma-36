@@ -1,5 +1,5 @@
 import { cx } from '@emotion/css';
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef } from 'react';
 import {
   Box,
   type CommonProps,
@@ -10,6 +10,7 @@ import type * as CSS from 'csstype';
 
 import { getTableStyles } from './TableNext.styles';
 import { TableContextProvider } from './tableContext';
+import { TableHeader } from './TableHead/TableHeader';
 
 type TableNextLayoutProps =
   | {
@@ -39,6 +40,8 @@ export type TableNextInternalProps = CommonProps &
       CSS.Property.VerticalAlign,
       'baseline' | 'bottom' | 'middle' | 'top'
     >;
+    columnTitles?: Array<string>;
+    isHeaderSticky?: boolean;
   };
 
 export type TableNextProps = PropsWithHTMLElement<
@@ -57,12 +60,13 @@ export const TableNext = forwardRef<
       layout = 'inline',
       testId = 'cf-ui-table-next',
       verticalAlign = 'top',
+      columnTitles,
       isFirstColumnSticky = false,
+      isHeaderSticky = false,
       ...otherProps
     },
     forwardedRef,
   ) => {
-    const [isHeaderSticky, setIsHeaderSticky] = useState(false);
     const styles = getTableStyles({ isHeaderSticky, isFirstColumnSticky });
     const isScrollable = layout === 'scrollable';
 
@@ -81,9 +85,14 @@ export const TableNext = forwardRef<
           value={{
             verticalAlign,
             isHeaderSticky,
-            setIsHeaderSticky,
           }}
         >
+          {columnTitles && (
+            <TableHeader
+              columnTitles={columnTitles}
+              isHeaderSticky={isHeaderSticky}
+            />
+          )}
           {children}
         </TableContextProvider>
       </Box>

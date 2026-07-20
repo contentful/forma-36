@@ -13,7 +13,7 @@ import {
 import { withLongContentTableData } from './WithLongContent.mockdata';
 import { css } from '@emotion/css';
 
-import { TableNext, TableCellSorting } from '../src';
+import { TableNext } from '../src';
 import tokens from '@contentful/f36-tokens';
 
 export default {
@@ -40,19 +40,18 @@ export default {
   title: 'Components/TableNext',
 } as Meta;
 
+const tableHeaderTitles = [
+  'Name',
+  'Email',
+  'Organization role',
+  'Last activity',
+];
+
 export const Default: StoryObj = {
   render: (args) => {
     return (
       <div style={{ width: '800px' }}>
-        <TableNext {...args}>
-          <TableNext.Head>
-            <TableNext.Row>
-              <TableNext.Cell>Name</TableNext.Cell>
-              <TableNext.Cell>Email</TableNext.Cell>
-              <TableNext.Cell>Organization role</TableNext.Cell>
-              <TableNext.Cell>Last activity</TableNext.Cell>
-            </TableNext.Row>
-          </TableNext.Head>
+        <TableNext {...args} columnTitles={tableHeaderTitles}>
           <TableNext.Body>
             <TableNext.Row>
               <TableNext.Cell>Jane Roe</TableNext.Cell>
@@ -78,15 +77,7 @@ export const WithLoadingState: StoryFn = () => {
 
   return (
     <div style={{ width: '800px' }}>
-      <TableNext>
-        <TableNext.Head>
-          <TableNext.Row>
-            <TableNext.Cell>Name</TableNext.Cell>
-            <TableNext.Cell>Email</TableNext.Cell>
-            <TableNext.Cell>Organization role</TableNext.Cell>
-            <TableNext.Cell>Last activity</TableNext.Cell>
-          </TableNext.Row>
-        </TableNext.Head>
+      <TableNext columnTitles={tableHeaderTitles}>
         <TableNext.Body>
           {isLoading ? (
             <Skeleton.Row rowCount={4} columnCount={4} />
@@ -127,21 +118,7 @@ export const Overview: StoryFn = () => (
         Inline TableNext
       </SectionHeading>
 
-      <TableNext>
-        <TableNext.Head>
-          <TableNext.Row>
-            <TableNext.Cell>Name</TableNext.Cell>
-            <TableNext.Cell>Email</TableNext.Cell>
-            <TableNext.Cell>Organization role</TableNext.Cell>
-            <TableNext.Cell
-              isSortable
-              sortDirection={TableCellSorting.Descending}
-              sortButtonAriaLabel="Nach letzter Aktivität aufsteigend sortieren"
-            >
-              Last activity
-            </TableNext.Cell>
-          </TableNext.Row>
-        </TableNext.Head>
+      <TableNext columnTitles={tableHeaderTitles}>
         <TableNext.Body>
           <TableNext.Row isSelected>
             <TableNext.Cell>Jane Roe</TableNext.Cell>
@@ -170,21 +147,7 @@ export const Overview: StoryFn = () => (
         Embedded TableNext
       </SectionHeading>
 
-      <TableNext layout="embedded">
-        <TableNext.Head>
-          <TableNext.Row>
-            <TableNext.Cell>Name</TableNext.Cell>
-            <TableNext.Cell>Email</TableNext.Cell>
-            <TableNext.Cell>Organization role</TableNext.Cell>
-            <TableNext.Cell
-              isSortable
-              sortDirection={TableCellSorting.Ascending}
-              sortButtonAriaLabel="Nach letzter Aktivität absteigend sortieren"
-            >
-              Last activity
-            </TableNext.Cell>
-          </TableNext.Row>
-        </TableNext.Head>
+      <TableNext variant="embedded" columnTitles={tableHeaderTitles}>
         <TableNext.Body>
           <TableNext.Row isSelected>
             <TableNext.Cell>Jane Roe</TableNext.Cell>
@@ -254,6 +217,55 @@ const withContentTableData: {
   },
 ];
 
+export const WithContent: StoryObj = {
+  render: (args) => (
+    <div style={{ width: '960px' }}>
+      <TableNext {...args} columnTitles={tableHeaderTitles}>
+        <TableNext.Body>
+          {withContentTableData.map((item) => (
+            <TableNext.Row key={item.name}>
+              <TableNext.Cell
+                style={{
+                  maxWidth: '350px',
+                  fontWeight: tokens.fontWeightDemiBold,
+                }}
+                isTruncated
+              >
+                {item.name}
+              </TableNext.Cell>
+              <TableNext.Cell style={{ width: '150px' }}>
+                <EntityStatusBadge entityStatus={item.status} />
+              </TableNext.Cell>
+              <TableNext.Cell style={{ width: '150px' }}>
+                {item.contentType}
+              </TableNext.Cell>
+              <TableNext.Cell style={{ width: '250px' }}>
+                {item.updatedBy}
+              </TableNext.Cell>
+              <TableNext.Cell style={{ width: '150px' }}>
+                {item.updated}
+              </TableNext.Cell>
+            </TableNext.Row>
+          ))}
+        </TableNext.Body>
+      </TableNext>
+    </div>
+  ),
+};
+
+const contentTableHeaderData = [
+  'Name',
+  'Status',
+  'Content Type',
+  'Updated by',
+  'Updated',
+  'Locale',
+  'Space',
+  'Environment',
+  'Tags',
+  'ID',
+];
+
 export const Scrollable: StoryObj = {
   render: (args) => (
     <div
@@ -278,21 +290,11 @@ export const Scrollable: StoryObj = {
           <Note className={css({ margin: '1rem' })}>
             TableNext with overflow-x scrollbar
           </Note>
-          <TableNext {...args} layout="scrollable">
-            <TableNext.Head>
-              <TableNext.Row>
-                <TableNext.Cell>Name</TableNext.Cell>
-                <TableNext.Cell>Status</TableNext.Cell>
-                <TableNext.Cell>Content Type</TableNext.Cell>
-                <TableNext.Cell>Updated by</TableNext.Cell>
-                <TableNext.Cell>Updated</TableNext.Cell>
-                <TableNext.Cell>Locale</TableNext.Cell>
-                <TableNext.Cell>Space</TableNext.Cell>
-                <TableNext.Cell>Environment</TableNext.Cell>
-                <TableNext.Cell>Tags</TableNext.Cell>
-                <TableNext.Cell>ID</TableNext.Cell>
-              </TableNext.Row>
-            </TableNext.Head>
+          <TableNext
+            {...args}
+            layout="scrollable"
+            columnTitles={contentTableHeaderData}
+          >
             <TableNext.Body>
               {withLongContentTableData.map((item) => (
                 <TableNext.Row key={item.id}>
@@ -342,21 +344,12 @@ export const ScrollableStickyFirstColumn: StoryObj = {
           <Note className={css({ margin: '1rem' })}>
             TableNext with overflow-x and fixed first column
           </Note>
-          <TableNext {...args} layout="scrollable" isFirstColumnSticky>
-            <TableNext.Head>
-              <TableNext.Row>
-                <TableNext.Cell>Name</TableNext.Cell>
-                <TableNext.Cell>Status</TableNext.Cell>
-                <TableNext.Cell>Content Type</TableNext.Cell>
-                <TableNext.Cell>Updated by</TableNext.Cell>
-                <TableNext.Cell>Updated</TableNext.Cell>
-                <TableNext.Cell>Locale</TableNext.Cell>
-                <TableNext.Cell>Space</TableNext.Cell>
-                <TableNext.Cell>Environment</TableNext.Cell>
-                <TableNext.Cell>Tags</TableNext.Cell>
-                <TableNext.Cell>ID</TableNext.Cell>
-              </TableNext.Row>
-            </TableNext.Head>
+          <TableNext
+            {...args}
+            layout="scrollable"
+            isFirstColumnSticky={true}
+            columnTitles={contentTableHeaderData}
+          >
             <TableNext.Body>
               {withLongContentTableData.map((item) => (
                 <TableNext.Row key={item.id}>
@@ -416,21 +409,13 @@ export const ScrollableStickyHeaderAndFirstColumn: StoryObj = {
               container. To avoid the outer container overflow, the contents of
               the layout.body are additionally contained in a flexbox
             </Note>
-            <TableNext {...args} layout="scrollable" isFirstColumnSticky>
-              <TableNext.Head isSticky>
-                <TableNext.Row>
-                  <TableNext.Cell>Name</TableNext.Cell>
-                  <TableNext.Cell>Status</TableNext.Cell>
-                  <TableNext.Cell>Content Type</TableNext.Cell>
-                  <TableNext.Cell>Updated by</TableNext.Cell>
-                  <TableNext.Cell>Updated</TableNext.Cell>
-                  <TableNext.Cell>Locale</TableNext.Cell>
-                  <TableNext.Cell>Space</TableNext.Cell>
-                  <TableNext.Cell>Environment</TableNext.Cell>
-                  <TableNext.Cell>Tags</TableNext.Cell>
-                  <TableNext.Cell>ID</TableNext.Cell>
-                </TableNext.Row>
-              </TableNext.Head>
+            <TableNext
+              {...args}
+              layout="scrollable"
+              isFirstColumnSticky
+              isHeaderSticky
+              columnTitles={contentTableHeaderData}
+            >
               <TableNext.Body>
                 {withLongContentTableData.map((item) => (
                   <TableNext.Row key={item.id}>
@@ -453,51 +438,6 @@ export const ScrollableStickyHeaderAndFirstColumn: StoryObj = {
           </div>
         </Layout.Body>
       </Layout>
-    </div>
-  ),
-};
-
-export const WithContent: StoryObj = {
-  render: (args) => (
-    <div style={{ width: '960px' }}>
-      <TableNext {...args}>
-        <TableNext.Head>
-          <TableNext.Row>
-            <TableNext.Cell>Name</TableNext.Cell>
-            <TableNext.Cell>Status</TableNext.Cell>
-            <TableNext.Cell>Content Type</TableNext.Cell>
-            <TableNext.Cell>Updated by</TableNext.Cell>
-            <TableNext.Cell>Updated</TableNext.Cell>
-          </TableNext.Row>
-        </TableNext.Head>
-        <TableNext.Body>
-          {withContentTableData.map((item) => (
-            <TableNext.Row key={item.name}>
-              <TableNext.Cell
-                style={{
-                  maxWidth: '350px',
-                  fontWeight: tokens.fontWeightDemiBold,
-                }}
-                isTruncated
-              >
-                {item.name}
-              </TableNext.Cell>
-              <TableNext.Cell style={{ width: '150px' }}>
-                <EntityStatusBadge entityStatus={item.status} />
-              </TableNext.Cell>
-              <TableNext.Cell style={{ width: '150px' }}>
-                {item.contentType}
-              </TableNext.Cell>
-              <TableNext.Cell style={{ width: '250px' }}>
-                {item.updatedBy}
-              </TableNext.Cell>
-              <TableNext.Cell style={{ width: '150px' }}>
-                {item.updated}
-              </TableNext.Cell>
-            </TableNext.Row>
-          ))}
-        </TableNext.Body>
-      </TableNext>
     </div>
   ),
 };

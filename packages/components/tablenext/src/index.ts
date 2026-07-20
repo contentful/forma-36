@@ -10,7 +10,5 @@ export {
   TableCellContextProvider,
   useTableCellContext,
 } from './TableCell/TableCellContext';
-export { TableHead } from './TableHead/TableHead';
-export type { TableHeadProps } from './TableHead/TableHead';
 export { TableRow } from './TableRow/TableRow';
 export type { TableRowProps } from './TableRow/TableRow';
