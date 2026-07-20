@@ -1,5 +1,4 @@
 import React, {
-  type ElementType,
   forwardRef,
   type Ref,
   type ReactElement,
@@ -7,21 +6,13 @@ import React, {
   useEffect,
 } from 'react';
 import { cx } from '@emotion/css';
-import {
-  Flex,
-  type ExpandProps,
-  type PolymorphicComponent,
-  type PolymorphicProps,
-  type CommonProps,
-} from '@contentful/f36-core';
+import { Flex, type CommonProps } from '@contentful/f36-core';
 import { BackButton, type BackButtonProps } from './BackButton';
 import { Breadcrumb, type BreadcrumbProps } from './Breadcrumb';
 import { HeaderTitle } from './HeaderTitle';
 import { getLayoutHeaderInnerStyles } from './LayoutHeaderInner.styles';
 import type { HeadingElement } from '@contentful/f36-typography';
 import { useLayoutContext } from '../LayoutContext';
-
-const LAYOUT_HEADER_INNER_DEFAULT_TAG = 'header';
 
 type Variant =
   | {
@@ -52,7 +43,7 @@ type Variant =
       withBackButton: true;
     };
 
-type LayoutHeaderInnerInternalProps = CommonProps &
+export type LayoutHeaderInnerProps = CommonProps &
   Variant & {
     /**
      * Optional JSX children to display as complementary actions (e.g. buttons) related to the current page/route.
@@ -69,28 +60,20 @@ type LayoutHeaderInnerInternalProps = CommonProps &
     metadata?: ReactNode;
   };
 
-export type LayoutHeaderInnerProps<
-  E extends ElementType = typeof LAYOUT_HEADER_INNER_DEFAULT_TAG,
-> = PolymorphicProps<LayoutHeaderInnerInternalProps, E>;
-
-function LayoutHeaderInnerBase<
-  E extends ElementType = typeof LAYOUT_HEADER_INNER_DEFAULT_TAG,
->(
+function LayoutHeaderInnerBase(
   {
     actions,
-    as,
     backButtonProps,
     breadcrumbs,
     className,
-    filters,
     metadata,
     title,
     titleProps,
     withBackButton,
     testId = 'cf-ui-header',
     ...otherProps
-  }: LayoutHeaderInnerProps<E>,
-  forwardedRef: Ref<HTMLElement>,
+  }: LayoutHeaderInnerProps,
+  forwardedRef: Ref<HTMLDivElement>,
 ) {
   const variant = breadcrumbs ? 'breadcrumb' : 'title';
   const styles = getLayoutHeaderInnerStyles();
@@ -103,7 +86,6 @@ function LayoutHeaderInnerBase<
   return (
     <Flex
       alignItems="center"
-      as={LAYOUT_HEADER_INNER_DEFAULT_TAG}
       gap="spacingM"
       className={cx(styles.root, className)}
       ref={forwardedRef}
@@ -142,9 +124,4 @@ function LayoutHeaderInnerBase<
 
 LayoutHeaderInnerBase.displayName = 'LayoutHeaderInner';
 
-export const LayoutHeaderInner = forwardRef(
-  LayoutHeaderInnerBase,
-) as PolymorphicComponent<
-  ExpandProps<LayoutHeaderInnerInternalProps>,
-  typeof LAYOUT_HEADER_INNER_DEFAULT_TAG
->;
+export const LayoutHeaderInner = forwardRef(LayoutHeaderInnerBase);
