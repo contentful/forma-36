@@ -46,7 +46,7 @@ import { Button } from '@contentful/f36-components';
 
 ## Development
 
-For local development, in the root of the repo run `npm i` to install all dependencies and then `npm run-script build` to build all packages.
+For local development, in the root of the repo run `pnpm install` to install all dependencies and then `pnpm build` to build all packages.
 This package depends on several other Forma 36 packages so you will need to build all of them.
 
 ### Storybook
@@ -54,7 +54,7 @@ This package depends on several other Forma 36 packages so you will need to buil
 We use [Storybook](https://storybook.js.org/) to create a development environment for our component library. To start it locally run:
 
 ```bash
-npm run-script storybook
+pnpm storybook
 ```
 
 When creating new component, before you start, please have a look at our [contribution model for Forma 36](https://f36.contentful.com/introduction/contributing).
@@ -79,7 +79,7 @@ A component's directory should resemble the following:
 
 For more detailes you can have a look in document that describes [folder structure in details](https://github.com/contentful/forma-36/blob/main/docs/folder-structure.md).
 
-> If you use `npm run-script generate` in the root of the repo, this structure will be created automatically for you
+> If you use `pnpm generate` in the root of the repo, this structure will be created automatically for you
 
 ### Code Style Guide
 
@@ -120,13 +120,13 @@ Tests are kept next to their components and use the `.test.js` file extension.
 ### Run tests
 
 ```bash
-npm run-script test
+pnpm test
 ```
 
 It is recommended to run tests in development with the optional `--watch` flag.
 
 ```bash
-npm run-script test --watch
+pnpm test:watch
 ```
 
 ## Building
@@ -144,7 +144,7 @@ Each component builds to its own `dist` directory with:
 ### Create a build of the library
 
 ```bash
-npm run-script build
+pnpm build
 ```
 
 ## Commits
@@ -154,5 +154,5 @@ This project uses the [Angular JS Commit Message Conventions](https://docs.googl
 You can commit the changes by running
 
 ```bash
-npm run-script commit
+pnpm commit
 ```

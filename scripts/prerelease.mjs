@@ -121,9 +121,9 @@ async function main() {
   if (publish) {
     const dryRunFlag = dryRun ? '--dry-run' : '';
     console.log('');
-    console.log(chalk.bold('Npm publish output'));
+    console.log(chalk.bold('pnpm publish output'));
     await exec(
-      `npm publish ${dir} --tag ${tag} ${dryRunFlag}`,
+      `pnpm publish ${dir} --tag ${tag} ${dryRunFlag}`,
       (error, stdout, stderr) => {
         if (!error) {
           console.log(stdout);

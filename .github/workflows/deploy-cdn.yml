@@ -17,8 +17,9 @@ jobs:
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: 24.18.1
+      - uses: pnpm/action-setup@008330803749db0355799c700092d9a85fd074e9 # v6.0.9
       - name: Install dependencies
-        run: npm ci --workspace=@contentful/f36-cdn
+        run: pnpm --filter @contentful/f36-cdn install --frozen-lockfile
       - name: Deploy to Compute
         uses: fastly/compute-actions@a25cf83ef5c19ef7d86f1eebffcd8f6c02ddc786 # v14
         with:
