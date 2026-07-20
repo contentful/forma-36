@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   docker: circleci/docker@2.8.2
-  node: circleci/node@5.0.2
+  node: circleci/node@5.3.0
   vault: contentful/vault@1.30.3
 
 jobs:
