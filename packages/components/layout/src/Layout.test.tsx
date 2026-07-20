@@ -191,7 +191,7 @@ describe('Layout', () => {
 
       expect(
         screen
-          .getByTestId('cf-ui-header')
+          .getByTestId('cf-layout-header-inner')
           .classList.contains(additionalClassName),
       ).toBeTruthy();
     });
