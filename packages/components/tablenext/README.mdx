@@ -1,0 +1,96 @@
+---
+title: 'TableNext'
+type: 'component'
+status: 'stable'
+slug: /components/tablenext/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/tablenext'
+storybook: 'https://f36-storybook.contentful.com/?path=/info/components-tablenext--default'
+typescript: ./src/TableNext.tsx,./src/TableCell/TableCell.tsx,./src/TableRow/TableRow.tsx,./src/TableBody/TableBody.tsx,./src/TableHead/TableHead.tsx
+---
+
+## Import
+
+```jsx static=true
+import { TableNext } from '@contentful/f36-tablenext';
+```
+
+## Examples
+
+### Basic usage
+
+```jsx file=./examples/TableBasicUsageExample.tsx
+
+```
+
+### Dynamic creation
+
+One very common use case for a table is that you will have a set of data and you would like to show a table row for each item in that set.
+To achieve that result, you can iterate over the data and create `TableNext.Row` and `TableNext.Cell` for each item:
+
+```jsx file=./examples/TableDynamicCreation.tsx
+
+```
+
+### With sorting
+
+TableNext cells in the table header can be marked as sortable and sorted either in ascending or descending order.
+
+```jsx file=./examples/TableWithSortingPropsExample.tsx
+
+```
+
+### Scrollable
+
+Use `layout="scrollable"` for tables with many columns or content that should not be compressed on smaller viewports. The table keeps its column layout and allows horizontal scrolling when the available width is not enough.
+
+```jsx file=./examples/TableScrollableExample.tsx
+
+```
+
+### Scrollable with sticky first column
+
+Combine `layout="scrollable"` with `isFirstColumnSticky` when the first column contains the primary identifier for each row. This keeps the row context visible while users scroll horizontally.
+
+```jsx file=./examples/TableScrollableStickyFirstColumnExample.tsx
+
+```
+
+### Scrollable with sticky header and first column
+
+For large tables that need both horizontal and vertical scrolling, combine `layout="scrollable"`, `isFirstColumnSticky`, and `TableNext.Head isSticky`. Place the table in a height-constrained container to avoid double scrollbars coming from the outer container.
+
+```jsx file=./examples/TableScrollableStickyHeaderAndFirstColumnExample.tsx
+
+```
+
+## Props (API reference)
+
+### TableNext
+
+<PropsTable of="TableNext" />
+
+### TableNext.Head
+
+<PropsTable of="TableHead" />
+
+### TableNext.Body
+
+<PropsTable of="TableBody" />
+
+### TableNext.Row
+
+<PropsTable of="TableRow" />
+
+### TableNext.Cell
+
+<PropsTable of="TableCell" />
+
+## Content guidelines
+
+- Keep headers short
+- Headers should be informative and descriptive
+- Content in the table should be concise and scannable
+
+## Accessibility
+
+- It will render tabular data using the native HTML element `table` which is recommended.
