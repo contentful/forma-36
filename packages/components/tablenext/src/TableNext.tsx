@@ -15,9 +15,9 @@ import { TableHeader } from './TableHead/TableHeader';
 type TableNextLayoutProps =
   | {
       /**
-       * @default 'inline'
+       * @default 'scrollable'
        */
-      layout?: 'inline' | 'embedded';
+      layout?: 'stackable';
       /**
        * @default false
        */
@@ -40,6 +40,7 @@ export type TableNextInternalProps = CommonProps &
       CSS.Property.VerticalAlign,
       'baseline' | 'bottom' | 'middle' | 'top'
     >;
+    variant?: 'inline' | 'embedded';
     columnTitles?: Array<string>;
     isHeaderSticky?: boolean;
   };
@@ -57,7 +58,8 @@ export const TableNext = forwardRef<
     {
       children,
       className,
-      layout = 'inline',
+      layout = 'scrollable',
+      variant = 'inline',
       testId = 'cf-ui-table-next',
       verticalAlign = 'top',
       columnTitles,
@@ -78,7 +80,12 @@ export const TableNext = forwardRef<
         as="table"
         display="table"
         ref={forwardedRef}
-        className={cx(styles.root, styles[layout], className)}
+        className={cx(
+          styles.root,
+          styles[variant],
+          { [styles.scrollable]: isScrollable },
+          className,
+        )}
         testId={testId}
       >
         <TableContextProvider
