@@ -1,0 +1,43 @@
+import React, { forwardRef, type Ref } from 'react';
+import tokens from '@contentful/f36-tokens';
+import { IconButton, type IconButtonProps } from '@contentful/f36-button';
+import { ArrowLeftIcon } from '@contentful/f36-icons';
+import { cx } from '@emotion/css';
+import { getBackButtonStyles } from './BackButton.styles';
+
+export type BackButtonProps = Omit<
+  Partial<IconButtonProps>,
+  'children' | 'icon' | 'variant' | 'size'
+> & {
+  'aria-label'?: string;
+};
+
+function BackButtonBase(
+  {
+    onClick,
+    'aria-label': ariaLabel = 'Go back',
+    className,
+    ...otherProps
+  }: BackButtonProps,
+  ref: Ref<HTMLButtonElement>,
+) {
+  const styles = getBackButtonStyles();
+
+  return (
+    <IconButton
+      {...otherProps}
+      className={cx(styles.button, className)}
+      aria-label={ariaLabel}
+      icon={<ArrowLeftIcon color={tokens.gray600} />}
+      onClick={onClick}
+      size="small"
+      ref={ref}
+      variant="transparent"
+    />
+  );
+}
+
+BackButtonBase.displayName = 'BackButton';
+export const BackButton = forwardRef<HTMLButtonElement, BackButtonProps>(
+  BackButtonBase,
+);

@@ -7,6 +7,7 @@ import { action } from 'storybook/actions';
 import type { LayoutProps } from '../src';
 import { Header } from '../../header/src/Header';
 import { Layout } from '../src/CompoundLayout';
+import { CopySimpleIcon } from '@contentful/f36-icons';
 
 const NAVBAR_HEIGHT = 60;
 
@@ -39,6 +40,7 @@ const ExampleWrapper = ({ withNavbar = true, children }) => (
           width: '100vw',
           height: `${NAVBAR_HEIGHT}px`,
           backgroundColor: 'lavender',
+          flexShrink: 0,
         })}
       >
         Navbar
@@ -53,6 +55,20 @@ const LayoutHeaderComp = () => (
     <Header
       className={css({ padding: '0', backgroundColor: 'white' })}
       title="Headline"
+      actions={
+        <Button variant="primary" size="small">
+          Button
+        </Button>
+      }
+    />
+  </Layout.Header>
+);
+
+const LayoutHeaderResponsiveComp = () => (
+  <Layout.Header>
+    <Layout.HeaderInner
+      className={css({ backgroundColor: 'white' })}
+      title="Long Headline to Showcase Responsive Header"
       actions={
         <Button variant="primary" size="small">
           Button
@@ -559,6 +575,262 @@ export const VariantNarrowWithRightSidebar: StoryFn<LayoutProps> = () => {
               width: '100%',
               height: '900px',
               backgroundColor: 'lavenderblush',
+            })}
+          >
+            Content
+          </Box>
+        </Layout.Body>
+      </Layout>
+    </ExampleWrapper>
+  );
+};
+
+export const WithResponsiveHeader: StoryFn<LayoutProps> = () => {
+  return (
+    <ExampleWrapper>
+      <Layout header={<LayoutHeaderResponsiveComp />} offsetTop={NAVBAR_HEIGHT}>
+        <Layout.Body>
+          <Box
+            className={css({
+              width: '100%',
+              height: '400px',
+              backgroundColor: 'lavenderblush',
+              marginBottom: '1rem',
+            })}
+          >
+            Content
+          </Box>
+          <Box
+            className={css({
+              width: '100%',
+              height: '240px',
+              backgroundColor: 'blanchedalmond',
+              marginBottom: '1rem',
+            })}
+          >
+            Content
+          </Box>
+          <Box
+            className={css({
+              width: '100%',
+              height: '1000px',
+              backgroundColor: 'aliceblue',
+              marginBottom: '1rem',
+            })}
+          >
+            Content
+          </Box>
+        </Layout.Body>
+      </Layout>
+    </ExampleWrapper>
+  );
+};
+
+export const WithResponsiveHeaderAndBreadcrumbs: StoryFn<LayoutProps> = () => {
+  return (
+    <ExampleWrapper>
+      <Layout
+        header={
+          <Layout.Header>
+            <Layout.HeaderInner
+              className={css({ backgroundColor: 'white' })}
+              title="Long Headline to Showcase Responsive Header"
+              breadcrumbs={[{ content: 'Content Types', url: '#' }]}
+              backButtonProps={{ onClick: action('navigate back') }}
+              withBackButton
+              actions={
+                <Button variant="primary" size="small">
+                  Button
+                </Button>
+              }
+            />
+          </Layout.Header>
+        }
+        offsetTop={NAVBAR_HEIGHT}
+      >
+        <Layout.Body>
+          <Box
+            className={css({
+              width: '100%',
+              height: '400px',
+              backgroundColor: 'lavenderblush',
+              marginBottom: '1rem',
+            })}
+          >
+            Content
+          </Box>
+          <Box
+            className={css({
+              width: '100%',
+              height: '240px',
+              backgroundColor: 'blanchedalmond',
+              marginBottom: '1rem',
+            })}
+          >
+            Content
+          </Box>
+          <Box
+            className={css({
+              width: '100%',
+              height: '1000px',
+              backgroundColor: 'aliceblue',
+              marginBottom: '1rem',
+            })}
+          >
+            Content
+          </Box>
+        </Layout.Body>
+      </Layout>
+    </ExampleWrapper>
+  );
+};
+
+export const WithFullResponsiveHeader: StoryFn<LayoutProps> = () => {
+  return (
+    <ExampleWrapper>
+      <Layout
+        header={
+          <Layout.Header>
+            <Layout.HeaderInner
+              className={css({ backgroundColor: 'white' })}
+              title="Long Headline to Showcase Responsive Header"
+              metadata={
+                <Button
+                  variant="transparent"
+                  startIcon={<CopySimpleIcon />}
+                  size="small"
+                >
+                  Copy ID
+                </Button>
+              }
+              breadcrumbs={[{ content: 'Content Types', url: '#' }]}
+              backButtonProps={{ onClick: action('navigate back') }}
+              withBackButton
+              actions={
+                <Button variant="primary" size="small">
+                  Button
+                </Button>
+              }
+            />
+          </Layout.Header>
+        }
+        offsetTop={NAVBAR_HEIGHT}
+      >
+        <Layout.Body>
+          <Box
+            className={css({
+              width: '100%',
+              height: '400px',
+              backgroundColor: 'lavenderblush',
+              marginBottom: '1rem',
+            })}
+          >
+            Content
+          </Box>
+          <Box
+            className={css({
+              width: '100%',
+              height: '240px',
+              backgroundColor: 'blanchedalmond',
+              marginBottom: '1rem',
+            })}
+          >
+            Content
+          </Box>
+          <Box
+            className={css({
+              width: '100%',
+              height: '1000px',
+              backgroundColor: 'aliceblue',
+              marginBottom: '1rem',
+            })}
+          >
+            Content
+          </Box>
+        </Layout.Body>
+      </Layout>
+    </ExampleWrapper>
+  );
+};
+
+export const WithResponsiveHeaderAndSidebar: StoryFn<LayoutProps> = () => {
+  return (
+    <ExampleWrapper>
+      <Layout
+        header={<LayoutHeaderResponsiveComp />}
+        offsetTop={NAVBAR_HEIGHT}
+        leftSidebar={
+          <Layout.Sidebar>
+            <Box
+              className={css({
+                backgroundColor: 'violet',
+                width: '100%',
+                height: '200px',
+                marginBottom: '1rem',
+              })}
+            >
+              Sidebar Content
+            </Box>
+            <Box
+              className={css({
+                backgroundColor: 'springgreen',
+                width: '100%',
+                height: '400px',
+                marginBottom: '1rem',
+              })}
+            >
+              Sidebar Content
+            </Box>
+            <Box
+              className={css({
+                backgroundColor: 'lightcoral',
+                width: '100%',
+                height: '200px',
+                marginBottom: '1rem',
+              })}
+            >
+              Sidebar Content
+            </Box>
+            <Box
+              className={css({
+                backgroundColor: 'indianred',
+                width: '100%',
+                height: '400px',
+                marginBottom: '1rem',
+              })}
+            >
+              Sidebar Content
+            </Box>
+          </Layout.Sidebar>
+        }
+      >
+        <Layout.Body>
+          <Box
+            className={css({
+              width: '100%',
+              height: '400px',
+              backgroundColor: 'lavenderblush',
+              marginBottom: '1rem',
+            })}
+          >
+            Content
+          </Box>
+          <Box
+            className={css({
+              width: '100%',
+              height: '240px',
+              backgroundColor: 'blanchedalmond',
+              marginBottom: '1rem',
+            })}
+          >
+            Content
+          </Box>
+          <Box
+            className={css({
+              width: '100%',
+              height: '1000px',
+              backgroundColor: 'aliceblue',
+              marginBottom: '1rem',
             })}
           >
             Content

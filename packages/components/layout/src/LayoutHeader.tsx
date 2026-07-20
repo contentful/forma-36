@@ -19,11 +19,13 @@ const LayoutHeaderBase = (
     testId = 'cf-layout-header',
     ...otherProps
   } = props;
-  const { variant, withLeftSidebar, withRightSidebar } = useLayoutContext();
+  const { variant, withLeftSidebar, withRightSidebar, withResponsiveHeader } =
+    useLayoutContext();
   const styles = getLayoutHeaderStyles({
     variant,
     withLeftSidebar,
     withRightSidebar,
+    withResponsiveHeader,
   });
 
   return (
