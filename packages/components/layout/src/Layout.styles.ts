@@ -185,7 +185,7 @@ export const getLayoutHeaderStyles = ({
 }) => ({
   layoutHeader: css(
     {
-      padding: `${tokens.spacing2Xs}  ${tokens.spacingL} 0 ${tokens.spacingL} `,
+      padding: `${tokens.spacing2Xs} ${tokens.spacingL} 0 ${tokens.spacingL}`,
       width: '100%',
       maxWidth: variant === 'fullscreen' ? '100%' : '1920px',
       borderBottom:

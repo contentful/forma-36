@@ -70,7 +70,7 @@ function LayoutHeaderInnerBase(
     title,
     titleProps,
     withBackButton,
-    testId = 'cf-ui-header',
+    testId = 'cf-layout-header-inner',
     ...otherProps
   }: LayoutHeaderInnerProps,
   forwardedRef: Ref<HTMLDivElement>,
