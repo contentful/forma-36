@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 21-07-2026
+
+**F36 Layout** `v6.15.0`
+
+- feat: 🎸 add responsive header component Layout.HeaderInner
+
 ## 15-07-2026
 
 **F36 Skeleton** `v6.14.1`
