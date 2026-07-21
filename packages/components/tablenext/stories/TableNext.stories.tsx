@@ -175,6 +175,7 @@ export const Overview: StoryFn = () => (
 
 const withContentTableData: {
   name: string;
+  email: string;
   status: EntityStatus;
   contentType: string;
   updatedBy: string;
@@ -182,6 +183,7 @@ const withContentTableData: {
 }[] = [
   {
     name: 'How does writing influence your personal brand?',
+    email: 'a.mahmoud@example.com',
     status: 'published',
     contentType: 'Blog post',
     updatedBy: 'Ayman Mahmoud',
@@ -189,6 +191,7 @@ const withContentTableData: {
   },
   {
     name: 'How to optimize images in WordPress for faster loading (complete guide)',
+    email: 'a.mahmoud@example.com',
     status: 'published',
     contentType: 'Blog post',
     updatedBy: 'Ayman Mahmoud',
@@ -197,6 +200,7 @@ const withContentTableData: {
   {
     name: 'Travelling as a way of self-discovery and progress',
     status: 'changed',
+    email: 'a.mahmoud@example.com',
     contentType: 'Blog post',
     updatedBy: 'Ayman Mahmoud',
     updated: '9 months ago',
@@ -204,6 +208,7 @@ const withContentTableData: {
   {
     name: 'Start a blog to reach your creative peak',
     status: 'published',
+    email: 'a.mahmoud@example.com',
     contentType: 'Blog post',
     updatedBy: 'Ayman Mahmoud',
     updated: '11 months ago',
@@ -211,16 +216,25 @@ const withContentTableData: {
   {
     name: 'Why choose a theme that looks good with WooCommerce',
     status: 'published',
+    email: 'a.mahmoud@example.com',
     contentType: 'Blog post',
     updatedBy: 'Ayman Mahmoud',
     updated: '11 months ago',
   },
 ];
 
+const withContentHeaderTitles = [
+  'Name',
+  'Status',
+  'Email',
+  'Content Type',
+  'Updated By',
+  'Last activity',
+];
 export const WithContent: StoryObj = {
   render: (args) => (
     <div style={{ width: '960px' }}>
-      <TableNext {...args} columnTitles={tableHeaderTitles}>
+      <TableNext {...args} columnTitles={withContentHeaderTitles}>
         <TableNext.Body>
           {withContentTableData.map((item) => (
             <TableNext.Row key={item.name}>
@@ -235,6 +249,9 @@ export const WithContent: StoryObj = {
               </TableNext.Cell>
               <TableNext.Cell style={{ width: '150px' }}>
                 <EntityStatusBadge entityStatus={item.status} />
+              </TableNext.Cell>
+              <TableNext.Cell style={{ width: '250px' }}>
+                {item.email}
               </TableNext.Cell>
               <TableNext.Cell style={{ width: '150px' }}>
                 {item.contentType}
@@ -265,6 +282,101 @@ const contentTableHeaderData = [
   'Tags',
   'ID',
 ];
+
+export const Stackable: StoryObj = {
+  render: (args) => (
+    <div
+      className={css({
+        position: 'relative',
+        flex: '1 1 auto',
+        display: 'flex',
+        justifyContent: 'center',
+        minHeight: '300px',
+        width: '100vw',
+        height: '100vh',
+        margin: '-1rem',
+        flexDirection: 'column',
+        overflow: 'hidden',
+      })}
+    >
+      <div className={css({ backgroundColor: 'silver', height: '60px' })}>
+        Navbar
+      </div>
+      <Layout>
+        <Layout.Body>
+          <Note className={css({ margin: '1rem' })}>
+            TableNext with overflow-x scrollbar
+          </Note>
+          <TableNext {...args} layout="stackable">
+            <TableNext.Body>
+              {withContentTableData.map((item) => (
+                <TableNext.Row key={item.name}>
+                  <TableNext.Cell>{item.name}</TableNext.Cell>
+                  <TableNext.Cell>
+                    <EntityStatusBadge entityStatus={item.status} />
+                  </TableNext.Cell>
+                  <TableNext.Cell>{item.email}</TableNext.Cell>
+                  <TableNext.Cell>{item.contentType}</TableNext.Cell>
+                  <TableNext.Cell>{item.updatedBy}</TableNext.Cell>
+                  <TableNext.Cell>{item.updated}</TableNext.Cell>
+                </TableNext.Row>
+              ))}
+            </TableNext.Body>
+          </TableNext>
+        </Layout.Body>
+      </Layout>
+    </div>
+  ),
+};
+export const StackableWithTitles: StoryObj = {
+  render: (args) => (
+    <div
+      className={css({
+        position: 'relative',
+        flex: '1 1 auto',
+        display: 'flex',
+        justifyContent: 'center',
+        minHeight: '300px',
+        width: '100vw',
+        height: '100vh',
+        margin: '-1rem',
+        flexDirection: 'column',
+        overflow: 'hidden',
+      })}
+    >
+      <div className={css({ backgroundColor: 'silver', height: '60px' })}>
+        Navbar
+      </div>
+      <Layout>
+        <Layout.Body>
+          <Note className={css({ margin: '1rem' })}>
+            TableNext with overflow-x scrollbar
+          </Note>
+          <TableNext
+            {...args}
+            layout="stackable"
+            columnTitles={withContentHeaderTitles}
+          >
+            <TableNext.Body>
+              {withContentTableData.map((item) => (
+                <TableNext.Row key={item.name}>
+                  <TableNext.Cell>{item.name}</TableNext.Cell>
+                  <TableNext.Cell>
+                    <EntityStatusBadge entityStatus={item.status} />
+                  </TableNext.Cell>
+                  <TableNext.Cell>{item.email}</TableNext.Cell>
+                  <TableNext.Cell>{item.contentType}</TableNext.Cell>
+                  <TableNext.Cell>{item.updatedBy}</TableNext.Cell>
+                  <TableNext.Cell>{item.updated}</TableNext.Cell>
+                </TableNext.Row>
+              ))}
+            </TableNext.Body>
+          </TableNext>
+        </Layout.Body>
+      </Layout>
+    </div>
+  ),
+};
 
 export const Scrollable: StoryObj = {
   render: (args) => (
@@ -374,6 +486,7 @@ export const ScrollableStickyFirstColumn: StoryObj = {
     </div>
   ),
 };
+
 export const ScrollableStickyHeaderAndFirstColumn: StoryObj = {
   render: (args) => (
     <div

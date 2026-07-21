@@ -4,7 +4,9 @@ import { TableNextProps } from './TableNext';
 export type TableContext = {
   verticalAlign?: TableNextProps['verticalAlign'];
   isHeaderSticky?: boolean;
-  setIsHeaderSticky?: (value: boolean) => void;
+  isStackable?: boolean;
+  columnTitles?: Array<string>;
+  hasColumnTitles?: boolean;
 };
 
 export const TableContext = createContext<TableContext>({});

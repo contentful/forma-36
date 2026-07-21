@@ -1,5 +1,5 @@
 import { cx } from '@emotion/css';
-import React, { forwardRef } from 'react';
+import React, { Children, forwardRef } from 'react';
 import {
   Box,
   type CommonProps,
@@ -7,6 +7,8 @@ import {
   type ExpandProps,
 } from '@contentful/f36-core';
 import { getTableRowStyles } from './TableRow.styles';
+import { useTableContext } from '../tableContext';
+import { TableCell } from '../';
 
 export type TableRowInternalProps = CommonProps & {
   isSelected?: boolean;
@@ -30,6 +32,27 @@ export const TableRow = forwardRef<
     forwardedRef,
   ) => {
     const styles = getTableRowStyles();
+    const {
+      isStackable,
+      columnTitles,
+      hasColumnTitles = false,
+    } = useTableContext();
+
+    const originalCells = Children.toArray(children);
+    const updatedCells: React.ReactNode[] = [];
+
+    columnTitles?.forEach((title, i) => {
+      if (i > 0) {
+        updatedCells.push(
+          <TableCell key={`stacked-title-${title}`} aria-hidden>
+            {title}
+          </TableCell>,
+        );
+      }
+      if (originalCells.length > i) {
+        updatedCells.push(originalCells[i]);
+      }
+    });
 
     return (
       <Box
@@ -39,13 +62,14 @@ export const TableRow = forwardRef<
           styles.root,
           {
             [styles.selected]: isSelected,
+            [styles.stackable(hasColumnTitles)]: isStackable,
           },
           className,
         )}
         ref={forwardedRef}
         testId={testId}
       >
-        {children}
+        {hasColumnTitles ? updatedCells : children}
       </Box>
     );
   },

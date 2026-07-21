@@ -31,8 +31,19 @@ type TableNextLayoutProps =
       isFirstColumnSticky?: boolean;
     };
 
+type TableHeaderTitleProps =
+  | {
+      columnTitles?: undefined;
+      isHeaderSticky?: false;
+    }
+  | {
+      columnTitles?: Array<string>;
+      isHeaderSticky?: boolean;
+    };
+
 export type TableNextInternalProps = CommonProps &
-  TableNextLayoutProps & {
+  TableNextLayoutProps &
+  TableHeaderTitleProps & {
     /**
      * @default 'top'
      */
@@ -41,8 +52,6 @@ export type TableNextInternalProps = CommonProps &
       'baseline' | 'bottom' | 'middle' | 'top'
     >;
     variant?: 'inline' | 'embedded';
-    columnTitles?: Array<string>;
-    isHeaderSticky?: boolean;
   };
 
 export type TableNextProps = PropsWithHTMLElement<
@@ -71,6 +80,8 @@ export const TableNext = forwardRef<
   ) => {
     const styles = getTableStyles({ isHeaderSticky, isFirstColumnSticky });
     const isScrollable = layout === 'scrollable';
+    const isStackable = layout === 'stackable';
+    const hasColumnTitles = (columnTitles?.length ?? 0) > 0;
 
     const tableElement = (
       <Box
@@ -80,40 +91,36 @@ export const TableNext = forwardRef<
         as="table"
         display="table"
         ref={forwardedRef}
-        className={cx(
-          styles.root,
-          styles[variant],
-          { [styles.scrollable]: isScrollable },
-          className,
-        )}
+        className={cx(styles.root, styles[variant], styles[layout], className)}
         testId={testId}
       >
         <TableContextProvider
           value={{
             verticalAlign,
             isHeaderSticky,
+            isStackable,
+            columnTitles,
+            hasColumnTitles,
           }}
         >
-          {columnTitles && (
-            <TableHeader
-              columnTitles={columnTitles}
-              isHeaderSticky={isHeaderSticky}
-            />
-          )}
+          {columnTitles && <TableHeader columnTitles={columnTitles} />}
           {children}
         </TableContextProvider>
       </Box>
     );
 
-    if (isScrollable) {
-      return (
+    return (
+      <section
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- scrollable region requires tabIndex for keyboard access (WCAG 2.1 SC 2.1.1)
-        <section tabIndex={0} className={styles.scrollableWrapper}>
-          {tableElement}
-        </section>
-      );
-    }
-    return tableElement;
+        tabIndex={0}
+        className={cx({
+          [styles.scrollableWrapper]: isScrollable,
+          [styles.stackableWrapper]: isStackable,
+        })}
+      >
+        {tableElement}
+      </section>
+    );
   },
 );
 
