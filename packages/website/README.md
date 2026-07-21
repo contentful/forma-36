@@ -46,8 +46,8 @@ NEXT_PUBLIC_DOCSEARCH_APP_ID=
 NEXT_PUBLIC_DOCSEARCH_API_KEY=
 NEXT_PUBLIC_DOCSEARCH_INDEX_NAME=
 
-OSANO_CUSTOMER_ID=
-OSANO_CONFIGURATION_ID=
+NEXT_PUBLIC_OSANO_CUSTOMER_ID=
+NEXT_PUBLIC_OSANO_CONFIGURATION_ID=
 
 CONTENTFUL_SPACE_ID=
 CONTENTFUL_SPACE_ENVIRONMENT=
@@ -55,5 +55,5 @@ CONTENTFUL_ACCESS_TOKEN=
 CONTENTFUL_PREVIEW_ACCESS_TOKEN=
 ```
 
-The Osano variables are public configuration exposed to the browser through
-`next.config.js`. The consent script is omitted when either value is missing.
+The Osano variables are public configuration. The consent script is omitted
+when either value is missing.

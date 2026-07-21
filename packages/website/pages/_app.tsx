@@ -9,8 +9,8 @@ import { SessionProvider } from 'next-auth/react';
 import '../resources/css/sandpack.css';
 import { Session } from 'next-auth';
 
-const osanoCustomerId = process.env.OSANO_CUSTOMER_ID;
-const osanoConfigurationId = process.env.OSANO_CONFIGURATION_ID;
+const osanoCustomerId = process.env.NEXT_PUBLIC_OSANO_CUSTOMER_ID;
+const osanoConfigurationId = process.env.NEXT_PUBLIC_OSANO_CONFIGURATION_ID;
 const osanoScriptUrl =
   osanoCustomerId && osanoConfigurationId
     ? `https://cmp.osano.com/${osanoCustomerId}/${osanoConfigurationId}/osano.js`

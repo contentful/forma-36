@@ -5,10 +5,6 @@ const withMDX = require('@next/mdx')({
 
 module.exports = withMDX({
   pageExtensions: ['ts', 'tsx', 'mdx'],
-  env: {
-    OSANO_CUSTOMER_ID: process.env.OSANO_CUSTOMER_ID || '',
-    OSANO_CONFIGURATION_ID: process.env.OSANO_CONFIGURATION_ID || '',
-  },
   async redirects() {
     return [
       {
