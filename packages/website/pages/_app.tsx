@@ -9,6 +9,13 @@ import { SessionProvider } from 'next-auth/react';
 import '../resources/css/sandpack.css';
 import { Session } from 'next-auth';
 
+const osanoCustomerId = process.env.OSANO_CUSTOMER_ID;
+const osanoConfigurationId = process.env.OSANO_CONFIGURATION_ID;
+const osanoScriptUrl =
+  osanoCustomerId && osanoConfigurationId
+    ? `https://cmp.osano.com/${osanoCustomerId}/${osanoConfigurationId}/osano.js`
+    : undefined;
+
 function MyApp({ Component, pageProps }: AppProps<{ session: Session }>) {
   return (
     <>
@@ -27,11 +34,9 @@ function MyApp({ Component, pageProps }: AppProps<{ session: Session }>) {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <Script
-        async
-        type="text/javascript"
-        src="https://cmp.osano.com/16BcqiRsJId123ATa/fcd81040-24a4-4474-9a22-f295cbec8600/osano.js"
-      ></Script>
+      {osanoScriptUrl && (
+        <Script async type="text/javascript" src={osanoScriptUrl} />
+      )}
 
       <SessionProvider session={pageProps.session}>
         <Component {...pageProps} />
