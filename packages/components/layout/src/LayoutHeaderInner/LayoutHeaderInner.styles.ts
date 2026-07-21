@@ -25,6 +25,6 @@ export const getLayoutHeaderInnerStyles = () => ({
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     paddingBottom: tokens.spacingS,
-    paddingTop: tokens.spacingS,
+    paddingTop: tokens.spacingM,
   }),
 });
