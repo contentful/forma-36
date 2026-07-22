@@ -226,6 +226,13 @@ export const Overview = () => (
           aria-label="Plus"
           size="medium"
         />
+
+        <IconButton
+          variant="primary"
+          icon={<Icon as={icons.PlusIcon} />}
+          aria-label="Plus"
+          size="large"
+        />
       </Stack>
     </Flex>
   </>
