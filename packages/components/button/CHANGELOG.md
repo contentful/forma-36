@@ -1,5 +1,18 @@
 # Change Log
 
+## 6.16.0
+
+### Minor Changes
+
+- [#3488](https://github.com/contentful/forma-36/pull/3488) [`1ea2ddb`](https://github.com/contentful/forma-36/commit/1ea2ddbb1a6171bb9471cc95bffa447229d44f25) Thanks [@GigiIanni](https://github.com/GigiIanni)! - feat(button): add `tiny` size variant to IconButton
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.16.0
+  - @contentful/f36-spinner@6.16.0
+  - @contentful/f36-tooltip@6.16.0
+
 ## 6.15.1
 
 ### Patch Changes
