@@ -7,9 +7,10 @@ import { useTableContext } from '../tableContext';
 
 type TableHeaderProps = {
   columnTitles: Array<string>;
+  offsetTop?: number | string;
 };
 
-export const TableHeader = ({ columnTitles }: TableHeaderProps) => {
+export const TableHeader = ({ columnTitles, offsetTop }: TableHeaderProps) => {
   const { isHeaderSticky, isStackable } = useTableContext();
   const styles = getTableHeaderStyles();
 
@@ -17,6 +18,7 @@ export const TableHeader = ({ columnTitles }: TableHeaderProps) => {
     <TableHead
       className={cx({ [styles.stackableHeader]: isStackable })}
       isSticky={isHeaderSticky}
+      offsetTop={offsetTop}
     >
       <TableRow>
         {columnTitles.map((title) => (

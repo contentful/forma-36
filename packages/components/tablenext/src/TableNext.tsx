@@ -52,6 +52,7 @@ export type TableNextInternalProps = CommonProps &
       'baseline' | 'bottom' | 'middle' | 'top'
     >;
     variant?: 'inline' | 'embedded';
+    offsetTop?: number | string;
   };
 
 export type TableNextProps = PropsWithHTMLElement<
@@ -74,6 +75,7 @@ export const TableNext = forwardRef<
       columnTitles,
       isFirstColumnSticky = false,
       isHeaderSticky = false,
+      offsetTop = 0,
       ...otherProps
     },
     forwardedRef,
@@ -103,7 +105,9 @@ export const TableNext = forwardRef<
             hasColumnTitles,
           }}
         >
-          {columnTitles && <TableHeader columnTitles={columnTitles} />}
+          {columnTitles && (
+            <TableHeader offsetTop={offsetTop} columnTitles={columnTitles} />
+          )}
           {children}
         </TableContextProvider>
       </Box>
