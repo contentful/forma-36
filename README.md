@@ -67,7 +67,7 @@ You can test changes to a package of this monorepo in your own project locally b
 
 ## Get involved
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?maxAge=31557600)](http://makeapullrequest.com)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?maxAge=31557600)
 
 We appreciate any help on our repositories. For more details about how to contribute to a package, see the README of the corresponding package.
 
@@ -89,7 +89,7 @@ The [Geist](packages/cdn/public/fonts) typeface included in this repository is c
 
 We want to provide a safe, inclusive, welcoming, and harassment-free space and experience for all participants, regardless of gender identity and expression, sexual orientation, disability, physical appearance, socioeconomic status, body size, ethnicity, nationality, level of experience, age, religion (or lack thereof), or other identity markers.
 
-[Read our full Code of Conduct](https://github.com/contentful-developer-relations/community-code-of-conduct).
+[Read our full Code of Conduct](https://www.contentful.com/developers/docs/concepts/developer-community/code-of-conduct/).
 
 ## Contributors ✨
 
