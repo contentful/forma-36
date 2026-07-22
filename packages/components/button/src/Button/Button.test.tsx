@@ -65,4 +65,18 @@ describe('Button', function () {
 
     expect(results).toHaveNoViolations();
   });
+
+  it('has no a11y issues across sizes', async () => {
+    const { container } = render(
+      <>
+        <Button size="tiny">Button</Button>
+        <Button size="small">Button</Button>
+        <Button size="medium">Button</Button>
+        <Button size="large">Button</Button>
+      </>,
+    );
+    const results = await axe(container);
+
+    expect(results).toHaveNoViolations();
+  });
 });

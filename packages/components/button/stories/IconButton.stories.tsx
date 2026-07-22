@@ -19,7 +19,7 @@ export default {
       control: 'select',
       options: ['', ...Object.keys(icons)],
     },
-    size: { control: 'select', options: ['small', 'medium', 'large'] },
+    size: { control: 'select', options: ['tiny', 'small', 'medium', 'large'] },
     variant: {
       control: 'select',
       options: ['negative', 'positive', 'primary', 'secondary', 'transparent'],
@@ -41,7 +41,6 @@ export const Basic = {
     'aria-label': 'Label',
     iconProps: {
       color: tokens.colorPrimary,
-      size: 'medium',
     },
     variant: 'transparent',
   },
@@ -75,7 +74,6 @@ export const WithTooltip = {
     'aria-label': 'Label',
     iconProps: {
       color: tokens.colorPrimary,
-      size: 'medium',
     },
     variant: 'transparent',
   },
@@ -212,6 +210,13 @@ export const Overview = () => (
           variant="primary"
           icon={<Icon as={icons.PlusIcon} />}
           aria-label="Plus"
+          size="tiny"
+        />
+
+        <IconButton
+          variant="primary"
+          icon={<Icon as={icons.PlusIcon} />}
+          aria-label="Plus"
           size="small"
         />
 
@@ -220,6 +225,13 @@ export const Overview = () => (
           icon={<Icon as={icons.PlusIcon} />}
           aria-label="Plus"
           size="medium"
+        />
+
+        <IconButton
+          variant="primary"
+          icon={<Icon as={icons.PlusIcon} />}
+          aria-label="Plus"
+          size="large"
         />
       </Stack>
     </Flex>

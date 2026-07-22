@@ -49,6 +49,22 @@ describe('IconButton', () => {
     expect(handleClick).not.toHaveBeenCalled();
   });
 
+  it('renders the tiny size', () => {
+    render(
+      <IconButton
+        aria-label="Toggle"
+        icon={<EyeIcon />}
+        size="tiny"
+        testId="tiny-icon-btn"
+      />,
+    );
+    expect(screen.getByTestId('tiny-icon-btn')).toHaveStyle({
+      minHeight: '1.5rem',
+      minWidth: '1.5rem',
+      padding: '0.25rem',
+    });
+  });
+
   it('forwards ref to the underlying button element', () => {
     const ref = createRef<HTMLButtonElement>();
     render(<IconButton aria-label="Focusable" icon={<EyeIcon />} ref={ref} />);
@@ -69,6 +85,14 @@ describe('IconButton', () => {
   it('is accessible (axe)', async () => {
     const { container } = render(
       <IconButton aria-label="Accessible" icon={<EyeIcon />} />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('is accessible in the tiny size (axe)', async () => {
+    const { container } = render(
+      <IconButton aria-label="Accessible" icon={<EyeIcon />} size="tiny" />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
