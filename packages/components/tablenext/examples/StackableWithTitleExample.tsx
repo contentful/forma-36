@@ -5,6 +5,7 @@ export default function TableBasicUsageExample() {
   return (
     <TableNext
       columnTitles={['Name', 'Email', 'Organization role', 'Last activity']}
+      layout="stackable"
     >
       <TableNext.Body>
         <TableNext.Row>

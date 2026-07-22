@@ -28,15 +28,7 @@ export default function TableDynamicCreation() {
   ];
 
   return (
-    <TableNext>
-      <TableNext.Head>
-        <TableNext.Row>
-          <TableNext.Cell>Name</TableNext.Cell>
-          <TableNext.Cell>Description</TableNext.Cell>
-          <TableNext.Cell>Updated</TableNext.Cell>
-          <TableNext.Cell>Status</TableNext.Cell>
-        </TableNext.Row>
-      </TableNext.Head>
+    <TableNext columnTitles={['Name', 'Description', 'Updated', 'Status']}>
       <TableNext.Body>
         {contentTypes.map((contentType) => {
           return (

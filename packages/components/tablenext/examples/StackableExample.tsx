@@ -3,9 +3,7 @@ import { TableNext } from '@contentful/f36-tablenext';
 
 export default function TableBasicUsageExample() {
   return (
-    <TableNext
-      columnTitles={['Name', 'Email', 'Organization role', 'Last activity']}
-    >
+    <TableNext layout="stackable">
       <TableNext.Body>
         <TableNext.Row>
           <TableNext.Cell>Claus Mitchell</TableNext.Cell>
