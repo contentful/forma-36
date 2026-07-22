@@ -5,6 +5,7 @@ packages:
 linkWorkspacePackages: true
 hoistWorkspacePackages: true
 nodeLinker: hoisted
+preferSymlinkedExecutables: false
 publicHoistPattern:
   - '@contentful/*'
 autoInstallPeers: false
