@@ -7,6 +7,13 @@ function sizeToStyles(size: ButtonSize, density: Density) {
   const isHighDensity = density === 'high';
 
   switch (size) {
+    case 'tiny': {
+      return {
+        padding: tokens.spacing2Xs,
+        minHeight: tokens.spacingL,
+        minWidth: tokens.spacingL,
+      };
+    }
     case 'small': {
       return {
         padding: isHighDensity ? `${tokens.spacing2Xs}` : tokens.spacing2Xs,
