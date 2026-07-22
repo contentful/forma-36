@@ -1,12 +1,18 @@
 ---
 title: 'TableNext'
 type: 'component'
-status: 'stable'
+status: 'alpha'
 slug: /components/tablenext/
 github: 'https://github.com/contentful/forma-36/tree/main/packages/components/tablenext'
 storybook: 'https://f36-storybook.contentful.com/?path=/info/components-tablenext--default'
-typescript: ./src/TableNext.tsx,./src/TableCell/TableCell.tsx,./src/TableRow/TableRow.tsx,./src/TableBody/TableBody.tsx,./src/TableHead/TableHead.tsx
+typescript: ./src/TableNext.tsx,./src/TableCell/TableCell.tsx,./src/TableRow/TableRow.tsx,./src/TableBody/TableBody.tsx,
 ---
+
+`TableNext` is the next iteration of the basic `Table` component. It is per default responsive by receiving a horizontal scrollbar. It additionally offers a second responsive layout mode called `stackable`. In the `stackable` layout, the Table data will be displayed in a grid, each table row represented as a single unit with all cells of this row stacked on top of each other. If a table header with titles is required, the column title is displayed next to the table cell.
+
+## Current Limitations
+
+This component is still in an unstable alpha state. At the moment it does not offer the possibility of sorting as well as adding a check-all checkbox in the header.
 
 ## Import
 
@@ -31,23 +37,7 @@ To achieve that result, you can iterate over the data and create `TableNext.Row`
 
 ```
 
-### With sorting
-
-TableNext cells in the table header can be marked as sortable and sorted either in ascending or descending order.
-
-```jsx file=./examples/TableWithSortingPropsExample.tsx
-
-```
-
-### Scrollable
-
-Use `layout="scrollable"` for tables with many columns or content that should not be compressed on smaller viewports. The table keeps its column layout and allows horizontal scrolling when the available width is not enough.
-
-```jsx file=./examples/TableScrollableExample.tsx
-
-```
-
-### Scrollable with sticky first column
+### With sticky first column
 
 Combine `layout="scrollable"` with `isFirstColumnSticky` when the first column contains the primary identifier for each row. This keeps the row context visible while users scroll horizontally.
 
@@ -55,11 +45,27 @@ Combine `layout="scrollable"` with `isFirstColumnSticky` when the first column c
 
 ```
 
-### Scrollable with sticky header and first column
+### With sticky header and first column
 
 For large tables that need both horizontal and vertical scrolling, combine `layout="scrollable"`, `isFirstColumnSticky`, and `TableNext.Head isSticky`. Place the table in a height-constrained container to avoid double scrollbars coming from the outer container.
 
 ```jsx file=./examples/TableScrollableStickyHeaderAndFirstColumnExample.tsx
+
+```
+
+### Stacked responsive behaviour with column titles
+
+For containers smaller than `700px` the table will be presented as 90° flipped, stacking all table cells of a single table row underneath each other with column titles next to them.
+
+```jsx file=./examples/StackableWithTitleExample.tsx
+
+```
+
+### Stacked responsive behaviour without titles
+
+For containers smaller than `700px` the table will be presented as 90° flipped, stacking all table cells of a single row underneatheach other.
+
+```jsx file=./examples/StackableExample.tsx
 
 ```
 
@@ -68,10 +74,6 @@ For large tables that need both horizontal and vertical scrolling, combine `layo
 ### TableNext
 
 <PropsTable of="TableNext" />
-
-### TableNext.Head
-
-<PropsTable of="TableHead" />
 
 ### TableNext.Body
 
@@ -87,9 +89,7 @@ For large tables that need both horizontal and vertical scrolling, combine `layo
 
 ## Content guidelines
 
-- Keep headers short
-- Headers should be informative and descriptive
-- Content in the table should be concise and scannable
+- Table Column Titles should be short and descriptive
 
 ## Accessibility
 
