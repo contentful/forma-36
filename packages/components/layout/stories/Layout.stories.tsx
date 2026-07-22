@@ -64,20 +64,6 @@ const LayoutHeaderComp = () => (
   </Layout.Header>
 );
 
-const LayoutHeaderResponsiveComp = () => (
-  <Layout.Header>
-    <Layout.HeaderInner
-      className={css({ backgroundColor: 'white' })}
-      title="Long Headline to Showcase Responsive Header"
-      actions={
-        <Button variant="primary" size="small">
-          Button
-        </Button>
-      }
-    />
-  </Layout.Header>
-);
-
 const LayoutSidebarComp = ({ content }) => (
   <Layout.Sidebar>
     <Box
@@ -588,7 +574,22 @@ export const VariantNarrowWithRightSidebar: StoryFn<LayoutProps> = () => {
 export const WithResponsiveHeader: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
-      <Layout header={<LayoutHeaderResponsiveComp />} offsetTop={NAVBAR_HEIGHT}>
+      <Layout
+        header={
+          <Layout.Header>
+            <Layout.HeaderInner
+              className={css({ backgroundColor: 'white' })}
+              title="Long Headline to Showcase Responsive Header"
+              actions={
+                <Button variant="primary" size="small">
+                  Button
+                </Button>
+              }
+            />
+          </Layout.Header>
+        }
+        offsetTop={NAVBAR_HEIGHT}
+      >
         <Layout.Body>
           <Box
             className={css({
@@ -757,7 +758,22 @@ export const WithResponsiveHeaderAndSidebar: StoryFn<LayoutProps> = () => {
   return (
     <ExampleWrapper>
       <Layout
-        header={<LayoutHeaderResponsiveComp />}
+        header={
+          <Layout.Header>
+            <Layout.HeaderInner
+              className={css({ backgroundColor: 'white' })}
+              title="Long Headline to Showcase Responsive Header"
+              breadcrumbs={[{ content: 'Content Types', url: '#' }]}
+              backButtonProps={{ onClick: action('navigate back') }}
+              withBackButton
+              actions={
+                <Button variant="primary" size="small">
+                  Button
+                </Button>
+              }
+            />
+          </Layout.Header>
+        }
         offsetTop={NAVBAR_HEIGHT}
         leftSidebar={
           <Layout.Sidebar>

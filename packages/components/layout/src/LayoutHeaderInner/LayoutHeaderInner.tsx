@@ -76,7 +76,7 @@ function LayoutHeaderInnerBase(
   forwardedRef: Ref<HTMLDivElement>,
 ) {
   const variant = breadcrumbs ? 'breadcrumb' : 'title';
-  const styles = getLayoutHeaderInnerStyles();
+  const styles = getLayoutHeaderInnerStyles(!!breadcrumbs);
 
   const { setWithResponsiveHeader } = useLayoutContext();
   useEffect(() => {

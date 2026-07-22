@@ -1,7 +1,7 @@
 import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 
-export const getLayoutHeaderInnerStyles = () => ({
+export const getLayoutHeaderInnerStyles = (withBreadcrumbs: boolean) => ({
   actions: css({
     flexGrow: 0,
     flexShrink: 1,
@@ -24,7 +24,7 @@ export const getLayoutHeaderInnerStyles = () => ({
     background: tokens.colorWhite,
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    paddingBottom: tokens.spacingS,
-    paddingTop: tokens.spacingM,
+    paddingBottom: withBreadcrumbs ? tokens.spacingS : tokens.spacingL,
+    paddingTop: withBreadcrumbs ? tokens.spacingS : tokens.spacingL,
   }),
 });

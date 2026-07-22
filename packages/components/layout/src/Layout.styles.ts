@@ -136,12 +136,13 @@ export const getLayoutStyles = ({
 export const getLayoutBodyStyles = (
   withHeader: boolean,
   withResponsiveHeader: boolean,
+  withSidebar: boolean,
   offsetTop: number,
 ) => ({
   layoutBodyContainer: css(
     {
       width: '100%',
-      padding: `${tokens.spacingL} ${tokens.spacingL} 0`,
+      padding: `${withResponsiveHeader && !withSidebar ? 0 : tokens.spacingL} ${tokens.spacingL} 0`,
       overflowY: 'auto',
     },
     !withResponsiveHeader &&
@@ -185,7 +186,7 @@ export const getLayoutHeaderStyles = ({
 }) => ({
   layoutHeader: css(
     {
-      padding: `${tokens.spacing2Xs} ${tokens.spacingL} 0 ${tokens.spacingL}`,
+      padding: `${withResponsiveHeader ? 0 : tokens.spacing2Xs} ${tokens.spacingL} 0 ${tokens.spacingL}`,
       width: '100%',
       maxWidth: variant === 'fullscreen' ? '100%' : '1920px',
       borderBottom:
