@@ -93,7 +93,7 @@ We want to provide a safe, inclusive, welcoming, and harassment-free space and e
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/en/reference/emoji-key/):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -213,6 +213,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://www.schmoe.dev/"><img src="https://avatars.githubusercontent.com/u/124524543?v=4?s=100" width="100px;" alt="Joe Bingham"/><br /><sub><b>Joe Bingham</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=jshmo" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://mueller.dev"><img src="https://avatars.githubusercontent.com/u/5675238?v=4?s=100" width="100px;" alt="Marc Müller"/><br /><sub><b>Marc Müller</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=marcmll" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/matthet"><img src="https://avatars.githubusercontent.com/u/3788074?v=4?s=100" width="100px;" alt="Tara Matthews"/><br /><sub><b>Tara Matthews</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=matthet" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/LuigiIan"><img src="https://avatars.githubusercontent.com/u/91255600?v=4?s=100" width="100px;" alt="LuigiIan"/><br /><sub><b>LuigiIan</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=LuigiIan" title="Code">💻</a> <a href="https://github.com/contentful/forma-36/commits?author=LuigiIan" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/damann"><img src="https://avatars.githubusercontent.com/u/67584870?v=4?s=100" width="100px;" alt="damann"/><br /><sub><b>damann</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=Damann" title="Code">💻</a> <a href="https://github.com/contentful/forma-36/commits?author=Damann" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.samueldurkin.com"><img src="https://avatars.githubusercontent.com/u/6232253?v=4?s=100" width="100px;" alt="Samuel Durkin"/><br /><sub><b>Samuel Durkin</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=FailedSitcom" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

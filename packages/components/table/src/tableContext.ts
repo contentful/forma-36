@@ -3,6 +3,8 @@ import { TableProps } from './Table';
 
 export type TableContext = {
   verticalAlign?: TableProps['verticalAlign'];
+  isHeaderSticky?: boolean;
+  setIsHeaderSticky?: (value: boolean) => void;
 };
 
 export const TableContext = createContext<TableContext>({});

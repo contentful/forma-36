@@ -1,5 +1,57 @@
 # Change Log
 
+## 6.15.1
+
+### Patch Changes
+
+- [#3506](https://github.com/contentful/forma-36/pull/3506) [`59e28e8`](https://github.com/contentful/forma-36/commit/59e28e8ae25e6bf461e58825f136d11ea3ab882c) Thanks [@veu](https://github.com/veu)! - fix: 🐛 correct responsive header top spacing
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.15.1
+  - @contentful/f36-core@6.15.1
+  - @contentful/f36-header@6.15.1
+  - @contentful/f36-icons@6.15.1
+  - @contentful/f36-typography@6.15.1
+
+## 6.15.0
+
+### Minor Changes
+
+- [#3452](https://github.com/contentful/forma-36/pull/3452) [`5fdeb8b`](https://github.com/contentful/forma-36/commit/5fdeb8b9ce6464c0a58def91fae2445af7018588) Thanks [@veu](https://github.com/veu)! - feat: 🎸 add responsive header component Layout.HeaderInner
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.15.0
+  - @contentful/f36-core@6.15.0
+  - @contentful/f36-header@6.15.0
+  - @contentful/f36-icons@6.15.0
+  - @contentful/f36-typography@6.15.0
+
+## 6.14.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.14.1
+  - @contentful/f36-header@6.14.1
+
+## 6.14.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.14.0
+  - @contentful/f36-header@6.14.0
+
+## 6.13.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.13.0
+  - @contentful/f36-header@6.13.0
+
 ## 6.12.0
 
 ### Patch Changes

@@ -1,5 +1,65 @@
 # @contentful/f36-usage-card
 
+## 6.15.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-card@6.15.1
+  - @contentful/f36-core@6.15.1
+  - @contentful/f36-icons@6.15.1
+  - @contentful/f36-text-link@6.15.1
+  - @contentful/f36-tooltip@6.15.1
+  - @contentful/f36-typography@6.15.1
+
+## 6.15.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-card@6.15.0
+  - @contentful/f36-core@6.15.0
+  - @contentful/f36-icons@6.15.0
+  - @contentful/f36-text-link@6.15.0
+  - @contentful/f36-tooltip@6.15.0
+  - @contentful/f36-typography@6.15.0
+
+## 6.14.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-card@6.14.1
+  - @contentful/f36-core@6.14.1
+  - @contentful/f36-icons@6.14.1
+  - @contentful/f36-text-link@6.14.1
+  - @contentful/f36-tooltip@6.14.1
+  - @contentful/f36-typography@6.14.1
+
+## 6.14.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-card@6.14.0
+  - @contentful/f36-core@6.14.0
+  - @contentful/f36-icons@6.14.0
+  - @contentful/f36-text-link@6.14.0
+  - @contentful/f36-tooltip@6.14.0
+  - @contentful/f36-typography@6.14.0
+
+## 6.13.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-card@6.13.0
+  - @contentful/f36-core@6.13.0
+  - @contentful/f36-icons@6.13.0
+  - @contentful/f36-text-link@6.13.0
+  - @contentful/f36-tooltip@6.13.0
+  - @contentful/f36-typography@6.13.0
+
 ## 6.12.0
 
 ### Patch Changes

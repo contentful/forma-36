@@ -18,12 +18,7 @@ export type CommonProps = {
  * Contentful entity status
  */
 export type EntityStatus =
-  | 'archived'
-  | 'changed'
-  | 'deleted'
-  | 'draft'
-  | 'new'
-  | 'published';
+  'archived' | 'changed' | 'deleted' | 'draft' | 'new' | 'published';
 
 export type Spacing = SpacingTokens | 'none';
 

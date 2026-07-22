@@ -1,5 +1,5 @@
 import { cx } from '@emotion/css';
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useState } from 'react';
 import {
   Box,
   type CommonProps,
@@ -11,19 +11,35 @@ import type * as CSS from 'csstype';
 import { getTableStyles } from './Table.styles';
 import { TableContextProvider } from './tableContext';
 
-export type TableInternalProps = CommonProps & {
-  /**
-   * @default 'inline'
-   */
-  layout?: 'inline' | 'embedded';
-  /**
-   * @default 'top'
-   */
-  verticalAlign?: Extract<
-    CSS.Property.VerticalAlign,
-    'baseline' | 'bottom' | 'middle' | 'top'
-  >;
-};
+type TableLayoutProps =
+  | {
+      /**
+       * @default 'inline'
+       */
+      layout?: 'inline' | 'embedded';
+      /**
+       * @default false
+       */
+      isFirstColumnSticky?: false;
+    }
+  | {
+      layout: 'scrollable';
+      /**
+       * @default false
+       */
+      isFirstColumnSticky?: boolean;
+    };
+
+export type TableInternalProps = CommonProps &
+  TableLayoutProps & {
+    /**
+     * @default 'top'
+     */
+    verticalAlign?: Extract<
+      CSS.Property.VerticalAlign,
+      'baseline' | 'bottom' | 'middle' | 'top'
+    >;
+  };
 
 export type TableProps = PropsWithHTMLElement<TableInternalProps, 'table'>;
 
@@ -35,13 +51,16 @@ export const Table = forwardRef<HTMLTableElement, ExpandProps<TableProps>>(
       layout = 'inline',
       testId = 'cf-ui-table',
       verticalAlign = 'top',
+      isFirstColumnSticky = false,
       ...otherProps
     },
     forwardedRef,
   ) => {
-    const styles = getTableStyles();
+    const [isHeaderSticky, setIsHeaderSticky] = useState(false);
+    const styles = getTableStyles({ isHeaderSticky, isFirstColumnSticky });
+    const isScrollable = layout === 'scrollable';
 
-    return (
+    const tableElement = (
       <Box
         cellPadding="0"
         cellSpacing="0"
@@ -52,11 +71,27 @@ export const Table = forwardRef<HTMLTableElement, ExpandProps<TableProps>>(
         className={cx(styles.root, styles[layout], className)}
         testId={testId}
       >
-        <TableContextProvider value={{ verticalAlign }}>
+        <TableContextProvider
+          value={{
+            verticalAlign,
+            isHeaderSticky,
+            setIsHeaderSticky,
+          }}
+        >
           {children}
         </TableContextProvider>
       </Box>
     );
+
+    if (isScrollable) {
+      return (
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- scrollable region requires tabIndex for keyboard access (WCAG 2.1 SC 2.1.1)
+        <section tabIndex={0} className={styles.scrollableWrapper}>
+          {tableElement}
+        </section>
+      );
+    }
+    return tableElement;
   },
 );
 

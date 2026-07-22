@@ -833,6 +833,35 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "LuigiIan",
+      "name": "LuigiIan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/91255600?v=4",
+      "profile": "https://github.com/LuigiIan",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "Damann",
+      "name": "damann",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67584870?v=4",
+      "profile": "https://github.com/damann",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "FailedSitcom",
+      "name": "Samuel Durkin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6232253?v=4",
+      "profile": "http://www.samueldurkin.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

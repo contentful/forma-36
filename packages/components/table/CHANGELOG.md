@@ -1,5 +1,54 @@
 # Change Log
 
+## 6.15.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.15.1
+  - @contentful/f36-icons@6.15.1
+  - @contentful/f36-typography@6.15.1
+
+## 6.15.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.15.0
+  - @contentful/f36-icons@6.15.0
+  - @contentful/f36-typography@6.15.0
+
+## 6.14.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.14.1
+  - @contentful/f36-icons@6.14.1
+  - @contentful/f36-typography@6.14.1
+
+## 6.14.0
+
+### Minor Changes
+
+- [#3455](https://github.com/contentful/forma-36/pull/3455) [`90515e7`](https://github.com/contentful/forma-36/commit/90515e7799453d113fa956f19f3e93a86b0a1469) Thanks [@Lelith](https://github.com/Lelith)! - Extends the Table component with a third layout option `scrollable` which allows for overflow on the x axis. Additonally, in combination with the new layout option, engineers can define the first column as sticky to enable for better orientation inside the scrolling table.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.14.0
+  - @contentful/f36-icons@6.14.0
+  - @contentful/f36-typography@6.14.0
+
+## 6.13.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.13.0
+  - @contentful/f36-icons@6.13.0
+  - @contentful/f36-typography@6.13.0
+
 ## 6.12.0
 
 ### Patch Changes

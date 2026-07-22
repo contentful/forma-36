@@ -16,8 +16,13 @@ const LayoutBodyBase = (props: LayoutBodyProps, ref: Ref<HTMLDivElement>) => {
     testId = 'cf-layout-body',
     ...otherProps
   } = props;
-  const { variant, withHeader, offsetTop } = useLayoutContext();
-  const styles = getLayoutBodyStyles(withHeader, offsetTop);
+  const { variant, withHeader, offsetTop, withResponsiveHeader } =
+    useLayoutContext();
+  const styles = getLayoutBodyStyles(
+    withHeader,
+    withResponsiveHeader,
+    offsetTop,
+  );
 
   return (
     <Box

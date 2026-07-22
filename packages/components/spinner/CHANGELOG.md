@@ -1,5 +1,40 @@
 # Change Log
 
+## 6.15.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.15.1
+
+## 6.15.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.15.0
+
+## 6.14.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.14.1
+
+## 6.14.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.14.0
+
+## 6.13.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.13.0
+
 ## 6.12.0
 
 ### Patch Changes

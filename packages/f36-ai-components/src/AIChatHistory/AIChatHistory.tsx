@@ -24,8 +24,7 @@ export interface MessageGroup {
 }
 
 export type MessageGroups =
-  | [MessageGroup, MessageGroup]
-  | [MessageGroup, MessageGroup, MessageGroup];
+  [MessageGroup, MessageGroup] | [MessageGroup, MessageGroup, MessageGroup];
 
 export interface AIChatHistoryProps extends CommonProps {
   threads: MessageThread[];

@@ -30,15 +30,15 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-button": "^6.12.0",
+    "@contentful/f36-button": "^6.15.1",
     "@contentful/f36-pill-next": "6.0.1-alpha.7",
-    "@contentful/f36-components": "^6.12.0",
-    "@contentful/f36-core": "^6.12.0",
-    "@contentful/f36-header": "^6.12.0",
-    "@contentful/f36-icons": "^6.12.0",
-    "@contentful/f36-layout": "^6.12.0",
+    "@contentful/f36-components": "^6.15.1",
+    "@contentful/f36-core": "^6.15.1",
+    "@contentful/f36-header": "^6.15.1",
+    "@contentful/f36-icons": "^6.15.1",
+    "@contentful/f36-layout": "^6.15.1",
     "@contentful/f36-tokens": "^6.2.1",
-    "@contentful/f36-typography": "^6.12.0",
+    "@contentful/f36-typography": "^6.15.1",
     "@contentful/f36-utils": "^6.1.2",
     "@emotion/css": "^11.13.5",
     "react-markdown": "^9.0.3",
@@ -46,15 +46,15 @@
     "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
-    "@tiptap/core": "3.24.0",
-    "@tiptap/extension-document": "3.24.0",
-    "@tiptap/extension-mention": "3.24.0",
-    "@tiptap/extension-paragraph": "3.24.0",
-    "@tiptap/extension-text": "3.24.0",
-    "@tiptap/extensions": "3.24.0",
-    "@tiptap/pm": "3.24.0",
-    "@tiptap/react": "3.24.0",
-    "@tiptap/suggestion": "3.24.0"
+    "@tiptap/core": "3.27.1",
+    "@tiptap/extension-document": "3.27.1",
+    "@tiptap/extension-mention": "3.27.1",
+    "@tiptap/extension-paragraph": "3.27.1",
+    "@tiptap/extension-text": "3.27.1",
+    "@tiptap/extensions": "3.27.1",
+    "@tiptap/pm": "3.27.1",
+    "@tiptap/react": "3.27.1",
+    "@tiptap/suggestion": "3.27.1"
   },
   "peerDependencies": {
     "@tiptap/core": "^3.15.0",

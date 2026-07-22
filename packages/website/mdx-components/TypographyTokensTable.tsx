@@ -4,12 +4,7 @@ import tokens from '@contentful/f36-tokens';
 
 interface Props {
   variant:
-    | 'stack'
-    | 'base'
-    | 'size'
-    | 'lineHeight'
-    | 'letterSpacing'
-    | 'weight';
+    'stack' | 'base' | 'size' | 'lineHeight' | 'letterSpacing' | 'weight';
 }
 
 export function TypographyTokensTable({ variant }: Props) {

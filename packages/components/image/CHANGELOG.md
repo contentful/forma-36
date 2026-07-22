@@ -1,5 +1,45 @@
 # Change Log
 
+## 6.15.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.15.1
+  - @contentful/f36-skeleton@6.15.1
+
+## 6.15.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.15.0
+  - @contentful/f36-skeleton@6.15.0
+
+## 6.14.1
+
+### Patch Changes
+
+- Updated dependencies [[`7515a8f`](https://github.com/contentful/forma-36/commit/7515a8f1e2896f80c29fdcb51583b3f5935502e5)]:
+  - @contentful/f36-skeleton@6.14.1
+  - @contentful/f36-core@6.14.1
+
+## 6.14.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.14.0
+  - @contentful/f36-skeleton@6.14.0
+
+## 6.13.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.13.0
+  - @contentful/f36-skeleton@6.13.0
+
 ## 6.12.0
 
 ### Patch Changes

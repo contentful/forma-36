@@ -5,7 +5,7 @@ status: 'stable'
 slug: /components/layout/
 github: 'https://github.com/contentful/forma-36/tree/main/packages/components/layout'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-layout--default'
-typescript: ./src/Layout.tsx, .src/LayoutBody.tsx, .src/LayoutHeader.tsx, .src/Layout.Sidebar.tsx
+typescript: ./src/Layout.tsx,./src/LayoutBody.tsx,./src/LayoutHeader.tsx,./src/LayoutHeaderInner/LayoutHeaderInner.tsx,./src/LayoutSidebar.tsx
 ---
 
 The Layout component is the basis of every single page view.
@@ -42,10 +42,20 @@ The `Layout` exports the following compound components
     <Table.Row>
       <Table.Cell>`Layout.Header`</Table.Cell>
       <Table.Cell>
-        Should contain a `Header` component. When passing at least one sidebar,
-        a divider is added underneath the header. Content inside will be
-        centered. It follows through in the `max-width` adjustment from `1550px`
-        to `1920px` on the `wide` variant.
+        Should contain a `Header` or `Layout.HeaderInner` component. When
+        passing at least one sidebar, a divider is added underneath the header.
+        Content inside will be centered. It follows through in the `max-width`
+        adjustment from `1550px` to `1920px` on the `wide` variant.
+      </Table.Cell>
+      <Table.Cell>`header`</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>`Layout.HeaderInner`</Table.Cell>
+      <Table.Cell>
+        The HeaderInner component exposes a way to build visually consistent
+        hierarchy into apps that look and feel like part of the Contentful UI.
+        It’s the responsive variant of the [Header](/components/header)
+        component.
       </Table.Cell>
       <Table.Cell>`header`</Table.Cell>
     </Table.Row>
@@ -79,6 +89,12 @@ The `Layout` exports the following compound components
 ### Layout with header
 
 ```jsx file=./examples/LayoutExampleWithHeader.tsx
+
+```
+
+### Layout with responsive header
+
+```jsx file=./examples/LayoutExampleWithResponsiveHeader.tsx
 
 ```
 
@@ -176,6 +192,10 @@ The `Layout` component offers 4 individual areas, which can be set via the props
 ### Layout.Header
 
 <PropsTable of="LayoutHeader" />
+
+### Layout.HeaderInner
+
+<PropsTable of="LayoutHeaderInner" />
 
 ### Layout.Sidebar
 

@@ -4,11 +4,7 @@ import type { IconProps } from '@contentful/f36-icon';
 export type ButtonSize = 'tiny' | 'small' | 'medium' | 'large';
 
 export type ButtonVariant =
-  | 'negative'
-  | 'positive'
-  | 'primary'
-  | 'secondary'
-  | 'transparent';
+  'negative' | 'positive' | 'primary' | 'secondary' | 'transparent';
 
 export type ButtonStylesProps = {
   variant: ButtonVariant;
