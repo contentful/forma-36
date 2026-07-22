@@ -14,10 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 24.18.0
       - name: Install dependencies
         run: npm ci --workspace=@contentful/f36-cdn
       - name: Deploy to Compute
-        uses: fastly/compute-actions@3b4355cb74cc7428a92dad1194bd564898372d55 # v12
+        uses: fastly/compute-actions@a25cf83ef5c19ef7d86f1eebffcd8f6c02ddc786 # v14
         with:
           project_directory: packages/cdn
           service_id: ${{ secrets.CDN_FASTLY_SERVICE_ID }}

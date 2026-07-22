@@ -1,5 +1,18 @@
 # Change Log
 
+## 6.15.1
+
+### Patch Changes
+
+- [#3506](https://github.com/contentful/forma-36/pull/3506) [`59e28e8`](https://github.com/contentful/forma-36/commit/59e28e8ae25e6bf461e58825f136d11ea3ab882c) Thanks [@veu](https://github.com/veu)! - fix: 🐛 correct responsive header top spacing
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.15.1
+  - @contentful/f36-core@6.15.1
+  - @contentful/f36-header@6.15.1
+  - @contentful/f36-icons@6.15.1
+  - @contentful/f36-typography@6.15.1
+
 ## 6.15.0
 
 ### Minor Changes
