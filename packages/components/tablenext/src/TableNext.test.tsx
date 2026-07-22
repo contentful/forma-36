@@ -27,7 +27,7 @@ describe('TableNext', () => {
   });
 
   describe('accessibility of table component', () => {
-    it('has no a11y issues with default variant inline', async () => {
+    it('has no a11y issues with default variant', async () => {
       const { container } = render(
         <TableNext columnTitles={['TableNext Heading']}>
           <TableNext.Body>
@@ -84,7 +84,7 @@ describe('TableNext', () => {
 
     it('has no a11y issue with scrollable layout', async () => {
       const { container } = render(
-        <TableNext layout="scrollable" columnTitles={['TableNext Heading']}>
+        <TableNext columnTitles={['TableNext Heading']}>
           <TableNext.Body>
             <TableNext.Row>
               <TableNext.Cell>Cell 1</TableNext.Cell>
