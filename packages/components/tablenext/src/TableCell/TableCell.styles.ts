@@ -5,14 +5,12 @@ import { type TableNextProps } from '../TableNext';
 
 type GetTableCellStylesArguments = {
   align: TableCellInternalProps['align'];
-  isSortable?: TableCellInternalProps['isSortable'];
   isTableHead: boolean;
   verticalAlign?: TableNextProps['verticalAlign'];
 };
 
 export const getTableCellStyles = ({
   align,
-  isSortable,
   isTableHead,
   verticalAlign,
 }: GetTableCellStylesArguments) => ({
@@ -44,16 +42,10 @@ export const getTableCellStyles = ({
   container: css({
     backgroundColor: tokens.colorWhite,
     borderBottom: `1px solid ${tokens.gray200}`,
-    padding: isSortable ? 0 : tokens.spacingS,
+    padding: tokens.spacingS,
     textAlign: align,
     color: isTableHead ? tokens.gray600 : tokens.gray700,
     fontWeight: isTableHead ? tokens.fontWeightMedium : tokens.fontWeightNormal,
     verticalAlign,
   }),
-  sortIcon: (showSorting: boolean) =>
-    css({
-      fill: tokens.gray400,
-      opacity: showSorting ? 1 : 0,
-      transition: `opacity ${tokens.transitionEasingCubicBezier} ${tokens.transitionDurationDefault}`,
-    }),
 });

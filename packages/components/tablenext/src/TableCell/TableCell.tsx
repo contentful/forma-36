@@ -12,11 +12,6 @@ import { useTableCellContext } from './TableCellContext';
 import { getTableCellStyles } from './TableCell.styles';
 import { useTableContext } from '../tableContext';
 
-export enum TableCellSorting {
-  Ascending = 'ascending',
-  Descending = 'descending',
-}
-
 export type TableCellInternalProps = CommonProps & {
   align?: 'center' | 'left' | 'right';
   children?: React.ReactNode;
