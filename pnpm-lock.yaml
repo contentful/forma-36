@@ -49,58 +49,58 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       '@contentful/f36-badge':
-        specifier: ^6.15.0
+        specifier: workspace:*
         version: link:packages/components/badge
       '@contentful/f36-button':
-        specifier: ^6.15.0
+        specifier: workspace:*
         version: link:packages/components/button
       '@contentful/f36-components':
-        specifier: ^6.15.0
+        specifier: workspace:*
         version: link:packages/forma-36-react-components
       '@contentful/f36-copybutton':
-        specifier: ^6.15.0
+        specifier: workspace:*
         version: link:packages/components/copybutton
       '@contentful/f36-core':
-        specifier: ^6.0.0-alpha.0
+        specifier: workspace:*
         version: link:packages/core
       '@contentful/f36-forms':
-        specifier: ^6.15.0
+        specifier: workspace:*
         version: link:packages/components/forms
       '@contentful/f36-icon':
-        specifier: ^6.15.0
+        specifier: workspace:*
         version: link:packages/components/icon
       '@contentful/f36-icons':
-        specifier: ^6.15.0
+        specifier: workspace:*
         version: link:packages/components/icons
       '@contentful/f36-list':
-        specifier: ^6.15.0
+        specifier: workspace:*
         version: link:packages/components/list
       '@contentful/f36-menu':
-        specifier: ^6.15.0
+        specifier: workspace:*
         version: link:packages/components/menu
       '@contentful/f36-navbar':
-        specifier: ^6.15.0
+        specifier: workspace:*
         version: link:packages/components/navbar
       '@contentful/f36-note':
-        specifier: ^6.15.0
+        specifier: workspace:*
         version: link:packages/components/note
       '@contentful/f36-pill-next':
-        specifier: 6.0.1-alpha.7
+        specifier: workspace:*
         version: link:packages/components/pill-next
       '@contentful/f36-text-link':
-        specifier: ^6.15.0
+        specifier: workspace:*
         version: link:packages/components/text-link
       '@contentful/f36-tokens':
-        specifier: ^6.0.0-alpha.0
+        specifier: workspace:*
         version: link:packages/forma-36-tokens
       '@contentful/f36-tooltip':
-        specifier: ^6.15.0
+        specifier: workspace:*
         version: link:packages/components/tooltip
       '@contentful/f36-typography':
-        specifier: ^6.15.0
+        specifier: workspace:*
         version: link:packages/components/typography
       '@contentful/f36-usage-count':
-        specifier: ^6.15.0
+        specifier: workspace:*
         version: link:packages/components/usage-count
       '@dnd-kit/core':
         specifier: ^6.0.8
