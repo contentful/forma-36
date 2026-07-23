@@ -1,0 +1,69 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "include": ["dependencies", "devDependencies"],
+  "entry": [
+    "scripts/**/*.{js,ts,tsx,mjs}",
+    "*.config.{js,mjs,ts}",
+    "tsup.config.ts"
+  ],
+  "ignoreDependencies": [
+    "@changesets/cli",
+    "@contentful/browserslist-config",
+    "@testing-library/jest-dom",
+    "babel-jest",
+    "chromatic",
+    "globby",
+    "jest-environment-jsdom",
+    "jest-watch-typeahead",
+    "ts-jest"
+  ],
+  "jest": false,
+  "storybook": {
+    "config": ["scripts/.storybook/main.ts"]
+  },
+  "workspaces": {
+    "packages/components/*": {
+      "entry": [
+        "src/index.{js,ts,tsx}",
+        "src/**/*.{test,figma}.{js,jsx,ts,tsx}",
+        "stories/**/*.{js,jsx,ts,tsx}",
+        "examples/**/*.{js,jsx,ts,tsx}"
+      ]
+    },
+    "packages/core": {
+      "entry": [
+        "src/index.{js,ts,tsx}",
+        "src/**/*.test.{js,jsx,ts,tsx}",
+        "src/**/examples/**/*.{js,jsx,ts,tsx}",
+        "stories/**/*.{js,jsx,ts,tsx}"
+      ]
+    },
+    "packages/f36-ai-components": {
+      "entry": [
+        "src/**/*.test.{ts,tsx}",
+        "stories/**/*.{ts,tsx}"
+      ]
+    },
+    "packages/forma-36-codemod": {
+      "entry": [
+        "bin/*.mjs",
+        "transforms/**/*.{js,ts,tsx}",
+        "utils/**/*.js"
+      ]
+    },
+    "packages/forma-36-react-components": {
+      "ignoreDependencies": ["@contentful/browserslist-config"]
+    },
+    "packages/website": {
+      "entry": [
+        "pages/**/*.{js,jsx,ts,tsx}",
+        "scripts/**/*.{js,jsx,ts,tsx}",
+        "content/**/*.{js,jsx,ts,tsx,md,mdx}"
+      ],
+      "ignoreDependencies": [
+        "@next/eslint-plugin-next",
+        "broken-link-checker"
+      ]
+    }
+  }
+}
