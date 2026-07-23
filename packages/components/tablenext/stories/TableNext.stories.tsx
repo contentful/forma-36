@@ -111,7 +111,7 @@ export const WithLoadingState: StoryFn = () => {
   );
 };
 
-export const Overview: StoryFn = () => (
+export const StyleVariants: StoryFn = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingL">
       <SectionHeading as="h3" marginBottom="spacingS">
