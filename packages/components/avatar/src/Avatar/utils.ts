@@ -3,8 +3,7 @@ import tokens from '@contentful/f36-tokens';
 import { AvatarProps } from './Avatar';
 import { type Variant } from './types';
 
-export const SIZES = ['tiny', 'small', 'medium', 'large'] as const;
-export type Size = (typeof SIZES)[number];
+export type Size = 'tiny' | 'small' | 'medium' | 'large';
 export type SizeInPixel = `${number}px`;
 
 export type ColorVariant = keyof typeof avatarColorMap;
@@ -41,7 +40,7 @@ export function applyMuted(color: string): string {
   // return `color-mix(in srgb, ${color}, ${tokens.colorWhite} 50%)`;
 }
 
-export function getWhiteBorderWidth(variant: Variant, size: number): number {
+function getWhiteBorderWidth(variant: Variant, size: number): number {
   if (variant === 'user') {
     return 1;
   }
