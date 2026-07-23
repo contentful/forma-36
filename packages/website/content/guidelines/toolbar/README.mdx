@@ -25,8 +25,8 @@ Use the Toolbar when users benefit from persistent access to capabilities that s
 Consider other patterns when persistent access to tools is unnecessary or when providing extensive tool sets might overwhelm the user.
 
 | Scenario                                                    | Alternative Pattern | Reason                                                                  |
-| ----------------------------------------------------------- | ------------------- | ----------------------------------------------------------------------- | --- |
-| Simple actions within a limited context                     | Action Buttons      | A toolbar would add unnecessary complexity                              |     |
+| ----------------------------------------------------------- | ------------------- | ----------------------------------------------------------------------- |
+| Simple actions within a limited context                     | Action Buttons      | A toolbar would add unnecessary complexity                              |
 | Single task-focused tools without ongoing context           | Modal Dialog        | Ensures users remain focused without permanent interface elements       |
 | One-time setup or configuration tasks                       | Wizard              | Provides step-by-step guidance without persistent toolbar complexity    |
 | Primary actions that should always be prominently available | Header Actions      | Ensures immediate visibility for critical actions                       |
@@ -80,7 +80,7 @@ Select a tab while the panel is closed. The panel opens and displays the selecte
 
 Only open the panel in response to an explicit user action. In addition to selecting a Toolbar tab, a Button in the main content area may activate a Toolbar tab and open the panel.
 
-### Switch tabs
+#### Switch tabs
 
 Select a different tab while the panel is open. The panel updates to display the selected tab’s content.
 
@@ -146,11 +146,11 @@ Prefer labels that describe the user’s goal, for example:
 - Continue reviewing
 - Continue commenting
 
-### Close the panel
+#### Close the panel
 
 Select the active tab again or use the close button. The panel closes and the tabs switch to their default state.
 
-### Example
+#### Example
 
 ```jsx file=examples/toolbar-example.jsx
 
