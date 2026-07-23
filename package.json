@@ -138,7 +138,8 @@
     "turbo": "^2.9.14",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.44.0",
-    "vite": "^7.3.2"
+    "vite": "^7.3.2",
+    "wait-on": "^9.0.10"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix --prune-suppressions"
