@@ -1,6 +1,6 @@
 import React from 'react';
 import { Badge } from '@contentful/f36-components';
-import { TableNext } from '@contentful/f36-tablenext';
+import { TableNext } from '@contentful/f36-table-next';
 
 export default function TableDynamicCreation() {
   const contentTypes = [

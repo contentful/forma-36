@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableNext } from '@contentful/f36-tablenext';
+import { TableNext } from '@contentful/f36-table-next';
 
 export default function TableBasicUsageExample() {
   return (

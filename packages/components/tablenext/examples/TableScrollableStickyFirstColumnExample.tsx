@@ -1,6 +1,6 @@
 import React from 'react';
 import { EntityStatusBadge } from '@contentful/f36-components';
-import { TableNext } from '@contentful/f36-tablenext';
+import { TableNext } from '@contentful/f36-table-next';
 
 export default function TableScrollableStickyFirstColumnExample() {
   const withLongContentTableData = Array.from({ length: 5 }, (_, index) => {
