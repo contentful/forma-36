@@ -12,7 +12,7 @@ const SIDEBAR_WIDTHS: Record<LayoutSidebarVariant, `${number}px`> = {
 const getMainOffset = (withHeader: boolean, offsetTop: number) =>
   withHeader ? HEADER_HEIGHT + 1 + offsetTop + 'px' : offsetTop + 'px';
 
-export const getLayoutMaxWidthStyles = ({
+const getLayoutMaxWidthStyles = ({
   variant,
   withBoxShadow,
 }: {
