@@ -52,6 +52,9 @@ jobs:
       - run:
           name: Check types
           command: npm run-script tsc
+      - run:
+          name: Check dependencies
+          command: npm exec knip
 
   test:
     docker:
