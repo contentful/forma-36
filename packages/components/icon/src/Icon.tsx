@@ -58,7 +58,7 @@ const useAriaHidden = ({ ariaLabel, ariaLabelledBy }) => {
   };
 };
 
-export function IconBase<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
+function IconBase<E extends React.ElementType = typeof ICON_DEFAULT_TAG>(
   props: IconProps<E>,
 ) {
   const {

@@ -9,7 +9,7 @@ export type LayoutSidebarProps = {
 } & CommonProps &
   HTMLAttributes<HTMLDivElement>;
 
-export const LayoutSidebarBase = (
+const LayoutSidebarBase = (
   props: LayoutSidebarProps,
   ref: Ref<HTMLDivElement>,
 ) => {
