@@ -3,7 +3,7 @@ import type { PropsWithHTMLElement, ExpandProps } from '@contentful/f36-core';
 import { Text, type TextProps } from '../Text';
 import { useDensity } from '@contentful/f36-utils';
 
-export type ParagraphInternalProps = TextProps & {
+type ParagraphInternalProps = TextProps & {
   children: React.ReactNode;
   isTruncated?: boolean;
   isWordBreak?: boolean;
