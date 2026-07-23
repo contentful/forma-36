@@ -14,7 +14,7 @@ import {
 import { getTableHeadStyles } from './TableHead.styles';
 import { useTableContext } from '../tableContext';
 
-export type TableHeadInternalProps = CommonProps & {
+type TableHeadInternalProps = CommonProps & {
   isSticky?: boolean;
   offsetTop?: number | string;
   children: React.ReactNode;

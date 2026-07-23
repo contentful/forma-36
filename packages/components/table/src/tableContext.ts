@@ -1,13 +1,13 @@
 import { createContext, useContext } from 'react';
 import { TableProps } from './Table';
 
-export type TableContext = {
+type TableContext = {
   verticalAlign?: TableProps['verticalAlign'];
   isHeaderSticky?: boolean;
   setIsHeaderSticky?: (value: boolean) => void;
 };
 
-export const TableContext = createContext<TableContext>({});
+const TableContext = createContext<TableContext>({});
 
 export const useTableContext = () => {
   const context = useContext(TableContext);
