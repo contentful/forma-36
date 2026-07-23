@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import {
   ChatIcon,
-  PreviewIcon,
-  TagsIcon,
+  EyeIcon,
+  TagIcon,
   PuzzlePieceIcon,
   StarIcon,
 } from '@contentful/f36-icons';
@@ -184,11 +184,11 @@ export function ToolbarDefaultExample() {
           <CommentsPanel />
         </Toolbar.Item>
 
-        <Toolbar.Item id="taxonomy" icon={<TagsIcon />} title="Tags">
+        <Toolbar.Item id="taxonomy" icon={<TagIcon />} title="Tags">
           <TaxonomyPanel />
         </Toolbar.Item>
 
-        <Toolbar.Item id="preview" icon={<PreviewIcon />} title="Preview">
+        <Toolbar.Item id="preview" icon={<EyeIcon />} title="Preview">
           <PreviewPanel />
         </Toolbar.Item>
 
@@ -252,8 +252,8 @@ export function ToolbarSlotExample() {
 
 const ALL_APPS = [
   { id: 'comments', label: 'Comments', icon: <ChatIcon /> },
-  { id: 'taxonomy', label: 'Tags', icon: <TagsIcon /> },
-  { id: 'preview', label: 'Preview', icon: <PreviewIcon /> },
+  { id: 'taxonomy', label: 'Tags', icon: <TagIcon /> },
+  { id: 'preview', label: 'Preview', icon: <EyeIcon /> },
   { id: 'my-app', label: 'My App', icon: <PuzzlePieceIcon /> },
 ];
 
