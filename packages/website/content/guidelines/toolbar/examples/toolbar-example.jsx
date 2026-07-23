@@ -32,14 +32,16 @@ function MockLayout({ children }) {
         borderRadius: '12px',
         overflow: 'hidden',
         background: '#f9f9f9',
-      }}>
+      }}
+    >
       <div
         style={{
           flex: 1,
           background: 'white',
           padding: '24px',
           borderRight: '1px solid #e5e5e5',
-        }}>
+        }}
+      >
         <Text fontColor="gray400" fontSize="fontSizeS">
           ← Editor canvas
         </Text>
@@ -62,7 +64,10 @@ function CommentsPanel() {
 
   const post = () => {
     if (!draft.trim()) return;
-    setComments((prev) => [...prev, { id: Date.now(), text: draft.trim(), author: 'You' }]);
+    setComments((prev) => [
+      ...prev,
+      { id: Date.now(), text: draft.trim(), author: 'You' },
+    ]);
     setDraft('');
   };
 
@@ -74,14 +79,24 @@ function CommentsPanel() {
         onKeyDown={(e) => e.key === 'Enter' && post()}
         placeholder="Add a comment…"
       />
-      <Button size="small" variant="primary" isDisabled={!draft.trim()} onClick={post}>
+      <Button
+        size="small"
+        variant="primary"
+        isDisabled={!draft.trim()}
+        onClick={post}
+      >
         Post
       </Button>
       <Stack flexDirection="column" spacing="spacingXs">
         {comments.map((c) => (
           <div
             key={c.id}
-            style={{ padding: '8px 10px', background: '#f4f4f4', borderRadius: '6px' }}>
+            style={{
+              padding: '8px 10px',
+              background: '#f4f4f4',
+              borderRadius: '6px',
+            }}
+          >
             <Text fontSize="fontSizeS" fontWeight="fontWeightDemiBold">
               {c.author}
             </Text>
@@ -99,13 +114,18 @@ function TaxonomyPanel() {
 
   const toggle = (tag) =>
     setSelected((prev) =>
-      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
     );
 
   return (
     <Stack flexDirection="column" spacing="spacingXs">
       {tags.map((tag) => (
-        <Checkbox key={tag} id={tag} isChecked={selected.includes(tag)} onChange={() => toggle(tag)}>
+        <Checkbox
+          key={tag}
+          id={tag}
+          isChecked={selected.includes(tag)}
+          onChange={() => toggle(tag)}
+        >
           {tag}
         </Checkbox>
       ))}
@@ -159,7 +179,8 @@ export function ToolbarDefaultExample() {
             <Badge variant="primary" size="small">
               {commentCount}
             </Badge>
-          }>
+          }
+        >
           <CommentsPanel />
         </Toolbar.Item>
 
@@ -200,14 +221,16 @@ export function ToolbarSlotExample() {
               </Text>
             </Flex>
           }
-          slotRight={<Badge variant="featured">New</Badge>}>
+          slotRight={<Badge variant="featured">New</Badge>}
+        >
           <Stack flexDirection="column" spacing="spacingXs">
             {['Hero section', 'Call to action', 'Footer links'].map((item) => (
               <Flex
                 key={item}
                 alignItems="center"
                 justifyContent="space-between"
-                style={{ padding: '6px 0' }}>
+                style={{ padding: '6px 0' }}
+              >
                 <Text fontSize="fontSizeS">{item}</Text>
                 <StarIcon size="small" variant="primary" />
               </Flex>
@@ -238,7 +261,9 @@ export function ToolbarDynamicExample() {
   const [enabledIds, setEnabledIds] = useState(['comments', 'taxonomy']);
 
   const toggle = (id) =>
-    setEnabledIds((prev) => (prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]));
+    setEnabledIds((prev) =>
+      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id],
+    );
 
   const activeApps = ALL_APPS.filter((a) => enabledIds.includes(a.id));
 
@@ -250,7 +275,8 @@ export function ToolbarDynamicExample() {
             key={app.id}
             id={`toggle-${app.id}`}
             isChecked={enabledIds.includes(app.id)}
-            onChange={() => toggle(app.id)}>
+            onChange={() => toggle(app.id)}
+          >
             {app.label}
           </Checkbox>
         ))}
@@ -259,7 +285,12 @@ export function ToolbarDynamicExample() {
       <MockLayout>
         <Toolbar aria-label="App tools">
           {activeApps.map((app) => (
-            <Toolbar.Item key={app.id} id={app.id} icon={app.icon} title={app.label}>
+            <Toolbar.Item
+              key={app.id}
+              id={app.id}
+              icon={app.icon}
+              title={app.label}
+            >
               <AppPanel name={app.label} />
             </Toolbar.Item>
           ))}
