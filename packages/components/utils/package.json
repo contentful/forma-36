@@ -20,7 +20,6 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@emotion/css": "^11.13.5",
     "@contentful/f36-tokens": "^6.1.2"
   },
   "peerDependencies": {
