@@ -1,7 +1,7 @@
 import type { ChangeEventHandler, ComponentPropsWithoutRef } from 'react';
 import type { BaseInputInternalProps } from '../BaseInput/types';
 import type { Density } from '@contentful/f36-utils';
-export type checkboxTypes = 'checkbox' | 'radio' | 'switch';
+type checkboxTypes = 'checkbox' | 'radio' | 'switch';
 
 export interface BaseCheckboxInternalProps extends Omit<
   BaseInputInternalProps,

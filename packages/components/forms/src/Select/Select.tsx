@@ -17,7 +17,7 @@ import { useFormControl } from '../FormControl/FormControlContext';
 import { getSelectStyles } from './Select.styles';
 import { useDensity } from '@contentful/f36-utils';
 
-export type SelectSize = 'small' | 'medium';
+type SelectSize = 'small' | 'medium';
 
 export type SelectInternalProps = CommonProps & {
   isRequired?: boolean;
