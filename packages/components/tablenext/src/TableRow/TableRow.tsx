@@ -42,9 +42,13 @@ export const TableRow = forwardRef<
     const updatedCells: React.ReactNode[] = [];
 
     columnTitles?.forEach((title, i) => {
-      if (i > 0) {
+      if (isStackable && i > 0) {
         updatedCells.push(
-          <TableCell key={`stacked-title-${title}`} aria-hidden>
+          <TableCell
+            key={`stacked-title-${title.replace(/\s+/g, '')}`}
+            className={styles.stackableTitle}
+            aria-hidden
+          >
             {title}
           </TableCell>,
         );
@@ -62,7 +66,7 @@ export const TableRow = forwardRef<
           styles.root,
           {
             [styles.selected]: isSelected,
-            [styles.stackable(hasColumnTitles)]: isStackable,
+            [styles.stackableRow(hasColumnTitles)]: isStackable,
           },
           className,
         )}

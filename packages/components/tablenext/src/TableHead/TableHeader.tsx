@@ -22,7 +22,9 @@ export const TableHeader = ({ columnTitles, offsetTop }: TableHeaderProps) => {
     >
       <TableRow>
         {columnTitles.map((title) => (
-          <TableCell key={title}>{title}</TableCell>
+          <TableCell key={`table-header-cell-${title.replace(/\s+/g, '')}`}>
+            {title}
+          </TableCell>
         ))}
       </TableRow>
     </TableHead>

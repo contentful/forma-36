@@ -9,9 +9,6 @@ export const getTableRowStyles = () => ({
     '&:hover td': {
       backgroundColor: tokens.gray100,
     },
-    'td:nth-child(2n), th:nth-child(2n)': {
-      display: 'none',
-    },
   }),
   selected: css({
     'td, th': {
@@ -19,7 +16,7 @@ export const getTableRowStyles = () => ({
     },
   }),
 
-  stackable: (hasColumnTitles: boolean) =>
+  stackableRow: (hasColumnTitles: boolean) =>
     css({
       '@container (width <= 700px)': {
         '&': {
@@ -33,28 +30,33 @@ export const getTableRowStyles = () => ({
                 display: 'flex',
                 flexDirection: 'column',
               }),
+          borderBottom: `1px solid ${tokens.gray200}`,
         },
         td: {
           maxWidth: 'unset !important',
           width: '100% !important',
           borderBottom: 'none',
         },
-        'td:nth-child(2n)': {
-          color: tokens.gray600,
-          fontSize: tokens.fontSizeS,
-          display: 'block',
-        },
         'td:first-child': {
           gridColumn: '1 / 3',
-        },
-        '&:not(:first-child) td:first-child': {
-          borderTop: `1px solid ${tokens.gray200}`,
-        },
-      },
-      '@container (700px < width)': {
-        'td:nth-child(2n), th:nth-child(2n)': {
-          display: 'none',
+          borderRadius: tokens.borderRadiusMedium,
+          fontWeight: tokens.fontWeightDemiBold,
         },
       },
     }),
+
+  stackableTitle: css({
+    '@container(width <=700px)': {
+      '&': {
+        color: tokens.gray600,
+        fontSize: tokens.fontSizeS,
+        display: 'block',
+      },
+    },
+    '@container (700px < width)': {
+      '&': {
+        display: 'none',
+      },
+    },
+  }),
 });
