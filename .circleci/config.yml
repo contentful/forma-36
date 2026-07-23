@@ -55,9 +55,6 @@ jobs:
       - run:
           name: Check dependencies
           command: npm exec knip
-      - run:
-          name: Check Avatar exports
-          command: npm exec knip -- --workspace packages/components/avatar --include exports,types
 
   test:
     docker:
