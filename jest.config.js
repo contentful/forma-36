@@ -88,7 +88,7 @@ module.exports = {
   // A preset that is used as a base for Jest's configuration
   preset: 'ts-jest',
 
-  // Run tests from one or more projects. We include the codemod package as a separate project so it can use its own Node test environment and setup (env.js)
+  // Run tests from one or more projects. The codemod package uses its own Node test environment.
   projects: ['<rootDir>', '<rootDir>/packages/forma-36-codemod'],
 
   // Use this configuration option to add custom reporters to Jest

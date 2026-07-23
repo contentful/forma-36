@@ -40,9 +40,6 @@
     "semver": "^7.7.2"
   },
   "jest": {
-    "globals": {
-      "baseDir": "../"
-    },
     "testEnvironment": "node",
     "roots": [
       "transforms",
