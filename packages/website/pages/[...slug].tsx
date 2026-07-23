@@ -150,6 +150,7 @@ export const getStaticProps: GetStaticProps<
   const { default: remarkCodeTitles } = await import('remark-code-titles');
   const { codeImport } = await import('remark-code-import');
   const { remarkCodeMeta } = await import('../utils/remark-code-meta');
+  const { default: remarkGfm } = await import('remark-gfm');
   const { default: rehypeSlug } = await import('rehype-slug');
   const { default: rehypeToc } = await import('rehype-toc');
   const path = await import('node:path');
@@ -205,14 +206,16 @@ export const getStaticProps: GetStaticProps<
       mainContentText = content.replace(matches[0], '');
     }
 
-    const shortIntro = await serialize({
-      value: shortIntroText,
-    });
+    const shortIntro = await serialize(
+      { value: shortIntroText },
+      { mdxOptions: { remarkPlugins: [remarkGfm] } },
+    );
     const mainContent = await serialize(
       { value: mainContentText, path: mdxSource.filepath },
       {
         mdxOptions: {
           remarkPlugins: [
+            remarkGfm,
             remarkCodeTitles,
             [
               codeImport,
