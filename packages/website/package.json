@@ -55,6 +55,8 @@
     "rehype-toc": "^3.0.2",
     "remark-code-import": "^1.1.1",
     "remark-code-titles": "^0.1.1",
+    "remark-gfm": "^4.0.1",
+    "remark-gfm": "^4.0.1",
     "unist-util-visit": "^5.0.0",
     "use-debounce": "^10.0.3"
   },
