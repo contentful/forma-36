@@ -9,7 +9,7 @@ export const FormControlContext = createContext<
   FormControlContextProps | undefined
 >(undefined);
 
-export const useFormControlContext = () => {
+const useFormControlContext = () => {
   const context = useContext(FormControlContext);
   return context;
 };

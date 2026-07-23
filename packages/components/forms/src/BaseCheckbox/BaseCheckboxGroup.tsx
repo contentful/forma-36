@@ -37,7 +37,7 @@ export interface BaseCheckboxGroupProps extends CommonProps {
   value?: Array<string> | string;
 }
 
-export const BaseCheckboxGroupBase = (
+const BaseCheckboxGroupBase = (
   props: ExpandProps<BaseCheckboxGroupProps>,
   ref: React.Ref<HTMLDivElement>,
 ) => {
