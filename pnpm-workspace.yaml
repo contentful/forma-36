@@ -4,6 +4,7 @@ packages:
 
 linkWorkspacePackages: true
 autoInstallPeers: false
+# 15 days, matching the shared Renovate configuration.
 minimumReleaseAge: 21600
 ignoreScripts: true
 
