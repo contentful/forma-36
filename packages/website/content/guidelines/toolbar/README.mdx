@@ -24,14 +24,14 @@ Use the Toolbar when users benefit from persistent access to capabilities that s
 
 Consider other patterns when persistent access to tools is unnecessary or when providing extensive tool sets might overwhelm the user.
 
-| Scenario                                                       | Alternative Pattern | Reason                                                                        |
-|----------------------------------------------------------------|---------------------|-------------------------------------------------------------------------------|
-| Simple actions within a limited context                        | Action Buttons      | A toolbar would add unnecessary complexity                                    |                 |
-| Single task-focused tools without ongoing context              | Modal Dialog        | Ensures users remain focused without permanent interface elements             |
-| One-time setup or configuration tasks                          | Wizard              | Provides step-by-step guidance without persistent toolbar complexity          |
-| Primary actions that should always be prominently available    | Header Actions      | Ensures immediate visibility for critical actions                             |
-| Essential information and actions visible at all times         | Persistent Sidebar  | Offers constant visibility within content layout                              |
-| Long forms and extensive editing tasks                         | Dedicated Page      | Provides appropriate space and focus for extensive content manipulation       |
+| Scenario                                                    | Alternative Pattern | Reason                                                                  |
+| ----------------------------------------------------------- | ------------------- | ----------------------------------------------------------------------- | --- |
+| Simple actions within a limited context                     | Action Buttons      | A toolbar would add unnecessary complexity                              |     |
+| Single task-focused tools without ongoing context           | Modal Dialog        | Ensures users remain focused without permanent interface elements       |
+| One-time setup or configuration tasks                       | Wizard              | Provides step-by-step guidance without persistent toolbar complexity    |
+| Primary actions that should always be prominently available | Header Actions      | Ensures immediate visibility for critical actions                       |
+| Essential information and actions visible at all times      | Persistent Sidebar  | Offers constant visibility within content layout                        |
+| Long forms and extensive editing tasks                      | Dedicated Page      | Provides appropriate space and focus for extensive content manipulation |
 
 ---
 
@@ -113,13 +113,15 @@ Active context is the information carried from one tab to another so users can c
 Carry over only the context that is relevant to the next task.
 
 Display the active context in close proximity to where it is used.
-  - In the source tab, place the active context near the Button that initiates the transition.
-  - In the destination tab, place the active context near the action or section where users continue their work.
-  - When the active context applies to the entire tab, placing it below the panel header is generally preferred.
+
+- In the source tab, place the active context near the Button that initiates the transition.
+- In the destination tab, place the active context near the action or section where users continue their work.
+- When the active context applies to the entire tab, placing it below the panel header is generally preferred.
 
 Represent the active context using the most appropriate component available for the entity type.
-  - Use InlinEntryCard for entries.
-  - Use Pill for other entity types or simple values.
+
+- Use InlinEntryCard for entries.
+- Use Pill for other entity types or simple values.
 
 Where appropriate, allow users to clear or replace the active context.
 
@@ -129,20 +131,20 @@ When users temporarily switch tabs to complete a supporting task, help them resu
 
 Provide a clear Button to return to the previously active tab when:
 
-* the supporting task has been completed,
-* users are likely to continue their original workflow.
+- the supporting task has been completed,
+- users are likely to continue their original workflow.
 
 The return action should:
 
-* activate the previously active tab,
-* preserve any relevant active context,
-* clearly communicate the next step.
+- activate the previously active tab,
+- preserve any relevant active context,
+- clearly communicate the next step.
 
 Prefer labels that describe the user’s goal, for example:
 
-* Continue workflow
-* Continue reviewing
-* Continue commenting
+- Continue workflow
+- Continue reviewing
+- Continue commenting
 
 ### Close the panel
 
@@ -150,13 +152,13 @@ Select the active tab again or use the close button. The panel closes and the ta
 
 ### Example
 
-```jsx file=.packages/website/content/guidelines/toolbar/examples/toolbar-example.jsx
+```jsx file=examples/toolbar-example.jsx
+
 ```
 
 ---
 
 ### States
-
 
 #### Toolbar States
 
@@ -177,25 +179,25 @@ Select the active tab again or use the close button. The panel closes and the ta
 - **Loading:** Panel content is loading. Refer to the [Loading](insert link) pattern.
 - **Error:** Content inside the panel failed to load or perform actions. Refer to the [Error Handling](insert link) pattern.
 
-*(Visual example or demo link)*
-```jsx file=.path.tsx
-```
+_(Visual example or demo link)_
 
 ---
 
 ### Accessibility (W.I.P.)
 
 #### Screen Reader Support
+
 ##### Aria roles
-| Element             | Role/Attribute                | Purpose                             |
-|---------------------|-------------------------------|-------------------------------------|
-| Container for icons | role="tablist"                | Groups the tab controls             |
-| Each icon button    | role="tab"                    | Identifies each control             |
-| Each panel          | role="tabpanel"               | The content area                    |
-| Tablist             | aria-orientation="vertical"   | Critical for your vertical layout   |
-| Active tab          | aria-selected="true"          | Shows which tab is currently active |
-| Tab → Panel link    | aria-controls="panel-id"      | Associates tab with its panel       |
-| Panel → Tab link    | aria-labelledby="tab-id"      | Labels the panel by its tab         |
+
+| Element             | Role/Attribute              | Purpose                             |
+| ------------------- | --------------------------- | ----------------------------------- |
+| Container for icons | role="tablist"              | Groups the tab controls             |
+| Each icon button    | role="tab"                  | Identifies each control             |
+| Each panel          | role="tabpanel"             | The content area                    |
+| Tablist             | aria-orientation="vertical" | Critical for your vertical layout   |
+| Active tab          | aria-selected="true"        | Shows which tab is currently active |
+| Tab → Panel link    | aria-controls="panel-id"    | Associates tab with its panel       |
+| Panel → Tab link    | aria-labelledby="tab-id"    | Labels the panel by its tab         |
 
 #### Keyboard Interactions
 
@@ -206,11 +208,13 @@ Select the active tab again or use the close button. The panel closes and the ta
 - **Shift+Tab:** Return focus to the active tab
 
 #### Landmarks
+
 - Use a single region landmark for the entire panel with a clear label
 - Use headings (h2, h3, etc.) to structure content within the panel rather than nested landmarks
 - Reserve additional landmarks only if the panel has truly distinct, complex sections
 
 #### Announcing changes
+
 - Use live regions to announce the opening and closing of the panel and witch panel opened
 - Updates on background processes that happen insde tha panel, open or closed. For example: an Agent has completed a run.
 
@@ -237,10 +241,9 @@ Select the active tab again or use the close button. The panel closes and the ta
 #### Anti-patterns
 
 - Don’t use the Toolbar as a catch-all. Adding every new capability to the Toolbar reduces discoverability and makes it harder for users to find what they need.
-- Don’t create competing workflows. The same capability may be available both in the Toolbar and elsewhere. This is appropriate when each surface serves a distinct purpose—for example, inline controls support work on a specific object, while the Toolbar supports managing that work across the page or workflow. 
+- Don’t create competing workflows. The same capability may be available both in the Toolbar and elsewhere. This is appropriate when each surface serves a distinct purpose—for example, inline controls support work on a specific object, while the Toolbar supports managing that work across the page or workflow.
 - Keep object-specific controls with the object. If a capability is only relevant while interacting with a specific part of the interface, expose it close to that object rather than in the Toolbar.
 - Don’t make users leave their work. Avoid Toolbar features that immediately redirect users to a different page or interrupt their current task. The Toolbar should support ongoing work, not act as navigation.
-
 
 ---
 
@@ -270,9 +273,8 @@ Detail how the pattern behaves across different screen sizes and different devic
 
 - Breakpoint (<Xpx): The Toolbar panel overlaps content instead of pushing it to the side.
 
-*(Visual example or demo link)*
-```jsx file=.path.tsx
-```
+_(Visual example or demo link)_
+
 ---
 
 ### Technical Implementation
@@ -280,7 +282,6 @@ Detail how the pattern behaves across different screen sizes and different devic
 Provide or link to relevant code snippets, implementation guides, or repositories.
 
 ---
-
 
 ### Related Patterns
 
