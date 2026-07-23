@@ -3,11 +3,6 @@ packages:
   - 'packages/components/*'
 
 linkWorkspacePackages: true
-hoistWorkspacePackages: true
-nodeLinker: hoisted
-preferSymlinkedExecutables: false
-publicHoistPattern:
-  - '@contentful/*'
 autoInstallPeers: false
 minimumReleaseAge: 21600
 ignoreScripts: true
