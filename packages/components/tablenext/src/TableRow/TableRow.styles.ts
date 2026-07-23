@@ -9,6 +9,9 @@ export const getTableRowStyles = () => ({
     '&:hover td': {
       backgroundColor: tokens.gray100,
     },
+    'td:nth-child(2n), th:nth-child(2n)': {
+      display: 'none',
+    },
   }),
   selected: css({
     'td, th': {
@@ -39,12 +42,18 @@ export const getTableRowStyles = () => ({
         'td:nth-child(2n)': {
           color: tokens.gray600,
           fontSize: tokens.fontSizeS,
+          display: 'block',
         },
         'td:first-child': {
           gridColumn: '1 / 3',
         },
         '&:not(:first-child) td:first-child': {
           borderTop: `1px solid ${tokens.gray200}`,
+        },
+      },
+      '@container (700px < width)': {
+        'td:nth-child(2n), th:nth-child(2n)': {
+          display: 'none',
         },
       },
     }),
