@@ -93,7 +93,7 @@ export const TableNext = forwardRef<
         as="table"
         display="table"
         ref={forwardedRef}
-        className={cx(styles.root, styles[variant], styles[layout], className)}
+        className={cx(styles.root, styles[layout], className)}
         testId={testId}
       >
         <TableContextProvider
@@ -117,7 +117,7 @@ export const TableNext = forwardRef<
       <section
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- scrollable region requires tabIndex for keyboard access (WCAG 2.1 SC 2.1.1)
         tabIndex={0}
-        className={cx({
+        className={cx(styles[variant], {
           [styles.scrollableWrapper]: isScrollable,
           [styles.stackableWrapper]: isStackable,
         })}
