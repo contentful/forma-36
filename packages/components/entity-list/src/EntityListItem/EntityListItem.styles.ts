@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
-import { EntityListItemProps } from './EntityListItem';
+import type { EntityListItemProps } from './EntityListItem';
 
 export const getEntityListItemStyles = () => ({
   root: (props: Pick<EntityListItemProps, 'isDragActive'>) =>

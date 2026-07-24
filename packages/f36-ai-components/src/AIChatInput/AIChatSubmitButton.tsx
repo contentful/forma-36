@@ -1,7 +1,7 @@
 import { IconButton } from '@contentful/f36-button';
 import { Box } from '@contentful/f36-core';
 import { ArrowUpIcon } from '@contentful/f36-icons';
-import { AIChatInputProps } from './AIChatInput';
+import type { AIChatInputProps } from './AIChatInput';
 import { getStyles } from './AIChatInput.styles';
 import React from 'react';
 

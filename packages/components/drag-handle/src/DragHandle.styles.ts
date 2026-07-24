@@ -1,7 +1,7 @@
 import { cx, css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
-import { DragHandleProps } from './DragHandle';
+import type { DragHandleProps } from './DragHandle';
 
 export const getStyles = () => ({
   label: css({

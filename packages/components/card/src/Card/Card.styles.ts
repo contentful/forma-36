@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
-import { CardProps } from '..';
+import type { CardProps } from './Card';
 
 const getCardPaddingValue = (padding: CardProps['padding']) => {
   switch (padding) {

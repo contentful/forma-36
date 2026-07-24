@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavbarSwitcherProps } from '../NavbarSwitcher/NavbarSwitcher';
+import type { NavbarSwitcherProps } from '../NavbarSwitcher/NavbarSwitcher';
 import {
   EnvironmentAliasIcon,
   EnvironmentIcon,

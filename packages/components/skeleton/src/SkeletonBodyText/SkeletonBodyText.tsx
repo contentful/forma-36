@@ -1,7 +1,9 @@
 import React from 'react';
 
-import { Skeleton } from '../index';
-import type { SkeletonTextProps } from '../SkeletonText/SkeletonText';
+import {
+  SkeletonText,
+  type SkeletonTextProps,
+} from '../SkeletonText/SkeletonText';
 
 export const SkeletonBodyText = ({
   lineHeight = 16,
@@ -12,7 +14,7 @@ export const SkeletonBodyText = ({
   ...otherProps
 }: SkeletonTextProps) => {
   return (
-    <Skeleton.Text
+    <SkeletonText
       lineHeight={lineHeight}
       marginBottom={marginBottom}
       numberOfLines={

@@ -2,7 +2,7 @@ import { Text } from '@contentful/f36-components';
 import { Box, type CommonProps } from '@contentful/f36-core';
 import { cx } from '@emotion/css';
 import React, { forwardRef, Ref } from 'react';
-import { MessageGroups } from '../AIChatHistory';
+import type { MessageGroups } from '../AIChatHistory';
 import { getStyles } from './AIChatHistoryTabs.styles';
 
 export interface AIChatHistoryTabsProps extends CommonProps {

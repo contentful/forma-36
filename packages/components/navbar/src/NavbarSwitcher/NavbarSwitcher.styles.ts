@@ -3,7 +3,7 @@ import tokens from '@contentful/f36-tokens';
 import { hexToRGBA } from '@contentful/f36-utils';
 
 import { getGlowOnFocusStyles, increaseHitArea, mqs } from '../utils.styles';
-import { EnvVariant } from './NavbarSwitcher';
+import type { EnvVariant } from './NavbarSwitcher';
 
 const BORDER_WIDTH = 1;
 

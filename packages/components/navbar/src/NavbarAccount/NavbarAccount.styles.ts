@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
-import { NavbarAccountProps } from './NavbarAccount';
+import type { NavbarAccountProps } from './NavbarAccount';
 import { getGlowOnFocusStyles, increaseHitArea } from '../utils.styles';
 
 const notificationVarianColorMap: Record<

@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
-import { UsageCardProps } from './UsageCard';
+import type { UsageCardProps } from './UsageCard';
 
 const variantToStyles = (variant: UsageCardProps['variant']) => {
   switch (variant) {

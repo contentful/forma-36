@@ -7,7 +7,7 @@ import {
 import { Box, type CommonProps } from '@contentful/f36-core';
 import { cx } from '@emotion/css';
 import React, { forwardRef, Ref } from 'react';
-import { MessageThread } from '../AIChatHistory';
+import type { MessageThread } from '../AIChatHistory';
 import { getStyles } from './AIChatHistoryThread.styles';
 
 export interface AIChatHistoryThreadProps extends CommonProps {

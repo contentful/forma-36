@@ -1,7 +1,7 @@
 import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import { mqs } from './utils.styles';
-import { NavbarProps } from './Navbar';
+import type { NavbarProps } from './Navbar';
 import { NAVBAR_HEIGHT } from './constants';
 
 export const getNavbarStyles = ({
