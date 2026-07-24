@@ -305,7 +305,8 @@ export const Stackable: StoryObj = {
       <Layout>
         <Layout.Body>
           <Note className={css({ margin: '1rem' })}>
-            TableNext with overflow-x scrollbar
+            TableNext in stackable layout. When the surrounding container is
+            smaller than 700px the table is displayed rotated by 90°.
           </Note>
           <TableNext {...args} layout="stackable">
             <TableNext.Body>
@@ -350,7 +351,9 @@ export const StackableWithTitles: StoryObj = {
       <Layout>
         <Layout.Body>
           <Note className={css({ margin: '1rem' })}>
-            TableNext with overflow-x scrollbar
+            TableNext in stackable layout. When the surrounding container is
+            smaller than 700px the table is displayed rotated by 90°. The column
+            titles are shown next to the table cell values.
           </Note>
           <TableNext
             {...args}
