@@ -36,6 +36,7 @@ export const TableRow = forwardRef<
       isStackable,
       columnTitles,
       hasColumnTitles = false,
+      stackableBreakpoint,
     } = useTableContext();
 
     const originalCells = Children.toArray(children);
@@ -46,7 +47,7 @@ export const TableRow = forwardRef<
         updatedCells.push(
           <TableCell
             key={`stacked-title-${title.replace(/\s+/g, '')}`}
-            className={styles.stackableTitle}
+            className={styles.stackableTitle(stackableBreakpoint)}
             aria-hidden
           >
             {title}
@@ -66,7 +67,8 @@ export const TableRow = forwardRef<
           styles.root,
           {
             [styles.selected]: isSelected,
-            [styles.stackableRow(hasColumnTitles)]: isStackable,
+            [styles.stackableRow(hasColumnTitles, stackableBreakpoint)]:
+              isStackable,
           },
           className,
         )}

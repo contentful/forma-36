@@ -11,8 +11,9 @@ type TableHeaderProps = {
 };
 
 export const TableHeader = ({ columnTitles, offsetTop }: TableHeaderProps) => {
-  const { isHeaderSticky, isStackable } = useTableContext();
-  const styles = getTableHeaderStyles();
+  const { isHeaderSticky, isStackable, stackableBreakpoint } =
+    useTableContext();
+  const styles = getTableHeaderStyles(stackableBreakpoint);
 
   return (
     <TableHead

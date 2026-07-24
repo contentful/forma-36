@@ -16,9 +16,9 @@ export const getTableRowStyles = () => ({
     },
   }),
 
-  stackableRow: (hasColumnTitles: boolean) =>
+  stackableRow: (hasColumnTitles: boolean, stackableBreakpoint: string) =>
     css({
-      '@container (width <= 700px)': {
+      [`@container (width <= ${stackableBreakpoint})`]: {
         '&': {
           ...(hasColumnTitles
             ? {
@@ -45,18 +45,19 @@ export const getTableRowStyles = () => ({
       },
     }),
 
-  stackableTitle: css({
-    '@container(width <=700px)': {
-      '&': {
-        color: tokens.gray600,
-        fontSize: tokens.fontSizeS,
-        display: 'block',
+  stackableTitle: (stackableBreakpoint: string) =>
+    css({
+      [`@container(width <=${stackableBreakpoint})`]: {
+        '&': {
+          color: tokens.gray600,
+          fontSize: tokens.fontSizeS,
+          display: 'block',
+        },
       },
-    },
-    '@container (700px < width)': {
-      '&': {
-        display: 'none',
+      [`@container (${stackableBreakpoint}< width)`]: {
+        '&': {
+          display: 'none',
+        },
       },
-    },
-  }),
+    }),
 });

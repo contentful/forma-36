@@ -12,12 +12,28 @@ import { getTableStyles } from './TableNext.styles';
 import { TableContextProvider } from './tableContext';
 import { TableHeader } from './TableHead/TableHeader';
 
+export type StackableBreakpoint =
+  number | `${number}px` | `${number}rem` | `${number}em`;
+
+export type StackableBreakpointValue = Exclude<StackableBreakpoint, number>;
+
 type TableNextLayoutProps =
   | {
       /**
        * @default 'scrollable'
        */
       layout?: 'stackable';
+
+      /**
+       * Container width at which the table switches to the stacked layout.
+       * Numbers are interpreted as px.
+       *
+       * Only available when layout is "stackable".
+       *
+       * @default 700
+       */
+      stackableBreakpoint?: StackableBreakpoint;
+
       /**
        * @default false
        */
@@ -25,6 +41,12 @@ type TableNextLayoutProps =
     }
   | {
       layout: 'scrollable';
+
+      /**
+       * Only supported with layout="stackable".
+       */
+      stackableBreakpoint?: never;
+
       /**
        * @default false
        */
@@ -41,7 +63,7 @@ type TableHeaderTitleProps =
       isHeaderSticky?: boolean;
     };
 
-export type TableNextInternalProps = CommonProps &
+type TableNextInternalProps = CommonProps &
   TableNextLayoutProps &
   TableHeaderTitleProps & {
     /**
@@ -60,6 +82,13 @@ export type TableNextProps = PropsWithHTMLElement<
   'table'
 >;
 
+const DEFAULT_STACKABLE_BREAKPOINT = 700;
+
+const getStackableBreakpointValue = (
+  breakpoint: StackableBreakpoint = DEFAULT_STACKABLE_BREAKPOINT,
+): StackableBreakpointValue =>
+  typeof breakpoint === 'number' ? `${breakpoint}px` : breakpoint;
+
 export const TableNext = forwardRef<
   HTMLTableElement,
   ExpandProps<TableNextProps>
@@ -76,6 +105,7 @@ export const TableNext = forwardRef<
       isFirstColumnSticky = false,
       isHeaderSticky = false,
       offsetTop = 0,
+      stackableBreakpoint,
       ...otherProps
     },
     forwardedRef,
@@ -84,6 +114,9 @@ export const TableNext = forwardRef<
     const isScrollable = layout === 'scrollable';
     const isStackable = layout === 'stackable';
     const hasColumnTitles = (columnTitles?.length ?? 0) > 0;
+
+    const stackableBreakpointValue =
+      getStackableBreakpointValue(stackableBreakpoint);
 
     const tableElement = (
       <Box
@@ -103,6 +136,7 @@ export const TableNext = forwardRef<
             isStackable,
             columnTitles,
             hasColumnTitles,
+            stackableBreakpoint: stackableBreakpointValue,
           }}
         >
           {columnTitles && (

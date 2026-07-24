@@ -22,14 +22,20 @@ function TableBodyBase(
   { className, children, testId = 'cf-ui-table-body', ...otherProps },
   forwardedRef,
 ) {
-  const { isStackable, hasColumnTitles = false } = useTableContext();
+  const {
+    isStackable,
+    hasColumnTitles = false,
+    stackableBreakpoint,
+  } = useTableContext();
   const styles = getTableBodyStyles();
   return (
     <Box
       {...otherProps}
       as="tbody"
       className={cx(
-        { [styles.stackable(hasColumnTitles)]: isStackable },
+        {
+          [styles.stackable(hasColumnTitles, stackableBreakpoint)]: isStackable,
+        },
         className,
       )}
       ref={forwardedRef}

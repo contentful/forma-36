@@ -1,20 +1,16 @@
 import { css } from '@emotion/css';
 
 export const getTableBodyStyles = () => ({
-  stackable: (hasColumnTitles: boolean) =>
+  stackable: (hasColumnTitles: boolean, stackableBreakpoint: string) =>
     css({
-      '@container (width <= 700px)': {
-        '&': {
-          ...(hasColumnTitles
-            ? {
-                display: 'grid',
-                gridTemplateColumns: 'max-content 2fr',
-              }
-            : {
-                display: 'flex',
-                flexDirection: 'column',
-              }),
-        },
-      },
+      [`@container (width <= ${stackableBreakpoint})`]: hasColumnTitles
+        ? {
+            display: 'grid',
+            gridTemplateColumns: 'max-content 2fr',
+          }
+        : {
+            display: 'flex',
+            flexDirection: 'column',
+          },
     }),
 });

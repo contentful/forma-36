@@ -1,8 +1,8 @@
 import { css } from '@emotion/css';
 
-export const getTableHeaderStyles = () => ({
+export const getTableHeaderStyles = (stackableBreakpoint: string) => ({
   stackableHeader: css({
-    '@container (width <= 700px)': {
+    [`@container (width <=${stackableBreakpoint})`]: {
       '&': {
         position: 'absolute',
         width: '1px',
