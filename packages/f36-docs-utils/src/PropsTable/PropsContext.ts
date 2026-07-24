@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 import type { PropComponentDefinition } from './types';
 
-export type PropsContextType = {
+type PropsContextType = {
   [key: string]: PropComponentDefinition;
 };
 
