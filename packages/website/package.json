@@ -61,6 +61,7 @@
     "@emotion/babel-preset-css-prop": "^11.12.0",
     "@eslint/eslintrc": "^3",
     "@next/eslint-plugin-next": "^15.5.11",
+    "@types/unist": "^3.0.3",
     "broken-link-checker": "^0.7.8",
     "dotenv": "^16.0.3",
     "prettier": "^3.8.1",
