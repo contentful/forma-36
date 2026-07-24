@@ -15,7 +15,7 @@ export const BaseCheckboxGroupContext = createContext<
   BaseCheckboxGroupContextProps | undefined
 >(undefined);
 
-export const useBaseCheckboxGroupContext = () => {
+const useBaseCheckboxGroupContext = () => {
   const context = useContext(BaseCheckboxGroupContext);
   return context;
 };

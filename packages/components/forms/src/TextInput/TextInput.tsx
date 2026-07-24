@@ -4,7 +4,7 @@ import { TextInputProps } from './types';
 import { useFormControl } from '../FormControl/FormControlContext';
 import type { ExpandProps } from '@contentful/f36-core';
 
-export const TextInputBase = (
+const TextInputBase = (
   {
     className,
     testId = 'cf-ui-text-input',

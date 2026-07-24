@@ -19,7 +19,7 @@ export interface CheckboxGroupProps extends Omit<
   value?: Array<string>;
 }
 
-export const CheckboxGroupBase = (
+const CheckboxGroupBase = (
   props: ExpandProps<CheckboxGroupProps>,
   ref: React.Ref<HTMLDivElement>,
 ) => {
