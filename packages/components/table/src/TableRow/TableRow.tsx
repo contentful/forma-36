@@ -8,7 +8,7 @@ import {
 } from '@contentful/f36-core';
 import { getTableRowStyles } from './TableRow.styles';
 
-export type TableRowInternalProps = CommonProps & {
+type TableRowInternalProps = CommonProps & {
   isSelected?: boolean;
   children: React.ReactNode;
 };

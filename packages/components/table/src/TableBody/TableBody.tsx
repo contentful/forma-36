@@ -6,7 +6,7 @@ import {
   type ExpandProps,
 } from '@contentful/f36-core';
 
-export type TableBodyInternalProps = CommonProps & {
+type TableBodyInternalProps = CommonProps & {
   children: ReactNode;
 };
 

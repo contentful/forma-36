@@ -30,7 +30,7 @@ type TableLayoutProps =
       isFirstColumnSticky?: boolean;
     };
 
-export type TableInternalProps = CommonProps &
+type TableInternalProps = CommonProps &
   TableLayoutProps & {
     /**
      * @default 'top'
