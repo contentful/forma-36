@@ -37,6 +37,7 @@
     "access": "public"
   },
   "devDependencies": {
+    "@contentful/f36-button": "^6.16.2",
     "@testing-library/user-event": "^14.6.1",
     "formik": "^2.4.2",
     "react-hook-form": "^7.15.0"
