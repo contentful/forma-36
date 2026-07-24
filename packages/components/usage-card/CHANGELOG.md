@@ -1,5 +1,17 @@
 # @contentful/f36-usage-card
 
+## 6.16.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-card@6.16.2
+  - @contentful/f36-core@6.16.2
+  - @contentful/f36-icons@6.16.2
+  - @contentful/f36-text-link@6.16.2
+  - @contentful/f36-tooltip@6.16.2
+  - @contentful/f36-typography@6.16.2
+
 ## 6.16.1
 
 ### Patch Changes

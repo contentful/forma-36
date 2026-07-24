@@ -1,5 +1,16 @@
 # Change Log
 
+## 6.16.2
+
+### Patch Changes
+
+- [#3532](https://github.com/contentful/forma-36/pull/3532) [`70eb141`](https://github.com/contentful/forma-36/commit/70eb1413f5e243489b788781cb7ac4ab53cdde0e) Thanks [@Lelith](https://github.com/Lelith)! - Fixes the missing border for scrollable Tables
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.16.2
+  - @contentful/f36-icons@6.16.2
+  - @contentful/f36-typography@6.16.2
+
 ## 6.16.1
 
 ### Patch Changes
