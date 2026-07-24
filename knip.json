@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/knip@6/schema.json",
-  "include": ["dependencies", "devDependencies"],
+  "include": ["files", "dependencies", "devDependencies"],
   "entry": [
     "scripts/**/*.{js,ts,tsx,mjs}",
     "*.config.{js,mjs,ts}",
@@ -22,13 +22,26 @@
     "config": ["scripts/.storybook/main.ts"]
   },
   "workspaces": {
+    ".": {
+      "entry": [
+        "jest.config.js",
+        "scripts/.storybook/{manager,preview}.{ts,tsx}",
+        "scripts/changesets/**/*.test.js",
+        "scripts/plopfile.js",
+        "scripts/plop-templates/**/*.js",
+        "scripts/test/*.{js,ts}"
+      ]
+    },
     "packages/components/*": {
       "entry": [
         "src/index.{js,ts,tsx}",
         "src/**/*.{test,figma}.{js,jsx,ts,tsx}",
         "stories/**/*.{js,jsx,ts,tsx}",
-        "examples/**/*.{js,jsx,ts,tsx}"
+        "**/examples/**/*.{js,jsx,ts,tsx}"
       ]
+    },
+    "packages/cdn": {
+      "entry": ["src/index.js", "static-publish.rc.js"]
     },
     "packages/core": {
       "entry": [
@@ -44,6 +57,9 @@
         "stories/**/*.{ts,tsx}"
       ]
     },
+    "packages/f36-i18n-utils": {
+      "entry": ["src/index.ts", "src/**/*.test.{js,jsx,ts,tsx}"]
+    },
     "packages/forma-36-codemod": {
       "entry": [
         "bin/*.mjs",
@@ -53,6 +69,9 @@
     },
     "packages/forma-36-react-components": {
       "ignoreDependencies": ["@contentful/browserslist-config"]
+    },
+    "packages/forma-36-tokens": {
+      "entry": ["src/tokens/**/*.js"]
     },
     "packages/website": {
       "entry": [
