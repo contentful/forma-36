@@ -23,6 +23,10 @@ export interface AIChatSuggestionPillProps extends CommonProps {
    * @default false
    */
   isActive?: boolean;
+  /**
+   * Optional icon component displayed at the trailing end of the pill
+   */
+  endIcon?: ComponentType<IconProps>;
 }
 
 export const AIChatSuggestionPill = ({
@@ -30,6 +34,7 @@ export const AIChatSuggestionPill = ({
   text,
   onClick,
   isActive = false,
+  endIcon: EndIconComponent,
   className,
   testId = 'cf-ui-ai-chat-suggestion-pill',
   ...otherProps
@@ -79,6 +84,9 @@ export const AIChatSuggestionPill = ({
         >
           {text}
         </Caption>
+        {EndIconComponent && (
+          <EndIconComponent size="tiny" className={styles.endIcon} />
+        )}
       </Flex>
     </button>
   );

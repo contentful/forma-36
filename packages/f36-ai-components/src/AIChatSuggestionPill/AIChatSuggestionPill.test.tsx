@@ -1,4 +1,4 @@
-import { DeviceMobileCameraIcon } from '@contentful/f36-icons';
+import { ArrowRightIcon, DeviceMobileCameraIcon } from '@contentful/f36-icons';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
@@ -97,5 +97,18 @@ describe('AIChatSuggestionPill', () => {
       />,
     );
     expect(screen.getByTestId('custom-test-id')).toBeTruthy();
+  });
+
+  it('renders with an endIcon', () => {
+    render(
+      <AIChatSuggestionPill
+        icon={DeviceMobileCameraIcon}
+        text="Search for something"
+        endIcon={ArrowRightIcon}
+      />,
+    );
+    const pill = screen.getByTestId('cf-ui-ai-chat-suggestion-pill');
+    const svgs = pill.querySelectorAll('svg');
+    expect(svgs.length).toBe(2);
   });
 });

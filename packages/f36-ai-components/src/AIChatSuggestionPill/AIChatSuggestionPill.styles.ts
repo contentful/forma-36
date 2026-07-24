@@ -32,6 +32,12 @@ export function getStyles({
     }),
     suggestionText: css({
       color: isActive ? tokens.gray700 : 'inherit',
+      flex: 1,
+      minWidth: 0,
+    }),
+    endIcon: css({
+      color: tokens.gray500,
+      flexShrink: 0,
     }),
   };
 }
