@@ -106,7 +106,7 @@
     "plop": "^4.0.5",
     "prettier": "3.9.4",
     "pretty-quick": "4.2.2",
-    "react": "19.1.0",
+    "react": "19.2.7",
     "react-dom": "19.1.0",
     "semver": "^7.7.3",
     "simple-git-hooks": "^2.13.1",
