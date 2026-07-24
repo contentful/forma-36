@@ -14,7 +14,7 @@ import {
   type ColorVariant,
 } from './utils';
 
-export const getColorVariantStyles = (
+const getColorVariantStyles = (
   variant: Variant,
   colorVariant: ColorVariant,
   size: number,
