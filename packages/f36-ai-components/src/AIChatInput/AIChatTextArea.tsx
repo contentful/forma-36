@@ -5,7 +5,7 @@ import Document from '@tiptap/extension-document';
 import Paragraph from '@tiptap/extension-paragraph';
 import Text from '@tiptap/extension-text';
 import { Placeholder, UndoRedo } from '@tiptap/extensions';
-import { AIChatInputProps } from './AIChatInput';
+import type { AIChatInputProps } from './AIChatInput';
 import { createAiChatMentionExtension } from './AIChatInputMentionExtention';
 
 type AIChatInputTextAreaProps = Pick<

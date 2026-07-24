@@ -1,5 +1,5 @@
 import { css } from '@emotion/css';
-import { CopyButtonProps } from './CopyButton';
+import type { CopyButtonProps } from './CopyButton';
 
 export const getCopyButtonStyles = ({
   size,

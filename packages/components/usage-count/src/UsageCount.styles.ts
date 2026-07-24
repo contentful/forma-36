@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
-import { Variant } from './UsageCount';
+import type { Variant } from './UsageCount';
 
 const variantToStyles = (variant: Variant) => {
   switch (variant) {

@@ -1,6 +1,6 @@
 import tokens from '@contentful/f36-tokens';
 
-import { AvatarProps } from './Avatar';
+import type { AvatarProps } from './Avatar';
 import { type Variant } from './types';
 
 export type Size = 'tiny' | 'small' | 'medium' | 'large';

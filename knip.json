@@ -10,7 +10,8 @@
     "nsTypes",
     "enumMembers",
     "namespaceMembers",
-    "duplicates"
+    "duplicates",
+    "cycles"
   ],
   "entry": [
     "scripts/**/*.{js,ts,tsx,mjs}",

@@ -1,7 +1,7 @@
 import React, { HTMLAttributes, ReactNode } from 'react';
 import { useTooltipContext } from './TooltipContext';
 import { useMergeRefs } from '@floating-ui/react';
-import { TooltipInternalProps } from './Tooltip';
+import type { TooltipInternalProps } from './Tooltip';
 import { cx } from '@emotion/css';
 
 function getChildRef(

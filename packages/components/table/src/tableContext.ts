@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import { TableProps } from './Table';
+import type { TableProps } from './Table';
 
 type TableContext = {
   verticalAlign?: TableProps['verticalAlign'];

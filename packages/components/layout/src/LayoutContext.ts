@@ -1,5 +1,5 @@
 import React from 'react';
-import { LayoutProps } from './Layout';
+import type { LayoutProps } from './Layout';
 
 export type LayoutContextType = {
   variant: NonNullable<LayoutProps['variant']>;
