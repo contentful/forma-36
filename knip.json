@@ -55,6 +55,7 @@
         "**/examples/**/*.{js,jsx,ts,tsx}"
       ],
       "ignoreIssues": {
+        "stories/**/*.{js,jsx,ts,tsx}": ["unlisted"],
         "**/examples/**/*.{js,jsx,ts,tsx}": ["unlisted"]
       }
     },
@@ -69,6 +70,7 @@
         "stories/**/*.{js,jsx,ts,tsx}"
       ],
       "ignoreIssues": {
+        "stories/**/*.{js,jsx,ts,tsx}": ["unlisted"],
         "src/**/examples/**/*.{js,jsx,ts,tsx}": ["unlisted"]
       }
     },
@@ -76,7 +78,10 @@
       "entry": [
         "src/**/*.test.{ts,tsx}",
         "stories/**/*.{ts,tsx}"
-      ]
+      ],
+      "ignoreIssues": {
+        "stories/**/*.{ts,tsx}": ["unlisted"]
+      }
     },
     "packages/f36-i18n-utils": {
       "entry": ["src/index.ts", "src/**/*.test.{js,jsx,ts,tsx}"]
