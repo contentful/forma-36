@@ -1,6 +1,17 @@
 {
   "$schema": "https://unpkg.com/knip@6/schema.json",
-  "include": ["files", "dependencies", "devDependencies", "exports", "types"],
+  "include": [
+    "files",
+    "dependencies",
+    "devDependencies",
+    "exports",
+    "nsExports",
+    "types",
+    "nsTypes",
+    "enumMembers",
+    "namespaceMembers",
+    "duplicates"
+  ],
   "entry": [
     "scripts/**/*.{js,ts,tsx,mjs}",
     "*.config.{js,mjs,ts}",
