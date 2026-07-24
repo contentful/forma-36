@@ -20,8 +20,6 @@
   "homepage": "https://github.com/contentful/forma-36#readme",
   "scripts": {
     "build": "turbo run build",
-    "commit": "git-cz",
-    "commitmsg": "validate-commit-msg",
     "generate": "plop --plopfile scripts/plopfile.js",
     "lint": "npm run-script lint:js && npm run-script lint:packages",
     "lint:js": "eslint packages --ext .js,.jsx,.ts,.tsx",
