@@ -7,7 +7,7 @@ import {
   screen,
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Button } from '@contentful/f36-components';
+import { Button } from '@contentful/f36-button';
 
 import { Menu } from '.';
 

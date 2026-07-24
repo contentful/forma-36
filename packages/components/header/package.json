@@ -34,5 +34,8 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "access": "public"
+  },
+  "devDependencies": {
+    "@contentful/f36-forms": "^6.16.2"
   }
 }

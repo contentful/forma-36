@@ -14,6 +14,7 @@
     "@floating-ui/react": "^0.27.16"
   },
   "devDependencies": {
+    "@contentful/f36-button": "^6.16.2",
     "@testing-library/user-event": "^14.6.1",
     "@types/node": "^24.9.2",
     "react-router-dom": "^7.17.0"

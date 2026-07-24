@@ -36,5 +36,8 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "access": "public"
+  },
+  "devDependencies": {
+    "@contentful/f36-usage-count": "^6.16.2"
   }
 }
