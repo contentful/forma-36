@@ -18,7 +18,7 @@ import { AutocompleteItems } from './AutocompleteItems';
 import { getAutocompleteStyles } from './Autocomplete.styles';
 import tokens from '@contentful/f36-tokens';
 
-export interface GenericGroupType<ItemType> {
+interface GenericGroupType<ItemType> {
   groupTitle: string;
   options: ItemType[];
 }

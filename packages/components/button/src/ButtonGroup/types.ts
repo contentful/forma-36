@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 
 export type ButtonGroupVariants = 'spaced' | 'merged';
 
-export type ButtonGroupSpacing = SpacingTokens;
+type ButtonGroupSpacing = SpacingTokens;
 
 interface BaseButtonGroupProps extends CommonProps {
   /**

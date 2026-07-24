@@ -14,7 +14,7 @@ export const getNavbarItemActiveStyles = () =>
     },
   });
 
-export const getNavbarItemDisabledStyles = () =>
+const getNavbarItemDisabledStyles = () =>
   css({
     border: 'none',
     opacity: 0.5,
