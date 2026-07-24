@@ -1,12 +1,20 @@
 {
   "$schema": "https://unpkg.com/knip@6/schema.json",
   "include": ["files", "dependencies", "devDependencies"],
+  "entry": [
+    "scripts/**/*.{js,ts,tsx,mjs}",
+    "*.config.{js,mjs,ts}",
+    "tsup.config.ts"
+  ],
   "ignoreDependencies": [
     "@changesets/cli",
     "@contentful/browserslist-config",
+    "@testing-library/jest-dom",
     "babel-jest",
     "chromatic",
+    "globby",
     "jest-environment-jsdom",
+    "jest-watch-typeahead",
     "ts-jest"
   ],
   "jest": false,
