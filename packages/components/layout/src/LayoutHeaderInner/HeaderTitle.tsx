@@ -5,7 +5,7 @@ import {
   type HeadingElement,
 } from '@contentful/f36-typography';
 import { getHeaderTitleStyles } from './HeaderTitle.styles';
-import { LayoutHeaderInnerProps } from './LayoutHeaderInner';
+import type { LayoutHeaderInnerProps } from './LayoutHeaderInner';
 
 type HeaderTitleProps = {
   title: LayoutHeaderInnerProps['title'];

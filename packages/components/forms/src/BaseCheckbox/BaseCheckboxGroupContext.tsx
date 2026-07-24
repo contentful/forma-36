@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 import { BaseCheckboxProps } from './BaseCheckbox';
-import { BaseCheckboxGroupProps } from './BaseCheckboxGroup';
+import type { BaseCheckboxGroupProps } from './BaseCheckboxGroup';
 
 export type BaseCheckboxGroupContextProps = Omit<
   BaseCheckboxGroupProps,
