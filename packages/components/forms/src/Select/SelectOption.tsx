@@ -1,7 +1,7 @@
 import React from 'react';
 import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 
-export type OptionInternalProps = CommonProps & {
+type OptionInternalProps = CommonProps & {
   isDisabled?: boolean;
 };
 

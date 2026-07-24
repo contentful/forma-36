@@ -12,8 +12,7 @@ import { Text } from '@contentful/f36-typography';
 import { useFormControl } from '../FormControl/FormControlContext';
 import { useDensity } from '@contentful/f36-utils';
 
-export interface ValidationMessageInternalProps
-  extends CommonProps, MarginProps {
+interface ValidationMessageInternalProps extends CommonProps, MarginProps {
   children: React.ReactNode;
 }
 
