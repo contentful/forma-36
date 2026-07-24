@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@types/node": "^24.9.2",
-    "react-router-dom": "^7.17.0"
+    "react-router-dom": "^7.18.1"
   },
   "peerDependencies": {
     "react": "^18.3.0 || >=19.1.0",
