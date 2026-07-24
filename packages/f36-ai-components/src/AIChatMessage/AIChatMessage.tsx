@@ -31,7 +31,7 @@ import {
 } from '@contentful/f36-components';
 import { cx } from '@emotion/css';
 
-export type AIChatMessageRole = 'user' | 'assistant';
+type AIChatMessageRole = 'user' | 'assistant';
 
 type ComponentPropOverrideHandler<T> = (
   defaultProps: React.PropsWithChildren<T>,
@@ -98,7 +98,7 @@ export interface AIChatMessageProps extends CommonProps {
  * @param props - The props react-markdown passes to the `code` renderer.
  * @returns `true` for block code, `false` for inline code.
  */
-export function isBlockCode(props: {
+function isBlockCode(props: {
   className?: string;
   children?: React.ReactNode;
 }): boolean {
