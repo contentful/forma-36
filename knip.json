@@ -4,6 +4,8 @@
     "files",
     "dependencies",
     "devDependencies",
+    "binaries",
+    "unresolved",
     "exports",
     "nsExports",
     "types",
@@ -42,7 +44,8 @@
         "scripts/plopfile.js",
         "scripts/plop-templates/**/*.js",
         "scripts/test/*.{js,ts}"
-      ]
+      ],
+      "ignoreUnresolved": ["^\\.\\./\\.\\./utils(?:/config)?$"]
     },
     "packages/components/*": {
       "entry": [
