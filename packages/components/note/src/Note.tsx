@@ -35,7 +35,7 @@ const icons = {
 export type NoteVariant =
   'negative' | 'positive' | 'primary' | 'warning' | 'neutral' | 'premium';
 
-export type NoteInternalProps = CommonProps & {
+type NoteInternalProps = CommonProps & {
   /**
    * Determines style variation of Note component
    */

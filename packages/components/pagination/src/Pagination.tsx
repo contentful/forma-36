@@ -30,7 +30,7 @@ type NavigationButtonsProps = {
    */
   previousAriaLabel?: string;
 };
-export interface BasePaginationProps extends CommonProps {
+interface BasePaginationProps extends CommonProps {
   /**
    * Sets which page is active on the Pagination
    * @default 0

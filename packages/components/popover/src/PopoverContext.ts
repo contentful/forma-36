@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePopover } from './usePopover';
 
-export type PopoverContextType =
+type PopoverContextType =
   | (ReturnType<typeof usePopover> & {
       setLabelId: React.Dispatch<React.SetStateAction<string | undefined>>;
       setDescriptionId: React.Dispatch<
