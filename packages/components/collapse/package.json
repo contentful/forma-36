@@ -31,5 +31,8 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "access": "public"
+  },
+  "devDependencies": {
+    "@testing-library/user-event": "^14.6.1"
   }
 }

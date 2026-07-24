@@ -31,10 +31,10 @@
   },
   "dependencies": {
     "@contentful/f36-button": "^6.16.2",
-    "@contentful/f36-pill-next": "6.0.1-alpha.7",
     "@contentful/f36-components": "^6.16.2",
     "@contentful/f36-core": "^6.16.2",
     "@contentful/f36-icons": "^6.16.2",
+    "@contentful/f36-pill-next": "6.0.1-alpha.7",
     "@contentful/f36-tokens": "^6.2.1",
     "@contentful/f36-typography": "^6.16.2",
     "@contentful/f36-utils": "^6.1.2",
@@ -44,6 +44,7 @@
     "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
+    "@testing-library/user-event": "^14.6.1",
     "@tiptap/core": "3.27.3",
     "@tiptap/extension-document": "3.27.3",
     "@tiptap/extension-mention": "3.27.3",

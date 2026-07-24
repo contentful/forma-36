@@ -15,7 +15,8 @@
   },
   "devDependencies": {
     "@contentful/f36-icon": "^6.16.2",
-    "@contentful/f36-icons": "^6.16.2"
+    "@contentful/f36-icons": "^6.16.2",
+    "@testing-library/user-event": "^14.6.1"
   },
   "peerDependencies": {
     "react": "^18.3.0 || >=19.1.0",
