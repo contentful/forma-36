@@ -129,12 +129,12 @@ describe('TableNext', () => {
   describe('TableNext.Head', () => {
     it('renders the component as sticky', () => {
       const { container } = render(
-        <TableNext>
-          <TableNext.Head isSticky>
+        <TableNext isHeaderSticky columnTitles={['TableNext Heading']}>
+          <TableNext.Body>
             <TableNext.Row>
               <TableNext.Cell>test</TableNext.Cell>
             </TableNext.Row>
-          </TableNext.Head>
+          </TableNext.Body>
         </TableNext>,
       );
 
