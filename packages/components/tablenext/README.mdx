@@ -55,7 +55,7 @@ For large tables that need both horizontal and vertical scrolling, combine `layo
 
 ### Stacked responsive behaviour with column titles
 
-For containers smaller than `700px` the table will be presented as 90° flipped, stacking all table cells of a single table row underneath each other with column titles next to them.
+For containers smaller than the `stackableBreakpoint` (default `700px`) the table will be presented as 90° flipped, stacking all table cells of a single table row underneath each other with column titles next to them. Pass `stackableBreakpoint` to override the breakpoint — numbers are treated as `px`, strings accept `px`, `rem`, or `em`.
 
 ```jsx file=./examples/StackableWithTitleExample.tsx
 
@@ -63,7 +63,7 @@ For containers smaller than `700px` the table will be presented as 90° flipped,
 
 ### Stacked responsive behaviour without titles
 
-For containers smaller than `700px` the table will be presented as 90° flipped, stacking all table cells of a single row underneatheach other.
+For containers smaller than the `stackableBreakpoint` (default `700px`) the table will be presented as 90° flipped, stacking all table cells of a single row underneath each other. Pass `stackableBreakpoint` to override the breakpoint — numbers are treated as `px`, strings accept `px`, `rem`, or `em`.
 
 ```jsx file=./examples/StackableExample.tsx
 

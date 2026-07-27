@@ -34,19 +34,20 @@ Those tables should stay on `Table` until `TableNext` supports custom header com
 
 ## Summary of root prop changes
 
-| Prop                  | Old Type / Behavior                                       | New Type / Behavior                                 | Default (Old -> New)         | Status                                                                                                      |
-| --------------------- | --------------------------------------------------------- | --------------------------------------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `children`            | `React.ReactNode`                                         | `React.ReactNode`                                   | n/a                          | Unchanged                                                                                                   |
-| `layout`              | `"inline"`, `"embedded"`, `"scrollable"`                  | `"scrollable"`, `"stackable"`                       | `"inline"` -> `"scrollable"` | Changed. Use `variant` for current visual variants. There is no non-responsive table layout in `TableNext`. |
-| `variant`             | n/a                                                       | `"inline"`, `"embedded"`                            | n/a -> `"inline"`            | New                                                                                                         |
-| `isFirstColumnSticky` | Available only with `layout="scrollable"`                 | Available only with `layout="scrollable"`           | `false` -> `false`           | Mostly unchanged                                                                                            |
-| `verticalAlign`       | `"baseline"`, `"bottom"`, `"middle"`, `"top"`             | `"baseline"`, `"bottom"`, `"middle"`, `"top"`       | `"top"` -> `"top"`           | Unchanged                                                                                                   |
-| `columnTitles`        | n/a                                                       | `Array<string>`                                     | n/a                          | New. Required for generated headers and stackable row labels.                                               |
-| `isHeaderSticky`      | Controlled by `Table.Head isSticky` internally            | Root prop for generated headers from `columnTitles` | n/a -> `false`               | New root prop                                                                                               |
-| `offsetTop`           | Prop on `Table.Head`                                      | Root prop for generated headers from `columnTitles` | `0` -> `0`                   | Moved                                                                                                       |
-| `testId`              | `"cf-ui-table"`                                           | `"cf-ui-table-next"`                                | Changed                      | Changed                                                                                                     |
-| custom header content | Supported through `Table.Head` composition                | Not supported                                       | n/a                          | Removed                                                                                                     |
-| sortable headers      | Supported through `Table.Cell isSortable` in `Table.Head` | Not supported for generated heads                   | n/a                          | Removed for `TableNext`                                                                                     |
+| Prop                  | Old Type / Behavior                                       | New Type / Behavior                                              | Default (Old -> New)         | Status                                                                                                      |
+| --------------------- | --------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `children`            | `React.ReactNode`                                         | `React.ReactNode`                                                | n/a                          | Unchanged                                                                                                   |
+| `layout`              | `"inline"`, `"embedded"`, `"scrollable"`                  | `"scrollable"`, `"stackable"`                                    | `"inline"` -> `"scrollable"` | Changed. Use `variant` for current visual variants. There is no non-responsive table layout in `TableNext`. |
+| `variant`             | n/a                                                       | `"inline"`, `"embedded"`                                         | n/a -> `"inline"`            | New                                                                                                         |
+| `isFirstColumnSticky` | Available only with `layout="scrollable"`                 | Available only with `layout="scrollable"`                        | `false` -> `false`           | Mostly unchanged                                                                                            |
+| `verticalAlign`       | `"baseline"`, `"bottom"`, `"middle"`, `"top"`             | `"baseline"`, `"bottom"`, `"middle"`, `"top"`                    | `"top"` -> `"top"`           | Unchanged                                                                                                   |
+| `columnTitles`        | n/a                                                       | `Array<string>`                                                  | n/a                          | New. Required for generated headers and stackable row labels.                                               |
+| `stackableBreakpoint` | n/a                                                       | `` number \| `${number}px` \| `${number}rem` \| `${number}em` `` | n/a -> `700` (px)            | New. Only available when `layout="stackable"`. Numbers are treated as px.                                   |
+| `isHeaderSticky`      | Controlled by `Table.Head isSticky` internally            | Root prop for generated headers from `columnTitles`              | n/a -> `false`               | New root prop                                                                                               |
+| `offsetTop`           | Prop on `Table.Head`                                      | Root prop for generated headers from `columnTitles`              | `0` -> `0`                   | Moved                                                                                                       |
+| `testId`              | `"cf-ui-table"`                                           | `"cf-ui-table-next"`                                             | Changed                      | Changed                                                                                                     |
+| custom header content | Supported through `Table.Head` composition                | Not supported                                                    | n/a                          | Removed                                                                                                     |
+| sortable headers      | Supported through `Table.Cell isSortable` in `Table.Head` | Not supported for generated heads                                | n/a                          | Removed for `TableNext`                                                                                     |
 
 ---
 
@@ -131,6 +132,20 @@ If you want the table to become a stacked layout on narrow containers, use:
   ...
 </TableNext>
 ```
+
+The breakpoint at which the table switches from stacked to tabular layout defaults to `700px`. Pass `stackableBreakpoint` to override it. Numbers are treated as px; strings accept `px`, `rem`, or `em` units.
+
+```tsx
+<TableNext
+  layout="stackable"
+  columnTitles={['Name', 'Email', 'Role']}
+  stackableBreakpoint={500}
+>
+  ...
+</TableNext>
+```
+
+`stackableBreakpoint` is only valid with `layout="stackable"`. TypeScript will reject it on `layout="scrollable"`.
 
 `isFirstColumnSticky` is only valid with `layout="scrollable"`. It should not be used with `layout="stackable"`.
 
@@ -314,7 +329,7 @@ NEW:
 3. Replace `layout="inline"` with `variant="inline"` or remove it if the default is enough.
 4. Replace `layout="embedded"` with `variant="embedded"`.
 5. Keep `layout="scrollable"` only when you want horizontal scrolling.
-6. Add `layout="stackable"` only for tables that should stack on narrow containers.
+6. Add `layout="stackable"` only for tables that should stack on narrow containers; optionally set `stackableBreakpoint` to override the default 700px breakpoint.
 7. Move simple header text into `columnTitles` when using generated headers or stackable layout.
 8. Do not migrate tables that need sortable headers, check-all checkboxes, or custom header components.
 9. Remove direct `Head` usage; generated table heads come from `columnTitles`.
