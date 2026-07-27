@@ -7,7 +7,6 @@ import { Tooltip } from './Tooltip';
 import { Paragraph } from '@contentful/f36-typography';
 import { StarIcon } from '@contentful/f36-icons';
 import { Icon } from '../../icon/src';
-import { Button } from '@contentful/f36-button';
 
 jest.mock('@contentful/f36-core', () => {
   const actual = jest.requireActual('@contentful/f36-core');
@@ -60,10 +59,12 @@ describe('Tooltip', () => {
     );
   });
 
-  it('renders around an Button', async () => {
+  it('renders around a button', async () => {
     render(
       <Tooltip content="Tooltip content">
-        <Button testId="hover-me">Hover me</Button>
+        <button type="button" data-test-id="hover-me">
+          Hover me
+        </button>
       </Tooltip>,
     );
     await userEvent.hover(screen.getByTestId('hover-me'));
@@ -107,10 +108,12 @@ describe('Tooltip', () => {
     consoleErrorSpy.mockRestore();
   });
 
-  it('renders around a disabled Button', async () => {
+  it('renders around a disabled button', async () => {
     render(
       <Tooltip content="Tooltip content" data-test-id="hover-me">
-        <Button isDisabled>Hover me</Button>
+        <button type="button" disabled>
+          Hover me
+        </button>
       </Tooltip>,
     );
     await userEvent.hover(screen.getByTestId('hover-me'));

@@ -1,7 +1,6 @@
 import React from 'react';
 import figma from '@figma/code-connect';
 import { Tooltip } from './Tooltip';
-import { Button } from '@contentful/f36-button';
 
 figma.connect(
   Tooltip,
@@ -18,7 +17,7 @@ figma.connect(
     },
     example: ({ content, placement }) => (
       <Tooltip content={content} placement={placement}>
-        <Button>Trigger</Button>
+        <button type="button">Trigger</button>
       </Tooltip>
     ),
   },
