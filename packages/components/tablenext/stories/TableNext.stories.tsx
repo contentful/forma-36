@@ -73,7 +73,7 @@ export const DefaultWithTitles: StoryObj = {
   render: (args) => {
     return (
       <div style={{ width: '800px' }}>
-        <TableNext {...args} columnTitles={tableHeaderTitles}>
+        <TableNext columnTitles={tableHeaderTitles} {...args}>
           <TableNext.Body>
             <TableNext.Row>
               <TableNext.Cell>Jane Roe</TableNext.Cell>
@@ -256,7 +256,7 @@ const withContentHeaderTitles = [
 export const WithContent: StoryObj = {
   render: (args) => (
     <div style={{ width: '960px' }}>
-      <TableNext {...args} columnTitles={withContentHeaderTitles}>
+      <TableNext columnTitles={withContentHeaderTitles} {...args}>
         <TableNext.Body>
           {withContentTableData.map((item) => (
             <TableNext.Row key={item.name}>
@@ -330,7 +330,7 @@ export const Stackable: StoryObj = {
             TableNext in stackable layout. When the surrounding container is
             smaller than 700px the table is displayed rotated by 90°.
           </Note>
-          <TableNext {...args} layout="stackable">
+          <TableNext layout="stackable" {...args}>
             <TableNext.Body>
               {withContentTableData.map((item) => (
                 <TableNext.Row key={item.name}>
@@ -378,9 +378,9 @@ export const StackableWithTitles: StoryObj = {
             titles are shown next to the table cell values.
           </Note>
           <TableNext
-            {...args}
             layout="stackable"
             columnTitles={withContentHeaderTitles}
+            {...args}
           >
             <TableNext.Body>
               {withContentTableData.map((item) => (
@@ -428,9 +428,9 @@ export const Scrollable: StoryObj = {
             TableNext with overflow-x scrollbar
           </Note>
           <TableNext
-            {...args}
             layout="scrollable"
             columnTitles={contentTableHeaderData}
+            {...args}
           >
             <TableNext.Body>
               {withLongContentTableData.map((item) => (
@@ -482,10 +482,10 @@ export const ScrollableStickyFirstColumn: StoryObj = {
             TableNext with overflow-x and fixed first column
           </Note>
           <TableNext
-            {...args}
             layout="scrollable"
             isFirstColumnSticky={true}
             columnTitles={contentTableHeaderData}
+            {...args}
           >
             <TableNext.Body>
               {withLongContentTableData.map((item) => (
@@ -548,11 +548,11 @@ export const ScrollableStickyHeaderAndFirstColumn: StoryObj = {
               the layout.body are additionally contained in a flexbox
             </Note>
             <TableNext
-              {...args}
               layout="scrollable"
               isFirstColumnSticky
               isHeaderSticky
               columnTitles={contentTableHeaderData}
+              {...args}
             >
               <TableNext.Body>
                 {withLongContentTableData.map((item) => (
