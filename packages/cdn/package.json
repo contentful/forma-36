@@ -17,7 +17,7 @@
   "scripts": {
     "deploy": "fastly compute deploy",
     "prebuild": "compute-js-static-publish --build-static",
-    "build": "pnpm prebuild && env -i $(which node) ./node_modules/@fastly/js-compute/js-compute-runtime-cli.js ./src/index.js ./bin/main.wasm",
+    "build": "pnpm prebuild && env -i $(command -v node) ./node_modules/@fastly/js-compute/js-compute-runtime-cli.js ./src/index.js ./bin/main.wasm",
     "serve": "fastly compute serve"
   },
   "optionalDependencies": {
