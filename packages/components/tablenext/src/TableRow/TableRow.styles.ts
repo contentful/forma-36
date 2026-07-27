@@ -36,12 +36,24 @@ export const getTableRowStyles = () => ({
           maxWidth: 'unset !important',
           width: '100% !important',
           borderBottom: 'none',
+          padding: `${tokens.spacing2Xs} ${tokens.spacingS}`,
         },
         'td:first-child': {
           gridColumn: '1 / 3',
-          borderRadius: tokens.borderRadiusMedium,
+          borderTopLeftRadius: tokens.borderRadiusMedium,
+          borderTopRightRadius: tokens.borderRadiusMedium,
           fontWeight: tokens.fontWeightDemiBold,
+          paddingTop: tokens.spacingS,
         },
+        'td:last-child': {
+          paddingBottom: tokens.spacingS,
+        },
+      },
+      'td:first-child': {
+        borderTopLeftRadius: tokens.borderRadiusMedium,
+      },
+      'td:last-child': {
+        borderTopRightRadius: tokens.borderRadiusMedium,
       },
     }),
 

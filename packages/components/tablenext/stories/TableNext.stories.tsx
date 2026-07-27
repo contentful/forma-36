@@ -25,14 +25,12 @@ export default {
   parameters: {
     propTypes: [
       TableNext['__docgenInfo'],
-      TableNext.Head['__docgenInfo'],
       TableNext.Body['__docgenInfo'],
       TableNext.Cell['__docgenInfo'],
       TableNext.Row['__docgenInfo'],
     ],
   },
   subcomponents: {
-    TableHead: TableNext.Head,
     TableBody: TableNext.Body,
     TableCell: TableNext.Cell,
     TableRow: TableNext.Row,
@@ -48,6 +46,30 @@ const tableHeaderTitles = [
 ];
 
 export const Default: StoryObj = {
+  render: (args) => {
+    return (
+      <div style={{ width: '800px' }}>
+        <TableNext {...args}>
+          <TableNext.Body>
+            <TableNext.Row>
+              <TableNext.Cell>Jane Roe</TableNext.Cell>
+              <TableNext.Cell>jane@roe.com</TableNext.Cell>
+              <TableNext.Cell>CEO</TableNext.Cell>
+              <TableNext.Cell>August 29, 2018</TableNext.Cell>
+            </TableNext.Row>
+            <TableNext.Row>
+              <TableNext.Cell>John Doe</TableNext.Cell>
+              <TableNext.Cell>john@doe.com</TableNext.Cell>
+              <TableNext.Cell>CTO</TableNext.Cell>
+              <TableNext.Cell>July 27, 2019</TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Body>
+        </TableNext>
+      </div>
+    );
+  },
+};
+export const DefaultWithTitles: StoryObj = {
   render: (args) => {
     return (
       <div style={{ width: '800px' }}>
