@@ -7,7 +7,7 @@ export type TableContext = {
   isStackable?: boolean;
   columnTitles?: Array<string>;
   hasColumnTitles?: boolean;
-  stackableBreakpoint: StackableBreakpointValue;
+  stackableBreakpoint?: StackableBreakpointValue;
 };
 
 export const TableContext = createContext<TableContext>({});
