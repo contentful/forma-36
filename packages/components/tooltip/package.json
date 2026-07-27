@@ -35,7 +35,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "@contentful/f36-button": "^6.16.2",
     "@contentful/f36-icons": "^6.16.2",
     "@contentful/f36-typography": "^6.16.2",
     "@testing-library/user-event": "^14.6.1"
