@@ -36,17 +36,33 @@ export const TableRow = forwardRef<
       isStackable,
       columnTitles,
       hasColumnTitles = false,
-      stackableBreakpoint,
+      stackableBreakpoint = '700px',
     } = useTableContext();
 
     const originalCells = Children.toArray(children);
     const updatedCells: React.ReactNode[] = [];
+    const columnTitleCount = columnTitles?.length ?? 0;
+    const cellCount = Math.max(columnTitleCount, originalCells.length);
 
-    columnTitles?.forEach((title, i) => {
-      if (isStackable && i > 0) {
+    if (
+      process.env.NODE_ENV !== 'production' &&
+      hasColumnTitles &&
+      columnTitleCount !== originalCells.length
+    ) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `[TableNext.Row] Some row cells do not have matching column titles, which can make the cell content harder to understand. ` +
+          `Received ${columnTitleCount} columnTitles for ${originalCells.length} row cells.`,
+      );
+    }
+
+    for (let i = 0; i < cellCount; i++) {
+      const title = columnTitles?.[i];
+
+      if (isStackable && i > 0 && title) {
         updatedCells.push(
           <TableCell
-            key={`stacked-title-${title.replace(/\s+/g, '')}`}
+            key={`stacked-title-${title.replace(/\s+/g, '')}-${i}`}
             className={styles.stackableTitle(stackableBreakpoint)}
             aria-hidden
           >
@@ -57,7 +73,7 @@ export const TableRow = forwardRef<
       if (originalCells.length > i) {
         updatedCells.push(originalCells[i]);
       }
-    });
+    }
 
     return (
       <Box
