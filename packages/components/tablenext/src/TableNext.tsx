@@ -19,10 +19,7 @@ export type StackableBreakpointValue = Exclude<StackableBreakpoint, number>;
 
 type TableNextLayoutProps =
   | {
-      /**
-       * @default 'scrollable'
-       */
-      layout?: 'stackable';
+      layout: 'stackable';
 
       /**
        * Container width at which the table switches to the stacked layout.
@@ -40,7 +37,10 @@ type TableNextLayoutProps =
       isFirstColumnSticky?: false;
     }
   | {
-      layout: 'scrollable';
+      /**
+       * @default 'scrollable'
+       */
+      layout?: 'scrollable';
 
       /**
        * Only supported with layout="stackable".
@@ -56,11 +56,13 @@ type TableNextLayoutProps =
 type TableHeaderTitleProps =
   | {
       columnTitles?: undefined;
-      isHeaderSticky?: false;
+      isHeaderSticky?: never;
+      offsetTop?: never;
     }
   | {
-      columnTitles?: Array<string>;
+      columnTitles: Array<string>;
       isHeaderSticky?: boolean;
+      offsetTop?: number | string;
     };
 
 type TableNextInternalProps = CommonProps &
@@ -74,7 +76,6 @@ type TableNextInternalProps = CommonProps &
       'baseline' | 'bottom' | 'middle' | 'top'
     >;
     variant?: 'inline' | 'embedded';
-    offsetTop?: number | string;
   };
 
 export type TableNextProps = PropsWithHTMLElement<
