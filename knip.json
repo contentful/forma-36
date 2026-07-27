@@ -53,7 +53,10 @@
         "src/**/*.{test,figma}.{js,jsx,ts,tsx}",
         "stories/**/*.{js,jsx,ts,tsx}",
         "**/examples/**/*.{js,jsx,ts,tsx}"
-      ]
+      ],
+      "ignoreIssues": {
+        "**/examples/**/*.{js,jsx,ts,tsx}": ["unlisted"]
+      }
     },
     "packages/cdn": {
       "entry": ["src/index.js", "static-publish.rc.js"]
@@ -64,7 +67,10 @@
         "src/**/*.test.{js,jsx,ts,tsx}",
         "src/**/examples/**/*.{js,jsx,ts,tsx}",
         "stories/**/*.{js,jsx,ts,tsx}"
-      ]
+      ],
+      "ignoreIssues": {
+        "src/**/examples/**/*.{js,jsx,ts,tsx}": ["unlisted"]
+      }
     },
     "packages/f36-ai-components": {
       "entry": [
