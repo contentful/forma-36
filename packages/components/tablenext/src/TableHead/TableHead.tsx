@@ -13,7 +13,7 @@ import {
 } from '../TableCell/TableCellContext';
 import { getTableHeadStyles } from './TableHead.styles';
 
-export type TableHeadInternalProps = CommonProps & {
+type TableHeadInternalProps = CommonProps & {
   isSticky?: boolean;
   offsetTop?: number | string;
   children: React.ReactNode;

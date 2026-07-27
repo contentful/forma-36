@@ -8,9 +8,9 @@ import {
 } from '@contentful/f36-core';
 import { getTableRowStyles } from './TableRow.styles';
 import { useTableContext } from '../tableContext';
-import { TableCell } from '../';
+import { TableCell } from '../TableCell/TableCell';
 
-export type TableRowInternalProps = CommonProps & {
+type TableRowInternalProps = CommonProps & {
   isSelected?: boolean;
   children: React.ReactNode;
 };

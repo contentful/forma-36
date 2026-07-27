@@ -9,7 +9,7 @@ import {
 import { useTableContext } from '../tableContext';
 import { getTableBodyStyles } from './TableBody.styles';
 
-export type TableBodyInternalProps = CommonProps & {
+type TableBodyInternalProps = CommonProps & {
   children: ReactNode;
 };
 
@@ -25,7 +25,7 @@ function TableBodyBase(
   const {
     isStackable,
     hasColumnTitles = false,
-    stackableBreakpoint,
+    stackableBreakpoint = '700px',
   } = useTableContext();
   const styles = getTableBodyStyles();
   return (

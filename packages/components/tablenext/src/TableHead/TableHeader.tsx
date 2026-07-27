@@ -1,7 +1,8 @@
 import React from 'react';
 import { cx } from '@emotion/css';
 import { TableHead } from './TableHead';
-import { TableRow, TableCell } from '../';
+import { TableRow } from '../TableRow/TableRow';
+import { TableCell } from '../TableCell/TableCell';
 import { getTableHeaderStyles } from './TableHeader.styles';
 import { useTableContext } from '../tableContext';
 
