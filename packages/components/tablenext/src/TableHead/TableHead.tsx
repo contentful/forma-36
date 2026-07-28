@@ -1,5 +1,5 @@
 import { cx } from '@emotion/css';
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useEffect } from 'react';
 import {
   Box,
   type CommonProps,
@@ -12,6 +12,7 @@ import {
   contextOptions,
 } from '../TableCell/TableCellContext';
 import { getTableHeadStyles } from './TableHead.styles';
+import { useTableContext } from '../tableContext';
 
 type TableHeadInternalProps = CommonProps & {
   isSticky?: boolean;
@@ -40,9 +41,18 @@ export const TableHead = forwardRef<
     forwardedRef,
   ) => {
     const styles = getTableHeadStyles();
+    const {
+      isStackable,
+      stackableBreakpoint = '700px',
+      setIsHeaderSticky,
+    } = useTableContext();
+    useEffect(() => {
+      setIsHeaderSticky?.(isSticky);
+    }, [isSticky, setIsHeaderSticky]);
     const classNames = cx(
       styles.root,
       { [styles.sticky]: isSticky },
+      isStackable && styles.stackableHidden(stackableBreakpoint),
       className,
     );
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { TableNext } from '@contentful/f36-table-next';
 
-export default function TableBasicUsageExample() {
+export default function StackableExample() {
   return (
     <TableNext layout="stackable">
       <TableNext.Body>

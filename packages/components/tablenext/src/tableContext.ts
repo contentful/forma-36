@@ -4,6 +4,7 @@ import type { TableNextProps, StackableBreakpointValue } from './TableNext';
 type TableContext = {
   verticalAlign?: TableNextProps['verticalAlign'];
   isHeaderSticky?: boolean;
+  setIsHeaderSticky?: (value: boolean) => void;
   isStackable?: boolean;
   columnTitles?: Array<string>;
   hasColumnTitles?: boolean;

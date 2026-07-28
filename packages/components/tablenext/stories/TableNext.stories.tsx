@@ -26,11 +26,13 @@ export default {
     propTypes: [
       TableNext['__docgenInfo'],
       TableNext.Body['__docgenInfo'],
+      TableNext.Head['__docgenInfo'],
       TableNext.Cell['__docgenInfo'],
       TableNext.Row['__docgenInfo'],
     ],
   },
   subcomponents: {
+    TableHead: TableNext.Head,
     TableBody: TableNext.Body,
     TableCell: TableNext.Cell,
     TableRow: TableNext.Row,
@@ -38,42 +40,19 @@ export default {
   title: 'Components/TableNext',
 } as Meta;
 
-const tableHeaderTitles = [
-  'Name',
-  'Email',
-  'Organization role',
-  'Last activity',
-];
-
 export const Default: StoryObj = {
   render: (args) => {
     return (
       <div style={{ width: '800px' }}>
         <TableNext {...args}>
-          <TableNext.Body>
+          <TableNext.Head>
             <TableNext.Row>
-              <TableNext.Cell>Jane Roe</TableNext.Cell>
-              <TableNext.Cell>jane@roe.com</TableNext.Cell>
-              <TableNext.Cell>CEO</TableNext.Cell>
-              <TableNext.Cell>August 29, 2018</TableNext.Cell>
+              <TableNext.Cell>Name</TableNext.Cell>
+              <TableNext.Cell>Email</TableNext.Cell>
+              <TableNext.Cell>Organization role</TableNext.Cell>
+              <TableNext.Cell>Last activity</TableNext.Cell>
             </TableNext.Row>
-            <TableNext.Row>
-              <TableNext.Cell>John Doe</TableNext.Cell>
-              <TableNext.Cell>john@doe.com</TableNext.Cell>
-              <TableNext.Cell>CTO</TableNext.Cell>
-              <TableNext.Cell>July 27, 2019</TableNext.Cell>
-            </TableNext.Row>
-          </TableNext.Body>
-        </TableNext>
-      </div>
-    );
-  },
-};
-export const DefaultWithTitles: StoryObj = {
-  render: (args) => {
-    return (
-      <div style={{ width: '800px' }}>
-        <TableNext columnTitles={tableHeaderTitles} {...args}>
+          </TableNext.Head>
           <TableNext.Body>
             <TableNext.Row>
               <TableNext.Cell>Jane Roe</TableNext.Cell>
@@ -99,7 +78,15 @@ export const WithLoadingState: StoryFn = () => {
 
   return (
     <div style={{ width: '800px' }}>
-      <TableNext columnTitles={tableHeaderTitles}>
+      <TableNext>
+        <TableNext.Head>
+          <TableNext.Row>
+            <TableNext.Cell>Name</TableNext.Cell>
+            <TableNext.Cell>Email</TableNext.Cell>
+            <TableNext.Cell>Organization role</TableNext.Cell>
+            <TableNext.Cell>Last activity</TableNext.Cell>
+          </TableNext.Row>
+        </TableNext.Head>
         <TableNext.Body>
           {isLoading ? (
             <Skeleton.Row rowCount={4} columnCount={4} />
@@ -140,7 +127,15 @@ export const StyleVariants: StoryFn = () => (
         Inline TableNext
       </SectionHeading>
 
-      <TableNext columnTitles={tableHeaderTitles}>
+      <TableNext>
+        <TableNext.Head>
+          <TableNext.Row>
+            <TableNext.Cell>Name</TableNext.Cell>
+            <TableNext.Cell>Email</TableNext.Cell>
+            <TableNext.Cell>Organization role</TableNext.Cell>
+            <TableNext.Cell>Last activity</TableNext.Cell>
+          </TableNext.Row>
+        </TableNext.Head>
         <TableNext.Body>
           <TableNext.Row isSelected>
             <TableNext.Cell>Jane Roe</TableNext.Cell>
@@ -169,7 +164,15 @@ export const StyleVariants: StoryFn = () => (
         Embedded TableNext
       </SectionHeading>
 
-      <TableNext variant="embedded" columnTitles={tableHeaderTitles}>
+      <TableNext variant="embedded">
+        <TableNext.Head>
+          <TableNext.Row>
+            <TableNext.Cell>Name</TableNext.Cell>
+            <TableNext.Cell>Email</TableNext.Cell>
+            <TableNext.Cell>Organization role</TableNext.Cell>
+            <TableNext.Cell>Last activity</TableNext.Cell>
+          </TableNext.Row>
+        </TableNext.Head>
         <TableNext.Body>
           <TableNext.Row isSelected>
             <TableNext.Cell>Jane Roe</TableNext.Cell>
@@ -245,18 +248,20 @@ const withContentTableData: {
   },
 ];
 
-const withContentHeaderTitles = [
-  'Name',
-  'Status',
-  'Email',
-  'Content Type',
-  'Updated By',
-  'Last activity',
-];
 export const WithContent: StoryObj = {
   render: (args) => (
     <div style={{ width: '960px' }}>
-      <TableNext columnTitles={withContentHeaderTitles} {...args}>
+      <TableNext {...args}>
+        <TableNext.Head>
+          <TableNext.Row>
+            <TableNext.Cell>Name</TableNext.Cell>
+            <TableNext.Cell>Status</TableNext.Cell>
+            <TableNext.Cell>Email</TableNext.Cell>
+            <TableNext.Cell>Content Type</TableNext.Cell>
+            <TableNext.Cell>Updated By</TableNext.Cell>
+            <TableNext.Cell>Last activity</TableNext.Cell>
+          </TableNext.Row>
+        </TableNext.Head>
         <TableNext.Body>
           {withContentTableData.map((item) => (
             <TableNext.Row key={item.name}>
@@ -292,7 +297,7 @@ export const WithContent: StoryObj = {
   ),
 };
 
-const contentTableHeaderData = [
+const contentTableHeaderTitles = [
   'Name',
   'Status',
   'Content Type',
@@ -328,7 +333,7 @@ export const Stackable: StoryObj = {
         <Layout.Body>
           <Note className={css({ margin: '1rem' })}>
             TableNext in stackable layout. When the surrounding container is
-            smaller than 700px the table is displayed rotated by 90°.
+            smaller than 700px the table is displayed in a stacked layout.
           </Note>
           <TableNext layout="stackable" {...args}>
             <TableNext.Body>
@@ -351,6 +356,7 @@ export const Stackable: StoryObj = {
     </div>
   ),
 };
+
 export const StackableWithTitles: StoryObj = {
   render: (args) => (
     <div
@@ -373,15 +379,32 @@ export const StackableWithTitles: StoryObj = {
       <Layout>
         <Layout.Body>
           <Note className={css({ margin: '1rem' })}>
-            TableNext in stackable layout. When the surrounding container is
-            smaller than 700px the table is displayed rotated by 90°. The column
-            titles are shown next to the table cell values.
+            TableNext in stackable layout with columnTitles. When the
+            surrounding container is smaller than 700px the table stacks and
+            shows column titles next to each cell value.
           </Note>
           <TableNext
             layout="stackable"
-            columnTitles={withContentHeaderTitles}
+            columnTitles={[
+              'Name',
+              'Status',
+              'Email',
+              'Content type',
+              'Updated by',
+              'Last activity',
+            ]}
             {...args}
           >
+            <TableNext.Head>
+              <TableNext.Row>
+                <TableNext.Cell>Name</TableNext.Cell>
+                <TableNext.Cell>Status</TableNext.Cell>
+                <TableNext.Cell>Email</TableNext.Cell>
+                <TableNext.Cell>Content type</TableNext.Cell>
+                <TableNext.Cell>Updated by</TableNext.Cell>
+                <TableNext.Cell>Last activity</TableNext.Cell>
+              </TableNext.Row>
+            </TableNext.Head>
             <TableNext.Body>
               {withContentTableData.map((item) => (
                 <TableNext.Row key={item.name}>
@@ -427,11 +450,14 @@ export const Scrollable: StoryObj = {
           <Note className={css({ margin: '1rem' })}>
             TableNext with overflow-x scrollbar
           </Note>
-          <TableNext
-            layout="scrollable"
-            columnTitles={contentTableHeaderData}
-            {...args}
-          >
+          <TableNext layout="scrollable" {...args}>
+            <TableNext.Head>
+              <TableNext.Row>
+                {contentTableHeaderTitles.map((title) => (
+                  <TableNext.Cell key={title}>{title}</TableNext.Cell>
+                ))}
+              </TableNext.Row>
+            </TableNext.Head>
             <TableNext.Body>
               {withLongContentTableData.map((item) => (
                 <TableNext.Row key={item.id}>
@@ -481,12 +507,14 @@ export const ScrollableStickyFirstColumn: StoryObj = {
           <Note className={css({ margin: '1rem' })}>
             TableNext with overflow-x and fixed first column
           </Note>
-          <TableNext
-            layout="scrollable"
-            isFirstColumnSticky={true}
-            columnTitles={contentTableHeaderData}
-            {...args}
-          >
+          <TableNext layout="scrollable" isFirstColumnSticky={true} {...args}>
+            <TableNext.Head>
+              <TableNext.Row>
+                {contentTableHeaderTitles.map((title) => (
+                  <TableNext.Cell key={title}>{title}</TableNext.Cell>
+                ))}
+              </TableNext.Row>
+            </TableNext.Head>
             <TableNext.Body>
               {withLongContentTableData.map((item) => (
                 <TableNext.Row key={item.id}>
@@ -547,13 +575,14 @@ export const ScrollableStickyHeaderAndFirstColumn: StoryObj = {
               container. To avoid the outer container overflow, the contents of
               the layout.body are additionally contained in a flexbox
             </Note>
-            <TableNext
-              layout="scrollable"
-              isFirstColumnSticky
-              isHeaderSticky
-              columnTitles={contentTableHeaderData}
-              {...args}
-            >
+            <TableNext layout="scrollable" isFirstColumnSticky {...args}>
+              <TableNext.Head isSticky>
+                <TableNext.Row>
+                  {contentTableHeaderTitles.map((title) => (
+                    <TableNext.Cell key={title}>{title}</TableNext.Cell>
+                  ))}
+                </TableNext.Row>
+              </TableNext.Head>
               <TableNext.Body>
                 {withLongContentTableData.map((item) => (
                   <TableNext.Row key={item.id}>

@@ -1,5 +1,5 @@
 import { cx } from '@emotion/css';
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useState } from 'react';
 import {
   Box,
   type CommonProps,
@@ -10,7 +10,6 @@ import type * as CSS from 'csstype';
 
 import { getTableStyles } from './TableNext.styles';
 import { TableContextProvider } from './tableContext';
-import { TableHeader } from './TableHead/TableHeader';
 
 export type StackableBreakpoint =
   number | `${number}px` | `${number}rem` | `${number}em`;
@@ -32,6 +31,13 @@ type TableNextLayoutProps =
       stackableBreakpoint?: StackableBreakpoint;
 
       /**
+       * Column titles used as inline labels in stacked rows at small container
+       * sizes. Only valid with layout="stackable". The order must match the
+       * column order of your TableHead row.
+       */
+      columnTitles?: Array<string>;
+
+      /**
        * @default false
        */
       isFirstColumnSticky?: false;
@@ -48,26 +54,18 @@ type TableNextLayoutProps =
       stackableBreakpoint?: never;
 
       /**
+       * Only supported with layout="stackable".
+       */
+      columnTitles?: never;
+
+      /**
        * @default false
        */
       isFirstColumnSticky?: boolean;
     };
 
-type TableHeaderTitleProps =
-  | {
-      columnTitles?: undefined;
-      isHeaderSticky?: never;
-      offsetTop?: never;
-    }
-  | {
-      columnTitles: Array<string>;
-      isHeaderSticky?: boolean;
-      offsetTop?: number | string;
-    };
-
 type TableNextInternalProps = CommonProps &
-  TableNextLayoutProps &
-  TableHeaderTitleProps & {
+  TableNextLayoutProps & {
     /**
      * @default 'top'
      */
@@ -104,13 +102,12 @@ export const TableNext = forwardRef<
       verticalAlign = 'top',
       columnTitles,
       isFirstColumnSticky = false,
-      isHeaderSticky = false,
-      offsetTop = 0,
       stackableBreakpoint,
       ...otherProps
     },
     forwardedRef,
   ) => {
+    const [isHeaderSticky, setIsHeaderSticky] = useState(false);
     const styles = getTableStyles({ isHeaderSticky, isFirstColumnSticky });
     const isScrollable = layout === 'scrollable';
     const isStackable = layout === 'stackable';
@@ -134,15 +131,13 @@ export const TableNext = forwardRef<
           value={{
             verticalAlign,
             isHeaderSticky,
+            setIsHeaderSticky,
             isStackable,
             columnTitles,
             hasColumnTitles,
             stackableBreakpoint: stackableBreakpointValue,
           }}
         >
-          {columnTitles && (
-            <TableHeader offsetTop={offsetTop} columnTitles={columnTitles} />
-          )}
           {children}
         </TableContextProvider>
       </Box>

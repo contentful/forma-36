@@ -54,23 +54,21 @@ export default function TableScrollableStickyHeaderAndFirstColumnExample() {
         overflowY: 'auto',
       }}
     >
-      <TableNext
-        layout="scrollable"
-        isFirstColumnSticky
-        isHeaderSticky
-        columnTitles={[
-          'Name',
-          'Status',
-          'Content type',
-          'Updated by',
-          'Updated',
-          'Locale',
-          'Spacce',
-          'Environment',
-          'Tags',
-          'ID',
-        ]}
-      >
+      <TableNext layout="scrollable" isFirstColumnSticky>
+        <TableNext.Head isSticky>
+          <TableNext.Row>
+            <TableNext.Cell>Name</TableNext.Cell>
+            <TableNext.Cell>Status</TableNext.Cell>
+            <TableNext.Cell>Content type</TableNext.Cell>
+            <TableNext.Cell>Updated by</TableNext.Cell>
+            <TableNext.Cell>Updated</TableNext.Cell>
+            <TableNext.Cell>Locale</TableNext.Cell>
+            <TableNext.Cell>Space</TableNext.Cell>
+            <TableNext.Cell>Environment</TableNext.Cell>
+            <TableNext.Cell>Tags</TableNext.Cell>
+            <TableNext.Cell>ID</TableNext.Cell>
+          </TableNext.Row>
+        </TableNext.Head>
         <TableNext.Body>
           {withLongContentTableData.map((item) => (
             <TableNext.Row key={item.id}>
