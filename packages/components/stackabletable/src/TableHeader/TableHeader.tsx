@@ -1,24 +1,29 @@
 import React from 'react';
-import { cx } from '@emotion/css';
-import { TableHead } from './TableHead';
-import { TableRow } from '../TableRow/TableRow';
-import { TableCell } from '../TableCell/TableCell';
+import { TableHead, TableRow, TableCell } from '@contentful/f36-table-next';
 import { getTableHeaderStyles } from './TableHeader.styles';
-import { useTableContext } from '../tableContext';
+import type { StackableBreakpointValue } from '../tableContext';
 
 type TableHeaderProps = {
   columnTitles: Array<string>;
+  /**
+   * @default 0
+   */
   offsetTop?: number | string;
+  stackableBreakpoint: StackableBreakpointValue;
+  isHeaderSticky?: boolean;
 };
 
-export const TableHeader = ({ columnTitles, offsetTop }: TableHeaderProps) => {
-  const { isHeaderSticky, isStackable, stackableBreakpoint } =
-    useTableContext();
+export const TableHeader = ({
+  columnTitles,
+  offsetTop = 0,
+  stackableBreakpoint,
+  isHeaderSticky = false,
+}: TableHeaderProps) => {
   const styles = getTableHeaderStyles(stackableBreakpoint);
 
   return (
     <TableHead
-      className={cx({ [styles.stackableHeader]: isStackable })}
+      className={styles.stackableHeader}
       isSticky={isHeaderSticky}
       offsetTop={offsetTop}
     >
