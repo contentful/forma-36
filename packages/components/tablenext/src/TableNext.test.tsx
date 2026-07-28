@@ -40,7 +40,7 @@ describe('TableNext', () => {
     jest.spyOn(console, 'warn').mockImplementation(() => {});
 
     render(
-      <TableNext columnTitles={['Name']}>
+      <TableNext layout="stackable" columnTitles={['Name']}>
         <TableNext.Body>
           <TableNext.Row>
             <TableNext.Cell>Jane Doe</TableNext.Cell>
@@ -60,7 +60,7 @@ describe('TableNext', () => {
       .mockImplementation(() => {});
 
     render(
-      <TableNext columnTitles={['Name']}>
+      <TableNext layout="stackable" columnTitles={['Name']}>
         <TableNext.Body>
           <TableNext.Row>
             <TableNext.Cell>Jane Doe</TableNext.Cell>
@@ -79,7 +79,12 @@ describe('TableNext', () => {
   describe('accessibility of table component', () => {
     it('has no a11y issues with default variant', async () => {
       const { container } = render(
-        <TableNext columnTitles={['TableNext Heading']}>
+        <TableNext>
+          <TableNext.Head>
+            <TableNext.Row>
+              <TableNext.Cell>TableNext Heading</TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Head>
           <TableNext.Body>
             <TableNext.Row>
               <TableNext.Cell>Cell 1</TableNext.Cell>
@@ -98,7 +103,12 @@ describe('TableNext', () => {
 
     it('has no a11y issue with embedded variant', async () => {
       const { container } = render(
-        <TableNext variant="embedded" columnTitles={['TableNext Heading']}>
+        <TableNext variant="embedded">
+          <TableNext.Head>
+            <TableNext.Row>
+              <TableNext.Cell>TableNext Heading</TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Head>
           <TableNext.Body>
             <TableNext.Row>
               <TableNext.Cell>Cell 1</TableNext.Cell>
@@ -134,7 +144,12 @@ describe('TableNext', () => {
 
     it('has no a11y issue with scrollable layout', async () => {
       const { container } = render(
-        <TableNext columnTitles={['TableNext Heading']}>
+        <TableNext>
+          <TableNext.Head>
+            <TableNext.Row>
+              <TableNext.Cell>TableNext Heading</TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Head>
           <TableNext.Body>
             <TableNext.Row>
               <TableNext.Cell>Cell 1</TableNext.Cell>
@@ -153,12 +168,12 @@ describe('TableNext', () => {
 
     it('has no a11y issue with scrollable layout and sticky header and first column', async () => {
       const { container } = render(
-        <TableNext
-          layout="scrollable"
-          isFirstColumnSticky
-          isHeaderSticky
-          columnTitles={['TableNext Heading']}
-        >
+        <TableNext isFirstColumnSticky>
+          <TableNext.Head isSticky>
+            <TableNext.Row>
+              <TableNext.Cell>TableNext Heading</TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Head>
           <TableNext.Body>
             <TableNext.Row>
               <TableNext.Cell>Cell 1</TableNext.Cell>
