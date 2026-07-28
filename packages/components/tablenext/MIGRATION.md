@@ -22,7 +22,6 @@ Only plain text column titles are supported in generated table heads.
 
 Do not migrate a `Table` to `TableNext` yet if it depends on any of the following header features:
 
-- sortable header cells
 - check-all checkboxes
 - custom header controls or buttons
 - icons, badges, menus, tooltips, or other custom React components inside the table head
@@ -30,24 +29,26 @@ Do not migrate a `Table` to `TableNext` yet if it depends on any of the followin
 
 Those tables should stay on `Table` until `TableNext` supports custom header composition or the specific feature has a replacement API.
 
+Sortable header cells are supported in `TableNext` for non-stackable tables. See the sorting migration section below.
+
 ---
 
 ## Summary of root prop changes
 
-| Prop                  | Old Type / Behavior                                       | New Type / Behavior                                              | Default (Old -> New)         | Status                                                                                                      |
-| --------------------- | --------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `children`            | `React.ReactNode`                                         | `React.ReactNode`                                                | n/a                          | Unchanged                                                                                                   |
-| `layout`              | `"inline"`, `"embedded"`, `"scrollable"`                  | `"scrollable"`, `"stackable"`                                    | `"inline"` -> `"scrollable"` | Changed. Use `variant` for current visual variants. There is no non-responsive table layout in `TableNext`. |
-| `variant`             | n/a                                                       | `"inline"`, `"embedded"`                                         | n/a -> `"inline"`            | New                                                                                                         |
-| `isFirstColumnSticky` | Available only with `layout="scrollable"`                 | Available only with `layout="scrollable"`                        | `false` -> `false`           | Mostly unchanged                                                                                            |
-| `verticalAlign`       | `"baseline"`, `"bottom"`, `"middle"`, `"top"`             | `"baseline"`, `"bottom"`, `"middle"`, `"top"`                    | `"top"` -> `"top"`           | Unchanged                                                                                                   |
-| `columnTitles`        | n/a                                                       | `Array<string>`                                                  | n/a                          | New. Required for generated headers and stackable row labels.                                               |
-| `stackableBreakpoint` | n/a                                                       | `` number \| `${number}px` \| `${number}rem` \| `${number}em` `` | n/a -> `700` (px)            | New. Only available when `layout="stackable"`. Numbers are treated as px.                                   |
-| `isHeaderSticky`      | Controlled by `Table.Head isSticky` internally            | Root prop for generated headers from `columnTitles`              | n/a -> `false`               | New root prop                                                                                               |
-| `offsetTop`           | Prop on `Table.Head`                                      | Root prop for generated headers from `columnTitles`              | `0` -> `0`                   | Moved                                                                                                       |
-| `testId`              | `"cf-ui-table"`                                           | `"cf-ui-table-next"`                                             | Changed                      | Changed                                                                                                     |
-| custom header content | Supported through `Table.Head` composition                | Not supported                                                    | n/a                          | Removed                                                                                                     |
-| sortable headers      | Supported through `Table.Cell isSortable` in `Table.Head` | Not supported for generated heads                                | n/a                          | Removed for `TableNext`                                                                                     |
+| Prop                  | Old Type / Behavior                                       | New Type / Behavior                                               | Default (Old -> New)         | Status                                                                                                      |
+| --------------------- | --------------------------------------------------------- | ----------------------------------------------------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `children`            | `React.ReactNode`                                         | `React.ReactNode`                                                 | n/a                          | Unchanged                                                                                                   |
+| `layout`              | `"inline"`, `"embedded"`, `"scrollable"`                  | `"scrollable"`, `"stackable"`                                     | `"inline"` -> `"scrollable"` | Changed. Use `variant` for current visual variants. There is no non-responsive table layout in `TableNext`. |
+| `variant`             | n/a                                                       | `"inline"`, `"embedded"`                                          | n/a -> `"inline"`            | New                                                                                                         |
+| `isFirstColumnSticky` | Available only with `layout="scrollable"`                 | Available only with `layout="scrollable"`                         | `false` -> `false`           | Mostly unchanged                                                                                            |
+| `verticalAlign`       | `"baseline"`, `"bottom"`, `"middle"`, `"top"`             | `"baseline"`, `"bottom"`, `"middle"`, `"top"`                     | `"top"` -> `"top"`           | Unchanged                                                                                                   |
+| `columnTitles`        | n/a                                                       | `Array<string>`                                                   | n/a                          | New. Required for generated headers and stackable row labels.                                               |
+| `stackableBreakpoint` | n/a                                                       | `` number \| `${number}px` \| `${number}rem` \| `${number}em` ``  | n/a -> `700` (px)            | New. Only available when `layout="stackable"`. Numbers are treated as px.                                   |
+| `isHeaderSticky`      | Controlled by `Table.Head isSticky` internally            | Root prop for generated headers from `columnTitles`               | n/a -> `false`               | New root prop                                                                                               |
+| `offsetTop`           | Prop on `Table.Head`                                      | Root prop for generated headers from `columnTitles`               | `0` -> `0`                   | Moved                                                                                                       |
+| `testId`              | `"cf-ui-table"`                                           | `"cf-ui-table-next"`                                              | Changed                      | Changed                                                                                                     |
+| custom header content | Supported through `Table.Head` composition                | Not supported                                                     | n/a                          | Removed                                                                                                     |
+| sortable headers      | Supported through `Table.Cell isSortable` in `Table.Head` | Supported on non-stackable tables via `TableNext.Cell isSortable` | n/a                          | Supported (non-stackable only)                                                                              |
 
 ---
 
@@ -258,31 +259,56 @@ The compound components are still available on the root component:
 
 ## Cell props and removed header features
 
-`TableNext.Cell` no longer supports sorting props. The remaining public props are:
+`TableNext.Cell` supports all cell props from `Table.Cell`, including sorting on non-stackable tables:
 
-| Prop          | Status    |
-| ------------- | --------- |
-| `align`       | Unchanged |
-| `children`    | Unchanged |
-| `width`       | Unchanged |
-| `isTruncated` | Unchanged |
-| `isWordBreak` | Unchanged |
+| Prop                  | Status                                  |
+| --------------------- | --------------------------------------- |
+| `align`               | Unchanged                               |
+| `children`            | Unchanged                               |
+| `width`               | Unchanged                               |
+| `isTruncated`         | Unchanged                               |
+| `isWordBreak`         | Unchanged                               |
+| `isSortable`          | Supported (non-stackable tables only)   |
+| `sortDirection`       | Supported (requires `isSortable: true`) |
+| `sortButtonAriaLabel` | Supported (requires `isSortable: true`) |
 
-Because `TableNext` generates table heads from `columnTitles`, sorting is not currently available as part of the header API. The same applies to check-all checkboxes and any other custom header component. Remove `isSortable`, `sortDirection`, and `sortButtonAriaLabel` when migrating body cells, and do not migrate sortable header cells to `TableNext` yet.
+Sorting works the same way as in `Table`: set `isSortable` on head cells, pass a controlled `sortDirection`, and handle `onClick` to update sort state. Sorting props are silently ignored on `layout="stackable"` tables.
 
 OLD:
 
 ```tsx
 <Table.Head>
   <Table.Row>
-    <Table.Cell isSortable>Name</Table.Cell>
+    <Table.Cell
+      isSortable
+      onClick={() => handleSort('name')}
+      sortDirection={sorting?.column === 'name' ? sorting.direction : undefined}
+    >
+      Name
+    </Table.Cell>
   </Table.Row>
 </Table.Head>
 ```
 
-No equivalent `TableNext` migration exists today. Keep this table on `Table` until `TableNext` supports sortable or custom headers.
+NEW:
 
-The body cell props (`align`, `width`, `isTruncated`, `isWordBreak`) can still be migrated to `TableNext.Cell`.
+```tsx
+<TableNext.Head>
+  <TableNext.Row>
+    <TableNext.Cell
+      isSortable
+      onClick={() => handleSort('name')}
+      sortDirection={sorting?.column === 'name' ? sorting.direction : undefined}
+    >
+      Name
+    </TableNext.Cell>
+  </TableNext.Row>
+</TableNext.Head>
+```
+
+Import `TableCellSorting` from `@contentful/f36-table-next` instead of `@contentful/f36-table`.
+
+The body cell props (`align`, `width`, `isTruncated`, `isWordBreak`) migrate unchanged to `TableNext.Cell`.
 
 ---
 
@@ -331,7 +357,7 @@ NEW:
 5. Keep `layout="scrollable"` only when you want horizontal scrolling.
 6. Add `layout="stackable"` only for tables that should stack on narrow containers; optionally set `stackableBreakpoint` to override the default 700px breakpoint.
 7. Move simple header text into `columnTitles` when using generated headers or stackable layout.
-8. Do not migrate tables that need sortable headers, check-all checkboxes, or custom header components.
+8. Do not migrate tables that need check-all checkboxes or custom header components. Sortable headers can be migrated — see the cell props section above.
 9. Remove direct `Head` usage; generated table heads come from `columnTitles`.
 10. Move sticky generated headers from `Table.Head isSticky` to root `isHeaderSticky`.
 11. Move sticky header offset from `Table.Head offsetTop` to root `offsetTop`.

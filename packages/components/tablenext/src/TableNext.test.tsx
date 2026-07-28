@@ -1,8 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 
-import { TableNext } from '.';
+import { TableNext, TableCellSorting } from '.';
 
 describe('TableNext', () => {
   afterEach(() => {
@@ -171,6 +172,178 @@ describe('TableNext', () => {
 
       const results = await axe(container);
 
+      expect(results).toHaveNoViolations();
+    });
+  });
+
+  describe('TableNext.Cell sorting', () => {
+    it('renders a sort button with aria-sort="none" when isSortable and no direction set', () => {
+      render(
+        <TableNext>
+          <TableNext.Head>
+            <TableNext.Row>
+              <TableNext.Cell isSortable onClick={() => {}}>
+                Name
+              </TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Head>
+          <TableNext.Body>
+            <TableNext.Row>
+              <TableNext.Cell>Jane Doe</TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Body>
+        </TableNext>,
+      );
+
+      const th = screen.getByRole('columnheader');
+      expect(th).toHaveAttribute('aria-sort', 'none');
+      expect(screen.getByRole('button')).toBeInTheDocument();
+    });
+
+    it('reflects sortDirection on aria-sort', () => {
+      const { rerender } = render(
+        <TableNext>
+          <TableNext.Head>
+            <TableNext.Row>
+              <TableNext.Cell
+                isSortable
+                sortDirection={TableCellSorting.Ascending}
+                onClick={() => {}}
+              >
+                Name
+              </TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Head>
+          <TableNext.Body>
+            <TableNext.Row>
+              <TableNext.Cell>Jane Doe</TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Body>
+        </TableNext>,
+      );
+
+      expect(screen.getByRole('columnheader')).toHaveAttribute(
+        'aria-sort',
+        'ascending',
+      );
+
+      rerender(
+        <TableNext>
+          <TableNext.Head>
+            <TableNext.Row>
+              <TableNext.Cell
+                isSortable
+                sortDirection={TableCellSorting.Descending}
+                onClick={() => {}}
+              >
+                Name
+              </TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Head>
+          <TableNext.Body>
+            <TableNext.Row>
+              <TableNext.Cell>Jane Doe</TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Body>
+        </TableNext>,
+      );
+
+      expect(screen.getByRole('columnheader')).toHaveAttribute(
+        'aria-sort',
+        'descending',
+      );
+    });
+
+    it('calls onClick when the sort button is clicked', async () => {
+      const handleClick = jest.fn();
+
+      render(
+        <TableNext>
+          <TableNext.Head>
+            <TableNext.Row>
+              <TableNext.Cell isSortable onClick={handleClick}>
+                Name
+              </TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Head>
+          <TableNext.Body>
+            <TableNext.Row>
+              <TableNext.Cell>Jane Doe</TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Body>
+        </TableNext>,
+      );
+
+      await userEvent.click(screen.getByRole('button'));
+      expect(handleClick).toHaveBeenCalledTimes(1);
+    });
+
+    it('does not render a sort button on body cells', () => {
+      render(
+        <TableNext>
+          <TableNext.Head>
+            <TableNext.Row>
+              <TableNext.Cell>Name</TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Head>
+          <TableNext.Body>
+            <TableNext.Row>
+              {/* isSortable on a body cell is silently ignored */}
+              <TableNext.Cell isSortable onClick={() => {}}>
+                Jane Doe
+              </TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Body>
+        </TableNext>,
+      );
+
+      expect(screen.queryByRole('button')).not.toBeInTheDocument();
+    });
+
+    it('does not render a sort button on stackable tables', () => {
+      render(
+        <TableNext layout="stackable">
+          <TableNext.Head>
+            <TableNext.Row>
+              <TableNext.Cell isSortable onClick={() => {}}>
+                Name
+              </TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Head>
+          <TableNext.Body>
+            <TableNext.Row>
+              <TableNext.Cell>Jane Doe</TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Body>
+        </TableNext>,
+      );
+
+      expect(screen.queryByRole('button')).not.toBeInTheDocument();
+    });
+
+    it('has no a11y issues with a sortable head cell', async () => {
+      const { container } = render(
+        <TableNext>
+          <TableNext.Head>
+            <TableNext.Row>
+              <TableNext.Cell
+                isSortable
+                sortDirection={TableCellSorting.Ascending}
+                onClick={() => {}}
+              >
+                Name
+              </TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Head>
+          <TableNext.Body>
+            <TableNext.Row>
+              <TableNext.Cell>Jane Doe</TableNext.Cell>
+            </TableNext.Row>
+          </TableNext.Body>
+        </TableNext>,
+      );
+
+      const results = await axe(container);
       expect(results).toHaveNoViolations();
     });
   });

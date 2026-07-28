@@ -12,7 +12,7 @@ typescript: ./src/TableNext.tsx,./src/TableCell/TableCell.tsx,./src/TableRow/Tab
 
 ## Current Limitations
 
-This component is still in an unstable alpha state. At the moment it does not offer the possibility of sorting as well as adding a check-all checkbox in the header.
+This component is still in an unstable alpha state. At the moment it does not offer the possibility of adding a check-all checkbox in the header.
 
 ## Import
 
@@ -50,6 +50,14 @@ Combine `layout="scrollable"` with `isFirstColumnSticky` when the first column c
 For large tables that need both horizontal and vertical scrolling, combine `layout="scrollable"`, `isFirstColumnSticky`, and `TableNext.Head isSticky`. Place the table in a height-constrained container to avoid double scrollbars coming from the outer container.
 
 ```jsx file=./examples/TableScrollableStickyHeaderAndFirstColumnExample.tsx
+
+```
+
+### Sorting
+
+Sorting is supported on non-stackable tables. Add `isSortable` to a head cell, pass `sortDirection` to reflect the active sort, and handle `onClick` to update state. Sorting props are not available on `layout="stackable"` tables.
+
+```jsx file=./examples/TableNextWithSortingExample.tsx
 
 ```
 
