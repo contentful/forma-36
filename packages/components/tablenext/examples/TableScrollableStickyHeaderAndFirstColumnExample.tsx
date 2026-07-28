@@ -67,7 +67,7 @@ export default function TableScrollableStickyHeaderAndFirstColumnExample() {
         overflowY: 'auto',
       }}
     >
-      <TableNext layout="scrollable" isFirstColumnSticky isHeaderSticky>
+      <TableNext layout="scrollable" isFirstColumnSticky>
         <TableNext.Head isSticky>
           <TableNext.Row>
             {columnTitles.map((title) => (
