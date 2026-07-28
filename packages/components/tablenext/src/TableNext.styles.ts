@@ -36,10 +36,6 @@ export const getTableStyles = ({
       height: '100%',
     }),
   }),
-  stackableWrapper: css({
-    width: '100%',
-    containerType: 'inline-size',
-  }),
   scrollable: css({
     ...(isFirstColumnSticky && {
       'td:first-child, th:first-child': {

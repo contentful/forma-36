@@ -1,11 +1,18 @@
 import React from 'react';
 import { TableNext } from '@contentful/f36-table-next';
 
+const columnTitles = ['Name', 'Email', 'Organization role', 'Last activity'];
+
 export default function TableBasicUsageExample() {
   return (
-    <TableNext
-      columnTitles={['Name', 'Email', 'Organization role', 'Last activity']}
-    >
+    <TableNext>
+      <TableNext.Head>
+        <TableNext.Row>
+          {columnTitles.map((title) => (
+            <TableNext.Cell key={title}>{title}</TableNext.Cell>
+          ))}
+        </TableNext.Row>
+      </TableNext.Head>
       <TableNext.Body>
         <TableNext.Row>
           <TableNext.Cell>Claus Mitchell</TableNext.Cell>

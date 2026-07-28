@@ -10,85 +10,41 @@ import type * as CSS from 'csstype';
 
 import { getTableStyles } from './TableNext.styles';
 import { TableContextProvider } from './tableContext';
-import { TableHeader } from './TableHead/TableHeader';
 
-export type StackableBreakpoint =
-  number | `${number}px` | `${number}rem` | `${number}em`;
+type TableNextInternalProps = CommonProps & {
+  /**
+   * "scrollable" wraps the table in a horizontally scrollable container (default).
+   * "plain" renders the table without any wrapper, for use inside StackableTable.
+   */
+  layout?: 'scrollable' | 'plain';
 
-export type StackableBreakpointValue = Exclude<StackableBreakpoint, number>;
+  /**
+   * @default false
+   */
+  isFirstColumnSticky?: boolean;
 
-type TableNextLayoutProps =
-  | {
-      layout: 'stackable';
+  /**
+   * Whether the table header is sticky. Affects the height of the scroll container.
+   * Only relevant when layout="scrollable".
+   * @default false
+   */
+  isHeaderSticky?: boolean;
 
-      /**
-       * Container width at which the table switches to the stacked layout.
-       * Numbers are interpreted as px.
-       *
-       * Only available when layout is "stackable".
-       *
-       * @default 700
-       */
-      stackableBreakpoint?: StackableBreakpoint;
+  /**
+   * @default 'top'
+   */
+  verticalAlign?: Extract<
+    CSS.Property.VerticalAlign,
+    'baseline' | 'bottom' | 'middle' | 'top'
+  >;
 
-      /**
-       * @default false
-       */
-      isFirstColumnSticky?: false;
-    }
-  | {
-      /**
-       * @default 'scrollable'
-       */
-      layout?: 'scrollable';
-
-      /**
-       * Only supported with layout="stackable".
-       */
-      stackableBreakpoint?: never;
-
-      /**
-       * @default false
-       */
-      isFirstColumnSticky?: boolean;
-    };
-
-type TableHeaderTitleProps =
-  | {
-      columnTitles?: undefined;
-      isHeaderSticky?: never;
-      offsetTop?: never;
-    }
-  | {
-      columnTitles: Array<string>;
-      isHeaderSticky?: boolean;
-      offsetTop?: number | string;
-    };
-
-type TableNextInternalProps = CommonProps &
-  TableNextLayoutProps &
-  TableHeaderTitleProps & {
-    /**
-     * @default 'top'
-     */
-    verticalAlign?: Extract<
-      CSS.Property.VerticalAlign,
-      'baseline' | 'bottom' | 'middle' | 'top'
-    >;
-    variant?: 'inline' | 'embedded';
-  };
+  variant?: 'inline' | 'embedded';
+};
 
 export type TableNextProps = PropsWithHTMLElement<
   TableNextInternalProps,
   'table'
 >;
-
-const DEFAULT_STACKABLE_BREAKPOINT = 700;
-
-const getStackableBreakpointValue = (
-  breakpoint: StackableBreakpoint = DEFAULT_STACKABLE_BREAKPOINT,
-): StackableBreakpointValue =>
-  typeof breakpoint === 'number' ? `${breakpoint}px` : breakpoint;
 
 export const TableNext = forwardRef<
   HTMLTableElement,
@@ -102,22 +58,14 @@ export const TableNext = forwardRef<
       variant = 'inline',
       testId = 'cf-ui-table-next',
       verticalAlign = 'top',
-      columnTitles,
       isFirstColumnSticky = false,
       isHeaderSticky = false,
-      offsetTop = 0,
-      stackableBreakpoint,
       ...otherProps
     },
     forwardedRef,
   ) => {
-    const styles = getTableStyles({ isHeaderSticky, isFirstColumnSticky });
     const isScrollable = layout === 'scrollable';
-    const isStackable = layout === 'stackable';
-    const hasColumnTitles = (columnTitles?.length ?? 0) > 0;
-
-    const stackableBreakpointValue =
-      getStackableBreakpointValue(stackableBreakpoint);
+    const styles = getTableStyles({ isHeaderSticky, isFirstColumnSticky });
 
     const tableElement = (
       <Box
@@ -127,39 +75,32 @@ export const TableNext = forwardRef<
         as="table"
         display="table"
         ref={forwardedRef}
-        className={cx(styles.root, styles[layout], className)}
+        className={cx(
+          styles.root,
+          isScrollable ? styles.scrollable : undefined,
+          className,
+        )}
         testId={testId}
       >
-        <TableContextProvider
-          value={{
-            verticalAlign,
-            isHeaderSticky,
-            isStackable,
-            columnTitles,
-            hasColumnTitles,
-            stackableBreakpoint: stackableBreakpointValue,
-          }}
-        >
-          {columnTitles && (
-            <TableHeader offsetTop={offsetTop} columnTitles={columnTitles} />
-          )}
+        <TableContextProvider value={{ verticalAlign, isHeaderSticky }}>
           {children}
         </TableContextProvider>
       </Box>
     );
 
-    return (
-      <section
-        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- scrollable region requires tabIndex for keyboard access (WCAG 2.1 SC 2.1.1)
-        tabIndex={0}
-        className={cx(styles[variant], {
-          [styles.scrollableWrapper]: isScrollable,
-          [styles.stackableWrapper]: isStackable,
-        })}
-      >
-        {tableElement}
-      </section>
-    );
+    if (isScrollable) {
+      return (
+        <section
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- scrollable region requires tabIndex for keyboard access (WCAG 2.1 SC 2.1.1)
+          tabIndex={0}
+          className={cx(styles[variant], styles.scrollableWrapper)}
+        >
+          {tableElement}
+        </section>
+      );
+    }
+
+    return tableElement;
   },
 );
 

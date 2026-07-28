@@ -13,5 +13,6 @@ type CompoundTableNext = typeof OriginalTableNext & {
 
 export const TableNext = OriginalTableNext as CompoundTableNext;
 TableNext.Row = TableRow;
+TableNext.Head = TableHead;
 TableNext.Cell = TableCell;
 TableNext.Body = TableBody;

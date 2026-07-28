@@ -2,6 +2,8 @@ import React from 'react';
 import { Badge } from '@contentful/f36-components';
 import { TableNext } from '@contentful/f36-table-next';
 
+const columnTitles = ['Name', 'Description', 'Updated', 'Status'];
+
 export default function TableDynamicCreation() {
   const contentTypes = [
     {
@@ -28,7 +30,14 @@ export default function TableDynamicCreation() {
   ];
 
   return (
-    <TableNext columnTitles={['Name', 'Description', 'Updated', 'Status']}>
+    <TableNext>
+      <TableNext.Head>
+        <TableNext.Row>
+          {columnTitles.map((title) => (
+            <TableNext.Cell key={title}>{title}</TableNext.Cell>
+          ))}
+        </TableNext.Row>
+      </TableNext.Head>
       <TableNext.Body>
         {contentTypes.map((contentType) => {
           return (

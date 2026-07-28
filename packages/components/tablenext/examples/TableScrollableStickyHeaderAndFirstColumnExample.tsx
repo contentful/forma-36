@@ -2,6 +2,19 @@ import React from 'react';
 import { EntityStatusBadge } from '@contentful/f36-components';
 import { TableNext } from '@contentful/f36-table-next';
 
+const columnTitles = [
+  'Name',
+  'Status',
+  'Content type',
+  'Updated by',
+  'Updated',
+  'Locale',
+  'Space',
+  'Environment',
+  'Tags',
+  'ID',
+];
+
 export default function TableScrollableStickyHeaderAndFirstColumnExample() {
   const withLongContentTableData = Array.from({ length: 5 }, (_, index) => {
     const entries = [
@@ -54,23 +67,14 @@ export default function TableScrollableStickyHeaderAndFirstColumnExample() {
         overflowY: 'auto',
       }}
     >
-      <TableNext
-        layout="scrollable"
-        isFirstColumnSticky
-        isHeaderSticky
-        columnTitles={[
-          'Name',
-          'Status',
-          'Content type',
-          'Updated by',
-          'Updated',
-          'Locale',
-          'Spacce',
-          'Environment',
-          'Tags',
-          'ID',
-        ]}
-      >
+      <TableNext layout="scrollable" isFirstColumnSticky isHeaderSticky>
+        <TableNext.Head isSticky>
+          <TableNext.Row>
+            {columnTitles.map((title) => (
+              <TableNext.Cell key={title}>{title}</TableNext.Cell>
+            ))}
+          </TableNext.Row>
+        </TableNext.Head>
         <TableNext.Body>
           {withLongContentTableData.map((item) => (
             <TableNext.Row key={item.id}>

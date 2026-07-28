@@ -1,13 +1,10 @@
 import React, { forwardRef, type ReactNode } from 'react';
-import { cx } from '@emotion/css';
 import {
   Box,
   type CommonProps,
   type PropsWithHTMLElement,
   type ExpandProps,
 } from '@contentful/f36-core';
-import { useTableContext } from '../tableContext';
-import { getTableBodyStyles } from './TableBody.styles';
 
 type TableBodyInternalProps = CommonProps & {
   children: ReactNode;
@@ -22,22 +19,11 @@ function TableBodyBase(
   { className, children, testId = 'cf-ui-table-body', ...otherProps },
   forwardedRef,
 ) {
-  const {
-    isStackable,
-    hasColumnTitles = false,
-    stackableBreakpoint = '700px',
-  } = useTableContext();
-  const styles = getTableBodyStyles();
   return (
     <Box
       {...otherProps}
       as="tbody"
-      className={cx(
-        {
-          [styles.stackable(hasColumnTitles, stackableBreakpoint)]: isStackable,
-        },
-        className,
-      )}
+      className={className}
       ref={forwardedRef}
       testId={testId}
     >

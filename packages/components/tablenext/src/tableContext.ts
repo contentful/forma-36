@@ -1,13 +1,9 @@
 import { createContext, useContext } from 'react';
-import type { TableNextProps, StackableBreakpointValue } from './TableNext';
+import type { TableNextProps } from './TableNext';
 
 type TableContext = {
   verticalAlign?: TableNextProps['verticalAlign'];
   isHeaderSticky?: boolean;
-  isStackable?: boolean;
-  columnTitles?: Array<string>;
-  hasColumnTitles?: boolean;
-  stackableBreakpoint?: StackableBreakpointValue;
 };
 
 const TableContext = createContext<TableContext>({});
