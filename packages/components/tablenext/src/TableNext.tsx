@@ -1,5 +1,5 @@
 import { cx } from '@emotion/css';
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useState } from 'react';
 import {
   Box,
   type CommonProps,
@@ -22,13 +22,6 @@ type TableNextInternalProps = CommonProps & {
    * @default false
    */
   isFirstColumnSticky?: boolean;
-
-  /**
-   * Whether the table header is sticky. Affects the height of the scroll container.
-   * Only relevant when layout="scrollable".
-   * @default false
-   */
-  isHeaderSticky?: boolean;
 
   /**
    * @default 'top'
@@ -59,11 +52,11 @@ export const TableNext = forwardRef<
       testId = 'cf-ui-table-next',
       verticalAlign = 'top',
       isFirstColumnSticky = false,
-      isHeaderSticky = false,
       ...otherProps
     },
     forwardedRef,
   ) => {
+    const [isHeaderSticky, setIsHeaderSticky] = useState(false);
     const isScrollable = layout === 'scrollable';
     const styles = getTableStyles({ isHeaderSticky, isFirstColumnSticky });
 
@@ -82,7 +75,9 @@ export const TableNext = forwardRef<
         )}
         testId={testId}
       >
-        <TableContextProvider value={{ verticalAlign, isHeaderSticky }}>
+        <TableContextProvider
+          value={{ verticalAlign, isHeaderSticky, setIsHeaderSticky }}
+        >
           {children}
         </TableContextProvider>
       </Box>

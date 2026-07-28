@@ -90,7 +90,7 @@ describe('TableNext', () => {
 
     it('has no a11y issue with scrollable layout and sticky header and first column', async () => {
       const { container } = render(
-        <TableNext layout="scrollable" isFirstColumnSticky isHeaderSticky>
+        <TableNext layout="scrollable" isFirstColumnSticky>
           <TableNext.Head isSticky>
             <TableNext.Row>
               <TableNext.Cell>TableNext Heading</TableNext.Cell>
@@ -115,7 +115,7 @@ describe('TableNext', () => {
   describe('TableNext.Head', () => {
     it('renders the component as sticky', () => {
       const { container } = render(
-        <TableNext isHeaderSticky>
+        <TableNext>
           <TableNext.Head isSticky>
             <TableNext.Row>
               <TableNext.Cell>TableNext Heading</TableNext.Cell>
