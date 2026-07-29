@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Badge } from '@contentful/f36-components';
-import { TableNext, TableCellSorting } from '../src';
+import { TableNext, TableCellSorting } from '@contentful/f36-table-next';
 
 type SortState = {
   column: string;
