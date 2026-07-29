@@ -309,35 +309,38 @@ export const Stackable: StoryObj = {
         overflow: 'hidden',
       })}
     >
-      <div className={css({ backgroundColor: 'silver', height: '60px' })}>
+      <nav className={css({ backgroundColor: 'silver', height: '60px' })}>
         Navbar
-      </div>
+      </nav>
       <Layout>
-        <Layout.Body>
-          <Note className={css({ margin: '1rem' })}>
-            TableNext in stackable layout. When the surrounding container is
-            smaller than 700px the table is displayed in a stacked layout.
-          </Note>
-          <TableNext layout="stackable" {...args}>
-            <TableNext.Body>
-              {withLongContentTableData.map((item) => (
-                <TableNext.Row key={item.id}>
-                  <TableNext.Cell>{item.name}</TableNext.Cell>
-                  <TableNext.Cell>
-                    <EntityStatusBadge entityStatus={item.status} />
-                  </TableNext.Cell>
-                  <TableNext.Cell>{item.contentType}</TableNext.Cell>
-                  <TableNext.Cell>{item.updatedBy}</TableNext.Cell>
-                  <TableNext.Cell>{item.updated}</TableNext.Cell>
-                  <TableNext.Cell>{item.locale}</TableNext.Cell>
-                  <TableNext.Cell>{item.space}</TableNext.Cell>
-                  <TableNext.Cell>{item.environment}</TableNext.Cell>
-                  <TableNext.Cell>{item.tags}</TableNext.Cell>
-                  <TableNext.Cell>{item.id}</TableNext.Cell>
-                </TableNext.Row>
-              ))}
-            </TableNext.Body>
-          </TableNext>
+        <Layout.Body tabIndex={0}>
+          <main>
+            <SectionHeading as="h1">Stacklable</SectionHeading>
+            <Note className={css({ margin: '1rem' })}>
+              TableNext in stackable layout. When the surrounding container is
+              smaller than 700px the table is displayed in a stacked layout.
+            </Note>
+            <TableNext layout="stackable" {...args}>
+              <TableNext.Body>
+                {withLongContentTableData.map((item) => (
+                  <TableNext.Row key={item.id}>
+                    <TableNext.Cell>{item.name}</TableNext.Cell>
+                    <TableNext.Cell>
+                      <EntityStatusBadge entityStatus={item.status} />
+                    </TableNext.Cell>
+                    <TableNext.Cell>{item.contentType}</TableNext.Cell>
+                    <TableNext.Cell>{item.updatedBy}</TableNext.Cell>
+                    <TableNext.Cell>{item.updated}</TableNext.Cell>
+                    <TableNext.Cell>{item.locale}</TableNext.Cell>
+                    <TableNext.Cell>{item.space}</TableNext.Cell>
+                    <TableNext.Cell>{item.environment}</TableNext.Cell>
+                    <TableNext.Cell>{item.tags}</TableNext.Cell>
+                    <TableNext.Cell>{item.id}</TableNext.Cell>
+                  </TableNext.Row>
+                ))}
+              </TableNext.Body>
+            </TableNext>
+          </main>
         </Layout.Body>
       </Layout>
     </div>
@@ -372,49 +375,52 @@ export const StackableWithTitles: StoryObj = {
         overflow: 'hidden',
       })}
     >
-      <div className={css({ backgroundColor: 'silver', height: '60px' })}>
+      <nav className={css({ backgroundColor: 'silver', height: '60px' })}>
         Navbar
-      </div>
+      </nav>
       <Layout>
-        <Layout.Body>
-          <Note className={css({ margin: '1rem' })}>
-            TableNext in stackable layout with columnTitles. When the
-            surrounding container is smaller than 700px the table stacks and
-            shows column titles next to each cell value.
-          </Note>
-          <TableNext
-            layout="stackable"
-            columnTitles={contentTableHeaderTitles}
-            {...args}
-          >
-            <TableNext.Head>
-              <TableNext.Row>
-                {contentTableHeaderTitles.map((item, id) => (
-                  <TableNext.Cell key={`table-head-cell-${item}-${id}`}>
-                    {item}
-                  </TableNext.Cell>
-                ))}
-              </TableNext.Row>
-            </TableNext.Head>
-            <TableNext.Body>
-              {withLongContentTableData.map((item) => (
-                <TableNext.Row key={item.id}>
-                  <TableNext.Cell>{item.name}</TableNext.Cell>
-                  <TableNext.Cell>
-                    <EntityStatusBadge entityStatus={item.status} />
-                  </TableNext.Cell>
-                  <TableNext.Cell>{item.contentType}</TableNext.Cell>
-                  <TableNext.Cell>{item.updatedBy}</TableNext.Cell>
-                  <TableNext.Cell>{item.updated}</TableNext.Cell>
-                  <TableNext.Cell>{item.locale}</TableNext.Cell>
-                  <TableNext.Cell>{item.space}</TableNext.Cell>
-                  <TableNext.Cell>{item.environment}</TableNext.Cell>
-                  <TableNext.Cell>{item.tags}</TableNext.Cell>
-                  <TableNext.Cell>{item.id}</TableNext.Cell>
+        <Layout.Body tabIndex={0}>
+          <main>
+            <SectionHeading as="h1">Stackable with Titles</SectionHeading>
+            <Note className={css({ margin: '1rem' })}>
+              TableNext in stackable layout with columnTitles. When the
+              surrounding container is smaller than 700px the table stacks and
+              shows column titles next to each cell value.
+            </Note>
+            <TableNext
+              layout="stackable"
+              columnTitles={contentTableHeaderTitles}
+              {...args}
+            >
+              <TableNext.Head>
+                <TableNext.Row>
+                  {contentTableHeaderTitles.map((item, id) => (
+                    <TableNext.Cell key={`table-head-cell-${item}-${id}`}>
+                      {item}
+                    </TableNext.Cell>
+                  ))}
                 </TableNext.Row>
-              ))}
-            </TableNext.Body>
-          </TableNext>
+              </TableNext.Head>
+              <TableNext.Body>
+                {withLongContentTableData.map((item) => (
+                  <TableNext.Row key={item.id}>
+                    <TableNext.Cell>{item.name}</TableNext.Cell>
+                    <TableNext.Cell>
+                      <EntityStatusBadge entityStatus={item.status} />
+                    </TableNext.Cell>
+                    <TableNext.Cell>{item.contentType}</TableNext.Cell>
+                    <TableNext.Cell>{item.updatedBy}</TableNext.Cell>
+                    <TableNext.Cell>{item.updated}</TableNext.Cell>
+                    <TableNext.Cell>{item.locale}</TableNext.Cell>
+                    <TableNext.Cell>{item.space}</TableNext.Cell>
+                    <TableNext.Cell>{item.environment}</TableNext.Cell>
+                    <TableNext.Cell>{item.tags}</TableNext.Cell>
+                    <TableNext.Cell>{item.id}</TableNext.Cell>
+                  </TableNext.Row>
+                ))}
+              </TableNext.Body>
+            </TableNext>
+          </main>
         </Layout.Body>
       </Layout>
     </div>
@@ -437,41 +443,44 @@ export const Scrollable: StoryObj = {
         overflow: 'hidden',
       })}
     >
-      <div className={css({ backgroundColor: 'silver', height: '60px' })}>
+      <nav className={css({ backgroundColor: 'silver', height: '60px' })}>
         Navbar
-      </div>
+      </nav>
       <Layout>
-        <Layout.Body>
-          <Note className={css({ margin: '1rem' })}>
-            TableNext with overflow-x scrollbar
-          </Note>
-          <TableNext layout="scrollable" {...args}>
-            <TableNext.Head>
-              <TableNext.Row>
-                {contentTableHeaderTitles.map((title) => (
-                  <TableNext.Cell key={title}>{title}</TableNext.Cell>
-                ))}
-              </TableNext.Row>
-            </TableNext.Head>
-            <TableNext.Body>
-              {withLongContentTableData.map((item) => (
-                <TableNext.Row key={item.id}>
-                  <TableNext.Cell>{item.name}</TableNext.Cell>
-                  <TableNext.Cell>
-                    <EntityStatusBadge entityStatus={item.status} />
-                  </TableNext.Cell>
-                  <TableNext.Cell>{item.contentType}</TableNext.Cell>
-                  <TableNext.Cell>{item.updatedBy}</TableNext.Cell>
-                  <TableNext.Cell>{item.updated}</TableNext.Cell>
-                  <TableNext.Cell>{item.locale}</TableNext.Cell>
-                  <TableNext.Cell>{item.space}</TableNext.Cell>
-                  <TableNext.Cell>{item.environment}</TableNext.Cell>
-                  <TableNext.Cell>{item.tags}</TableNext.Cell>
-                  <TableNext.Cell>{item.id}</TableNext.Cell>
+        <Layout.Body tabIndex={0}>
+          <main>
+            <SectionHeading as="h1">Scrollable</SectionHeading>
+            <Note className={css({ margin: '1rem' })}>
+              TableNext with overflow-x scrollbar
+            </Note>
+            <TableNext layout="scrollable" {...args}>
+              <TableNext.Head>
+                <TableNext.Row>
+                  {contentTableHeaderTitles.map((title) => (
+                    <TableNext.Cell key={title}>{title}</TableNext.Cell>
+                  ))}
                 </TableNext.Row>
-              ))}
-            </TableNext.Body>
-          </TableNext>
+              </TableNext.Head>
+              <TableNext.Body>
+                {withLongContentTableData.map((item) => (
+                  <TableNext.Row key={item.id}>
+                    <TableNext.Cell>{item.name}</TableNext.Cell>
+                    <TableNext.Cell>
+                      <EntityStatusBadge entityStatus={item.status} />
+                    </TableNext.Cell>
+                    <TableNext.Cell>{item.contentType}</TableNext.Cell>
+                    <TableNext.Cell>{item.updatedBy}</TableNext.Cell>
+                    <TableNext.Cell>{item.updated}</TableNext.Cell>
+                    <TableNext.Cell>{item.locale}</TableNext.Cell>
+                    <TableNext.Cell>{item.space}</TableNext.Cell>
+                    <TableNext.Cell>{item.environment}</TableNext.Cell>
+                    <TableNext.Cell>{item.tags}</TableNext.Cell>
+                    <TableNext.Cell>{item.id}</TableNext.Cell>
+                  </TableNext.Row>
+                ))}
+              </TableNext.Body>
+            </TableNext>
+          </main>
         </Layout.Body>
       </Layout>
     </div>
@@ -494,41 +503,46 @@ export const ScrollableStickyFirstColumn: StoryObj = {
         overflow: 'hidden',
       })}
     >
-      <div className={css({ backgroundColor: 'silver', height: '60px' })}>
+      <nav className={css({ backgroundColor: 'silver', height: '60px' })}>
         Navbar
-      </div>
+      </nav>
       <Layout>
-        <Layout.Body>
-          <Note className={css({ margin: '1rem' })}>
-            TableNext with overflow-x and fixed first column
-          </Note>
-          <TableNext layout="scrollable" isFirstColumnSticky={true} {...args}>
-            <TableNext.Head>
-              <TableNext.Row>
-                {contentTableHeaderTitles.map((title) => (
-                  <TableNext.Cell key={title}>{title}</TableNext.Cell>
-                ))}
-              </TableNext.Row>
-            </TableNext.Head>
-            <TableNext.Body>
-              {withLongContentTableData.map((item) => (
-                <TableNext.Row key={item.id}>
-                  <TableNext.Cell>{item.name}</TableNext.Cell>
-                  <TableNext.Cell>
-                    <EntityStatusBadge entityStatus={item.status} />
-                  </TableNext.Cell>
-                  <TableNext.Cell>{item.contentType}</TableNext.Cell>
-                  <TableNext.Cell>{item.updatedBy}</TableNext.Cell>
-                  <TableNext.Cell>{item.updated}</TableNext.Cell>
-                  <TableNext.Cell>{item.locale}</TableNext.Cell>
-                  <TableNext.Cell>{item.space}</TableNext.Cell>
-                  <TableNext.Cell>{item.environment}</TableNext.Cell>
-                  <TableNext.Cell>{item.tags}</TableNext.Cell>
-                  <TableNext.Cell>{item.id}</TableNext.Cell>
+        <Layout.Body tabIndex={0}>
+          <main>
+            <SectionHeading as="h1">
+              Scrollable with Sticky first column
+            </SectionHeading>
+            <Note className={css({ margin: '1rem' })}>
+              TableNext with overflow-x and fixed first column
+            </Note>
+            <TableNext layout="scrollable" isFirstColumnSticky={true} {...args}>
+              <TableNext.Head>
+                <TableNext.Row>
+                  {contentTableHeaderTitles.map((title) => (
+                    <TableNext.Cell key={title}>{title}</TableNext.Cell>
+                  ))}
                 </TableNext.Row>
-              ))}
-            </TableNext.Body>
-          </TableNext>
+              </TableNext.Head>
+              <TableNext.Body>
+                {withLongContentTableData.map((item) => (
+                  <TableNext.Row key={item.id}>
+                    <TableNext.Cell>{item.name}</TableNext.Cell>
+                    <TableNext.Cell>
+                      <EntityStatusBadge entityStatus={item.status} />
+                    </TableNext.Cell>
+                    <TableNext.Cell>{item.contentType}</TableNext.Cell>
+                    <TableNext.Cell>{item.updatedBy}</TableNext.Cell>
+                    <TableNext.Cell>{item.updated}</TableNext.Cell>
+                    <TableNext.Cell>{item.locale}</TableNext.Cell>
+                    <TableNext.Cell>{item.space}</TableNext.Cell>
+                    <TableNext.Cell>{item.environment}</TableNext.Cell>
+                    <TableNext.Cell>{item.tags}</TableNext.Cell>
+                    <TableNext.Cell>{item.id}</TableNext.Cell>
+                  </TableNext.Row>
+                ))}
+              </TableNext.Body>
+            </TableNext>
+          </main>
         </Layout.Body>
       </Layout>
     </div>
@@ -551,18 +565,21 @@ export const ScrollableStickyHeaderAndFirstColumn: StoryObj = {
         overflow: 'hidden',
       })}
     >
-      <div className={css({ backgroundColor: 'silver', height: '60px' })}>
+      <nav className={css({ backgroundColor: 'silver', height: '60px' })}>
         Navbar
-      </div>
+      </nav>
       <Layout>
-        <Layout.Body>
-          <div
+        <Layout.Body tabIndex={0}>
+          <main
             className={css({
               display: 'flex',
               flexDirection: 'column',
               height: '100%',
             })}
           >
+            <SectionHeading as="h1">
+              Scrollable with Sticky orientations
+            </SectionHeading>
             <Note className={css({ margin: '1rem' })}>
               TableNext with sticky header, sticky first column and scrollable.
               Because of compatiability issues of sticky-top with overflow-x,
@@ -597,7 +614,7 @@ export const ScrollableStickyHeaderAndFirstColumn: StoryObj = {
                 ))}
               </TableNext.Body>
             </TableNext>
-          </div>
+          </main>
         </Layout.Body>
       </Layout>
     </div>
