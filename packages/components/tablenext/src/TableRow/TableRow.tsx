@@ -9,6 +9,7 @@ import {
 import { getTableRowStyles } from './TableRow.styles';
 import { useTableContext } from '../tableContext';
 import { TableCell } from '../TableCell/TableCell';
+import { useTableCellContext } from '../TableCell/TableCellContext';
 
 type TableRowInternalProps = CommonProps & {
   isSelected?: boolean;
@@ -39,39 +40,43 @@ export const TableRow = forwardRef<
       stackableBreakpoint = '700px',
     } = useTableContext();
 
+    const { name: context } = useTableCellContext();
+
     const originalCells = Children.toArray(children);
     const updatedCells: React.ReactNode[] = [];
     const columnTitleCount = columnTitles?.length ?? 0;
     const cellCount = Math.max(columnTitleCount, originalCells.length);
 
-    if (
-      process.env.NODE_ENV !== 'production' &&
-      hasColumnTitles &&
-      columnTitleCount !== originalCells.length
-    ) {
-      // eslint-disable-next-line no-console
-      console.warn(
-        `[TableNext.Row] Some row cells do not have matching column titles, which can make the cell content harder to understand. ` +
-          `Received ${columnTitleCount} columnTitles for ${originalCells.length} row cells.`,
-      );
-    }
-
-    for (let i = 0; i < cellCount; i++) {
-      const title = columnTitles?.[i];
-
-      if (isStackable && i > 0 && title) {
-        updatedCells.push(
-          <TableCell
-            key={`stacked-title-${title.replace(/\s+/g, '')}-${i}`}
-            className={styles.stackableTitle(stackableBreakpoint)}
-            aria-hidden
-          >
-            {title}
-          </TableCell>,
+    if (columnTitles) {
+      if (
+        process.env.NODE_ENV !== 'production' &&
+        columnTitleCount !== originalCells.length
+      ) {
+        // eslint-disable-next-line no-console
+        console.warn(
+          `[TableNext.Row] Some row cells do not have matching column titles, which can make the cell content harder to understand. ` +
+            `Received ${columnTitleCount} columnTitles for ${originalCells.length} row cells.`,
         );
       }
-      if (originalCells.length > i) {
-        updatedCells.push(originalCells[i]);
+      const isBodyCell = context === 'body';
+
+      for (let i = 0; i < cellCount; i++) {
+        const title = columnTitles?.[i];
+
+        if (i > 0 && title && isBodyCell) {
+          updatedCells.push(
+            <TableCell
+              key={`stacked-title-${title.replace(/\s+/g, '')}-${i}`}
+              className={styles.stackableTitle(stackableBreakpoint)}
+              aria-hidden
+            >
+              {title}
+            </TableCell>,
+          );
+        }
+        if (originalCells.length > i) {
+          updatedCells.push(originalCells[i]);
+        }
       }
     }
 
