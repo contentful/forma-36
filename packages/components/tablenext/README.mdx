@@ -10,9 +10,15 @@ typescript: ./src/TableNext.tsx,./src/TableCell/TableCell.tsx,./src/TableRow/Tab
 
 `TableNext` is the next iteration of the basic `Table` component. It is per default responsive by receiving a horizontal scrollbar. It additionally offers a second responsive layout mode called `stackable`. In the `stackable` layout, the Table data will be displayed in a grid, each table row represented as a single unit with all cells of this row stacked on top of each other. If a table header with titles is required, the column title is displayed next to the table cell.
 
-## Current Limitations
+## Current limitations
 
-This component is still in an unstable alpha state. At the moment it does not offer the possibility of adding a check-all checkbox in the header.
+This component is still in an unstable alpha state. The `layout="stackable"` variant has the following restrictions:
+
+- **No sorting.** Sorting props (`isSortable`, `sortDirection`, `sortButtonAriaLabel`) have no effect in stackable mode. Use `layout="scrollable"` for sortable tables.
+- **Plain text column titles only.** `columnTitles` accepts strings. Custom React elements — checkboxes, tooltips, icons, badges, or any other component — cannot be used as row labels in the stacked view.
+- **No custom head cell content beyond text.** Head cells in a stackable table should contain plain text only. Additional React elements such as sort buttons, tooltips, or icons inside `TableNext.Cell` within `TableNext.Head` are not supported in stackable mode.
+
+Support for richer head cell content, sorting, and check-all checkboxes in stackable tables is planned for a future release.
 
 ## Import
 
@@ -60,6 +66,12 @@ Sorting is supported on non-stackable tables. Add `isSortable` to a head cell, p
 ```jsx file=./examples/TableNextWithSortingExample.tsx
 
 ```
+
+### When to use the stackable layout
+
+Use `layout="stackable"` when the table needs to remain readable in narrow containers — for example in sidebars, panels, or split-pane layouts — or when the page may be viewed on small viewports where horizontal scrolling would be disruptive. The stackable layout reflows each row into a vertically stacked block, keeping all values visible without requiring the user to scroll sideways.
+
+Prefer `layout="scrollable"` when the table has many columns that need to stay in view at once, when column relationships matter for scanning across rows, or when sorting is required.
 
 ### Stacked responsive behaviour with column titles
 
