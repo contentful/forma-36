@@ -2,17 +2,21 @@ import React from 'react';
 import { TableNext } from '@contentful/f36-table-next';
 
 export default function StackableWithTitleExample() {
+  const stackableColumnTitles = [
+    'Name',
+    'Email',
+    'Organization role',
+    'Last activity',
+  ];
   return (
-    <TableNext
-      layout="stackable"
-      columnTitles={['Name', 'Email', 'Organization role', 'Last activity']}
-    >
+    <TableNext layout="stackable" columnTitles={stackableColumnTitles}>
       <TableNext.Head>
         <TableNext.Row>
-          <TableNext.Cell>Name</TableNext.Cell>
-          <TableNext.Cell>Email</TableNext.Cell>
-          <TableNext.Cell>Organization role</TableNext.Cell>
-          <TableNext.Cell>Last activity</TableNext.Cell>
+          {stackableColumnTitles.map((title, id) => (
+            <TableNext.Cell key={`table-head-cell-${title}-${id}`}>
+              {title}
+            </TableNext.Cell>
+          ))}
         </TableNext.Row>
       </TableNext.Head>
       <TableNext.Body>

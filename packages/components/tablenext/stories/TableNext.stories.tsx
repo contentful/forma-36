@@ -3,7 +3,6 @@ import type { StoryFn, StoryObj, Meta } from '@storybook/react-vite';
 import {
   Skeleton,
   EntityStatusBadge,
-  type EntityStatus,
   Button,
   Flex,
   SectionHeading,
@@ -14,7 +13,6 @@ import { withLongContentTableData } from './WithLongContent.mockdata';
 import { css } from '@emotion/css';
 
 import { TableNext, TableCellSorting } from '../src';
-import tokens from '@contentful/f36-tokens';
 
 type SortState = { column: string; direction: TableCellSorting } | null;
 
@@ -41,31 +39,6 @@ export default {
   },
   title: 'Components/TableNext',
 } as Meta;
-
-const sortableContentTypes = [
-  {
-    id: '1',
-    name: 'Category',
-    description:
-      'Categories can be applied to Courses and Lessons. Assigning Multiple categories is also possible.',
-    updatedAt: 'Nov 1, 2021',
-    status: 'published',
-  },
-  {
-    id: '2',
-    name: 'Untitled',
-    updatedAt: 'Nov 11, 2021',
-    status: 'draft',
-  },
-  {
-    id: '3',
-    name: 'Layout',
-    description:
-      'A page consisting of freely configurable and rearrangeable content modules.',
-    updatedAt: 'Nov 18, 2021',
-    status: 'published',
-  },
-];
 
 export const Default: StoryObj = {
   render: (args) => {
@@ -225,6 +198,30 @@ export const StyleVariants: StoryFn = () => (
   </>
 );
 
+const sortableContentTypes = [
+  {
+    id: '1',
+    name: 'Category',
+    description:
+      'Categories can be applied to Courses and Lessons. Assigning Multiple categories is also possible.',
+    updatedAt: 'Nov 1, 2021',
+    status: 'published',
+  },
+  {
+    id: '2',
+    name: 'Untitled',
+    updatedAt: 'Nov 11, 2021',
+    status: 'draft',
+  },
+  {
+    id: '3',
+    name: 'Layout',
+    description:
+      'A page consisting of freely configurable and rearrangeable content modules.',
+    updatedAt: 'Nov 18, 2021',
+    status: 'published',
+  },
+];
 export const WithSorting: StoryFn = () => {
   const [sorting, setSorting] = useState<SortState>(null);
   const [sortedRows, setSortedRows] = useState(sortableContentTypes);
@@ -296,118 +293,6 @@ export const WithSorting: StoryFn = () => {
   );
 };
 
-const withContentTableData: {
-  name: string;
-  email: string;
-  status: EntityStatus;
-  contentType: string;
-  updatedBy: string;
-  updated: string;
-}[] = [
-  {
-    name: 'How does writing influence your personal brand?',
-    email: 'a.mahmoud@example.com',
-    status: 'published',
-    contentType: 'Blog post',
-    updatedBy: 'Ayman Mahmoud',
-    updated: 'Yesterday',
-  },
-  {
-    name: 'How to optimize images in WordPress for faster loading (complete guide)',
-    email: 'a.mahmoud@example.com',
-    status: 'published',
-    contentType: 'Blog post',
-    updatedBy: 'Ayman Mahmoud',
-    updated: '6 months ago',
-  },
-  {
-    name: 'Travelling as a way of self-discovery and progress',
-    status: 'changed',
-    email: 'a.mahmoud@example.com',
-    contentType: 'Blog post',
-    updatedBy: 'Ayman Mahmoud',
-    updated: '9 months ago',
-  },
-  {
-    name: 'Start a blog to reach your creative peak',
-    status: 'published',
-    email: 'a.mahmoud@example.com',
-    contentType: 'Blog post',
-    updatedBy: 'Ayman Mahmoud',
-    updated: '11 months ago',
-  },
-  {
-    name: 'Why choose a theme that looks good with WooCommerce',
-    status: 'published',
-    email: 'a.mahmoud@example.com',
-    contentType: 'Blog post',
-    updatedBy: 'Ayman Mahmoud',
-    updated: '11 months ago',
-  },
-];
-
-export const WithContent: StoryObj = {
-  render: (args) => (
-    <div style={{ width: '960px' }}>
-      <TableNext {...args}>
-        <TableNext.Head>
-          <TableNext.Row>
-            <TableNext.Cell>Name</TableNext.Cell>
-            <TableNext.Cell>Status</TableNext.Cell>
-            <TableNext.Cell>Email</TableNext.Cell>
-            <TableNext.Cell>Content Type</TableNext.Cell>
-            <TableNext.Cell>Updated By</TableNext.Cell>
-            <TableNext.Cell>Last activity</TableNext.Cell>
-          </TableNext.Row>
-        </TableNext.Head>
-        <TableNext.Body>
-          {withContentTableData.map((item) => (
-            <TableNext.Row key={item.name}>
-              <TableNext.Cell
-                style={{
-                  maxWidth: '350px',
-                  fontWeight: tokens.fontWeightDemiBold,
-                }}
-                isTruncated
-              >
-                {item.name}
-              </TableNext.Cell>
-              <TableNext.Cell style={{ width: '150px' }}>
-                <EntityStatusBadge entityStatus={item.status} />
-              </TableNext.Cell>
-              <TableNext.Cell style={{ width: '250px' }}>
-                {item.email}
-              </TableNext.Cell>
-              <TableNext.Cell style={{ width: '150px' }}>
-                {item.contentType}
-              </TableNext.Cell>
-              <TableNext.Cell style={{ width: '250px' }}>
-                {item.updatedBy}
-              </TableNext.Cell>
-              <TableNext.Cell style={{ width: '150px' }}>
-                {item.updated}
-              </TableNext.Cell>
-            </TableNext.Row>
-          ))}
-        </TableNext.Body>
-      </TableNext>
-    </div>
-  ),
-};
-
-const contentTableHeaderTitles = [
-  'Name',
-  'Status',
-  'Content Type',
-  'Updated by',
-  'Updated',
-  'Locale',
-  'Space',
-  'Environment',
-  'Tags',
-  'ID',
-];
-
 export const Stackable: StoryObj = {
   render: (args) => (
     <div
@@ -455,6 +340,15 @@ export const Stackable: StoryObj = {
   ),
 };
 
+const stackableColumnTitles = [
+  'Name',
+  'Status',
+  'Email',
+  'Content type',
+  'Updated by',
+  'Last activity',
+];
+
 export const StackableWithTitles: StoryObj = {
   render: (args) => (
     <div
@@ -483,24 +377,16 @@ export const StackableWithTitles: StoryObj = {
           </Note>
           <TableNext
             layout="stackable"
-            columnTitles={[
-              'Name',
-              'Status',
-              'Email',
-              'Content type',
-              'Updated by',
-              'Last activity',
-            ]}
+            columnTitles={stackableColumnTitles}
             {...args}
           >
             <TableNext.Head>
               <TableNext.Row>
-                <TableNext.Cell>Name</TableNext.Cell>
-                <TableNext.Cell>Status</TableNext.Cell>
-                <TableNext.Cell>Email</TableNext.Cell>
-                <TableNext.Cell>Content type</TableNext.Cell>
-                <TableNext.Cell>Updated by</TableNext.Cell>
-                <TableNext.Cell>Last activity</TableNext.Cell>
+                {stackableColumnTitles.map((item, id) => (
+                  <TableNext.Cell key={`table-head-cell-${item}-${id}`}>
+                    {item}
+                  </TableNext.Cell>
+                ))}
               </TableNext.Row>
             </TableNext.Head>
             <TableNext.Body>
@@ -523,6 +409,19 @@ export const StackableWithTitles: StoryObj = {
     </div>
   ),
 };
+
+const contentTableHeaderTitles = [
+  'Name',
+  'Status',
+  'Content Type',
+  'Updated by',
+  'Updated',
+  'Locale',
+  'Space',
+  'Environment',
+  'Tags',
+  'ID',
+];
 
 export const Scrollable: StoryObj = {
   render: (args) => (
