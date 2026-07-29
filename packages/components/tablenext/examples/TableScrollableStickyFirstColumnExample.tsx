@@ -46,7 +46,7 @@ export default function TableScrollableStickyFirstColumnExample() {
   });
 
   return (
-    <TableNext layout="scrollable" isFirstColumnSticky>
+    <TableNext isFirstColumnSticky>
       <TableNext.Head>
         <TableNext.Row>
           <TableNext.Cell>Name</TableNext.Cell>
