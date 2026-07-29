@@ -320,16 +320,20 @@ export const Stackable: StoryObj = {
           </Note>
           <TableNext layout="stackable" {...args}>
             <TableNext.Body>
-              {withContentTableData.map((item) => (
-                <TableNext.Row key={item.name}>
+              {withLongContentTableData.map((item) => (
+                <TableNext.Row key={item.id}>
                   <TableNext.Cell>{item.name}</TableNext.Cell>
                   <TableNext.Cell>
                     <EntityStatusBadge entityStatus={item.status} />
                   </TableNext.Cell>
-                  <TableNext.Cell>{item.email}</TableNext.Cell>
                   <TableNext.Cell>{item.contentType}</TableNext.Cell>
                   <TableNext.Cell>{item.updatedBy}</TableNext.Cell>
                   <TableNext.Cell>{item.updated}</TableNext.Cell>
+                  <TableNext.Cell>{item.locale}</TableNext.Cell>
+                  <TableNext.Cell>{item.space}</TableNext.Cell>
+                  <TableNext.Cell>{item.environment}</TableNext.Cell>
+                  <TableNext.Cell>{item.tags}</TableNext.Cell>
+                  <TableNext.Cell>{item.id}</TableNext.Cell>
                 </TableNext.Row>
               ))}
             </TableNext.Body>
@@ -340,15 +344,18 @@ export const Stackable: StoryObj = {
   ),
 };
 
-const stackableColumnTitles = [
+const contentTableHeaderTitles = [
   'Name',
   'Status',
-  'Email',
-  'Content type',
+  'Content Type',
   'Updated by',
-  'Last activity',
+  'Updated',
+  'Locale',
+  'Space',
+  'Environment',
+  'Tags',
+  'ID',
 ];
-
 export const StackableWithTitles: StoryObj = {
   render: (args) => (
     <div
@@ -377,12 +384,12 @@ export const StackableWithTitles: StoryObj = {
           </Note>
           <TableNext
             layout="stackable"
-            columnTitles={stackableColumnTitles}
+            columnTitles={contentTableHeaderTitles}
             {...args}
           >
             <TableNext.Head>
               <TableNext.Row>
-                {stackableColumnTitles.map((item, id) => (
+                {contentTableHeaderTitles.map((item, id) => (
                   <TableNext.Cell key={`table-head-cell-${item}-${id}`}>
                     {item}
                   </TableNext.Cell>
@@ -390,16 +397,20 @@ export const StackableWithTitles: StoryObj = {
               </TableNext.Row>
             </TableNext.Head>
             <TableNext.Body>
-              {withContentTableData.map((item) => (
-                <TableNext.Row key={item.name}>
+              {withLongContentTableData.map((item) => (
+                <TableNext.Row key={item.id}>
                   <TableNext.Cell>{item.name}</TableNext.Cell>
                   <TableNext.Cell>
                     <EntityStatusBadge entityStatus={item.status} />
                   </TableNext.Cell>
-                  <TableNext.Cell>{item.email}</TableNext.Cell>
                   <TableNext.Cell>{item.contentType}</TableNext.Cell>
                   <TableNext.Cell>{item.updatedBy}</TableNext.Cell>
                   <TableNext.Cell>{item.updated}</TableNext.Cell>
+                  <TableNext.Cell>{item.locale}</TableNext.Cell>
+                  <TableNext.Cell>{item.space}</TableNext.Cell>
+                  <TableNext.Cell>{item.environment}</TableNext.Cell>
+                  <TableNext.Cell>{item.tags}</TableNext.Cell>
+                  <TableNext.Cell>{item.id}</TableNext.Cell>
                 </TableNext.Row>
               ))}
             </TableNext.Body>
@@ -409,19 +420,6 @@ export const StackableWithTitles: StoryObj = {
     </div>
   ),
 };
-
-const contentTableHeaderTitles = [
-  'Name',
-  'Status',
-  'Content Type',
-  'Updated by',
-  'Updated',
-  'Locale',
-  'Space',
-  'Environment',
-  'Tags',
-  'ID',
-];
 
 export const Scrollable: StoryObj = {
   render: (args) => (
