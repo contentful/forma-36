@@ -55,6 +55,7 @@
         "**/examples/**/*.{js,jsx,ts,tsx}"
       ],
       "ignoreIssues": {
+        "**/*.mdx": ["unlisted"],
         "stories/**/*.{js,jsx,ts,tsx}": ["unlisted"],
         "**/examples/**/*.{js,jsx,ts,tsx}": ["unlisted"]
       }
@@ -70,6 +71,7 @@
         "stories/**/*.{js,jsx,ts,tsx}"
       ],
       "ignoreIssues": {
+        "src/**/*.mdx": ["unlisted"],
         "stories/**/*.{js,jsx,ts,tsx}": ["unlisted"],
         "src/**/examples/**/*.{js,jsx,ts,tsx}": ["unlisted"]
       }
@@ -91,7 +93,10 @@
         "bin/*.mjs",
         "transforms/**/*.{js,ts,tsx}",
         "utils/**/*.js"
-      ]
+      ],
+      "ignoreIssues": {
+        "transforms/__testfixtures__/**/*.{js,jsx,ts,tsx}": ["unlisted"]
+      }
     },
     "packages/forma-36-react-components": {
       "ignoreDependencies": ["@contentful/browserslist-config"]
