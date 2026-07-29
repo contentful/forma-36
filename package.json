@@ -106,7 +106,7 @@
     "lint-staged": "^16.4.0",
     "octokit": "^3.0.0",
     "plop": "^4.0.5",
-    "prettier": "3.9.5",
+    "prettier": "3.9.6",
     "pretty-quick": "4.2.2",
     "react": "19.2.7",
     "react-dom": "19.2.7",
