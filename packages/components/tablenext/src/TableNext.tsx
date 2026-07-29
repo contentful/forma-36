@@ -146,7 +146,7 @@ export const TableNext = forwardRef<
     return (
       <section
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- scrollable region requires tabIndex for keyboard access (WCAG 2.1 SC 2.1.1)
-        tabIndex={isScrollable && isHeaderSticky ? 0 : undefined}
+        tabIndex={isScrollable ? 0 : undefined}
         className={cx(styles[variant], {
           [styles.scrollableWrapper]: isScrollable,
           [styles.stackableWrapper]: isStackable,
