@@ -130,6 +130,11 @@
       "status": "stable"
     },
     {
+      "title": "TableNext",
+      "slug": "/components/tablenext/",
+      "status": "alpha"
+    },
+    {
       "title": "Tabs",
       "slug": "/components/tabs/",
       "status": "stable"

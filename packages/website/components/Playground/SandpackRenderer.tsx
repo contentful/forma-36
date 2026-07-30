@@ -102,6 +102,7 @@ export function SandpackRenderer({
           '@contentful/f36-components': '^6.0.0',
           '@contentful/f36-navbar': '^6.0.0',
           '@contentful/f36-pill-next': '^6.0.1-alpha.7',
+          '@contentful/f36-table-next': '^6.0.1-alpha.1',
           '@contentful/f36-tokens': '^6.0.0',
           '@contentful/f36-icons': '^6.0.0',
           '@contentful/f36-utils': '^6.0.0',
