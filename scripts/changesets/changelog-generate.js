@@ -18,6 +18,7 @@ const ignorePkgs = [
   '@contentful/f36-website',
   '@contentful/f36-docs-utils',
   '@contentful/f36-pill-next',
+  '@contentful/f36-table-next',
   '@contentful/f36-ai-components',
 ];
 
