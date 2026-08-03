@@ -103,7 +103,7 @@
     "jest-environment-jsdom": "^30.4.0",
     "jest-watch-typeahead": "^3.0.1",
     "knip": "^6.29.0",
-    "lint-staged": "^16.4.0",
+    "lint-staged": "^17.0.0",
     "octokit": "^3.0.0",
     "plop": "^4.0.5",
     "prettier": "3.9.6",
