@@ -16,7 +16,7 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import type { NavbarAccountProps } from '../src/NavbarAccount/NavbarAccount';
 import type { NavbarSwitcherProps } from '../src/NavbarSwitcher/NavbarSwitcher';
-import { Button, TextLink } from '@contentful/f36-components';
+import { TextLink } from '@contentful/f36-components';
 import { css } from '@emotion/css';
 
 export default {
@@ -24,32 +24,9 @@ export default {
   title: 'Components/Navbar',
 } as Meta;
 
-const storyStyles = {
-  skipButton: css({
-    position: 'absolute',
-    top: '12px',
-    left: '12px',
-    opacity: 0,
-    width: '0px',
-    height: '0px',
-    minHeight: 0,
-    overflow: 'hidden',
-    padding: 0,
-    '&:focus': {
-      opacity: 1,
-      width: 'auto',
-      height: 'auto',
-      minHeight: `40px`,
-    },
-  }),
-};
-
-const SkipButton = () => {
-  return (
-    <Button as="a" className={storyStyles.skipButton} href="#main-content">
-      Skip to main content
-    </Button>
-  );
+const skipButtonProps = {
+  title: 'Skip to main content',
+  href: '#main-content',
 };
 
 const Switcher = ({
@@ -166,7 +143,7 @@ export const Basic: StoryObj<{ initials?: string; avatar?: string }> = (
   return (
     <div style={{ minWidth: '900px' }}>
       <Navbar
-        skipButton={<SkipButton />}
+        skipButtonProps={skipButtonProps}
         mainNavigation={<MainItems />}
         switcher={<Switcher />}
         account={<Account {...args} />}
@@ -194,7 +171,7 @@ export const BasicNoEnvironment: StoryObj<{
   return (
     <div style={{ minWidth: '900px' }}>
       <Navbar
-        skipButton={<SkipButton />}
+        skipButtonProps={skipButtonProps}
         mainNavigation={<MainItems />}
         switcher={<Navbar.Switcher space="Our super long space name" />}
         account={<Account {...args} />}
@@ -214,7 +191,7 @@ export const SizeVariants = () => {
     <Flex gap="spacingL" style={{ width: '97vw' }} flexDirection="column">
       <SectionHeading marginBottom="none">Fullscreen</SectionHeading>
       <Navbar
-        skipButton={<SkipButton />}
+        skipButtonProps={skipButtonProps}
         switcher={<Switcher />}
         account={<Account />}
         variant="fullscreen"
@@ -238,7 +215,7 @@ export const WithDisabledItems: StoryObj<{
   return (
     <div style={{ minWidth: '900px' }}>
       <Navbar
-        skipButton={<SkipButton />}
+        skipButtonProps={skipButtonProps}
         mainNavigation={<MainItems withDisabled />}
         switcher={<Switcher />}
         account={<Account {...args} />}
@@ -260,7 +237,7 @@ export const WithInitialsAvatar: StoryObj<{
   return (
     <div style={{ minWidth: '900px' }}>
       <Navbar
-        skipButton={<SkipButton />}
+        skipButtonProps={skipButtonProps}
         switcher={<Switcher />}
         account={<Account {...args} />}
         mainNavigation={<MainItems />}
@@ -277,7 +254,7 @@ export const WithFallbackAvatar = (args) => {
   return (
     <div style={{ minWidth: '900px' }}>
       <Navbar
-        skipButton={<SkipButton />}
+        skipButtonProps={skipButtonProps}
         switcher={<Switcher />}
         account={<Account {...args} />}
         mainNavigation={<MainItems />}
@@ -291,7 +268,7 @@ WithFallbackAvatar.args = {};
 export const WithShortSpaceName = () => {
   return (
     <Navbar
-      skipButton={<SkipButton />}
+      skipButtonProps={skipButtonProps}
       mainNavigation={<MainItems />}
       switcher={<Switcher space="Space" />}
       account={<Account />}

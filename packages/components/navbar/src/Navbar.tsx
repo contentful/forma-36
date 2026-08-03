@@ -6,14 +6,9 @@ import { cx } from '@emotion/css';
 import { Button } from '@contentful/f36-button';
 import { ListIcon } from '@contentful/f36-icons';
 import { NavbarMenu } from './NavbarMenu/NavbarMenu';
+import { SkipButton } from './SkipButton/SkipButton';
 
 type NavbarOwnProps = CommonProps & {
-  /**
-   * Skip link to allow screenreader users to jump to the main content
-   */
-
-  skipButton?: React.ReactNode;
-
   /**
    * Accepts a React Component that will be displayed
    * instead of the Contentful Logo
@@ -49,6 +44,12 @@ type NavbarOwnProps = CommonProps & {
     label?: string;
   };
 
+  skipButtonProps?: {
+    title: string;
+    href: string;
+    testId?: string;
+  };
+
   /**
    * Defines the max-width of the content inside the navbar.
    * @default '100%'
@@ -79,7 +80,7 @@ export type NavbarProps = NavbarHTMLElementProps & NavbarOwnProps;
 
 function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
   const {
-    skipButton,
+    skipButtonProps,
     logo,
     promotions,
     switcher,
@@ -113,7 +114,9 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
       className={cx(styles.container, className)}
       as="header"
     >
-      {skipButton}
+      {skipButtonProps?.title && skipButtonProps?.href && (
+        <SkipButton {...skipButtonProps} />
+      )}
       <Flex
         as="nav"
         className={styles.navigation}
