@@ -9,6 +9,12 @@ import { NavbarMenu } from './NavbarMenu/NavbarMenu';
 
 type NavbarOwnProps = CommonProps & {
   /**
+   * Skip link to allow screenreader users to jump to the main content
+   */
+
+  skipButton?: React.ReactNode;
+
+  /**
    * Accepts a React Component that will be displayed
    * instead of the Contentful Logo
    */
@@ -73,6 +79,7 @@ export type NavbarProps = NavbarHTMLElementProps & NavbarOwnProps;
 
 function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
   const {
+    skipButton,
     logo,
     promotions,
     switcher,
@@ -80,7 +87,10 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
     secondaryNavigation,
     account,
     mobileNavigation,
-    mobileNavigationProps = { breakpoint: 'small', label: 'Menu' },
+    mobileNavigationProps: {
+      breakpoint: mobileNavigationBreakpoint = 'small',
+      label: mobileNavigationLabel = 'Menu',
+    } = {},
     className,
     contentMaxWidth = '100%',
     testId = 'cf-ui-navbar',
@@ -103,6 +113,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
       className={cx(styles.container, className)}
       as="header"
     >
+      {skipButton}
       <Flex
         as="nav"
         className={styles.navigation}
@@ -116,11 +127,11 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
               trigger={
                 <Button
                   className={styles.mobileNavigationButton(
-                    mobileNavigationProps.breakpoint,
+                    mobileNavigationBreakpoint,
                   )}
                   startIcon={<ListIcon size="medium" />}
                 >
-                  {mobileNavigationProps.label}
+                  {mobileNavigationLabel}
                 </Button>
               }
             >
@@ -129,9 +140,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
           )}
           {mainNavigation && (
             <Flex
-              className={styles.mainNavigation(
-                mobileNavigationProps.breakpoint,
-              )}
+              className={styles.mainNavigation(mobileNavigationBreakpoint)}
               aria-label={aria.labelMainNavigation}
               gap="spacingXs"
             >

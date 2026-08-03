@@ -207,6 +207,15 @@ The Navbar component supports responsiveness. Different areas of the navbar will
   </Table.Head>
   <Table.Body>
     <Table.Row>
+      <Table.Cell>`skipButton`</Table.Cell>
+      <Table.Cell>
+        Accepts a Skip-to-Content shortcut link, which allows keyboard users to
+        skip main navigation items and directly jump to the main content area.
+      </Table.Cell>
+      <Table.Cell>Always visible</Table.Cell>
+      <Table.Cell>Custom element</Table.Cell>
+    </Table.Row>
+    <Table.Row>
       <Table.Cell>`logo`</Table.Cell>
       <Table.Cell>
         Allows to overwrite the Contentful logo with a custom logo and link.
@@ -289,6 +298,7 @@ The Navbar component supports responsiveness. Different areas of the navbar will
 
 Each `Menu.Item` offers and increased click-able area and the whole navigation is accessible via keyboard.  
 To further improve the accessibility, each Navbar area has a `aria-label`. These labels can be set via the `aria` prop oobject. Make sure to set a label for every `Menu.Item` in Icon-only modus, this is used to describe the Item for visually impaired users.
+Provide the `skipButton` for keyboard users to skip ahead to the main content.
 
 <Table>
   <Table.Head>
