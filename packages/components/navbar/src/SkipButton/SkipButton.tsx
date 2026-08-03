@@ -25,7 +25,7 @@ const styles = {
   }),
 };
 
-interface SkipButtonProps extends ButtonProps<'a'> {
+export interface SkipButtonProps extends ButtonProps<'a'> {
   title: string;
   href: string;
 }

@@ -6,7 +6,7 @@ import { cx } from '@emotion/css';
 import { Button } from '@contentful/f36-button';
 import { ListIcon } from '@contentful/f36-icons';
 import { NavbarMenu } from './NavbarMenu/NavbarMenu';
-import { SkipButton } from './SkipButton/SkipButton';
+import { SkipButton, type SkipButtonProps } from './SkipButton/SkipButton';
 
 type NavbarOwnProps = CommonProps & {
   /**
@@ -44,11 +44,7 @@ type NavbarOwnProps = CommonProps & {
     label?: string;
   };
 
-  skipButtonProps?: {
-    title: string;
-    href: string;
-    testId?: string;
-  };
+  skipButtonProps?: SkipButtonProps;
 
   /**
    * Defines the max-width of the content inside the navbar.
