@@ -61,6 +61,7 @@ export default [
     },
     rules: {
       'no-console': 'warn',
+      'jest/no-deprecated-functions': 'off',
       'react/prop-types': 'off',
       'react/prefer-stateless-function': [
         'off',
