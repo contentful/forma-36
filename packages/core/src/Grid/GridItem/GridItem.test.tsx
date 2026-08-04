@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { GridItem } from './GridItem';
 
@@ -23,9 +23,7 @@ describe('GridItem', () => {
 
   it('has no a11y issues', async () => {
     const { container } = render(<GridItem>Grid Item</GridItem>);
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   describe('should have correct styles', () => {

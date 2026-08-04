@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { ProgressStepper } from './CompoundProgressStepper';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 describe('CompoundProgressStepper', function () {
   it('renders basic content when only required props are passed', () => {
@@ -79,9 +79,7 @@ describe('CompoundProgressStepper', function () {
         <ProgressStepper.Step />
       </ProgressStepper>,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('renders clickable steps', () => {

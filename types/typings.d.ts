@@ -1,3 +1,5 @@
+/// <reference types="vitest/globals" />
+
 /* eslint-disable import/no-default-export */
 declare module '*.mdx' {
   let MDXComponent: (props: any) => JSX.Element;

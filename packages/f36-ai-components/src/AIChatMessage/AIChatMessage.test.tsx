@@ -5,15 +5,15 @@ import { getStyles } from './AIChatMessage.styles';
 import { Box } from '@contentful/f36-core';
 
 // Mocking react-markdown and its plugins as current jest version does not support ESM
-jest.mock('react-markdown', () => ({
+vi.mock('react-markdown', () => ({
   __esModule: true,
   default: ({ children }: { children: string }) => <div>{children}</div>,
 }));
-jest.mock('remark-gfm', () => ({
+vi.mock('remark-gfm', () => ({
   __esModule: true,
   default: () => {},
 }));
-jest.mock('rehype-raw', () => ({
+vi.mock('rehype-raw', () => ({
   __esModule: true,
   default: () => {},
 }));

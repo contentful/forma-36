@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { EntityListItem } from '..';
 import { MenuItem, MenuSectionTitle } from '@contentful/f36-menu';
@@ -37,7 +37,7 @@ describe('EntityList', function () {
   });
 
   it('renders the component with Menu', async () => {
-    const editSpy = jest.fn();
+    const editSpy = vi.fn();
 
     const user = userEvent.setup();
     render(
@@ -132,7 +132,7 @@ describe('EntityList', function () {
 
   it('can call an onClick callback', async () => {
     const user = userEvent.setup();
-    const mockOnClick = jest.fn();
+    const mockOnClick = vi.fn();
 
     render(<EntityListItem title="Title" onClick={mockOnClick} />);
 
@@ -189,8 +189,6 @@ describe('EntityList', function () {
         />
       </ul>,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

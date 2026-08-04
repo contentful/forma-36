@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { axe } from 'jest-axe';
 import userEvent from '@testing-library/user-event';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { CopyButton } from './CopyButton';
 
@@ -31,7 +31,7 @@ describe('CopyButton', () => {
 
   it('should trigger onCopy with the value when button is clicked', async () => {
     const user = userEvent.setup();
-    const mockOnCopy = jest.fn();
+    const mockOnCopy = vi.fn();
     const value = 'test';
 
     render(<CopyButton value={value} onCopy={mockOnCopy} />);
@@ -42,8 +42,6 @@ describe('CopyButton', () => {
 
   it('has no a11y issues', async () => {
     const { container } = render(<CopyButton value="test" />);
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

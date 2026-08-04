@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { EyeIcon } from '@contentful/f36-icons';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import { Badge } from './Badge';
 
 describe('Badge', function () {
@@ -37,8 +37,6 @@ describe('Badge', function () {
         <Badge variant="warning">Badge</Badge>
       </>,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Segmentation } from './Segmentation';
 import { Button } from '@contentful/f36-button';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 describe('Segmentation', function () {
   it('renders text', () => {
@@ -46,8 +46,6 @@ describe('Segmentation', function () {
       />,
     );
 
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

@@ -5,7 +5,7 @@ import { MessageGroups } from '../AIChatHistory';
 import { AIChatHistoryTabs } from './AIChatHistoryTabs';
 
 describe('AIChatHistoryTabs', () => {
-  const mockOnTabClick = jest.fn();
+  const mockOnTabClick = vi.fn();
 
   const mockGroups: MessageGroups = [
     {

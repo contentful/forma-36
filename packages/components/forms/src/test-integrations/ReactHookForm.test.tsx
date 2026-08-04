@@ -91,7 +91,7 @@ const MockForm = ({ handleData }) => {
   );
 };
 
-const mockHandleData = jest.fn((data) => {
+const mockHandleData = vi.fn((data) => {
   return Promise.resolve({ ...data });
 });
 

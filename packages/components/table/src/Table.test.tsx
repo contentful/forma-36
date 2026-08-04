@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { Table } from '.';
 
@@ -52,9 +52,7 @@ describe('Table', () => {
         </Table>,
       );
 
-      const results = await axe(container);
-
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
 
     it('has no a11y issue with embedded layout', async () => {
@@ -76,9 +74,7 @@ describe('Table', () => {
         </Table>,
       );
 
-      const results = await axe(container);
-
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
     it('has no a11y issue with scrollable layout', async () => {
       const { container } = render(
@@ -99,9 +95,7 @@ describe('Table', () => {
         </Table>,
       );
 
-      const results = await axe(container);
-
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
 
     it('has no a11y issue with scrollable layout and sticky header and first column', async () => {
@@ -123,9 +117,7 @@ describe('Table', () => {
         </Table>,
       );
 
-      const results = await axe(container);
-
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
   });
 

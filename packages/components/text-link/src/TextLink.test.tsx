@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ArrowDownIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import { TextLink } from './TextLink';
 
 describe('TextLink', function () {
@@ -83,7 +83,7 @@ describe('TextLink', function () {
 
   it('calls an onClick function', async () => {
     const user = userEvent.setup();
-    const onClickFunc = jest.fn();
+    const onClickFunc = vi.fn();
     render(
       <TextLink onClick={onClickFunc} as="button">
         Text Link
@@ -97,7 +97,7 @@ describe('TextLink', function () {
 
   it('prevents onClick function from being called when disabled', async () => {
     const user = userEvent.setup();
-    const onClickFunc = jest.fn();
+    const onClickFunc = vi.fn();
     render(
       <TextLink isDisabled onClick={onClickFunc} as="button">
         Text Link
@@ -132,16 +132,12 @@ describe('TextLink', function () {
 
   it('has no a11y issues', async () => {
     const { container } = render(<TextLink>Text Link</TextLink>);
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('has no a11y issues when rendered as a link', async () => {
     const { container } = render(<TextLink href="#">Text Link</TextLink>);
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('renders with an icon', () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { axe } from 'jest-axe';
 import tokens from '@contentful/f36-tokens';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { Pill } from './Pill';
 
@@ -21,7 +21,7 @@ describe('Pill', () => {
   });
 
   it('renders the component with a dragging handle', () => {
-    const mockOnDrag = jest.fn();
+    const mockOnDrag = vi.fn();
     const { container } = render(<Pill label="test" onDrag={mockOnDrag} />);
 
     const dragHandler = screen.getByText('Reorder item');
@@ -31,7 +31,7 @@ describe('Pill', () => {
   });
 
   it('renders the component with a close button', () => {
-    const mockOnClose = jest.fn();
+    const mockOnClose = vi.fn();
     const { container } = render(<Pill label="test" onClose={mockOnClose} />);
 
     const button = screen.getByRole('button');
@@ -74,8 +74,6 @@ describe('Pill', () => {
 
   it('has no a11y issues', async () => {
     const { container } = render(<Pill label="test" />);
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

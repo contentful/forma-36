@@ -117,7 +117,7 @@ describe('generate-releases', () => {
           name: '@contentful/f36-button',
         },
       };
-      const createReleaseMock = jest.fn().mockResolvedValue(undefined);
+      const createReleaseMock = vi.fn().mockResolvedValue(undefined);
       const octokit = {
         rest: {
           repos: {

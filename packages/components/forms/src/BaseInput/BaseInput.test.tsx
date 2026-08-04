@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { BaseInput } from './BaseInput';
 
@@ -68,7 +68,7 @@ describe('InputBase', function () {
   });
 
   it('can blur when clicking escape', () => {
-    const onBlur = jest.fn();
+    const onBlur = vi.fn();
     const { getByLabelText } = render(
       <BaseInput
         id="InputBase"
@@ -89,8 +89,6 @@ describe('InputBase', function () {
     const { container } = render(
       <BaseInput id="InputBase" aria-label="InputBase" />,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

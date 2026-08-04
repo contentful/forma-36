@@ -1,12 +1,12 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { NotificationItem } from './NotificationItem';
 
 describe('Notification', () => {
   it('renders the component', () => {
-    const mockOnClose = jest.fn();
+    const mockOnClose = vi.fn();
     const { container } = render(
       <NotificationItem onClose={mockOnClose} variant="positive">
         Notification text
@@ -42,7 +42,7 @@ describe('Notification', () => {
   });
 
   it('should trigger onClose when close button is clicked', () => {
-    const mockOnClose = jest.fn();
+    const mockOnClose = vi.fn();
     const { getByRole } = render(
       <NotificationItem variant="negative" onClose={mockOnClose}>
         This is the body text.
@@ -55,7 +55,7 @@ describe('Notification', () => {
   });
 
   it(`has no a11y issues`, async () => {
-    const mockOnClose = jest.fn();
+    const mockOnClose = vi.fn();
     const { container } = render(
       <NotificationItem
         onClose={mockOnClose}
@@ -67,8 +67,6 @@ describe('Notification', () => {
       </NotificationItem>,
     );
 
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

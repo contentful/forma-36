@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { ButtonGroup, Button, IconButton } from '..';
 import { CaretDownIcon } from '@contentful/f36-icons';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 describe('ButtonGroup', function () {
   it('renders button group', () => {
@@ -26,8 +26,7 @@ describe('ButtonGroup', function () {
       </ButtonGroup>,
     );
 
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('renders additional class name', () => {

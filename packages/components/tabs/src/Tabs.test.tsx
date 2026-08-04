@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { Tabs } from '.';
 
@@ -20,7 +20,7 @@ describe('Tabs', () => {
         </Tabs>
       </div>,
     );
-    expect(await axe(container)).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('switches tab panels on tab click', async () => {
@@ -58,7 +58,7 @@ describe('Tabs', () => {
   });
 
   it('fires `onTabChange` events', async () => {
-    const mockOnTabChange = jest.fn();
+    const mockOnTabChange = vi.fn();
     render(
       <div>
         <Tabs onTabChange={mockOnTabChange} defaultTab="first">

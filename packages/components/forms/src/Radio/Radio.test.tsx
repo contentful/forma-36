@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { Radio } from './Radio';
 
@@ -21,8 +21,6 @@ describe('Radio', function () {
 
   it('has no a11y issues', async () => {
     const { container } = render(<Radio>radio-button</Radio>);
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

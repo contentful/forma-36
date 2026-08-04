@@ -29,8 +29,8 @@
     "pretty:quick": "npx pretty-quick --staged --pattern '**/*.*(js|jsx|ts|tsx|md|mdx)'",
     "storybook": "storybook dev -p 9001 -c ./scripts/.storybook",
     "storybook:build": "storybook build -c ./scripts/.storybook -o dist-storybook --webpack-stats-json",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "tsc": "tsc --noEmit",
     "tsc:watch": "tsc --noEmit --watch",
     "docs": "npm run-script docs:next",
@@ -81,9 +81,9 @@
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
     "@types/jest": "^30.0.0",
-    "@types/jest-axe": "^3.5.9",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
+    "axe-core": "^4.12.1",
     "babel-jest": "^30.1.2",
     "chalk": "^5.6.2",
     "chromatic": "^18.0.0",
@@ -99,9 +99,9 @@
     "globby": "^15.0.0",
     "inquirer": "^12.9.6",
     "jest": "^30.1.3",
-    "jest-axe": "^10.0.0",
     "jest-environment-jsdom": "^30.4.0",
     "jest-watch-typeahead": "^3.0.1",
+    "jsdom": "^29.0.0",
     "knip": "^6.29.0",
     "lint-staged": "^17.0.0",
     "octokit": "^3.0.0",
@@ -119,7 +119,8 @@
     "turbo": "^2.9.14",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.44.0",
-    "vite": "^7.3.2"
+    "vite": "^7.3.2",
+    "vitest": "^4.1.10"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix --prune-suppressions"

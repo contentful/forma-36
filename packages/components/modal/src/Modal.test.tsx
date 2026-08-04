@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { Modal } from './Modal';
 
@@ -14,13 +14,11 @@ it('has no a11y issues', async () => {
       Content
     </Modal>,
   );
-  const results = await axe(container);
-
-  expect(results).toHaveNoViolations();
+  await expectNoA11yViolations(container);
 });
 
 it('should focus Close button', async () => {
-  const onAfterOpen = jest.fn();
+  const onAfterOpen = vi.fn();
   render(
     <Modal
       title="Modal with no initial focus element"
@@ -37,7 +35,7 @@ it('should focus Close button', async () => {
 });
 
 it('should focus initialFocusRef element', async () => {
-  const onAfterOpen = jest.fn();
+  const onAfterOpen = vi.fn();
 
   const Test = () => {
     const ref = React.useRef<HTMLButtonElement | null>(null);
@@ -63,7 +61,7 @@ it('should focus initialFocusRef element', async () => {
 });
 
 it('should focus element with native autoFocus attribute', async () => {
-  const onAfterOpen = jest.fn();
+  const onAfterOpen = vi.fn();
 
   render(
     <Modal

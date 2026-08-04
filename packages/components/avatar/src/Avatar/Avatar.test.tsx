@@ -5,9 +5,9 @@ import tokens from '@contentful/f36-tokens';
 import { CheckCircleIcon } from '@contentful/f36-icons';
 import { Avatar } from './Avatar';
 
-jest.mock('@contentful/f36-image', () => ({
+vi.mock('@contentful/f36-image', () => ({
   // eslint-disable-next-line jsx-a11y/alt-text
-  Image: jest.fn((props) => <img {...props} />),
+  Image: vi.fn((props) => <img {...props} />),
 }));
 
 describe('Avatar', () => {

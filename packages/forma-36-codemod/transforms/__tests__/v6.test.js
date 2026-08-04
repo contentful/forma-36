@@ -7,7 +7,7 @@ describe('v6 codemods', () => {
   beforeEach(() => {
     // Silence warnings we show on the transforms for cleaner tests
     // Comment this out if you want to check the warning messages
-    console.warn = jest.fn();
+    console.warn = globalThis.vi.fn();
   });
 
   tsxTests.forEach((test) =>

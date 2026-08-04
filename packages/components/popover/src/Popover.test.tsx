@@ -7,7 +7,7 @@ import {
   fireEvent,
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { Popover } from '.';
 import { Button } from '@contentful/f36-button';
@@ -106,7 +106,7 @@ describe('Popover', function () {
   });
 
   it('call onClose when pressing Esc key', async () => {
-    const handleClose = jest.fn();
+    const handleClose = vi.fn();
     const user = userEvent.setup();
 
     await renderWithAct({ isOpen: true, onClose: handleClose });
@@ -118,7 +118,7 @@ describe('Popover', function () {
   });
 
   it('do NOT call onClose when pressing Esc key and closeOnEsc prop is false', async () => {
-    const handleClose = jest.fn();
+    const handleClose = vi.fn();
     const user = userEvent.setup();
 
     await renderWithAct({
@@ -135,7 +135,7 @@ describe('Popover', function () {
 
   it('call onClose when clicking outside of popover', async () => {
     const user = userEvent.setup();
-    const handleClose = jest.fn();
+    const handleClose = vi.fn();
 
     await renderWithAct({
       isOpen: true,
@@ -151,7 +151,7 @@ describe('Popover', function () {
 
   it('do NOT call onClose when clicking inside of popover', async () => {
     const user = userEvent.setup();
-    const handleClose = jest.fn();
+    const handleClose = vi.fn();
 
     await renderWithAct({
       isOpen: true,
@@ -167,7 +167,7 @@ describe('Popover', function () {
 
   it('do NOT call onClose when clicking outside of popover and closeOnBlur is false', async () => {
     const user = userEvent.setup();
-    const handleClose = jest.fn();
+    const handleClose = vi.fn();
 
     await renderWithAct({
       isOpen: true,
@@ -183,7 +183,7 @@ describe('Popover', function () {
   });
 
   it('call onClose when scrolling an ancestor', async () => {
-    const handleClose = jest.fn();
+    const handleClose = vi.fn();
 
     await renderWithAct({
       isOpen: true,
@@ -198,7 +198,7 @@ describe('Popover', function () {
   });
 
   it('do NOT call onClose when scrolling an ancestor and closeOnScroll is false', async () => {
-    const handleClose = jest.fn();
+    const handleClose = vi.fn();
 
     await renderWithAct({
       isOpen: true,
@@ -276,8 +276,6 @@ describe('Popover', function () {
   it('has no a11y issues', async () => {
     const { container } = await renderWithAct({});
 
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

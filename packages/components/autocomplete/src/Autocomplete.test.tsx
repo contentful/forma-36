@@ -56,8 +56,8 @@ const fruitStrings = fruits.reduce(
   [] as string[],
 );
 
-const mockOnInputValueChange = jest.fn();
-const mockOnSelectItem = jest.fn();
+const mockOnInputValueChange = vi.fn();
+const mockOnSelectItem = vi.fn();
 
 describe('Autocomplete', () => {
   describe('items is an array of strings', () => {

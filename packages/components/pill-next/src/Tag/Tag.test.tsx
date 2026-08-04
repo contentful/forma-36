@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { axe } from 'jest-axe';
 import { XIcon } from '@contentful/f36-icons';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { Tag } from './Tag';
 
@@ -101,7 +101,7 @@ describe('Tag', () => {
     });
 
     it('calls onAction when action button is clicked', () => {
-      const mockOnAction = jest.fn();
+      const mockOnAction = vi.fn();
       render(
         <Tag
           label="test"
@@ -143,7 +143,7 @@ describe('Tag', () => {
     });
 
     it('does not call onAction when disabled', () => {
-      const mockOnAction = jest.fn();
+      const mockOnAction = vi.fn();
       render(
         <Tag
           label="test"
@@ -179,8 +179,7 @@ describe('Tag', () => {
       const { container } = render(
         <Tag label="test" badge={<span>Draft</span>} />,
       );
-      const results = await axe(container);
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
 
     it('has no a11y violations with action button', async () => {
@@ -193,8 +192,7 @@ describe('Tag', () => {
           actionButtonLabel="Remove"
         />,
       );
-      const results = await axe(container);
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
 
     it('has no a11y violations with disabled action button', async () => {
@@ -208,8 +206,7 @@ describe('Tag', () => {
           isDisabled
         />,
       );
-      const results = await axe(container);
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
   });
 });

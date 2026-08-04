@@ -10,12 +10,12 @@ describe('formatDateAndTime', () => {
   const today = dayjs();
 
   beforeEach(() => {
-    jest.useFakeTimers().setSystemTime(new Date(today.format()).getTime());
+    vi.useFakeTimers().setSystemTime(new Date(today.format()).getTime());
   });
 
   afterEach(() => {
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
+    vi.runOnlyPendingTimers();
+    vi.useRealTimers();
   });
 
   it('returns a string with the "full" format if no format option is passed', () => {

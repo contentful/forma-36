@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
-import { axe } from 'jest-axe';
 import React, { createRef } from 'react';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import { AIChatMessageList } from './AIChatMessageList';
 
 describe('AIChatMessageList', function () {
   beforeEach(() => {
-    Element.prototype.scrollTo = jest.fn();
+    Element.prototype.scrollTo = vi.fn();
   });
 
   it('renders the component', () => {
@@ -26,8 +26,7 @@ describe('AIChatMessageList', function () {
       </AIChatMessageList>,
     );
 
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('applies custom className', () => {
@@ -51,7 +50,7 @@ describe('AIChatMessageList', function () {
     expect(screen.getByTestId('custom-test-id')).toBeTruthy();
   });
 
-  it('scrolls to bottom when scrollToBottom is called', () => {
+  it('scrolls to bottom when scrollToBottom is called', async () => {
     const ref = createRef<HTMLDivElement & { scrollToBottom: () => void }>();
 
     render(
@@ -60,19 +59,21 @@ describe('AIChatMessageList', function () {
       </AIChatMessageList>,
     );
 
-    const scrollToMock = jest.fn();
+    const scrollToMock = vi.fn();
+    Element.prototype.scrollTo = scrollToMock;
     if (ref.current) {
-      ref.current.scrollTo = scrollToMock;
       ref.current.scrollToBottom();
     }
 
-    // Wait for requestAnimationFrame
-    setTimeout(() => {
-      expect(scrollToMock).toHaveBeenCalledWith({
-        top: expect.any(Number),
-        behavior: 'smooth',
+    await new Promise<void>((resolve) => {
+      requestAnimationFrame(() => {
+        expect(scrollToMock).toHaveBeenCalledWith({
+          top: expect.any(Number),
+          behavior: 'smooth',
+        });
+        resolve();
       });
-    }, 0);
+    });
   });
 
   it('accepts scrollBehavior prop with "none" option', () => {
@@ -86,7 +87,7 @@ describe('AIChatMessageList', function () {
   });
 
   it('calls onScrollHeightChange when scroll height changes with default behavior', () => {
-    const onScrollHeightChange = jest.fn(() => false);
+    const onScrollHeightChange = vi.fn(() => false);
 
     const { rerender } = render(
       <AIChatMessageList

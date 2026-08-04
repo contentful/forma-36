@@ -3,12 +3,12 @@ import { Notification } from './Notification';
 
 describe('Notification with custom container', () => {
   beforeEach(() => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
   });
 
   afterEach(() => {
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
+    vi.runOnlyPendingTimers();
+    vi.useRealTimers();
   });
 
   it('cleanup unmounts the React root and resets state', async () => {

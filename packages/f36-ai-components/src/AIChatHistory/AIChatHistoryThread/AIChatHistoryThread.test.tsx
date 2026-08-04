@@ -4,7 +4,7 @@ import { MessageThread } from '../AIChatHistory';
 import { AIChatHistoryThread } from './AIChatHistoryThread';
 
 describe('AIChatHistoryThread', () => {
-  const mockOnClick = jest.fn();
+  const mockOnClick = vi.fn();
 
   const mockThread: MessageThread = {
     id: 'test-thread',

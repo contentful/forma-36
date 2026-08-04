@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { Checkbox } from './Checkbox';
 import { CheckboxGroup } from './CheckboxGroup';
@@ -23,8 +23,8 @@ describe('CheckboxGroup', function () {
   });
 
   it('should trigger the group and individual onChange when interacting with internal checkboxes', () => {
-    const mockOnChange = jest.fn();
-    const mockInternalOnChange = jest.fn();
+    const mockOnChange = vi.fn();
+    const mockInternalOnChange = vi.fn();
     const { getAllByRole } = render(
       <CheckboxGroup name="checkbox-options" onChange={mockOnChange}>
         <Checkbox
@@ -60,8 +60,6 @@ describe('CheckboxGroup', function () {
         </Checkbox>
       </CheckboxGroup>,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

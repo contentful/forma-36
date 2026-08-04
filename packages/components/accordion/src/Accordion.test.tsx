@@ -1,12 +1,14 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { Accordion } from '.';
 
-jest.mock('@contentful/f36-core', () => {
-  const actual = jest.requireActual('@contentful/f36-core');
+vi.mock('@contentful/f36-core', async () => {
+  const actual = await vi.importActual<typeof import('@contentful/f36-core')>(
+    '@contentful/f36-core',
+  );
 
   return {
     ...actual,
@@ -37,8 +39,8 @@ describe('Accordion', () => {
 
   it('calls onExpand && onCollapse when an accordion item is expanded and collapsed', async () => {
     const user = userEvent.setup();
-    const onExpand = jest.fn();
-    const onCollapse = jest.fn();
+    const onExpand = vi.fn();
+    const onCollapse = vi.fn();
     render(
       <Accordion>
         <Accordion.Item
@@ -68,8 +70,6 @@ describe('Accordion', () => {
         </Accordion.Item>
       </Accordion>,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

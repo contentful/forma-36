@@ -1,15 +1,17 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { Tooltip } from './Tooltip';
 import { Paragraph } from '@contentful/f36-typography';
 import { StarIcon } from '@contentful/f36-icons';
 import { Icon } from '../../icon/src';
 
-jest.mock('@contentful/f36-core', () => {
-  const actual = jest.requireActual('@contentful/f36-core');
+vi.mock('@contentful/f36-core', async () => {
+  const actual = await vi.importActual<typeof import('@contentful/f36-core')>(
+    '@contentful/f36-core',
+  );
 
   return {
     ...actual,
@@ -89,7 +91,7 @@ describe('Tooltip', () => {
   });
 
   it('renders children without tooltip when withTriggerWrapper is false and child is invalid', () => {
-    const consoleErrorSpy = jest
+    const consoleErrorSpy = vi
       .spyOn(console, 'error')
       .mockImplementation(() => {});
 
@@ -241,9 +243,7 @@ describe('Tooltip', () => {
     );
     await user.hover(screen.getByText('Hover me'));
 
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('renders without a11y issues when around React Elements', async () => {
@@ -260,10 +260,9 @@ describe('Tooltip', () => {
     );
     await user.hover(screen.getByText('Hover me'));
 
-    const results = await axe(container);
+    await expectNoA11yViolations(container);
 
     await waitFor(() => {
-      expect(results).toHaveNoViolations();
       expect(screen.getByRole('tooltip').textContent).toBe(
         'Ich bin ein Paragraph',
       );
@@ -284,10 +283,9 @@ describe('Tooltip', () => {
     );
     await user.hover(screen.getByText('Hover me'));
 
-    const results = await axe(container);
+    await expectNoA11yViolations(container);
 
     await waitFor(() => {
-      expect(results).toHaveNoViolations();
       expect(screen.getByRole('tooltip').textContent).toBe(
         'Ich bin ein Paragraph',
       );

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { axe } from 'jest-axe';
 import React from 'react';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import { AIChatReasoning } from './AIChatReasoning';
 
 describe('AIChatReasoning', () => {
@@ -61,7 +61,7 @@ describe('AIChatReasoning', () => {
 
   it('calls onToggle callback when expanded state changes', async () => {
     const user = userEvent.setup();
-    const onToggle = jest.fn();
+    const onToggle = vi.fn();
 
     render(
       <AIChatReasoning onToggle={onToggle}>
@@ -131,8 +131,7 @@ describe('AIChatReasoning', () => {
         <div>Content here</div>
       </AIChatReasoning>,
     );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('should not have accessibility issues when expanded', async () => {
@@ -141,7 +140,6 @@ describe('AIChatReasoning', () => {
         <div>Content here</div>
       </AIChatReasoning>,
     );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });
