@@ -12,9 +12,6 @@
     "@floating-ui/react": "^0.27.16",
     "@floating-ui/react-dom": "^2.1.7"
   },
-  "devDependencies": {
-    "react-focus-lock": "^2.9.1"
-  },
   "peerDependencies": {
     "react": "^18.3.0 || >=19.1.0",
     "react-dom": "^18.3.0 || >=19.1.0"
@@ -43,6 +40,7 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
     "@types/jest-axe": "^3.5.9",
-    "jest-axe": "^10.0.0"
+    "jest-axe": "^10.0.0",
+    "react-focus-lock": "^2.9.1"
   }
 }
