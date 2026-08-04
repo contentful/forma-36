@@ -15,9 +15,6 @@ commands:
           echo "@contentful:registry=https://npm.pkg.github.com" >> ~/.npmrc
   install-packages:
     steps:
-      - run:
-          name: Enable pnpm
-          command: corepack enable
       - node/install-packages:
           pkg-manager: pnpm
           cache-path: ~/.local/share/pnpm/store
