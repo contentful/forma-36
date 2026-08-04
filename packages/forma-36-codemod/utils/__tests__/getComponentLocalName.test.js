@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 const { getComponentLocalName } = require('../getComponentLocalName');
 const j = require('jscodeshift');
 

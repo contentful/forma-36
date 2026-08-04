@@ -1,7 +1,9 @@
 import '@testing-library/jest-dom/vitest';
-import { configure } from '@testing-library/react';
+import { cleanup, configure } from '@testing-library/react';
+import { afterEach } from 'vitest';
 
 configure({ testIdAttribute: 'data-test-id' });
+afterEach(cleanup);
 
 // We shouldn't allow failed prop types in tests
 const error = console.error;

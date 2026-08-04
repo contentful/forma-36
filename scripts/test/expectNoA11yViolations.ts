@@ -1,4 +1,5 @@
 import axe from 'axe-core';
+import { expect } from 'vitest';
 
 axe.configure({
   rules: axe

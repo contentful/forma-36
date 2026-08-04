@@ -1,3 +1,4 @@
+import { describe, expect, it, vi } from 'vitest';
 import React, { useRef } from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 

@@ -1,3 +1,4 @@
+import { describe, it } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Table, TableBody } from '@contentful/f36-table';

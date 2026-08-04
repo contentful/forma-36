@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';

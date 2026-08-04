@@ -1,3 +1,4 @@
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import React, { createRef } from 'react';
 import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';

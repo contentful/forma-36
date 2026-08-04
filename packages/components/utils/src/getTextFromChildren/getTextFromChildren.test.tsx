@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import React from 'react';
 import { getTextFromChildren } from './getTextFromChildren';
 

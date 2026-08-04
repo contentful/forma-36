@@ -1,3 +1,4 @@
+import { describe, expect, it, vi } from 'vitest';
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
