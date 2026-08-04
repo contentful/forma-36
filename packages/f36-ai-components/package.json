@@ -55,7 +55,8 @@
     "@tiptap/extensions": "3.27.3",
     "@tiptap/pm": "3.27.3",
     "@tiptap/react": "3.27.3",
-    "@tiptap/suggestion": "3.27.3"
+    "@tiptap/suggestion": "3.27.3",
+    "axe-core": "^4.12.1"
   },
   "peerDependencies": {
     "@tiptap/core": "^3.15.0",
