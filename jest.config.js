@@ -139,6 +139,7 @@ module.exports = {
     '/dist/',
     '/packages/components/asset/',
     '/packages/components/image/',
+    '/packages/components/spinner/',
     '/packages/forma-36-codemod/',
   ],
 

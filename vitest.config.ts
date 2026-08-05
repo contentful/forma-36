@@ -18,6 +18,7 @@ const aliases = [
 const testFiles = [
   'packages/components/asset/src/**/*.test.tsx',
   'packages/components/image/src/**/*.test.tsx',
+  'packages/components/spinner/src/**/*.test.tsx',
 ];
 const ignoredPaths = [
   '**/node_modules/**',
