@@ -1,6 +1,7 @@
+import { describe, expect, it } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { Asset } from './Asset';
 
@@ -42,7 +43,5 @@ it('has no a11y issues', async () => {
       title="Everyone is welcome here"
     />,
   );
-  const results = await axe(container);
-
-  expect(results).toHaveNoViolations();
+  await expectNoA11yViolations(container);
 });
