@@ -165,6 +165,7 @@ export function ComponentSource({
     <Flex flexDirection="column" className={styles.root}>
       <LiveProvider
         code={formatSourceCode(code)}
+        language="jsx"
         theme={theme}
         // The order is important here
         scope={liveProviderScope}
