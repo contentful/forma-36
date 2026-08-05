@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitest/config';
 import { resolve } from 'node:path';
 
-process.env.TZ = 'America/Los_Angeles';
+process.env.TZ = 'Asia/Tokyo';
 
 const scriptsDirectory = resolve(__dirname, 'scripts');
 const setupFile = resolve(scriptsDirectory, 'test/setupVitest.ts');
