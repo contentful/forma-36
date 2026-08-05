@@ -3,7 +3,8 @@ import { resolve } from 'node:path';
 
 process.env.TZ = 'Asia/Tokyo';
 
-const scriptsDirectory = resolve(__dirname, 'scripts');
+const rootDirectory = import.meta.dirname;
+const scriptsDirectory = resolve(rootDirectory, 'scripts');
 const setupFile = resolve(scriptsDirectory, 'test/setupVitest.ts');
 const aliases = [
   {
