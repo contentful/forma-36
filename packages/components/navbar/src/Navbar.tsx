@@ -68,7 +68,7 @@ type NavbarOwnProps = CommonProps & {
    * HTML element used as main wrapper of the navbar
    * @default 'header'
    */
-  as?: React.ElementType;
+  as?: 'header' | 'div';
 };
 
 // expose only the HTML props that are needed to not pollute the API
