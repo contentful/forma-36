@@ -44,7 +44,10 @@ const aliases = [
     replacement: '$1',
   },
 ];
-const testFiles = ['packages/components/image/src/**/*.test.tsx'];
+const testFiles = [
+  'packages/components/asset/src/**/*.test.tsx',
+  'packages/components/image/src/**/*.test.tsx',
+];
 const ignoredPaths = [
   '**/node_modules/**',
   '**/dist/**',
