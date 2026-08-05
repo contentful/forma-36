@@ -64,14 +64,23 @@ type NavbarOwnProps = CommonProps & {
     labelPromotions?: string;
     labelAccount?: string;
   };
+  /**
+   * HTML element used as main wrapper of the navbar
+   * @default 'header'
+   */
+  as?: 'header' | 'div';
 };
 
 // expose only the HTML props that are needed to not pollute the API
 type NavbarHTMLElementProps = Pick<React.ComponentPropsWithoutRef<'div'>, 'id'>;
 
 export type NavbarProps = NavbarHTMLElementProps & NavbarOwnProps;
+const NAVBAR_DEFAULT_TAG = 'header';
 
-function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
+const NavbarBase = (
+  props: ExpandProps<NavbarProps>,
+  ref: React.Ref<HTMLElement>,
+) => {
   const {
     logo,
     promotions,
@@ -80,7 +89,10 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
     secondaryNavigation,
     account,
     mobileNavigation,
-    mobileNavigationProps = { breakpoint: 'small', label: 'Menu' },
+    mobileNavigationProps: {
+      breakpoint: mobileNavigationBreakpoint = 'small',
+      label: mobileNavigationLabel = 'Menu',
+    } = {},
     className,
     contentMaxWidth = '100%',
     testId = 'cf-ui-navbar',
@@ -91,17 +103,18 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
       labelPromotions: 'Promotions',
       labelAccount: 'Account Navigation',
     },
+    as = NAVBAR_DEFAULT_TAG,
     ...otherProps
   } = props;
   const styles = getNavbarStyles({ contentMaxWidth, variant });
 
   return (
     <Flex
-      {...otherProps}
       ref={ref}
       testId={testId}
       className={cx(styles.container, className)}
-      as="header"
+      as={as}
+      {...otherProps}
     >
       <Flex
         as="nav"
@@ -116,11 +129,11 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
               trigger={
                 <Button
                   className={styles.mobileNavigationButton(
-                    mobileNavigationProps.breakpoint,
+                    mobileNavigationBreakpoint,
                   )}
                   startIcon={<ListIcon size="medium" />}
                 >
-                  {mobileNavigationProps.label}
+                  {mobileNavigationLabel}
                 </Button>
               }
             >
@@ -129,9 +142,7 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
           )}
           {mainNavigation && (
             <Flex
-              className={styles.mainNavigation(
-                mobileNavigationProps.breakpoint,
-              )}
+              className={styles.mainNavigation(mobileNavigationBreakpoint)}
               aria-label={aria.labelMainNavigation}
               gap="spacingXs"
             >
@@ -173,6 +184,6 @@ function _Navbar(props: ExpandProps<NavbarProps>, ref: React.Ref<HTMLElement>) {
       </Flex>
     </Flex>
   );
-}
+};
 
-export const Navbar = React.forwardRef(_Navbar);
+export const Navbar = React.forwardRef(NavbarBase);
