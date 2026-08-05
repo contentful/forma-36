@@ -8,7 +8,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/node:24.18.1-browsers
+      - image: cimg/node:24.19.0-browsers
     resource_class: xlarge
     working_directory: ~/circleci-f36-build
     steps:
@@ -35,7 +35,7 @@ jobs:
 
   analyze_code:
     docker:
-      - image: cimg/node:24.18.1
+      - image: cimg/node:24.19.0
     resource_class: xlarge
     working_directory: ~/circleci-f36-build
     steps:
@@ -58,7 +58,7 @@ jobs:
 
   test:
     docker:
-      - image: cimg/node:24.18.1
+      - image: cimg/node:24.19.0
     resource_class: xlarge
     working_directory: ~/circleci-f36-build
     steps:
@@ -72,7 +72,7 @@ jobs:
 
   check-links:
     docker:
-      - image: cimg/node:24.18.1-browsers
+      - image: cimg/node:24.19.0-browsers
     resource_class: xlarge
     working_directory: ~/circleci-f36-build
     steps:
@@ -96,7 +96,7 @@ jobs:
 
   deploy_chromatic:
     docker:
-      - image: cimg/node:24.18.1
+      - image: cimg/node:24.19.0
     resource_class: xlarge
     working_directory: ~/circleci-f36-build
     steps:
@@ -113,7 +113,7 @@ jobs:
 
   release:
     docker:
-      - image: cimg/node:24.18.1
+      - image: cimg/node:24.19.0
     working_directory: ~/circleci-f36-build
     resource_class: xlarge
     steps:
@@ -144,7 +144,7 @@ jobs:
 
   changelog:
     docker:
-      - image: cimg/node:24.18.1
+      - image: cimg/node:24.19.0
     resource_class: xlarge
     working_directory: ~/circleci-f36-build
     steps:
