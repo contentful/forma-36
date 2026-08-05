@@ -34,7 +34,7 @@ function _AIChatHistoryTabs(
     groupId: string,
     index: number,
   ) => {
-    let targetIndex = index;
+    let targetIndex: number;
 
     switch (event.key) {
       case 'ArrowLeft':

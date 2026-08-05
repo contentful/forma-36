@@ -524,7 +524,7 @@ function isUsingGroups<ItemType>(
   isGrouped: boolean,
   items: ItemType[] | GenericGroupType<ItemType>[],
 ): items is GenericGroupType<ItemType>[] {
-  return isGrouped;
+  return isGrouped && Array.isArray(items);
 }
 
 /**

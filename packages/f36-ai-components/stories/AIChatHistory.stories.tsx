@@ -155,7 +155,7 @@ const createMockThreads = (): MessageThread[] => {
 
   return Array.from(mockThreadsData, (mockData, index) => {
     // Map status to appropriate icon
-    let statusIcon = null;
+    let statusIcon: React.ReactNode;
 
     switch (mockData.status) {
       case 'error':
