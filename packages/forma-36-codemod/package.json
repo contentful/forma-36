@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@types/semver": "^7.7.1",
-    "eslint": "^9.39.1",
+    "eslint": "^10.0.0",
     "jest": "^30.4.0"
   },
   "publishConfig": {
