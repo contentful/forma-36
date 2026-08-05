@@ -1,7 +1,8 @@
+import { describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { Note } from './Note';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 describe('Note', function () {
   const noteText =
@@ -32,7 +33,7 @@ describe('Note', function () {
   });
 
   it('renders the component with a close button', () => {
-    const mockOnClose = jest.fn();
+    const mockOnClose = vi.fn();
     const { container, getByRole } = render(
       <Note withCloseButton onClose={mockOnClose}>
         {noteText}
@@ -48,8 +49,6 @@ describe('Note', function () {
   it(`has no a11y issues`, async () => {
     const { container } = render(<Note>{noteText}</Note>);
 
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });
