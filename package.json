@@ -48,7 +48,7 @@
     "figma:publish:dry": "figma connect publish --token $FIGMA_ACCESS_TOKEN --dry-run",
     "figma:unpublish": "figma connect unpublish --token $FIGMA_ACCESS_TOKEN"
   },
-  "packageManager": "npm@8.19.4",
+  "packageManager": "npm@12.0.2",
   "browserslist": "extends @contentful/browserslist-config",
   "devDependencies": {
     "@babel/core": "^7.29.6",
