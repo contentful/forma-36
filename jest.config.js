@@ -140,6 +140,7 @@ module.exports = {
     '/packages/components/asset/',
     '/packages/components/image/',
     '/packages/components/spinner/',
+    '/packages/components/usage-count/',
     '/packages/forma-36-codemod/',
   ],
 
