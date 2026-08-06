@@ -1,13 +1,13 @@
 {
   "name": "@contentful/f36-skeleton",
-  "version": "6.16.2",
+  "version": "6.17.0",
   "description": "Forma 36: Skeleton component",
   "scripts": {
     "build": "tsup"
   },
   "dependencies": {
-    "@contentful/f36-core": "^6.16.2",
-    "@contentful/f36-table": "^6.16.2",
+    "@contentful/f36-core": "^6.17.0",
+    "@contentful/f36-table": "^6.17.0",
     "@contentful/f36-tokens": "^6.1.3"
   },
   "peerDependencies": {
