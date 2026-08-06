@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  packages: read
 
 jobs:
   deploy:
@@ -18,6 +19,10 @@ jobs:
         with:
           node-version: 24.18.1
       - uses: pnpm/action-setup@008330803749db0355799c700092d9a85fd074e9 # v6.0.9
+      - name: Authenticate with Github packages
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
+          echo "@contentful:registry=https://npm.pkg.github.com" >> ~/.npmrc
       - name: Install dependencies
         run: pnpm --filter @contentful/f36-cdn install --frozen-lockfile
       - name: Deploy to Compute
