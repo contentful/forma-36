@@ -104,7 +104,7 @@ function CopyButtonBase(
         // this is for enabling debugging
         // eslint-disable-next-line no-console
         console.warn(error);
-        throw new Error('Unable to copy value', { cause: result });
+        throw new Error('Unable to copy value', { cause: error });
       }
       input.remove();
 

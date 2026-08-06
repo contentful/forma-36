@@ -14,6 +14,7 @@ export default [
   ...rootConfig,
   ...compat.extends('plugin:@next/next/recommended'),
   {
+    settings: { next: { rootDir: 'packages/website/' } },
     rules: {
       'rulesdir/emotion-in-function': 'off',
       'jsx-a11y/anchor-is-valid': 'off',
