@@ -68,6 +68,7 @@ export * from './vendor/phosphor/ArrowUDownRightIcon.js';
 export * from './vendor/phosphor/ArrowUUpLeftIcon.js';
 export * from './vendor/phosphor/ArrowUUpRightIcon.js';
 export * from './vendor/phosphor/ArrowUpIcon.js';
+export * from './vendor/phosphor/ArrowsClockwiseIcon.js';
 export * from './vendor/phosphor/ArrowsLeftRightIcon.js';
 export * from './vendor/phosphor/ArrowsOutCardinalIcon.js';
 export * from './vendor/phosphor/ArrowsOutIcon.js';
