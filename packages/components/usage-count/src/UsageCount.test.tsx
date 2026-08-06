@@ -1,7 +1,8 @@
+import { describe, expect, it } from 'vitest';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { UsageCount } from './UsageCount';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 describe('UsageCount', function () {
   it('renders consumption component', () => {
@@ -50,8 +51,7 @@ describe('UsageCount', function () {
       />,
     );
 
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('has no a11y issues with periodic variant', async () => {
@@ -64,7 +64,6 @@ describe('UsageCount', function () {
       />,
     );
 
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

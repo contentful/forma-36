@@ -137,7 +137,12 @@ module.exports = {
   testPathIgnorePatterns: [
     '/node_modules/',
     '/dist/',
+    '/packages/components/asset/',
+    '/packages/components/badge/',
     '/packages/components/image/',
+    '/packages/components/note/',
+    '/packages/components/spinner/',
+    '/packages/components/usage-count/',
     '/packages/forma-36-codemod/',
   ],
 
