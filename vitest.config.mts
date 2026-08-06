@@ -50,6 +50,7 @@ const testFiles = [
   'packages/components/image/src/**/*.test.tsx',
   'packages/components/note/src/**/*.test.tsx',
   'packages/components/spinner/src/**/*.test.tsx',
+  'packages/components/typography/src/**/*.test.tsx',
   'packages/components/usage-count/src/**/*.test.tsx',
 ];
 const ignoredPaths = [
