@@ -1,16 +1,19 @@
+import { describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { useImageLoaded } from '@contentful/f36-core';
 import { Image } from './Image';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
-jest.mock('@contentful/f36-core', () => {
-  const originalModule = jest.requireActual('@contentful/f36-core');
+vi.mock('@contentful/f36-core', async () => {
+  const originalModule = await vi.importActual<
+    typeof import('@contentful/f36-core')
+  >('@contentful/f36-core');
 
   return {
     __esModule: true,
     ...originalModule,
-    useImageLoaded: jest.fn(),
+    useImageLoaded: vi.fn(),
   };
 });
 
@@ -21,9 +24,9 @@ describe('Image', () => {
   const height = '300px';
 
   it('should render the image once loaded', async () => {
-    (useImageLoaded as jest.Mock).mockReturnValueOnce({
+    vi.mocked(useImageLoaded).mockReturnValueOnce({
       loaded: true,
-    });
+    } as ReturnType<typeof useImageLoaded>);
 
     render(<Image alt={alt} src={src} width={width} height={height} />);
     const image = screen.getByAltText(alt);
@@ -32,22 +35,20 @@ describe('Image', () => {
   });
 
   it('has no a11y issues', async () => {
-    (useImageLoaded as jest.Mock).mockReturnValueOnce({
+    vi.mocked(useImageLoaded).mockReturnValueOnce({
       loaded: true,
-    });
+    } as ReturnType<typeof useImageLoaded>);
 
     const { container } = render(
       <Image alt={alt} src={src} width={width} height={height} />,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('should render the skeleton while loading', async () => {
-    (useImageLoaded as jest.Mock).mockReturnValueOnce({
+    vi.mocked(useImageLoaded).mockReturnValueOnce({
       loaded: false,
-    });
+    } as ReturnType<typeof useImageLoaded>);
 
     render(<Image alt={alt} src={src} width={width} height={height} />);
 
@@ -57,9 +58,9 @@ describe('Image', () => {
   });
 
   it('should not render the skeleton once loaded', async () => {
-    (useImageLoaded as jest.Mock).mockReturnValueOnce({
+    vi.mocked(useImageLoaded).mockReturnValueOnce({
       loaded: true,
-    });
+    } as ReturnType<typeof useImageLoaded>);
     render(<Image alt={alt} src={src} width={width} height={height} />);
     const image = screen.getByAltText(alt);
 
