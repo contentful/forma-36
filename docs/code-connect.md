@@ -90,11 +90,11 @@ Purely visual states (Hover, Focus) don't need a separate mapping since no React
 
 All scripts run from the repo root and require a `FIGMA_ACCESS_TOKEN` environment variable.
 
-| Script                      | Description                                         |
-| --------------------------- | --------------------------------------------------- |
-| `npm run figma:publish`     | Publish all mappings to Figma                       |
-| `npm run figma:publish:dry` | Dry run — validates and previews without publishing |
-| `npm run figma:unpublish`   | **Unpublish all mappings** (see warning below)      |
+| Script                   | Description                                         |
+| ------------------------ | --------------------------------------------------- |
+| `pnpm figma:publish`     | Publish all mappings to Figma                       |
+| `pnpm figma:publish:dry` | Dry run — validates and previews without publishing |
+| `pnpm figma:unpublish`   | **Unpublish all mappings** (see warning below)      |
 
 Always run `figma:publish:dry` first to catch errors before they reach Figma.
 
@@ -122,5 +122,5 @@ Always run `figma:publish:dry` first to catch errors before they reach Figma.
 
 ## Tips
 
-- **Dry run before publishing.** `npm run figma:publish:dry` prints exactly what would be sent to Figma, including any parse errors.
+- **Dry run before publishing.** `pnpm figma:publish:dry` prints exactly what would be sent to Figma, including any parse errors.
 - **One file per component.** If a component needs multiple `figma.connect` calls (e.g. variant restrictions), keep them all in the same `.figma.tsx` file.

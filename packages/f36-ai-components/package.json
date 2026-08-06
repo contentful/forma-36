@@ -33,6 +33,7 @@
     "@contentful/f36-button": "^6.17.0",
     "@contentful/f36-components": "^6.17.0",
     "@contentful/f36-core": "^6.17.0",
+    "@contentful/f36-forms": "^6.17.0",
     "@contentful/f36-icons": "^6.17.0",
     "@contentful/f36-pill-next": "6.0.1-alpha.7",
     "@contentful/f36-tokens": "^6.2.1",

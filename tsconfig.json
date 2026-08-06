@@ -27,6 +27,9 @@
     // Import non-ES modules as default imports.
     "esModuleInterop": true,
     "paths": {
+      "@contentful/f36-table-next": [
+        "./packages/components/tablenext/src"
+      ],
       "@/scripts/*": [
         "./scripts/*"
       ]
