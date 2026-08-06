@@ -1,6 +1,7 @@
+import { describe, expect, it } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import { List } from './List';
 import { ListItem } from './ListItem/ListItem';
 
@@ -26,8 +27,6 @@ describe('List', function () {
         <ListItem>Second List Child</ListItem>
       </List>,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

@@ -1,12 +1,13 @@
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { Pagination } from './Pagination';
 
-const handlePageChange = jest.fn();
-const handleViewPerPageChange = jest.fn();
+const handlePageChange = vi.fn();
+const handleViewPerPageChange = vi.fn();
 
 describe('Pagination', () => {
   beforeEach(() => {
@@ -162,7 +163,6 @@ describe('Pagination', () => {
         showViewPerPage
       />,
     );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });
