@@ -5,25 +5,35 @@ orbs:
   node: circleci/node@5.3.0
   vault: contentful/vault@1.30.4
 
-jobs:
-  build:
-    docker:
-      - image: cimg/node:24.18.0-browsers
-    resource_class: xlarge
-    working_directory: ~/circleci-f36-build
+commands:
+  configure-packages-read:
     steps:
-      - checkout
       - vault/get-secrets:
           template-preset: packages-read
       - run: |
           echo "//npm.pkg.github.com/:_authToken=${GITHUB_PACKAGES_READ_TOKEN}" > ~/.npmrc
           echo "@contentful:registry=https://npm.pkg.github.com" >> ~/.npmrc
+  install-packages:
+    steps:
+      - node/install-packages:
+          pkg-manager: pnpm
+          cache-path: ~/.local/share/pnpm/store
+
+jobs:
+  build:
+    docker:
+      - image: cimg/node:24.18.1-browsers
+    resource_class: xlarge
+    working_directory: ~/circleci-f36-build
+    steps:
+      - checkout
+      - configure-packages-read
       - attach_workspace:
           at: ~/circleci-f36-build
-      - node/install-packages
+      - install-packages
       - run:
           name: Build packages
-          command: npm run-script build -- --force
+          command: pnpm build --force
       - persist_to_workspace:
           root: .
           paths:
@@ -35,85 +45,89 @@ jobs:
 
   analyze_code:
     docker:
-      - image: cimg/node:24.18.0
+      - image: cimg/node:24.18.1
     resource_class: xlarge
     working_directory: ~/circleci-f36-build
     steps:
       - checkout
+      - configure-packages-read
       - attach_workspace:
           at: ~/circleci-f36-build
-      - node/install-packages
+      - install-packages
       - run:
           name: Prettier
-          command: npm run-script prettier:check
+          command: pnpm prettier:check
       - run:
           name: Lint
-          command: npm run-script lint
+          command: pnpm lint
       - run:
           name: Check types
-          command: npm run-script tsc
+          command: pnpm tsc
       - run:
           name: Check dependencies
-          command: npm exec knip
+          command: pnpm exec knip
 
   test:
     docker:
-      - image: cimg/node:24.18.0
+      - image: cimg/node:24.18.1
     resource_class: xlarge
     working_directory: ~/circleci-f36-build
     steps:
       - checkout
+      - configure-packages-read
       - attach_workspace:
           at: ~/circleci-f36-build
-      - node/install-packages
+      - install-packages
       - run:
           name: Test
-          command: npm run-script test
+          command: pnpm test
 
   check-links:
     docker:
-      - image: cimg/node:24.18.0-browsers
+      - image: cimg/node:24.18.1-browsers
     resource_class: xlarge
     working_directory: ~/circleci-f36-build
     steps:
       - checkout
+      - configure-packages-read
       - attach_workspace:
           at: ~/circleci-f36-build
-      - node/install-packages
+      - install-packages
       - run:
           name: Build Next.js website
-          command: npm run-script docs:next:build
+          command: pnpm docs:next:build
       - run:
           name: Run production version of the website locally
-          command: npm run-script docs:next:start-prod
+          command: pnpm docs:next:start-prod
           background: true
       - run:
           name: Wait for localhost:3000 to be ready
-          command: npx wait-on http://localhost:3000
+          command: pnpm exec wait-on http://localhost:3000
       - run:
           name: Run links checker
-          command: npx blc http://localhost:3000 -ro --exclude "https://medium.com/contentful-design" --exclude "https://github.com/contentful/forma-36" --exclude "https://www.figma.com/@contentful" --exclude "https://react-hook-form.com" --exclude "https://emotion.sh"
+          command: pnpm --filter @contentful/f36-website exec blc http://localhost:3000 -ro --exclude "https://medium.com/contentful-design" --exclude "https://github.com/contentful/forma-36" --exclude "https://www.figma.com/@contentful" --exclude "https://react-hook-form.com" --exclude "https://emotion.sh"
 
   deploy_chromatic:
     docker:
-      - image: cimg/node:24.18.0
+      - image: cimg/node:24.18.1
     resource_class: xlarge
     working_directory: ~/circleci-f36-build
     steps:
       - checkout
+      - configure-packages-read
       - attach_workspace:
           at: ~/circleci-f36-build
-      - node/install-packages
+      - install-packages
       - run:
           name: Storybook
-          command: npm run-script storybook:build
+          command: pnpm storybook:build
       - run:
           name: Chromatic
-          command: npx chromatic --only-changed  --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes --storybook-build-dir ./dist-storybook  --externals "scripts/.storybook/public/**"
+          command: pnpm exec chromatic --only-changed  --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes --storybook-build-dir ./dist-storybook  --externals "scripts/.storybook/public/**"
 
   release:
     docker:
-      - image: cimg/node:24.18.0
+      - image: cimg/node:24.18.1
     working_directory: ~/circleci-f36-build
     resource_class: xlarge
     steps:
@@ -128,23 +142,23 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - 62:c1:53:b7:19:b8:35:4a:67:8c:58:c3:60:e0:68:11
-      - node/install-packages
+      - install-packages
       - run: git config --global user.email ${GIT_AUTHOR_EMAIL}
       - run: git config --global user.name ${GIT_AUTHOR_NAME}
       - run:
           name: Generate changelogrc
-          command: npm run-script changelog:gen
+          command: pnpm changelog:gen
       - run:
           name: Generate packages changelogs
-          command: npx changeset version
+          command: pnpm exec changeset version
       - run:
           name: Publish packages and create releases
           command: |
-            npm run-script changeset:publish
+            pnpm changeset:publish
 
   changelog:
     docker:
-      - image: cimg/node:24.18.0
+      - image: cimg/node:24.18.1
     resource_class: xlarge
     working_directory: ~/circleci-f36-build
     steps:
@@ -159,16 +173,16 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - 62:c1:53:b7:19:b8:35:4a:67:8c:58:c3:60:e0:68:11
-      - node/install-packages
+      - install-packages
       - run: git config --global user.email ${GIT_AUTHOR_EMAIL}
       - run: git config --global user.name ${GIT_AUTHOR_NAME}
       - run:
           name: Generate changelog files
-          command: npm run-script changelog:write
+          command: pnpm changelog:write
       - run:
           name: Commit changelog files
           command: |
-            git add . && npm run-script pretty:quick
+            git add . && pnpm pretty:quick
             git diff --staged --quiet || git commit -am "docs: update changelog on repository and website" && git push origin ${CIRCLE_BRANCH}
 
 workflows:
@@ -179,12 +193,18 @@ workflows:
           context:
             - vault
       - analyze_code:
+          context:
+            - vault
           requires:
             - build
       - test:
+          context:
+            - vault
           requires:
             - build
       - deploy_chromatic:
+          context:
+            - vault
           requires:
             - build
             - analyze_code
@@ -212,6 +232,8 @@ workflows:
           context:
             - vault
       - check-links:
+          context:
+            - vault
           requires:
             - build
 

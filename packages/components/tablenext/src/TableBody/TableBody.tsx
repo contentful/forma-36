@@ -19,8 +19,13 @@ export type TableBodyProps = PropsWithHTMLElement<
 >;
 
 function TableBodyBase(
-  { className, children, testId = 'cf-ui-table-body', ...otherProps },
-  forwardedRef,
+  {
+    className,
+    children,
+    testId = 'cf-ui-table-body',
+    ...otherProps
+  }: ExpandProps<TableBodyProps>,
+  forwardedRef: React.ForwardedRef<HTMLTableSectionElement>,
 ) {
   const {
     isStackable,

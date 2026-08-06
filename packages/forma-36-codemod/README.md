@@ -18,8 +18,8 @@ You need to first install all dependencies on the codemod directory.
 
 ```sh
 # Inside the forma-36-codemod directory
-npm install
-npm link
+pnpm install
+pnpm link --global
 ```
 
 After this you can run the codemod in your project.

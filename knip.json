@@ -24,13 +24,17 @@
   "ignoreDependencies": [
     "@changesets/cli",
     "@contentful/browserslist-config",
+    "@contentful/f36-navbar",
+    "@contentful/f36-pill-next",
+    "@floating-ui/react-dom",
     "@testing-library/jest-dom",
     "babel-jest",
     "chromatic",
     "globby",
     "jest-environment-jsdom",
     "jest-watch-typeahead",
-    "ts-jest"
+    "ts-jest",
+    "wait-on"
   ],
   "jest": false,
   "storybook": {

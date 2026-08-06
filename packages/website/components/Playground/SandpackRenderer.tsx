@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Interpolation, Theme } from '@emotion/react';
+import { css } from '@emotion/css';
 import {
   SandpackProvider,
   SandpackLayout,
@@ -11,11 +11,6 @@ import tokens from '@contentful/f36-tokens';
 import { PlaygroundTopBar } from './PlaygroundTopBar';
 import { palette } from '../LiveEditor/theme';
 
-declare module 'react' {
-  interface Attributes {
-    css?: Interpolation<Theme>;
-  }
-}
 const indexFile = `import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { GlobalStyles } from "@contentful/f36-components";
@@ -48,7 +43,7 @@ export function SandpackRenderer({
   showOpenInCodeSandbox = false,
 }: Props) {
   // Styles that override Sandpack's default styling
-  const sandpackStyles: { [key: string]: Interpolation<Theme> } = {
+  const sandpackStyles = {
     wrapper: {
       overflow: 'hidden !important',
     },
@@ -91,7 +86,7 @@ export function SandpackRenderer({
 
   return (
     <SandpackProvider
-      css={sandpackStyles.wrapper}
+      className={css(sandpackStyles.wrapper)}
       customSetup={{
         dependencies: {
           '@dnd-kit/core': '^6.0.8',
@@ -163,7 +158,7 @@ export function SandpackRenderer({
     >
       <PlaygroundTopBar />
 
-      <SandpackLayout css={sandpackStyles.layout}>
+      <SandpackLayout className={css(sandpackStyles.layout)}>
         <SandpackCodeEditor
           showTabs={false}
           showLineNumbers

@@ -8,7 +8,6 @@ import { CaretDownIcon, PlusIcon } from '@contentful/f36-icons';
 import { Menu } from '@contentful/f36-menu';
 import { Tooltip } from '@contentful/f36-tooltip';
 import { Editor } from '@tiptap/react';
-import { range } from 'lodash';
 import {
   AIChatInput,
   type AIChatInputProps,
@@ -83,15 +82,17 @@ export const InputGrowsWithMultipleLines: Story<AIChatInputProps> = (args) => (
   <Flex gap="spacingM">
     <Template
       {...args}
-      initialContent={range(1, 4)
-        .map((n) => `<p>${n}</p>`)
-        .join('')}
+      initialContent={Array.from(
+        { length: 3 },
+        (_, index) => `<p>${index + 1}</p>`,
+      ).join('')}
     />
     <Template
       {...args}
-      initialContent={range(1, 9)
-        .map((n) => `<p>${n}</p>`)
-        .join('')}
+      initialContent={Array.from(
+        { length: 8 },
+        (_, index) => `<p>${index + 1}</p>`,
+      ).join('')}
     />
   </Flex>
 );

@@ -5,7 +5,7 @@
   "description": "Forma 36 CDN",
   "type": "module",
   "dependencies": {
-    "@fastly/js-compute": "3.43.1"
+    "@fastly/js-compute": "3.44.3"
   },
   "devDependencies": {
     "@fastly/cli": "15.4.0",
@@ -16,8 +16,8 @@
   },
   "scripts": {
     "deploy": "fastly compute deploy",
-    "prebuild": "npx compute-js-static-publish --build-static",
-    "build": "npm run prebuild && env -i $(which node) ../../node_modules/.bin/js-compute-runtime ./src/index.js ./bin/main.wasm",
+    "prebuild": "compute-js-static-publish --build-static",
+    "build": "pnpm prebuild && env -i PATH=\"$PATH\" js-compute-runtime ./src/index.js ./bin/main.wasm",
     "serve": "fastly compute serve"
   },
   "optionalDependencies": {
