@@ -26,7 +26,7 @@ const activePath = (
   </>
 );
 
-export const ExperienceAndPersonRegularIcon = generateComponentWithVariants({
+export const FlaskUserIcon = generateComponentWithVariants({
   variants: {
     [IconVariant.Active]: generateIconComponent({
       path: activePath,
