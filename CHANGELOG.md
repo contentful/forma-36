@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 07-08-2026
+
+**F36 Icons** `v6.17.0`
+
+- Adds `ArrowsClockwiseIcon` from Phosphor.
+
+**F36 Navbar** `v6.17.0`
+
+- Adds `as` property to allow overwriting of the default wrapper tag, which is set to `header`
+
 ## 25-07-2026
 
 **F36 Table** `v6.16.2`
