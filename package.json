@@ -83,7 +83,7 @@
     "@contentful/f36-tooltip": "workspace:*",
     "@contentful/f36-typography": "workspace:*",
     "@dnd-kit/core": "^6.0.8",
-    "@dnd-kit/sortable": "^7.0.2",
+    "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.1",
     "@emotion/babel-plugin": "^11.13.5",
     "@emotion/eslint-plugin": "^11.12.0",
