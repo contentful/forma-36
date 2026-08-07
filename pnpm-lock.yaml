@@ -4,6 +4,15 @@ settings:
   autoInstallPeers: false
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    react:
+      specifier: 19.2.7
+      version: 19.2.7
+    react-dom:
+      specifier: 19.2.7
+      version: 19.2.7
+
 overrides:
   '@emotion/eslint-plugin>eslint': '>=9.0.0'
   '@emotion/eslint-plugin>@typescript-eslint/utils': ^8.65.0
@@ -243,10 +252,10 @@ importers:
         specifier: 4.2.2
         version: 4.2.2(prettier@3.9.5)
       react:
-        specifier: 19.2.7
+        specifier: 'catalog:'
         version: 19.2.7
       react-dom:
-        specifier: 19.2.7
+        specifier: 'catalog:'
         version: 19.2.7(react@19.2.7)
       semver:
         specifier: ^7.7.3
@@ -2142,10 +2151,10 @@ importers:
         specifier: ^0.15.1
         version: 0.15.1(@types/babel__core@7.20.5)(rolldown@1.1.5)(supports-color@8.1.1)(ts-node@10.9.2(@types/node@24.10.9)(typescript@5.9.3))
       react:
-        specifier: ^19.2.3
+        specifier: 'catalog:'
         version: 19.2.7
       react-dom:
-        specifier: ^19.2.3
+        specifier: 'catalog:'
         version: 19.2.7(react@19.2.7)
       semantic-release:
         specifier: ^25.0.2
@@ -2262,13 +2271,13 @@ importers:
         specifier: ^6.15.2
         version: 6.15.2
       react:
-        specifier: 19.2.7
+        specifier: 'catalog:'
         version: 19.2.7
       react-docgen-typescript:
         specifier: ^2.2.2
         version: 2.4.0(typescript@5.9.3)
       react-dom:
-        specifier: 19.2.7
+        specifier: 'catalog:'
         version: 19.2.7(react@19.2.7)
       react-focus-lock:
         specifier: ^2.9.1

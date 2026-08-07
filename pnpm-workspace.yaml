@@ -2,6 +2,10 @@ packages:
   - 'packages/*'
   - 'packages/components/*'
 
+catalog:
+  react: 19.2.7
+  react-dom: 19.2.7
+
 linkWorkspacePackages: true
 autoInstallPeers: false
 # 15 days, matching the shared Renovate configuration.
