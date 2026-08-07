@@ -28,6 +28,8 @@ minimumReleaseAgeExclude:
   - '@tiptap/react@3.29.2'
   - '@tiptap/suggestion@3.29.2'
   - 'size-limit@13.0.1'
+  # Renovate security update: next-auth@4.24.15
+  - next-auth@4.24.15
 ignoreScripts: true
 
 overrides:
