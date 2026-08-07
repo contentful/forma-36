@@ -14,7 +14,7 @@ export function getStyles({
     suggestionPill: css({
       backgroundColor: isActive ? tokens.gray100 : tokens.colorWhite,
       border: `1px solid ${isActive ? tokens.gray300 : tokens.gray200}`,
-      borderRadius: '99px',
+      borderRadius: '16px',
       padding: `6px ${tokens.spacingS}`,
       cursor: 'pointer',
       transition: `background-color ${tokens.transitionDurationDefault} ease-out, border-color ${tokens.transitionDurationDefault} ease`,
@@ -32,6 +32,12 @@ export function getStyles({
     }),
     suggestionText: css({
       color: isActive ? tokens.gray700 : 'inherit',
+      flex: 1,
+      minWidth: 0,
+    }),
+    endIcon: css({
+      color: tokens.gray500,
+      flexShrink: 0,
     }),
   };
 }

@@ -98,4 +98,17 @@ describe('AIChatSuggestionPill', () => {
     );
     expect(screen.getByTestId('custom-test-id')).toBeTruthy();
   });
+
+  it('renders with a trailing arrow when withEndIcon is true', () => {
+    render(
+      <AIChatSuggestionPill
+        icon={DeviceMobileCameraIcon}
+        text="Search for something"
+        withEndIcon
+      />,
+    );
+    const pill = screen.getByTestId('cf-ui-ai-chat-suggestion-pill');
+    const svgs = pill.querySelectorAll('svg');
+    expect(svgs.length).toBe(2);
+  });
 });
