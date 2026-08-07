@@ -2238,8 +2238,8 @@ importers:
         specifier: ^15.1.0
         version: 15.5.10(@mdx-js/loader@3.1.1(supports-color@8.1.1)(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3)))(@mdx-js/react@3.1.1(@types/react@19.2.10)(react@19.2.7))
       '@segment/snippet':
-        specifier: ^4.15.3
-        version: 4.16.2
+        specifier: ^5.0.0
+        version: 5.2.1
       copy-to-clipboard:
         specifier: ^3.3.3
         version: 3.3.3
@@ -3304,20 +3304,20 @@ packages:
     engines: {node: '>=22.12.0'}
 
   '@contentful/browserslist-config@4.0.0':
-    resolution: {integrity: sha512-Z4nx1Mpg+8jIsxEeqQ4b8ZPFTqRnm7k7QjBIRpMdrf0s84zCp2cvL8taTZdlPEYWd12Enfbq2WC1ws5BIe49PA==, tarball: https://npm.pkg.github.com/download/@contentful/browserslist-config/4.0.0/b9d59ba05bd53918d3d8023e6729ee19928d127b}
+    resolution: {integrity: sha512-Z4nx1Mpg+8jIsxEeqQ4b8ZPFTqRnm7k7QjBIRpMdrf0s84zCp2cvL8taTZdlPEYWd12Enfbq2WC1ws5BIe49PA==}
 
   '@contentful/browserslist-config@5.0.0':
-    resolution: {integrity: sha512-THlO9YkCF+W8aOTF3COe0eFrAhVo5gqeWtRlTa6salLcvx5ff/lgLb6cMgq7/knUi7JUWFm/500uNfbB12iyRw==, tarball: https://npm.pkg.github.com/download/@contentful/browserslist-config/5.0.0/d5ea224325d13ebcfbeefc91f484a6318b1ff812}
+    resolution: {integrity: sha512-THlO9YkCF+W8aOTF3COe0eFrAhVo5gqeWtRlTa6salLcvx5ff/lgLb6cMgq7/knUi7JUWFm/500uNfbB12iyRw==}
 
   '@contentful/rich-text-react-renderer@16.1.6':
-    resolution: {integrity: sha512-Pt0KfEnB7UP53gUKupUZjsUCHR7CiDbVyMdMmuyzYT6lNvjR7+KKYWP9eU2TOfVaXy7PxF1XEpBjSALDOHUNKQ==, tarball: https://npm.pkg.github.com/download/@contentful/rich-text-react-renderer/16.1.6/3ff14234631461b6a92a97e643a9b6db4be1458b}
+    resolution: {integrity: sha512-Pt0KfEnB7UP53gUKupUZjsUCHR7CiDbVyMdMmuyzYT6lNvjR7+KKYWP9eU2TOfVaXy7PxF1XEpBjSALDOHUNKQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
       react: ^16.8.6 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.6 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   '@contentful/rich-text-types@17.2.5':
-    resolution: {integrity: sha512-EA5vTfROZePoPmSlqLVd+luL/ev8CjnI20y6vWFVPlLRxQbv4XytXRzatydPE63CqfsPylF7NCn2z8rTLhnWfg==, tarball: https://npm.pkg.github.com/download/@contentful/rich-text-types/17.2.5/d8edc86fbbf0760a4533e28369ca07e08809d850}
+    resolution: {integrity: sha512-EA5vTfROZePoPmSlqLVd+luL/ev8CjnI20y6vWFVPlLRxQbv4XytXRzatydPE63CqfsPylF7NCn2z8rTLhnWfg==}
     engines: {node: '>=6.0.0'}
 
   '@conventional-changelog/git-client@3.1.0':
@@ -5954,8 +5954,8 @@ packages:
   '@sec-ant/readable-stream@0.4.1':
     resolution: {integrity: sha512-831qok9r2t8AlxLko40y2ebgSDhenenCatLVeW/uBtnHPyhHOvG0C7TvfgecV+wHzIm5KUICgzmVpWS+IMEAeg==}
 
-  '@segment/snippet@4.16.2':
-    resolution: {integrity: sha512-2fgsrt4U+vKv14ohOAsViCEzeZotaawF2Il7YUbmYVrhPn8Hq7xuGznHKRdZeoxScQ87X36xDX2Fzh5bAYRN7g==}
+  '@segment/snippet@5.2.1':
+    resolution: {integrity: sha512-2K0AJVWbajA91/GyizfurTnRYinWusGiFNEMqVAh6vHnbR3b4tFwb8lEMdpPMyGe07XH0Upfx+naQIpiGFnJQQ==}
 
   '@semantic-release/commit-analyzer@13.0.1':
     resolution: {integrity: sha512-wdnBPHKkr9HhNhXOhZD5a2LNl91+hs8CC2vsAVYxtZH3y0dV3wKn+uZSN61rdJQZ8EGxzWB3inWocBHV9+u/CQ==}
@@ -17169,7 +17169,7 @@ snapshots:
 
   '@sec-ant/readable-stream@0.4.1': {}
 
-  '@segment/snippet@4.16.2':
+  '@segment/snippet@5.2.1':
     dependencies:
       '@ndhoule/map': 2.0.1
 
