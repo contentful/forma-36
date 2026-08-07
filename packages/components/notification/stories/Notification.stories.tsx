@@ -210,3 +210,84 @@ export const Overview: StoryObj = {
     </Flex>
   ),
 };
+
+export const TopLeftAlignment = () => {
+  return (
+    <Flex fullWidth flexDirection="column">
+      <SectionHeading marginBottom="spacingS" as="h3">
+        Top-Left Alignment Preview
+      </SectionHeading>
+      <Flex marginBottom="spacingL">
+        <NotificationItem
+          variant="positive"
+          title="Long notification title that spans multiple lines to demonstrate top-left alignment"
+          cta={{
+            label: 'Call to Action',
+          }}
+          onClose={action('onClose')}
+        >
+          This is a longer notification body that contains multiple lines of
+          text to demonstrate how all elements align to the top-left when the
+          notification has both a title and content.
+        </NotificationItem>
+      </Flex>
+
+      <Flex marginBottom="spacingL">
+        <NotificationItem
+          variant="negative"
+          title="Error Title"
+          cta={{
+            label: 'Resolve Error',
+          }}
+          onClose={action('onClose')}
+        >
+          Short error message.
+        </NotificationItem>
+      </Flex>
+
+      <Flex marginBottom="spacingL">
+        <NotificationItem variant="warning" onClose={action('onClose')}>
+          Notification without title - icon should still align to top-left with
+          the text content.
+        </NotificationItem>
+      </Flex>
+
+      <Flex marginBottom="spacingL">
+        <NotificationItem
+          variant="primary"
+          title="Info Notification"
+          onClose={action('onClose')}
+        >
+          This demonstrates the alignment of icon, title, content, and close
+          button when all elements are present.
+        </NotificationItem>
+      </Flex>
+    </Flex>
+  );
+};
+
+TopLeftAlignment.args = {};
+
+// Example story with multiple line blind text for the paragraph
+export const MultipleLineParagraph = (args) => {
+  return (
+    <NotificationItem
+      {...args}
+      title="Notification with multiple line paragraph"
+      variant="primary"
+      onClose={action('onClose')}
+    >
+      {`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.`}
+    </NotificationItem>
+  );
+};
+
+MultipleLineParagraph.args = {
+  cta: {
+    label: 'Learn more',
+  },
+  closeButtonAriaLabel: 'Close',
+};
