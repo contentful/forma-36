@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.18.0
+
+### Minor Changes
+
+- [#3611](https://github.com/contentful/forma-36/pull/3611) [`04beed1`](https://github.com/contentful/forma-36/commit/04beed1c3e059549bdbb86397bacc802e10f563d) Thanks [@Khaalidsub](https://github.com/Khaalidsub)! - Add FlaskUserIcon.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.18.0
+  - @contentful/f36-icon@6.18.0
+
 ## 6.17.0
 
 ### Minor Changes

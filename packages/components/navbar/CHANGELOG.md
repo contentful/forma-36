@@ -1,5 +1,20 @@
 # @contentful/f36-navbar
 
+## 6.18.0
+
+### Patch Changes
+
+- Updated dependencies [[`04beed1`](https://github.com/contentful/forma-36/commit/04beed1c3e059549bdbb86397bacc802e10f563d)]:
+  - @contentful/f36-icons@6.18.0
+  - @contentful/f36-avatar@6.18.0
+  - @contentful/f36-button@6.18.0
+  - @contentful/f36-core@6.18.0
+  - @contentful/f36-icon@6.18.0
+  - @contentful/f36-menu@6.18.0
+  - @contentful/f36-skeleton@6.18.0
+  - @contentful/f36-tooltip@6.18.0
+  - @contentful/f36-typography@6.18.0
+
 ## 6.17.0
 
 ### Minor Changes
