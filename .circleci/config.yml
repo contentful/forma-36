@@ -152,6 +152,9 @@ jobs:
           name: Generate packages changelogs
           command: pnpm exec changeset version
       - run:
+          name: Sync lockfile with version bumps
+          command: pnpm install --no-frozen-lockfile
+      - run:
           name: Publish packages and create releases
           command: |
             pnpm changeset:publish
