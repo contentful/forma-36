@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 10-08-2026
+
+**F36 Icons** `v6.18.0`
+
+- Add FlaskUserIcon.
+
 ## 07-08-2026
 
 **F36 Icons** `v6.17.0`
