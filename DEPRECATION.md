@@ -180,7 +180,7 @@ export interface ComponentProps {
 When adding a deprecation, create a changeset that clearly indicates the deprecation:
 
 ```bash
-npx changeset
+pnpm exec changeset
 ```
 
 Structure the changeset with clear messaging:

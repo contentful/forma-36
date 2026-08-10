@@ -43,7 +43,7 @@ export default [
       '@emotion': fixupPluginRules(emotion),
       react,
       'react-hooks': reactHooks,
-      import: importPlugin,
+      import: fixupPluginRules(importPlugin),
       jest,
     },
     languageOptions: {

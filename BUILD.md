@@ -13,7 +13,7 @@ Each component builds to its own `dist` directory with:
 ## Create a build of the library
 
 ```bash
-npm run-script build
+pnpm build
 ```
 
 ## Dual-package emitting

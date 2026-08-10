@@ -71,7 +71,7 @@ function AIChatHistoryBase(
 
     if (filteredThreads.length === 0) return;
 
-    let newIndex = focusedThreadIndex;
+    let newIndex: number;
 
     switch (event.key) {
       case 'ArrowDown':

@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  packages: read
 
 jobs:
   deploy:
@@ -16,9 +17,14 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
-          node-version: 24.18.1
+          node-version: 24.19.0
+      - uses: pnpm/action-setup@008330803749db0355799c700092d9a85fd074e9 # v6.0.9
+      - name: Authenticate with Github packages
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
+          echo "@contentful:registry=https://npm.pkg.github.com" >> ~/.npmrc
       - name: Install dependencies
-        run: npm ci --workspace=@contentful/f36-cdn
+        run: pnpm --filter @contentful/f36-cdn install --frozen-lockfile
       - name: Deploy to Compute
         uses: fastly/compute-actions@a25cf83ef5c19ef7d86f1eebffcd8f6c02ddc786 # v14
         with:

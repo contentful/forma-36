@@ -1,6 +1,6 @@
 {
   "name": "@contentful/f36-icons",
-  "version": "6.16.2",
+  "version": "6.18.0",
   "description": "Forma 36: Icon components",
   "license": "MIT",
   "exports": {
@@ -26,13 +26,13 @@
     "dist"
   ],
   "scripts": {
-    "build": "npm run build:clean && tsx scripts/preBuild.mts && npm run build:dual",
+    "build": "pnpm build:clean && tsx scripts/preBuild.mts && pnpm build:dual",
     "build:clean": "rm -rf ./dist",
     "build:dual": "tsc -p . && tsc -p ./tsconfig.cjs.json && tsconfig-to-dual-package"
   },
   "dependencies": {
-    "@contentful/f36-core": "^6.16.2",
-    "@contentful/f36-icon": "^6.16.2",
+    "@contentful/f36-core": "^6.18.0",
+    "@contentful/f36-icon": "^6.18.0",
     "@emotion/css": "^11.13.5",
     "@phosphor-icons/react": "2.1.8"
   },

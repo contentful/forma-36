@@ -25,7 +25,7 @@
   "scripts": {
     "build:clean": "rm -rf dist",
     "build:tokens": "node tools/build.js",
-    "build": "npm run-script build:clean && npm run-script build:tokens",
+    "build": "pnpm build:clean && pnpm build:tokens",
     "build:types": "tsc src/**/*.js --declaration --emitDeclarationOnly --declarationDir dist --jsx preserve"
   },
   "publishConfig": {
