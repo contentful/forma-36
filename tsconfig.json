@@ -8,8 +8,8 @@
       "dom.iterable",
       "esnext"
     ],
-    // allows react jsx in tsx files
-    "jsx": "react",
+    // uses React's automatic JSX runtime in tsx files
+    "jsx": "react-jsx",
     // Eventually turn off, one we have no more assumed default exports.
     // Allow default imports from modules with no default export.
     "allowSyntheticDefaultImports": true,

@@ -6,6 +6,7 @@ module.exports = (api) => {
         [
           '@babel/preset-react',
           {
+            runtime: 'automatic',
             targets: {
               node: 'current',
             },
