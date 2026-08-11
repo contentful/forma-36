@@ -1,6 +1,7 @@
+import { describe, expect, it, vi } from 'vitest';
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import { Layout } from './Layout';
 import { LayoutHeaderInner } from './LayoutHeaderInner/LayoutHeaderInner';
 
@@ -120,8 +121,7 @@ describe('Layout', () => {
         </main>
       </Layout>,
     );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   describe('with LayoutHeaderInner', () => {
@@ -148,8 +148,7 @@ describe('Layout', () => {
           </main>
         </Layout>,
       );
-      const results = await axe(container);
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
 
     it('has no a11y issues with back button and breadcrumbs', async () => {
@@ -159,7 +158,7 @@ describe('Layout', () => {
             <LayoutHeaderInner
               title="Header"
               withBackButton
-              backButtonProps={{ onClick: jest.fn() }}
+              backButtonProps={{ onClick: vi.fn() }}
               breadcrumbs={[{ content: 'Breadcrumb', url: '#' }]}
             />
           }
@@ -170,8 +169,7 @@ describe('Layout', () => {
           </main>
         </Layout>,
       );
-      const results = await axe(container);
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
 
     it('renders header with custom className', async () => {
