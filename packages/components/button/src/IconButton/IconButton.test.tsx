@@ -1,8 +1,9 @@
+import { describe, expect, it, vi } from 'vitest';
 import React, { createRef } from 'react';
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 import { EyeIcon } from '@contentful/f36-icons';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import { IconButton } from './IconButton';
 
 describe('IconButton', () => {
@@ -21,7 +22,7 @@ describe('IconButton', () => {
 
   it('calls onClick handler', async () => {
     const user = userEvent.setup();
-    const handleClick = jest.fn();
+    const handleClick = vi.fn();
     render(
       <IconButton
         aria-label="Toggle"
@@ -36,7 +37,7 @@ describe('IconButton', () => {
 
   it('does not call onClick when disabled', async () => {
     const user = userEvent.setup();
-    const handleClick = jest.fn();
+    const handleClick = vi.fn();
     render(
       <IconButton
         aria-label="Toggle"
@@ -86,16 +87,14 @@ describe('IconButton', () => {
     const { container } = render(
       <IconButton aria-label="Accessible" icon={<EyeIcon />} />,
     );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('is accessible in the tiny size (axe)', async () => {
     const { container } = render(
       <IconButton aria-label="Accessible" icon={<EyeIcon />} size="tiny" />,
     );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('warns (or fails) if aria-label missing (intentional negative)', () => {
@@ -113,5 +112,5 @@ describe('IconButton', () => {
   // - Tooltip hides on mouse leave and blur
   // - Accessible name / aria-describedby linkage
   // - No tooltip rendered when disabled
-  test.todo('tooltip behavior (hover, focus, accessibility)');
+  it.todo('tooltip behavior (hover, focus, accessibility)');
 });

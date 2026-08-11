@@ -1,13 +1,14 @@
+import { describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { EyeIcon } from '@contentful/f36-icons';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { ToggleButton } from '.';
 
 describe('ToggleButton', function () {
-  const mockOnToggle = jest.fn();
+  const mockOnToggle = vi.fn();
 
   it('renders the component', () => {
     render(<ToggleButton onToggle={mockOnToggle}>Toggle</ToggleButton>);
@@ -67,8 +68,6 @@ describe('ToggleButton', function () {
     const { container } = render(
       <ToggleButton onToggle={mockOnToggle}>Toggle</ToggleButton>,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });
