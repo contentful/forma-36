@@ -10,7 +10,6 @@ const EXCLUDED_KEYWORDS = [
   'https://github.com/contentful/forma-36',
   'https://www.figma.com/@contentful',
   'https://react-hook-form.com',
-  'https://emotion.sh',
 ];
 
 function isContentfulHost(hostname) {
