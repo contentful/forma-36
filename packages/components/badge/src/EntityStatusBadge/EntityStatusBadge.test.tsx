@@ -1,6 +1,7 @@
+import { describe, expect, it } from 'vitest';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import { EntityStatusBadge } from './EntityStatusBadge';
 
 describe('EntityStatusBadge', function () {
@@ -21,8 +22,6 @@ describe('EntityStatusBadge', function () {
         <EntityStatusBadge entityStatus={'published'} />
       </>,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });
