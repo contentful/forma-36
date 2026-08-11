@@ -1,8 +1,9 @@
+import { describe, expect, it } from 'vitest';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { UsageCard } from '../src/CompoundUsageCard';
-import { axe } from 'jest-axe';
 import { TextLink } from '@contentful/f36-text-link';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 describe('UsageCard', function () {
   it('renders the component', () => {
@@ -14,18 +15,14 @@ describe('UsageCard', function () {
     const { container } = render(
       <UsageCard variant="info">Info Card</UsageCard>,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('has no a11y issues with Usage card type', async () => {
     const { container } = render(
       <UsageCard variant="usage">Usage Card</UsageCard>,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('renders the component with a header', () => {
