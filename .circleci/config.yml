@@ -105,7 +105,7 @@ jobs:
           command: pnpm exec wait-on http://localhost:3000
       - run:
           name: Run links checker
-          command: pnpm --filter @contentful/f36-website exec blc http://localhost:3000 -ro --exclude "https://medium.com/contentful-design" --exclude "https://github.com/contentful/forma-36" --exclude "https://www.figma.com/@contentful" --exclude "https://react-hook-form.com" --exclude "https://emotion.sh"
+          command: pnpm --filter @contentful/f36-website check-links
 
   deploy_chromatic:
     docker:

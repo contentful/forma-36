@@ -3,6 +3,8 @@
   "version": "1.0.1",
   "private": true,
   "scripts": {
+    "check-links": "node ./scripts/check-links.mjs",
+    "test:check-links": "node --test ./scripts/check-links.test.mjs",
     "generate-public-files": "ts-node ./scripts/generate-public-files.ts",
     "build:prod": "pnpm generate-public-files && next build",
     "start": "next dev",
