@@ -137,9 +137,12 @@ module.exports = {
   testPathIgnorePatterns: [
     '/node_modules/',
     '/dist/',
+    '/packages/components/accordion/',
     '/packages/components/asset/',
     '/packages/components/badge/',
     '/packages/components/button/',
+    '/packages/components/card/',
+    '/packages/components/collapse/',
     '/packages/components/copybutton/',
     '/packages/components/image/',
     '/packages/components/layout/',

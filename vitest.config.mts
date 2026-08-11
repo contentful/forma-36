@@ -45,9 +45,12 @@ const aliases = [
   },
 ];
 const testFiles = [
+  'packages/components/accordion/src/**/*.test.tsx',
   'packages/components/asset/src/**/*.test.tsx',
   'packages/components/badge/src/**/*.test.tsx',
   'packages/components/button/src/**/*.test.tsx',
+  'packages/components/card/src/**/*.test.tsx',
+  'packages/components/collapse/src/**/*.test.tsx',
   'packages/components/copybutton/src/**/*.test.tsx',
   'packages/components/image/src/**/*.test.tsx',
   'packages/components/layout/src/**/*.test.tsx',

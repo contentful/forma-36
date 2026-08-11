@@ -1,16 +1,15 @@
+import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { axe } from 'jest-axe';
 import tokens from '@contentful/f36-tokens';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { Collapse } from './Collapse';
 
 it('has no a11y issues', async () => {
   const { container } = render(<Collapse isExpanded>Collapse me </Collapse>);
-  const results = await axe(container);
-
-  expect(results).toHaveNoViolations();
+  await expectNoA11yViolations(container);
 });
 
 describe('Collapse behavior', () => {
@@ -103,28 +102,32 @@ describe('Collapse behavior', () => {
     expect(panel.style.display).toBe('none');
   });
 
-  it('does not trigger extra renders/effects beyond prop changes', () => {
-    const layoutSpy = jest.spyOn(React, 'useLayoutEffect');
-    const effectSpy = jest.spyOn(React, 'useEffect');
-    const { rerender } = render(
-      <Collapse isExpanded={false}>Content</Collapse>,
+  it('does not re-render children after transition ends', () => {
+    let renderCount = 0;
+    const Content = () => {
+      renderCount += 1;
+      return <>Content</>;
+    };
+    const { getByTestId, rerender } = render(
+      <Collapse isExpanded={false}>
+        <Content />
+      </Collapse>,
     );
-    rerender(<Collapse isExpanded>Content</Collapse>);
-    rerender(<Collapse isExpanded={false}>Content</Collapse>);
-    // Expect exactly one layout/effect registration per render (3 renders)
-    // (React may batch updates; we assert minimum expected count)
-    expect(layoutSpy.mock.calls.length).toBeGreaterThanOrEqual(3);
-    expect(effectSpy.mock.calls.length).toBeGreaterThanOrEqual(3);
-    const layoutCalls = layoutSpy.mock.calls.length;
-    const effectCalls = effectSpy.mock.calls.length;
-    // Dispatch transition events should not cause additional renders/effect registrations
-    document
-      .querySelectorAll('[data-test-id="cf-collapse"]')
-      .forEach((el) => el.dispatchEvent(new Event('transitionend')));
-    expect(layoutSpy.mock.calls).toHaveLength(layoutCalls);
-    expect(effectSpy.mock.calls).toHaveLength(effectCalls);
-    layoutSpy.mockRestore();
-    effectSpy.mockRestore();
+    rerender(
+      <Collapse isExpanded>
+        <Content />
+      </Collapse>,
+    );
+    rerender(
+      <Collapse isExpanded={false}>
+        <Content />
+      </Collapse>,
+    );
+
+    const rendersBeforeTransition = renderCount;
+    getByTestId('cf-collapse').dispatchEvent(new Event('transitionend'));
+
+    expect(renderCount).toBe(rendersBeforeTransition);
   });
 
   it('toggles via user interaction (button click) updating aria-expanded and content region', async () => {
