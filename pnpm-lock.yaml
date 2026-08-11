@@ -1017,12 +1017,6 @@ importers:
       '@testing-library/react':
         specifier: ^16.3.0
         version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@types/jest-axe':
-        specifier: ^3.5.9
-        version: 3.5.9
-      jest-axe:
-        specifier: ^10.0.0
-        version: 10.0.0
 
   packages/components/list:
     dependencies:
@@ -1042,12 +1036,6 @@ importers:
       '@testing-library/react':
         specifier: ^16.3.0
         version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@types/jest-axe':
-        specifier: ^3.5.9
-        version: 3.5.9
-      jest-axe:
-        specifier: ^10.0.0
-        version: 10.0.0
 
   packages/components/menu:
     dependencies:
@@ -1346,12 +1334,6 @@ importers:
       '@testing-library/user-event':
         specifier: ^14.6.1
         version: 14.6.1(@testing-library/dom@10.4.1)
-      '@types/jest-axe':
-        specifier: ^3.5.9
-        version: 3.5.9
-      jest-axe:
-        specifier: ^10.0.0
-        version: 10.0.0
 
   packages/components/pill:
     dependencies:
@@ -1488,12 +1470,6 @@ importers:
       '@testing-library/react':
         specifier: ^16.3.0
         version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@types/jest-axe':
-        specifier: ^3.5.9
-        version: 3.5.9
-      jest-axe:
-        specifier: ^10.0.0
-        version: 10.0.0
 
   packages/components/skeleton:
     dependencies:
@@ -1513,12 +1489,6 @@ importers:
       '@testing-library/react':
         specifier: ^16.3.0
         version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@types/jest-axe':
-        specifier: ^3.5.9
-        version: 3.5.9
-      jest-axe:
-        specifier: ^10.0.0
-        version: 10.0.0
 
   packages/components/spinner:
     dependencies:
