@@ -5,12 +5,25 @@ import brokenLinkChecker from 'broken-link-checker';
 const { SiteChecker } = brokenLinkChecker;
 
 const DEFAULT_URL = 'http://localhost:3000';
-const EXCLUDED_KEYWORDS = [
+const DEFAULT_EXCLUDED_KEYWORDS = [
   'https://medium.com/contentful-design',
   'https://github.com/contentful/forma-36',
   'https://www.figma.com/@contentful',
   'https://react-hook-form.com',
 ];
+
+function getExcludedKeywords(
+  value = process.env.LINKCHECKER_EXCLUDED_KEYWORDS,
+) {
+  if (value === undefined) {
+    return DEFAULT_EXCLUDED_KEYWORDS;
+  }
+
+  return value
+    .split(',')
+    .map((keyword) => keyword.trim())
+    .filter(Boolean);
+}
 
 function isContentfulHost(hostname) {
   return hostname === 'contentful.com' || hostname.endsWith('.contentful.com');
@@ -50,7 +63,7 @@ export function run(url = DEFAULT_URL) {
 
   const checker = new SiteChecker(
     {
-      excludedKeywords: EXCLUDED_KEYWORDS,
+      excludedKeywords: getExcludedKeywords(),
     },
     {
       link(result) {
@@ -86,4 +99,4 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   run(process.argv[2]);
 }
 
-export { isContentfulHost, shouldIgnoreRateLimit };
+export { getExcludedKeywords, isContentfulHost, shouldIgnoreRateLimit };

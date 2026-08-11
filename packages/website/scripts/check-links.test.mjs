@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { shouldIgnoreRateLimit } from './check-links.mjs';
+import { getExcludedKeywords, shouldIgnoreRateLimit } from './check-links.mjs';
 
 function resultFor(url, statusCode, broken = true) {
   return {
@@ -45,5 +45,21 @@ test('does not ignore 429 responses from other domains', () => {
   assert.equal(
     shouldIgnoreRateLimit(resultFor('https://example.com/docs', 429)),
     false,
+  );
+});
+
+test('uses the default exclusions when the environment variable is unset', () => {
+  assert.deepEqual(getExcludedKeywords(undefined), [
+    'https://medium.com/contentful-design',
+    'https://github.com/contentful/forma-36',
+    'https://www.figma.com/@contentful',
+    'https://react-hook-form.com',
+  ]);
+});
+
+test('reads comma-separated exclusions from the environment variable', () => {
+  assert.deepEqual(
+    getExcludedKeywords('https://example.com, https://another.example.com'),
+    ['https://example.com', 'https://another.example.com'],
   );
 });
