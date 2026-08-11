@@ -142,6 +142,7 @@ module.exports = {
     '/packages/components/image/',
     '/packages/components/note/',
     '/packages/components/spinner/',
+    '/packages/components/typography/',
     '/packages/components/usage-count/',
     '/packages/forma-36-codemod/',
   ],
