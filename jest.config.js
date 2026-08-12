@@ -153,6 +153,8 @@ module.exports = {
     '/packages/components/note/',
     '/packages/components/navlist/',
     '/packages/components/pagination/',
+    '/packages/components/pill/',
+    '/packages/components/pill-next/',
     '/packages/components/progress-stepper/',
     '/packages/components/skeleton/',
     '/packages/components/spinner/',

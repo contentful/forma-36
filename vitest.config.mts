@@ -61,6 +61,8 @@ const testFiles = [
   'packages/components/note/src/**/*.test.tsx',
   'packages/components/navlist/src/**/*.test.tsx',
   'packages/components/pagination/src/**/*.test.tsx',
+  'packages/components/pill/src/**/*.test.tsx',
+  'packages/components/pill-next/src/**/*.test.tsx',
   'packages/components/progress-stepper/src/**/*.test.tsx',
   'packages/components/skeleton/src/**/*.test.tsx',
   'packages/components/spinner/src/**/*.test.tsx',
