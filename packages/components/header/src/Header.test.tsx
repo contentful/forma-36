@@ -1,6 +1,7 @@
+import { describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import { Header } from './Header';
 
 describe('Header', () => {
@@ -12,9 +13,7 @@ describe('Header', () => {
 
   it('has no a11y issues', async () => {
     const { container } = render(<Header title="Header" />);
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('has no a11y issues with back button and breadcrumbs', async () => {
@@ -22,12 +21,11 @@ describe('Header', () => {
       <Header
         title="Header"
         withBackButton
-        backButtonProps={{ onClick: jest.fn() }}
+        backButtonProps={{ onClick: vi.fn() }}
         breadcrumbs={[{ content: 'Breadcrumb', url: '#' }]}
       />,
     );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('renders with custom className', () => {
