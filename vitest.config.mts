@@ -52,7 +52,9 @@ const testFiles = [
   'packages/components/card/src/**/*.test.tsx',
   'packages/components/collapse/src/**/*.test.tsx',
   'packages/components/copybutton/src/**/*.test.tsx',
+  'packages/components/drag-handle/src/**/*.test.tsx',
   'packages/components/header/src/**/*.test.tsx',
+  'packages/components/icon/src/**/*.test.tsx',
   'packages/components/image/src/**/*.test.tsx',
   'packages/components/layout/src/**/*.test.tsx',
   'packages/components/list/src/**/*.test.tsx',
@@ -65,6 +67,7 @@ const testFiles = [
   'packages/components/tabs/src/**/*.test.tsx',
   'packages/components/text-link/src/**/*.test.tsx',
   'packages/components/typography/src/**/*.test.tsx',
+  'packages/components/usage-card/src/**/*.test.tsx',
   'packages/components/usage-count/src/**/*.test.tsx',
 ];
 const ignoredPaths = [
