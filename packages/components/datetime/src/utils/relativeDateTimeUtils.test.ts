@@ -1,3 +1,4 @@
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import dayjs from 'dayjs';
 
 import { formatRelativeDateTime, formatRelativeToCurrentWeekDateTime } from '.';
@@ -12,12 +13,12 @@ describe('Relative datetime utility functions', function () {
   const yesterday = today.subtract(1, 'day');
 
   beforeEach(() => {
-    jest.useFakeTimers().setSystemTime(new Date(today.format()).getTime());
+    vi.useFakeTimers().setSystemTime(new Date(today.format()).getTime());
   });
 
   afterEach(() => {
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
+    vi.runOnlyPendingTimers();
+    vi.useRealTimers();
   });
 
   describe('formatRelativeDateTime', function () {

@@ -53,6 +53,8 @@ const testFiles = [
   'packages/components/card/src/**/*.test.tsx',
   'packages/components/collapse/src/**/*.test.tsx',
   'packages/components/copybutton/src/**/*.test.tsx',
+  'packages/components/datepicker/src/**/*.test.tsx',
+  'packages/components/datetime/src/**/*.test.{ts,tsx}',
   'packages/components/drag-handle/src/**/*.test.tsx',
   'packages/components/header/src/**/*.test.tsx',
   'packages/components/icon/src/**/*.test.tsx',

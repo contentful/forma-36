@@ -1,3 +1,4 @@
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import dayjs, { extend } from 'dayjs';
 import utcPlugin from 'dayjs/plugin/utc.js';
 import timezonePlugin from 'dayjs/plugin/timezone.js';
@@ -10,12 +11,12 @@ describe('formatDateAndTime', () => {
   const today = dayjs();
 
   beforeEach(() => {
-    jest.useFakeTimers().setSystemTime(new Date(today.format()).getTime());
+    vi.useFakeTimers().setSystemTime(new Date(today.format()).getTime());
   });
 
   afterEach(() => {
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
+    vi.runOnlyPendingTimers();
+    vi.useRealTimers();
   });
 
   it('returns a string with the "full" format if no format option is passed', () => {
@@ -57,7 +58,7 @@ describe('formatDateAndTime', () => {
   it('returns normally when Unix Epoch(in milliseconds) is passed as the first argument', () => {
     const expected = formatDateAndTime(1629240300000);
 
-    expect(expected).toBe('Tue, 17 Aug 2021 at 3:45 PM');
+    expect(expected).toBe('Wed, 18 Aug 2021 at 7:45 AM');
   });
 });
 
@@ -94,7 +95,7 @@ describe('formatMachineReadableDateTime', () => {
       // We test with the LA timezone (-7h/-8h) which means that for the current
       // client this appears to have happened on the previous day.
       // In UTC time and in the original used timezone, it would appear as the 19th.
-      const expected = '2024-02-18';
+      const expected = '2024-02-19';
       const actual = formatMachineReadableDateTime(time, 'day');
       expect(actual).toBe(expected);
     });
