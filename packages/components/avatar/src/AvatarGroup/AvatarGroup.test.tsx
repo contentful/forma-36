@@ -1,12 +1,13 @@
+import { describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Avatar } from '../Avatar';
 import { AvatarGroup } from './AvatarGroup';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
-jest.mock('@contentful/f36-image', () => ({
-  Image: jest.fn((props) => <img alt="fallback avatar" {...props} />),
+vi.mock('@contentful/f36-image', () => ({
+  Image: vi.fn((props) => <img alt="fallback avatar" {...props} />),
 }));
 
 const imgUrl = 'https://example.com/image.jpg';
@@ -126,8 +127,6 @@ describe('AvatarGroup', () => {
         <Avatar alt="Bart Simpson" src={imgUrl} />
       </AvatarGroup>,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

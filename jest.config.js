@@ -139,6 +139,7 @@ module.exports = {
     '/dist/',
     '/packages/components/accordion/',
     '/packages/components/asset/',
+    '/packages/components/avatar/',
     '/packages/components/badge/',
     '/packages/components/button/',
     '/packages/components/card/',
