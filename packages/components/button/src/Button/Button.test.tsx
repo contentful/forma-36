@@ -1,8 +1,9 @@
+import { describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 import { EyeIcon } from '@contentful/f36-icons';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import { Button } from './Button';
 
 describe('Button', function () {
@@ -38,7 +39,7 @@ describe('Button', function () {
 
   it('should not dispatch onClick if disabled', async () => {
     const user = userEvent.setup();
-    const mockOnClick = jest.fn();
+    const mockOnClick = vi.fn();
 
     render(
       <Button onClick={mockOnClick} startIcon={<EyeIcon />} isDisabled>
@@ -61,9 +62,7 @@ describe('Button', function () {
         <Button variant="transparent">Button</Button>
       </>,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('has no a11y issues across sizes', async () => {
@@ -75,8 +74,6 @@ describe('Button', function () {
         <Button size="large">Button</Button>
       </>,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

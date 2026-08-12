@@ -47,6 +47,8 @@ const aliases = [
 const testFiles = [
   'packages/components/asset/src/**/*.test.tsx',
   'packages/components/badge/src/**/*.test.tsx',
+  'packages/components/button/src/**/*.test.tsx',
+  'packages/components/copybutton/src/**/*.test.tsx',
   'packages/components/image/src/**/*.test.tsx',
   'packages/components/layout/src/**/*.test.tsx',
   'packages/components/list/src/**/*.test.tsx',
@@ -55,6 +57,7 @@ const testFiles = [
   'packages/components/progress-stepper/src/**/*.test.tsx',
   'packages/components/skeleton/src/**/*.test.tsx',
   'packages/components/spinner/src/**/*.test.tsx',
+  'packages/components/text-link/src/**/*.test.tsx',
   'packages/components/typography/src/**/*.test.tsx',
   'packages/components/usage-count/src/**/*.test.tsx',
 ];
