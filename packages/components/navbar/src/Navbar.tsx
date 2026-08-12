@@ -71,6 +71,13 @@ type NavbarOwnProps = CommonProps & {
   as?: 'header' | 'div';
 };
 
+if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line no-console
+  console.warn(
+    'Warning: `Navbar` is deprecated and will be removed in next major version.',
+  );
+}
+
 // expose only the HTML props that are needed to not pollute the API
 type NavbarHTMLElementProps = Pick<React.ComponentPropsWithoutRef<'div'>, 'id'>;
 
@@ -186,4 +193,7 @@ const NavbarBase = (
   );
 };
 
+/**
+ * @deprecated Navbar component is deprecated and will be removed in the next major version. Horizontal navigation is discontinued and there is no replacement component.
+ */
 export const Navbar = React.forwardRef(NavbarBase);

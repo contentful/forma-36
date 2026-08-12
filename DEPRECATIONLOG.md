@@ -15,6 +15,13 @@ This log tracks all deprecated features and components in Forma 36. For details 
 - **Migration**: Use `PillNext` from `@contentful/f36-pill-next` instead
 - **Guide**: [Migration documentation](./packages/components/pill/MIGRATION.md)
 
+### Navbar (`@contentful/f36-navbar`)
+
+- **Deprecated**: 2026-08-11
+- **Deprecated In**: v6.x.x
+- **Removed In**: next Major (v7)
+- **Reason**: We moved away from a horizontal main navigation to a vertical sidebar Navigation.
+
 ---
 
 ## Removed Deprecations
