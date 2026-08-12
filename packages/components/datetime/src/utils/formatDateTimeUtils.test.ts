@@ -92,9 +92,8 @@ describe('formatMachineReadableDateTime', () => {
   describe('when using a non-UTC timezone', () => {
     it('returns the day for the current timezone', () => {
       const time = '2024-02-19T01:30:00.000+01:00';
-      // We test with the LA timezone (-7h/-8h) which means that for the current
-      // client this appears to have happened on the previous day.
-      // In UTC time and in the original used timezone, it would appear as the 19th.
+      // Vitest runs in the Tokyo timezone (+9h), so this resolves to the 19th.
+      // It is also the 19th in UTC and in the original input timezone.
       const expected = '2024-02-19';
       const actual = formatMachineReadableDateTime(time, 'day');
       expect(actual).toBe(expected);
