@@ -1,5 +1,24 @@
 # @contentful/f36-navbar
 
+## 6.19.0
+
+### Minor Changes
+
+- [#3617](https://github.com/contentful/forma-36/pull/3617) [`00adda3`](https://github.com/contentful/forma-36/commit/00adda326af518512f552d81d2db9c940cc03158) Thanks [@Lelith](https://github.com/Lelith)! - This deprecates the Navbar component, because horizontal main navigation is discontinued. The component will be removed without a replacement in the next Major version.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-avatar@6.19.0
+  - @contentful/f36-button@6.19.0
+  - @contentful/f36-core@6.19.0
+  - @contentful/f36-icon@6.19.0
+  - @contentful/f36-icons@6.19.0
+  - @contentful/f36-menu@6.19.0
+  - @contentful/f36-skeleton@6.19.0
+  - @contentful/f36-tooltip@6.19.0
+  - @contentful/f36-typography@6.19.0
+
 ## 6.18.0
 
 ### Patch Changes
