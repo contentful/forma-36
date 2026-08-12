@@ -8,6 +8,14 @@ catalog:
 
 linkWorkspacePackages: true
 autoInstallPeers: false
+
+# DocSearch brings these Algolia peers transitively, but does not use them directly.
+peerDependencyRules:
+  ignoreMissing:
+    - search-insights
+    - '@algolia/client-search'
+    - algoliasearch
+
 # 15 days, matching the shared Renovate configuration.
 minimumReleaseAge: 21600
 minimumReleaseAgeExclude:
