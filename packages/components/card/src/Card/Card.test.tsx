@@ -1,8 +1,9 @@
+import { describe, expect, it, vi } from 'vitest';
 import React, { useRef, useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { axe } from 'jest-axe';
 import { MenuItem } from '@contentful/f36-menu';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { Card } from './Card';
 
@@ -24,7 +25,7 @@ describe('Card', () => {
 
   it('sets aria-pressed when rendered as button with isSelected', () => {
     render(
-      <Card as="button" onClick={jest.fn()} isSelected>
+      <Card as="button" onClick={vi.fn()} isSelected>
         Toggle
       </Card>,
     );
@@ -61,7 +62,7 @@ describe('Card', () => {
   });
 
   it('calls onClick when rendered as a link', async () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
     const user = userEvent.setup();
     render(
       <Card as="a" onClick={onClick}>
@@ -92,29 +93,21 @@ describe('Card', () => {
 
   it('has no a11y issues', async () => {
     const { container } = render(<Card>Card</Card>);
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('has no a11y issues when rendered as a div', async () => {
     const { container } = render(<Card as="div">Card</Card>);
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('has no a11y issues when rendered as a button', async () => {
     const { container } = render(<Card as="button">Card</Card>);
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('has no a11y issues when rendered as a link', async () => {
     const { container } = render(<Card as="a">Card</Card>);
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });
