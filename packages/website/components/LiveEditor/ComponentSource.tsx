@@ -34,6 +34,7 @@ import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
 import { theme } from './theme';
 import { formatSourceCode } from './utils';
 import * as coder from '../../utils/coder';
+import { useFrontMatterContext } from '../../utils/frontMatterContext';
 import * as f36icons from '@contentful/f36-icons';
 
 const liveProviderScope = {
@@ -154,12 +155,13 @@ export function ComponentSource({
   const [showSource, setShowSource] = useState(true);
   const tooltipId = useId();
   const copyTooltipId = `component-source-copy-${tooltipId}`;
+  const { status } = useFrontMatterContext() ?? {};
 
   const handleToggle = () => {
     setShowSource((prevState) => !prevState);
   };
 
-  const isExampleFromFile = Boolean(file);
+  const canOpenInPlayground = Boolean(file) && status !== 'alpha';
 
   return (
     <Flex flexDirection="column" className={styles.root}>
@@ -212,7 +214,7 @@ export function ComponentSource({
                     value={code}
                     size="small"
                   />
-                  {isExampleFromFile && (
+                  {canOpenInPlayground && (
                     <Button
                       as="a"
                       className={cx(styles.playgroundButton)}
