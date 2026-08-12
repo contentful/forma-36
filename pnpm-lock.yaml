@@ -3194,20 +3194,20 @@ packages:
     engines: {node: '>=22.12.0'}
 
   '@contentful/browserslist-config@4.0.0':
-    resolution: {integrity: sha512-Z4nx1Mpg+8jIsxEeqQ4b8ZPFTqRnm7k7QjBIRpMdrf0s84zCp2cvL8taTZdlPEYWd12Enfbq2WC1ws5BIe49PA==, tarball: https://npm.pkg.github.com/download/@contentful/browserslist-config/4.0.0/b9d59ba05bd53918d3d8023e6729ee19928d127b}
+    resolution: {integrity: sha512-Z4nx1Mpg+8jIsxEeqQ4b8ZPFTqRnm7k7QjBIRpMdrf0s84zCp2cvL8taTZdlPEYWd12Enfbq2WC1ws5BIe49PA==, tarball: https://registry.npmjs.org/@contentful/browserslist-config/-/browserslist-config-4.0.0.tgz}
 
   '@contentful/browserslist-config@5.0.0':
-    resolution: {integrity: sha512-THlO9YkCF+W8aOTF3COe0eFrAhVo5gqeWtRlTa6salLcvx5ff/lgLb6cMgq7/knUi7JUWFm/500uNfbB12iyRw==, tarball: https://npm.pkg.github.com/download/@contentful/browserslist-config/5.0.0/d5ea224325d13ebcfbeefc91f484a6318b1ff812}
+    resolution: {integrity: sha512-THlO9YkCF+W8aOTF3COe0eFrAhVo5gqeWtRlTa6salLcvx5ff/lgLb6cMgq7/knUi7JUWFm/500uNfbB12iyRw==, tarball: https://registry.npmjs.org/@contentful/browserslist-config/-/browserslist-config-5.0.0.tgz}
 
   '@contentful/rich-text-react-renderer@16.1.6':
-    resolution: {integrity: sha512-Pt0KfEnB7UP53gUKupUZjsUCHR7CiDbVyMdMmuyzYT6lNvjR7+KKYWP9eU2TOfVaXy7PxF1XEpBjSALDOHUNKQ==, tarball: https://npm.pkg.github.com/download/@contentful/rich-text-react-renderer/16.1.6/3ff14234631461b6a92a97e643a9b6db4be1458b}
+    resolution: {integrity: sha512-Pt0KfEnB7UP53gUKupUZjsUCHR7CiDbVyMdMmuyzYT6lNvjR7+KKYWP9eU2TOfVaXy7PxF1XEpBjSALDOHUNKQ==, tarball: https://registry.npmjs.org/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-16.1.6.tgz}
     engines: {node: '>=6.0.0'}
     peerDependencies:
       react: ^16.8.6 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.6 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   '@contentful/rich-text-types@17.2.5':
-    resolution: {integrity: sha512-EA5vTfROZePoPmSlqLVd+luL/ev8CjnI20y6vWFVPlLRxQbv4XytXRzatydPE63CqfsPylF7NCn2z8rTLhnWfg==, tarball: https://npm.pkg.github.com/download/@contentful/rich-text-types/17.2.5/d8edc86fbbf0760a4533e28369ca07e08809d850}
+    resolution: {integrity: sha512-EA5vTfROZePoPmSlqLVd+luL/ev8CjnI20y6vWFVPlLRxQbv4XytXRzatydPE63CqfsPylF7NCn2z8rTLhnWfg==, tarball: https://registry.npmjs.org/@contentful/rich-text-types/-/rich-text-types-17.2.5.tgz}
     engines: {node: '>=6.0.0'}
 
   '@conventional-changelog/git-client@3.1.0':
