@@ -72,6 +72,7 @@ const aliases = [
 ];
 const testFiles = [
   'packages/f36-ai-components/src/**/*.test.tsx',
+  'packages/forma-36-codemod/**/__tests__/**/*.test.js',
   'packages/components/accordion/src/**/*.test.tsx',
   'packages/components/asset/src/**/*.test.tsx',
   'packages/components/autocomplete/src/**/*.test.tsx',

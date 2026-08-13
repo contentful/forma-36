@@ -14,14 +14,13 @@
     "f36-codemod": "./bin/f36-codemod.mjs"
   },
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watchAll",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "lint": "eslint ."
   },
   "devDependencies": {
     "@types/semver": "^7.7.1",
-    "eslint": "^10.0.0",
-    "jest": "^30.4.0"
+    "eslint": "^10.0.0"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
@@ -38,13 +37,5 @@
     "meow": "^9.0.0",
     "read-package-up": "^11.0.0",
     "semver": "^7.7.2"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "roots": [
-      "transforms",
-      "utils",
-      "bin"
-    ]
   }
 }
