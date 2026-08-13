@@ -1,9 +1,10 @@
+import { describe, expect, it, vi } from 'vitest';
 import { renderHook, waitFor } from '@testing-library/react';
 import { useImageLoaded } from './useImageLoaded';
 
 describe('useImageLoaded', () => {
   it('should call the onLoad function when the image loads', async () => {
-    const onLoad = jest.fn();
+    const onLoad = vi.fn();
     const mockImage = {
       complete: false,
       addEventListener: (event: string, callback: () => void) => {

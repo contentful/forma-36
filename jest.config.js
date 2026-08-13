@@ -169,6 +169,8 @@ module.exports = {
     '/packages/components/typography/',
     '/packages/components/usage-card/',
     '/packages/components/usage-count/',
+    '/packages/components/utils/',
+    '/packages/core/',
     '/packages/forma-36-codemod/',
   ],
 

@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { getIconColorToken, iconColorByVariant } from './getIconColorToken';
 import type { Variant } from './getIconColorToken';
 import { ColorTokens } from '@contentful/f36-tokens';

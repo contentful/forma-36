@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { hexToRGBA } from './hexToRGBA';
 import tokens from '@contentful/f36-tokens';
 
