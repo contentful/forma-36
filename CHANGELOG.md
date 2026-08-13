@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 13-08-2026
+
+**F36 Navbar** `v6.19.0`
+
+- This deprecates the Navbar component, because horizontal main navigation is discontinued. The component will be removed without a replacement in the next Major version.
+
 ## 10-08-2026
 
 **F36 Icons** `v6.18.0`
