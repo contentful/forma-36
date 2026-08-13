@@ -301,24 +301,24 @@ importers:
         version: 9.0.10(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
     optionalDependencies:
       '@emnapi/core':
-        specifier: 1.11.1
-        version: 1.11.1
+        specifier: 1.11.3
+        version: 1.11.3
       '@emnapi/runtime':
-        specifier: 1.11.1
-        version: 1.11.1
+        specifier: 1.11.3
+        version: 1.11.3
 
   packages/cdn:
     dependencies:
       '@fastly/js-compute':
         specifier: 3.44.3
-        version: 3.44.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(typescript@5.9.3)
+        version: 3.44.3(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@5.9.3)
     devDependencies:
       '@fastly/cli':
         specifier: 15.4.0
         version: 15.4.0
       '@fastly/compute-js-static-publish':
         specifier: 6.3.0
-        version: 6.3.0(@fastly/js-compute@3.44.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(typescript@5.9.3))
+        version: 6.3.0(@fastly/js-compute@3.44.3(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@5.9.3))
     optionalDependencies:
       '@napi-rs/lzma-linux-x64-gnu':
         specifier: ^1.4.5
@@ -3339,6 +3339,9 @@ packages:
   '@emnapi/core@1.11.1':
     resolution: {integrity: sha512-RSvbQmHzdKzNsLYa/wHrbc3KN4sYLKAdPZxqiM2HATqv/SBk2/ENSHpvXGaLOMcsAyz0poEGqkmmKYG3OWiJEQ==}
 
+  '@emnapi/core@1.11.3':
+    resolution: {integrity: sha512-zLpS5asjEb7lq8jYLq37N6XKaE41DIexlY1rF/z4/tIl3wo13Sqm28fRyfIsKZD+NZ8mM5RoKkpW/rBcuoSZSg==}
+
   '@emnapi/core@1.9.2':
     resolution: {integrity: sha512-UC+ZhH3XtczQYfOlu3lNEkdW/p4dsJ1r/bP7H8+rhao3TTTMO1ATq/4DdIi23XuGoFY+Cz0JmCbdVl0hz9jZcA==}
 
@@ -3351,6 +3354,9 @@ packages:
   '@emnapi/runtime@1.11.1':
     resolution: {integrity: sha512-vgj7R3y3Wgx24IQaGPA/R6YFXLHVMOZ0uVEyIQPaWs+rd1AzfEMXlAC22FYwO1XkKR6NPsq7mUandH8oIRdZFw==}
 
+  '@emnapi/runtime@1.11.3':
+    resolution: {integrity: sha512-Xz4Tpyki7XyrpbUK1jR1AhdAdaXyhhY4lZ3neLodmhpuWfy2PAQN5B46sAiU4liOXGLkHypn/qU+jvfWSCYYLA==}
+
   '@emnapi/runtime@1.9.2':
     resolution: {integrity: sha512-3U4+MIWHImeyu1wnmVygh5WlgfYDtyf0k8AbLhMFxOipihf6nrWC4syIm/SwEeec0mNSafiiNnMJwbza/Is6Lw==}
 
@@ -3359,6 +3365,9 @@ packages:
 
   '@emnapi/wasi-threads@1.2.2':
     resolution: {integrity: sha512-c95qOXkHdydNKhscBTebqEC1CVAZpyqOfVfBzQ1qgzyl3gfeldUjIggDbIZgDKsHLgnsM+igH7TJ/eAasaVuMA==}
+
+  '@emnapi/wasi-threads@1.2.3':
+    resolution: {integrity: sha512-ELEBe8PsLvvJ6QMr0zLt8ffvOHW/dc1m3CEzNMg7aJUv3bMaoDtw2TXyDAwkYBuroxxuHEwhRTLJSe5sya547g==}
 
   '@emotion/babel-plugin@11.13.5':
     resolution: {integrity: sha512-pxHCpT2ex+0q+HH91/zsdHkw/lXd468DIN2zvfvLtPKLLMo6gQj7oLObq8PhkrxOZb/gGCq03S3Z7PDhS8pduQ==}
@@ -14577,9 +14586,9 @@ snapshots:
 
   '@bytecodealliance/preview2-shim@0.17.6': {}
 
-  '@bytecodealliance/weval@0.3.4(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)':
+  '@bytecodealliance/weval@0.3.4(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)':
     dependencies:
-      '@napi-rs/lzma': 1.4.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)
+      '@napi-rs/lzma': 1.4.5(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)
       decompress: 4.2.1
       decompress-tar: 4.1.1
       decompress-unzip: 4.0.1
@@ -15176,6 +15185,12 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
+  '@emnapi/core@1.11.3':
+    dependencies:
+      '@emnapi/wasi-threads': 1.2.3
+      tslib: 2.8.1
+    optional: true
+
   '@emnapi/core@1.9.2':
     dependencies:
       '@emnapi/wasi-threads': 1.2.1
@@ -15197,6 +15212,11 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
+  '@emnapi/runtime@1.11.3':
+    dependencies:
+      tslib: 2.8.1
+    optional: true
+
   '@emnapi/runtime@1.9.2':
     dependencies:
       tslib: 2.8.1
@@ -15208,6 +15228,11 @@ snapshots:
     optional: true
 
   '@emnapi/wasi-threads@1.2.2':
+    dependencies:
+      tslib: 2.8.1
+    optional: true
+
+  '@emnapi/wasi-threads@1.2.3':
     dependencies:
       tslib: 2.8.1
     optional: true
@@ -15550,16 +15575,16 @@ snapshots:
       '@fastly/cli-win32-x32': 15.4.0
       '@fastly/cli-win32-x64': 15.4.0
 
-  '@fastly/compute-js-static-publish@6.3.0(@fastly/js-compute@3.44.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(typescript@5.9.3))':
+  '@fastly/compute-js-static-publish@6.3.0(@fastly/js-compute@3.44.3(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@5.9.3))':
     dependencies:
-      '@fastly/js-compute': 3.44.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(typescript@5.9.3)
+      '@fastly/js-compute': 3.44.3(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@5.9.3)
       command-line-args: 5.2.1
       glob-to-regexp: 0.4.1
 
-  '@fastly/js-compute@3.44.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(typescript@5.9.3)':
+  '@fastly/js-compute@3.44.3(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@5.9.3)':
     dependencies:
       '@bytecodealliance/jco': 1.15.4
-      '@bytecodealliance/weval': 0.3.4(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)
+      '@bytecodealliance/weval': 0.3.4(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)
       '@bytecodealliance/wizer': 7.0.5
       '@jridgewell/remapping': 2.3.5
       '@jridgewell/trace-mapping': 0.3.31
@@ -16280,9 +16305,9 @@ snapshots:
   '@napi-rs/lzma-linux-x64-musl@1.4.5':
     optional: true
 
-  '@napi-rs/lzma-wasm32-wasi@1.4.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)':
+  '@napi-rs/lzma-wasm32-wasi@1.4.5(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)':
     dependencies:
-      '@napi-rs/wasm-runtime': 1.1.6(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)
+      '@napi-rs/wasm-runtime': 1.1.6(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)
     transitivePeerDependencies:
       - '@emnapi/core'
       - '@emnapi/runtime'
@@ -16297,7 +16322,7 @@ snapshots:
   '@napi-rs/lzma-win32-x64-msvc@1.4.5':
     optional: true
 
-  '@napi-rs/lzma@1.4.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)':
+  '@napi-rs/lzma@1.4.5(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)':
     optionalDependencies:
       '@napi-rs/lzma-android-arm-eabi': 1.4.5
       '@napi-rs/lzma-android-arm64': 1.4.5
@@ -16312,7 +16337,7 @@ snapshots:
       '@napi-rs/lzma-linux-s390x-gnu': 1.4.5
       '@napi-rs/lzma-linux-x64-gnu': 1.4.5
       '@napi-rs/lzma-linux-x64-musl': 1.4.5
-      '@napi-rs/lzma-wasm32-wasi': 1.4.5(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)
+      '@napi-rs/lzma-wasm32-wasi': 1.4.5(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)
       '@napi-rs/lzma-win32-arm64-msvc': 1.4.5
       '@napi-rs/lzma-win32-ia32-msvc': 1.4.5
       '@napi-rs/lzma-win32-x64-msvc': 1.4.5
@@ -16352,6 +16377,13 @@ snapshots:
     dependencies:
       '@emnapi/core': 1.11.1
       '@emnapi/runtime': 1.11.1
+      '@tybys/wasm-util': 0.10.3
+    optional: true
+
+  '@napi-rs/wasm-runtime@1.1.6(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)':
+    dependencies:
+      '@emnapi/core': 1.11.3
+      '@emnapi/runtime': 1.11.3
       '@tybys/wasm-util': 0.10.3
     optional: true
 
