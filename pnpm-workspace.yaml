@@ -30,6 +30,8 @@ minimumReleaseAgeExclude:
   - 'size-limit@13.0.1'
   # Renovate security update: next@15.5.21
   - next@15.5.21
+  # Renovate security update: next-auth@4.24.15
+  - next-auth@4.24.15
 ignoreScripts: true
 
 overrides:
