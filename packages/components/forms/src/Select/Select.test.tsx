@@ -1,14 +1,15 @@
+import { describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { Select } from './CompoundSelect';
 
 describe('Select', () => {
   it('should not dispatch onChange if disabled', async () => {
     const user = userEvent.setup();
-    const mockOnChange = jest.fn();
+    const mockOnChange = vi.fn();
     render(
       <Select
         name="optionSelect"
@@ -26,7 +27,7 @@ describe('Select', () => {
 
   it('should dispatch onChange', async () => {
     const user = userEvent.setup();
-    const mockOnChange = jest.fn();
+    const mockOnChange = vi.fn();
     render(
       <Select name="optionSelect" id="optionSelect" onChange={mockOnChange}>
         <Select.Option value="optionOne">Option One</Select.Option>
@@ -52,8 +53,6 @@ describe('Select', () => {
         <Select.Option value="optionThree">Selected option</Select.Option>
       </Select>,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

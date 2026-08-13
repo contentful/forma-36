@@ -1,6 +1,7 @@
+import { describe, expect, it } from 'vitest';
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import { BaseCheckboxGroup } from './BaseCheckboxGroup';
 import { BaseCheckbox } from './BaseCheckbox';
 
@@ -40,7 +41,6 @@ describe('BaseCheckboxGroup', () => {
         ))}
       </BaseCheckboxGroup>,
     );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

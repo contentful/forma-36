@@ -57,6 +57,7 @@ const testFiles = [
   'packages/components/datetime/src/**/*.test.{ts,tsx}',
   'packages/components/drag-handle/src/**/*.test.tsx',
   'packages/components/entity-list/src/**/*.test.tsx',
+  'packages/components/forms/src/**/*.test.tsx',
   'packages/components/header/src/**/*.test.tsx',
   'packages/components/icon/src/**/*.test.tsx',
   'packages/components/image/src/**/*.test.tsx',

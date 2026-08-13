@@ -1,6 +1,7 @@
+import { describe, expect, it } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import { HelpText } from './HelpText';
 
 describe('HelpText', function () {
@@ -21,8 +22,6 @@ describe('HelpText', function () {
 
   it('has no a11y issues', async () => {
     const { container } = render(<HelpText>{helpText}</HelpText>);
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });
