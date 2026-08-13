@@ -117,7 +117,7 @@ function isBlockCode(props: {
  * @remarks
  * Exported for unit testing the individual element renderers (most notably
  * `code`), since react-markdown is ESM-only and cannot be rendered under the
- * package's jest setup. Not part of the package's public API.
+ * package's test setup. Not part of the package's public API.
  *
  * @param styles - The resolved style classes for the message.
  * @param contentComponentsOverrides - Optional per-element prop overrides.

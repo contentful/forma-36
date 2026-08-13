@@ -1,3 +1,5 @@
+import { describe, expect, it, vi } from 'vitest';
+
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
@@ -117,7 +119,7 @@ describe('generate-releases', () => {
           name: '@contentful/f36-button',
         },
       };
-      const createReleaseMock = jest.fn().mockResolvedValue(undefined);
+      const createReleaseMock = vi.fn().mockResolvedValue(undefined);
       const octokit = {
         rest: {
           repos: {
