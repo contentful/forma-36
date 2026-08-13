@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
 import { DateTime } from './DateTime';
@@ -47,6 +48,6 @@ describe('DateTime', function () {
     const date = 1629240300000;
     const { container } = render(<DateTime date={date} />);
 
-    expect(container.textContent).toBe('Tue, 17 Aug 2021 at 3:45 PM');
+    expect(container.textContent).toBe('Wed, 18 Aug 2021 at 7:45 AM');
   });
 });

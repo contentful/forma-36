@@ -1,3 +1,4 @@
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
 import dayjs from 'dayjs';
@@ -14,12 +15,12 @@ describe('RelativeDateTime', function () {
   const yesterday = today.subtract(1, 'day');
 
   beforeEach(() => {
-    jest.useFakeTimers().setSystemTime(new Date(today.format()).getTime());
+    vi.useFakeTimers().setSystemTime(new Date(today.format()).getTime());
   });
 
   afterEach(() => {
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
+    vi.runOnlyPendingTimers();
+    vi.useRealTimers();
   });
   it('renders', () => {
     const tree = render(<RelativeDateTime date={today.format()} />);

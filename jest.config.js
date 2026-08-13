@@ -145,6 +145,8 @@ module.exports = {
     '/packages/components/card/',
     '/packages/components/collapse/',
     '/packages/components/copybutton/',
+    '/packages/components/datepicker/',
+    '/packages/components/datetime/',
     '/packages/components/drag-handle/',
     '/packages/components/header/',
     '/packages/components/icon/',
