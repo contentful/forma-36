@@ -1,3 +1,4 @@
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { CheckCircleIcon, ClockIcon } from '@contentful/f36-icons';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
@@ -5,7 +6,7 @@ import { MessageGroups } from '../AIChatHistory';
 import { AIChatHistoryTabs } from './AIChatHistoryTabs';
 
 describe('AIChatHistoryTabs', () => {
-  const mockOnTabClick = jest.fn();
+  const mockOnTabClick = vi.fn();
 
   const mockGroups: MessageGroups = [
     {

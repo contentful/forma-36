@@ -1,5 +1,6 @@
+import { describe, expect, it } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import React from 'react';
 import { Slider } from './Slider';
 
@@ -121,8 +122,7 @@ describe('Slider', () => {
         </Slider>,
       );
 
-      const results = await axe(container);
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
 
     it('has no a11y issues during transition', async () => {
@@ -138,8 +138,7 @@ describe('Slider', () => {
         </Slider>,
       );
 
-      const results = await axe(container);
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
 
     it('has no a11y issues with complex content', async () => {
@@ -153,8 +152,7 @@ describe('Slider', () => {
         </Slider>,
       );
 
-      const results = await axe(container);
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
   });
 });

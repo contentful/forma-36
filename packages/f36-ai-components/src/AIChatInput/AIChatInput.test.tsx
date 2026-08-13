@@ -1,16 +1,18 @@
+import { describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { AIChatInput } from './AIChatInput';
 import { Editor } from '@tiptap/react';
 import { Box } from '@contentful/f36-core';
 
-const mockEditor = {};
+const mockEditor = vi.hoisted(() => ({}));
 
-jest.mock('@tiptap/react', () => {
-  const actual = jest.requireActual('@tiptap/react');
+vi.mock('@tiptap/react', async () => {
+  const actual =
+    await vi.importActual<typeof import('@tiptap/react')>('@tiptap/react');
   return {
     ...actual,
-    useEditor: jest.fn(() => mockEditor),
+    useEditor: vi.fn(() => mockEditor),
     EditorContent: () =>
       React.createElement('div', { 'data-testid': 'editor-content' }),
   };
@@ -54,7 +56,7 @@ describe('AIChatInput', () => {
   });
 
   it('renders the submit button when not streaming and calls onSubmit when clicked', () => {
-    const onSubmitMock = jest.fn();
+    const onSubmitMock = vi.fn();
     render(
       <AIChatInput
         isStreaming={false}
@@ -73,7 +75,7 @@ describe('AIChatInput', () => {
   });
 
   it('renders the stop button when streaming and calls onStop when clicked', () => {
-    const onStopMock = jest.fn();
+    const onStopMock = vi.fn();
     render(
       <AIChatInput
         isStreaming={true}

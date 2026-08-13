@@ -33,7 +33,33 @@ const workspaceAliases = workspaceDirectories.flatMap((directory) => {
 
   return [{ find: packageJson.name, replacement: source }];
 });
+const workspaceSubpathAliases = workspaceDirectories.flatMap((directory) => {
+  const packagePath = resolve(directory, 'package.json');
+
+  if (!existsSync(packagePath)) {
+    return [];
+  }
+
+  const packageJson = JSON.parse(readFileSync(packagePath, 'utf8'));
+
+  if (!packageJson.name) {
+    return [];
+  }
+
+  const packageNamePattern = packageJson.name.replace(
+    /[.*+?^${}()|[\]\\]/g,
+    '\\$&',
+  );
+
+  return [
+    {
+      find: new RegExp(`^${packageNamePattern}/(.+)$`),
+      replacement: resolve(directory, '$1'),
+    },
+  ];
+});
 const aliases = [
+  ...workspaceSubpathAliases,
   ...workspaceAliases,
   {
     find: '@/scripts',
@@ -45,6 +71,7 @@ const aliases = [
   },
 ];
 const testFiles = [
+  'packages/f36-ai-components/src/**/*.test.tsx',
   'packages/components/accordion/src/**/*.test.tsx',
   'packages/components/asset/src/**/*.test.tsx',
   'packages/components/avatar/src/**/*.test.tsx',

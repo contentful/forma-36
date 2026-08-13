@@ -1,7 +1,8 @@
+import { describe, expect, it, vi } from 'vitest';
 import { DownloadSimpleIcon, StarIcon, XIcon } from '@contentful/f36-icons';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import React from 'react';
 import { AIChatLayout } from './AIChatLayout';
 
@@ -142,7 +143,7 @@ describe('AIChatLayout', () => {
   });
 
   it('renders the component with buttons', () => {
-    const mockOnClick = jest.fn();
+    const mockOnClick = vi.fn();
     const buttonsEnd = [
       {
         icon: <XIcon />,
@@ -166,7 +167,7 @@ describe('AIChatLayout', () => {
 
   it('calls button onClick when clicked', async () => {
     const user = userEvent.setup();
-    const mockOnClick = jest.fn();
+    const mockOnClick = vi.fn();
     const buttonsEnd = [
       {
         icon: <XIcon />,
@@ -187,7 +188,7 @@ describe('AIChatLayout', () => {
 
   it('calls onCollapsedClick when header is clicked and layout is collapsed', async () => {
     const user = userEvent.setup();
-    const mockOnOpen = jest.fn();
+    const mockOnOpen = vi.fn();
 
     render(<AIChatLayout display="collapsed" onCollapsedClick={mockOnOpen} />);
 
@@ -199,7 +200,7 @@ describe('AIChatLayout', () => {
 
   it('does not call onCollapsedClick when header is clicked and layout is open', async () => {
     const user = userEvent.setup();
-    const mockOnOpen = jest.fn();
+    const mockOnOpen = vi.fn();
 
     render(<AIChatLayout display="open" onCollapsedClick={mockOnOpen} />);
 
@@ -213,7 +214,7 @@ describe('AIChatLayout', () => {
     const buttonsEnd = [
       {
         icon: <XIcon />,
-        onClick: jest.fn(),
+        onClick: vi.fn(),
         display: true,
         ariaLabel: 'Close chat',
         testId: 'close-button',
@@ -227,7 +228,7 @@ describe('AIChatLayout', () => {
   });
 
   it('renders the component with left buttons', () => {
-    const mockOnClick = jest.fn();
+    const mockOnClick = vi.fn();
     const buttonsLeft = [
       {
         icon: <StarIcon />,
@@ -250,7 +251,7 @@ describe('AIChatLayout', () => {
   });
 
   it('renders the component with fixed buttons', () => {
-    const mockOnClick = jest.fn();
+    const mockOnClick = vi.fn();
     const fixedButtons = [
       {
         icon: <XIcon />,
@@ -273,7 +274,7 @@ describe('AIChatLayout', () => {
 
   it('calls left button onClick when clicked', async () => {
     const user = userEvent.setup();
-    const mockOnClick = jest.fn();
+    const mockOnClick = vi.fn();
     const buttonsLeft = [
       {
         icon: <StarIcon />,
@@ -294,7 +295,7 @@ describe('AIChatLayout', () => {
 
   it('calls fixed button onClick when clicked', async () => {
     const user = userEvent.setup();
-    const mockOnClick = jest.fn();
+    const mockOnClick = vi.fn();
     const fixedButtons = [
       {
         icon: <XIcon />,
@@ -319,7 +320,7 @@ describe('AIChatLayout', () => {
     const buttonsRight = [
       {
         icon: <XIcon />,
-        onClick: jest.fn(),
+        onClick: vi.fn(),
         display: false,
         ariaLabel: 'Close',
         testId: 'hidden-button',
@@ -337,7 +338,7 @@ describe('AIChatLayout', () => {
     const buttonsRight = [
       {
         icon: <XIcon />,
-        onClick: jest.fn(),
+        onClick: vi.fn(),
         display: true,
         ariaLabel: 'Close',
         testId: 'visible-button',
@@ -355,7 +356,7 @@ describe('AIChatLayout', () => {
     const buttonsLeft = [
       {
         icon: <StarIcon />,
-        onClick: jest.fn(),
+        onClick: vi.fn(),
         display: true,
         ariaLabel: 'Back',
         testId: 'back-button',
@@ -364,7 +365,7 @@ describe('AIChatLayout', () => {
     const buttonsRight = [
       {
         icon: <XIcon />,
-        onClick: jest.fn(),
+        onClick: vi.fn(),
         display: true,
         ariaLabel: 'Close',
         testId: 'close-button',
@@ -387,7 +388,7 @@ describe('AIChatLayout', () => {
     const buttonsLeft = [
       {
         icon: <StarIcon />,
-        onClick: jest.fn(),
+        onClick: vi.fn(),
         display: true,
         ariaLabel: 'Back',
         testId: 'back-button',
@@ -396,7 +397,7 @@ describe('AIChatLayout', () => {
     const buttonsRight = [
       {
         icon: <DownloadSimpleIcon />,
-        onClick: jest.fn(),
+        onClick: vi.fn(),
         display: true,
         ariaLabel: 'Download',
         testId: 'download-button',
@@ -405,7 +406,7 @@ describe('AIChatLayout', () => {
     const fixedButtonsRight = [
       {
         icon: <XIcon />,
-        onClick: jest.fn(),
+        onClick: vi.fn(),
         display: true,
         ariaLabel: 'Close',
         testId: 'fixed-close-button',
@@ -439,21 +440,20 @@ describe('AIChatLayout', () => {
       </AIChatLayout>,
     );
 
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('has no a11y issues with buttons', async () => {
     const buttonsEnd = [
       {
         icon: <DownloadSimpleIcon />,
-        onClick: jest.fn(),
+        onClick: vi.fn(),
         display: true,
         ariaLabel: 'Download transcript',
       },
       {
         icon: <XIcon />,
-        onClick: jest.fn(),
+        onClick: vi.fn(),
         display: true,
         ariaLabel: 'Close chat',
       },
@@ -468,8 +468,7 @@ describe('AIChatLayout', () => {
       </AIChatLayout>,
     );
 
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('has no a11y issues when collapsed', async () => {
@@ -479,8 +478,7 @@ describe('AIChatLayout', () => {
       </AIChatLayout>,
     );
 
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('has no a11y issues when closed', async () => {
@@ -492,15 +490,14 @@ describe('AIChatLayout', () => {
       </div>,
     );
 
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('has no a11y issues with all button types', async () => {
     const buttonsLeft = [
       {
         icon: <StarIcon />,
-        onClick: jest.fn(),
+        onClick: vi.fn(),
         display: true,
         ariaLabel: 'Back to previous',
       },
@@ -508,7 +505,7 @@ describe('AIChatLayout', () => {
     const buttonsRight = [
       {
         icon: <DownloadSimpleIcon />,
-        onClick: jest.fn(),
+        onClick: vi.fn(),
         display: true,
         ariaLabel: 'Download transcript',
       },
@@ -516,7 +513,7 @@ describe('AIChatLayout', () => {
     const fixedButtonsRight = [
       {
         icon: <XIcon />,
-        onClick: jest.fn(),
+        onClick: vi.fn(),
         display: true,
         ariaLabel: 'Close chat',
       },
@@ -536,8 +533,7 @@ describe('AIChatLayout', () => {
       </AIChatLayout>,
     );
 
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 
   it('renders without header when no header props are provided', () => {

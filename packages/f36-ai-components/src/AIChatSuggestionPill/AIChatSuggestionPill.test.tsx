@@ -1,3 +1,4 @@
+import { describe, expect, it, vi } from 'vitest';
 import { DeviceMobileCameraIcon } from '@contentful/f36-icons';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -31,7 +32,7 @@ describe('AIChatSuggestionPill', () => {
 
   it('calls onClick when clicked', async () => {
     const user = userEvent.setup();
-    const handleClick = jest.fn();
+    const handleClick = vi.fn();
     render(
       <AIChatSuggestionPill
         icon={DeviceMobileCameraIcon}
@@ -46,7 +47,7 @@ describe('AIChatSuggestionPill', () => {
 
   it('calls onClick when Enter key is pressed', async () => {
     const user = userEvent.setup();
-    const handleClick = jest.fn();
+    const handleClick = vi.fn();
     render(
       <AIChatSuggestionPill
         icon={DeviceMobileCameraIcon}
@@ -62,7 +63,7 @@ describe('AIChatSuggestionPill', () => {
 
   it('calls onClick when Space key is pressed', async () => {
     const user = userEvent.setup();
-    const handleClick = jest.fn();
+    const handleClick = vi.fn();
     render(
       <AIChatSuggestionPill
         icon={DeviceMobileCameraIcon}
