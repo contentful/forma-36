@@ -1,7 +1,8 @@
+import { describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { axe } from 'jest-axe';
 import { XIcon } from '@contentful/f36-icons';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { PillNext } from './PillNext';
 
@@ -70,7 +71,7 @@ describe('PillNext', () => {
     });
 
     it('calls onAction when action button is clicked', () => {
-      const mockOnAction = jest.fn();
+      const mockOnAction = vi.fn();
       render(
         <PillNext
           label="test"
@@ -109,7 +110,7 @@ describe('PillNext', () => {
     });
 
     it('does not call onAction when disabled', () => {
-      const mockOnAction = jest.fn();
+      const mockOnAction = vi.fn();
       render(
         <PillNext
           label="test"
@@ -147,8 +148,7 @@ describe('PillNext', () => {
   describe('accessibility', () => {
     it('has no a11y violations with label only', async () => {
       const { container } = render(<PillNext label="test" />);
-      const results = await axe(container);
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
 
     it('has no a11y violations with action button', async () => {
@@ -160,8 +160,7 @@ describe('PillNext', () => {
           actionButtonLabel="Remove"
         />,
       );
-      const results = await axe(container);
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
 
     it('has no a11y violations with disabled action button', async () => {
@@ -174,8 +173,7 @@ describe('PillNext', () => {
           isDisabled
         />,
       );
-      const results = await axe(container);
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
 
     it('action button is not focusable when disabled', () => {
