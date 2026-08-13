@@ -1,14 +1,14 @@
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import {
   render,
   screen,
   within,
   fireEvent,
-  waitFor,
   cleanup,
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import { Multiselect } from './CompoundMultiselect';
 import { MultiselectProps } from './Multiselect';
 
@@ -34,9 +34,9 @@ const fruits: Fruit[] = [
   { id: 12, name: 'Tomato 🍅', isChecked: false, isDisabled: false },
 ];
 
-const mockOnSearchValueChange = jest.fn();
-const mockOnSelectItem = jest.fn();
-const mockOnSelectAll = jest.fn();
+const mockOnSearchValueChange = vi.fn();
+const mockOnSelectItem = vi.fn();
+const mockOnSelectAll = vi.fn();
 
 const renderComponent = (
   customProps?: Partial<MultiselectProps>,
@@ -74,7 +74,7 @@ const renderComponent = (
 };
 
 describe('Multiselect basic usage', () => {
-  jest.setTimeout(13000); // Set a longer timeout
+  vi.setConfig({ testTimeout: 13000 }); // Set a longer timeout
   it('opens and closes the drawer', async () => {
     const [{ user }] = renderComponent();
 
@@ -89,10 +89,7 @@ describe('Multiselect basic usage', () => {
 
   it('has no a11y issues', async () => {
     renderComponent();
-    const results = await waitFor(() =>
-      axe(screen.getByTestId('cf-multiselect')),
-    );
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(screen.getByTestId('cf-multiselect'));
   });
 
   it('renders the placeholder text', () => {
@@ -375,7 +372,7 @@ describe('Multiselect with select all', () => {
 
 describe('Multiselect with clear selection', () => {
   it('does not render the button when there is no selection', async () => {
-    const onClear = jest.fn();
+    const onClear = vi.fn();
 
     const produce: Fruit[] = [
       { id: 1, name: 'Apple 🍎', isChecked: false, isDisabled: false },
@@ -388,7 +385,7 @@ describe('Multiselect with clear selection', () => {
     expect(screen.queryByLabelText('Clear selection')).not.toBeInTheDocument();
   });
   it('renders the button only when there is more than one element selected', async () => {
-    const onClear = jest.fn();
+    const onClear = vi.fn();
 
     const produce: Fruit[] = [
       { id: 1, name: 'Apple 🍎', isChecked: false, isDisabled: false },
@@ -410,7 +407,7 @@ describe('Multiselect with clear selection', () => {
   });
 
   it('offers a shortcut to a clear the current selection', async () => {
-    const onClear = jest.fn();
+    const onClear = vi.fn();
 
     const produce: Fruit[] = [
       { id: 1, name: 'Apple 🍎', isChecked: false, isDisabled: false },
