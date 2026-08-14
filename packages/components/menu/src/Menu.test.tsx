@@ -1,3 +1,4 @@
+import { describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import {
   render,
@@ -121,7 +122,7 @@ describe('Menu', function () {
   describe('controlled menu', () => {
     it('does call onClose when selecting list item', async () => {
       const user = userEvent.setup();
-      const handleClose = jest.fn();
+      const handleClose = vi.fn();
 
       render(
         <Menu isOpen={true} onClose={handleClose}>
@@ -146,7 +147,7 @@ describe('Menu', function () {
 
     it('does NOT call onClose when selecting list item and closeOnSelect prop is false', async () => {
       const user = userEvent.setup();
-      const handleClose = jest.fn();
+      const handleClose = vi.fn();
 
       render(
         <Menu isOpen={true} onClose={handleClose} closeOnSelect={false}>
@@ -169,7 +170,7 @@ describe('Menu', function () {
 
     it('should call onClose when clicking outside of the menu', async () => {
       const user = userEvent.setup();
-      const handleClose = jest.fn();
+      const handleClose = vi.fn();
       const Controlled = () => {
         const [isOpen, setIsOpen] = React.useState(true);
         return (
@@ -205,7 +206,7 @@ describe('Menu', function () {
 
     it('should close when clicking outside of the menu with all items disabled', async () => {
       const user = userEvent.setup();
-      const handleClose = jest.fn();
+      const handleClose = vi.fn();
 
       render(
         <>
@@ -233,7 +234,7 @@ describe('Menu', function () {
 
     it('calls onOpen callback when opening the menu', async () => {
       const user = userEvent.setup();
-      const handleOpen = jest.fn();
+      const handleOpen = vi.fn();
       const Controlled = () => {
         const [isOpen, setIsOpen] = React.useState(false);
         return (

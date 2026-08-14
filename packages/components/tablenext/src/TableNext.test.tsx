@@ -1,13 +1,14 @@
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { TableNext, TableCellSorting } from '.';
 
 describe('TableNext', () => {
   afterEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   it('renders the component', () => {
@@ -37,7 +38,7 @@ describe('TableNext', () => {
   });
 
   it('renders row cells even when there are fewer column titles than cells', () => {
-    jest.spyOn(console, 'warn').mockImplementation(() => {});
+    vi.spyOn(console, 'warn').mockImplementation(() => {});
 
     render(
       <TableNext layout="stackable" columnTitles={['Name']}>
@@ -55,7 +56,7 @@ describe('TableNext', () => {
   });
 
   it('warns in development when column titles and row cells do not match', () => {
-    const consoleWarnMock = jest
+    const consoleWarnMock = vi
       .spyOn(console, 'warn')
       .mockImplementation(() => {});
 
@@ -96,9 +97,7 @@ describe('TableNext', () => {
         </TableNext>,
       );
 
-      const results = await axe(container);
-
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
 
     it('has no a11y issue with embedded variant', async () => {
@@ -120,9 +119,7 @@ describe('TableNext', () => {
         </TableNext>,
       );
 
-      const results = await axe(container);
-
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
 
     it('has no a11y issue with stackable layout', async () => {
@@ -138,8 +135,7 @@ describe('TableNext', () => {
           </TableNext.Body>
         </TableNext>,
       );
-      const results = await axe(container);
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
 
     it('has no a11y issue with scrollable layout', async () => {
@@ -161,9 +157,7 @@ describe('TableNext', () => {
         </TableNext>,
       );
 
-      const results = await axe(container);
-
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
 
     it('has no a11y issue with scrollable layout and sticky header and first column', async () => {
@@ -185,9 +179,7 @@ describe('TableNext', () => {
         </TableNext>,
       );
 
-      const results = await axe(container);
-
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
   });
 
@@ -270,7 +262,7 @@ describe('TableNext', () => {
     });
 
     it('calls onClick when the sort button is clicked', async () => {
-      const handleClick = jest.fn();
+      const handleClick = vi.fn();
 
       render(
         <TableNext>
@@ -358,8 +350,7 @@ describe('TableNext', () => {
         </TableNext>,
       );
 
-      const results = await axe(container);
-      expect(results).toHaveNoViolations();
+      await expectNoA11yViolations(container);
     });
   });
 
