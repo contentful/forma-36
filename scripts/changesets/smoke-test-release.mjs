@@ -4,7 +4,7 @@ import { Octokit } from 'octokit';
 const owner = 'contentful';
 const repo = 'forma-36';
 
-export const getAuth = () => {
+const getAuth = () => {
   if (!process.env.GITHUB_TOKEN) {
     throw new Error('GITHUB_TOKEN is required to run the release smoke test.');
   }
@@ -12,13 +12,13 @@ export const getAuth = () => {
   return `token ${process.env.GITHUB_TOKEN}`;
 };
 
-export const assertCreateReleaseApi = (octokit) => {
+const assertCreateReleaseApi = (octokit) => {
   if (typeof octokit.rest?.repos?.createRelease !== 'function') {
     throw new Error('octokit.rest.repos.createRelease is not available.');
   }
 };
 
-export const getDefaultBranchSha = async (octokit) => {
+const getDefaultBranchSha = async (octokit) => {
   const { data: repoData } = await octokit.rest.repos.get({ owner, repo });
   const { data: branchData } = await octokit.rest.repos.getBranch({
     owner,
@@ -32,7 +32,7 @@ export const getDefaultBranchSha = async (octokit) => {
   };
 };
 
-export const deleteRelease = async (octokit, releaseId) => {
+const deleteRelease = async (octokit, releaseId) => {
   if (!releaseId) {
     return;
   }
@@ -44,7 +44,7 @@ export const deleteRelease = async (octokit, releaseId) => {
   });
 };
 
-export const deleteTag = async (octokit, tagName) => {
+const deleteTag = async (octokit, tagName) => {
   if (!tagName) {
     return;
   }
@@ -62,7 +62,7 @@ export const deleteTag = async (octokit, tagName) => {
   }
 };
 
-export async function smokeTestReadOnly(octokit) {
+async function smokeTestReadOnly(octokit) {
   const { defaultBranch } = await getDefaultBranchSha(octokit);
 
   console.log(
@@ -70,7 +70,7 @@ export async function smokeTestReadOnly(octokit) {
   );
 }
 
-export async function smokeTestWrite(octokit) {
+async function smokeTestWrite(octokit) {
   const timestamp = new Date().toISOString().replace(/[-:.TZ]/g, '');
   const tagName = `release-smoke-test-${timestamp}`;
   let releaseId;

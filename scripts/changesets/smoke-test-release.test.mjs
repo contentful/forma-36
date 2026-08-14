@@ -1,11 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import {
-  deleteTag,
-  getAuth,
-  main,
-  smokeTestReadOnly,
-  smokeTestWrite,
-} from './smoke-test-release.mjs';
+import { main } from './smoke-test-release.mjs';
 
 const createOctokitMock = () => ({
   rest: {
@@ -96,12 +90,12 @@ describe('smoke-test-release', () => {
     });
   });
 
-  it('skips release deletion when there is no release id', async () => {
+  it('cleans up the tag when release creation fails', async () => {
     const octokit = createOctokitMock();
 
     octokit.rest.repos.createRelease.mockRejectedValue(new Error('failed'));
 
-    await expect(smokeTestWrite(octokit)).rejects.toThrow('failed');
+    await expect(main({ octokit, shouldWrite: true })).rejects.toThrow('failed');
 
     expect(octokit.rest.repos.deleteRelease).not.toHaveBeenCalled();
     expect(octokit.rest.git.deleteRef).toHaveBeenCalled();
@@ -111,7 +105,7 @@ describe('smoke-test-release', () => {
     const octokit = createOctokitMock();
     octokit.rest.git.deleteRef.mockRejectedValue({ status: 404 });
 
-    await expect(deleteTag(octokit, 'missing-tag')).resolves.toBeUndefined();
+    await expect(main({ octokit, shouldWrite: true })).resolves.toBeUndefined();
   });
 
   it('propagates non-404 tag cleanup errors', async () => {
@@ -119,15 +113,15 @@ describe('smoke-test-release', () => {
     const error = { status: 500, message: 'GitHub unavailable' };
     octokit.rest.git.deleteRef.mockRejectedValue(error);
 
-    await expect(deleteTag(octokit, 'tag')).rejects.toBe(error);
+    await expect(main({ octokit, shouldWrite: true })).rejects.toBe(error);
   });
 
-  it('fails when the GitHub token is missing', () => {
+  it('fails when the GitHub token is missing', async () => {
     const originalToken = process.env.GITHUB_TOKEN;
     delete process.env.GITHUB_TOKEN;
 
     try {
-      expect(() => getAuth()).toThrow(
+      await expect(main()).rejects.toThrow(
         'GITHUB_TOKEN is required to run the release smoke test.',
       );
     } finally {
