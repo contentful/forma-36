@@ -44,7 +44,6 @@
   "include": [
     "packages",
     "types",
-    "./setupTests.ts",
     "**/*.ts",
     "**/*.tsx"
   ],

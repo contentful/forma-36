@@ -72,6 +72,8 @@ const aliases = [
 ];
 const testFiles = [
   'packages/f36-ai-components/src/**/*.test.tsx',
+  'packages/f36-i18n-utils/src/**/*.test.ts',
+  'packages/forma-36-codemod/**/__tests__/**/*.test.js',
   'packages/components/accordion/src/**/*.test.tsx',
   'packages/components/asset/src/**/*.test.tsx',
   'packages/components/autocomplete/src/**/*.test.tsx',
@@ -114,6 +116,7 @@ const testFiles = [
   'packages/components/usage-card/src/**/*.test.tsx',
   'packages/components/usage-count/src/**/*.test.tsx',
   'packages/core/src/**/*.test.{ts,tsx}',
+  'scripts/changesets/**/*.test.js',
 ];
 const ignoredPaths = [
   '**/node_modules/**',

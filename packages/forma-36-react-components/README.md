@@ -113,7 +113,7 @@ Make sure that your documentation for the component contains following parts:
 
 ## Testing
 
-We are using [Jest](https://facebook.github.io/jest/) and [Testing Library](https://testing-library.com/docs/react-testing-library/intro/) to test our components.
+We are using [Vitest](https://vitest.dev/) and [Testing Library](https://testing-library.com/docs/react-testing-library/intro/) to test our components.
 
 Tests are kept next to their components and use the `.test.js` file extension.
 

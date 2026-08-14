@@ -5,7 +5,6 @@ import storybook from 'eslint-plugin-storybook';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
-import jest from 'eslint-plugin-jest';
 import importPlugin from 'eslint-plugin-import';
 import globals from 'globals';
 import * as emotion from '@emotion/eslint-plugin';
@@ -36,15 +35,12 @@ export default [
   ...ts.configs.recommended,
   ...storybook.configs['flat/recommended'],
   jsxA11y.flatConfigs.recommended,
-  jest.configs['flat/recommended'],
-  jest.configs['flat/style'],
   {
     plugins: {
       '@emotion': fixupPluginRules(emotion),
       react,
       'react-hooks': reactHooks,
       import: fixupPluginRules(importPlugin),
-      jest,
     },
     languageOptions: {
       ecmaVersion: 2022,
@@ -52,7 +48,6 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.node,
-        ...globals.jest,
       },
     },
     settings: {

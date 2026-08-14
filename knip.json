@@ -28,22 +28,16 @@
     "@contentful/f36-pill-next",
     "@floating-ui/react-dom",
     "@testing-library/jest-dom",
-    "babel-jest",
     "chromatic",
     "globby",
-    "jest-environment-jsdom",
-    "jest-watch-typeahead",
-    "ts-jest",
     "wait-on"
   ],
-  "jest": false,
   "storybook": {
     "config": ["scripts/.storybook/main.ts"]
   },
   "workspaces": {
     ".": {
       "entry": [
-        "jest.config.js",
         "scripts/.storybook/{manager,preview}.{ts,tsx}",
         "scripts/changesets/**/*.test.js",
         "scripts/plopfile.js",

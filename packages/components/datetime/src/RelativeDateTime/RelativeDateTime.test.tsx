@@ -5,7 +5,6 @@ import dayjs from 'dayjs';
 
 import { RelativeDateTime } from './RelativeDateTime';
 
-// eslint-disable-next-line jest/no-mocks-import
 import * as TestCases from '../__mocks__/dates';
 
 describe('RelativeDateTime', function () {
