@@ -48,4 +48,3 @@ overrides:
   'eslint-plugin-import>eslint': '>=9.0.0'
   'eslint-plugin-jsx-a11y>eslint': '>=9.0.0'
   'eslint-plugin-react>eslint': '>=9.0.0'
-  'react-day-picker>react': '>=19.1.0'
