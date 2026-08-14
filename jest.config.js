@@ -171,6 +171,7 @@ module.exports = {
     '/packages/components/usage-count/',
     '/packages/components/utils/',
     '/packages/core/',
+    '/packages/f36-ai-components/',
     '/packages/forma-36-codemod/',
   ],
 

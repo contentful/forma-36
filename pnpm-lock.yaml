@@ -1780,12 +1780,6 @@ importers:
       '@tiptap/suggestion':
         specifier: 3.29.2
         version: 3.29.2(@floating-ui/dom@1.7.5)(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
-      '@types/jest-axe':
-        specifier: ^3.5.9
-        version: 3.5.9
-      jest-axe:
-        specifier: ^10.0.0
-        version: 10.0.0
 
   packages/f36-docs-utils:
     dependencies:

@@ -1,10 +1,11 @@
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import { MessageThread } from '../AIChatHistory';
 import { AIChatHistoryThread } from './AIChatHistoryThread';
 
 describe('AIChatHistoryThread', () => {
-  const mockOnClick = jest.fn();
+  const mockOnClick = vi.fn();
 
   const mockThread: MessageThread = {
     id: 'test-thread',

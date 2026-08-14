@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { EyeIcon } from '@contentful/f36-icons';
 import { render, screen } from '@testing-library/react';
 import React from 'react';

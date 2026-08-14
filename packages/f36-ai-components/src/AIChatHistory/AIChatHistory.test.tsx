@@ -1,3 +1,4 @@
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { CheckCircleIcon, ClockIcon } from '@contentful/f36-icons';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
@@ -98,7 +99,7 @@ describe('AIChatHistory', () => {
   });
 
   it('calls onThreadClick when thread is clicked', () => {
-    const mockOnClick = jest.fn();
+    const mockOnClick = vi.fn();
     const threadsWithClick = [
       {
         ...mockThreads[0],
@@ -125,12 +126,12 @@ describe('AIChatHistory', () => {
   describe('lastActivity', () => {
     beforeEach(() => {
       // Mock Date.now to ensure consistent test results
-      jest.useFakeTimers();
-      jest.setSystemTime(new Date('2023-12-01T12:00:00Z'));
+      vi.useFakeTimers();
+      vi.setSystemTime(new Date('2023-12-01T12:00:00Z'));
     });
 
     afterEach(() => {
-      jest.useRealTimers();
+      vi.useRealTimers();
     });
 
     it('formats recent times correctly', () => {
