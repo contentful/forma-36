@@ -149,6 +149,7 @@ module.exports = {
     '/packages/components/datetime/',
     '/packages/components/drag-handle/',
     '/packages/components/entity-list/',
+    '/packages/components/forms/',
     '/packages/components/header/',
     '/packages/components/icon/',
     '/packages/components/image/',

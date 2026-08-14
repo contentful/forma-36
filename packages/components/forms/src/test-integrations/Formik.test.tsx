@@ -1,3 +1,4 @@
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import { Formik, Field } from 'formik';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
@@ -119,7 +120,7 @@ const MockForm = ({ handleData }) => {
   );
 };
 
-const mockHandleData = jest.fn((data) => {
+const mockHandleData = vi.fn((data) => {
   return Promise.resolve({ ...data });
 });
 

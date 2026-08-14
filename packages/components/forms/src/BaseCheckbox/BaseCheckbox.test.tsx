@@ -1,6 +1,7 @@
+import { describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { BaseCheckbox } from './BaseCheckbox';
 
@@ -60,7 +61,7 @@ describe('BaseCheckbox', function () {
   });
 
   it('can blur when clicking escape', () => {
-    const mockOnBlur = jest.fn();
+    const mockOnBlur = vi.fn();
     const { getByLabelText } = render(
       <BaseCheckbox {...commonProps} onBlur={mockOnBlur} willBlurOnEsc />,
     );
@@ -74,8 +75,6 @@ describe('BaseCheckbox', function () {
 
   it('has no a11y issues', async () => {
     const { container } = render(<BaseCheckbox {...commonProps} />);
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

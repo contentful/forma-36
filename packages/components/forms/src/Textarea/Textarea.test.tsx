@@ -1,6 +1,7 @@
+import { describe, expect, it } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { Textarea } from './Textarea';
 
@@ -32,8 +33,6 @@ describe('Textarea', function () {
     const { container } = render(
       <Textarea id="textarea" aria-label={labelText} />,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });

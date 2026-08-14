@@ -1,6 +1,7 @@
+import { describe, expect, it } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { InputGroup } from './InputGroup';
 import { TextInput } from '@contentful/f36-forms';
@@ -62,8 +63,6 @@ describe('InputGroup', function () {
         />
       </InputGroup>,
     );
-    const results = await axe(container);
-
-    expect(results).toHaveNoViolations();
+    await expectNoA11yViolations(container);
   });
 });
