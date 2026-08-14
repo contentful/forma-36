@@ -1,6 +1,7 @@
+import { expect, it } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { EntityList } from '.';
 
@@ -31,9 +32,7 @@ it('renders the component with an additional class name', () => {
 
 it('has no a11y issues', async () => {
   const { container } = render(<EntityList />);
-  const results = await axe(container);
-
-  expect(results).toHaveNoViolations();
+  await expectNoA11yViolations(container);
 });
 
 it('has no a11y issues with children', async () => {
@@ -56,7 +55,5 @@ it('has no a11y issues with children', async () => {
       />
     </EntityList>,
   );
-  const results = await axe(container);
-
-  expect(results).toHaveNoViolations();
+  await expectNoA11yViolations(container);
 });
