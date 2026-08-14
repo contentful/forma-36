@@ -1,6 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["local>contentful/renovate-config"],
+  "minimumReleaseAge": "15 days",
   "rangeStrategy": "update-lockfile",
   "labels": ["dependencies"],
   "packageRules": [
