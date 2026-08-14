@@ -14,8 +14,6 @@
     "f36-codemod": "./bin/f36-codemod.mjs"
   },
   "scripts": {
-    "test": "vitest run",
-    "test:watch": "vitest",
     "lint": "eslint ."
   },
   "devDependencies": {
