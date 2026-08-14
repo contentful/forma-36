@@ -1,10 +1,11 @@
+import { describe, expect, it, vi } from 'vitest';
 import React, { useRef } from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 
 import { useKeyboard } from './useKeyboard';
 
-const handleEnter = jest.fn();
-const handleArrowUp = jest.fn();
+const handleEnter = vi.fn();
+const handleArrowUp = vi.fn();
 
 const Component = () => {
   useKeyboard({
@@ -38,7 +39,7 @@ const ComponentWithRef = () => {
 describe('useKeyboard', () => {
   it('should attach handler to document by default', () => {
     const events = {};
-    document.addEventListener = jest.fn((event, callback) => {
+    document.addEventListener = vi.fn((event, callback) => {
       events[event] = callback;
     });
 

@@ -53,6 +53,7 @@ const testFiles = [
   'packages/components/card/src/**/*.test.tsx',
   'packages/components/collapse/src/**/*.test.tsx',
   'packages/components/copybutton/src/**/*.test.tsx',
+  'packages/components/utils/src/**/*.test.{ts,tsx}',
   'packages/components/datepicker/src/**/*.test.tsx',
   'packages/components/datetime/src/**/*.test.{ts,tsx}',
   'packages/components/drag-handle/src/**/*.test.tsx',
@@ -77,6 +78,7 @@ const testFiles = [
   'packages/components/typography/src/**/*.test.tsx',
   'packages/components/usage-card/src/**/*.test.tsx',
   'packages/components/usage-count/src/**/*.test.tsx',
+  'packages/core/src/**/*.test.{ts,tsx}',
 ];
 const ignoredPaths = [
   '**/node_modules/**',
