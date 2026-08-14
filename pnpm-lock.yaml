@@ -19,7 +19,6 @@ overrides:
   eslint-plugin-import>eslint: '>=9.0.0'
   eslint-plugin-jsx-a11y>eslint: '>=9.0.0'
   eslint-plugin-react>eslint: '>=9.0.0'
-  react-day-picker>react: '>=19.1.0'
 
 importers:
 
@@ -10899,7 +10898,7 @@ packages:
     resolution: {integrity: sha512-LK68OTbHB3oJNhl9cA0qVizzp3o26w61YSjAFkYi67N86iro32wx86kSNeFU/hq+gI8m1yzWhnomMLfZ041RzQ==}
     peerDependencies:
       date-fns: ^2.28.0 || ^3.0.0
-      react: '>=19.1.0'
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   react-devtools-inline@4.4.0:
     resolution: {integrity: sha512-ES0GolSrKO8wsKbsEkVeiR/ZAaHQTY4zDh1UW8DImVmm8oaGLl3ijJDvSGe+qDRKPZdPRnDtWWnSvvrgxXdThQ==}
