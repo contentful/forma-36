@@ -125,7 +125,7 @@
     "jest-watch-typeahead": "^3.0.1",
     "knip": "^6.25.0",
     "lint-staged": "^16.4.0",
-    "octokit": "^3.0.0",
+    "octokit": "^5.0.0",
     "plop": "^4.0.5",
     "prettier": "3.9.6",
     "pretty-quick": "4.2.2",
