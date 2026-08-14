@@ -116,7 +116,7 @@ const testFiles = [
   'packages/components/usage-card/src/**/*.test.tsx',
   'packages/components/usage-count/src/**/*.test.tsx',
   'packages/core/src/**/*.test.{ts,tsx}',
-  'scripts/changesets/**/*.test.js',
+  'scripts/changesets/**/*.test.mjs',
 ];
 const ignoredPaths = [
   '**/node_modules/**',
