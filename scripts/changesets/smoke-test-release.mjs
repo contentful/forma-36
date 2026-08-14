@@ -1,10 +1,10 @@
-const { Octokit } = require('octokit');
+import { pathToFileURL } from 'node:url';
+import { Octokit } from 'octokit';
 
 const owner = 'contentful';
 const repo = 'forma-36';
-const shouldWrite = process.argv.includes('--write');
 
-const getAuth = () => {
+export const getAuth = () => {
   if (!process.env.GITHUB_TOKEN) {
     throw new Error('GITHUB_TOKEN is required to run the release smoke test.');
   }
@@ -12,13 +12,13 @@ const getAuth = () => {
   return `token ${process.env.GITHUB_TOKEN}`;
 };
 
-const assertCreateReleaseApi = (octokit) => {
+export const assertCreateReleaseApi = (octokit) => {
   if (typeof octokit.rest?.repos?.createRelease !== 'function') {
     throw new Error('octokit.rest.repos.createRelease is not available.');
   }
 };
 
-const getDefaultBranchSha = async (octokit) => {
+export const getDefaultBranchSha = async (octokit) => {
   const { data: repoData } = await octokit.rest.repos.get({ owner, repo });
   const { data: branchData } = await octokit.rest.repos.getBranch({
     owner,
@@ -32,7 +32,7 @@ const getDefaultBranchSha = async (octokit) => {
   };
 };
 
-const deleteRelease = async (octokit, releaseId) => {
+export const deleteRelease = async (octokit, releaseId) => {
   if (!releaseId) {
     return;
   }
@@ -44,7 +44,7 @@ const deleteRelease = async (octokit, releaseId) => {
   });
 };
 
-const deleteTag = async (octokit, tagName) => {
+export const deleteTag = async (octokit, tagName) => {
   if (!tagName) {
     return;
   }
@@ -62,7 +62,7 @@ const deleteTag = async (octokit, tagName) => {
   }
 };
 
-async function smokeTestReadOnly(octokit) {
+export async function smokeTestReadOnly(octokit) {
   const { defaultBranch } = await getDefaultBranchSha(octokit);
 
   console.log(
@@ -70,7 +70,7 @@ async function smokeTestReadOnly(octokit) {
   );
 }
 
-async function smokeTestWrite(octokit) {
+export async function smokeTestWrite(octokit) {
   const timestamp = new Date().toISOString().replace(/[-:.TZ]/g, '');
   const tagName = `release-smoke-test-${timestamp}`;
   let releaseId;
@@ -105,8 +105,10 @@ async function smokeTestWrite(octokit) {
   }
 }
 
-async function main() {
-  const octokit = new Octokit({ auth: getAuth() });
+export async function main({
+  octokit = new Octokit({ auth: getAuth() }),
+  shouldWrite = process.argv.includes('--write'),
+} = {}) {
   assertCreateReleaseApi(octokit);
 
   if (shouldWrite) {
@@ -117,7 +119,12 @@ async function main() {
   await smokeTestReadOnly(octokit);
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+if (
+  process.argv[1] &&
+  import.meta.url === pathToFileURL(process.argv[1]).href
+) {
+  main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}
