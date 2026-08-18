@@ -33,7 +33,7 @@ export function getSelectStyles({ isInvalid, isDisabled, size, density }) {
     display: 'block',
     appearance: 'none',
     backgroundColor: tokens.colorWhite,
-    color: tokens.gray700,
+    color: tokens.colorTextInputValue,
 
     fontSize: tokens.fontSizeM,
     lineHeight: tokens.lineHeightM,
@@ -47,7 +47,7 @@ export function getSelectStyles({ isInvalid, isDisabled, size, density }) {
     textOverflow: 'ellipsis',
 
     '&::placeholder': {
-      color: tokens.gray500,
+      color: tokens.colorTextInputDefaultvalue,
     },
     '&:focus': {
       outline: 'none',

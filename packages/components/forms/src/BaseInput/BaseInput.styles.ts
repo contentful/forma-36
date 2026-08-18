@@ -97,7 +97,7 @@ const getStyles = ({
       boxSizing: 'border-box',
       backgroundColor: isDisabled ? tokens.gray100 : tokens.colorWhite,
       border: `1px solid ${isInvalid ? tokens.red600 : tokens.gray300}`,
-      color: tokens.gray700,
+      color: tokens.colorTextInputValue,
       fontFamily: tokens.fontStackPrimary,
       margin: 0,
       cursor: isDisabled ? 'not-allowed' : 'auto',
@@ -109,7 +109,7 @@ const getStyles = ({
       ...(as === 'textarea' ? { resize } : getSizeStyles({ size, density })),
 
       '&::placeholder': {
-        color: tokens.gray500,
+        color: tokens.colorTextInputDefaultvalue,
       },
 
       '&:active, &:active:hover, &:focus': {
