@@ -47,7 +47,7 @@ export function getSelectStyles({ isInvalid, isDisabled, size, density }) {
     textOverflow: 'ellipsis',
 
     '&::placeholder': {
-      color: tokens.colorTextInputDefaultvalue,
+      color: tokens.colorTextInputPlaceholder,
     },
     '&:focus': {
       outline: 'none',

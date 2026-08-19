@@ -109,7 +109,7 @@ const getStyles = ({
       ...(as === 'textarea' ? { resize } : getSizeStyles({ size, density })),
 
       '&::placeholder': {
-        color: tokens.colorTextInputDefaultvalue,
+        color: tokens.colorTextInputPlaceholder,
       },
 
       '&:active, &:active:hover, &:focus': {
