@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.20.0
+
+### Minor Changes
+
+- [#3663](https://github.com/contentful/forma-36/pull/3663) [`ba11c76`](https://github.com/contentful/forma-36/commit/ba11c76c13f11d8c69f80973465dfa5167d2dc8f) Thanks [@Khaalidsub](https://github.com/Khaalidsub)! - Add SlidersHorizontalIcon and GraphIcon from Phosphor and add custom ScalesEvenIcon with Default/Active variants (NT-3981)
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.20.0
+  - @contentful/f36-icon@6.20.0
+
 ## 6.19.1
 
 ### Patch Changes
