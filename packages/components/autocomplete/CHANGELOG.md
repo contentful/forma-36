@@ -1,5 +1,19 @@
 # Change Log
 
+## 6.19.1
+
+### Patch Changes
+
+- Updated dependencies [[`e229e1d`](https://github.com/contentful/forma-36/commit/e229e1d3e91c2dae7fc11b5cbf9f49561c9ae6ad)]:
+  - @contentful/f36-tokens@6.3.0
+  - @contentful/f36-forms@6.19.1
+  - @contentful/f36-button@6.19.1
+  - @contentful/f36-core@6.19.1
+  - @contentful/f36-icons@6.19.1
+  - @contentful/f36-popover@6.19.1
+  - @contentful/f36-skeleton@6.19.1
+  - @contentful/f36-typography@6.19.1
+
 ## 6.19.0
 
 ### Patch Changes

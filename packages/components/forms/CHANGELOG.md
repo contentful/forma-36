@@ -1,5 +1,18 @@
 # Change Log
 
+## 6.19.1
+
+### Patch Changes
+
+- [#3664](https://github.com/contentful/forma-36/pull/3664) [`e229e1d`](https://github.com/contentful/forma-36/commit/e229e1d3e91c2dae7fc11b5cbf9f49561c9ae6ad) Thanks [@MAhsenArif](https://github.com/MAhsenArif)! - Add semantic input color tokens `color-text-input-value` (gray900) and `color-text-input-placeholder` (gray500). Update TextInput, Textarea, Select, Autocomplete, and MultiSelect to use them, replacing direct gray700/gray500 references.
+
+- Updated dependencies [[`e229e1d`](https://github.com/contentful/forma-36/commit/e229e1d3e91c2dae7fc11b5cbf9f49561c9ae6ad)]:
+  - @contentful/f36-tokens@6.3.0
+  - @contentful/f36-core@6.19.1
+  - @contentful/f36-icon@6.19.1
+  - @contentful/f36-icons@6.19.1
+  - @contentful/f36-typography@6.19.1
+
 ## 6.19.0
 
 ### Patch Changes

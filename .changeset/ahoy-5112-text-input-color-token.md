@@ -1,6 +1,0 @@
----
-'@contentful/f36-tokens': minor
-'@contentful/f36-forms': patch
----
-
-Add semantic input color tokens `color-text-input-value` (gray900) and `color-text-input-placeholder` (gray500). Update TextInput, Textarea, Select, Autocomplete, and MultiSelect to use them, replacing direct gray700/gray500 references.

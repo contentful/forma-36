@@ -1,5 +1,13 @@
 # Change Log
 
+## 6.19.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.19.1
+  - @contentful/f36-icon@6.19.1
+
 ## 6.19.0
 
 ### Patch Changes
