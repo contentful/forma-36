@@ -35,7 +35,7 @@ import F36Tokens from '@contentful/f36-tokens';
 #### JSON
 
 ```js
-import tokens from '@contentful/f36-tokens/dist/json/transitions/transition-easings';
+import tokens from '@contentful/f36-tokens/dist/json/transitions/transition-easings.json';
 ```
 
 ## Development
