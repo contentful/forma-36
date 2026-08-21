@@ -11,7 +11,9 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js",
       "default": "./dist/index.mjs"
-    }
+    },
+    "./dist/css/index.css": "./dist/css/index.css",
+    "./dist/json/*.json": "./dist/json/*.json"
   },
   "license": "MIT",
   "files": [
