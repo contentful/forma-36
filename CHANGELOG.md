@@ -8,6 +8,20 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 21-08-2026
+
+**F36 Forms** `v6.19.1`
+
+- Add semantic input color tokens `color-text-input-value` (gray900) and `color-text-input-placeholder` (gray500). Update TextInput, Textarea, Select, Autocomplete, and MultiSelect to use them, replacing direct gray700/gray500 references.
+
+**F36 Tokens** `v6.3.0`
+
+- Add semantic input color tokens `color-text-input-value` (gray900) and `color-text-input-placeholder` (gray500). Update TextInput, Textarea, Select, Autocomplete, and MultiSelect to use them, replacing direct gray700/gray500 references.
+
+**F36 Icons** `v6.20.0`
+
+- Add SlidersHorizontalIcon and GraphIcon from Phosphor and add custom ScalesEvenIcon with Default/Active variants (NT-3981)
+
 ## 13-08-2026
 
 **F36 Navbar** `v6.19.0`
