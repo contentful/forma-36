@@ -1,13 +1,14 @@
-const path = require('path');
-const fs = require('fs');
-const childProcess = require('child_process');
-const { getPackages } = require('@manypkg/get-packages');
-const { Octokit } = require('octokit');
-const semver = require('semver');
+import path from 'node:path';
+import { promises as fs } from 'node:fs';
+import { execSync } from 'node:child_process';
+import { pathToFileURL } from 'node:url';
+import { getPackages } from '@manypkg/get-packages';
+import { Octokit } from 'octokit';
+import semver from 'semver';
 
 const cwd = process.cwd();
 
-const getReleaseNotes = (changelog) => {
+export const getReleaseNotes = (changelog) => {
   const changelogArr = changelog.split('\n');
   const releaseNotes = [];
 
@@ -24,7 +25,7 @@ const getReleaseNotes = (changelog) => {
   return releaseNotes.join('\n');
 };
 
-const isPrerelease = ({ pkg, tagName }) => {
+export const isPrerelease = ({ pkg, tagName }) => {
   const prereleaseParts =
     semver.prerelease(tagName.replace(`${pkg.packageJson.name}@`, '')) || [];
 
@@ -32,10 +33,10 @@ const isPrerelease = ({ pkg, tagName }) => {
 };
 
 // Create release on github
-const createRelease = async (octokit, { pkg, tagName }) => {
+export const createRelease = async (octokit, { pkg, tagName }) => {
   const changelogPath = path.join(pkg.dir, 'CHANGELOG.md');
 
-  const changelog = await fs.promises.readFile(changelogPath, 'utf8');
+  const changelog = await fs.readFile(changelogPath, 'utf8');
 
   // Create release on github
   await octokit.rest.repos.createRelease({
@@ -49,7 +50,7 @@ const createRelease = async (octokit, { pkg, tagName }) => {
 };
 
 // Get only packages that have a new version published
-const getReleasedPackages = async (csOutput, pkgs) => {
+export const getReleasedPackages = async (csOutput, pkgs) => {
   const tagNameRegex = /New tag:\s+(@contentful\/[^@]+)@([^\s]+)/;
   return csOutput.split('\n').reduce((acc, line) => {
     const match = line.match(tagNameRegex);
@@ -62,23 +63,21 @@ const getReleasedPackages = async (csOutput, pkgs) => {
   }, []);
 };
 
-async function main() {
+export async function main() {
   const env = process.env;
   const octokit = new Octokit({
     auth: `token ${env.GITHUB_TOKEN}`,
   });
 
   // Run changesets publish and get stdout
-  const csOutput = childProcess
-    .execSync('pnpm exec changeset publish')
-    .toString();
+  const csOutput = execSync('pnpm exec changeset publish').toString();
   console.log(csOutput);
 
   const gitPushCommand = `git add . && pnpm pretty:quick
   git diff --staged --quiet || git commit -m "docs(changelog): add changelogs for $(git rev-parse --short HEAD) [skip ci]" && git push origin ${env.CIRCLE_BRANCH} --follow-tags`;
 
   // Push updated packages to github with tags
-  console.log(childProcess.execSync(gitPushCommand));
+  console.log(execSync(gitPushCommand));
 
   const { packages: pkgs } = await getPackages(cwd);
   const releasedPkgs = await getReleasedPackages(csOutput, pkgs);
@@ -89,13 +88,9 @@ async function main() {
   }
 }
 
-if (require.main === module) {
+if (
+  process.argv[1] &&
+  import.meta.url === pathToFileURL(process.argv[1]).href
+) {
   main();
 }
-
-module.exports = {
-  createRelease,
-  getReleasedPackages,
-  getReleaseNotes,
-  isPrerelease,
-};
