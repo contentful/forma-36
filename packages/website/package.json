@@ -19,7 +19,7 @@
     "@contentful/f36-navbar": "^6.20.0",
     "@contentful/f36-pill-next": "6.0.1-alpha.7",
     "@contentful/f36-table-next": "6.0.1-alpha.3",
-    "@contentful/f36-tokens": "^6.3.0",
+    "@contentful/f36-tokens": "^6.3.1",
     "@contentful/f36-utils": "^6.1.2",
     "@contentful/rich-text-react-renderer": "^16.0.0",
     "@dnd-kit/core": "^6.0.8",

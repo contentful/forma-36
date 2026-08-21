@@ -1259,7 +1259,7 @@ importers:
         specifier: ^6.20.0
         version: link:../icons
       '@contentful/f36-tokens':
-        specifier: ^6.3.0
+        specifier: ^6.3.1
         version: link:../../forma-36-tokens
       '@contentful/f36-tooltip':
         specifier: ^6.20.0
@@ -1418,7 +1418,7 @@ importers:
         specifier: ^6.20.0
         version: link:../icons
       '@contentful/f36-tokens':
-        specifier: ^6.3.0
+        specifier: ^6.3.1
         version: link:../../forma-36-tokens
       '@contentful/f36-typography':
         specifier: ^6.20.0
@@ -1664,7 +1664,7 @@ importers:
         specifier: 6.0.1-alpha.7
         version: link:../components/pill-next
       '@contentful/f36-tokens':
-        specifier: ^6.3.0
+        specifier: ^6.3.1
         version: link:../forma-36-tokens
       '@contentful/f36-typography':
         specifier: ^6.20.0
@@ -1951,7 +1951,7 @@ importers:
         specifier: 6.0.1-alpha.3
         version: link:../components/tablenext
       '@contentful/f36-tokens':
-        specifier: ^6.3.0
+        specifier: ^6.3.1
         version: link:../forma-36-tokens
       '@contentful/f36-utils':
         specifier: ^6.1.2

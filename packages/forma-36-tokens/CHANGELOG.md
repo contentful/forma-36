@@ -1,5 +1,11 @@
 # Change Log
 
+## 6.3.1
+
+### Patch Changes
+
+- [#3665](https://github.com/contentful/forma-36/pull/3665) [`3409e0f`](https://github.com/contentful/forma-36/commit/3409e0f142a465e0517d1a79dc59586ec8e22cbc) Thanks [@veu](https://github.com/veu)! - fix: 🐛 restore CSS and JSON exports in f36-tokens package
+
 ## 6.3.0
 
 ### Minor Changes
