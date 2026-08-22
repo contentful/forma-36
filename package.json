@@ -102,7 +102,7 @@
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
     "axe-core": "^4.12.1",
-    "chalk": "^5.6.2",
+    "chalk": "^6.0.0",
     "chromatic": "^18.0.0",
     "eslint": "^10.0.0",
     "eslint-plugin-import": "^2.32.0",
