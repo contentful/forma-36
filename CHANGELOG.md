@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 22-08-2026
+
+**F36 Tokens** `v6.3.1`
+
+- fix: 🐛 restore CSS and JSON exports in f36-tokens package
+
 ## 21-08-2026
 
 **F36 Forms** `v6.19.1`
