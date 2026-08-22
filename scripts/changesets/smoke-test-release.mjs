@@ -1,8 +1,8 @@
-const { Octokit } = require('octokit');
+import { pathToFileURL } from 'node:url';
+import { Octokit } from 'octokit';
 
 const owner = 'contentful';
 const repo = 'forma-36';
-const shouldWrite = process.argv.includes('--write');
 
 const getAuth = () => {
   if (!process.env.GITHUB_TOKEN) {
@@ -105,8 +105,10 @@ async function smokeTestWrite(octokit) {
   }
 }
 
-async function main() {
-  const octokit = new Octokit({ auth: getAuth() });
+export async function main({
+  octokit = new Octokit({ auth: getAuth() }),
+  shouldWrite = process.argv.includes('--write'),
+} = {}) {
   assertCreateReleaseApi(octokit);
 
   if (shouldWrite) {
@@ -117,7 +119,12 @@ async function main() {
   await smokeTestReadOnly(octokit);
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+if (
+  process.argv[1] &&
+  import.meta.url === pathToFileURL(process.argv[1]).href
+) {
+  main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}
