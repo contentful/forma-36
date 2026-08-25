@@ -2058,6 +2058,9 @@ importers:
       remark-code-titles:
         specifier: ^0.1.1
         version: 0.1.2
+      remark-gfm:
+        specifier: ^4.0.1
+        version: 4.0.1(supports-color@8.1.1)
       unist-util-visit:
         specifier: ^5.0.0
         version: 5.1.0
