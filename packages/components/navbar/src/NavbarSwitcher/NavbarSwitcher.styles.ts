@@ -87,10 +87,6 @@ export const getNavbarSwitcherStyles = (variant: EnvVariant) => ({
 
   switcherEnvIcon: css({
     minWidth: '0',
-    [mqs.small]: {
-      width: '16px',
-      height: '16px',
-    },
   }),
 });
 
