@@ -1,5 +1,22 @@
 # @contentful/f36-navbar
 
+## 6.20.1
+
+### Patch Changes
+
+- [#3667](https://github.com/contentful/forma-36/pull/3667) [`9a7ef2f`](https://github.com/contentful/forma-36/commit/9a7ef2f2a4b3f53ec76d062a60c67694880cd869) Thanks [@cf-remylenoir](https://github.com/cf-remylenoir)! - refactor(navbar): remove environment icon resizing
+
+- Updated dependencies []:
+  - @contentful/f36-avatar@6.20.1
+  - @contentful/f36-button@6.20.1
+  - @contentful/f36-core@6.20.1
+  - @contentful/f36-icon@6.20.1
+  - @contentful/f36-icons@6.20.1
+  - @contentful/f36-menu@6.20.1
+  - @contentful/f36-skeleton@6.20.1
+  - @contentful/f36-tooltip@6.20.1
+  - @contentful/f36-typography@6.20.1
+
 ## 6.20.0
 
 ### Patch Changes
