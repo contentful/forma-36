@@ -39,6 +39,14 @@ Reusable components are independently packaged beneath `packages/components`. Co
 
 `packages/core` contains shared primitives. `packages/forma-36-tokens` provides the token layer used by components. Prefer consuming these shared layers over duplicating tokens, layout primitives, or styling behavior in an individual component.
 
+## Consumer package boundaries
+
+Consumers ordinarily install `@contentful/f36-components`, the umbrella package for the component library. It is designed to be tree-shakeable, so its use does not require every component to be included in an application bundle.
+
+Individual component packages are also supported for consumers that need them. Icons are deliberately delivered through the separate `@contentful/f36-icons` package to keep the main component bundle smaller. Maintain these package exports and package boundaries as public API.
+
+`GlobalStyles` is the documented component for managing default browser styles. It uses Emotion's global styling support, so global browser-style changes belong there rather than in individual components.
+
 ## Build and dependency graph
 
 Package builds are commonly implemented with `tsup` and output to each package's `dist/` directory. The root `pnpm build` command runs the Turborepo build graph, so dependencies build before their consumers. Generated build output must not be edited manually.

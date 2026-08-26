@@ -48,6 +48,13 @@ code they exercise.
 - Update the package's MDX documentation/examples when a consumer-facing
   component API or behavior changes. Component documentation is published by
   the website, so retain the `README.mdx` naming convention.
+- Treat `@contentful/f36-components` as the primary consumer entry point; it
+  is tree-shakeable. Individual component packages and the separate
+  `@contentful/f36-icons` package are also supported public APIs, so preserve
+  their exports and package boundaries when making a change.
+- Keep global browser-style behavior in `GlobalStyles` rather than introducing
+  a competing global reset. It is the documented public mechanism for this
+  concern and is built on Emotion's global styles support.
 
 ## Validate proportionately
 
