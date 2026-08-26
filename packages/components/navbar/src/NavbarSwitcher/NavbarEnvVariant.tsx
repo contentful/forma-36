@@ -22,7 +22,7 @@ export function NavbarEnvVariant({
 }: NavbarEnvVariantProps) {
   if (envVariant === 'trial') {
     return (
-      <FlaskIcon color={tokens.purple700} className={className} size="medium" />
+      <FlaskIcon color={tokens.purple700} className={className} size="small" />
     );
   }
 
@@ -31,13 +31,13 @@ export function NavbarEnvVariant({
 
   if (isMaster) {
     return (
-      <RocketLaunchIcon color={color} className={className} size="medium" />
+      <RocketLaunchIcon color={color} className={className} size="small" />
     );
   } else if (isAlias) {
     return (
-      <EnvironmentAliasIcon color={color} className={className} size="medium" />
+      <EnvironmentAliasIcon color={color} className={className} size="small" />
     );
   }
 
-  return <EnvironmentIcon color={color} className={className} size="medium" />;
+  return <EnvironmentIcon color={color} className={className} size="small" />;
 }
