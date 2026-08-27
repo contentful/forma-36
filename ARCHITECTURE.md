@@ -47,6 +47,12 @@ Individual component packages are also supported for consumers that need them. I
 
 `GlobalStyles` is the documented component for managing default browser styles. It uses Emotion's global styling support, so global browser-style changes belong there rather than in individual components.
 
+## API evolution and migrations
+
+Public component and prop APIs evolve through the repository's deprecation process. Do not remove or rename a public API directly when doing so would break consumers. Instead, follow [DEPRECATION.md](DEPRECATION.md): provide a replacement, document the deprecation, create migration guidance with before/after examples, and add a codemod when it is appropriate.
+
+Deprecations are introduced in a minor release and remain available for at least one major-version cycle or six months, whichever is longer. Removal happens in a later major release. Use [MIGRATION.md](MIGRATION.md), component migration documentation, and [DEPRECATIONLOG.md](DEPRECATIONLOG.md) to keep the migration path discoverable.
+
 ## Build and dependency graph
 
 Package builds are commonly implemented with `tsup` and output to each package's `dist/` directory. The root `pnpm build` command runs the Turborepo build graph, so dependencies build before their consumers. Generated build output must not be edited manually.

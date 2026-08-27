@@ -55,38 +55,50 @@ code they exercise.
 - Keep global browser-style behavior in `GlobalStyles` rather than introducing
   a competing global reset. It is the documented public mechanism for this
   concern and is built on Emotion's global styles support.
+- When a change would break a public component or prop API, follow the
+  [deprecation process](DEPRECATION.md) instead of removing it directly. A
+  deprecation needs a replacement and migration guidance; use
+  [MIGRATION.md](MIGRATION.md) and the affected component documentation for
+  before/after examples and any required codemod guidance.
 
-## Validate proportionately
+## Component quality and validation
 
-Run the narrowest relevant checks first, then expand for cross-package changes.
-The root commands are:
+For component work, make the implementation demonstrable and accessible:
+
+- Add or update Storybook stories that cover every relevant component variant
+  and interaction state.
+- Document recommended use and implementation patterns in the package's MDX
+  examples.
+- Add thorough Vitest/Testing Library coverage. Use the shared
+  `expectNoA11yViolations` helper for rendered component accessibility checks
+  where applicable.
+
+Before handing off, run the applicable root checks and ensure they succeed:
 
 ```bash
 pnpm prettier:check
 pnpm lint
-pnpm tsc
 pnpm test
-pnpm exec knip
 pnpm build
+pnpm storybook:build
 ```
 
-`pnpm test` builds the token package first, then runs the configured Vitest
-suite in jsdom. Use a targeted Vitest invocation while iterating when possible;
-run the full suite for shared components, config, or workspace-wide changes.
+Start Storybook with `pnpm storybook` for visual changes and confirm it serves
+the changed stories. `pnpm test` builds the token package before running the
+configured Vitest suite in jsdom. Use focused tests while iterating, but do not
+hand off a change with a failing lint, test, build, or Storybook build.
+
 Do not use the root `pnpm prettier` command as a validation step: it writes to
 all matching source and Markdown files. Use `pnpm prettier:check`, or format
 only files you intentionally changed.
-
-For visual component changes, consider the existing Storybook workflow
-(`pnpm storybook` or `pnpm storybook:build`). Chromatic runs in CI. Website
-changes may need `pnpm docs:next:build`; link checking is a separate CI
-workflow and requires a production website build.
 
 ## Releases, changesets, and pull requests
 
 - Read [`RELEASES.md`](RELEASES.md) before adding a release artifact.
 - Add a changeset for a publishable package change. Documentation-only changes
   do not need one.
+- Generate changesets only with `pnpm exec changeset` from the repository
+  root. Do not create or edit `.changeset` files by hand.
 - Do not add changesets for packages listed in `.changeset/config.json`'s
   `ignore` array (including the private AI and website packages) unless the
   release process is intentionally being changed.
