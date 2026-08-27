@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 27-08-2026
+
+**F36 Navbar** `v6.20.1`
+
+- refactor(navbar): remove environment icon resizing
+
 ## 22-08-2026
 
 **F36 Tokens** `v6.3.1`
