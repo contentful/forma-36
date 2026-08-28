@@ -10,6 +10,7 @@ import { TransitionTokensTable } from './TransitionTokensTable';
 import { TypographyTokensTable } from './TypographyTokensTable';
 import { ZIndexTokensTable } from './ZIndexTokensTable';
 import { BorderRadiusTable } from './BorderRadiusTable';
+import { ImageRow } from './ImageRow';
 
 export const MdxComponents = {
   A11yColors,
@@ -23,4 +24,5 @@ export const MdxComponents = {
   TypographyTokensTable,
   ZIndexTokensTable,
   BorderRadiusTable,
+  ImageRow,
 };

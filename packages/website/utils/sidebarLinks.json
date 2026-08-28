@@ -475,5 +475,11 @@
       "title": "Z-Index",
       "slug": "/tokens/z-index/"
     }
+  ],
+  "guidelinesPatterns": [
+    {
+      "title": "Toolbar",
+      "slug": "/guidelines/protected/toolbar"
+    }
   ]
 }

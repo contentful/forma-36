@@ -88,6 +88,18 @@ const componentSidebarLinks: SidebarSection[] = [
   },
 ];
 
+const guidelineSidebarLinks = Object.values(mdxSidebarLinks)
+  .flatMap((links) => links as SidebarLink[])
+  .filter(({ slug }) => slug.startsWith('/guidelines/'))
+  .map((link) => ({
+    ...link,
+    authProtected: link.slug.includes('/protected/'),
+  }));
+
+const isSidebarSubsection = (
+  sidebarSection: SidebarSection,
+): sidebarSection is SidebarSubsection => sidebarSection.type === 'subsection';
+
 interface ComponentPageProps extends PageContentProps {
   propsMetadata?: ReturnType<typeof getPropsMetadata>;
   sidebarLinks: SidebarProps['links'];
@@ -150,6 +162,7 @@ export const getStaticProps: GetStaticProps<
   const { default: remarkCodeTitles } = await import('remark-code-titles');
   const { codeImport } = await import('remark-code-import');
   const { remarkCodeMeta } = await import('../utils/remark-code-meta');
+  const { default: remarkGfm } = await import('remark-gfm');
   const { default: rehypeSlug } = await import('rehype-slug');
   const { default: rehypeToc } = await import('rehype-toc');
   const path = await import('node:path');
@@ -185,6 +198,18 @@ export const getStaticProps: GetStaticProps<
     sidebarLinks = [...sidebarLinks, { links: mdxSidebarLinks.tokens }];
   }
 
+  if (section === HARDCODED_WEBSITE_SECTION.GUIDELINES) {
+    sidebarLinks = sidebarLinks.map((sidebarSection) =>
+      !isSidebarSubsection(sidebarSection) &&
+      sidebarSection.title === 'Patterns'
+        ? {
+            ...sidebarSection,
+            links: [...sidebarSection.links, ...guidelineSidebarLinks],
+          }
+        : sidebarSection,
+    );
+  }
+
   const mdxSource = await getMdxSourceBySlug(context.params?.slug ?? []);
 
   if (mdxSource) {
@@ -205,14 +230,16 @@ export const getStaticProps: GetStaticProps<
       mainContentText = content.replace(matches[0], '');
     }
 
-    const shortIntro = await serialize({
-      value: shortIntroText,
-    });
+    const shortIntro = await serialize(
+      { value: shortIntroText },
+      { mdxOptions: { remarkPlugins: [remarkGfm] } },
+    );
     const mainContent = await serialize(
       { value: mainContentText, path: mdxSource.filepath },
       {
         mdxOptions: {
           remarkPlugins: [
+            remarkGfm,
             remarkCodeTitles,
             [
               codeImport,

@@ -1,0 +1,278 @@
+---
+title: Toolbar
+slug: '/guidelines/protected/toolbar'
+section: 'guidelinesPatterns'
+---
+
+### Purpose
+
+The toolbar pattern provides global and consistent access to critical tools and contextually relevant apps within the platform. It addresses user needs for quick actions, enhances efficiency by minimizing navigation friction, and aligns closely with user workflows. By providing focused and immediate interactions, the toolbar pattern supports a streamlined editing experience, integrates seamlessly with different platform views, and reinforces the user's core jobs-to-be-done across various tasks.
+
+---
+
+### When to Use
+
+Use the Toolbar when users benefit from persistent access to capabilities that support their work without interrupting it.
+
+---
+
+### Use a Different Pattern Instead
+
+Consider other patterns when persistent access to tools is unnecessary or when providing extensive tool sets might overwhelm the user.
+
+| Scenario                                                    | Alternative Pattern | Reason                                                                  |
+| ----------------------------------------------------------- | ------------------- | ----------------------------------------------------------------------- |
+| Simple actions within a limited context                     | Action Buttons      | A toolbar would add unnecessary complexity                              |
+| Single task-focused tools without ongoing context           | Modal Dialog        | Ensures users remain focused without permanent interface elements       |
+| One-time setup or configuration tasks                       | Wizard              | Provides step-by-step guidance without persistent toolbar complexity    |
+| Primary actions that should always be prominently available | Header Actions      | Ensures immediate visibility for critical actions                       |
+| Essential information and actions visible at all times      | Persistent Sidebar  | Offers constant visibility within content layout                        |
+| Long forms and extensive editing tasks                      | Dedicated Page      | Provides appropriate space and focus for extensive content manipulation |
+
+---
+
+### Adding features
+
+Not every feature should be added to the Toolbar. Toolbar space is intentionally limited and reserved for high-value capabilities.
+
+A feature is suitable for the Toolbar when it meets most of the following criteria:
+
+- **Frequently used** – Users access the feature repeatedly during their work.
+- **Supports an ongoing workflow** – The feature helps users complete work that unfolds over time rather than a one-off task.
+- **Spans multiple pages** – Users benefit from being able to access the feature without interrupting work as they move through related content and tasks.
+
+Examples:
+
+- Comments – Frequently used during reviews, support collaboration over time, and remain relevant as users move between content.
+- Workflows – Support an ongoing publishing process and span multiple pages, entries, or views.
+- Taxonomies – Applied repeatedly across content and benefit from being readily available while classifying different entities.
+
+Avoid adding features that:
+
+- Support one-off or infrequent tasks rather than ongoing work.
+- Primarily configure the platform rather than help users complete their work.
+- Perform a single action that doesn’t require persistent access.
+- Primarily navigate users to another destination rather than providing a capability that supports their work.
+- Duplicate functionality that is already available through a more appropriate pattern.
+- Only support interactions with a specific part of the current view, where contextual controls are more appropriate.
+
+Features that don’t meet all of these criteria may still be appropriate when there is clear evidence that persistent access improves users’ workflows.
+
+---
+
+### Components Used
+
+#### Required
+
+- [Toolbar](https://github.com/contentful/user_interface/blob/master/src/javascripts/features/toolbar/components/Toolbar.tsx): Reusable component in the user-interface repository, not part of Forma 36
+
+---
+
+### Interactions
+
+#### Open the panel
+
+Select a tab while the panel is closed. The panel opens and displays the selected tab’s content.
+
+<ImageRow>
+
+![toolbar closed](/docs-images/img-toolbar-interactions-closed.svg)
+
+![toolbar open](/docs-images/img-toolbar-interactions-open.svg)
+
+</ImageRow>
+
+Only open the panel in response to an explicit user action. In addition to selecting a Toolbar tab, a Button in the main content area may activate a Toolbar tab and open the panel.
+
+#### Switch tabs
+
+Select a different tab while the panel is open. The panel updates to display the selected tab’s content.
+
+#### Continue work in another tab
+
+Continue a workflow in another tab when another capability is needed to complete the user’s task.
+
+Use a Button to activate the destination tab.
+
+- Label the Button with the user’s goal rather than the destination tab.
+- Place the Button where the need for the other capability naturally arises.
+- Preserve any active context needed to continue the workflow.
+
+For example, prefer:
+
+- Generate translations
+- Review comments
+- Assign taxonomy
+
+Instead of:
+
+- Open AI Agent
+- Go to Comments
+- Workflow →
+
+##### Active context
+
+Active context is the information carried from one tab to another so users can continue their work without repeating previous steps.
+
+Carry over only the context that is relevant to the next task.
+
+Display the active context in close proximity to where it is used.
+
+- In the source tab, place the active context near the Button that initiates the transition.
+- In the destination tab, place the active context near the action or section where users continue their work.
+- When the active context applies to the entire tab, placing it below the panel header is generally preferred.
+
+Represent the active context using the most appropriate component available for the entity type.
+
+- Use InlineEntryCard for entries.
+- Use Pill for other entity types or simple values.
+
+Where appropriate, allow users to clear or replace the active context.
+
+##### Support returning to the previous tab
+
+When users temporarily switch tabs to complete a supporting task, help them resume their original workflow.
+
+Provide a clear Button to return to the previously active tab when:
+
+- the supporting task has been completed,
+- users are likely to continue their original workflow.
+
+The return action should:
+
+- activate the previously active tab,
+- preserve any relevant active context,
+- clearly communicate the next step.
+
+Prefer labels that describe the user’s goal, for example:
+
+- Continue workflow
+- Continue reviewing
+- Continue commenting
+
+#### Close the panel
+
+Select the active tab again or use the close button. The panel closes and the tabs switch to their default state.
+
+---
+
+### States
+
+#### Toolbar States
+
+- **Default:** Toolbar tabs are available for selection.
+- **Loading:** Tab or toolbar data is loading.
+
+#### Toolbar tab States
+
+- **Default:** Tabs are idle and available.
+- **Hover:** Tabs visually indicate interactivity when hovered.
+- **Selected:** Tabs clearly highlight when their corresponding panel is active.
+- **Error:** Indicates issues loading Toolbar tabs or functionality.
+
+#### Panel States
+
+- **Expanded:** Panel is fully visible and interactive.
+- **Collapsed:** Panel is minimized, but accessible via the toolbar icon.
+- **Loading:** Panel content is loading.
+- **Error:** Content inside the panel failed to load or perform actions.
+
+---
+
+### Accessibility
+
+#### Screen Reader Support
+
+##### Aria roles
+
+| Element             | Role/Attribute              | Purpose                             |
+| ------------------- | --------------------------- | ----------------------------------- |
+| Container for icons | role="tablist"              | Groups the tab controls             |
+| Each icon button    | role="tab"                  | Identifies each control             |
+| Each panel          | role="tabpanel"             | The content area                    |
+| Tablist             | aria-orientation="vertical" | Critical for your vertical layout   |
+| Active tab          | aria-selected="true"        | Shows which tab is currently active |
+| Tab → Panel link    | aria-controls="panel-id"    | Associates tab with its panel       |
+| Panel → Tab link    | aria-labelledby="tab-id"    | Labels the panel by its tab         |
+
+#### Keyboard Interactions
+
+- **Up/Down Arrow:** Navigate between tabs (not Left/Right)
+- **Enter/Space:** Activate the focused tab (optional—can auto-activate on focus)
+- **Esc:** Collapse an expanded panel.
+- **Tab:** Move focus into the panel content
+- **Shift+Tab:** Return focus to the active tab
+
+#### Landmarks
+
+- Use a single region landmark for the entire panel with a clear label
+- Use headings (h2, h3, etc.) to structure content within the panel rather than nested landmarks
+- Reserve additional landmarks only if the panel has truly distinct, complex sections
+
+#### Announcing changes
+
+- Use live regions to announce the opening and closing of the panel and which panel is open
+- Updates on background processes that happen inside the panel, open or closed. For example: an Agent has completed a run.
+
+#### Cognitive Considerations
+
+- Consistently place Toolbar tabs to foster intuitive use and reduce learning curves
+- Use clear and concise labels to facilitate quick recognition of each action
+
+---
+
+### Dos and Don'ts
+
+#### Dos
+
+- Show loading and error states for both the tab strip and panel content; defer to the shared Loading and Error Handling patterns
+- Trigger panel opening only from buttons, never from links
+
+#### Don'ts
+
+- Add actions to the Toolbar tabs. The Toolbar tabs are a navigational device and functionality should only be shown inside the open panel.
+- Switch the order of tabs between different views
+- Open or close the panel without a deliberate user interaction
+
+#### Anti-patterns
+
+- Don’t use the Toolbar as a catch-all. Adding every new capability to the Toolbar reduces discoverability and makes it harder for users to find what they need.
+- Don’t create competing workflows. The same capability may be available both in the Toolbar and elsewhere. This is appropriate when each surface serves a distinct purpose—for example, inline controls support work on a specific object, while the Toolbar supports managing that work across the page or workflow.
+- Keep object-specific controls with the object. If a capability is only relevant while interacting with a specific part of the interface, expose it close to that object rather than in the Toolbar.
+- Don’t make users leave their work. Avoid Toolbar features that immediately redirect users to a different page or interrupt their current task. The Toolbar should support ongoing work, not act as navigation.
+
+---
+
+### Trade-offs
+
+#### Benefits
+
+- Keeps users in their flow by providing persistent access to capabilities without leaving the current page.
+- Supports cross-cutting workflows that span multiple pages, entries, or views.
+- Creates a consistent home for capabilities that remain relevant throughout a user’s work.
+- Reduces navigation overhead by bringing frequently used tools closer to the content.
+
+#### Limitations
+
+- Limited space requires prioritization. The Toolbar should remain focused, so not every capability belongs there.
+- Not suitable for every interaction. Features that are only relevant to a specific part of the interface are often better placed closer to the content.
+- Requires clear responsibilities. When a capability is available in multiple surfaces, each should support a distinct workflow to avoid competing experiences.
+- Can become harder to navigate over time. As new capabilities are added, regular curation is needed to preserve clarity and discoverability.
+
+---
+
+### Responsiveness
+
+- At narrow widths, the Toolbar panel overlaps content instead of pushing it to the side.
+
+---
+
+### Technical Implementation
+
+- [Integrating with the toolbar](https://contentful.atlassian.net/wiki/x/DoAxkgE)
+
+---
+
+### Related Patterns
+
+- [Layout](https://f36.contentful.com/guidelines/protected/layout)
