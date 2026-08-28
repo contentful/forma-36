@@ -96,6 +96,10 @@ const guidelineSidebarLinks = Object.values(mdxSidebarLinks)
     authProtected: link.slug.includes('/protected/'),
   }));
 
+const isSidebarSubsection = (
+  sidebarSection: SidebarSection,
+): sidebarSection is SidebarSubsection => sidebarSection.type === 'subsection';
+
 interface ComponentPageProps extends PageContentProps {
   propsMetadata?: ReturnType<typeof getPropsMetadata>;
   sidebarLinks: SidebarProps['links'];
@@ -196,7 +200,7 @@ export const getStaticProps: GetStaticProps<
 
   if (section === HARDCODED_WEBSITE_SECTION.GUIDELINES) {
     sidebarLinks = sidebarLinks.map((sidebarSection) =>
-      sidebarSection.type !== 'subsection' &&
+      !isSidebarSubsection(sidebarSection) &&
       sidebarSection.title === 'Patterns'
         ? {
             ...sidebarSection,
