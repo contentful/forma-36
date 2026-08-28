@@ -77,6 +77,7 @@ Before handing off, run the applicable root checks and ensure they succeed:
 
 ```bash
 pnpm prettier:check
+pnpm tsc
 pnpm lint
 pnpm test
 pnpm build
