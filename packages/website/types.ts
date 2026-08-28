@@ -16,6 +16,7 @@ export interface FrontMatter {
  */
 export enum HARDCODED_WEBSITE_SECTION {
   COMPONENTS = 'components',
+  GUIDELINES = 'guidelines',
   PLAYGROUND = 'playground',
   TOKENS = 'tokens',
   WHATS_NEW = 'whats-new',

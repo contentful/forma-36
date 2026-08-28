@@ -88,6 +88,14 @@ const componentSidebarLinks: SidebarSection[] = [
   },
 ];
 
+const guidelineSidebarLinks = Object.values(mdxSidebarLinks)
+  .flatMap((links) => links as SidebarLink[])
+  .filter(({ slug }) => slug.startsWith('/guidelines/'))
+  .map((link) => ({
+    ...link,
+    authProtected: link.slug.includes('/protected/'),
+  }));
+
 interface ComponentPageProps extends PageContentProps {
   propsMetadata?: ReturnType<typeof getPropsMetadata>;
   sidebarLinks: SidebarProps['links'];
@@ -184,6 +192,18 @@ export const getStaticProps: GetStaticProps<
 
   if (section === HARDCODED_WEBSITE_SECTION.TOKENS) {
     sidebarLinks = [...sidebarLinks, { links: mdxSidebarLinks.tokens }];
+  }
+
+  if (section === HARDCODED_WEBSITE_SECTION.GUIDELINES) {
+    sidebarLinks = sidebarLinks.map((sidebarSection) =>
+      sidebarSection.type !== 'subsection' &&
+      sidebarSection.title === 'Patterns'
+        ? {
+            ...sidebarSection,
+            links: [...sidebarSection.links, ...guidelineSidebarLinks],
+          }
+        : sidebarSection,
+    );
   }
 
   const mdxSource = await getMdxSourceBySlug(context.params?.slug ?? []);
