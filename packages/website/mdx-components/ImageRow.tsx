@@ -15,7 +15,9 @@ export function ImageRow({ children }: Props) {
       }}
     >
       {React.Children.map(children, (child) => (
-        <div style={{ flexShrink: 0 }}>{child}</div>
+        <div style={{ flex: '0 1 auto', minWidth: 0, maxWidth: '100%' }}>
+          {child}
+        </div>
       ))}
     </div>
   );
