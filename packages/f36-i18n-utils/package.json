@@ -18,7 +18,7 @@
     "url": "https://github.com/contentful/forma-36"
   },
   "scripts": {
-    "build": "tsup"
+    "build": "tsdown"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",

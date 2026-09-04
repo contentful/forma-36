@@ -3,11 +3,7 @@
     // we can explicitly declare `any`, but we don't want to infer `any`
     "noImplicitAny": false,
     "target": "ES2022",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     // uses React's automatic JSX runtime in tsx files
     "jsx": "react-jsx",
     // Eventually turn off, one we have no more assumed default exports.
@@ -27,12 +23,8 @@
     // Import non-ES modules as default imports.
     "esModuleInterop": true,
     "paths": {
-      "@contentful/f36-table-next": [
-        "./packages/components/tablenext/src"
-      ],
-      "@/scripts/*": [
-        "./scripts/*"
-      ]
+      "@contentful/f36-table-next": ["./packages/components/tablenext/src"],
+      "@/scripts/*": ["./scripts/*"]
     },
     "skipLibCheck": true,
     "typeRoots": [
@@ -41,16 +33,11 @@
       "./types"
     ]
   },
-  "include": [
-    "packages",
-    "types",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
+  "include": ["packages", "types", "**/*.ts", "**/*.tsx"],
   "exclude": [
     "**/node_modules",
     "**/dist",
-    "tsup.config.ts",
+    "tsdown.config.ts",
     "**/__testfixtures__"
   ]
 }
