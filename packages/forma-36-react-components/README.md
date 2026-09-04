@@ -131,7 +131,7 @@ pnpm test:watch
 
 ## Building
 
-We are using [tsup](https://tsup.egoist.dev/) and [esbuild](https://esbuild.github.io/) together with [Microbundle](https://www.npmjs.com/package/microbundle) to build our component library.
+We are using [tsdown](https://tsdown.dev/) and [esbuild](https://esbuild.github.io/) together with [Microbundle](https://www.npmjs.com/package/microbundle) to build our component library.
 
 Each component builds to its own `dist` directory with:
 

@@ -3,7 +3,7 @@
   "version": "6.20.1",
   "description": "Forma 36: Note component",
   "scripts": {
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "@contentful/f36-button": "^6.20.1",

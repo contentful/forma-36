@@ -19,7 +19,7 @@
   "entry": [
     "scripts/**/*.{js,ts,tsx,mjs}",
     "*.config.{js,mjs,ts}",
-    "tsup.config.ts"
+    "tsdown.config.ts"
   ],
   "ignoreDependencies": [
     "@changesets/cli",
@@ -76,10 +76,7 @@
       }
     },
     "packages/f36-ai-components": {
-      "entry": [
-        "src/**/*.test.{ts,tsx}",
-        "stories/**/*.{ts,tsx}"
-      ],
+      "entry": ["src/**/*.test.{ts,tsx}", "stories/**/*.{ts,tsx}"],
       "ignoreIssues": {
         "stories/**/*.{ts,tsx}": ["unlisted"]
       }
@@ -88,11 +85,7 @@
       "entry": ["src/index.ts", "src/**/*.test.{js,jsx,ts,tsx}"]
     },
     "packages/forma-36-codemod": {
-      "entry": [
-        "bin/*.mjs",
-        "transforms/**/*.{js,ts,tsx}",
-        "utils/**/*.js"
-      ],
+      "entry": ["bin/*.mjs", "transforms/**/*.{js,ts,tsx}", "utils/**/*.js"],
       "ignoreIssues": {
         "transforms/__testfixtures__/**/*.{js,jsx,ts,tsx}": ["unlisted"]
       }
@@ -109,10 +102,7 @@
         "scripts/**/*.{js,jsx,ts,tsx}",
         "content/**/*.{js,jsx,ts,tsx,md,mdx}"
       ],
-      "ignoreDependencies": [
-        "@next/eslint-plugin-next",
-        "broken-link-checker"
-      ]
+      "ignoreDependencies": ["@next/eslint-plugin-next", "broken-link-checker"]
     }
   }
 }

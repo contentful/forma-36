@@ -17,7 +17,7 @@
     "url": "git+https://github.com/contentful/forma-36.git"
   },
   "scripts": {
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "@contentful/f36-core": "^6.20.1",

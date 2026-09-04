@@ -127,7 +127,7 @@
     "simple-git-hooks": "^2.13.1",
     "size-limit": "^13.0.0",
     "storybook": "^10.4.2",
-    "tsup": "^8.5.0",
+    "tsdown": "^0.22.14",
     "turbo": "^2.9.14",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.65.0",
