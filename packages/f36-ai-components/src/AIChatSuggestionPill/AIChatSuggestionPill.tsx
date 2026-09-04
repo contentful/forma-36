@@ -1,6 +1,7 @@
 import { Caption, Flex } from '@contentful/f36-components';
 import { type CommonProps } from '@contentful/f36-core';
 import type { IconProps } from '@contentful/f36-icons';
+import { ArrowRightIcon } from '@contentful/f36-icons';
 import { cx } from '@emotion/css';
 import React, { ComponentType, useEffect, useRef, useState } from 'react';
 import { getStyles } from './AIChatSuggestionPill.styles';
@@ -23,6 +24,11 @@ export interface AIChatSuggestionPillProps extends CommonProps {
    * @default false
    */
   isActive?: boolean;
+  /**
+   * When true, displays a trailing ArrowRightIcon at the end of the pill
+   * @default false
+   */
+  withEndIcon?: boolean;
 }
 
 export const AIChatSuggestionPill = ({
@@ -30,6 +36,7 @@ export const AIChatSuggestionPill = ({
   text,
   onClick,
   isActive = false,
+  withEndIcon = false,
   className,
   testId = 'cf-ui-ai-chat-suggestion-pill',
   ...otherProps
@@ -79,6 +86,9 @@ export const AIChatSuggestionPill = ({
         >
           {text}
         </Caption>
+        {withEndIcon && (
+          <ArrowRightIcon size="tiny" className={styles.endIcon} />
+        )}
       </Flex>
     </button>
   );
