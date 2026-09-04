@@ -112,7 +112,7 @@
     "eslint-plugin-storybook": "^10.4.2",
     "fast-glob": "^3.3.3",
     "globals": "^17.4.0",
-    "globby": "^15.0.0",
+    "globby": "^16.0.0",
     "inquirer": "^12.9.6",
     "jsdom": "^29.0.0",
     "knip": "^6.25.0",
