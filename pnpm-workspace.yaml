@@ -24,7 +24,8 @@ minimumReleaseAgeExclude:
   - '@size-limit/preset-big-lib@13.0.1'
   - '@size-limit/time@13.0.1'
   - '@size-limit/webpack@13.0.1'
-  - '@tiptap/core@3.29.2'
+  # Renovate security update: @tiptap/core@3.30.4
+  - '@tiptap/core@3.29.2 || 3.30.4'
   - '@tiptap/extension-bubble-menu@3.29.2'
   - '@tiptap/extension-document@3.29.2'
   - '@tiptap/extension-floating-menu@3.29.2'
