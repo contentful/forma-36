@@ -1,5 +1,13 @@
 # Change Log
 
+## 6.20.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.20.2
+  - @contentful/f36-icon@6.20.2
+
 ## 6.20.1
 
 ### Patch Changes

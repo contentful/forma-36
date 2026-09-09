@@ -1,13 +1,13 @@
 {
   "name": "@contentful/f36-image",
-  "version": "6.20.1",
+  "version": "6.20.2",
   "description": "Forma 36: Image component",
   "scripts": {
     "build": "tsdown"
   },
   "dependencies": {
-    "@contentful/f36-core": "^6.20.1",
-    "@contentful/f36-skeleton": "^6.20.1",
+    "@contentful/f36-core": "^6.20.2",
+    "@contentful/f36-skeleton": "^6.20.2",
     "@emotion/css": "^11.13.5"
   },
   "peerDependencies": {
