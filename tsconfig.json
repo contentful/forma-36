@@ -37,7 +37,7 @@
   "exclude": [
     "**/node_modules",
     "**/dist",
-    "tsdown.config.ts",
+    "tsdown.config.mts",
     "**/__testfixtures__"
   ]
 }
