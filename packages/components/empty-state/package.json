@@ -17,7 +17,7 @@
     "url": "git+https://github.com/contentful/forma-36.git"
   },
   "scripts": {
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "@emotion/css": "^11.13.5",

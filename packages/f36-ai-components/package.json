@@ -27,7 +27,7 @@
   },
   "browserslist": "extends @contentful/browserslist-config",
   "scripts": {
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "@contentful/f36-button": "^6.20.1",
