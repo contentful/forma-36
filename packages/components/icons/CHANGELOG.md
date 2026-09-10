@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.21.0
+
+### Minor Changes
+
+- [#3676](https://github.com/contentful/forma-36/pull/3676) [`d8a06fb`](https://github.com/contentful/forma-36/commit/d8a06fb17dadf123da24ad260058848d7060a15c) Thanks [@damann](https://github.com/damann)! - Add LayoutIcon and RulerIcon from Phosphor
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.21.0
+  - @contentful/f36-icon@6.21.0
+
 ## 6.20.2
 
 ### Patch Changes
