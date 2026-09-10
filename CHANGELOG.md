@@ -8,6 +8,112 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 10-09-2026
+
+**F36 Accordion** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Asset** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Autocomplete** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Avatar** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Badge** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Button** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Card** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Collapse** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Copybutton** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Datepicker** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Datetime** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Drag Handle** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Empty State** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Entity List** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Forms** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Header** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Image** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Layout** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 List** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Menu** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Modal** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Multiselect** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Navbar** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Navlist** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Note** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Notification** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
 ## 27-08-2026
 
 **F36 Navbar** `v6.20.1`
