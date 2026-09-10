@@ -43,3 +43,4 @@
 storybook-static
 
 .claude
+.pnpm-store/

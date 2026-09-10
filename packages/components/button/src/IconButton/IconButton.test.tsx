@@ -4,6 +4,8 @@ import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 import { EyeIcon } from '@contentful/f36-icons';
 import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
+import { remToPx } from '@/scripts/test/remToPx';
+import tokens from '@contentful/f36-tokens';
 import { IconButton } from './IconButton';
 
 describe('IconButton', () => {
@@ -60,9 +62,9 @@ describe('IconButton', () => {
       />,
     );
     expect(screen.getByTestId('tiny-icon-btn')).toHaveStyle({
-      minHeight: '1.5rem',
-      minWidth: '1.5rem',
-      padding: '0.25rem',
+      minHeight: remToPx(tokens.spacingL),
+      minWidth: remToPx(tokens.spacingL),
+      padding: remToPx(tokens.spacing2Xs),
     });
   });
 
