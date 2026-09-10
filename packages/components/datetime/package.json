@@ -1,12 +1,12 @@
 {
   "name": "@contentful/f36-datetime",
-  "version": "6.21.0",
+  "version": "6.22.0",
   "description": "Forma 36: DateTime component",
   "scripts": {
     "build": "tsdown"
   },
   "dependencies": {
-    "@contentful/f36-core": "^6.21.0",
+    "@contentful/f36-core": "^6.22.0",
     "dayjs": "^1.11.5"
   },
   "peerDependencies": {

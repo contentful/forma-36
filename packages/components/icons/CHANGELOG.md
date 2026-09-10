@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.22.0
+
+### Minor Changes
+
+- [#3677](https://github.com/contentful/forma-36/pull/3677) [`e3d8c90`](https://github.com/contentful/forma-36/commit/e3d8c9090e8b28f6936f3d72c565323e31cd742c) Thanks [@damann](https://github.com/damann)! - Add ScalpelRectangleDashedIcon and SlotIcon custom icons
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.22.0
+  - @contentful/f36-icon@6.22.0
+
 ## 6.21.0
 
 ### Minor Changes
