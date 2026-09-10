@@ -44,6 +44,8 @@ export * from './custom/ReleaseIcon.js';
 export * from './custom/ReplaceIcon.js';
 export * from './custom/RichTextIcon.js';
 export * from './custom/ScalesEvenIcon.js';
+export * from './custom/ScalpelRectangleDashedIcon.js';
+export * from './custom/SlotIcon.js';
 export * from './custom/SparkleFilledIcon.js';
 export * from './custom/SparkleIcon.js';
 export * from './custom/VariableIcon.js';
