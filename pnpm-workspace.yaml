@@ -42,6 +42,8 @@ minimumReleaseAgeExclude:
   - next-auth@4.24.15
   # Renovate security update: qs@6.16.0
   - qs@6.16.0
+  # Renovate security update: vitest@4.1.11
+  - vitest@4.1.11
 ignoreScripts: true
 
 overrides:
