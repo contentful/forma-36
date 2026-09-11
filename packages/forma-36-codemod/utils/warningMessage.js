@@ -1,4 +1,5 @@
-const chalk = require('chalk');
+const chalkModule = require('chalk');
+const chalk = chalkModule.default ?? chalkModule;
 
 /**
  * Prints a warning message to terminal
