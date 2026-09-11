@@ -3,7 +3,8 @@
 const glob = require('fast-glob');
 const fs = require('fs');
 const assert = require('assert');
-const chalk = require('chalk');
+const chalkModule = require('chalk');
+const chalk = chalkModule.default ?? chalkModule;
 const path = require('path');
 const packages = glob.sync(
   path.dirname(__dirname) + '/packages/components/*/package.json',
