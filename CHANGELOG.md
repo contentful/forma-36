@@ -8,6 +8,16 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 11-09-2026
+
+**F36 Icons** `v6.21.0`
+
+- Add LayoutIcon and RulerIcon from Phosphor
+
+**F36 Icons** `v6.22.0`
+
+- Add ScalpelRectangleDashedIcon and SlotIcon custom icons
+
 ## 10-09-2026
 
 **F36 Accordion** `v6.20.2`
