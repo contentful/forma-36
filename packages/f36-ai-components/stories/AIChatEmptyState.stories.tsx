@@ -9,6 +9,7 @@ import {
   DeviceMobileCameraIcon,
   ListBulletsIcon,
   UsersIcon,
+  BuildingIcon,
 } from '@contentful/f36-icons';
 
 export default {
@@ -35,6 +36,11 @@ const defaultSuggestions: ChatEmptyStateSuggestion[] = [
     description:
       'Analyze the flow of visitors to your site and understand their behavior.',
   },
+  {
+    icon: BuildingIcon,
+    text: 'What are the top 5 pages visited on our site?',
+    description: 'Identify the most popular pages on your website.',
+  },
 ];
 
 const Template = (args) => (
@@ -51,7 +57,7 @@ const Template = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   title: 'How can I assist you today?',
-  description: 'Ask me anything about your analytics',
+  description: 'Choose a suggestion or start typing your question below.',
   suggestions: defaultSuggestions,
   onSelect: (suggestion) => console.log('Selected:', suggestion),
 };

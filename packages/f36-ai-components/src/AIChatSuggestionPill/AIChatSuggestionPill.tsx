@@ -88,7 +88,11 @@ export const AIChatSuggestionPill = ({
           <ArrowRightIcon size="small" isActive={false} />
         </Flex>
       </button>
-      {description && <Caption fontSize="fontSizeS">{description}</Caption>}
+      {description && (
+        <Caption fontColor="gray700" fontSize="fontSizeS">
+          {description}
+        </Caption>
+      )}
     </div>
   );
 };

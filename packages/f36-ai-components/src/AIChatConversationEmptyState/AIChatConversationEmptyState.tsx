@@ -20,14 +20,21 @@ export const AIChatConversationEmptyState = ({
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
-      gap="spacing2Xs"
+      gap="spacingXl"
       padding="spacing2Xs"
       fullHeight
       fullWidth
       testId={testId}
     >
-      {title && <Heading>{title}</Heading>}
-      {description && <Text>{description}</Text>}
+      <Flex
+        flexDirection="column"
+        justifyContent="flex-start"
+        gap="spacing2Xs"
+        fullWidth
+      >
+        {title && <Heading marginBottom="none">{title}</Heading>}
+        {description && <Text fontColor="gray600">{description}</Text>}
+      </Flex>
       {children}
     </Flex>
   );
