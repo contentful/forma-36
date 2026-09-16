@@ -1,6 +1,6 @@
 import { Caption, Flex } from '@contentful/f36-components';
 import { type CommonProps } from '@contentful/f36-core';
-import type { IconProps } from '@contentful/f36-icons';
+import { ArrowRightIcon, type IconProps } from '@contentful/f36-icons';
 import { cx } from '@emotion/css';
 import React, { ComponentType, useEffect, useRef, useState } from 'react';
 import { getStyles } from './AIChatSuggestionPill.styles';
@@ -79,6 +79,7 @@ export const AIChatSuggestionPill = ({
         >
           {text}
         </Caption>
+        <ArrowRightIcon size="small" isActive={false} />
       </Flex>
     </button>
   );

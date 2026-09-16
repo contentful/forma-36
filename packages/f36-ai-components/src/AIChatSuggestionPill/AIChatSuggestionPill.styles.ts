@@ -16,6 +16,7 @@ export function getStyles({
       border: `1px solid ${isActive ? tokens.gray300 : tokens.gray200}`,
       borderRadius: '99px',
       padding: `6px ${tokens.spacingS}`,
+      width: '100%',
       cursor: 'pointer',
       transition: `background-color ${tokens.transitionDurationDefault} ease-out, border-color ${tokens.transitionDurationDefault} ease`,
       ':hover': {
@@ -26,12 +27,14 @@ export function getStyles({
       },
     }),
     suggestionIcon: css({
-      color: isActive ? tokens.gray700 : tokens.gray500,
+      color: tokens.blue600,
       transition: `opacity ${tokens.transitionDurationDefault} ease-in-out`,
       opacity: isTransitioning ? 0 : 1,
     }),
     suggestionText: css({
       color: isActive ? tokens.gray700 : 'inherit',
+      flexGrow: 1,
+      textAlign: 'left',
     }),
   };
 }
