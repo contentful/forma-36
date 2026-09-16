@@ -11,6 +11,12 @@ export function getStyles({
   isTransitioning = false,
 }: GetStylesParams) {
   return {
+    suggestionPillContainer: css({
+      display: 'flex',
+      flexDirection: 'column',
+      width: '100%',
+      gap: tokens.spacing2Xs,
+    }),
     suggestionPill: css({
       backgroundColor: isActive ? tokens.gray100 : tokens.colorWhite,
       border: `1px solid ${isActive ? tokens.gray300 : tokens.gray200}`,

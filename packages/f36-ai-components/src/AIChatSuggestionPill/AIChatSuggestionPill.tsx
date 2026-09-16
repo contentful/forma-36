@@ -15,6 +15,10 @@ export interface AIChatSuggestionPillProps extends CommonProps {
    */
   text: string;
   /**
+   * The help text to display under the pill, providing additional context or information about the suggestion
+   */
+  description?: string;
+  /**
    * Callback when the pill is clicked
    */
   onClick?: () => void;
@@ -28,6 +32,7 @@ export interface AIChatSuggestionPillProps extends CommonProps {
 export const AIChatSuggestionPill = ({
   icon: IconComponent,
   text,
+  description,
   onClick,
   isActive = false,
   className,
@@ -59,28 +64,31 @@ export const AIChatSuggestionPill = ({
   };
 
   return (
-    <button
-      type="button"
-      className={cx(styles.suggestionPill, className)}
-      onClick={onClick}
-      onKeyDown={handleKeyDown}
-      data-test-id={testId}
-      {...otherProps}
-    >
-      <Flex alignItems="center" gap="spacingXs">
-        <DisplayIcon
-          size="small"
-          className={styles.suggestionIcon}
-          isActive={false}
-        />
-        <Caption
-          fontWeight="fontWeightMedium"
-          className={styles.suggestionText}
-        >
-          {text}
-        </Caption>
-        <ArrowRightIcon size="small" isActive={false} />
-      </Flex>
-    </button>
+    <div className={cx(styles.suggestionPillContainer)}>
+      <button
+        type="button"
+        className={cx(styles.suggestionPill, className)}
+        onClick={onClick}
+        onKeyDown={handleKeyDown}
+        data-test-id={testId}
+        {...otherProps}
+      >
+        <Flex alignItems="center" gap="spacingXs">
+          <DisplayIcon
+            size="small"
+            className={styles.suggestionIcon}
+            isActive={false}
+          />
+          <Caption
+            fontWeight="fontWeightMedium"
+            className={styles.suggestionText}
+          >
+            {text}
+          </Caption>
+          <ArrowRightIcon size="small" isActive={false} />
+        </Flex>
+      </button>
+      {description && <Caption fontSize="fontSizeS">{description}</Caption>}
+    </div>
   );
 };

@@ -20,14 +20,20 @@ const defaultSuggestions: ChatEmptyStateSuggestion[] = [
   {
     icon: DeviceMobileCameraIcon,
     text: 'How many mobile visitors do we have?',
+    description:
+      'Get insights on the number of users accessing your site via mobile devices.',
   },
   {
     icon: UsersIcon,
     text: 'What is the count of users accessing our site?',
+    description:
+      'Discover the total number of unique users visiting your website.',
   },
   {
     icon: ListBulletsIcon,
     text: 'Can you provide statistics on visitor traffic?',
+    description:
+      'Analyze the flow of visitors to your site and understand their behavior.',
   },
 ];
 

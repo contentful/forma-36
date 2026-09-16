@@ -11,6 +11,7 @@ export default {
   component: AIChatSuggestionPill,
   argTypes: {
     text: { control: 'text' },
+    description: { control: 'text' },
     isActive: { control: 'boolean' },
     icon: {
       type: 'string',
@@ -35,6 +36,8 @@ export const Default = (args: AIChatSuggestionPillProps & { icon: string }) => {
 Default.args = {
   icon: 'UsersIcon',
   text: 'How many mobile visitors do we have?',
+  description:
+    'Get insights on the number of users accessing your site via mobile devices.',
   isActive: false,
   onClick: action('Pill clicked'),
 };
