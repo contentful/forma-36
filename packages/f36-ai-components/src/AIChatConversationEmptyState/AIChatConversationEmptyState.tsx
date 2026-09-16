@@ -5,6 +5,10 @@ import { Flex, Heading, Text } from '@contentful/f36-components';
 export interface AIChatConversationEmptyStateProps {
   title?: string;
   description?: string;
+  /**
+   * Optional SVG icon rendered above the title
+   */
+  icon?: ReactNode;
   children?: ReactNode;
   testId?: string;
 }
@@ -12,6 +16,7 @@ export interface AIChatConversationEmptyStateProps {
 export const AIChatConversationEmptyState = ({
   title,
   description,
+  icon,
   children,
   testId,
 }: AIChatConversationEmptyStateProps) => {
@@ -26,6 +31,7 @@ export const AIChatConversationEmptyState = ({
       fullWidth
       testId={testId}
     >
+      {icon}
       <Flex
         flexDirection="column"
         justifyContent="flex-start"
