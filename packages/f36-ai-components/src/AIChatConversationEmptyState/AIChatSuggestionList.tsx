@@ -1,12 +1,14 @@
 import { Flex } from '@contentful/f36-components';
-import type { IconProps } from '@contentful/f36-icons';
-import React, { ComponentType } from 'react';
-import { AIChatSuggestionPill } from '../AIChatSuggestionPill';
+import React from 'react';
+import {
+  AIChatSuggestionPill,
+  AIChatSuggestionPillProps,
+} from '../AIChatSuggestionPill';
 
-export type ChatEmptyStateSuggestion = {
-  icon: ComponentType<IconProps>;
-  text: string;
-};
+export type ChatEmptyStateSuggestion = Pick<
+  AIChatSuggestionPillProps,
+  'icon' | 'text' | 'description'
+>;
 
 export interface AIChatSuggestionListProps {
   suggestions?: ChatEmptyStateSuggestion[];
@@ -28,7 +30,7 @@ export const AIChatSuggestionList = ({
   return (
     <Flex
       flexWrap="wrap"
-      gap="spacingXs"
+      gap="spacingL"
       justifyContent="center"
       fullWidth
       testId={testId}
@@ -38,6 +40,7 @@ export const AIChatSuggestionList = ({
           key={index}
           icon={suggestion.icon}
           text={suggestion.text}
+          description={suggestion.description}
           onClick={() => handleSuggestionClick(suggestion.text)}
         />
       ))}

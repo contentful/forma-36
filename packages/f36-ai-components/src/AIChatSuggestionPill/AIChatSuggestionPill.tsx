@@ -1,6 +1,6 @@
 import { Caption, Flex } from '@contentful/f36-components';
 import { type CommonProps } from '@contentful/f36-core';
-import type { IconProps } from '@contentful/f36-icons';
+import { ArrowRightIcon, type IconProps } from '@contentful/f36-icons';
 import { cx } from '@emotion/css';
 import React, { ComponentType, useEffect, useRef, useState } from 'react';
 import { getStyles } from './AIChatSuggestionPill.styles';
@@ -15,6 +15,10 @@ export interface AIChatSuggestionPillProps extends CommonProps {
    */
   text: string;
   /**
+   * The help text to display under the pill, providing additional context or information about the suggestion
+   */
+  description?: string;
+  /**
    * Callback when the pill is clicked
    */
   onClick?: () => void;
@@ -28,6 +32,7 @@ export interface AIChatSuggestionPillProps extends CommonProps {
 export const AIChatSuggestionPill = ({
   icon: IconComponent,
   text,
+  description,
   onClick,
   isActive = false,
   className,
@@ -59,27 +64,35 @@ export const AIChatSuggestionPill = ({
   };
 
   return (
-    <button
-      type="button"
-      className={cx(styles.suggestionPill, className)}
-      onClick={onClick}
-      onKeyDown={handleKeyDown}
-      data-test-id={testId}
-      {...otherProps}
-    >
-      <Flex alignItems="center" gap="spacingXs">
-        <DisplayIcon
-          size="small"
-          className={styles.suggestionIcon}
-          isActive={false}
-        />
-        <Caption
-          fontWeight="fontWeightMedium"
-          className={styles.suggestionText}
-        >
-          {text}
+    <div className={cx(styles.suggestionPillContainer)}>
+      <button
+        type="button"
+        className={cx(styles.suggestionPill, className)}
+        onClick={onClick}
+        onKeyDown={handleKeyDown}
+        data-test-id={testId}
+        {...otherProps}
+      >
+        <Flex alignItems="center" gap="spacingXs">
+          <DisplayIcon
+            size="tiny"
+            className={styles.suggestionIcon}
+            isActive={false}
+          />
+          <Caption
+            fontWeight="fontWeightMedium"
+            className={styles.suggestionText}
+          >
+            {text}
+          </Caption>
+          <ArrowRightIcon size="tiny" isActive={false} />
+        </Flex>
+      </button>
+      {description && (
+        <Caption fontColor="gray700" fontSize="fontSizeS">
+          {description}
         </Caption>
-      </Flex>
-    </button>
+      )}
+    </div>
   );
 };
