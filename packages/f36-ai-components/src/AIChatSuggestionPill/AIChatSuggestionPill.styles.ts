@@ -33,7 +33,7 @@ export function getStyles({
       },
     }),
     suggestionIcon: css({
-      color: tokens.blue600,
+      color: tokens.gray900,
       transition: `opacity ${tokens.transitionDurationDefault} ease-in-out`,
       opacity: isTransitioning ? 0 : 1,
     }),

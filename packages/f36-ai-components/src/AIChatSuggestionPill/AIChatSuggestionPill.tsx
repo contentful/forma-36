@@ -75,7 +75,7 @@ export const AIChatSuggestionPill = ({
       >
         <Flex alignItems="center" gap="spacingXs">
           <DisplayIcon
-            size="small"
+            size="tiny"
             className={styles.suggestionIcon}
             isActive={false}
           />
@@ -85,7 +85,7 @@ export const AIChatSuggestionPill = ({
           >
             {text}
           </Caption>
-          <ArrowRightIcon size="small" isActive={false} />
+          <ArrowRightIcon size="tiny" isActive={false} />
         </Flex>
       </button>
       {description && (
