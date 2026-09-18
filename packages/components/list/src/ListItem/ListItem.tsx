@@ -12,12 +12,15 @@ export type ListItemProps = PropsWithHTMLElement<
   'li'
 >;
 
-export const ListItem = ({
-  className,
-  children,
-  testId = 'cf-ui-list-item',
-  ...otherProps
-}: ListItemProps): React.ReactElement => {
+const ListItemBase = (
+  {
+    className,
+    children,
+    testId = 'cf-ui-list-item',
+    ...otherProps
+  }: ListItemProps,
+  ref: React.Ref<HTMLLIElement>,
+): React.ReactElement => {
   return (
     <li
       className={cx(
@@ -32,10 +35,13 @@ export const ListItem = ({
       )}
       data-test-id={testId}
       {...otherProps}
+      ref={ref}
     >
       {children}
     </li>
   );
 };
 
-ListItem.displayName = 'ListItem';
+ListItemBase.displayName = 'ListItem';
+
+export const ListItem = React.forwardRef(ListItemBase);
