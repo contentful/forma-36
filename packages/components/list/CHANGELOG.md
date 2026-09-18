@@ -1,5 +1,14 @@
 # Change Log
 
+## 6.22.1
+
+### Patch Changes
+
+- [#3688](https://github.com/contentful/forma-36/pull/3688) [`85f5a8d`](https://github.com/contentful/forma-36/commit/85f5a8d0f0adb2101d700bbd95984506438983e1) Thanks [@veu](https://github.com/veu)! - feat: 🎸 add ref prop to ListItem
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.22.1
+
 ## 6.22.0
 
 ### Patch Changes
