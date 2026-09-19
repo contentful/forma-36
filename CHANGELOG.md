@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 19-09-2026
+
+**F36 List** `v6.22.1`
+
+- feat: 🎸 add ref prop to ListItem
+
 ## 11-09-2026
 
 **F36 Icons** `v6.21.0`
