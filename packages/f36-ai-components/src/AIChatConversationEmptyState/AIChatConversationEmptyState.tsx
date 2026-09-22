@@ -27,6 +27,8 @@ export const AIChatConversationEmptyState = ({
       justifyContent="center"
       gap="spacingXl"
       padding="spacing2Xs"
+      paddingLeft="spacingS"
+      paddingRight="spacingS"
       fullHeight
       fullWidth
       testId={testId}
