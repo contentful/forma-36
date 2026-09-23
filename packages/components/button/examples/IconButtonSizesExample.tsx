@@ -16,16 +16,16 @@ export default function IconButtonExample() {
           size="small"
           variant="secondary"
           aria-label="Select the date"
-          icon={<CalendarBlankIcon size="tiny" />}
-        />
-        <IconButton
-          size="small"
-          variant="secondary"
-          aria-label="Select the date"
           icon={<CalendarBlankIcon size="small" />}
         />
         <IconButton
           size="medium"
+          variant="secondary"
+          aria-label="Select the date"
+          icon={<CalendarBlankIcon size="medium" />}
+        />
+        <IconButton
+          size="large"
           variant="secondary"
           aria-label="Select the date"
           icon={<CalendarBlankIcon size="medium" />}
