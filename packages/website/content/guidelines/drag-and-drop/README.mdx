@@ -1,0 +1,263 @@
+---
+title: Drag and drop
+slug: '/guidelines/protected/draganddrop'
+section: 'guidelinesPatterns'
+---
+
+### Purpose
+
+Drag and drop helps users change the order, hierarchy, or placement of items through direct manipulation. Use drag and drop when the spatial relationship between items makes the outcome of moving them easy to understand. 
+
+---
+
+### When to Use
+
+Drag and drop works best when:
+- items have a clear visual order or hierarchy
+- valid destinations can be communicated visually
+- moving an item has an immediate and predictable result
+- users may need to reorder repeatedly
+- an equivalent non-drag interaction can be provided.
+
+#### Typical Use Cases
+
+- Reorder items in a flat list
+- Reorder or restructure a hierarchy: change the order of items within a parent, reorder parent groups, or move items between parents
+- Move an item between containers: transfer an existing item from one collection into a specific position in another
+- Create an instance in another container: add a new instance of an item from a source container into a specific position in another container while leaving the source item available. For example, drag an item from a component list onto a specific position in an editing canvas.
+
+---
+
+### Use a Different Pattern Instead
+
+> **Author Guidance**
+>
+> Identify situations where another pattern would be more suitable.
+
+#### Consider These Alternatives
+
+| Scenario | Alternative Pattern | Reason |
+| -------- | ------------------- | ------ |
+| The relationship between source and destination is not visually apparent
+      | Explicit Move to… or Add to… action                 | Dragging depends on users being able to understand valid spatial destinations    |
+| Moving an item has complex or destructive consequences      | Explicit action with confirmation                 | Direct manipulation can make consequential structural changes too easy to perform accidentally.    |
+
+---
+
+### Components Used
+
+#### Required
+
+- DragHandle([DragHandle](https://f36.contentful.com/components/drag-handle)), provides the visual and interaction affordance for draggable items, including focus, hover, and active states. 
+- IconButton([IconButton](https://f36.contentful.com/components/icon-button)), Menu ([Menu](https://f36.contentful.com/components/menu)), for equivalent non-drag actions
+
+Supporting UI elements
+
+Insertion indicator — shows the exact position where the item will be placed when dropped.
+
+Drop target highlight — shows when an item can be dropped into a container or parent.
+
+These elements are part of the drag and drop pattern but are not currently available as standalone Forma 36 components. Implement them consistently with Forma 36 tokens and interaction states until dedicated components or primitives are available.
+
+#### Optional
+
+- Card with custom drag handle ([Card with custom drag handle](https://f36.contentful.com/components/card#with-a-custom-drag-handle))
+- Component ([Forma 36 Documentation](https://forma-36-docs.com))
+
+---
+
+### Interactions
+
+The item being moved defines the scope of the operation. Moving a parent moves its descendants with it. Moving a child moves only that child.
+Only allow destinations that result in valid states.
+
+#### Reorder a List
+1. User initiates dragging from the item's drag handle.
+2. The item enters a dragging state.
+3. As the user moves the item, show where it will be inserted.
+4. The user drops the item at a valid position.
+5. Update the order immediately.
+6. Keep focus associated with the moved item.
+
+Dragging changes the position of the item within the current list. It does not change the item's meaning or container.
+
+_(Visual example or demo link)_
+
+```jsx file=.path.tsx
+
+```
+#### Reorder or move within a tree
+
+PARKED FOR NOW
+
+#### Add an item to another container
+Use this variant when dragging from a source list or palette onto an ordered editing canvas.
+Dragging creates a new instance on the canvas. It does not remove the source item.
+	1	User starts dragging an item.
+	2	Valid positions on the editing canvas become apparent.
+	3	Show an insertion indicator at the current destination.
+	4	User drops the item.
+	5	Create the new instance at that position immediately.
+	6	Move focus to an appropriate control on the newly added item.
+Provide equivalent explicit actions:
+	•	Add on top
+	•	Add to bottom
+	•	Add after…
+Add after… lets users choose an existing canvas item as the reference position.
+For short canvases, this can be a secondary menu containing the existing items. For longer or more complex canvases, use a searchable or otherwise scalable selection interface.
+When multiple canvas items have the same name, provide enough additional context to distinguish them.
+Add before… is generally unnecessary because Add on top and Add after… together can represent every insertion position.
+(Visual example or demo link)
+
+---
+
+### States
+_(Visual example or demo link)_
+
+```jsx file=.path.tsx
+
+```
+
+#### Default
+The drag handle identifies an item that can be moved. It can be permanently visible or only appear on hover. 
+
+#### Focused
+Show a visible focus indicator on a keyboard-focusable drag handle.
+For list and tree reordering, the drag handle acts as the entry point to keyboard reordering.
+
+#### Picked Up / Dragging
+Clearly distinguish the item currently being moved.
+Show valid placement locations through insertion indicators or destination highlighting.
+The visual representation should make both of these questions clear:
+	•	What am I moving?
+	•	Where will it be placed if I drop it now?
+
+#### Invalid Destination
+Do not present invalid destinations as available drop targets.
+If an item is dragged over an invalid area, do not show an insertion indicator that suggests the move can succeed.
+Examples include:
+	•	placing a parent inside its own descendant;
+	•	placing an item inside a container that does not accept that item type;
+	•	moving a parent to a hierarchy level that is not supported.
+
+#### Success
+
+After a successful drop:
+
+- Place the item in its new position immediately.
+- Remove the insertion indicator and any active drop-target highlighting.
+- Return the moved item to its default visual state.
+- Update its hierarchy or parent relationship when applicable.
+- Keep focus associated with the moved item so the user can continue from its new location.
+
+For parent items, move the complete subtree while preserving the order and hierarchy of its descendants.
+
+Do not show a separate success message for routine reordering. The updated position and structure should provide the primary visual confirmation.
+
+
+#### Error
+
+If persisting a move fails after the interface has updated, restore or otherwise reconcile the previous state and explain what happened.
+Do not leave the visual order and persisted order inconsistent.
+Implementation-specific persistence errors should follow the relevant error-handling guidance rather than introducing drag-specific confirmation steps.
+
+---
+
+### Accessibility
+
+#### Keyboard Interactions
+
+> **Author Guidance**
+>
+> Describe keyboard shortcuts and commands...
+
+#### Screen Reader Support
+
+> **Author Guidance**
+>
+> Outline ARIA roles and behaviors...
+
+#### Cognitive Considerations
+
+> **Author Guidance**
+>
+> Explain strategies for cognitive simplicity...
+
+---
+
+### Dos and Don'ts
+
+#### Dos
+
+> **Author Guidance**
+>
+> Clearly define best practices...
+
+- ...
+
+#### Don'ts
+
+> **Author Guidance**
+>
+> List pitfalls to avoid...
+
+- ...
+
+#### Anti-patterns
+
+> **Author Guidance**
+>
+> List common mistakes and explanations...
+
+- ...
+
+---
+
+### Trade-offs (optional)
+
+> **Author Guidance**
+>
+> Clearly explain the benefits and limitations of this pattern.
+
+#### Benefits
+
+- ...
+- ...
+
+#### Limitations
+
+- ...
+- ...
+
+---
+
+### Responsiveness
+
+> **Author Guidance**
+>
+> Detail how the pattern behaves across different screen sizes and different devices if supported.
+
+- Desktop: ...
+- Mobile: ...
+- Tablet: ...
+
+_(Visual example or demo link)_
+
+```jsx file=.path.tsx
+
+```
+
+---
+
+### Technical Implementation
+
+> **Author Guidance**
+>
+> Provide or link to relevant code snippets, implementation guides, or repositories.
+
+---
+
+### Related Patterns
+
+- Pattern...
+- Pattern...
