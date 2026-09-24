@@ -23,7 +23,10 @@ export default {
       control: 'select',
       options: ['', ...Object.keys(icons)],
     },
-    size: { control: 'select', options: ['small', 'medium', 'large'] },
+    size: {
+      control: 'select',
+      options: ['tiny', 'small', 'medium', 'large'],
+    },
     variant: {
       control: 'select',
       options: ['negative', 'positive', 'primary', 'secondary', 'transparent'],
@@ -122,6 +125,60 @@ export const GroupedWithOnlyOneActive = () => {
       />
     </ButtonGroup>
   );
+};
+
+export const Sizes = {
+  render: ({ onToggle }: ToggleButtonProps) => (
+    <Flex alignItems="center" gap="spacingS">
+      {(['tiny', 'small', 'medium'] as const).map((size) => (
+        <ToggleButton
+          key={size}
+          icon={<icons.ThumbsUpIcon />}
+          onToggle={onToggle}
+          size={size}
+        >
+          Toggle button
+        </ToggleButton>
+      ))}
+    </Flex>
+  ),
+  args: {
+    onToggle: action('toggled'),
+  },
+};
+
+export const IconOnly = {
+  render: ({ onToggle }: ToggleButtonProps) => (
+    <Flex flexDirection="column" gap="spacingM">
+      {(['tiny', 'small', 'medium'] as const).map((size) => (
+        <Flex key={size} alignItems="center" gap="spacingS">
+          <ToggleButton
+            aria-label={`${size} default toggle`}
+            icon={<icons.ThumbsUpIcon />}
+            onToggle={onToggle}
+            size={size}
+          />
+          <ToggleButton
+            aria-label={`${size} active toggle`}
+            icon={<icons.ThumbsUpIcon isActive />}
+            isActive
+            onToggle={onToggle}
+            size={size}
+          />
+          <ToggleButton
+            aria-label={`${size} disabled toggle`}
+            icon={<icons.ThumbsUpIcon />}
+            isDisabled
+            onToggle={onToggle}
+            size={size}
+          />
+        </Flex>
+      ))}
+    </Flex>
+  ),
+  args: {
+    onToggle: action('toggled'),
+  },
 };
 
 export const Overview = {
