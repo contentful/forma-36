@@ -7,7 +7,7 @@ import {
 
 export type ChatEmptyStateSuggestion = Pick<
   AIChatSuggestionPillProps,
-  'icon' | 'text' | 'description'
+  'icon' | 'text' | 'description' | 'task'
 >;
 
 export interface AIChatSuggestionListProps {
@@ -41,7 +41,9 @@ export const AIChatSuggestionList = ({
           icon={suggestion.icon}
           text={suggestion.text}
           description={suggestion.description}
-          onClick={() => handleSuggestionClick(suggestion.text)}
+          onClick={() =>
+            handleSuggestionClick(suggestion.task || suggestion.text)
+          }
         />
       ))}
     </Flex>

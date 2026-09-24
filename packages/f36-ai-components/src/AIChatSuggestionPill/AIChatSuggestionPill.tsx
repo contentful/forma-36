@@ -19,6 +19,10 @@ export interface AIChatSuggestionPillProps extends CommonProps {
    */
   description?: string;
   /**
+   * The text that gets sent to the AI when the pill is clicked. If not provided, the `text` prop will be used instead.
+   */
+  task?: string;
+  /**
    * Callback when the pill is clicked
    */
   onClick?: () => void;
