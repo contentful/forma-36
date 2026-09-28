@@ -1,6 +1,6 @@
 import React from 'react';
-import FolderListHandleReplacesIconExample from '../content/guidelines/drag-and-drop/examples/FolderListHandleReplacesIconExample';
+import FolderListHandleRightHoverExample from '../content/guidelines/drag-and-drop/examples/FolderListHandleRightHoverExample';
 
 export default function DndDebugTest() {
-  return <FolderListHandleReplacesIconExample />;
+  return <FolderListHandleRightHoverExample />;
 }
