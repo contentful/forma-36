@@ -12,7 +12,6 @@ Drag and drop lets users reorder, move, or place items through direct manipulati
 
 ### When to Use
 
-
 - Source, destination, and resulting position are visually clear
 - Users benefit from manipulating items directly or repeatedly
 - The result is immediate and predictable
@@ -25,14 +24,13 @@ Drag and drop lets users reorder, move, or place items through direct manipulati
 - Move between containers — transfer an existing item from one container to another.
 - Add from a source — create a new instance in another container while keeping the source item available.
 
-| Operation | What happens to the source item? | Destination |
-| ------ | ------ | ------ |
-| Reorder | The same item remains | Same container |
-| Reparent |  The same item remains | Another hierarchy position |
-| Move | The item leaves its original container | Another container |
-| Add | The source remains and a new instance is created |  Another container |
+| Operation | What happens to the source item?                 | Destination                |
+| --------- | ------------------------------------------------ | -------------------------- |
+| Reorder   | The same item remains                            | Same container             |
+| Reparent  | The same item remains                            | Another hierarchy position |
+| Move      | The item leaves its original container           | Another container          |
+| Add       | The source remains and a new instance is created | Another container          |
 
----
 
 ### Use a Different Pattern Instead
 
@@ -40,20 +38,44 @@ Use an explicit action when users cannot reliably understand the destination spa
 
 #### Consider These Alternatives
 
-| Scenario | Alternative Pattern | Reason |
-| -------- | ------------------- | ------ |
-| The relationship between source and destination is not visually apparent
-      | Explicit Move to… or Add to… action                 | Dragging depends on users being able to understand valid spatial destinations    |
-| Moving an item has complex or destructive consequences      | Explicit action with confirmation                 | Direct manipulation can make consequential structural changes too easy to perform accidentally.    |
+| Scenario                                                                 | Alternative Pattern                 | Reason                                                                                          |
+| ------------------------------------------------------------------------ | ----------------------------------- | ----------------------------------------------------------------------------------------------- |
+| The relationship between source and destination is not visually apparent | Explicit Move to… or Add to… action | Dragging depends on users being able to understand valid spatial destinations                   |
+| Moving an item has complex or destructive consequences                   | Explicit action with confirmation   | Direct manipulation can make consequential structural changes too easy to perform accidentally. |
 
----
+
+### Example
+
+A reorderable folder list with a drag handle and an overflow menu offering equivalent Move up / Move down actions.
+
+```jsx file=./examples/FolderListExample.tsx hideCode
+
+```
+
+A variant of the same pattern with the drag handle positioned on the right of the row.
+
+```jsx file=./examples/FolderListHandleRightExample.tsx hideCode
+
+```
+
+A variant with the drag handle on the right that is only revealed on row hover or focus.
+
+```jsx file=./examples/FolderListHandleRightHoverExample.tsx hideCode
+
+```
+
+A variant where the drag handle replaces the folder icon on row hover or focus.
+
+```jsx file=./examples/FolderListHandleReplacesIconExample.tsx hideCode
+
+```
 
 ### Components Used
 
 #### Required
 
 - DragHandle([DragHandle](https://f36.contentful.com/components/drag-handle)) — identifies draggable items and provides the interaction affordance for moving them, including focus, hover, and active states.
-- IconButton([IconButton](https://f36.contentful.com/components/icon-button)), Menu ([Menu](https://f36.contentful.com/components/menu)) —  provide explicit non-drag actions where equivalent placement or movement controls are required.
+- IconButton([IconButton](https://f36.contentful.com/components/icon-button)), Menu ([Menu](https://f36.contentful.com/components/menu)) — provide explicit non-drag actions where equivalent placement or movement controls are required.
 
 Supporting UI elements
 
@@ -81,6 +103,7 @@ The item being moved defines the scope of the operation.
 Example flow
 
 #### Reorder a List
+
 1. User initiates dragging from the item's drag handle.
 2. The item enters a dragging state.
 3. As the user moves the item, show where it will be inserted.
@@ -90,11 +113,6 @@ Example flow
 
 Reordering changes the item's position within its current list. It does not change its meaning or container.
 
-_(Visual example or demo link)_
-
-```jsx file=.path.tsx
-
-```
 #### Reorder or reparent within a hierarchy
 
 When hierarchy changes are supported, make the difference between reordering and reparenting clear before the user drops the item.
@@ -108,13 +126,8 @@ A destination may represent:
 
 Do not expose destinations that would create an invalid hierarchy, such as placing a parent inside one of its own descendants.
 
-_(Visual example or demo link)_
-
-```jsx file=.path.tsx
-
-```
-
 #### Add from a source
+
 Use this variant when users drag from a source, such as a component list or palette, onto an ordered editing canvas.
 
 Dragging creates a new instance at the destination. It does not remove the source item.
@@ -130,7 +143,7 @@ Provide equivalent explicit placement actions:
 
 - Add on top
 - Add to bottom
-- Add after… 
+- Add after…
 
 Add after… lets users select an existing item as the reference position.
 
@@ -138,42 +151,37 @@ For short collections, this can be a menu containing the existing items. For lon
 
 When multiple items have the same name, provide enough additional context to distinguish them.
 
-(Visual example or demo link)
-
-```jsx file=.path.tsx
-
-```
-
 ---
 
 ### States
-_(Visual example or demo link)_
-
-```jsx file=.path.tsx
-
-```
 
 #### Default
+
 The Forma 36 DragHandle identifies an item that can be moved. The handle may be persistently visible or revealed on hover where appropriate.
 
 #### Focused
+
 Show a visible focus indicator on a keyboard-focusable drag handle.
 For list and tree reordering, the drag handle acts as the entry point to keyboard reordering.
 
 #### Picked Up / Dragging
+
 Clearly distinguish the item currently being moved.
 Show valid placement locations through insertion indicators or destination highlighting.
 The visual representation should make both of these questions clear:
-	•	What am I moving?
-	•	Where will it be placed if I drop it now?
+
+- What am I moving?
+- Where will it be placed if I drop it now?
 
 #### Invalid Destination
+
 Do not present invalid destinations as available drop targets.
 If an item is dragged over an invalid area, do not show an insertion indicator that suggests the move can succeed.
 Examples include:
-	•	placing a parent inside its own descendant;
-	•	placing an item inside a container that does not accept that item type;
-	•	moving a parent to a hierarchy level that is not supported.
+
+- placing a parent inside its own descendant;
+- placing an item inside a container that does not accept that item type;
+- moving a parent to a hierarchy level that is not supported.
 
 #### Success
 
@@ -189,8 +197,8 @@ For parent items, move the complete subtree while preserving the order and hiera
 
 Do not show a separate success message for routine reordering. The updated position and structure should provide the primary visual confirmation.
 
-
 #### Error
+
 - If persisting a move fails after the interface has updated, restore or otherwise reconcile the previous state and explain what happened.
 - Do not leave the visual order and persisted order inconsistent.
 - Implementation-specific persistence errors should follow the relevant error-handling guidance rather than introducing drag-specific confirmation steps.
@@ -198,76 +206,91 @@ Do not show a separate success message for routine reordering. The updated posit
 ---
 
 ### Accessibility
+
 Drag and drop must have equivalent ways to complete the task without performing a pointer drag.
 The alternatives are part of the interaction pattern, not optional fallbacks.
 WCAG 2.2 Success Criterion 2.5.7 requires functionality that uses dragging to also be achievable using a single pointer without dragging.
 
 #### Keyboard Interactions
+
 Use a focusable Forma 36 DragHandle rendered as a button.
-| Key | Action |
-| -------- | ------------------- |
-| Space or Enter | Pick up the focused item |
-| Arrow Up | Move item to the previous valid position |
-| Arrow Down | Move item to the next valid position |
-| Arrow Down | Move item to the next valid position |
-| Space or Enter | Drop the item at its current position |
-| Escape | Cancel the operation and restore the original position |
+
+| Key            | Action                                                 |
+| -------------- | ------------------------------------------------------ |
+| Space or Enter | Pick up the focused item                               |
+| Arrow Up       | Move item to the previous valid position               |
+| Arrow Down     | Move item to the next valid position                   |
+| Space or Enter | Drop the item at its current position                  |
+| Escape         | Cancel the operation and restore the original position |
+
 Keep keyboard focus associated with the moved item's drag handle after dropping or cancelling.
 
-*Trees*
+_Trees_
+
 For tree reordering, Up and Down Arrow navigate through the valid insertion positions presented by the expanded hierarchy.
 This can include:
-	•	sibling positions within the current parent;
-	•	positions at another hierarchy level;
-	•	positions inside another expanded parent, when reparenting is supported;
-	•	a parent-level destination when dropping directly into a parent is supported.
+
+- sibling positions within the current parent;
+- positions at another hierarchy level;
+- positions inside another expanded parent, when reparenting is supported;
+- a parent-level destination when dropping directly into a parent is supported.
+
 Only expanded descendants participate in exact-position keyboard navigation. A collapsed parent may still be a valid parent-level destination, but its hidden child positions are not individual keyboard destinations.
 Do not use Left and Right Arrow as drag-specific reparenting controls. In conventional tree navigation, these keys are already associated with expanding, collapsing, and navigating between parent and child nodes.
 The type and structure of the picked-up item determine which positions are valid.
 For example, when moving a parent, keyboard navigation should only expose destinations valid for that parent and its complete subtree.
 
-*Moving across long distances*
+_Moving across long distances_
+
 Do not require users to press Arrow keys through an excessive number of positions to complete a large move.
 The overflow menu provides a more efficient alternative through Move to… where appropriate.
 
-*Adding an item to another container*
+_Adding an item to another container_
+
 Do not require keyboard users to emulate a spatial drag from the source list across the interface.
 Provide explicit placement actions instead:
-	•	Add on top
-	•	Add to bottom
-	•	Add after…
+
+- Add on top
+- Add to bottom
+- Add after…
+
 These actions must provide access to the meaningful positions available through pointer dragging.
 If a drag handle exists only to initiate pointer dragging in this variant, avoid creating an additional keyboard stop that has no meaningful keyboard action. Keyboard users should be able to perform the equivalent operation through the item's explicit actions.
 
 #### Screen Reader Support
+
 Provide an accessible name for every drag handle. Forma 36 DragHandle includes a required screen-reader label for this purpose.
 The label should identify the action and, where needed, the item, for example:
 Move “Filter view status published”
 When keyboard reordering begins, announce:
-	•	which item was picked up
-	•	its current position
-	•	its current parent when relevant
-	•	the available keyboard commands
+
+- which item was picked up
+- its current position
+- its current parent when relevant
+- the available keyboard commands
+
 Example:
 “Filter view status published picked up. Position 2 of 5. Use Up and Down Arrow keys to move. Press Space or Enter to drop. Press Escape to cancel.”
 
-For a tree item: 
+For a tree item:
+
 - “SEO settings picked up. Position 2 of 4 in Page settings. Use Up and Down Arrow keys to move. Press Space or Enter to drop. Press Escape to cancel.”
 - When a parent with descendants is picked up, make the scope clear: “Page settings picked up with 5 nested items. Position 2 of 4 at top level.”
 
-*Announce movement*
+_Announce movement_
+
 - Announce movement after each successful change of position:
-	- Flat list: “SEO settings moved to position 3 of 5.”
-	- Within a tree: “SEO settings moved to position 1 of 4 in Page settings.”
-	- After changing parent: “SEO settings moved to Content settings, position 2 of 6.”
-	- For a parent: “Page settings moved to position 3 of 4 at top level.”
+  - Flat list: “SEO settings moved to position 3 of 5.”
+  - Within a tree: “SEO settings moved to position 1 of 4 in Page settings.”
+  - After changing parent: “SEO settings moved to Content settings, position 2 of 6.”
+  - For a parent: “Page settings moved to position 3 of 4 at top level.”
 - When the user reaches a boundary or cannot move to the requested position, provide concise feedback rather than leaving the result ambiguous:
-	- “First position.”
-	- “Cannot move Page settings into this group.”
+  - “First position.”
+  - “Cannot move Page settings into this group.”
 - Announce drop when the user drops the item, including its final result:
-	- Flat list: “SEO settings dropped. Position 3 of 5.”
-	- Tree: “SEO settings dropped. Position 2 of 6 in Content settings.”
-	- Parent: “Page settings dropped. Position 3 of 4 at top level. 5 nested items moved with it.”
+  - Flat list: “SEO settings dropped. Position 3 of 5.”
+  - Tree: “SEO settings dropped. Position 2 of 6 in Content settings.”
+  - Parent: “Page settings dropped. Position 3 of 4 at top level. 5 nested items moved with it.”
 - Announce cancellation if the user presses Escape: “Move cancelled. SEO settings returned to position 2 of 5.”
 - For a tree, include the original parent when relevant.
 - Avoid announcing information that has not changed, and keep repeated movement announcements concise.
@@ -275,15 +298,17 @@ For a tree item:
 #### Cognitive Considerations
 
 Drag and drop should reinforce rather than hide the structure of the interface.
-	•	Keep the dragged item visually recognizable while moving it.
-	•	Clearly distinguish valid and invalid destinations.
-	•	Show the exact insertion position before the user drops.
-	•	Avoid unexpected hierarchy changes when users are trying to reorder.
-	•	Use consistent drag-handle placement throughout a collection.
-	•	Make explicit actions available in a predictable location.
-	•	Preserve terminology between drag behavior, menus, and announcements.
-	•	Make moving a parent visually distinct enough that users understand its children will move with it.
-	•	Avoid confirmation dialogs for routine, immediately reversible reordering.
+
+- Keep the dragged item visually recognizable while moving it.
+- Clearly distinguish valid and invalid destinations.
+- Show the exact insertion position before the user drops.
+- Avoid unexpected hierarchy changes when users are trying to reorder.
+- Use consistent drag-handle placement throughout a collection.
+- Make explicit actions available in a predictable location.
+- Preserve terminology between drag behavior, menus, and announcements.
+- Make moving a parent visually distinct enough that users understand its children will move with it.
+- Avoid confirmation dialogs for routine, immediately reversible reordering.
+
 ---
 
 ### Dos and Don'ts
@@ -301,29 +326,24 @@ Drag and drop should reinforce rather than hide the structure of the interface.
 - Announce position and parent context when they change.
 - Restrict dragging and keyboard movement to valid destinations.
 
-
-- ...
-
 #### Don'ts
 
-	•	Don't make dragging the only way to reorder, move, or place an item.
-	•	Don't make the whole item a drag handle when it contains controls that need their own pointer interactions.
-	•	Don't unexpectedly reparent an item when the user intends only to reorder it.
-	•	Don't allow a parent to be moved into its own descendants.
-	•	Don't remove an item from a source palette when the intended interaction is to add a new instance to the canvas.
-	•	Don't require keyboard users to navigate large spatial distances one Arrow-key press at a time when a direct Move to… or placement action can be provided.
-	•	Don't rely on visual movement alone to communicate the result to screen-reader users.
-
-- ...
+- Don't make dragging the only way to reorder, move, or place an item.
+- Don't make the whole item a drag handle when it contains controls that need their own pointer interactions.
+- Don't unexpectedly reparent an item when the user intends only to reorder it.
+- Don't allow a parent to be moved into its own descendants.
+- Don't remove an item from a source palette when the intended interaction is to add a new instance to the canvas.
+- Don't require keyboard users to navigate large spatial distances one Arrow-key press at a time when a direct Move to… or placement action can be provided.
+- Don't rely on visual movement alone to communicate the result to screen-reader users.
 
 #### Anti-patterns
 
-	•	Drag-only reordering: users without the dexterity to drag cannot perform the action.
-	•	Invisible drop logic: an item's destination is only apparent after it has been dropped.
-	•	Ambiguous tree movement: users cannot tell whether a drop will reorder an item or change its parent.
-	•	Silent keyboard movement: the visual order changes but no position or hierarchy change is announced.
-	•	Redundant keyboard drag simulation: complex cross-container movement requires keyboard users to reproduce the physical path of a pointer rather than choosing the intended result directly.
-	•	Unbounded Arrow-key navigation: users must step through dozens of positions to reach a distant destination even though the destination could be selected directly.
+- Drag-only reordering: users without the dexterity to drag cannot perform the action.
+- Invisible drop logic: an item's destination is only apparent after it has been dropped.
+- Ambiguous tree movement: users cannot tell whether a drop will reorder an item or change its parent.
+- Silent keyboard movement: the visual order changes but no position or hierarchy change is announced.
+- Redundant keyboard drag simulation: complex cross-container movement requires keyboard users to reproduce the physical path of a pointer rather than choosing the intended result directly.
+- Unbounded Arrow-key navigation: users must step through dozens of positions to reach a distant destination even though the destination could be selected directly.
 
 ---
 
@@ -335,8 +355,6 @@ Drag and drop should reinforce rather than hide the structure of the interface.
 - Users can manipulate items without leaving the context in which those items appear.
 - Insertion feedback previews the result before the user commits.
 - The same interaction model can support simple ordering and more complex hierarchy changes.
-
-
 
 #### Limitations
 

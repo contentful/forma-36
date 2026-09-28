@@ -87,6 +87,7 @@ const components = {
       className = '',
       static: isStatic,
       file,
+      hideCode,
       children,
     } = codeElement.props;
 
@@ -97,7 +98,7 @@ const components = {
       return <StaticSource code={code} language={language} />;
     }
 
-    return <ComponentSource code={code} file={file} />;
+    return <ComponentSource code={code} file={file} hideCode={hideCode} />;
   },
   table: (props) => <Table {...props} />,
   thead: (props) => <Table.Head {...props} />,

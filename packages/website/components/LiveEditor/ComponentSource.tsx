@@ -148,11 +148,13 @@ const styles = {
 export function ComponentSource({
   code,
   file,
+  hideCode,
 }: {
   code: string;
   file?: string;
+  hideCode?: boolean;
 }) {
-  const [showSource, setShowSource] = useState(true);
+  const [showSource, setShowSource] = useState(!hideCode);
   const tooltipId = useId();
   const copyTooltipId = `component-source-copy-${tooltipId}`;
   const { status } = useFrontMatterContext() ?? {};
@@ -176,62 +178,68 @@ export function ComponentSource({
           {/* @ts-expect-error react-live's types omit its runtime Component prop */}
           <LivePreview Component="div" />
         </Card>
-        <div style={{ position: 'relative' }}>
-          <LiveError className={styles.error} />
+        <LiveError className={styles.error} />
+        {!hideCode && (
           <div style={{ position: 'relative' }}>
-            <Flex
-              className={styles.toggle}
-              justifyContent="space-between"
-              alignItems="center"
-            >
-              <Button
-                size="small"
-                variant="secondary"
-                startIcon={
-                  showSource ? <f36icons.EyeClosedIcon /> : <f36icons.EyeIcon />
-                }
-                onClick={handleToggle}
+            <div style={{ position: 'relative' }}>
+              <Flex
+                className={styles.toggle}
+                justifyContent="space-between"
+                alignItems="center"
               >
-                {showSource ? 'Hide code' : 'Show code'}
-              </Button>
-            </Flex>
+                <Button
+                  size="small"
+                  variant="secondary"
+                  startIcon={
+                    showSource ? (
+                      <f36icons.EyeClosedIcon />
+                    ) : (
+                      <f36icons.EyeIcon />
+                    )
+                  }
+                  onClick={handleToggle}
+                >
+                  {showSource ? 'Hide code' : 'Show code'}
+                </Button>
+              </Flex>
 
-            <LiveEditor
-              className={cx(styles.editor, {
-                [styles.editorHidden]: !showSource,
-              })}
-            />
-            <Flex
-              className={styles.floatingPanel}
-              justifyContent="space-between"
-              alignItems="center"
-            >
-              {showSource && (
-                <Flex gap="spacingXs">
-                  <CopyButton
-                    tooltipProps={{ id: copyTooltipId, placement: 'top' }}
-                    className={styles.copyButton}
-                    value={code}
-                    size="small"
-                  />
-                  {canOpenInPlayground && (
-                    <Button
-                      as="a"
-                      className={cx(styles.playgroundButton)}
-                      endIcon={<f36icons.ArrowSquareOutIcon />}
+              <LiveEditor
+                className={cx(styles.editor, {
+                  [styles.editorHidden]: !showSource,
+                })}
+              />
+              <Flex
+                className={styles.floatingPanel}
+                justifyContent="space-between"
+                alignItems="center"
+              >
+                {showSource && (
+                  <Flex gap="spacingXs">
+                    <CopyButton
+                      tooltipProps={{ id: copyTooltipId, placement: 'top' }}
+                      className={styles.copyButton}
+                      value={code}
                       size="small"
-                      href={`/playground?code=${coder.encode(code)}`}
-                      target="_blank"
-                    >
-                      Open in Playground
-                    </Button>
-                  )}
-                </Flex>
-              )}
-            </Flex>
+                    />
+                    {canOpenInPlayground && (
+                      <Button
+                        as="a"
+                        className={cx(styles.playgroundButton)}
+                        endIcon={<f36icons.ArrowSquareOutIcon />}
+                        size="small"
+                        href={`/playground?code=${coder.encode(code)}`}
+                        target="_blank"
+                      >
+                        Open in Playground
+                      </Button>
+                    )}
+                  </Flex>
+                )}
+              </Flex>
+            </div>
+            {!showSource && <div className={styles.editorCover} />}
           </div>
-          {!showSource && <div className={styles.editorCover} />}
-        </div>
+        )}
       </LiveProvider>
     </Flex>
   );
