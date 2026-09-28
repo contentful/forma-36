@@ -89,7 +89,7 @@ export default function FolderListExample() {
     { id: 'max', name: 'Seeds' },
   ]);
 
-  const [activeMenuId, setActiveMenuId] = React.useState(null);
+  const [activeMenuId, setActiveMenuId] = React.useState<string | null>(null);
   const [activeId, setActiveId] = React.useState(null);
   const [overId, setOverId] = React.useState(null);
 
