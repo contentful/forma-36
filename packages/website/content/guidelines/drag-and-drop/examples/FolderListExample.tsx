@@ -216,8 +216,7 @@ export default function FolderListExample() {
 
   const activeIndex = folders.findIndex((folder) => folder.id === activeId);
   const overIndex = folders.findIndex((folder) => folder.id === overId);
-  const isValidDrag =
-    activeId != null && overId != null && activeId !== overId;
+  const isValidDrag = activeId != null && overId != null && activeId !== overId;
 
   return (
     <DndContext
