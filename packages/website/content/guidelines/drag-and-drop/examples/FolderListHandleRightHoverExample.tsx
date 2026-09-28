@@ -89,7 +89,7 @@ export default function FolderListHandleRightHoverExample() {
     { id: 'max', name: 'Seeds' },
   ]);
 
-  const [activeMenuId, setActiveMenuId] = React.useState(null);
+  const [activeMenuId, setActiveMenuId] = React.useState<string | null>(null);
   const [activeId, setActiveId] = React.useState(null);
   const [overId, setOverId] = React.useState(null);
 
@@ -113,7 +113,7 @@ export default function FolderListHandleRightHoverExample() {
     const { active, over } = event;
     setActiveId(null);
     setOverId(null);
-    document.activeElement?.blur();
+    (document.activeElement as HTMLElement | null)?.blur();
     if (!over || active.id === over.id) return;
     const oldIndex = folders.findIndex((folder) => folder.id === active.id);
     const newIndex = folders.findIndex((folder) => folder.id === over.id);
@@ -123,7 +123,7 @@ export default function FolderListHandleRightHoverExample() {
   function handleDragCancel() {
     setActiveId(null);
     setOverId(null);
-    document.activeElement?.blur();
+    (document.activeElement as HTMLElement | null)?.blur();
   }
 
   // FolderRow must keep a stable function identity across re-renders, or
@@ -255,13 +255,13 @@ export default function FolderListHandleRightHoverExample() {
               onMoveUp={() => {
                 moveFolder(index, index - 1);
                 requestAnimationFrame(() => {
-                  document.activeElement?.blur();
+                  (document.activeElement as HTMLElement | null)?.blur();
                 });
               }}
               onMoveDown={() => {
                 moveFolder(index, index + 1);
                 requestAnimationFrame(() => {
-                  document.activeElement?.blur();
+                  (document.activeElement as HTMLElement | null)?.blur();
                 });
               }}
             />
