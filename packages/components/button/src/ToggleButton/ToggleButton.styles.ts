@@ -2,7 +2,11 @@ import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import { GetStyleArguments } from './types';
 
-const getToggleButtonStyle = ({ isActive, isDisabled }: GetStyleArguments) => {
+const getToggleButtonStyle = ({
+  isActive,
+  isDisabled,
+  size,
+}: GetStyleArguments) => {
   const activeStyle = {
     background: tokens.blue100,
     borderColor: tokens.blue600,
@@ -15,6 +19,15 @@ const getToggleButtonStyle = ({ isActive, isDisabled }: GetStyleArguments) => {
   };
 
   const baseStyle = {
+    ...(size === 'tiny'
+      ? {
+          height: tokens.spacingL,
+          padding: `0 ${tokens.spacingXs}`,
+        }
+      : {}),
+    '& > span:first-child:not(:last-child)': {
+      marginRight: size === 'medium' ? tokens.spacingXs : tokens.spacing2Xs,
+    },
     '&:focus': {
       boxShadow: tokens.glowPrimary,
     },
@@ -42,6 +55,6 @@ const getToggleButtonStyle = ({ isActive, isDisabled }: GetStyleArguments) => {
   return baseStyle;
 };
 
-export default ({ isActive, isDisabled }: GetStyleArguments) => ({
-  toggleButton: css(getToggleButtonStyle({ isActive, isDisabled })),
+export default ({ isActive, isDisabled, size }: GetStyleArguments) => ({
+  toggleButton: css(getToggleButtonStyle({ isActive, isDisabled, size })),
 });
