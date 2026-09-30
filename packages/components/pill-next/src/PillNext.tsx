@@ -11,7 +11,11 @@ import {
   type WithEnhancedContent,
 } from '@contentful/f36-tooltip';
 import { IconButton } from '@contentful/f36-button';
-import { WarningIcon, WarningOctagonIcon, type IconSize } from '@contentful/f36-icons';
+import {
+  WarningIcon,
+  WarningOctagonIcon,
+  type IconSize,
+} from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 import type { PillNextVariant, PillNextSize } from './PillNext.types';
 import { getPillNextStyles } from './PillNext.styles';
@@ -90,7 +94,10 @@ export const PillNext = React.forwardRef<
       role={tooltipContent ? 'img' : undefined}
       aria-label={tooltipContent || undefined}
     >
-      <LeadingIcon color={iconColor} size={size === 'small' ? 'tiny' : 'small'} />
+      <LeadingIcon
+        color={iconColor}
+        size={size === 'small' ? 'tiny' : 'small'}
+      />
     </span>
   ) : null;
 
@@ -129,11 +136,9 @@ export const PillNext = React.forwardRef<
           aria-label={actionButtonLabel}
           onClick={onAction}
           isDisabled={isDisabled}
-          className={cx(
-            styles.endButton, 
-            actionButtonClassName,
-            { [styles.small]: true }
-          )}
+          className={cx(styles.endButton, actionButtonClassName, {
+            [styles.small]: true,
+          })}
         />
       )}
     </div>

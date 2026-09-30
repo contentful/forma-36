@@ -42,12 +42,12 @@ export function getPillNextStyles(
       paddingBottom: isSmall ? '0' : tokens.spacing2Xs,
       paddingLeft: isSmall ? tokens.spacingXs : tokens.spacingS,
       paddingRight: hasEndButton
-  ? isSmall
-    ? 0
-    : tokens.spacing2Xs
-  : isSmall
-    ? tokens.spacingXs
-    : tokens.spacingS,
+        ? isSmall
+          ? 0
+          : tokens.spacing2Xs
+        : isSmall
+          ? tokens.spacingXs
+          : tokens.spacingS,
       // TODO: replace with border-radius token when new tokens ship in next major
       borderRadius: '16px',
       minWidth: 0,
@@ -76,44 +76,44 @@ export function getPillNextStyles(
       wordBreak: 'break-word',
     }),
     endButton: css({
-  width: tokens.spacingL,
-  height: tokens.spacingL,
-  minWidth: tokens.spacingL,
-  minHeight: tokens.spacingL,
-  boxSizing: 'border-box',
-  padding: isSmall ? '2px' : tokens.spacing2Xs,
-  borderRadius: '50%',
-  marginLeft: isSmall ? tokens.spacing2Xs : tokens.spacingXs,
-  mixBlendMode: 'luminosity',
+      width: tokens.spacingL,
+      height: tokens.spacingL,
+      minWidth: tokens.spacingL,
+      minHeight: tokens.spacingL,
+      boxSizing: 'border-box',
+      padding: isSmall ? '2px' : tokens.spacing2Xs,
+      borderRadius: '50%',
+      marginLeft: isSmall ? tokens.spacing2Xs : tokens.spacingXs,
+      mixBlendMode: 'luminosity',
 
-  ...(isSmall
-    ? {
-        backgroundColor: 'transparent',
-        backgroundClip: 'content-box',
+      ...(isSmall
+        ? {
+            backgroundColor: 'transparent',
+            backgroundClip: 'content-box',
 
-        '&&:hover:not(:disabled)': {
-          backgroundColor: tokens.gray300,
-          backgroundClip: 'content-box',
-        },
+            '&&:hover:not(:disabled)': {
+              backgroundColor: tokens.gray300,
+              backgroundClip: 'content-box',
+            },
 
-        '&&:hover:disabled': {
-          backgroundColor: 'transparent',
-        },
-      }
-    : {
-        '&&:hover:not(:disabled)': {
-          backgroundColor: tokens.gray300,
-        },
+            '&&:hover:disabled': {
+              backgroundColor: 'transparent',
+            },
+          }
+        : {
+            '&&:hover:not(:disabled)': {
+              backgroundColor: tokens.gray300,
+            },
 
-        '&&:hover:disabled': {
-          backgroundColor: 'transparent',
-        },
-      }),
-}),
+            '&&:hover:disabled': {
+              backgroundColor: 'transparent',
+            },
+          }),
+    }),
 
-    small: css ({
+    small: css({
       fontSize: '10px',
-      color: tokens.green700
-    })
+      color: tokens.green700,
+    }),
   };
 }
