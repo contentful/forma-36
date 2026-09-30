@@ -24,6 +24,10 @@ export default {
     tooltipContent: { control: { type: 'text' } },
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
+    size: {
+      control: { type: 'inline-radio' },
+      options: ['medium', 'small'],
+    },
   },
 } as Meta;
 
@@ -32,10 +36,15 @@ export const Basic: StoryObj<PillNextInternalProps> = {
   args: {
     label: 'Category tag',
     variant: 'secondary',
+    size: 'medium',
   },
 };
 
 export const AllVariants: StoryObj<PillNextInternalProps> = {
+  args: {
+    variant: 'secondary',
+  },
+
   render: () => (
     <Flex flexDirection="column" gap="spacingL">
       <Flex flexDirection="column" gap="spacingS">
@@ -52,6 +61,10 @@ export const AllVariants: StoryObj<PillNextInternalProps> = {
 };
 
 export const WithTooltip: StoryObj<PillNextInternalProps> = {
+  args: {
+    size: 'small',
+  },
+
   render: () => (
     <Flex flexDirection="column" gap="spacingL">
       <Flex flexDirection="column" gap="spacingS">
@@ -95,6 +108,7 @@ export const ActionIcons: StoryObj<PillNextInternalProps> = {
             actionIcon={<XIcon />}
             onAction={action('remove')}
             actionButtonLabel="Remove"
+            size="small"
           />
           <PillNext
             label="Primary"
@@ -300,6 +314,24 @@ export const LongLabels: StoryObj<PillNextInternalProps> = {
           />
         </Flex>
       </Flex>
+    </Flex>
+  ),
+};
+
+export const Small: StoryObj<PillNextInternalProps> = {
+  render: () => (
+    <Flex flexDirection="row" gap="spacingXs" alignItems="center">
+      <PillNext size="small" label="Secondary" variant="secondary" />
+      <PillNext size="small" label="Primary" variant="primary" />
+      <PillNext size="small" label="Warning" variant="warning" />
+      <PillNext size="small" label="Negative" variant="negative" />
+      <PillNext
+        size="small"
+        label="Removable"
+        actionIcon={<XIcon />}
+        onAction={action('remove')}
+        actionButtonLabel="Remove"
+      />
     </Flex>
   ),
 };
