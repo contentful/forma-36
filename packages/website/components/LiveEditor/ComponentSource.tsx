@@ -11,11 +11,18 @@ import { css, cx } from '@emotion/css';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
-import { DndContext } from '@dnd-kit/core';
+import {
+  DndContext,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from '@dnd-kit/core';
 import {
   arrayMove,
   horizontalListSortingStrategy,
   SortableContext,
+  sortableKeyboardCoordinates,
   useSortable,
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
@@ -67,7 +74,12 @@ const liveProviderScope = {
   CSS,
   DndContext,
   horizontalListSortingStrategy,
+  KeyboardSensor,
+  PointerSensor,
   SortableContext,
+  sortableKeyboardCoordinates,
+  useSensor,
+  useSensors,
   useSortable,
   verticalListSortingStrategy,
   // date-fns
