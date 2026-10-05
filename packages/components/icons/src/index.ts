@@ -226,6 +226,7 @@ export * from './vendor/phosphor/ShoppingCartSimpleIcon.js';
 export * from './vendor/phosphor/SidebarSimpleIcon.js';
 export * from './vendor/phosphor/SignInIcon.js';
 export * from './vendor/phosphor/SignOutIcon.js';
+export * from './vendor/phosphor/SignpostIcon.js';
 export * from './vendor/phosphor/SketchLogoIcon.js';
 export * from './vendor/phosphor/SlackLogoIcon.js';
 export * from './vendor/phosphor/SlidersHorizontalIcon.js';
