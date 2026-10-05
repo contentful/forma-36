@@ -36,11 +36,13 @@ export function getPillNextStyles(
     pill: css({
       display: 'inline-flex',
       alignItems: 'center',
-      height: isSmall ? tokens.spacingL : tokens.spacingXl,
-      minHeight: 0,
-      paddingTop: isSmall ? '0' : tokens.spacing2Xs,
-      paddingBottom: isSmall ? '0' : tokens.spacing2Xs,
+      height: 'auto',
+      minHeight: isSmall ? tokens.spacingL : tokens.spacingXl,
+
+      paddingTop: isSmall ? 0 : tokens.spacing2Xs,
+      paddingBottom: isSmall ? 0 : tokens.spacing2Xs,
       paddingLeft: isSmall ? tokens.spacingXs : tokens.spacingS,
+
       paddingRight: hasEndButton
   ? isSmall
     ? 0
@@ -52,7 +54,8 @@ export function getPillNextStyles(
       borderRadius: '16px',
       minWidth: 0,
       maxWidth: '100%',
-      border: `1px solid ${border}`,
+      border: isSmall ? 'none' : `1px solid ${border}`,
+  boxShadow: isSmall ? `inset 0 0 0 1px ${border}` : 'none',
       backgroundColor: background,
       fontFamily: tokens.fontStackPrimary,
       boxSizing: 'border-box',
@@ -74,6 +77,9 @@ export function getPillNextStyles(
       fontWeight: tokens.fontWeightMedium,
       lineHeight: isSmall ? tokens.lineHeightS : tokens.lineHeightM,
       wordBreak: 'break-word',
+      flex: '1 1 auto',
+      paddingTop: isSmall ? '2px' : '0',
+      paddingBottom: isSmall ? '2px' : '0',
     }),
     endButton: css({
   width: tokens.spacingL,

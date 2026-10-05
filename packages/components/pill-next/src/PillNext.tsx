@@ -129,11 +129,7 @@ export const PillNext = React.forwardRef<
           aria-label={actionButtonLabel}
           onClick={onAction}
           isDisabled={isDisabled}
-          className={cx(
-            styles.endButton, 
-            actionButtonClassName,
-            { [styles.small]: true }
-          )}
+	  className={cx(styles.endButton, actionButtonClassName)}
         />
       )}
     </div>
