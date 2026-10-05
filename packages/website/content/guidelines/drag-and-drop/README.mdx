@@ -4,13 +4,12 @@ slug: '/guidelines/protected/draganddrop'
 section: 'guidelinesPatterns'
 ---
 
-### Purpose
+## Purpose
 
 Drag and drop lets users reorder, move, or place items through direct manipulation. Use it when the relationship between an item and its destination is spatially clear, and the result of moving it is predictable before the user commits the change.
 
----
 
-### When to Use
+## When to Use
 
 - Source, destination, and resulting position are visually clear
 - Users benefit from manipulating items directly or repeatedly
@@ -35,35 +34,29 @@ Drag and drop lets users reorder, move, or place items through direct manipulati
 
 Use an explicit action when users cannot reliably understand the destination spatially or when moving an item has consequences that should require deliberate confirmation.
 
-#### Consider These Alternatives
+### Consider These Alternatives
 
 | Scenario                                                                 | Alternative Pattern                 | Reason                                                                                          |
 | ------------------------------------------------------------------------ | ----------------------------------- | ----------------------------------------------------------------------------------------------- |
 | The relationship between source and destination is not visually apparent | Explicit Move to… or Add to… action | Dragging depends on users being able to understand valid spatial destinations                   |
 | Moving an item has complex or destructive consequences                   | Explicit action with confirmation   | Direct manipulation can make consequential structural changes too easy to perform accidentally. |
 
-### Components Used
+## Components Used
 
-#### Required
-
+### Required
 - DragHandle([DragHandle](https://f36.contentful.com/components/drag-handle)) — identifies draggable items and provides the interaction affordance for moving them, including focus, hover, and active states.
 - IconButton([IconButton](https://f36.contentful.com/components/icon-button)), Menu ([Menu](https://f36.contentful.com/components/menu)) — provide explicit non-drag actions where equivalent placement or movement controls are required.
 
-Supporting UI elements
-
-Insertion indicator — shows the exact position where the item will be placed when dropped.
-
-Drop target highlight — shows when an item can be dropped into a container or parent.
+### Supporting UI elements
+- Insertion indicator — shows the exact position where the item will be placed when dropped.
+- Drop target highlight — shows when an item can be dropped into a container or parent.
 
 These elements are part of the drag and drop pattern but are not currently available as standalone Forma 36 components. Implement them consistently with Forma 36 tokens and interaction states until dedicated components or primitives are available.
 
 #### Optional
-
 - Card with custom drag handle ([Card with custom drag handle](https://f36.contentful.com/components/card#with-a-custom-drag-handle)) — use when the draggable item is represented by a Forma 36 Card.
 
----
-
-### Interactions
+## Interactions
 
 The item being moved defines the scope of the operation.
 
@@ -72,9 +65,7 @@ The item being moved defines the scope of the operation.
 - Only expose destinations that result in valid states.
 - Show the resulting position before the user commits the move.
 
-Example flow
-
-#### Reorder a List
+### Reorder a List
 
 1. User initiates dragging from the item's drag handle.
 2. The item enters a dragging state.
@@ -84,14 +75,14 @@ Example flow
 6. Keep focus associated with the moved item.
 
 Reordering changes the item's position within its current list. It does not change its meaning or container. The drag handle can replace the leading icon when the icon represents secondary metadata and users do not need that information to decide how or where to drag the item. Preserve the metadata for assistive technology when the icon is replaced; see Accessibility for accessible naming and descriptions.
-
-### Example
+{/*
+*Example*
 
 ```jsx file=./examples/FolderListHandleReplacesIconExample.tsx hideCode
 
 ```
-
-#### Reorder or reparent within a hierarchy
+ */}
+### Reorder or reparent within a hierarchy
 
 When hierarchy changes are supported, make the difference between reordering and reparenting clear before the user drops the item.
 
@@ -104,7 +95,7 @@ A destination may represent:
 
 Do not expose destinations that would create an invalid hierarchy, such as placing a parent inside one of its own descendants.
 
-#### Add from a source
+### Add from a source
 
 Use this variant when users drag from a source, such as a component list or palette, onto an ordered editing canvas.
 
@@ -129,11 +120,10 @@ For short collections, this can be a menu containing the existing items. For lon
 
 When multiple items have the same name, provide enough additional context to distinguish them.
 
----
 
-### States
+## States
 
-#### Default
+### Default
 
 The Forma 36 DragHandle identifies an item that can be moved. The handle may be persistently visible or revealed on hover where appropriate.
 When the drag handle replaces a leading icon:
@@ -142,12 +132,12 @@ When the drag handle replaces a leading icon:
 - reveal the drag handle on keyboard focus as well as hover
 - keep the drag handle visible while it has focus and throughout the drag operation.
 
-#### Focused
+### Focused
 
 Show a visible focus indicator on a keyboard-focusable drag handle.
 For list and tree reordering, the drag handle acts as the entry point to keyboard reordering. Do not rely on cursor change alone to indicate drag capability.
 
-#### Picked Up / Dragging
+### Picked Up / Dragging
 
 Clearly distinguish the item currently being moved.
 Show valid placement locations through insertion indicators or destination highlighting.
@@ -156,7 +146,7 @@ The visual representation should make both of these questions clear:
 - What am I moving?
 - Where will it be placed if I drop it now?
 
-#### Invalid Destination
+### Invalid Destination
 
 Do not present invalid destinations as available drop targets.
 If an item is dragged over an invalid area, do not show an insertion indicator that suggests the move can succeed.
@@ -166,7 +156,7 @@ Examples include:
 - placing an item inside a container that does not accept that item type;
 - moving a parent to a hierarchy level that is not supported.
 
-#### Success
+### Success
 
 After a successful drop:
 
@@ -180,7 +170,7 @@ For parent items, move the complete subtree while preserving the order and hiera
 
 Do not show a separate success message for routine reordering. The updated position and structure should provide the primary visual confirmation.
 
-#### Error
+### Error
 
 - If persisting a move fails after the interface has updated, restore or otherwise reconcile the previous state and explain what happened.
 - Do not leave the visual order and persisted order inconsistent.
@@ -188,13 +178,13 @@ Do not show a separate success message for routine reordering. The updated posit
 
 ---
 
-### Accessibility
+## Accessibility
 
 Drag and drop must have equivalent ways to complete the task without performing a pointer drag.
 The alternatives are part of the interaction pattern, not optional fallbacks.
 WCAG 2.2 Success Criterion 2.5.7 requires functionality that uses dragging to also be achievable using a single pointer without dragging.
 
-#### Keyboard Interactions
+### Keyboard Interactions
 
 Use a focusable Forma 36 DragHandle rendered as a button.
 
@@ -248,7 +238,7 @@ Provide explicit placement actions instead:
 These actions must provide access to the meaningful positions available through pointer dragging.
 If a drag handle exists only to initiate pointer dragging in this variant, avoid creating an additional keyboard stop that has no meaningful keyboard action. Keyboard users should be able to perform the equivalent operation through the item's explicit actions.
 
-#### Screen Reader Support
+### Screen Reader Support
 
 Provide an accessible name for every drag handle. The Forma 36 DragHandle includes a required screen-reader label for this purpose.
 Use the item’s visible name in the accessible name and describe the action clearly, for example:
@@ -311,7 +301,7 @@ Keep repeated movement announcements concise. Provide fuller context when the it
   - For a hierarchy, include the original parent when relevant.
     Do not repeat unchanged information during every movement. Use the same meaningful item names that appear in the interface, and never expose internal implementation IDs in announcements.
 
-#### Cognitive Considerations
+### Cognitive Considerations
 
 Drag and drop should reinforce rather than hide the structure of the interface.
 
@@ -327,9 +317,9 @@ Drag and drop should reinforce rather than hide the structure of the interface.
 
 ---
 
-### Dos and Don'ts
+## Dos and Don'ts
 
-#### Dos
+### Dos
 
 - Use the Forma 36 DragHandle as the consistent affordance for draggable items.
 - Provide visible feedback for the exact destination before a drop.
@@ -342,7 +332,7 @@ Drag and drop should reinforce rather than hide the structure of the interface.
 - Announce enough context to understand the resulting location, using a neighboring item, numeric position, parent, or a combination.
 - Restrict dragging and keyboard movement to valid destinations.
 
-#### Don'ts
+### Don'ts
 
 - Don't make dragging the only way to reorder, move, or place an item.
 - Don't make the whole item a drag handle when it contains controls that need their own pointer interactions.
@@ -355,7 +345,7 @@ Drag and drop should reinforce rather than hide the structure of the interface.
 - Don't rely on a cursor change alone to indicate that an item is draggable.
 - Don't remove meaningful metadata from the accessibility representation when replacing an icon with a drag handle.
 
-#### Anti-patterns
+## Anti-patterns
 
 - Drag-only reordering: users without the dexterity to drag cannot perform the action.
 - Invisible drop logic: an item's destination is only apparent after it has been dropped.
@@ -364,18 +354,16 @@ Drag and drop should reinforce rather than hide the structure of the interface.
 - Redundant keyboard drag simulation: complex cross-container movement requires keyboard users to reproduce the physical path of a pointer rather than choosing the intended result directly.
 - Unbounded Arrow-key navigation: users must step through dozens of positions to reach a distant destination even though the destination could be selected directly.
 
----
+## Trade-offs
 
-### Trade-offs
-
-#### Benefits
+### Benefits
 
 - Direct manipulation can make repeated spatial rearrangement efficient.
 - Users can manipulate items without leaving the context in which those items appear.
 - Insertion feedback previews the result before the user commits.
 - The same interaction model can support simple ordering and more complex hierarchy changes.
 
-#### Limitations
+### Limitations
 
 - Drag and drop is less discoverable than explicit controls for some users.
 - Precise dragging can be difficult for users with motor impairments.
@@ -387,7 +375,7 @@ Drag and drop should reinforce rather than hide the structure of the interface.
 
 ---
 
-### Technical Implementation
+## Technical Implementation
 
 Implementations should satisfy the interaction and accessibility requirements in this pattern regardless of the underlying drag-and-drop library.
 
@@ -405,7 +393,7 @@ The implementation must support:
 
 Map internal drag IDs to the visible/accessibly meaningful item labels before generating announcements. Drag-and-drop IDs may be used internally but must not surface to users.
 
-#### Implementing with dnd-kit
+### Implementing with dnd-kit
 
 Forma 36's drag-and-drop examples use [dnd-kit](https://dndkit.com/). When implementing a pattern with it:
 
