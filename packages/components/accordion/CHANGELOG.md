@@ -1,5 +1,15 @@
 # Change Log
 
+## 6.23.0
+
+### Patch Changes
+
+- Updated dependencies [[`d076fa6`](https://github.com/contentful/forma-36/commit/d076fa666d0c0fa3107e7368233c70f3c2f052ec)]:
+  - @contentful/f36-icons@6.23.0
+  - @contentful/f36-collapse@6.23.0
+  - @contentful/f36-core@6.23.0
+  - @contentful/f36-typography@6.23.0
+
 ## 6.22.1
 
 ### Patch Changes

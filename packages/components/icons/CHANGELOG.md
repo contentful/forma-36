@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.23.0
+
+### Minor Changes
+
+- [#3700](https://github.com/contentful/forma-36/pull/3700) [`d076fa6`](https://github.com/contentful/forma-36/commit/d076fa666d0c0fa3107e7368233c70f3c2f052ec) Thanks [@toniwowtscherk](https://github.com/toniwowtscherk)! - Add SignpostIcon from Phosphor with Default/Active variants
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.23.0
+  - @contentful/f36-icon@6.23.0
+
 ## 6.22.1
 
 ### Patch Changes
