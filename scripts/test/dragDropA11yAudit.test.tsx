@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { expectNoA11yViolations } from './expectNoA11yViolations';
 
 import FolderListHandleReplacesIconExample from '../../packages/website/content/guidelines/drag-and-drop/examples/FolderListHandleReplacesIconExample';
@@ -16,18 +16,19 @@ describe('FolderListHandleReplacesIconExample a11y audit', () => {
     const handle = screen.getByRole('button', { name: 'Reorder Fruits' });
 
     expect(handle).toHaveAttribute('aria-label', 'Reorder Fruits');
-    // The bug we chased: if the accessible name comes from a visible text
-    // node, VoiceOver can walk it character-by-character once
-    // role="application" is applied. Confirm there is no text child.
+    // Keep the accessible name in metadata rather than visible text content.
     expect(handle.textContent).toBe('');
   });
 
-  it('does not default to role=button while idle (no override present yet)', () => {
+  it('keeps the dnd-kit button role while idle and during a keyboard drag', () => {
     render(<FolderListHandleReplacesIconExample />);
     const handle = screen.getByRole('button', { name: 'Reorder Fruits' });
 
-    // useSortable's default role is "button" until a drag starts.
     expect(handle.getAttribute('role')).toBe('button');
+
+    fireEvent.keyDown(handle, { code: 'Space', key: ' ' });
+
+    expect(handle).toHaveAttribute('role', 'button');
   });
 
   it('every folder handle has a unique, name-based accessible name (no raw ids)', () => {
