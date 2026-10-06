@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 06-10-2026
+
+**F36 Icons** `v6.23.0`
+
+- Add SignpostIcon from Phosphor with Default/Active variants
+
 ## 19-09-2026
 
 **F36 List** `v6.22.1`
