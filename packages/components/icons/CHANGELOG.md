@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.24.0
+
+### Minor Changes
+
+- [#3702](https://github.com/contentful/forma-36/pull/3702) [`3041221`](https://github.com/contentful/forma-36/commit/3041221625f6748f2c07fc0f8c12170cb900d1f0) Thanks [@marcmll](https://github.com/marcmll)! - Add ToggleLeftIcon from Phosphor with Default/Active variants
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.24.0
+  - @contentful/f36-icon@6.24.0
+
 ## 6.23.0
 
 ### Minor Changes
