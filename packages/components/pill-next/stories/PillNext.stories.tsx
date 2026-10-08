@@ -178,7 +178,7 @@ export const ActionIcons: StoryObj<PillNextInternalProps> = {
         <SectionHeading as="h3">Disabled state</SectionHeading>
         <Flex flexDirection="row" gap="spacingXs">
           <PillNext
-            label="Disabled remove"
+            label="Disabled secondary"
             variant="secondary"
             actionIcon={<XIcon />}
             onAction={action('remove')}
@@ -186,19 +186,27 @@ export const ActionIcons: StoryObj<PillNextInternalProps> = {
             isDisabled
           />
           <PillNext
-            label="Disabled add"
+            label="Disabled primary"
             variant="primary"
-            actionIcon={<PlusIcon />}
-            onAction={action('add')}
-            actionButtonLabel="Add"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
             isDisabled
           />
           <PillNext
-            label="Disabled menu"
-            variant="primary"
-            actionIcon={<DotsThreeIcon />}
-            onAction={action('open-menu')}
-            actionButtonLabel="Open menu"
+            label="Disabled warning"
+            variant="warning"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+            isDisabled
+          />
+          <PillNext
+            label="Disabled negative"
+            variant="negative"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
             isDisabled
           />
         </Flex>
@@ -319,11 +327,11 @@ export const LongLabels: StoryObj<PillNextInternalProps> = {
 
 export const Small: StoryObj<PillNextInternalProps> = {
   render: () => (
-    <Flex 
-    flexDirection="column"
-          alignItems="left"
-          gap="spacing2Xl"
-          style={{ width: '800px', border: '1px dashed #ccc', padding: '16px' }}
+    <Flex
+      flexDirection="column"
+      alignItems="left"
+      gap="spacing2Xl"
+      style={{ width: '800px', border: '1px dashed #ccc', padding: '16px' }}
     >
       <Flex flexDirection="column" gap="spacingS">
         <SectionHeading as="h3">Variants</SectionHeading>
@@ -349,7 +357,7 @@ export const Small: StoryObj<PillNextInternalProps> = {
           />
         </Flex>
       </Flex>
-      
+
       <Flex flexDirection="column" gap="spacingS">
         <SectionHeading as="h3">
           Leading icon with tooltip (warning/negative)
@@ -469,7 +477,7 @@ export const Small: StoryObj<PillNextInternalProps> = {
         <Flex flexDirection="row" gap="spacingXs">
           <PillNext
             size="small"
-            label="Disabled remove"
+            label="Disabled secondary"
             variant="secondary"
             actionIcon={<XIcon />}
             onAction={action('remove')}
@@ -478,20 +486,29 @@ export const Small: StoryObj<PillNextInternalProps> = {
           />
           <PillNext
             size="small"
-            label="Disabled add"
+            label="Disabled primary"
             variant="primary"
-            actionIcon={<PlusIcon />}
-            onAction={action('add')}
-            actionButtonLabel="Add"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
             isDisabled
           />
           <PillNext
             size="small"
-            label="Disabled menu"
-            variant="primary"
-            actionIcon={<DotsThreeIcon />}
-            onAction={action('open-menu')}
-            actionButtonLabel="Open menu"
+            label="Disabled warning"
+            variant="warning"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+            isDisabled
+          />
+          <PillNext
+            size="small"
+            label="Disabled negative"
+            variant="negative"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
             isDisabled
           />
         </Flex>
@@ -610,7 +627,5 @@ export const Small: StoryObj<PillNextInternalProps> = {
         </Flex>
       </Flex>
     </Flex>
-    
-    
   ),
 };

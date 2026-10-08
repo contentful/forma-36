@@ -44,18 +44,18 @@ export function getPillNextStyles(
       paddingLeft: isSmall ? tokens.spacingXs : tokens.spacingS,
 
       paddingRight: hasEndButton
-  ? isSmall
-    ? 0
-    : tokens.spacing2Xs
-  : isSmall
-    ? tokens.spacingXs
-    : tokens.spacingS,
+        ? isSmall
+          ? 0
+          : tokens.spacing2Xs
+        : isSmall
+          ? tokens.spacingXs
+          : tokens.spacingS,
       // TODO: replace with border-radius token when new tokens ship in next major
       borderRadius: '16px',
       minWidth: 0,
       maxWidth: '100%',
       border: isSmall ? 'none' : `1px solid ${border}`,
-  boxShadow: isSmall ? `inset 0 0 0 1px ${border}` : 'none',
+      boxShadow: isSmall ? `inset 0 0 0 1px ${border}` : 'none',
       backgroundColor: background,
       fontFamily: tokens.fontStackPrimary,
       boxSizing: 'border-box',
@@ -82,44 +82,39 @@ export function getPillNextStyles(
       paddingBottom: isSmall ? '2px' : '0',
     }),
     endButton: css({
-  width: tokens.spacingL,
-  height: tokens.spacingL,
-  minWidth: tokens.spacingL,
-  minHeight: tokens.spacingL,
-  boxSizing: 'border-box',
-  padding: isSmall ? '2px' : tokens.spacing2Xs,
-  borderRadius: '50%',
-  marginLeft: isSmall ? tokens.spacing2Xs : tokens.spacingXs,
-  mixBlendMode: 'luminosity',
+      width: tokens.spacingL,
+      height: tokens.spacingL,
+      minWidth: tokens.spacingL,
+      minHeight: tokens.spacingL,
+      boxSizing: 'border-box',
+      padding: isSmall ? '2px' : tokens.spacing2Xs,
+      borderRadius: '50%',
+      marginLeft: isSmall ? tokens.spacing2Xs : tokens.spacingXs,
+      mixBlendMode: 'luminosity',
 
-  ...(isSmall
-    ? {
-        backgroundColor: 'transparent',
-        backgroundClip: 'content-box',
+      ...(isSmall
+        ? {
+            backgroundColor: 'transparent',
+            backgroundClip: 'content-box',
 
-        '&&:hover:not(:disabled)': {
-          backgroundColor: tokens.gray300,
-          backgroundClip: 'content-box',
-        },
+            '&&:hover:not(:disabled)': {
+              backgroundColor: tokens.gray300,
+              backgroundClip: 'content-box',
+            },
 
-        '&&:hover:disabled': {
-          backgroundColor: 'transparent',
-        },
-      }
-    : {
-        '&&:hover:not(:disabled)': {
-          backgroundColor: tokens.gray300,
-        },
+            '&&:hover:disabled': {
+              backgroundColor: 'transparent',
+            },
+          }
+        : {
+            '&&:hover:not(:disabled)': {
+              backgroundColor: tokens.gray300,
+            },
 
-        '&&:hover:disabled': {
-          backgroundColor: 'transparent',
-        },
-      }),
-}),
-
-    small: css ({
-      fontSize: '10px',
-      color: tokens.green700
-    })
+            '&&:hover:disabled': {
+              backgroundColor: 'transparent',
+            },
+          }),
+    }),
   };
 }
