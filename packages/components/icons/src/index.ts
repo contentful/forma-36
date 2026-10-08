@@ -269,6 +269,7 @@ export * from './vendor/phosphor/TextUnderlineIcon.js';
 export * from './vendor/phosphor/TextboxIcon.js';
 export * from './vendor/phosphor/ThumbsDownIcon.js';
 export * from './vendor/phosphor/ThumbsUpIcon.js';
+export * from './vendor/phosphor/ToggleLeftIcon.js';
 export * from './vendor/phosphor/TrafficCone.js';
 export * from './vendor/phosphor/TranslateIcon.js';
 export * from './vendor/phosphor/TrashSimpleIcon.js';
