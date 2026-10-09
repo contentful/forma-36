@@ -9,7 +9,9 @@ typescript: ./ToggleButton.tsx
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-button-togglebutton--basic'
 ---
 
-Toggle something on or off, such as set text to bold or italic.
+Toggle a contextual option or view on or off, such as setting text to bold or
+italic. Use `Button` for actions that change system state and `Switch` for
+persistent settings.
 
 ## Import
 
@@ -34,6 +36,16 @@ Example of simple usage:
 Example of active and disabled toggle buttons:
 
 ```jsx file=../../examples/ToggleButtonStatesExample.tsx
+
+```
+
+### Icon only
+
+Toggle buttons can display only an icon in the `tiny`, `small`, and `medium`
+sizes. Always provide an `aria-label` that describes the toggled state or
+action when no visible label is present.
+
+```jsx file=../../examples/ToggleButtonIconOnlyExample.tsx
 
 ```
 
