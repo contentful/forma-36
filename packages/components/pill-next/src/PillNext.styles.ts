@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
-import type { PillNextVariant } from './PillNext.types';
+import type { PillNextSize, PillNextVariant } from './PillNext.types';
 
 const variantStyles: Record<
   PillNextVariant,
@@ -27,23 +27,35 @@ const variantStyles: Record<
 export function getPillNextStyles(
   variant: PillNextVariant,
   hasEndButton: boolean,
+  size: PillNextSize = 'medium',
 ) {
+  const isSmall = size === 'small';
   const { background, border } = variantStyles[variant];
 
   return {
     pill: css({
       display: 'inline-flex',
       alignItems: 'center',
+      height: 'auto',
+      minHeight: isSmall ? tokens.spacingL : tokens.spacingXl,
+
+      paddingTop: isSmall ? 0 : tokens.spacing2Xs,
+      paddingBottom: isSmall ? 0 : tokens.spacing2Xs,
+      paddingLeft: isSmall ? tokens.spacingXs : tokens.spacingS,
+
+      paddingRight: hasEndButton
+        ? isSmall
+          ? 0
+          : tokens.spacing2Xs
+        : isSmall
+          ? tokens.spacingXs
+          : tokens.spacingS,
       // TODO: replace with border-radius token when new tokens ship in next major
       borderRadius: '16px',
-      minHeight: '32px',
       minWidth: 0,
       maxWidth: '100%',
-      paddingTop: tokens.spacing2Xs,
-      paddingBottom: tokens.spacing2Xs,
-      paddingLeft: tokens.spacingS,
-      paddingRight: hasEndButton ? tokens.spacing2Xs : tokens.spacingS,
-      border: `1px solid ${border}`,
+      border: isSmall ? 'none' : `1px solid ${border}`,
+      boxShadow: isSmall ? `inset 0 0 0 1px ${border}` : 'none',
       backgroundColor: background,
       fontFamily: tokens.fontStackPrimary,
       boxSizing: 'border-box',
@@ -52,35 +64,57 @@ export function getPillNextStyles(
       display: 'inline-flex',
       alignItems: 'center',
       flexShrink: 0,
+      lineHeight: 0,
       marginRight: tokens.spacing2Xs,
     }),
     leadingIcon: css({
       display: 'inline-flex',
       alignItems: 'center',
+      lineHeight: 0,
     }),
     label: css({
-      fontSize: tokens.fontSizeM,
+      fontSize: isSmall ? tokens.fontSizeS : tokens.fontSizeM,
       fontWeight: tokens.fontWeightMedium,
-      lineHeight: tokens.lineHeightM,
+      lineHeight: isSmall ? tokens.lineHeightS : tokens.lineHeightM,
       wordBreak: 'break-word',
+      flex: '1 1 auto',
+      paddingTop: isSmall ? '2px' : '0',
+      paddingBottom: isSmall ? '2px' : '0',
     }),
     endButton: css({
-      '&&': {
-        width: '24px',
-        height: '24px',
-        minHeight: 'auto',
-        minWidth: 'auto',
-        padding: tokens.spacing2Xs,
-        borderRadius: '50%',
-        marginLeft: tokens.spacingXs,
-        mixBlendMode: 'luminosity',
-      },
-      '&&:hover:not(:disabled)': {
-        backgroundColor: tokens.gray300,
-      },
-      '&&:hover:disabled': {
-        backgroundColor: 'transparent',
-      },
+      width: tokens.spacingL,
+      height: tokens.spacingL,
+      minWidth: tokens.spacingL,
+      minHeight: tokens.spacingL,
+      boxSizing: 'border-box',
+      padding: isSmall ? '2px' : tokens.spacing2Xs,
+      borderRadius: '50%',
+      marginLeft: isSmall ? tokens.spacing2Xs : tokens.spacingXs,
+      mixBlendMode: 'luminosity',
+
+      ...(isSmall
+        ? {
+            backgroundColor: 'transparent',
+            backgroundClip: 'content-box',
+
+            '&&:hover:not(:disabled)': {
+              backgroundColor: tokens.gray300,
+              backgroundClip: 'content-box',
+            },
+
+            '&&:hover:disabled': {
+              backgroundColor: 'transparent',
+            },
+          }
+        : {
+            '&&:hover:not(:disabled)': {
+              backgroundColor: tokens.gray300,
+            },
+
+            '&&:hover:disabled': {
+              backgroundColor: 'transparent',
+            },
+          }),
     }),
   };
 }
