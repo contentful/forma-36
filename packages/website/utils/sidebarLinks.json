@@ -478,6 +478,10 @@
   ],
   "guidelinesPatterns": [
     {
+      "title": "Drag and drop",
+      "slug": "/guidelines/protected/draganddrop"
+    },
+    {
       "title": "Toolbar",
       "slug": "/guidelines/protected/toolbar"
     }
