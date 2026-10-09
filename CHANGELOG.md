@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 09-10-2026
+
+**F36 Icons** `v6.24.0`
+
+- Add ToggleLeftIcon from Phosphor with Default/Active variants
+
 ## 06-10-2026
 
 **F36 Icons** `v6.23.0`
