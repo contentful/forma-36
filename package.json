@@ -61,7 +61,7 @@
     "@changesets/cli": "^2.28.1",
     "@changesets/config": "^3.1.1",
     "@changesets/pre": "^2.0.2",
-    "@changesets/read": "^0.6.3",
+    "@changesets/read": "^1.0.0",
     "@chromatic-com/storybook": "^5.2.1",
     "@commitlint/cli": "^21.0.0",
     "@commitlint/config-conventional": "^21.0.0",
