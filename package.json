@@ -119,7 +119,7 @@
     "lint-staged": "^17.0.0",
     "octokit": "^3.0.0",
     "plop": "^4.0.5",
-    "prettier": "3.9.6",
+    "prettier": "3.9.9",
     "pretty-quick": "4.2.2",
     "react": "catalog:",
     "react-dom": "catalog:",
