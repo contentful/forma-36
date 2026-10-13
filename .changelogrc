@@ -1,1 +1,1 @@
-{"**F36 Layout** `v6.25.0`":["- Change prop type of new HeaderInner (alpha) component to accept ReactElements and not only strings for title\n"]}
+{"**F36 Layout** `v6.25.0`":["- Change prop type of new HeaderInner (alpha) component to accept ReactElements and not only strings for title\n"],"**F36 Button** `v6.26.0`":["- Add tiny and icon-only ToggleButton variants.\n"]}

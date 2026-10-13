@@ -1,5 +1,18 @@
 # Change Log
 
+## 6.26.0
+
+### Minor Changes
+
+- [#3696](https://github.com/contentful/forma-36/pull/3696) [`2d6b11b`](https://github.com/contentful/forma-36/commit/2d6b11bed3b05e8eb45e3d7effe6d5363e5d3634) Thanks [@GigiIanni](https://github.com/GigiIanni)! - Add tiny and icon-only ToggleButton variants.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.26.0
+  - @contentful/f36-spinner@6.26.0
+  - @contentful/f36-tooltip@6.26.0
+
 ## 6.25.0
 
 ### Patch Changes
