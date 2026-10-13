@@ -281,15 +281,15 @@ importers:
   packages/cdn:
     dependencies:
       '@fastly/js-compute':
-        specifier: 3.45.1
-        version: 3.45.1(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@5.9.3)
+        specifier: 3.46.0
+        version: 3.46.0(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@5.9.3)
     devDependencies:
       '@fastly/cli':
         specifier: 16.0.0
         version: 16.0.0
       '@fastly/compute-js-static-publish':
         specifier: 6.3.0
-        version: 6.3.0(@fastly/js-compute@3.45.1(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@5.9.3))
+        version: 6.3.0(@fastly/js-compute@3.46.0(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@5.9.3))
     optionalDependencies:
       '@napi-rs/lzma-linux-x64-gnu':
         specifier: ^1.4.5
@@ -3693,8 +3693,8 @@ packages:
     peerDependencies:
       '@fastly/js-compute': ^2.0.0 || ^3.0.0
 
-  '@fastly/js-compute@3.45.1':
-    resolution: {integrity: sha512-/X3rVUAyUqc+wP5a+iBrOokAdBAR35nktFvaVNJnucb5KLqHglzcRKbnURwLUxA5UMzqiYgQCnd+ZHLBW7mEgg==}
+  '@fastly/js-compute@3.46.0':
+    resolution: {integrity: sha512-n0BJotx8OX1ElOwgdUu08sKVrP4QQhCdIaWpodYHKl9bCSPwJIh2Yy/f/loCWcGXGMz8z6Pz7hlXpVdVdiNGdw==}
     hasBin: true
     peerDependencies:
       typescript: '>=5.9'
@@ -14743,13 +14743,13 @@ snapshots:
       '@fastly/cli-win32-x32': 16.0.0
       '@fastly/cli-win32-x64': 16.0.0
 
-  '@fastly/compute-js-static-publish@6.3.0(@fastly/js-compute@3.45.1(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@5.9.3))':
+  '@fastly/compute-js-static-publish@6.3.0(@fastly/js-compute@3.46.0(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@5.9.3))':
     dependencies:
-      '@fastly/js-compute': 3.45.1(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@5.9.3)
+      '@fastly/js-compute': 3.46.0(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@5.9.3)
       command-line-args: 5.2.1
       glob-to-regexp: 0.4.1
 
-  '@fastly/js-compute@3.45.1(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@5.9.3)':
+  '@fastly/js-compute@3.46.0(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@5.9.3)':
     dependencies:
       '@bytecodealliance/jco': 1.15.4
       '@bytecodealliance/weval': 0.3.4(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)
