@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.27.0
+
+### Minor Changes
+
+- [#3709](https://github.com/contentful/forma-36/pull/3709) [`eb87e18`](https://github.com/contentful/forma-36/commit/eb87e1831adedc79d2c031a087a304919db3ba6e) Thanks [@maxcheremisin](https://github.com/maxcheremisin)! - Add CaretDownUpIcon with default and active variants.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.27.0
+  - @contentful/f36-icon@6.27.0
+
 ## 6.26.0
 
 ### Patch Changes
