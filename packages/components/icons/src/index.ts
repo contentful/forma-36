@@ -15,6 +15,7 @@ export * from './custom/BorderRadiusBottomRightIcon.js';
 export * from './custom/BorderRadiusTopLeftIcon.js';
 export * from './custom/BorderRadiusTopRightIcon.js';
 export * from './custom/ButtonIcon.js';
+export * from './custom/CaretDownUpIcon.js';
 export * from './custom/CloudArrowUpDownIcon.js';
 export * from './custom/ColumnsFourIcon.js';
 export * from './custom/ColumnsRailLeftIcon.js';
