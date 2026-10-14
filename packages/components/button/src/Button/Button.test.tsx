@@ -4,6 +4,8 @@ import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 import { EyeIcon } from '@contentful/f36-icons';
 import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
+import { remToPx } from '@/scripts/test/remToPx';
+import tokens from '@contentful/f36-tokens';
 import { Button } from './Button';
 
 describe('Button', function () {
@@ -34,7 +36,7 @@ describe('Button', function () {
     render(<Button size="tiny">Button</Button>);
 
     const button = screen.getByRole('button');
-    expect(button).toHaveStyle({ minHeight: '1.5rem' });
+    expect(button).toHaveStyle({ minHeight: remToPx(tokens.spacingL) });
   });
 
   it('should not dispatch onClick if disabled', async () => {

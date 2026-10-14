@@ -1,5 +1,97 @@
 # Change Log
 
+## 6.27.0
+
+### Patch Changes
+
+- Updated dependencies [[`eb87e18`](https://github.com/contentful/forma-36/commit/eb87e1831adedc79d2c031a087a304919db3ba6e)]:
+  - @contentful/f36-icons@6.27.0
+  - @contentful/f36-core@6.27.0
+  - @contentful/f36-icon@6.27.0
+  - @contentful/f36-typography@6.27.0
+
+## 6.26.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.26.0
+  - @contentful/f36-icon@6.26.0
+  - @contentful/f36-icons@6.26.0
+  - @contentful/f36-typography@6.26.0
+
+## 6.25.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.25.0
+  - @contentful/f36-icon@6.25.0
+  - @contentful/f36-icons@6.25.0
+  - @contentful/f36-typography@6.25.0
+
+## 6.24.0
+
+### Patch Changes
+
+- Updated dependencies [[`3041221`](https://github.com/contentful/forma-36/commit/3041221625f6748f2c07fc0f8c12170cb900d1f0)]:
+  - @contentful/f36-icons@6.24.0
+  - @contentful/f36-core@6.24.0
+  - @contentful/f36-icon@6.24.0
+  - @contentful/f36-typography@6.24.0
+
+## 6.23.0
+
+### Patch Changes
+
+- Updated dependencies [[`d076fa6`](https://github.com/contentful/forma-36/commit/d076fa666d0c0fa3107e7368233c70f3c2f052ec)]:
+  - @contentful/f36-icons@6.23.0
+  - @contentful/f36-core@6.23.0
+  - @contentful/f36-icon@6.23.0
+  - @contentful/f36-typography@6.23.0
+
+## 6.22.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.22.1
+  - @contentful/f36-icon@6.22.1
+  - @contentful/f36-icons@6.22.1
+  - @contentful/f36-typography@6.22.1
+
+## 6.22.0
+
+### Patch Changes
+
+- Updated dependencies [[`e3d8c90`](https://github.com/contentful/forma-36/commit/e3d8c9090e8b28f6936f3d72c565323e31cd742c)]:
+  - @contentful/f36-icons@6.22.0
+  - @contentful/f36-core@6.22.0
+  - @contentful/f36-icon@6.22.0
+  - @contentful/f36-typography@6.22.0
+
+## 6.21.0
+
+### Patch Changes
+
+- Updated dependencies [[`d8a06fb`](https://github.com/contentful/forma-36/commit/d8a06fb17dadf123da24ad260058848d7060a15c)]:
+  - @contentful/f36-icons@6.21.0
+  - @contentful/f36-core@6.21.0
+  - @contentful/f36-icon@6.21.0
+  - @contentful/f36-typography@6.21.0
+
+## 6.20.2
+
+### Patch Changes
+
+- [#3672](https://github.com/contentful/forma-36/pull/3672) [`2f7ad43`](https://github.com/contentful/forma-36/commit/2f7ad430fbb6a2cae090a090be568b44b3f0d8e1) Thanks [@veu](https://github.com/veu)! - chore: replace tsup build with tsdown build
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.20.2
+  - @contentful/f36-icon@6.20.2
+  - @contentful/f36-icons@6.20.2
+  - @contentful/f36-typography@6.20.2
+
 ## 6.20.1
 
 ### Patch Changes

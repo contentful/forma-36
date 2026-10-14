@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { isValidElement } from 'react';
 import {
   DisplayText,
   Subheading,
@@ -27,9 +27,15 @@ export function HeaderTitle({
     variant === 'breadcrumb' || size === 'medium' ? Subheading : DisplayText;
 
   return (
-    <Element as={as} className={styles.title}>
-      {title}
-    </Element>
+    <>
+      {isValidElement(title) ? (
+        title
+      ) : (
+        <Element as={as} className={styles.title}>
+          {title}
+        </Element>
+      )}
+    </>
   );
 }
 

@@ -105,6 +105,25 @@ describe('AIChatReasoning', () => {
     expect(collapseContainer).toHaveAttribute('aria-hidden', 'false');
   });
 
+  it('preserves existing content when children change', () => {
+    const { rerender } = render(
+      <AIChatReasoning isExpanded>
+        <span data-test-id="existing-content">Existing content</span>
+      </AIChatReasoning>,
+    );
+    const existingContent = screen.getByTestId('existing-content');
+
+    rerender(
+      <AIChatReasoning isExpanded>
+        <span data-test-id="existing-content">Existing content</span>
+        <span>New content</span>
+      </AIChatReasoning>,
+    );
+
+    expect(screen.getByTestId('existing-content')).toBe(existingContent);
+    expect(screen.getByText('New content')).toBeInTheDocument();
+  });
+
   it('has proper accessibility attributes', () => {
     render(
       <AIChatReasoning>

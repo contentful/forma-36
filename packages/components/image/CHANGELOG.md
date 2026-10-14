@@ -1,5 +1,79 @@
 # Change Log
 
+## 6.27.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.27.0
+  - @contentful/f36-skeleton@6.27.0
+
+## 6.26.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.26.0
+  - @contentful/f36-skeleton@6.26.0
+
+## 6.25.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.25.0
+  - @contentful/f36-skeleton@6.25.0
+
+## 6.24.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.24.0
+  - @contentful/f36-skeleton@6.24.0
+
+## 6.23.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.23.0
+  - @contentful/f36-skeleton@6.23.0
+
+## 6.22.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.22.1
+  - @contentful/f36-skeleton@6.22.1
+
+## 6.22.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.22.0
+  - @contentful/f36-skeleton@6.22.0
+
+## 6.21.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.21.0
+  - @contentful/f36-skeleton@6.21.0
+
+## 6.20.2
+
+### Patch Changes
+
+- [#3672](https://github.com/contentful/forma-36/pull/3672) [`2f7ad43`](https://github.com/contentful/forma-36/commit/2f7ad430fbb6a2cae090a090be568b44b3f0d8e1) Thanks [@veu](https://github.com/veu)! - chore: replace tsup build with tsdown build
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.20.2
+  - @contentful/f36-skeleton@6.20.2
+
 ## 6.20.1
 
 ### Patch Changes

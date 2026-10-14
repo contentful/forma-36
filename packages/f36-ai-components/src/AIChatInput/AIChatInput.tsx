@@ -1,5 +1,5 @@
 import { Box, Flex, type CommonProps } from '@contentful/f36-core';
-import { InputGroup } from '@contentful/f36-forms/src/TextInput/input-group/InputGroup';
+import { TextInput } from '@contentful/f36-forms';
 import { type Editor, useEditor } from '@tiptap/react';
 import React, { useRef } from 'react';
 import { getStyles } from './AIChatInput.styles';
@@ -102,12 +102,12 @@ function AIChatInputBase(
           alignItems="end"
           className={styles.inputActionsContainer}
         >
-          <InputGroup
+          <TextInput.Group
             spacing="spacing2Xs"
             testId={`${testId}-input-tool-group`}
           >
             {promptInputTools}
-          </InputGroup>
+          </TextInput.Group>
           <Flex alignItems="bottom" className={styles.inputActions}>
             <AIChatSubmitButton
               testId={testId}

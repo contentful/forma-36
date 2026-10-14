@@ -1,5 +1,77 @@
 # @contentful/f36-usage-count
 
+## 6.27.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.27.0
+  - @contentful/f36-typography@6.27.0
+
+## 6.26.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.26.0
+  - @contentful/f36-typography@6.26.0
+
+## 6.25.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.25.0
+  - @contentful/f36-typography@6.25.0
+
+## 6.24.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.24.0
+  - @contentful/f36-typography@6.24.0
+
+## 6.23.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.23.0
+  - @contentful/f36-typography@6.23.0
+
+## 6.22.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.22.1
+  - @contentful/f36-typography@6.22.1
+
+## 6.22.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.22.0
+  - @contentful/f36-typography@6.22.0
+
+## 6.21.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.21.0
+  - @contentful/f36-typography@6.21.0
+
+## 6.20.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.20.2
+  - @contentful/f36-typography@6.20.2
+
 ## 6.20.1
 
 ### Patch Changes

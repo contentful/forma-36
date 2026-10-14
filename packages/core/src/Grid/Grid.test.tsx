@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
 import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
+import { remToPx } from '@/scripts/test/remToPx';
+import tokens from '@contentful/f36-tokens';
 
 import { Grid } from './Grid';
 
@@ -33,7 +35,9 @@ describe('Grid', () => {
     it('columnGap should be 1rem by default', () => {
       const { getByText } = render(<Grid>Grid</Grid>);
 
-      expect(getByText('Grid')).toHaveStyle({ columnGap: '1rem' });
+      expect(getByText('Grid')).toHaveStyle({
+        columnGap: remToPx(tokens.spacingM),
+      });
     });
 
     it('should have correct numbers of columns', () => {

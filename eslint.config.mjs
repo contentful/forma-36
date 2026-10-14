@@ -23,7 +23,7 @@ export default [
       '*.css.d.ts',
       'public/**',
       '.cache/**',
-      '**/tsup.config.ts',
+      '**/tsdown.config.mts',
       '**/__testfixtures__',
       '**/.next/**',
       '**/.turbo/**',

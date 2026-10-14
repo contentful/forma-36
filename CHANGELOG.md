@@ -8,6 +8,150 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 14-10-2026
+
+**F36 Layout** `v6.25.0`
+
+- Change prop type of new HeaderInner (alpha) component to accept ReactElements and not only strings for title
+
+**F36 Button** `v6.26.0`
+
+- Add tiny and icon-only ToggleButton variants.
+
+## 09-10-2026
+
+**F36 Icons** `v6.24.0`
+
+- Add ToggleLeftIcon from Phosphor with Default/Active variants
+
+## 06-10-2026
+
+**F36 Icons** `v6.23.0`
+
+- Add SignpostIcon from Phosphor with Default/Active variants
+
+## 19-09-2026
+
+**F36 List** `v6.22.1`
+
+- feat: 🎸 add ref prop to ListItem
+
+## 11-09-2026
+
+**F36 Icons** `v6.21.0`
+
+- Add LayoutIcon and RulerIcon from Phosphor
+
+**F36 Icons** `v6.22.0`
+
+- Add ScalpelRectangleDashedIcon and SlotIcon custom icons
+
+## 10-09-2026
+
+**F36 Accordion** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Asset** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Autocomplete** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Avatar** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Badge** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Button** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Card** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Collapse** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Copybutton** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Datepicker** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Datetime** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Drag Handle** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Empty State** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Entity List** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Forms** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Header** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Image** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Layout** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 List** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Menu** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Modal** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Multiselect** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Navbar** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Navlist** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Note** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
+**F36 Notification** `v6.20.2`
+
+- chore: replace tsup build with tsdown build
+
 ## 27-08-2026
 
 **F36 Navbar** `v6.20.1`

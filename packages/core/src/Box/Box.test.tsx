@@ -3,6 +3,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import tokens from '@contentful/f36-tokens';
+import { remToPx } from '@/scripts/test/remToPx';
 
 import { Box } from './Box';
 
@@ -33,8 +34,8 @@ describe('Box', () => {
       );
 
       expect(container.firstChild).toHaveStyle({
-        marginLeft: tokens.spacingXl,
-        paddingRight: tokens.spacingXs,
+        marginLeft: remToPx(tokens.spacingXl),
+        paddingRight: remToPx(tokens.spacingXs),
       });
     });
 
@@ -54,8 +55,8 @@ describe('Box', () => {
       expect(box.nodeName).toMatch(/a/i);
       expect(box).toHaveAttribute('href', 'https://contentful.com');
       expect(box).toHaveStyle({
-        padding: tokens.spacingM,
-        marginBottom: tokens.spacing3Xl,
+        padding: remToPx(tokens.spacingM),
+        marginBottom: remToPx(tokens.spacing3Xl),
       });
     });
   });

@@ -3,6 +3,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import tokens from '@contentful/f36-tokens';
+import { remToPx } from '@/scripts/test/remToPx';
 
 import { Flex } from './Flex';
 
@@ -46,7 +47,7 @@ describe('Flex', () => {
       const { getByText } = render(<Flex marginRight="spacingXs">Flex</Flex>);
 
       expect(getByText('Flex')).toHaveStyle({
-        marginRight: tokens.spacingXs,
+        marginRight: remToPx(tokens.spacingXs),
       });
     });
 
@@ -54,7 +55,7 @@ describe('Flex', () => {
       const { getByText } = render(<Flex paddingRight="spacingXs">Flex</Flex>);
 
       expect(getByText('Flex')).toHaveStyle({
-        paddingRight: tokens.spacingXs,
+        paddingRight: remToPx(tokens.spacingXs),
       });
     });
   });

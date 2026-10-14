@@ -1,5 +1,97 @@
 # Change Log
 
+## 6.27.0
+
+### Minor Changes
+
+- [#3709](https://github.com/contentful/forma-36/pull/3709) [`eb87e18`](https://github.com/contentful/forma-36/commit/eb87e1831adedc79d2c031a087a304919db3ba6e) Thanks [@maxcheremisin](https://github.com/maxcheremisin)! - Add CaretDownUpIcon with default and active variants.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.27.0
+  - @contentful/f36-icon@6.27.0
+
+## 6.26.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.26.0
+  - @contentful/f36-icon@6.26.0
+
+## 6.25.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.25.0
+  - @contentful/f36-icon@6.25.0
+
+## 6.24.0
+
+### Minor Changes
+
+- [#3702](https://github.com/contentful/forma-36/pull/3702) [`3041221`](https://github.com/contentful/forma-36/commit/3041221625f6748f2c07fc0f8c12170cb900d1f0) Thanks [@marcmll](https://github.com/marcmll)! - Add ToggleLeftIcon from Phosphor with Default/Active variants
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.24.0
+  - @contentful/f36-icon@6.24.0
+
+## 6.23.0
+
+### Minor Changes
+
+- [#3700](https://github.com/contentful/forma-36/pull/3700) [`d076fa6`](https://github.com/contentful/forma-36/commit/d076fa666d0c0fa3107e7368233c70f3c2f052ec) Thanks [@toniwowtscherk](https://github.com/toniwowtscherk)! - Add SignpostIcon from Phosphor with Default/Active variants
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.23.0
+  - @contentful/f36-icon@6.23.0
+
+## 6.22.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.22.1
+  - @contentful/f36-icon@6.22.1
+
+## 6.22.0
+
+### Minor Changes
+
+- [#3677](https://github.com/contentful/forma-36/pull/3677) [`e3d8c90`](https://github.com/contentful/forma-36/commit/e3d8c9090e8b28f6936f3d72c565323e31cd742c) Thanks [@damann](https://github.com/damann)! - Add ScalpelRectangleDashedIcon and SlotIcon custom icons
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.22.0
+  - @contentful/f36-icon@6.22.0
+
+## 6.21.0
+
+### Minor Changes
+
+- [#3676](https://github.com/contentful/forma-36/pull/3676) [`d8a06fb`](https://github.com/contentful/forma-36/commit/d8a06fb17dadf123da24ad260058848d7060a15c) Thanks [@damann](https://github.com/damann)! - Add LayoutIcon and RulerIcon from Phosphor
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.21.0
+  - @contentful/f36-icon@6.21.0
+
+## 6.20.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.20.2
+  - @contentful/f36-icon@6.20.2
+
 ## 6.20.1
 
 ### Patch Changes
