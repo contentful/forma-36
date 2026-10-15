@@ -1,4 +1,4 @@
-import slugger from 'github-slugger';
+import { slug } from 'github-slugger';
 
 export interface HeadingType {
   level: 'h2' | 'h3';
@@ -17,7 +17,7 @@ export function getToCFromMdx(mdxContent: string) {
     tableOfContents = headings.map((heading) => {
       const headingText = heading[2].trim();
       const headingType = heading[1].trim() === '##' ? 'h2' : 'h3';
-      const headingLink = slugger.slug(headingText, false);
+      const headingLink = slug(headingText, false);
 
       return {
         text: headingText,
@@ -44,7 +44,7 @@ export function getToCFromContentful(content: ContentfulNode[]) {
     tableOfContents = headings.map((heading) => {
       const headingType = heading.nodeType === 'heading-2' ? 'h2' : 'h3';
       const headingText = heading.content[0].value;
-      const headingLink = slugger.slug(headingText, false);
+      const headingLink = slug(headingText, false);
 
       return {
         text: headingText,
