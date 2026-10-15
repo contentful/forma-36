@@ -1,5 +1,4 @@
 import React from 'react';
-import copy from 'copy-to-clipboard';
 import { css, cx } from '@emotion/css';
 import { UnstyledOpenInCodeSandboxButton } from '@codesandbox/sandpack-react';
 import tokens from '@contentful/f36-tokens';
@@ -76,8 +75,13 @@ export function PlaygroundTopBar() {
 function UrlCopyButton({ url }) {
   const [copied, setCopied] = React.useState(false);
 
-  const handleOnCopy = () => {
-    copy(url);
+  const handleOnCopy = async () => {
+    const didCopy = await copyToClipboard(url);
+
+    if (!didCopy) {
+      return;
+    }
+
     setCopied(true);
 
     setTimeout(() => {
@@ -103,4 +107,28 @@ function UrlCopyButton({ url }) {
       </Flex>
     </Tooltip>
   );
+}
+
+async function copyToClipboard(value: string): Promise<boolean> {
+  try {
+    await window.navigator.clipboard.writeText(value);
+    return true;
+  } catch {
+    // Fall back to execCommand when the async clipboard API is unavailable.
+  }
+
+  const input = document.createElement('input');
+  input.value = value;
+  input.style.display = 'none';
+  document.body.appendChild(input);
+  input.focus();
+  input.select();
+
+  try {
+    return document.execCommand('copy');
+  } catch {
+    return false;
+  } finally {
+    input.remove();
+  }
 }
