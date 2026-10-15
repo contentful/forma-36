@@ -693,6 +693,9 @@ importers:
 
   packages/components/empty-state:
     dependencies:
+      '@contentful/f36-core':
+        specifier: ^6.27.0
+        version: link:../../core
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
