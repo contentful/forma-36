@@ -44,7 +44,10 @@
         "scripts/plop-templates/**/*.js",
         "scripts/test/*.{js,ts}"
       ],
-      "ignoreUnresolved": ["^\\.\\./\\.\\./utils(?:/config)?$"]
+      "ignoreUnresolved": [
+        "^\\.\\./\\.\\./utils(?:/config)?$",
+        "^\\*$"
+      ]
     },
     "packages/components/*": {
       "entry": [
