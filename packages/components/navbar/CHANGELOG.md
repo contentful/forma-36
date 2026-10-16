@@ -1,5 +1,20 @@
 # @contentful/f36-navbar
 
+## 6.27.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-avatar@6.27.1
+  - @contentful/f36-button@6.27.1
+  - @contentful/f36-core@6.27.1
+  - @contentful/f36-icon@6.27.1
+  - @contentful/f36-icons@6.27.1
+  - @contentful/f36-menu@6.27.1
+  - @contentful/f36-skeleton@6.27.1
+  - @contentful/f36-tooltip@6.27.1
+  - @contentful/f36-typography@6.27.1
+
 ## 6.27.0
 
 ### Patch Changes

@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 15-10-2026
+
+**F36 Icons** `v6.27.0`
+
+- Add CaretDownUpIcon with default and active variants.
+
 ## 14-10-2026
 
 **F36 Layout** `v6.25.0`
