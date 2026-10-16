@@ -9,6 +9,9 @@ export function getModalHeaderStyles() {
       borderRadius: `${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium} 0 0`,
       borderBottom: `1px solid ${tokens.gray200}`,
     }),
+    title: css({
+      display: 'inline',
+    }),
     buttonContainer: css({
       position: 'relative',
       width: tokens.spacing2Xl,

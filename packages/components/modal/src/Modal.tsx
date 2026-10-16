@@ -36,7 +36,7 @@ export interface ModalProps extends CommonProps {
   /**
    * Additional aria attributes
    */
-  aria?: ReactModal.Props['aria'];
+  aria?: ReactModal.Props['aria'] & { label?: string };
 
   /**
    * Boolean indicating if clicking the overlay should close the overlay.
@@ -85,7 +85,9 @@ export interface ModalProps extends CommonProps {
   /**
    * Optional props to override ModalHeader behaviour
    */
-  modalHeaderProps?: Partial<ModalHeaderProps>;
+  modalHeaderProps?: Partial<
+    Omit<ModalHeaderProps, 'setTitleId' | 'setSubtitleId'>
+  >;
 
   /**
    * Optional props to override ModalContent behaviour
@@ -100,7 +102,10 @@ export interface ModalProps extends CommonProps {
   children: React.ReactNode | RenderModal;
 }
 
-type RenderModal = (modalProps: ModalProps) => React.ReactNode;
+type RenderModal = (
+  modalProps: ModalProps,
+  headerProps: Pick<ModalHeaderProps, 'setTitleId' | 'setSubtitleId'>,
+) => React.ReactNode;
 
 function focusFirstWithinNode(node: HTMLElement) {
   if (node && node.querySelectorAll) {
@@ -124,10 +129,12 @@ export const Modal = ({
   size = 'medium',
   testId = 'cf-ui-modal',
   topOffset = '50px',
-  aria,
+  aria: ariaProp,
   ...otherProps
 }: ExpandProps<ModalProps>) => {
   const contentRef = React.useRef<HTMLDivElement>(null);
+  const [titleId, setTitleId] = React.useState<string>(undefined);
+  const [subtitleId, setSubtitleId] = React.useState<string>(undefined);
 
   const props = {
     ...otherProps,
@@ -184,6 +191,8 @@ export const Modal = ({
             subtitle={otherProps.subtitle}
             onClose={props.onClose}
             {...otherProps.modalHeaderProps}
+            setTitleId={setTitleId}
+            setSubtitleId={setSubtitleId}
           />
         )}
         <ModalContent {...otherProps.modalContentProps}>
@@ -194,6 +203,18 @@ export const Modal = ({
       </>
     );
   };
+
+  const aria = React.useMemo<ReactModal.Props['aria']>(() => {
+    if (ariaProp?.labelledby || ariaProp?.label) {
+      return ariaProp;
+    }
+
+    return {
+      ...ariaProp,
+      labelledby: titleId,
+      describedby: ariaProp?.describedby ?? subtitleId,
+    };
+  }, [ariaProp, titleId, subtitleId]);
 
   return (
     <ReactModal
@@ -237,7 +258,7 @@ export const Modal = ({
         data-modal-root
       >
         {typeof otherProps.children === 'function'
-          ? otherProps.children(props)
+          ? otherProps.children(props, { setTitleId, setSubtitleId })
           : renderDefault()}
       </Box>
     </ReactModal>
