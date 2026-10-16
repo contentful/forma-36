@@ -1,7 +1,7 @@
 import path from 'node:path';
 import fs from 'node:fs';
 import chalk from 'chalk';
-import { execa } from 'execa';
+import { execaSync } from 'execa';
 import semverSatisfies from 'semver/functions/satisfies.js';
 import { readPackageUpSync } from 'read-package-up';
 import inquirer from 'inquirer';
@@ -33,6 +33,26 @@ const getCmd = (pkgManager, cmd, pkgs) => {
     },
   };
   return pkgs.length > 0 ? cmds[pkgManager][cmd] : '';
+};
+
+/**
+ * @param {string} pkgManager - name of package managers. eg. yarn, npm.
+ * @param {'install'|'uninstall'} cmd - what should the command do, install or uninstall package.
+ * @param {string[]} pkgs - list of package names to be installed or removed.
+ * @returns {[string, string[]]} executable and arguments to run.
+ */
+const getCommand = (pkgManager, cmd, pkgs) => {
+  const commands = {
+    npm: {
+      install: ['npm', ['install', '-S', ...pkgs]],
+      uninstall: ['npm', ['uninstall', ...pkgs]],
+    },
+    yarn: {
+      install: ['yarn', ['add', ...pkgs]],
+      uninstall: ['yarn', ['remove', ...pkgs]],
+    },
+  };
+  return commands[pkgManager][cmd];
 };
 
 /**
@@ -140,16 +160,23 @@ export default async function updateDependencies(targetDir) {
     ])
     .then((answers) => {
       if (answers.packages) {
-        const cmd = [
-          getCmd(pkgManager, 'uninstall', removePackages),
-          getCmd(pkgManager, 'install', newPackages),
-        ]
-          .filter((c) => c.trim())
-          .join(' && ');
+        const commands = [
+          ['uninstall', removePackages],
+          ['install', newPackages],
+        ].filter(([, packagesToChange]) => packagesToChange.length > 0);
 
-        console.log(`Executing command: ${cmd} on ${cwd}`);
-        const { stdout } = execa.commandSync(cmd, { shell: true, cwd: cwd });
-        console.log(stdout);
+        commands.forEach(([commandType, packagesToChange]) => {
+          const [command, args] = getCommand(
+            pkgManager,
+            commandType,
+            packagesToChange,
+          );
+          console.log(
+            `Executing command: ${[command, ...args].join(' ')} on ${cwd}`,
+          );
+          const { stdout } = execaSync(command, args, { cwd });
+          console.log(stdout);
+        });
         return;
       }
       return getOutput({ newPackages, removePackages, pkgManager });

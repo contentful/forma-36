@@ -86,7 +86,6 @@ function runTransform({ files, flags, parser, transformer }) {
 
   const result = execaSync(jscodeshiftExecutable, args, {
     stdio: 'inherit',
-    stripEof: false,
   });
 
   if (result.error) {

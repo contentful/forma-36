@@ -9,6 +9,8 @@ Run this command to start an interactive wizard and then run the specified trans
 
 `npx @contentful/f36-codemod <path> [...options]`
 
+Node.js 22 or newer is required.
+
 - use the `--dry` option for a dry-run and use `--print` to print the output for comparison
 
 ### Running locally
