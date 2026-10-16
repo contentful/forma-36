@@ -6,16 +6,6 @@ import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { ModalConfirm } from './ModalConfirm';
 
-vi.mock('react-modal', () => ({
-  default: function ReactModalMock({
-    children,
-  }: {
-    children: React.ReactNode;
-  }) {
-    return <div className="react-modal">{children}</div>;
-  },
-}));
-
 it('has no a11y issues', async () => {
   const { container } = render(
     <ModalConfirm isShown onConfirm={() => {}} onCancel={() => {}}>
@@ -38,4 +28,43 @@ it('renders a `x` icon to close/dismiss the modal', async () => {
   fireEvent.click(closeButton);
 
   expect(closeButtonSpy).toHaveBeenCalledTimes(1);
+});
+
+it('should derive accessible name automatically from title element', async () => {
+  render(
+    <ModalConfirm
+      title="Modal title"
+      isShown
+      onConfirm={() => {}}
+      onCancel={() => {}}
+    >
+      ModalConfirm
+    </ModalConfirm>,
+  );
+  const titleId = screen.getByText('Modal title').getAttribute('id');
+  expect(screen.getByRole('dialog')).toHaveAttribute(
+    'aria-labelledby',
+    titleId,
+  );
+  expect(screen.getByRole('dialog')).not.toHaveAttribute('aria-label');
+});
+
+it('should derive accessible description automatically from subtitle element', async () => {
+  render(
+    <ModalConfirm
+      title="Modal title"
+      modalHeaderProps={{ subtitle: 'Modal subtitle' }}
+      isShown
+      onConfirm={() => {}}
+      onCancel={() => {}}
+    >
+      ModalConfirm
+    </ModalConfirm>,
+  );
+  const subtitleId = screen.getByText('Modal subtitle').getAttribute('id');
+  expect(screen.getByRole('dialog')).toHaveAttribute(
+    'aria-describedby',
+    subtitleId,
+  );
+  expect(screen.getByRole('dialog')).not.toHaveAttribute('aria-label');
 });

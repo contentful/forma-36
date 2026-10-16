@@ -117,15 +117,22 @@ export const ControllerModal: StoryObj<ModalProps> = (props) => {
         onClose={() => setShown(false)}
         initialFocusRef={confirmRef}
       >
-        {({
-          title,
-          onClose,
-        }: {
-          title: string;
-          onClose: MouseEventHandler;
-        }) => (
+        {(
+          {
+            title,
+            onClose,
+          }: {
+            title: string;
+            onClose: MouseEventHandler;
+          },
+          { setTitleId },
+        ) => (
           <React.Fragment>
-            <Modal.Header title={title} onClose={onClose} />
+            <Modal.Header
+              title={title}
+              setTitleId={setTitleId}
+              onClose={onClose}
+            />
             <Modal.Content>Hello from controlled modal window</Modal.Content>
             <Modal.Controls>
               <Button size="small" onClick={onClose} variant="secondary">
@@ -163,9 +170,13 @@ export const ModalWithChildComponentInHeader: StoryFn<ModalProps> = (props) => {
         onClose={() => setShown(false)}
         size="fullWidth"
       >
-        {({ onClose }) => (
+        {({ onClose }, { setTitleId }) => (
           <>
-            <Modal.Header title="With Child Component" onClose={onClose}>
+            <Modal.Header
+              title="With Child Component"
+              onClose={onClose}
+              setTitleId={setTitleId}
+            >
               <Badge>Child Component</Badge>
             </Modal.Header>
             <Modal.Content>Modal content</Modal.Content>

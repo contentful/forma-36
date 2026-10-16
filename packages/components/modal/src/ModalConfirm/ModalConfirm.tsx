@@ -149,12 +149,14 @@ export const ModalConfirm = ({
       allowHeightOverflow={allowHeightOverflow}
       initialFocusRef={cancelRef}
     >
-      {() => {
+      {(_, { setTitleId, setSubtitleId }) => {
         return (
           <React.Fragment>
             <Modal.Header
               title={title || ''}
               {...modalHeaderProps}
+              setTitleId={setTitleId}
+              setSubtitleId={setSubtitleId}
               onClose={onCancel}
             />
             <Modal.Content {...modalContentProps}>{children}</Modal.Content>

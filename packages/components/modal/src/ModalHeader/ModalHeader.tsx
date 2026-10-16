@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactModal from 'react-modal';
 import { cx } from '@emotion/css';
 import { XIcon } from '@contentful/f36-icons';
 import {
   Flex,
+  useId,
   type PropsWithHTMLElement,
   type CommonProps,
 } from '@contentful/f36-core';
@@ -15,6 +16,8 @@ import { getModalHeaderStyles } from './ModalHeader.styles';
 interface ModalHeaderInternalProps extends CommonProps {
   title: string;
   subtitle?: string;
+  setTitleId?: (titleId: string) => void;
+  setSubtitleId?: (subtitleId: string) => void;
   onClose?: ReactModal.Props['onRequestClose'];
   children?: React.ReactNode;
   aria?: {
@@ -31,6 +34,8 @@ export const ModalHeader = ({
   onClose,
   title,
   subtitle,
+  setTitleId,
+  setSubtitleId,
   testId = 'cf-ui-modal-header',
   className,
   children,
@@ -40,6 +45,22 @@ export const ModalHeader = ({
   ...otherProps
 }: ModalHeaderProps): React.ReactElement => {
   const styles = getModalHeaderStyles();
+  const titleId = useId(undefined, 'title');
+  const subtitleId = useId(undefined, 'subtitle');
+
+  useEffect(() => {
+    setTitleId?.(titleId);
+    return () => {
+      setTitleId?.(undefined);
+    };
+  }, [titleId, setTitleId]);
+
+  useEffect(() => {
+    setSubtitleId?.(subtitle && subtitleId);
+    return () => {
+      setSubtitleId?.(undefined);
+    };
+  }, [subtitle, subtitleId, setSubtitleId]);
 
   return (
     <Flex
@@ -49,14 +70,27 @@ export const ModalHeader = ({
       alignItems="center"
       justifyContent="space-between"
     >
-      <Subheading as="h2" isTruncated marginBottom="none">
-        {title}
+      <Text as="hgroup" isTruncated>
+        <Subheading
+          as="h2"
+          marginBottom="none"
+          id={titleId}
+          className={styles.title}
+        >
+          {title}
+        </Subheading>
         {subtitle && (
-          <Text marginLeft="spacingXs" fontColor="gray700">
+          <Text
+            marginLeft="spacingXs"
+            fontColor="gray700"
+            as="p"
+            id={subtitleId}
+            className={styles.title}
+          >
             {subtitle}
           </Text>
         )}
-      </Subheading>
+      </Text>
       {children}
       {onClose && (
         <Flex alignItems="center" className={styles.buttonContainer}>
