@@ -5,7 +5,6 @@
     "target": "ES2022",
     "lib": ["dom", "dom.iterable", "esnext"],
     "strict": false,
-    "types": ["*"],
     // uses React's automatic JSX runtime in tsx files
     "jsx": "react-jsx",
     // Eventually turn off, one we have no more assumed default exports.
