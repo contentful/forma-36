@@ -11,9 +11,13 @@ import {
   type WithEnhancedContent,
 } from '@contentful/f36-tooltip';
 import { IconButton } from '@contentful/f36-button';
-import { WarningIcon, WarningOctagonIcon } from '@contentful/f36-icons';
+import {
+  WarningIcon,
+  WarningOctagonIcon,
+  type IconSize,
+} from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
-import type { PillNextVariant } from './PillNext.types';
+import type { PillNextVariant, PillNextSize } from './PillNext.types';
 import { getPillNextStyles } from './PillNext.styles';
 
 export type PillNextInternalProps = CommonProps & {
@@ -36,6 +40,8 @@ export type PillNextInternalProps = CommonProps & {
   actionButtonLabel?: string;
   /** Additional className applied to the action button. */
   actionButtonClassName?: string;
+  /** Determines the render size of the pill */
+  size?: PillNextSize;
 };
 
 export type PillNextProps = PropsWithHTMLElement<PillNextInternalProps, 'div'>;
@@ -43,7 +49,7 @@ export type PillNextProps = PropsWithHTMLElement<PillNextInternalProps, 'div'>;
 const leadingIcons: Partial<
   Record<
     PillNextVariant,
-    React.ComponentType<{ color?: string; size?: string }>
+    React.ComponentType<{ color?: string; size?: IconSize }>
   >
 > = {
   warning: WarningIcon,
@@ -68,14 +74,15 @@ export const PillNext = React.forwardRef<
     children,
     actionIcon,
     onAction,
-    actionButtonLabel,
     actionButtonClassName,
     testId = 'cf-ui-pill-next',
     className,
+    size = 'medium',
+    actionButtonLabel = 'Action',
     ...otherProps
   } = props;
 
-  const styles = getPillNextStyles(variant, Boolean(actionIcon));
+  const styles = getPillNextStyles(variant, Boolean(actionIcon), size);
 
   const LeadingIcon = leadingIcons[variant];
   const iconColor = leadingIconColors[variant];
@@ -87,7 +94,10 @@ export const PillNext = React.forwardRef<
       role={tooltipContent ? 'img' : undefined}
       aria-label={tooltipContent || undefined}
     >
-      <LeadingIcon color={iconColor} size="small" />
+      <LeadingIcon
+        color={iconColor}
+        size={size === 'small' ? 'tiny' : 'small'}
+      />
     </span>
   ) : null;
 
