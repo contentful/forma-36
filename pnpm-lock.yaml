@@ -1972,8 +1972,8 @@ importers:
         specifier: ^3.2.1
         version: 3.2.2(react@19.3.0)
       '@docsearch/css':
-        specifier: ^4.6.0
-        version: 4.6.0
+        specifier: ^5.0.0
+        version: 5.1.1
       '@docsearch/react':
         specifier: ^4.6.0
         version: 4.6.0(@types/react@19.2.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -3145,6 +3145,9 @@ packages:
 
   '@docsearch/css@4.6.0':
     resolution: {integrity: sha512-YlcAimkXclvqta47g47efzCM5CFxDwv2ClkDfEs/fC/Ak0OxPH2b3czwa4o8O1TRBf+ujFF2RiUwszz2fPVNJQ==}
+
+  '@docsearch/css@5.1.1':
+    resolution: {integrity: sha512-+sPTcGV9QVTB7m9KRl2uym1lY3N3lwV2Y4KRttdZF7MPrS3Wd/Dkp5LarZTk81IpqF3hXxxyxhkl5vwQZGuGUQ==}
 
   '@docsearch/react@4.6.0':
     resolution: {integrity: sha512-j8H5B4ArGxBPBWvw3X0J0Rm/Pjv2JDa2rV5OE0DLTp5oiBCptIJ/YlNOhZxuzbO2nwge+o3Z52nJRi3hryK9cA==}
@@ -10045,13 +10048,13 @@ packages:
     resolution: {integrity: sha512-4a+OsYv9UktOJKE+l1A4OufDgdRF9PifWj+tJnHURo/P+WOxpG4GzUFL9qCalmWauao6ogiG+QvnCovwPoyAWA==}
     engines: {node: '>=12.20.0'}
 
-  octokit@5.0.5:
-    resolution: {integrity: sha512-4+/OFSqOjoyULo7eN7EA97DE0Xydj/PW5aIckxqQIoFjFwqXKuFCvXUJObyJfBF9Khu4RL/jlDRI9FPaMGfPnw==}
-    engines: {node: '>= 20'}
-
   obug@3.0.0:
     resolution: {integrity: sha512-5vvB5+W7ePv+p3uqxi+RcW1XAzLW0/hxt3/4X4Lc4qHudzOhmBiBwOY6DRob4WnanAEGvNcLjF+KNOufrUoEQw==}
     engines: {node: '>=12.20.0'}
+
+  octokit@5.0.5:
+    resolution: {integrity: sha512-4+/OFSqOjoyULo7eN7EA97DE0Xydj/PW5aIckxqQIoFjFwqXKuFCvXUJObyJfBF9Khu4RL/jlDRI9FPaMGfPnw==}
+    engines: {node: '>= 20'}
 
   oidc-token-hash@5.2.0:
     resolution: {integrity: sha512-6gj2m8cJZ+iSW8bm0FXdGF0YhIQbKrfP4yWTNzxc31U6MOjfEmB1rHvlYvxI1B7t7BCi1F2vYTT6YhtQRG4hxw==}
@@ -11900,9 +11903,6 @@ packages:
   toad-cache@3.7.4:
     resolution: {integrity: sha512-m1TdR/rvT7kgGJZhspNtXdsdYk0fddFpJJFlG5s+UkPFo6lkLoZ3YLOaovPYjq1R75NP5JfeTlSHaOsE09peCg==}
     engines: {node: '>=20'}
-
-  toggle-selection@1.0.6:
-    resolution: {integrity: sha512-BiZS+C1OS8g/q2RRbJmy59xpyghNBqrr6k5L/uKBGRsTfxmu3ffiRnd8mlGPUVayg8pvfi5urfnu8TU7DVOkLQ==}
 
   tough-cookie@2.5.0:
     resolution: {integrity: sha512-nlLsUzgm1kfLXSXfRZMc1KLAugd4hqJHDTvc2hDIwS3mZAfMEuMbc03SujMF+GEcpaX/qboeycw6iO8JwVv2+g==}
@@ -14189,6 +14189,8 @@ snapshots:
       react-dom: 19.3.0(react@19.3.0)
 
   '@docsearch/css@4.6.0': {}
+
+  '@docsearch/css@5.1.1': {}
 
   '@docsearch/react@4.6.0(@types/react@19.2.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)':
     dependencies:
@@ -20192,19 +20194,6 @@ snapshots:
     optionalDependencies:
       graceful-fs: 4.2.11
 
-  jsonwebtoken@9.0.3:
-    dependencies:
-      jws: 4.0.1
-      lodash.includes: 4.3.0
-      lodash.isboolean: 3.0.3
-      lodash.isinteger: 4.0.4
-      lodash.isnumber: 3.0.3
-      lodash.isplainobject: 4.0.6
-      lodash.isstring: 4.0.1
-      lodash.once: 4.1.1
-      ms: 2.1.3
-      semver: 7.8.5
-
   jsprim@1.4.2:
     dependencies:
       assert-plus: 1.0.0
@@ -23813,8 +23802,6 @@ snapshots:
       vfile: 4.2.1
 
   toad-cache@3.7.4: {}
-
-  toggle-selection@1.0.6: {}
 
   tough-cookie@2.5.0:
     dependencies:
