@@ -25,9 +25,12 @@ export const Basic: StoryFn = () => {
               isShown={isShown}
               onClose={() => onClose(hiddenText)}
             >
-              {() => (
+              {(_, { setTitleId }) => (
                 <React.Fragment>
-                  <Modal.Header title="Reveal hidden text" />
+                  <Modal.Header
+                    title="Reveal hidden text"
+                    setTitleId={setTitleId}
+                  />
                   <Modal.Content>
                     Are you want to reveal the hidden text?
                   </Modal.Content>
