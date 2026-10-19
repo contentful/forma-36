@@ -1,5 +1,65 @@
 # Change Log
 
+## 6.27.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.27.1
+  - @contentful/f36-image@6.27.1
+  - @contentful/f36-menu@6.27.1
+  - @contentful/f36-tooltip@6.27.1
+
+## 6.27.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.27.0
+  - @contentful/f36-image@6.27.0
+  - @contentful/f36-menu@6.27.0
+  - @contentful/f36-tooltip@6.27.0
+
+## 6.26.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.26.0
+  - @contentful/f36-image@6.26.0
+  - @contentful/f36-menu@6.26.0
+  - @contentful/f36-tooltip@6.26.0
+
+## 6.25.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.25.0
+  - @contentful/f36-image@6.25.0
+  - @contentful/f36-menu@6.25.0
+  - @contentful/f36-tooltip@6.25.0
+
+## 6.24.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.24.0
+  - @contentful/f36-image@6.24.0
+  - @contentful/f36-menu@6.24.0
+  - @contentful/f36-tooltip@6.24.0
+
+## 6.23.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.23.0
+  - @contentful/f36-image@6.23.0
+  - @contentful/f36-menu@6.23.0
+  - @contentful/f36-tooltip@6.23.0
+
 ## 6.22.1
 
 ### Patch Changes

@@ -1,5 +1,5 @@
 import React from 'react';
-import slugger from 'github-slugger';
+import { slug } from 'github-slugger';
 import {
   Heading,
   Paragraph,
@@ -16,7 +16,7 @@ import { StaticSource } from '../LiveEditor/StaticSource';
 import Image from 'next/image';
 
 const getHeadingId = (node: Block | Inline) =>
-  slugger.slug((node.content[0] as Text).value, false);
+  slug((node.content[0] as Text).value, false);
 
 const prepareMapFromArray = <T,>(array: T[], getKey: (item: T) => string) => {
   const map = new Map();
