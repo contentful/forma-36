@@ -16,8 +16,14 @@ import { getModalHeaderStyles } from './ModalHeader.styles';
 interface ModalHeaderInternalProps extends CommonProps {
   title: string;
   subtitle?: string;
-  setTitleId?: (titleId: string) => void;
-  setSubtitleId?: (subtitleId: string) => void;
+  /**
+   * Custom id for the title, used as `aria-labelledby`. Read on mount only.
+   */
+  titleId?: string;
+  /**
+   * Custom id for the subtitle, used as `aria-describedby`. Read on mount only.
+   */
+  subtitleId?: string;
   /**
    * Receives the title id, set by `Modal`.
    */
@@ -25,6 +31,7 @@ interface ModalHeaderInternalProps extends CommonProps {
   /**
    * Receives the subtitle id, set by `Modal`.
    */
+  setSubtitleId?: (subtitleId: string | undefined) => void;
   onClose?: ReactModal.Props['onRequestClose'];
   children?: React.ReactNode;
   aria?: {
@@ -41,6 +48,8 @@ export const ModalHeader = ({
   onClose,
   title,
   subtitle,
+  titleId: titleIdProp,
+  subtitleId: subtitleIdProp,
   setTitleId,
   setSubtitleId,
   testId = 'cf-ui-modal-header',
@@ -52,8 +61,8 @@ export const ModalHeader = ({
   ...otherProps
 }: ModalHeaderProps): React.ReactElement => {
   const styles = getModalHeaderStyles();
-  const titleId = useId(undefined, 'title');
-  const subtitleId = useId(undefined, 'subtitle');
+  const titleId = useId(titleIdProp, 'title');
+  const subtitleId = useId(subtitleIdProp, 'subtitle');
 
   useEffect(() => {
     setTitleId?.(titleId);
@@ -103,7 +112,7 @@ export const ModalHeader = ({
         <Flex alignItems="center" className={styles.buttonContainer}>
           <IconButton
             variant="transparent"
-            aria-label={aria.closeIconLabel}
+            aria-label={aria.closeIconLabel ?? 'Close'}
             size="small"
             icon={<XIcon size="small" />}
             onClick={onClose}

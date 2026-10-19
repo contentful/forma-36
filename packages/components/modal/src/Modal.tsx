@@ -211,7 +211,7 @@ export const Modal = ({
 
     return {
       ...ariaProp,
-      labelledby: titleId,
+      labelledby: ariaProp?.labelledby ?? titleId,
       describedby: ariaProp?.describedby ?? subtitleId,
     };
   }, [ariaProp, titleId, subtitleId]);

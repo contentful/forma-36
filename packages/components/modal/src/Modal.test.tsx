@@ -6,7 +6,7 @@ import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import { Modal } from './Modal';
 
 it('has no a11y issues', async () => {
-  const { container } = render(
+  const { baseElement } = render(
     <Modal
       title="Modal window with no a11y issues :) "
       isShown
@@ -15,7 +15,8 @@ it('has no a11y issues', async () => {
       Content
     </Modal>,
   );
-  await expectNoA11yViolations(container);
+  // baseElement, as the modal renders in a portal outside of the container
+  await expectNoA11yViolations(baseElement);
 });
 
 it('should focus Close button', async () => {
@@ -95,6 +96,32 @@ describe('should derive accessible name', () => {
       titleId,
     );
     expect(screen.getByRole('dialog')).not.toHaveAttribute('aria-label');
+  });
+
+  it('from custom titleId and subtitleId when passed', async () => {
+    const { baseElement } = render(
+      <Modal
+        title="Modal title"
+        subtitle="Modal subtitle"
+        modalHeaderProps={{ titleId: 'my-title', subtitleId: 'my-sub' }}
+        isShown
+        onClose={() => {}}
+      >
+        Content
+      </Modal>,
+    );
+    expect(screen.getByText('Modal title')).toHaveAttribute('id', 'my-title');
+    expect(screen.getByText('Modal subtitle')).toHaveAttribute('id', 'my-sub');
+    expect(screen.getByRole('dialog')).toHaveAttribute(
+      'aria-labelledby',
+      'my-title',
+    );
+    expect(screen.getByRole('dialog')).toHaveAttribute(
+      'aria-describedby',
+      'my-sub',
+    );
+    // baseElement, as the modal renders in a portal outside of the container
+    await expectNoA11yViolations(baseElement);
   });
 
   it('from aria.labelledby when passed', async () => {
