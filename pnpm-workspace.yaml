@@ -36,6 +36,7 @@ minimumReleaseAgeExclude:
 ignoreScripts: true
 
 overrides:
+  'microbundle>rollup-plugin-typescript2': '^0.37.0'
   '@emotion/eslint-plugin>eslint': '>=9.0.0'
   '@emotion/eslint-plugin>@typescript-eslint/utils': '^8.65.0'
   'eslint-plugin-import>eslint': '>=9.0.0'
