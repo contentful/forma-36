@@ -42,7 +42,6 @@ export function getPillNextStyles(
       paddingTop: isSmall ? 0 : tokens.spacing2Xs,
       paddingBottom: isSmall ? 0 : tokens.spacing2Xs,
       paddingLeft: isSmall ? tokens.spacingXs : tokens.spacingS,
-
       paddingRight: hasEndButton
         ? isSmall
           ? 0
@@ -89,7 +88,7 @@ export function getPillNextStyles(
       boxSizing: 'border-box',
       padding: isSmall ? '2px' : tokens.spacing2Xs,
       borderRadius: '50%',
-      marginLeft: isSmall ? tokens.spacing2Xs : tokens.spacingXs,
+      marginLeft: isSmall ? '1px' : tokens.spacingXs,
       mixBlendMode: 'luminosity',
 
       ...(isSmall

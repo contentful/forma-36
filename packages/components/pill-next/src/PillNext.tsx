@@ -131,7 +131,7 @@ export const PillNext = React.forwardRef<
       {actionIcon && (
         <IconButton
           variant="transparent"
-          size="small"
+          size={size === 'small' ? 'tiny' : 'small'}
           icon={actionIcon}
           aria-label={actionButtonLabel}
           onClick={onAction}
