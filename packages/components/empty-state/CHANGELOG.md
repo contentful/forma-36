@@ -1,5 +1,50 @@
 # Change Log
 
+## 6.27.1
+
+### Patch Changes
+
+- [#3714](https://github.com/contentful/forma-36/pull/3714) [`e082794`](https://github.com/contentful/forma-36/commit/e08279499988df5494cfd1cc27912156fcde714b) Thanks [@denkristoffer](https://github.com/denkristoffer)! - Declare `@contentful/f36-core` as a dependency so its types are referenced instead of being inlined into the bundled type declarations.
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.27.1
+  - @contentful/f36-typography@6.27.1
+
+## 6.27.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-typography@6.27.0
+
+## 6.26.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-typography@6.26.0
+
+## 6.25.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-typography@6.25.0
+
+## 6.24.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-typography@6.24.0
+
+## 6.23.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-typography@6.23.0
+
 ## 6.22.1
 
 ### Patch Changes

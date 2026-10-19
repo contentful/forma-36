@@ -52,7 +52,7 @@ export type LayoutHeaderInnerProps = CommonProps &
     /**
      * The title of the element this header pertains to.
      */
-    title: string;
+    title: ReactElement | string;
     titleProps?: {
       as?: HeadingElement;
       size?: 'medium' | 'large';
