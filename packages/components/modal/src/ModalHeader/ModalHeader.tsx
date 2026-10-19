@@ -18,6 +18,13 @@ interface ModalHeaderInternalProps extends CommonProps {
   subtitle?: string;
   setTitleId?: (titleId: string) => void;
   setSubtitleId?: (subtitleId: string) => void;
+  /**
+   * Receives the title id, set by `Modal`.
+   */
+  setTitleId?: (titleId: string | undefined) => void;
+  /**
+   * Receives the subtitle id, set by `Modal`.
+   */
   onClose?: ReactModal.Props['onRequestClose'];
   children?: React.ReactNode;
   aria?: {
@@ -56,7 +63,7 @@ export const ModalHeader = ({
   }, [titleId, setTitleId]);
 
   useEffect(() => {
-    setSubtitleId?.(subtitle && subtitleId);
+    setSubtitleId?.(subtitle ? subtitleId : undefined);
     return () => {
       setSubtitleId?.(undefined);
     };
