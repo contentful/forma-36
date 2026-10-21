@@ -5,7 +5,7 @@
   "description": "Forma 36 CDN",
   "type": "module",
   "dependencies": {
-    "@fastly/js-compute": "3.46.0"
+    "@fastly/js-compute": "4.0.0"
   },
   "devDependencies": {
     "@fastly/cli": "16.1.0",
