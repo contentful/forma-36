@@ -3,6 +3,7 @@ import ReactModal from 'react-modal';
 
 import { Box, type CommonProps, type ExpandProps } from '@contentful/f36-core';
 
+import { ModalContextProvider, type ModalIds } from './ModalContext';
 import { ModalHeader, ModalHeaderProps } from './ModalHeader/ModalHeader';
 import { ModalContent, ModalContentProps } from './ModalContent/ModalContent';
 import { getModalStyles } from './Modal.styles';
@@ -36,7 +37,7 @@ export interface ModalProps extends CommonProps {
   /**
    * Additional aria attributes
    */
-  aria?: ReactModal.Props['aria'];
+  aria?: ReactModal.Props['aria'] & { label?: string };
 
   /**
    * Boolean indicating if clicking the overlay should close the overlay.
@@ -128,6 +129,24 @@ export const Modal = ({
   ...otherProps
 }: ExpandProps<ModalProps>) => {
   const contentRef = React.useRef<HTMLDivElement>(null);
+  const [titleIds, setTitleIds] = React.useState<ModalIds>({});
+
+  const contextValue = React.useMemo(
+    () => ({
+      registerTitleIds: (newIds: ModalIds) => {
+        setTitleIds(newIds);
+        return () => setTitleIds({});
+      },
+    }),
+    [],
+  );
+
+  // explicit aria props win over the ids reported by the header
+  const ariaProps: NonNullable<ModalProps['aria']> = {
+    ...(aria?.label ? {} : { labelledby: titleIds.titleId }),
+    describedby: titleIds.subtitleId,
+    ...aria,
+  };
 
   const props = {
     ...otherProps,
@@ -196,51 +215,53 @@ export const Modal = ({
   };
 
   return (
-    <ReactModal
-      ariaHideApp={false}
-      aria={aria}
-      onRequestClose={props.onClose}
-      isOpen={otherProps.isShown}
-      onAfterOpen={onAfterOpen}
-      shouldCloseOnEsc={shouldCloseOnEscapePress}
-      shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
-      shouldFocusAfterRender
-      shouldReturnFocusAfterClose
-      portalClassName={styles.portal}
-      style={{
-        content: {
-          top: position === 'center' ? 0 : topOffset,
-        },
-        overlay: otherProps.overlayProps?.style,
-      }}
-      className={{
-        base: styles.base.root,
-        afterOpen: styles.base.afterOpen,
-        beforeClose: styles.base.beforeClose,
-      }}
-      overlayClassName={{
-        base: styles.modalOverlay.root,
-        afterOpen: styles.modalOverlay.afterOpen,
-        beforeClose: styles.modalOverlay.beforeClose,
-      }}
-      closeTimeoutMS={200}
-      contentRef={(ref) => {
-        contentRef.current = ref;
-      }}
-    >
-      <Box
-        testId={testId}
+    <ModalContextProvider value={contextValue}>
+      <ReactModal
+        ariaHideApp={false}
+        aria={ariaProps}
+        onRequestClose={props.onClose}
+        isOpen={otherProps.isShown}
+        onAfterOpen={onAfterOpen}
+        shouldCloseOnEsc={shouldCloseOnEscapePress}
+        shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
+        shouldFocusAfterRender
+        shouldReturnFocusAfterClose
+        portalClassName={styles.portal}
         style={{
-          width: ModalSizesMapper[size] || size,
+          content: {
+            top: position === 'center' ? 0 : topOffset,
+          },
+          overlay: otherProps.overlayProps?.style,
         }}
-        className={styles.modal}
-        data-modal-root
+        className={{
+          base: styles.base.root,
+          afterOpen: styles.base.afterOpen,
+          beforeClose: styles.base.beforeClose,
+        }}
+        overlayClassName={{
+          base: styles.modalOverlay.root,
+          afterOpen: styles.modalOverlay.afterOpen,
+          beforeClose: styles.modalOverlay.beforeClose,
+        }}
+        closeTimeoutMS={200}
+        contentRef={(ref) => {
+          contentRef.current = ref;
+        }}
       >
-        {typeof otherProps.children === 'function'
-          ? otherProps.children(props)
-          : renderDefault()}
-      </Box>
-    </ReactModal>
+        <Box
+          testId={testId}
+          style={{
+            width: ModalSizesMapper[size] || size,
+          }}
+          className={styles.modal}
+          data-modal-root
+        >
+          {typeof otherProps.children === 'function'
+            ? otherProps.children(props)
+            : renderDefault()}
+        </Box>
+      </ReactModal>
+    </ModalContextProvider>
   );
 };
 
