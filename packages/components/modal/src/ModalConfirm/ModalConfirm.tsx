@@ -7,7 +7,7 @@ import type { ModalContentProps } from '../ModalContent/ModalContent';
 import type { ModalControlsProps } from '../ModalControls/ModalControls';
 import { Button } from '@contentful/f36-button';
 
-export interface ModalConfirmProps {
+interface ModalConfirmBaseProps {
   /**
    * When true, the dialog is shown.
    */
@@ -20,10 +20,6 @@ export interface ModalConfirmProps {
    * Function that will be called when the cancel button is clicked. This does not close the ModalConfirm.
    */
   onCancel: ModalProps['onClose'];
-  /**
-      Modal title that is used in header
-    */
-  title?: string;
   /**
    * Label of the confirm button
    */
@@ -88,7 +84,28 @@ export interface ModalConfirmProps {
   children: React.ReactNode;
 }
 
-export const ModalConfirm = ({
+// ponytail: only a literal `title=""` is caught; a runtime empty string is not
+export type ModalConfirmProps<T extends string = string> =
+  ModalConfirmBaseProps & {
+    /**
+     * Modal title that is used in header
+     */
+    title?: T;
+  } & (T extends ''
+      ? {
+          /**
+           * Without a visible title, `aria.label` is required to name the dialog
+           */
+          aria: NonNullable<ModalProps['aria']> & { label: string };
+        }
+      : {
+          /**
+           * Additional aria attributes
+           */
+          aria?: ModalProps['aria'];
+        });
+
+export const ModalConfirm = <T extends string = string>({
   allowHeightOverflow = false,
   cancelLabel = 'Cancel',
   cancelTestId = 'cf-ui-modal-confirm-cancel-button',
@@ -108,9 +125,10 @@ export const ModalConfirm = ({
   shouldCloseOnOverlayClick = true,
   size = 'medium',
   testId = 'cf-ui-modal-confirm',
-  title = 'Are you sure?',
+  title = 'Are you sure?' as T,
   initialFocusRef,
-}: ModalConfirmProps) => {
+  aria,
+}: ModalConfirmProps<T>) => {
   const cancelRef = React.useRef(null);
 
   const confirmButton = confirmLabel ? (
@@ -143,6 +161,7 @@ export const ModalConfirm = ({
       testId={testId}
       isShown={isShown}
       onClose={onCancel}
+      aria={aria}
       size={size}
       shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
       shouldCloseOnEscapePress={shouldCloseOnEscapePress}
@@ -153,7 +172,7 @@ export const ModalConfirm = ({
         return (
           <React.Fragment>
             <Modal.Header
-              title={title || ''}
+              title={title}
               {...modalHeaderProps}
               onClose={onCancel}
             />
