@@ -113,7 +113,7 @@
     "fast-glob": "^3.3.3",
     "globals": "^17.4.0",
     "globby": "^15.0.0",
-    "inquirer": "^12.9.6",
+    "inquirer": "^14.0.0",
     "jsdom": "^30.0.0",
     "knip": "^6.25.0",
     "lint-staged": "^17.0.0",
