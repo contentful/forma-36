@@ -92,7 +92,7 @@ export default function FolderListHandleReplacesIconExample() {
       justifyContent: 'center',
       color: tokens.gray600,
     }),
-    handleButton: css({
+    dragButton: css({
       alignItems: 'center',
       background: 'transparent',
       border: 0,
@@ -267,7 +267,10 @@ export default function FolderListHandleReplacesIconExample() {
       opacity: isDragging ? 0.6 : undefined,
     };
 
-    const rowClassName = [styles.row, isMenuOpen ? styles.rowActive : '']
+    const rowClassName = [
+      styles.row,
+      isMenuOpen || isDragging ? styles.rowActive : '',
+    ]
       .filter(Boolean)
       .join(' ');
 
@@ -279,28 +282,10 @@ export default function FolderListHandleReplacesIconExample() {
             <FolderSimpleIcon size="small" />
           </span>
           <span data-row-handle className={styles.iconLayer}>
-            {/*
-              A plain button, rather than Forma 36's DragHandle, so its
-              accessible name can be set via aria-label instead of visible
-              text content: the icon is the only child, and the label
-              describes the reordering action rather than duplicating the
-              icon's appearance.
-
-              Arrow-key reordering relies on the Move up/Move down actions
-              in the folder menu rather than role="application" on this
-              handle. VoiceOver ties its decision to hand raw arrow keys
-              through to the page to the role an element has when it
-              receives focus, and doesn't reliably reconsider that decision
-              once focused, so toggling role on this same focused node while
-              dragging isn't a dependable way to make VoiceOver forward
-              arrow keys to dnd-kit. See
-              https://github.blog/2024-07-09-exploring-the-challenges-in-creating-an-accessible-sortable-list-drag-and-drop/
-              for the same limitation encountered with NVDA.
-            */}
             <button
               ref={setActivatorNodeRef}
               type="button"
-              className={styles.handleButton}
+              className={styles.dragButton}
               aria-label={`Reorder ${folder.name}`}
               {...attributes}
               {...listeners}
@@ -412,15 +397,17 @@ export default function FolderListHandleReplacesIconExample() {
     },
   };
 
+  const dndContextProps = {
+    sensors,
+    accessibility: { announcements, screenReaderInstructions },
+    onDragStart: handleDragStart,
+    onDragOver: handleDragOver,
+    onDragEnd: handleDragEnd,
+    onDragCancel: handleDragCancel,
+  };
+
   return (
-    <DndContext
-      sensors={sensors}
-      accessibility={{ announcements, screenReaderInstructions }}
-      onDragStart={handleDragStart}
-      onDragOver={handleDragOver}
-      onDragEnd={handleDragEnd}
-      onDragCancel={handleDragCancel}
-    >
+    <DndContext {...dndContextProps}>
       <div
         role="status"
         aria-live="assertive"
