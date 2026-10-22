@@ -9,20 +9,31 @@ import { ModalConfirm } from './ModalConfirm';
 vi.mock('react-modal', () => ({
   default: function ReactModalMock({
     children,
+    aria,
   }: {
     children: React.ReactNode;
+    aria?: { labelledby?: string; label?: string };
   }) {
-    return <div className="react-modal">{children}</div>;
+    return (
+      <div
+        className="react-modal"
+        role="dialog"
+        aria-labelledby={aria?.labelledby}
+        aria-label={aria?.label}
+      >
+        {children}
+      </div>
+    );
   },
 }));
 
 it('has no a11y issues', async () => {
-  const { container } = render(
+  const { baseElement } = render(
     <ModalConfirm isShown onConfirm={() => {}} onCancel={() => {}}>
       ModalConfirm
     </ModalConfirm>,
   );
-  await expectNoA11yViolations(container);
+  await expectNoA11yViolations(baseElement);
 });
 
 it('renders a `x` icon to close/dismiss the modal', async () => {
@@ -38,4 +49,48 @@ it('renders a `x` icon to close/dismiss the modal', async () => {
   fireEvent.click(closeButton);
 
   expect(closeButtonSpy).toHaveBeenCalledTimes(1);
+});
+
+it('names the dialog by its title', () => {
+  render(
+    <ModalConfirm
+      isShown
+      onConfirm={() => {}}
+      onCancel={() => {}}
+      title="Delete"
+    >
+      ModalConfirm
+    </ModalConfirm>,
+  );
+
+  expect(screen.getByRole('dialog', { name: 'Delete' })).toBeTruthy();
+});
+
+it('does not link aria-labelledby to an empty title', () => {
+  render(
+    // @ts-expect-error aria.label is required for an empty title; testing the runtime fallback
+    <ModalConfirm isShown onConfirm={() => {}} onCancel={() => {}} title="">
+      ModalConfirm
+    </ModalConfirm>,
+  );
+
+  expect(screen.getByRole('dialog').hasAttribute('aria-labelledby')).toBe(
+    false,
+  );
+});
+
+it('names the dialog with aria.label when the title is empty', () => {
+  render(
+    <ModalConfirm
+      isShown
+      onConfirm={() => {}}
+      onCancel={() => {}}
+      title=""
+      aria={{ label: 'Confirm deletion' }}
+    >
+      ModalConfirm
+    </ModalConfirm>,
+  );
+
+  expect(screen.getByRole('dialog', { name: 'Confirm deletion' })).toBeTruthy();
 });

@@ -51,6 +51,14 @@ Don't use `Modal`:
 
 ```
 
+### Custom title and subtitle ids
+
+The title and subtitle receive generated ids, which `Modal` uses for `aria-labelledby` and `aria-describedby`. If you need stable ids, pass `titleId` and `subtitleId` via `modalHeaderProps`. The ids are read on mount only.
+
+```jsx file=../examples/ModalWithCustomIdsExample.tsx
+
+```
+
 ### Changing sizes
 
 There are 4 different sizes for modals: `small`, `medium`, `large`, `fullWidth`, and `fullscreen`. Pick a size based on the amount of content you have to present in them.
@@ -146,3 +154,4 @@ Another scenario to avoid is to create lengthy buttons and with more that one ac
 - By default, clicking on the overlay closes the modal.
 - By default, pressing `Esc` closes the modal.
 - Scrolling is blocked on the elements behind the modal.
+- The modal's accessible name is linked automatically to the `title` (`aria-labelledby`), and its description to the `subtitle` (`aria-describedby`). Passing `aria.labelledby` or `aria.label` takes precedence and turns off the automatic title and subtitle linking. Passing `aria.describedby` takes precedence over the subtitle link.
