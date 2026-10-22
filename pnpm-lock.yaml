@@ -1665,7 +1665,7 @@ importers:
         specifier: ^6.27.1
         version: link:../components/icons
       '@contentful/f36-pill-next':
-        specifier: 6.0.1-alpha.7
+        specifier: 6.0.1-alpha.8
         version: link:../components/pill-next
       '@contentful/f36-tokens':
         specifier: ^6.3.1
@@ -1949,7 +1949,7 @@ importers:
         specifier: ^6.27.1
         version: link:../components/navbar
       '@contentful/f36-pill-next':
-        specifier: 6.0.1-alpha.7
+        specifier: 6.0.1-alpha.8
         version: link:../components/pill-next
       '@contentful/f36-table-next':
         specifier: 6.0.1-alpha.3
@@ -9085,8 +9085,6 @@ packages:
 
   jsonfile@6.2.1:
     resolution: {integrity: sha512-zwOTdL3rFQ/lRdBnntKVOX6k5cKJwEc1HdilT71BWEu7J41gXIB2MRp+vxduPSwZJPWBxEzv4yH1wYLJGUHX4Q==}
-
-  jsonwebtoken@9.0.3: {}
 
   jsprim@1.4.2:
     resolution: {integrity: sha512-P2bSOMAc/ciLz6DzgjVlGJP9+BrJWu5UDGK70C2iweC5QBIeFf0ZXRvGjEj2uYgrY2MkAAhsSWHDWlFtEroZWw==}
