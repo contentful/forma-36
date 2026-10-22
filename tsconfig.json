@@ -4,6 +4,7 @@
     "noImplicitAny": false,
     "target": "ES2022",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "strict": false,
     // uses React's automatic JSX runtime in tsx files
     "jsx": "react-jsx",
     // Eventually turn off, one we have no more assumed default exports.
@@ -18,6 +19,7 @@
     "allowJs": true,
     // Don't emit; allow Babel to transform files.
     "noEmit": true,
+    "noUncheckedSideEffectImports": false,
     // Disallow features that require cross-file information for emit.
     "isolatedModules": true,
     // Import non-ES modules as default imports.
