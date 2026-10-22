@@ -24,6 +24,10 @@ export default {
     tooltipContent: { control: { type: 'text' } },
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
+    size: {
+      control: { type: 'inline-radio' },
+      options: ['medium', 'small'],
+    },
   },
 } as Meta;
 
@@ -32,10 +36,15 @@ export const Basic: StoryObj<PillNextInternalProps> = {
   args: {
     label: 'Category tag',
     variant: 'secondary',
+    size: 'medium',
   },
 };
 
 export const AllVariants: StoryObj<PillNextInternalProps> = {
+  args: {
+    variant: 'secondary',
+  },
+
   render: () => (
     <Flex flexDirection="column" gap="spacingL">
       <Flex flexDirection="column" gap="spacingS">
@@ -52,6 +61,10 @@ export const AllVariants: StoryObj<PillNextInternalProps> = {
 };
 
 export const WithTooltip: StoryObj<PillNextInternalProps> = {
+  args: {
+    size: 'small',
+  },
+
   render: () => (
     <Flex flexDirection="column" gap="spacingL">
       <Flex flexDirection="column" gap="spacingS">
@@ -165,7 +178,7 @@ export const ActionIcons: StoryObj<PillNextInternalProps> = {
         <SectionHeading as="h3">Disabled state</SectionHeading>
         <Flex flexDirection="row" gap="spacingXs">
           <PillNext
-            label="Disabled remove"
+            label="Disabled secondary"
             variant="secondary"
             actionIcon={<XIcon />}
             onAction={action('remove')}
@@ -173,19 +186,27 @@ export const ActionIcons: StoryObj<PillNextInternalProps> = {
             isDisabled
           />
           <PillNext
-            label="Disabled add"
+            label="Disabled primary"
             variant="primary"
-            actionIcon={<PlusIcon />}
-            onAction={action('add')}
-            actionButtonLabel="Add"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
             isDisabled
           />
           <PillNext
-            label="Disabled menu"
-            variant="primary"
-            actionIcon={<DotsThreeIcon />}
-            onAction={action('open-menu')}
-            actionButtonLabel="Open menu"
+            label="Disabled warning"
+            variant="warning"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+            isDisabled
+          />
+          <PillNext
+            label="Disabled negative"
+            variant="negative"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
             isDisabled
           />
         </Flex>
@@ -292,6 +313,311 @@ export const LongLabels: StoryObj<PillNextInternalProps> = {
             actionButtonLabel="Remove"
           />
           <PillNext
+            label="Another short one"
+            variant="primary"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+          />
+        </Flex>
+      </Flex>
+    </Flex>
+  ),
+};
+
+export const Small: StoryObj<PillNextInternalProps> = {
+  render: () => (
+    <Flex
+      flexDirection="column"
+      alignItems="left"
+      gap="spacing2Xl"
+      style={{ width: '800px', border: '1px dashed #ccc', padding: '16px' }}
+    >
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">Variants</SectionHeading>
+        <Flex flexDirection="row" gap="spacingXs">
+          <PillNext size="small" label="Secondary" variant="secondary" />
+          <PillNext size="small" label="Primary" variant="primary" />
+          <PillNext size="small" label="Warning" variant="warning" />
+          <PillNext size="small" label="Negative" variant="negative" />
+          <PillNext
+            size="small"
+            label="Removable"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+          />
+          <PillNext
+            size="small"
+            label="Disabled"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+            isDisabled
+          />
+        </Flex>
+      </Flex>
+
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">
+          Leading icon with tooltip (warning/negative)
+        </SectionHeading>
+        <Flex flexDirection="row" gap="spacingXs">
+          <PillNext
+            size="small"
+            label="Restricted access"
+            variant="warning"
+            tooltipContent="This tag has restricted visibility"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+          />
+          <PillNext
+            size="small"
+            label="Deleted tag"
+            variant="negative"
+            tooltipContent="This tag was deleted from the system"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+          />
+        </Flex>
+      </Flex>
+
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">
+          Flexible action icon slot — remove (X)
+        </SectionHeading>
+        <Flex flexDirection="row" gap="spacingXs">
+          <PillNext
+            size="small"
+            label="Secondary"
+            variant="secondary"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+          />
+          <PillNext
+            size="small"
+            label="Primary"
+            variant="primary"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+          />
+          <PillNext
+            size="small"
+            label="Warning"
+            variant="warning"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+          />
+          <PillNext
+            size="small"
+            label="Negative"
+            variant="negative"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+          />
+        </Flex>
+      </Flex>
+
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">
+          Flexible action icon slot — add (+)
+        </SectionHeading>
+        <Flex flexDirection="row" gap="spacingXs">
+          <PillNext
+            size="small"
+            label="Add concept"
+            variant="secondary"
+            actionIcon={<PlusIcon />}
+            onAction={action('add')}
+            actionButtonLabel="Add"
+          />
+          <PillNext
+            size="small"
+            label="Assign tag"
+            variant="primary"
+            actionIcon={<PlusIcon />}
+            onAction={action('add')}
+            actionButtonLabel="Add"
+          />
+        </Flex>
+      </Flex>
+
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">
+          Flexible action icon slot — menu (...)
+        </SectionHeading>
+        <Flex flexDirection="row" gap="spacingXs">
+          <PillNext
+            size="small"
+            label="Concept A"
+            variant="primary"
+            actionIcon={<DotsThreeIcon />}
+            onAction={action('open-menu')}
+            actionButtonLabel="Open menu"
+          />
+          <PillNext
+            size="small"
+            label="Concept B"
+            variant="secondary"
+            actionIcon={<DotsThreeIcon />}
+            onAction={action('open-menu')}
+            actionButtonLabel="Open menu"
+          />
+        </Flex>
+      </Flex>
+
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">Disabled state</SectionHeading>
+        <Flex flexDirection="row" gap="spacingXs">
+          <PillNext
+            size="small"
+            label="Disabled secondary"
+            variant="secondary"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+            isDisabled
+          />
+          <PillNext
+            size="small"
+            label="Disabled primary"
+            variant="primary"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+            isDisabled
+          />
+          <PillNext
+            size="small"
+            label="Disabled warning"
+            variant="warning"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+            isDisabled
+          />
+          <PillNext
+            size="small"
+            label="Disabled negative"
+            variant="negative"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+            isDisabled
+          />
+        </Flex>
+      </Flex>
+
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">
+          Wide container — long pill fits on one line
+        </SectionHeading>
+        <Flex
+          flexDirection="column"
+          alignItems="flex-start"
+          gap="spacingXs"
+          style={{ width: '600px', border: '1px dashed #ccc', padding: '16px' }}
+        >
+          <PillNext
+            size="small"
+            label="Vewkjsdhfkjsdhf kdsjhfdskjfhdskjfhdskjfhdskjfh sdkfjhsdkfh sdkfjhsdkfjh sdkfjhsdkfjh"
+            variant="secondary"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+          />
+          <PillNext
+            size="small"
+            label="Short label"
+            variant="secondary"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+          />
+        </Flex>
+      </Flex>
+
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">
+          Narrower container — long pill wraps to two lines
+        </SectionHeading>
+        <Flex
+          flexDirection="column"
+          alignItems="flex-start"
+          gap="spacingXs"
+          style={{ width: '550px', border: '1px dashed #ccc', padding: '16px' }}
+        >
+          <PillNext
+            size="small"
+            label="Vewkjsdhfkjsdhf kdsjhfdskjfhdskjfhdskjfhdskjfh sdkfjhsdkfh sdkfjhsdkfjh sdkfjhsdkfjh sdkfjhsdkfjh"
+            variant="secondary"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+          />
+          <PillNext
+            size="small"
+            label="fefhjejhfehufheuhfuehfuewdwhudhwuhduwhduehfuheufheufheuf euhfuehfuheufhuehfuheufheufhuehfuheufheufheuhf"
+            variant="warning"
+            tooltipContent="This tag has restricted visibility"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+          />
+          <PillNext
+            size="small"
+            label="Negative variant with a long label that wraps to verify leading icon alignment with the remove button"
+            variant="negative"
+            tooltipContent="This tag was deleted"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+          />
+          <PillNext
+            size="small"
+            label="Short label"
+            variant="secondary"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+          />
+        </Flex>
+      </Flex>
+
+      <Flex flexDirection="column" gap="spacingS">
+        <SectionHeading as="h3">
+          Row flex-wrap container — pills should wrap text, not overflow
+        </SectionHeading>
+        <Flex
+          flexDirection="row"
+          flexWrap="wrap"
+          gap="spacingXs"
+          style={{ width: '550px', border: '1px dashed #ccc', padding: '16px' }}
+        >
+          <PillNext
+            size="small"
+            label="Short label"
+            variant="secondary"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+          />
+          <PillNext
+            size="small"
+            label="Vewkjsdhfkjsdhf kdsjhfdskjfhdskjfhdskjfhdskjfh sdkfjhsdkfh sdkfjhsdkfjh sdkfjhsdkfjh sdkfjhsdkfjh"
+            variant="secondary"
+            actionIcon={<XIcon />}
+            onAction={action('remove')}
+            actionButtonLabel="Remove"
+          />
+          <PillNext
+            size="small"
             label="Another short one"
             variant="primary"
             actionIcon={<XIcon />}
