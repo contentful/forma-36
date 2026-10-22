@@ -84,7 +84,6 @@ interface ModalConfirmBaseProps {
   children: React.ReactNode;
 }
 
-// ponytail: only a literal `title=""` is caught; a runtime empty string is not
 export type ModalConfirmProps<T extends string = string> =
   ModalConfirmBaseProps & {
     /**
