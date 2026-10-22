@@ -92,7 +92,7 @@ export default function FolderListHandleReplacesIconExample() {
       justifyContent: 'center',
       color: tokens.gray600,
     }),
-    handleButton: css({
+    dragHandleButton: css({
       alignItems: 'center',
       background: 'transparent',
       border: 0,
@@ -208,15 +208,15 @@ export default function FolderListHandleReplacesIconExample() {
     setFolders((current) => current.filter((folder) => folder.id !== id));
   }
 
-  function handleDragStart(event) {
+  const handleDragStart = (event) => {
     setActiveId(event.active.id);
-  }
+  };
 
-  function handleDragOver(event) {
+  const handleDragOver = (event) => {
     setOverId(event.over ? event.over.id : null);
-  }
+  };
 
-  function handleDragEnd(event) {
+  const handleDragEnd = (event) => {
     const { active, over } = event;
     setActiveId(null);
     setOverId(null);
@@ -224,12 +224,12 @@ export default function FolderListHandleReplacesIconExample() {
     const oldIndex = folders.findIndex((folder) => folder.id === active.id);
     const newIndex = folders.findIndex((folder) => folder.id === over.id);
     moveFolder(oldIndex, newIndex);
-  }
+  };
 
-  function handleDragCancel() {
+  const handleDragCancel = () => {
     setActiveId(null);
     setOverId(null);
-  }
+  };
 
   // FolderRow must keep a stable function identity across re-renders, or
   // React remounts every row (and its Menu) whenever activeMenuId changes.
@@ -300,7 +300,7 @@ export default function FolderListHandleReplacesIconExample() {
             <button
               ref={setActivatorNodeRef}
               type="button"
-              className={styles.handleButton}
+              className={styles.dragHandleButton}
               aria-label={`Reorder ${folder.name}`}
               {...attributes}
               {...listeners}

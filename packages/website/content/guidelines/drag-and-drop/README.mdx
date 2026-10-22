@@ -8,7 +8,6 @@ section: 'guidelinesPatterns'
 
 Drag and drop lets users reorder, move, or place items through direct manipulation. Use it when the relationship between an item and its destination is spatially clear, and the result of moving it is predictable before the user commits the change.
 
-
 ## When to Use
 
 - Source, destination, and resulting position are visually clear
@@ -44,16 +43,19 @@ Use an explicit action when users cannot reliably understand the destination spa
 ## Components Used
 
 ### Required
+
 - DragHandle([DragHandle](https://f36.contentful.com/components/drag-handle)) — identifies draggable items and provides the interaction affordance for moving them, including focus, hover, and active states.
 - IconButton([IconButton](https://f36.contentful.com/components/icon-button)), Menu ([Menu](https://f36.contentful.com/components/menu)) — provide explicit non-drag actions where equivalent placement or movement controls are required.
 
 ### Supporting UI elements
+
 - Insertion indicator — shows the exact position where the item will be placed when dropped.
 - Drop target highlight — shows when an item can be dropped into a container or parent.
 
 These elements are part of the drag and drop pattern but are not currently available as standalone Forma 36 components. Implement them consistently with Forma 36 tokens and interaction states until dedicated components or primitives are available.
 
 #### Optional
+
 - Card with custom drag handle ([Card with custom drag handle](https://f36.contentful.com/components/card#with-a-custom-drag-handle)) — use when the draggable item is represented by a Forma 36 Card.
 
 ## Interactions
@@ -75,21 +77,10 @@ The item being moved defines the scope of the operation.
 6. Keep focus associated with the moved item.
 
 Reordering changes the item's position within its current list. It does not change its meaning or container. The drag handle can replace the leading icon when the icon represents secondary metadata and users do not need that information to decide how or where to drag the item. Preserve the metadata for assistive technology when the icon is replaced; see Accessibility for accessible naming and descriptions.
-{/*
-*Example*
+{/* Example (hidden): ```jsx file=./examples/FolderListHandleReplacesIconExample.tsx hideCode``` */}
 
-```jsx file=./examples/FolderListHandleReplacesIconExample.tsx hideCode
+{/* Example (hidden): ```jsx file=./examples/ReorderModeExample.tsx hideCode``` */}
 
-```
- */}
-
-{/*
-*Example*
-
-```jsx file=./examples/ReorderModeExample.tsx hideCode
-
-```
- */}
 ### Reorder or reparent within a hierarchy
 
 When hierarchy changes are supported, make the difference between reordering and reparenting clear before the user drops the item.
@@ -127,7 +118,6 @@ Add after… lets users select an existing item as the reference position.
 For short collections, this can be a menu containing the existing items. For longer or more complex collections, use a searchable or otherwise scalable selection interface.
 
 When multiple items have the same name, provide enough additional context to distinguish them.
-
 
 ## States
 
