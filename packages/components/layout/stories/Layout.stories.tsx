@@ -3,6 +3,7 @@ import { css } from '@emotion/css';
 import type { StoryFn, Meta } from '@storybook/react-vite';
 import { Box } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-components';
+import { Subheading } from '@contentful/f36-typography';
 import { action } from 'storybook/actions';
 import type { LayoutProps } from '../src';
 import { Header } from '../../header/src/Header';
@@ -695,6 +696,86 @@ export const WithFullResponsiveHeader: StoryFn<LayoutProps> = () => {
             <Layout.HeaderInner
               className={css({ backgroundColor: 'white' })}
               title="Long Headline to Showcase Responsive Header"
+              metadata={
+                <Button
+                  variant="transparent"
+                  startIcon={<CopySimpleIcon />}
+                  size="small"
+                >
+                  Copy ID
+                </Button>
+              }
+              breadcrumbs={[{ content: 'Content Types', url: '#' }]}
+              backButtonProps={{ onClick: action('navigate back') }}
+              withBackButton
+              actions={
+                <Button variant="primary" size="small">
+                  Button
+                </Button>
+              }
+            />
+          </Layout.Header>
+        }
+        offsetTop={NAVBAR_HEIGHT}
+      >
+        <Layout.Body>
+          <Box
+            className={css({
+              width: '100%',
+              height: '400px',
+              backgroundColor: 'lavenderblush',
+              marginBottom: '1rem',
+            })}
+          >
+            Content
+          </Box>
+          <Box
+            className={css({
+              width: '100%',
+              height: '240px',
+              backgroundColor: 'blanchedalmond',
+              marginBottom: '1rem',
+            })}
+          >
+            Content
+          </Box>
+          <Box
+            className={css({
+              width: '100%',
+              height: '1000px',
+              backgroundColor: 'aliceblue',
+              marginBottom: '1rem',
+            })}
+          >
+            Content
+          </Box>
+        </Layout.Body>
+      </Layout>
+    </ExampleWrapper>
+  );
+};
+
+export const WithResponsiveHeaderAndCustomTitle: StoryFn<LayoutProps> = () => {
+  return (
+    <ExampleWrapper>
+      <Layout
+        header={
+          <Layout.Header>
+            <Layout.HeaderInner
+              className={css({ backgroundColor: 'white' })}
+              title=<div
+                className={css({
+                  display: 'flex',
+                  alignItems: 'center',
+                  flexDirection: 'row',
+                  gap: '4px',
+                })}
+              >
+                <CopySimpleIcon />
+                <Subheading as="h1" className={css({ margin: 0 })}>
+                  Long Headline to Showcase Responsive Header
+                </Subheading>
+              </div>
               metadata={
                 <Button
                   variant="transparent"

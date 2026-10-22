@@ -2,8 +2,10 @@ import React from 'react';
 import { cx } from '@emotion/css';
 import type { CommonProps, ExpandProps } from '@contentful/f36-core';
 import { Button } from '../Button';
+import { getStyles as getIconButtonStyles } from '../IconButton/IconButton.styles';
 import getStyles from './ToggleButton.styles';
-import { ButtonSize } from '../types';
+import type { ButtonSize } from '../types';
+import { useDensity } from '@contentful/f36-utils';
 
 export interface ToggleButtonProps extends CommonProps {
   /**
@@ -32,7 +34,7 @@ export interface ToggleButtonProps extends CommonProps {
   size?: ButtonSize;
 
   /**
-   * Aria label is required when using icon only
+   * Accessible label. Required when the button only displays an icon.
    */
   'aria-label'?: string;
 
@@ -52,7 +54,10 @@ function ToggleButtonBase(props: ExpandProps<ToggleButtonProps>, ref) {
     ...otherProps
   } = props;
 
-  const styles = getStyles({ isActive, isDisabled });
+  const density = useDensity();
+  const isIconOnly = Boolean(icon) && !children;
+  const styles = getStyles({ isActive, isDisabled, size });
+  const iconButtonStyles = getIconButtonStyles({ size, density });
 
   const handleToggle = () => {
     if (!isDisabled && onToggle) {
@@ -67,7 +72,11 @@ function ToggleButtonBase(props: ExpandProps<ToggleButtonProps>, ref) {
       ref={ref}
       size={size}
       onClick={handleToggle}
-      className={cx(styles.toggleButton, className)}
+      className={cx(
+        styles.toggleButton,
+        isIconOnly && iconButtonStyles.iconButton,
+        className,
+      )}
       startIcon={icon}
       isDisabled={isDisabled}
       aria-pressed={isActive}

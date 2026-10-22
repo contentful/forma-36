@@ -79,6 +79,39 @@ Basic.args = {
   subtitle: 'Subtitle',
 };
 
+export const WithCustomIds: StoryObj<ModalProps> = (props) => {
+  const [isShown, setShown] = useState(true);
+
+  return (
+    <div>
+      <Button onClick={() => setShown(true)}>Open modal</Button>
+      <Modal
+        {...props}
+        modalHeaderProps={{
+          className: 'additional-modal-header-class',
+          titleId: 'custom-title',
+          subtitleId: 'custom-subtitle',
+          aria: {
+            closeIconLabel: 'Custom close modal aria label',
+          },
+        }}
+        modalContentProps={{
+          className: 'additional-modal-content-class',
+        }}
+        isShown={isShown}
+        onClose={() => setShown(false)}
+      >
+        Modal content. It is centered by default.
+      </Modal>
+    </div>
+  );
+};
+
+WithCustomIds.args = {
+  title: 'Default modal',
+  subtitle: 'Subtitle',
+};
+
 export const LongModal: StoryObj<ModalProps> = (props) => {
   const [isShown, setShown] = useState(true);
 

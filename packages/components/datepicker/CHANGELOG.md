@@ -1,5 +1,82 @@
 # @contentful/f36-datepicker
 
+## 6.28.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.28.0
+  - @contentful/f36-core@6.28.0
+  - @contentful/f36-forms@6.28.0
+  - @contentful/f36-icons@6.28.0
+  - @contentful/f36-popover@6.28.0
+
+## 6.27.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.27.1
+  - @contentful/f36-core@6.27.1
+  - @contentful/f36-forms@6.27.1
+  - @contentful/f36-icons@6.27.1
+  - @contentful/f36-popover@6.27.1
+
+## 6.27.0
+
+### Patch Changes
+
+- Updated dependencies [[`eb87e18`](https://github.com/contentful/forma-36/commit/eb87e1831adedc79d2c031a087a304919db3ba6e)]:
+  - @contentful/f36-icons@6.27.0
+  - @contentful/f36-button@6.27.0
+  - @contentful/f36-core@6.27.0
+  - @contentful/f36-forms@6.27.0
+  - @contentful/f36-popover@6.27.0
+
+## 6.26.0
+
+### Patch Changes
+
+- Updated dependencies [[`2d6b11b`](https://github.com/contentful/forma-36/commit/2d6b11bed3b05e8eb45e3d7effe6d5363e5d3634)]:
+  - @contentful/f36-button@6.26.0
+  - @contentful/f36-core@6.26.0
+  - @contentful/f36-forms@6.26.0
+  - @contentful/f36-icons@6.26.0
+  - @contentful/f36-popover@6.26.0
+
+## 6.25.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.25.0
+  - @contentful/f36-core@6.25.0
+  - @contentful/f36-forms@6.25.0
+  - @contentful/f36-icons@6.25.0
+  - @contentful/f36-popover@6.25.0
+
+## 6.24.0
+
+### Patch Changes
+
+- Updated dependencies [[`3041221`](https://github.com/contentful/forma-36/commit/3041221625f6748f2c07fc0f8c12170cb900d1f0)]:
+  - @contentful/f36-icons@6.24.0
+  - @contentful/f36-button@6.24.0
+  - @contentful/f36-core@6.24.0
+  - @contentful/f36-forms@6.24.0
+  - @contentful/f36-popover@6.24.0
+
+## 6.23.0
+
+### Patch Changes
+
+- Updated dependencies [[`d076fa6`](https://github.com/contentful/forma-36/commit/d076fa666d0c0fa3107e7368233c70f3c2f052ec)]:
+  - @contentful/f36-icons@6.23.0
+  - @contentful/f36-button@6.23.0
+  - @contentful/f36-core@6.23.0
+  - @contentful/f36-forms@6.23.0
+  - @contentful/f36-popover@6.23.0
+
 ## 6.22.1
 
 ### Patch Changes

@@ -3,8 +3,8 @@ packages:
   - 'packages/components/*'
 
 catalog:
-  react: 19.2.8
-  react-dom: 19.2.8
+  react: 19.3.0
+  react-dom: 19.3.0
 
 linkWorkspacePackages: true
 autoInstallPeers: false
@@ -25,17 +25,22 @@ minimumReleaseAgeExclude:
   - '@size-limit/time@13.0.1'
   - '@size-limit/webpack@13.0.1'
   - 'size-limit@13.0.1'
-  # Renovate security update: next@15.5.21 || 15.5.24
-  - next@15.5.21 || 15.5.24
+  # Renovate security update: next@15.5.21 || 15.5.24 || 15.5.27
+  - next@15.5.21 || 15.5.24 || 15.5.27
   # Renovate security update: next-auth@4.24.15
   - next-auth@4.24.15
   # Renovate security update: qs@6.16.0
   - qs@6.16.0
   # Renovate security update: vitest@4.1.11
   - vitest@4.1.11
+  # Renovate security update: vite@8.1.6
+  - vite@8.1.6
+  # Renovate security update: storybook@10.6.2
+  - storybook@10.6.2
 ignoreScripts: true
 
 overrides:
+  'microbundle>rollup-plugin-typescript2': '^0.37.0'
   '@emotion/eslint-plugin>eslint': '>=9.0.0'
   '@emotion/eslint-plugin>@typescript-eslint/utils': '^8.65.0'
   'eslint-plugin-import>eslint': '>=9.0.0'

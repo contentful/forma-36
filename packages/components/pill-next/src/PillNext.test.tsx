@@ -52,6 +52,63 @@ describe('PillNext', () => {
     });
   });
 
+  describe('size', () => {
+    it('renders medium size by default', () => {
+      const { container } = render(<PillNext label="test" />);
+      expect(container.firstChild).toHaveStyle({
+        minHeight: '32px',
+        paddingLeft: '12px',
+      });
+    });
+
+    it('renders small size', () => {
+      const { container } = render(<PillNext label="test" size="small" />);
+      expect(container.firstChild).toHaveStyle({
+        minHeight: '24px',
+        paddingLeft: '8px',
+      });
+    });
+
+    it('renders a tiny leading icon in small size', () => {
+      const small = render(
+        <PillNext label="test" variant="warning" size="small" />,
+      );
+      const smallSvg = small.container.querySelector('svg');
+      small.unmount();
+      const medium = render(<PillNext label="test" variant="warning" />);
+      const mediumSvg = medium.container.querySelector('svg');
+      expect(smallSvg?.getAttribute('width')).not.toBe(
+        mediumSvg?.getAttribute('width'),
+      );
+    });
+
+    it('renders action button in small size', () => {
+      render(
+        <PillNext
+          label="test"
+          size="small"
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Remove"
+        />,
+      );
+      expect(screen.getByRole('button', { name: 'Remove' })).toBeTruthy();
+    });
+
+    it('has no a11y violations in small size', async () => {
+      const { container } = render(
+        <PillNext
+          label="test"
+          size="small"
+          actionIcon={<XIcon />}
+          onAction={() => {}}
+          actionButtonLabel="Remove"
+        />,
+      );
+      await expectNoA11yViolations(container);
+    });
+  });
+
   describe('action button', () => {
     it('renders action button when actionIcon is provided', () => {
       render(
