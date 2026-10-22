@@ -131,7 +131,7 @@ pnpm test:watch
 
 ## Building
 
-We are using [tsdown](https://tsdown.dev/) and [esbuild](https://esbuild.github.io/) together with [Microbundle](https://www.npmjs.com/package/microbundle) to build our component library.
+We are using [tsdown](https://tsdown.dev/) and [esbuild](https://esbuild.github.io/) to build our component library. The aggregate package has a small post-build compatibility step to preserve its historical UMD wrapper and output filenames.
 
 Each component builds to its own `dist` directory with:
 

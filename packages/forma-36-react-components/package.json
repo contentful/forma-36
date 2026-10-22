@@ -12,7 +12,8 @@
   "sideEffects": false,
   "browserslist": "extends @contentful/browserslist-config",
   "scripts": {
-    "build": "microbundle src/index.ts",
+    "build": "tsdown && pnpm build:types && node scripts/complete-build.mjs",
+    "build:types": "tsdown --no-config src/index.ts --format cjs --target es6 --platform browser --minify --sourcemap --dts --out-dir dist --no-clean",
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
@@ -73,7 +74,6 @@
   },
   "devDependencies": {
     "@contentful/browserslist-config": "^5.0.0",
-    "microbundle": "^0.15.1",
     "react": "catalog:",
     "react-dom": "catalog:",
     "semantic-release": "^25.0.2"
