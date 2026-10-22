@@ -1,5 +1,19 @@
 # Change Log
 
+## 6.28.0
+
+### Minor Changes
+
+- [#3732](https://github.com/contentful/forma-36/pull/3732) [`d00e681`](https://github.com/contentful/forma-36/commit/d00e68128272f9b673bd19336181779556b8b9df) Thanks [@Lelith](https://github.com/Lelith)! - Improves the accessibility of Modals by automatic linking of title and subtitle to aria-labelledby and aria-describedby.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.28.0
+  - @contentful/f36-core@6.28.0
+  - @contentful/f36-icons@6.28.0
+  - @contentful/f36-typography@6.28.0
+
 ## 6.27.1
 
 ### Patch Changes
