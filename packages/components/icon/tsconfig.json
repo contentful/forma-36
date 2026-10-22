@@ -2,7 +2,6 @@
   "extends": "../../../tsconfig.json",
   "include": ["src/**/*"],
   "exclude": ["dist/**/*", "**/*.test.tsx"],
-  "rootDir": ".",
   "compilerOptions": {
     "allowJs": false,
     "declaration": true,
@@ -10,7 +9,8 @@
     "inlineSources": true,
     "inlineSourceMap": true,
     "module": "ESNext",
-    "moduleResolution": "Node",
-    "outDir": "./dist/esm/",
+    "moduleResolution": "Bundler",
+    "rootDir": "./src",
+    "outDir": "./dist/esm/"
   }
 }
