@@ -36,6 +36,7 @@ const getIconStyle = ({ variant }) =>
     fill: variantColors[variant],
     marginRight: tokens.spacingM,
     alignItems: 'flex-start',
+    alignSelf: 'flex-start',
   });
 
 export const getStyles = ({ variant }: { variant: NotificationVariant }) => ({
