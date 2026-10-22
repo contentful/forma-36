@@ -1665,7 +1665,7 @@ importers:
         specifier: ^6.27.1
         version: link:../components/icons
       '@contentful/f36-pill-next':
-        specifier: 6.0.1-alpha.7
+        specifier: 6.0.1-alpha.8
         version: link:../components/pill-next
       '@contentful/f36-tokens':
         specifier: ^6.3.1
@@ -1949,7 +1949,7 @@ importers:
         specifier: ^6.27.1
         version: link:../components/navbar
       '@contentful/f36-pill-next':
-        specifier: 6.0.1-alpha.7
+        specifier: 6.0.1-alpha.8
         version: link:../components/pill-next
       '@contentful/f36-table-next':
         specifier: 6.0.1-alpha.3
