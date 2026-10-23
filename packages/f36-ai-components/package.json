@@ -40,7 +40,7 @@
     "@contentful/f36-typography": "^6.28.0",
     "@contentful/f36-utils": "^6.1.2",
     "@emotion/css": "^11.13.5",
-    "react-markdown": "^9.0.3",
+    "react-markdown": "^10.0.0",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.0"
   },
