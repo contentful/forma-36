@@ -2,7 +2,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 /**
- * Reorder mode: the Experiences sidebar (icon rail + Experiences menu) with folder reordering.
+ * Reorder mode: the Vegetables menu with folder reordering.
  *
  * Standalone React component; it only needs `react` and `react-dom`. Styles, icons (Forma 36 /
  * Phosphor paths) and the Geist font import are included, so it renders the same anywhere.
@@ -83,32 +83,12 @@ export default (function () {
       </svg>
     );
   }
-  const RAIL_SECTIONS = [
-    [
-      { label: 'Content model', icon: 'buildingBlock' },
-      { label: 'Tools', icon: 'wrench' },
-    ],
-    [
-      { label: 'Experiences', icon: 'devices' },
-      { label: 'Content', icon: 'penNib' },
-    ],
-    [
-      { label: 'Insights', icon: 'trendUp' },
-      { label: 'Ideas', icon: 'lightbulb' },
-    ],
-    [
-      { label: 'Automations', icon: 'lightning' },
-      { label: 'Taxonomy', icon: 'treeStructure' },
-      { label: 'Apps', icon: 'puzzlePiece' },
-    ],
-    [{ label: 'Settings', icon: 'gearSix' }],
-  ];
   const FOCUS_HINT_ID = 'reorder-mode-focus-hint';
   const PICKUP_INSTRUCTIONS =
     'Use Up and Down Arrow keys to move. Press Space or Enter to drop. Press Escape to cancel.';
   const isMac = () =>
     typeof navigator !== 'undefined' && /Mac/i.test(navigator.platform);
-  // Where a folder sits, relative to its neighbour: "after Folder one", or "at the start of the list".
+  // Where a folder sits, relative to its neighbour: "after Carrot", or "at the start of the list".
   const placement = (list, index) =>
     index === 0
       ? 'at the start of the list'
@@ -116,15 +96,15 @@ export default (function () {
         ? 'at the end of the list'
         : `after ${list[index - 1].name}`;
   const INITIAL_EXPERIENCE_FOLDERS = [
-    { id: 'exp-one', name: 'Folder one' },
-    { id: 'exp-two', name: 'Folder two' },
-    { id: 'exp-three', name: 'Folder three' },
-    { id: 'exp-four', name: 'Folder four' },
+    { id: 'exp-one', name: 'Carrot' },
+    { id: 'exp-two', name: 'Broccoli' },
+    { id: 'exp-three', name: 'Spinach' },
+    { id: 'exp-four', name: 'Zucchini' },
   ];
   const INITIAL_FRAGMENT_FOLDERS = [
-    { id: 'frag-x', name: 'Folder x' },
-    { id: 'frag-y', name: 'Folder y' },
-    { id: 'frag-z', name: 'Folder z' },
+    { id: 'frag-x', name: 'Apple' },
+    { id: 'frag-y', name: 'Banana' },
+    { id: 'frag-z', name: 'Cherry' },
   ];
   // Padding around the custom drag image, so the shadow isn't clipped when the browser captures it.
   const DRAG_IMAGE_PADDING = 16;
@@ -171,17 +151,12 @@ export default (function () {
 :where(.reorder-mode, .reorder-mode-menu) svg { display: block; flex: none; }
 
 .reorder-mode { box-sizing: border-box; display: flex; align-items: flex-start; padding-top: var(--space-xs); }
-/* Fixed height, set by the icon rail: its icons and the collapse button fit exactly. */
-.reorder-mode .panel { display: flex; flex: none; height: 534px; background: var(--white); border-radius: var(--radius-panel); box-shadow: var(--shadow-default); overflow: hidden; }
+/* Fixed height, so the panel does not resize when entering or leaving reorder mode. It is sized so the
+   Done button sits 16px above the bottom edge: 16 padding + 205 Vegetables + 16 gap + 156 Fruit + 17 padding and divider + 16 gap
+   + 24 buttons + 16 padding. Update it if the number of folders changes. */
+.reorder-mode .panel { display: flex; flex: none; height: 466px; background: var(--white); border-radius: var(--radius-panel); box-shadow: var(--shadow-default); overflow: hidden; }
 
-/* Icon rail */
-.reorder-mode .rail { display: flex; flex-direction: column; align-items: center; padding: var(--space-xs) var(--space-2xs); border-right: 1px solid var(--gray-200); }
-.reorder-mode .rail-sections { display: flex; flex: 1; flex-direction: column; gap: var(--space-s); align-items: center; }
-.reorder-mode .rail-section { display: flex; flex-direction: column; gap: var(--space-xs); align-items: center; width: 32px; padding: var(--space-2xs) 0 var(--space-s); border-bottom: 1px solid var(--gray-200); }
 /* The last group needs no bottom padding: the collapse button below it fits the fixed height. */
-.reorder-mode .rail-section:last-child { padding-bottom: 0; border-bottom: 0; }
-.reorder-mode .rail-item { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; padding: 0; border: 0; border-radius: var(--radius-s); background: none; color: var(--gray-900); cursor: pointer; }
-.reorder-mode .rail-item:hover { background: var(--gray-100); }
 
 /* Buttons */
 .reorder-mode .icon-button { display: inline-flex; align-items: center; justify-content: center; flex: none; padding: var(--space-2xs); border: 1px solid transparent; border-radius: var(--radius-m); background: none; color: var(--gray-900); cursor: pointer; }
@@ -198,14 +173,13 @@ export default (function () {
 .reorder-mode .save-order-button:active { background: var(--green-700); }
 .reorder-mode .shortcut-hint { font-size: 12px; line-height: 16px; font-weight: 500; color: rgba(255, 255, 255, 0.8); }
 .reorder-mode .save-order-button:focus-visible { outline: 0; box-shadow: var(--focus-ring-positive); }
-.reorder-mode :is(.rail-item, .icon-button, .button:not(.save-order-button), .nav-item):focus-visible,
+.reorder-mode :is(.icon-button, .button:not(.save-order-button), .nav-item):focus-visible,
 .reorder-mode-menu [role='menuitem']:focus-visible { outline: 0; box-shadow: var(--focus-ring); }
 
-/* Experiences menu */
+/* Vegetables menu */
 .reorder-mode .subnav { display: flex; flex-direction: column; gap: var(--space-s); width: 232px; min-height: 0; padding: var(--space-s); overflow-y: auto; }
 .reorder-mode .subnav-section { display: flex; flex: none; flex-direction: column; padding-bottom: var(--space-s); border-bottom: 1px solid var(--gray-200); }
-.reorder-mode .subnav-section:last-child,
-.reorder-mode .subnav-section:has(+ .subnav-sticky) { padding-bottom: 0; border-bottom: 0; }
+.reorder-mode .subnav-section:last-child { padding-bottom: 0; border-bottom: 0; }
 .reorder-mode .subnav-title { display: flex; align-items: center; gap: var(--space-2xs); height: 28px; padding: var(--space-xs) var(--space-xs) var(--space-xs) var(--space-s); font-size: 12px; font-weight: 600; color: var(--gray-700); }
 .reorder-mode .subnav-title h2 { flex: 1; margin: 0; font: inherit; }
 .reorder-mode .nav-item-wrap { position: relative; }
@@ -228,9 +202,10 @@ export default (function () {
 .reorder-mode .reorder-list { margin: 0; padding: 0; list-style: none; border-radius: var(--radius-m); outline: 1px dashed transparent; outline-offset: -1px; transition: outline-color 0.1s; }
 .reorder-mode .reorder-list[data-drag-active] { outline-color: var(--blue-600); }
 .reorder-mode .reorder-item { position: relative; display: flex; align-items: center; gap: var(--space-xs); height: 32px; padding: 6px var(--space-s) 6px var(--space-2xs); border-radius: var(--radius-s); color: var(--gray-900); cursor: grab; }
+.reorder-mode .reorder-item:hover { background: var(--gray-100); }
 .reorder-mode .reorder-item:active { cursor: grabbing; }
 .reorder-mode .reorder-item > span { flex: 1; }
-.reorder-mode .reorder-item[data-dragging] { opacity: 0.5; }
+.reorder-mode .reorder-item[data-dragging] { opacity: 0.6; }
 .reorder-mode .reorder-item[data-picked] { background: var(--blue-100); box-shadow: inset 0 0 0 1px var(--blue-600); }
 .reorder-mode .drag-handle { display: flex; padding: 0; border: 0; border-radius: var(--radius-s); background: none; color: inherit; cursor: inherit; }
 .reorder-mode .drag-handle:focus-visible { outline: 2px solid var(--blue-600); outline-offset: 1px; }
@@ -242,7 +217,7 @@ export default (function () {
 
 /* The folder being dragged: kept off-screen while the browser captures it as the drag image. */
 .reorder-mode-drag-image { position: fixed; top: -1000px; left: 0; pointer-events: none; }
-.reorder-mode-drag-image > li { display: flex; align-items: center; gap: var(--space-xs); height: 32px; padding: 6px var(--space-s) 6px var(--space-2xs); list-style: none; background: rgba(255, 255, 255, 0.7); border-radius: var(--radius-m); box-shadow: var(--shadow-default); }
+.reorder-mode-drag-image > li { display: flex; align-items: center; gap: var(--space-xs); height: 32px; padding: 6px var(--space-s) 6px var(--space-2xs); list-style: none; background: var(--gray-100); opacity: 0.6; border-radius: var(--radius-m); box-shadow: var(--shadow-default); }
 .reorder-mode-drag-image > li > span { flex: 1; }
 .reorder-mode-drag-image .drag-handle { display: flex; padding: 0; border: 0; background: none; color: inherit; }
 
@@ -496,7 +471,7 @@ export default (function () {
       if (announce) onAnnounce(describeMove(next, to));
       return next[to].id;
     };
-    // Concise relational feedback while moving: "After Folder one.", "At the start of the list." or
+    // Concise relational feedback while moving: "After Carrot.", "At the start of the list." or
     // "At the end of the list."
     const describeMove = (list, index) =>
       index === 0
@@ -719,8 +694,8 @@ export default (function () {
       setPickedOnStart(folderId);
       setReordering(true);
       const [label, folders] = experienceFolders.some((f) => f.id === folderId)
-        ? ['Experiences', experienceFolders]
-        : ['Fragments', fragmentFolders];
+        ? ['Vegetables', experienceFolders]
+        : ['Fruit', fragmentFolders];
       const index = folders.findIndex((f) => f.id === folderId);
       setAnnouncement(
         `Reorder mode on. ${folders[index]?.name} picked up. Position ${index + 1} of ${folders.length} in ${label}. ` +
@@ -825,47 +800,21 @@ export default (function () {
       <div className="reorder-mode" ref={rootRef}>
         <style>{STYLES}</style>
         <div className="panel">
-          <nav className="rail" aria-label="Main">
-            <div className="rail-sections">
-              {RAIL_SECTIONS.map((section, i) => (
-                <div className="rail-section" key={i}>
-                  {section.map((item) => (
-                    <button
-                      type="button"
-                      className="rail-item"
-                      key={item.label}
-                      aria-label={item.label}
-                    >
-                      <Icon name={item.icon} size={20} />
-                    </button>
-                  ))}
-                </div>
-              ))}
-            </div>
-            <IconButton
-              size="medium"
-              icon={<Icon name="sidebarSimple" size={20} />}
-              label="Collapse sidebar"
-            />
-          </nav>
-          <nav className="subnav" aria-label="Experiences">
-            <div className="subnav-section">
-              <NavItem icon={<Icon name="caretLeft" />}>Experiences</NavItem>
-            </div>
+          <nav className="subnav" aria-label="Vegetables">
             <div className="subnav-section">
               <div className="subnav-title">
-                <h2>Experiences</h2>
+                <h2>Vegetables</h2>
                 <IconButton
                   icon={<Icon name="caretUp" />}
-                  label="Collapse Experiences"
+                  label="Collapse Vegetables"
                   aria-expanded
                   disabled={reordering}
                 />
               </div>
-              <NavItem current>All experiences</NavItem>
+              <NavItem current>All vegetables</NavItem>
               {reordering
                 ? reorderList(
-                    'Experiences',
+                    'Vegetables',
                     experienceFolders,
                     setExperienceFolders,
                   )
@@ -880,17 +829,17 @@ export default (function () {
             </div>
             <div className="subnav-section">
               <div className="subnav-title">
-                <h2>Fragments</h2>
+                <h2>Fruit</h2>
                 <IconButton
                   icon={<Icon name="caretUp" />}
-                  label="Collapse Fragments"
+                  label="Collapse Fruit"
                   aria-expanded
                   disabled={reordering}
                 />
               </div>
-              <NavItem>All Fragments</NavItem>
+              <NavItem>All fruit</NavItem>
               {reordering
-                ? reorderList('Fragments', fragmentFolders, setFragmentFolders)
+                ? reorderList('Fruit', fragmentFolders, setFragmentFolders)
                 : fragmentFolders.map((f) => (
                     <FolderItem
                       key={f.id}

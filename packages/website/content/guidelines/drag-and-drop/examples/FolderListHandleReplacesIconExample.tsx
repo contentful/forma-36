@@ -270,6 +270,9 @@ export default function FolderListHandleReplacesIconExample() {
       transform: CSS.Transform.toString(transform),
       transition,
       opacity: isDragging ? 0.6 : undefined,
+      borderRadius: tokens.borderRadiusMedium,
+      boxShadow: isDragging ? tokens.boxShadowDefault : undefined,
+      zIndex: isDragging ? 1 : undefined,
     };
 
     const rowClassName = [styles.row, isMenuOpen ? styles.rowActive : '']
@@ -443,7 +446,19 @@ export default function FolderListHandleReplacesIconExample() {
         items={folders.map((folder) => folder.id)}
         strategy={verticalListSortingStrategy}
       >
-        <Flex flexDirection="column">
+        <Flex
+          flexDirection="column"
+          style={{
+            boxSizing: 'border-box',
+            width: '272px',
+            padding: tokens.spacingS,
+            backgroundColor: tokens.colorWhite,
+            marginTop: tokens.spacingXs,
+            borderRadius: '12px',
+            boxShadow:
+              '0 0 0 1px rgba(25, 37, 50, 0.1), 0 3px 7px -3px rgba(25, 37, 50, 0.1), 0 6px 12px -2px rgba(25, 37, 50, 0.1)',
+          }}
+        >
           {folders.map((folder, index) => (
             <FolderRow
               key={folder.id}
