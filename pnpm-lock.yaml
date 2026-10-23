@@ -849,8 +849,8 @@ importers:
         specifier: ^16.3.0
         version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       react-icons:
-        specifier: ^4.4.0
-        version: 4.12.0(react@19.3.0)
+        specifier: ^5.0.0
+        version: 5.7.0(react@19.3.0)
       tsconfig-to-dual-package:
         specifier: ^1.2.0
         version: 1.2.0(typescript@6.0.3)
@@ -2042,8 +2042,8 @@ importers:
         specifier: ^7.53.2
         version: 7.71.1(react@19.3.0)
       react-icons:
-        specifier: ^4.4.0
-        version: 4.12.0(react@19.3.0)
+        specifier: ^5.0.0
+        version: 5.7.0(react@19.3.0)
       react-live:
         specifier: ^3.2.0
         version: 3.2.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -10894,8 +10894,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
 
-  react-icons@4.12.0:
-    resolution: {integrity: sha512-IBaDuHiShdZqmfc/TwHu6+d6k2ltNCf3AszxNmjJc1KUfXdEeRJOKyNvLmAHaarhzGmTSVygNdyu8/opXv2gaw==}
+  react-icons@5.7.0:
+    resolution: {integrity: sha512-LBLy340Rzqy6+/yVhZKT3B/QpP1BZaesGqasf09HPOBzRarcDIFH0WwXlXQfE7q7ipxK4MSiC5DIBWURCny6fw==}
     peerDependencies:
       react: '*'
 
@@ -22505,7 +22505,7 @@ snapshots:
     dependencies:
       react: 19.3.0
 
-  react-icons@4.12.0(react@19.3.0):
+  react-icons@5.7.0(react@19.3.0):
     dependencies:
       react: 19.3.0
 
