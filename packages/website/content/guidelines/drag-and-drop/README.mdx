@@ -24,6 +24,7 @@ Drag and drop lets users reorder, move, or place items through direct manipulati
 | Move      | The item leaves its original container           | Another container          |
 | Add       | The source remains and a new instance is created | Another container          |
 
+
 - Reorder within a list — change an item's position while keeping it in the same container.
 - Reorder or reparent within a hierarchy — change an item's position, parent, or hierarchy level.
 - Move between containers — transfer an existing item from one container to another.
@@ -67,6 +68,8 @@ The item being moved defines the scope of the operation.
 - Only expose destinations that result in valid states.
 - Show the resulting position before the user commits the move.
 
+
+
 ### Reorder a List
 
 1. User initiates dragging from the item's drag handle.
@@ -79,11 +82,9 @@ The item being moved defines the scope of the operation.
 Reordering changes the item's position within its current list. It does not change its meaning or container. The drag handle can replace the leading icon when the icon represents secondary metadata and users do not need that information to decide how or where to drag the item. Preserve the metadata for assistive technology when the icon is replaced; see Accessibility for accessible naming and descriptions.
 
 ```jsx file=./examples/FolderListHandleReplacesIconExample.tsx hideCode
-
 ```
 
 ```jsx file=./examples/ReorderModeExample.tsx hideCode
-
 ```
 
 #### Reorder mode
@@ -213,7 +214,7 @@ Use a focusable Forma 36 DragHandle rendered as a button.
 Keep keyboard focus associated with the moved item's drag handle after dropping or cancelling.
 
 _Focus order_
-Tab order should primarily follow the spatial and structural order of interactive elements, rather than their perceived action priority. Accessible names should make each control understandable independently.
+Tab order should primarily follow the spatial and structural order of interactive elements, rather than their perceived action priority.” Accessible names should make each control understandable independently.
 
 _Item name and focus_
 Do not make the item name focusable only so it can be announced by a screen reader.
@@ -312,9 +313,7 @@ Keep repeated movement announcements concise. Provide fuller context when the it
   - “At the end of the list.”
   - “Cannot move Page settings into this group.”
 - On cancellation, confirm that the item returned to its original location:
-  - Reorder: “Reorder cancelled. Looper returned to position 4 of 12.”
-  - Add from a source: “Add cancelled. Nothing was added.”
-  - Move between containers: “Move cancelled. Looper returned to [original container].”
+  - “Move cancelled. Looper returned to position 4 of 12.”
   - For a hierarchy, include the original parent when relevant.
     Do not repeat unchanged information during every movement. Use the same meaningful item names that appear in the interface, and never expose internal implementation IDs in announcements.
 
@@ -388,7 +387,7 @@ Drag and drop should reinforce rather than hide the structure of the interface.
 - Deep or long collections make sequential keyboard movement inefficient.
 - Reparenting requires especially clear destination feedback because it changes structure as well as position.
 - A robust implementation must support both direct manipulation and equivalent explicit actions.
-- Multi-item drag and drop is not covered by this pattern. Multi-selection introduces additional selection, movement, focus, and announcement requirements. The existing Limitations section doesn't currently state this.
+- Multi-item drag and drop is not covered by this pattern. Multi-selection introduces additional selection, movement, focus, and announcement requirements. 
 
 ---
 
