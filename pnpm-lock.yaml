@@ -1758,11 +1758,11 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
       jscodeshift:
-        specifier: ^0.16.1
-        version: 0.16.1(@babel/preset-env@7.28.6(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1)
+        specifier: ^17.0.0
+        version: 17.4.0(@babel/preset-env@7.28.6(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1)
       jscodeshift-add-imports:
         specifier: ^1.0.11
-        version: 1.0.11(jscodeshift@0.16.1(@babel/preset-env@7.28.6(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1)
+        version: 1.0.11(jscodeshift@17.4.0(@babel/preset-env@7.28.6(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1)
       meow:
         specifier: ^9.0.0
         version: 9.0.0
@@ -9012,8 +9012,9 @@ packages:
     peerDependencies:
       jscodeshift: '>=0.7 <1'
 
-  jscodeshift@0.16.1:
-    resolution: {integrity: sha512-oMQXySazy63awNBzMpXbbVv73u3irdxTeX2L5ueRyFRxi32qb9uzdZdOY5fTBYADBG19l5M/wnGknZSV1dzCdA==}
+  jscodeshift@17.4.0:
+    resolution: {integrity: sha512-i3ESKiiTsGynxzTg5BhsZViD0ai72/6SsI1efDZxG6/5KCoElsmquxtyhXK5lpEgoO7MTNpYkjFEdEL97SkBNg==}
+    engines: {node: '>=16'}
     hasBin: true
     peerDependencies:
       '@babel/preset-env': ^7.1.6
@@ -9712,10 +9713,6 @@ packages:
   mitt@3.0.1:
     resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
 
-  mkdirp@0.5.6:
-    resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}
-    hasBin: true
-
   mkdirp@3.0.1:
     resolution: {integrity: sha512-+NsyUUAZDmo6YVHzL/stxSu3t9YS1iljliy3BSDrXJ/dkn1KYdmtZODGGjLcc9XLgVVpH4KshHB8XmZgMhaBXg==}
     engines: {node: '>=10'}
@@ -9834,10 +9831,6 @@ packages:
         optional: true
       sass:
         optional: true
-
-  node-dir@0.1.17:
-    resolution: {integrity: sha512-tmPX422rYgofd4epzrNoOXiE8XFZYOcCq1vD7MAXCDO+O+zndlA2ztdKKMa+EeuBG5tHETpr4ml4RGgpqDCCAg==}
-    engines: {node: '>= 0.10.5'}
 
   node-emoji@2.2.0:
     resolution: {integrity: sha512-Z3lTE9pLaJF47NyMhd4ww1yFTAP8YhYI8SleJiHzM46Fgpm5cnNzSl9XfzFNqbaz+VlJrIj3fXQ4DeN1Rjm6cw==}
@@ -11139,11 +11132,6 @@ packages:
     resolution: {integrity: sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
 
-  rimraf@2.6.3:
-    resolution: {integrity: sha512-mwqeW5XsA2qAejG46gYdENaxXjx9onRNCfn7L0duuP4hCuTIi/QO7PDK07KJfp1d+izWPrzEJDcSqBa0OZQriA==}
-    deprecated: Rimraf versions prior to v4 are no longer supported
-    hasBin: true
-
   robot-directives@0.3.0:
     resolution: {integrity: sha512-mROGTXczU5H5jpfwIpy4TUcmoZH033UXvkI2QZfbfH+qugWr7XzmXmMtKcqqrTn1d4wabmwfVG9xaVQQ66ti8Q==}
     engines: {node: '>= 0.10'}
@@ -11781,10 +11769,6 @@ packages:
     resolution: {integrity: sha512-nHc6S/bwIilKHNRgK/3jlhDoIHcp45YgyiwcAk46Tr0LfEqGBVpmiAyuiuxeVE44m3mXnEeVhaipLOEWmH+Njw==}
     engines: {node: '>=14.16'}
 
-  temp@0.9.4:
-    resolution: {integrity: sha512-yYrrsWnrXMcdsnu/7YMYAofM1ktpL5By7vZhf15CrXijWWrEYZks5AXBudalfSWJLlnen/QUJUB5aoB0kqZUGA==}
-    engines: {node: '>=6.0.0'}
-
   tempy@3.1.2:
     resolution: {integrity: sha512-pD3+21EbFZFBKDnVztX32wU6IBwkalOduWdx1OKvB5y6y1f2Xn8HU/U6o9EmlfdSyUYe9IybirmYPj/7rilA6Q==}
     engines: {node: '>=14.16'}
@@ -11886,6 +11870,10 @@ packages:
   tmp@0.0.33:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}
     engines: {node: '>=0.6.0'}
+
+  tmp@0.2.7:
+    resolution: {integrity: sha512-e0votIpp4Uo2AJYSzVHV6xCcawuiez3DzqDAbrTc3YxBkplN6e+dM13ZeIcZnDg/QpSuU2zfZ3rzwY8ukEnaXw==}
+    engines: {node: '>=14.14'}
 
   to-buffer@1.2.2:
     resolution: {integrity: sha512-db0E3UJjcFhpDhAF4tLo03oli3pwl3dbnzXOUIlRKrp+ldk/VUxzpWYZENsw2SZiuBjHAk7DfB0VU7NKdpb6sw==}
@@ -20068,19 +20056,19 @@ snapshots:
 
   jsbn@0.1.1: {}
 
-  jscodeshift-add-imports@1.0.11(jscodeshift@0.16.1(@babel/preset-env@7.28.6(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1):
+  jscodeshift-add-imports@1.0.11(jscodeshift@17.4.0(@babel/preset-env@7.28.6(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1):
     dependencies:
       '@babel/traverse': 7.29.0(supports-color@8.1.1)
-      jscodeshift: 0.16.1(@babel/preset-env@7.28.6(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1)
-      jscodeshift-find-imports: 2.0.5(jscodeshift@0.16.1(@babel/preset-env@7.28.6(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1))
+      jscodeshift: 17.4.0(@babel/preset-env@7.28.6(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1)
+      jscodeshift-find-imports: 2.0.5(jscodeshift@17.4.0(@babel/preset-env@7.28.6(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1))
     transitivePeerDependencies:
       - supports-color
 
-  jscodeshift-find-imports@2.0.5(jscodeshift@0.16.1(@babel/preset-env@7.28.6(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1)):
+  jscodeshift-find-imports@2.0.5(jscodeshift@17.4.0(@babel/preset-env@7.28.6(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1)):
     dependencies:
-      jscodeshift: 0.16.1(@babel/preset-env@7.28.6(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1)
+      jscodeshift: 17.4.0(@babel/preset-env@7.28.6(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1)
 
-  jscodeshift@0.16.1(@babel/preset-env@7.28.6(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1):
+  jscodeshift@17.4.0(@babel/preset-env@7.28.6(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1):
     dependencies:
       '@babel/core': 7.29.6(supports-color@8.1.1)
       '@babel/parser': 7.29.7
@@ -20092,14 +20080,13 @@ snapshots:
       '@babel/preset-flow': 7.27.1(@babel/core@7.29.6(supports-color@8.1.1))
       '@babel/preset-typescript': 7.28.5(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1)
       '@babel/register': 7.28.6(@babel/core@7.29.6(supports-color@8.1.1))
-      chalk: 4.1.2
       flow-parser: 0.298.0
       graceful-fs: 4.2.11
-      micromatch: 4.0.8
       neo-async: 2.6.2
-      node-dir: 0.1.17
+      picocolors: 1.1.1
+      picomatch: 4.0.7
       recast: 0.23.11
-      temp: 0.9.4
+      tmp: 0.2.7
       write-file-atomic: 5.0.1
     optionalDependencies:
       '@babel/preset-env': 7.28.6(@babel/core@7.29.6(supports-color@8.1.1))(supports-color@8.1.1)
@@ -21066,10 +21053,6 @@ snapshots:
 
   mitt@3.0.1: {}
 
-  mkdirp@0.5.6:
-    dependencies:
-      minimist: 1.2.8
-
   mkdirp@3.0.1: {}
 
   moo@0.5.2: {}
@@ -21178,10 +21161,6 @@ snapshots:
       - '@babel/core'
       - '@types/node'
       - babel-plugin-macros
-
-  node-dir@0.1.17:
-    dependencies:
-      minimatch: 3.1.5
 
   node-emoji@2.2.0:
     dependencies:
@@ -22879,10 +22858,6 @@ snapshots:
 
   reusify@1.1.0: {}
 
-  rimraf@2.6.3:
-    dependencies:
-      glob: 7.2.3
-
   robot-directives@0.3.0:
     dependencies:
       isbot: 2.5.7
@@ -23679,11 +23654,6 @@ snapshots:
 
   temp-dir@3.0.0: {}
 
-  temp@0.9.4:
-    dependencies:
-      mkdirp: 0.5.6
-      rimraf: 2.6.3
-
   tempy@3.1.2:
     dependencies:
       is-stream: 3.0.0
@@ -23786,6 +23756,8 @@ snapshots:
   tmp@0.0.33:
     dependencies:
       os-tmpdir: 1.0.2
+
+  tmp@0.2.7: {}
 
   to-buffer@1.2.2:
     dependencies:
