@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 23-10-2026
+
+**F36 Modal** `v6.28.0`
+
+- Improves the accessibility of Modals by automatic linking of title and subtitle to aria-labelledby and aria-describedby.
+
 ## 17-10-2026
 
 **F36 Empty State** `v6.27.1`
