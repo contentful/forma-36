@@ -6,12 +6,14 @@
  *
  * Behaviour:
  * - "Reorder folders" in a folder's menu starts reorder mode with that folder picked up and focused.
- * - Keyboard: Enter or Space on a drag handle picks a folder up or drops it; ArrowUp / ArrowDown move a
- *   picked-up folder; moving focus away drops it; Escape or "Save order" ends reorder mode.
+ * - Keyboard: Space or Enter on a drag handle picks a folder up or drops it; ArrowUp / ArrowDown move a
+ *   picked-up folder; Escape puts a picked-up folder back where it was; moving focus away drops it.
+ *   Ctrl+Enter (Cmd+Enter on Mac) or "Done" ends reorder mode and keeps the current order.
  * - Mouse: drag a folder within its section. A blue line marks where it will land (before the hovered
  *   folder, or after the last one), and the section shows a dashed outline only while dragging.
  *   The dragged copy is lifted: white at 70%, 6px corners, default shadow.
- * - "Reset order" appears once the order differs from when reorder mode started and restores it.
+ * - "Reset order" appears once the order differs from when reorder mode started and restores it;
+ *   reorder mode stays open, so Reset order followed by Done discards all changes.
  * - In reorder mode, only the drag handles and the mode buttons are tab stops; every change is
  *   announced to screen readers, and focus returns to the folder you were on when the mode ends.
  */
@@ -117,6 +119,22 @@ const RAIL_SECTIONS: { label: string; icon: IconName }[][] = [
 
 type Folder = { id: string; name: string };
 
+const FOCUS_HINT_ID = 'reorder-mode-focus-hint';
+
+const PICKUP_INSTRUCTIONS =
+  'Use Up and Down Arrow keys to move. Press Space or Enter to drop. Press Escape to cancel.';
+
+const isMac = () =>
+  typeof navigator !== 'undefined' && /Mac/i.test(navigator.platform);
+
+// Where a folder sits, relative to its neighbour: "after Folder one", or "at the start of the list".
+const placement = (list: Folder[], index: number) =>
+  index === 0
+    ? 'at the start of the list'
+    : index === list.length - 1
+      ? 'at the end of the list'
+      : `after ${list[index - 1].name}`;
+
 const INITIAL_EXPERIENCE_FOLDERS: Folder[] = [
   { id: 'exp-one', name: 'Folder one' },
   { id: 'exp-two', name: 'Folder two' },
@@ -197,7 +215,7 @@ const STYLES = `
 /* Mode buttons, compact as in the design: 24px tall, 12px labels on one line. */
 .reorder-mode .button { display: flex; flex: none; align-items: center; justify-content: center; gap: var(--space-xs); height: 24px; padding: 0 var(--space-xs); border: 1px solid var(--gray-300); border-radius: var(--radius-m); background: var(--white); box-shadow: 0 1px 0 rgba(25, 37, 50, 0.08); color: var(--gray-900); font-size: 12px; font-weight: 500; line-height: 16px; white-space: nowrap; cursor: pointer; }
 .reorder-mode .button:hover { background: var(--gray-100); }
-/* Save order: Forma 36 positive button, label left and the ESC hint right, filling the row. */
+/* Done: Forma 36 positive button, label left and the shortcut hint right, filling the row. */
 .reorder-mode .save-order-button { flex: 1; justify-content: space-between; border-color: transparent; background: var(--green-500); color: var(--white); }
 .reorder-mode .save-order-button:hover { background: var(--green-600); }
 .reorder-mode .save-order-button:active { background: var(--green-700); }
@@ -533,6 +551,10 @@ function ReorderList({
   const [pickedId, setPickedId] = useState<string | null>(
     initialPickedId ?? null,
   );
+  // Index the picked-up folder had at pick-up, so Escape can restore it.
+  const pickupIndex = useRef<number | null>(
+    initialPickedId ? folders.findIndex((f) => f.id === initialPickedId) : null,
+  );
   // Moving a focused element in the DOM blurs it; ignore that blur so the pick-up survives.
   const refocusing = useRef(false);
 
@@ -546,35 +568,87 @@ function ReorderList({
     });
   };
 
-  const move = (from: number, to: number) => {
-    if (from === to || to < 0 || to >= folders.length) return;
+  const reordered = (from: number, to: number) => {
     const next = folders.slice();
     const [item] = next.splice(from, 1);
     next.splice(to, 0, item);
-    onChange(next);
-    onUserMove(item.id);
-    onAnnounce(
-      `${item.name} moved to position ${to + 1} of ${next.length} in ${label}`,
-    );
-    return item.id;
+    return next;
   };
+
+  const move = (from: number, to: number, announce = true) => {
+    if (to < 0) {
+      onAnnounce('At the start of the list.');
+      return;
+    }
+    if (to >= folders.length) {
+      onAnnounce('At the end of the list.');
+      return;
+    }
+    if (from === to) return;
+    const next = reordered(from, to);
+    onChange(next);
+    onUserMove(next[to].id);
+    if (announce) onAnnounce(describeMove(next, to));
+    return next[to].id;
+  };
+
+  // Concise relational feedback while moving: "After Folder one.", "At the start of the list." or
+  // "At the end of the list."
+  const describeMove = (list: Folder[], index: number) =>
+    index === 0
+      ? 'At the start of the list.'
+      : index === list.length - 1
+        ? 'At the end of the list.'
+        : `After ${list[index - 1].name}.`;
+
+  const announceDrop = (list: Folder[], folder: Folder, index: number) =>
+    onAnnounce(
+      `${folder.name} dropped ${placement(list, index)}. Position ${index + 1} of ${list.length}.`,
+    );
+
+  // Pointer drags skip the keyboard instructions, which don't apply to them.
+  const announcePickup = (folder: Folder, index: number, withKeys = true) =>
+    onAnnounce(
+      `${folder.name} picked up. Position ${index + 1} of ${folders.length} in ${label}.` +
+        (withKeys ? ` ${PICKUP_INSTRUCTIONS}` : ''),
+    );
 
   const togglePick = (folder: Folder, index: number) => {
     if (pickedId === folder.id) {
       setPickedId(null);
-      onAnnounce(
-        `Dropped ${folder.name} at position ${index + 1} of ${folders.length} in ${label}.`,
-      );
+      pickupIndex.current = null;
+      announceDrop(folders, folder, index);
     } else {
       setPickedId(folder.id);
-      onAnnounce(
-        `Picked up ${folder.name}, position ${index + 1} of ${folders.length} in ${label}. ` +
-          'Use the up and down arrow keys to move, and Enter or Space to drop.',
-      );
+      pickupIndex.current = index;
+      announcePickup(folder, index);
     }
   };
 
+  // Escape: put the picked-up folder back at the position it had when it was picked up.
+  const cancelPick = (folder: Folder, index: number) => {
+    const original = pickupIndex.current ?? index;
+    setPickedId(null);
+    pickupIndex.current = null;
+    if (original !== index) {
+      const next = folders.slice();
+      const [item] = next.splice(index, 1);
+      next.splice(original, 0, item);
+      onChange(next);
+    }
+    onAnnounce(
+      `Reorder cancelled. ${folder.name} returned to position ${original + 1} of ${folders.length}.`,
+    );
+    focusHandle(folder.id);
+  };
+
+  // Pointer drags announce the same messages as keyboard moves. The last announced target keeps
+  // drag-over from repeating itself, and `dropped` tells a cancelled drag from a completed one.
+  const lastTarget = useRef<number | null>(null);
+  const dropped = useRef(false);
+
   const endDrag = () => {
+    lastTarget.current = null;
     setDragIndex(null);
     setOverIndex(null);
     setOverEnd(false);
@@ -609,6 +683,9 @@ function ReorderList({
           draggable
           onDragStart={(e) => {
             setDragIndex(index);
+            dropped.current = false;
+            lastTarget.current = index;
+            announcePickup(folder, index, false);
             e.dataTransfer.effectAllowed = 'move';
             e.dataTransfer.setData('text/plain', folder.id);
             setLiftedDragImage(e);
@@ -619,25 +696,47 @@ function ReorderList({
             e.dataTransfer.dropEffect = 'move';
             setOverIndex(index);
             const rect = e.currentTarget.getBoundingClientRect();
-            setOverEnd(
+            const atEnd =
               index === folders.length - 1 &&
-                e.clientY > rect.top + rect.height / 2,
-            );
+              e.clientY > rect.top + rect.height / 2;
+            setOverEnd(atEnd);
+            const from = dragRef.current;
+            const insertAt = atEnd ? folders.length : index;
+            const target = insertAt > from ? insertAt - 1 : insertAt;
+            if (target !== lastTarget.current) {
+              lastTarget.current = target;
+              onAnnounce(describeMove(reordered(from, target), target));
+            }
           }}
           onDrop={(e) => {
             e.preventDefault();
-            if (dragRef.current !== null)
-              move(dragRef.current, dropTo(dragRef.current, index));
+            const from = dragRef.current;
+            if (from !== null) {
+              const to = dropTo(from, index);
+              dropped.current = true;
+              move(from, to, false);
+              announceDrop(reordered(from, to), folder, to);
+            }
             endDrag();
           }}
-          onDragEnd={endDrag}
+          onDragEnd={() => {
+            // No drop happened (Escape, or released outside a folder): the folder stays put.
+            if (!dropped.current && dragRef.current !== null)
+              onAnnounce(
+                `Reorder cancelled. ${folder.name} returned to position ${dragRef.current + 1} of ${folders.length}.`,
+              );
+            endDrag();
+          }}
         >
           <button
             type="button"
             className="drag-handle"
             data-folder-id={folder.id}
-            aria-label={`Reorder ${folder.name}. Press Enter or Space to pick up, use the up and down arrow keys to move, then press Enter or Space to drop.`}
-            aria-pressed={pickedId === folder.id}
+            aria-label={`Reorder ${folder.name}`}
+            // The short start instruction is only needed before pick-up; the full ones come on pick-up.
+            aria-describedby={
+              pickedId === folder.id ? undefined : FOCUS_HINT_ID
+            }
             // Enter and Space both arrive as a click with detail 0; real mouse clicks are left to dragging.
             onClick={(e) => {
               if (e.detail === 0) togglePick(folder, index);
@@ -646,11 +745,20 @@ function ReorderList({
               if (refocusing.current || pickedId !== folder.id) return;
               // Focus left the handle while holding the folder: drop it where it is.
               setPickedId(null);
-              onAnnounce(
-                `Dropped ${folder.name} at position ${index + 1} of ${folders.length} in ${label}.`,
-              );
+              pickupIndex.current = null;
+              announceDrop(folders, folder, index);
             }}
             onKeyDown={(e) => {
+              // Ctrl/Cmd+Enter is the "Done" shortcut; don't let it also pick up or drop.
+              if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+                e.preventDefault();
+                return;
+              }
+              if (e.key === 'Escape' && pickedId === folder.id) {
+                e.preventDefault();
+                cancelPick(folder, index);
+                return;
+              }
               if (e.key !== 'ArrowUp' && e.key !== 'ArrowDown') return;
               e.preventDefault();
               if (pickedId !== folder.id) return; // arrows only move a picked-up folder
@@ -671,7 +779,13 @@ function ReorderList({
 export default function ReorderMode() {
   const rootRef = useRef<HTMLDivElement>(null);
   const [reordering, setReordering] = useState(false);
-  const [announcement, setAnnouncement] = useState('');
+  const [announcement, setAnnouncementState] = useState('');
+  // A live region only speaks when its text changes, so an identical message ("At the start of
+  // the list." on a second Arrow Up) alternates a trailing no-break space to be announced again.
+  const setAnnouncement = (message: string) =>
+    setAnnouncementState((previous) =>
+      previous === message ? `${message}\u00A0` : message,
+    );
   const [experienceFolders, setExperienceFolders] = useState<Folder[]>(
     INITIAL_EXPERIENCE_FOLDERS,
   );
@@ -721,8 +835,8 @@ export default function ReorderMode() {
       : ['Fragments', fragmentFolders];
     const index = folders.findIndex((f) => f.id === folderId);
     setAnnouncement(
-      `Reorder mode on. Picked up ${folders[index]?.name}, position ${index + 1} of ${folders.length} in ${label}. ` +
-        'Use the up and down arrow keys to move, and Enter or Space to drop. Press Escape or Save order to finish.',
+      `Reorder mode on. ${folders[index]?.name} picked up. Position ${index + 1} of ${folders.length} in ${label}. ` +
+        `${PICKUP_INSTRUCTIONS} Choose Done when finished.`,
     );
   };
 
@@ -753,7 +867,7 @@ export default function ReorderMode() {
     setFragmentFolders(foldersAtStart.current.fragments);
     movedByUser.current = new Set();
     setAnnouncement('Folder order was reset.');
-    // Reset order hides itself, so hand focus to Save order.
+    // Reset order hides itself, so hand focus to Done.
     focusInRoot('.save-order-button');
   };
 
@@ -803,11 +917,14 @@ export default function ReorderMode() {
     };
   }, [reordering]);
 
-  // Escape ends reorder mode from anywhere on the page.
+  // Ctrl/Cmd+Enter is the Done shortcut, so long lists don't need tabbing to the button.
+  // Escape is not handled here: it only cancels a picked-up folder, on the drag handle.
   useEffect(() => {
     if (!reordering) return;
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key !== 'Escape') return;
+      if (e.key !== 'Enter' || !(e.ctrlKey || e.metaKey)) return;
+      // Only when focus is inside this component, so the shortcut doesn't hijack the rest of the page.
+      if (!rootRef.current?.contains(e.target as Node)) return;
       e.preventDefault();
       stopReorder();
     };
@@ -923,17 +1040,20 @@ export default function ReorderMode() {
               <button
                 type="button"
                 className="button keep-tab save-order-button"
-                aria-keyshortcuts="Escape"
+                aria-keyshortcuts="Control+Enter Meta+Enter"
                 onClick={stopReorder}
               >
-                Save order
+                Done
                 {/* Visual hint only: the shortcut is exposed to assistive tech via aria-keyshortcuts. */}
                 <span className="shortcut-hint" aria-hidden="true">
-                  ESC
+                  {isMac() ? '⌘↵' : 'Ctrl+↵'}
                 </span>
               </button>
             </div>
           )}
+          <span id={FOCUS_HINT_ID} className="visually-hidden">
+            Press Space or Enter to start reordering.
+          </span>
           <div className="visually-hidden" role="status" aria-live="polite">
             {announcement}
           </div>

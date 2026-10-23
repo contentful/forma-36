@@ -162,6 +162,10 @@ export default function FolderListHandleReplacesIconExample() {
   const [activeMenuId, setActiveMenuId] = React.useState('');
   const [activeId, setActiveId] = React.useState(null);
   const [overId, setOverId] = React.useState(null);
+  // dnd-kit reports the item's own position right after pick-up. That must stay
+  // silent so it doesn't replace the pick-up announcement, but coming back to the
+  // starting position later in the same drag should be announced.
+  const hasLeftStart = React.useRef(false);
 
   // dnd-kit's own live region only announces drag-initiated moves (it's
   // wired to DndContext's onDragStart/onDragOver/onDragEnd/onDragCancel).
@@ -181,6 +185,13 @@ export default function FolderListHandleReplacesIconExample() {
     setFolders((current) => arrayMove(current, fromIndex, toIndex));
   }
 
+  // Where an item sits, named by its neighbour: "after Fruits", or the list edge.
+  function describePlacement(list, index) {
+    if (index === 0) return 'at the start of the list';
+    if (index === list.length - 1) return 'at the end of the list';
+    return `after ${list[index - 1].name}`;
+  }
+
   function moveFolderFromMenu(fromIndex, toIndex) {
     const activeFolder = folders[fromIndex];
     const preview = arrayMove(folders, fromIndex, toIndex);
@@ -188,20 +199,10 @@ export default function FolderListHandleReplacesIconExample() {
       (folder) => folder.id === activeFolder.id,
     );
     moveFolder(fromIndex, toIndex);
-    if (newIndex === 0) {
-      setMenuMoveAnnouncement(
-        `${activeFolder.name} moved to position 1 of ${preview.length}.`,
-      );
-    } else if (newIndex === preview.length - 1) {
-      setMenuMoveAnnouncement(
-        `${activeFolder.name} moved to position ${preview.length} of ${preview.length}.`,
-      );
-    } else {
-      setMenuMoveAnnouncement(
-        `${activeFolder.name} moved after ${preview[newIndex - 1].name}. ` +
-          `Position ${newIndex + 1} of ${preview.length}.`,
-      );
-    }
+    setMenuMoveAnnouncement(
+      `${activeFolder.name} moved ${describePlacement(preview, newIndex)}. ` +
+        `Position ${newIndex + 1} of ${preview.length}.`,
+    );
   }
 
   function deleteFolder(id) {
@@ -209,6 +210,7 @@ export default function FolderListHandleReplacesIconExample() {
   }
 
   const handleDragStart = (event) => {
+    hasLeftStart.current = false;
     setActiveId(event.active.id);
   };
 
@@ -230,6 +232,9 @@ export default function FolderListHandleReplacesIconExample() {
     setActiveId(null);
     setOverId(null);
   };
+
+  // Describes what the replaced icon meant. Referenced by every drag handle.
+  const folderDescriptionId = 'folder-row-description';
 
   // FolderRow must keep a stable function identity across re-renders, or
   // React remounts every row (and its Menu) whenever activeMenuId changes.
@@ -304,6 +309,10 @@ export default function FolderListHandleReplacesIconExample() {
               aria-label={`Reorder ${folder.name}`}
               {...attributes}
               {...listeners}
+              // The handle replaces the folder icon, so the icon's meaning moves
+              // to the description. dnd-kit's attributes already point at the
+              // keyboard instructions; keep them and add the item type first.
+              aria-describedby={`${folderDescriptionId} ${attributes['aria-describedby']}`}
             >
               <DotsSixVerticalIcon color={tokens.gray600} />
             </button>
@@ -370,8 +379,12 @@ export default function FolderListHandleReplacesIconExample() {
       if (!over) return undefined;
       const fromIndex = folders.findIndex((folder) => folder.id === active.id);
       const toIndex = folders.findIndex((folder) => folder.id === over.id);
-      if (fromIndex === -1 || toIndex === -1 || fromIndex === toIndex) {
-        return undefined;
+      if (fromIndex === -1 || toIndex === -1) return undefined;
+      if (fromIndex === toIndex) {
+        if (!hasLeftStart.current) return undefined;
+        hasLeftStart.current = false;
+      } else {
+        hasLeftStart.current = true;
       }
       const preview = arrayMove(folders, fromIndex, toIndex);
       const newIndex = preview.findIndex((folder) => folder.id === active.id);
@@ -393,14 +406,8 @@ export default function FolderListHandleReplacesIconExample() {
           ? folders
           : arrayMove(folders, fromIndex, toIndex);
       const newIndex = preview.findIndex((folder) => folder.id === active.id);
-      if (newIndex === 0) {
-        return `${activeFolder.name} dropped at position 1 of ${preview.length}.`;
-      }
-      if (newIndex === preview.length - 1) {
-        return `${activeFolder.name} dropped at position ${preview.length} of ${preview.length}.`;
-      }
       return (
-        `${activeFolder.name} dropped after ${preview[newIndex - 1].name}. ` +
+        `${activeFolder.name} dropped ${describePlacement(preview, newIndex)}. ` +
         `Position ${newIndex + 1} of ${preview.length}.`
       );
     },
@@ -408,7 +415,7 @@ export default function FolderListHandleReplacesIconExample() {
       const activeFolder = folders.find((folder) => folder.id === active.id);
       if (!activeFolder) return undefined;
       const index = folders.findIndex((folder) => folder.id === active.id);
-      return `Reorder canceled. ${activeFolder.name} returned to position ${index + 1} of ${folders.length}.`;
+      return `Reorder cancelled. ${activeFolder.name} returned to position ${index + 1} of ${folders.length}.`;
     },
   };
 
@@ -423,12 +430,15 @@ export default function FolderListHandleReplacesIconExample() {
     >
       <div
         role="status"
-        aria-live="assertive"
+        aria-live="polite"
         aria-atomic="true"
         className={styles.visuallyHidden}
       >
         {menuMoveAnnouncement}
       </div>
+      <span id={folderDescriptionId} className={styles.visuallyHidden}>
+        Folder
+      </span>
       <SortableContext
         items={folders.map((folder) => folder.id)}
         strategy={verticalListSortingStrategy}
