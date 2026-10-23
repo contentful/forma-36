@@ -28,6 +28,7 @@ import {
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { format, parse, isValid } from 'date-fns';
+import { createPortal } from 'react-dom';
 import FocusLock from 'react-focus-lock';
 
 import tokens from '@contentful/f36-tokens';
@@ -63,6 +64,7 @@ const liveProviderScope = {
   useRef,
   useMemo,
   useContext,
+  createPortal,
   // react-hook-form
   useForm,
   useController,
