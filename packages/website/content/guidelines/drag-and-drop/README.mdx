@@ -84,9 +84,6 @@ Reordering changes the item's position within its current list. It does not chan
 ```jsx file=./examples/FolderListHandleReplacesIconExample.tsx hideCode
 ```
 
-```jsx file=./examples/ReorderModeExample.tsx hideCode
-```
-
 #### Reorder mode
 
 When several lists can be reordered together, for example in a navigation menu, reordering can be a mode that users enter from an item's menu (such as “Reorder folders”) instead of a handle on every row. The same keyboard and announcement rules apply, with these additions:
@@ -97,6 +94,9 @@ When several lists can be reordered together, for example in a navigation menu, 
 - **Reset order** restores the order from when the mode started, without leaving the mode.
 - Drag handles and the mode buttons are the only tab stops while the mode is on. Return focus to the item the user was on when the mode ends.
 - Announce when the mode starts and ends, including how many items were reordered.
+
+```jsx file=./examples/ReorderModeExample.tsx hideCode
+```
 
 ### Reorder or reparent within a hierarchy
 
