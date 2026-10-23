@@ -24,7 +24,6 @@ Drag and drop lets users reorder, move, or place items through direct manipulati
 | Move      | The item leaves its original container           | Another container          |
 | Add       | The source remains and a new instance is created | Another container          |
 
-
 - Reorder within a list — change an item's position while keeping it in the same container.
 - Reorder or reparent within a hierarchy — change an item's position, parent, or hierarchy level.
 - Move between containers — transfer an existing item from one container to another.
@@ -68,8 +67,6 @@ The item being moved defines the scope of the operation.
 - Only expose destinations that result in valid states.
 - Show the resulting position before the user commits the move.
 
-
-
 ### Reorder a List
 
 1. User initiates dragging from the item's drag handle.
@@ -82,9 +79,11 @@ The item being moved defines the scope of the operation.
 Reordering changes the item's position within its current list. It does not change its meaning or container. The drag handle can replace the leading icon when the icon represents secondary metadata and users do not need that information to decide how or where to drag the item. Preserve the metadata for assistive technology when the icon is replaced; see Accessibility for accessible naming and descriptions.
 
 ```jsx file=./examples/FolderListHandleReplacesIconExample.tsx hideCode
+
 ```
 
 ```jsx file=./examples/ReorderModeExample.tsx hideCode
+
 ```
 
 #### Reorder mode
