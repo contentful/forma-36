@@ -24,6 +24,7 @@ Drag and drop lets users reorder, move, or place items through direct manipulati
 | Move      | The item leaves its original container           | Another container          |
 | Add       | The source remains and a new instance is created | Another container          |
 
+
 - Reorder within a list — change an item's position while keeping it in the same container.
 - Reorder or reparent within a hierarchy — change an item's position, parent, or hierarchy level.
 - Move between containers — transfer an existing item from one container to another.
@@ -67,6 +68,8 @@ The item being moved defines the scope of the operation.
 - Only expose destinations that result in valid states.
 - Show the resulting position before the user commits the move.
 
+
+
 ### Reorder a List
 
 1. User initiates dragging from the item's drag handle.
@@ -77,9 +80,23 @@ The item being moved defines the scope of the operation.
 6. Keep focus associated with the moved item.
 
 Reordering changes the item's position within its current list. It does not change its meaning or container. The drag handle can replace the leading icon when the icon represents secondary metadata and users do not need that information to decide how or where to drag the item. Preserve the metadata for assistive technology when the icon is replaced; see Accessibility for accessible naming and descriptions.
-{/* Example (hidden): ```jsx file=./examples/FolderListHandleReplacesIconExample.tsx hideCode``` */}
 
-{/* Example (hidden): ```jsx file=./examples/ReorderModeExample.tsx hideCode``` */}
+```jsx file=./examples/FolderListHandleReplacesIconExample.tsx hideCode
+```
+
+```jsx file=./examples/ReorderModeExample.tsx hideCode
+```
+
+#### Reorder mode
+
+When several lists can be reordered together, for example in a navigation menu, reordering can be a mode that users enter from an item's menu (such as “Reorder folders”) instead of a handle on every row. The same keyboard and announcement rules apply, with these additions:
+
+- The item that opened the mode starts picked up, and its drag handle receives focus.
+- Escape only cancels a picked-up item and restores its position. With nothing picked up, it does nothing.
+- A **Done** button ends the mode and keeps the current order. Offer Ctrl+Enter (Cmd+Enter on Mac) as its shortcut, expose it with `aria-keyshortcuts`, and make sure the shortcut does not also pick up or drop the focused item.
+- **Reset order** restores the order from when the mode started, without leaving the mode.
+- Drag handles and the mode buttons are the only tab stops while the mode is on. Return focus to the item the user was on when the mode ends.
+- Announce when the mode starts and ends, including how many items were reordered.
 
 ### Reorder or reparent within a hierarchy
 
@@ -197,7 +214,7 @@ Use a focusable Forma 36 DragHandle rendered as a button.
 Keep keyboard focus associated with the moved item's drag handle after dropping or cancelling.
 
 _Focus order_
-Tab order should primarily follow the spatial and structural order of interactive elements, rather than their perceived action priority.” Accessible names should make each control understandable independently.
+Tab order should primarily follow the spatial and structural order of interactive elements, rather than their perceived action priority. Accessible names should make each control understandable independently.
 
 _Item name and focus_
 Do not make the item name focusable only so it can be announced by a screen reader.
@@ -293,9 +310,12 @@ Keep repeated movement announcements concise. Provide fuller context when the it
   - Parent: “Page settings dropped at top level. Position 3 of 4. 5 nested items moved with it.”
 - At a boundary or invalid destination, provide concise feedback when needed:
   - “At the start of the list.”
+  - “At the end of the list.”
   - “Cannot move Page settings into this group.”
 - On cancellation, confirm that the item returned to its original location:
-  - “Move cancelled. Looper returned to position 4 of 12.”
+  - Reorder: “Reorder cancelled. Looper returned to position 4 of 12.”
+  - Add from a source: “Add cancelled. Nothing was added.”
+  - Move between containers: “Move cancelled. Looper returned to [original container].”
   - For a hierarchy, include the original parent when relevant.
     Do not repeat unchanged information during every movement. Use the same meaningful item names that appear in the interface, and never expose internal implementation IDs in announcements.
 
@@ -397,8 +417,9 @@ Forma 36's drag-and-drop examples use [dnd-kit](https://dndkit.com/). When imple
 
 - Use `DndContext`'s `accessibility` prop to provide `screenReaderInstructions` and `announcements` rather than relying on dnd-kit's defaults, which reference raw drag IDs. Build announcement text from the same item names shown in the interface.
 - Screen readers intercept arrow keys for their own navigation by default (often called browse mode), which can prevent dnd-kit's keyboard sensor from receiving them. Some screen readers switch automatically when focus lands on a `role="button"` element such as Forma 36's `DragHandle`, but this is not guaranteed across every screen reader and browser combination.
-- Do not solve this by instructing users to switch their screen reader's mode manually. Instead, apply `role="application"` to the drag handle's element only while that item is being dragged (`isDragging` from `useSortable`), and remove it once the drag ends or is cancelled. This hands arrow-key events to the widget for the duration of the interaction without any action from the user or any lasting effect on the rest of the page. See GitHub's write-up on [building an accessible sortable list](https://github.blog/2024-07-09-exploring-the-challenges-in-creating-an-accessible-sortable-list-drag-and-drop/) for the technique and its trade-offs.
-- `role="application"` changes how a screen reader treats an element and is inappropriate for most other uses. Scope it as narrowly as possible and verify the result with actual screen reader users, since AT vendors implement it differently.
+- Do not ask users to switch their screen reader's mode manually. Where it works, you can apply `role="application"` to the drag handle's element only while that item is being dragged (`isDragging` from `useSortable`) and remove it when the drag ends or is cancelled. This hands arrow-key events to the widget for the duration of the interaction. See GitHub's write-up on [building an accessible sortable list](https://github.blog/2024-07-09-exploring-the-challenges-in-creating-an-accessible-sortable-list-drag-and-drop/) for the technique and its trade-offs.
+- Treat this technique as optional and verify it. `role="application"` changes how a screen reader treats an element, is inappropriate for most other uses, and is implemented differently by each assistive technology. Some screen readers decide how to handle arrow keys when the element first receives focus and do not reconsider when the role changes afterwards, so the technique may not work. Scope the role as narrowly as possible and test with real screen reader users.
+- Never rely on this technique alone. Always provide the explicit Move up and Move down actions in the item's menu (see Dos and Don'ts). They work without arrow-key forwarding and satisfy the requirement for a non-drag alternative. If `role="application"` does not work reliably in your target screen readers, omit it and document the choice, as the folder list example does.
 - Forma 36's `DragHandle` hardcodes `role="button"` on its root element and does not let a consumer override it, so passing a `role` prop to `DragHandle` has no effect. To apply `role="application"` while dragging, render the interactive element yourself (for example a plain `button` styled to match `DragHandle`, with the same drag attributes/listeners) instead of using `DragHandle` in that row.
 - Give that button's accessible name with `aria-label` rather than a visible text child. Some screen readers walk a text node character by character on arrow-key input once `role="application"` is applied, which spells the accessible name out letter by letter instead of moving the item. `aria-label` carries the name as metadata, so there is no text content for the character cursor to walk.
 
