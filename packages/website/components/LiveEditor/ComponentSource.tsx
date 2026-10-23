@@ -106,6 +106,11 @@ const styles = {
     font-family: ${tokens.fontStackPrimary};
     border-radius: ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium} 0 0 !important;
   `,
+  // Removes the frame around the preview, for examples that draw their own surface.
+  cardBorderless: css`
+    border: 0 !important;
+    box-shadow: none !important;
+  `,
   floatingPanel: css`
     position: absolute;
     bottom: ${tokens.spacingS};
@@ -163,10 +168,12 @@ export function ComponentSource({
   code,
   file,
   hideCode,
+  hideBorder,
 }: {
   code: string;
   file?: string;
   hideCode?: boolean;
+  hideBorder?: boolean;
 }) {
   const [showSource, setShowSource] = useState(!hideCode);
   const tooltipId = useId();
@@ -188,7 +195,9 @@ export function ComponentSource({
         // The order is important here
         scope={liveProviderScope}
       >
-        <Card className={styles.card}>
+        <Card
+          className={cx(styles.card, { [styles.cardBorderless]: hideBorder })}
+        >
           {/* @ts-expect-error react-live's types omit its runtime Component prop */}
           <LivePreview Component="div" />
         </Card>

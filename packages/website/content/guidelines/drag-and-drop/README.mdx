@@ -24,7 +24,6 @@ Drag and drop lets users reorder, move, or place items through direct manipulati
 | Move      | The item leaves its original container           | Another container          |
 | Add       | The source remains and a new instance is created | Another container          |
 
-
 - Reorder within a list — change an item's position while keeping it in the same container.
 - Reorder or reparent within a hierarchy — change an item's position, parent, or hierarchy level.
 - Move between containers — transfer an existing item from one container to another.
@@ -68,8 +67,6 @@ The item being moved defines the scope of the operation.
 - Only expose destinations that result in valid states.
 - Show the resulting position before the user commits the move.
 
-
-
 ### Reorder a List
 
 1. User initiates dragging from the item's drag handle.
@@ -81,7 +78,8 @@ The item being moved defines the scope of the operation.
 
 Reordering changes the item's position within its current list. It does not change its meaning or container. The drag handle can replace the leading icon when the icon represents secondary metadata and users do not need that information to decide how or where to drag the item. Preserve the metadata for assistive technology when the icon is replaced; see Accessibility for accessible naming and descriptions.
 
-```jsx file=./examples/FolderListHandleReplacesIconExample.tsx hideCode
+```jsx file=./examples/FolderListHandleReplacesIconExample.tsx hideCode hideBorder
+
 ```
 
 #### Reorder mode
@@ -95,7 +93,8 @@ When several lists can be reordered together, for example in a navigation menu, 
 - Drag handles and the mode buttons are the only tab stops while the mode is on. Return focus to the item the user was on when the mode ends.
 - Announce when the mode starts and ends, including how many items were reordered.
 
-```jsx file=./examples/ReorderModeExample.tsx hideCode
+```jsx file=./examples/ReorderModeExample.tsx hideCode hideBorder
+
 ```
 
 ### Reorder or reparent within a hierarchy
@@ -387,7 +386,7 @@ Drag and drop should reinforce rather than hide the structure of the interface.
 - Deep or long collections make sequential keyboard movement inefficient.
 - Reparenting requires especially clear destination feedback because it changes structure as well as position.
 - A robust implementation must support both direct manipulation and equivalent explicit actions.
-- Multi-item drag and drop is not covered by this pattern. Multi-selection introduces additional selection, movement, focus, and announcement requirements. 
+- Multi-item drag and drop is not covered by this pattern. Multi-selection introduces additional selection, movement, focus, and announcement requirements.
 
 ---
 
