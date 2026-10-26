@@ -1,0 +1,212 @@
+---
+title: Settings popover
+slug: '/guidelines/protected/settings-popover'
+section: 'guidelinesPatterns'
+---
+
+### Purpose
+
+A settings popover lets people configure one item from a list without leaving the list or expanding it in place. The list stays short and scannable: each row shows what the item is, a one-line summary of its current setting, and a single button. The full configuration opens in a popover beside the list, next to the row it belongs to.
+
+This keeps the main surface focused on the overview (what's set, what's missing) and moves the detailed decisions into a focused, temporary space that people can open, adjust and dismiss without losing their place.
+
+---
+
+### When to Use
+
+Use a settings popover when a list holds several independent items that each need a few decisions, and people mainly need to see their state at a glance.
+
+For example, a destination node in Experience Orchestration lists the parameters of its experience. Each parameter can be added to the URL path, set manually, or left to the app's code. The node settings panel shows one row per parameter with a **Set** or **Override** button; the popover holds the content type, match rules and example.
+
+#### Typical Use Cases
+
+- Configuring parameters, bindings or mappings in a side panel
+- Overriding inherited defaults for one item in a list
+- Choosing between a few ways to resolve a value, each with its own follow-up fields
+- Settings that people revisit often, so a full page or modal would feel heavy
+
+---
+
+### Use a Different Pattern Instead
+
+#### Consider These Alternatives
+
+| Scenario                                                        | Alternative Pattern                        | Reason                                                                   |
+| --------------------------------------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------ |
+| One or two inputs per item                                      | Inline form fields                         | A popover adds a click for no gain; edit in place                        |
+| The configuration needs a search, a table or a long form        | Modal or slide-in panel                    | Needs more space and a clear commit step                                 |
+| The change is destructive or needs confirmation                 | Modal dialog                               | Popovers dismiss on outside click and don't suit confirmations           |
+| People compare or edit many items at once                       | Table with inline editing, or a bulk editor | Opening one popover at a time is slow for batch work                    |
+| The content is explanation, not configuration                   | Tooltip or info popover                    | No controls means no need for a persistent, movable surface              |
+
+---
+
+### Components Used
+
+#### Required
+
+- Popover ([Forma 36 Documentation](https://f36.contentful.com/components/popover))
+- Button ([Forma 36 Documentation](https://f36.contentful.com/components/button)) — the row trigger
+- IconButton ([Forma 36 Documentation](https://f36.contentful.com/components/icon-button)) — close
+- Badge ([Forma 36 Documentation](https://f36.contentful.com/components/badge)) — item name and status
+
+#### Optional
+
+- FormControl, TextInput, Select ([Forma 36 Documentation](https://f36.contentful.com/components/form-control)) — the settings themselves
+- Tooltip ([Forma 36 Documentation](https://f36.contentful.com/components/tooltip)) — drag hint, disabled reasons
+- TextLink ([Forma 36 Documentation](https://f36.contentful.com/components/text-link)) — reset in the footer
+- DotsSixVerticalIcon ([Forma 36 Documentation](https://f36.contentful.com/guidelines/protected/icons)) — drag handle
+
+---
+
+### Interactions
+
+#### Example Flow
+
+1. The person scans the list. Each row shows the item, its type and a summary line.
+2. They select **Set** (required items) or **Override** (optional items).
+3. The popover opens beside the list, level with the row. The row is highlighted and its button shows as pressed.
+4. They configure the item. Changes apply as they go; there is no Save button.
+5. They close the popover with ✕, by clicking outside it, or by selecting the row's button again.
+6. The row now shows a solid border, a summary of the setting and an **Edit** button.
+
+#### Anatomy
+
+- **Row:** item badge, type label, summary line (when set), trigger button.
+- **Popover header:** drag handle, item badge, type label, close button.
+- **Popover body:** the configuration, top to bottom in the order decisions are made.
+- **Popover footer (when set):** a reset action and one line on what happens after reset.
+
+#### Placement
+
+- Open the popover outside the list's container, on the side with the most room, aligned to the top of the row.
+- Let it flip to the other side automatically when there isn't room.
+- Keep it attached to the row while the list scrolls.
+
+#### Moving the popover
+
+People can drag the popover by its header, so it never blocks content they need to see.
+
+- Show a drag handle at the start of the header, a grab cursor over the header and a grabbing cursor while dragging.
+- Raise the shadow while dragging so the popover reads as lifted.
+- Start a drag anywhere in the header except on its controls.
+- Reset the position when the popover closes, so it reopens next to its row.
+
+#### Opening other overlays
+
+When an action in the popover opens a modal (for example, an entry picker), close the popover first. Popovers sit on the dropdown layer, above modals; leaving it open would cover the modal. When the modal closes, the row shows the result and **Edit** reopens the popover.
+
+---
+
+### States
+
+#### Default (not set)
+
+Dashed border, item badge and type label, and a **Set** or **Override** button. No summary line.
+
+#### Open
+
+Solid border with a blue outline and tint. The trigger button shows as pressed (`isActive`). Only one popover is open at a time.
+
+#### Set
+
+Solid border. The summary line describes the current setting in plain language, for example "In path · Blog post › Slug", "Belize coconut candle" with its status badge, or "3 items · newest first". The button reads **Edit**. Use an accent tint only for the one setting with special meaning (in Experience Orchestration, the parameter that drives the URL).
+
+#### Incomplete or invalid
+
+Solid border. The summary line turns orange with a warning icon and says what's missing or wrong, for example "In path · choose a field" or "Enter a value of at most 50." The detailed validation message also shows on the field inside the popover.
+
+#### Unavailable option
+
+When an option in the popover can't be used, disable it and explain why in a tooltip, for example "Another parameter already uses the path."
+
+---
+
+### Accessibility
+
+#### Keyboard Interactions
+
+- **Tab** moves to the row's trigger button; **Enter** or **Space** opens and closes the popover.
+- **Escape** closes the popover. Return focus to the row's trigger button when it closes.
+- Inside the popover, **Tab** moves through the header controls and the settings in reading order.
+- On the drag handle, **arrow keys** move the popover by 16 px, or 64 px with **Shift**.
+
+#### Screen Reader Support
+
+- The trigger has `aria-haspopup="dialog"` and `aria-expanded`.
+- The popover content has `role="dialog"` and an accessible name, for example "Blog post settings".
+- The drag handle is a focusable element with `aria-label="Move panel"` and `aria-roledescription="draggable"`.
+- Summary lines are plain text in the row, so the current state is announced with the row.
+
+#### Cognitive Considerations
+
+- Show the outcome on the row, not only inside the popover, so people don't have to reopen it to check.
+- Order the popover's fields in the order people decide: first how the value is resolved, then the details.
+- Keep one popover open at a time.
+
+---
+
+### Dos and Don'ts
+
+#### Dos
+
+- Use **Set** for required items and **Override** for optional items with defaults; switch to **Edit** once set.
+- Summarize the setting on the row in plain language.
+- Apply changes immediately and offer a reset in the footer.
+- Explain disabled options with a tooltip.
+- Close the popover before opening a modal from it.
+
+#### Don'ts
+
+- Don't put long forms, searches or tables in a popover; use a modal or slide-in panel.
+- Don't use a popover for confirmations or destructive actions.
+- Don't open the popover over the row it belongs to.
+- Don't leave the summary line empty once something is set.
+
+#### Anti-patterns
+
+- **Expanding every row in place:** the list grows long and the overview is lost. That's the problem this pattern solves.
+- **Save and Cancel buttons in the popover:** dismissing on outside click then silently discards changes. Apply changes as they're made instead.
+- **Several popovers open at once:** people lose track of which item they're editing.
+
+---
+
+### Trade-offs
+
+#### Benefits
+
+- The list stays short and shows state at a glance.
+- Detailed settings get focused space without a full modal.
+- People can move the popover out of the way while checking the page behind it.
+
+#### Limitations
+
+- Adds one click per item compared with inline fields.
+- Outside-click dismissal makes it unsuitable for flows that need an explicit commit.
+- Needs room beside the list; on narrow screens it falls back to flipping or covering the list.
+
+---
+
+### Responsiveness
+
+- **Desktop:** opens beside the list, level with the row; draggable.
+- **Tablet:** flips to the side with room; may overlap the list.
+- **Mobile:** not yet supported in the products using this pattern. Prefer a bottom sheet or a full-screen panel.
+
+---
+
+### Technical Implementation
+
+- Use the F36 `Popover` with `placement="left-start"` (or `right-start`), `usePortal`, `isAutoalignmentEnabled` and `closeOnScroll={false}`.
+- Make the whole row the `Popover.Trigger`. Outside-press dismissal ignores the trigger, so the row's button can toggle the popover without it reopening immediately.
+- To make it draggable, keep the F36 container transparent and move an inner panel with a `transform: translate()` offset driven by pointer events on the header. Reset the offset on close.
+- Reference implementation: node settings parameters in `user_interface`, PR [#33146](https://github.com/contentful/user_interface/pull/33146) (`ParameterBindingsSection.tsx`).
+
+---
+
+### Related Patterns
+
+- Toolbar
+- Modal dialog
+- Slide-in panel
+- Inline editing
