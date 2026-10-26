@@ -29,7 +29,7 @@ export default {
     },
     variant: {
       control: 'select',
-      options: ['negative', 'positive', 'primary', 'secondary', 'transparent'],
+      options: ['secondary', 'transparent'],
     },
   },
 } as Meta;
@@ -171,6 +171,61 @@ export const IconOnly = {
             isDisabled
             onToggle={onToggle}
             size={size}
+          />
+        </Flex>
+      ))}
+    </Flex>
+  ),
+  args: {
+    onToggle: action('toggled'),
+  },
+};
+
+export const Transparent = {
+  render: ({ onToggle }: ToggleButtonProps) => (
+    <Flex flexDirection="column" gap="spacingM">
+      {(['tiny', 'small', 'medium'] as const).map((size) => (
+        <Flex key={size} alignItems="center" gap="spacingS">
+          <ToggleButton
+            icon={<icons.GearSixIcon />}
+            onToggle={onToggle}
+            size={size}
+            variant="transparent"
+          >
+            Default
+          </ToggleButton>
+          <ToggleButton
+            icon={<icons.GearSixIcon />}
+            isActive
+            onToggle={onToggle}
+            size={size}
+            variant="transparent"
+          >
+            Active
+          </ToggleButton>
+          <ToggleButton
+            icon={<icons.GearSixIcon />}
+            isDisabled
+            onToggle={onToggle}
+            size={size}
+            variant="transparent"
+          >
+            Disabled
+          </ToggleButton>
+          <ToggleButton
+            aria-label={`${size} transparent icon-only toggle`}
+            icon={<icons.GearSixIcon />}
+            onToggle={onToggle}
+            size={size}
+            variant="transparent"
+          />
+          <ToggleButton
+            aria-label={`${size} active transparent icon-only toggle`}
+            icon={<icons.GearSixIcon />}
+            isActive
+            onToggle={onToggle}
+            size={size}
+            variant="transparent"
           />
         </Flex>
       ))}

@@ -90,6 +90,49 @@ describe('ToggleButton', function () {
     },
   );
 
+  it('renders the transparent variant without a border when active', () => {
+    render(
+      <ToggleButton
+        onToggle={mockOnToggle}
+        icon={<EyeIcon />}
+        variant="transparent"
+        isActive
+      >
+        Toggle
+      </ToggleButton>,
+    );
+
+    const button = screen.getByRole('button');
+    expect(button.getAttribute('aria-pressed')).toBe('true');
+    expect(button).toHaveStyle({
+      backgroundColor: tokens.blue100,
+      borderColor: 'rgba(0, 0, 0, 0)',
+    });
+    expect(button.querySelector('svg')?.getAttribute('fill')).toBe(
+      tokens.colorPrimary,
+    );
+  });
+
+  it('keeps a custom icon color on an active transparent toggle', () => {
+    const icon = <EyeIcon color={tokens.gray500} />;
+    render(
+      <ToggleButton
+        aria-label="Show"
+        onToggle={mockOnToggle}
+        icon={icon}
+        variant="transparent"
+        isActive
+      />,
+    );
+
+    expect(
+      screen
+        .getByRole('button', { name: 'Show' })
+        .querySelector('svg')
+        ?.getAttribute('fill'),
+    ).toBe(tokens.gray500);
+  });
+
   it('should not dispatch onClick if disabled', async () => {
     const user = userEvent.setup();
     render(
@@ -106,6 +149,20 @@ describe('ToggleButton', function () {
   it('has no a11y issues', async () => {
     const { container } = render(
       <ToggleButton onToggle={mockOnToggle}>Toggle</ToggleButton>,
+    );
+    await expectNoA11yViolations(container);
+  });
+
+  it('has no a11y issues in the transparent variant', async () => {
+    const { container } = render(
+      <ToggleButton
+        aria-label="Settings"
+        icon={<EyeIcon />}
+        onToggle={mockOnToggle}
+        size="tiny"
+        variant="transparent"
+        isActive
+      />,
     );
     await expectNoA11yViolations(container);
   });

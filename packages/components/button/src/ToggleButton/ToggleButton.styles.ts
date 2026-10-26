@@ -6,10 +6,14 @@ const getToggleButtonStyle = ({
   isActive,
   isDisabled,
   size,
+  variant,
 }: GetStyleArguments) => {
+  const isTransparent = variant === 'transparent';
+  const activeBorderColor = isTransparent ? 'transparent' : tokens.blue600;
+
   const activeStyle = {
     background: tokens.blue100,
-    borderColor: tokens.blue600,
+    borderColor: activeBorderColor,
     '&': {
       zIndex: tokens.zIndexDefault + 1,
     },
@@ -25,6 +29,13 @@ const getToggleButtonStyle = ({
           padding: `0 ${tokens.spacingXs}`,
         }
       : {}),
+    ...(isTransparent && !isDisabled
+      ? {
+          '&:hover': {
+            background: tokens.gray100,
+          },
+        }
+      : {}),
     '& > span:first-child:not(:last-child)': {
       marginRight: size === 'medium' ? tokens.spacingXs : tokens.spacing2Xs,
     },
@@ -36,12 +47,12 @@ const getToggleButtonStyle = ({
     },
     '&:active, &:active:hover': isDisabled
       ? {
-          background: tokens.colorWhite,
-          borderColor: tokens.gray300,
+          background: isTransparent ? 'none' : tokens.colorWhite,
+          borderColor: isTransparent ? 'transparent' : tokens.gray300,
         }
       : {
           background: tokens.blue100,
-          borderColor: tokens.blue600,
+          borderColor: activeBorderColor,
         },
   };
 
@@ -55,6 +66,13 @@ const getToggleButtonStyle = ({
   return baseStyle;
 };
 
-export default ({ isActive, isDisabled, size }: GetStyleArguments) => ({
-  toggleButton: css(getToggleButtonStyle({ isActive, isDisabled, size })),
+export default ({
+  isActive,
+  isDisabled,
+  size,
+  variant,
+}: GetStyleArguments) => ({
+  toggleButton: css(
+    getToggleButtonStyle({ isActive, isDisabled, size, variant }),
+  ),
 });
