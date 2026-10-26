@@ -24,6 +24,8 @@ Drag and drop lets users reorder, move, or place items through direct manipulati
 | Move      | The item leaves its original container           | Another container          |
 | Add       | The source remains and a new instance is created | Another container          |
 
+<br />
+
 - Reorder within a list — change an item's position while keeping it in the same container.
 - Reorder or reparent within a hierarchy — change an item's position, parent, or hierarchy level.
 - Move between containers — transfer an existing item from one container to another.
@@ -84,9 +86,9 @@ Reordering changes the item's position within its current list. It does not chan
 
 #### Reorder mode
 
-When several lists can be reordered together, for example in a navigation menu, reordering can be a mode that users enter from an item's menu (such as “Reorder folders”) instead of a handle on every row. The same keyboard and announcement rules apply, with these additions:
+Reordering can be always available or activated through a dedicated mode, depending on how important it is to the task. When reordering is a primary or frequent action, use the above described interactions directly. When it is secondary or occasional, let users activate reorder mode from an item’s menu (such as “Reorder folders”). The same keyboard and announcement rules apply, with these additions:
 
-- The item that opened the mode starts picked up, and its drag handle receives focus.
+- The item that opened the mode stays in focus
 - Escape only cancels a picked-up item and restores its position. With nothing picked up, it does nothing.
 - A **Done** button ends the mode and keeps the current order. Offer Ctrl+Enter (Cmd+Enter on Mac) as its shortcut, expose it with `aria-keyshortcuts`, and make sure the shortcut does not also pick up or drop the focused item.
 - **Reset order** restores the order from when the mode started, without leaving the mode.
@@ -109,6 +111,10 @@ A destination may represent:
 - a parent-level destination when dropping directly into a parent is supported
 
 Do not expose destinations that would create an invalid hierarchy, such as placing a parent inside one of its own descendants.
+
+```jsx file=./examples/ReparentingExample.tsx hideCode hideBorder
+
+```
 
 ### Add from a source
 
