@@ -52,15 +52,17 @@ export default function FolderListHandleReplacesIconExample() {
         opacity: 0,
         transition: 'opacity 0.15s ease',
       },
-      '&:hover [data-row-icon], &:focus-within [data-row-icon]': {
+      // :focus-visible rather than :focus-within, so a handle that keeps focus
+      // after a mouse drag doesn't hold the row in its hovered state.
+      '&:hover [data-row-icon], &:has(:focus-visible) [data-row-icon]': {
         opacity: 0,
         pointerEvents: 'none',
       },
-      '&:hover [data-row-handle], &:focus-within [data-row-handle]': {
+      '&:hover [data-row-handle], &:has(:focus-visible) [data-row-handle]': {
         opacity: 1,
         pointerEvents: 'auto',
       },
-      '&:hover [data-row-action], &:focus-within [data-row-action]': {
+      '&:hover [data-row-action], &:has(:focus-visible) [data-row-action]': {
         opacity: 1,
       },
     }),
@@ -78,10 +80,15 @@ export default function FolderListHandleReplacesIconExample() {
         opacity: 1,
       },
     }),
+    // The slot is the handle's pointer target: 24px wide (WCAG 2.2 target
+    // size) and as tall as the row. Negative margins cancel the extra width
+    // and the row's vertical padding, so the icons keep their 20px position.
     iconSwap: css({
       position: 'relative',
-      width: '20px',
-      height: '20px',
+      alignSelf: 'stretch',
+      width: '24px',
+      minHeight: '20px',
+      margin: `-${tokens.spacing2Xs} -2px`,
       flexShrink: 0,
     }),
     iconLayer: css({
@@ -121,7 +128,7 @@ export default function FolderListHandleReplacesIconExample() {
       right: tokens.spacingS,
       height: '2px',
       transform: 'translateY(-50%)',
-      backgroundColor: tokens.blue400,
+      backgroundColor: tokens.blue600,
       borderRadius: '1px',
       pointerEvents: 'none',
     }),
@@ -132,7 +139,7 @@ export default function FolderListHandleReplacesIconExample() {
       right: tokens.spacingS,
       height: '2px',
       transform: 'translateY(50%)',
-      backgroundColor: tokens.blue400,
+      backgroundColor: tokens.blue600,
       borderRadius: '1px',
       pointerEvents: 'none',
     }),
