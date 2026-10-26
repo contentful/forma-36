@@ -54,7 +54,7 @@ For example, a destination node in Experience Orchestration lists the parameters
 
 - FormControl, TextInput, Select ([Forma 36 Documentation](https://f36.contentful.com/components/form-control)) — the settings themselves
 - Tooltip ([Forma 36 Documentation](https://f36.contentful.com/components/tooltip)) — drag hint, disabled reasons
-- TextLink ([Forma 36 Documentation](https://f36.contentful.com/components/text-link)) — reset in the footer
+- ArrowCounterClockwiseIcon ([Forma 36 Documentation](https://f36.contentful.com/guidelines/protected/icons)) — the footer's Reset button
 - DotsSixVerticalIcon ([Forma 36 Documentation](https://f36.contentful.com/guidelines/protected/icons)) — drag handle
 
 ---
@@ -72,10 +72,14 @@ For example, a destination node in Experience Orchestration lists the parameters
 
 #### Anatomy
 
-- **Row:** item badge, type label, summary line (when set), trigger button.
-- **Popover header:** drag handle, item badge, type label, close button.
-- **Popover body:** the configuration, top to bottom in the order decisions are made.
-- **Popover footer (when set):** a reset action and one line on what happens after reset.
+![Settings popover anatomy: the popover open beside a node settings panel, with numbered callouts](/docs-images/img-settings-popover-anatomy.png)
+
+1. **Row:** item badge, type label, summary line (when set) and trigger button.
+2. **Trigger button:** **Set**, **Override** or **Edit**. Shows as pressed while the popover is open.
+3. **Drag handle:** shows that the popover can be moved.
+4. **Header:** drag handle, item badge, type label and close button.
+5. **Content:** the configuration, top to bottom in the order decisions are made.
+6. **Footer (when set):** a **Reset** button that returns the item to its default.
 
 #### Placement
 
@@ -92,6 +96,8 @@ People can drag the popover by its header, so it never blocks content they need 
 - Start a drag anywhere in the header except on its controls.
 - Reset the position when the popover closes, so it reopens next to its row.
 
+![Settings popover while dragging, with a raised shadow](/docs-images/img-settings-popover-dragging.png)
+
 #### Opening other overlays
 
 When an action in the popover opens a modal (for example, an entry picker), close the popover first. Popovers sit on the dropdown layer, above modals; leaving it open would cover the modal. When the modal closes, the row shows the result and **Edit** reopens the popover.
@@ -99,6 +105,8 @@ When an action in the popover opens a modal (for example, an entry picker), clos
 ---
 
 ### States
+
+![Parameter row states: default required, default optional, open, set, overridden, in path, incomplete and invalid](/docs-images/img-settings-popover-row-states.png)
 
 #### Default (not set)
 
@@ -115,6 +123,12 @@ Solid border. The summary line describes the current setting in plain language, 
 #### Incomplete or invalid
 
 Solid border. The summary line turns orange with a warning icon and says what's missing or wrong, for example "In path · choose a field" or "Enter a value of at most 50." The detailed validation message also shows on the field inside the popover.
+
+#### Popover footer
+
+Show the footer only once something is set. Before that there's nothing to reset.
+
+![Settings popover without a footer before anything is set, and with a Reset button once set](/docs-images/img-settings-popover-footer.png)
 
 #### Unavailable option
 
@@ -150,7 +164,7 @@ When an option in the popover can't be used, disable it and explain why in a too
 
 #### Dos
 
-- Apply changes immediately and offer a reset in the footer.
+- Apply changes immediately and offer a **Reset** button in the footer.
 - Explain disabled options with a tooltip.
 - Close the popover before opening a modal from it.
 
