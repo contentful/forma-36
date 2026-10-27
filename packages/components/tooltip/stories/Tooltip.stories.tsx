@@ -1,11 +1,10 @@
 import React from 'react';
-import { Heading, Paragraph, SectionHeading } from '@contentful/f36-typography';
+import { SectionHeading } from '@contentful/f36-typography';
 import { Tooltip } from '../src/Tooltip';
 import { TextLink } from '@contentful/f36-text-link';
 import { Flex } from '@contentful/f36-core';
 import { StarIcon } from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
-import tokens from '@contentful/f36-tokens';
 
 export default {
   title: 'Components/Tooltip',
@@ -45,15 +44,29 @@ Basic.parameters = {
   },
 };
 
-export const WithoutTriggerWrapper = () => {
+export const WithoutTriggerWrapper = (args: { content: string }) => {
   return (
-    <Tooltip
-      withTriggerWrapper={false}
-      content="I am rendered without an extra wrapper"
-    >
+    <Tooltip {...args} withTriggerWrapper={false}>
       <TextLink href="/">Hover me</TextLink>
     </Tooltip>
   );
+};
+
+WithoutTriggerWrapper.args = {
+  content: 'I am rendered without an extra wrapper',
+};
+
+export const Multiline = Basic.bind({});
+Multiline.args = {
+  content: 'Preview your changes before publishing them to your website.',
+  isVisible: true,
+};
+
+export const LongWord = Basic.bind({});
+LongWord.args = {
+  content:
+    'entry_0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz',
+  isVisible: true,
 };
 
 const WithoutTriggerWrapperSourceCode = `<Tooltip withTriggerWrapper={false} content="I am rendered without an extra wrapper">
@@ -254,16 +267,11 @@ export const WithReactElement = () => {
 
       <Flex marginBottom="spacingS">
         <Tooltip
-          label="Render a paragraph with a React Element"
+          label="Preview your changes before publishing"
           content={
-            <Flex flexDirection="column">
-              <Heading style={{ color: tokens.colorWhite }}>
-                I am a Heading
-              </Heading>
-              <Paragraph style={{ color: tokens.colorWhite }}>
-                I am a paragraph
-              </Paragraph>
-            </Flex>
+            <>
+              Preview your changes <strong>before publishing</strong>.
+            </>
           }
         >
           <TextLink href="/">Hover me</TextLink>
