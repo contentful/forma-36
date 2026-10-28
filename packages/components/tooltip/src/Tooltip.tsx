@@ -133,7 +133,7 @@ export const Tooltip = ({
   onKeyDown,
   showDelay = 375,
   targetWrapperClassName,
-  maxWidth = 360,
+  maxWidth = 240,
   testId = 'cf-ui-tooltip',
   placement,
   usePortal = false,

@@ -49,9 +49,11 @@ import { Tooltip } from '@contentful/f36-tooltip';
 
 ## Content guidelines
 
-- Use short and clear messages as the `Tooltip`’s content
-- The Tooltip component allows you to pass React elements as content. However, this should be used with care. ReactElement as content is best suited for text formatting purposes. It should not be used for interactive elements like links, buttons, or form elements. Additionally, extensive images should be avoided, except for text-decorator icons that give semantic meaning to the text shown in the tooltip (e.g., warning signs or other relevant icons).
-  - When using `ReactElement` as the content, it's recommended to use the `ScreenReaderOnly` component when displaying critical information.
+- Use a short label or explanation. Aim for one line and keep explanations to roughly two lines.
+- Use Caption/Normal typography: 12px regular text with a 16px line height.
+- Text aligns to the reading direction and wraps naturally within a default maximum width of 240px. Avoid manual line breaks or truncating tooltip text. Use `maxWidth` only when the content requires a different width.
+- Use React elements only for minimal inline formatting, such as emphasis. Provide an accessible `label` when using React elements.
+- Use a Popover for headings, multiple paragraphs, images, links, buttons, or other interactive content. Keep essential instructions visible in the interface.
 
 ## Accessibility
 
