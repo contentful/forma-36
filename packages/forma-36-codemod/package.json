@@ -33,7 +33,7 @@
     "jscodeshift": "^0.16.1",
     "jscodeshift-add-imports": "^1.0.11",
     "meow": "^9.0.0",
-    "read-package-up": "^11.0.0",
+    "read-package-up": "^12.0.0",
     "semver": "^7.7.2"
   }
 }
