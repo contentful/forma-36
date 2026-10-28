@@ -16,7 +16,7 @@ export function getTooltipContentStyles(isOpen: boolean) {
       textDecoration: 'none',
       color: tokens.colorWhite,
       textAlign: 'start',
-      lineHeight: tokens.lineHeightM,
+      lineHeight: tokens.lineHeightS,
       padding: `calc(${tokens.spacingS} / 2) ${tokens.spacingXs}`,
       borderRadius: tokens.borderRadiusMedium,
       whiteSpace: 'normal',
