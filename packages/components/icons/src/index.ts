@@ -11,6 +11,7 @@ export type {
 
 export * from './custom/AWSBedrockIcon.js';
 export * from './custom/AnthropicIcon.js';
+export * from './custom/ArrowsMergeRightIcon.js';
 export * from './custom/BorderRadiusBottomRightIcon.js';
 export * from './custom/BorderRadiusTopLeftIcon.js';
 export * from './custom/BorderRadiusTopRightIcon.js';
