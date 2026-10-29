@@ -21,6 +21,24 @@ vi.mock('@contentful/f36-core', async () => {
 });
 
 describe('Tooltip', () => {
+  it.each([
+    [undefined, '240px'],
+    [320, '320px'],
+    ['20rem', '20rem'],
+  ])('constrains content with maxWidth=%s', (maxWidth, expectedWidth) => {
+    render(
+      <Tooltip
+        content="A longer explanation that wraps naturally"
+        maxWidth={maxWidth}
+        isVisible
+      >
+        <button type="button">Preview</button>
+      </Tooltip>,
+    );
+
+    expect(screen.getByRole('tooltip').style.maxWidth).toBe(expectedWidth);
+  });
+
   it('renders the component', async () => {
     const user = userEvent.setup();
     render(

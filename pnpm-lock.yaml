@@ -57,7 +57,7 @@ importers:
         version: 0.6.7
       '@chromatic-com/storybook':
         specifier: ^5.2.1
-        version: 5.2.1(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
+        version: 5.2.1(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       '@commitlint/cli':
         specifier: ^21.0.0
         version: 21.2.1(@types/node@24.10.9)(conventional-commits-parser@7.0.1)(typescript@6.0.3)
@@ -150,13 +150,13 @@ importers:
         version: 13.0.1(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(size-limit@13.0.1)(supports-color@8.1.1)(uglify-js@3.19.3)
       '@storybook/addon-a11y':
         specifier: ^10.4.2
-        version: 10.4.2(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
+        version: 10.4.2(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       '@storybook/addon-docs':
         specifier: ^10.4.2
-        version: 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(esbuild@0.28.1)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))
+        version: 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(esbuild@0.28.1)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))
       '@storybook/react-vite':
         specifier: ^10.4.2
-        version: 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(esbuild@0.28.1)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@6.0.3)(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))
+        version: 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(esbuild@0.28.1)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@6.0.3)(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))
       '@testing-library/dom':
         specifier: ^10.4.1
         version: 10.4.1
@@ -198,7 +198,7 @@ importers:
         version: 7.1.1(eslint@10.7.0(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1)
       eslint-plugin-storybook:
         specifier: ^10.4.2
-        version: 10.4.2(eslint@10.7.0(jiti@2.7.0)(supports-color@8.1.1))(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@6.0.3)
+        version: 10.4.2(eslint@10.7.0(jiti@2.7.0)(supports-color@8.1.1))(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@6.0.3)
       fast-glob:
         specifier: ^3.3.3
         version: 3.3.3
@@ -227,11 +227,11 @@ importers:
         specifier: ^4.0.5
         version: 4.0.5(@types/node@24.10.9)
       prettier:
-        specifier: 3.9.9
-        version: 3.9.9
+        specifier: 3.9.10
+        version: 3.9.10
       pretty-quick:
         specifier: 4.2.2
-        version: 4.2.2(prettier@3.9.9)
+        version: 4.2.2(prettier@3.9.10)
       react:
         specifier: 'catalog:'
         version: 19.3.0
@@ -249,7 +249,7 @@ importers:
         version: 13.0.1
       storybook:
         specifier: ^10.4.2
-        version: 10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+        version: 10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       tsdown:
         specifier: ^0.23.0
         version: 0.23.0(oxc-resolver@11.21.3)(tsx@4.21.0)(typescript@6.0.3)
@@ -299,19 +299,19 @@ importers:
   packages/components/accordion:
     dependencies:
       '@contentful/f36-collapse':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../collapse
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@emotion/css':
         specifier: ^11.13.5
@@ -330,19 +330,19 @@ importers:
   packages/components/asset:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icon':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icon
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@emotion/css':
         specifier: ^11.13.5
@@ -358,28 +358,28 @@ importers:
   packages/components/autocomplete:
     dependencies:
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-forms':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../forms
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-popover':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../popover
       '@contentful/f36-skeleton':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../skeleton
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@contentful/f36-utils':
         specifier: ^6.1.2
@@ -404,26 +404,26 @@ importers:
   packages/components/avatar:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-image':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../image
       '@contentful/f36-menu':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../menu
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-tooltip':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../tooltip
       '@emotion/css':
         specifier: ^11.13.5
         version: 11.13.5(supports-color@8.1.1)
     devDependencies:
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@testing-library/dom':
         specifier: ^10.4.1
@@ -438,10 +438,10 @@ importers:
   packages/components/badge:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-tokens':
         specifier: ^6.3.0
@@ -457,7 +457,7 @@ importers:
         version: 3.2.3
     devDependencies:
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@testing-library/dom':
         specifier: ^10.4.1
@@ -469,16 +469,16 @@ importers:
   packages/components/button:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-spinner':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../spinner
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-tooltip':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../tooltip
       '@contentful/f36-utils':
         specifier: ^6.1.2
@@ -488,10 +488,10 @@ importers:
         version: 11.13.5(supports-color@8.1.1)
     devDependencies:
       '@contentful/f36-icon':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icon
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@testing-library/dom':
         specifier: ^10.4.1
@@ -506,40 +506,40 @@ importers:
   packages/components/card:
     dependencies:
       '@contentful/f36-asset':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../asset
       '@contentful/f36-badge':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../badge
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-drag-handle':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../drag-handle
       '@contentful/f36-icon':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icon
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-menu':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../menu
       '@contentful/f36-skeleton':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../skeleton
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-tooltip':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../tooltip
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@emotion/css':
         specifier: ^11.13.5
@@ -561,7 +561,7 @@ importers:
   packages/components/collapse:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-tokens':
         specifier: ^6.3.0
@@ -583,16 +583,16 @@ importers:
   packages/components/copybutton:
     dependencies:
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-tooltip':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../tooltip
       '@emotion/css':
         specifier: ^11.13.5
@@ -611,19 +611,19 @@ importers:
   packages/components/datepicker:
     dependencies:
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-forms':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../forms
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-popover':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../popover
       '@contentful/f36-tokens':
         specifier: ^6.3.0
@@ -654,7 +654,7 @@ importers:
   packages/components/datetime:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       dayjs:
         specifier: ^1.11.5
@@ -670,10 +670,10 @@ importers:
   packages/components/drag-handle:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-tokens':
         specifier: ^6.3.0
@@ -695,13 +695,13 @@ importers:
   packages/components/empty-state:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@emotion/css':
         specifier: ^11.13.5
@@ -710,34 +710,34 @@ importers:
   packages/components/entity-list:
     dependencies:
       '@contentful/f36-badge':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../badge
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-drag-handle':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../drag-handle
       '@contentful/f36-icon':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icon
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-menu':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../menu
       '@contentful/f36-skeleton':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../skeleton
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@emotion/css':
         specifier: ^11.13.5
@@ -756,19 +756,19 @@ importers:
   packages/components/forms:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icon':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icon
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@contentful/f36-utils':
         specifier: ^6.1.2
@@ -778,7 +778,7 @@ importers:
         version: 11.13.5(supports-color@8.1.1)
     devDependencies:
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@testing-library/dom':
         specifier: ^10.4.1
@@ -799,26 +799,26 @@ importers:
   packages/components/header:
     dependencies:
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@emotion/css':
         specifier: ^11.13.5
         version: 11.13.5(supports-color@8.1.1)
     devDependencies:
       '@contentful/f36-forms':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../forms
       '@testing-library/dom':
         specifier: ^10.4.1
@@ -830,7 +830,7 @@ importers:
   packages/components/icon:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-tokens':
         specifier: ^6.3.0
@@ -858,10 +858,10 @@ importers:
   packages/components/icons:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icon':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icon
       '@emotion/css':
         specifier: ^11.13.5
@@ -880,10 +880,10 @@ importers:
   packages/components/image:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-skeleton':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../skeleton
       '@emotion/css':
         specifier: ^11.13.5
@@ -899,22 +899,22 @@ importers:
   packages/components/layout:
     dependencies:
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-header':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../header
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@emotion/css':
         specifier: ^11.13.5
@@ -930,7 +930,7 @@ importers:
   packages/components/list:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-tokens':
         specifier: ^6.3.0
@@ -949,16 +949,16 @@ importers:
   packages/components/menu:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@emotion/css':
         specifier: ^11.13.5
@@ -971,7 +971,7 @@ importers:
         version: 2.1.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
     devDependencies:
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@testing-library/dom':
         specifier: ^10.4.1
@@ -992,19 +992,19 @@ importers:
   packages/components/modal:
     dependencies:
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@emotion/css':
         specifier: ^11.13.5
@@ -1026,28 +1026,28 @@ importers:
   packages/components/multiselect:
     dependencies:
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-forms':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../forms
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-popover':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../popover
       '@contentful/f36-skeleton':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../skeleton
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@contentful/f36-utils':
         specifier: ^6.1.2
@@ -1069,34 +1069,34 @@ importers:
   packages/components/navbar:
     dependencies:
       '@contentful/f36-avatar':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../avatar
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icon':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icon
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-menu':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../menu
       '@contentful/f36-skeleton':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../skeleton
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-tooltip':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../tooltip
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@contentful/f36-utils':
         specifier: ^6.1.2
@@ -1108,7 +1108,7 @@ importers:
   packages/components/navlist:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-tokens':
         specifier: ^6.3.0
@@ -1127,22 +1127,22 @@ importers:
   packages/components/note:
     dependencies:
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icon':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icon
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@contentful/f36-utils':
         specifier: ^6.1.2
@@ -1161,22 +1161,22 @@ importers:
   packages/components/notification:
     dependencies:
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-text-link':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../text-link
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@emotion/css':
         specifier: ^11.13.5
@@ -1195,19 +1195,19 @@ importers:
   packages/components/pagination:
     dependencies:
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-forms':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../forms
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
     devDependencies:
       '@testing-library/dom':
@@ -1223,22 +1223,22 @@ importers:
   packages/components/pill:
     dependencies:
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-drag-handle':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../drag-handle
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-tooltip':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../tooltip
       '@emotion/css':
         specifier: ^11.13.5
@@ -1254,19 +1254,19 @@ importers:
   packages/components/pill-next:
     dependencies:
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-tokens':
         specifier: ^6.3.1
         version: link:../../forma-36-tokens
       '@contentful/f36-tooltip':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../tooltip
       '@emotion/css':
         specifier: ^11.13.5
@@ -1282,7 +1282,7 @@ importers:
   packages/components/popover:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-tokens':
         specifier: ^6.3.0
@@ -1298,7 +1298,7 @@ importers:
         version: 2.1.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
     devDependencies:
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@testing-library/dom':
         specifier: ^10.4.1
@@ -1316,13 +1316,13 @@ importers:
   packages/components/progress-stepper:
     dependencies:
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../button
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-tokens':
         specifier: ^6.3.0
@@ -1341,10 +1341,10 @@ importers:
   packages/components/skeleton:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-table':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../table
       '@contentful/f36-tokens':
         specifier: ^6.3.0
@@ -1360,7 +1360,7 @@ importers:
   packages/components/spinner:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-tokens':
         specifier: ^6.3.0
@@ -1370,7 +1370,7 @@ importers:
         version: 11.13.5(supports-color@8.1.1)
     devDependencies:
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@testing-library/dom':
         specifier: ^10.4.1
@@ -1382,16 +1382,16 @@ importers:
   packages/components/table:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@contentful/f36-utils':
         specifier: ^6.1.2
@@ -1416,16 +1416,16 @@ importers:
   packages/components/tablenext:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-tokens':
         specifier: ^6.3.1
         version: link:../../forma-36-tokens
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@contentful/f36-utils':
         specifier: ^6.1.2
@@ -1444,7 +1444,7 @@ importers:
   packages/components/tabs:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-tokens':
         specifier: ^6.3.0
@@ -1466,13 +1466,13 @@ importers:
   packages/components/text-link:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icon':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icon
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-tokens':
         specifier: ^6.3.0
@@ -1494,7 +1494,7 @@ importers:
   packages/components/tooltip:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-tokens':
         specifier: ^6.3.0
@@ -1513,10 +1513,10 @@ importers:
         version: 3.2.3
     devDependencies:
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@testing-library/dom':
         specifier: ^10.4.1
@@ -1531,7 +1531,7 @@ importers:
   packages/components/typography:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-tokens':
         specifier: ^6.3.0
@@ -1556,32 +1556,32 @@ importers:
   packages/components/usage-card:
     dependencies:
       '@contentful/f36-card':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../card
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../icons
       '@contentful/f36-text-link':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../text-link
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-tooltip':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../tooltip
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@emotion/css':
         specifier: ^11.13.5
         version: 11.13.5(supports-color@8.1.1)
     devDependencies:
       '@contentful/f36-usage-count':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../usage-count
       '@testing-library/dom':
         specifier: ^10.4.1
@@ -1593,13 +1593,13 @@ importers:
   packages/components/usage-count:
     dependencies:
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../../core
       '@contentful/f36-tokens':
         specifier: ^6.3.0
         version: link:../../forma-36-tokens
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../typography
       '@emotion/css':
         specifier: ^11.13.5
@@ -1650,19 +1650,19 @@ importers:
   packages/f36-ai-components:
     dependencies:
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/button
       '@contentful/f36-components':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../forma-36-react-components
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../core
       '@contentful/f36-forms':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/forms
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/icons
       '@contentful/f36-pill-next':
         specifier: 6.0.1-alpha.8
@@ -1671,7 +1671,7 @@ importers:
         specifier: ^6.3.1
         version: link:../forma-36-tokens
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/typography
       '@contentful/f36-utils':
         specifier: ^6.1.2
@@ -1767,8 +1767,8 @@ importers:
         specifier: ^9.0.0
         version: 9.0.0
       read-package-up:
-        specifier: ^11.0.0
-        version: 11.0.0
+        specifier: ^12.0.0
+        version: 12.0.0
       semver:
         specifier: ^7.7.2
         version: 7.8.2
@@ -1783,124 +1783,124 @@ importers:
   packages/forma-36-react-components:
     dependencies:
       '@contentful/f36-accordion':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/accordion
       '@contentful/f36-asset':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/asset
       '@contentful/f36-autocomplete':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/autocomplete
       '@contentful/f36-avatar':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/avatar
       '@contentful/f36-badge':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/badge
       '@contentful/f36-button':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/button
       '@contentful/f36-card':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/card
       '@contentful/f36-collapse':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/collapse
       '@contentful/f36-copybutton':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/copybutton
       '@contentful/f36-core':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../core
       '@contentful/f36-datepicker':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/datepicker
       '@contentful/f36-datetime':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/datetime
       '@contentful/f36-drag-handle':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/drag-handle
       '@contentful/f36-empty-state':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/empty-state
       '@contentful/f36-entity-list':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/entity-list
       '@contentful/f36-forms':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/forms
       '@contentful/f36-header':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/header
       '@contentful/f36-icon':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/icon
       '@contentful/f36-image':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/image
       '@contentful/f36-layout':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/layout
       '@contentful/f36-list':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/list
       '@contentful/f36-menu':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/menu
       '@contentful/f36-modal':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/modal
       '@contentful/f36-multiselect':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/multiselect
       '@contentful/f36-navlist':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/navlist
       '@contentful/f36-note':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/note
       '@contentful/f36-notification':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/notification
       '@contentful/f36-pagination':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/pagination
       '@contentful/f36-pill':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/pill
       '@contentful/f36-popover':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/popover
       '@contentful/f36-progress-stepper':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/progress-stepper
       '@contentful/f36-skeleton':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/skeleton
       '@contentful/f36-spinner':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/spinner
       '@contentful/f36-table':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/table
       '@contentful/f36-tabs':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/tabs
       '@contentful/f36-text-link':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/text-link
       '@contentful/f36-tooltip':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/tooltip
       '@contentful/f36-typography':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/typography
       '@contentful/f36-usage-card':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/usage-card
       '@contentful/f36-usage-count':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/usage-count
     devDependencies:
       '@contentful/browserslist-config':
@@ -1934,19 +1934,19 @@ importers:
         specifier: ^2.20.0
         version: 2.20.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       '@contentful/f36-components':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../forma-36-react-components
       '@contentful/f36-docs-utils':
         specifier: ^5.1.1
         version: link:../f36-docs-utils
       '@contentful/f36-icon':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/icon
       '@contentful/f36-icons':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/icons
       '@contentful/f36-navbar':
-        specifier: ^6.28.0
+        specifier: ^6.28.1
         version: link:../components/navbar
       '@contentful/f36-pill-next':
         specifier: 6.0.1-alpha.8
@@ -2025,7 +2025,7 @@ importers:
         version: 1.3.5(react@19.3.0)
       qs:
         specifier: ^6.15.2
-        version: 6.16.0
+        version: 6.16.1
       react:
         specifier: 'catalog:'
         version: 19.3.0
@@ -10672,13 +10672,13 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.9.3:
-    resolution: {integrity: sha512-HWmu+K+zvHNpaMfSnYeqdqrDbR16cuIXaPx8WoHaviQkDJh1/0BNtOZmHVQI5jc3wXv0H1yXc9wjvFdXh+n3hQ==}
+  prettier@3.9.10:
+    resolution: {integrity: sha512-skGHTH1Yb9QvaTC4hWnRTzEYtCpApF0UMBPz+t/0ZPzP8ihefo/btKd+QA7pUE0fEwA1SbS/NmhyEcstdXOIdA==}
     engines: {node: '>=14'}
     hasBin: true
 
-  prettier@3.9.9:
-    resolution: {integrity: sha512-Z/CJHIkdujO/OtN7nXUii0Rf3VT5SRuhjBA82Xvu2XhBUgX3nhP67T0LHceBdQLex7OOFGTox+Q5Yg8Jk2Qivg==}
+  prettier@3.9.3:
+    resolution: {integrity: sha512-HWmu+K+zvHNpaMfSnYeqdqrDbR16cuIXaPx8WoHaviQkDJh1/0BNtOZmHVQI5jc3wXv0H1yXc9wjvFdXh+n3hQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -10810,8 +10810,8 @@ packages:
     resolution: {integrity: sha512-oUeWlIg0pMz8YM5pu0uqakM+cCyYyXkHBxx9di9OUELu9X9+AYrNGGRLK9tNME3WfN3JGGqQIH3b4/E9LGek/w==}
     engines: {node: '>=18'}
 
-  qs@6.16.0:
-    resolution: {integrity: sha512-h6fhOIaRrID2CbEY2fqs+7t+UXZo+MLAnU5gRIq85uFtdiUPCdsApMlHhXogKVM4HM2DVbIjGNTTYH2OcmP1vA==}
+  qs@6.16.1:
+    resolution: {integrity: sha512-5Px6J7rfHBAGUhNQ3es4YzcOdBBw0SDcVtThJml4RdnKw4tKs2epA0kPZ+K8X+WiHktT93RHVcQ/3ym5aTCgtg==}
     engines: {node: '>=0.6'}
 
   qs@6.5.5:
@@ -13864,12 +13864,12 @@ snapshots:
       human-id: 4.1.3
       prettier: 2.8.8
 
-  '@chromatic-com/storybook@5.2.1(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))':
+  '@chromatic-com/storybook@5.2.1(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))':
     dependencies:
       '@neoconfetti/react': 1.0.0
       chromatic: 16.10.0
       jsonfile: 6.2.1
-      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       strip-ansi: 7.2.0
     transitivePeerDependencies:
       - '@chromatic-com/cypress'
@@ -16242,21 +16242,21 @@ snapshots:
 
   '@stitches/core@1.2.8': {}
 
-  '@storybook/addon-a11y@10.4.2(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))':
+  '@storybook/addon-a11y@10.4.2(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))':
     dependencies:
       '@storybook/global': 5.0.0
       axe-core: 4.12.1
-      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
 
-  '@storybook/addon-docs@10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(esbuild@0.28.1)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))':
+  '@storybook/addon-docs@10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(esbuild@0.28.1)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))':
     dependencies:
       '@mdx-js/react': 3.1.1(@types/react@19.2.10)(react@19.3.0)
-      '@storybook/csf-plugin': 10.4.2(esbuild@0.28.1)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))
+      '@storybook/csf-plugin': 10.4.2(esbuild@0.28.1)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))
       '@storybook/icons': 2.0.2(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
-      '@storybook/react-dom-shim': 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
+      '@storybook/react-dom-shim': 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       react: 19.3.0
       react-dom: 19.3.0(react@19.3.0)
-      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       ts-dedent: 2.2.0
     optionalDependencies:
       '@types/react': 19.2.10
@@ -16267,10 +16267,10 @@ snapshots:
       - vite
       - webpack
 
-  '@storybook/builder-vite@10.4.2(esbuild@0.28.1)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))':
+  '@storybook/builder-vite@10.4.2(esbuild@0.28.1)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))':
     dependencies:
-      '@storybook/csf-plugin': 10.4.2(esbuild@0.28.1)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))
-      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      '@storybook/csf-plugin': 10.4.2(esbuild@0.28.1)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))
+      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       ts-dedent: 2.2.0
       vite: 8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0)
     transitivePeerDependencies:
@@ -16278,9 +16278,9 @@ snapshots:
       - rollup
       - webpack
 
-  '@storybook/csf-plugin@10.4.2(esbuild@0.28.1)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))':
+  '@storybook/csf-plugin@10.4.2(esbuild@0.28.1)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))':
     dependencies:
-      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       unplugin: 2.3.11
     optionalDependencies:
       esbuild: 0.28.1
@@ -16295,28 +16295,28 @@ snapshots:
       react: 19.3.0
       react-dom: 19.3.0(react@19.3.0)
 
-  '@storybook/react-dom-shim@10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))':
+  '@storybook/react-dom-shim@10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))':
     dependencies:
       react: 19.3.0
       react-dom: 19.3.0(react@19.3.0)
-      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
     optionalDependencies:
       '@types/react': 19.2.10
       '@types/react-dom': 19.2.3(@types/react@19.2.10)
 
-  '@storybook/react-vite@10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(esbuild@0.28.1)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@6.0.3)(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))':
+  '@storybook/react-vite@10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(esbuild@0.28.1)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@6.0.3)(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))':
     dependencies:
       '@joshwooding/vite-plugin-react-docgen-typescript': 0.7.0(typescript@6.0.3)(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))
       '@rollup/pluginutils': 5.4.0(rollup@2.80.0)
-      '@storybook/builder-vite': 10.4.2(esbuild@0.28.1)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))
-      '@storybook/react': 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@6.0.3)
+      '@storybook/builder-vite': 10.4.2(esbuild@0.28.1)(rollup@2.80.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(vite@8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0))(webpack@5.108.4(cssnano@5.1.15(postcss@8.5.22))(csso@4.2.0)(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.22)(uglify-js@3.19.3))
+      '@storybook/react': 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@6.0.3)
       empathic: 2.0.1
       magic-string: 0.30.21
       react: 19.3.0
       react-docgen: 8.0.2(supports-color@8.1.1)
       react-dom: 19.3.0(react@19.3.0)
       resolve: 1.22.12
-      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       tsconfig-paths: 4.2.0
       vite: 8.1.6(@types/node@24.10.9)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.0)(tsx@4.21.0)(yaml@2.9.0)
     transitivePeerDependencies:
@@ -16328,15 +16328,15 @@ snapshots:
       - typescript
       - webpack
 
-  '@storybook/react@10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@6.0.3)':
+  '@storybook/react@10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@6.0.3)':
     dependencies:
       '@storybook/global': 5.0.0
-      '@storybook/react-dom-shim': 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
+      '@storybook/react-dom-shim': 10.4.2(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))
       react: 19.3.0
       react-docgen: 8.0.2(supports-color@8.1.1)
       react-docgen-typescript: 2.4.0(typescript@6.0.3)
       react-dom: 19.3.0(react@19.3.0)
-      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
     optionalDependencies:
       '@types/react': 19.2.10
       '@types/react-dom': 19.2.3(@types/react@19.2.10)
@@ -18643,11 +18643,11 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-storybook@10.4.2(eslint@10.7.0(jiti@2.7.0)(supports-color@8.1.1))(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@6.0.3):
+  eslint-plugin-storybook@10.4.2(eslint@10.7.0(jiti@2.7.0)(supports-color@8.1.1))(storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@8.1.1)(typescript@6.0.3):
     dependencies:
       '@typescript-eslint/utils': 8.60.1(eslint@10.7.0(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1)(typescript@6.0.3)
       eslint: 10.7.0(jiti@2.7.0)(supports-color@8.1.1)
-      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      storybook: 10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -22229,9 +22229,9 @@ snapshots:
 
   prettier@2.8.8: {}
 
-  prettier@3.9.3: {}
+  prettier@3.9.10: {}
 
-  prettier@3.9.9: {}
+  prettier@3.9.3: {}
 
   pretty-bytes@3.0.1:
     dependencies:
@@ -22251,14 +22251,14 @@ snapshots:
     dependencies:
       parse-ms: 4.0.0
 
-  pretty-quick@4.2.2(prettier@3.9.9):
+  pretty-quick@4.2.2(prettier@3.9.10):
     dependencies:
       '@pkgr/core': 0.2.9
       ignore: 7.0.5
       mri: 1.2.0
       picocolors: 1.1.1
       picomatch: 4.0.4
-      prettier: 3.9.9
+      prettier: 3.9.10
       tinyexec: 0.3.2
       tslib: 2.8.1
 
@@ -22416,7 +22416,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  qs@6.16.0:
+  qs@6.16.1:
     dependencies:
       es-define-property: 1.0.1
       side-channel: 1.1.1
@@ -23380,7 +23380,7 @@ snapshots:
       es-errors: 1.3.0
       internal-slot: 1.1.0
 
-  storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0):
+  storybook@10.6.2(@types/react@19.2.10)(prettier@3.9.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0):
     dependencies:
       '@storybook/global': 5.0.0
       '@storybook/icons': 2.0.2(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -23401,7 +23401,7 @@ snapshots:
       ws: 8.22.0
     optionalDependencies:
       '@types/react': 19.2.10
-      prettier: 3.9.9
+      prettier: 3.9.10
     transitivePeerDependencies:
       - bufferutil
       - react

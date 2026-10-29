@@ -1,5 +1,15 @@
 # Change Log
 
+## 6.28.1
+
+### Patch Changes
+
+- Updated dependencies [[`db68cd2`](https://github.com/contentful/forma-36/commit/db68cd2f71a9183e90886ff243f6258b07ef71f7)]:
+  - @contentful/f36-tooltip@6.28.1
+  - @contentful/f36-button@6.28.1
+  - @contentful/f36-core@6.28.1
+  - @contentful/f36-icons@6.28.1
+
 ## 6.28.0
 
 ### Patch Changes

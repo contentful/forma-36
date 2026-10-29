@@ -1,5 +1,14 @@
 # Change Log
 
+## 6.28.1
+
+### Patch Changes
+
+- [#3754](https://github.com/contentful/forma-36/pull/3754) [`db68cd2`](https://github.com/contentful/forma-36/commit/db68cd2f71a9183e90886ff243f6258b07ef71f7) Thanks [@GigiIanni](https://github.com/GigiIanni)! - Standardize tooltip layout with start-aligned text, consistent padding, and a 240px default maximum width.
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.28.1
+
 ## 6.28.0
 
 ### Patch Changes
