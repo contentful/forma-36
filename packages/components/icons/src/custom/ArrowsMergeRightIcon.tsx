@@ -5,7 +5,7 @@ import {
   generateIconComponent,
 } from '@contentful/f36-icon';
 
-export const ArrowsMergeIcon = generateComponentWithVariants({
+export const ArrowsMergeRightIcon = generateComponentWithVariants({
   variants: {
     [IconVariant.Default]: generateIconComponent({
       path: (
