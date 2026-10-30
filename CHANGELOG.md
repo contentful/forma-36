@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 30-10-2026
+
+**F36 Tooltip** `v6.28.1`
+
+- Standardize tooltip layout with start-aligned text, consistent padding, and a 240px default maximum width.
+
 ## 23-10-2026
 
 **F36 Modal** `v6.28.0`
