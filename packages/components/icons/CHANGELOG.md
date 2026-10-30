@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.29.0
+
+### Minor Changes
+
+- [#3757](https://github.com/contentful/forma-36/pull/3757) [`d95d9a4`](https://github.com/contentful/forma-36/commit/d95d9a46b5e514ae396bbb6748ef7b5bab466444) Thanks [@c-annabelwennekes](https://github.com/c-annabelwennekes)! - Add ArrowsMergeRightIcon with default and active variants.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.29.0
+  - @contentful/f36-icon@6.29.0
+
 ## 6.28.1
 
 ### Patch Changes
