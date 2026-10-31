@@ -286,8 +286,8 @@ importers:
         version: 3.46.0(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@6.0.3)
     devDependencies:
       '@fastly/cli':
-        specifier: 16.1.0
-        version: 16.1.0
+        specifier: 16.2.0
+        version: 16.2.0
       '@fastly/compute-js-static-publish':
         specifier: 6.3.0
         version: 6.3.0(@fastly/js-compute@3.46.0(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@6.0.3))
@@ -3628,56 +3628,56 @@ packages:
       '@noble/hashes':
         optional: true
 
-  '@fastly/cli-darwin-arm64@16.1.0':
-    resolution: {integrity: sha512-j87Z8ypNoLetStxcNAiHhO+iqXxeDmzuIuLgoWNBfIbooGS54macEuG0pFRrzJqdleWJE8qNSQVDio/CoopeCw==}
+  '@fastly/cli-darwin-arm64@16.2.0':
+    resolution: {integrity: sha512-e9WQyNC8lEQ+8ZtUBRMwwtOPpCCMRHpe8Q0G38R9OVWif+lMZlUvFyaI4ZYK+PZ2QvSFl45wQGOykce1ezHdUA==}
     cpu: [arm64]
     os: [darwin]
     hasBin: true
 
-  '@fastly/cli-darwin-x64@16.1.0':
-    resolution: {integrity: sha512-yxVjB6WkJ+qXvT1wsrdjrPcPce8S7wdjXZFq2Q7d5CELxEuCAIWajhRmyQwUEZ2R+odUVs8Iom1jIQN9TOGEnQ==}
+  '@fastly/cli-darwin-x64@16.2.0':
+    resolution: {integrity: sha512-gqtftsbtXK0geEYlACPBTB80FpP2rhtcuyaqG5diTM81f5TA2XuPgFR+6LLxyIQlFYpOLB5t4bV/1c1z+BNzsg==}
     cpu: [x64]
     os: [darwin]
     hasBin: true
 
-  '@fastly/cli-linux-arm64@16.1.0':
-    resolution: {integrity: sha512-BwakdHbtQGfFGci/8/g4uM49DSrM5g2EvUDIUEen8dw9b14vC05IBQ9p+SkyZEH8sOLpsFc7ldF3hJKEhKwDOw==}
+  '@fastly/cli-linux-arm64@16.2.0':
+    resolution: {integrity: sha512-jGS96PP/nlUNwxRGaRg64vS2cZDifzZVZNWDjfkgyilCyVYMBgLY5Qstc6lSmCIKITQamvfC3mNKJos55m9iHg==}
     cpu: [arm64]
     os: [linux]
     hasBin: true
 
-  '@fastly/cli-linux-x32@16.1.0':
-    resolution: {integrity: sha512-snDYs+evETsnb0veZnx8w8BFWe6wahja2+8j+9nPNEwBQfW5Jn+0J8OVV9W/OSEtaqkM9cKaC/C/uhnG/XsiSg==}
+  '@fastly/cli-linux-x32@16.2.0':
+    resolution: {integrity: sha512-neH9EBpFDINlfgvJISZAcBi2UNTSbvGO96AxQccjrGnUpbHT3YUC4i2J4RZAsV1OIGwIQXsDtJwObTeUGZr9Zw==}
     cpu: [x32]
     os: [linux]
     hasBin: true
 
-  '@fastly/cli-linux-x64@16.1.0':
-    resolution: {integrity: sha512-P/An4q/KoE+Hp2u8rT4D4cOgfnz3tuGHnyGKjrj4QVaCxz+ymlr2PJsvZoyjGUTAeh0rm29d0Gr0tS0q72dRrg==}
+  '@fastly/cli-linux-x64@16.2.0':
+    resolution: {integrity: sha512-XwxoMmdj52etg9YYgtOUrGOFF0luC6/wPzVfQcMXYb4ZoAgl+jfFDBSzTbzo8eJha3EYBcal5xcMZ7+3C1vK4g==}
     cpu: [x64]
     os: [linux]
     hasBin: true
 
-  '@fastly/cli-win32-arm64@16.1.0':
-    resolution: {integrity: sha512-nEhx9LpvnXiJtlpVsyKjZ/F0q/WXg9yvZS2BQA68WJ1XNChI5T+0bcEr2Rlu0fGbcUw/qvKvQSFWgU3v/cpyTA==}
+  '@fastly/cli-win32-arm64@16.2.0':
+    resolution: {integrity: sha512-2SytCnv0vYIADepKOYHOgSclCNtTnP+hMcNxIHwfUDV0igORANHD6TEOHpwrVG0GG9TCYp5Sw0mRrUzexixDpA==}
     cpu: [arm64]
     os: [win32]
     hasBin: true
 
-  '@fastly/cli-win32-x32@16.1.0':
-    resolution: {integrity: sha512-5ZxQ3FRy4zug+IMuq+jC7Jw7C6nB3QjshUSxFZctGecSsspQuwUuXwIVM60qbc2ThPgumFpTBwqrJXzmLhH7lQ==}
+  '@fastly/cli-win32-x32@16.2.0':
+    resolution: {integrity: sha512-flxjNb3sDIty7Gb7XQewx/2qErbG9eFVdr7GBhuhLlJhS8WksU2um+kvMtJRtrIIn1E1ch1m6GioiVse7ilr8A==}
     cpu: [x32]
     os: [win32]
     hasBin: true
 
-  '@fastly/cli-win32-x64@16.1.0':
-    resolution: {integrity: sha512-ryO3hoEaMh67aa01Mgocsu4bBHIoxE9iuTYbnXdyXb0erp7rvyZ2Ecj/33B9W0BxIKomdkQNlbhowDGQ8wpGEQ==}
+  '@fastly/cli-win32-x64@16.2.0':
+    resolution: {integrity: sha512-rN3FBid9MRJmM5w95wHViPZBLG0hFXlKLXFMuZf9q4Yp1fi6bnzX3Y5VowCYSokerq+hn8wVwyJ+VpxMFGAYsw==}
     cpu: [x64]
     os: [win32]
     hasBin: true
 
-  '@fastly/cli@16.1.0':
-    resolution: {integrity: sha512-H5DCOpJv8xuBM8ueb3VGD0cVa0K7nZV8DMpAPyh+izO4JMqgTxQpU+czrSycf72lM+iUKYbGwnNyAheSa6KyPA==}
+  '@fastly/cli@16.2.0':
+    resolution: {integrity: sha512-quMJcQk4XReWwhsyvfwqRNFpBR7iLEUbKp2xdbBu+N8ARYZp612h0I+mHmmR/GYB8WAqB+Qa8J25pODa5QDvhw==}
     engines: {node: '>=16'}
     hasBin: true
 
@@ -14583,40 +14583,40 @@ snapshots:
 
   '@exodus/bytes@1.15.1': {}
 
-  '@fastly/cli-darwin-arm64@16.1.0':
+  '@fastly/cli-darwin-arm64@16.2.0':
     optional: true
 
-  '@fastly/cli-darwin-x64@16.1.0':
+  '@fastly/cli-darwin-x64@16.2.0':
     optional: true
 
-  '@fastly/cli-linux-arm64@16.1.0':
+  '@fastly/cli-linux-arm64@16.2.0':
     optional: true
 
-  '@fastly/cli-linux-x32@16.1.0':
+  '@fastly/cli-linux-x32@16.2.0':
     optional: true
 
-  '@fastly/cli-linux-x64@16.1.0':
+  '@fastly/cli-linux-x64@16.2.0':
     optional: true
 
-  '@fastly/cli-win32-arm64@16.1.0':
+  '@fastly/cli-win32-arm64@16.2.0':
     optional: true
 
-  '@fastly/cli-win32-x32@16.1.0':
+  '@fastly/cli-win32-x32@16.2.0':
     optional: true
 
-  '@fastly/cli-win32-x64@16.1.0':
+  '@fastly/cli-win32-x64@16.2.0':
     optional: true
 
-  '@fastly/cli@16.1.0':
+  '@fastly/cli@16.2.0':
     optionalDependencies:
-      '@fastly/cli-darwin-arm64': 16.1.0
-      '@fastly/cli-darwin-x64': 16.1.0
-      '@fastly/cli-linux-arm64': 16.1.0
-      '@fastly/cli-linux-x32': 16.1.0
-      '@fastly/cli-linux-x64': 16.1.0
-      '@fastly/cli-win32-arm64': 16.1.0
-      '@fastly/cli-win32-x32': 16.1.0
-      '@fastly/cli-win32-x64': 16.1.0
+      '@fastly/cli-darwin-arm64': 16.2.0
+      '@fastly/cli-darwin-x64': 16.2.0
+      '@fastly/cli-linux-arm64': 16.2.0
+      '@fastly/cli-linux-x32': 16.2.0
+      '@fastly/cli-linux-x64': 16.2.0
+      '@fastly/cli-win32-arm64': 16.2.0
+      '@fastly/cli-win32-x32': 16.2.0
+      '@fastly/cli-win32-x64': 16.2.0
 
   '@fastly/compute-js-static-publish@6.3.0(@fastly/js-compute@3.46.0(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(typescript@6.0.3))':
     dependencies:
