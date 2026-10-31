@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 31-10-2026
+
+**F36 Icons** `v6.29.0`
+
+- Add ArrowsMergeRightIcon with default and active variants.
+
 ## 30-10-2026
 
 **F36 Tooltip** `v6.28.1`
