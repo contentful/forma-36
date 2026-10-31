@@ -11,16 +11,24 @@ import { css, cx } from '@emotion/css';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { useForm, useController } from 'react-hook-form';
 import { MdAccessAlarm } from 'react-icons/md';
-import { DndContext } from '@dnd-kit/core';
+import {
+  DndContext,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from '@dnd-kit/core';
 import {
   arrayMove,
   horizontalListSortingStrategy,
   SortableContext,
+  sortableKeyboardCoordinates,
   useSortable,
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { format, parse, isValid } from 'date-fns';
+import { createPortal } from 'react-dom';
 import FocusLock from 'react-focus-lock';
 
 import tokens from '@contentful/f36-tokens';
@@ -56,6 +64,7 @@ const liveProviderScope = {
   useRef,
   useMemo,
   useContext,
+  createPortal,
   // react-hook-form
   useForm,
   useController,
@@ -67,7 +76,12 @@ const liveProviderScope = {
   CSS,
   DndContext,
   horizontalListSortingStrategy,
+  KeyboardSensor,
+  PointerSensor,
   SortableContext,
+  sortableKeyboardCoordinates,
+  useSensor,
+  useSensors,
   useSortable,
   verticalListSortingStrategy,
   // date-fns
@@ -91,6 +105,11 @@ const styles = {
   card: css`
     font-family: ${tokens.fontStackPrimary};
     border-radius: ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium} 0 0 !important;
+  `,
+  // Removes the frame around the preview, for examples that draw their own surface.
+  cardBorderless: css`
+    border: 0 !important;
+    box-shadow: none !important;
   `,
   floatingPanel: css`
     position: absolute;
@@ -148,11 +167,15 @@ const styles = {
 export function ComponentSource({
   code,
   file,
+  hideCode,
+  hideBorder,
 }: {
   code: string;
   file?: string;
+  hideCode?: boolean;
+  hideBorder?: boolean;
 }) {
-  const [showSource, setShowSource] = useState(true);
+  const [showSource, setShowSource] = useState(!hideCode);
   const tooltipId = useId();
   const copyTooltipId = `component-source-copy-${tooltipId}`;
   const { status } = useFrontMatterContext() ?? {};
@@ -172,66 +195,74 @@ export function ComponentSource({
         // The order is important here
         scope={liveProviderScope}
       >
-        <Card className={styles.card}>
+        <Card
+          className={cx(styles.card, { [styles.cardBorderless]: hideBorder })}
+        >
           {/* @ts-expect-error react-live's types omit its runtime Component prop */}
           <LivePreview Component="div" />
         </Card>
-        <div style={{ position: 'relative' }}>
-          <LiveError className={styles.error} />
+        <LiveError className={styles.error} />
+        {!hideCode && (
           <div style={{ position: 'relative' }}>
-            <Flex
-              className={styles.toggle}
-              justifyContent="space-between"
-              alignItems="center"
-            >
-              <Button
-                size="small"
-                variant="secondary"
-                startIcon={
-                  showSource ? <f36icons.EyeClosedIcon /> : <f36icons.EyeIcon />
-                }
-                onClick={handleToggle}
+            <div style={{ position: 'relative' }}>
+              <Flex
+                className={styles.toggle}
+                justifyContent="space-between"
+                alignItems="center"
               >
-                {showSource ? 'Hide code' : 'Show code'}
-              </Button>
-            </Flex>
+                <Button
+                  size="small"
+                  variant="secondary"
+                  startIcon={
+                    showSource ? (
+                      <f36icons.EyeClosedIcon />
+                    ) : (
+                      <f36icons.EyeIcon />
+                    )
+                  }
+                  onClick={handleToggle}
+                >
+                  {showSource ? 'Hide code' : 'Show code'}
+                </Button>
+              </Flex>
 
-            <LiveEditor
-              className={cx(styles.editor, {
-                [styles.editorHidden]: !showSource,
-              })}
-            />
-            <Flex
-              className={styles.floatingPanel}
-              justifyContent="space-between"
-              alignItems="center"
-            >
-              {showSource && (
-                <Flex gap="spacingXs">
-                  <CopyButton
-                    tooltipProps={{ id: copyTooltipId, placement: 'top' }}
-                    className={styles.copyButton}
-                    value={code}
-                    size="small"
-                  />
-                  {canOpenInPlayground && (
-                    <Button
-                      as="a"
-                      className={cx(styles.playgroundButton)}
-                      endIcon={<f36icons.ArrowSquareOutIcon />}
+              <LiveEditor
+                className={cx(styles.editor, {
+                  [styles.editorHidden]: !showSource,
+                })}
+              />
+              <Flex
+                className={styles.floatingPanel}
+                justifyContent="space-between"
+                alignItems="center"
+              >
+                {showSource && (
+                  <Flex gap="spacingXs">
+                    <CopyButton
+                      tooltipProps={{ id: copyTooltipId, placement: 'top' }}
+                      className={styles.copyButton}
+                      value={code}
                       size="small"
-                      href={`/playground?code=${coder.encode(code)}`}
-                      target="_blank"
-                    >
-                      Open in Playground
-                    </Button>
-                  )}
-                </Flex>
-              )}
-            </Flex>
+                    />
+                    {canOpenInPlayground && (
+                      <Button
+                        as="a"
+                        className={cx(styles.playgroundButton)}
+                        endIcon={<f36icons.ArrowSquareOutIcon />}
+                        size="small"
+                        href={`/playground?code=${coder.encode(code)}`}
+                        target="_blank"
+                      >
+                        Open in Playground
+                      </Button>
+                    )}
+                  </Flex>
+                )}
+              </Flex>
+            </div>
+            {!showSource && <div className={styles.editorCover} />}
           </div>
-          {!showSource && <div className={styles.editorCover} />}
-        </div>
+        )}
       </LiveProvider>
     </Flex>
   );
