@@ -28,6 +28,7 @@ import * as f36utils from '@contentful/f36-utils';
 import * as f36Components from '@contentful/f36-components';
 import * as f36Navbar from '@contentful/f36-navbar';
 import * as f36PillNext from '@contentful/f36-pill-next';
+import * as f36InlineConfigurationPopover from '@contentful/f36-inline-configuration-popover';
 import * as f36TableNext from '@contentful/f36-table-next';
 import { Card, Button, CopyButton, Flex } from '@contentful/f36-components';
 
@@ -46,6 +47,7 @@ const liveProviderScope = {
   f36icons,
   ...f36Navbar,
   ...f36PillNext,
+  ...f36InlineConfigurationPopover,
   ...f36TableNext,
   css,
   tokens,

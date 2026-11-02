@@ -1,0 +1,148 @@
+---
+title: 'InlineConfigurationPopover'
+type: 'component'
+status: 'alpha'
+slug: /components/inline-configuration-popover/
+github: 'https://github.com/contentful/forma-36/tree/main/packages/components/inline-configuration-popover'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-inlineconfigurationpopover--basic'
+typescript: ./src/InlineConfigurationPopover.tsx,./src/InlineConfigurationPopoverTrigger/InlineConfigurationPopoverTrigger.tsx,./src/InlineConfigurationPopoverAnchor/InlineConfigurationPopoverAnchor.tsx,./src/InlineConfigurationPopoverContent/InlineConfigurationPopoverContent.tsx,./src/InlineConfigurationPopoverHeader/InlineConfigurationPopoverHeader.tsx,./src/InlineConfigurationPopoverBody/InlineConfigurationPopoverBody.tsx,./src/InlineConfigurationPopoverFooter/InlineConfigurationPopoverFooter.tsx
+---
+
+InlineConfigurationPopover lets people edit the settings of one item, such as a row in a list, in a popover next to that item. Changes apply as people make them: there is no Save or Cancel. It closes with its close button, Escape, a press outside it or its trigger.
+
+Use an inline configuration popover when changes apply as people make them. Use a [Modal](/components/modal) when changes need to be saved or confirmed.
+
+## Import
+
+InlineConfigurationPopover is in alpha. It isn't part of `@contentful/f36-components` yet: import it from its own package.
+
+```jsx static=true
+import { InlineConfigurationPopover } from '@contentful/f36-inline-configuration-popover';
+```
+
+## Inline configuration popover, Popover or Modal
+
+One rule: **an inline configuration popover edits inline settings that apply immediately. A modal is for changes that need an explicit commit.** If closing should throw changes away, or the content needs a Save, Confirm or Delete button, use a modal.
+
+| Component                  | Use it for                                         | Anchored        | Focus                                    | Commit                                   | Closes with                                  |
+| -------------------------- | -------------------------------------------------- | --------------- | ---------------------------------------- | ---------------------------------------- | -------------------------------------------- |
+| Tooltip                    | 1 or 2 lines of help, nothing interactive          | Yes             | Stays on the trigger                     | None                                     | Escape, blur, pointer leaving                |
+| Popover                    | Menus, pickers, info and quick actions             | Yes             | Moves in, not trapped; Tab out closes it | Each item acts when picked, or read-only | Escape, outside press, blur, scroll          |
+| InlineConfigurationPopover | A few settings of one item, applied immediately    | Yes, to its row | Trapped; returns to the trigger on close | Immediate, no Save or Cancel; Reset      | Escape, outside press, close button, trigger |
+| Modal                      | Blocking tasks, confirmations, destructive actions | No, centered    | Trapped; starts on the close button      | Explicit primary button                  | Escape, overlay, close button, Cancel        |
+
+- No controls: use a [Tooltip](/components/tooltip) for 1 or 2 lines, or a [Popover](/components/popover) for richer content.
+- A list of choices or actions: use [Menu](/components/menu), [Select](/components/select) or [Autocomplete](/components/autocomplete).
+- One item with a few decisions: use an inline configuration popover.
+- Search, a table or more than about 5 fields: use a [Modal](/components/modal) or a slide-in panel.
+- Something destructive or irreversible always goes in a modal, even when it starts from an inline configuration popover. Close the popover first.
+- Never put Save or Cancel in an inline configuration popover, and never apply changes immediately inside a modal.
+
+## Compound components
+
+1. `<InlineConfigurationPopover>` holds the state. Like `Menu`, it takes `isOpen`, `defaultIsOpen`, `onOpen` and `onClose`. `onOpen` and `onClose` are requests: when you control `isOpen`, set it in them, for example to keep one popover open at a time. `onClose` gets the reason (`'trigger'`, `'escape-key'`, `'outside-press'`, `'close-button'`, `'api'` or `'focus-out'`).
+1. `<InlineConfigurationPopover.Trigger>` wraps a single interactive element that accepts a `ref`, such as `Button`, `ToggleButton` or `IconButton`. It opens and closes the popover on click and on Enter or Space. Pass the button itself: to add a `Tooltip`, put it outside the trigger (`<Tooltip><InlineConfigurationPopover.Trigger><IconButton …/></InlineConfigurationPopover.Trigger></Tooltip>`).
+1. `<InlineConfigurationPopover.Anchor>` (optional) wraps the element the popover lines up with, usually the row that contains the trigger. Pressing it doesn't close the popover.
+1. `<InlineConfigurationPopover.Content>` is the dialog. It's only rendered while open.
+1. `<InlineConfigurationPopover.Header>` shows the drag handle, the item's title and caption, and a close button. It names and describes the dialog.
+1. `<InlineConfigurationPopover.Body>` holds the settings and scrolls when the popover reaches its maximum height.
+1. `<InlineConfigurationPopover.Footer>` holds secondary actions such as Reset. Show it only once something is set.
+1. `useInlineConfigurationPopover()` returns `{ isOpen, close, announce }` for components inside the popover. See [useInlineConfigurationPopover](#useinlineconfigurationpopover).
+
+## Examples
+
+### Basic
+
+```jsx file=examples/InlineConfigurationPopoverBasicExample.tsx
+
+```
+
+### List of items with an anchor
+
+The popover lines up with the whole row while the row's button is the trigger. Only one popover is open at a time, changes apply immediately, the row shows a summary of the setting, and the footer offers Reset once something is set.
+
+```jsx file=examples/InlineConfigurationPopoverListExample.tsx
+
+```
+
+### Draggable
+
+With `isDraggable`, people can move the popover out of the way by dragging its header, or with the arrow keys on the drag handle. The position resets when it closes.
+
+```jsx file=examples/InlineConfigurationPopoverDraggableExample.tsx
+
+```
+
+### With a nested Menu or Select
+
+Menus, selects, tooltips and autocompletes inside the popover work as usual. Pressing inside them doesn't close the popover, and Escape in an open menu closes only the menu.
+
+```jsx file=examples/InlineConfigurationPopoverNestedExample.tsx
+
+```
+
+## Props (API reference)
+
+### InlineConfigurationPopover
+
+<PropsTable of="InlineConfigurationPopover" />
+
+### InlineConfigurationPopover.Trigger
+
+<PropsTable of="InlineConfigurationPopoverTrigger" />
+
+### InlineConfigurationPopover.Anchor
+
+<PropsTable of="InlineConfigurationPopoverAnchor" />
+
+### InlineConfigurationPopover.Content
+
+Also takes the props of a `div`, such as `aria-label` when there is no header.
+
+<PropsTable of="InlineConfigurationPopoverContent" />
+
+### InlineConfigurationPopover.Header
+
+<PropsTable of="InlineConfigurationPopoverHeader" />
+
+### InlineConfigurationPopover.Body
+
+<PropsTable of="InlineConfigurationPopoverBody" />
+
+### InlineConfigurationPopover.Footer
+
+<PropsTable of="InlineConfigurationPopoverFooter" />
+
+### useInlineConfigurationPopover
+
+Call it in a component rendered inside `InlineConfigurationPopover`.
+
+| Returns    | Type                        | Description                                                                                                                                    |
+| ---------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `isOpen`   | `boolean`                   | Whether the popover is open                                                                                                                    |
+| `close`    | `() => void`                | Asks the popover to close, with the reason `'api'`. Focus returns to the trigger. Does nothing when it's already closed.                       |
+| `announce` | `(message: string) => void` | Reads a short message in a polite live region, e.g. "Blog post reset to default". The message is still read if the popover closes or unmounts. |
+
+## Content guidelines
+
+- Name the trigger after what it opens. The visible text can be short ("Set", "Override", "Edit"), but the accessible name must include the item, and start with the visible text: `aria-label="Edit parameter Blog post"`. In development, the trigger warns in the console when its name is only a generic verb, when two triggers have the same name, or when its child isn't a button.
+- Use the item's name as the header `title`, e.g. "Blog post". The dialog is named "Blog post settings".
+- Keep the `caption` short (under about 8 words), e.g. "Reference, required".
+- Keep announcements short: item, past-tense verb and value, e.g. "Blog post added to path", "Limit set to 3 items", "Blog post reset to default". Don't use "successfully".
+- Don't add Save or Cancel buttons. Use the footer for Reset.
+
+## Accessibility
+
+- **Trigger:** gets `aria-haspopup="dialog"`, `aria-expanded` and `aria-controls` pointing at the dialog. It opens on click and on Enter or Space. It's a disclosure, so `aria-pressed` is removed from a `ToggleButton`. Point `aria-describedby` at the row's summary line so the current setting is read with the trigger.
+- **Dialog:** `role="dialog"` and `aria-modal="true"`, named by the header title ("Blog post settings", a level 2 heading) and described by its caption. Without a header, pass `aria-label` to `InlineConfigurationPopover.Content`. In development, it warns when the dialog has no name.
+- **Focus:** when it opens, focus moves to `initialFocusRef`, else the first focusable element in `InlineConfigurationPopover.Body`, else the dialog. Elements that can't take focus (disabled, or in a disabled fieldset) are skipped. Tab is trapped inside, and the rest of the page is hidden from assistive technology. When it closes, focus returns to the trigger, also after a press on a blank area outside it. A press on another focusable element outside it, such as another row's trigger, leaves focus there.
+- **Dismissal:** Escape, a press outside, the close button ("Close Blog post settings") or the trigger close it. Presses inside nested menus, tooltips and autocompletes don't count as outside. A modal opened from the popover does: close the popover first. Escape in a nested menu, portaled or not, closes only the menu. Escape doesn't reach page-level listeners, so it doesn't also close a surrounding panel.
+- **Announcements:** settings apply immediately, so confirm changes that aren't otherwise read with `announce()` from `useInlineConfigurationPopover()`. It writes to one polite live region that outlives the popover, so a message sent right before closing (e.g. after Reset) is still read. Don't announce typing, checkbox, switch or select changes, opening or closing: their state is already read.
+- **Dragging:** the drag handle is an F36 `DragHandle` named "Move Blog post settings" with `aria-roledescription="draggable"` and instructions. Space or Enter picks the popover up, the arrow keys move it by 16px (64px with Shift), Space or Enter drops it and Escape cancels the drag without closing the popover. Escape also cancels a pointer drag, and it doesn't reach page-level listeners. Moving is announced through dnd-kit's own live region ("Picked up Blog post settings.", "Moved Blog post settings."), separate from settings announcements. Key instructions are only added for keyboard drags.
+- **Scrolling:** when its anchor scrolls out of view, the popover is hidden until the anchor comes back. While it's hidden it isn't modal: focus moves to the trigger, the page is exposed again, and Escape on the trigger closes it. When the anchor comes back, focus returns to where it was in the popover. If people move focus elsewhere on the page meanwhile, the popover closes.
+
+## Notes
+
+- The popover is positioned with [Floating UI](https://floating-ui.com/) (`offset`, `flip`, `size` and `hide`, without `shift`, so it stays level with its row while the list scrolls) and moved with [dnd kit](/integrations/dnd-kit).
+- It works inside a page that has its own `DndContext`, such as a sortable list. Attach that list's dnd-kit listeners to a `DragHandle`, not the whole row, so presses inside the popover don't start dragging the row.
+- It sits on the dropdown layer, above modals. Close it before opening a modal from it (call `close()`, then open the modal), and when the modal closes, announce the result. A modal opened while the popover is open would be hidden from screen readers, and pressing in it would close the popover.

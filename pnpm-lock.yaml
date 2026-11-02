@@ -1338,6 +1338,55 @@ importers:
         specifier: ^16.3.0
         version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
 
+  packages/components/inline-configuration-popover:
+    dependencies:
+      '@contentful/f36-button':
+        specifier: ^6.29.0
+        version: link:../button
+      '@contentful/f36-core':
+        specifier: ^6.29.0
+        version: link:../../core
+      '@contentful/f36-drag-handle':
+        specifier: ^6.29.0
+        version: link:../drag-handle
+      '@contentful/f36-icons':
+        specifier: ^6.29.0
+        version: link:../icons
+      '@contentful/f36-tokens':
+        specifier: ^6.3.0
+        version: link:../../forma-36-tokens
+      '@dnd-kit/core':
+        specifier: ^6.0.8
+        version: 6.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      '@emotion/css':
+        specifier: ^11.13.5
+        version: 11.13.5(supports-color@8.1.1)
+      '@floating-ui/react':
+        specifier: ^0.27.16
+        version: 0.27.17(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      tabbable:
+        specifier: ^6.4.0
+        version: 6.4.0
+    devDependencies:
+      '@contentful/f36-menu':
+        specifier: ^6.29.0
+        version: link:../menu
+      '@contentful/f36-modal':
+        specifier: ^6.29.0
+        version: link:../modal
+      '@contentful/f36-tooltip':
+        specifier: ^6.29.0
+        version: link:../tooltip
+      '@testing-library/dom':
+        specifier: ^10.4.1
+        version: 10.4.1
+      '@testing-library/react':
+        specifier: ^16.3.0
+        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      '@testing-library/user-event':
+        specifier: ^14.6.1
+        version: 14.6.7(@testing-library/dom@10.4.1)
+
   packages/components/skeleton:
     dependencies:
       '@contentful/f36-core':
@@ -1951,6 +2000,9 @@ importers:
       '@contentful/f36-pill-next':
         specifier: 6.0.1-alpha.8
         version: link:../components/pill-next
+      '@contentful/f36-inline-configuration-popover':
+        specifier: workspace:*
+        version: link:../components/inline-configuration-popover
       '@contentful/f36-table-next':
         specifier: 6.0.1-alpha.3
         version: link:../components/tablenext
