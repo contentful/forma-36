@@ -2,6 +2,7 @@ import React from 'react';
 import { cx } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import type { CommonProps, ExpandProps } from '@contentful/f36-core';
+import type { IconProps } from '@contentful/f36-icon';
 import { Button } from '../Button';
 import { getStyles as getIconButtonStyles } from '../IconButton/IconButton.styles';
 import getStyles from './ToggleButton.styles';
@@ -75,7 +76,10 @@ function ToggleButtonBase(props: ExpandProps<ToggleButtonProps>, ref) {
   // An active transparent toggle has no border, so its icon carries the
   // active state in the primary color.
   const startIcon =
-    variant === 'transparent' && isActive && icon && !icon.props.color
+    variant === 'transparent' &&
+    isActive &&
+    React.isValidElement<IconProps>(icon) &&
+    !icon.props.color
       ? React.cloneElement(icon, { color: tokens.colorPrimary })
       : icon;
   const iconButtonStyles = getIconButtonStyles({ size, density });
