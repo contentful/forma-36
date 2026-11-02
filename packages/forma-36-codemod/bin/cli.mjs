@@ -100,10 +100,10 @@ function expandFilePathsIfNeeded(files) {
 }
 
 export function run() {
-  const cli = meow(
-    {
-      description: 'Codemods for updating Forma-36 codes',
-      help: `
+  const cli = meow({
+    importMeta: import.meta,
+    description: 'Codemods for updating Forma-36 codes',
+    help: `
     Usage
       $ npx @contentful/f36-codemod <path> <...options>
         path             Files or directory to transform. Can be a glob like src/**.test.js
@@ -114,15 +114,14 @@ export function run() {
       --parser           Which parser to be used: babel or tsx
       --jscodeshift      (Advanced) Pass options directly to jscodeshift
     `,
+    flags: {
+      force: { type: 'boolean' },
+      dry: { type: 'boolean' },
+      print: { type: 'boolean' },
+      parser: { type: 'string' },
+      jscodeshift: { type: 'string', isMultiple: true },
     },
-    {
-      boolean: ['force', 'dry', 'print', 'help'],
-      string: ['_'],
-      alias: {
-        h: 'help',
-      },
-    },
-  );
+  });
 
   const path = cli.input[0];
 
