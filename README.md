@@ -216,6 +216,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/e
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/damann"><img src="https://avatars.githubusercontent.com/u/67584870?v=4?s=100" width="100px;" alt="damann"/><br /><sub><b>damann</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=Damann" title="Code">💻</a> <a href="https://github.com/contentful/forma-36/commits?author=Damann" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://www.samueldurkin.com"><img src="https://avatars.githubusercontent.com/u/6232253?v=4?s=100" width="100px;" alt="Samuel Durkin"/><br /><sub><b>Samuel Durkin</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=FailedSitcom" title="Code">💻</a></td>
     </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/c-annabelwennekes"><img src="https://avatars.githubusercontent.com/u/221094652?v=4?s=100" width="100px;" alt="Annabel Wennekes"/><br /><sub><b>Annabel Wennekes</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=c-annabelwennekes" title="Code">💻</a></td>
+    </tr>
   </tbody>
 </table>
 
