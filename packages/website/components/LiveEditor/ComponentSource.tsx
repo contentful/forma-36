@@ -175,7 +175,6 @@ export function ComponentSource({
         scope={liveProviderScope}
       >
         <Card className={styles.card}>
-          {/* @ts-expect-error react-live's types omit its runtime Component prop */}
           <LivePreview Component="div" />
         </Card>
         <div style={{ position: 'relative' }}>
