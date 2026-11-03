@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Button,
-  FormControl,
-  Select,
-  Switch,
-} from '@contentful/f36-components';
+import { FormControl, Select, Switch } from '@contentful/f36-components';
 import { InlineConfigurationPopover } from '@contentful/f36-inline-configuration-popover';
 
 export default function InlineConfigurationPopoverBasicExample() {
@@ -13,10 +8,8 @@ export default function InlineConfigurationPopoverBasicExample() {
 
   return (
     <InlineConfigurationPopover placement="bottom-start">
-      <InlineConfigurationPopover.Trigger>
-        <Button size="small" aria-label="Edit query Related posts">
-          Edit
-        </Button>
+      <InlineConfigurationPopover.Trigger aria-label="Edit query Related posts">
+        Edit
       </InlineConfigurationPopover.Trigger>
       <InlineConfigurationPopover.Content>
         <InlineConfigurationPopover.Header

@@ -145,7 +145,7 @@ export const InlineConfigurationPopoverHeader = React.forwardRef<
       ref={forwardedRef}
       className={cx(
         styles.root,
-        dragHandle && styles.draggable,
+        dragHandle ? styles.draggable : styles.notDraggable,
         dragHandle?.isDragging && styles.dragging,
         className,
       )}
@@ -168,7 +168,11 @@ export const InlineConfigurationPopoverHeader = React.forwardRef<
       {startSlot}
       <h2
         id={titleId}
-        className={cx(styles.title, !hasCaption && styles.titleWithoutCaption)}
+        className={cx(
+          styles.title,
+          !hasCaption && styles.titleWithoutCaption,
+          React.isValidElement(children) && styles.titleCustom,
+        )}
       >
         {children ?? title}
       </h2>

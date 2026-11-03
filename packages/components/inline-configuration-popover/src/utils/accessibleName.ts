@@ -15,17 +15,6 @@ const GENERIC_NAMES = new Set([
   'toggle',
 ]);
 
-const INTERACTIVE_SELECTOR = [
-  'button',
-  'a[href]',
-  'input',
-  'select',
-  'textarea',
-  '[role="button"]',
-  '[role="link"]',
-  '[role="combobox"]',
-].join(',');
-
 /**
  * Approximates the accessible name of an element: aria-labelledby,
  * aria-label, then its text (including visually hidden text).
@@ -70,7 +59,6 @@ function isGenericName(name: string) {
 
 const warnedNames = new Set<string>();
 const warnedDuplicates = new Set<string>();
-const warnedElements = new WeakSet<Element>();
 const mountedTriggers = new Set<HTMLElement>();
 
 /**
@@ -88,28 +76,12 @@ export function registerTrigger(element: HTMLElement | null) {
 }
 
 /**
- * Development-only warnings for a trigger that isn't a button, has no name,
- * has only a generic verb as its name, or has the same name as another
- * trigger on the page.
+ * Development-only warnings for a trigger that has no name, has only a
+ * generic verb as its name, or has the same name as another trigger on the
+ * page.
  */
 export function warnAboutTriggerName(element: HTMLElement | null) {
   if (process.env.NODE_ENV === 'production' || !element) {
-    return;
-  }
-
-  // e.g. <InlineConfigurationPopover.Trigger><Tooltip><IconButton /></Tooltip>: the
-  // ARIA attributes and click handler land on Tooltip's wrapper <span>.
-  if (!element.matches(INTERACTIVE_SELECTOR)) {
-    if (!warnedElements.has(element)) {
-      warnedElements.add(element);
-      // eslint-disable-next-line no-console
-      console.warn(
-        `InlineConfigurationPopover.Trigger: its child renders a <${element.tagName.toLowerCase()}>, ` +
-          'not a button, so aria-expanded and aria-haspopup are not on the ' +
-          'element people focus. Pass the button directly. To add a Tooltip, ' +
-          'put it outside: <Tooltip><InlineConfigurationPopover.Trigger><IconButton />',
-      );
-    }
     return;
   }
 
@@ -160,5 +132,34 @@ export function warnAboutTriggerName(element: HTMLElement | null) {
         'which item it opens. Start the name with the visible text and add ' +
         `the item, for example aria-label="${name} parameter Blog post".`,
     );
+    return;
   }
+
+  // Voice control users say the visible text ("click Set"), so the name must
+  // start with it (WCAG 2.5.3, Label in Name)
+  const visibleText = (element.textContent ?? '').replace(/\s+/g, ' ').trim();
+  const mismatchKey = `${name}\u0000${visibleText}`;
+
+  if (
+    visibleText &&
+    !normalize(name).startsWith(normalize(visibleText)) &&
+    !warnedNames.has(mismatchKey)
+  ) {
+    warnedNames.add(mismatchKey);
+    // eslint-disable-next-line no-console
+    console.warn(
+      `InlineConfigurationPopover.Trigger: the accessible name "${name}" doesn't start ` +
+        `with the visible text "${visibleText}". Start the name with it, for ` +
+        `example aria-label="${visibleText} parameter Blog post".`,
+    );
+  }
+}
+
+/**
+ * Forgets which names were reported, so tests don't depend on their order.
+ * Only for tests.
+ */
+export function resetTriggerNameWarnings() {
+  warnedNames.clear();
+  warnedDuplicates.clear();
 }

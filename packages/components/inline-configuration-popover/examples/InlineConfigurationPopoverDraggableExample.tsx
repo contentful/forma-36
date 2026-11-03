@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, FormControl, TextInput } from '@contentful/f36-components';
+import { FormControl, TextInput } from '@contentful/f36-components';
 import { InlineConfigurationPopover } from '@contentful/f36-inline-configuration-popover';
 
 export default function InlineConfigurationPopoverDraggableExample() {
@@ -7,10 +7,8 @@ export default function InlineConfigurationPopoverDraggableExample() {
 
   return (
     <InlineConfigurationPopover isDraggable placement="right-start">
-      <InlineConfigurationPopover.Trigger>
-        <Button size="small" aria-label="Override parameter Limit">
-          Override
-        </Button>
+      <InlineConfigurationPopover.Trigger aria-label="Override parameter Limit">
+        Override
       </InlineConfigurationPopover.Trigger>
       <InlineConfigurationPopover.Content>
         <InlineConfigurationPopover.Header

@@ -10,10 +10,8 @@ export default function InlineConfigurationPopoverNestedExample() {
 
   return (
     <InlineConfigurationPopover placement="bottom-start">
-      <InlineConfigurationPopover.Trigger>
-        <Button size="small" aria-label="Edit parameter Blog post">
-          Edit
-        </Button>
+      <InlineConfigurationPopover.Trigger aria-label="Edit parameter Blog post">
+        Edit
       </InlineConfigurationPopover.Trigger>
       <InlineConfigurationPopover.Content>
         <InlineConfigurationPopover.Header

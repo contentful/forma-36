@@ -11,16 +11,16 @@ import {
 import userEvent from '@testing-library/user-event';
 import { DndContext, useDraggable } from '@dnd-kit/core';
 import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
-import { Button, ToggleButton } from '@contentful/f36-button';
+import { Button } from '@contentful/f36-button';
 import { Menu } from '@contentful/f36-menu';
 import { Modal } from '@contentful/f36-modal';
 import { Tooltip } from '@contentful/f36-tooltip';
-import { IconButton } from '@contentful/f36-button';
 import { XIcon } from '@contentful/f36-icons';
 
 import { InlineConfigurationPopover, useInlineConfigurationPopover } from '.';
 import type { InlineConfigurationPopoverProps } from '.';
 import { ANNOUNCER_TEST_ID } from './utils/announcer';
+import { resetTriggerNameWarnings } from './utils/accessibleName';
 
 // jsdom has no layout. Give every element a rect inside the viewport, and
 // let a test move one element (e.g. the anchor) out of view.
@@ -42,6 +42,8 @@ function toDomRect({ x, y, width, height }: typeof DEFAULT_RECT) {
 }
 
 beforeEach(() => {
+  // Each name is only reported once per page load; start every test fresh
+  resetTriggerNameWarnings();
   // Floating UI measures the viewport through the root element
   Object.defineProperty(document.documentElement, 'clientWidth', {
     configurable: true,
@@ -92,10 +94,8 @@ function Example({ body, footer, ...props }: ExampleProps) {
     <>
       <button type="button">Outside</button>
       <InlineConfigurationPopover {...props}>
-        <InlineConfigurationPopover.Trigger>
-          <Button size="small" aria-label="Edit parameter Blog post">
-            Edit
-          </Button>
+        <InlineConfigurationPopover.Trigger aria-label="Edit parameter Blog post">
+          Edit
         </InlineConfigurationPopover.Trigger>
         <InlineConfigurationPopover.Content>
           <InlineConfigurationPopover.Header
@@ -208,10 +208,8 @@ describe('InlineConfigurationPopover', () => {
           <InlineConfigurationPopover.Anchor>
             <div data-test-id="row">
               <span data-test-id="row-label">Blog post</span>
-              <InlineConfigurationPopover.Trigger>
-                <Button size="small" aria-label="Edit parameter Blog post">
-                  Edit
-                </Button>
+              <InlineConfigurationPopover.Trigger aria-label="Edit parameter Blog post">
+                Edit
               </InlineConfigurationPopover.Trigger>
             </div>
           </InlineConfigurationPopover.Anchor>
@@ -277,45 +275,219 @@ describe('InlineConfigurationPopover', () => {
       expect(onOpen).toHaveBeenCalledTimes(2);
       expect(onClose).toHaveBeenCalledTimes(1);
     });
+  });
 
-    it('works with a controlled ToggleButton and has no aria-pressed', async () => {
-      const user = userEvent.setup();
+  describe('trigger', () => {
+    function Controlled({
+      onOpen,
+      onClose,
+    }: {
+      onOpen?: () => void;
+      onClose?: () => void;
+    }) {
+      const [isOpen, setIsOpen] = useState(false);
+      return (
+        <InlineConfigurationPopover
+          isOpen={isOpen}
+          onOpen={() => {
+            onOpen?.();
+            setIsOpen(true);
+          }}
+          onClose={() => {
+            onClose?.();
+            setIsOpen(false);
+          }}
+        >
+          <InlineConfigurationPopover.Trigger aria-label="Edit parameter Blog post">
+            Edit
+          </InlineConfigurationPopover.Trigger>
+          <InlineConfigurationPopover.Content>
+            <InlineConfigurationPopover.Header title="Blog post" />
+          </InlineConfigurationPopover.Content>
+        </InlineConfigurationPopover>
+      );
+    }
 
-      function Controlled() {
-        const [isOpen, setIsOpen] = useState(false);
-        return (
-          <InlineConfigurationPopover
-            isOpen={isOpen}
-            onOpen={() => setIsOpen(true)}
-            onClose={() => setIsOpen(false)}
+    it('renders a ToggleButton with the visible label, testId and className', () => {
+      const ref = React.createRef<HTMLButtonElement>();
+      render(
+        <InlineConfigurationPopover>
+          <InlineConfigurationPopover.Trigger
+            aria-label="Edit parameter Blog post"
+            className="custom-trigger"
+            testId="blog-post-trigger"
+            icon={<XIcon />}
+            ref={ref}
           >
-            <InlineConfigurationPopover.Trigger>
-              <ToggleButton
-                size="small"
-                isActive={isOpen}
-                onToggle={() => {}}
-                aria-label="Edit parameter Blog post"
-              >
-                Edit
-              </ToggleButton>
-            </InlineConfigurationPopover.Trigger>
-            <InlineConfigurationPopover.Content>
-              <InlineConfigurationPopover.Header title="Blog post" />
-            </InlineConfigurationPopover.Content>
-          </InlineConfigurationPopover>
-        );
-      }
+            Edit
+          </InlineConfigurationPopover.Trigger>
+          <InlineConfigurationPopover.Content />
+        </InlineConfigurationPopover>,
+      );
 
-      render(<Controlled />);
-      expect(getTrigger()).not.toHaveAttribute('aria-pressed');
+      const trigger = getTrigger();
+      expect(trigger.tagName).toBe('BUTTON');
+      expect(trigger).toHaveAttribute('type', 'button');
+      expect(trigger).toHaveTextContent('Edit');
+      expect(trigger).toHaveAttribute('data-state', 'off');
+      expect(trigger).toHaveAttribute('data-test-id', 'blog-post-trigger');
+      expect(trigger).toHaveClass('custom-trigger');
+      expect(trigger.querySelector('svg')).toBeInTheDocument();
+      expect(ref.current).toBe(trigger);
+    });
+
+    it('is active while open, uncontrolled, with aria-expanded and no aria-pressed', async () => {
+      const user = userEvent.setup();
+      render(<Example />);
+
+      const trigger = getTrigger();
+      expect(trigger).toHaveAttribute('data-state', 'off');
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+      expect(trigger).not.toHaveAttribute('aria-pressed');
+
+      await openWithClick(user);
+      expect(trigger).toHaveAttribute('data-state', 'on');
+      expect(trigger).toHaveAttribute('aria-expanded', 'true');
+      expect(trigger).not.toHaveAttribute('aria-pressed');
+
+      await user.keyboard('{Escape}');
+      expect(trigger).toHaveAttribute('data-state', 'off');
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+      expect(trigger).not.toHaveAttribute('aria-pressed');
+    });
+
+    it('is active while open, controlled, and toggles once per click', async () => {
+      const user = userEvent.setup();
+      const onOpen = vi.fn();
+      const onClose = vi.fn();
+      render(<Controlled onOpen={onOpen} onClose={onClose} />);
+
+      const trigger = getTrigger();
+      expect(trigger).toHaveAttribute('data-state', 'off');
+
+      await user.click(trigger);
+      await settle();
+      expect(getDialog()).toBeInTheDocument();
+      expect(trigger).toHaveAttribute('data-state', 'on');
+      expect(trigger).toHaveAttribute('aria-expanded', 'true');
+      expect(trigger).not.toHaveAttribute('aria-pressed');
+      expect(onOpen).toHaveBeenCalledTimes(1);
+      expect(onClose).not.toHaveBeenCalled();
+
+      await user.click(trigger);
+      expect(queryDialog()).not.toBeInTheDocument();
+      expect(trigger).toHaveAttribute('data-state', 'off');
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+      expect(onOpen).toHaveBeenCalledTimes(1);
+      expect(onClose).toHaveBeenCalledTimes(1);
+    });
+
+    it('follows isOpen set by the parent', () => {
+      const { rerender } = render(<Example isOpen={false} />);
+      expect(getTrigger()).toHaveAttribute('data-state', 'off');
+
+      rerender(<Example isOpen />);
+      expect(getTrigger()).toHaveAttribute('data-state', 'on');
+      expect(getTrigger()).toHaveAttribute('aria-expanded', 'true');
+
+      rerender(<Example isOpen={false} />);
+      expect(getTrigger()).toHaveAttribute('data-state', 'off');
+    });
+
+    it('toggles once with Enter and once with Space, controlled', async () => {
+      const user = userEvent.setup();
+      const onOpen = vi.fn();
+      const onClose = vi.fn();
+      render(<Controlled onOpen={onOpen} onClose={onClose} />);
+
+      getTrigger().focus();
+      await user.keyboard('{Enter}');
+      await settle();
+      expect(getDialog()).toBeInTheDocument();
+      expect(onOpen).toHaveBeenCalledTimes(1);
+
+      // Escape returns focus to the trigger
+      await user.keyboard('{Escape}');
+      await waitFor(() => expect(getTrigger()).toHaveFocus());
+      expect(onClose).toHaveBeenCalledTimes(1);
+
+      await user.keyboard(' ');
+      await settle();
+      expect(getDialog()).toBeInTheDocument();
+      expect(onOpen).toHaveBeenCalledTimes(2);
+      expect(onClose).toHaveBeenCalledTimes(1);
+    });
+
+    it('does not open when disabled', async () => {
+      const user = userEvent.setup();
+      const onOpen = vi.fn();
+      render(
+        <InlineConfigurationPopover onOpen={onOpen}>
+          <InlineConfigurationPopover.Trigger
+            aria-label="Edit parameter Blog post"
+            isDisabled
+          >
+            Edit
+          </InlineConfigurationPopover.Trigger>
+          <InlineConfigurationPopover.Content />
+        </InlineConfigurationPopover>,
+      );
+
+      const trigger = getTrigger();
+      expect(trigger).toBeDisabled();
+      await user.click(trigger);
+      expect(queryDialog()).not.toBeInTheDocument();
+      expect(onOpen).not.toHaveBeenCalled();
+    });
+
+    it('does not take onToggle or the disclosure ARIA: the popover owns them', async () => {
+      const user = userEvent.setup();
+      const onToggle = vi.fn();
+      render(
+        <InlineConfigurationPopover>
+          <InlineConfigurationPopover.Trigger
+            aria-label="Edit parameter Blog post"
+            // @ts-expect-error use onOpen and onClose on InlineConfigurationPopover
+            onToggle={onToggle}
+          >
+            Edit
+          </InlineConfigurationPopover.Trigger>
+          <InlineConfigurationPopover.Content>
+            <InlineConfigurationPopover.Header title="Blog post" />
+          </InlineConfigurationPopover.Content>
+        </InlineConfigurationPopover>,
+      );
 
       await user.click(getTrigger());
       await settle();
       expect(getDialog()).toBeInTheDocument();
-      expect(getTrigger()).toHaveAttribute('data-state', 'on');
+      expect(onToggle).not.toHaveBeenCalled();
+    });
+
+    it('chains event handlers passed to it', async () => {
+      const user = userEvent.setup();
+      const onClick = vi.fn();
+      const onFocus = vi.fn();
+      render(
+        <InlineConfigurationPopover>
+          <InlineConfigurationPopover.Trigger
+            aria-label="Edit parameter Blog post"
+            onClick={onClick}
+            onFocus={onFocus}
+          >
+            Edit
+          </InlineConfigurationPopover.Trigger>
+          <InlineConfigurationPopover.Content>
+            <InlineConfigurationPopover.Header title="Blog post" />
+          </InlineConfigurationPopover.Content>
+        </InlineConfigurationPopover>,
+      );
 
       await user.click(getTrigger());
-      expect(queryDialog()).not.toBeInTheDocument();
+      await settle();
+      expect(getDialog()).toBeInTheDocument();
+      expect(onClick).toHaveBeenCalledTimes(1);
+      expect(onFocus).toHaveBeenCalled();
     });
   });
 
@@ -385,6 +557,19 @@ describe('InlineConfigurationPopover', () => {
       await user.keyboard('{Escape}');
 
       expect(queryDialog()).not.toBeInTheDocument();
+      await waitFor(() => expect(getTrigger()).toHaveFocus());
+    });
+
+    it('keeps focus on the trigger when closed with a click on it', async () => {
+      const user = userEvent.setup();
+      render(<Example />);
+
+      await openWithClick(user);
+      await user.click(getTrigger());
+      await settle();
+
+      expect(queryDialog()).not.toBeInTheDocument();
+      expect(getTrigger()).toHaveAttribute('data-state', 'off');
       await waitFor(() => expect(getTrigger()).toHaveFocus());
     });
 
@@ -545,8 +730,8 @@ describe('InlineConfigurationPopover', () => {
       const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
       render(
         <InlineConfigurationPopover>
-          <InlineConfigurationPopover.Trigger>
-            <Button size="small">Override</Button>
+          <InlineConfigurationPopover.Trigger aria-label="Override">
+            Override
           </InlineConfigurationPopover.Trigger>
           <InlineConfigurationPopover.Content />
         </InlineConfigurationPopover>,
@@ -561,9 +746,8 @@ describe('InlineConfigurationPopover', () => {
       const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
       render(
         <InlineConfigurationPopover>
-          <InlineConfigurationPopover.Trigger>
-            <button type="button" />
-          </InlineConfigurationPopover.Trigger>
+          {/* An empty label on an icon-only trigger, e.g. from missing data */}
+          <InlineConfigurationPopover.Trigger aria-label="" icon={<XIcon />} />
           <InlineConfigurationPopover.Content />
         </InlineConfigurationPopover>,
       );
@@ -573,16 +757,32 @@ describe('InlineConfigurationPopover', () => {
       );
     });
 
-    it('does not warn for a meaningful name, including visually hidden text', () => {
+    it('warns in development when the name does not start with the visible text', () => {
+      const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+      render(
+        <InlineConfigurationPopover>
+          <InlineConfigurationPopover.Trigger aria-label="Blog post settings">
+            Set
+          </InlineConfigurationPopover.Trigger>
+          <InlineConfigurationPopover.Content />
+        </InlineConfigurationPopover>,
+      );
+
+      expect(warn).toHaveBeenCalledWith(
+        expect.stringContaining(
+          'the accessible name "Blog post settings" doesn\'t start with the visible text "Set"',
+        ),
+      );
+    });
+
+    it('does not warn for meaningful names', () => {
       const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
       render(
         <>
           <Example />
           <InlineConfigurationPopover>
-            <InlineConfigurationPopover.Trigger>
-              <Button size="small">
-                Set<span className="sr-only"> parameter Limit</span>
-              </Button>
+            <InlineConfigurationPopover.Trigger aria-label="Set parameter Limit">
+              Set
             </InlineConfigurationPopover.Trigger>
             <InlineConfigurationPopover.Content />
           </InlineConfigurationPopover>
@@ -614,10 +814,8 @@ describe('InlineConfigurationPopover', () => {
       const user = userEvent.setup();
       render(
         <InlineConfigurationPopover>
-          <InlineConfigurationPopover.Trigger>
-            <Button size="small" aria-label="Edit display settings">
-              Edit
-            </Button>
+          <InlineConfigurationPopover.Trigger aria-label="Edit display settings">
+            Edit
           </InlineConfigurationPopover.Trigger>
           <InlineConfigurationPopover.Content>
             <InlineConfigurationPopover.Header title="Display settings" />
@@ -690,10 +888,8 @@ describe('InlineConfigurationPopover', () => {
         <InlineConfigurationPopover>
           <InlineConfigurationPopover.Anchor>
             <div data-offscreen="">
-              <InlineConfigurationPopover.Trigger>
-                <Button size="small" aria-label="Edit parameter Blog post">
-                  Edit
-                </Button>
+              <InlineConfigurationPopover.Trigger aria-label="Edit parameter Blog post">
+                Edit
               </InlineConfigurationPopover.Trigger>
             </div>
           </InlineConfigurationPopover.Anchor>
@@ -809,6 +1005,9 @@ describe('InlineConfigurationPopover', () => {
       await user.keyboard(' ');
       await settle();
       expect(dialog).toHaveAttribute('data-state', 'dragging');
+      // The trigger stays active while the popover is dragged
+      expect(getTrigger()).toHaveAttribute('data-state', 'on');
+      expect(getTrigger()).toHaveAttribute('aria-expanded', 'true');
 
       await user.keyboard('{ArrowRight}');
       await waitFor(() =>
@@ -832,6 +1031,7 @@ describe('InlineConfigurationPopover', () => {
         }),
       );
       expect(getDialog()).toBeInTheDocument();
+      expect(getTrigger()).toHaveAttribute('data-state', 'on');
     });
 
     it('cancels a keyboard drag with Escape without closing the popover', async () => {
@@ -1084,10 +1284,8 @@ describe('InlineConfigurationPopover', () => {
           <InlineConfigurationPopover {...props}>
             <InlineConfigurationPopover.Anchor>
               <div data-test-id="row">
-                <InlineConfigurationPopover.Trigger>
-                  <Button size="small" aria-label="Edit parameter Blog post">
-                    Edit
-                  </Button>
+                <InlineConfigurationPopover.Trigger aria-label="Edit parameter Blog post">
+                  Edit
                 </InlineConfigurationPopover.Trigger>
               </div>
             </InlineConfigurationPopover.Anchor>
@@ -1262,19 +1460,16 @@ describe('InlineConfigurationPopover', () => {
   });
 
   describe('with a Tooltip', () => {
-    it('keeps the ARIA on the button when the Tooltip is outside the trigger', async () => {
+    it('keeps the ARIA on the button when the Tooltip is around the trigger', async () => {
       const user = userEvent.setup();
       const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
       render(
         <InlineConfigurationPopover>
           <Tooltip content="Edit">
-            <InlineConfigurationPopover.Trigger>
-              <IconButton
-                size="small"
-                icon={<XIcon />}
-                aria-label="Edit parameter Blog post"
-              />
-            </InlineConfigurationPopover.Trigger>
+            <InlineConfigurationPopover.Trigger
+              icon={<XIcon />}
+              aria-label="Edit parameter Blog post"
+            />
           </Tooltip>
           <InlineConfigurationPopover.Content>
             <InlineConfigurationPopover.Header title="Blog post" />
@@ -1286,26 +1481,65 @@ describe('InlineConfigurationPopover', () => {
       expect(trigger).toHaveAttribute('aria-haspopup', 'dialog');
       expect(trigger).toHaveAttribute('aria-expanded', 'false');
       expect(trigger).toHaveAttribute('aria-describedby');
+      expect(trigger).not.toHaveAttribute('aria-pressed');
 
       await user.click(trigger);
       await settle();
       expect(getDialog()).toBeInTheDocument();
       expect(trigger).toHaveAttribute('aria-expanded', 'true');
+      expect(trigger).toHaveAttribute('data-state', 'on');
       expect(warn).not.toHaveBeenCalled();
     });
 
-    it('keeps the ARIA on the button with withTriggerWrapper={false}', async () => {
+    it.each([
+      ['the default wrapper', true],
+      ['withTriggerWrapper={false}', false],
+    ])(
+      'keeps the summary in aria-describedby next to the Tooltip, with %s',
+      async (_, withTriggerWrapper) => {
+        render(
+          <InlineConfigurationPopover>
+            <span id="blog-post-summary">In path, Slug field</span>
+            <Tooltip
+              content="Where the value comes from"
+              withTriggerWrapper={withTriggerWrapper}
+              showDelay={0}
+            >
+              <InlineConfigurationPopover.Trigger
+                aria-label="Edit parameter Blog post"
+                describedBy="blog-post-summary"
+              >
+                Edit
+              </InlineConfigurationPopover.Trigger>
+            </Tooltip>
+            <InlineConfigurationPopover.Content>
+              <InlineConfigurationPopover.Header title="Blog post" />
+            </InlineConfigurationPopover.Content>
+          </InlineConfigurationPopover>,
+        );
+
+        const trigger = getTrigger();
+        act(() => trigger.focus());
+        const tooltip = await screen.findByRole('tooltip');
+        expect(trigger.getAttribute('aria-describedby')?.split(' ')).toEqual([
+          'blog-post-summary',
+          tooltip.id,
+        ]);
+        expect(trigger).toHaveAccessibleDescription(
+          'In path, Slug field Where the value comes from',
+        );
+      },
+    );
+
+    it('forwards the Tooltip props and ref with withTriggerWrapper={false}', async () => {
       const user = userEvent.setup();
       render(
         <InlineConfigurationPopover>
-          <Tooltip content="Edit" withTriggerWrapper={false}>
-            <InlineConfigurationPopover.Trigger>
-              <IconButton
-                size="small"
-                icon={<XIcon />}
-                aria-label="Edit parameter Blog post"
-              />
-            </InlineConfigurationPopover.Trigger>
+          <Tooltip content="Edit" withTriggerWrapper={false} showDelay={0}>
+            <InlineConfigurationPopover.Trigger
+              icon={<XIcon />}
+              aria-label="Edit parameter Blog post"
+            />
           </Tooltip>
           <InlineConfigurationPopover.Content>
             <InlineConfigurationPopover.Header title="Blog post" />
@@ -1315,34 +1549,17 @@ describe('InlineConfigurationPopover', () => {
 
       const trigger = getTrigger();
       expect(trigger).toHaveAttribute('aria-haspopup', 'dialog');
+
+      // The Tooltip's focus handler and ref reach the button
+      act(() => trigger.focus());
+      const tooltip = await screen.findByRole('tooltip');
+      expect(tooltip).toHaveTextContent('Edit');
+      expect(trigger).toHaveAttribute('aria-describedby', tooltip.id);
+
       await user.click(trigger);
       await settle();
       expect(getDialog()).toBeInTheDocument();
-    });
-
-    it('warns when a Tooltip wrapper sits between the trigger and the button', () => {
-      const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
-      render(
-        <InlineConfigurationPopover>
-          <InlineConfigurationPopover.Trigger>
-            <Tooltip content="Edit">
-              <IconButton
-                size="small"
-                icon={<XIcon />}
-                aria-label="Edit parameter Blog post"
-              />
-            </Tooltip>
-          </InlineConfigurationPopover.Trigger>
-          <InlineConfigurationPopover.Content />
-        </InlineConfigurationPopover>,
-      );
-
-      expect(warn).toHaveBeenCalledWith(
-        expect.stringContaining('renders a <span>, not a button'),
-      );
-      expect(warn).not.toHaveBeenCalledWith(
-        expect.stringContaining('has no accessible name'),
-      );
+      expect(trigger).toHaveAttribute('aria-expanded', 'true');
     });
   });
 
@@ -1353,10 +1570,8 @@ describe('InlineConfigurationPopover', () => {
         <>
           {['Title', 'Limit'].map((name) => (
             <InlineConfigurationPopover key={name}>
-              <InlineConfigurationPopover.Trigger>
-                <Button size="small" aria-label="Edit parameter">
-                  Edit
-                </Button>
+              <InlineConfigurationPopover.Trigger aria-label="Edit parameter">
+                Edit
               </InlineConfigurationPopover.Trigger>
               <InlineConfigurationPopover.Content />
             </InlineConfigurationPopover>
@@ -1375,8 +1590,8 @@ describe('InlineConfigurationPopover', () => {
       const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
       render(
         <InlineConfigurationPopover>
-          <InlineConfigurationPopover.Trigger>
-            <Button size="small">Settings</Button>
+          <InlineConfigurationPopover.Trigger aria-label="Settings">
+            Settings
           </InlineConfigurationPopover.Trigger>
           <InlineConfigurationPopover.Content />
         </InlineConfigurationPopover>,
@@ -1390,10 +1605,8 @@ describe('InlineConfigurationPopover', () => {
       const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
       render(
         <InlineConfigurationPopover>
-          <InlineConfigurationPopover.Trigger>
-            <Button size="small" aria-label="Edit parameter Blog post">
-              Edit
-            </Button>
+          <InlineConfigurationPopover.Trigger aria-label="Edit parameter Blog post">
+            Edit
           </InlineConfigurationPopover.Trigger>
           <InlineConfigurationPopover.Content>
             <InlineConfigurationPopover.Body>
@@ -1419,10 +1632,8 @@ describe('InlineConfigurationPopover', () => {
         <>
           <Example />
           <InlineConfigurationPopover>
-            <InlineConfigurationPopover.Trigger>
-              <Button size="small" aria-label="Edit parameter Limit">
-                Edit
-              </Button>
+            <InlineConfigurationPopover.Trigger aria-label="Edit parameter Limit">
+              Edit
             </InlineConfigurationPopover.Trigger>
             <InlineConfigurationPopover.Content aria-label="Limit settings">
               <InlineConfigurationPopover.Body>
@@ -1460,10 +1671,8 @@ describe('InlineConfigurationPopover', () => {
       render(
         <InlineConfigurationPopover onClose={onClose}>
           <CloseRef />
-          <InlineConfigurationPopover.Trigger>
-            <Button size="small" aria-label="Edit parameter Blog post">
-              Edit
-            </Button>
+          <InlineConfigurationPopover.Trigger aria-label="Edit parameter Blog post">
+            Edit
           </InlineConfigurationPopover.Trigger>
           <InlineConfigurationPopover.Content>
             <InlineConfigurationPopover.Header title="Blog post" />
@@ -1492,10 +1701,8 @@ describe('InlineConfigurationPopover', () => {
             onOpen={() => setIsOpen(true)}
             onClose={onClose}
           >
-            <InlineConfigurationPopover.Trigger>
-              <Button size="small" aria-label="Edit parameter Blog post">
-                Edit
-              </Button>
+            <InlineConfigurationPopover.Trigger aria-label="Edit parameter Blog post">
+              Edit
             </InlineConfigurationPopover.Trigger>
             <InlineConfigurationPopover.Content>
               <InlineConfigurationPopover.Header title="Blog post" />
@@ -1655,10 +1862,8 @@ describe('InlineConfigurationPopover', () => {
       const ref = React.createRef<HTMLDivElement>();
       render(
         <InlineConfigurationPopover>
-          <InlineConfigurationPopover.Trigger>
-            <Button size="small" aria-label="Edit parameter Blog post">
-              Edit
-            </Button>
+          <InlineConfigurationPopover.Trigger aria-label="Edit parameter Blog post">
+            Edit
           </InlineConfigurationPopover.Trigger>
           <InlineConfigurationPopover.Content>
             <InlineConfigurationPopover.Header

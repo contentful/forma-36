@@ -8,22 +8,35 @@ export const getStyles = () => ({
     gap: tokens.spacingXs,
     flexShrink: 0,
     minHeight: '48px',
-    padding: `${tokens.spacingXs} ${tokens.spacingXs} ${tokens.spacingXs} ${tokens.spacingM}`,
+    padding: tokens.spacingXs,
     borderBottom: `1px solid ${tokens.gray200}`,
   }),
+  // Without a drag handle, the title lines up with the body's content
+  notDraggable: css({
+    paddingLeft: tokens.spacingM,
+  }),
   draggable: css({
-    paddingLeft: tokens.spacing2Xs,
     cursor: 'grab',
     touchAction: 'none',
   }),
   dragging: css({
     cursor: 'grabbing',
   }),
+  // A 16px handle, as in Figma. DragHandle has no size prop, so its width
+  // and icon are narrowed here. Its dots are as dark as the close icon.
   dragHandle: css({
     flexShrink: 0,
     alignSelf: 'stretch',
+    width: tokens.spacingM,
+    borderRadius: tokens.borderRadiusSmall,
     cursor: 'inherit',
     background: 'transparent',
+    '& svg': {
+      width: tokens.spacingM,
+      height: tokens.spacingM,
+      // DragHandle sets the dots' color as the svg's fill attribute
+      fill: tokens.gray900,
+    },
   }),
   title: css({
     margin: 0,
@@ -39,13 +52,19 @@ export const getStyles = () => ({
   titleWithoutCaption: css({
     flex: 1,
   }),
+  // Centers custom content, e.g. a Badge, instead of placing it on the
+  // text baseline
+  titleCustom: css({
+    display: 'flex',
+    alignItems: 'center',
+  }),
   caption: css({
     flex: 1,
     minWidth: 0,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
-    color: tokens.gray700,
+    color: tokens.gray500,
     fontSize: tokens.fontSizeS,
     lineHeight: tokens.lineHeightS,
   }),

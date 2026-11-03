@@ -7,13 +7,12 @@ import {
   FormControl,
   Stack,
   TextInput,
-  ToggleButton,
 } from '@contentful/f36-components';
 import {
   InlineConfigurationPopover,
   useInlineConfigurationPopover,
 } from '@contentful/f36-inline-configuration-popover';
-import { ArrowCounterClockwiseIcon } from '@contentful/f36-icons';
+import { ArrowCounterClockwiseIcon, VariableIcon } from '@contentful/f36-icons';
 
 export default function InlineConfigurationPopoverListExample() {
   // One popover open at a time
@@ -36,18 +35,17 @@ export default function InlineConfigurationPopoverListExample() {
   ];
 
   // The docs site runs this example with `css` but not `cx` in scope, so the
-  // row's state is passed to `css` instead of combining class names.
-  const getRowStyle = ({ isSet, isOpen }) =>
+  // row's state is passed to `css` instead of combining class names. The row
+  // doesn't change while its popover is open: the trigger shows that.
+  const getRowStyle = ({ isSet }) =>
     css({
       display: 'flex',
       alignItems: 'center',
       gap: tokens.spacingXs,
-      padding: `${tokens.spacingXs} ${tokens.spacingXs} ${tokens.spacingXs} ${tokens.spacingS}`,
-      border: `1px ${isSet || isOpen ? 'solid' : 'dashed'} ${
-        isOpen ? tokens.blue500 : tokens.gray300
-      }`,
+      padding: tokens.spacingS,
+      border: `1px ${isSet ? 'solid' : 'dashed'} ${tokens.gray300}`,
       borderRadius: tokens.borderRadiusMedium,
-      backgroundColor: isOpen ? tokens.blue100 : tokens.colorWhite,
+      backgroundColor: tokens.colorWhite,
     });
 
   const styles = {
@@ -58,8 +56,28 @@ export default function InlineConfigurationPopoverListExample() {
       flexDirection: 'column',
       gap: tokens.spacing2Xs,
     }),
-    caption: css({ color: tokens.gray700, fontSize: tokens.fontSizeS }),
-    summary: css({ color: tokens.gray700, fontSize: tokens.fontSizeS }),
+    titleLine: css({
+      display: 'flex',
+      alignItems: 'center',
+      gap: tokens.spacingXs,
+      minWidth: 0,
+      overflow: 'hidden',
+    }),
+    caption: css({
+      flex: 1,
+      minWidth: 0,
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+      color: tokens.gray500,
+      fontSize: tokens.fontSizeS,
+      lineHeight: tokens.lineHeightS,
+    }),
+    summary: css({
+      color: tokens.gray500,
+      fontSize: tokens.fontSizeS,
+      lineHeight: tokens.lineHeightS,
+    }),
   };
 
   // `useInlineConfigurationPopover()` only works in a component rendered inside the
@@ -114,30 +132,31 @@ export default function InlineConfigurationPopoverListExample() {
             offset={16}
           >
             <InlineConfigurationPopover.Anchor>
-              <div className={getRowStyle({ isSet, isOpen })}>
+              <div className={getRowStyle({ isSet })}>
                 <div className={styles.main}>
-                  <span>
-                    <Badge variant="featured" size="small" textTransform="none">
+                  <div className={styles.titleLine}>
+                    <Badge
+                      variant="featured"
+                      size="small"
+                      textTransform="none"
+                      startIcon={<VariableIcon size="small" />}
+                    >
                       {parameter.name}
-                    </Badge>{' '}
+                    </Badge>
                     <span className={styles.caption}>{parameter.caption}</span>
-                  </span>
+                  </div>
                   {isSet && (
                     <span id={summaryId} className={styles.summary}>
                       {value}
                     </span>
                   )}
                 </div>
-                <InlineConfigurationPopover.Trigger>
-                  <ToggleButton
-                    size="small"
-                    isActive={isOpen}
-                    onToggle={() => {}}
-                    aria-label={`${action} parameter ${parameter.name}`}
-                    aria-describedby={isSet ? summaryId : undefined}
-                  >
-                    {action}
-                  </ToggleButton>
+                <InlineConfigurationPopover.Trigger
+                  size="tiny"
+                  aria-label={`${action} parameter ${parameter.name}`}
+                  describedBy={isSet ? summaryId : undefined}
+                >
+                  {action}
                 </InlineConfigurationPopover.Trigger>
               </div>
             </InlineConfigurationPopover.Anchor>

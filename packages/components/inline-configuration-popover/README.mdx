@@ -41,7 +41,7 @@ One rule: **an inline configuration popover edits inline settings that apply imm
 ## Compound components
 
 1. `<InlineConfigurationPopover>` holds the state. Like `Menu`, it takes `isOpen`, `defaultIsOpen`, `onOpen` and `onClose`. `onOpen` and `onClose` are requests: when you control `isOpen`, set it in them, for example to keep one popover open at a time. `onClose` gets the reason (`'trigger'`, `'escape-key'`, `'outside-press'`, `'close-button'`, `'api'` or `'focus-out'`).
-1. `<InlineConfigurationPopover.Trigger>` wraps a single interactive element that accepts a `ref`, such as `Button`, `ToggleButton` or `IconButton`. It opens and closes the popover on click and on Enter or Space. Pass the button itself: to add a `Tooltip`, put it outside the trigger (`<Tooltip><InlineConfigurationPopover.Trigger><IconButton …/></InlineConfigurationPopover.Trigger></Tooltip>`).
+1. `<InlineConfigurationPopover.Trigger>` is always a transparent `ToggleButton`. Pass its visible label as children and a required `aria-label` that names the item, e.g. `<InlineConfigurationPopover.Trigger aria-label="Edit parameter Blog post">Edit</InlineConfigurationPopover.Trigger>`. It also takes `icon`, `size` (default `small`), `isDisabled`, `describedBy`, `className` and `testId`. It opens and closes the popover on click and on Enter or Space, and shows as active (`isActive`) while the popover is open. To add a `Tooltip`, put it around the trigger (`<Tooltip><InlineConfigurationPopover.Trigger …/></Tooltip>`). `isDisabled` only stops the popover from opening: close an open popover before you disable its trigger.
 1. `<InlineConfigurationPopover.Anchor>` (optional) wraps the element the popover lines up with, usually the row that contains the trigger. Pressing it doesn't close the popover.
 1. `<InlineConfigurationPopover.Content>` is the dialog. It's only rendered while open.
 1. `<InlineConfigurationPopover.Header>` shows the drag handle, the item's title and caption, and a close button. It names and describes the dialog.
@@ -60,6 +60,14 @@ One rule: **an inline configuration popover edits inline settings that apply imm
 ### List of items with an anchor
 
 The popover lines up with the whole row while the row's button is the trigger. Only one popover is open at a time, changes apply immediately, the row shows a summary of the setting, and the footer offers Reset once something is set.
+
+Row states:
+
+- **Not set:** dashed `gray300` border on white. Required items read "Set", optional ones "Override".
+- **Set:** solid border, with a summary line under the title. The trigger reads "Edit".
+- **Open:** the row doesn't change. Only the trigger shows the open state: it's an active `ToggleButton` (blue background, no border) while the popover is open.
+- **In path** (Experience Orchestration): purple border and background, when the item drives the URL.
+- **Warning:** the summary line turns orange with a warning icon and says what is missing, e.g. "In path, choose a field".
 
 ```jsx file=examples/InlineConfigurationPopoverListExample.tsx
 
@@ -125,7 +133,7 @@ Call it in a component rendered inside `InlineConfigurationPopover`.
 
 ## Content guidelines
 
-- Name the trigger after what it opens. The visible text can be short ("Set", "Override", "Edit"), but the accessible name must include the item, and start with the visible text: `aria-label="Edit parameter Blog post"`. In development, the trigger warns in the console when its name is only a generic verb, when two triggers have the same name, or when its child isn't a button.
+- Name the trigger after what it opens. The visible text can be short ("Set", "Override", "Edit"), but the required `aria-label` must include the item, and start with the visible text: `aria-label="Edit parameter Blog post"`. In development, the trigger warns in the console when its name is empty, only a generic verb or doesn't start with its visible text, or when two triggers have the same name.
 - Use the item's name as the header `title`, e.g. "Blog post". The dialog is named "Blog post settings".
 - Keep the `caption` short (under about 8 words), e.g. "Reference, required".
 - Keep announcements short: item, past-tense verb and value, e.g. "Blog post added to path", "Limit set to 3 items", "Blog post reset to default". Don't use "successfully".
@@ -133,7 +141,7 @@ Call it in a component rendered inside `InlineConfigurationPopover`.
 
 ## Accessibility
 
-- **Trigger:** gets `aria-haspopup="dialog"`, `aria-expanded` and `aria-controls` pointing at the dialog. It opens on click and on Enter or Space. It's a disclosure, so `aria-pressed` is removed from a `ToggleButton`. Point `aria-describedby` at the row's summary line so the current setting is read with the trigger.
+- **Trigger:** a `ToggleButton` with `aria-haspopup="dialog"`, `aria-expanded` and `aria-controls` pointing at the dialog. It opens on click and on Enter or Space, once per press. It's a disclosure, so it has no `aria-pressed`: its active look follows `aria-expanded`. Point `describedBy` at the id of the row's summary line so the current setting is read with the trigger. Use it instead of `aria-describedby`: a `Tooltip` around the trigger replaces `aria-describedby`, and `describedBy` is joined with the Tooltip's description.
 - **Dialog:** `role="dialog"` and `aria-modal="true"`, named by the header title ("Blog post settings", a level 2 heading) and described by its caption. Without a header, pass `aria-label` to `InlineConfigurationPopover.Content`. In development, it warns when the dialog has no name.
 - **Focus:** when it opens, focus moves to `initialFocusRef`, else the first focusable element in `InlineConfigurationPopover.Body`, else the dialog. Elements that can't take focus (disabled, or in a disabled fieldset) are skipped. Tab is trapped inside, and the rest of the page is hidden from assistive technology. When it closes, focus returns to the trigger, also after a press on a blank area outside it. A press on another focusable element outside it, such as another row's trigger, leaves focus there.
 - **Dismissal:** Escape, a press outside, the close button ("Close Blog post settings") or the trigger close it. Presses inside nested menus, tooltips and autocompletes don't count as outside. A modal opened from the popover does: close the popover first. Escape in a nested menu, portaled or not, closes only the menu. Escape doesn't reach page-level listeners, so it doesn't also close a surrounding panel.

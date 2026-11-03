@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { css, cx } from '@emotion/css';
 import tokens from '@contentful/f36-tokens';
 import { Badge } from '@contentful/f36-badge';
-import { Button, ToggleButton } from '@contentful/f36-button';
+import { Button } from '@contentful/f36-button';
 import { Flex, ScreenReaderOnly, Stack } from '@contentful/f36-core';
 import { FormControl, Select, Switch, TextInput } from '@contentful/f36-forms';
 import { Menu } from '@contentful/f36-menu';
@@ -71,10 +71,8 @@ function BasicStory(args: InlineConfigurationPopoverProps) {
 
   return (
     <InlineConfigurationPopover {...args}>
-      <InlineConfigurationPopover.Trigger>
-        <Button size="small" aria-label="Edit query Related posts">
-          Edit
-        </Button>
+      <InlineConfigurationPopover.Trigger aria-label="Edit query Related posts">
+        Edit
       </InlineConfigurationPopover.Trigger>
       <InlineConfigurationPopover.Content>
         <InlineConfigurationPopover.Header
@@ -110,20 +108,32 @@ function BasicStory(args: InlineConfigurationPopoverProps) {
 /* -------------------------------------------------------------------------- */
 
 const rowStyles = {
+  // As in Figma: a white side panel with 368px wide rows, next to a gray
+  // canvas
+  canvas: css({
+    backgroundColor: tokens.gray100,
+  }),
+  intro: css({
+    padding: tokens.spacingM,
+  }),
   panel: css({
-    width: 380,
+    flexShrink: 0,
+    boxSizing: 'content-box',
+    width: 368,
     marginLeft: 'auto',
     padding: tokens.spacingM,
     height: 420,
     overflowY: 'auto',
     borderLeft: `1px solid ${tokens.gray200}`,
-    backgroundColor: tokens.gray100,
+    backgroundColor: tokens.colorWhite,
   }),
+  // The row looks the same while its popover is open: only the trigger
+  // shows the open state.
   row: css({
     display: 'flex',
     alignItems: 'center',
     gap: tokens.spacingXs,
-    padding: `${tokens.spacingXs} ${tokens.spacingXs} ${tokens.spacingXs} ${tokens.spacingS}`,
+    padding: tokens.spacingS,
     backgroundColor: tokens.colorWhite,
     border: `1px dashed ${tokens.gray300}`,
     borderRadius: tokens.borderRadiusMedium,
@@ -133,11 +143,6 @@ const rowStyles = {
   rowInPath: css({
     borderColor: tokens.purple400,
     backgroundColor: tokens.purple100,
-  }),
-  rowOpen: css({
-    borderStyle: 'solid',
-    borderColor: tokens.blue500,
-    backgroundColor: tokens.blue100,
   }),
   main: css({
     flex: 1,
@@ -151,43 +156,46 @@ const rowStyles = {
     alignItems: 'center',
     gap: tokens.spacingXs,
     minWidth: 0,
+    overflow: 'hidden',
   }),
+  badge: css({ flexShrink: 0 }),
   caption: css({
+    flex: 1,
     minWidth: 0,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
-    color: tokens.gray700,
+    color: tokens.gray500,
     fontSize: tokens.fontSizeS,
+    lineHeight: tokens.lineHeightS,
   }),
   summary: css({
     display: 'flex',
     alignItems: 'center',
     gap: tokens.spacing2Xs,
     minWidth: 0,
-    color: tokens.gray700,
+    color: tokens.gray500,
     fontSize: tokens.fontSizeS,
     lineHeight: tokens.lineHeightS,
   }),
   summaryWarning: css({ color: tokens.orange700 }),
-  // A disclosure styled like the prototype's transparent ToggleButton
-  trigger: css({
-    flexShrink: 0,
-    background: 'none',
-    borderColor: 'transparent',
-    boxShadow: 'none',
-    '&:hover': { background: tokens.gray100 },
-    '&[data-state="on"], &[data-state="on"]:hover': {
-      background: tokens.blue100,
-      borderColor: 'transparent',
-    },
+  sourceLabel: css({
+    margin: 0,
+    color: tokens.gray900,
+    fontSize: tokens.fontSizeS,
+    fontWeight: tokens.fontWeightMedium,
+    lineHeight: tokens.lineHeightS,
   }),
   sourceButtons: css({
     display: 'flex',
     alignItems: 'center',
     gap: tokens.spacingXs,
   }),
-  or: css({ color: tokens.gray600, fontSize: tokens.fontSizeS }),
+  or: css({
+    color: tokens.gray500,
+    fontSize: tokens.fontSizeM,
+    lineHeight: tokens.lineHeightM,
+  }),
 };
 
 type Parameter = {
@@ -205,7 +213,7 @@ const PARAMETERS: Parameter[] = [
   {
     key: 'blogPost',
     name: 'Blog post',
-    caption: 'Reference, required',
+    caption: 'Content parameter',
     kind: 'entry',
     isRequired: true,
   },
@@ -251,12 +259,16 @@ function ParameterSettings({
   if (parameter.kind === 'entry') {
     const isInPath = binding?.source === 'path';
     const isFixed = binding?.source === 'fixed';
+    const sourceLabelId = `parameter-source-${parameter.key}`;
     return (
       <>
+        <p id={sourceLabelId} className={rowStyles.sourceLabel}>
+          Where the value comes from
+        </p>
         <div
           className={rowStyles.sourceButtons}
           role="group"
-          aria-label="Value source"
+          aria-labelledby={sourceLabelId}
         >
           <Button
             size="small"
@@ -385,7 +397,7 @@ function ParameterRow({
       onOpen={onOpen}
       onClose={onClose}
       placement="left-start"
-      offset={32}
+      offset={16}
       isDraggable={isDraggable}
     >
       <InlineConfigurationPopover.Anchor>
@@ -394,7 +406,6 @@ function ParameterRow({
             rowStyles.row,
             isSet && rowStyles.rowSet,
             isInPath && rowStyles.rowInPath,
-            isOpen && rowStyles.rowOpen,
           )}
           data-test-id={`parameter-binding-${parameter.key}`}
         >
@@ -404,7 +415,8 @@ function ParameterRow({
                 variant="featured"
                 size="small"
                 textTransform="none"
-                startIcon={<VariableIcon size="tiny" />}
+                startIcon={<VariableIcon size="small" />}
+                className={rowStyles.badge}
               >
                 {parameter.name}
               </Badge>
@@ -428,17 +440,12 @@ function ParameterRow({
               </span>
             )}
           </div>
-          <InlineConfigurationPopover.Trigger>
-            <ToggleButton
-              size="small"
-              className={rowStyles.trigger}
-              isActive={isOpen}
-              onToggle={() => {}}
-              aria-label={`${action} parameter ${parameter.name}`}
-              aria-describedby={summary ? summaryId : undefined}
-            >
-              {action}
-            </ToggleButton>
+          <InlineConfigurationPopover.Trigger
+            size="tiny"
+            aria-label={`${action} parameter ${parameter.name}`}
+            describedBy={summary ? summaryId : undefined}
+          >
+            {action}
           </InlineConfigurationPopover.Trigger>
         </div>
       </InlineConfigurationPopover.Anchor>
@@ -452,7 +459,7 @@ function ParameterRow({
             variant="featured"
             size="small"
             textTransform="none"
-            startIcon={<VariableIcon size="tiny" />}
+            startIcon={<VariableIcon size="small" />}
           >
             {parameter.name}
           </Badge>
@@ -484,8 +491,8 @@ function ParameterList({ isDraggable }: { isDraggable: boolean }) {
   );
 
   return (
-    <Flex>
-      <Paragraph>
+    <Flex className={rowStyles.canvas}>
+      <Paragraph marginBottom="none" className={rowStyles.intro}>
         The list sits in a side panel on the right. Each popover opens to the
         left of its row, level with it, and stays attached while the panel
         scrolls. Only one is open at a time; changes apply immediately.
@@ -527,12 +534,17 @@ function ParameterList({ isDraggable }: { isDraggable: boolean }) {
   );
 }
 
+// The node settings case from Figma: the popover has a drag handle
 export const ParameterListWithAnchor: Story = {
-  render: () => <ParameterList isDraggable={false} />,
+  render: () => <ParameterList isDraggable />,
 };
 
 export const Draggable: Story = {
-  render: () => <ParameterList isDraggable />,
+  args: {
+    ...Basic.args,
+    isDraggable: true,
+  },
+  render: (args) => <BasicStory {...args} />,
 };
 
 export const WithNestedMenuAndSelect: Story = {
@@ -545,10 +557,8 @@ function NestedStory() {
 
   return (
     <InlineConfigurationPopover placement="bottom-start">
-      <InlineConfigurationPopover.Trigger>
-        <Button size="small" aria-label="Edit parameter Blog post">
-          Edit
-        </Button>
+      <InlineConfigurationPopover.Trigger aria-label="Edit parameter Blog post">
+        Edit
       </InlineConfigurationPopover.Trigger>
       <InlineConfigurationPopover.Content>
         <InlineConfigurationPopover.Header
