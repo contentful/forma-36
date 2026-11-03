@@ -1,9 +1,16 @@
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { cleanup, render, screen, waitFor } from '@testing-library/react';
 import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { Modal } from './';
+
+// react-modal removes its portal node asynchronously (closeTimeoutMS) after unmount.
+// Wait until it's gone so no timer outlives the jsdom environment.
+afterEach(async () => {
+  cleanup();
+  await waitFor(() => expect(document.body).toBeEmptyDOMElement());
+});
 
 it('has no a11y issues', async () => {
   const { baseElement } = render(
