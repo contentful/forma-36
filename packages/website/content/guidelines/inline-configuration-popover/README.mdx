@@ -64,7 +64,7 @@ One rule: **an inline configuration popover edits one item's settings inline and
 #### Required
 
 - InlineConfigurationPopover ([Forma 36 Documentation](https://f36.contentful.com/components/inline-configuration-popover)) — positioning, focus, dismissal and the header with its close button
-- ToggleButton or Button ([Forma 36 Documentation](https://f36.contentful.com/components/toggle-button)) — the row trigger
+- ToggleButton ([Forma 36 Documentation](https://f36.contentful.com/components/toggle-button)) — the row trigger. `InlineConfigurationPopover.Trigger` always renders a transparent ToggleButton.
 - Badge ([Forma 36 Documentation](https://f36.contentful.com/components/badge)) — item name and status
 
 #### Optional
@@ -82,7 +82,7 @@ One rule: **an inline configuration popover edits one item's settings inline and
 
 1. The person scans the list. Each row shows the item, its type and a summary line.
 2. They select **Set** (required items) or **Override** (optional items).
-3. The popover opens beside the list, level with the row. The row is highlighted and its button shows as pressed.
+3. The popover opens beside the list, level with the row. The row itself doesn't change; its trigger button shows as active.
 4. They configure the item. Changes apply as they go; there is no Save button.
 5. They close the popover with ✕, **Escape**, by clicking outside it, or by selecting the row's button again.
 6. The row now shows a solid border, a summary of the setting and an **Edit** button.
@@ -92,7 +92,7 @@ One rule: **an inline configuration popover edits one item's settings inline and
 ![Inline configuration popover anatomy: the popover open beside a node settings panel, with numbered callouts](/docs-images/img-inline-configuration-popover-anatomy.svg)
 
 1. **Row:** item badge, type label, summary line (when set) and trigger button.
-2. **Trigger button:** **Set**, **Override** or **Edit**. Shows as pressed while the popover is open.
+2. **Trigger button:** always a ToggleButton reading **Set**, **Override** or **Edit**. Shows as active (`isActive`) while the popover is open.
 3. **Drag handle:** the F36 DragHandle; shows that the popover can be moved.
 4. **Header:** drag handle, item badge, type label and close button.
 5. **Content:** the configuration, top to bottom in the order decisions are made.
@@ -131,7 +131,7 @@ Dashed border, item badge and type label, and a **Set** or **Override** button. 
 
 #### Open
 
-Solid border with a blue outline and tint. The trigger button shows as pressed (`isActive`). Only one popover is open at a time.
+The row itself doesn't change: it keeps its border, background and summary line. Only the trigger shows the open state: the ToggleButton is active (`isActive`, a blue background without a border) while the popover is open. Only one popover is open at a time.
 
 #### Set
 
@@ -170,7 +170,7 @@ When an option in the popover can't be used, disable it and explain why in a too
 - The close button is named "Close Blog post settings".
 - Settings apply immediately, so confirm each change in a polite live region, for example "Blog post set to In path" or "Blog post reset to default". Don't announce typing or changes to switches, checkboxes and selects; their state is already read.
 - The drag handle is the F36 DragHandle, named "Move Blog post settings", with `aria-roledescription="draggable"` and keyboard instructions. dnd kit announces when the popover is picked up, moved and dropped.
-- Summary lines are plain text in the row. Point the trigger's `aria-describedby` at the summary line, so the current setting is read with the trigger.
+- Summary lines are plain text in the row. Point the trigger's `describedBy` at the summary line's id, so the current setting is read with the trigger. Unlike `aria-describedby`, it's kept when a Tooltip around the trigger adds its own description.
 
 #### Cognitive Considerations
 
@@ -231,7 +231,47 @@ When an option in the popover can't be used, disable it and explain why in a too
 ### Technical Implementation
 
 - Use the F36 `InlineConfigurationPopover` from `@contentful/f36-inline-configuration-popover`. It's in alpha and isn't exported from `@contentful/f36-components` yet. See the [component documentation](https://f36.contentful.com/components/inline-configuration-popover) for the API.
-- Wrap the row in `InlineConfigurationPopover.Anchor` and its button in `InlineConfigurationPopover.Trigger`. The popover lines up with the row, while toggling and ARIA stay on the button. Pressing the row doesn't close it.
+- Wrap the row in `InlineConfigurationPopover.Anchor` and use `InlineConfigurationPopover.Trigger` as its button. The trigger is always a transparent ToggleButton: pass the visible label as children and a required `aria-label` with the item. It's active while the popover is open, so don't style the row for the open state. The popover lines up with the row, while toggling and ARIA stay on the button. Pressing the row doesn't close it.
+
+```jsx static=true
+<InlineConfigurationPopover
+  isOpen={openKey === parameter.key}
+  onOpen={() => setOpenKey(parameter.key)}
+  onClose={() => setOpenKey(null)}
+  placement="left-start"
+>
+  <InlineConfigurationPopover.Anchor>
+    <div className={rowStyles}>
+      <Badge
+        variant="featured"
+        size="small"
+        startIcon={<VariableIcon size="small" />}
+      >
+        Blog post
+      </Badge>
+      <span className={captionStyles}>Content parameter</span>
+      <span id="blog-post-summary">In path, Slug field</span>
+      <InlineConfigurationPopover.Trigger
+        size="tiny"
+        aria-label="Edit parameter Blog post"
+        describedBy="blog-post-summary"
+      >
+        Edit
+      </InlineConfigurationPopover.Trigger>
+    </div>
+  </InlineConfigurationPopover.Anchor>
+  <InlineConfigurationPopover.Content>
+    <InlineConfigurationPopover.Header
+      title="Blog post"
+      caption="Content parameter"
+    />
+    <InlineConfigurationPopover.Body>
+      {/* settings */}
+    </InlineConfigurationPopover.Body>
+  </InlineConfigurationPopover.Content>
+</InlineConfigurationPopover>
+```
+
 - It's built on [Floating UI](https://floating-ui.com/) (`@floating-ui/react`), which F36 Popover, Menu and Tooltip already use. Positioning uses the `offset`, `flip`, `size` and `hide` middleware with `autoUpdate`, without `shift`, so it stays level with its row while the list scrolls. Focus and dismissal use `FloatingFocusManager`, `useDismiss` and `useClick`.
 - Floating UI doesn't handle dragging. Set `isDraggable` to move the popover with dnd kit through the header's DragHandle. The offset feeds into Floating UI's position and resets on close.
 - To keep one popover open at a time, control `isOpen` and update it in `onOpen` and `onClose`. `onClose` receives the reason it closed. Confirm changes with `announce()` from `useInlineConfigurationPopover()`.
