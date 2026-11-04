@@ -17,7 +17,7 @@ import {
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { IconButton, Menu } from '@contentful/f36-components';
+import { IconButton, Menu, DragHandle } from '@contentful/f36-components';
 import {
   ArrowDownIcon,
   ArrowUpIcon,
