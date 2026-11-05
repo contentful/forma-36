@@ -1,3 +1,4 @@
+// Prototype code to illustrate the interaction pattern. Not a reference implementation of the component.
 // Plain JavaScript on purpose: the docs run this file through react-live, which cannot parse TypeScript.
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck

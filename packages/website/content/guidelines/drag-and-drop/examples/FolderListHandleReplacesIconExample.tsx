@@ -1,3 +1,4 @@
+// Prototype code to illustrate the interaction pattern. Not a reference implementation of the component.
 import React from 'react';
 import {
   DndContext,
