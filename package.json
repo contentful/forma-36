@@ -31,6 +31,7 @@
     "storybook:build": "storybook build -c ./scripts/.storybook -o dist-storybook --webpack-stats-json",
     "test": "pnpm test:vitest",
     "test:watch": "vitest",
+    "test:a11y-audit": "vitest run --config vitest.a11y-audit.config.mts scripts/test/dragDropA11yAudit.test.tsx",
     "test:vitest": "pnpm --filter @contentful/f36-tokens build && vitest run",
     "tsc": "tsc --noEmit",
     "tsc:watch": "tsc --noEmit --watch",

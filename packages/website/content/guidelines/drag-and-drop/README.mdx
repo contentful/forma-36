@@ -1,0 +1,458 @@
+---
+title: Drag and drop
+slug: '/guidelines/protected/draganddrop'
+section: 'guidelinesPatterns'
+---
+
+## Purpose
+
+Drag and drop lets users reorder, move, or place items by dragging them. Use it when users can see where an item will go and what the result will be before they drop it. Otherwise, use an explicit action.
+
+## When to use
+
+- The source, the destination, and the resulting position are visible.The source, destination, and resulting position are visible.
+
+### Typical use cases
+
+| Operation | What happens to the source item?                 | Destination                |
+| --------- | ------------------------------------------------ | -------------------------- |
+| Reorder   | The same item remains                            | Same container             |
+| Reparent  | The same item remains                            | Another hierarchy position |
+| Move      | The item leaves its original container           | Another container          |
+| Add       | The source remains and a new instance is created | Another container          |
+
+<br />
+
+**Reorder within a list:** Change an item's position while keeping it in the same container.
+
+- **Reorder or reparent within a hierarchy:** Change an item's position, parent, or hierarchy level.
+- **Move between containers:** Transfer an existing item from one container to another.
+- **Add from a source:** Drag an item into another container to create a new instance. The original item remains in the source list.
+
+## Use a Different Pattern Instead
+
+Use an explicit action when users cannot clearly tell where an item will go or when moving it has consequences that require confirmation.
+
+### Consider these alternatives
+
+| Scenario                                                | Use instead                         | Reason                                                          |
+| ------------------------------------------------------- | ----------------------------------- | --------------------------------------------------------------- |
+| Users cannot tell where the item will go                | Explicit Move to… or Add to… action | Dragging only works when users can see valid destinations.      |
+| Moving the item has complex or destructive consequences | Explicit action with confirmation   | Dragging makes it too easy to change the structure by accident. |
+
+## Components used
+
+### Required
+
+- [DragHandle](https://f36.contentful.com/components/drag-handle): marks an item as draggable. It provides focus, hover, and active states.
+- [IconButton](https://f36.contentful.com/components/icon-button) and [Menu](https://f36.contentful.com/components/menu): provide explicit non-drag actions, such as Move up and Move down.
+
+### Supporting UI elements
+
+- **Insertion indicator:** Shows the exact position where the item will be placed when dropped.
+- **Drop target highlight:** Shows when an item can be dropped into a container or parent.
+
+Forma 36 does not yet offer these as components. Build them with Forma 36 tokens and interaction states until it does.
+
+### Optional
+
+- [Card with custom drag handle](https://f36.contentful.com/components/card#with-a-custom-drag-handle): Use it when the draggable item is a Forma 36 Card.
+
+## Interactions
+
+The item being moved sets the scope of the move.
+
+- Moving a child moves only that child.
+- Moving a parent moves the parent and its complete subtree.
+- Only offer destinations that result in a valid state.
+- Show the resulting position before the user drops the item.
+
+### Reorder a list
+
+1. The user starts dragging from the item's drag handle.
+2. The item enters the dragging state.
+3. As the user moves the item, show where it will be inserted.
+4. The user drops the item at a valid position.
+5. Update the order immediately.
+6. Keep focus on the moved item.
+
+Reordering changes an item's position in its current list. It does not change the item's meaning or container.
+
+The drag handle can replace the leading icon if the icon represents secondary metadata and users do not need it to decide where to drag the item. If you replace the icon, keep its meaning available to assistive technology. See [Screen reader support](#screen-reader-support).
+
+```jsx file=./examples/FolderListHandleReplacesIconExample.tsx hideCode hideBorder
+
+```
+
+#### Reorder mode
+
+Choose how reordering is offered based on how often users need it:
+
+- **Frequent or primary task:** Make reordering always available, as described above.
+- **Occasional or secondary task:** Let users start a reorder mode from the item's menu, such as “Reorder folders”.
+
+The same keyboard and announcement rules apply in reorder mode, with these additions:
+
+- The item that opened the mode stays in focus
+- Escape cancels a picked-up item and restores its position. If nothing is picked up, Escape does nothing.
+- A **Done** button ends the mode and keeps the current order.
+  - Offer Ctrl+Enter (Cmd+Enter on Mac) as its shortcut.
+  - Expose the shortcut with `aria-keyshortcuts`.
+  - Make sure the shortcut does not also pick up or drop the focused item.
+- A **Reset order** button restores the order from when the mode started. It does not leave the mode.
+- While the mode is on, the only tab stops are the drag handles and the mode buttons.
+- When the mode ends, return focus to the item the user was on.
+- Announce when the mode starts and ends, including how many items were reordered.
+
+```jsx file=./examples/ReorderModeExample.tsx hideCode hideBorder
+
+```
+
+### Reorder or reparent within a hierarchy
+
+If users can change the hierarchy, make it clear before the drop whether the item will be reordered or reparented.
+
+A destination can be:
+
+- a different position within the current parent
+- a position within another parent
+- another supported hierarchy level
+- a different parent level, if dropping directly into this level is supported.
+
+Do not offer destinations that create an invalid hierarchy, such as moving a parent into one of its descendants.
+
+```jsx file=./examples/ReparentingExample.tsx hideCode hideBorder
+
+```
+
+### Add from a source
+
+Use this variant when users drag from a source, such as a component list or palette, onto an ordered editing canvas.
+
+Dragging creates a new instance at the destination. It does not remove the source item.
+
+1. The user starts dragging an item from the source.
+2. Valid positions become visible.
+3. Show an insertion indicator at the current destination.
+4. The user drops the item.
+5. Create the new instance at that position immediately.
+6. Move focus to a control on the new item.
+
+Also provide explicit placement actions:
+
+- Add on top
+- Add to bottom
+- Add after…
+
+**Add after…** lets users select an existing item as the reference position.
+
+- For short collections, show the existing items in a menu.
+- For long or complex collections, use a searchable selection.
+- If several items share a name, include context to help users tell them apart.
+
+## States
+
+### Default
+
+The Forma 36 DragHandle indicates that an item can be moved. Show it persistently or reveal it on hover
+
+If the drag handle replaces a leading icon:
+
+- Keep the icon and drag handle the same size and in the same position so switching between them doesn’t cause jitter.
+- Reveal the drag handle on keyboard focus as well as on hover.
+- Keep the drag handle visible while it has focus and throughout the drag operation.
+
+### Focused
+
+Show a visible focus indicator on a focusable drag handle.
+
+For lists and trees, the drag handle is the entry point to keyboard reordering. Do not rely on a cursor change alone to show that an item can be dragged.
+
+### Dragging
+
+Make the item being moved easy to distinguish from the others. Show valid drop locations with insertion indicators or destination highlights.
+
+Two things should be clear at a glance:
+
+- What am I moving?
+- Where will it go if I drop it now?
+
+### Invalid destination
+
+Do not show invalid destinations as drop targets. When an item is over an invalid area, do not show an insertion indicator that suggests the move will work.
+
+Examples of invalid destinations:
+
+- a parent inside its own descendant
+- a container that does not accept that item type
+- a hierarchy level that is not supported
+
+### Success
+
+After a successful drop:
+
+- Place the item in its new position immediately.
+- Remove the insertion indicator and drop target highlight.
+- Restore the item’s default visual style while keeping it focused.
+- Update its parent or hierarchy, if it changed.
+- Keep focus on the moved item so users can continue from its new position.
+
+When a parent moves, move all of its descendants with it. Keep their order and hierarchy.
+
+Do not show a success message for routine reordering.
+
+### Error
+
+Do not show a success message for routine reordering.
+
+- If saving the move fails after the interface has already updated, restore the previous state and tell the user what happened.
+- Never leave the visible order different from the saved order.
+- Follow the standard error-handling guidance for the failure itself. Do not add drag-specific confirmation steps.
+
+---
+
+## Accessibility
+
+Provide a single-pointer way to complete every drag-and-drop action without dragging. This alternative is required, not optional, under WCAG 2.2 Success Criterion 2.5.7.
+
+### Keyboard interactions
+
+Use a focusable Forma 36 DragHandle rendered as a button.
+
+| Key            | Action                                       |
+| -------------- | -------------------------------------------- |
+| Space or Enter | Pick up the focused item                     |
+| Arrow Up       | Move the item to the previous valid position |
+| Arrow Down     | Move the item to the next valid position     |
+| Space or Enter | Drop the item at its current position        |
+| Escape         | Cancel and restore the original position     |
+
+#### Focus order
+
+Set the tab order to follow the visual and structural order of interactive elements, not their perceived importance. Give each control an accessible name that makes sense on its own.
+
+#### Item name and focus
+
+Do not make an item name focusable just so a screen reader announces it.
+
+- If the name is interactive (it selects, opens, or activates the item), include it in the tab order.
+- If the name is not interactive, keep it out of the tab order. Screen reader users can still find the item through the list structure and its controls.
+
+#### Trees
+
+In a tree, Up Arrow and Down Arrow move through the valid insertion positions of the expanded hierarchy. These can include:
+
+- positions under the current parent
+- positions at another level
+- positions inside another expanded parent, if reparenting is supported
+- a parent itself, if dropping directly into a parent is supported
+
+Rules for tree navigation:
+
+- Only expanded descendants have their own keyboard positions. A collapsed parent can be a valid destination, but its hidden children cannot.
+- Do not use Left Arrow and Right Arrow to reparent. In a tree, these keys already expand, collapse, and move between parent and child nodes.
+- The picked-up item decides which positions are valid. When a parent is picked up, offer only the destinations that are valid for that parent and all of its descendants.
+
+#### Moving long distances
+
+Do not make users press an Arrow key through a high number of positions. Offer Move to… in the item’s overflow menu as a faster alternative.
+
+#### Adding an item to another container
+
+Do not ask keyboard users to imitate a drag across the interface. Provide explicit placement actions:
+
+- Add on top
+- Add to bottom
+- Add after…
+
+These actions must provide access to the same meaningful positions as pointer dragging.
+
+If a drag handle only starts a pointer drag in this variant, do not add a keyboard stop for it. Keyboard users do the same job with the item's explicit actions.
+
+### Screen reader support
+
+Give every drag handle an accessible name. The Forma 36 DragHandle requires a screen reader label for this.
+
+Use the item's visible name in the accessible name and describe the action. For example: "Reorder Looper".
+
+Never use internal drag and drop IDs in accessible names or announcements.
+
+#### Icons replaced by a drag handle
+
+If an icon carries meaning and the drag handle replaces it visually, keep that meaning for assistive technology. Describe what the icon means, not what the glyph looks like.
+
+- Accessible name: "Reorder [component name]"
+- Accessible description: "Component"
+
+If users need the metadata to tell identical items apart, put it in the accessible name: "Reorder [component name] component".
+
+#### Instructions
+
+When the drag handle receives focus, keep the instruction short. For example: "Press Space or Enter to start reordering."
+
+Give the full instructions only after the user picks up the item. When keyboard reordering starts, announce:
+
+- which item was picked up
+- its current position
+- its current parent or container, if relevant
+- the available keyboard commands
+
+Flat list:
+"[component name] picked up. Position 4 of 12. Use Up and Down Arrow keys to move. Press Space or Enter to drop. Press Escape to cancel."
+
+Tree item:
+"SEO settings picked up. Position 2 of 4 in Page settings. Use Up and Down Arrow keys to move. Press Space or Enter to drop. Press Escape to cancel."
+
+Parent with descendants. State what moves with the parent:
+"Page settings picked up with 5 nested items. Position 2 of 4 at top level. Use Up and Down Arrow keys to move. Press Space or Enter to drop. Press Escape to cancel."
+
+#### Announce movement
+
+Say enough for users to understand the item's new location. Depending on the structure, use a named neighbor, a numeric position, the parent or container, or a mix.
+
+Keep announcements short while the item moves. Give more context when it is picked up and when it is dropped. Use the same item names as the interface, and do not repeat information that has not changed.
+
+- **On pickup:** give the item and its numeric position.
+  - Flat list: "Looper picked up. Position 4 of 12."
+  - Tree: "SEO settings picked up. Position 2 of 4 in Page settings."
+  - Parent with descendants: "Page settings picked up with 5 nested items. Position 2 of 4 at top level."
+- **While moving:** prefer a short position relative to a named neighbor.
+  - "After Navigation."
+  - "Before Footer."
+  - "At the start of the list."
+  - Between parents: "In Content, after Navigation."
+  - Use the numeric position when it is clearer, for example when neighbors have the same name.
+- **On drop:** confirm the result in full.
+  - Flat list: "Looper dropped after Navigation. Position 6 of 12."
+  - Tree: "SEO settings dropped in Content after Navigation. Position 3 of 6."
+  - Parent: "Page settings dropped at top level. Position 3 of 4. 5 nested items moved with it."
+- **At a boundary or invalid destination:** give brief feedback when needed.
+  - "At the start of the list."
+  - "At the end of the list."
+  - "Cannot move Page settings into this group."
+- **On cancel:** confirm the item went back.
+  - "Move canceled. Looper returned to position 4 of 12."
+  - In a hierarchy, include the original parent if relevant.
+
+### Cognitive considerations
+
+Drag and drop should make the structure of the interface clearer, not hide it.
+
+- Keep the dragged item easy to recognize.
+- Make valid and invalid destinations clearly different.
+- Show the exact insertion position before the drop.
+- Avoid hierarchy changes when users only want to reorder.
+- Place drag handles in the same spot throughout a collection.
+- Keep explicit actions in a predictable place.
+- Use the same terms in drag behavior, menus, and announcements.
+- Make a moving parent look different enough that users see its children move with it.
+- Do not use confirmation dialogs for routine reordering that is easy to undo.
+
+---
+
+## Dos and don'ts
+
+### Dos
+
+- Use the Forma 36 DragHandle as the one affordance for draggable items.
+- Show the exact destination before the drop.
+- Update the order immediately after a successful move.
+- Keep focus on the moved item, or clearly tied to it.
+- Provide Move up and Move down actions for reorderable items.
+- Provide Move to… when items can change parent.
+- Offer the same meaningful destinations without dragging as with dragging.
+- Move a parent's whole subtree when the parent moves.
+- Announce the new location using a neighbor, a numeric position, a parent, or a mix.
+- Allow only valid destinations, for dragging and for the keyboard.
+
+### Don'ts
+
+- Don't make dragging the only way to reorder, move, or place an item.
+- Don't make the whole item a drag handle if it contains controls that need their own pointer interactions.
+- Don't reparent an item when the user only wants to reorder it.
+- Don't allow a parent to move into its own descendants.
+- Don't remove an item from a source palette when dragging adds a new instance.
+- Don't make keyboard users step through many positions with Arrow keys when Move to… or a placement action can do it directly.
+- Don't rely on visual movement alone to show the result to screen reader users.
+- Don't expose implementation IDs in accessible names or announcements.
+- Don't rely on a cursor change alone to show that an item is draggable.
+- Don't drop meaningful metadata from the accessible name or description when you replace an icon with a drag handle.
+
+## Anti-patterns
+
+- **Drag-only reordering:** users who cannot drag cannot do the task.
+- **Invisible drop logic:** users only see the destination after the drop.
+- **Ambiguous tree movement:** users cannot tell whether a drop reorders the item or changes its parent.
+- **Silent keyboard movement:** the order changes on screen but nothing is announced.
+- **Keyboard drag simulation:** keyboard users must trace the path a pointer would take across containers instead of choosing the result.
+- **Unbounded Arrow-key navigation:** Users need to press an Arrow key many times to reach a distant destination that could be selected directly.
+
+## Trade-offs
+
+### Benefits
+
+- Dragging makes repeated rearrangement efficient.
+- Users can move items in the context where they appear.
+- The insertion indicator previews the result before the drop.
+- One interaction model covers simple ordering and hierarchy changes.
+
+### Limitations
+
+- Dragging is harder to discover than explicit controls.
+- Precise dragging is hard for users with motor impairments.
+- Hierarchies add destinations and interaction states. Reparenting needs especially clear feedback because it changes both structure and position.
+- Long or deep collections make step-by-step keyboard movement slow.
+- Reparenting needs especially clear feedback, because it changes the structure as well as the position.
+- A solid implementation needs both dragging and equivalent explicit actions.
+- This pattern does not cover dragging several items at once. Multi-selection adds requirements for selection, movement, focus, and announcements.
+
+---
+
+## Technical implementation
+
+Meet the interaction and accessibility requirements in this pattern, whichever drag and drop library you use.
+
+The implementation must support:
+
+- pointer input and destination detection
+- calculation of valid and invalid positions
+- keyboard movement between equivalent valid positions
+- focus management after a move, a drop, and a cancel
+- live region announcements
+- hierarchy and subtree constraints
+- saving, and recovery when saving fails
+- insertion indicators and drop target feedback
+- equivalent explicit move and placement actions
+
+Before you build announcements, map internal drag IDs to the visible item names. You can use the IDs internally, but users must never see them.
+
+Describe the position the item will actually end up in, not only the item it is over. For example, being "over Navigation" does not always mean the item will land "after Navigation".
+
+Use one set of rules for valid destinations in pointer, keyboard, and explicit-action interactions, so every method gives the same result.
+
+### Implementing with dnd-kit
+
+Forma 36's examples use [dnd-kit](https://dndkit.com/). When you build the pattern with it:
+
+- Set `screenReaderInstructions` and `announcements` through the `accessibility` prop of `DndContext`. The defaults use raw drag IDs. Build the text from the item names shown in the interface.
+- Always provide explicit Move up and Move down actions in the item's menu (see [Dos and don'ts](#dos-and-donts)). They work without arrow-key forwarding and satisfy the non-drag requirement.
+
+#### Arrow keys and screen readers
+
+By default, screen readers capture arrow keys for their own navigation (often called browse mode). This can stop dnd-kit's keyboard sensor from receiving them. Some screen readers switch modes automatically when focus lands on a `role="button"` element such as the Forma 36 DragHandle. This is not guaranteed for every screen reader and browser combination.
+
+Do not ask users to switch their screen reader's mode.
+
+Optional technique: apply `role="application"` to the drag handle only while the item is dragging (`isDragging` from `useSortable`). Remove it when the drag ends or is canceled. This passes arrow-key events to the widget for the duration of the drag. GitHub describes the technique and its trade-offs in [building an accessible sortable list](https://github.blog/2024-07-09-exploring-the-challenges-in-creating-an-accessible-sortable-list-drag-and-drop/).
+
+Treat it as optional and test it:
+
+- `role="application"` changes how a screen reader treats an element. It is inappropriate for most other use cases.
+- Assistive technologies handle the role differently. Some screen readers decide how to handle Arrow keys when an element first receives focus and ignore a later role change, so changing the role may not work.
+- Apply role="application" as narrowly as possible, and test it with real screen reader users.
+- Don’t rely on role="application" alone. If it’s unreliable in your target screen readers, leave it out and document that choice, as in the folder list example.
+
+To use `role="application"` with the Forma 36 DragHandle:
+
+- `DragHandle` sets `role="button"` on its root element and doesn’t allow you to override it, so passing a role prop has no effect. Render your own element instead, such as a plain button styled like DragHandle, and apply the same drag attributes and listeners.
+- Give the button an `aria-label` instead of visible text. In `role="application"` mode, some screen readers may read a text node one character at a time when users press the Arrow keys. They may spell out the button’s name instead of moving the item. An `aria-label` avoids this because it isn’t text content that screen readers can navigate character by character.
