@@ -27,6 +27,9 @@ import {
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
+import * as dndKitReact from '@dnd-kit/react';
+import * as dndKitHelpers from '@dnd-kit/helpers';
+import * as dndKitReactSortable from '@dnd-kit/react/sortable';
 import { format, parse, isValid } from 'date-fns';
 import { createPortal } from 'react-dom';
 import FocusLock from 'react-focus-lock';
@@ -71,6 +74,15 @@ const liveProviderScope = {
   // other
   MdAccessAlarm,
   FocusLock,
+  // @dnd-kit/react (new API). Spread first so the legacy names below win on
+  // clashes (KeyboardSensor, PointerSensor, arrayMove, useSortable, ...).
+  // In new-API examples, use the namespaces for anything that clashes, e.g.
+  // `import * as dndKitReact from '@dnd-kit/react'` + `dndKitReact.KeyboardSensor`.
+  ...dndKitReact,
+  ...dndKitHelpers,
+  dndKitReact,
+  dndKitHelpers,
+  dndKitReactSortable,
   // dnd-kit
   arrayMove,
   CSS,
