@@ -29,9 +29,9 @@ Drag and drop lets users reorder, move, or place items by dragging them. Use it 
 **Reorder within a list:** Change an item's position while keeping it in the same container.
 - **Reorder or reparent within a hierarchy:** Change an item's position, parent, or hierarchy level.
 - **Move between containers:** Transfer an existing item from one container to another.
-- **Add from a source:** create a new instance in another container. The source item does not move.
+- **Add from a source:** Drag an item into another container to create a new instance. The original item remains in the source list.
 
-## When not to use drag and drop:
+## Use a Different Pattern Instead
 
 Use an explicit action when users cannot clearly tell where an item will go or when moving it has consequences that require confirmation.
 
@@ -39,26 +39,26 @@ Use an explicit action when users cannot clearly tell where an item will go or w
 
 | Scenario                                                | Use instead                            | Reason                                                          |
 | ------------------------------------------------------- | -------------------------------------- | --------------------------------------------------------------- |
-| Users cannot tell where the item will go                | An explicit Move to… or Add to… action | Dragging only works when users can see the valid destinations.  |
-| Moving the item has complex or destructive consequences | An explicit action with confirmation   | Dragging makes it too easy to change the structure by accident. |
+| Users cannot tell where the item will go                | Explicit Move to… or Add to… action | Dragging only works when users can see valid destinations.  |
+| Moving the item has complex or destructive consequences | Explicit action with confirmation   | Dragging makes it too easy to change the structure by accident. |
 
 ## Components used
 
 ### Required
 
 - [DragHandle](https://f36.contentful.com/components/drag-handle): marks an item as draggable. It provides focus, hover, and active states.
-- [IconButton](https://f36.contentful.com/components/icon-button) and [Menu](https://f36.contentful.com/components/menu): provide the explicit non-drag actions, such as Move up and Move down.
+- [IconButton](https://f36.contentful.com/components/icon-button) and [Menu](https://f36.contentful.com/components/menu): provide explicit non-drag actions, such as Move up and Move down.
 
 ### Supporting UI elements
 
-- **Insertion indicator:** shows the exact position where the item will land.
-- **Drop target highlight:** shows when an item can be dropped into a container or parent.
+- **Insertion indicator:** Shows the exact position where the item will be placed when dropped.
+- **Drop target highlight:** Shows when an item can be dropped into a container or parent.
 
 Forma 36 does not yet offer these as components. Build them with Forma 36 tokens and interaction states until it does.
 
 ### Optional
 
-- [Card with custom drag handle](https://f36.contentful.com/components/card#with-a-custom-drag-handle): use it when the draggable item is a Forma 36 Card.
+- [Card with custom drag handle](https://f36.contentful.com/components/card#with-a-custom-drag-handle): Use it when the draggable item is a Forma 36 Card.
 
 ## Interactions
 
@@ -80,7 +80,7 @@ The item being moved sets the scope of the move.
 
 Reordering changes an item's position in its current list. It does not change the item's meaning or container.
 
-The drag handle can replace the leading icon if the icon is secondary metadata and users do not need it to decide where to drag the item. If you replace the icon, keep its meaning available to assistive technology. See [Screen reader support](#screen-reader-support).
+The drag handle can replace the leading icon if the icon represents secondary metadata and users do not need it to decide where to drag the item. If you replace the icon, keep its meaning available to assistive technology. See [Screen reader support](#screen-reader-support).
 
 ```jsx file=./examples/FolderListHandleReplacesIconExample.tsx hideCode hideBorder
 
@@ -90,12 +90,12 @@ The drag handle can replace the leading icon if the icon is secondary metadata a
 
 Choose how reordering is offered based on how often users need it:
 
-- **Frequent or primary task:** make reordering always available, as described above.
-- **Occasional or secondary task:** let users start a reorder mode from the item's menu, for example "Reorder folders".
+- **Frequent or primary task:** Make reordering always available, as described above.
+- **Occasional or secondary task:** Let users start a reorder mode from the item's menu, such as “Reorder folders”.
 
-The same keyboard and announcement rules apply in reorder mode, plus these:
+The same keyboard and announcement rules apply in reorder mode, with these additions:
 
-- The item that opened the mode keeps focus.
+- The item that opened the mode stays in focus
 - Escape cancels a picked-up item and restores its position. If nothing is picked up, Escape does nothing.
 - A **Done** button ends the mode and keeps the current order.
   - Offer Ctrl+Enter (Cmd+Enter on Mac) as its shortcut.
@@ -119,9 +119,9 @@ A destination can be:
 - a different position within the current parent
 - a position within another parent
 - another supported hierarchy level
-- a different parent-level, if dropping directly into this level is supported
+- a different parent level, if dropping directly into this level is supported.
 
-Do not offer destinations that create an invalid hierarchy, such as a parent inside one of its own descendants.
+Do not offer destinations that create an invalid hierarchy, such as moving a parent into one of its descendants.
 
 ```jsx file=./examples/ReparentingExample.tsx hideCode hideBorder
 
@@ -131,7 +131,7 @@ Do not offer destinations that create an invalid hierarchy, such as a parent ins
 
 Use this variant when users drag from a source, such as a component list or palette, onto an ordered editing canvas.
 
-Dragging creates a new instance at the destination. The source item stays where it is.
+Dragging creates a new instance at the destination. It does not remove the source item.
 
 1. The user starts dragging an item from the source.
 2. Valid positions become visible.
@@ -146,23 +146,23 @@ Also provide explicit placement actions:
 - Add to bottom
 - Add after…
 
-**Add after…** lets users pick an existing item as the reference position.
+**Add after…** lets users select an existing item as the reference position.
 
-- For short collections, show a menu of the existing items.
+- For short collections, show the existing items in a menu.
 - For long or complex collections, use a searchable selection.
-- If several items share a name, add context so users can tell them apart.
+- If several items share a name, include context to help users tell them apart.
 
 ## States
 
 ### Default
 
-The Forma 36 DragHandle marks an item as movable. Show it all the time, or reveal it on hover where that suits the design.
+The Forma 36 DragHandle indicates that an item can be moved. Show it persistently or reveal it on hover
 
 If the drag handle replaces a leading icon:
 
-- Give the icon and the drag handle the same size and position.
+- Keep the icon and drag handle the same size and in the same position so switching between them doesn’t cause jitter.
 - Reveal the drag handle on keyboard focus as well as on hover.
-- Keep it visible while it has focus and during the whole drag.
+- Keep the drag handle visible while it has focus and throughout the drag operation.
 
 ### Focused
 
@@ -172,9 +172,9 @@ For lists and trees, the drag handle is the entry point to keyboard reordering. 
 
 ### Dragging
 
-Make the dragged item easy to tell apart from the others. Show valid positions with insertion indicators or destination highlights.
+Make the item being moved easy to distinguish from the others. Show valid drop locations with insertion indicators or destination highlights.
 
-Users should be able to answer two questions at a glance:
+Two things should be clear at a glance:
 
 - What am I moving?
 - Where will it go if I drop it now?
@@ -193,9 +193,9 @@ Examples of invalid destinations:
 
 After a successful drop:
 
-- Put the item in its new position immediately.
-- Remove the insertion indicator and any drop target highlight.
-- Return the item to its default look.
+- Place the item in its new position immediately.
+- Remove the insertion indicator and drop target highlight.
+- Restore the item’s default visual style while keeping it focused.
 - Update its parent or hierarchy, if it changed.
 - Keep focus on the moved item so users can continue from its new position.
 
