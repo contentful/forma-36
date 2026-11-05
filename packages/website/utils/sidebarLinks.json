@@ -478,6 +478,10 @@
   ],
   "guidelinesPatterns": [
     {
+      "title": "Inline configuration popover",
+      "slug": "/guidelines/protected/inline-configuration-popover"
+    },
+    {
       "title": "Toolbar",
       "slug": "/guidelines/protected/toolbar"
     }
