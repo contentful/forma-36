@@ -448,11 +448,11 @@ Optional technique: apply `role="application"` to the drag handle only while the
 Treat it as optional and test it:
 
 - `role="application"` changes how a screen reader treats an element. It is inappropriate for most other use cases.
-- Each assistive technology implements it differently. Some decide how to handle arrow keys when the element first gets focus and ignore a later role change, so it may not work.
-- Limit the role as narrowly as you can, and test with real screen reader users.
-- Never rely on it alone. If it is unreliable in your target screen readers, leave it out and document that choice, as the folder list example does.
+- Assistive technologies handle the role differently. Some screen readers decide how to handle Arrow keys when an element first receives focus and ignore a later role change, so changing the role may not work.
+- Apply role="application" as narrowly as possible, and test it with real screen reader users.
+- Don’t rely on role="application" alone. If it’s unreliable in your target screen readers, leave it out and document that choice, as in the folder list example.
 
 To use `role="application"` with the Forma 36 DragHandle:
 
 - `DragHandle` sets `role="button"` on its root element and doesn’t allow you to override it, so passing a role prop has no effect. Render your own element instead, such as a plain button styled like DragHandle, and apply the same drag attributes and listeners.
-- Name that button with `aria-label`, not with visible text. With `role="application"`, some screen readers read a text node one character at a time on arrow-key input. They spell out the name instead of moving the item. `aria-label` has no text content to walk through.
+- Give the button an `aria-label` instead of visible text. In `role="application"` mode, some screen readers may read a text node one character at a time when users press the Arrow keys. They may spell out the button’s name instead of moving the item. An `aria-label` avoids this because it isn’t text content that screen readers can navigate character by character.
