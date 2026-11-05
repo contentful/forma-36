@@ -458,5 +458,5 @@ Treat it as optional and test it:
 
 To use `role="application"` with the Forma 36 DragHandle:
 
-- `DragHandle` sets `role="button"` on its root and does not let you override it, so a `role` prop has no effect. Render the element yourself instead, for example a plain `button` styled like `DragHandle`, with the same drag attributes and listeners.
+- `DragHandle` sets `role="button"` on its root element and doesn’t allow you to override it, so passing a role prop has no effect. Render your own element instead, such as a plain button styled like DragHandle, and apply the same drag attributes and listeners.
 - Name that button with `aria-label`, not with visible text. With `role="application"`, some screen readers read a text node one character at a time on arrow-key input. They spell out the name instead of moving the item. `aria-label` has no text content to walk through.
