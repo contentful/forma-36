@@ -10,10 +10,7 @@ Drag and drop lets users reorder, move, or place items by dragging them. Use it 
 
 ## When to use
 
-- The source, the destination, and the resulting position are visible.
-- Users often move items or want to position them manually.
-- The result is immediate and predictable.
-- You can show valid destinations before the user drops the item.
+- The source, the destination, and the resulting position are visible.The source, destination, and resulting position are visible.
 
 ### Typical use cases
 
@@ -27,6 +24,7 @@ Drag and drop lets users reorder, move, or place items by dragging them. Use it 
 <br />
 
 **Reorder within a list:** Change an item's position while keeping it in the same container.
+
 - **Reorder or reparent within a hierarchy:** Change an item's position, parent, or hierarchy level.
 - **Move between containers:** Transfer an existing item from one container to another.
 - **Add from a source:** Drag an item into another container to create a new instance. The original item remains in the source list.
@@ -37,9 +35,9 @@ Use an explicit action when users cannot clearly tell where an item will go or w
 
 ### Consider these alternatives
 
-| Scenario                                                | Use instead                            | Reason                                                          |
-| ------------------------------------------------------- | -------------------------------------- | --------------------------------------------------------------- |
-| Users cannot tell where the item will go                | Explicit Move to… or Add to… action | Dragging only works when users can see valid destinations.  |
+| Scenario                                                | Use instead                         | Reason                                                          |
+| ------------------------------------------------------- | ----------------------------------- | --------------------------------------------------------------- |
+| Users cannot tell where the item will go                | Explicit Move to… or Add to… action | Dragging only works when users can see valid destinations.      |
 | Moving the item has complex or destructive consequences | Explicit action with confirmation   | Dragging makes it too easy to change the structure by accident. |
 
 ## Components used
@@ -201,9 +199,11 @@ After a successful drop:
 
 When a parent moves, move all of its descendants with it. Keep their order and hierarchy.
 
-Do not show a success message for routine reordering. The new position is the confirmation.
+Do not show a success message for routine reordering.
 
 ### Error
+
+Do not show a success message for routine reordering.
 
 - If saving the move fails after the interface has already updated, restore the previous state and tell the user what happened.
 - Never leave the visible order different from the saved order.
@@ -213,9 +213,7 @@ Do not show a success message for routine reordering. The new position is the co
 
 ## Accessibility
 
-Users must be able to do everything without dragging with a pointer. These alternatives are part of the pattern, not optional fallbacks.
-
-WCAG 2.2 Success Criterion 2.5.7 requires that any function that uses dragging can also be done with a single pointer, without dragging.
+Provide a single-pointer way to complete every drag-and-drop action without dragging. This alternative is required, not optional, under WCAG 2.2 Success Criterion 2.5.7.
 
 ### Keyboard interactions
 
@@ -229,11 +227,9 @@ Use a focusable Forma 36 DragHandle rendered as a button.
 | Space or Enter | Drop the item at its current position        |
 | Escape         | Cancel and restore the original position     |
 
-After a drop or a cancel, keep keyboard focus on the moved item's drag handle.
-
 #### Focus order
 
-Follow the visual and structural order of the interactive elements for the tab order. Do not order it by how important an action is. Give each control an accessible name that makes sense on its own.
+Set the tab order to follow the visual and structural order of interactive elements, not their perceived importance. Give each control an accessible name that makes sense on its own.
 
 #### Item name and focus
 
@@ -259,7 +255,7 @@ Rules for tree navigation:
 
 #### Moving long distances
 
-Do not make users press an Arrow key dozens of times to make a large move. Offer **Move to…** in the item's overflow menu instead.
+Do not make users press an Arrow key through a high number of positions. Offer Move to… in the item’s overflow menu as a faster alternative.
 
 #### Adding an item to another container
 
@@ -269,13 +265,13 @@ Do not ask keyboard users to imitate a drag across the interface. Provide explic
 - Add to bottom
 - Add after…
 
-These actions must reach the same meaningful positions that pointer dragging reaches.
+These actions must provide access to the same meaningful positions as pointer dragging.
 
 If a drag handle only starts a pointer drag in this variant, do not add a keyboard stop for it. Keyboard users do the same job with the item's explicit actions.
 
 ### Screen reader support
 
-Give every drag handle an accessible name. The Forma 36 DragHandle has a required screen reader label for this.
+Give every drag handle an accessible name. The Forma 36 DragHandle requires a screen reader label for this.
 
 Use the item's visible name in the accessible name and describe the action. For example: "Reorder Looper".
 
@@ -307,7 +303,7 @@ Flat list:
 Tree item:
 "SEO settings picked up. Position 2 of 4 in Page settings. Use Up and Down Arrow keys to move. Press Space or Enter to drop. Press Escape to cancel."
 
-Parent with descendants. State the scope of the move:
+Parent with descendants. State what moves with the parent:
 "Page settings picked up with 5 nested items. Position 2 of 4 at top level. Use Up and Down Arrow keys to move. Press Space or Enter to drop. Press Escape to cancel."
 
 #### Announce movement
@@ -316,7 +312,7 @@ Say enough for users to understand the item's new location. Depending on the str
 
 Keep announcements short while the item moves. Give more context when it is picked up and when it is dropped. Use the same item names as the interface, and do not repeat information that has not changed.
 
-- **On pick up:** give the item and its numeric position.
+- **On pickup:** give the item and its numeric position.
   - Flat list: "Looper picked up. Position 4 of 12."
   - Tree: "SEO settings picked up. Position 2 of 4 in Page settings."
   - Parent with descendants: "Page settings picked up with 5 nested items. Position 2 of 4 at top level."
@@ -335,7 +331,7 @@ Keep announcements short while the item moves. Give more context when it is pick
   - "At the end of the list."
   - "Cannot move Page settings into this group."
 - **On cancel:** confirm the item went back.
-  - "Move cancelled. Looper returned to position 4 of 12."
+  - "Move canceled. Looper returned to position 4 of 12."
   - In a hierarchy, include the original parent if relevant.
 
 ### Cognitive considerations
@@ -362,7 +358,7 @@ Drag and drop should make the structure of the interface clearer, not hide it.
 - Show the exact destination before the drop.
 - Update the order immediately after a successful move.
 - Keep focus on the moved item, or clearly tied to it.
-- Provide Move up and Move down for reorderable items.
+- Provide Move up and Move down actions for reorderable items.
 - Provide Move to… when items can change parent.
 - Offer the same meaningful destinations without dragging as with dragging.
 - Move a parent's whole subtree when the parent moves.
@@ -389,14 +385,14 @@ Drag and drop should make the structure of the interface clearer, not hide it.
 - **Ambiguous tree movement:** users cannot tell whether a drop reorders the item or changes its parent.
 - **Silent keyboard movement:** the order changes on screen but nothing is announced.
 - **Keyboard drag simulation:** keyboard users must trace the path a pointer would take across containers instead of choosing the result.
-- **Unbounded Arrow-key navigation:** users press Arrow keys dozens of times to reach a distant destination that could be picked directly.
+- **Unbounded Arrow-key navigation:** Users need to press an Arrow key many times to reach a distant destination that could be selected directly.
 
 ## Trade-offs
 
 ### Benefits
 
-- Dragging is efficient for repeated rearranging.
-- Users move items without leaving the place where they see them.
+- Dragging makes repeated rearrangement efficient.
+- Users can move items in the context where they appear.
 - The insertion indicator previews the result before the drop.
 - One interaction model covers simple ordering and hierarchy changes.
 
@@ -404,7 +400,7 @@ Drag and drop should make the structure of the interface clearer, not hide it.
 
 - Dragging is harder to discover than explicit controls.
 - Precise dragging is hard for users with motor impairments.
-- Hierarchies add more destinations and more states.
+- Hierarchies add destinations and interaction states. Reparenting needs especially clear feedback because it changes both structure and position.
 - Long or deep collections make step-by-step keyboard movement slow.
 - Reparenting needs especially clear feedback, because it changes the structure as well as the position.
 - A solid implementation needs both dragging and equivalent explicit actions.
@@ -447,11 +443,11 @@ By default, screen readers capture arrow keys for their own navigation (often ca
 
 Do not ask users to switch their screen reader's mode.
 
-Optional technique: apply `role="application"` to the drag handle only while the item is dragging (`isDragging` from `useSortable`). Remove it when the drag ends or is cancelled. This passes arrow-key events to the widget for the duration of the drag. GitHub describes the technique and its trade-offs in [building an accessible sortable list](https://github.blog/2024-07-09-exploring-the-challenges-in-creating-an-accessible-sortable-list-drag-and-drop/).
+Optional technique: apply `role="application"` to the drag handle only while the item is dragging (`isDragging` from `useSortable`). Remove it when the drag ends or is canceled. This passes arrow-key events to the widget for the duration of the drag. GitHub describes the technique and its trade-offs in [building an accessible sortable list](https://github.blog/2024-07-09-exploring-the-challenges-in-creating-an-accessible-sortable-list-drag-and-drop/).
 
 Treat it as optional and test it:
 
-- `role="application"` changes how a screen reader treats an element. It is wrong for most other uses.
+- `role="application"` changes how a screen reader treats an element. It is inappropriate for most other use cases.
 - Each assistive technology implements it differently. Some decide how to handle arrow keys when the element first gets focus and ignore a later role change, so it may not work.
 - Limit the role as narrowly as you can, and test with real screen reader users.
 - Never rely on it alone. If it is unreliable in your target screen readers, leave it out and document that choice, as the folder list example does.
