@@ -1,5 +1,18 @@
 # Change Log
 
+## 6.30.0
+
+### Minor Changes
+
+- [#3753](https://github.com/contentful/forma-36/pull/3753) [`f8feb0a`](https://github.com/contentful/forma-36/commit/f8feb0ac81232885cfea90f6575a2c7674719eac) Thanks [@toniwowtscherk](https://github.com/toniwowtscherk)! - Add a transparent ToggleButton variant.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.30.0
+  - @contentful/f36-spinner@6.30.0
+  - @contentful/f36-tooltip@6.30.0
+
 ## 6.29.0
 
 ### Patch Changes

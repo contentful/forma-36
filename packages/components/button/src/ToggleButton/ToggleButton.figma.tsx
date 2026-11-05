@@ -13,14 +13,18 @@ figma.connect(ToggleButton, FIGMA_URL, {
       Small: 'small',
       Medium: 'medium',
     }),
+    variant: figma.enum('Variant', {
+      Default: undefined,
+      Transparent: 'transparent',
+    }),
     children: figma.string('Label'),
     icon: figma.boolean('Show start icon', {
       true: figma.instance('Start icon'),
       false: undefined,
     }),
   },
-  example: ({ size, children, icon }) => (
-    <ToggleButton size={size} icon={icon} onToggle={() => {}}>
+  example: ({ size, variant, children, icon }) => (
+    <ToggleButton size={size} variant={variant} icon={icon} onToggle={() => {}}>
       {children}
     </ToggleButton>
   ),
@@ -34,14 +38,24 @@ figma.connect(ToggleButton, FIGMA_URL, {
       Small: 'small',
       Medium: 'medium',
     }),
+    variant: figma.enum('Variant', {
+      Default: undefined,
+      Transparent: 'transparent',
+    }),
     children: figma.string('Label'),
     icon: figma.boolean('Show start icon', {
       true: figma.instance('Start icon'),
       false: undefined,
     }),
   },
-  example: ({ size, children, icon }) => (
-    <ToggleButton size={size} isActive icon={icon} onToggle={() => {}}>
+  example: ({ size, variant, children, icon }) => (
+    <ToggleButton
+      size={size}
+      variant={variant}
+      isActive
+      icon={icon}
+      onToggle={() => {}}
+    >
       {children}
     </ToggleButton>
   ),
@@ -55,14 +69,24 @@ figma.connect(ToggleButton, FIGMA_URL, {
       Small: 'small',
       Medium: 'medium',
     }),
+    variant: figma.enum('Variant', {
+      Default: undefined,
+      Transparent: 'transparent',
+    }),
     children: figma.string('Label'),
     icon: figma.boolean('Show start icon', {
       true: figma.instance('Start icon'),
       false: undefined,
     }),
   },
-  example: ({ size, children, icon }) => (
-    <ToggleButton size={size} isDisabled icon={icon} onToggle={() => {}}>
+  example: ({ size, variant, children, icon }) => (
+    <ToggleButton
+      size={size}
+      variant={variant}
+      isDisabled
+      icon={icon}
+      onToggle={() => {}}
+    >
       {children}
     </ToggleButton>
   ),
@@ -76,12 +100,17 @@ figma.connect(ToggleButton, FIGMA_URL, {
       Small: 'small',
       Medium: 'medium',
     }),
+    variant: figma.enum('Variant', {
+      Default: undefined,
+      Transparent: 'transparent',
+    }),
     icon: figma.instance('Start icon') as unknown as React.ReactElement,
   },
-  example: ({ size, icon }) => (
+  example: ({ size, variant, icon }) => (
     <ToggleButton
       aria-label="Toggle button"
       size={size}
+      variant={variant}
       icon={icon}
       onToggle={() => {}}
     />
@@ -96,12 +125,17 @@ figma.connect(ToggleButton, FIGMA_URL, {
       Small: 'small',
       Medium: 'medium',
     }),
+    variant: figma.enum('Variant', {
+      Default: undefined,
+      Transparent: 'transparent',
+    }),
     icon: figma.instance('Start icon') as unknown as React.ReactElement,
   },
-  example: ({ size, icon }) => (
+  example: ({ size, variant, icon }) => (
     <ToggleButton
       aria-label="Toggle button"
       size={size}
+      variant={variant}
       isActive
       icon={icon}
       onToggle={() => {}}
@@ -117,12 +151,17 @@ figma.connect(ToggleButton, FIGMA_URL, {
       Small: 'small',
       Medium: 'medium',
     }),
+    variant: figma.enum('Variant', {
+      Default: undefined,
+      Transparent: 'transparent',
+    }),
     icon: figma.instance('Start icon') as unknown as React.ReactElement,
   },
-  example: ({ size, icon }) => (
+  example: ({ size, variant, icon }) => (
     <ToggleButton
       aria-label="Toggle button"
       size={size}
+      variant={variant}
       isDisabled
       icon={icon}
       onToggle={() => {}}

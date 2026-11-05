@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 05-11-2026
+
+**F36 Button** `v6.30.0`
+
+- Add a transparent ToggleButton variant.
+
 ## 31-10-2026
 
 **F36 Icons** `v6.29.0`

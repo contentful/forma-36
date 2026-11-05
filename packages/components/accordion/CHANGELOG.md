@@ -1,5 +1,15 @@
 # Change Log
 
+## 6.30.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-collapse@6.30.0
+  - @contentful/f36-core@6.30.0
+  - @contentful/f36-icons@6.30.0
+  - @contentful/f36-typography@6.30.0
+
 ## 6.29.0
 
 ### Patch Changes
