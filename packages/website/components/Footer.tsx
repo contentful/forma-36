@@ -3,7 +3,12 @@ import Image from 'next/image';
 import { css, cx } from '@emotion/css';
 
 import tokens from '@contentful/f36-tokens';
-import { TextLink, Flex, type TextLinkProps } from '@contentful/f36-components';
+import {
+  TextLink,
+  Flex,
+  type TextLinkProps,
+  Paragraph,
+} from '@contentful/f36-components';
 
 import contentfulLogoSVG from '../resources/icons/contentful-by-salesforce-logo.svg';
 import { getGridStyles } from '../utils/getGridStyles';
@@ -16,11 +21,13 @@ const styles = {
     justifyItems: 'flex-start',
     marginTop: tokens.spacing2Xl,
     padding: tokens.spacingL,
+    rowGap: tokens.spacingXl,
   }),
 };
 
 export function Footer() {
   const gridStyles = getGridStyles();
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer
@@ -88,6 +95,20 @@ export function Footer() {
           alt="Contentful’s logo"
         />
       </a>
+
+      <Paragraph>
+        © Copyright {currentYear} Salesforce, Inc.{' '}
+        <TextLink
+          href="https://www.salesforce.com/company/legal/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          All rights reserved
+        </TextLink>
+        . Various trademarks held by their respective owners. <br />
+        Salesforce Tower, 415 Mission Street, 3rd Floor, San Francisco, CA
+        94105, United States.
+      </Paragraph>
     </footer>
   );
 }
