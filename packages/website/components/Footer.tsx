@@ -23,6 +23,11 @@ const styles = {
     padding: tokens.spacingL,
     rowGap: tokens.spacingXl,
   }),
+  copyright: css({
+    gridRow: 2,
+    gridColumnEnd: 'span 2',
+    justifySelf: 'stretch',
+  }),
 };
 
 export function Footer() {
@@ -96,15 +101,12 @@ export function Footer() {
         />
       </a>
 
-      <Paragraph>
+      <Paragraph className={cx(gridStyles.columnStartTwo, styles.copyright)}>
         © Copyright {currentYear} Salesforce, Inc.{' '}
-        <TextLink
+        <FooterLink
           href="https://www.salesforce.com/company/legal/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          All rights reserved
-        </TextLink>
+          label="All rights reserved"
+        />
         . Various trademarks held by their respective owners. <br />
         Salesforce Tower, 415 Mission Street, 3rd Floor, San Francisco, CA
         94105, United States.
