@@ -26,6 +26,9 @@
     "esModuleInterop": true,
     "paths": {
       "@contentful/f36-table-next": ["./packages/components/tablenext/src"],
+      "@contentful/f36-inline-configuration-popover": [
+        "./packages/components/inline-configuration-popover/src"
+      ],
       "@/scripts/*": ["./scripts/*"]
     },
     "skipLibCheck": true,

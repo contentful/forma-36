@@ -9,6 +9,7 @@
   "ignore": [
     "@contentful/f36-table-next",
     "@contentful/f36-pill-next",
+    "@contentful/f36-inline-configuration-popover",
     "@contentful/f36-cdn",
     "@contentful/f36-i18n-utils",
     "@contentful/f36-website",
