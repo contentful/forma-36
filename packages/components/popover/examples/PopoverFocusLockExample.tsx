@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Stack, Popover, Switch } from '@contentful/f36-components';
+import { Stack, Popover, Switch } from '@contentful/f36-components';
 import FocusLock from 'react-focus-lock';
 
 export default function PopoverFocusLockExample() {
@@ -7,9 +7,10 @@ export default function PopoverFocusLockExample() {
 
   return (
     <Popover isOpen={isOpen} onClose={() => setIsOpen(false)}>
-      <Popover.Trigger>
-        <Button onClick={() => setIsOpen(!isOpen)}>Toggle</Button>
-      </Popover.Trigger>
+      <Popover.TriggerButton
+        title="Toggle"
+        onClick={() => setIsOpen(!isOpen)}
+      />
       <Popover.Content>
         {/* Just wrap your content with FocusLock component */}
         <FocusLock>
