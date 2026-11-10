@@ -1,18 +1,11 @@
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { FlatCompat } from '@eslint/eslintrc';
+import nextPlugin from '@next/eslint-plugin-next';
 import rootConfig from '../../eslint.config.mjs';
 
-// FlatCompat is only needed to pull in legacy-style configs (e.g. Next.js plugin rules)
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({ baseDirectory: __dirname });
-
-// Compose: start with root flat config, then legacy Next.js recommended, then website-specific overrides
+// Compose root rules, Next.js recommended rules, and website-specific overrides.
 // eslint-disable-next-line import/no-default-export
 export default [
   ...rootConfig,
-  ...compat.extends('plugin:@next/next/recommended'),
+  nextPlugin.configs.recommended,
   {
     settings: { next: { rootDir: 'packages/website/' } },
     rules: {
@@ -25,11 +18,9 @@ export default [
     rules: { 'import/no-default-export': 'off' },
   },
   {
-    files: [
-      'next-env.d.ts'
-    ],
-    rules: { 
-      '@typescript-eslint/triple-slash-reference': 'off' 
-    }
-  }
+    files: ['next-env.d.ts'],
+    rules: {
+      '@typescript-eslint/triple-slash-reference': 'off',
+    },
+  },
 ];
