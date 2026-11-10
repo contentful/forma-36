@@ -61,7 +61,6 @@
   "devDependencies": {
     "@contentful/rich-text-types": "^17.0.0",
     "@emotion/babel-plugin": "^11.13.5",
-    "@eslint/eslintrc": "^3",
     "@next/eslint-plugin-next": "^16.0.0",
     "@types/unist": "^3.0.3",
     "broken-link-checker": "^0.7.8",
