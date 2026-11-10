@@ -4,6 +4,7 @@ import ReactModal from 'react-modal';
 import { Box, type CommonProps, type ExpandProps } from '@contentful/f36-core';
 
 import { ModalContextProvider, type ModalIds } from './ModalContext';
+import { ModalDisplayHeader } from './ModalDisplayHeader/ModalDisplayHeader';
 import {
   ModalHeaderBase,
   type ModalHeaderProps,
