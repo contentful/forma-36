@@ -466,3 +466,32 @@ describe('Close functionality', () => {
     expect(onClose).not.toHaveBeenCalled();
   });
 });
+
+describe('header selection', () => {
+  it('renders a single header when title and illustration are set', async () => {
+    render(
+      <Modal
+        title="Modal title"
+        illustration={<span data-test-id="illustration" />}
+        isShown
+        onClose={() => {}}
+      >
+        content
+      </Modal>,
+    );
+
+    expect(await screen.findAllByTestId('cf-ui-modal-header')).toHaveLength(1);
+    expect(screen.getByTestId('illustration')).toBeInTheDocument();
+  });
+
+  it('renders no header when title is missing', async () => {
+    render(
+      <Modal illustration={<span />} isShown onClose={() => {}}>
+        content
+      </Modal>,
+    );
+
+    expect(await screen.findByText('content')).toBeInTheDocument();
+    expect(screen.queryByTestId('cf-ui-modal-header')).not.toBeInTheDocument();
+  });
+});
