@@ -3,6 +3,8 @@ import type { Meta, StoryObj, StoryFn } from '@storybook/react-vite';
 import { action } from 'storybook/actions';
 import { Button } from '@contentful/f36-button';
 import { Badge } from '@contentful/f36-badge';
+import { Flex } from '@contentful/f36-core';
+import tokens from '@contentful/f36-tokens';
 
 import { type ModalProps } from '../src/Modal';
 import { Modal } from '../src';
@@ -84,6 +86,41 @@ export const Basic: StoryObj<ModalProps> = (props) => {
 Basic.args = {
   title: 'Default modal',
   subtitle: 'Subtitle',
+};
+
+export const DisplayHeader = () => {
+  const [isShown, setShown] = useState(true);
+  const onClose = () => setShown(false);
+
+  return (
+    <div>
+      <Button onClick={() => setShown(true)}>Open modal</Button>
+      <Modal
+        isShown={isShown}
+        onClose={onClose}
+        illustration={
+          <div
+            style={{
+              width: '312px',
+              height: '208px',
+              backgroundColor: 'purple',
+            }}
+          />
+        }
+        title="Success"
+        subtitle="You'r interaction was successfull"
+      >
+        <Flex justifyContent="center" gap={tokens.spacingXs}>
+          <Button size="small" onClick={onClose} variant="secondary">
+            Close
+          </Button>
+          <Button size="small" onClick={onClose} variant="positive">
+            Confirm
+          </Button>
+        </Flex>
+      </Modal>
+    </div>
+  );
 };
 
 export const WithCustomIds: StoryObj<ModalProps> = (props) => {
