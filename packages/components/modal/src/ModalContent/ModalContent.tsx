@@ -25,8 +25,8 @@ export const ModalContent = ({
   const styles = getModalContentStyles();
   return (
     <Box
-      {...otherProps}
       as="div"
+      {...otherProps}
       className={cx(styles.root, className)}
       testId={testId}
     >
