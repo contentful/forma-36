@@ -8,9 +8,11 @@ import {
 import { ButtonGroup } from '@contentful/f36-button';
 import { getModalControlStyles } from './ModalControls.styles';
 import { cx } from '@emotion/css';
+import type * as CSS from 'csstype';
 
 interface ModalControlsInternalProps extends CommonProps {
   children: React.ReactElement[] | React.ReactElement;
+  justifyContent?: CSS.Property.JustifyContent;
 }
 
 export type ModalControlsProps = PropsWithHTMLElement<
@@ -22,6 +24,7 @@ export const ModalControls = ({
   testId = 'cf-ui-modal-controls',
   className,
   children,
+  justifyContent = 'flex-end',
   ...otherProps
 }: ModalControlsProps): React.ReactElement => {
   const styles = getModalControlStyles();
@@ -32,7 +35,7 @@ export const ModalControls = ({
       className={cx(styles.root, className)}
       testId={testId}
       flexDirection="row"
-      justifyContent="flex-end"
+      justifyContent={justifyContent}
     >
       <ButtonGroup variant="spaced" spacing="spacingS">
         {children}
