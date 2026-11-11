@@ -19,26 +19,6 @@ const dependencyProperties = [
  * @param {string} pkgManager - name of package managers. eg. yarn, npm.
  * @param {'install'|'uninstall'} cmd - what should the command do, install or uninstall package.
  * @param {string[]} pkgs - list of package names to be installed or removed.
- * @returns {string} script to be used to install or remove the list of packages.
- */
-const getCmd = (pkgManager, cmd, pkgs) => {
-  const cmds = {
-    npm: {
-      install: `npm install -S ${pkgs.join(' ')}`,
-      uninstall: `npm uninstall ${pkgs.join(' ')}`,
-    },
-    yarn: {
-      install: `yarn add ${pkgs.join(' ')}`,
-      uninstall: `yarn remove ${pkgs.join(' ')}`,
-    },
-  };
-  return pkgs.length > 0 ? cmds[pkgManager][cmd] : '';
-};
-
-/**
- * @param {string} pkgManager - name of package managers. eg. yarn, npm.
- * @param {'install'|'uninstall'} cmd - what should the command do, install or uninstall package.
- * @param {string[]} pkgs - list of package names to be installed or removed.
  * @returns {[string, string[]]} executable and arguments to run.
  */
 const getCommand = (pkgManager, cmd, pkgs) => {
@@ -64,23 +44,19 @@ function getOutput({ newPackages, removePackages, pkgManager = null }) {
   console.log('You can run the following commands to update the packages:\n');
 
   // Print commands for each package manager, if no specific one set
-  if (pkgManager === null) {
-    ['yarn', 'npm'].forEach((manager) => {
-      const result = [
-        chalk.bold(`For ${manager}:`),
-        `  ${getCmd(manager, 'uninstall', removePackages)}`,
-        `  ${getCmd(manager, 'install', newPackages)}`,
-      ];
-      console.log(result.filter((r) => r.trim()).join('\n'), '\n');
-    });
-  } else {
-    const result = [
-      chalk.bold(`For ${pkgManager}:`),
-      `  ${getCmd(pkgManager, 'uninstall', removePackages)}`,
-      `  ${getCmd(pkgManager, 'install', newPackages)}`,
-    ];
-    console.log(result.filter((r) => r.trim()).join('\n'), '\n');
-  }
+  (pkgManager === null ? ['yarn', 'npm'] : [pkgManager]).forEach((manager) => {
+    const commands = [
+      ['uninstall', removePackages],
+      ['install', newPackages],
+    ]
+      .filter(([, pkgs]) => pkgs.length > 0)
+      .map(([cmd, pkgs]) => {
+        const [command, args] = getCommand(manager, cmd, pkgs);
+        return `  ${[command, ...args].join(' ')}`;
+      });
+    const result = [chalk.bold(`For ${manager}:`), ...commands];
+    console.log(result.join('\n'), '\n');
+  });
 }
 
 // eslint-disable-next-line import/no-default-export
