@@ -5,7 +5,6 @@ import { Box, type CommonProps, type ExpandProps } from '@contentful/f36-core';
 
 import { ModalContextProvider, type ModalIds } from './ModalContext';
 import { ModalHeader, ModalHeaderProps } from './ModalHeader/ModalHeader';
-import { ModalDisplayHeader } from './ModalDisplayHeader/ModalDisplayHeader';
 import { ModalContent, ModalContentProps } from './ModalContent/ModalContent';
 import { getModalStyles } from './Modal.styles';
 import type { ModalSizeType, ModalPositionType } from './types';
@@ -68,10 +67,6 @@ export interface ModalProps extends CommonProps {
    * Modal subtitle that is used in header
    */
   subtitle?: string;
-  /**
-   * Illustration used for display variation of the Modal Header
-   */
-  illustration?: React.ReactNode;
   /**
    * Size of the modal window
    * @default medium
@@ -199,28 +194,17 @@ export const Modal = ({
     onInitialFocus();
   };
 
-  const renderHeader = () => {
-    const { title, subtitle, illustration, modalHeaderProps } = otherProps;
-    if (!title) return null;
-
-    const headerProps = {
-      title,
-      subtitle,
-      onClose: props.onClose,
-      ...modalHeaderProps,
-    };
-
-    return illustration ? (
-      <ModalDisplayHeader illustration={illustration} {...headerProps} />
-    ) : (
-      <ModalHeader {...headerProps} />
-    );
-  };
-
   const renderDefault = () => {
     return (
       <>
-        {renderHeader()}
+        {otherProps.title && (
+          <ModalHeader
+            title={otherProps.title}
+            subtitle={otherProps.subtitle}
+            onClose={props.onClose}
+            {...otherProps.modalHeaderProps}
+          />
+        )}
         <ModalContent {...otherProps.modalContentProps}>
           {typeof otherProps.children === 'function'
             ? null
