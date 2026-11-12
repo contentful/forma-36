@@ -59,22 +59,19 @@ export const getStyles = (props: StyleProps = {}) => {
       alignItems: 'flex-start',
       overflow: 'hidden',
       boxShadow: tokens.boxShadowHeavy,
-      borderRadius: '16px',
+      borderRadius: '12px',
     }),
 
     header: css({
       width: '100%',
-      height: '48px',
-      padding: hasLeftButtonGroup
-        ? `0px ${tokens.spacingS} 0px ${tokens.spacingXs}`
-        : `0px ${tokens.spacingS}`,
+      boxSizing: 'border-box',
+      height: '44px',
+      padding: `0 ${tokens.spacingXs} 0 ${tokens.spacingM}`,
       backgroundColor: 'transparent',
       flexShrink: 0,
       alignItems: 'center',
       gap: tokens.spacing2Xs,
-      borderBottom: isOpen
-        ? `1px solid ${hexToRGBA(tokens.gray900, 0.05)}`
-        : '0',
+      borderBottom: isOpen ? `1px solid ${tokens.gray200}` : '0',
       cursor: display === 'collapsed' ? 'pointer' : 'auto',
       position: 'relative',
       overflow: 'hidden',
