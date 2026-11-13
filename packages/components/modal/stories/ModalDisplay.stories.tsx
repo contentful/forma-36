@@ -42,7 +42,7 @@ function SimpleDemo(props: ModalDisplayProps) {
         }
         title="Setup your first content type"
         controls={
-          <Button variant="positive" onClick={() => action('create')}>
+          <Button variant="positive" onClick={() => action('create')()}>
             Create
           </Button>
         }
