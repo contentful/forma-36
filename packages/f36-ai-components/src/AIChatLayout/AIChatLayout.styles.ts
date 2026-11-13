@@ -82,7 +82,7 @@ export const getStyles = (props: StyleProps = {}) => {
       alignItems: 'center',
       justifyContent: 'center',
       flexShrink: 0,
-      marginLeft: hasLeftButtonGroup ? tokens.spacing2Xs : tokens.spacingXs,
+      marginLeft: hasLeftButtonGroup ? tokens.spacing2Xs : 0,
       marginRight: tokens.spacing2Xs,
     }),
 

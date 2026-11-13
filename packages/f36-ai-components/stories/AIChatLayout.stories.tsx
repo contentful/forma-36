@@ -251,6 +251,38 @@ WithCustomTitle.argTypes = {
   content: { control: { disable: true } },
 };
 
+export const IconWithoutLeftButtons = () => (
+  <AIChatLayout
+    position="relative"
+    height={80}
+    header={{
+      id: 'chat',
+      icon: <icons.TranslateIcon />,
+      title: 'Translation Agent',
+    }}
+  />
+);
+
+export const IconWithLeftButtons = () => (
+  <AIChatLayout
+    position="relative"
+    height={80}
+    header={{
+      id: 'history',
+      icon: <icons.ClockCounterClockwiseIconIcon />,
+      title: 'History',
+      buttonsLeft: [
+        {
+          icon: <icons.CaretLeftIcon />,
+          onClick: action('back-to-chat'),
+          display: true,
+          ariaLabel: 'Back to chat',
+        },
+      ],
+    }}
+  />
+);
+
 export const WithChangableHeader = ({ icon, title, variant }) => {
   const [isHistoryMode, setIsHistoryMode] = useState(false);
 
