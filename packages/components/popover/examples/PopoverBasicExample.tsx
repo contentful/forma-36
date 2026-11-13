@@ -6,9 +6,10 @@ export default function PopoverBasicExample() {
 
   return (
     <Popover isOpen={isOpen} onClose={() => setIsOpen(false)}>
-      <Popover.Trigger>
-        <Button onClick={() => setIsOpen(!isOpen)}>Toggle</Button>
-      </Popover.Trigger>
+      <Popover.TriggerButton
+        title="Toggle"
+        onClick={() => setIsOpen(!isOpen)}
+      />
       <Popover.Content>
         <Box padding="spacingM">
           <Paragraph>This is the content.</Paragraph>

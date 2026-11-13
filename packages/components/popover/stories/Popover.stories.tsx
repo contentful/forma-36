@@ -4,6 +4,8 @@ import { Button } from '@contentful/f36-button';
 import { Paragraph } from '@contentful/f36-typography';
 import { Box } from '@contentful/f36-core';
 import { Popover } from '../src/.';
+import { Icon } from '@contentful/f36-icon';
+import * as icons from '@contentful/f36-icons';
 
 const meta = {
   component: Popover,
@@ -22,9 +24,11 @@ export const Basic = () => {
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
       >
-        <Popover.Trigger>
-          <Button onClick={() => setIsOpen(!isOpen)}>Toggle</Button>
-        </Popover.Trigger>
+        <Popover.TriggerButton
+          title="Toggle"
+          onClick={() => setIsOpen(!isOpen)}
+        />
+
         <Popover.Content>
           <Box padding="spacingM">
             <Paragraph>This is the content.</Paragraph>
@@ -59,9 +63,10 @@ export const InteractionOverview = () => {
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
       >
-        <Popover.Trigger>
-          <Button onClick={() => setIsOpen(!isOpen)}>Toggle</Button>
-        </Popover.Trigger>
+        <Popover.TriggerButton
+          title="Toggle"
+          onClick={() => setIsOpen(!isOpen)}
+        />
         <Popover.Content>
           <Box padding="spacingM">
             <Paragraph>This is the content.</Paragraph>
@@ -75,9 +80,10 @@ export const InteractionOverview = () => {
         isOpen={is2Open}
         onClose={() => setIs2Open(false)}
       >
-        <Popover.Trigger>
-          <Button onClick={() => setIs2Open(!is2Open)}>Toggle</Button>
-        </Popover.Trigger>
+        <Popover.TriggerButton
+          title="Toggle"
+          onClick={() => setIs2Open(!is2Open)}
+        />
         <Popover.Content>
           <Box padding="spacingM">
             <Paragraph>This is the content.</Paragraph>
@@ -91,9 +97,10 @@ export const InteractionOverview = () => {
         isOpen={is3Open}
         onClose={() => setIs3Open(false)}
       >
-        <Popover.Trigger>
-          <Button onClick={() => setIs3Open(!is3Open)}>Toggle</Button>
-        </Popover.Trigger>
+        <Popover.TriggerButton
+          title="Toggle"
+          onClick={() => setIs3Open(!is3Open)}
+        />
         <Popover.Content>
           <Box padding="spacingM">
             <Paragraph>This is the content.</Paragraph>
@@ -122,11 +129,11 @@ export const WithFullWidth = () => {
     <section>
       <h3>Sets the width of the popover to the width of the trigger</h3>
       <Popover isFullWidth isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <Popover.Trigger>
-          <Button onClick={() => setIsOpen(!isOpen)}>
-            Toggle button with long content
-          </Button>
-        </Popover.Trigger>
+        <Popover.TriggerButton
+          title="Toggle button with long content"
+          onClick={() => setIsOpen(!isOpen)}
+        />
+
         <Popover.Content>
           <Box padding="spacingM">
             <Paragraph>This is the content.</Paragraph>
@@ -170,9 +177,10 @@ export const WithAutoAligment = () => {
           isOpen={isOpen}
           onClose={() => setIsOpen(false)}
         >
-          <Popover.Trigger>
-            <Button onClick={() => setIsOpen(!isOpen)}>Toggle</Button>
-          </Popover.Trigger>
+          <Popover.TriggerButton
+            title="Toggle"
+            onClick={() => setIsOpen(!isOpen)}
+          />
           <Popover.Content>
             <Box padding="spacingM">
               <Paragraph>This is the content.</Paragraph>
@@ -181,6 +189,85 @@ export const WithAutoAligment = () => {
           </Popover.Content>
         </Popover>
       </div>
+    </section>
+  );
+};
+
+export const WithIconButtonTriggerAndTooltip = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <section style={{ width: '650px' }}>
+      <h3>Has icon button trigger</h3>
+      <Popover
+        renderOnlyWhenOpen={false}
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      >
+        <Popover.TriggerButton
+          aria-label="Toggle"
+          variant="secondary"
+          icon={<Icon as={icons.DotsThreeIcon} />}
+          onClick={() => setIsOpen(!isOpen)}
+          withTooltip
+          tooltipProps={{ content: 'I am a Tooltip 🙌', isVisible: true }}
+        />
+
+        <Popover.Content>
+          <Box padding="spacingM">
+            <Paragraph>This is the content.</Paragraph>
+            <Button>Some action</Button>
+          </Box>
+        </Popover.Content>
+      </Popover>
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+        rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+        ipsum dolor sit amet.
+      </p>
+    </section>
+  );
+};
+
+export const WithCustomTrigger = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <section style={{ width: '650px' }}>
+      <h3>Uses custom trigger component</h3>
+      <Popover
+        renderOnlyWhenOpen={false}
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      >
+        <Popover.Trigger>
+          <button type="button" onClick={() => setIsOpen(!isOpen)}>
+            Toggle
+          </button>
+        </Popover.Trigger>
+
+        <Popover.Content>
+          <Box padding="spacingM">
+            <Paragraph>This is the content.</Paragraph>
+            <Button>Some action</Button>
+          </Box>
+        </Popover.Content>
+      </Popover>
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+        rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+        ipsum dolor sit amet.
+      </p>
     </section>
   );
 };
