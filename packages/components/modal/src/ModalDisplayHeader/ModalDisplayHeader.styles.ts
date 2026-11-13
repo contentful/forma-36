@@ -1,7 +1,7 @@
 import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/css';
 
-export function getModalHeaderStyles() {
+export function getModalDisplayHeaderStyles() {
   return {
     root: css({
       position: 'relative',
