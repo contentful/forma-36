@@ -9,10 +9,12 @@ import { cx } from '@emotion/css';
 import { styles } from './ModalDisplay.styles';
 
 export type ModalDisplayProps = ModalProps & {
+  title: string;
+  subtitle?: string;
   illustration?: ModalDisplayHeaderProps['illustration'];
-  modalHeaderProps?: ModalDisplayHeaderProps;
-  modalControlsProps?: ModalControlsProps;
-  modalContentProps?: ModalContentProps;
+  modalHeaderProps?: Partial<ModalDisplayHeaderProps>;
+  modalControlsProps?: Partial<ModalControlsProps>;
+  modalContentProps?: Partial<ModalContentProps>;
   controls?: ModalControlsProps['children'];
   children?: React.ReactNode;
 };
@@ -39,7 +41,6 @@ export const ModalDisplay = ({
               subtitle={subtitle}
               illustration={illustration}
               {...modalHeaderProps}
-              onClose={onClose}
             />
             <Modal.Content
               {...modalContentProps}
