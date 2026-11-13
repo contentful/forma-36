@@ -1,10 +1,16 @@
-import { expect, it, vi } from 'vitest';
+import { beforeEach, expect, it, vi } from 'vitest';
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { screen } from '@testing-library/dom';
+import userEvent, { type UserEvent } from '@testing-library/user-event';
 import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { ModalConfirm } from './ModalConfirm';
+
+let user: UserEvent;
+beforeEach(() => {
+  user = userEvent.setup();
+});
 
 vi.mock('react-modal', () => ({
   default: function ReactModalMock({
@@ -46,7 +52,7 @@ it('renders a `x` icon to close/dismiss the modal', async () => {
   );
 
   const closeButton = screen.getByRole('button', { name: /Close/i });
-  fireEvent.click(closeButton);
+  await user.click(closeButton);
 
   expect(closeButtonSpy).toHaveBeenCalledTimes(1);
 });
