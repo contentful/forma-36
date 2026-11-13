@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 import ReactModal from 'react-modal';
 import { cx } from '@emotion/css';
 import { XIcon } from '@contentful/f36-icons';
@@ -6,12 +6,11 @@ import {
   Flex,
   type PropsWithHTMLElement,
   type CommonProps,
-  useId,
 } from '@contentful/f36-core';
 import { IconButton } from '@contentful/f36-button';
 import { Text, Subheading } from '@contentful/f36-typography';
 
-import { useModalContext } from '../ModalContext';
+import { useModalHeader } from '../useModalHeader';
 import { getModalHeaderStyles } from './ModalHeader.styles';
 
 interface ModalHeaderInternalProps extends CommonProps {
@@ -55,30 +54,21 @@ export const ModalHeaderBase = ({
   ...otherProps
 }: ModalHeaderBaseProps): React.ReactElement => {
   const styles = getModalHeaderStyles();
-  const modalContext = useModalContext();
-  const generatedSubtitleId = useId(subtitleId, 'subtitle');
-  const generatedTitle = useId(titleId, 'title');
-
-  const resolvedTitleId = title ? generatedTitle : undefined;
-  const resolvedSubtitleId = subtitle ? generatedSubtitleId : undefined;
+  const {
+    titleId: resolvedTitleId,
+    subtitleId: resolvedSubtitleId,
+    onClose: resolvedOnClose,
+    closeIconLabel,
+  } = useModalHeader({
+    title,
+    subtitle,
+    titleId,
+    subtitleId,
+    onClose,
+    closeIconLabel: aria?.closeIconLabel,
+  });
 
   const noVisibleTitle = !title && !subtitle;
-
-  const resolvedOnClose =
-    onClose ??
-    (modalContext?.isDismissable !== false ? modalContext?.onClose : undefined);
-  const closeIconLabel =
-    aria?.closeIconLabel ?? modalContext?.closeIconLabel ?? 'Close';
-
-  const registeredIds = modalContext?.registerTitleIds;
-  useLayoutEffect(
-    () =>
-      registeredIds?.({
-        titleId: resolvedTitleId,
-        subtitleId: resolvedSubtitleId,
-      }),
-    [registeredIds, resolvedTitleId, resolvedSubtitleId],
-  );
 
   return (
     <Flex
