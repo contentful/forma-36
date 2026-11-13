@@ -1,0 +1,50 @@
+{
+  "name": "@contentful/f36-inline-configuration-popover",
+  "private": true,
+  "version": "6.29.0",
+  "description": "Forma 36: InlineConfigurationPopover component (alpha)",
+  "scripts": {
+    "build": "tsdown"
+  },
+  "dependencies": {
+    "@contentful/f36-button": "^6.29.0",
+    "@contentful/f36-core": "^6.29.0",
+    "@contentful/f36-drag-handle": "^6.29.0",
+    "@contentful/f36-icons": "^6.29.0",
+    "@contentful/f36-tokens": "^6.3.0",
+    "@dnd-kit/core": "^6.0.8",
+    "@emotion/css": "^11.13.5",
+    "@floating-ui/react": "^0.27.16",
+    "tabbable": "^6.4.0"
+  },
+  "peerDependencies": {
+    "react": "^18.3.0 || >=19.1.0",
+    "react-dom": "^18.3.0 || >=19.1.0"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "source": "src/index.ts",
+  "sideEffects": false,
+  "browserslist": "extends @contentful/browserslist-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/contentful/forma-36.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
+  "devDependencies": {
+    "@contentful/f36-menu": "^6.29.0",
+    "@contentful/f36-modal": "^6.29.0",
+    "@contentful/f36-tooltip": "^6.29.0",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1"
+  }
+}

@@ -105,6 +105,7 @@ const testFiles = [
   'packages/components/pill-next/src/**/*.test.tsx',
   'packages/components/popover/src/**/*.test.tsx',
   'packages/components/progress-stepper/src/**/*.test.tsx',
+  'packages/components/inline-configuration-popover/src/**/*.test.tsx',
   'packages/components/skeleton/src/**/*.test.tsx',
   'packages/components/spinner/src/**/*.test.tsx',
   'packages/components/table/src/**/*.test.tsx',
