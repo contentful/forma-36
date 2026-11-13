@@ -30,8 +30,8 @@ import { Popover } from '@contentful/f36-popover';
 
 ### Basic
 
-- Use `Popover.TriggerButton` as a basic `Button` or `IconButton` trigger.
-- To use a custom trigger, pass the custom trigger component as a child to `Popover.Trigger`.
+- The preferred way to show a popover is using the `Popover.TriggerButton` as either a `Button` or `IconButton` trigger element.
+- If you need to use a custom trigger component, pass the component as a child to `Popover.Trigger`.
   NOTE: 🚨 Ensure that the component that you pass accepts `ref`. Consider using `forwardRef` for functional components.
 - Pass popover content as a child for `Popover.Content`
 
