@@ -1,5 +1,15 @@
 # Change Log
 
+## 6.31.1
+
+### Patch Changes
+
+- [#3767](https://github.com/contentful/forma-36/pull/3767) [`b61bf72`](https://github.com/contentful/forma-36/commit/b61bf72560901b1e5264611be84862dbb3307681) Thanks [@GigiIanni](https://github.com/GigiIanni)! - feat(icons): add PlayIcon
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.31.1
+  - @contentful/f36-icon@6.31.1
+
 ## 6.31.0
 
 ### Patch Changes
