@@ -207,6 +207,7 @@ export * from './vendor/phosphor/PaperPlaneTiltIcon.js';
 export * from './vendor/phosphor/PenNibIcon.js';
 export * from './vendor/phosphor/PencilSimpleIcon.js';
 export * from './vendor/phosphor/PlaceholderIcon.js';
+export * from './vendor/phosphor/PlayIcon.js';
 export * from './vendor/phosphor/PlusIcon.js';
 export * from './vendor/phosphor/PresentationChartIcon.js';
 export * from './vendor/phosphor/PresentationIcon.js';
