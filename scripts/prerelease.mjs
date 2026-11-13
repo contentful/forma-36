@@ -4,6 +4,7 @@ import inquirer from 'inquirer';
 import semver from 'semver';
 import { getPackages } from '@manypkg/get-packages';
 import { exec } from 'child_process';
+import { promisify } from 'util';
 import chalk from 'chalk';
 
 const cwd = process.cwd();
@@ -122,20 +123,19 @@ async function main() {
     const dryRunFlag = dryRun ? '--dry-run' : '';
     console.log('');
     console.log(chalk.bold('pnpm publish output'));
-    await exec(
-      `pnpm publish ${dir} --tag ${tag} ${dryRunFlag}`,
-      (error, stdout, stderr) => {
-        if (!error) {
-          console.log(stdout);
-          console.log(
-            `${name}@${newVersion} published: \n${chalk.bold(url)}\n`,
-          );
-        } else {
-          console.error(error);
-          console.error(stderr);
-        }
-      },
-    );
+    try {
+      const { stdout } = await promisify(exec)(
+        // the version bump above leaves the tree dirty on purpose
+        `pnpm publish ${dir} --tag ${tag} --no-git-checks ${dryRunFlag}`,
+      );
+      console.log(stdout);
+      console.log(`${name}@${newVersion} published: \n${chalk.bold(url)}\n`);
+    } catch (error) {
+      // pnpm writes its error messages to stdout, so print both streams
+      console.error(error.stdout);
+      console.error(error.stderr);
+      process.exitCode = 1;
+    }
   } else {
     console.log(`Version for ${name} updated on package.json.`);
   }
