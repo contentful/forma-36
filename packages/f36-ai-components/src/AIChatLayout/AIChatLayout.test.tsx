@@ -198,6 +198,42 @@ describe('AIChatLayout', () => {
     expect(mockOnOpen).toHaveBeenCalledTimes(1);
   });
 
+  it('keeps visible collapsed header buttons keyboard focusable and actionable', async () => {
+    const user = userEvent.setup();
+    const onOpen = vi.fn();
+    const onButtonClick = vi.fn();
+
+    render(
+      <AIChatLayout
+        display="collapsed"
+        onCollapsedClick={onOpen}
+        header={{
+          id: 'test',
+          buttonsRight: [
+            {
+              icon: <StarIcon />,
+              onClick: onButtonClick,
+              display: true,
+              ariaLabel: 'Open chat',
+            },
+            {
+              icon: <XIcon />,
+              onClick: vi.fn(),
+              display: false,
+              ariaLabel: 'Hidden action',
+            },
+          ],
+        }}
+      />,
+    );
+
+    await user.tab();
+    expect(screen.getByRole('button', { name: 'Open chat' })).toHaveFocus();
+    await user.keyboard('{Enter}');
+    expect(onButtonClick).toHaveBeenCalledTimes(1);
+    expect(onOpen).toHaveBeenCalledTimes(1);
+  });
+
   it('does not call onCollapsedClick when header is clicked and layout is open', async () => {
     const user = userEvent.setup();
     const mockOnOpen = vi.fn();
