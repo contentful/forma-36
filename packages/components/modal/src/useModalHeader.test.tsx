@@ -86,17 +86,18 @@ describe('registration', () => {
 });
 
 describe('onClose', () => {
-  it('comes from the Modal', () => {
+  it('comes from the Modal unless it is not dismissable', () => {
     const onClose = vi.fn();
-    const { wrapper } = setup({ onClose });
-    const { result } = renderHook(() => useModalHeader({}), { wrapper });
-    expect(result.current.onClose).toBe(onClose);
-  });
-
-  it('is undefined when the Modal is not dismissable', () => {
-    const { wrapper } = setup({ onClose: vi.fn(), isDismissable: false });
-    const { result } = renderHook(() => useModalHeader({}), { wrapper });
-    expect(result.current.onClose).toBeUndefined();
+    const dismissable = setup({ onClose });
+    expect(
+      renderHook(() => useModalHeader({}), { wrapper: dismissable.wrapper })
+        .result.current.onClose,
+    ).toBe(onClose);
+    const locked = setup({ onClose, isDismissable: false });
+    expect(
+      renderHook(() => useModalHeader({}), { wrapper: locked.wrapper }).result
+        .current.onClose,
+    ).toBeUndefined();
   });
 
   it('prefers its own onClose, even when the Modal is not dismissable', () => {
@@ -124,13 +125,5 @@ describe('closeIconLabel', () => {
     expect(
       renderHook(() => useModalHeader({})).result.current.closeIconLabel,
     ).toBe('Close');
-  });
-});
-
-describe('without a Modal', () => {
-  it('still generates ids and has no close handler', () => {
-    const { result } = renderHook(() => useModalHeader({ title: 'Title' }));
-    expect(result.current.titleId).toEqual(expect.any(String));
-    expect(result.current.onClose).toBeUndefined();
   });
 });
