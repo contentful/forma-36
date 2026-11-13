@@ -35,23 +35,6 @@ export const Default: StoryObj<IconProps> = {
   },
 };
 
-export const Play: StoryObj<IconProps> = {
-  render: (args) => (
-    <Flex alignItems="center" gap="spacingL">
-      <icons.PlayIcon {...args} size="medium" />
-      <icons.PlayIcon {...args} size="medium" isActive />
-      <icons.PlayIcon {...args} size="small" />
-      <icons.PlayIcon {...args} size="small" isActive />
-      <icons.PlayIcon {...args} size="tiny" />
-      <icons.PlayIcon {...args} size="tiny" isActive />
-    </Flex>
-  ),
-  argTypes: {
-    size: { control: { disable: true } },
-    isActive: { control: { disable: true } },
-  },
-};
-
 export const Overview: StoryFn = () => {
   return (
     <Fragment>

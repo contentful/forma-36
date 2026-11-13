@@ -2,34 +2,11 @@ import { describe, expect, it } from 'vitest';
 import React, { Fragment } from 'react';
 import { render } from '@testing-library/react';
 import { MdHelp as ExternalIcon } from 'react-icons/md/index.js';
-import { CalendarBlankIcon, PlayIcon } from '../../icons/src/index.js';
+import { CalendarBlankIcon } from '../../icons/src/index.js';
 
 import { Icon } from './index.js';
 
 describe('Icon', () => {
-  describe('PlayIcon', () => {
-    it.each([
-      ['medium', '20px', false],
-      ['medium', '20px', true],
-      ['small', '16px', false],
-      ['small', '16px', true],
-      ['tiny', '14px', false],
-      ['tiny', '14px', true],
-    ] as const)(
-      'renders size=%s (%s) with isActive=%s',
-      (size, pixels, isActive) => {
-        const { getByRole } = render(
-          <PlayIcon size={size} isActive={isActive} aria-label="Play" />,
-        );
-        const icon = getByRole('img', { name: 'Play' });
-
-        expect(icon).toHaveAttribute('width', pixels);
-        expect(icon).toHaveAttribute('height', pixels);
-        expect(icon.querySelector('[opacity="0.2"]') !== null).toBe(isActive);
-      },
-    );
-  });
-
   describe('with children', () => {
     const internalIcon = (
       <Fragment>
