@@ -6,7 +6,6 @@ import {
   createRelease,
   assertReleaseComplete,
   getReleaseNotes,
-  getPublishRegistry,
   getVersionedPackages,
   isPrerelease,
   main,
@@ -134,48 +133,10 @@ describe('generate-releases', () => {
     });
   });
 
-  describe('getPublishRegistry', () => {
-    const pkg = (name, registry) => ({
-      packageJson: { name, publishConfig: registry ? { registry } : {} },
-    });
-
-    it('uses the registry configured by the publishable packages', () => {
-      expect(
-        getPublishRegistry([
-          pkg('@contentful/a', 'https://registry.example/'),
-          pkg('@contentful/b', 'https://registry.example'),
-          { packageJson: { name: '@contentful/private', private: true } },
-        ]),
-      ).toBe('https://registry.example');
-    });
-
-    it('rejects missing, inconsistent or unsupported configurations', () => {
-      expect(() => getPublishRegistry([pkg('@contentful/a')])).toThrow(
-        'publishConfig.registry',
-      );
-      expect(() =>
-        getPublishRegistry([
-          pkg('@contentful/a', 'https://one.example'),
-          pkg('@contentful/b', 'https://two.example'),
-        ]),
-      ).toThrow('same registry');
-      expect(() =>
-        getPublishRegistry([pkg('@other/a', 'https://one.example')]),
-      ).toThrow('scope');
-      expect(() =>
-        getPublishRegistry([pkg('@contentful/a', 'file:///tmp')]),
-      ).toThrow('Invalid publish registry');
-    });
-  });
-
   describe('release orchestration', () => {
     const pkg = {
       dir: path.join(process.cwd(), 'example'),
-      packageJson: {
-        name: '@contentful/f36-example',
-        version: '1.1.0',
-        publishConfig: { registry: 'https://registry.example/' },
-      },
+      packageJson: { name: '@contentful/f36-example', version: '1.1.0' },
     };
     const state = {
       releases: [{ name: pkg.packageJson.name, version: '1.1.0' }],
@@ -237,7 +198,7 @@ describe('generate-releases', () => {
       expect(push).toBeGreaterThan(-1);
       expect(publish).toBeGreaterThan(push);
       expect(calls[publish][2].env['npm_config_@contentful:registry']).toBe(
-        'https://registry.example',
+        'https://npm.pkg.github.com/',
       );
       expect(calls).toContainEqual([
         'git',
