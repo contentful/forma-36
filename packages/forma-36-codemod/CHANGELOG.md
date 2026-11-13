@@ -1,5 +1,11 @@
 # Change Log
 
+## 7.0.0
+
+### Major Changes
+
+- [#3724](https://github.com/contentful/forma-36/pull/3724) [`be91666`](https://github.com/contentful/forma-36/commit/be9166608ea1e041d5ee6773e9ee423f2014ed61) Thanks [@denkristoffer](https://github.com/denkristoffer)! - Upgrade execa to v10 and require Node.js 22 or newer. Update the package update flow to use execa's supported command API.
+
 ## 6.0.1
 
 ### Patch Changes
