@@ -8,11 +8,10 @@ import {
 import { ButtonGroup } from '@contentful/f36-button';
 import { getModalControlStyles } from './ModalControls.styles';
 import { cx } from '@emotion/css';
-import type * as CSS from 'csstype';
 
 interface ModalControlsInternalProps extends CommonProps {
   children: React.ReactElement[] | React.ReactElement;
-  justifyContent?: CSS.Property.JustifyContent;
+  justifyContent?: React.CSSProperties['justifyContent'];
 }
 
 export type ModalControlsProps = PropsWithHTMLElement<
