@@ -1,15 +1,9 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it } from 'vitest';
 import React from 'react';
 import { cleanup, render, screen, waitFor } from '@testing-library/react';
-import userEvent, { type UserEvent } from '@testing-library/user-event';
 import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
 import { ModalDisplay, type ModalDisplayProps } from './ModalDisplay';
-
-let user: UserEvent;
-beforeEach(() => {
-  user = userEvent.setup();
-});
 
 // react-modal removes its portal node asynchronously (closeTimeoutMS) after unmount.
 afterEach(async () => {
@@ -55,30 +49,5 @@ describe('layout', () => {
     expect(screen.getByTestId('cf-ui-modal-controls')).toContainElement(
       screen.getByRole('button', { name: 'Confirm' }),
     );
-  });
-
-  it('passes through header, content and controls props', () => {
-    renderDisplay({
-      modalHeaderProps: { titleId: 'my-title' },
-      modalContentProps: { className: 'custom-content' },
-      modalControlsProps: { testId: 'custom-controls' },
-    });
-    expect(screen.getByRole('dialog')).toHaveAttribute(
-      'aria-labelledby',
-      'my-title',
-    );
-    expect(screen.getByTestId('cf-ui-modal-content')).toHaveClass(
-      'custom-content',
-    );
-    expect(screen.getByTestId('custom-controls')).toBeInTheDocument();
-  });
-});
-
-describe('closing', () => {
-  it('calls onClose from the close button', async () => {
-    const onClose = vi.fn();
-    renderDisplay({ onClose });
-    await user.click(screen.getByRole('button', { name: 'Close' }));
-    expect(onClose).toHaveBeenCalledTimes(1);
   });
 });

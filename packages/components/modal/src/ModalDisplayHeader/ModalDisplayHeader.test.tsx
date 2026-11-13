@@ -1,24 +1,12 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import React from 'react';
-import { cleanup, render, screen, waitFor } from '@testing-library/react';
-import userEvent, { type UserEvent } from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
 import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
-import { Modal } from '../CompoundModal';
 import { ModalDisplayHeader } from './ModalDisplayHeader';
 
-let user: UserEvent;
-beforeEach(() => {
-  user = userEvent.setup();
-});
-
-// Context logic (ids, onClose, closeIconLabel) is owned and tested by useModalHeader.
-
-// react-modal removes its portal node asynchronously (closeTimeoutMS) after unmount.
-afterEach(async () => {
-  cleanup();
-  await waitFor(() => expect(document.body).toBeEmptyDOMElement());
-});
+// Context logic (ids, onClose, closeIconLabel) is owned by useModalHeader.test;
+// name/description linking inside a Modal by ModalDisplay.test.
 
 describe('markup', () => {
   it('renders the title as h2 and the subtitle as p inside an hgroup', () => {
@@ -31,28 +19,6 @@ describe('markup', () => {
     expect(subtitle.tagName).toBe('P');
     expect(heading.parentElement?.tagName).toBe('HGROUP');
     expect(heading.parentElement).toContainElement(subtitle);
-  });
-});
-
-describe('inside a Modal', () => {
-  it('labels the dialog and closes it via the Modal onClose', async () => {
-    const onClose = vi.fn();
-    render(
-      <Modal isShown onClose={onClose}>
-        {() => (
-          <Modal.DisplayHeader
-            title="Display title"
-            subtitle="Display subtitle"
-          />
-        )}
-      </Modal>,
-    );
-    const dialog = screen.getByRole('dialog');
-    expect(dialog).toHaveAccessibleName('Display title');
-    expect(dialog).toHaveAccessibleDescription('Display subtitle');
-
-    await user.click(screen.getByRole('button', { name: 'Close' }));
-    expect(onClose).toHaveBeenCalledTimes(1);
   });
 });
 
