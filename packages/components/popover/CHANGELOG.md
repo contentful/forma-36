@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.31.0
+
+### Minor Changes
+
+- [#3787](https://github.com/contentful/forma-36/pull/3787) [`b16a4f6`](https://github.com/contentful/forma-36/commit/b16a4f614e476bb6bd63db8068e1784939742c11) Thanks [@veu](https://github.com/veu)! - Add Popover.TriggerButton component as new standard trigger
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.31.0
+  - @contentful/f36-core@6.31.0
+
 ## 6.30.0
 
 ### Patch Changes

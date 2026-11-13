@@ -1,5 +1,15 @@
 # Change Log
 
+## 6.31.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.31.0
+  - @contentful/f36-image@6.31.0
+  - @contentful/f36-menu@6.31.0
+  - @contentful/f36-tooltip@6.31.0
+
 ## 6.30.0
 
 ### Patch Changes
