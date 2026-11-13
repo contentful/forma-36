@@ -8,11 +8,6 @@ import semver from 'semver';
 
 const cwd = process.cwd();
 const statePath = '.changeset/release-state.json';
-const registry = 'https://npm.pkg.github.com/';
-const registryEnv = {
-  ...process.env,
-  'npm_config_@contentful:registry': registry,
-};
 
 const run = (command, args, options = {}) =>
   (execFileSync(command, args, { encoding: 'utf8', ...options }) || '').trim();
@@ -110,6 +105,33 @@ export async function getVersionedPackages(pkgs, readPrevious) {
   return releases;
 }
 
+export function getPublishRegistry(packages) {
+  const publicPackages = packages.filter((pkg) => !pkg.packageJson.private);
+  if (!publicPackages.length) throw new Error('No publishable packages found.');
+
+  const registries = new Set();
+  for (const { packageJson } of publicPackages) {
+    const { name, publishConfig } = packageJson;
+    if (!name?.startsWith('@contentful/')) {
+      throw new Error(`Unexpected publishable package scope: ${name}`);
+    }
+    const registry =
+      publishConfig?.['@contentful:registry'] || publishConfig?.registry;
+    if (!registry || typeof registry !== 'string') {
+      throw new Error(`${name} must specify its publishConfig.registry.`);
+    }
+    const url = new URL(registry);
+    if (!['http:', 'https:'].includes(url.protocol)) {
+      throw new Error(`Invalid publish registry for ${name}: ${registry}`);
+    }
+    registries.add(url.href.replace(/\/$/, ''));
+  }
+  if (registries.size !== 1) {
+    throw new Error('Publishable packages must use the same registry.');
+  }
+  return [...registries][0];
+}
+
 function assertCurrentBranch(branch, gitCommand = git) {
   if (!branch || !/^[\w./-]+$/.test(branch)) {
     throw new Error('CIRCLE_BRANCH must identify the release branch.');
@@ -144,6 +166,12 @@ export async function main({
     return;
   }
 
+  const { packages } = await loadPackages(cwd);
+  const registryEnv = {
+    ...process.env,
+    'npm_config_@contentful:registry': getPublishRegistry(packages),
+  };
+
   let releases;
   if (resume) {
     if (!state) throw new Error('No release state found at this commit.');
@@ -156,7 +184,6 @@ export async function main({
     releases = state.releases;
   } else {
     if (state) await assertReleaseComplete(octokit, state.releases);
-    const { packages } = await loadPackages(cwd);
     releases = await getVersionedPackages(packages, (file) =>
       git('ls-tree', '--name-only', 'HEAD', '--', file)
         ? git('show', `HEAD:${file}`)
@@ -196,7 +223,6 @@ export async function main({
     stdio: 'inherit',
   });
 
-  const { packages } = await loadPackages(cwd);
   const commit = git('rev-parse', 'HEAD');
   for (const release of releases) {
     const tagName = `${release.name}@${release.version}`;

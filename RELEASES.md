@@ -56,7 +56,7 @@ Also as we moved towards `turborepo`, we also decided to remove lerna entirely a
 
 Our releases are managed automatically through the CI. It only generates new release if a new changeset is present in the PR that was merged into the main branch.
 
-The release job versions the packages, records the release manifest in `.changeset/release-state.json`, and pushes the version commit before publishing. A rejected push stops the release before any packages are published. It then publishes to GitHub Packages, pushes tags pointing to the version commit, and creates GitHub releases. The release-time registry lookup uses GitHub Packages; normal installs continue to use the repository's npmjs configuration.
+The release job versions the packages, records the release manifest in `.changeset/release-state.json`, and pushes the version commit before publishing. A rejected push stops the release before any packages are published. It then publishes to GitHub Packages, pushes tags pointing to the version commit, and creates GitHub releases. The release-time registry lookup uses the registry specified by the publishable packages' `publishConfig.registry` (which must match across packages); normal installs continue to use the repository's npmjs configuration.
 
 Release jobs are serialized across branches. A job checks that its checkout is still the latest branch commit before versioning. A newer commit may still cause the version commit push to be rejected; in that case run the release from the latest validated commit.
 
