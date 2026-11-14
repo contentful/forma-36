@@ -89,7 +89,7 @@ function NavbarItemBase(
     </Comp>
   );
 
-  if (!title) {
+  if (!title && !isMenuTrigger) {
     item = (
       <div>
         <Tooltip content={label} placement="bottom" showDelay={600} usePortal>
@@ -103,6 +103,7 @@ function NavbarItemBase(
     return (
       <NavbarMenu
         trigger={item}
+        tooltip={!title ? label : undefined}
         testId={testId}
         onOpen={onOpen}
         onClose={onClose}
