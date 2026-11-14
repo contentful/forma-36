@@ -1,4 +1,5 @@
 import React from 'react';
+import type ReactModal from 'react-modal';
 
 export type ModalIds = {
   titleId?: string;
@@ -11,6 +12,9 @@ export type ModalContextType = {
    * Returns a cleanup function that clears them again.
    */
   registerTitleIds: (ids: ModalIds) => () => void;
+  onClose?: ReactModal.Props['onRequestClose'];
+  isDismissable?: boolean;
+  closeIconLabel?: string;
 };
 
 const ModalContext = React.createContext<ModalContextType | undefined>(

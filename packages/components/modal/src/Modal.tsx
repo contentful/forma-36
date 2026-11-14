@@ -4,7 +4,10 @@ import ReactModal from 'react-modal';
 import { Box, type CommonProps, type ExpandProps } from '@contentful/f36-core';
 
 import { ModalContextProvider, type ModalIds } from './ModalContext';
-import { ModalHeader, ModalHeaderProps } from './ModalHeader/ModalHeader';
+import {
+  ModalHeaderBase,
+  type ModalHeaderProps,
+} from './ModalHeader/ModalHeader';
 import { ModalContent, ModalContentProps } from './ModalContent/ModalContent';
 import { getModalStyles } from './Modal.styles';
 import type { ModalSizeType, ModalPositionType } from './types';
@@ -61,12 +64,36 @@ export interface ModalProps extends CommonProps {
   topOffset?: number | string;
   /**
    * Modal title that is used in header
+   * @deprecated Use the `header` slot (`header={<Modal.Header title="…" />}`) or `ModalBasic` instead.
    */
   title?: string;
   /**
    * Modal subtitle that is used in header
+   * @deprecated Use the `header` slot (`header={<Modal.Header subtitle="…" />}`) or `ModalBasic` instead.
    */
   subtitle?: string;
+  /**
+   * Header slot, takes a `<Modal.Header />`. Rendered above the content.
+   * The header shows a close button wired to `onClose` while the modal is dismissable.
+   * Wins over `title`/`subtitle` if both are set.
+   */
+  header?: React.ReactElement;
+  /**
+   * Controls slot, takes a `<Modal.Controls />`. Rendered below the content.
+   */
+  controls?: React.ReactElement;
+  /**
+   * When false, the header slot shows no close button, and neither overlay click
+   * nor the esc key closes the modal.
+   * @default true
+   */
+  isDismissable?: boolean;
+  /**
+   * Accessible label of the header close button.
+   * `aria.closeIconLabel` on `Modal.Header` takes precedence.
+   * @default Close
+   */
+  closeIconLabel?: string;
   /**
    * Size of the modal window
    * @default medium
@@ -85,6 +112,7 @@ export interface ModalProps extends CommonProps {
 
   /**
    * Optional props to override ModalHeader behaviour
+   * @deprecated Use the `header` slot and pass the props to `Modal.Header` directly, or `headerProps` on `ModalBasic`.
    */
   modalHeaderProps?: Partial<ModalHeaderProps>;
 
@@ -126,19 +154,22 @@ export const Modal = ({
   testId = 'cf-ui-modal',
   topOffset = '50px',
   aria,
+  isDismissable = true,
   ...otherProps
 }: ExpandProps<ModalProps>) => {
   const contentRef = React.useRef<HTMLDivElement>(null);
   const [titleIds, setTitleIds] = React.useState<ModalIds>({});
 
+  // stable on purpose: ModalHeader re-registers its ids whenever this changes
+  const registerTitleIds = React.useCallback((newIds: ModalIds) => {
+    setTitleIds(newIds);
+    return () => setTitleIds({});
+  }, []);
+
+  const { onClose, closeIconLabel } = otherProps;
   const contextValue = React.useMemo(
-    () => ({
-      registerTitleIds: (newIds: ModalIds) => {
-        setTitleIds(newIds);
-        return () => setTitleIds({});
-      },
-    }),
-    [],
+    () => ({ registerTitleIds, onClose, isDismissable, closeIconLabel }),
+    [registerTitleIds, onClose, isDismissable, closeIconLabel],
   );
 
   // explicit aria props win over the ids reported by the header
@@ -151,9 +182,10 @@ export const Modal = ({
   const props = {
     ...otherProps,
     allowHeightOverflow,
+    isDismissable,
     position,
-    shouldCloseOnEscapePress,
-    shouldCloseOnOverlayClick,
+    shouldCloseOnEscapePress: isDismissable && shouldCloseOnEscapePress,
+    shouldCloseOnOverlayClick: isDismissable && shouldCloseOnOverlayClick,
     size,
     testId,
     topOffset,
@@ -194,22 +226,20 @@ export const Modal = ({
     onInitialFocus();
   };
 
-  const renderDefault = () => {
+  const renderDefault = (children: React.ReactNode) => {
     return (
       <>
-        {otherProps.title && (
-          <ModalHeader
+        {otherProps.header || (
+          <ModalHeaderBase
             title={otherProps.title}
             subtitle={otherProps.subtitle}
-            onClose={props.onClose}
             {...otherProps.modalHeaderProps}
           />
         )}
         <ModalContent {...otherProps.modalContentProps}>
-          {typeof otherProps.children === 'function'
-            ? null
-            : otherProps.children}
+          {children}
         </ModalContent>
+        {otherProps.controls}
       </>
     );
   };
@@ -222,8 +252,8 @@ export const Modal = ({
         onRequestClose={props.onClose}
         isOpen={otherProps.isShown}
         onAfterOpen={onAfterOpen}
-        shouldCloseOnEsc={shouldCloseOnEscapePress}
-        shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
+        shouldCloseOnEsc={props.shouldCloseOnEscapePress}
+        shouldCloseOnOverlayClick={props.shouldCloseOnOverlayClick}
         shouldFocusAfterRender
         shouldReturnFocusAfterClose
         portalClassName={styles.portal}
@@ -256,9 +286,15 @@ export const Modal = ({
           className={styles.modal}
           data-modal-root
         >
-          {typeof otherProps.children === 'function'
-            ? otherProps.children(props)
-            : renderDefault()}
+          {typeof otherProps.children === 'function' ? (
+            <>
+              {otherProps.header}
+              {otherProps.children(props)}
+              {otherProps.controls}
+            </>
+          ) : (
+            renderDefault(otherProps.children)
+          )}
         </Box>
       </ReactModal>
     </ModalContextProvider>
