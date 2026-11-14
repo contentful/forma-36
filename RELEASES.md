@@ -56,7 +56,19 @@ Also as we moved towards `turborepo`, we also decided to remove lerna entirely a
 
 Our releases are managed automatically through the CI. It only generates new release if a new changeset is present in the PR that was merged into the main branch.
 
-The CI will use the changeset publish method to update the versions on the packages and publish to NPM, and then based on which packages were published, it will generate the tags and releases and add them to Github.
+The release job versions the packages, records the release manifest in `.changeset/release-state.json`, and pushes the version commit before publishing. A rejected push stops the release before any packages are published. It then publishes to GitHub Packages, pushes tags pointing to the version commit, and creates GitHub releases. The release-time registry lookup uses GitHub Packages; normal installs continue to use the repository's npmjs configuration.
+
+Release jobs are serialized across branches. A job checks that its checkout is still the latest branch commit before versioning. A newer commit may still cause the version commit push to be rejected; in that case run the release from the latest validated commit.
+
+### Recovering an incomplete release
+
+If publishing, tagging, or GitHub release creation fails after the version commit was pushed, later release jobs stop rather than publishing newer source under the same version. Resume the failed release from the **exact version commit** recorded by the last change to `.changeset/release-state.json`:
+
+1. Check out that commit in a clean environment, configure the GitHub Packages write credentials and `GITHUB_TOKEN`, install dependencies, and build the packages from that commit.
+2. Run `pnpm changeset:publish --resume`. It skips versions already present in GitHub Packages and reconciles missing tags and GitHub releases. It refuses to overwrite a tag pointing to another commit.
+3. Once it succeeds, rerun the release from the latest validated branch commit. Do not run two release or recovery processes at once.
+
+This recovery applies to releases created with the manifest. Older partial releases need manual reconciliation of their package versions, changelogs, tags, and GitHub releases before this workflow can be used. Do not delete or move published tags without reviewing their consumers.
 
 It also updates the [What's new](https://f36.contentful.com/whats-new) page that we show in our [website](https://f36.contentful.com/whats-new). In order to update the website daily we had to create a custom flow where we group all changes by package.
 
