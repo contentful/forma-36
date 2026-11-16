@@ -69,7 +69,7 @@ export const ModalDisplayHeader = ({
         {illustration && (
           <div className={styles.illustration}>{illustration}</div>
         )}
-        <Text as="hgroup" isTruncated>
+        <Text as="hgroup">
           <Subheading
             id={resolvedTitleId}
             as="h2"
