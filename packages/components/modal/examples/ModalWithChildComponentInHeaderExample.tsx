@@ -7,18 +7,16 @@ export default function ModalWithChildComponentInHeaderExample() {
   return (
     <>
       <Button onClick={() => setShown(true)}>Open modal</Button>
-      <Modal onClose={() => setShown(false)} isShown={isShown}>
-        {() => (
-          <>
-            <Modal.Header
-              title="With Child Component"
-              onClose={() => setShown(false)}
-            >
-              <Badge>Child Component</Badge>
-            </Modal.Header>
-            <Modal.Content>Modal content</Modal.Content>
-          </>
-        )}
+      <Modal
+        isShown={isShown}
+        onClose={() => setShown(false)}
+        header={
+          <Modal.Header title="With Child Component">
+            <Badge>Child Component</Badge>
+          </Modal.Header>
+        }
+      >
+        Modal content
       </Modal>
     </>
   );
