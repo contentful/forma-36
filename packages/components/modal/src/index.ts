@@ -10,8 +10,12 @@ export { ModalControls } from './ModalControls/ModalControls';
 export type { ModalControlsProps } from './ModalControls/ModalControls';
 export { ModalHeader } from './ModalHeader/ModalHeader';
 export type { ModalHeaderProps } from './ModalHeader/ModalHeader';
+export { ModalDisplayHeader } from './ModalDisplayHeader/ModalDisplayHeader';
+export type { ModalDisplayHeaderProps } from './ModalDisplayHeader/ModalDisplayHeader';
 export { ModalLauncher } from './ModalLauncher/ModalLauncher';
 export type {
   ModalLauncherComponentRendererProps,
   ModalLauncherOpenOptions,
 } from './ModalLauncher/ModalLauncher';
+export { ModalDisplay } from './ModalDisplay/ModalDisplay';
+export type { ModalDisplayProps } from './ModalDisplay/ModalDisplay';
