@@ -44,9 +44,7 @@ export const useModalHeader = ({
   return {
     titleId: resolvedTitleId,
     subtitleId: resolvedSubtitleId,
-    onClose:
-      onClose ??
-      (context?.isDismissable !== false ? context?.onClose : undefined),
+    onClose: onClose ?? context?.onClose,
     closeIconLabel: closeIconLabel ?? context?.closeIconLabel ?? 'Close',
   };
 };

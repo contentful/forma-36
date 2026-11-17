@@ -13,7 +13,6 @@ export type ModalContextType = {
    */
   registerTitleIds: (ids: ModalIds) => () => void;
   onClose?: ReactModal.Props['onRequestClose'];
-  isDismissable?: boolean;
   closeIconLabel?: string;
 };
 

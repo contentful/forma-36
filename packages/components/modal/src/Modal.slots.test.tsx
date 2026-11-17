@@ -74,6 +74,16 @@ describe('header and controls slots', () => {
     warn.mockRestore();
   });
 
+  it('warns when the controls slot is not modal controls', () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    renderSlots({});
+    expect(warn).not.toHaveBeenCalled();
+    cleanup();
+    renderSlots({ controls: <button type="button">Confirm</button> });
+    expect(warn).toHaveBeenCalled();
+    warn.mockRestore();
+  });
+
   it('wires the close button to the Modal onClose', async () => {
     const onClose = vi.fn();
     renderSlots({ onClose });
@@ -109,14 +119,15 @@ describe('Close functionality', () => {
     expect(screen.queryByRole('button', { name: 'Close' })).toBeInTheDocument();
   });
 
-  it('has no close button and ignores esc and overlay click when not dismissable', async () => {
+  it('Ignores esc and overlay click when should close on overlay click or escape is set to false', async () => {
     const onClose = vi.fn();
 
     render(
       <Modal
         isShown
         onClose={onClose}
-        isDismissable={false}
+        shouldCloseOnOverlayClick={false}
+        shouldCloseOnEscapePress={false}
         controls={
           <Modal.Controls>
             <button type="button">Confirm</button>
@@ -126,9 +137,7 @@ describe('Close functionality', () => {
       />,
     );
 
-    expect(
-      screen.queryByRole('button', { name: 'Close' }),
-    ).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Close' })).toBeInTheDocument();
     const dialog = screen.getByRole('dialog');
     expect(dialog).toHaveFocus();
     await user.keyboard('{Escape}');

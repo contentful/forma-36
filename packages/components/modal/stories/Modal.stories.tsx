@@ -311,7 +311,8 @@ export const NotDismissable: StoryFn<ModalProps> = () => {
       <Modal
         isShown={isShown}
         onClose={close}
-        isDismissable={false}
+        shouldCloseOnEscapePress={false}
+        shouldCloseOnOverlayClick={false}
         header={<Modal.Header title="Not dismissable" />}
         controls={
           <Modal.Controls>
@@ -321,7 +322,7 @@ export const NotDismissable: StoryFn<ModalProps> = () => {
           </Modal.Controls>
         }
       >
-        No close button; esc and overlay click do nothing.
+        Can not be closed by outside click or escape
       </Modal>
     </div>
   );
