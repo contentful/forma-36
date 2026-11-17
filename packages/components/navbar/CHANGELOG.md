@@ -1,5 +1,22 @@
 # @contentful/f36-navbar
 
+## 6.31.2
+
+### Patch Changes
+
+- [#3790](https://github.com/contentful/forma-36/pull/3790) [`da282ae`](https://github.com/contentful/forma-36/commit/da282ae75d8eea008ae4e46fbf80451e7156d7c7) Thanks [@denkristoffer](https://github.com/denkristoffer)! - Fix accessible menu trigger semantics for icon-only navbar items and account menus
+
+- Updated dependencies []:
+  - @contentful/f36-avatar@6.31.2
+  - @contentful/f36-button@6.31.2
+  - @contentful/f36-core@6.31.2
+  - @contentful/f36-icon@6.31.2
+  - @contentful/f36-icons@6.31.2
+  - @contentful/f36-menu@6.31.2
+  - @contentful/f36-skeleton@6.31.2
+  - @contentful/f36-tooltip@6.31.2
+  - @contentful/f36-typography@6.31.2
+
 ## 6.31.1
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # Change Log
 
+## 6.31.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.31.2
+  - @contentful/f36-core@6.31.2
+
 ## 6.31.1
 
 ### Patch Changes

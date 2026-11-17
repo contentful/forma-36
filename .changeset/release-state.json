@@ -1,0 +1,176 @@
+{
+  "releases": [
+    {
+      "name": "@contentful/f36-accordion",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-asset",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-autocomplete",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-avatar",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-badge",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-button",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-card",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-collapse",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-copybutton",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-datepicker",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-datetime",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-drag-handle",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-empty-state",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-entity-list",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-forms",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-header",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-icon",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-icons",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-image",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-layout",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-list",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-menu",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-modal",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-multiselect",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-navbar",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-navlist",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-note",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-notification",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-pagination",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-pill",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-popover",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-progress-stepper",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-skeleton",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-spinner",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-table",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-tabs",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-text-link",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-tooltip",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-typography",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-usage-card",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-usage-count",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-core",
+      "version": "6.31.2"
+    },
+    {
+      "name": "@contentful/f36-components",
+      "version": "6.31.2"
+    }
+  ]
+}
