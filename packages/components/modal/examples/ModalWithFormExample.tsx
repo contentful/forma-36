@@ -24,47 +24,43 @@ export default function ModalWithFormExample() {
   return (
     <>
       <Button onClick={() => setShown(true)}>Create new content type</Button>
-      <Modal onClose={() => setShown(false)} isShown={isShown}>
-        {() => (
-          <>
-            <Modal.Header
-              title="Create new content type"
-              onClose={() => setShown(false)}
+      <Modal
+        isShown={isShown}
+        onClose={() => setShown(false)}
+        header={<Modal.Header title="Create new content type" />}
+        controls={
+          <Modal.Controls>
+            <Button
+              size="small"
+              variant="transparent"
+              onClick={() => setShown(false)}
+            >
+              Close
+            </Button>
+            <Button
+              size="small"
+              variant="positive"
+              isDisabled={contentTypeName.length === 0}
+              onClick={submitForm}
+            >
+              Create
+            </Button>
+          </Modal.Controls>
+        }
+      >
+        <Form onSubmit={submitForm}>
+          <FormControl>
+            <FormControl.Label isRequired>Name</FormControl.Label>
+            <TextInput
+              maxLength={20}
+              value={contentTypeName}
+              placeholder="For example Product, Blog Post, Author"
+              onChange={(e) => {
+                setContentTypeName(e.target.value);
+              }}
             />
-            <Modal.Content>
-              <Form onSubmit={submitForm}>
-                <FormControl>
-                  <FormControl.Label isRequired>Name</FormControl.Label>
-                  <TextInput
-                    maxLength={20}
-                    value={contentTypeName}
-                    placeholder="For example Product, Blog Post, Author"
-                    onChange={(e) => {
-                      setContentTypeName(e.target.value);
-                    }}
-                  />
-                </FormControl>
-              </Form>
-            </Modal.Content>
-            <Modal.Controls>
-              <Button
-                size="small"
-                variant="transparent"
-                onClick={() => setShown(false)}
-              >
-                Close
-              </Button>
-              <Button
-                size="small"
-                variant="positive"
-                isDisabled={contentTypeName.length === 0}
-                onClick={submitForm}
-              >
-                Create
-              </Button>
-            </Modal.Controls>
-          </>
-        )}
+          </FormControl>
+        </Form>
       </Modal>
     </>
   );

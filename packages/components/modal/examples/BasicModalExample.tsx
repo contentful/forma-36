@@ -7,25 +7,18 @@ export default function BasicModalExample() {
   return (
     <>
       <Button onClick={() => setShown(true)}>Open modal</Button>
-      <Modal onClose={() => setShown(false)} isShown={isShown}>
-        {() => (
-          <>
-            <Modal.Header
-              title="Modal title"
-              subtitle="subtitle"
-              onClose={() => setShown(false)}
-            />
-            <Modal.Content>
-              <Heading>
-                First entry published! It can now be fetched via the APIs
-              </Heading>
-              <Paragraph>
-                To discover more about how to consume content from the APIs, go
-                to Space Home.
-              </Paragraph>
-            </Modal.Content>
-          </>
-        )}
+      <Modal
+        isShown={isShown}
+        onClose={() => setShown(false)}
+        header={<Modal.Header title="Modal title" subtitle="subtitle" />}
+      >
+        <Heading>
+          First entry published! It can now be fetched via the APIs
+        </Heading>
+        <Paragraph>
+          To discover more about how to consume content from the APIs, go to
+          Space Home.
+        </Paragraph>
       </Modal>
     </>
   );
