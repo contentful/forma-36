@@ -4,9 +4,12 @@ import os from 'node:os';
 import path from 'node:path';
 import {
   createRelease,
-  getReleasedPackages,
+  assertReleaseComplete,
   getReleaseNotes,
+  getVersionedPackages,
   isPrerelease,
+  main,
+  releaseExists,
 } from './generate-releases.mjs';
 
 describe('generate-releases', () => {
@@ -73,38 +76,179 @@ describe('generate-releases', () => {
     });
   });
 
-  describe('getReleasedPackages', () => {
-    it('returns packages that changesets published', async () => {
+  describe('getVersionedPackages', () => {
+    it('records changed public package versions, not unchanged or private packages', async () => {
       const packages = [
         {
+          dir: path.join(process.cwd(), 'button'),
           packageJson: {
             name: '@contentful/f36-button',
+            version: '1.2.3',
           },
         },
         {
+          dir: path.join(process.cwd(), 'table'),
           packageJson: {
             name: '@contentful/f36-table',
+            version: '4.5.6',
           },
         },
+        { dir: 'private', packageJson: { private: true, version: '2.0.0' } },
       ];
-      const changesetOutput = [
-        'Package published successfully',
-        'New tag: @contentful/f36-button@1.2.3',
-        'New tag: @contentful/f36-table@4.5.6-alpha.0',
-      ].join('\n');
-
       await expect(
-        getReleasedPackages(changesetOutput, packages),
+        getVersionedPackages(packages, (file) =>
+          JSON.stringify({
+            version: file.startsWith('button') ? '1.2.2' : '4.5.6',
+          }),
+        ),
       ).resolves.toEqual([
-        {
-          tagName: '@contentful/f36-button@1.2.3',
-          pkg: packages[0],
-        },
-        {
-          tagName: '@contentful/f36-table@4.5.6-alpha.0',
-          pkg: packages[1],
-        },
+        { name: '@contentful/f36-button', version: '1.2.3' },
       ]);
+    });
+  });
+
+  describe('release recovery', () => {
+    it('fails closed when a release is missing', async () => {
+      const getReleaseByTag = vi.fn().mockRejectedValue({ status: 404 });
+      const octokit = { rest: { repos: { getReleaseByTag } } };
+      await expect(
+        assertReleaseComplete(octokit, [
+          { name: '@contentful/f36-button', version: '1.2.3' },
+        ]),
+      ).rejects.toThrow('Resume it from the version commit');
+    });
+
+    it('accepts completed releases and propagates API errors', async () => {
+      const getReleaseByTag = vi.fn().mockResolvedValue({});
+      const octokit = { rest: { repos: { getReleaseByTag } } };
+      await expect(
+        assertReleaseComplete(octokit, [
+          { name: '@contentful/f36-button', version: '1.2.3' },
+        ]),
+      ).resolves.toBeUndefined();
+      getReleaseByTag.mockRejectedValue({ status: 500 });
+      await expect(releaseExists(octokit, 'tag')).rejects.toEqual({
+        status: 500,
+      });
+    });
+  });
+
+  describe('release orchestration', () => {
+    const pkg = {
+      dir: path.join(process.cwd(), 'example'),
+      packageJson: { name: '@contentful/f36-example', version: '1.1.0' },
+    };
+    const state = {
+      releases: [{ name: pkg.packageJson.name, version: '1.1.0' }],
+    };
+
+    const setup = () => {
+      const runCommand = vi.fn((command, args) => {
+        if (command === 'git' && args[0] === 'ls-tree') return 'package.json';
+        if (command === 'git' && args[0] === 'show')
+          return '{"version":"1.0.0"}';
+        if (command === 'git' && args[0] === 'diff') return 'package.json';
+        if (command === 'git' && args[0] === 'rev-parse') return 'abc123';
+        if (command === 'git' && args[0] === 'log') return 'abc123';
+        if (command === 'npm') return '"1.1.0"';
+        return '';
+      });
+      return {
+        runCommand,
+        loadPackages: vi.fn().mockResolvedValue({ packages: [pkg] }),
+        loadState: vi.fn().mockResolvedValue(null),
+        saveState: vi.fn().mockResolvedValue(undefined),
+        octokit: {
+          rest: {
+            repos: {
+              getReleaseByTag: vi.fn().mockRejectedValue({ status: 404 }),
+            },
+          },
+        },
+        makeRelease: vi.fn().mockResolvedValue(undefined),
+      };
+    };
+
+    it('stops before publishing if the version push fails', async () => {
+      const deps = setup();
+      const normal = deps.runCommand.getMockImplementation();
+      deps.runCommand.mockImplementation((command, args, options) => {
+        if (command === 'git' && args[0] === 'push')
+          throw new Error('rejected');
+        return normal(command, args, options);
+      });
+      await expect(main(deps)).rejects.toThrow('rejected');
+      expect(
+        deps.runCommand.mock.calls.some(
+          ([command, args]) => command === 'pnpm' && args.includes('publish'),
+        ),
+      ).toBe(false);
+    });
+
+    it('pushes the version commit before publishing and tags the commit', async () => {
+      const deps = setup();
+      await main(deps);
+      const calls = deps.runCommand.mock.calls;
+      const push = calls.findIndex(
+        ([command, args]) => command === 'git' && args[0] === 'push',
+      );
+      const publish = calls.findIndex(
+        ([command, args]) => command === 'pnpm' && args.includes('publish'),
+      );
+      expect(push).toBeGreaterThan(-1);
+      expect(publish).toBeGreaterThan(push);
+      expect(calls[publish][2].env['npm_config_@contentful:registry']).toBe(
+        'https://npm.pkg.github.com/',
+      );
+      expect(calls).toContainEqual([
+        'git',
+        ['tag', '@contentful/f36-example@1.1.0', 'abc123'],
+      ]);
+      expect(deps.makeRelease).toHaveBeenCalledOnce();
+    });
+
+    it('resumes missing tags and releases from the version commit', async () => {
+      const deps = setup();
+      deps.loadState.mockResolvedValue(state);
+      await main({ ...deps, resume: true });
+      expect(deps.makeRelease).toHaveBeenCalledOnce();
+      expect(
+        deps.runCommand.mock.calls.some(
+          ([command, args]) => command === 'git' && args[0] === 'commit',
+        ),
+      ).toBe(false);
+    });
+
+    it('refuses recovery from a different commit', async () => {
+      const deps = setup();
+      deps.loadState.mockResolvedValue(state);
+      const normal = deps.runCommand.getMockImplementation();
+      deps.runCommand.mockImplementation((command, args, options) =>
+        command === 'git' && args[0] === 'log'
+          ? 'other'
+          : normal(command, args, options),
+      );
+      await expect(main({ ...deps, resume: true })).rejects.toThrow(
+        'exact version commit',
+      );
+    });
+
+    it('rejects a stale checkout before versioning', async () => {
+      const deps = setup();
+      vi.stubEnv('CIRCLE_BRANCH', 'main');
+      const normal = deps.runCommand.getMockImplementation();
+      deps.runCommand.mockImplementation((command, args, options) =>
+        command === 'git' && args[1] === 'FETCH_HEAD'
+          ? 'newer'
+          : normal(command, args, options),
+      );
+      try {
+        await expect(main({ ...deps, check: true })).rejects.toThrow(
+          'not the latest branch commit',
+        );
+      } finally {
+        vi.unstubAllEnvs();
+      }
     });
   });
 
