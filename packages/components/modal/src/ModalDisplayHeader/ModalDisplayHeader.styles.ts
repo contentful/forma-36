@@ -16,12 +16,18 @@ export function getModalDisplayHeaderStyles() {
     title: css({
       textAlign: 'center',
     }),
+    subTitle: css({
+      margin: 0,
+    }),
+    headingGroup: css({
+      paddingTop: tokens.spacingM,
+    }),
     buttonContainer: css({
       position: 'absolute',
       width: '32px',
       height: tokens.spacingL,
       right: tokens.spacingXs,
-      top: '2px',
+      top: tokens.spacingXs,
     }),
   };
 }

@@ -69,7 +69,7 @@ export const ModalDisplayHeader = ({
         {illustration && (
           <div className={styles.illustration}>{illustration}</div>
         )}
-        <Text as="hgroup">
+        <Text as="hgroup" className={styles.headingGroup}>
           <Subheading
             id={resolvedTitleId}
             as="h2"
@@ -84,7 +84,7 @@ export const ModalDisplayHeader = ({
               marginLeft="spacingXs"
               fontColor="gray700"
               as="p"
-              className={styles.title}
+              className={cx(styles.title, styles.subTitle)}
             >
               {subtitle}
             </Text>
