@@ -64,6 +64,16 @@ describe('header and controls slots', () => {
     expect(screen.getAllByTestId('cf-ui-modal-header')).toHaveLength(1);
   });
 
+  it('warns when the header slot is not a modal header', () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    renderSlots({ header: <Modal.DisplayHeader title="Display title" /> });
+    expect(warn).not.toHaveBeenCalled();
+    cleanup();
+    renderSlots({ header: <div>Custom header</div> });
+    expect(warn).toHaveBeenCalled();
+    warn.mockRestore();
+  });
+
   it('wires the close button to the Modal onClose', async () => {
     const onClose = vi.fn();
     renderSlots({ onClose });

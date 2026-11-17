@@ -5,9 +5,14 @@ import { Box, type CommonProps, type ExpandProps } from '@contentful/f36-core';
 
 import { ModalContextProvider, type ModalIds } from './ModalContext';
 import {
+  ModalHeader,
   ModalHeaderBase,
   type ModalHeaderProps,
 } from './ModalHeader/ModalHeader';
+import {
+  ModalDisplayHeader,
+  type ModalDisplayHeaderProps,
+} from './ModalDisplayHeader/ModalDisplayHeader';
 import { ModalContent, ModalContentProps } from './ModalContent/ModalContent';
 import { getModalStyles } from './Modal.styles';
 import type { ModalSizeType, ModalPositionType } from './types';
@@ -73,11 +78,13 @@ export interface ModalProps extends CommonProps {
    */
   subtitle?: string;
   /**
-   * Header slot, takes a `<Modal.Header />`. Rendered above the content.
+   * Header slot, takes a `<Modal.Header />` or `<Modal.DisplayHeader />`. Rendered above the content.
    * The header shows a close button wired to `onClose` while the modal is dismissable.
    * Wins over `title`/`subtitle` if both are set.
    */
-  header?: React.ReactElement;
+  header?:
+    | React.ReactElement<ModalHeaderProps, typeof ModalHeader>
+    | React.ReactElement<ModalDisplayHeaderProps, typeof ModalDisplayHeader>;
   /**
    * Controls slot, takes a `<Modal.Controls />`. Rendered below the content.
    */
@@ -157,6 +164,19 @@ export const Modal = ({
   isDismissable = true,
   ...otherProps
 }: ExpandProps<ModalProps>) => {
+  const { header } = otherProps;
+  if (
+    process.env.NODE_ENV !== 'production' &&
+    header &&
+    header.type !== ModalHeader &&
+    header.type !== ModalDisplayHeader
+  ) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      '[Modal] `header` only accepts <Modal.Header /> or <Modal.DisplayHeader />.',
+    );
+  }
+
   const contentRef = React.useRef<HTMLDivElement>(null);
   const [titleIds, setTitleIds] = React.useState<ModalIds>({});
 
