@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import type { StoryObj, Meta } from '@storybook/react-vite';
 import { action } from 'storybook/actions';
-import { Paragraph } from '@contentful/f36-typography';
 import {
   ModalDisplay,
   type ModalDisplayProps,
@@ -41,6 +40,7 @@ function SimpleDemo(props: ModalDisplayProps) {
           <img src={illustration} alt="Content type visualisation" />
         }
         title="Setup your first content type"
+        subtitle="It's easy"
         controls={
           <Button variant="positive" onClick={() => action('create')()}>
             Create
@@ -53,10 +53,8 @@ function SimpleDemo(props: ModalDisplayProps) {
           action('onClose')();
         }}
       >
-        <Paragraph>
-          This is some explanation text{' '}
-          <TextLink> you can read more here ...</TextLink>
-        </Paragraph>
+        This is some explanation text&nbsp;
+        <TextLink> you can read more here ...</TextLink>
       </ModalDisplay>
     </div>
   );
