@@ -86,23 +86,18 @@ describe('registration', () => {
 });
 
 describe('onClose', () => {
-  it('comes from the Modal unless it is not dismissable', () => {
+  it('comes from the Modal', () => {
     const onClose = vi.fn();
     const dismissable = setup({ onClose });
     expect(
       renderHook(() => useModalHeader({}), { wrapper: dismissable.wrapper })
         .result.current.onClose,
     ).toBe(onClose);
-    const locked = setup({ onClose, isDismissable: false });
-    expect(
-      renderHook(() => useModalHeader({}), { wrapper: locked.wrapper }).result
-        .current.onClose,
-    ).toBeUndefined();
   });
 
-  it('prefers its own onClose, even when the Modal is not dismissable', () => {
+  it('prefers its own onClose', () => {
     const own = vi.fn();
-    const { wrapper } = setup({ onClose: vi.fn(), isDismissable: false });
+    const { wrapper } = setup({ onClose: vi.fn() });
     const { result } = renderHook(() => useModalHeader({ onClose: own }), {
       wrapper,
     });

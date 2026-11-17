@@ -14,6 +14,10 @@ import {
   type ModalDisplayHeaderProps,
 } from './ModalDisplayHeader/ModalDisplayHeader';
 import { ModalContent, ModalContentProps } from './ModalContent/ModalContent';
+import {
+  ModalControls,
+  type ModalControlsProps,
+} from './ModalControls/ModalControls';
 import { getModalStyles } from './Modal.styles';
 import type { ModalSizeType, ModalPositionType } from './types';
 
@@ -88,13 +92,7 @@ export interface ModalProps extends CommonProps {
   /**
    * Controls slot, takes a `<Modal.Controls />`. Rendered below the content.
    */
-  controls?: React.ReactElement;
-  /**
-   * When false, the header slot shows no close button, and neither overlay click
-   * nor the esc key closes the modal.
-   * @default true
-   */
-  isDismissable?: boolean;
+  controls?: React.ReactElement<ModalControlsProps, typeof ModalControls>;
   /**
    * Accessible label of the header close button.
    * `aria.closeIconLabel` on `Modal.Header` takes precedence.
@@ -161,20 +159,24 @@ export const Modal = ({
   testId = 'cf-ui-modal',
   topOffset = '50px',
   aria,
-  isDismissable = true,
   ...otherProps
 }: ExpandProps<ModalProps>) => {
-  const { header } = otherProps;
-  if (
-    process.env.NODE_ENV !== 'production' &&
-    header &&
-    header.type !== ModalHeader &&
-    header.type !== ModalDisplayHeader
-  ) {
-    // eslint-disable-next-line no-console
-    console.warn(
-      '[Modal] `header` only accepts <Modal.Header /> or <Modal.DisplayHeader />.',
-    );
+  const { header, controls } = otherProps;
+  if (process.env.NODE_ENV !== 'production') {
+    if (
+      header &&
+      header.type !== ModalHeader &&
+      header.type !== ModalDisplayHeader
+    ) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        '[Modal] `header` only accepts <Modal.Header /> or <Modal.DisplayHeader />.',
+      );
+    }
+    if (controls && controls.type !== ModalControls) {
+      // eslint-disable-next-line no-console
+      console.warn('[Modal] `controls` only accepts <Modal.Controls />.');
+    }
   }
 
   const contentRef = React.useRef<HTMLDivElement>(null);
@@ -188,8 +190,8 @@ export const Modal = ({
 
   const { onClose, closeIconLabel } = otherProps;
   const contextValue = React.useMemo(
-    () => ({ registerTitleIds, onClose, isDismissable, closeIconLabel }),
-    [registerTitleIds, onClose, isDismissable, closeIconLabel],
+    () => ({ registerTitleIds, onClose, closeIconLabel }),
+    [registerTitleIds, onClose, closeIconLabel],
   );
 
   // explicit aria props win over the ids reported by the header
@@ -202,10 +204,9 @@ export const Modal = ({
   const props = {
     ...otherProps,
     allowHeightOverflow,
-    isDismissable,
     position,
-    shouldCloseOnEscapePress: isDismissable && shouldCloseOnEscapePress,
-    shouldCloseOnOverlayClick: isDismissable && shouldCloseOnOverlayClick,
+    shouldCloseOnEscapePress,
+    shouldCloseOnOverlayClick,
     size,
     testId,
     topOffset,
