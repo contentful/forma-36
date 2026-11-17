@@ -97,6 +97,7 @@ const testFiles = [
   'packages/components/menu/src/**/*.test.tsx',
   'packages/components/modal/src/**/*.test.tsx',
   'packages/components/multiselect/src/**/*.test.tsx',
+  'packages/components/navbar/src/**/*.test.tsx',
   'packages/components/note/src/**/*.test.tsx',
   'packages/components/notification/src/**/*.test.tsx',
   'packages/components/navlist/src/**/*.test.tsx',

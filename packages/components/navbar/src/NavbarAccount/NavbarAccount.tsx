@@ -9,7 +9,6 @@ import {
 import { NavbarMenu } from '../NavbarMenu/NavbarMenu';
 import { Flex } from '@contentful/f36-core';
 import { Avatar } from '@contentful/f36-avatar';
-import { Tooltip } from '@contentful/f36-tooltip';
 
 type NavbarAccountOwnProps = CommonProps & {
   children: React.ReactNode;
@@ -49,33 +48,28 @@ function NavbarAccountBase(
 
   return (
     <NavbarMenu
+      tooltip={label}
       trigger={
-        <div>
-          <Tooltip placement="bottom" content={label} showDelay={600} usePortal>
-            <Flex
-              as="button"
-              {...otherProps}
-              ref={ref}
-              className={cx(styles.navbarAccount, className)}
-              testId={testId}
-              alignItems="center"
-              aria-label={label}
-            >
-              <Avatar
-                src={avatar}
-                initials={initials}
-                size="small"
-                variant="user"
-              />
+        <Flex
+          as="button"
+          {...otherProps}
+          ref={ref}
+          className={cx(styles.navbarAccount, className)}
+          testId={testId}
+          alignItems="center"
+          aria-label={label}
+        >
+          <Avatar
+            src={avatar}
+            initials={initials}
+            size="small"
+            variant="user"
+          />
 
-              {hasNotification ? (
-                <span
-                  className={styles.notificationIcon(notificationVariant)}
-                />
-              ) : null}
-            </Flex>
-          </Tooltip>
-        </div>
+          {hasNotification ? (
+            <span className={styles.notificationIcon(notificationVariant)} />
+          ) : null}
+        </Flex>
       }
     >
       {children}
