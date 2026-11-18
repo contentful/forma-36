@@ -8,6 +8,7 @@ export default {
   title: 'Components/Modal/BasicModal',
   component: BasicModal,
   parameters: {
+    layout: 'padded',
     propTypes: [BasicModal['__docgenInfo']],
   },
   decorators: [
