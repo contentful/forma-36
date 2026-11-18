@@ -13,6 +13,7 @@ export default {
   title: 'Components/Modal/ModalConfirm',
   component: ModalConfirm,
   parameters: {
+    layout: 'padded',
     propTypes: [ModalConfirm['__docgenInfo']],
   },
   decorators: [

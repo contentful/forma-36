@@ -20,6 +20,7 @@ export default {
   title: 'Components/Modal',
   component: Modal,
   parameters: {
+    layout: 'padded',
     propTypes: [Modal['__docgenInfo']],
   },
   decorators: [
