@@ -15,13 +15,9 @@ export function getModalHeaderStyles() {
     title: css({
       display: 'inline',
     }),
-    headingGroup: css({
-      marginRight: 'auto',
-    }),
     buttonContainer: css({
       position: 'relative',
       marginLeft: 'auto',
-      width: tokens.spacing2Xl,
       height: tokens.spacingL,
       button: {
         position: 'absolute',

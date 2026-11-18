@@ -78,10 +78,10 @@ export const ModalHeaderBase = ({
       })}
       testId={testId}
       alignItems="center"
-      justifyContent="space-between"
+      gap="spacingS"
     >
       {!noVisibleTitle && (
-        <Text as="hgroup" isTruncated className={styles.headingGroup}>
+        <Text as="hgroup" isTruncated>
           {title && (
             <Subheading
               id={resolvedTitleId}
