@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 18-11-2026
+
+**F36 Navbar** `v6.31.2`
+
+- Fix accessible menu trigger semantics for icon-only navbar items and account menus
+
 ## 14-11-2026
 
 **F36 Popover** `v6.31.0`
