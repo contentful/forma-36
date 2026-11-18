@@ -11,6 +11,11 @@ export const PARSER_CHOICES = [
 
 export const SETUP_CHOICES = [
   {
+    name: 'v7-modal: Migrate Modal to the header and controls slots. Moves title props and render functions that only contain Modal.Header, Modal.Content and Modal.Controls into slots, and removes redundant onClose on Modal.Header. Prints a warning for every usage that needs manual migration.',
+    short: 'Update modal',
+    value: 'v7/modal',
+  },
+  {
     name: 'v6-popper: Update changed placement and offset properties of Popover, Menu and Tooltip after migration from react-popper to floating-ui',
     short: 'Update popover',
     value: 'v6/popover',
