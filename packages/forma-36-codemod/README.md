@@ -45,7 +45,7 @@ Migrates `Modal` to the `header` and `controls` slots:
 - render functions that only return `Modal.Header`, `Modal.Content` and `Modal.Controls` become slots, the `Modal.Content` children become the `Modal` children and its props move to `modalContentProps`
 - `onClose` on `Modal.Header` is removed when it is the same as the `onClose` of the `Modal`
 
-Every usage that cannot be migrated safely is left unchanged and printed as a warning with file and line, see the [Modal migration guide](../components/modal/src/README.mdx#migrating-to-slots). Run your formatter afterwards.
+Every usage that cannot be migrated safely is left unchanged and printed as a warning with file and line, see the [Modal migration guide](../components/modal/MIGRATION.md). Run your formatter afterwards.
 
 ### v6
 

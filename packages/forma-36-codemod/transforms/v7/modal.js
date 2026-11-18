@@ -79,7 +79,10 @@ module.exports = function updateToV7Modal(file, api) {
 
   // { a: 'x', b } -> a="x" b={b}; anything else -> {...expr}
   const objectToAttrs = (expression) => {
-    if (expression.type !== 'ObjectExpression') {
+    if (
+      expression.type !== 'ObjectExpression' ||
+      expression.properties.some((p) => p.computed || p.type.includes('Method'))
+    ) {
       return [j.jsxSpreadAttribute(expression)];
     }
     return expression.properties.map((prop) => {
@@ -121,11 +124,12 @@ module.exports = function updateToV7Modal(file, api) {
       : undefined;
   };
 
+  const TITLE_PROPS = ['title', 'subtitle', 'modalHeaderProps'];
+
   // 1. title / subtitle / modalHeaderProps -> header slot
   const migrateTitleProps = (element) => {
     const opening = element.openingElement;
-    const names = ['title', 'subtitle', 'modalHeaderProps'];
-    if (!names.some((name) => getAttr(opening, name))) return;
+    if (!TITLE_PROPS.some((name) => getAttr(opening, name))) return;
     // with a render function the default header is not rendered, `title` is only read via the params
     if (getRenderFunction(element)) return;
 
@@ -153,7 +157,7 @@ module.exports = function updateToV7Modal(file, api) {
       headerAttrs.push(...objectToAttrs(headerProps.value.expression));
     }
 
-    removeAttrs(opening, names);
+    removeAttrs(opening, TITLE_PROPS);
     opening.attributes.push(
       slot(
         'header',
@@ -206,14 +210,8 @@ module.exports = function updateToV7Modal(file, api) {
 
     const parts = body.children.filter((c) => !isBlank(c));
     const kinds = parts.map((c) => PARTS.find((part) => isPart(c, part)));
-    const isPure =
-      kinds.every(Boolean) &&
-      new Set(kinds).size === kinds.length &&
-      // keep the visual order: Header, Content, Controls
-      kinds.every(
-        (k, i) => i === 0 || PARTS.indexOf(kinds[i - 1]) < PARTS.indexOf(k),
-      );
-    if (!isPure || !kinds.includes('Content')) {
+    // only Header?, Content, Controls? in visual order
+    if (!/^(Header,)?Content(,Controls)?$/.test(kinds.join())) {
       return warn(
         'Render function contains more than Modal.Header/Content/Controls; migrate manually.',
         fn,
@@ -249,12 +247,17 @@ module.exports = function updateToV7Modal(file, api) {
     j(path)
       .find(j.JSXElement)
       .filter((p) => isPart(p.node, 'Header'))
-      .filter((p) => {
-        // only headers of this modal, not of a nested one
-        let parent = p.parent;
-        while (parent && !isModal(parent.node)) parent = parent.parent;
-        return parent === path;
-      })
+      // only headers of this modal, not of a nested one
+      .filter(
+        (p) =>
+          j(p)
+            .closest(j.JSXElement, {
+              openingElement: {
+                name: { type: 'JSXIdentifier', name: modalName },
+              },
+            })
+            .paths()[0] === path,
+      )
       .forEach((p) => {
         const header = p.node.openingElement;
         const onClose = getAttr(header, 'onClose');
@@ -279,8 +282,9 @@ module.exports = function updateToV7Modal(file, api) {
     .find(j.JSXElement)
     .filter((p) => isModal(p.node))
     .forEach((path) => {
-      migrateTitleProps(path.node);
       migrateRenderFunction(path.node);
+      // after the render function: a migrated one no longer blocks title -> header
+      migrateTitleProps(path.node);
       migrateHeaderOnClose(path);
     });
 
